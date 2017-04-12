@@ -1,0 +1,380 @@
+{b}RFTools Control Manual
+
+Table of Contents:
+{l:intro}引言
+{l:programmer}编程器
+{l:processor}处理器
+{l:networking}网络化
+{l:craftingstation}合成站
+{l:craftingcard}合成卡
+{l:workbench}工作台
+{l:tank}储罐
+{l:items}移动物品
+{l:graphics}绘图？
+{/}
+
+
+
+{l:concepts}编程概念
+{l:types}分类
+{l:parameters}特征
+{l:variables}变量
+{l:events}事件
+{l:opcodes}操作码类型
+{l:tokens}记号（助记符？）
+{l:concurrency}并行
+{l:debugging}调试
+{l:sharing}代码分享
+{-------------------------------------------------------------}
+{b}引言
+{n:intro}
+RFTools Control是RFtools的附属，为适应自动化任务而添加了一个可视化编程系统. 
+用RFTools Control写的程序能搬运周围物品, 互动红石, 检查机器能量水平，等等. 
+直接支持存储检测器，在未来会给予检测器自动合成能力.
+
+不要太害怕'编程' 一词.为RFTools Control写的程序通常非常简单，并以一种可视化
+的方式编写. 这意味着你不一定要 '书写' 代码.相反把图标拖到插槽里就是了.
+{-------------------------------------------------------------}
+{b}编程器
+{n:programmer}
+{rb:programmer}
+编程器是编写程序最基础的方块. 你需要插入一张程序卡来使用它:
+{ri:program_card}
+{-------------------------------------------------------------}
+编程器的界面乍一看很复杂，但并没有那么难. 在左侧你可以看到所有可以用在程序的
+操作码.你可以点击这些操作码图标，用鼠标将它们拖进中间的大格子里去.
+
+当一个操作码在主格子里你可以双击图标的某一条边来链接到邻近的操作码.如果那条边
+变绿了你就在一侧变绿的操作码和邻近的之间建立了一个连接.一些操作码(测试)有两个
+输出. 也有一个红色的输出指示错误路径(如果测试失败)。
+
+如果一个链接丢失，'停止' 操作码会被自动插入.
+{-------------------------------------------------------------}
+每一个程序都需要开始事件.一个事件操作码描述了程序执行的前提事件. 注意同一张卡
+上可以有多个事件(因此也会有多个程序)，甚至同一程序字符串(连接起来的操作码)在
+同一程序中也可以有多个指示不同进入点的事件.
+
+有7种触发事件:红石脉冲开,红石脉冲关，计时器,例外,信号,合成,和合成重新开始.
+{-------------------------------------------------------------}
+很多操作码都有独特的特征. 当你在主要格子里（中间格子）里选择了一个操作码，你
+就可以在界面下方看到该操作码对应所有可能的特征.特征是固定分类的但是改变是自动
+完成的(例如，整数在需要的时候自动转变为字符串).
+
+你可以以三种方式指定一个特征: 使用常量, 使用变量, 或者函数. 变量存储在处理器
+中(以后详谈). 一个重要的函数是'last'，简单地返回上一个操作码的最新一个结果.
+它很重要——你可以通过这个函数访问很多操作码的结果.
+{-------------------------------------------------------------}
+{b}处理器
+{n:processor}
+{rb:processor}
+处理器是自动执行你的程序的设备.首先你要写好一个程序然后把写好的程序卡插进处理
+器. 最大支持6张程序卡. 在它能真正工作之前，处理器还需要些别的模块.
+{-------------------------------------------------------------}
+处理器所需最重要的东西是一个处理器核心.对于每一个你安装在左下角16个插槽之一的
+核心，都可以同时运行一个扩展程序。注意处理器核心是很贵的，你不需要很多核心除非
+你想运行很多程序，因为一般的程序不会运行很久.
+
+有三个等级的处理器核心. 它们的不同在于执行速度和消耗的RF/t.
+{-------------------------------------------------------------}
+处理器最大能存储32个变量. 为了达到这个数量你需要内存条.每个内存条增加了8个变量
+所以最大支持4个内存条.
+
+变量可以被程序使用但是你必须把变量分配给正确的卡槽. 为了正确分配，在卡槽上有6个
+小按钮.按下小按钮，界面会被切换到“分配”模式.然后你就可以在（左下角的菜单里）选
+择变量并把它们标记成绿色.这张卡上的程序第一个被绿色标记的变量被指定为0，以此类
+推.注意你使用的变量索引与你如何分配变量密切相关!
+
+你也可以分配那些已经被其他卡使用了的变量.这让不同的卡的程序之间分享信息成为可能.
+{-------------------------------------------------------------}
+处理器也有24个物品插槽. 它们总是可用的，但是就像变量一样，你也必须把它们分配给
+每一张卡.用在程序里的插槽号码也与你如何分配它们相关. 换句话说，插槽0会成为第一
+个你分配给一个运行在特定程序（卡）插槽的程序的插槽.
+{-------------------------------------------------------------}
+{b}网络化
+{n:networking}
+使用一个网络卡和几个节点:
+{ri:network_card}
+{rb:node}
+你可以建立一个网络.一个处理器只有六个面，但是使用网络，允许所有链接到网络的节点
+到处理器某一面的接口可以扩展处理器.
+{-------------------------------------------------------------}
+网络卡安装之后需要设置.通过在处理器界面黑色区域的输入栏输入 'net setup <name>' 
+控制指令来设定(与原文有出入——译者注).
+<name>里的内容就是你网络的名字，并会应用在每一个链接到你网络的节点中.
+
+设定网络卡之后，会开始扫描所有链接到给定网络名的节点(以处理器为中心17x17x17的
+区域). 注意，网络卡也需要链接到合成站，扫描时也会发现它.
+
+注意: 高级的网络卡支持33x33x33的区域，支持向世界各地的处理器发信息.
+{-------------------------------------------------------------}
+如果你有一张高级网络卡，你也可以向世界中的其他处理器发信息(只要它们所在区块被
+加载).做到这个，你需要在处理器的内部16插槽中安放一个网络识别卡:
+{ri:network_identifier}
+然后将这张卡链接到目标处理器(潜行右击).目标处理器不需要一张相匹配的网络卡.
+
+你也可以把信息以变量的形式发出.
+{-------------------------------------------------------------}
+{b}合成站
+{n:craftingstation}
+{rb:craftingstation}
+合成站是一个通过你自己写的程序请求物品以自动合成的设备，在附近的处理器上运行
+.要让合成站和处理器工作需要网络卡.
+
+合成操作有时要费很长时间，合成站的界面会显示合成进度.
+{-------------------------------------------------------------}
+注意合成站本质上做的就是让你看到处理器“合成”某一物品的事件被触发.只要你需要这
+样一个物品的合成，后续程序便会执行.但是你在程序里做的完全取决于你.很多情况下
+你可能编辑一个事实上用来合成，但是也可以做别的程序，所以你可以使用合成站来作为
+一种触发多个过程的方式. 例如, 你可以有一个“合成红石” 事件，自动打开不同物品的
+（合成）进程，“合成煤炭”事件将这些进程关闭. 由你决定.
+{-------------------------------------------------------------}
+{b}合成卡
+{n:craftingcard}
+{ri:crafting_card}
+合成卡是能容纳合成表的特殊物品.经常用于典型合成(3x3合成格一个输出格)，有JEI的
+集成，所以往里面放入合成表很容易。但是不仅于此. 事实上，如果你打开合成卡的界面，
+你会发现有不止3x3可能的输入槽. 你可以借此表达比3*3更加复杂更多的合成。
+{-------------------------------------------------------------}
+注意实际所需要的产物可以不一致于合成表的产物. 让我们看看一个此特性有用的实例. 
+比如你想合成Ender IO的表面方块需要一个正常的合成，该合成的产品需要被熔炼.所
+以你可以有一张写入3*3合成表的合成卡以合成中间产物，从冶炼炉输出最终产物。当然
+这种合成卡需要处理多步合成的程序的支持.
+{-------------------------------------------------------------}
+{b}工作台
+{n:workbench}
+{rb:workbench}
+工作台是一个有内部物品缓存的一般合成设备. 可以当做原版工作台，但是它的主要用
+处还是自动合成，因为工作台支持从底部抽出合成产物。而且一个运行在处理器上的程
+序可以直接将一个合成的原材料从工作台顶部输入.
+
+内部缓存经常被用于合成卡辅助处理自动合成.
+{-------------------------------------------------------------}
+{b}储罐
+{n:tank}
+{rb:tank}
+多容储罐可以容纳4种液体。当摆在处理器旁边时，会给予处理器4个新的流体槽（每个
+储罐4个）可以分配给程序，这样程序就可以处理液体了.
+
+注意没有其他的方式与多容储罐互动，除非是处理器和一个涉及流体的程序.很明显，这
+是直接给处理器调用的流体储存期. 放在节点旁边是没用的.
+{-------------------------------------------------------------}
+{b}移动物品
+{n:items}
+许多程序都会在同一点移动物品. 注意处理器不能直接在容器之间移动物品，这很重要.
+物品总是会通过处理器本身. 这就是为什么你需要互相'吸引'和'推出'物品.
+
+For many opcodes where you can access a normal inventory you can
+also access a storage system linked to a storage scanner. To do that
+you need to insert a storage screen module from RFTools into one of
+the 16 expansion slots of the Processor. Then to use this feature you
+just leave the 'inventory' parameter empty and it should access
+the storage where supported.
+{-------------------------------------------------------------}
+{b}Graphics
+{n:graphics}
+If you install a graphics card into your processor you will be able to do
+some limited vector graphics. You can draw lines, boxes and text and it is
+also possible to interact with your graphics in a limited way. There are
+two ways to display graphics: either you can use the built-in HUD (set
+to 'Gfx' mode) or else you can use an rftools screen with a 'vector art'
+module. If you want to interact with your graphics then the rftools screen
+is the only way. When working with graphics you have to know about
+three concepts: 'ids', 'colors', and 'coordinates'. I'll go over these in the
+next page.
+{-------------------------------------------------------------}
+{b}Ids
+Every graphics operation on a processor is identified by an 'id'. This is both
+needed to be able to modify a certain operation (i.e. replace the graphics
+represented by that id) as well as to control what operations are rendered
+first. Basically graphics operations are rendered with their id in
+alphabetical order.
+
+{b}Colors
+Colors are integers. It is easiest to represent them in hexadecimal notation
+like this: $AARRGGBB. A few examples to clarify this: $FF00FF00. Is a fully
+non-transparent green color. $55990000 is a transparent dark red color.
+
+{b}Coordinates
+Coordinates go from 0,0 (top-left corner) to 128,128 (bottom-right corner).
+{-------------------------------------------------------------}
+{b}Programming Concepts
+{n:concepts}
+A program in RFTools Control is made out of 'opcodes' that are
+arranged on a grid. Opcodes connect to other opcodes (through a
+green arrow or a red arrow in case of a test opcode) and they have
+parameters that can influence what they can do.
+
+The tooltip on an opcode in the programmer will give more
+information (press shift for even more information)
+{-------------------------------------------------------------}
+{b}Types
+{n:types}
+Parameters and variables are typed. That means that they have a specific
+type (like integer, string, ...) and need to be converted to be used as
+something else. Many conversions are done automatically. For example,
+if you need a string but the last result was an integer then the integer
+will automatically be converted into a string.
+
+The following types are currently implemented: string, integer, float,
+boolean, side (represents a side of the processor or one of the connected
+nodes), inventory (represents an inventory adjacent to the processor or a
+connected node and an optional side from which to access the inventory),
+item (an itemstack), and exception.
+{-------------------------------------------------------------}
+{b}Parameters
+{n:parameters}
+As mentioned before opcodes can have multiple parameters which control
+how the opcode works. Parameters always have a specific type. Many
+parameters are optional which you can see in the tooltip.
+
+Every parameter can be either a constant value, a reference to a
+variable, or a function. If you open the parameter editor in the
+programmer (the ... button) you can select between these three options
+with the buttons at the top.
+
+The available list of functions depends on the type of the parameter.
+Some types have no functions defined for them (yet).
+{-------------------------------------------------------------}
+{b}Variables
+{n:variables}
+A processor can store up to 32 variables. These are also typed just
+like parameters. Make sure to allocate the variables to the card slot
+that you need them for. All programs that are on the same card slot
+will share those variables automatically.
+
+You can also share variables with programs on other slots because
+it is possible to allocate a given variable to multiple cards.
+
+Note that accessing variables in programs needs a relative index.
+So variable 0 in a program means the first allocated variable for
+that card.
+{-------------------------------------------------------------}
+{b}Events
+{n:events}
+Programs written with RFTools Control are 'event driven'. That means they
+only start when there is some kind of event. An event can be a redstone
+pulse, a timer, a crafting request for some item and more.
+
+Most events have parameters that control when they are fired.
+
+Every program sequence (connected opcodes) on a card will need at least
+one event. Otherwise it can never run. It is possible to connect multiple
+events to the same program sequence.
+
+If an event fires it is executed on an available core. If no cores are
+available then it will be put in a waiting list. Except for the timer event.
+That one is discared if there are no cores available.
+{-------------------------------------------------------------}
+{b}Opcode Types
+{n:opcodes}
+The following types of opcodes are available:
+  * Events: at least one of them is needed for every program
+  * Operation: the standard operations
+  * Evaluate: an evaluation opcode. These typically do some
+    calculation or check and set the result for the next
+    opcode to use
+  * Test: these opcodes perform a boolean test and then do
+    a branch based on that test. Therefore these opcodes have
+    two outputs (a green and a red output)
+  * Wire: there is only one wire opcode. It is meant to connect
+    opcodes that are not adjacent
+{-------------------------------------------------------------}
+{b}Tokens
+{n:tokens}
+{ri:token}
+
+Tokens are items that serve no purpose except that they hold
+information. From within a program you can write any data to
+a token and then from another program read that data again.
+Tokens are regular items so you can transfer them and by doing
+that transmit the information anywhere you want.
+{-------------------------------------------------------------}
+{b}Concurrency
+{n:concurrency}
+As soon as you have multiple cores in your processor multiple programs
+can run at the same time. There are a few problems with this. First you
+must make sure that slots and variables are properly allocated in case
+where these programs don't share that info. This is the easy case.
+
+But sometimes you want to share data. For example, if you have one
+program putting items in some internal slots and another program getting
+them out again. To handle this safely you might sometimes want to use
+locks. A lock is global to the processor (for all programs on that
+processor) and it has a name. Only one program can hold a lock with some
+name. Other programs that want that lock will wait until the lock is
+available again. Make sure to always restore locks! If you forget
+you can use 'reset' to reset your processor and clean everything.
+{-------------------------------------------------------------}
+Another problem with concurrency is preventing one program to use up
+all the cores. For example, if you have a program that needs some time
+to execute and executes whenever there is a redstone signal then if
+you give two signals very quickly there might be multiple instances of
+that program running (if there are sufficient cores available).
+
+Sometimes this is ok but in many cases you might want only one instance
+of a given program running at every time. To do that you can use the
+'single' parameter that you can set with every event. If you make that
+true then this event can only be fired once and it will be locked until
+the program that was attached to that event stops running.
+{-------------------------------------------------------------}
+Another solution to concurrency can be the 'exclusive' option that you
+can select in the GUI of the processor. If this button is pressed then
+programs on card X can only execute on core X. So that means that
+every core if exclusively dedicated to programs on a single card.
+
+This feature can also be used when you have a processor that has a
+low tier and a high tier core installed. Using exclusive mode you can
+make sure that the more demanding programs only run on the high tier
+core.
+{-------------------------------------------------------------}
+{b}Debugging
+{n:debugging}
+You will make bugs. Repeat after me: you will make bugs! So what can you
+do to fix those bugs? There are a few techniques. First there is a 'log'
+opcode that you can use to dump messages on the console. It can show
+simple messages or even the contents of variables.
+
+But for more advanced debugging you might want to use the internal
+debugger. To use that you simply go to the processor and type:
+    db debug
+
+This will halt all programs that might currently be running and allow you
+to selectively singlestep them (i.e. execute them one instruction at a
+time).
+{-------------------------------------------------------------}
+To see where a specific program is at you can use:
+    db info
+
+To singlestep a program running on (for example) core 0 you would type:
+    db s 0
+
+This will execute the current instruction and show you the next
+instruction that is waiting for you to execute.
+You can also examine the last result with:
+    db last 0
+
+(or 'db last' to show all last results for all current programs)
+{-------------------------------------------------------------}
+While the program is being single stepped you can of course also
+examine variables by clicking the '...' button on the left (and
+change them).
+
+To resume all programs you do:
+    db resume
+{-------------------------------------------------------------}
+{b}Sharing Programs
+{n:sharing}
+The programmer supports the clipboard. You select opcodes, you can type
+Ctrl-C and the selected grid will be copied to the clipboard. This is a
+JSON file that you can share on the web. If you have such a program in
+your clipboard you can do Ctrl-V to paste it. If the program is small
+enough you can paste it in a section of your grid by clicking on the
+grid location where you want the left-top opcode to appear. If you
+select nothing it will try to place from the top-left corner. Note that
+it will merge what is in the clipboard with what is already there.
+
+Note that you can always use Ctrl-Z to undo this.
+
+To select opcodes you can use Ctrl-A for the entire grid or else
+ctrl-click for a single opcode and ctrl-double click for a sequence.
+{-------------------------------------------------------------}
