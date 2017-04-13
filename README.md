@@ -7,28 +7,28 @@
 
 -----
 ## 包含汉化
-[ ] arsmagica2 目前缺失部分汉化
-[ ] astralsorcery 目前缺失部分汉化
-[x] bigreactors 完成，作者不更新github
-[x] draconicevolution 完成，作者不接收
-[x] embers 完成，作者不更新1.10了
-[x] enderio 完成，作者不接收
-[x] engineersworkshop 完成，作者未更新
-[ ] extrautils2 目前缺失部分汉化，作者不接收
-[x] gravisuite 完成，作者未开放github
-[x] harvestcraft 完成，作者太奇葩自己搞错了
-[x] libvulpes 补全了部分汉化，修正了部分错误翻译，作者未接受
-[x] portalgun 完成，作者未开放github
-[x] practicallogistics2 完成，作者不接收
-[ ] psionup 目前缺失部分汉化
-[x] rftools 作者未接收，补充了手册汉化
-[ ] rftoolscontrol 目前缺失汉化
-[x] rftoolsdim 作者未接收，补充了手册汉化
-[x] simplyjetpacks 完成，作者不接收
-[x] stevescarts 完成，作者未更新
-[x] stevesfactorymanager 完成，作者未更新
-[x] thebetweenlands 完成，作者不接收
-[x] vitality 完成
-[x] woot 完成，作者未更新
-[ ] xnet 目前缺失部分汉化
-[ ] yunomakegoodmap 未知
+- [ ] arsmagica2 目前缺失部分汉化
+- [ ] astralsorcery 目前缺失部分汉化
+- [x] bigreactors 完成，作者不更新github
+- [x] draconicevolution 完成，作者不接收
+- [x] embers 完成，作者不更新1.10了
+- [x] enderio 完成，作者不接收
+- [x] engineersworkshop 完成，作者未更新
+- [ ] extrautils2 目前缺失部分汉化，作者不接收
+- [x] gravisuite 完成，作者未开放github
+- [x] harvestcraft 完成，作者太奇葩自己搞错了
+- [x] libvulpes 补全了部分汉化，修正了部分错误翻译，作者未接受
+- [x] portalgun 完成，作者未开放github
+- [x] practicallogistics2 完成，作者不接收
+- [ ] psionup 目前缺失部分汉化
+- [x] rftools 作者未接收，补充了手册汉化
+- [ ] rftoolscontrol 目前缺失汉化
+- [x] rftoolsdim 作者未接收，补充了手册汉化
+- [x] simplyjetpacks 完成，作者不接收
+- [x] stevescarts 完成，作者未更新
+- [x] stevesfactorymanager 完成，作者未更新
+- [x] thebetweenlands 完成，作者不接收
+- [x] vitality 完成
+- [x] woot 完成，作者未更新
+- [ ] xnet 目前缺失部分汉化
+- [ ] yunomakegoodmap 未知
