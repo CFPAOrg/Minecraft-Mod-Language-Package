@@ -35,4 +35,4 @@
 - [x] vitality 完成
 - [x] woot 完成，作者未更新
 - [ ] xnet 目前缺失部分汉化
-- [ ] yunomakegoodmap 未知
+- [x] yunomakegoodmap 作者不接收
