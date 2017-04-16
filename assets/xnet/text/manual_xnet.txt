@@ -1,0 +1,165 @@
+{b}XNet Manual
+
+Table of Contents:
+{l:intro}Introduction
+{l:basic}Basic Networking
+{l:advanced}Advanced Networking
+{l:types}Channel Types
+{l:netcolors}Network Colors
+{l:colors}Colored Cables
+{l:connector}Connectors
+{l:controller}Controller
+{l:router}Router
+{l:proxy}Redstone Proxy
+
+{-------------------------------------------------------------}
+{b}Introduction
+{n:intro}
+XNet is all about networking and transporting items, liquids, energy
+and information through the world. Using cables you connect various
+machines and blocks and in the controller you configure how things
+move through the created network. A cable can send all kinds of
+information. You don't need different cables for items, energy, or liquids.
+
+XNet is also very efficient and scalable. Cables are not tile entities
+and you can create huge cable networks without performance differences.
+{-------------------------------------------------------------}
+{b}Basic Networking
+{n:basic}
+A network (or local network) is represented by a number of machines
+and blocks connected using cables and connectors and one controller.
+Every network needs one controller (and not more) and it is the block
+that does the actual work.
+
+On a single network you can have up to eight channels for items, liquids,
+energy, and information. You can configure these channels in the UI of the
+controller.
+
+Every channel can be connected to as many blocks and machines as
+you want using connectors.
+{-------------------------------------------------------------}
+{b}Advanced Networking
+{n:advanced}
+Using routers one can connect multiple networks. A single router
+can connect up to 6 networks (one for each side). To do that simply
+connect the network to the router using a normal connector.
+
+Channels are only visible to the router if they are named. This can
+be done in the UI of the controller. These channels are called
+'named channels'.
+
+A named channel can then be published in the router by giving it
+a 'published name'. Only then can this channel be used by other
+networks (either local or remote).
+{-------------------------------------------------------------}
+{b}Channel Types
+{n:types}
+There are currently four different channel types:
+  * xnet.item: for transporting items
+  * xnet.energy: for transporting energy
+  * xnet.fluid: for transporting fluids
+  * xnet.logic: for sensors and logic control
+
+The logic channel is special. It allows you to create sensors to
+measure various things in other blocks (like number of items,
+amount of energy, ...) and then set a 'color' on the controller.
+
+Note that the logic channel doesn't do anything through a router
+right now.
+{-------------------------------------------------------------}
+{b}Network Color
+{n:netcolors}
+Using a logic channel and sensors you can enable or disable
+seven different colors in a controller. Basically a color is
+a boolean value that can be either on or off. You can use these
+colors in connections from all channel types to disable or
+enable a connection. Every connection can listen to four
+different colors and will only work if any set (non-black)
+color is enabled.
+{-------------------------------------------------------------}
+{b}Colored Cables
+{n:colors}
+Cables and connectors can have four different colors. Do not
+confuse these colors with network colors from the previous
+section! These cable colors allow you to place distinct
+networks right next to each other without them connecting.
+
+There is also a 'fifth' color which is for the routing cables
+and connectors.
+{-------------------------------------------------------------}
+{b}Connectors
+{n:connector}
+A connector is a part of the cable that can be used to connect
+to a machine. Placing a connector will automatically make a
+connection to any suitable block around it. Note that a connector
+in itself is not sufficient to do something. You need to actually
+create a connection in the controller.
+
+The advanced connector has more speed, and can also access
+the block from other sides then the one you are physically
+connecting too.
+
+Note that in the GUI of a connector you can give it a name to make
+it easier to identify connectors in the controller.
+{-------------------------------------------------------------}
+{b}Controller (part 1)
+{n:controller}
+{rb:controller}
+The controller is the main driver of a network. Every network
+needs one controller. It also needs power. In the GUI of the
+controller you can create up to 8 different channels with a
+given type. Then for each connected block on that channel you
+can create a connection. Depending on the type of the channel
+there are various parameters you can set on a connection.
+{-------------------------------------------------------------}
+{b}Controllers (part 2)
+Hint: it is often handy to disable a channel while you are
+working on it so that things don't start moving too soon. This
+can be done in the channel editor section.
+
+Note that in that section you can also give the channel a name.
+This is only needed for advanced networking using routers.
+{-------------------------------------------------------------}
+{b}Router (part 1)
+{n:router}
+{rb:router}
+The router is the block that can be used to connect distinct
+networks. On its own it can connect six different networks
+(one networks per side) but using routing cables you can also
+make a routing network and connect multiple routers.
+{-------------------------------------------------------------}
+{b}Router (part 2)
+In the GUI of the router you can see all named channels in all
+local networks (this is why it can be important to be able to
+name channels in the contoller). To make such a channel available
+to the routing network you need to 'publish' it. To do that
+you give it a global name in that list.
+
+All published channels of the same type and with the same published
+name will automatically connect. That means that a controller
+extracting items (from one of its locally connected blocks) will
+be able to insert items into all blocks connected locally or in
+connected channels from other networks.
+{-------------------------------------------------------------}
+{b}Router (part 3)
+On the right side of the GUI you can see all published channels
+from remote routers. Again channels connect automatically to them
+if they have the same type and name.
+
+Note that this only goes one step. If you have router A connected
+to router B and router B connected to router C then networks on
+router A can not see networks on router C. Even if they have the
+same published name.
+
+Also note that there is a limit of 32 published channels on a
+routing network.
+{-------------------------------------------------------------}
+{b}Redstone Proxy
+{n:orixt}
+{rb:redstone_proxy}
+The Redstone Proxy block is a very simple block that has no
+functionality on its own. It is special because connectors can
+also connect to it which allows you to access the redstone
+properties of it in a sensor. Using a sensor in a logic channel
+you can read out the amount of redstone going into the proxy block.
+{-------------------------------------------------------------}
