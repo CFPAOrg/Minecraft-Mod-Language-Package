@@ -1,0 +1,17 @@
+A Rail Configurator is the 'wrench' of Signals. It can be used to do various Signals-related tasks.
+
+[prefix{l}]Configuring cart schedules[prefix{}]
+By right-clicking a cart with a Rail Configurator in your hand you can configure which destinations the cart should go to. For more info, [link{signals:block/station_marker}]click here[link{}].
+
+[prefix{l}]Configuring filter behaviour[prefix{}]
+Right-click any inventory that is adjacent to a Station Marker to configure its filter behaviour. For more info, [link{signals:block/station_marker}]click once again here[link{}].
+
+[prefix{l}]Visualizing network info[prefix{}]
+When you hold a Rail Configurator in your hand, any [link{signals:block/station_marker}]Station Markers[link{}] having the same name will be connected with green lines. Additionally, when you sneak-right click, white lines indicate [link{signals:block/block_signal}]Block Signals[link{}] that are connected.
+
+[prefix{l}]Debugging: Clearing a rail network cache[prefix{}]
+To make Signal routing perform well, data about the rail network is saved (cached) by Signals. This prevents recalculating important information. A problem that might occur with this is that this information is not properly updated when it should. This would be a bug, information should update properly.
+
+However, if you suspect a system not working while it should, try sneak-right clicking a Rail Configurator. This will clear this cached data of the world you are currently in, and might solve your issue. This could cause a lag spike with big networks, as data will need to be reacquired.
+
+[crafting{200, 250, key=item/rail_configurator}]

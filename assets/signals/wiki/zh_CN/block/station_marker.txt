@@ -1,0 +1,38 @@
+A Station Marker is a block that is usually placed adjacent to a rail, and serves as a destination for carts to route to. By right-clicking a Station Marker you can rename the destination.
+
+If you give multiple Station Markers the same name, carts that are going to this destination have multiple options. When you're holding a Rail Configurator in your hand this is visualized with a green line.
+
+Note that when a cart has multiple options to go to, it will try to go to the closes Station Marker. If there is a red signal in the way to this marker, it will try to go a valid Station Marker that green signals.
+
+[crafting{200, 165, key=block/station_marker}]
+
+[prefix{l}]Configuring a cart schedule[prefix{}]
+Right-click any cart with a Rail Configurator. A window will be shown in which you can configure the schedule of the cart. You can enter multiple names of Station Markers in the world. The cart will then sequentially try to visit these stations. The station the cart is currently heading to is marked green.
+
+[prefix{l}]Advanced Routing: Items[prefix{}]
+By having a destination in the cart's schedule named 'ITEM', the cart will be routed depending on the contents of the cart (only applicable for carts that have an inventory).
+
+Any inventory adjacent to a Station Marker will act as a filter. If any of the items in the cart match any of the items in the adjacent inventory, the cart is allowed to route to this Station Marker. Particles will show when this is the case.
+
+You can configure options about this filtering by right clicking the adjacent inventory with a Rail Configurator. The options available are:
+[prefix{n}]Whitelist/blacklist [prefix{}] When whitelist, one of the items in this inventory needs to match one of the items in the cart. When blacklist, none of the items in the inventory are allowed to match.
+[prefix{n}]Check damage [prefix{}] With this you can specify whether or not differently damaged items should be considered as the same, or not.
+[prefix{n}]Check NBT [prefix{}] With this you can specify whether or not items with different enchantments should be considered as the same (for example), or not.
+[prefix{n}]Check Ore Dictionary [prefix{}] With this you can specify whether or not Copper Ingots from different mods should be considered as the same (for example), or not.
+[prefix{n}]Check Mod similarity [prefix{}] When enabled, carts will be able to route to this Station Marker if one of the items in the cart was added by the same mod as one of the items in this inventory.
+
+Also note that all Station Markers with the same name will share their inventory behaviour. For example, it is possible to have a Station Marker not connected to a rail, with a Chest adjacent to it, just to provide filtering for a equally named Station Marker that is connected to a rail.
+
+[prefix{l}]Advanced Routing: Regular expressions[prefix{}]
+When configuring a schedule for carts, you can simply individually enter the names of Station Markers. However, it is possible to do more advanced things, as in fact, the destination is treated as a [link{http://www.regular-expressions.info/}]regular expression[link{}].
+
+Don't worry if this is too complicated. Down below are a few common examples you might want to use:
+
+[prefix{l}]leftStation|rightStation [prefix{}]
+Either a Station Marker named 'leftStation' or one named 'rightStation' is allowed to be routed to. Note that the '|' is a piping charactor, not a colon.
+
+[prefix{l}]Station.* [prefix{}]
+Any Station Marker where its name begins with 'Station' can be routed to.
+
+[prefix{l}].*Station [prefix{}]
+Any Station Marker where its name ends with 'Station' can be routed to.
