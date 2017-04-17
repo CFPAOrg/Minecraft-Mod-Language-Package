@@ -1,165 +1,158 @@
 {b}XNet Manual
 
 Table of Contents:
-{l:intro}Introduction
-{l:basic}Basic Networking
-{l:advanced}Advanced Networking
-{l:types}Channel Types
-{l:netcolors}Network Colors
-{l:colors}Colored Cables
-{l:connector}Connectors
-{l:controller}Controller
-{l:router}Router
-{l:proxy}Redstone Proxy
+{l:intro}介绍
+{l:basic}基本网络
+{l:advanced}高级网络
+{l:types}频道类别
+{l:netcolors}网络信号色
+{l:colors}染色线缆
+{l:connector}连接器
+{l:controller}控制器
+{l:router}路由器
+{l:proxy}红石代理
 
 {-------------------------------------------------------------}
-{b}Introduction
+{b}介绍
 {n:intro}
-XNet is all about networking and transporting items, liquids, energy
-and information through the world. Using cables you connect various
-machines and blocks and in the controller you configure how things
-move through the created network. A cable can send all kinds of
-information. You don't need different cables for items, energy, or liquids.
 
-XNet is also very efficient and scalable. Cables are not tile entities
-and you can create huge cable networks without performance differences.
+XNet致力于物品、流体、能量和信息的网络搭建与传输。你可以用线缆连接多种多样
+的机器和方块，并在控制器创建网络，定义他们的交互方式。只用一根线缆，就可以
+传输所有的东西，你再也不用为了物品、能量和流体的传输搭建不同的管道了。
+
+与此同时，XNet还具有较高的运行效率和可扩展性。在这里，线缆不是实体，也就是
+说，就算搭建了一个超大的网络，你也不必担心卡机。
+
 {-------------------------------------------------------------}
-{b}Basic Networking
+{b}基本网络
 {n:basic}
-A network (or local network) is represented by a number of machines
-and blocks connected using cables and connectors and one controller.
-Every network needs one controller (and not more) and it is the block
-that does the actual work.
 
-On a single network you can have up to eight channels for items, liquids,
-energy, and information. You can configure these channels in the UI of the
-controller.
+一个网络由一个控制器，线缆和连接器以及连接器相连的机器或者方块构成。一个
+网络有且只有一个控制器，实际的操作都由它来完成。
 
-Every channel can be connected to as many blocks and machines as
-you want using connectors.
+在一个单线网络中，你最多可以建立8个频道，分别传输物品、流体、能量和信息。
+你可以在控制器中设置这些频道。
+
+每一个频道都可以和任意多个方块或者机器相连。
+
 {-------------------------------------------------------------}
-{b}Advanced Networking
+{b}高级网络
 {n:advanced}
-Using routers one can connect multiple networks. A single router
-can connect up to 6 networks (one for each side). To do that simply
-connect the network to the router using a normal connector.
 
-Channels are only visible to the router if they are named. This can
-be done in the UI of the controller. These channels are called
-'named channels'.
+路由器可以连接多个网络。一个路由器可以在六个面接上不同网络。如果你想
+把不同的网络连接起来，把连接器连接到路由器上就好了。
 
-A named channel can then be published in the router by giving it
-a 'published name'. Only then can this channel be used by other
-networks (either local or remote).
+只有命名的频道才能被路由器识别。你可以在控制器中找到频道命名的功能，
+这些频道被称为“已命名频道”。
+
+在路由器上给予已命名频道一个“发布名”，可以让其在路由器上被公开，这样
+这个频道就能通过路由器被其他网络使用了（无论是本地还是远程）。
+
 {-------------------------------------------------------------}
-{b}Channel Types
+{b}频道类别
 {n:types}
-There are currently four different channel types:
-  * xnet.item: for transporting items
-  * xnet.energy: for transporting energy
-  * xnet.fluid: for transporting fluids
-  * xnet.logic: for sensors and logic control
 
-The logic channel is special. It allows you to create sensors to
-measure various things in other blocks (like number of items,
-amount of energy, ...) and then set a 'color' on the controller.
+目前有四种不同的频道类别：
+xnet.item：用于传输物品
+xnet.energy：用于传输能量
+xnet.fluid：用于传输流体
+xnet.logic：用于传感器和逻辑控制
 
-Note that the logic channel doesn't do anything through a router
-right now.
+其中逻辑频道较为特殊，它可以让你创建传感器检测方块的状态（比如物品
+数量，能量储存量等等）之后向控制器发送特定颜色的信号。
+
+需要注意的是逻辑频道不能藉由路由器工作。
+
 {-------------------------------------------------------------}
-{b}Network Color
+{b}网络信号色
 {n:netcolors}
-Using a logic channel and sensors you can enable or disable
-seven different colors in a controller. Basically a color is
-a boolean value that can be either on or off. You can use these
-colors in connections from all channel types to disable or
-enable a connection. Every connection can listen to four
-different colors and will only work if any set (non-black)
-color is enabled.
+
+使用逻辑频道和传感器，你可以改变控制器中七种网络信号色的状态。
+
+简单来说，这其中网络信号色代表了七个不同的布尔量，有高电平和低电平
+两种状态。在所有类别的频道里你都能使用这七个信号色控制连接器是否启
+用。每个连接器可以监听四个不同的网络信号色（黑色不算），并且只有在
+任意网络信号色为高电平状态的时候才会工作。
+
 {-------------------------------------------------------------}
-{b}Colored Cables
+{b}染色线缆
 {n:colors}
-Cables and connectors can have four different colors. Do not
-confuse these colors with network colors from the previous
-section! These cable colors allow you to place distinct
-networks right next to each other without them connecting.
 
-There is also a 'fifth' color which is for the routing cables
-and connectors.
+线缆和连接器有四种不同的颜色，请不要将这里的颜色和上一节的网络信号
+色混淆。这些染色线缆能让你区分相邻的线缆，让他们不相互连接。
+
+对于路由线缆和连接器，还有一种不同的颜色以示区别。
+
 {-------------------------------------------------------------}
-{b}Connectors
+{b}连接器
 {n:connector}
-A connector is a part of the cable that can be used to connect
-to a machine. Placing a connector will automatically make a
-connection to any suitable block around it. Note that a connector
-in itself is not sufficient to do something. You need to actually
-create a connection in the controller.
 
-The advanced connector has more speed, and can also access
-the block from other sides then the one you are physically
-connecting too.
+连接器是线缆用以连接机器的部分。放置连接器后，它会自动连接到周围可
+识别的方块上.
 
-Note that in the GUI of a connector you can give it a name to make
-it easier to identify connectors in the controller.
+需要注意的是只有连接器是不够的，还需要在控制器建立通路才能让连接工作。
+高级连接器速度更快，并且能访问一个方块的所有面而不仅仅是你摆放连接器
+的那一个面。
+
+右键单击可以打开连接器的GUI，为这个连接器命名，这样你可以在控制器中
+更方便的找到它。
+
 {-------------------------------------------------------------}
-{b}Controller (part 1)
+{b}控制器（第一部分）
 {n:controller}
 {rb:controller}
-The controller is the main driver of a network. Every network
-needs one controller. It also needs power. In the GUI of the
-controller you can create up to 8 different channels with a
-given type. Then for each connected block on that channel you
-can create a connection. Depending on the type of the channel
-there are various parameters you can set on a connection.
-{-------------------------------------------------------------}
-{b}Controllers (part 2)
-Hint: it is often handy to disable a channel while you are
-working on it so that things don't start moving too soon. This
-can be done in the channel editor section.
 
-Note that in that section you can also give the channel a name.
-This is only needed for advanced networking using routers.
+控制器是网络的核心部分。每个网络都要有一个控制器。控制器需要消耗电能。
+在控制器的GUI界面，你能新建最多八个不同的属于前文所述四种类别之一的频道。
+然后你就可以在任意连接到网络的方块之间建立连接了。根据频道类别的不同，
+你可以在控制器中设置不同的参数。
+
 {-------------------------------------------------------------}
-{b}Router (part 1)
+{b}控制器（第二部分）
+
+提示：在设置一个频道的时候最好先把它禁用，欲速则不达。
+你可以在频道编辑器那里找到这个选项（那个“V”）。同时，在频道编辑器中
+你还可以给频道命名，当然，除非使用路由器进行高级网络连接，否则这并
+没有什么卯月。
+
+{-------------------------------------------------------------}
+{b}路由器（第一部分）
 {n:router}
 {rb:router}
-The router is the block that can be used to connect distinct
-networks. On its own it can connect six different networks
-(one networks per side) but using routing cables you can also
-make a routing network and connect multiple routers.
-{-------------------------------------------------------------}
-{b}Router (part 2)
-In the GUI of the router you can see all named channels in all
-local networks (this is why it can be important to be able to
-name channels in the contoller). To make such a channel available
-to the routing network you need to 'publish' it. To do that
-you give it a global name in that list.
 
-All published channels of the same type and with the same published
-name will automatically connect. That means that a controller
-extracting items (from one of its locally connected blocks) will
-be able to insert items into all blocks connected locally or in
-connected channels from other networks.
-{-------------------------------------------------------------}
-{b}Router (part 3)
-On the right side of the GUI you can see all published channels
-from remote routers. Again channels connect automatically to them
-if they have the same type and name.
+路由器是可以连接不同网络的方块。它本身只能连接六个网络（每面一个），但是使用
+路由线缆，你可以将多个路由器连接起来，组成一个路由网络。
 
-Note that this only goes one step. If you have router A connected
-to router B and router B connected to router C then networks on
-router A can not see networks on router C. Even if they have the
-same published name.
-
-Also note that there is a limit of 32 published channels on a
-routing network.
 {-------------------------------------------------------------}
-{b}Redstone Proxy
+{b}路由器（第二部分）
+
+在路由器的GUI中，你可以看到所有与之相连的已命名网络（这也就是为什么
+能在控制器中命名网络如此重要）。想让一个频道能够在路由网络中可用，
+你需要“公开”它。只要在列表中给予它一个全局名称就行了。
+
+所有的已公开频道，只要名称和类别一致，就会自动连接在一起。也就是说，
+如果一个控制器抽出物品（从其本地网络连接的一个方块中），是可以将
+抽出的物品输送到频道中所有的方块中的，无论是本地的还是其他网络的都可以。
+
+{-------------------------------------------------------------}
+{b}路由器（第三部分）
+
+在路由器GUI的右侧，你可以看到其他路由器上所有已公开的频道。同样，
+只要名称和类别一致，就会自动连接在一起。
+
+需要注意的是这种链接只能存在于两个路由器之间。如果你把路由器A和路由器B
+相连，路由器B再和路由器C相连，那么就算有相同的发布名，路由器A的频道
+也是没法跟路由器C的频道相连的。
+
+还有一点就是在一个路由网络中，最多只能存在32个公开频道。
+
+{-------------------------------------------------------------}
+{b}红石代理
 {n:orixt}
 {rb:redstone_proxy}
-The Redstone Proxy block is a very simple block that has no
-functionality on its own. It is special because connectors can
-also connect to it which allows you to access the redstone
-properties of it in a sensor. Using a sensor in a logic channel
-you can read out the amount of redstone going into the proxy block.
+
+红石代理是一个很简单的方块。它本身无法工作，需要和连接器连接在一起
+，这样你可以在传感器中使用它。在逻辑频道中新建一个传感器，你可以测
+量通过红石代理的红石信号大小。
+
 {-------------------------------------------------------------}
