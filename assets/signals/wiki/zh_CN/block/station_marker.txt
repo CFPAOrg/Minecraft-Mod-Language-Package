@@ -1,38 +1,38 @@
-A Station Marker is a block that is usually placed adjacent to a rail, and serves as a destination for carts to route to. By right-clicking a Station Marker you can rename the destination.
+车站标记是一个经常紧挨着轨道放置的方块，并且作为一个目的地向路由到它的矿车提供服务。通过右键点击车站标记你可以重命名目的地。
 
-If you give multiple Station Markers the same name, carts that are going to this destination have multiple options. When you're holding a Rail Configurator in your hand this is visualized with a green line.
+如果你给多个车站标记相同的名字，前往这个目的地的矿车拥有多种选择。当你手上正拿着一个轨道配置器这一点会被绿线具现。
 
-Note that when a cart has multiple options to go to, it will try to go to the closes Station Marker. If there is a red signal in the way to this marker, it will try to go a valid Station Marker that green signals.
+注意当一个矿车拥有多种前进的选择时，它将尝试前往更近的车站标记。如果在去这个车站标记的路上有一个红色信号灯，它将尝试去一个是绿色信号灯的有效的车站标记。
 
 [crafting{200, 165, key=block/station_marker}]
 
-[prefix{l}]Configuring a cart schedule[prefix{}]
-Right-click any cart with a Rail Configurator. A window will be shown in which you can configure the schedule of the cart. You can enter multiple names of Station Markers in the world. The cart will then sequentially try to visit these stations. The station the cart is currently heading to is marked green.
+[prefix{l}]配置一个矿车时刻表[prefix{}]
+用轨道配置器右键点击任意矿车。一个你能够配置矿车时刻表的窗口将被展示。你可以输入在这个世界的车站标记的多种名称。矿车将会相继地尝试达到它们的车站。车站的矿车的当前朝向将被绿色标记。
 
-[prefix{l}]Advanced Routing: Items[prefix{}]
-By having a destination in the cart's schedule named 'ITEM', the cart will be routed depending on the contents of the cart (only applicable for carts that have an inventory).
+[prefix{l}]高级路由：物品[prefix{}]
+通过在矿车的时刻表中一个目的地命名为'ITEM'，矿车将根据矿车的内容被路由（仅适用于有物品缓存的矿车）。
 
-Any inventory adjacent to a Station Marker will act as a filter. If any of the items in the cart match any of the items in the adjacent inventory, the cart is allowed to route to this Station Marker. Particles will show when this is the case.
+任何紧挨着车站标记的容器将作为一个过滤器工作。如果矿车内的任意物品与紧挨着的箱子内的物品相匹配，矿车被允许路由到这个车站标记。这种情况下会有粒子效果显示。
 
-You can configure options about this filtering by right clicking the adjacent inventory with a Rail Configurator. The options available are:
-[prefix{n}]Whitelist/blacklist [prefix{}] When whitelist, one of the items in this inventory needs to match one of the items in the cart. When blacklist, none of the items in the inventory are allowed to match.
-[prefix{n}]Check damage [prefix{}] With this you can specify whether or not differently damaged items should be considered as the same, or not.
-[prefix{n}]Check NBT [prefix{}] With this you can specify whether or not items with different enchantments should be considered as the same (for example), or not.
-[prefix{n}]Check Ore Dictionary [prefix{}] With this you can specify whether or not Copper Ingots from different mods should be considered as the same (for example), or not.
-[prefix{n}]Check Mod similarity [prefix{}] When enabled, carts will be able to route to this Station Marker if one of the items in the cart was added by the same mod as one of the items in this inventory.
+你可以配置过滤器的选项通过拿着轨道配置器右键点击紧挨着的容器。可找到的选项包括：
+[prefix{n}]白名单/黑名单 [prefix{}] 当选白名单时，容器内的一个物品需要与矿车内的一个物品相匹配。当选黑名单时，容器内不能有一个物品与之相匹配。
+[prefix{n}]检查损害值 [prefix{}] 你可以用此项明确规定是否不同损害值的物品应该被当作同一物品。
+[prefix{n}]检查NBT数据 [prefix{}] 你可以用此项明确规定是否拥有不同魔咒的附魔物品应该被当作同一物品（举个例子）。
+[prefix{n}]检查矿物辞典 [prefix{}] 你可以用此项明确规定是否来自不同模组的铜锭应该被当作同一个（举个例子）。
+[prefix{n}]检查相同模组 [prefix{}] 当其启用时，矿车将能够被路由至这个车站标记如果矿车内的一个物品和容器内的一个物品是同一个模组添加的。
 
-Also note that all Station Markers with the same name will share their inventory behaviour. For example, it is possible to have a Station Marker not connected to a rail, with a Chest adjacent to it, just to provide filtering for a equally named Station Marker that is connected to a rail.
+另外注意所有拥有相同名称的车站标记将分享它们的容器内容。例如，建立一个没有连接至铁路的车站标记是有可能的，放置一个箱子紧挨着它，仅用来提供过滤器给相同名称的连接着铁路的车站标记。
 
-[prefix{l}]Advanced Routing: Regular expressions[prefix{}]
-When configuring a schedule for carts, you can simply individually enter the names of Station Markers. However, it is possible to do more advanced things, as in fact, the destination is treated as a [link{http://www.regular-expressions.info/}]regular expression[link{}].
+[prefix{l}]高级路由：正则表达式[prefix{}]
+当配置为矿车一个时刻表时，你可以简单地单独输入车站标记的名称。然而，做更多高级的事情是有可能的，因为事实上，目的地是被当作[link{http://www.regular-expressions.info/}]正则表达式[link{}]对待的。
 
-Don't worry if this is too complicated. Down below are a few common examples you might want to use:
+不要担心这很复杂。下面是一些你可能想要使用的常见的例子：
 
 [prefix{l}]leftStation|rightStation [prefix{}]
-Either a Station Marker named 'leftStation' or one named 'rightStation' is allowed to be routed to. Note that the '|' is a piping charactor, not a colon.
+a Station Marker命名为'leftStation'或命名为'rightStation'是允许被路由的。注意'|'是一个“管子”符号，不是冒号。
 
 [prefix{l}]Station.* [prefix{}]
-Any Station Marker where its name begins with 'Station' can be routed to.
+任意名称为'Station'开头的车站标记是能被路由的。
 
 [prefix{l}].*Station [prefix{}]
-Any Station Marker where its name ends with 'Station' can be routed to.
+任意名称为'Station'结尾的车站标记是能被路由的。
