@@ -1,17 +1,17 @@
-A Block Signal is a block used to control rail traffic on a rail network. If you are familiar with either OpenTTD or Factorio rail signaling, you will know how this works.
+信号盒是一个被用在铁路网络中控制铁路交通的方块。如果你熟悉运输大亨豪华版(OpenTTD)或者异星工厂(Factorio)的铁路信号,你将知道它怎样工作。
 
-In the screenshot below a simple system is shown with three Block Signals:
+在下面这张屏幕截图中展示了一个由三个信号盒组成的简单系统：
 
 [image{200, 95, 0.45, signals:textures/wiki/block_signal.png}]
 
-These block signals divide the track into three different 'block sections'. These are marked with different colors of wool. Signals make sure that only one cart is allowed on a section at a time. The signal will only turn green when the next section is free.
+这些信号盒将轨道分割成三段不同的“轨道区域”。它们被不同颜色的羊毛标记。信号确保在每段区域中一次只能通过一个矿车。信号将会仅在该段区域空闲时转变为绿灯。
 
-In the situation in the screenshot you can see that the cart in the top is held by the signal, because another cart is still on the red section (note that the carts are traveling counter-clockwise).
+在这张截图的情景中，你可以看到上方的矿车被信号暂留了，因为另一矿车仍然在红色区域（注意这个矿车是逆时针行驶的）。
 
-When signals are green, they emit a redstone signal. This usually can be used to activate powered rails right next to the signal.
+当信号灯变绿时，它们会发出一个红石信号。这经常被用于激活在信号盒旁边的充能铁轨。
 
-When signals [prefix{n}]turn [prefix{}]green, they additionally give a nudge to carts next to the signal. This nudge reaches up to 5 rails in front of the signal. This is however limited to the track type used next to the Block Signal. To make it more clear, in above screenshot, the nudge will only be applied to carts on the powered tracks next to the signal, it will not reach to the normal tracks before that.
+当信号灯[prefix{n}]变[prefix{}]绿时，它们会额外地给予信号盒旁的矿车一个轻推。轻推能让矿车前进到信号盒前方的五个轨道的距离。然而无论怎样这就限制了在信号盒旁使用的轨道类型。说得更清楚一点，在上面的截图中，轻推将只会作用在信号盒旁的充能铁轨上的矿车，它将不会达到前面的普通轨道。
 
-The purpose of the nudge is to make the cart go when standing still on powered rails.
+轻推的目的是让仍然停留在充能铁轨上的矿车前进。
 
 [crafting{200, 530, key=block/block_signal}]
