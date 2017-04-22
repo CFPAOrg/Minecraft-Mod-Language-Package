@@ -73,10 +73,11 @@ item.Woot:factorycap.name=工厂顶端
 item.Woot:factoryconnector.name=工厂线缆
 
 item.Woot:factoryFrame.name=工厂框架 [已取消]
+
 waila.Woot:factory.tier=%s级工厂
 waila.Woot:factory.mob=生成 %s
 waila.Woot:factory.rate=每生成 %d 个生物需 %d ticks
-waila.Woot:factory.cost=每生成生物需消耗 %dRF @ %dRF/tick
+waila.Woot:factory.cost=每次生成需消耗 %dRF @ %dRF/tick
 waila.Woot:controller.tier=需要等级 %s
 waila.Woot:factory.running=工厂正在运行
 waila.Woot:factory.stopped=工厂已停止工作
@@ -111,6 +112,8 @@ config.Woot:globalTierIVMobList=List of entities that need a Tier IV factory
 config.Woot:globalDropBlacklist=List of items to never generate from the factory
 config.Woot:globalPrismUseWhitelist=Use the prism whitelist - ignores the blacklist
 config.Woot:globalSpawnCostList=List of mobs and spawn costs
+config.Woot:globalAllowEnderDagon=Allow EnderDragon to be spawned in the factory
+config.Woot:globalMaxPower=Maximum energy storage of a factory
 
 config.Woot:rateI_RFTick=Rate I cost (RF/tick)
 config.Woot:rateII_RFTick=Rate II cost (RF/tick)
@@ -163,7 +166,8 @@ tooltip.Woot:upgrade_xp_base_effect=收集经验
 tooltip.Woot:upgrade_mass_effect=生成%d个生物
 tooltip.Woot:upgrade_decap_effect=提高%d%%的斩首几率
 tooltip.Woot:upgrade_efficiency_effect=减少工厂能量消耗%d%%
-tooltip.Woot:upgrade_bloodmagic_effect=产生生命源质.当与储罐相连时：%d献祭符文，当与祭坛相连时：%d生命源质
+tooltip.Woot:upgrade_bloodmagic_effect=产生生命源质。当与储罐相连时：%d献祭符文，当与祭坛相连时：%d生命源质
+
 tooltip.Woot:upgrade.rate_i=生成速率I
 tooltip.Woot:upgrade.rate_ii=生成速率II
 tooltip.Woot:upgrade.rate_iii=生成速率III
@@ -186,6 +190,9 @@ tooltip.Woot:upgrade.bloodmagic_i=血魔法I
 tooltip.Woot:upgrade.bloodmagic_ii=血魔法II
 tooltip.Woot:upgrade.bloodmagic_iii=血魔法III
 
+tooltip.Woot:extender=用以将生物工厂下方的面与生物工厂代理端口相连
+tooltip.Woot:proxy=与生物工厂中继器底部相连，其任意面都可接受能量或与容器相连
+
 tooltip.Woot:xpShard.0=右键使用以获得经验
 tooltip.Woot:xpShard.1=给予%d点经验
 tooltip.Woot:prism.0=攻击以标记生物
@@ -193,6 +200,7 @@ tooltip.Woot:prism.1=在控制器上使用以控制工厂
 
 chat.Woot:prism.invalid=%s不能被捕捉(%s)
 chat.Woot:prism.program=%s已被标记(%s)
+chat.Woot:mob.invalid=%s已被列入黑名单(%s)
 
 commands.Woot:woot.usage=/woot <status|mobs|blacklist|tiers|prism|cost|flush {all|<mob>}|loot <mob> [detail]|give <player> <mob> <xp>|dev {true|false}>
 commands.Woot:woot.dev.summary=Dev mode to %s
@@ -201,16 +209,17 @@ commands.Woot:woot.flush.all.summary=Flushed all loot data for all mobs
 commands.Woot:woot.status.summary=Learning status for %s %s
 commands.Woot:woot.mobs.summary=Known mobs: %s
 commands.Woot:woot.loot.summary=Learned loot for %s/%s: %s
-commands.Woot:woot.blacklist.summary=Factory blacklisted items: %s
-commands.Woot:woot.tiers.summary=Mob %s requires %s
-commands.Woot:woot.prism.blacklist.summary=Prism blacklisted mobs: %s
-commands.Woot:woot.prism.whitelist.summary=Prism whitelisted mobs: %s
-commands.Woot:woot.cost.summary=Mob %s costs %d xp
+commands.Woot:woot.blacklist.summary=生物工厂黑名单物品：%s
+commands.Woot:woot.tiers.summary=%s需要%s
+commands.Woot:woot.prism.blacklist.summary=黑名单生物：%s
+commands.Woot:woot.prism.whitelist.summary=白名单生物：%s
+commands.Woot:woot.cost.summary=%s需消耗%d经验
 
-validate.Woot:factory.missing_controller=%s: 没有生物控制器
-validate.Woot:factory.missing_mob=%s: 没有在生物控制器中标记生物
-validate.Woot:factory.invalid_block=%s: 无效的方块，在 %d, %d, %d 应为 %s
-validate.Woot:factory.mob_tier=%s: 该生物需要更高级的工厂
+validate.Woot:factory.missing_controller=%s：没有生物控制器
+validate.Woot:factory.missing_mob=%s：没有在生物控制器中标记生物
+validate.Woot:factory.invalid_block=%s：无效的方块，在 %d, %d, %d 应为 %s
+validate.Woot:factory.mob_tier=%s：该生物需要更高级的工厂
+validate.Woot:factory.blocks_ok=%s：有效结构
 
 ritual.Woot:ritualInfernalMachine=地狱机器
 ritual.Woot:ritualInfernalMachine.info=以生命源质填充临近的储罐或者一个附近的血之祭坛
@@ -218,86 +227,92 @@ ritual.Woot:ritualInfernalMachine.info=以生命源质填充临近的储罐或�
 enchantment.woot_decapitate=斩首
 
 book.Woot:cover.title=
-book.Woot:cover.0=Woot - The Alternative Mob Spawner/Grinder System
-book.Woot:cover.1=How to build, program and run your Mob Factory
+book.Woot:cover.0=Woot - 一个用以替代怪物磨床的系统
+book.Woot:cover.1=如何搭建、设计与运行你的生物工厂
 
-book.Woot:introduction.title=Introduction
-book.Woot:introduction.0=Welcome to the user manual for you new Mob Factory, the safe, easy, clean way to murder your favourite mobs for their goodies. Never again will you have to mess around with spawning, killing and cleaning up behind all those mobs. You can also expand your Mob Factory with handy upgrades.
-book.Woot:introduction.1=So sit back and relax as you peruse this handy manual to learn how to build, program and safely operate your new factory.
+book.Woot:introduction.title=介绍
+book.Woot:introduction.0=欢迎您阅读一个新型生物工厂的用户指导手册，该生物工厂能够以安全而又简洁的方式来屠杀你所需要的生物以获得战利品。有了它，您将再也不会为了生成生物、击杀生物、收集战利品而搞得周围一团糟。与此同时，您还可以用各种便利的升级来扩展您的生物工厂。
+book.Woot:introduction.1=所以请您坐下来，放轻松阅读这本手册来仔细学习如何搭建、设计与安全运行您的新型生物工厂。
 
-book.Woot:crafting.title=How To Craft
-book.Woot:crafting.0=You will need two basic item types to start building the components of your factory. A Yah Hammer and some dyes. You use the hammer, some obsidian to hit it against, a dye and some materials to craft. You get the hammer, dye and obsidian back after each craft.
-book.Woot:crafting.1=Create one of each of the seven dyes and they will serve you the lifetime of your factory.
+book.Woot:crafting.title=如何合成
+book.Woot:crafting.0=在开始制作生物工厂所需的组建前，你需要两种基本物品———一个Yah锤子和一些模具。使用锤子、黑曜石、模具和一些材料用以合成。每次合成后都会返还锤子、模具和黑曜石。
+book.Woot:crafting.1=您总共需要制作七种模具，它们会在日后为您效劳并陪伴您搭建工厂的一生。
 
-book.Woot:resoures.title=Resources
-book.Woot:resources.0=The basic building material for the factories is UnderIron. It doesn't spawn in the world. You will need to create Pulverised UnderIorn using the Yah Hammer, a Mesh Dye, Iron and Nether Brick. The just smelt it to the UnderIron.
+book.Woot:resoures.title=资源
+book.Woot:resources.0=下届铁锭是搭建工厂所需要的基础材料。它不会在世界中生成。您需要使用Yah锤子、一个网状模具、铁锭和地狱砖来制作粉碎下届铁锭。将其烧制即可得到下届铁锭。
 
-book.Woot:building.title=Building A Factory
-book.Woot:building.0=The factory comes in different tiers. So craft yourself a Layout block and place it one block above the ground. It will then show you which blocks go where in the multiblock. All factories require a number of coloured structure blocks and cap stones for that tier. Right-click the layout block to cycle through the different tiers.
-book.Woot:building.1=Once you have placed all the blocks, break the Layout block and put the Mob Factory block in its place. Then put a Mob Controller above that. Right-click the Mob Controller with a captured mob in a Mob Prism and the factory will form. When you break the Mob Controller the mob will still be programmed, so you can swap Mob Controller to change between mobs you want to spawn.
-book.Woot:building.2=If you factory does not form, then you can right-click the Mob Factory block for information as to what is wrong. The factory will not form if you are trying to use a higher tier mob in a lower tier factory.
+book.Woot:building.title=搭建一个工厂
+book.Woot:building.0=工厂分为不同的等级。所以您需要合成一个指导石并将其放置在高出地面一格的方块上。它将会告诉您如何搭建这个多方块结构。所有的工厂都需要大量的不同颜色的生物工厂方块和相应等级的拱顶石。右键指导石以循环展示不同等级工厂的搭建方法。
+book.Woot:building.1=当您摆好了所有所需方块时，拆掉指导石并在其位置上摆上生物工厂。然后在其上方摆上一个生物控制器。手持一个捕捉过生物的生物棱镜右击生物控制器，生物工厂便会成型。当您破坏掉生物控制器时，标记的生物仍会保存，所以您可以通过交换生物控制器的方法来在您想要的生成的生物间来回切换。
+book.Woot:building.2=如果您的工厂没有成型，可以右键生物工厂以获取错误信息。如果您在低级工厂中标记了高级生物的话，工厂同样不会成型。
+book.Woot:building.3=工厂必须在Y=10以上的地方搭建，因为……这东西的建筑规模……
 
-book.Woot:capturing.title=Capturing Mobs
-book.Woot:capturing.0=It is not so much capturing mos, more poking them a bit then running away before they get angry. So you need to craft a Mob Prism and quietly approach the mob of your choice. Then gently prod the mob with the prism. You know have a programmed Mob Prism. The prism tooltip will tell you the minimum tier of factory that is required to spawn this mob.
-book.Woot:capturing.1=This would now be a good time to run away from the mob, depending on how it reacts to getting poked. If you have just poked a Wither Boss, I would RUN AWAY VERY FAST.
+book.Woot:capturing.title=捕捉生物
+book.Woot:capturing.0=严格意义上讲这不能叫捕捉生物，因为你只需要戳一下，然后在激怒他们之前溜掉就好。为此你需要制作一个生物棱镜，然后悄悄地靠近你选中的生物。然后用棱镜轻轻地戳一下。你就拥有了标记过的生物棱镜。棱镜的附加信息会告诉你这种生物所需工厂的最低等级。
+book.Woot:capturing.1=你逃跑的最佳时间取决于生物的反应程度。如果你刚刚戳了只凋零，我反正会能跑多块跑多快。
 
-book.Woot:operation.title=Running A Factory
-book.Woot:operation.0=Once you have your formed factory, you just need two things. The easy one of these is somewhere to put the generated loot. Be default the inventory must be placed in front of the Mob Factory. If you find that messy, then have a look at the Factory Proxy block.
-book.Woot:operation.1=The difficult bit is power. Depending on the mob, the factory tier and the upgrades installed you will need different amounts of power. Power is applied to the bottom of the Mob Factory block. Again you can look at the Factory Proxy as an alternative.
+book.Woot:operation.title=运行工厂
+book.Woot:operation.0=一旦你有了一个已成型的工厂，你只需要两个东西。其中一个比较简单的是你要有一个存放生成的战利品的地方。默认情况下，容器必须放在生物工厂的前面。如果你觉得放在前面很乱的话，你可以看看生物工厂代理端口。
+book.Woot:operation.1=而比较难的是能量。根据生物种类、工厂等级以及安装的升级，需要不同的能量。能量从生物工厂的底面输入。同样的，您也可以看看可以作为替代品的生物工厂代理端口。
 
-book.Woot:power.title=How Much Power?
-book.Woot:power.0=The power required to spawn depends on the following:<br><br>The cost to run the factory Tier<br>How expensive the mob is<br>How many mobs are being spawned<br>How quick the mobs spawning<br>How many upgrade are installed
+book.Woot:power.title=需要多少能量？
+book.Woot:power.0=生成生物所需的能量取决于以下因素：<br><br>工厂等级<br>生物等级<br>生成数量<br>生成速度<br>已安装升级
 
-book.Woot:tier1.title=Tier I Factory
-book.Woot:tier1.0=This factory is the most basic factory. It only supports spawning of certain mobs and can only accept two Tier 1 upgrades.  You will need Zombie Flesh and Bone to build this factory.<br>It costs 80RF/tick to run this factory.
-book.Woot:tier1.1=The factory requires:<br><br>13 x Gray Structure blocks<br>14 x Red Structure blocks<br>2 x Tier I Capstones
+book.Woot:tier1.title=I级工厂
+book.Woot:tier1.0=I级工厂是最基本的工厂。它只能生成一些特定的生物，并且只能安装两个I级升级。搭建这个工厂需要腐肉和骨头。<br>运行I级工厂需要80RF/tick。
+book.Woot:tier1.1=I级工厂需要：<br><br>13 x 生物工厂方块（灰色）<br>14 x 生物工厂方块（红色）<br>2 x I级生物工厂拱顶石
 
-book.Woot:tier2.title=Tier II Factory
-book.Woot:tier2.0=This factory allows you to install up to four Tier II upgrades. It will allow you to spawn all Tier I factory mobs along with Blaze. However you will need Blaze Powder to create the Orange Structure blocks required to build this tier.<br>It costs 160RF/tick to run this factory.
-book.Woot:tier2.1=The factory requires:<br><br>13 x Gray Structure blocks<br>16 x Red Structure blocks<br>40 x Orange Structure blocks<br>4 x Tier II Capstones
+book.Woot:tier2.title=II级工厂
+book.Woot:tier2.0=II级工厂可以安装四个II级升级。它可以生成所有I级工厂可生成的生物以及烈焰人。然而你需要烈焰粉来合成搭建II级生物工厂所需的生物工厂方块（橙色）。<br>运行II级工厂需要160RF/tick。
+book.Woot:tier2.1=II级工厂需要：<br><br>13 x 生物工厂方块（灰色）<br>16 x 生物工厂方块（红色）<br>40 x 生物工厂方块（橙色）<br>4 x II级生物工厂拱顶石
 
-book.Woot:tier3.title=Tier III Factory
-book.Woot:tier3.0=This factory allows you to install up to four Tier III upgrades. It will allow you to spawn Tier I and Tier II factory mobs along with Endermen. However you will need Ender Pearls to create the Green Structure blocks required to build this tier.<br>It costs 240RF/tick to run this factory.
-book.Woot:tier3.1=The factory requires:<br><br>13 x Gray Structure blocks<br>14 x Red Structure blocks<br>44 x Orange Structure blocks<br>52 x Green Structure blocks<br>5 x Tier III Capstones
+book.Woot:tier3.title=III级工厂
+book.Woot:tier3.0=III级工厂可以安装四个III级升级。它可以生成所有I级工厂与II级工厂可生成的生物以及末影人。然而你需要末影珍珠来合成搭建III级生物工厂所需的生物工厂方块（绿色）。<br>运行III级工厂需要240RF/tick。
+book.Woot:tier3.1=III级工厂需要：<br><br>13 x 生物工厂方块（灰色）<br>14 x 生物工厂方块（红色）<br>44 x 生物工厂方块（橙色）<br>52 x 生物工厂方块（绿色）<br>5 x III级生物工厂拱顶石
 
-book.Woot:tier4.title=Tier IV Factory
-book.Woot:tier4.0=This factory has the same capabilities as the Tier III factory. However this factory supports spawning of bosses, such as the Wither Boss. You will need Wither Stars to create the White Structure blocks required to build this tier.<br>It costs 320RF/tick to run this factory.
-book.Woot:tier4.1=The factory requires:<br><br>13 x Gray Structure blocks<br>14 x Red Structure blocks<br>44 x Orange Structure blocks<br>57 x Green Structure blocks<br>82 x White Structure Blocks<br>8 x Tier IV Capstones
+book.Woot:tier4.title=IV级工厂
+book.Woot:tier4.0=IV级工厂拥有III级工厂的所有功能。然而IV级工厂可以生成Boss生物，比如凋零。你需要下界之星来合成搭建IV级生物工厂所需的生物工厂方块（白色）。<br>运行IV级工厂需要320RF/tick。
+book.Woot:tier4.1=IV级工厂需要：<br><br>13 x 生物工厂方块（灰色）<br>14 x 生物工厂方块（红色）<br>44 x 生物工厂方块（橙色）<br>57 x 生物工厂方块（绿色）<br>82 x 生物工厂方块（白色）<br>8 x IV级生物工厂拱顶石
 
-book.Woot:proxy.title=Proxy And Extender
-book.Woot:proxy.0=For those of you that like things neat and tidy, or just want to put more RF into the factory, there is Proxy block. Basically this block allows you to input power and provide more inventories to put items in. It also allows you to hide everything underneath the factory.
-book.Woot:proxy.1=To use the Proxy block, place a column of Extender blocks directly below the Mob Factory block and then put the Proxy block last. It will accept RF or inventories on any side of the Proxy.
+book.Woot:proxy.title=代理端口和中继器
+book.Woot:proxy.0=对于那些喜欢布局干净整洁的玩家，或者只是想给生物工厂输入更多RF的玩家，生物工厂代理端口是一个不错的选择。通过这一个方块，您可以既输入能量又提供更多的存放物品的容器。您也可以把所有的一切隐藏在工厂的下面。
+book.Woot:proxy.1=要使用代理端口，你需要在生物工厂下方竖直摆一些生物工厂中继器并在最后摆上生物工厂代理端口。代理端口的任意面都可以接受RF或者容器。
 
-book.Woot:upgrades.title=Upgrade Totems
-book.Woot:upgrades.0=There are three tiers of upgrades which allow your factory to work in different ways. The upgrades are connected in the form of a totem, with Tier I upgrade on the bottom, Tier II upgrade in the middle and Tier III on the top. Each upgrade is crafted with enchanted books, depending on the upgrade that you want.
-book.Woot:upgrades.1=The following upgrades are available:<br><br>Looting<br>Rate<br>XP<br>Mass<br>Decapitate<br>Efficiency<br>Blood Magic (if installed)
+book.Woot:upgrades.title=升级图腾
+book.Woot:upgrades.0=为了给您的工厂附加不同的效果，有三个等级的升级供您使用。升级以类似于图腾的方式连接，即I级升级在底部，II级升级在中间，III级升级在顶部。每个升级都需要用不同种的附魔书来合成，这取决于您想要的升级。
+book.Woot:upgrades.1=您可以使用以下升级：<br><br>抢夺升级<br>速度升级<br>经验升级<br>数量升级<br>斩首升级<br>效率升级<br>血魔法升级（如果已安装血魔法）
 
-book.Woot:upgrade_looting.title=Looting Upgrade
-book.Woot:upgrade_looting.0=This upgrade applies Looting I, Looting II or Looting III to the mob death, influencing the number of items dropped. You will require Looting Enchanted Books to craft the upgrades.
+book.Woot:upgrade_looting.title=抢夺升级
+book.Woot:upgrade_looting.0=该升级将抢夺I、抢夺II或者抢夺III附魔效果应用于生物的死亡，以影响战利品掉落的数量。你需要抢夺附魔书来合成该升级。
 
-book.Woot:upgrade_rate.title=Rate Upgrade
-book.Woot:upgrade_rate.0=This upgrade reduces the number of ticks between each mob spawn, from the default of 320 ticks. This is an expensive upgrade as the same amount of RF is required, but in a shorter period of time. You will need Power Enchanted Books to craft the upgrades.
+book.Woot:upgrade_rate.title=速度升级
+book.Woot:upgrade_rate.0=该升级减少了每次生成的间隔时间，默认为每320ticks生成一次。这个昂贵的升级每次生成需要同样的RF，但是需要更少的时间。你需要力量附魔书来合成该升级。
 
-book.Woot:upgrade_xp.title=XP Upgrade
-book.Woot:upgrade_xp.0=This upgrade generates XP shards from the mobs, as by default none are generated. You will need Luck Of The Sea Enchanted Books to craft the upgrades.
+book.Woot:upgrade_xp.title=经验升级
+book.Woot:upgrade_xp.0=该升级会在每次生成生物时生成经验碎片，默认情况下是不会生成经验碎片的。你需要海之眷顾附魔书来合成该升级。
 
-book.Woot:upgrade_mass.title=Mass Upgrade
-book.Woot:upgrade_mass.0=This upgrade increases the number of mobs per spawn without changing the rate. Each extra mob costs a third of the normal RF cost. You will need Fortune Enchanted Books to craft the upgrades.
+book.Woot:upgrade_mass.title=数量升级
+book.Woot:upgrade_mass.0=该升级在不改变生成速度的情况下增加了每次生成时的生物数量。每生成一个额外的生物需要正常消耗RF的1/3。你需要时运附魔书来合成该升级。
 
-book.Woot:upgrade_decapitate.title=Decapitate Upgrade
-book.Woot:upgrade_decapitate.0=This upgrade increases the chance of head drops. You will need Sharpness Enchanted Books to craft the upgrades.
+book.Woot:upgrade_decapitate.title=斩首升级
+book.Woot:upgrade_decapitate.0=该升级提高了头颅掉落的几率。你需要锋利附魔书来合成该升级。
 
-book.Woot:upgrade_efficiency.title=Efficiency Upgrade
-book.Woot:upgrade_efficiency.0=This upgrade reduces the power cost of the factory. You will need Efficiency Enchanted Books to craft the upgrades.
+book.Woot:upgrade_efficiency.title=效率升级
+book.Woot:upgrade_efficiency.0=该升级减少了工厂消耗的能量。你需要效率附魔书来合成该升级。
 
-book.Woot:upgrade_bloodmagic.title=Blood Magic Upgrade
-book.Woot:upgrade_bloodmagic.0=This upgrade allows the factory to produce Life Essence for each mob spawned in the factory. That essence will be put into any tanks in front of the Factory Controller or connect to the Factory Proxy. If there are no tanks, then an Blood Magic Altar can be directly filled.
-book.Woot:upgrade_bloodmagic.1=The altar needs to be within a 10x10x10 area centered on the Master Ritual Stone.<br><br>The Factory Controller needs to be within a 10x10x10 area centered on the Master Ritual Stone.
-book.Woot:upgrade_bloodmagic.2=The tier of upgrade when filling tanks will change the number of sacrifice runes on each mob kill: <br><br>  Tier I: 10 sacrifice runes<br> Tier II: 20 sacrifice runes<br>Tier III: 30 sacrifice runes
-book.Woot:upgrade_bloodmagic.3=The tier of upgrade when filling the Altar will change the sacrifice amount per mob: <br><br>  Tier I: 20<br> Tier II: 30<br>Tier III: 40
+book.Woot:upgrade_bloodmagic.title=血魔法升级
+book.Woot:upgrade_bloodmagic.0=该升级能够在生成每个生物的同时产生生命源质。生成的源质会输出到生物工厂控制器前方或者与生物工厂代理端口相连的储罐中。如果没有储罐，则可直接填充血之祭坛。
+book.Woot:upgrade_bloodmagic.1=血之祭坛需要在以主仪式石为中心的10x10x10范围内。<br><br>生物工厂控制器需要在以主仪式石为中心的10x10x10范围内。
+book.Woot:upgrade_bloodmagic.2=填充储罐时，升级的等级将改变每个生物的牺牲符文数量：<br><br>I级：10牺牲符文<br>II级：20牺牲符文<br>III级：30牺牲符文
+book.Woot:upgrade_bloodmagic.3=填充血之祭坛时，升级的等级将改变每个生物提供的生命源质量：<br><br> I级：20<br>II级：30 <br>III级：40
+book.Woot:upgrade_bloodmagic.4=填充血之祭坛时，升级的等级将改变每个生物提供的生命源质量：<br><br> I级：20<br>II级：30 <br>III级：40
 
-book.Woot:enchant_decapitate.title=Decapitate Enchant
-book.Woot:enchant_decapitate.0=This enchantment will give you a 20% chance of getting a head drop from a Creeper, Zombie or Skeleton.<br><br>Tragically, due to an error in manufacturing it does NOT work with Wither Skeletons. Sorry, not sorry.
+book.Woot:enchant_decapitate.title=斩首附魔
+book.Woot:enchant_decapitate.0=该附魔会提高20%得到爬行者、僵尸或骷髅头颅的概率。<br><br>不幸的是，由于一些制造上的错误，它不能在凋零骷髅身上起效。 真是抱歉，因为我对此丝毫不感到惭愧。
+
+book.Woot:blacklists.title=黑名单
+book.Woot:blacklists.0=Various mobs and items are not allowed to be used or generated by the factory. These can be added by the server owner or by Woot itself.<br><br>Woot adds them because:<br> The blacklisted mod is combat based<br> The dropped item uses NBT
+book.Woot:blacklists.1=The following internal blacklists are used to stop mob capturing and item generation:<br><br> CyberWare<br> Enchanting Plus<br> Everlasting Abilities<br> Botania
 
 
 

@@ -15,4 +15,4 @@
 
 ## 鸣谢
 感谢玩家`Aemande`提供了大部分小模组的汉化，对他的努力表示感谢；  
-感谢玩家`3TUSK`，`Sihenzhang`，`CNife`，`DLslime`，`DSLM`，`yuanjie000`，`forestbat`，`ZhuKaihui`，`MaxBellc`提供部分汉化。  
+感谢玩家`3TUSK`，`Sihenzhang`，`CNife`，`DLslime`，`DSLM`，`yuanjie000`，`ZhuKaihui`，`MaxBellc`提供部分汉化。  
