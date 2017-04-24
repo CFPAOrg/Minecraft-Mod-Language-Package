@@ -1,0 +1,932 @@
+{b}RFTools Manual
+Table of contents:
+{l:general}General Tips
+{l:security}Security
+{l:smartwrench}Smart Wrench
+{l:netmon}RF Network Monitor Item
+{l:base}Base Ingredients
+{l:logic}Logic Gates
+{l:monitor}Contents Monitors
+{l:coalgen}Coal Generator
+{l:powercell}Power storage
+{l:stomon}Storage Scanner
+{l:storage}Storage System
+{l:filter}Item Filter
+{/}
+
+
+{l:elevator}Elevator
+{l:crafter}Automatic Crafter
+{l:protect}Block Protector
+{l:prelay}RF Power Relay
+{l:telepo}Teleporting System
+{l:power}Advanced Power Generator
+{l:shield}Shield System
+{l:screens}Modular Screens
+{l:envctrl}Environmental Control
+{l:booster}Booster
+{l:spawner}Spawner System
+{l:builder}Builder
+{-------------------------------------------------------------}
+{b}General Tips
+{n:general}
+All blocks in this mod (with a few exceptions like the Endergenic
+Generator and blocks for which orientation doesn't matter) can be
+rotated by using a wrench on them.
+
+All blocks in this mod can be picked up by using a wrench while sneaking.
+Most settings (like stored energy, possible inventory, recipes and so on)
+will be remembered and restored when the block is put back in the world.
+You can also break the blocks with a pickaxe without losing anything.
+
+Many cards and/or modules can be directly installed in the
+appropriate block by right clicking the block with the module.
+{-------------------------------------------------------------}
+{b}Security
+{n:security}
+If you place down a block from RFTools you will automatically be
+tagged as the owner. Being an owner does not prevent others from
+mining the block but they will not be able to change ownership
+(even after mining and placing it back). Using the Orphaning Card
+you can clear ownership for your own blocks (unless you are an
+admin, then you can do it all the time).
+
+{ri:orphaning_card}
+{-------------------------------------------------------------}
+Only if you are the owner of a block can you change the security
+settings of that block. Basically that means you can control
+who can access the user interface. To change the security settings
+of a block you have to right click it with a properly set up
+Security Card:
+
+{ri:security_card}
+{-------------------------------------------------------------}
+Security Cards need to be configured in the Security Manager:
+{rb:security_manager}
+
+You insert the card you want to configure in the top-left slot
+and then you can change the name of the channel, add players
+to that channel and switch between blacklist or whitelist mode.
+
+The security manager has a small secondary inventory where you
+can keep your different security cards.
+{-------------------------------------------------------------}
+Once a security card is configured you can right select it on a block to
+assign that block to this channel. You can only do that if you are the
+owner of that block. The block will be linked to that security channel.
+If you make changes to the security channel later (in the security
+manager) these changes will automatically be reflected in all
+linked blocks.
+
+If somehow you lose a security card then you can make a new unlinked one
+and right select the block for which you want to make a new card (only
+the owner can do that).
+
+If you want to make a copy of a security card you can place a fresh
+card into the top right slot of the security manager.
+{-------------------------------------------------------------}
+Players cannot change the security channel on a block they don't
+own. However, if you give them a security card that is already linked
+to the same channel as the block then they can alter the security
+settings for that channel in their own security manager. This
+way you can give some users more privileges to allow adding and
+removing others to a channel.
+
+The owner of a block can always access the GUI regardless of the
+security settings on that block. An admin can also access the
+GUI in all cases.
+
+Note that if you press 'shift' you can see the security settings
+on a block in WAILA.
+{-------------------------------------------------------------}
+{b}Smart Wrench
+{n:smartwrench}
+{ri:smartwrench}
+The Smart Wrench works as a normal wrench. However it has two modes:
+'wrench' and 'select'. To switch modes just right click in the air.
+
+In 'wrench' mode it will work as usual: right click with wrench to
+rotate blocks (in most cases) and sneak right click to pick up a block.
+
+'select' mode is used in combination with the Block Protector.
+Sneak right click to select the protector and right click to select
+blocks to protect.
+{-------------------------------------------------------------}
+{b}RF Network Monitor Item
+{n:netmon}
+{ri:network_monitor}
+With the RF Network Monitor you can select a block and it will try
+to find all blocks that use or produce RF which are connected
+(directly or inderectly) to the selected block. It will also show
+you how much RF is in each of the blocks and the coordinate. You
+can use this item to help debug RF related network problems.
+{-------------------------------------------------------------}
+Doubleclick on a line in the list of blocks will close the window and
+the block will be highlighted for 5 seconds (configurable).
+
+You can toggle the display between RF/tick or RF and you can also
+filter the output.
+{-------------------------------------------------------------}
+{b}Base Ingredients
+{n:base}
+{rb:machine_frame}
+The machine frame is the base ingredient for most machines in this mod.
+{rb:machine_base}
+The machine base is the base ingredient for a few other machines.
+{-------------------------------------------------------------}
+{b}Logic Gates
+{n:logic}
+
+{l:sequencer}Sequencer
+{l:timer}Timer
+{l:counter}Counter
+{l:endermon}Ender Monitor
+{l:redtrans}Redstone Transmitter
+{l:redrec}Redstone Receiver
+{l:threelogic}Logic Gate
+{l:invchecker}Inventory Checker
+{l:sensor}Sensor
+{-------------------------------------------------------------}
+{b}Sequencer
+{n:sequencer}
+{rb:sequencer_block}
+The sequencer is an advanced redstone based sequencer. It is
+capable of giving out a series of 64 different signals. You can
+edit the pattern of these signals in the gui of this block.
+
+The modes of this block are explained in the next page. You can
+also set the speed at which the cycles are played. Default is 1
+which means that the cycle will proceed every tick.
+{-------------------------------------------------------------} 
+It has seven different modes:
+
+    Once1: cycle once when pulse arrives. Ignore further pulses
+    Once2: cycle once when pulse arrives. Restart on pulse
+    Loop1: loop continuously, ignore redstone signal
+    Loop2: loop continuously, restart on pulse
+    Loop3: loop continuously while redstone signal is on. If
+           signal is down, stay at current step.
+    Loop4: loop continuously while redstone signal is on. If
+           signal is down, restart.
+    Step: step through the cycle one by one
+{-------------------------------------------------------------}
+{b}Timer
+{n:timer}
+{rb:timer_block}
+The timer is a simple gate that will repeatedly send a redstone pulse.
+You can input any value for the delay so it can be used for very long
+timeouts.
+
+What is special about this timer is that it restart when it itself
+receives a redstone pulse at its input. So given timely input pulses
+this block will never output a pulse itself. By using this feature this
+block can be used as a way to detect that a certain activity is overdue.
+{-------------------------------------------------------------}
+{b}Counter
+{n:counter}
+{rb:counter_block}
+The counter is a simple block that will count redstone pulses and
+emit a redstone signal when it reaches a certain number. Then it
+starts over. You can see in the GUI how many redstone pulses it
+already got.
+{-------------------------------------------------------------}
+{b}Ender Monitor
+{n:endermon}
+{rb:ender_monitor}
+The Ender Monitor only works in combination with the Endergenic
+Generator. It will send a pulse based on three different conditions:
+
+    Lost Pearl: send a redstone pulse when a pearl is lost
+    Pearl Fired: send a pulse when a pearl is fired
+    Pearl Arrived: send a pulse when a pearl arrives
+
+Note that the redstone signal outputs on the red dot side and this
+has to face away from the Endergenic Generator.
+{-------------------------------------------------------------}
+{b}Redstone Transmitter
+{n:redtrans}
+{rb:redstone_transmitter_block}
+This block will wirelessly send out a redstone signal on a
+specific channel when it gets a redstone signal. Use this in
+combination with the redstone receiver block. If you place this
+block down it will create a channel. You can also link this
+transmitter to existing channels by right clicking on another
+transmitter or receiver.
+{-------------------------------------------------------------}
+{b}Redstone Receiver
+{n:redrec}
+{rb:redstone_receiver_block}
+This block will receive a redstone signal from a linked
+redstone transmitter. To link this receiver with a transmitter
+right-select the transmitter (or another linked receiver) with
+this block.
+{-------------------------------------------------------------}
+{b}Logic Gate
+{n:threelogic}
+{rb:logic_block}
+This block has three redstone inputs and one output. Using the GUI you
+can make any possible combination of those three inputs into a single
+output. For every input combination you can set the output to off, on
+or keep. In keep the state of the output will be the same as it was
+before the input was switched to this state.
+{-------------------------------------------------------------}
+{b}Inventory Checker
+{n:invchecker}
+{rb:invchecker_block}
+This block checks a slot in a nearby inventory and emits a redstone
+signal in case the number of items in that slot is above a certain
+value (configurable in GUI).
+{-------------------------------------------------------------}
+{b}Sensor
+{n:sensor}
+{rb:sensor_block}
+The sensor can detect various things directly in front of it
+(either 1 block, 3 blocks or 5 blocks). It can detect blocks
+being placed, crop growth level, number of entities and so on.
+{-------------------------------------------------------------}
+{b}RF Monitor
+{n:monitor}
+{rb:rf_monitor}
+The RF Monitor is a block that you place in the world and that
+can examine a nearby (3x3x3 area around the monitor) block and
+gives a visual indication of how much RF is left in that block.
+This block can also give out redstone signals in case the RF in
+the monitored block is too low or too high. You can use this
+redstone signal with the Power Relay (see below) to control
+parts of your RF network.
+{-------------------------------------------------------------} 
+{b}Liquid Monitor
+{n:liqmonitor}
+{rb:liquid_monitor}
+The Liquid Monitor is a block that works like the RF Monitor except
+that it can examine the contents of a nearby liquid tank.
+{-------------------------------------------------------------}
+{b}Coal Generator
+{n:coalgen}
+{rb:coalgenerator}
+The coal generator is a simply generator that can produce 60 RF/tick
+from coal or charcoal. If fully infused it will produce 120 RF/tick.
+It can also charge items that need RF but does that slowly. The
+powercell is a much better solution to charge items.
+{-------------------------------------------------------------}
+{b}Powercell
+{n:powercell}
+{rb:powercell}
+The powercell can store power. There a normal and an advanced version.
+The advanced version can store more power and can also transfer power
+faster. Every side of a powercell can be configured with a wrench (input,
+output, none) or you can set all sides at once using the GUI.
+
+The powercell can also charge items that use RF.
+{-------------------------------------------------------------}
+Powercells can also be linked to each other. To do that you have to craft
+as many powercell cards as you have powercells that you want to link:
+{ri:powercell_card}
+
+Insert one card in the first powercell and the others in the linking slot
+in the middle. That way all these cards will now have the same id. You can
+then insert each of these cards in another powercell. This will create a
+big multiblock of connected powercells.
+{-------------------------------------------------------------}
+Powercells that are linked (using cards) don't have to be adjacent to
+each other. However, if they are not adjacent there will be a small cost
+that is calculated when power is extracted. The cost depends on distance
+and also on how big the cluster of powercells is from where you extract
+power. i.e. power is considered to be evently distributed over all cells.
+Note that infusing a powercell reduces this cost and also RFTools
+dimensions are more efficient at transfering power this way.
+{-------------------------------------------------------------}
+{b}Storage Scanner
+{n:stomon}
+{rb:storage_scanner}
+The Storage Scanner is a block that can scan the surrounding
+area for inventories (chests, furnaces, other devices, basically
+anything that can hold items) and show them in a list. You can
+then select an inventory in that list and it will display the
+contents of that inventory.
+{-------------------------------------------------------------}
+If you open the user interface of this scanner you get two lists.
+The top list is initially empty but will be filled when you press
+the 'Scan' button. It contains all the inventories (chests, furnaces
+and so on) that it could find in the selected area. If you
+previously scanned an area you don't have to do it again. If a line
+shows 'REMOVED' that means the specific block was removed after
+the scan.
+
+If you select an inventory in the top list then the bottom list will
+show the contents of that inventory.
+
+Doubleclick on an inventory in the top list will close this
+window and highlight it in the world for 5 seconds (by default).
+{-------------------------------------------------------------}
+You can search for items in all inventories that it scanned. It will
+mark all the inventories where it found an item that matches what
+you typed with a yellow color. This gives you an easy way to find
+out where you put that diamond pickaxe again.
+
+The slider below the 'Scan' button allows you to select the radius
+that this machine will use to scan the area. A value of '4' means
+that an area of 9x9x9 will be scanned.
+{-------------------------------------------------------------}
+It is also possible to request an item out of the given inventory
+by double clicking it in the list of items. And if an item is
+inserted into the 'inserter' slot then it will be distributed
+to the first available inventory (which is why the order of the
+inventories in the top list is important). Both operations
+require some power.
+
+Note that the storage scanner will only insert items into inventories
+that are starred (press the 'star' button in the top list).
+{-------------------------------------------------------------}
+{b}Storage System
+{n:storage}
+{rb:modular_storage}
+The Modular Storage Block is an advanced chest. Before you can use it
+you must insert a storage module. There are three tiers: 100, 200,
+or 300 stacks. You can insert modules to make the chest work better
+with various types of items. When you remove a storage module from a
+Modular Storage Block the contents will be copied to the module.
+
+The various item modules allow you to sort and group your items based
+on various criteria. There is also a third slot where you can insert
+a filter module to restrict items going into the storage.
+{-------------------------------------------------------------}
+{n:remotestor}
+There is also a Remote Storage Block:
+{rb:remote_storage}
+With this block you can make a storage module available remotely. You can
+put up to four storage modules in the remote storage block. Then you can
+create Remote Storage Module items. These need to be linked first to the
+right storage item. To do that place the remote storage module in the
+appropriate slot next to the item.
+
+You can then use the remote storage module by combining it with a tablet
+or you can insert the module in a modular chest block.
+{-------------------------------------------------------------}
+Offline access with the Tablet:
+{ri:storage_module_tablet}
+With this item you can open the contents of a remote or normal storage
+module from within your hotbar. To use it you need to craft the tablet
+together with the storage module and you must charge it with sufficient
+energy. Higher storage tiers will cost more RF to open. To get the
+storage module and empty tablet back you just put the tablet in your
+crafting grid.
+
+The tablet can also be combined with a storage screen module
+to remotely access a storage scanner. This is a very powerful combination
+as it allows full access to your entire storage network.
+{-------------------------------------------------------------}
+{n:storfilter}
+Filtering items for your storage:
+{ri:filter_module}
+With this item you can control what is allowed in the chest and what not.
+You can white or blacklist, filter with NBT, damage, ore dictionary or mod.
+This filter module is also usable in the crafter to control what goes into
+the crafter buffer and in the builder to control what to quarry or void.
+
+The storage filter item has its own GUI which you can only access by having
+the filter in your hand or you can sneak right click on any inventory will
+configure the filter to the current contents of that inventory. Sneak right
+click on another block in the world will add that to the filter.
+{-------------------------------------------------------------}
+{b}Elevator
+{n:elevator}
+{rb:elevator}
+
+The elevator is a block that can move entities (including the player)
+up and down. To setup an elevator you need to place elevator blocks
+at every level and at one level make a platform in front of the
+elevator using solid blocks. Only the bottom elevator block needs power.
+If one of the elevator blocks gets a redstone signal then the platform
+will move there.
+{-------------------------------------------------------------}
+The elevator works well with the wireless redstone system and the
+button screen module so you can control the elevator from a distance.
+In addition you can use the elevator button module which allows you
+to directly control to what level the platform should move.
+{-------------------------------------------------------------}
+{b}Automatic Crafter
+{n:crafter}
+{rb:crafter1}
+The Crafter is a powerful automatic crafting machine that can handle
+up to eight different recipes in a single block. It can be used to
+craft multiple items independent from each other or else it can be
+used for more complicated multi-step crafting recipes. By default it
+uses 100 RF for every crafting cycle (where it does all crafting
+operations in one step).
+{-------------------------------------------------------------} 
+The list at the top-left allows you to select all the supported
+recipes. If you select a recipe you can edit it in the right grid
+by dragging over the right items.
+
+The crafter also has an internal inventory and four output slots
+for crafting results. By inserting a storage filter item you can
+also prevent unwanted items from being inserted into this inventory.
+{-------------------------------------------------------------}
+The 'Keep/All' button is only active when a recipe is selected and
+allows you to control if this recipe will always keep at least a single
+item in the internal inventory.
+
+The 'Int/Ext' button is also only active when a recipe is selected
+and allows you to control where the result of the crafting operation
+of this recipe goes too. With 'Ext' (default) the result is put in
+an output slot where it can be extracted by an external pipe.
+With 'Int' the result goes in the internal inventory where it
+can be used by other recipes in this crafter.
+
+The crafter also has a redstone mode (button below which can be set
+to 'ignore', 'off', or 'on') and it also has a speed mode which is set
+to slow by default. Fast mode uses more energy.
+{-------------------------------------------------------------}
+{b}Block Protector
+{n:protect}
+{rb:block_protector}
+With the block protector you can protect blocks from being harvested
+or affected by explosions. Use the 'sneak-select' mode on the Smart
+Wrench to select the protector and then just 'select' all blocks you
+want to protect with the Smart Wrench in 'select' mode. The maximum
+distance is 10. Note that the block protector will need a little
+number of power per tick for every block it protects.
+{-------------------------------------------------------------}
+In addition it needs extra power when a protected block is being
+harvested or affected by an explosion. If there is not enough power
+to protect a block then the block is removed from the protection
+list (and will probably get destroyed). If you want to make a room
+to protect against more powerful explosions (like from the Wither)
+it is recommended to use more then one block protector to protect
+smaller groups of blocks. Also make sure to protect the block
+protector itself.
+{-------------------------------------------------------------}
+{b}RF Power Relay
+{n:prelay}
+{rb:relay}
+The Power Relay allows you to control how much RF to output based on a
+redstone signal. In its GUI you can set the number of RF/tick to give
+in case redstone signal is off and also in case redstone signal is on.
+This can be configured per side. You can also mark sides as being
+input-only. This is where you typically connect the power coming
+from a capacitor or power generator. You can use this in block in
+combination with the RF Monitor to turn off a portion of your RF network
+in case power is low. For example, to turn off ore processing machines.
+{-------------------------------------------------------------} 
+{b}Teleporting System
+{n:telepo}
+RFTools supports a teleportation system that uses RF to do the
+transfer of matter. A teleporter is essentially one-directional and
+consists of a transmitter and a receiver. So you need a pair for
+two-way teleportation. To connect a transmitter and a receiver you
+will also need a dialing device.
+
+Energy cost of teleportation depends on the distance traveled. Also
+travelling to another dimension is a lot more expensive.
+
+If you're an admin and want to troubleshoot the portal network
+you can use the Teleport Probe item (has no recipe). You can use
+this item to check for problems with all receivers in the world.
+Doubleclick on an item in the list will teleport you without using RF.
+{-------------------------------------------------------------} 
+{b}Teleportation Blocks
+
+{l:tptransmitter}Matter Transmitter
+{l:tpreceiver}Matter Receiver
+{l:tpdialer}Dialing Device
+{l:tpdestcheck}Destination Analyzer
+{l:tpbooster}Matter Booster
+{l:tpaccess}Access Control
+{l:porter}Charged Porter Item
+{l:simdial}Simple Dialer
+{-------------------------------------------------------------} 
+{b}Matter Transmitter
+{n:tptransmitter}
+{rb:matter_transmitter}
+The matter transmitter is placed on the ground and (when dialed to a
+valid destination) will teleport a player that is standing on it. There
+is a fixed energy cost which is consumed immediatelly when the player
+stands on it. Then during the duration of the teleport (witch varies
+depending on the traveled distance) power is also consumed. If there
+is not sufficient power during the first power usage then teleportation
+will simply not start. But if there is a power failure during transit
+then potentially very bad things can happen to the player.
+{-------------------------------------------------------------} 
+{b}Matter Receiver
+{n:tpreceiver}
+{rb:matter_receiver}
+The matter receiver is also placed on the ground. Players that teleport
+to a receiver will appear on top of this block. Note that a receiver needs
+energy. If the receiver doesn't have enough energy then teleportation will
+go on but bad things will happen as soon as the player arrives at this
+destination. So be careful!
+
+If you give the matter receiver a name (using the GUI) then that name will
+be shown in the dialing device which makes it easier to recognize.
+{-------------------------------------------------------------} 
+{b}Dialing Device
+{n:tpdialer}
+{rb:dialing_device}
+The dialing device is an important block which is needed to connect
+nearby matter transmitters to receivers anywhere in the world. It shows
+a list of all transmitters in the vicinity (by default an area of 21x11x21).
+It also shows a list of all receivers in the world. Note that a dialed
+transmitter will consume a little bit of energy while it is holding its
+connection.
+
+The 'Check' button is disabled by default unless you have a destination
+analyzer connected to this machine (see below).
+{-------------------------------------------------------------} 
+{b}Destination Analyzer
+{n:tpdestcheck}
+{rb:destination_analyzer}
+This is a passive block that you can place next to a dialing device. It
+enables the dialing device to check the status of a receiver or destination
+dimension. This way you can be sure that a receiver and/or dimension has
+enough power or is not blocked before attempting to make a connection.
+
+You can also place a destination analyzer next to a transmitter. In
+that case the transmitter will show a red colored teleportation beam
+if there is something wrong on the receiving end. You can check the
+actual problem in the dialing device.
+{-------------------------------------------------------------}
+{b}Matter Booster
+{n:tpbooster}
+{rb:matter_booster}
+This is another passive block that you can place next to a matter
+transmitter. If this block is present it gives the transmitter the
+capability to teleport the user to an unpowered receiver. This does
+use more energy so if not enough energy is available in the transmitter
+this will not work. Note that this block does not avoid all
+negative effects. You will still get hurt slightly and you end
+up rather confused. But it is still way better then dieing.
+{-------------------------------------------------------------}
+{b}Access Control
+{n:tpaccess}
+Both the transmitter and the receiver can be set in public mode (default)
+or private. In case the mode is private you have to insert a list of
+players who can access this transmitter or receiver.
+
+In case of a transmitter an unauthorized player will not be able to dial
+to a receiver or to interrupt a dial and he/she will also not be able
+to step through the teleporter.
+
+In case of a receiver an unauthorized player can not dial to that
+receiver but he/she can teleport to it if there is an authorized
+transmitter already dialed to that receiver.
+{-------------------------------------------------------------} 
+{b}Charged Porter
+{n:porter}
+The Charged Porter is an item that you set to some target receiver (with
+sneak-right click) and charge up. Right clicking the porter will teleport
+you. Note that this requires more power compared to normal teleportation.
+Also note that the receiver still needs power! To craft this use:
+{ri:charged_porter}
+The advanced version stores more power, teleports faster and allows 8
+destinations (sneak right click to add receiver and sneak right click in
+the air to edit the destinations).
+There are also hotkeys (default [ and ]) to cycle destinations.
+{-------------------------------------------------------------}
+{b}Simple Dialer
+{n:simdial}
+The Simple Dialer is a logic block that will dial a pre-set
+transmitter/receiver combination when it gets a redstone signal.
+To set the transmitter and/or receiver you have to sneak-right
+click with this block on the transmitter and/or the receiver.
+
+{rb:simple_dialer}
+{-------------------------------------------------------------}
+{b}Advanced Power Generator
+{n:power}
+
+Scientists working in The End have discovered an interesting property
+of ender pearls. When a pearl is thrown in some controlled manner the
+mystic properties that occur on arrival can be harnessed and converted
+to RF. If done at exactly the right moment this can produce a lot of
+power. A pearl thrown this way is called an 'Endergenic Pearl'.
+
+In addition it appears that pearls 'remember' that they have been
+captured this way. If a pearl is captured and then thrown again as soon
+as possible its internal power capacity increases which can give big
+benefits for producing RF from this. However, this means that the pearl
+has to be fired again as soon as possible, as trying to restrain a pearl
+from firing is very costly on energy.
+{-------------------------------------------------------------}
+Note that even in optimal conditions it is possible that pearls are
+lost. So a way has to be found to ensure that the system stays operational
+at all times.
+
+{b}Power Blocks
+
+{l:powendergenic}Endergenic Generator
+{l:powinjector}Pearl Injector
+{-------------------------------------------------------------}
+{b}Endergenic Generator
+{n:powendergenic}
+{rb:endergenic}
+
+The Endergenic Generator is the main block in the power generator system.
+This device can capture endergenic pearls and fire them again. It has three
+basic modes which are controlled by giving redstone pulses to this device:
+
+    Idle: this is the default mode. It just waits
+    Charging: in this mode the device can receive endergenic pearls
+    Holding: in this mode the device is holding a pearl
+{-------------------------------------------------------------}
+Charging mode is a 15-tick cycle. The most optimal time to capture a pearl
+is at tick 10 (starting with tick 1). RF will also be generated if an
+endergenic pearl arrives at any other point in the charging cycle but the
+RF that can be generated will be a lot less.
+
+When the charging cycle ends without a pearl being received then
+the machine will go into idle mode again.
+
+If a pearl is received then charging mode immediatelly ends and the machine
+goes into holding mode. In this mode it will consume RF every tick. Be
+careful holding the pearl for too long as you will then end up consuming
+more RF then you gained. If the internal storage of the generator does not
+have enough RF to hold the pearl then it will automatically be lost. Also
+each tick there is a small chance that the pearl will be lost in any case.
+{-------------------------------------------------------------}
+You can use a BuildCraft or Thermal Expansion compatible wrench to control
+the destination of each generator. If you don't set a destination then pearls
+will be automatically lost as soon as they are fired.
+
+When selecting a generator with a wrench (right click) it will turn red
+and then you can go to the destination generator (right click it again) to
+set the destination. Pay attention to the message you get when you do this
+as it tells you the distance (in ticks) between the two generators. This can
+help you to time the rest of the system exactly right. Note that the maximum
+distance is set to 4 ticks so keep that in mind.
+{-------------------------------------------------------------}
+This mechanic of charging, holding and firing endergenic pearls at specific
+times implies precise timing and cooperation of multiple Endergenic
+Generators. You will need at least two generators to be able to produce
+power although it will probably be hard to get optimal RF production using
+only two generators.
+
+If you have plenty of ender pearls and don't care too much about less then
+optimal generation you can just throw in as many pearls as you want from
+one generator and capture them in another. Then it that other generator
+you just fire them away immediatelly without caring about a destination.
+You will quickly consume lots of ender pearls this way so this might not
+be the best way to proceed.
+{-------------------------------------------------------------}
+{b}Pearl Injector
+{n:powinjector}
+{rb:pearl_injector}
+
+This block has to be placed facing an Endergenic Generator or else
+directly below it. This machine provides the only way to inject an ender
+pearl into the power system. When it receives a redstone signal it will
+convert the ender pearl to an endergenic pearl and immediatelly insert it
+into the adjacent Endergenic Generator. If that generator was already
+holding a pearl then nothing happens and the new pearl is lost.
+{-------------------------------------------------------------}
+Otherwise the endergenic pearl is immediatelly fired from the
+generator and the system starts.
+
+This injector has an internal buffer that can only store ender pearls.
+{-------------------------------------------------------------}
+{b}Shield System
+{n:shield}
+RFTools implements a 'simple' shield system that can filter mobs, animals,
+players, and items. You start by building the shape of your shield with
+connected Shield Template Blocks of the same color. Then you put a Shield
+Block next to one of these templates and you give it power.
+
+A tier 1 shield can handle 256 blocks. Tier 2 ups this to 1024. The tier 3
+ups this to 4096 and deals 4 times as much damage at twice the power.
+
+To compose the shield right click the shield block with a wrench. The
+shield block will compose the shield in the specified shape. If you hit
+the shield with left click it will also connect on corners. Wrench the
+shield again to get the template blocks back. By doing that you
+can change the shape of your shield in case you're not happy with it.
+{-------------------------------------------------------------}
+To craft the Shield Template Blocks you use the following recipe:
+{rb:shield_template_block}
+
+Note that there are four different template blocks so you can use them
+to make adjacent distinct shields. Every projector will only take one color.
+
+To craft the Shield Block you use the following recipe:
+{rb:shield_block1}
+{-------------------------------------------------------------}
+The shield has four visualization options:
+
+    Invisible: the shield is totally invisible
+    Shield: a transparent generic shield texture is used
+    Solid: the shield is solid
+    Transparent: the shield is transparent
+
+In the gui you can also insert rules for different types of
+entities. For every rule you have the following actions:
+
+    Pass: entity can pass through
+    Solid: entity is blocked
+    Damage: entity gets damage
+    SolDmg: entity is blocked and gets damage
+{-------------------------------------------------------------}
+You can also set the type of damage. By default the damage
+will be 'generic' but you can also set it to 'player'. This
+will consume more energy but you will get XP orbs as well
+as loot that you normally only get when a mob is killed
+by the player.
+
+If you select 'player' damage then you can also enable looting
+by inserting dimensional shards. These are used up for every
+looting kill.
+{-------------------------------------------------------------}
+If you hit the shield projector with your left mouse instead of
+the right mouse it will also scan on the corners for template
+blocks. Additionally using the smart wrench it is possible
+to add or remove shield templates to an already formed shield.
+Note that doing this will not be remembered if you decompose
+the shield again.
+
+Note that the shield also supports space cards. In that case you
+don't have to use shield template blocks but instead you can
+insert the appropriate space card to define the shape of
+the shield.
+{-------------------------------------------------------------}
+{b}Item Filter
+{n:filter}
+{rb:item_filter}
+The Item Filter allows controlled input/output from any side of the
+block. It has nine storage slots that can be configured to only hold
+a specific type of item. For each of these storage slots you can
+control from which side it can receive items and to which side
+other machines can extract items.
+{-------------------------------------------------------------}
+{b}Modular Screens
+{n:screens}
+
+If you want to display various things in your base then the
+modular screen system in RFTools might be ideal for you. In
+these screens you can insert up to 11 modules which can give
+you various bits of information like energy in a machine,
+the number of fluids in a tank, the time of the day, simple text,
+the number of RF left in a dimension and so on. More modules
+are planned for the future.
+
+There are large, huge and transparent screen variations of the
+screen. You can get those by using a wrench on the screen.
+You can also color a screen by selecting it with a dye item.
+{-------------------------------------------------------------}
+Screens are not directly powered but get power from a Screen
+Controller that you can craft as follows:
+{rb:screen_controller}
+
+In the GUI of this block you can press 'Scan'. This will locate
+all screens in a 65x33x65 area around the controller (or 129x33x129
+for a maximum infused controller). From that point on these
+screens will receive power from this controller.
+{-------------------------------------------------------------}
+You can craft a screen as follows:
+{rb:screen}
+
+A screen with no modules shows some basic help. So to make things
+interesting you should add one or more module.
+
+Note that with modules a screen will be black if it is
+not getting power. Make sure you have a screen controller
+nearby and press 'Scan' on that so that it finds all screens.
+{-------------------------------------------------------------}
+The following screen modules are currently supported:
+    - Text: simple line of text
+    - Clock: a digital clock showing the time of the day
+    - Energy: monitor the RF energy level of a machine
+    - Dimension: monitor the RF energy level of a dimension
+    - Fluid: monitor the number of fluids in a tank
+    - Inventory: monitor up to 4 slots in an inventory
+    - Counter: show the current value of a counter gate
+    - Redstone: show yes/no text depending on wireless redstone
+    - Machine Info: generic information on certain machines
+    - Button: send out a wireless redstone signal (interactive)
+    - Storage: access 9 items directly from storage scanner
+{-------------------------------------------------------------}
+Some modules (like energy, fluid, inventory, and counter modules)
+require that you first shift-right click on the machine/tank that
+you want to monitor. After that insert them in the screen. The
+maximum distance between the screen and the monitored block is 64.
+The 'Plus' versions of the modules have no limits.
+
+The Button module also allows the screen to be used in an
+interactive manner. i.e. you can click on the screen and control
+other machines that way.
+{-------------------------------------------------------------}
+{b}Environmental Controller
+{n:envctrl}
+{rb:environmental_controller}
+
+Using the environmental controller you can improve the area
+around it in various ways. There are modules to give you saturation,
+regeneration, and so on. Every module requires power so this doesn't
+come free. A single controller can affect an cylindrical area
+with a maximum radius of 100 from bottom to top of the world
+(if you're prepared to consume that much power).
+{-------------------------------------------------------------}
+{b}Booster
+{n:booster}
+{rb:booster}
+
+The booster is related to the environmental controller. Instead
+of affecting an entire area it only affects the entities directly
+on top of it. In addition it only supports one module at a time.
+{-------------------------------------------------------------}
+{b}Spawner System
+{n:spawner}
+{rb:spawner}
+
+With this block you can spawn many kinds of mobs. Using it requires
+a bit of setup work though. First you need a full syringe for the
+mob that you want to spawn. If you insert this syringe in the spawner
+UI you can then see the other items you will need to spawn a creature
+of this type.
+{-------------------------------------------------------------}
+To get the materials into the spawner you need to set up
+at least one, preferably three or even more matter beamers:
+{rb:matter_beamer}
+
+This block has a single slot for items. You can connect
+it to a spawner by first selecting the beamer and then the
+spawner with a wrench.
+{-------------------------------------------------------------}
+If you then give the spawner and the beamers power they should start
+to work. Note that to spawn a creature you need three types of
+material. That's why it is recommended to use three beamers as
+then you can dedicate every material to every laser.
+
+The beamer needs a redstone signal before it starts.
+
+Infusing the beamer greatly increases the speed with which it
+can beam matter (and thus the spawning rate).
+
+The leaf block in the spawner GUI indicates any type of living
+material (meat, wheat, seeds, ...). Some types of living material
+give a bigger bonus.
+{-------------------------------------------------------------}
+{b}Builder
+{n:builder}
+{rb:builder}
+The Builder is one of the most versatile machine in RFTools. It can do:
+    - Move a structure from one spot (even other dimension) to another
+    - Rebuild a structure from one spot to another
+    - Swap structures between two spots
+    - Build geometrical shapes (dome, torus, box, ...)
+    - Clear out areas in a certain shape (void blocks)
+    - Quarry an area in a certain shape (silk touch, fortune, ...)
+    - Collect items and XP an in area
+    - Pump liquids
+{-------------------------------------------------------------}
+A chest or tank on top or below is sometimes needed to supply or collect.
+Using the GUI you can control where the builder should place the blocks
+(always at the back of the builder). This only works for space cards.
+
+Other GUI options are:
+{i:textures/gui/guielements.png,160,48,Silent mode: mute sounds from moving blocks}
+{i:textures/gui/guielements.png,96,48,Support mode: create preview/support blocks}
+Help to identify what will happen and help with gravity affected blocks.
+{i:textures/gui/guielements.png,128,48,Entity mode: also move entities}
+{i:textures/gui/guielements.png,192,48,Loop mode:}
+In this mode the builder will keep running as long as it has a redstone
+signal and keep on moving or copying if there is room to do so. If
+this is off the builder will do one pass and stop.
+{-------------------------------------------------------------}
+The builder also supports a standard RFTools filter. If that filter is
+inserted then it will only quarry or void blocks that match the filter.
+Note that this works only on the block in the world, not the end result
+of the block. i.e. to filter on diamonds you need to insert the diamond
+ore block in the filter. All filter options like whitelist/blacklist
+and filter by mod are supported.
+{-------------------------------------------------------------}
+For moving, swapping and copying structures you need a space card
+linked to a space chamber.
+
+You can use Space Chamber blocks to mark the corners of the source
+area that you want to work. One of these corners should be a
+Space Chamber Controller block.
+{rb:space_chamber}
+{rb:space_chamber_controller}
+{-------------------------------------------------------------}
+{n:chambercard}
+{ri:space_chamber_card}
+Right selecting the controller block with a wrench will let it form the
+chamber. If all is correct you will get a message saying so. Then you need
+to use a Space Chamber Card (right click it on the controller) to link the
+controller to the card.
+
+Put that card in the builder, set the right mode and other
+parameters and give it a redstone signal.
+
+If you right click a linked space chamber card it will give you an overview
+of all blocks and entities together with the cost of moving them.
+{-------------------------------------------------------------}
+For building geometrical shapes, voiding and quarrying areas you
+need shape cards:
+{ri:shape_card}
+
+Right clicking such a card will open a GUI where you can set the shape as
+well as the dimensions. A shape card can be upgraded in the crafting table
+to make the void card and one of the quarry cards.
+
+Note that several options in the GUI of the builder are unused if you use
+shape cards.
+{-------------------------------------------------------------}

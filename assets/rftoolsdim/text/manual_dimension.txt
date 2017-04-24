@@ -1,0 +1,473 @@
+{b}RFTools Dimension Manual
+
+Table of Contents:
+{l:intro}Introduction to Dimension Building
+{l:theory}Dimension Theory
+{l:unknown}Dimlets - Coding the World
+{l:create}Dimlet Crafting
+{l:enscriber}Enscriber - Coding your Dimension
+{l:builder}Builder - Creating your Dimension
+{l:teleport}Getting There
+{l:failure}Major Failure!
+{/}
+
+
+
+{l:shards}Shards of the World
+{l:infuser}Machine Infuser
+{l:probe}Activity Probe
+{l:extractor}Energy Extractor
+{l:editor}Dimension Editor
+{l:monitor}Dimension Monitor
+{-------------------------------------------------------------}
+{b}Introduction to Dimension Building
+{n:intro}
+Always wanted to create your own worlds? Explore uncharted areas and
+create magnificent buildings in fabulous worlds? With the Dimension
+Builder you create your own dimensions with all kinds of special
+features. Make void worlds, mining ages, floating islands, ...
+
+There is one catch, though. Dimensions require power to run (RF). Simple
+dimensions like a void world don't require a lot of power (10-200 RF/tick)
+but very complex dimensions can easily go above millions RF/tick. So if
+you want a world made out of diamond blocks you're either going to have
+to be very lucky or else be prepared for a hefty power generation system.
+
+RFTools generates dimensions with random features. However, you can make 
+things more deterministic by specifying every type of dimlet.
+{-------------------------------------------------------------}
+{b}Dimension Theory
+{n:theory}
+Before embarking on the adventure of forming your own worlds, it is
+important to understand how the dimensions work.
+
+The first thing that is important to understand is that worlds you
+create are not necessarily unique. If a pattern of code is used to
+create one world, using the same pattern of code will create the
+same world again. In fact, when you enter the first world and make
+changes, the changes will appear in the second as well!
+
+This allows you to disassemble dimensions, but enter the same exact
+ones later with the changes you've made still there, provided
+you used the exact same code.
+{-------------------------------------------------------------}
+{b}Dimlets - Coding the World
+{n:unknown}
+Dimensions, when created normally, will be completely random. You have
+no way of knowing whether it will be a floating sky world or a huge
+cave, or whether it's midnight or mid-day. Although you have a chance
+of creating a good world, chances are it won't work out in your favour.
+
+However, you can control your world with objects called Dimlets.
+Scattered throughout the world, in dungeons and other chests, or just
+obtained by killing Endermen, you have a chance of finding dimlet
+parts. These small items were made a long time ago with forgotten
+technology and can be used to construct dimlets. These dimlets are
+similar to code - imagine each dimlet as its own line of code;
+modifying the next dimlet or defining something about the world.
+{-------------------------------------------------------------}
+Dimlets are complicated devices, filled with advanced circuitry
+and powerful essences. These things can literally define how a
+world works. Most of the work you will be doing with dimensions
+will involve these dimlets.
+
+If you ever find yourself running low on dimlets, there is a
+higher chance of finding them within your custom dimensions.
+So, when nearly out of dimlets, create a couple random worlds
+and look around for interesting structures - you may find some
+very valuable dimlets in there.
+{-------------------------------------------------------------}
+{b}There are currently 14 types of dimlets discovered:
+    Terrain Dimlets: These are used to define what a world looks
+        like. Some examples include a normal world, a flat world,
+        or a skylands world.
+    Digit Dimlets: Digit Dimlets are lines of code that can be used
+        to create different dimensions. This allows you to create
+        new, unique worlds, except with exactly the same dimlets.
+    Biome Dimlets: These control what biomes appear in a dimension.
+        How many biomes are supported depends on the controller.
+    Biome Controller: These determine how many and which type of 
+        biomes are selected. For instance, you could define it
+        so that there is only one biome, or a checkerboard of
+        biomes.
+{-------------------------------------------------------------}
+    Material Dimlets: These dimlets are used to define what a feature is
+        made out of. For instance, these can be used to make sure a world
+        is made out of Glowstone or a tendril is made out of Netherrack.
+        When used as a modifier for a another dimlet, the cost of
+        these dimlets will drastically increase, same as the liquid
+        dimlets.
+    Liquid Dimlets: Similar to Material Dimlets, these only differ in
+        the fact that they define a liquid instead of a solid material.
+    Feature Dimlets: These dimlets define what features appear in the
+        world, such as floating ores filled with liquids, increased
+        ore generation, or even tendrils of various substances.
+    Structure Dimlets: These define if certain structures will appear in
+        the world, such as strongholds, villages, or mineshafts.
+{-------------------------------------------------------------}
+    Mob Dimlets: Using these dimlets you can specify additional mobs that
+        should spawn in your world (in addition to normal mob spawning!).
+    Sky Dimlets: These allow you to define the colours, sizes, or even
+        existence of various objects in the sky, such as planets, moons,
+        suns, sky colour, fog colour, and more.
+    Time Dimlets: With these dimlets you can control the time of the day.
+        It can be set to either a fixed time (morning, evening, midnight,
+        noon) or else you can get slow or faster time.
+    Weather Dimlets: Control the weather in your dimension with these
+        dimlets.
+    Effect Dimlets: These dimlets add various special effects. Negative 
+        effects generally help reduce maintenance power.
+{-------------------------------------------------------------}
+    Special dimlets: These are special dimlets that are usually
+        extremely rare.
+
+{b}There are currently five special dimlets:
+    Peaceful Dimlet: This dimlet prevents hostile mobs from
+        spawning in your dimension (except for mobs that you
+        manually add using mob dimlets). It is an expensive
+        dimlet though, and it will also never be randomly
+        generated in dimensions that you create.
+    Efficiency Dimlet: If you add this rare dimlet to your
+        dimension tab then the dimension will consume 20% less
+        energy per tick. This effect is cumulative. However,
+        it will greatly increase the creation time and
+        creation cost.
+{-------------------------------------------------------------}
+    Mediocre Efficiency Dimlet: This dimlet functions as a
+        somewhat inferior version of the Effeciency Dimlet.
+        It is easier to obtain, but does not add quite the
+        effects the normal Effeciency Dimlet does.
+    Shelter Dimlet: A dimlet for dimensions that may be
+        excessively hostile, this dimlet creates a much
+        safer spot for teleporting in.
+    Seed Dimlet: A very specialized dimlet to control the seed
+        of the random world generation for a dimension.
+{-------------------------------------------------------------}
+{b}Dimlet Crafting
+{n:create}
+
+Now that you have your dimlet parts you need a way to make
+dimlets. Using the Dimlet Workbench you can deconstruct
+dimlets into their technical components and then reconstruct
+them into new dimlets.
+
+The workbench can be crafted as follows:
+{rb:dimlet_workbench}
+{-------------------------------------------------------------}
+Every dimlet is made out of six parts:
+    - Dimlet Base item
+    - Dimlet Control Circuit
+    - Dimlet Energy Module
+    - Dimlet Memory Module
+    - Dimlet Type Controller
+    - Essence item
+
+You need the right tier of every part to make a dimlet.
+There is one control circuit for every rarity (0 to 6) and there
+are three levels of the energy and memory modules.
+{-------------------------------------------------------------}
+When extracting dimlets into parts there is a 40% chance for
+every part that you get nothing. To avoid this it is recommended
+that you infuse the workbench. A maximum infused workbench will
+guarantee that you get all parts back.
+
+Extracting a dimlet will never give you an essence item. You
+always have to make that.
+{-------------------------------------------------------------}
+There are various kinds of essence items depending on the type
+of dimlet that you want to make:
+    - Biome Absorber for biome dimlets
+    - Material Absorber for material dimlets
+    - Liquid Absorber for liquid dimlets
+    - Time Absorber for time dimlets
+    - Syringe for mob dimlets
+    - Peaceful essence (made out of 9 filled syringes of a
+      specific type) for the peaceful dimlet
+    - Efficiency/mediocre efficiency items for the corresponding
+      efficiency dimlets
+    - Structure Essence (from villagers) for structure dimlets
+{-------------------------------------------------------------}
+So, if you wanted to create a Biome: Forest dimlet, you would
+place the Biome Absorber within a Forest Biome. Slowly, the
+Biome Absorber will fill up with the essence of the Forest Biome.
+You can then place it in the last slot of the Dimlet Workbench
+along with the other pieces of the dimlet to build your Biome:
+Forest dimlet, now ready to be used in any dimensions!
+
+For the Time Absorber you need to give the absorber a redstone
+signal at approximately the right time. This has to be done
+10 times before it has fully absorbed the time.
+{-------------------------------------------------------------}
+Note that some dimlets can be crafted using the regular crafting
+table.
+
+You may notice that some of these craftable dimlets require a
+weird item. This is a Dimlet Template which can be crafted as
+follows:
+{ri:dimlet_template}
+
+To craft this you actually need dimensional shards.
+{-------------------------------------------------------------}
+{b}Dimension Enscriber
+{n:enscriber}
+The Dimension Enscriber is what is used to actually code your dimensions.
+{rb:dimension_enscriber}
+In addition, you will also need a Empty Dimension Tab
+{ri:empty_dimension_tab}
+{-------------------------------------------------------------}
+To use the Dimension Enscriber, you must first insert the Empty
+Dimension Tab into the slot on the lower left. To make a completely
+random world (with no dimlets included), you can simply click
+"Store" and the dimlets included will be randomly selected.
+
+However, if you would like to actually control your dimension, you
+need to insert dimlets. These can be inserted into the slots on
+the top of the device. Hitting store will create a realised tab
+that leads to the world you've just created.
+{-------------------------------------------------------------}
+The order of the dimlets inserted affects the dimension. If a material
+dimlet is placed before a terrain dimlet, it will create a world made
+out of that material. If it is inserted before a feature dimlet, it will
+make the feature out of that material.
+
+The descriptions of each type of dimlet and what they do can be found in the
+{l:unknown}Dimlet Page.
+{-------------------------------------------------------------}
+When you create a dimension, the dimlets placed into that dimension form
+the signature of the dimension. Any tabs created with those exact dimlets
+will lead to that world. Dimension Tabs can be extracted in the Enscriber
+to return the dimlets used. If access to that dimension is needed again,
+the same dimlets can be re-formed into a dimension to lead to that exact
+dimension, with any changes you've made still there.
+
+Further information about the theory behind dimensions can be found on the
+{l:theory}Dimension Theory page.
+{-------------------------------------------------------------}
+However, some people may wish to create new dimensions with the same
+set of dimlets. This can be easily done using Digit Dimlets. These
+have no power cost and allow you to infinitely vary your dimensions,
+just based on the digit dimlets included. Digit dimlets can be easily
+crafted and cycled between, so it is easy to vary your worlds.
+{-------------------------------------------------------------}
+Each dimlet has a certain Maintenance, Creation, and Tick cost shown
+in the tooltip. These represent the power cost of a dimension created
+with those dimlets. The Creation cost represents how much power the 
+dimlet will need per tick when creating the dimension. The Tick 
+cost represents how many ticks that dimlet will add to the creation 
+of the dimlet. The Maintenance cost is simply how much the dimlet 
+will cost per tick after the world is created.
+
+The maintenance cost can be lowered using Efficiency Dimlets, making
+it easier to maintain an already created world.
+{-------------------------------------------------------------}
+{b}Dimension Builder
+{n:builder}
+The Dimension Builder is what is used to create dimensions and maintain
+them based on the Realised Tab
+{rb:dimension_builder}
+
+Depending on the complexity of the dimension it will use power and need
+some time to actually construct the dimension. If there is not enough
+power present the building will be delayed. You can also take out your
+dimension tab if you want to temporarily stop building the dimension (if
+you need power for something else for example). The dimension tab will
+remember the current progress.
+{-------------------------------------------------------------}
+As soon as the dimension is ready the tooltip on the dimension tab
+will change indicating the status and current power. You will also
+notice that the energy level of the dimension builder is suddenly
+emptied. That's because all current energy in the dimension builder
+is immediately given to the dimension. The dimension itself has a
+buffer of 40,000,000 RF. Don't attempt to go to your dimension if
+there is not yet enough energy in it. Wait until sufficient energy
+has been put in it (you can see the current level in the tooltip
+of the dimension tab).
+
+Hint: If you shift-right click with the dimension tab in your hand
+you can see what random features were selected for creating this
+dimension.
+{-------------------------------------------------------------}
+Note on powering very expensive dimensions: the dimension builder
+accepts a maximum of 50,000 RF/tick on every side. So at most it can
+get 300,000 RF/tick if you input energy from all six sides and if
+you have conduits or energy cells that can handle that amount of
+RF/tick (a tesseract would work). Sometimes even 300,000 RF/tick
+is not enough to power your dimension. In that case you can use
+multiple dimension builders and multiple (identical) dimension tabs.
+That does mean that you will need multiples of all the dimlets that
+you used to create that dimension tab as well.
+
+Hint: the Special Efficiency dimlet and the Mediocre Effeciency
+dimlet both help with reducing maintenance cost but will add a
+greater creation cost and tick cost.
+{-------------------------------------------------------------}
+{b}Getting There and Safety
+{n:teleport}
+
+Once you have created your dimension you will need a way to get there. To 
+do that you have to use the RFTools teleportation system. At the time the
+dimension is created the Dimension Builder also generated a spawn platform
+with a Matter Receiver in the middle. This Matter Receiver will be fully
+charged so it is safe to teleport there.
+
+After creating the dimension you will need a Dialing Device to dial a matter
+transmitter to that new destination. If you gave your realised dimension tab a
+name (in the enscriber) then that destination will also be named like that.
+
+But don't just teleport to there yet! There are a few things you should
+worry about:
+{-------------------------------------------------------------}
+{b}Power!
+Your Dimension Builder is feeding power into the dimension. As
+long as that builder is chunkloaded or you are near it all is fine.
+But as soon as you teleport to that other dimension the dimension
+builder may become unloaded at which point no new energy will be
+entered in the dimension. The dimension will from that point on
+run on internal power. Depending on how expensive the dimension is
+you can live in a non-powered dimension for a considerable time.
+But beware of power running out! You will die if power is completely
+gone, but before that happens the dimension will darken and you will
+get various bad effects.
+
+Also note that if you have a dimension that uses a lot of RF/tick
+this internal buffer will go down a lot faster.
+{-------------------------------------------------------------}
+To solve this problem you either have to make sure your dimension
+builder is chunkloaded or else take with you another dimension
+builder with a copy (or the original) realized dimension tab and
+some power (a battery or generator) so that you can keep sending
+power from inside the dimension itself.
+{-------------------------------------------------------------}
+{b}Getting Back
+
+While the Dimension Builder generates a Matter Receiver in the dimension
+there will not be a Matter Transmitter! So you have to bring your own way
+back with you. You can do this with various teleportation systems but the
+recommended way is to use a Matter Transmitter that you bring with you.
+There are two options:
+
+Put the matter transmitter in your main base, fully power it and dial
+it to a nearby matter receiver. Then pick it up with a wrench. It
+will keep the settings so when you put it down in the other dimension it
+will still have power and you will be able to get back with it. Keep in mind 
+that power in that transmitter is drained with every teleport, so you will 
+have to be careful next time you go into the dimension.
+{-------------------------------------------------------------}
+Best is to bring along a battery or generator as well.
+Otherwise take some power, the matter transmitter and another
+dialing device with you and simply set up a teleportation hub in
+the dimension. If all fails you can simply go back by dying. You
+will return at your spawn point (but without your inventory of course).
+{-------------------------------------------------------------}
+If you are in the dimension then there is one handy tool that you
+can bring with you to monitor the power status of the dimension
+and that's the Dimension Monitor that you can craft like this:
+{ri:dimension_monitor}
+
+Right clicking with this tool will show you the amount of power
+still left in the dimension. The tool also gives a visual indication
+of the current amount of power.
+{-------------------------------------------------------------}
+{b}Major Failure!
+{n:failure}
+What if you just died in an unpowered dimension? How can you get your
+stuff back? Sometimes you really need to go back to a dimension that
+has no power. The Phased Field Generator allows you to do just that:
+
+{ri:phased_field_generator}
+
+This item has be charged first. While it has enough power it will protect you
+from the hazards of an unpowered dimension. But be fast (as fast as you can
+with the slowness you will get) because power runs out quickly!
+This item has to be in your hotbar to work. Do *not* remove it!
+{-------------------------------------------------------------}
+{b}Dimensional Shards
+{n:shards}
+Certain machines and items require an odd essence called "Dimensional
+Shards." Probably produced as a byproduct of the energy fueled into
+these dimensions. Generating below level 40, these shards will appear
+in any RFTools Dimension. This ore can be mined with a pickaxe to
+return the shards, which can then be used for all manner of things.
+
+{b}Dimensional Shards have several uses:
+    Firstly, shards are required to craft some of the basic dimlets.
+    You also need some shards to craft the 'Machine Infuser,' 'Activity
+    Probe', and 'Dimlet Templates.'
+    And finally, you can use them to 'infuse' almost all RFTools machines to
+    make them more efficient or give them special abilities.
+{-------------------------------------------------------------}
+{b}Machine Infuser
+{n:infuser}
+RFTools has the 'Machine Infuser' which is crafted as follows:
+{rb:machineInfuserBlock}
+
+With this machine you can inject dimensional shards into almost all other
+RFTools machines. Just pick up any RFTools machine with a wrench and put
+it in the left slot of the infuser. You can infuse up to 256 shards into a 
+single machine. Infused machines work more efficiently or faster. The benefits 
+vary depending on the machine, but in almost all cases it will need a lot less
+power to operate and in some cases the speed will greatly increase.
+{-------------------------------------------------------------}
+One particular use case is the Dimension Builder. A fully infused Dimension
+Builder will create dimensions a lot faster and use less energy. But also
+the shield block, auto crafter, and so on will benefit from this.
+
+It is also very useful to infuse your Matter Transmitter and Matter
+Receiver blocks as that way they will work faster and use a lot less
+energy (making them safer to use).
+{-------------------------------------------------------------}
+{b}Activity Probe
+{n:probe}
+
+Normally dimensions use power constantly - even when nobody is in
+them. It is possible to make this a bit more efficient by making
+an Activity Probe. You can craft this block as follows:
+{rb:activity_probe}
+{-------------------------------------------------------------}
+This device is passive. It doesn't use any power and it has no user
+interface either. You simply place it in an RFTools dimension (it
+has no effect in any other dimension). While it is present in a
+dimension it monitors activity in that dimension and it will shut
+down power consumption from that dimension when nobody is in the
+dimension (including chunk loaders). So this block is an effective
+way to make sure your dimension isn't using power needlessly.
+{-------------------------------------------------------------}
+{b}Energy Extractor
+{n:extractor}
+
+With this block it is possible to extract energy back out of
+a dimension. You can use this in case you no longer want to
+use the dimension or perhaps you have a central hub where you
+pump a lot of energy in your dimension and then you can use this
+block to distribute power everywhere. Be careful to not let
+the dimension run dry!
+{rb:energy_extractor}
+{-------------------------------------------------------------}
+{b}Dimension Editor
+{n:editor}
+
+With the Dimension Editor you can alter already created dimensions
+by inserting some types of dimlets. It can be crafted as follows:
+{rb:dimension_editor}
+
+Note that inserted dimlets are lost during this process (you will not get
+it back even if you deconstruct the dimension tab) and you pay the full
+power cost for it. There is no way to undo this so be careful. This can
+only be done with dimlets of type 'special', 'mob', 'effect',
+'sky', 'weather', and 'time'.
+{-------------------------------------------------------------}
+In addition to injecting some types of dimlets you can also inject
+a pre-charged matter receiver. This can be handy in case you
+accidently broke your receiver or it failed to generate because
+some structure overwrote it (AE2 meteors tend to do that for
+example).
+{-------------------------------------------------------------}
+{b}Dimension Monitor
+{n:monitor}
+
+Besides the dimension monitor item there is also a dimension monitor
+block which sends out a redstone signal as soon as the power in
+the current dimension goes below a certain level. It can be
+crafted as follows:
+{rb:dimension_monitor}
+{-------------------------------------------------------------}
