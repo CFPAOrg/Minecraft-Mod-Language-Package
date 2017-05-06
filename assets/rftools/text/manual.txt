@@ -1,706 +1,932 @@
 {b}RFTools Manual
 Table of contents:
-{l:general}一般提示
-{l:security}安全
-{l:smartwrench}智能扳手
-{l:netmon}RF网络监视器
-{l:base}基本要素
-{l:logic}逻辑门
-{l:monitor}内容监控器
-{l:coalgen}燃煤发电机
-{l:powercell}能量存储
-{l:stomon}库存扫描
-{l:storage}存储系统
-{l:filter}物品过滤
+{l:general}General Tips
+{l:security}Security
+{l:smartwrench}Smart Wrench
+{l:netmon}RF Network Monitor Item
+{l:base}Base Ingredients
+{l:logic}Logic Gates
+{l:monitor}Contents Monitors
+{l:coalgen}Coal Generator
+{l:powercell}Power storage
+{l:stomon}Storage Scanner
+{l:storage}Storage System
+{l:filter}Item Filter
 {/}
 
 
-{l:elevator}电梯
-{l:crafter}自动合成器
-{l:protect}方块保护器
-{l:prelay}RF能量中继器
-{l:telepo}传输系统
-{l:power}高级发电机
-{l:shield}护盾系统
-{l:screens}模块化屏幕
-{l:envctrl}环境控制
-{l:booster}加速器
-{l:spawner}刷怪系统
-{l:builder}建筑
+{l:elevator}Elevator
+{l:crafter}Automatic Crafter
+{l:protect}Block Protector
+{l:prelay}RF Power Relay
+{l:telepo}Teleporting System
+{l:power}Advanced Power Generator
+{l:shield}Shield System
+{l:screens}Modular Screens
+{l:envctrl}Environmental Control
+{l:booster}Booster
+{l:spawner}Spawner System
+{l:builder}Builder
 {-------------------------------------------------------------}
-{b}一般提示
+{b}General Tips
 {n:general}
-这个模组的所有机器（除了末影能发电机以及各个面无所谓的机器）都是可以
-用扳手右击旋转改变方向，潜行右击拆卸下来的。
-大多数的设置（比如内部能量，物品存储，合成过程）拆卸时都会被保存，甚
-至包括你把它们重新放下。
-你也可以直接用镐子把机器无损地拆下来.
+All blocks in this mod (with a few exceptions like the Endergenic
+Generator and blocks for which orientation doesn't matter) can be
+rotated by using a wrench on them.
 
-你可以手持很多种类的模块/卡片，用它们直接右击其适用的机器以安装进去。
+All blocks in this mod can be picked up by using a wrench while sneaking.
+Most settings (like stored energy, possible inventory, recipes and so on)
+will be remembered and restored when the block is put back in the world.
+You can also break the blocks with a pickaxe without losing anything.
+
+Many cards and/or modules can be directly installed in the
+appropriate block by right clicking the block with the module.
 {-------------------------------------------------------------}
 {b}Security
 {n:security}
-当你将一个你亲手合成的RFtools机器放在地上时，默认你是机器的主人.成为
-机器的主人并不能阻止别人挖走你的机器，但即使他们重新放置，机器所有权
-也不会变更. 使用弃权卡你将放弃对机器的主管权，除非你是管理员，无法放
-弃任何机器。
+If you place down a block from RFTools you will automatically be
+tagged as the owner. Being an owner does not prevent others from
+mining the block but they will not be able to change ownership
+(even after mining and placing it back). Using the Orphaning Card
+you can clear ownership for your own blocks (unless you are an
+admin, then you can do it all the time).
+
 {ri:orphaning_card}
 {-------------------------------------------------------------}
-只有机器主人才有权利改变机器的安全设置. 这意味着你可以指定谁有权访问
-你的机器.为了改变安全设置，你必须使用一个设置好的安全卡右击你想设置的
-机器:
+Only if you are the owner of a block can you change the security
+settings of that block. Basically that means you can control
+who can access the user interface. To change the security settings
+of a block you have to right click it with a properly set up
+Security Card:
 
 {ri:security_card}
 {-------------------------------------------------------------}
-安全卡需要在权限管理器内配置:
+Security Cards need to be configured in the Security Manager:
 {rb:security_manager}
 
-将安全卡插入权限管理器的左上角插槽，然后你可以改变频道名，将玩家加入频道
-并将频道在黑白名单间切换.
+You insert the card you want to configure in the top-left slot
+and then you can change the name of the channel, add players
+to that channel and switch between blacklist or whitelist mode.
 
-权限管理器左下角有个小存储可以让你放置不同的安全卡.
+The security manager has a small secondary inventory where you
+can keep your different security cards.
 {-------------------------------------------------------------}
-作为及其主人，你能且只能手持一个配置好的安全卡右键机器将机器加入并链接这个
-安全卡的频道.如果你后来在权限管理器内改变了安全卡的频道，链接到该频道的机
-器也将作出相应的改变.
+Once a security card is configured you can right select it on a block to
+assign that block to this channel. You can only do that if you are the
+owner of that block. The block will be linked to that security channel.
+If you make changes to the security channel later (in the security
+manager) these changes will automatically be reflected in all
+linked blocks.
 
-如果旧的安全卡丢失，你可以制作一个新的空安全卡右击你想要设置安全的机器，只有
-机器主人才能这样做.
+If somehow you lose a security card then you can make a new unlinked one
+and right select the block for which you want to make a new card (only
+the owner can do that).
 
-如果想复制特定的安全卡，请将新安全卡放在权限管理器的右上插槽.
+If you want to make a copy of a security card you can place a fresh
+card into the top right slot of the security manager.
 {-------------------------------------------------------------}
-玩家不能改变不属于自己的机器的安全设置. 但是如果你给他们一张已经和机器链接到
-相同频道的安全卡，他们就可以在自己的权限管理器内替换这个频道的安全设置. 这样
-你可以给予别人更多的权利，来向频道中添加/移除玩家。
+Players cannot change the security channel on a block they don't
+own. However, if you give them a security card that is already linked
+to the same channel as the block then they can alter the security
+settings for that channel in their own security manager. This
+way you can give some users more privileges to allow adding and
+removing others to a channel.
 
-机器主人和管理员可以无视安全设置进入机器界面并使用。
-注意，如果按下shift，你可以在WAILA中直接看到机器的安全设置.
+The owner of a block can always access the GUI regardless of the
+security settings on that block. An admin can also access the
+GUI in all cases.
+
+Note that if you press 'shift' you can see the security settings
+on a block in WAILA.
 {-------------------------------------------------------------}
-{b}智能扳手
+{b}Smart Wrench
 {n:smartwrench}
 {ri:smartwrench}
-智能扳手比起普通扳手唯一的不同就是它有两个模式：扳手模式和选择模式.
-要切换模式很简单，手持扳手对空气右击就行。
+The Smart Wrench works as a normal wrench. However it has two modes:
+'wrench' and 'select'. To switch modes just right click in the air.
 
-扳手模式下和别的扳手一样右击机器以旋转（大多数情况下），潜行右击机器以拆卸。
-选择模式是为了配合方块保护器选择方块的.
-潜行右击选择方块保护器右击选择被保护方块。
+In 'wrench' mode it will work as usual: right click with wrench to
+rotate blocks (in most cases) and sneak right click to pick up a block.
+
+'select' mode is used in combination with the Block Protector.
+Sneak right click to select the protector and right click to select
+blocks to protect.
 {-------------------------------------------------------------}
-{b}RF网络监视器
+{b}RF Network Monitor Item
 {n:netmon}
 {ri:network_monitor}
-使用网络监视器右击一个机器它会尝试探测与其直接或间接链接的RF产能设备或机器，
-也会显示探测到的坐标和机器内部的RF能量. 你可以用它帮助调试RF能量网络的问题.
+With the RF Network Monitor you can select a block and it will try
+to find all blocks that use or produce RF which are connected
+(directly or inderectly) to the selected block. It will also show
+you how much RF is in each of the blocks and the coordinate. You
+can use this item to help debug RF related network problems.
 {-------------------------------------------------------------}
-双击机器菜单里的某条线即可关闭窗口而且机器会高亮五秒钟 (可配置).
+Doubleclick on a line in the list of blocks will close the window and
+the block will be highlighted for 5 seconds (configurable).
 
-你可以在显示RF/t和显示RF间切换你也可以过滤输出.
+You can toggle the display between RF/tick or RF and you can also
+filter the output.
 {-------------------------------------------------------------}
-{b}基础要素
+{b}Base Ingredients
 {n:base}
 {rb:machine_frame}
-机器框架是这个模组内部大多数机器的基本合成组件.
+The machine frame is the base ingredient for most machines in this mod.
 {rb:machine_base}
-机器基座是其他一些机器的基本合成组件.
+The machine base is the base ingredient for a few other machines.
 {-------------------------------------------------------------}
-{b}逻辑门
+{b}Logic Gates
 {n:logic}
 
-{l:sequencer}音序器
-{l:timer}计时器
-{l:counter}计数器
-{l:endermon}末影监视器
-{l:redtrans}红石发信器
-{l:redrec}红石接收器
-{l:threelogic}逻辑门
-{l:invchecker}物品检测器
-{l:sensor}传感器
+{l:sequencer}Sequencer
+{l:timer}Timer
+{l:counter}Counter
+{l:endermon}Ender Monitor
+{l:redtrans}Redstone Transmitter
+{l:redrec}Redstone Receiver
+{l:threelogic}Logic Gate
+{l:invchecker}Inventory Checker
+{l:sensor}Sensor
 {-------------------------------------------------------------}
 {b}Sequencer
 {n:sequencer}
 {rb:sequencer_block}
-音序器是一种高级红石机械. 它可以周期循环一系列64种不同的红石信号. 
-你可以在这个机器的界面中改变信号的模式.
+The sequencer is an advanced redstone based sequencer. It is
+capable of giving out a series of 64 different signals. You can
+edit the pattern of these signals in the gui of this block.
 
-下一页解释了这个机器的模式. 你也可以设置机器循环红石信号的速度. 
-默认值是1也就是说，内部的红石信号每tick更新一次64tick完成一个循环.
+The modes of this block are explained in the next page. You can
+also set the speed at which the cycles are played. Default is 1
+which means that the cycle will proceed every tick.
 {-------------------------------------------------------------} 
-有7个不同的模式:
+It has seven different modes:
 
-    单次: 红石脉冲到来时只播放一次音序（进行一次循环）. 
-    忽略更远处的红石信号。
-    单次重置: 红石脉冲到来时只进行一次循环，重新提供红石脉冲，循环
-    便会重新开始。
-    无尽循环: 一直循环，无视信号。
-    循环重置: 一直循环，但是重新提供红石脉冲循环便会重新开始。
-    循环中止: 红石信号开启时一直循环，关闭红石信号，音序会停在某一步。
-    重启循环: 红石信号开启时一直循环. 红石信号关闭音序循环便会重启。
-    步进式: 随外界红石信号的一次次开启而播放音序（就是按按钮
-    走序列，一个序列64下——译者注）。
+    Once1: cycle once when pulse arrives. Ignore further pulses
+    Once2: cycle once when pulse arrives. Restart on pulse
+    Loop1: loop continuously, ignore redstone signal
+    Loop2: loop continuously, restart on pulse
+    Loop3: loop continuously while redstone signal is on. If
+           signal is down, stay at current step.
+    Loop4: loop continuously while redstone signal is on. If
+           signal is down, restart.
+    Step: step through the cycle one by one
 {-------------------------------------------------------------}
-{b}计时器
+{b}Timer
 {n:timer}
 {rb:timer_block}
-计时器是一个定时重复发送红石信号的简单机器.你可以设定任何延时这样可用于
-长周期的自动红石控制任务.（凋灵塔可用——译者注）
+The timer is a simple gate that will repeatedly send a redstone pulse.
+You can input any value for the delay so it can be used for very long
+timeouts.
 
-这个计时器特殊在于当它接收到外界红石信号后计时会重置. 所以定时给予外界的脉
-冲会导致它事实上无法输出信号。通过这一特性这个方块可以探测一些过时而没有开
-启的红石活动.
+What is special about this timer is that it restart when it itself
+receives a redstone pulse at its input. So given timely input pulses
+this block will never output a pulse itself. By using this feature this
+block can be used as a way to detect that a certain activity is overdue.
 {-------------------------------------------------------------}
-{b}计数器
+{b}Counter
 {n:counter}
 {rb:counter_block}
-这是个简单的方块，可以计数传来的红石信号并在达到一定数量后输出红石信号，然
-后计数重新开始。r. 你可以在它的界面中看到当前接受了多少信号.
+The counter is a simple block that will count redstone pulses and
+emit a redstone signal when it reaches a certain number. Then it
+starts over. You can see in the GUI how many redstone pulses it
+already got.
 {-------------------------------------------------------------}
-{b}末影显示器
+{b}Ender Monitor
 {n:endermon}
 {rb:ender_monitor}
-末影显示器只能配合末影能发电机工作.它会在三种不同的情况下发送红石脉冲:
- 
-    丢失珍珠: 损失一个末影珍珠时发出红石信号
-    珍珠点燃: 当一个末影珍珠被发射时发出红石信号
-    珍珠到达: 当珍珠到达时发出红石信号
-    
-记住红石信号在红点/红箭头一侧发出，这一侧必须背向末影能发电机.
+The Ender Monitor only works in combination with the Endergenic
+Generator. It will send a pulse based on three different conditions:
+
+    Lost Pearl: send a redstone pulse when a pearl is lost
+    Pearl Fired: send a pulse when a pearl is fired
+    Pearl Arrived: send a pulse when a pearl arrives
+
+Note that the redstone signal outputs on the red dot side and this
+has to face away from the Endergenic Generator.
 {-------------------------------------------------------------}
-{b}红石发信器
+{b}Redstone Transmitter
 {n:redtrans}
 {rb:redstone_transmitter_block}
-当接收到红石信号时，这玩意会以一个频道将红石信号无线发送.配合红石接收器
-工作. 当你将这个方块放下时，就会创建一个频道. 通过手持发信器右击别的发信
-器和接收器，你也可以将这个发信器链接到已有的频道。
+This block will wirelessly send out a redstone signal on a
+specific channel when it gets a redstone signal. Use this in
+combination with the redstone receiver block. If you place this
+block down it will create a channel. You can also link this
+transmitter to existing channels by right clicking on another
+transmitter or receiver.
 {-------------------------------------------------------------}
-{b}红石接收器
+{b}Redstone Receiver
 {n:redrec}
 {rb:redstone_receiver_block}
-这个方块将从一个已连接的发信器接受红石信号. 只需手持接收器右击别的发信器
-或者已设置的接收器即可为其指定频道。
+This block will receive a redstone signal from a linked
+redstone transmitter. To link this receiver with a transmitter
+right-select the transmitter (or another linked receiver) with
+this block.
 {-------------------------------------------------------------}
-{b}逻辑门
+{b}Logic Gate
 {n:threelogic}
 {rb:logic_block}
-这个方块有三个红石输入和一个输出. 在界面里你可以任意配置三个输入脉冲下
-所输出的结果.对于每一个输入组合，你都可以将输出设置为关，开，保持三个选项. 
-当你从一个输入组合变动到设置为保持的输入组合时，输出结果依然不变.
+This block has three redstone inputs and one output. Using the GUI you
+can make any possible combination of those three inputs into a single
+output. For every input combination you can set the output to off, on
+or keep. In keep the state of the output will be the same as it was
+before the input was switched to this state.
 {-------------------------------------------------------------}
-{b}物品检测器
+{b}Inventory Checker
 {n:invchecker}
 {rb:invchecker_block}
-这个方块会检测附近的箱子/容器，当箱子指定槽位里的物品达到一定数量时，
-发出红石信号(在界面中可配置).箱子的槽位是从0开始计数的——译者注。
+This block checks a slot in a nearby inventory and emits a redstone
+signal in case the number of items in that slot is above a certain
+value (configurable in GUI).
 {-------------------------------------------------------------}
 {b}Sensor
 {n:sensor}
-{rb:sensor_block}传感器能够检测前方不同的方块(不论1个方块还是三个五个). 
-它能检测被放置的方块, 作物生长等级, 实体数量等等.
+{rb:sensor_block}
+The sensor can detect various things directly in front of it
+(either 1 block, 3 blocks or 5 blocks). It can detect blocks
+being placed, crop growth level, number of entities and so on.
 {-------------------------------------------------------------}
-{b}RF监视器
+{b}RF Monitor
 {n:monitor}
 {rb:rf_monitor}
-RF监视器是可放置方块，能够检测附近3*3*3范围内所有方块所含的RF量并显示出来，
-当方块内部所含的RF过多或过少时也会发出红石信号. 你可以使用这个红石信号配
-合能量中继器（见下页）完成对RF网络的部分控制.
+The RF Monitor is a block that you place in the world and that
+can examine a nearby (3x3x3 area around the monitor) block and
+gives a visual indication of how much RF is left in that block.
+This block can also give out redstone signals in case the RF in
+the monitored block is too low or too high. You can use this
+redstone signal with the Power Relay (see below) to control
+parts of your RF network.
 {-------------------------------------------------------------} 
-{b}液体监视器
+{b}Liquid Monitor
 {n:liqmonitor}
 {rb:liquid_monitor}
-和RF监视器大同小异，除了能检测附近水槽里液体的容量.
+The Liquid Monitor is a block that works like the RF Monitor except
+that it can examine the contents of a nearby liquid tank.
 {-------------------------------------------------------------}
-{b}煤炭发电机
+{b}Coal Generator
 {n:coalgen}
 {rb:coalgenerator}
-煤炭发电机是一个用木炭或煤炭发电的简单机器，功率为60RF/tick. 如果被满注能它的
-功率是120 RF/tick.（注能需要机器注能机，然而机器注能机条目在维度说明书中——译
-者注）
-也可以为需要RF的机器充能但是太慢了.为物品充电的话能量单元是更好的选择。
+The coal generator is a simply generator that can produce 60 RF/tick
+from coal or charcoal. If fully infused it will produce 120 RF/tick.
+It can also charge items that need RF but does that slowly. The
+powercell is a much better solution to charge items.
 {-------------------------------------------------------------}
-{b}能量单元
+{b}Powercell
 {n:powercell}
 {rb:powercell}
-能量单元能存储能量. 有一个正常的和一个高级的版本.高级能量单元有更大容量，更快
-的输电速度.能量单元的每一个面都可以在界面中或者用扳手调节输入，输出，和无。
+The powercell can store power. There a normal and an advanced version.
+The advanced version can store more power and can also transfer power
+faster. Every side of a powercell can be configured with a wrench (input,
+output, none) or you can set all sides at once using the GUI.
 
-也能为使用RF的物品充电.
+The powercell can also charge items that use RF.
 {-------------------------------------------------------------}
-能量单元可以彼此连接.要做到这个，你必须合成和你想连接的机器一样多的能量单元卡:
+Powercells can also be linked to each other. To do that you have to craft
+as many powercell cards as you have powercells that you want to link:
 {ri:powercell_card}
 
-将一张卡插在第一个能量单元里，其他的放在中间的链接槽里.这样所有的卡都会有相同
-的ID. 然后你可以将这些卡插入想要链接的单元中. 这会创建一个多方块能量单元网.
+Insert one card in the first powercell and the others in the linking slot
+in the middle. That way all these cards will now have the same id. You can
+then insert each of these cards in another powercell. This will create a
+big multiblock of connected powercells.
 {-------------------------------------------------------------}
-用卡连接在一起的能量单元不需要相邻摆放.但是，如果不放在一起，当提取能量的时候会
-有一个很小的损耗（以维持链接）.损耗取决于你能量单元网的大小以及其他能量单元到你
-目前抽取的能量单元的距离.换句话说，能量被平分到每一个能量单元中.
-注意为能量单元充能可以减少损耗，以这种方式工作RFtools维度也可以工作的更有效.
+Powercells that are linked (using cards) don't have to be adjacent to
+each other. However, if they are not adjacent there will be a small cost
+that is calculated when power is extracted. The cost depends on distance
+and also on how big the cluster of powercells is from where you extract
+power. i.e. power is considered to be evently distributed over all cells.
+Note that infusing a powercell reduces this cost and also RFTools
+dimensions are more efficient at transfering power this way.
 {-------------------------------------------------------------}
-{b}存储检测器
+{b}Storage Scanner
 {n:stomon}
 {rb:storage_scanner}
-存储检测器能扫描周围区域的所有容器(箱子，熔炉，其它设备，基本所有能装物品的容器) 
-并在清单中显示.你可以在清单中选择一个容器然后会为你显示出容器里的物品.
+The Storage Scanner is a block that can scan the surrounding
+area for inventories (chests, furnaces, other devices, basically
+anything that can hold items) and show them in a list. You can
+then select an inventory in that list and it will display the
+contents of that inventory.
 {-------------------------------------------------------------}
-如果你打开检测器的界面会有两个清单.左面的清单最初是空的但是当你点击“scan”按钮时
-会被填充. 它包含了可扫描范围内所有的容器(箱子，熔炉，等等).如果你已经扫描了一个
-区域，并不需要重新开始. 如果一条线显示“removed”说明在扫描之后，一个容器被移除了.
+If you open the user interface of this scanner you get two lists.
+The top list is initially empty but will be filled when you press
+the 'Scan' button. It contains all the inventories (chests, furnaces
+and so on) that it could find in the selected area. If you
+previously scanned an area you don't have to do it again. If a line
+shows 'REMOVED' that means the specific block was removed after
+the scan.
 
-如果你选择了一个左边清单的容器，右边清单会显示容器内储存的物品.
+If you select an inventory in the top list then the bottom list will
+show the contents of that inventory.
 
-双击顶部清单的某个容器窗口会关闭并且高亮该容器5秒钟（默认）.
+Doubleclick on an inventory in the top list will close this
+window and highlight it in the world for 5 seconds (by default).
 {-------------------------------------------------------------}
-你能在可扫描的所有容器里搜寻你想要的物品，并将容器用黄色标记显示出来. 这样你就
-可以知道，你又把钻石镐放哪儿了。
-'Scan' 按钮之下的滑块允许你调节机器选择的范围. 范围值为'4'意味着可以扫描9*9*9范
-围的方块.
-{-------------------------------------------------------------}
-点击清单内的物品将其拿出该容器. 如果一个物品被放入 'inserter'槽（下方的蓝色槽），
-会自动将其放入左边清单的第一个容器中 (所以清单内容器的顺序非常重要).这两个过程都
-需要能量.
+You can search for items in all inventories that it scanned. It will
+mark all the inventories where it found an item that matches what
+you typed with a yellow color. This gives you an easy way to find
+out where you put that diamond pickaxe again.
 
-注意存储检测器只能把物品放入被星星标记的容器 (点击左侧清单的星星按钮).
-你也可以点击最下方的星星（蓝色槽左面）将其熄灭，就可以无视上方清单的星星，
-直接传送到被选中的某容器中。——译者注
+The slider below the 'Scan' button allows you to select the radius
+that this machine will use to scan the area. A value of '4' means
+that an area of 9x9x9 will be scanned.
 {-------------------------------------------------------------}
-{b}存储系统
+It is also possible to request an item out of the given inventory
+by double clicking it in the list of items. And if an item is
+inserted into the 'inserter' slot then it will be distributed
+to the first available inventory (which is why the order of the
+inventories in the top list is important). Both operations
+require some power.
+
+Note that the storage scanner will only insert items into inventories
+that are starred (press the 'star' button in the top list).
+{-------------------------------------------------------------}
+{b}Storage System
 {n:storage}
 {rb:modular_storage}
-模块化存储器是一个高级箱子。在你使用它之前您必须插入储存舱。储存舱有三个等级：
-100，200，或300个存储堆栈。您可以插入模块，来使箱子来应对更多复杂的物品存储。
-从存储器中移出存储模块，模块化存储器的内容将被复制到模块中。
-不同的物品存储相关模块可以让你根据不同的标准来分类你的物品. 第三个槽可以放入
-存储过滤模块以控制什么物品可以进入模块存储器中.
+The Modular Storage Block is an advanced chest. Before you can use it
+you must insert a storage module. There are three tiers: 100, 200,
+or 300 stacks. You can insert modules to make the chest work better
+with various types of items. When you remove a storage module from a
+Modular Storage Block the contents will be copied to the module.
+
+The various item modules allow you to sort and group your items based
+on various criteria. There is also a third slot where you can insert
+a filter module to restrict items going into the storage.
 {-------------------------------------------------------------}
 {n:remotestor}
-也有一个远程存储器:
+There is also a Remote Storage Block:
 {rb:remote_storage}
-使用这个箱子你可以建立一个远程存取网络. 你能在一个远程存储器中放入4个储存舱. 
-然后制作一个远程存储模块. 打开远程存储器，将远程存储模块放在储存舱旁边即可
-完成链接。需要在合成格子或者工作台中将远程存储模块与空的手持存储模块合成绑
-定后的存储模块或者直接将储存舱与空的手持存储模块合成.
-{-------------------------------------------------------------}
-手持存储模块离线访问:
-{ri:storage_module_tablet}
-右键使用充满了电的这玩意你可以打开被绑定的远程模块或者存储模块里的物品.储存舱
-等级越高，打开消耗的能量越多.
+With this block you can make a storage module available remotely. You can
+put up to four storage modules in the remote storage block. Then you can
+create Remote Storage Module items. These need to be linked first to the
+right storage item. To do that place the remote storage module in the
+appropriate slot next to the item.
 
-这个手持模块也可以与存储控制模块合成在一起以远程访问一个存储检测器.
-这是一个很棒的功能，因为它可以控制到你所有的物品存储.
+You can then use the remote storage module by combining it with a tablet
+or you can insert the module in a modular chest block.
+{-------------------------------------------------------------}
+Offline access with the Tablet:
+{ri:storage_module_tablet}
+With this item you can open the contents of a remote or normal storage
+module from within your hotbar. To use it you need to craft the tablet
+together with the storage module and you must charge it with sufficient
+energy. Higher storage tiers will cost more RF to open. To get the
+storage module and empty tablet back you just put the tablet in your
+crafting grid.
+
+The tablet can also be combined with a storage screen module
+to remotely access a storage scanner. This is a very powerful combination
+as it allows full access to your entire storage network.
 {-------------------------------------------------------------}
 {n:storfilter}
-过滤模块:
+Filtering items for your storage:
 {ri:filter_module}
-使用这个模块你可以控制哪些物品可以进入你的箱子，可以使用黑/白名单, 用NBT, 耐
-久值, 矿物辞典或模组来过滤.
-过滤模块也可以用在自动合成机中来控制哪些物品可以进入缓存，也可以放在建造机中
-控制挖掘哪些，清空哪些方块.
+With this item you can control what is allowed in the chest and what not.
+You can white or blacklist, filter with NBT, damage, ore dictionary or mod.
+This filter module is also usable in the crafter to control what goes into
+the crafter buffer and in the builder to control what to quarry or void.
 
-手持过滤模块右击打开，或者潜行右击任何容器都可以打开其界面，这样就可以将
-容器中的物品直接加入过滤模块中.潜行右击世界中的方块也可以添加过滤.
+The storage filter item has its own GUI which you can only access by having
+the filter in your hand or you can sneak right click on any inventory will
+configure the filter to the current contents of that inventory. Sneak right
+click on another block in the world will add that to the filter.
 {-------------------------------------------------------------}
-{b}电梯
+{b}Elevator
 {n:elevator}
 {rb:elevator}
 
-电梯是一个上下移动实体(包括玩家)的方块. 要让电梯有效工作你必须在每一层放上
-电梯方块，而且在某一层的前面需要用任意固体方块做一个平台. 只有底部的电梯
-需要供应RF.
-如果某一层电梯接收到红石信号，平台就会移动到这一层.
+The elevator is a block that can move entities (including the player)
+up and down. To setup an elevator you need to place elevator blocks
+at every level and at one level make a platform in front of the
+elevator using solid blocks. Only the bottom elevator block needs power.
+If one of the elevator blocks gets a redstone signal then the platform
+will move there.
 {-------------------------------------------------------------}
-电梯与无线红石系统以及电梯按钮模块配合很好，所以你可以在一定距离外控制电梯.
-而且电梯按钮模块，允许你直接控制平台该移动到哪一层.
+The elevator works well with the wireless redstone system and the
+button screen module so you can control the elevator from a distance.
+In addition you can use the elevator button module which allows you
+to directly control to what level the platform should move.
 {-------------------------------------------------------------}
-{b}自动合成机
+{b}Automatic Crafter
 {n:crafter}
 {rb:crafter1}
-这是一个很棒的自动合成机械，能在一个方块内支持8个合成.可以彼此独立地合成很
-多物品，也可以用来进行复杂的多步合成.默认情况下每一次合成消耗100RF (在一步
-完成所有合成的情况下).
+The Crafter is a powerful automatic crafting machine that can handle
+up to eight different recipes in a single block. It can be used to
+craft multiple items independent from each other or else it can be
+used for more complicated multi-step crafting recipes. By default it
+uses 100 RF for every crafting cycle (where it does all crafting
+operations in one step).
 {-------------------------------------------------------------} 
-在左上角的清单选择一个空的合成，“No Recipe”，在JEI/NEI里点击shift+加号按
-钮转移物品，合成表便会自动转移到右边合成格子里。也可以将正确的物品拖进合成
-格子里以编辑这个合成.已经写入的配方依然可以重新编辑。
-（清晰起见对原文有删改——译者注）
-合成机有一个内部缓存和4个成品输出槽.通过插入存储过滤器，你可以阻止不想要的
-物品传入缓存中.
-{-------------------------------------------------------------}
-'Keep/All' 只有当一个合成被选择的时候才会激活，并允许你控制是否在机器缓存中
-一直保留一个合成物品.
+The list at the top-left allows you to select all the supported
+recipes. If you select a recipe you can edit it in the right grid
+by dragging over the right items.
 
-'Int/Ext' 只有当一个合成被选择的时候才会激活，允许你控制合成的产品的去向. 选
-择 'Ext' (默认) 成品会被放在输出槽中，这样就可以被外接管道抽走.
-选择 'Int' 成品会被保存在物品缓存中以为接下来的合成提供原料.
-
-合成机也有红石控制模式 (下方的按钮，可以设定为'ignore', 'off', or 'on')，也
-可以设定慢速合成模式和快速合成模式，快速模式需要消耗更多电.
+The crafter also has an internal inventory and four output slots
+for crafting results. By inserting a storage filter item you can
+also prevent unwanted items from being inserted into this inventory.
 {-------------------------------------------------------------}
-{b}方块保护器
+The 'Keep/All' button is only active when a recipe is selected and
+allows you to control if this recipe will always keep at least a single
+item in the internal inventory.
+
+The 'Int/Ext' button is also only active when a recipe is selected
+and allows you to control where the result of the crafting operation
+of this recipe goes too. With 'Ext' (default) the result is put in
+an output slot where it can be extracted by an external pipe.
+With 'Int' the result goes in the internal inventory where it
+can be used by other recipes in this crafter.
+
+The crafter also has a redstone mode (button below which can be set
+to 'ignore', 'off', or 'on') and it also has a speed mode which is set
+to slow by default. Fast mode uses more energy.
+{-------------------------------------------------------------}
+{b}Block Protector
 {n:protect}
 {rb:block_protector}
-使用方块保护器你可以使方块免于被工具和爆炸破坏. 使用 'select' 模式，潜行右击
-方块保护器，并在同一模式下右击想保护的方块. 最大保护距离为10. 注意方块保护器
-会消耗一点电能以保护方块.
+With the block protector you can protect blocks from being harvested
+or affected by explosions. Use the 'sneak-select' mode on the Smart
+Wrench to select the protector and then just 'select' all blocks you
+want to protect with the Smart Wrench in 'select' mode. The maximum
+distance is 10. Note that the block protector will need a little
+number of power per tick for every block it protects.
 {-------------------------------------------------------------}
-当被保护的方块被尝试破坏时，会消耗更多的电能以保护.如果没有足够的电能以保护一
-个方块，这个方块会被从保护清单移除(可能会被破坏). 如果你想要建造一个防御更加强
-大的爆炸(比如凋灵)的房间，推荐使用更多的方块保护器，每个保护器保护数量较少的一
-组方块.确保方块保护器自己也要受到保护.
+In addition it needs extra power when a protected block is being
+harvested or affected by an explosion. If there is not enough power
+to protect a block then the block is removed from the protection
+list (and will probably get destroyed). If you want to make a room
+to protect against more powerful explosions (like from the Wither)
+it is recommended to use more then one block protector to protect
+smaller groups of blocks. Also make sure to protect the block
+protector itself.
 {-------------------------------------------------------------}
-{b}RF能量中继器
+{b}RF Power Relay
 {n:prelay}
 {rb:relay}
-能量中继器允许你使用红石信号控制RF流量. 在它的界面中你可以看到红石信号在高/低
-情况下各个面（D U N S W E）的RF流量，每一面都可以单独配置，可以将某一面设定为
-输入模式（蓝色）. 一般可以用这个控制发电机和电容器传来的能量. 可以配合RF监视器
-在RF储备不足的情况下关闭网络的一部分，比如矿物处理机器.
+The Power Relay allows you to control how much RF to output based on a
+redstone signal. In its GUI you can set the number of RF/tick to give
+in case redstone signal is off and also in case redstone signal is on.
+This can be configured per side. You can also mark sides as being
+input-only. This is where you typically connect the power coming
+from a capacitor or power generator. You can use this in block in
+combination with the RF Monitor to turn off a portion of your RF network
+in case power is low. For example, to turn off ore processing machines.
 {-------------------------------------------------------------} 
-{b}传送系统
+{b}Teleporting System
 {n:telepo}
-RFTools支持一个使用RF来传送物质的传送系统.一个传送系统是单向的，包含了物质传
-输器和接收器.所以你各需要一对机器以完成双向传送. 为了建立物质传输器和接收器之
-间的链接必须做一个传送控制器.
+RFTools supports a teleportation system that uses RF to do the
+transfer of matter. A teleporter is essentially one-directional and
+consists of a transmitter and a receiver. So you need a pair for
+two-way teleportation. To connect a transmitter and a receiver you
+will also need a dialing device.
 
-传送消耗的能量取决于传送的距离. 传送到异维度需要大得多的能量.
+Energy cost of teleportation depends on the distance traveled. Also
+travelling to another dimension is a lot more expensive.
 
-如果你是管理员，想要检修传送网络，可以拿出一个传送调试仪（没有合成）.使用这个
-可以检测世界中所有接收器的问题.
-双击清单中的某一接收器，将不消耗RF传送到那里.
+If you're an admin and want to troubleshoot the portal network
+you can use the Teleport Probe item (has no recipe). You can use
+this item to check for problems with all receivers in the world.
+Doubleclick on an item in the list will teleport you without using RF.
 {-------------------------------------------------------------} 
-{b}传送相关方块
+{b}Teleportation Blocks
 
-{l:tptransmitter}物质传输器
-{l:tpreceiver}物质接收器
-{l:tpdialer}传送控制器
-{l:tpdestcheck}目标分析仪
-{l:tpbooster}物质助推器
-{l:tpaccess}准入控制
-{l:porter}充能传送器
-{l:simdial}简易传送控制器
+{l:tptransmitter}Matter Transmitter
+{l:tpreceiver}Matter Receiver
+{l:tpdialer}Dialing Device
+{l:tpdestcheck}Destination Analyzer
+{l:tpbooster}Matter Booster
+{l:tpaccess}Access Control
+{l:porter}Charged Porter Item
+{l:simdial}Simple Dialer
 {-------------------------------------------------------------} 
-{b}物质传输器
+{b}Matter Transmitter
 {n:tptransmitter}
 {rb:matter_transmitter}
-物质传输器放在地上，当链接到一个有效目的地时会传送站立其上的玩家. 只要玩家站
-在上面，就会有一个固定的能量消耗. 在传送的过程中 (取决于传送距离)仍然消耗能量. 
-如果连玩家站上去所消耗的能量都没有（几近于0），传送将不会开始. 但是传送过程中
-能量耗尽，会发生很可怕的事情.
+The matter transmitter is placed on the ground and (when dialed to a
+valid destination) will teleport a player that is standing on it. There
+is a fixed energy cost which is consumed immediatelly when the player
+stands on it. Then during the duration of the teleport (witch varies
+depending on the traveled distance) power is also consumed. If there
+is not sufficient power during the first power usage then teleportation
+will simply not start. But if there is a power failure during transit
+then potentially very bad things can happen to the player.
 {-------------------------------------------------------------} 
-{b}物质接收器
+{b}Matter Receiver
 {n:tpreceiver}
 {rb:matter_receiver}
-物质接收器也放在地上，传送到这里的玩家将站在它的上面.注意接收器也需要能量，
-如果玩家到达之时能量不足，也会发生可怕的事情，小心！
-如果你给接收器一个名字(在界面中) ，名字将会显示在传送控制器当中以更好的区分.
+The matter receiver is also placed on the ground. Players that teleport
+to a receiver will appear on top of this block. Note that a receiver needs
+energy. If the receiver doesn't have enough energy then teleportation will
+go on but bad things will happen as soon as the player arrives at this
+destination. So be careful!
+
+If you give the matter receiver a name (using the GUI) then that name will
+be shown in the dialing device which makes it easier to recognize.
 {-------------------------------------------------------------} 
-{b}传送控制器
+{b}Dialing Device
 {n:tpdialer}
 {rb:dialing_device}
-传送控制器是一个重要的方块，负责链接世界中的传输器和接收器.它会显示附近的所
-有传输器(默认范围是21x11x21)，也会显示世界中所有的接收器. 注意一个已经链接
-过的传输器会额外消耗一点电能以维持链接.
-点选上方清单某一带灰色末影珍珠的坐标项（物质传输器坐标）和下方清单某一带灰
-色星星的坐标项（物质接收器坐标），点击dial即可完成链接。——译者注
-'Check' 按钮默认被禁用除非你的目的地有一个目标分析仪 (见下).
+The dialing device is an important block which is needed to connect
+nearby matter transmitters to receivers anywhere in the world. It shows
+a list of all transmitters in the vicinity (by default an area of 21x11x21).
+It also shows a list of all receivers in the world. Note that a dialed
+transmitter will consume a little bit of energy while it is holding its
+connection.
+
+The 'Check' button is disabled by default unless you have a destination
+analyzer connected to this machine (see below).
 {-------------------------------------------------------------} 
-{b}目标分析仪
+{b}Destination Analyzer
 {n:tpdestcheck}
 {rb:destination_analyzer}
-这是一个可以放在传送控制器旁边的无界面方块，允许传送控制器检查接收器或传送
-维度的状态.这样在传送之前就可以确保一个接收器或传送维度有足够电能或者不被
-锁定.
+This is a passive block that you can place next to a dialing device. It
+enables the dialing device to check the status of a receiver or destination
+dimension. This way you can be sure that a receiver and/or dimension has
+enough power or is not blocked before attempting to make a connection.
 
-目标分析仪也可以放在物质传输器旁边. 这样当传输过程中出现问题，传输器会发
-出红色的光柱. 也可以在传送控制器中检查问题.
+You can also place a destination analyzer next to a transmitter. In
+that case the transmitter will show a red colored teleportation beam
+if there is something wrong on the receiving end. You can check the
+actual problem in the dialing device.
 {-------------------------------------------------------------}
-{b}物质助推器
+{b}Matter Booster
 {n:tpbooster}
 {rb:matter_booster}
-这也是一个放在物质传输器旁边的无界面方块. 这个方块允许传输器把玩家传送到
-一个没电的接收器. 这会消耗更多的能量以传送，传输器更容易不工作. 注意这个
-方块并不能避免受到负面影响. 你仍然会受到轻伤且意念混乱.但总比直接死掉好.
+This is another passive block that you can place next to a matter
+transmitter. If this block is present it gives the transmitter the
+capability to teleport the user to an unpowered receiver. This does
+use more energy so if not enough energy is available in the transmitter
+this will not work. Note that this block does not avoid all
+negative effects. You will still get hurt slightly and you end
+up rather confused. But it is still way better then dieing.
 {-------------------------------------------------------------}
-{b}准入控制
+{b}Access Control
 {n:tpaccess}
-传输器和接收器都可以设定公共(默认)和私有. 在私人模式你必须插入一张玩家清单
-以决定谁可以使用传输器和接收器.
+Both the transmitter and the receiver can be set in public mode (default)
+or private. In case the mode is private you have to insert a list of
+players who can access this transmitter or receiver.
 
-传输器上一个不被允许的玩家无法被传送到接收器，无法链接传输器和接收器，也无
-法调试传送系统.
+In case of a transmitter an unauthorized player will not be able to dial
+to a receiver or to interrupt a dial and he/she will also not be able
+to step through the teleporter.
 
-接收器上一个不被允许的玩家无法被传送到这个接收器，但是他可以通过一个给他
-授权的传输器来到这里.
+In case of a receiver an unauthorized player can not dial to that
+receiver but he/she can teleport to it if there is an authorized
+transmitter already dialed to that receiver.
 {-------------------------------------------------------------} 
-{b}充能传送器
+{b}Charged Porter
 {n:porter}
-充能传送器是设定到接收器(潜行右击接收器)且需要充电. 手持传送器右击即可传送
-. 注意比起正常的传送，这样会消耗更多的能量.
-接收器依然需要能量! 用这些合成这个:
+The Charged Porter is an item that you set to some target receiver (with
+sneak-right click) and charge up. Right clicking the porter will teleport
+you. Note that this requires more power compared to normal teleportation.
+Also note that the receiver still needs power! To craft this use:
 {ri:charged_porter}
-高级充能传送器可以存储更多的能量，传送的更快，允许8个目的地(潜行右击添加
-目的地，对空潜行右击以打开目的地选择菜单).
-有热键(默认[ and ])以循环目的地.
+The advanced version stores more power, teleports faster and allows 8
+destinations (sneak right click to add receiver and sneak right click in
+the air to edit the destinations).
+There are also hotkeys (default [ and ]) to cycle destinations.
 {-------------------------------------------------------------}
-{b}简易传送控制器
+{b}Simple Dialer
 {n:simdial}
-简易传送控制器是一个逻辑方块，当收到红石信号时，可以完成一个预设的传输器
-和接收器之间的链接.
-要设置链接你必须手持这个方块，潜行右击传输器和接收器.
+The Simple Dialer is a logic block that will dial a pre-set
+transmitter/receiver combination when it gets a redstone signal.
+To set the transmitter and/or receiver you have to sneak-right
+click with this block on the transmitter and/or the receiver.
 
 {rb:simple_dialer}
 {-------------------------------------------------------------}
-{b}高级发电机
+{b}Advanced Power Generator
 {n:power}
 
-工作在末地的科学家们发现了末影珍珠的一个有趣特性.当一个珍珠以被控制的方法
-扔出去，抵达时的神秘特性可以被利用转化为RF. 如果在精确的时间点将会产生大
-量的能量.以这种方式被投掷的珍珠被叫做 '末影能珍珠'.
+Scientists working in The End have discovered an interesting property
+of ender pearls. When a pearl is thrown in some controlled manner the
+mystic properties that occur on arrival can be harnessed and converted
+to RF. If done at exactly the right moment this can produce a lot of
+power. A pearl thrown this way is called an 'Endergenic Pearl'.
 
-而且末影珍珠看上去似乎能“记住”它被俘获的方式.如果一个末影珍珠被俘获后尽快
-扔出去，它的内能会增加，可以提供一个很大的增益以提取它的能量. 但是这意味着
-珍珠需要尽快的点火发射,抑制一个点火状态下的珍珠会很耗费能量.
+In addition it appears that pearls 'remember' that they have been
+captured this way. If a pearl is captured and then thrown again as soon
+as possible its internal power capacity increases which can give big
+benefits for producing RF from this. However, this means that the pearl
+has to be fired again as soon as possible, as trying to restrain a pearl
+from firing is very costly on energy.
 {-------------------------------------------------------------}
-注意即使在最理想的情况下末影珍珠也可能丢失. 一个方法是，保证系统随时可以运
-行使用.
+Note that even in optimal conditions it is possible that pearls are
+lost. So a way has to be found to ensure that the system stays operational
+at all times.
 
-{b}能量方块
+{b}Power Blocks
 
-{l:powendergenic}末影能发电机
-{l:powinjector}末影珍珠填充器
+{l:powendergenic}Endergenic Generator
+{l:powinjector}Pearl Injector
 {-------------------------------------------------------------}
-{b}末影能发电机
+{b}Endergenic Generator
 {n:powendergenic}
 {rb:endergenic}
 
-末影能发电机是发电系统的主要部分，可以俘获末影珍珠并给它们重新点火发射. 给予
-红石脉冲可以切换三个模式:
+The Endergenic Generator is the main block in the power generator system.
+This device can capture endergenic pearls and fire them again. It has three
+basic modes which are controlled by giving redstone pulses to this device:
 
-    空闲:默认模式，只是在等待
-    充能:在这个模式可以接受末影能珍珠
-    容纳:此模式可以容纳一颗珍珠
+    Idle: this is the default mode. It just waits
+    Charging: in this mode the device can receive endergenic pearls
+    Holding: in this mode the device is holding a pearl
 {-------------------------------------------------------------}
-充能模式是一个15tick的循环.俘获珍珠的最佳时机是tick10(起始是tick1). 末影
-能珍珠在循环中任何其他的时间点到达都会产出能量，但是RF值会大大减少.
+Charging mode is a 15-tick cycle. The most optimal time to capture a pearl
+is at tick 10 (starting with tick 1). RF will also be generated if an
+endergenic pearl arrives at any other point in the charging cycle but the
+RF that can be generated will be a lot less.
 
-充能循环结束依旧没有接收到珍珠，机器就会回到空闲模式.
+When the charging cycle ends without a pearl being received then
+the machine will go into idle mode again.
 
-如果一个珍珠到达时充能循环立刻结束，机器将转入容纳模式. 这个模式下会消耗能量. 
-小心不要容纳珍珠过久否则你将得不偿失. 如果机器的内缓存没有足够的能量容纳珍珠
-它将自动被丢弃. 任何情况下，末影珍珠每tick都有小概率的丢失.
+If a pearl is received then charging mode immediatelly ends and the machine
+goes into holding mode. In this mode it will consume RF every tick. Be
+careful holding the pearl for too long as you will then end up consuming
+more RF then you gained. If the internal storage of the generator does not
+have enough RF to hold the pearl then it will automatically be lost. Also
+each tick there is a small chance that the pearl will be lost in any case.
 {-------------------------------------------------------------}
-你可以使用BuildCraft（建筑）or Thermal Expansion（热力膨胀）联动的扳手来控
-制每个发电机的目的地.如果你没有设定目的地，珍珠在点火发射时就会被丢弃.
+You can use a BuildCraft or Thermal Expansion compatible wrench to control
+the destination of each generator. If you don't set a destination then pearls
+will be automatically lost as soon as they are fired.
 
-当用扳手右击发电机时，它会变红，然后你要用扳手右击目标发电机以定义目的地. 注意
-下方的信息，它会以tick为单位告诉你两个发电机之间的距离. 这能帮助你精确测定系统
-循环剩余的时间. 记住，最大的距离是4tick.
+When selecting a generator with a wrench (right click) it will turn red
+and then you can go to the destination generator (right click it again) to
+set the destination. Pay attention to the message you get when you do this
+as it tells you the distance (in ticks) between the two generators. This can
+help you to time the rest of the system exactly right. Note that the maximum
+distance is set to 4 ticks so keep that in mind.
 {-------------------------------------------------------------}
-在特定时间充能，容纳，点火末影能珍珠的技术说明了对多个发电机的时间，坐标的精确
-控制.你至少需要两个发电机来产生能量，虽然只有两个很可能难以获得理想的RF发电量.
+This mechanic of charging, holding and firing endergenic pearls at specific
+times implies precise timing and cooperation of multiple Endergenic
+Generators. You will need at least two generators to be able to produce
+power although it will probably be hard to get optimal RF production using
+only two generators.
 
-如果你有大量的末影珍珠，不在意相对于理想情况的损失，你只需要尽可能多的把末影珍珠
-从一个发电机扔到另一个发电机. 对于其他的发电机，只需要把它们（珍珠）发射出去而
-无所谓目的地.你将快速地损耗很多末影珍珠，这不是什么好办法.
+If you have plenty of ender pearls and don't care too much about less then
+optimal generation you can just throw in as many pearls as you want from
+one generator and capture them in another. Then it that other generator
+you just fire them away immediatelly without caring about a destination.
+You will quickly consume lots of ender pearls this way so this might not
+be the best way to proceed.
 {-------------------------------------------------------------}
-{b}末影珍珠填充器
+{b}Pearl Injector
 {n:powinjector}
 {rb:pearl_injector}
 
-这个方块面对末影能发电机放置或者直接放在下面. 这是唯一将末影珍珠放入发电系统的
-方式. 当接收到红石信号时它会将末影珍珠转化为末影能珍珠并立刻插入邻近的末影能发
-电机.如果发电机已经容纳了一个末影珍珠则新的末影珍珠会丢失.
+This block has to be placed facing an Endergenic Generator or else
+directly below it. This machine provides the only way to inject an ender
+pearl into the power system. When it receives a redstone signal it will
+convert the ender pearl to an endergenic pearl and immediatelly insert it
+into the adjacent Endergenic Generator. If that generator was already
+holding a pearl then nothing happens and the new pearl is lost.
 {-------------------------------------------------------------}
-否则末影能珍珠会立刻被末影能发电机发射，系统开始运作.
+Otherwise the endergenic pearl is immediatelly fired from the
+generator and the system starts.
 
-填充器内部有一个只能安装末影珍珠的缓存.
-TartaricAcid（酒石酸）在bilibili有一个很好的末影能发电系统解决方案——译者注
+This injector has an internal buffer that can only store ender pearls.
 {-------------------------------------------------------------}
-{b}护盾系统
+{b}Shield System
 {n:shield}
-RFTools提供了一个“简单的”护盾系统用以过滤怪物，动物，玩家和物品.首先你要用相
-同颜色的护盾支架来搭起护盾的形状. 然后将一个护盾投射仪放在护盾支架旁边供电.
+RFTools implements a 'simple' shield system that can filter mobs, animals,
+players, and items. You start by building the shape of your shield with
+connected Shield Template Blocks of the same color. Then you put a Shield
+Block next to one of these templates and you give it power.
 
-一级的护盾支持256个方块.2级支持1024个.3级支持4096个，4级支持32768个，高级比
-起低级，以双倍的能量抵抗4倍的毁坏.
+A tier 1 shield can handle 256 blocks. Tier 2 ups this to 1024. The tier 3
+ups this to 4096 and deals 4 times as much damage at twice the power.
 
-用扳手右击护盾投射仪以将护盾支架变成护盾方块.护盾投射仪将会将护盾排布成给定的
-形状. 即使用左键去破坏它护盾依然会存在. 扳手右击护盾投射仪会将护盾变回支架. 
-这样你便可以自由改变护盾的形状.
+To compose the shield right click the shield block with a wrench. The
+shield block will compose the shield in the specified shape. If you hit
+the shield with left click it will also connect on corners. Wrench the
+shield again to get the template blocks back. By doing that you
+can change the shape of your shield in case you're not happy with it.
 {-------------------------------------------------------------}
-要用如下原料合成护盾支架:
+To craft the Shield Template Blocks you use the following recipe:
 {rb:shield_template_block}
 
-注意有4种不同颜色的护盾支架以便你构建相邻却又分明的护盾.每个投射仪都只能支
-持一种颜色.
+Note that there are four different template blocks so you can use them
+to make adjacent distinct shields. Every projector will only take one color.
 
-要这样合成护盾投射仪:
+To craft the Shield Block you use the following recipe:
 {rb:shield_block1}
 {-------------------------------------------------------------}
-护盾有四个可视化选项:
+The shield has four visualization options:
 
-    不可见：护盾完全不可见
-    护盾:使用一个清澈的动态材质
-    固体: 护盾是不透明的
-    透明: 护盾是静态透明材质
-在界面里你可以为实体制定通过规则. 每一个规则有如下选项:
+    Invisible: the shield is totally invisible
+    Shield: a transparent generic shield texture is used
+    Solid: the shield is solid
+    Transparent: the shield is transparent
 
-    通过: 实体可以通过
-    固态: 实体被封锁
-    伤害: 实体受到伤害
-    炼狱: 实体被锁住且受到伤害
+In the gui you can also insert rules for different types of
+entities. For every rule you have the following actions:
+
+    Pass: entity can pass through
+    Solid: entity is blocked
+    Damage: entity gets damage
+    SolDmg: entity is blocked and gets damage
 {-------------------------------------------------------------}
-你也可以设置伤害的类型. 默认伤害是 'generic'（一般）但是你也可以设定为
-'player'（玩家）.这会消耗更多的能量，但是会像玩家正常的杀死一只怪物一样
-获得经验.
+You can also set the type of damage. By default the damage
+will be 'generic' but you can also set it to 'player'. This
+will consume more energy but you will get XP orbs as well
+as loot that you normally only get when a mob is killed
+by the player.
 
-如果选择 'player' 伤害你可以放入空间碎片充当掠夺附魔. 用于需要获得大量
-战利品的情况.
+If you select 'player' damage then you can also enable looting
+by inserting dimensional shards. These are used up for every
+looting kill.
 {-------------------------------------------------------------}
-用左键单击护盾投影仪一样会把护盾变回护盾支架.另外使用智能扳手是有可能从
-已搭建的护盾上移除护盾支架的.
-如果你再次分解护盾，这个举动将不会被记忆.
+If you hit the shield projector with your left mouse instead of
+the right mouse it will also scan on the corners for template
+blocks. Additionally using the smart wrench it is possible
+to add or remove shield templates to an already formed shield.
+Note that doing this will not be remembered if you decompose
+the shield again.
 
-注意护盾也支持空间仓卡.这样你不必放置护盾方块，但是你必须插入合适的空间
-仓卡来决定护盾的形状.
+Note that the shield also supports space cards. In that case you
+don't have to use shield template blocks but instead you can
+insert the appropriate space card to define the shape of
+the shield.
 {-------------------------------------------------------------}
-{b}物品过滤器
+{b}Item Filter
 {n:filter}
 {rb:item_filter}
-物品过滤器允许你配置任何一面（D，U，S，W，N，E）的输入输出. 有9个存储槽以
-控制物品的通过.对于每一个存储槽，你都可以控制它对应的每一面是可以输入所指
-定的物品，还是向别的机器输出物品，还是禁用.
+The Item Filter allows controlled input/output from any side of the
+block. It has nine storage slots that can be configured to only hold
+a specific type of item. For each of these storage slots you can
+control from which side it can receive items and to which side
+other machines can extract items.
 {-------------------------------------------------------------}
-{b}模块化屏幕
+{b}Modular Screens
 {n:screens}
 
-如果你想播放基地里不同的东西，模块屏幕可能是个解决办法. 在这里你可以插入11
-个显示不同信息的模块，例如机器能量,水槽液体含量,当前时间,简单文字,维度所
-含能量等等. 未来会有更多模块。
+If you want to display various things in your base then the
+modular screen system in RFTools might be ideal for you. In
+these screens you can insert up to 11 modules which can give
+you various bits of information like energy in a machine,
+the number of fluids in a tank, the time of the day, simple text,
+the number of RF left in a dimension and so on. More modules
+are planned for the future.
 
-屏幕有很大的，清晰的变化，你可以用扳手右键屏幕以获得这些信息.
-你也可以用染料右键屏幕以改变屏幕的颜色.
+There are large, huge and transparent screen variations of the
+screen. You can get those by using a wrench on the screen.
+You can also color a screen by selecting it with a dye item.
 {-------------------------------------------------------------}
-屏幕不能直接供电但是可以从屏幕控制器中充能，如下合成:
+Screens are not directly powered but get power from a Screen
+Controller that you can craft as follows:
 {rb:screen_controller}
 
-在这个机器的界面中按下'Scan'.这将会查找控制器周围65x33x65区域内所有的屏幕
-(最大升级的控制器可达129x33x129).这些屏幕将会从这一点的屏幕控制器获得信息.
+In the GUI of this block you can press 'Scan'. This will locate
+all screens in a 65x33x65 area around the controller (or 129x33x129
+for a maximum infused controller). From that point on these
+screens will receive power from this controller.
 {-------------------------------------------------------------}
-你可以这样合成屏幕:
+You can craft a screen as follows:
 {rb:screen}
 
-没有模块的屏幕只是黑的. 所以要想让屏幕有趣些，需要至少一个模块.
+A screen with no modules shows some basic help. So to make things
+interesting you should add one or more module.
 
-注意没电情况下，有模块屏幕也是黑的.确保你的屏幕控制器在附近并按下了“scan”找
-到了所有屏幕.
+Note that with modules a screen will be black if it is
+not getting power. Make sure you have a screen controller
+nearby and press 'Scan' on that so that it finds all screens.
 {-------------------------------------------------------------}
-屏幕显示模块包括这些:
-    - 文本：一些简单的文本
-    - 钟表: 一个显示了当前时间的数字钟
-    - 能量：监视机器当前所含能量
-    - 维度：监视维度当前所含能量
-    - 流体：监视某个水槽中流体的数量
-    - 物品: 监测某个容器中的4个槽
-    - 计数：显示计数器当前数值
-    - 红石: 显示yes/no文本取决于无线红石信号
-    - 机器信息: 特定机器的变化信息
-    - 按钮: 发出一个无线红石信号 (交互式)
-    - 存储: 直接从存储检测器引入9个物品
+The following screen modules are currently supported:
+    - Text: simple line of text
+    - Clock: a digital clock showing the time of the day
+    - Energy: monitor the RF energy level of a machine
+    - Dimension: monitor the RF energy level of a dimension
+    - Fluid: monitor the number of fluids in a tank
+    - Inventory: monitor up to 4 slots in an inventory
+    - Counter: show the current value of a counter gate
+    - Redstone: show yes/no text depending on wireless redstone
+    - Machine Info: generic information on certain machines
+    - Button: send out a wireless redstone signal (interactive)
+    - Storage: access 9 items directly from storage scanner
 {-------------------------------------------------------------}
-一些模块 (例如能量，流体，物品，计数)需要你首先手持它们潜行右击你想检测的方
-块然后插入屏幕当中. 屏幕和被监测方块的最大间距为64.'+' 版本的模块没有限制.
+Some modules (like energy, fluid, inventory, and counter modules)
+require that you first shift-right click on the machine/tank that
+you want to monitor. After that insert them in the screen. The
+maximum distance between the screen and the monitored block is 64.
+The 'Plus' versions of the modules have no limits.
 
-按钮模块可以把屏幕变成交互方式. 换句话说，你可以点击屏幕来控制相应机器.
+The Button module also allows the screen to be used in an
+interactive manner. i.e. you can click on the screen and control
+other machines that way.
 {-------------------------------------------------------------}
-{b}环境控制器
+{b}Environmental Controller
 {n:envctrl}
 {rb:environmental_controller}
 
-使用环境控制器你可以提高周围的环境质量.有给予你饱食度和生命再生等等模块. 每
-一个模块都是要电的.一个简单的控制器可以影响半径最大100，从世界顶端到底部的
-圆柱形区域(如果你不介意消耗更多能量).
+Using the environmental controller you can improve the area
+around it in various ways. There are modules to give you saturation,
+regeneration, and so on. Every module requires power so this doesn't
+come free. A single controller can affect an cylindrical area
+with a maximum radius of 100 from bottom to top of the world
+(if you're prepared to consume that much power).
 {-------------------------------------------------------------}
-{b}加速效应器
+{b}Booster
 {n:booster}
 {rb:booster}
 
-加速效应器与环境控制器有关. 相对于影响整个区域，它只直接影响实体. 
-而且它一次只支持一个模块.
+The booster is related to the environmental controller. Instead
+of affecting an entire area it only affects the entities directly
+on top of it. In addition it only supports one module at a time.
 {-------------------------------------------------------------}
-{b}刷怪系统
+{b}Spawner System
 {n:spawner}
 {rb:spawner}
 
-使用这个方块你可以刷出很多生物.虽然使用它需要一点安装准备. 首先，你需要一个
-完整的你想要刷的生物的注射器. 当你将注射器插入刷怪笼界面时你就可以看到刷出
-这种生物的材料.
+With this block you can spawn many kinds of mobs. Using it requires
+a bit of setup work though. First you need a full syringe for the
+mob that you want to spawn. If you insert this syringe in the spawner
+UI you can then see the other items you will need to spawn a creature
+of this type.
 {-------------------------------------------------------------}
-为了得到刷怪笼材料你需要至少一个，或许三个以上的物质投影仪:
+To get the materials into the spawner you need to set up
+at least one, preferably three or even more matter beamers:
 {rb:matter_beamer}
 
-物质投影仪有一个物品插槽. 你可以用扳手先右击刷怪笼，再右击物质投影仪完成链接.
+This block has a single slot for items. You can connect
+it to a spawner by first selecting the beamer and then the
+spawner with a wrench.
 {-------------------------------------------------------------}
-给予刷怪笼和投影仪电能它们就开始工作了. 注意生成一个生物需要三种材料. 这就是
-为什么需要三个物质投影仪，接着你就可以向投影仪提供材料了.
+If you then give the spawner and the beamers power they should start
+to work. Note that to spawn a creature you need three types of
+material. That's why it is recommended to use three beamers as
+then you can dedicate every material to every laser.
 
-物质投影仪工作前需要红石信号.
+The beamer needs a redstone signal before it starts.
 
-注入（更多的）投影仪将很大提升它注入物质的速度(以及生成率).
+Infusing the beamer greatly increases the speed with which it
+can beam matter (and thus the spawning rate).
 
-刷怪笼界面里的树叶方块包括了任何维生材料(肉，小麦，种子...). 一些材料会给予
-更大的增益.
+The leaf block in the spawner GUI indicates any type of living
+material (meat, wheat, seeds, ...). Some types of living material
+give a bigger bonus.
 {-------------------------------------------------------------}
-{b}建造机
+{b}Builder
 {n:builder}
 {rb:builder}
-建造机是rftools里功能最多的机器之一. 它能做到:
-    - 将一个结构从一点 (甚至是其他维度)移动到另一点
-    - 从一点到另一点重建一个结构
-    - 交换两点的结构
-    - 建造几何形状 (圆顶,环面,盒式, ...)
-    - 清空区域成特殊形状 (空方块)
-    - 采掘特定形状区域内的方块 (精准采集, 时运, ...)
-    - 收集区域内的掉落物和经验
-    - 当水泵抽液体
+The Builder is one of the most versatile machine in RFTools. It can do:
+    - Move a structure from one spot (even other dimension) to another
+    - Rebuild a structure from one spot to another
+    - Swap structures between two spots
+    - Build geometrical shapes (dome, torus, box, ...)
+    - Clear out areas in a certain shape (void blocks)
+    - Quarry an area in a certain shape (silk touch, fortune, ...)
+    - Collect items and XP an in area
+    - Pump liquids
 {-------------------------------------------------------------}
-有时候需要在上面放置箱子或者水槽以便于收集.使用界面你可以控制建造机把方块放在
-哪里(总是在机器的背面). 这只需要几张空间卡.
+A chest or tank on top or below is sometimes needed to supply or collect.
+Using the GUI you can control where the builder should place the blocks
+(always at the back of the builder). This only works for space cards.
 
-其他的界面选项是:
-{i:textures/gui/guielements.png,160,48,无声模式: 移除方块时静音}
-{i:textures/gui/guielements.png,96,48,支撑模式: 提供预览/支撑方块}
-帮助推测会发生什么，对重力影响方块提供支持.
-{i:textures/gui/guielements.png,128,48,实体模式: 也会移除实体}
-{i:textures/gui/guielements.png,192,48,循环模式:}
-在这个模式只要给一个红石信号，机器便会保持运行，保持移动或者复制，只要这里有
-空间. 如果该模式关闭，运行一次就会停止.
+Other GUI options are:
+{i:textures/gui/guielements.png,160,48,Silent mode: mute sounds from moving blocks}
+{i:textures/gui/guielements.png,96,48,Support mode: create preview/support blocks}
+Help to identify what will happen and help with gravity affected blocks.
+{i:textures/gui/guielements.png,128,48,Entity mode: also move entities}
+{i:textures/gui/guielements.png,192,48,Loop mode:}
+In this mode the builder will keep running as long as it has a redstone
+signal and keep on moving or copying if there is room to do so. If
+this is off the builder will do one pass and stop.
 {-------------------------------------------------------------}
-建造机也支持一个标准的rftools过滤器. 插入过滤器之后，只会采掘或者清空过滤器
-里匹配的物品.注意这只对世界中的方块起效而不是破坏方块的结果.换句话说过滤钻石
-你必须在过滤模块里面插入钻石矿. 所有的过滤选项都支持黑白名单和模组过滤.
+The builder also supports a standard RFTools filter. If that filter is
+inserted then it will only quarry or void blocks that match the filter.
+Note that this works only on the block in the world, not the end result
+of the block. i.e. to filter on diamonds you need to insert the diamond
+ore block in the filter. All filter options like whitelist/blacklist
+and filter by mod are supported.
 {-------------------------------------------------------------}
-为了移动，复制，交换结构，你需要一张链接到空间控制方块的空间仓卡.
+For moving, swapping and copying structures you need a space card
+linked to a space chamber.
 
-你可以使用空间角落方块来标记你要工作的源区域（对于长方体区域必须8个顶点齐全，
-其他也是一样——译者注）. 角落方块其中之一应该是空间控制方块.
+You can use Space Chamber blocks to mark the corners of the source
+area that you want to work. One of these corners should be a
+Space Chamber Controller block.
 {rb:space_chamber}
 {rb:space_chamber_controller}
 {-------------------------------------------------------------}
 {n:chambercard}
 {ri:space_chamber_card}
-使用扳手右键空间控制方块可以构建工作空间. 如果一切正常你会看到一条信息“
-Chamber cuccesfully created！”. 然后你需要手持空间仓卡右键空间控制方
-块建立链接.
+Right selecting the controller block with a wrench will let it form the
+chamber. If all is correct you will get a message saying so. Then you need
+to use a Space Chamber Card (right click it on the controller) to link the
+controller to the card.
 
-将卡放进建造机里，设定正确的模式和其他参数，并给予红石信号.
+Put that card in the builder, set the right mode and other
+parameters and give it a redstone signal.
 
-如果你手持一个空间仓卡右击，会给你一个区域内方块和实体的概览以及移除它们消
-耗的能量.
+If you right click a linked space chamber card it will give you an overview
+of all blocks and entities together with the cost of moving them.
 {-------------------------------------------------------------}
-要建立几何形状,清空和采集区域你需要塑形卡片:
+For building geometrical shapes, voiding and quarrying areas you
+need shape cards:
 {ri:shape_card}
 
-右键塑形卡片会打开一个界面设置形状和大小. 一张塑形卡片可以在工作台中升级成
-具有特定功能的卡片.
+Right clicking such a card will open a GUI where you can set the shape as
+well as the dimensions. A shape card can be upgraded in the crafting table
+to make the void card and one of the quarry cards.
 
-注意使用塑形卡片时，建造机界面中的选项是不被使用的。
+Note that several options in the GUI of the builder are unused if you use
+shape cards.
 {-------------------------------------------------------------}
