@@ -52,6 +52,10 @@ tile.immersiveengineering.stoneDecorationStairs_concrete_leaded.name=镀铅混�
 tile.immersiveengineering.stoneDevice.coke_oven.name=焦炉
 tile.immersiveengineering.stoneDevice.blast_furnace.name=高炉
 tile.immersiveengineering.stoneDevice.blast_furnace_advanced.name=强化高炉
+tile.immersiveengineering.stoneDevice.concrete_sheet.name=混凝土薄板
+tile.immersiveengineering.stoneDevice.concrete_quarter.name=混凝土面板
+tile.immersiveengineering.stoneDevice.concrete_threequarter.name=混凝土块
+tile.immersiveengineering.stoneDevice.coresample.name=岩芯样本
 
 tile.immersiveengineering.treatedWood.horizontal.name=防腐木板
 tile.immersiveengineering.treatedWood.vertical.name=防腐木板
@@ -73,6 +77,7 @@ tile.immersiveengineering.woodenDevice0.sorter.name=物品路由器
 tile.immersiveengineering.woodenDevice0.gunpowder_barrel.name=火药桶
 tile.immersiveengineering.woodenDevice0.reinforced_crate.name=强化储存箱
 tile.immersiveengineering.woodenDevice0.turntable.name=旋转台
+tile.immersiveengineering.woodenDevice0.fluid_sorter.name=液体路由器
 tile.immersiveengineering.woodenDevice1.watermill.name=水车
 tile.immersiveengineering.woodenDevice1.windmill.name=风车
 tile.immersiveengineering.woodenDevice1.windmill_advanced.name=改良风车
@@ -124,6 +129,7 @@ tile.immersiveengineering.metalDecoration2.aluminum_post.name=铝杆
 tile.immersiveengineering.metalDecoration2.aluminum_wallmount.name=铝壁挂支架
 tile.immersiveengineering.metalDecoration2.lantern.name=灯
 tile.immersiveengineering.metalDecoration2.razor_wire.name=刀片刺网
+tile.immersiveengineering.metalDecoration2.toolbox.name=工程师工具箱
 
 tile.immersiveengineering.connector.connector_lv.name=低压接线器
 tile.immersiveengineering.connector.relay_lv.name=低压继电器
@@ -145,6 +151,7 @@ tile.immersiveengineering.metalDevice0.capacitor_hv.name=高压电容器
 tile.immersiveengineering.metalDevice0.capacitor_creative.name=创造电容器
 tile.immersiveengineering.metalDevice0.barrel.name=金属桶
 tile.immersiveengineering.metalDevice0.fluid_pump.name=液泵
+tile.immersiveengineering.metalDevice0.fluid_placer.name=液体排水口
 tile.immersiveengineering.metalDevice1.blast_furnace_preheater.name=高炉鼓风机
 tile.immersiveengineering.metalDevice1.furnace_heater.name=外置加热器
 tile.immersiveengineering.metalDevice1.dynamo.name=动能发电机
@@ -157,11 +164,15 @@ tile.immersiveengineering.metalDevice1.tesla_coil.name=特斯拉线圈
 tile.immersiveengineering.metalDevice1.floodlight.name=泛光灯
 tile.immersiveengineering.metalDevice1.turret_chem.name=化学喷射器炮塔
 tile.immersiveengineering.metalDevice1.turret_gun.name=手枪炮塔
+tile.immersiveengineering.metalDevice1.belljar.name=园艺玻璃罩
 
 tile.immersiveengineering.conveyor.immersiveengineering:conveyor.name=传送带
+tile.immersiveengineering.conveyor.immersiveengineering:uncontrolled.name=传送带
+tile.immersiveengineering.conveyor.immersiveengineering:uncontrolled.flavour=无视红石控制
 tile.immersiveengineering.conveyor.immersiveengineering:dropper.name=卸货传送带
 tile.immersiveengineering.conveyor.immersiveengineering:vertical.name=垂直传送带
 tile.immersiveengineering.conveyor.immersiveengineering:splitter.name=分流传送带
+tile.immersiveengineering.conveyor.immersiveengineering:covered.name=盖板传送带
 
 tile.immersiveengineering.metalMultiblock.metal_press.name=金属冲压机
 tile.immersiveengineering.metalMultiblock.crusher.name=粉碎机
@@ -531,6 +542,7 @@ ie.manual.entry.bullets_crystalwill=§l晶化§l意志§l弹§r使用“特种�
 entity.Villager.immersiveengineering.engineer=结构工程师
 entity.Villager.immersiveengineering.machinist=机械师
 entity.Villager.immersiveengineering.electrician=电工
+entity.Villager.immersiveengineering.outfitter=皮肤商
 
 desc.immersiveengineering.info.attachedTo=连接从%1$s, %2$s, %3$s
 desc.immersiveengineering.info.attachedToDim=连接从%4$s世界的%1$s, %2$s, %3$s
@@ -615,6 +627,7 @@ chat.immersiveengineering.info.coresample.yield=产出期望：%1$s矿石
 chat.immersiveengineering.info.coresample.infinite=无限产量
 chat.immersiveengineering.info.coresample.timestamp=样本提取于：%1$s
 chat.immersiveengineering.info.coresample.noTimestamp=样本提取于：%1$s之前
+chat.immersiveengineering.info.coresample.mapFail=样本不在地图边界
 
 desc.immersiveengineering.info.reqMaterial=所需材料：
 desc.immersiveengineering.info.chance=概率：
@@ -644,6 +657,9 @@ desc.immersiveengineering.info.toolbox.food=食物
 desc.immersiveengineering.info.toolbox.tool=工具
 desc.immersiveengineering.info.toolbox.wire=线材
 desc.immersiveengineering.info.toolbox.any=任意物品
+
+desc.immersiveengineering.info.fertFill=肥料数量：%1$s
+desc.immersiveengineering.info.fertMod=生长调节：%1$s
 
 desc.immersiveengineering.info.redstoneChannel=频道：%1$s
 
@@ -714,14 +730,14 @@ desc.immersiveengineering.flavour.skyhook=旅行的全新方式
 
 desc.immersiveengineering.flavour.toolupgrade.drillWaterproof=允许采矿机械钻在水下工作
 desc.immersiveengineering.flavour.toolupgrade.drillSpeed=提升采矿机械钻开采速度
-desc.immersiveengineering.flavour.toolupgrade.drillDamage=提升采矿机械钻攻击伤害,最高叠加至3
+desc.immersiveengineering.flavour.toolupgrade.drillDamage=提升采矿机械钻攻击伤害，最高叠加至3
 desc.immersiveengineering.flavour.toolupgrade.drillCapacity=提升采矿机械钻和化学喷射器的内部燃料储量
 desc.immersiveengineering.flavour.toolupgrade.revolverBayonet=为左轮手枪添加近战伤害
 desc.immersiveengineering.flavour.toolupgrade.revolverMagazine=提升左轮手枪弹夹容量
 desc.immersiveengineering.flavour.toolupgrade.revolverElectro=左轮手枪射击造成电击伤害
-desc.immersiveengineering.flavour.toolupgrade.chemthrowerFocus=减少化学喷射器的喷射速度,并增加其范围
+desc.immersiveengineering.flavour.toolupgrade.chemthrowerFocus=减少化学喷射器的喷射速度，并增加其范围
 desc.immersiveengineering.flavour.toolupgrade.railgunScope=可以让轨道炮视野放大
-desc.immersiveengineering.flavour.toolupgrade.railgunCapacitors=减少充电时间,并增加轨道炮的能量存储
+desc.immersiveengineering.flavour.toolupgrade.railgunCapacitors=减少充电时间，并增加轨道炮的能量存储
 
 gui.immersiveengineering.empty=空
 gui.immersiveengineering.blastFurnace=高炉
@@ -747,6 +763,13 @@ gui.immersiveengineering.config.turret.ignite_fluid=点燃液体
 gui.immersiveengineering.config.turret.expel_casings_on=排出弹壳
 gui.immersiveengineering.config.turret.expel_casings_off=保留弹壳
 
+gui.immersiveengineering.config.mixer.outputSingle=仅输出底部液体
+gui.immersiveengineering.config.mixer.outputAll=输出所有液体
+
+gui.immersiveengineering.config.assembler.clearRecipe=清除配方
+gui.immersiveengineering.config.assembler.recursiveIngredients=循环使用材料
+gui.immersiveengineering.config.assembler.nonRecursiveIngredients=不循环使用材料
+
 #CHAT
 chat.immersiveengineering.warning.wrongCable=你无法在此处连接线缆
 chat.immersiveengineering.warning.wrongDimension=你处在一个错误的世界中
@@ -763,6 +786,8 @@ chat.immersiveengineering.info.rsSignal.invertedOn=反相红石信号：开
 chat.immersiveengineering.info.rsSignal.invertedOff=反相红石信号：关
 chat.immersiveengineering.info.rsControl.invertedOn=反相红石信号控制：开
 chat.immersiveengineering.info.rsControl.invertedOff=反相红石信号控制：关
+chat.immersiveengineering.info.rsControl.strongSignal.true=强红石信号：开
+chat.immersiveengineering.info.rsControl.strongSignal.false=强红石信号：关
 chat.immersiveengineering.info.tesla.highPower=能量模式：高
 chat.immersiveengineering.info.tesla.lowPower=能量模式：低
 chat.immersiveengineering.info.notOwner=只有主人 '%1$s' 能进入这个方块
@@ -808,6 +833,7 @@ subtitle.immersiveengineering.chargeSlow=电容器充电
 subtitle.immersiveengineering.spark=电火花
 subtitle.immersiveengineering.railgunFire=磁轨炮发射
 subtitle.immersiveengineering.tesla=线圈有电流流过
+subtitle.immersiveengineering.direSwitch=Direwolf20正在模仿刀闸
 
 #RECIPES
 recipe.immersiveengineering.hammerCrushing=粉碎
@@ -880,7 +906,7 @@ achievement.immersiveengineering.craftDrill=储能镐
 achievement.immersiveengineering.craftDrill.desc=制作采矿钻头
 achievement.immersiveengineering.upgradeDrill=Big Daddy
 achievement.immersiveengineering.upgradeDrill.desc=给采矿钻头加装尽可能多的升级
-achievement.immersiveengineering.craftSkyhook=Booker, catch！
+achievement.immersiveengineering.craftSkyhook=Booker, catch!
 achievement.immersiveengineering.craftSkyhook.desc=制作工程师天钩
 achievement.immersiveengineering.skyhookPro=天际线大师
 achievement.immersiveengineering.skyhookPro.desc=使用天钩滑行至少一千米
@@ -1028,11 +1054,12 @@ ie.manual.entry.jerrycan0=油罐是一种用于盛放液体的简易金属容器
 ie.manual.entry.earmuffs.name=隔音耳罩
 ie.manual.entry.earmuffs.subtext=好大的噪音啊！！！
 ie.manual.entry.earmuffs0=隔音耳罩是用来保护你的听力的设备.这个小东西对于那些时刻工作在<link;dieselgen;§o§n柴油§o§n发电机§r;>或其他噪音巨大的机械旁的工程师来说至关重要.<br>当佩戴此耳罩时,你听到的噪音都已被减弱九成.
-ie.manual.entry.earmuffs1=在<link;workbench;§o§n工程师§o§n工作台§r;>中可对隔音耳罩进行详细设定,比如选择性过滤一些噪音,以及降噪的幅度.<br>你还可以像皮革护甲一样为其染色.<br>将其与其它任何形式的头盔合成在一起后,就可为目标头盔附加上隔音的效果,再次将其合成可将耳罩移除并返还,方便进一步修改自定义设置.
+ie.manual.entry.earmuffs1=在<link;workbench;§o§n工程师§o§n装配台§r;>中可对隔音耳罩进行详细设定,比如选择性过滤一些噪音,以及降噪的幅度.<br>你还可以像皮革护甲一样为其染色.<br>将其与其它任何形式的头盔合成在一起后,就可为目标头盔附加上隔音的效果,再次将其合成可将耳罩移除并返还,方便进一步修改自定义设置.
 
 ie.manual.entry.toolbox.name=工程师工具箱
 ie.manual.entry.toolbox.subtext=工程师的手袋
 ie.manual.entry.toolbox0=工具箱是一种简单便捷的存储容器,用于存放工程师的一些必要物品！鼠标悬停在对应格子上时会显示其可存放的物品类型.<br>'食物'和'任意物品'意义一目了然,'线材'栏对应线圈,接线器以及一些类似物品,而'工具'栏会存放任何IE工具或镐,锄,斧类工具！
+ie.manual.entry.toolbox1=潜行右键点击可以把工具箱作为一个方块放置在地上。当放置时，它的物品储存仍然可以通过右键点击访问。再次潜行右键点击将会拿起工具箱。
 
 ie.manual.entry.graphite.name=石墨
 ie.manual.entry.graphite.subtext=煤炭工业产品
@@ -1135,9 +1162,9 @@ ie.manual.entry.assembler0=装配机是一个能够合成物品的复杂机器,�
 ie.manual.entry.assembler1=你敲击的传送带将成为输入端,上方会有蓝色标记并且机器侧面也会有箭头指示.<br>装配机内部最多可存储三个合成表并且会按顺序执行.前一个合成表的输出产物可以作为后一个的输入材料.<br>三个合成框用于存储合成表,而下方18格子用于存放材料.
 ie.manual.entry.assembler2=输入侧不光可以输入物品,还能够输入液体用于装填机器内部的三个储罐.这些储罐中的液体可以被用于取代合成表中的液体容器例如水桶.<br>机器的能量输入在顶部中央的方块.
 
-ie.manual.entry.autoworkbench.name=自动工作台
+ie.manual.entry.autoworkbench.name=自动装配台
 ie.manual.entry.autoworkbench.subtext=给那些不会开手动挡车的人
-ie.manual.entry.autoworkbench0=自动工作台是第一个小规模工程的主要成就。<br>这个机器能够服从<link;blueprints;§o§n蓝图§r>做出的指挥来按照其描述合成物品。
+ie.manual.entry.autoworkbench0=自动装配台是第一个小规模工程的主要成就。<br>这个机器能够服从<link;blueprints;§o§n蓝图§r>做出的指挥来按照其描述合成物品。
 ie.manual.entry.autoworkbench1=搭建好这个多方块结构后，蓝图可以被放在绘制台上。在选择出需要被合成的物品之后，它将开始合成工作。为了让这个机器工作，它当然需要有材料和能量的支持。<br>两个蓝色端口为物品输入端，能量输入端在其上方。最终产物会掉落在传送带的末尾。<br>在绘制台下方通入红石信号可以用来控制。
 
 ie.manual.entry.bottlingMachine.name=灌装机
@@ -1147,8 +1174,13 @@ ie.manual.entry.bottlingMachine1=液体的输入端位于底层中央,物品通�
 
 ie.manual.entry.chargingStation.name=充电站
 ie.manual.entry.chargingStation.subtext=给你的眼镜充电！
-ie.manual.entry.chargingStation0=充电站允许你为工具或其它物品进行充电.能量能够从底部或后部输入,而物品可以手动放入或自动输入.<config;b;ic2Manual;充电站同样兼容使用EU的工具.;>
+ie.manual.entry.chargingStation0=充电站允许你为工具或其它物品进行充电.能量能够从底部或后部输入,而物品可以手动放入或自动输入.
 ie.manual.entry.chargingStation1=在前面的电子管得到物品的电流充电反馈时,充电站也将输出一个相同的比较器信号.
+
+ie.manual.entry.belljar.name=园艺玻璃罩
+ie.manual.entry.belljar.subtext=局部雨林
+ie.manual.entry.belljar0=园艺玻璃罩，或者叫玻璃钟罩，是一个用来促进植物生长的设备。它让一个对农业一窍不通的工程师也能种植植物并收获产品。
+ie.manual.entry.belljar1=这个设备通过各自的输入端接收能量、液体和物品。水和能量一直需要，各种肥料是可选的。GUI中间的格子用来放土壤和种子，左边的格子放肥料并且产物输出在右边的格子。<br>玻璃圆罩前面的舱口是唯一的自动输出口。每个种子需要种植在正确的土壤上，泥土会被自动当作耕地。
 
 ie.manual.entry.highvoltage.name=高压
 ie.manual.entry.highvoltage.subtext=你无法撼动的冲击
@@ -1214,6 +1246,7 @@ ie.manual.entry.conveyor1=对着传送带的漏斗可以把物品输出为可掉
 ie.manual.entry.conveyor2=卸货传送带仅仅是普通传送带中间多了一个舱口,允许货物从中间传输到下面.<br>物品会自动输送进下放的存储容器或者,如果下方是空的物品会被扔在地上.
 ie.manual.entry.conveyor3=垂直传送带可以贴在墙上,使垂直运输物品称为可能.用桶还可以让它运输实体.虽然用桶可以运输实体,但传送带还是不能运输液体.<br>这种传送带可以自动将物品输入容器中,也可以接收顶上的传送带掉下来的物品.
 ie.manual.entry.conveyor4=分流传送带的功能很简单,将运送来的物品和实体不断交替地分流到左右两侧,籍此可以让你的物品均匀地分配到多个工厂里.
+ie.manual.entry.conveyor5=盖板传送带就像普通传送带那样工作，不同的是它被脚手架覆盖着，防止玩家捡起传送带上的物品。<br>你可以拿着其他种类的脚手架或者玻璃右键点击来改变盖板的外观。
 
 ie.manual.entry.furnaceHeater.name=外置加热器
 ie.manual.entry.furnaceHeater.subtext=你现在可以用能量烹饪食物啦！
@@ -1227,7 +1260,7 @@ ie.manual.entry.teslaCoil0=特斯拉线圈一开始的设计是能量传输设�
 ie.manual.entry.teslaCoil1=自然地,它是个能耗大户,平时会有<config;i;teslacoil_consumption>Flux的消耗,每次攻击时还会消耗<config;i;teslacoil_consumption_active>Flux.<br>线圈只有在有红石信号时才会工作.用工程师锤右击可反转此特性的效果.<br>它攻击时不仅会造成伤害,还会附加滞留效果"眩晕",这个效果会阻止实体传送.
 ie.manual.entry.teslaCoil2=潜行时用工程师锤右击可令线圈在高能和低能模式间切换.切换前需切断电源.默认特斯拉线圈以高能模式工作.低能模式会令耗能减半,但同时也会令攻击范围减半.
 ie.manual.entry.teslaCoil3=若你身着全套法拉第套装,低能模式的特斯拉线圈不会对你造成任何伤害,但仍然会造成雷击.高能模式的线圈会直接熔毁法拉第套装,从而会造成比不穿套装时更高的伤害.<br>荧光管会在高频高强度电场中发光,而特斯拉线圈则可以产生这种电场,因此工作中的特斯拉线圈会导致附近的荧光管发光.
-ie.manual.entry.teslaCoil4=荧光管受线圈影响的范围大约是线圈攻击范围的1.5倍.荧光管课在工程师工作台中染色,还可用工程师锤旋转.
+ie.manual.entry.teslaCoil4=荧光管受线圈影响的范围大约是线圈攻击范围的1.5倍.荧光管课在工程师装配台中染色,还可用工程师锤旋转.
 
 ie.manual.entry.fluidPipes.name=液体传输
 ie.manual.entry.fluidPipes.subtext=专业水管工
@@ -1236,14 +1269,20 @@ ie.manual.entry.fluidPipes1=你可以通过用工程师锤右击一个管道来�
 ie.manual.entry.fluidPipes2=液泵有两个重要功能.它们能够用于将液体高压泵入管道中,让传输速率变快,或者它们还能够从世界当中抽取液体.用工程师锤右击液泵底部会转换输入输出端.
 ie.manual.entry.fluidPipes3=为了使液泵能够抽取液体方块,它需要从顶部接受能量以及一个红石信号.液泵同样能够用于从一些无法自动输出的储罐或液体容器中抽取液体.这同样需要红石信号,不过并不需要能量.
 ie.manual.entry.fluidPipes4=<config;b;pump_infiniteWater;泵抽取的水方块超过3x3,将当做无限水源.<br><br>;><config;b;pump_placeCobble;被抽取的水将以圆石取代,以减少流动水. 这种模式可以用工程师剪线钳关闭.;>
+ie.manual.entry.fluidPipes5=液体排水口作为管道系统的一个终点工作，允许液体排放到世界当中。它的工作面可以在输入、输出（开闸）和关闭之间调整，通入红石信号可以关闭排水口。<br>这个方块排出的液体最高只会到其自身的高度水平。
 
 ie.manual.entry.sorter.name=物品路由器
-ie.manual.entry.sorter.subtext=左脚放黄色上,右手放绿色上
-ie.manual.entry.sorter0=物品路由器能够接受物品并经过通道过滤后重新分配它们.将其放置并右键可打开交互界面,会显示出六种根据颜色和方向划分的过滤器.
-ie.manual.entry.sorter1=当物品进入到路由器后,它会被转至与其相匹配的输出口,或者,如果没有相匹配的输出口,它会被转入未设置过滤的输出口.如果物品无法被分配,它将无法进入路由器.物品同样无法被输出到它进入路由器的方向.<br>潜行右键一侧使其路由规则遵从矿物辞典.需要注意该路由规则对游戏有着较高的负荷.
+ie.manual.entry.sorter.subtext=左脚放黄色上，右手放绿色上
+ie.manual.entry.sorter0=物品路由器能够接受物品并经过通道过滤后重新分配它们。将其放置并右键可打开交互界面，会显示出六种根据颜色和方向划分的过滤器。
+ie.manual.entry.sorter1=当物品进入到路由器后，它会被转至与其相匹配的输出口，或者，如果没有相匹配的输出口，它会被转入未设置过滤的输出口。如果物品无法被分配，它将无法进入路由器。物品同样无法被输出到它进入路由器的方向。<br>过滤器上面的按钮可用来让路由器重视或忽视物品的矿物辞典、NBT数据和Meta数据。
+
+ie.manual.entry.fluidSorter.name=液体路由器
+ie.manual.entry.fluidSorter.subtext=牛奶到左边，酸液到右边
+ie.manual.entry.fluidSorter0=液体路由器工作方式非常类似<link;sorter;§o§n物品§o§n路由器§r>。通过任意面输入的液体将根据六个面的过滤器设置被重新分配。用桶或者其它任意液体容器点击GUI中的格子将会配置过滤器的液体。
+ie.manual.entry.fluidSorter1=当液体被用管道输入进路由器后，它们会被转至与其相匹配的输出口，或者，如果没有相匹配的输出口，液体会被转入未设置过滤的输出口。如果没有有效的路由，液体将不会被接收。<br>过滤器上面的按钮可用来让路由器重视或忽视液体的NBT数据。
 
 ie.manual.entry.turntable.name=旋转台
-ie.manual.entry.turntable.subtext=I can't keep up
+ie.manual.entry.turntable.subtext=我坚持不住
 ie.manual.entry.turntable0=旋转台可以旋转放在其上方的方块。<br>拿着工程师锤目视这个机器可以显示它的活动面和旋转方向。用工程师锤右键点击将改变其活动面朝向，潜行右键时可以反转旋转台的旋转方向。
 
 ie.manual.entry.drill.name=采矿机械钻
@@ -1378,6 +1417,13 @@ ie.manual.entry.computer.arcFurnace0=§lsetEnabled(boolean active)§r:可控制�
 ie.manual.entry.computer.arcFurnace1=两者均以tick为单位.<br>§lgetOutputStack(int slot)§r:返回指定输出格(取值范围:1-6)的ItemStack.<br>§lgetAdditiveStack(int slot)§r: returns the stack in the specified additive slot (1-4)<br>§lgetSlagStack()§r:返回炉渣格中的ItemStack<br>§lhasElectrodes()§r:当全部三个电极格中的电极均有效时返回true，否则返回false<br>§lgetElectrode(int slot)§r:根据给定的电极格(取值范围1-4)返回对应的ItemStack
 ie.manual.entry.computer.arcFurnace2=§lgetMaxEnergyStored()§r:返回电弧炉可储存的最大能量数量<br>§lgetEnergyStored()§r:返回泛光灯储存的能量数量
 
+ie.manual.entry.computer.bottlingmachine.name=灌装机 ☎
+ie.manual.entry.computer.bottlingmachine.subtext=Fill 'er up！
+ie.manual.entry.computer.bottlingmachine0=灌装机正面中下方的方块,以及背面底部的一列,可以与电脑连接.cannister在通过传送带上的黑盒后会被认为已装满.<br>§lgetFluid()§r:返回灌装机内部的储罐.<br>§lgetEmptyCannister(int n)§r:返回第n个容器,顺序容器进入机器的顺序决定.返回的table中包含键"process",用于表示灌装进度.进度等于72时代表已装满,进度等于120时代表已输出.
+ie.manual.entry.computer.bottlingmachine1=§lgetEmptyCannisterCount()§r:返回灌装机中的空容器数量<br>§lgetFilledCannister(int n)§r:返回第n个满容器,顺序由进入黑箱的顺序决定.返回的table中包含键"process",用于表示灌装进度.<br>§lgetFilledCannisterCount()§r:返回灌装机中满容器的数量.
+
+
+
 ie.manual.entry.computer.sampleDrill.name=岩芯钻井 ☎
 ie.manual.entry.computer.sampleDrill.subtext=保证样本有代表性
 ie.manual.entry.computer.sampleDrill0=岩芯钻井的底部可连接电脑.<br>§lgetSampleProgress()§r:返回当前进度,1代表样本分析已结束,0代表样本分析还未开始.<br>§lisSamplingFinished()§r:样本分析已接触时返回true,否则返回false<br>§lgetVeinUnlocalizedName()§r:返回找到的矿脉的未本地化名
@@ -1421,12 +1467,6 @@ ie.manual.entry.computer.assembler.subtext=objdump -d
 ie.manual.entry.computer.assembler0=装配机底层可与电脑连接.<br>§lhasIngredients(int recipe)§r:若指定配方(取值范围1-3)有对应recipe则返回true,否则返回false.<br>§lsetEnabled(int slot, boolean on)§r:启用或禁用指定合成阵列(取值范围1-3).若合成被禁用,即便有材料可以合成也不会工作.<br>§lgetRecipe(int recipe)l§r:返回指定recipe(取值范围0-2)对应的table.键"in1"、"in2"、...、"in9"对应输入,键"out"对应输出.
 ie.manual.entry.computer.assembler1=§lgetTank(int tank)§r:根据序号(取值范围1-3)返回对应的储罐<br>§lgetMaxEnergyStored()§r:返回装配机可储存的最大能量数量.<br>§lgetEnergyStored()§r:返回装配机储存的能量数量.<br>§lgetStackInSlot(int slot)§r:根据序号(取值范围1-18)返回对应输入格中的ItemStack.<br>§lgetBufferStack(recipe:int)§r:根据序号(取值范围1-3)返回对应合成的输出ItemStack.
 
-ie.manual.entry.computer.bottlingMachine.name=灌装机 ☎
-ie.manual.entry.computer.bottlingMachine.subtext=Fill 'er up！
-ie.manual.entry.computer.bottlingMachine0=灌装机正面中下方的方块,以及背面底部的一列,可以与电脑连接.cannister在通过传送带上的黑盒后会被认为已装满.<br>§lgetFluid()§r:返回灌装机内部的储罐.<br>§lgetEmptyCannister(int n)§r:返回第n个容器,顺序容器进入机器的顺序决定.返回的table中包含键"process",用于表示灌装进度.进度等于72时代表已装满,进度等于120时代表已输出.
-ie.manual.entry.computer.bottlingMachine1=§lgetEmptyCannisterCount()§r:返回灌装机中的空容器数量<br>§lgetFilledCannister(int n)§r:返回第n个满容器,顺序由进入黑箱的顺序决定.返回的table中包含键"process",用于表示灌装进度.<br>§lgetFilledCannisterCount()§r:返回灌装机中满容器的数量.
-ie.manual.entry.computer.bottlingMachine2=§lgetEnergyStored()§r:返回灌装机储存的能量数量<br>§lgetMaxEnergyStored()§r:返回灌装机可储存的最大能量数量<br>§lsetEnabled(boolean on)§r:开关灌装机
-
 ie.manual.entry.computer.capacitor.name=电容器 ☎
 ie.manual.entry.computer.capacitor.subtext=高压大电容
 ie.manual.entry.computer.capacitor0=电容器六面均可与电脑连接<br>§lgetEnergyStored()§r:返回电容器当前储能数量.<br>§lgetMaxEnergyStored()§r:返回电容器最大可储能数量.
@@ -1435,20 +1475,25 @@ ie.manual.entry.computer.teslaCoil.name=特斯拉线圈 ☎
 ie.manual.entry.computer.teslaCoil.subtext=不，这不是固态特斯拉线圈
 ie.manual.entry.computer.teslaCoil0=§lisActive()§r:若线圈已激活则返回true,否则返回false<br>§lsetRSMode(boolean)§r:设定线圈的红石控制模式<br>§lsetPowerMode(boolean)§r: 设定线圈的工作模式,可设定为高能模式(true)或低能模式(false)(<link;teslaCoil;§o§nexplanation§r;2>).仅当线圈未激活时有效.
 
+ie.manual.entry.computer.mixer.name=搅拌机 ☎
+ie.manual.entry.computer.mixer.subtext=曲奇面团的大缸！
+ie.manual.entry.computer.mixer0=§lisActive()§r:返回搅拌机当前是否在工作。<br>§lisValidRecipe()§r:返回输入的任意物品和液体的组合是否存在一个有效的合成配方。<br>§lgetEnergyStored()§r:返回这个机器储存了多少能量。<br>§lgetMaxEnergyStored()§r:返回这个机器可以储存的最大能量是多少<br>§lgetInputStack(int slot)§r:返回指定输入格中的物品堆叠(1-12)。这个列表有另外一组密钥
+ie.manual.entry.computer.mixer1=§lprogress§r and §lmaxProgress§r 用于储存当前进度和在指定格子上完成的进度（两者的数值都是刻）。<br>§lgetTank()§r:返回储罐底部的液体。
+
 #SHADER INFO
-desc.immersiveengineering.info.shader.details.rosequartz=第一个皮肤做成！<br>没有直接参考，但是它自身的名字是受到《墨水心》系列小说中的一个人物的启发而命名的。
-desc.immersiveengineering.info.shader.details.argo=没有直接参考，但是风格和颜色是受到电子游戏《命运(Destiny)》启发的。
-desc.immersiveengineering.info.shader.details.sunstrike=没有直接参考但是名字和颜色是受到电子游戏《命运(Destiny)》中的Sunbreaker Titans启发的。
+desc.immersiveengineering.info.shader.details.rosequartz=First shader ever made!<br>No direct reference, though the name itself was inspired by a character in the „Inkheart“ series of novels
+desc.immersiveengineering.info.shader.details.argo=No direct reference, but style+colour were inspired by the videogame 'Destiny'.
+desc.immersiveengineering.info.shader.details.sunstrike=No direct reference but name+colour were inspired by Sunbreaker Titans from the videogame 'Destiny'.
 desc.immersiveengineering.info.shader.details.locus=Named and coloured after the mercenary 'Locus' in RvB Seasons 11-13.
 desc.immersiveengineering.info.shader.details.felix=Named and coloured after the mercenary 'Felix' in RvB Seasons 11-13.
 desc.immersiveengineering.info.shader.details.sharkface=Named and coloured after the mercenary 'Sharkface' in RvB Seasons 9 and 13.
 desc.immersiveengineering.info.shader.details.dragonsbreath=Named and designed after the exotic rocket launcher of the same name.
 desc.immersiveengineering.info.shader.details.hawk=Named and designed after the exotic handcannon 'Hawkmoon'.
 desc.immersiveengineering.info.shader.details.eyas=Named and designed after the handcannon 'Eyasluna'. Hawkmoon's little brother.
-desc.immersiveengineering.info.shader.details.magnum=一个比赛胜利者的设计！
-desc.immersiveengineering.info.shader.details.fox=非常松软。由一个特殊的IRC频道及其成员命名。
-desc.immersiveengineering.info.shader.details.vaulttec=颜色和名字有明显的参考。
-desc.immersiveengineering.info.shader.details.sponsor=设计很明显参考了Fallout系列，但是命名很模糊。
+desc.immersiveengineering.info.shader.details.magnum=Designed by a contest winner!
+desc.immersiveengineering.info.shader.details.fox=Very fluffy. Named in reference to a specific IRC channel and its inhabitants.
+desc.immersiveengineering.info.shader.details.vaulttec=Coloured and named in obvious reference.
+desc.immersiveengineering.info.shader.details.sponsor=Obvious design reference to the Fallout series, but named indistinctly.
 desc.immersiveengineering.info.shader.details.massfusion=The design references the energy weapons of Fallout series.
 desc.immersiveengineering.info.shader.details.stormflower=Named and designed after the bladed SMGs wielded by Lie Ren.
 desc.immersiveengineering.info.shader.details.milo=Named and designed after the spear/rifle wielded by Pyrrha Nikos.
