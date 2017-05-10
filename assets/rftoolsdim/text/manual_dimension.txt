@@ -1,198 +1,148 @@
-{b}RFTools Dimension Manual
+{b}RF工具|维度手册
 
-Table of Contents:
-{l:intro}Introduction to Dimension Building
-{l:theory}Dimension Theory
-{l:unknown}Dimlets - Coding the World
-{l:create}Dimlet Crafting
-{l:enscriber}Enscriber - Coding your Dimension
-{l:builder}Builder - Creating your Dimension
-{l:teleport}Getting There
-{l:failure}Major Failure!
+目录：
+{l:intro}维度构建的介绍
+{l:theory}维度理论
+{l:unknown}信息卡-定义世界
+{l:create}信息卡的合成
+{l:enscriber}刻录器-定义你的维度
+{l:builder}构建器-创造你的维度
+{l:teleport}去往那里
+{l:failure}失败的主要原因
 {/}
 
 
 
-{l:shards}Shards of the World
-{l:infuser}Machine Infuser
-{l:probe}Activity Probe
-{l:extractor}Energy Extractor
-{l:editor}Dimension Editor
-{l:monitor}Dimension Monitor
+{l:shards}维度碎片
+{l:infuser}机器注能机
+{l:probe}活动探测器
+{l:extractor}能量返回器
+{l:editor}维度编辑器
+{l:monitor}维度监视器
 {-------------------------------------------------------------}
-{b}Introduction to Dimension Building
+{b}维度构建的介绍
 {n:intro}
-Always wanted to create your own worlds? Explore uncharted areas and
-create magnificent buildings in fabulous worlds? With the Dimension
-Builder you create your own dimensions with all kinds of special
-features. Make void worlds, mining ages, floating islands, ...
+是否想过创建你自己的世界？探索那些未知的领域？在一些美妙的世界中修建宏伟的
+建筑？维度构建器能够给予你能力，创建各种各样拥有奇特属性的世界：做一个虚空世
+界？或是矿工天堂？亦或是空岛世界……
 
-There is one catch, though. Dimensions require power to run (RF). Simple
-dimensions like a void world don't require a lot of power (10-200 RF/tick)
-but very complex dimensions can easily go above millions RF/tick. So if
-you want a world made out of diamond blocks you're either going to have
-to be very lucky or else be prepared for a hefty power generation system.
+有一点需要注意：这些维度需要消耗能量（RF）来运行。一些简单的世界，诸如虚空世
+界，不会消耗太多的能量（10-200 RF/tick），但是那些复杂的世界耗能可能动辄上
+百万RF/tick。所以你如果想创建一个钻石世界，要么你运气足够好。要么，乖乖准备
+好超大产能的发电系统吧。
 
-RFTools generates dimensions with random features. However, you can make 
-things more deterministic by specifying every type of dimlet.
+RF工具生成维度的特性往往都是随机的。不过借助信息卡，某些特性起码能够确定下来。
 {-------------------------------------------------------------}
-{b}Dimension Theory
+{b}维度理论
 {n:theory}
-Before embarking on the adventure of forming your own worlds, it is
-important to understand how the dimensions work.
+在你构建世界并打算冒险之前，了解维度是如何工作的也是至关重要的。
 
-The first thing that is important to understand is that worlds you
-create are not necessarily unique. If a pattern of code is used to
-create one world, using the same pattern of code will create the
-same world again. In fact, when you enter the first world and make
-changes, the changes will appear in the second as well!
+首先，你需要知道，你所创建的世界其实并不是唯一的。如果两个世界构建模板所用的
+信息卡是相同的，那么它们所创建的世界也是完全相同。换句话说，你在第一个世界所
+做的改动，第二个世界也会发生相同变化！
 
-This allows you to disassemble dimensions, but enter the same exact
-ones later with the changes you've made still there, provided
-you used the exact same code.
+这个性质能够允许你自由分解掉卡片，并且之后用相同信息卡构建出的世界里，你先前
+的改动也会被保留。
 {-------------------------------------------------------------}
-{b}Dimlets - Coding the World
+{b}信息卡-定义世界
 {n:unknown}
-Dimensions, when created normally, will be completely random. You have
-no way of knowing whether it will be a floating sky world or a huge
-cave, or whether it's midnight or mid-day. Although you have a chance
-of creating a good world, chances are it won't work out in your favour.
+通常情况下，维度的创建充满着随机性。你根本无从得知你所创建的世界是怎样的，或
+许会是空岛，或许是巨大的山洞，或许是午夜，也或许是正午。当然，你是有几率创建
+一些好属性的世界，只不过几率可能低到会不如你所愿。
 
-However, you can control your world with objects called Dimlets.
-Scattered throughout the world, in dungeons and other chests, or just
-obtained by killing Endermen, you have a chance of finding dimlet
-parts. These small items were made a long time ago with forgotten
-technology and can be used to construct dimlets. These dimlets are
-similar to code - imagine each dimlet as its own line of code;
-modifying the next dimlet or defining something about the world.
+不过，有一个叫做信息卡的东西能够控制你的世界。这些东西的碎片散落在世界的各个
+角落，有的在地牢的箱子里，有的能够通过杀死末影人得到。这些碎片或许是很久以前，
+早已经消失的，科技文明的产物，这些东西能够重新制作回信息卡。信息卡颇有点像一
+条条代码——想象一下：一条条代码决定着下一个代码，或者这个世界的一些属性。
 {-------------------------------------------------------------}
-Dimlets are complicated devices, filled with advanced circuitry
-and powerful essences. These things can literally define how a
-world works. Most of the work you will be doing with dimensions
-will involve these dimlets.
+信息卡可是非常复杂的设备，充满着高级电路和强大的力量。这些东西正如它们的名字
+一样，能够定义一些世界的特性。这些信息卡包含了你想要定义的大部分维度特性。
 
-If you ever find yourself running low on dimlets, there is a
-higher chance of finding them within your custom dimensions.
-So, when nearly out of dimlets, create a couple random worlds
-and look around for interesting structures - you may find some
-very valuable dimlets in there.
+如果你运气很不好，找不到信息卡。没有关系，在你制作出的世界里面有很大几率找到
+信息卡。所以这么做是最快的：创建一个完全随机的世界，然后在这个世界里找一些有
+意思的建筑-你应该能找到很多有意思的信息卡。
 {-------------------------------------------------------------}
-{b}There are currently 14 types of dimlets discovered:
-    Terrain Dimlets: These are used to define what a world looks
-        like. Some examples include a normal world, a flat world,
-        or a skylands world.
-    Digit Dimlets: Digit Dimlets are lines of code that can be used
-        to create different dimensions. This allows you to create
-        new, unique worlds, except with exactly the same dimlets.
-    Biome Dimlets: These control what biomes appear in a dimension.
-        How many biomes are supported depends on the controller.
-    Biome Controller: These determine how many and which type of 
-        biomes are selected. For instance, you could define it
-        so that there is only one biome, or a checkerboard of
-        biomes.
+{b}当前能够找到14种不同的信息卡：
+    地形信息卡：决定着世界长得什么样。比如说是普通的世界，还是超平坦世界，
+        亦或是空岛世界。
+    数位信息卡：数位信息卡就像是能够创建不同世界的代码。它允许你创建和先前
+        世界特性相同，但是是新的，独特的世界。
+    生物群系信息卡：控制维度的生物群系。至于有多少生物群系，取决于控制器。
+    生物群系控制器：决定多少以及那种生物群系会被选中。换句话说，你可以设定
+        只生成一个生物群系，或者是生成所有的生物群系。
 {-------------------------------------------------------------}
-    Material Dimlets: These dimlets are used to define what a feature is
-        made out of. For instance, these can be used to make sure a world
-        is made out of Glowstone or a tendril is made out of Netherrack.
-        When used as a modifier for a another dimlet, the cost of
-        these dimlets will drastically increase, same as the liquid
-        dimlets.
-    Liquid Dimlets: Similar to Material Dimlets, these only differ in
-        the fact that they define a liquid instead of a solid material.
-    Feature Dimlets: These dimlets define what features appear in the
-        world, such as floating ores filled with liquids, increased
-        ore generation, or even tendrils of various substances.
-    Structure Dimlets: These define if certain structures will appear in
-        the world, such as strongholds, villages, or mineshafts.
+    材料信息卡：决定着维度由哪种材料构成。举个例子由萤石做成的世界，或者是
+        地狱岩构成的世界。当用于修饰其他信息卡时，耗能会大大增加，和流体信
+        息卡类似。
+    流体信息卡：和材料信息卡差不多，唯一的区别是它决定的是液体的生成。
+    特征信息卡：这个信息卡决定了世界拥有哪些特征，比如悬浮在液体中的矿石，
+        或是增加矿物的生成几率，亦或是各种材料的浮空矿脉。
+    结构信息卡：决定了世界生成的某些特殊结构，比如要塞，村庄，或者是矿井。
 {-------------------------------------------------------------}
-    Mob Dimlets: Using these dimlets you can specify additional mobs that
-        should spawn in your world (in addition to normal mob spawning!).
-    Sky Dimlets: These allow you to define the colours, sizes, or even
-        existence of various objects in the sky, such as planets, moons,
-        suns, sky colour, fog colour, and more.
-    Time Dimlets: With these dimlets you can control the time of the day.
-        It can be set to either a fixed time (morning, evening, midnight,
-        noon) or else you can get slow or faster time.
-    Weather Dimlets: Control the weather in your dimension with these
-        dimlets.
-    Effect Dimlets: These dimlets add various special effects. Negative 
-        effects generally help reduce maintenance power.
+    生物信息卡：这个信息卡能够决定维度生成的生物（普通的生物也可以生成！）。
+    天空信息卡：这个信息卡决定了天空的颜色，大小，甚至能够存在各种东西。
+        比如星球，月亮，太阳，天空颜色，雾的颜色等等。
+    时间信息卡：这个信息卡能够控制一天中的时间。可以设置为特定时间（早晨，
+        傍晚，午夜，无），或者放缓/加快时间。
+    天气信息卡：控制维度的天气。
+    效果信息卡：这个信息卡能够添加各种特殊的药水效果。负面效果能够减少世界
+        耗能。
 {-------------------------------------------------------------}
-    Special dimlets: These are special dimlets that are usually
-        extremely rare.
+    特殊信息卡：特殊信息卡通常很罕见。
 
-{b}There are currently five special dimlets:
-    Peaceful Dimlet: This dimlet prevents hostile mobs from
-        spawning in your dimension (except for mobs that you
-        manually add using mob dimlets). It is an expensive
-        dimlet though, and it will also never be randomly
-        generated in dimensions that you create.
-    Efficiency Dimlet: If you add this rare dimlet to your
-        dimension tab then the dimension will consume 20% less
-        energy per tick. This effect is cumulative. However,
-        it will greatly increase the creation time and
-        creation cost.
+{b}当前有5种特殊信息卡：
+    和平信息卡：这个信息卡能够阻止维度生成敌对性生物（除非是你使用了生物信
+        息卡添加的生物）。这是一个非常昂贵的信息卡，而且也永远不会以随机的
+        情况生成在你创建的世界。
+    效率信息卡：如果你把这个非常罕见的信息卡加入到里面，每tick能够减少20%
+        的耗能，效果也是可以累积的。不过它会大幅度提升世界的构建时间和建造
+        花费。
 {-------------------------------------------------------------}
-    Mediocre Efficiency Dimlet: This dimlet functions as a
-        somewhat inferior version of the Effeciency Dimlet.
-        It is easier to obtain, but does not add quite the
-        effects the normal Effeciency Dimlet does.
-    Shelter Dimlet: A dimlet for dimensions that may be
-        excessively hostile, this dimlet creates a much
-        safer spot for teleporting in.
-    Seed Dimlet: A very specialized dimlet to control the seed
-        of the random world generation for a dimension.
+    平庸效率信息卡：这个信息卡是一个稍微劣化版本的效率信息卡。更容易获得，
+        但是效率不及普通效率信息卡那么高。
+    庇护信息卡：也许创建的维度极为的危险，这个信息卡能够创建更加安全的传
+        送点。
+    种子信息卡：一个特殊的信息卡，能够通过地图种子控制随机生成的维度。
 {-------------------------------------------------------------}
-{b}Dimlet Crafting
+{b}信息卡合成
 {n:create}
 
-Now that you have your dimlet parts you need a way to make
-dimlets. Using the Dimlet Workbench you can deconstruct
-dimlets into their technical components and then reconstruct
-them into new dimlets.
+现在，你得到了足够的信息卡部件，你需要一种方式能够组装成信息卡。使用信息
+卡工作台能够拆解掉信息卡，然后组成新的信息卡。
 
-The workbench can be crafted as follows:
+工作台合成如下：
 {rb:dimlet_workbench}
 {-------------------------------------------------------------}
-Every dimlet is made out of six parts:
-    - Dimlet Base item
-    - Dimlet Control Circuit
-    - Dimlet Energy Module
-    - Dimlet Memory Module
-    - Dimlet Type Controller
-    - Essence item
+每个信息卡由6个部件组成：
+    - 信息卡基础部件
+    - 信息卡控制电路
+    - 信息卡能源模块
+    - 信息卡内存单元
+    - 信息卡种类控制器
+    - 要素物品
 
-You need the right tier of every part to make a dimlet.
-There is one control circuit for every rarity (0 to 6) and there
-are three levels of the energy and memory modules.
+每个部件都需要正确的等级才能做成信息卡。
+控制电路有很多个等级（0到6），而能源模块和内存单元有3个等级。
 {-------------------------------------------------------------}
-When extracting dimlets into parts there is a 40% chance for
-every part that you get nothing. To avoid this it is recommended
-that you infuse the workbench. A maximum infused workbench will
-guarantee that you get all parts back.
+当把信息卡分解成部件时候，每个部件有40%几率会消失。为了避免这种情况，
+推荐你注能你的工作台。最大注能的工作台能够100%得到所有部件。
 
-Extracting a dimlet will never give you an essence item. You
-always have to make that.
+分解信息卡永远不会退回要素物品，所以要素物品总是要被合成的。
 {-------------------------------------------------------------}
-There are various kinds of essence items depending on the type
-of dimlet that you want to make:
-    - Biome Absorber for biome dimlets
-    - Material Absorber for material dimlets
-    - Liquid Absorber for liquid dimlets
-    - Time Absorber for time dimlets
-    - Syringe for mob dimlets
-    - Peaceful essence (made out of 9 filled syringes of a
-      specific type) for the peaceful dimlet
-    - Efficiency/mediocre efficiency items for the corresponding
-      efficiency dimlets
-    - Structure Essence (from villagers) for structure dimlets
+这里有好几种要素物品决定着你想做的维度卡类型：
+    - 制作生物群系信息卡的生物群系吸收器
+    - 制作材料信息卡的材料吸收器
+    - 制作流体信息卡的流体吸收器
+    - 制作时间信息卡的时间吸收器
+    - 制作生物信息卡的注射器
+    - 制作和平信息卡的和平要素（由9种不同的注射器制作）
+    - 对应效率信息卡的效率/平庸的效率物品
+    - 制作结构信息卡的结构要素（来自村民）
 {-------------------------------------------------------------}
-So, if you wanted to create a Biome: Forest dimlet, you would
-place the Biome Absorber within a Forest Biome. Slowly, the
-Biome Absorber will fill up with the essence of the Forest Biome.
-You can then place it in the last slot of the Dimlet Workbench
-along with the other pieces of the dimlet to build your Biome:
-Forest dimlet, now ready to be used in any dimensions!
+所以，如果你想创建一个生物群系单元卡，比如森林生物群系单元卡：首先你需要
+在森林生物群系里放置一个生物群系吸收器。慢慢的，你的生物群系吸收器就会充
+满生物群系的精华。之后和其他部件一起，放在信息卡工作台合成就可以得到对应
+的生物群系信息卡，然后构建你得生物群系了。准备好了么！
 
 For the Time Absorber you need to give the absorber a redstone
 signal at approximately the right time. This has to be done
@@ -251,10 +201,10 @@ crafted and cycled between, so it is easy to vary your worlds.
 {-------------------------------------------------------------}
 Each dimlet has a certain Maintenance, Creation, and Tick cost shown
 in the tooltip. These represent the power cost of a dimension created
-with those dimlets. The Creation cost represents how much power the 
-dimlet will need per tick when creating the dimension. The Tick 
-cost represents how many ticks that dimlet will add to the creation 
-of the dimlet. The Maintenance cost is simply how much the dimlet 
+with those dimlets. The Creation cost represents how much power the
+dimlet will need per tick when creating the dimension. The Tick
+cost represents how many ticks that dimlet will add to the creation
+of the dimlet. The Maintenance cost is simply how much the dimlet
 will cost per tick after the world is created.
 
 The maintenance cost can be lowered using Efficiency Dimlets, making
@@ -304,7 +254,7 @@ greater creation cost and tick cost.
 {b}Getting There and Safety
 {n:teleport}
 
-Once you have created your dimension you will need a way to get there. To 
+Once you have created your dimension you will need a way to get there. To
 do that you have to use the RFTools teleportation system. At the time the
 dimension is created the Dimension Builder also generated a spawn platform
 with a Matter Receiver in the middle. This Matter Receiver will be fully
@@ -349,8 +299,8 @@ There are two options:
 Put the matter transmitter in your main base, fully power it and dial
 it to a nearby matter receiver. Then pick it up with a wrench. It
 will keep the settings so when you put it down in the other dimension it
-will still have power and you will be able to get back with it. Keep in mind 
-that power in that transmitter is drained with every teleport, so you will 
+will still have power and you will be able to get back with it. Keep in mind
+that power in that transmitter is drained with every teleport, so you will
 have to be careful next time you go into the dimension.
 {-------------------------------------------------------------}
 Best is to bring along a battery or generator as well.
@@ -403,8 +353,8 @@ RFTools has the 'Machine Infuser' which is crafted as follows:
 
 With this machine you can inject dimensional shards into almost all other
 RFTools machines. Just pick up any RFTools machine with a wrench and put
-it in the left slot of the infuser. You can infuse up to 256 shards into a 
-single machine. Infused machines work more efficiently or faster. The benefits 
+it in the left slot of the infuser. You can infuse up to 256 shards into a
+single machine. Infused machines work more efficiently or faster. The benefits
 vary depending on the machine, but in almost all cases it will need a lot less
 power to operate and in some cases the speed will greatly increase.
 {-------------------------------------------------------------}
