@@ -15,5 +15,5 @@
 
 ## 鸣谢
 感谢玩家`Aemande123`提供了大部分小模组的汉化，对他的努力表示感谢；      
-感谢玩家`3TUSK`，`Sihenzhang`，`CNife`，`DLslime`，`DSLM`，`gloomy_banana`，`yuanjie000`，`loveyanbei`，`ZhuKaihui`，`Uptobillion`，`TehporP`，`	forestbat`，`MaxBellc`，`HigZxcvd`，`bxz2311196368`提供部分汉化。   
+感谢玩家`3TUSK`，` Snownee`，`Sihenzhang`，`CNife`，`DLslime`，`DSLM`，`gloomy_banana`，`yuanjie000`，`loveyanbei`，`ZhuKaihui`，`Uptobillion`，`TehporP`，`	forestbat`，`MaxBellc`，`HigZxcvd`，`bxz2311196368`提供部分汉化。   
 感谢`PeakXing`制作的logo。
