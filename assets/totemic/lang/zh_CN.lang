@@ -16,13 +16,20 @@ item.totemic:bark_stripper.name=剥皮器
 item.totemic:jingle_dress.name=叮当舞装
 item.totemic:rattle.name=摇响器
 item.totemic:tipi.name=印第安帐篷
-item.totemic:iron_nugget.name=铁粒
-item.totemic:iron_bells.name=铁铃
-item.totemic:buffalo_hide.name=野牛牛皮
-item.totemic:buffalo_teeth.name=野牛牙齿
-item.totemic:buffalo_meat.name=野牛肉
-item.totemic:cooked_buffalo_meat.name=烤野牛肉
-item.totemic:baykok_bow.name=贝柯克之弓
+item.totemic:nuggetIron.name=铁粒
+item.totemic:bellsIron.name=铁铃
+item.totemic:buffaloHide.name=野牛牛皮
+item.totemic:buffaloTeeth.name=野牛牙齿
+item.totemic:buffaloMeat.name=野牛肉
+item.totemic:buffaloCookedMeat.name=烤野牛肉
+item.totemic:baykokBow.name=贝柯克之弓
+item.totemic:medicineBag.name=医疗包
+item.totemic:medicineBag.display=医疗包 (%s)
+item.totemic:medicineBag.tooltip=按住Shift单击图腾柱来设置效果
+item.totemic:medicineBag.tooltipClosed=关闭
+item.totemic:medicineBag.tooltipOpen=开启
+item.totemic:medicineBag.tooltipEmpty=空
+item.totemic:medicineBag.tooltipCharge=充能： %d
 
 # Block localizations
 tile.totemic:cedar_log.name=红柏原木
@@ -68,6 +75,18 @@ totemic.totem.totemic:ocelot=豹猫
 totemic.totem.totemic:bat=蝙蝠
 totemic.totem.totemic:spider=蜘蛛
 totemic.totem.totemic:cow=牛
+totemic.totem.totemic:rabbit=兔子
+totemic.totem.totemic:pig=猪
+totemic.totem.totemic:wolf=狼
+totemic.totem.totemic:buffalo=水牛
+totemic.totem.totemic:enderman=末影人
+
+#Music Instrument names
+totemic.instrument.totemic:flute=长笛
+totemic.instrument.totemic:drum=鼓
+totemic.instrument.totemic:windChime=风铃
+totemic.instrument.totemic:jingleDress=Jingle Dress
+totemic.instrument.totemic:rattle=Rattle
 
 #Music values
 totemic.musicNeeded.none=不需要演奏音乐
@@ -82,10 +101,15 @@ totemicmisc.musicSelector=音乐选择器
 totemicmisc.tipi.cantSleep=你不能在非开阔地的印第安帐篷里睡觉
 totemicmisc.tipi.nether=你不能在下界睡觉
 totemicmisc.activeEffect=已激活的图腾效果：%s
+totemicmisc.noEffect=空
 totemicmisc.startup=激活中
 totemicmisc.activeCeremony=激活仪式
+totemicmisc.isDoingNoCeremony=这个图腾不在进行仪式
+totemicmisc.isDoingSelection=图腾正在等待选择仪式
+totemicmisc.selection=选择： %s
 totemicmisc.isDoingStartup=该图腾柱正在激活仪式
 totemicmisc.isDoingCeremony=该图腾柱正在散发效果
+totemicmisc.effectNotPortable=The effect %s cannot be carried in a Medicine Bag
 
 #Totempedia Localisations
 totemic.gui.lexicon.header=图腾百科全书，你的所有图腾所需的指南.
@@ -128,6 +152,11 @@ totemic.entry.totemEffects=图腾效果
 totemic.page.totemEffects0=雕刻图腾柱可以使它赋予你各种效果：<br>§1蝙蝠§0：让你免疫掉落伤害，让你可以在半空中潜行向前滑行<br>§1烈焰人§0：带来火焰抗性<br>§1Buffalo§0: Makes you mine faster<br>§1牛§0：带来减轻伤害的效果，但会让你的身体变沉<br>§1Enderman§0: Gives you night vision
 totemic.page.totemEffects1=§1马§0：带来速度提升的效果<br>§1豹猫§0：带来阻止爬行者爆炸的效果<br>§1Pig§0: Brings you good luck<br>§1Rabbit§0: Gives you a jump boost<br>§1蜘蛛§0：让你能够像一只蜘蛛一样爬墙<br>§1鱿鱼§0：带来水下呼吸的能力
 totemic.page.totemEffects2=§1Wolf§0: Gives you strength
+
+totemic.entry.medicineBag=Medicine Bag
+totemic.page.medicineBag0=The §1Medicine Bag§0 allows you to carry a §4Totem effect§0 with you, so you can use its benefits for a limited time without having to be near a Totem Pole.<br>Once you have crafted your Medicine Bag, Sneak+Right click it on a Totem Pole block carved with the effect you want to have. Then you can right click the bag to open it and release its effect, or to close it.
+totemic.page.medicineBag1=The Medicine Bag will last for a few minutes before it depletes. To charge it, just stand near a Totem Pole that has your bag's effect carved into it.
+totemic.page.medicineBag2=
 
 totemic.entry.instruments=乐器
 totemic.page.instruments0=乐器可以奏出§4音乐旋律§0，这些旋律是§1图腾基座§0的生命。当乐器奏响时，它们的旋律会浸入任何接收者内。每种乐器奏出的§4音乐旋律§0都有所不同，比如说在于其强度、传递范围、以及图腾可接收的量。
@@ -202,6 +231,7 @@ totemic.page.totemicStaff1=§o不不不，这不是扳手§r
 totemic.entry.barkStripper=剥皮器
 totemic.page.barkStripper0=你可以通过§1剥皮器§0来从§1红柏原木§0上收集到树皮以及剥皮的红柏原木。要使用它，只需要拿着§1剥皮器§0右键一块红柏原木，几秒后就可以完成剥皮。你将会得到红柏树皮，并且红柏原木也会变成剥皮的红柏原木。
 totemic.page.barkStripper1=红柏树皮和剥皮的红柏原木都有许多用途。§1剥皮的红柏原木§0可以合成更多的木板，或是把它放进熔炉里烧成木炭。红柏树皮则可以合成许多方块和物品，最常用的用途是用来加固物品。
+totemic.page.barkStripper2=
 
 totemic.entry.baykokBow=贝柯克之弓
 totemic.page.baykokBow0=§4贝柯克之弓§0是一把无比强大的弓。它只可以通过斩杀恶灵§4贝柯克§0获得。贝柯克可以通过§4丧钟仪式§0生成。<br>这把弓发射的弓箭对他人是隐形的，而且能使目标迟缓并造成更大伤害。贝柯克之弓比普通的弓更耐久，也更容易获得好的附魔。
@@ -209,3 +239,7 @@ totemic.page.baykokBow0=§4贝柯克之弓§0是一把无比强大的弓。它�
 totemic.entry.tipi=印第安帐篷
 totemic.page.tipi0=§1印第安帐篷§0有着圆锥体的外貌，属于帐篷的一种。由木质框架覆上野牛皮或棉布制成的帆布组成。在平整土地或草地上架起后，你可以直接睡在里面。
 totemic.page.tipi1=
+
+totemic.entry.totemTorch=Totem Torch
+totemic.page.totemTorch0=The §1Totem Torch§0 is simply a larger and more decorative version of a regular torch.
+totemic.page.totemTorch1=
