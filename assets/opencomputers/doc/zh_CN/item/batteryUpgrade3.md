@@ -1,1 +1,0 @@
-#REDIRECT batteryUpgrade1.md
