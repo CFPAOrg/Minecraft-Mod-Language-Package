@@ -11,9 +11,10 @@
 
 ## 使用方式
 点击[此处](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)可打开curseforge工程页面下载release版本资源包。    
+
 或者点击右侧`Clone or download`下载ZIP格式压缩包，<font color="red">解压到游戏的资源包文件夹下</font>即可使用。
 
 ## 鸣谢
 感谢玩家`Aemande123`提供了大部分小模组的汉化，对他的努力表示感谢；      
-感谢玩家`3TUSK`，` Snownee`，`Sihenzhang`，`CNife`，`DLslime`，`DSLM`，`gloomy_banana`，`yuanjie000`，`loveyanbei`，`ZhuKaihui`，`Uptobillion`，`TehporP`，`	forestbat`，`MaxBellc`，`HigZxcvd`，`bxz2311196368`提供部分汉化。   
+感谢玩家`3TUSK`（README编写者），` Snownee`，`Sihenzhang`，`CNife`，`DLslime`，`DSLM`，`gloomy_banana`，`yuanjie000`，`loveyanbei`，`ZhuKaihui`，`Uptobillion`，`TehporP`，`	forestbat`，`MaxBellc`，`HigZxcvd`，`bxz2311196368`提供部分汉化。   
 感谢`PeakXing`制作的logo。
