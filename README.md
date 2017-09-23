@@ -7,7 +7,7 @@
 本作品采用[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）进行许可。[协议全文可在此找到](./LICENSE)。  
 ![CC](https://pic3.zhimg.com/39119df78331a72cf1381b7b25650036_b.png)   
 
-### <font color="red">如果要提交PR，你必须需要接受此LICENSE</font>     
+### <font color="red">你在提交PR时默认接受此LICENSE</font>     
 
 ## 使用方式
 点击[此处](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)可打开curseforge工程页面下载release版本资源包。    
