@@ -1,1 +1,0 @@
-#REDIRECT ram1.md

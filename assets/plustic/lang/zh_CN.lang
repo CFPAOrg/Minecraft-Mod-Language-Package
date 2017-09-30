@@ -2,7 +2,24 @@
 
 item.katana.name=武士刀
 item.katana.desc=武士刀是一种非常特殊的武器，它能对目标进行狂风骤雨般的COMBO攻击。\n和手里剑（回旋镖）是正好的搭配。
+item.laser_gun.name=激光枪
+item.laser_gun.desc=激光枪是一种非常特殊的远程武器，它能从远处射出准确的激光射击。并且它需要消耗耐久和能量才能运作。\n其攻击力取决于激光媒质，而不是枪管。
 
+item.pipe_piece.name=激光枪管
+item.laser_medium.name=激光媒质
+item.battery_cell.name=电池单元
+
+# STATS
+
+stat.laser_medium.name=激光媒质
+stat.laser_medium.power.name=激光功率：%s
+stat.laser_medium.power.desc=显示激光媒质有多强。
+stat.laser_medium.range.name=射程：%s
+stat.laser_medium.range.desc=显示激光能延伸多远。
+
+stat.battery_cell.name=电池单元
+stat.battery_cell.energy.name=能量储量：§6%s RF
+stat.battery_cell.energy.desc=显示工具能够储存多少能量。
 # TINKER MATERIALS
 
 fluid.plustic.coal.name=熔融煤炭
@@ -26,12 +43,14 @@ fluid.plustic.infinity.name=熔融无尽之锭
 fluid.plustic.lumium.name=熔融流明
 fluid.plustic.kelline.name=熔融Kelline
 fluid.plustic.garfax.name=熔融Garfax
-fluid.plustic.morganine.name=熔融Morganine
+fluid.plustic.morganine.name=熔融摩根石
 fluid.plustic.racheline.name=熔融Racheline
 fluid.plustic.friscion.name=熔融Friscion
 fluid.plustic.thorium.name=熔融钍
 fluid.plustic.tungsten.name=熔融钨
 fluid.plustic.landium.name=熔融Landium
+fluid.plustic.desh.name=熔融戴斯
+fluid.plustic.refinedglowstone.name=强化荧石
 
 material.sapphire.name=蓝宝石
 material.ruby.name=红宝石
@@ -73,12 +92,19 @@ material.infinity_avaritia_plustic.name=无尽之锭
 material.lumium_plustic.name=流明
 material.kelline.name=Kelline
 material.garfax.name=Garfax
-material.morganine.name=Morganine
+material.morganine.name=摩根石
 material.racheline.name=Racheline
 material.friscion.name=Friscion
 material.thorium.name=钍
 material.tungsten.name=钨
 material.landium.name=Landium
+material.pink_slime.name=粉色史莱姆
+material.pink_slime.prefix=史莱姆%s
+material.desh.name=戴斯
+material.refinedglowstone.name=强化荧石
+material.darkmatter.name=暗物质
+material.redmatter.name=红物质
+material.phoenixite.name=菲尼克斯宝珠
 
 modifier.bloodymary.name=血腥玛丽
 modifier.bloodymary.desc=§o由英国传奇女王带给你的……§r\n根据敌人的HP剩余量造成额外的伤害。此外，每次攻击都有让敌人掉落凝血的机会。
@@ -117,8 +143,8 @@ modifier.endlectric.name=火花带闪电
 modifier.endlectric.desc=§o进攻!§r\n从玩家物品栏中的物品中吸取能量以造成伤害。
 modifier.nickoftime.name=千钧一发
 modifier.nickoftime.desc=§o唷！§r\n按“设置门户”键（默认“N”）在您指向的块上设置一个虚拟传送点。 如果你处于死亡的边缘，并且物品栏刚好有8个末影珍珠；虚拟传送点上有足够的空间。那么珍珠就被消耗掉，你被传送到虚拟的传送点上，使你幸免于难。 （该工具必须在你的手中才能起效。）
-modifier.blindbandit.name=盲目强盗
-modifier.blindbandit.desc=§o拉着……某个人§r\n一名被称为“盲目强盗”的生物有时会在你受到攻击或攻击别人时召唤，她能存在一段有限的时间。在存在的时间里，她会攻击敌对的怪物和那些敢于攻击她的人（除了你），她会穿上怪物的盔甲。
+modifier.blindbandit.name=盲眼侠盗
+modifier.blindbandit.desc=§o拉着……某个人§r\n一名被称为“盲眼侠盗”的生物有时会在你受到攻击或攻击别人时召唤，他能存在一段有限的时间。在存在的时间里，他会攻击敌对的怪物和那些敢于攻击他的人（除了你），他会穿上怪物的盔甲。
 modifier.brownmagic.name=穿梭魔法
 modifier.brownmagic.desc=§o你很奇怪。§r\n按“设置门户”键（默认“N”）在您指向的方块上设置一个虚拟传送点。默认情况下，按“Y”传送到那里（前提是传送点上有足够的空间）。
 modifier.rudeawakening.name=追悔莫及
@@ -144,7 +170,15 @@ modifier.barrett.desc=§o邦邦邦！§r\n你的HP越少，暴击的几率越高
 modifier.morganlefay.name=摩根勒菲
 modifier.morganlefay.desc=§o兰斯洛特……§r\n额外的魔法伤害（伤害范围为从0.0到5.0的正态分布）是折磨人的（绝对）。
 modifier.trash.name=垃垃垃垃垃圾！
-modifier.trash.desc=§o垃垃垃垃垃圾！§r\n在你的物品栏里会缓慢产生一些随机的物品，但这会消耗工具的耐久。
+modifier.trash.desc=§o垃垃垃垃垃圾！§r\n随机的物品在你的物品栏缓慢产生，但这会消耗工具的耐久。
+modifier.sassy.name=精明泼辣
+modifier.sassy.desc=§o真是无礻……§r\n暴击玩家或boss。
+modifier.ignoble.name=卑鄙无耻
+modifier.ignoble.desc=§o无底线§r\n当一个人受到伤害时，他开始卑鄙的嫉妒犯罪者拥有伤害他人的能力。当这个特性启用后，潜行时的攻击会将这个感情宣泄出去。
+modifier.dprk.name=Democratic People's Republic of Korea
+modifier.dprk.desc=§oWhen your missiles explode right after launch§r\nWhen attacking or defending, Supreme Leaders will spawn, exploding on opponents in the same manner as a creeper.
+modifier.getlucky.name=把握幸运
+modifier.getlucky.desc=§o就像菲尼克斯的传说……§r\n按“设置门户”键（默认“N”）在你指向的一个方块上设置一个虚拟门户。当你处于死亡的边缘，而你身上有%d个菲尼克斯宝石，同时虚拟门户上面还有足够的空间的话，宝石就被消耗，你会被传送到虚拟门户上幸免于难。（该工具必须在你的手中）。
 
 # MISCELLANEOUS
 
@@ -174,6 +208,7 @@ msg.plustic.portlymodifier.set=捕获实体：%s
 msg.plustic.portlymodifier.unset=释放实体：%s
 msg.plustic.portal.set=设定传送点为[x=%d, y=%d, z=%d]在维度：%d
 msg.plustic.nickmodifier.use=就在这千钧一发的时刻！
+msg.plustic.getlucky.use=I'm up all night to get lucky!
 msg.plustic.brownmagic.use=你在开玩笑。
 msg.plustic.hailhydra.use=如果一个§m九头蛇§r §nKelly§r的头被切断，那么另外两个会取而代之！
 
@@ -181,6 +216,7 @@ msg.plustic.hailhydra.use=如果一个§m九头蛇§r §nKelly§r的头被切断
 
 tooltip.plustic.globalmodifier.info=关联容器在：[x=%d, y=%d, z=%d]坐标，维度为：%d
 tooltip.plustic.portlymodifier.info=实体：%s
+tooltip.plustic.ignoblemodifier.info=Ignobility: §1%f
 tooltip.plustic.portal.info=传送点：[x=%d, y=%d, z=%d]；维度：%d
 tooltip.plustic.toggle.info=点击切换
 tooltip.plustic.toggle.state.true=%s目前§a启用
@@ -200,7 +236,10 @@ key.plustic_brown_magic.desc=激活穿梭魔法
 
 # ENTITIES
 
-entity.plustic.BlindBandit.name=盲目强盗
+entity.plustic.BlindBandit.name=盲眼侠盗
+entity.BlindBandit.name=盲眼侠盗
+entity.plustic.SupremeLeader.name=Supreme Leader
+entity.SupremeLeader.name=Supreme Leader
 
 # GUI
 
