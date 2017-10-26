@@ -1,0 +1,76 @@
+tile.immersivepetroleum.fluid_diesel.name=柴油
+tile.immersivepetroleum.fluid_crude_oil.name=原油
+
+tile.immersivepetroleum.stone_decoration.asphalt.name=沥青混凝土
+
+tile.immersivepetroleum.metal_multiblock.pumpjack.name=抽油机
+tile.immersivepetroleum.metal_multiblock.distillation_tower.name=精馏塔
+tile.immersivepetroleum.metal_multiblock.pumpjack_parent.name=抽油机
+tile.immersivepetroleum.metal_multiblock.distillation_tower_parent.name=精馏塔
+
+chat.immersivepetroleum.info.coresample.oil=%s mB 原油
+chat.immersivepetroleum.info.coresample.noOil=没有原油
+chat.immersivepetroleum.info.coresample.oilRep=Up to %d mB/tick of trace %s
+chat.immersivepetroleum.info.schematic.noMultiblock=与工程师手册合成
+chat.immersivepetroleum.info.schematic.build0=显示结构
+chat.immersivepetroleum.info.schematic.build1=搭建一个 %s
+chat.immersivepetroleum.info.schematic.center=中点在(%d, %d, %d)
+
+fluid.diesel=柴油
+fluid.oil=原油
+
+item.immersivepetroleum.material.bitumen.name=沥青
+item.immersivepetroleum.material.petcoke.name=石油焦
+
+item.immersivepetroleum.schematic.name=%s 投影仪
+
+itemGroup.immersivepetroleum=Immersive Petroleum
+
+ie.manual.entry.blank_text=
+
+desc.immersiveengineering.info.multiblock.IP:DistillationTower=精馏塔
+desc.immersiveengineering.info.multiblock.IP:Pumpjack=抽油机
+
+desc.immersiveengineering.info.multiblock.IE:AutoWorkbench=Automated Workbench
+desc.immersiveengineering.info.multiblock.IE:AlloySmelter=Alloy Smelter
+
+desc.immersivepetroleum.info.reservoir.oil=Oil Reservoir
+desc.immersivepetroleum.info.reservoir.aquifer=Aquifer
+desc.immersivepetroleum.info.reservoir.lava=Magma Chamber
+
+ie.manual.entry.distillationTower.name=精馏塔
+ie.manual.entry.distillationTower.subtext=环境不友好
+ie.manual.entry.distillationTower0=精馏塔是能将石油分馏成若干种产品的大型多方块设备。其结构如下图所示；需要用工程师锤敲击红石工程块完成建造。<br><br>原油可从其后面带有蓝点的输入端输入。原油在塔中会被加热，最终分成若干层不同的产物。这个过程会产出柴油，以及作为副产物存在的沥青。
+ie.manual.entry.distillationTower1=精馏塔每次运行会消耗<config;i;distillationTower_operationCost> Flux，每刻最多将 25 mB 原油转化为柴油。柴油会从侧面带有橙色点标记的输出端输出；副产物沥青则从正面输出。这些产物分别可用于 <link;dieselgen;§o§n柴油发电机§r>和<link;asphalt;§o§n沥青混凝土的制造§r>。<br><br>给予控制面板红石信号可令其暂停工作；此效果可用工程师锤反转。
+
+ie.manual.entry.pumpjack.name=抽油机
+ie.manual.entry.pumpjack.subtext=Pump, pump it up
+ie.manual.entry.pumpjack0=抽油机可将蕴藏于基岩层中的石油储藏抽出。它本身有多方块结构；搭建完成后，需要用工程师锤敲击第二层中的重型工程块来完成建造。
+ie.manual.entry.pumpjack1=抽油机的产油速度为 <config;i;pumpjack_speed> mB/t，功耗则为 <config;i;pumpjack_consumption> Flux/t。抽出的原油可从侧面的两个输出端（以橙色点标注）自动输出。<br><br>一般，原油储藏会在一台泵连续工作 <config;i;pumpjack_days> 天后枯竭。自然地，使用多台泵会加快其枯竭速度。<br><br>给予控制面板红石信号可令其暂停工作；此效果可用工程师锤反转。
+
+ie.manual.entry.oil.name=油藏
+ie.manual.entry.oil.subtext=黑金
+ie.manual.entry.oil0=你在基岩层附近挖矿时，偶然注意到了一些粘稠的黑色可燃物质。你提出了“那层不可破坏的岩层下还有更多石油储藏”的假设，但很明显，你已无法钻探到更深的地方了。但在<link;pumpjack;§o§n特殊设计的设备§r>的帮助下，你最终终于触碰到了哪些宝贵的燃料来源。
+ie.manual.entry.oil1=<link;minerals;§o§n岩芯钻井§r>可以探明某区块内是否有石油储藏及具体储量。<br><br>尽管油田会枯竭，抽油机仍能从枯竭的油田中抽出少量石油（最多 <config;i;oil_replenish> mB/t）。需要注意的是，用多台抽油机并不能提高枯竭的油田的产量。
+ie.manual.entry.oil2=%1$s %6$s<br>It contains %3$s to %4$s mB of %2$s.%5$s
+ie.manual.entry.oilConsonant=A
+ie.manual.entry.oilVowel=An
+ie.manual.entry.oilDimValid=%3$s §l%1$s§r is a type of fluid reservoir that can be found in the %2$s.
+ie.manual.entry.oilDimInvalid=%3$s §l%1$s§r is a type of fluid reservoir that can be found anywhere but in the %2$s.
+ie.manual.entry.oilDimAny=%2$s §l%1$s§r is a type of fluid reservoir that can be found in any Dimension.
+ie.manual.entry.oilReplenish=<br>After the reservoir is depleted, %1$d mB/tick of trace %2$s can be extracted by a single Pumpjack.
+ie.manual.entry.oilBiomeValid=油田会生成在%s。
+ie.manual.entry.oilBiomeInvalid=油田会生成在任意生物群系，除了%s。
+ie.manual.entry.oilBiomeAny=油田会生成在任意生物群系。
+
+ie.manual.entry.asphalt.name=沥青混凝土
+ie.manual.entry.asphalt.subtext=高速公路
+ie.manual.entry.asphalt0=沥青混凝土，顾名思义，是掺有粘稠的沥青的混凝土，也因此其颜色比普通混凝土更深。它本身可作为<link;distillationTower;§n§o精馏塔§r>处理原油时的副产物出现。
+
+ie.manual.entry.schematics.name=多方块投影仪
+ie.manual.entry.schematics.subtext=极具实用性的指导
+ie.manual.entry.schematics0=当你修建大型多方块结构时候，一次又一次打开工程师手册就显得十分繁琐了。只需要一个简单的投影仪，你就能够将这些多方块结构投影出来作为参考。
+ie.manual.entry.schematics1=把你的手册翻到多方块结构的页面，与投影仪合成，就能够投影出该多方块结构的投影了。投影出来的是三维的建筑结构指导。
+ie.manual.entry.schematics2=手持投影仪能够投影多方块结构。按下鼠标中键能够旋转结构，shift能够镜像建筑，右击能够将投影锁定在地面上。只要投影仪在快捷栏，就能够一直显示投影。<br><br>shift右击一个已经锁定的投影能够解锁它。<br><br>再创造模式下，shift右击锁定投影时，能够自动建造出多方块结构。
+
+ie.manual.category.ip.name=原油处理
