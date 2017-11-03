@@ -1,0 +1,93 @@
+itemGroup.cm2=Compact Machines 2
+
+tile.cm2.machine.tiny.name=Tiny Compact Machine
+tile.cm2.machine.small.name=Small Compact Machine
+tile.cm2.machine.normal.name=Normal Compact Machine
+tile.cm2.machine.large.name=Large Compact Machine
+tile.cm2.machine.giant.name=Giant Compact Machine
+tile.cm2.machine.maximum.name=Maximum Compact Machine
+
+tile.cm2.tunnel.name=Tunnel
+tile.cm2.wallbreakable.name=Compact Machine Wall
+tile.cm2.wall.name=Solid Compact Machine Wall
+
+item.cm2.psd.name=Personal Shrinking Device
+item.cm2.tunneltool.name=Tunnel
+item.cm2.minifluiddrop.name=Drop of Miniaturization Fluid
+
+item.cm2.psd.not_enough_fluid=Not enough miniaturization fluid!
+item.cm2.psd.spawnpoint_set=Entry point set!
+
+fluid.miniaturization_fluid=Miniaturization Fluid
+
+effect.shrink=Shrunk
+effect.shrink.postfix=Potion of Shrinkage
+
+tooltip.cm2.machine.coords=Machine: %s
+tooltip.cm2.machine.coords.unused=Unused
+tooltip.cm2.psd.charge=Charge: %d%%
+
+tooltip.cm2.psd.hint=Used to enter Compact Machines and to shrink yourself. Charged by filling with Miniaturization Fluid.
+tooltip.cm2.tunneltool.hint=Used to connect Wall blocks with outside Compact Machine faces.
+tooltip.cm2.minifluiddrop.hint=Dropped by mobs unded the effect of miniaturization fluid.
+tooltip.cm2.wall.hint=Warning! Unbreakable for non-creative players!
+tooltip.cm2.machine.hint=A %s provides a %s room.
+
+tooltip.cm2.jei.crafting_trigger=Throw this into the fluid to start the crafting.
+tooltip.cm2.jei.shape=Use these to build the multiblock as shown
+tooltip.cm2.jei.fluid=Pour over the the multiblock. The needed amount is just an estimate.
+tooltip.cm2.jei.fluid.warning=The whole multiblock must be covered with a exactly one layer thick fluid!
+
+cm2.jei.category.multiblock_miniaturization=Multiblock Miniaturization
+cm2.jei.minifluiddrop.description=Obtain these by killing entities that are under the effects of the miniaturization fluid.\n\nTo get miniaturization fluid in the first place find a broken compact machine somewhere in the overworld. Bring buckets.
+
+enumfacing.side=Side: %s
+enumfacing.up=Up
+enumfacing.down=Down
+enumfacing.north=North
+enumfacing.south=South
+enumfacing.west=West
+enumfacing.east=East
+
+entity.Villager.cm2.builder=Compact Machine Builder
+entity.Villager.cm2.chemist=Compact Machine Chemist
+
+commands.cm2.usage=/cm2 [subcommand, leave empty for list of commands]
+
+commands.cm2.available=Available sub-commands:
+commands.cm2.denied=You do not have the permission to use this command.
+
+commands.cm2.schema.description=Save/load the contents of machines
+commands.cm2.schema.save.usage=/cm2 schema save <name>
+commands.cm2.schema.save.description=Saves the machine you are in to disk
+commands.cm2.schema.save.exception.not_in_machine_dimension=You must be in the machine dimension for this command to work.
+commands.cm2.schema.save.exception.invalid_file=Could not open file '%s' for writing! Schema is not saved!
+commands.cm2.schema.save.exception.not_serializable=Could not serialize machine! Schema is not saved!
+
+commands.cm2.schema.load.usage=/cm2 schema load <name>
+commands.cm2.schema.load.description=Loads the specified schema from disk and places it in the room you are in.
+commands.cm2.schema.load.exception.not_in_machine_dimension=You must be in the machine dimension for this command to work.
+commands.cm2.schema.load.exception.invalid_file=Invalid schema. File '%s' does not exist or is invalid!
+commands.cm2.schema.load.exception.not_deserializable=Could not deserialize schema! Schema is not loaded!
+
+commands.cm2.entity-size.description=Various commands for handling miniaturization effects
+commands.cm2.entity-size.reset.usage=/cm2 entity-size reset [<player>]
+commands.cm2.entity-size.reset.description=Restores a players size if something went wrong
+
+commands.cm2.entity-size.set.usage=/cm2 entity-size reset [<player>] <scale>
+commands.cm2.entity-size.set.description=Set the size of a player
+
+commands.cm2.recipe.description=Stuff related to Multiblock Miniaturization recipes
+commands.cm2.recipe.unpack-defaults.usage=/cm2 recipe unpack-defaults [force]
+commands.cm2.recipe.unpack-defaults.description=Extract the default recipes from the .jar to the config folder. Append "force" to overwrite existing files.
+
+gui.cm2.psd.welcome.intro=Compact Machines 2 allows you to build<br/>complex machine contraptions within a single<br/>block!<br/><br/>Available chapters:
+
+gui.cm2.psd.fluid.label=Miniaturization Fluid
+gui.cm2.psd.fluid.intro=Miniaturization Fluid has several uses:<br/><br/>Crafting: Shrink down multiblock structures<br/>   to single items. Please use JEI to look up<br/>   all the recipes.<br/><br/>Shrinking: Drink the fluid, bath in it or equip<br/>   a filled Personal Shrinking Device in your<br/>   off hand to shrink yourself and get into<br/>   those cable shafts without breaking the<br/>   surrounding blocks.<br/><br/>You can obtain it either by searching for<br/>old broken machines found in the overworld<br/>or by killing entities that are under the<br/>effects of the miniaturization fluid.
+
+gui.cm2.psd.machines.label=Compact Machines
+gui.cm2.psd.machines.intro=Compact Machines are the core mechanic of<br/>this mod. They allow you to build large rooms<br/>in a single block space connected to the<br/>outside world.<br/><br/>They come in various sizes ranging from<br/>3x3x3 to 13x13x13.<br/><br/>You can use Tunnels to connect the outside<br/>block faces with any of the inside walls to<br/>transport items, fluids etc.<br/><br/>You can enter a Compact Machine by right-<br/>clicking it with a charged Personal Shrinking<br/>Device.<br/><br/>Please use JEI to look up crafting recipes.
+
+gui.cm2.psd.tunnels.label=Tunnels
+gui.cm2.psd.tunnels.intro=Tunnels are used to connect inside wall<br/>faces to outside block faces.<br/>Only one connection for each outside face,<br/>this means a total of 6 tunnels per machine.<br/><br/>Right click a Compact Machine Wall with a<br/>Tunnel Tool to place a tunnel. Right click it<br/>again to cycle through the outside faces it<br/>is connected to.<br/><br/>Tunnels are using the Forge Capability<br/>system to "connect" the two blocks. Other<br/>mods need to use this system for tunnels to<br/>work properly.<br/>This is the case for most storage, but<br/>rarely for multiblock systems, so expect<br/>some pipes etc to not work as expected.
