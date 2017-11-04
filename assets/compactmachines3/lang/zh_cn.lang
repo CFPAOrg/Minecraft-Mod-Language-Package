@@ -1,0 +1,103 @@
+itemGroup.compactmachines3=Compact Machines 3
+
+tile.compactmachines3.machine.tiny.name=微型空间压缩机械
+tile.compactmachines3.machine.small.name=小型空间压缩机械
+tile.compactmachines3.machine.normal.name=标准空间压缩机械
+tile.compactmachines3.machine.large.name=大型空间压缩机械
+tile.compactmachines3.machine.giant.name=巨型空间压缩机械
+tile.compactmachines3.machine.maximum.name=最大空间压缩机械
+
+tile.compactmachines3.tunnel.name=空间压缩机械通道
+tile.compactmachines3.wallbreakable.name=空间压缩机械墙壁
+tile.compactmachines3.wall.name=紧实的空间压缩机械墙壁
+tile.compactmachines3.fieldprojector.name=空间压缩机械领域投影器
+
+item.compactmachines3.psd.name=个人空间收缩设备
+item.compactmachines3.tunneltool.name=压缩机械通道
+
+item.compactmachines3.psd.spawnpoint_set=入口点设置完成！
+
+hint.compactmachines3.missing_opposite_projector=缺少对面的空间压缩机械领域投影器，你需要正确安排投影器的距离
+hint.compactmachines3.missing_projector_at=在%d,%d,%d处缺少空间压缩机械领域投影器
+hint.compactmachines3.currently_crafting=正在制作：%s（进度： %s%%）
+hint.compactmachines3.no_recipe_found=找不到有效的配方
+hint.compactmachines3.found_recipe_for=配方：%s
+hint.compactmachines3.invalid_block_in_field=区域中有无效的方块 @ %d,%d,%d: %s
+hint.compactmachines3.cant_sleep_here=你无法在空间压缩机械维度睡觉
+hint.compactmachines3.bed_position_set=重生位置已设置到本机械
+
+top.compactmachines3.currently_crafting=制作：
+top.compactmachines3.found_recipe_for=配方：
+
+tooltip.compactmachines3.machine.coords=机械编号：
+tooltip.compactmachines3.machine.coords.unused=未使用
+
+tooltip.compactmachines3.psd.hint=用作文档并输入空间压缩机械
+tooltip.compactmachines3.tunneltool.hint=用于联通空间压缩机械内部的墙壁与机械外部的面。
+tooltip.compactmachines3.wall.hint=警告！对于除创造以外的玩家来说，这个方块是牢不可破的。
+tooltip.compactmachines3.machine.hint=%s提供%s大小的空间。
+
+tooltip.compactmachines3.jei.crafting_trigger=将这个物品抛入投影器的制作领域开始制作。
+tooltip.compactmachines3.jei.shape=使用这个方块来构筑需要的多方块结构
+
+compactmachines3.jei.category.multiblock_miniaturization=多方块空间压缩机械
+
+
+enumfacing.side=侧面：%s
+enumfacing.up=上
+enumfacing.down=下
+enumfacing.north=北
+enumfacing.south=南
+enumfacing.west=西
+enumfacing.east=东
+
+
+commands.compactmachines3.usage=/compactmachines3 [子命令，为命令列表留空]
+
+commands.compactmachines3.available=可用的子命令：
+commands.compactmachines3.denied=您无权使用此命令。
+
+commands.compactmachines3.schema.description=保存/加载机械的内容
+commands.compactmachines3.schema.save.usage=/compactmachines3 schema save <name>
+commands.compactmachines3.schema.save.description=将您所在的机械保存到磁盘中
+commands.compactmachines3.schema.save.exception.not_in_machine_dimension=您必须在机器维度中才能使用此命令。
+commands.compactmachines3.schema.save.exception.invalid_file=无法打开的文件'%s'！架构没有保存！
+commands.compactmachines3.schema.save.exception.not_serializable=无法序列化机械！架构没有保存！
+
+commands.compactmachines3.schema.load.usage=/compactmachines3 schema load <name>
+commands.compactmachines3.schema.load.description=从磁盘加载指定的模式并将其放置在您所在的机械房间中。
+commands.compactmachines3.schema.load.exception.not_in_machine_dimension=您必须在机器维度中才能使用此命令。
+commands.compactmachines3.schema.load.exception.invalid_file=模式无效，档案 '%s'不存在或无效！
+commands.compactmachines3.schema.load.exception.not_deserializable=无法反序列化架构！架构不加载！
+
+commands.compactmachines3.recipe.description=与多方块结构配方相关的东西
+commands.compactmachines3.recipe.unpack-defaults.usage=/compactmachines3 recipe unpack-defaults [force]
+commands.compactmachines3.recipe.unpack-defaults.description=从.jar提取默认配方到配置文件夹。 附加“强制”来覆盖现有的文件。
+
+commands.compactmachines3.recipe.copy-shape.usage=/compactmachines3 recipe copy-shape
+commands.compactmachines3.recipe.copy-shape.description=将您正在查看的投影器的制作形状复制到剪贴板中
+commands.compactmachines3.recipe.copy-shape.exception.not_looking_at_projector=您没有注视投影器的制作区域。
+commands.compactmachines3.recipe.copy-shape.success=形状复制到剪贴板！
+
+commands.compactmachines3.machines.description=命令来恢复丢失/损坏的机器
+commands.compactmachines3.machines.give.usage=/compactmachines3 machines give <id>
+commands.compactmachines3.machines.give.description=给玩家一个相应的立方体。 警告：如果机器已经存在在世界上，这会打破机器！
+commands.compactmachines3.machines.give.warning=警告：如果机器已经存在在世界上，这会打破机器！
+
+commands.compactmachines3.machines.view.usage=/compactmachines3 machines view [<id>]
+commands.compactmachines3.machines.view.description=打开一个GUI，允许检查所有现有的空间压缩机械
+
+commands.compactmachines3.machines.clear.usage=/compactmachines3 machines clear [<id>]
+commands.compactmachines3.machines.clear.description=将给定机械中的所有方块设置为空气。
+
+gui.compactmachines3.psd.welcome.welcome=Compact Machines3可以让您将复杂的机器装置放置在单一的方块中！
+gui.compactmachines3.psd.welcome.chapters=可用章节：
+
+gui.compactmachines3.psd.machines.label=空间压缩机械
+gui.compactmachines3.psd.machines.text=这是空间压缩机械模组的核心方块这个模组，可以让你在一个方块的大小中建立一个大型的房间并联通外面的世界。\n它们有不同的大小，从3x3x3到13x13x13不等。\n你可以通过压缩机械通道用任何一个压缩机械内的面联通外界并运输流体，物品等。\n你可以通过使用个人空间收缩设备右键空间压缩机械进入机械内部。\n请使用JEI查找制作配方。
+
+gui.compactmachines3.psd.tunnels.label=空间压缩机械通道
+gui.compactmachines3.psd.tunnels.text=压缩机械通道是连接机械内部和外部的通道，由于每个面只有一个连接点这意味着，每个空间压缩机械只能装备6个压缩机械通道。\n在机械内部右键一块墙壁来放置压缩机械通道，再次单击放置的面可以设置连接的面\n压缩机械通道使用Forge功能来实现方块内外的“连接”其他模组需要使用这个系统，通道才能正常工作这是大多数存储的实现方法，但很少用于多方块系统，所以不要太期待其他模组的管道系统能正常工作。
+
+gui.compactmachines3.psd.crafting.label=空间压缩机械制作
+gui.compactmachines3.psd.crafting.text=要制作空间压缩机械，你需要建立一个多方块功能结构。\n将4个空间压缩机械领域投影器放置在彼此相对的位置，相对的每个奇数块都适合放置它们（右键投影器确认放置位置）。每个投影器都需要正面面对中心。\n一旦放置正确，投影器将会发射粒子效果建立一个预览的工作区域。查找JEI中的配方，在预览区域摆好对应的多方块结构，最后扔入催化物品，就可以开始制作了。
