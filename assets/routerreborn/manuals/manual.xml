@@ -1,0 +1,333 @@
+<?xml version="1.0"?>
+
+<book>
+
+<page type="picture">
+<text></text>
+<location>routerreborn:manuals/cableuse2.png</location>
+</page>
+
+
+<page type="sidebar">
+<item>
+    <text>Recipes</text>
+    <icon>workbench</icon>
+    <link>recipes</link>
+</item>
+<item>
+    <text>Router</text>
+    <icon>router</icon>
+    <link>router</link>
+</item>
+<item>
+    <text>Router Upgrades</text>
+    <icon>upgmachine</icon>
+    <link>upgrouter</link>
+</item>
+<item>
+    <text>Router usage example</text>
+    <icon>router</icon>
+    <link>storageexample</link>
+</item>
+
+
+</page>
+
+%recipelist%
+
+
+
+
+
+<page type="text">
+<indexkey>router</indexkey>
+	<title>Router</title>
+	<text> 
+The router has the following modes:
+* Extract
+* Output
+ 
+It also has the ability to eject items when
+ clogged if it is in Output mode and a eject
+ upgrade is installed.
+ 
+Side selection in the main tab is where you
+ can choose what side on a target inventory
+ and not the side of the router it should
+ try to insert to or extract from.
+ 
+
+ </text>
+ <icon>router</icon>
+</page>
+<page type="text">
+	<title>Router</title>
+	<text> 
+An example would be an array of vanilla
+ furnaces where you would like to insert ores
+ at the top and coal at the sides, or extract
+ from the bottom.
+ 
+When in slot mode, all sides on the target
+ are checked for access to the given slot.
+ 
+ </text>
+</page>
+
+<page type="sidebar">
+<indexkey>upgrouter</indexkey>
+<text>Following upgrades are available</text>
+<item>
+ <text>Thorough</text>
+ <icon>upgthorough</icon>
+ <link>upgthorough</link>
+</item>
+<item>
+ <text>Speed</text>
+ <icon>upgspeed</icon>
+  <link>upgspeed</link>
+</item>
+<item>
+ <text>Bandwidth</text>
+ <icon>upgbandwidth</icon>
+  <link>upgbandwidth</link>
+</item>
+<item>
+ <text>Item Filter</text>
+ <icon>upgitem</icon>
+  <link>upgitem</link>
+</item>
+<item>
+ <text>Machine Filter</text>
+ <icon>upgmachine</icon>
+  <link>upgmachine</link>
+</item>
+<item>
+ <text>Eject</text>
+ <icon>upgeject</icon>
+  <link>upgeject</link>
+</item>
+</page>
+
+
+<page type="text">
+<text>
+Installing a upgrade is done by sneaking and
+ right click the router with the upgrade in
+ your hand.
+
+Upgrades can be uninstalled by opening the
+ gui of the router select the tab and then
+ press 'DEL' on your keyboard.
+</text>
+</page>
+
+<page type="text">
+<icon>upgthorough</icon>
+<indexkey>upgthorough</indexkey>
+<text>Thorough:
+
+Will make the router try and fill all slots
+ in 1 target before moving on to the next.
+
+Keep in mind if you put random items in the
+ router, a item not able to enter the
+ target will force the router to move on to
+ the next available target.
+
+It will be useful in a array of furnaces where
+ you want to fill 1 furnace with a type of ore 
+ before moving on to the next.
+ 
+Without thorough the items will be spread out
+ over all available targets.
+</text>
+</page>
+
+
+<page type="text">
+<icon>upgspeed</icon>
+<indexkey>upgspeed</indexkey>
+<text>Speed Upgrade:
+
+This is handy in a barrel like sorting system
+ where you need the router to skip barrels
+ that can not take the current item quickly.
+
+It will make the router jump to the next
+ available target immediately instead of
+ (default config with a tickrate of 2)
+ 10 each second.
+
+With a setup of 200 barrels where only 1
+ barrel can accept the item it will take 20
+ seconds to find it without a speed upgrade.
+ 
+</text>
+</page>
+
+<page type="text">
+<icon>upgbandwidth</icon>
+<indexkey>upgbandwidth</indexkey>
+<text>Bandwidth Upgrade:
+
+Will make the router transfer a stack instead
+ of a single item each time.
+ 
+Combine this with a speed upgrade and Storage
+ Units and it can handle sorting from 2-3 
+ Buildcraft quarry's at full speed.
+</text>
+</page>
+
+<page type="text">
+<icon>upgeject</icon>
+<indexkey>upgeject</indexkey>
+<text>Eject Upgrade:
+
+Allows the router to eject items to a chest or
+ pipe on the chosen side when in extract mode.
+ 
+When in output mode this upgrade work as a
+ protection against blocking the router with
+ a item that has nowhere to go.
+If the router can not find a inventory to put
+ the current item in it will try and eject it
+ to a chest or pipe on the chosen side.
+</text>
+</page>
+
+<page type="text">
+<icon>upgitem</icon>
+<indexkey>upgitem</indexkey>
+<text>Item Filter:
+
+You can add up to 9 items in the filter.
+They can be blacklisted or whitelisted.
+Items will not be used up when put in the
+ filter.
+
+There is a option to ignore metadata/damage.
+
+Ore dictionary is used in the filter, adding a 
+ copper ore will allow all copper ores to pass. 
+</text>
+</page>
+
+<page type="text">
+<icon>upgmachine</icon>
+<indexkey>upgmachine</indexkey>
+<text>Machine Filter:
+
+Allows you to specify what machine to interact
+ with, blacklist or whitelist can be selected.
+
+ Visit near.
+   Visit near work in the following way:
+   
+   You got a chest, then a furnace, and
+    then a chest again.
+   
+   Selecting the chest in the filter only the
+    first chest will be transfered to, when
+    the router hit a inventory that is not
+    selected it will not go beyond it.
+</text>
+</page>
+<page type="text">
+<icon>router</icon>
+<indexkey>storageexample</indexkey>
+<text>Example for autosorting storage:
+
+Best solution for a complete storage
+system would be Speed Upgrade, Bandwith,
+ Eject and Thorough.
+ 
+Thorough will make sure a item do not 
+ end up in 2 different units even if 
+ the units are not locked.
+
+Eject when in output mode with a chest
+ next to the router selected for eject
+ will ensure the system do not clog up
+ on items that has nowhere to go.
+</text>
+</page>
+<page type="text">
+<indexkey>storageexample</indexkey>
+<text>
+Speed upgrade will ensure that finding
+ the next storage unit or any other 
+ storage you may use is fast and do not
+ take so long the system backs up.
+ 
+Bandwith make sure a full stack is 
+ transfered each time if a full stack
+ can fit the target inventory.
+ 
+A setup like this can easily handle
+several quarrys at full speed.
+</text>
+</page>
+<page type="picture">
+<text>Inventory Cable
+
+Can be used as a link between blocks
+Will not work for eject</text>
+<location>routerreborn:manuals/cableuse.png</location>
+</page>
+
+<page type="text">
+<icon>cammo</icon>
+<text>Camouflage
+
+Allows you to camouflage the router or 
+ conduits.
+Select the block you want to disguise the
+ router or conduit as by sneak + right 
+ clicking the camouflage device on it.
+
+A message will appear saying the block was loaded.
+
+Apply the cammo by right clicking it on a
+ router or conduit. 
+To remove cammo right click it again.
+
+Holding the device in your hand will
+ let you see hidden cables or routers.
+</text>
+</page>
+
+<page type="text">
+<icon>storaget1</icon>
+<text>Storage Unit
+
+* Tier 1: limit of 64 stacks.
+* Tier 2: limit of 1024 stacks.
+* Tier 3: limit of 8096 stacks.
+
+All Units can be locked ether empty or with 
+ a item by right clicking them with a empty 
+ hand.
+ 
+Upgrade of a unit can be done by having a 
+ higher tier unit in your hand and sneak + 
+ right click it on the unit to upgrade.
+The old unit will be returned to your inventory.
+ 
+ Units can be easily moved with a wrench.
+ </text>
+</page>
+
+<page type="text">
+<icon>craftstick</icon>
+<text>Portable crafting
+
+Crafting table on a stick, allowing you to craft
+ anywhere without placing down a crafting table.
+ 
+Work just as a normal minecraft crafting table.
+</text>
+</page>
+
+</book>

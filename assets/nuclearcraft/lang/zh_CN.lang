@@ -15,6 +15,8 @@ tile.ingot_block.uranium.name=铀块
 tile.ingot_block.boron.name=硼块
 tile.ingot_block.lithium.name=锂块
 tile.ingot_block.magnesium.name=镁块
+tile.ingot_block.beryllium.name=铍块
+tile.ingot_block.zirconium.name=锆块
 
 tile.ingot_block.graphite.name=石墨块
 tile.ingot_block.graphite.des0=石墨只在当接触到至少
@@ -45,6 +47,25 @@ tile.fission_block.casing.des16=获得能量!
 tile.fission_block.blast.name=防爆方块
 tile.fission_block.blast.des0=很高的抗爆性.
 tile.fission_block.blast.des1=合格的碉堡
+
+tile.reactor_casing_transparent.name=Transparent Reactor Casing
+tile.reactor_casing_transparent.des0=Used in the construction of
+tile.reactor_casing_transparent.des1=fission reactors. To form
+tile.reactor_casing_transparent.des2=a valid structure, build a
+tile.reactor_casing_transparent.des3=cuboid shell of casing,
+tile.reactor_casing_transparent.des4=making sure to *exclude* the
+tile.reactor_casing_transparent.des5=edges - the corners don't
+tile.reactor_casing_transparent.des6=matter. Then place a fission
+tile.reactor_casing_transparent.des7=controller along an edge,
+tile.reactor_casing_transparent.des8=at a corner or within one of
+tile.reactor_casing_transparent.des9=the faces of the structure.
+tile.reactor_casing_transparent.des10=If the GUI shows an error,
+tile.reactor_casing_transparent.des11=make sure the structure is
+tile.reactor_casing_transparent.des12=valid. Then fill the interior
+tile.reactor_casing_transparent.des13=with reactor cells, coolers
+tile.reactor_casing_transparent.des14=and graphite blocks to start
+tile.reactor_casing_transparent.des15=generating energy from your
+tile.reactor_casing_transparent.des16=fission fuels!
 
 tile.fusion_connector.name=聚变控制器
 tile.fusion_connector.des0=将一个聚变核心链
@@ -80,6 +101,7 @@ tile.cooler.quartz.des1=有效的石墨块
 tile.cooler.gold.name=金冷却器
 tile.cooler.gold.des0=必须接触至少一个水冷器
 tile.cooler.gold.des1=和一个红石冷却器
+tile.cooler.gold.des2=Redstone Cooler
 
 tile.cooler.glowstone.name=萤石冷却器
 tile.cooler.glowstone.des0=必须接触至少两个
@@ -92,10 +114,12 @@ tile.cooler.lapis.des1=反应堆单元和一个反应堆外壳
 tile.cooler.diamond.name=钻石冷却器
 tile.cooler.diamond.des0=必须被（至少两个）水冷器
 tile.cooler.diamond.des1=像三明治一样夹起来
+tile.cooler.diamond.des2=the same plane
 
 tile.cooler.helium.name=液氦冷却器
 tile.cooler.helium.des0=必须接触至少一个石英冷却器
 tile.cooler.helium.des1=和一个反应堆外壳
+tile.cooler.helium.des2=Casing
 
 tile.cooler.enderium.name=末影锭冷却器
 tile.cooler.enderium.des0=必须接触至少
@@ -125,6 +149,7 @@ tile.isotope_separator_idle.name=同位素分离器
 tile.isotope_separator_idle.des0=将材料（铀锭等）分离成它们的同位素以合成燃料.
 tile.isotope_separator_idle.des1=可以接受中压IC2电源
 tile.isotope_separator_active.name=同位素分离器
+
 tile.decay_hastener_idle.name=衰变加速器
 tile.decay_hastener_idle.des0=强制使放射性材料衰变.
 tile.decay_hastener_idle.des1=可以接受中压IC2电源
@@ -138,13 +163,6 @@ tile.fuel_reprocessor_active.name=燃料处理机
 tile.alloy_furnace_idle.name=合金炉
 tile.alloy_furnace_idle.des0=将基础材料熔合成合金.
 tile.alloy_furnace_idle.des1=可以接受中压IC2电源
-tile.alloy_furnace_idle.des2=3铜+1锡=4青铜
-tile.alloy_furnace_idle.des3=1铁+2石墨（粉）=1钢
-tile.alloy_furnace_idle.des4=1钢+1硼锭=2硼钢
-tile.alloy_furnace_idle.des5=1硼钢+1锂=2高强合金
-tile.alloy_furnace_idle.des6=2石墨（粉）+1钻石粉=2硬碳合金
-tile.alloy_furnace_idle.des7=1镁+2硼=3二硼化镁
-tile.alloy_furnace_idle.des8=1锂+1二氧化锰=2锂锰氧化物合金
 tile.alloy_furnace_active.name=合金炉
 
 tile.infuser_idle.name=流体注入器
@@ -172,6 +190,36 @@ tile.irradiator_idle.des0=引发核电结构的改变.
 tile.irradiator_idle.des1=可以接受中压IC2电源
 tile.irradiator_active.name=中子辐照器
 
+tile.ingot_former_idle.name=Ingot Former
+tile.ingot_former_idle.des0=Forms ingots from molten metals.
+tile.ingot_former_idle.des1=Can accept MV IC2 power
+tile.ingot_former_active.name=Ingot Former
+
+tile.pressurizer_idle.name=Pressurizer
+tile.pressurizer_idle.des0=Process items under immense pressure.
+tile.pressurizer_idle.des1=Can accept MV IC2 power
+tile.pressurizer_active.name=Pressurizer
+
+tile.chemical_reactor_idle.name=Chemical Reactor
+tile.chemical_reactor_idle.des0=Houses reactions between gases.
+tile.chemical_reactor_idle.des1=Can accept MV IC2 power
+tile.chemical_reactor_active.name=Chemical Reactor
+
+tile.salt_mixer_idle.name=Salt Mixer
+tile.salt_mixer_idle.des0=Blends molten salts together.
+tile.salt_mixer_idle.des1=Can accept MV IC2 power
+tile.salt_mixer_active.name=Salt Mixer
+
+tile.crystallizer_idle.name=Crystallizer
+tile.crystallizer_idle.des0=Precipitates solids from solution.
+tile.crystallizer_idle.des1=Can accept MV IC2 power
+tile.crystallizer_active.name=Crystallizer
+
+tile.dissolver_idle.name=Dissolver
+tile.dissolver_idle.des0=Mixes solutes into solvents.
+tile.dissolver_idle.des1=Can accept MV IC2 power
+tile.dissolver_active.name=Dissolver
+
 tile.machine_interface.name=机器界面
 tile.machine_interface.des0=自动化系统可以进入这个机器
 tile.machine_interface.des1=以直接邻近这个方块摆放的形式.
@@ -183,6 +231,26 @@ tile.buffer.des0=可以存储最多一组物品,
 tile.buffer.des1=32000 RF能量和16000 mB
 tile.buffer.des2=流体. 可以放在
 tile.buffer.des3=裂变结构的框架里面
+
+tile.active_cooler.name=Active Fluid Cooler
+tile.active_cooler.des0=Pump coolant into this block to cool
+tile.active_cooler.des1=down fission and fusion reactors.
+tile.active_cooler.des2=Must be placed in a fission structure
+tile.active_cooler.des3=or on the diagonal of a fusion ring.
+tile.active_cooler.des4=If used to cool a fission reactor, the
+tile.active_cooler.des5=requirements for each fluid type are
+tile.active_cooler.des6=the same as the passive counterpart.
+tile.active_cooler.des7=If used to cool a fusion reactor, it
+tile.active_cooler.des8=is much more efficient for a cooler to
+tile.active_cooler.des9=have a partner on the exact opposite
+tile.active_cooler.des10=side of the entire fusion ring.
+tile.active_cooler.des11=The coolants available are: water,
+tile.active_cooler.des12=destabilised redstone, energised
+tile.active_cooler.des13=glowstone, liquid helium, resonant
+tile.active_cooler.des14=ender and gelid cryotheum.
+
+tile.bin.name=Universal Bin
+tile.bin.des0=Destroys items, fluids and energy
 
 tile.fission_controller_idle.name=裂变控制器
 tile.fission_controller_idle.des0=建造一个多方块反
@@ -231,6 +299,7 @@ tile.energy_storage.des1=kRF.
 tile.energy_storage.des2=仍然处在开发中
 tile.energy_storage.des3=破坏后不会保存
 tile.energy_storage.des4=它内部的能量
+tile.energy_storage.des5=Extract energy from bottom side
 
 tile.fusion_core.name=聚变堆核心
 tile.fusion_core.des0=这是多方块聚变反应堆的中
@@ -248,18 +317,22 @@ tile.fusion_core.des11=能量--记住相同的燃料会
 tile.fusion_core.des12=自己与自己聚变。可用的
 tile.fusion_core.des13=燃料有氢（氕），氘，氚，
 tile.fusion_core.des14=氦-3，锂-6，锂-7和硼11.
+tile.fusion_dummy_side.name=Fusion Core
+tile.fusion_dummy_top.name=Fusion Core
 
 tile.fusion_electromagnet_idle.name=电磁体
 tile.fusion_electromagnet_idle.des0=需要
 tile.fusion_electromagnet_idle.des1=RF/t保持激活
 tile.fusion_electromagnet_active.name=电磁体
+tile.fusion_electromagnet_transparent_idle.name=Transparent Electromagnet
+tile.fusion_electromagnet_transparent_active.name=Transparent Electromagnet
 
 tile.accelerator_electromagnet_idle.name=超导电磁体
 tile.accelerator_electromagnet_idle.des0=需要
 tile.accelerator_electromagnet_idle.des1=RF/t保持激活
 tile.accelerator_electromagnet_active.name=超导电磁体
 
-tile.electromagnet_supercooler_idle.name=超导超冷却器 
+tile.electromagnet_supercooler_idle.name=超导超冷却器
 tile.electromagnet_supercooler_idle.des0=需要
 tile.electromagnet_supercooler_idle.des1=RF/t 和
 tile.electromagnet_supercooler_idle.des2=mB/t
@@ -278,6 +351,14 @@ tile.water_source.name=无限水源
 tile.water_source.des0=恒定产出
 tile.water_source.des1=mB/t水
 
+tile.nitrogen_collector.name=Nitrogen Collector
+tile.nitrogen_collector.des0=Produces
+tile.nitrogen_collector.des1=mB/t of nitrogen constantly
+
+tile.glowing_mushroom.name=Glowing Mushroom
+tile.reactor_door.name=Reactor Door
+tile.reactor_trapdoor.name=Reactor Trapdoor
+
 tile.fluid_oxygen.name=氧气
 fluid.oxygen=氧气
 
@@ -285,7 +366,7 @@ tile.fluid_hydrogen.name=氢气
 fluid.hydrogen=氢气
 
 tile.fluid_deuterium.name=氘
-fluid.deuterium=氘 
+fluid.deuterium=氘
 
 tile.fluid_tritium.name=氚
 fluid.tritium=氚
@@ -320,6 +401,69 @@ fluid.boron11=熔融硼-11
 tile.fluid_neutron.name=中子流体
 fluid.neutron=中子流体
 
+tile.fluid_fluorine.name=Fluorine
+fluid.fluorine=Fluorine
+
+tile.fluid_nitrogen.name=Nitrogen
+fluid.nitrogen=Nitrogen
+
+tile.fluid_ammonia.name=Ammonia
+fluid.ammonia=Ammonia
+
+tile.fluid_ethanol.name=Ethanol
+fluid.ethanol=Ethanol
+
+tile.fluid_boric_acid.name=Boric Acid
+fluid.boric_acid=Boric Acid
+
+tile.fluid_diborane.name=Diborane
+fluid.diborane=Diborane
+
+tile.fluid_radaway.name=RadAway Fluid
+fluid.radaway=RadAway Fluid
+
+tile.fluid_beryllium.name=Molten Beryllium
+fluid.beryllium=Molten Beryllium
+
+tile.fluid_lif.name=Molten Lithium Fluoride
+fluid.lif=Molten Lithium Fluoride
+
+tile.fluid_bef2.name=Molten Beryllium Fluoride
+fluid.bef2=Molten Beryllium Fluoride
+
+tile.fluid_flibe.name=Molten FLiBe Salt Mixture
+fluid.flibe=Molten FLiBe Salt Mixture
+
+tile.fluid_boron_nitride_solution.name=Boron Nitride Solution
+fluid.boron_nitride_solution=Boron Nitride Solution
+
+tile.fluid_coolant.name=Coolant
+fluid.coolant=Coolant
+
+tile.fluid_sulfur.name=Molten Sulfur
+fluid.sulfur=Molten Sulfur
+
+tile.fluid_sulfur_dioxide.name=Sulfur Dioxide
+fluid.sulfur_dioxide=Sulfur Dioxide
+
+tile.fluid_sulfur_trioxide.name=Sulfur Trioxide
+fluid.sulfur_trioxide=Sulfur Trioxide
+
+tile.fluid_sulfuric_acid.name=Sulfuric Acid
+fluid.sulfuric_acid=Sulfuric Acid
+
+tile.fluid_fluorite_water.name=Fluorite Water
+fluid.fluorite_water=Fluorite Water
+
+tile.fluid_calcium_sulfate_solution.name=Calcium Sulfate Solution
+fluid.calcium_sulfate_solution=Calcium Sulfate Solution
+
+tile.fluid_hydrofluoric_acid.name=Hydrofluoric Acid
+fluid.hydrofluoric_acid=Hydrofluoric Acid
+
+tile.fluid_oxygen_difluoride.name=Oxygen Difluoride
+fluid.oxygen_difluoride=Oxygen Difluoride
+
 item.ingot.copper.name=铜锭
 item.ingot.tin.name=锡锭
 item.ingot.lead.name=铅锭
@@ -329,6 +473,8 @@ item.ingot.boron.name=硼锭
 item.ingot.lithium.name=锂锭
 item.ingot.magnesium.name=镁锭
 item.ingot.graphite.name=石墨锭
+item.ingot.beryllium.name=Beryllium Ingot
+item.ingot.zirconium.name=Zirconium Ingot
 
 item.ingot_oxide.thorium.name=氧化钍锭
 item.ingot_oxide.uranium.name=氧化铀锭
@@ -344,6 +490,8 @@ item.dust.boron.name=硼粉
 item.dust.lithium.name=锂粉
 item.dust.magnesium.name=镁粉
 item.dust.graphite.name=石墨粉
+item.dust.beryllium.name=Beryllium Dust
+item.dust.zirconium.name=Zirconium Dust
 
 item.dust_oxide.thorium.name=氧化钍粉
 item.dust_oxide.uranium.name=氧化铀粉
@@ -351,11 +499,16 @@ item.dust_oxide.manganese.name=氧化锰粉
 item.dust_oxide.manganese2.name=二氧化锰粉
 
 item.gem.rhodochrosite.name=菱锰
+item.gem.boron_nitride.name=Cubic Boron Nitride
+item.gem.fluorite.name=Fluorite
 
 item.gem_dust.diamond.name=钻石粉
 item.gem_dust.rhodochrosite.name=菱锰粉
 item.gem_dust.quartz.name=石英粉
 item.gem_dust.obsidian.name=黑曜石粉
+item.gem_dust.boron_nitride.name=Amorphous Boron Nitride
+item.gem_dust.fluorite.name=Crushed Fluorite
+item.gem_dust.sulfur.name=Sulfur
 
 item.alloy.bronze.name=青铜
 item.alloy.tough.name=高强合金
@@ -365,12 +518,15 @@ item.alloy.lithium_manganese_dioxide.name=锂锰氧化物合金
 item.alloy.steel.name=钢
 item.alloy.ferroboron.name=硼铁合金
 
+item.compound.calcium_sulfate.name=Calcium Sulfate
+
 item.part.plate_basic.name=基础版
 item.part.plate_advanced.name=高级板
 item.part.plate_du.name=贫铀板
 item.part.plate_elite.name=精华板
 item.part.wire_copper.name=铜螺线管
 item.part.wire_magnesium_diboride.name=二硼化镁螺线管
+item.part.bioplastic.name=Bioplastic
 
 item.upgrade.speed.name=速度升级
 
@@ -386,6 +542,7 @@ item.thorium._232.name=钍-232
 item.thorium._232_oxide.name=氧化钍-232
 item.thorium._232_tiny.name=小撮钍-232
 item.thorium._232_oxide_tiny.name=小撮氧化钍-232
+
 item.uranium._233.name=铀-233
 item.uranium._233_oxide.name=氧化铀-233
 item.uranium._233_tiny.name=小撮铀-233
@@ -393,7 +550,7 @@ item.uranium._233_oxide_tiny.name=小撮氧化铀-233
 item.uranium._235.name=铀-235
 item.uranium._235_oxide.name=氧化铀-235
 item.uranium._235_tiny.name=小撮铀-235
-item.uranium._235_oxide_tiny.name=小撮氧化铀-235 
+item.uranium._235_oxide_tiny.name=小撮氧化铀-235
 item.uranium._238.name=铀-238
 item.uranium._238_oxide.name=氧化铀-238
 item.uranium._238_tiny.name=小撮铀-238
@@ -443,7 +600,7 @@ item.curium._243_oxide.name=氧化锔-243
 item.curium._243_tiny.name=小撮锔-243
 item.curium._243_oxide_tiny.name=小撮氧化锔-243
 item.curium._245.name=锔-245
-item.curium._245_oxide.name=氧化锔-245 
+item.curium._245_oxide.name=氧化锔-245
 item.curium._245_tiny.name=小撮锔-245
 item.curium._245_oxide_tiny.name=小撮氧化锔-245
 item.curium._246.name=锔-246
@@ -638,9 +795,9 @@ item.depleted_fuel_rod_mixed_oxide.mox_239.name=枯竭MOX-239燃料棒
 item.depleted_fuel_rod_mixed_oxide.mox_241.name=枯竭MOX-241燃料棒
 
 item.depleted_fuel_rod_americium.lea_242.name=枯竭低密度镅-242燃料棒
-item.depleted_fuel_rod_americium.lea_242_oxide.name=枯竭低密度氧化镅-242燃料棒
-item.depleted_fuel_rod_americium.hea_242.name=枯竭高密度镅-242燃料棒
 item.depleted_fuel_rod_americium.lea_242_oxide.name=枯竭高密度氧化镅-242燃料棒
+item.depleted_fuel_rod_americium.hea_242.name=枯竭高密度镅-242燃料棒
+item.depleted_fuel_rod_americium.hea_242_oxide.name=Depleted HEA-242 Oxide Fuel Rod
 
 item.depleted_fuel_rod_curium.lec_243.name=枯竭低密度锔-243燃料棒
 item.depleted_fuel_rod_curium.lec_243_oxide.name=枯竭低密度氧化锔-243燃料棒
@@ -684,14 +841,28 @@ item.pickaxe_boron.name=硼镐
 item.shovel_boron.name=硼铲
 item.axe_boron.name=硼斧
 item.hoe_boron.name=硼锄
+item.spaxelhoe_boron.name=Boron Spaxelhoe
 
 item.sword_tough.name=高强合金剑
 item.pickaxe_tough.name=高强合金镐
 item.shovel_tough.name=高强合金铲
 item.axe_tough.name=高强合金斧
 item.hoe_tough.name=高强合金锄
-
 item.spaxelhoe_tough.name=高强合金鹤嘴锄
+
+item.sword_hard_carbon.name=Hard Carbon Sword
+item.pickaxe_hard_carbon.name=Hard Carbon Pickaxe
+item.shovel_hard_carbon.name=Hard Carbon Shovel
+item.axe_hard_carbon.name=Hard Carbon Axe
+item.hoe_hard_carbon.name=Hard Carbon Hoe
+item.spaxelhoe_hard_carbon.name=Hard Carbon Spaxelhoe
+
+item.sword_boron_nitride.name=Boron Nitride Sword
+item.pickaxe_boron_nitride.name=Boron Nitride Pickaxe
+item.shovel_boron_nitride.name=Boron Nitride Shovel
+item.axe_boron_nitride.name=Boron Nitride Axe
+item.hoe_boron_nitride.name=Boron Nitride Hoe
+item.spaxelhoe_boron_nitride.name=Boron Nitride Spaxelhoe
 
 item.helm_boron.name=硼头盔
 item.chest_boron.name=硼胸甲
@@ -703,10 +874,33 @@ item.chest_tough.name=高强合金胸甲
 item.legs_tough.name=高强合金护腿
 item.boots_tough.name=高强合金靴子
 
+item.helm_hard_carbon.name=Hard Carbon Helmet
+item.chest_hard_carbon.name=Hard Carbon Chestplate
+item.legs_hard_carbon.name=Hard Carbon Leggings
+item.boots_hard_carbon.name=Hard Carbon Boots
+
+item.helm_boron_nitride.name=Boron Nitride Helmet
+item.chest_boron_nitride.name=Boron Nitride Chestplate
+item.legs_boron_nitride.name=Boron Nitride Leggings
+item.boots_boron_nitride.name=Boron Nitride Boots
+
+item.reactor_door_item.name=Reactor Door
+
 item.portable_ender_chest.name=接口末影箱
 item.portable_ender_chest.des0=在移动中使用末影箱
+
 item.dominos.name=Domino的大餐
 item.dominos.des0=Paul的最爱 - 16点饥饿值
+
+item.record_wanderer.name=Music Disc
+item.record_wanderer.des0=Dion - The Wanderer
+item.record_wanderer.des1=8-Bit Cover by '8 Bit Universe'
+item.record_end_of_the_world.name=Music Disc
+item.record_end_of_the_world.des0=Skeeter Davis - The End of the World
+item.record_end_of_the_world.des1=8-Bit Cover by 'GermanPikachuGaming'
+item.record_money_for_nothing.name=Music Disc
+item.record_money_for_nothing.des0=Dire Straits - Money For Nothing
+item.record_money_for_nothing.des1=8-Bit Cover by 'Omnigrad'
 
 itemGroup.nuclearcraftBaseBlockMaterials=核电工艺|基础方块
 itemGroup.nuclearcraftBaseItemMaterials=核电工艺|基础物品
@@ -719,17 +913,262 @@ itemGroup.nuclearcraftAccelerator=核电工艺|加速器
 itemGroup.nuclearcraftFluids=核电工艺|流体
 itemGroup.nuclearcraftMisc=核电工艺|杂项
 
+gui.config.main_title=NuclearCraft Configs
+
+gui.config.category.ores=Ore Configs
+gui.config.category.ores.tooltip=Configure ore generation
+
+gui.config.ores.ore_dims=Dimension List
+gui.config.ores.ore_dims.comment=List of IDs of dimensions to whitelist/blacklist for ore generation
+gui.config.ores.ore_dims_list_type=Whitelist/Blacklist (false/true)
+gui.config.ores.ore_dims_list_type.comment=Is the dimension list a whitelist (false) or a blacklist (true)?
+gui.config.ores.ore_gen=Generate Ores
+gui.config.ores.ore_gen.comment=Will ores generate in the world? Order: copper, tin, lead, thorium, uranium, boron, lithium, magnesium
+gui.config.ores.ore_size=Chunk Sizes
+gui.config.ores.ore_size.comment=Numbers of ore blocks per ore chunk. Order: copper, tin, lead, thorium, uranium, boron, lithium, magnesium
+gui.config.ores.ore_rate=Spawn Rates
+gui.config.ores.ore_rate.comment=Rates at which ores generate. Order: copper, tin, lead, thorium, uranium, boron, lithium, magnesium
+gui.config.ores.ore_min_height=Minimum Gen Heights
+gui.config.ores.ore_min_height.comment=Minimum heights at which ores generate. Order: copper, tin, lead, thorium, uranium, boron, lithium, magnesium
+gui.config.ores.ore_max_height=Maximum Gen Heights
+gui.config.ores.ore_max_height.comment=Maximum heights at which ores generate. Order: copper, tin, lead, thorium, uranium, boron, lithium, magnesium
+gui.config.ores.ore_drops=Enable Extra Ore Drops
+gui.config.ores.ore_drops.comment=Will vanilla ores drop extra resources? Order: rhodochrosite, beryllium dust, zirconium dust, fluorite, sulfur
+
+gui.config.category.processors=Processor Configs
+gui.config.category.processors.tooltip=Configure processors
+
+gui.config.processors.processor_time=Processing Times
+gui.config.processors.processor_time.comment=Base ticks per process. Order: Manufactory, Isotope Separator, Decay Hastener, Fuel Reprocessor, Alloy Furnace, Fluid Infuser, Melter, Supercooler, Electrolyser, Neutron Irradiator, Ingot Former, Pressurizer, Chemical Reactor, Salt Mixer, Crystallizer, Dissolver
+gui.config.processors.processor_power=Processing Power Use
+gui.config.processors.processor_power.comment=Base RF/t use during processing. Order: Manufactory, Isotope Separator, Decay Hastener, Fuel Reprocessor, Alloy Furnace, Fluid Infuser, Melter, Supercooler, Electrolyser, Neutron Irradiator, Ingot Former, Pressurizer, Chemical Reactor, Salt Mixer, Crystallizer, Dissolver
+gui.config.processors.processor_rf_per_eu=RF per EU Accepted
+gui.config.processors.processor_rf_per_eu.comment=The RF received per EU injected for processors
+gui.config.processors.processor_update_rate=Processor Update Rate
+gui.config.processors.processor_update_rate.comment=Ticks per fluid content check
+gui.config.processors.processor_passive_rate=Passive Production Rate
+gui.config.processors.processor_passive_rate.comment=Rates at which passive machines produce materials. Order: Helium Collector, Cobblestone Generator, Infinite Water Source, Nitrogen Collector
+gui.config.processors.cobble_gen_power=Cobble Gen Power Use
+gui.config.processors.cobble_gen_power.comment=RF/s required for Cobblestone Generator to run
+
+gui.config.category.generators=Generator Configs
+gui.config.category.generators.tooltip=Configure generators
+
+gui.config.generators.rtg_power=RTG Power Gen
+gui.config.generators.rtg_power.comment=RF/t generated. Order: Uranium, Plutonium, Americium, Californium
+gui.config.generators.solar_power=Solar Panel Power Gen
+gui.config.generators.solar_power.comment=RF/t generated. Order: Basic
+gui.config.generators.generator_rf_per_eu=RF Use per EU Emitted
+gui.config.generators.generator_rf_per_eu.comment=The RF used per EU emitted for generators
+gui.config.generators.generator_update_rate=Generator Update Rate
+gui.config.generators.generator_update_rate.comment=Ticks per fluid content check
+
+gui.config.category.fission=Fission Configs
+gui.config.category.fission.tooltip=Configure aspects of nuclear fission
+
+gui.config.fission.fission_power=Power Gen Multiplier
+gui.config.fission.fission_power.comment=Modifies the power generated by fission reactors
+gui.config.fission.fission_fuel_use=Fuel Use Multiplier
+gui.config.fission.fission_fuel_use.comment=Modifies the rate of fuel used by fission reactors
+gui.config.fission.fission_heat_generation=Heat Gen Multiplier
+gui.config.fission.fission_heat_generation.comment=Modifies the heat generated by fission reactors
+gui.config.fission.fission_cooling_rate=Cooling Rates
+gui.config.fission.fission_cooling_rate.comment=Base heat removed per tick. Order: water, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, enderium, cryotheum
+gui.config.fission.fission_active_cooling_rate=Active Cooling Rates
+gui.config.fission.fission_active_cooling_rate.comment=Base heat removed per tick/mB. Order: water, redstone, glowstone, liquid helium, enderium, cryotheum
+gui.config.fission.fission_water_cooler_requirement=Water Cooler Requirement
+gui.config.fission.fission_water_cooler_requirement.comment=Do water coolers have to be adjacent to reactor casing?
+gui.config.fission.fission_overheat=Enable Meltdowns
+gui.config.fission.fission_overheat.comment=Can fission reactors overheat?
+gui.config.fission.fission_update_rate=Structure Check Delay
+gui.config.fission.fission_update_rate.comment=Ticks per structure check
+gui.config.fission.fission_min_size=Minimum Structure Length
+gui.config.fission.fission_min_size.comment=Minimum side length of fission structures
+gui.config.fission.fission_max_size=Maximum Structure Length
+gui.config.fission.fission_max_size.comment=Maximum side length of fission structures
+gui.config.fission.fission_active_cooler_max_rate=Maximum Active Cooler Fluid Use
+gui.config.fission.fission_active_cooler_max_rate.comment=Maximum rate at which the Active Fluid Cooler uses coolant in mB/s
+
+gui.config.fission.fission_thorium_fuel_time=Thorium Fuel Durations
+gui.config.fission.fission_thorium_fuel_time.comment=Base ticks the fuels last. Order: TBU, TBU Oxide
+gui.config.fission.fission_thorium_power=Thorium Power Gen
+gui.config.fission.fission_thorium_power.comment=Base RF/t the fuels produce. Order: TBU, TBU Oxide
+gui.config.fission.fission_thorium_heat_generation=Thorium Heat Gen
+gui.config.fission.fission_thorium_heat_generation.comment=Base heat the fuels produce. Order: TBU, TBU Oxide
+
+gui.config.fission.fission_uranium_fuel_time=Uranium Fuel Durations
+gui.config.fission.fission_uranium_fuel_time.comment=Base ticks the fuels last. Order: LEU-233, LEU-233 Oxide, HEU-233, HEU-233 Oxide, LEU-235, LEU-235 Oxide, HEU-235, HEU-235 Oxide
+gui.config.fission.fission_uranium_power=Uranium Power Gen
+gui.config.fission.fission_uranium_power.comment=Base RF/t the fuels produce. Order: LEU-233, LEU-233 Oxide, HEU-233, HEU-233 Oxide, LEU-235, LEU-235 Oxide, HEU-235, HEU-235 Oxide
+gui.config.fission.fission_uranium_heat_generation=Uranium Heat Gen
+gui.config.fission.fission_uranium_heat_generation.comment=Base heat the fuels produce. Order: LEU-233, LEU-233 Oxide, HEU-233, HEU-233 Oxide, LEU-235, LEU-235 Oxide, HEU-235, HEU-235 Oxide
+
+gui.config.fission.fission_neptunium_fuel_time=Neptunium Fuel Durations
+gui.config.fission.fission_neptunium_fuel_time.comment=Base ticks the fuels last. Order: LEN-236, LEN-236 Oxide, HEN-236, HEN-236 Oxide
+gui.config.fission.fission_neptunium_power=Neptunium Power Gen
+gui.config.fission.fission_neptunium_power.comment=Base RF/t the fuels produce. Order: LEN-236, LEN-236 Oxide, HEN-236, HEN-236 Oxide
+gui.config.fission.fission_neptunium_heat_generation=Neptunium Heat Gen
+gui.config.fission.fission_neptunium_heat_generation.comment=Base heat the fuels produce. Order: LEN-236, LEN-236 Oxide, HEN-236, HEN-236 Oxide
+
+gui.config.fission.fission_plutonium_fuel_time=Plutonium Fuel Durations
+gui.config.fission.fission_plutonium_fuel_time.comment=Base ticks the fuels last. Order: LEP-239, LEP-239 Oxide, HEP-239, HEP-239 Oxide, LEP-241, LEP-241 Oxide, HEP-241, HEP-241 Oxide
+gui.config.fission.fission_plutonium_power=Plutonium Power Gen
+gui.config.fission.fission_plutonium_power.comment=Base RF/t the fuels produce. Order: LEP-239, LEP-239 Oxide, HEP-239, HEP-239 Oxide, LEP-241, LEP-241 Oxide, HEP-241, HEP-241 Oxide
+gui.config.fission.fission_plutonium_heat_generation=Plutonium Heat Gen
+gui.config.fission.fission_plutonium_heat_generation.comment=Base heat the fuels produce. Order: LEP-239, LEP-239 Oxide, HEP-239, HEP-239 Oxide, LEP-241, LEP-241 Oxide, HEP-241, HEP-241 Oxide
+
+gui.config.fission.fission_mox_fuel_time=MOX Fuel Durations
+gui.config.fission.fission_mox_fuel_time.comment=Base ticks the fuels last. Order: MOX-239, MOX-241
+gui.config.fission.fission_mox_power=MOX Power Gen
+gui.config.fission.fission_mox_power.comment=Base RF/t the fuels produce. Order: MOX-239, MOX-241
+gui.config.fission.fission_mox_heat_generation=MOX Heat Gen
+gui.config.fission.fission_mox_heat_generation.comment=Base heat the fuels produce. Order: MOX-239, MOX-241
+
+gui.config.fission.fission_americium_fuel_time=Americium Fuel Durations
+gui.config.fission.fission_americium_fuel_time.comment=Base ticks the fuels last. Order: LEA-242, LEA-242 Oxide, HEA-242, HEA-242 Oxide
+gui.config.fission.fission_americium_power=Americium Power Gen
+gui.config.fission.fission_americium_power.comment=Base RF/t the fuels produce. Order: LEA-242, LEA-242 Oxide, HEA-242, HEA-242 Oxide
+gui.config.fission.fission_americium_heat_generation=Americium Heat Gen
+gui.config.fission.fission_americium_heat_generation.comment=Base heat the fuels produce. Order: LEA-242, LEA-242 Oxide, HEA-242, HEA-242 Oxide
+
+gui.config.fission.fission_curium_fuel_time=Curium Fuel Durations
+gui.config.fission.fission_curium_fuel_time.comment=Base ticks the fuels last. Order: LECm-243, LECm-243 Oxide, HECm-243, HECm-243 Oxide, LECm-245, LECm-245 Oxide, HECm-245, HECm-245 Oxide, LECm-247, LECm-247 Oxide, HECm-247, HECm-247 Oxide
+gui.config.fission.fission_curium_power=Curium Power Gen
+gui.config.fission.fission_curium_power.comment=Base RF/t the fuels produce. Order: LECm-243, LECm-243 Oxide, HECm-243, HECm-243 Oxide, LECm-245, LECm-245 Oxide, HECm-245, HECm-245 Oxide, LECm-247, LECm-247 Oxide, HECm-247, HECm-247 Oxide
+gui.config.fission.fission_curium_heat_generation=Curium Heat Gen
+gui.config.fission.fission_curium_heat_generation.comment=Base heat the fuels produce. Order: LECm-243, LECm-243 Oxide, HECm-243, HECm-243 Oxide, LECm-245, LECm-245 Oxide, HECm-245, HECm-245 Oxide, LECm-247, LECm-247 Oxide, HECm-247, HECm-247 Oxide
+
+gui.config.fission.fission_berkelium_fuel_time=Berkelium Fuel Durations
+gui.config.fission.fission_berkelium_fuel_time.comment=Base ticks the fuels last. Order: LEB-248, LEB-248 Oxide, HEB-248, HEB-248 Oxide
+gui.config.fission.fission_berkelium_power=Berkelium Power Gen
+gui.config.fission.fission_berkelium_power.comment=Base RF/t the fuels produce. Order: LEB-248, LEB-248 Oxide, HEB-248, HEB-248 Oxide
+gui.config.fission.fission_berkelium_heat_generation=Berkelium Heat Gen
+gui.config.fission.fission_berkelium_heat_generation.comment=Base heat the fuels produce. Order: LEB-248, LEB-248 Oxide, HEB-248, HEB-248 Oxide
+
+gui.config.fission.fission_californium_fuel_time=Californium Fuel Durations
+gui.config.fission.fission_californium_fuel_time.comment=Base ticks the fuels last. Order: LECf-249, LECf-249 Oxide, HECf-249, HECf-249 Oxide, LECf-251, LECf-251 Oxide, HECf-251, HECf-251 Oxide
+gui.config.fission.fission_californium_power=Californium Power Gen
+gui.config.fission.fission_californium_power.comment=Base RF/t the fuels produce. Order: LECf-249, LECf-249 Oxide, HECf-249, HECf-249 Oxide, LECf-251, LECf-251 Oxide, HECf-251, HECf-251 Oxide
+gui.config.fission.fission_californium_heat_generation=Californium Heat Gen
+gui.config.fission.fission_californium_heat_generation.comment=Base heat the fuels produce. Order: LECf-249, LECf-249 Oxide, HECf-249, HECf-249 Oxide, LECf-251, LECf-251 Oxide, HECf-251, HECf-251 Oxide
+
+gui.config.category.fusion=Fusion Configs
+gui.config.category.fusion.tooltip=Configure aspects of nuclear fusion
+
+gui.config.fusion.fusion_base_power=Power Gen Multiplier
+gui.config.fusion.fusion_base_power.comment=Modifies the power generated by fusion reactors
+gui.config.fusion.fusion_fuel_use=Fuel Use Multiplier
+gui.config.fusion.fusion_fuel_use.comment=Modifies the rate of fuel used by fusion reactors
+gui.config.fusion.fusion_heat_generation=Heat Gen Multiplier
+gui.config.fusion.fusion_heat_generation.comment=Modifies the heat generated by fusion reactors
+gui.config.fusion.fusion_overheat=Enable Meltdowns
+gui.config.fusion.fusion_overheat.comment=Can fusion reactors overheat?
+gui.config.fusion.fusion_active_cooling=Enable Fusion Active Cooling
+gui.config.fusion.fusion_active_cooling.comment=Can fusion reactors be actively cooled (disable if suffering from lag)?
+gui.config.fusion.fusion_update_rate=Toroid Check Delay
+gui.config.fusion.fusion_update_rate.comment=Ticks per toroid check
+gui.config.fusion.fusion_min_size=Minimum Toroid Size
+gui.config.fusion.fusion_min_size.comment=Minimum size of fusion toroids
+gui.config.fusion.fusion_max_size=Maximum Toroid Size
+gui.config.fusion.fusion_max_size.comment=Maximum size of fusion toroids
+gui.config.fusion.fusion_alternate_sound=Use Alternate Sound
+gui.config.fusion.fusion_alternate_sound.comment=Use an alternate reactor sound effect?
+
+gui.config.fusion.fusion_fuel_time=Fusion Fuel Combo Durations
+gui.config.fusion.fusion_fuel_time.comment=Base ticks the fuel combos last. Order: H-H, H-D, H-T, H-He3, H-Li6, H-Li7, H-B11, D-D, D-T, D-He3, ..., D-B11, T-T, ..., T-B11, ..., B11-B11
+gui.config.fusion.fusion_power=Fusion Fuel Combo Power Gen
+gui.config.fusion.fusion_power.comment=Base RF/t the fuel combos produce. Order: H-H, H-D, H-T, H-He3, H-Li6, H-Li7, H-B11, D-D, D-T, D-He3, ..., D-B11, T-T, ..., T-B11, ..., B11-B11
+gui.config.fusion.fusion_heat_variable=Fusion Fuel Combo Heat Variables
+gui.config.fusion.fusion_heat_variable.comment=Heat variables that determine the efficiency curves of the fuel combos - roughly proportional to the optimal temperatures. Order: H-H, H-D, H-T, H-He3, H-Li6, H-Li7, H-B11, D-D, D-T, D-He3, ..., D-B11, T-T, ..., T-B11, ..., B11-B11
+gui.config.fusion.fusion_electromagnet_power=Electromagnet Power
+gui.config.fusion.fusion_electromagnet_power.comment=RF/s required to keep an electromagnet active
+
+gui.config.category.accelerator=Accelerator Configs
+gui.config.category.accelerator.tooltip=Configure aspects of particle acceleration
+
+gui.config.accelerator.accelerator_electromagnet_power=Superconducting Electromagnet Power
+gui.config.accelerator.accelerator_electromagnet_power.comment=RF/s required to keep a superconducting electromagnet active
+gui.config.accelerator.accelerator_supercooler_coolant=Superconducting Supercooler Coolant
+gui.config.accelerator.accelerator_supercooler_coolant.comment=mB/s of liquid helium required to keep a superconducting supercooler active
+
+gui.config.category.energy_storage=Energy Storage Configs
+gui.config.category.energy_storage.tooltip=Configure energy storages
+
+gui.config.energy_storage.battery_capacity=Battery Capacities
+gui.config.energy_storage.battery_capacity.comment=Maximum RF storable. Order: Voltaic Pile, Lithium Ion Battery
+
+gui.config.category.tools=Tool Configs
+gui.config.category.tools.tooltip=Configure tools
+
+gui.config.tools.tool_mining_level=Mining Levels
+gui.config.tools.tool_mining_level.comment=Mining levels (wood = 0, stone = 1, etc.). Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe
+gui.config.tools.tool_durability=Durabilities
+gui.config.tools.tool_durability.comment=Max number of tool uses. Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe
+gui.config.tools.tool_speed=Mining speeds
+gui.config.tools.tool_speed.comment=Determines the rate at which blocks are destroyed (wood = 2.0, stone = 4.0, etc.). Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe
+gui.config.tools.tool_attack_damage=Attack damages
+gui.config.tools.tool_attack_damage.comment=Related to the damage done per hit (wood = 0.0, stone = 1.0, etc.). Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe
+gui.config.tools.tool_enchantability=Enchantabilities
+gui.config.tools.tool_enchantability.comment=Determines the quality of applied enchantments. Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe
+
+gui.config.category.armor=Armor Configs
+gui.config.category.armor.tooltip=Configure armor
+
+gui.config.armor.armor_durability=Durabilities
+gui.config.armor.armor_durability.comment=Durabilities of armor types. Order: boron, tough alloy, hard carbon, boron nitride
+gui.config.armor.armor_boron=Boron Armor Protection
+gui.config.armor.armor_boron.comment=Effectiveness of individual armor pieces. Order: helm, chest, legs, boots
+gui.config.armor.armor_tough=Tough Alloy Armor Protection
+gui.config.armor.armor_tough.comment=Effectiveness of individual armor pieces. Order: helm, chest, legs, boots
+gui.config.armor.armor_hard_carbon=Hard Carbon Armor Protection
+gui.config.armor.armor_hard_carbon.comment=Effectiveness of individual armor pieces. Order: helm, chest, legs, boots
+gui.config.armor.armor_boron_nitride=Boron Nitride Armor Protection
+gui.config.armor.armor_boron_nitride.comment=Effectiveness of individual armor pieces. Order: helm, chest, legs, boots
+gui.config.armor.armor_enchantability=Enchantabilities
+gui.config.armor.armor_enchantability.comment=Determines the quality of applied enchantments. Order: boron, tough alloy, hard carbon, boron nitride
+gui.config.armor.armor_toughness=Toughnesses
+gui.config.armor.armor_toughness.comment=Toughnesses of armor types. Order: boron, tough alloy, hard carbon, boron nitride
+
+gui.config.category.other=Other Configs
+gui.config.category.other.tooltip=Miscellaneous configurations
+
+gui.config.other.rare_drops=Enable Rare Drops
+gui.config.other.rare_drops.comment=Will mobs drop rare items?
+
 gui.container.fission_controller.reactor=裂变反应堆
 gui.container.fission_controller.casing_incomplete=外壳不完整
+gui.container.fission_controller.casing_incomplete_at=Casing Incomplete at
 gui.container.fission_controller.multiple_controllers=多个控制器
 gui.container.fission_controller.casing_in_interior=内部有外壳
 gui.container.fission_controller.invalid_structure=非法的结构
+gui.container.fission_controller.pos=BlockPos
 gui.container.fission_controller.no_fuel=没有燃料
 gui.container.fission_controller.cells=单元：
 gui.container.fission_controller.efficiency=效率：
+gui.container.fission_controller.heat=Heat Level:
+
+gui.container.fission_controller.tbu=TBU
+gui.container.fission_controller.leu=LEU
+gui.container.fission_controller.heu=HEU
+gui.container.fission_controller.len=LEN
+gui.container.fission_controller.hen=HEN
+gui.container.fission_controller.lep=LEP
+gui.container.fission_controller.hep=HEP
+gui.container.fission_controller.mox_239=MOX-239
+gui.container.fission_controller.mox_241=MOX-241
+gui.container.fission_controller.lea=LEA
+gui.container.fission_controller.hea=HEA
+gui.container.fission_controller.lecm=LECm
+gui.container.fission_controller.hecm=HECm
+gui.container.fission_controller.leb=LEB
+gui.container.fission_controller.heb=HEB
+gui.container.fission_controller.lecf=LECf
+gui.container.fission_controller.hecf=HECf
+gui.container.fission_controller.oxide=Ox
 
 gui.container.fusion_core.reactor=聚变反应堆
 gui.container.fusion_core.ring_incomplete=电磁铁环不完整
+gui.container.fusion_core.ring_incomplete_at=Ring Incomplete
 gui.container.fusion_core.ring_blocked=电磁铁环被阻塞
 gui.container.fusion_core.power_issue=Power Electromagnets
 gui.container.fusion_core.incorrect_structure=非法的结构
@@ -737,15 +1176,26 @@ gui.container.fusion_core.size=环的大小：
 gui.container.fusion_core.energy=能量：
 gui.container.fusion_core.power=功率：
 gui.container.fusion_core.heat=温度：
+gui.container.fusion_core.temperature=Temperature:
 gui.container.fusion_core.efficiency=效率：
 gui.container.fusion_core.fuels=当前燃料：
 gui.container.fusion_core.empty=空
 
-sound.block.fusion_run=聚变反应堆运行中
-sound.block.accelerator_run=加速器运行中
+gui.container.energy_stored=Energy Stored:
+gui.container.shift_clear_tank=Shift Click to clear tank
+gui.container.change_tanks_mode=Change Tanks Mode
+gui.inventory.shift_for_info=Press Shift for more info
+
+block.fusion_run=Fusion Reactor Running
+block.accelerator_run=Accelerator Running
+player.geiger_tick=Geiger Tick
+music.wanderer=Wanderer
+music.end_of_the_world=End of the World
+music.money_for_nothing=Money For Nothing
 
 death.attack.superfluid_freeze=%1$s 冻死在超流体中
 death.attack.plasma_burn=%1$s 被等离子体烧成了灰烬
 death.attack.steam_burn=%1$s 变成了蒸汽
 death.attack.molten_burn=%1$s 被死亡熔化了
+death.attack.acid_burn=%1$s turned out to be far too alkaline
 death.attack.hypothermia=%1$s 体温过低导致了死亡
