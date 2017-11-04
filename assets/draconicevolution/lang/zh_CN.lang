@@ -16,7 +16,7 @@ tile.draconicevolution:entity_detector.advanced.false.name=实体探测器
 tile.draconicevolution:entity_detector.advanced.true.name=高级实体探测器
 tile.draconicevolution:player_detectorAdvanced.name=高级玩家探测器
 tile.draconicevolution:energy_infuser.name=能量注入器
-tile.draconicevolution:custom_spawner.name=稳定刷怪笼
+tile.draconicevolution:draconic_spawner.name=稳态刷怪笼
 tile.draconicevolution:generator.name=发电机
 tile.draconicevolution:energy_storage_core.name=能量核心
 tile.draconicevolution:energy_pylon.name=能量塔
@@ -142,9 +142,10 @@ item.draconicevolution:tool_upgrade.moveSpeed.name=升级核心（移动速度�
 item.draconicevolution:tool_upgrade.jumpBoost.name=升级核心（跳跃提升）
 
 item.draconicevolution:creative_exchanger.name=创造方块转换器
+item.draconicevolution:ender_energy_manipulator.name=末影能量操纵器
 
 //Item Groups ----------------------------------------------------------------------------------------------------------------------------------------
-itemGroup.toolsAndWeapons=龙之进化：工具和武器 
+itemGroup.toolsAndWeapons=龙之进化：工具和武器
 itemGroup.blocksAndItems=龙之进化：方块和物品
 
 //Chat Messages ----------------------------------------------------------------------------------------------------------------------------------------
@@ -242,6 +243,13 @@ info.mobSoul3.txt=（一次性使用）
 
 info.arrowInfo.txt=沉痛的负担
 info.arrowInfo0.txt=对于一把普通弓来说太重了
+
+//ender_extraction_core
+info.de.ender_energy_manipulator.info.txt=This slightly creepy mystical device taps into the energy of the dragons own healing crystals.
+info.de.ender_energy_manipulator.info2.txt=And along with the souls of a few nearby Enderman uses that energy to extract an egg from the Ender Dragon.
+info.de.ender_energy_manipulator.location.msg=Must be placed on the end gateway!
+info.de.ender_energy_manipulator.dead.msg=The Ender Dragon could not be found!
+info.de.ender_energy_manipulator.running.msg=You must wait until the current manipulator is finished!
 
 info.de.obliterationMode.txt=销毁模式
 info.de.obliterationModetrue.txt=激活
@@ -896,7 +904,43 @@ msg.de.reactorRSMode.6.txt=比较器模式：燃料消耗
 msg.de.reactorRSMode.7.txt=比较器模式：燃料消耗 [反转]
 gui.de.coreMass.txt=核心质量
 
+//---- Draconium Chest ----//
+gui.draconiumChest.name=Draconium Chest
+gui.draconiumChest.fMode.btn=Auto Feed
+gui.draconiumChest.fMode.info=Auto Feed allows you to automatically smelt items in the inventory. Click to view available feed modes.
+gui.draconiumChest.fMode.off.btn=Off
+gui.draconiumChest.fMode.off.info=Auto feed is disabled.
+gui.draconiumChest.fMode.fill.btn=Fill
+gui.draconiumChest.fMode.fill.info=Will fill any stacks that are already smelting from the chest inventory.
+gui.draconiumChest.fMode.lock.btn=Lock
+gui.draconiumChest.fMode.lock.info=Similar to fill except will not smelt the last item so as soon as more of that item are available they will be used to continue feeding the furnace.
+gui.draconiumChest.fMode.all.btn=All
+gui.draconiumChest.fMode.all.info=Will auto smelt any and all smeltable items in the chest inventory.
+gui.draconiumChest.speedBoost.info=Insert a Wyvern or higher tier core to boost speed and double ore at the cost of significantly increased energy consumption.
+gui.draconiumChest.energyConsumption.info=Energy Consumption
+gui.draconiumChest.processTime.info=Process Speed
+gui.draconiumChest.editRegion.btn=Edit Region
+gui.draconiumChest.editDefaultRegion.btn=Edit IO for unassigned Slots
+gui.draconiumChest.enableRegion.btn=Enable Region
+gui.draconiumChest.disableRegion.btn=Disable Region
+gui.draconiumChest.regionSelect.info=Click and drag in the chest inventory to change which slots are assigned to this region. Region must be enabled first and regions can not overlap.
+gui.draconiumChest.ioRegions.btn=I/O Regions
+gui.draconiumChest.ioRegions.info=Click here to configure I/O regions. IO regions allow you to create groups of slots with configurable sided io. You can also specify which slots the built in furnace can use. An example usage: Items entering the left side of the chest go to region 1 and are smelted by the furnace, Furnace outputs to region 2 and can then be extracted from the right side of the chest.
+gui.draconiumChest.pickColour.btn=Chest Colour
+gui.draconiumChest.pickColour.info=Allows you to modify the colour of the chest.
 
+gui.draconiumChest.toggleIOMode.down.btn=Toggle Bottom IO mode.
+gui.draconiumChest.toggleIOMode.up.btn=Toggle Top IO mode.
+gui.draconiumChest.toggleIOMode.north.btn=Toggle Front IO mode.
+gui.draconiumChest.toggleIOMode.south.btn=Toggle Back IO mode.
+gui.draconiumChest.toggleIOMode.west.btn=Toggle Right IO mode.
+gui.draconiumChest.toggleIOMode.east.btn=Toggle Left IO mode.
+gui.draconiumChest.toggleIOMode.furnace.btn=Toggle Furnace IO mode.
+
+gui.draconiumChest.ioState0.btn=Disabled
+gui.draconiumChest.ioState1.btn=Input Only
+gui.draconiumChest.ioState2.btn=Output Only
+gui.draconiumChest.ioState3.btn=Input & Output
 
 //---- Misc Info Text ----//
 info.de.shiftReversePlaceLogic.txt=按下Shift以反转逻辑。
