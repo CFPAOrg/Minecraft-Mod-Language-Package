@@ -1,13 +1,13 @@
-tile.industrialwires.ic2Connector.tin_conn.name=锡质接线器
-tile.industrialwires.ic2Connector.tin_relay.name=锡质继电器
-tile.industrialwires.ic2Connector.copper_conn.name=铜质接线器
-tile.industrialwires.ic2Connector.copper_relay.name=铜质继电器
-tile.industrialwires.ic2Connector.gold_conn.name=金质接线器
-tile.industrialwires.ic2Connector.gold_relay.name=金质继电器
-tile.industrialwires.ic2Connector.hv_conn.name=工业2高压接线器
-tile.industrialwires.ic2Connector.hv_relay.name=工业2高压继电器
-tile.industrialwires.ic2Connector.glass_conn.name=玻璃纤维接线器
-tile.industrialwires.ic2Connector.glass_relay.name=玻璃纤维继电器
+tile.industrialwires.ic2_connector.tin_conn.name=锡质接线器
+tile.industrialwires.ic2_connector.tin_relay.name=锡质继电器
+tile.industrialwires.ic2_connector.copper_conn.name=铜质接线器
+tile.industrialwires.ic2_connector.copper_relay.name=铜质继电器
+tile.industrialwires.ic2_connector.gold_conn.name=金质接线器
+tile.industrialwires.ic2_connector.gold_relay.name=金质继电器
+tile.industrialwires.ic2_connector.hv_conn.name=工业2高压接线器
+tile.industrialwires.ic2_connector.hv_relay.name=工业2高压继电器
+tile.industrialwires.ic2_connector.glass_conn.name=玻璃纤维接线器
+tile.industrialwires.ic2_connector.glass_relay.name=玻璃纤维继电器
 
 tile.industrialwires.mechanical_converter.ie_motor.name=旋转能马达
 tile.industrialwires.mechanical_converter.ie_to_ic2.name=转换器：IE旋转能-IC动能
@@ -21,12 +21,13 @@ tile.industrialwires.control_panel.top.name=Control Panel
 tile.industrialwires.control_panel.rs_wire.name=Redstone Wire Controller
 tile.industrialwires.control_panel.dummy.name=Panel Connector
 tile.industrialwires.control_panel.creator.name=Control Panel Creator
+tile.industrialwires.control_panel.unfinished.name=Unfinished Control Panel
 
-item.industrialwires.ic2wireCoil.tin.name=锡质线圈
-item.industrialwires.ic2wireCoil.copper.name=铜质线圈
-item.industrialwires.ic2wireCoil.gold.name=金质线圈
-item.industrialwires.ic2wireCoil.hv.name=工业2高压线圈
-item.industrialwires.ic2wireCoil.glass.name=玻璃纤维线圈
+item.industrialwires.ic2_wire_coil.tin.name=锡质线圈
+item.industrialwires.ic2_wire_coil.copper.name=铜质线圈
+item.industrialwires.ic2_wire_coil.gold.name=金质线圈
+item.industrialwires.ic2_wire_coil.hv.name=工业2高压线圈
+item.industrialwires.ic2_wire_coil.glass.name=玻璃纤维线圈
 
 item.industrialwires.panel_component.lighted_button.name=Lighted Button
 item.industrialwires.panel_component.label.name=Label
@@ -36,30 +37,53 @@ item.industrialwires.panel_component.variac.name=Variac®
 item.industrialwires.panel_component.toggle_switch.name=Toggle Switch
 item.industrialwires.panel_component.toggle_switch_covered.name=Covered Toggle Switch
 item.industrialwires.panel_component.lock.name=Lock Switch
+item.industrialwires.panel_component.panel_meter.name=Panel Meter
 item.industrialwires.key.key.name=Key
 item.industrialwires.key.key_named.name=Key for
 item.industrialwires.key.blank_key.name=Blank Key
 item.industrialwires.key.key_ring.name=Key Ring
 
+potion.industrialwires.tinnitus=Tinnitus
+
+industrialwires.subtitle.tinnitus=You have a tinnitus
+industrialwires.subtitle.jacobs_ladder=Jacob's ladder hums
+industrialwires.subtitle.marx_bang=Marx generator discharges
+industrialwires.subtitle.marx_pop=Marx generator misfires
+
+industrialwires.desc.jei.marx=Marx Generator
+industrialwires.desc.jei.alt= (alternative)
+industrialwires.desc.jei.max= (max.)
+industrialwires.desc.input=Input
+industrialwires.desc.output=Main Output
+industrialwires.desc.alt=Replacement
+industrialwires.desc.ideal_e=Ideal Energy
 
 industrialwires.desc.wireLength=线缆长度: %1s 格
 industrialwires.desc.recipe=请查看工程师手册以获取配方详情
 industrialwires.desc.remove_all=Remove all components from this panel
 industrialwires.desc.create_panel=Create a new control panel
-industrialwires.desc.enable_snap=Snap new components to the 16*16 grid
-industrialwires.desc.disable_snap=Allow free placing of components
+industrialwires.desc.snap0=Allow free placing of components
+industrialwires.desc.snap1=Snap to grid
+industrialwires.desc.snap2=Snap to other components
 industrialwires.desc.latching=Latching
 industrialwires.desc.latching_info=Does this button stay on indefinitely?
-industrialwires.desc.latching_info=Does this button stay on indefinitely?
 industrialwires.desc.disassemble=Disassemble the panel
-industrialwires.desc.rsid_info=The ID of the redstone wire controller to output a signal to
-industrialwires.desc.rschannel_info=The color of the redstone channel to output a signal to
+industrialwires.desc.rsid_info=The ID of the redstone wire controller to interact with
+industrialwires.desc.rschannel_info=The color of the channel to use
+industrialwires.desc.rsid_info2=The ID of the redstone wire controller for the second signal. -1 to disable.
+industrialwires.desc.rschannel_info2=The color of the channel to use for the second signal
 industrialwires.desc.label_text=The text in this label
 industrialwires.desc.red=Red
 industrialwires.desc.green=Green
 industrialwires.desc.blue=Blue
 industrialwires.desc.length=Length
-industrialwires.tooltip.rschannel_info=The color of the channel to output the signal to
+industrialwires.desc.wide_info=Wide Format
+industrialwires.desc.height=Height
+industrialwires.desc.height_info=The Height of the panel in the middle
+industrialwires.desc.angle=Angle
+industrialwires.desc.angle_info=The panel's angle to the surface it is placed on. 0=-45°, 100=45°
+industrialwires.tooltip.wide=Wide
+industrialwires.tooltip.narrow=Narrow
 
 industrialwires.tooltip.horizontal=Horizontal
 industrialwires.tooltip.vertical=Vertical
@@ -78,53 +102,60 @@ industrialwires.chat.tooLong=该线圈的长度不足以完成此次连接
 industrialwires.chat.stackSize=连接时只能使用一个线圈
 
 death.attack.industrialwires.jacobs_ladder=%1$s was electrocuted by a Jacob's Ladder
+death.attack.industrialwires.marx=%1$s was struck by lightning produced by a Marx generator
 
-
+ 
 itemGroup.industrialwires=工业线缆
 
-ie.manual.category.industrialWires.name=工业线缆
+ie.manual.category.industrialwires.name=工业线缆
 ie.manual.category.control_panels.name=Control Panels
 
-ie.manual.entry.industrialWires.wires.name=工业线缆
-ie.manual.entry.industrialWires.wires.subtext=没有复杂的阻抗概念！
-ie.manual.entry.industrialWires.wires0=工业线缆mod的线缆可以像工业2的导线一样传输能量。<br>其使用方法与使用ImmersiveEngineering的线缆完全一样。每种线缆所能传输的EU与其对应的导线相同，所以
-ie.manual.entry.industrialWires.wires1=将接线器接在一个会损坏导线的电源上同样会损坏接线器。<br>用以充当工业2导线的线圈与ImmersiveEngineering的线圈不同，距离越长，所使用的线缆也会越长：线圈是通过在合成格中放置任意组合的未绝缘的工业2导线和相应的线圈来合成的。下一页展示了一些有效的配方及其合成产物的例子。
-ie.manual.entry.industrialWires.wires2=未绝缘的锡质导线可以由未绝缘的铜质导线、金质导线、高压导线或玻璃纤维导线替代，以制造其他线圈。
+ie.manual.entry.industrialwires.wires.name=工业线缆
+ie.manual.entry.industrialwires.wires.subtext=没有复杂的阻抗概念！
+ie.manual.entry.industrialwires.wires0=工业线缆mod的线缆可以像工业2的导线一样传输能量。<br>其使用方法与使用ImmersiveEngineering的线缆完全一样。每种线缆所能传输的EU与其对应的导线相同，所以
+ie.manual.entry.industrialwires.wires1=将接线器接在一个会损坏导线的电源上同样会损坏接线器。<br>用以充当工业2导线的线圈与ImmersiveEngineering的线圈不同，距离越长，所使用的线缆也会越长：线圈是通过在合成格中放置任意组合的未绝缘的工业2导线和相应的线圈来合成的。下一页展示了一些有效的配方及其合成产物的例子。
+ie.manual.entry.industrialwires.wires2=未绝缘的锡质导线可以由未绝缘的铜质导线、金质导线、高压导线或玻璃纤维导线替代，以制造其他线圈。
 
-ie.manual.entry.industrialWires.mechConv.name=机械能转换器
-ie.manual.entry.industrialWires.mechConv.subtext=我为此发明了旋转能!
-ie.manual.entry.industrialWires.mechConv0=工业2和IE都有产生某种动能的机器。工业线缆mod的新型转换器允许您在这两种形式的能量之间转换！<br>要使用“转换器：IE旋转能-IC动能”，需要将其齿轮面与一个IE的旋转能源
-ie.manual.entry.industrialWires.mechConv1=如水车或旋转能马达（见第3页）相连，其对面与一个工业2消耗动能的机器相连。“转换器：IC动能-IE旋转能”的使用方法与“转换器：UE旋转能-IC动能”相似，只是转换方向变成了IC动能到IE旋转能。<br>不幸的是，转换过程中会
-ie.manual.entry.industrialWires.mechConv2=损失一部分能量。<br>作为一个小的额外的“机械能转换器”系列，其中还包含了旋转能马达：它消耗IF以产生IE旋转能。 与转换器一样，这不是无损过程。
+ie.manual.entry.industrialwires.mechConv.name=机械能转换器
+ie.manual.entry.industrialwires.mechConv.subtext=我为此发明了旋转能!
+ie.manual.entry.industrialwires.mechConv0=工业2和IE都有产生某种动能的机器。工业线缆mod的新型转换器允许您在这两种形式的能量之间转换！<br>要使用“转换器：IE旋转能-IC动能”，需要将其齿轮面与一个IE的旋转能源
+ie.manual.entry.industrialwires.mechConv1=如水车或旋转能马达（见第3页）相连，其对面与一个工业2消耗动能的机器相连。“转换器：IC动能-IE旋转能”的使用方法与“转换器：UE旋转能-IC动能”相似，只是转换方向变成了IC动能到IE旋转能。<br>不幸的是，转换过程中会
+ie.manual.entry.industrialwires.mechConv2=损失一部分能量。<br>作为一个小的额外的“机械能转换器”系列，其中还包含了旋转能马达：它消耗IF以产生IE旋转能。 与转换器一样，这不是无损过程。
 
-ie.manual.entry.industrialWires.jacobs.name=Jacob's Ladders
-ie.manual.entry.industrialWires.jacobs.subtext=Probably contain PCB's!
-ie.manual.entry.industrialWires.jacobs0=By applying a high voltage between 2 electrodes forming a "V" one can create an arc travelling upwards. They don't serve a particular purpose apart from being a nice-looking waste of power. Power can be supplied using either Flux or EU. The energy usage varies with the size of the ladder.
-ie.manual.entry.industrialWires.jacobs1=These are the required power values in EU: <config;dA;iwJacobsUsage>. Due to the voltages involved touching the ladder while active is not a good idea. Applying salt to the electrodes will cause the arc to be colored orange for a short time due to the sodium contained in the salt.
+ie.manual.entry.industrialwires.jacobs.name=Jacob's Ladders
+# Note for potential translators: This refers to Polychlorinated biphenyls (a poisonous ingredient in old insulation oils) rather than printed circuit boards
+ie.manual.entry.industrialwires.jacobs.subtext=Probably contain PCB's!
+ie.manual.entry.industrialwires.jacobs0=By applying a high voltage between 2 electrodes forming a "V" one can create an arc travelling upwards. They don't serve a particular purpose apart from being a nice-looking waste of power. Power can be supplied using either Flux or EU. The energy usage varies with the size of the ladder.
+ie.manual.entry.industrialwires.jacobs1=These are the required power values in EU: <config;dA;iwJacobsUsage>. Due to the voltages involved touching the ladder while active is not a good idea. Applying salt to the electrodes will cause the arc to be colored orange for a short time due to the sodium contained in the salt.
 
 
+ie.manual.entry.industrialwires.marx.name=Marx Generator
+ie.manual.entry.industrialwires.marx.subtext=I'm Erwin-Otto, not Karl!
+ie.manual.entry.industrialwires.marx=A Marx Generator is a device use to produce high-voltage high-energy pulses. These pulses are visible as lightning between the output terminals and can be used to process ores. Each type of ore has an ideal amount of processing energy (see <link;industrialwires.marx;§oAppendix B§r;7>). The precise values are unknown, estimate values with 10%% accuracy can be found at the end of this entry. The factor between the actual value and the estimate is the same for all types of ore.<br>§lConstruction§r<&0><br>The above plan shows a 5-stage generator capable of producing 3 block lightning. An arbitrary amount of stages can be added by increasing the number of "middle" layers. Power (either IF or EU) is connected to the HV connector, the redstone wire for the control signals is connected to the redstone connector<br>§lEnergy§r<br>Each stage of the Marx generator consists of a 1.6μF capacitor that is charged to up to 250kV (see <link;industrialwires.marx;§oAppendix A§r;6>). When the generator is fully charged the voltage of each capacitor is roughly equal to the charging voltage. The total energy is the sum of the energy stored in the individual capacitors and is split equally between the ores to be processed.<br>§lControl signals§r<br>Voltages are represented by 2 signals: The first signal is simply proportional to the voltage to represent. The second signal is proportional to the voltage in the "gap" between 2 values of the first signal, thus allowing more precise control/measurements. Panel components capable of interacting with analog signals usually support this dual-channel setup. The charging voltage is controlled by the white and yellow signals. The voltages of the top and bottom capacitor are output to the magenta and pink resp. the orange and lime signals. The light blue signal is a firing control. If it is high the generator will attempt to fire. If the voltage of the bottom capacitor is lower than 125 kV or the total voltage is lower than 30%% of the maximum output voltage the generator will misfire, discharging the capacitors without actually producing lightning.<br>§lSafety§r<br>Due to the high voltages and energies involved in firing a Marx generator a safe distance should be maintained to avoid injury or death. Even outside of this area hearing protection (As provided by Immersive Engineering) is obligatory. Formulas to calculate the safe distances can be found in <link;industrialwires.marx;§oAppendix A§r;6>.<np>§lAppendix A: Formulas§r<br>Energy stored in a capacitor:<br>E=0.5*C*U^2<br>E: Energy, C: Capacitance, U: Voltage<br><br>Voltage from redstone signals:<br>U=250/255*(16*a+b)<br>U: Voltage, a: First signal, b: Second signal<br><br>Safe distance (Physical damage):<br>r=sqrt(e/50,000)<br>r: Safe distance, e: Energy stored<br><br>Safe distance (Ear damage):<br>r=sqrt(e)/50<br>r: Safe distance, e: Energy stored<np>§lAppendix B: Ore Energy Values§r<br>
 
-ie.manual.entry.industrialWires.intro.name=Introduction
-ie.manual.entry.industrialWires.intro.subtext=
-ie.manual.entry.industrialWires.intro0=Control Panels allow you to monitor and control a large amount of redstone signals using only a few blocks. Those signals can currently be connected using redstone wires and connectors.<br>Buttons, switches, indicator lights and other things that can be placed on a control panel are called §l(Panel) Components§r<br>To create a control panel you will need a Panel Creator, the individual components and a basic machine casing as the enclosure of the panel. Each
-ie.manual.entry.industrialWires.intro1=component is described in the entry "Panel Components". Right-clicking with a panel component opens up a GUI in which the properties of the component, like the redstone channel and ID or the color, can be configured.
-ie.manual.entry.industrialWires.intro2=A §l(panel) network§r is formed by panel blocks connected to each other, directly or through other panel blocks. Panel blocks include the control panel itself, the panel connector and the Redstone Wire Controller. If multiple components in one network are configured to modify the same
-ie.manual.entry.industrialWires.intro3=redstone signal, the resulting signal will be the highest of the individual signals. Having multiple components accepting the same signal on a network is valid as well.
+ie.manual.entry.industrialwires.intro.name=Introduction
+ie.manual.entry.industrialwires.intro.subtext=
+ie.manual.entry.industrialwires.intro0=Control Panels allow you to monitor and control a large amount of redstone signals using only a few blocks. Those signals can currently be connected using redstone wires and connectors.<br>Buttons, switches, indicator lights and other things that can be placed on a control panel are called §l(Panel) Components§r<br>To create a control panel you will need a Panel Creator, the individual components and an Unfinished Panel (which determines the shape of the
+ie.manual.entry.industrialwires.intro1=panel). Each component is described in the entry "Panel Components". Right-clicking with a panel component opens up a GUI in which the properties of the component, like the redstone channel and ID or the color, can be configured.
+ie.manual.entry.industrialwires.intro2=A §l(panel) network§r is formed by panel blocks connected to each other, directly or through other panel blocks. Panel blocks include the control panel itself, the panel connector and the Redstone Wire Controller. If multiple components in one network are configured to modify the same
+ie.manual.entry.industrialwires.intro3=redstone signal, the resulting signal will be the highest of the individual signals. Having multiple components accepting the same signal on a network is valid as well.
+ie.manual.entry.industrialwires.intro4=The §lUnfinished Control Panel§r is used as the casing of a control panel. It can be configured by putting it into an Engineer's Workbench. The slider labeled "Height" changes the height in the middle of the panel. The "Angle" slider changes the angle of the panel relative to the surface it is
+ie.manual.entry.industrialwires.intro5=placed on, creating tilted panels. The sliders will automatically clamp to the highest/lowest angle/height the panel can have without being partially outside the block. The values might not visually clamp due to the way the Workbench works, closing and re-opening the GUI should fix this.
 
-ie.manual.entry.industrialWires.panel_creator.name=Panel Creator
-ie.manual.entry.industrialWires.panel_creator.subtext=
-ie.manual.entry.industrialWires.panel_creator0=The GUI of the panel creator consists of two major sections: The controls on the left and the panel on the right. Components can be placed on the panel by "placing" the items in the corresponding point in the GUI. If the component is surrounded by a red area, it can not be placed in that
-ie.manual.entry.industrialWires.panel_creator1=position on the panel. This usually means that it is either overlapping with an other component or isn't completely on the panel. The top button on the left (D) disassembles an existing control panel when it is placed in the slot beneath the button: The components of that panel are placed in the GUI, allowing them to be repositioned. The machine casing is lost in this process. The next button (C) turns a machine casing in the slot into a control panel with the components as positioned in the right of the GUI. The button
-ie.manual.entry.industrialWires.panel_creator2=labeled R removes all components from the GUI panel area and places them in your inventory. Finally the last button (S) changes between being able to place components anywhere on the panel to only being able to place them on a 16x16 grid.
+ie.manual.entry.industrialwires.panel_creator.name=Panel Creator
+ie.manual.entry.industrialwires.panel_creator.subtext=
+ie.manual.entry.industrialwires.panel_creator0=The GUI of the panel creator consists of two major sections: The controls on the left and the panel on the right. Components can be placed on the panel by "placing" the items in the corresponding point in the GUI. If the component is surrounded by a red area, it can not be placed in that
+ie.manual.entry.industrialwires.panel_creator1=position on the panel. This usually means that it is either overlapping with an other component or isn't completely on the panel.<br>The top button on the left (D) disassembles an existing control panel when it is placed in the slot beneath the button: The components of that panel are placed in the GUI, allowing them to be repositioned. The casing is lost in this process.<br>The next button (C) places the components from the right of the GUI on an Unfinished Control Panel in the slot in the
+ie.manual.entry.industrialwires.panel_creator2=left of the GUI, turning it into a regular Control Panel.<br>The button labeled R removes all components from the GUI panel area and places them in your inventory.<br>Finally the last button (S) changes the snapping mode. Components can be placed anywhere by default. The first snapping option forces the component to align with the 16x16 grid, the second option forces it to align with components already placed on the panel.
 
-ie.manual.entry.industrialWires.redstone.name=Redstone Connections
-ie.manual.entry.industrialWires.redstone.subtext=Could also be blood vessels
-ie.manual.entry.industrialWires.redstone0=A panel network can contain any amount of §lRedstone Wire Controllers§r. Each controller should be assigned a different ID in its GUI. Each component that interacts with redstone signals has two settings in its GUI: A redstone channel color and a controller ID. To get the redstone signals out of and into the controller it needs to be connected to redstone
-ie.manual.entry.industrialWires.redstone1=connectors from Immersive Engineering.
+ie.manual.entry.industrialwires.redstone.name=Redstone Connections
+ie.manual.entry.industrialwires.redstone.subtext=Could also be blood vessels
+ie.manual.entry.industrialwires.redstone0=A panel network can contain any amount of §lRedstone Wire Controllers§r. Each controller should be assigned a different ID in its GUI. Each component that interacts with redstone signals has two settings in its GUI: A redstone channel color and a controller ID. To get the redstone signals out of and into the controller it needs to be connected to redstone
+ie.manual.entry.industrialwires.redstone1=connectors from Immersive Engineering.
 
 ie.manual.entry.industrialwires.components.name=Panel Components
 ie.manual.entry.industrialwires.components.subtext=More than just two
-ie.manual.entry.industrialwires.components.general=The settings of any component can be copied to a component of the same type by placing the components directly above each other in a crafting bench. The settings of the upper component will be copied to the lower.
+ie.manual.entry.industrialwires.components.general=The settings of any component can be copied to a component of the same type by placing the components directly above each other in a crafting bench. The settings of the upper component will be copied to the lower.<br>Components can be placed in the world to create small control panels containing just that component. These interact with redstone signals in the world directly, just like a lever does, rather than through redstone wire controllers, like normal control panels.
 ie.manual.entry.industrialwires.button=A simple button that activates a redstone signal when pressed. Its color can be changed. The button either stays on until clicked again (latching) or tuns off after half a second (non-latching).
 ie.manual.entry.industrialwires.label=A text that can be placed on the control panel, for example to indicate the purpose of some other component. The color and obviously the text can be edited.
 ie.manual.entry.industrialwires.indicator_light=A small indicator that brightens as the input redstone signal is increased. The color can be changed.
@@ -134,3 +165,4 @@ ie.manual.entry.industrialwires.toggle_switch1=the switch. The color of the cove
 ie.manual.entry.industrialwires.variac=A Variac® is a variable autotransformer. The output signal of the transformer increases as the knob is turned to the right. The signal strenght can only be increased by one unit per click.
 ie.manual.entry.industrialwires.lock=A lock switch activates a redstone signal when a key is inserted and turned. A newly crafted lock will have a unique key configuration. By placing a blank key and a lock in a crafting table a key for the lock can be created. Multiple locks fitting the same key can be created using component copying (see page 1). Keys can be named in a GUI opened by right-clicking with them.
 ie.manual.entry.industrialwires.lock1=Up to <config;I;iwKeysOnRing> can be combined on a key ring. Keys are added to the ring by placing both in a crafting table. Shift-right-click the key ring to cycle through the keys on the ring. The selected key can be removed from the ring by placing the ring in a crafting table. The key ring will work just as the selected key would on lock switches.
+ie.manual.entry.industrialwires.panel_meter=A panel meter can be used to show display analog redstone signals with some accuracy. Panel meters are available in two different formats, wide and narrow. The wide format gives a slightly bigger angle between redstone level 0 and 15, but is more typical for Multimeters that for panel meters.
