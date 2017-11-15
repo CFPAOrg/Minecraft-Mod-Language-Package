@@ -2,10 +2,86 @@
 ftbu.button.explosions=爆炸
 ftbu.button.block_security=方块的安全
 
+# Config
+config_group.ftbu.name=FTBUtilities
+
+config_group.ftbu.backups.name=Backups
+config.ftbu.backups.silent.name=Silent
+config.ftbu.backups.backups_to_keep.name=Backups to Keep
+config.ftbu.backups.backups_to_keep.info=The number of backup files to keep\nore backups = more space used\n0 - Infinite
+config.ftbu.backups.backup_timer.name=Backup Timer
+config.ftbu.backups.backup_timer.info=Timer in hours\n1.0 - backups every hour\n6.0 - backups every 6 hours\n0.5 - backups every 30 minutes
+config.ftbu.backups.compression_level.name=Compression Level
+config.ftbu.backups.compression_level.info=0 - Disabled (output = folders)\n1 - Best speed\n9 - Smallest file size
+config.ftbu.backups.folder.name=Folder
+config.ftbu.backups.folder.info=Absolute path to backups folder
+config.ftbu.backups.display_file_size.name=Display File Size
+config.ftbu.backups.display_file_size.info=Prints (current size | total size) when backup is done
+config.ftbu.backups.use_separate_thread.name=Use Separate Thread
+config.ftbu.backups.use_separate_thread.info=Run backup in a separated Thread (recommended)
+
+config_group.ftbu.commands.name=Commands
+config.ftbu.commands.warp.name=/warp
+config.ftbu.commands.home.name=/home
+config.ftbu.commands.back.name=/back
+config.ftbu.commands.spawn.name=/spawn
+config.ftbu.commands.inv.name=/inv
+config.ftbu.commands.tpl.name=/tpl
+config.ftbu.commands.server_info.name=/server_info
+config.ftbu.commands.trash_can.name=/trash_can
+config.ftbu.commands.chunks.name=/chunks
+config.ftbu.commands.kickme.name=/kickme
+config.ftbu.commands.ranks.name=/ranks
+config.ftbu.commands.view_crash.name=/view_crash
+
+config_group.ftbu.general.name=General
+config.ftbu.general.auto_restart.name=Auto Restart
+config.ftbu.general.max_leaderboard_size.name=Max Leaderboard Size
+config.ftbu.general.restart_timer.name=Restart Timer
+config.ftbu.general.restart_timer.info=Server will automatically shut down after X hours\n0 - Disabled\n0.5 - 30 minutes\n1 - 1 Hour\n4 - 1 Day\n168 - 1 Week\n720 - 1 Month
+config_group.ftbu.general.server_info.name=Server Info
+config.ftbu.general.server_info.difficulty.name=Difficulty
+config.ftbu.general.server_info.mode.name=Mode
+config.ftbu.general.server_info.admin_quick_access.name=Admin Quick Access
+config_group.ftbu.general.chat.name=Chat
+config.ftbu.general.chat.substitute_prefix.name=Substitute Prefix
+config.ftbu.general.chat.substitute_list.name=Substitute List
+
+config_group.ftbu.login.name=Login
+config.ftbu.login.enable_motd.name=Enable MOTD
+config.ftbu.login.enable_starting_items.name=Enable Starting Items
+config.ftbu.login.motd.name=MOTD
+config.ftbu.login.motd.info=Message of the day. This will be displayed when player joins the server
+config.ftbu.login.starting_items.name=Starting Items
+config.ftbu.login.starting_items.info=Items to give player when he first joins the server\nFormat: 'StringID Size Metadata' or {nbt}
+
+config_group.ftbu.webapi.name=Web API
+config.ftbu.webapi.enabled.name=Enabled
+config.ftbu.webapi.file_location.name=File Location
+config.ftbu.webapi.update_interval.name=Update Interval
+config.ftbu.webapi.update_interval.info=Update interval in minutes
+
+config_group.ftbu.world.name=World
+config.ftbu.world.chunk_claiming.name=Chunk Claiming
+config.ftbu.world.chunk_loading.name=Chunk Loading
+config.ftbu.world.safe_spawn.name=Safe Spawn
+config.ftbu.world.safe_spawn.info=If set to true, explosions and hostile mobs in spawn area will be disabled, players won't be able to attack each other in spawn area
+config.ftbu.world.blocked_entities.name=Blocked Entities
+config.ftbu.world.blocked_entities.info=Entity IDs that are banned from world. They will not spawn and existing ones will be destroyed
+config.ftbu.world.spawn_area_in_sp.name=Spawn Area In Singleplayer
+config.ftbu.world.spawn_area_in_sp.info=Enable spawn area in singleplayer
+config.ftbu.world.log_chunkloading.name=Log Chunkloading
+config.ftbu.world.log_chunkloading.info=Print a message in console every time a chunk is forced or unforced. Recommended to be off, because spam
+
+config_group.ftbu.ranks.name=Ranks
+config.ftbu.ranks.enabled.name=Enabled
+config.ftbu.ranks.override_chat.name=Override Chat
+config.ftbu.ranks.override_commands.name=Override Commands
+
 # Client Settings
 client_config.ftbu=FTBUtilities
-client_config.ftbu.render_badges=显示徽章
-client_config.ftbu.loaded_chunks_space_key=使用空格键来加载区块
+client_config.ftbu.render_badges.name=Show Badges
+client_config.ftbu.journeymap_overlay.name=Enable Journeymap Integration
 
 # Server Settings
 my_server_settings.ftbu=FTBUtilities
@@ -15,21 +91,46 @@ my_server_settings.ftbu.explosions=爆炸
 my_server_settings.ftbu.fake_players=允许Fake Players
 my_server_settings.ftbu.security_level=方块的安全等级
 
+# Rank Config
+rank_config.ftbu.badge.name=Badge
+rank_config.ftbu.badge.info=Badge (icon on chest). Must be an URL
+rank_config.ftbu.homes.max.name=Max Homes
+rank_config.ftbu.homes.max.info=Max home count
+rank_config.ftbu.claims.max_chunks.name=Max Claimable Chunks
+rank_config.ftbu.claims.max_chunks.info=Max amount of chunks that player can claim\n0 - Disabled
+rank_config.ftbu.claims.blocked_dimensions.name=Blocked Claiming Dimensions
+rank_config.ftbu.claims.blocked_dimensions.info=Dimensions where chunk claiming is not allowed
+rank_config.ftbu.chunkloader.max_chunks.name=Max Loadable Chunks
+rank_config.ftbu.chunkloader.max_chunks.info=Max amount of chunks that player can load\n0 - Disabled
+rank_config.ftbu.chunkloader.offline_timer.name=Chunkloader Offline Timer
+rank_config.ftbu.chunkloader.offline_timer.info=Max hours player can be offline until he's chunks unload\n0 - Disabled, will unload instantly when he disconnects\n-1 - Chunk will always be loaded
+
+# Player Settings
+player_config.ftbu.chat_links.name=Chat Links
+player_config.ftbu.disable_global_badge.name=Disable Global Badge
+player_config.ftbu.render_badge.name=Render My Badge
+
 # Team Settings
-config.ftbu.blocks.name=方块交互
-config.ftbu.disable_explosions.name=在声明区块内禁止爆炸
-config.ftbu.fake_players.name=允许Fake Players对方块进行交互
+team_config.ftbu.blocks.name=Block Interactions
+team_config.ftbu.explosions.name=Enable Explosions in Claimed Chunks
+team_config.ftbu.fake_players.name=Allow Fake Players to Interact With Blocks
 
 # Action Buttons
 sidebar_button.ftbu.toggle.gamemode=切换游戏模式
+sidebar_button.ftbu.toggle.gamemode.info=Toggles between survival and creative mode
 sidebar_button.ftbu.toggle.rain=切换天气
+sidebar_button.ftbu.toggle.rain.info=Toggles weather between clear and raining
 sidebar_button.ftbu.toggle.day=设置为白天
+sidebar_button.ftbu.toggle.day.info=Sets daytime
 sidebar_button.ftbu.toggle.night=设置为黑夜
+sidebar_button.ftbu.toggle.night.info=Sets nighttime
 sidebar_button.ftbu.heal=治疗
+sidebar_button.ftbu.heal.info=Heals player to max health and saturation, and extinguishes if player is on fire
 sidebar_button.ftbu.guide=指南
 sidebar_button.ftbu.server_info=服务器信息
 sidebar_button.ftbu.claimed_chunks=认领区块
 sidebar_button.ftbu.trash_can=垃圾桶
+sidebar_button.ftbu.trash_can.info=Opens a trash can. Items from it disappear after you close the GUI, but will remain there as long as it's open
 sidebar_button.ftbu.shop=商店
 sidebar_button.ftbu.mail=邮箱
 
@@ -100,7 +201,142 @@ ftbu.pack_state.update=更新
 
 # Guide
 ftbu.guide=FTBUtilities
-ftbu.guide.util_buttons=实用按钮
+ftbu.guide.info=FTBUtilities is a mod all about helping server owners to manage their servers with chunk protection, backups, and a ton of other things!
+ftbu.guide.faq=Frequently Asked Questions
 ftbu.guide.chunk_claiming=区块声明
+ftbu.guide.chunk_claiming.intro=FTBUtilities allows you to protect your base with Claimed Chunks. Claimed chunks will be by default accessible to your team and team allies. You can also disable explosions and fake player interactions.
+ftbu.guide.chunk_claiming.opengui=To open the GUI, you must click on the $sidebar_button.ftbu.claimed_chunks sidebar button.
+ftbu.guide.chunk_claiming.list.left_click=Left-click on a chunk in the map to claim it
+ftbu.guide.chunk_claiming.list.right_click=Right-click to unclaim a chunk
+ftbu.guide.chunk_claiming.list.shift_left_click=Shift-left-click to load a chunk
+ftbu.guide.chunk_claiming.list.shift_right_click=Shift-right-click to unload a chunk
+ftbu.guide.chunk_claiming.dragmouse=You can drag mouse to claim/unclaim/load/unload larger area at once.
 ftbu.guide.ranks=权限组
+ftbu.guide.ranks.terminology=Terminology
+ftbu.guide.ranks.terminology.ranks=Ranks
+ftbu.guide.ranks.terminology.ranks.p1=Instead of assigning permissions to every user individually, we have groups of permissions, which can then be assigned to a user as a whole.
+ftbu.guide.ranks.terminology.ranks.p2=For example, in my "admin" rank, I might add permission to ignore claims, and then assign users to the admin rank. This means that they will get all of the permissions from "admin", plus any they have themselves.
+ftbu.guide.ranks.terminology.inheritance=Inheritance
+ftbu.guide.ranks.terminology.inheritance.p1=Users and groups are able to inherit permissions from each other. For example, by default, all users inherit permissions from the "player" rank. You can setup your own groups an inheritances for your server, and make your own unique system.
+ftbu.guide.ranks.terminology.inheritance.p2=For example, I might have 3 groups, "player", "admin" and "vip". I want vip to inherit permissions from player, and admin to inherit permissions from from the builtin_op rank.
+ftbu.guide.ranks.terminology.permission=Permission
+ftbu.guide.ranks.terminology.permission.p1=On your server, there will be a number of features, commands, and functionality which is added to the game. Most of these actions have a permission associated with them, so you can control which users have access to each feature or command.
+ftbu.guide.ranks.terminology.permission.p2=A permission is just a string, and is separated into parts using periods. For example, "ftbu.back.infinite" is the permission to use the /back command infinitely. Obviously we don’t want all users to have access to this, so we only give it to some users.
+ftbu.guide.ranks.terminology.permission.p3=The string that represents a certain permission is also sometimes called a "permission node" or just "node" for short.
+ftbu.guide.ranks.terminology.uuid=UUID
+ftbu.guide.ranks.terminology.uuid.p1=Universally unique identifier every paid Minecraft account has one of those, and it's used to uniquely identify players even when they change their name. E.g. this is the UUID for LatvianModder:
+ftbu.guide.ranks.terminology.uuid.p2=You can use a website like namemc.com to convert from a player's username to their UUID. Note: FTBU uses the short UUID without the dashes (trimmed)!
+ftbu.guide.ranks.file_structure=Folder Structure and File Descriptions
+ftbu.guide.ranks.file_structure.all_permissions=Usually cut-off fancy page for all permissions FTBU can use
+ftbu.guide.ranks.file_structure.all_permissions_full_list=Plaintext list of all permission nodes
+ftbu.guide.ranks.file_structure.config=General FTBU configuration
+ftbu.guide.ranks.file_structure.player_ranks=Stores rank of players by UUID
+ftbu.guide.ranks.file_structure.ranks=Stores ranks
+ftbu.guide.ranks.file_structure.server_badges=Badge configuration
+ftbu.guide.ranks.file_structure.all_configs=All available configuration nodes for FTBU
+ftbu.guide.ranks.config=Configuration
+ftbu.guide.ranks.config.enabling_ranks=Enabling Ranks
+ftbu.guide.ranks.config.enabling_ranks.values=Set 'Enabled', 'Override Chat' & 'Override Commands' to true under FTBUtilities > Ranks.
+ftbu.guide.ranks.config.enabling_ranks.click=[Click Here to open Config GUI for FTBUtilities]
+ftbu.guide.ranks.config.enabling_ranks.config=Or open the config.json with an editor like Sublime or Notepad++.
+ftbu.guide.ranks.config.features=Features
+ftbu.guide.ranks.config.builtin=Built in Ranks
+ftbu.guide.ranks.config.builtin.info=There are two builtin ranks:
+ftbu.guide.ranks.config.builtin.perms=You can find all permissions and configurations assigned to them in the all permissions and all configs files. "builtin_player" is marked as ALL and "builtin_op" marked as OP.
+ftbu.guide.ranks.config.def_ranks=Default Rank Assignment
+ftbu.guide.ranks.config.def_ranks.info=At the beginning of the ranks.json we can assign players and OP's to a rank they will automatically have when joining the server.
+ftbu.guide.ranks.config.perms=Permissions (permissions)
+ftbu.guide.ranks.config.perms.info=You can add permission nodes in this section, a minus in front of the node will set it to false and a plus will set a node to true.
+ftbu.guide.ranks.config.perms.example=Will allow the rank to break sand in claims, and disallow the rank to break stone in a claim.
+ftbu.guide.ranks.config.cfg=Configuration (config)
+ftbu.guide.ranks.config.cfg.info=Configuration node followed by a value, you can find these and their allowed values in all_configs.html
+ftbu.guide.ranks.config.chat=Chat Formatting (syntax)
+ftbu.guide.ranks.config.chat.info=This section allows you to change how a player name will be displayed in chat. You can set Prefixes, Suffixes or change the name color of a player. The placeholder for the playername is always \$name, Minecraft chat formatting codes are fully supported.
+ftbu.guide.ranks.config.chat.colors=[Click Here to open Colors page]
+
+ftbu.guide.ranks.commands=Commands
+ftbu.guide.ranks.commands.info=There are a few utility commands for ranks, so you don't have to do everything in the configs.
+ftbu.guide.ranks.commands.set=sets the rank of a player
+ftbu.guide.ranks.commands.get=outputs the rank of a player
+ftbu.guide.ranks.commands.check_permission=outputs the value of a permission for the specified player
+ftbu.guide.ranks.badges=Server Badges
+ftbu.guide.ranks.badges.more=[More on Badges here]
+ftbu.guide.ranks.badges.info=You can give players individual, server-wide badges. Configuration file:
+ftbu.guide.ranks.badges.values=First value is the target players UUID, second value is the URL (link) to an image.
+ftbu.guide.ranks.badges.rank=You can also assign rank based badge with "ftbu.badge" rank config.
+ftbu.guide.ranks.example_config=Example ranks.json
+ftbu.guide.ranks.example_config.syntax=How their username will be displayed in chat
+ftbu.guide.ranks.example_config.default.player=everyone who isn't OP is assigned the player group
+ftbu.guide.ranks.example_config.default.op=OPs get the admin group
+ftbu.guide.ranks.example_config.player.group=Here the first group "player" starts
+ftbu.guide.ranks.example_config.player.parent=parent means it will inherit from this group, in this case the "builtin_player" group (see Default Groups)
+ftbu.guide.ranks.example_config.permission.block=Permission Block
+ftbu.guide.ranks.example_config.permission.plus=plus symbol adds a permission
+ftbu.guide.ranks.example_config.permission.minus=minus symbol removes a permission
+ftbu.guide.ranks.example_config.config.block=Config Block
+ftbu.guide.ranks.example_config.admin.group=Here the second group "admin" starts
+ftbu.guide.ranks.example_config.admin.parent=Inherits from the "builtin_op" group
+ftbu.guide.ranks.example_config.admin.permission.all=adds (plus) all perms, star is a wildcard
+ftbu.guide.ranks.example_config.vip.group=group "VIP" starts here
+ftbu.guide.ranks.example_config.vip.parent=Inherits from the player group
 ftbu.guide.tp_commands=传送指令
+ftbu.guide.tp_commands.intro=There are few commands that you can use to teleport as player from FTBU:
+ftbu.guide.tp_commands.home.sethome=Creates a home
+ftbu.guide.tp_commands.home.home=Teleports you to a home
+ftbu.guide.tp_commands.home.list=Lists all your homes
+ftbu.guide.tp_commands.home.delhome=Deletes a home
+ftbu.guide.tp_commands.home.name=[name] is optional for multiple homes, 'home' is used if it's blank
+ftbu.guide.tp_commands.warp.setwarp=Creates a warp
+ftbu.guide.tp_commands.warp.warp=Teleports you to a warp
+ftbu.guide.tp_commands.warp.list=Lists all warps
+ftbu.guide.tp_commands.warp.delwarp=Deletes a warp
+ftbu.guide.tp_commands.back=Teleports you to your last death location. It only works once by default, so you can't use this as another home to cheat
+ftbu.guide.tp_commands.spawn=Teleports you to world's spawnpoint
+ftbu.guide.tp_commands.prefix=If the command doesn't work, try it with '/ftb [command]' prefix, e.g. /ftb home.
+ftbu.guide.tp_commands.gui=You can also bind a key to 'Warps GUI' in Controls, and while in-game, pressing it will open Warps GUI, from which you can choose home, warp, back location or spawn with one click.
+
+# Commands
+commands.ftb.restart.usage=/ftb restart
+commands.ftb.inv.usage=/ftb inv
+commands.ftb.inv.view.usage=/ftb inv view <player>
+commands.ftb.inv.save.usage=/ftb inv save <player> <id>
+commands.ftb.inv.load.usage=/ftb inv load <player> <id>
+commands.ftb.inv.list.usage=/ftb inv list
+commands.ftb.warp.usage=/ftb warp <gui|warp>
+commands.ftb.setwarp.usage=/ftb setwarp <warp> [x] [y] [z]
+commands.ftb.delwarp.usage=/ftb delwarp <warp>
+commands.ftb.backup.usage=/ftb backup
+commands.ftb.backup.start.usage=/ftb backup start [custom name]
+commands.ftb.backup.stop.usage=/ftb backup stop
+commands.ftb.backup.getsize.usage=/ftb backup getsize
+commands.ftb.admin_home.usage=/ftb admin_home
+commands.ftb.admin_home.tp.usage=/ftb admin_home tp <player> <home>
+commands.ftb.admin_home.list.usage=/ftb admin_home list <player>
+commands.ftb.admin_home.remove.usage=/ftb admin_home remove <player> <home>
+commands.ftb.home.usage=/ftb home [list|home]
+commands.ftb.sethome.usage=/ftb sethome [home]
+commands.ftb.delhome.usage=/ftb delhome [home]
+commands.ftb.server_info.usage=/ftb server_info
+commands.ftb.loaded_chunks_list.usage=/ftb loaded_chunks_list
+commands.ftb.tpl.usage=/ftb (<x> <y> <z>) | ([who] <player>)
+commands.ftb.trash_can.usage=/ftb trash_can
+commands.ftb.back.usage=/ftb back
+commands.ftb.spawn.usage=/ftb spawn
+commands.ftb.chunks.usage=/ftb chunks
+commands.ftb.chunks.gui.usage=/ftb chunks gui
+commands.ftb.chunks.claim.usage=/ftb chunks claim
+commands.ftb.chunks.unclaim.usage=/ftb chunks unclaim
+commands.ftb.chunks.load.usage=/ftb chunks load
+commands.ftb.chunks.unload.usage=/ftb chunks unload [player]
+commands.ftb.chunks.unclaim_all.usage=/ftb chunks unclaim_all [player]
+commands.ftb.chunks.unload_all.usage=/ftb chunks unload_all [player]
+commands.ftb.chunks.claim_for.usage=/ftb chunks claim_for <player> <chunkX> <chunkZ> [dimension]
+commands.ftb.kickme.usage=/ftb kickme
+commands.ftb.ranks.usage=/ftb ranks
+commands.ftb.ranks.add.usage=/ftb ranks add <id> [parent]
+commands.ftb.ranks.get.usage=/ftb ranks get <player>
+commands.ftb.ranks.set.usage=/ftb ranks set <player> <rank|none>
+commands.ftb.ranks.edit.usage=/ftb ranks edit
+commands.ftb.chunks.check_permission.usage=/ftb chunks check_permission <player> <permission>
+commands.ftb.view_crash.usage=/ftb view_crash
+commands.ftb.heal.usage=/ftb heal

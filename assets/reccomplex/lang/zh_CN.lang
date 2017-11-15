@@ -50,8 +50,6 @@ itemGroup.structureTools=结构工具
 itemGroup.inventoryGenerators=物品栏生成器
 
 commands.rc.noEntityInfo=此生物不含任何结构资料！这是一个bug！
-commands.rc.nodimension=无此维度
-commands.rc.nobiome=无此生物群系
 commands.rc.noSelection=此物品并没有选项！
 commands.rc.large.warn=这选项很大!此操作需要一点时间。
 commands.rc.large.error=这选项太大! (如果不是，这指令需要好几天完成！)
@@ -59,167 +57,100 @@ commands.rc.large.error=这选项太大! (如果不是，这指令需要好几�
 commands.structure.notGeneric=结构 '%s' 并不通用！
 commands.structure.notRegistered=查询不到 '%s' 这个结构！
 
-commands.strucExport.usage=/#export [blueprintName]
-
-commands.strucEdit.usage=/#edit <structureName>
-
-commands.strucGen.usage=/#gen <structureName> [x] [z] [dimension] [generation id] [spawn time] [up|down|fog|fade]
 commands.strucGen.noPlace=此结构找不到适宜的生成地点！
+commands.strucGen.canceled=The structure generation was canceled!
 commands.strucGen.noStructure=找不到 '%s' 这个结构
 
-commands.strucImport.usage=/#import <structureName> [x] [y] [z] [rotation] [mirror:true|false]
 commands.strucImport.noStructure=找不到 '%s' 这个结构
 
-commands.selectSet.usage=/#select <both|clear|point1|point2> [x] [y] [z]
 commands.selectSet.get=Selection: %s 到 %s
 commands.selectSet.size=Size: %s (%s 方块)
-commands.selectSet.point.none=§onowhere§r
-
-commands.selectShift.usage=/#shift <x> <y> <z>
-commands.selectCrop.usage=/#crop [positioned block expression]
-commands.selectWand.usage=/#wand [positioned block expression]
-commands.selectShrink.usage=/#shrink <x> <y> <z>
-commands.selectExpand.usage=/#expand <x> <y> <z>
 
 commands.selectModify.noSelection=玩家没有完整选择
 commands.selectModify.invalidMetadata=元数据需如 '0,1,5'方式输入，并非 '%s'
 
-commands.selectFill.usage=/#fill <block> [metadata1,metadata2,metadata3...]
-
-commands.selectReplace.usage=/#replace <dest> <destmetadata1,metadata2,metadata3...> <src positioned block expression>
-commands.selectProperty.usage=/#property <key> <value> [positioned block matcher]
-
-commands.selectFillSphere.usage=/#sphere <block> [metadata1,metadata2,metadata3...]
-
-commands.selectFlood.usage=/#flood <block> [metadata1,metadata2,metadata3...] <facing expression>
-
-commands.selectFloor.usage=/#floor [expansion]
-commands.selectSpace.usage=/#space[ [distance-to-floor] [max-closed-sides]
-commands.selectNatural.usage=/#natural [/#floor-expansion]
-
-commands.strucReload.usage=/#reload [CUSTOM|MODDED]
 commands.strucReload.success=重新导入所有 %s 文件。
 
-commands.selectCopy.usage=/#copy
 commands.selectCopy.success=拷贝 %s, %s, %s to %s, %s, %s 到剪贴板上
 
-commands.strucPaste.usage=/#paste [x] [y] [z] [rotation] [mirror:true|false]
 commands.strucPaste.noClipboard=您需先拷贝一个区域！
-commands.strucPasteGen.usage=/#pastegen [x] [y] [z] [rotation] [mirror:true|false]
 
-commands.selectMove.usage=/#move <x> <y> <z> [clockwise-rotations] [mirror x:true|false]
-
-commands.selectDuplicate.usage=/#duplicate <x> <y> <z> [clockwise-rotations] [mirror x:true|false]
-
-commands.rcpreview.usage=/#preview <none|bounds|shape>
 commands.rcpreview.invalid=预览种类无效
 commands.rcpreview.success=预览种类设定为 '%s'
 
 commands.rc.noOperation=目前没有正在排列中的作业
 commands.rc.queuedOp=作业预览 - %s 或 %s
-commands.rcconfirm.usage=/#confirm
 commands.rcconfirm.run=作业执行
-commands.rccancel.usage=/#cancel
 commands.rccancel.run=作业取消
 
-commands.rcreopen.usage=/#reopen
 commands.rcreopen.run=重开GUI
 commands.rcreopen.nogui=无GUI可重开！
 commands.rcreopen.fail=重开GUI失败！
 commands.rc.didhide=隐藏GUI - %s？
 
-commands.strucImportSchematic.usage=/#importschematic "<Schematic Name>" [x] [y] [z] [rotations (clockwise)] [mirror x:true|false]
-commands.strucImportSchematic.missing=文档 '%s'无法在 %s 寻获
-commands.strucImportSchematic.format=文档 '%s' 的格式 (%s) 不受支持
+commands.rcimportschematic.missing=The file '%s' was not found in %s
+commands.rcimportschematic.format=The file '%s' has an unsupported format (%s)
 
-commands.rcconvertschematic.usage=/#convertschematic "<Schematic Name>" <structure ID>
-
-commands.strucExportSchematic.usage=/#exportschematic <schematic name>
 commands.strucExportSchematic.success=出口原理图到 '%s'
 
-commands.biomedict.usage=/#biome <types|list|search> <id (get: Biome ID, list: Biome Type ID)>
 commands.biomedict.get= %s 生物群系种类: %s
 commands.biomedict.get.number=Lookup (%s biomes)
 commands.biomedict.list= %s 生物群系种类列表: %s
 commands.biomedict.list.number=Lookup (%s types)
-commands.biomedict.nobiome=生物群系中无 '%s' ID
-commands.biomedict.notype=生物群系种类中无 '%s' ID
 
-commands.dimensiondict.usage=/#dimension <types|list> <id (get: Dimension ID, list: Dimension Type ID)>
 commands.dimensiondict.get= %d 维度种类: %s
 commands.dimensiondict.get.number=查找 (%s 维度)
 commands.dimensiondict.list= %s 维度种类列表: %s
 commands.dimensiondict.list.number=查找 (%s 种类)
 
-commands.rcvisual.usage=/#visual rulers <true|false>
 commands.rcvisual.enabled='%s' 成功被启用
 commands.rcvisual.disabled='%s' 成功被关闭
 
-commands.whatisthis.usage=/#whatisthis [x] [y] [z]
 commands.whatisthis.none=这里什么都没有！
 commands.whatisthis.one=这是: %s
 commands.whatisthis.many=这是任何，或所有: %s
 
+commands.rcarea.get=%s to %s
+commands.rcarea.select=Select this area
+commands.rcpos.get=[%d,%d,%d]
+commands.rcchunkpos.get=[%d,%d]
+commands.rcpos.none=§onowhere§r
+commands.rcsize.get=[%d,%d,%d]
+commands.rccopy.suggest=Copy
+
+commands.rcsightinfo.lookup=Sight Info
+commands.rcsightinfo.unknown=Unknown sight UUID!
+commands.rcsightinfo.get=%s %s, ID: %s
+commands.rcsightinfo.structure=%s %s, Seed: %s, ID: %s
 commands.rcforget.forget=忘记 %s
-commands.rcforget.usage=/#forget <UUID>
-commands.rcforget.unknown=未知UUID输入!
 commands.rcforget.success=已忘记 %s！
-
-commands.rcremember.usage=/#remember <name>
-commands.rcremember.success=已记得 %s！
-
-commands.rcforgetall.usage=/#forgetall [x] [y] [z]
 commands.rcforgetall.success=已忘记 %s 结构！
 
-commands.rclookup.usage=/#lookup <structure>
+commands.rcremember.success=已记得 %s！
+
 commands.rclookup.reply.silent=%s: §bInactive§r, by: %s, is %s, %s
 commands.rclookup.reply.generates=%s: §bGenerates§r, by: %s, is %s, %s
 commands.rclookup.reply.noauthor=§o未知§r
 commands.rclookup.reply.nolink=§o无链接可提供§r
 commands.rclookup.reply.comment=留言：%s
 
-commands.rclist.usage=/#list [page]
 commands.rclist.previous=上一页
 commands.rclist.next=下一页
 commands.rclist.none=无结构
 
-commands.rcsearch.usage=/#search
 commands.rcsearch.empty=无结果
 commands.rcsearch.lookup=查找
 
-commands.rccontaining.usage=/#containing <block expression>
-
-commands.rcfiles.usage=/#files
-commands.rcrepository.usage=/#repository
-commands.rcbrowse.usage=/#browse
-
-commands.rcdecorate.usage=/#decorate <x min> <z min> <x max> <z max> [resource matcher: only generate these structures]
-commands.rcdecorateone.usage=/#decorateone [x] [z]
 commands.rcdecorateone.none=无适宜结构！
-commands.rcretro.usage=/#retro [dimension] [resource matcher: only generate these structures]
 commands.rcretro.count=回归生成 %s 区块！
 
-commands.rcenable.usage=/#enable <registry id> <element id>
-commands.rcdisable.usage=/#enable <registry id> <element id>
-commands.rcsave.usage=/#write <registry id> <element id> <directory>
 commands.rcsave.noregistry=无此 registry id！
 commands.rcsave.nodirectory=无此 directory id！
-commands.rcsave.noelement=无此 element！
-commands.rcsaveall.usage=/#writeall <registry id> <directory> [resource expression]
 commands.rcsaveall.result=保存 %s elements 至 '%s'. %s 失败。
-commands.rcdelete.usage=/#delete <registry id> <element id> <directory>
-commands.rcmap.usage=/#map <structure id> <directory> <command>
 commands.rcmap.nonvirtual=无法用此指令映射！
 commands.rcmap.nonvirtual.arguments=无法用此指令参数映射！
-commands.rcmapall.usage=/#mapall <resource expression> <directory> <command>
 commands.rcmapall.result=保存 %s elements 至 '%s'. %s 失败。 %s 跳过。
 
-commands.rcas.usage=/#as <entity> <command>
-commands.rcselecting.usage=/#selecting <x1> <y1> <z1> <x2> <y2> <z2> <command>
-
-commands.rcsetbiome.usage=/#setbiome <biome ID>
-
-commands.rceval.usage=/#eval <dependency expression>
 commands.rceval.result.true=True
 commands.rceval.result.false=False
 
@@ -469,6 +400,7 @@ reccomplex.direction.south=南 (+Z)
 reccomplex.direction.east=东 (+X)
 reccomplex.direction.west=西 (-X)
 reccomplex.direction.none=无
+reccomplex.direction.all=All Sides
 reccomplex.direction.random=随机
 
 reccomplex.maze=迷宫
@@ -497,6 +429,8 @@ reccomplex.reachability.tooltip=形容此迷宫配件出口之间<br>的可达�
 reccomplex.reachability.groups=群组
 reccomplex.reachability.groups.tooltip=所有在同一群组的路径<br>是互通的。
 reccomplex.reachability.groups.default=默认
+reccomplex.reachability.groups.default.behavior=Default Behavior
+reccomplex.reachability.groups.default.behavior.tooltip=How ungrouped paths should behave.
 reccomplex.reachability.groups.group=群组 %s
 reccomplex.reachability.groups.previous=上一个群组
 reccomplex.reachability.groups.next=下一个群组
@@ -552,7 +486,7 @@ reccomplex.gui.false=False
 reccomplex.gui.random.weight=权重
 reccomplex.gui.random.weight.default.short=D
 reccomplex.gui.random.weight.custom.short=C
-reccomplex.gui.random.weight.tooltip=此元素对随机选项的权重。<br>§a机率=权重/权重总和§r<br>换句话说，权重两倍代表<br>可能性两倍。<br>若要默认值，请设置为D。
+reccomplex.gui.random.weight.tooltip=Weight of this element for random selection.<br>§achance = weight / sum_of_all_weights§r<br>In other words, twice the weight means<br>twice as likely.<br>Set to D for the default value.
 
 reccomplex.gui.block=方块
 reccomplex.gui.blocks=方块
@@ -631,24 +565,24 @@ reccomplex.placer.factor.priority.tooltip=此因数被考虑<br>的优先值。<
 reccomplex.placer.factors.limit=限制
 reccomplex.placer.factors.limit.tooltip=限制放置的特定高度。<br>发射设定可接受区域的镭射<br>直到达标为止。
 reccomplex.placer.factors.limit.ray.weight=可接受值
-reccomplex.placer.factors.limit.ray.weight.tooltip=此区域可被接受的比列。<br>(eg. 0 =别在这里生成, 1 =可在这里生成)，<br>设定为ignore以不更改<br>可接受值下移动。
+reccomplex.placer.factors.limit.ray.weight.tooltip=The ratio to which this area is accepted.<br>(eg. 0 = don't spawn here, 1 = do spawn here).<br>Set to ignore to just move<br>without changing acceptance.
 
 reccomplex.placer.factors.limit.rays.move=移动
 reccomplex.placer.factors.limit.rays.move.tooltip=移动特定数量的方块。
 reccomplex.placer.factors.limit.rays.move.title=移动%s
 reccomplex.placer.factors.limit.rays.move.title.mark=标记%s
-reccomplex.placer.factors.limit.rays.move.tooltip=往上或下移动特定距离
+reccomplex.placer.factors.limit.rays.move.tooltip=移动特定数量的方块。
 reccomplex.placer.factors.limit.rays.move.distance=距离
 
 reccomplex.placer.factors.limit.rays.dynpos=动态位置
 reccomplex.placer.factors.limit.rays.dynpos.tooltip=移动至特定位置。
 reccomplex.placer.factors.limit.rays.dynpos.type=位置
 reccomplex.placer.factors.limit.rays.dynpos.type.bedrock=基岩
-reccomplex.placer.factors.limit.rays.dynpos.type.bedrock.tooltip=世界最低点：y=0
+reccomplex.placer.factors.limit.rays.dynpos.type.bedrock.tooltip=Bottom of the world: y=0
 reccomplex.placer.factors.limit.rays.dynpos.type.sealevel=海平线
-reccomplex.placer.factors.limit.rays.dynpos.type.sealevel.tooltip=海的高度：y=63
+reccomplex.placer.factors.limit.rays.dynpos.type.sealevel.tooltip=The ocean height: y=63
 reccomplex.placer.factors.limit.rays.dynpos.type.world_height=顶点（世界高度）
-reccomplex.placer.factors.limit.rays.dynpos.type.world_height.tooltip=世界的高度：y=255
+reccomplex.placer.factors.limit.rays.dynpos.type.world_height.tooltip=Top of the world: y=255
 
 reccomplex.placer.factors.limit.rays.dynmove=动态移动
 reccomplex.placer.factors.limit.rays.dynmove.tooltip=移动动态数量的方块
@@ -687,3 +621,16 @@ reccomplex.blockpattern.ingredients=材料
 reccomplex.blockpattern.ingredients.tooltip=用于图形的<br>方块资讯。
 reccomplex.blockpattern.ingredient.identifier=辨识器
 reccomplex.blockpattern.ingredient.delete=删除方块
+
+
+reccomplex.parameters.pos.x=x
+reccomplex.parameters.pos.y=y
+reccomplex.parameters.pos.z=z
+reccomplex.parameters.biome=dimension
+reccomplex.parameters.biome.type=dimension
+reccomplex.parameters.dimension=dimension
+reccomplex.parameters.block=dimension
+reccomplex.parameters.command=dimension
+reccomplex.parameters.command.arguments=dimension
+reccomplex.parameters.entity=dimension
+reccomplex.parameters.rotation=dimension
