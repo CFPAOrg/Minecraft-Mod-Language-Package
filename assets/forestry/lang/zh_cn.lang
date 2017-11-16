@@ -24,16 +24,16 @@ for.chat.command.forestry.version.desc=- %s ：版本信息
 for.chat.command.forestry.version.help=显示当前版本
 for.chat.command.forestry.version.format=格式： /%s
 
-for.chat.command.forestry.plugins.desc=- %s ：林业组件列表
-for.chat.command.forestry.plugins.help=列出当前的林业组件。绿色为已激活的，红色为禁用的。
-for.chat.command.forestry.plugins.format=格式： /%s
+for.chat.command.forestry.modules.desc=- %s : List of Forestry Modules
+for.chat.command.forestry.modules.help=Lists all Forestry Modules. Green are active, red disabled.
+for.chat.command.forestry.modules.format=Format: /%s
 
-for.chat.command.forestry.plugins.info.desc=- %s ：林业组件信息
-for.chat.command.forestry.plugins.info.help=显示林业组件的信息
-for.chat.command.forestry.plugins.info.format=格式： /%s <plugin-name>
+for.chat.command.forestry.modules.info.desc=- %s : Information on a specific Module
+for.chat.command.forestry.modules.info.help=Prints information on a specific Module
+for.chat.command.forestry.modules.info.format=Format: /%s <module-name>
 
 for.chat.help=输入‘%s’查看帮助。
-for.chat.plugins.error=拓展%s并无可查看信息。
+for.chat.modules.error=No information available for module %s.
 for.chat.version=林业%1$s适用于Minecraft%2$s(最新版本：%3$s)。
 
 for.circuit.dampener.1=阻尼
@@ -139,6 +139,14 @@ for.gui.beealyzer.mutations=可能的变异
 for.gui.beealyzer.natural=自然捕捉
 for.gui.beealyzer.produce=可能的产物
 for.gui.beealyzer.specialty=可能的专长
+
+for.gui.database.tab.active_species.name=Active Species
+for.gui.database.tab.inactive_species.name=Inactive Species
+for.gui.database.tab.products.name=Products
+for.gui.database.tab.mutations.name=Mutations
+for.gui.database.mutations.further=Further Mutations
+for.gui.database.mutations.resultant=Resultant Mutations
+for.gui.database.support=This individual has currently no integration for the database.
 
 for.gui.blank=空白
 for.gui.cave=穴居性
@@ -665,6 +673,8 @@ itemGroup.agriculture=林业|农艺
 
 tile.for.analyzer.name=分析仪
 tile.for.escritoire.name=写字台
+
+tile.for.database.name=Database
 
 tile.for.engine_electrical.name=电动引擎
 tile.for.engine_electrical.tooltip=消耗EU并输出RF。
@@ -1510,6 +1520,7 @@ for.butterflies.species.bombycidae.bombyxMori=家蚕蛾
 
 for.gui.loot.butterfly=蝴蝶可能的产物
 for.gui.loot.caterpillar=毛毛虫可能的产物
+for.gui.loot.cocoon=Possible Cocoon Loot
 
 for.lepidopterology.effect.none=无效果
 
@@ -1571,42 +1582,47 @@ item.for.catalogue.tooltip=显示当前贸易站全部可用交易。
 item.PipeItemsPropolis.name=养蜂员管道
 
 ####################
-# PLUGINS
+# MODULES
 ####################
-for.plugin.core.description=林业核心组件，是其他组件的前置组件。
-for.plugin.fluids.description=添加流体，流体方块以及流体容器的组件。
-for.plugin.apiculture.description=添加蜜蜂，养蜂系统和蜜蜂产物的组件，会影响世界生成。
-for.plugin.arboriculture.description=添加更多树木以及相关产物的组件。
-for.plugin.energy.description=添加一些使用RF能量的引擎的组件。
-for.plugin.factory.description=添加各种各样的机器，以合成，生产和加工各种产品的组件。
-for.plugin.farming.description=添加了自动化农场和收获设备的组件，可以产出各种各样的产物。
-for.plugin.food.description=添加食物的组件。
-for.plugin.lepidopterology.description=蝴蝶组件。璀璨夺目。
-for.plugin.mail.description=添加林业贸易和邮寄系统的组件。
-for.plugin.storage.description=添加背包和板条箱的组件。
-for.plugin.greenhouse.description=添加温室。
+for.module.core.description=Core mechanics for Forestry. Required by all other modules.
+for.module.fluids.description=Adds fluids, fluid blocks, and fluid containers.
+for.module.apiculture.description=Adds bees, beekeeping and bee products. Affects world generation.
+for.module.arboriculture.description=Adds additional tree species and products.
+for.module.charcoal.description=Adds wood piles, loam and a charcoal production.
+for.module.energy.description=Adds several RF engines.
+for.module.factory.description=Adds a wide variety of machines to craft, produce and process products.
+for.module.farming.description=Adds automatic farms and harvesters for a wide variety of products.
+for.module.food.description=Adds food.
+for.module.lepidopterology.description=Butterflies. Shiny.
+for.module.mail.description=Adds Forestry's mail and trade system.
+for.module.backpacks.description=Adds backpacks.
+for.module.crates.description=Adds crates.
+for.module.greenhouse.description=Adds a greenhouse.
 
-for.plugin.buildcraft6.description=BC6兼容组件。
-for.plugin.pipes.description=如果同时安装了BC6且养蜂组件已激活，则添加养蜂员管道的组件。
-for.plugin.ic2.description=IC2兼容组件。添加电力引擎和新的发电机用来进行能源转换。
-for.plugin.natura.description=自然(Natura)兼容组件。激活后农场能够支持Natura的树苗。
-for.plugin.ee2.description=等价交换2兼容组件。激活后开启蜜蜂的终结分支。需要前置的养蜂组件激活。
-for.plugin.ee3.description=等价交换3兼容组件。
-for.plugin.farmcraftory.description=牧场物语(FarmCraftory)兼容组件。添加作物和蔬菜的自动化农场支持。
-for.plugin.biomesoplenty.description=更多生物群系(Biomes O' Plenty)兼容组件。激活后农场能够支持BoP的树苗。
-for.plugin.extrautilities.description=更多实用设备(Extra Utilities)兼容组件。激活后农场能够支持末影百合和红兰花。
-for.plugin.harvestcraft.description=HarvestCraft(潘马斯农场)兼容组件。激活后农场能够支持HarvestCraft的植物及树苗。
-for.plugin.magicalcrops.description=魔法作物(Magical Crops)兼容组件。
-for.plugin.chisel.description=凿子(Chisel)兼容组件。添加背包对其方块的支持。
-for.plugin.plantmegapack.description=超多植物世界(Plant Mega Pack)兼容组件。
-for.plugin.witchery.description=巫术(Witchery)兼容组件。
-for.plugin.agricraft.description=农业工艺(AgriCraft)兼容组件。
-for.plugin.enderIO.description=末影接口(EnderIO)兼容组件。
-for.plugin.immersiveengineering.description=Immersive Engineering(沉浸工程)兼容组件。
-for.plugin.growthcraft.description=生长工艺(GrowthCraft)兼容组件。
-for.plugin.erebus.description=Erebus兼容组件。
-for.plugin.rotarycraft.description=旋转工艺(RotaryCraft)兼容组件。
-for.plugin.actuallyadditions.description=实用扩展(Actually Additions)兼容组件。
+for.module.buildcraft6.description=Compatibility plugin for BuildCraft 6.
+for.module.pipes.description=Adds the apiarist's pipe for beekeeping if apiculture is enabled and BuildCraft 6 is present.
+for.module.ic2.description=Compatibility plugin for IC2. Adds electrical engine and generator for power conversion.
+for.module.natura.description=Compatibility plugin for Natura. Enables farming Natura saplings.
+for.module.ee2.description=Compatibility plugin for Equivalent Exchange 2. Enables the Omega branch of bees. Requires Apiculture to be enabled.
+for.module.ee3.description=Compatibility plugin for Equivalent Exchange 3.
+for.module.farmcraftory.description=Enables compatibility with FarmCraftory. Adds crops and vegetables to farms.
+for.module.biomesoplenty.description=Compatibility plugin for Biomes O Plenty. Enables farming BoP saplings.
+for.module.extrautilities.description=Compatibility plugin for Extra Utilities. Enables farming ender lilies and red orchid.
+for.module.harvestcraft.description=Compatibility plugin for HarvestCraft. Enables farming HarvestCraft plants and trees.
+for.module.magicalcrops.description=Compatibility plugin for Magical Crops.
+for.module.chisel.description=Compatibility plugin for Chisel. Adds worldgen blocks to Backpacks.
+for.module.plantmegapack.description=Compatibility plugin for Plant Mega Pack.
+for.module.witchery.description=Compatibility plugin for Witchery.
+for.module.agricraft.description=Compatibility plugin for AgriCraft.
+for.module.enderIO.description=Compatibility plugin for EnderIO.
+for.module.immersiveengineering.description=Compatibility plugin for Immersive Engineering.
+for.module.growthcraft.description=Compatibility plugin for GrowthCraft.
+for.module.erebus.description=Compatibility plugin for Erebus.
+for.module.rotarycraft.description=Compatibility plugin for RotaryCraft.
+for.module.actuallyadditions.description=Compatibility plugin for Actually Additions.
+for.module.roots.description=Compatibility plugin for Roots.
+for.module.rustic.description=Compatibility plugin for Rustic.
+for.module.mysticalagriculture.description=Compatibility plugin for Mystical Agriculture. Enables farming Mystical Agriculture crops.
 
 ####################
 # CONFIG FILES
