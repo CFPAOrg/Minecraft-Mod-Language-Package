@@ -15,6 +15,8 @@ chat.wearablebackpacks.cantEquip.chestplate=你不能在身着护甲时装备背
 key.wearablebackpacks.open=打开背包
 
 
+config.wearablebackpacks.gui.cancel=取消
+
 config.wearablebackpacks.general.equipAsChestArmor=护甲式背包
 config.wearablebackpacks.general.equipAsChestArmor.tooltip=启用此选项后，背包可以当作普通护甲，并装备于玩家的护甲格。
 config.wearablebackpacks.general.enableEquippedInteraction=玩家间可互相交互
@@ -24,18 +26,51 @@ config.wearablebackpacks.general.enableSelfInteraction.tooltip=启用此选项�
 config.wearablebackpacks.general.dropAsBlockOnDeath=玩家死亡时以方块形式出现
 config.wearablebackpacks.general.dropAsBlockOnDeath.tooltip=启用此选项后，背包会在玩家死亡时以方块形式出现，其中物品。
 
+config.wearablebackpacks.general.status.outOfRange=数值越界（%1$s — %1$s）。
+config.wearablebackpacks.general.status.required=设置“%1$s”需要首先调节这个设置。
+config.wearablebackpacks.general.status.chestplate=No effect if not equipped as armor. [general.equipAsChestArmor = false]
+
 config.wearablebackpacks.category.backpack=背包设定
 config.wearablebackpacks.category.backpack.tooltip=普通背包的各项设定。
 config.wearablebackpacks.backpack.enabled=启用普通背包
 config.wearablebackpacks.backpack.enabled.tooltip=禁用此选项后可屏蔽所有形式的背包。
 config.wearablebackpacks.backpack.durability=背包耐久
 config.wearablebackpacks.backpack.durability.tooltip=本选项控制背包的耐久值，设定为0代表不毁，负值会直接导致损坏的背包直接消失。
-config.wearablebackpacks.backpack.durability.hint=背包不作为护甲使用时，此选项不会有影响。
 config.wearablebackpacks.backpack.armor=防御点数
 config.wearablebackpacks.backpack.armor.tooltip=本选项控制当背包用作护甲时，其所能提供的护甲点数。
-config.wearablebackpacks.backpack.armor.hint=当禁用护甲式背包时，更改此选项没有任何效果。
 config.wearablebackpacks.backpack.size=存储空间
 config.wearablebackpacks.backpack.size.tooltip=本选项控制背包中格子的行数。本选项不影响已放置或已装备的背包。
+
+config.wearablebackpacks.category.entity=生成设定
+config.wearablebackpacks.category.entity.tooltip=设定生成穿戴有背包的生物
+config.wearablebackpacks.entity.spawnNaturally=自然生成设定
+config.wearablebackpacks.entity.spawnNaturally.tooltip=设定自然生成生物是否随机穿戴背包
+config.wearablebackpacks.entity.spawnFromSpawners=刷怪笼生成设定
+config.wearablebackpacks.entity.spawnFromSpawners.tooltip=设定刷怪笼生成生物是否随机穿戴背包
+config.wearablebackpacks.entity.list=实体条目
+config.wearablebackpacks.entity.entry=%1$s 实体
+config.wearablebackpacks.entity.entry.0=没有实体！
+config.wearablebackpacks.entity.entry.1=1个实体
+
+config.wearablebackpacks.entity.entityID=实体 ID
+config.wearablebackpacks.entity.entityID.tooltip=实体的内部标识符，比如“minecraft:zombie”。
+config.wearablebackpacks.entity.renderOptions=渲染选项
+config.wearablebackpacks.entity.renderOptions.tooltip=设置实体穿戴背包的位置，角度和大小。
+config.wearablebackpacks.entity.chance=几率
+config.wearablebackpacks.entity.chance.tooltip=Chance of 1 in X that an entity spawns with this backpack (100 = 1%%, 1000 = 0.1%%). Set to 0 to disable.
+config.wearablebackpacks.entity.backpack=背包
+config.wearablebackpacks.entity.backpack.tooltip=生成的穿戴背包的实体，其背包中的物品ID。
+config.wearablebackpacks.entity.lootTable=战利品表
+config.wearablebackpacks.entity.lootTable.tooltip=生成的穿戴背包的实体，其背包中的战利品表的ID。
+
+config.wearablebackpacks.entity.translate=位置
+config.wearablebackpacks.entity.translate.tooltip=控制实体穿戴背包的渲染位置
+config.wearablebackpacks.entity.rotate=角度
+config.wearablebackpacks.entity.rotate.tooltip=控制实体穿戴背包的渲染角度
+config.wearablebackpacks.entity.scale=大小
+config.wearablebackpacks.entity.scale.tooltip=控制实体穿戴背包的渲染大小
+
+config.wearablebackpacks.entity.status.entityNotFound=未找到指定实体。这个条目将被忽略。
 
 config.wearablebackpacks.category.cosmetic=Cosmetic Settings
 config.wearablebackpacks.category.cosmetic.tooltip=Controls cosmetic (client only) settings that don't affect gameplay.
