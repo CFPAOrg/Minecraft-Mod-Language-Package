@@ -82,7 +82,7 @@ for filename_mods in `ls`
 		for filename_assets in `ls`
 			do
 				if [ "$filename_mods" == "$filename_assets" ]; then
-　　			echo "替换汉化"
+　　			echo "汉化替换"
 					mv "${PATH_MODS}/${filename_mods}/lang/zh_CN-merged.lang" "${PATH_MAIN}/en_US.lang"
 					mv "${PATH_ASSETS}/${filename_assets}/lang/zh_CN.lang" "${PATH_MAIN}/zh_CN.lang"
 					cd ${PATH_MAIN}

@@ -56,6 +56,7 @@ for s in zhCNFile:lines() do
  if (string.match(s, ".-=.*")) then
   zhCN[count] = Entry:parse(s)
   count = count + 1
+ end
 end
 
 print("Readed "..count.." lines in zh_CN.lang")
