@@ -1,6 +1,6 @@
 -- Author @3TUSK
 -- This file is licensed under CC-BY-SA 4.0 International
--- See here for more details about license: 
+-- See here for more details about license:
 -- https://creativecommons.org/licenses/by-sa/4.0/
 -- ------------------------------------------------------------------------
 -- User instruction:
@@ -40,22 +40,23 @@ print("Language file update started, please stand by...")
 count = 1
 
 for s in enUSFile:lines() do
-  if (string.match(s, ".*=.*")) then
-    mapping[count] = Entry:parse(s)
-  else
-    mapping[count] = s
-  end
-  count = count + 1
+ if (string.match(s, ".-=.*")) then
+  mapping[count] = Entry:parse(s)
+ else
+  mapping[count] = ""
+ end
+
+ count = count + 1
 end
 
 print("Readed "..count.." lines in en_US.lang")
 
 count = 1
 for s in zhCNFile:lines() do
-  if (string.match(s, ".*=.*")) then
-    zhCN[count] = Entry:parse(s)
-  end
+ if (string.match(s, ".-=.*")) then
+  zhCN[count] = Entry:parse(s)
   count = count + 1
+ end
 end
 
 print("Readed "..count.." lines in zh_CN.lang")
@@ -63,11 +64,11 @@ print("Readed "..count.." lines in zh_CN.lang")
 for i, v in ipairs(mapping) do
   if (type(v) == "string") then
     outputFinal:write(v.."\n")
-  else 
+  else
     local translated = findExistedEntry(v, zhCN)
     outputFinal:write(tostring(translated).."\n")
-  end 
-end 
+  end
+end
 
 print("Language file successfully updated.")
 
