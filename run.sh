@@ -20,10 +20,8 @@ for filename in `ls *.jar`
 echo "完成语言文件解压"
 
 # 记录操作的主目录下的资源包文件和提取出的语言文件地址，方便后面操作
-cd ${PATH_MAIN}/assets-tmp/assets
-PATH_MODS=`pwd`
-cd ${PATH_MAIN}/assets
-PATH_ASSETS=`pwd`
+PATH_MODS=${PATH_MAIN}/assets-tmp/assets
+PATH_ASSETS=${PATH_MAIN}/assets
 
 # 我管你大写还是小写，统统给我大写
 cd $PATH_MODS
@@ -33,12 +31,11 @@ for filename_mods in `ls`
 			echo "${filename_mods}模组的英文文件改写成大写"
 			mv "${PATH_MODS}/${filename_mods}/lang/en_us.lang" "${PATH_MODS}/${filename_mods}/lang/en_US.lang"
 			cd $PATH_MODS
-		else
-			if [ -f "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" ]; then
-				echo "${filename_mods}模组的中文文件改写成大写"
-				mv "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" "${PATH_MODS}/${filename_mods}/lang/zh_CN.lang"
-				cd $PATH_MODS
-			fi
+		fi
+		if [ -f "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" ]; then
+			echo "${filename_mods}模组的中文文件改写成大写"
+			mv "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" "${PATH_MODS}/${filename_mods}/lang/zh_CN.lang"
+			cd $PATH_MODS
 		fi
 done
 
@@ -85,7 +82,7 @@ for filename_mods in `ls`
 		for filename_assets in `ls`
 			do
 				if [ "$filename_mods" == "$filename_assets" ]; then
-　　			echo "替换汉化"		
+　　			echo "替换汉化"
 					mv "${PATH_MODS}/${filename_mods}/lang/zh_CN-merged.lang" "${PATH_MAIN}/en_US.lang"
 					mv "${PATH_ASSETS}/${filename_assets}/lang/zh_CN.lang" "${PATH_MAIN}/zh_CN.lang"
 					cd ${PATH_MAIN}
