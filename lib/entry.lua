@@ -18,7 +18,7 @@ function Entry:create(K, V)
 end
 
 function Entry:parse(keyValuePair)
- local K, V = string.match(keyValuePair, "(.+)=.*"), string.match(keyValuePair, ".+=(.*)")
+ local K, V = string.match(keyValuePair, "(.-)=.*"), string.match(keyValuePair, ".-=(.*)")
  if (K ~= nil and V ~= nil) then
   return setmetatable({key = K, value = V}, Entry)
  else
