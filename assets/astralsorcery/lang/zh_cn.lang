@@ -330,12 +330,24 @@ research.C_CHALICE.name=遏制圣杯
 astralsorcery.journal.C_CHALICE.1.text=聚光井功能齐全，唯一的缺点就是储量太小了。这些液态使用的空间远比它们的价值要高的多得多，在聚合时需要花大量的时间进行液体运输。<NL>为此你需要一个更强有力的方式来储存液体。某种能把其上方的液体压缩成方便控制大小的酒杯。
 astralsorcery.journal.C_CHALICE.3.text=设计一个足够大的能储存液体并保持液体平衡而不会挥发或流水的圣杯是极为困难的。最终的设计已经能够保证流体的稳定了，建议用来储存多余的液体，这是安全的做法。<NL>当里面存有液体时会略显奇怪。就如同被某种能量所限制一样固定在一块，不过偶尔爆发的液体会超出掌控。
 astralsorcery.journal.C_CHALICE.4.text=这些非常规行为似乎并非杂乱无章的。如果有类似的设备在附近，且两边的液体形成块状或通过其他方式使其发生相互作用将液体包含在内，此时它们之间产生的小火花将相互排斥同时也会相互吸引，其结果与常理一样。<NL>在这种冲动下，或许能将其作为额外的液体来源。<NL>底部看起来足够坚固，可以使用机械手段传输液体。
+astralsorcery.journal.C_CHALICE.5.text=While the chalice can see nearby lightwells, it might destabilize their liquid and draw it towards the chalice.<NR>As this volatile state might become undesirable for specific purposes, adding some weak power in form of a redstone signal to it will stabilize the held liquid and stop any interactions that would normally occur.
+
+research.BORE_CORE.name=Evershifting Fountain
+astralsorcery.journal.BORE_CORE.1.text=Liquid starlight in its basic concept is a rather strange substance. Condensed energy in a stable, rather easily manageable state compared to the starlight itself that's rather inconsistent and hard to handle.<NL>Releasing the energy that liquid starlight harbors in a controlled manner to channel its energy as desired might be extremely useful.
+astralsorcery.journal.BORE_CORE.2.text=A device, able to both withstand the stress that returning liquid starlight into its former state brings along.<NL>While such a machine is now possible thanks to the new crafting options, an additional focus-ring will be required around it to ensure nothing of the energized liquid starlight gets lost during its conversion process. For safety measure, nothing may be placed within that inner circle of the structure.
+astralsorcery.journal.BORE_CORE.4.text=As the now called "Fountain" runs its processes with liquid starlight, a sky-view is not required in order for it to run. However, as its work process is very delicate, it will only accept the liquid starlight from a chalice filled with it that sits directly on top of the fountain block itself.<NL>The fountain is only the preprocessor of starlight. The functionality that the resulting energy is used for, depends on the prime that's used together the fountain and placed below the block itself.
+
+research.BORE_HEAD_LIQUID.name=Neromantic Prime
+astralsorcery.journal.BORE_HEAD_LIQUID.1.text=One such use of the Evershifting Fountain is to stimulate the currents of liquid resources below the bedrock level with the now releasable massive energy.<NL>Using the Neromantic Prime will result in the accumulation of the liquid, that's been stored below bedrock for eons, in the central fountain-core.
+astralsorcery.journal.BORE_HEAD_LIQUID.2.text=While the fountain cannot be mechanically interacted with, the resulting liquid can be extracted by chalices with sufficient space.<NL>These underground oceans are not infinite however, so once the stored liquid has been used up, unlimited mundane water will take its place.<NL>The production results vary heavily between even short distances and setting up the fountain just to see the result is tiresome and expensive.
+astralsorcery.journal.BORE_HEAD_LIQUID.4.text=Recalling the large area the fosic resonator could gather its information from, an adjustment that would allow it to draw forth very small samples of liquid for some random positions around the one that wields the resonator. No enough to be useable, but enough to gather the necessary information if setting up the fountain might be beneficial or not.<NL>The resonator, even with two modes, only best during the night. Modes can be changed by shift-right-clicking while holding it.
 
 astralsorcery.journal.recipe.starlight=合成时需要星能
 astralsorcery.journal.recipe.nighttime=只能在夜间制作
 astralsorcery.journal.recipe.constellation=需要与 %s 星座进行聚焦
 astralsorcery.journal.recipe.upgrade=升级到下一级
 astralsorcery.journal.recipe.attunement=调用水晶：%s
+astralsorcery.journal.recipe.removalinfo=§c此合成已在当前的整合包内移除！请通过其他信息来源查找合成方式！
 astralsorcery.journal.recipe.amt.desc=需要星能：
 
 astralsorcery.journal.recipe.amt.lowest=几乎没有
@@ -388,7 +400,6 @@ item.itemchargedcrystalaxe.name=充能水晶斧
 item.itemchargedcrystalsword.name=充能水晶剑
 item.itemcoloredlens.name=彩色透镜
 item.itemhandtelescope.name=单筒望远镜
-item.itemskyresonator.name=天波共振器
 item.itemilluminationwand.name=照明之杖
 item.itemarchitectwand.name=秩序之杖
 item.itemexchangewand.name=转位之杖
@@ -400,6 +411,14 @@ item.itemknowledgeshare.name=知识共享卷轴
 item.itemusabledust.illumination.name=辉光粉
 item.itemusabledust.nocturnal.name=暗夜粉
 item.itemcape.name=星斗披风
+item.itemskyresonator.name=天波共振器
+
+item.itemskyresonator.starlight.name=星辉共振器
+item.itemskyresonator.liquid.name=[液体] 共振器
+item.itemskyresonator.structure.name=[多方块检测] 共振器
+item.itemskyresonator.upgrade.starlight.name=星辉
+item.itemskyresonator.upgrade.liquid.name=[液体]
+item.itemskyresonator.upgrade.structure.name=[多方块检测]
 
 item.itemcoloredlens.effect.fire.name=燃烧
 item.itemcoloredlens.effect.break.name=中断
@@ -467,6 +486,10 @@ tile.blocktranslucentblock.name=半透明方块
 tile.blockmapdrawingtable.name=恒星映射台
 tile.blockcelestialgateway.name=天体调谐器
 tile.blockchalice.name=遏制圣杯
+tile.blockfountain.name=Evershifting Fountain
+tile.blockbore.name=Evershifting Fountain
+tile.blockborehead.liquid.name=Neromantic Prime
+tile.blockborehead.ore.name=Petromantic Prime
 
 tile.blockgeolosyssamplecluster.name=水晶石样品
 
