@@ -16,5 +16,5 @@
 或者点击在仓库代码主页面的右侧的`Clone or download`下载ZIP格式压缩包，解压到游戏的资源包文件夹下即可使用。
 
 ## 鸣谢
-感谢玩家`Aemande123`，`DYColdWind`，`Snownee`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`提供的汉化。（排名不分先后）    
+感谢玩家`Aemande123`，`DYColdWind`，`Snownee`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`，`luckyu19`提供的汉化。（排名不分先后）    
 感谢`PeakXing`制作的logo。
