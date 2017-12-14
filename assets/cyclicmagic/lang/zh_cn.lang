@@ -5,7 +5,7 @@ buildertype.dome.name=Dome
 buildertype.diagonal.name=对角线
 buildertype.facing.name=正面（砌墙）
 buildertype.solid.name=实心方形
-buildertype.pyramid.name=Pyramid
+buildertype.pyramid.name=棱锥
 buildertype.sphere.name=球面屋
 buildertype.square.name=方形
 buildertype.stairway.name=阶梯向上
@@ -297,7 +297,7 @@ item.ender_wool.tooltip=远距离剪羊毛
 item.evoker_fang.guide=在你的前方召唤一排（笔直超前）恶魔毒牙，造成范围伤害。必须对着实体或者方块使用。
 item.evoker_fang.name=唤魔之牙
 item.evoker_fang.tooltip=使出唤魔者村民拥有的秘密魔法
-item.fire_dark.guide=Does not burn players or destroy blocks.
+item.fire_dark.guide=不会点燃玩家，毁坏方块。
 item.fire_killer.guide=熄灭所有附近的火。
 item.fire_killer.name=灭火器
 item.fire_killer.tooltip=熄灭附近的火
@@ -693,7 +693,7 @@ tile.entity_detector.rangeydown=Y -
 tile.entity_detector.rangeyup=Y +
 tile.entity_detector.rangezdown=Z -
 tile.entity_detector.rangezup=Z +
-tile.entity_detector.tooltip=Detect entity types and output redstone, configure limit and >,<,=
+tile.entity_detector.tooltip=检测实体类型，输出红石信号，这些配置受>、<、=的限制
 tile.exp_pylon.full=它已经满了
 tile.exp_pylon.guide=收集附近的XP球。XP可以直接释放或将其装瓶。您也可以直接存入身上的XP。
 tile.exp_pylon.name=经验塔
@@ -806,14 +806,14 @@ tile.uncrafting.unknown=未知配方类型
 tile.uncrafting_block.guide=将2x2或3x3合成的物品分解为合成材料。可能无法分解专门的修改配方和机器配方。
 tile.uncrafting_block.name=分解磨床
 tile.uncrafting_block.tooltip=物品反向拆解
-tile.wireless_transmitter.name=Wireless Transmitter
-tile.wireless_transmitter.tooltip=Transmit wireless redstone to a Receiver; hit this on a receiver to pick up coordinates
-tile.wireless_transmitter.guide=Transmit wireless redstone to a Receiver; hit this on a receiver to pick up coordinates.  Only sends to one receiver.
-tile.wireless_receiver.name=Wireless Receiver
-tile.wireless_receiver.tooltip=Receive wireless redstone signals from a Transmitter
-tile.wireless_receiver.guide=Receive wireless redstone signals from a Transmitter.  Place this in the world first, then hit the transmitter on it.
-tile.wireless_transmitter.empty=No target saved
-tile.wireless_transmitter.saved=Saved coordinates:
+tile.wireless_transmitter.name=无线发信器
+tile.wireless_transmitter.tooltip=传送无线红石信号到接收器；用接收器右击它能够记录坐标。
+tile.wireless_transmitter.guide=传送无线红石信号到接收器；用接收器右击它能够记录坐标。 只会传送到一个接收器。
+tile.wireless_receiver.name=无线接收器
+tile.wireless_receiver.tooltip=从发信器接收一个无线红石信号。
+tile.wireless_receiver.guide=从发信器接收一个无线红石信号。 把它先放在地上，然后用发信器右击它。
+tile.wireless_transmitter.empty=无对象保存
+tile.wireless_transmitter.saved=保存坐标：
 tile.xpjuice.name=液态经验
 tool.action.forward=方向：向前
 tool.action.off=休眠
@@ -940,27 +940,27 @@ splash_potion.effect.frostwalker=喷溅型冰霜行者药水
 lingering_potion.effect.frostwalker=滞留型冰霜行者药水
 tipped_arrow.effect.frostwalker=冰霜行者之箭
 
-tile.fluid_pump.name=Fluid Pump
-tile.fluid_pump.tooltip=Move fluid between tanks or pipes when redstone powered
-tile.fluid_pump.guide=Drains from all sides except the facing direction.  Pushes liquids into tanks in front if any.  Push into another tank or Fluid Pipes.
+tile.fluid_pump.name=流体泵
+tile.fluid_pump.tooltip=当提供红石信号，能够在储罐和管道之间传输流体。
+tile.fluid_pump.guide=除了朝的方向，其他面均可排出流体。 Pushes liquids into tanks in front if any.  Push into another tank or Fluid Pipes.
 
 
-tile.fluid_placer.name=Fluid Placer
-tile.fluid_placer.tooltip=Place fluid in the world
-tile.fluid_placer.guide=Fill this with a bucket or fluid pipes.  Places fluid in the world on redstone power.
+tile.fluid_placer.name=流体放置机
+tile.fluid_placer.tooltip=将流体放置出来
+tile.fluid_placer.guide=用桶或者流体管道灌入流体。 给予红石信号即可将流体放置出来。
 
-tile.fluid_pipe.name=Fluid Pipe
-tile.fluid_pipe.tooltip=Connect to a Fluid Pump to transfer liquids between tanks
-tile.fluid_pipe.guide=Connect to a Fluid Pump to transfer liquids between tanks.  Each pipe segment holds a small amount of liquid, and it gets pushed through from previous pipe segments or a pump and goes out any direction it can find.
+tile.fluid_pipe.name=流体管道
+tile.fluid_pipe.tooltip=与流体泵连接即可在储罐间传输流体。
+tile.fluid_pipe.guide=与流体泵连接即可在储罐间传输流体。  Each pipe segment holds a small amount of liquid, and it gets pushed through from previous pipe segments or a pump and goes out any direction it can find.
 
-cyclic.redstone.on=Restone: On
-cyclic.redstone.off=Restone: Off
+cyclic.redstone.on=红石：开
+cyclic.redstone.off=红石：关
 
-tile.item_pump.name=Item Pump
-tile.item_pump.tooltip=A fast omni-direction hopper
-tile.item_pump.guide=Pump items out of anything into any inventory or the Item Pipe
+tile.item_pump.name=物品泵
+tile.item_pump.tooltip=一个快、1全方位传输的漏斗
+tile.item_pump.guide=提取物品到任何带有存储栏的容器当中，或者是其他管道中。
 
 
-tile.item_pipe.name=Item Pipe
-tile.item_pipe.tooltip=Fast Item transport, use with the Item Pump
-tile.item_pipe.guide=Use an Item Pump to pull out of any inventory into these pipes, which will deposit anywhere
+tile.item_pipe.name=物品管道
+tile.item_pipe.tooltip=快速物品传输，与物品泵协同使用。
+tile.item_pipe.guide=使用物品泵从任意容器中抽取物品传入管道，which will deposit anywhere
