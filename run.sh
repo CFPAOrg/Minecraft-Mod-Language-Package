@@ -151,6 +151,7 @@ for filename_mods in `ls`
 		 do
 			 # 很奇怪的问题，有些mod会莫名其妙存在minecraft文件夹
 			 if [ "$filename_mods" == "$filename_assets" ] && [ "$filename_assets" != "minecraft" ]; then
+				 sed -i 's/\r//g' "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang"
 				 diff -u -B "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" | grep ^\+ > "${PATH_ASSETS}/${filename_assets}/lang/diff.lang"
 				 sed -i 's/^[+]*//g' "${PATH_ASSETS}/${filename_assets}/lang/diff.lang"
 				 rm "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
