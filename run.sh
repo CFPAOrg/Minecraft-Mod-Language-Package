@@ -12,10 +12,10 @@ mkdir assets-tmp
 cd mods
 for filename in `ls *.jar`
 	do
-		unzip $filename assets/*/lang/en_US.lang -d ${PATH_MAIN}/assets-tmp/
-		unzip $filename assets/*/lang/en_us.lang -d ${PATH_MAIN}/assets-tmp/
-		unzip $filename assets/*/lang/zh_CN.lang -d ${PATH_MAIN}/assets-tmp/
-		unzip $filename assets/*/lang/zh_cn.lang -d ${PATH_MAIN}/assets-tmp/
+		unzip -o $filename assets/*/lang/en_US.lang -d ${PATH_MAIN}/assets-tmp/
+		unzip -o $filename assets/*/lang/en_us.lang -d ${PATH_MAIN}/assets-tmp/
+		unzip -o $filename assets/*/lang/zh_CN.lang -d ${PATH_MAIN}/assets-tmp/
+		unzip -o $filename assets/*/lang/zh_cn.lang -d ${PATH_MAIN}/assets-tmp/
 	done
 echo "完成语言文件解压"
 
@@ -124,8 +124,8 @@ mkdir assets-tmp
 cd mods
 for filename in `ls *.jar`
 	do
-		unzip $filename assets/*/lang/zh_CN.lang -d ${PATH_MAIN}/assets-tmp/
-		unzip $filename assets/*/lang/zh_cn.lang -d ${PATH_MAIN}/assets-tmp/
+		unzip -o $filename assets/*/lang/zh_CN.lang -d ${PATH_MAIN}/assets-tmp/
+		unzip -o $filename assets/*/lang/zh_cn.lang -d ${PATH_MAIN}/assets-tmp/
 	done
 echo "完成语言文件解压"
 
@@ -152,10 +152,16 @@ for filename_mods in `ls`
 			 # 很奇怪的问题，有些mod会莫名其妙存在minecraft文件夹
 			 if [ "$filename_mods" == "$filename_assets" ] && [ "$filename_assets" != "minecraft" ]; then
 				 sed -i 's/\r//g' "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang"
-				 diff -u -B "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" | grep ^\+ > "${PATH_ASSETS}/${filename_assets}/lang/diff.lang"
+				 sed -i 's/\r//g' "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
+
+				 diff -uwB "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" | grep ^\+ > "${PATH_ASSETS}/${filename_assets}/lang/diff.lang"
 				 sed -i 's/^[+]*//g' "${PATH_ASSETS}/${filename_assets}/lang/diff.lang"
+
 				 rm "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
 				 mv "${PATH_ASSETS}/${filename_assets}/lang/diff.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
+
+				 sed -i '/^\s*$/d' "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
+				 tr -s '\n' < "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
 				 break
 			 fi
 	 done

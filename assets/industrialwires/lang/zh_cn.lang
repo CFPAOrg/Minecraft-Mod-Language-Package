@@ -1,8 +1,7 @@
- "/home/tartaricacid/\346\241\214\351\235\242/Minecraft-Mod-Language-Package/assets/industrialwires/lang/zh_cn.lang"	2017-12-16 15:02:01.721321913 +0800
+ "/home/tartaricacid/\346\241\214\351\235\242/Minecraft-Mod-Language-Package/assets/industrialwires/lang/zh_cn.lang"	2017-12-16 22:42:14.775925306 +0800
 tile.industrialwires.jacobs_ladder.small.name=小型雅各布天梯
 tile.industrialwires.jacobs_ladder.normal.name=雅各布天梯
 tile.industrialwires.jacobs_ladder.huge.name=大型雅各布天梯
-
 tile.industrialwires.control_panel.top.name=控制面板
 tile.industrialwires.control_panel.rs_wire.name=红石线控制器
 tile.industrialwires.control_panel.dummy.name=面板接线器
@@ -22,14 +21,11 @@ item.industrialwires.key.key.name=钥匙
 item.industrialwires.key.key_named.name=钥匙-
 item.industrialwires.key.blank_key.name=空白钥匙
 item.industrialwires.key.key_ring.name=钥匙圈
-
 potion.industrialwires.tinnitus=耳鸣
-
 industrialwires.subtitle.tinnitus=你出现耳鸣
 industrialwires.subtitle.jacobs_ladder=雅各布天梯发出嗡嗡声
 industrialwires.subtitle.marx_bang=马克思发生器停止工作
 industrialwires.subtitle.marx_pop=马克思发生器启动失败
-
 industrialwires.desc.jei.marx=马克思发生器
 industrialwires.desc.jei.alt= (可替换)
 industrialwires.desc.jei.max= (最大)
@@ -61,7 +57,6 @@ industrialwires.desc.angle=角度
 industrialwires.desc.angle_info=The panel's angle to the surface it is placed on. 0=-45°, 100=45°
 industrialwires.tooltip.wide=宽
 industrialwires.tooltip.narrow=窄
-
 industrialwires.tooltip.horizontal=横向
 industrialwires.tooltip.vertical=纵向
 industrialwires.tooltip.rsId=红石接线器ID：%1s
@@ -73,27 +68,18 @@ industrialwires.tooltip.power_tier=能源等级：%s
 industrialwires.tooltip.eu_per_tick=%s EU/t
 industrialwires.tooltip.transfer_rate=传输速率 %s EU/t
 industrialwires.tooltip.input_rate=每个接线器输入率 %s EU/t
-
 death.attack.industrialwires.jacobs_ladder=%1$s被一个雅各布天梯处以电刑
 death.attack.industrialwires.marx=%1$s被马克思发生器产生的闪电击中
-
-
 ie.manual.category.control_panels.name=控制面板
 ie.manual.entry.industrialwires.wires0=工业线缆mod的线缆可以像工业2的导线一样传输能量。<br>其使用方法与使用沉浸工艺的线缆完全一样。每种线缆所能传输的EU与其对应的导线相同，所以
 ie.manual.entry.industrialwires.wires1=将接线器接在一个会损坏导线的电源上同样会损坏接线器。<br>用以充当工业2导线的线圈与沉浸工艺的线圈不同，距离越长，所使用的线缆也会越长：线圈是通过在合成格中放置任意组合的未绝缘的工业2导线和相应的线圈来合成的。下一页展示了一些有效的配方及其合成产物的例子。
-ie.manual.entry.industrialwires.mechConv2=损失一部分能量。<br>作为一个小的额外的“机械能转换器”系列，其中还包含了旋转能马达：它消耗IF以产生IE旋转能。 与转换器一样，这不是无损过程。
-
 ie.manual.entry.industrialwires.jacobs.name=Jacob's Ladders
-
 ie.manual.entry.industrialwires.jacobs.subtext=Probably contain PCB's!
 ie.manual.entry.industrialwires.jacobs0=By applying a high voltage between 2 electrodes forming a "V" one can create an arc travelling upwards. They don't serve a particular purpose apart from being a nice-looking waste of power. Power can be supplied using either Flux or EU. The energy usage varies with the size of the ladder.
 ie.manual.entry.industrialwires.jacobs1=These are the required power values in EU: <config;dA;iwJacobsUsage>. Due to the voltages involved touching the ladder while active is not a good idea. Applying salt to the electrodes will cause the arc to be colored orange for a short time due to the sodium contained in the salt.
-
-
 ie.manual.entry.industrialwires.marx.name=马克思发生器
 ie.manual.entry.industrialwires.marx.subtext=我的名字是Erwin-Otto，不是卡尔!
 ie.manual.entry.industrialwires.marx=A Marx Generator is a device use to produce high-voltage high-energy pulses. These pulses are visible as lightning between the output terminals and can be used to process ores. Each type of ore has an ideal amount of processing energy (see <link;industrialwires.marx;§oAppendix B§r;7>). The precise values are unknown, estimate values with 10%% accuracy can be found at the end of this entry. The factor between the actual value and the estimate is the same for all types of ore.<br>§lConstruction§r<&0><br>The above plan shows a 5-stage generator capable of producing 3 block lightning. An arbitrary amount of stages can be added by increasing the number of "middle" layers. Power (either IF or EU) is connected to the HV connector, the redstone wire for the control signals is connected to the redstone connector<br>§lEnergy§r<br>Each stage of the Marx generator consists of a 1.6μF capacitor that is charged to up to 250kV (see <link;industrialwires.marx;§oAppendix A§r;6>). When the generator is fully charged the voltage of each capacitor is roughly equal to the charging voltage. The total energy is the sum of the energy stored in the individual capacitors and is split equally between the ores to be processed.<br>§lControl signals§r<br>Voltages are represented by 2 signals: The first signal is simply proportional to the voltage to represent. The second signal is proportional to the voltage in the "gap" between 2 values of the first signal, thus allowing more precise control/measurements. Panel components capable of interacting with analog signals usually support this dual-channel setup. The charging voltage is controlled by the white and yellow signals. The voltages of the top and bottom capacitor are output to the magenta and pink resp. the orange and lime signals. The light blue signal is a firing control. If it is high the generator will attempt to fire. If the voltage of the bottom capacitor is lower than 125 kV or the total voltage is lower than 30%% of the maximum output voltage the generator will misfire, discharging the capacitors without actually producing lightning.<br>§lSafety§r<br>Due to the high voltages and energies involved in firing a Marx generator a safe distance should be maintained to avoid injury or death. Even outside of this area hearing protection (As provided by Immersive Engineering) is obligatory. Formulas to calculate the safe distances can be found in <link;industrialwires.marx;§oAppendix A§r;6>.<np>§lAppendix A: Formulas§r<br>Energy stored in a capacitor:<br>E=0.5*C*U^2<br>E: Energy, C: Capacitance, U: Voltage<br><br>Voltage from redstone signals:<br>U=250/255*(16*a+b)<br>U: Voltage, a: First signal, b: Second signal<br><br>Safe distance (Physical damage):<br>r=sqrt(e/50,000)<br>r: Safe distance, e: Energy stored<br><br>Safe distance (Ear damage):<br>r=sqrt(e)/50<br>r: Safe distance, e: Energy stored<np>§lAppendix B: Ore Energy Values§r<br>
-
 ie.manual.entry.industrialwires.intro.name=Introduction
 ie.manual.entry.industrialwires.intro.subtext=
 ie.manual.entry.industrialwires.intro0=Control Panels allow you to monitor and control a large amount of redstone signals using only a few blocks. Those signals can currently be connected using redstone wires and connectors.<br>Buttons, switches, indicator lights and other things that can be placed on a control panel are called §l(Panel) Components§r<br>To create a control panel you will need a Panel Creator, the individual components and an Unfinished Panel (which determines the shape of the
@@ -102,18 +88,15 @@ ie.manual.entry.industrialwires.intro2=A §l(panel) network§r is formed by pane
 ie.manual.entry.industrialwires.intro3=redstone signal, the resulting signal will be the highest of the individual signals. Having multiple components accepting the same signal on a network is valid as well.
 ie.manual.entry.industrialwires.intro4=The §l未完成的控制面板§r 可作为一个控制面板外壳使用。将其放入工程师工作台，你就可以编辑它。 标记为“高度”的滑块会改变面板中间的高度。而“角度”滑块则会改变面板相对于其依附表面的角度。
 ie.manual.entry.industrialwires.intro5=放置在倾斜的面板上。滑块将自动锁定在面板可能的最高/最低的角度/高度。由于工作台的工作机制，这些值可能不会显示锁定，关闭并重新打开GUI以修复。
-
 ie.manual.entry.industrialwires.panel_creator.name=Panel Creator
 ie.manual.entry.industrialwires.panel_creator.subtext=
 ie.manual.entry.industrialwires.panel_creator0=The GUI of the panel creator consists of two major sections: The controls on the left and the panel on the right. Components can be placed on the panel by "placing" the items in the corresponding point in the GUI. If the component is surrounded by a red area, it can not be placed in that
 ie.manual.entry.industrialwires.panel_creator1=position on the panel. This usually means that it is either overlapping with an other component or isn't completely on the panel.<br>The top button on the left (D) disassembles an existing control panel when it is placed in the slot beneath the button: The components of that panel are placed in the GUI, allowing them to be repositioned. The casing is lost in this process.<br>The next button (C) places the components from the right of the GUI on an Unfinished Control Panel in the slot in the
 ie.manual.entry.industrialwires.panel_creator2=left of the GUI, turning it into a regular Control Panel.<br>The button labeled R removes all components from the GUI panel area and places them in your inventory.<br>Finally the last button (S) changes the snapping mode. Components can be placed anywhere by default. The first snapping option forces the component to align with the 16x16 grid, the second option forces it to align with components already placed on the panel.
-
 ie.manual.entry.industrialwires.redstone.name=Redstone Connections
 ie.manual.entry.industrialwires.redstone.subtext=Could also be blood vessels
 ie.manual.entry.industrialwires.redstone0=A panel network can contain any amount of §lRedstone Wire Controllers§r. Each controller should be assigned a different ID in its GUI. Each component that interacts with redstone signals has two settings in its GUI: A redstone channel color and a controller ID. To get the redstone signals out of and into the controller it needs to be connected to redstone
 ie.manual.entry.industrialwires.redstone1=connectors from Immersive Engineering.
-
 ie.manual.entry.industrialwires.components.name=面板组件
 ie.manual.entry.industrialwires.components.subtext=不止两个
 ie.manual.entry.industrialwires.components.general=任何组件的设定都可通过把组件直接放置在合成台的相同类型的组件之上复制。在上方的组件设定会复制到下方的组件上。
