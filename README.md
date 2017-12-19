@@ -1,4 +1,4 @@
-# 欢迎来到 Minecraft 模组简体中文汉化资源包的 GitHub 仓库  [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)
+# 欢迎来到 Minecraft 模组简体中文汉化资源包的 GitHub 仓库  [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) ![weblate](http://weblate.sayori.pw/widgets/mod/zh_cn/svg-badge.svg)
 
 ## 使用说明
 本包为1.12.x相关热门模组的汉化资源包，使用和普通资源包使用方式相同；    
