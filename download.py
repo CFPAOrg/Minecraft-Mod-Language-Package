@@ -91,7 +91,8 @@ for num in range(1, 20):
                     download_log.close()
                 else:
                     # 下载 mod，因为网速不行，暂时关闭
-                    urllib.request.urlretrieve(real_url, "./mods/" + project_file_id[0])
+                    urllib.request.urlretrieve(
+                        real_url, "./mods/" + project_file_id[0])
                     print(i + " 模组更新完毕\n")
                     # 写入日志中
                     download_log = open("download.log", 'a', encoding='UTF-8')
@@ -100,7 +101,8 @@ for num in range(1, 20):
             except:
                 print("新增模组：" + i)
                 # 下载 mod，因为网速不行，暂时关闭
-                urllib.request.urlretrieve(real_url, "./mods/" + project_file_id[0])
+                urllib.request.urlretrieve(
+                    real_url, "./mods/" + project_file_id[0])
                 print(i + " 模组更新完毕\n")
                 # 写入日志中
                 download_log = open("download.log", 'a', encoding='UTF-8')

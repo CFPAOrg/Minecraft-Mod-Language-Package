@@ -10,7 +10,7 @@ import operator
 # 读取文件
 asset_old = open("zh_cn_old.lang", 'r', encoding='UTF-8')
 asset_new = open("zh_cn_new.lang", 'r', encoding='UTF-8')
-asset_zh= open("zh_cn.lang", 'w', encoding='UTF-8')
+asset_zh = open("zh_cn.lang", 'w', encoding='UTF-8')
 
 # 放置映射表
 old_dict = dict()
