@@ -41,8 +41,8 @@ download_log.writelines(
 print("# " + time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime()) + "\n\n")
 download_log.close()
 
-# 开始遍历 curseforge 页面，暂定为前 30 页
-for num in range(1, 30):
+# 开始遍历 curseforge 页面，暂定为前 20 页
+for num in range(1, 20):
     # 限定版本，按照下载量排序
     url = "https://www.curseforge.com/minecraft/mc-mods?" + \
         version[1] + "&filter-sort=downloads" + "&page=" + str(num)
