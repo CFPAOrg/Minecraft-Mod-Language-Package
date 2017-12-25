@@ -36,6 +36,7 @@ for root, dirs, files in os.walk("./assets", topdown=False):
 
                     total = total + 1   # 记录总条目
                     is_chinese = False  # 记录是否为中文文本
+                    is_english = False  # 记录是否为英文文本
 
                     if zh_dict[entry_list[0]] != None:
                         for charset in zh_dict[entry_list[0]]:
@@ -44,9 +45,12 @@ for root, dirs, files in os.walk("./assets", topdown=False):
                             if u'\u4e00' <= charset <= u'\u9fa5':
                                 is_chinese = True
                                 break
+                            # 在 0041 到 005a, 0061 到 007a 之间为 26 个基本英文字母
+                            elif (u'\u0041' <= charset <= u'\u005a') or (u'\u0061' <= charset <= u'\u007a'):
+                                is_english = True
                     if is_chinese:
                         chinese = chinese + 1
-                    else:
+                    elif is_english:
                         english = english + 1
 
             # 将分析得到的数据全部处理，放入 list 中
@@ -83,7 +87,8 @@ for entry in info_list:
     if int(entry_list[1]) == 0:
         width = 100
     else:
-        width = int(entry_list[3]) / int(entry_list[1]) * 100
+        width = (int(entry_list[1]) - int(entry_list[2])
+                 ) / int(entry_list[1]) * 100
     width = round(width, 2)
 
     process.write(" | " + str(num) + " | " + entry_list[0] + " | " + entry_list[1] +
@@ -96,6 +101,7 @@ for entry in info_list:
 process.write("### 总计词条数：" + str(total_all) + "\n")
 process.write("### 英文条数：" + str(total_en) + "\n")
 process.write("### 中文条数：" + str(total_zh) + "\n")
-process.write("### 完成率：" + str(round((total_zh / total_all * 100), 2)) + "%\n")
+process.write(
+    "### 完成率：" + str(round(((total_all - total_en) / total_all * 100), 2)) + "%\n")
 
 process.close()

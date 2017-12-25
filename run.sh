@@ -138,6 +138,16 @@ for filename_mods in `ls`
 		done
 done
 
+# 判断文件是否存在且为空
+# 不存在，或者大小为 0 就删掉
+cd $PATH_ASSETS
+for filename_assets in `ls`
+	do
+		if [ [! -s "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"] ]; then
+			rm -rf "${PATH_ASSETS}/${filename_assets}"
+		fi
+done
+
 # 最后，删掉assets-tmp文件夹
 cd ${PATH_MAIN}
 rm -rf ./assets-tmp
