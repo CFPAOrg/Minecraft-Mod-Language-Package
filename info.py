@@ -58,39 +58,44 @@ for root, dirs, files in os.walk("./assets", topdown=False):
 # 然后排序，这样就能够得到按照字母排序的模组信息了
 info_list.sort()
 
-# 创建 index.html 文件
-html = open("index.html", 'w', encoding='UTF-8')
+# 创建 process.md 文件
+process = open("process.md", 'w', encoding='UTF-8')
 
 # 写入头文件
-html.writelines("<!DOCTYPE html><html lang=\"zh\"><head><meta charset=\"UTF-8\"><title>语言进度列表</title><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><link rel=\"stylesheet\" href=\"css/index.css\"><link rel=\"stylesheet\" href=\"http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css\"><script src=\"http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js\"></script><script src=\"http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js\"></script></head><body><div class=\"container\">")
+process.writelines("| 序号 | modid | 总条目 | 未翻译条目 | 已翻译条目 | 翻译比重 | \n")
+process.write("| :--: | :--: | :--: | :--: | :--: | :--: | \n")
 
-# 开始写入单独的<div>记录相关信息
 # width, num 分别记录进度和序号
 width, num = 0, 1
+# 这三个用以统计全局数据
+total_all, total_en, total_zh = 0, 0, 0
+
 for entry in info_list:
     # 开始拆分字符串，读取出数据
     entry_list = entry.split("/", 3)
 
-    html.write("<div class=\"mod\"><div class=\"progress progress-striped\"><div class=\"progress-bar progress-bar-success\"role=\"progressbar\"aria-valuenow=\"60\"aria-valuemin=\"0\"aria-valuemax=\"100\"style=\"width:")
+    # 先统计全局数据
+    total_all = total_all + int(entry_list[1])
+    total_en = total_en + int(entry_list[2])
+    total_zh = total_zh + int(entry_list[3])
 
     # 极个别模组处理后不存在语言文件，分母为0，强制限定其为100%
     if int(entry_list[1]) == 0:
         width = 100
     else:
         width = int(entry_list[3]) / int(entry_list[1]) * 100
-    html.write(str(width))
+    width = round(width, 2)
 
-    html.write(
-        "%;\"><span class=\"sr-only\"></span></div></div><span class=\"label label-info\">")
-    html.write("总计条目：" + entry_list[1])
-    html.write("</span><span class=\"label label-primary\">")
-    html.write("英文：" + entry_list[2])
-    html.write("</span><span class=\"label label-success\">")
-    html.write("中文：" + entry_list[3])
-    html.write("</span><h3><span class=\"label label-default\">")
-    html.write(str(num) + "</span>" + entry_list[0] + "</h3></div>")
+    process.write(" | " + str(num) + " | " + entry_list[0] + " | " + entry_list[1] +
+                  " | " + entry_list[2] + " | " + entry_list[3] + " | " + str(width) + "% | " + "\n")
 
     # 别忘了，序号加一
     num = num + 1
 
-html.write("</div></body></html>")
+# 最后，行尾加上全局统计数据
+process.write("### 总计词条数：" + str(total_all) + "\n")
+process.write("### 英文条数：" + str(total_en) + "\n")
+process.write("### 中文条数：" + str(total_zh) + "\n")
+process.write("### 完成率：" + str(round((total_zh / total_all * 100), 2)) + "%\n")
+
+process.close()
