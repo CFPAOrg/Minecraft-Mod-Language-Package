@@ -8,6 +8,7 @@ PATH_MAIN=`pwd`
 mkdir assets-tmp
 mkdir mods
 
+# 爬虫下载mod
 python3 download.py
 
 # 这一块有一个奇怪的bug，如果在主目录下操作解压，整个解压会全部出错
@@ -154,3 +155,6 @@ rm -rf ./assets-tmp
 
 # 删掉mods文件，方便操作
 rm -rf ./mods
+
+# 生成统计数据
+python3 info.py

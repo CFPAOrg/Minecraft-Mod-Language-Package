@@ -12,6 +12,7 @@ import os
 zh_dict = dict()
 # 存储分析信息
 info_list = list()
+fre_list = list()
 
 # 开始遍历 assets 文件夹
 for root, dirs, files in os.walk("./assets", topdown=False):
@@ -56,10 +57,25 @@ for root, dirs, files in os.walk("./assets", topdown=False):
             # 将分析得到的数据全部处理，放入 list 中
             info_list.append(modid[0] + "/" + str(total) +
                              "/" + str(english) + "/" + str(chinese))
+            fre_list.append(str(english) + "/" + modid[0])
         except:
             pass
 
-# 然后排序，这样就能够得到按照字母排序的模组信息了
+# 这个函数是给之后排序用的
+# 功能是拆分字符串，将英文词条数变成int类型
+
+
+def trans_int(str):
+    a = str.split("/", 1)
+    b = int(a[0])
+    return b
+
+
+# 然后调用这个函数来处理字符串
+# 而后排序，注意是降序排序
+fre_list.sort(key=trans_int, reverse=True)
+
+# 排序，这样就能够得到按照字母排序的模组信息列表了
 info_list.sort()
 
 # 创建 process.md 文件
@@ -92,7 +108,7 @@ for entry in info_list:
     width = round(width, 2)
 
     process.write(" | " + str(num) + " | " + entry_list[0] + " | " + entry_list[1] +
-                  " | " + entry_list[2] + " | " + entry_list[3] + " | " + str(width) + "% | " + "\n")
+                  " | " + entry_list[2] + " | " + entry_list[3] + " | " + str(width) + "% | \n")
 
     # 别忘了，序号加一
     num = num + 1
@@ -103,5 +119,76 @@ process.write("### 英文条数：" + str(total_en) + "\n")
 process.write("### 中文条数：" + str(total_zh) + "\n")
 process.write(
     "### 完成率：" + str(round(((total_all - total_en) / total_all * 100), 2)) + "%\n")
+
+# 对未翻译数按照数量，进行统计
+# num用了记录个数
+num1 = num2 = num3 = num4 = 1
+# entry用来记录行数
+entry1 = entry2 = entry3 = entry4 = 0
+
+for entry in fre_list:
+    # 开始拆分字符串，读取出数据
+    entry_list = entry.split("/", 1)
+
+    # 大于等于500的，单独一个表格
+    # 用num1来判定是否写表格头文件
+    # 如果写完一次头文件后，num1存储数值已经不是1了，就无法再次写入头文件
+    # 从而避免头文件重复
+    if num1 == 1:
+        process.write("\n## 未翻译条目大于等于500行 \n")
+        process.write("| 序号 | modid | 未翻译条目 | \n")
+        process.write("| :--: | :--: | :--: | \n")
+    if int(entry_list[0]) >= 500:
+        process.write(" | " + str(num1) + " | " +
+                      entry_list[1] + " | " + entry_list[0] + " | \n")
+        num1 = num1 + 1
+        entry1 = entry1 + int(entry_list[0])
+        continue
+
+    # 大于等于100的，单独一个表格
+    if num2 == 1:
+        process.write("\n## 未翻译条目大于等于100行 \n")
+        process.write("| 序号 | modid | 未翻译条目 | \n")
+        process.write("| :--: | :--: | :--: | \n")
+    if 100 <= int(entry_list[0]) < 500:
+        process.write(" | " + str(num2) + " | " +
+                      entry_list[1] + " | " + entry_list[0] + " | \n")
+        num2 = num2 + 1
+        entry2 = entry2 + int(entry_list[0])
+        continue
+
+    # 大于等于10的，单独一个表格
+    if num3 == 1:
+        process.write("\n## 未翻译条目大于等于10行 \n")
+        process.write("| 序号 | modid | 未翻译条目 | \n")
+        process.write("| :--: | :--: | :--: | \n")
+    if 10 <= int(entry_list[0]) < 100:
+        process.write(" | " + str(num3) + " | " +
+                      entry_list[1] + " | " + entry_list[0] + " | \n")
+        num3 = num3 + 1
+        entry3 = entry3 + int(entry_list[0])
+        continue
+
+    # 小于10个的单独一个表格
+    if num4 == 1:
+        process.write("\n## 未翻译条目小于10行 \n")
+        process.write("| 序号 | modid | 未翻译条目 | \n")
+        process.write("| :--: | :--: | :--: | \n")
+    if 0 < int(entry_list[0]) < 10:
+        process.write(" | " + str(num4) + " | " +
+                      entry_list[1] + " | " + entry_list[0] + " | \n")
+        num4 = num4 + 1
+        entry4 = entry4 + int(entry_list[0])
+        continue
+
+# 最后，行尾加上分频统计数据
+process.write("### 未翻译条目大于等于 500 行的模组有 " + str(num1) +
+              " 个，占到了未翻译行数的 " + str(round(entry1 / total_en * 100, 2)) + " % 。\n")
+process.write("### 未翻译条目大于等于 100 行的模组有 " + str(num2) +
+              " 个，占到了未翻译行数的 " + str(round(entry2 / total_en * 100, 2)) + " % 。\n")
+process.write("### 未翻译条目大于等于 10 行的模组有 " + str(num3) +
+              " 个，占到了未翻译行数的 " + str(round(entry3 / total_en * 100, 2)) + " % 。\n")
+process.write("### 未翻译条目大于等于 1 行的模组有 " + str(num4) +
+              " 个，占到了未翻译行数的 " + str(round(entry4 / total_en * 100, 2)) + " % 。\n")
 
 process.close()
