@@ -1,6 +1,9 @@
 #! /bin/bash
 #! /usr/bin/python3
 
+# 进行github pull
+git pull
+
 # 记录操作的主目录，方便后面操作
 PATH_MAIN=`pwd`
 
@@ -158,3 +161,9 @@ rm -rf ./mods
 
 # 生成统计数据
 python3 info.py
+
+# 最后，进行 github 推送
+git add .
+commit_date=`date +%F`
+git commit -m "Auto Update By Shell Script, Update Time: ${commit_date}"
+git push
