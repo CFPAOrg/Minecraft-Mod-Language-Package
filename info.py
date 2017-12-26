@@ -7,6 +7,7 @@ print("info Script Loading")
 
 import re
 import os
+import time
 
 # 存储语言文件映射表
 zh_dict = dict()
@@ -82,8 +83,12 @@ info_list.sort()
 process = open("process.md", 'w', encoding='UTF-8')
 
 # 写入头文件
-process.writelines("| 序号 | modid | 总条目 | 未翻译条目 | 已翻译条目 | 翻译比重 | \n")
-process.write("| :--: | :--: | :--: | :--: | :--: | :--: | \n")
+process.writelines("# 词条更新分频统计列表\n更新时间：" +
+                   time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()) + "\n\n")
+
+# 感觉分频统计就挺好，暂时禁用这个全统计
+# process.writelines("| 序号 | modid | 总条目 | 未翻译条目 | 已翻译条目 | 翻译比重 | \n")
+# process.write("| :--: | :--: | :--: | :--: | :--: | :--: | \n")
 
 # width, num 分别记录进度和序号
 width, num = 0, 1
@@ -107,18 +112,18 @@ for entry in info_list:
                  ) / int(entry_list[1]) * 100
     width = round(width, 2)
 
-    process.write(" | " + str(num) + " | " + entry_list[0] + " | " + entry_list[1] +
-                  " | " + entry_list[2] + " | " + entry_list[3] + " | " + str(width) + "% | \n")
+    # process.write(" | " + str(num) + " | " + entry_list[0] + " | " + entry_list[1] +
+    #              " | " + entry_list[2] + " | " + entry_list[3] + " | " + str(width) + "% | \n")
 
     # 别忘了，序号加一
     num = num + 1
 
 # 最后，行尾加上全局统计数据
-process.write("### 总计词条数：" + str(total_all) + "\n")
-process.write("### 英文条数：" + str(total_en) + "\n")
-process.write("### 中文条数：" + str(total_zh) + "\n")
+process.write("总计词条数：" + str(total_all) + "    \n")
+process.write("英文条数：" + str(total_en) + "    \n")
+process.write("中文条数：" + str(total_zh) + "    \n")
 process.write(
-    "### 完成率：" + str(round(((total_all - total_en) / total_all * 100), 2)) + "%\n")
+    "完成率：" + str(round(((total_all - total_en) / total_all * 100), 2)) + "%    \n")
 
 # 对未翻译数按照数量，进行统计
 # num用了记录个数

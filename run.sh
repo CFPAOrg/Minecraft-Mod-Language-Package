@@ -147,7 +147,7 @@ done
 cd $PATH_ASSETS
 for filename_assets in `ls`
 	do
-		if [ [! -s "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"] ]; then
+		if [ ! -s "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" ]; then
 			rm -rf "${PATH_ASSETS}/${filename_assets}"
 		fi
 done
