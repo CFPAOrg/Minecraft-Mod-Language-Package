@@ -83,6 +83,7 @@ for filename_mods in `ls`
 					cd ${PATH_MAIN}
 					python3 all_update.py
 					mv "${PATH_MAIN}/zh_cn_out.lang" "${PATH_ASSETS}/${filename_mods}/lang/zh_cn.lang"
+					cp -f "${PATH_MODS}/${filename_mods}/lang/en_us.lang" "${PATH_ASSETS}/${filename_mods}/lang/en_us.lang"
 					rm ${PATH_MAIN}/en_us.lang
 					rm ${PATH_MAIN}/zh_cn.lang
 					break
@@ -92,6 +93,7 @@ for filename_mods in `ls`
 			echo "${filename_mods}"
 			mkdir -p "${PATH_ASSETS}/${filename_mods}/lang"
 			mv "${PATH_MODS}/${filename_mods}/lang/zh_cn_out.lang" "${PATH_ASSETS}/${filename_mods}/lang/zh_cn.lang"
+			cp -f "${PATH_MODS}/${filename_mods}/lang/en_us.lang" "${PATH_ASSETS}/${filename_mods}/lang/en_us.lang"
 			cd $PATH_MODS
 		fi
 done
