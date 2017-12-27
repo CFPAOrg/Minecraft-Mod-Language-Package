@@ -99,6 +99,10 @@ done
 cd $PATH_ASSETS
 for filename_assets in `ls`
 do
+  if [ ! -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" ];
+  then
+    touch "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
+  fi
   if [ -f "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" ];
   then
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" "${PATH_MAIN}/en_us.lang"
