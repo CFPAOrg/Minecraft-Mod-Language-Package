@@ -29,7 +29,7 @@ for root, dirs, files in os.walk("./assets", topdown=False):
         zh_key = list()
 
         zh_file = open(
-                "./assets/" + modname + "/lang/zh_cn.lang", 'r', encoding='UTF-8')
+            "./assets/" + modname + "/lang/zh_cn.lang", 'r', encoding='UTF-8')
 
         # 这一块读取行数居然发生过一个错误，貌似是解码问题
         # 还是写个try except来避免吧
@@ -40,7 +40,8 @@ for root, dirs, files in os.walk("./assets", topdown=False):
                 if entry != None and '=' in entry:
                     entry_list = entry.split('=', 1)        # 依据等号切分语言文件条目
                     zh_dict[entry_list[0]] = entry_list[1]  # 将语言文件全部写入映射表中
-                    zh_key.append(entry_list[0])            # 空key文件为之后for循环查找提供参考
+                    # 空key文件为之后for循环查找提供参考
+                    zh_key.append(entry_list[0])
 
             zh_file.close()
         except:
@@ -49,7 +50,7 @@ for root, dirs, files in os.walk("./assets", topdown=False):
 
         # 重新打开语言文件，这次开始剔除英文文本
         zh_file = open(
-                "./assets/" + modname + "/lang/zh_cn.lang", 'w', encoding='UTF-8')
+            "./assets/" + modname + "/lang/zh_cn.lang", 'w', encoding='UTF-8')
 
         # 开始遍历分析字符串
         for entry in zh_key:

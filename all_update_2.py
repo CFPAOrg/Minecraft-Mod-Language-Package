@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # @Author TartaricAcid
-# @Title 批量本地化更新工具（增量更新版本）
+# @Title 批量本地化更新工具
 ######################################
 
 print("all_update_2 Script Loading")

@@ -1,5 +1,8 @@
 #! /bin/bash
 #! /usr/bin/python3
+# @Author TartaricAcid
+# @Title 自动更新脚本主程序
+######################################
 
 # 进行github pull
 git pull
@@ -9,6 +12,7 @@ PATH_MAIN=`pwd`
 
 # 新建assets-tmp文件夹，放置临时从mod包中解压的语言文件
 mkdir assets-tmp
+# 新建mods文件夹，放置爬虫爬下来的mod
 mkdir mods
 
 # 爬虫下载mod

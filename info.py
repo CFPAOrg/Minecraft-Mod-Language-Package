@@ -18,7 +18,7 @@ for root, dirs, files in os.walk("./assets", topdown=False):
     for name in files:
         # 找到符合这个正则匹配的语言文件
         modid = re.findall(r"./assets/(.*)/lang/en_us.lang",
-                              os.path.join(root, name))
+                           os.path.join(root, name))
 
         # 不符合的会抛出异常，先用try语句包裹
         # 读取文件
@@ -42,7 +42,8 @@ for root, dirs, files in os.walk("./assets", topdown=False):
             for entry in en_us.readlines():
                 if entry != None and entry[0] != '#' and entry[0] != '/' and '=' in entry:
                     entry_list = entry.split('=', 1)        # 依据等号切分语言文件条目
-                    en_key.append(entry_list[0])            # 空key文件为之后for循环查找提供参考
+                    # 空key文件为之后for循环查找提供参考
+                    en_key.append(entry_list[0])
                     en_dict[entry_list[0]] = entry_list[1]
 
             for entry in zh_cn.readlines():
