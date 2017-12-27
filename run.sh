@@ -42,13 +42,15 @@ do
     echo "${filename_mods}模组的英文文件改写成小写"
     mv "${PATH_MODS}/${filename_mods}/lang/en_US.lang" "${PATH_MODS}/${filename_mods}/lang/en_us.lang"
     cd $PATH_MODS
-  elif [ -f "${PATH_MODS}/${filename_mods}/lang/zh_CN.lang" ];
+  fi
+  if [ -f "${PATH_MODS}/${filename_mods}/lang/zh_CN.lang" ];
   then
       echo "${filename_mods}模组的中文文件改写成小写并转换"
       mv "${PATH_MODS}/${filename_mods}/lang/zh_CN.lang" "${PATH_MODS}/${filename_mods}/lang/zh_cn_old.lang"
       cd $PATH_MODS
       continue
-  elif [ -f "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" ];
+  fi
+  if [ -f "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" ];
   then
     echo "${filename_mods}模组的中文文件转换"
     mv "${PATH_MODS}/${filename_mods}/lang/zh_cn.lang" "${PATH_MODS}/${filename_mods}/lang/zh_cn_old.lang"
@@ -72,14 +74,8 @@ cd $PATH_MODS
       do
         if [ "$filename_mods" == "$filename_assets" ];
         then
-          cp -f "${PATH_MODS}/${filename_mods}/lang/en_us.lang" "${PATH_ASSETS}/${filename_mods}/lang/en_us.lang"
-          cp -f "${PATH_MODS}/${filename_mods}/lang/zh_cn_out.lang" "${PATH_ASSETS}/${filename_mods}/lang/zh_cn_out.lang"
-          cd ${PATH_MAIN}
-          python3 all_update.py
-          mv "${PATH_MAIN}/zh_cn_out.lang" "${PATH_ASSETS}/${filename_mods}/lang/zh_cn.lang"
-          cp -f "${PATH_MODS}/${filename_mods}/lang/en_us.lang" "${PATH_ASSETS}/${filename_mods}/lang/en_us.lang"
-          rm ${PATH_MAIN}/en_us.lang
-          rm ${PATH_MAIN}/zh_cn.lang
+          cp -f "${PATH_MODS}/${filename_mods}/lang/en_us.lang" "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang"
+          cp -f "${PATH_MODS}/${filename_mods}/lang/zh_cn_old.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn_old.lang"
           break
         fi
       done
@@ -87,8 +83,8 @@ cd $PATH_MODS
       then
         echo "${filename_mods}"
         mkdir -p "${PATH_ASSETS}/${filename_mods}/lang"
-        mv "${PATH_MODS}/${filename_mods}/lang/zh_cn_out.lang" "${PATH_ASSETS}/${filename_mods}/lang/zh_cn_out.lang"
-        cp -f "${PATH_MODS}/${filename_mods}/lang/en_us.lang" "${PATH_ASSETS}/${filename_mods}/lang/en_us.lang"
+        cp -f "${PATH_MODS}/${filename_assets}/lang/en_us.lang" "${PATH_ASSETS}/${filename_mods}/lang/en_us.lang"
+        cp -f "${PATH_MODS}/${filename_mods}/lang/zh_cn_old.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn_old.lang"
         cd $PATH_MODS
       fi
 done

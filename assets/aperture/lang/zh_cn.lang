@@ -1,6 +1,3 @@
-#PARSE_ESCAPES
-
-# commands.yml
 aperture.commands.camera.clear=§l§6/§rcamera §8clear§r\n\n§r清除相机配置文件 (会移除所有相机关键点)
 aperture.commands.camera.default=§l§6/§rcamera §8default§r\n\n§r恢复相机的 §7FOV§r 和 §7翻滚角度§r 到默认设置(§7FOV 70.0§r 和 §70.0§r 度).
 aperture.commands.camera.fixture.add=§l§6/§rcamera §8add§r §7<idle|path|follow|look|circular> <duration>§r\n\n§r在相机配置的最后添加一个指定的类型和 §7<duration>§r（时长）的相机关键点。
@@ -26,15 +23,11 @@ aperture.commands.camera.start=§l§6/§rcamera §8start§r §7[tick]§r\n\n§r�
 aperture.commands.camera.step=§l§6/§rcamera §8step§r §7[x] [y] [z]§r\n\n§r根据绝对的数值或增减幅度设定摄像机位置。你可以通过指定数字设定绝对的摄像机位置 §6/camera §8step §70 4 0§r. 或者你可以通过§7+§r 或 §7-§r 标志来增加或减少位置数值 §6/camera §8step §7+0 +0.1 +0§r。很像 §6/tp§r 命令。
 aperture.commands.camera.stop=§l§6/§rcamera §8stop§r\n\n§r停止目前的相机配置。
 aperture.commands.load_chunks=§l§6/§rload_chunks\n\n本命令会加载渲染范围的所有区块。可能要等一会。
-
-# config.yml
 aperture.config.camera.camera_command_name=相机命令名称
-aperture.config.camera.camera_debug_ticks=Debug ticks
 aperture.config.camera.camera_duration=默认关键点时长
 aperture.config.camera.camera_duration_step=时长步骤
 aperture.config.camera.camera_interpolate_target=插入以目标为基础的帧
 aperture.config.camera.camera_interpolate_target_value=插入以目标为基础的值
-aperture.config.camera.camera_minema=Minema
 aperture.config.camera.camera_path_default_interp=默认插入路径类型
 aperture.config.camera.camera_rotate_factor=相机倾斜参数
 aperture.config.camera.camera_simulate_velocity=模拟速率
@@ -53,17 +46,13 @@ aperture.config.smooth.roll_speed=倾斜速度
 aperture.config.smooth.smooth_enabled=开启平滑相机
 aperture.config.smooth.title=平滑相机
 aperture.config.smooth.tooltip=平滑相机配置
-
-# config_comments.yml
 aperture.config.comments.camera.camera_command_name=允许你重新绑定相机命令的名字（需要重启游戏来生效）
-aperture.config.comments.camera.camera_debug_ticks=Write current camera playback tick to the log
 aperture.config.comments.camera.camera_duration=相机关键点的默认时长有多久？（tick）
 aperture.config.comments.camera.camera_duration_step=当使用快捷键改变关键点时长时，一次会增加/减少多少？（tick）
 aperture.config.comments.camera.camera_interpolate_target=插入目标为基础（follow和look）的相机关键点的结果
 aperture.config.comments.camera.camera_interpolate_target_value=插入目标为基础相机关键点的值
 aperture.config.comments.camera.camera_minema=为倾斜帧提供的相机倾斜参数
 aperture.config.comments.camera.camera_path_default_interp=插入路径时，路径的默认类型
-aperture.config.comments.camera.camera_rotate_factor=Camera rotate factor for rotate keys
 aperture.config.comments.camera.camera_simulate_velocity=在回放时模拟玩家走动摇摆（从腿的角度）
 aperture.config.comments.camera.camera_spectator=当开始播放相机回放时切换到旁观模式？
 aperture.config.comments.camera.camera_step_factor=为路径帧提供的相机路径参数
@@ -76,31 +65,22 @@ aperture.config.comments.smooth.mouse_y_friction=鼠标平滑Y轴摩擦力
 aperture.config.comments.smooth.roll_friction=倾斜加速摩擦力（慢下来有多快）
 aperture.config.comments.smooth.roll_speed=倾斜加速速度
 aperture.config.comments.smooth.smooth_enabled=开启平滑相机。嗡!嗡!嗡!
-
-# error.yml
 aperture.error.commands.load_chunks=无法加载渲染范围里所有已创建的区块！详情错误记录在日志里。
 aperture.error.fixture.empty=§f这个摄像机配置文件是空的！
 aperture.error.fixture.few_args=§f这个命令的参数给少了！
 aperture.error.fixture.no_entity=§f你应该看着某个实体来创建这个相机关键点！
 aperture.error.fixture.wrong_type=§f相机关键点类型 %s§f 不存在！
 aperture.error.profile.cant_load=§f无法以文件名 %s§f 加载摄像机配置。
-aperture.error.profile.cant_move=§fCan't move fixture at %s§f to %s§f, because one of the indices is out of range!
 aperture.error.profile.cant_save=§f无法以文件名 %s§f 保存摄像机配置。
-aperture.error.profile.client_cant_load=§fCan't load client camera profile by file name %s§f.
-aperture.error.profile.client_cant_save=§fCan't save client camera profile by file name %s§f.
 aperture.error.profile.empty_filename=§f这个相机配置文件没有名字！要解决此问题，请指定参数 §7[filename]§f 。
 aperture.error.profile.move_no_path_point=§f路径索引号 %s§f 里在索引号 %s§f 或 %s§f 里没有定点！
-aperture.error.profile.no_current=§fThere's no current camera profile selected!
 aperture.error.profile.no_path_point=§f路径索引号 %s§f 里在索引号 %s§f 里没有路径定点！
 aperture.error.profile.not_exists=§f在目前的相机配置文件里没有相机关键点在 %s§f 索引号里！
 aperture.error.profile.not_path=§f在索引号 %s§f 的关键点不是路径关键点！
-
-# gui.yml
 aperture.gui.add=添加
 aperture.gui.break=破坏
 aperture.gui.cancel=取消
 aperture.gui.config.flight=飞行模式 (F)
-aperture.gui.config.minema=Minema
 aperture.gui.config.show_path=显示路径
 aperture.gui.config.spectator=观看者
 aperture.gui.config.sync=同步 (S)
@@ -122,7 +102,6 @@ aperture.gui.panels.circle=圆圈
 aperture.gui.panels.circles=圆圈
 aperture.gui.panels.distance=长度
 aperture.gui.panels.duration=持续长度
-aperture.gui.panels.fov=FOV
 aperture.gui.panels.interps.cubic=三次曲线
 aperture.gui.panels.interps.hermite=艾米插值
 aperture.gui.panels.interps.linear=线性
@@ -133,10 +112,7 @@ aperture.gui.panels.pitch=俯仰
 aperture.gui.panels.position=位置
 aperture.gui.panels.roll=翻滚
 aperture.gui.panels.selector=选择器
-aperture.gui.panels.x=X
-aperture.gui.panels.y=Y
 aperture.gui.panels.yaw=偏航
-aperture.gui.panels.z=Z
 aperture.gui.pick=选择伪装...
 aperture.gui.previous=上一个
 aperture.gui.profiles.load=加载
@@ -163,21 +139,15 @@ aperture.gui.tooltips.plause=播放/暂停 (空格)
 aperture.gui.tooltips.profiles=显示相机配置
 aperture.gui.tooltips.remove=移除选择的关键点
 aperture.gui.tooltips.save=保存相机配置
-
-# info.yml
 aperture.info.camera.duration.fixture=§f在索引 %s§f 的相机关键点持续时长为 %s§f ticks。
 aperture.info.camera.duration.profile=§f摄像机配置时长为%s§f ticks，并且有%s§f个关键点。
 aperture.info.camera.fov=§f你的FOV为%s§f度。
 aperture.info.camera.roll=§f你的倾斜度为%s§f度。
 aperture.info.commands.load_chunks=§f已加载在渲染范围里的已创建区块。
-aperture.info.no_loaded_profiles=§fThere are no camera profiles loaded.
-aperture.info.profile.closed=§fCamera profile %s was from %s was closed.
 aperture.info.profile.loaded=§f名称为 %s§f 的相机配置文件已被加载！
 aperture.info.profile.new=§f已创建一个新的相机配置文件，命名为 %s§f。
 aperture.info.profile.start=§f目前的相机配置已经在运行。
 aperture.info.profile.stop=§f目前运行的相机配置已停止。
-
-# keys.yml
 key.aperture.camera=Aperture 翻滚和FOV
 key.aperture.camera_editor=相机编辑器
 key.aperture.control.rotateDown=视角向下
@@ -194,7 +164,6 @@ key.aperture.control.title=Aperture 控制
 key.aperture.fov.add=增大 FOV
 key.aperture.fov.reduce=减小 FOV
 key.aperture.fov.reset=重设 FOV
-key.aperture.misc=Aperture
 key.aperture.profile.start=开始相机配置
 key.aperture.profile.stop=停止相机配置
 key.aperture.profile.title=Aperture 相机
@@ -203,14 +172,10 @@ key.aperture.roll.add=顺时针翻滚
 key.aperture.roll.reduce=逆时针翻滚
 key.aperture.roll.reset=重设翻滚
 key.aperture.smooth_camera=平滑相机
-
-# misc.yml
 aperture.misc.client=客户端
 aperture.misc.profile_info=§f%s "%s" (%st, %s 个关键点)
 aperture.misc.profile_info_current=§6目前是 %s "%s" (%st, %s 个关键点)
 aperture.misc.server=服务器
-
-# success.yml
 aperture.success.profile.clear=§f目前的摄像机配置已清除。
 aperture.success.profile.client_load=§f客户端上的相机配置已读取为 %s§f。
 aperture.success.profile.client_save=§f客户端上的相机配置已保存到 %s§f。
