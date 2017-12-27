@@ -3,12 +3,12 @@
 # @Title 批量本地化更新工具（增量更新版本）
 ######################################
 
-print("add_update Script Loading")
+print("all_update_1 Script Loading")
 
 # 读取文件
 assets_en = open("en_us.lang", 'r', encoding='UTF-8')
-assets_zh = open("zh_cn.lang", 'r', encoding='UTF-8')
-assets_out = open("zh_cn_out.lang", 'w', encoding='UTF-8')
+assets_zh = open("zh_cn_old.lang", 'r', encoding='UTF-8')
+assets_out = open("en_zh.lang", 'w', encoding='UTF-8')
 
 # 放置中英文映射表
 en_dict = dict()
@@ -38,4 +38,4 @@ assets_en.close()
 assets_zh.close()
 assets_out.close()
 
-print("add_update Script Stop Load")
+print("all_update_1 Script Stop Load")

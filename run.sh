@@ -2,7 +2,7 @@
 #! /usr/bin/python3
 
 # 进行github pull
-# git pull
+git pull
 
 # 记录操作的主目录，方便后面操作
 PATH_MAIN=`pwd`
@@ -12,7 +12,7 @@ mkdir assets-tmp
 mkdir mods
 
 # 爬虫下载mod
-# python3 download.py
+python3 download.py
 
 # 这一块有一个奇怪的bug，如果在主目录下操作解压，整个解压会全部出错
 # 考虑到1.12的特殊性，有的作者用小写，有的用大写
@@ -88,3 +88,41 @@ cd $PATH_MODS
         cd $PATH_MODS
       fi
 done
+
+# 我们现在有了给weblate用的en_us, zh_cn，还有剔除冗余用的zh_cn_old
+# 接下来，需要将en_us, zh_cn_old混编（混编后命名为en_zh）
+# 然后en_zh和zh_cn对比更新
+cd $PATH_ASSETS
+for filename_assets in `ls`
+do
+  if [ ! -s "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" ];
+  then
+    cp -f "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" "${PATH_MAIN}/en_us.lang"
+    cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" "${PATH_MAIN}/zh_cn.lang"
+    cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn_old.lang" "${PATH_MAIN}/zh_cn_old.lang"
+    cd $PATH_MAIN
+    python3 all_update_1.py
+    python3 all_update_2.py
+    cp -f "${PATH_MAIN}/zh_cn_out.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
+  fi
+done
+
+# 删错不必要的残留文件
+cd $PATH_MAIN
+rm *.lang
+
+# 最后，删掉assets-tmp文件夹
+cd ${PATH_MAIN}
+rm -rf ./assets-tmp
+
+# 删掉mods文件，方便操作
+rm -rf ./mods
+
+# 生成统计数据
+# python3 info.py
+
+# 最后，进行 github 推送
+git add .
+commit_date=`date +%F`
+git commit -m "Auto Update By Shell Script, Update Time: ${commit_date}"
+git push
