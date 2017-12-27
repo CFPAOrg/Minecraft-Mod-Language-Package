@@ -95,7 +95,7 @@ done
 cd $PATH_ASSETS
 for filename_assets in `ls`
 do
-  if [ ! -s "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" ];
+  if [ -f "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" ];
   then
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" "${PATH_MAIN}/en_us.lang"
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" "${PATH_MAIN}/zh_cn.lang"
@@ -105,11 +105,14 @@ do
     python3 all_update_2.py
     cp -f "${PATH_MAIN}/zh_cn_out.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
   fi
+  # 删错不必要的残留文件
+  cd $PATH_MAIN
+  rm *.lang
 done
 
-# 删错不必要的残留文件
+# 删掉所有的英文文本
 cd $PATH_MAIN
-rm *.lang
+python3 delete_english.py
 
 # 最后，删掉assets-tmp文件夹
 cd ${PATH_MAIN}
@@ -119,7 +122,7 @@ rm -rf ./assets-tmp
 rm -rf ./mods
 
 # 生成统计数据
-# python3 info.py
+python3 info.py
 
 # 最后，进行 github 推送
 git add .

@@ -21,6 +21,7 @@ for root, dirs, files in os.walk("./assets", topdown=False):
             modname = modid[0]
         except:
             print("路径不存在")
+            continue
 
         # 存储语言文件映射表
         zh_dict = dict()

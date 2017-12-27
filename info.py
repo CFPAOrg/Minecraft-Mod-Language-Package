@@ -9,8 +9,6 @@ import re
 import os
 import time
 
-# 存储语言文件映射表
-zh_dict = dict()
 # 存储分析信息
 info_list = list()
 fre_list = list()
@@ -19,48 +17,67 @@ fre_list = list()
 for root, dirs, files in os.walk("./assets", topdown=False):
     for name in files:
         # 找到符合这个正则匹配的语言文件
-        modid = re.findall(r"./assets/(.*)/lang/zh_cn.lang",
-                           os.path.join(root, name))
+        modid = re.findall(r"./assets/(.*)/lang/en_us.lang",
+                              os.path.join(root, name))
 
         # 不符合的会抛出异常，先用try语句包裹
+        # 读取文件
         try:
-            zh_file = open(
-                "./assets/" + modid[0] + "/lang/zh_cn.lang", 'r', encoding='UTF-8')
+            en_us = open("./assets/" + modid[0] +
+                         "/lang/en_us.lang", 'r', encoding='UTF-8')
+            zh_cn = open("./assets/" + modid[0] +
+                         "/lang/zh_cn.lang", 'r', encoding='UTF-8')
+        except:
+            print("文件不存在")
+            continue
 
-            # 分析数据记录初始化
-            total = english = chinese = 0
+        # 放置中英文映射表
+        en_dict = dict()
+        zh_dict = dict()
 
-            # 开始遍历读取语言文件value
-            for entry in zh_file.readlines():
-                if entry != None and '=' in entry:
+        # 放置英文空key，用以for循环查找
+        en_key = list()
+
+        try:
+            for entry in en_us.readlines():
+                if entry != None and entry[0] != '#' and entry[0] != '/' and '=' in entry:
+                    entry_list = entry.split('=', 1)        # 依据等号切分语言文件条目
+                    en_key.append(entry_list[0])            # 空key文件为之后for循环查找提供参考
+                    en_dict[entry_list[0]] = entry_list[1]
+
+            for entry in zh_cn.readlines():
+                if entry != None and entry[0] != '#' and entry[0] != '/' and '=' in entry:
                     entry_list = entry.split('=', 1)        # 依据等号切分语言文件条目
                     zh_dict[entry_list[0]] = entry_list[1]
-
-                    total = total + 1   # 记录总条目
-                    is_chinese = False  # 记录是否为中文文本
-                    is_english = False  # 记录是否为英文文本
-
-                    if zh_dict[entry_list[0]] != None:
-                        for charset in zh_dict[entry_list[0]]:
-                            # 开始逐个分析字符串
-                            # 在 4e00 到 9fa5 之间为 20902 个基本汉字
-                            if u'\u4e00' <= charset <= u'\u9fa5':
-                                is_chinese = True
-                                break
-                            # 在 0041 到 005a, 0061 到 007a 之间为 26 个基本英文字母
-                            elif (u'\u0041' <= charset <= u'\u005a') or (u'\u0061' <= charset <= u'\u007a'):
-                                is_english = True
-                    if is_chinese:
-                        chinese = chinese + 1
-                    elif is_english:
-                        english = english + 1
-
-            # 将分析得到的数据全部处理，放入 list 中
-            info_list.append(modid[0] + "/" + str(total) +
-                             "/" + str(english) + "/" + str(chinese))
-            fre_list.append(str(english) + "/" + modid[0])
         except:
-            pass
+            print("编码有问题")
+
+        en_us.close()
+        zh_cn.close()
+
+        # 分析数据记录初始化
+        total = len(en_key)
+        english = chinese = 0
+
+        for entry in en_key:
+            is_english = False  # 记录是否为英文文本
+
+            try:        # 如果给定的英文key在中文映射表中不存在，抛出异常
+                en_dict[entry] = zh_dict[entry]
+                chinese = chinese + 1
+            except:
+                for charset in en_dict[entry]:
+                    # 在 0041 到 005a, 0061 到 007a 之间为 26 个基本英文字母
+                    if (u'\u0041' <= charset <= u'\u005a') or (u'\u0061' <= charset <= u'\u007a'):
+                        is_english = True
+
+                if is_english:
+                    english = english + 1
+
+        # 将分析得到的数据全部处理，放入 list 中
+        info_list.append(modid[0] + "/" + str(total) +
+                         "/" + str(english) + "/" + str(chinese))
+        fre_list.append(str(english) + "/" + modid[0])
 
 # 这个函数是给之后排序用的
 # 功能是拆分字符串，将英文词条数变成int类型
@@ -122,8 +139,14 @@ for entry in info_list:
 process.write("总计词条数：" + str(total_all) + "    \n")
 process.write("英文条数：" + str(total_en) + "    \n")
 process.write("中文条数：" + str(total_zh) + "    \n")
+
+if total_all == 0:
+    percentage = 100
+else:
+    percentage = round(((total_all - total_en) / total_all * 100), 2)
+
 process.write(
-    "完成率：" + str(round(((total_all - total_en) / total_all * 100), 2)) + "%    \n")
+    "完成率：" + str(percentage) + "%    \n")
 
 # 对未翻译数按照数量，进行统计
 # num用了记录个数
@@ -187,13 +210,14 @@ for entry in fre_list:
         continue
 
 # 最后，行尾加上分频统计数据
-process.write("### 未翻译条目大于等于 500 行的模组有 " + str(num1) +
-              " 个，占到了未翻译行数的 " + str(round(entry1 / total_en * 100, 2)) + " % 。\n")
-process.write("### 未翻译条目大于等于 100 行的模组有 " + str(num2) +
-              " 个，占到了未翻译行数的 " + str(round(entry2 / total_en * 100, 2)) + " % 。\n")
-process.write("### 未翻译条目大于等于 10 行的模组有 " + str(num3) +
-              " 个，占到了未翻译行数的 " + str(round(entry3 / total_en * 100, 2)) + " % 。\n")
-process.write("### 未翻译条目大于等于 1 行的模组有 " + str(num4) +
-              " 个，占到了未翻译行数的 " + str(round(entry4 / total_en * 100, 2)) + " % 。\n")
+if total_en != 0:
+    process.write("### 未翻译条目大于等于 500 行的模组有 " + str(num1) +
+                  " 个，占到了未翻译行数的 " + str(round(entry1 / total_en * 100, 2)) + " % 。\n")
+    process.write("### 未翻译条目大于等于 100 行的模组有 " + str(num2) +
+                  " 个，占到了未翻译行数的 " + str(round(entry2 / total_en * 100, 2)) + " % 。\n")
+    process.write("### 未翻译条目大于等于 10 行的模组有 " + str(num3) +
+                  " 个，占到了未翻译行数的 " + str(round(entry3 / total_en * 100, 2)) + " % 。\n")
+    process.write("### 未翻译条目大于等于 1 行的模组有 " + str(num4) +
+                  " 个，占到了未翻译行数的 " + str(round(entry4 / total_en * 100, 2)) + " % 。\n")
 
 process.close()
