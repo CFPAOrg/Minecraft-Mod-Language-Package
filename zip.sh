@@ -11,12 +11,15 @@ mkdir release
 PATH_MAIN=`pwd`
 PATH_RELE=${PATH_MAIN}/release
 
+# 复制材质包必须的几样东西
+# 材质包本体、识别文件、图标、说明、许可证
 cp -fr "${PATH_MAIN}/assets" "${PATH_MAIN}/release"
 cp -f "${PATH_MAIN}/pack.mcmeta" "${PATH_MAIN}/release/pack.mcmeta"
 cp -f "${PATH_MAIN}/pack.png" "${PATH_MAIN}/release/pack.png"
 cp -f "${PATH_MAIN}/README.md" "${PATH_MAIN}/release/README.md"
 cp -f "${PATH_MAIN}/LICENSE" "${PATH_MAIN}/release/LICENSE"
 
+# 首先对比zh_cn_old，剔除重复字符串
 cd ${PATH_MAIN}/release/assets
 for modid in `ls`
 do
@@ -33,7 +36,9 @@ do
   fi
 done
 
+# 然后打包
 cd "${PATH_MAIN}/release"
 zip -r "${PATH_MAIN}/Minecraft-Mod-Language-Modpack.zip" "assets" "pack.mcmeta"  "pack.png" "README.md" "LICENSE"
 
+# 删除临时文件夹
 rm -rf "${PATH_MAIN}/release"

@@ -1,0 +1,20 @@
+language: python
+python:
+- '3.6'
+before_install:
+- sudo apt-get install unzip
+script:
+- chmod +x zip.sh
+- ./zip.sh
+before_deploy:
+      # Set up git user name and tag this commit
+      - git config --local user.name "TartaricAcid"
+      - git config --local user.email "baka943@qq.com"
+      - git tag "汉化资源包-$(date +'%Y-%m-%d-%H-%M-%S')"
+deploy:
+  provider: releases
+  api_key:
+    secure: RB4RPtr4d6c97l7zw+D1O7sNyiBfyBxOusb2ZgNJc9bwD+Tl1vUSXTR7WkCqGEN2iiahFbWIxUC3hRejD5hTfDIciMyQGTJ3uXC+OMf+JK79SkSgwHNudgliKCttiuwd/nlKG0V7TFXr7P/RhP4e0eyA4ZCIJvwfggVTZn7IpfnNhNNjTcEFEyzfTEgIsi3Ac0fqPP38wlSE9cfVepLPYj56ITnlzFUdawlnuh0d8IWoqV83TY7mctjnxxapPJb6f0a0TlSo0BIbM28iBNX5XE+shuMByTLHBzrRH2OlM3eiTJxNkfqwMM0tAEyiNh0mba+d2rRRL9bq5y6bKb1KDILEItHqySPlgXjI5UZYT76w/F74w29Tpem0gtk55Df7rs6TVJpLX8J/4CeZ3Ar4fm9B6ZLyZSDpTX/czA49LEhPezUKeIXudKoqm4mqPnVE3TgIelbcVs+BbBfqetaJ4P3B+gylYaJD44zECe3JDMl5ylOcywDp/7CdsGM/WCXLjwGNwNuyDfV5IYqUS2wB6q4Ff2sO023ilu10u0rwREXM/YJUtNQMd+8I5Gl8tH45hPesqNaSWB+sxGdPlTPUoZIAxV0bUmSCm2nXM/t0bR5Sf/Mcxw5s3BlM9hAQp+EM2WIGp/iYnSrmfD6tt/GPcbSrh0cG1P0Rd2tQz1mVQaU=
+  file: Minecraft-Mod-Language-Modpack.zip
+  on:
+    repo: TartaricAcid/Minecraft-Mod-Language-Package
