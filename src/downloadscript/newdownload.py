@@ -15,10 +15,10 @@ from requests.utils import requote_uri
 print("Download Script Loading")
 starttime = datetime.datetime.now()
 LOG_DICT = {}  # 记录更新的哈希表
-COURSEFOGE_PAGES = 20  # 要下载courseforge的页数
+COURSEFOGE_PAGES = 20  # 要下载curseforge的页数
 GAME_VERSION = '1.12.2'  # 要下载的游戏版本
 DOWNLOAD_COURSEFORGE_PAGE_THREADS = 5  # 允许几个线程同时下载
-MAX_MOD_DOWNLOAD_THREADS=20  #最多允许同时几个线程获取mod的下载链接
+MAX_MOD_DOWNLOAD_THREADS = 20  # 最多允许同时几个线程获取mod的下载链接
 MODID_QUEUE = queue.Queue()  # 记录modid用队列
 MOD_INFO_QUEUE = queue.Queue()
 # 对应不同版本的URL参数，留作备用
@@ -58,7 +58,8 @@ class get_mod_download_link(threading.Thread):
         mod_download_page = "https://www.curseforge.com/minecraft/mc-mods/{}/files/?{}".format(
             self.modid, self.version_number)
         try:
-            mod_dowload_page_raw = requests.get(requote_uri(mod_download_page)).text
+            mod_dowload_page_raw = requests.get(
+                requote_uri(mod_download_page)).text
         except OSError:
             self.modidqueue.put(self.modid)
             print("获取下载列表页面失败，将重新尝试")
@@ -66,16 +67,18 @@ class get_mod_download_link(threading.Thread):
         project_file_id = re.findall(r"\"ProjectFileID\": (.*),",
                                      mod_dowload_page_raw)
         if len(project_file_id) != 0:
-            raw_download_url = "https://www.curseforge.com/minecraft/mc-mods/{}/download/{}/file".format(self.modid, project_file_id[0])
+            raw_download_url = "https://www.curseforge.com/minecraft/mc-mods/{}/download/{}/file".format(
+                self.modid, project_file_id[0])
             try:
-                real_url = requests.request(method='get', url=raw_download_url, allow_redirects=False)
+                real_url = requests.request(
+                    method='get', url=raw_download_url, allow_redirects=False)
             except OSError:
                 self.modidqueue.put(self.modid)
                 print("获取下载链接失败将会重新尝试")
                 exit()
             real_url = real_url.headers.get('Location')
             print('''
-            ############################### 
+            ###############################
             # 下载模组：{}
             # 下载地址：{}
             # 文件ID： {}
@@ -111,7 +114,6 @@ while True:
         COUNTER = COUNTER + 1
     elif (len(threading.enumerate()) == 1) and (
             COUNTER > len(DOWNLOAD_COURSEFORGE_PAGE_THREAD_LIST) - 1):
-
         break
 
 while True:
@@ -122,19 +124,22 @@ while True:
         temp.start()
     elif (MODID_QUEUE.empty) and (len(threading.enumerate()) == 1):
         break
-with open('download.log','w+',encoding='UTF-8') as download_log:
-     download_log.writelines("# {}{}".format(time.strftime("%Y-%m-%d-%H:%M:%S", time.localtime()), "\n\n"))
-     while not MOD_INFO_QUEUE.empty():
-         modinfoinstance = MOD_INFO_QUEUE.get()
-         try:
-             if int(LOG_DICT[modinfoinstance[0]])==int(modinfoinstance[2]):
-                 print("{} 不需要更新".format(modinfoinstance[0]))
-             else:
-                 print("{} 已经更新".format(modinfoinstance[0]))
-         except KeyError:
-             print("{} 是新添加的Mod".format(modinfoinstance[0]))
-         download_log.writelines("{}={}\n".format(modinfoinstance[0], modinfoinstance[2]))
-endtime = datetime.datetime.now()
-print("本次一共执行了 {} 秒".format((endtime - starttime).seconds))
-    
 
+with open('download.log', 'w+', encoding='UTF-8') as download_log:
+    download_log.writelines("# {}{}".format(time.strftime(
+        "%Y-%m-%d %H:%M:%S", time.localtime()), "\n\n"))
+    while not MOD_INFO_QUEUE.empty():
+        modinfoinstance = MOD_INFO_QUEUE.get()
+        try:
+            if int(LOG_DICT[modinfoinstance[0]]) == int(modinfoinstance[2]):
+                print("{} 不需要更新".format(modinfoinstance[0]))
+            else:
+                print("{} 已经更新".format(modinfoinstance[0]))
+        except KeyError:
+            print("{} 是新添加的Mod".format(modinfoinstance[0]))
+        download_log.writelines("{}={}\n".format(
+            modinfoinstance[0], modinfoinstance[2]))
+
+endtime = datetime.datetime.now()
+
+print("本次一共执行了 {} 秒".format((endtime - starttime).seconds))

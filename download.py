@@ -91,7 +91,7 @@ for num in range(1, 20):
                     download_log.write(i + "=" + project_file_id[0] + "\n")
                     download_log.close()
                 else:
-                    # 下载 mod，因为网速不行，暂时关闭
+                    # 下载 mod
                     urllib.request.urlretrieve(
                         real_url, "./mods/" + project_file_id[0])
                     print(i + " 模组更新完毕\n")
