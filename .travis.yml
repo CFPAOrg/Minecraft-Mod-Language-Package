@@ -1,4 +1,3 @@
-# Travis CI 配置文件
 language: python
 python:
 - '3.6'
@@ -6,16 +5,16 @@ before_install:
 - sudo apt-get install unzip
 script:
 - chmod +x zip.sh
-- ./zip.sh
+- "./zip.sh"
 before_deploy:
-      # Set up git user name and tag this commit
-      - git config --local user.name "TartaricAcid"
-      - git config --local user.email "baka943@qq.com"
-      - git tag "汉化资源包-$(date +'%Y-%m-%d-%H-%M-%S')"
+- git config --local user.name "TartaricAcid"
+- git config --local user.email "baka943@qq.com"
+- git tag "汉化资源包-Snapshot-$(date +'%Y-%m-%d-%H-%M-%S')"
 deploy:
   provider: releases
   api_key:
-    secure: RB4RPtr4d6c97l7zw+D1O7sNyiBfyBxOusb2ZgNJc9bwD+Tl1vUSXTR7WkCqGEN2iiahFbWIxUC3hRejD5hTfDIciMyQGTJ3uXC+OMf+JK79SkSgwHNudgliKCttiuwd/nlKG0V7TFXr7P/RhP4e0eyA4ZCIJvwfggVTZn7IpfnNhNNjTcEFEyzfTEgIsi3Ac0fqPP38wlSE9cfVepLPYj56ITnlzFUdawlnuh0d8IWoqV83TY7mctjnxxapPJb6f0a0TlSo0BIbM28iBNX5XE+shuMByTLHBzrRH2OlM3eiTJxNkfqwMM0tAEyiNh0mba+d2rRRL9bq5y6bKb1KDILEItHqySPlgXjI5UZYT76w/F74w29Tpem0gtk55Df7rs6TVJpLX8J/4CeZ3Ar4fm9B6ZLyZSDpTX/czA49LEhPezUKeIXudKoqm4mqPnVE3TgIelbcVs+BbBfqetaJ4P3B+gylYaJD44zECe3JDMl5ylOcywDp/7CdsGM/WCXLjwGNwNuyDfV5IYqUS2wB6q4Ff2sO023ilu10u0rwREXM/YJUtNQMd+8I5Gl8tH45hPesqNaSWB+sxGdPlTPUoZIAxV0bUmSCm2nXM/t0bR5Sf/Mcxw5s3BlM9hAQp+EM2WIGp/iYnSrmfD6tt/GPcbSrh0cG1P0Rd2tQz1mVQaU=
+    secure: bs5a/JZGnzUtiDLMO6XlWvl6oZJEjr+GiVW00cm8Y/mTCMuU0V9jKBiZUT+iKCwaleelpxq75vo2VJMzztR+pA5Hx5ET4qKrm959NTU15Cp/8ZCBT9zDXX4NL0MeCoze0lcvOVlC2duM1bR1Nz5iPr8ZWZzGB0BnJIQSbG7tJXLs636JjOUBIoijSyxfQkkqpmrYRxFGZh7BhnyXN++KJdgyYEn+7BTcresCd7BG8drfnV9iywtl5fD2AQgj1vkBtMqIpGwZ/GBHeHdS/7u1roWqUczSf3rE5RW1/D7klk1kcmGr5bOC7zJE0IhWPMwwVflvy7OEggEkHsnewsi1p0qxK9lo+9W4+i1YvI6ULmeIox9LWt4AG1esDS5wCsG/qw2zW2NNT/6/ORdlmeFvoXJTuLVG+9ZwGcqz+SWmZG4imTAVliJ+oPZq8w8hKJozYERHXT5ZAmidYdNF/DXQbwJ68HoMkBAok24+3dC4uDZE0b8yBtD/+TeOb+PH9b9KGoyH5ki5x8eFten2Tq6TfY7cBA/i5jof1UIC3zQ/pDrzrpSN8hMoYc1pRbaLVc80Zg1KZsi+uYR8kUN66BUP4T8o92R06e7I6ynQ34hoUe/7eu2PadKtE6E9OvUH3osCmFiMTEi8BAj6zGFIMEl9WE3D5hM0dzLUmYCQyGxtzWc=
   file: Minecraft-Mod-Language-Modpack.zip
   on:
     repo: TartaricAcid/Minecraft-Mod-Language-Package
+    branch: 1.12.2
