@@ -23,6 +23,9 @@ for lines in weblate.readlines():
     if path == "file_path" or path == ":--:":
         continue
     os.makedirs(path)
-    urllib.request.urlretrieve(url, path + "/zh_cn.lang")
+    try:
+        urllib.request.urlretrieve(url, path + "/zh_cn.lang")
+    except:
+        print("地址有误，可能是发生了变动\n无效地址为：" + url)
 
 weblate.close()
