@@ -12,6 +12,7 @@ PATH_MAIN=`pwd`
 
 # 新建assets-tmp文件夹，放置临时从mod包中解压的语言文件
 mkdir assets-tmp
+
 # 新建mods文件夹，放置爬虫爬下来的mod
 mkdir mods
 
@@ -109,18 +110,39 @@ do
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" "${PATH_MAIN}/zh_cn.lang"
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn_old.lang" "${PATH_MAIN}/zh_cn_old.lang"
     cd $PATH_MAIN
-    python3 all_update_1.py
-    python3 all_update_2.py
-    cp -f "${PATH_MAIN}/zh_cn_out.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
+    python3 all_update_1.py   # 第一步：en_us和zh_cn_old混编得到en_zh
+    python3 all_update_2.py   # 第二步：en_zh和zh_cn对比更新得到zh_cn_out
+    python3 all_update_3.py   # 第三步：zh_cn_out和en_us对比更新得到zh_cn_del
+    cp -f "${PATH_MAIN}/zh_cn_del.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
   fi
   # 删错不必要的残留文件
   cd $PATH_MAIN
   rm *.lang
 done
 
-# 删掉所有的英文文本
+# 接下来，按照雪尼的提醒
+# 剔除不需要放入weblate的mod
+
+# 首先，读取black.list
 cd $PATH_MAIN
-python3 delete_english.py
+i=0
+for line in `cat black.list`
+do
+  list[$i]=${line}
+  i=`expr $i + 1`
+done
+
+# 接下来，删除这些文件夹
+i=0
+cd $PATH_ASSETS
+for filename_assets in `ls`
+do
+  if [ ${list[$i]} = ${filename_assets} ]
+  then
+    rm -rf "${list[$i]}"
+    i=`expr $i + 1`
+  fi
+done
 
 # 最后，删掉assets-tmp文件夹
 cd ${PATH_MAIN}
