@@ -123,28 +123,19 @@ do
   rm *.lang
 done
 
-# 接下来，按照雪尼的提醒
-# 剔除不需要放入weblate的mod
-
-# 首先，读取black.list
-cd $PATH_MAIN
-i=0
-for line in `cat black.list`
+# 接下来，按照雪尼的提醒，剔除不需要放入weblate的mod
+# 读取black.list文件
+# 然后删除文件夹
+for del_file in `cat black.list`
 do
-  list[$i]=${line}
-  i=`expr $i + 1`
-done
-
-# 接下来，删除这些文件夹
-i=0
-cd $PATH_ASSETS
-for filename_assets in `ls`
-do
-  if [ ${list[$i]} = ${filename_assets} ]
-  then
-    rm -rf "${list[$i]}"
-    i=`expr $i + 1`
-  fi
+  cd $PATH_ASSETS
+  for filename_assets in `ls`
+  do
+    if [ ${del_file} = ${filename_assets} ]
+    then
+      rm -rf "${del_file}"
+    fi
+  done
 done
 
 # 最后，删掉assets-tmp文件夹

@@ -1,10 +1,10 @@
 # 词条更新分频统计列表
-更新时间：2017-12-29 16:58:28
+更新时间：2017-12-29 17:30:14
 
-总计词条数：71206    
-英文条数：25483    
-中文条数：45524    
-完成率：64.21%    
+总计词条数：68087    
+英文条数：25042    
+中文条数：42846    
+完成率：63.22%    
 
 ## 未翻译条目大于等于500行 
 | 序号 | modid | 未翻译条目 | 
@@ -28,35 +28,33 @@
  | 5 | terraqueous | 361 | 
  | 6 | dsurround | 301 | 
  | 7 | tp | 291 | 
- | 8 | ftbu | 271 | 
- | 9 | xreliquary | 263 | 
- | 10 | lycanitesmobs | 249 | 
- | 11 | inventorypets | 249 | 
- | 12 | backpacks16840 | 221 | 
- | 13 | mikedongles | 208 | 
- | 14 | pokecube_adventures | 191 | 
- | 15 | customnpcs | 185 | 
- | 16 | infernalmobs | 177 | 
- | 17 | mapwriter | 172 | 
- | 18 | integrateddynamicscompat | 166 | 
- | 19 | ultimate_unicorn_mod | 161 | 
- | 20 | chisel | 159 | 
- | 21 | evilcraft | 139 | 
- | 22 | demonmobs | 133 | 
- | 23 | immersiveengineering | 130 | 
- | 24 | schematica | 129 | 
- | 25 | morph | 128 | 
+ | 8 | xreliquary | 263 | 
+ | 9 | lycanitesmobs | 249 | 
+ | 10 | inventorypets | 249 | 
+ | 11 | backpacks16840 | 221 | 
+ | 12 | mikedongles | 208 | 
+ | 13 | pokecube_adventures | 191 | 
+ | 14 | customnpcs | 185 | 
+ | 15 | infernalmobs | 177 | 
+ | 16 | mapwriter | 172 | 
+ | 17 | integrateddynamicscompat | 166 | 
+ | 18 | ultimate_unicorn_mod | 161 | 
+ | 19 | evilcraft | 139 | 
+ | 20 | demonmobs | 133 | 
+ | 21 | immersiveengineering | 130 | 
+ | 22 | schematica | 129 | 
+ | 23 | morph | 128 | 
+ | 24 | forestry | 127 | 
+ | 25 | creeperhost | 127 | 
  | 26 | randomthings | 127 | 
- | 27 | forestry | 127 | 
- | 28 | creeperhost | 127 | 
- | 29 | shadowmobs | 114 | 
- | 30 | darkutils | 112 | 
- | 31 | extracells | 107 | 
- | 32 | arcticmobs | 102 | 
- | 33 | ftbl | 102 | 
- | 34 | botania | 100 | 
- | 35 | journeymap | 100 | 
- | 36 | infernomobs | 100 | 
+ | 27 | shadowmobs | 114 | 
+ | 28 | darkutils | 112 | 
+ | 29 | extracells | 107 | 
+ | 30 | ftbl | 102 | 
+ | 31 | arcticmobs | 102 | 
+ | 32 | botania | 100 | 
+ | 33 | journeymap | 100 | 
+ | 34 | infernomobs | 100 | 
 
 ## 未翻译条目大于等于10行 
 | 序号 | modid | 未翻译条目 | 
@@ -76,8 +74,8 @@
  | 13 | sgextraparts | 81 | 
  | 14 | thutcore | 80 | 
  | 15 | freshwatermobs | 79 | 
- | 16 | saltwatermobs | 77 | 
- | 17 | hats | 77 | 
+ | 16 | hats | 77 | 
+ | 17 | saltwatermobs | 77 | 
  | 18 | morechickens | 72 | 
  | 19 | mekanism | 69 | 
  | 20 | forestmobs | 68 | 
@@ -87,23 +85,23 @@
  | 24 | eiramoticons | 56 | 
  | 25 | chococraft | 55 | 
  | 26 | actuallyadditions | 54 | 
- | 27 | thermalexpansion | 53 | 
- | 28 | environmentaltech | 53 | 
- | 29 | twilightforest | 53 | 
+ | 27 | twilightforest | 53 | 
+ | 28 | thermalexpansion | 53 | 
+ | 29 | environmentaltech | 53 | 
  | 30 | enchiridion | 53 | 
- | 31 | hammercore | 51 | 
- | 32 | tails | 51 | 
+ | 31 | tails | 51 | 
+ | 32 | hammercore | 51 | 
  | 33 | parachutemod | 48 | 
  | 34 | cofh | 46 | 
- | 35 | ingameinfo | 44 | 
- | 36 | psi | 44 | 
+ | 35 | psi | 44 | 
+ | 36 | ingameinfo | 44 | 
  | 37 | projecte | 43 | 
- | 38 | openmods | 41 | 
+ | 38 | armorplus | 41 | 
  | 39 | xtones | 41 | 
- | 40 | armorplus | 41 | 
+ | 40 | openmods | 41 | 
  | 41 | portalgun | 40 | 
- | 42 | presets | 38 | 
- | 43 | opencomputers | 38 | 
+ | 42 | opencomputers | 38 | 
+ | 43 | presets | 38 | 
  | 44 | sync | 37 | 
  | 45 | astralsorcery | 36 | 
  | 46 | extrautils2 | 36 | 
@@ -115,167 +113,165 @@
  | 52 | betterwithmods | 26 | 
  | 53 | farmingforblockheads | 25 | 
  | 54 | colossalchests | 25 | 
- | 55 | wolfarmor | 24 | 
+ | 55 | stevescarts | 24 | 
  | 56 | mobends | 24 | 
- | 57 | zerocore | 24 | 
- | 58 | stevescarts | 24 | 
- | 59 | mputils | 23 | 
- | 60 | brandonscore | 23 | 
- | 61 | rftools | 23 | 
- | 62 | commoncapabilities | 23 | 
- | 63 | industrialwires | 22 | 
- | 64 | enderutilities | 22 | 
+ | 57 | wolfarmor | 24 | 
+ | 58 | zerocore | 24 | 
+ | 59 | rftools | 23 | 
+ | 60 | commoncapabilities | 23 | 
+ | 61 | brandonscore | 23 | 
+ | 62 | mputils | 23 | 
+ | 63 | enderutilities | 22 | 
+ | 64 | industrialwires | 22 | 
  | 65 | aromabackuprecovery | 21 | 
  | 66 | minetogetherserver | 21 | 
  | 67 | mcopts | 21 | 
- | 68 | draconicevolution | 20 | 
- | 69 | vending | 20 | 
- | 70 | lootbags | 19 | 
- | 71 | shear | 19 | 
- | 72 | treechopper | 17 | 
- | 73 | flyringbaublemod | 17 | 
+ | 68 | vending | 20 | 
+ | 69 | draconicevolution | 20 | 
+ | 70 | shear | 19 | 
+ | 71 | lootbags | 19 | 
+ | 72 | flyringbaublemod | 17 | 
+ | 73 | treechopper | 17 | 
  | 74 | nei | 16 | 
- | 75 | tinkersaddons | 16 | 
- | 76 | giacomos_fishing_net | 16 | 
- | 77 | funkylocomotion | 15 | 
+ | 75 | giacomos_fishing_net | 16 | 
+ | 76 | tinkersaddons | 16 | 
+ | 77 | chiselsandbits | 15 | 
  | 78 | morefurnaces | 15 | 
  | 79 | igwmod | 15 | 
- | 80 | chiselsandbits | 15 | 
+ | 80 | funkylocomotion | 15 | 
  | 81 | embers | 14 | 
  | 82 | tconstruct | 14 | 
  | 83 | autopackager | 13 | 
- | 84 | harvestcraft | 13 | 
- | 85 | inventorysorter | 13 | 
- | 86 | woot | 13 | 
+ | 84 | woot | 13 | 
+ | 85 | harvestcraft | 13 | 
+ | 86 | inventorysorter | 13 | 
  | 87 | weather2 | 12 | 
  | 88 | mobdismemberment | 12 | 
  | 89 | aromabackup | 11 | 
  | 90 | voxelmap | 11 | 
- | 91 | pokecube_compat | 10 | 
+ | 91 | teslacorelib | 10 | 
  | 92 | bibliocraft | 10 | 
- | 93 | compactmachines3 | 10 | 
- | 94 | compacter | 10 | 
- | 95 | aroma1997sdimension | 10 | 
- | 96 | teslacorelib | 10 | 
+ | 93 | pokecube_compat | 10 | 
+ | 94 | compactmachines3 | 10 | 
+ | 95 | compacter | 10 | 
+ | 96 | aroma1997sdimension | 10 | 
  | 97 | industrialforegoing | 10 | 
 
 ## 未翻译条目小于10行 
 | 序号 | modid | 未翻译条目 | 
 | :--: | :--: | :--: | 
- | 1 | plustic | 9 | 
- | 2 | bdlib | 9 | 
+ | 1 | bdlib | 9 | 
+ | 2 | moofluids | 9 | 
  | 3 | eleccore | 9 | 
  | 4 | totemic | 9 | 
- | 5 | moofluids | 9 | 
- | 6 | simplecorn | 8 | 
- | 7 | avaritia | 8 | 
- | 8 | veinminer | 8 | 
- | 9 | guideapi | 8 | 
- | 10 | chesttransporter | 8 | 
- | 11 | appliedenergistics2 | 8 | 
- | 12 | thedragonlib | 8 | 
- | 13 | magicbees | 8 | 
- | 14 | clienttweaks | 7 | 
- | 15 | waddles | 7 | 
- | 16 | llibrary | 7 | 
- | 17 | placementpreview | 7 | 
- | 18 | jei | 7 | 
- | 19 | jeresources | 7 | 
- | 20 | bigreactors | 6 | 
+ | 5 | plustic | 9 | 
+ | 6 | avaritia | 8 | 
+ | 7 | magicbees | 8 | 
+ | 8 | chesttransporter | 8 | 
+ | 9 | simplecorn | 8 | 
+ | 10 | thedragonlib | 8 | 
+ | 11 | guideapi | 8 | 
+ | 12 | appliedenergistics2 | 8 | 
+ | 13 | veinminer | 8 | 
+ | 14 | llibrary | 7 | 
+ | 15 | placementpreview | 7 | 
+ | 16 | jeresources | 7 | 
+ | 17 | waddles | 7 | 
+ | 18 | clienttweaks | 7 | 
+ | 19 | bigreactors | 6 | 
+ | 20 | storagedrawers | 6 | 
  | 21 | itemscroller | 6 | 
- | 22 | fenceoverhaul | 6 | 
- | 23 | abyssalcraft | 6 | 
- | 24 | storagedrawers | 6 | 
- | 25 | thermalfoundation | 6 | 
+ | 22 | thermalfoundation | 6 | 
+ | 23 | fenceoverhaul | 6 | 
+ | 24 | abyssalcraft | 6 | 
+ | 25 | advgenerators | 5 | 
  | 26 | excompressum | 5 | 
- | 27 | creeperconfetti | 5 | 
+ | 27 | moreoverlays | 5 | 
  | 28 | cofhworld | 5 | 
- | 29 | trashslot | 5 | 
- | 30 | blockarmor | 5 | 
- | 31 | cyclopscore | 5 | 
+ | 29 | blockarmor | 5 | 
+ | 30 | creeperconfetti | 5 | 
+ | 31 | cfm | 5 | 
  | 32 | techreborn | 5 | 
- | 33 | moreoverlays | 5 | 
- | 34 | cfm | 5 | 
- | 35 | advgenerators | 5 | 
- | 36 | vampirism | 4 | 
- | 37 | lteleporters | 4 | 
- | 38 | omlib | 4 | 
- | 39 | immersivepetroleum | 4 | 
- | 40 | bettertitlescreen | 4 | 
- | 41 | chisel_guide | 4 | 
- | 42 | flatcoloredblocks | 4 | 
- | 43 | integratedtunnels | 4 | 
+ | 33 | trashslot | 5 | 
+ | 34 | cyclopscore | 5 | 
+ | 35 | bettertitlescreen | 4 | 
+ | 36 | integratedtunnels | 4 | 
+ | 37 | solarfluxreborn | 4 | 
+ | 38 | bqt | 4 | 
+ | 39 | vampirism | 4 | 
+ | 40 | omlib | 4 | 
+ | 41 | immersivepetroleum | 4 | 
+ | 42 | lteleporters | 4 | 
+ | 43 | hatchery | 4 | 
  | 44 | malisisdoors | 4 | 
- | 45 | bqt | 4 | 
- | 46 | hatchery | 4 | 
- | 47 | solarfluxreborn | 4 | 
- | 48 | snad | 3 | 
- | 49 | wawla | 3 | 
- | 50 | magneticraft | 3 | 
- | 51 | engineersworkshop | 3 | 
- | 52 | malisiscore | 3 | 
- | 53 | topaddons | 3 | 
- | 54 | gravestone | 3 | 
- | 55 | chickens | 3 | 
- | 56 | tinkertoolleveling | 3 | 
+ | 45 | flatcoloredblocks | 4 | 
+ | 46 | wawla | 3 | 
+ | 47 | tinkertoolleveling | 3 | 
+ | 48 | librarianlib | 3 | 
+ | 49 | snad | 3 | 
+ | 50 | chickens | 3 | 
+ | 51 | malisiscore | 3 | 
+ | 52 | engineersworkshop | 3 | 
+ | 53 | openblocks | 3 | 
+ | 54 | tinker_io | 3 | 
+ | 55 | hardcoremapreset | 3 | 
+ | 56 | gravestone | 3 | 
  | 57 | rftoolsdim | 3 | 
- | 58 | hardcoremapreset | 3 | 
- | 59 | openblocks | 3 | 
- | 60 | tinker_io | 3 | 
+ | 58 | magneticraft | 3 | 
+ | 59 | morebees | 3 | 
+ | 60 | deepresonance | 3 | 
  | 61 | fairylights | 3 | 
- | 62 | librarianlib | 3 | 
- | 63 | morebees | 3 | 
- | 64 | deepresonance | 3 | 
- | 65 | wailaharvestability | 2 | 
- | 66 | thermaldynamics | 2 | 
- | 67 | bettersprinting | 2 | 
- | 68 | modnametooltip | 2 | 
- | 69 | shadowmc | 2 | 
- | 70 | multistorage | 2 | 
+ | 62 | topaddons | 3 | 
+ | 63 | bettersprinting | 2 | 
+ | 64 | simplevoidworld | 2 | 
+ | 65 | thermaldynamics | 2 | 
+ | 66 | battletowers | 2 | 
+ | 67 | modnametooltip | 2 | 
+ | 68 | chickenchunks | 2 | 
+ | 69 | valkyrielib | 2 | 
+ | 70 | birdsnests | 2 | 
  | 71 | theoneprobe | 2 | 
  | 72 | fluxnetworks | 2 | 
- | 73 | valkyrielib | 2 | 
- | 74 | simplevoidworld | 2 | 
- | 75 | battletowers | 2 | 
- | 76 | chickenchunks | 2 | 
- | 77 | chancecubes | 2 | 
- | 78 | ae2stuff | 2 | 
- | 79 | aroma1997core | 2 | 
- | 80 | betterquesting | 2 | 
- | 81 | birdsnests | 2 | 
- | 82 | rebornstorage | 2 | 
- | 83 | ironchest | 1 | 
- | 84 | base | 1 | 
- | 85 | platforms | 1 | 
- | 86 | roots | 1 | 
- | 87 | thermalcultivation | 1 | 
- | 88 | blur | 1 | 
- | 89 | compactsolars | 1 | 
+ | 73 | multistorage | 2 | 
+ | 74 | ae2stuff | 2 | 
+ | 75 | aroma1997core | 2 | 
+ | 76 | chancecubes | 2 | 
+ | 77 | shadowmc | 2 | 
+ | 78 | betterquesting | 2 | 
+ | 79 | rebornstorage | 2 | 
+ | 80 | wailaharvestability | 2 | 
+ | 81 | loginshield | 1 | 
+ | 82 | claybucket | 1 | 
+ | 83 | xnet | 1 | 
+ | 84 | rangedpumps | 1 | 
+ | 85 | vampirismguide | 1 | 
+ | 86 | platforms | 1 | 
+ | 87 | rustic | 1 | 
+ | 88 | wct | 1 | 
+ | 89 | calculator | 1 | 
  | 90 | longfallboots | 1 | 
- | 91 | googlyeyes | 1 | 
- | 92 | wct | 1 | 
- | 93 | vampirismguide | 1 | 
- | 94 | nice | 1 | 
- | 95 | tanaddons | 1 | 
- | 96 | xnet | 1 | 
- | 97 | enderstorage | 1 | 
- | 98 | minecolonies | 1 | 
- | 99 | exchangers | 1 | 
- | 100 | shearmadness | 1 | 
- | 101 | netherportalfix | 1 | 
- | 102 | calculator | 1 | 
- | 103 | soulshardstow | 1 | 
- | 104 | moartinkers | 1 | 
- | 105 | claybucket | 1 | 
- | 106 | controlling | 1 | 
- | 107 | furnus | 1 | 
+ | 91 | roots | 1 | 
+ | 92 | ironchest | 1 | 
+ | 93 | controlling | 1 | 
+ | 94 | enderstorage | 1 | 
+ | 95 | shearmadness | 1 | 
+ | 96 | moartinkers | 1 | 
+ | 97 | thermalcultivation | 1 | 
+ | 98 | netherportalfix | 1 | 
+ | 99 | betterbuilderswands | 1 | 
+ | 100 | tesla | 1 | 
+ | 101 | nice | 1 | 
+ | 102 | exchangers | 1 | 
+ | 103 | compactsolars | 1 | 
+ | 104 | minecolonies | 1 | 
+ | 105 | soulshardstow | 1 | 
+ | 106 | base | 1 | 
+ | 107 | googlyeyes | 1 | 
  | 108 | biomesoplenty | 1 | 
- | 109 | rangedpumps | 1 | 
- | 110 | betterbuilderswands | 1 | 
- | 111 | loginshield | 1 | 
- | 112 | rustic | 1 | 
- | 113 | tesla | 1 | 
-### 未翻译条目大于等于 500 行的模组有 9 个，占到了未翻译行数的 54.62 % 。
-### 未翻译条目大于等于 100 行的模组有 37 个，占到了未翻译行数的 28.51 % 。
-### 未翻译条目大于等于 10 行的模组有 98 个，占到了未翻译行数的 15.29 % 。
-### 未翻译条目大于等于 1 行的模组有 114 个，占到了未翻译行数的 1.58 % 。
+ | 109 | blur | 1 | 
+ | 110 | tanaddons | 1 | 
+ | 111 | furnus | 1 | 
+### 未翻译条目大于等于 500 行的模组有 9 个，占到了未翻译行数的 55.58 % 。
+### 未翻译条目大于等于 100 行的模组有 35 个，占到了未翻译行数的 27.29 % 。
+### 未翻译条目大于等于 10 行的模组有 98 个，占到了未翻译行数的 15.56 % 。
+### 未翻译条目大于等于 1 行的模组有 112 个，占到了未翻译行数的 1.57 % 。
