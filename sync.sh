@@ -41,17 +41,14 @@ do
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" "${PATH_MAIN}/zh_cn.lang"
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn_old.lang" "${PATH_MAIN}/zh_cn_old.lang"
     cd $PATH_MAIN
-    python3 all_update_1.py
-    python3 all_update_2.py
-    cp -f "${PATH_MAIN}/zh_cn_out.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
+    python3 all_update_1.py   # 第一步：en_us和zh_cn_old混编得到en_zh
+    python3 all_update_2.py   # 第二步：en_zh和zh_cn对比更新得到zh_cn_out
+    python3 all_update_3.py   # 第三步：zh_cn_out和en_us对比更新得到zh_cn_del
+    cp -f "${PATH_MAIN}/zh_cn_del.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
   fi
   # 删错不必要的残留文件
   cd $PATH_MAIN
   rm *.lang
 done
-
-# 删掉所有的英文文本
-cd $PATH_MAIN
-python3 delete_english.py
 
 rm -rf ./weblate
