@@ -12,11 +12,15 @@ PATH_MAIN=`pwd`
 
 # 新建assets-tmp文件夹，放置临时从mod包中解压的语言文件
 mkdir assets-tmp
+
 # 新建mods文件夹，放置爬虫爬下来的mod
 mkdir mods
 
 # 爬虫下载mod
 python3 download.py
+
+# 再pull一次，我总担心爬虫的时候又发生变动，毕竟爬虫速度目前还是比较慢的
+git pull
 
 # 这一块有一个奇怪的bug，如果在主目录下操作解压，整个解压会全部出错
 # 考虑到1.12的特殊性，有的作者用小写，有的用大写
@@ -109,18 +113,30 @@ do
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang" "${PATH_MAIN}/zh_cn.lang"
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn_old.lang" "${PATH_MAIN}/zh_cn_old.lang"
     cd $PATH_MAIN
-    python3 all_update_1.py
-    python3 all_update_2.py
-    cp -f "${PATH_MAIN}/zh_cn_out.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
+    python3 all_update_1.py   # 第一步：en_us和zh_cn_old混编得到en_zh
+    python3 all_update_2.py   # 第二步：en_zh和zh_cn对比更新得到zh_cn_out
+    python3 all_update_3.py   # 第三步：zh_cn_out和en_us对比更新得到zh_cn_del
+    cp -f "${PATH_MAIN}/zh_cn_del.lang" "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
   fi
   # 删错不必要的残留文件
   cd $PATH_MAIN
   rm *.lang
 done
 
-# 删掉所有的英文文本
-cd $PATH_MAIN
-python3 delete_english.py
+# 接下来，按照雪尼的提醒，剔除不需要放入weblate的mod
+# 读取black.list文件
+# 然后删除文件夹
+for del_file in `cat black.list`
+do
+  cd $PATH_ASSETS
+  for filename_assets in `ls`
+  do
+    if [ ${del_file} = ${filename_assets} ]
+    then
+      rm -rf "${del_file}"
+    fi
+  done
+done
 
 # 最后，删掉assets-tmp文件夹
 cd ${PATH_MAIN}
