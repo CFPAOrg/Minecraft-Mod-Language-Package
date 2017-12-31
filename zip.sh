@@ -30,7 +30,7 @@ do
     mv "${PATH_MAIN}/release/assets/${modid}/lang/zh_cn_old.lang" "${PATH_MAIN}/zh_cn_old.lang"
     cd ${PATH_MAIN}
     python3 delete_update.py
-    mv "${PATH_MAIN}/zh_cn_old.lang" "${PATH_MAIN}/release/assets/${modid}/lang/zh_cn.lang"
+    mv "${PATH_MAIN}/zh_cn_out.lang" "${PATH_MAIN}/release/assets/${modid}/lang/zh_cn.lang"
     cd ${PATH_MAIN}
     rm *.lang
   fi
