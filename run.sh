@@ -18,7 +18,7 @@ mkdir assets-tmp
 mkdir mods
 
 # 爬虫下载mod
-# python3 download.py
+python3 download.py
 
 # 再pull一次，我总担心爬虫的时候又发生变动，毕竟爬虫速度目前还是比较慢的
 git pull
@@ -151,5 +151,6 @@ python3 info.py
 
 # 最后，进行 github 推送
 git add .
-git commit -m "Auto Update By Shell Script"
+commit_date=`date +%F`
+git commit -m "Auto Update By Shell Script, Update Time: ${commit_date}"
 git push
