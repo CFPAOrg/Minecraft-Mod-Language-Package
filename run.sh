@@ -4,11 +4,12 @@
 # @Title 自动更新脚本主程序
 ######################################
 
+# 记录操作的主目录，方便后面操作
+PATH_MAIN="/root/943_Python/autocurse/"
+cd "${PATH_MAIN}"
+
 # 进行github pull
 git pull
-
-# 记录操作的主目录，方便后面操作
-PATH_MAIN=`pwd`
 
 # 新建assets-tmp文件夹，放置临时从mod包中解压的语言文件
 mkdir assets-tmp
