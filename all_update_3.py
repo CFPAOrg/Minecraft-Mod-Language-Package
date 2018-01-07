@@ -8,8 +8,8 @@ print("all_update_3 Script Loading")
 import operator
 
 # 读取文件
-old = open("en_us.lang", 'r', encoding='UTF-8')
-new = open("zh_cn_out.lang", 'r', encoding='UTF-8')
+old = open("en_us.lang", 'r', encoding='UTF-8', errors='ignore')
+new = open("zh_cn_out.lang", 'r', encoding='UTF-8', errors='ignore')
 out = open("zh_cn_del.lang", 'w', encoding='UTF-8')
 
 # 放置映射表

@@ -6,8 +6,8 @@
 print("all_update_2 Script Loading")
 
 # 读取文件
-assets_en = open("en_zh.lang", 'r', encoding='UTF-8')
-assets_zh = open("zh_cn.lang", 'r', encoding='UTF-8')
+assets_en = open("en_zh.lang", 'r', encoding='UTF-8', errors='ignore')
+assets_zh = open("zh_cn.lang", 'r', encoding='UTF-8', errors='ignore')
 assets_out = open("zh_cn_out.lang", 'w', encoding='UTF-8')
 
 # 放置中英文映射表

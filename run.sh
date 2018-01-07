@@ -108,6 +108,10 @@ do
   then
     touch "${PATH_ASSETS}/${filename_assets}/lang/zh_cn.lang"
   fi
+  if [ ! -f "${PATH_ASSETS}/${filename_assets}/lang/zh_cn_old.lang" ];
+  then
+    touch "${PATH_ASSETS}/${filename_assets}/lang/zh_cn_old.lang"
+  fi
   if [ -f "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" ];
   then
     cp -f "${PATH_ASSETS}/${filename_assets}/lang/en_us.lang" "${PATH_MAIN}/en_us.lang"
