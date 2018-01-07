@@ -1,5 +1,5 @@
-#!/bin/bash
-#!/usr/bin/python3
+#! /bin/bash
+#! /usr/bin/python3
 # @Author TartaricAcid
 # @Title 自动更新脚本主程序
 ######################################
@@ -148,8 +148,6 @@ rm -rf ./mods
 
 # 生成统计数据
 python3 info.py
-
-cd "${PATH_MAIN}"
 
 # 最后，进行 github 推送
 git add .

@@ -1,8 +1,8 @@
 item.blockSelector.name=Block Selector
 item.blockSelectorFloating.name=Floating Block Selector
-item.inventoryGenerationTag.name=Loot Generation Tag
-item.inventoryGenerationSingleTag.name=Single Loot Generation Tag
-item.inventoryGenerationComponentTag.name=Loot Table Component Tag
+item.inventoryGenerationTag.name=Inventory Generation Tag
+item.inventoryGenerationSingleTag.name=Single Item Generation Tag
+item.inventoryGenerationComponentTag.name=Item Generation Component Tag
 item.artifactGenerationTag.name=Artifact Generation Tag
 item.bookGenerationTag.name=Book Generation Tag
 item.recinspector.name=Inspector
@@ -47,7 +47,7 @@ tile.spawnCommand.name=Spawn Command Block
 tile.spawn_script.name=Script Block
 
 itemGroup.structureTools=Structure Tools
-itemGroup.inventoryGenerators=Loot
+itemGroup.inventoryGenerators=Inventory Generators
 
 commands.rc.noEntityInfo=The sender doesn't handle structure info!
 commands.rc.noSelection=The sender doesn't handle selections!
@@ -154,11 +154,11 @@ commands.rcmapall.result=Saved %s elements to %s. %s failed. %s skipped.
 commands.rceval.result.true=True
 commands.rceval.result.false=False
 
-inventoryGen.vanilla=Vanilla Loot Table
-inventoryGen.custom=Custom Loot Table
-inventoryGen.create=Create New Loot Table
-inventoryGen.none=No Loot Table
-inventoryGen.mod=Mod Lot Table
+inventoryGen.vanilla=Vanilla Generator
+inventoryGen.custom=Custom Generator
+inventoryGen.create=Create New Generator
+inventoryGen.none=No Generator
+inventoryGen.mod=Mod Generator
 inventoryGen.active=%sActive%s
 inventoryGen.inactive=%sInactive%s
 
@@ -300,18 +300,6 @@ reccomplex.generationInfo.decoration.types.desert_well=Desert Well
 reccomplex.generationInfo.decoration.types.desert_well.tooltip=The wells spawning in deserts
 reccomplex.generationInfo.decoration.types.fossil=Fossil
 reccomplex.generationInfo.decoration.types.fossil.tooltip=Fossils
-reccomplex.generationInfo.decoration.types.ocean_monument=Ocean Monument
-reccomplex.generationInfo.decoration.types.ocean_monument.tooltip=An ocean monument with guardians,<br>sea lanterns and prismarine.
-reccomplex.generationInfo.decoration.types.scattered_feature=Scattered Feature
-reccomplex.generationInfo.decoration.types.scattered_feature.tooltip=Various scattered features<br>such as witch huts.
-reccomplex.generationInfo.decoration.types.village=Village
-reccomplex.generationInfo.decoration.types.village.tooltip=Villages filled with villagers and farms.
-reccomplex.generationInfo.decoration.types.nether_bridge=Nether Bridge Fortress
-reccomplex.generationInfo.decoration.types.nether_bridge.tooltip=Fortresses in the Nether filled with blazes<br>made from nether brick.
-reccomplex.generationInfo.decoration.types.stronghold=Stronghold
-reccomplex.generationInfo.decoration.types.stronghold.tooltip=A stronghold containing the end portal.
-reccomplex.generationInfo.decoration.types.mineshaft=Mineshaft
-reccomplex.generationInfo.decoration.types.mineshaft.tooltip=Mineshafts in the ground filled with random loot.
 
 reccomplex.transformer.block.source.tooltip=Blocks in the structure that this<br>transformer applies to.
 reccomplex.transformer.block.dest.tooltip=Blocks in the environment that this<br>transformer runs over.
@@ -554,9 +542,9 @@ reccomplex.gui.inventorygen.weightNumber=Weight: %s
 reccomplex.gui.inventorygen.componentid=Component ID
 reccomplex.gui.inventorygen.componentid.tooltip=The unique ID of this component.
 reccomplex.gui.inventorygen.groupid=Group ID
-reccomplex.gui.inventorygen.groupid.tooltip=The shared group ID of this component.<br>All components using this ID<br>will be added to the loot<br>table with this name.
+reccomplex.gui.inventorygen.groupid.tooltip=The shared group ID of this component.<br>All components using this ID<br>will be added to the inventory<br>generator of this name.
 reccomplex.inventorygen.dependencies=Dependencies
-reccomplex.inventorygen.dependencies.tooltip=If not matched, the loot table won't activate.<br>It is not technically required to<br>use this, but it will help<br>with modded structures.
+reccomplex.inventorygen.dependencies.tooltip=If not matched, the inventory generator won't activate.<br>It is not technically required to<br>use this, but it will help<br>with modded structures.
 reccomplex.gui.inventorygen.items.summary=%s Items
 reccomplex.gui.inventorygen.componentid=Component ID
 reccomplex.gui.inventorygen.groupid=Group ID
@@ -607,7 +595,7 @@ reccomplex.placer.factors.limit.rays.dynpos.type.bedrock.tooltip=Bottom of the w
 reccomplex.placer.factors.limit.rays.dynpos.type.sealevel=Sea level
 reccomplex.placer.factors.limit.rays.dynpos.type.sealevel.tooltip=The ocean height: y=63
 reccomplex.placer.factors.limit.rays.dynpos.type.world_height=Top (World Height)
-reccomplex.placer.factors.limit.rays.dynpos.type.world_height.tooltip=Top of the world:<br>y = 255 - structure_height
+reccomplex.placer.factors.limit.rays.dynpos.type.world_height.tooltip=Top of the world: y=255
 
 reccomplex.placer.factors.limit.rays.dynmove=Dynamic Move
 reccomplex.placer.factors.limit.rays.dynmove.tooltip=Move a dynamic amount of blocks
