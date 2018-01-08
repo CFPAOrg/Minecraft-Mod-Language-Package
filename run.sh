@@ -19,6 +19,7 @@ mkdir mods
 
 # 爬虫下载mod
 python3 download.py
+python3 white_list_download.py
 
 # 再pull一次，我总担心爬虫的时候又发生变动，毕竟爬虫速度目前还是比较慢的
 git pull
