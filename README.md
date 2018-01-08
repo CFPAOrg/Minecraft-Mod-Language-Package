@@ -1,4 +1,4 @@
-# 欢迎来到 Minecraft 模组简体中文汉化资源包的 GitHub 仓库 [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) ![weblate](https://weblate.sayori.pw/widgets/langpack/zh_cn/svg-badge.svg)
+# 欢迎来到 Minecraft 模组简体中文汉化资源包的 GitHub 仓库 [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) ![weblate](https://weblate.sayori.pw/widgets/langpack/zh_cn/svg-badge.svg) ![travis](https://api.travis-ci.org/CFPAOrg/Minecraft-Mod-Language-Package.svg)
 
 ## 使用说明
 
