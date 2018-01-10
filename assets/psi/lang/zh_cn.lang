@@ -528,3 +528,27 @@ psi.piecegroup.memoryManagement=内存管理
 psi.piecegroup.memoryManagement.desc=这部分介绍了魔法式掌控C AD中永久内存的能力。一台 CAD能储存向量类型的值以 便后续魔法的使用。能储存 的量等于CAD的“弹夹”数值 除以3并向下圆整。这也就 是CAD中存在的内存槽位的 数量。<br><br>这部分包括了两个功能块，用 于读取和写入向量的简单IO 型功能块。红色块，“启动式: 储存向量”会向目标内存槽位 中存入一个向量，而“选择符: 储存向量”则会从自身参数 指定的内存槽位中获取向量 。这些块的内存槽位从1开 始，因此一台拥有3个内存槽 位的CAD能接受1,2,3这几个值 。这些功能块都会增加术式 的强度，数值与使用的槽数有 关。<br><br>这些功能块有个缺点，那就是 “启动式:储存向量”在使用时 会“锁定”目标内存槽，以防其 他功能块在其执行时与同一 个内存槽交互，不管是读取还 是写入。因此如果你需要在 写入之前读取槽位中的值，务 必牢记流控制的基本原则，保 证先读后写。
 psi.piecegroup.secondaryOperators=次要运算
 psi.piecegroup.secondaryOperators.desc=顾名思义，这部分包括了一些 不太重要的运算符。实际上 就是一个由各种数学或逻辑 块组成的混合体，能用于辅助 魔法式的创造。为了方便解 释，这里将它们分为两部分。<br><br>第一部分与幂有关。包括“ 运算符:平方”，“运算符:幂”， “运算符:平方根”甚至是“运 算符:对数”。其中大部分都 以标准形式运算无需多讲，除 了“运算符:对数”。这个功能 块，就如其名，会计算出给定 数字的对数。它有一个可选 的底参数，用于对数运算的底 。如果不给定底，默认的底就 为10。这里也提供了“常量: e”，你可以随意使用。<br><br>第二部分与逻辑相关。包括 了圆整的功能块，“运算符:向 上圆整”，“运算符:向下圆整” 和“运算符:四舍五入”，它们会 根据数字的小数部分进行圆 整。这里也有“运算符:最小 ”和“运算符:最大”。这些都 很简单，它们会从给定的各个 数中获取最小数和最大数。
+# MISC
+itemGroup.psi=Psi
+psimisc.config=配置
+psimisc.trickPattern=^玩笑: (.+)$
+psi.versioning.flavour1=你是否想要更新Psi？
+psi.versioning.flavour9=不要把自己搞得像个Psiduck, 更新Psi。
+psi.versioning.startingDownload=[{"text":"Starting download of %s. Please do not remove your hard disk. Enjoying ","color":"yellow"},{"text":"Psi","color":"aqua"},{"text":"? Consider supporting ","color":"yellow"},{"text":"Vazkii","color":"light_purple"},{"text":" on ","color":"yellow"},{"text":"[Patreon]","color":"gold","hoverEvent":{"action":"show_text","value":{"text":"Click this to go to Vazkii's Patreon","color":"light_purple"}},"clickEvent":{"action":"open_url","value":"http://www.patreon.com/Vazkii"}},{"text":"!","color":"yellow"}]
+psi.versioning.doneDownloading=已完成下载％s。删除旧的Psi .jar，然后重新载入游戏。
+psi.versioning.downloadedAlready=您已经下载了最新版本。关闭你的游戏，从你的mods文件夹中删除旧版本，并重新加载游戏！
+psi.versioning.downloadingAlready=更新已经在下载, 给它一些时间, 好吗？
+psi.versioning.error=哇!在尝试下载 Psi 更新时好像出了什么问题。psi.vazkii.us 炸了吗？
+psi.versioning.disabled=抱歉.由于服务器主机问题, 此功能当前已被禁用, 应该很快就会恢复。
+# DATA TYPE NAMES
+psi.datatype.Null=无
+psi.datatype.Any=任何
+psi.datatype.Double=数字
+psi.datatype.Integer=数字
+psi.datatype.Number=数字
+psi.datatype.Vector3=向量
+psi.datatype.Entity=实体
+psi.datatype.EntityLiving=实体 (活的)
+psi.datatype.EntityLivingBase=实体（活的）
+psi.datatype.EntityPlayer=实体 (玩家, 活的)
+psi.datatype.EntityListWrapper=实体列表
