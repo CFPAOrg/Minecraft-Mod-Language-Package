@@ -1,11 +1,8 @@
 language: python
 python:
 - '3.6'
-before_install:
-- sudo apt-get install unzip
 script:
-- chmod +x zip.sh
-- "./zip.sh"
+- "python3 ./zip.py"
 before_deploy:
 - git config --local user.name "TartaricAcid"
 - git config --local user.email "baka943@qq.com"
