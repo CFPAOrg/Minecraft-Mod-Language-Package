@@ -10,7 +10,7 @@ general.integrateddynamics.false=False
 # Gui
 gui.integrateddynamics.button.save=Save
 gui.integrateddynamics.button.rename=Rename
-gui.integrateddynamics.partsettings.update_interval=Frequency
+gui.integrateddynamics.partsettings.update_interval=Ticks/Operation
 gui.integrateddynamics.partsettings.priority=Priority
 gui.integrateddynamics.partsettings.channel=Energy Channel
 gui.integrateddynamics.partsettings.side=Target Side
@@ -569,6 +569,8 @@ aspect.aspects.integrateddynamics.read.integer.network.energy.max.name=Energy Ca
 aspect.aspects.integrateddynamics.read.integer.network.energy.max.info=The energy capacity of the network
 aspect.aspects.integrateddynamics.read.integer.network.energy.consumptionrate.name=Energy Consumption Rate
 aspect.aspects.integrateddynamics.read.integer.network.energy.consumptionrate.info=The current energy consumption rate of the target network per tick
+aspect.aspects.integrateddynamics.read.any.network.value.name=Value
+aspect.aspects.integrateddynamics.read.any.network.value.info=The value that is being exposed by the target
 
 ## Redstone aspects
 aspect.aspects.integrateddynamics.read.boolean.redstone.high.name=Redstone High
@@ -1385,7 +1387,7 @@ info_book.integrateddynamics.manual.parts=Parts
 
 info_book.integrateddynamics.manual.parts.introduction=Introduction
 info_book.integrateddynamics.manual.parts.introduction.text1=Parts can be placed on each side of a &lLogic Cable&r. This section describes parts that can read &lValues&r and place them available as a &lVariable Card&r, and parts that can perform actions based on the &lValues&r within &lVariable Cards&r.
-info_book.integrateddynamics.manual.parts.introduction.text2=Most parts have configurable settings, which can be accessed using the top-right button in the GUI of a part. This allows you to change the part &lFrequency&r, meaning per how many ticks this part should perform its actions. Secondly, the &lPriority&r of part can be changed, which indicates the order in which this part can act relative to the other parts in the same network in the same tick. If part A has a priority of -1, and part B has a priority of 1, then part B will always perform its actions before part A. If priorities of parts are the same, then the relative order is random.
+info_book.integrateddynamics.manual.parts.introduction.text2=Most parts have configurable settings, which can be accessed using the top-right button in the GUI of a part. This allows you to change the part &lTicks/Operation&r, meaning per how many ticks this part should perform its actions. Secondly, the &lPriority&r of part can be changed, which indicates the order in which this part can act relative to the other parts in the same network in the same tick. If part A has a priority of -1, and part B has a priority of 1, then part B will always perform its actions before part A. If priorities of parts are the same, then the relative order is random.
 info_book.integrateddynamics.manual.parts.introduction.text3=A part's &lEnergy Channel&r determines where it can draw its energy from. -1 is the wildcard channel (it will match all channels), and 0 is the default channel (used by parts such as energy cells that don't have a channel setting). Finally, &lTarget Side&r determines which side of its target block will be interacted with. This defaults to the side that it's actually placed against.
 info_book.integrateddynamics.manual.parts.introduction.text4=Some reader and writer parts only contain aspects when certain other mods are present. If no aspects are present for a certain part, a warning will be added to the item tooltip whenever you attempt to craft it.
 

@@ -252,21 +252,6 @@ for.gui.noeffect=No effect
 for.gui.owner=Owner
 for.gui.page=Page
 
-for.gui.pipe.filter.anything=Anything
-for.gui.pipe.filter.bee=Any Bees
-for.gui.pipe.filter.cave=Cave-Dwellers
-for.gui.pipe.filter.closed=Closed
-for.gui.pipe.filter.drone=Drones
-for.gui.pipe.filter.flyer=Strong Flyers
-for.gui.pipe.filter.item=Items
-for.gui.pipe.filter.nocturnal=Nocturnal Bees
-for.gui.pipe.filter.princess=Princesses
-for.gui.pipe.filter.pure_breed=Pure-Bred Bees
-for.gui.pipe.filter.pure_cave=Pure Cave-Dwellers
-for.gui.pipe.filter.pure_flyer=Pure Flyers
-for.gui.pipe.filter.pure_nocturnal=Pure Nocturnal Bees
-for.gui.pipe.filter.queen=Queen
-
 for.gui.plains=Plains
 for.gui.princesses=Princ.
 for.gui.produce=Produce
@@ -1581,6 +1566,37 @@ item.for.catalogue.tooltip=Lists all available Trade Station trades.
 
 item.PipeItemsPropolis.name=Apiarist's Pipe
 
+tile.for.genetic_filter.name=Genetic Filter
+tile.for.genetic_filter.0.name=Genetic Filter
+
+for.gui.filter.seletion=Filter Selection
+
+for.gui.filter.forestry.default.anything=Anything
+for.gui.filter.forestry.default.closed=Closed
+for.gui.filter.forestry.default.item=Items
+for.gui.filter.forestry.default.cave=Cave-Dwellers
+for.gui.filter.forestry.default.flyer=Strong Flyers
+for.gui.filter.forestry.default.nocturnal=Nocturnal
+for.gui.filter.forestry.default.pure_breed=Pure-Bred
+for.gui.filter.forestry.default.pure_cave=Pure Cave-Dwellers
+for.gui.filter.forestry.default.pure_flyer=Pure Flyers
+for.gui.filter.forestry.default.pure_nocturnal=Pure Nocturnal
+
+for.gui.filter.forestry.apiculture.bee=Any Bees
+for.gui.filter.forestry.apiculture.queen=Queen
+for.gui.filter.forestry.apiculture.drone=Drones
+for.gui.filter.forestry.apiculture.princess=Princesses
+
+for.gui.filter.forestry.arboriculture.tree=Any Tree
+for.gui.filter.forestry.arboriculture.sapling=Sapling
+for.gui.filter.forestry.arboriculture.pollen=Pollen
+
+for.gui.filter.forestry.lepidopterology.flutter=Any Butterfly
+for.gui.filter.forestry.lepidopterology.butterfly=Butterfly
+for.gui.filter.forestry.lepidopterology.caterpillar=Caterpillar
+for.gui.filter.forestry.lepidopterology.serum=Serum
+for.gui.filter.forestry.lepidopterology.cocoon=Cocoon
+
 ####################
 # MODULES
 ####################
@@ -1591,13 +1607,15 @@ for.module.arboriculture.description=Adds additional tree species and products.
 for.module.charcoal.description=Adds wood piles, loam and a charcoal production.
 for.module.energy.description=Adds several RF engines.
 for.module.factory.description=Adds a wide variety of machines to craft, produce and process products.
+for.module.worktable.description=Adds a crafting table that can save 8 recipes.
 for.module.farming.description=Adds automatic farms and harvesters for a wide variety of products.
 for.module.food.description=Adds food.
 for.module.lepidopterology.description=Butterflies. Shiny.
 for.module.mail.description=Adds Forestry's mail and trade system.
 for.module.backpacks.description=Adds backpacks.
 for.module.crates.description=Adds crates.
-for.module.greenhouse.description=Adds a greenhouse.
+for.module.greenhouse.description=Adds a greenhouse multiblock.
+for.module.database.description=Adds a new storage block for bees / trees and butterflies.
 
 for.module.buildcraft6.description=Compatibility plugin for BuildCraft 6.
 for.module.pipes.description=Adds the apiarist's pipe for beekeeping if apiculture is enabled and BuildCraft 6 is present.
@@ -1647,15 +1665,22 @@ for.config.world.generate.ore.copper=Generate Copper
 for.config.world.generate.ore.copper.comment=Generates copper ore blocks in the world.
 for.config.world.generate.ore.tin=Generate Tin
 for.config.world.generate.ore.tin.comment=Generates tin ore blocks in the world.
+for.config.world.generate.ore.dimBlacklist=Ore generation Dimension Blacklist
+for.config.world.generate.ore.dimBlacklist.comment=Disables the generation of all ore in the specified dimensions. Enter one dimension id per line.
 
 for.config.world.generate.beehives.amount=Beehives Generation Amount
 for.config.world.generate.beehives.amount.comment=Sets how many beehives spawn in the world.
 for.config.world.generate.beehives.debug=Debug Beehive Generation
 for.config.world.generate.beehives.debug.comment=Force Forestry to generate a beehive at every possible location. (This will break your world. Only useful to developers)
+for.config.world.generate.beehives.dimBlacklist=Beehive Generation Dimension Blacklist
+for.config.world.generate.beehives.dimBlacklist.comment=Disables the generation of all hives in the specified dimensions. Enter one dimension id per line.
 for.config.world.generate.beehives.blacklist.category_comment=Disables the generation of a specific hive in a specific biome or in a biome with a specific biome type. Just add the registry name of the biome or the name of the biome type to the property of the hive. Every biome type / registry name has to be in a seperate line.
 
 for.config.world.generate.villagers=Generate Villagers
 for.config.world.generate.villagers.comment=Generates forestry villagers and their houses.
+
+for.config.world.generate.trees.dimBlacklist=Tree Generation Dimension Blacklist
+for.config.world.generate.trees.dimBlacklist.comment=Disables the generation of all trees in the specified dimensions. Enter one dimension id per line.
 
 for.config.crafting=Crafting
 for.config.crafting.bronze=Craft Bronze
@@ -1716,6 +1741,8 @@ for.config.tweaks.greenhouse.energy.comment=Modifies the energy that is used by 
 for.config.genetics=Genetics
 for.config.genetics.pollinate.vanilla.trees=Pollinate Vanilla Trees
 for.config.genetics.pollinate.vanilla.trees.comment=Allow bees to pollinate vanilla tree leaves. When disabled, vanilla trees must be analyzed before they can be pollinated.
+for.config.genetics.analyzerblock.energy.use=Analyzer Block Energy Use
+for.config.genetics.analyzerblock.energy.use=Energy use of Analyzer Block per work cycle.
 for.config.genetics.research.boost.multiplier=Research Mutation Multiplier
 for.config.genetics.research.boost.multiplier.comment=Multiplies the chance of a mutation when it has been discovered in the Escritoire.
 for.config.genetics.research.boost.max.percent=Research Mutation Max
