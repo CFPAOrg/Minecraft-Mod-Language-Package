@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import os
+import yaml
 
 # 清除先前的零时文件
 os.system('rm -rf /tmp/mods')
@@ -29,3 +30,13 @@ import src.handle.handle
 # 再次清除先前的零时文件
 os.system('rm -rf /tmp/mods')
 os.system('rm -rf /tmp/modpacks')
+
+# 开始检索 del list 删除
+# 读取配置文件
+with open('config.yml', 'r') as f:
+    config = yaml.load(f)
+    DEL_LIST = config['del_list']
+
+# 开始强制删除对应文件夹
+for i in DEL_LIST:
+    os.system('rm -rf ./project/assets/' + i)
