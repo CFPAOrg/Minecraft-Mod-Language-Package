@@ -28,15 +28,26 @@ def lang_handle(dict1, dict2, dict3):
 file_list = os.listdir('project/assets/')
 for modid in file_list:
     dict_out = {}
+    # 先判定 en_us.lang 是否存在
     if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(modid)):
         continue
+
+    # 而后开始转换为 dict
     en_us_dict = lang_to_dict(
         'project/assets/{}/lang/en_us.lang'.format(modid))
     zh_cn_old_dict = lang_to_dict(
         'project/assets/{}/lang/zh_cn_old.lang'.format(modid))
     zh_cn_dict = lang_to_dict(
         'project/assets/{}/lang/zh_cn.lang'.format(modid))
+
+    # 处理，得到最终的 dict
     dict_out = lang_handle(en_us_dict, zh_cn_old_dict, zh_cn_dict)
+
+    # 写入文件
     with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'w') as f:
         for key in dict_out.keys():
             f.writelines(key + '=' + dict_out[key])
+
+    # 剔除空 en_us.lang 文件
+    if os.path.getsize('project/assets/{}/lang/en_us.lang'.format(modid) == 0):
+        os.system('rm -rf project/assets/{}'.format(modid))

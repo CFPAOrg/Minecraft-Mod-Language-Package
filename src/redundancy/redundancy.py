@@ -57,3 +57,7 @@ for modid in os.listdir('project-tmp/assets'):
     # 删除不需要的文件
     os.system('rm -f project-tmp/assets/{}/lang/zh_cn_old.lang'.format(modid))
     os.system('rm -f project-tmp/assets/{}/lang/zh_cn_tmp.lang'.format(modid))
+
+    # 最后判断文件是否为空
+    if os.path.getsize('project-tmp/assets/{}/lang/zh_cn.lang'.format(modid)) == 0:
+        os.system('rm -rf project-tmp/assets/{}'.format(modid))
