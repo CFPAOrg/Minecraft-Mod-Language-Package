@@ -32,7 +32,7 @@ headers = [
 body = []
 with open('/tmp/email.txt', 'r') as email:
     for line in email.readlines():
-        body.append(line)
+        body.append(line.replace("\n", ""))
 
 # 拼凑成整个邮件
 msg = '\r\n\r\n'.join(('\r\n'.join(headers), '\r\n'.join(body)))
@@ -40,5 +40,5 @@ msg = '\r\n\r\n'.join(('\r\n'.join(headers), '\r\n'.join(body)))
 # 开始用 SMTP/SSL 进行信件传输
 s = SMTP_SSL('smtp.gmail.com', 465)
 s.login(from_, PASSWD)
-s.sendmail(from_, to_, msg)
+s.sendmail(from_, to_, msg.encode('utf-8'))
 s.quit
