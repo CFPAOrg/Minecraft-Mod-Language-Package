@@ -11,11 +11,41 @@ import json
 DOWNLOAD_LIST = []
 ALL_URL_LIST = []
 
+
+# 定义一个能够初始化的函数，检验 int 数据
+# config_var：传入的配置文件参数
+# top_var：配置文件上限
+def int_config_init(config_var, top_var):
+    if type(config_var) != 'int':
+        config_var = 1
+    elif config_var <= 0 or config_var > top_var:
+        config_var = 1
+    return config_var
+
+
+# 定义一个能够初始化的函数，检验 list 数据
+# config_var：传入的配置文件参数
+# top_var：配置文件上限
+def list_config_init(config_var):
+    # 判定是不是 list
+    if type(config_var) != 'list':
+        config_var = ['baka943']
+    # list 是不是为空
+    elif len(config_var) == 0:
+        config_var = ['baka943']
+    # list 里面每个元素是不是都是 str
+    else:
+        for i in range(len(config_var)):
+            if type(config_var[i]) != 'str':
+                config_var[i] = 'baka943'
+    return config_var
+
+
 # 读取配置文件
 with open('config.yml', 'r') as f:
     config = yaml.load(f)
-    THREAD_NUM = config['threads_num']
-    BLACK_LIST = config['mod_blacklist']
+    THREAD_NUM = int_config_init(config['threads_num'], 943)
+    BLACK_LIST = list_config_init(config['mod_blacklist'])
     VERSION = config['version']
 
 # 版本映射表
