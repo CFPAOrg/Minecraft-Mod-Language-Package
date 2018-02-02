@@ -37,7 +37,7 @@ os.system('rm -rf /tmp/modpacks')
 # top_var：配置文件上限
 def list_config_init(config_var):
     # 判定是不是 list
-    if type(config_var) != 'list':
+    if str(type(config_var)) != '<class \'list\'>':
         config_var = ['baka943']
     # list 是不是为空
     elif len(config_var) == 0:
@@ -45,7 +45,7 @@ def list_config_init(config_var):
     # list 里面每个元素是不是都是 str
     else:
         for i in range(len(config_var)):
-            if type(config_var[i]) != 'str':
+            if str(type(config_var[i])) != '<class \'str\'>':
                 config_var[i] = 'baka943'
     return config_var
 

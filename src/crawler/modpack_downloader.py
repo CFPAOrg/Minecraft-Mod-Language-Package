@@ -12,7 +12,7 @@ import os
 # config_var：传入的配置文件参数
 # top_var：配置文件上限
 def int_config_init(config_var, top_var):
-    if type(config_var) != 'int':
+    if str(type(config_var)) != '<class \'int\'>':
         config_var = 1
     elif config_var <= 0 or config_var > top_var:
         config_var = 1
