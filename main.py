@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 import os
 import yaml
+import re
+import time
 
 # 清除先前的零时文件
 os.system('rm -rf /tmp/mods')
 os.system('rm -rf /tmp/modpacks')
+
+# 更新一遍仓库
+os.system('git pull')
 
 # mod 信息抓取
 import src.crawler.mod_info_get
@@ -27,16 +32,27 @@ import src.unzip.mod_unzip
 # 开始处理语言文件
 import src.handle.handle
 
+# 清除黑名单文件夹
+import src.redundancy.black_dir_del
+
 # 再次清除先前的零时文件
 os.system('rm -rf /tmp/mods')
 os.system('rm -rf /tmp/modpacks')
 
-# 开始检索 del list 删除
-# 读取配置文件
-with open('config.yml', 'r') as f:
-    config = yaml.load(f)
-    DEL_LIST = config['del_list']
+# 最后，自动 commit，并依据更新情况是否发送邮件
+# 通过 git 来获取更新信息
+os.system('git add .')
+# 抓取出新增的部分，因为只有增加的模组才需要 phi 重新导入
+string = os.popen('git status | grep "new file:"')
+# 正则抓取出有用的信息
+new_mod_list = re.findall(
+    r'project/assets/(.*?)/lang/en_us.lang', string.read())
 
-# 开始强制删除对应文件夹
-for i in DEL_LIST:
-    os.system('rm -rf ./project/assets/' + i)
+# 是否为空？为空不发邮件
+if len(new_mod_list) != 0:
+    import src.mail.stats_get
+    import src.mail.send_mail
+
+# 最后 commit, push
+os.system('git commit -m "Auto Update, Date: {}"'.format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
+os.system('git push')

@@ -7,10 +7,22 @@ import yaml
 import time
 import os
 
+
+# 定义一个能够初始化的函数，检验 int 数据
+# config_var：传入的配置文件参数
+# top_var：配置文件上限
+def int_config_init(config_var, top_var):
+    if str(type(config_var)) != '<class \'int\'>':
+        config_var = 1
+    elif config_var <= 0 or config_var > top_var:
+        config_var = 1
+    return config_var
+
+
 # 读取配置文件
 with open('config.yml', 'r') as f:
     config = yaml.load(f)
-    THREAD_NUM = config['threads_num']
+    THREAD_NUM = int_config_init(config['threads_num'], 943)
 
 # 记录下载列表
 DOWNLOAD_LIST = []
@@ -72,6 +84,7 @@ class MultiThread(threading.Thread):
     def run(self):
         self.func(self.args)
 
+
 # 下载函数具体实现，通过传入整型数值，来下载对应的 mod
 def func_modpack_download(i):
     url = 'https://minecraft.curseforge.com/projects/{}/files/{}/download'.format(
@@ -84,7 +97,8 @@ def func_modpack_download(i):
 def main_modpack_download(n):
     threads = []
     for m in range(THREAD_NUM):
-        t = MultiThread(func_modpack_download, n + m, func_modpack_download.__name__)
+        t = MultiThread(func_modpack_download, n + m,
+                        func_modpack_download.__name__)
         threads.append(t)
 
     for m in range(THREAD_NUM):
@@ -98,7 +112,7 @@ def main_modpack_download(n):
 def download_list_tweaker(download_list):
     left = THREAD_NUM - (len(DOWNLOAD_LIST) % THREAD_NUM)
     for i in range(left):
-        baka_list = ['baka943','999','999']     # 充满智慧与力量的数值
+        baka_list = ['baka943', '999', '999']     # 充满智慧与力量的数值
         download_list.append(baka_list)
     return download_list
 
