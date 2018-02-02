@@ -6,7 +6,7 @@ import time
 # 通过 git 来获取更新信息
 os.system('git add .')
 # 抓取出新增的部分，因为只有增加的模组才需要 phi 重新导入
-string = os.popen('git status | grep "新文件："')
+string = os.popen('git status | grep "new file:"')
 # 正则抓取出有用的信息
 new_mod_list = re.findall(
     r'project/assets/(.*?)/lang/en_us.lang', string.read())
