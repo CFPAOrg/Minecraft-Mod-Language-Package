@@ -92,13 +92,18 @@ def list_should_download():
     # 获取 modpacks 中的 mod 列表
     # 读取 manifest.json 文件，将其转换为 list
     mod_list_1 = []
-    for modpack in os.listdir('/tmp/modpacks/manifest/'):
-        path = '/tmp/modpacks/manifest/{}/manifest.json'.format(modpack)
-        with open(path, 'r') as f:
-            manifest = json.load(f)
-            for project in manifest['files']:
-                mod_list_1.append(project['projectID'])
-    mod_list_1 = list(set(mod_list_1))    # 剔除重复元素
+
+    # 看，一个点炒饭的人！
+    if len(os.listdir('/tmp/modpacks/manifest/')) != 0:
+        for modpack in os.listdir('/tmp/modpacks/manifest/'):
+            path = '/tmp/modpacks/manifest/{}/manifest.json'.format(modpack)
+            with open(path, 'r') as f:
+                manifest = json.load(f)
+                for project in manifest['files']:
+                    mod_list_1.append(project['projectID'])
+        mod_list_1 = list(set(mod_list_1))    # 剔除重复元素
+    else:
+        mod_list_1 = []
 
     # 将其与 mod 爬取的做对比，防止重复下载
     # 现将 mod 中的日志读取为 mod_list_2
