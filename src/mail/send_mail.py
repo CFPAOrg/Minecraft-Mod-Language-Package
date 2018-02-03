@@ -12,7 +12,7 @@ with open('config.yml', 'r') as f:
 
 # 从加密过的字节码文件中获取 Gmail 邮箱密码
 PASSWD = os.popen('cat ~/.ssh/password').read().replace("\n", "")
-PASSWD = str.encode(PASSWD)
+PASSWD = PASSWD.encode()
 for i in range(15):
     PASSWD = base64.b64decode(PASSWD)
 PASSWD = re.findall('b\'(.*?)\'', str(PASSWD))[0]
@@ -22,9 +22,9 @@ from_ = 'bakabaka943@gmail.com'
 to_ = send_list
 time_ = time.strftime("%Y-%m-%d %H:%M", time.localtime())
 headers = [
-    'From: %s' % from_,
-    'To: %s' % ', '.join(to_),
-    'Subject: Weblate 仓库更新提醒：' + time_,
+    'From: {}'.format(from_),
+    'To: {}'.format(', '.join(to_)),
+    'Subject: Weblate 仓库更新提醒：{}'.format(time_),
 ]
 
 # 接下来开始写信件主体
