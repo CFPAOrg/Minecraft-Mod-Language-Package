@@ -94,7 +94,7 @@ def list_should_download():
     mod_list_1 = []
 
     # 看，一个点炒饭的人！
-    if len(os.listdir('/tmp/modpacks/manifest/')) != 0:
+    if os.path.exists('/tmp/modpacks/manifest/'):
         for modpack in os.listdir('/tmp/modpacks/manifest/'):
             path = '/tmp/modpacks/manifest/{}/manifest.json'.format(modpack)
             with open(path, 'r') as f:
@@ -102,8 +102,6 @@ def list_should_download():
                 for project in manifest['files']:
                     mod_list_1.append(project['projectID'])
         mod_list_1 = list(set(mod_list_1))    # 剔除重复元素
-    else:
-        mod_list_1 = []
 
     # 将其与 mod 爬取的做对比，防止重复下载
     # 现将 mod 中的日志读取为 mod_list_2
