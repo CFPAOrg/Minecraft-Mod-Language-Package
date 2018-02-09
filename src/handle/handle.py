@@ -1,4 +1,5 @@
 import os
+import re
 
 
 # 获取语言文件，处理得到一个 dict
