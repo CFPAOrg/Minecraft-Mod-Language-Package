@@ -46,6 +46,7 @@ mobevent.wintersgrasp.name=凛冬将至
 # ========== Entites ==========
 entity.level=Lvl
 entity.lycanitesmobs.summoningportal.name=召唤传送门
+entity.lycanitesmobs.fear.name=恐惧
 #
 #
 #
@@ -54,6 +55,10 @@ spawner.darkness.level1=一片漆黑，前方就像一片未知...
 spawner.darkness.level2=你可以从黑暗中听出从远方传来的某些声音...快，投入光明的怀抱中去！
 spawner.darkness.level3=一个影影绰绰的生物在漆黑中消失了！
 spawner.darkness.level1.back=那声音好像消失了...至少现在是...
+spawner.chaos.level1=你正在破坏大自然的平衡，请慎重行事！
+spawner.chaos.level2=你对自然的破坏加剧了混沌元素的产生！
+spawner.chaos.level3=混沌元素已经出现，请小心防范！
+spawner.chaos.level1.back=生态平衡似乎已经得以恢复...至少现在是...
 #
 #
 #
@@ -217,24 +222,31 @@ gui.equipmentforge.error.name=You must name your new Equipment!
 #
 #
 # ========== Messages ==========
+# Soulgazer:
 message.soulgazer.new=你获得了%creature%的知识！通过你的生物图鉴可以查看！
 message.soulgazer.summonable=你现在能够召唤%creature%了！你还需要一把召唤之杖。
 message.soulgazer.known=你已经有了这种生物的全部知识。
 message.soulgazer.unknown=灵魂凝视没有发现这种生物有什么特殊之处。
+#
+# Soulstone:
 message.soulstone.untamed=灵魂石只能用在已经被驯服的生物上。
 message.soulstone.invalid=灵魂石不能绑定这只生物。
 message.soulstone.exists=这只生物已经被绑定过了。
 message.soulstone.pet.added=你的%creature%已经被绑定，你可以在你的宠物管理栏里找到它。
 message.soulstone.mount.added=你的%creature%已经被绑定，你可以在你的坐骑管理栏中找到它。
+#
+# Soulkey:
 message.soulkey.disabled=无效的祭坛结构。
 message.soulkey.none=灵魂钥匙不能定位这个祭坛的中心。
 message.soulkey.invalid=灵魂钥匙正在尝试激活这个祭坛，但是这个祭坛的摆法不是正确的！
 message.soulkey.badlocation=灵魂钥匙差一点就能激活祭坛了，但是失败了，看来有地方不对...
 message.soulkey.active=灵魂钥匙激活了祭坛！
+#
+# Pet:
+# %creature% will be replaced with the name of the tamed creature, don't translate this! | %creature% 将被替换为特定的生物名称，请不要翻译！
 message.pet.tamed=%creature%和你的关系似乎变亲近了！
 message.pet.tamefail=%creature%想要更多！
 message.pet.mount.baby=这只%creature%太年轻了，不能背动你！
-# %creature% will be replaced with the name of the tamed creature, don't translate this!
 #
 #
 #
@@ -243,17 +255,25 @@ lyc.command.invalid=无效的指令。
 lyc.command.playeronly=这个指令只能由玩家触发。
 lyc.command.debug.invalid=无效的指令，正确用法：/lycanitesmobs debug debugKey debugValue
 lyc.command.debug.set=更新 %debug%。
+#
+# Spawners:
 lyc.command.spawners.invalid=无效的指令，正确用法：/lycanitesmobs spawners [reload]
 lyc.command.spawners.reload=JSON 生成已被重新加载。
 lyc.command.spawners.creative=为创造模式玩家切换生物事件触发。
+#
+# Dungeons:
 lyc.command.dungeon.invalid=无效指令，正确用法： /lycanitesmobs spawners [reload]
 lyc.command.dungeon.reload=JSON 生成已被重新加载。
 lyc.command.dungeon.enable=恐怖生物地牢已被启用，它们会自然生成在区块中。
 lyc.command.dungeon.disable=恐怖生物地牢已被禁用，它们不会自然生成在区块中。
+#
+# Beastiary:
 lyc.command.beastiary.invalid=无效的指令，正确用法：/lycanitesmobs beastiary [add <creature name>，complete]> 比如 /lycanitesmobs beastiary add quillbeast
 lyc.command.beastiary.complete=将所有生物都加入生物图鉴。
 lyc.command.beastiary.add.invalid=无效的指令，正确用法：beastiary add <creature name> 比如 /lycanitesmobs beastiary add quillbeast
 lyc.command.beastiary.add.unknown=未知的生物。确保名称全部是小写字母，并且没有空格。
+#
+# Mob Events:
 lyc.command.mobevent.invalid=无效的指令，正确用法：/lycanitesmobs mobevent [start <event name>，stop，list，enable，disable]> 比如 /lycanitesmobs mobevent start hellsfury
 lyc.command.mobevent.start.invalid=无效的指令, 正确用法：mobevent start <event name> 比如 mobevent start hellsfury
 lyc.command.mobevent.start.unknown=无效的生物事件，使用 /lycanitesmobs mobevent list 来查看所有的生物事件名称列表。
@@ -270,14 +290,22 @@ lyc.command.mobevent.reload=JSON 生物事件已被重新加载。
 lyc.command.mobevent.creative=为创造模式玩家切换生物事件。
 #
 #
+#
 # ========== System ==========
 lyc.version.newer=您目前正在使用的恐怖生物版本是 {current} 但现在发现有新版本 {latest}， 建议您通过更新来获得更好的体验！
+#
 #
 #
 # ========== Common ==========
 common.yes=是
 common.no=否
 common.ok=好的
+#
+#
+#
+# ========== Generic ==========
+generic.defense=防御
+generic.rangedSpeed=远程攻击速度
 #
 #
 #
@@ -290,18 +318,57 @@ stat.portal.description=召唤传送门只能维持一定量的生物并且无�
 #
 #
 # ========== Potion Effects ==========
-potion.paralysis=麻痹
-potion.leech=吸血
-potion.penetration=渗透
-potion.recklessness=鲁莽
-potion.rage=愤怒
-potion.weight=沉重
-potion.swiftswimming=深海探索者
-potion.fear=恐惧
-potion.fallresist=摔落伤害
-potion.rejuvenation=沐浴回春
-potion.decay=腐朽
-potion.insomnia=失眠
+# Debuff:
+effect.paralysis=麻痹
+effect.penetration=渗透
+effect.recklessness=鲁莽
+effect.rage=愤怒
+effect.weight=沉重
+effect.fear=恐惧
+effect.decay=腐朽
+effect.insomnia=失眠
+effect.instability=不稳定
+effect.lifeleak=Lifeleak
+effect.plague=瘟疫
+effect.aphagia=厌恶
+effect.smited=Smited
+#
+# Buffs:
+effect.leech=水蛭
+effect.swiftswimming=深海探索者
+effect.fallresist=摔落保护
+effect.rejuvenation=沐浴回春
+effect.immunization=免疫
+effect.cleansed=净化
+effect.heataura=炽热光环
+effect.staticaura=静态光环
+effect.freezeaura=霜冻光环
+effect.envenom=剧毒
+#
+#
+#
+# ========== Elements ==========
+element.fire=火
+element.water=水
+element.earth=大地
+element.air=风
+element.order=秩序
+element.chaos=混沌
+element.acid=浓酸
+element.lava=熔岩
+element.electric=暗影
+element.light=光
+element.shadow=锐利
+element.armbour=植物
+element.frost=凛冰
+element.fae=Fae
+element.poison=剧毒
+element.phase=相位
+element.crystal=水晶
+element.quake=震动
+element.aether=以太
+element.nether=地狱
+element.void=虚空
 #
 #
 #
