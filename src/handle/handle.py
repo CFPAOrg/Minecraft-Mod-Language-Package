@@ -24,10 +24,27 @@ def lang_handle(dict1, dict2, dict3):
     return dict_out
 
 
+# 判定哪些文件应该处理
+def who_should_handle():
+    change_mod_list = []
+    # 通过 git 来获取更新信息
+    os.system('git add .')
+    # 抓取出新增的部分，因为只有增加的模组才需要 phi 重新导入
+    string = os.popen(
+        'git status | egrep -o "new file:(.*?)|modified:(.*?)"').read()
+    # 正则抓取出有用的信息
+    change_mod_list = re.findall(
+        r'project/assets/(.*?)/lang/.*?.lang', string)
+    # 剔除重复数据
+    change_mod_list = list(set(change_mod_list))
+    return change_mod_list
+
+
 # 开始遍历文件了
-file_list = os.listdir('project/assets/')
+file_list = who_should_handle()
 for modid in file_list:
     dict_out = {}
+
     # 先判定 en_us.lang 是否存在
     if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(modid)):
         continue
