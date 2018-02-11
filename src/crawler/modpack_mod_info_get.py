@@ -1,14 +1,15 @@
 import csv
-import urllib.request
-import urllib.error
-import threading
-import re
-import yaml
-import time
-import os
 import json
+import os
+import re
+import threading
+import time
+import urllib.error
+import urllib.request
 
-DOWNLOAD_LIST = []
+import yaml
+
+# 装填 modpack 中 mod 信息的 list
 ALL_URL_LIST = []
 
 

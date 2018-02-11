@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import os
-import yaml
 import re
 import time
 

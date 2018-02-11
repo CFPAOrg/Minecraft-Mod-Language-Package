@@ -1,11 +1,10 @@
 import csv
-import urllib.request
-import urllib.error
-import threading
-import re
-import yaml
-import time
 import os
+import threading
+import urllib.error
+import urllib.request
+
+import yaml
 
 
 # 定义一个能够初始化的函数，检验 int 数据
@@ -23,9 +22,6 @@ def int_config_init(config_var, top_var):
 with open('config.yml', 'r') as f:
     config = yaml.load(f)
     THREAD_NUM = int_config_init(config['threads_num'], 943)
-
-# 记录下载列表
-DOWNLOAD_LIST = []
 
 
 # list 数据的布尔操作
@@ -67,9 +63,6 @@ def download(url, filename, num_retries=2):
     except urllib.error.URLError as e:
         print('错误：' + e.reason)
         return False
-        if num_retries > 0:
-            if hasattr(e, 'code') and 500 <= e.code < 600:
-                return download(url, user_agent, num_retries - 1)
     return True
 
 
