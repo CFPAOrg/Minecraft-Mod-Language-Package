@@ -1,10 +1,11 @@
 import csv
-import urllib.request
-import urllib.error
-import threading
 import re
-import yaml
+import threading
 import time
+import urllib.error
+import urllib.request
+
+import yaml
 
 
 # 定义一个能够初始化的函数，检验 int 数据
@@ -168,7 +169,7 @@ def main_page_download():
 
 
 # 多线程下载白名单文件
-def wiltelist_page_download():
+def whitelist_page_download():
     threads = []
     for i in range(len(WHITE_LIST)):
         t = MultiThread(func_whitelist_dowload,
@@ -183,7 +184,7 @@ def wiltelist_page_download():
 
 
 main_page_download()
-wiltelist_page_download()
+whitelist_page_download()
 
 # 结果记入 csv 文件中
 csv_time = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime())

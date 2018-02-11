@@ -7,7 +7,7 @@ def lang_to_dict(file_path):
     lang_dict = {}
     with open(file_path, 'r', errors='ignore') as f:
         for line in f.readlines():
-            if line != None and line[0] != '#' and line[0] != '/' and '=' in line:
+            if line is not None and line[0] != '#' and line[0] != '/' and '=' in line:
                 line_list = line.split('=', 1)
                 lang_dict[line_list[0]] = line_list[1]
     return lang_dict
@@ -44,8 +44,6 @@ def who_should_handle():
 # 开始遍历文件了
 file_list = who_should_handle()
 for modid in file_list:
-    dict_out = {}
-
     # 先判定 en_us.lang 是否存在
     if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(modid)):
         continue

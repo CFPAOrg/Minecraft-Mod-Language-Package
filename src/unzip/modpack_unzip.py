@@ -1,9 +1,4 @@
-import csv
-import threading
-import re
-import time
 import os
-import shutil
 
 # 我不是很喜欢 python 的解压模块
 # 我喜欢 shell 的 unzip 工具

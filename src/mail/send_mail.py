@@ -1,9 +1,10 @@
-import yaml
-import time
-import os
 import base64
+import os
 import re
+import time
 from smtplib import SMTP_SSL
+
+import yaml
 
 # 读取配置文件
 with open('config.yml', 'r') as f:
@@ -40,4 +41,3 @@ msg = '\r\n\r\n'.join(('\r\n'.join(headers), '\r\n'.join(body)))
 s = SMTP_SSL('smtp.gmail.com', 465)
 s.login(from_, PASSWD)
 s.sendmail(from_, to_, msg.encode('utf-8'))
-s.quit
