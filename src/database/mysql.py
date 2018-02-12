@@ -1,6 +1,15 @@
 #!/usr/bin/python3
 import pymysql
 import os
+import yaml
+
+# 读取数据库密码用户
+# 是的，open 函数不能识别 linux 下的 ～ 符号！
+PATH_ = os.popen('echo $HOME').read().replace('\n', '')
+with open('{}/.ssh/mysql.yml'.format(PATH_), 'r') as f:
+    config = yaml.load(f)
+    USER = config['user']
+    PASSWD = config['passwd']
 
 
 # 获取语言文件，处理得到一个 dict
@@ -17,8 +26,8 @@ def lang_to_dict(file_path):
 
 
 # 打开数据库连接
-db = pymysql.connect(host='localhost', user='',
-                     passwd='', db='test', charset='utf8mb4')
+db = pymysql.connect(host='localhost', user=USER,
+                     passwd=PASSWD, db='test', charset='utf8mb4')
 # 创建一个游标对象 cursor
 cursor = db.cursor()
 # 如果表存在则删除
