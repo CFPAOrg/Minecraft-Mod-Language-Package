@@ -11,6 +11,7 @@ import yaml
 
 # 装填 modpack 中 mod 信息的 list
 ALL_URL_LIST = []
+DOWNLOAD_LIST = []
 
 
 # 定义一个能够初始化的函数，检验 int 数据
@@ -203,9 +204,9 @@ def func_page_download(i):
         file_url, r'class="button tip fa-icon-download icon-only" href="/projects/.*?/files/(.*?)/download"')
 
     # 将 url name, project_id, file_id 装入 list 中
-    if url_name != None and file_id != None:
-        list = [url_name, project_id, file_id]
-        ALL_URL_LIST.append(list)
+    if url_name is not None and file_id is not None:
+        list_ = [url_name, project_id, file_id]
+        ALL_URL_LIST.append(list_)
 
 
 # 多线程下载实例
