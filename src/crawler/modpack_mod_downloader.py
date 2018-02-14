@@ -29,7 +29,7 @@ with open('config.yml', 'r') as f:
 def list_boolean_operation(list_old, list_new):
     list_processed = []
     for n in list_new:
-        if n not in list_old and n[2] != None:
+        if n not in list_old and n[2] is not None:
             list_processed.append(n)
     return list_processed
 
@@ -117,6 +117,7 @@ def make_temp_dir():
 # 最后就是下载了
 make_temp_dir()
 DOWNLOAD_LIST = list_boolean_operation(csv_to_list(1), csv_to_list(0))
-download_list_tweaker(DOWNLOAD_LIST)
-for n in range(len(DOWNLOAD_LIST) // THREAD_NUM):
-    main_mod_download(n * THREAD_NUM)
+if DOWNLOAD_LIST is not None:
+    download_list_tweaker(DOWNLOAD_LIST)
+    for n in range(len(DOWNLOAD_LIST) // THREAD_NUM):
+        main_mod_download(n * THREAD_NUM)
