@@ -98,11 +98,13 @@ info.woot.xpshard.1=Use while sneaking to use the full stack
 info.woot.fakemanual.0=Install Guide-API for access to the manual
 info.woot.fakemanual.1=Item is called Woot Guide
 
-info.woot.endershard.0=Captures mobs
-info.woot.endershard.1=Hit mob with shard to program
-info.woot.endershard.a.0=Unprogrammed
-info.woot.endershard.b.0=Kills %d/%d
-info.woot.endershard.b.1=Fully programmed
+info.woot.endershard.0=Hit mob with shard to capture
+info.woot.endershard.1=Kill mobs to fully program
+info.woot.endershard.2=Shard must be in your hotbar
+info.woot.endershard.a.0=[Unprogrammed]
+info.woot.endershard.a.1=[Fully Programmed]
+info.woot.endershard.b.0=%s [Kills %d/%d]
+info.woot.endershard.b.1=%s [Fully programmed]
 
 info.woot.tier=Tier %s
 
@@ -114,6 +116,17 @@ info.woot.heart.ingredients=Ingredients Per Mob: %d * %s
 
 info.woot.guide.rclick=Right-click to change tiers
 info.woot.guide.srclick=Sneak Right-click to change levels
+
+info.woot.structure.block_1=Red guide block
+info.woot.structure.block_2=Gray guide block
+info.woot.structure.block_3=Orange guide block
+info.woot.structure.block_4=Green guide block
+info.woot.structure.block_5=White guide block
+info.woot.structure.block_upgrade=Purple guide block
+info.woot.structure.tier_i_cap=Light Gray guide block
+info.woot.structure.tier_ii_cap=Yellow guide block
+info.woot.structure.tier_iii_cap=Cyan guide block
+info.woot.structure.tier_iv_cap=Lime guide block
 
 ###########################################################
 # Enchantments
@@ -128,11 +141,19 @@ chat.woot.endershard.success=Captured mob
 chat.woot.anvil.nomagma=Anvil must be sitting on a Magma Block
 chat.woot.anvil.emptyshard=Unprogrammed Ender Shard
 chat.woot.anvil.invalid=No matching recipe
+chat.woot.validate.power=Found Power Cell at %d,%d,%d
 chat.woot.validate.nopower=No Power Cell
+chat.woot.validate.importer=Found Importer at %d,%d,%d
 chat.woot.validate.noimporter=No Importer
+chat.woot.validate.exporter=Found Exporter at %d,%d,%d
 chat.woot.validate.noexporter=No Exporter
-chat.woot.validate.noblock=Block at %d,%d,%d should be a %s
-chat.woot.validate.validating=Validating factory for
+chat.woot.validate.missing=Expected %s at %d,%d,%d found nothing
+chat.woot.validate.incorrect=Expected %s at %d,%d,%d found %s
+chat.woot.validate.validating=Validating factory for %s
+chat.woot.validate.nocontroller=Expected controller at %d,%d,%d
+chat.woot.validate.invalidmob=Controller contains a blacklisted or unknown mob
+chat.woot.validate.invalidtier=Controller needs higher tier of factory
+chat.woot.validate.ok=Found valid %s factory
 
 ###########################################################
 # Commands
@@ -176,12 +197,14 @@ guide.woot.category.upgrades=Factory Upgrades
 guide.woot.entry.foreword.intro=Introduction
 guide.woot.entry.foreword.purpose=What Does It Do?
 guide.woot.entry.foreword.naming=Factory Or Farm?
+guide.woot.entry.foreword.sponge=SpongeForge Compatibility
 guide.woot.entry.foreword.credits=Credits
 
 # Foreward Entry Text
 guide.woot.entry.foreword.intro.info=Woot is a big, magic multiblock.\n\nYou build the structure, feed it lots of power and it then generates loot.\n\nIf the idea of that horrifies you, then dont use Woot. Build a nice, safe, interesting, creative mob farm instead.
 guide.woot.entry.foreword.purpose.info=Woot is one of many solutions to the age old Minecraft problem of wanting lots of mob drops. The traditional way of doing this is to spawn mobs in the world, kill them somehow and then pick up all the drops. If you are not careful, this can cause performance problems.\n\nSo Woot does it in a different way. It learns the loot that mobs drop when they die. Then you create the Woot farm/factory building and program it with the mob that you want to generate the loot for. Provide it enough power and it starts putting the appropriate drops into attached inventories. No entities are generated in the world, so hopefully there is less performace impact. (E&OE)\n\nIt also has a second purpose. I dont like building mob farms, so this is my solution to my problem.
 guide.woot.entry.foreword.naming.info=Is it a factory? Is it a farm? I can never decide, so expect both words to be used throughout this guide.
+guide.woot.entry.foreword.sponge.info=There are compatibility issues between Woot and SpongeForge. The following issues have been created on the SpongeForge tracker.\n\nCannot capture bosses with the EnderShard - Bug 1912\n\nLooting upgrades produce no output - Bug 1345
 guide.woot.entry.foreword.credits.info=This guide is only possible due to Guide-API.\n\nSo thankyou to TeamAmeriFrance and of course the extra work that TehNut did on the BloodMagic guide.
 
 # Factory Entries
@@ -204,10 +227,15 @@ guide.woot.entry.factory.importer.info=The Importer is responsible for consuming
 guide.woot.entry.factory.exporter.info=The Exporter is responsible for generating and items of fluids from the factory. It will place items in any inventories adjacent to it and fluids in any tanks adjacent to it.
 guide.woot.entry.factory.power.info=The power cells power the factory and are where you connect any power cables. Any factory tier can use any tier of power cell. Different power cells have different storage capacity and transfer rates. Cells preserve their contents when broken.\n\nPower cables will only connect when the factory is fully formed.
 guide.woot.entry.factory.stygianiron.info=Stygian Iron is the basic ore used in this mob. It does not, by default, generate in the world, but can be created using Iron Ore blocks.
-guide.woot.entry.factory.capturing.info=To capture a mob you will need an Ender Shard. The capturing process has two stages.\n\nFirst, quietly approach your chosen mob and strike it with the Ender Shard.\n\nSecond, kill enough of those mobs with the Ender Shard in your hotbar to meet that mobs death requirement. This can be seen in the Ender Shard tooltip. When you have killed enough, then the Ender Shard will glow.
-guide.woot.entry.factory.programming.info=To create a Mob Controller to put on the factory, you will need a glowing Ender Shard. Use this in the Stygian Anvil to produce the programmed controller. Mob Controllers retains their programming when broken, so you can swap between them on the same factory.
+guide.woot.entry.factory.capturing.info=Mobs are captured via the Ender Shard and you need a full Ender Shard to generate a Mob Controller for that mob.\n\nTo initialise the Ender Shard with a mob, you need to quietly approach your chosen mob and hit it with the Ender Shard. The tooltip for that shard will then tell you the mob you have captured.\n\nNow you have to fill the shard up, by killing that type of mob while the Ender Shard is in your toolbar. The tooltip will tell you how many you need to kill and the shard will glow when you have enough.
+guide.woot.entry.factory.programming.info=To create a Mob Controller to put on the factory, you will need a glowing Ender Shard.\n\nUse this in the Stygian Anvil to produce the programmed controller.\n\nMob Controllers retains their programming when broken, so you can swap between them on the same factory.
 guide.woot.entry.factory.stygiananvil.info=The anvil serves two purposes. The first is to create some of the items used for crafting, such as the cores. The second is to reduce the cost of creating some items.\n\nThe anvil must be placed on top off a magma block.\n\nTo create an item using the anvil, right-click with a die which will then be placed on the anvil. Then drop one of each ingredient on top off the anvil and then right-click with the Ya Hammer.\n\nThe dies are created on the anvil in the same way, except that the item to generate the die is placed on the anvil first.
 guide.woot.entry.factory.headhunter.info=To build the factory you need mob heads. To assist you in this, there is a Headhunter enchantment. This increases the change of a skull drop when you manually kill a mob.\n\nThis only works on Zombies, Skeletons and Creepers. It has no effect on Wither Skeletons.
+
+
+guide.woot.entry.factory.remote_io_structure=Remote I/O Structure
+guide.woot.entry.factory.remote_io_connect=Below you can see the connections to the power cell, item and liquid inputs and item outputs.
+guide.woot.entry.factory.remote_io_distance=Remote I/O Distance
 
 guide.woot.entry.factory.tiers.info=There are four tiers of factory available. Depending on the mob you want to spawn, each has a minimum factory tier that is needed. Higher tiers can also support a larger number of upgrades and higher tiers of upgrades.\n\nAll tiers of factory support all the power cells.
 guide.woot.entry.factory.tiers.tieri=Tier I factory supports\n\tUp to 2 Tier I upgrades\n\nTier I factory needs\n\t2 Tier I Capstones\n\t10 Factory Bone Casing\n\t14 Factory Flesh Casing

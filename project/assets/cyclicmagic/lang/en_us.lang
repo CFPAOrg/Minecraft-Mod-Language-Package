@@ -561,7 +561,7 @@ spell.spawnegg.name=Respawn Egg
 teleport.dimension=Cannot cross dimensions
 tile.trash.name=Trash Void
 tile.trash.tooltip=Dispose of any fluid or item
-tile.trash.guide=Dispose of any fluid or item by pumping items into this with hoppers or pipes.  
+tile.trash.guide=Dispose of any fluid or item by pumping items into this with hoppers or cables.  
 tile.auto_crafter.guide=Set the recipe, and this will autocraft as many as it can.  Has slots for input materials and output.
 tile.auto_crafter.name=Auto Crafter
 tile.auto_crafter.tooltip=Automated 3x3 crafting
@@ -579,13 +579,13 @@ tile.beacon_potion.entity.tooltip=Entity type filter
 tile.beacon_redstone.guide=Displays a beacon beam when powered with redstone
 tile.beacon_redstone.name=Empty Beacon
 tile.beacon_redstone.tooltip=Displays a beacon beam when powered with redstone
-tile.block_disenchanter.guide=This will strip off enchantments one by one, with a cost.  Feed in your enchantments in the top and books into the middle.  It will consume one of each ingredient for each enchantment removed, and put each one on a book.  There is no way to pick which enchantment is removed, so if it removes the wrong one you just have to keep removing, and then re-add the ones you want back on the normal way (anvil).  Can be automated with pipes/hoppers and controlled with redstone.
+tile.block_disenchanter.guide=This will strip off enchantments one by one, with a cost.  Feed in your enchantments in the top and books into the middle.  It will consume one of each ingredient for each enchantment removed, and put each one on a book.  There is no way to pick which enchantment is removed, so if it removes the wrong one you just have to keep removing, and then re-add the ones you want back on the normal way (anvil).  Can be automated with cables/hoppers and controlled with redstone.
 tile.block_disenchanter.name=Unchant Pylon
 tile.block_disenchanter.tooltip=Remove enchantments for a price
-tile.block_fishing.guide=Place down surrounded by water.  Fishes faster more sides are covered in water, minimum 4 of 6.  Then give it a fishing rod and it fishes for you.  It uses whatever is in the fishing loot table, so it works with regular fish, treasure, junk, and modded items that were added.  The frequency indicates how often it will attempt to fish.  You can increase this number by surrounding it with more still or flowing water, so you can use pipes and hoppers to automate fishing even further, but the frequency will be slightly lower.
+tile.block_fishing.guide=Place down surrounded by water.  Fishes faster more sides are covered in water, minimum 4 of 6.  Then give it a fishing rod and it fishes for you.  It uses whatever is in the fishing loot table, so it works with regular fish, treasure, junk, and modded items that were added.  The frequency indicates how often it will attempt to fish.  You can increase this number by surrounding it with more still or flowing water, so you can use cables and hoppers to automate fishing even further, but the frequency will be slightly lower.
 tile.block_anvil.name=Powered Anvil
 tile.block_anvil.tooltip=Repair anything using Lava and energy
-tile.block_anvil.guide=Add lava into the internal tank, and also fuel or energy.  When repairs are complete the item moves to the opposite slot.  Can be automated with pipes & hoppers. 
+tile.block_anvil.guide=Add lava into the internal tank, and also fuel or energy.  When repairs are complete the item moves to the opposite slot.  Can be automated with cables & hoppers. 
 tile.block_enchanter.name=Powered Enchanter
 tile.block_enchanter.tooltip=Add enchantments using experience fluid and energy
 tile.block_enchanter.guide=Feed in experience as a fluid, and then add any enchantable item. Can be automated with pipes & hoppers.
@@ -984,36 +984,45 @@ splash_potion.effect.frostwalker=Splash Potion of Frost Walker
 lingering_potion.effect.frostwalker=Lingering Potion of Frost Walker
 tipped_arrow.effect.frostwalker=Arrow of Frost Walker
 
-tile.fluid_pump.name=Fluid Pump
-tile.fluid_pump.tooltip=Move fluid between tanks or pipes when redstone powered
-tile.fluid_pump.guide=Drains from all sides except the facing direction.  Pushes liquids into tanks in front if any.  Push into another tank or Fluid Pipes.
-
+tile.fluid_pump.name=Fluid Extraction Cable
+tile.fluid_pump.tooltip=Extract liquid into cables or machines
+tile.fluid_pump.guide=Drains from all sides except the facing direction.  Pushes liquids into tanks in front if any.  Push into another tank or Fluid Cable.
 
 tile.fluid_placer.name=Fluid Placer
 tile.fluid_placer.tooltip=Place fluid in the world
-tile.fluid_placer.guide=Fill this with a bucket or fluid pipes.  Places fluid in the world on redstone power.  
+tile.fluid_placer.guide=Fill this with a bucket or fluid cables.  Places fluid in the world on redstone power.  
 
-tile.fluid_pipe.name=Fluid Pipe
-tile.fluid_pipe.tooltip=Connect to a Fluid Pump to transfer liquids between tanks
-tile.fluid_pipe.guide=Connect to a Fluid Pump to transfer liquids between tanks.  Each pipe segment holds a small amount of liquid, and it gets pushed through from previous pipe segments or a pump and goes out any direction it can find.
+tile.fluid_pipe.name=Fluid Cable
+tile.fluid_pipe.tooltip=Use an Extraction cable to transfer liquids
+tile.fluid_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  You need an Extraction cable to start the flow
+
+tile.bundled_pipe.name=Bundled Cable
+tile.bundled_pipe.tooltip=Transfer items, fluids, and energy
+tile.bundled_pipe.guide=Just like the other three cables, you need something to start the flow such as a hopper or a pump.  Then this will cary your items, fluids, and power around the connected network until they find a home.
+
+tile.energy_pump.name=Energy Extraction Cable
+tile.energy_pump.tooltip=Extract power into cables or machines
+tile.energy_pump.guide=Transfer energy out of machines.  Can be used with cables and machines.  Compatible with all Forge Energy systems such as RF.  
+
+tile.energy_pipe.name=Energy Cable
+tile.energy_pipe.tooltip=Connect to an Energy Pump to transfer power
+tile.energy_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  You need an Extraction cable to start the flow.  Compatible with all Forge Energy systems such as RF.  
 
 cyclic.redstone.on=Restone: On
 cyclic.redstone.off=Restone: Off
 
-tile.item_pump.name=Item Pump
-tile.item_pump.tooltip=A fast omni-direction hopper
-tile.item_pump.guide=Pump items out of anything into any inventory or the Item Pipe
+tile.item_pump.name=Item Extraction Cable
+tile.item_pump.tooltip=Extracts items into Item Cables
+tile.item_pump.guide=Pump items out of anything into any inventory or the Item Cable
 
 
-tile.item_pipe.name=Item Pipe
-tile.item_pipe.tooltip=Fast Item transport, use with the Item Pump
-tile.item_pipe.guide=Use an Item Pump to pull out of any inventory into these pipes, which will deposit anywhere
-
-
+tile.item_pipe.name=Item Cable
+tile.item_pipe.tooltip=Use an Extraction cable to transfer items
+tile.item_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  You need an Extraction cable to start the flow
 
 tile.item_pipe_sort.name=Item Sorter
-tile.item_pipe_sort.tooltip=Sorting machine for use with pipes and hoppers
-tile.item_pipe_sort.guide=Connect to item pipes or hoppers to sort anything in any direction.  Each colour has one direction inspired by the Buildcraft diamond pipes.
+tile.item_pipe_sort.tooltip=Sorting machine for use with cables and hoppers
+tile.item_pipe_sort.guide=Connect to item cables or hoppers to sort anything in any direction.  Each colour has one direction inspired by the Buildcraft diamond cables.
 
 tile.item_pipe_sort.filter=Output here only if it matches this filter
 tile.item_pipe_sort.everything=Output everything here, ignoring this filter
