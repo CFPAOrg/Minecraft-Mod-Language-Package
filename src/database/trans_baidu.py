@@ -62,10 +62,13 @@ with open('en_us.lang', 'r', encoding='utf-8') as lang:
                 a = download(fin_url).decode('utf-8')  # 得到的是 byte 类型，所以要转义成 utf-8
                 trans = json.loads(a)  # 返回的是 json 数据，我们调用 json 模块进行处理
                 # 判定翻译的中文是不是空，不为空，装入 dict 中
-                if len(trans['trans_result'][0]['dst']) != 0:
-                    zh_cn[line[0]] = trans['trans_result'][0]['dst']
+                try:
+                    if len(trans['trans_result'][0]['dst']) != 0:
+                        zh_cn[line[0]] = trans['trans_result'][0]['dst']
+                except:
+                    pass
 
 # 最后，写成中文文件
-with open('zh_cn.lang', 'w', encoding='utf-8') as lang:
+with open('zh_cn_baidu.lang', 'w', encoding='utf-8') as lang:
     for k, v in zh_cn.items():
         lang.writelines(k + '=' + v + '\n')
