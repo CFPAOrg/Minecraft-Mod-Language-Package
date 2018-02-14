@@ -117,7 +117,9 @@ def make_temp_dir():
 # 最后就是下载了
 make_temp_dir()
 DOWNLOAD_LIST = list_boolean_operation(csv_to_list(1), csv_to_list(0))
-if DOWNLOAD_LIST is not None:
+try:
     download_list_tweaker(DOWNLOAD_LIST)
     for n in range(len(DOWNLOAD_LIST) // THREAD_NUM):
         main_mod_download(n * THREAD_NUM)
+except NameError:
+    print('无更新内容')
