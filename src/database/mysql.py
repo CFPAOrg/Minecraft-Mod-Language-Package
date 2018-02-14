@@ -20,6 +20,9 @@ def lang_to_dict(file_path):
             if line is not None and line[0] != '#' and line[0] != '/' and '=' in line:
                 # 剔除行末尾 \n
                 line = line.rstrip('\n')
+                # 将可能破坏 SQL 语句的符号清除
+                line = line.replace("'", "")
+                line = line.replace('"', '')
                 line_list = line.split('=', 1)
                 lang_dict[line_list[0]] = line_list[1]
     return lang_dict
@@ -37,8 +40,8 @@ cursor.execute('DROP TABLE IF EXISTS LANG')
 # 限定只装入 16 字符汉字，256 字符英文
 cursor.execute("""CREATE TABLE LANG (
          modid VARCHAR(64),
-         en_us VARCHAR(256),
-         zh_cn VARCHAR(16))
+         en_us VARCHAR(512),
+         zh_cn VARCHAR(32))
          CHARSET='utf8mb4'""")
 
 # 导入的数据 list
@@ -57,9 +60,7 @@ for modid in os.listdir('../../project/assets'):
 
     # 开始写入数据库
     for k in zh_cn_dict.keys():
-        if k in en_us_dict and 0 < len(en_us_dict[k]) <= 256 and 0 < len(zh_cn_dict[k]) <= 16 \
-                and '"' not in en_us_dict[k] and '"' not in zh_cn_dict[k] \
-                and '\'' not in en_us_dict[k] and '\'' not in zh_cn_dict[k]:
+        if k in en_us_dict and 0 < len(en_us_dict[k]) <= 512 and 0 < len(zh_cn_dict[k]) <= 32:
             data_list.append('("{}", "{}", "{}")'.format(modid, en_us_dict[k], zh_cn_dict[k]))
 
 # 生成 SQL 语句
