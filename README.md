@@ -1,10 +1,9 @@
-# Minecraft Mod Simplified Chinese Language Resourcepacks
-
-## Minecraft 模组简体中文汉化资源包
-
-[![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) ![weblate](https://weblate.sayori.pw/widgets/langpack/zh_cn/svg-badge.svg) ![travis](https://api.travis-ci.org/CFPAOrg/Minecraft-Mod-Language-Package.svg)
-
+![pack.png](https://i.loli.net/2018/02/18/5a8971b635b95.png)
 ---
+| CurseForge 下载量 | 支持版本 | 翻译进度 | Travis CI |
+| :--: | :--: | :--: | :--: |
+| [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) | [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)  | ![weblate](https://weblate.sayori.pw/widgets/langpack/zh_cn/svg-badge.svg) | ![travis](https://api.travis-ci.org/CFPAOrg/Minecraft-Mod-Language-Package.svg) |
+
 ## 仓库说明
 
 这是 Minecraft 模组汉化项目的仓库，本项目目前采用 Weblate 平台进行模组项目翻译；<br>
