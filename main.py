@@ -30,6 +30,7 @@ import src.unzip.mod_unzip
 
 # 开始处理语言文件
 import src.handle.handle
+import src.handle.properties_handle
 
 # 清除黑名单文件夹
 import src.redundancy.black_dir_del
