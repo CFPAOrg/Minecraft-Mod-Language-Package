@@ -7,7 +7,7 @@ def lang_to_dict(file_path):
     lang_dict = {}
     with open(file_path, 'r', errors='ignore') as f:
         for line in f.readlines():
-            if line is not None and line[0] != '#' and line[0] != '/' and '=' in line:
+            if line is not None and line[0] != '#' and '=' in line:
                 line_list = line.split('=', 1)
                 lang_dict[line_list[0]] = line_list[1]
     return lang_dict
@@ -27,7 +27,6 @@ def lang_handle(dict1, dict2, dict3):
 
 # 判定哪些文件应该处理
 def who_should_handle():
-    change_mod_list = []
     # 通过 git 来获取更新信息
     os.system('git add .')
     # 抓取出新增的部分，因为只有增加的模组才需要 phi 重新导入
@@ -38,17 +37,25 @@ def who_should_handle():
         r'project/assets/(.*?)/lang/.*?.lang', string)
     # 剔除重复数据
     change_mod_list = list(set(change_mod_list))
+    # 判断是否有 #PARSE_ESCAPE 注释
+    # 在 forge 中，有此注释的语言文件，会被严格按照 Java Properties 格式解析
+    for change_mod in change_mod_list:
+        # 没有英文文本的要剔除
+        if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(change_mod)):
+            change_mod_list.remove(change_mod)
+            continue
+        # 有 #PARSE_ESCAPE 注释的也要剔除
+        with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r') as lang:
+            for line in lang.readlines():
+                if '#PARSE_ESCAPE' in line:
+                    change_mod_list.remove(change_mod)
     return change_mod_list
 
 
 # 开始遍历文件了
 file_list = who_should_handle()
 for modid in file_list:
-    # 先判定 en_us.lang 是否存在
-    if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(modid)):
-        continue
-
-    # 而后开始转换为 dict
+    # 开始转换为 dict
     en_us_dict = lang_to_dict(
         'project/assets/{}/lang/en_us.lang'.format(modid))
     zh_cn_old_dict = lang_to_dict(
