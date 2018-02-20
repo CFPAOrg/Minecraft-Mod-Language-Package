@@ -1,8 +1,9 @@
 ![pack.png](https://i.loli.net/2018/02/18/5a8974407b453.png)
 ---
-| CurseForge 下载量 | 支持版本 | 翻译进度 | Travis CI |
-| :--: | :--: | :--: | :--: |
-| [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) | [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)  | ![weblate](https://weblate.sayori.pw/widgets/langpack/zh_cn/svg-badge.svg) | ![travis](https://api.travis-ci.org/CFPAOrg/Minecraft-Mod-Language-Package.svg) |
+
+| CurseForge 下载量 | 支持版本 | 翻译进度 | Travis CI | 最新快照版本 |
+| :--: | :--: | :--: | :--: | :--: |
+| [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) | [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)  | ![weblate](https://weblate.sayori.pw/widgets/langpack/zh_cn/svg-badge.svg) | ![travis](https://api.travis-ci.org/CFPAOrg/Minecraft-Mod-Language-Package.svg) | ![GitHub release](https://img.shields.io/github/release/CFPAOrg/Minecraft-Mod-Language-Package.svg) |
 
 ## 仓库说明
 
