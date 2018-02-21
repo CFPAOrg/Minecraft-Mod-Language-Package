@@ -6,7 +6,6 @@ import threading
 import time
 import urllib.error
 import urllib.request
-
 import yaml
 
 # 装填 modpack 中 mod 信息的 list
@@ -85,7 +84,7 @@ def csv_to_list(log_path):
 def download_list_tweaker(download_list):
     left = THREAD_NUM - (len(DOWNLOAD_LIST) % THREAD_NUM)
     for i in range(left):
-        download_list.append('baka943')     # 充满智慧与力量的数值
+        download_list.append('baka943')  # 充满智慧与力量的数值
     return download_list
 
 
@@ -103,7 +102,7 @@ def list_should_download():
                 manifest = json.load(f)
                 for project in manifest['files']:
                     mod_list_1.append(project['projectID'])
-        mod_list_1 = list(set(mod_list_1))    # 剔除重复元素
+        mod_list_1 = list(set(mod_list_1))  # 剔除重复元素
 
     # 将其与 mod 爬取的做对比，防止重复下载
     # 现将 mod 中的日志读取为 mod_list_2
@@ -199,7 +198,7 @@ def func_page_download(i):
 
     # file id 获取
     file_url = 'https://minecraft.curseforge.com/projects/' + project_id + \
-        '/files?filter-game-version=' + VERSION_DICT.get(VERSION)
+               '/files?filter-game-version=' + VERSION_DICT.get(VERSION)
     file_id = get_info(
         file_url, r'class="button tip fa-icon-download icon-only" href="/projects/.*?/files/(.*?)/download"')
 

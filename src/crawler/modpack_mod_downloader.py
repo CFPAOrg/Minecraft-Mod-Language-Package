@@ -3,7 +3,6 @@ import os
 import threading
 import urllib.error
 import urllib.request
-
 import yaml
 
 
@@ -103,7 +102,7 @@ def main_mod_download(n):
 def download_list_tweaker(download_list):
     left = THREAD_NUM - (len(DOWNLOAD_LIST) % THREAD_NUM)
     for i in range(left):
-        baka_list = ['baka943', '999', '999']     # 充满智慧与力量的数值
+        baka_list = ['baka943', '999', '999']  # 充满智慧与力量的数值
         download_list.append(baka_list)
     return download_list
 

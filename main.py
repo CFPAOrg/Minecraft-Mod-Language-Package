@@ -7,7 +7,7 @@ import time
 # 但是写着好用，以后也许会改
 # 也许……
 
-# 清除先前的零时文件
+# 清除先前的临时文件
 os.system('rm -rf /tmp/mods')
 os.system('rm -rf /tmp/modpacks')
 

@@ -3,7 +3,6 @@ import os
 import threading
 import urllib.error
 import urllib.request
-
 import yaml
 
 
@@ -37,7 +36,7 @@ def list_boolean_operation(list_old, list_new):
 # 遍历 logs 文件夹下文件，按照文件名进行排序
 def get_file_name():
     file_list = os.listdir('logs/modpacks/')
-    file_list.remove('mods')    # 移除 mods 文件夹的检索
+    file_list.remove('mods')  # 移除 mods 文件夹的检索
 
     def custom_sort(string):
         string = string.replace('-', '')
@@ -105,7 +104,7 @@ def main_modpack_download(n):
 def download_list_tweaker(download_list):
     left = THREAD_NUM - (len(DOWNLOAD_LIST) % THREAD_NUM)
     for i in range(left):
-        baka_list = ['baka943', '999', '999']     # 充满智慧与力量的数值
+        baka_list = ['baka943', '999', '999']  # 充满智慧与力量的数值
         download_list.append(baka_list)
     return download_list
 

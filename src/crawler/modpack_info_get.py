@@ -4,7 +4,6 @@ import threading
 import time
 import urllib.error
 import urllib.request
-
 import yaml
 
 
@@ -108,7 +107,7 @@ class MultiThread(threading.Thread):
 def func_page_download(i):
     # 获取 url name
     url = 'https://minecraft.curseforge.com/modpacks?filter-game-version=' + \
-        VERSION_DICT.get(VERSION) + '&filter-sort=downloads&page=' + str(i + 1)
+          VERSION_DICT.get(VERSION) + '&filter-sort=downloads&page=' + str(i + 1)
     main_page = download(url)
     url_name_list = re.findall(
         r'<a href="/projects/(.*?)">', str(main_page))
@@ -126,7 +125,7 @@ def func_page_download(i):
 
         # file id 获取
         file_url = 'https://minecraft.curseforge.com/projects/' + url_name + \
-            '/files?filter-game-version=' + VERSION_DICT.get(VERSION)
+                   '/files?filter-game-version=' + VERSION_DICT.get(VERSION)
         file_id = get_info(
             file_url, r'class="overflow-tip twitch-link" href="/projects/.*?/files/(.*?)"')
 
@@ -146,7 +145,7 @@ def func_whitelist_download(url_name):
 
         # file id 获取
         file_url = 'https://minecraft.curseforge.com/projects/' + url_name + \
-            '/files?filter-game-version=' + VERSION_DICT.get(VERSION)
+                   '/files?filter-game-version=' + VERSION_DICT.get(VERSION)
         file_id = get_info(
             file_url, r'class="overflow-tip twitch-link" href="/projects/.*?/files/(.*?)"')
 
