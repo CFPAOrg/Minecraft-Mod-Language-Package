@@ -2,16 +2,15 @@ import base64
 import os
 import re
 import time
-from smtplib import SMTP_SSL
-
 import yaml
+from smtplib import SMTP_SSL
 
 # 读取配置文件
 with open('config.yml', 'r') as f:
     config = yaml.load(f)
     send_list = config['email']
 
-# 从加密过的字节码文件中获取 Gmail 邮箱密码
+# 从加密过的文件中获取 Gmail 邮箱密码
 PASSWD = os.popen('cat ~/.ssh/password').read().replace("\n", "")
 PASSWD = PASSWD.encode()
 for i in range(15):
