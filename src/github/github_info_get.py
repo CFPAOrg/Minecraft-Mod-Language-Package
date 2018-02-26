@@ -113,6 +113,3 @@ def github_info_get_main():
             info_list.append(user_info)
     log_write(info_id)  # 别忘了写入日志中
     return info_list
-
-
-print(github_info_get_main())

@@ -2,7 +2,7 @@ import base64
 import os
 import re
 import time
-import src.github.github_info_get
+import github_info_get
 from smtplib import SMTP_SSL
 
 send_list = ['baka943@qq.com']
@@ -26,12 +26,20 @@ headers = [
 
 # 接下来开始写信件主体
 # 获取 github 信息，写成邮件
-info_list = src.github.github_info_get.github_info_get_main()
+info_list = github_info_get.github_info_get_main()
 body = []
+for i in info_list:
+    body.append('ID：' + i['user'])
+    body.append('更新仓库:' + ', '.join(i['repos_name']))
+    body.append('================')
+
+# 拼凑成整个邮件
+msg = '\r\n\r\n'.join(('\r\n'.join(headers), '\r\n'.join(body)))
+
 if len(info_list) > 0:
     for i in info_list:
         body.append('ID：' + i['user'])
-        body.append('更新仓库:' + ', '.join(i['repos_name']) + '\r\n')
+        body.append('更新仓库:' + ', '.join(i['repos_name']))
 
     # 拼凑成整个邮件
     msg = '\r\n\r\n'.join(('\r\n'.join(headers), '\r\n'.join(body)))
