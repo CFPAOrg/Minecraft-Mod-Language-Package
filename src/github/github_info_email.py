@@ -32,18 +32,11 @@ for i in info_list:
     body.append('ID：' + i['user'])
     body.append('更新仓库:' + ', '.join(i['repos_name']))
     body.append('================')
-
+    
 # 拼凑成整个邮件
 msg = '\r\n\r\n'.join(('\r\n'.join(headers), '\r\n'.join(body)))
 
 if len(info_list) > 0:
-    for i in info_list:
-        body.append('ID：' + i['user'])
-        body.append('更新仓库:' + ', '.join(i['repos_name']))
-
-    # 拼凑成整个邮件
-    msg = '\r\n\r\n'.join(('\r\n'.join(headers), '\r\n'.join(body)))
-
     # 开始用 SMTP/SSL 进行信件传输
     s = SMTP_SSL('smtp.gmail.com', 465)
     s.login(from_, PASSWD)
