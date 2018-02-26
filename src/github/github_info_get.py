@@ -11,7 +11,7 @@ def log_write(info_list=None):
     if info_list is None:
         info_list = [["TartaricAcid", "999999999"]]
     # 开始写入文件
-    with open('../../logs/github/github.csv', 'w') as file:
+    with open('logs/github/github.csv', 'w') as file:
         csv_writer = csv.writer(file)
         csv_writer.writerow(["User Name", "Push ID"])
         for line in info_list:
@@ -21,7 +21,7 @@ def log_write(info_list=None):
 # csv 日志读取，不需要传入数据
 # 但是会返回一个二维数组
 def log_read():
-    with open('../../logs/github/github.csv', 'r') as file:
+    with open('logs/github/github.csv', 'r') as file:
         csv_list = list(csv.reader(file))
         csv_list.remove(csv_list[0])  # 裁切头文件
         return csv_list
@@ -52,7 +52,7 @@ def should_email(user, event_id):
 # 配置文件读取用户名
 # 返回值为 list
 def get_user():
-    with open('../../config.yml', 'r') as f:
+    with open('config.yml', 'r') as f:
         config = yaml.load(f)
         return config['github_user']
 
