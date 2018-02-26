@@ -1,51 +1,51 @@
 #PARSE_ESCAPES
 itemGroup.circuits=Automated Redstone
 # Blocks
-# names
+# names & tooltips
 tile.cd4017be.assembler.name=Circuit Assembler
-tile.cd4017be.circuit\:0.name=Circuit Casing §7Basic
-tile.cd4017be.circuit\:1.name=Circuit Casing §3Accelerated
-tile.cd4017be.circuit\:2.name=Circuit Casing §9High Speed
-tile.cd4017be.rsp_32bit.name=32-bit-Signal Wire
-tile.cd4017be.rsp_basic\:0.name=Solid Redstone Wire
-tile.cd4017be.rsp_basic\:1.name=Redstone Receiver Wire
-tile.cd4017be.rsp_basic\:2.name=Redstone Emitter Wire
-tile.cd4017be.bit_shifter.name=Signal Bit Shifter
-tile.cd4017be.multilever.name=8-bit Lever
-tile.cd4017be.potentiometer.name=Redstone Potentiometer
-tile.cd4017be.display.name=Signal LED-Display
-tile.cd4017be.sensor_reader.name=Sensor Reader
-tile.cd4017be.oszillograph.name=Oscilloscope
-tile.cd4017be.designer.name=Circuit Designer
-tile.cd4017be.fluid_valve.name=Fluid Valve
-tile.cd4017be.energy_valve.name=Energy Valve
-tile.cd4017be.item_valve.name=Item Valve
-tile.cd4017be.wireless_con\:0.name=Wireless Signal Connectors
-tile.cd4017be.wireless_con\:1.name=§bLinked§f Wireless Signal Connector
-tile.cd4017be.rsp_shift.name=Bit Splitter Wire
-# tooltips
-tile.cd4017be.designer.tip=Used to design the circuit architecture\nand write it on a §6Schematic§7 for Assembling.
 tile.cd4017be.assembler.tip=Used to install components into a\n§6Circuit Casing§7 based on a §6Schematic§7.
+tile.cd4017be.circuit\:0.name=Circuit Casing §7Basic
 tile.cd4017be.circuit\:0.tip=Compact container for complicated redstone logic.\nInstall Components in §6Circuit Assembler§7.\nMax \\<circuit_speed:0> cycles per second
+tile.cd4017be.circuit\:1.name=Circuit Casing §3Accelerated
 tile.cd4017be.circuit\:1.tip=Max \\<circuit_speed:1> cycles per second
+tile.cd4017be.circuit\:2.name=Circuit Casing §9High Speed
 tile.cd4017be.circuit\:2.tip=Max \\<circuit_speed:2> cycles per second
-tile.cd4017be.rsp_32bit.tip=Lossless instant omnidirectional\ntransfer of 32-bit redstone signals.\nClick on sides to change their IO mode.\nSneak-Click to disconnect Wires.\nClick with block in left hand to cover.
+tile.cd4017be.rsp_32bit.name=32-bit-Signal Wire
+tile.cd4017be.rsp_32bit.tip=Lossless instant omnidirectional\ntransfer of 32-bit redstone signals.\n(combining signals via bitwise OR)\nClick on sides to change their IO mode.\nSneak-Click to disconnect Wires.\nClick with block in left hand to cover.
+tile.cd4017be.rsp_basic\:0.name=Solid Redstone Wire
 tile.cd4017be.rsp_basic\:0.tip=Lossless redstone signal transfer\nfrom §6Receiver§7 to §6Emitter§7 Wires\n(long distances will cause delay)\nSneak-Click to disconnect Wires\nClick with block in left hand to cover.
-tile.cd4017be.rsp_basic\:1.tip=Emits a redstone signal.\nSupports 8-bit RS-strength (0-255).
-tile.cd4017be.rsp_basic\:2.tip=Receives a redstone signal.\nSupports 8-bit RS-strength (0-255).
+tile.cd4017be.rsp_basic\:1.name=Redstone Receiver Wire
+tile.cd4017be.rsp_basic\:1.tip=Includes received Redstone signals to\nthe wire's 8-bit state (bitwise OR).
+tile.cd4017be.rsp_basic\:2.name=Redstone Emitter Wire
+tile.cd4017be.rsp_basic\:2.tip=Emits the wire's 8-bit state as\nRedstone signal in range 0-255.
+tile.cd4017be.bit_shifter.name=Signal Bit Shifter
 tile.cd4017be.bit_shifter.tip=Transforms signals between bit levels which is usefull\nfor transmitting multiple signals within one cable.\nClick sides to adjust §1input§7/§2output§7 bit offset.\nInsert §6IO bus Relay§7s to increase signal size (1bit/item).\nSneak-Click to remove installed §6IO bus Relay§7s.
+tile.cd4017be.multilever.name=8-bit Lever
 tile.cd4017be.multilever.tip=Emits an adjustable redstone strength\nthat's represented by the 8 lever states in binary.
+tile.cd4017be.potentiometer.name=Redstone Potentiometer
 tile.cd4017be.potentiometer.tip=Emits an adjustable redstone strength.\nClick on slider to set its value.\nClick on +/- arrows to in/decrement\n(step size depends on click pos logarithmically)\nClick on non front side of the block to configure range.
+tile.cd4017be.display.name=Signal LED-Display
 tile.cd4017be.display.tip=A fancy way to display redstone signals.\nSupports 32-bit RS-strength (+/- 2.147.483.648).
+tile.cd4017be.sensor_reader.name=Sensor Reader
 tile.cd4017be.sensor_reader.tip=Outputs the measurement value of a\n§6Sensor§7 module as 32-bit RS-strength.
+tile.cd4017be.oszillograph.name=Oscilloscope
 tile.cd4017be.oszillograph.tip=Displays the graph of up to 4 input values over time.\nInputs can be Redstone signals or §6Sensor§7 modules.\nLike in real Oscilloscopes the GUI has lots of settings.
+tile.cd4017be.designer.name=Circuit Designer
+tile.cd4017be.designer.tip=Used to design the circuit architecture\nand write it on a §6Schematic§7 for Assembling.
+tile.cd4017be.fluid_valve.name=Fluid Valve
 tile.cd4017be.fluid_valve.tip=Can control or measure fluid flow with redstone signals.\n(counts in units of 1mB)
+tile.cd4017be.energy_valve.name=Energy Valve
 tile.cd4017be.energy_valve.tip=Can control or measure energy flow with redstone signals.\nSupports §3RF§7 and §3Tesla§7 (counts in unit of 1RF).
+tile.cd4017be.item_valve.name=Item Valve
 tile.cd4017be.item_valve.tip=Can control or measure item flow with redstone signals.\n(mirrors the connected inventory)
+tile.cd4017be.wireless_con\:0.name=Wireless Signal Connectors
 tile.cd4017be.wireless_con\:0.tip=Connects two §6Solid Redstone§7 or §632-bit-Signal Wires\nacross any distance and even between dimensions.\nYou'll get the second connector when placing this one.
+tile.cd4017be.wireless_con\:1.name=§bLinked§f Wireless Signal Connector
 tile.cd4017be.wireless_con\:1.tip=Place to establish a connection with linked block.\nWarning: At least one of both connectors must\nstay placed in world to keep up the linkage.\nSneak-Click block to remove both connectors at once\nand get them back as the unlinked connector.
+tile.cd4017be.rsp_shift.name=Bit Splitter Wire
 tile.cd4017be.rsp_shift.tip=Used to transmit multiple signals over the same wire by splitting its bandwidth.\nSneak-Click to disconnect Wires & Normal-Click to open GUI.\n(§9OpenComputers§7 and §9TIS-3D§7 compatible)\nClick with block in left hand to cover.
 
+# chat messages
 tile.cd4017be.multilever.click0=Output as bits 0-7 [1-128]
 tile.cd4017be.multilever.click1=Output as bits 8-15 [256-32768]
 tile.cd4017be.multilever.click2=Output as bits 16-23 [65536-8388608]
@@ -58,23 +58,24 @@ msg.cd4017be.wireless4=§2Both linked connectors removed
 msg.cd4017be.wireless5=§4Can't find other connector!
 
 # Items
-# names
+# names & tooltips
 item.cd4017be.m\:empty_sensor.name=Blank Sensor Module
 item.cd4017be.m\:io_relay.name=IO bus Relay
 item.cd4017be.m\:ram_plate.name=8-bit Backplane
 item.cd4017be.m\:logic_prc.name=Logic Processor
 item.cd4017be.m\:calc_prc.name=Arithmetic Processor
 item.cd4017be.circuit_plan.name=Circuit Schematic
-item.cd4017be.item_sensor.name=Item Sensor §e(%.0f)
-item.cd4017be.fluid_sensor.name=Fluid Sensor §e(%.0fmB)
-item.cd4017be.energy_sensor.name=Energy Sensor §e(%.0fkJ)
-item.cd4017be.time_sensor.name=Time Sensor Module
-# tooltips
 item.cd4017be.circuit_plan.tip=Contains the building instructions for a cicuit.\nAfter being written in the §6Circuit Designer§7\nit can be used in the §6Circuit Assembler§7.
+item.cd4017be.item_sensor.name=Item Sensor §e(%.0f)
 item.cd4017be.item_sensor.tip=§6Sensor§7 module for counting items.\nUses block drops and items laying around\nif target block is not an inventory.\nRight-Click to configure filter.\nSneak-Click block to link (max \\<itemSensor_range>m range).
+item.cd4017be.fluid_sensor.name=Fluid Sensor §e(%.0fmB)
 item.cd4017be.fluid_sensor.tip=§6Sensor§7 module for counting fluids.\nUses tank contents or fluids placed in world.\nRight-Click to configure filter.\nSneak-Click block to link (max \\<fluidSensor_range>m range).
+item.cd4017be.energy_sensor.name=Energy Sensor §e(%.0fkJ)
 item.cd4017be.energy_sensor.tip=§6Sensor§7 module for counting energy.\nSupports: §3kJ§7[x1], §3Tesla/RF§7[x0.1], §3EU§7[x0.4]\nSneak-Click block to link (max \\<energySensor_range>m range).
+item.cd4017be.time_sensor.name=Time Sensor Module
 item.cd4017be.time_sensor.tip=§6Sensor§7 module for time measurement [s].\nCan use §3server-tick§7, §3ingame§7 or §3real-world§7 time.\nRight-Click to configure settings.\nSneak-Click block to link as signal source.
+item.cd4017be.remote_comp.name=Remote Comparator §e(%.0f)
+item.cd4017be.remote_comp.tip=§6Sensor§7 module for reading the comparator\noutput value of a linked block (usually 0-15).\n§4Does not read basic redstone signals!\nSneak-Click block to link (max \\<remoteComp_range>m range).
 
 # GUI
 gui.cd4017be.tickInt=%.2fs

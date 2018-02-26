@@ -9,6 +9,8 @@ tile.industrialwires.ic2_connector.hv_relay.name=IC2 HV Wire Relay
 tile.industrialwires.ic2_connector.glass_conn.name=Glass Fiber Wire Connector
 tile.industrialwires.ic2_connector.glass_relay.name=Glass Fiber Wire Relay
 
+tile.industrialwires.general_hv.discharge_meter.name=Discharge Energy Meter
+
 tile.industrialwires.mechanical_converter.ie_motor.name=Rotational Motor
 tile.industrialwires.mechanical_converter.ie_to_ic2.name=Converter: Rotational To Kinetic
 tile.industrialwires.mechanical_converter.ic2_to_ie.name=Converter: Kinetic To Rotational
@@ -28,6 +30,9 @@ item.industrialwires.ic2_wire_coil.copper.name=Copper Wire Coil
 item.industrialwires.ic2_wire_coil.gold.name=Gold Wire Coil
 item.industrialwires.ic2_wire_coil.hv.name=IC2 HV Wire Coil
 item.industrialwires.ic2_wire_coil.glass.name=Glass Fiber Wire Coil
+item.industrialwires.ic2_wire_coil.tin_ins.name=Insulated Tin Wire Coil
+item.industrialwires.ic2_wire_coil.copper_ins.name=Insulated Copper Wire Coil
+item.industrialwires.ic2_wire_coil.gold_ins.name=Insulated Gold Wire Coil
 
 item.industrialwires.panel_component.lighted_button.name=Lighted Button
 item.industrialwires.panel_component.label.name=Label
@@ -59,7 +64,7 @@ industrialwires.desc.output=Main Output
 industrialwires.desc.alt=Replacement
 industrialwires.desc.ideal_e=Ideal Energy
 
-industrialwires.desc.wireLength=Wire length: %1s block(s)
+industrialwires.desc.wireLength=Wire length: %s block(s)
 industrialwires.desc.recipe=Please check the Engineer's manual for recipe details
 industrialwires.desc.remove_all=Remove all components from this panel
 industrialwires.desc.create_panel=Create a new control panel
@@ -101,11 +106,11 @@ industrialwires.tooltip.input_rate=%s EU/t per connector
 
 industrialwires.chat.tooLong=This coil does not contain enough wire for this connection
 industrialwires.chat.stackSize=Linking is only possible with a stack of size 1
+industrialwires.chat.marxEnergy=Last discharge was %s kJ per block
 
 death.attack.industrialwires.jacobs_ladder=%1$s was electrocuted by a Jacob's Ladder
 death.attack.industrialwires.marx=%1$s was struck by lightning produced by a Marx generator
 
- 
 itemGroup.industrialwires=Industrial Wires
 
 ie.manual.category.industrialwires.name=Industrial Wires
@@ -132,7 +137,7 @@ ie.manual.entry.industrialwires.jacobs1=These are the required power values in E
 
 ie.manual.entry.industrialwires.marx.name=Marx Generator
 ie.manual.entry.industrialwires.marx.subtext=I'm Erwin-Otto, not Karl!
-ie.manual.entry.industrialwires.marx=A Marx Generator is a device use to produce high-voltage high-energy pulses. These pulses are visible as lightning between the output terminals and can be used to process ores. Each type of ore has an ideal amount of processing energy (see <link;industrialwires.marx;§oAppendix B§r;7>). The precise values are unknown, estimate values with 10%% accuracy can be found at the end of this entry. The factor between the actual value and the estimate is the same for all types of ore.<br>§lConstruction§r<&0><br>The above plan shows a 5-stage generator capable of producing 3 block lightning. An arbitrary amount of stages can be added by increasing the number of "middle" layers. Power (either IF or EU) is connected to the HV connector, the redstone wire for the control signals is connected to the redstone connector<br>§lEnergy§r<br>Each stage of the Marx generator consists of a 1.6μF capacitor that is charged to up to 250kV (see <link;industrialwires.marx;§oAppendix A§r;6>). When the generator is fully charged the voltage of each capacitor is roughly equal to the charging voltage. The total energy is the sum of the energy stored in the individual capacitors and is split equally between the ores to be processed.<br>§lControl signals§r<br>Voltages are represented by 2 signals: The first signal is simply proportional to the voltage to represent. The second signal is proportional to the voltage in the "gap" between 2 values of the first signal, thus allowing more precise control/measurements. Panel components capable of interacting with analog signals usually support this dual-channel setup. The charging voltage is controlled by the white and yellow signals. The voltages of the top and bottom capacitor are output to the magenta and pink resp. the orange and lime signals. The light blue signal is a firing control. If it is high the generator will attempt to fire. If the voltage of the bottom capacitor is lower than 125 kV or the total voltage is lower than 30%% of the maximum output voltage the generator will misfire, discharging the capacitors without actually producing lightning.<br>§lSafety§r<br>Due to the high voltages and energies involved in firing a Marx generator a safe distance should be maintained to avoid injury or death. Even outside of this area hearing protection (As provided by Immersive Engineering) is obligatory. Formulas to calculate the safe distances can be found in <link;industrialwires.marx;§oAppendix A§r;6>.<np>§lAppendix A: Formulas§r<br>Energy stored in a capacitor:<br>E=0.5*C*U^2<br>E: Energy, C: Capacitance, U: Voltage<br><br>Voltage from redstone signals:<br>U=250/255*(16*a+b)<br>U: Voltage, a: First signal, b: Second signal<br><br>Safe distance (Physical damage):<br>r=sqrt(e/50,000)<br>r: Safe distance, e: Energy stored<br><br>Safe distance (Ear damage):<br>r=sqrt(e)/50<br>r: Safe distance, e: Energy stored<np>§lAppendix B: Ore Energy Values§r<br>
+ie.manual.entry.industrialwires.marx=A Marx Generator is a device use to produce high-voltage high-energy pulses. These pulses are visible as lightning between the output terminals and can be used to process ores. Each type of ore has an ideal amount of processing energy (see <link;industrialwires.marx;§oAppendix B§r;7>). The precise values are unknown, estimate values with 10%% accuracy can be found at the end of this entry. The factor between the actual value and the estimate is the same for all types of ore.<br>§lConstruction§r<&0><br>The above plan shows a 5-stage generator capable of producing 3 block lightning. An arbitrary amount of stages can be added by increasing the number of "middle" layers. Power (either IF or EU) is connected to the HV connector, the redstone wire for the control signals is connected to the redstone connector<br>§lEnergy§r<br>Each stage of the Marx generator consists of a 1.6μF capacitor that is charged to up to 250kV (see <link;industrialwires.marx;§oAppendix A§r;6>). When the generator is fully charged the voltage of each capacitor is roughly equal to the charging voltage. The total energy is the sum of the energy stored in the individual capacitors and is split equally between the ores to be processed.<br>§lControl signals§r<br>Voltages are represented by 2 signals: The first signal is simply proportional to the voltage to represent. The second signal is proportional to the voltage in the "gap" between 2 values of the first signal, thus allowing more precise control/measurements. Panel components capable of interacting with analog signals usually support this dual-channel setup. The charging voltage is controlled by the white and yellow signals. The voltages of the top and bottom capacitor are output to the magenta and pink resp. the orange and lime signals. The light blue signal is a firing control. If it is high the generator will attempt to fire. If the voltage of the bottom capacitor is lower than 125 kV or the total voltage is lower than 30%% of the maximum output voltage the generator will misfire, discharging the capacitors without actually producing lightning.<br>§lSafety§r<br>Due to the high voltages and energies involved in firing a Marx generator a safe distance should be maintained to avoid injury or death. Even outside of this area hearing protection (As provided by Immersive Engineering) is obligatory. Formulas to calculate the safe distances can be found in <link;industrialwires.marx;§oAppendix A§r;6>.<np>§lAppendix A: Formulas§r<br>Energy stored in a capacitor:<br>E=0.5*C*U^2<br>E: Energy, C: Capacitance, U: Voltage<br><br>Voltage from redstone signals:<br>U=250/255*(16*a+b)<br>U: Voltage (kV), a: First signal, b: Second signal<br><br>Safe distance (Physical damage):<br>r=sqrt(e/50,000)<br>r: Safe distance, e: Energy stored<br><br>Safe distance (Ear damage):<br>r=sqrt(e)/50<br>r: Safe distance, e: Energy stored<np>§lAppendix B: Ore Energy Values§r<br>
 
 ie.manual.entry.industrialwires.intro.name=Introduction
 ie.manual.entry.industrialwires.intro.subtext=

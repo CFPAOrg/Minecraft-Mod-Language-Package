@@ -167,6 +167,7 @@ tile.immersiveengineering.connector.redstone_breaker.name=Redstone Breaker
 tile.immersiveengineering.connector.energy_meter.name=Current Transformer
 tile.immersiveengineering.connector.connector_redstone.name=Redstone Wire Connector
 tile.immersiveengineering.connector.connector_probe.name=Redstone Probe Connector
+tile.immersiveengineering.connector.feedthrough.name=Feedthrough Insulator
 
 tile.immersiveengineering.metal_device0.capacitor_lv.name=LV Capacitor
 tile.immersiveengineering.metal_device0.capacitor_mv.name=MV Capacitor
@@ -225,6 +226,8 @@ tile.immersiveengineering.cloth_device.stripcurtain.name=Strip Curtain
 
 tile.immersiveengineering.molten_uranium.name=Molten Uranium
 tile.immersiveengineering.molten_constantan.name=Molten Constantan
+
+tile.immersiveengineering.arb_solid.name=Arbitrary solid block
 
 #Hydraulicraft Compat
 tile.harvesterTrolley.ieCrop.name=Industrial Hemp Harvester Trolley 
@@ -327,7 +330,9 @@ item.immersiveengineering.fluidContainers.bottleBiodiesel.name=Bottle of Biodies
 item.immersiveengineering.fluidContainers.bucketBiodiesel.name=Bucket of Biodiesel
 
 item.immersiveengineering.wirecoil.copper.name=LV Wire Coil
+item.immersiveengineering.wirecoil.insulated_copper.name=Insulated LV Wire Coil
 item.immersiveengineering.wirecoil.electrum.name=MV Wire Coil
+item.immersiveengineering.wirecoil.insulated_electrum.name=Insulated MV Wire Coil
 item.immersiveengineering.wirecoil.hv.name=HV Wire Coil
 item.immersiveengineering.wirecoil.rope.name=Hemp Rope Coil
 item.immersiveengineering.wirecoil.structural.name=Steel Cable Coil
@@ -659,6 +664,8 @@ desc.immersiveengineering.info.mineral.Lapis=Lapis
 desc.immersiveengineering.info.mineral.Coal=Coal
 desc.immersiveengineering.info.mineral.Wolframite=Wolframite
 
+chat.immersiveengineering.info.old_java=[Immersive Engineering] §4Warning: §rYour Java version is %1$s. This version causes crashes with the Engineer's manual. These crashes are close to impossible to fix for us. You can prevent the crashes by installing up-to-date Java (make sure to use Java 8, not Java 9) and forcing your launcher to use it.
+
 chat.immersiveengineering.info.coresample.pos=%1$s to %2$s
 chat.immersiveengineering.info.coresample.mineral=%1$s-Vein
 chat.immersiveengineering.info.coresample.noMineral=No Mineral
@@ -922,6 +929,7 @@ death.attack.ieRazorShock=%1$s was electrocuted by razorwire
 death.attack.ieTesla=%1$s was fried by a Tesla Coil
 death.attack.ieTeslaPrimary=%1$s touched the primary circuit of a running Tesla coil
 death.attack.ieRailgun=%1$s was pierced by %2$s's Railgun
+death.attack.ieWireShock=%1$s wasn't careful enough around live wiring
 
 #ACHIEVEMENTS
 advancement.immersiveengineering:root=Immersive Engineering
@@ -1102,8 +1110,7 @@ ie.manual.entry.concrete0=Concrete is a very hard and resistant composite materi
 ie.manual.entry.balloon.name=Balloon
 ie.manual.entry.balloon.subtext=...just make 99 of them
 ie.manual.entry.balloon0=Balloons are sacks of fabric with a heatsource below to keep them afloat. They will also emit light, but despite the torch, they are not a fire hazard.<br>Balloons can be placed like normal blocks, or, when no block is targeted, they will be placed in the air infront of you.
-ie.manual.entry.balloon1=Similar to <link;metalconstruction;§o§nStructural §o§nConnectors§r;5>, you can attach Hemp Rope and Steel Wire to the balloon.<br>Sneak-clicking allows you to set a height offset for the balloon, allowing you to place it up to 5 blocks above the target.
-//Impossible Feature atm// <br>You can also use dyes on a placed balloon; which part you dye depends on where you target it.<br>Rightclicking with an Engineer's Hammer will toggle the balloon's design between horizontal or vertical stripes.
+ie.manual.entry.balloon1=Similar to <link;metalconstruction;§o§nStructural §o§nConnectors§r;5>, you can attach Hemp Rope and Steel Wire to the balloon.<br>Sneak-clicking allows you to set a height offset for the balloon, allowing you to place it up to 5 blocks above the target.<br>You can also use dyes on a placed balloon; which part you dye depends on where you target it.<br>Rightclicking with an Engineer's Hammer will toggle the balloon's design between horizontal or vertical stripes.
 
 ie.manual.entry.crate.name=Wooden Storage Crate
 ie.manual.entry.crate.subtext=Move that gear up!
@@ -1147,13 +1154,14 @@ ie.manual.entry.wiring1=To connect two blocks, simply click the first one with a
 ie.manual.entry.wiring2=Note that restrictions apply based on blocks: Connectors and relays will only take wires of the same type that is already connected, transformers will only take two wires of a different type,<br>[cont]
 ie.manual.entry.wiring3=and wires can only connect to blocks that match the voltage.
 ie.manual.entry.wiring4=There are two important values to note about wiring:<br>Each connector has an input value (§o<config;iA;wireConnectorInput>§r) and each wire has a maximum transfer rate (§o<config;iA;wireTransferRate;l3>§r).<br>The connector limits how much power can be in- and output, but multiple connectors can §ounify§r into a single wire, allowing you to combine the transfer over longer ranges. Note however that the §omaximum transfer rate of the wire must not be exceeded, or else the wire will §oburn up§r.
-ie.manual.entry.wiring5=Wires will transfer energy even through §ounloaded chunks§r as long as the input and output chunks are loaded.
+ie.manual.entry.wiring5=Wires will transfer energy even through §ounloaded chunks§r as long as the input and output chunks are loaded.<br>Uninsulated wires connected to an energy source will cause damage to players and mobs too close to them. Insulated wires are available for low and medium voltage.<br>Wire connections will break if a block obstructing the wire is placed.
 ie.manual.entry.wiringConnector=§lConnectors§r serve as in- and outputs to the IE Energy-Net. You can place them on capacitors or other Flux handlers and they will transfer power through connected wires. §lRelays§r will still accept wires but can't in- or output, they serve as connection points between wires.
 ie.manual.entry.wiringCapacitor=§lCapacitors§r serve as energy storage units. You can use the hammer to adjust the configuration of each side, with blue designating an input, orange an output and no colour marking preventing any connection at all. Sneak while using the hammer to configure the side opposite of the one you clicked.
 ie.manual.entry.wiringTransformer0=§lTransformers§r allow you to transition between different types of wire. The weakest wire restricts the transfer rate. Note that HV Transformers can step down to LV or MV, so you do not need to chain two transformers.
 ie.manual.entry.wiringTransformer1=You can attach <link;wiring;§o§ntransformers §o§nto §o§nwooden §o§npoles§r;3> as shown on the second image on page 4, however only non-HV Transformers can be placed like this.
 ie.manual.entry.wiringCutters=The §lWire Cutters§r are used to removed all the wires connected to a block by simply rightclicking it.
 ie.manual.entry.wiringVoltmeter=The §lVoltmeter§r is used to measure connections. Aiming it at any energy storage or rightclicking it will read its current storage. Sneak+rightclick two connectors to calculate the average loss between them.
+ie.manual.entry.wiringFeedthrough=Feedthrough Insulators allow connecting wiring from one side of a wall to wiring on the other side without a hole. They can be created with any "normal" solid block in the middle. All common types of connectors (power and redstone) can be used to create feedthrough insulators for the corresponding wire type.
 
 ie.manual.entry.generator.name=Power Generation
 ie.manual.entry.generator.subtext=
