@@ -46,7 +46,7 @@ def who_should_handle():
         if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(change_mod)):
             continue
         # 有 #PARSE_ESCAPE 注释的计算在内
-        with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r') as lang:
+        with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r', errors='ignore') as lang:
             for line in lang.readlines():
                 if '#PARSE_ESCAPE' in line:
                     properties_mod_list.append(change_mod)
@@ -69,7 +69,7 @@ for modid in file_list:
 
     # 写入文件
     # 这一块不用 javaproperties 作者提供的轮子，因为它用的是 Latin-1 编码
-    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'w') as f:
+    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'w', errors='ignore') as f:
         f.writelines('#PARSE_ESCAPE\n')
         for key in dict_out.keys():
             # 先修正各种转义问题

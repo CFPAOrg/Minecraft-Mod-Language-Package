@@ -45,7 +45,7 @@ def who_should_handle():
             change_mod_list.remove(change_mod)
             continue
         # 有 #PARSE_ESCAPE 注释的也要剔除
-        with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r') as lang:
+        with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r', errors='ignore') as lang:
             for line in lang.readlines():
                 if '#PARSE_ESCAPE' in line:
                     change_mod_list.remove(change_mod)
@@ -67,7 +67,7 @@ for modid in file_list:
     dict_out = lang_handle(en_us_dict, zh_cn_old_dict, zh_cn_dict)
 
     # 写入文件
-    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'w') as f:
+    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'w', errors='ignore') as f:
         for key in dict_out.keys():
             f.writelines(key + '=' + dict_out[key])
 

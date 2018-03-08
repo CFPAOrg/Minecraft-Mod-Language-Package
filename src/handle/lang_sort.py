@@ -5,7 +5,7 @@ for modid in os.listdir('project/assets/'):
         continue
     if not os.path.exists('project/assets/{}/lang/zh_cn.lang'.format(modid)):
         continue
-    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'r+', encoding='utf-8') as lang:
+    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'r+', encoding='utf-8', errors='ignore') as lang:
         lang_index = lang.readlines()   # 将文件读取成 list
         lang_index.sort()   # list 排序
         lang.seek(0, 0)     # 将指针重定向至文件开头
