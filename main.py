@@ -65,6 +65,7 @@ if len(new_mod_list) != 0:
 # 接下来检查指定用户的 github，并发送邮件提醒
 import src.github.github_info_email
 
-# 最后 commit, push
+# 最后 add，commit, push
+os.system('git add .')
 os.system('git commit -m "Auto Update, Date: {}"'.format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
 os.system('git push')
