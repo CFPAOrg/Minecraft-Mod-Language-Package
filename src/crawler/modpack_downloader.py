@@ -28,7 +28,7 @@ with open('config.yml', 'r') as f:
 def list_boolean_operation(list_old, list_new):
     list_processed = []
     for n in list_new:
-        if n not in list_old and n[2] != None:
+        if n not in list_old and n[2] is not None:
             list_processed.append(n)
     return list_processed
 
@@ -55,7 +55,7 @@ def csv_to_list(i):
 
 
 # 一个拥有全面功能的下载函数
-def download(url, filename, num_retries=2):
+def download(url, filename):
     print('下载链接：' + url)
     try:
         urllib.request.urlretrieve(url, filename)
@@ -79,10 +79,17 @@ class MultiThread(threading.Thread):
 
 # 下载函数具体实现，通过传入整型数值，来下载对应的 mod
 def func_modpack_download(i):
-    url = 'https://minecraft.curseforge.com/projects/{}/files/{}/download'.format(
+    # 先暴力下载 curseforge 的整合
+    url_1 = 'https://minecraft.curseforge.com/projects/{}/files/{}/download'.format(
         DOWNLOAD_LIST[i][0], DOWNLOAD_LIST[i][2])
-    filename = '/tmp/modpacks/{}'.format(DOWNLOAD_LIST[i][0])
-    download(url, filename)
+    filename_1 = '/tmp/modpacks/{}'.format(DOWNLOAD_LIST[i][0])
+    download(url_1, filename_1)
+
+    # 然后暴力下载 ftb 的整合
+    url_1 = 'https://www.feed-the-beast.com/projects/{}/files/{}/download'.format(
+        DOWNLOAD_LIST[i][0], DOWNLOAD_LIST[i][2])
+    filename_1 = '/tmp/modpacks/{}'.format(DOWNLOAD_LIST[i][0])
+    download(url_1, filename_1)
 
 
 # 多线程下载实例

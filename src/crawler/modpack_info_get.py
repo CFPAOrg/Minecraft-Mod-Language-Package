@@ -106,7 +106,7 @@ class MultiThread(threading.Thread):
 # 页面下载
 def func_page_download(i):
     # 获取 url name
-    url = 'https://minecraft.curseforge.com/modpacks?filter-game-version=' + \
+    url = 'https://www.feed-the-beast.com/modpacks?filter-game-version=' + \
           VERSION_DICT.get(VERSION) + '&filter-sort=downloads&page=' + str(i + 1)
     main_page = download(url)
     url_name_list = re.findall(
@@ -119,12 +119,12 @@ def func_page_download(i):
             continue
 
         # Project ID 获取
-        modpack_url = 'https://minecraft.curseforge.com/projects/' + url_name
+        modpack_url = 'https://www.feed-the-beast.com/projects/' + url_name
         project_id = get_info(
             modpack_url, r'<div class="info-data">(.*?)</div>')
 
         # file id 获取
-        file_url = 'https://minecraft.curseforge.com/projects/' + url_name + \
+        file_url = 'https://www.feed-the-beast.com/projects/' + url_name + \
                    '/files?filter-game-version=' + VERSION_DICT.get(VERSION)
         file_id = get_info(
             file_url, r'class="overflow-tip twitch-link" href="/projects/.*?/files/(.*?)"')
