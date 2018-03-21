@@ -107,7 +107,7 @@ class MultiThread(threading.Thread):
 def func_page_download(i):
     # 获取 url name
     url = 'https://www.feed-the-beast.com/modpacks?filter-game-version=' + \
-          VERSION_DICT.get(VERSION) + '&filter-sort=downloads&page=' + str(i + 1)
+          VERSION_DICT.get(VERSION) + '&page=' + str(i + 1)
     main_page = download(url)
     url_name_list = re.findall(
         r'<a href="/projects/(.*?)">', str(main_page))
