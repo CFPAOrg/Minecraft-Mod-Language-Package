@@ -884,9 +884,8 @@ subtitle.immersiveengineering.metalPressPiston=Metal Press Piston
 subtitle.immersiveengineering.metalPressSmash=Metal Press Clunk
 subtitle.immersiveengineering.birthdayParty=Yaaay, party!
 subtitle.immersiveengineering.revolverFire=Gunshot
-subtitle.immersiveengineering.revolverReload=Reload
 subtitle.immersiveengineering.spray=Fluid spray
-subtitle.immersiveengineering.sprayFire=Flaming fluid spray
+subtitle.immersiveengineering.spray_fire=Flaming fluid spray
 subtitle.immersiveengineering.chargeFast=Charging capacitors
 subtitle.immersiveengineering.chargeSlow=Charging capacitors
 subtitle.immersiveengineering.spark=Electrical sparks
@@ -1213,7 +1212,6 @@ ie.manual.entry.metalconstruction.subtext=Riveting
 ie.manual.entry.metalconstruction0=Apart from Treated Wood, processed metals make for common construction blocks. You can craft almost any metal into blocks and slabs, or hammer iron ingots into a sheetmetal block.
 ie.manual.entry.metalconstruction1=Steel is not only an integral part of high-voltage architectures, it is also quite useful in, well, architecture. Steel scaffolding can be used to quickly create climbable structures, steel fencing keeps baddies at bay and structural arms make for great attachment points for your HV relays.
 ie.manual.entry.metalconstruction2=Structural Connectors work similarly to normal connectors, but instead of transferring energy, they are purely decorative.<br>They won't accept normal wires, but Hemp Rope and Steel Cable (see next page).<br>You can also rotate them by rightclicking them with an Engineer's Hammer.
-ie.manual.entry.metalconstruction3=Metal ladders are...well, ladders made from metal. You can climb them, and they look cool.<br>You can also combine them with Scaffolding to make them into Covered Ladders.
 
 ie.manual.entry.lighting.name=Engineered Lighting
 ie.manual.entry.lighting.subtext=Lighting up the Wasteland
@@ -1502,22 +1500,21 @@ ie.manual.category.computers.name=Computer support
 
 ie.manual.entry.computer.general.name=General information ☎
 ie.manual.entry.computer.general.subtext=Technology from the future
-ie.manual.entry.computer.general0=Many of the machines described in this manual can be controlled using computers from OpenComputers. An Adapter has to be used to connect the machine to the network. If the machine is a multiblock that has a redstone port, that is where you can attach your computer. Otherwise please check the machine-specific entry in this chapter. The following pages describe some commonly used return types and methods.
-ie.manual.entry.computer.general1=Multiblocks with a redstone port can be enabled and disabled using computers as well as redstone:<br>§lenableComputerControl( enabled:bool)§r: This enables or disables computer control for the machine. The machine will ignore redstone signals while this is enabled. This will not automatically reset when the computer is removed.<br>§lsetEnabled(enable:bool)§r: Enables or disables the machine, like a redstone signal would. This only works if computer control is enabled.
-ie.manual.entry.computer.general2=§lItem stacks§r are a very common return type. They consist of a table containing these entries:<br>§lname§r: the internal name of the item, e.g. "minecraft:cobblestone" for cobblestone<br>§lsize§r: the size of the item stack<br>§llabel§r: The name of the stack. Changes when the stack is renamed in an anvil.
-ie.manual.entry.computer.general3=§ldamage§r: The damage (or, in most cases, metadata) of the item stack<br>§lmaxDamage§r: The maximum amount of damage the item can have before breaking<br>§lmaxSize§r: the maximum stack size for this item. 64 in most cases<br>§lhasTag§r: whether the stack has a nbt tag
-ie.manual.entry.computer.general4=§lFluid stacks§r: A fluid stack represents some amount of a specific fluid that isn't necessarily in a tank. These entries are available in the returned table:<br>§lname§r: the unlocalized name of the fluid<br>§lamount§r: the amount of fluid, in millibuckets<br>§lhasTag§r: whether the fluid has a nbt tag
-ie.manual.entry.computer.general5=§lFluid tanks§r are similar to fluid stacks, with the difference that this fluid is inside a tank. The returned table has the same entries as the table for a fluid stack. Additionally the capacity of the tank the fluid is in is stored in the entry §lcapacity§r
+ie.manual.entry.computer.general0=Many of the machines described in this manual can be controlled using computers from OpenComputers or ComputerCraft. When using OpenComputers, an Adapter has to be used to connect the machine to the network. If the machine is a multiblock that has a redstone port, that is where you can attach your computer. Otherwise please check the machine-specific entry in this chapter. The following pages describe some commonly used return types.
+ie.manual.entry.computer.general1=§lItem stacks§r are a very common return type. They consist of a table containing these entries:<br>§lname§r: the internal name of the item, e.g. "minecraft:cobblestone" for cobblestone<br>§lsize§r: the size of the item stack<br>§lnameUnlocalized§r: the unlocalized name of the item, e.g. "tile.stonebrick" for cobblestone. Only available on ComputerCraft<br>§llabel§r: The name of the stack. Changes when the stack is renamed in an anvil.
+ie.manual.entry.computer.general2=§ldamage§r: The damage (or, in most cases, metadata) of the item stack<br>§lmaxDamage§r: The maximum amount of damage the item can have before breaking<br>§lmaxSize§r: the maximum stack size for this item. 64 in most cases<br>§lhasTag§r: whether the stack has a nbt tag
+ie.manual.entry.computer.general3=§lFluid stacks§r: A fluid stack represents some amount of a specific fluid that isn't necessarily in a tank. These entries are available in the returned table:<br>§lname§r: the unlocalized name of the fluid<br>§lamount§r: the amount of fluid, in millibuckets<br>§lhasTag§r: whether the fluid has a nbt tag
+ie.manual.entry.computer.general4=§lFluid tanks§r are similar to fluid stacks, with the difference that this fluid is inside a tank. The returned table has the same entries as the table for a fluid stack. Additionally the capacity of the tank the fluid is in is stored in the entry §lcapacity§r
 
 ie.manual.entry.computer.arcfurnace.name=Arc Furnace ☎
 ie.manual.entry.computer.arcfurnace.subtext=Not a reactor
-ie.manual.entry.computer.arcFurnace0=§lisActive()§r: returns a boolean that is true if the arc furnace is currently processing something and false otherwise<br>§lgetInputStack(int slot)§r:returns the stack in the specified input slot (1-12). The table additionally has the keys §lprogress§r and §lmaxProgress§r to store the current progress and the progress at which it will be finished on the
+ie.manual.entry.computer.arcFurnace0=§lsetEnabled(boolean active)§r: allows or disallows the arc furnace to operate, as if a redstone signal was applied to the control panel<br>§lisActive()§r: returns a boolean that is true if the arc furnace is currently processing something and false otherwise<br>§lgetInputStack(int slot)§r:returns the stack in the specified input slot (1-12). The table additionally has the keys §lprogress§r and §lmaxProgress§r to store the current progress and the progress at which it will be finished on the
 ie.manual.entry.computer.arcFurnace1=specified slot (both values in ticks)<br>§lgetOutputStack(int slot)§r:returns the stack in the specified output slot(1-6)<br>§lgetAdditiveStack(int slot)§r: returns the stack in the specified additive slot (1-4)<br>§lgetSlagStack()§r: returns the stack in the slag slot<br>§lhasElectrodes()§r:returns a boolean indicating whether all 3 electrodes in the arc furnace are valid<br>§lgetElectrode(int slot)§r: returns the item stack of the specified electrode (1-4)
 ie.manual.entry.computer.arcFurnace2=§lgetMaxEnergyStored()§r: returns the maximum amount of energy that can be stored in this arc furnace<br>§lgetEnergyStored()§r: returns the amount of energy currently stored in this arc furnace
 
 ie.manual.entry.computer.bottlingmachine.name=Bottling Machine ☎
 ie.manual.entry.computer.bottlingmachine.subtext=Fill 'er up!
-ie.manual.entry.computer.bottlingmachine0=§lisActive()§r: returns a boolean that is true if the bottling machine is currently processing something and false otherwise<br>§lgetMaxEnergyStored()§r: returns the maximum amount of energy that can be stored in this machine<br>§lgetEnergyStored()§r: returns the amount of energy currently stored in this machine
+ie.manual.entry.computer.bottlingmachine0=§lsetEnabled(boolean active)§r: allows or disallows the bottling machine to operate, as if a redstone signal was applied to the control panel<br>§lisActive()§r: returns a boolean that is true if the bottling machine is currently processing something and false otherwise<br>§lgetMaxEnergyStored()§r: returns the maximum amount of energy that can be stored in this machine<br>§lgetEnergyStored()§r: returns the amount of energy currently stored in this machine
 ie.manual.entry.computer.bottlingmachine1=§lgetTank()§r: returns the contents of the fluid tank
 
 
@@ -1529,20 +1526,20 @@ ie.manual.entry.computer.sampleDrill1=§lgetVeinLocalizedName()§r: returns the 
 
 ie.manual.entry.computer.crusher.name=Crusher ☎
 ie.manual.entry.computer.crusher.subtext=Keep your hands out!
-ie.manual.entry.computer.crusher0=§lisActive()§r: returns whether the crusher is currently crushing items<br>§lgetInputQueue()§r: returns the input queue of the crusher as a table. The table contains the places in the input queue as keys (starting at 1). Each place in the queue is saved as a table with the following keys:<br>"progress": the current progress
+ie.manual.entry.computer.crusher0=§lsetEnabled(boolean active)§r: allows or disallows the crusher to operate, as if a redstone signal was applied to the control panel<br>§lisActive()§r: returns whether the crusher is currently crushing items<br>§lgetInputQueue()§r: returns the input queue of the crusher as a table. The table contains the places in the input queue as keys (starting at 1). Each place in the queue is saved as a table with the following keys:<br>"progress": the current progress
 ie.manual.entry.computer.crusher1="maxProgress": the progress the crusher has to reach to finish the recipe<br>"input": the input item stacks<br>"output": the main output stack.<br>§lgetMaxEnergyStored()§r: returns the maximum amount of energy stored in this crusher<br>§lgetEnergyStored()§r: returns the amount of energy that is stored in this crusher
 
 ie.manual.entry.computer.dieselgen.name=Diesel Generator ☎
 ie.manual.entry.computer.dieselgen.subtext=Better than volume: More volume.
-ie.manual.entry.computer.dieselgen0=§lgetTankInfo()§r: returns the internal diesel tank
+ie.manual.entry.computer.dieselgen0=§lsetEnabled(boolean active)§r: allows or disallows the diesel generator to run<br>§lisActive()§r: returns whether the generator is running<br>§lgetTankInfo()§r: returns the internal diesel tank
 
 ie.manual.entry.computer.energymeter.name=Current Transformer ☎
-ie.manual.entry.computer.energymeter.subtext=Just an ADC
+ie.manual.entry.computer.energymeter.subtext=88 Flux per hour!
 ie.manual.entry.computer.energymeter0=The bottom block of a current transformer can be connected to a computer. It will provide a single method, §lgetAvgEnergy()§r , that returns the average amount of energy per tick that was transferred through the transformer during the last 20 ticks.
 
 ie.manual.entry.computer.excavator.name=Excavator ☎
 ie.manual.entry.computer.excavator.subtext=Better than Dwarves
-ie.manual.entry.computer.excavator0=§lisActive()§r: returns whether the excavator is running. This does not say anything about the existence of a mineral vein<br>§lgetEnergyStored()§r: returns the amount of energy currently stored in this excavator<br>§lgetMaxEnergyStored()§r: returns the maximum amount of energy that can be stored in this excavator
+ie.manual.entry.computer.excavator0=§lisActive()§r: returns whether the excavator is running. This does not say anything about the existence of a mineral vein<br>§lsetEnabled(boolean active)§r: allows or disallows the excavator to run<br>§lgetEnergyStored()§r: returns the amount of energy currently stored in this excavator<br>§lgetMaxEnergyStored()§r: returns the maximum amount of energy that can be stored in this excavator
 
 ie.manual.entry.computer.squeezerAndFermenter.name=Fermenter & Squeezer ☎
 ie.manual.entry.computer.squeezerAndFermenter.subtext=Double post
@@ -1553,11 +1550,11 @@ ie.manual.entry.computer.squeezerAndFermenter2=§lgetMaxEnergyStored()§r: retur
 ie.manual.entry.computer.floodlight.name=Floodlight ☎
 ie.manual.entry.computer.floodlight.subtext=Like LEDs but Retro
 ie.manual.entry.computer.floodlight0=The following assumes that the floodlight is placed on the ground. The floodlight can be connected to a computer on it's bottom face. After rotating a floodlight using a computer you have to wait for one second before you can rotate it again.<br>§lturnAroundXZ(boolean dir)§r: changes the pitch of the floodlight<br>§lturnAroundY(boolean dir)§r: turns the floodlight as if it was rightclicked on its top or bottom<br>§lcanTurn()§r: returns whether the floodlight can rotate again yet
-ie.manual.entry.computer.floodlight1=§lgetEnergyStored()§r: returns the amount of energy stored in the floodlight<br>§lgetMaxEnergyStored()§r: returns the maximum amount of energy that can be stored in the floodlight<br>§lwaitForCooldown()§r: waits until the floodlight can be turned again.
+ie.manual.entry.computer.floodlight1=§lsetEnabled(boolean on)§r: turns the floodlight on or off<br>§lisActive()§r: returns whether this floodlight is currently active<br>§lgetEnergyStored()§r: returns the amount of energy stored in the floodlight<br>§lgetMaxEnergyStored()§r: returns the maximum amount of energy that can be stored in the floodlight<br>§lwaitForCooldown()§r: waits until the floodlight can be turned again.
 
 ie.manual.entry.computer.refinery.name=Refinery ☎
 ie.manual.entry.computer.refinery.subtext=Digital Diesel
-ie.manual.entry.computer.refinery0=§lgetInputFluidTanks()§r: returns a table storing the input tanks in the keys "input1" and "input2"<br>§lgetOutputTank()§r: returns the output tank<br>§lgetRecipe()§r: returns a table containing the input fluids in the keys "input1" and "input2" and the output fluid in the key "output"<br>§lisValidRecipe()§r: returns whether a recipe with the current input fluids exists
+ie.manual.entry.computer.refinery0=§lgetInputFluidTanks()§r: returns a table storing the input tanks in the keys "input1" and "input2"<br>§lgetOutputTank()§r: returns the output tank<br>§lgetRecipe()§r: returns a table containing the input fluids in the keys "input1" and "input2" and the output fluid in the key "output"<br>§lsetEnabled(boolean on)§r: allows or disallows the refinery to run<br>§lisValidRecipe()§r: returns whether a recipe with the current input fluids exists
 ie.manual.entry.computer.refinery1=§lgetEmptyCannisters()§r: returns a table containing the stacks of empty cannisters, the keys "input1" and "input2" for the input tanks, the key "output" for the output tank<br>§lgetMaxEnergyStored()§r: returns the maximum of energy that can be stored in this refinery<br>§lgetEnergyStored()§r: returns the amount of energy stored in the refinery
 
 ie.manual.entry.computer.assembler.name=Assembler ☎

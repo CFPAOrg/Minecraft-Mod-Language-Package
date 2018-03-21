@@ -1,11 +1,348 @@
+#PARSE_ESCAPES
 # US English Translations
-msg.dsurround=Dynamic Surroundings
+dsurround.msg.dsurround=Dynamic Surroundings
 
-msg.RainIntensitySet=§9Rain intensity set to %s
-msg.MinRainIntensitySet=§9Minimum rain intensity set to %s
-msg.MaxRainIntensitySet=§9Maximum rain intensity set to %s
-msg.RainReset=§9World rain parameters have been reset
-msg.BiomeReload=§9Biome configuration has been reloaded
+# Metadata Updates
+dsurround.metadata.Name=§3Dynamic Surroundings
+dsurround.metadata.Credits=\n\n§6Wirsbo§r for §2BetterRain§r\n§6MrRube§r for §2Aurora Rubealis§r\n§6Hurricaaane§r for §2Presence Footsteps§r and §2MAtmos§r\n§6Mr_okushama§r for §2Battle Music§r\n§6Ezer'Arch§r for §2Galacticraft §rconfigurations§r\n§eSound and Texture Attributions§r at https://tinyurl.com/mggnl76\n\n
+dsurround.metadata.Authors=§6OreCruncher§r,§6Abastro§r
+dsurround.metadata.Description=Adds a variety of §6sound§r and §6visual§r effects to improve your Minecraft experience
+
+# String formatting
+dsurround.format.TimeOfDay=Day %1$d, %2$d:%3$02d %4$s
+dsurround.format.AM=AM
+dsurround.format.PM=PM
+dsurround.format.SessionTime=Session Time %1$d:%2$02d:%3$02d
+dsurround.format.NoSky=No Sky
+dsurround.format.Sunrise=Sunrise
+dsurround.format.Sunset=Sunset
+dsurround.format.Daytime=Daytime
+dsurround.format.Nighttime=Nighttime
+dsurround.format.Play=Play
+dsurround.format.Stop=STOP
+dsurround.format.Block=Block
+dsurround.format.Cull=Cull
+
+# Volume Quickset Dialog
+dsurround.dlg.format.Display=%s %d%%
+dsurround.dlg.name.MasterSound=Master Volume
+dsurround.dlg.name.BiomeSound=Biome Sound Scale
+dsurround.dlg.name.FootstepSound=Footstep Sound Scale
+dsurround.dlg.name.RainSound=Rain Sound Scale
+dsurround.dlg.name.Close=ESC to Save and Close
+
+# Keybindings
+dsurround.cfg.keybind.SelectionBox=Toggle SelectionBox
+dsurround.cfg.keybind.LightLevel=Toggle Light Level
+dsurround.cfg.keybind.ChunkBorders=Toggle Chunk Borders
+dsurround.cfg.keybind.Volume=Volume Quick Set
+dsurround.cfg.keybind.msg.ON=§aON
+dsurround.cfg.keybind.msg.OFF=§cOFF
+dsurround.cfg.keybind.msg.Fencing=Block fencing %s
+dsurround.cfg.keybind.msg.ChunkBorder=Chunk border display %s
+dsurround.cfg.keybind.msg.LLDisplayMode=Light Level display mode %s
+dsurround.cfg.keybind.msg.LLSafeBlocks=Light Level hide safe blocks %s
+dsurround.cfg.keybind.msg.LLDisplay=Light Level display %s
+
+dsurround.msg.RainIntensitySet=§9Rain intensity set to %1$s
+dsurround.msg.MinRainIntensitySet=§9Minimum rain intensity set to %1$s
+dsurround.msg.MaxRainIntensitySet=§9Maximum rain intensity set to %1$s
+dsurround.msg.RainReset=§9World rain parameters have been reset
+dsurround.msg.BiomeReload=§9Biome configuration has been reloaded
+
+dsurround.msg.RainTimeSet=§9Rain time set to %1$s
+dsurround.msg.ThunderTimeSet=§9Thunder time set to %1$s
+dsurround.msg.ThunderThresholdSet=§9Thunder threshold set to %1$s
 
 # Version checking strings
-msg.NewVersionAvailable.dsurround=["§6Update Available: §9[",{"text":"§2%s §ev%s§f","color":"gold","hoverEvent":{"action":"show_text","value":{"text":"Click for CurseForge Project Page","color":"aqua"}},"clickEvent":{"action":"open_url","value":"http://minecraft.curseforge.com/projects/%s"}},"§9]"]
+dsurround.msg.NewVersion.dsurround=["§6Update Available: §9[",{"text":"§2%1$s §ev%2$s§f","color":"gold","hoverEvent":{"action":"show_text","value":{"text":"Click for CurseForge Project Page","color":"aqua"}},"clickEvent":{"action":"open_url","value":"%3$s"}},"§9]"]
+
+# Configuration option strings
+dsurround.cfg.asm.cat.ASM=ASM Transformer Options
+dsurround.cfg.asm.cat.ASM.tooltip=Controls ASM transforms Dynamic Surroundings performs at startup
+dsurround.cfg.asm.EnableSoundCache=Sound Caching
+dsurround.cfg.asm.EnableSoundCache.tooltip=Enable/disable ASM transformations to permit sound caching
+dsurround.cfg.asm.EnableWeather=Weather Control
+dsurround.cfg.asm.EnableWeather.tooltip=Enable/disable ASM transformations to permit weather (rain, snow, splash, dust storms, auroras)
+dsurround.cfg.asm.EnableSleepReset=Weather Reset on Sleep Control
+dsurround.cfg.asm.EnableSleepReset.tooltip=Enable/disable ASM transformations to allow control of player sleep impact on weather reset
+dsurround.cfg.asm.DisableArrow=Arrow Particle Trail
+dsurround.cfg.asm.DisableArrow.tooltip=Disable particle trail left by an arrow when it flies
+dsurround.cfg.asm.EnableSMSync=Enable SoundManager synchronization
+dsurround.cfg.asm.EnableSMSync.tooltip=Enable synchronized attribute on SoundManager public methods
+dsurround.cfg.asm.EnablePMSync=Enable ParticleManager synchronization
+dsurround.cfg.asm.EnablePMSync.tooltip=Enable synchronized attribute on ParticleManager public methods
+
+dsurround.cfg.logging.cat.Logging=Logging Options
+dsurround.cfg.logging.cat.Logging.tooltip=Defines how Dynamic Surroundings logging will behave
+dsurround.cfg.logging.EnableDebug=Debug Logging
+dsurround.cfg.logging.EnableDebug.tooltip=Enables/disables debug logging of the mod
+dsurround.cfg.logging.VersionCheck=Online Version Check Result
+dsurround.cfg.logging.VersionCheck.tooltip=Enables/disables display of version check information
+dsurround.cfg.logging.DebugDialog=Debug Dialog
+dsurround.cfg.logging.DebugDialog.tooltip=Enables/disables display of debug dialog
+dsurround.cfg.logging.ServerStats=Report Server Stats
+dsurround.cfg.logging.ServerStats.tooltip=Enables/disables reporting of server stats
+dsurround.cfg.logging.FlagMask=Debug Flag Mask
+dsurround.cfg.logging.FlagMask.tooltip=Bitmask for toggling various debug traces
+
+dsurround.cfg.rain.cat.Rain=Rain Options
+dsurround.cfg.rain.cat.Rain.tooltip=Options that control rain effects in the client
+dsurround.cfg.rain.RippleStyle=Style of rain water ripple
+dsurround.cfg.rain.RippleStyle.tooltip=0: original round, 1: darker round, 2: square
+dsurround.cfg.rain.RainVolume=Rain Sound Level
+dsurround.cfg.rain.RainVolume.tooltip=Volume scale factor to apply to rain sound level to adjust
+dsurround.cfg.rain.VanillaRain=Use Vanilla Algorithms
+dsurround.cfg.rain.VanillaRain.tooltip=Let Vanilla handle rain intensity and time windows
+dsurround.cfg.rain.ParticleCount=Particle Count Base
+dsurround.cfg.rain.ParticleCount.tooltip=Base count of rain splash particles to generate per tick
+dsurround.cfg.rain.ResetOnSleep=Reset Rain on Sleep
+dsurround.cfg.rain.ResetOnSleep.tooltip=Reset rain/thunder when all players sleep
+dsurround.cfg.rain.ActiveTimeConst=Active duration of rain, constant
+dsurround.cfg.rain.ActiveTimeConst.tooltip=Base time rain is active, in ticks
+dsurround.cfg.rain.ActiveTimeVariable=Active duration of rain, variable
+dsurround.cfg.rain.ActiveTimeVariable.tooltip=Variable amount of ticks rain is active, added to the base
+dsurround.cfg.rain.InactiveTimeConst=Inactive duration of rain, constant
+dsurround.cfg.rain.InactiveTimeConst.tooltip=Base time rain is inactive, in ticks
+dsurround.cfg.rain.InactiveTimeVariable=Inactive duration of rain, variable
+dsurround.cfg.rain.InactiveTimeVariable.tooltip=Variable amount of ticks rain is inactive, added to the base
+dsurround.cfg.rain.StormActiveTimeConst=Active duration of thunder, constant
+dsurround.cfg.rain.StormActiveTimeConst.tooltip=Base time storm (thunder) is active, in ticks
+dsurround.cfg.rain.StormActiveTimeVariable=Active duration of thunder, variable
+dsurround.cfg.rain.StormActiveTimeVariable.tooltip=Variable amount of ticks storm (thunder) is active, added to the base
+dsurround.cfg.rain.StormInactiveTimeConst=Inactive duration of thunder, constant
+dsurround.cfg.rain.StormInactiveTimeConst.tooltip=Base time storm (thunder) is inactive, in ticks
+dsurround.cfg.rain.StormInactiveTimeVariable=Inactive duration of thunder, variable
+dsurround.cfg.rain.StormInactiveTimeVariable.tooltip=Variable amount of ticks storm (thunder) is inactive, added to the base
+dsurround.cfg.rain.EnableThunder=Background Thunder
+dsurround.cfg.rain.EnableThunder.tooltip=Allow background thunder when storming
+dsurround.cfg.rain.ThunderThreshold=Rain Intensity for Background Thunder
+dsurround.cfg.rain.ThunderThreshold.tooltip=Minimum rain intensity level for background thunder to occur
+
+dsurround.cfg.fog.cat.Fog=Fog Options
+dsurround.cfg.fog.cat.Fog.tooltip=Options that control the various fog effects in the client
+dsurround.cfg.fog.Enable=Enable Fog Processing
+dsurround.cfg.fog.Enable.tooltip=Enable/disable fog processing
+dsurround.cfg.fog.EnableMorning=Morning Fog
+dsurround.cfg.fog.EnableMorning.tooltip=Show morning fog that eventually burns off
+dsurround.cfg.fog.MorningFogChance=Morning Fog Chance
+dsurround.cfg.fog.MorningFogChance.tooltip=Chance morning fog will occurs expressed as 1 in N
+dsurround.cfg.fog.EnableWeather=Weather Fog
+dsurround.cfg.fog.EnableWeather.tooltip=Increase fog based on the strength of rain
+dsurround.cfg.fog.EnableBedrock=Bedrock Fog
+dsurround.cfg.fog.EnableBedrock.tooltip=Increase fog at bedrock layers
+dsurround.cfg.fog.DesertFog=Desert Fog
+dsurround.cfg.fog.DesertFog.tooltip=Enable/disable desert fog when raining
+dsurround.cfg.fog.ElevationHaze=Elevation Haze
+dsurround.cfg.fog.ElevationHaze.tooltip=Higher the player elevation the more haze that is experienced
+dsurround.cfg.fog.BiomeFog=Biome Fog
+dsurround.cfg.fog.BiomeFog.tooltip=Enable biome specific fog density and color
+
+dsurround.cfg.general.cat.General=General Options
+dsurround.cfg.general.cat.General.tooltip=Miscellaneous settings
+dsurround.cfg.general.HideChat=Hide Chat Notices
+dsurround.cfg.general.HideChat.tooltip=Toggles display of Dynamic Surroundings chat notices
+dsurround.cfg.general.Suspend=Disable Water Suspend Particles
+dsurround.cfg.general.Suspend.tooltip=Enable/disable water depth particle effect
+dsurround.cfg.general.MinRainStrength=Default Minimum Rain Strength
+dsurround.cfg.general.MinRainStrength.tooltip=Default minimum rain strength for a dimension
+dsurround.cfg.general.MaxRainStrength=Default Maximum Rain Strength
+dsurround.cfg.general.MaxRainStrength.tooltip=Default maximum rain strength for a dimension
+dsurround.cfg.general.FXRange=Special Effect Range
+dsurround.cfg.general.FXRange.tooltip=Block radius/range around player for special effect application
+dsurround.cfg.general.ExternalScripts=External Configuration Files
+dsurround.cfg.general.ExternalScripts.tooltip=Configuration files for customization
+dsurround.cfg.general.StartupSounds=Startup Sound List
+dsurround.cfg.general.StartupSounds.tooltip=Possible sounds to play when client reaches main game menu
+
+dsurround.cfg.aurora.cat.Aurora=Aurora Options
+dsurround.cfg.aurora.cat.Aurora.tooltip=Options that control Aurora behavior and rendering
+dsurround.cfg.aurora.EnableAurora=Auroras
+dsurround.cfg.aurora.EnableAurora.tooltip=Enable/disable Aurora processing on server/client
+dsurround.cfg.aurora.EnableShader=Use Shaders
+dsurround.cfg.aurora.EnableShader.tooltip=Use shader when rendering aurora
+
+dsurround.cfg.biomes.cat.Biomes=Biome Options
+dsurround.cfg.biomes.cat.Biomes.tooltip=Options for controlling biome sound/effects
+dsurround.cfg.biomes.Sealevel=Overworld Sealevel Override
+dsurround.cfg.biomes.Sealevel.tooltip=Sealevel to set for Overworld (0 use default for World)
+dsurround.cfg.biomes.Aliases=Biomes Alias
+dsurround.cfg.biomes.Aliases.tooltip=Biomes alias list
+
+dsurround.cfg.block.cat.Blocks=Block Options
+dsurround.cfg.block.cat.Blocks.tooltip=Options for defining block specific sounds/effects
+
+dsurround.cfg.block.effects.cat.BlockEffects=Block Effect Options
+dsurround.cfg.block.effects.cat.BlockEffects.tooltip=Options for disabling various block effects
+dsurround.cfg.block.effects.Steam=Steam Jets
+dsurround.cfg.block.effects.Steam.tooltip=Enable/disable Steam Jets where lava meets water
+dsurround.cfg.block.effects.Fire=Fire Jets
+dsurround.cfg.block.effects.Fire.tooltip=Enable/disable Fire Jets in lava
+dsurround.cfg.block.effects.Bubble=Bubble Jets
+dsurround.cfg.block.effects.Bubble.tooltip=Enable/disable Bubble Jets under water
+dsurround.cfg.block.effects.Dust=Dust Motes
+dsurround.cfg.block.effects.Dust.tooltip=Enable/disable Dust Motes dropping from under blocks
+dsurround.cfg.block.effects.Fountain=Fountain Jets
+dsurround.cfg.block.effects.Fountain.tooltip=Enable/disable Fountain Jets spraying
+dsurround.cfg.block.effects.Fireflies=Fireflies
+dsurround.cfg.block.effects.Fireflies.tooltip=Enable/disable Firefly effect around plants
+dsurround.cfg.block.effects.Splash=Water Splash
+dsurround.cfg.block.effects.Splash.tooltip=Enable/disable Water Splash effects when water spills down
+
+dsurround.cfg.sound.cat.Sound=Sound Options
+dsurround.cfg.sound.cat.Sound.tooltip=General options for defining sound effects
+dsurround.cfg.sound.Autorestart=Auto-restart Sound System
+dsurround.cfg.sound.Autorestart.tooltip=Enable auto-restart of crashed sound system
+dsurround.cfg.sound.BiomeSounds=Biome Sounds
+dsurround.cfg.sound.BiomeSounds.tooltip=Enable/disable biome background and spot sounds
+dsurround.cfg.sound.MasterScale=Master Sound Scale Factor
+dsurround.cfg.sound.MasterScale.tooltip=Master volume scale factor for biome and block sounds
+dsurround.cfg.sound.AutoConfig=Auto-configure Sound Channels
+dsurround.cfg.sound.AutoConfig.tooltip=Automatically configure sound channels
+dsurround.cfg.sound.NormalChannels=Number of Normal Channels
+dsurround.cfg.sound.NormalChannels.tooltip=Number of normal sound channels to configure in the sound system (manual)
+dsurround.cfg.sound.StreamingChannels=Number of Streaming Channels
+dsurround.cfg.sound.StreamingChannels.tooltip=Number of streaming sound channels to configure in the sound system (manual)
+dsurround.cfg.sound.StreamBufferSize=Stream Buffer Size
+dsurround.cfg.sound.StreamBufferSize.tooltip=Size of a stream buffer in kilobytes (0: system default - usually 128K bytes)
+dsurround.cfg.sound.StreamBufferCount=Number of Stream Buffers per Channel
+dsurround.cfg.sound.StreamBufferCount.tooltip=Number of stream buffers per channel (0: system default - usually 3 buffers)
+dsurround.cfg.sound.Mute=Mute when in Background
+dsurround.cfg.sound.Mute.tooltip=Mute sound when Minecraft is in the background
+dsurround.cfg.sound.ThunderVolume=Sound Volume of Thunder
+dsurround.cfg.sound.ThunderVolume.tooltip=Sound volume to use when overriding Minecraft thunder sounds
+dsurround.cfg.sound.Jump=Jump Sound
+dsurround.cfg.sound.Jump.tooltip=Enable/disable player Jump sound effect
+dsurround.cfg.sound.Equip=Equip Sound
+dsurround.cfg.sound.Equip.tooltip=Enable/disable Weapon/Tool Equip sound effect
+dsurround.cfg.sound.SwordEquipAsTool=Sword Equip as Tool
+dsurround.cfg.sound.SwordEquipAsTool.tooltip=Enable Sword Equip sound as Tool
+dsurround.cfg.sound.Craft=Crafting Sound
+dsurround.cfg.sound.Craft.tooltip=Enable/disable Item Crafted sound effect
+dsurround.cfg.sound.FootstepScale=Footsteps Sound Factor
+dsurround.cfg.sound.FootstepScale.tooltip=Volume scale factor for footstep sounds
+dsurround.cfg.sound.FootstepQuad=Footsteps as Quadruped
+dsurround.cfg.sound.FootstepQuad.tooltip=Simulate quadruped with Footstep effects (horse)
+dsurround.cfg.sound.FootstepCadence=First Person Footstep Cadence
+dsurround.cfg.sound.FootstepCadence.tooltip=true to match first person arm swing; false to match 3rd person leg animation
+dsurround.cfg.sound.Armor=Armor Sounds
+dsurround.cfg.sound.Armor.tooltip=Enable/disable armor sounds when moving
+dsurround.cfg.sound.Puddle=Rain Puddle Sound
+dsurround.cfg.sound.Puddle.tooltip=Enable/disable rain puddle sound when moving in the rain
+dsurround.cfg.sound.CullInterval=Sound Culling Interval
+dsurround.cfg.sound.CullInterval.tooltip=Ticks between culled sound events (0 to disable culling)
+dsurround.cfg.sound.SoundConfig=Individual Sound Configuration
+dsurround.cfg.sound.SoundConfig.tooltip=Configure sound block, cull, and individual volumes
+dsurround.cfg.sound.BattleMusic=Battle Music
+dsurround.cfg.sound.BattleMusic.tooltip=Enable/disable playing of Battle Music when in combat
+
+dsurround.cfg.player.cat.Player=Player Options
+dsurround.cfg.player.cat.Player.tooltip=General options for defining sound and effects the player entity
+dsurround.cfg.player.PotionParticles=Suppress Potion Particles
+dsurround.cfg.player.PotionParticles.tooltip=Suppress player's potion particles from rendering
+dsurround.cfg.player.Popoffs=Popoffs
+dsurround.cfg.player.Popoffs.tooltip=Display damage/heal pop-offs for an entity
+dsurround.cfg.player.CritWords=Show Critical Words
+dsurround.cfg.player.CritWords.tooltip=Display random power word on critical hit
+dsurround.cfg.player.Footprints=Player Footprints
+dsurround.cfg.player.Footprints.tooltip=Enable/disable player footprints
+dsurround.cfg.player.FootprintStyle=Footprint Style
+dsurround.cfg.player.FootprintStyle.tooltip=0: shoe print, 1: square print, 2: horse hoof, 3: bird, 4: paw, 5: solid square, 6: lowres square
+dsurround.cfg.player.HurtThreshold=Hurt Threshold
+dsurround.cfg.player.HurtThreshold.tooltip=Amount of health bar remaining to trigger player hurt sound (0 disable)
+dsurround.cfg.player.HungerThreshold=Hunger Threshold
+dsurround.cfg.player.HungerThreshold.tooltip=Amount of food bar remaining to trigger player hunger sound (0 disable)
+dsurround.cfg.player.ShowBreath=Show Frost Breath
+dsurround.cfg.player.ShowBreath.tooltip=Show player frost breath in cold weather
+
+dsurround.cfg.player.potionHud.cat.PotionHud=Potion HUD Options
+dsurround.cfg.player.potionHud.cat.PotionHud.tooltip=Options for the Potion HUD overlay
+dsurround.cfg.player.potionHud.NoHUD=No Potion HUD
+dsurround.cfg.player.potionHud.NoHUD.tooltip=Disables Vanilla and Dynamic Surroundings potion HUD
+dsurround.cfg.player.potionHud.Enable=Potion HUD
+dsurround.cfg.player.potionHud.tooltip=Enable/disable display of potion icons in display
+dsurround.cfg.player.potionHud.Transparency=Transparency
+dsurround.cfg.player.potionHud.Transparency.tooltip=Transparency factor for icons (higher more solid)
+dsurround.cfg.player.potionHud.LeftOffset=Horizontal Offset
+dsurround.cfg.player.potionHud.LeftOffset.tooltip=Offset from left side of screen
+dsurround.cfg.player.potionHud.TopOffset=Vertical Offset
+dsurround.cfg.player.potionHud.TopOffset.tooltip=Offset from top of screen
+dsurround.cfg.player.potionHud.Scale=Display Scale
+dsurround.cfg.player.potionHud.Scale.tooltip=Size scale of icons (lower is smaller)
+dsurround.cfg.player.potionHud.Location=HUD Location
+dsurround.cfg.player.potionHud.Location.tooltip=Area of the display the Potion HUD is displayed (0 upper left, 1 upper right)
+
+dsurround.cfg.speech.cat.Speech=SpeechBubble/Emoji Options
+dsurround.cfg.speech.cat.Speech.tooltip=Options for configuring SpeechBubbles and Emojis
+dsurround.cfg.speech.EnableSpeechBubbles=SpeechBubbles
+dsurround.cfg.speech.EnableSpeechBubbles.tooltip=Enables/disables speech bubbles above player heads
+dsurround.cfg.speech.EnableEntityChat=Entity Chat
+dsurround.cfg.speech.EnableEntityChat.tooltip=Enables/disables entity chat bubbles
+dsurround.cfg.speech.EnableEntityEmojis=Entity Emojis
+dsurround.cfg.speech.EnableEntityEmojis.tooltip=Enables/disables entity emojis
+dsurround.cfg.speech.Duration=Display Duration
+dsurround.cfg.speech.Duration.tooltip=Number of seconds to display speech before removing
+dsurround.cfg.speech.Range=Visibility Range
+dsurround.cfg.speech.Range.tooltip=Range at which a SpeechBubble is visible.  Filtering occurs server side.
+
+dsurround.cfg.explosions.cat.Explosions=Explosion Enhancement Options
+dsurround.cfg.explosions.cat.Explosions.tooltip=Options for configuring Explosion Enhancement
+dsurround.cfg.explosions.EnableExplosions=Explosion Enhancement
+dsurround.cfg.explosions.EnableExplosions.tooltip=Enables/disables explosion enhancement
+dsurround.cfg.explosions.AddMobs=Add Mob Model Debris
+dsurround.cfg.explosions.AddMobs.tooltip=Enables/disables addition of mob models in explosion debris
+
+dsurround.cfg.lightlevel.cat.LightLevel=Light Level HUD Options
+dsurround.cfg.lightlevel.cat.LightLevel.tooltip=Options for configuring the Light Level HUD
+dsurround.cfg.lightlevel.Range=Block Range
+dsurround.cfg.lightlevel.Range.tooltip=Block range for light level analysis
+dsurround.cfg.lightlevel.MobSpawnThreshold=Mob Spawn Light Threshold
+dsurround.cfg.lightlevel.MobSpawnThreshold.tooltip=Light level at which mobs can spawn
+dsurround.cfg.lightlevel.HideSafe=Hide Safe Blocks
+dsurround.cfg.lightlevel.HideSafe.tooltip=Do not show light level for blocks where mobs will not spawn
+dsurround.cfg.lightlevel.IndicateCaution=Indicate Caution
+dsurround.cfg.lightlevel.IndicateCaution.tooltip=Indicate current light levels that will change at night which could result in mob spawns
+dsurround.cfg.lightlevel.Colors=Color Set
+dsurround.cfg.lightlevel.Colors.tooltip=0 bright, 1 dark
+dsurround.cfg.lightlevel.DisplayMode=Display Mode
+dsurround.cfg.lightlevel.DisplayMode.tooltip=0: block light, 1: block light + skylight
+
+dsurround.cfg.compass.cat.Compass=Compass/Clock Options
+dsurround.cfg.compass.cat.Compass.tooltip=Options for configuring the Compass/Clock HUD
+dsurround.cfg.compass.Enable=Enable Compass HUD
+dsurround.cfg.compass.Enable.tooltip=Enable/disable the Compass HUD display
+dsurround.cfg.compass.ClockEnable=Enable Clock HUD
+dsurround.cfg.compass.ClockEnable.tooltip=Enable/disable the Clock HUD display
+dsurround.cfg.compass.Style=Compass Style
+dsurround.cfg.compass.Style.tooltip=The style of compass rendering
+dsurround.cfg.compass.Transparency=Compass HUD Transparency
+dsurround.cfg.compass.Transparency.tooltip=Transparency factor to apply when rendering the Compass HUD
+dsurround.cfg.compass.Format=Coord Format
+dsurround.cfg.compass.Format.tooltip=Format string for location coordinates
+
+dsurround.cfg.commands.cat.Commands=Command Options
+dsurround.cfg.commands.cat.Commands.tooltip=Options for configuring Commands
+dsurround.cfg.commands.DS.Name=/ds Command Name
+dsurround.cfg.commands.DS.Name.tooltip=Name to give the /ds command
+dsurround.cfg.commands.DS.Alias=Alias to give the /ds command
+dsurround.cfg.commands.DS.Alias.tooltip=One or more alias names to give the /ds command (space separated)
+dsurround.cfg.commands.Calc.Name=/calc Command Name
+dsurround.cfg.commands.Calc.Name.tooltip=Name to give the /calc command
+dsurround.cfg.commands.Calc.Alias=Alias to give the /calc command
+dsurround.cfg.commands.Calc.Alias.tooltip=One or more alias names to give the /calc command (space separated)
+
+dsurround.cfg.lighting.cat.Lighting=Lighting Options
+dsurround.cfg.lighting.cat.Lighting.tooltip=Options for configuring Lighting effects
+dsurround.cfg.lighting.Enable=Enable Albedo lighting support
+dsurround.cfg.lighting.Enable.tooltip=Enable/disable Albedo lighting support
+dsurround.cfg.lighting.FireFlyEnable=Enable Fire Fly lighting effects
+dsurround.cfg.lighting.FireFlyEnable.tooltip=Enable/disable Fire Fly lighting effects using Albedo
+dsurround.cfg.lighting.PlayerEnable=Enable Player lighting effects
+dsurround.cfg.lighting.PlayerEnable.tooltip=Enable/disable Player lighting effects using Albedo
+
+dsurround.cfg.profiles.cat.Profiles=Built-in Profiles
+dsurround.cfg.profiles.cat.Profiles.tooltip=Enable/disable built-in configuration profiles
+dsurround.cfg.profiles.noNetherWeather=No Nether Weather
+dsurround.cfg.profiles.noNetherWeather.tooltip=Enable/disable Nether weather effects
+dsurround.cfg.profiles.noDustEffects=No Dust Effects
+dsurround.cfg.profiles.noDustEffects.tooltip=Turns off dust effects for all biomes
