@@ -12,7 +12,7 @@
 想要参与本地化，请点击此处访问 Weblate：<br>
 
 - 中国大陆：<https://weblate.sayori.pw/>
-- 其他地区：<http://weblate.exz.me/>
+- 其他地区：<https://weblate.exz.me/>
 
 需要管理员注册账户，请向以下任意一位发送邮件用以申请账户<br>
 
