@@ -6,6 +6,8 @@
 # -- Plants -- #
 # -- armor
 # -- commands -- #
+# -- configuration -- #
+# -- death -- #
 # -- drains
 # -- fences
 # -- foods
@@ -22,6 +24,15 @@
 # -- walls
 commands.actual.success=“%s”
 commands.attack.usage=/actual <cmd> <玩家>
+death.attack.primal.aconite.player=%1$s 被 %2$s 刺杀身亡
+death.attack.primal.aconite=%s 被乌头毒死了
+death.attack.primal.bitumen=%s 现已加入化石记录
+death.attack.primal.block.player=%1$s 在与 %2$s 战斗时死于钝器外伤
+death.attack.primal.block=%s 死于钝器造成的外伤
+death.attack.primal.ironwood.player=%1$s 被 %2$s 杀死
+death.attack.primal.ironwood=％s 被杀害
+death.attack.primal.pitfall.player=%1$s 在攻击 ％2$s 时陷入陷阱
+death.attack.primal.pitfall=%s 在陷阱中丧生
 entity.primal:bear_black.name=黑熊
 entity.primal:bear_brown.name=棕熊
 entity.primal:canis_campestris.name=草原狼
@@ -29,6 +40,19 @@ entity.primal:creeper_nether.name=下界苦力怕
 entity.primal:gator.name=短吻鳄
 entity.primal:ovis_atre.name=阿特雷羊
 entity.primal:shark_hammerhead.name=锤头鲨
+fluid.bitumen=沥青
+fluid.bitumen_boiling=沸腾沥青
+fluid.brine_netjry=盐水
+fluid.magma_basaltic=玄武岩岩浆
+fluid.ovis_atre_milk=阿特雷羊奶
+fluid.paraffin=石蜡
+fluid.smoke=烟
+fluid.steam=蒸汽
+fluid.tannin=丹宁酸
+fluid.urushi=乳胶漆
+fluid.waste=废水
+fluid.water_boiling=沸水
+fluid.water_condensate=冷凝水
 gui.jei.primal.cauldron=坩埚
 gui.jei.primal.drying_rack=干燥器
 gui.jei.primal.fish_trap=鱼栅
@@ -142,6 +166,8 @@ item.corn_cob.name=玉米芯
 item.corn_cob_cooked.name=熟玉米芯
 item.corn_ground.name=研磨玉米
 item.corn_seeds.name=玉米种子
+item.corn_stalk_dry.name=干玉米秸秆
+item.corn_stalk_wet.name=鲜玉米秸秆
 item.corypha_boat.name=考福瑞船
 item.corypha_bow.name=考福瑞弓
 item.corypha_pin.name=考福瑞针
@@ -522,6 +548,12 @@ potion.effect.primal.aconite=乌头中毒
 potion.effect.primal.porphyria=卟啉症
 potion.effect.primal.sun_burn=晒伤
 potion.effect.primal.water_burn=烫伤
+primal.compatibility.mod_friendly_workblade.tooltip=使工作刀片与类似于Better Beginnings和BWM等Mod的刀片兼容。
+primal.compatibility=兼容配置
+primal.config.title=Primal核心配置
+primal.development.tooltip=大多是对开发者和整合包作者有用的选项
+primal.survival.tooltip=许多将会更改原版游戏特性的选项
+primal.worldgen=世界生成
 subtitle.primal.block_metal_gong_dull=沉闷的金属咚咚
 subtitle.primal.block_metal_gong_full=金属咚咚
 subtitle.primal.block_metal_lid=金属叮当声
@@ -600,6 +632,7 @@ tile.common_stone_normal.name=普通石
 tile.common_stone_pillar.name=普通柱子
 tile.common_stone_smooth.name=平滑普通石
 tile.common_stone_stacked.name=裂纹普通石
+tile.corn_stalk.name=玉米秸秆
 tile.corypha_stalk_normal.name=考福瑞锯鹱属段
 tile.corypha_stalk_stripped.name=剥离考福瑞段
 tile.daub_acacia_basic.name=胶泥金合欢篱笆
@@ -763,6 +796,7 @@ tile.desiccated_stone_normal.name=干枯石
 tile.desiccated_stone_pillar.name=干枯柱子
 tile.desiccated_stone_smooth.name=干枯平滑石
 tile.desiccated_stone_stacked.name=裂纹干枯石
+tile.devils_tongue.name=魔芋
 tile.dirt_brick.name=塞满泥砖
 tile.dirt_packed.name=塞满泥
 tile.door_corypha.name=考福瑞门
@@ -1309,37 +1343,3 @@ tile.worktable_slab_oak.name=橡木合成台
 tile.worktable_slab_sandstone.name=砂石合成台
 tile.worktable_slab_spruce.name=云杉合成台
 tile.worktable_slab_yew.name=紫杉合成台
-tile.devils_tongue.name=魔芋
-tile.corn_stalk.name=玉米秸秆
-item.corn_stalk_wet.name=鲜玉米秸秆
-item.corn_stalk_dry.name=干玉米秸秆
-fluid.smoke=烟
-fluid.steam=蒸汽
-fluid.water_condensate=冷凝水
-fluid.water_boiling=沸水
-fluid.bitumen=沥青
-fluid.bitumen_boiling=沸腾沥青
-fluid.brine_netjry=盐水
-fluid.tannin=丹宁酸
-fluid.urushi=乳胶漆
-fluid.paraffin=石蜡
-fluid.magma_basaltic=玄武岩岩浆
-fluid.ovis_atre_milk=阿特雷羊奶
-fluid.waste=废水
-# -- death -- #
-death.attack.primal.pitfall=%s 在陷阱中丧生
-death.attack.primal.pitfall.player=%1$s 在攻击 ％2$s 时陷入陷阱
-death.attack.primal.ironwood=％s 被杀害
-death.attack.primal.ironwood.player=%1$s 被 %2$s 杀死
-death.attack.primal.block=%s 死于钝器造成的外伤
-death.attack.primal.block.player=%1$s 在与 %2$s 战斗时死于钝器外伤
-death.attack.primal.bitumen=%s 现已加入化石记录
-death.attack.primal.aconite=%s 被乌头毒死了
-death.attack.primal.aconite.player=%1$s 被 %2$s 刺杀身亡
-# -- configuration -- #
-primal.config.title=Primal核心配置
-primal.compatibility=兼容配置
-primal.compatibility.mod_friendly_workblade.tooltip=使工作刀片与类似于Better Beginnings和BWM等Mod的刀片兼容。
-primal.survival.tooltip=许多将会更改原版游戏特性的选项
-primal.worldgen=世界生成
-primal.development.tooltip=大多是对开发者和整合包作者有用的选项

@@ -1,4 +1,4 @@
-ImmersiveEngineering Chinese localization
+//ImmersiveEngineering Chinese localization
 # BLOCKS
 tile.immersiveengineering.ore.copper.name=铜矿石
 tile.immersiveengineering.ore.aluminum.name=铝土矿石
@@ -1502,17 +1502,25 @@ ie.manual.category.computers.name=电脑控制支持
 
 ie.manual.entry.computer.general.name=基本信息 ☎
 ie.manual.entry.computer.general.subtext=来自未来的科技
-ie.manual.entry.computer.general0=本手册中介绍的大部分机械都可以用OpenCopmuters（开放式电脑）或ComputerCraft的电脑控制。若使用OpenComputers，需将机器与Adapter连接方可启用电脑控制功能.若该机械有红石接口,则这个接口也支持电脑控制;若需要其它机器的技术信息，请查阅对应条目。本条目的下一页将介绍一些常用的返回值类型。
-ie.manual.entry.computer.general1=§lItemStack§r（物品堆）是一种常用的返回值类型。一般，它包含下列键：<br>§lname§r:物品的注册名，例如原版的圆石的注册名是"minecraft:cobblestone"<br>§lsize§r:物品数量<br>§lnameUnlocalized§r:未经本地化的名字，例如圆石对应"tile.stonebrick"。仅适用于ComputerCraft。<br>§llabel§r:该物品的实际显示名字。在铁砧中重命名会影响这个键对应的值。
-ie.manual.entry.computer.general2=§ldamage§r:物品损害值或元数据（metadata）<br>§lmaxDamage§r：该物品损坏前可承受的最大损害值<br>§lmaxSize§r：该物品的最大可堆叠数量，通常是64<br>§lhasTag§r：是否有附加的NBT标签。
-ie.manual.entry.computer.general3=§lFluidStack§r（流体堆）：这个类型代表了一定数量的流体。一般，该table中包含下列键：<br>§lname§r：该液体未经本地化的名字<br>§lamount§r：流体数量，以毫桶（milibuckets， mB）为单位<br>§lhasTag§r:是否有附加的NBT标签。
-ie.manual.entry.computer.general4=§lFluid tanks（流体储罐）§r和FluidStack类似，区别在于流体此时是储存在容器中的。因此，此table中除了包含所有FluidStack的键外，还包含有额外的键§lcapacity§r，用于表示此储罐的容积上限。
+ie.manual.entry.computer.general0=本手册中介绍的大部分机械都可以用OpenCopmuters（开放式电脑）或ComputerCraft的电脑控制。若使用OpenComputers，需将机器与Adapter连接方可启用电脑控制功能。若该机械有红石接口，则这个接口也支持电脑控制；若需要其它机器的技术信息，请查阅对应条目。本条目的下一页将介绍一些常用的返回值类型。
+ie.manual.entry.computer.general1=你可以使用电脑或者红石来控制带有红石接口的多方块结构：<br>§lenableComputerControl( enabled:bool)§r：用来控制机械开关。若启用此功能后机械将忽略红石信号，且取消电脑对机械的控制时其不会自动重置。<br>§lsetEnabled(enable:bool)§r：类似红石信号那样控制机械，这仅在电脑控制启用时才有效。
+ie.manual.entry.computer.general2=§lItem stacks§r（物品堆）是一种常用的返回值类型。一般，它包含下列键：<br>§lname§r：物品的注册名，例如原版的圆石的注册名是"minecraft:cobblestone"<br>§lsize§r：物品数量<br>§llabel§r：该物品的实际显示名字，在铁砧中重命名会影响这个键对应的值。
+ie.manual.entry.computer.general3=§ldamage§r：物品损害值或元数据（metadata）。<br>§lmaxDamage§r：该物品损坏前可承受的最大损害值<br>§lmaxSize§r：该物品的最大可堆叠数量，通常是64。<br>§lhasTag§r：是否有附加的NBT标签。
+ie.manual.entry.computer.general4=§lFluid stacks§r（流体堆）：这个类型代表了一定数量的流体。一般，该table中包含下列键：<br>§lname§r：该液体未经本地化的名字<br>§lamount§r：流体数量，以毫桶（milibuckets，mB）为单位<br>§lhasTag§r：是否有附加的NBT标签。
+ie.manual.entry.computer.general5=§lFluid tanks§r（流体储罐）和FluidStack类似，区别在于流体此时是储存在容器中的。因此，此table中除了包含所有FluidStack的键外，还包含有额外的键§lcapacity§r，用于表示此储罐的容积上限。
 
 ie.manual.entry.computer.arcfurnace.name=电弧炉 ☎
 ie.manual.entry.computer.arcfurnace.subtext=不是反应堆
 ie.manual.entry.computer.arcFurnace0=§lsetEnabled(boolean active)§r：可控制电弧炉的开关，和红石控制面板的效果类似。<br>§lisActive()§r：电弧炉工作时返回true，否则返回false<br>§lgetInputStack(int slot)§r：返回指定输入格（取值范围:1-12）的ItemStack。返回的table中还附带两个键：§lprogress§r，代表此输入格当前工作进度；和§lmaxProgress§r，代表此输入格完成时的进度
 ie.manual.entry.computer.arcFurnace1=两者均以tick为单位。<br>§lgetOutputStack(int slot)§r：返回指定输出格（取值范围:1-6）的ItemStack。<br>§lgetAdditiveStack(int slot)§r：returns the stack in the specified additive slot (1-4)<br>§lgetSlagStack()§r：返回炉渣格中的ItemStack<br>§lhasElectrodes()§r：当全部三个电极格中的电极均有效时返回true，否则返回false<br>§lgetElectrode(int slot)§r：根据给定的电极格（取值范围1-4）返回对应的ItemStack
 ie.manual.entry.computer.arcFurnace2=§lgetMaxEnergyStored()§r：返回电弧炉可储存的最大能量数量<br>§lgetEnergyStored()§r：返回泛光灯储存的能量数量
+
+ie.manual.entry.computer.bottlingMachine.name=灌装机 ☎
+ie.manual.entry.computer.bottlingMachine.subtext=装满它！
+ie.manual.entry.computer.bottlingmachine0=§lisActive()§r：灌装机工作时返回true，否则返回false。<br>§lgetMaxEnergyStored()§r：返回灌装机可储存的最大能量数量<br>§lgetEnergyStored()§r：返回灌装机储存的能量数量
+ie.manual.entry.computer.bottlingmachine1=§lgetTank()§r：返回流体储罐信息。
+
+
 
 ie.manual.entry.computer.sampleDrill.name=岩芯钻井 ☎
 ie.manual.entry.computer.sampleDrill.subtext=保证样本有代表性
@@ -1521,20 +1529,20 @@ ie.manual.entry.computer.sampleDrill1=§lgetVeinLocalizedName()§r：返回找�
 
 ie.manual.entry.computer.crusher.name=粉碎机 ☎
 ie.manual.entry.computer.crusher.subtext=管好你的手！
-ie.manual.entry.computer.crusher0=§lsetEnabled(boolean active)§r：可控制粉碎机的开关，和红石控制面板的效果类似。<br>§lisActive()§r：粉碎机工作时返回true，否则返回false<br>§lgetInputQueue()§r：返回代表粉碎机输入序列的table。该table的键以数字命名，从1开始。每个键对应的值均为table，包含下列键：<br>"progress":当前进度<br>"maxProgress"：完成时的进度
+ie.manual.entry.computer.crusher0=§lisActive()§r：粉碎机工作时返回true，否则返回false。<br>§lgetInputQueue()§r：返回代表粉碎机输入序列的table。该table的键以数字命名，从1开始。每个键对应的值均为table，包含下列键：<br>"progress"：当前进度
 ie.manual.entry.computer.crusher1="input"：输入的ItemStack<br>"output"：主产物ItemStack<br>§lgetMaxEnergyStored()§r：返回粉碎机可储存的最大能量数量<br>§lgetEnergyStored()§r：返回粉碎机储存的能量数量
 
 ie.manual.entry.computer.dieselgen.name=柴油发电机 ☎
 ie.manual.entry.computer.dieselgen.subtext=提高产量最重要的是：量产。
-ie.manual.entry.computer.dieselgen0=§lsetEnabled(boolean active)§r：可控制柴油发电机的开关<br>§lisActive()§r：柴油发电机工作时返回true，否则返回false<br>§lgetTankInfo()§r:返回柴油发电机储罐信息
+ie.manual.entry.computer.dieselgen0=§lgetTankInfo()§r：返回柴油发电机储罐信息。
 
 ie.manual.entry.computer.energymeter.name=电流互感器 ☎
-ie.manual.entry.computer.energymeter.subtext=每小时88Flux！
+ie.manual.entry.computer.energymeter.subtext=Just an ADC
 ie.manual.entry.computer.energymeter0=电流互感器的底部可与电脑连接。它只有一个方法可用：§lgetAvgEnergy()§r，可返回在过去的1秒（20刻）中平均能量流，以Flux/刻为单位。
 
 ie.manual.entry.computer.excavator.name=斗轮式挖掘机 ☎
 ie.manual.entry.computer.excavator.subtext=比矮人更为高效
-ie.manual.entry.computer.excavator0=§lisActive()§r：挖掘机工作时返回true，否则返回false。该返回值与矿脉是否存在无关。<br>§lsetEnabled(boolean active)§r：可控制挖掘机的开关<br>§lgetEnergyStored()§r：返回挖掘机储存的能量数量<br>§lgetMaxEnergyStored()§r：返回挖掘机可储存的最大能量数量
+ie.manual.entry.computer.excavator0=§lisActive()§r：挖掘机工作时返回true，否则返回false。该返回值与矿脉是否存在无关。<br>§lgetEnergyStored()§r：返回挖掘机储存的能量数量<br>§lgetMaxEnergyStored()§r：返回挖掘机可储存的最大能量数量
 
 ie.manual.entry.computer.squeezerAndFermenter.name=工业发酵机和工业压榨机 ☎
 ie.manual.entry.computer.squeezerAndFermenter.subtext=重复发布
@@ -1545,23 +1553,17 @@ ie.manual.entry.computer.squeezerAndFermenter2=§lgetMaxEnergyStored()§r：返�
 ie.manual.entry.computer.floodlight.name=泛光灯 ☎
 ie.manual.entry.computer.floodlight.subtext=复古LED
 ie.manual.entry.computer.floodlight0=以下内容均假定泛光灯放置在地面上。泛光灯底面可与电脑连接。使用电脑旋转泛光灯后，须等待一秒能才能再次旋转。<br>§lturnAroundXZ(boolean dir)§r：水平旋转泛光灯<br>§lturnAroundY(boolean dir)§r：沿Y轴旋转泛光灯<br>§lcanTurn()§r:当泛光灯可旋转时返回true，否则返回false
-ie.manual.entry.computer.floodlight1=§lsetEnabled(boolean on)§r：开关泛光灯<br>§lisActive()§r：若泛光灯开启则返回true，否则返回false<br>§lgetEnergyStored()§r：返回泛光灯储存的能量数量<br>§lgetMaxEnergyStored()§r：返回泛光灯可储存的最大能量数量。
+ie.manual.entry.computer.floodlight1=§lgetEnergyStored()§r：返回泛光灯储存的能量数量<br>§lgetMaxEnergyStored()§r：返回泛光灯可储存的最大能量数量。<br>§lwaitForCooldown()§r：返回泛光灯再次旋转时间。
 
 ie.manual.entry.computer.refinery.name=炼油厂 ☎
 ie.manual.entry.computer.refinery.subtext=数位化柴油
-ie.manual.entry.computer.refinery0=§lgetInputFluidTanks()§r：返回包含有两个输入储罐的table，分别储存在"input1"和"input2"两个键下。<br>§lgetOutputTank()§r：返回输出储罐<br>§lgetRecipe()§r:返回包含三个键的table，其中键"input1"和键"input2"存储有两种输入的流体，键"output"则对应输出的流体。<br>§lsetEnabled(boolean on)§r：开关炼油厂<br>§lisValidRecipe()§r：若当前输入有对应的recipe则返回true，否则返回false。
+ie.manual.entry.computer.refinery0=§lgetInputFluidTanks()§r：返回包含有两个输入储罐的table，分别储存在"input1"和"input2"两个键下。<br>§lgetOutputTank()§r：返回输出储罐<br>§lgetRecipe()§r：返回包含三个键的table，其中键"input1"和键"input2"存储有两种输入的流体，键"output"则对应输出的流体<br>§lisValidRecipe()§r：若当前输入有对应的recipe则返回true，否则返回false。
 ie.manual.entry.computer.refinery1=§lgetEmptyCannisters()§r：返回包含有若干空容器的ItemStack的table，其中键"input1"和键"ipnut2"对应输入储罐，键"output"对应输出储罐。<br>§lgetMaxEnergyStored()§r：返回炼油厂可储存的最大能量数量<br>§lgetEnergyStored()§r：返回炼油厂储存的能量数量。
 
 ie.manual.entry.computer.assembler.name=装配机 ☎
 ie.manual.entry.computer.assembler.subtext=objdump -d
 ie.manual.entry.computer.assembler0=装配机底层可与电脑连接。<br>§lhasIngredients(int recipe)§r:若指定配方（取值范围1-3）有对应recipe则返回true，否则返回false。<br>§lsetEnabled(int slot, boolean on)§r：启用或禁用指定合成阵列（取值范围1-3）。若合成被禁用，即便有材料可以合成也不会工作。<br>§lgetRecipe(int recipe)l§r：返回指定recipe（取值范围0-2）对应的table.键"in1"、"in2"、...、"in9"对应输入，键"out"对应输出。
 ie.manual.entry.computer.assembler1=§lgetTank(int tank)§r：根据序号（取值范围1-3）返回对应的储罐<br>§lgetMaxEnergyStored()§r：返回装配机可储存的最大能量数量。<br>§lgetEnergyStored()§r：返回装配机储存的能量数量。<br>§lgetStackInSlot(int slot)§r:根据序号（取值范围1-18）返回对应输入格中的ItemStack。<br>§lgetBufferStack(recipe:int)§r:根据序号（取值范围1-3）返回对应合成的输出ItemStack。
-
-ie.manual.entry.computer.bottlingMachine.name=灌装机 ☎
-ie.manual.entry.computer.bottlingMachine.subtext=装满它！
-ie.manual.entry.computer.bottlingMachine0=灌装机正面中下方的方块，以及背面底部的一列，可以与电脑连接。cannister在通过传送带上的黑盒后会被认为已装满。<br>§lgetFluid()§r：返回灌装机内部的储罐。<br>§lgetEmptyCannister(int n)§r：返回第n个容器，顺序容器进入机器的顺序决定。返回的table中包含键"process"，用于表示灌装进度。进度等于72时代表已装满，进度等于120时代表已输出。
-ie.manual.entry.computer.bottlingMachine1=§lgetEmptyCannisterCount()§r：返回灌装机中的空容器数量<br>§lgetFilledCannister(int n)§r：返回第n个满容器，顺序由进入黑箱的顺序决定.返回的table中包含键"process"，用于表示灌装进度。<br>§lgetFilledCannisterCount()§r：返回灌装机中满容器的数量。
-ie.manual.entry.computer.bottlingMachine2=§lgetEnergyStored()§r：返回灌装机储存的能量数量<br>§lgetMaxEnergyStored()§r：返回灌装机可储存的最大能量数量<br>§lsetEnabled(boolean on)§r：开关灌装机
 
 ie.manual.entry.computer.capacitor.name=电容器 ☎
 ie.manual.entry.computer.capacitor.subtext=高压大电容

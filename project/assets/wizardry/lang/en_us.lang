@@ -44,7 +44,7 @@ item.wizardry:nacre_pearl.ancient.desc0=This pearl is strange.
 item.wizardry:nacre_pearl.ancient.desc1=It's mysterious... and definitely powerful.
 
 item.wizardry:book.name=Spellforger's Codex
-item.wizardry:ring.name=Golden Ring
+item.wizardry:spellRing.name=Golden Ring
 item.wizardry:ring_pearl.name=Golden Ring
 item.wizardry:devil_dust.name=Devil Dust
 item.wizardry:mana_pearl.name=Mana Pearl
@@ -62,7 +62,7 @@ item.wizardry:jar_fairy.name=Fairy in a Jar
 item.wizardry:jar_jam.name=Fairy Jam
 item.wizardry:syringe.name=Empty Syringe
 item.wizardry:syringe_mana.name=ManaBooster Lite™
-item.wizardry:syringe_mana.desc=Refills your mana bar by 30%%.
+item.wizardry:syringe_mana.desc=Refills your mana bar by 50%%.
 item.wizardry:syringe_steroid.name=ManaBuilder Serum Premium Plus™
 item.wizardry:syringe_steroid.desc0=Completely saturates your mana bar and depletes your burnout bar for 10 seconds.
 item.wizardry:syringe_steroid.desc1=Severe side-effects included.
@@ -76,6 +76,10 @@ item.wizardry:light.name=Light
 item.wizardry:halo_real.name=Halo
 item.wizardry:halo_fake.name=Crude Halo
 item.wizardry:halo_creative.name=Creative Halo
+item.wizardry:halo_creative.name=Creative Halo
+item.wizardry:repulsion_bomb.name=Repulsion Bomb
+item.wizardry:vortex_bomb.name=Vortex Bomb
+item.wizardry:sky_dust.name=Sky Dust
 
 item.wizardry:wisdom_stick.name=Wisdom Wood Stick
 item.wizardry:wisdom_wood_door.name=Wisdom Wood Door
@@ -99,7 +103,7 @@ advancement.wizardry.devildust.desc=Melt book in fire to make Devil Dust
 advancement.wizardry.crunch=§oCRUNCH.§a
 advancement.wizardry.crunch.desc=Crash straight through Bedrock to the Underworld above
 
-bookGui.physicsbook.defaulttitle=Physics Book
+book.physicsbook.defaulttitle=Physics Book
 
 fluid.nacre_fluid=Nacre
 fluid.mana_fluid=Mana
@@ -114,7 +118,9 @@ subtitle.wizardry.sizzle=Dust sizzles
 subtitle.wizardry.harp=Harp plays
 subtitle.wizardry.bell=Bell tolls
 subtitle.wizardry.bubbling=Liquid bubbles
-subtitle.wizardry.spirit=Spirit whispers
+subtitle.wizardry.spirit_wight=Spirit whispers
+subtitle.wizardry.spirit_blight=Spirit zaps
+subtitle.wizardry.electric_white_noise=Electrical humming
 
 potion.wizardry.crash=Crash
 potion.wizardry.low_gravity=Feather
@@ -128,11 +134,20 @@ potion.wizardry.zach_corruption=Corruption
 
 item_group.wizardry=Wizardry
 
-wizardry.misc.module=Spell:
+jei.recipe.wizardry:fluid=Item Soaking
+jei.recipe.block.wizardry:fluid=Output replaces liquid
+jei.recipe.consumes.wizardry:fluid=Consumes the liquid used
+jei.recipe.requires.wizardry:fluid=Needs %d source blocks of liquid
+jei.recipe.wizardry:fire=Item Burning
+jei.recipe.tooltip.wizardry:fire=Fire
+jei.recipe.wizardry:fluid=Fluid Recipe
+
+wizardry.misc.moduleSet=Spell:
 wizardry.misc.sneak=<Sneak for info>
 wizardry.misc.save=SAVE
+wizardry.misc.save_error=No codex found in your inventory! Place one in your inventory to save properly.
 wizardry.misc.sneak_expanded=&7<- &8Shift for more info&7 ->
-wizardry.misc.update_link=Wizardry Update Info
+wizardry.misc.update_link=Update Changelog
 wizardry.misc.update_checker0=There's a new Wizardry update available.
 wizardry.misc.update_checker1=Your version:
 wizardry.misc.update_checker2=New version:
@@ -178,6 +193,8 @@ wizardry.spell.effect_vanish.name=Vanish
 wizardry.spell.effect_vanish.desc=The target can't see anyone when they're moving, but when they're still, they're invisible.
 wizardry.spell.effect_zoom.name=Zoom
 wizardry.spell.effect_zoom.desc=Zoom directly to the targeted position.
+wizardry.spell.effect_leech.name=Leech
+wizardry.spell.effect_leech.desc=Will deal magic damage to a target. If that target dies, you get some of their mana into yourself.
 
 wizardry.spell.event_collide_block.name=On Block Collision
 wizardry.spell.event_collide_block.desc=This event triggers when the spell collides with a block.
@@ -224,12 +241,11 @@ wizardry.gui.recipe=Spell Recipe
 
 wizardry.command.usage=/wizardry <reload/reset> [config/inventory]
 wizardry.command.success=Successfully reloaded modules.
-wizardry.command.reset=Attempting to reset module directory... Any modifications made to it will be lost!
+wizardry.command.reset=Attempting to reset moduleSet directory... Any modifications made to it will be lost!
 wizardry.command.success_delete=Successfully deleted %s
 wizardry.command.fail=Could not delete %s
-wizardry.command.fail_dir_delete=Could not delete module directory
-wizardry.command.fail_dir_create=Could not create module directory
-
+wizardry.command.fail_dir_delete=Could not delete moduleSet directory
+wizardry.command.fail_dir_create=Could not create moduleSet directory
 
 wizardry.update0=Don't let your bugs be thugs! Use our patented Magic-o-gon spray for only $9.99
 wizardry.update1=There's magic in the air...
@@ -239,3 +255,94 @@ wizardry.update4=GET IN THE UPDATE, SHINJI
 wizardry.update5=it's outdated my dudes
 wizardry.update6=yo dawg we heard you like changelogs so we put changelogs in your changelogs so you can change while you log
 wizardry.update7=*:･ﾟ✧ᕕ( ᐛ )ᕗ
+
+
+
+
+
+wizardry.book.title=Spellforger's Codex
+wizardry.book.subtitle=Not By Raziel
+wizardry.book.steps.title=The 5 Steps To Becoming A Wizard
+wizardry.book.mobs.title=Mobs
+wizardry.book.itemsblocks.title=Items And Blocks
+wizardry.book.dimensions.title=Dimensions
+
+wizardry.book.steps.mana.title=Step 1: Mana
+wizardry.book.steps.mana.desc=Learn about what mana is and why you want it so badly
+wizardry.book.steps.mana.content0=Of all the energy sources a wizard can draw on, mana is the best. Light blue pools of this watery liquid can be found throughout the world; it also manifests itself in people and objects, giving a trained wizard a constant source of energy to draw on. With it, you can begin to be a threat in the world of wizardry, and begin to work magic.
+wizardry.book.steps.mana.content1=A fair warning, the liquid is barely stable. Think of it as a river. A small flow of water is nice to relax in and drift along with, but a raging rapid is not something you want to jump in the way of. Touching it will drain your hunger as it tries to purge your body, while also making you float due to the sheer energy of the liquid. As a result, it's next to impossible to drown in it.
+wizardry.book.steps.mana.content2=Now of course, we want to get this liquid into our bodies to use it. To get mana inside of you, craft a syringe and craft that syringe with a bucket of liquid power. You now have a mana syringe that you can inject straight into your bloodstream.
+wizardry.book.steps.mana.content3=Just like anything else, too much mana is a bad thing.. Drinking too much water can pose a threat to your health. Doing the same with mana is several magnitudes more dangerous. The body can only store a certain amount before it starts to manifest side effects known as "mana burn".<br>Imagine you took all of the world's animal life, gave them all pure caffeine, compressed them into a single squirrel, and then made that squirrel a wizard.<br>That's what having mana burn is like.
+wizardry.book.steps.mana.content4=Finally, you can store the mana liquid into orbs. Simply craft glass orbs and throw them a block of liquid mana, it will instantly fill up. You now have portable mana that you will need later. Do stock up on this stuff, you'll need a lot of it.
+
+wizardry.book.steps.garbs.title=Step 2: Garbs
+wizardry.book.steps.garbs.desc=Learn about wardrobe you should be using
+wizardry.book.steps.garbs.content0=Once you've injected mana, you might be wondering why you don't have a bar showing you how much you have. Well although the mana is flowing in your blood stream right now, you simply cannot channel it yet.<br>Angels are bits of divinity. Their Grace allows them to have a constant supply of mana... but you don't have it that easy. You'll have to make do with what's called a crude haloInv, instead of the glorious one of an angel.<br> Once you equip the crude haloInv, you will be able to see your mana bar.
+wizardry.book.steps.garbs.content1=Next up is the cape. Capes are not storages, but they are conduits, aiding wizards in mana transference and reducing mana loss. Once you craft yourself a cape, wear it and do not take it off. The cape will get stronger the longer you wear it. At first, it barely reduces spell cost, but after you wear it for prolonged periods of time, it can reduce mana spell cost down to a quarter of what it was.
+wizardry.book.steps.garbs.content2=Capes may be glorious and powerful, but they are fickle. They will easily give up their loyalty to another, because one wizard is the same as another to them. If you can cheat a master out of their cape, it's the same as if you'd worn it for years yourself.<br>So if you do happen to find a beautiful, billowing cape on another's rapidly-cooling body, there's no harm in peeling it off and trying it on. And really, does it matter how they died? A cape is a cape.
+
+wizardry.book.steps.nacre.title=Step 3: Nacre
+wizardry.book.steps.nacre.desc=Learn about pearls and their magical properties
+wizardry.book.steps.nacre.content0=Nacre, the liquid that pearls are formed from - known as mother-of-pearl - is a very thick, pale, and iridescent liquid that is able to channel mana quite flawlessly.<br>To get this liquid, simply throw a gold nugget into liquid mana, and they'll mix together into the resplendent stuff.<br>Now, as for why you want this: with it you can create "nacre pearls", which can be infused with spells to cast them.
+wizardry.book.steps.nacre.content1=To make a nacre pearl, take a glass orb and throw it in the milky liquid. There are six levels of nacre pearl quality. Wasted is the worst, then drained, flawed, decent, potent, and finally, Apex. You ideally want Apex Pearls, but that takes careful effort to make. The worse the quality of the pearl, the weaker the spell and the more mana it consumes. To get the highest pearl quality, you must keep the glass orb in the nacre for &oexactly&r 30 seconds. Any more reduces quality, but any less does too. This isn't required, of course. Apex pearls are good, but  you will do fine with potent and decent quality pearls.<br>You will be using these pearls later on in spell infusion.
+
+wizardry.book.steps.structures.title=Step 4: Structures
+wizardry.book.steps.structures.desc=Learn about the structure you will need to build
+wizardry.book.steps.structures.content0=You've got your mana, you've got your crooked haloInv, you've got your beautiful cape, and you've got your shimmering nacre pearls. But how do you actually infuse a spell into a pearl? Well, we just need one last device before we get there.
+wizardry.book.steps.structures.content1=The first structure is a Mana Battery. This structure is a massive reservoir of mana.<br>As any wizard will quickly learn, this is the center of your powers. The Mana Battery's core can absorb mana far more efficiently than any other method of storage. To fill it, set mana orbs on the pillars in its structure; it will discharge its power to mana orbs outside of the battery's pillars, allowing for automatic and efficient mana transfer out of the battery.
+wizardry.book.steps.structures.content2=Do note that once you place the mana battery block down, you will see red dots highlighting where blocks of the structures are going to be. Shift right click the block to display a hologram of the structure itself. Adjust the battery's position as you please. Once you finish the structure, no red dots should be flashing.
+wizardry.book.steps.structures.content3=This structure is technically not required. You could manually replace emptied mana orbs in your other structures to feed them mana, but you'll quickly find that that task is very annoying and tedious to do.
+wizardry.book.steps.structures.content4=The last structure you will need, and arguably the most important one, is the Crafting Altar. This structure is where you will follow spell recipes, then cap them off with a nacre pearl, to create a pearl capable of casting your spell.<br>How this is done will be recounted in the next entries. For now, build the structure very close by the mana battery structure and fill its pillars with glass orbs or mana orbs to fill the Crafting Plate up with mana.
+wizardry.book.steps.structures.content5=Note that the mana battery will be able to fill up the orbs in the Crafting Altar's pillars automatically if the battery has been fed with mana. The orbs inside the Altar's structure will fill up the crafting plate.
+
+wizardry.book.steps.spell_creation.title=Step 5: Spell Creation
+wizardry.book.steps.spell_creation.desc=Learn how to create your very first spell finally
+wizardry.book.steps.spell_creation.content0=This is the step where you actually make your spells. You're finally ready.<br>To start off, make yourself a Magician's Worktable, and place it down. Once you open it up, you will see several things.<br>It's very important that you carry this codex in your inventory while making a spell. I'll tell you why in a bit.
+wizardry.book.steps.spell_creation.content1=To your top left, you will see three sidebars. The top left sidebar is for Shape components. Shape components control how your spell will be cast. IE: If you want it to cast as a beam, as a projectile, upon smacking something, as a zone, etc…
+wizardry.book.steps.spell_creation.content2=To the right of the Shapes are the Effect components. These control what your spell actually does. If you want a lightning spell, a time slowing spell, a slippery spell, a gravity well, etc…
+wizardry.book.steps.spell_creation.content3=Below the Shapes are the Event components. These filter &oout&r everything else. For example, when you run a projectile spell, it will run on entities and/or blocks regardless. With an event component, you will be able to affect &oonly&r entities, for example.
+wizardry.book.steps.spell_creation.content4=To make your first spell, drag a Shape component onto the piece of paper in the center, then drag an effect component to the center. Then hold down right click and drag from the Shape component to the Effect component on your paper, you will see a connecting line. This line's direction matters, and connecting it in reverse won't work. This is because doing it like this tells your spell that it will first run a Projectile Shape, then when that Projectile Shape hits and needs to run its Effect, it will run the Effect you pass into it. The opposite is an Effect shape that doesn't know how to actually start, so it fizzles out.<br>Try this example: Drag a Projectile Shape and a Freeze Effect and right click drag from the Projectile Shape to the Freeze Effect.
+wizardry.book.steps.spell_creation.content5=This spell is very weak at it's base. You can upgrade it at the cost of more mana or burnout. For example, if you want to add more range to the projectile, click on the Projectile Shape that you placed on your paper, you will see a list of modifiers you can apply on the right. Click the Range modifier to apply it. Click more to apply more.
+wizardry.book.steps.spell_creation.content6=Once you are satisfied with your spell, click the &oSave&r button on the top right. This will save your spell's recipe into &othis&r codex. You will see a new bookmark in this codex with the recipe of the spell you want to create. So be sure you have this codex on your person when you make a spell.
+wizardry.book.steps.spell_creation.content7=Now that you saved your spell, check the Spell Recipe bookmark in this book. You will see a list of items that you need to gather and throw into the crafting plate &o&lin order&r. Fill your Mana Battery up with mana, then throw your nacre pearl into the crafting plate. Finally, wait for your spell to craft for a minute. You will be greeted with an explosion of mana around the nacre pearl sitting at the center of the plate. You now have an spell-infused pearl at your disposal. Craft it with an empty staff to mount it to it, then you can use your staff to cast your spell! Congratulations, my friend. You are now a wizard. I fear for the poor animals in the wake of your first pyrokinetics.
+
+wizardry.book.items_blocks.devil_dust.title=Devil Dust
+wizardry.book.items_blocks.devil_dust.content0=&oDevil dust is a purified form of the conductive Redstone dust, which, instead of conducting electricity, conducts magic.&r
+wizardry.book.items_blocks.devil_dust.content1=It is made by throwing Redstone into fire. It will fizzle a bit then plop out the hellish dust.
+
+wizardry.book.items_blocks.wisdom_wood.title=Wisdom Wood
+wizardry.book.items_blocks.wisdom_wood.content0=&oWisdom wood is a form of wood that has evolved to parasitically feed on mana, making it useful for making anything that shapes the liquid power. If we could make apprentice cloaks of treated wisdom wood, then we could keep you from using magic at all, and save us the hassle.&r
+wizardry.book.items_blocks.wisdom_wood.content1=Any type of wood can be converted into wisdom wood simply by throwing the wood into liquid mana.
+
+wizardry.book.items_blocks.crude_halo.title=Crude Halo
+wizardry.book.items_blocks.crude_halo.content0=&oThe crude haloInv is a bad representation of divinity. While it's nowhere near as potent as the Grace of an angel, it... does the job of holding mana, if not bestowing it.&r
+wizardry.book.items_blocks.crude_halo.content1=If you like wearing baubles and trinkets, you can wear it on your head alongside your armor. Otherwise, it'll have to take the place of your helmet. It may not look as fancy as the real deal, but it'll do.
+
+wizardry.book.items_blocks.orbs.title=Orbs
+wizardry.book.items_blocks.orbs.content0=Glass orbs are used to capture both nacre and mana, giving you from these powerful liquids the iridescent Nacre Pearls and the invaluable Mana Orbs.
+wizardry.book.items_blocks.orbs.content1=Mana orbs are made simply by throwing glass orbs into liquid mana.<br>Nacre pearls, on the other hand, require more precision. To get the best quality pearl, you can refer to the third step of becoming a Wizard: Nacre.
+
+wizardry.book.mobs.fairies.title=Fairies
+wizardry.book.mobs.fairies.desc=Learn about fairies
+wizardry.book.mobs.fairies.content1=The most important attribute of what we call 'fairies' -- and by far the first thing that most young wizards notice -- is that they are extremely annoying. Although they actually appear to be some kind of by-product of mana usage and have nothing resembling sentience, they have a remarkable knack for being in exactly the wrong place at the wrong time. Any time a wizard attempts some great feat of concentration anywhere near fairies, it is almost guaranteed that the little blighters will do their utmost to distract the magical process.
+wizardry.book.mobs.fairies.content2=Like unicorns, however, they are not entirely useless: if you can catch one and squeeze it into a jar, it provides a magnificent light source. Also, you can use them to make excellent jam.
+
+wizardry.book.mobs.spirit_wights.title=Spirit Wights
+wizardry.book.mobs.spirit_wights.desc=Learn about spirit wights
+wizardry.book.mobs.spirit_wights.content1=Little is known about these creatures. Those few unfortunate enough to have any interaction with them rarely survive the experience; as a result, the few observations that survive are more to do with how quickly they can disassemble the average wizard than with their patterns or behaviours. As a result, the only real advice for dealing with them is this: if you see one, run. And don't stop.
+wizardry.book.mobs.spirit_wights.content2=It is possible to fight a spiritwight. It is even theoretically possible to win, in the same way that it is theoretically possible to win a fist fight with a dragon. Strong potions of harming have proven to have some effect on them, in so far as these things can be measured, and it is possible that a wizard of exceptional power and skill may be able to craft weapons and armour strong enough to successfully oppose them. If this is you, do make sure to tell people; they probably won't believe you, but at least someone will know.
+wizardry.book.mobs.spirit_wights.content3=If you decline to fight them -- which, let's be honest, is the only sensible choice -- then do not be deceived by their sluggishness. Spiritwights are slow, lumbering things, but this belies their relentless nature. Once a spiritwight has caught the scent of a wizard, they will hunt them almost to the ends of the earth. When you run from them, keep looking over your shoulder. and don't ever stop for long. They certainly won't.
+wizardry.book.mobs.spirit_wights.content4=It is one final point of interest that spiritwights reserve their hatred for wizards. As far as we know, they show no interest in any other creature. A unicorn may go where a wizard fears to tread, and face no danger. There must be some reason for this, but who knows it.
+
+wizardry.book.mobs.unicorns.title=Unicorns
+wizardry.book.mobs.unicorns.desc=Learn about unicorns
+wizardry.book.mobs.unicorns.content1=Please, make no mistake; these are not the gentle, damsel-loving creatures of song and story. The tales I heard as a childRing about unicorns were keen to stress their beauty and intelligence, their kindness and faithfulness. Real unicorns are better described as 'stroppy'.
+wizardry.book.mobs.unicorns.content2=These creatures are savage and territorial, sharp of horn and hard of hoof. As far as we can tell, they possess a burning desire to kick, stab or otherwise main any animal that crosses their path - wizards included - and will even resort to biting if in the mood. They seem to harbour a particular grudge against fairies, which they eat when possible.
+wizardry.book.mobs.unicorns.content3=Some have argued that unicorns have little practical value, but their horns have potent magical properties. Also - as I've said elsewhere - fairies are remarkably annoying, so anything that keeps their numbers down can't be all bad.
+
+wizardry.book.dimensions.underworld.title=Underworld
+wizardry.book.dimensions.underworld.desc=Learn about the Underworld
+wizardry.book.dimensions.underworld.content1=<WIP><br>The domain of Zachriel, Angel of Memory.
+wizardry.book.dimensions.underworld.content2=Life is rare among the cloudy skies of the Underworld (it is the realm of the dead, after all), but there are a few beings<br><WIP>
+wizardry.book.dimensions.underworld.content3=To get to the underworld, jump from a height over 130 blocks and smack bedrock, you will fall straight through into the top of the underworld where you will be greeted with a pleasant and relatively safe fall to it’s clouds.
+wizardry.book.dimensions.underworld.content4=To get back from the underworld, fall into its void. You will fall straight into the top of the overworld.
