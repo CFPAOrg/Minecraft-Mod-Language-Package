@@ -47,7 +47,7 @@ def who_should_handle():
         # 有 #PARSE_ESCAPE 注释的也要剔除
         with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r', errors='ignore') as lang:
             for line in lang.readlines():
-                if '#PARSE_ESCAPE' in line:
+                if '#PARSE_ESCAPE' in line and change_mod in change_mod_list:   # 不清楚为什么报错了，加一个判定
                     change_mod_list.remove(change_mod)
     return change_mod_list
 
