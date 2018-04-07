@@ -107,7 +107,7 @@ class MultiThread(threading.Thread):
 def func_page_download(i):
     # 获取 url name
     url = 'https://minecraft.curseforge.com/mc-mods?filter-game-version=' + \
-          VERSION_DICT.get(VERSION) + '&filter-sort=downloads&page=' + str(i + 1)
+          VERSION_DICT.get(VERSION) + '&filter-sort=5&page=' + str(i + 1)
     main_page = download(url)
     url_name_list = re.findall(
         r'<a href="/projects/(.*?)">', str(main_page))
