@@ -18,30 +18,31 @@ $end
 $title 升降机接收器
 $recipe automation/liftreceiver
 升降机接收器用于接收风扇升降机运输的物品，升降机接收器将进入其底部舱口的物品从其侧面仓库输出。
-$title Pulse Piston
+$title 脉冲活塞
 $recipe automation/pulsepiston
-The Pulse Piston will push any items dropped in front of it, into an inventory if there is one where they would be shoved. Right-clicking will open a filter to set which items should be pushed. This makes it extremely useful for separating items moving on Transport Rollers.
-A Redstone signal disables it.
+脉冲活塞会将掉落在它前面的任何物品推送到前方的容器中。右键单击可以打开过滤器界面，类似于白名单，这使得它在传送带上分拣物品时非常有用。
+通入红石信号将禁用它。
 $end
-$title Auto Puller
+$title 自动喷射器
 $recipe automation/autopuller
-The Auto Puller automatically yanks items from an inventory adjacent to its input and puts them into the inventory at its output, or drops them into the world if the output is full or does not exist. A Redstone signal disables it.
+自动喷射器会将与其输入端相邻的容器中的物品抽出，并放入与输出端相邻的容器中，如果输出端的容易已满或无法放入，或输出端没有容器存在，物品将直接以掉落物的形式丢到外面。
+通入红石信号将禁用它。
 $end
-$title Insertion Hatch
+$title 插入舱口
 $recipe automation/hatch
-The opposite of the Auto Puller, the Insertion Hatch will put items that touch it into an adjacent inventory as long as there is space.
+与自动喷射器相反，只要其相邻的容器中有空件，插入舱口就是将与其接触的物品放入相邻的容器中。
 $end
-$title Stack Mover
+$title 堆栈移动器
 $recipe automation/stackmover
-The Stack Mover, when given a Redstone signal, attempts to pull a single stack of items from an inventory on its input side and push it into the inventory on its output side. It always moves the first stack it finds that will fit into the target inventory. If there is no inventory adjacent to its output side, the stack is dropped into the world instead.
+当给堆栈移动器一个红石信号时，它会尝试从其输入端的容器中抽取一组物品，将并入输出端的容器中。它只会抽取能够放入目标容器中的第一组物品。如果它的输出端没有相邻的容器，那么这组物品就会以掉落物的形式掉落到世界中。
 $end
-$title Filtered Stack Mover
+$title 过滤型堆栈移动器
 $recipe automation/filtermover
-An upgraded Stack Mover that has a filter to specify exactly which items to move and how many. It is useful for precise item allocation. It has two modes, Round Robin and First Match.
+一个升级版的堆栈移动器，它将带有一个过滤器用来指定要抽取的物品和数量。它对于精确的物品分配非常有用。它有两种模式，循环匹配和只匹配第一个。
 $end
-$title Bulk Stack Mover
+$title 巨量堆栈移动器
 $recipe automation/bulkmover
-A further upgrade to the Filtered Stack Mover. Instead of moving one stack of items in its filter, it will attempt to move everything in its filter at once.
+这是对过滤型堆栈移动器的进一步升级，它不再将过滤器中的物品一组一组的抽取，而是尝试同时抽取过滤器中标识的所有物品。
 $end
 $title Mounted Drill
 $recipe automation/blockbreaker
