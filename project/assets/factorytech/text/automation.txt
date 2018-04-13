@@ -44,125 +44,44 @@ $title 巨量堆栈移动器
 $recipe automation/bulkmover
 这是对过滤型堆栈移动器的进一步升级，它不再将过滤器中的物品一组一组的抽取，而是尝试同时抽取过滤器中标识的所有物品。
 $end
-$title Mounted Drill
+$title 悬挂式钻机
 $recipe automation/blockbreaker
-The Mounted Drill is a device that breaks the block directly in front of it. In pulse mode it does this upon receiving a Redstone signal, while in continuous mode it does this once per second unless receiving a Redstone signal. Shift-right-click it with a Monkey Wrench to switch modes.
+悬挂式钻机是一种可以破坏其前方相邻方块使其成为掉落物的机器。在脉冲模式下，每收到一次红石信号便运行一次。在连续模式下，每秒运行一次，在这种模式下，收到红石信号便停止工作。
+蹲下时用猴子扳手右击它可以在两种模式间切换。
 $end
-$title Item Redistributor
+$title 物品分发器
 $recipe automation/itemredis
-The Item Redistributor redirects items dropped into its top to one of its sides, according to a ratio specified by its GUI. You can also select whether to treat a stack as a single entity, or to split it.
+物品分发器按照界面中设置的比例，将物品按比例从相应的面弹出，它不会将物品放入到容器中。在界面中可以选择将一组物品做为单个处理还是拆分处理。
 $end
-$title Sequential Placer
+$title 顺次放置器
 $recipe automation/sequenceplacer
-The Sequence Placer has an internal storage of 18 blocks. It places one in front of it, in the order they are, each time it receives a Redstone signal.
+顺次放置器内部18个物品槽位，每收到一次红石信号，它就会按照顺序依次防止一个方块到它的前方。
 $end
-$title Inventory Sensor
+$title 物品传感器
 $recipe automation/inventorysensor
-The Inventory Sensor is a versatile way of detecting what is stored in a container. It has its own inventory in which you can specify which items to search for, and you can toggle Exactly/At Least, Match All/Any, and Use/Ignore Damage.
+物品传感器是检测容器中存储物品的一种通用方法。你可以在界面中配置要检测的物品。你也可以在界面中设置精确匹配列表中的物品还是匹配任意物品、是否完全匹配数量以及是否忽略耐久度。
+匹配成功后，会在输出端（大的那一面）输出红石信号。
 $end
-$title Item Interceptor
+$title 物品掉落拦截器
 $recipe automation/interceptor
-The Item Interceptor is a powerful tool for farms and mob traps. Unless powered by a Redstone signal, it will grab all item entities created between 3 and 12 blocks away from it and store them in its internal inventory. Note that it cannot pick up items that are already in the world.
+物品掉落拦截器是一个强大工具，用于农场和怪物陷阱。它将会抓住以它自身为中心，半径 3 到 12 格范围内的所有掉落物放入到它内部的空间中，给它输入红石信号将阻止他工作。注意：它无法拾取在它被放置前已经掉落的物品。
 $end
-$title Pipe
+$title 管道
 $recipe automation/pipe
-Copper pipes are the primary method of moving liquids around. Thankfully, they don't seem to melt no matter how hot the fluid inside is.
-They will not automatically pull liquid from anything; an Extraction Pump must be used to push fluids into them.
+铜制的管道是运输液体的主要方法。谢天谢地，不管管道中的液体有多热，它们都不会融化。
+它们不能自动从容器中提取液体，必须使用抽取泵将液体泵入管道。
 $end
-$title Stationary Tank
+$title 固定式储罐
 $recipe automation/tankblock
-These tanks can hold up to 24 buckets of liquid each and will automatically attempt to insert fluid into another tank below them, making it possible to stack them. A Redstone signal disables this behaviour.
-Insertion and extraction can be done from any side; the textures just indicate stacking behaviour. Manual I/O with buckets is also possible.
+这些储罐可以容纳 24 桶液体，并且会自动将液体流入其下方的另一个储罐（这不意味它可以自动输出，输出液体仍然需要抽取泵和管道），利用这些特性，可以让它们无限的堆叠。通入红石信号会阻止它们这样做。
+储罐的任何一个面都可以进行存取液体，当然，直接用桶右击也是可以的。
 $end
-$title Extraction Pump
+$title 抽取泵
 $recipe automation/fluidpuller
-The Extraction Pump automatically pulls liquid from any tanks connected to its input and inserts it into other fluid-accepting blocks, usually pipes.
+抽取泵可以将液体从储罐中或机器中处于输出端的液体抽取出来，并将液体流入抽取泵的输出端，输出端一般是一段管道。
 $end
-$title Water Collector
+$title 水泵
 $recipe automation/watercollector
-If placed in a river or ocean, the Water Collector will provide a steady and endless supply of water to an Extraction Pump above it.
-$end
-$title Transport Rollers
-$recipe automation/rollers
-Transport Rollers are the most basic method of moving items from Point A to Point B. Unlike other models of conveyor belts, these are purely metallic (a great improvement over slaughtering hordes of cows). Any items that fall on top of them will simply be moved in the direction of the rollers.
-$end
-$title Crate
-$recipe automation/crate
-Crates can be used to store items. They only have 18 slots to the Chest's 27, but they do not connect, can be tiled infinitely and can still be accessed with a block above them.
-They also look quite nice.
-$end
-$title Buffer Crate
-$recipe automation/buffercrate
-Buffer Crates are similar to Crates, but automation will never take the last item in a stack from them. This can be useful for making sure there is always space for certain items.
-$end
-$title Fan Lift
-$recipe automation/fan
-The Fan Lift is the main method of transporting items upwards. When given a Redstone signal, they will blow any items above them straight up by a distance equal to the received signal strength.
-$end
-$title Lift Receiver
-$recipe automation/liftreceiver
-Meant to be used with the Fan Lift, the Lift Receiver redirects any items entering its bottom hatch to its side one.
-$end
-$title Pulse Piston
-$recipe automation/pulsepiston
-The Pulse Piston will push any items dropped in front of it, into an inventory if there is one where they would be shoved. Right-clicking will open a filter to set which items should be pushed. This makes it extremely useful for separating items moving on Transport Rollers.
-A Redstone signal disables it.
-$end
-$title Auto Puller
-$recipe automation/autopuller
-The Auto Puller automatically yanks items from an inventory adjacent to its input and puts them into the inventory at its output, or drops them into the world if the output is full or does not exist. A Redstone signal disables it.
-$end
-$title Insertion Hatch
-$recipe automation/hatch
-The opposite of the Auto Puller, the Insertion Hatch will put items that touch it into an adjacent inventory as long as there is space.
-$end
-$title Stack Mover
-$recipe automation/stackmover
-The Stack Mover, when given a Redstone signal, attempts to pull a single stack of items from an inventory on its input side and push it into the inventory on its output side. It always moves the first stack it finds that will fit into the target inventory. If there is no inventory adjacent to its output side, the stack is dropped into the world instead.
-$end
-$title Filtered Stack Mover
-$recipe automation/filtermover
-An upgraded Stack Mover that has a filter to specify exactly which items to move and how many. It is useful for precise item allocation. It has two modes, Round Robin and First Match.
-$end
-$title Bulk Stack Mover
-$recipe automation/bulkmover
-A further upgrade to the Filtered Stack Mover. Instead of moving one stack of items in its filter, it will attempt to move everything in its filter at once.
-$end
-$title Mounted Drill
-$recipe automation/blockbreaker
-The Mounted Drill is a device that breaks the block directly in front of it. In pulse mode it does this upon receiving a Redstone signal, while in continuous mode it does this once per second unless receiving a Redstone signal. Shift-right-click it with a Monkey Wrench to switch modes.
-$end
-$title Item Redistributor
-$recipe automation/itemredis
-The Item Redistributor redirects items dropped into its top to one of its sides, according to a ratio specified by its GUI. You can also select whether to treat a stack as a single entity, or to split it.
-$end
-$title Sequential Placer
-$recipe automation/sequenceplacer
-The Sequence Placer has an internal storage of 18 blocks. It places one in front of it, in the order they are, each time it receives a Redstone signal.
-$end
-$title Inventory Sensor
-$recipe automation/inventorysensor
-The Inventory Sensor is a versatile way of detecting what is stored in a container. It has its own inventory in which you can specify which items to search for, and you can toggle Exactly/At Least, Match All/Any, and Use/Ignore Damage.
-$end
-$title Item Interceptor
-$recipe automation/interceptor
-The Item Interceptor is a powerful tool for farms and mob traps. Unless powered by a Redstone signal, it will grab all item entities created between 3 and 12 blocks away from it and store them in its internal inventory. Note that it cannot pick up items that are already in the world.
-$end
-$title Pipe
-$recipe automation/pipe
-Copper pipes are the primary method of moving liquids around. Thankfully, they don't seem to melt no matter how hot the fluid inside is.
-They will not automatically pull liquid from anything; an Extraction Pump must be used to push fluids into them.
-$end
-$title Stationary Tank
-$recipe automation/tankblock
-These tanks can hold up to 24 buckets of liquid each and will automatically attempt to insert fluid into another tank below them, making it possible to stack them. A Redstone signal disables this behaviour.
-Insertion and extraction can be done from any side; the textures just indicate stacking behaviour. Manual I/O with buckets is also possible.
-$end
-$title Extraction Pump
-$recipe automation/fluidpuller
-The Extraction Pump automatically pulls liquid from any tanks connected to its input and inserts it into other fluid-accepting blocks, usually pipes.
-$end
-$title Water Collector
-$recipe automation/watercollector
-If placed in a river or ocean, the Water Collector will provide a steady and endless supply of water to an Extraction Pump above it.
+如果将它放置到河流或海洋中，水泵将为其上方的抽取泵提供稳定且无尽的水源。
+PS：这货貌似必须在河流或海洋生物群系且上方有一个水源方块才有用。
 $end
