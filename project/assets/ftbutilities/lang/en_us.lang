@@ -19,6 +19,7 @@ ftbutilities.backups.compression_level=Compression Level
 ftbutilities.backups.folder=Folder
 ftbutilities.backups.display_file_size=Display File Size
 ftbutilities.backups.use_separate_thread=Use Separate Thread
+ftbutilities.backups.extra_files=Extra Files
 
 ftbutilities.commands=Commands
 
@@ -35,12 +36,13 @@ ftbutilities.world.chunk_claiming=Chunk Claiming
 ftbutilities.world.chunk_loading=Chunk Loading
 ftbutilities.world.safe_spawn=Safe Spawn
 ftbutilities.world.spawn_area_in_sp=Spawn Area In Singleplayer
-ftbutilities.world.log_chunkloading=Log Chunkloading
+ftbutilities.world.spawn_radius=Spawn Radius
 
 ftbutilities.ranks=Ranks
 ftbutilities.ranks.enabled=Enabled
 ftbutilities.ranks.override_chat=Override Chat
-ftbutilities.ranks.override_commands=Override Commands
+
+ftbutilities.debugging.log_chunkloading=Log Chunkloading
 
 ftbutilities_client.general.render_badges=Show Badges
 ftbutilities_client.general.journeymap_overlay=Enable Journeymap Integration
@@ -131,8 +133,6 @@ ftbutilities.lang.chunks.chunk_unclaimed=Chunk unclaimed
 ftbutilities.lang.chunks.chunk_loaded=Chunk loaded
 ftbutilities.lang.chunks.chunk_unloaded=Chunk unloaded
 ftbutilities.lang.chunks.unloaded_for=Unloaded %s's chunks
-ftbutilities.lang.chunks.chunkloader.forced=%s forced %d,%d in %s
-ftbutilities.lang.chunks.chunkloader.unforced=%s unforced %d,%d in %s
 
 ftbutilities.lang.chunks.unclaim_all=Unclaim all chunks
 ftbutilities.lang.chunks.unclaim_all_dim=Unclaim all chunks in %s
@@ -175,11 +175,6 @@ ftbutilities.lang.backup.already_running=Backup in progress!
 ftbutilities.lang.backup.not_running=Backup is not running!
 ftbutilities.lang.backup.size=Current world size: %s, total backups folder size: %s
 ftbutilities.lang.backup.saving_failed=World saving failed!
-ftbutilities.lang.backup.deleting_old=Deleting old backup: %s
-ftbutilities.lang.backup.backing_up_files=Backing up %d files...
-ftbutilities.lang.backup.compressing_files=Compressing %d files!
-ftbutilities.lang.backup.compressing_done=Done compressing in %s seconds (%s)!
-ftbutilities.lang.backup.created_from=Created %s from %s
 
 # Ranks
 ftbutilities.lang.rank.id_exists=Rank '%s' already exists!
@@ -223,11 +218,12 @@ commands.ftb.chunks.unload_all.usage=/ftb chunks unload_all [all dimensions] [pl
 commands.ftb.chunks.claim_for.usage=/ftb chunks claim_for <player> <chunkX> <chunkZ> [dimension]
 commands.ftb.kickme.usage=/ftb kickme
 commands.ftb.ranks.usage=/ftb ranks
+commands.ftb.ranks.gui.usage=/ftb ranks gui
 commands.ftb.ranks.add.usage=/ftb ranks add <id> [parent]
 commands.ftb.ranks.get.usage=/ftb ranks get <player>
 commands.ftb.ranks.set.usage=/ftb ranks set <player> <rank|none>
-commands.ftb.ranks.edit.usage=/ftb ranks edit
-commands.ftb.chunks.check_permission.usage=/ftb chunks check_permission <player> <permission>
+commands.ftb.ranks.get_permission.usage=/ftb ranks get_permission <player> <permission>
+commands.ftb.ranks.set_permission.usage=/ftb ranks set_permission <rank> <permission> <value|null>
 commands.ftb.view_crash.usage=/ftb view_crash
 commands.ftb.heal.usage=/ftb heal
 commands.ftb.set_hour.usage=/ftb set_hour <hour>
@@ -235,5 +231,4 @@ commands.ftb.killall.usage=/ftb killall [type]
 commands.ftb.nbtedit.tile.usage=/ftb nbtedit tile <x> <y> <z>
 commands.ftb.nbtedit.entity.usage=/ftb nbtedit entity <id>
 commands.ftb.nbtedit.player.usage=/ftb nbtedit player <player>
-commands.ftb.shrug.usage=/shrug
-commands.ftb.status.usage=/status <player> <raw json...>
+commands.ftbc.shrug.usage=/shrug
