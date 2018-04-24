@@ -9,11 +9,13 @@ tile.chain_signal.name=Chain Signal
 
 item.rail_network_controller.name=Rail Network Controller
 item.cart_engine.name=Cart Engine
+item.chunkloader_upgrade.name=Chunkloader Upgrade
 item.rail_configurator.name=Rail Configurator
 item.ticket.name=Ticket
 
 signals.tooltip.item.rail_network_controller=Shows an overview of the rail network of the world you are currently in. \n \nLeft clicking a signal forces it to turn green. \nRight clicking a signal forces it to go red.
 signals.tooltip.item.cart_engine=Sneak-right-click with this on any cart. This will add a solid-fueled motor to the cart. Additionally, the engine is clever, meaning that it will automatically stop at red signals, without requiring powered rails, for instance.
+signals.tooltip.item.chunkloader_upgrade=Sneak-right-click with this on any cart. This will add a built-in chunkloader to the cart, keeping a 3x3 area of chunks loaded, centered around the cart.
 signals.tooltip.item.rail_configurator=This item is required for most interaction in Signals. Additionally it will show some information about the rail network. \n \nRight click carts to define destinations. \nRight click inventories to define filter matching behaviour when adjacent to Station Markers.
 signals.tooltip.item.ticket=This item stores a set of destinations. These can be configured by right clicking the ticket or Station Marker. Apply it to a cart by right clicking it. Insert it into a Dispenser to automatically apply the destination.
 
@@ -27,11 +29,16 @@ signals.message.path_found=[$ROUTER$] Path found.
 signals.message.changing_junction=[$ROUTER$] Set junction at (%1$s, %2$s, %3$s) from %4$s to %5$s.
 signals.message.changing_junction_failed=[$ROUTER$] Failed setting junction at (%1$s, %2$s, %3$s) from %4$s to %5$s. Rail does not support.
 signals.message.cart_engine_installed=Installed Cart Engine.
+signals.message.cart_engine_blacklisted=Cannot install Cart Engine: Cart is blacklisted in the config.
+signals.message.chunkloader_installed=Installed Chunk Loader.
+signals.message.chunkloader_install_failed=Could not install Chunk Loader. Chunk loading blocked/limited by the server?
 signals.message.clearedCache=Cleared rail network cache.
 signals.message.added_destination=Added '%1$s' as a destination to the Ticket. The route now lists: %2$s.
 signals.message.cleared_ticket=Cleared the ticket.
 signals.message.destinations_set=Applied the following destinations to the cart: %1$s.
 signals.message.destinations_saved=Saved the following destinations to the ticket: %1$s.
+signals.message.signals_busy=Signals is busy computing the Rail Network. Some lag is expected. You will be notified when this is done.
+signals.message.signals_idle=Signals has finished computing the Rail Network.
 
 signals.signal_message.cart_without_destination=Block signal behaviour: Cart routed without destination.
 signals.signal_message.cart_on_track_without_destination=Red signal: Cart on track without destination.  Cart position: (%1$s, %2$s, %3$s).
@@ -76,3 +83,7 @@ signals.gui.cart_hopper.emitRedstoneWhen.cart_empty.tooltip=Emits as soon as the
 signals.gui.cart_hopper.interactWith=Interact with:
 signals.gui.cart_hopper.interactWith.cartInventory=Cart inventory
 signals.gui.cart_hopper.interactWith.cartEngine=Cart Engine
+
+signals.gui.rail_link.holdDelay=Hold delay:
+signals.gui.rail_link.holdDelay.tooltip=How long a passing cart should be simulated as if it were still at the Rail Link.
+signals.gui.rail_link.ticks=ticks

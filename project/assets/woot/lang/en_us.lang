@@ -28,7 +28,7 @@ item.woot.shard.diamond.name=Diamond Shard
 item.woot.shard.emerald.name=Emerald Shard
 item.woot.shard.quartz.name=Quartz Shard
 item.woot.shard.netherstar.name=Nether Star Shard
-item.woot.xpshard.name=XP Shard
+item.woot.xpshard.name=XP Shard (16XP)
 
 item.woot.yahhammer.name=Ya Hammer
 
@@ -101,6 +101,7 @@ info.woot.fakemanual.1=Item is called Woot Guide
 info.woot.endershard.0=Hit mob with shard to capture
 info.woot.endershard.1=Kill mobs to fully program
 info.woot.endershard.2=Shard must be in your hotbar
+info.woot.endershard.3=Can be cleared in a crafting table
 info.woot.endershard.a.0=[Unprogrammed]
 info.woot.endershard.a.1=[Fully Programmed]
 info.woot.endershard.b.0=%s [Kills %d/%d]
@@ -128,6 +129,20 @@ info.woot.structure.tier_ii_cap=Yellow guide block
 info.woot.structure.tier_iii_cap=Cyan guide block
 info.woot.structure.tier_iv_cap=Lime guide block
 
+info.woot.hammer.mode.validate_t1=Validate Tier I
+info.woot.hammer.mode.validate_t1.desc=Checks that the structure and controller are valid for Tier I
+info.woot.hammer.mode.validate_t2=Validate Tier II
+info.woot.hammer.mode.validate_t2.desc=Checks that the structure and controller are valid for Tier II
+info.woot.hammer.mode.validate_t3=Validate Tier III
+info.woot.hammer.mode.validate_t3.desc=Validate Tier 3 desc
+info.woot.hammer.mode.validate_t3.desc=Checks that the structure and controller are valid for Tier III
+info.woot.hammer.mode.validate_t4=Validate Tier IV
+info.woot.hammer.mode.validate_t4.desc=Checks that the structure and controller are valid for Tier IV
+info.woot.hammer.mode.validate_import=Validate imports
+info.woot.hammer.mode.validate_import.desc=Checks that tanks and inventories and valid import blocks
+info.woot.hammer.mode.validate_export=Validate exports
+info.woot.hammer.mode.validate_export.desc=Checks that tanks and inventories and valid export blocks
+
 ###########################################################
 # Enchantments
 ###########################################################
@@ -150,6 +165,8 @@ chat.woot.validate.noexporter=No Exporter
 chat.woot.validate.missing=Expected %s at %d,%d,%d found nothing
 chat.woot.validate.incorrect=Expected %s at %d,%d,%d found %s
 chat.woot.validate.validating=Validating factory for %s
+chat.woot.validate.inputs=Validating connected inputs
+chat.woot.validate.outputs=Validating connected outputs
 chat.woot.validate.nocontroller=Expected controller at %d,%d,%d
 chat.woot.validate.invalidmob=Controller contains a blacklisted or unknown mob
 chat.woot.validate.invalidtier=Controller needs higher tier of factory
@@ -194,6 +211,7 @@ guide.woot.category.factory=Factory
 guide.woot.category.anvil=Stygian Anvil
 guide.woot.category.ingredients=Mob Spawning Ingredients
 guide.woot.category.upgrades=Factory Upgrades
+guide.woot.category.changelog=Changelog
 
 # Foreward Entries
 guide.woot.entry.foreword.intro=Introduction
@@ -223,7 +241,7 @@ guide.woot.entry.factory.headhunter=Headhunter Enchant
 guide.woot.entry.factory.tiers=Tiers
 
 # Factory Entry Text
-guide.woot.entry.factory.guide.info=To build the factory you should create a Guide Block. This will allow you to see in the world, where the blocks need to go, as these can be large structures.\n\nPlace the Guide Block on the ground and it will display the factory layout. You can right-click to cycle through different factory tiers.\n\nIn creative mode, clicking with redstone will instantly create the factory.\n\nIf you are upgrading a factory, then you can place the Guide Block one block away underneath the Factory Heart and it will line up correctly with your current structure.\n\nOnce the factory structure is in place, you can validate it by cicking with a stack of torches. The number of torches in the stack determines which tier you want to validate.
+guide.woot.entry.factory.guide.info=To build the factory you should create a Guide Block. This will allow you to see in the world, where the blocks need to go, as these can be large structures.\n\nPlace the Guide Block on the ground and it will display the factory layout. You can right-click to cycle through different factory tiers.\n\nIn creative mode, clicking with redstone will instantly create the factory.\n\nIf you are upgrading a factory, then you can place the Guide Block one block away underneath the Factory Heart and it will line up correctly with your current structure.\n\nOnce the factory structure is in place, you can validate it by using the Ya Hammer. Sneak right click in the air with the hammer to change modes.
 guide.woot.entry.factory.structure.info=The factory structure consists of two structures. The first is the main factory structure where the Heart, Upgrades and Mob Controller live. The second is a remote structure which provides power, import and export of items and fluids. The remote structure must be located at most 10 blocks directly below the Heart. The remote structure consists of a column of three blocks with the Exporter on the bottom, the Importer in the middle and a Power Cell on the top.\n\nThe factory can be turned on and off via a redstone signal to the heart.
 guide.woot.entry.factory.importer.info=The Importer is responsible for consuming the ingredients required to spawn certain mobs. It will take items from any inventories adjacent to it and fluids from any tanks adjacent to it.
 guide.woot.entry.factory.exporter.info=The Exporter is responsible for generating and items of fluids from the factory. It will place items in any inventories adjacent to it and fluids in any tanks adjacent to it.
@@ -289,5 +307,10 @@ guide.woot.entry.ingredients.recipes=Recipes
 # Ingredients Text
 guide.woot.entry.ingredients.intro.info=Some mobs require you to provide the factory with extra ingredients for each mob that you want to process. Those ingredients can be items or fluid or both. You feed the factory by using the Importer.\n\nThe following pages list the mobs that require extra ingredients and what those ingredients are.
 
-
-
+# Changelog Text
+guide.woot.entry.changelog.1_0_0=Version 1.0.0
+guide.woot.entry.changelog.1_0_0.info=First release for 1.12.2
+guide.woot.entry.changelog.1_0_1=Version 1.0.1
+guide.woot.entry.changelog.1_0_1.info=Fixes\n\n[#329]Fix missing sneak-click consume xp shard stack feature.\n[#335]Fix power calc exceeding Integer.MAX_VALUE if you set high power costs\n\nFeatures\n\n[----]Added de_DE.lang from Thalaan.
+guide.woot.entry.changelog.1_1_0=Version 1.1.0
+guide.woot.entry.changelog.1_1_0.info=Fixes\n\n[#335]Fixed processing finish issues with very large power usage.\n[#338]Respect stack size when generating items from the anvil.\n\nFeatures\n\n[#337]Allow clear of Ender Shard in crafting table.\n[#331]Added a changelog.\n[#335]Added support for recipe up to Long.MAX_VALUE total, Integer.MAX_VALUE per tick.\n[#327]Add validation support to hammer\n[#326]Add missing ingredients indicator to gui.
