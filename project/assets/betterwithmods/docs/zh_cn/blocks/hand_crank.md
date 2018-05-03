@@ -1,7 +1,7 @@
-# 手摇曲柄
+# Hand Crank
 
-![手摇曲柄](block:betterwithmods:hand_crank@0)
+![Hand Crank](block:betterwithmods:hand_crank@0)
 
-这是用来提供机械动力的最早的产能设备，它可以为不需要_连接_ 传动轴的设备提供动力。
-例如，使用[磨石](mill.md)来制作风车需要的材料的时候，你就需要使用手摇曲柄来供能。
+This block is the earliest form of creating Mechanical Power, it can power any machine that does not need _continuous_ Mechanical Power.
+For example, the [Millstone](mill.md) will be the first machine you'll want to use the Hand Crank on to begin creating your windmill.
 

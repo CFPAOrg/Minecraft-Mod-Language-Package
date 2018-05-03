@@ -1,4 +1,3 @@
 # Hardcore Spawn
-({hcspawn?Enabled:Disabled})
-此功能将重构死亡重生的设定。最初进入游戏的玩家都具有一个出生点。而当玩家死亡时，将会随机在出生点周围2000格范围内随机重生。
-如果经常死亡，将继续在前一个位置重生。这个功能是为了给死亡带来更大的代价。要求玩家在出生点周围大范围发展基础设施，以便更容易找到他们的主基地。
+This feature reworks how death works. On initially joining a world the player spawn at the World Spawn, but any proceeding deaths the player  will spawn randomly with in a 2000 block radius of the World Spawn. 
+In the event of frequent deaths one will continue to spawn at the previous position. This feature is intended to give a larger impact on death, as well as require players to develop infrastructure throughout their world in order to find their main base.

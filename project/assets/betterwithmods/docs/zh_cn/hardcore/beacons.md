@@ -1,61 +1,62 @@
 # Hardcore Beacons
-({hcbeacons?Enabled:Disabled})
 
-此功能重新编译了信标功能。信标不再有任何的GUI，而是信标的效果是由它下面的方块决定的。
+This feature reworks how beacons function. Beacons no longer have any GUI, instead the effect of the beacon is dictated by the blocks under it.
 
-除少数例外，信标一般遵循以下这些层级规则：
+With a few exceptions, beacons follow these tier rules:
 
-层级         需要方块      作用范围
-1 (3x3) 9      9            20格
-2 (5x5) 25     34           40格
-3 (7x7) 49     83           80格
-4 (9x9) 81     164          160格
-
-一层信标地基必须是相同的方块，根据方块的不同，所带来的效果影响也是不同的。
-
-* **方块** - **效果**
-* 玻璃或者任何没有在下方列表中列出并能作为信标基座的方块 - 激活没有效果的灯塔，用于装饰
+`Tier         Total blocks  Radius`  
+`1 (3x3) 9      9             20 blocks`  
+`2 (5x5) 25    34            40 blocks`  
+`3 (7x7) 49    83            80 blocks`  
+`4 (9x9) 81    164          160 blocks`
   
-* 绿宝石块 - 使作用范围内的所有怪物死亡具有被抢夺附魔武器杀死相同的效果，可升至抢夺4。
+A Beacon base must consist of all same block and depending on the block the effect will be different
+
+* **Block** - **Effect**
+* Glass or any unused modded beacon base - Activates the beacon with no effect, used for decoration
   
-* 青金石块 - 给予真实视觉——一种药水效果，即在光照低于8的方块上产生粒子效果。用于点亮一整个区域。
+* Emerald Block -  Causes all death in the area to have the same effect as a Looting enchant, goes up to Looting 4
+  
+* Lapis Block - Gives True Sight, a potion effect that spawns particles on blocks with light levels lower than 8; Useful for lighting up an area.
    
-* 钻石块 - 对作用范围内的所有挖掘行为赋予时运的效果，可升至时运4.
+* Diamond Block - Gives Fortune to all mining in an area, goes up to Fortune 4.
   
-* 荧石 - 给予玩家夜视效果
+* Glowstone - Gives Players Night vision
   
-* 金块 - 给玩家速度效果
+* Gold Block - Gives Players Haste
   
-* 粘液块 - 给玩家跳跃提升效果  
+* Slime Block - Gives Players Jump Boost  
 
-* 浓缩炼狱之火方块 - 给玩家防火效果
+* Concentrated Hellfire Block - Gives Players Fire Protection
 
-* 海晶石 - 给玩家水下呼吸效果
+* Prismarine - Gives Players Water Breathing
 
-* 海绵 - 使得作用范围内的生物窒息，除非你穿着[熔魂钢板甲](../items/sfs_armor.md)中的头盔才能抵御。
+* Sponge - Suffocates all air breathers, unless wearing a [Plate Helmet](../items/plate_armor.md)
 
-* 粪便块 - 给予玩家中毒2和反胃2，只有穿上全套[熔魂钢板甲](../items/sfs_armor.md)才能抵御。
+* Dung - Gives Players Nausea and Poison to all not wearing full [Plate Armor](../items/plate_armor.md)
 
-* 煤炭块 - 使得作用范围内的玩家失明，除非你穿着[熔魂钢板甲](../items/sfs_armor.md)中的头盔才能抵御。
+* Coal Block - Gives Players Blindness to all not wearing a [Plate Helmet](../items/plate_armor.md)  
 
-**例外**
-* 熔魂钢信标 - 这个信标允许玩家通过空手右击它来设置他们的重生点。
-  层级    :   作用范围   
-  1       :   40格
+**Tier Exceptions**
+* Soulforged Steel Beacon - This Beacons allows the Player to set their spawn by right-clicking it with an empty hand.  
+  `Tier    :   Radius`   
+  `1       :   40 Blocks`
     
-  2       :   80格
+  `2       :   80 Blocks`
     
-  3       :   整个主世界
+  `3       :   Unlimited in the Overworld`
     
-  4       :   整个维度
+  `4       :   Unlimited across dimensions`  
   
-* 末影珍珠块 - 这个信标改变了末影箱子的工作方式。任何没有放置在这个灯塔上的末影箱子就只像一个正常的箱子。
-  放置在特定级别的灯塔上的末影箱子有不同的库存
-  层级    :   访问  
-  1       :   该维度中的共享库存
+  
+
+* Ender Block - This Beacon changes how Ender Chests work. Any Ender Chest not placed on this beacon acts as a normal chest.
+  Ender Chests placed on specific levels of the beacon have differet inventories
+  `Tier    :   Access`  
+  `1       :   Shared Inventory in that dimension`
     
-  2       :   该维度中的另一个共享库存 
+  `2       :   Another Shared Inventory in that dimension`  
   
-  3       :   全维度共享库存
+  `3       :   Global Shared Inventory`  
   
-  4       :   私人玩家库存
+  `4       :   Private Player Inventory`
