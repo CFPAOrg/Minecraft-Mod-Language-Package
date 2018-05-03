@@ -1,6 +1,8 @@
-# Decorative Blocks
+# 装饰方块
+;# Decorative Blocks
 
-# Furniture
+# 家具
+;# Furniture
 
 ## Tables
 ![Tables](oredict:blockWoodTable)

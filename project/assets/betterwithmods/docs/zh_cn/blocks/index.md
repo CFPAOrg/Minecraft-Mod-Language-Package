@@ -24,17 +24,17 @@
  * [Turntable](turntable.md)
  * [Screw Pump](screw_pump.md)
  
-## Mechanical Generators
+## 机械动力产生装置
  * [Handcrank](hand_crank.md) 
  * [Windmill](windmill.md)
  * [Waterwheel](waterwheel.md)        
 
-## Processing Machines
+## 处理
  * [Cauldron](cauldron.md)
  * [Crucible](crucible.md)
-  * [Kiln](kiln.md)
+ * [Kiln](kiln.md)
 
-## Other
+## 其他
  * [Soul Urn](soul_urn.md)
  * [Soulforged Steel Block](soulforged_steel_block.md)
  * [Infernal Enchanter](infernal_enchanter.md)
