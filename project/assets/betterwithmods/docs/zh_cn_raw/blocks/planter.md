@@ -1,3 +1,0 @@
-# Planter
-
-![Planter](oredict:blockPlanter)
