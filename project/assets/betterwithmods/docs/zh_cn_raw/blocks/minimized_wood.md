@@ -10,5 +10,5 @@
 ; * Wood Moulding - Quarter blocks that can be used in place of sticks in many recipes or craft directly into sticks.
 
 ![Wood Corner](oredict:cornerWood)
-* Wood Corners - 八分之一个方块。可以被[Saw](saw.md)切割成[Wooden Gears](../items/gear.md)。
+* Wood Corner - 八分之一个方块。可以被[Saw](saw.md)切割成[Wooden Gear](../items/gear.md)。
 ; * Wood Corners - 8th blocks that can be cut with a [Saw](saw.md) into [Wooden Gears](../items/gear.md).

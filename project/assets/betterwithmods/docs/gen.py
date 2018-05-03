@@ -10,7 +10,8 @@ dic=[('Gearbox','变速箱'),
         ('Minimized Wood','切割木料'),
         ('Tables','木桌'),
         ('Benches','木凳'),
-        ('wood','木'),
+        ('Wood ','木'),
+        ('Seed','种子'),
         ('Block Detector','探测器')]
 
 lang_en=open('../lang/en_us.lang')
@@ -56,7 +57,7 @@ for filename in l:
     for pair in dic:
 #        #print((pair))
         inputstr=inputstr.replace(pair[0],pair[1])
-    #print(inputstr)
+    print(inputstr)
     f=open(filepath.replace('zh_cn_raw','zh_cn'),'w')
     f.write(inputstr)
     f.close()

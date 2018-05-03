@@ -11,8 +11,8 @@
  * [风铃](wind_chime.md)
 
 ## 传动装置
- * [变速箱](木en_gearbox.md)
- * [木质传动轴](木en_axle.md)
+ * [变速箱](wooden_gearbox.md)
+ * [木质传动轴](wooden_axle.md)
 
 ## 机械装置
  * [磨石](mill.md)
@@ -39,7 +39,7 @@
  * [熔魂钢块](soulforged_steel_block.md)
  * [炼狱附魔台](infernal_enchanter.md)
  * [十字纹格方块](chopping_block.md)
- * [切割木料](minimized_木.md)
+ * [切割木料](minimized_wood.md)
  * [矿用炸药](mining_charge.md)
  * [装饰方块](decoration.md)
  * [泥土台阶](dirt_slab.md)
@@ -49,7 +49,7 @@
  * [滑车锚](anchor.md)
  * [Anvil](anvil.md)
  * [蔓藤陷阱](vine_trap.md)
- * [Blood Wood](blood_木.md)
+ * [Blood Wood](blood_wood.md)
  * [熔魂钢压力板](steel_pressure_plate.md)
  * [培植皿](planter.md)
  * [平台](platform.md)
