@@ -1,20 +1,20 @@
-# Blocks
+# 方块
 
 
-## Redstone Devices
- * [Block Dispenser](block_dispenser.md)
- * [Block Detector](detector.md)
+## 红石设备
+ * [方块放置回收器](block_dispenser.md)
+ * [探测器](detector.md)
  * [Buddy Block](buddy_block.md)
  * [Hibachi](hibachi.md)
  * [Lens](lens.md)
  * [Light Block](light.md)
  * [Wind Chime](wind_chime.md)
 
-## Mechanical Power Transfer
+## 传动装置
  * [Gearbox](wooden_gearbox.md)
  * [Wooden Axle](wooden_axle.md)
 
-## Mechanical Devies
+## 机械装置
  * [Millstone](mill.md)
  * [Saw](saw.md)
  * [Filtered Hopper](hopper.md)
