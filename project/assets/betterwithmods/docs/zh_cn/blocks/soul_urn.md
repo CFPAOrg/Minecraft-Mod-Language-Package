@@ -1,6 +1,5 @@
-# Soul Urn
+# 灵魂陶瓮
 
-![Soul Urn](block:betterwithmods:urn@8)
+![灵魂陶瓮](block:betterwithmods:urn@8)
 
-Soul Urn是使用[Filtered Hopper](hopper.md)制作的方块，[Soul Forged Steel](../items/soulforged_steel.md)需要用它来制作，它也可以用来制造强大的设备，如[Block Dispenser](block_dispenser.md)。要制造一个Soul Urn，将一个空的Urn放在一个Filtered Hopper的正下方，并将一块灵魂沙放入Filtered Hopper的__过滤器插槽__中。之后需要8个[Ground Netherrack](../items/ground_netherrack.md)，并且把它们扔到Filtered Hopper上。灵魂沙将过滤来自地狱岩的受折磨的灵魂，将其转化为[Hellfire](../items/hellfire.md)，并且可以安全地将多达8个灵魂存储在接受机械能的Filtered Hopper的内部缓冲区中。Filtered Hopper除顶部或底部外都可以接受机械动能。一旦漏斗储存了8个灵魂，它会迫使灵魂从灵魂沙中转移到Urn中，从而制造一个Soul Urn。
-;The Soul Urn is a block created using the [Filtered Hopper](hopper.md). Its purpose is to make [Soul Forged Steel](../items/soulforged_steel.md) or the creation of powerful devices, such as the [Block Dispenser](block_dispenser.md). To make a Soul Urn, place an empty urn right under a Filtered Hopper and place a Block of Soul Sand into the __filter slot__ of the Filtered Hopper. Once you have done that take 8 [Ground Netherrack](../items/ground_netherrack.md) and *throw* it on to the Filtered Hopper. The Soul Sand will filter the tormented souls from the Netherrack, converting it to [Hellfire](../items/hellfire.md) and safely store up to 8 souls in the internal buffer of a Hopper that is receiving Mechanical Power (from any side other than top or bottom). Once the hopper containers 8 soul it will force the souls from the soul sand to move down into the urn, thus creating a Soul Urn.
+灵魂陶瓮是使用[滤筛漏斗](hopper.md)制作的方块，[熔魂钢](../items/soulforged_steel.md)需要用它来制作，它也可以用来制造强大的设备，如[方块放置回收器](block_dispenser.md)。要制造一个灵魂陶瓮，将一个空的陶瓮放在一个滤筛漏斗的正下方，并将一块灵魂沙放入滤筛漏斗的__过滤器插槽__中。之后需要8个[地狱岩渣](../items/ground_netherrack.md)，并且把它们扔到滤筛漏斗上。灵魂沙将过滤来自地狱岩的受折磨的灵魂，将其转化为[炼狱之火](../items/hellfire.md)，并且可以安全地将多达8个灵魂存储在接受机械能的滤筛漏斗的内部缓冲区中。滤筛漏斗除顶部或底部外都可以接受机械动能。一旦漏斗储存了8个灵魂，它会迫使灵魂从灵魂沙中转移到陶瓮中，从而制造一个灵魂陶瓮。

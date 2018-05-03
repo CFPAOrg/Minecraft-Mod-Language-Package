@@ -1,3 +1,3 @@
-# Steel Pressure Plate
+# 熔魂钢压力板
 
-![Steel Pressure Plate](block:betterwithmods:steel_pressure_plate)
+![熔魂钢压力板](block:betterwithmods:steel_pressure_plate)

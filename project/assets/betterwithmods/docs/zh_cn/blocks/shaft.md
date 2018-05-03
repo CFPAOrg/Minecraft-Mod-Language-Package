@@ -1,5 +1,5 @@
-# Shaft
+# 轴
 
-![Shaft](block:betterwithmods:shaft)
+![轴](block:betterwithmods:shaft)
 
 Just a stick in the ground, place torches on it.

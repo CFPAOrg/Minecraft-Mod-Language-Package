@@ -1,3 +1,3 @@
-# Vine Trap
+# 蔓藤陷阱
 
-![Vine Trap](block:betterwithmods:vine_trap)
+![蔓藤陷阱](block:betterwithmods:vine_trap)

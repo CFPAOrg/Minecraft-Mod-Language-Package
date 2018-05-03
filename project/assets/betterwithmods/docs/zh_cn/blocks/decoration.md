@@ -1,23 +1,21 @@
 # 装饰方块
-;# Decorative Blocks
 
 # 家具
-;# Furniture
 
-## Tables
-![Tables](oredict:blockWoodTable)
+## 木桌
+![木桌](oredict:blockWoodTable)
 
-## Benches
-![Benches](oredict:blockWoodBench)
+## 木凳
+![木凳](oredict:blockWoodBench)
 
-## Slats
-![Slats](oredict:slats)
+## 板条栅栏
+![板条栅栏](oredict:slats)
 
-## Grates
-![Grates](oredict:grates)
+## 网格栅栏
+![网格栅栏](oredict:grates)
 
-## Wicker
-![Wicker](oredict:wicker)
+## 筚板
+![筚板](oredict:wicker)
 
-## Iron Wall
-![Iron Wall](block:betterwithmods:iron_wall)
+## 铁墙
+![铁墙](block:betterwithmods:iron_wall)

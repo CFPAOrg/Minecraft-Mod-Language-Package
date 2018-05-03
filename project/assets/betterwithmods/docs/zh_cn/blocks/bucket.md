@@ -1,3 +1,3 @@
-# Well Bucket
+# 吊桶
 
-![Well Bucket](block:betterwithmods:bucket)
+![吊桶](block:betterwithmods:bucket)
