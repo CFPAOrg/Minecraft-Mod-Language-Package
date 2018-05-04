@@ -1,11 +1,32 @@
-# 物品
+# Items
 
+## Armor and Tools
+* [Refined Tools](refined_tools.md)
+* [Plate Armor](plate_armor.md)
 
+## Materials
 
-## 材料
-* [大麻布](fabric.md)
+* [Blasting Oil](blasting_oil.md)
+* [Tanned Leather](tanned_leather.md)
+* [Soap](soap.md)
 
+## Other
 
-## 其他
+* [Arcane Scrolls](arcane_scrolls.md)
+* [Dynamite](dynamite.md)
 
-* [动物育种套](restraint.md)
+## Todo
+
+* [Animal Restraits](restraint.md)
+* [Tanned Leather Armor](tanned_armor.md)
+* [Hellfire](hellfire.md)
+* [Ground Netherrack](ground_netherrack.md)
+* [Fabric](fabric.md)
+* [Foods](foods.md)
+* [Rope](rope.md)
+* [Filament](filament.md)
+* [Element](element.md)
+* [Gear](gear.md)
+* [Bark](bark.md)
+* [Haft](haft.md)
+* More...

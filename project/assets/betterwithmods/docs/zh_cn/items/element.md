@@ -1,5 +1,5 @@
-# 加热元件
+# Heating Element
 
-![加热元件](item:betterwithmods:material@27)
+![Heating Element](item:betterwithmods:material@27)
 
-用来制作[火盆](../blocks/hibachi.md)
+A crafting component for the [Hibachi](../blocks/hibachi.md)

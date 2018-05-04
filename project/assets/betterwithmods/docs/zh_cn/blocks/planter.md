@@ -1,3 +1,3 @@
-# Planter
+# 培植皿
 
-![Planter](oredict:blockPlanter)
+![培植皿](oredict:block培植皿)
