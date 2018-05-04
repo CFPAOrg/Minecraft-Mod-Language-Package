@@ -1,10 +1,10 @@
-# 鞣制皮革
+# Tanned Leather
 
-![鞣制皮革](item:betterwithmods:material@6)
+![Tanned Leather](item:betterwithmods:material@6)
 
-皮革是一种重要材料，通常是由[树皮](bark.md)在[大锅](../blocks/cauldron.md)中加工强化，使得其更有用。
+Leather is processed with a Tannin product, usually [Tree Bark](bark.md), in a [Cauldron](../blocks/cauldron.md) to help strength it and make it more useful.
 
-鞣制皮革可以用于制作皮革带等，它们可以制作[动物育种套](restraint.md)等物品。
+Tanned Leather can be used to create durable Leather Straps which can be used to make mechanical Belts, [Animal Restraints](restraint.md) and more.
 
 
-![皮革带](item:betterwithmods:material@9)
+![Leather Belt](item:betterwithmods:material@9)
