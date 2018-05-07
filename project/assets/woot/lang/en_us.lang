@@ -83,6 +83,15 @@ tile.woot.upgrade.decapitate_iii.name=Decapitate III Upgrade
 tile.woot.upgradeb.efficiency_i.name=Efficiency I Upgrade
 tile.woot.upgradeb.efficiency_ii.name=Efficiency II Upgrade
 tile.woot.upgradeb.efficiency_iii.name=Efficiency III Upgrade
+tile.woot.upgradeb.bm_le_tank_i.name=Blood Magic Life Essence Tank I Upgrade
+tile.woot.upgradeb.bm_le_tank_ii.name=Blood Magic Life Essence Tank II Upgrade
+tile.woot.upgradeb.bm_le_tank_iii.name=Blood Magic Life Essence Tank III Upgrade
+tile.woot.upgradeb.bm_le_altar_i.name=Blood Magic Life Essence Altar I Upgrade
+tile.woot.upgradeb.bm_le_altar_ii.name=Blood Magic Life Essence Altar II Upgrade
+tile.woot.upgradeb.bm_le_altar_iii.name=Blood Magic Life Essence Altar III Upgrade
+tile.woot.upgradeb.ec_blood_i.name=EvilCraft Blood Tank I Upgrade
+tile.woot.upgradeb.ec_blood_ii.name=EvilCraft Blood Tank II Upgrade
+tile.woot.upgradeb.ec_blood_iii.name=EvilCraft Blood Tank III Upgrade
 
 ###########################################################
 # Tabs
@@ -211,6 +220,8 @@ guide.woot.category.factory=Factory
 guide.woot.category.anvil=Stygian Anvil
 guide.woot.category.ingredients=Mob Spawning Ingredients
 guide.woot.category.upgrades=Factory Upgrades
+guide.woot.category.bloodmagic=Blood Magic
+guide.woot.category.evilcraft=EvilCraft
 guide.woot.category.changelog=Changelog
 
 # Foreward Entries
@@ -285,6 +296,16 @@ guide.woot.entry.upgrades.mass.info=This upgrade spawns more mobs at a time. Hig
 guide.woot.entry.upgrades.rate.info=This upgrade decreases the time between mob spawns. Higher tiers of this upgrade decrease the time further.
 guide.woot.entry.upgrades.xp.info=By default the factory does not generate XP when a mob is killed. This upgrade causes XP shards to be generated with higher tiers generating extra XP.
 
+# BloodMagic Entries
+guide.woot.entry.bloodmagic.intro=Introduction
+guide.woot.entry.bloodmagic.tank=Ritual Of The Sanguine Urn
+guide.woot.entry.bloodmagic.altar=Ritual Of The Mechanical Urn
+
+# BloodMagic Entry Text
+guide.woot.entry.bloodmagic.intro.info=The factory can support upgrades to assist with Blood Magic. Primarily these are for generating Life Essence. They are available at the same time as the traditional Well Of Suffering ritual.
+guide.woot.entry.bloodmagic.tank.info=Using the Tank Upgrades and this ritual will generate Life Essence into export tanks. The different tiers change the number of sacrifice runes used when killing the mobs.\n\nThe ritual will look for the Factory Heart in a 10 block radius, both horizontally and vertically.
+guide.woot.entry.bloodmagic.altar.info=Using the Altar Upgrades and this ritual will generate Life Essence directly into an altar. The different tiers change the sacrifice amount per mob. This ritual uses the standard altar mechanics for determining the amount of Life Essence (eg. altar rune setup)\n\nThe ritual will look for the Factory Heart in a 10 block radius, both horizontally and vertically.\n\nThe ritual will look for an altar in a 5 block radius and 10 blocks vertically.
+
 # Anvil Entries
 guide.woot.entry.anvil.intro=Introduction
 guide.woot.entry.anvil.usage=Using The Anvil
@@ -294,6 +315,13 @@ guide.woot.entry.anvil.shards=Shards
 guide.woot.entry.anvil.dusts=Dusts
 guide.woot.entry.anvil.cores=Cores
 guide.woot.entry.anvil.controller=Programmed Controller
+
+# EvilCraft Entries
+guide.woot.entry.evilcraft.intro=Introduction
+guide.woot.entry.evilcraft.tank=Blood Tank Upgrades
+
+guide.woot.entry.evilcraft.intro.info=The factory can support upgrades to assist with Evil Craft.\n\nTo produce blood for this mod you create a mob farm, therefore Woot provides an alternative method.
+guide.woot.entry.evilcraft.tank.info=Using the Blood Tank upgrades you can generate EvilCraft blood in directory attached export tanks. The higher the level of upgrade, then the more mB per mob HP that is generated.
 
 # Anvil Text
 guide.woot.entry.anvil.intro.info=The anvil serves two purposes. The first is to create some of the items used for crafting, such as the cores. The second is to reduce the cost of creating some items.\n\nThe anvil must be placed on top of a magma block.
@@ -307,10 +335,17 @@ guide.woot.entry.ingredients.recipes=Recipes
 # Ingredients Text
 guide.woot.entry.ingredients.intro.info=Some mobs require you to provide the factory with extra ingredients for each mob that you want to process. Those ingredients can be items or fluid or both. You feed the factory by using the Importer.\n\nThe following pages list the mobs that require extra ingredients and what those ingredients are.
 
-# Changelog Text
-guide.woot.entry.changelog.1_0_0=Version 1.0.0
-guide.woot.entry.changelog.1_0_0.info=First release for 1.12.2
-guide.woot.entry.changelog.1_0_1=Version 1.0.1
-guide.woot.entry.changelog.1_0_1.info=Fixes\n\n[#329]Fix missing sneak-click consume xp shard stack feature.\n[#335]Fix power calc exceeding Integer.MAX_VALUE if you set high power costs\n\nFeatures\n\n[----]Added de_DE.lang from Thalaan.
-guide.woot.entry.changelog.1_1_0=Version 1.1.0
-guide.woot.entry.changelog.1_1_0.info=Fixes\n\n[#335]Fixed processing finish issues with very large power usage.\n[#338]Respect stack size when generating items from the anvil.\n\nFeatures\n\n[#337]Allow clear of Ender Shard in crafting table.\n[#331]Added a changelog.\n[#335]Added support for recipe up to Long.MAX_VALUE total, Integer.MAX_VALUE per tick.\n[#327]Add validation support to hammer\n[#326]Add missing ingredients indicator to gui.
+# BloodMagic
+ritual.woot.ritualLifeEssenceTank=Ritual of the Sanguine Urn
+ritual.woot.ritualLifeEssenceAltar=Ritual of the Mechanical Altar
+
+# User Interface Upgrades
+ui.woot.mass.desc=Mass %d: %dRF/tick, %d mobs
+ui.woot.decapitate.desc=Decapitate %d: %dRF/tick, %d%% chance
+ui.woot.looting.desc=Looting %d: %dRF/tick
+ui.woot.rate.desc=Rate %d: %dRF/tick, %d%% time decrease
+ui.woot.efficiency.desc=Efficiency %d: %dRF/tick, %d power decrease
+ui.woot.xp.desc=XP %d: %dRF/tick, %d%% generation
+ui.woot.ec_blood.desc=EvilCraft Blood %d: %dRF/tick, %d mBperHP
+ui.woot.bm_le_tank.desc=Blood Magic Tank %d: %dRF/tick, %d sacrifice runes
+ui.woot.bm_le_altar.desc=Blood Magic Altar %d: %dRF/tick, %d%% sacrifice
