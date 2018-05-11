@@ -61,6 +61,7 @@ button.inventory.hotbarswap=Swap row with hotbar
 button.inventory.armorswap=Swap armor with left column
 button.listtype.up=Whitelist or Blacklist
 button.listtype=Toggle the ignore list type
+button.miner.height=Mining Height
 button.miner.whitelist.0=Blacklist
 button.miner.whitelist.1=Whitelist
 button.reset.name=Reset
@@ -319,7 +320,7 @@ item.fire_killer.tooltip=Extinguish nearby fire
 item.food_step.guide=Eating increases your step height to a full block like a horse (eat again to undo)
 item.food_step.name=Apple of Lofty Stature
 item.food_step.tooltip=Eating increases your step height to a full block like a horse (eat again to undo)
-item.glove_climb.guide=Lets you climb any surface like it was a ladder.  Right click in your inventory to turn it off.  To climb down, sneak and walk into the wall.  Compatible with baubles.
+item.glove_climb.guide=Lets you climb any surface like it was a ladder.  Right click in your inventory to turn it off.  To climb down, sneak and walk into the wall.  To hold still in mid-air, walk forward into the wall and then also sneak while walking forward; this will cause you to come to a full stop.  Compatible with baubles.  
 item.glove_climb.name=Climbing Gloves
 item.glove_climb.tooltip=Climb any vertical surface
 item.glowing_chorus.guide=A balanced way to get the power of flight.
@@ -414,11 +415,12 @@ item.storage_bag.deposit=Dump
 item.storage_bag.disabled=Hit deposit is disabled, left click to enable
 item.storage_bag.guide=A simple bag that can hold anything, a portable chest.  Optionally can auto deposit by hitting containers.
 item.storage_bag.merge=Merge
-item.storage_bag.name=Sack of Storage
+item.storage_bag.name=Storage Bag
 item.storage_bag.nothing=Nothing
 item.storage_bag.success=Items moved: 
 item.storage_bag.tooltip2=Hit Deposit Mode: 
 item.storage_bag.tooltip=Item Stacks: 
+item.storage_bag.toggle=Toggle Hit Deposit Mode
 item.sword_ender.guide=Unbreakable sword with a special right-click ability to launch an ender pearl
 item.sword_ender.name=Sword of Evasion
 item.sword_ender.tooltip=Blocking shoots an ender pearl
@@ -461,8 +463,8 @@ item.tool_randomize.guide=This will mixup the blocks in the nearby area, to help
 item.tool_randomize.name=Block Randomizer
 item.tool_randomize.tooltip=Randomize selected blocks.  Left click to resize.
 item.tool_rotate.guide=Attempts to rotate the targeted block while respecting the same material type.  So it will turn a log to a different angle, but will not turn oak planks into spruce planks.  This can be used to get vanilla only blocks that are otherwise un-obainable blocks, like smooth stone double slabs with the flat side, extra smooth sandstone, and a log with bark on all six sides.
-item.tool_rotate.name=Block Rotator
-item.tool_rotate.tooltip=Rotates blocks if they are able such as logs, stairs, and slabs.
+item.tool_rotate.name=Wooden Wrench
+item.tool_rotate.tooltip=Rotates simple blocks/machines if they are able
 item.tool_spawn_inspect.empty=Nothing can spawn here
 item.tool_spawn_inspect.guide=Tells you exactly which mobs can spawn on the targeted block.  Natural spawns only, ignores mob spawner blocks.  Useful for making slime, witch, and wither skeleton farms.
 item.tool_spawn_inspect.name=Spawn Detector
@@ -586,16 +588,19 @@ tile.block_disenchanter.guide=This will strip off enchantments one by one, with 
 tile.block_disenchanter.name=Unchant Pylon
 tile.block_disenchanter.tooltip=Remove enchantments for a price
 tile.block_fishing.guide=Place down surrounded by water.  Fishes faster more sides are covered in water, minimum 4 of 6.  Then give it a fishing rod and it fishes for you.  It uses whatever is in the fishing loot table, so it works with regular fish, treasure, junk, and modded items that were added.  The frequency indicates how often it will attempt to fish.  You can increase this number by surrounding it with more still or flowing water, so you can use cables and hoppers to automate fishing even further, but the frequency will be slightly lower.
-tile.block_anvil.name=Powered Anvil
-tile.block_anvil.tooltip=Repair anything using Lava and energy
-tile.block_anvil.guide=Add lava into the internal tank, and also fuel or energy.  When repairs are complete the item moves to the opposite slot.  Can be automated with cables & hoppers. 
+tile.block_anvil.name=Powered Diamond Anvil
+tile.block_anvil.tooltip=Repair anything using Energy
+tile.block_anvil.guide=When repairs are complete the item moves to the opposite slot.  Can be automated with cables & hoppers. 
+tile.block_anvil_magma.name=Magma Anvil
+tile.block_anvil_magma.tooltip=Repair anything using Lava
+tile.block_anvil_magma.guide=Add lava into the internal tank.  When repairs are complete the item moves to the opposite slot.  Can be automated with cables & hoppers. 
 tile.block_enchanter.name=Powered Enchanter
 tile.block_enchanter.tooltip=Add enchantments using experience fluid and energy
 tile.block_enchanter.guide=Feed in experience as a fluid, and then add any enchantable item. Can be automated with pipes & hoppers.
 tile.block_fishing.invalidequip=Requires a fishing rod
-tile.block_fishing.invalidpos.gui1=Needs water
-tile.block_fishing.invalidpos.gui2=on 
-tile.block_fishing.invalidpos.gui3=sides
+tile.block_fishing.invalidpos.gui1=Water
+tile.block_fishing.invalidpos.gui2=not 
+tile.block_fishing.invalidpos.gui3=found
 tile.block_fishing.invalidpos=Requires water on at least four sides.
 tile.block_fishing.name=Automatic Fishing Net
 tile.block_fishing.progress=Fishing...
@@ -621,7 +626,6 @@ tile.block_miner.tooltip=Simple Block breaker
 tile.block_miner_smart.blacklist=Blacklist
 tile.block_miner_smart.guide=A configurable block miner.  Give it a tool and set up its height and range.  Can have either a whitelist or blacklist of what it can break.
 tile.block_miner_smart.name=Controlled Miner
-tile.block_miner_smart.tool=Tool
 tile.block_miner_smart.tooltip=Block Breaker with size controls, a blacklist, and tool slot
 tile.block_miner_tunnel.name=Block Miner Advanced
 tile.block_miner_tunnel.tooltip=3x3 automated Block Breaker
@@ -641,7 +645,7 @@ tile.block_user.guide=Automatically use (right-click) any item.  Will try to use
 tile.block_user.input=Input
 tile.block_user.name=Automated User
 tile.block_user.output=Output
-tile.block_user.speed.tooltip=Speed
+tile.block_user.speed.tooltip=Tick Delay
 tile.block_user.tooltip=Autonomous right-click activation using any item
 tile.block_user.yoffset=Vertical Offset
 tile.block_vacuum.filter=Filter: 
@@ -728,18 +732,14 @@ tile.entity_detector.greater=Greater
 tile.entity_detector.greaterthan=Output redstone based on this comparison to the limit
 tile.entity_detector.guide=Sends out a redstone signal based on the nearby entities found.  You can control entity type, range, and numbers to detect.
 tile.entity_detector.item=Items
-tile.entity_detector.less=Less
-tile.entity_detector.limitdown=Limit -
-tile.entity_detector.limitup=Limit +
+tile.entity_detector.limitdown=(-) Count before trigger
+tile.entity_detector.limitup=(+) Count before trigger
 tile.entity_detector.living=Living
 tile.entity_detector.name=Entity Detector
 tile.entity_detector.player=Players
-tile.entity_detector.rangexdown=X -
-tile.entity_detector.rangexup=X +
-tile.entity_detector.rangeydown=Y -
-tile.entity_detector.rangeyup=Y +
-tile.entity_detector.rangezdown=Z -
-tile.entity_detector.rangezup=Z +
+tile.entity_detector.rangex=Range X
+tile.entity_detector.rangey=Range Y
+tile.entity_detector.rangez=Range Z
 tile.entity_detector.tooltip=Detect entity types and output redstone, configure limit and >,<,=
 tile.exp_pylon.full=It's getting full
 tile.exp_pylon.guide=Collect nearby XP orbs, then release or bottle them later.  You can also deposit experience directly.
@@ -804,16 +804,43 @@ tile.plate_launch_med.name=Slime Plate
 tile.plate_launch_small.guide=Jump pad will launch up any entity.  There are three plates each with different jump strength.
 tile.plate_launch_small.guide=Launch entites up into the air.  Works on both living and non-living entities such as item stacks and experience orbs.
 tile.plate_launch_small.name=Soft Slime Plate
-tile.plate_push.guide=A conveyor belt that pushes any entity.  There are four different plates, each with different speeds.
+
 tile.plate_push.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.
-tile.plate_push.name=Slime Conveyor
+tile.plate_push.name=Conveyor Belt
 tile.plate_push.tooltip=Pushes all entities.  Speed: 
+tile.plate_push_corner.name=Conveyor Belt Corner
+tile.plate_push_med_angle.name=Conveyor Belt Ramp
+
+
 tile.plate_push_fast.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.
-tile.plate_push_fast.name=Fast Slime Conveyor
+
+tile.plate_push_fast.name=Fast Conveyor Belt
+tile.plate_push_fast_corner.name=Fast Conveyor Belt Corner
+tile.plate_push_fast_angle.name=Fast Conveyor Belt Ramp
+
 tile.plate_push_slow.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.
-tile.plate_push_slow.name=Slow Slime Conveyor
+ 
+tile.plate_push_slow.name=Slow Conveyor Belt
+tile.plate_push_slow_corner.name=Slow Conveyor Belt Corner
+tile.plate_push_slow_angle.name=Slow Conveyor Belt Ramp
+
 tile.plate_push_slowest.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.
-tile.plate_push_slowest.name=Slowest Slime Conveyor
+ 
+tile.plate_push_slowest.name=Slowest Conveyor Belt
+tile.plate_push_slowest_corner.name=Slowest Conveyor Belt Corner
+tile.plate_push_slowest_angle.name=Slowest Conveyor Belt Ramp
+ 
+
+tile.plate_push_slow_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails.
+tile.plate_push_fast_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails.
+tile.plate_push_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails.
+tile.plate_push_slowest_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails.
+tile.plate_push_med_angle.guide=Angled Belts appear on placement when it detects that conveyor belts above can be connected diagonally, similar to rails.
+tile.plate_push_slow_angle.guide=Angled Belts appear on placement when it detects that conveyor belts above can be connected diagonally, similar to rails.
+tile.plate_push_slowest_angle.guide=Angled Belts appear on placement when it detects that conveyor belts above can be connected diagonally, similar to rails.
+tile.plate_push_fast_angle.guide=Angled Belts appear on placement when it detects that conveyor belts above can be connected diagonally, similar to rails.
+
+
 tile.plate_vector.copied=Plate data copied into block
 tile.plate_vector.gui.angle=Pitch
 tile.plate_vector.gui.power=Strength
@@ -877,11 +904,11 @@ tool.action.x5=5x5
 tool.action.x7=7x7
 tool.action.x9=9x9
 tool_prospector.found=Found: 
-tool_prospector.none=Nothing of interest up to
-tool_spelunker.cave=Hollow at distance
-tool_spelunker.lava=Lava found at distance
-tool_spelunker.none=Solid up to distance
-tool_spelunker.water=Water found at distance
+tool_prospector.none=Nothing of interest up to 
+tool_spelunker.cave=Hollow at distance 
+tool_spelunker.lava=Lava found at distance 
+tool_spelunker.none=Solid up to distance 
+tool_spelunker.water=Water found at distance 
 tooltip.burntime=Burn Time: 
 unlocks.crafting=Unlocked Inventory Crafting
 unlocks.extended=Unlocked Extended Inventory
@@ -999,11 +1026,11 @@ tile.fluid_placer.guide=Fill this with a bucket or fluid cables.  Places fluid i
 
 tile.fluid_pipe.name=Fluid Cable
 tile.fluid_pipe.tooltip=Use an Extraction cable to transfer liquids
-tile.fluid_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  You need an Extraction cable to start the flow
+tile.fluid_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  Disable output on any face of a cable by hitting with a redstone torch.  You need an Extraction cable to start the flow.
 
 tile.bundled_pipe.name=Bundled Cable
 tile.bundled_pipe.tooltip=Transfer items, fluids, and energy
-tile.bundled_pipe.guide=Just like the other three cables, you need something to start the flow such as a hopper or a pump.  Then this will cary your items, fluids, and power around the connected network until they find a home.
+tile.bundled_pipe.guide=Just like the other three cables, you need something to start the flow such as a hopper or a pump.  Then this will cary your items, fluids, and power around the connected network until they find a home.  Disable output on any face of a cable by hitting with a redstone torch.  
 
 tile.energy_pump.name=Energy Extraction Cable
 tile.energy_pump.tooltip=Extract power into cables or machines
@@ -1011,7 +1038,7 @@ tile.energy_pump.guide=Transfer energy out of machines.  Can be used with cables
 
 tile.energy_pipe.name=Energy Cable
 tile.energy_pipe.tooltip=Connect to an Extraction Cable to transfer power
-tile.energy_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  You need an Extraction cable to start the flow.  Compatible with all Forge Energy systems such as RF.  
+tile.energy_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  Disable output on any face of a cable by hitting with a redstone torch.  You need an Extraction cable to start the flow.  Compatible with all Forge Energy systems such as RF.  
 
 cyclic.redstone.on=Restone: On
 cyclic.redstone.off=Restone: Off
@@ -1023,7 +1050,7 @@ tile.item_pump.guide=Pump items out of anything into any inventory or the Item C
 
 tile.item_pipe.name=Item Cable
 tile.item_pipe.tooltip=Use an Extraction cable to transfer items
-tile.item_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  You need an Extraction cable to start the flow
+tile.item_pipe.guide=Each cable segment holds a small amount, and it gets pushed through from previous cable segments, and goes out any direction it can find.  Disable output on any face of a cable by hitting with a redstone torch.  You need an Extraction cable to start the flow
 
 tile.item_pipe_sort.name=Item Sorter
 tile.item_pipe_sort.tooltip=Sorting machine for use with cables and hoppers
@@ -1036,13 +1063,9 @@ tile.item_pipe_sort.nothing=Output nothing here, ignoring this filter
 peat.plantmatter.dry=Use on a water source with plants floating in it to make biomass
 peat.plantmatter.more=Needs four unique plant types, detected: 
 
-item.peat_carbon.name=Carbon Catalyst
-item.peat_carbon.tooltip=Used to create Biomass
-item.peat_carbon.guide=Put four plant types into water and then stir with this to create Biomass
-
 item.peat_biomass.name=Biomass
 item.peat_biomass.tooltip=Used to create Peat Bog
-item.peat_biomass.guide=Put four plant types into water and then stir with a Carbon Catalyst to create this
+item.peat_biomass.guide=Created using plant matter in the Hydrator
 
 item.peat_wet.name=Soaked Peat
 item.peat_wet.tooltip=Fresh peat can be dried into fuel
@@ -1076,6 +1099,17 @@ tile.dropper_exact.guide=Control location and speed of drops
 dropper.delay=Delay
 dropper.offset=Offset
 dropper.count=Count
+
+cable.block.toggled.false=Restored cable connection 
+cable.block.toggled.true=Blocked cable connection 
+
+tile.battery.name=Battery
+tile.battery.tooltip=Stores energy (FE)
+tile.battery.guide=Stores one million energy units (FE).  Has a slot to charge up items.
+
+tile.battery_infinite.name=Infinite Battery
+tile.battery_infinite.tooltip=Creative energy source
+tile.battery_infinite.guide=Creative mode infinite energy source (for cheating and testing)
 
 
 
@@ -1135,3 +1169,4 @@ tile.uranium_nether_ore.name=Nether Uranium Ore
 tile.uranium_end_ore.name=End Uranium Ore
 tile.yellorite_nether_ore.name=Nether Yellorite Ore
 tile.yellorite_end_ore.name=End Yellorite Ore
+

@@ -4,20 +4,28 @@ itemGroup.indlog=Inductive Logistics
 #Blocks
 tile.indlog.fluid_pipe.name=Fluid Pipe
 tile.indlog.fluid_pipe\:0.name=Fluid Transport Pipe
-tile.indlog.fluid_pipe\:0.tip=Stores \\<fluid_pipe_cap> mB internally. Receives fluids through its §4input connections§7 and passes them on to the next pipe through its single §2output connection§7. See also §6Fluid (Injection|Extraction) Pipe§7\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.fluid_pipe\:0.tip=Stores \\<fluid_pipe_cap> mB internally. Fluids will move along the displayed path where each pipe can receive from multiple §4inputs§7 but can only pass on its contents to one §2output§7. See also §6Fluid (Injection|Extraction) Pipe§7.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
 tile.indlog.fluid_pipe\:1.name=Fluid Injection Pipe
-tile.indlog.fluid_pipe\:1.tip=Acts as destination Pipe. First tries to fill its fluid into connected tanks before passing it on.\nCan be upgraded with a §6Fluid Pipe Filter§7.\nClick with empty hand to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.fluid_pipe\:1.tip=Acts as path destination. First tries to fill its fluid into connected tanks before passing it on.\nCan be upgraded with a §6Fluid Pipe Filter§7.\nClick with empty hand to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
 tile.indlog.fluid_pipe\:2.name=Fluid Extraction Pipe
-tile.indlog.fluid_pipe\:2.tip=Acts as source Pipe. Drains fluids out of connected tanks to pass them on to the next pipe.\nCan be upgraded with a §6Fluid Pipe Filter§7.\nClick with empty hand to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.fluid_pipe\:2.tip=Acts as path source. Drains fluids out of connected tanks to pass them on to the next pipe.\nCan be upgraded with a §6Fluid Pipe Filter§7.\nClick with empty hand to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.fluid_pipe\:3.name=Fluid Destination Pipe
+tile.indlog.fluid_pipe\:3.tip=Acts as path destination but doesn't actively interact with neighboring tanks.\nSneak-click to remove a pipe connection (then §6(Injection|Extraction) Pipe§7s will threat it as normal Tank).\nClick with block in offhand to cover.
+tile.indlog.fluid_pipe\:4.name=Fluid Source Pipe
+tile.indlog.fluid_pipe\:4.tip=Acts as path source but doesn't actively interact with neighboring tanks.\nSneak-click to remove a pipe connection (then §6(Injection|Extraction) Pipe§7s will threat it as normal Tank).\nClick with block in offhand to cover.
 tile.indlog.item_pipe.name=Item Pipe
 tile.indlog.item_pipe\:0.name=Item Transport Pipe
-tile.indlog.item_pipe\:0.tip=Contains a one-Slot-Inventory. Receives items through its §4input connections§7 and passes them on to the next pipe through its single §2output connection§7. See also §6Item (Injection|Extraction) Pipe§7\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.item_pipe\:0.tip=Contains a one-Slot-Inventory. Items will move along the displayed path where each pipe can receive from multiple §4inputs§7 but can only pass on its contents to one §2output§7. See also §6Item (Injection|Extraction) Pipe§7.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
 tile.indlog.item_pipe\:1.name=Item Injection Pipe
-tile.indlog.item_pipe\:1.tip=Acts as destination Pipe. First tries to puts items into connected inventories before passing it on.\nCan be upgraded with an §6Item Pipe Filter§7.\nClick with empty hand to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.item_pipe\:1.tip=Acts as path destination. First tries to put its item into connected inventories before passing it on.\nCan be upgraded with an §6Item Pipe Filter§7.\nClick with empty hand to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
 tile.indlog.item_pipe\:2.name=Item Extraction Pipe
-tile.indlog.item_pipe\:2.tip=Acts as source Pipe. Pulls items out of connected inventories to pass them on to the next pipe.\nCan be upgraded with an §6Item Pipe Filter§7.\nClick with empty hand to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.item_pipe\:2.tip=Acts as path source. Pulls items out of connected inventories to pass them on to the next pipe.\nCan be upgraded with an §6Item Pipe Filter§7.\nClick with empty hand to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.item_pipe\:3.name=Item Destination Pipe
+tile.indlog.item_pipe\:3.tip=Acts as path destination but doesn't actively interact with neighboring inventories.\nSneak-click to remove a pipe connection (then §6(Injection|Extraction) Pipe§7s will threat it as normal Inventory).\nClick with block in offhand to cover.
+tile.indlog.item_pipe\:4.name=Item Source Pipe
+tile.indlog.item_pipe\:4.tip=Acts as path source but doesn't actively interact with neighboring inventories.\nSneak-click to remove a pipe connection (then §6(Injection|Extraction) Pipe§7s will threat it as normal Inventory).\nClick with block in offhand to cover.
 tile.indlog.warp_pipe.name=Advanced Universal Pipe
-tile.indlog.warp_pipe.tip=Transports items and fluids between connected blocks instantly without internal storage.\nClick with §6(Item|Fluid) (Extraction|Injection) Pipe§7 on\nsides to extract/inject items/fluids at that side.\n§6(Item|Fluid) Pipe Filter§7s are applied per connected side.\nClick with empty hand on pipe connector to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
+tile.indlog.warp_pipe.tip=Transports items and fluids between connected blocks instantly without internal storage.\nTransport happens either from §6Extraction§7 to §6Destination§7 or from §6Source§7 to §6Injection§7 connections. Click sides with §6Pipe§7s to configure their interaction with neighboring Tanks or Inventories accordingly.\n§6(Item|Fluid) Pipe Filter§7s are applied per connected side.\nClick with empty hand on pipe connector to disable.\nSneak-click to remove a pipe connection.\nClick with block in offhand to cover.
 tile.indlog.tank.name=Fluid Tank
 tile.indlog.tank\:0.name=Fluid Tank §8tiny
 tile.indlog.tank\:1.name=Fluid Tank §4small
@@ -63,6 +71,8 @@ tile.indlog.drop_interface.name=Dropped Item Interface
 tile.indlog.drop_interface.tip=Represents the items laying in front of it as inventory.\nPumping items into the block will drop them on the ground \nand extracting items out of the block will pick them up.
 tile.indlog.entity_interface.name=Entity Interface
 tile.indlog.entity_interface.tip=Provides access to the capabilities of the entity in front of it.\n(for example to access the inventory of Chest Carts)
+tile.indlog.block_placer.name=Item Placer
+tile.indlog.block_placer.tip=Has a single slot inventory. Inserting items emulates a right-click at the block position in front. Any remainder must be extracted before the next operation.\nApplying a Redstone-strength on the block's sides offsets the operating position by that amount of blocks in the opposite direction.\nRight-click this block with empty hand to configure orientation, aim and sneaking for emulated placement.
 
 #Items
 item.indlog.fluid_filter.name=Pipe Fluid-Filter
@@ -76,6 +86,7 @@ item.indlog.remote_inv.tip=Allows you to remotely access a block's inventory and
 
 cd4017be.inv_con.noLink=Not Linked!
 cd4017be.inv_con.link=Linked to %s @ %s
+cd4017be.placer.cfg=Placing items with relative position [%.1f, %.1f, %.1f], orientation [yaw=%.0f° pitch=%.0f°] and sneak=%s.
 
 #GUI names
 gui.indlog.tank.name=Tank
@@ -140,6 +151,8 @@ gui.cd4017be.buffer.side3=side specific access
 gui.cd4017be.buffer.side4=side specific access
 gui.cd4017be.buffer.side5=side specific access
 gui.cd4017be.buffer.reset=reset to\ndefault
+gui.cd4017be.buffer.lock0=Item types unlocked
+gui.cd4017be.buffer.lock1=Item types locked
 gui.cd4017be.buffer.info=Size scale\nSide configuration\nSlot interaction@specialSlot
 gui.cd4017be.buffer.info0=§7Using the two sliders on bottom right you can change how many slots of this inventory should be available to external automation and up to what stack size they should be filled. The Item's default stack size limit will be ignored.
 gui.cd4017be.buffer.info1=§7You can specify some block sides to access special regions of the inventory. To do so, select the block side to configure instead of default access (button above the sliders) and then change the slider settings.
@@ -171,6 +184,7 @@ gui.cd4017be.remote.invalid=Block has no inventory!
 gui.cd4017be.remote.linked=Block inventory linked
 gui.cd4017be.remote.selfAcc=You don't need this fancy device just to open your own inventory!
 gui.cd4017be.remote.notFound=§cInventory doesn't exist or was unloaded!
+gui.cd4017be.remote.scroll=Slots: %d-%d / %d
 gui.cd4017be.remote.info=Function\nSlot interaction@specialSlot
 gui.cd4017be.remote.info0=§7The slots here act as interface to interact with the linked block's inventory. So what type of interaction is supported actually depends on the block and which face was linked.\n§7Inserting §6Item Pipe Filters§7 will make this tool automatically transfer certain items from the block to your inventory or vice versa. Here the filters stock-keeping function will always refer to the contents of your inventory.\n§7In order for this device to work, the linked block only needs to be loaded but could be arbitrarily far away or even in a different dimension.
 gui.cd4017be.specialSlot=§eClick with stack on cursor to insert:\n§aright-click§7 = 1 item\n§aleft-click§7 = full stack\n§ashift-R-C§7 = all equal items in inventory instead cursor\n§ashift-L-C§7 = all equal items in inventory plus cursor\n§eClick with empty cursor to extract:\n§aleft-click§7 = 1 item\n§aright-click§7 = 8 items\n§ashift-L-C§7 = 1 stack\n§ashift-R-C§7 = all or until inventory full
