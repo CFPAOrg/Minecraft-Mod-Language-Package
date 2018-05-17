@@ -19,13 +19,14 @@ gui.armorplus.info.text_line_five=将 `I:Recipe:1` 改为 `I:Recipe:0`。
 gui.armorplus.info.text_line_six=当前模式：`I:Recipe: %s`。
 
 #CommandInfoText
-command.armorplus.info_line_one=%s[%s (%s)，作者%s sokratis12GR (TheDragonTeam)]
-command.armorplus.info_line_two=%s[%s，感谢你使用 %s]
-command.armorplus.info_line_three=%s[modid: %s]
-command.armorplus.info_line_four=%s[Minecraft 版本：%s]
-command.armorplus.info_line_five=%s[ArmorPlus 合成难度：%s]
-command.armorplus.info_line_six=%s[Recipes] 请使用指令 /armorplus wiki
-command.armorplus.info_line_seven=%s[Discord] 请使用指令 /armorplus discord
+command.armorplus.info_line_one.part_one.text=[%s [%s] (%s) %s
+command.armorplus.info_line_one.part_two.text=%s[%s (%s)，作者%s sokratis12GR (TheDragonTeam)]
+command.armorplus.info_line_two.text=%s[%s，感谢你使用 %s]
+command.armorplus.info_line_three.text=%s[modid: %s]
+command.armorplus.info_line_four.text=%s[Minecraft 版本：%s]
+command.armorplus.info_line_five.text=%s[ArmorPlus 合成难度：%s]
+command.armorplus.info_line_six.text=%s[Recipes] 请使用指令 /armorplus wiki
+command.armorplus.info_line_seven.text=%s[Discord] 请使用指令 /armorplus discord
 
 #Enchantmnets
 enchantment.armorplus.life_steal=Life Steal
@@ -54,18 +55,6 @@ container.armorplus.lava_infuser=熔岩灌注器
 tooltip.shift.showinfo.text_one=按下
 tooltip.shift.showinfo.text_two=获取更多信息。
 
-##RFTooltip
-tooltip.rf.showinfo=按下 %s%s%s 获取更多信息。
-tooltip.rf.powerinfo=%s/%s RF
-tooltip.rf.cost.tool=能耗：%s RF/方块
-tooltip.rf.cost.hit=能耗：%s RF/单次攻击
-
-##TeslaTooltip
-tooltip.tesla.showinfo.text_one=按下 %s%s%s 获取更多信息。
-tooltip.tesla.powerinfo=%s/%s Tesla
-tooltip.tesla.cost.tool=能耗：%s Tesla/方块
-tooltip.tesla.cost.hit=能耗：%s Tesla/单次攻击
-
 #TiC
 modifier.firestorm.name=火焰风暴
 modifier.firestorm.desc=§o真正的超新星！§r\n火焰伤害加成，燃烧吧我的敌人们。
@@ -73,10 +62,10 @@ modifier.firestorm.extra=火焰伤害：+%s
 modifier.firestorm.extra2=燃烧时间：%s 秒
 modifier.ultimatemod.name=扩展插槽
 modifier.ultimatemod.desc=增加一个强化槽
-material.lava_crystal.name=熔岩水晶
+material.infused_lava_crystal.name=熔岩水晶
 material.compressed_obsidian.name=压缩黑曜石
 
-﻿#Tile
+#Tile
 tile.armorplus.block_energy_creative.name=创造能量单元
 
 #Commands
@@ -87,7 +76,6 @@ commands.error.404=找不到此命令！
 commands.error.unknown=找不到此命令！请使用 /armorplus help 获得帮助信息。
 commands.error.perm=你没有权限使用此命令。
 commands.success=执行成功
-commands.formatText.help=%s - %s
 
 #CommandHelp
 commands.help.usage=/armorplus help
@@ -102,8 +90,8 @@ commands.wiki.usage=/armorplus wiki
 commands.wiki.help=在你的浏览器中打开 ArmorPlus Wiki 页面。
 
 #CommandDiscord
-commands.wiki.usage=/armorplus discord
-commands.wiki.help=在你的浏览器中打开 TheDragonTeam Community Discord 服务器的邀请链接。
+commands.discord.usage=/armorplus discord
+commands.discord.help=在你的浏览器中打开 TheDragonTeam Community Discord 服务器的邀请链接。
 
 #JEI
 gui.jei.category.workbench=工作台
@@ -158,10 +146,10 @@ item.armorplus.obsidian_leggings.name=黑曜石护腿
 item.armorplus.obsidian_boots.name=黑曜石靴子
 
 #LavaArmor
-item.armorplus.lava_helmet.name=熔岩头盔
-item.armorplus.lava_chestplate.name=熔岩胸甲
-item.armorplus.lava_leggings.name=熔岩护腿
-item.armorplus.lava_boots.name=熔岩靴子
+item.armorplus.infused_lava_helmet.name=熔岩头盔
+item.armorplus.infused_lava_chestplate.name=熔岩胸甲
+item.armorplus.infused_lava_leggings.name=熔岩护腿
+item.armorplus.infused_lava_boots.name=熔岩靴子
 
 #SuperStarArmor
 item.armorplus.super_star_helmet.name=下界之星头盔
@@ -258,8 +246,8 @@ item.armorplus.gui_tester.name=GUI测试工具
 #Items
 item.armorplus.material_chainmail.name=锁甲板材
 item.armorplus.reinforcing_material.name=强化材料
-item.armorplus.lava_crystal_normal.name=熔岩水晶
-item.armorplus.lava_crystal_charged.name=注能熔岩水晶
+item.armorplus.lava_crystal.name=熔岩水晶
+item.armorplus.lava_crystal_infused.name=注能熔岩水晶
 item.armorplus.steel_ingot.name=钢锭
 item.armorplus.electrical_ingot.name=电子合金锭
 
@@ -334,7 +322,7 @@ item.armorplus.lapis_sword.name=青金石剑
 item.armorplus.redstone_sword.name=红石剑
 item.armorplus.emerald_sword.name=绿宝石剑
 item.armorplus.obsidian_sword.name=黑曜石剑
-item.armorplus.lava_sword.name=熔岩剑
+item.armorplus.infused_lava_sword.name=熔岩剑
 item.armorplus.super_star_sword.name=下界之星剑
 item.armorplus.guardian_sword.name=守卫者剑
 item.armorplus.ender_dragon_sword.name=末影龙剑
@@ -345,7 +333,7 @@ item.armorplus.lapis_battle_axe.name=青金石战斧
 item.armorplus.redstone_battle_axe.name=红石战斧
 item.armorplus.emerald_battle_axe.name=绿宝石战斧
 item.armorplus.obsidian_battle_axe.name=黑曜石战斧
-item.armorplus.lava_battle_axe.name=熔岩战斧
+item.armorplus.infused_lava_battle_axe.name=熔岩战斧
 item.armorplus.super_star_battle_axe.name=下界之星战斧
 item.armorplus.guardian_battle_axe.name=守卫者战斧
 item.armorplus.ender_dragon_battle_axe.name=末影龙战斧
@@ -356,7 +344,7 @@ item.armorplus.lapis_bow.name=青金石弓
 item.armorplus.redstone_bow.name=红石弓
 item.armorplus.emerald_bow.name=绿宝石弓
 item.armorplus.obsidian_bow.name=黑曜石弓
-item.armorplus.lava_bow.name=熔岩弓
+item.armorplus.infused_lava_bow.name=熔岩弓
 item.armorplus.super_star_bow.name=下界之星弓
 item.armorplus.guardian_bow.name=守卫者弓
 item.armorplus.ender_dragon_bow.name=末影龙弓
@@ -365,7 +353,7 @@ item.armorplus.ender_dragon_bow.name=末影龙弓
 item.armorplus.coal_arrow.name=煤炭箭
 item.armorplus.lapis_arrow.name=青金石箭
 item.armorplus.redstone_arrow.name=红石箭
-item.armorplus.lava_arrow.name=熔岩箭
+item.armorplus.infused_lava_arrow.name=熔岩箭
 item.armorplus.ender_dragon_arrow.name=末影龙箭
 
 #TeslaItems
@@ -403,8 +391,8 @@ achievement.armorplus.craft_emerald_armor=Swing Swing Faster!
 achievement.armorplus.craft_emerald_armor.desc=合成任意一件绿宝石护甲
 achievement.armorplus.craft_obsidian_armor=坚不可摧！
 achievement.armorplus.craft_obsidian_armor.desc=合成任意一件黑曜石护甲
-achievement.armorplus.craft_lava_armor=OP！
-achievement.armorplus.craft_lava_armor.desc=合成任意一件熔岩护甲
+achievement.armorplus.craft_infused_lava_armor=OP！
+achievement.armorplus.craft_infused_lava_armor.desc=合成任意一件熔岩护甲
 achievement.armorplus.craft_super_star_armor=超神！
 achievement.armorplus.craft_super_star_armor.desc=合成任意一件下界之星护甲
 achievement.armorplus.craft_ender_dragon_armor=末影龙的力量！
@@ -437,39 +425,6 @@ achievement.armorplus.craft_champion_bench=只为冠军准备
 achievement.armorplus.craft_champion_bench.desc=合成 ArmorPlus 的冠军工作台
 achievement.armorplus.armorplus=sokratis12GR
 achievement.armorplus.armorplus.desc=制作了 ArmorPlus
-
-##############
-# Deprecated #
-##############
-#VanillaPotions
-#effect.none.name=无效果
-#effect.moveSpeed.name=速度
-#effect.moveSlowdown.name=缓慢
-#effect.digSpeed.name=急迫
-#effect.digSlowDown.name=挖掘疲劳
-#effect.damageBoost.name=力量
-#effect.heal.name=瞬间治疗
-#effect.harm.name=瞬间伤害
-#effect.jump.name=跳跃提升
-#effect.confusion.name=反胃
-#effect.regeneration.name=生命恢复
-#effect.resistance.name=抗性提升
-#effect.fireResistance.name=防火
-#effect.waterBreathing.name=水下呼吸
-#effect.invisibility.name=防火
-#effect.blindness.name=失明
-#effect.nightVision.name=夜视
-#effect.hunger.name=饥饿
-#effect.weakness.name=虚弱
-#effect.poison.name=中毒
-#effect.wither.name=凋零
-#effect.healthBoost.name=生命提升
-#effect.absorption.name=伤害吸收
-#effect.saturation.name=饱和
-#effect.glowing.name=发光
-#effect.luck.name=幸运
-#effect.unluck.name=霉运
-#effect.levitation.name=飘浮
 
 #ArmorPlus Effects
 effect.armorplus.empty.name=空

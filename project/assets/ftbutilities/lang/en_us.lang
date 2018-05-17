@@ -41,6 +41,7 @@ ftbutilities.world.spawn_radius=Spawn Radius
 ftbutilities.ranks=Ranks
 ftbutilities.ranks.enabled=Enabled
 ftbutilities.ranks.override_chat=Override Chat
+ftbutilities.ranks.crash_client_side_permissions=Crash Client-Side Permissions
 
 ftbutilities.debugging.log_chunkloading=Log Chunkloading
 
@@ -75,6 +76,7 @@ player_config.ftbutilities.chat_links=Chat Links
 player_config.ftbutilities.disable_global_badge=Disable Global Badge
 player_config.ftbutilities.render_badge=Render My Badge
 player_config.ftbutilities.enable_pvp=Enable PVP
+player_config.ftbutilities.nickname=Nickname
 
 # Team Settings
 team_config.ftbutilities.blocks_edit=Required Level for Block Editing
@@ -132,6 +134,8 @@ ftbutilities.lang.kickme=You kicked yourself!
 ftbutilities.lang.perm_for=%s for %s is %s
 ftbutilities.lang.upload_crash=Upload Crash Report
 ftbutilities.lang.uploaded_crash=Crash Report Uploaded! %s
+ftbutilities.lang.nickname_changed=Nickname changed to '%s'
+ftbutilities.lang.nickname_reset=Nickname reset
 
 ftbutilities.stat.dph=Deaths Per Hour
 ftbutilities.stat.last_seen=Last Seen
@@ -164,16 +168,26 @@ ftbutilities.lang.chunks.upgrade.no_pvp=Ally PVP Disabled
 ftbutilities.lang.warps.set=Warp '%s' set!
 ftbutilities.lang.warps.del=Warp '%s' deleted!
 ftbutilities.lang.warps.not_set=Unknown Warp: '%s'!
+ftbutilities.lang.warps.cooldown=You can only use warp in %s!
 ftbutilities.lang.warps.tp=Teleported to '%s'!
 ftbutilities.lang.warps.no_dp=You can only go back once!
-ftbutilities.lang.warps.spawn=Teleported to spawn
 
 # Homes
 ftbutilities.lang.homes.set=Home '%s' set!
 ftbutilities.lang.homes.del=Home '%s' deleted!
 ftbutilities.lang.homes.not_set=Unknown Home: '%s'!
+ftbutilities.lang.homes.cooldown=You can only use home in %s!
 ftbutilities.lang.homes.cross_dim=You can't teleport to another dimension!
 ftbutilities.lang.homes.limit=You can't set any more home locations!
+
+# TPA
+ftbutilities.lang.tpa.from_to=%s -> %s
+ftbutilities.lang.tpa.request_received=%s requests TPA! %s to accept.
+ftbutilities.lang.tpa.request_sent=Request sent!
+ftbutilities.lang.tpa.no_request=%s is not requesting TPA!
+ftbutilities.lang.tpa.cant_request=Can't request TPA!
+ftbutilities.lang.tpa.request_expired=TPA request expired!
+ftbutilities.lang.tpa.request_accepted=TPA Request accepted!
 
 # Backups
 ftbutilities.lang.backup.start=Server Backup started!
@@ -212,7 +226,7 @@ commands.ftb.sethome.usage=/ftb sethome [home]
 commands.ftb.delhome.usage=/ftb delhome [home]
 commands.ftb.server_info.usage=/ftb server_info
 commands.ftb.loaded_chunks_list.usage=/ftb loaded_chunks_list
-commands.ftb.tpl.usage=/ftb (<x> <y> <z>) | ([who] <player>)
+commands.ftb.tpl.usage=/ftb tpl (<x> <y> <z>) | ([who] <player>)
 commands.ftb.trash_can.usage=/ftb trash_can
 commands.ftb.back.usage=/ftb back
 commands.ftb.spawn.usage=/ftb spawn
@@ -240,4 +254,9 @@ commands.ftb.killall.usage=/ftb killall [type]
 commands.ftb.nbtedit.tile.usage=/ftb nbtedit tile <x> <y> <z>
 commands.ftb.nbtedit.entity.usage=/ftb nbtedit entity <id>
 commands.ftb.nbtedit.player.usage=/ftb nbtedit player <player>
+commands.ftb.tpa.usage=/ftb tpa <player>
+commands.ftb.tpaccept.usage=/ftb tpaccept <player>
+commands.ftb.tpdeny.usage=/ftb tpdeny <player>
+commands.ftb.nick.usage=/ftb nick <name...>
+
 commands.ftbc.shrug.usage=/shrug
