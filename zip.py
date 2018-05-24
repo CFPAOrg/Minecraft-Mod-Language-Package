@@ -34,9 +34,6 @@ for modid in os.listdir('project/assets'):
 os.system('mv ./project/assets ./')
 os.system('zip -r -9 "Minecraft-Mod-Language-Modpack.zip" "assets" "pack.mcmeta"  "pack.png" "README.md" "LICENSE"')
 
-# 生成 md5 文件
-os.system('md5sum -b ./Minecraft-Mod-Language-Modpack.zip | cut -c1-32 > ./Minecraft-Mod-Language-Modpack.MD5')
-
 # 多加一步，上传到七牛云
 # 从环境变量获取 Access Key 和 Secret Key
 access_key = os.getenv('Access_Key')
@@ -57,6 +54,12 @@ ret, info = qiniu.put_file(token, key, local_file)
 print(info)
 assert ret['key'] == key
 assert ret['hash'] == qiniu.etag(local_file)
+
+# 从七牛云下载压缩包进行校验
+os.system('rm ./Minecraft-Mod-Language-Modpack.zip')
+os.system('wget http://p985car2i.bkt.clouddn.com/Minecraft-Mod-Language-Modpack.zip')
+# 生成 md5 文件
+os.system('md5sum -b ./Minecraft-Mod-Language-Modpack.zip | cut -c1-32 > ./Minecraft-Mod-Language-Modpack.MD5')
 
 # 上传 MD5 文件
 key = 'Minecraft-Mod-Language-Modpack.MD5'
