@@ -35,7 +35,7 @@ os.system('mv ./project/assets ./')
 os.system('zip -r -9 "Minecraft-Mod-Language-Modpack.zip" "assets" "pack.mcmeta"  "pack.png" "README.md" "LICENSE"')
 
 # 生成 md5 文件
-os.system('md5sum ./Minecraft-Mod-Language-Modpack.zip | cut -c1-32 > ./Minecraft-Mod-Language-Modpack.MD5')
+os.system('md5sum -b ./Minecraft-Mod-Language-Modpack.zip | cut -c1-32 > ./Minecraft-Mod-Language-Modpack.MD5')
 
 # 多加一步，上传到七牛云
 # 从环境变量获取 Access Key 和 Secret Key
