@@ -6,6 +6,7 @@
 import os
 import src.redundancy.redundancy
 import qiniu
+import hashlib
 
 # 这里打包的是剔除冗余的版本
 os.system('mv ./project-tmp/assets ./')
@@ -34,6 +35,10 @@ for modid in os.listdir('project/assets'):
 os.system('mv ./project/assets ./')
 os.system('zip -r -9 "Minecraft-Mod-Language-Modpack.zip" "assets" "pack.mcmeta"  "pack.png" "README.md" "LICENSE"')
 
+# 生成 md5 文件
+os.system('md5sum ./Minecraft-Mod-Language-Modpack.zip | cut -c1-32 > ./Minecraft-Mod-Language-Modpack.MD5')
+
+
 # 多加一步，上传到七牛云
 # 从环境变量获取 Access Key 和 Secret Key
 access_key = os.getenv('Access_Key')
@@ -42,13 +47,25 @@ secret_key = os.getenv('Secret_Key')
 q = qiniu.Auth(access_key, secret_key)
 # 要上传的空间
 bucket_name = 'langpack'
+
 # 上传到七牛后保存的文件名
-key = 'Minecraft-Mod-Language-Modpack.zip';
+key_1 = 'Minecraft-Mod-Language-Modpack.zip'
+key_2 = 'Minecraft-Mod-Language-Modpack.MD5'
 # 生成上传 Token，可以指定过期时间等
-token = q.upload_token(bucket_name, key, 600)
+token_1 = q.upload_token(bucket_name, key_1, 600)
+token_2 = q.upload_token(bucket_name, key_2, 600)
 # 要上传文件的本地路径
-localfile = './Minecraft-Mod-Language-Modpack.zip'
-ret, info = qiniu.put_file(token, key, localfile)
-print(info)
-assert ret['key'] == key
-assert ret['hash'] == qiniu.etag(localfile)
+local_file_1 = './Minecraft-Mod-Language-Modpack.zip'
+local_file_2 = './Minecraft-Mod-Language-Modpack.MD5'
+
+# 上传第一个文件
+ret_1, info_1 = qiniu.put_file(token_1, key_1, local_file_1)
+print(info_1)
+assert ret_1['key'] == key_1
+assert ret_1['hash'] == qiniu.etag(local_file_1)
+
+#上传 MD5 文件
+ret_2, info_2 = qiniu.put_file(token_2, key_2, local_file_2)
+print(info_2)
+assert ret_2['key'] == key_2
+assert ret_2['hash'] == qiniu.etag(local_file_2)
