@@ -36,8 +36,8 @@ os.system('zip -r -9 "Minecraft-Mod-Language-Modpack.zip" "assets" "pack.mcmeta"
 
 # 多加一步，上传到七牛云
 # 从环境变量获取 Access Key 和 Secret Key
-access_key = os.environ('Access_Key')
-secret_key = os.environ('Secret_Key')
+access_key = os.getenv('Access_Key')
+secret_key = os.getenv('Secret_Key')
 # 构建鉴权对象
 q = qiniu.Auth(access_key, secret_key)
 # 要上传的空间
