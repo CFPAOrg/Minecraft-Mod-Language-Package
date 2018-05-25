@@ -42,33 +42,23 @@ secret_key = os.getenv('Secret_Key')
 q = qiniu.Auth(access_key, secret_key)
 # 要上传的空间
 bucket_name = 'langpack'
-
-# 上传资源包
-key = 'Minecraft-Mod-Language-Modpack.zip'
+# 上传到七牛后保存的文件名
+key = 'Minecraft-Mod-Language-Modpack.zip';
 # 生成上传 Token，可以指定过期时间等
 token = q.upload_token(bucket_name, key, 600)
 # 要上传文件的本地路径
-local_file = './Minecraft-Mod-Language-Modpack.zip'
-# 上传文件
-ret, info = qiniu.put_file(token, key, local_file)
+localfile = './Minecraft-Mod-Language-Modpack.zip'
+ret, info = qiniu.put_file(token, key, localfile)
 print(info)
 assert ret['key'] == key
-assert ret['hash'] == qiniu.etag(local_file)
+assert ret['hash'] == qiniu.etag(localfile)
 
-# 从七牛云下载压缩包进行校验
-os.system('rm ./Minecraft-Mod-Language-Modpack.zip')
-os.system('wget http://p985car2i.bkt.clouddn.com/Minecraft-Mod-Language-Modpack.zip')
-# 生成 md5 文件
-os.system('md5sum -b ./Minecraft-Mod-Language-Modpack.zip | cut -c1-32 > ./Minecraft-Mod-Language-Modpack.MD5')
-
-# 上传 MD5 文件
-key = 'Minecraft-Mod-Language-Modpack.MD5'
-# 生成上传 Token，可以指定过期时间等
-token = q.upload_token(bucket_name, key, 600)
-# 要上传文件的本地路径
-local_file = './Minecraft-Mod-Language-Modpack.MD5'
-# 上传文件
-ret, info = qiniu.put_file(token, key, local_file)
-print(info)
-assert ret['key'] == key
-assert ret['hash'] == qiniu.etag(local_file)
+# 刷新七牛云文件缓存
+cdn_manager = qiniu.CdnManager(q)
+# 需要刷新的文件链接
+urls = [
+    'http://p985car2i.bkt.clouddn.com/Minecraft-Mod-Language-Modpack.zip'
+]
+# 刷新链接
+refresh_url_result = cdn_manager.refresh_urls(urls)
+print(refresh_url_result)
