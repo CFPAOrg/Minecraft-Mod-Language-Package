@@ -52,3 +52,13 @@ ret, info = qiniu.put_file(token, key, localfile)
 print(info)
 assert ret['key'] == key
 assert ret['hash'] == qiniu.etag(localfile)
+
+# 刷新七牛云文件缓存
+cdn_manager = qiniu.CdnManager(q)
+# 需要刷新的文件链接
+urls = [
+    'http://p985car2i.bkt.clouddn.com/Minecraft-Mod-Language-Modpack.zip'
+]
+# 刷新链接
+refresh_url_result = cdn_manager.refresh_urls(urls)
+print(refresh_url_result)
