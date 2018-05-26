@@ -66,6 +66,7 @@ teleporting=Teleporting...
 cooldown=Cooldown
 cant_use_now=Can't use that right now!
 cant_use_now_cooldown=Can't use that right now! Cooldown: %s
+action_bar=Action Bar
 
 ftblib.lang.reload_server_button=Reload Server
 ftblib.lang.reload_server=FTBLib: Server reloaded in %s
@@ -81,7 +82,7 @@ ftblib.lang.add_fake_player.added=Fake player %s added!
 
 # Config
 ftblib.general.clientless_mode=Clientless Mode
-ftblib.general.mirror_ftb_commands=Mirror /ftb Commands
+ftblib.general.replace_reload_command=Replace /reload Command
 ftblib.general.merge_offline_mode_players=Merge Offline Mode Players
 
 ftblib.teams=Teams
@@ -103,7 +104,6 @@ ftblib.debugging.log_events=Log Events
 ftblib_client.general.item_ore_names=Display Item OreDictionary names
 ftblib_client.general.item_ore_names.item_tooltip=Ore Dictionary Names:
 ftblib_client.general.item_nbt=Display Item NBT
-ftblib_client.general.mirror_commands=Mirror /ftbc Commands
 ftblib_client.general.replace_vanilla_status_messages=Replace vanilla status messages
 ftblib_client.general.debug_helper=Debug Helper
 ftblib_client.general.collapse_sidebar_buttons=Collapse Sidebar Buttons
@@ -149,21 +149,22 @@ ftblib.lang.team.notification=You haven't joined or created a team yet! %s to op
 ftblib.lang.team.notification.hide=Hide this Message
 ftblib.lang.team.chat_message=[Team %s] %s
 
-ftblib.lang.team.gui.select_team=Select Team to Join
-ftblib.lang.team.gui.create_team=Create a New Team
+team_action.ftblib.select_team=Select Team to Join
+team_action.ftblib.create_team=Create a New Team
+team_action.ftblib.members=Members
+team_action.ftblib.allies=Allies
+team_action.ftblib.moderators=Moderators
+team_action.ftblib.enemies=Enemies
+team_action.ftblib.leave=Exit Team
+team_action.ftblib.transfer_ownership=Transfer Ownership
+
 ftblib.lang.team.gui.join_team=Click to join '%s'
 ftblib.lang.team.gui.request_invite=Click to request invite to '%s'
-ftblib.lang.team.gui.members=Members
 ftblib.lang.team.gui.members.invite=Click to invite to your team
 ftblib.lang.team.gui.members.requesting_invite=This player is requesting invite
 ftblib.lang.team.gui.members.deny_request=Right-click to deny request
 ftblib.lang.team.gui.members.cancel_invite=Right-click to cancel invite
 ftblib.lang.team.gui.members.kick=Right-click to kick member
-ftblib.lang.team.gui.allies=Allies
-ftblib.lang.team.gui.mods=Moderators
-ftblib.lang.team.gui.enemies=Enemies
-ftblib.lang.team.gui.leave=Exit Team
-ftblib.lang.team.gui.transfer_ownership=Transfer Ownership
 
 ftblib.lang.team_status.enemy=Enemy
 ftblib.lang.team_status.none=None
@@ -210,29 +211,21 @@ click_action.url=Open URL
 click_action.file=Open File
 click_action.gui=Open Gui
 
-# Guide
-ftblib.guide=FTBLib
-
 # Commands
-commands.ftb.usage=/ftb
-commands.ftb.reload.usage=/ftb reload [*|domain:*|domain:id]
-commands.ftb.reload_client.usage=/ftb reload_client [*|domain:*|domain:id]
-commands.ftb.my_settings.usage=/ftb my_settings <id> [value]
-commands.ftb.team.usage=/ftb team
-commands.ftb.team.gui.usage=/ftb team gui
-commands.ftb.team.config.usage=/ftb team config <id> [value]
-commands.ftb.team.create.usage=/ftb team create <id> [color]
-commands.ftb.team.leave.usage=/ftb team leave
-commands.ftb.team.transfer_ownership.usage=/ftb team transfer_ownership <player>
-commands.ftb.team.kick.usage=/ftb team kick <player>
-commands.ftb.team.join.usage=/ftb team join <id>
-commands.ftb.team.set_status.usage=/ftb team set_status <player> <status>
-commands.ftb.team.msg.usage=/ftb team msg <message...>
-commands.ftb.packmode.usage=/ftb packmode
-commands.ftb.packmode.set.usage=/ftb packmode set <mode>
-commands.ftb.packmode.get.usage=/ftb packmode get
-commands.ftb.packmode.list.usage=/ftb packmode list
-commands.ftb.notify.usage=/ftb notify <player> <id>
-commands.ftb.edit_gamerules.usage=/ftb edit_gamerules <id> [value]
-commands.ftb.edit_config.usage=/ftb edit_config <mod> <id> [value]
-commands.ftb.add_fake_player.usage=/ftb add_fake_player <uuid> <name>
+commands.reload.usage=/reload [*|domain:*|domain:id]
+commands.my_settings.usage=/my_settings <id> [value]
+commands.team.usage=/team
+commands.team.settings.usage=/team settings <id> [value]
+commands.team.create.usage=/team create <id> [color]
+commands.team.leave.usage=/team leave
+commands.team.transfer_ownership.usage=/team transfer_ownership <player>
+commands.team.kick.usage=/team kick <player>
+commands.team.join.usage=/team join <id>
+commands.team.status.usage=/team status <player> [set_status]
+commands.team.status.set=Status for %s set to %s
+commands.team.status.cant_set=Status can't be set!
+commands.team.msg.usage=/team msg <message...>
+commands.add_fake_player.usage=/add_fake_player <uuid> <name>
+
+# Client Commands
+commands.client_config.usage=/client_config

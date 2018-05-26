@@ -205,7 +205,7 @@ item.lard.name=Lard
 item.suet.name=Suet
 item.salo.name=Salo
 item.chum.name=Chum
-item.fur.name=Animal Fur
+item.animal_fur.name=Animal Fur
 item.fish_lava_crawdad_raw.name=Raw Magma Crawdad
 item.fish_lava_crawdad_salted.name=Salted Magma Crawdad
 item.fish_lava_crawdad_dried.name=Dried Magma Crawdad
@@ -504,7 +504,6 @@ tile.kiln_terracotta.name=Terracotta Kiln
 tile.kiln_ciniscotta.name=Ciniscotta Kiln
 tile.kiln_nether_earth.name=Nether Earth Kiln
 tile.vitrified_stone.name=Vitrified Stone
-tile.earthwax_block.name=Earthwax
 tile.torch_wood.name=Unlit Torch
 item.torch_wood_lit.name=Lit Torch
 tile.torch_nether.name=Netherrack Torch
@@ -1341,6 +1340,7 @@ tile.cinisclay_block.name=Cinis Clay
 
 tile.ovis_wool.name=Ovis Atre Wool
 tile.grated_gravel.name=Grated Gravel
+tile.redstone_sand.name=Redstone Sand
 
 tile.worktable_shelf_oak.name=Oak Crafting Table
 tile.worktable_shelf_spruce.name=Spruce Crafting Table
@@ -1420,8 +1420,7 @@ item.pumpkin_piece.name=Pumpkin Piece
 item.potato_rotten.name=Molding Potato
 
 # -- Ore Blocks -- #
-tile.earthwax_block.name=Ozokerite
-tile.netherwax_block.name=Calcified Paraffin
+tile.earthwax_block.name=Calcified Paraffin
 tile.metalblock_brass.name=Brass Block
 tile.metalblock_bronze.name=Bronze Block
 tile.metalblock_copper.name=Copper Block
@@ -1489,10 +1488,12 @@ subtitle.primal.tool_blade_scrape=Blade Scraping
 subtitle.primal.block_cauldron_empty=Empty Cauldron
 subtitle.primal.block_cauldron_filled=Filled Cauldron
 subtitle.primal.block_cauldron_lid=Cauldron Lid Clank
+subtitle.primal.block_cauldron_add=Cauldron Crafting
 subtitle.primal.block_barrel_empty=Empty Wooden Barrel
 subtitle.primal.block_barrel_filled=Filled Wooded Barrel
 subtitle.primal.block_barrel_lid=Wooden Barrel Lid
 subtitle.primal.fluid_splash=Splashing
+subtitle.primal.misc_steam=Steam Hissing
 
 # -- potions -- #
 potion.effect.primal.porphyria=Porphyria
@@ -1593,6 +1594,93 @@ commands.attack.usage=/actual <cmd> <player>
 commands.actual.success='%s'
 
 # -- info -- #
+# -- debug -- #
+tooltip.info.debug_item=This is a debug tool
+
+# -- shared -- #
+tooltip.info.abstract_dev_warning=This is currently in development
+tooltip.info.abstract_fire_proof=Fire Proof
+tooltip.info.abstract_fire_hazard=Highly Flammable
+tooltip.info.abstract_wet_block=Place in-world to Dry
+tooltip.info.abstract_requires_fuel=Consumes solid fuel
+tooltip.info.abstract_requires_heat=Requires heat source
+tooltip.info.abstract_environment=Influenced by surroundings
+tooltip.info.abstract_pickup=Sneak-click to Pickup
+tooltip.info.abstract_has_heat=Temperature
+tooltip.info.abstract_tank_fluid=Fluid
+tooltip.info.abstract_tank_size=Volume
+tooltip.info.abstract_tank_rain=Collects water from rain
+tooltip.info.abstract_tank_lid=Retains Inventory when covered
+tooltip.info.abstract_quality=Four Quality Grades
+tooltip.info.abstract_passes=Passes
+tooltip.info.abstract_passes_items=Items
+tooltip.info.abstract_passes_fluids=Fluids
+tooltip.info.abstract_passes_gas=Smoke/Steam
+tooltip.info.abstract_grid_crafting_tool=Crafting Table Tool
+tooltip.info.abstract_world_crafting_tool=In-World Crafting Tool
+tooltip.info.abstract_world_craft_blade=Craft in-world with a Work Blade
+tooltip.info.abstract_world_craft_hammer=Craft in-world with a Gallagher
+tooltip.info.abstract_world_craft_axe=Craft in-world with an Axe
+tooltip.info.abstract_material_warning=Output is lossy, Upgrade tool material
+
+# -- food -- #
+tooltip.info.food_is_bait=Bait Fish Traps
+tooltip.info.food_is_salted=Food is Salty
+tooltip.info.food_is_rotten=Food is Rotten
+tooltip.info.food_can_salt=Salt or Dry on a Rack
+tooltip.info.food_can_dry=Dry on a Rack
+
+tooltip.info.food_comment_salo=Solonýna
+tooltip.info.food_comment_cheese_white=La Vache qui Rit
+tooltip.info.food_comment_cheese_red=Ad Vitam Aeternam
+
+# -- plants -- #
+tooltip.info.plant_seed_any=Plant on any Solid Surface
+tooltip.info.plant_seed_soil=Plant on Grass or Dirt
+tooltip.info.plant_seed_grass=Plant on Grass
+tooltip.info.plant_seed_grass_shade=Plant on Grass in the Shade
+tooltip.info.plant_seed_farmland=Plant on Farmland
+tooltip.info.plant_seed_farmland_nether=Plant on Nether Farmland
+tooltip.info.plant_seed_by_lava=Plant near Lava
+tooltip.info.plant_seed_by_water=Plant near Water
+
+# -- misc -- #
+tooltip.info.fire_bow_torches=Right-click to light torches
+tooltip.info.fire_bow_fuel=Consumes sticks
+tooltip.info.fishtrap_bait=Trap 1-6 fish per Bait
+tooltip.info.fishtrap_misc=Sometimes Trap Other Items
+tooltip.info.fishtrap_warning=Influenced by surroundings
+tooltip.info.lantern_torch=Click/Sneak-click add or remove Torch
+tooltip.info.lantern_light=Light from a fire source
+tooltip.info.lantern_warning=Breaking will Put Out Torch
+tooltip.info.cauldron_items=Sneak-click with ladle to Recover Items
+tooltip.info.cauldron_warning=Cauldron is Super Heated
+tooltip.info.cauldron_ladle_view=Sneak-click cauldron side to see contents
+tooltip.info.cauldron_ladle_take=Sneak-click cauldron top to recover items
+tooltip.info.cauldron_lid=Fit to a Cauldron, to save inventory
+tooltip.info.barrel_lid=Fit to a Barrel, to save inventory
+tooltip.info.barrel_trap=Barrel is Trapped
+tooltip.info.barrel_trap_placement=Sneak-click barrel partially filled with Paraffin
+tooltip.info.drying_rack_crafting=Slowly Dries Items
+tooltip.info.hibachi_crafting=Cooks Items
+tooltip.info.shelf_storage=Sneak-click takes full stack
+tooltip.info.pitfall_falldamage=Deals Damage scaled by fall height
+tooltip.info.pitfall_collision=Deal Collision Damage
+tooltip.info.cineris_carpet=Moves Entities in relation to facing
+tooltip.info.ineris_carpet=Teleports entities randomly
+tooltip.info.redstone_sand=Falls like Sand, Sits like Stone
+tooltip.info.ladder_placement=Automatic Placement Up or Down
+tooltip.info.thatch_support=Slats Provide Extra Support
+tooltip.info.slats_support=Will provide extra support for thatch
+tooltip.info.worktable_slab=Connects to Crates and Chests
+tooltip.info.storage_crate=Connects to Worktable Slabs
+tooltip.info.storage_crate_inventory=Retains Inventory
+tooltip.info.charcoal_output=Produces charcoal grade
+tooltip.info.charcoal_crafting=Burry in dirt or similar block
+tooltip.info.mud_harvest=Harvest from wet farmland
+tooltip.info.satetsu=砂鉄
+
+# -- chat messages -- #
 #chat.message.cannot_sleep=You cannot sleep at this time, bed location has been set
 #chat.message.cannot_sleep_or_spawn=You cannot sleep or set your bed location at this time
 chat.message.set_spawn=Your bed location has been set
@@ -1614,7 +1702,6 @@ jei.category.hibachi=Hibachi
 jei.category.cauldron=Cauldron
 jei.category.flake=In-World Flaking
 
-# -- ..
 jei.info.ladle=Ladles are used to interact with an active cauldron. Hitting the side of a cauldron will display information about the current heat and contents. Hitting the top will safely fish items held within.
 jei.info.workblade=Work Blades can be used to strip hides, remove bark, and other survival tasks. Use as an in-world crafting option to create ladders and other items. Shift Right-Click to use in-world crafting.
 jei.info.gallagher=
@@ -1637,7 +1724,6 @@ jei.info.log_split=Right-Click Striped Logs with an axe or hatchet to split the 
 jei.info.log_stack=Sneak-Click a Log with a Work Blade to stripe the log, producing bark and leaving behind a stripped log.
 jei.info.wet_block=Place in the world with at least one side exposed to the air, near a heat or light source and leave it to dry.
 
-# -- specials
 jei.info.goggles=These goggles have pitch black lenses rendering the wearing blind to all but the brightest light. They seem only useful as some form of protective wear.
 jei.info.ignis=This ghostly flame burns of its own accord. The light is said to draw many a foolish traveler from safe path, never to return.
 jei.info.aconite=Like the rest of the plant, the Aconite root is especially known for it's potent toxin.
@@ -1647,7 +1733,6 @@ jei.info.pitfall=Pitfall spikes make for lethal fall traps. In addition placing 
 jei.info.satetsu=
 jei.info.nethergrowth=
 
-# -- fibers
 jei.info.fiber=Fibers are primarily used to craft various forms of cordage.
 jei.info.plant_fiber=Plant Fibers can be crafted or drop from numerous plant sources, such as tall grass.
 jei.info.cineris_fiber=Cineris Fibers drop from the Cineris Cilium, found predominately in the Nether.

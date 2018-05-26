@@ -29,13 +29,13 @@ item.celestial_notes.stars_2.text=Stellar, Southern Quadrant
 item.celestial_notes.stars_3.text=Stellar, Western Quadrant
 item.celestial_notes.stars_4.text=Stellar, Eastern Quadrant
 item.celestial_notes.moon_1.text=Lunar, Full
-item.celestial_notes.moon_2.text=Lunar, Waxing Gibbous
-item.celestial_notes.moon_3.text=Lunar, First Quarter
-item.celestial_notes.moon_4.text=Lunar, Waxing Crescent
+item.celestial_notes.moon_2.text=Lunar, Waning Gibbous
+item.celestial_notes.moon_3.text=Lunar, Third Quarter
+item.celestial_notes.moon_4.text=Lunar, Waning Crescent
 item.celestial_notes.moon_5.text=Lunar, New
-item.celestial_notes.moon_6.text=Lunar, Waning Crescent
-item.celestial_notes.moon_7.text=Lunar, Third Quarter
-item.celestial_notes.moon_8.text=Lunar, Waning Gibbous
+item.celestial_notes.moon_6.text=Lunar, Waxing Crescent
+item.celestial_notes.moon_7.text=Lunar, First Quarter
+item.celestial_notes.moon_8.text=Lunar, Waxing Gibbous
 #
 # Resources
 #
@@ -229,6 +229,7 @@ item.seal.lumber.name=Control Seal: Lumberjack
 item.seal.breaker.name=Control Seal: Block Breaker
 item.seal.use.name=Control Seal: Use
 item.seal.provider.name=Control Seal: Provide
+item.seal.stock.name=Control Seal: Stock
 #
 # Blocks
 ###################################
@@ -342,6 +343,8 @@ tile.essentia_input.name=Filling Essentia Transfuser
 tile.essentia_output.name=Emptying Essentia Transfuser
 tile.activator_rail.name=Arcane Activator Rail
 tile.potion_sprayer.name=Potion Sprayer
+tile.vis_generator.name=Vis Generator
+tile.stabilizer.name=Stabilizer
 #
 # Doodads
 tile.matrix_speed.name=Infusion Speed Stone
@@ -412,6 +415,7 @@ tile.centrifuge.name=Essentia Centrifuge
 tile.mirror.name=Magic Mirror
 tile.mirror_essentia.name=Essentia Mirror
 tile.golem_builder.name=Golem Press
+tile.vis_battery.name=Vis Battery
 #
 # Misc
 tile.effect_shock.name=Static Field
@@ -608,6 +612,10 @@ item.runic.charge=Runic shield
 item.warping=Warping
 item.capacity.text=Capacity
 item.chargebonus.text=Charge
+stability.VERY_STABLE=Very Stable
+stability.STABLE=Stable
+stability.UNSTABLE=Unstable
+stability.VERY_UNSTABLE=Dangerously Unstable
 #
 # Golems 
 ########################
@@ -898,7 +906,7 @@ card.reject.name=Reject %1$s findings
 card.reject.text=You come to the realization that %1$s is not vital to your current research. You will not gain any more progress in %1$s or draw any cards related to it. You will not not lose your current progress.
 #
 card.experimentation.name=Experimentation
-card.experimentation.text=You perform some random experiments to see if something could be discovered. You gain 10 to 25 progress in a completely random category.
+card.experimentation.text=You perform some random experiments to see if something could be discovered. You gain 15 to 30 progress in a completely random category.
 #
 card.analyze.name=Analyze %1$s
 card.analyze.text=By thoroughly analyzing observations you have made about %1$s you might be able to put together a theory based on the collected data. Lose 1 %1$s observation to gain 25 to 50 %1$s progress and 5 %2$s progress.
@@ -1420,6 +1428,11 @@ research.INFUSION.stage.1=Arcane crafting and alchemy can go only so far. Someth
 research.INFUSION.stage.2=Unsurprisingly, infusion crafting is proving to be a lot more complex than I expected. Simply trying to infuse aspects into something does not work. I will need a relatively complex system to stabilize the entire process. I have drawn up plans for a Runic Matrix that will allow me to do this. 
 research.INFUSION.stage.3=To even get started with infusion crafting there are several things I will need: The Runic Matrix (which I now have), arcane pedestals and a ready supply of magic in the form of essentia.<BR>Once you have your Runic Matrix properly placed into a structure commonly known as an Infusion Altar, you can begin to craft. The altar is crafted with the use of Salis Mundus like most other mystical structures. Once the pillars have formed the runic matrix can be activated using a casting tool.<BR>The central pedestal located under the matrix is where the item you wish to infuse will go. You will also need several more pedestals placed around the altar where you can place the blocks and items you wish to infuse into the target object. Lastly you will need warded jars or similar essentia containers holding the requisite amount of vis.<BR>Once all this is gathered you can click on the Runic Matrix with a casting tool to start the crafting process.<BR>During the first stage of crafting essentia will be drained from nearby sources. Crafting will stall if there is insufficient essentia available - something that you do not want as will be explained on following pages.<BR>Once all the required essentia has been infused into the target object, the other objects will have their essential essence drained. Only when this is done will the crafting process complete.<LINE>Infusion crafting is not without risks. The entire process involves forcing vast energies into a single object. Unpredictable things tend to happen.<BR>Usually one of the fusion objects get knocked off a pedestal, or flux gets generated, but more catastrophic events are not unheard of.<BR>The longer crafting continues due to unresolved problems like lack of vis or dropped items, the greater the chance of something bad happening.<BR>These effects can be reduced by various means. Firstly you wish to keep the entire fusion structure as symmetrical as possible - take careful note of where you place pedestals and make sure they are balanced with other pedestals on the opposite side of the altar. When placing fusion items into them you may wish to keep them balanced as well. Lastly you can place occult paraphernalia around the altar in symmetrical formations (things like candles, skulls, etc.). These will have the effect of reducing instability.<IMG>thaumcraft:textures/research/research5.png:128:0:128:136:1</IMG>
 #
+research.INFUSIONSTABLE.title=Infusion Stabilization
+research.INFUSIONSTABLE.stage.1=Infusion has proven to be much more unstable than I expected. Placing occult paraphernalia does mitigate the effect somewhat, but much less than the texts suggested.<BR>I need to find more effective way of reducing instability. Strangely enough, I think mundane technology might have the answer.<BR>It is well known that mundane power sources like redstone interferes with thaumaturgy. Of course, throwing redstone into the mix of an already unstable infusion is not the answer, but maybe there is some way to harness the interference.
+research.INFUSIONSTABLE.stage.2=I have put together a device I am calling, appropriately enough, a Stabilizer. It accepts energy in the form of RF or FE which it uses to creat an interference pattern that serves to 'smooth' out the interaction between magical objects and the local aura. The effect is highly localized so the Stabilizer needs to be pointed at what you want to stabilize. It has a range of 8 blocks.<BR>The Stabilizer has obvious benefits when used on an infusion matrix, but I believe many more uses will reveal themselves. For instance I wonder effect it might have on natural aura instability like that caused by flux?
+got.instability=I should study infusion instability further.
+#
 research.INFUSIONBOOST.title=Infusion Boosting
 research.INFUSIONBOOST.stage.1=There should be a way to improve the function of the Infusion Altar. I should investigate this.
 research.INFUSIONBOOST.stage.2=I have found a way to improve infusion altars through the use of special blocks placed under one or more of the four altar pillars.<BR>The §5Infusion Speed Stone§0 will increase the speed at which the altar operates, but at a slight increase to costs.<BR>The §5Infusion Cost Stone§0 will decrease infusion costs, but at a slight reduction to operating speed.<BR>These stones must be placed directly under an altar pillar, but they need not be balanced for instability purposes.
@@ -1508,7 +1521,7 @@ research.INFERNALFURNACE.stage.2=I took a trip to the nether and was inspired by
 research.INFERNALFURNACE.bellows=Attaching an arcane bellows to an Infernal Furnace has shown some interesting results. The elemental infused air not only stokes the flames increasing its smelting speed, but causes them to burn much purer, resulting in a reduction of flux generated and increasing the chance of creating bonus nuggets and other materials when smelting.
 #
 research.MIRROR.title=Mirror Magic
-research.MIRROR.stage.1=My thaumonomicon provides some tantalizing hints that mirrors have many mystical uses. One such use is the ability to link physical locations via mirrors and the use of sympathetic magic.<BR>The books does nothing more than provide hints however - as usual I will have to figure out things myself.
+research.MIRROR.stage.1=My thaumonomicon provides some tantalizing hints that mirrors have many mystical uses. One such use is the ability to link physical locations via mirrors and the use of sympathetic magic.<BR>The book does nothing more than provide hints however - as usual I will have to figure out things myself.
 research.MIRROR.stage.2=I am now able to enchant a pair of magical mirrors that act as doorways to the void between the worlds. Anything shoved (or piped) through one mirror will pass through this strange realm and emerge from the other mirror - even across dimensional boundaries.<BR>Unfortunately this realm is extremely hostile to mortal creatures like myself so using these mirrors to transport living creatures is not yet possible.<BR>To link a pair of these magical mirrors you simply need to place one of them in a desired location. You then right-click with a second mirror on the one you placed, and the pair will become linked. You may then place the second wherever you wish and items thrown into one will be ejected out the other.<BR>Mirrors can only be linked in pairs, so while both are placed in the world and able to transmit items you cannot link them to another mirror. When you pick up a mirror it will remember the last partner it was linked with, allowing you to easily move it without having to relink it. While one of the paired mirrors is picked up, you may easily relink either of them.<BR>Transporting items through mirrors places stress on the magical aura. Every now and again this causes Flux to be generated. The more items you transport, the more flux is generated.
 research.f_TELEPORT.text=Study teleportation
 #
@@ -1523,7 +1536,7 @@ research.MIRRORESSENTIA.stage.2=Essentia mirrors, like their name implies, can t
 research.ARCANELAMP.title=Arcane Lamp
 research.ARCANELAMP.stage.1=My laboratory has seemed quite gloomy of late. I should find a way to light it more effectively.
 research.ARCANELAMP.stage.2=This mystical lamp can be attached to walls, floors or ceilings and will provide strong and steady light.<BR>Additional sources of light may also appear up to 16 blocks away wherever light levels fall below accepted 'safe' levels. Remember: Only YOU can prevent zombie outbreaks.<BR>These secondary sources of light will disappear soon after the lamp has been removed.<BR>The lamp can be turned off by applying a redstone signal.
-research.ARCANELAMP.bore=§nArcane Bore§r<BR>When attached to the base of an arcane bore, the arcane lamp gains an additional ability: It will light up the tunnel that the bore digs.
+# research.ARCANELAMP.bore=§nArcane Bore§r<BR>When attached to the base of an arcane bore, the arcane lamp gains an additional ability: It will light up the tunnel that the bore digs.
 #
 research.LAMPGROWTH.title=Lamp of Growth
 research.LAMPGROWTH.stage.1=My studies of Lux has shown me that light can be used as a medium for other helpful magics.<BR>Light already has a positive effect on plants so if I add some magic to the equation it should only improve things, right?
@@ -1546,8 +1559,16 @@ research.ARCANEBORE.stage.1=I need to work out an automated way of digging out l
 research.ARCANEBORE.stage.2=I have designed a mining device I am calling the Arcane Bore. Once placed and given a redstone signal it will start digging out an area in front of it. The device requires a pickaxe to be placed inside it. Normally inanimate objects cannot use foci, but with a liberal application of sympathetic magic the focus could be 'tricked' into working.<BR>This had a unforeseen benefit as well - the pickaxe is actually being used to dig on metaphysical level and any attributes and enchantments it has are actually applied to the digging process. The pickaxe will wear out however, but much slower than normal - I estimate an average pickaxe will last about 50 times longer.<BR>The size of the area dug is also determined by the material of the pickaxe. The more enchantable the material is, the more efficient the sympathetic magic is, which in turn increases the area that can be dug.<BR>Any blocks dug are ejected at the position of the bore. If there is an inventory adjacent to the bore the items will be placed in there instead.<PAGE>The bore also requires vis to function consuming 1 vis for every 4 blocks dug.<LINE>The bore can be turned to face any direction except down. To change the direction it faces simply left-click on it to make it face towards you.<BR>Like other arcane turrets the bore will also respond to arcane activator rails - passing over an inactive rail will swith it on while an active one will disable it.
 #
 research.GRAPPLEGUN.title=Arcane Grappler
-research.GRAPPLEGUN.stage.1=In my endevours thusfar I have learned an important fact: Mobility is key.<BR>I should create a tool that will allow me to traverse diffucult terrain with ease.<BR>I believe magnets are the answer. Rare earths can be used to create magnets, but they are limited in what they can stick to. If I can enhance their innate magnetic properties with some form of sympathetic magic it should allow them to stick to anything.
+research.GRAPPLEGUN.stage.1=In my endeavours thus far I have learned an important fact: Mobility is key.<BR>I should create a tool that will allow me to traverse difficult terrain with ease.<BR>I believe magnets are the answer. Rare earths can be used to create magnets, but they are limited in what they can stick to. If I can enhance their innate magnetic properties with some form of sympathetic magic, it should allow them to stick to anything.
 research.GRAPPLEGUN.stage.2=By manipulating magnets with vis and a few key enchantments they are able to stick to virtually anything. I am calling this phenomenon Arcanomagnetism. I am sure I will find many uses for this, but for now I have used this knowledge to create an Arcane Grappler.<BR>This launcher fires a brass globe enhanced with arcanomagnets that will attach to any block it comes into contact with. The globe, in turn, is attached to the launcher with a spool of rope that will reel the user towards the globe allowing him access to previously inaccessible locations.<BR>The user can detach the globe at any point by crouching.<BR>I should take care using the grappler as it does not protect me from falling and it is possible to gain impressive speeds if pulled far enough.<LINE>The grappler requires vis to function and will need to be recharged.
+#
+research.ARCANEPATTERNCRAFTER.title=Arcane Pattern Crafter
+research.ARCANEPATTERNCRAFTER.stage.1=Certain objects are very simple to craft - simply place the same type of item in a pattern and you get what you want. For example combining 2 wood planks to make a stick, or a single ingot making 9 nuggets. This process is so simple that I am sure there is a way to automate it. I have some theories I need to try.
+research.ARCANEPATTERNCRAFTER.stage.2=I have designed a device I am calling the Arcane Pattern Crafter. The Arcane Pattern Crafter needs an inventory above and below it. It will search the inventory above it for components and try to combine whatever it finds in the pattern you have selected. If this results in a valid crafting operation it will place the result in the container below it.<BR>You can change the pattern by clicking on the brass dial on the front of the device.<BR>A redstone signal will disable the device.<LINE>Each crafting operation will drain 1 vis from the aura.
+#
+research.VISGENERATOR.title=Vis Powered Generator
+research.VISGENERATOR.stage.1=It is a well known fact that vis does not play well with mundane power sources like redstone, redstone flux or forge energy.<BR>The question is: Can you use vis to generate power? The obvious answer is no, but if I settled for the obvious I do not deserve to call myself a thaumaturge.
+research.VISGENERATOR.stage.2=One more impossible thing to mark off my list and it is not even lunchtime yet.<BR>I have managed to generate mundane power using vis, though I had to cheat a bit to do it. It is a simple matter to turn kinetic energy into power and creating kinetic energy with vis is thaumaturgy 101. Using vis to turn an axle connected to a dynamo did not work as some magical energy would transmit through the axle and cause all kinds of problems.<BR>In the end I designed a special linkage using magnets and some clever engineering. This linkage would transmit the kinetic energy while not allowing the vis and mundage energy to interfere with each other.<BR>Unfortunately the nature of the linkage places some limits on the power that can be generated as some kinetic energy is lost. The generator can only generate 10 FE/RF per tick. It draws vis directly from the aura to do this and a single point produces enough energy for 5 seconds of operation (1000 FE/RF).<BR>A redstone signal will disable the generator.
 #
 ##########################################
 # AUROMANCY
@@ -1590,7 +1611,7 @@ got.projectile=You learn some more about projectiles.
 #
 research.FOCUSBOLT.title=Focus Medium: Bolt
 research.FOCUSBOLT.stage.1=Hurling magical projectiles is a chore sometimes. They are hard to aim and take time to travel to the intended target.<BR>Maybe there is a way I can extend the functionality of the the Touch medium.
-research.FOCUSBOLT.stage.2=Who needs projectiles when they can hurl bolts of magical energy. They effect their target instantly and aiming them is a lot easier.<BR>Unfortunately their range is limited. Trying to keep the vis stream coherent beyond 16 blocks has proven difficult. For longer range engagements projectiles are still superior.
+research.FOCUSBOLT.stage.2=Who needs projectiles when they can hurl bolts of magical energy? They affect their target instantly and aiming them is a lot easier.<BR>Unfortunately their range is limited. Trying to keep the vis stream coherent beyond 16 blocks has proven difficult. For longer range engagements, projectiles are still superior.
 #
 research.FOCUSFLUX.title=Focus Effect: Flux
 research.FOCUSFLUX.stage.1=Using the elements as a weapon has its benefits, but raw magic can be just as destructive - most creatures are harmed if exposed to raw, unfiltered vis. Even armor cannot protect you from this energy. 
@@ -1628,7 +1649,7 @@ research.FOCUSMINE.stage.2=I can now create a quasi-physical construct of vis th
 #
 research.FOCUSCLOUD.title=Focus Medium: Cloud
 research.FOCUSCLOUD.stage.1=Seeing the lingering effects the end dragons breath causes has given me some ideas. I might be able to duplicate the effects as a focus medium.
-research.FOCUSCLOUD.stage.2=Much like lingering potions can be used to create a static effect in the world, the Cloud medium can be used to create a field of energy that periodically applies focus effects to entities and blocks caught within.<BR>The strength of effects linked to this medium will be reduced slightly.
+research.FOCUSCLOUD.stage.2=Much like lingering potions can be used to create a static effect in the world, the Cloud medium can be used to create a field of energy that periodically applies focus effects to entities and blocks caught within.<BR>The strength of effects linked to this medium will be reduced significantly.
 #
 research.RECHARGEPEDESTAL.title=Recharge Pedestal
 research.RECHARGEPEDESTAL.stage.1=I expect that I will soon begin crafting objects that require vis to function, but that cannot easily draw the vis from the aura themselves. I will need a way to recharge them.
@@ -1646,7 +1667,10 @@ research.FOCUSPOUCH.title=Focus Pouch
 research.FOCUSPOUCH.stage.1=Once I have gathered a sizable collection of foci it will be quite annoying to carry them all with me. I should find a convenient way to carry them all.
 research.FOCUSPOUCH.stage.2=I have invented a special pouch I can carry with me to store my foci.<BR>Whenever I change the focus in my caster, it will check this pouch first and any foci that get removed will be placed inside it first. I can also right-click the pouch to place or remove foci by hand.<BR>It can also be carried in my belt bauble slot.
 #
-
+research.VISBATTERY.title=Vis Battery
+research.VISBATTERY.stage.1=Natural vis crystals have an interesting ability to act as vis 'batteries'. They absorb vis when the aura is high and discharge it when it is low, but this process is quite slow and unreliable.<BR>By using what I have learned about growing vis crystals I should be able to create a vis battery of my own that is a lot more reliable.
+research.VISBATTERY.stage.2=I have succeeded in creating a vis battery.<BR>If the local aura is above 95% of its normal capacity the battery will absorb vis and if the aura drops below 75% it will discharge.<BR>There are a few drawbacks however. While it is quicker and a lot more reliable than natural vis crystals, the battery still takes some time to react to changes in the local aura. The second drawback is it's capacity. It can only store 10 points of vis. My attemps to increase this has proven disasterous. I guess this just means that I will need to use them in larger numbers.<BR>Applying a redstone signal to the battery will not only prevent it from functioning, but it will rapidly discharge any vis it is holding back into the aura. 
+#
 ##########################################
 # GOLEMANCY
 ##########################################
@@ -1696,7 +1720,7 @@ research.GOLEMDIRECT.stage.2=I can now right click on a golem with the §5Golema
 #
 research.GOLEMLOGISTICS.title=Golem Logistics
 research.GOLEMLOGISTICS.stage.1=Having created the Provider Seal I now have an interesting opportunity. It should be possible for me to directly request items from nearby golems.<BR>Some tweaking of their pathfinding will be required, but it should not be too hard to do.
-research.GOLEMLOGISTICS.stage.2=I can now sneak + right click with the §5Golemancer's Bell§0 to bring up an inventory of all items accessible by provider seals within 64 blocks. I can then request items from this list and a golem will deliver it.<BR>If I clicked on a block the item will be delivered to the block, or placed inside if it is an inventory. The side you clicked on will be taken into account.<BR>If I clicked on empty air the item will be delivered directly to me.<PAGE>Golems are still limited by their range so I must take care where I try and deliver items to.
+research.GOLEMLOGISTICS.stage.2=I can now sneak + right click with the §5Golemancer's Bell§0 to bring up an inventory of all items accessible by provider seals within 32 blocks. I can then request items from this list and a golem will deliver it.<BR>If I clicked on a block the item will be delivered to the block, or placed inside if it is an inventory. The side you clicked on will be taken into account.<BR>If I clicked on empty air the item will be delivered directly to me.<PAGE>Golems are still limited by their range so I must take care where I try and deliver items to.
 #
 research.MINDBIOTHAUMIC.title=Biothaumic Minds
 research.MINDBIOTHAUMIC.stage.1=As predicted the clockwork minds I have created offers very little in the way of abstract reasoning and autonomy. Attempting to create more complex clockworks has met with very little success, so I turning to something I already know will work - living brains.<BR>By studying them I might be able to unlock the secret behind true intelligence and autonomy. 
@@ -1744,6 +1768,10 @@ research.SEALUSE.title=Control Seal: Use
 research.SEALUSE.stage.1=I should be able to design a seal that allows golems to interact with the world in more complex ways than simply carrying items around or attacking things. There are many objects that require manual operation and maybe I can have golems do that for me.
 research.SEALUSE.stage.2=This seal allows a golem to act like a player and left or right click on the block that you have marked.<BR>It can also click with any items it happens to be holding or specific items you have filtered.<BR>The seal will remain even if the block you placed it on is removed, allowing the seal to target empty air if you wish.<BR>If a whitelist item is specified you can also request it to be §5provisioned§0.
 #
+research.SEALSTOCK.title=Control Seal: Stock
+research.SEALSTOCK.stage.1=I need a seal that will allow me to keep a minimum number of items stocked in a container at all times.
+research.SEALSTOCK.stage.2=This seal is similar to the store seal, except it keeps a certain number of items stocked inside its container at all times. The seal only insures that a minimum number of items are kept in stock - it will not prevent overstocking should it occur by other means.<BR>This seal requires provider seals to know where to get the items.
+#
 research.BASICTURRET.title=Automated Crossbow
 research.BASICTURRET.stage.1=A few attacks from wandering monsters has recently turned my mind towards home defense. I should design some sort of automated device that will defend my home from unwanted intruders. 
 research.BASICTURRET.stage.2=I have found a way to give a crossbow a mind of its own turning it into a simple automated turret.<BR>When placed in the world it will automatically fire at any hostile monsters it detects within range. Unfortunately its limited mind does not allow me to fine tune its targets.<BR>It has a very limited internal inventory, but if I place it over an upward facing dispenser it will automatically reload itself from that inventory.<BR>Right clicking on it while sneaking will pick it up.<PAGE>The turrent can ride in a minecart and will reload from a dispenser placed underneath the track.<BR>Passing over an arcane activator rail will change the behaviour of the turrent. If the rail is active it will disable the turret. Passing over an inactive rail will enable it again.
@@ -1755,7 +1783,7 @@ research.ADVANCEDTURRET.stage.2=The Advanced Automated Crossbow works much like 
 #
 research.GOLEMVISION.title=Golem Biothaumic Eyes
 research.GOLEMVISION.stage.1=I should find a way to improve the visual acuity of my golems.
-research.GOLEMVISION.stage.2=By merging flesh and arcane constructs you have crafted a set of highly acute eyes.<BR>Any golem equipped with such a set of peepers will be able to operate at twice the normal range (32 blocks).<BR>§9This research unlocks additional golem parts§0.
+research.GOLEMVISION.stage.2=By merging flesh and arcane constructs you have crafted a set of highly acute eyes.<BR>Any golem equipped with such a set of peepers will be able to operate at 150% the normal range (48 blocks).<BR>§9This research unlocks additional golem parts§0.
 #
 research.GOLEMCLIMBER.title=Golem Mobility: Climbing
 research.GOLEMCLIMBER.stage.1=I should find a way to improve the mobility acuity of my golems. Maybe I could give them the ability to climb walls?
@@ -1775,10 +1803,7 @@ research.GOLEMCOMBATADV.title=Improved Golem Combat
 research.GOLEMCOMBATADV.stage.1=I should design improved weapons and armor for my golems.
 research.GOLEMCOMBATADV.stage.2=You can now craft specialized golem weaponry and armor to make them much more effective in combat.<BR>§9This research unlocks additional golem parts§0.
 #
-research.ARCANEPATTERNCRAFTER.title=Arcane Pattern Crafter
-research.ARCANEPATTERNCRAFTER.stage.1=Certain objects are very simple to craft - simply place the same type of item in a pattern and you get what you want. For example combining 2 wood planks to make a stick, or a single ingot making 9 nuggets. This process is so simple that I am sure there is a way to automate it. I have some theories I need to try.
-research.ARCANEPATTERNCRAFTER.stage.2=I have designed a device I am calling the Arcane Pattern Crafter. The Arcane Pattern Crafter needs an inventory above and below it. It will search the inventory above it for components and try to combine whatever it finds in the pattern you have selected. If this results in a valid crafting operation it will place the result in the container below it.<BR>You can change the pattern by clicking on the brass dial on the front of the device.<BR>A redstone signal will disable the device.<LINE>Each crafting operation will drain 1 vis from the aura.
-#
+
 ##########################################
 # ELDRITCH
 ##########################################
