@@ -1,7 +1,7 @@
 # TINKER TOOLS
 
 item.katana.name=武士刀
-item.katana.desc=武士刀是一种特殊的武器，可以对着目标释放技能（s）。\n补充飞镖
+item.katana.desc=武士刀是一种特殊的武器，可以对着目标释放技能。\n补充飞镖
 item.laser_gun.name=激光枪
 item.laser_gun.desc=激光枪是一种精准的远程攻击武器，使用时会消耗耐久及能源。此外它可以通过更改模式来实现对方块的熔炼。\n攻击力及攻击范围取决于传导器而非枪管。
 
@@ -12,14 +12,14 @@ item.battery_cell.name=蓄电池
 # STATS
 
 stat.laser_medium.name=激光传导器
-stat.laser_medium.power.name=激光攻击力：%s
+stat.laser_medium.power.name=激光伤害：%s
 stat.laser_medium.power.desc=决定激光伤害
 stat.laser_medium.range.name=范围：%s
 stat.laser_medium.range.desc=决定激光延伸距离
 
 stat.battery_cell.name=蓄电池
-stat.battery_cell.energy.name=能源容量：§6%s RF
-stat.battery_cell.energy.desc=决定储存能源
+stat.battery_cell.energy.name=能量存储：§6%s RF
+stat.battery_cell.energy.desc=决定存储能源
 
 # TINKER MATERIALS
 
@@ -55,6 +55,7 @@ fluid.plustic.refinedglowstone.name=熔融强化荧石
 fluid.plustic.osgloglas.name=熔融Osgloglas
 fluid.plustic.fiery_blood.name=炽热的血液
 fluid.plustic.fiery.name=熔融炽热金属
+fluid.plustic.thaumium.name=熔融神秘
 
 material.sapphire.name=蓝宝石
 material.ruby.name=红宝石
@@ -125,80 +126,81 @@ material.flamestring_plustic.name=火弦
 material.fiery.name=炽热金属
 material.litherite.name=莱泽尔
 material.erodium.name=艾洛蒂
+material.thaumium.name=神秘
 
 modifier.bloodymary.name=血腥玛丽
-modifier.bloodymary.desc=§o由传说中的英国女王赋予你...§r\n根据目标已失去的生命值造成额外伤害。同时，每次攻击有几率掉落凝血。
+modifier.bloodymary.desc=§o由传说中的英国女王赋予你...§r\n根据目标已失去的生命值造成额外伤害。同时，每次攻击有概率掉落凝血。
 modifier.naturesblessing.name=自然祝福
-modifier.naturesblessing.desc=§o奇妙...§r\n每次杀死怪物或破坏方块时，有几率掉落面包。有时在杀死怪物后会对玩家进行治疗。
+modifier.naturesblessing.desc=§o奇妙...§r\n每次杀死怪物或破坏方块时，有概率掉落面包。或在杀死怪物后会对玩家进行治疗。
 modifier.natureswrath.name=自然之怒
-modifier.natureswrath.desc=§o大自然的愤怒在燃烧...§r\n攻击怪物后，有几率点燃目标，同时治疗玩家。
+modifier.natureswrath.desc=§o大自然的愤怒在燃烧...§r\n每次攻击怪物后，有概率使其燃烧，并治疗玩家。
 modifier.naturespower.name=自然之力
-modifier.naturespower.desc=§o感受力量...§r\n攻击怪物后：20%概率点燃目标，20%概率给予玩家速度效果，20%概率给予玩家力量效果。
+modifier.naturespower.desc=§o感受力量...§r\n攻击怪物后：20%概率燃烧目标，20%概率赋予玩家速度效果，20%概率赋予玩家力量效果。
 modifier.apocalypse.name=启示录
 modifier.apocalypse.desc=§o时间终结...§r\n你的受害者将会变得奄奄一息，并且会受到越来越强的凋零效果的折磨。
 modifier.mana.name=Mana
-modifier.mana.desc=§o可充电的...用鲜花§r\nMana能代替装备的耐久，并且随着时间的推移恢复工具。
-modifier.terrafirma.name=陆地
-modifier.terrafirma.desc=§o固体地球§r\n当这个工具拿在你的手中时，你会随着时间而愈合。
+modifier.mana.desc=§o可充电的...用鲜花§r\nMana能代替装备的耐久，并随着时间的推移修补工具。
+modifier.terrafirma.name=坚实基础
+modifier.terrafirma.desc=§o固体地球§r\n手持该工具时，你将随着时间推移而愈合。
 modifier.elemental.name=本源
 modifier.elemental.desc=§o元素...§r\n当受到重力影响的方块被破坏时，挖掘其上方与下方同类所有方块。同时，攻击成功时有几率获得各种增益。
 modifier.devilsstrength.name=恶魔之力
 modifier.devilsstrength.desc=§o堪比撒旦...§r\n对非主世界的怪物造成额外的伤害。
 modifier.devilsstrength.extra=对非主世界怪物：+%s
 modifier.anticorrosion.name=抗腐蚀
-modifier.anticorrosion.desc=§o以防你弄洒了化学药剂§r\n（拿在手中的时候）每一刻（tick）有微小几率治愈持有者的中毒效果。
+modifier.anticorrosion.desc=§o以防你弄洒了化学药剂§r\n手持该工具时，每一刻（tick）都有微小概率治愈持有者的中毒效果。
 modifier.light.name=轻金属
 modifier.light.desc=§o低重量§r\n增加挖掘及攻击速度。
 modifier.explosive.name=易爆
 modifier.explosive.desc=§oKa-boom!§r\n每次击中都会产生爆炸。
 modifier.global.name=环球旅行者
-modifier.global.desc=§o全世界...往返§r\n潜行右击一个方块，如果该方块是一个容器，则破坏的方块与杀死怪物的掉落物都会被传送到其中。
+modifier.global.desc=§o全世界...折返§r\n潜行右击一个方块，如果该方块是一个容器，则破坏的方块与杀死怪物的掉落物都会被传送到其中。
 modifier.thundering.name=雷鸣
 modifier.thundering.desc=§o崛起，托尔！§r\n召唤雷电。
 modifier.divineshield.name=圣盾
-modifier.divineshield.desc=§o为守卫者所有，为守卫者所创，为守卫者所用§r\n当手持这个工具时，以耐久值为代价，你获得火焰保护与伤害减免。
+modifier.divineshield.desc=§o为守卫者所有，为守卫者所创，为守卫者所用§r\n手持该工具时，你将获得防火和伤害减免效果，但耐久也会随之消耗。
 modifier.portly.name=憨厚的绅士
-modifier.portly.desc=§o在朝鲜海岸测试核弹，噢耶！§r\n潜行 右击一个实体来捕获它(基于实体的生命值消耗耐久)。按"释放实体"键（默认为"0"）释放它。
+modifier.portly.desc=§o在朝鲜海岸测试核弹，噢耶！§r\n潜行右击一个实体来捕获它（基于实体的生命值消耗耐久）。按"释放实体"键（默认为"0"）释放它。
 modifier.nickoftime.name=千钧一发
 modifier.nickoftime.desc=§o唷！§r\n按"设置传送门"键（默认为"N"）在你指向的方块上设置一个虚拟的传送门。当你即将死亡时，如果你有 %d 颗末影珍珠，且传送门上方有足够的空间，则会消耗末影珍珠将你传送到传送门处，使你获救。（工具必须拿在手中）。
 modifier.blindbandit.name=盲匪
-modifier.blindbandit.desc=§o呀...有人。§r\n当你攻击或被攻击时，有时会召唤出一个只持续一定时间的“盲匪”。她会攻击敌对生物以及敢攻击她的人（除了你），造成穿透伤害。
+modifier.blindbandit.desc=§o呀...有人。§r\n当你攻击或被攻击时，有时会召唤出一个只持续一定时间的“盲匪”。它会攻击敌对生物以及敢攻击它的人（除了你），造成穿透伤害。
 modifier.brownmagic.name=布朗魔术
 modifier.brownmagic.desc=§o你真奇怪。§r\n按"设置传送门"键（默认为"N"）在你指向的方块上设置一个虚拟的传送门。按"Y"（默认时）传送到该位置（如果有足够空间）。
 modifier.rudeawakening.name=惊醒
 modifier.rudeawakening.desc=§o九头蛇跪倒在我面前...§r\n穿透目标护甲（仅怪物）。
-modifier.mirabile.name=Mirabile Visu
-modifier.mirabile.desc=§o看上去真奇妙§r\n偶尔，你周围的石头中会出现金矿或钻石矿（以工具耐久度为代价）。
+modifier.mirabile.name=光怪陆离
+modifier.mirabile.desc=§o看上去真奇妙§r\n偶尔，你周围的石头中会出现金矿或钻石矿（以消耗工具耐久作为代价）。
 modifier.botanical.name=植物学
 modifier.botanical.desc=§o我早餐吃僵尸§r\n增加强化槽；效果显著叠加。
 modifier.heavy_metal.name=重金属
-modifier.heavy_metal.desc=§o嘿，嚯！§r\n击中目标使其击退+缓慢。
-modifier.unnamed.name=那个连名也不能提的人
+modifier.heavy_metal.desc=§o拒绝！§r\n击退目标并赋予其缓慢效果。
+modifier.unnamed.name=佚名
 modifier.unnamed.desc=§o神秘人...§r\n对目标附近的同类型实体造成额外伤害。
 modifier.darktraveler.name=暗黑行者
 modifier.darktraveler.desc=§o混沌之王万岁！§r\n周围的怪物会随机受到伤害。
 modifier.psicological.name=Psi生态学
 modifier.psicological.desc=§o...反转§r\nPsi可以修复工具。
 modifier.illuminati.name=光照派
-modifier.illuminati.desc=§o确认!§r\n当你手持这个工具时，附近的实体（没有拿着带有这个效果的工具的话）会发光，且你变得隐形。
-modifier.hailhydra.name=九头蛇万岁
+modifier.illuminati.desc=§o确认！§r\n手持该属性工具时，附近的实体（仅限未手持该属性工具实体）会发光，且你将变得隐形。
+modifier.hailhydra.name=赤诚
 modifier.hailhydra.desc=§o头目§r\n产生随机爆炸折磨你的敌人。此外，当你受到攻击时，有概率获得伤害吸收效果。
 modifier.barrett.name=银色子弹
-modifier.barrett.desc=§o砰！§r\n随着生命值的减少，有越来越多的概率使目标受到致命攻击。
+modifier.barrett.desc=§o砰！§r\n你的生命值越低，对目标造成致命伤害的概率越高。
 modifier.morganlefay.name=摩根勒菲
 modifier.morganlefay.desc=§o兰斯洛特...§r\n造成额外的魔法伤害（从0.0到5.0，高斯分布，绝对伤害）。
 modifier.trash.name=垃圾！
 modifier.trash.desc=§o垃圾！§r\n当工具被选中时，随机的东西会慢慢产生，但是工具会以这种方式慢慢的被破坏。
 modifier.sassy.name=无礼
-modifier.sassy.desc=§o无礼...§r\n对玩家和boss暴击。
+modifier.sassy.desc=§o无理取闹...§r\n对玩家和boss暴击。
 modifier.ignoble.name=卑鄙
 modifier.ignoble.desc=§o降到最低底线§r\n当受到伤害时，便会积攒卑鄙值。当这个效果被启用时，你可以潜行进行攻击，这些情绪便会宣泄出来。
-modifier.dprk.name=朝鲜民主主义人民共和国
-modifier.dprk.desc=§o当你的导弹刚发射就爆炸的时候§r\n攻击或格挡的时候会产生最高领导人，它会像爬行者一样在对方的位置爆炸。
+modifier.dprk.name=意志坚定
+modifier.dprk.desc=§o灾难将至大洋彼岸§r\n每次攻击或者格挡时会生成NO.1，它会像爬行者那样爆炸以进攻目标。
 modifier.getlucky.name=豪运
-modifier.getlucky.desc=§o就像传说中的凤凰一样...§r\n按"设置传送门"键（默认为"N"）在你指向的方块上设置一个虚拟的传送门。当你即将死亡时，如果你有 %d 个凤凰宝石，且传送门上方有足够的空间，则会消耗宝石将你传送到传送门处，使你获救。（工具必须拿在手中）。
+modifier.getlucky.desc=§o如凤凰一样的传说...§r\n按"设置传送门"键（默认为"N"）在你指向的方块上设置一个虚拟的传送门。当你即将死亡时，如果你有 %d 个凤凰宝石，且传送门上方有足够的空间，则会消耗宝石将你传送到传送门处，使你获救。（工具必须拿在手中）。
 modifier.vindictive.name=报复
-modifier.vindictive.desc=§o你不可原谅！§r\n对玩家造成额外伤害，你可以通过攻击来回复生命。
+modifier.vindictive.desc=§o你不可原谅！§r\n对玩家造成额外伤害，你可以通过攻击其来回复生命。
 modifier.starfishy.name=海星
 modifier.starfishy.desc=§o2+2=5§r\n按"设置传送门"键（默认为"N"）在你指向的方块上设置一个虚拟的传送门。当你即将死亡时，如果你有 %d 个铁晶，且传送门上方有足够的空间，则会消耗铁晶将你传送到传送门处，使你获救。（工具必须拿在手中）。
 modifier.spades.name=黑桃
@@ -206,13 +208,15 @@ modifier.spades.desc=§o王牌：让匠魂再次强大！§r\n你的生命值越
 modifier.hearts.name=红心
 modifier.hearts.desc=§o嘿，那家伙的模组上面的加号是什么？§r\n你的生命值越高，造成的伤害越高。
 modifier.ghastly.name=恐怖
-modifier.ghastly.desc=§o哦，吓人！§r\n如果持有者在潜行的时候被攻击，则攻击者会被施加缓慢效果。
+modifier.ghastly.desc=§o哦，吓人！§r\n如果持有者在潜行的时受到攻击，则攻击者会被施加缓慢效果。
 modifier.slashing.name=斩击
 modifier.slashing.desc=§o致命一击！§r\n暴击增加 20% 伤害。
 modifier.naphtha.name=石脑油
 modifier.naphtha.desc=§o太阳的后裔§r\n箭矢以及弩箭击中目标将给予目标着火效果。
 modifier.mystical_fire.name=魔焰
 modifier.mystical_fire.desc=§o这是个秘密...§r\n持有该效果工具攻击目标会使其着火并赋予一定的魔法伤害。
+modifier.thaumic.name=神秘
+modifier.thaumic.desc=§o你回来了！§r\n具有该属性的工具将获得一个额外的强化槽；若至少有3个部件具备该属性或该工具完全由该材料制成则可以获得两个额外的强化槽。
 
 # MISCELLANEOUS
 
@@ -244,24 +248,24 @@ msg.plustic.globalmodifier.set=连接的容器位于 [x=%d, y=%d, z=%d] 在维�
 msg.plustic.portlymodifier.set=捕获实体 %s
 msg.plustic.portlymodifier.unset=释放实体 %s
 msg.plustic.portal.set=设置传送点 [x=%d, y=%d, z=%d] 在维度 %d 中。
-msg.plustic.nickmodifier.use=在千钧一发之际!
+msg.plustic.nickmodifier.use=在千钧一发之际！
 msg.plustic.getlucky.use=我彻夜不眠就为了成为一个辛运儿！
 msg.plustic.brownmagic.use=你在开玩笑。
-msg.plustic.hailhydra.use=如果一个§m九头蛇§r §n徽章§r被破坏,另外两个将取代它的位置!
-msg.plustic.tool_mode=工具模式: %s
+msg.plustic.hailhydra.use=如果一个§m九头蛇§r §n徽章§r被破坏，另外两个将取代它的位置！
+msg.plustic.tool_mode=工具模式：%s
 msg.plustic.starfishy.use=似乎海星守候着你。
 
-# TOOLTIPS
+# TOOL MODES
 
 mode.laser_gun.attack=§9攻击
 mode.laser_gun.tool=§4熔炼
 
 # TOOLTIPS
 
-tooltip.plustic.globalmodifier.info=连接的容器位于[x=%d, y=%d, z=%d] 在维度%d
+tooltip.plustic.globalmodifier.info=连接的容器位于 [x=%d, y=%d, z=%d] 在维度 %d
 tooltip.plustic.portlymodifier.info=实体：%s
 tooltip.plustic.ignoblemodifier.info=卑鄙值: §1%f
-tooltip.plustic.portal.info=传送点：[x=%d, y=%d, z=%d]; 维度 %d
+tooltip.plustic.portal.info=传送点：[x=%d, y=%d, z=%d]；维度 %d
 tooltip.plustic.toggle.info=点击切换
 tooltip.plustic.toggle.state.true=%s 当前 §a启用
 tooltip.plustic.toggle.state.false=%s 当前 §c禁用
@@ -274,17 +278,17 @@ meter.plustic.katana=连击等级：%d
 
 key.categories.plustic=匠魂扩充
 key.plustic_release_entity.desc=释放实体
-key.plustic_toggle_gui.desc=切换界面
+key.plustic_toggle_gui.desc=切换GUI
 key.plustic_set_portal.desc=设置传送门
 key.plustic_brown_magic.desc=激活布朗魔术
-key.plustic_toggle_tool.desc=更换工具模式
+key.plustic_toggle_tool.desc=切换工具模式
 
 # ENTITIES
 
 entity.plustic.BlindBandit.name=盲匪
 entity.BlindBandit.name=盲匪
-entity.plustic.SupremeLeader.name=最高领导人
-entity.SupremeLeader.name=最高领导人
+entity.plustic.SupremeLeader.name=NO.1
+entity.SupremeLeader.name=NO.1
 
 # GUI
 
