@@ -178,6 +178,10 @@ tile.nuclearcraft.centrifuge_idle.name=Centrifuge
 tile.nuclearcraft.centrifuge_idle.desc=Separates the isotopes of fluid materials.
 tile.nuclearcraft.centrifuge_active.name=Centrifuge
 
+tile.nuclearcraft.rock_crusher_idle.name=Rock Crusher
+tile.nuclearcraft.rock_crusher_idle.desc=Smashes up rock to produce mineral dusts.
+tile.nuclearcraft.rock_crusher_active.name=Rock Crusher
+
 tile.nuclearcraft.machine_interface.name=Machine Interface
 tile.nuclearcraft.machine_interface.desc=Automation can access the machine directly adjacent to this block. Make sure that there is only one adjacent machine at maximum.
 
@@ -197,7 +201,6 @@ tile.nuclearcraft.fission_controller_active.name=Fission Controller
 
 tile.nuclearcraft.fission_controller_new_idle.name=Fission Controller
 tile.nuclearcraft.fission_controller_new_idle.desc=Build a multiblock reactor using reactor casing, reactor cells, coolers and moderator blocks! Place the controller along an edge, at a corner or within one of the faces of the structure.
-tile.nuclearcraft.fission_controller_new_idle.fixd=This is a new Controller and will use the new reactor rules.
 tile.nuclearcraft.fission_controller_new_active.name=Fission Controller
 
 tile.nuclearcraft.fission_port.name=Fission Reactor Port
@@ -224,13 +227,15 @@ tile.nuclearcraft.fusion_core.desc=This is the central part of a multiblock fusi
 tile.nuclearcraft.fusion_dummy_side.name=Fusion Core
 tile.nuclearcraft.fusion_dummy_top.name=Fusion Core
 
-tile.nuclearcraft.salt_fission_controller.name=Molten Salt Fission Controller (WIP)
-tile.nuclearcraft.salt_fission_wall.name=Molten Salt Reactor Wall (WIP)
-tile.nuclearcraft.salt_fission_glass.name=Transparent Molten Salt Reactor Wall (WIP)
-tile.nuclearcraft.salt_fission_frame.name=Molten Salt Reactor Frame (WIP)
-tile.nuclearcraft.salt_fission_vent.name=Molten Salt Reactor Vent (WIP)
-tile.nuclearcraft.salt_fission_vessel.name=Molten Salt Fission Vessel (WIP)
-tile.nuclearcraft.salt_fission_heater.name=Molten Salt Coolant Heater (WIP)
+tile.nuclearcraft.salt_fission_controller.name=Molten Salt Fission Controller
+tile.nuclearcraft.salt_fission_wall.name=Molten Salt Reactor Wall
+tile.nuclearcraft.salt_fission_glass.name=Transparent Molten Salt Reactor Wall
+tile.nuclearcraft.salt_fission_frame.name=Molten Salt Reactor Frame
+tile.nuclearcraft.salt_fission_beam.name=Molten Salt Reactor Beam
+tile.nuclearcraft.salt_fission_vent.name=Molten Salt Reactor Vent
+tile.nuclearcraft.salt_fission_vessel.name=Molten Salt Fission Vessel
+tile.nuclearcraft.salt_fission_heater.name=Molten Salt Coolant Heater
+tile.nuclearcraft.salt_fission_moderator.name=Molten Salt Reactor Moderator Housing
 
 tile.nuclearcraft.fusion_electromagnet_idle.name=Fusion Electromagnet
 tile.nuclearcraft.fusion_electromagnet_idle.desc=Requires %s to stay active.
@@ -397,6 +402,24 @@ fluid.nak=Eutectic NaK Alloy
 
 tile.nuclearcraft.fluid_nak_hot.name=Hot Eutectic NaK Alloy
 fluid.nak_hot=Hot Eutectic NaK Alloy
+
+tile.nuclearcraft.fluid_sodium_fluoride_solution.name=Sodium Fluoride Solution
+fluid.sodium_fluoride_solution=Sodium Fluoride Solution
+
+tile.nuclearcraft.fluid_potassium_fluoride_solution.name=Potassium Fluoride Solution
+fluid.potassium_fluoride_solution=Potassium Fluoride Solution
+
+tile.nuclearcraft.fluid_sodium_hydroxide_solution.name=Sodium Hydroxide Solution
+fluid.sodium_hydroxide_solution=Sodium Hydroxide Solution
+
+tile.nuclearcraft.fluid_potassium_hydroxide_solution.name=Potassium Hydroxide Solution
+fluid.potassium_hydroxide_solution=Potassium Hydroxide Solution
+
+tile.nuclearcraft.fluid_naoh.name=Molten Sodium Hydroxide
+fluid.naoh=Molten Sodium Hydroxide
+
+tile.nuclearcraft.fluid_koh.name=Molten Potassium Hydroxide
+fluid.koh=Molten Potassium Hydroxide
 
 tile.nuclearcraft.fluid_thorium.name=Molten Thorium
 fluid.thorium=Molten Thorium
@@ -1022,6 +1045,10 @@ item.nuclearcraft.gem.rhodochrosite.desc=Obtained alongside Redstone when breaki
 item.nuclearcraft.gem.boron_nitride.name=Cubic Boron Nitride
 item.nuclearcraft.gem.fluorite.name=Fluorite
 item.nuclearcraft.gem.fluorite.desc=Obtained alongside Lapis Lazuli when breaking Lapis Lazuli Ore.
+item.nuclearcraft.gem.villiaumite.name=Villiaumite
+item.nuclearcraft.gem.villiaumite.desc=Obtained alongside Redstone when breaking Diamond Ore.
+item.nuclearcraft.gem.carobbiite.name=Carobbiite
+item.nuclearcraft.gem.carobbiite.desc=Obtained alongside Nether Quartz when breaking Diamond Ore.
 
 item.nuclearcraft.gem_dust.diamond.name=Crushed Diamond
 item.nuclearcraft.gem_dust.rhodochrosite.name=Crushed Rhodochrosite
@@ -1032,6 +1059,8 @@ item.nuclearcraft.gem_dust.fluorite.name=Crushed Fluorite
 item.nuclearcraft.gem_dust.sulfur.name=Sulfur
 item.nuclearcraft.gem_dust.sulfur.desc=Obtained alongside Coal when breaking Coal Ore.
 item.nuclearcraft.gem_dust.coal.name=Crushed Coal
+item.nuclearcraft.gem_dust.villiaumite.name=Crushed Villiaumite
+item.nuclearcraft.gem_dust.carobbiite.name=Crushed Carobbiite
 
 item.nuclearcraft.alloy.bronze.name=Bronze Alloy
 item.nuclearcraft.alloy.tough.name=Tough Alloy
@@ -1047,6 +1076,10 @@ item.nuclearcraft.alloy.lead_platinum.name=Lead Platinum Alloy
 item.nuclearcraft.compound.calcium_sulfate.name=Calcium Sulfate
 item.nuclearcraft.compound.crystal_binder.name=Crystal Binder
 item.nuclearcraft.compound.energetic_blend.name=Energetic Blend
+item.nuclearcraft.compound.sodium_fluoride.name=Sodium Fluoride
+item.nuclearcraft.compound.potassium_fluoride.name=Potassium Fluoride
+item.nuclearcraft.compound.sodium_hydroxide.name=Sodium Hydroxide
+item.nuclearcraft.compound.potassium_hydroxide.name=Potassium Hydroxide
 
 item.nuclearcraft.part.plate_basic.name=Basic Plating
 item.nuclearcraft.part.plate_advanced.name=Advanced Plating
@@ -1376,6 +1409,9 @@ item.nuclearcraft.depleted_fuel_californium.lec_251_oxide.name=Depleted LECf-251
 item.nuclearcraft.depleted_fuel_californium.hec_251.name=Depleted HECf-251 Fuel
 item.nuclearcraft.depleted_fuel_californium.hec_251_oxide.name=Depleted HECf-251 Oxide Fuel
 
+item.nuclearcraft.depleted_fuel_ic2.u.name=Depleted Uranium Nuclear Fuel
+item.nuclearcraft.depleted_fuel_ic2.mox.name=Depleted MOX Nuclear Fuel
+
 item.nuclearcraft.depleted_fuel_rod_thorium.tbu.name=Depleted TBU Fuel Rod
 item.nuclearcraft.depleted_fuel_rod_thorium.tbu_oxide.name=Depleted TBU Oxide Fuel Rod
 
@@ -1563,9 +1599,9 @@ gui.config.category.processors=Processor Configs
 gui.config.category.processors.tooltip=Configure processors.
 
 gui.config.processors.processor_time=Processing Times
-gui.config.processors.processor_time.comment=Base ticks per process. Order: Manufactory, Isotope Separator, Decay Hastener, Fuel Reprocessor, Alloy Furnace, Fluid Infuser, Melter, Supercooler, Electrolyzer, Neutron Irradiator, Ingot Former, Pressurizer, Chemical Reactor, Salt Mixer, Crystallizer, Fluid Enricher, Fluid Extractor, Centrifuge.
+gui.config.processors.processor_time.comment=Base ticks per process. Order: Manufactory, Isotope Separator, Decay Hastener, Fuel Reprocessor, Alloy Furnace, Fluid Infuser, Melter, Supercooler, Electrolyzer, Neutron Irradiator, Ingot Former, Pressurizer, Chemical Reactor, Salt Mixer, Crystallizer, Fluid Enricher, Fluid Extractor, Centrifuge, Rock Crusher.
 gui.config.processors.processor_power=Processing Power Use
-gui.config.processors.processor_power.comment=Base RF/t use during processing. Order: Manufactory, Isotope Separator, Decay Hastener, Fuel Reprocessor, Alloy Furnace, Fluid Infuser, Melter, Supercooler, Electrolyzer, Neutron Irradiator, Ingot Former, Pressurizer, Chemical Reactor, Salt Mixer, Crystallizer, Fluid Enricher, Fluid Extractor, Centrifuge.
+gui.config.processors.processor_power.comment=Base RF/t use during processing. Order: Manufactory, Isotope Separator, Decay Hastener, Fuel Reprocessor, Alloy Furnace, Fluid Infuser, Melter, Supercooler, Electrolyzer, Neutron Irradiator, Ingot Former, Pressurizer, Chemical Reactor, Salt Mixer, Crystallizer, Fluid Enricher, Fluid Extractor, Centrifuge, Rock Crusher.
 gui.config.processors.speed_upgrade_power_laws=Speed Upgrade Power Laws
 gui.config.processors.speed_upgrade_power_laws.comment=Power laws for speed upgrades. Order: Processing Time, Processing Power.
 gui.config.processors.speed_upgrade_multipliers=Speed Upgrade Multipliers
@@ -1700,8 +1736,8 @@ gui.config.category.fusion.tooltip=Configure aspects of nuclear fusion.
 
 gui.config.fusion.fusion_base_power=Power Gen Multiplier
 gui.config.fusion.fusion_base_power.comment=Modifies the power generated by fusion reactors.
-gui.config.fusion.fusion_fuel_use=Fuel Use Multiplier
-gui.config.fusion.fusion_fuel_use.comment=Modifies the rate of fuel used by fusion reactors.
+gui.config.fusion.fusion_fuel_use=Fuel Lifetime Multiplier
+gui.config.fusion.fusion_fuel_use.comment=Modifies the lifetime of fuels in fusion reactors.
 gui.config.fusion.fusion_heat_generation=Heat Gen Multiplier
 gui.config.fusion.fusion_heat_generation.comment=Modifies the heat generated by fusion reactors.
 gui.config.fusion.fusion_overheat=Enable Meltdowns
@@ -1787,6 +1823,15 @@ gui.config.armor.armor_toughness.comment=Toughnesses of armor types. Order: boro
 gui.config.category.other=Other Configs
 gui.config.category.other.tooltip=Miscellaneous configurations.
 
+gui.config.other.register_processor=Register Processors
+gui.config.other.register_processor.comment=Register processors to the game? Order: Nuclear Furnace, Manufactory, Isotope Separator, Decay Hastener, Fuel Reprocessor, Alloy Furnace, Fluid Infuser, Melter, Supercooler, Electrolyzer, Neutron Irradiator, Ingot Former, Pressurizer, Chemical Reactor, Salt Mixer, Crystallizer, Fluid Enricher, Fluid Extractor, Centrifuge, Rock Crusher.
+gui.config.other.register_passive=Register Passive Machines
+gui.config.other.register_passive.comment=Register passive machine to the game? Order: Helium Collector, Cobblestone Generator, Infinite Water Source, Nitrogen Collector.
+gui.config.other.register_tool=Register Tools
+gui.config.other.register_tool.comment=Register tool types to the game? Order: boron, tough alloy, hard carbon, boron nitride.
+gui.config.other.register_armor=Register Armor
+gui.config.other.register_armor.comment=Register armor types to the game? Order: boron, tough alloy, hard carbon, boron nitride.
+
 gui.config.other.ctrl_info=Ctrl For More Info
 gui.config.other.ctrl_info.comment=Hold down the control key rather than the shift key to show extra tooltip info?
 
@@ -1819,12 +1864,29 @@ gui.config.other.register_fluid_blocks.comment=Register fission fluid and molten
 gui.config.other.register_cofh_fluids=Register CoFH Fluid Alternatives
 gui.config.other.register_cofh_fluids.comment=Register alternative redstone, glowstone, cryotheum and ender fluids? It is recommended that this is set to true if no CoFH mods are installed.
 
+gui.config.other.ore_dict_priority_bool=Enable Ore Dict Mod Priority
+gui.config.other.ore_dict_priority_bool.comment=Will Ore Dictionary outputs be prioritised according to the mod list below? If false, the default Ore Dict entry will be used when deciding machine outputs.
+gui.config.other.ore_dict_priority=Ore Dict Mod Priority
+gui.config.other.ore_dict_priority.comment=Determines the priority of each mod's ore dictionary entries - earlier mods' IDs in this list have a higher priority. This is used to determine which mod's corresponding item is produced in machine recipes. If no matching mod is found, the default entry is used.
+
 gui.computer.method_not_found=This method doesn't show in the archive maps - lost a method, you have... how embarassing... how embarassing! Gather round the GitHub repository, clear your mind, and find your missing method we will.
 gui.computer.invalid_method_number=Invalid method number
 gui.computer.number_of_arguments_error=%s arguments used, expected %s
 gui.computer.invalid_argument_error=Invalid argument %s, expected %s
 gui.computer.integer_too_small_error=Number argument %s too small, expected at least %s
 gui.computer.integer_too_large_error=Number argument %s too large, expected %s at most
+
+# Localisation for ZeroCore multiblock API
+zerocore:api.multiblock.validation.success=Machine validation was successful.
+zerocore:api.multiblock.validation.too_few_parts=Machine is too small.
+zerocore:api.multiblock.validation.machine_too_large=Machine is too large, it may be at most %1$d blocks in the %2$s dimension.
+zerocore:api.multiblock.validation.machine_too_small=Machine is too small, it must be at least %1$d blocks in the %2$s dimension.
+zerocore:api.multiblock.validation.invalid_part=Part at %1$d, %2$d, %3$d is incompatible with this machine
+zerocore:api.multiblock.validation.invalid_part_for_frame=Block at %1$d, %2$d, %3$d is not valid for use in the machine's frame
+zerocore:api.multiblock.validation.invalid_part_for_bottom=Block at %1$d, %2$d, %3$d is not valid for use in the machine's bottom layer
+zerocore:api.multiblock.validation.invalid_part_for_top=Block at %1$d, %2$d, %3$d is not valid for use in the machine's top layer
+zerocore:api.multiblock.validation.invalid_part_for_sides=Block at %1$d, %2$d, %3$d is not valid for use in the machine's sides
+zerocore:api.multiblock.validation.invalid_part_for_interior=Block at %1$d, %2$d, %3$d is not valid for use in the machine's interior
 
 gui.inventory.shift_for_info=Hold Shift for more info
 
@@ -1879,6 +1941,17 @@ gui.container.fusion_core.efficiency=Efficiency:
 gui.container.fusion_core.fuels=Current Fuels:
 gui.container.fusion_core.empty=Empty
 gui.container.fusion_core.reactor_not_found=Unable to access the fusion reactor - the structure is incomplete
+
+gui.container.salt_fission_controller.reactor=Molten Salt Reactor (WIP)
+gui.container.salt_fission_controller.pos=BlockPos
+gui.container.salt_fission_controller.vessels=Fission Vessels:
+gui.container.salt_fission_controller.heaters=Coolant Heaters:
+gui.container.salt_fission_controller.efficiency=Mean Fuel Efficiency:
+gui.container.salt_fission_controller.heat_mult=Mean Heat Multiplier:
+gui.container.salt_fission_controller.cooling_rate=Cooling Efficiency:
+gui.container.salt_fission_controller.heat=Heat Level:
+gui.container.salt_fission_controller.heat_gen=Heat Gen:
+gui.container.salt_fission_controller.cooling=Cooling Rate:
 
 gui.container.energy_stored=Energy Stored:
 gui.container.process_power=Process Power:

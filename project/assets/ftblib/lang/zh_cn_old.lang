@@ -1,10 +1,24 @@
-# GuiLM
+# Gui
 ## Buttons
 gui.accept=接受
 gui.add=添加
+gui.added=已添加
+gui.remove=移除
+gui.removed=已移除
 gui.close=关闭
-gui.save=保存
+gui.saved=保存
+gui.loaded=价值
 gui.info=信息
+gui.collapse_all=全部折叠
+gui.expand_all=全部展开
+gui.download=下载
+gui.downloaded=已下载
+gui.update=更新
+gui.updated=已更新
+gui.active=激活
+gui.inactive=未激活
+gui.settings=设置
+gui.rename=重命名
 
 ## Labels
 gui.other=其他
@@ -14,106 +28,114 @@ gui.offline=离线
 gui.whitelist=白名单
 gui.blacklist=黑名单
 gui.color=颜色
-
-## Stats
-ftblib.stat.time_played=游戏时间
-ftblib.stat.last_seen=最后离开
-ftblib.stat.first_joined=首次加入
+gui.downloading=下载中……
+gui.infinite=无限
 
 ## Sides
-facing.down=上
-facing.up=下
 facing.north=北
 facing.south=南
 facing.west=西
 facing.east=东
 
-ftblib.dside.bottom=底部
-ftblib.dside.top=顶部
-ftblib.dside.back=后面
-ftblib.dside.front=前面
-ftblib.dside.left=左面
-ftblib.dside.right=右面
+relative_facing.bottom=底
+relative_facing.top=顶
+relative_facing.back=后
+relative_facing.front=前
+relative_facing.left=左
+relative_facing.right=右
 
 # FTBLib Lang
+ftblib=FTBLib
 wip=开发中！
+deprecated=不建议使用这个方法，请使用 %s
 example=示例：
-ftblib.lang.team_config_option=组配置
-ftblib.lang.deprecated=不赞成这种方法，请使用 %s
-ftblib.lang.mode.loaded=模式设置为 '%s' ！
-ftblib.lang.mode.not_found=模式不存在！
-ftblib.lang.mode.already_set=模式已经设置！
-ftblib.lang.mode.current=当前模式：%s
-ftblib.lang.mode.list=可用模式：%s
+click_here=[点击此处]
+feature_disabled=这个功能被禁用！
+feature_disabled_server=这个功能在服务器被禁用！
+error=错误：%s
+owner=组长：%s
+delete_item=你想要删除“%s”么？
+server_forced=服务器复写了“%s”
+commands=命令
+my_permissions=我的权限
+all_permissions=所有权限
+key.categories.ftbmods=FTB Mods
+stand_still=请在传送前等待 %d 秒。
+stand_still_failed=因为你移动了！取消传送。
+teleporting=传送中……
+cooldown=冷却
+cant_use_now=现在无法使用！
+cant_use_now_cooldown=现在无法使用，冷却时间：%s
+action_bar=Action Bar
 
+ftblib.lang.reload_server_button=重载服务端
 ftblib.lang.reload_server=FTBLib：服务端重载耗时 %s
 ftblib.lang.reload_client=FTBLib：客户端重载耗时 %s
-ftblib.lang.reload_client_config_1=服务端已经重载. 你可以运行
-ftblib.lang.reload_client_config_2=去重载客户端数据
+ftblib.lang.reload_failed=这些 ID 重载失败：
 
-ftblib.lang.raw=%s
-ftblib.lang.missing_args=缺失参数：%s ！
-ftblib.lang.missing_args_num=缺失参数：%s 等！
-ftblib.lang.feature_disabled=这个特性是不允许的！
-ftblib.lang.invalid_subcmd=无效的子命令：'%s' ！
+ftblib.lang.config_command.invalid_key=无法找到配置参数：“%s”！
+ftblib.lang.config_command.set=“%s”被设置为 %s
 
-ftblib.lang.owner=组长：%s
-ftblib.lang.delete_item=你想删除 '%s' 么？
-ftblib.lang.server_forced=服务器覆盖了 '%s'
-ftblib.lang.commands=指令
-ftblib.lang.my_permissions=我的权限
-ftblib.lang.all_permissions=所有的权限
-ftblib.lang.difficulty=难度：%s
+ftblib.lang.add_fake_player.invalid_uuid=非法的 UUID！
+ftblib.lang.add_fake_player.player_exists=玩家已经存在！
+ftblib.lang.add_fake_player.added=Fake player %s 被添加！
 
 # Config
-config_group.ftblib.name=FTBLib
-config_group.sidebar_button.name=边栏按钮
+ftblib.general.clientless_mode=Clientless Mode
+ftblib.general.replace_reload_command=替换 /reload 命令
+ftblib.general.merge_offline_mode_players=合并离线玩家数据
 
-config.ftblib.merge_offline_mode_players.name=合并离线模式玩家
-config.ftblib.merge_offline_mode_players.info=合并玩家配置文件，以防止玩家在没有网络连接情况下、或服务器开启离线模式情况下登入\n默认情况下，这些东西只会在单人世界生效
-config_group.ftblib.teams.name=组
-config.ftblib.teams.autocreate_on_login.name=登录时自动创建
-config.ftblib.teams.max_team_chat_history.name=最大聊天历史记录
+ftblib.teams=组
+ftblib.teams.autocreate_sp=单人游戏自动创建组
+ftblib.teams.autocreate_mp=多人游戏自动创建组
+
+ftblib.debugging=调试
+ftblib.debugging.special_commands=特殊命令
+ftblib.debugging.print_more_info=打印输出更多信息
+ftblib.debugging.print_more_errors=打印输出更多错误
+ftblib.debugging.log_network=记录网络 IO
+ftblib.debugging.log_teleport=记录传送信息
+ftblib.debugging.log_config_editing=记录配置修改
+ftblib.debugging.dev_sidebar_buttons=仅开发模式的侧边栏按钮
+ftblib.debugging.gui_widget_bounds=GUI 小按钮边界
+ftblib.debugging.log_events=记录事件
 
 # Client Config
-client_config.ftblib.item_ore_names.name=显示矿物辞典名
-client_config.ftblib.action_buttons_on_top.name=动作按钮置顶
-client_config.ftblib.ignore_nei.name=忽略NEI
-client_config.ftblib.action_buttons_on_top.info=当安装了NEI ，相关按钮会自动排布到玩家物品栏左侧。除非你开启了忽略NEI选项
-client_config.ftblib.notifications.name=通知
-config_group.ftblib.gui.name=GUI
-client_config.ftblib.gui.enable_chunk_selector_depth.name=允许区块选择区显示深度
-config_group.ftblib.gui.info.name=信息GUI (手册)
-client_config.ftblib.gui.info.border_width.name=边框宽度
-client_config.ftblib.gui.info.border_height.name=边框高度
-client_config.ftblib.gui.info.color_background.name=背景颜色
-client_config.ftblib.gui.info.color_text.name=文本颜色
+ftblib_client.general.item_ore_names=显示物品矿物词典名称
+ftblib_client.general.item_ore_names.item_tooltip=矿物词典名称：
+ftblib_client.general.item_nbt=显示物品 NBT
+ftblib_client.general.replace_vanilla_status_messages=替换原版状态信息
+ftblib_client.general.debug_helper=调试帮助
+ftblib_client.general.collapse_sidebar_buttons=折叠所有侧边栏按钮
+ftblib_client.general.sidebar_button_collapse_speed=侧边栏按钮折叠速度
 
 # Player Settings
-player_config.ftblib.hide_team_notification.name=登录时隐藏组通知
-player_config.ftblib.hide_new_team_msg_notification.name=隐藏新的组的通知
+player_config=我的服务器设置
+player_config.ftblib.hide_team_notification=登录时隐藏组内通知
 
 # Team Settings
-config_group.ftblib.display.name=显示
-team_config.ftblib.display.color.name=颜色
-team_config.ftblib.display.title.name=标题
-team_config.ftblib.display.title.info=当你进入已声明区块时显示
-team_config.ftblib.display.desc.name=描述
-team_config.ftblib.display.desc.info=显示下面的标题
-team_config.ftblib.free_to_join.name=开放加入
-team_config.ftblib.free_to_join.info=任何人都可以不经邀请加入组
+team_config.ftblib.display=显示
+team_config.ftblib.display.color=颜色
+team_config.ftblib.display.fake_player_status=Fake Player 状态
+team_config.ftblib.display.title=标题
+team_config.ftblib.display.title.tooltip=当你进入声明区块时显示
+team_config.ftblib.display.desc=描述
+team_config.ftblib.display.desc.tooltip=显示在标题下
+team_config.ftblib.free_to_join=自由加入
+team_config.ftblib.free_to_join.tooltip=没有邀请，任何人都可以加入
 
 # Teams
-ftblib.lang.team.config='%s' 组配置
-ftblib.lang.team.created=组 '%s' 已经创建
-ftblib.lang.team.deleted=组 '%s' 已经删除
+ftblib.lang.team.created=组“%s”已经创建
+ftblib.lang.team.id_already_exists=ID 已经注册！
+ftblib.lang.team.id_invalid=ID只能够包含小写的 a-z，_ 和 | 字符！
+ftblib.lang.team.deleted=组“%s”已经删除
 ftblib.lang.team.member_left=%s 离开了你的组！
 ftblib.lang.team.member_joined=%s 加入了你的组！
-ftblib.lang.team.transfered_ownership=新的组长是 %s
-ftblib.lang.team.invited=已经邀请 %s 到 '%s' 组
-ftblib.lang.team.invited_you=你被邀请到 '%s' , 邀请者是 %s
+ftblib.lang.team.transferred_ownership=新的组长是 %s
+ftblib.lang.team.invited=已经邀请 %s 到“%s”组
+ftblib.lang.team.invited_you=你被邀请到“%s”, 邀请者是 %s
 ftblib.lang.team.cancel_invite=拒绝邀请
-ftblib.lang.team.error.not_found=组 '%s' 没有找到！
+ftblib.lang.team.error.not_found=组“%s”没有找到！
 ftblib.lang.team.error.no_team=你必须在一个组里面才能这样做！
 ftblib.lang.team.error.must_leave=你必须离开你的组才能那样做！
 ftblib.lang.team.error.not_owner=你不是这个组的组长！
@@ -121,38 +143,46 @@ ftblib.lang.team.error.not_member=%s 不是这个组的组员！
 ftblib.lang.team.error.must_transfer_ownership=你必须转让组长权限！
 ftblib.lang.team.error.already_invited=%s 已经被邀请！
 ftblib.lang.team.error.failed_to_join=不能加入这个组！
-ftblib.lang.team.permission.set=权限 '%s' 对于 %s 设置为 %s
-ftblib.lang.team.permission.already_set=权限 '%s' 对于 %s 已经设置为 %b！
+ftblib.lang.team.permission.set=权限“%s”对于 %s 设置为 %s
 ftblib.lang.team.permission.owner=不能改变组长的权限！
+ftblib.lang.team.notification=你还没有加入或创建组！%s 来打开组队GUI，%s 来隐藏此信息。
+ftblib.lang.team.notification.hide=隐藏此信息
+ftblib.lang.team.chat_message=[组 %s] %s
 
-ftblib.lang.team_color.blue=蓝色
-ftblib.lang.team_color.cyan=青色
-ftblib.lang.team_color.green=绿色
-ftblib.lang.team_color.yellow=黄色
-ftblib.lang.team_color.orange=橙色
-ftblib.lang.team_color.red=红色
-ftblib.lang.team_color.pink=粉红色
-ftblib.lang.team_color.magenta=品红色
-ftblib.lang.team_color.purple=紫色
-ftblib.lang.team_color.gray=灰色
+team_action.ftblib.select_team=选择想要加入的组
+team_action.ftblib.create_team=创建一个新的组
+team_action.ftblib.members=组员
+team_action.ftblib.allies=盟友
+team_action.ftblib.moderators=管理者
+team_action.ftblib.enemies=敌人
+team_action.ftblib.leave=退出组
+team_action.ftblib.transfer_ownership=转换所有权
+
+ftblib.lang.team.gui.join_team=点击加入“%s”
+ftblib.lang.team.gui.request_invite=点击请求加入“%s”
+ftblib.lang.team.gui.members.invite=点击邀请至你的组
+ftblib.lang.team.gui.members.requesting_invite=这个玩家正在请求加入
+ftblib.lang.team.gui.members.deny_request=右击拒绝请求
+ftblib.lang.team.gui.members.cancel_invite=右击取消邀请
+ftblib.lang.team.gui.members.kick=右击踢出玩家
 
 ftblib.lang.team_status.enemy=敌对
 ftblib.lang.team_status.none=无
-ftblib.lang.team_status.requesting_invite=请求邀请
+ftblib.lang.team_status.requesting_invite=请求加入
 ftblib.lang.team_status.invited=邀请
 ftblib.lang.team_status.ally=结盟
 ftblib.lang.team_status.member=组员
-ftblib.lang.team_status.mod=仲裁者
+ftblib.lang.team_status.mod=管理者
 ftblib.lang.team_status.owner=组长
 
-# Action Buttons
-sidebar_button.ftblib.teams_gui=组GUI
-sidebar_button.ftblib.teams_gui.info=打开组GUI你可以管理你的组，与组员聊天，或者调解组的相关配置
+# Sidebar Buttons
+sidebar_button=侧边栏按钮
+sidebar_button.ftblib.my_team=我的组
+sidebar_button.ftblib.my_team.tooltip=打开组管理的GUI
 sidebar_button.ftblib.settings=客户端设定
-sidebar_button.ftblib.settings.info=编辑客户端设置
-sidebar_button.ftblib.my_server_settings=服务端设定
-sidebar_button.ftblib.my_server_settings.info=为你的玩家调解每个服务器设置
+sidebar_button.ftblib.settings.tooltip=编辑客户端设定
 sidebar_button.ftblib.notifications=通知
+sidebar_button.ftblib.admin_panel=管理面板
 
 # Privacy Level
 privacy=隐私
@@ -168,30 +198,15 @@ redstone_mode.active_low=低强度信号
 redstone_mode.pulse=脉冲
 
 # IO Mode
-#io_mode=存储模式
-#io_mode.io=IO
-#io_mode.in=只能输入
-#io_mode.out=只能输出
-#io_mode.none=禁止
+io_mode=输入/输出模式
+io_mode.io=输入/输出
+io_mode.in=仅输入
+io_mode.out=仅输出
+io_mode.none=禁止
 
 # Click Actions
-click_action.cmd=指令
-click_action.show_cmd=显示指令
-click_action.url=打开URL
+click_action.cmd=命令
+click_action.show_cmd=显示命令
+click_action.url=打开 URL
 click_action.file=打开文件
-click_action.gui=打开Gui
-
-# Commands
-commands.ftb.reload.usage=/reload
-commands.ftb.my_settings.usage=/my_settings <id> [值]
-commands.ftb.team.usage=/team
-commands.ftb.team.gui.usage=/team gui
-commands.ftb.team.config.usage=/team config <id> [值]
-commands.ftb.team.create.usage=/team create <id> [颜色]
-commands.ftb.team.leave.usage=/team leave
-commands.ftb.team.transfer_ownership.usage=/team transfer_ownership <玩家>
-commands.ftb.team.kick.usage=/team kick <玩家>
-commands.ftb.team.join.usage=/team join <id>
-commands.ftb.team.set_status.usage=/team set_status <玩家> <状态>
-commands.ftb.team.msg.usage=/team msg <消息...>
-commands.ftb.add_fake_player.usage=/add_fake_player <uuid> <名字>
+click_action.gui=打开 GUI

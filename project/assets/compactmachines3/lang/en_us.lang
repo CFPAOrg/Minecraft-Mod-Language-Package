@@ -33,6 +33,7 @@ top.compactmachines3.found_recipe_for=Recipe for:
 
 tooltip.compactmachines3.machine.coords=Machine:
 tooltip.compactmachines3.machine.coords.unused=Unused
+tooltip.compactmachines3.machine.schema=Schema:
 tooltip.compactmachines3.machine.stopitsoaryn=Feedbackloop detected
 
 tooltip.compactmachines3.hold_shift.hint=Hold shift for details.
@@ -68,14 +69,28 @@ commands.compactmachines3.schema.description=Save/load the contents of machines
 commands.compactmachines3.schema.save.usage=/compactmachines3 schema save <name>
 commands.compactmachines3.schema.save.description=Saves the machine you are in to disk
 commands.compactmachines3.schema.save.exception.not_in_machine_dimension=You must be in the machine dimension for this command to work.
-commands.compactmachines3.schema.save.exception.invalid_file=Could not open file '%s' for writing! Schema is not saved!
+commands.compactmachines3.schema.save.exception.invalid_file=Could not open file for writing! Schema is not saved!
 commands.compactmachines3.schema.save.exception.not_serializable=Could not serialize machine! Schema is not saved!
+commands.compactmachines3.schema.save.success=Wrote schema to file: %s
 
 commands.compactmachines3.schema.load.usage=/compactmachines3 schema load <name>
-commands.compactmachines3.schema.load.description=Loads the specified schema from disk and places it in the room you are in.
+commands.compactmachines3.schema.load.description=Generates the specified schema in the room you are standing in
 commands.compactmachines3.schema.load.exception.not_in_machine_dimension=You must be in the machine dimension for this command to work.
-commands.compactmachines3.schema.load.exception.invalid_file=Invalid schema. File '%s' does not exist or is invalid!
-commands.compactmachines3.schema.load.exception.not_deserializable=Could not deserialize schema! Schema is not loaded!
+commands.compactmachines3.schema.load.exception.unknown_schema=No schema with that name exists!
+commands.compactmachines3.schema.load.exception.machine_size_does_not_match=The size of the machine does not match the schema!
+commands.compactmachines3.schema.load.machine_schema_set_to=Machine set to schema: %s
+
+commands.compactmachines3.schema.set.usage=/compactmachines3 schema set <name>
+commands.compactmachines3.schema.set.description=Sets the specified schema to the Compact Machine block you are looking at
+commands.compactmachines3.schema.set.exception.unknown_schema=No schema with that name exists!
+commands.compactmachines3.schema.set.exception.look_at_compact_machine=You need to look at a Compact Machine block!
+commands.compactmachines3.schema.set.exception.machine_size_does_not_match=The size of the machine does not match the schema!
+commands.compactmachines3.schema.set.exception.machine_is_already_in_use=Machine is already in use. Place a new machine!
+commands.compactmachines3.schema.set.machine_schema_set_to=Machine set to schema: %s
+
+commands.compactmachines3.schema.reload-files.usage=/compactmachines3 schema reload-files
+commands.compactmachines3.schema.reload-files.description=Reloads all the stored schema files from disk and from the jar
+
 
 commands.compactmachines3.recipe.description=Stuff related to Multiblock Miniaturization recipes
 commands.compactmachines3.recipe.unpack-defaults.usage=/compactmachines3 recipe unpack-defaults [force]
