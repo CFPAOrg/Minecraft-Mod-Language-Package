@@ -3,7 +3,7 @@ import re
 import javaproperties
 
 
-# 专为带有 #PARSE_ESCAPE 注释的语言文件而诞生的处理程序
+# 专为带有 #PARSE_ESCAPES 注释的语言文件而诞生的处理程序
 
 
 # 获取语言文件，处理得到一个 dict
@@ -27,7 +27,7 @@ def lang_handle(dict1, dict2, dict3):
 
 # 判定哪些文件应该处理
 def who_should_handle():
-    # 存放带有 #PARSE_ESCAPE 注释的模组列表
+    # 存放带有 #PARSE_ESCAPES 注释的模组列表
     properties_mod_list = []
     # 通过 git 来获取更新信息
     os.system('git add .')
@@ -39,16 +39,16 @@ def who_should_handle():
         r'project/assets/(.*?)/lang/.*?.lang', string)
     # 剔除重复数据
     change_mod_list = list(set(change_mod_list))
-    # 判断是否有 #PARSE_ESCAPE 注释
+    # 判断是否有 #PARSE_ESCAPES 注释
     # 在 forge 中，有此注释的语言文件，会被严格按照 Java Properties 格式解析
     for change_mod in change_mod_list:
         # 没有英文文本的要剔除
         if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(change_mod)):
             continue
-        # 有 #PARSE_ESCAPE 注释的计算在内
+        # 有 #PARSE_ESCAPES 注释的计算在内
         with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r', errors='ignore') as lang:
             for line in lang.readlines():
-                if '#PARSE_ESCAPE' in line:
+                if '#PARSE_ESCAPES' in line:
                     properties_mod_list.append(change_mod)
     return properties_mod_list
 
@@ -70,7 +70,7 @@ for modid in file_list:
     # 写入文件
     # 这一块不用 javaproperties 作者提供的轮子，因为它用的是 Latin-1 编码
     with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'w', errors='ignore') as f:
-        f.writelines('#PARSE_ESCAPE\n')
+        f.writelines('#PARSE_ESCAPES\n')
         for key in dict_out.keys():
             # 先修正各种转义问题
             # key 中的 : 字符转义

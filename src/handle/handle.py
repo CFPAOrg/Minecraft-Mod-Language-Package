@@ -37,17 +37,17 @@ def who_should_handle():
         r'project/assets/(.*?)/lang/.*?.lang', string)
     # 剔除重复数据
     change_mod_list = list(set(change_mod_list))
-    # 判断是否有 #PARSE_ESCAPE 注释
+    # 判断是否有 #PARSE_ESCAPES 注释
     # 在 forge 中，有此注释的语言文件，会被严格按照 Java Properties 格式解析
     for change_mod in change_mod_list:
         # 没有英文文本的要剔除
         if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(change_mod)):
             change_mod_list.remove(change_mod)
             continue
-        # 有 #PARSE_ESCAPE 注释的也要剔除
+        # 有 #PARSE_ESCAPES 注释的也要剔除
         with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r', errors='ignore') as lang:
             for line in lang.readlines():
-                if '#PARSE_ESCAPE' in line and change_mod in change_mod_list:   # 不清楚为什么报错了，加一个判定
+                if '#PARSE_ESCAPES' in line and change_mod in change_mod_list:   # 不清楚为什么报错了，加一个判定
                     change_mod_list.remove(change_mod)
     return change_mod_list
 
