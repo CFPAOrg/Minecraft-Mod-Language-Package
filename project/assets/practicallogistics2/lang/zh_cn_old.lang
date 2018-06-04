@@ -7,34 +7,46 @@ tile.Hammer.name=锻造锤
 tile.Hammer_Air.name=锻造锤
 
 //multiparts
-item.Node.name=节点
-item.FluidReader.name=流体读取器
-item.InfoReader.name=信息读取器
-item.EnergyReader.name=能量读取器
-item.InventoryReader.name=存储读取器
-item.Array.name=阵列器
-item.DataCable.name=数据传输电缆
-item.EntityNode.name=实体节点
-item.RedstoneSignaller.name=红石信号器
-item.DataReceiver.name=数据接收器
-item.DataEmitter.name=数据发送器
-item.TransferNode.name=传输节点
-item.Clock.name=时钟
-item.EtchedPlate.name=腐蚀板
+tile.Node.name=节点
+tile.FluidReader.name=流体读取器
+tile.InfoReader.name=信息读取器
+tile.EnergyReader.name=能量读取器
+tile.InventoryReader.name=存储读取器
+tile.NetworkReader.name=网络读取器
+tile.Array.name=阵列器
+tile.DataCable.name=数据传输电缆
+tile.RedstoneCable.name=红石传输电缆
+tile.RedstoneNode.name=红石节点
+tile.EntityNode.name=实体节点
+tile.RedstoneSignaller.name=红石信号器
+tile.DataReceiver.name=数据接收器
+tile.DataEmitter.name=数据发送器
+tile.RedstoneReceiver.name=无线红石接收器
+tile.RedstoneEmitter.name=无线红石发送器
+tile.TransferNode.name=传输节点
+tile.Clock.name=时钟
+
 
 //items
-item.DisplayScreenItem.name=显示屏
+tile.MiniDisplay.name=迷你显示屏
+tile.DisplayScreen.name=显示屏
+tile.HolographicDisplay.name=全息显示屏
+tile.AdvancedHolographicDisplay.name=高级全息显示屏
+entity.pl2_holographic_display.name=高级全息显示屏
+tile.LargeDisplayScreen.name=大型显示屏
+
+
 item.Sapphire.name=蓝宝石
 item.SapphireDust.name=蓝宝石粉末
 item.StonePlate.name=石板
 item.Transceiver.name=无线接收器
 item.EntityTransceiver.name=实体无线接收器
 item.Operator.name=操纵工具
-item.DisplayScreen.name=显示屏
-item.HolographicDisplay.name=全息显示屏
-item.LargeDisplayScreen.name=大型显示屏
-item.PLGuide.name=Practical Logistics指导手册
+item.PLGuide.name=Practical Logistics 指导手册
 item.WirelessStorage.name=无限存储读取器
+item.EtchedPlate.name=腐蚀板
+item.SignallingPlate.name=信号板
+item.WirelessPlate.name=无线板
 
 //messages
 dataBlock.denied=拒绝访问
@@ -91,6 +103,35 @@ guide.ChannelsEND.name=编辑频道非常简单，你可以在GUI里面点击频
 
 //HELPOVERLAYS//
 
+// GUI BUTTONS
+pl.button.edit=编辑
+pl.button.source=来源
+pl.button.data=数据
+pl.button.name=名称
+pl.button.prefix=前缀
+pl.button.suffix=后缀
+pl.button.reset=重置
+pl.button.delete=删除
+pl.button.clear=清除
+pl.button.clearall=清除全部
+pl.button.save=保存
+pl.button.locked=锁定
+pl.button.layout=布局
+pl.button.channels=频道
+pl.button.helpenabled=启用帮助
+pl.button.target=目标
+pl.button.nearest=最近
+pl.button.furthest=最远
+pl.button.order=排序顺序
+pl.button.stored=存储
+pl.button.back=返回
+pl.button.configurefilters=配置过滤
+pl.button.dumpPlayer=清空玩家背包
+pl.button.dumpNetwork=清空网络
+pl.button.moveUp=上移
+pl.button.moveDown=下移
+
+
 //BUTTON HELPS//
 button.ScreenLayout=数据在屏幕上的布局显示
 button.TransferMode=此节点的传输模式-添加：允许添加-移除：允许移除-添加/移除：允许添加/移除，需要一个过滤选择-被动：不添加/移除
@@ -119,9 +160,37 @@ button.TileFilters=添加，移除，和创建这个方块的过滤。
 
 /////INFO/////
 
+//filters
+pl.filters.newItem=新建物品过滤
+pl.filters.newOreDict=新建矿辞过滤
+pl.filters.newFluid=新建流体过滤
+
+// channels
+pl.channels.selection=频道选择
+pl.channels.selection.help=选择你想要监控的频道
+
+// guide
+pl.guide.title=Practical Logistics 指导
+
 //data emitter
 pl.emitter.public=公共
 pl.emitter.private=私有
+
+//data entity node
+pl.entitynode.range=实体范围
+
+//data receiver
+pl.datareceiver.help=选择你想要连接的数据发送器
+pl.redstonereceiver.help=选择你想要连接的无线红石发送器
+
+//display screen
+pl.display.infoselect=信息选择
+pl.display.infoselect.help=选择你想要显示的信息
+pl.display.customdata=自定义数据
+pl.display.nodata=无数据
+
+//info reader
+pl.info.reader.help=选择你想要监控的数据
 
 //inventory reader
 pl.inv.mode.stack=堆叠
@@ -160,6 +229,32 @@ pl.signaller.default=默认
 pl.signaller.override=复写
 pl.signaller.all=全匹配
 pl.signaller.one=单个匹配
+
+//wireless storage reader
+pl.wirelessStorage.emitter=选择你想要连接的发送器
+
+//network reader
+pl.ILogisticsNetwork.pl2TickTime=PL2 Tick 时间
+pl.ILogisticsNetwork.pl2TickPercentage=PL2 Tick 百分比
+pl.ILogisticsNetwork.pl2TickFurnace=PL2 Tick 熔炉等效时间
+pl.ILogisticsNetwork.furnace=网络 Tick 熔炉等效时间
+pl.ILogisticsNetwork.getNetworkTickTime=网络 Tick 时间
+pl.ILogisticsNetwork.percent=网络 Tick 百分比
+pl.ILogisticsNetwork.getNetworkID=网络 ID
+pl.ILogisticsNetwork.connectedNetworks=已连接网络
+pl.ILogisticsNetwork.watchingNetworks=正在查看的网络
+pl.ILogisticsNetwork.CACHE.IDataCable=电缆
+pl.ILogisticsNetwork.CACHE.INetworkListener=网络 Tiles
+pl.ILogisticsNetwork.CACHE.INode=节点
+pl.ILogisticsNetwork.CACHE.IEntityNode=实体节点
+pl.ILogisticsNetwork.CACHE.IListReader=读取器
+pl.ILogisticsNetwork.CACHE.IDataEmitter=数据发送器
+pl.ILogisticsNetwork.CACHE.IDataReceiver=数据接收器
+pl.ILogisticsNetwork.CACHE.ITransferNode=转换节点
+pl.ILogisticsNetwork.totalConnections=总频道
+pl.ILogisticsNetwork.localConnections=本地频道
+pl.ILogisticsNetwork.globalConnections=全局频道
+
 
 //info
 pl.Vec3i.getX=X坐标
@@ -262,13 +357,35 @@ pl.TileGrinder.requiredTurns=需要转数
 pl.TileGrinder.points=当前转数
 
 //flux
+pl.IFlux.getCustomName=连接名称
 pl.IFlux.getTransferLimit=基础传输上限
 pl.IFlux.getCurrentTransferLimit=当前传送上限
 pl.IFluxCommon.getNetworkName=网络名称
 pl.IFluxCommon.getNetworkID=网络ID
 pl.IFluxCommon.getEnergyAvailable=网络能量存储
 pl.IFluxCommon.getMaxEnergyStored=网络能量上限
+pl.IFluxCommon.getCachedPlayerName=网络拥有者
 pl.AccessType.name=登陆类型
 pl.EnergyStats.transfer=当前传输
 pl.EnergyStats.maxSent=最大传输
 pl.EnergyStats.maxReceived=最大接收
+
+//IC2
+
+pl.IReactor.getHeat=当前热量
+pl.IReactor.getMaxHeat=最大热量
+pl.IReactor.getReactorEUEnergyOutput=能量输出
+
+
+//Big reactors
+pl.IReactorFuelInfo.getFuelRodCount=燃料棒
+pl.IReactorFuelInfo.getFuelAmount=燃料
+pl.IReactorFuelInfo.getCapacity=最大容量
+pl.IReactorFuelInfo.getWasteAmount=消耗
+pl.MultiblockReactor.getFuelHeat=核心温度
+pl.MultiblockReactor.getReactorHeat=外壳温度
+pl.MultiblockReactor.getEnergyGeneratedLastTick=RF/tick
+pl.MultiblockReactor.getActive=开启状态
+pl.MultiblockReactor.getFuelFertility=燃料反应活度
+pl.MultiblockReactor.getFuelRichness=燃料燃耗率
+pl.MultiblockReactor.isPassivelyCooled=是被动冷却？

@@ -87,6 +87,7 @@ text.industrialforegoing.book.category.storage=Storage
 text.industrialforegoing.book.category.mob_interaction=Mob Interaction
 text.industrialforegoing.book.category.resource_production=Resource Production
 text.industrialforegoing.book.category.items=Items
+text.industrialforegoing.book.category.conveyors=Conveyor Belts
 
 text.industrialforegoing.book.animal_byproduct_recolector=When provided with power it will collect {Sewage} from the animals in top.
 text.industrialforegoing.book.animal_growth_increaser=When provided with power and {breeding} food, it will feed baby animals to make them {grow} faster.
@@ -149,6 +150,14 @@ text.industrialforegoing.book.upgrades=Industrial Foregoing doesn't have speed u
 text.industrialforegoing.book.plant_interactor=When provided with power, it will {right click} crops and fruits to harvest them and store them in its inventory or drop them in the ground if they can't be stored. @L@@L@{*It works with Pam's Fruits and Plants by default.}
 text.industrialforegoing.book.transfer_addon=Transfer addons come in all the shapes and forms but only can transfer {items} and {fluids}, and they can pull and they can push.@L@@L@To change the direction of the action simply {right click} it to cycle between the directions or {shift right click} a side of a block to select that direction. You can enchant the addon with {Efficiency} to increase its transfer amount.
 text.industrialforegoing.book.fluiddictionary_converter=This machine will transform similar fluids from different mods. You can check {JEI} for possible recipes. You simply need to click on the buttons to select the fluid.
+text.industrialforegoing.book.conveyors=Conveyors will {push} any entites to the direction they are facing. They come on different colors and verticality.@L@@L@They can be upgraded by right-clicking them with {glowstone dust} and the will move entities faster. It also has a different {upgrades} that can be attached to the sides or the center of the conveyor. They will be placed on the {further} side of the conveyor.
+text.industrialforegoing.book.conveyor_upgrade_extraction=The extraction upgrade will try to {extract} items from the inventories that are touching the upgrade and place them inside of the conveyor. @L@@L@It has a {filter} with whitelist or blacklist and it can be upgraded with {glowstone dust} to speed up the extaction. (It will stop extracting if it extracted too many items that aren't picked up)
+text.industrialforegoing.book.conveyor_upgrade_insertion=The insertion upgrade will try to {insert} items that are touching the upgrade into the inventory touching the upgrade side. @L@@L@It has a {filter} with whitelist or blacklist for the insertion. The {range} can be increased in the GUI so it will pick up all the items in the conveyor instead of the items just touching the upgrade.
+text.industrialforegoing.book.conveyor_upgrade_detection=The detection upgrade is placed in the center part of the conveyor and will emmit a {redstone} signal when triggered by an entity.@L@@L@It has a {filter} with whitelist or blacklist and you can filter mobs by using a {Mob Imprisonment Tool} with an entity in it. The {redstone control} can be inverted in the GUI.
+text.industrialforegoing.book.conveyor_upgrade_bouncing=The bouncing upgrade is placed in the center part of the conveyor and it will {launch} entites in the air in the direction the conveyor is facing.@L@@L@It has a {filter} with whitelist or blacklist and you can filter mobs by using a {Mob Imprisonment Tool} with an entity in it. The {velocity} values (horizontal and vertical) can be changed in the GUI.
+text.industrialforegoing.book.conveyor_upgrade_dropping=The dropping upgrade is placed in the center part of the conveyor and it will {drop} entities directly below it or insert items in inventories below it.@L@@L@It has a {filter} with whitelist or blacklist and you can filter mobs by using a {Mob Imprisonment Tool} with an entity in it.
+text.industrialforegoing.book.conveyor_upgrade_blinking=The blinking upgrade is placed in the center part of the conveyor and it will {teleport} entities in a short range in front of the conveyor. @L@@L@It has a {filter} with whitelist or blacklist and you can filter mobs by using a {Mob Imprisonment Tool} with an entity in it. The teleport {distance} can be configured in the GUI.
+text.industrialforegoing.book.conveyor_upgrade_splitting=The splitting upgrade will {distribute} entities evenly, or with the configured ratio, to the side the upgrade is placed.@L@@L@The more {ratio} it has the more entities will go that way. The ratio can be configured in the GUI.
 
 text.industrialforegoing.chat.crusher_kill= %s%d was ground to bits.
 
@@ -298,3 +307,26 @@ gui.industrialforegoing.side_config.output=Output
 gui.industrialforegoing.side_config.input=Input
 
 text.industrialforegoing.button.none=None Selected
+
+conveyor.upgrade.error.name=Invalid Conveyor Upgrade
+conveyor.upgrade.industrialforegoing.insertion.name=Insertion Conveyor Upgrade
+conveyor.upgrade.industrialforegoing.extraction.name=Extraction Conveyor Upgrade
+conveyor.upgrade.industrialforegoing.detection.name=Detection Conveyor Upgrade
+conveyor.upgrade.industrialforegoing.bouncing.name=Bouncing Conveyor Upgrade
+conveyor.upgrade.industrialforegoing.dropping.name=Dropping Conveyor Upgrade
+conveyor.upgrade.industrialforegoing.blinking.name=Blinking Conveyor Upgrade
+conveyor.upgrade.industrialforegoing.splitting.name=Splitting Conveyor Upgrade
+
+conveyor.upgrade.industrialforegoing.tooltip.whitelist=Whitelist
+conveyor.upgrade.industrialforegoing.tooltip.blacklist=Blacklist
+conveyor.upgrade.industrialforegoing.tooltip.insert_near=Inserting items touching the upgrade
+conveyor.upgrade.industrialforegoing.tooltip.insert_all=Inserting items in all the conveyor
+conveyor.upgrade.industrialforegoing.tooltip.redstone_normal=Redstone not inverted
+conveyor.upgrade.industrialforegoing.tooltip.redstone_inverted=Redstone inverted
+conveyor.upgrade.industrialforegoing.tooltip.increase=Increase
+conveyor.upgrade.industrialforegoing.tooltip.decrease=Decrease
+conveyor.upgrade.industrialforegoing.tooltip.bouncing_horizontal=Horizontal strength
+conveyor.upgrade.industrialforegoing.tooltip.bouncing_vertical=Vertical strength
+conveyor.upgrade.industrialforegoing.tooltip.distance_horizontal=Horizontal distance
+conveyor.upgrade.industrialforegoing.tooltip.distance_vertical=Vertical distance
+conveyor.upgrade.industrialforegoing.tooltip.splitting_ratio=Splitting ratio
