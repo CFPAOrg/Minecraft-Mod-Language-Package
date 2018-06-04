@@ -2,10 +2,10 @@
 import os
 import re
 import time
-import src.weblate.weblate
+# import src.weblate.weblate
 
 # 首先是对 weblate 进行操控
-src.weblate.weblate.weblate_operation()
+# src.weblate.weblate.weblate_operation()
 
 # 我知道这一块代码很不符合规范
 # 但是写着好用，以后也许会改
