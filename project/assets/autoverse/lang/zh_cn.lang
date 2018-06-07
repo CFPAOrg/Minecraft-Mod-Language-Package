@@ -1,16 +1,41 @@
-language.name=Simplified Chinese
-language.region=cn
-language.code=zh_cn
-
-category.autoverse=Autoverse
-autoverse.key.togglemode=切换/动作
-
-autoverse.commands.loadconfig.success=Autoverse: 配置加载成功
-
-############################
+# Block Placer properties (on ItemBlocks):
+# Block names:
+# Chat messages:
 # Container/inventory names:
+# GUI InfoArea texts and tips:
+# GUI and item labels/tooltips etc:
+# Item names:
+# Placement Properties HUD:
+# Tooltips displayed on blocks (ItemBlocks):
+# Tooltips displayed on items:
+##############
+##############
+##############
+##############
 ############################
-
+############################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+###################################
+############################################
+############################################
+############################################
+############################################
+############################################
+############################################
+autoverse.chat.configurator.error.items_not_found=§c未能找到所有标记物品§r
+autoverse.chat.configurator.error.no_stored_properties_selected=§c在选择的序列中没有储存的属性§r
+autoverse.chat.configurator.error.wrong_state=§c失败：方块放置器没有在正确的设置阶段（开始设置属性1）§r
+autoverse.chat.configurator.properties_stored=§a成功储存了属性§r
+autoverse.chat.wand.sequence_applied_failed=§c失败：只有%d个物品中的%d个成功设置§r
+autoverse.chat.wand.sequence_applied_success=§a成功设置了有%d个物品的序列§r
+autoverse.chat.wand.sequence_stored=序列已经储存
+autoverse.commands.loadconfig.success=Autoverse: 配置加载成功
 autoverse.container.barrel=储物桶
 autoverse.container.block_detector=方块检测器
 autoverse.container.block_reader_nbt=方块状态读取器
@@ -38,24 +63,6 @@ autoverse.container.splitter_redstone=红石控制虚序列分离器
 autoverse.container.splitter_switchable=可切换序列分离器
 autoverse.container.trash_bin=垃圾桶
 autoverse.container.trash_buffer=垃圾缓存器
-
-
-###################################
-# Chat messages:
-###################################
-autoverse.chat.configurator.error.items_not_found=§c未能找到所有标记物品§r
-autoverse.chat.configurator.error.no_stored_properties_selected=§c在选择的序列中没有储存的属性§r
-autoverse.chat.configurator.error.wrong_state=§c失败：方块放置器没有在正确的设置阶段（开始设置属性1）§r
-autoverse.chat.configurator.properties_stored=§a成功储存了属性§r
-autoverse.chat.wand.sequence_applied_failed=§c失败：只有%d个物品中的%d个成功设置§r
-autoverse.chat.wand.sequence_applied_success=§a成功设置了有%d个物品的序列§r
-autoverse.chat.wand.sequence_stored=序列已经储存
-
-
-###################################
-# GUI InfoArea texts and tips:
-###################################
-
 autoverse.gui.infoarea.barrel=- Shift + 鼠标中键（在创造模式下）：|lf  - 补满堆叠（需要拿着多于一个物品）|lf  - 以10x的增量改变堆叠大小（拿着一个物品—）
 autoverse.gui.infoarea.block_breaker=- 首先试图将物品输出到后方方块|lf 如果失败，改为试图输出到后方的后方的方块|lf 这样可以在本设备的后方放置一个可移动框架,并且同时可以输出本方块内的物品
 autoverse.gui.infoarea.block_detector=- 试图检测自己前方的方块|lf- 成功检测到预设好的方块时输出一个相同的物品|lf- 如果设置的方块未被检测到，则输出一个在“其他物品”栏中的物品|lf- 输出之前需要先在缓存中存储了对应的物品|lf- 每次检测输出一个物品|lf- 设置为二进制数值|lf- 1比特物品在设置中代表二进制的“1”|lf- 任何其他物品代表二进制中的“0”|lf- 设置数值从最低有效位开始（二进制数字中的第0位）|lf- 可以设置的最大数值是4比特（距离检测器前方的方块0-15个方块）|lf- 角度也同样是4比特，15=45度（金字塔形）|lf- 设置的角度是最大角度|lf- 在每次检测的时候，角度是随机选择的（在设置角度内）|lf- 延迟是在每次检测中间间隔的秒数（8比特，最大=255秒）|lf- 如果延迟=0则在收到红石信号时进行检测
@@ -70,12 +77,6 @@ autoverse.gui.infoarea.sequencer_basic=- 鼠标左/右键点击或者在按钮�
 autoverse.gui.infoarea.sequencer_programmable=- 序列物品必须从正面以外的面被取出|lf- 方块本身会从正面推出正常输出物品
 autoverse.gui.infoarea.splitter_length=- 激活的输出口每经过n个物品切换一次|lf- 两个设定序列分别定义了两个输出口的切换数量|lf- 他们的数值为16比特整数，从最低有效位开始设定|lf- 有标记（可以设置）的输出面为输出2
 autoverse.gui.infoarea.splitter_switchable=- 你可以定义相同的启动/关闭序列，这样的序列就可以作为一个开关
-
-
-###################################
-# GUI and item labels/tooltips etc:
-###################################
-
 autoverse.gui.label.1_bit_marker=1比特
 autoverse.gui.label.barrel.change_tier=改变储物桶等级
 autoverse.gui.label.block_detector.delay=延迟（秒）
@@ -89,12 +90,12 @@ autoverse.gui.label.block_placer_programmable.offset=偏移量
 autoverse.gui.label.block_placer_programmable.property=属性 %d
 autoverse.gui.label.block_placer_programmable.trigger=触发器
 autoverse.gui.label.block_reader.block_count=长度（方块数量）
-autoverse.gui.label.block_reader_nbt.length_num=长度：%d
 autoverse.gui.label.block_reader.take_blocks=从世界中获取方块状态
+autoverse.gui.label.block_reader_nbt.length_num=长度：%d
 autoverse.gui.label.buffer.push_delay=推送延迟
-autoverse.gui.label.current_name=目前名字
 autoverse.gui.label.crafting_grid=合成栏
 autoverse.gui.label.crafting_pattern=模板
+autoverse.gui.label.current_name=目前名字
 autoverse.gui.label.delay.num=延迟：%d tick
 autoverse.gui.label.delay=传输延迟/速度（tick）
 autoverse.gui.label.empty_marker=空标记
@@ -103,8 +104,8 @@ autoverse.gui.label.end_marker=结束标志
 autoverse.gui.label.filter_items=过滤物品
 autoverse.gui.label.filtered_seq_buffer=过滤序列缓存
 autoverse.gui.label.in=输入
-autoverse.gui.label.input=输入
 autoverse.gui.label.input.num=输入%d
+autoverse.gui.label.input=输入
 autoverse.gui.label.inventory_size=容器大小
 autoverse.gui.label.matched_sequence=符合
 autoverse.gui.label.max_stack_num=最大堆叠：%d
@@ -116,10 +117,6 @@ autoverse.gui.label.out=输出
 autoverse.gui.label.out_filtered=输出（过滤的）
 autoverse.gui.label.out_normal=输出（正常）
 autoverse.gui.label.output_buffer=输出缓存
-autoverse.gui.label.rst=重置
-autoverse.gui.label.sequence_detector.sequence=检测序列
-autoverse.gui.label.sequencer_programmable.sequence=序列
-autoverse.gui.label.reset_sequence=重置序列
 autoverse.gui.label.redstone_emitter.enabled_marker=开启标记
 autoverse.gui.label.redstone_emitter.sequence_off=关闭序列
 autoverse.gui.label.redstone_emitter.sequence_on=开启序列
@@ -130,6 +127,10 @@ autoverse.gui.label.redstone_emitter_advanced.north=北方面开关
 autoverse.gui.label.redstone_emitter_advanced.south=南方面开关
 autoverse.gui.label.redstone_emitter_advanced.up=上方面开关
 autoverse.gui.label.redstone_emitter_advanced.west=西方面开关
+autoverse.gui.label.reset_sequence=重置序列
+autoverse.gui.label.rst=重置
+autoverse.gui.label.sequence_detector.sequence=检测序列
+autoverse.gui.label.sequencer_programmable.sequence=序列
 autoverse.gui.label.setname=设置名字
 autoverse.gui.label.splitter.output=输出%d
 autoverse.gui.label.splitter.switching_sequence=切换序列
@@ -137,18 +138,10 @@ autoverse.gui.label.splitter.switching_sequence_num=切换序列%d
 autoverse.gui.label.splitter_length.toggle=切换激活的输出口|lf(并且重置内部计数器)
 autoverse.gui.label.splitter_switchable.toggle=切换激活的输出口
 autoverse.gui.label.tier_num=等级：%d
+autoverse.gui.label.toggle_creative=切换创造模式
 autoverse.gui.label.trash.count=消灭的物品数：%d
 autoverse.gui.label.trash.feedback=反馈：%s
-autoverse.gui.label.toggle_creative=切换创造模式
-
-autoverse.tooltip.item.holdshift=按住§e§oShift§7以查看更多信息
-
-
-###################################
-# Placement Properties HUD:
-###################################
-
-autoverse.placement_properties.title=放置属性
+autoverse.key.togglemode=切换/动作
 autoverse.placement_properties.barrel.tier=储物桶等级
 autoverse.placement_properties.buffer.delay=推送延迟
 autoverse.placement_properties.buffer.size=缓存大小
@@ -157,153 +150,129 @@ autoverse.placement_properties.pipe.delay=延迟
 autoverse.placement_properties.pipe.max_stack=最大堆叠数
 autoverse.placement_properties.sequence_detector.on_time=On time (RS ticks)
 autoverse.placement_properties.sequencer.length=长度
-
-autoverse.tooltip.placementproperties.tooltips= |lf§f***放置属性***§r|lf- (Shift +)切换键可以改变属性选择|lf- Ctrl和/或 Alt + scroll可以改变数值
-
-
-############################################
-# Tooltips displayed on items:
-############################################
-
-item.autoverse.configurator.tooltips=- 可以读取并储存任意方块的可设置属性（如朝向等等）|lf- 用来设置可编程方块放置器|lf- Alt + 鼠标滚轮：改变选定的槽位/序列|lf- 切换键：给目前选择的属性序列命名|lf- Shift + 鼠标中键：储存指向的方块的数据|lf- Shift + 右键点击一个可编程方块放置器以应用属性|lf- 注意：方块放置器必须设置到偏移量之后|lf- 当本物品应用属性序列时，在玩家背包中能找到的第一个可堆叠的物品将被用于低位代表物品|lf （不能是结束标记和高位标记）
-item.autoverse.wand.tooltips=- 能储存物品序列并将其应用到设备上|lf- Alt + 鼠标滚轮：改变选择的序列|lf- 切换键：给目前选择的序列命名|lf- Shift + 鼠标中键：从指向的方块中保存序列|lf 可以是autoverse设备，也可以是任何其他容器|lf- Shift + 右键点击任何设备或容器以应用序列|lf- 在未指向TileEntity的情况下Shift + 鼠标中键删除目前选择的序列
-
-
-############################################
-# Tooltips displayed on blocks (ItemBlocks):
-############################################
-
-tile.autoverse.barrel.tooltips=- 一个简单的单槽位存储设备|lf- 其等级（最大堆叠数）是可以设定的|lf- 收到红石信号后锁定
-tile.autoverse.barrel_pulsed.tooltips=- 一个简单的单槽位存储设备|lf- 其等级（最大堆叠数）是可以设定的|lf- 脉冲版不可以用红石信号锁定|lf- 相反，它收到信号后会试图向下方输出一个物品
-tile.autoverse.block_reader_nbt.tooltips=- 可以读取世界中方块的状态并将其编码成物品的nbt数据|lf- 用于和不能编程的方块放置器一起使用
-tile.autoverse.breaker_greedy.tooltips=- 破坏除了在后边的所有方块|lf- 试图向自己后方以及后后方的方块输出物品|lf （这样可以在本设备的后方放置一个可移动框架,并且同时可以输出本方块内的物品）
-tile.autoverse.breaker_normal.tooltips=- 破坏自身前方方块|lf- 试图向自己后方以及后后方的方块输出物品|lf （这样可以在本设备的后方放置一个可移动框架,并且同时可以输出本方块内的物品）
-tile.autoverse.buffer_fifo.tooltips=- 将物品储存在一个FIFO（先进先出）型物品栏中|lf- 这代表，物品将以进入时相同的顺序离开本方块|lf- 在按钮上Shift 和/或 Ctrl + 鼠标左/右键/滚轮可以改变物品栏大小|lf- Alt + 鼠标中键：设定输入位置|lf- Shift + 鼠标中键设定输出位置|lf- 在空槽位上Ctrl +鼠标中键：将物品后移一个槽位（移除空槽）|lf- 在一个有物品的槽位上Ctrl + 鼠标中键：将本槽位中的物品后移一格（加入一个空槽）
-tile.autoverse.buffer_fifo_auto.tooltips=- 基础信息参见普通FIFO缓存器|lf- 会自动输出物品|lf- 可以用红石信号锁定（防止自动输出）
-tile.autoverse.buffer_fifo_pulsed.tooltips=- 基础信息参见普通FIFO缓存器|lf- 只有在收到红石脉冲时才会推进输出槽
-tile.autoverse.circuit_latch_rs.tooltips=- 右键点击设置输出面|lf- Shift + 右键设定设置面（绿色）|lf- Shift + 左键设定重置面
-tile.autoverse.circuit_latch_t.tooltips=- 右键点击设置输出面
-tile.autoverse.crafter.tooltips=- 自动合成器，需要以物品序列编程
-tile.autoverse.detector.tooltips=- 试图检测自己前方的方块|lf- 成功检测到预设好的方块时输出一个相同的物品|lf- 如果设置的方块未被检测到，则输出一个在“其他物品”栏中的物品|lf- 输出之前需要先在缓存中存储了对应的物品|lf- 每次检测输出一个物品|lf- 设置为二进制数值|lf- 1比特物品在设置中代表二进制的“1”|lf- 任何其他物品代表二进制中的“0”|lf- 设置数值从最低有效位开始（二进制数字中的第0位）|lf- 可以设置的最大数值是4比特（距离检测器前方的方块0-15个方块）|lf- 角度也同样是4比特，15=45度（金字塔形）|lf- 设置的角度是最大角度|lf- 在每次检查的时候，角度是随机选择的（在设置角度内）|lf- 延迟是在每次检测中间间隔的秒数（8比特，最大=255秒）|lf- 如果延迟=0则在收到红石信号时检测
-tile.autoverse.filter_basic.tooltips=- 一个基础的可编程过滤器|lf- 符合过滤器设定的物品从过滤输出口输出|lf- 空手Shift + 右键可设定过滤输出口
-tile.autoverse.filter_sequential.tooltips=- 过滤的物品只会以事先设定的顺序输出|lf- 空手Shift + 右键可设定过滤输出口
-tile.autoverse.filter_sequential_strict.tooltips=- 只有在整个序列都符合的时候物品才会被输出到过滤输出口|lf- 可以当作一个序列提取器|lf- 空手Shift + 右键可设定过滤输出口
-tile.autoverse.inventory_reader_items.tooltips=- 像原版比较器一样，根据目标容器的装满程度输出红石信号，但是：|lf  - 可以以任意方法放置|lf  - 只读取容器
-tile.autoverse.inventory_reader_slots.tooltips=- 根据目标容器有多少个槽位有物品来输出红石信号|lf- 每个槽位中的物品数量没有影响
-tile.autoverse.muxer_priority.tooltips=- 如果有物品的话，输入口2永远有更高的优先级|lf- 空手Shift + 右键可设定输入口2
-tile.autoverse.muxer_programmable.tooltips=- 激活的输入口根据经过的物品数量进行切换|lf- 对于两个不同输入口，这个数量由编程所决定|lf- 空手Shift + 右键可设定输入口2
-tile.autoverse.muxer_redstone.tooltips=- 激活的输入口可以由红石信号改变|lf- 标记的面是输入口2|lf- 任何其他面是输入口1|lf- 空手Shift + 右键可设定输入口2
-tile.autoverse.pipe_basic.tooltips=- 一般的物品传输管道|lf- 优先直线传输|lf- 物品不会从他过来的方向返回|lf- 空手Shift + 右键可关闭特定方向的连接|lf- 空手Shift + 左键也可关闭特定方向的连接|lf- 在副手拿着一个管道的情况下Shift + 右键，可以重新应用目前设置的放置属性
-tile.autoverse.pipe_extraction.tooltips=- 从容器中取出物品|lf- 可以用红石信号停止|lf- Shift + 左键开关是否在某方向提取物品|lf- 也可以副手有东西，主手空手Shift + 右键
-tile.autoverse.pipe_directional.tooltips=- 物品只能从激活的输出口离开|lf- Shift + 左键开关某个面的输出|lf-也可以副手有东西，主手空手Shift + 右键
-tile.autoverse.pipe_roundrobin.tooltips=- 在激活的输出口之间循环输出物品|lf- 注意循环指的是“输出尝试”，和输出数量无关|lf- 如果一个输出未成功，则会切换到下一个输出口|lf- 所以如果在这个过程中有一个输出口堵塞了，那么分配到各个输出口的物品数量将是不等的|lf- 如果物品推进所有的循环面的时候都失败了，那么它会被推入其他连接的面中|lf- 这样本管道就可以被用作一个输入管道，因为它总是会尝试先向循环面输出|lf 但是其他连界面也能使用|lf- Shift + 左键可以切换某一个方向的连接|lf- 也可以副手有东西，主手空手Shift + 右键
-tile.autoverse.placer.tooltips=- 一个基础的方块放置器，适合与方块状态读取器并用
-tile.autoverse.placer_programmable.tooltips=- 能以特定的状态放置方块以及，以及给TileEntity应用属性|lf （目前只能应用于本mod的TileEntity）|lf- 对于本mod以外的方块：|lf  - 第一个参数是任何PropertyDirection（朝向）类的属性|lf  - 第二个参数是PropertyInteger类的属性|lf  - 属性按字母顺序排列|lf- 基本上用这个设备可以按特定的方向/设置放置方块（如台阶）|lf- 最多可以隔着15个方块放置
-tile.autoverse.redstone_emitter_advanced.tooltips=- 可以用序列控制的红石信号发射器，每个面都可以独立设定
-tile.autoverse.redstone_emitter_basic.tooltips=- 可设定输出面|lf- 以进入的物品序列开/关
-tile.autoverse.sensor_height.tooltips=- 根据自身的海拔发出红石信号|lf- 因为强度只能是0-15，高度每增加16红石信号强度增加1
-tile.autoverse.sequence_detector.tooltips=- 当检测到一个预设好的物品序列时，输出一个1 Tick的红石脉冲
-tile.autoverse.sequencer_basic.tooltips=- 槽位数量可调整（最多18个）|lf- 每次从当前的输出槽位中输出一个物品，并前进一个槽位|lf- 物品可以用管道取出，也可以通过红石脉冲输出
-tile.autoverse.sequencer_programmable.tooltips=- 创建一个和基础版本类似的可设置的序列物品缓存器|lf  物品类型可以被锁定，并且空槽不会被跳过|lf- 序列中的物品必须用管道取出|lf- 不在序列内的物品会被推出
-tile.autoverse.splitter_length.tooltips=- 激活的物品输出口根据经过的物品数量自动切换|lf- 对于两个面，这个数量都是可以编程的|lf- 空手Shift + 右键可设定输入口2
-tile.autoverse.splitter_redstone.tooltips=- 物品输出口可以通过红石信号切换|lf- 空手Shift + 右键可设定输入口2
-tile.autoverse.splitter_switchable.tooltips=- 物品输出口可以根据一个预设的序列切换|lf- 空手Shift + 右键可设定输入口2
-tile.autoverse.trash_bin.tooltips=- 只是一个普通的垃圾桶，消灭进入的物品
-tile.autoverse.trash_buffer.tooltips=- 有一个更大缓存的垃圾桶（36槽。最大每个槽位1024个物品）|lf- 你可以把它看作一个有虚空升级的存储方块
-
-
-############################################
-# Block Placer properties (on ItemBlocks):
-############################################
-
+autoverse.placement_properties.title=放置属性
 autoverse.tooltip.config_props_title= |lf§f*** 方块放置器可设置属性 ***§r
-tile.autoverse.barrel.config_props=- 属性1：储物桶等级
-tile.autoverse.barrel_pulsed.config_props=- 属性1：储物桶等级
-tile.autoverse.block_reader_nbt.config_props=- 属性1：朝向|lf- 属性2：最大长度
-tile.autoverse.breaker_greedy.config_props=- 属性1：朝向|lf- 属性2：延迟（tick）
-tile.autoverse.breaker_normal.config_props=- 属性1：朝向|lf- 属性2：延迟（tick）
-tile.autoverse.buffer_fifo.config_props=- 属性1：朝向|lf- 属性2：FIFO缓存器物品栏大小|lf- 属性3：推送延迟
-tile.autoverse.buffer_fifo_auto.config_props=- 属性1：朝向|lf- 属性2：FIFO缓存器物品栏大小|lf- 属性3：推送延迟
-tile.autoverse.buffer_fifo_pulsed.config_props=- 属性1：朝向|lf- 属性2：FIFO缓存器物品栏大小|lf- 属性3：推送延迟
-tile.autoverse.circuit_latch_rs.config_props=- 属性1：朝向|lf- 属性2：设置朝向|lf- 属性3：重置朝向
-tile.autoverse.circuit_latch_t.config_props=- 属性1：朝向
-tile.autoverse.crafter.config_props=- 属性1：朝向
-tile.autoverse.detector.config_props=- 属性1：朝向|lf- 属性2：检测物品输出方向
-tile.autoverse.filter_basic.config_props=- 属性1：朝向|lf- 属性2：过滤物品输出方向|lf- 属性3：延迟（tick）
-tile.autoverse.filter_sequential.config_props=- 属性1：朝向|lf- 属性2：过滤物品输出方向|lf- 属性3：延迟（tick）
-tile.autoverse.filter_sequential_strict.config_props=- 属性1：朝向|lf- 属性2：过滤物品输出方向|lf- 属性3：延迟（tick）
-tile.autoverse.inventory_reader_items.config_props=- 属性1：朝向
-tile.autoverse.inventory_reader_slots.config_props=- 属性1：朝向
-tile.autoverse.muxer_priority.config_props=- 属性1：朝向|lf- 属性2：输入口2方向|lf- 属性3：延迟（tick）
-tile.autoverse.muxer_programmable.config_props=- 属性1：朝向|lf- 属性2：输入口2方向|lf- 属性3：延迟（tick）
-tile.autoverse.muxer_redstone.config_props=- 属性1：朝向|lf- 属性2：输入口2方向|lf- 属性3：延迟（tick）
-tile.autoverse.pipe_basic.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask
-tile.autoverse.pipe_extraction.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask|lf- Prop 4: 输入面bitmask
-tile.autoverse.pipe_directional.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask|lf- Prop 4: 输出面bitmask
-tile.autoverse.pipe_roundrobin.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask|lf- Prop 4: 输出面bitmask
-tile.autoverse.placer.config_props=- 属性1：朝向|lf- 属性2：水平朝向|lf- 属性3：延迟（tick）
-tile.autoverse.placer_programmable.config_props=- 属性1：朝向|lf- 属性2：水平朝向|lf- 属性3：放置偏移量(0-15)
-tile.autoverse.redstone_emitter_advanced.config_props=- 属性1：朝向
-tile.autoverse.redstone_emitter_basic.config_props=- 属性1：朝向
-tile.autoverse.sequence_detector.config_props=- 属性1：朝向
-tile.autoverse.sequencer_basic.config_props=- 属性1：朝向|lf- 属性2：物品栏大小
-tile.autoverse.sequencer_programmable.config_props=- 属性1：朝向
-tile.autoverse.splitter_length.config_props=- 属性1：朝向|lf- 属性2：第二输出口方向|lf- 属性3：延迟（tick）
-tile.autoverse.splitter_redstone.config_props=- 属性1：朝向|lf- 属性2：第二输出口方向|lf- 属性3：延迟（tick）
-tile.autoverse.splitter_switchable.config_props=- 属性1：朝向|lf- 属性2：第二输出口方向|lf- 属性3：延迟（tick）
-
-
-##############
-# Block names:
-##############
-
-tile.autoverse.barrel.name=储物桶
-tile.autoverse.barrel_pulsed.name=脉冲式储物桶
-tile.autoverse.block_reader_nbt.name=方块状态读取器 (NBT)
-tile.autoverse.breaker_greedy.name=方块破坏器（贪婪）
-tile.autoverse.breaker_normal.name=方块破坏器
-tile.autoverse.buffer_fifo.name=FIFO（先进先出）缓存器
-tile.autoverse.buffer_fifo_auto.name=自动推送式FIFO缓存器
-tile.autoverse.buffer_fifo_pulsed.name=脉冲式FIFO缓存器
-tile.autoverse.circuit_latch_rs.name=RS锁存器
-tile.autoverse.circuit_latch_t.name=T锁存器
-tile.autoverse.crafter.name=可编程自动合成器
-tile.autoverse.detector.name=可编程方块检测器
-tile.autoverse.filter_basic.name=可编程过滤器（基础）
-tile.autoverse.filter_sequential.name=可编程过滤器（序列）
-tile.autoverse.filter_sequential_strict.name=可编程过滤器（严格序列）
-tile.autoverse.inventory_reader_items.name=容器检测器（物品）
-tile.autoverse.inventory_reader_slots.name=容器检测器（槽位）
-tile.autoverse.machine_frame.name=机器框架
-tile.autoverse.muxer_priority.name=多路调制器
-tile.autoverse.muxer_programmable.name=可编程多路调制器
-tile.autoverse.muxer_redstone.name=红石控制多路调制器
-tile.autoverse.pipe_basic.name=管道
-tile.autoverse.pipe_extraction.name=提取管道
-tile.autoverse.pipe_directional.name=方向性管道
-tile.autoverse.pipe_roundrobin.name=循环管道
-tile.autoverse.placer.name=方块放置器
-tile.autoverse.placer_programmable.name=可编程方块放置器
-tile.autoverse.redstone_emitter_advanced.name=可编程红石信号发生器（高级）
-tile.autoverse.redstone_emitter_basic.name=可编程红石信号发生器（基础）
-tile.autoverse.sensor_height.name=高度传感器
-tile.autoverse.sequence_detector.name=序列检测器
-tile.autoverse.sequencer_basic.name=定序器（基础）
-tile.autoverse.sequencer_programmable.name=可编程定序器
-tile.autoverse.splitter_length.name=序列长度分离器
-tile.autoverse.splitter_redstone.name=红石控制虚序列分离器
-tile.autoverse.splitter_switchable.name=可切换序列分离器
-tile.autoverse.trash_bin.name=垃圾桶
-tile.autoverse.trash_buffer.name=垃圾缓存器
-
-
-##############
-# Item names:
-##############
-item.autoverse.configurator.name=方块放置器属性设置器
-item.autoverse.wand.name=序列设置之仗
-
 autoverse.tooltip.item.andmorestacksnotlisted=  还有 %s%d%s 组没有列出来
+autoverse.tooltip.item.holdshift=按住§e§oShift§7以查看更多信息
 autoverse.tooltip.item.holdshiftfordescription=按住 §e§oShift§7 可看到完整描述
 autoverse.tooltip.item.stackcount=目前总共存储了 %d 组 / %s 个物品
 autoverse.tooltip.item.stacks=组
+autoverse.tooltip.placementproperties.tooltips= |lf§f***放置属性***§r|lf- (Shift +)切换键可以改变属性选择|lf- Ctrl和/或 Alt + scroll可以改变数值
+category.autoverse=Autoverse
+item.autoverse.configurator.name=方块放置器属性设置器
+item.autoverse.configurator.tooltips=- 可以读取并储存任意方块的可设置属性（如朝向等等）|lf- 用来设置可编程方块放置器|lf- Alt + 鼠标滚轮：改变选定的槽位/序列|lf- 切换键：给目前选择的属性序列命名|lf- Shift + 鼠标中键：储存指向的方块的数据|lf- Shift + 右键点击一个可编程方块放置器以应用属性|lf- 注意：方块放置器必须设置到偏移量之后|lf- 当本物品应用属性序列时，在玩家背包中能找到的第一个可堆叠的物品将被用于低位代表物品|lf （不能是结束标记和高位标记）
+item.autoverse.wand.name=序列设置之仗
+item.autoverse.wand.tooltips=- 能储存物品序列并将其应用到设备上|lf- Alt + 鼠标滚轮：改变选择的序列|lf- 切换键：给目前选择的序列命名|lf- Shift + 鼠标中键：从指向的方块中保存序列|lf 可以是autoverse设备，也可以是任何其他容器|lf- Shift + 右键点击任何设备或容器以应用序列|lf- 在未指向TileEntity的情况下Shift + 鼠标中键删除目前选择的序列
+language.code=zh_cn
+language.name=Simplified Chinese
+language.region=cn
+tile.autoverse.barrel.config_props=- 属性1：储物桶等级
+tile.autoverse.barrel.name=储物桶
+tile.autoverse.barrel.tooltips=- 一个简单的单槽位存储设备|lf- 其等级（最大堆叠数）是可以设定的|lf- 收到红石信号后锁定
+tile.autoverse.barrel_pulsed.config_props=- 属性1：储物桶等级
+tile.autoverse.barrel_pulsed.name=脉冲式储物桶
+tile.autoverse.barrel_pulsed.tooltips=- 一个简单的单槽位存储设备|lf- 其等级（最大堆叠数）是可以设定的|lf- 脉冲版不可以用红石信号锁定|lf- 相反，它收到信号后会试图向下方输出一个物品
+tile.autoverse.block_reader_nbt.config_props=- 属性1：朝向|lf- 属性2：最大长度
+tile.autoverse.block_reader_nbt.name=方块状态读取器 (NBT)
+tile.autoverse.block_reader_nbt.tooltips=- 可以读取世界中方块的状态并将其编码成物品的nbt数据|lf- 用于和不能编程的方块放置器一起使用
+tile.autoverse.breaker_greedy.config_props=- 属性1：朝向|lf- 属性2：延迟（tick）
+tile.autoverse.breaker_greedy.name=方块破坏器（贪婪）
+tile.autoverse.breaker_greedy.tooltips=- 破坏除了在后边的所有方块|lf- 试图向自己后方以及后后方的方块输出物品|lf （这样可以在本设备的后方放置一个可移动框架,并且同时可以输出本方块内的物品）
+tile.autoverse.breaker_normal.config_props=- 属性1：朝向|lf- 属性2：延迟（tick）
+tile.autoverse.breaker_normal.name=方块破坏器
+tile.autoverse.breaker_normal.tooltips=- 破坏自身前方方块|lf- 试图向自己后方以及后后方的方块输出物品|lf （这样可以在本设备的后方放置一个可移动框架,并且同时可以输出本方块内的物品）
+tile.autoverse.buffer_fifo.config_props=- 属性1：朝向|lf- 属性2：FIFO缓存器物品栏大小|lf- 属性3：推送延迟
+tile.autoverse.buffer_fifo.name=FIFO（先进先出）缓存器
+tile.autoverse.buffer_fifo.tooltips=- 将物品储存在一个FIFO（先进先出）型物品栏中|lf- 这代表，物品将以进入时相同的顺序离开本方块|lf- 在按钮上Shift 和/或 Ctrl + 鼠标左/右键/滚轮可以改变物品栏大小|lf- Alt + 鼠标中键：设定输入位置|lf- Shift + 鼠标中键设定输出位置|lf- 在空槽位上Ctrl +鼠标中键：将物品后移一个槽位（移除空槽）|lf- 在一个有物品的槽位上Ctrl + 鼠标中键：将本槽位中的物品后移一格（加入一个空槽）
+tile.autoverse.buffer_fifo_auto.config_props=- 属性1：朝向|lf- 属性2：FIFO缓存器物品栏大小|lf- 属性3：推送延迟
+tile.autoverse.buffer_fifo_auto.name=自动推送式FIFO缓存器
+tile.autoverse.buffer_fifo_auto.tooltips=- 基础信息参见普通FIFO缓存器|lf- 会自动输出物品|lf- 可以用红石信号锁定（防止自动输出）
+tile.autoverse.buffer_fifo_pulsed.config_props=- 属性1：朝向|lf- 属性2：FIFO缓存器物品栏大小|lf- 属性3：推送延迟
+tile.autoverse.buffer_fifo_pulsed.name=脉冲式FIFO缓存器
+tile.autoverse.buffer_fifo_pulsed.tooltips=- 基础信息参见普通FIFO缓存器|lf- 只有在收到红石脉冲时才会推进输出槽
+tile.autoverse.circuit_latch_rs.config_props=- 属性1：朝向|lf- 属性2：设置朝向|lf- 属性3：重置朝向
+tile.autoverse.circuit_latch_rs.name=RS锁存器
+tile.autoverse.circuit_latch_rs.tooltips=- 右键点击设置输出面|lf- Shift + 右键设定设置面（绿色）|lf- Shift + 左键设定重置面
+tile.autoverse.circuit_latch_t.config_props=- 属性1：朝向
+tile.autoverse.circuit_latch_t.name=T锁存器
+tile.autoverse.circuit_latch_t.tooltips=- 右键点击设置输出面
+tile.autoverse.crafter.config_props=- 属性1：朝向
+tile.autoverse.crafter.name=可编程自动合成器
+tile.autoverse.crafter.tooltips=- 自动合成器，需要以物品序列编程
+tile.autoverse.detector.config_props=- 属性1：朝向|lf- 属性2：检测物品输出方向
+tile.autoverse.detector.name=可编程方块检测器
+tile.autoverse.detector.tooltips=- 试图检测自己前方的方块|lf- 成功检测到预设好的方块时输出一个相同的物品|lf- 如果设置的方块未被检测到，则输出一个在“其他物品”栏中的物品|lf- 输出之前需要先在缓存中存储了对应的物品|lf- 每次检测输出一个物品|lf- 设置为二进制数值|lf- 1比特物品在设置中代表二进制的“1”|lf- 任何其他物品代表二进制中的“0”|lf- 设置数值从最低有效位开始（二进制数字中的第0位）|lf- 可以设置的最大数值是4比特（距离检测器前方的方块0-15个方块）|lf- 角度也同样是4比特，15=45度（金字塔形）|lf- 设置的角度是最大角度|lf- 在每次检查的时候，角度是随机选择的（在设置角度内）|lf- 延迟是在每次检测中间间隔的秒数（8比特，最大=255秒）|lf- 如果延迟=0则在收到红石信号时检测
+tile.autoverse.filter_basic.config_props=- 属性1：朝向|lf- 属性2：过滤物品输出方向|lf- 属性3：延迟（tick）
+tile.autoverse.filter_basic.name=可编程过滤器（基础）
+tile.autoverse.filter_basic.tooltips=- 一个基础的可编程过滤器|lf- 符合过滤器设定的物品从过滤输出口输出|lf- 空手Shift + 右键可设定过滤输出口
+tile.autoverse.filter_sequential.config_props=- 属性1：朝向|lf- 属性2：过滤物品输出方向|lf- 属性3：延迟（tick）
+tile.autoverse.filter_sequential.name=可编程过滤器（序列）
+tile.autoverse.filter_sequential.tooltips=- 过滤的物品只会以事先设定的顺序输出|lf- 空手Shift + 右键可设定过滤输出口
+tile.autoverse.filter_sequential_strict.config_props=- 属性1：朝向|lf- 属性2：过滤物品输出方向|lf- 属性3：延迟（tick）
+tile.autoverse.filter_sequential_strict.name=可编程过滤器（严格序列）
+tile.autoverse.filter_sequential_strict.tooltips=- 只有在整个序列都符合的时候物品才会被输出到过滤输出口|lf- 可以当作一个序列提取器|lf- 空手Shift + 右键可设定过滤输出口
+tile.autoverse.inventory_reader_items.config_props=- 属性1：朝向
+tile.autoverse.inventory_reader_items.name=容器检测器（物品）
+tile.autoverse.inventory_reader_items.tooltips=- 像原版比较器一样，根据目标容器的装满程度输出红石信号，但是：|lf  - 可以以任意方法放置|lf  - 只读取容器
+tile.autoverse.inventory_reader_slots.config_props=- 属性1：朝向
+tile.autoverse.inventory_reader_slots.name=容器检测器（槽位）
+tile.autoverse.inventory_reader_slots.tooltips=- 根据目标容器有多少个槽位有物品来输出红石信号|lf- 每个槽位中的物品数量没有影响
+tile.autoverse.machine_frame.name=机器框架
+tile.autoverse.muxer_priority.config_props=- 属性1：朝向|lf- 属性2：输入口2方向|lf- 属性3：延迟（tick）
+tile.autoverse.muxer_priority.name=多路调制器
+tile.autoverse.muxer_priority.tooltips=- 如果有物品的话，输入口2永远有更高的优先级|lf- 空手Shift + 右键可设定输入口2
+tile.autoverse.muxer_programmable.config_props=- 属性1：朝向|lf- 属性2：输入口2方向|lf- 属性3：延迟（tick）
+tile.autoverse.muxer_programmable.name=可编程多路调制器
+tile.autoverse.muxer_programmable.tooltips=- 激活的输入口根据经过的物品数量进行切换|lf- 对于两个不同输入口，这个数量由编程所决定|lf- 空手Shift + 右键可设定输入口2
+tile.autoverse.muxer_redstone.config_props=- 属性1：朝向|lf- 属性2：输入口2方向|lf- 属性3：延迟（tick）
+tile.autoverse.muxer_redstone.name=红石控制多路调制器
+tile.autoverse.muxer_redstone.tooltips=- 激活的输入口可以由红石信号改变|lf- 标记的面是输入口2|lf- 任何其他面是输入口1|lf- 空手Shift + 右键可设定输入口2
+tile.autoverse.pipe_basic.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask
+tile.autoverse.pipe_basic.name=管道
+tile.autoverse.pipe_basic.tooltips=- 一般的物品传输管道|lf- 优先直线传输|lf- 物品不会从他过来的方向返回|lf- 空手Shift + 右键可关闭特定方向的连接|lf- 空手Shift + 左键也可关闭特定方向的连接|lf- 在副手拿着一个管道的情况下Shift + 右键，可以重新应用目前设置的放置属性
+tile.autoverse.pipe_directional.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask|lf- Prop 4: 输出面bitmask
+tile.autoverse.pipe_directional.name=方向性管道
+tile.autoverse.pipe_directional.tooltips=- 物品只能从激活的输出口离开|lf- Shift + 左键开关某个面的输出|lf-也可以副手有东西，主手空手Shift + 右键
+tile.autoverse.pipe_extraction.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask|lf- Prop 4: 输入面bitmask
+tile.autoverse.pipe_extraction.name=提取管道
+tile.autoverse.pipe_extraction.tooltips=- 从容器中取出物品|lf- 可以用红石信号停止|lf- Shift + 左键开关是否在某方向提取物品|lf- 也可以副手有东西，主手空手Shift + 右键
+tile.autoverse.pipe_roundrobin.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask|lf- Prop 4: 输出面bitmask
+tile.autoverse.pipe_roundrobin.name=循环管道
+tile.autoverse.pipe_roundrobin.tooltips=- 在激活的输出口之间循环输出物品|lf- 注意循环指的是“输出尝试”，和输出数量无关|lf- 如果一个输出未成功，则会切换到下一个输出口|lf- 所以如果在这个过程中有一个输出口堵塞了，那么分配到各个输出口的物品数量将是不等的|lf- 如果物品推进所有的循环面的时候都失败了，那么它会被推入其他连接的面中|lf- 这样本管道就可以被用作一个输入管道，因为它总是会尝试先向循环面输出|lf 但是其他连界面也能使用|lf- Shift + 左键可以切换某一个方向的连接|lf- 也可以副手有东西，主手空手Shift + 右键
+tile.autoverse.placer.config_props=- 属性1：朝向|lf- 属性2：水平朝向|lf- 属性3：延迟（tick）
+tile.autoverse.placer.name=方块放置器
+tile.autoverse.placer.tooltips=- 一个基础的方块放置器，适合与方块状态读取器并用
+tile.autoverse.placer_programmable.config_props=- 属性1：朝向|lf- 属性2：水平朝向|lf- 属性3：放置偏移量(0-15)
+tile.autoverse.placer_programmable.name=可编程方块放置器
+tile.autoverse.placer_programmable.tooltips=- 能以特定的状态放置方块以及，以及给TileEntity应用属性|lf （目前只能应用于本mod的TileEntity）|lf- 对于本mod以外的方块：|lf  - 第一个参数是任何PropertyDirection（朝向）类的属性|lf  - 第二个参数是PropertyInteger类的属性|lf  - 属性按字母顺序排列|lf- 基本上用这个设备可以按特定的方向/设置放置方块（如台阶）|lf- 最多可以隔着15个方块放置
+tile.autoverse.redstone_emitter_advanced.config_props=- 属性1：朝向
+tile.autoverse.redstone_emitter_advanced.name=可编程红石信号发生器（高级）
+tile.autoverse.redstone_emitter_advanced.tooltips=- 可以用序列控制的红石信号发射器，每个面都可以独立设定
+tile.autoverse.redstone_emitter_basic.config_props=- 属性1：朝向
+tile.autoverse.redstone_emitter_basic.name=可编程红石信号发生器（基础）
+tile.autoverse.redstone_emitter_basic.tooltips=- 可设定输出面|lf- 以进入的物品序列开/关
+tile.autoverse.sensor_height.name=高度传感器
+tile.autoverse.sensor_height.tooltips=- 根据自身的海拔发出红石信号|lf- 因为强度只能是0-15，高度每增加16红石信号强度增加1
+tile.autoverse.sequence_detector.config_props=- 属性1：朝向
+tile.autoverse.sequence_detector.name=序列检测器
+tile.autoverse.sequence_detector.tooltips=- 当检测到一个预设好的物品序列时，输出一个1 Tick的红石脉冲
+tile.autoverse.sequencer_basic.config_props=- 属性1：朝向|lf- 属性2：物品栏大小
+tile.autoverse.sequencer_basic.name=定序器（基础）
+tile.autoverse.sequencer_basic.tooltips=- 槽位数量可调整（最多18个）|lf- 每次从当前的输出槽位中输出一个物品，并前进一个槽位|lf- 物品可以用管道取出，也可以通过红石脉冲输出
+tile.autoverse.sequencer_programmable.config_props=- 属性1：朝向
+tile.autoverse.sequencer_programmable.name=可编程定序器
+tile.autoverse.sequencer_programmable.tooltips=- 创建一个和基础版本类似的可设置的序列物品缓存器|lf  物品类型可以被锁定，并且空槽不会被跳过|lf- 序列中的物品必须用管道取出|lf- 不在序列内的物品会被推出
+tile.autoverse.splitter_length.config_props=- 属性1：朝向|lf- 属性2：第二输出口方向|lf- 属性3：延迟（tick）
+tile.autoverse.splitter_length.name=序列长度分离器
+tile.autoverse.splitter_length.tooltips=- 激活的物品输出口根据经过的物品数量自动切换|lf- 对于两个面，这个数量都是可以编程的|lf- 空手Shift + 右键可设定输入口2
+tile.autoverse.splitter_redstone.config_props=- 属性1：朝向|lf- 属性2：第二输出口方向|lf- 属性3：延迟（tick）
+tile.autoverse.splitter_redstone.name=红石控制虚序列分离器
+tile.autoverse.splitter_redstone.tooltips=- 物品输出口可以通过红石信号切换|lf- 空手Shift + 右键可设定输入口2
+tile.autoverse.splitter_switchable.config_props=- 属性1：朝向|lf- 属性2：第二输出口方向|lf- 属性3：延迟（tick）
+tile.autoverse.splitter_switchable.name=可切换序列分离器
+tile.autoverse.splitter_switchable.tooltips=- 物品输出口可以根据一个预设的序列切换|lf- 空手Shift + 右键可设定输入口2
+tile.autoverse.trash_bin.name=垃圾桶
+tile.autoverse.trash_bin.tooltips=- 只是一个普通的垃圾桶，消灭进入的物品
+tile.autoverse.trash_buffer.name=垃圾缓存器
+tile.autoverse.trash_buffer.tooltips=- 有一个更大缓存的垃圾桶（36槽。最大每个槽位1024个物品）|lf- 你可以把它看作一个有虚空升级的存储方块
+toverse.tooltip.item.stacks=组
