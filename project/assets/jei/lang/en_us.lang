@@ -9,13 +9,13 @@ jei.tooltip.transfer=Move Items
 jei.tooltip.recipe.ore.dict=Accepts any: %s
 jei.tooltip.item.colors=Colors: %s
 jei.tooltip.shapeless.recipe=Shapeless Recipe
-jei.tooltip.cheat.mode=Cheat Mode is enabled.
+jei.tooltip.cheat.mode.button.enabled=Cheat Mode enabled
 jei.tooltip.cheat.mode.how.to.disable.hotkey=Press %s to toggle it.
 jei.tooltip.cheat.mode.how.to.disable.no.hotkey=%s-click here to toggle it.
 jei.tooltip.recipe.by=Recipe By: %s
 jei.tooltip.recipe.id=Recipe ID: %s
-jei.tooltip.not.enough.space=There is not enough space to display the ingredient list here.
-jei.tooltip.ingredient.list.disabled=The Ingredient list is disabled.
+jei.tooltip.not.enough.space=There is not enough space to display JEI here.
+jei.tooltip.ingredient.list.disabled=The JEI overlay is disabled.
 jei.tooltip.ingredient.list.disabled.how.to.fix=Press %s to enable it.
 
 # Error Tooltips
@@ -32,10 +32,10 @@ jei.chat.error.no.cheat.permission.1=You do not have permission to use JEI's Che
 jei.chat.error.no.cheat.permission.2=Permission is given to players who can /give items or are in Creative Mode.
 
 # Key Bindings
-key.jei.toggleOverlay=Toggle Ingredient List Overlay
+key.jei.toggleOverlay=Show/Hide JEI
 key.jei.focusSearch=Select Search Bar
-key.jei.showRecipe=Show Item Recipe
-key.jei.showUses=Show Item Uses
+key.jei.showRecipe=Show Recipe
+key.jei.showUses=Show Uses
 key.jei.recipeBack=Show Previously Viewed Recipe
 key.jei.toggleCheatMode=Toggle Cheating Mode
 key.jei.previousPage=Show Previous Page
@@ -49,10 +49,10 @@ config.jei.title=%MODNAME Config
 
 config.jei.mode=Mode
 config.jei.mode.comment=Change the mode that JEI is operating in.
-config.jei.mode.cheatItemsEnabled=Cheating Mode
+config.jei.mode.cheatItemsEnabled=Cheat Mode
 config.jei.mode.cheatItemsEnabled.comment=Give items instead of showing the recipe.
-config.jei.mode.editEnabled=Item Hiding Mode
-config.jei.mode.editEnabled.comment=Hide and unhide items by clicking them in the ingredient list.
+config.jei.mode.editEnabled=Hide Ingredients
+config.jei.mode.editEnabled.comment=Hide and unhide ingredients by clicking them in the list.
 
 config.jei.interface=Interface
 config.jei.interface.comment=Options relating to the User Interface.
@@ -70,18 +70,18 @@ config.jei.search.oreDictSearchMode.comment=Search mode for Ore Dictionary Names
 config.jei.search.creativeTabSearchMode=%%CreativeTab
 config.jei.search.creativeTabSearchMode.comment=Search mode for Creative Tab Names (prefix: %)
 config.jei.search.colorSearchMode=^Color
-config.jei.search.colorSearchMode.comment=Search mode for Item Colors (prefix: ^)
+config.jei.search.colorSearchMode.comment=Search mode for Colors (prefix: ^)
 config.jei.search.resourceIdSearchMode=&ResourceId
 config.jei.search.resourceIdSearchMode.comment=Search mode for resources ids (prefix: &)
 
 config.jei.advanced=Advanced
 config.jei.advanced.comment=Advanced config options to change the way JEI functions.
-config.jei.advanced.itemBlacklist=Item Blacklist
-config.jei.advanced.itemBlacklist.comment=List of items that should not be displayed in the ingredient list. Format: modId[:name[:meta]]. Edit Mode will automatically add or remove entries here.
+config.jei.advanced.itemBlacklist=Ingredient Blacklist
+config.jei.advanced.itemBlacklist.comment=List of ingredients that should not be displayed in the list. Format: modId[:name[:meta]]. Hide Ingredients Mode will automatically add or remove entries here.
 config.jei.advanced.colorSearchEnabled=Enable Color Search
-config.jei.advanced.colorSearchEnabled.comment=Search items by color and show the searchable item colors on tooltips in the ingredient list.
+config.jei.advanced.colorSearchEnabled.comment=Search ingredients by color and show the colors on tooltips in the list.
 config.jei.advanced.debugModeEnabled=Debug Mode
-config.jei.advanced.debugModeEnabled.comment=Only useful for JEI developers, adds test items and some debug recipes.
+config.jei.advanced.debugModeEnabled.comment=Only useful for JEI developers, adds test ingredients and some debug recipes.
 config.jei.advanced.centerSearchBarEnabled=Center Search Bar
 config.jei.advanced.centerSearchBarEnabled.comment=Move the JEI search bar to the bottom center of the screen.
 config.jei.advanced.modNameFormat=Mod Name Format
@@ -89,12 +89,12 @@ config.jei.advanced.modNameFormat.comment=How the mod name should be formatted i
 config.jei.advanced.maxColumns=Max Width
 config.jei.advanced.maxColumns.comment=The maximum width of the ingredient list.
 config.jei.advanced.giveMode=Give Mode
-config.jei.advanced.giveMode.comment=Choose if JEI should give items direct to the inventory (inventory) or pick them up with the mouse (mouse_pickup).
+config.jei.advanced.giveMode.comment=Choose if JEI should give ingredients direct to the inventory (inventory) or pick them up with the mouse (mouse_pickup).
 
-# Edit Mode
-gui.jei.editMode.description=JEI Ingredient List Edit Mode:
-gui.jei.editMode.description.hide=Hide. (%CTRL-click).
-gui.jei.editMode.description.hide.wild=Hide by Wildcard. (%CTRL-right-click).
+# Hide Ingredients Mode
+gui.jei.editMode.description=JEI Hide Ingredients Mode:
+gui.jei.editMode.description.hide=%CTRL-Click to Hide
+gui.jei.editMode.description.hide.wild=%CTRL-right-click to Hide by Wildcard
 
 # PC/Linux Control Key
 key.jei.ctrl=CTRL
@@ -108,7 +108,6 @@ gui.jei.category.smelting.experience=%s XP
 gui.jei.category.fuel=Fuel
 gui.jei.category.fuel.smeltCount.single=Smelts 1 item
 gui.jei.category.fuel.smeltCount=Smelts %s items
-gui.jei.category.fuel.burnTime=Burn Time: %s
 gui.jei.category.brewing=Brewing
 gui.jei.category.brewing.steps=Steps: %s
 gui.jei.category.itemInformation=Information
