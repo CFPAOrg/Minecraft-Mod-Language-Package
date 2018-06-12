@@ -61,6 +61,7 @@ button.inventory.hotbarswap=与整行快捷栏交换
 button.inventory.armorswap=与装备栏交换护甲
 button.listtype.up=白名单或黑名单
 button.listtype=切换忽略列表类型
+button.miner.height=挖掘高度
 button.miner.whitelist.0=黑名单
 button.miner.whitelist.1=白名单
 button.reset.name=重置
@@ -279,8 +280,8 @@ item.ender_pearl_reuse.tooltip=可重复使用的末影珍珠
 item.ender_snow.guide=比普通的雪球好。当这种雪球着陆时，它会让着陆地的雪层堆积起来。
 item.ender_snow.name=冰霜制造器
 item.ender_snow.tooltip=快速制造冰和雪
-item.ender_tnt_1.guide=可投掷的一次性爆炸物。有六种不同的威力级别。这些炸药造成的爆炸都是没有特别之处的普通爆炸。
-item.ender_tnt_1.guide=可投掷的一次性爆炸物。有六种不同的威力级别。这些炸药造成的爆炸都是没有特别之处的普通爆炸。
+item.ender_tnt_1.guide=投掷它以产生爆炸。它有六种不同的威力级别。这些炸药造成的爆炸都是没有特别之处的普通爆炸。
+item.ender_tnt_1.guide=投掷它以产生爆炸。它有六种不同的威力级别。这些炸药造成的爆炸都是没有特别之处的普通爆炸。
 item.ender_tnt_1.name=末影炸弹I
 item.ender_tnt_1.tooltip=爆炸威力为苦力怕的1/3
 item.ender_tnt_2.guide=爆炸威力为苦力怕的2/3
@@ -319,7 +320,7 @@ item.fire_killer.tooltip=熄灭附近的火
 item.food_step.guide=吃下后可以像马一样上一格方块（再吃一次撤消）
 item.food_step.name=健体苹果
 item.food_step.tooltip=吃下以后你就可以直接走上一格高的方块（再次吃下去掉这个效果）
-item.glove_climb.guide=让你就像上面有梯子一样爬上任何一个垂直的平面。如果要爬下，按住潜行然后行走即可。在你的物品栏中右键该物品可以关闭它，它兼容Baubles API。
+item.glove_climb.guide=让你就像上面有梯子一样爬上任何一个垂直的平面。如果要向下爬，按住潜行然后在墙上行走即可。如果要停留在空中，在墙上倒着走然后按住潜行即可。在你的物品栏中右键该物品可以关闭它，它兼容Baubles API。  
 item.glove_climb.name=攀岩手套
 item.glove_climb.tooltip=能攀登任何的垂直平面，它必须放在你的快捷栏或副手栏才能生效
 item.glowing_chorus.guide=用比较平衡的方式来获得飞行的力量。
@@ -362,7 +363,7 @@ item.magic_net.tooltip=对着一个生物实体投掷以捕捉它
 item.mattock.guide=一次能挖掘3x3的泥土类和石头类方块。
 item.mattock.name=鹤嘴锄
 item.mattock.tooltip=相当于铁镐和铁铲的结合体。一次能挖掘3x3x1的方块
-item.password_remote.guide=将它绑定到世界上的一个拉杆（shift+右击），便可以远程遥控拉杆
+item.password_remote.guide=将它绑定到世界上的一个拉杆（shift+右击），便可以远程遥控拉杆。
 item.password_remote.invalid=该位置无效，因为没有找到拉杆
 item.password_remote.name=远程拉杆
 item.password_remote.saved=拉杆位置已保存
@@ -419,6 +420,7 @@ item.storage_bag.nothing=当前模式：什么都不做
 item.storage_bag.success=搬运物品数量：
 item.storage_bag.tooltip2=左键以调整模式， 
 item.storage_bag.tooltip=物品堆叠数：
+item.storage_bag.toggle=点击以切换模式
 item.sword_ender.guide=不可破坏的剑，右键可以发射一颗末影珍珠
 item.sword_ender.name=闪避之剑
 item.sword_ender.tooltip=右键可以发射一颗末影珍珠
@@ -461,8 +463,8 @@ item.tool_randomize.guide=将对工作范围内的方块进行随机打乱放置
 item.tool_randomize.name=随机方块转置杖
 item.tool_randomize.tooltip=随机摆放作用范围内的方块。左键单击以调整作用范围。
 item.tool_rotate.guide=它会尝试在不改变材质类型的同时旋转目标方块。它会将一个原木改变为不同的朝向，但不会把橡木变成云杉木。它不仅适用于原版可以获得的方块，也可以用来获得原版无法获得的方块，如双台阶方块，平滑的沙石，和在六面上都是树皮材质的木材。
-item.tool_rotate.name=方块旋转器
-item.tool_rotate.tooltip=旋转普通的方块，如原木、楼梯、台阶。
+item.tool_rotate.name=木制扳手
+item.tool_rotate.tooltip=旋转能旋转的方块/机器
 item.tool_spawn_inspect.empty=这里没有什么可生成的生物
 item.tool_spawn_inspect.guide=告诉你你指向的方块上可以自然生成哪些生物，无视刷怪笼。可以被用于制作史莱姆、女巫和凋零骷髅刷怪厂。
 item.tool_spawn_inspect.name=生物生成探测杖
@@ -585,25 +587,28 @@ tile.beacon_redstone.tooltip=给予红石信号时显示信标光束
 tile.block_disenchanter.guide=逐个剥离物品上的魔咒，并将魔咒转移到书上。每次只能消耗一些材料来剥离一种魔咒。你并不能控制要被剥离的魔咒。如果剥离错误，你只能继续剥离然后再使用铁砧将需要的魔咒加回去。支持使用漏斗/管道和红石控制来自动化。
 tile.block_disenchanter.name=祛魔塔
 tile.block_disenchanter.tooltip=以一个比较廉价的过程将已经附魔的物品还原为物品和附魔书
-tile.block_fishing.guide=方块侧面至少接触到2个水源方块才能工作。满足上述条件之后，给它一个钓鱼竿，它将为你自动钓鱼。它直接使用钓鱼的掉落表，所以能钓到任何普通的鱼，宝物，垃圾和被添加/修改的物品。频率（Hz）表示它会多久尝试钓鱼一次。您可以通过用更多的静止或流动的水围绕它来增加频率，您还可以使用管道和漏斗来进一步自动化捕鱼，但频率将略低于普通状态。
-tile.block_anvil.name=能量铁砧
-tile.block_anvil.tooltip=消耗熔岩和能量修复物品的耐久
-tile.block_anvil.guide=将熔岩灌入内部的存储槽中，并通入能量或者放入燃料便可以使用。修理完成后会将物品放置到完成槽。可以通过管道和漏斗自动化。 
+tile.block_fishing.guide=方块侧面至少接触到1+个水源方块才能工作。满足上述条件之后，给它一个钓鱼竿，它将为你自动钓鱼。它直接使用钓鱼的掉落表，所以能钓到任何普通的鱼，宝物，垃圾和被添加/修改的物品。频率（Hz）表示它会多久尝试钓鱼一次。您可以通过用更多的静止或流动的水围绕它来增加频率，您还可以使用管道和漏斗来进一步自动化捕鱼，但频率将略低于正常状态。
+tile.block_anvil.name=能量钻石铁砧
+tile.block_anvil.tooltip=消耗能量来修复物品
+tile.block_anvil.guide=修理完成后会将物品放置到完成槽。可以通过管道和漏斗自动化。 
+tile.block_anvil_magma.name=熔岩铁砧
+tile.block_anvil_magma.tooltip=使用熔岩修复任何能被修复的东西
+tile.block_anvil_magma.guide=添加熔岩到内部的液体槽中即可工作。修理完成后会将物品放置到完成槽。可以通过管道和漏斗自动化。 
 tile.block_enchanter.name=能量附魔台
 tile.block_enchanter.tooltip=消耗能量和液态经验来附魔
 tile.block_enchanter.guide=以经验流体的形式通入经验，并通入能量或者放入燃料便可以附魔。可以通过管道和漏斗自动化。
 tile.block_fishing.invalidequip=需要一根钓鱼竿
-tile.block_fishing.invalidpos.gui1=需要水，方块侧面
-tile.block_fishing.invalidpos.gui2=至少需要接触 
-tile.block_fishing.invalidpos.gui3=个水源方块
-tile.block_fishing.invalidpos=至少要有4格水源方块相邻。
+tile.block_fishing.invalidpos.gui1=至少需要
+tile.block_fishing.invalidpos.gui2=
+tile.block_fishing.invalidpos.gui3=个水源方块相邻
+tile.block_fishing.invalidpos=至少要有1+格水源方块相邻。
 tile.block_fishing.name=自动鱼栅
 tile.block_fishing.progress=钓鱼中……
-tile.block_fishing.tooltip=放在水中，给它一根钓鱼竿。
+tile.block_fishing.tooltip=放在水中并给它一根钓鱼竿即可开始自动钓鱼。
 tile.block_forester.name=树场
-tile.block_forester.tooltip=种植树苗，砍伐原木
+tile.block_forester.tooltip=自动种植树苗和砍伐原木
 tile.block_forester.guide=将树苗种植在类似泥土的方块之上。从下至上砍伐原木。使用煤炭作为燃料。
-tile.block_fragile.guide=可以作为梯子，潜行时可以在脚手架的对侧面放置方块。脚手架是脆弱的，它们会因为时间的推移而自动破坏。你可以将其作为一个临时的垫脚方块，或者用来制作建筑的临时脚手架。现在你不需要搭一些泥土柱了。
+tile.block_fragile.guide=可以作为梯子使用，潜行时可以在脚手架的对侧面放置方块。脚手架是脆弱的，它们会因为时间的推移而自动破坏。你可以将其作为一个临时的垫脚方块，或者用来制作建筑的临时脚手架。现在你不需要搭一些泥土柱了。
 tile.block_fragile.name=脚手架
 tile.block_fragile.tooltip=放置一段时间后会变成掉落物，可以浮空放置。
 tile.block_fragile_auto.guide=可以作为梯子，潜行时可以在脚手架的对侧面放置方块。链接响应使它能一次破坏全部的链接响应脚手架。当你不需要这些框架时，打坏一个这种脚手架就可以破坏所有相连的脚手架。
@@ -621,7 +626,6 @@ tile.block_miner.tooltip=简单的方块挖掘机器
 tile.block_miner_smart.blacklist=黑名单
 tile.block_miner_smart.guide=一个可配置的挖掘机械，它需要工具才能运作。可以设置其高度和范围，并拥有用来设置它具体可以挖掘什么的白名单或黑名单。
 tile.block_miner_smart.name=可控挖掘者
-tile.block_miner_smart.tool=工具
 tile.block_miner_smart.tooltip=最多可挖掘15x15的方块，可设置挖掘范围大小和黑名单，需要在工具槽中放置挖掘工具
 tile.block_miner_tunnel.name=高级方块挖掘机
 tile.block_miner_tunnel.tooltip=自动挖掘前方3x3方块
@@ -630,7 +634,7 @@ tile.block_shears.name=剪刀块
 tile.block_shears.tooltip=对碰撞到的实体使用剪刀
 tile.block_soundproofing.guide=减少一定范围内方块产生的声音。放置更多的此种方块以减少更多声音。
 tile.block_soundproofing.name=隔音块
-tile.block_soundproofing.tooltip=每个方块都能减轻声音，其作用半径为
+tile.block_soundproofing.tooltip=每个方块都能减轻声音强度，其作用半径为
 tile.block_storeempty.guide=这不是流体储罐。它只能装载装了液体的桶，用来给科技发展前期的玩家大量搬运装了液体的桶。
 tile.block_storeempty.name=流体储罐
 tile.block_storeempty.tooltip=存储多达64桶的任何流体，可以上下叠加
@@ -641,7 +645,7 @@ tile.block_user.guide=有两个模式：自动使用（右键单击）任何物�
 tile.block_user.input=输入
 tile.block_user.name=自动玩家模拟器
 tile.block_user.output=输出
-tile.block_user.speed.tooltip=速度
+tile.block_user.speed.tooltip=速度（刻）
 tile.block_user.tooltip=自主模拟玩家右键操作，可以使用物品
 tile.block_user.yoffset=垂直偏移
 tile.block_vacuum.filter=白名单：
@@ -703,7 +707,7 @@ tile.clock.facing.west=向西
 tile.clock.facing.east=向东
 tile.clock.facing.south=向南
 tile.clock.facing.north=向北
-tile.clock.guide=这个红石钟可以控制其信号脉冲的频率和信号的持续时间，脉冲频率为延迟，持续时间为持续时间。信号强度15为最高，1为最低。
+tile.clock.guide=这个红石钟可以控制其信号的脉冲频率和信号的持续时间，脉冲频率为延迟，持续时间为持续时间。信号强度15为最高，1为最低。
 tile.clock.name=红石钟
 tile.clock.power=信号强度
 tile.clock.tooltip=可以控制信号延迟和持续时间的红石钟
@@ -726,21 +730,17 @@ tile.entity_detector.equal=等于
 tile.entity_detector.exp=经验球
 tile.entity_detector.greater=大于
 tile.entity_detector.greaterthan=通过数值的比较来限制红石的信号输出
-tile.entity_detector.guide=根据对附近的实体类型进行计数来发出红石信号。您可以设置实体的类型、检测范围和要检测的数字。
+tile.entity_detector.guide=根据对附近的实体类型进行计数来发出红石信号。您可以设置实体的类型、检测范围和触发条件需要的数值。
 tile.entity_detector.item=物品
-tile.entity_detector.less=小于
 tile.entity_detector.limitdown=数值 -
 tile.entity_detector.limitup=数值 +
 tile.entity_detector.living=生物
 tile.entity_detector.name=实体检测器
 tile.entity_detector.player=玩家
-tile.entity_detector.rangexdown=X -
-tile.entity_detector.rangexup=X +
-tile.entity_detector.rangeydown=Y -
-tile.entity_detector.rangeyup=Y +
-tile.entity_detector.rangezdown=Z -
-tile.entity_detector.rangezup=Z +
-tile.entity_detector.tooltip=检测实体类型并输出红石信号，红石信号的输出受被配置的>、<、=的限制
+tile.entity_detector.rangex=X轴方向的范围
+tile.entity_detector.rangey=Y轴方向的范围
+tile.entity_detector.rangez=Z轴方向的范围
+tile.entity_detector.tooltip=检测实体类型并输出红石信号，红石信号的输出受被配置的>、<、=条件的限制
 tile.exp_pylon.full=它已经满了
 tile.exp_pylon.guide=收集附近的经验球。收集到的经验可以直接释放或将其装瓶。您也可以直接存入身上的经验。
 tile.exp_pylon.name=经验塔
@@ -755,7 +755,7 @@ tile.harvester_block.guide=在其作用范围内，它会收获所有作物并�
 tile.harvester_block.name=收割机
 tile.harvester_block.tooltip=自动收获和补种机器工作区域耕地上的作物
 tile.magnet_anti_block.guide=每隔几刻推一下怪物，直到推到作用范围外（默认半径34）。
-tile.magnet_anti_block.name=怪物阻拦板
+tile.magnet_anti_block.name=脉冲阻拦器
 tile.magnet_anti_block.tooltip=每$t$刻以$r$格的半径排斥一次怪物
 tile.magnet_block.guide=吸引作用范围（默认半径15）内的掉落物和经验球。
 tile.magnet_block.name=物品磁引板
@@ -797,23 +797,50 @@ tile.placer_block.tooltip=可以用红石信号或红石钟令其在其前方放
 tile.plate_launch.tooltip13=踩在上面可以跳8格高
 tile.plate_launch.tooltip18=踩在上面可以跳14格高
 tile.plate_launch.tooltip8=踩在上面可以跳3格高
-tile.plate_launch_large.guide=将实体弹向高空，对大部分实体（譬如：玩家、物品、经验球）均有作用。
+tile.plate_launch_large.guide=将实体弹向高空，对大部分实体（譬如：物品、经验球）均有作用。
 tile.plate_launch_large.name=硬化史莱姆弹跳板
-tile.plate_launch_med.guide=将实体弹向高空，对大部分实体（譬如：玩家、物品、经验球）均有作用。
+tile.plate_launch_med.guide=将实体弹向高空，对大部分实体（譬如：物品、经验球）均有作用。
 tile.plate_launch_med.name=史莱姆弹跳板
-tile.plate_launch_small.guide=将实体弹向高空，对大部分实体（譬如：玩家、物品、经验球）均有作用。
-tile.plate_launch_small.guide=将实体弹向高空，对大部分实体（譬如：玩家、物品、经验球）均有作用。
+tile.plate_launch_small.guide=将实体发射到高空，对生物和非生物实体（譬如：物品、经验球等）均有作用。
+tile.plate_launch_small.guide=将实体发射到高空，对生物和非生物实体（譬如：物品、经验球等）均有作用。
 tile.plate_launch_small.name=软化史莱姆弹跳板
+
 tile.plate_push.guide=一个可以推动任何实体的传送带。有四种不同的传送带，每种速度都不同，对大部分实体（譬如：玩家、物品、经验球）均有作用。
-tile.plate_push.guide=一个可以推动任何实体的传送带。有四种不同的传送带，每种速度都不同，对大部分实体（譬如：玩家、物品、经验球）均有作用。
-tile.plate_push.name=史莱姆传送带（普通）
+tile.plate_push.name=传送带（普通）
 tile.plate_push.tooltip=运输所有实体，其速度为 
+tile.plate_push_corner.name=转向传送带（普通）
+tile.plate_push_med_angle.name=倾斜传送带（普通）
+
+
 tile.plate_push_fast.guide=一个简单的传送带，可以推动任何实体。对大部分实体（譬如：玩家、物品、经验球）均有作用。
-tile.plate_push_fast.name=史莱姆传送带（快速）
+
+tile.plate_push_fast.name=传送带（快速）
+tile.plate_push_fast_corner.name=转向传送带（快速）
+tile.plate_push_fast_angle.name=倾斜传送带（普通）
+
 tile.plate_push_slow.guide=一个简单的传送带，可以推动任何实体。对大部分实体（譬如：玩家、物品、经验球）均有作用。
-tile.plate_push_slow.name=史莱姆传送带（较慢）
+ 
+tile.plate_push_slow.name=传送带（较慢）
+tile.plate_push_slow_corner.name=转向传送带（较慢）
+tile.plate_push_slow_angle.name=倾斜传送带（较慢）
+
 tile.plate_push_slowest.guide=一个简单的传送带，可以推动任何实体。对大部分实体（譬如：玩家、物品、经验球）均有作用。
-tile.plate_push_slowest.name=史莱姆传送带（极慢）
+ 
+tile.plate_push_slowest.name=史莱姆传送带（最慢）
+tile.plate_push_slowest_corner.name=转向传送带（最慢）
+tile.plate_push_slowest_angle.name=倾斜传送带（最慢）
+ 
+
+tile.plate_push_slow_corner.guide=与铁轨类似，被放置的传送带会在检测到邻近有可以被连接的传送带时变成转向传送带。
+tile.plate_push_fast_corner.guide=与铁轨类似，被放置的传送带会在检测到邻近有可以被连接的传送带时变成转向传送带。
+tile.plate_push_corner.guide=与铁轨类似，被放置的传送带会在检测到邻近有可以被连接的传送带时变成转向传送带。
+tile.plate_push_slowest_corner.guide=与铁轨类似，被放置的传送带会在检测到邻近有可以被连接的传送带时变成转向传送带。
+tile.plate_push_med_angle.guide=与铁轨类似，被放置的传送带会在检测到邻上方有可以被斜线连接的传送带时变成倾斜传送带。
+tile.plate_push_slow_angle.guide=与铁轨类似，被放置的传送带会在检测到邻上方有可以被斜线连接的传送带时变成倾斜传送带。
+tile.plate_push_slowest_angle.guide=与铁轨类似，被放置的传送带会在检测到邻上方有可以被斜线连接的传送带时变成倾斜传送带。
+tile.plate_push_fast_angle.guide=与铁轨类似，被放置的传送带会在检测到邻上方有可以被斜线连接的传送带时变成倾斜传送带。
+
+
 tile.plate_vector.copied=数据已经复制到方块中
 tile.plate_vector.gui.angle=投射仰角
 tile.plate_vector.gui.power=弹射力度
@@ -826,8 +853,8 @@ tile.plate_vector.tooltip.button=偏角是水平朝向，投射仰角是垂直�
 tile.plate_vector.tooltip.power=弹射力度：
 tile.plate_vector.tooltip.yaw=水平偏角：
 tile.poison.name=毒液
-tile.preview.button.off=显示范围预览
-tile.preview.button.on=隐藏范围预览
+tile.preview.button.off=显示检测范围
+tile.preview.button.on=隐藏检测范围
 tile.redstone.button0=始终工作
 tile.redstone.button1=需要红石信号才会工作
 tile.spikes_diamond.guide=只要给这些钉子通入红石信号，钉子就会启动。这些钉子会伤害任何触碰它们的实体。而钻石钉刺杀死的怪物就如同玩家杀死的一样，会掉落玩家杀死才能掉落的专属掉落物，如蜘蛛眼，当然还有经验球。每刻造成的伤害可以在配置文件中调整。
@@ -839,9 +866,9 @@ tile.spikes_iron.tooltip=通入红石信号启动。这些钉子会伤害任何�
 tile.sprinkler.empty=在其下方放置水源，并放置在作物附近
 tile.sprinkler.particles.false=关闭粒子效果
 tile.sprinkler.particles.true=打开粒子效果
-tile.sprinkler.guide=只有下方有水源存在才能运行。它会对附近的作物进行浇灌，增加作物生长速度。同一区域可以放置多个洒水器。  
+tile.sprinkler.guide=只有下方有水源存在才能运行。它会通过对附近的作物进行浇灌来增加作物生长速度。同一区域可以放置多个洒水器。  
 tile.sprinkler.name=洒水器
-tile.sprinkler.tooltip=在其下方放置水源，并放置在作物附近
+tile.sprinkler.tooltip=在其下方放置水源，然后放置在作物附近即可
 tile.sprout.guide=当收获成熟的魔豆时，它会随机地从事先定制的掉落表中掉落一个物品（这个表会在配置文件中列出）
 tile.sprout.name=魔豆芽
 tile.tool_trade.button.tooltip=快速交易
@@ -910,10 +937,22 @@ potion.potency.4=V
 potion.potency.3=IV
 potion.potency.2=III
 
+potion.butter.oops=你获得了笨拙效果！它生效时会在你移动时掉落手中物品。
 potion.effect.slowfall=缓落药水
 splash_potion.effect.slowfall=喷溅型缓落药水
 lingering_potion.effect.slowfall=滞留型缓落药水
 tipped_arrow.effect.slowfall=缓落之箭
+
+potion.butter=笨拙
+potion.effect.butter=笨拙药水
+splash_potion.effect.butter=喷溅型笨拙药水
+lingering_potion.effect.butter=滞留型笨拙药水
+tipped_arrow.effect.butter=笨拙之箭
+
+potion.effect.butter2=笨拙药水
+splash_potion.effect.butter2=喷溅型笨拙药水
+lingering_potion.effect.butter2=滞留型笨拙药水
+tipped_arrow.effect.butter2=笨拙之箭
 
 potion.effect.waterwalk=水上行走药水
 splash_potion.effect.waterwalk=喷溅型水上行走药水
@@ -944,18 +983,18 @@ potion.effect.haste=速掘药水
 splash_potion.effect.haste=喷溅型速掘药水
 lingering_potion.effect.haste=滞留型速掘药水
 tipped_arrow.effect.haste=速掘之箭
-potion.effect.haste2=速掘药水II
-splash_potion.effect.haste2=喷溅型速掘药水II
-lingering_potion.effect.haste2=滞留型速掘药水II
+potion.effect.haste2=速掘药水
+splash_potion.effect.haste2=喷溅型速掘药水
+lingering_potion.effect.haste2=滞留型速掘药水
 tipped_arrow.effect.haste2=速掘之箭
 
 potion.effect.resistance=抗性提升药水
 splash_potion.effect.resistance=喷溅型抗性提升药水
 lingering_potion.effect.resistance=滞留型抗性提升药水
 tipped_arrow.effect.resistance=抗性提升之箭
-potion.effect.resistance2=抗性提升药水II
-splash_potion.effect.resistance2=喷溅型抗性提升药水II
-lingering_potion.effect.resistance2=滞留型抗性提升药水II
+potion.effect.resistance2=抗性提升药水
+splash_potion.effect.resistance2=喷溅型抗性提升药水
+lingering_potion.effect.resistance2=滞留型抗性提升药水
 tipped_arrow.effect.resistance2=抗性提升之箭
 
 potion.effect.healthboost=生命提升药水
@@ -999,11 +1038,11 @@ tile.fluid_placer.guide=用桶或者流体管道灌入流体。给予红石信�
 
 tile.fluid_pipe.name=流体管道
 tile.fluid_pipe.tooltip=与流体泵连接即可传输流体
-tile.fluid_pipe.guide=与流体泵连接即可传输流体。每根管道都会缓存少量的流体，流体穿过管道后，管道会尽量向其连接的任意方向进行输出
+tile.fluid_pipe.guide=与流体泵连接即可传输流体。每根管道都会缓存少量的流体，流体穿过管道后，管道会尽量向其连接的任意方向进行输出。可以使用红石火把来调整输出的方向。
 
 tile.bundled_pipe.name=集束管道
 tile.bundled_pipe.tooltip=传输物品，流体以及能量
-tile.bundled_pipe.guide=拥有与其他三条管道相同的能力。它自身并没有提取功能，你需要管道泵或者漏斗来提取并连接到这个管道，它会将物品、流体等传输到适宜的容器中。
+tile.bundled_pipe.guide=拥有与其他三条管道相同的能力。它自身并没有提取功能，你需要管道泵或者漏斗来提取并连接到这个管道，它会将物品、流体等传输到适宜的容器中。可以使用红石火把来调整输出的方向。  
 
 tile.energy_pump.name=能量提取泵管道
 tile.energy_pump.tooltip=将能量提取到管道或者机器中
@@ -1011,7 +1050,7 @@ tile.energy_pump.guide=将发电机中的能量抽出的设备。可以连接管
 
 tile.energy_pipe.name=能量管道
 tile.energy_pipe.tooltip=与能量提取泵管道连接来传输能量
-tile.energy_pipe.guide=每段能量管道都能存储少量能量。管道会持续与其连接的方块传输能量。它自身不能提取能量，你需要能量提取泵管道来提取能量。兼容RF和Forge能量等能量系统。  
+tile.energy_pipe.guide=每段能量管道都能存储少量能量。管道会持续与其连接的方块传输能量。它自身不能提取能量，你需要能量提取泵管道来提取能量。可以使用红石火把来调整输出的方向。兼容RF和Forge能量等能量系统。  
 
 cyclic.redstone.on=需要红石信号才会工作
 cyclic.redstone.off=始终工作
@@ -1023,7 +1062,7 @@ tile.item_pump.guide=提取物品到任何带有物品缓存的容器、或者�
 
 tile.item_pipe.name=物品管道
 tile.item_pipe.tooltip=快速传输物品，与物品泵协同使用
-tile.item_pipe.guide=使用物品泵从任意容器中抽取物品传入管道，面朝玩家的面输入，后方圆形口输出。它会尽可能的将物品放入连接的容器中
+tile.item_pipe.guide=使用物品泵从任意容器中抽取物品传入管道，面朝玩家的面输入，后方圆形口输出。可以使用红石火把来调整输出的方向。它会尽可能的将物品放入连接的容器中
 
 tile.item_pipe_sort.name=物品分拣器
 tile.item_pipe_sort.tooltip=用于管道或漏斗的分拣装置
@@ -1036,13 +1075,9 @@ tile.item_pipe_sort.nothing=忽略过滤完全不输出
 peat.plantmatter.dry=用来将漂浮在水源中的植物制造成生物质的物品
 peat.plantmatter.more=需要四种类型的植物，检测到：
 
-item.peat_carbon.name=碳搅拌棒
-item.peat_carbon.tooltip=用于制造生物质
-item.peat_carbon.guide=将不同的四种植物放入水中，然后搅拌以制造生物质
-
 item.peat_biomass.name=生物质团
 item.peat_biomass.tooltip=用于制造泥炭田
-item.peat_biomass.guide=将不同的四种植物放入水中，然后使用碳搅拌棒右键以制作
+item.peat_biomass.guide=将植物材料放入水化器以创造它
 
 item.peat_wet.name=湿润泥炭
 item.peat_wet.tooltip=新鲜的泥炭，可以被烘干成泥炭燃料
@@ -1076,6 +1111,17 @@ tile.dropper_exact.guide=可以控制投掷的位置、延迟和速度
 dropper.delay=投掷延迟
 dropper.offset=投掷距离
 dropper.count=投掷数量
+
+cable.block.toggled.false=恢复管道连接，方向为 
+cable.block.toggled.true=阻断管道连接，方向为 
+
+tile.battery.name=电池
+tile.battery.tooltip=存储能量（FE）
+tile.battery.guide=能存储一百万单位（FE）的能量。内有一个用于充能物品的物品槽。
+
+tile.battery_infinite.name=无限电池
+tile.battery_infinite.tooltip=创造模式下的能量来源
+tile.battery_infinite.guide=创造模式下的无限能量来源（用于作弊或测试）
 
 
 
@@ -1135,3 +1181,56 @@ tile.uranium_nether_ore.name=下界铀矿石
 tile.uranium_end_ore.name=末地铀矿石
 tile.yellorite_nether_ore.name=下界黄铀矿石
 tile.yellorite_end_ore.name=末地黄铀矿石
+
+tile.fire_dark.guide=不会破坏方块或伤害玩家。可由黄昏魔杖生成
+
+tile.target.name=红石靶子
+tile.target.tooltip=根据箭射中靶子的环数来发射红石信号
+tile.target.guide=根据箭射中靶子的环数来发射红石信号，只能在射中该方块的侧面时才能工作。
+
+tile.moon_sensor.name=月球位相传感器
+tile.moon_sensor.tooltip=会根据当前月球的位相来发射红石信号
+tile.moon_sensor.guide=会根据当前月球的位相来发射红石信号，可能的红石信号强度为1,3,5,7,9,11,13,15，它会随着月球位相的改变而再次减弱。白天时会保持弱充能，到晚上时红石信号强度会随着月球位相的改变而改变。
+
+item.robot_spawner.name=计数机器人生成器
+item.robot_spawner.tooltip=[实验性特性]通过它生成一个计数机器人来测量玩家造成的伤害
+item.robot_spawner.guide=通过它来生成一个测量玩家造成伤害的计数机器人，它可以通过给予护甲来减少伤害（死亡后会掉落）。计数机器人不会攻击和移动，要移除它，你可以杀死或用计数机器人生成器再次点击它。
+entity.robot.name=计数机器人
+
+tile.button_large.name=大按钮
+tile.button_large.tooltip=压力板大小的按钮
+tile.button_large.guide=压力板大小的按钮
+
+tile.doorbell_simple.name=门铃
+tile.doorbell_simple.tooltip=制造声音
+tile.doorbell_simple.guide=当你点击它时会播放一次声音
+
+tile.fire_starter.name=打火器
+tile.fire_starter.tooltip=使用能量来在方块面向的直线方向上生火
+tile.fire_starter.guide=使用能量来在方块面向的直线方向上生火。能面向任何方向。
+
+fire_starter.fire0=普通火焰
+fire_starter.fire1=暗色火焰
+fire_starter.fire2=冰冻火焰
+fire_starter.yoffset.tooltip=垂直偏移
+fire_starter.offset.tooltip=水平偏移
+fire_starter.firetype.button=切换火焰类型
+
+tile.fire_frost.name=冰冻火焰
+tile.fire_frost.tooltip=间歇地给予少量伤害和缓慢、虚弱的效果
+tile.fire_frost.guide=间歇地给予少量伤害和缓慢、虚弱效果
+
+tile.void_anvil.name=虚空铁砧
+tile.void_anvil.tooltip=除去任意物品的魔咒
+tile.void_anvil.guide=除去任意物品的魔咒
+
+tile.sound_player.name=音效方块
+tile.sound_player.tooltip=它几乎能播放所有声音
+tile.sound_player.guide=它几乎能播放所有的非录制声音（可通过红石信号控制）。重复播放时请小心，因为它们可能会重叠在一起。
+
+item.sign_editor.name=彩虹蜡笔
+item.sign_editor.tooltip=编辑告示牌的内容、颜色和字体样式
+item.sign_editor.guide=编辑告示牌的内容、颜色和字体样式。保存到告示牌的数据与原版完全兼容，并与命令方块设置告示牌颜色时的NBT标签完全相同。 
+gui.signs.title=告示牌自定义
+gui.signs.save=保存
+gui.signs.cancel=取消
