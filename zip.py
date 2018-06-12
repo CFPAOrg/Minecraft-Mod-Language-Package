@@ -45,7 +45,7 @@ bucket_name = 'langpack'
 # 上传到七牛后保存的文件名
 key = 'Minecraft-Mod-Language-Modpack.zip';
 # 生成上传 Token，可以指定过期时间等
-token = q.upload_token(bucket_name, key, 600)
+token = q.upload_token(bucket_name, key, 30)
 # 要上传文件的本地路径
 localfile = './Minecraft-Mod-Language-Modpack.zip'
 ret, info = qiniu.put_file(token, key, localfile)
