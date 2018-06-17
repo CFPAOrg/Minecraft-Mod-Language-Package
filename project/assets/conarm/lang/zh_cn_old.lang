@@ -1,41 +1,73 @@
 #################
+#     Config    #
+#################
+conarm.general.spawnwithbook=获取指导手册
+conarm.general.spawnwithbook.tooltip=当设置为ture时，第一次进入游戏的玩家都将获得一本"护甲锻造手册"。
+conarm.general.compactview=简约GUI
+conarm.general.compactview.tooltip=若设置为ture则盔甲组装台/装配台中GUI预览功能将禁用。
+
+conarm.general.leveling.newarmorminmodifiers=修改强化次数
+conarm.general.leveling.newarmorminmodifiers.tooltip=若该值低于原护甲强化次数则其强化次数将被降低。
+conarm.general.leveling.maximumlevels=最大等级
+conarm.general.leveling.maximumlevels.tooltip=决定最大的等级，设置为0或者更低则无等级上限。
+conarm.general.leveling.basexp=基础XP消耗
+conarm.general.leveling.basexp.tooltip=设置护甲所需要消耗的基础XP（经验）
+conarm.general.leveling.levelingmultiplier=等级乘数
+conarm.general.leveling.levelingmultiplier.tooltip=决定每个等级所需要消耗的经验
+
+#################
 #     Blocks    #
 #################
-tile.conarm.armorforge.name=护甲装配台
-tile.conarm.armorstation.name=Armor Station
+tile.conarm.armorforge.name=盔甲装配台
+tile.conarm.armorstation.name=盔甲组装台
 tile.conarm.soft_obsidian.name=Unstable Obsidian
 
 #################
 #     Items     #
 #################
-item.conarm.book.name=护甲锻造手册
+item.conarm.book.name=盔甲锻造手册
 item.conarm.book.tooltip=每个铁匠都需要它\nby C4
 
 item.conarm.polishing_kit.name=抛光工具
 item.conarm.polishing_kit.tooltip=需要同沙子一起使用\n护甲将会继承其各部分的属性以及参数。
 
-item.conarm.travel_belt.name=旅行者腰带
+item.conarm.travel_belt_base.name=旅行者腰带（基础）
+item.conarm.travel_belt.name=旅行者腰带（存储）
+item.conarm.travel_potion.name=旅行者腰带（酿造）
 item.conarm.travel_sack.name=旅行者背包
-item.conarm.travel_goggles.name=旅行者护目镜
+item.conarm.travel_goggles_base.name=旅行者护目镜（基础）
+item.conarm.travel_goggles.name=旅行者护目镜（远眺）
 item.conarm.travel_night.name=旅行者护目镜（夜视）
+item.conarm.travel_soul.name=旅行者护目镜（灵魂窥视）
+item.conarm.travel_cloak.name=旅行者披风（基础）
+item.conarm.travel_sneak.name=旅行者披风（隐身）
+item.conarm.travel_slowfall.name=旅行者披风（缓落）
 
-item.conarm.resist_mat.name=抗性强化大板
+item.conarm.resist_mat.name=防护强化大板
 item.conarm.resist_mat.tooltip=保护效果
 item.conarm.resist_mat_fire.name=防火强化大板
 item.conarm.resist_mat_fire.tooltip=火焰保护效果
 item.conarm.resist_mat_blast.name=防爆强化大板
 item.conarm.resist_mat_blast.tooltip=爆炸保护效果
-item.conarm.resist_mat_proj.name=抗射强化大板
+item.conarm.resist_mat_proj.name=防射强化大板
 item.conarm.resist_mat_proj.tooltip=弹射物保护效果
+
+item.conarm.gauntlet_mat.name=基础护手
+item.conarm.gauntlet_mat_attack.name=力量护手
+item.conarm.gauntlet_mat_attack.tooltip=提高攻击伤害
+item.conarm.gauntlet_mat_speed.name=轻巧护手
+item.conarm.gauntlet_mat_speed.tooltip=提升攻速
+item.conarm.gauntlet_mat_reach.name=灵性护手
+item.conarm.gauntlet_mat_reach.tooltip=提高触及半径。
 
 #################
 #      GUI      #
 #################
-gui.armorforge.name=护甲装配台
-gui.armorstation.name=Armor Station
+gui.armorforge.name=盔甲装配台
+gui.armorstation.name=盔甲组装台
 gui.armorstation.preview=Preview
 
-gui.error.modifier_on_station=只能在护甲装配台进行强化。
+gui.error.modifier_on_station=请使用盔甲装配台进行强化。
 
 #################
 #     Armor     #
@@ -157,18 +189,23 @@ modifier.voltaic_armor.desc=§o清洁！§r\n当你被目标击中时这个护�
 #   Modifiers   #
 #################
 modifier.amphibious_armor.name=水下呼吸
-modifier.blast_resistant_armor.name=抗爆性
+modifier.amphibious_armor.desc=§o水下勘探。§r\n延长你在水中呼吸的时间。
+modifier.blast_resistant_armor.name=爆炸保护
 modifier.blast_resistant_armor.desc=§o提高警惕！§r\n提供额外的爆炸保护。
 modifier.diamond_armor.name=modifier.diamond.name
 modifier.diamond_armor.desc=modifier.diamond.desc
+modifier.dexterous_armor.name=轻巧
+modifier.dexterous_armor.desc=§o心灵手巧。§r\n提高攻击速度。
 modifier.emerald_armor.name=modifier.emerald.name
 modifier.emerald_armor.desc=modifier.emerald.desc
 modifier.extratrait_armor.name=modifier.extratrait.name
 modifier.extratrait_armor.desc=modifier.extratrait.desc
-modifier.fire_resistant_armor.name=抗火性
+modifier.fire_resistant_armor.name=火焰保护
 modifier.fire_resistant_armor.desc=§o献祭可不好。§r\n提供额外的火焰保护。
 modifier.frostwalker_armor.name=冰霜行者
 modifier.frostwalker_armor.desc=§o冷酷而又惊艳。§r\n你的靴子十分寒冷，它会冻结周围的水。
+modifier.glowing_armor.name=荧光
+modifier.glowing_armor.desc=§o闪闪发光§r\n当你行走在黑暗的地方时，靴子将会消耗耐久点亮周围。
 modifier.high_stride_armor.name=高跳
 modifier.high_stride_armor.desc=§o野蛮的标志。§r\n你能跳得更高。
 modifier.mending_armor.name=modifier.mending_moss.name
@@ -177,14 +214,16 @@ modifier.mending_armor.extra=容纳XP：%d
 modifier.parasitic_armor.name=寄生
 modifier.parasitic_armor.desc=§o共生...§r\n你的护甲会进行自我修复。
 modifier.polished_armor.name=研磨
-modifier.polished_armor.desc=§o越亮越好！§r\n增加 %s 点韧性。
-modifier.projectile_resistant_armor.name=抗射性
+modifier.polished_armor.desc=§o越亮越好！§r\n提高到同 %s 一样的韧性。
+modifier.powerful_armor.name=力量
+modifier.powerful_armor.desc=§o我感受到了力量！§r\n增加攻击伤害。
+modifier.projectile_resistant_armor.name=弹射物保护
 modifier.projectile_resistant_armor.desc=§o刚正面，你个懦夫！§r\n提供额外的弹射保护。
 modifier.reinforced_armor.name=modifier.reinforced.name
 modifier.reinforced_armor.desc=modifier.reinforced.desc
 modifier.reinforced_armor.extra=耐久：%s
-modifier.resistant_armor.name=耐力
-modifier.resistant_armor.desc=§o意志坚定！§r\n提供额外的所有伤害保护。
+modifier.resistant_armor.name=保护
+modifier.resistant_armor.desc=§o意志坚定！§r\n提供对所有额外伤害保护。
 modifier.shulkerweight_armor.name=轻快
 modifier.shulkerweight_armor.desc=§o仰望天空！§r\n增加跳跃能力。
 modifier.soulbound_armor.name=modifier.soulbound.name
@@ -196,20 +235,28 @@ modifier.speedy_armor.desc=§o飞毛腿！!§r\n提高自身移动速度。
 modifier.speedy_armor.extra=速度加成：+%s
 modifier.sticky_armor.name=粘性
 modifier.sticky_armor.desc=§o它真的烦人！§r\n减缓敌人移速。
+modifier.telekinetic_armor.name=灵性
+modifier.telekinetic_armor.desc=§o栩栩如生§r\n提高触及半径。
 
 #################
 #  Accessories  #
 #################
-modifier.travel_belt_armor.name=旅行者腰带
+modifier.travel_belt_armor.name=旅行者腰带（存储）
+modifier.potion_belt_armor.name=旅行者腰带（酿造）
 modifier.travel_sack_armor.name=旅行者背包
-modifier.travel_goggles_armor.name=旅行者护目镜
+modifier.travel_sneak_armor.name=旅行者披风（隐身）
+modifier.travel_slowfall_armor.name=旅行者披风（缓落）
+modifier.travel_goggles_armor.name=旅行者护目镜（远眺）
 modifier.night_vision_armor.name=旅行者护目镜（夜视）
+modifier.soul_sight_armor.name=旅行者护目镜（灵魂窥视）
 
 accessory.tooltip=部件：%s
 accessory.head.tooltip=头盔部件
 accessory.chest.tooltip=胸甲部件
 accessory.legs.tooltip=护腿部件
 accessory.feet.tooltip=靴子部件
+accessory.toggle.active=启用
+accessory.toggle.inactive=禁用
 
 #################
 #     Stats     #
