@@ -12,6 +12,8 @@ itemGroup.enderio.items=EnderIO Items
 itemGroup.enderio.materials=EnderIO Materials
 itemGroup.enderio.main=EnderIO Blocks
 itemGroup.enderio.mobs=EnderIO Souls
+itemGroup.enderio.conduits=EnderIO Conduits
+itemGroup.enderio.invpanel=EnderIO Inventory Panel
 
 item.item_alloy_ingot_conductive_iron.name=Conductive Iron Ingot
 item.item_alloy_ingot_dark_steel.name=Dark Steel Ingot
@@ -108,8 +110,9 @@ item.item_dark_steel_shears.tooltip.effPowered=%sEfficiency when powered: %s
 item.item_dark_steel_shears.tooltip.multiHarvest=Shears multiple blocks/sheep when empowered
 
 item.item_dark_steel_bow.name=Dark Bow
+item.item_end_steel_bow.name=Ender Bow
 
-item.item_dark_steel_armor.tooltip.line1=%sDiamond level protection when powered
+item.item_dark_steel_armor.tooltip.line1=%sBetter protection when powered
 item.item_dark_steel_armor.tooltip.levelcost.line1=%s%s:
 item.item_dark_steel_armor.tooltip.levelcost.line2=%s%s  %s + %s levels
 
@@ -121,6 +124,19 @@ item.item_dark_steel_chestplate.name=Dark Plate
 item.item_dark_steel_helmet.name=Dark Helm
 
 item.item_dark_steel_leggings.name=Dark Leggings
+
+item.item_end_steel_boots.name=Ender Boots
+item.item_end_steel_boots.tooltip.line1=Fall damage negated when powered
+
+item.item_end_steel_chestplate.name=Ender Plate
+
+item.item_end_steel_helmet.name=Ender Helm
+
+item.item_end_steel_leggings.name=Ender Leggings
+
+item.item_end_steel_sword.name=The Ender Mk2
+item.item_end_steel_pickaxe.name=Ender Pickaxe
+item.item_end_steel_axe.name=Ender Axe
 
 item.item_ender_food.enderios.name="Enderios"
 item.item_ender_food.enderios.tooltip.common.line1=Part of a balanced breakfast!
@@ -217,7 +233,7 @@ item.item_material.soul_machine_dye.name=Soul Attuned Powder Coating
 item.item_material.soul_machine_dye.tooltip.detailed.line1=Industrially produced dye with organic and inorganic components. Not biodegradable. May contain traces of ectoplasm.
 item.item_material.soul_machine_dye.tooltip.detailed.line2=§7Not edible. Avoid contact with eyes. In case of contact with eyes, rinse immediately with holy water and seek religous advice.
 item.item_material.enhanced_machine_chassi.name=Enhanced Machine Chassis
-item.item_material.enhanced_machine_chassi.tooltip.detailed.line1=A reinforced structure for constructing sturdier machinery
+item.item_material.enhanced_machine_chassi.tooltip.detailed.line1=A reinforced chassis for constructing sturdier machinery
 item.item_material.unsouled_machine_chassi.name=Soulless Machine Chassis
 item.item_material.unsouled_machine_chassi.tooltip.detailed.line1=An advanced frame for machinery, but it seems to be missing something...
 item.item_material.grinding_ball_signalum.name=Signalum Grinding Ball
@@ -227,6 +243,16 @@ item.item_material.redstone_filter_base.name=Redstone Filter Base
 item.item_material.confusing_dust.name=Confusing Powder
 item.item_material.ender_fragment.name=Ender Fragment
 item.item_material.withering_dust.name=Withering Dust
+item.item_material.remote_awareness_upgrade.name=Remote Awareness Upgrade
+item.item_material.dish.name=Wireless Energy Transmitter Dish Assembly
+item.item_material.end_steel_machine_chassi.name=End Steel Chassis
+item.item_material.enhanced_machine_dye.name=Enhanced Machine Coating
+item.item_material.enhanced_machine_dye.tooltip.detailed.line1=Industrially produced dye with magical and inorganic components.
+item.item_material.enhanced_machine_dye.tooltip.detailed.line2=§7Warning: May contain traces of diamond. Please chew carefully before swallowing. Not gluten free. 
+item.item_material.simple_chassi_parts.name=Simple Machine Parts
+item.item_material.enhanced_chassi_parts.name=Enhanced Machine Parts
+item.item_material.cake_base.name=Cake Base
+item.item_material.infinity_rod.name=Infinity Rod
 
 item.item_rod_of_return.name=Rod of Return
 item.item_rod_of_return.tooltip.detailed.line1=Returns the user to a Telepad
@@ -301,6 +327,8 @@ tile.block_dark_fused_glass.name=Dark Clear Glass
 tile.block_dark_fused_quartz.name=Dark Fused Quartz
 
 tile.block_dark_iron_bars.name=Dark Iron Bars
+
+tile.block_end_iron_bars.name=End Steel Bars
 
 tile.block_dark_steel_anvil.name=Dark Steel Anvil
 tile.block_dark_steel_anvil.tooltip.common.line1=Damage Resistant
@@ -461,6 +489,7 @@ tile.block_painted_stone_slab.name=Painted Stone Slab
 tile.block_painted_stone_stair.name=Painted Stone Stairs
 tile.block_painted_wall.name=Painted Wall
 tile.block_painted_wooden_trapdoor.name=Painted Wooden Trapdoor
+tile.block_painted_workbench.name=Painted Crafting Table
 
 tile.block_painted_wooden_door.name=Painted Wooden Door
 tile.block_painted_iron_door.name=Painted Iron Door
@@ -567,9 +596,15 @@ enderio.config.blocks.charges.ender=Ender Charge
 
 
 enchantment.enderio.soulbound=Soulbound
-description.enchantment.enderio.soulbound=Prevents item from being lost on death
+description.enchantment.enderio.soulbound=Prevents item from being lost on death|Note: Most gravestone mods are stupid and prevent this from working!
 enchantment.enderio.witherarrow=Withering
+description.enchantment.enderio.witherarrow=Applies withering to the target|Applies to bows
 enchantment.enderio.witherweapon=Decay
+description.enchantment.enderio.witherweapon=Applies withering to the target|Applies to melee weapons
+enchantment.enderio.repellent=Repellent
+description.enchantment.enderio.repellent=Chance to teleport attackers away|Higher levels teleport more often and farther
+enchantment.enderio.shimmer=Shimmer
+description.enchantment.enderio.shimmer=Makes the item shimmer as if it was enchanted.|That's all.|Really.|Nothing more.|Yes, it is useless.|I know.
 
 potion.effect.enderio.withering=Potion of Decay
 splash_potion.effect.enderio.withering=Splash Potion of Decay
@@ -1481,6 +1516,7 @@ enderio.block_powered_spawner.note.noLocationFound=No space found
 enderio.block_powered_spawner.note.noLocationAtAll=No viable space
 enderio.block_powered_spawner.note.badSoul=Bad soul, cannot create entity
 enderio.block_powered_spawner.note.noPlayer=No player in range
+enderio.status.powered_spawner.unbound=§4Cannot spawn "nothing"
 
 enderio.gui.tank.tank=Tank
 enderio.gui.tank.void.slot=Void Slot
@@ -1559,6 +1595,11 @@ tile.block_alloy_smelter.tooltip.detailed.line3=Upgrade with capacitors to incre
 tile.block_simple_alloy_smelter.name=Simple Alloy Smelter
 tile.block_simple_alloy_smelter.tooltip.detailed.line1=Used to create EnderIO alloys
 
+tile.block_enhanced_alloy_smelter.name=Enhanced Alloy Smelter
+tile.block_enhanced_alloy_smelter.tooltip.detailed.line1=Used to create EnderIO alloys
+tile.block_enhanced_alloy_smelter.tooltip.detailed.line2=Can also be used as a powered furnace
+tile.block_enhanced_alloy_smelter.tooltip.detailed.line3=Upgrade with capacitors to increase speed and energy storage
+
 tile.block_buffer.item.name=Item Buffer
 tile.block_buffer.power.name=Power Buffer
 tile.block_buffer.omni.name=Omni Buffer
@@ -1607,6 +1648,12 @@ tile.block_stirling_generator.tooltip.detailed.line2=Can be upgraded to increase
 tile.block_zombie_generator.name=Zombie Generator
 tile.block_zombie_generator.tooltip.detailed.line1=Consumes Nutrient Distillation to generate power
 
+tile.block_franken_zombie_generator.name=Frank'n'Zombie Generator
+tile.block_franken_zombie_generator.tooltip.detailed.line1=Consumes Nutrient Distillation to generate even more power
+
+tile.block_ender_generator.name=Ender Generator
+tile.block_ender_generator.tooltip.detailed.line1=Consumes Dew of The Void to generate power
+
 tile.block_killer_joe.name=Killer Joe
 tile.block_killer_joe.tooltip.detailed.line1=Attacks nearby creatures when supplied with a sword and Nutrient Distillation
 
@@ -1636,11 +1683,16 @@ tile.block_experience_obelisk.tooltip.detailed.line2=Can output liquid XP to adj
 # no description
 tile.block_painter.name=Painting Machine
 
-tile.block_reservoir.name=Reservoir
-tile.block_reservoir.tooltip.detailed.line1=When connected with other Reservoirs:
-tile.block_reservoir.tooltip.detailed.line2=Add two buckets of water for an infinite water source.
-tile.block_reservoir.tooltip.detailed.line3=Produces one bucket per second
-tile.block_reservoir.tooltip.detailed.line4=Right-Click with a wrench to enable auto-output
+tile.block_reservoir.name=Endervoir
+tile.block_reservoir.tooltip.detailed.line1=An infinite reservoir for water.
+tile.block_reservoir.tooltip.detailed.line2=When connected with other Endervoirs:
+tile.block_reservoir.tooltip.detailed.line3=- Add two buckets of water for an infinite water source
+tile.block_reservoir.tooltip.detailed.line4=- Produces one bucket per second
+tile.block_reservoir.tooltip.detailed.line5=- Right-Click with a wrench to enable auto-output
+
+tile.block_omni_reservoir.name=Omnivoir
+tile.block_omni_reservoir.tooltip.detailed.line1=A reservoir for any liquid.
+tile.block_omni_reservoir.tooltip.detailed.line5=- Right-Click with a wrench to enable auto-output
 
 tile.block_sag_mill.name=SAG Mill
 tile.block_sag_mill.tooltip.detailed.line1=Grinds ore and other items
@@ -1649,6 +1701,11 @@ tile.block_sag_mill.tooltip.detailed.line3=Upgrade with capacitors to increase s
 
 tile.block_simple_sag_mill.name=Simple SAG Mill
 tile.block_simple_sag_mill.tooltip.detailed.line1=Grinds ore and other items
+
+tile.block_enhanced_sag_mill.name=Enhanced SAG Mill
+tile.block_enhanced_sag_mill.tooltip.detailed.line1=Grinds ore and other items
+tile.block_enhanced_sag_mill.tooltip.detailed.line2=Add grinding balls to increase output and efficiency
+tile.block_enhanced_sag_mill.tooltip.detailed.line3=Upgrade with capacitors to increase speed and energy storage
 
 tile.block_slice_and_splice.name=Slice'N'Splice
 tile.block_slice_and_splice.tooltip.detailed.line1=Slices heads and splices in all sorts of useful things
@@ -1708,11 +1765,26 @@ tile.block_xp_vacuum.tooltip.detailed.line2=Needs to be activated with liquid XP
 tile.block_vat.name=The Vat
 tile.block_vat.tooltip.detailed.line1=Used to brew EnderIO fluids
 
+tile.block_enhanced_vat.name=The Enhanced Vat
+tile.block_enhanced_vat.tooltip.detailed.line1=Used to brew EnderIO fluids
+
 tile.block_wired_charger.name=Wired Charger
 tile.block_wired_charger.tooltip.detailed.line1=Charges items with µI
 
+tile.block_enhanced_wired_charger.name=Enhanced Wired Charger
+tile.block_enhanced_wired_charger.tooltip.detailed.line1=Charges items with µI
+
 tile.block_wireless_charger.name=Wireless Charger
-tile.block_wireless_charger.tooltip.detailed.line1=Charges items in nearby players inventories
+tile.block_wireless_charger.tooltip.detailed.line1=Charges items in nearby players inventories. Has a small range, but can be painted and hidden.
+
+tile.block_normal_wireless_charger.name=Wireless Charging Antenna
+tile.block_normal_wireless_charger.tooltip.detailed.line1=Charges items in nearby players inventories.
+
+tile.block_enhanced_wireless_charger.name=Enhanced Wireless Charging Antenna
+tile.block_enhanced_wireless_charger.tooltip.detailed.line1=Charges items in nearby players inventories. Has twice the range of the Wireless Charging Antenna.
+
+tile.block_wireless_charger_extension.name=Wireless Charging Antenna Extension
+tile.block_wireless_charger_extension.tooltip.detailed.line1=Doubles the range of the Enhanced Wireless Charging Antenna in one direction.
 
 tile.block_impulse_hopper.name=Impulse Hopper
 tile.block_impulse_hopper.tooltip.detailed.line1=Takes inputed items and only outputs them if there is a full set of required items in the input.
