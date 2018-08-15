@@ -1,10 +1,8 @@
-itemGroup.magneticraft=磁场工艺
 item.magneticraft.guide_book_normal.name=磁场工艺指导手册
 
 item.magneticraft.iron_hammer_normal.name=铁锤
 item.magneticraft.stone_hammer_normal.name=石锤
 item.magneticraft.steel_hammer_normal.name=钢锤
-
 
 item.magneticraft.heavy_plates_iron.name=厚重铁板
 item.magneticraft.heavy_plates_gold.name=厚重金板
@@ -95,7 +93,7 @@ item.magneticraft.dusts_osmium.name=锇粉
 item.magneticraft.dusts_nickel.name=镍粉
 
 item.magneticraft.copper_coil_normal.name=铜线圈
-item.magneticraft.crafting_sulfur.name=硫晶
+item.magneticraft.crafting_sulfur.name=硫磺
 item.magneticraft.crafting_coil.name=小型铜线圈
 item.magneticraft.crafting_alternator.name=交流发电机
 item.magneticraft.crafting_motor.name=马达
@@ -103,6 +101,8 @@ item.magneticraft.crafting_magnet.name=磁铁
 item.magneticraft.crafting_mesh.name=铁网
 item.magneticraft.crafting_string_fabric.name=线网
 item.magneticraft.voltmeter_normal.name=电压计
+item.magneticraft.thermometer_normal.name=温度计
+item.magneticraft.wrench_normal.name=扳手
 item.magneticraft.battery_item_low_normal.name=小型电池
 item.magneticraft.battery_item_medium_normal.name=中型电池
 
@@ -163,15 +163,7 @@ tile.magneticraft.steam_boiler_normal.name=锅炉
 tile.magneticraft.pumpjack_drill_normal.name=石油泵
 tile.magneticraft.electric_heater_off.name=电力加热器
 tile.magneticraft.electric_heater_on.name=电力加热器
-
-tile.magneticraft.heat_pipe.name=热能导管
-tile.magneticraft.redstone_heat_pipe.name=红石控制热能导管
-tile.magneticraft.firebox.name=燃烧室
-tile.magneticraft.icebox.name=冰柜
-tile.magneticraft.heat_sink.name=散热器
-tile.magneticraft.heat_reservoir.name=储热器
-tile.magneticraft.thermometer_block.name=热电偶
-tile.magneticraft.brick_furnace.name=砖炉
+tile.magneticraft.gasification_unit_normal.name=气化器
 
 tile.magneticraft.water_generator_normal.name=无限水源方块
 tile.magneticraft.infinite_energy_normal.name=无限能源
@@ -182,14 +174,17 @@ tile.magneticraft.air_bubble_off.name=气泡
 tile.magneticraft.computer_north.name=电脑
 tile.magneticraft.mining_robot_north.name=采矿机器人
 tile.magneticraft.moving_robot_normal.name=机器人
-tile.magneticraft.copper_tank_normal.name=铜质液罐
+tile.magneticraft.small_tank_normal.name=小型储罐
 tile.magneticraft.thermopile_normal.name=温差电堆
 tile.magneticraft.iron_pipe_normal.name=铁质管道
 tile.magneticraft.wind_turbine_north.name=风力涡轮机
+tile.magneticraft.heat_sink_down.name=散热片
+tile.magneticraft.heat_pipe_normal.name=热能管道
+tile.magneticraft.insulated_heat_pipe_normal.name=绝缘热能管道
+tile.magneticraft.rf_heater_off.name=RF加热器
+tile.magneticraft.electric_cable_normal.name=电缆
 
 # Multiblocks
-#tile.magneticraft.hydraulic_press.name=液压机
-#tile.magneticraft.kiln.name=多孔巢式窑
 tile.magneticraft.sieve_inactive_north.name=电动滤筛台
 tile.magneticraft.solar_panel_inactive_north.name=太阳能板
 tile.magneticraft.grinder_inactive_north.name=粉碎机
@@ -200,12 +195,17 @@ tile.magneticraft.solar_mirror_inactive_north.name=太阳能反光镜
 tile.magneticraft.container_inactive_north.name=集装箱
 tile.magneticraft.pumpjack_inactive_north.name=石油钻井
 tile.magneticraft.hydraulic_press_inactive_north.name=液压机
+tile.magneticraft.oil_heater_inactive_north.name=原油加热器
+tile.magneticraft.refinery_inactive_north.name=炼油厂
 
-#tile.magneticraft.copper_block.name=铜块
-#tile.magneticraft.cobalt_block.name=钴块
-#tile.magneticraft.lead_block.name=铅块
-#tile.magneticraft.tungsten_block.name=钨块
+# Ingot blocks
+tile.magneticraft.storage_blocks_copper.name=铜块
+tile.magneticraft.storage_blocks_cobalt.name=钴块
+tile.magneticraft.storage_blocks_lead.name=铅块
+tile.magneticraft.storage_blocks_tungsten.name=钨块
+tile.magneticraft.storage_blocks_pyrite.name=硫磺块
 
+# Multiblock parts
 tile.magneticraft.multiblock_parts_base.name=机座方块
 tile.magneticraft.multiblock_parts_mesh.name=滤筛机械方块
 tile.magneticraft.multiblock_parts_electric.name=电池机座方块
@@ -219,8 +219,10 @@ tile.magneticraft.multiblock_column_axis_z.name=机械支撑柱
 tile.magneticraft.multiblock_gap_normal.name=多方块结构间隙
 tile.magneticraft.multiblock_gap.name=多方块结构
 
+# Creative tab
 itemGroup.magneticraft=磁场工艺
 
+# Connection messages
 text.magneticraft.wire_connect.success=电线连接
 text.magneticraft.wire_connect.fail=无法连接电线
 text.magneticraft.wire_connect.same_block=你无法将电线连接到同一方块
@@ -229,23 +231,63 @@ text.magneticraft.wire_connect.updated_position=位置已更新%s
 text.magneticraft.auto_connect.activate=自动连接线启动
 text.magneticraft.auto_connect.deactivate=自动连接线已禁用
 
+text.magneticraft.wire_connect.position=位置
+text.magneticraft.thermometer.temp=温度：%s
+
+# JEI
 text.magneticraft.jei.crushing_table=粉碎台
 text.magneticraft.jei.sluice_box=洗矿槽
 text.magneticraft.jei.hydraulic_press=液压机
-#text.magneticraft.jei.kiln=多孔巢式窑
 text.magneticraft.jei.grinder=粉碎机
-text.magneticraft.jei.sifter=滤筛台
+text.magneticraft.jei.sieve=滤筛台
+text.magneticraft.jei.oil_heater=原油加热器
+text.magneticraft.jei.refinery=炼油厂
+text.magneticraft.jei.gasification_unit=气化器
 
-text.magneticraft.multiblock.invalid_block=无效的方块：%s，错误放置：%s，正确放置：%s
+#Mining level
+text.magneticraft.jei.mining_level.-1=挖掘等级：全部
+text.magneticraft.jei.mining_level.0=挖掘等级：木头
+text.magneticraft.jei.mining_level.1=挖掘等级：石头
+text.magneticraft.jei.mining_level.2=挖掘等级：铁
+text.magneticraft.jei.mining_level.3=挖掘等级：钻石
+text.magneticraft.jei.mining_level.4=挖掘等级：阿迪特
+text.magneticraft.jei.mining_level.other=挖掘等级：%s
+
+text.magneticraft.jei.time=%s刻（ticks）
+text.magneticraft.jei.require_water=需要一桶水
+
+text.magneticraft.jei.hydraulic_hammer.light=轻薄模式
+text.magneticraft.jei.hydraulic_hammer.medium=适中模式
+text.magneticraft.jei.hydraulic_hammer.heavy=厚重模式
+
+# Multiblock messages
+text.magneticraft.multiblock.invalid_block=无效方块：%s\n错误：%s\n正确：%s
+text.magneticraft.multiblock.invalid_column_orientation=无效方块放置：%s\n错误放置：%s\n正确放置：%s
 text.magneticraft.multiblock.activate=启动成功！
 
-#death.attack.kiln=%1$s直接跑进了烤箱。
-#death.attack.kiln.player=%1$s直接跑进了烤箱，因为试图逃脱%2$s。
-#death.attack.kiln=%1$s把自己扔进了搅拌机。
-#death.attack.kiln.player=%2$s将%1s$扔进了搅拌机。
-
+# Item tooltips
 tooltip.magneticraft.item_storage.energy=%f/%fJ
 tooltip.magneticraft.multiblock.blueprint=放下这个蓝图，以便您查看多方块结构的构成。
 
+# Fluids
 fluid.magneticraft.steam=蒸汽
 fluid.magneticraft.oil=原油
+fluid.magneticraft.hot_crude=热油
+
+fluid.magneticraft.light_oil=轻油
+fluid.magneticraft.heavy_oil=重油
+fluid.magneticraft.lpg=液化石油气
+
+fluid.magneticraft.natural_gas=天然气
+fluid.magneticraft.naphtha=石脑油
+fluid.magneticraft.plastic=液化塑料
+
+fluid.magneticraft.diesel=柴油
+fluid.magneticraft.kerosene=煤油
+fluid.magneticraft.gasoline=汽油
+
+fluid.magneticraft.lubricant=润滑油
+fluid.magneticraft.fuel=燃油
+fluid.magneticraft.oil_residue=油渣
+
+fluid.magneticraft.wood_gas=木煤气
