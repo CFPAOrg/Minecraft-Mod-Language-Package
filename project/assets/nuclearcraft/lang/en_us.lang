@@ -25,13 +25,13 @@ info.moderator.power=baseRF*cellEff/%s RF/t for each adjacent reactor cell
 info.moderator.heat=baseHeat*cellEff/%s H/t for each adjacent reactor cell. If there is no adjacent cell, it will instead produce some additional heat equal to the base heat of the fuel
 info.moderator.desc=Fission Reactor Moderator
 
-tile.nuclearcraft.fission_block.casing.name=Reactor Casing
+tile.nuclearcraft.fission_block.casing.name=Fission Reactor Casing
 tile.nuclearcraft.fission_block.casing.desc=Used in the construction of fission reactors. To form a valid structure, build a cuboid shell of casing, making sure to *exclude* the edges - the corners don't matter. Then place a fission controller along an edge, at a corner or within one of the faces of the structure. If the GUI shows an error, make sure the structure is valid. Then fill the interior with reactor cells, coolers and moderator blocks to start generating energy from your fission fuels!
 
 tile.nuclearcraft.fission_block.blast.name=Blast Block
 tile.nuclearcraft.fission_block.blast.desc=A highly blast resistant block which is perfect for protection against explosives.
 
-tile.nuclearcraft.reactor_casing_transparent.name=Transparent Reactor Casing
+tile.nuclearcraft.reactor_casing_transparent.name=Transparent Fission Reactor Casing
 tile.nuclearcraft.reactor_casing_transparent.desc=Used in the construction of fission reactors. To form a valid structure, build a cuboid shell of casing, making sure to *exclude* the edges - the corners don't matter. Then place a fission controller along an edge, at a corner or within one of the faces of the structure. If the GUI shows an error, make sure the structure is valid. Then fill the interior with reactor cells, coolers and moderator blocks to start generating energy from your fission fuels!
 
 tile.nuclearcraft.fusion_connector.name=Fusion Connector
@@ -203,6 +203,9 @@ tile.nuclearcraft.fission_controller_new_idle.name=Fission Controller
 tile.nuclearcraft.fission_controller_new_idle.desc=Build a multiblock reactor using reactor casing, reactor cells, coolers and moderator blocks! Place the controller along an edge, at a corner or within one of the faces of the structure.
 tile.nuclearcraft.fission_controller_new_active.name=Fission Controller
 
+tile.nuclearcraft.fission_controller_new_fixed.name=Fission Controller
+tile.nuclearcraft.fission_controller_new_fixed.desc=Build a multiblock reactor using reactor casing, reactor cells, coolers and moderator blocks! Place the controller along an edge, at a corner or within one of the faces of the structure.
+
 tile.nuclearcraft.fission_port.name=Fission Reactor Port
 tile.nuclearcraft.fission_port.desc=Place this block in the shell of a fission reactor in place of some reactor casing, but *not* in the top or bottom sides. If a controller is attached to the reactor structure, then its inventory and stored energy can be accessed by automation through this block. Do make sure that the port is facing into the reactor interior. The 'front' of the port is the side with the slightly different texture.
 
@@ -324,6 +327,15 @@ fluid.boron10=Molten Boron-10
 
 tile.nuclearcraft.fluid_boron11.name=Molten Boron-11
 fluid.boron11=Molten Boron-11
+
+tile.nuclearcraft.fluid_ferroboron.name=Molten Ferroboron
+fluid.ferroboron=Molten Ferroboron
+
+tile.nuclearcraft.fluid_tough.name=Molten Tough Alloy
+fluid.tough=Molten Tough Alloy
+
+tile.nuclearcraft.fluid_hard_carbon.name=Molten Hard Carbon
+fluid.hard_carbon=Molten Hard Carbon
 
 tile.nuclearcraft.fluid_neutron.name=Neutron Fluid
 fluid.neutron=Neutron Fluid
@@ -2126,6 +2138,11 @@ player.geiger_tick=Geiger Tick
 music.wanderer=Wanderer
 music.end_of_the_world=End of the World
 music.money_for_nothing=Money For Nothing
+
+material.boron.name=Boron
+material.tough.name=Tough Alloy
+material.hard_carbon.name=Hard Carbon
+material.boron_nitride.name=Boron Nitride
 
 death.attack.superfluid_freeze=%1$s was Bose-Einstein condensated
 death.attack.plasma_burn=%1$s was incinerated by plasma
