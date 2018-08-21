@@ -25,13 +25,13 @@ info.moderator.power=baseRF*cellEff/%s RF/t for each adjacent reactor cell
 info.moderator.heat=baseHeat*cellEff/%s H/t for each adjacent reactor cell. If there is no adjacent cell, it will instead produce some additional heat equal to the base heat of the fuel
 info.moderator.desc=Fission Reactor Moderator
 
-tile.nuclearcraft.fission_block.casing.name=Reactor Casing
+tile.nuclearcraft.fission_block.casing.name=Fission Reactor Casing
 tile.nuclearcraft.fission_block.casing.desc=Used in the construction of fission reactors. To form a valid structure, build a cuboid shell of casing, making sure to *exclude* the edges - the corners don't matter. Then place a fission controller along an edge, at a corner or within one of the faces of the structure. If the GUI shows an error, make sure the structure is valid. Then fill the interior with reactor cells, coolers and moderator blocks to start generating energy from your fission fuels!
 
 tile.nuclearcraft.fission_block.blast.name=Blast Block
 tile.nuclearcraft.fission_block.blast.desc=A highly blast resistant block which is perfect for protection against explosives.
 
-tile.nuclearcraft.reactor_casing_transparent.name=Transparent Reactor Casing
+tile.nuclearcraft.reactor_casing_transparent.name=Transparent Fission Reactor Casing
 tile.nuclearcraft.reactor_casing_transparent.desc=Used in the construction of fission reactors. To form a valid structure, build a cuboid shell of casing, making sure to *exclude* the edges - the corners don't matter. Then place a fission controller along an edge, at a corner or within one of the faces of the structure. If the GUI shows an error, make sure the structure is valid. Then fill the interior with reactor cells, coolers and moderator blocks to start generating energy from your fission fuels!
 
 tile.nuclearcraft.fusion_connector.name=Fusion Connector
@@ -147,7 +147,7 @@ tile.nuclearcraft.irradiator_idle.desc=Induces changes to nuclear structure.
 tile.nuclearcraft.irradiator_active.name=Neutron Irradiator
 
 tile.nuclearcraft.ingot_former_idle.name=Ingot Former
-tile.nuclearcraft.ingot_former_idle.desc=Forms ingots from molten metals.
+tile.nuclearcraft.ingot_former_idle.desc=Forms ingots and gems from molten materials.
 tile.nuclearcraft.ingot_former_active.name=Ingot Former
 
 tile.nuclearcraft.pressurizer_idle.name=Pressurizer
@@ -155,7 +155,7 @@ tile.nuclearcraft.pressurizer_idle.desc=Processes items under immense pressure.
 tile.nuclearcraft.pressurizer_active.name=Pressurizer
 
 tile.nuclearcraft.chemical_reactor_idle.name=Chemical Reactor
-tile.nuclearcraft.chemical_reactor_idle.desc=Houses reactions between gases.
+tile.nuclearcraft.chemical_reactor_idle.desc=Houses reactions between fluids.
 tile.nuclearcraft.chemical_reactor_active.name=Chemical Reactor
 
 tile.nuclearcraft.salt_mixer_idle.name=Salt Mixer
@@ -186,7 +186,7 @@ tile.nuclearcraft.machine_interface.name=Machine Interface
 tile.nuclearcraft.machine_interface.desc=Automation can access the machine directly adjacent to this block. Make sure that there is only one adjacent machine at maximum.
 
 tile.nuclearcraft.buffer.name=Buffer
-tile.nuclearcraft.buffer.desc=Can store up to a stack of items, 32000 RF of energy and 16000 mB of fluid. Can be placed in the shell of fission structures for transportation in to and out to of the reactor.
+tile.nuclearcraft.buffer.desc=Can store up to a stack of items, 32000 RF of energy and 16000 mB of fluid. Can be placed in the shell of fission structures for transportation into and out of the reactor.
 
 tile.nuclearcraft.active_cooler.name=Active Fluid Cooler
 tile.nuclearcraft.active_cooler.desc=Pump coolant into this block to cool down fission and fusion reactors. Must be placed in a fission structure or on the diagonal of a fusion ring. If used to cool a fission reactor, the requirements for each fluid type are the same as the passive counterpart. If used to cool a fusion reactor, it is much more efficient for a cooler to have a partner on the exact opposite side of the entire fusion ring.
@@ -203,6 +203,9 @@ tile.nuclearcraft.fission_controller_new_idle.name=Fission Controller
 tile.nuclearcraft.fission_controller_new_idle.desc=Build a multiblock reactor using reactor casing, reactor cells, coolers and moderator blocks! Place the controller along an edge, at a corner or within one of the faces of the structure.
 tile.nuclearcraft.fission_controller_new_active.name=Fission Controller
 
+tile.nuclearcraft.fission_controller_new_fixed.name=Fission Controller
+tile.nuclearcraft.fission_controller_new_fixed.desc=Build a multiblock reactor using reactor casing, reactor cells, coolers and moderator blocks! Place the controller along an edge, at a corner or within one of the faces of the structure.
+
 tile.nuclearcraft.fission_port.name=Fission Reactor Port
 tile.nuclearcraft.fission_port.desc=Place this block in the shell of a fission reactor in place of some reactor casing, but *not* in the top or bottom sides. If a controller is attached to the reactor structure, then its inventory and stored energy can be accessed by automation through this block. Do make sure that the port is facing into the reactor interior. The 'front' of the port is the side with the slightly different texture.
 
@@ -213,6 +216,9 @@ tile.nuclearcraft.rtg_californium.name=Californium RTG
 tile.nuclearcraft.rtg.desc=Produces %s constantly.
 
 tile.nuclearcraft.solar_panel_basic.name=Basic Solar Panel
+tile.nuclearcraft.solar_panel_advanced.name=Advanced Solar Panel
+tile.nuclearcraft.solar_panel_du.name=DU Solar Panel
+tile.nuclearcraft.solar_panel_elite.name=Elite Solar Panel
 tile.nuclearcraft.solar_panel.desc=Produces %s constantly during daytime.
 
 tile.nuclearcraft.decay_generator.name=Decay Generator
@@ -322,6 +328,15 @@ fluid.boron10=Molten Boron-10
 tile.nuclearcraft.fluid_boron11.name=Molten Boron-11
 fluid.boron11=Molten Boron-11
 
+tile.nuclearcraft.fluid_ferroboron.name=Molten Ferroboron
+fluid.ferroboron=Molten Ferroboron
+
+tile.nuclearcraft.fluid_tough.name=Molten Tough Alloy
+fluid.tough=Molten Tough Alloy
+
+tile.nuclearcraft.fluid_hard_carbon.name=Molten Hard Carbon
+fluid.hard_carbon=Molten Hard Carbon
+
 tile.nuclearcraft.fluid_neutron.name=Neutron Fluid
 fluid.neutron=Neutron Fluid
 
@@ -366,6 +381,9 @@ fluid.coolant=Standard Coolant
 
 tile.nuclearcraft.fluid_sulfur.name=Molten Sulfur
 fluid.sulfur=Molten Sulfur
+
+tile.nuclearcraft.fluid_arsenic.name=Molten Arsenic
+fluid.arsenic=Molten Arsenic
 
 tile.nuclearcraft.fluid_sulfur_dioxide.name=Sulfur Dioxide
 fluid.sulfur_dioxide=Sulfur Dioxide
@@ -420,6 +438,9 @@ fluid.naoh=Molten Sodium Hydroxide
 
 tile.nuclearcraft.fluid_koh.name=Molten Potassium Hydroxide
 fluid.koh=Molten Potassium Hydroxide
+
+tile.nuclearcraft.fluid_bas.name=Molten Boron Arsenide
+fluid.bas=Molten Boron Arsenide
 
 tile.nuclearcraft.fluid_thorium.name=Molten Thorium
 fluid.thorium=Molten Thorium
@@ -1046,9 +1067,10 @@ item.nuclearcraft.gem.boron_nitride.name=Cubic Boron Nitride
 item.nuclearcraft.gem.fluorite.name=Fluorite
 item.nuclearcraft.gem.fluorite.desc=Obtained alongside Lapis Lazuli when breaking Lapis Lazuli Ore.
 item.nuclearcraft.gem.villiaumite.name=Villiaumite
-item.nuclearcraft.gem.villiaumite.desc=Obtained alongside Redstone when breaking Diamond Ore.
+item.nuclearcraft.gem.villiaumite.desc=Obtained alongside Diamonds when breaking Diamond Ore.
 item.nuclearcraft.gem.carobbiite.name=Carobbiite
-item.nuclearcraft.gem.carobbiite.desc=Obtained alongside Nether Quartz when breaking Diamond Ore.
+item.nuclearcraft.gem.carobbiite.desc=Obtained alongside Diamonds when breaking Diamond Ore.
+item.nuclearcraft.gem.boron_arsenide.name=Boron Arsenide
 
 item.nuclearcraft.gem_dust.diamond.name=Crushed Diamond
 item.nuclearcraft.gem_dust.rhodochrosite.name=Crushed Rhodochrosite
@@ -1061,6 +1083,7 @@ item.nuclearcraft.gem_dust.sulfur.desc=Obtained alongside Coal when breaking Coa
 item.nuclearcraft.gem_dust.coal.name=Crushed Coal
 item.nuclearcraft.gem_dust.villiaumite.name=Crushed Villiaumite
 item.nuclearcraft.gem_dust.carobbiite.name=Crushed Carobbiite
+item.nuclearcraft.gem_dust.arsenic.name=Crushed Arsenic
 
 item.nuclearcraft.alloy.bronze.name=Bronze Alloy
 item.nuclearcraft.alloy.tough.name=Tough Alloy
@@ -1072,6 +1095,8 @@ item.nuclearcraft.alloy.ferroboron.name=Ferroboron Alloy
 item.nuclearcraft.alloy.shibuichi.name=Shibuichi Alloy
 item.nuclearcraft.alloy.tin_silver.name=Tin Silver Alloy
 item.nuclearcraft.alloy.lead_platinum.name=Lead Platinum Alloy
+item.nuclearcraft.alloy.extreme.name=Extreme Alloy
+item.nuclearcraft.alloy.thermoconducting.name=Thermoconducting Alloy
 
 item.nuclearcraft.compound.calcium_sulfate.name=Calcium Sulfate
 item.nuclearcraft.compound.crystal_binder.name=Crystal Binder
@@ -1092,6 +1117,7 @@ item.nuclearcraft.part.servo.name=Servomechanism
 item.nuclearcraft.part.motor.name=Electric Motor
 item.nuclearcraft.part.actuator.name=Linear Actuator
 item.nuclearcraft.part.chassis.name=Machine Chassis
+item.nuclearcraft.part.empty_frame.name=Empty Frame
 
 item.nuclearcraft.upgrade.speed.name=Speed Upgrade
 item.nuclearcraft.upgrade.speed.desc=Increases the processing speed of machines at the cost of additional processing power. These upgrades can be stacked - the speed will increase linearly with each additional upgrade while the power use will increase quadratically.
@@ -1559,6 +1585,7 @@ item.nuclearcraft.record_money_for_nothing.name=Music Disc
 item.nuclearcraft.record_money_for_nothing.des0=Dire Straits - Money For Nothing
 item.nuclearcraft.record_money_for_nothing.des1=8-Bit Cover by 'Omnigrad'
 
+itemGroup.nuclearcraft=NuclearCraft
 itemGroup.nuclearcraftBaseBlockMaterials=NuclearCraft Base Blocks
 itemGroup.nuclearcraftBaseItemMaterials=NuclearCraft Base Items
 itemGroup.nuclearcraftMachines=NuclearCraft Machines
@@ -1591,7 +1618,7 @@ gui.config.ores.ore_min_height.comment=Minimum heights at which ores generate. O
 gui.config.ores.ore_max_height=Maximum Gen Heights
 gui.config.ores.ore_max_height.comment=Maximum heights at which ores generate. Order: copper, tin, lead, thorium, uranium, boron, lithium, magnesium.
 gui.config.ores.ore_drops=Enable Extra Ore Drops
-gui.config.ores.ore_drops.comment=Will vanilla ores drop extra resources? Order: rhodochrosite, beryllium dust, zirconium dust, fluorite, sulfur.
+gui.config.ores.ore_drops.comment=Will vanilla ores drop extra resources? Order: rhodochrosite, beryllium dust, zirconium dust, fluorite, sulfur, villiaumite, carobbiite.
 gui.config.ores.hide_disabled_ores=Hide Disabled Ores
 gui.config.ores.hide_disabled_ores.comment=Remove disabled ores from the Ore Dictionary and JEI?
 gui.config.ores.ore_harvest_levels=Ore Harvest Levels
@@ -1743,7 +1770,9 @@ gui.config.fusion.fusion_base_power.comment=Modifies the power generated by fusi
 gui.config.fusion.fusion_fuel_use=Fuel Lifetime Multiplier
 gui.config.fusion.fusion_fuel_use.comment=Modifies the lifetime of fuels in fusion reactors.
 gui.config.fusion.fusion_heat_generation=Heat Gen Multiplier
-gui.config.fusion.fusion_heat_generation.comment=Modifies the heat generated by fusion reactors.
+gui.config.fusion.fusion_heat_generation.comment=Modifies the heat generated by fusion reactors while running.
+gui.config.fusion.fusion_heating_multiplier=Heating Rate Multiplier
+gui.config.fusion.fusion_heating_multiplier.comment=Modifies the heating rate of fusion reactors before running.
 gui.config.fusion.fusion_overheat=Enable Meltdowns
 gui.config.fusion.fusion_overheat.comment=Can fusion reactors overheat?
 gui.config.fusion.fusion_active_cooling=Enable Fusion Active Cooling
@@ -1827,6 +1856,9 @@ gui.config.armor.armor_toughness.comment=Toughnesses of armor types. Order: boro
 gui.config.category.other=Other Configs
 gui.config.category.other.tooltip=Miscellaneous configurations.
 
+gui.config.other.single_creative_tab=Single Creative Tab
+gui.config.other.single_creative_tab.comment=Combine all creative tabs into a single large one?
+
 gui.config.other.register_processor=Register Processors
 gui.config.other.register_processor.comment=Register processors to the game? Order: Nuclear Furnace, Manufactory, Isotope Separator, Decay Hastener, Fuel Reprocessor, Alloy Furnace, Fluid Infuser, Melter, Supercooler, Electrolyzer, Neutron Irradiator, Ingot Former, Pressurizer, Chemical Reactor, Salt Mixer, Crystallizer, Fluid Enricher, Fluid Extractor, Centrifuge, Rock Crusher.
 gui.config.other.register_passive=Register Passive Machines
@@ -1838,6 +1870,9 @@ gui.config.other.register_armor.comment=Register armor types to the game? Order:
 
 gui.config.other.ctrl_info=Ctrl For More Info
 gui.config.other.ctrl_info.comment=Hold down the control key rather than the shift key to show extra tooltip info?
+
+gui.config.other.jei_chance_items_include_null=JEI Chance Output Display
+gui.config.other.jei_chance_items_include_null.comment=Will the chance item output cycle in JEI include empty stacks if a possible output stack size is 0? If false, a minimum stack size of 1 shall be shown - although some info about the recipe is lost this way, it looks much neater. This will only effect the outputs in JEI and not the actual functioning of the machines.
 
 gui.config.other.wasteland_biome=Generate Wasteland Biome
 gui.config.other.wasteland_biome.comment=Will the Wasteland Biome generate in the Overworld?
@@ -1902,6 +1937,7 @@ gui.container.fission_controller.casing_in_interior=Casing In Interior at
 gui.container.fission_controller.invalid_structure=Invalid Structure
 gui.container.fission_controller.pos=BlockPos
 gui.container.fission_controller.no_fuel=No Fuel
+gui.container.fission_controller.generic_fuel=Fuel
 gui.container.fission_controller.cells=Cells:
 gui.container.fission_controller.efficiency=Efficiency:
 gui.container.fission_controller.heat=Heat Level:
@@ -2102,6 +2138,11 @@ player.geiger_tick=Geiger Tick
 music.wanderer=Wanderer
 music.end_of_the_world=End of the World
 music.money_for_nothing=Money For Nothing
+
+material.boron.name=Boron
+material.tough.name=Tough Alloy
+material.hard_carbon.name=Hard Carbon
+material.boron_nitride.name=Boron Nitride
 
 death.attack.superfluid_freeze=%1$s was Bose-Einstein condensated
 death.attack.plasma_burn=%1$s was incinerated by plasma

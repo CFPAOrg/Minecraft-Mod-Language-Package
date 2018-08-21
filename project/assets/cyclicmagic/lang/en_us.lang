@@ -122,6 +122,7 @@ enchantment.cyclicmagic.enchantment.magnet.desc=Makes you magnetic for item stac
 enchantment.cyclicmagic.enchantment.quickdraw.desc=This triples the speed that your bow draws up to full power.
 enchantment.cyclicmagic.enchantment.reach.desc=Increases your building and mining reach
 enchantment.cyclicmagic.enchantment.venom.desc=Inflicts the poison status effect on the target
+enchantment.cyclicmagic.enchantment.waterwalking.desc=Walk on water when this is on your boots.  Sneak to sink. 
 enchantment.expboost.guide=Increases experience drops for killing and mining by factor of $0 per level.  Rarity is $1
 enchantment.expboost=Experience Boost
 enchantment.launch.guide=Gives you the power of multi jump (double jump) when enchanted on boots.  One extra jump per level, after that a cooldown of $0 ticks; sneak to jump normally.  Rarity is $1
@@ -340,6 +341,9 @@ item.guide.name=Cyclic Guide Book
 item.heart_food.guide=A permanent health upgrade.  Craftable or found in chests.
 item.heart_food.name=Heart Container
 item.heart_food.tooltip=+1 Heart
+item.heart_toxic.guide=A permanent health downgrade. 
+item.heart_toxic.name=Empty Heart Container
+item.heart_toxic.tooltip=-1 Heart
 item.horse_upgrade_health.effect=Horse Upgrade: Health
 item.horse_upgrade_health.guide=A permanent health upgrade
 item.horse_upgrade_health.name=Diamond Carrot
@@ -364,11 +368,16 @@ item.magic_net.tooltip=Throw at a living entity to capture
 item.mattock.guide=3x3 mining that treats dirt and stone type blocks equally.
 item.mattock.name=Mattock
 item.mattock.tooltip=3x3 mining; equal parts shovel and pickaxe
-item.password_remote.guide=Remote redstone that is password based.  Give it a password, then anytime that word is said in chat the redstone will trigger.  If it triggers, password is removed from chat display.  Claim it to yourself so no other players can use it.
+item.password_remote.guide=Remote redstone lever that you bind to a lever in the world by sneaking.  Works across any distance including dimensions if the chunk is loaded.  
 item.password_remote.invalid=Invalid position, Lever not found
 item.password_remote.name=Remote Lever
 item.password_remote.saved=Position Saved
 item.password_remote.tooltip=Bind this to a lever in the world (shift click) to activate it remotely
+
+dimension.notfound=Dimension not found
+chunk.unloaded=Action failed; chunk not loaded
+item.password_remote.powered.true=On
+item.password_remote.powered.false=Off
 
 item.purple_boots.guide=Stronger than diamond, comes pre-enchanted with Feather Falling and Depth Strider. 
 item.purple_boots.name=Crystallized Obsidian Boots
@@ -1080,11 +1089,11 @@ item.peat_biomass.guide=Created using plant matter in the Hydrator
 
 item.peat_fuel.name=Peat
 item.peat_fuel.tooltip=Create energy in a Peat-fired Generator
-item.peat_fuel.guide=Burn to create energy in the Peat-fired Generator.  This drops from Peat Deposit when harvested.  It burns for 200 ticks, producing 128/tick for a total of 25600 generated per item.
+item.peat_fuel.guide=Burn to create energy in the Peat-fired Generator.  This drops from Peat Deposit when harvested.  It burns for 200 ticks.
 
 item.peat_fuel_enriched.name=Enriched Peat
 item.peat_fuel_enriched.tooltip=Create energy in a Peat-fired Generator
-item.peat_fuel_enriched.guide=Burn to create energy in the Peat-fired Generator.  This drops from Peat Deposit when harvested.  It burns for 200 ticks, producing 1024/tick.
+item.peat_fuel_enriched.guide=Burn to create energy in the Peat-fired Generator.  This drops from Peat Deposit when harvested.  It burns for 200 ticks.
 
 tile.peat_unbaked.name=Dry Peat Bog
 tile.peat_unbaked.tooltip=Slowly turns into a Peat Deposit when sitting in water
@@ -1331,3 +1340,8 @@ chest_sack.error.blacklist=Pickup disabled by config blacklist
 tile.auto_packager.name=Packager
 tile.auto_packager.tooltip=Bulk packaging with custom recipes
 tile.auto_packager.guide=Package items in bulk such as iron and gold into blocks.  Supports custom recipes added using CraftTweaker.  
+
+tile.dehydrator.name=Dehydrator
+tile.dehydrator.tooltip=Process dehydration recipes
+tile.dehydrator.guide=Dehydrate certain items.  Add more recipes using CraftTweaker.  Lava is optional but will increase processing speed.
+

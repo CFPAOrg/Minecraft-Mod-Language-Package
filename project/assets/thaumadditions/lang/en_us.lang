@@ -9,7 +9,8 @@ tc.aspect.caeles=God, Superpower
 tc.aspect.draco=Dragon
 tc.aspect.infernum=Hell, Demons
 tc.aspect.ventus=Air, Wind
-tc.aspect.visum=Sight
+tc.aspect.visum=Sight, Vision
+tc.aspect.imperium=Control, Manipulation
 
 ##BLOCKS##
 
@@ -17,7 +18,6 @@ tile.thaumadditions:crafting_furnace.name=Crafting Furnace
 tile.thaumadditions:mithrillium_smelter.name=Mithrillium Smeltery
 tile.thaumadditions:mithminite_smelter.name=Mithminite Smeltery
 tile.thaumadditions:adaminite_smelter.name=Adaminite Smeltery
-
 tile.thaumadditions:aspect_combiner.name=Essentia Combiner
 tile.thaumadditions:aura_charger.name=Aura Charger
 tile.thaumadditions:crystal_crusher.name=Crystal Crusher
@@ -26,13 +26,18 @@ tile.thaumadditions:crystal_bore.name=Crystal Bore
 tile.thaumadditions:entity_summoner.name=Entity Summoner
 tile.thaumadditions:puriflower.name=Puriflower
 tile.thaumadditions:crystal_block.name=@ASPECT Crystal Block
-
 tile.thaumadditions:jar_brass.name=Brass Warded Jar
 tile.thaumadditions:jar_thaumium.name=Thaumium Reinforced Jar
 tile.thaumadditions:jar_eldritch.name=Void Foritified Jar
 tile.thaumadditions:jar_mithrillium.name=Mithrillium Reinforced Jar
 tile.thaumadditions:jar_adaminite.name=Adaminite Foritified Jar
 tile.thaumadditions:jar_mithminite.name=Mithminite Jar
+tile.thaumadditions:growth_chamber.name=Crystal Growth Chamber
+tile.thaumadditions:dawn_totem.name=Totem of Dawn
+tile.thaumadditions:twilight_totem.name=Twilight Totem
+tile.thaumadditions:dusk_totem.name=Totem of Dusk [NYI]
+tile.thaumadditions:seal.name=Arcane Seal
+tile.thaumadditions:seal.desc=Color: @COLOR
 
 ##########
 
@@ -65,15 +70,15 @@ item.thaumadditions:mithrillium_plate.name=Mithrillium Plate
 item.thaumadditions:adaminite_plate.name=Adaminite Plate
 item.thaumadditions:mithminite_plate.name=Mithminite Plate
 item.thaumadditions:salt_essence.name=Vis Salt
-
 item.thaumadditions:zeith_scale.name=Zeitheron's Curiosity
 item.thaumadditions:zeith_scale.tip=Drops from a mystical scalie
-
 item.thaumadditions:dna_sample.name=Entity Cell
 item.thaumadditions:dna_sample.blank=Blank
 item.thaumadditions:dna_sample.entity=Entity
 item.thaumadditions:recharge_charm.name=Recharge Charm
 item.thaumadditions:recharge_charm.tooltip0=No recipe/research YET!
+item.thaumadditions:seal_symbol.name=Seal Symbol: @ASPECT
+item.thaumadditions:seal_globe.name=Seal Globe
 
 #########
 
@@ -83,12 +88,16 @@ item.thaumadditions:recharge_charm.tooltip0=No recipe/research YET!
 
 status.thaumadditions:dna_unpickable=This entity is too strong to be sampled!
 status.thaumadditions:dna_unpickable.1=This is inanimate onject!
+gui.thaumadditions:null=None
 
 #################
 
 
 
 ##RESEARCH##
+
+research.!FluxRift.text=Scan a Flux Rift
+research.!TARShimmerleaf.text=Research Shimmerleaf
 
 research_name.thaumadditions:thaumadds=Thaumic Additions
 research_stage.thaumadditions:thaumadds.1=I found very strange theory, that seems to will to help me in my thaumic journey. It seems that I will find obvious things later that I can't think of without this strange observation...
@@ -182,11 +191,45 @@ research_stage.thaumadditions:mob_summoning.2=I am slowly progressing through th
 research_stage.thaumadditions:mob_summoning.3=I found how to summon entities using a sample that I can capture using Entity Cell. Now I need to infuse thaumium block with few items and a crap tonn of aspects.
 
 research_name.thaumadditions:puriflower=Puriflower
-research_stage.thaumadditions:puriflower.1=I was experimenting with vishrooms and how useless they are, trying to find a use to it. I may utilize it in aura cleaning, as they seem to be a powerful source of vis.
-research_stage.thaumadditions:puriflower.2=Infusing vishroom with auram, herba and praecantatio results in a quite different plant: puriflower. It has very special ability: slowly absorb flux from aura. If I place a lot of them, then dealing with flux won't be a problem.
+research_stage.thaumadditions:puriflower.1=I was experimenting with vishrooms and how useless they are, trying to find a use to it. Maybe if combined with shimmerleaf or totem of dawn I may utilize it in aura cleaning, as vishrooms seem to be a powerful source of vis.
+research_stage.thaumadditions:puriflower.2=Infusing a totem with vishrooms, shimmerleaf and turning it all alive, along with auram, herba, imperium and ordo results in a quite different plant: Puriflower. It has very special ability: slowly absorb flux from aura. I will note, however: They absorb flux a bit slower than totems do, but when they do, the amount of flux taken is much more, and it doesn't malfunction. If I place a lot of them, then dealing with flux won't be a problem, and flux rifts will either appear much more rare, or not appear at all!
 
 research_name.thaumadditions:crystal_block=Crystal Blocks
 research_stage.thaumadditions:crystal_block.1=I was thinking of a way of placing crystals as decorative blocks in my house. I may need to use arcane workbench in order to channel vis properly.
 research_stage.thaumadditions:crystal_block.2=My clues were true! Channeling vis into 9 crystals can create a shape that is similar to a crystal. I think that these can replace the old crystal clusters that my parents used before.
 
+research_name.thaumadditions:growth_chamber=Crystal Growth Chamber
+research_stage.thaumadditions:growth_chamber.1=Growing crystals was my dream, it was proven to be possible by farming crystals, but I know that this is not the most efficient and fastest way out there. I need to put some things and research the property of crystal's block, and perhaps I will find something new...
+research_stage.thaumadditions:growth_chamber.2=Of course! I managed to create a very special device that can easily recreate any crystal, even those made by me in the crucible. I just need to place the growth chamber in a saturated on vis place, then put crystals together to create a crystal cluster, then provide the chamber with the cluster, give it some vis of the same type. Then the chamber will start to deplete aura and produce a crystal.
+
+research_name.thaumadditions:seal=Arcane Seals
+research_stage.thaumadditions:seal.1=I am thinking of some sort of arcane base that will allow to replace golems in sort of a way.. I just need it to continue thinking about how to do that.
+research_stage.thaumadditions:seal.2=Seems like gold with wool is good enough for what I will do in the future. Now all I need is something magical enough to attach to this seal. Seems like it has about three slots for whatever I will attach onto it.
+
+research_name.thaumadditions:seal_symbols=Seal Symbology
+research_stage.thaumadditions:seal_symbols.1=That seal seems to go with somewhat round objects... Now I am thinking of using vis crystals in this setup along with some gold.. maybe?
+research_stage.thaumadditions:seal_symbols.2=Alright! Seems like I'm on the right way.. I think. Using vis crystal to channel the magic powers of the crystal's type and gold to focus it onto the seal seem to fit the seal design. And I think the amount of possible combinations is overwhelming, but I think that most of them are pointless.
+
+research_name.thaumadditions:totems=Totemancy
+research_stage.thaumadditions:totems.1=I think that flux rifts absorb flux from my aura at a slow rate. I may be able to connect to the other dimension they are dumping it in, and somehow bring it back. Don't know why, but why not?
+research_stage.thaumadditions:totems.2=After studying the rift better I managed to create a weaker version of it that brings flux back from the other dimensions, at a very slow rate. I think that the connection is unstable by itself thus it may generate large dumps of flux rarely. The book calls this phenomen 'Twilight Totem'<LINE>Though this wasn't what I need. I may need to research shimmerleaf's properties a bit more.
+research_stage.thaumadditions:totems.3=After studying the rift better I managed to create a weaker version of it that brings flux back from the other dimensions, at a very slow rate. I think that the connection is unstable by itself thus it may generate large dumps of flux rarely. The book calls this phenomen 'Twilight Totem'<LINE>Yes, my theory was right. Shimmerleafs can be improved into somewhat more promising. The result is the new totem of dawn. I think it acts quite like a rift, but it's stable and reliable, mostly?
+
+research_name.thaumadditions:seal_globe=Seal Peeking
+research_stage.thaumadditions:seal_globe.1=Seals are great and all, but I need to know what the setup on the seal does. I think vis resonator has a clue to what I need.
+research_stage.thaumadditions:seal_globe.2=I applied some magic to vis resonator and now it's similar to a globe. This thing is capable of telling me what the seal does.
+
 ############
+
+
+
+##SEALS##
+
+seal.thaumadditions:none=This seal doesn't seem to do anything.
+seal.thaumadditions:unconfigured=This seal does something, but the author of the "%s" did not specify what. Report to %s!
+seal.thaumadditions:portala=This seal creates a portal through which you can travel.
+seal.thaumadditions:portalb=This seal creates a portal through which you can travel. Currently bound to %s network.
+seal.thaumadditions:fertilesoil=This seal hydrates farmland nearby.
+seal.thaumadditions:createsoil=This seal converts dirt into farmland nearby.
+
+#########
