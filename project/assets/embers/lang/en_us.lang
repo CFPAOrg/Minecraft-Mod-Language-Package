@@ -97,6 +97,10 @@ tile.gearbox_frame.name=Gearbox Frame
 tile.steam_engine.name=Steam Engine
 tile.mechanical_pump.name=Mechanical Pump
 tile.caminite_lever.name=Caminite Lever
+tile.catalytic_plug.name=Catalytic Plug
+tile.ember_funnel.name=Ember Funnel
+tile.mini_boiler.name=Mini Boiler
+tile.mech_actuator.name=Mechanical Actuator
 
 fluid.iron=Molten Iron
 fluid.gold=Molten Gold
@@ -105,7 +109,9 @@ fluid.lead=Molten Lead
 fluid.silver=Molten Silver
 fluid.astralite=Molten Astralite
 fluid.dawnstone=Molten Dawnstone
-fluid.umberSteel=Molten Umber Steel
+fluid.umber_steel=Molten Umber Steel
+fluid.alchemical_redstone=Alchemical Slurry
+fluid.steam=Steam
 
 item.ingot_copper.name=Copper Ingot
 item.ingot_silver.name=Silver Ingot
@@ -134,6 +140,7 @@ item.stamp_plate.name=Plate Stamp
 item.stamp_bar_raw.name=Raw Bar Stamp
 item.stamp_flat_raw.name=Raw Flat Stamp
 item.stamp_plate_raw.name=Raw Plate Stamp
+item.dust_ember.name=Ember Grit
 item.shard_ember.name=Ember Shard
 item.crystal_ember.name=Ember Crystal
 item.ingot_dawnstone.name=Dawnstone Ingot
@@ -206,18 +213,21 @@ item.ember_amulet.name=Ember Amulet
 item.ember_bulb.name=Mantle Bulb
 item.gear_iron.name=Iron Gear
 item.gear_dawnstone.name=Dawnstone Gear
+item.dust_metallurgic.name=Metallurgic Dust
+item.diffraction_barrel.name=Diffraction Barrel
+item.focal_lens.name=Focal Lens
 
-tile.block_aluminum.name=Aluminum Block
-tile.ore_aluminum.name=Aluminum Ore
-item.ingot_aluminum.name=Aluminum Ingot
-item.nugget_aluminum.name=Aluminum Nugget
-item.plate_aluminum.name=Aluminum Plate
-item.pickaxe_aluminum.name=Aluminum Pickaxe
-item.axe_aluminum.name=Aluminum Axe
-item.hoe_aluminum.name=Aluminum Hoe
-item.shovel_aluminum.name=Aluminum Shovel
-item.sword_aluminum.name=Aluminum Sword
-fluid.aluminum=Molten Aluminum
+tile.block_aluminum.name=Aluminium Block
+tile.ore_aluminum.name=Aluminium Ore
+item.ingot_aluminum.name=Aluminium Ingot
+item.nugget_aluminum.name=Aluminium Nugget
+item.plate_aluminum.name=Aluminium Plate
+item.pickaxe_aluminum.name=Aluminium Pickaxe
+item.axe_aluminum.name=Aluminium Axe
+item.hoe_aluminum.name=Aluminium Hoe
+item.shovel_aluminum.name=Aluminium Shovel
+item.sword_aluminum.name=Aluminium Sword
+fluid.aluminum=Molten Aluminium
 
 tile.block_bronze.name=Bronze Block
 tile.ore_bronze.name=Bronze Ore
@@ -267,21 +277,35 @@ item.shovel_tin.name=Tin Shovel
 item.sword_tin.name=Tin Sword
 fluid.tin=Molten Tin
 
+embers.aspect.iron=Iron
+embers.aspect.copper=Copper
+embers.aspect.dawnstone=Dawnstone
+embers.aspect.lead=Lead
+embers.aspect.silver=Silver
+
 embers.tooltip.atmosEmber=Atmospheric Ember:
 embers.tooltip.targetingBlock=Targeting:
-embers.tooltip.itemdial.slot=Slot {0}
+embers.tooltip.itemdial.slot=Slot %d: %s
+embers.tooltip.itemdial.item=%dx %s
 embers.tooltip.itemdial.noitem=NONE
-embers.tooltip.emberdial.ember=Ember: 
-embers.tooltip.iron_accuracy=Iron Inaccuracy: 
-embers.tooltip.copper_accuracy=Copper Inaccuracy: 
-embers.tooltip.lead_accuracy=Lead Inaccuracy: 
-embers.tooltip.silver_accuracy=Silver Inaccuracy: 
-embers.tooltip.dawnstone_accuracy=Dawnstone Inaccuracy: 
+embers.tooltip.emberdial.ember=Ember: %d/%d
+embers.tooltip.fluiddial.fluid=%s: %d/%d
+embers.tooltip.fluiddial.nofluid=0/%d
+embers.tooltip.side.north=North
+embers.tooltip.side.east=East
+embers.tooltip.side.south=South
+embers.tooltip.side.west=West
+embers.tooltip.side.up=Top
+embers.tooltip.side.down=Bottom
+embers.tooltip.accuracy=%s Inaccuracy: %s
 embers.tooltip.inflictor=Attuned Damage: 
 embers.tooltip.tyrfing=Deals damage based on the target's armor.
 embers.tooltip.heat_amount=Heat:
 embers.tooltip.heat_level=Level:
 embers.tooltip.modifiers=Modifiers:
+embers.tooltip.upgrade.actuator=Mechanical Speed: %.2gx
+embers.tooltip.dial.ember_multiplier=Production Multiplier: %.2gx
+embers.tooltip.dial.heat=Heat: %.2g/%.2g
 
 embers.tooltip.modifier.superheater=Superheating
 embers.tooltip.modifier.jet_augment=Cinder Jet
@@ -291,6 +315,8 @@ embers.tooltip.modifier.caster_orb=Ember Casting
 embers.tooltip.modifier.flame_barrier=Flame Barrier
 embers.tooltip.modifier.eldritch_insignia=Eerie
 embers.tooltip.modifier.intelligent_apparatus=Intelligent
+embers.tooltip.modifier.diffraction=Diffractive
+embers.tooltip.modifier.focal_lens=Focused
 
 embers.tooltip.num1=I
 embers.tooltip.num2=II
@@ -302,6 +328,7 @@ embers.jei.recipe.stamp=Stamping Recipe
 embers.jei.recipe.melter=Melting Recipe
 embers.jei.recipe.mixer=Mixing Recipe
 embers.jei.recipe.alchemy=Alchemy Recipe
+embers.jei.recipe.dawnstone_anvil=Dawnstone Anvil Recipe
 
 entity.ancient_golem.name=Ancient Golem
 
@@ -423,10 +450,13 @@ embers.research.mechanisms.copper_cell.title=Capacitor
 embers.research.mechanisms.copper_cell.desc=The Copper Cell fulfills a very simple purpose: Ember storage. It can be given Ember using an Ember Receptor, or have Ember removed from it through an Ember Emitter.
 
 
+embers.research.metallurgy.pulser=Ember Ejector
+embers.research.metallurgy.pulser.title=Full Power Destruction
+embers.research.metallurgy.pulser.desc=By plating a normal Ember Emitter with Dawnstone alloy, you've vastly increased its potential output. Dawnstone is highly conductive to Ember and this device will send 10 times the amount per burst. Note that Receptors are quickly overwhelmed with this massive quantity and any surplus Ember may be lost in transfer. You've devised the Ember Funnel that catches Ember from multiple sources and rapidly transfers it to the connected machine.
 
 embers.research.metallurgy.splitter=Beam Splitter
 embers.research.metallurgy.splitter.title=Ember Division
-embers.research.metallurgy.splitter.desc=Using the new Dawnstone alloy, you have discovered a way to divide Ember bursts. The Beam Splitter has four faces: two with a smaller copper port, and two with larger copper-and-dawnstone ports. Each of the larger ports will function as its own Ember Emitter. When Ember is fed into the Splitter with an Ember Receiver, it will split the Ember it receives between those two ports, which can each be bound independently.
+embers.research.metallurgy.splitter.desc=Using the new Dawnstone alloy, you have discovered a way to divide Ember bursts. The Beam Splitter has four faces: two with a smaller copper port, and two with larger copper-and-dawnstone ports. Each of the larger ports will function as its own Ember Emitter. When Ember is fed into the Splitter, it will split the Ember it receives between those two ports, which can each be bound independently.
 
 embers.research.metallurgy.dawnstone_anvil=Dawnstone Anvil
 embers.research.metallurgy.dawnstone_anvil.title=Repairs
@@ -480,6 +510,10 @@ embers.research.metallurgy.ejector=Ember Ejector
 embers.research.metallurgy.ejector.title=Boosted Output
 embers.research.metallurgy.ejector.desc=Simple Ember Emitters are useful and all, but sometimes you may want a bit more raw throughput. The Ember Ejector is a sturdier Emitter -- functionally identical to its predecessor, but capable of draining and emitting ten times as much Ember in a given time.
 
+embers.research.metallurgy.catalytic_plug=Catalytic Plug
+embers.research.metallurgy.catalytic_plug.title=Overdrive Injection
+embers.research.metallurgy.catalytic_plug.desc=Catalytic Plugs are fantastic devices for the impatient. When hooked up to a machine the plug doubles the speed of the machine, but only if also supplied with Alchemical Slurry from the back, which is consumed in the process. Up to 2 Catalytic Plugs can be attached to a single machine, to quadruple its speed.
+
 
 
 embers.research.alchemy.waste=Experimentation
@@ -509,6 +543,10 @@ embers.research.alchemy.inflictor.desc=The Inflictor Gem is a strange crystal in
 embers.research.alchemy.cluster=Ember Clusters
 embers.research.alchemy.cluster.title=Purified Crystals
 embers.research.alchemy.cluster.desc=The smaller crystalline Ember items you have used in the past are handy, but you believe you will soon require more power. By alchemically fusing several Ember Crystals and Ember Shards together, you have created the Ember Cluster, a larger bunch of crystals that you believe will help you energize future machines.
+
+embers.research.alchemy.field_chart=Field Chart
+embers.research.alchemy.field_chart.title=Tactical Overview
+embers.research.alchemy.field_chart.desc=Finding spots with High Ember concentration can be tedious when your only measurement device is an Atmospheric Gauge. However, it seems that Ember resonates with itself, and by suitable manufacture you've devised the Field Chart, a map of Ember concentrations for a larger area than can be covered on foot.
 
 embers.research.alchemy.wildfire=Wildfire Core
 embers.research.alchemy.wildfire.title=Controlling the Flame
