@@ -40,6 +40,7 @@ import src.unzip.mod_unzip
 import src.handle.handle
 import src.handle.properties_handle
 import src.handle.lang_sort
+import src.handle.empty_lang_del
 
 # 清除黑名单文件夹
 import src.redundancy.black_dir_del
