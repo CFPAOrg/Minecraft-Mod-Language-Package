@@ -9,22 +9,11 @@
 
 这是 Minecraft 模组汉化项目的仓库，本项目目前采用 Weblate 平台进行模组项目翻译；<br>
 用以解决模组作者不接收汉化、汉化提交更新速度慢等诸多问题；<br>
-想要参与本地化，请点击此处访问 Weblate：<br>
+想要参与翻译？请访问我们的官方网站，仔细阅读相关事宜加入我们：<br>
 
-- 中国大陆：<https://weblate.sayori.pw/>
-- 其他地区：<https://weblate.exz.me/>
+### <https://cfpa.team>
 
-需要管理员注册账户，请向以下任意一位发送邮件用以申请账户<br>
-
-- 酒石酸菌：<baka943@qq.com>
-- 雪尼：<1850986885@qq.com>
-- yuanjie000：<ren19951@hotmail.com>
-- 或者直接加 QQ 群：[630943368](http://qm.qq.com/cgi-bin/qm/qr?k=YsUvyHx72I7b6KD6l3578PpGDvd86oE5)
-- 或者 discord 群组：[戳我啊](https://discord.gg/SGve5Fn)
-
-你需要提供：**邮箱**（最好是 Github 绑定那个）以及一个**英文用户名**（最好是 GitHub 用户名）。
-
-如果对 Weblate 使用存在疑问，可以查看[官方文档](https://docs.weblate.org/en/latest/user/index.html)，或者酒石酸菌做的一个[简单视频](https://www.bilibili.com/video/av17932243)。
+或者直接向这个仓库提交 PR 即可；
 
 翻译还是需要有一些注意事项，具体参见：[《Minecraft Mod简体中文翻译规范与指南》](https://github.com/Meow-J/Mod-Translation-Styleguide/blob/master/README.md)。
 
