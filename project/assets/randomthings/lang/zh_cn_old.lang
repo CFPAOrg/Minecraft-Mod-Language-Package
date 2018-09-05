@@ -63,11 +63,25 @@ tile.lotus.name=莲
 tile.ancientBrick.name=远古砖块
 tile.soundBox.name=音箱
 tile.soundDampener.name=隔音器
+tile.advancedRedstoneTorch_on.name=高级红石火把
+tile.advancedRedstoneTorch_off.name=高级红石火把
+tile.diaphanousBlock.name=通透方块
+tile.diaphanousBlock_inverted.name=反向通透方块
+tile.sidedRedstone.name=单向红石块
+tile.ancientBrick.name=远古砖块
+tile.spectreLens.name=通灵镜片
+tile.spectreEnergyInjector.name=通灵能量注入器
 
 tile.spectrePlank.name=通灵木板
 tile.spectreSapling.name=通灵树苗
 tile.spectreLeaf.name=通灵树叶
 tile.spectreLog.name=通灵原木
+
+tile.spectreCoil_normal.name=通灵线圈
+tile.spectreCoil_redstone.name=红石通灵线圈
+tile.spectreCoil_ender.name=末影通灵线圈
+tile.spectreCoil_number.name=Nr. %d通灵线圈
+tile.spectreCoil_genesis.name=创造模式通灵线圈
 
 tile.itemCollector.name=物品收集器
 tile.advancedItemCollector.name=高级物品收集器
@@ -192,6 +206,9 @@ tile.platform.darkoak.name=深色橡木平台
 tile.basicRedstoneInterface.name=基础红石接口
 tile.advancedRedstoneInterface.name=高级红石接口
 
+tile.spectrecoil.transfer=输出 %s RF/t
+tile.spectrecoil.generate=生成 %s RF/t
+
 item.chaliceOfImmortality.name=不朽圣餐杯
 item.positionFilter.name=方位过滤器
 item.biomeCrystal.name=生物群系水晶
@@ -230,6 +247,7 @@ item.portKey.name=门钥匙
 item.lotusseeds.name=莲子
 item.soundPattern.name=音乐模块
 item.portableSoundDampener.name=便携式隔音器
+item.escapeRope.name=逃生绳
 
 item.bean.name=豆
 item.lesserMagicBean.name=次级魔豆
@@ -276,6 +294,8 @@ item.ingredient.flooPowder.name=飞路粉
 item.ingredient.plateBase.name=压力板基板
 item.ingredient.preciousEmerald.name=无暇绿宝石
 item.ingredient.lotusBlossom.name=莲花
+item.ingredient.goldenEgg.name=金蛋
+item.ingredient.spectreString.name=通灵线
 
 item.spectrePickaxe.name=通灵之镐
 item.spectreAxe.name=通灵之斧
@@ -297,6 +317,10 @@ item.runeDust.light_blue.name=淡蓝色符文粉
 item.runeDust.magenta.name=品红色符文粉
 item.runeDust.orange.name=橙色符文粉
 item.runeDust.white.name=白色符文粉
+
+item.weatherEgg_sun.name=天气胶囊<晴天>
+item.weatherEgg_rain.name=天气胶囊<雨天>
+item.weatherEgg_storm.name=天气胶囊<雷暴>
 
 tooltip.general.shift=按住§6Shift§7来查看详细信息
 tooltip.general.empty=§8<空>
@@ -371,8 +395,8 @@ block.enderMailbox.owner=你不是这个邮箱的主人
 item.dungeonChestGenerator.category=分类：%s
 item.dungeonChestGenerator.shiftCategory=右击以更改分类
 
-item.enderLetter.sender=寄件人： %s
-item.enderLetter.receiver=收件人： %s
+item.enderLetter.sender=寄件人：%s
+item.enderLetter.receiver=收件人：%s
 item.enderLetter.noPlayer=玩家"%s"似乎并不是这个世界的居民
 item.enderLetter.noSpace=邮件似乎被退回了
 
@@ -387,6 +411,12 @@ entity.spirit.name=灵魂
 
 entity.randomthings.playerSoul.name=玩家灵魂
 entity.playerSoul.name=玩家灵魂
+
+entity.randomthings.goldenChicken.name=金鸡
+entity.goldenChicken.name=金鸡
+
+entity.randomthings.goldenEgg.name=金蛋
+entity.goldenEgg.name=金蛋
 
 fluid.biomeEssence=生物群系精华
 
@@ -461,9 +491,19 @@ tile.triggerGlass.info=感知玻璃会在接收到红石信号的三秒钟内失
 #tile.blockDestabilizer.info=The Block Destabilizer will make blocks connected to its front fall down when powered by redstone. It can destabilize a total of 50 blocks at once though they all have to be connected to each other and of the same type. In its GUI you can toggle lazy mode, in lazy mode the block destabilizer will remember the "shape" it dropped last time so it will run faster. However it will be "locked" to that shape and won't drop any blocks outside of it. Use lazy mode if you want a block destabilizer to keep dropping the same shape of blocks. You can reset the remembered shape with the "arrow" button.
 tile.advancedRedstoneRepeater.info=一种可自由设置的红石中继器。
 tile.translucentLuminousBlock.info=一种通透的荧光方块。
-tile.soundBox.info=通过提供红色信号并插入音乐模块即可播放对应的音乐。
+tile.soundBox.info=通过提供红石信号并插入音乐模块即可播放对应的音乐。
 tile.soundDampener.info=通过将对应音乐模块放置在隔音器的GUI中，以其为中心的10个方块内的对应音乐模块所播放的音乐将被阻断。
 tile.globalChatDetector.info=全局聊天检测器，顾名思义它的检测范围不限于单体。值得注意的是，要使用它你还必须在其中插入对应玩家的身份证。
+tile.advancedRedstoneTorch_on.info=高级红石火把与常规红石火把不同的是，它只能发出15或者0的信号，并且可以随意调整信号的强度；激活时为绿色，红色则为断开。
+tile.diaphanousBlock.info=通透方块会根据其与玩家的距离而改变不透明度，默认情况下它没有碰撞体积且玩家靠近会消失（将其放入工作台可转为"反向通透方块"，效果恰巧相反）。若将其与任意方块在工作台合成可改变外观。
+tile.sidedRedstone.info=仅在一侧产生红石信号的方块。
+tile.spectreLens.info=将通灵镜片置于信标上方，无聊你身处何处均能获得信标效果。
+tile.spectreEnergyInjector.info=通灵能量注入器最多能够存储1000000RF，其需要使用通灵线圈进行输出/输入。
+tile.spectreCoil_normal.info=将1024RF/t从通灵能量注入器中输出，反之你也可以将能量输入通灵能量注入器。
+tile.spectreCoil_redstone.info=将4096RF/t从通灵能量注入器中输出，反之你也可以将能量输入通灵能量注入器。
+tile.spectreCoil_ender.info=将20480RF/t从通灵能量注入器中输出，反之你也可以将能量输入通灵能量注入器。
+tile.spectreCoil_number.info=生成128RF/t并输出至周围用电设备，它们可以在地牢中找到。
+tile.spectreCoil_genesis.info=生成10000000RF/t并输出至周围用电设备（仅限创造模式）。
 
 tile.plate_redirector.info=在这个板上移动的实体会被重定向到一个不同的方向，右键单击以改变方向。
 tile.plate_filteredredirector.info=在这个板上移动的实体会根据过滤被重定向到一个不同的方向。
@@ -529,3 +569,8 @@ item.lotusseeds.info=通过破坏莲花植株掉落，你可以在‘snowy’生
 item.soundPattern.info=每个音乐模块都存储着各自不同的音乐，它就好比CD一样。可在音箱/录音机/隔音器中使用。
 item.soundRecorder.info=录音机用来录制和存储音乐至音乐模块，然后在音箱或者（便携式）隔音器中使用。手持其按住Shift右击开始录制，再次右击以停止录制。另外，如果它已经录制了10种不同的声音时，它也会自动停止录制。然后，你可以直接右击打开其GUI并放入音乐模块选择对应的声音保存。
 item.portableSoundDampener.info=通过将对应音乐模块放置在便携式隔音器的GUI中，并将其放置在物品栏以阻断对应音乐模块所播放的声音。
+item.escapeRope.info=逃生绳用于洞穴逃生，当你在紧急逃生时会受到一些伤害。
+item.ingredient.goldenEgg.info=投掷后会生成一只金鸡，其会下金锭而非鸡蛋。
+item.weatherEgg_sun.info=投掷后会生成一片云朵，其会慢慢上升。一旦到达天空，它便会改变天气至晴天。
+item.weatherEgg_rain.info=投掷后会生成一片云朵，其会慢慢上升。一旦到达天空，它便会改变天气至雨天。
+item.weatherEgg_storm.info=投掷后会生成一片云朵，其会慢慢上升。一旦到达天空，它便会改变天气至雷暴天。

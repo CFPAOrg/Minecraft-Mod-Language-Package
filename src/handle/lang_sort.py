@@ -5,10 +5,10 @@ for modid in os.listdir('project/assets/'):
         continue
     if not os.path.exists('project/assets/{}/lang/zh_cn.lang'.format(modid)):
         continue
-    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'r+', encoding='utf-8', errors='ignore') as lang:
+    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'r', encoding='utf-8', errors='ignore') as lang:
         lang_index = lang.readlines()   # 将文件读取成 list
         lang_index.sort()   # list 排序
-        lang.seek(0, 0)     # 将指针重定向至文件开头
+    with open('project/assets/{}/lang/zh_cn.lang'.format(modid), 'w', encoding='utf-8', errors='ignore') as lang:
         lang_list = []      # 空 list 放置剔除换行符条目
         for i in lang_index:    # 剔除无用换行符
             if i != '\n':

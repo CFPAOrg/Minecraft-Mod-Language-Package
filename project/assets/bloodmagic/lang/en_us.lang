@@ -214,7 +214,6 @@ tile.bloodmagic.rune.orb.name=Rune of the Orb
 tile.bloodmagic.rune.acceleration.name=Acceleration Rune
 tile.bloodmagic.rune.charging.name=Charging Rune
 
-
 tile.bloodmagic.ritualStone.blank.name=Ritual Stone
 tile.bloodmagic.ritualStone.water.name=Ritual Stone of Water
 tile.bloodmagic.ritualStone.fire.name=Ritual Stone of Fire
@@ -374,6 +373,9 @@ tile.bloodmagic.stairs3.steadfast.name=Steadfast Stone Stairs
 # Fluids
 fluid.lifeEssence=Life Essence
 
+# HUD
+hud.bloodmagic.inactive=Inactive
+
 # Tooltips
 tooltip.bloodmagic.extraInfo=&9-Hold shift for more info-
 
@@ -446,7 +448,7 @@ tooltip.bloodmagic.activation_crystal.weak=Activates low-level rituals
 tooltip.bloodmagic.activation_crystal.awakened=Activates more powerful rituals
 tooltip.bloodmagic.activation_crystal.creative=Creative Only - Activates any ritual
 
-tooltip.bloodmagic.diviner.currentRitual=Current Ritual: 
+tooltip.bloodmagic.diviner.currentRitual=Current Ritual: %s
 tooltip.bloodmagic.diviner.blankRune=Blank Runes: %d
 tooltip.bloodmagic.diviner.waterRune=Water Runes: %d
 tooltip.bloodmagic.diviner.airRune=Air Runes: %d
@@ -641,7 +643,7 @@ ritual.bloodmagic.crushingRitual.info=Breaks blocks within its crushing range an
 ritual.bloodmagic.crushingRitual.destructive.info=(Destructive) Blocks are broken down forcefully: all blocks broken are affected by Fortune III.
 ritual.bloodmagic.crushingRitual.steadfast.info=(Steadfast) Causes all blocks that are broken to be picked up with silk touch. Overrides Fortune where applicable.
 ritual.bloodmagic.crushingRitual.corrosive.info=(Corrosive) All blocks are broken to be processed with a form of cutting fluid. Overrides Silk Touch where applicable.
-ritual.bloodmagic.crushingRitual.vengeful.info=(Vengeful) Compresses the inventory on successful opperation. Currently only does one compression per operation.
+ritual.bloodmagic.crushingRitual.vengeful.info=(Vengeful) Compresses the inventory on successful operation. Currently only does one compression per operation.
 ritual.bloodmagic.crushingRitual.default.info=(Raw) Increases the speed of the ritual based on total Will.
 ritual.bloodmagic.greenGroveRitual.corrosive.info=(Corrosive) Entities within range are attacked by nearby plants, leeching away their life.
 ritual.bloodmagic.greenGroveRitual.default.info=(Raw) Increases the speed of all of the ritual operations depending on the total Will in the Aura.
@@ -670,8 +672,8 @@ ritual.bloodmagic.speedRitual.info=Launches players within its range in the dire
 ritual.bloodmagic.suppressionRitual.info=Suppresses fluids within its range - deactivating the ritual returns the fluids back to the world.
 ritual.bloodmagic.expulsionRitual.info=Expels players from its range that are neither the owner nor have a bound blood orb in the chest on top of the master ritual stone.
 ritual.bloodmagic.zephyrRitual.info=Picks up items within its range and places them into the linked chest.
-ritual.bloodmagic.upgradeRemoveRitual.info=Undocumented.
-ritual.bloodmagic.armourEvolveRitual.info=Undocumented.
+ritual.bloodmagic.upgradeRemoveRitual.info=Removes all upgrades (and downgrades) from your Living Armor and gives you the corresponding Upgrade (and Downgrade) Tomes. These Tomes can be used to be applied to your Living Armor again.
+ritual.bloodmagic.armourEvolveRitual.info=Increases the amount of maximum Upgrade Points on your Living Armor to 300.
 ritual.bloodmagic.animalGrowthRitual.info=Increases the maturity rate of baby animals within its range.
 ritual.bloodmagic.forsakenSoulRitual.info=Damages mobs within its damage range and when the mob dies a demon crystal within its crystal range will be grown.
 ritual.bloodmagic.crystalHarvestRitual.info=Breaks Demon Will crystal clusters within its range, dropping the results on top of the crystals.
@@ -683,6 +685,7 @@ ritual.bloodmagic.portalRitual.info=Creates a portal network based on the activa
 ritual.bloodmagic.meteorRitual.info=Consumes an item inside of its item range to summon a meteor full of resources from the sky, aimed directly at the ritual.
 
 ritual.bloodmagic.waterRitual.waterRange.info=(Water) The area that the ritual will place water source blocks.
+ritual.bloodmagic.waterRitual.waterTank.info=(Raw) The tank that the ritual will place water into.
 ritual.bloodmagic.lavaRitual.lavaRange.info=(Lava) The area that the ritual will place lava source blocks.
 ritual.bloodmagic.lavaRitual.lavaTank.info=(Raw) The tank that the ritual will place lava into.
 ritual.bloodmagic.lavaRitual.fireFuse.info=(Vengeful) Entities in this range are afflicted by Fire Fuse.
@@ -696,7 +699,7 @@ ritual.bloodmagic.wellOfSufferingRitual.altar.info=(Altar) This range defines th
 ritual.bloodmagic.wellOfSufferingRitual.damage.info=(Damage) This defines where the ritual will damage a mob. All mobs inside of this range (except for players) will receive damage over time.
 ritual.bloodmagic.featheredKnifeRitual.altar.info=(Altar) This range defines the area that the ritual searches for the blood altar. Changing this will either expand or limit the range to a certain region.
 ritual.bloodmagic.featheredKnifeRitual.damage.info=(Damage) This defines where the ritual will damage a player. Players inside of this range will receive damage over time up to the specified limit.
-ritual.bloodmagic.regenerationRitual.heal.info=(Healing) Mobs within this range will receive a regeneration buff.
+ritual.bloodmagic.regenerationRitual.heal.info=(Healing) Entities within this range will receive a regeneration buff.
 ritual.bloodmagic.regenerationRitual.vampire.info=(Vampirism) Mobs within this range have their health syphoned to heal players in the Healing range.
 ritual.bloodmagic.harvestRitual.harvestRange.info=(Harvesting) Plants within this range will be harvested.
 ritual.bloodmagic.magneticRitual.placementRange.info=(Placement) The range that the ritual will place the grabbed ores into.
@@ -708,7 +711,7 @@ ritual.bloodmagic.interdictionRitual.interdictionRange.info=(Push) The area of t
 ritual.bloodmagic.containmentRitual.containmentRange.info=(Containment) The area of the ritual where mobs will be pulled. All mobs are pulled towards the master ritual stone, regardless of where this area is.
 ritual.bloodmagic.speedRitual.sanicRange.info=(Speed) All entities within this area are launched in the direction of the arrow formed by the ritual. 
 ritual.bloodmagic.suppressionRitual.suppressionRange.info=(Suppress) All liquids within the range are suppressed.
-ritual.bloodmagic.expulsionRitual.expulsionRange.info=(Expulsion) 
+ritual.bloodmagic.expulsionRitual.expulsionRange.info=(Expulsion) The area from which players that are not owner or have an orb in the chest will be teleported away from.
 ritual.bloodmagic.zephyrRitual.zephyrRange.info=(Suction) Items within this range will be sucked into the linked chest.
 ritual.bloodmagic.zephyrRitual.chest.info=(Chest) The location of the inventory that the ritual will place the picked up items into.
 ritual.bloodmagic.animalGrowthRitual.growing.info=(Growth) Animals within this range will grow much faster.
@@ -733,9 +736,9 @@ ritual.bloodmagic.downgradeRitual.dialogue.bow.300=If you lay an offering before
 ritual.bloodmagic.downgradeRitual.dialogue.bow.500=But in return, I will unlock your armour so that it may grow even further... All you have to do is kneel before this altar with the correct offering...
 ritual.bloodmagic.downgradeRitual.dialogue.quenched.1=Fufufu... Greetings. I see that you wish to become more powerful.
 ritual.bloodmagic.downgradeRitual.dialogue.quenched.100=You must be fully aware that when one's cup becomes full, it invariably has to empty once more to be filled again.
-ritual.bloodmagic.downgradeRitual.dialogue.quenched.300=As such, I offer you a deal: by forsaking one's ability to drink, I shall grant you a vast increase to your potential. Wether this is a deal you think is worth taking is another matter entirely...
+ritual.bloodmagic.downgradeRitual.dialogue.quenched.300=As such, I offer you a deal: by forsaking one's ability to drink, I shall grant you a vast increase to your potential. Whether this is a deal you think is worth taking is another matter entirely...
 ritual.bloodmagic.downgradeRitual.dialogue.quenched.500=So kneel, mortal, and drink from this cup that I offer to you, for it may be your last drink.
-ritual.bloodmagic.downgradeRitual.dialogue.dulledBlade.1=Hmmm... What is it that you truely desire?
+ritual.bloodmagic.downgradeRitual.dialogue.dulledBlade.1=Hmmm... What is it that you truly desire?
 ritual.bloodmagic.downgradeRitual.dialogue.dulledBlade.100=If it is strength beyond mortal men, then I cannot provide that - instead, I can offer you a different deal...
 ritual.bloodmagic.downgradeRitual.dialogue.dulledBlade.300=I can expand the capabilities of your armour, allowing you to achieve greater heights. However, I will need something from you in return: your strength in physical combat.
 ritual.bloodmagic.downgradeRitual.dialogue.dulledBlade.500=By agreeing to this, you will no longer be able to swing a weapon with as much certainty, only able to do a fraction of the damage you could before.
@@ -786,71 +789,79 @@ chat.bloodmagic.mimic.detectRadius.down=Player detection radius has been decreas
 chat.bloodmagic.mimic.potionSpawnRadius.up=Potion spawning radius has been increased to: %d blocks.
 chat.bloodmagic.mimic.potionSpawnRadius.down=Potion spawning radius has been decreased to: %d blocks.
 
+death.attack.ritual_damage=%1$s has been sacrificed for a ritual.
+death.attack.ritual_damage.player=%2$s has sacrificed %1$s for a ritual.
+
 # entity
 entity.bloodmagic.SentientSpecter.name=Sentient Specter
 entity.bloodmagic.Mimic.name=Mimic
 
 # Commands
-commands.error.arg.invalid=Invalid arguments
-commands.error.arg.missing=Not enough arguments
-commands.error.arg.player.missing=You must specify which player you wish to perform this action on.
-commands.error.404=Command not found!
-commands.error.unknown=Unknown command!
-commands.error.perm=You do not have permission to use this command.
+commands.bloodmagic.error.arg.invalid=Invalid arguments
+commands.bloodmagic.error.arg.missing=Not enough arguments
+commands.bloodmagic.error.arg.player.missing=You must specify which player you wish to perform this action on.
+commands.bloodmagic.error.404=Command not found!
+commands.bloodmagic.error.unknown=Unknown command!
+commands.bloodmagic.error.perm=You do not have permission to use this command.
 
-commands.success=Executed successfully
+commands.bloodmagic.success=Executed successfully
 
-commands.format.help=%s - %s
-commands.format.error=%s - %s
+commands.bloodmagic.format.help=%s - %s
+commands.bloodmagic.format.error=%s - %s
 
-commands.help.usage=/bloodmagic help
-commands.help.help=Displays the help information for the "/bloodmagic" command.
+commands.bloodmagic.help.usage=/bloodmagic help
+commands.bloodmagic.help.help=Displays the help information for the "/bloodmagic" command.
 
-commands.network.usage=/bloodmagic network [syphon|add|get|fill|cap] player [amount]
-commands.network.help=LP network utilities
-commands.network.syphon.help=Removes the given amount of LP from the given player's LP network.
-commands.network.syphon.success=Successfully syphoned %d LP from %s.
-commands.network.add.help=Adds the given amount of LP to the given player's LP network. Follows standard LP gain rules.
-commands.network.add.success=Successfully added %d LP to %s's LP network.
-commands.network.set.help=Sets the given player's LP to the given amount.
-commands.network.set.success=Successfully set %s's LP network to %d LP.
-commands.network.get.help=Returns the amount of LP in the given player's LP network.
-commands.network.fill.help=Fills the given player's LP network to %d.
-commands.network.fill.success=Successfully filled %s's LP network.
-commands.network.cap.help=Fills the given player's LP network to the max that their highest Blood Orb can store.
-commands.network.cap.success=Successfully capped off %s's LP network.
+commands.bloodmagic.network.usage=/bloodmagic network [syphon|add|get|fill|cap] player [amount]
+commands.bloodmagic.network.help=LP network utilities
+commands.bloodmagic.network.syphon.help=Removes the given amount of LP from the given player's LP network.
+commands.bloodmagic.network.syphon.success=Successfully syphoned %d LP from %s.
+commands.bloodmagic.network.add.help=Adds the given amount of LP to the given player's LP network. Follows standard LP gain rules.
+commands.bloodmagic.network.add.success=Successfully added %d LP to %s's LP network.
+commands.bloodmagic.network.set.help=Sets the given player's LP to the given amount.
+commands.bloodmagic.network.set.success=Successfully set %s's LP network to %d LP.
+commands.bloodmagic.network.get.help=Returns the amount of LP in the given player's LP network.
+commands.bloodmagic.network.fill.help=Fills the given player's LP network to %d.
+commands.bloodmagic.network.fill.success=Successfully filled %s's LP network.
+commands.bloodmagic.network.cap.help=Fills the given player's LP network to the max that their highest Blood Orb can store.
+commands.bloodmagic.network.cap.success=Successfully capped off %s's LP network.
 
-commands.bind.usage=/bloodmagic bind [true|false] [player]
-commands.bind.help=Attempts to (un)bind the currently held item.
-commands.bind.success=Binding successful
-commands.bind.remove.success=Unbinding successful
+commands.bloodmagic.bind.usage=/bloodmagic bind [true|false] [player]
+commands.bloodmagic.bind.help=Attempts to (un)bind the currently held item.
+commands.bloodmagic.bind.success=Binding successful
+commands.bloodmagic.bind.remove.success=Unbinding successful
 
-commands.orb.usage=/bloodmagic orb [set|get] player [tier]
-commands.orb.help=Used to set or get the Player's max Blood Orb tier.
+commands.bloodmagic.orb.usage=/bloodmagic orb [set|get] player [tier]
+commands.bloodmagic.orb.help=Used to set or get the Player's max Blood Orb tier.
 
-commands.bind.usage=/bind <player>
-commands.bind.success=Item successfully bound!
-commands.bind.failed.noPlayer=There is no player specified
-commands.bind.failed.alreadyBound=Item is already bound; use /unbind to unbind it
-commands.bind.failed.notBindable=Item cannot be bound
-commands.unbind.usage=/unbind
-commands.unbind.success=Item successfully unbound!
-commands.unbind.failed.notBindable=Item cannot be unbound
-commands.soulnetwork.usage=/soulnetwork <player> <add|subtract|fill|empty|get> [amount]
-commands.soulnetwork.add.success=Successfully added %dLP to %s's Soul Network!
-commands.soulnetwork.subtract.success=Successfully subtracted %dLP from %s's Soul Network!
-commands.soulnetwork.fill.success=Successfully filled %s's Soul Network!
-commands.soulnetwork.empty.success=Successfully emptied %s's Soul Network!
-commands.soulnetwork.get.success=There is %dLP in %s's Soul Network!
-commands.soulnetwork.noPlayer=There is no player specified
-commands.soulnetwork.noCommand=There is no command specified
-commands.soulnetwork.notACommand=That is not a valid command
-commands.soulnetwork.fillMax.success=Successfully filled %s's Soul Network to their orb max!
-commands.soulnetwork.create.success=Successfully created %s's Soul Network (Orb tier: %d)
+commands.bloodmagic.bind.failed.noPlayer=There is no player specified
+commands.bloodmagic.bind.failed.alreadyBound=Item is already bound; use /unbind to unbind it
+commands.bloodmagic.bind.failed.notBindable=Item cannot be bound
+commands.bloodmagic.unbind.usage=/unbind
+commands.bloodmagic.unbind.success=Item successfully unbound!
+commands.bloodmagic.unbind.failed.notBindable=Item cannot be unbound
+commands.bloodmagic.soulnetwork.usage=/soulnetwork <player> <add|subtract|fill|empty|get> [amount]
+commands.bloodmagic.soulnetwork.add.success=Successfully added %dLP to %s's Soul Network!
+commands.bloodmagic.soulnetwork.subtract.success=Successfully subtracted %dLP from %s's Soul Network!
+commands.bloodmagic.soulnetwork.fill.success=Successfully filled %s's Soul Network!
+commands.bloodmagic.soulnetwork.empty.success=Successfully emptied %s's Soul Network!
+commands.bloodmagic.soulnetwork.get.success=There is %dLP in %s's Soul Network!
+commands.bloodmagic.soulnetwork.noPlayer=There is no player specified
+commands.bloodmagic.soulnetwork.noCommand=There is no command specified
+commands.bloodmagic.soulnetwork.notACommand=That is not a valid command
+commands.bloodmagic.soulnetwork.fillMax.success=Successfully filled %s's Soul Network to their orb max!
+commands.bloodmagic.soulnetwork.create.success=Successfully created %s's Soul Network (Orb tier: %d)
+
+
 
 # GUI
 tile.bloodmagic.inputNode.name=Input Node
 tile.bloodmagic.outputNode.name=Output Node
+gui.bloodmagic.save=Save
+gui.bloodmagic.cancel=Cancel
+gui.bloodmagic.default=Default
+gui.bloodmagic.toggle=Toggle
+config.bloodmagic.edit_hud=Edit HUD Elements
 
 # Keybinds
 bloodmagic.keybind.open_holding=Open Sigil of Holding

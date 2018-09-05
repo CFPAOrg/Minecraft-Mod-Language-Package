@@ -13,7 +13,7 @@ item.bloodarsenal.bound_stick.name=Bound Stick
 item.bloodarsenal.blood_diamond.normal.name=Blood Diamond
 item.bloodarsenal.blood_diamond.inert.name=Inert Blood Diamond
 item.bloodarsenal.blood_diamond.infused.name=Blood Infused Diamond
-item.bloodarsenal.blood_diamond.bound.name=Bound Blood Infused Diamond
+item.bloodarsenal.blood_diamond.bound.name=Bound Diamond
 
 item.bloodarsenal.blood_infused_wooden.pickaxe.name=Blood Infused Wooden Pickaxe
 item.bloodarsenal.blood_infused_wooden.axe.name=Blood Infused Wooden Axe
@@ -48,6 +48,8 @@ item.bloodarsenal.gem.self_sacrifice.name=Gem of Self Sacrifice
 item.bloodarsenal.gem.tartaric.name=Gem of Tartaric Will
 
 item.bloodarsenal.bound.sickle.name=Bound Sickle
+item.bloodarsenal.bound.igniter.name=Bound Igniter
+item.bloodarsenal.bound.shears.name=Bound Shears
 
 item.bloodarsenal.base_item.stasis_plate.name=Stasis Plate
 item.bloodarsenal.stasis.pickaxe.name=Stasis Pickaxe
@@ -89,9 +91,12 @@ tile.bloodarsenal.blood_torch.name=Blood Torch
 tile.bloodarsenal.blood_infused_iron_block.name=Blood Infused Iron Block
 tile.bloodarsenal.blood_infused_glowstone.name=Blood Infused Glowstone
 tile.bloodarsenal.glass_shards.name=Glass Shards
-tile.bloodarsenal.blood_burned_string.name=Blood Burned String
+tile.bloodarsenal.block_blood_burned_string.name=Blood Burned String
 tile.bloodarsenal.altare_aenigmatica.name=Altare Aenigmatica
 tile.bloodarsenal.stasis_plate.name=Stasis Plate
+tile.bloodarsenal.blood_capacitor.name=Blood Capacitor
+
+tile.bloodarsenal.fluid.refined_life_essence.name=Refined Life Essence
 
 # Entities
 entity.summoned_tool.name=Summoned Tool
@@ -140,10 +145,13 @@ tooltip.bloodarsenal.soul_pendant.grand=A pendant used to contain a large amount
 tooltip.bloodarsenal.vampire_ring.desc=Feeding off of blood!
 
 tooltip.bloodarsenal.bound.sickle.desc=Ready for reaping
+tooltip.bloodarsenal.bound.igniter.desc=Life ignition!
+tooltip.bloodarsenal.bound.shears.desc=Shearing sheep, oh so fun!
 
 tooltip.bloodarsenal.stored=Stored: &c%d &7LP
 tooltip.bloodarsenal.level=Level: %d
 tooltip.bloodarsenal.stasis=Stasis: %b
+tooltip.bloodarsenal.energy=Energy: %d
 
 tooltip.bloodarsenal.modifierType.head=Head:
 tooltip.bloodarsenal.modifierType.core=Core:
@@ -171,6 +179,8 @@ tooltip.bloodarsenal.holdShift=Hold -&1SHIFT&7- for more information
 
 # Ritual
 ritual.bloodarsenal.infusion_ritual=Infusion de Sanguine
+ritual.bloodarsenal.purification_ritual=Ritual of Purification
+ritual.bloodarsenal.blood_burner_ritual=Blood Burner Rites
 
 ritual.bloodarsenal.imperfect.lightning=Imperfect Lightning Ritual
 ritual.bloodarsenal.imperfect.enchant_reset=Imperfect Enchantment Reset Ritual
@@ -189,28 +199,28 @@ chat.bloodarsenal.modifierAdded=&4%s (Level %d) added to %s!&f
 chat.bloodarsenal.modifierReady=&4%s (Level %d) is ready to be upgraded!&f
 
 # Commands
-commands.error.arg.invalid=Invalid arguments
-commands.error.arg.missing=Not enough arguments
-commands.error.arg.player.missing=You must specify which player you wish to perform this action on.
-commands.error.404=Command not found!
-commands.error.unknown=Unknown command!
-commands.error.perm=You do not have permission to use this command.
-commands.success=Executed successfully
+commands.bloodarsenal.error.arg.invalid=Invalid arguments
+commands.bloodarsenal.error.arg.missing=Not enough arguments
+commands.bloodarsenal.error.arg.player.missing=You must specify which player you wish to perform this action on.
+commands.bloodarsenal.error.404=Command not found!
+commands.bloodarsenal.error.unknown=Unknown command!
+commands.bloodarsenal.error.perm=You do not have permission to use this command.
+commands.bloodarsenal.success=Executed successfully
 
-commands.format.help=%s - %s
-commands.format.error=%s - %s
+commands.bloodarsenal.format.help=%s - %s
+commands.bloodarsenal.format.error=%s - %s
 
-commands.help.usage=/bloodarsenal help
-commands.help.help=Displays the help information for the "/bloodarsenal" command.
+commands.bloodarsenal.help.usage=/bloodarsenal help
+commands.bloodarsenal.help.help=Displays the help information for the "/bloodarsenal" command.
 
-commands.stasis.usage=/bloodarsenal stasis [add|remove] [modifierName] [modifierLevel]
-commands.stasis.help=Modifies the currently held stasis tool
-commands.stasis.add.help=Adds the given modifier and level onto the tool
-commands.stasis.add.success=Successfully added %s (Level %d) to the tool!
-commands.stasis.add.fail=Could not add %s (Level %d) to the tool!
-commands.stasis.remove.help=Removes the given modifier and level from the tool
-commands.stasis.remove.success=Successfully removed %s from the tool!
-commands.stasis.remove.fail=Could not remove %s from the tool!
+commands.bloodarsenal.stasis.usage=/bloodarsenal stasis [add|remove] [modifierName] [modifierLevel]
+commands.bloodarsenal.stasis.help=Modifies the currently held stasis tool
+commands.bloodarsenal.stasis.add.help=Adds the given modifier and level onto the tool
+commands.bloodarsenal.stasis.add.success=Successfully added %s (Level %d) to the tool!
+commands.bloodarsenal.stasis.add.fail=Could not add %s (Level %d) to the tool!
+commands.bloodarsenal.stasis.remove.help=Removes the given modifier and level from the tool
+commands.bloodarsenal.stasis.remove.success=Successfully removed %s from the tool!
+commands.bloodarsenal.stasis.remove.fail=Could not remove %s from the tool!
 
 # JEI
 jei.bloodarsenal.recipe.required_LP=LP: %d
@@ -219,6 +229,7 @@ jei.bloodarsenal.recipe.modifier_level=Modifier Level: %d
 
 jei.bloodarsenal.desc.glass_shard=A crafting item obtained by breaking Glass while holding Flint.
 jei.bloodarsenal.desc.reagent_lightning=A crafting item obtained through a tedious process.\n\nFirst, place a Water source block in the world, then drop a Binding Reagent, a Glowstone Block, a Block of Gold, a Block of Redstone, a Block of Iron, and Gunpowder into the Water.\n\nThen, hit the Water block with all the items in it with lightning.
+jei.bloodarsenal.desc.refined_life_essence=A refined liquid free from significant impurities found in normal Life Essence.\n\nCan be refined via the Ritual of Purification with a combination of: Redstone, Blaze Powder, Ender Pearl, and Blood Infused Glowstone.
 
 # Tinker's
 modifier.serrated.name=Serrated

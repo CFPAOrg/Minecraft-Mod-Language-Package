@@ -45,7 +45,7 @@ bucket_name = 'langpack'
 # 上传到七牛后保存的文件名
 key = 'Minecraft-Mod-Language-Modpack.zip';
 # 生成上传 Token，可以指定过期时间等
-token = q.upload_token(bucket_name, key, 600)
+token = q.upload_token(bucket_name, key, 120)
 # 要上传文件的本地路径
 localfile = './Minecraft-Mod-Language-Modpack.zip'
 ret, info = qiniu.put_file(token, key, localfile)
@@ -57,7 +57,6 @@ assert ret['hash'] == qiniu.etag(localfile)
 cdn_manager = qiniu.CdnManager(q)
 # 需要刷新的文件链接
 urls = [
-    'http://p985car2i.bkt.clouddn.com/Minecraft-Mod-Language-Modpack.zip',
     'http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip'
 ]
 # 刷新链接

@@ -51,6 +51,7 @@ button.harvester.size6=13x13
 button.harvester.size7=15x15
 button.harvester.size8=17x17
 button.harvester.size9=19x19
+button.harvester.size10=21x21
 button.height.down=Decrease height
 button.height.up=Increase height
 button.itemfilter.type0=B
@@ -121,6 +122,7 @@ enchantment.cyclicmagic.enchantment.magnet.desc=Makes you magnetic for item stac
 enchantment.cyclicmagic.enchantment.quickdraw.desc=This triples the speed that your bow draws up to full power.
 enchantment.cyclicmagic.enchantment.reach.desc=Increases your building and mining reach
 enchantment.cyclicmagic.enchantment.venom.desc=Inflicts the poison status effect on the target
+enchantment.cyclicmagic.enchantment.waterwalking.desc=Walk on water when this is on your boots.  Sneak to sink. 
 enchantment.expboost.guide=Increases experience drops for killing and mining by factor of $0 per level.  Rarity is $1
 enchantment.expboost=Experience Boost
 enchantment.launch.guide=Gives you the power of multi jump (double jump) when enchanted on boots.  One extra jump per level, after that a cooldown of $0 ticks; sneak to jump normally.  Rarity is $1
@@ -339,6 +341,9 @@ item.guide.name=Cyclic Guide Book
 item.heart_food.guide=A permanent health upgrade.  Craftable or found in chests.
 item.heart_food.name=Heart Container
 item.heart_food.tooltip=+1 Heart
+item.heart_toxic.guide=A permanent health downgrade. 
+item.heart_toxic.name=Empty Heart Container
+item.heart_toxic.tooltip=-1 Heart
 item.horse_upgrade_health.effect=Horse Upgrade: Health
 item.horse_upgrade_health.guide=A permanent health upgrade
 item.horse_upgrade_health.name=Diamond Carrot
@@ -363,11 +368,16 @@ item.magic_net.tooltip=Throw at a living entity to capture
 item.mattock.guide=3x3 mining that treats dirt and stone type blocks equally.
 item.mattock.name=Mattock
 item.mattock.tooltip=3x3 mining; equal parts shovel and pickaxe
-item.password_remote.guide=Remote redstone that is password based.  Give it a password, then anytime that word is said in chat the redstone will trigger.  If it triggers, password is removed from chat display.  Claim it to yourself so no other players can use it.
+item.password_remote.guide=Remote redstone lever that you bind to a lever in the world by sneaking.  Works across any distance including dimensions if the chunk is loaded.  
 item.password_remote.invalid=Invalid position, Lever not found
 item.password_remote.name=Remote Lever
 item.password_remote.saved=Position Saved
 item.password_remote.tooltip=Bind this to a lever in the world (shift click) to activate it remotely
+
+dimension.notfound=Dimension not found
+chunk.unloaded=Action failed; chunk not loaded
+item.password_remote.powered.true=On
+item.password_remote.powered.false=Off
 
 item.purple_boots.guide=Stronger than diamond, comes pre-enchanted with Feather Falling and Depth Strider. 
 item.purple_boots.name=Crystallized Obsidian Boots
@@ -413,7 +423,7 @@ item.stone_minecart.name=Stone Minecart
 item.stone_minecart.tooltip=Carry one block, unload with activator rail
 item.storage_bag.deposit=Dump
 item.storage_bag.disabled=Hit deposit is disabled, left click to enable
-item.storage_bag.guide=A simple bag that can hold anything, a portable chest.  Optionally can auto deposit by hitting containers.
+item.storage_bag.guide=A simple bag that can hold anything, a portable chest.  Optionally can auto deposit by hitting containers.  Change the items colour in the GUI.  
 item.storage_bag.merge=Merge
 item.storage_bag.name=Storage Bag
 item.storage_bag.nothing=Nothing
@@ -421,6 +431,12 @@ item.storage_bag.success=Items moved:
 item.storage_bag.tooltip2=Hit Deposit Mode: 
 item.storage_bag.tooltip=Item Stacks: 
 item.storage_bag.toggle=Toggle Hit Deposit Mode
+
+item.storage_bag.pickup=Toggle auto-pickup
+item.storage_bag.pickup.filter=Gather items matching contents
+item.storage_bag.pickup.everything=Gather everything picked up
+item.storage_bag.pickup.nothing=Bag will gather nothing
+
 item.sword_ender.guide=Unbreakable sword with a special right-click ability to launch an ender pearl
 item.sword_ender.name=Sword of Evasion
 item.sword_ender.tooltip=Blocking shoots an ender pearl
@@ -672,8 +688,8 @@ tile.block_library_ctrl.tooltip=Surround this with Ender Bookshelves to deposit
 tile.block_library_ctrl.guide=The controller block for Ender Bookshelves.  Easy deposit into nearby Ender Bookshelves.
 tile.block_library.name=Ender Bookshelf
 tile.block_library.tooltip=Four drawers of deep enchantment storage
-tile.block_library.guide=Use enchanted books on any corner.  Each corner stores many copies of that same enchantment.  Use a book on it to withdraw.
-tile.builder_block.guide=Pick a shape and a size, and this will auto build a structure.  Shapes available are Facing (wall), Square, Circle, Solid, Stairway, Sphere.
+tile.block_library.guide=Use enchanted books on any corner.  Each corner stores many copies of that same enchantment.  Use a book on it to withdraw.  Hold a Redstone Torch in your hand and hit it to toggle display modes.  
+tile.builder_block.guide=Pick a shape and a size, and this will auto build a structure.  Shapes available include are Facing (wall), Square, Circle, Solid, Stairway, Sphere, and others.
 tile.builder_block.name=Structure Builder
 tile.builder_block.tooltip=Automate building simple shapes
 tile.builder_pattern.flip=Flip Regions (purple is source, white is target)
@@ -729,6 +745,7 @@ tile.entity_detector.entitytype=Which Entity types are counted
 tile.entity_detector.equal=Equal
 tile.entity_detector.exp=Exp
 tile.entity_detector.greater=Greater
+tile.entity_detector.less=Less
 tile.entity_detector.greaterthan=Output redstone based on this comparison to the limit
 tile.entity_detector.guide=Sends out a redstone signal based on the nearby entities found.  You can control entity type, range, and numbers to detect.
 tile.entity_detector.item=Items
@@ -805,33 +822,33 @@ tile.plate_launch_small.guide=Jump pad will launch up any entity.  There are thr
 tile.plate_launch_small.guide=Launch entites up into the air.  Works on both living and non-living entities such as item stacks and experience orbs.
 tile.plate_launch_small.name=Soft Slime Plate
 
-tile.plate_push.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.
+tile.plate_push.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.  Rotate with Wrench.
 tile.plate_push.name=Conveyor Belt
 tile.plate_push.tooltip=Pushes all entities.  Speed: 
 tile.plate_push_corner.name=Conveyor Belt Corner
 tile.plate_push_med_angle.name=Conveyor Belt Ramp
 
 
-tile.plate_push_fast.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.
+tile.plate_push_fast.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.  Rotate with Wrench.
 
 tile.plate_push_fast.name=Fast Conveyor Belt
 tile.plate_push_fast_corner.name=Fast Conveyor Belt Corner
 tile.plate_push_fast_angle.name=Fast Conveyor Belt Ramp
 
-tile.plate_push_slow.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.
+tile.plate_push_slow.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.  Rotate with Wrench.
  
 tile.plate_push_slow.name=Slow Conveyor Belt
 tile.plate_push_slow_corner.name=Slow Conveyor Belt Corner
 tile.plate_push_slow_angle.name=Slow Conveyor Belt Ramp
 
-tile.plate_push_slowest.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.
+tile.plate_push_slowest.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.  Rotate with Wrench. 
  
 tile.plate_push_slowest.name=Slowest Conveyor Belt
 tile.plate_push_slowest_corner.name=Slowest Conveyor Belt Corner
 tile.plate_push_slowest_angle.name=Slowest Conveyor Belt Ramp
  
 
-tile.plate_push_slow_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails.
+tile.plate_push_slow_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails. 
 tile.plate_push_fast_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails.
 tile.plate_push_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails.
 tile.plate_push_slowest_corner.guide=Corner Belts appear on placement when it detects that nearby conveyor belts can be connected, similar to rails.
@@ -1072,26 +1089,23 @@ tile.item_pipe_sort.filter=Output here only if it matches this filter
 tile.item_pipe_sort.everything=Output everything here, ignoring this filter
 tile.item_pipe_sort.nothing=Output nothing here, ignoring this filter
 
-peat.plantmatter.dry=Use on a water source with plants floating in it to make biomass
-peat.plantmatter.more=Needs four unique plant types, detected: 
-
 item.peat_biomass.name=Biomass
 item.peat_biomass.tooltip=Used to create Peat Bog
 item.peat_biomass.guide=Created using plant matter in the Hydrator
 
-item.peat_wet.name=Soaked Peat
-item.peat_wet.tooltip=Fresh peat can be dried into fuel
-item.peat_wet.guide=Cook this to turn it into Peat Fuel for energy
-
-item.peat_fuel.name=Peat Fuel
+item.peat_fuel.name=Peat
 item.peat_fuel.tooltip=Create energy in a Peat-fired Generator
-item.peat_fuel.guide=Burn to create energy in the Peat-fired Generator.  This drops from Peat Deposit when harvested.  It burns for 200 ticks, producing 128/tick for a total of 25600 generated per item.
+item.peat_fuel.guide=Burn to create energy in the Peat-fired Generator.  This drops from Peat Deposit when harvested.  It burns for 200 ticks.
 
-tile.peat_unbaked.name=Peat Bog
+item.peat_fuel_enriched.name=Enriched Peat
+item.peat_fuel_enriched.tooltip=Create energy in a Peat-fired Generator
+item.peat_fuel_enriched.guide=Burn to create energy in the Peat-fired Generator.  This drops from Peat Deposit when harvested.  It burns for 200 ticks.
+
+tile.peat_unbaked.name=Dry Peat Bog
 tile.peat_unbaked.tooltip=Slowly turns into a Peat Deposit when sitting in water
 tile.peat_unbaked.guide=Let sit in water to turn into Solid Peat.  Then harvest the Peat Deposit to obtain Peat Fuel
 
-tile.peat_baked.name=Peat Deposit
+tile.peat_baked.name=Saturated Peat Deposit
 tile.peat_baked.tooltip=Peat ready to be harvested
 tile.peat_baked.guide=After the Peat Bog soaks in water, it turns into a Peat Deposit and can be harvested to get Peat Fuel
 
@@ -1235,3 +1249,113 @@ item.sign_editor.guide=Edit sign text, color, and font.  Save data in the sign i
 gui.signs.title=Signpost Customization
 gui.signs.save=Save
 gui.signs.cancel=Cancel 
+
+tile.dice.name=Dice
+tile.dice.tooltip=Randomize on placement and click
+tile.dice.guide=Randomize on placement.  Interact with it in the world to roll again.  Outputs redstone signal using a Comparator
+
+item.laser_cannon.name=Rainbow Cannon
+item.laser_cannon.tooltip=Fire a randomly coloured beam
+item.laser_cannon.guide=Fire a randomly coloured beam
+
+tile.imbuer.name=Imbue Station
+tile.imbuer.tooltip=Imbue your bow with secret powers
+tile.imbuer.guide=Imbue your bow with secret powers.  Place in an ingredient and a bow, and then apply a redstone signal.  Sneak right-click while it is empty to list valid recipes.  
+imbue.recipes=Imbue Recipes:
+imbue.prefix=Imbued: 
+imbue.type.fire=Flame
+impue.type.levitate=Levitate
+imbue.type.explosion=Grenade
+imbue.type.invisibility=Invisibility
+imbue.type.poison=Poison
+imbue.type.slowness=Slowness
+imbue.type.glowing=Glowing
+
+item.stone_pebble.name=Pebble
+item.stone_pebble.tooltip=Tiny stone for a slingshot
+item.stone_pebble.guide=Tiny stone for a slingshot
+slingshot.ammoempty=No pebbles left
+
+item.slingshot_weapon.name=Slingshot
+item.slingshot_weapon.tooltip=Fires pebbles
+item.slingshot_weapon.guide=Charge like a bow.  Shoot with pebbles in your inventory.  Ammo is any item with ore dict matching 'rock'.
+
+
+tile.builder_pattern.name.preview0=None
+tile.builder_pattern.name.preview1=Outline
+tile.builder_pattern.name.preview2=Phantom Blocks
+tile.builder_pattern.name.preview3=Solid Blocks
+
+colour.red.name=Red
+colour.green.name=Green
+colour.brown.name=Brown
+colour.blue.name=Blue
+colour.purple.name=Purple
+colour.cyan.name=Cyan
+colour.silver.name=Light Gray
+colour.gray.name=Gray
+colour.pink.name=Pink
+colour.lime.name=Lime
+colour.yellow.name=Yellow
+colour.lightBlue.name=Light Blue
+colour.magenta.name=Magenta
+colour.orange.name=Orange
+colour.white.name=White
+colour.black.name=Black
+
+item.netherbrick_pickaxe.name=Nether Pickaxe
+item.netherbrick_axe.name=Nether Axe
+item.netherbrick_spade.name=Nether Shovel
+item.netherbrick_hoe.name=Nether Hoe
+
+item.netherbrick_pickaxe.guide=Stone mining level with improved stats
+item.netherbrick_spade.guide=Stone mining level with improved stats
+item.netherbrick_axe.guide=Stone mining level with improved stats
+item.netherbrick_hoe.guide=Stone mining level with improved stats
+
+pump.rate=Transfer Rate
+
+
+
+
+item.card_location.name=GPS Marker
+item.card_location.tooltip=Saves the location of a block
+item.card_location.guide=Saves the location of a block
+item.location.saved=Saved 
+
+wireless.target=Detect target block
+wireless.empty=Bind a location to a GPS Marker
+wireless.dimension=Cannot cross dimensions
+
+
+tile.cable_wireless.name=Transfer Node
+tile.cable_wireless.tooltip=Wireless transmission of fluid and items
+tile.cable_wireless.guide=Wireless transmission of fluid and items
+
+
+tile.cable_wireless_energy.name=Energy Transfer Node
+tile.cable_wireless_energy.tooltip=Wireless transmission of energy
+tile.cable_wireless_energy.guide=Wireless transmission of energy
+
+chest_sack.error.pickup=Error detected when attempting pickup - action cancelled (see logs for details)
+chest_sack.error.place=Error detected when attempting to place - action cancelled (see logs for details)
+chest_sack.error.null=Error on pickup - null block state or tile entity
+chest_sack.error.blacklist=Pickup disabled by config blacklist
+
+
+tile.auto_packager.name=Packager
+tile.auto_packager.tooltip=Bulk packaging with custom recipes
+tile.auto_packager.guide=Package items in bulk such as iron and gold into blocks.  Supports custom recipes added using CraftTweaker.  
+
+tile.dehydrator.name=Dehydrator
+tile.dehydrator.tooltip=Process dehydration recipes
+tile.dehydrator.guide=Dehydrate certain items.  Add more recipes using CraftTweaker.  Lava is optional but will increase processing speed.
+
+
+item.shears_obsidian.name=Obsidian Shears
+item.shears_obsidian.tooltip=Reinforced durability
+item.shears_obsidian.guide=Ten times the durability of regular shears.  Can also harvest whole melons and pumpkins.  
+
+item.boomerang.name=Boomerang
+item.boomerang.tooltip=Stuns enemies and picks up items
+item.boomerang.guide=Stuns enemies and picks up items.  Bounces off blocks or returns after a fixed distance.  Attempts to activate any block it hits or passes through such as Levers and Buttons.  

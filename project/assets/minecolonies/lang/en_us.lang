@@ -7,11 +7,12 @@ tile.minecolonies.blockHutBaker.name=Bakery
 tile.minecolonies.blockHutBlacksmith.name=Forge (NOT IMPLEMENTED)
 tile.minecolonies.blockHutBuilder.name=Builder's Hut
 tile.minecolonies.blockHutFarmer.name=Farm
-tile.minecolonies.blockHutLumberjack.name=Sawmill
+tile.minecolonies.blockHutLumberjack.name=Lumberjack
 tile.minecolonies.blockHutFisherman.name=Fisherman's Hut
 tile.minecolonies.blockHutMiner.name=Mine
-tile.minecolonies.blockHutStonemason.name=Quarry
+tile.minecolonies.blockHutStonemason.name=Quarry (NOT IMPLEMENTED)
 tile.minecolonies.blockHutTownHall.name=Town Hall
+tile.minecolonies.blockHutLibrary.name=Library
 tile.minecolonies.blockSubstitution.name=Placeholderblock
 tile.minecolonies.blockBarracksTowerSubstitution.name=BarracksTower Placeholder
 tile.minecolonies.blockconstructiontape.name=Construction tape
@@ -97,6 +98,12 @@ entity.farmer.noSeedSet=Please define a seed to grow in the scarecrow.
 entity.farmer.NeedSeed=I need %s to plant.
 entity.farmer.noFreeFields=Place more fields to get me working.
 achievement.upgrade.fisher.first=A fisherman.
+entity.citizen.noJob=%s would like to have a job.
+entity.citizen.demandsJob=%s demands to have a job and is getting very upset standing around.
+entity.citizen.noHouse=%s would like to have a house to go to every night.
+entity.citizen.demandsHouse=%s demands to have a house to live in and is getting very upset.
+entity.citizen.noTool=%s would like to get %s.
+entity.citizen.demandsTool=%s demand to get a %s. achievement.upgrade.fisher.first=A fisherman.
 achievement.upgrade.fisher.max=The whale catcher!
 achievement.upgrade.farmer.first=A farmer.
 achievement.upgrade.farmer.first.desc=agricultural economy.
@@ -215,11 +222,12 @@ com.minecolonies.coremod.gui.workerHuts.recall=Recall Worker
 com.minecolonies.coremod.gui.workerHuts.workerAssigned=Worker Assigned:
 com.minecolonies.coremod.gui.buildtool.nullHut=No Hut available
 com.minecolonies.coremod.gui.townHall.defaultName=%s's Colony
-com.minecolonies.coremod.gui.townHall.jobHiring=Worker Hiring Mode:
+com.minecolonies.coremod.gui.townHall.jobHiring=Worker hiring mode:
 com.minecolonies.coremod.gui.workerHuts.hire=Hire Worker
 com.minecolonies.coremod.gui.workerHuts.minerHut=Miner
 com.minecolonies.coremod.gui.townHall.currentSpecialization=Current Specialization:
 com.minecolonies.coremod.gui.inventory.scarecrow=Scarecrow
+com.minecolonies.coremod.gui.workerHuts.farmerHut.fields=Fields
 com.minecolonies.coremod.gui.workerHuts.farmerHut.AssignmentMode=Assign fields to farmer:
 com.minecolonies.coremod.gui.workerHuts.farmerHut.North=North
 com.minecolonies.coremod.gui.workerHuts.farmerHut.South=South
@@ -253,6 +261,8 @@ com.minecolonies.coremod.gui.workerHuts.calculate=Recalculate List
 com.minecolonies.coremod.gui.workerHuts.task.follow=Follow
 com.minecolonies.coremod.gui.workerHuts.targetPatrol=Set patrol positions.
 com.minecolonies.coremod.gui.workerHuts.targetGuard=Set guarding target.
+com.minecolonies.coremod.gui.workerHuts.followTight=Tight grouping.
+com.minecolonies.coremod.gui.workerHuts.followLoose=Loose grouping.
 com.minecolonies.coremod.gui.workerHuts.setTarget="Disabled"
 com.minecolonies.coremod.gui.workerHuts.noSpace=Please make space in your inventory in order to use this functionality.
 com.minecolonies.coremod.job.guard.tool.taskPatrol=Right click on a block to add it as patrol target. Double click to close the tool.
@@ -292,6 +302,13 @@ com.minecolonies.coremod.gui.structure.delete=Delete Structure
 com.minecolonies.coremod.gui.structure.delete.title=Delete Structure
 com.minecolonies.coremod.gui.structure.delete.body=Do you want to delete %s?
 
+com.minecolonies.coremod.gui.happiness.happinessModifier=Happiness Modifiers
+com.minecolonies.coremod.gui.happiness.food=Food Modifier
+com.minecolonies.coremod.gui.happiness.damage=Damage Modifier
+com.minecolonies.coremod.gui.happiness.house=House Modifier
+com.minecolonies.coremod.gui.happiness.job=Job Modifier
+com.minecolonies.coremod.gui.happiness.farms=No Farm Modifier
+com.minecolonies.coremod.gui.happiness.tools=Tool Modifier
 //death achievements
 achievement.miner.death.lava=Dug too deep.
 achievement.miner.death.fall=It's the stop at the end.
@@ -436,9 +453,9 @@ com.minecolonies.coremod.permission.attack_entity=Attack entities
 com.minecolonies.coremod.permission.access_free_blocks=Access free-blocks
 com.minecolonies.coremod.permission.explode=Explode
 
-item.supplyCampDeployer.invalid=Requiring a flat ground of at least 16*17.
-item.supplyCampDeployer.invalid.solid_block_needed=Placing a supply camp requires flat ground of at least 16*17.  These blocks must be solid: %s.
-item.supplyCampDeployer.invalid.air_block_needed=Placing a supply camp requires flat ground of at least 16*17.  These blocks must be air: %s.
+item.supplyCampDeployer.invalid=Requiring a flat ground of at least 16*17 without grass or flowers on them.
+item.supplyCampDeployer.invalid.solid_block_needed=Placing a supply camp requires flat ground of at least 16*17 without grass or flowers on them..  These blocks must be solid: %s.
+item.supplyCampDeployer.invalid.air_block_needed=Placing a supply camp requires flat ground of at least 16*17 without grass or flowers on them..  These blocks must be air: %s.
 item.supplyCampDeployer.invalid.inside_existing_colony=You cannot place your supply camp near an existing colony.
 item.minecolonies.supplyChestDeployer.name=SupplyShip Chest
 item.minecolonies.supplyCampDeployer.name=SupplyCamp Chest
@@ -466,6 +483,9 @@ com.minecolonies.coremod.gui.townHall.housing=Housing assignment mode:
 com.minecolonies.coremod.gui.home.assign=Assign %d citizens
 com.minecolonies.coremod.gui.workerHuts.unassign=Remove citizen
 tile.minecolonies.blockMinecoloniesRack.name=Rack
+tile.minecolonies.blockcactustrapdoordoor.name= Cactus Trapdoor
+tile.minecolonies.blockcactusstair.name= Cactus Stair
+tile.minecolonies.blockcactusslab.name= Cactus Slab
 
 com.minecolonies.coremod.status.waitingForWork=Searching job
 com.minecolonies.coremod.status.deciding=Deciding
@@ -544,6 +564,10 @@ com.minecolonies.coremod.tooltype.bow=Bow
 com.minecolonies.coremod.tooltype.fishingrod=Fishingrod
 com.minecolonies.coremod.tooltype.shears=Shears
 com.minecolonies.coremod.tooltype.shield=Shield
+com.minecolonies.coremod.tooltype.helmet=Helmet
+com.minecolonies.coremod.tooltype.leggings=Leggings
+com.minecolonies.coremod.tooltype.chestplate=Chest Plate
+com.minecolonies.coremod.tooltype.boots=Boots
 
 com.minecolonies.coremod.gui.citizen.requests=Open requests:
 com.minecolonies.coremod.gui.citizen.requestTitle=Requests
@@ -590,6 +614,8 @@ com.minecolonies.coremod.enteringColony=Beware, you're entering %s's colony.
 com.minecolonies.coremod.leavingColony=Farewell, you're leaving %s's colony.
 com.minecolonies.coremod.enteringColonyNotify=Beware, %s just entered your colony.
 com.minecolonies.coremod.leavingColonyNotify=Farewell %s, they just left your colony.
+
+com.minecolonies.coremod.mourning=There has been a death in the colony. The colony will mourn %s tomorrow out of respect.
 
 event.minecolonies.raidMessage1=§4Mysterious warriors have been spotted close to %s.
 event.minecolonies.raidMessage2=§4Citizens report rumors of raiders close to %s!
@@ -676,6 +702,10 @@ tile.minecolonies.blockTimberFrame_dark_oak_onecrossedrl.name= Dark Oak Left-Rig
 tile.minecolonies.blockTimberFrame_dark_oak_downgated.name= Dark Oak Framed Timber Frame
 tile.minecolonies.blockTimberFrame_dark_oak_horizontalplain.name= Dark Oak Horizontal Timber Frame
 tile.minecolonies.blockTimberFrame_dark_oak_horizontalnocap.name= Dark Oak Horizontal Timber Frame
+tile.minecolonies.blockcactusplank.name=Cactus Plank
+tile.minecolonies.blockcactuspdoor.name=Cactus Trapdoor
+item.minecolonies.cactusdoor.name=Cactus Door
+tile.minecolonies.blockcactusslab_half.name=Cactus Slab
 
 
 com.minecolonies.coremod.request.toolow=Can't mine block %s at %s. Need to upgrade the building to use a tool with higher mining level.
@@ -685,7 +715,7 @@ com.minecolonies.coremod.max.schematic.reached=Max schematic size of %d blocks r
 com.minecolonies.coremod.max.schematic.quiteclose=Quite close in the
 com.minecolonies.coremod.max.schematic.quitefar=Quite far in the
 com.minecolonies.coremod.max.schematic.reallyfar=Really far in the
-com.minecolonies.coremod.gui.workerHuts.barbpoints=Last Barbarian Spawns:
+com.minecolonies.coremod.gui.workerHuts.barbpoints=Last Barbarian Spawns
 com.minecolonies.coremod.barbarians.left=Only %d barbarians left!
 com.minecolonies.coremod.barbarians.killed=You succesfully defended your colony against the Barbarian intruders!
 com.minecolonies.coremod.gui.workerHuts.reposition=Reposition
@@ -706,4 +736,61 @@ com.minecolonies.coremod.gui.scanTool.select=Select
 com.minecolonies.coremod.gui.townHall.guards=Number of guards:
 com.minecolonies.coremod.gui.townHall.house=Number of houses:
 com.minecolonies.coremod.gui.townHall.saturation=Saturation of citizens:
-com.minecolonies.coremod.gui.workerHuts.happiness=Happiness indices
+com.minecolonies.coremod.gui.workerHuts.happiness=Happiness
+
+com.minecolonies.coremod.gui.townHall.population.rangers=Rangers: %d
+com.minecolonies.coremod.gui.townHall.population.knights=Knights: %d
+
+tile.minecolonies.barrel_block.name=Barrel
+item.minecolonies.compost.name=Compost
+tile.minecolonies.blockHutComposter.name=Composter Hut
+com.minecolonies.gui.workerHuts.composter.compostables=Items to compost
+
+com.minecolonies.coremod.gui.townHall.citizens.unemployed=Unemployed
+com.minecolonies.coremod.gui.townHall.events=Events
+com.minecolonies.coremod.gui.townHall.workorders=Workorders
+com.minecolonies.coremod.request.stacklist=StackList
+
+entity.composter.noItems=Please define a list of items to be composted.
+entity.barrel.working=The barrel is working!
+
+com.minecolonies.coremod.status.fillingBarrels=Filling the barrels
+com.minecolonies.coremod.status.harvestingBarrels=Harvesting the barrels
+
+com.minecolonies.coremod.pvp.townhall.break.start=Beware! %s started breaking your town-hall!
+com.minecolonies.coremod.pvp.townhall.broke=Beware!!! %s broke your town-hall by over %d%%! At 100%% it will be lost!!!
+com.minecolonies.coremod.gui.townHall.pickTeamColor=Pick Team Color:
+tile.minecolonies.blockhutlibrary.name=Library
+com.minecolonies.coremod.gui.workerHuts.Library=Library
+com.minecolonies.coremod.job.student=Student
+com.minecolonies.coremod.gui.townHall.population.students=Students: %d
+item.minecolonies.resourcescroll.name=Resource-Scroll
+com.minecolonies.coremod.gui.resourcescroll.nobuilder=Couldn't find a registered builder, please shift-right-click an existing builders hut.
+
+com.minecolonies.coremod.gui.workerHuts.baker.recipes=Recipes
+com.minecolonies.coremod.gui.workerHuts.getTool=Get GuardTool
+
+com.minecolonies.coremod.progress.supplies_placed=§6 Welcome to Minecolonies. Now that you have your supplies, how about searching a nice location to place your town hall to create your colony ... though far away from a village, if possible.
+com.minecolonies.coremod.progress.colony_founded=§6 Word is out about a new colony. Soon the first settlers will join your newly founded colony, if there is enough space around the town hall. (Experienced magistrates can turn off these helpful messages in the Town Hall block.)
+com.minecolonies.coremod.progress.first_citizen_spawned=§6 The first settler arrived at your colony. You should place a builder's hut to start your settlement.
+com.minecolonies.coremod.progress.builder_placed=§6 Great job on the placement of the builder's hut. However, that's not enough. You need to access it and click the build button! Soon your NPC will be creating new structures for the village.
+com.minecolonies.coremod.progress.built_enqueued=§6 While your builder is working, you can check on the resources he needs on the second page of the building GUI.
+com.minecolonies.coremod.progress.builder_built=§6 With the builder's hut completed, we should turn our attention to resource production. I suggest you get a lumberjack or miner.
+com.minecolonies.coremod.progress.resource_prod_built=§6 Producing resources costs energy and makes your settlers hungry. You might want to place a farmer or fisherman.
+com.minecolonies.coremod.progress.food_prod_built=§6 Your town starts to flourish! To improve the productivity, you might want to upgrade the buildings.
+com.minecolonies.coremod.progress.four_citizen_employed=§6 All your initial settlers are now employed. To attract more settlers, you have to build or upgrade housing for them.
+com.minecolonies.coremod.progress.all_citizens_homed=§6 I see all your settlers have a nice home now. If you build or upgrade one more citizen hut, you will get a new settler, but beware this will attract barbarians.
+com.minecolonies.coremod.progress.five_citizens_spawned=§6 A new settler arrived at your colony, and he brings word that barbarian spies have found the growing village. You might want to build a guard tower!
+com.minecolonies.coremod.progress.six_citizens_spawned=§6 A growing settlement means a growing responsibility. You should consider placing a restaurant to keep your settlers well fed.
+com.minecolonies.coremod.progress.seven_citizens_spawned=§6 Your citizens urge you to build a warehouse. This will lighten your backpack, and also so they may get their merchandise faster!
+com.minecolonies.coremod.progress.warehouse_built=§6 You've built a warehouse. However, your people are too tasked as it is to fill it. Build some delivery huts to attract the deliverymen. Up to 5 can work per warehouse.
+com.minecolonies.coremod.progress.eight_citizens_spawned=§6 Settlers are saying that their skills influence their leveling speed. You can manually employ citizens, if it is turned on in the Town Hall configurations. The best skills for the job will be highlighted during the employment process.
+com.minecolonies.coremod.progress.manual_employment_on=§6 Workers are complaining about a long walk to their work. You can manually assign them to houses, if the option is turned on in the Town Hall configuration.
+com.minecolonies.coremod.progress.nine_citizens_spawned=§6 A growing colony increases the burdens on your settlers. You should consider upgrading your worker buildings.
+com.minecolonies.coremod.progress.twenty_building_levels=§6 A barbarian spy had been caught next to our colony, and he seems to be from a bigger group. You should consider building barracks to defend your colony.
+com.minecolonies.coremod.progress.not_enough_jobs=§6 Building more citizen huts than available jobs has a bad influence on your citizens happiness.
+
+
+com.minecolonies.coremod.gui.townHall.printProgress=Print help messages:
+com.minecolonies.coremod.gui.townHall.on=On
+com.minecolonies.coremod.gui.townHall.off=Off

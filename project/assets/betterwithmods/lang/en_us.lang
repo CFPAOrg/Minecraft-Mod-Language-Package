@@ -52,6 +52,7 @@ tile.bwm:aesthetic.9.name=Block of Padding
 tile.bwm:aesthetic.10.name=Block of Soap
 tile.bwm:aesthetic.11.name=Block of Dung
 tile.bwm:aesthetic.12.name=Block of Wicker
+tile.bwm:aesthetic.13.name=Block of Nethercoal
 tile.bwm:advanced_bellows.name=Spring-Action Bellows
 
 tile.bwm:steel_block.name=Soulforged Steel Block
@@ -421,6 +422,12 @@ item.bwm:leather_tanned_chest.name=Tanned Leather Tunic
 item.bwm:leather_tanned_pants.name=Tanned Leather Pants
 item.bwm:leather_tanned_boots.name=Tanned Leather Boots
 
+item.bwm:wool_helmet.name=Wool Cap
+item.bwm:wool_chest.name=Wool Shirt
+item.bwm:wool_pants.name=Wool Pants
+item.bwm:wool_boots.name=Wool Socks
+
+
 item.bwm:composite_bow.name=Composite Bow
 item.bwm:broadhead_arrow.name=Broadhead Arrow
 
@@ -440,7 +447,6 @@ item.bwm:bop_piles.loamy_dirt_pile.name=Pile of Loamy Dirt
 item.bwm:bop_piles.silty_dirt_pile.name=Pile of Silty Dirt
 item.bwm:bop_piles.sandy_dirt_pile.name=Pile of Sandy Dirt
 
-enchantment.level.-1=
 bwm.infernalenchanter=Infernal Enchanter
 
 lore.bwm:dynamite=Dwarven Fishing Pole
@@ -455,6 +461,9 @@ fluid.molten.soulforge=Molten Soulforged Steel
 message.bwm:async.enabled=Asynchronous timer enabled
 message.bwm:async.disabled=Asynchronous timer disabled
 message.bwm:async.unavailable=Unable to toggle asynchronous timer: World does not advance time.
+
+bwm.message.spawn_beacon.already_set=Spawn already set
+bwm.message.spawn_beacon.set=Spawn set at this location
 
 inv.cauldron.name=Cauldron
 inv.cauldron.stoked.name=Stoked Cauldron
@@ -489,6 +498,7 @@ modifier.mending.desc=??oKillsteal!?? Absorbs experience to repair the tool.
 entity.entity_sheared_creeper.name=Sheared Creeper
 entity.bwm_jungle_spider.name=Jungle Spider
 entity.extending_rope.name=Moving Platform
+entity.longboi.name=Longboi
 tile.bwm:single_machine=Mechanical Machine
 
 subtitles.bwm.wood.creak=Wood creaks
@@ -500,6 +510,7 @@ subtitles.bwm.oof=Oof
 subtitles.bwm.millstone.netherrack=Screams of the damned
 subtitle.bwm.saw.cut=Saw cuts
 subtitle.bwm.mechanical.overpower=Mechanical Device Overpowered
+subtitles.bwm.bloodwood.break=Block broken
 death.attack.growth=%s was devoured by the Growth
 death.attack.gloom=%s was eaten by a Grue
 death.attack.saw=%s forgot the lessons of wood shop safety
@@ -527,13 +538,33 @@ bwm.config.hardcore.tooltip=Hardcore Features
 bwm.config.debug.tooltip=Debug Info for certain features
 bwm.config.vanilla_tweaks.tooltip=Changes to how Vanilla Minecraft works
 bwm.config.pulley.tooltip=Limitations of the platforms of the pulley
-bwm.hcfurnace.cook_time.tooltip=Cook Time: %s ticks
+bwm.hcfurnace.cook_time.tooltip=Cook Time: %s Seconds (%s Items)
 
 bwm.random_output.tooltip=Count: %s-%s
 bwm.chance_output.tooltip=Chance: %d%%
 
 bwm.millstone_blocked.message=Blocked
 bwm.millstone_blocked.tooltip=The Millstone has too many solid blocks around it.
+
+bwm.fat_penalty.plump=Plump
+bwm.fat_penalty.chubby=Chubby
+bwm.fat_penalty.fat=Fat
+bwm.fat_penalty.obese=Obese
+bwm.gloom_penalty.gloom=Gloom
+bwm.gloom_penalty.dread=Dread
+bwm.gloom_penalty.terror=Terror
+
+bwm.hunger_penalty.peckish=Peckish
+bwm.hunger_penalty.hungry=Hungry
+bwm.hunger_penalty.famished=Famished
+bwm.hunger_penalty.starving=Starving
+bwm.hunger_penalty.dying=Starving
+
+bwm.health_penalty.hurt=Hurt
+bwm.health_penalty.injured=Injured
+bwm.health_penalty.wounded=Wounded
+bwm.health_penalty.crippled=Crippled
+bwm.health_penalty.dying=Dying
 
 bwm.effect.slow_fall=Slow Fall
 bwm.effect.true_sight=True Sight
@@ -556,6 +587,7 @@ tooltip.bwm_book.name=The Book of Single
 
 
 bwm.manual.message=You have been given a Better With Mods Manual. This mod might be different than what you are expecting. Please read the Crash Course section.
+bwm.manual.warning.missing.block=Image is missing: %s
 
 bwm.manual.home=Home
 bwm.manual.blocks=Block
@@ -567,3 +599,81 @@ bwm.manual.error.2=In the mean time, try the %s
 
 
 bwm.got.feverdream=You never could get to sleep, in your insomnia you scribbled some notes. What do they mean?
+
+bwm.enchantment.type.armor=Armor
+bwm.enchantment.type.armor_feet=Boots
+bwm.enchantment.type.armor_head=Helmet
+bwm.enchantment.type.armor_chest=Chestplate
+bwm.enchantment.type.weapon=Weapon
+bwm.enchantment.type.digger=Digger
+bwm.enchantment.type.bow=Bow
+bwm.enchantment.type.breakable=Tools
+bwm.enchantment.type.fishing_rod=Fishing Rod
+bwm.enchantment.type.all=Anything
+
+advancement.betterwithmods.crucible.desc=Witches In Sight
+advancement.betterwithmods.cauldron.desc=Not A Witch In Sight
+advancement.betterwithmods.turntable.desc=You Spin Me Right Round...
+advancement.betterwithmods.screw_pump.desc=On The Up-And-Up
+advancement.betterwithmods.companion_cube.desc=It Will Accompany You Through The Test Chambers.
+advancement.betterwithmods.anchor.desc=Do You Feel Bound To Something?
+advancement.betterwithmods.millstone.desc=How Do I Make This Faster?
+advancement.betterwithmods.hibachi.desc=Please Use More Than One
+advancement.betterwithmods.kiln.desc=Is It Getting Hot In Here Or Is It Just Me?
+advancement.betterwithmods.infernal_enchanter.desc=tu dolor unius crustulum
+advancement.betterwithmods.bloody_chopping_block.desc=No Dragon To Save You This Time
+advancement.betterwithmods.vertical_windmill.desc=Wind Not Included!
+advancement.betterwithmods.hellfire_dust.desc=Add Just A Dash Of Hellfire
+advancement.betterwithmods.light.desc=Aziz Light!
+advancement.betterwithmods.concentrated_hellfire.desc=Concentrated HellfirePVP
+advancement.betterwithmods.desc=Better Than Starting Unmanualed
+advancement.betterwithmods.plated_armor.name=Plated Armor
+advancement.betterwithmods.plated_armor.desc=The Only Damage You Will Take Is Emotional
+advancement.betterwithmods.dynamite.desc=Hillbilly Fishing
+advancement.betterwithmods.soul_urn.desc=Grandma?
+advancement.betterwithmods.library.name=Construct an Infernal Library
+advancement.betterwithmods.library.desc=Shhhhhhhh!
+advancement.betterwithmods.rope.desc=You Know What To Do
+advancement.betterwithmods.wooden_gearbox.desc=What Could Go Wrong
+advancement.betterwithmods.wooden_axle.desc=Infinite Power Transfer
+advancement.betterwithmods.hemp_seed.desc=Better Than Magic Beans
+advancement.betterwithmods.refined_tools.name=Refined Tools
+advancement.betterwithmods.refined_tools.desc=Harder, Better, Faster, Stronger!
+advancement.betterwithmods.siding_wood.desc=Wood slice for everyone!
+advancement.betterwithmods.steel_ingot.desc=Just Add Carbon!
+advancement.betterwithmods.saw.desc=Wanna Play A Game?
+advancement.betterwithmods.bellows.desc=Don't try this at home!
+advancement.betterwithmods.blood_wood.desc=Wood Needs Blood
+advancement.betterwithmods.ender_spectacles.desc=Look through my balls!
+advancement.betterwithmods.moulding_wood.desc=House Flipper
+advancement.betterwithmods.filtered_hopper.desc=Keeps Junk Out Of Your Trunk
+advancement.betterwithmods.hand_crank.desc=Do You Even Crank, Bro?
+advancement.betterwithmods.whitestone.desc=Purified Stone
+advancement.betterwithmods.buddy_block.desc=Made In China
+advancement.betterwithmods.horizontal_windmill.desc=Water, Earth, Fire, ___
+advancement.betterwithmods.waterwheel.desc=Must Construct Additional Waterwheels
+advancement.betterwithmods.planter.name=Planters
+advancement.betterwithmods.planter.desc=Save a plant, eat a vegan
+advancement.betterwithmods.tanned_leather.desc=No Real Cows Were Harmed In The Making Of This.
+advancement.betterwithmods.hemp.desc=420 Blaze It
+advancement.betterwithmods.detector.desc=Who Watches The Watchers?
+advancement.betterwithmods.glue.desc=Horsey?
+advancement.betterwithmods.urn.desc=This Is Teh Urn!
+advancement.betterwithmods.block_dispenser.desc=Starting A Hemp Dispensery
+advancement.betterwithmods.table_wood.desc=Not Quite King Athur's, But It'll Do
+advancement.betterwithmods.wood_gear.desc=Beware Of Splinters
+advancement.betterwithmods.platform.desc=More Reliable Than Curse
+advancement.betterwithmods.composite_bow.desc=Pew Pew
+advancement.betterwithmods.pulley.desc=Do You Feel Pulled To Something?
+advancement.betterwithmods.mining_charge.desc=Fire in the hole!
+advancement.betterwithmods.steel_anvil.desc=A Real Anvil for Real Blacksmiths
+advancement.betterwithmods.corner_wood.desc=Hiding In A Corner
+advancement.betterwithmods.wool_armor.desc=Made with Grandma's Love
+advancement.betterwithmods.tanned_leather_armor.name=Leather Armor
+advancement.betterwithmods.tanned_leather_armor.desc=A Gift From A Friendly Old Man
+advancement.betterwithmods.well_bucket.desc=Bucket Goes Up, Bucket Goes Down. You Can't Explain That!
+advancement.betterwithmods.steel_bellows.desc=So Metal!
+advancement.betterwithmods.overpower_hopper.name=Cuddly Friend
+advancement.betterwithmods.overpower_hopper.desc=Power Your Hopper Next Time
+advancement.betterwithmods.explosive_recipe.name=Put it in the wrong pot!
+advancement.betterwithmods.explosive_recipe.desc=It was way too hot!

@@ -2,10 +2,10 @@
 import os
 import re
 import time
-# import src.weblate.weblate
+import src.weblate.weblate
 
 # 首先是对 weblate 进行操控
-# src.weblate.weblate.weblate_operation()
+src.weblate.weblate.weblate_operation()
 
 # 我知道这一块代码很不符合规范
 # 但是写着好用，以后也许会改
@@ -40,6 +40,7 @@ import src.unzip.mod_unzip
 import src.handle.handle
 import src.handle.properties_handle
 import src.handle.lang_sort
+import src.handle.empty_lang_del
 
 # 清除黑名单文件夹
 import src.redundancy.black_dir_del

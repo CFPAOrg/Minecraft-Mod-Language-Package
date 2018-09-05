@@ -198,6 +198,8 @@ tile.immersiveengineering.conveyor.immersiveengineering:vertical.name=Vertical C
 tile.immersiveengineering.conveyor.immersiveengineering:splitter.name=Splitting Conveyor Belt
 tile.immersiveengineering.conveyor.immersiveengineering:covered.name=Covered Conveyor Belt
 tile.immersiveengineering.conveyor.immersiveengineering:verticalcovered.name=Vertical Covered Conveyor Belt
+tile.immersiveengineering.conveyor.immersiveengineering:extract.name=Extracting Conveyor Belt
+tile.immersiveengineering.conveyor.immersiveengineering:extractcovered.name=Covered Extracting Conveyor Belt
 
 tile.immersiveengineering.metal_multiblock.metal_press.name=Metal Press
 tile.immersiveengineering.metal_multiblock.crusher.name=Crusher
@@ -343,6 +345,11 @@ item.immersiveengineering.tool.voltmeter.name=Engineer's Voltmeter
 item.immersiveengineering.tool.manual.name=Engineer's Manual
 item.immersiveengineering.toolbox.name=Engineer's Toolbox
 
+item.immersiveengineering.pickaxe_steel.name=Steel Pickaxe
+item.immersiveengineering.shovel_steel.name=Steel Shovel
+item.immersiveengineering.axe_steel.name=Steel Axe
+item.immersiveengineering.sword_steel.name=Steel Sword
+
 item.immersiveengineering.revolver.name=Revolver
 item.immersiveengineering.revolver.dev.name=♛Royal Vanquisher♚
 item.immersiveengineering.revolver.infinity.name=Catalyst
@@ -422,6 +429,8 @@ item.immersiveengineering.faraday_suit_feet.name=Faraday Boots
 item.immersiveengineering.fluorescent_tube.name=Fluorescent Tube
 item.immersiveengineering.powerpack.name=Capacitor Backpack
 item.immersiveengineering.shield.name=Heavy Plated Shield
+
+item.immersiveengineering.map_orevein.name=Mineral Deposit Map
 
 #CREATIVE
 itemGroup.immersiveengineering=Immersive Engineering
@@ -599,6 +608,7 @@ desc.immersiveengineering.info.day=%1$sd
 desc.immersiveengineering.info.hour=%1$sh
 desc.immersiveengineering.info.minute=%1$sm
 desc.immersiveengineering.info.second=%1$ss
+desc.immersiveengineering.info.potionMod=Potion added by %1$s
 
 desc.immersiveengineering.info.multiblocksAllowed=Allowed Multiblocks:
 desc.immersiveengineering.info.multiblockForbidden=Forbidden Multiblocks:
@@ -849,6 +859,7 @@ chat.immersiveengineering.info.rsControl.strongSignal.false=Strong Redstone Sign
 chat.immersiveengineering.info.tesla.highPower=Power mode: High
 chat.immersiveengineering.info.tesla.lowPower=Power mode: Low
 chat.immersiveengineering.info.notOwner=Only the owner '%1$s' may access this block
+chat.immersiveengineering.info.tickrate=This block will activate every %1$s ticks
 
 chat.immersiveengineering.info.coreDrill.progress=Core Sample in progress: %1$s
 chat.immersiveengineering.info.coreDrill.result.mineral=§7Core Sample evaluated, %1$s§7 vein found
@@ -996,6 +1007,8 @@ advancement.immersiveengineering:secret_birthdayParty=Grunt Birthday Party
 advancement.immersiveengineering:secret_birthdayParty.desc=Light a match...
 advancement.immersiveengineering:secret_luckOfTheDraw=Luck of the Draw
 advancement.immersiveengineering:secret_luckOfTheDraw.desc=All or nothing
+advancement.immersiveengineering:secret_drillbreak=GIGA...DRILL...BREAKER!!!
+advancement.immersiveengineering:secret_drillbreak.desc=JUST WHO THE HELL DO YOU THINK I AM?!
 
 
 
@@ -1165,7 +1178,6 @@ ie.manual.entry.wiringVoltmeter=The §lVoltmeter§r is used to measure connectio
 ie.manual.entry.wiringFeedthrough=Feedthrough Insulators allow connecting wiring from one side of a wall to wiring on the other side without a hole. They can be created with any "normal" solid block in the middle. All common types of connectors (power and redstone) can be used to create feedthrough insulators for the corresponding wire type.
 
 ie.manual.entry.generator.name=Power Generation
-ie.manual.entry.generator.subtext=
 ie.manual.entry.generator0=Transferring power is quite helpful provided you have power. To actually generate Flux, you can use the kinetic forces of windmills and waterwheels. Connecting these to a dynamo will generate power based on how fast they turn.
 ie.manual.entry.generator1=The Water Wheel is a fairly easy way of powering a dynamo. It's turning speed is based on the water flowing around it, so for optimal results, you'll want to direct the water in a semi-circle from the top down one side and along the bottom. Up to three water wheels can be placed against each other.
 ie.manual.entry.generator2=The Windmill is a free and easy way of generating power, albeit not a very powerful one. Its speed depends the space in front of it, with its kinetic output reducing greatly if the airflow is obscured. Additionally, weather conditions like rain or thunderstorms result in stronger winds and increased rotation speeds.
@@ -1293,7 +1305,7 @@ ie.manual.entry.mixer.name=Mixer
 ie.manual.entry.mixer.subtext=Vats of Cookie Dough!
 ie.manual.entry.mixer0=The Mixer is a multiblock structure that dissolves solids in fluids, mixing them together. The structure is built as shown above and formed by using the Engineer's Hammer on the central sheetmetal block.
 ie.manual.entry.mixer1=The most common uses for this machine are the mixing of fluid concrete from water, 2 parts sand 1 part gravel and 1 part clay, or the creation of potions from water and their various ingredients.
-ie.manual.entry.mixer2=Fluids are input into the squeezer through the port at the bottom of its powersupply. Items can be input via the two hatches at the back. The fluid port at the front serves as the fluid output.<br>Applying a redstone signal to the control panel at the front will halt the machine's process, this behavior can be inverted by use of the Engineer's Hammer.
+ie.manual.entry.mixer2=Fluids are input into the mixer through the port at the bottom of its powersupply. Items can be input via the two hatches at the back. The fluid port at the front serves as the fluid output.<br>Applying a redstone signal to the control panel at the front will halt the machine's process, this behavior can be inverted by use of the Engineer's Hammer.
 
 ie.manual.entry.squeezer.name=Squeezer
 ie.manual.entry.squeezer.subtext=Pressing matters
@@ -1334,10 +1346,11 @@ ie.manual.entry.conveyor.subtext=Who needs rails anyway?
 ie.manual.entry.conveyor0=Conveyor Belts are an easy way of transporting all sorts of things around your base. While they are strong enough to move living creatures like cows or sheep, their true strength lies in transporting items.<br>Throwing items atop them will have the items move along the belt. Should the belt lead into an inventory, the item will be inserted.
 ie.manual.entry.conveyor1=Blocks like hoppers will be able to drop items onto the belts. Use an Engineer's Hammer to rotate the belts (rightclick) or adjust whether they should run up- or downwards (sneak + rightclick).<br>Using a redstone signal on a conveyor will turn it off, this behavior can be disabled by crafting it into a redstone-ignoring version. <br>Rightclicking a conveyor with any dye will colour the walls of the conveyor to easily identify where it is going.
 ie.manual.entry.conveyor2=The Dropping Conveyor Belt is quite simply a conveyor with a hatch in the middle, allowing it to drop items that pass over it downwards.<br>Items will be inserted into inventories below or simply dropped if there is an empty space below the conveyor.
-ie.manual.entry.conveyor3=The Vertical Conveyor Belt is a belt meant to be mounted on walls. Using the buckets attached to it, it will lift entities straight up. Despite the use of the term "bucket", it will not lift fluids.<br>This belt can insert into inventories above it or simply expel items over the edge at the top onto more conveyors.
-ie.manual.entry.conveyor4=The Splitting Conveyor Belt alternates between redirecting Items and Entities left and right, plain and simple. This feature can be used to achieve a more equal distribution in your factories.
-ie.manual.entry.conveyor5=The Covered Conveyor Belt works just like a normal conveyor, however it is covered by a piece of scaffolding, which prevents players from picking up items from it.<br>You can rightclick it with other types of scaffold or glass to change the cover's appearance.
-ie.manual.entry.conveyor6=Similarly, the Vertical Conveyor can also be covered in scaffolding to achieve the same benefits of "pickup-prevention" while still allowing for straight vertical transport.
+ie.manual.entry.conveyor3=The Extracting Conveyor Belt posesses the ability to extract items from an inventory in a similar fashion to a Hopper. Unlike the latter however, it posesses no internal inventory and will place extracted items on the belt.<br>Sneak + rightlick with an Engineer's Hammer to change its input side. Use a wirecutter to adjust its tickrate.
+ie.manual.entry.conveyor4=The Vertical Conveyor Belt is a belt meant to be mounted on walls. Using the buckets attached to it, it will lift entities straight up. Despite the use of the term "bucket", it will not lift fluids.<br>This belt can insert into inventories above it or simply expel items over the edge at the top onto more conveyors.
+ie.manual.entry.conveyor5=The Splitting Conveyor Belt alternates between redirecting Items and Entities left and right, plain and simple. This feature can be used to achieve a more equal distribution in your factories.
+ie.manual.entry.conveyor6=The Covered Conveyor Belt works just like a normal conveyor, however it is covered by a piece of scaffolding, which prevents players from picking up items from it.<br>You can rightclick it with other types of scaffold or glass to change the cover's appearance.
+ie.manual.entry.conveyor7=Similarly, the Extracting and Vertical Conveyors can also be covered in scaffolding to achieve the same benefits of "pickup-prevention" while still functioning as they normally do.
 
 ie.manual.entry.furnaceHeater.name=External Heater
 ie.manual.entry.furnaceHeater.subtext=Now you're cooking with flux!
@@ -1394,7 +1407,6 @@ ie.manual.entry.revolver3=The §6Extended Magazine§r allows loading 6 more cart
 ie.manual.entry.revolver4=The §6Amplifying Electron Tubes§r apply an electric shock to fired projectiles. This shock persists till it hits the target (don't ask how it works) and is passed on. The target will be stunned for a fraction of a second and all powered equipment they may be using will suffer a slight discharge.
 
 ie.manual.entry.bullets.name=Revolver Cartridges
-ie.manual.entry.bullets.subtext=
 ie.manual.entry.bullets0=Cartridges are created in the Engineer's Workbench, by the use of specific <link;blueprints;§o§nEngineer's §o§nBlueprints§r>. Blueprints for normal ammunition you can create yourself, but some more advanced types of ammunition will require you to buy adequate blueprints from someone else.
 ie.manual.entry.bullets1=§lEmpty §lCasings§r and §lShells§r are the basis for every projectile. Empty Casings can also be crafted in the <link;metalPress;§o§nMetal §o§nPress§r>, using the appropriate mold, at a greatly reduced cost.
 ie.manual.entry.bullets_casull=§lCasull §lCartridges§r are created with a "Common Projectiles" blueprint. They are a simple lead projectile inflicting medium damage.

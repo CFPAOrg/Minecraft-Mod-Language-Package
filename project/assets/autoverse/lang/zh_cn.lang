@@ -1,37 +1,8 @@
-# Block Placer properties (on ItemBlocks):
-# Block names:
-# Chat messages:
-# Container/inventory names:
-# GUI InfoArea texts and tips:
-# GUI and item labels/tooltips etc:
-# Item names:
-# Placement Properties HUD:
-# Tooltips displayed on blocks (ItemBlocks):
-# Tooltips displayed on items:
-##############
-##############
-##############
-##############
-############################
-############################
-###################################
-###################################
-###################################
-###################################
-###################################
-###################################
-###################################
-###################################
-############################################
-############################################
-############################################
-############################################
-############################################
-############################################
 autoverse.chat.configurator.error.items_not_found=§c未能找到所有标记物品§r
 autoverse.chat.configurator.error.no_stored_properties_selected=§c在选择的序列中没有储存的属性§r
 autoverse.chat.configurator.error.wrong_state=§c失败：方块放置器没有在正确的设置阶段（开始设置属性1）§r
 autoverse.chat.configurator.properties_stored=§a成功储存了属性§r
+autoverse.chat.placement_properties.applied_from_held_item=已保存手持物品的应用属性
 autoverse.chat.wand.sequence_applied_failed=§c失败：只有%d个物品中的%d个成功设置§r
 autoverse.chat.wand.sequence_applied_success=§a成功设置了有%d个物品的序列§r
 autoverse.chat.wand.sequence_stored=序列已经储存
@@ -63,7 +34,7 @@ autoverse.container.splitter_redstone=红石控制虚序列分离器
 autoverse.container.splitter_switchable=可切换序列分离器
 autoverse.container.trash_bin=垃圾桶
 autoverse.container.trash_buffer=垃圾缓存器
-autoverse.gui.infoarea.barrel=- Shift + 鼠标中键（在创造模式下）：|lf  - 补满堆叠（需要拿着多于一个物品）|lf  - 以10x的增量改变堆叠大小（拿着一个物品—）
+autoverse.gui.infoarea.barrel=-Shift/Alt/Ctrl + 点击以增大步进值|lf- 右键减少步进值|lf- 滚轮有一样的效果|lf- Shift + 鼠标中键（在创造模式下）：|lf- 补满堆叠（需要拿着多于一个物品）|lf- 以10x的增量改变堆叠大小（拿着一个物品—）
 autoverse.gui.infoarea.block_breaker=- 首先试图将物品输出到后方方块|lf 如果失败，改为试图输出到后方的后方的方块|lf 这样可以在本设备的后方放置一个可移动框架,并且同时可以输出本方块内的物品
 autoverse.gui.infoarea.block_detector=- 试图检测自己前方的方块|lf- 成功检测到预设好的方块时输出一个相同的物品|lf- 如果设置的方块未被检测到，则输出一个在“其他物品”栏中的物品|lf- 输出之前需要先在缓存中存储了对应的物品|lf- 每次检测输出一个物品|lf- 设置为二进制数值|lf- 1比特物品在设置中代表二进制的“1”|lf- 任何其他物品代表二进制中的“0”|lf- 设置数值从最低有效位开始（二进制数字中的第0位）|lf- 可以设置的最大数值是4比特（距离检测器前方的方块0-15个方块）|lf- 角度也同样是4比特，15=45度（金字塔形）|lf- 设置的角度是最大角度|lf- 在每次检测的时候，角度是随机选择的（在设置角度内）|lf- 延迟是在每次检测中间间隔的秒数（8比特，最大=255秒）|lf- 如果延迟=0则在收到红石信号时进行检测
 autoverse.gui.infoarea.block_placer_nbt=- 收到红石信号开始在自己前方放置方块|lf- 从第一个槽位开始，放在第一个槽位的方块会被放置在正前方，|lf  第二个槽位放置在正前方+1的位置，以此类推|lf- 移除红石信号则会将目前工作位置（+槽位）重置为0|lf- 主要用于放置被方块状态读取器设置好的方块
@@ -72,7 +43,7 @@ autoverse.gui.infoarea.buffer_fifo=- 将物品储存在一个FIFO（先进先出
 autoverse.gui.infoarea.crafter=- 空标记在编程中代表配方中的空位|lf- 配方编辑方式为从左到右，从上到下
 autoverse.gui.infoarea.muxer_programmable=- 激活的输入口在第n个物品进入之后切换|lf- 两个设定序列分别定义了两个输入口的切换数量|lf- 他们的数值为16比特整数，从最低有效位开始设定|lf- 有标记（可以设置）的输入面为输入2，其他任意面为输入1
 autoverse.gui.infoarea.redstone_emitter_basic=- 激活记号用于在编程时设定产生红石信号的面|lf- 面的设定顺序为下-上-北-南-西-东|lf- 当检测到启动序列时，所有启用的面都会产生红石信号|lf- 你可以定义相同的启动/关闭序列，这样的序列就可以作为一个开关
-autoverse.gui.infoarea.sequence_detector=- 在序列符合时输出一个红石脉冲
+autoverse.gui.infoarea.sequence_detector=- 在序列匹配时输出一个可调长度的红石脉冲
 autoverse.gui.infoarea.sequencer_basic=- 鼠标左/右键点击或者在按钮上滚轮可以修改数值|lf- 按住shift可以加大步伐
 autoverse.gui.infoarea.sequencer_programmable=- 序列物品必须从正面以外的面被取出|lf- 方块本身会从正面推出正常输出物品
 autoverse.gui.infoarea.splitter_length=- 激活的输出口每经过n个物品切换一次|lf- 两个设定序列分别定义了两个输出口的切换数量|lf- 他们的数值为16比特整数，从最低有效位开始设定|lf- 有标记（可以设置）的输出面为输出2
@@ -117,6 +88,7 @@ autoverse.gui.label.out=输出
 autoverse.gui.label.out_filtered=输出（过滤的）
 autoverse.gui.label.out_normal=输出（正常）
 autoverse.gui.label.output_buffer=输出缓存
+autoverse.gui.label.pulse_length=脉冲长度
 autoverse.gui.label.redstone_emitter.enabled_marker=开启标记
 autoverse.gui.label.redstone_emitter.sequence_off=关闭序列
 autoverse.gui.label.redstone_emitter.sequence_on=开启序列
@@ -151,21 +123,21 @@ autoverse.placement_properties.pipe.max_stack=最大堆叠数
 autoverse.placement_properties.sequence_detector.on_time=On time (RS ticks)
 autoverse.placement_properties.sequencer.length=长度
 autoverse.placement_properties.title=放置属性
-autoverse.tooltip.config_props_title= |lf§f*** 方块放置器可设置属性 ***§r
-autoverse.tooltip.item.andmorestacksnotlisted=  还有 %s%d%s 组没有列出来
+autoverse.tooltip.config_props_title=|lf§f*** 方块放置器可设置属性 ***§r
+autoverse.tooltip.item.andmorestacksnotlisted=还有 %s%d%s 组没有列出来
 autoverse.tooltip.item.holdshift=按住§e§oShift§7以查看更多信息
 autoverse.tooltip.item.holdshiftfordescription=按住 §e§oShift§7 可看到完整描述
 autoverse.tooltip.item.stackcount=目前总共存储了 %d 组 / %s 个物品
 autoverse.tooltip.item.stacks=组
-autoverse.tooltip.placementproperties.tooltips= |lf§f***放置属性***§r|lf- (Shift +)切换键可以改变属性选择|lf- Ctrl和/或 Alt + scroll可以改变数值
+autoverse.tooltip.placementproperties.tooltips=|lf§f***放置属性***§r|lf- (Shift +)切换键可以改变属性选择|lf- Ctrl和/或 Alt + scroll可以改变数值
 category.autoverse=Autoverse
 item.autoverse.configurator.name=方块放置器属性设置器
 item.autoverse.configurator.tooltips=- 可以读取并储存任意方块的可设置属性（如朝向等等）|lf- 用来设置可编程方块放置器|lf- Alt + 鼠标滚轮：改变选定的槽位/序列|lf- 切换键：给目前选择的属性序列命名|lf- Shift + 鼠标中键：储存指向的方块的数据|lf- Shift + 右键点击一个可编程方块放置器以应用属性|lf- 注意：方块放置器必须设置到偏移量之后|lf- 当本物品应用属性序列时，在玩家背包中能找到的第一个可堆叠的物品将被用于低位代表物品|lf （不能是结束标记和高位标记）
 item.autoverse.wand.name=序列设置之仗
 item.autoverse.wand.tooltips=- 能储存物品序列并将其应用到设备上|lf- Alt + 鼠标滚轮：改变选择的序列|lf- 切换键：给目前选择的序列命名|lf- Shift + 鼠标中键：从指向的方块中保存序列|lf 可以是autoverse设备，也可以是任何其他容器|lf- Shift + 右键点击任何设备或容器以应用序列|lf- 在未指向TileEntity的情况下Shift + 鼠标中键删除目前选择的序列
 language.code=zh_cn
-language.name=Simplified Chinese
-language.region=cn
+language.name=简体中文
+language.region=CN
 tile.autoverse.barrel.config_props=- 属性1：储物桶等级
 tile.autoverse.barrel.name=储物桶
 tile.autoverse.barrel.tooltips=- 一个简单的单槽位存储设备|lf- 其等级（最大堆叠数）是可以设定的|lf- 收到红石信号后锁定
@@ -229,7 +201,7 @@ tile.autoverse.muxer_redstone.name=红石控制多路调制器
 tile.autoverse.muxer_redstone.tooltips=- 激活的输入口可以由红石信号改变|lf- 标记的面是输入口2|lf- 任何其他面是输入口1|lf- 空手Shift + 右键可设定输入口2
 tile.autoverse.pipe_basic.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask
 tile.autoverse.pipe_basic.name=管道
-tile.autoverse.pipe_basic.tooltips=- 一般的物品传输管道|lf- 优先直线传输|lf- 物品不会从他过来的方向返回|lf- 空手Shift + 右键可关闭特定方向的连接|lf- 空手Shift + 左键也可关闭特定方向的连接|lf- 在副手拿着一个管道的情况下Shift + 右键，可以重新应用目前设置的放置属性
+tile.autoverse.pipe_basic.tooltips=- 一般的物品传输管道|lf- 优先直线传输|lf- 物品不会从他过来的方向返回|lf- 空手Shift + 右键可关闭特定方向的连接|lf- 空主手Shift + 左键管道|lf- 在副手拿着一个管道的情况下Shift + 右键，可以重新应用目前设置的放置属性
 tile.autoverse.pipe_directional.config_props=- 属性1：延迟|lf- 属性2：最大堆叠数|lf- 属性3：封闭面bitmask|lf- Prop 4: 输出面bitmask
 tile.autoverse.pipe_directional.name=方向性管道
 tile.autoverse.pipe_directional.tooltips=- 物品只能从激活的输出口离开|lf- Shift + 左键开关某个面的输出|lf-也可以副手有东西，主手空手Shift + 右键
@@ -275,4 +247,3 @@ tile.autoverse.trash_bin.name=垃圾桶
 tile.autoverse.trash_bin.tooltips=- 只是一个普通的垃圾桶，消灭进入的物品
 tile.autoverse.trash_buffer.name=垃圾缓存器
 tile.autoverse.trash_buffer.tooltips=- 有一个更大缓存的垃圾桶（36槽。最大每个槽位1024个物品）|lf- 你可以把它看作一个有虚空升级的存储方块
-toverse.tooltip.item.stacks=组
