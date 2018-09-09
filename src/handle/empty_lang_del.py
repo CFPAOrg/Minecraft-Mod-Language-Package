@@ -9,7 +9,7 @@ def del_empty(modid=''):
         for i in lang.readlines():
             if i is not None and i[0] != '#' and '=' in i:
                 il = i.split('=', 1)
-                if il[1].replace('\n', '') == '':
+                if il[1].replace('\n', '').replace('\r', '').replace(' ', '') == '':
                     print(i)
                     continue
             lang_list.append(i)
