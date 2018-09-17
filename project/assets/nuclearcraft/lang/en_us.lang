@@ -277,6 +277,9 @@ tile.nuclearcraft.nitrogen_collector_compact.name=Compact Nitrogen Collector
 tile.nuclearcraft.nitrogen_collector_dense.name=Dense Nitrogen Collector
 tile.nuclearcraft.nitrogen_collector.desc=Produces %s of nitrogen constantly.
 
+tile.nuclearcraft.radiation_scrubber.name=Radiation Scrubber
+tile.nuclearcraft.radiation_scrubber.desc=Reduces the radiation level of the chunk it is placed in. Its effectiveness is dependent on the amount of free space around it. Requires 50 RF/t to run.
+
 tile.nuclearcraft.glowing_mushroom.name=Glowing Mushroom
 tile.nuclearcraft.dry_earth.name=Wasteland Earth
 
@@ -1632,6 +1635,11 @@ item.nuclearcraft.chest_boron_nitride.name=Boron Nitride Chestplate
 item.nuclearcraft.legs_boron_nitride.name=Boron Nitride Leggings
 item.nuclearcraft.boots_boron_nitride.name=Boron Nitride Boots
 
+item.nuclearcraft.helm_hazmat.name=Hazmat Suit Headwear
+item.nuclearcraft.chest_hazmat.name=Hazmat Suit Chestpiece
+item.nuclearcraft.legs_hazmat.name=Hazmat Suit Leggings
+item.nuclearcraft.boots_hazmat.name=Hazmat Suit Boots
+
 item.nuclearcraft.reactor_door_item.name=Reactor Door
 
 item.nuclearcraft.lithium_ion_cell.name=Lithium Ion Cell
@@ -2034,6 +2042,19 @@ gui.config.radiation.radiation_rad_x_lifetime=Rad-X Lifetime
 gui.config.radiation.radiation_rad_x_lifetime.comment=The time taken for one dose of Rad-X to wear off in ticks.
 gui.config.radiation.radiation_shielding_level=Radiation Shielding Levels
 gui.config.radiation.radiation_shielding_level.comment=The radiation resistance levels provided by the three levels of shielding. Order: light, medium, heavy.
+gui.config.radiation.radiation_hazmat_shielding=Radiation Hazmat Shielding
+gui.config.radiation.radiation_hazmat_shielding.comment=The radiation resistance levels provided by each piece of the hazmat suit. Order: headwear, chestpiece, leggings, boots.
+gui.config.radiation.radiation_scrubber_rate=Scrubber Max Removal Rate
+gui.config.radiation.radiation_scrubber_rate.comment=The maximum rate at which scrubbers will remove radiation in Rads/t.
+
+gui.config.radiation.radiation_shielding_default_recipes=Radiation Shielding Default Recipes
+gui.config.radiation.radiation_shielding_default_recipes.comment=If enabled, radiation shielding attachment recipes will be added for all registered armor pieces.
+gui.config.radiation.radiation_shielding_item_blacklist=Radiation Shielding Item Blacklist
+gui.config.radiation.radiation_shielding_item_blacklist.comment=List of armor items for which shielding recipes will not be added. Note that entries here should not include metadata. Format: 'modid:armorName'.
+gui.config.radiation.radiation_shielding_custom_stacks=Radiation Shielding ItemStack List
+gui.config.radiation.radiation_shielding_custom_stacks.comment=List of armor item stacks for which shielding recipes will be added. Mostly used when the automated shielding recipes are disabled or to add recipes back for armor with specific metadata removed via the blacklist. Format: 'modid:armorName:meta'.
+gui.config.radiation.radiation_shielding_default_levels=Radiation Default Armor Shielding
+gui.config.radiation.radiation_shielding_default_levels.comment=List of armor item stacks and their default radiation shielding levels. Format: 'modid:armorName:meta_resistance'. Note: this is not the only way to add these values if you have CraftTweaker installed. Radiation resistance can also be given to armor by changing their recipe such that an NBT tag called "ncRadiationResistance" with the double value equal to the resistance level is attached to it.
 
 gui.config.radiation.radiation_hud_size=Radiation HUD Size
 gui.config.radiation.radiation_hud_size.comment=Modifier for the size of radiation info on the HUD.
@@ -2047,6 +2068,10 @@ gui.config.radiation.radiation_require_counter.comment=If disabled, the rads ove
 
 gui.config.radiation.radiation_hardcore_stacks=Hardcore Stacks
 gui.config.radiation.radiation_hardcore_stacks.comment=If enabled, the radioactive stacks in a player's inventory irradiate the chunk the player is in as well as the player directly.
+gui.config.radiation.radiation_death_persist=Radiation Death Persistence
+gui.config.radiation.radiation_death_persist.comment=If enabled, players' rad levels will persist on death.
+gui.config.radiation.radiation_death_persist_fraction=Death Persistence Fraction
+gui.config.radiation.radiation_death_persist_fraction.comment=Specifies the fraction of the player's rad level that persists if Radiation Death Persistence is enabled.
 
 gui.config.category.other=Other Configs
 gui.config.category.other.tooltip=Miscellaneous configurations.
