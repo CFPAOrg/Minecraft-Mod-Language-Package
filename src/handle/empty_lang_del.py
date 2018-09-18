@@ -10,8 +10,9 @@ def del_empty(modid=''):
             if i is not None and i[0] != '#' and '=' in i:
                 il = i.split('=', 1)
                 if il[1].replace('\n', '').replace('\r', '').replace(' ', '') == '':
-                    print(i)
                     continue
+            elif i is not None and i[0] != '#':
+                i = '# ' + i
             lang_list.append(i)
 
     with open('project/assets/{}/lang/en_us.lang'.format(modid), 'w', encoding='utf-8', errors='ignore') as lang_:

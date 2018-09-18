@@ -40,7 +40,7 @@ import src.unzip.mod_unzip
 import src.handle.handle
 import src.handle.properties_handle
 import src.handle.lang_sort
-import src.handle.empty_lang_del
+import src.handle.empty_lang_del  # 清除空行
 
 # 清除黑名单文件夹
 import src.redundancy.black_dir_del
@@ -64,7 +64,7 @@ if len(new_mod_list) != 0:
     import src.mail.send_mail
 
 # 接下来检查指定用户的 github，并发送邮件提醒
-import src.github.github_info_email
+# import src.github.github_info_email
 
 # 最后 add，commit, push
 os.system('git add .')
