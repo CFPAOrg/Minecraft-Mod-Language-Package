@@ -437,12 +437,12 @@ gui.tab.status.gasLift.action=§7行为
 gui.tab.status.gasLift.currentDepth=§7当前深度 \n§0%s 米
 gui.tab.status=状态
 gui.tab.upgrades.security=§7• 安全升级 \n§0将一个内置的安全阀管添加到气动机器上。
-gui.tab.upgrades.tile.advanced_air_compressor=§7-Speed Upgrade (max = 10) \n§0The Advanced Air Compressor will produce more compressed air per tick. However this is at the expense of the efficiency.
+gui.tab.upgrades.tile.advanced_air_compressor=§7• 速度升级（最大为10） \n§0高级空气压缩机每 tick 会产出更多的压缩空气，但是效率会大打折扣。
 gui.tab.upgrades.tile.advanced_liquid_compressor=§7-Speed Upgrade (max = 10) \n§0Increases the compressed air generated per tick. However this is at the expense of the efficiency. \n§7-Dispenser Upgrade (max = 1) \n§0The Liquid hopper will try to pump in any liquid block at the input side. Likewise it'll try to place any liquid in the world on the output side (if it's an air block).
 gui.tab.upgrades.tile.aerial_interface=§7• 发射器升级 \n§0能够自动喂食。只有事物能够通过空气接口，并且只在玩家的饥饿值足够低使得饱食度不会溢出时才会工作。注意它将会试图用掉每次添加的食物量。
 gui.tab.upgrades.tile.air_cannon=§7• 发射器升级 \n§0能够拥有发射器的性质。任何在发射器内有特数作用的物品都会被统一特殊处理。 \n§7• 实体追踪器升级（最多 5 个） \n§0发射时，空气炮将抓住最接近的生命实体并将其射向设定的坐标。这可以用作玩家运输。默认情况下，它的捕获半径为1。每个实体追踪器升级将增加1的半径。 \n§7• 方块追踪器升级 \n§0发射时，物品将自动进入所对方块的物品栏。例如对着箱子发射时，物品将自动进入箱子而不需要漏斗。 \n§7• 物品寿命升级 \n§0默认情况下加农炮射出的物品只有60秒寿命，每插入一个升级，寿命就会增加30秒。 \n§7• 速度升级（最大 10 个） \n§0加农炮能更快的转向。 \n§7• 范围升级 \n§0发射范围每个升级提高25格，最高250格。
-gui.tab.upgrades.tile.air_compressor=§7-Speed Upgrade (max = 10) \n§0The Air Compressor will produce more compressed air per tick. However this is at the expense of the efficiency.
-gui.tab.upgrades.tile.assembly_controller=§7-Speed Upgrade (max = 10) \n§0All assembly machines that are controlled by this Controller will operate faster.
+gui.tab.upgrades.tile.air_compressor=§7• 速度升级（最大为10） \n§0空气压缩机每 tick 会产出更多的压缩空气，但是效率会大打折扣。
+gui.tab.upgrades.tile.assembly_controller=§7• 速度升级（最大为10） \n§0所有此控制器操控的组装机速度运行速度将会更加快。
 gui.tab.upgrades.tile.charging_station=§7-Speed Upgrade (max = 10) \n§0The Charging Station will be able to (dis)charge items faster. \n§7-Dispenser Upgrade \n§0Adds a charge pad onto the Charging Station, allowing it to (dis)charge any Drones, items, and player inventory items that are on top of the Charging Station.
 gui.tab.upgrades.tile.elevator_base=§7-Speed Upgrade (max = 10) \n§0The elevator will ascend/descent faster (at a higher energy cost).
 gui.tab.upgrades.tile.flux_compressor=§7-Speed Upgrade (max = 10) \n§0Increases the air production rate. It also increases the RF usage in a way that the machine will be more inefficient. Finally it increases the max RF input rate.
@@ -852,3 +852,32 @@ waila.temperature.west=§7西面温度：§f%sC
 waila.temperature=§7温度：§f%sC
 gui.tab.info.item.armor.generic.itemLifeUpgrade=§0物品寿命升级后可以让装备通过消耗压缩空气以进行缓慢的自动修复。每个装备至多可安装5个物品寿命升级，升级越多修复速度越快（但是使用压缩空气效率会相应的降低）。
 gui.tab.info.item.armor.generic.thaumcraftUpgrade=§0安装神秘升级后，你得到一个类似于神秘护甲一样的 vis 损耗。
+gui.tab.redstoneBehaviour.chargingStation.button.doneDischarging=充放能完成
+gui.tab.gasLift.mode.pumpEmpty=泵出，并允许泵空
+gui.tab.gasLift.mode.pumpLeave=泵出，储罐残留（用于过滤）
+gui.tab.liquidHopper.mode.empty=空置储罐
+gui.tab.liquidHopper.mode.leaveLiquid=储罐中残留 1000mb 用以过滤。
+gui.tab.omnidirectionalHopper.mode.empty=普通漏斗操控
+gui.tab.omnidirectionalHopper.mode.leaveItem=每个格子残留一个物品，用以过滤。
+gui.progWidget.itemFilter.useItemCount.tooltip=当开启检查，只允许指定数量的物品/流体/……等进行传输。
+gui.progWidget.liquidFilter.error.noLiquid=过滤器中没有流体选择器
+gui.progWidget.crafting.error.noCraftingRecipe=没有设置合法的合成。
+gui.progWidget.coordinateOperator.noParameter=无参数！
+gui.progWidget.general.debug.cantNavigate=不能导航到一个或多个方块。
+gui.progWidget.blockInteraction.debug.noBlocksValid=没有方块可以与之交互。
+gui.progWidget.entityAttack.debug.noAmmo=加特林枪没有弹药。
+gui.progWidget.entityAttack.debug.noEntityToAttack=这个区域没有实体被攻击。
+gui.progWidget.blockCondition.debug.blockMatches=一个或多个方块符合条件。
+gui.progWidget.blockCondition.debug.blockDoesNotMatch=一个或多个方块不符合条件。
+gui.progWidget.blockCondition.debug.allBlocksMatch=所有方块全部符合条件。
+gui.progWidget.blockCondition.debug.noBlocksMatch=没有方块符合条件。
+gui.progWidget.dig.debug.cantDigBlock=不被允许挖掘方块，或者不能破坏方块。
+gui.progWidget.liquidExport.debug.emptyDroneTank=无人机中没有流体可导出。
+gui.progWidget.liquidExport.debug.noValidFluid=无人机中的流体无法通过过滤器。
+gui.progWidget.liquidExport.debug.filledToMax=尽可能的填满储罐。
+gui.progWidget.liquidImport.debug.fullDroneTank=无人机储罐已经填满。
+gui.progWidget.liquidImport.debug.emptiedToMax=尽可能的空置储罐。
+gui.progWidget.place.debug.entityInWay=无法放置方块：此处有实体。
+gui.progWidget.place.debug.cantPlaceBlock=方块无法在此处放置。
+gui.progWidget.goto.debug.cantNavigate=不能导航到一个或多个方块。
+gui.progWidget.chargingStation.debug.noDispenserUpgrades=Charging Station does not have any 发射器升级s.
