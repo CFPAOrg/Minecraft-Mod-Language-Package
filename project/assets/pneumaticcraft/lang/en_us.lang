@@ -377,7 +377,7 @@ gui.tab.info.item.armor.head.blockTrackerUpgrade=§0With the Block Tracker you'l
 gui.tab.info.item.armor.head.speedUpgrade=§0With Speed Upgrades installed, the helmet will initialize its systems faster when equipped and lock onto blocks/entities faster (with the Block Tracker or Entity Upgrade installed, respectively).  Multiple Speed Upgrades can be installed to further reduce the initialization time, but air usage will increase.
 gui.tab.info.item.armor.head.rangeUpgrade=§0Range Upgrades increase the range at which the Block and Entity Tracker Upgrades can operate.  Up to 5 Range Upgrades can be installed, and each upgrade increases the range by 5 blocks.
 gui.tab.info.item.armor.head.securityUpgrade=§0With one or more Security Upgrades installed, you gain the ability to §ohack§0 various blocks and entities in the world with the hacking hotkey (default: H).  Hacking has a variety of useful effects; try targeting things in the world with a Block and/or Entity Tracker Upgrade also installed.
-gui.tab.info.item.armor.head.dispenserUpgrade=§0When used in conjunction with the Entity Tracker upgrade, the Dispenser Upgrade allows debugging & monitoring of active drones; target a drone and use the drone-debug hotkey (default: Y), then open the helmet options GUI (default: U).
+gui.tab.info.item.armor.head.dispenserUpgrade=§0When used in conjunction with the Entity Tracker upgrade, the Dispenser Upgrade allows debugging & monitoring of active drones; target a drone and use the drone-debug hotkey (default: Y), then open the helmet options GUI (default: U). \n \nA redstone particle effect will also be displayed in any blocks that nearby (within 32 blocks) drones are interested in.
 gui.tab.info.item.armor.head.thaumcraftUpgrade=§0With a Thaumcraft Upgrade installed, you gain the benefits of Goggles of Revealing: nodes are revealed, you get a 5%% Vis discount, and essentia levels of various containers are displayed on-screen.
 gui.tab.info.item.armor.chest.magnetUpgrade=§0With a Magnet Upgrade installed, your chestplate can automatically pull nearby items toward you for a small air cost.  You can install up to 6 Magnet Upgrades to extend the magnet's range.
 gui.tab.info.item.armor.chest.chargingUpgrade=§0With one or more Charging Upgrades installed, your chestplate can automatically charge all other pressurizable items in your inventory, either worn or carried (note: will only charge items with a lower pressure than the chestplate).  Up to 6 Charging Upgrades can be installed to increase the charging rate.
@@ -446,7 +446,7 @@ gui.tab.info.logistic_frame_requester=§0Requester frames can request resources 
 gui.tab.info.logistic_frame_passive_provider=§0Passive Provider frames can provide resources to Requester Frames. \n \nBy default the framed inventory will provide every item in the inventory. By adding items to this filter, only those items will be provided. Add items from your inventory, or search for an item/fluid by right clicking an empty slot.
 gui.tab.info.logistic_frame_active_provider=§0Active Provider frames can provide resources to Requester frames and Storage / Default Storage frames. \n \nBy default the framed inventory will provide every item in the inventory. By adding items to this filter, only items specified will be provided. Add items from your inventory or search for an item/fluid by right clicking an empty slot.
 gui.tab.info.logistic_frame_storage=§0Storage frames can receive resources from Active Providers and supply items to Requesters. \n \nBy default the framed inventory accepts any item from providing inventories. By adding items to this filter, only items specified can be inserted via the logistics network. Add items from your inventory or search for an item/fluid by right clicking an empty slot.
-gui.tab.info.logistic_frame_default_storage=§0Default Storage frames can receive resources from Active Providers and supply resources to Requesters. They have a lower priority than Storage frames, which will be always be used first if possible. \n \nBy default the framed inventory will accept any resources from providing inventories. By adding items to this filter, only items specified can be inserted via the logistics network. Add items from your inventory or search for an item/fluid by right clicking an empty slot.
+gui.tab.info.logistic_frame_default_storage=§0Default Storage frames can receive resources from Active Providers and supply resources to Requesters and Storage Frames. They have a lower priority than Storage frames, which will be always be used first if possible. \n \nBy default the framed inventory will accept any resources from providing inventories. By adding items to this filter, only items specified can be inserted via the logistics network. Add items from your inventory or search for an item/fluid by right clicking an empty slot.
 
 # Pressure
 gui.tab.pressure=Pressure
@@ -609,7 +609,7 @@ gui.holdF1forHelp=Hold §eF1§r for help
 gui.aphorismTileEditor=Aphorism Tile Editor
 gui.aphorismTile.helpText=§a§nAphorism Tile Editor \n \n§eCursor Left/Up:§r move up a line \n§eCursor Down:§r move down a line \n§eReturn:§r new line \n§eBackspace:§r delete character \n§eDelete:§r delete line \n§e Shift-Delete:§r delete all lines §eEscape:§r finish editing \n§eAlt + §ochr§r: insert control code \n §7- codes: 0-9, a-f, l, m, n, o, r
 gui.entityFilter=Entity filter (Hold §lF1§r for help)
-gui.entityFilter.helpText=§a§nEntity Filtering \n \n§e@player§f: allows all players only \n§e@mob§f: allows all aggressive creatures only \n§e@animal§f: allows all passive creatures only \n§e@animal(age = adult)§f: allows all adult passive creatures \n§e@animal(age = baby)§f: allows all baby passive creatures \n§e@animal(breedable = yes)§f: allows all passive creatures that \n  can breed at this very moment (they'll consume wheat/carrots/...) \n§e@minecart§f: allows minecarts only \n§e@living§f: allows all living entities only \n§e@item§f: allows item entities only \n§e@drone§f: allows drone entities only \n§eCreeper§f: allows Creepers only \n§eMineMaarten§f: allows MineMaarten only \n§ec*§f: allows any entity starting with the letter 'c' only (like Creepers, or Cows). \n§e*pig*§f: allows any entity that includes 'pig' in the name only (like a Pig or Zombie Pigman)
+gui.entityFilter.helpText=§a§nEntity Filtering \n \n§e@player§f: allows all players only \n§e@mob§f: allows all aggressive creatures only \n§e@animal§f: allows all passive creatures only \n§e@animal(age = adult)§f: allows all adult passive creatures \n§e@animal(age = baby)§f: allows all baby passive creatures \n§e@animal(breedable = yes)§f: allows all passive creatures that \n  can breed at this very moment (they'll consume wheat/carrots/...) \n§e@minecart§f: allows minecarts only \n§e@living§f: allows all living entities only \n§e@item§f: allows item entities only \n§e@drone§f: allows drone entities only \n§eCreeper§f: allows Creepers only \n§eMineMaarten§f: allows MineMaarten only \n§ec*§f: allows any entity starting with the letter 'c' only (like Creepers, or Cows). \n§e*pig*§f: allows any entity that includes 'pig' in the name only (like a Pig or Zombie Pigman) \n \nYou can specify a sequence of filters with the ";" (semicolon) separator - this is a "match any" function. \ne.g. "creeper;zombie" will match both Creepers and Zombies.
 gui.redstone=Redstone
 gui.threshold=Threshold(bar)
 gui.tubeModule.advancedConfig=Advanced config
@@ -766,6 +766,9 @@ gui.progWidget.condition.evaluatedFalse=Condition was evaluated false.
 gui.progWidget.jump.nowhereToJump=Nowhere to jump. Going back to Start.
 gui.progWidget.debug.hasPositions=This contains positions that can be showed.
 gui.progWidget.debug.clickToShow=Click to show the positions permanently.
+gui.progWidget.debug.showStart=Show Start Widget
+gui.progWidget.debug.showActive=Show Active Widget
+gui.progWidget.debug.followActive=Follow Active Widget
 gui.progWidget.harvest.debug.missingHoe=No damageable hoe found.
 gui.progWidget.dig.debug.missingDiggingTool=No damageable digging tool found.
 
@@ -788,18 +791,25 @@ gui.pastebin.clipboardSetToContents=Clipboard set to contents.
 gui.pastebin.retrievedFromClipboard=Retrieved from clipboard
 gui.securityStation.test=Test Security
 gui.logistic_frame_requester.filters=Requests
-gui.logistic_frame_requester.hasFilters=§eContains requests. Sneak for more info.
+gui.logistic_frame_requester.hasFilters=§eCustom request filter configured. Sneak for more info.
 gui.logistic_frame_passive_provider.filters=Providing items
-gui.logistic_frame_passive_provider.hasFilters=§eContains custom providing. Sneak for more info.
+gui.logistic_frame_passive_provider.hasFilters=§eCustom providing filter configured. Sneak for more info.
 gui.logistic_frame_active_provider.filters=Providing items
-gui.logistic_frame_active_provider.hasFilters=§eContains custom providing. Sneak for more info.
-gui.logistic_frame_storage.filters=Interfacing items
-gui.logistic_frame_storage.hasFilters=§eContains custom interfacing items. Sneak for more info.
-gui.logistic_frame_default_storage.filters=Interfacing items
-gui.logistic_frame_default_storage.hasFilters=§eContains custom interfacing items. Sneak for more info.
-gui.logistic_frame.liquid=Liquid Filters
+gui.logistic_frame_active_provider.hasFilters=§eCustom providing filter configured. Sneak for more info.
+gui.logistic_frame_storage.filters=Storing items
+gui.logistic_frame_storage.hasFilters=§eCustom storage filter configured. Sneak for more info.
+gui.logistic_frame_default_storage.filters=Storing items
+gui.logistic_frame_default_storage.hasFilters=§eCustom storage filter configured. Sneak for more info.
+gui.logistic_frame.liquid=Fluid Filters
 gui.logistic_frame.invisible=Invisible
 gui.logistic_frame.invisible.tooltip=Turns the Logistic Frame invisible (unless you have a Logistic item in your hand)
+gui.logistic_frame.filter_settings=Filter Settings
+gui.logistic_frame.fuzzyMeta=Ignore Item Metadata
+gui.logistic_frame.fuzzyNBT=Ignore Item NBT
+gui.logistic_frame.whitelist=Whitelist
+gui.logistic_frame.blacklist=Blacklist
+gui.logistic_frame.no_items=§o• No items
+gui.logistic_frame.no_fluids=§o• No fluids
 gui.plasticMixer.lockSelection=Lock Selection
 gui.plasticMixer.lockSelection.tooltip=Locks the selected plastic
 gui.keroseneLamp.maxRange=Max Range:
@@ -909,10 +919,10 @@ gui.tooltip.item.programming_puzzle=Used to program Drones. Used by a Programmer
 gui.tooltip.item.advanced_pcb=Item used to upgrade Tube Modules. This allows you to specify exactly how you want the module to behave.
 gui.tooltip.item.remote=Item that allows you to design your own GUI. Buttons and labels can be placed to create a remote to control your Drones or Universal Sensors with!
 gui.tooltip.item.seismic_sensor=This item is used to track down Oil deposits. Upon right click, it will show whether or not Oil was found directly under where the sensor was clicked on.
-gui.tooltip.item.logistics_configurator=This item is used to configure Logistic Frames. Sneak-right-click to remove frames.
+gui.tooltip.item.logistics_configurator=This item is used to configure Logistic Frames and Transfer Gadgets. Sneak-right-click to remove frames and other attachables (Heat Frames, Crop Supports...)
 gui.tooltip.item.logistic_frame_requester=Can be configured to request items from a Logistics Network.
 gui.tooltip.item.logistic_frame_storage=Stores items from a Logistics Network, provided by an Logistic Active Provider Frame.
-gui.tooltip.item.logistic_frame_default_storage=Like the Storage Frame, this stores items from a Logistics Network that are provided by an Logistic Active Provider Frame. It has a lower priority than a Storage Frame though, making it suitable to be used for 'misc chest' purposes. It can also provide items to Storage Frames.
+gui.tooltip.item.logistic_frame_default_storage=Like the Storage Frame, this stores items from a Logistics Network that are provided by an Logistic Active Provider Frame. It has a lower priority than a Storage Frame, making it suitable to be used for 'misc chest' purposes. It will also provide items to Storage Frames.
 gui.tooltip.item.logistic_frame_passive_provider=Provides items to a Logistic Network. Only provides to Requester Frames.
 gui.tooltip.item.logistic_frame_active_provider=Provides items to a Logistic Network. Provides to both Requester Frames and Storage Frames.
 gui.tooltip.item.logistic_drone=An airborne robot which performs logistic tasks. Logistic Frames are used to define these tasks.
@@ -920,7 +930,7 @@ gui.tooltip.item.harvesting_drone=An airborne robot which harvests any fully gro
 gui.tooltip.item.gun_ammo=Bullets are used by handheld Miniguns, Sentry Turrets, and Drones with an Entity Tracker Upgrade inserted (giving them a Minigun).
 gui.tooltip.item.amadron_tablet=Item used to order items/fluids, similar to Villager trading, except Items/fluids are picked up and delivered via Drones, which is way more awesome than villagers. A pick-up/drop-off location must be specified by right-clicking an inventory and/or tank with the tablet.
 gui.tooltip.item.logistics_module=This tube module when fitted on a tube will communicate with other Logistics Tube Modules on connected tubes. It will perform logistics tasks on inventories/tanks it is pointing towards, and are fitted with a Logistic Frame. It uses pressure to do so.
-gui.tooltip.item.heat_frame=Can be placed on any inventory. When heated by an adjacent heat source it will try to smelt any item in the inventory as well as freeze it when cooled. It will only succeed when there is room in the inventory for the outputted item. The more heat applied, the faster the smelting process will be, up to a maximum of 1 item smelted per second. Similarly the more it's cooled, the faster it will freeze objects.
+gui.tooltip.item.heat_frame=Can be placed on any inventory. When heated by an adjacent heat source it will try to smelt any item in the inventory as well as freeze it when cooled. It will only succeed when there is room in the inventory for the resulting item. The more heat applied, the faster the smelting process will be, up to a maximum of 1 item smelted per second. Similarly the more it's cooled, the faster it will freeze objects.
 gui.tooltip.item.spawner_agitator=When placed on Mob Spawners, the Spawner Agitator will prevent the spawned entity to despawn when the player leaves the area. Additionally, the spawner will keep spawning while the player is not in the area. Mob farm anyone? 
 gui.tooltip.item.crop_support=When placed on soil or dirt, this will improve the growth speed of any crop or tree that grows there.
 gui.tooltip.item.minigun=This is a handheld weapon. It uses Gun Ammo to operate, which is required to be in the player's inventory.
@@ -955,6 +965,16 @@ gui.config.category.recipes=Recipes
 gui.config.category.client=Clientside Options
 gui.config.category.helmet=Pneumatic Helmet (Clientside)
 
+# Side Configurator tabs
+gui.sideConfigurator.unconnected=§oUnconnected
+gui.sideConfigurator.title.items=Side Configuration: Items
+gui.sideConfigurator.items.mainInv=Main Inventory
+gui.sideConfigurator.items.armorInv=Armor Slots
+gui.sideConfigurator.items.offhandInv=Offhand Slot
+gui.sideConfigurator.items.enderInv=Ender Inventory
+gui.sideConfigurator.items.droneInv=Drone Inventory
+gui.sideConfigurator.items.programmableInv=Programmable Slot
+
 # Waila
 hud.msg.state=State
 hud.msg.active=Active
@@ -983,7 +1003,7 @@ message.seismicSensor.foundOil=§a[Seismic Sensor] Oil potentially found! Scanni
 message.seismicSensor.foundOilDetails=§a[Seismic Sensor] Found oil %s§am below. It contains about %s§a buckets of oil.
 message.seismicSensor.noOilFound=§c[Seismic Sensor] No oil found.
 message.amadronTable.setItemProvidingLocation=§a[Amadron Tablet]§f Item providing location: %s, %s, %s in dim %s (%s)
-message.amadronTable.setLiquidProvidingLocation=§a[Amadron Tablet]§f Liquid providing location: %s, %s, %s in dim %s (%s)
+message.amadronTable.setLiquidProvidingLocation=§a[Amadron Tablet]§f Fluid providing location: %s, %s, %s in dim %s (%s)
 gui.regulatorTube.hudMessage.notInLine=§cA Regulator Tube Module only regulates air in line of the module.
 gui.regulatorTube.hudMessage.inverted=§cA Regulator Tube Module only regulates air in the direction of the arrow.
 gui.search=Search:
@@ -1051,11 +1071,11 @@ achievement.etchacidBucket.desc=Acquire an Etching Acid Bucket. Throw in PCB's t
 achievement.dw9x9=The Perfect Size
 achievement.dw9x9.desc=Build a 9x9 house made out of Cobblestone, the perfect size according to Direwolf20.
 
-#NEI
+#JEI
 gui.nei.recipe.etchingAcid=Create a pool of Etching Acid (one bucket is enough). Throw in an Empty PCB which has been exposed in a UV Light Box. This process will take 5 minutes.
 gui.nei.recipe.uvLightBox=Create a UV Light Box, provide pressure, and insert an Empty PCB. This process takes about 10 minutes (without any Speed Upgrades).
-gui.nei.recipe.compressedIronExplosion=Throw one or more iron ingots on the ground, and set off an explosion next to them.  Note: %d%% (on average) of the ingots will be destroyed.
-gui.nei.title.compressedIronExplosion=Explosion Crafting
+gui.nei.recipe.explosionCrafting=Throw some of the input material on the ground, and set off an explosion next to it. \n \n§eAverage material loss rate: %d%%
+gui.nei.title.explosionCrafting=Explosion Crafting
 
 #Amadron
 drone.amadronDeliveryDrone=Amadron Delivery Drone
