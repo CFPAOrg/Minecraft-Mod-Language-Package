@@ -372,7 +372,7 @@ gui.tab.info.tile.vortex_tube=§0将进入的空气分离成热和冷两个部�
 gui.tab.info.tubeModule=在这个界面中，你可以定义一个模块对红石信号的反应。你可以定义一个公式。
 gui.tab.info=信息
 gui.tab.liquidCompressor.fuel=可用燃料
-gui.tab.liquidHopper.mode.empty=空置储罐
+gui.tab.liquidHopper.mode.empty=清空储罐。
 gui.tab.liquidHopper.mode.leaveLiquid=储罐中残留 1000mb 用以过滤。
 gui.tab.omnidirectionalHopper.mode.empty=普通漏斗操控
 gui.tab.omnidirectionalHopper.mode.leaveItem=每个格子残留一个物品，用以过滤。
@@ -844,3 +844,37 @@ waila.temperature.south=§7南面温度：§f%sC
 waila.temperature.up=§7顶部温度：§f%sC
 waila.temperature.west=§7西面温度：§f%sC
 waila.temperature=§7温度：§f%sC
+gui.tab.info.tile.programmable_controller=你可以利用可编程控制器替代直接 将无人机进行放置，程序执行的 对象只能是网络API或者无人 机，并将其放置在界面的齿轮槽 内。在每10ml/tick的压缩空气消耗下， 控制器将会执行对象的大部分程 序（点击“不可执行部分“选项卡 以了解那些信息是不能被执行的）。 与编程器类似物品和流体也可以 通过这个方块进行交互。\n\n这个机器最大的优点点就是它不涉 及任何实体的路径查找。
+gui.tab.info.programmable_controller.excluded=不可执行程序
+gui.tab.info.tile.gas_lift=§0气举是一种利用气压抽取液体的泵。 它需要利用气压和压力管道工作。 气举会将压力管或高级压力管向下 放置，直至遇到液体。当管道遇到 固体方块时，固体方块将被消除; 消耗的压力与方块的硬度成正比 （高级压力管消耗较少的压力）。 工作所需的最小压力与工作深 度成比例增加。
+gui.tab.info.logistic_frame_requester=§0物流请求框架可以从任何其他框架处请求物品。\n\n你可以在此处指定物流无人机应在框架库存中保留哪些资源和以及资源的数量。从你的物品栏增加物品，或者右键点击空白的格子来搜索物品或者液体来添加。
+gui.tab.info.logistic_frame_passive_provider=§0物流被动供应框架可以输出物品给物流请求框架.\n\n默认情况下框架的会输出所有的物品。在其界面内添加物品后，只有被添加的物品会被输出。从你的物品栏增加物品，或者右键点击空白的格子来搜索物品或者液体来添加。
+gui.tab.info.logistic_frame_active_provider=§0物流主动提供框架会给物流请求框架以及物流默认存储框架提供物品\n\n默认情况下框架的会输出所有的物品。在其界面内添加物品后，只有被添加的物品会被输出。从你的物品栏增加物品，或者右键点击空白的格子来搜索物品或者液体来添加。
+gui.tab.info.logistic_frame_storage=§0物流存储框架可以从物流主动供应框架处接收物品并且为请求框架提供物品。\n \n默认情况下框架的会接收所有的物品。在其界面内添加物品后，只能通过物流网络插入指定的物品。从你的物品栏增加物品，或者右键点击空白的格子来搜索物品或者液体来添加。
+gui.tab.info.logistic_frame_default_storage=§0物流默认存储框架可以接收物流主动提供框架输送的物品，并为物流请求框架和物流存储框架提供物品。它们的优先级比物流存储框架更低，所以推荐尽可能的优先使用。\n\n默认情况下框架的会从提供接收所有的物品。在其界面内添加物品后，只有被添加的物品会通过网络被接收。从你的物品栏增加物品，或者右键点击空白的格子来搜索物品或者液体来添加。
+gui.tab.upgrades.tile.charging_station=§7• 速度升级 (最大 = 10) \n§0充气站将更快快的充能或释能. \n§7• 发射器升级\n§0在充气站上增加一个扩展，使其 可以对任何位于其上方的无人机， 物品，以及玩家背包内的物品进行 充能与释能。
+gui.tab.upgrades.tile.elevator_base=§7•速度升级（最大值= 10）\n§0电梯将上升/下降得更快 （消耗更多压力）。
+gui.tab.upgrades.tile.omnidirectional_hopper=§7•速度升级 (最大 = 11) \n§0增加漏斗转喻物品的速度。
+gui.tab.upgrades.tile.liquid_hopper=§7•速度升级 (最大 = 11) \n§0增加漏斗液体的速度。 以11个速度升级为例, 液体漏斗可以 在一个tick内转移 16000mb的液体。\n§7发射器升级\n§0从漏斗的输入端吸收液体，并且在输出 端放置液体，就像水泵一样。
+gui.tab.upgrades.tile.pneumatic_door_base=§7• 范围升级\n§0每次升级都会将检测玩家的范围增加一格。\n§7• 速度升级\n§0增加门打开/关闭的速度。
+gui.tab.upgrades.tile.pressure_chamber_interface=§7•速度升级（最大值= 10）\n§0接口闸门将更快地打开/关闭， 这意味着物品可以更快地运输。
+gui.tab.upgrades.tile.security_station=§7• 范围升级\n§0每次升级时，安全站的工作范围（平方）范围增加1格（最多16格）。\n§7• 安全升级\n§0每次升级都会将安全站的安全等级提高一，这意味着玩家需要更多的安全升级才能破解这个安全站站。 \n§7• 实体跟踪器\n§0被入侵时，每次升级增加20%%的几率检测出入侵。
+gui.tab.upgrades.tile.security_station.hacking=§7• 安全升级\n§0允许侵入安全等级更高一级的安全站（每次升级）。
+gui.tab.upgrades.tile.uv_light_box=§7• 速度升级（最大值= 10）\n§0紫外线灯会发出更亮的光线， 让你更快的得到未组装的印刷电路板。
+gui.tab.upgrades.tile.vacuum_pump=§7• 速度提升（最大值= 10）\n§0真空泵每tick会产生更多真空。 然而，这需要消耗更多压力。
+gui.tab.upgrades.tile.pneumatic_generator=§7• 速度升级 (最大值 = 3) \n§0调整输出速度: \n§00 个升级 --> 32 EU/t \n§01 个升级 --> 128 EU/t \n§02 个升级 --> 512 EU/t \n§03 个升级 --> 2048 EU/t
+gui.tab.upgrades.tile.flux_compressor=§7• 速度升级 (最大 = 10) \n§0提高压缩空气的转化速度。 升级增加了RF的消耗量， 降低了机器效率。 总体而言它增加了RF的最大输入速度。
+gui.tab.upgrades.tile.pneumatic_dynamo=§7• 速度升级 (最大 = 10) \n§0提高RF的转化速度。 升级增加了压缩空气的使用量， 降低了机器的工作效率。 总体而言它增加了RF的最大输出速率。
+gui.tab.upgrades.tile.liquid_compressor=§7• 速度升级（最大值= 10）\n§0增加每tick产生的压缩空气量。 然而，这是以更多的消耗为代价的。
+gui.tab.upgrades.tile.advanced_liquid_compressor=§7• 速度升级（最大值= 10）\n§0增加了每tick产生压缩空气的量。 然而，这是以更多消耗为代价的。 \n§7• 发射器升级（最大= 1）\n§0液体漏斗将尝试泵入输入侧的任何 液体块。同样，它也会尝试在输出 端放置液体（如果它是空气方块）.
+gui.tab.upgrades.tile.programmable_controller=§7• 速度升级（最大值= 10）\n§0增加无人机的飞行速度。 \n§7•发射器升级（最大值= 35）\n§0默认情况下，无人机可以传输一叠物品。  对于插入的每个发射器升级， 无人机可以增加一个额外的物品堆叠。\n\n每个升级还将使无人机内部的液体储量 增加16000mB，每次升级（如果安装） 还将增加100000RF存储。它还增加了无人机 传输RF的速度（传输=最大存储/100）。
+gui.tab.upgrades.tile.gas_lift=§7• 速度升级（最大值= 10）\n§0增加输出/挖掘/回收液体的速度。\n§7• 发射器升级（最大= 1）\n§0气举会将液体自动输入到相邻的储罐中。
+gui.tab.upgrades.tile.thermopneumatic_processing_plant=§7•发射器升级（最大= 1）\n§0热气动加工厂将液体自动输入到相邻的罐中。
+gui.tab.upgrades.tile.sentry_turret=§7• 范围升级（最大值= 16）\n§0每次升级时，炮塔的范围增加1。
+gui.tab.redstoneBehaviour.elevator.button.elevatorCallers=电梯呼叫器
+gui.tab.redstoneBehaviour.securityStation.button.hacked=侵入
+gui.tab.gasLift.mode.drawIn=输进管道
+gui.tab.aerialInterface.feedMode.feedFullyUtilize=只有在饱腹度不会被浪费的情况下进食。
+gui.tab.aerialInterface.feedMode.feedWhenPossible=当玩家饥饿值没满时立即进食。
+gui.tab.aerialInterface.feedMode.utilizeFullHealthElsePossible=当玩家完全健康时，只有当饥饿值不被浪费时进食。当玩家血量未满时，在玩家饥饿值未满时进食。
+gui.tab.info.logisticsRequester.aeIntegration=当被检测时, 后勤无人机将通知AE网络需要提供的项目 (必须是可 "制作"的项目)。当接收到制作请求时, 物流请求框架内将添加改项目。
