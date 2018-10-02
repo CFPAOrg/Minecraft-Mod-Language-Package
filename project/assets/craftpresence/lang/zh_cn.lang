@@ -1,136 +1,135 @@
-#PARSE_ESCAPES
-
-#PARSE_ESCAPES
-## CONFIG MESSAGES - MAIN TITLES ##
-gui.config.title=CraftPresence 配置 GUI
-gui.config.title.general=常规设置
-gui.config.title.biomemessages=自定义生物群系信息
-gui.config.title.dimensionmessages=自定义维度信息
-gui.config.title.servermessages=自定义服务器信息
-gui.config.title.statusmessages=自定义状态信息
-gui.config.title.advanced=高级设置
-## CONFIG MESSAGES - MAIN TITLE COMMENTS ##
-gui.config.comment.title.general=有关显示信息的常规设置
-gui.config.comment.title.biomemessages=自定义生物群系信息 \n &biome& = 生物群系占位符 \n &id& = 生物群系 ID 占位符
-gui.config.comment.title.dimensionmessages=自定义维度信息 \n &dimension& = 维度名称占位符 \n &id& = 维度 ID 占位符 \n &icon& = 默认图标
-gui.config.comment.title.servermessages=自定义服务器信息 \n &ip& = 服务器 IP 占位符 \n &name& = 服务器名称占位符 \n &motd& = 服务器 MOTD 占位符 \n &icon& = 默认图标 \n &players& = 服务器玩家数占位符
-gui.config.comment.title.statusmessages=自定义其他状态信息，比如： \n主菜单，加载游戏，局域网游戏或者单人游戏
-gui.config.comment.title.advanced=自定义模组技术上的细节，比如： \n 分割字符，调试功能 \n 启用更多特殊显示更新
-## CONFIG GUI - BUTTONS AND NAMES ##
-gui.config.name.default.exampletext=输入信息……
-gui.config.hoverMessage.access=**需要先勾选“%1$s”才能使用此功能**
-gui.config.hoverMessage.defaultempty=**默认信息不为空，且必须合法**
-gui.config.title.biome.editspecificbiome=CraftPresence - 编辑生物群系 (%1$s)
-gui.config.title.dimension.editspecificdimension=CraftPresence - 编辑维度 (%1$s)
-gui.config.title.server.editspecificserver=CraftPresence - 编辑服务器 (%1$s)
-gui.config.title.editor.addnew=CraftPresence - 添加新值
-## CONFIG MESSAGES - NAMES ##
-gui.config.name.general.clientid=客户端 ID
-gui.config.name.general.defaulticon=默认图标
-gui.config.name.general.detectcursemanifest=检测 Curse Manifest
-gui.config.name.general.detectmultimcmanifest=检测 MultiMC 实例
-gui.config.name.general.detecttechnicpack=检测 Technic 包
-gui.config.name.general.showtime=显示运行时间
-gui.config.name.general.showbiome=显示生物群系
-gui.config.name.general.showdimension=显示维度
-gui.config.name.general.showstate=显示游戏状态
-gui.config.name.biomemessages.biomemessages=生物群系信息
-gui.config.name.dimensionmessages.dimensionicon=默认生物群系图标
-gui.config.name.dimensionmessages.dimensionmessages=维度信息
-gui.config.name.servermessages.servericon=默认服务器图标
-gui.config.name.servermessages.servermotd=默认服务器 MOTD
-gui.config.name.servermessages.servername=默认服务器名称
-gui.config.name.servermessages.servermessages=服务器信息
-gui.config.name.statusmessages.loadingmsg=加载信息
-gui.config.name.statusmessages.mainmenumsg=主菜单信息
-gui.config.name.statusmessages.lanmsg=局域网游戏信息
-gui.config.name.statusmessages.singleplayermsg=单人游戏信息
-gui.config.name.advanced.splitcharacter=分割字符
-gui.config.name.advanced.enablecommands=启用命令
-gui.config.name.advanced.enablepergui=启用 Per-GUI 系统
-gui.config.name.advanced.enableperitem=启用 Per-Item 系统
-gui.config.name.advanced.guimessages=GUI 信息
-gui.config.name.advanced.itemmessages=物品信息
-## DEFAULT MESSAGES ##
-craftpresence.defaults.servermessages.servermotd=Minecraft 服务器
-craftpresence.defaults.state.loading=正在加载游戏
-craftpresence.defaults.state.loading.status=状态：%1$s
-craftpresence.defaults.state.mainmenu=处于主菜单界面
-craftpresence.defaults.state.lan=正在局域网联机游玩
-craftpresence.defaults.state.singleplayer=正在单人游戏游玩
-craftpresence.defaults.placeholder.players=%1$s / %2$s 玩家
 ## COMMAND MESSAGES ##
-craftpresence.command.usage.main=§lCraftPresence - 子命令：\n §6§lreboot §r- 重启 RPC \n §6§lshutdown §r- 关闭 RPC \n §6§lreload §r- 基于配置文件重载 CraftPresence 数据 \n §6§lconfig §r- 打开 CraftPresence 的配置 GUI \n §6§lview §r- 查看各种各样的显示数据 \n §6§lhelp §r- 查看本页面
-craftpresence.command.usage.view=§lCraftPresence - View 子命令：\n §6§lcurrentData §r- 以文字形式显示你当前的 RPC 数据 \n §6§lassets §r- 显示所有可用的材质图标 \n §6§ldimensions §r- 显示所有的维度名称
-craftpresence.command.usage.assets=§lCraftPresence - Assets 子命令：\n §6§llarge §r- 以大的 Discord 图标材质形式查看 \n §6§lsmall §r- 以小的 Discord 图标材质形式查看 \n §6§lall §r- 查看所有 Discord 材质
-craftpresence.command.unrecognized=§c§l未知的命令 - 请使用 §6§l/craftpresence help
-craftpresence.command.currentdata=§l当前 RPC 数据：§r \n §6§l详细信息：§r %1$s \n §6§l游戏状态：§r %2$s \n §6§l开始时间戳：§r %3$s \n §6§l客户端 ID：§r %4$s \n §6§l大图标 Key：§r %5$s \n §6§l大图标文字：§r %6$s \n §6§l小图标 Key：§r %7$s \n §6§l小图标文本：§r %8$s
-craftpresence.command.reload=§6§l基于配置，重载 CraftPresence 数据！
-craftpresence.command.reload.complete=§2§l已经重载 CraftPresence 数据！
+## CONFIG GUI - BUTTONS AND NAMES ##
+## CONFIG MESSAGES - COMMENTS ##
+## CONFIG MESSAGES - MAIN TITLE COMMENTS ##
+## CONFIG MESSAGES - MAIN TITLES ##
+## CONFIG MESSAGES - NAMES ##
+## DEFAULT MESSAGES ##
+## LOGGING MESSAGES ##
+#PARSE_ESCAPES
+#PARSE_ESCAPES
 craftpresence.command.assets.large.header=§6§lDiscord 大图标材质：§r %1$s
 craftpresence.command.assets.small.header=§6§lDiscord 小图标材质：§r %1$s
+craftpresence.command.currentdata=§l当前 RPC 数据：§r \n §6§l详细信息：§r %1$s \n §6§l游戏状态：§r %2$s \n §6§l开始时间戳：§r %3$s \n §6§l客户端 ID：§r %4$s \n §6§l大图标 Key：§r %5$s \n §6§l大图标文字：§r %6$s \n §6§l小图标 Key：§r %7$s \n §6§l小图标文本：§r %8$s
 craftpresence.command.dimensions.header=§6§l维度名称：§r %1$s
-craftpresence.command.shutdown.pre=§6§l关闭 CraftPresence……
-craftpresence.command.shutdown.post=§2§lCraftPresence 已经被关闭！\n §6§l使用 /cp reboot 重启
-craftpresence.command.reboot.pre=§6§l重启 CraftPresence 中……
 craftpresence.command.reboot.post=§2§lCraftPresence 已经被重启！
-## LOGGING MESSAGES ##
-craftpresence.logger.info.load=Loaded Display Data with ID: %1$s
-craftpresence.logger.info.shutdown=Shutting Down CraftPresence...
-craftpresence.logger.info.config.save=Configuration Settings have been Saved // Loaded Successfully!
-craftpresence.logger.info.manifest.init=Checking for valid Curse Manifest Data...
-craftpresence.logger.info.manifest.loaded=Found Curse Manifest Data! ( Name: "%1$s" )
-craftpresence.logger.info.instance.init=Checking for valid MultiMC Instance Data...
-craftpresence.logger.info.instance.loaded=Found MultiMC Instance Data! ( Name: "%1$s" - Icon: "%2$s" )
-craftpresence.logger.info.technic.init=Checking for valid Technic Pack Data...
-craftpresence.logger.info.technic.loaded=Found Technic Pack Data! ( Name: "%1$s" - Icon: "%2$s" )
-craftpresence.logger.info.discord.assets.load=Checking Discord for Available Assets with ID: %1$s
-craftpresence.logger.info.discord.assets.detected=%1$s Total Assets Detected!
-craftpresence.logger.info.discord.assets.load.credits=Coded by ItsDizzy - https://github.com/ItsDizzy
-craftpresence.logger.error.https=Failed to Sign SSL Certificates for HTTPS, Any External Libraries by CraftPresence may fail to download
-craftpresence.logger.error.config.save=Failed to load or save Configuration
+craftpresence.command.reboot.pre=§6§l重启 CraftPresence 中……
+craftpresence.command.reload.complete=§2§l已经重载 CraftPresence 数据！
+craftpresence.command.reload=§6§l基于配置，重载 CraftPresence 数据！
+craftpresence.command.shutdown.post=§2§lCraftPresence 已经被关闭！\n §6§l使用 /cp reboot 重启
+craftpresence.command.shutdown.pre=§6§l关闭 CraftPresence……
+craftpresence.command.unrecognized=§c§l未知的命令 - 请使用 §6§l/craftpresence help
+craftpresence.command.usage.assets=§lCraftPresence - Assets 子命令：\n §6§llarge §r- 以大的 Discord 图标材质形式查看 \n §6§lsmall §r- 以小的 Discord 图标材质形式查看 \n §6§lall §r- 查看所有 Discord 材质
+craftpresence.command.usage.main=§lCraftPresence - 子命令：\n §6§lreboot §r- 重启 RPC \n §6§lshutdown §r- 关闭 RPC \n §6§lreload §r- 基于配置文件重载 CraftPresence 数据 \n §6§lconfig §r- 打开 CraftPresence 的配置 GUI \n §6§lview §r- 查看各种各样的显示数据 \n §6§lhelp §r- 查看本页面
+craftpresence.command.usage.view=§lCraftPresence - View 子命令：\n §6§lcurrentData §r- 以文字形式显示你当前的 RPC 数据 \n §6§lassets §r- 显示所有可用的材质图标 \n §6§ldimensions §r- 显示所有的维度名称
+craftpresence.defaults.placeholder.players=%1$s / %2$s 玩家
+craftpresence.defaults.servermessages.servermotd=Minecraft 服务器
+craftpresence.defaults.state.lan=正在局域网联机游玩
+craftpresence.defaults.state.loading.status=状态：%1$s
+craftpresence.defaults.state.loading=正在加载游戏
+craftpresence.defaults.state.mainmenu=处于主菜单界面
+craftpresence.defaults.state.mcversion=Minecraft %1$s
+craftpresence.defaults.state.singleplayer=正在单人游戏游玩
 craftpresence.logger.error.config.emptyprop=Empty Property Detected ("%1$s"), setting property as default...
 craftpresence.logger.error.config.invalidprop=Invalid Property Detected ("%1$s"), removing property...
-craftpresence.logger.error.file.manifest=Unable to get Curse Manifest Data (Ignore if Not using a Twitch/CursePack)
-craftpresence.logger.error.file.instance=Unable to get MultiMC Instance Data (Ignore if Not using a MultiMC Pack)
-craftpresence.logger.error.file.technic=Unable to get Technic Pack Data (Ignore if Not using a Technic Pack)
-craftpresence.logger.error.technic.limitation=Due to Technic Limitations, The Pack your Currently Playing will only display an Icon properly, if selected in the Technic Launcher.
-craftpresence.logger.error.load=Failed to Load Display Data
-craftpresence.logger.error.discord.assets.load=Unable to get Discord Assets, Things may not work well.
-craftpresence.logger.error.discord.assets.load.null=Asset with Name "%1$s" does not exist, Please Make a Mod Issue to Request this Icon to be Added.
-craftpresence.logger.error.discord.assets.empty=Asset Name "%1$s" does not exist, will attempt to use Default Icon with %2$s size.
+craftpresence.logger.error.config.save=Failed to load or save Configuration
 craftpresence.logger.error.discord.asset.failure=Failed to Allocate an Image, Please Send a Mod Issue.
+craftpresence.logger.error.discord.assets.empty=Asset Name "%1$s" does not exist, will attempt to use Default Icon with %2$s size.
+craftpresence.logger.error.discord.assets.load.null=Asset with Name "%1$s" does not exist, Please Make a Mod Issue to Request this Icon to be Added.
+craftpresence.logger.error.discord.assets.load=Unable to get Discord Assets, Things may not work well.
+craftpresence.logger.error.file.instance=Unable to get MultiMC Instance Data (Ignore if Not using a MultiMC Pack)
+craftpresence.logger.error.file.manifest=Unable to get Curse Manifest Data (Ignore if Not using a Twitch/CursePack)
+craftpresence.logger.error.file.technic=Unable to get Technic Pack Data (Ignore if Not using a Technic Pack)
 craftpresence.logger.error.gui.failure=Failed to get Available GUIs, Report this to the appropriate Mod Author
-craftpresence.logger.warning.config.empty.clientid=Client ID is Empty, Things may not work well
+craftpresence.logger.error.https=Failed to Sign SSL Certificates for HTTPS, Any External Libraries by CraftPresence may fail to download
+craftpresence.logger.error.load=Failed to Load Display Data
+craftpresence.logger.error.technic.limitation=Due to Technic Limitations, The Pack your Currently Playing will only display an Icon properly, if selected in the Technic Launcher.
+craftpresence.logger.info.config.save=Configuration Settings have been Saved // Loaded Successfully!
+craftpresence.logger.info.discord.assets.detected=%1$s Total Assets Detected!
+craftpresence.logger.info.discord.assets.load.credits=Coded by ItsDizzy - https://github.com/ItsDizzy
+craftpresence.logger.info.discord.assets.load=Checking Discord for Available Assets with ID: %1$s
+craftpresence.logger.info.instance.init=Checking for valid MultiMC Instance Data...
+craftpresence.logger.info.instance.loaded=Found MultiMC Instance Data! ( Name: "%1$s" - Icon: "%2$s" )
+craftpresence.logger.info.load=Loaded Display Data with ID: %1$s
+craftpresence.logger.info.manifest.init=Checking for valid Curse Manifest Data...
+craftpresence.logger.info.manifest.loaded=Found Curse Manifest Data! ( Name: "%1$s" )
+craftpresence.logger.info.shutdown=Shutting Down CraftPresence...
+craftpresence.logger.info.technic.init=Checking for valid Technic Pack Data...
+craftpresence.logger.info.technic.loaded=Found Technic Pack Data! ( Name: "%1$s" - Icon: "%2$s" )
 craftpresence.logger.warning.config.conflict.biomestate=showCurrentBiome and showGameState are both enabled, giving priority to showGameState
 craftpresence.logger.warning.config.conflict.pergui=enablePerGUI and showGameState are both enabled, giving priority to showGameState
-craftpresence.logger.warning.fingerprintviolation=Invalid Certificate Detected, this Build will not receive Support
+craftpresence.logger.warning.config.empty.clientid=Client ID is Empty, Things may not work well
 craftpresence.logger.warning.developermode=You are Running CraftPresence in a Developer/DeObfuscated Environment, some features may not function properly
-## CONFIG MESSAGES - COMMENTS ##
-gui.config.comment.general.clientid=客户端 ID 用于检索资源，图标 key 和标题
-gui.config.comment.general.defaulticon=默认图标\n（用于主菜单或维度、服务器）
-gui.config.comment.general.detectcursemanifest=启用 Twitch / Curse Manifest 数据检测？
-gui.config.comment.general.detectmultimcmanifest=启用 MultiMC 实例数据检测？
-gui.config.comment.general.detecttechnicpack=启用 Technic 包数据检测？
-gui.config.comment.general.showtime=在详情页显示经过时间？
-gui.config.comment.general.showbiome=在详情页显示生物群系信息？\n（会禁止游戏状态显示）
-gui.config.comment.general.showdimension=在详情页显示当前维度？
-gui.config.comment.general.showstate=是否显示你处于单人游戏还是多人游戏？\n（会禁止当前生物群系显示）
-gui.config.comment.biomemessages.biomemessages=生物群系信息数据\n （格式：biome_name;message or default;message）\n &biome& = 生物群系名称
-gui.config.comment.dimensionmessages.dimensionicon=当处于不支持的维度时候，维度的默认图标\n &icon& = 默认图标设置
-gui.config.comment.dimensionmessages.dimensionmessages=维度信息数据\n （格式：dimension_name;message or default;message）\n &dimension& = 维度名称 \n &icon& = 默认维度图标
-gui.config.comment.servermessages.servericon=当处于一个不受支持的服务器时，服务器的默认图标
-gui.config.comment.servermessages.servermotd=未防止出现空 MOTD，服务器的默认 MOTD 设置\n（或者直连情况）
-gui.config.comment.servermessages.servername=未防止出现空服务器名称，默认的服务器名称\n（或者直接连接情况）
-gui.config.comment.servermessages.servermessages=服务器信息数据\n （格式：server_IP;message;icon or default;message;icon）\n &ip& = 服务器 IP \n &name& = 服务器列表名称\n &motd& = 服务器 MOTD \n &icon& = 默认服务器图标
-gui.config.comment.statusmessages.loadingmsg=当加载游戏时，显示的信息
-gui.config.comment.statusmessages.mainmenumsg=当处于主界面时，显示的信息
-gui.config.comment.statusmessages.lanmsg=当加入局域网游戏时，显示的信息\n（只有在状态启用情况下才会显示）
-gui.config.comment.statusmessages.singleplayermsg=单人游戏下信息显示\n（仅在状态开启情况下显示）
-gui.config.comment.advanced.splitcharacter=CraftPresence 信息中的数组分割字符配置\n\n（你需要手动更改每个变量）
+craftpresence.logger.warning.fingerprintviolation=Invalid Certificate Detected, this Build will not receive Support
 gui.config.comment.advanced.enablecommands=允许 CraftPresence 使用命令
 gui.config.comment.advanced.enablepergui=允许 CraftPresence 根据你的 GUI 更改它的显示，注意以下内容： \n- 这可能降低性能\n- 需要 GUI 信息中的选项
 gui.config.comment.advanced.enableperitem=允许 CraftPresence 根据你持有的物品更改它的显示，注意以下内容：\n- 覆盖服务器和生物群系 \n- 需要物品信息中的选项
 gui.config.comment.advanced.guimessages=GUI 信息数据\n （格式：gui;message）\n &gui& = 当前 GUI \n （需要启用 Pre-GUI）
 gui.config.comment.advanced.itemmessages=物品信息数据：\n （Format: item;message）\n &main& = 当前主手物品\n &offhand& = 当前副手物品\n （需要启用 Pre-Item）
-craftpresence.defaults.state.mcversion=Minecraft %1$s
+gui.config.comment.advanced.splitcharacter=CraftPresence 信息中的数组分割字符配置\n\n（你需要手动更改每个变量）
+gui.config.comment.biomemessages.biomemessages=生物群系信息数据\n （格式：biome_name;message or default;message）\n &biome& = 生物群系名称
+gui.config.comment.dimensionmessages.dimensionicon=当处于不支持的维度时候，维度的默认图标\n &icon& = 默认图标设置
+gui.config.comment.dimensionmessages.dimensionmessages=维度信息数据\n （格式：dimension_name;message or default;message）\n &dimension& = 维度名称 \n &icon& = 默认维度图标
+gui.config.comment.general.clientid=客户端 ID 用于检索资源，图标 key 和标题
+gui.config.comment.general.defaulticon=默认图标\n（用于主菜单或维度、服务器）
+gui.config.comment.general.detectcursemanifest=启用 Twitch / Curse Manifest 数据检测？
+gui.config.comment.general.detectmultimcmanifest=启用 MultiMC 实例数据检测？
+gui.config.comment.general.detecttechnicpack=启用 Technic 包数据检测？
+gui.config.comment.general.showbiome=在详情页显示生物群系信息？\n（会禁止游戏状态显示）
+gui.config.comment.general.showdimension=在详情页显示当前维度？
+gui.config.comment.general.showstate=是否显示你处于单人游戏还是多人游戏？\n（会禁止当前生物群系显示）
+gui.config.comment.general.showtime=在详情页显示经过时间？
+gui.config.comment.servermessages.servericon=当处于一个不受支持的服务器时，服务器的默认图标
+gui.config.comment.servermessages.servermessages=服务器信息数据\n （格式：server_IP;message;icon or default;message;icon）\n &ip& = 服务器 IP \n &name& = 服务器列表名称\n &motd& = 服务器 MOTD \n &icon& = 默认服务器图标
+gui.config.comment.servermessages.servermotd=未防止出现空 MOTD，服务器的默认 MOTD 设置\n（或者直连情况）
+gui.config.comment.servermessages.servername=未防止出现空服务器名称，默认的服务器名称\n（或者直接连接情况）
+gui.config.comment.statusmessages.lanmsg=当加入局域网游戏时，显示的信息\n（只有在状态启用情况下才会显示）
+gui.config.comment.statusmessages.loadingmsg=当加载游戏时，显示的信息
+gui.config.comment.statusmessages.mainmenumsg=当处于主界面时，显示的信息
+gui.config.comment.statusmessages.singleplayermsg=单人游戏下信息显示\n（仅在状态开启情况下显示）
+gui.config.comment.title.advanced=自定义模组技术上的细节，比如： \n 分割字符，调试功能 \n 启用更多特殊显示更新
+gui.config.comment.title.biomemessages=自定义生物群系信息 \n &biome& = 生物群系占位符 \n &id& = 生物群系 ID 占位符
+gui.config.comment.title.dimensionmessages=自定义维度信息 \n &dimension& = 维度名称占位符 \n &id& = 维度 ID 占位符 \n &icon& = 默认图标
+gui.config.comment.title.general=有关显示信息的常规设置
+gui.config.comment.title.servermessages=自定义服务器信息 \n &ip& = 服务器 IP 占位符 \n &name& = 服务器名称占位符 \n &motd& = 服务器 MOTD 占位符 \n &icon& = 默认图标 \n &players& = 服务器玩家数占位符
+gui.config.comment.title.statusmessages=自定义其他状态信息，比如： \n主菜单，加载游戏，局域网游戏或者单人游戏
+gui.config.hoverMessage.access=**需要先勾选“%1$s”才能使用此功能**
+gui.config.hoverMessage.defaultempty=**默认信息不为空，且必须合法**
+gui.config.name.advanced.enablecommands=启用命令
+gui.config.name.advanced.enablepergui=启用 Per-GUI 系统
+gui.config.name.advanced.enableperitem=启用 Per-Item 系统
+gui.config.name.advanced.guimessages=GUI 信息
+gui.config.name.advanced.itemmessages=物品信息
+gui.config.name.advanced.splitcharacter=分割字符
+gui.config.name.biomemessages.biomemessages=生物群系信息
+gui.config.name.default.exampletext=输入信息……
+gui.config.name.dimensionmessages.dimensionicon=默认生物群系图标
+gui.config.name.dimensionmessages.dimensionmessages=维度信息
+gui.config.name.general.clientid=客户端 ID
+gui.config.name.general.defaulticon=默认图标
+gui.config.name.general.detectcursemanifest=检测 Curse Manifest
+gui.config.name.general.detectmultimcmanifest=检测 MultiMC 实例
+gui.config.name.general.detecttechnicpack=检测 Technic 包
+gui.config.name.general.showbiome=显示生物群系
+gui.config.name.general.showdimension=显示维度
+gui.config.name.general.showstate=显示游戏状态
+gui.config.name.general.showtime=显示运行时间
+gui.config.name.servermessages.servericon=默认服务器图标
+gui.config.name.servermessages.servermessages=服务器信息
+gui.config.name.servermessages.servermotd=默认服务器 MOTD
+gui.config.name.servermessages.servername=默认服务器名称
+gui.config.name.statusmessages.lanmsg=局域网游戏信息
+gui.config.name.statusmessages.loadingmsg=加载信息
+gui.config.name.statusmessages.mainmenumsg=主菜单信息
+gui.config.name.statusmessages.singleplayermsg=单人游戏信息
+gui.config.title.advanced=高级设置
+gui.config.title.biome.editspecificbiome=CraftPresence - 编辑生物群系 (%1$s)
+gui.config.title.biomemessages=自定义生物群系信息
+gui.config.title.dimension.editspecificdimension=CraftPresence - 编辑维度 (%1$s)
+gui.config.title.dimensionmessages=自定义维度信息
+gui.config.title.editor.addnew=CraftPresence - 添加新值
+gui.config.title.general=常规设置
+gui.config.title.server.editspecificserver=CraftPresence - 编辑服务器 (%1$s)
+gui.config.title.servermessages=自定义服务器信息
+gui.config.title.statusmessages=自定义状态信息
+gui.config.title=CraftPresence 配置 GUI

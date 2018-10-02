@@ -98,7 +98,7 @@ guiText.tooltip.removeFilterHint=§7§oSneak + Left-Click: remove item from filt
 guiText.tooltip.regulatorTooltip=§bItem Regulation Enabled\nWhen inserting: only insert when inventory has fewer than this many of the item.\nWhen extracting: only extract if inventory has more than this many of the item.
 guiText.tooltip.fluidRegulatorTooltip=§bFluid Regulation Enabled\nWhen transferring from router: only insert when destination tank(s) are less than this full.\nWhen transferring to router: only extract if source tank(s) are more than this full.
 guiText.tooltip.tunedValue=§bTuned Value (%d → %d)
-guiText.tooltip.fluidTransferTooltip=§bMax Fluid Transfer\nMaximum (in mB) that will be attempted in one operation.\nThis is still limited by the router's overall transfer\nrate (Fluid and Speed Upgrades)
+guiText.tooltip.fluidTransferTooltip=§bMax Fluid Transfer\nMaximum (in mB) that will be attempted in one operation.\nThis is still limited by the router's overall transfer rate (Fluid and Speed Upgrades)
 guiText.tooltip.maxFluidPerOp=• Transfer Rate: %d mB every %d ticks (%d mB / tick)
 guiText.tooltip.extruder2.template=§bTemplate\nPlace copies of block items here to be used as the extruder template.\n• §eLeft-Click:§7 reduce stack size\n• §eRight-Click:§7 increase stack size\n• §eShift + Left-Click:§7 clear stack
 guiText.tooltip.activator.action=Action
@@ -108,6 +108,8 @@ guiText.tooltip.distributor.strategy=Distribution Strategy
 guiText.tooltip.mouseOverHelp.false=Click to activate mouse-over help
 guiText.tooltip.mouseOverHelp.true=Mouse-over help active \n§7Click to deactivate
 guiText.tooltip.xpVacuum.ejectFluid=XP Fluids Ejected
+guiText.tooltip.fluidForceEmpty.false=§bForce Emptying Disabled \nIf the block next to the router is not completely empty, no fluid will be transferred out of the router.
+guiText.tooltip.fluidForceEmpty.true=§bForce Emptying Enabled \nFluid will always be transferred out of the router if possible, even if that would cause fluid to be lost (e.g. emptying water into an existing water block)
 
 guiText.label.direction=Direction
 guiText.label.modules=Modules
@@ -137,6 +139,7 @@ guiText.label.matchAll.false=Match Any
 guiText.label.matchAll.true=Match All
 guiText.label.xpVacuum=XP Type
 guiText.label.xpVacuum.eject=Eject
+guiText.label.fluidForceEmpty=Force
 
 guiText.popup.filter=§a§nFilter \n \n§rPlace ghost copies of items here to filter what this module works on.  If the item in the router's buffer doesn't match the filter item(s) here, then the module will not run.  See also the filter control buttons below.
 guiText.popup.filterControl=§a§nFilter Control \n \n§rThese buttons control how the filter is applied to the item in the router's buffer. See individual tooltips on each button for more information.
@@ -151,13 +154,14 @@ guiText.popup.detector.signalLevel=§a§nRedstone Signal Level \n \n§rHere can 
 guiText.popup.detector.weakStrong=§a§nRedstone Signal Strength \n \n§r- A §oweak§r redstone signal will power the adjacent block only; \n- A §ostrong§r redstone signal will power the adjacent block and blocks adjacent to that block (like a vanilla Repeater).
 guiText.popup.flinger.speed=§a§nFlinger Speed \n \n§rThis is the speed which is imparted to the item when thrown from the router. \n \nAs a rough guide, a speed of 1.0 and a pitch of 30 (and a horizontal module facing) will fling an item about 20 blocks in that direction.
 guiText.popup.flinger.pitch=§a§nFlinger Pitch \n \n§rThis is the vertical offset in degrees: \n \n- When the module faces horizontally, it's the offset up or down from that horizontal (X or Z) axis \n- When the module faces up or down, it's the offset from the vertical (Y) axis.
-guiText.popup.flinger.yaw=§a§nFlinger Speed \n \n§rThis is the horizontal offset in degrees: \n \n- When the module faces horizontally, it's the offset left or right from that horizontal (X or Z) axis \n- When the module faces up or down, it's the offset from the vertical (Y) axis.  This is only useful if you also have a non-zero pitch.
+guiText.popup.flinger.yaw=§a§nFlinger Yaw \n \n§rThis is the horizontal offset in degrees: \n \n- When the module faces horizontally, it's the offset left or right from that horizontal (X or Z) axis \n- When the module faces up or down, it's the offset from the vertical (Y) axis.  This is only useful if you also have a non-zero pitch.
 guiText.popup.fluid.maxTransfer=§a§nMax Transfer \n \n§rThis is the maximum amount of fluid that the router will attempt to transfer in one operation. \n \nNote that the transfer rate is still limited by the number of Fluid Transfer Upgrades in the router, as well as the transfer rate of the external tank (if there is one). So this number should be considered a limit rather than a target.
 guiText.popup.fluid.direction=§a§nTransfer Direction \n \n§rHere you can control whether the router pushes fluid out to the world or tank, or pulls fluid from the world or tank.
+guiText.popup.fluid.forceEmpty=§a§nXP Force Empty \n \n§rWhen you empty a bucket of any fluid into a pool of that fluid in Minecraft, the fluid in the bucket is lost & gone forever. This is not necessarily desirable. \n \nThe Fluid Module, by default, will not attempt to pour out any fluid into the world, unless the target block is completely empty, i.e. air.  You can override this behaviour by toggling the "Force" button; when enabled, the Fluid Module will not hesitate to pour fluid into an existing pool - just be aware that you may lose fluids by doing this...
 guiText.popup.extruder2.template=§a§nTemplate \n \n§rHere you can define a template of blocks to extrude; note that real blocks are not placed, but rather special uncraftable & unlootable template blocks. \n \nPut ghost copies of blocks in the template to define what is extruded; blocks will be extruded from left to right and top to bottom in order. You can extrude more than one of each block if you want (left- or right-click blocks in the template to adjust). \n \nNote you can also place non-block items (e.g. a stick) in the template; while they obviously can't be placed, they are used as spacers to "place" one or more air blocks in the pattern.
 guiText.popup.xpVacuum=§a§nXP Collection Type \n \n§rHere you can define how XP orbs are collected. The options available depend on what other mods are installed and what experience fluids are available; however vanilla Bottles o' Enchanting are always available. \n \nIf collecting experience in fluid form, you must either insert a tank into the router's buffer capable of storing fluid by the mB (i.e. not a vanilla bucket), or place a tank adjacent to the router and check the Eject button below.
 guiText.popup.xpVacuum.eject=§a§nXP Fluid Ejection \n \n§rIf checked, the router will attempt to eject any XP fluid into a suitable adjacent tank (sides checked in order: D, U, N, S, W, E). Note that only XP fluids are considered for ejection, not solid XP items. \n \nThis may be useful if you don't have a mod that provides a tank which can be filled as an item in the router's buffer.
-guiText.popup.distributor.strategy=§a§nDistribution Straregy \n \n§rFour possible strategies exist: \n \n§eRound Robin§r - Each targeted inventory will be attempted in turn. \n \n§eRandom§r - A random inventory is attempted on each tick. \n \n§eNearest First§r - The closest inventory with space to insert will be used. \n \n§eFurthest First§r - The most distant inventory with space to insert will be used.
+guiText.popup.distributor.strategy=§a§nDistribution Strategy \n \n§rFour possible strategies exist: \n \n§eRound Robin§r - Each targeted inventory will be attempted in turn. \n \n§eRandom§r - A random inventory is attempted on each tick. \n \n§eNearest First§r - The closest inventory with space to insert will be used. \n \n§eFurthest First§r - The most distant inventory with space to insert will be used.
 
 # Config GUI
 gui.config.mainTitle=Modular Routers Configuration
