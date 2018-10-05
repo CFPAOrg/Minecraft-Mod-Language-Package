@@ -10,8 +10,10 @@ def del_empty(modid=''):
             if i is not None and i[0] != '#' and '=' in i:
                 il = i.split('=', 1)
                 if il[1].replace('\n', '').replace('\r', '').replace(' ', '') == '':
-                    print(i)
                     continue
+            elif i is not None and i[0] != '#' and i.replace('\n', '').replace('\r', '').replace(' ', '') != '':
+                i = '# ' + i
+                print(i)
             lang_list.append(i)
 
     with open('project/assets/{}/lang/en_us.lang'.format(modid), 'w', encoding='utf-8', errors='ignore') as lang_:
@@ -24,4 +26,13 @@ for modid in os.listdir('project/assets/'):
         continue
     if not os.path.exists('project/assets/{}/lang/zh_cn.lang'.format(modid)):
         continue
-    del_empty(modid)
+
+    isParse = False
+    with open('project/assets/{}/lang/en_us.lang'.format(modid), 'r', encoding='utf-8', errors='ignore') as lang:
+        # 查 #PARSE_ESCAPES 问题
+        for line in lang.readlines():
+            if '#PARSE_ESCAPES' in line:
+                isParse = True
+
+    if not isParse:
+        del_empty(modid)

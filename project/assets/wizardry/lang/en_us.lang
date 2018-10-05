@@ -13,7 +13,8 @@ tile.wizardry:nacre_block.name=Nacre Block
 tile.wizardry:nacre_block_brick.name=Nacre Bricks
 tile.wizardry:mana_magnet.name=Mana Magnet
 tile.wizardry:torikki_grass.name=Torikki Grass
-tile.wizardry:unicorn_trail.name=Unicorn's Trail
+tile.wizardry:unicorn_trail.name=Unicorn Trail
+tile.wizardry:light.name=Light
 
 entity.fairy.name=Fairy
 entity.spirit_wight.name=Spirit Wight
@@ -76,10 +77,10 @@ item.wizardry:light.name=Light
 item.wizardry:halo_real.name=Halo
 item.wizardry:halo_fake.name=Crude Halo
 item.wizardry:halo_creative.name=Creative Halo
-item.wizardry:halo_creative.name=Creative Halo
 item.wizardry:repulsion_bomb.name=Repulsion Bomb
 item.wizardry:vortex_bomb.name=Vortex Bomb
 item.wizardry:sky_dust.name=Sky Dust
+item.wizardry:glue_stick.name=Glue Stick
 
 item.wizardry:glass_orb.fill.0.name=Glass Orb
 item.wizardry:mana_orb.fill.0.name=Mana Orb 0%
@@ -116,8 +117,6 @@ advancement.wizardry.devildust.desc=Melt book in fire to make Devil Dust
 advancement.wizardry.crunch=§oCRUNCH.§a
 advancement.wizardry.crunch.desc=Crash straight through Bedrock to the Underworld above
 
-book.physicsbook.defaulttitle=Physics Book
-
 fluid.nacre_fluid=Nacre
 fluid.mana_fluid=Mana
 
@@ -134,6 +133,7 @@ subtitle.wizardry.bubbling=Liquid bubbles
 subtitle.wizardry.spirit_wight=Spirit whispers
 subtitle.wizardry.spirit_blight=Spirit zaps
 subtitle.wizardry.electric_white_noise=Electrical humming
+subtitle.wizardry.sparkle=Sparkling noises
 
 potion.wizardry.crash=Crash
 potion.wizardry.low_gravity=Feather
@@ -147,7 +147,6 @@ potion.wizardry.zach_corruption=Corruption
 
 item_group.wizardry=Wizardry
 
-jei.recipe.wizardry:fluid=Item Soaking
 jei.recipe.block.wizardry:fluid=Output replaces liquid
 jei.recipe.consumes.wizardry:fluid=Consumes the liquid used
 jei.recipe.requires.wizardry:fluid=Needs %d source blocks of liquid
@@ -161,7 +160,7 @@ wizardry.misc.ctrl=<Ctrl for more info>
 wizardry.misc.save=SAVE
 wizardry.misc.save_error=No codex found in your inventory! Place one in your inventory to save properly.
 wizardry.misc.sneak_expanded=&7<- &8Shift for more info&7 ->
-wizardry.misc.update_link=Update Changelog
+wizardry.misc.update_link=Wizardry Update Changelog
 wizardry.misc.update_checker0=There's a new Wizardry update available.
 wizardry.misc.update_checker1=Your version:
 wizardry.misc.update_checker2=New version:
@@ -177,9 +176,9 @@ wizardry.spell.effect_backup.name=Reinforcements
 wizardry.spell.effect_backup.desc=Summons undead mobs to aid in battle.
 wizardry.spell.effect_backup.desc.duration=Summoned zombies last <DURATION> seconds.
 wizardry.spell.effect_break.name=Break
-wizardry.spell.effect_break.desc=Breaks blocks and damages armor. TODO: Damage armor
+wizardry.spell.effect_break.desc=Breaks blocks and damages armor.
 wizardry.spell.effect_break.desc.area=Breaks up to <AREA> blocks. No effect on entities.
-wizardry.spell.effect_break.desc.potency=Breaks blocks with less than <POTENCY>/4 hardness. Does <POTENCY> damage to a target's armor.
+wizardry.spell.effect_break.desc.potency=Breaks blocks with up to <POTENCY> hardness. Does <POTENCY> damage to a target's armor.
 wizardry.spell.effect_burn.name=Burn
 wizardry.spell.effect_burn.desc=Ignites the target block or entity.
 wizardry.spell.effect_burn.desc.area=Lights all blocks within <AREA> blocks on fire. No effect on entities.
@@ -208,16 +207,19 @@ wizardry.spell.effect_leech.desc.potency=Does half a point of magic damage (1/4 
 wizardry.spell.effect_light.name=Illumination
 wizardry.spell.effect_light.desc=Places a magical light source at the target location.
 wizardry.spell.effect_lightning.name=Lightning
-wizardry.spell.effect_lightning.desc=Shoot a lightning bolt that shocks and stuns a target (Self->Lightning hits what you're looking at. Slated to be reworked).
-wizardry.spell.effect_lightning.desc.range=The lightning bolt can be up to <RANGE> blocks long.
-wizardry.spell.effect_lightning.desc.potency=Deals <POTENCY> lightning damage and lights the target on fire for <POTENCY> seconds.
+wizardry.spell.effect_lightning.desc=Shoot a lightning bolt that shocks and burns everything in its path. Functions slightly differently depending on the previous Shape in the spell.
+wizardry.spell.effect_lightning.desc.range=The lightning bolt and its offshoots can be up to <RANGE> blocks long.
+wizardry.spell.effect_lightning.desc.potency=Deals <POTENCY> lightning damage.
+wizardry.spell.effect_lightning.desc.duration=Entities hit are ignited for <DURATION> seconds.
 wizardry.spell.effect_low_gravity.name=Low Gravity
 wizardry.spell.effect_low_gravity.desc=The target becomes half their weight, jumping high and floating down.
 wizardry.spell.effect_low_gravity.desc.potency=Jump height increased and fall damage decreased per point of <POTENCY>.
 wizardry.spell.effect_low_gravity.desc.duration=The effect lasts half a second for each point of <DURATION>.
 wizardry.spell.effect_phase.name=Phase
-wizardry.spell.effect_phase.desc=The target becomes incorporeal, phasing through blocks temporarily.
+wizardry.spell.effect_phase.desc=The target becomes incorporeal, phasing through blocks temporarily. If cast on blocks, turns an area of blocks incorporeal instead.
 wizardry.spell.effect_phase.desc.duration=The effect lasts for <DURATION> seconds.
+wizardry.spell.effect_phase.desc.area=Affects all blocks within <AREA> blocks of the target block. No effect on entities.
+wizardry.spell.effect_phase.desc.range=Phase effect reaches <RANGE> blocks past the target block. No effect on entities.
 wizardry.spell.effect_place.name=Place
 wizardry.spell.effect_place.desc=Places the selected block.
 wizardry.spell.effect_place.desc.area=Can place blocks in up to <AREA> positions at once.
@@ -268,7 +270,7 @@ wizardry.spell.modifier_increase_speed.short=+ Speed
 wizardry.spell.shape_beam.name=Beam
 wizardry.spell.shape_beam.desc=The spell will affect a beam coming from the caster.
 wizardry.spell.shape_beam.desc.range=Traces a line up to <RANGE> blocks long.
-wizardry.spell.shape_beam.desc.potency=Casts subsequent spell components every 30-<POTENCY> ticks.
+wizardry.spell.shape_beam.desc.potency=Gains <POTENCY> points per cast, runs subsequent spell components after reaching 10 points.
 wizardry.spell.shape_cone.name=Arc
 wizardry.spell.shape_cone.desc=The spell will affect an arc in front of the caster.
 wizardry.spell.shape_cone.desc.range=Maximum distance and spread increased per point of <RANGE>.
@@ -284,7 +286,7 @@ wizardry.spell.shape_touch.desc=The spell will affect what the caster is touchin
 wizardry.spell.shape_zone.name=Zone
 wizardry.spell.shape_zone.desc=The spell will be a circular area, and cast itself persistently.
 wizardry.spell.shape_zone.desc.area=Casts subsequent components on entities and blocks within <AREA> blocks of the center, horizontally.
-wizardry.spell.shape_zone.desc.potency=Casts subsequent components on blocks in range every 70-<POTENCY> ticks, and on entities every 40-<POTENCY> ticks.
+wizardry.spell.shape_zone.desc.potency=Gains <POTENCY> points per cast, runs subsequent spell components after reaching 20 points.
 wizardry.spell.shape_zone.desc.range=Casts subsequent components on entities and blocks up to <RANGE> blocks above the center.
 wizardry.spell.shape_zone.desc.duration=Zone lasts half a second for every point of <DURATION>.
 
@@ -312,8 +314,21 @@ wizardry.update6=yo dawg we heard you like changelogs so we put changelogs in yo
 wizardry.update7=*:･ﾟ✧ᕕ( ᐛ )ᕗ
 
 
+wizardry.table.spell_saved=Spell saved to codex successfully! Open the book and check the new spell recipe tab.
+wizardry.table.no_codex_found=You do not have a codex in your inventory! Once you have one, you can save your spell into the book.
+wizardry.table.codex_found=Codex found, you can save spells.
+wizardry.table.loop_error=You can't create a loop.
+wizardry.table.loop_found=There's a loop somewhere! A spell should start from somewhere with no links to it and not make an infinite cycle.
+wizardry.table.connection_doesnt_work=Those components can't be linked together like that!
+wizardry.table.connection_effect_to_any=An Effect module cannot link to another components. They can only be linked from other components.
+wizardry.table.connection_event_to_something=To make your spell use that Event component, hook your Shape TO it, then hook the Event TO the Effect. Shape -> Event -> Effect
 
 
+wizardry.book.shift_scroll=Shift + Scroll to flip pages
+wizardry.book.open_recipe_tab=Open recipe tab for more details
+
+wizardry.book.spell_recipe_recipe=Spell Recipe
+wizardry.book.spell_recipe_structure=Spell Structure
 
 wizardry.book.title=Spellforger's Codex
 wizardry.book.subtitle=Not By Raziel
@@ -326,13 +341,13 @@ wizardry.book.steps.mana.title=Step 1: Mana
 wizardry.book.steps.mana.desc=Learn about what mana is and why you want it so badly
 wizardry.book.steps.mana.content0=Of all the energy sources a wizard can draw on, mana is the best. Light blue pools of this watery liquid can be found throughout the world; it also manifests itself in people and objects, giving a trained wizard a constant source of energy to draw on. With it, you can begin to be a threat in the world of wizardry, and begin to work magic.
 wizardry.book.steps.mana.content1=A fair warning, the liquid is barely stable. Think of it as a river. A small flow of water is nice to relax in and drift along with, but a raging rapid is not something you want to jump in the way of. Touching it will drain your hunger as it tries to purge your body, while also making you float due to the sheer energy of the liquid. As a result, it's next to impossible to drown in it.
-wizardry.book.steps.mana.content2=Now of course, we want to get this liquid into our bodies to use it. To get mana inside of you, craft a syringe and craft that syringe with a bucket of liquid power. You now have a mana syringe that you can inject straight into your bloodstream.
+wizardry.book.steps.mana.content2=Now of course, we want to get this liquid into our bodies to use it. To get mana inside of you, craft a syringe and craft that syringe with a mana orb or hold down the syringe pointing at some mana liquid in the world. You now have a mana syringe that you can inject straight into your bloodstream.
 wizardry.book.steps.mana.content3=Just like anything else, too much mana is a bad thing.. Drinking too much water can pose a threat to your health. Doing the same with mana is several magnitudes more dangerous. The body can only store a certain amount before it starts to manifest side effects known as "mana burn".<br>Imagine you took all of the world's animal life, gave them all pure caffeine, compressed them into a single squirrel, and then made that squirrel a wizard.<br>That's what having mana burn is like.
 wizardry.book.steps.mana.content4=Finally, you can store the mana liquid into orbs. Simply craft glass orbs and throw them a block of liquid mana, it will instantly fill up. You now have portable mana that you will need later. Do stock up on this stuff, you'll need a lot of it.
 
 wizardry.book.steps.garbs.title=Step 2: Garbs
 wizardry.book.steps.garbs.desc=Learn about wardrobe you should be using
-wizardry.book.steps.garbs.content0=Once you've injected mana, you might be wondering why you don't have a bar showing you how much you have. Well although the mana is flowing in your blood stream right now, you simply cannot channel it yet.<br>Angels are bits of divinity. Their Grace allows them to have a constant supply of mana... but you don't have it that easy. You'll have to make do with what's called a crude haloInv, instead of the glorious one of an angel.<br> Once you equip the crude haloInv, you will be able to see your mana bar.
+wizardry.book.steps.garbs.content0=Once you've injected mana, you might be wondering why you don't have a bar showing you how much you have. Well although the mana is flowing in your blood stream right now, you simply cannot channel it yet.<br>Angels are bits of divinity. Their Grace allows them to have a constant supply of mana... but you don't have it that easy. You'll have to make do with what's called a crude halo, instead of the glorious one of an angel.<br> Once you equip the crude halo, you will be able to see your mana bar.
 wizardry.book.steps.garbs.content1=Next up is the cape. Capes are not storages, but they are conduits, aiding wizards in mana transference and reducing mana loss. Once you craft yourself a cape, wear it and do not take it off. The cape will get stronger the longer you wear it. At first, it barely reduces spell cost, but after you wear it for prolonged periods of time, it can reduce mana spell cost down to a quarter of what it was.
 wizardry.book.steps.garbs.content2=Capes may be glorious and powerful, but they are fickle. They will easily give up their loyalty to another, because one wizard is the same as another to them. If you can cheat a master out of their cape, it's the same as if you'd worn it for years yourself.<br>So if you do happen to find a beautiful, billowing cape on another's rapidly-cooling body, there's no harm in peeling it off and trying it on. And really, does it matter how they died? A cape is a cape.
 
@@ -343,7 +358,7 @@ wizardry.book.steps.nacre.content1=To make a nacre pearl, take a glass orb and t
 
 wizardry.book.steps.structures.title=Step 4: Structures
 wizardry.book.steps.structures.desc=Learn about the structure you will need to build
-wizardry.book.steps.structures.content0=You've got your mana, you've got your crooked haloInv, you've got your beautiful cape, and you've got your shimmering nacre pearls. But how do you actually infuse a spell into a pearl? Well, we just need one last device before we get there.
+wizardry.book.steps.structures.content0=You've got your mana, you've got your crooked halo, you've got your beautiful cape, and you've got your shimmering nacre pearls. But how do you actually infuse a spell into a pearl? Well, we just need one last device before we get there.
 wizardry.book.steps.structures.content1=The first structure is a Mana Battery. This structure is a massive reservoir of mana.<br>As any wizard will quickly learn, this is the center of your powers. The Mana Battery's core can absorb mana far more efficiently than any other method of storage. To fill it, set mana orbs on the pillars in its structure; it will discharge its power to mana orbs outside of the battery's pillars, allowing for automatic and efficient mana transfer out of the battery.
 wizardry.book.steps.structures.content2=Do note that once you place the mana battery block down, you will see red dots highlighting where blocks of the structures are going to be. Shift right click the block to display a hologram of the structure itself. Adjust the battery's position as you please. Once you finish the structure, no red dots should be flashing.
 wizardry.book.steps.structures.content3=This structure is technically not required. You could manually replace emptied mana orbs in your other structures to feed them mana, but you'll quickly find that that task is very annoying and tedious to do.
@@ -370,7 +385,7 @@ wizardry.book.items_blocks.wisdom_wood.content0=&oWisdom wood is a form of wood 
 wizardry.book.items_blocks.wisdom_wood.content1=Any type of wood can be converted into wisdom wood simply by throwing the wood into liquid mana.
 
 wizardry.book.items_blocks.crude_halo.title=Crude Halo
-wizardry.book.items_blocks.crude_halo.content0=&oThe crude haloInv is a bad representation of divinity. While it's nowhere near as potent as the Grace of an angel, it... does the job of holding mana, if not bestowing it.&r
+wizardry.book.items_blocks.crude_halo.content0=&oThe crude halo is a bad representation of divinity. While it's nowhere near as potent as the Grace of an angel, it... does the job of holding mana, if not bestowing it.&r
 wizardry.book.items_blocks.crude_halo.content1=If you like wearing baubles and trinkets, you can wear it on your head alongside your armor. Otherwise, it'll have to take the place of your helmet. It may not look as fancy as the real deal, but it'll do.
 
 wizardry.book.items_blocks.orbs.title=Orbs
@@ -380,19 +395,19 @@ wizardry.book.items_blocks.orbs.content1=Mana orbs are made simply by throwing g
 wizardry.book.mobs.fairies.title=Fairies
 wizardry.book.mobs.fairies.desc=Learn about fairies
 wizardry.book.mobs.fairies.content1=The most important attribute of what we call 'fairies' -- and by far the first thing that most young wizards notice -- is that they are extremely annoying. Although they actually appear to be some kind of by-product of mana usage and have nothing resembling sentience, they have a remarkable knack for being in exactly the wrong place at the wrong time. Any time a wizard attempts some great feat of concentration anywhere near fairies, it is almost guaranteed that the little blighters will do their utmost to distract the magical process.
-wizardry.book.mobs.fairies.content2=Like unicorns, however, they are not entirely useless: if you can catch one and squeeze it into a jar, it provides a magnificent light source. Also, you can use them to make excellent jam.
+wizardry.book.mobs.fairies.content2=Like unicorns, however, these underworld-native creatures are not entirely useless: if you can catch one and squeeze it into a jar, it provides a magnificent light source. Also, you can use them to make excellent jam.
 
 wizardry.book.mobs.spirit_wights.title=Spirit Wights
 wizardry.book.mobs.spirit_wights.desc=Learn about spirit wights
-wizardry.book.mobs.spirit_wights.content1=Little is known about these creatures. Those few unfortunate enough to have any interaction with them rarely survive the experience; as a result, the few observations that survive are more to do with how quickly they can disassemble the average wizard than with their patterns or behaviours. As a result, the only real advice for dealing with them is this: if you see one, run. And don't stop.
+wizardry.book.mobs.spirit_wights.content1=Little is known about these underworld-native creatures. Those few unfortunate enough to have any interaction with them rarely survive the experience; as a result, the few observations that survive are more to do with how quickly they can disassemble the average wizard than with their patterns or behaviours. As a result, the only real advice for dealing with them is this: if you see one, run. And don't stop.
 wizardry.book.mobs.spirit_wights.content2=It is possible to fight a spiritwight. It is even theoretically possible to win, in the same way that it is theoretically possible to win a fist fight with a dragon. Strong potions of harming have proven to have some effect on them, in so far as these things can be measured, and it is possible that a wizard of exceptional power and skill may be able to craft weapons and armour strong enough to successfully oppose them. If this is you, do make sure to tell people; they probably won't believe you, but at least someone will know.
 wizardry.book.mobs.spirit_wights.content3=If you decline to fight them -- which, let's be honest, is the only sensible choice -- then do not be deceived by their sluggishness. Spiritwights are slow, lumbering things, but this belies their relentless nature. Once a spiritwight has caught the scent of a wizard, they will hunt them almost to the ends of the earth. When you run from them, keep looking over your shoulder. and don't ever stop for long. They certainly won't.
 wizardry.book.mobs.spirit_wights.content4=It is one final point of interest that spiritwights reserve their hatred for wizards. As far as we know, they show no interest in any other creature. A unicorn may go where a wizard fears to tread, and face no danger. There must be some reason for this, but who knows it.
 
 wizardry.book.mobs.unicorns.title=Unicorns
 wizardry.book.mobs.unicorns.desc=Learn about unicorns
-wizardry.book.mobs.unicorns.content1=Please, make no mistake; these are not the gentle, damsel-loving creatures of song and story. The tales I heard as a childRing about unicorns were keen to stress their beauty and intelligence, their kindness and faithfulness. Real unicorns are better described as 'stroppy'.
-wizardry.book.mobs.unicorns.content2=These creatures are savage and territorial, sharp of horn and hard of hoof. As far as we can tell, they possess a burning desire to kick, stab or otherwise main any animal that crosses their path - wizards included - and will even resort to biting if in the mood. They seem to harbour a particular grudge against fairies, which they eat when possible.
+wizardry.book.mobs.unicorns.content1=Please, make no mistake; these are not the gentle, damsel-loving creatures of song and story. The tales I heard as a child about unicorns were keen to stress their beauty and intelligence, their kindness and faithfulness. Real unicorns are better described as 'stroppy'.
+wizardry.book.mobs.unicorns.content2=These underworld-native creatures are savage and territorial, sharp of horn and hard of hoof. As far as we can tell, they possess a burning desire to kick, stab or otherwise maim any animal that crosses their path - wizards included - and will even resort to biting if in the mood. They seem to harbor a particular grudge against fairies, which they eat when possible.
 wizardry.book.mobs.unicorns.content3=Some have argued that unicorns have little practical value, but their horns have potent magical properties. Also - as I've said elsewhere - fairies are remarkably annoying, so anything that keeps their numbers down can't be all bad.
 
 wizardry.book.dimensions.underworld.title=Underworld
