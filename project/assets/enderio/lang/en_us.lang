@@ -273,6 +273,7 @@ item.item_material.ingot_crude_steel.name=Crude Steel Ingot
 item.item_material.ingot_crystalline_alloy.name=Crystalline Alloy Ingot
 item.item_material.ingot_melodic_alloy.name=Melodic Alloy Ingot
 item.item_material.ingot_stellar_alloy.name=Stellar Alloy Ingot
+item.item_material.ingot_vivid_alloy.name=Vivid Alloy Ingot
 
 item.item_rod_of_return.name=Rod of Return
 item.item_rod_of_return.tooltip.detailed.line1=Returns the user to a Telepad
@@ -656,6 +657,10 @@ enderio.power.format.pertick=%s µI/t
 enderio.power.format.name=Micro Infinity (%s)
 enderio.power.format.details=A unit of energy
 
+enderio.temperature.format.deg_c=%s °C
+
+enderio.format.percent_efficiency=%s%% efficiency
+
 enderio.fluid.millibucket.format=%s mB
 enderio.fluid.millibucket.format.name=%s mB of %s
 enderio.fluid.millibucket.format.of=%s / %s mB
@@ -667,7 +672,6 @@ enderio.fuel.tooltip.generates=Generates %s at %s
 enderio.fuel.tooltip.burnTime=Burn time %s ticks
 enderio.coolant.tooltip.heading=Coolant
 enderio.coolant.tooltip.degreesPerBucket=%s°C per bucket
-
 
 enderio.tooltip.anvilupgrades=Anvil Upgrades:
 
@@ -801,10 +805,12 @@ enderio.top.action.header.post=:
 enderio.top.action.none=§4nothing
 
 enderio.top.range.header.pre=§eRange: §f
+enderio.top.range.header.post=
 # enderio.top.range is server-side only
 enderio.top.range=%sx%sx%s
 
 enderio.top.machine.side.pre=§eSide: §f
+enderio.top.machine.side.post=
 enderio.top.machine.side.north=North
 enderio.top.machine.side.south=South
 enderio.top.machine.side.west=West
@@ -812,6 +818,7 @@ enderio.top.machine.side.east=East
 enderio.top.machine.side.up=Up
 enderio.top.machine.side.down=Down
 enderio.top.machine.ioMode.pre=§eMode: §f
+enderio.top.machine.ioMode.post=
 enderio.top.machine.outofpower=§4No Power
 enderio.top.machine.active=active
 enderio.top.machine.idle=idle
@@ -819,6 +826,7 @@ enderio.top.machine.idle=idle
 enderio.top.progress.outofpower=§4Out of Power
 
 enderio.top.redstone.header.pre=§eCurrently: §f
+enderio.top.redstone.header.post=
 enderio.top.redstone.true=On
 enderio.top.redstone.false=Off
 
@@ -836,13 +844,17 @@ enderio.top.suffix.levels=\u0020Levels
 enderio.top.suffix.items=\u0020Items
 enderio.top.suffix.percent=\u0020%
 
+enderio.top.tank.content.pre=
 enderio.top.tank.content.middle=/
 enderio.top.tank.content.post=\u0020mB
 enderio.top.tank.content.empty=Empty
 
 enderio.top.tank.header.input.pre=§eInput Tank: §f
+enderio.top.tank.header.input.post=
 enderio.top.tank.header.output.pre=§eOutput Tank: §f
+enderio.top.tank.header.output.post=
 enderio.top.tank.header.storage.pre=§f
+enderio.top.tank.header.storage.post=
 
 
 # Fluids
@@ -1202,6 +1214,11 @@ item.item_inventory_charger.tooltip.detailed.line1=Charges all items in your inv
 item.item_inventory_charger_vibrant.name=Vibrant Inventory Charger
 item.item_inventory_charger_vibrant.tooltip.detailed.line1=Charges all items in your inventory. Right-click to enable/disable.
 
+enderio.network.bad_config=ERROR: The Ender IO config value "%s.%s" has different values on the server you are connecting to than in your local installation. As this value influences how the game is started up, it is now too late to use the server-side value. Continuing is not possible. To fix this, manually synchronize the server and client configuration files for Ender IO, or set this value to "%s" manually.
+enderio.network.autosync.connected=§4§lThis value is determined by the server!\u000a§e%s
+enderio.network.autosync.offline=%s\u000a§oThis value must be kept in sync with the server!
+enderio.network.manusync=%s\u000a§oThis value will be determined by the server.
+
 #PARSE_ESCAPES
 # ^ having this in the first line allows us to use "\uXXXX" escapes in this file
 
@@ -1368,6 +1385,8 @@ enderio.gui.redstone_signal_strength=Strong Signal
 
 enderio.gui.enabled=Enabled
 enderio.gui.disabled=Disabled
+
+enderio.gui.conduit.network.unloaded=Conduit partially in unloaded chunk(s)
 
 # Advancements
 
@@ -1788,7 +1807,7 @@ tile.block_killer_joe.tooltip.detailed.line1=Attacks nearby creatures when suppl
 #Obelisks
 
 tile.block_attractor_obelisk.name=Attractor Obelisk
-tile.block_attractor_obelisk.tooltip.detailed.line1=Draws mobs towards it
+tile.block_attractor_obelisk.tooltip.detailed.line1=Entices mobs to walk to it
 tile.block_attractor_obelisk.tooltip.detailed.line2=Specify the mobs to effect by placing their souls within the device
 
 tile.block_aversion_obelisk.name=Aversion Obelisk
@@ -1798,7 +1817,7 @@ tile.block_inhibitor_obelisk.name=Inhibitor Obelisk
 tile.block_inhibitor_obelisk.tooltip.detailed.line1=Prevents teleporting within  its area of effect
 
 tile.block_relocator_obelisk.name=Relocator Obelisk
-tile.block_relocator_obelisk.tooltip.detailed.line1=Relocates mobs that spawn within its area of effect
+tile.block_relocator_obelisk.tooltip.detailed.line1=Relocates mobs that spawn within its area of effect towards it
 
 tile.block_weather_obelisk.name=Weather Obelisk
 tile.block_weather_obelisk.tooltip.detailed.line1=Changes the current weather
@@ -1933,6 +1952,13 @@ tile.block_impulse_hopper.tooltip.detailed.line1=Takes inputed items and only ou
 tile.block_crafter.name=Crafter
 
 tile.block_simple_crafter.name=Simple Crafter
+
+tile.block_lava_generator.name=Lava Heat Exchanger
+tile.block_lava_generator.tooltip.detailed.line1=Generates energy by cooling down lava.
+tile.block_lava_generator.tooltip.detailed.line2=Make sure it doesn't overheat!
+tile.block_lava_generator.tooltip.detailed.line3=Can be cooled by placing cold liquids or ice around it.
+enderio.gui.lavagen.heat=Heat
+
 
 # Types. smelting=Alloy Smelter Speed,
 # area=all machines "area" attribute (e.g. farm),
