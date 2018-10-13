@@ -44,6 +44,7 @@ ie.manual.entry.industrialwires.mechConv1=如水车或旋转能马达（见第3�
 ie.manual.entry.industrialwires.mechConv2=损失一部分能量。<br>作为一个小的额外的“机械能转换器”系列，其中还包含了旋转能马达：它消耗IF以产生IE旋转能。 与转换器一样，这不是无损过程。
 ie.manual.entry.industrialwires.mech_mb.name=机械性多模块结构
 ie.manual.entry.industrialwires.mech_mb.subtext=
+ie.manual.entry.industrialwires.mech_mb=机械性多方块结构主要有两个功能: 储存大量能量，以及将 DC (EU的传输名) 转换为 FE (FLUX的传输名以及其他一些能量), 反之亦然。<br> 多方块结构是通过将一些所需的部件 (请参见 <link;industrialwires.mech_mb_parts;here;0>) 放成一排, 并在任一侧添加两个重型工程模块, 彼此堆叠在一起来形成的。<&0> 上述部分显示了具有一个铅飞轮的储能装置的示意图。多方块结构应使用工程师锤右击位于上方的重型工程块来完成。<br> §lMechanical§r: 某些组件的运行不能超过其最大速度 (以每秒的弧度标定)。如果超过了此速度, 多方块会在在超过最大速度10%% 时被破坏 (5%% 的概率破坏部分部件), 并伴随有剧烈的爆炸, 通常会对周围的实体造成伤害。<link;industrialwires.mech_mb_parts;speedometer;6> 可用于检查多方块结构的速度。由于轻微的摩擦, 多方块结构的速度会随着时间的推移而以每小时5%%减慢。<br> §lElectrical§r: 电可以传输给相邻的用电设备。每节只传输一种电力。<br> 所有的 AC 和 DC 都可以划分为两种主要的变体: 单相和四相。大多数大功率部件需要四相电力。AC 有一个附加属性: 同步或异步 (以多方块结构的速度为参照)。这仅适用于整流/整流部件:\n从外部源添加的电源是异步的, 多方块结构 (通过线圈或直流换向) 产生的 AC 是同步的。只有同步 AC 可以通过机械多方快结构纠正 (转换为 DC), 试图纠正异步交流将产生一个不可用的波形。\n如果多方块结构的速度在 20 rad/s的 10%%以内，且提供的 AC 持续稳定: 在此速度机械整流工作于异步 AC 电流下。\n<br> §l能量存储§r: 正如前面提到的, 机械多方块结构的主要用途之一是储能。储能 (焦耳, 一焦耳是 <config;d;iwFluxPerJoule> Flux) 可以被计算作为 0.5 * I * w²其中w 是多方块结构的速度 (rad/s), I 是此时的惯量。前者由 <link;industrialwires.mech_mb_parts;speedometer;6> 得到, 后者是多方块结构的每个部分的惯量的总和 (可以在条目上找到<link;industrialwires.mech_mb_parts;mechnical multiblock parts;0>)。
 ie.manual.entry.industrialwires.mech_mb_parts.name=机械性多方块部件
 ie.manual.entry.industrialwires.mech_mb_parts.subtext=
 ie.manual.entry.industrialwires.panel_creator.name=面板创建器
