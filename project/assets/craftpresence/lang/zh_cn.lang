@@ -1,3 +1,4 @@
+## CONFIG GUI - BUTTONS AND NAMES ##
 #PARSE_ESCAPES
 craftpresence.command.assets.large.header=§6§lDiscord 大图标材质：§r %1$s
 craftpresence.command.assets.small.header=§6§lDiscord 小图标材质：§r %1$s
@@ -13,15 +14,22 @@ craftpresence.command.unrecognized=§c§l未知的命令 - 请使用 §6§l/craf
 craftpresence.command.usage.assets=§lCraftPresence - Assets 子命令：\n §6§llarge §r- 以大的 Discord 图标材质形式查看 \n §6§lsmall §r- 以小的 Discord 图标材质形式查看 \n §6§lall §r- 查看所有 Discord 材质
 craftpresence.command.usage.main=§lCraftPresence - 子命令：\n §6§lreboot §r- 重启 RPC \n §6§lshutdown §r- 关闭 RPC \n §6§lreload §r- 基于配置文件重载 CraftPresence 数据 \n §6§lconfig §r- 打开 CraftPresence 的配置 GUI \n §6§lview §r- 查看各种各样的显示数据 \n §6§lhelp §r- 查看本页面
 craftpresence.command.usage.view=§lCraftPresence - View 子命令：\n §6§lcurrentData §r- 以文字形式显示你当前的 RPC 数据 \n §6§lassets §r- 显示所有可用的材质图标 \n §6§ldimensions §r- 显示所有的维度名称
+craftpresence.defaults.placeholder.ign=&name&
+craftpresence.defaults.placeholder.pack=&name&
 craftpresence.defaults.placeholder.players=&current& / &max& 玩家
+craftpresence.defaults.placeholder.time=&worldtime&
 craftpresence.defaults.servermessages.servermotd=Minecraft 服务器
+craftpresence.defaults.special.vivecraft=通过 Vivecraft 玩 VR 游戏
 craftpresence.defaults.state.lan=正在局域网联机游玩
 craftpresence.defaults.state.loading.status=状态：%1$s
 craftpresence.defaults.state.loading=正在加载游戏
 craftpresence.defaults.state.mainmenu=处于主菜单界面
 craftpresence.defaults.state.mcversion=Minecraft %1$s
 craftpresence.defaults.state.singleplayer=正在单人游戏游玩
+craftpresence.logger.error.config.defaultmissing=属性“%1$s”缺少默认值，添加到属性...
 craftpresence.logger.error.config.emptyprop=Empty Property Detected ("%1$s"), setting property as default...
+craftpresence.logger.error.config.invalidicon.post=成功将属性“%1$s”中的图标设置为“%2$s”
+craftpresence.logger.error.config.invalidicon.pre=属性“%2$s”中的图标“%1$s”无效，选择随机有效图标...
 craftpresence.logger.error.config.invalidprop=Invalid Property Detected ("%1$s"), removing property...
 craftpresence.logger.error.config.save=Failed to load or save Configuration
 craftpresence.logger.error.discord.asset.failure=无法分配图像，请反馈模组问题！
@@ -50,6 +58,7 @@ craftpresence.logger.info.technic.loaded=Found Technic Pack Data! ( Name: "%1$s"
 craftpresence.logger.warning.config.conflict.biomestate=showCurrentBiome 和 showGameState 都被启用，优先显示 showGameState！
 craftpresence.logger.warning.config.conflict.pergui=enablePerGUI 和 showGameState 都被启用，优先使用 showGameState！
 craftpresence.logger.warning.config.empty.clientid=您的客户端 ID 为空，可能无法正常工作……
+craftpresence.logger.warning.debugmode=你正在调试环境中运行 CraftPresence，某些功能可能无法正常运行！
 craftpresence.logger.warning.fingerprintviolation=检测到无效证书，此 Build 将无法获得支持！
 gui.config.comment.advanced.enablecommands=允许 CraftPresence 使用命令\n（在重启游戏后起效）
 gui.config.comment.advanced.enablepergui=允许 CraftPresence 根据你的 GUI 更改它的显示，注意以下内容： \n- 这可能降低性能\n- 需要 GUI 信息中的选项
@@ -76,7 +85,12 @@ gui.config.comment.servermessages.servername=未防止出现空服务器名称�
 gui.config.comment.statusmessages.lanmsg=局域网游戏时显示的信息\n（只有在状态启用情况下才会显示）
 gui.config.comment.statusmessages.loadingmsg=当加载游戏时，显示的信息
 gui.config.comment.statusmessages.mainmenumsg=当处于主界面时，显示的信息
+gui.config.comment.statusmessages.placeholder.gametimemsg=使用占位符 &time& 的信息\n可用占位符：\n - &worldtime& = 当前世界时间，格式为 HH:MM
+gui.config.comment.statusmessages.placeholder.packmsg=使用有效的整合（Curse，Twitch，Technic 或 MultiMC）时，在富文本信息中中显示的消息\n可用的占位符：\n- &name& = 整合包名称
+gui.config.comment.statusmessages.placeholder.playeramountmsg=用于 &players& 占位符的信息\n可用的占位符：\n - &current& = 当前玩家数量\n - &max& = 最大玩家数量
+gui.config.comment.statusmessages.placeholder.playermsg=用于 &ign& 的占位符信息\n可用占位符： \n- &name& = 你的用户名
 gui.config.comment.statusmessages.singleplayermsg=单人游戏下信息显示\n（仅在状态开启情况下显示）\n &ign& = 你的 Minecraft 用户名\n &time& = 你的游戏时间
+gui.config.comment.statusmessages.special.vivecraftmsg=使用 ViveCraft 时在富文本信息中显示的消息
 gui.config.comment.title.advanced=自定义模组相关的特定细节
 gui.config.comment.title.biomemessages=自定义生物群系信息 \n &biome& = 生物群系占位符 \n &id& = 生物群系 ID 占位符
 gui.config.comment.title.dimensionmessages=自定义维度信息 \n &dimension& = 维度名称占位符 \n &id& = 维度 ID 占位符 \n &icon& = 默认维度图标
@@ -85,6 +99,8 @@ gui.config.comment.title.servermessages=自定义服务器信息 \n &ip& = 服�
 gui.config.comment.title.statusmessages=自定义与不同游戏状态相关的信息
 gui.config.hoverMessage.access=**需要先勾选“%1$s”才能使用此功能**
 gui.config.hoverMessage.defaultempty=**默认信息不为空，且必须合法**
+gui.config.hoverMessage.valuename=用于标识此值的名称
+gui.config.message.remove=**删除消息文本以删除此值**
 gui.config.name.advanced.enablecommands=启用命令
 gui.config.name.advanced.enablepergui=启用 Per-GUI 系统
 gui.config.name.advanced.enableperitem=启用 Per-Item 系统
@@ -110,7 +126,12 @@ gui.config.name.servermessages.servername=默认服务器名称
 gui.config.name.statusmessages.lanmsg=局域网游戏信息
 gui.config.name.statusmessages.loadingmsg=加载信息
 gui.config.name.statusmessages.mainmenumsg=主菜单信息
+gui.config.name.statusmessages.placeholder.gametimemsg=游戏时间占位符
+gui.config.name.statusmessages.placeholder.packmsg=整合包信息
+gui.config.name.statusmessages.placeholder.playeramountmsg=玩家列表占位符
+gui.config.name.statusmessages.placeholder.playermsg=玩家名称占位符
 gui.config.name.statusmessages.singleplayermsg=单人游戏信息
+gui.config.name.statusmessages.special.vivecraftmsg=ViveCraft 信息
 gui.config.title.advanced=高级设置
 gui.config.title.biome.editspecificbiome=CraftPresence - 编辑生物群系 (%1$s)
 gui.config.title.biomemessages=自定义生物群系信息
@@ -118,30 +139,9 @@ gui.config.title.dimension.editspecificdimension=CraftPresence - 编辑维度 (%
 gui.config.title.dimensionmessages=自定义维度信息
 gui.config.title.editor.addnew=CraftPresence - 添加新值
 gui.config.title.general=常规设置
+gui.config.title.gui.editspecificgui=CraftPresence - 编辑 GUI（%1$s）
+gui.config.title.gui.editspecificitem=CraftPresence - 编辑物品（%1$s）
 gui.config.title.server.editspecificserver=CraftPresence - 编辑服务器 (%1$s)
 gui.config.title.servermessages=自定义服务器信息
 gui.config.title.statusmessages=自定义状态信息
 gui.config.title=CraftPresence 配置 GUI
-gui.config.title.gui.editspecificgui=CraftPresence - 编辑 GUI（%1$s）
-gui.config.title.gui.editspecificitem=CraftPresence - 编辑物品（%1$s）
-## CONFIG GUI - BUTTONS AND NAMES ##
-gui.config.message.remove=**删除消息文本以删除此值**
-gui.config.hoverMessage.valuename=用于标识此值的名称
-gui.config.name.statusmessages.placeholder.packmsg=整合包信息
-gui.config.name.statusmessages.placeholder.playermsg=玩家名称占位符
-gui.config.name.statusmessages.placeholder.playeramountmsg=玩家列表占位符
-gui.config.name.statusmessages.placeholder.gametimemsg=游戏时间占位符
-gui.config.name.statusmessages.special.vivecraftmsg=ViveCraft 信息
-gui.config.comment.statusmessages.placeholder.packmsg=使用有效的整合（Curse，Twitch，Technic 或 MultiMC）时，在富文本信息中中显示的消息\n可用的占位符：\n- &name& = 整合包名称
-gui.config.comment.statusmessages.placeholder.playermsg=用于 &ign& 的占位符信息\n可用占位符： \n- &name& = 你的用户名
-gui.config.comment.statusmessages.placeholder.playeramountmsg=用于 &players& 占位符的信息\n可用的占位符：\n - &current& = 当前玩家数量\n - &max& = 最大玩家数量
-gui.config.comment.statusmessages.placeholder.gametimemsg=使用占位符 &time& 的信息\n可用占位符：\n - &worldtime& = 当前世界时间，格式为 HH:MM
-gui.config.comment.statusmessages.special.vivecraftmsg=使用 ViveCraft 时在富文本信息中显示的消息
-craftpresence.defaults.placeholder.pack=&name&
-craftpresence.defaults.placeholder.ign=&name&
-craftpresence.defaults.placeholder.time=&worldtime&
-craftpresence.defaults.special.vivecraft=通过 Vivecraft 玩 VR 游戏
-craftpresence.logger.error.config.invalidicon.pre=属性“%2$s”中的图标“%1$s”无效，选择随机有效图标...
-craftpresence.logger.error.config.invalidicon.post=成功将属性“%1$s”中的图标设置为“%2$s”
-craftpresence.logger.error.config.defaultmissing=属性“%1$s”缺少默认值，添加到属性...
-craftpresence.logger.warning.debugmode=你正在调试环境中运行 CraftPresence，某些功能可能无法正常运行！
