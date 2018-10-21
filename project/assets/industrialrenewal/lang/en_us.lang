@@ -6,6 +6,11 @@ itemGroup.industrialrenewalwip=Industrial Renewal WIP Content
 
 #Items
 
+item.industrialrenewal.cartridge_plus.name=Redstone Cartridge Plus
+item.industrialrenewal.cartridge_minus.name=Redstone Cartridge Minus
+item.industrialrenewal.cartridge_half.name=Redstone Cartridge Half
+item.industrialrenewal.cartridge_double.name=Redstone Cartridge Double
+item.industrialrenewal.cartridge_inverter.name=Redstone Cartridge Inverter
 item.industrialrenewal.ingot_steel.name=Steel Ingot
 item.industrialrenewal.item_fire_extinguisher.name=Fire Extinguisher
 item.industrialrenewal.safety_belt.name=Safety Belt
@@ -13,9 +18,10 @@ item.industrialrenewal.safety_helmet.name=Safety Helmet
 item.industrialrenewal.small_slab.name=Small Slab
 item.industrialrenewal.sponge_iron.name=Sponge Iron
 item.industrialrenewal.stick_iron.name=Iron Rod
-item.industrialrenewal.steam_locomotive.name=Steam Locomotive
+item.industrialrenewal.steam_locomotive.name=Steam Locomotive (WIP)
 item.industrialrenewal.cargo_container.name=Cargo Container
-item.industrialrenewal.fluid_container.name=Fluid Container
+item.industrialrenewal.fluid_container.name=Fluid Container (WIP)
+item.industrialrenewal.plow_iron.name=Iron Snow Plow (WIP)
 item.industrialrenewal.screwdrive.name=Powered Screwdrive
 item.industrialrenewal.screwdrive.des0=A universal tool for this mod
 item.industrialrenewal.medkit.name=MedKit
@@ -35,6 +41,7 @@ tile.industrialrenewal.block_chimney.name=Chimney
 tile.industrialrenewal.block_hazard.name=Physical Hazard
 tile.industrialrenewal.caution_hazard.name=Traffic and Caution Hazard
 tile.industrialrenewal.defective_hazard.name=Defective Machinery Hazard
+tile.industrialrenewal.entity_detector.name=Entity Detector
 tile.industrialrenewal.safety_hazard.name=Safety and First Aid Hazard
 tile.industrialrenewal.radiation_hazard.name=Radiation Hazard
 tile.industrialrenewal.aisle_hazard.name=Housekeeping and Aisle Hazard
@@ -52,22 +59,26 @@ tile.industrialrenewal.catwalk_ladder.name=Caged Ladder
 tile.industrialrenewal.catwalk_pillar.name=Pillar
 tile.industrialrenewal.catwalk_stair.name=Stair
 tile.industrialrenewal.crossing_rail.name=Crossing Rail
+tile.industrialrenewal.conduit_connector.name=Fuse Box Connector
+tile.industrialrenewal.conduit_extension.name=Fuse Box Extension
 tile.industrialrenewal.detector_rail.name=Detector Rail
-tile.industrialrenewal.energy_cable.name=Energy Cable
+tile.industrialrenewal.energy_cable.name=Energy Cable (WIP)
 tile.industrialrenewal.firstaid_kit.name=First-aid Box
 tile.industrialrenewal.flame_detector.name=Flame Detector
 tile.industrialrenewal.fluid_filter.name=Fluid Filter (WIP)
-tile.industrialrenewal.fluid_pipe.name=Fluid Pipe
+tile.industrialrenewal.fluid_pipe.name=Fluid Pipe (WIP)
 tile.industrialrenewal.fluorescent.name=Fluorescent Light
 tile.industrialrenewal.frame.name=Rail Frame
+tile.industrialrenewal.fuse_box.name=Fuse Box
 tile.industrialrenewal.gate_and.name=Gate AND
 tile.industrialrenewal.gate_nand.name=Gate NAND
 tile.industrialrenewal.gate_not.name=Gate NOT
 tile.industrialrenewal.gate_or.name=Gate OR
 tile.industrialrenewal.gutter.name=Gutter
 tile.industrialrenewal.handrail.name=Handrail
-tile.industrialrenewal.industrial_floor.name=Industrial Floor
+tile.industrialrenewal.industrial_floor.name=Industrial Floor (WIP)
 tile.industrialrenewal.light.name=External Light
+tile.industrialrenewal.locker.name=Locker
 tile.industrialrenewal.normal_rail.name=Rail
 tile.industrialrenewal.ore_copper.name=Copper Ore
 tile.industrialrenewal.platform.name=Platform
@@ -94,8 +105,8 @@ tile.industrialrenewal.solar_panel.name=Basic Solar Panel
 #Entity
 
 entity.industrialrenewal.cargo_container.name=Cargo Container
-entity.industrialrenewal.fluid_container.name=Fluid Container
-entity.industrialrenewal.steam_locomotive.name=Steam Locomotive
+entity.industrialrenewal.fluid_container.name=Fluid Container (WIP)
+entity.industrialrenewal.steam_locomotive.name=Steam Locomotive (WIP)
 
 #Config
 
@@ -105,11 +116,25 @@ gui.config.category.recipes.tooltip=Recipes settings
 gui.config.recipes.spongeiron_recipe.name=Sponge Iron recipe
 gui.config.recipes.spongeiron_recipe.comment=Turn On/Off the sponge iron recipe (Default true)
 
+#Info
+
+tile.industrialrenewal.crossing_rail.info=Make the carts honk when they pass
+tile.industrialrenewal.loader_rail.info=Use in conjunction with
+tile.industrialrenewal.sign_base.info=Shift + Right Click with Powered Screwdrive to change
+
 #GUI
 
 gui.industrialrenewal.blockfirstaidkit.bandages.tooltip=Slots for MedKits
 gui.industrialrenewal.blockrecordplayer.discs.tooltip=Slots for Discs
 gui.industrialrenewal.entity_steamlocomotive.plow.tooltip=Slot for Snow Plow
+gui.industrialrenewal.button.distance=Distance:
+gui.industrialrenewal.button.entity=Entity:
+gui.industrialrenewal.button.all=All
+gui.industrialrenewal.button.players=Players
+gui.industrialrenewal.button.mobhostil=Hostil Mobs
+gui.industrialrenewal.button.mobpassive=Passive Mobs
+gui.industrialrenewal.button.items=Items
+gui.industrialrenewal.button.carts=MineCarts
 gui.industrialrenewal.button.cargoloaderbutton0=Let the cart pass when:
 gui.industrialrenewal.button.waitfull=Cart Full
 gui.industrialrenewal.button.waitempty=Cart Empty
@@ -118,4 +143,7 @@ gui.industrialrenewal.button.never=Never
 gui.industrialrenewal.button.play=Play
 gui.industrialrenewal.button.stop=Stop
 gui.industrialrenewal.fuel.tooltip=Fuel
+gui.industrialrenewal.fusebox.input=Redstone In:
+gui.industrialrenewal.fusebox.output=Redstone Out:
+gui.industrialrenewal.fusebox.slots.tooltip=Slots for Redstone Cartridges
 
