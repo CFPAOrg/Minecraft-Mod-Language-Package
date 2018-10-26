@@ -26,13 +26,13 @@ info.moderator.heat=baseHeat*cellEff/%s H/t for each adjacent reactor cell. If t
 info.moderator.desc=Fission Reactor Moderator
 
 tile.nuclearcraft.fission_block.casing.name=Fission Reactor Casing
-tile.nuclearcraft.fission_block.casing.desc=Used in the construction of fission reactors. To form a valid structure, build a cuboid shell of casing, making sure to *exclude* the edges - the corners don't matter. Then place a fission controller along an edge, at a corner or within one of the faces of the structure. If the GUI shows an error, make sure the structure is valid. Then fill the interior with reactor cells, coolers and moderator blocks to start generating energy from your fission fuels!
+tile.nuclearcraft.fission_block.casing.desc=Used in the construction of fission reactors. To form a valid structure, build a cuboid shell of casing, making sure to *exclude* the edges. Then place a fission controller along an edge, at a corner or within one of the faces of the structure. If the GUI shows an error, make sure the structure is valid. Then fill the interior with reactor cells, coolers and moderator blocks to start generating energy from your fission fuels!
 
 tile.nuclearcraft.fission_block.blast.name=Blast Block
 tile.nuclearcraft.fission_block.blast.desc=A highly blast resistant block which is perfect for protection against explosives.
 
 tile.nuclearcraft.reactor_casing_transparent.name=Transparent Fission Reactor Casing
-tile.nuclearcraft.reactor_casing_transparent.desc=Used in the construction of fission reactors. To form a valid structure, build a cuboid shell of casing, making sure to *exclude* the edges - the corners don't matter. Then place a fission controller along an edge, at a corner or within one of the faces of the structure. If the GUI shows an error, make sure the structure is valid. Then fill the interior with reactor cells, coolers and moderator blocks to start generating energy from your fission fuels!
+tile.nuclearcraft.reactor_casing_transparent.desc=Used in the construction of fission reactors. To form a valid structure, build a cuboid shell of casing, making sure to *exclude* the edges. Then place a fission controller along an edge, at a corner or within one of the faces of the structure. If the GUI shows an error, make sure the structure is valid. Then fill the interior with reactor cells, coolers and moderator blocks to start generating energy from your fission fuels!
 
 tile.nuclearcraft.fusion_connector.name=Fusion Connector
 tile.nuclearcraft.fusion_connector.desc=Connects a fusion core to its ring of electromagnets. Four sets of them are required for each side of the core.
@@ -63,7 +63,7 @@ tile.nuclearcraft.cooler.lapis.name=Lapis Cooler
 tile.nuclearcraft.cooler.lapis.desc=Must touch at least one Reactor Cell and one Reactor Casing.
 
 tile.nuclearcraft.cooler.diamond.name=Diamond Cooler
-tile.nuclearcraft.cooler.diamond.desc=Must touch at least two active Water Coolers and one active Quartz Cooler.
+tile.nuclearcraft.cooler.diamond.desc=Must touch at least one active Water Cooler and one active Quartz Cooler.
 
 tile.nuclearcraft.cooler.helium.name=Liquid Helium Cooler
 tile.nuclearcraft.cooler.helium.desc=Must touch exactly one active Redstone Cooler and at least one Reactor Casing.
@@ -234,14 +234,42 @@ tile.nuclearcraft.fusion_dummy_side.name=Fusion Core
 tile.nuclearcraft.fusion_dummy_top.name=Fusion Core
 
 tile.nuclearcraft.salt_fission_controller.name=Molten Salt Fission Controller
+tile.nuclearcraft.salt_fission_controller.desc=The heart of the reactor - one is needed in the wall for it to form.
 tile.nuclearcraft.salt_fission_wall.name=Molten Salt Reactor Wall
 tile.nuclearcraft.salt_fission_glass.name=Transparent Molten Salt Reactor Wall
 tile.nuclearcraft.salt_fission_frame.name=Molten Salt Reactor Frame
+tile.nuclearcraft.salt_fission_frame.desc=Comprises the skeleton of the reactor.
 tile.nuclearcraft.salt_fission_beam.name=Molten Salt Reactor Beam
+tile.nuclearcraft.salt_fission_beam.desc=Used to connect otherwise disconnected parts of the reactor to the wall.
 tile.nuclearcraft.salt_fission_vent.name=Molten Salt Reactor Vent
+tile.nuclearcraft.salt_fission_vent.desc=Used to move fuel and coolant in and out of the reactor. Will push to [accept from] accepting [pushing] vessels and heaters.
 tile.nuclearcraft.salt_fission_vessel.name=Molten Salt Fission Vessel
+tile.nuclearcraft.salt_fission_vessel.desc=Where the molten salt nuclear fuel fissions and depletes.
 tile.nuclearcraft.salt_fission_heater.name=Molten Salt Coolant Heater
+tile.nuclearcraft.salt_fission_heater.desc=Where the salt coolant is heated to cool the reactor. Coolants must obey their placement rules to have any effect.
 tile.nuclearcraft.salt_fission_moderator.name=Molten Salt Reactor Moderator Housing
+tile.nuclearcraft.salt_fission_moderator.desc=Increases the efficiency of adjacent active vessels.
+tile.nuclearcraft.salt_fission_distributor.name=Molten Salt Fuel Distributor
+tile.nuclearcraft.salt_fission_distributor.desc=Placed in the wall of the reactor - will spread fuel to all vessels.
+tile.nuclearcraft.salt_fission_retriever.name=Molten Salt Depleted Fuel Retriever
+tile.nuclearcraft.salt_fission_retriever.desc=Placed in the wall of the reactor - will take depleted fuel from all vessels.
+tile.nuclearcraft.salt_fission_redstone_port.name=Molten Salt Reactor Redstone Port
+tile.nuclearcraft.salt_fission_redstone_port.desc=Used to turn the reactor on and off. The heat level of the reactor can be read with a comparator from this block.
+
+tile.nuclearcraft.heat_exchanger_controller.name=Heat Exchanger Controller
+tile.nuclearcraft.heat_exchanger_controller.desc=The heart of the exchanger - one is needed in the wall for it to form.
+tile.nuclearcraft.heat_exchanger_wall.name=Heat Exchanger Shell
+tile.nuclearcraft.heat_exchanger_glass.name=Transparent Heat Exchanger Shell
+tile.nuclearcraft.heat_exchanger_frame.name=Heat Exchanger Frame
+tile.nuclearcraft.heat_exchanger_frame.desc=Comprises the skeleton of the exchanger.
+tile.nuclearcraft.heat_exchanger_vent.name=Heat Exchanger Vent
+tile.nuclearcraft.heat_exchanger_vent.desc=Used to move fluid in and out of the reactor. Will push to [accept from] accepting [pushing] tubes.
+tile.nuclearcraft.heat_exchanger_tube_copper.name=Basic Heat Exchanger Tube
+tile.nuclearcraft.heat_exchanger_tube_copper.desc=Holds and transports the heat-exchanging fluids.
+tile.nuclearcraft.heat_exchanger_tube_hard_carbon.name=Advanced Heat Exchanger Tube
+tile.nuclearcraft.heat_exchanger_tube_hard_carbon.desc=Holds and transports the heat-exchanging fluids.
+tile.nuclearcraft.heat_exchanger_tube_thermoconducting.name=Elite Heat Exchanger Tube
+tile.nuclearcraft.heat_exchanger_tube_thermoconducting.desc=Holds and transports the heat-exchanging fluids.
 
 tile.nuclearcraft.fusion_electromagnet_idle.name=Fusion Electromagnet
 tile.nuclearcraft.fusion_electromagnet_idle.desc=Requires %s to stay active.
@@ -277,8 +305,11 @@ tile.nuclearcraft.nitrogen_collector_compact.name=Compact Nitrogen Collector
 tile.nuclearcraft.nitrogen_collector_dense.name=Dense Nitrogen Collector
 tile.nuclearcraft.nitrogen_collector.desc=Produces %s of nitrogen constantly.
 
+tile.nuclearcraft.radiation_scrubber.name=Radiation Scrubber
+tile.nuclearcraft.radiation_scrubber.desc=Reduces the radiation level of the chunk it is placed in. Its effectiveness is dependent on the amount of free space around it. Requires 50 RF/t to run.
+
 tile.nuclearcraft.glowing_mushroom.name=Glowing Mushroom
-tile.nuclearcraft.dry_earth.name=Dry Earth
+tile.nuclearcraft.dry_earth.name=Wasteland Earth
 
 tile.nuclearcraft.reactor_door.name=Reactor Door
 tile.nuclearcraft.reactor_trapdoor.name=Reactor Trapdoor
@@ -303,6 +334,24 @@ fluid.helium=Helium
 
 tile.nuclearcraft.fluid_steam.name=Steam
 fluid.steam=Steam
+
+tile.nuclearcraft.fluid_high_pressure_steam.name=High Pressure Steam
+fluid.high_pressure_steam=High Pressure Steam
+
+tile.nuclearcraft.fluid_exhaust_steam.name=Exhaust Steam
+fluid.exhaust_steam=Exhaust Steam
+
+tile.nuclearcraft.fluid_low_pressure_steam.name=Low Pressure Steam
+fluid.low_pressure_steam=Low Pressure Steam
+
+tile.nuclearcraft.fluid_low_quality_steam.name=Low Quality Steam
+fluid.low_quality_steam=Low Quality Steam
+
+tile.nuclearcraft.fluid_preheated_water.name=Preheated Water
+fluid.preheated_water=Preheated Water
+
+tile.nuclearcraft.fluid_condensate_water.name=Condensate Water
+fluid.condensate_water=Condensate Water
 
 tile.nuclearcraft.fluid_liquidhelium.name=Liquid Helium
 fluid.liquidhelium=Liquid Helium
@@ -337,6 +386,9 @@ fluid.tough=Molten Tough Alloy
 tile.nuclearcraft.fluid_hard_carbon.name=Molten Hard Carbon
 fluid.hard_carbon=Molten Hard Carbon
 
+tile.nuclearcraft.fluid_coal.name=Liquefacted Coal
+fluid.coal=Liquefacted Coal
+
 tile.nuclearcraft.fluid_neutron.name=Neutron Fluid
 fluid.neutron=Neutron Fluid
 
@@ -346,11 +398,20 @@ fluid.fluorine=Fluorine
 tile.nuclearcraft.fluid_nitrogen.name=Nitrogen
 fluid.nitrogen=Nitrogen
 
+tile.nuclearcraft.fluid_fluoromethane.name=Fluoromethane
+fluid.fluoromethane=Fluoromethane
+
 tile.nuclearcraft.fluid_ammonia.name=Ammonia
 fluid.ammonia=Ammonia
 
 tile.nuclearcraft.fluid_ethanol.name=Ethanol
 fluid.ethanol=Ethanol
+
+tile.nuclearcraft.fluid_ethene.name=Ethylene
+fluid.ethene=Ethylene
+
+tile.nuclearcraft.fluid_methanol.name=Methanol
+fluid.methanol=Methanol
 
 tile.nuclearcraft.fluid_boric_acid.name=Boric Acid
 fluid.boric_acid=Boric Acid
@@ -409,6 +470,42 @@ fluid.oxygen_difluoride=Oxygen Difluoride
 tile.nuclearcraft.fluid_corium.name=Corium
 fluid.corium=Corium
 
+tile.nuclearcraft.fluid_chocolate_liquor.name=Chocolate Liquor
+fluid.chocolate_liquor=Chocolate Liquor
+
+tile.nuclearcraft.fluid_cocoa_butter.name=Cocoa Butter
+fluid.cocoa_butter=Cocoa Butter
+
+tile.nuclearcraft.fluid_unsweetened_chocolate.name=Molten Unsweetened Chocolate
+fluid.unsweetened_chocolate=Molten Unsweetened Chocolate
+
+tile.nuclearcraft.fluid_dark_chocolate.name=Molten Dark Chocolate
+fluid.dark_chocolate=Molten Dark Chocolate
+
+tile.nuclearcraft.fluid_milk_chocolate.name=Molten Milk Chocolate
+fluid.milk_chocolate=Molten Milk Chocolate
+
+tile.nuclearcraft.fluid_sugar.name=Molten Sugar
+fluid.sugar=Molten Sugar
+
+tile.nuclearcraft.fluid_gelatin.name=Molten Gelatin
+fluid.gelatin=Molten Gelatin
+
+tile.nuclearcraft.fluid_hydrated_gelatin.name=Hydrated Gelatin
+fluid.hydrated_gelatin=Hydrated Gelatin
+
+tile.nuclearcraft.fluid_milk.name=Milk
+fluid.milk=Milk
+
+tile.nuclearcraft.fluid_marshmallow.name=Liquid Marshmallow
+fluid.marshmallow=Liquid Marshmallow
+
+tile.nuclearcraft.fluid_carbon_dioxide.name=Carbon Dioxide
+fluid.carbon_dioxide=Carbon Dioxide
+
+tile.nuclearcraft.fluid_carbon_monoxide.name=Carbon Monoxide
+fluid.carbon_monoxide=Carbon Monoxide
+
 tile.nuclearcraft.fluid_sodium.name=Molten Sodium
 fluid.sodium=Molten Sodium
 
@@ -432,6 +529,9 @@ fluid.sodium_hydroxide_solution=Sodium Hydroxide Solution
 
 tile.nuclearcraft.fluid_potassium_hydroxide_solution.name=Potassium Hydroxide Solution
 fluid.potassium_hydroxide_solution=Potassium Hydroxide Solution
+
+tile.nuclearcraft.fluid_borax_solution.name=Borax Solution
+fluid.borax_solution=Borax Solution
 
 tile.nuclearcraft.fluid_naoh.name=Molten Sodium Hydroxide
 fluid.naoh=Molten Sodium Hydroxide
@@ -1025,6 +1125,9 @@ fluid.magnesium_nak=Eutectic NaK-Magnesium Mixture
 tile.nuclearcraft.fluid_magnesium_nak_hot.name=Hot Eutectic NaK-Magnesium Mixture
 fluid.magnesium_nak_hot=Hot Eutectic NaK-Magnesium Mixture
 
+item.nuclearcraft.rads=Radiation:
+item.nuclearcraft.rad_resist=Radiation Resistance:
+
 item.nuclearcraft.ingot.copper.name=Copper Ingot
 item.nuclearcraft.ingot.tin.name=Tin Ingot
 item.nuclearcraft.ingot.lead.name=Lead Ingot
@@ -1085,18 +1188,19 @@ item.nuclearcraft.gem_dust.villiaumite.name=Crushed Villiaumite
 item.nuclearcraft.gem_dust.carobbiite.name=Crushed Carobbiite
 item.nuclearcraft.gem_dust.arsenic.name=Crushed Arsenic
 
-item.nuclearcraft.alloy.bronze.name=Bronze Alloy
+item.nuclearcraft.alloy.bronze.name=Bronze Ingot
 item.nuclearcraft.alloy.tough.name=Tough Alloy
 item.nuclearcraft.alloy.hard_carbon.name=Hard Carbon Alloy
 item.nuclearcraft.alloy.magnesium_diboride.name=Magnesium Diboride Alloy
 item.nuclearcraft.alloy.lithium_manganese_dioxide.name=Lithium Manganese Dioxide Alloy
-item.nuclearcraft.alloy.steel.name=Steel Alloy
+item.nuclearcraft.alloy.steel.name=Steel Ingot
 item.nuclearcraft.alloy.ferroboron.name=Ferroboron Alloy
 item.nuclearcraft.alloy.shibuichi.name=Shibuichi Alloy
 item.nuclearcraft.alloy.tin_silver.name=Tin Silver Alloy
 item.nuclearcraft.alloy.lead_platinum.name=Lead Platinum Alloy
 item.nuclearcraft.alloy.extreme.name=Extreme Alloy
 item.nuclearcraft.alloy.thermoconducting.name=Thermoconducting Alloy
+item.nuclearcraft.alloy.zircaloy.name=Zircaloy
 
 item.nuclearcraft.compound.calcium_sulfate.name=Calcium Sulfate
 item.nuclearcraft.compound.crystal_binder.name=Crystal Binder
@@ -1105,6 +1209,7 @@ item.nuclearcraft.compound.sodium_fluoride.name=Sodium Fluoride
 item.nuclearcraft.compound.potassium_fluoride.name=Potassium Fluoride
 item.nuclearcraft.compound.sodium_hydroxide.name=Sodium Hydroxide
 item.nuclearcraft.compound.potassium_hydroxide.name=Potassium Hydroxide
+item.nuclearcraft.compound.borax.name=Borax
 
 item.nuclearcraft.part.plate_basic.name=Basic Plating
 item.nuclearcraft.part.plate_advanced.name=Advanced Plating
@@ -1118,9 +1223,10 @@ item.nuclearcraft.part.motor.name=Electric Motor
 item.nuclearcraft.part.actuator.name=Linear Actuator
 item.nuclearcraft.part.chassis.name=Machine Chassis
 item.nuclearcraft.part.empty_frame.name=Empty Frame
+item.nuclearcraft.part.steel_frame.name=Steel Frame
 
 item.nuclearcraft.upgrade.speed.name=Speed Upgrade
-item.nuclearcraft.upgrade.speed.desc=Increases the processing speed of machines at the cost of additional processing power. These upgrades can be stacked - the speed will increase linearly with each additional upgrade while the power use will increase quadratically.
+item.nuclearcraft.upgrade.speed_desc=Increases the processing speed of machines at the cost of additional processing power. These upgrades can be stacked - the speed will increase %s with each additional upgrade while the power use will increase %s.
 
 item.nuclearcraft.fuel_rod_empty.name=Empty Fuel Rod
 item.nuclearcraft.fuel_rod_empty.fixd=Fuel rods are not required anymore!
@@ -1563,17 +1669,51 @@ item.nuclearcraft.chest_boron_nitride.name=Boron Nitride Chestplate
 item.nuclearcraft.legs_boron_nitride.name=Boron Nitride Leggings
 item.nuclearcraft.boots_boron_nitride.name=Boron Nitride Boots
 
+item.nuclearcraft.helm_hazmat.name=Hazmat Suit Headwear
+item.nuclearcraft.chest_hazmat.name=Hazmat Suit Chestpiece
+item.nuclearcraft.legs_hazmat.name=Hazmat Suit Leggings
+item.nuclearcraft.boots_hazmat.name=Hazmat Suit Boots
+
 item.nuclearcraft.reactor_door_item.name=Reactor Door
 
 item.nuclearcraft.lithium_ion_cell.name=Lithium Ion Cell
+
+item.nuclearcraft.geiger_counter.name=Geiger Counter
+item.nuclearcraft.geiger_counter.desc=Detects radiation and informs the player of their rad count. Will be muted if off the hotbar.
+item.nuclearcraft.geiger_counter.rads=Radiation:
+
+item.nuclearcraft.rad_shielding.light.name=Light Radiation Shielding
+item.nuclearcraft.rad_shielding.medium.name=Medium Radiation Shielding
+item.nuclearcraft.rad_shielding.heavy.name=Heavy Radiation Shielding
+
+item.nuclearcraft.radaway.name=RadAway
+item.nuclearcraft.radaway.desc=Removes %s [%s].
+item.nuclearcraft.rad_x.name=Rad-X
+item.nuclearcraft.rad_x.desc=Increases radiation resistance by %s for %s. The effect can be stacked, but higher levels of resistance will wear off more quickly.
 
 item.nuclearcraft.portable_ender_chest.name=Portable Ender Chest
 item.nuclearcraft.portable_ender_chest.desc=Access your Ender Chest on the move.
 
 item.nuclearcraft.dominos.name=Domino's Special
 item.nuclearcraft.dominos.desc=Paul's favorite - restore 16 hunger points with this beauty.
+
+item.nuclearcraft.flour.name=Flour
+item.nuclearcraft.graham_cracker.name=Graham Cracker
+
+item.nuclearcraft.roasted_cocoa_beans.name=Roasted Cocoa Beans
+item.nuclearcraft.ground_cocoa_nibs.name=Ground Cocoa Nibs
+item.nuclearcraft.cocoa_butter.name=Solidified Cocoa Butter
+item.nuclearcraft.cocoa_solids.name=Cocoa Solids
+item.nuclearcraft.unsweetened_chocolate.name=Unsweetened Chocolate
+item.nuclearcraft.dark_chocolate.name=Dark Chocolate
+item.nuclearcraft.milk_chocolate.name=Milk Chocolate
+
+item.nuclearcraft.gelatin.name=Gelatin
 item.nuclearcraft.marshmallow.name=Marshmallow
 item.nuclearcraft.marshmallow.desc=Many civilizations would not have fallen with these on their side.
+
+item.nuclearcraft.smore.name=S'more S'mingot
+item.nuclearcraft.moresmore.name=MoreS'more DoubleS'mingot
 
 item.nuclearcraft.record_wanderer.name=Music Disc
 item.nuclearcraft.record_wanderer.des0=Dion - The Wanderer
@@ -1584,16 +1724,48 @@ item.nuclearcraft.record_end_of_the_world.des1=8-Bit Cover by 'GermanPikachuGami
 item.nuclearcraft.record_money_for_nothing.name=Music Disc
 item.nuclearcraft.record_money_for_nothing.des0=Dire Straits - Money For Nothing
 item.nuclearcraft.record_money_for_nothing.des1=8-Bit Cover by 'Omnigrad'
+item.nuclearcraft.record_hyperspace.name=Music Disc
+item.nuclearcraft.record_hyperspace.des0=Ur-Quan Masters - Hyperspace
+item.nuclearcraft.record_hyperspace.des1=Originally by Riku Nuottajärvi
+
+jei.nuclearcraft.fluid_temp=Temperature:
+jei.nuclearcraft.heat_req=Heat Required:
+jei.nuclearcraft.chance_output=Output: %s-%s [Average: %s]
+
+jei.nuclearcraft.salt_fuel_time=Process time:
+jei.nuclearcraft.salt_fuel_heat=Base heat gen:
+
+jei.nuclearcraft.coolant_heater_rate=Cooling rate:
+
+jei.nuclearcraft.coolant_heater.nak=Must touch at least one active Fission Vessel or active moderator.
+jei.nuclearcraft.coolant_heater.redstone_nak=Must touch at least one active Fission Vessel.
+jei.nuclearcraft.coolant_heater.quartz_nak=Must touch at least one active moderator.
+jei.nuclearcraft.coolant_heater.gold_nak=Must touch at least one active NaK Coolant Heater and one active NaK-Redstone Coolant Heater.
+jei.nuclearcraft.coolant_heater.glowstone_nak=Must touch at least two active moderator blocks.
+jei.nuclearcraft.coolant_heater.lapis_nak=Must touch at least one active Fission Vessel and one Reactor Wall.
+jei.nuclearcraft.coolant_heater.diamond_nak=Must touch at least one active NaK Coolant Heater and one active NaK-Quartz Coolant Heater.
+jei.nuclearcraft.coolant_heater.liquidhelium_nak=Must touch exactly one active NaK-Redstone Coolant Heater and at least one Reactor Wall.
+jei.nuclearcraft.coolant_heater.ender_nak=Must touch exactly three Reactor Walls at exactly one vertex.
+jei.nuclearcraft.coolant_heater.cryotheum_nak=Must touch at least two Fission Vessels.
+jei.nuclearcraft.coolant_heater.iron_nak=Must touch at least one active NaK-Gold Coolant Heater.
+jei.nuclearcraft.coolant_heater.emerald_nak=Must touch at least one active moderator and one active Fission Vessel.
+jei.nuclearcraft.coolant_heater.copper_nak=Must touch at least one active NaK-Glowstone Coolant Heater.
+jei.nuclearcraft.coolant_heater.tin_nak=Must be at least between two active NaK-Lapis Coolers along the same axis.
+jei.nuclearcraft.coolant_heater.magnesium_nak=Must touch at least one Reactor Wall and one active moderator.
 
 itemGroup.nuclearcraft=NuclearCraft
 itemGroup.nuclearcraftBaseBlockMaterials=NuclearCraft Base Blocks
 itemGroup.nuclearcraftBaseItemMaterials=NuclearCraft Base Items
+itemGroup.nuclearcraftRadiation=NuclearCraft Radiation
 itemGroup.nuclearcraftMachines=NuclearCraft Machines
 itemGroup.nuclearcraftFissionBlocks=NuclearCraft Fission Blocks
 itemGroup.nuclearcraftFissionMaterials=NuclearCraft Fission Materials
 itemGroup.nuclearcraftFissionFuels=NuclearCraft Fission Fuels
 itemGroup.nuclearcraftFusion=NuclearCraft Fusion
 itemGroup.nuclearcraftSaltFissionBlocks=NuclearCraft Molten Salt Fission
+itemGroup.nuclearcraftHeatExchangerBlocks=NuclearCraft Heat Exchanger
+itemGroup.nuclearcraftTurbineBlocks=NuclearCraft Steam Turbine
+itemGroup.nuclearcraftCondenserBlocks=NuclearCraft Condenser
 itemGroup.nuclearcraftAccelerator=NuclearCraft Accelerator
 itemGroup.nuclearcraftFluids=NuclearCraft Fluids
 itemGroup.nuclearcraftMisc=NuclearCraft Miscellaneous
@@ -1602,7 +1774,6 @@ gui.config.main_title=NuclearCraft Configs
 
 gui.config.category.ores=Ore Configs
 gui.config.category.ores.tooltip=Configure ore generation.
-
 gui.config.ores.ore_dims=Dimension List
 gui.config.ores.ore_dims.comment=List of IDs of dimensions to whitelist/blacklist for ore generation.
 gui.config.ores.ore_dims_list_type=Whitelist/Blacklist (false/true)
@@ -1676,7 +1847,7 @@ gui.config.fission.fission_heat_generation.comment=Modifies the heat generated b
 gui.config.fission.fission_cooling_rate=Cooling Rates
 gui.config.fission.fission_cooling_rate.comment=Base heat removed per tick. Order: water, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, enderium, cryotheum, iron, emerald, copper, tin, magnesium.
 gui.config.fission.fission_active_cooling_rate=Active Cooling Rates
-gui.config.fission.fission_active_cooling_rate.comment=Heat removed per tick/mB. Order: water, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, enderium, cryotheum, iron, emerald, copper, tin, magnesium.
+gui.config.fission.fission_active_cooling_rate.comment=Heat removed per tick/mB. Order: water, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, ender, cryotheum, iron, emerald, copper, tin, magnesium.
 gui.config.fission.fission_water_cooler_requirement=Water Cooler Requirement
 gui.config.fission.fission_water_cooler_requirement.comment=Do water coolers have to fulfill their position requirements to be active?
 gui.config.fission.fission_overheat=Enable Meltdowns
@@ -1705,6 +1876,8 @@ gui.config.fission.fission_thorium_power=Thorium Power Gen
 gui.config.fission.fission_thorium_power.comment=Base RF/t the fuels produce. Order: TBU, TBU Oxide.
 gui.config.fission.fission_thorium_heat_generation=Thorium Heat Gen
 gui.config.fission.fission_thorium_heat_generation.comment=Base heat the fuels produce. Order: TBU, TBU Oxide.
+gui.config.fission.fission_thorium_radiation=Thorium Radiation
+gui.config.fission.fission_thorium_radiation.comment=Base radiation the fuels produce while processing. Order: TBU, TBU Oxide.
 
 gui.config.fission.fission_uranium_fuel_time=Uranium Fuel Durations
 gui.config.fission.fission_uranium_fuel_time.comment=Base ticks the fuels last. Order: LEU-233, LEU-233 Oxide, HEU-233, HEU-233 Oxide, LEU-235, LEU-235 Oxide, HEU-235, HEU-235 Oxide.
@@ -1712,6 +1885,8 @@ gui.config.fission.fission_uranium_power=Uranium Power Gen
 gui.config.fission.fission_uranium_power.comment=Base RF/t the fuels produce. Order: LEU-233, LEU-233 Oxide, HEU-233, HEU-233 Oxide, LEU-235, LEU-235 Oxide, HEU-235, HEU-235 Oxide.
 gui.config.fission.fission_uranium_heat_generation=Uranium Heat Gen
 gui.config.fission.fission_uranium_heat_generation.comment=Base heat the fuels produce. Order: LEU-233, LEU-233 Oxide, HEU-233, HEU-233 Oxide, LEU-235, LEU-235 Oxide, HEU-235, HEU-235 Oxide.
+gui.config.fission.fission_uranium_radiation=Uranium Radiation
+gui.config.fission.fission_uranium_radiation.comment=Base radiation the fuels produce while processing. Order: LEU-233, LEU-233 Oxide, HEU-233, HEU-233 Oxide, LEU-235, LEU-235 Oxide, HEU-235, HEU-235 Oxide.
 
 gui.config.fission.fission_neptunium_fuel_time=Neptunium Fuel Durations
 gui.config.fission.fission_neptunium_fuel_time.comment=Base ticks the fuels last. Order: LEN-236, LEN-236 Oxide, HEN-236, HEN-236 Oxide.
@@ -1719,6 +1894,8 @@ gui.config.fission.fission_neptunium_power=Neptunium Power Gen
 gui.config.fission.fission_neptunium_power.comment=Base RF/t the fuels produce. Order: LEN-236, LEN-236 Oxide, HEN-236, HEN-236 Oxide.
 gui.config.fission.fission_neptunium_heat_generation=Neptunium Heat Gen
 gui.config.fission.fission_neptunium_heat_generation.comment=Base heat the fuels produce. Order: LEN-236, LEN-236 Oxide, HEN-236, HEN-236 Oxide.
+gui.config.fission.fission_neptunium_radiation=Neptunium Radiation
+gui.config.fission.fission_neptunium_radiation.comment=Base radiation the fuels produce while processing. Order: LEN-236, LEN-236 Oxide, HEN-236, HEN-236 Oxide.
 
 gui.config.fission.fission_plutonium_fuel_time=Plutonium Fuel Durations
 gui.config.fission.fission_plutonium_fuel_time.comment=Base ticks the fuels last. Order: LEP-239, LEP-239 Oxide, HEP-239, HEP-239 Oxide, LEP-241, LEP-241 Oxide, HEP-241, HEP-241 Oxide.
@@ -1726,6 +1903,8 @@ gui.config.fission.fission_plutonium_power=Plutonium Power Gen
 gui.config.fission.fission_plutonium_power.comment=Base RF/t the fuels produce. Order: LEP-239, LEP-239 Oxide, HEP-239, HEP-239 Oxide, LEP-241, LEP-241 Oxide, HEP-241, HEP-241 Oxide.
 gui.config.fission.fission_plutonium_heat_generation=Plutonium Heat Gen
 gui.config.fission.fission_plutonium_heat_generation.comment=Base heat the fuels produce. Order: LEP-239, LEP-239 Oxide, HEP-239, HEP-239 Oxide, LEP-241, LEP-241 Oxide, HEP-241, HEP-241 Oxide.
+gui.config.fission.fission_plutonium_radiation=Plutonium Radiation
+gui.config.fission.fission_plutonium_radiation.comment=Base radiation the fuels produce while processing. Order: LEP-239, LEP-239 Oxide, HEP-239, HEP-239 Oxide, LEP-241, LEP-241 Oxide, HEP-241, HEP-241 Oxide.
 
 gui.config.fission.fission_mox_fuel_time=MOX Fuel Durations
 gui.config.fission.fission_mox_fuel_time.comment=Base ticks the fuels last. Order: MOX-239, MOX-241.
@@ -1733,6 +1912,8 @@ gui.config.fission.fission_mox_power=MOX Power Gen
 gui.config.fission.fission_mox_power.comment=Base RF/t the fuels produce. Order: MOX-239, MOX-241.
 gui.config.fission.fission_mox_heat_generation=MOX Heat Gen
 gui.config.fission.fission_mox_heat_generation.comment=Base heat the fuels produce. Order: MOX-239, MOX-241.
+gui.config.fission.fission_mox_radiation=MOX Radiation
+gui.config.fission.fission_mox_radiation.comment=Base radiation the fuels produce while processing. Order: MOX-239, MOX-241.
 
 gui.config.fission.fission_americium_fuel_time=Americium Fuel Durations
 gui.config.fission.fission_americium_fuel_time.comment=Base ticks the fuels last. Order: LEA-242, LEA-242 Oxide, HEA-242, HEA-242 Oxide.
@@ -1740,6 +1921,8 @@ gui.config.fission.fission_americium_power=Americium Power Gen
 gui.config.fission.fission_americium_power.comment=Base RF/t the fuels produce. Order: LEA-242, LEA-242 Oxide, HEA-242, HEA-242 Oxide.
 gui.config.fission.fission_americium_heat_generation=Americium Heat Gen
 gui.config.fission.fission_americium_heat_generation.comment=Base heat the fuels produce. Order: LEA-242, LEA-242 Oxide, HEA-242, HEA-242 Oxide.
+gui.config.fission.fission_americium_radiation=Americium Radiation
+gui.config.fission.fission_americium_radiation.comment=Base radiation the fuels produce while processing. Order: LEA-242, LEA-242 Oxide, HEA-242, HEA-242 Oxide.
 
 gui.config.fission.fission_curium_fuel_time=Curium Fuel Durations
 gui.config.fission.fission_curium_fuel_time.comment=Base ticks the fuels last. Order: LECm-243, LECm-243 Oxide, HECm-243, HECm-243 Oxide, LECm-245, LECm-245 Oxide, HECm-245, HECm-245 Oxide, LECm-247, LECm-247 Oxide, HECm-247, HECm-247 Oxide.
@@ -1747,6 +1930,8 @@ gui.config.fission.fission_curium_power=Curium Power Gen
 gui.config.fission.fission_curium_power.comment=Base RF/t the fuels produce. Order: LECm-243, LECm-243 Oxide, HECm-243, HECm-243 Oxide, LECm-245, LECm-245 Oxide, HECm-245, HECm-245 Oxide, LECm-247, LECm-247 Oxide, HECm-247, HECm-247 Oxide.
 gui.config.fission.fission_curium_heat_generation=Curium Heat Gen
 gui.config.fission.fission_curium_heat_generation.comment=Base heat the fuels produce. Order: LECm-243, LECm-243 Oxide, HECm-243, HECm-243 Oxide, LECm-245, LECm-245 Oxide, HECm-245, HECm-245 Oxide, LECm-247, LECm-247 Oxide, HECm-247, HECm-247 Oxide.
+gui.config.fission.fission_curium_radiation=Curium Radiation
+gui.config.fission.fission_curium_radiation.comment=Base radiation the fuels produce while processing. Order: LECm-243, LECm-243 Oxide, HECm-243, HECm-243 Oxide, LECm-245, LECm-245 Oxide, HECm-245, HECm-245 Oxide, LECm-247, LECm-247 Oxide, HECm-247, HECm-247 Oxide.
 
 gui.config.fission.fission_berkelium_fuel_time=Berkelium Fuel Durations
 gui.config.fission.fission_berkelium_fuel_time.comment=Base ticks the fuels last. Order: LEB-248, LEB-248 Oxide, HEB-248, HEB-248 Oxide.
@@ -1754,6 +1939,8 @@ gui.config.fission.fission_berkelium_power=Berkelium Power Gen
 gui.config.fission.fission_berkelium_power.comment=Base RF/t the fuels produce. Order: LEB-248, LEB-248 Oxide, HEB-248, HEB-248 Oxide.
 gui.config.fission.fission_berkelium_heat_generation=Berkelium Heat Gen
 gui.config.fission.fission_berkelium_heat_generation.comment=Base heat the fuels produce. Order: LEB-248, LEB-248 Oxide, HEB-248, HEB-248 Oxide.
+gui.config.fission.fission_berkelium_radiation=Berkelium Radiation
+gui.config.fission.fission_berkelium_radiation.comment=Base radiation the fuels produce while processing. Order: LEB-248, LEB-248 Oxide, HEB-248, HEB-248 Oxide.
 
 gui.config.fission.fission_californium_fuel_time=Californium Fuel Durations
 gui.config.fission.fission_californium_fuel_time.comment=Base ticks the fuels last. Order: LECf-249, LECf-249 Oxide, HECf-249, HECf-249 Oxide, LECf-251, LECf-251 Oxide, HECf-251, HECf-251 Oxide.
@@ -1761,6 +1948,8 @@ gui.config.fission.fission_californium_power=Californium Power Gen
 gui.config.fission.fission_californium_power.comment=Base RF/t the fuels produce. Order: LECf-249, LECf-249 Oxide, HECf-249, HECf-249 Oxide, LECf-251, LECf-251 Oxide, HECf-251, HECf-251 Oxide.
 gui.config.fission.fission_californium_heat_generation=Californium Heat Gen
 gui.config.fission.fission_californium_heat_generation.comment=Base heat the fuels produce. Order: LECf-249, LECf-249 Oxide, HECf-249, HECf-249 Oxide, LECf-251, LECf-251 Oxide, HECf-251, HECf-251 Oxide.
+gui.config.fission.fission_californium_radiation=Californium Radiation
+gui.config.fission.fission_californium_radiation.comment=Base radiation the fuels produce while processing. Order: LECf-249, LECf-249 Oxide, HECf-249, HECf-249 Oxide, LECf-251, LECf-251 Oxide, HECf-251, HECf-251 Oxide.
 
 gui.config.category.fusion=Fusion Configs
 gui.config.category.fusion.tooltip=Configure aspects of nuclear fusion.
@@ -1778,7 +1967,7 @@ gui.config.fusion.fusion_overheat.comment=Can fusion reactors overheat?
 gui.config.fusion.fusion_active_cooling=Enable Fusion Active Cooling
 gui.config.fusion.fusion_active_cooling.comment=Can fusion reactors be actively cooled (disable if suffering from lag)?
 gui.config.fusion.fusion_active_cooling_rate=Active Cooling Rates
-gui.config.fusion.fusion_active_cooling_rate.comment=Base heat removed per tick/mB. Order: water, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, enderium, cryotheum, iron, emerald, copper, tin, magnesium.
+gui.config.fusion.fusion_active_cooling_rate.comment=Base heat removed per tick/mB. Order: water, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, ender, cryotheum, iron, emerald, copper, tin, magnesium.
 gui.config.fusion.fusion_min_size=Minimum Toroid Size
 gui.config.fusion.fusion_min_size.comment=Minimum size of fusion toroids.
 gui.config.fusion.fusion_max_size=Maximum Toroid Size
@@ -1787,6 +1976,8 @@ gui.config.fusion.fusion_comparator_max_efficiency=Max Comparator Signal Efficie
 gui.config.fusion.fusion_comparator_max_efficiency.comment=Efficiency of a fusion reactor at which a comparator adjacent to the core will output a full-strength redstone signal.
 gui.config.fusion.fusion_alternate_sound=Use Alternate Sound
 gui.config.fusion.fusion_alternate_sound.comment=Use an alternate reactor sound effect?
+gui.config.fusion.fusion_plasma_craziness=Fusion Plasma Fires
+gui.config.fusion.fusion_plasma_craziness.comment=Will fusion plasma start fires? Disabling this will reduce lag somewhat.
 
 gui.config.fusion.fusion_fuel_time=Fusion Fuel Combo Durations
 gui.config.fusion.fusion_fuel_time.comment=Base ticks the fuel combos last. Order: H-H, H-D, H-T, H-He3, H-Li6, H-Li7, H-B11, D-D, D-T, D-He3, ..., D-B11, T-T, ..., T-B11, ..., B11-B11.
@@ -1800,12 +1991,55 @@ gui.config.fusion.fusion_electromagnet_power.comment=RF/s required to keep an el
 gui.config.category.salt_fission=Molten Salt Fission Configs
 gui.config.category.salt_fission.tooltip=Configure aspects of molten salt fission reactors.
 
+gui.config.salt_fission.salt_fission_power=Power Gen Multiplier
+gui.config.salt_fission.salt_fission_power.comment=Modifies the power generated by salt fission reactors.
+gui.config.salt_fission.salt_fission_fuel_use=Fuel Use Multiplier
+gui.config.salt_fission.salt_fission_fuel_use.comment=Modifies the rate of fuel used by salt fission reactors.
+gui.config.salt_fission.salt_fission_heat_generation=Heat Gen Multiplier
+gui.config.salt_fission.salt_fission_heat_generation.comment=Modifies the heat generated by salt fission reactors.
+
+gui.config.salt_fission.salt_fission_overheat=Enable Meltdowns
+gui.config.salt_fission.salt_fission_overheat.comment=Can molten salt fission reactors overheat?
 gui.config.salt_fission.salt_fission_min_size=Minimum Structure Length
 gui.config.salt_fission.salt_fission_min_size.comment=Minimum side length of molten salt fission reactors.
 gui.config.salt_fission.salt_fission_max_size=Maximum Structure Length
 gui.config.salt_fission.salt_fission_max_size.comment=Maximum side length of molten salt fission reactors.
 gui.config.salt_fission.salt_fission_cooling_rate=NaK Coolant Cooling Rates
-gui.config.salt_fission.salt_fission_cooling_rate.comment=Base heat removed per tick/mB. Order: base, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, enderium, cryotheum, iron, emerald, copper, tin, magnesium.
+gui.config.salt_fission.salt_fission_cooling_rate.comment=Base heat removed per tick/mB. Order: base, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, ender, cryotheum, iron, emerald, copper, tin, magnesium.
+gui.config.salt_fission.salt_fission_cooling_max_rate=Coolant Heater Coolant Use
+gui.config.salt_fission.salt_fission_cooling_max_rate.comment=Base rate at which Coolant Heaters use coolant in mB/s.
+gui.config.salt_fission.salt_fission_redstone_max_heat=Max Redstone Signal Heat
+gui.config.salt_fission.salt_fission_redstone_max_heat.comment=Percentage heat level of a salt fission reactor at which Redstone Emitters will output a full-strength redstone signal.
+gui.config.salt_fission.salt_fission_max_distribution_rate=Max Fuel Distribution Rate
+gui.config.salt_fission.salt_fission_max_distribution_rate.comment=The maximum rate at which fuel distributors and retrievers can push to and pull from fuel vessels in mB/s.
+
+gui.config.category.heat_exchanger=Heat Exchanger Configs
+gui.config.category.heat_exchanger.tooltip=Configure aspects of heat exchangers.
+
+gui.config.heat_exchanger.heat_exchanger_min_size=Minimum Structure Length
+gui.config.heat_exchanger.heat_exchanger_min_size.comment=Minimum side length of heat exchangers.
+gui.config.heat_exchanger.heat_exchanger_max_size=Maximum Structure Length
+gui.config.heat_exchanger.heat_exchanger_max_size.comment=Maximum side length of heat exchangers.
+gui.config.heat_exchanger.heat_exchanger_conductivity=Tube Conductivity
+gui.config.heat_exchanger.heat_exchanger_conductivity.comment=Multiplier for heat transfer rate to and from this type of tube. Order: copper, hard carbon, thermoconducting alloy.
+gui.config.heat_exchanger.heat_exchanger_coolant_mult=Coolant Heat Multiplier
+gui.config.heat_exchanger.heat_exchanger_coolant_mult.comment=Multiplier for the heat required to cool hot coolant.
+
+gui.config.category.turbine=Steam Turbine Configs
+gui.config.category.turbine.tooltip=Configure aspects of steam turbines.
+
+gui.config.turbine.turbine_min_size=Minimum Structure Length
+gui.config.turbine.turbine_min_size.comment=Minimum side length of steam turbines.
+gui.config.turbine.turbine_max_size=Maximum Structure Length
+gui.config.turbine.turbine_max_size.comment=Maximum side length of steam turbines.
+
+gui.config.category.condenser=Condenser Configs
+gui.config.category.condenser.tooltip=Configure aspects of condensers.
+
+gui.config.condenser.condenser_min_size=Minimum Structure Length
+gui.config.condenser.condenser_min_size.comment=Minimum side length of condensers.
+gui.config.condenser.condenser_max_size=Maximum Structure Length
+gui.config.condenser.condenser_max_size.comment=Maximum side length of condensers.
 
 gui.config.category.accelerator=Accelerator Configs
 gui.config.category.accelerator.tooltip=Configure aspects of particle acceleration.
@@ -1852,6 +2086,74 @@ gui.config.armor.armor_enchantability=Enchantabilities
 gui.config.armor.armor_enchantability.comment=Determines the quality of applied enchantments. Order: boron, tough alloy, hard carbon, boron nitride.
 gui.config.armor.armor_toughness=Toughnesses
 gui.config.armor.armor_toughness.comment=Toughnesses of armor types. Order: boron, tough alloy, hard carbon, boron nitride.
+
+gui.config.category.radiation=Radiation Configs
+gui.config.category.radiation.tooltip=Configure aspects of nuclear radiation.
+
+gui.config.radiation.radiation_enabled=Enable Radiation
+gui.config.radiation.radiation_enabled.comment=Will nuclear radiation exist in the world?
+
+gui.config.radiation.radiation_worlds=World Background Radiation
+gui.config.radiation.radiation_worlds.comment=List of dimensions and their background radiation levels. Format: 'modid:dimID_radiationLevel'.
+gui.config.radiation.radiation_biomes=Biome Background Radiation
+gui.config.radiation.radiation_biomes.comment=List of biomes and their background radiation levels. These values stack with the underlying world's background radiation. Format: 'modid:biomeName_radiationLevel'.
+
+gui.config.radiation.radiation_ores=Ore Stack Radiation
+gui.config.radiation.radiation_ores.comment=List of ore dict entries and their stack radiation levels. Format: 'oreName_radiationLevel'.
+gui.config.radiation.radiation_items=Item Stack Radiation
+gui.config.radiation.radiation_items.comment=List of items and their stack radiation levels. Format: 'modid:name:meta_radiationLevel'.
+gui.config.radiation.radiation_blocks=Block Stack Radiation
+gui.config.radiation.radiation_blocks.comment=List of blocks and their stack radiation levels. Format: 'modid:name:meta_radiationLevel'.
+
+gui.config.radiation.max_player_rads=Max Player Rads
+gui.config.radiation.max_player_rads.comment=The maximum number of rads a player can have before the radiation is fatal.
+gui.config.radiation.radiation_spread_rate=Radiation Spread Rate
+gui.config.radiation.radiation_spread_rate.comment=Controls the rate at which radiation will spread from chunk to chunk.
+gui.config.radiation.radiation_decay_rate=Radiation Decay Rate
+gui.config.radiation.radiation_decay_rate.comment=Controls the rate at which radiation decreases in a chunk over time.
+gui.config.radiation.radiation_lowest_rate=Lowest Radiation Rate
+gui.config.radiation.radiation_lowest_rate.comment=The lowest rate of player and chunk irradiation possible in Rads/t - amounts below this are ignored.
+
+gui.config.radiation.radiation_radaway_amount=RadAway Rads Removed
+gui.config.radiation.radiation_radaway_amount.comment=The total number of rads removed when using RadAway.
+gui.config.radiation.radiation_radaway_rate=RadAway Rad Removal Rate
+gui.config.radiation.radiation_radaway_rate.comment=The rate at which rads is removed when using RadAway in Rads/t.
+gui.config.radiation.radiation_rad_x_amount=Rad-X Radiation Resistance
+gui.config.radiation.radiation_rad_x_amount.comment=Controls the amount of radiation resistance gained when consuming Rad-X.
+gui.config.radiation.radiation_rad_x_lifetime=Rad-X Lifetime
+gui.config.radiation.radiation_rad_x_lifetime.comment=The time taken for one dose of Rad-X to wear off in ticks.
+gui.config.radiation.radiation_shielding_level=Radiation Shielding Levels
+gui.config.radiation.radiation_shielding_level.comment=The radiation resistance levels provided by the three levels of shielding. Order: light, medium, heavy.
+gui.config.radiation.radiation_hazmat_shielding=Radiation Hazmat Shielding
+gui.config.radiation.radiation_hazmat_shielding.comment=The radiation resistance levels provided by each piece of the hazmat suit. Order: headwear, chestpiece, leggings, boots.
+gui.config.radiation.radiation_scrubber_rate=Scrubber Max Removal Rate
+gui.config.radiation.radiation_scrubber_rate.comment=The maximum rate at which scrubbers will remove radiation in Rads/t.
+
+gui.config.radiation.radiation_shielding_default_recipes=Radiation Shielding Default Recipes
+gui.config.radiation.radiation_shielding_default_recipes.comment=If enabled, radiation shielding attachment recipes will be added for all registered armor pieces.
+gui.config.radiation.radiation_shielding_item_blacklist=Radiation Shielding Item Blacklist
+gui.config.radiation.radiation_shielding_item_blacklist.comment=List of armor items for which shielding recipes will not be added. Note that entries here should not include metadata. Format: 'modid:armorName'.
+gui.config.radiation.radiation_shielding_custom_stacks=Radiation Shielding ItemStack List
+gui.config.radiation.radiation_shielding_custom_stacks.comment=List of armor item stacks for which shielding recipes will be added. Mostly used when the automated shielding recipes are disabled or to add recipes back for armor with specific metadata removed via the blacklist. Format: 'modid:armorName:meta'.
+gui.config.radiation.radiation_shielding_default_levels=Radiation Default Armor Shielding
+gui.config.radiation.radiation_shielding_default_levels.comment=List of armor item stacks and their default radiation shielding levels. Format: 'modid:armorName:meta_resistance'. Note: this is not the only way to add these values if you have CraftTweaker installed. Radiation resistance can also be given to armor by changing their recipe such that an NBT tag called "ncRadiationResistance" with the double value equal to the resistance level is attached to it.
+
+gui.config.radiation.radiation_hud_size=Radiation HUD Size
+gui.config.radiation.radiation_hud_size.comment=Modifier for the size of radiation info on the HUD.
+gui.config.radiation.radiation_hud_position=Radiation HUD Position
+gui.config.radiation.radiation_hud_position.comment=Angle from the centre of the sreen at which radiation info appears on the HUD. 0 degrees is the top of the screen, 45 is top-right, etc.
+gui.config.radiation.radiation_hud_position_cartesian=HUD Cartesian Position
+gui.config.radiation.radiation_hud_position_cartesian.comment=Optional config to specify where the rads overlay should appear on the screen if not wanted on a side or at a corner - if used, this config will be used in place of the angle-based one. Two doubles are required [x, y] which specify how far right (x) and how far down (y) from the top-left corner of the screen the overlay is drawn at.
+
+gui.config.radiation.radiation_require_counter=Counter Required For Info
+gui.config.radiation.radiation_require_counter.comment=If disabled, the rads overlay will show and the ticking will be heard even when a Geiger Counter is not being held.
+
+gui.config.radiation.radiation_hardcore_stacks=Hardcore Stacks
+gui.config.radiation.radiation_hardcore_stacks.comment=If enabled, the radioactive stacks in a player's inventory irradiate the chunk the player is in as well as the player directly.
+gui.config.radiation.radiation_death_persist=Radiation Death Persistence
+gui.config.radiation.radiation_death_persist.comment=If enabled, players' rad levels will persist on death.
+gui.config.radiation.radiation_death_persist_fraction=Death Persistence Fraction
+gui.config.radiation.radiation_death_persist_fraction.comment=Specifies the fraction of the player's rad level that persists if Radiation Death Persistence is enabled.
 
 gui.config.category.other=Other Configs
 gui.config.category.other.tooltip=Miscellaneous configurations.
@@ -1916,16 +2218,34 @@ gui.computer.integer_too_small_error=Number argument %s too small, expected at l
 gui.computer.integer_too_large_error=Number argument %s too large, expected %s at most
 
 # Localisation for ZeroCore multiblock API
-zerocore:api.multiblock.validation.success=Machine validation was successful.
-zerocore:api.multiblock.validation.too_few_parts=Machine is too small.
-zerocore:api.multiblock.validation.machine_too_large=Machine is too large, it may be at most %1$d blocks in the %2$s dimension.
-zerocore:api.multiblock.validation.machine_too_small=Machine is too small, it must be at least %1$d blocks in the %2$s dimension.
+zerocore:api.multiblock.validation.success=Multiblock validation was successful
+zerocore:api.multiblock.validation.too_few_parts=Multiblock is too small
+zerocore:api.multiblock.validation.machine_too_large=Multiblock is too large, it may be at most %1$d blocks in the %2$s dimension
+zerocore:api.multiblock.validation.machine_too_small=Multiblock is too small, it must be at least %1$d blocks in the %2$s dimension
 zerocore:api.multiblock.validation.invalid_part=Part at %1$d, %2$d, %3$d is incompatible with this machine
 zerocore:api.multiblock.validation.invalid_part_for_frame=Block at %1$d, %2$d, %3$d is not valid for use in the machine's frame
 zerocore:api.multiblock.validation.invalid_part_for_bottom=Block at %1$d, %2$d, %3$d is not valid for use in the machine's bottom layer
 zerocore:api.multiblock.validation.invalid_part_for_top=Block at %1$d, %2$d, %3$d is not valid for use in the machine's top layer
 zerocore:api.multiblock.validation.invalid_part_for_sides=Block at %1$d, %2$d, %3$d is not valid for use in the machine's sides
 zerocore:api.multiblock.validation.invalid_part_for_interior=Block at %1$d, %2$d, %3$d is not valid for use in the machine's interior
+
+nc.block.fluid_toggle=Toggled side to
+nc.block.fluid_toggle_opposite=Toggled opposite side to
+
+nc.block.salt_heater_fluid_side.in=HOT COOLANT OUT
+nc.block.salt_heater_fluid_side.out=COOLANT SPREAD
+nc.block.salt_heater_fluid_side.both=DEFAULT
+nc.block.salt_heater_fluid_side.non=DISABLED
+
+nc.block.salt_vessel_fluid_side.in=DEPLETED OUT
+nc.block.salt_vessel_fluid_side.out=FUEL SPREAD
+nc.block.salt_vessel_fluid_side.both=DEFAULT
+nc.block.salt_vessel_fluid_side.non=DISABLED
+
+nc.block.exchanger_tube_fluid_side.in=PRODUCT OUT
+nc.block.exchanger_tube_fluid_side.out=INPUT SPREAD
+nc.block.exchanger_tube_fluid_side.both=DEFAULT
+nc.block.exchanger_tube_fluid_side.non=DISABLED
 
 gui.inventory.shift_for_info=Hold Shift for more info
 
@@ -1935,15 +2255,17 @@ gui.container.fission_controller.casing_incomplete_at=Casing Incomplete at
 gui.container.fission_controller.multiple_controllers=Extra Controller at
 gui.container.fission_controller.casing_in_interior=Casing In Interior at
 gui.container.fission_controller.invalid_structure=Invalid Structure
-gui.container.fission_controller.pos=BlockPos
+gui.container.fission_controller.no_problem=No Problem
+gui.container.fission_controller.pos=Pos
 gui.container.fission_controller.no_fuel=No Fuel
 gui.container.fission_controller.generic_fuel=Fuel
 gui.container.fission_controller.cells=Cells:
 gui.container.fission_controller.efficiency=Efficiency:
 gui.container.fission_controller.heat=Heat Level:
-gui.container.fission_controller.heat_gen=Heat Gen:
+gui.container.fission_controller.heat_gen=Net Heat Gen:
 gui.container.fission_controller.cooling=Cooling Rate:
 gui.container.fission_controller.heat_mult=Heat Multiplier:
+gui.container.fission_controller.fuel_remaining=Fuel Remaining:
 
 gui.container.fission_controller.tbu=TBU
 gui.container.fission_controller.leu=LEU
@@ -1970,6 +2292,7 @@ gui.container.fusion_core.ring_incomplete_at=Ring Incomplete
 gui.container.fusion_core.ring_blocked=Ring Interior Blocked
 gui.container.fusion_core.power_issue=E-magnets not Powered
 gui.container.fusion_core.incorrect_structure=Invalid Structure
+gui.container.fusion_core.no_problem=No Problem
 gui.container.fusion_core.size=Toroid Size:
 gui.container.fusion_core.energy=Energy:
 gui.container.fusion_core.power=Power:
@@ -1982,7 +2305,7 @@ gui.container.fusion_core.fuels=Current Fuels:
 gui.container.fusion_core.empty=Empty
 gui.container.fusion_core.reactor_not_found=Unable to access the fusion reactor - the structure is incomplete
 
-gui.container.salt_fission_controller.reactor=Molten Salt Reactor (WIP)
+gui.container.salt_fission_controller.reactor=Molten Salt Reactor
 gui.container.salt_fission_controller.pos=BlockPos
 gui.container.salt_fission_controller.vessels=Fission Vessels:
 gui.container.salt_fission_controller.heaters=Coolant Heaters:
@@ -1990,8 +2313,19 @@ gui.container.salt_fission_controller.efficiency=Mean Fuel Efficiency:
 gui.container.salt_fission_controller.heat_mult=Mean Heat Multiplier:
 gui.container.salt_fission_controller.cooling_rate=Cooling Efficiency:
 gui.container.salt_fission_controller.heat=Heat Level:
-gui.container.salt_fission_controller.heat_gen=Heat Gen:
+gui.container.salt_fission_controller.heat_gen=Net Heat Gen:
 gui.container.salt_fission_controller.cooling=Cooling Rate:
+
+gui.container.heat_exchanger_controller.heat_exchanger=Heat Exchanger
+gui.container.heat_exchanger_controller.tubes=Exchanger Tubes:
+gui.container.heat_exchanger_controller.efficiency=Average Efficiency:
+gui.container.heat_exchanger_controller.active_percent=Tubes Active:
+
+gui.container.high_turbine_controller.high_turbine=High Pressure Turbine (WIP)
+
+gui.container.low_turbine_controller.low_turbine=Low Pressure Turbine (WIP)
+
+gui.container.condenser_controller.condenser=Condenser (WIP)
 
 gui.container.energy_stored=Energy Stored:
 gui.container.process_power=Process Power:
@@ -2005,15 +2339,13 @@ gui.container.void_leftover_fluid=Void Leftover Fluid
 gui.container.void_outputs=Void Output Overflow
 gui.container.comparator_mode=Efficiency/Heat Comparator
 
-nuclearcraft.multiblock_validation.no_controller=Not connected to a controller - this is due to lag or a bug. It is recommended that this block is destroyed and replaced if these errors continue
-
-nuclearcraft.multiblock_validation.salt_fission.invalid_casing=%4$s is not a valid block at [%1$d, %2$d, %3$d]
-nuclearcraft.multiblock_validation.salt_fission.no_controller=There must be a controller for the reactor to form
-nuclearcraft.multiblock_validation.salt_fission.too_many_controllers=There must only be one controller for the reactor to form
-nuclearcraft.multiblock_validation.salt_fission.invalid_here=%4$s is not a valid block at [%1$d, %2$d, %3$d]
+nuclearcraft.multiblock_validation.invalid_block=%4$s is not a valid block at [%1$d, %2$d, %3$d]
+nuclearcraft.multiblock_validation.no_controller=There must be a controller for the reactor to form
+nuclearcraft.multiblock_validation.too_many_controllers=There must only be one controller for the reactor to form
 
 nuclearcraft.multiblock_gui.salt_fission.jei_name=Molten Salt Fission
-nuclearcraft.multiblock_gui.coolant_heater.jei_name=Molten Salt Coolant Heater
+nuclearcraft.multiblock_gui.coolant_heater.jei_name=Molten Salt Cooling
+nuclearcraft.multiblock_gui.heat_exchanger.jei_name=Heat Exchanger
 
 advancement.nuclearcraft.root.name=NuclearCraft
 advancement.nuclearcraft.root.desc=Nuclear Physics, Minecraft Style
@@ -2144,6 +2476,8 @@ material.tough.name=Tough Alloy
 material.hard_carbon.name=Hard Carbon
 material.boron_nitride.name=Boron Nitride
 
+message.nuclearcraft.rad_x_wore_off=Your Rad-X wore off...
+
 death.attack.superfluid_freeze=%1$s was Bose-Einstein condensated
 death.attack.plasma_burn=%1$s was incinerated by plasma
 death.attack.steam_burn=%1$s would have fared better in a kettle
@@ -2151,3 +2485,4 @@ death.attack.molten_burn=%1$s went to hell but didn't come back
 death.attack.hot_coolant_burn=%1$s cooled off at the wrong time and place
 death.attack.acid_burn=%1$s turned out to be far too alkaline
 death.attack.hypothermia=%1$s died as a result of extreme hypothermia
+death.attack.fatal_rads=%1$s died due to fatal radiation poisoning

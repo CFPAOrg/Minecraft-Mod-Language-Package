@@ -1,4 +1,4 @@
-ï»¿ Byte Order Mark, because fuck you IntelliJ
+# ï»¿ Byte Order Mark, because fuck you IntelliJ
 # BLOCKS
 tile.immersiveengineering.ore.copper.name=Copper Ore
 tile.immersiveengineering.ore.aluminum.name=Bauxite Ore
@@ -135,6 +135,8 @@ tile.immersiveengineering.metal_decoration2.aluminum_wallmount.name=Aluminium Wa
 tile.immersiveengineering.metal_decoration2.lantern.name=Lantern
 tile.immersiveengineering.metal_decoration2.razor_wire.name=Razor Wire
 tile.immersiveengineering.metal_decoration2.toolbox.name=Engineer's Toolbox
+tile.immersiveengineering.metal_decoration2.steel_slope.name=Steel Structural Arm
+tile.immersiveengineering.metal_decoration2.alu_slope.name=Aluminium Structural Arm
 
 tile.immersiveengineering.metal_decoration1_slab.steel_scaffolding_0.name=Steel Scaffolding Slab
 tile.immersiveengineering.metal_decoration1_slab.steel_scaffolding_1.name=Steel Scaffolding Slab
@@ -709,6 +711,7 @@ desc.immersiveengineering.info.shader.immersiveengineering:railgun=Railgun
 desc.immersiveengineering.info.shader.immersiveengineering:shield=Plated Shield
 desc.immersiveengineering.info.shader.immersiveengineering:minecart=Minecart
 desc.immersiveengineering.info.shader.immersiveengineering:balloon=Balloon
+desc.immersiveengineering.info.shader.immersiveengineering:banner=Banner
 desc.immersiveengineering.info.shader.set=§lShader Set§r:
 desc.immersiveengineering.info.shader.reference=§lReference to Popculture§r:
 desc.immersiveengineering.info.shader.details=§lAdditional Info§r:
@@ -1023,9 +1026,12 @@ immersiveengineering.potion.concreteFeet=Concrete Feet
 immersiveengineering.potion.flashed=Flashed
 
 #MANUAL
-#ie.manual.entry..name=
-#ie.manual.entry..subtext=
+ie.manual.currentVersion= - CURRENT
+ie.manual.newerVersion= - NEW
+#ie.manual.entry.name=
+#ie.manual.entry.subtext=
 #ie.manual.entry.=
+
 
 ie.manual.category.update.name=UPDATE NEWS!
 ie.manual.entry.updateNews_0.name=What's new in v0.6.0
@@ -1175,7 +1181,7 @@ ie.manual.entry.wiringTransformer0=§lTransformers§r allow you to transition be
 ie.manual.entry.wiringTransformer1=You can attach <link;wiring;§o§ntransformers §o§nto §o§nwooden §o§npoles§r;3> as shown on the second image on page 4, however only non-HV Transformers can be placed like this.
 ie.manual.entry.wiringCutters=The §lWire Cutters§r are used to removed all the wires connected to a block by simply rightclicking it.
 ie.manual.entry.wiringVoltmeter=The §lVoltmeter§r is used to measure connections. Aiming it at any energy storage or rightclicking it will read its current storage. Sneak+rightclick two connectors to calculate the average loss between them.
-ie.manual.entry.wiringFeedthrough=Feedthrough Insulators allow connecting wiring from one side of a wall to wiring on the other side without a hole. They can be created with any "normal" solid block in the middle. All common types of connectors (power and redstone) can be used to create feedthrough insulators for the corresponding wire type.
+ie.manual.entry.wiringFeedthrough=Feedthrough Insulators allow connecting wiring from one side of a wall to wiring on the other side without a hole. They can be created with any "normal" solid block in the middle. All common types of connectors (power and redstone) can be used to create feedthrough insulators for the corresponding wire type. Right-click one of the connectors with a hammer to form the multiblock.
 
 ie.manual.entry.generator.name=Power Generation
 ie.manual.entry.generator0=Transferring power is quite helpful provided you have power. To actually generate Flux, you can use the kinetic forces of windmills and waterwheels. Connecting these to a dynamo will generate power based on how fast they turn.
@@ -1433,11 +1439,11 @@ ie.manual.entry.skyhook1=Simply hold the right mousebutton while close to a conn
 
 ie.manual.entry.shader.name=Shaders
 ie.manual.entry.shader.subtext=Blue! No, yellow!
-ie.manual.entry.shader0=Shaders are items you can find in the world or aquire by trading with villagers. They don't have a purpose by themselves, but they can be equipped to <link;revolver;§o§nRevolvers§r>, <link;drill;§o§nDrills§r>, <link;chemthrower;§o§nChemical §o§nThrowers§r>, <link;shield;§o§nPlated §o§nShield§r> or <link;railgun;§o§nRailguns§r>(and possibly other things you still have to discover) to change the designs of the item. Simply put the item in an <link;workbench;§o§nEngineer's §o§nWorkbench§r> and equip the shader in the appropriate slot.<br>You can also apply them to a Minecart or a <link;balloon;§o§nBalloon§r> by rightclicking!
+ie.manual.entry.shader0=Shaders are items you can find in the world or aquire by trading with villagers. They don't have a purpose by themselves, but they can be equipped to <link;revolver;§o§nRevolvers§r>, <link;drill;§o§nDrills§r>, <link;chemthrower;§o§nChemical §o§nThrowers§r>, <link;shield;§o§nPlated §o§nShield§r> or <link;railgun;§o§nRailguns§r>(and possibly other things you still have to discover) to change the designs of the item. Simply put the item in an <link;workbench;§o§nEngineer's §o§nWorkbench§r> and equip the shader in the appropriate slot.<br>You can also apply them to a Minecart, Banner or a <link;balloon;§o§nBalloon§r> by rightclicking!
 ie.manual.entry.shader1=For a full list of all available shaders, their looks, references and more details, <link;shaderList;§o§ncheck §o§nhere§r>
 ie.manual.entry.shader2=Shader Grabbags are items containing a random shader. They can be found in crates, traded from villagers or dropped by bosses. The rarity of the contained shader is equal to, or better than the rarity of the bag. When using a bag, you are more likely to get a shader you do not yet own, than one you already posess.
 ie.manual.entry.shader3=Shaders bags can be crafted into two bags of a lower level. This will lower your chances of getting rarer shaders but provide you with more attempts.
-//Shaders themselves can also be crafted into a single bag of the lower level.
+# //Shaders themselves can also be crafted into a single bag of the lower level.
 
 ie.manual.entry.shaderList.name=List of Shaders
 ie.manual.entry.shaderList.noInfo=You have not unlocked this shader yet!
@@ -1479,7 +1485,7 @@ ie.manual.entry.crusher.name=Crusher
 ie.manual.entry.crusher.subtext=Keep your hands out!
 ie.manual.entry.crusher0=Crushing an ore is an effective way of increasing their yield, for each ore creates two dusts which you can then smelt. This industrial-size crusher is a quick way of doing so. The machine's processing speed depends on the power supplied to it.
 ie.manual.entry.crusher1=Applying a redstone signal to the control panel at the front will halt the crushers process, this behavior can be inverted by use of the Engineer's Hammer.<br>The structure is formed by right clicking the central block of the front. The front is the wide side of the structure which has a light engineering block at the bottom.
-//However, it is not only used for crushing ores. Every living being to fall into the machine will take grave damage and the crusher will output the relevant drops. Likewise, all items that cannot be processed will be destroyed.<br>
+# //However, it is not only used for crushing ores. Every living being to fall into the machine will take grave damage and the crusher will output the relevant drops. Likewise, all items that cannot be processed will be destroyed.<br>
 
 ie.manual.entry.lightningrod.name=Lightning Rod
 ie.manual.entry.lightningrod.subtext=Thunderstruck!
