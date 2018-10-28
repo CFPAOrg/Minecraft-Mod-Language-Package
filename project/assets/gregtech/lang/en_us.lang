@@ -20,7 +20,10 @@ gregtech.multiblock.pyrolyze_oven.description=The Pyrolyze Oven is a multiblock 
 gregtech.multiblock.cracker.description=The Cracker Unit is a multiblock structure used for turning Light and Heavy Fuel into their Cracked variants.
 gregtech.multiblock.diesel_engine.description=The Diesel Engine is a multiblock structure that acts as a Diesel Generator for EV power.
 gregtech.multiblock.distillation_tower.description=The Distillation Tower is a multiblock structure used for distilling the various types of Oil and some of their byproducts.
-
+gregtech.multiblock.electric_blast_furnace.description=The Electric Blast Furnace (EBF) is multiblock structure used for smelting alloys, cooking metals and refining ores. It is required for obtaining high-tier alloys and metals, such as aluminium, stainless steel and titanium, naquadah alloy.
+gregtech.multiblock.multi_smelter.description=The Multi Smelter is multiblock structure used for smelting massive amounts of items at once. Different tiers of coils provide speed boost and energy efficiency gain. 16 is base value of items smelted per operation, and can be multiplied by using higher level coils.
+gregtech.multiblock.large_boiler.description=Large Boilers are multiblocks that generate steam from energy source and water. Usually either solid fuel or some high-density fluid acts like energy source for large boiler. Tiers differ only by amount of steam outputted.
+gregtech.multiblock.large_turbine.description=Large Turbines are multiblocks that generate power from steam, gases and plasma by them spinning turbine's rotor. Energy output is based on rotor efficiency and current speed of turbine.
 metaitem.dust.tooltip.purify=Throw into Cauldron to get clean Dust
 metaitem.generic.fluid_container.tooltip=%d/%dL %s
 metaitem.generic.fluid_container.tooltip_empty=Empty
@@ -860,7 +863,7 @@ metaitem.tool.file.name=%s File
 metaitem.tool.crowbar.name=%s Crowbar
 metaitem.tool.crowbar.tooltip=Dismounts Covers and Rotates Rails
 metaitem.tool.screwdriver.name=%s Screwdriver
-metaitem.tool.screwdriver.tooltip=Adjusts Covers and Machines
+metaitem.tool.screwdriver.tooltip=/nRight click on a machine side to increment it's output tank filter index/nWhen output tank filter is set up, only fluids from specified tank index are allowed to be outputted on that side.
 metaitem.tool.mortar.name=%s Mortar
 metaitem.tool.wire_cutter.name=%s Wire Cutter
 metaitem.tool.scoop.name=%s Scoop
@@ -1599,19 +1602,10 @@ recipemap.dieselgeneratorfuel.value=Fuel Value: %s EU
 recipemap.gasturbinefuel.name=Gas Turbine Fuel
 recipemap.gasturbinefuel.value=Fuel Value: %s EU
 recipemap.thermalgeneratorfuel.name=Thermal Generator Fuel
-recipemap.thermalgeneratorfuel.value=Fuel Value: %s EU
 recipemap.semifluidboilerfuels.name=Semifluid Boiler Fuels
-recipemap.semifluidboilerfuels.value=Fuel Value: %s EU
 recipemap.plasmageneratorfuels.name=Plasma generator Fuels
-recipemap.plasmageneratorfuels.value=Fuel Value: %s EU
 recipemap.magicfuels.name=Magic Fuels
 recipemap.magicfuels.value=Fuel Value: %s EU
-recipemap.smallnaquadahreactor.name=Small Naquadah Reactor
-recipemap.smallnaquadahreactor.value=Fuel Value: %s EU
-recipemap.largenaquadahreactor.name=Large Naquadah Reactor
-recipemap.largenaquadahreactor.value=Fuel Value: %s EU
-recipemap.fluidnaquadahreactor.name=Fluid Naquadah Reactor
-recipemap.fluidnaquadahreactor.value=Fuel Value: %s EU
 recipemap.forming_press.name=Forming Press
 recipemap.forge_hammer.name=Forge Hammer
 recipemap.compressor.name=Compressor
@@ -1620,6 +1614,7 @@ recipemap.unpacker.name=Unpacker
 recipemap.diesel_generator.name=Diesel Generator
 recipemap.gas_turbine.name=Gas Turbine
 recipemap.steam_turbine.name=Steam Turbine
+recipemap.semi_fluid_generator.name=Semi Fluid Fuels
 
 behavior.magnifying_glass.description=Click on surface rock to inspect it
 behavior.magnifying_glass.inspect=This rock contains %s
@@ -1627,7 +1622,7 @@ behaviour.hoe=Can till dirt
 behaviour.soft_hammer=Click machine to allow/disallow it to work
 behaviour.lighter.tooltip=Can light things on fire
 behaviour.lighter.uses=Remaining uses: %d
-behaviour.unstackable=Not usable when stacked!
+behavior.plunger.description=Right click on machine to clear 1000 mb out of it's output tank./nUse while sneaking to clear 1000 mb out of machine's input tank./nInput tank clearing works only on GTCE machines!
 
 enchantment.damage.endermen=Disjunction
 enchantment.damage.radioactivity=Radioactivity
@@ -1687,6 +1682,15 @@ tile.boiler_casing.bronze_pipe.name=Bronze Pipe Casing
 tile.boiler_casing.steel_pipe.name=Steel Pipe Casing
 tile.boiler_casing.titanium_pipe.name=Titanium Pipe Casing
 tile.boiler_casing.tungstensteel_pipe.name=Tungstensteel Pipe Casing
+
+#Legacy locales
+tile.boiler_casing.legacy_bronze_firebox.name=Legacy Block (Bronze Firebox Casing)
+tile.boiler_casing.legacy_steel_firebox.name=Legacy Block (Steel Firebox Casing)
+tile.boiler_casing.legacy_titanium_firebox.name=Legacy Block (Titanium Firebox Casing)
+tile.boiler_casing.legacy_tungstensteel_firebox.name=Legacy Block (Tungstensteel Firebox Casing)
+tile.boiler_casing.legacy=This block is legacy. Put it into the crafting grid to get a new one.
+
+#Firebox casing blocks
 tile.boiler_casing.bronze_firebox.name=Bronze Firebox Casing
 tile.boiler_casing.steel_firebox.name=Steel Firebox Casing
 tile.boiler_casing.titanium_firebox.name=Titanium Firebox Casing
@@ -2207,11 +2211,17 @@ gregtech.machine.pump.lv.name=Basic Pump
 gregtech.machine.pump.mv.name=Advanced Pump
 gregtech.machine.pump.hv.name=Advanced Pump II
 gregtech.machine.pump.ev.name=Advanced Pump III
-gregtech.machine.pump.iv.name=Advanced Pump IV
-gregtech.machine.pump.luv.name=Advanced Pump V
-gregtech.machine.pump.zpm.name=Advanced Pump VI
-gregtech.machine.pump.uv.name=Advanced Pump VII
-gregtech.machine.pump.max.name=Advanced Pump VIII
+
+#Air Collectors
+gregtech.machine.air_collector.lv.name=Basic Air Collector
+gregtech.machine.air_collector.mv.name=Advanced Air Collector
+gregtech.machine.air_collector.hv.name=Advanced Air Collector II
+gregtech.machine.air_collector.ev.name=Atmosphere Collector III
+gregtech.machine.air_collector.description=Collects air from adjacent blocks
+
+#Tesla Coil
+gregtech.machine.tesla_coil.name=Tesla Coil
+gregtech.machine.tesla_coil.description=Damages all living entities within 7 blocks range/Consumes 2500 EU for 1 damage point\nInternal buffer Capacity: §e256k EU
 
 # General machinery
 gregtech.machine.basic.output_override.reset=Output filter: all tanks.
@@ -2804,6 +2814,7 @@ gregtech.fluid.click_to_fill.shift=§7(Shift-clicking will fill all containers i
 gregtech.fluid.click_to_empty=§7Click with a filled fluid container to empty in into tank.
 gregtech.fluid.click_to_empty.shift=§7(Shift-clicking will empty all containers in your hand)
 
+gregtech.fluid.plasma=%s Plasma
 gregtech.fluid.empty=Empty
 gregtech.fluid.amount=§7%,d/%,d
 gregtech.fluid.temperature=§7Temperature: %dK

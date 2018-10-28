@@ -229,6 +229,7 @@ item.seal.breaker.name=Control Seal: Block Breaker
 item.seal.use.name=Control Seal: Use
 item.seal.provider.name=Control Seal: Provide
 item.seal.stock.name=Control Seal: Stock
+item.seal.breaker_advanced.name=Control Seal: Advanced Block Breaker
 #
 # Blocks
 ###################################
@@ -349,6 +350,7 @@ tile.condenser_lattice.name=Flux Condenser Lattice
 tile.condenser_lattice_dirty.name=Clogged Flux Condenser Lattice
 tile.void_siphon.name=Void Siphon
 tile.infernal_furnace.name=Infernal Furnace
+tile.inlay.name=Redstone Inlay
 #
 # Doodads
 tile.matrix_speed.name=Infusion Speed Stone
@@ -590,6 +592,9 @@ item.runic.charge=Runic shield
 item.warping=Warping
 item.capacity.text=Capacity
 item.chargebonus.text=Charge
+stability.gain=gain / cycle
+stability.range=0 to 
+stability.loss=loss / cycle
 stability.VERY_STABLE=Very Stable
 stability.STABLE=Stable
 stability.UNSTABLE=Unstable
@@ -838,6 +843,7 @@ golem.prop.redon=Redstone sensitive
 golem.prop.redoff=Ignores Redstone signals
 golem.prop.exist=Container must already contain item
 golem.prop.leave=Always leave at least 1 item
+golem.prop.silk=Use Silk Touch
 
 focuspart.com=Complexity:
 
@@ -1401,8 +1407,8 @@ research.INFUSION.stage.2=Unsurprisingly, infusion crafting is proving to be a l
 research.INFUSION.stage.3=To even get started with infusion crafting there are several things I will need: The Runic Matrix (which I now have), arcane pedestals and a ready supply of magic in the form of essentia.<BR>Once you have your Runic Matrix properly placed into a structure commonly known as an Infusion Altar, you can begin to craft. The altar is crafted with the use of Salis Mundus, like most other mystical structures. Once the pillars have formed, the runic matrix can be activated using a casting tool.<BR>The central pedestal located under the matrix is where the item you wish to infuse will go. You will also need several more pedestals placed around the altar where you can place the blocks and items you wish to infuse into the target object. Lastly you will need warded jars or similar essentia containers holding the requisite amount of vis.<BR>Once all this is gathered you can click on the Runic Matrix with a casting tool to start the crafting process.<BR>During the first stage of crafting, essentia will be drained from nearby sources. Crafting will stall if there is insufficient essentia available - something that you do not want and will be explained on following pages.<BR>Once all the required essentia has been infused into the target object, the other objects will have their essential essence drained. Only when this is done will the crafting process complete.<LINE>Infusion crafting is not without risks. The entire process involves forcing vast energies into a single object. Unpredictable things tend to happen.<BR>Usually one of the fusion objects get knocked off a pedestal, or flux gets generated, but more catastrophic events are not unheard of.<BR>The longer crafting continues due to unresolved problems like lack of vis or dropped items, the greater the chance of something bad happening.<BR>These effects can be reduced by various means. Firstly you wish to keep the entire fusion structure as symmetrical as possible - take careful note of where you place pedestals and make sure they are balanced with other pedestals on the opposite side of the altar. When placing fusion items into them you may wish to keep them balanced as well. Lastly you can place occult paraphernalia around the altar in symmetrical formations (things like candles, skulls, etc.). These will have the effect of reducing instability.<IMG>thaumcraft:textures/research/research5.png:128:0:128:136:1</IMG>
 #
 research.INFUSIONSTABLE.title=Infusion Stabilization
-research.INFUSIONSTABLE.stage.1=Infusion has proven to be much more unstable than I expected. Placing occult paraphernalia does mitigate the effect somewhat, but much less than the texts suggested. Placing more than 12 such items seems to hinder more than they help.<BR>I need to find more effective way of reducing instability. Strangely enough, I think mundane technology might have the answer.<BR>It is well known that mundane power sources like redstone interferes with thaumaturgy. Of course, throwing redstone into the mix of an already unstable infusion is not the answer, but maybe there is some way to harness the interference.
-research.INFUSIONSTABLE.stage.2=I have put together a device I am calling, appropriately enough, a Stabilizer. It accepts energy in the form of RF or FE which it uses to create an interference pattern that serves to 'smooth' out the interaction between magical objects and the local aura. The effect is highly localized so the Stabilizer needs to be pointed at what you want to stabilize. It has a range of 8 blocks.<BR>The Stabilizer has obvious benefits when used on an infusion matrix, but I believe many more uses will reveal themselves. For instance I wonder effect it might have on natural aura instability like that caused by flux?
+research.INFUSIONSTABLE.stage.1=Infusion has proven to be much more unstable than I expected. Placing occult paraphernalia does mitigate the effect somewhat, but much less than the texts suggested. The more items of the same type you place, the less effective they are.<BR>I need to find more effective ways of mitigating instability. Strangely enough, I think mundane technology might have the answer.<BR>It is well known that mundane power sources like redstone interferes with thaumaturgy. Of course, throwing redstone into the mix of an already unstable infusion is not the answer, but maybe there is some way to harness the interference.
+research.INFUSIONSTABLE.stage.2=I have put together something I am calling, appropriately enough, a Stabilizer.<BR>The core of the Stabilizer is made from a block of redstone that has been bombarded by vis. As a result it has become an instability magnet of sorts. Unstable magical energy is drawn to it and discharged as flux. While not ideal, flux is easier to manage than losing expensive crafting ingredients.<BR>While Stabilizers provide a fair amount of stability to the infusion process when placed near the altar, they have a much more important function: When discharges occur that would normally knock items off their pedestals or even destroy them, the discharge can instead be redirected to the Stabilizer and absorbed.<BR>Unfortunately the Stabilizer needs a little help to perform this function. Pedestals you wish to protect needs to be connected to the Stabilizer via Redstone Inlay. This is placed much like normal redstone and even has similar limits as redstone. For example the protective charge created by the Stabilizer cannot reach more than 15 blocks. Pedestals themselves act as redstone inlay and will propagate the protective charge. A properly connected pedestal will have runes appear at its base.<BR>When an instability discharge hits a protected pedestal, the discharge will travel along the inlay towards the nearest Stabilizer and discharge there instead. This temporarily weakens the stabilizer and the protective charge will be reduced till the Stabilizer has had a chance to discharge the unstable energy as flux. I may wish to use multiple stabilizers to prevent overloading a single one and leaving some pedestals temporarily unprotected.<BR>It should be noted that Redstone Inlay provide a small amount of stability themselves, so I should take care to keep their placement properly balanced.
 got.instability=I should study infusion instability further.
 #
 research.INFUSIONBOOST.title=Infusion Boosting
@@ -1740,6 +1746,7 @@ research.SEALBUTCHER.stage.2=The butcher seal works much like a §5Guard§0 seal
 research.SEALBREAK.title=Control Seal: Block Breaker
 research.SEALBREAK.stage.1=Specially equipped and instructed golems should be capable of digging and breaking blocks. I just need to design the proper seal for that task.
 research.SEALBREAK.stage.2=This seal commands golems to break any blocks they find in the area.<BR>The hardness of a block determines how quickly it can be broken.<BR>It is possible to filter the type of blocks to be broken or ignored.<BR>It should be noted that due to factors like golem mobility, limited area, and speed, this seal probably will not make a very effective mining tool, though it could be used as such in a pinch.
+research.SEALBREAK.stage.ADV=I can now craft an advanced version of the seal that will allow you to filter more items at once and allow the golem to break blocks as if they are using Silk Touch.<BR>Golems will take longer to break block if Silk Touch is used. 
 #
 research.SEALLUMBER.title=Control Seal: Lumberjack
 research.SEALLUMBER.stage.1=While the §5Block Breaker§0 seal can be used to chop down trees it is not particularly effective at the task. I should do something about that.
