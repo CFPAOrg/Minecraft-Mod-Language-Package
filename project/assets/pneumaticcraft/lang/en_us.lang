@@ -47,7 +47,7 @@ tile.programmable_controller.name=Programmable Controller
 tile.gas_lift.name=Gas Lift
 tile.refinery.name=Refinery
 tile.thermopneumatic_processing_plant.name=Thermopneumatic Processing Plant
-tile.fuel.name=Gasoline
+tile.fuel   .name=Gasoline
 tile.lpg.name=LPG
 tile.kerosene.name=Kerosene
 tile.diesel.name=Diesel
@@ -169,6 +169,8 @@ item.thaumcraft_upgrade.name=Thaumcraft Upgrade
 item.charging_upgrade.name=Charging Upgrade
 item.armor_upgrade.name=Armor Upgrade
 item.jet_boots_upgrade.name=Jet Boots Upgrade
+item.night_vision_upgrade.name=Night Vision Upgrade
+item.scuba_upgrade.name=SCUBA Upgrade
 
 item.assembly_program0.name=Assembly Program: Drill
 item.assembly_program1.name=Assembly Program: Laser
@@ -375,10 +377,12 @@ gui.tab.info.item.armor.head.coordinateTrackerUpgrade=§0The Coordinate Tracker 
 gui.tab.info.item.armor.head.entityTrackerUpgrade=§0With the Entity Tracker upgrade in, the helmet is able to track any living entity within a range of 16 blocks. These entities don't have to be visible, making this upgrade a perfect way to prevent Creepers sneaking up on you.
 gui.tab.info.item.armor.head.blockTrackerUpgrade=§0With the Block Tracker you'll be able to track Chests, Mob Spawners, Furnaces, Silverfish Blocks, Tripwires, Dispensers, TNT and End Portal Blocks within a range of 30 blocks. This way Dungeons, Fortresses and temples can easily be found. Inventories can even be remotely examined, as hovering over one of these indicators will show their inventories.
 gui.tab.info.item.armor.head.speedUpgrade=§0With Speed Upgrades installed, the helmet will initialize its systems faster when equipped and lock onto blocks/entities faster (with the Block Tracker or Entity Upgrade installed, respectively).  Multiple Speed Upgrades can be installed to further reduce the initialization time, but air usage will increase.
-gui.tab.info.item.armor.head.rangeUpgrade=§0Range Upgrades increase the range at which the Block and Entity Tracker Upgrades can operate.  Up to 5 Range Upgrades can be installed, and each upgrade increases the range by 5 blocks.
+gui.tab.info.item.armor.head.rangeUpgrade=§0Range Upgrades increase the range at which the Block and Entity Tracker Upgrades can operate.  Up to 5 Range Upgrades can be installed, and each upgrade increases the range by 5 blocks (but also increases the air usage).
 gui.tab.info.item.armor.head.securityUpgrade=§0With one or more Security Upgrades installed, you gain the ability to §ohack§0 various blocks and entities in the world with the hacking hotkey (default: H).  Hacking has a variety of useful effects; try targeting things in the world with a Block and/or Entity Tracker Upgrade also installed.
 gui.tab.info.item.armor.head.dispenserUpgrade=§0When used in conjunction with the Entity Tracker upgrade, the Dispenser Upgrade allows debugging & monitoring of active drones; target a drone and use the drone-debug hotkey (default: Y), then open the helmet options GUI (default: U). \n \nA redstone particle effect will also be displayed in any blocks that nearby (within 32 blocks) drones are interested in.
 gui.tab.info.item.armor.head.thaumcraftUpgrade=§0With a Thaumcraft Upgrade installed, you gain the benefits of Goggles of Revealing: nodes are revealed, you get a 5%% Vis discount, and essentia levels of various containers are displayed on-screen.
+gui.tab.info.item.armor.head.night_visionUpgrade=§0As its name suggests, the Night Vision upgrade allows you to see clearly in the dark, for a minor air cost. A single upgrade is sufficient.
+gui.tab.info.item.armor.head.scubaUpgrade=§0This upgrade allows you to breathe underwater, using air stored in your helmet. Note that this is less efficient in terms of air usage than an Aerial Interface, but also more... self-contained.
 gui.tab.info.item.armor.chest.magnetUpgrade=§0With a Magnet Upgrade installed, your chestplate can automatically pull nearby items toward you for a small air cost.  You can install up to 6 Magnet Upgrades to extend the magnet's range.
 gui.tab.info.item.armor.chest.chargingUpgrade=§0With one or more Charging Upgrades installed, your chestplate can automatically charge all other pressurizable items in your inventory, either worn or carried (note: will only charge items with a lower pressure than the chestplate).  Up to 6 Charging Upgrades can be installed to increase the charging rate.
 gui.tab.info.item.armor.chest.securityUpgrade=§0With a Security Upgrade installed, you will gain protection from fire and lava at a significant air cost: air will be rapidly dumped from the chestplate to extinguish nearby flames and solidify nearby lava.
@@ -416,7 +420,7 @@ gui.tab.info.tile.security_station.hacking=§0In here you can hack a Security St
 gui.tab.info.tile.universal_sensor=§0Like the name suggests, you can use this device as sensor in many applications. To select a sensor, put in the right Upgrades and navigate through the folder structure. Sensors are marked with a yellow button text. The Block and GPS Tool sensors emit a redstone signal dependent on a location. When two GPS Tools are inserted, the locations of the Tools form the corners of a box, and every coordinate in this box is used in the measurement. The measuring interval is decreased when using multiple coordinates (does not apply for event based sensors like the Player right click sensor). Both GPS Tools need to be in range of the sensor.
 gui.tab.info.tile.pneumatic_generator=§0This machine is only useful with IndustrialCraft 2 installed. The machine's sole purpose is to convert compressed air into IC2's EU. You can interact with this machine with an IC2 Wrench just like any other IC2 machine.
 gui.tab.info.tile.electric_compressor=§0This machine is only useful with IndustrialCraft 2 installed. The machine's sole purpose is to convert IC2's EU into compressed air. You can interact with this machine with an IC2 Wrench just like any other IC2 machine.
-gui.tab.info.tile.electrostatic_compressor=§0In the real world it has been stated it's incredibly difficult to do, but in this world it's a reality: creating energy from lightning. When this machine gets hit by lightning, it produces 200000mL instantly. To increase the chance that the machine will be hit, you can make a grid of Iron Bars and attach it to this machine. The bolt will then travel through the bars into the machine.
+gui.tab.info.tile.electrostatic_compressor=§0In the real world it has been stated it's incredibly difficult to do, but here it's a reality: creating energy from lightning. When this compressor is hit by lightning, it produces 200,000 mL of air instantly. To increase the chance of a strike, place down a grid of Iron Bars connected to this compressor. \n \nNotes: \n• You can place multiple Electrostatic Compressors on the same grid, and the incoming air will be shared amongst them. \n• The grid of Iron Bars is effective out to 5 blocks horizontally (circular radius) and 5 blocks vertically from the compressor. The more bars (to a maximum of 250 per grid), the better the chance of a strike. \n• You can also improve the chances of a strike by adding a lightning rod: a column of up to 10 iron bars directly above the compressor. \n• To dissipate excess energy (and a potential explosion), add a column of Iron Bars directly below the compressor to ground it. The number of bars needed depends on the number of connected compressors (see the "Electrostatic Info" tab opposite). \n• The chances of a lightning strike are very poor in clear weather, better when raining, and much better in a thunderstorm.
 gui.tab.info.tile.pneumatic_door_base=§0This machine, when placed next to (the top half of) a Pneumatic Door, will automatically open the door when there are players nearby. When the Pneumatic Door Base is within range of a Security Station, the Pneumatic Door Base will only react to players which are allowed by the Security Station. This block can be camouflaged with the Camouflage Applicator tool.
 gui.tab.info.tile.pneumatic_door=§0This block is used together with a Pneumatic Door Base to form a working door contraption.
 gui.tab.info.tile.omnidirectional_hopper=§0Did you ever want to use Hoppers to extract items from a side other than the bottom of an inventory? Or did you wish that the Hopper could transfer items faster? Then this Omnidirectional Hopper is for you. Apart from orienting it in any direction you want, it can also be upgraded like other PneumaticCraft machines. \n \nYou can configure the input and output directions with a wrench: \n- Right-click to rotate the input \n- Sneak-right-click to rotate the output
@@ -453,13 +457,14 @@ gui.tab.pressure=Pressure
 
 # Problems
 gui.tab.problems=Problems
-gui.tab.problems.redstoneDisallows=§7Redstone disallows this machine to function.
+gui.tab.problems.warning=Warnings
+gui.tab.problems.noProblems=No Problems
+gui.tab.problems.redstoneDisallows=§fRedstone disallows this machine to function.
 gui.tab.problems.provideRedstone=§0Provide a redstone signal.
 gui.tab.problems.removeRedstone=§0Remove the redstone signal.
 gui.tab.problems.notEnoughPressure=§7Not enough pressure.
 gui.tab.problems.applyPressure=§0Apply at least %s bar.
 gui.tab.problems.notEnoughHeat=§7Not enough heat. \n§0Apply more heat by adding blocks that generate heat around this machine.
-gui.tab.problems.noProblems=No Problems
 gui.tab.problems.aerialInterface.linked=§0Machine linked with %s.
 gui.tab.problems.fluxCompressor.noRF=§7The machine is out of RF. \n§0Add more powah!
 gui.tab.problems.plasticMixer.noPlastic=§7No plastic to melt down. \n§0Add plastic in the bottom slot of the 'Item' section.
@@ -467,7 +472,7 @@ gui.tab.problems.plasticMixer.plasticOverflow=§7There's no inventory space to a
 gui.tab.problems.plasticMixer.noDye=§7No dye left. \n§0Add %s.
 gui.tab.problems.plasticMixer.noProblems=§7No problems. \n§0Click on the plastic of the desired color in the Plastic Selection tab.
 gui.tab.problems.liquidCompressor.noFuel=§7The machine has no fuel. \n§0Add any of the fuels listed in the 'Available Fuels' tab.
-gui.tab.problems.advancedAirCompressor.efficiency=§7The Compressor is running at a suboptimal efficiency. Efficiency: %s \n§0Cool the machine down to under 50 degrees C.
+gui.tab.problems.advancedAirCompressor.efficiency=§fThe Compressor is running at a suboptimal efficiency. Efficiency: %s \n§0Cool the machine down to under 50°C.
 gui.tab.problems.programmableController.noProgram=§7No program inserted to run. \n§0Insert a programmed Network API or Drone.
 gui.tab.problems.gasLift.noLiquidSpace=§7Not enough tank space to pump. \n§0Connect up a tank.
 gui.tab.problems.gasLift.noTubes=§7No tubes! \n§0Place Pressure Tubes in the inventory.
@@ -485,10 +490,11 @@ gui.tab.problems.amadron.notEnoughFluidSpace=§7Can't store more fluid than curr
 gui.tab.problems.amadron.notEnoughItems=§7Out of items to sell! \n§0Add more items in the bound inventory.
 gui.tab.problems.amadron.notEnoughFluid=§7Out of fluid to sell! \n§0Add more fluid in the bound tank. Or bind a bigger tank.
 gui.tab.problems.amadron.outOfStock=§7Out of stock! \n§0Come back later, maybe the vendor will resupply later.
-gui.tab.problems.keroseneLamp.lowFuel=§7The lamp is low on fuel. \n§0Add Kerosene through a fluid insertion method (like a Liquid Hopper or Logistic Drone).
+gui.tab.problems.keroseneLamp.lowFuel=§fThe lamp is low on fuel. \n§0Add Kerosene through a fluid insertion method (like a Liquid Hopper or Logistic Drone).
 gui.tab.problems.keroseneLamp.noFuel=§7The lamp has no fuel. \n§0Add Kerosene by placing a Kerosene Bucket in the slot, or through a fluid insertion method (like a Liquid Hopper or Logistic Drone).
 gui.tab.problems.keroseneLamp.badFuel=§7The lamp has an unsuitable fluid in the tank! \n§0Pump out the fluid with a Liquid Hopper or other fluid extraction device.
 gui.tab.problems.sentryTurret.noAmmo=§7The Sentry Turret has no ammo. \n§0Add Gun Ammo to the Ammo slots.
+gui.tab.problems.electrostatic.notEnoughGrounding=§fWhen lightning strikes with a full air tank not all the energy can be redirected! \n§0Connect up more Iron Bars to the underside of the Electrostatic Compressor
 
 # Upgrades
 gui.tab.upgrades=Upgrades
@@ -585,6 +591,7 @@ gui.tab.aerialInterface.feedMode.utilizeFullHealthElsePossible=When the player h
 gui.tab.info.logisticsRequester.aeIntegration.title=AE2 Integration
 gui.tab.info.logisticsRequester.aeIntegration=When checked, Logistic Drones will inform the AE Network about providable items (which then can be 'crafted'). When asked to craft, the Requester Frame is set up to request the requested items.
 gui.tab.info.logisticsRequester.aeIntegration.enable=Enable Integration
+gui.tab.electrostaticCompressor.info.title=Electrostatic Info
 
 gui.programmer.button.export.programmingWhen=§aProgramming when: %s
 gui.programmer.button.export.pressingButton=Pressing button
@@ -601,7 +608,7 @@ gui.programmer.button.convertToRelative.coordIsNotChangedWarning=§e-Warning: Co
 
 # Universal Sensor descriptions
 gui.universalSensor.desc.userSetSensor=This is a 'sensor' you can use to emit a constant redstone value. The value emitted is the numeric value inserted into the textbox.
-gui.universalSensor.desc.heatSensor=The coordinate(s) marked by the GPS Tool(s) is/are monitored for heat. When the temperature of the monitored block is higher than the temperature put in the text box (in degrees C) the sensor will emit a redstone strength of 15 and 0 if not. If the textbox is empty, the output level will be linear to the temperature, scaling from 0 through 400 degrees C. In case of multiple positions, the position with the highest temperature is used.
+gui.universalSensor.desc.heatSensor=The coordinate(s) marked by the GPS Tool(s) is/are monitored for heat. When the temperature of the monitored block is higher than the temperature put in the text box (in °C) the sensor will emit a redstone strength of 15 and 0 if not. If the textbox is empty, the output level will be linear to the temperature, scaling from 0°C through 400°C. In case of multiple positions, the position with the highest temperature is used.
 gui.universalSensor.desc.playerHealth=This sensor option emits a redstone signal proportional to the player's health. no health = 0, max health = 15, and anything in between. The player's name needs to be put into the textbox.
 
 # GUI strings
@@ -833,6 +840,7 @@ pneumaticHelmet.upgrade.coordinateTracker=Coordinate Tracker
 pneumaticHelmet.upgrade.hackingUpgrade=Hacking Upgrade
 pneumaticHelmet.upgrade.coreComponents=Pneumatic Armor
 pneumaticHelmet.upgrade.droneDebugger=Drone Debugger
+pneumaticHelmet.upgrade.nightVision=Night Vision
 # Pneumatic Chestplate upgrades
 pneumaticHelmet.upgrade.magnet=Magnet
 pneumaticHelmet.upgrade.charging=Auto-Charger
@@ -843,6 +851,7 @@ pneumaticHelmet.upgrade.jumpBoost=Jump Boost
 pneumaticHelmet.upgrade.kick=Pneumatic Kick
 pneumaticHelmet.upgrade.stepAssist=Step Assist
 pneumaticHelmet.upgrade.jetBoots=Jet Boots
+pneumaticHelmet.upgrade.scuba=SCUBA
 
 pneumaticHelmet.message.enableSetting=%s Enabled
 pneumaticHelmet.message.disableSetting=%s Disabled

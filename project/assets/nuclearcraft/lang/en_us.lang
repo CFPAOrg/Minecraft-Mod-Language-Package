@@ -207,7 +207,7 @@ tile.nuclearcraft.fission_controller_new_fixed.name=Fission Controller
 tile.nuclearcraft.fission_controller_new_fixed.desc=Build a multiblock reactor using reactor casing, reactor cells, coolers and moderator blocks! Place the controller along an edge, at a corner or within one of the faces of the structure.
 
 tile.nuclearcraft.fission_port.name=Fission Reactor Port
-tile.nuclearcraft.fission_port.desc=Place this block in the shell of a fission reactor in place of some reactor casing, but *not* in the top or bottom sides. If a controller is attached to the reactor structure, then its inventory and stored energy can be accessed by automation through this block. Do make sure that the port is facing into the reactor interior. The 'front' of the port is the side with the slightly different texture.
+tile.nuclearcraft.fission_port.desc=Place this block in the shell of a fission reactor in place of some reactor casing, but *not* in the top or bottom sides. If a controller is attached to the reactor structure, then its inventory and stored energy can be accessed by automation through this block. Do make sure that the front of the port is on the outside of the reactor - this is the side with the slightly different texture.
 
 tile.nuclearcraft.rtg_uranium.name=Uranium RTG
 tile.nuclearcraft.rtg_plutonium.name=Plutonium RTG
@@ -244,15 +244,15 @@ tile.nuclearcraft.salt_fission_beam.desc=Used to connect otherwise disconnected 
 tile.nuclearcraft.salt_fission_vent.name=Molten Salt Reactor Vent
 tile.nuclearcraft.salt_fission_vent.desc=Used to move fuel and coolant in and out of the reactor. Will push to [accept from] accepting [pushing] vessels and heaters.
 tile.nuclearcraft.salt_fission_vessel.name=Molten Salt Fission Vessel
-tile.nuclearcraft.salt_fission_vessel.desc=Where the molten salt nuclear fuel fissions and depletes.
+tile.nuclearcraft.salt_fission_vessel.desc=Where the molten salt nuclear fuel fissions and depletes. Place against another vessel while sneaking to copy across its side configuration.
 tile.nuclearcraft.salt_fission_heater.name=Molten Salt Coolant Heater
-tile.nuclearcraft.salt_fission_heater.desc=Where the salt coolant is heated to cool the reactor. Coolants must obey their placement rules to have any effect.
+tile.nuclearcraft.salt_fission_heater.desc=Where the salt coolant is heated to cool the reactor. Coolants must obey their placement rules to have any effect. Place against another heater while sneaking to copy across its side configuration.
 tile.nuclearcraft.salt_fission_moderator.name=Molten Salt Reactor Moderator Housing
 tile.nuclearcraft.salt_fission_moderator.desc=Increases the efficiency of adjacent active vessels.
 tile.nuclearcraft.salt_fission_distributor.name=Molten Salt Fuel Distributor
-tile.nuclearcraft.salt_fission_distributor.desc=Placed in the wall of the reactor - will spread fuel to all vessels.
+tile.nuclearcraft.salt_fission_distributor.desc=Placed in the wall of the reactor - will spread fuel to all vessels at a limited rate.
 tile.nuclearcraft.salt_fission_retriever.name=Molten Salt Depleted Fuel Retriever
-tile.nuclearcraft.salt_fission_retriever.desc=Placed in the wall of the reactor - will take depleted fuel from all vessels.
+tile.nuclearcraft.salt_fission_retriever.desc=Placed in the wall of the reactor - will take depleted fuel from all vessels at a limited rate.
 tile.nuclearcraft.salt_fission_redstone_port.name=Molten Salt Reactor Redstone Port
 tile.nuclearcraft.salt_fission_redstone_port.desc=Used to turn the reactor on and off. The heat level of the reactor can be read with a comparator from this block.
 
@@ -265,11 +265,11 @@ tile.nuclearcraft.heat_exchanger_frame.desc=Comprises the skeleton of the exchan
 tile.nuclearcraft.heat_exchanger_vent.name=Heat Exchanger Vent
 tile.nuclearcraft.heat_exchanger_vent.desc=Used to move fluid in and out of the reactor. Will push to [accept from] accepting [pushing] tubes.
 tile.nuclearcraft.heat_exchanger_tube_copper.name=Basic Heat Exchanger Tube
-tile.nuclearcraft.heat_exchanger_tube_copper.desc=Holds and transports the heat-exchanging fluids.
+tile.nuclearcraft.heat_exchanger_tube_copper.desc=Holds and transports the heat-exchanging fluids. Place against another tube while sneaking to copy across its side configuration.
 tile.nuclearcraft.heat_exchanger_tube_hard_carbon.name=Advanced Heat Exchanger Tube
-tile.nuclearcraft.heat_exchanger_tube_hard_carbon.desc=Holds and transports the heat-exchanging fluids.
+tile.nuclearcraft.heat_exchanger_tube_hard_carbon.desc=Holds and transports the heat-exchanging fluids. Place against another tube while sneaking to copy across its side configuration.
 tile.nuclearcraft.heat_exchanger_tube_thermoconducting.name=Elite Heat Exchanger Tube
-tile.nuclearcraft.heat_exchanger_tube_thermoconducting.desc=Holds and transports the heat-exchanging fluids.
+tile.nuclearcraft.heat_exchanger_tube_thermoconducting.desc=Holds and transports the heat-exchanging fluids. Place against another tube while sneaking to copy across its side configuration.
 
 tile.nuclearcraft.fusion_electromagnet_idle.name=Fusion Electromagnet
 tile.nuclearcraft.fusion_electromagnet_idle.desc=Requires %s to stay active.
@@ -1728,14 +1728,26 @@ item.nuclearcraft.record_hyperspace.name=Music Disc
 item.nuclearcraft.record_hyperspace.des0=Ur-Quan Masters - Hyperspace
 item.nuclearcraft.record_hyperspace.des1=Originally by Riku Nuottajärvi
 
-jei.nuclearcraft.fluid_temp=Temperature:
-jei.nuclearcraft.heat_req=Heat Required:
 jei.nuclearcraft.chance_output=Output: %s-%s [Average: %s]
 
-jei.nuclearcraft.salt_fuel_time=Process time:
+jei.nuclearcraft.solid_fuel_time=Base depletion time:
+jei.nuclearcraft.solid_fuel_power=Base power gen:
+jei.nuclearcraft.solid_fuel_heat=Base heat gen:
+
+jei.nuclearcraft.fusion_time=Base combo lifetime:
+jei.nuclearcraft.fusion_power=Base max power:
+jei.nuclearcraft.fusion_temp=Optimal temperature:
+
+jei.nuclearcraft.salt_fuel_time=Depletion time:
 jei.nuclearcraft.salt_fuel_heat=Base heat gen:
 
 jei.nuclearcraft.coolant_heater_rate=Cooling rate:
+
+jei.nuclearcraft.exchanger_fluid_temp=Temperature:
+jei.nuclearcraft.exchanger_heating_provided=Heating provided:
+jei.nuclearcraft.exchanger_cooling_provided=Cooling provided:
+jei.nuclearcraft.exchanger_heating_required=Heating required:
+jei.nuclearcraft.exchanger_cooling_required=Cooling required:
 
 jei.nuclearcraft.coolant_heater.nak=Must touch at least one active Fission Vessel or active moderator.
 jei.nuclearcraft.coolant_heater.redstone_nak=Must touch at least one active Fission Vessel.
@@ -2021,7 +2033,7 @@ gui.config.heat_exchanger.heat_exchanger_min_size.comment=Minimum side length of
 gui.config.heat_exchanger.heat_exchanger_max_size=Maximum Structure Length
 gui.config.heat_exchanger.heat_exchanger_max_size.comment=Maximum side length of heat exchangers.
 gui.config.heat_exchanger.heat_exchanger_conductivity=Tube Conductivity
-gui.config.heat_exchanger.heat_exchanger_conductivity.comment=Multiplier for heat transfer rate to and from this type of tube. Order: copper, hard carbon, thermoconducting alloy.
+gui.config.heat_exchanger.heat_exchanger_conductivity.comment=Multiplier for heat transfer rate to and from this type of tube. Heating recipes will be faster by this factor, while cooling recipes will be slower by this factor. Order: copper, hard carbon, thermoconducting alloy.
 gui.config.heat_exchanger.heat_exchanger_coolant_mult=Coolant Heat Multiplier
 gui.config.heat_exchanger.heat_exchanger_coolant_mult.comment=Multiplier for the heat required to cool hot coolant.
 
@@ -2093,6 +2105,11 @@ gui.config.category.radiation.tooltip=Configure aspects of nuclear radiation.
 gui.config.radiation.radiation_enabled=Enable Radiation
 gui.config.radiation.radiation_enabled.comment=Will nuclear radiation exist in the world?
 
+gui.config.radiation.radiation_world_tick_rate=Radiation World Tick Rate
+gui.config.radiation.radiation_world_tick_rate.comment=The rate at which radiation in the world updates.
+gui.config.radiation.radiation_player_tick_rate=Radiation Player Tick Rate
+gui.config.radiation.radiation_player_tick_rate.comment=The rate at which player radiation data updates.
+
 gui.config.radiation.radiation_worlds=World Background Radiation
 gui.config.radiation.radiation_worlds.comment=List of dimensions and their background radiation levels. Format: 'modid:dimID_radiationLevel'.
 gui.config.radiation.radiation_biomes=Biome Background Radiation
@@ -2122,12 +2139,16 @@ gui.config.radiation.radiation_rad_x_amount=Rad-X Radiation Resistance
 gui.config.radiation.radiation_rad_x_amount.comment=Controls the amount of radiation resistance gained when consuming Rad-X.
 gui.config.radiation.radiation_rad_x_lifetime=Rad-X Lifetime
 gui.config.radiation.radiation_rad_x_lifetime.comment=The time taken for one dose of Rad-X to wear off in ticks.
+gui.config.radiation.radiation_medicine_cooldown=Rad-X Lifetime
+gui.config.radiation.radiation_medicine_cooldown.comment=The time that must be waited between doses of RadAway or Rad-X in ticks.
 gui.config.radiation.radiation_shielding_level=Radiation Shielding Levels
 gui.config.radiation.radiation_shielding_level.comment=The radiation resistance levels provided by the three levels of shielding. Order: light, medium, heavy.
 gui.config.radiation.radiation_hazmat_shielding=Radiation Hazmat Shielding
 gui.config.radiation.radiation_hazmat_shielding.comment=The radiation resistance levels provided by each piece of the hazmat suit. Order: headwear, chestpiece, leggings, boots.
-gui.config.radiation.radiation_scrubber_rate=Scrubber Max Removal Rate
-gui.config.radiation.radiation_scrubber_rate.comment=The maximum rate at which scrubbers will remove radiation in Rads/t.
+gui.config.radiation.radiation_scrubber_rate=Scrubber Max Base Removal Rate
+gui.config.radiation.radiation_scrubber_rate.comment=The maximum rate at which scrubbers will remove radiation in Rads/t if not supplied with Borax.
+gui.config.radiation.radiation_scrubber_borax_rate=Scrubber Borax Use Rate
+gui.config.radiation.radiation_scrubber_borax_rate.comment=The amount of borax scrubbers need to be supplied per second.
 
 gui.config.radiation.radiation_shielding_default_recipes=Radiation Shielding Default Recipes
 gui.config.radiation.radiation_shielding_default_recipes.comment=If enabled, radiation shielding attachment recipes will be added for all registered armor pieces.
@@ -2154,6 +2175,11 @@ gui.config.radiation.radiation_death_persist=Radiation Death Persistence
 gui.config.radiation.radiation_death_persist.comment=If enabled, players' rad levels will persist on death.
 gui.config.radiation.radiation_death_persist_fraction=Death Persistence Fraction
 gui.config.radiation.radiation_death_persist_fraction.comment=Specifies the fraction of the player's rad level that persists if Radiation Death Persistence is enabled.
+
+gui.config.radiation.radiation_passive_debuffs=Passive Entity Debuffs
+gui.config.radiation.radiation_passive_debuffs.comment=If enabled, passive entities will be debuffed and hurt if irradiated.
+gui.config.radiation.radiation_mob_buffs=Mob Buffs
+gui.config.radiation.radiation_mob_buffs.comment=If enabled, mobs will be buffed if irradiated.
 
 gui.config.category.other=Other Configs
 gui.config.category.other.tooltip=Miscellaneous configurations.
@@ -2340,8 +2366,8 @@ gui.container.void_outputs=Void Output Overflow
 gui.container.comparator_mode=Efficiency/Heat Comparator
 
 nuclearcraft.multiblock_validation.invalid_block=%4$s is not a valid block at [%1$d, %2$d, %3$d]
-nuclearcraft.multiblock_validation.no_controller=There must be a controller for the reactor to form
-nuclearcraft.multiblock_validation.too_many_controllers=There must only be one controller for the reactor to form
+nuclearcraft.multiblock_validation.no_controller=There must be a controller for the multiblock to form
+nuclearcraft.multiblock_validation.too_many_controllers=There must only be one controller for the multiblock to form
 
 nuclearcraft.multiblock_gui.salt_fission.jei_name=Molten Salt Fission
 nuclearcraft.multiblock_gui.coolant_heater.jei_name=Molten Salt Cooling
