@@ -461,6 +461,11 @@ death.attack.chrystalMoved=%1$s was naughty and has been punished by Draconic Ev
 
 death.attack.administrative.kill=%1$s was struck down by an unsurvivable force
 
+death.attack.chaos=%1$s was torn apart by a Chaos Guardian
+
+death.attack.customArrowEnergy=%1$s was shot by %2$s
+death.attack.customArrowEnergy.item=%1$s was shot by %2$s using %3$s
+
 # //Buttons ----------------------------------------------------------------------------------------------------------------------------------------
 button.de.chestAutoFeed0.txt=OFF.Auto Feed Disabled
 button.de.chestAutoFeed1.txt=FILL.Keep the current stacks full
@@ -496,12 +501,6 @@ button.de.fadeMode3.txt=Fade Out: 75%%
 button.de.fadeMode4.txt=Fade Out: Full
 button.de.rotate.txt=Rotate
 button.de.numeric.txt=Numeric:
-button.de.buildGuide.txt=Build Guide:
-button.de.tierUp.txt=Tier Up
-button.de.tierDown.txt=Tier Down
-
-button.de.activate.txt=Activate
-button.de.deactivate.txt=Deactivate
 
 # //Gui ----------------------------------------------------------------------------------------------------------------------------------------
 
@@ -648,7 +647,7 @@ config.field.digAOE.description=Allows you to adjust this tools mining area of e
 config.field.aoeSafeMode.entry=A.O.E Safe Mode
 config.field.aoeSafeMode.description=When enabled this tool will not break anything if it detects a tile entity within its AOE range. This can help prevent you from accidentally breaking half your base with a single miss click.
 config.field.digDepth.entry=Dig Depth
-config.field.digDepth.description=This function only works with
+config.field.digDepth.description=This function only works with an AOE of 3x3 or greater.
 config.field.showDigAOE.entry=Show Dig A.O.E
 config.field.showDigAOE.description=When enabled shows all of the blocks covered by this tools mining AOE.
 
@@ -656,6 +655,8 @@ config.field.toggleEnchant.description=Allows you deactivate/activate a previous
 
 config.field.armorSpeedModifier.entry=Speed Modifier
 config.field.armorSpeedModifier.description=This allows you to adjust the speed boost given by this armor piece.
+config.field.armorSpeedFOVWarp.entry=Disable FOV Warp
+config.field.armorSpeedFOVWarp.description=When enabled the FOV warp created by this armors speed effect will be removed.
 config.field.armorJumpModifier.entry=Jump Modifier
 config.field.armorJumpModifier.description=This allows you to adjust the jump boost given by this armor piece.
 config.field.sprintBoost.entry=Boost on Sprint
@@ -664,6 +665,9 @@ config.field.armorNV.entry=Night Vision
 config.field.armorNV.description=Enable or disable night vision. Be default the night vision will only be applied when you are in a dark area.
 config.field.armorNVLock.entry=Night Vision Lock
 config.field.armorNVLock.description=This locks night vision to active regardless of the light level you are in.
+config.field.armorAutoFeed.entry=Auto Feed
+config.field.armorAutoFeed.description=When this feature is enabled your helmet will automatically stuff your face with food from your inventory whenever you are hungry!.
+
 config.field.armorFSpeedModifier.entry=Flight Speed Modifier
 config.field.armorFSpeedModifier.description=Allows you to adjust the speed boost applied by this armor while flying.
 config.field.armorFlightLock.entry=Flight Lock
@@ -858,6 +862,18 @@ eNet.de.identify.gui=Identify
 eNet.de.unlink.gui=UnLink
 eNet.de.clearLinks.gui=Clear Links
 eNet.de.clearReceivers.gui=Clear Receivers
+
+# //---- Energy Core ----//
+button.de.buildGuide.txt=Build Guide:
+button.de.assembleCore.txt=Assemble Core
+button.de.tierUp.txt=Tier Up
+button.de.tierDown.txt=Tier Down
+button.de.activate.txt=Activate
+button.de.deactivate.txt=Deactivate
+ecore.de.already_assembling.txt=Assembly already in progress!
+ecore.de.assemble_found_invalid.txt=Error found invalid block within build area! %s at %s
+ecore.de.assemble_error_expected_air.txt=An error occurred while building structure! Expected air block at %s
+ecore.de.assemble_missing_required.txt=Unable to complete structure! Missing required block(s) %s
 
 # //---- Reactor ----//
 gui.reactor.draconicReactor.txt=Draconic Reactor
