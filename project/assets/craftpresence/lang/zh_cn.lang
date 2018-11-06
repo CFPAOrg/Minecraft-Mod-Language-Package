@@ -1,12 +1,18 @@
+## CONFIG GUI - BUTTONS AND NAMES ##
+## KEYBIND MESSAGES ##
 #PARSE_ESCAPES
 craftpresence.command.assets.large.header=§6§lDiscord 大图标材质：§r %1$s
 craftpresence.command.assets.small.header=§6§lDiscord 小图标材质：§r %1$s
+craftpresence.command.biomes.header=§6§l生态群系名称：§r %1$s
 craftpresence.command.currentdata=§l当前 RPC 数据：§r \n §6§l详细信息：§r %1$s \n §6§l游戏状态：§r %2$s \n §6§l开始时间戳：§r %3$s \n §6§l客户端 ID：§r %4$s \n §6§l大图标 Key：§r %5$s \n §6§l大图标文字：§r %6$s \n §6§l小图标 Key：§r %7$s \n §6§l小图标文本：§r %8$s\n §6§lParty ID：§r %9$s \n §6§lParty 大小：§r %10$s \n §6§l最大 Party：§r %11$s \n §6§l加入密匙：§r %12$s \n §6§l结束时间戳：§r %13$s \n §6§l匹配密匙：§r %14$s \n §6§l旁观密匙：§r %15$s \n §6§l实例：§r %16$s
 craftpresence.command.dimensions.header=§6§l维度名称：§r %1$s
+craftpresence.command.guis.header=§6§lGUI 名称：§r %1$s
+craftpresence.command.items.header=§6§l物品名称：§r %1$s
 craftpresence.command.reboot.post=§2§lCraftPresence 已经被重启！
 craftpresence.command.reboot.pre=§6§l重启 CraftPresence 中……
 craftpresence.command.reload.complete=§2§l已经重载 CraftPresence 数据！
 craftpresence.command.reload=§6§l基于配置，重载 CraftPresence 数据！
+craftpresence.command.servers.header=§6§l服务器地址：§r %1$s
 craftpresence.command.shutdown.post=§2§lCraftPresence 已经被关闭！\n §6§l使用 /cp reboot 重启
 craftpresence.command.shutdown.pre=§6§l关闭 CraftPresence……
 craftpresence.command.unrecognized=§c§l未知的命令 - 请使用 §6§l/craftpresence help
@@ -14,6 +20,7 @@ craftpresence.command.usage.assets=§lCraftPresence - Assets 子命令：\n §6�
 craftpresence.command.usage.main=§lCraftPresence - 子命令：\n §6§lreboot §r- 重启 RPC \n §6§lshutdown §r- 关闭 RPC \n §6§lreload §r- 基于配置文件重载 CraftPresence 数据 \n §6§lconfig §r- 打开 CraftPresence 的配置 GUI \n §6§lview §r- 查看各种各样的显示数据 \n §6§lhelp §r- 查看本页面
 craftpresence.command.usage.view=§lCraftPresence - View 子命令：\n §6§lcurrentData §r- 以文字形式显示你当前的 RPC 数据 \n §6§lassets §r- 显示可用的材质图标 \n §6§ldimensions §r- 显示可用的维度名称\n §6§lbiomes §r- 显示可用的生态群系名称 \n §6§lservers §r- 显示可用的服务器地址 \n §6§lguis §r- 显示可用的 GUI 名称 \n §6§litems §r- 显示可用的物品名称
 craftpresence.defaults.placeholder.ign=&name&
+craftpresence.defaults.placeholder.mods=&modcount& 模组
 craftpresence.defaults.placeholder.pack=&name&
 craftpresence.defaults.placeholder.players=&current& / &max& 玩家
 craftpresence.defaults.placeholder.time=&worldtime&
@@ -25,12 +32,17 @@ craftpresence.defaults.state.loading=正在加载游戏
 craftpresence.defaults.state.mainmenu=处于主菜单界面
 craftpresence.defaults.state.mcversion=Minecraft %1$s
 craftpresence.defaults.state.singleplayer=正在单人游戏游玩
+craftpresence.keybind.category=CraftPresence - 按键绑定
+craftpresence.keybind.config.desc=打开配置面板
 craftpresence.logger.error.config.defaultmissing=属性“%1$s”缺少默认值，添加到属性...
 craftpresence.logger.error.config.emptyprop=Empty Property Detected ("%1$s"), setting property as default...
+craftpresence.logger.error.config.invalidicon.empty=Unable to Detect any Usable Icons! Please Submit a Mod Issue, if this is a mistake
 craftpresence.logger.error.config.invalidicon.post=成功将属性“%1$s”中的图标设置为“%2$s”
 craftpresence.logger.error.config.invalidicon.pre=属性“%2$s”中的图标“%1$s”无效，选择随机有效图标...
 craftpresence.logger.error.config.invalidprop=Invalid Property Detected ("%1$s"), removing property...
 craftpresence.logger.error.config.save=Failed to load or save Configuration
+craftpresence.logger.error.discord.assets.default=Failed to Assign an Alternative Icon for Asset Name "%1$s", using Default Icon with %2$s size.
+craftpresence.logger.error.discord.assets.fallback=Asset Name "%1$s" does not exist, attempting to use an alternative Icon with %2$s size.
 craftpresence.logger.error.discord.assets.load=Unable to get Discord Assets, Things may not work well.
 craftpresence.logger.error.file.instance=Unable to get MultiMC Instance Data (Ignore if Not using a MultiMC Pack)
 craftpresence.logger.error.file.manifest=Unable to get Curse Manifest Data (Ignore if Not using a Twitch/CursePack)
@@ -42,6 +54,7 @@ craftpresence.logger.info.config.save=配置设置已被保存并加载成功！
 craftpresence.logger.info.discord.assets.detected=%1$s 已读取全部资源
 craftpresence.logger.info.discord.assets.load.credits=Coded by ItsDizzy - https://github.com/ItsDizzy
 craftpresence.logger.info.discord.assets.load=通过 ID 检查 Discord 可用资源：%1$s
+craftpresence.logger.info.discord.assets.request=要添加对此图标的支持，请将此图标添加到默认客户端ID或添加以下名称下的图标：“%1$s”。
 craftpresence.logger.info.instance.init=请检查 MultiMC Instance Data 的有效性……
 craftpresence.logger.info.instance.loaded=发现 MultiMC Instance Data！（ 名称：“%1$s" - Icon: "%2$s”)
 craftpresence.logger.info.load=通过 ID 加载数据：%1$s
@@ -55,11 +68,15 @@ craftpresence.logger.warning.config.conflict.pergui=enablePerGUI 和 showGameSta
 craftpresence.logger.warning.config.empty.clientid=您的客户端 ID 为空，可能无法正常工作……
 craftpresence.logger.warning.debugmode=你正在调试环境中运行 CraftPresence，某些功能可能无法正常运行！
 craftpresence.logger.warning.fingerprintviolation=检测到无效证书，此 Build 将无法获得支持！
+gui.config.buttonMessage.back=返回
+gui.config.buttonMessage.continue=继续
+gui.config.buttonMessage.save=保存
 gui.config.comment.advanced.enablecommands=允许 CraftPresence 使用命令\n（在重启游戏后起效）
 gui.config.comment.advanced.enablepergui=允许 CraftPresence 根据你的 GUI 更改它的显示，注意以下内容： \n- 覆盖生态群系\n- 需要 GUI 信息中的选项
 gui.config.comment.advanced.enableperitem=允许 CraftPresence 根据你持有的物品更改它的显示，注意以下内容：\n- 需要物品信息中的选项
 gui.config.comment.advanced.guimessages=自定义 GUI 信息\n（参考格式：gui;message）\n 可用占位符: \n - &gui& = GUI 名称 \n - &class& = GUI 类名 \n - &screen& = GUI 屏幕实例名称
 gui.config.comment.advanced.itemmessages=自定义物品信息：\n（参考格式：item;message）\n 可用占位符： \n - &main& = 当前主手物品 \n - &offhand& = 当前副手物品 \n - &helmet& = 当前装备头盔 \n - &chest& = 当前装备胸甲 \n - &legs& = 当前装备护腿 \n - &boots& = 当前装备靴子
+gui.config.comment.advanced.overwriteservericon=允许 CraftPresence 在使用包时覆盖服务器图标和文本
 gui.config.comment.advanced.splitcharacter=CraftPresence 信息中的数组分割字符配置\n\n（你需要手动更改每个变量）
 gui.config.comment.biomemessages.biomemessages=自定义生物群系信息 \n（参考格式：biome_name;message）\n可用占位符：\n - &biome& = 生物群系占位符 \n &id& = 生物群系 ID 占位符
 gui.config.comment.dimensionmessages.dimensionicon=当处于不支持的维度时候，维度的默认图标
@@ -81,6 +98,7 @@ gui.config.comment.statusmessages.lanmsg=局域网游戏时显示的信息\n 可
 gui.config.comment.statusmessages.loadingmsg=加载游戏时显示的信息\n 可用占位符：\n - &ign& = 你的 Minecraft 用户名 \n - &mods& = 你的 Mods 文件夹下现有模组数量
 gui.config.comment.statusmessages.mainmenumsg=处于主界面时显示的信息\n 可用占位符：\n - &ign& = 你的 Minecraft 用户名 \n - &mods& = 你的 Mods 文件夹下现有模组数量
 gui.config.comment.statusmessages.placeholder.gametimemsg=使用占位符 &time& 的信息\n可用占位符：\n - &worldtime& = 当前世界时间，格式为 HH:MM
+gui.config.comment.statusmessages.placeholder.modsmsg=&mods& 占位符信息\n 可用占位符：\n - &modcount& = 你的 Mods 文件夹下现有模组数量
 gui.config.comment.statusmessages.placeholder.packmsg=使用有效的整合（Curse，Twitch，Technic 或 MultiMC）时，在富文本信息中中显示的消息\n可用的占位符：\n- &name& = 整合包名称
 gui.config.comment.statusmessages.placeholder.playeramountmsg=用于 &players& 占位符的信息\n可用的占位符：\n - &current& = 当前玩家数量\n - &max& = 最大玩家数量
 gui.config.comment.statusmessages.placeholder.playermsg=用于 &ign& 的占位符信息\n可用占位符： \n- &name& = 你的用户名
@@ -92,15 +110,24 @@ gui.config.comment.title.dimensionmessages=自定义维度信息\n（参考格�
 gui.config.comment.title.general=有关显示信息的常规设置
 gui.config.comment.title.servermessages=自定义服务器信息 \n（参考格式：server_IP;message;icon）\n可用占位符：\n - &ip& = 服务器 IP \n - &name& = 服务器名称 \n - &motd& = 服务器 MOTD \n - &icon& = 默认服务器图标 \n - &players& = 服务器人数 \n - &ign& = 你的 Minecraft 用户名 \n - &time& = 你的游戏时长 \n - &mods& = 你的 Mods 文件夹下现有模组数量
 gui.config.comment.title.statusmessages=自定义与不同游戏状态相关的信息
+gui.config.defaultMessage.biome=默认生态群系信息
+gui.config.defaultMessage.dimension=默认维度信息
+gui.config.defaultMessage.server=默认服务器信息
+gui.config.editorMessage.message=信息:
+gui.config.editorMessage.search=搜索:
+gui.config.editorMessage.valuename=数值名称：
+gui.config.errorMessage.null=此 GUI 还没有实现!\n\n 请稍后再查看。
 gui.config.hoverMessage.access=**需要先勾选“%1$s”才能使用此功能**
 gui.config.hoverMessage.defaultempty=**默认信息不为空，且必须合法**
 gui.config.hoverMessage.valuename=用于标识此值的名称
+gui.config.message.credits=此配置面板由 Jonathing 从头开始编写，\n并将由 CDAGaming 继续维护。他们为\n此自定义面板的制作付出了很多努力，\n所以请给他们一些支持！谢谢。\n\n可以在 GitLab 的 CraftPresence 仓库\n自由浏览该 GUI 的代码。
 gui.config.message.remove=**删除消息文本以删除此值**
 gui.config.name.advanced.enablecommands=启用命令
 gui.config.name.advanced.enablepergui=启用 Per-GUI 系统
 gui.config.name.advanced.enableperitem=启用 Per-Item 系统
 gui.config.name.advanced.guimessages=GUI 信息
 gui.config.name.advanced.itemmessages=物品信息
+gui.config.name.advanced.overwriteservericon=服务器覆盖图标
 gui.config.name.advanced.splitcharacter=分割字符
 gui.config.name.biomemessages.biomemessages=生物群系信息
 gui.config.name.dimensionmessages.dimensionicon=默认生物群系图标
@@ -122,17 +149,20 @@ gui.config.name.statusmessages.lanmsg=局域网游戏信息
 gui.config.name.statusmessages.loadingmsg=加载信息
 gui.config.name.statusmessages.mainmenumsg=主菜单信息
 gui.config.name.statusmessages.placeholder.gametimemsg=游戏时间占位符
+gui.config.name.statusmessages.placeholder.modsmsg=模组占位符
 gui.config.name.statusmessages.placeholder.packmsg=整合包信息
 gui.config.name.statusmessages.placeholder.playeramountmsg=玩家列表占位符
 gui.config.name.statusmessages.placeholder.playermsg=玩家名称占位符
 gui.config.name.statusmessages.singleplayermsg=单人游戏信息
 gui.config.name.statusmessages.special.vivecraftmsg=Vivecraft 信息
+gui.config.title.about.config=关于配置面板
 gui.config.title.advanced=高级设置
 gui.config.title.biome.editspecificbiome=CraftPresence - 编辑生物群系 (%1$s)
 gui.config.title.biomemessages=自定义生物群系信息
 gui.config.title.dimension.editspecificdimension=CraftPresence - 编辑维度 (%1$s)
 gui.config.title.dimensionmessages=自定义维度信息
 gui.config.title.editor.addnew=CraftPresence - 添加新值
+gui.config.title.error=CraftPresence - 错误
 gui.config.title.general=常规设置
 gui.config.title.gui.editspecificgui=CraftPresence - 编辑 GUI（%1$s）
 gui.config.title.gui.editspecificitem=CraftPresence - 编辑物品（%1$s）
@@ -140,33 +170,3 @@ gui.config.title.server.editspecificserver=CraftPresence - 编辑服务器 (%1$s
 gui.config.title.servermessages=自定义服务器信息
 gui.config.title.statusmessages=自定义状态信息
 gui.config.title=CraftPresence 配置 GUI
-gui.config.title.error=CraftPresence - 错误
-## CONFIG GUI - BUTTONS AND NAMES ##
-gui.config.buttonMessage.back=返回
-gui.config.buttonMessage.save=保存
-gui.config.buttonMessage.continue=继续
-gui.config.editorMessage.search=搜索:
-gui.config.editorMessage.message=信息:
-gui.config.errorMessage.null=此 GUI 还没有实现!\n\n 请稍后再查看。
-gui.config.title.about.config=关于配置面板
-gui.config.defaultMessage.biome=默认生态群系信息
-gui.config.defaultMessage.dimension=默认维度信息
-gui.config.defaultMessage.server=默认服务器信息
-gui.config.message.credits=此配置面板由 Jonathing 从头开始编写，\n并将由 CDAGaming 继续维护。他们为\n此自定义面板的制作付出了很多努力，\n所以请给他们一些支持！谢谢。\n\n可以在 GitLab 的 CraftPresence 仓库\n自由浏览该 GUI 的代码。
-gui.config.name.statusmessages.placeholder.modsmsg=模组占位符
-gui.config.name.advanced.overwriteservericon=服务器覆盖图标
-gui.config.comment.statusmessages.placeholder.modsmsg=&mods& 占位符信息\n 可用占位符：\n - &modcount& = 你的 Mods 文件夹下现有模组数量
-gui.config.comment.advanced.overwriteservericon=允许 CraftPresence 在使用包时覆盖服务器图标和文本
-## KEYBIND MESSAGES ##
-craftpresence.keybind.category=CraftPresence - 按键绑定
-craftpresence.keybind.config.desc=打开配置面板
-craftpresence.defaults.placeholder.mods=&modcount& 模组
-craftpresence.command.biomes.header=§6§l生态群系名称：§r %1$s
-craftpresence.command.servers.header=§6§l服务器地址：§r %1$s
-craftpresence.command.guis.header=§6§lGUI 名称：§r %1$s
-craftpresence.command.items.header=§6§l物品名称：§r %1$s
-gui.config.editorMessage.valuename=数值名称：
-craftpresence.logger.info.discord.assets.request=要添加对此图标的支持，请将此图标添加到默认客户端ID或添加以下名称下的图标：“%1$s”。
-craftpresence.logger.error.config.invalidicon.empty=Unable to Detect any Usable Icons! Please Submit a Mod Issue, if this is a mistake
-craftpresence.logger.error.discord.assets.fallback=Asset Name "%1$s" does not exist, attempting to use an alternative Icon with %2$s size.
-craftpresence.logger.error.discord.assets.default=Failed to Assign an Alternative Icon for Asset Name "%1$s", using Default Icon with %2$s size.
