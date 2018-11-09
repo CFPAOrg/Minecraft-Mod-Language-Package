@@ -41,6 +41,7 @@ import src.handle.handle
 import src.handle.properties_handle
 import src.handle.lang_sort
 import src.handle.empty_lang_del  # 清除空行
+import src.handle.key_lang_del # 清除指定的 key
 
 # 清除黑名单文件夹
 import src.redundancy.black_dir_del
