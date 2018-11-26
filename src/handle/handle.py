@@ -44,6 +44,14 @@ def who_should_handle():
         if not os.path.exists('project/assets/{}/lang/en_us.lang'.format(change_mod)):
             change_mod_list.remove(change_mod)
             continue
+        # 没有中文文本的要剔除
+        if not os.path.exists('project/assets/{}/lang/zh_cn.lang'.format(change_mod)):
+            change_mod_list.remove(change_mod)
+            continue
+        # 没有旧版本中文文本的要剔除
+        if not os.path.exists('project/assets/{}/lang/zh_cn_old.lang'.format(change_mod)):
+            change_mod_list.remove(change_mod)
+            continue
         # 有 #PARSE_ESCAPES 注释的也要剔除
         with open('project/assets/{}/lang/en_us.lang'.format(change_mod), 'r', errors='ignore') as lang:
             for line in lang.readlines():
