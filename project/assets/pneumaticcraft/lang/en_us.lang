@@ -1,4 +1,4 @@
-# Blocks
+#  # Blocks
 tile.pressure_tube.name=Pressure Tube
 tile.air_compressor.name=Air Compressor
 tile.advanced_air_compressor.name=Advanced Air Compressor
@@ -14,6 +14,8 @@ tile.vacuum_pump.name=Vacuum Pump
 tile.pneumatic_door_base.name=Pneumatic Door Base
 tile.pneumatic_door.name=Pneumatic Door
 tile.assembly_io_unit.name=Assembly IO Unit
+tile.assembly_io_unit_export.name=Assembly IO Unit (export)
+tile.assembly_io_unit_import.name=Assembly IO Unit (import)
 tile.assembly_platform.name=Assembly Platform
 tile.assembly_drill.name=Assembly Drill
 tile.assembly_laser.name=Assembly Laser
@@ -499,6 +501,9 @@ gui.tab.problems.keroseneLamp.noFuel=§7The lamp has no fuel. \n§0Add Kerosene 
 gui.tab.problems.keroseneLamp.badFuel=§7The lamp has an unsuitable fluid in the tank! \n§0Pump out the fluid with a Liquid Hopper or other fluid extraction device.
 gui.tab.problems.sentryTurret.noAmmo=§7The Sentry Turret has no ammo. \n§0Add Gun Ammo to the Ammo slots.
 gui.tab.problems.electrostatic.notEnoughGrounding=§fWhen lightning strikes with a full air tank not all the energy can be redirected! \n§0Connect up more Iron Bars to the underside of the Electrostatic Compressor
+gui.tab.problems.assembly_controller.duplicateMachine=§fDuplicate Machine Detected! \n§0Ensure there is only one %s.
+gui.tab.problems.assembly_controller.missingMachine=§fMissing Machine! \n§0Not all machines for the inserted program are present. Add one %s to your assembly system.
+gui.tab.problems.assembly_controller.no_program=§fNo Program! \n§0Insert an Assembly Program into the Controller.
 
 # Upgrades
 gui.tab.upgrades=Upgrades
@@ -511,7 +516,7 @@ gui.tab.upgrades.tile.air_compressor=§7§nSpeed Upgrade (max = 10) \n§0The Air
 gui.tab.upgrades.tile.advanced_air_compressor=§7§nSpeed Upgrade (max = 10) \n§0The Advanced Air Compressor will produce more compressed air per tick. However this is at the expense of the efficiency.
 gui.tab.upgrades.tile.assembly_controller=§7§nSpeed Upgrade (max = 10) \n§0All assembly machines that are controlled by this Controller will operate faster.
 gui.tab.upgrades.tile.charging_station=§7§nSpeed Upgrade (max = 10) \n§0The Charging Station will be able to (dis)charge items faster. \n§7§nDispenser Upgrade \n§0Adds a charge pad onto the Charging Station, allowing it to (dis)charge any Drones, items, and player inventory items that are on top of the Charging Station.
-gui.tab.upgrades.tile.elevator_base=§7§nSpeed Upgrade (max = 10) \n§0The elevator will ascend/descend faster (at a higher pressure cost). \n§7§nCharging Upgrade (max 4)\n§0Charging Upgrades allow the elevator to reclaim some of the air used to ascend when the elevator descends. This comes at a cost of slightly slowed descent. Up to 4 Charging Upgrades can be installed for progressively better air reclamation and slower descent (max: 60% air reclaimed & 40% slower descent).
+gui.tab.upgrades.tile.elevator_base=§7§nSpeed Upgrade (max = 10) \n§0The elevator will ascend/descend faster (at a higher pressure cost). \n§7§nCharging Upgrade (max = 4) \n§0Charging Upgrades allow the elevator to reclaim some of the air used to ascend when the elevator descends. This comes at a cost of slightly slowed descent. Up to 4 Charging Upgrades can be installed for progressively better air reclamation and slower descent (max: 60%% air reclaimed & 40%% slower descent).
 gui.tab.upgrades.tile.omnidirectional_hopper=§7§nSpeed Upgrade (max = 11) \n§0Increases the speed at which the Hopper transfers items.
 gui.tab.upgrades.tile.liquid_hopper=§7§nSpeed Upgrade (max = 11) \n§0Increases the speed at which the Hopper transfers liquid.  With 11 Speed Upgrades, the Liquid Hopper can transfer its entire contents in one tick.
 gui.tab.upgrades.tile.liquid_hopper.dispenser=\n§7§nDispenser Upgrade \n§0Sucks any liquid block at the input side of the Hopper, and places down any liquid at the output side. Can be used for example as water pump.
@@ -621,7 +626,7 @@ gui.holdF1forHelp=Hold §eF1§r for help
 gui.aphorismTileEditor=Aphorism Tile Editor
 gui.aphorismTile.helpText=§a§nAphorism Tile Editor \n \n§eCursor Left/Up:§r move up a line \n§eCursor Down:§r move down a line \n§eReturn:§r new line \n§eBackspace:§r delete character \n§eDelete:§r delete line \n§e Shift-Delete:§r delete all lines §eEscape:§r finish editing \n§eAlt + §ochr§r: insert control code \n §7- codes: 0-9, a-f, l, m, n, o, r
 gui.entityFilter=Entity filter (Hold §lF1§r for help)
-gui.entityFilter.helpText=§a§nEntity Filtering \n \n§e@player§f: allows all players only \n§e@mob§f: allows all aggressive creatures only \n§e@animal§f: allows all passive creatures only \n§e@animal(age = adult)§f: allows all adult passive creatures \n§e@animal(age = baby)§f: allows all baby passive creatures \n§e@animal(breedable = yes)§f: allows all passive creatures that \n  can breed at this very moment (they'll consume wheat/carrots/...) \n§e@minecart§f: allows minecarts only \n§e@living§f: allows all living entities only \n§e@item§f: allows item entities only \n§e@drone§f: allows drone entities only \n§eCreeper§f: allows Creepers only \n§eMineMaarten§f: allows MineMaarten only \n§ec*§f: allows any entity starting with the letter 'c' only (like Creepers, or Cows). \n§e*pig*§f: allows any entity that includes 'pig' in the name only (like a Pig or Zombie Pigman) \n \nYou can specify a sequence of filters with the ";" (semicolon) separator - this is a "match any" function. \ne.g. "creeper;zombie" will match both Creepers and Zombies.
+gui.entityFilter.helpText=§a§nEntity Filtering \n \n§e@player§f: matches players \n§e@mob§f: matches aggressive creatures \n§e@animal§f: matches passive creatures \n§e@animal(age = adult)§f: matches all adult animals \n§e@animal(age = baby)§f: matches all baby animals \n§e@animal(breedable = yes)§f: matches all passive creatures that \n  can breed at this very moment (they'll consume wheat/carrots/...) \n§e@minecart§f: matches minecarts \n§e@boat§f: matches boats\n§e@living§f: matches all living entities \n§e@item§f: matches item entities \n§e@drone§f: matches drone entities \n§eCreeper§f: matches Creepers \n§eMineMaarten§f: matches an entity named 'MineMaarten' \n§ec*§f: matches any entity starting with the letter 'c' (like Creepers, or Cows). \n§e*pig*§f: allows any entity that includes 'pig' in the name (like a Pig or Zombie Pigman) \n \nYou can specify a sequence of filters with the ";" (semicolon) separator - this is a "match any" function. \ne.g. "creeper;zombie" will match both Creepers and Zombies.
 gui.redstone=Redstone
 gui.threshold=Threshold(bar)
 gui.tubeModule.advancedConfig=Advanced config
@@ -669,7 +674,7 @@ gui.progWidget.blockOrder.lowToHigh=Low to high
 gui.progWidget.blockOrder.highToLow=High to low
 gui.progWidget.blockOrder.closest=Closest
 gui.progWidget.itemFilter.useItemCount=Use count
-gui.progWidget.itemFilter.useItemCount.tooltip=When checked, this will only allow the specified amount of items/fluid/... to be transfered.
+gui.progWidget.itemFilter.useItemCount.tooltip=When checked, this will` allow the specified amount of items/fluid/... to be transfered.
 gui.progWidget.coordinate.selectFromGPS=Select from GPS
 gui.progWidget.area.selectGPS1=Select GPS 1
 gui.progWidget.area.selectGPS2=Select GPS 2
@@ -739,6 +744,7 @@ gui.progWidget.conditionCoordinate.error.noAxisSelected=No checking axis selecte
 gui.progWidget.conditionItem.error.noCheckingItem=No checking item. Add at least one Item Filter to the topmost slot.
 gui.progWidget.conditionItem.error.noFilter=No item filter. Add at least one Item Filter to the second slot from the top.
 gui.progWidget.itemFilter.error.noFilter=No item in the filter. Either select one, or select a valid variable.
+gui.progWidget.itemFilter.error.notBlock=The filtered item is not a block!
 gui.progWidget.label.error.noLabel=No label. Attach a Text puzzle piece.
 gui.progWidget.label.error.noJumpLocation=No place to jump to. Attach a Text puzzle piece.
 gui.progWidget.liquidFilter.error.noLiquid=No liquid selected in the filter.
@@ -768,6 +774,7 @@ gui.progWidget.inventoryExport.debug.stackdoesntPassFilter=Item inside the drone
 gui.progWidget.inventoryImport.debug.filledToMax=Cannot fit more items into the Drone's inventory.
 gui.progWidget.inventoryImport.debug.stackdoesntPassFilter=Item does not pass item filter.
 gui.progWidget.itemPickup.debug.itemNotValid=Item does not pass the item filter.
+gui.progWidget.itemPickup.debug.noItems=No items in the area to pick up.
 gui.progWidget.chargingStation.debug.claimed=Charging Station is claimed by another Drone already.
 gui.progWidget.chargingStation.debug.protected=Charging Station is protected by a Security Station.
 gui.progWidget.chargingStation.debug.cantNavigate=Cannot navigate to the Charging Station.
@@ -863,6 +870,7 @@ pneumaticHelmet.message.disableSetting=%s Disabled
 pneumaticHelmet.message.coordinateTracker.routeFound=Successfully found a route to the surface!
 pneumaticHelmet.message.coordinateTracker.harderRouteFound=Found a non-ideal route (requires actions like nerd poling)
 pneumaticHelmet.message.coordinateTracker.noRouteFound=Unable to find a route to the surface!
+pneumaticHelmet.message.targetWarning=%s is targeting you!
 
 blockTracker.module.hackables=Hackables
 blockTracker.module.inventories=Inventories
@@ -994,19 +1002,18 @@ hud.msg.state=State
 hud.msg.active=Active
 hud.msg.inactive=Inactive
 
-waila.temperature=§7Temperature: §f%s°C
-waila.temperature.north=§7North Temperature: §f%s°C
-waila.temperature.south=§7South Temperature: §f%s°C
-waila.temperature.west=§7West Temperature: §f%s°C
-waila.temperature.east=§7East Temperature: §f%s°C
-waila.temperature.up=§7Top Temperature: §f%s°C
-waila.temperature.down=§7Bottom Temperature: §f%s°C
+waila.temperature=§7Temperature:
+waila.temperature.north=§7North Temperature:
+waila.temperature.south=§7South Temperature:
+waila.temperature.west=§7West Temperature:
+waila.temperature.east=§7East Temperature:
+waila.temperature.up=§7Top Temperature:
+waila.temperature.down=§7Bottom Temperature:
 waila.logisticsModule.transporting=§9Transporting
 waila.logisticsModule.notEnoughAir=§6Not enough pressure to transport the items/fluids over that distance.
 waila.logisticsModule.powered=§2Online
 waila.logisticsModule.noPower=§cOffline (apply at least 3 bar)
 waila.logisticsModule.channel=Channel:
-waila.fluid=§7Tank %d: §b%s
 
 # Misc
 itemGroup.tabPneumaticCraft=PneumaticCraft
