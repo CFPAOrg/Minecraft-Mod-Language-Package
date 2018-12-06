@@ -2,4 +2,4 @@
 
 ![Filament](item:betterwithmods:material@19)
 
-A crafting component for the [Light Block](../blocks/light.md)
+[光源方块](../blocks/light.md) 的合成材料之一。
