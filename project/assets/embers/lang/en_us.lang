@@ -102,6 +102,10 @@ tile.catalytic_plug.name=Catalytic Plug
 tile.ember_funnel.name=Ember Funnel
 tile.mini_boiler.name=Mini Boiler
 tile.mech_actuator.name=Mechanical Actuator
+tile.ember_siphon.name=Ember Siphon
+tile.stirling.name=Wildfire Stirling
+tile.clockwork_attenuator.name=Clockwork Attenuator
+tile.explosion_pedestal.name=Explosion Charm Pedestal
 
 fluid.iron=Molten Iron
 fluid.gold=Molten Gold
@@ -225,6 +229,10 @@ item.ashen_amulet.name=Ashen Amulet
 item.dawnstone_mail.name=Dawnstone Mail
 item.tinker_lens.name=Tinker's Lens
 item.anti_tinker_lens.name=Smoky Tinker's Lens
+item.shifting_scales.name=Shifting Scales
+item.winding_gears.name=Winding Gears
+item.core_stone.name=Core Stone
+item.creative_heat.name=Creative Heat Modifier
 
 tile.block_aluminum.name=Aluminium Block
 tile.ore_aluminum.name=Aluminium Ore
@@ -298,6 +306,7 @@ embers.decimal_format.ember_multiplier=0.##x
 embers.decimal_format.inaccuracy=0
 embers.decimal_format.heat=0.00
 embers.decimal_format.item_amount=0x
+embers.decimal_format.attenuator_multiplier=0.##x
 
 embers.tooltip.goggles.input=§9⬊§r %s
 embers.tooltip.goggles.output=§6⬉§r %s
@@ -354,6 +363,8 @@ embers.tooltip.upgrade.actuator=Mechanical Speed: %s
 embers.tooltip.dial.ember_multiplier=Production Multiplier: %s
 embers.tooltip.dial.heat=Heat: %s/%s
 embers.tooltip.item.ember=Ember: %s/%s
+embers.tooltip.attenuator.on=When active: %s Speed
+embers.tooltip.attenuator.off=When inactive: %s Speed
 
 embers.tooltip.modifier.superheater=Superheating %s
 embers.tooltip.modifier.jet_augment=Cinder Jet %s
@@ -367,6 +378,9 @@ embers.tooltip.modifier.diffraction=Diffractive %s
 embers.tooltip.modifier.focal_lens=Focused %s
 embers.tooltip.modifier.tinker_lens=Tinker's Sight
 embers.tooltip.modifier.anti_tinker_lens=Tinker's Blindness
+embers.tooltip.modifier.shifting_scales=Scaly %s
+embers.tooltip.modifier.winding_gears=Windup %s
+embers.tooltip.modifier.core_stone=Depth-Sensitive %s
 
 embers.tooltip.num1=I
 embers.tooltip.num2=II
@@ -524,11 +538,19 @@ embers.research.page.copper_cell=Copper Cell
 embers.research.page.copper_cell.title=Capacitor
 embers.research.page.copper_cell.desc=The Copper Cell fulfills a very simple purpose: Ember storage. It can be given Ember using an Ember Receptor, or have Ember removed from it through an Ember Emitter. Note that when a Copper Cell is broken, it will retain its stored Ember.
 
+embers.research.page.clockwork_attenuator=Clockwork Attenuator
+embers.research.page.clockwork_attenuator.title=Throttle Control
+embers.research.page.clockwork_attenuator.desc=Fine-tuning your machine setups is hard when all of your machines run until they run out of fuel, without compromise. This dial can directly control a machine's speed. It has two internal settings that toggle on a redstone signal: active and inactive. The settings can be modified by right-clicking and sneak-right-clicking the dial while the respective setting is in action.
+
 
 
 embers.research.page.gearbox=Gearboxes
 embers.research.page.gearbox.title=Mechanical Junction
 embers.research.page.gearbox.desc=Gearbox Frames are the heart-piece of mechanical transfer. One gear can be attached on each side, but only sides with axles or other machines attached will need one. There is an input side marked by a strip, and all other sides are outputs. The input power will be divided between each used output, so if two axles were attached, each would receive half power.
+
+embers.research.page.mergebox=Mergeboxes
+embers.research.page.mergebox.title=Mechanical Fusion
+embers.research.page.mergebox.desc=Mergebox Frames are another important part in mechanical systems. They function opposite to a regular gearbox, instead of splitting power, power will be merged together. Note that all inputs must be the same speed to be summed up. Additionally, anytime the power changes, the mergebox will disengage the output gear for a short time as the internal ratios adjust.
 
 embers.research.page.axle_iron=Iron Axle
 embers.research.page.axle_iron.title=Axial Rotation
@@ -537,6 +559,8 @@ embers.research.page.axle_iron.desc=Axles are used to transfer mechanical power 
 embers.research.page.gear_iron=Iron Gear
 embers.research.page.gear_iron.title=Cogs of the Machine
 embers.research.page.gear_iron.desc=Gears are used as interfaces for connecting axles to gearboxes or machines. Iron Gears are cheap and robust, but they have a power limit. Power past the limit is mostly lost.
+embers.research.page.gear_gold.desc=This gear is mostly the same as an iron gear, but it has a higher power limit.
+embers.research.page.gear_redstone.desc=These redstone-encrusted gears provide the ability to control gearboxes externally. When a redstone signal is applied to a gearbox, the Redstone Gear will start to turn, while the inverted Redstone Gear will turn off. These gears have a similar power limit to gold gears.
 embers.research.page.gear_dawnstone.desc=Dawnstone Gears are more suitable for high speed rotations, they don't have the same limit Iron Gears have. At high rotational speeds, the gear will visually glow a fiery orange. This side effect is mostly harmless however.
 
 embers.research.page.actuator=Mechanical Actuator
@@ -617,6 +641,10 @@ embers.research.page.alchemy.desc=Ember alchemy is truly a marvelous discovery. 
 embers.research.page.catalytic_plug=Catalytic Plug
 embers.research.page.catalytic_plug.title=Overdrive Injection
 embers.research.page.catalytic_plug.desc=Catalytic Plugs are fantastic devices for the impatient. When hooked up to a machine the plug doubles the speed of the machine, but only if also supplied with Alchemical Slurry from the back, which is consumed in the process. Up to 2 Catalytic Plugs can be attached to a single machine, to quadruple its speed.
+
+embers.research.page.ember_siphon=Ember Siphon
+embers.research.page.ember_siphon.title=Reversing The Flow
+embers.research.page.ember_siphon.desc=The Ember Siphon is a machine upgrade that can be placed underneath a Charger to invert it's function. Instead of filling an ember container with ember, it will empty it instead, and store the drained ember in its internal buffer. Ember can then be extracted from the charger or the sides of the siphon using the usual transfer mechanisms.
 
 
 
@@ -700,6 +728,10 @@ embers.research.page.materia=Isolated Materia
 embers.research.page.materia.title=Universal Repair
 embers.research.page.materia.desc=The Isolated Materia is a peculiar material. It has the property of being able to transform into the materials of other items in certain circumstances. For your purposes at the moment, it will enable you to repair items at the Dawnstone Anvil, replacing their repair material with the Materia. You can foresee it having uses in the future as well...
 
+embers.research.page.stirling=Wildfire Stirling
+embers.research.page.stirling.title=Reductio Ad Absurdum
+embers.research.page.stirling.desc=This piece of machinery is the counterpart of the Catalytic Plug. When attached to a machine and supplied with steam, the Wildfire Stirling will reduce the ember cost of all machine operations by half. A second Stirling can be attached to quarter the cost.
+
 
 
 embers.research.page.cost_reduction=Ember Jewelry
@@ -713,6 +745,10 @@ embers.research.page.mantle_bulb.desc=If holding a Mantle Cartridge in your offh
 embers.research.page.explosion_charm=Explosion Charm
 embers.research.page.explosion_charm.title=Manufacted Nethicite
 embers.research.page.explosion_charm.desc=While wearing this charm, explosions that go off near you will be dissipated, their destructive force absorbed into the charm, but unfortunately, for no other special effect.
+
+embers.research.page.explosion_pedestal=Explosion Charm Pedestal
+embers.research.page.explosion_pedestal.title=Vylon Sphere
+embers.research.page.explosion_pedestal.desc=Explosion Charms are useful, but normally only usable while on your person. By making minor modifications to the pedestal used in alchemy, you've managed to suspend a charm on it to act as a passive explosion absorbent.
 
 embers.research.page.nonbeliever_amulet=Amulet of the Heretic
 embers.research.page.nonbeliever_amulet.title=And it goes away
@@ -800,6 +836,15 @@ embers.research.page.diffraction_barrel.desc=The Blazing Ray can be a quite inac
 embers.research.page.focal_lens=Focal Lens
 embers.research.page.focal_lens.title=Piercing Blaze
 embers.research.page.focal_lens.desc=A Focal Lens augment can help firing precision when using Ember weaponry a lot. Dependent on whether you place it on a weapon that shoots fireballs or rays, it will either produce homing projectiles, or a piercing ray instead.
+
+embers.research.page.winding_gears=Winding Gears
+embers.research.page.winding_gears.title=Windup Toy
+embers.research.page.winding_gears.desc=When Winding Gears are applied to a tool, a spool will be shown on your HUD in place of the experience bar to show how much it is wound up. Winding the tool up by right-clicking will grant you auto-attack (hold left-click to attack over and over). The tool will however wind down slowly over time. Winding up also has some other effects, as detailed on the following pages.
+embers.research.page.winding_gears_boots.desc=Winding Gears can also be applied to your boots. You will jump much higher based on the charge left in the spring. You will also bounce without taking fall damage when impacting the ground. Additionally, if you sprint before jumping, you will also cross a much larger distance. You must also hold a wound up tool in hand to use these effect.
+
+embers.research.page.shifting_scales=Shifting Scales
+embers.research.page.shifting_scales.title=Extraneous Armor
+embers.research.page.shifting_scales.desc=Shifting Scales can be applied to any piece of armor. While you are wearing the armor and are resting in place (not moving and not recently attacked), you will grow one third of a protective scale. On each hit you take, some of the scales will break away, and protect you from most external damage, but not from damage incurred by hunger or drowning.
 
 embers.research.page.pipes_category=Pipes
 embers.research.page.mystical_mechanics_category=Mystical Mechanics

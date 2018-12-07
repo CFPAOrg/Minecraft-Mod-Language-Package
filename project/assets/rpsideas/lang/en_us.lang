@@ -53,6 +53,32 @@ psi.spellpiece.rpsideas.operator_vector_absolute=Operator: Vector Absolute
 psi.spellpiece.rpsideas.trick_conjure_gravity=Trick: Conjure Gravity Block
 psi.spellpiece.rpsideas.trick_conjure_gravity_sequence=Trick: Conjure Gravity Block Sequence
 psi.spellpiece.rpsideas.operator_entity_raycast=Operator: Entity Raycast
+psi.spellpiece.rpsideas.trick_rotate_block=Trick: Rotate Block
+psi.spellpiece.rpsideas.operator_can_extract_energy=Operator: Can Extract Energy
+psi.spellpiece.rpsideas.operator_can_receive_energy=Operator: Can Receive Energy
+psi.spellpiece.rpsideas.operator_max_energy_stored=Operator: Max Energy Stored
+psi.spellpiece.rpsideas.operator_max_input=Operator: Max Input
+psi.spellpiece.rpsideas.operator_max_output=Operator: Max Output
+psi.spellpiece.rpsideas.operator_stored_energy=Operator: Stored Energy
+psi.spellpiece.rpsideas.operator_get_damage=Operator: Get Damage
+psi.spellpiece.rpsideas.operator_get_metadata=Operator: Get Metadata
+psi.spellpiece.rpsideas.operator_is_elytra_flying=Operator:Is Elytra Flying
+psi.spellpiece.rpsideas.trick_close_elytra=Trick: Undeploy Elytra
+psi.spellpiece.rpsideas.trick_open_elytra=Trick: Deploy Elytra
+psi.spellpiece.rpsideas.trick_repair=Trick: Repair
+psi.spellpiece.rpsideas.trick_smelt_block_sequence=Trick: Smelt Block Sequence
+psi.spellpiece.rpsideas.selector_number_charges=Selector: Number of Charges
+psi.spellpiece.rpsideas.trick_detonate=Trick: Detonate
+psi.spellpiece.rpsideas.trick_slot_match=Trick: Slot Match
+psi.spellpiece.rpsideas.constant_tau=Constant: Tau
+psi.spellpiece.rpsideas.macro_caster_raycast=Macro: Caster Raycast
+psi.spellpiece.rpsideas.trick_sound=Trick: Noteblock Note
+psi.spellpiece.rpsideas.selector_sucession_counter=Selector: Sucession Counter
+psi.spellpiece.rpsideas.trick_supress_next_trick=Trick: Supress Next Trick
+psi.spellpiece.rpsideas.trick_firework=Trick: Firework
+psi.spellpiece.rpsideas.trick_num_broadcast=Trick: Broadcast
+psi.spellpiece.rpsideas.selector_transmission=Selector: Last Transmission
+psi.spellpiece.rpsideas.trick_freeze_block=Trick: Freeze Block
 
 
 
@@ -86,7 +112,7 @@ psi.spellpiece.rpsideas.trick_debug_spamless.desc=Prints out the target, replaci
 psi.spellpiece.rpsideas.trick_conjure_star.desc=Conjures a light that emits particles along the given ray
 psi.spellpiece.rpsideas.trick_break_loop.desc=Stops loop if target is within ]-1, 1[
 psi.spellpiece.rpsideas.trick_particle_trail.desc=Makes a particle trail from a position along a ray
-psi.spellpiece.rpsideas.trick_spin_chamber.desc=Sets and executes the next spell bullet if a positive input is provided, or the previous spell bullet if a negative input is provided instead
+psi.spellpiece.rpsideas.trick_spin_chamber.desc=Sets the next spell bullet if a positive input is provided, or the previous spell bullet if a negative input is provided instead
 psi.spellpiece.rpsideas.selector_caster_energy.desc=Gets the caster's currently available PSI energy
 psi.spellpiece.rpsideas.selector_caster_battery.desc=Gets the caster's currently available Overflow value
 psi.spellpiece.rpsideas.trick_blindness.desc=Applies the potion effect blindness to an entity
@@ -101,7 +127,7 @@ psi.spellpiece.rpsideas.selector_nearby_falling_blocks.desc=Selects any nearby f
 psi.spellpiece.rpsideas.operator_get_sign_text.desc=Gets the text of a sign at a given position
 psi.spellpiece.rpsideas.trick_move_block_sequence.desc=Moves a sequence of blocks a defined direction, starting with in a position
 psi.spellpiece.rpsideas.operator_get_comment.desc=Gets the comment for this piece
-psi.spellpiece.rpsideas.operator_distance_from_ground.desc=Gets the distance from an entity to the ground
+psi.spellpiece.rpsideas.operator_distance_from_ground.desc=Gets the distance from a position to the ground
 psi.spellpiece.rpsideas.selector_glowing.desc=Selects every entity with the glowing effect
 psi.spellpiece.rpsideas.selector_list_filter.desc=Selects an entity from an entity list with a given index
 psi.spellpiece.rpsideas.operator_is_visible.desc=Checks if an entity has line of sight to another entity(Omnidirectional)
@@ -110,11 +136,37 @@ psi.spellpiece.rpsideas.selector_visible_entities.desc=Selects all entities that
 psi.spellpiece.rpsideas.operator_vector_absolute.desc=It's what it says on the tin
 psi.spellpiece.rpsideas.trick_conjure_gravity.desc=Conjures a conjured block that obeys gravity
 psi.spellpiece.rpsideas.trick_conjure_gravity_sequence.desc=Conjures a conjured block sequence that obey gravity
-psi.spellpiece.rpsideas.operator_entity_raycast.desc=Raycasts from a given entity and returns the first entity it finds
+psi.spellpiece.rpsideas.operator_entity_raycast.desc=Raycasts from a given position and returns the first entity it finds
+psi.spellpiece.rpsideas.trick_rotate_block.desc=Trick: Rotate Block
+psi.spellpiece.rpsideas.operator_can_extract_energy.desc=Checks you can extract FE from a block
+psi.spellpiece.rpsideas.operator_can_receive_energy.desc=Checks you can input FE to a block
+psi.spellpiece.rpsideas.operator_max_energy_stored.desc=Checks the max FE a block can store
+psi.spellpiece.rpsideas.operator_max_input.desc=Checks the max FE/t a block can receive
+psi.spellpiece.rpsideas.operator_max_output.desc=Checks the max FE/t a block can output
+psi.spellpiece.rpsideas.operator_stored_energy.desc=Checks the current FE stored in a block
+psi.spellpiece.rpsideas.operator_get_damage.desc=Gets the focused item's current damage value
+psi.spellpiece.rpsideas.operator_get_metadata.desc=Gets the focused item's current metadata value
+psi.spellpiece.rpsideas.operator_is_elytra_flying.desc=Returns 1 if the user is flying in an elytra 0 if not
+psi.spellpiece.rpsideas.trick_close_elytra.desc=Undeploys a currently deployed elytra if value within ]-1;1[
+psi.spellpiece.rpsideas.trick_open_elytra.desc=Deploys the equipped elytra if value within ]-1;1[
+psi.spellpiece.rpsideas.trick_repair.desc=Imbues Psimetal tools and armor with your PSI energy
+psi.spellpiece.rpsideas.trick_smelt_block_sequence.desc=Smelts blocks in a defined direction starting in a given position
+psi.spellpiece.rpsideas.selector_number_charges.desc=Gets the number of charges around a given radius of a position
+psi.spellpiece.rpsideas.trick_detonate.desc=Detonates all charges in the radius of the caster
+psi.spellpiece.rpsideas.trick_slot_match.desc=Sets the CAD's target slot to match the block in a given position
+psi.spellpiece.rpsideas.constant_tau.desc=Constant Tau, which is 2 times Pi
+psi.spellpiece.rpsideas.macro_caster_raycast.desc=A macro for doing a raycast with caster position and caster look
+psi.spellpiece.rpsideas.trick_sound.desc=Plays a note block sound, read chapter for in depth
+psi.spellpiece.rpsideas.selector_sucession_counter.desc=Gets the number of times a spell has been cast in armor
+psi.spellpiece.rpsideas.trick_supress_next_trick.desc=Disables the next trick if input between ]-1;1[
+psi.spellpiece.rpsideas.trick_firework.desc=Launches a random firework of specified fuse length
+psi.spellpiece.rpsideas.trick_num_broadcast.desc=Broadcasts a number in a given channel to nearby CADs read chapter for in depth
+psi.spellpiece.rpsideas.selector_transmission.desc=Gets the last message this cad received on a certain channel if none throws an error
+psi.spellpiece.rpsideas.trick_freeze_block.desc=Turns water sources to ice, lava sources to obsidian, flowing lava to cobble or spawns a snow layer
 
 
-psi.datatype.String = String
-rpsideas.datatype.String= String
+psi.datatype.String=String
+rpsideas.datatype.String=String
 rpsideas.datatype.BlockProperties=Properties
 rpsideas.spellerror.nthroot=Even numbered roots don't accept negative numbers
 rpsideas.spellerror.length=Lengths can't be negative
@@ -124,7 +176,12 @@ rpsideas.spellerror.outofbounds=The provided index is not within the range of th
 rpsideas.spellerror.notliving=The selected entity must be a living entity(Player, mob, etc..)
 rpsideas.spellerror.nulllist=The provided list cannot be empty.
 rpsideas.spellerror.noground=No ground below found.
-
+rpsideas.spellerror.volume=Volume must be between ]0,1[
+rpsideas.spellerror.instruments=Instrument value must be between ]0,10[
+rpsideas.spellerror.pitch=Pitch value must be between ]0,24[
+rpsideas.spellerror.no_message=CAD has not picked up a broadcasted message
+rpsideas.spellerror.armor=Selector only works in armor
+rpsideas.spellerror.cad=Trick only works in a CAD
 
 rpsideas.spellparam.root=Root
 rpsideas.spellparam.degree=Degrees
@@ -136,12 +193,17 @@ rpsideas.spellparam.angle=Angle to rotate
 rpsideas.spellparam.fallback=Fallback vector
 rpsideas.spellparam.target1=Target 1
 rpsideas.spellparam.target2=Target 2
-rpsideas.spellparam.vazkii=Axis Vector
+rpsideas.spellparam.vazkii=Axis Vec
 rpsideas.spellparam.list1=List 1
 rpsideas.spellparam.list2=List 2
 rpsideas.spellparam.entity1=Entity 1
 rpsideas.spellparam.entity2=Entity 2
+rpsideas.spellparam.channel=Channel
+rpsideas.spellparam.instrument=Instrument
+rpsideas.spellparam.volume=Volume
+rpsideas.spellparam.pitch=Pitch
 psi.datatype.BlockProperties=Block Properties
+
 
 
 tile.rpsideas:conjuredblock.name=Ethereal Conjured Block
@@ -169,13 +231,19 @@ tile.rpsideas.cad_case.black.name=Black CAD Case
 item.rpsideas.flash_ring.name=Flash Ring
 item.rpsideas.magazine.name=Spell Magazine
 item.rpsideas.inline_caster.name=Inline Caster
+item.rpsideas.psimetal_rod.name=Psimetal Fishing Rod
+item.rpsideas.psimetal_rod_cast.name=Psimetal Fishing Rod 
+item.rpsideas:psimetal_shears.name=Psimetal Shears
 item.rpsideas.wide_socket.name=Wide Band Socket
 item.rpsideas.liquid_colorizer.name=Liquid-Ink CAD Colorizer
 item.rpsideas.empty_colorizer.name=Drained CAD Colorizer
-item.rpsideas.cad_blaster.name=Mana Blaster CAD
+item.rpsideas:cad_assembly_mana_blaster.name=Mana CAD Assembly
 item.rpsideas.creative_core.name=Creative CAD Core
 item.rpsideas.creative_battery.name=Creative CAD Battery
 item.rpsideas.creative_socket.name=Creative CAD Socket
+item.rpsideas:spell_bullet_sniper.name=Sniper Spell Bullet
+item.rpsideas:spell_bullet_sniper_active.name=Programmed Sniper Spell Bullet
+item.rpsideas:psimetal_hoe.name=Psimetal Hoe
 
 item.rpsideas.unstable_battery.name=Unstable CAD Battery
 item.rpsideas.twinflow_battery.name=Shielded CAD Battery
@@ -220,7 +288,7 @@ psi.piecegroup.rpsideas.secondary_vectors=Vector Operators II
 psi.piecegroup.rpsideas.secondary_vectors.desc=As the name implies, this group includes nonessential vector operators. The pieces can be separated into three sets.<br><br>The first set is rotation. The red piece, Planar Norm, will get a perpendicular vector to any axial vector, without needing Operator: Vector Cross Product. Vector Rotate will rotate a vector around another, by an angle (in radians).<br><br>The second set is strong raycasts. These act exactly like their regular counterparts, except they ignore nonsolid blocks such as tall grass.<br><br>The final piece is Trick: Particle Trail, which displays a ray in particles for up to twenty seconds, based on the Time parameter.<br>The last set is safety. The single safety piece is Operator: Vector Fallback. If a nonexistent or 0-length vector is given to it as a target, it will pass its fallback along. Otherwise, it will pass the target along.
 
 psi.piecegroup.rpsideas.block_properties=Block Properties
-psi.piecegroup.rpsideas.block_properties.desc=The tricks in this group allow you to test various properties of a block in the world. By getting a block property object, you can then test for its light value, its redstone strength via the comparator function, as well as a few others.<br><br>You can use Operator: Raw Equality to check if two block properties are carrying the same state of a block.<br><br>The final pieces in this category work similarly to Trick: Place Sequence and Trick: Break Sequence. By using Block Properties to mask, you can only break specific blocks, or place specific blocks.
+psi.piecegroup.rpsideas.block_properties.desc=The tricks in this group allow you to test various properties of a block in the world. By passing a position value, you can then test for its light value, its redstone strength via the comparator function, as well as a few others.
 
 psi.piecegroup.rpsideas.redstone_conjuration=Alternate Conjuration
 psi.piecegroup.rpsideas.redstone_conjuration.desc=These pieces are quite similar to those of the previous group, Block Conjuration. The first type of alternate conjuration is Pulsar. The singular difference between these and the previous group is that conjured Pulsars have a red flare at their center, and emit redstone. The second type is Trick: Conjure Star. It creates a small ball of light that emits a ray of particles. Subsequent casts on the same position will add more rays, but not change the color.
@@ -228,6 +296,17 @@ psi.piecegroup.rpsideas.redstone_conjuration.desc=These pieces are quite similar
 psi.piecegroup.rpsideas.mana_psionics=Mana Manipulation
 psi.piecegroup.rpsideas.mana_psionics.desc=What is elemental magic worth without its most base counterpart?<br><br>This group allows the caster to manipulate the power of Mana. Specifically, making a burst of Mana from your inventory, similar to a Mana Blaster. This requires a special CAD assembly to function, as Psionic materials cannot carry Mana naturally. A CAD made with a Blaster CAD Assembly can store a lens, just like a regular Blaster. Anything a blaster can accept, the Blaster CAD can too. This CAD can enable Mana Flow, allowing any mana trick to fire.<br><br>The other tricks in the category mimic various drums, with a Pulse instead of a drum. The only strange trick is the Gathering Pulse, which requires an Alfen Flow Enabler. This can be achieved by slotting a Lens Clip onto your Blaster CAD.
 
+psi.piecegroup.rpsideas.macros=Macros
+psi.piecegroup.rpsideas.macros.desc=This group introduces a new type of pieces to the game, Macros.<br><br>Macros are a way to save on bandwidth by compressing commonly used techniques into a single piece, but at the expense of complexity.<br><br>Macro: Caster Raycast does the exact same as using Operator: Vector Raycast with the Caster's position and look but trades bandwidth for complexity
+
+psi.piecegroup.rpsideas.visual_auditive=Visual and Auditive Tricks
+psi.piecegroup.rpsideas.visual_auditive.desc=This group introduces tricks that either provoke visual or auditive sensations on players and entities.<br><br>Trick: Note Block Sound plays a sound at a given position. It's parameters are as following:<br><br>Instrument: Value ranging from 0 to 10 and correspond to the following instruments(in order): Harp/Piano, Bass drum, Snare drum, Clicks and sticks, Bass guitar, Flute, Bell, Guitar, Chime, Xylophone, Stronger harp.<br><br>Volume: values ranging from 0 to 1, controls how loud it is.<br><br>Pitch: value ranging from 0 to 24, controls what note the trick plays.
+
+psi.piecegroup.rpsideas.advanced_loopcast_control=Advanced Loopcast and Flow Control
+psi.piecegroup.rpsideas.advanced_loopcast_control.desc=This group introduces various tricks and selectors to further enhance the flow control of both loopcast and spells.<br><br>The main piece of this group is Selector: Sucession Counter, which when put on a piece of armor, returns the amount of times a spell has been cast.
+
+psi.piecegroup.rpsideas.inter_cad=Inter-CAD Communication
+psi.piecegroup.rpsideas.inter_cad.desc=This group introduces a way for you to communicate with other CADs in the world. By using Trick: Broadcast and supplying a channel and signal value it will broadcast a number to everyone in radius of the position given.<br><br>This has some restrictions: It can only be used once per spellcast and you can only broadcast one number at the time, if you broadcast one after another it will overwrite the previous one.
 
 rpsideas.componentType=Component Type:
 rpsideas.misc.cost=Cost Multiplier:
