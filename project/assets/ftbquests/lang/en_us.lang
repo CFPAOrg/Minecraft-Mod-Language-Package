@@ -57,14 +57,22 @@ ftbquests.file.defaults.reward_team=Reward 'Team Reward'
 ftbquests.file.defaults.check_only=Task 'Don't consume item'
 ftbquests.file.defaults.quest_shape=Quest Shape
 ftbquests.file.loot=Loot
-ftbquests.file.loot.size=Loot Size
+ftbquests.file.loot.size=Loot Crate Size
+ftbquests.file.loot.loot_crate_tables=Loot Crate Reward Tables
+ftbquests.file.loot.entity=Entity Loot Crate Drops
+ftbquests.file.loot.entity.enabled=Enabled
+ftbquests.file.loot.entity.passive=Passive
+ftbquests.file.loot.entity.monster=Monster
+ftbquests.file.loot.entity.boss=Boss
 
 ftbquests.chapter=Chapter
+ftbquests.chapters=Chapters
 ftbquests.chapter.completed=Chapter completed!
 ftbquests.chapter.description=Description
 ftbquests.chapter.visibility=Visibility [WIP!]
 
 ftbquests.quest=Quest
+ftbquests.quests=Quests
 ftbquests.quest.completed=Quest completed!
 ftbquests.quest.description=Description
 ftbquests.quest.x=X
@@ -88,7 +96,7 @@ ftbquests.gui.edit_file=Edit File
 ftbquests.gui.save_as_file=Save as File
 ftbquests.gui.export_spreadsheet=Export Spreadsheet
 ftbquests.gui.saved_as_file=Saved as %s
-ftbquests.gui.move=Move
+ftbquests.gui.error=Error!
 ftbquests.gui.add_reward_all=Add reward to all
 ftbquests.gui.select_quest_object=Select Quest Object
 ftbquests.gui.select_task_type=Select Task Type
@@ -100,7 +108,6 @@ ftbquests.gui.complete_instantly_q=Complete this task instantly?
 ftbquests.gui.set_dep=Set Selected as Dependency
 ftbquests.gui.rem_dep=Remove Dependency
 ftbquests.gui.copy_id=Copy ID
-ftbquests.gui.change_id=Change ID
 ftbquests.gui.no_tasks=No tasks
 ftbquests.gui.no_rewards=No rewards
 ftbquests.gui.requires=Requires
@@ -110,11 +117,14 @@ ftbquests.gui.times_completed=Times completed
 ftbquests.gui.quick_complete=Quick Complete
 ftbquests.gui.quick_complete.info_1=Submit all items
 ftbquests.gui.quick_complete.info_2=Claim all rewards
+ftbquests.gui.patreon=Like this mod? Consider supporting me on Patreon!
+ftbquests.gui.looping_dependencies=Looping dependencies!
 
 ftbquests.task=Task
 ftbquests.tasks=Tasks
 ftbquests.task.completed=Task completed!
 ftbquests.task.click_to_submit=Click to submit items
+ftbquests.task.auto_detected=Items will be auto-detected
 ftbquests.task.click_to_submit_all=Click to submit all items
 ftbquests.task.max_input=Max Input
 
@@ -140,6 +150,14 @@ ftbquests.task.ftbquests.forge_energy.text=%d FE
 ftbquests.task.ftbquests.xp=XP Levels
 ftbquests.task.ftbquests.dimension=Visit Dimension
 
+ftbquests.task.ftbquests.stat=Stat
+ftbquests.task.ftbquests.stat.stat=Stat Name
+ftbquests.task.ftbquests.stat.value=Value
+
+ftbquests.task.ftbquests.kill=Kill Entity
+ftbquests.task.ftbquests.kill.entity=Entity Name
+ftbquests.task.ftbquests.kill.value=Count
+
 ftbquests.task.ftbquests.buildcraft_mj=BuildCraft Energy
 ftbquests.task.ftbquests.buildcraft_mj.value=mJ
 ftbquests.task.ftbquests.buildcraft_mj.text=%d MJ
@@ -157,10 +175,11 @@ ftbquests.task.ftbquests.ftb_money=Money
 ftbquests.task.ftbquests.emc=EMC
 
 ftbquests.reward=Reward
+ftbquests.rewards=Rewards
 ftbquests.reward.team_reward=Team Reward
 ftbquests.reward.emergency=Emergency Item
-ftbquests.rewards=Rewards
 ftbquests.reward.claim_all=Claim All Rewards
+ftbquests.reward.collected=Reward Collected!
 
 ftbquests.reward.ftbquests.item=Item
 ftbquests.reward.ftbquests.item.random_bonus=Random Bonus
@@ -205,3 +224,8 @@ commands.ftbquests.set_variable.set=Variable set!
 commands.ftbquests.change_team_rewards.usage=/ftbquests change_team_rewards <*|chapter> <true|false>
 commands.ftbquests.change_team_rewards.invalid_id=Invalid Chapter ID!
 commands.ftbquests.change_team_rewards.text=Changed %d reward team setting to %s
+commands.ftbquests.change_consumable.usage=/ftbquests change_consumable <*|chapter> <true|false>
+commands.ftbquests.change_consumable.text=Changed %d item task consumable setting to %s
+commands.ftbquests.import_rewards_from_chest.usage=/ftbquests import_rewards_from_chest <reward_table> [weight]
+commands.ftbquests.import_rewards_from_chest.invalid_id=Invalid Reward Table ID!
+commands.ftbquests.import_rewards_from_chest.text=Imported %d items in %s

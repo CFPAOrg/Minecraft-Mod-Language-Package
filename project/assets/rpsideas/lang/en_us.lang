@@ -112,7 +112,7 @@ psi.spellpiece.rpsideas.trick_debug_spamless.desc=Prints out the target, replaci
 psi.spellpiece.rpsideas.trick_conjure_star.desc=Conjures a light that emits particles along the given ray
 psi.spellpiece.rpsideas.trick_break_loop.desc=Stops loop if target is within ]-1, 1[
 psi.spellpiece.rpsideas.trick_particle_trail.desc=Makes a particle trail from a position along a ray
-psi.spellpiece.rpsideas.trick_spin_chamber.desc=Sets the next spell bullet if a positive input is provided, or the previous spell bullet if a negative input is provided instead
+psi.spellpiece.rpsideas.trick_spin_chamber.desc=Selects the next or the previous bullet depending on input
 psi.spellpiece.rpsideas.selector_caster_energy.desc=Gets the caster's currently available PSI energy
 psi.spellpiece.rpsideas.selector_caster_battery.desc=Gets the caster's currently available Overflow value
 psi.spellpiece.rpsideas.trick_blindness.desc=Applies the potion effect blindness to an entity
@@ -138,8 +138,8 @@ psi.spellpiece.rpsideas.trick_conjure_gravity.desc=Conjures a conjured block tha
 psi.spellpiece.rpsideas.trick_conjure_gravity_sequence.desc=Conjures a conjured block sequence that obey gravity
 psi.spellpiece.rpsideas.operator_entity_raycast.desc=Raycasts from a given position and returns the first entity it finds
 psi.spellpiece.rpsideas.trick_rotate_block.desc=Trick: Rotate Block
-psi.spellpiece.rpsideas.operator_can_extract_energy.desc=Checks you can extract FE from a block
-psi.spellpiece.rpsideas.operator_can_receive_energy.desc=Checks you can input FE to a block
+psi.spellpiece.rpsideas.operator_can_extract_energy.desc=Checks if you can extract FE from a block
+psi.spellpiece.rpsideas.operator_can_receive_energy.desc=Checks if you can input FE to a block
 psi.spellpiece.rpsideas.operator_max_energy_stored.desc=Checks the max FE a block can store
 psi.spellpiece.rpsideas.operator_max_input.desc=Checks the max FE/t a block can receive
 psi.spellpiece.rpsideas.operator_max_output.desc=Checks the max FE/t a block can output
@@ -162,7 +162,7 @@ psi.spellpiece.rpsideas.trick_supress_next_trick.desc=Disables the next trick if
 psi.spellpiece.rpsideas.trick_firework.desc=Launches a random firework of specified fuse length
 psi.spellpiece.rpsideas.trick_num_broadcast.desc=Broadcasts a number in a given channel to nearby CADs read chapter for in depth
 psi.spellpiece.rpsideas.selector_transmission.desc=Gets the last message this cad received on a certain channel if none throws an error
-psi.spellpiece.rpsideas.trick_freeze_block.desc=Turns water sources to ice, lava sources to obsidian, flowing lava to cobble or spawns a snow layer
+psi.spellpiece.rpsideas.trick_freeze_block.desc=Freezes the block at the selected position
 
 
 psi.datatype.String=String
@@ -291,7 +291,7 @@ psi.piecegroup.rpsideas.block_properties=Block Properties
 psi.piecegroup.rpsideas.block_properties.desc=The tricks in this group allow you to test various properties of a block in the world. By passing a position value, you can then test for its light value, its redstone strength via the comparator function, as well as a few others.
 
 psi.piecegroup.rpsideas.redstone_conjuration=Alternate Conjuration
-psi.piecegroup.rpsideas.redstone_conjuration.desc=These pieces are quite similar to those of the previous group, Block Conjuration. The first type of alternate conjuration is Pulsar. The singular difference between these and the previous group is that conjured Pulsars have a red flare at their center, and emit redstone. The second type is Trick: Conjure Star. It creates a small ball of light that emits a ray of particles. Subsequent casts on the same position will add more rays, but not change the color.
+psi.piecegroup.rpsideas.redstone_conjuration.desc=These pieces are quite similar to those of the previous group, Block Conjuration. The first type of alternate conjuration is Pulsar. The singular difference between these and the previous group is that conjured Pulsars have a red flare at their center, and emit redstone. The second type is Trick: Conjure Star. It creates a small ball of light that emits a ray of particles. Subsequent casts on the same position will add more rays, but not change the color.<br><br>Trick: Freeze Block turns water sources into Ice, lava sources into obsidian, flowing lava into cobble or adds a snow layer if none of these conditions are met.
 
 psi.piecegroup.rpsideas.mana_psionics=Mana Manipulation
 psi.piecegroup.rpsideas.mana_psionics.desc=What is elemental magic worth without its most base counterpart?<br><br>This group allows the caster to manipulate the power of Mana. Specifically, making a burst of Mana from your inventory, similar to a Mana Blaster. This requires a special CAD assembly to function, as Psionic materials cannot carry Mana naturally. A CAD made with a Blaster CAD Assembly can store a lens, just like a regular Blaster. Anything a blaster can accept, the Blaster CAD can too. This CAD can enable Mana Flow, allowing any mana trick to fire.<br><br>The other tricks in the category mimic various drums, with a Pulse instead of a drum. The only strange trick is the Gathering Pulse, which requires an Alfen Flow Enabler. This can be achieved by slotting a Lens Clip onto your Blaster CAD.
@@ -303,7 +303,7 @@ psi.piecegroup.rpsideas.visual_auditive=Visual and Auditive Tricks
 psi.piecegroup.rpsideas.visual_auditive.desc=This group introduces tricks that either provoke visual or auditive sensations on players and entities.<br><br>Trick: Note Block Sound plays a sound at a given position. It's parameters are as following:<br><br>Instrument: Value ranging from 0 to 10 and correspond to the following instruments(in order): Harp/Piano, Bass drum, Snare drum, Clicks and sticks, Bass guitar, Flute, Bell, Guitar, Chime, Xylophone, Stronger harp.<br><br>Volume: values ranging from 0 to 1, controls how loud it is.<br><br>Pitch: value ranging from 0 to 24, controls what note the trick plays.
 
 psi.piecegroup.rpsideas.advanced_loopcast_control=Advanced Loopcast and Flow Control
-psi.piecegroup.rpsideas.advanced_loopcast_control.desc=This group introduces various tricks and selectors to further enhance the flow control of both loopcast and spells.<br><br>The main piece of this group is Selector: Sucession Counter, which when put on a piece of armor, returns the amount of times a spell has been cast.
+psi.piecegroup.rpsideas.advanced_loopcast_control.desc=This group introduces various tricks and selectors to further enhance the flow control of both loopcast and spells.<br><br>The main piece of this group is Selector: Sucession Counter, which when put on a piece of armor, returns the amount of times a spell has been cast.<br><br>Trick: Spin Chamber takes a number input, if the number is below -1 it will select the previous bullet in the CAD. If the number is above one, it will select the next bullet. If the input is 0 it does nothing
 
 psi.piecegroup.rpsideas.inter_cad=Inter-CAD Communication
 psi.piecegroup.rpsideas.inter_cad.desc=This group introduces a way for you to communicate with other CADs in the world. By using Trick: Broadcast and supplying a channel and signal value it will broadcast a number to everyone in radius of the position given.<br><br>This has some restrictions: It can only be used once per spellcast and you can only broadcast one number at the time, if you broadcast one after another it will overwrite the previous one.
