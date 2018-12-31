@@ -35,8 +35,10 @@ if __name__ == '__main__':
         if os.path.isfile(zh_cn_path) and os.path.getsize(zh_cn_path) == 0:
             os.system('rm -rf '.format(zh_cn_path))
 
-    # 最后打包
-    os.system('mv ./project/assets ./')  # 移动到资源包文件夹到主目录下
+    os.system('mv ./project/assets ./')  # 移动资源包文件夹到主目录下
+    os.system('mv ./project/pack.mcmeta ./')  # 移动 pack.mcmeta 文件到主目录下
+    os.system('mv ./project/pack.png ./')  # 移动 pack.png 到主目录下
+
     # 打包“资源包，资源包 meta 文件，资源包图标，说明，许可证”
     os.system('zip -r -9 "Minecraft-Mod-Language-Modpack.zip" "assets" "pack.mcmeta"  "pack.png" "README.md" "LICENSE"')
 
