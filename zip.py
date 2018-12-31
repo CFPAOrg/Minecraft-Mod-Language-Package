@@ -25,15 +25,15 @@ if __name__ == '__main__':
         en_us_old_path = 'project/assets/{}/lang/en_us_old.lang'.format(modid)
 
         # 剔除 en_us
-        os.system('rm -rf '.format(en_us_path))
+        os.system('rm -rf {}'.format(en_us_path))
         # 剔除 en_us_old
-        os.system('rm -rf '.format(en_us_old_path))
+        os.system('rm -rf {}'.format(en_us_old_path))
         # 剔除 zh_cn_old
-        os.system('rm -rf '.format(zh_cn_old_path))
+        os.system('rm -rf {}'.format(zh_cn_old_path))
 
         # zh_cn 存在，且文件为空
         if os.path.isfile(zh_cn_path) and os.path.getsize(zh_cn_path) == 0:
-            os.system('rm -rf '.format(zh_cn_path))
+            os.system('rm -rf {}'.format(zh_cn_path))
 
     os.system('mv ./project/assets ./')  # 移动资源包文件夹到主目录下
     os.system('mv ./project/pack.mcmeta ./')  # 移动 pack.mcmeta 文件到主目录下
