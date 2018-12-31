@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import src.file_download.mod_download
 import src.info_get.mod_info_get
 import src.info_get.mod_list_get
