@@ -90,6 +90,11 @@ def four_dict_handle(fdh_dict_en, fdh_dict_en_old, fdh_dict_zh, fdh_dict_zh_old)
     # 变量初始化
     fdh_dict_return_dict = {}
 
+    # 一个排查了半天的 bug，需要 copy 备用 dict
+    # 因为替换的 key 还有可能在后面再次被使用
+    zh_index = fdh_dict_zh.copy()
+    zh_old_index = fdh_dict_zh_old.copy()
+
     # 开始遍历 en_us，以其作为蓝本
     for fdh_ek, fdh_ev in fdh_dict_en.items():
         # 如果 key 不同，value 却相同，重写 key
@@ -98,9 +103,9 @@ def four_dict_handle(fdh_dict_en, fdh_dict_en_old, fdh_dict_zh, fdh_dict_zh_old)
                     == fdh_eov.lower().replace("\u0020", "").replace("\n", ""):
                 # 对应中文替换
                 if fdh_eok in fdh_dict_zh.keys():
-                    fdh_dict_zh[fdh_ek] = fdh_dict_zh[fdh_eok]
+                    fdh_dict_zh[fdh_ek] = zh_index[fdh_eok]
                 if fdh_eok in fdh_dict_zh_old.keys():
-                    fdh_dict_zh_old[fdh_ek] = fdh_dict_zh_old[fdh_eok]
+                    fdh_dict_zh_old[fdh_ek] = zh_old_index[fdh_eok]
 
         # 依据最新版 en_us 处理成可用的 dict
         # zh_cn 优先级高于 zh_cn_old，所以 zh_cn 在后面
