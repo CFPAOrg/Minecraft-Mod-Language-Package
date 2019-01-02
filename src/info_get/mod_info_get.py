@@ -21,12 +21,15 @@ class ModpageInfoGet(threading.Thread):
         # 正式爬取
         mpig_page = requests.get(
             "https://minecraft.curseforge.com/projects/{}/files?filter-game-version={}".format(self.url, VERSION),
-            headers=HEADERS,
-            proxies=PROXIES).text
+            headers=HEADERS, proxies=PROXIES).text
 
         # 正则抓取所有文件列表及其日期
         mpig_newest_file_id = re.findall(r'/files/(\d+)/download', mpig_page)
         mpig_newest_file_date = re.findall(r'data-epoch="(\d+)"', mpig_page)
+
+        # 极为罕见的存在 URL_ID_MAP 不存在映射问题
+        if self.url not in URL_ID_MAP.keys():
+            URL_ID_MAP[self.url] = get_num_id_from_url_page(self.url)
 
         # 判断数据存在后，存入数据
         if len(mpig_newest_file_id) > 0 and len(mpig_newest_file_date) > 0:
@@ -34,6 +37,24 @@ class ModpageInfoGet(threading.Thread):
                              URL_ID_MAP[self.url],  # 数字 ID
                              int(mpig_newest_file_id[0]),  # 最新文件 ID
                              int(mpig_newest_file_date[0])])  # 最新文件上传时间戳
+
+
+# 存在一种情况，即不存在数字 ID 的情况，这时候需要抓取页面，获取数字 ID
+def get_num_id_from_url_page(gnifup_url):
+    # 获取具体的主页面
+    gnifup_page = requests.get(
+        "https://minecraft.curseforge.com/projects/{}".format(gnifup_url, VERSION),
+        headers=HEADERS, proxies=PROXIES).text
+
+    # 正则抓取出有用的的信息
+    gnifup_id_list = re.findall(r'<div class="info-label">Project ID</div>\r\n.*?<div class="info-data">(\d+)</div>',
+                                gnifup_page)
+
+    # 判定并输出
+    if len(gnifup_id_list) > 0:
+        return gnifup_id_list[0]
+    else:
+        return 9  # ⑨才是最强的，笨蛋是不会被传染的哦
 
 
 def main():
@@ -51,7 +72,7 @@ def main():
     local_cache_mod_info = CURSOR.execute("SELECT * from MOD_INFO")
     for row in local_cache_mod_info:
         MOD_INFO_OLD.append([row[0], row[1], row[2], row[3]])
-        logging.debug("上次模组文件信息已经提取")
+    logging.debug("上次模组文件信息已经提取")
 
     # 开始对模组切片，进行多线程信息获取
     tmp_mod_list = list_slice(MOD_LIST, THREADS_NUM)
@@ -69,8 +90,8 @@ def main():
         # 启动线程
         for j in range(len(i)):
             threads[j].start()
-            # 延时 0.5 秒逐个启动线程
-            time.sleep(0.5)
+            # 延时 0.1 秒逐个启动线程
+            time.sleep(0.1)
 
         # 等待线程结束
         for j in range(len(i)):

@@ -33,7 +33,6 @@ def normal_language_file_write(nlfw_file_path, nlfw_dict):
 def properties_language_file_to_dict(plftd_file_path):
     with open(plftd_file_path, "r", encoding="utf-8", errors="replace") as plftd_f:
         plftd_dict = javaproperties.load(plftd_f)
-        logging.info(plftd_dict)
     return plftd_dict
 
 
