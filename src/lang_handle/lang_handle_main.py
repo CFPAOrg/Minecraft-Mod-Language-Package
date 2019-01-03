@@ -104,8 +104,12 @@ def four_dict_handle(fdh_dict_en, fdh_dict_en_old, fdh_dict_zh, fdh_dict_zh_old)
                 # 对应中文替换
                 if fdh_eok in fdh_dict_zh.keys():
                     fdh_dict_zh[fdh_ek] = zh_index[fdh_eok]
+                    # 别忘记删除旧的 key-value 对
+                    del fdh_dict_zh[fdh_eok]
                 if fdh_eok in fdh_dict_zh_old.keys():
                     fdh_dict_zh_old[fdh_ek] = zh_old_index[fdh_eok]
+                    # 别忘记删除旧的 key-value 对
+                    del fdh_dict_zh_old[fdh_eok]
 
         # 依据最新版 en_us 处理成可用的 dict
         # zh_cn 优先级高于 zh_cn_old，所以 zh_cn 在后面
