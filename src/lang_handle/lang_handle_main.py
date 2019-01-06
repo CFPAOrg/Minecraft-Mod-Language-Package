@@ -1,5 +1,3 @@
-from distutils import dir_util
-
 import javaproperties
 
 from src.baka_init import *
@@ -102,11 +100,11 @@ def four_dict_handle(fdh_dict_en, fdh_dict_en_old, fdh_dict_zh, fdh_dict_zh_old)
             if fdh_ek != fdh_eok and fdh_ev.lower().replace("\u0020", "").replace("\n", "") \
                     == fdh_eov.lower().replace("\u0020", "").replace("\n", ""):
                 # 对应中文替换
-                if fdh_eok in fdh_dict_zh.keys():
+                if fdh_eok in fdh_dict_zh.keys() and fdh_eok in zh_index.keys():
                     fdh_dict_zh[fdh_ek] = zh_index[fdh_eok]
                     # 别忘记删除旧的 key-value 对
                     del fdh_dict_zh[fdh_eok]
-                if fdh_eok in fdh_dict_zh_old.keys():
+                if fdh_eok in fdh_dict_zh_old.keys() and fdh_eok in zh_old_index.keys():
                     fdh_dict_zh_old[fdh_ek] = zh_old_index[fdh_eok]
                     # 别忘记删除旧的 key-value 对
                     del fdh_dict_zh_old[fdh_eok]
@@ -148,7 +146,7 @@ def main(handle_assets_path, handle_project_path):
         zh_cn_dict.clear()
         zh_cn_old_dict.clear()
 
-    dir_util.copy_tree(handle_assets_path + "/assets", handle_project_path + "/assets")
+    # dir_util.copy_tree(handle_assets_path + "/assets", handle_project_path + "/assets")
     logging.info("==================  主体处理程序结束  ==================")
 
 
