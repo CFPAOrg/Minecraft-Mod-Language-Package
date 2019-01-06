@@ -1,3 +1,5 @@
+from distutils import dir_util
+
 import javaproperties
 
 from src.baka_init import *
@@ -146,7 +148,7 @@ def main(handle_assets_path, handle_project_path):
         zh_cn_dict.clear()
         zh_cn_old_dict.clear()
 
-    # dir_util.copy_tree(handle_assets_path + "/assets", handle_project_path + "/assets")
+    dir_util.copy_tree(handle_assets_path + "/assets", handle_project_path + "/assets")
     logging.info("==================  主体处理程序结束  ==================")
 
 
