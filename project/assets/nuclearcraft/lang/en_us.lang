@@ -306,7 +306,9 @@ tile.nuclearcraft.helium_collector.desc=Produces %s of helium constantly.
 tile.nuclearcraft.cobblestone_generator.name=Cobblestone Generator
 tile.nuclearcraft.cobblestone_generator_compact.name=Compact Cobblestone Generator
 tile.nuclearcraft.cobblestone_generator_dense.name=Dense Cobblestone Generator
-tile.nuclearcraft.cobblestone_generator.desc=Produces %s constantly.
+tile.nuclearcraft.cobblestone_generator_req_power=Produces %s constantly if supplied %s.
+tile.nuclearcraft.cobblestone_generator_no_req_power=Produces %s constantly.
+nuclearcraft.cobblestone=Cobblestone
 
 tile.nuclearcraft.water_source.name=Infinite Water Source
 tile.nuclearcraft.water_source_compact.name=Compact Infinite Water Source
@@ -559,6 +561,9 @@ fluid.koh=Molten Potassium Hydroxide
 
 tile.nuclearcraft.fluid_bas.name=Molten Boron Arsenide
 fluid.bas=Molten Boron Arsenide
+
+tile.nuclearcraft.fluid_sic_vapor.name=Silicon Carbide Vapor
+fluid.sic_vapor=Silicon Carbide Vapor
 
 tile.nuclearcraft.fluid_thorium.name=Molten Thorium
 fluid.thorium=Molten Thorium
@@ -1192,6 +1197,7 @@ item.nuclearcraft.gem.villiaumite.desc=Obtained alongside Diamonds when breaking
 item.nuclearcraft.gem.carobbiite.name=Carobbiite
 item.nuclearcraft.gem.carobbiite.desc=Obtained alongside Diamonds when breaking Diamond Ore.
 item.nuclearcraft.gem.boron_arsenide.name=Boron Arsenide
+item.nuclearcraft.gem.silicon.name=Silicon
 
 item.nuclearcraft.gem_dust.diamond.name=Crushed Diamond
 item.nuclearcraft.gem_dust.rhodochrosite.name=Crushed Rhodochrosite
@@ -1205,6 +1211,7 @@ item.nuclearcraft.gem_dust.coal.name=Crushed Coal
 item.nuclearcraft.gem_dust.villiaumite.name=Crushed Villiaumite
 item.nuclearcraft.gem_dust.carobbiite.name=Crushed Carobbiite
 item.nuclearcraft.gem_dust.arsenic.name=Crushed Arsenic
+item.nuclearcraft.gem_dust.end_stone.name=Crushed End Stone
 
 item.nuclearcraft.alloy.bronze.name=Bronze Ingot
 item.nuclearcraft.alloy.tough.name=Tough Alloy
@@ -1219,6 +1226,8 @@ item.nuclearcraft.alloy.lead_platinum.name=Lead Platinum Alloy
 item.nuclearcraft.alloy.extreme.name=Extreme Alloy
 item.nuclearcraft.alloy.thermoconducting.name=Thermoconducting Alloy
 item.nuclearcraft.alloy.zircaloy.name=Zircaloy
+item.nuclearcraft.alloy.silicon_carbide.name=Silicon Carbide Ingot
+item.nuclearcraft.alloy.sic_sic_cmc.name=SiC-SiC Ceramic Matrix Composite
 
 item.nuclearcraft.compound.calcium_sulfate.name=Calcium Sulfate
 item.nuclearcraft.compound.crystal_binder.name=Crystal Binder
@@ -1228,6 +1237,7 @@ item.nuclearcraft.compound.potassium_fluoride.name=Potassium Fluoride
 item.nuclearcraft.compound.sodium_hydroxide.name=Sodium Hydroxide
 item.nuclearcraft.compound.potassium_hydroxide.name=Potassium Hydroxide
 item.nuclearcraft.compound.borax.name=Borax
+item.nuclearcraft.compound.dimensional_blend.name=Dimensional Blend
 
 item.nuclearcraft.part.plate_basic.name=Basic Plating
 item.nuclearcraft.part.plate_advanced.name=Advanced Plating
@@ -1243,6 +1253,7 @@ item.nuclearcraft.part.chassis.name=Machine Chassis
 item.nuclearcraft.part.empty_frame.name=Empty Frame
 item.nuclearcraft.part.steel_frame.name=Steel Frame
 item.nuclearcraft.part.plate_extreme.name=Extreme Plating
+item.nuclearcraft.part.sic_fiber.name=Silicon Carbide Fiber
 
 item.nuclearcraft.upgrade.speed.name=Speed Upgrade
 item.nuclearcraft.upgrade.speed_desc=Increases the processing speed of machines at the cost of additional processing power. These upgrades can be stacked - the speed will increase %s with each additional upgrade while the power use will increase %s.
@@ -2110,6 +2121,8 @@ gui.config.tools.tool_attack_damage=Attack Damages
 gui.config.tools.tool_attack_damage.comment=Related to the damage done per hit (wood = 0.0, stone = 1.0, etc.). Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe.
 gui.config.tools.tool_enchantability=Enchantabilities
 gui.config.tools.tool_enchantability.comment=Determines the quality of applied enchantments. Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe.
+gui.config.tools.tool_speed=TiC Handle Modifiers
+gui.config.tools.tool_speed.comment=Determines the Tinkers' Construct handle modifiers of the materials. Order: boron, tough alloy, hard carbon, boron nitride.
 
 gui.config.category.armor=Armor Configs
 gui.config.category.armor.tooltip=Configure armor.
@@ -2583,6 +2596,26 @@ material.boron.name=Boron
 material.tough.name=Tough Alloy
 material.hard_carbon.name=Hard Carbon
 material.boron_nitride.name=Boron Nitride
+material.thorium.name=Thorium
+material.uranium.name=Uranium
+material.magnesium.name=Magnesium
+material.chocolate.name=Chocolate
+
+modifier.moldable.name=Moldable
+modifier.moldable.desc=§oMaître Chocolatier.§r\nBlend additional modifiers into your tool.
+modifier.uplifting.name=Uplifting
+modifier.uplifting.desc=§oThis day we fight!§r\nOccasionally regenerates health on use.
+modifier.withering.name=Withering
+modifier.withering.desc=§oThe goal of all life is death...§r\nWithers enemies on hit.
+
+modifier.moldable_armor.name=Moldable
+modifier.moldable_armor.desc=§oMaître Chocolatier.§r\nBlend additional modifiers into your armor.
+modifier.poisonous_armor.name=Poisonous
+modifier.poisonous_armor.desc=§oSo many to kill... so little time.§r\nPoisons enemies on contact.
+modifier.uplifting_armor.name=Uplifting
+modifier.uplifting_armor.desc=§oI bid you stand!§r\nOccasionally regenerates health when hit.
+modifier.withering_armor.name=Withering
+modifier.withering_armor.desc=§oDeath makes monsters of us all.§r\nWithers enemies on contact.
 
 message.nuclearcraft.rad_x_wore_off=Your Rad-X wore off...
 message.nuclearcraft.scrubber_removal_rate=Radiation removal rate:
@@ -2591,6 +2624,7 @@ hud.nuclearcraft.rad_immune=Immune for:
 
 death.attack.superfluid_freeze=%1$s was Bose-Einstein condensated
 death.attack.plasma_burn=%1$s was incinerated by plasma
+death.attack.gas_burn=%1$s was vaporized 
 death.attack.steam_burn=%1$s would have fared better in a kettle
 death.attack.molten_burn=%1$s went to hell but didn't come back
 death.attack.hot_coolant_burn=%1$s cooled off at the wrong time and place
