@@ -16,26 +16,26 @@
 
 用更简单的话来说：无论以任何方式驱动传动轴，釜锅都会逆时针倾倒。试着用它来找到一个自动化方式倾倒釜锅。
 
-* Key uses for the 釜锅 while unstoked include:
-    * Making a 浓缩炼狱之火 bar from 8 炼狱火之烬, allowing the creation of the 火盆.
-    * Accessing advanced cooking recipes to make more efficient food with.
-    * Tanning leather with either bark or dung to access more advanced devices, blocks, and more durable leather armor.
-    * Making 下界煤, a more efficient use for your coal, made with a single hellfire dust and a single coal OR charcoal dust.
-    * Creating 下界淤泥, for use in creating Nether Brick.
-    * Creation of 粗粮, for your wolves and pigs to eat and breed with.
-    * Alchemizing all of the vanilla saplings together with a 灵魂陶瓮 and a Nether Wart to create a 血木树苗.
-    * Cleaning off bloodied 十字纹格方块s and Sticky Pistons with 肥皂.
-    * Creating Gunpowder from 硝石, 硫磺, and Coal/木炭粉.
-    * Making an 导火线 from Gunpowder and String/大麻 Fiber, for creation of 矿用炸药s and 炸药.
-    * Making a 灯丝 with String/大麻 Fiber, Glowstone Dust, and Redstone, for making 泛光灯s with.
-    * Making a 加热元件 with Blaze Powder, String/大麻 Fiber, and Redstone, for making the 火盆 with.
-    * The Creation of 爆破油膏 with 动物油脂 and 炼狱火之烬, for use in explosive creation.
-    * Other uses for the 釜锅 while unstoked may be provided by other mods, such as BetterWithAddons.
+* 常规釜锅的关键用途包括:
+    * 使用8个炼狱火之烬制造浓缩炼狱之火锭。浓缩炼狱火锭可以用来制作火盆。
+    * 通过使用一些进阶的食物配方，更有效的烹饪。
+    * 使用树皮或粪便制造鞣制皮革，鞣制皮革可以用来制作高级的机器和更好的护甲。
+    * 制作下界煤，这是一种更高效的燃料，使用炼狱火之烬和煤/木炭制作。
+    * 制作下界淤泥，这是地狱砖的原料。
+    * 制作粗粮, 粗粮可以用来喂食狼和猪。
+    * 把所有原版的树苗，灵魂陶瓮和地狱疣一起煮来制作血木树苗。
+    * 用肥皂清理沾血的十字纹格方块和黏糊糊的溶液。
+    * 用硝石、硫磺和煤/木炭粉制作火药。
+    * 利用火药和线/大麻纤维制作为矿用炸药和炸药准备的导火线。
+    * 用萤石粉、红石粉和任意种类的线制作泛光灯的灯丝。
+    * 用烈焰粉、线和红石来制作火盆所需的加热元件。
+    * 用动物油脂和炼狱火之烬制作炸药的原料之一，爆破油膏。
+    * 诸如BetterWithAddons之类的mod可能会增加其他使用坩埚的配方。
 
-* Key uses for the 釜锅 while stoked from a 火盆 include:
-    * Rendering Leather products into 生物黏胶, at differing ratios based on what's being rendered. 生物黏胶 is a very versatile material, and can be used in place of slime balls in recipes that would normally call for slime balls, or be used for it's own special recipes, such as the 东方弓.
-    * Creating 硫磺 and 灵魂助溶剂 from 末影渣, enabling the creation of 熔魂钢, the final tool/armor material introduced by BetterWithMods.
-    * Creation of 动物油脂 from meat. Pork would make for a very efficient way of making 动物油脂...
-    * Making 肥皂 with 动物油脂 and 木灰.
-    * Burning Logs, Planks, and 木屑 into 木灰, at differing ratios for each... 木屑 taking *sixteen* of it to make one 木灰.
-    * Other uses for the 釜锅 while stoked may be provided by other mods, such as BetterWithAddons.
+* 猛火釜锅（用火盆加热）的关键用途包括:
+    * 利用皮革制作生物黏胶。这是一种用途广泛的材料，可以用来代替粘液球，或者用来制造一些独特的物品，比如东方弓。（注：产量取决于材料配比）
+    * 利用末影渣制作硫磺和灵魂助溶剂，这是熔魂钢的关键材料。熔魂钢工具和护甲是BetterWithMods中最好的工具和护甲。
+    * 从动物肉中熬制动物油脂。猪肉应该会是最有效的。
+    * 用动物油脂和木灰制造肥皂。
+    * 把原木，木板和木屑烧成木灰。不同材料的效率不同。举例来说，需要16个木屑才能制作一个木灰.
+    * 诸如BetterWithAddons之类的mod可能会增加其他使用猛火坩埚的配方
