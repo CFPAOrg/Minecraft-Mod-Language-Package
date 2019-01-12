@@ -1,47 +1,47 @@
 # Arcane Scrolls
 ![Arcane Scrolls](item:betterwithmods:arcane_scroll)
 
-An Arcane Scroll is paper embued with the powers or weaknesses of the mobs that dropped them.    
-These powers can be harnessed through the use of the [Infernal Enchanter](../blocks/infernal_enchanter.md).
+奥术卷轴 是记载有特定法术或特定生物弱点的一个卷轴.    
+通过使用 [炼狱附魔台](../blocks/infernal_enchanter.md) ，你可以将这些法术附魔到你的装备上。
 
-** Boss Enchants have a 100% drop chance.
+** 所有Boss都有100%的几率掉落卷轴.
 
-* Bat - Feather Falling
+* 蝙蝠 - 摔落保护
 
-* Blaze - Flame
+* 烈焰人 - 火焰附加
 
-* Creeper - Blast Protection
+* 苦力怕 - 爆炸保护
 
-* Endermen - Silk Touch
+* 末影人 - 精准采集
 
-* Ender Dragon - Sweeping **
+* 末影龙 - 横扫之刃 **
 
-* Ghast - Punch
+* 恶魂 - 荆棘
 
-* Guardian - Depth Strider
+* 守卫者 - 深海探索者
 
-* Magma Cube - Fire Aspect
+* 岩浆怪 - 火焰附加
 
-* Pig Zombie - Fire Protection 
+* 僵尸猪人 - 火焰保护
 
-* Polar Bear - Frost Walker
+* 北极熊 - 冰霜行者
 
-* Silverfish - Efficiency
+* 囊虫 - 效率
 
-* Skeleton - Projectile Protection
+* 骷髅 - 投射物保护
 
-* Skeleton (While in the Nether) - Infinity
+* 下届骷髅 - 无限
 
-* Slime - Protection
+* 史莱姆 - 保护
 
-* Spider - Bane of Arthropods
+* 蜘蛛 - 节肢杀手
 
-* Squid - Respiration
+* 鱿鱼 - 水下呼吸
 
-* Witch - Aqua Affinity
+* 女巫 - 水下速掘
 
-* Wither - Knockback **
+* 凋零 - 击退 **
 
-* Zombie - Smite
+* 僵尸 - 亡灵杀手
 
-* Sharpness, Looting, Unbreaking, Fortune, Power, Luck of the Sea, Binding Curse and Vanishing Curse are not in yet, soon (tm)  
+* 锋利, 时运, 耐久, 抢夺, 力量, 海之眷顾, 绑定诅咒和消失诅咒暂时还没有获取渠道，不过很快也将加入。  
