@@ -1,18 +1,3 @@
-# Abilities
-# Advanced Combat
-# Advancements
-# Blocks
-# Commands
-# Damage
-# Items
-# Karma
-# Key Bindings
-# Materials
-# Materials Items & Blocks
-# Misc
-# Potions
-# Sounds
-# Traits
 commands.karma.class=Class:
 commands.karma.karma=Karma:
 commands.karma.karmaset=%s将更改给%s
@@ -35,9 +20,9 @@ commands.superpower.usage=/ superpower <player> [superpower / remove]
 commands.superpowerxp.cantlevelup=那个玩家的超能力无法升级！
 commands.superpowerxp.failure.widthdrawXp=不能给予玩家负面经验值给他的超能力
 commands.superpowerxp.nosuperpower=那个玩家没有超能力！
+commands.superpowerxp.success=给%s 超能力等级到%s
 commands.superpowerxp.success.levels=给%s的%s超能力级别
 commands.superpowerxp.success.negative.levels=从%s获得%s超能力级别
-commands.superpowerxp.success=给%s 超能力等级到%s
 commands.superpowerxp.usage=/ superpowerxp <amount> [player] OR / superpowerxp <amount> L [player]
 death.attack.radiation=%1$s 死于辐射
 fluid.adamantium=熔融艾德曼合金
@@ -47,6 +32,7 @@ fluid.dwarfstaralloy=熔融矮星合金
 fluid.gold=熔融黄金
 fluid.goldtitaniumalloy=熔融金钛合金
 fluid.intertium=熔融碳钢
+fluid.iridium=熔融铱
 fluid.iron=熔融铁
 fluid.lead=熔融铅
 fluid.nickel=熔融镍
@@ -179,24 +165,24 @@ karma.karmaclass.thug=刺客
 karma.karmaclass.tyrant=暴君
 karma.karmaclass.vigilante=城管
 karma.karmaclass.villain=反派
-karma.karmastats.bad_knockout.desc=敌对生物（例如僵尸，敌人）死亡的数量。
 karma.karmastats.bad_knockout=坏消息
-karma.karmastats.bad_player_kill.desc=敌人伤亡的数量。
+karma.karmastats.bad_knockout.desc=敌对生物（例如僵尸，敌人）死亡的数量。
 karma.karmastats.bad_player_kill=敌人杀敌数量
-karma.karmastats.good_knockout.desc=友好生物（例如村民，成员）死亡的数量。
+karma.karmastats.bad_player_kill.desc=敌人伤亡的数量。
 karma.karmastats.good_knockout=好消息
-karma.karmastats.good_player_kill.desc=成员伤亡数量。
+karma.karmastats.good_knockout.desc=友好生物（例如村民，成员）死亡的数量。
 karma.karmastats.good_player_kill=成员杀敌数量
-karma.karmastats.modified.desc=只有管理员可以使用/ karma更改的统计信息。
+karma.karmastats.good_player_kill.desc=成员伤亡数量。
 karma.karmastats.modified=修改
-karma.karmastats.monster_kill.desc=怪物死亡的数量。
+karma.karmastats.modified.desc=只有管理员可以使用/ karma更改的统计信息。
 karma.karmastats.monster_kill=怪物杀戮数量
-karma.karmastats.saves.desc=即将杀死另一个实体的被杀/被击倒实体死亡的数量（例如，僵尸狩猎村民）。
+karma.karmastats.monster_kill.desc=怪物死亡的数量。
 karma.karmastats.saves=保存
-karma.karmastats.taming.desc=驯服生物死亡的数量。
+karma.karmastats.saves.desc=即将杀死另一个实体的被杀/被击倒实体死亡的数量（例如，僵尸狩猎村民）。
 karma.karmastats.taming=驯服的生物
-karma.karmastats.thefts.desc=抢劫村民数量（右击一个被淘汰的村民给你他的交易）。
+karma.karmastats.taming.desc=驯服生物死亡的数量。
 karma.karmastats.thefts=强盗
+karma.karmastats.thefts.desc=抢劫村民数量（右击一个被淘汰的村民给你他的交易）。
 lucraftcore.abilities.drawback_punch.name=攻击破绽
 lucraftcore.abilities.drawback_weapon.name=攻击破绽
 lucraftcore.abilities.energy_blast.desc=使你发射一道能量冲击
@@ -270,6 +256,10 @@ lucraftcore.info.customizer=定制
 lucraftcore.info.damage=伤害
 lucraftcore.info.disabled=禁用
 lucraftcore.info.distance=距离：%s
+lucraftcore.info.energy_display=%,d %s
+lucraftcore.info.energy_storage_display=%,d / %,d %s
+lucraftcore.info.fluid_display=%,d %s
+lucraftcore.info.fluidtank_display=%,d / %,d %s
 lucraftcore.info.frequency=频率
 lucraftcore.info.green=绿
 lucraftcore.info.hearts=心
@@ -308,7 +298,7 @@ lucraftcore.materials.dwarfStarAlloy.name=矮星合金
 lucraftcore.materials.gold.name=黄金
 lucraftcore.materials.goldTitaniumAlloy.name=金钛合金
 lucraftcore.materials.intertium.name=碳钢
-lucraftcore.materials.iridium.name=铱
+lucraftcore.materials.iridium.name=铱锭
 lucraftcore.materials.iron.name=铁
 lucraftcore.materials.lead.name=铅
 lucraftcore.materials.nickel.name=镍
@@ -325,7 +315,7 @@ lucraftcore.trait.super_heavy.desc=只有很强壮的人才能拿起这个工具
 lucraftcore.trait.super_heavy.name=太重了
 potion.knockOut=摧毁
 potion.radiation=辐射
-subtitles.energy_blast=气功波
+subtitles.energy_blast=能量冲击
 tile.block_adamantium.name=艾德曼合金块
 tile.block_bronze.name=青铜块
 tile.block_copper.name=铜块
@@ -344,6 +334,7 @@ tile.block_titanium.name=钛块
 tile.block_uranium.name=铀块
 tile.block_uru.name=乌鲁块
 tile.block_vibranium.name=振金块
+tile.boiler.name=锅炉
 tile.construction_table.name=铸造台
 tile.extractor.name=提取器
 tile.furnace_generator.name=熔炉发电机

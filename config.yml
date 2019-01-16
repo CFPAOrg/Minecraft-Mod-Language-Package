@@ -1,14 +1,14 @@
 # 爬虫工具的配置文件
 
 # 爬虫抓取的版本
-# 目前只有 1.7.10, 1.8.9, 1.9.4, 1.10.2, 1.11.2, 1.12.2 四个可选
+# 目前只有 1.7.10, 1.8.9, 1.9.4, 1.10.2, 1.11.2, 1.12, 1.12.2 七个可选（然而并没什么用）
 version: 1.12.2
 
 # 爬虫的线程数
 threads_num: 20
 
 # 爬虫的爬取的 mod 页数
-mod_page: 20
+mod_page: 35
 
 # 爬虫爬取的 modpack 页数
 # 这一处是专门下载 FTB 整合的，curse 上整合低端的太多，就用白名单了
@@ -66,6 +66,50 @@ mod_whitelist:
   - dynamictrees
   - tetra
   - random-loot-mod
+  - ic2-classic
+  - compositegear
+  - floodlights
+  - largefluidtank
+  - ezwastelands
+  - birds-foods
+  - embers-rekindled
+  - pizzacraft
+  - v0ids-smart-backpacks
+  - roots-classic
+  - vanillafoodpantry-mod
+  - refraction
+  - chunkpregenerator
+  - scavenge
+  - player-weight-mod
+  - ender-rift
+  - additional-enchanted-miner
+  - camera-obscura # 好模组
+  - the-camping-mod # 露营模组，很有趣
+  - tinkers-arsenal
+  - tinkers-aether
+  - good-ol-currency
+  - pams-weee-flowers
+  - immersivemusic
+  - zaraklib
+  - multibags
+  - asmodeuscore
+  - galaxy-space-addon-for-galacticraft
+  - equivalent-additions
+  - ftb-quests
+  - black-hole-storage
+  - from-the-ground-up
+  - equivalent-energistics
+  - abyssalcraft-heads
+  - simple-underground-biomes
+  - moar-boats
+  - patchouli
+  - natures-aura
+  - random-psideas
+  - simply-platinum # 玩家反馈的意味不明模组
+  - cofh-vanilla-satchels
+  - moreplates
+  - tinkers-forging
+  - derfl007s-road-mod
 
 # 爬虫爬取 modpack 白名单，在此名单上的 modpack 会被爬取
 # 仅适用于 curseforge 整合
@@ -79,13 +123,14 @@ modpack_whitelist:
   - nfinit-skyblock
   - sevtech-ages
   - exoria
+  - stoneblock
+  - gregblock
 
-# 爬虫爬取 mod 的白名单，在此名单上的模组和整合包会被禁止爬取，会覆盖白名单
+# 爬虫爬取 mod 的黑名单，在此名单上的模组会被禁止爬取，会覆盖白名单
 # 名单请使用 curseforge url 中的名称
 mod_blacklist:
   - dungeon-tactics # 乱码
   - minecraft-comes-alive-mca # 无意义人名翻译
-  - bookshelf # 无意义附魔等级翻译
   - mike-dongles # 无意义粉丝向模组
   - magical-psi # 仅仅改材质，但是作者忘记删语言文件了
   - the-twilight-forest # 目前有他人对此翻译存在反对观点，暂时列为黑名单，规避冲突
@@ -102,8 +147,21 @@ mod_blacklist:
   - shetiphiancore # 染料颜色重名问题
   - skillable # 原作者不在更新
   - smarthoppers-mod # 太过抽象
+  - thaumic-equivalence # 缺失翻译最多的手册部分目前还未实装
+  - embers # 已经不再维护
+  - ice-and-fire-dragons # EEEEEET
+  - projecte #手册暂时有问题
+  - lycanites-mobs
+  - gregblock-utilities # 这个作者干了一件很有趣的事情，把自己模组的 domain 和 gtce 弄成一样的
+  - craftpresence # 汉化会导致崩溃，是的
+  - ender-io-base # 下面的东西居然和 enderio 使用了相同的 assets domain，导致翻译会被覆盖
+  - ender-io-machines
+  - ender-io-conduits
+  - ender-io-endergy
+  - ender-io-inventory-panel
+  - simple-tcon
 
-# 爬虫爬取 modpack 黑名单，在此名单上的模组和整合包会被禁止爬取，会覆盖白名单
+# 爬虫爬取 modpack 黑名单，在此名单上的整合包会被禁止爬取，会覆盖白名单
 # 名单请使用 curseforge url 中的名称
 modpack_blacklist:
   - the-new-frontier # 这个整合会莫名其妙不存在文件
@@ -125,17 +183,9 @@ del_list:
   - simpleautorun # 空语言文件
   - equipmenttooltips # 空语言文件
 
-# 邮件发送提醒
-# 按次序写入需要发送的邮箱
-email:
-  - baka943@qq.com
-
-# github 仓库信息获取
-# 已经获得下面所有人的授权，允许抓取公开信息
-# 遵循 github 用户协议
-# github_user:
-# - 3TUSK
-# - J-swl
-# - DYColdWind
-# - SihenZhang
-# - forestbat
+# 某些英文键不是我们想要的，可以通过这一块书写删除它
+del_key:
+  - 'msg.entity.rocket.seldst'
+  - 'commands.reload.usage'
+  - 'tile.freezer.name'
+  - 'tile.mirror.name'
