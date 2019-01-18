@@ -1,26 +1,26 @@
 # Refined Tools
 
-Highly durable tools created from [Soulforged Steel](soulforged_steel.md) and [Hafts](haft.md) in an [Anvil](../blocks/anvil.md).
+由 [熔魂钢](soulforged_steel.md) 和 [手柄](haft.md) 组成，在 [熔魂钢砧](../blocks/anvil.md) 上制作而成的工具，极其耐用。
 
-Refined Axe
+熔魂钢斧
 ![Refined Axe](item:betterwithmods:steel_axe)
 
-Refined Pickaxe
+熔魂钢镐
 ![Refined Pickaxe](item:betterwithmods:steel_pickaxe)
 
-Refined Shovel
+熔魂钢铲
 ![Refined Shovel](item:betterwithmods:steel_shovel)
 
-Refined Sword
+熔魂钢剑
 ![Refined Sword](item:betterwithmods:steel_sword)
 
-Refined Hoe
+熔魂钢锄
 ![Refined Hoe](item:betterwithmods:steel_hoe)
 
-Refined Mattock - Combination Pickaxe and Shovel
+熔魂钢鹤嘴锄 - 结合了镐和铲的功能
 ![Refined Mattock](item:betterwithmods:steel_mattock)
 
-Refined Battleaxe - Combination Sword and Axe.
+熔魂钢战斧 - 结合了剑和斧的功能
 ![Refined Battleaxe](item:betterwithmods:steel_battleaxe)
 
 

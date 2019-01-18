@@ -51,6 +51,8 @@ psimisc.programmerCoords=Selected: [%d, %d] | Cursor: [%d, %d]
 psimisc.programmerCoordsNoCursor=Selected: [%d, %d]
 psimisc.softcapIndicator=You have reached level 25. While there are more levels to earn and more pieces to unlock, this is the last level in which you will receive more Psi energy, so your Psi energy will be left at a maximum of 5000 from now on, instead of continuing to expand.
 
+psi.container.socketable=Sockets
+
 # SUBTITLES
 psi.subtitle.bulletCreate=Spell stored
 psi.subtitle.cadCreate=CAD assembled
@@ -624,3 +626,24 @@ psi.piecegroup.memoryManagement=Memory Management
 psi.piecegroup.memoryManagement.desc=This group introduces the ability for spells to harness Persistent Memory in one's CAD. A CAD can store Vector type values for use in future spellcasts. The amount of Vectors that can be stored is equal to the CAD's "Sockets" stat divided by 3, rounded down. This is refered to the amount of Memory Slots present in the CAD.<br><br>The group includes two pieces, simple IO style pieces to read and write vectors to and from the memory. The red piece, "Trick: Save Vector" saves a vector to the target Memory Slot, whereas "Selector: Saved Vector" gets the vector saved in the Memory Slot defined by its only parameter. Memory Slots for these pieces start in 1, so a CAD with 3 memory slots would accept values 1, 2, and 3. Both pieces add Potency to the spell equivalent to the number of the slot used.<br><br>One imperfection with these pieces is the fact that "Trick: Save Vector" "locks" the target Memory Slot when used, preventing any of the two pieces from interacting with that same Memory Slot in the current spell cast after it goes through, be that read or write. So if you need to read the value in the slot before you write something, make sure to keep the fundamental rules of Flow Control in mind, to make sure the read goes through before the write.
 psi.piecegroup.secondaryOperators=Secondary Operators
 psi.piecegroup.secondaryOperators.desc=As the name implies, this group includes mathematical operators that aren't quite as important as the "primary" ones, such as sum or subtract. This group is, really, just a mixed bag of all sorts of math or logic relates pieces that can be used to help with spell creation. We'll separate the pieces in two sets to make them easier to explain.<br><br>The first set is related to powers. Including pieces like "Operator: Square", "Operator: Power", "Operator: Square Root" and even "Operator: Logarithm". Most of these operate in a pretty standard fashion, with not much to talk about, except "Operator: Logarithm". This piece, as the name implies, executes the logarithm of the number passed in. The piece takes an optional Base paramter, and will calculate the logarithm for that base. If no base is passed in, it'll default to base 10. There's also "Constant: e", if you feel like using that, for whatever reason.<br><br>The second set is related to logic. It includes pieces that do rounding (to an integer), "Operator: Ceiling", "Operator: Floor" and "Operator Round", which respectively round up, round down and round depending on the fractional part of the number. It also includes "Operator: Min" and "Operator: Max". These are pretty simple. They, respectively, get the smallest number and the largest number between the various numbers passed in.
+
+command.psi.learn.usage=/psi-learn <group> [player]
+command.psi.learn.success=Successfully taught %s %s
+command.psi.learn.success.all=Successfully taught %s all of Psi
+command.psi.learn.should_not=%s already knows %s
+command.psi.learn.players=%s isn't a player, only players can have Psi knowledge
+command.psi.learn.console=The console can't learn Psi. Try specifying a player! /psi-learn <group> [player]
+command.psi.learn.not_a_group='%s' is not a valid Psi piece group
+command.psi.learn.unknown=This player has no Psi data. Report this to the mod author.
+
+command.psi.unlearn.usage=/psi-unlearn <group> [player]
+command.psi.unlearn.success=Successfully made %s forget %s
+command.psi.unlearn.success.all=Successfully made %s forget all of Psi
+command.psi.unlearn.should_not=%s doesn't know %s
+command.psi.unlearn.players=%s isn't a player, only players can have Psi knowledge
+command.psi.unlearn.console=The console can't learn Psi. Try specifying a player! /psi-unlearn <group> [player]
+command.psi.unlearn.not_a_group='%s' is not a valid Psi piece group
+command.psi.unlearn.unknown=This player has no Psi data. Report this to the mod author.
+psimisc.fakeLevel.psidust=Psidust Infusion
+
+jei.psi.category.trick=Spell Infusion

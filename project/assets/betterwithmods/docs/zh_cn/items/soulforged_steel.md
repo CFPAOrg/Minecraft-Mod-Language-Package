@@ -2,10 +2,10 @@
 
 ![Soulforged Steel](item:betterwithmods:material@14)
 
-Soulforged Steel(SFS) is an alloy of Iron and [Carbon](carbon_dust.md) that is fused using the power of [Souls](../blocks/soul_urn.md).
+熔魂钢（Soulforged Steel，SFS）是一种 [碳](carbon_dust.md) 铁合金，这两种物质在 [灵魂](../blocks/soul_urn.md) 的力量下融合。
 
-SFS is a highly durable and shape-able alloy that has many potential uses, including:
+熔魂钢具有极高的耐久度和优良的延展性，可以用于许多用途，比如:
 
- * [Plate Armor](plate_armor.md).
+ * [熔魂钢护甲](plate_armor.md).
  
- * [Soulforged Steel Blocks](blocks:betterwithmods:steel_block) 
+ * [熔魂钢块](blocks:betterwithmods:steel_block) 
