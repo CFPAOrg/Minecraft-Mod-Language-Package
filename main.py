@@ -1,73 +1,40 @@
 #!/usr/bin/python3
-import os
-import re
-import time
-import src.weblate.weblate
 
-# 首先是对 weblate 进行操控
-src.weblate.weblate.weblate_operation()
+import src.file_download.mod_download
+import src.info_get.mod_info_get
+import src.info_get.mod_list_get
+import src.lang_handle.lang_handle_copy
+import src.lang_handle.lang_handle_del_list
+import src.lang_handle.lang_handle_main
+import src.lang_handle.lang_handle_preprocess
+import src.lang_handle.lang_handle_unzip
+import src.weblate.weblate_operation
+from src.baka_init import *
 
-# 我知道这一块代码很不符合规范
-# 但是写着好用，以后也许会改
-# 也许……
+if __name__ == '__main__':
+    # 先进行 weblate 的 pull，commit，push 操作
+    src.weblate.weblate_operation.main()
 
-# 清除先前的临时文件
-os.system('rm -rf /tmp/mods')
-os.system('rm -rf /tmp/modpacks')
+    # 然后依据配置文件，获取 curseforge 模组列表，部分整合模组列表等
+    src.info_get.mod_list_get.main()
 
-# 更新一遍仓库
-os.system('git pull')
+    # 在列表基础上获取模组相关文件信息
+    src.info_get.mod_info_get.main()
 
-# mod 信息抓取
-import src.crawler.mod_info_get
+    # 调用多线程下载工具，将需要更新的模组文件夹下载至临时文件夹
+    src.file_download.mod_download.main(TMP_MODS_DIR.name)
 
-# modpack 信息抓取、下载、解压
-import src.crawler.modpack_info_get
-import src.crawler.modpack_downloader
-import src.unzip.modpack_unzip
+    # 将模组中语言文件解压出来
+    src.lang_handle.lang_handle_unzip.main(TMP_MODS_DIR.name, TMP_ASSETS_DIR.name)
 
-# modpack 中的 mod 信息抓取
-import src.crawler.modpack_mod_info_get
+    # 进行复制、重命名，文件补全操作
+    src.lang_handle.lang_handle_copy.main("./project", TMP_ASSETS_DIR.name)
 
-# 开始下载 mod
-import src.crawler.mod_downloader
-import src.crawler.modpack_mod_downloader
+    # 进行预处理操作。旨在剔除空行，修正不规范注释，剔除黑名单 key
+    src.lang_handle.lang_handle_preprocess.main(TMP_ASSETS_DIR.name)
 
-# 最后，解压语言文件
-import src.unzip.mod_unzip
+    # 进行删除操作。旨在删除不需要放置进 weblate 的语言文件
+    src.lang_handle.lang_handle_del_list.main(TMP_ASSETS_DIR.name, "./project")
 
-# 开始处理语言文件
-import src.handle.handle
-import src.handle.properties_handle
-import src.handle.lang_sort
-import src.handle.empty_lang_del  # 清除空行
-import src.handle.key_lang_del # 清除指定的 key
-
-# 清除黑名单文件夹
-import src.redundancy.black_dir_del
-
-# 再次清除先前的零时文件
-os.system('rm -rf /tmp/mods')
-os.system('rm -rf /tmp/modpacks')
-
-# 最后，自动 commit，并依据更新情况是否发送邮件
-# 通过 git 来获取更新信息
-os.system('git add .')
-# 抓取出新增的部分，因为只有增加的模组才需要 phi 重新导入
-string = os.popen('git status | grep "new file:"')
-# 正则抓取出有用的信息
-new_mod_list = re.findall(
-    r'project/assets/(.*?)/lang/en_us.lang', string.read())
-
-# 是否为空？为空不发邮件
-if len(new_mod_list) != 0:
-    import src.mail.stats_get
-    import src.mail.send_mail
-
-# 接下来检查指定用户的 github，并发送邮件提醒
-# import src.github.github_info_email
-
-# 最后 add，commit, push
-os.system('git add .')
-os.system('git commit -m "Auto Update, Date: {}"'.format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())))
-os.system('git push')
+    # 处理主程序，将语言文件更新，并返复制回 weblate
+    src.lang_handle.lang_handle_main.main(TMP_ASSETS_DIR.name, "./project")

@@ -4,6 +4,6 @@
 
 ![Soap Block](block:betterwithmods:aesthetic@10)
 
-Soap is able to remove tough stains from blocks, such as the [Chopping Block](../blocks/chopping_block.md) or Sticky Pistons.
+肥皂可以用于清除诸如 [砧板](../blocks/chopping_block.md) 之类的东西上的污渍，也可以用于把粘性活塞变成普通活塞。
 
-Make sure not to drop it, though. ;)
+当然，可别把肥皂给掉了23333

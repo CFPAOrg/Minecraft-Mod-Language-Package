@@ -10,5 +10,5 @@ Better With Mods 添加了许多新的物品和方块，并且增加了许多改
 
 硬核模块系统添加了大量的内容，它被分成模块，并进一步分解成一个个功能，所有模块系统都是可配置的。目前拥有的模块：
    * [硬核模块](hardcore/index.md)
-   * [Tweaks](tweaks/index.md)
-   * [Compat](compat/index.md)
+   * [修改](tweaks/index.md)
+   * [兼容性模块](compat/index.md)

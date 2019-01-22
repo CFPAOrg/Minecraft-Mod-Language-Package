@@ -135,6 +135,8 @@ tile.immersiveengineering.metal_decoration2.aluminum_wallmount.name=铝壁挂支
 tile.immersiveengineering.metal_decoration2.lantern.name=灯
 tile.immersiveengineering.metal_decoration2.razor_wire.name=刀片刺网
 tile.immersiveengineering.metal_decoration2.toolbox.name=工程师工具箱
+tile.immersiveengineering.metal_decoration2.steel_slope.name=钢结构臂
+tile.immersiveengineering.metal_decoration2.alu_slope.name=铝结构臂
 
 tile.immersiveengineering.metal_decoration1_slab.steel_scaffolding_0.name=钢脚手架台阶
 tile.immersiveengineering.metal_decoration1_slab.steel_scaffolding_1.name=钢脚手架台阶
@@ -400,7 +402,7 @@ item.immersiveengineering.toolupgrade.chemthrower_focus.name=聚焦喷嘴
 item.immersiveengineering.toolupgrade.railgun_scope.name=瞄准镜
 item.immersiveengineering.toolupgrade.railgun_capacitors.name=附加电容
 item.immersiveengineering.toolupgrade.shield_flash.name=闪光灯
-item.immersiveengineering.toolupgrade.shield_shock.name=磁轨炮
+item.immersiveengineering.toolupgrade.shield_shock.name=震击发生器
 item.immersiveengineering.toolupgrade.shield_magnet.name=磁力手套
 item.immersiveengineering.toolupgrade.chemthrower_multitank.name=化学液体罐
 
@@ -609,6 +611,7 @@ desc.immersiveengineering.info.hour=%1$s小时
 desc.immersiveengineering.info.minute=%1$s分
 desc.immersiveengineering.info.second=%1$s秒
 
+
 desc.immersiveengineering.info.multiblocksAllowed=可用多方块结构：
 desc.immersiveengineering.info.multiblockForbidden=禁用多方块结构：
 
@@ -616,8 +619,8 @@ desc.immersiveengineering.info.colour.red=红：%1s
 desc.immersiveengineering.info.colour.green=绿：%1s
 desc.immersiveengineering.info.colour.blue=蓝：%1s
 
-desc.immersiveengineering.info.blockSide.facing=正面：
-desc.immersiveengineering.info.blockSide.opposite=反面：
+desc.immersiveengineering.info.blockSide.facing=正面
+desc.immersiveengineering.info.blockSide.opposite=反面
 desc.immersiveengineering.info.blockSide.down=下面
 desc.immersiveengineering.info.blockSide.up=上面
 desc.immersiveengineering.info.blockSide.north=北面
@@ -683,7 +686,7 @@ chat.immersiveengineering.info.coresample.infinite=无限产量
 chat.immersiveengineering.info.coresample.timestamp=样本提取于：%1$s
 chat.immersiveengineering.info.coresample.noTimestamp=样本提取于：%1$s之前
 chat.immersiveengineering.info.coresample.timezone=该样本在不同的时区/维度提取
-chat.immersiveengineering.info.coresample.mapFail=样本位置不在地图范围类
+chat.immersiveengineering.info.coresample.mapFail=样本位置不在地图范围内
 
 desc.immersiveengineering.info.reqMaterial=所需材料：
 desc.immersiveengineering.info.chance=概率：
@@ -704,11 +707,12 @@ desc.immersiveengineering.info.shader.applyTo=可应用于：
 desc.immersiveengineering.info.shader.immersiveengineering:revolver=左轮手枪
 desc.immersiveengineering.info.shader.immersiveengineering:chemthrower=化学喷射器
 desc.immersiveengineering.info.shader.immersiveengineering:drill=岩心钻井
-desc.immersiveengineering.info.shader.immersiveengineering:railgun=轨道炮
-desc.immersiveengineering.info.shader.immersiveengineering:shield=金属盾
+desc.immersiveengineering.info.shader.immersiveengineering:railgun=磁轨炮
+desc.immersiveengineering.info.shader.immersiveengineering:shield=重型盾牌
 desc.immersiveengineering.info.shader.immersiveengineering:minecart=矿车
 desc.immersiveengineering.info.shader.immersiveengineering:balloon=气球
-desc.immersiveengineering.info.shader.set=§l着色器§r：
+
+desc.immersiveengineering.info.shader.set=§l皮肤r：
 desc.immersiveengineering.info.shader.reference=§l参考潮流文化§r：
 desc.immersiveengineering.info.shader.details=§l附加信息§r：
 
@@ -727,10 +731,10 @@ desc.immersiveengineering.info.redstoneChannel.rec=频道接受中：%1$s
 desc.immersiveengineering.info.multiblock.IE:AlloySmelter=合金窑
 desc.immersiveengineering.info.multiblock.IE:ArcFurnace=电弧炉
 desc.immersiveengineering.info.multiblock.IE:Assembler=装配机
-desc.immersiveengineering.info.multiblock.IE:AutoWorkbench=自动工程师装配台
+desc.immersiveengineering.info.multiblock.IE:AutoWorkbench=自动化工程师装配台
 desc.immersiveengineering.info.multiblock.IE:BlastFurnace=高炉
 desc.immersiveengineering.info.multiblock.IE:BlastFurnaceAdvanced=强化高炉
-desc.immersiveengineering.info.multiblock.IE:BottlingMachine=装瓶机
+desc.immersiveengineering.info.multiblock.IE:BottlingMachine=灌装机
 desc.immersiveengineering.info.multiblock.IE:BucketWheel=斗轮
 desc.immersiveengineering.info.multiblock.IE:CokeOven=焦炉
 desc.immersiveengineering.info.multiblock.IE:Crusher=粉碎机
@@ -739,7 +743,7 @@ desc.immersiveengineering.info.multiblock.IE:Excavator=挖掘机
 desc.immersiveengineering.info.multiblock.IE:Fermenter=工业发酵机
 desc.immersiveengineering.info.multiblock.IE:Lightningrod=避雷针
 desc.immersiveengineering.info.multiblock.IE:MetalPress=金属冲压机
-desc.immersiveengineering.info.multiblock.IE:Mixer=混合机
+desc.immersiveengineering.info.multiblock.IE:Mixer=混合器
 desc.immersiveengineering.info.multiblock.IE:Refinery=炼油厂
 desc.immersiveengineering.info.multiblock.IE:SheetmetalTank=液体储罐
 desc.immersiveengineering.info.multiblock.IE:Silo=储物筒仓
@@ -784,7 +788,7 @@ desc.immersiveengineering.flavour.drill.headDamage=钻头状态：
 desc.immersiveengineering.flavour.drill.fuel=燃料：
 desc.immersiveengineering.flavour.drill.empty=没有燃料
 
-desc.immersiveengineering.flavour.drillhead.size=采矿区域：%1$sx%1$sx%2$s 
+desc.immersiveengineering.flavour.drillhead.size=采矿区域：%1$sx%1$sx%2$s
 desc.immersiveengineering.flavour.drillhead.level=采矿等级：%1$s
 desc.immersiveengineering.flavour.drillhead.speed=采矿速度：%1$s
 desc.immersiveengineering.flavour.drillhead.damage=攻击伤害：%1$s
@@ -799,8 +803,8 @@ desc.immersiveengineering.flavour.toolupgrade.revolver_bayonet=为左轮手枪�
 desc.immersiveengineering.flavour.toolupgrade.revolver_magazine=提升左轮手枪弹夹容量
 desc.immersiveengineering.flavour.toolupgrade.revolver_electro=左轮手枪射击造成电击伤害
 desc.immersiveengineering.flavour.toolupgrade.chemthrower_focus=减少化学喷射器的喷射速度，并增加其范围
-desc.immersiveengineering.flavour.toolupgrade.railgun_scope=可以让轨道炮视野放大
-desc.immersiveengineering.flavour.toolupgrade.railgun_capacitors=减少充电时间，并增加轨道炮的能量存储
+desc.immersiveengineering.flavour.toolupgrade.railgun_scope=可以让磁轨炮视野放大
+desc.immersiveengineering.flavour.toolupgrade.railgun_capacitors=减少充电时间，并增加磁轨炮的能量存储
 desc.immersiveengineering.flavour.toolupgrade.shield_flash=制作一个来闪瞎你的眼
 desc.immersiveengineering.flavour.toolupgrade.shield_shock=通过加速投掷物冲击目标
 desc.immersiveengineering.flavour.toolupgrade.shield_magnet=按下按钮装上盾牌
@@ -837,6 +841,8 @@ gui.immersiveengineering.config.assembler.clearRecipe=清除配方
 gui.immersiveengineering.config.assembler.recursiveIngredients=循环使用材料
 gui.immersiveengineering.config.assembler.nonRecursiveIngredients=不循环使用材料
 
+
+
 #CHAT
 chat.immersiveengineering.warning.wrongCable=你无法在此处连接线缆
 chat.immersiveengineering.warning.wrongDimension=你处在一个错误的世界中
@@ -862,7 +868,7 @@ chat.immersiveengineering.info.tickrate=此方块将每%1$s刻激活一次
 
 chat.immersiveengineering.info.coreDrill.progress=岩芯分析中：%1$s
 chat.immersiveengineering.info.coreDrill.result.mineral=§7岩芯分析完毕，发现%1$s§7矿脉
-chat.immersiveengineering.info.coreDrill.result.depl=§7矿脉完整度为%1$s§7 
+chat.immersiveengineering.info.coreDrill.result.depl=§7矿脉完整度为%1$s§7
 chat.immersiveengineering.info.coreDrill.result.none=岩芯分析完毕，未检测到矿物。
 chat.immersiveengineering.info.coreDrill.infinite=无限
 
@@ -939,15 +945,15 @@ death.attack.ieRazorWire=%1$s被刀片刺网刺死了
 death.attack.ieRazorShock=%1$s被刀片刺网电的骨头酥脆
 death.attack.ieTesla=%1$s被特斯拉线圈烤成了焦炭
 death.attack.ieTeslaPrimary=%1$s触碰到了特斯拉线圈的主电缆
-death.attack.ieRailgun=%1$s被%2$s的轨道炮刺穿了
+death.attack.ieRailgun=%1$s被%2$s的磁轨炮刺穿了
 death.attack.ieWireShock=%1$s不小心触碰到未绝缘导线
 
 #ACHIEVEMENTS
-advancement.immersiveengineering:root=Immersive Engineering
+advancement.immersiveengineering:root=沉浸工程
 advancement.immersiveengineering:root.desc=请阅读下面的说明书
 advancement.immersiveengineering:openManual=RTFM
 advancement.immersiveengineering:openManual.desc=打开工程师手册
-advancement.immersiveengineering:craftHammer=HAMMAH！
+advancement.immersiveengineering:craftHammer=HAMMAH!
 advancement.immersiveengineering:craftHammer.desc=制作出一把工程师锤子
 advancement.immersiveengineering:connectWire=电杆上的鸟儿
 advancement.immersiveengineering:connectWire.desc=连接导线
@@ -964,7 +970,7 @@ advancement.immersiveengineering:craftHeater=传播温暖
 advancement.immersiveengineering:craftHeater.desc=制作一个外置加热器
 advancement.immersiveengineering:craftPump=压力作用
 advancement.immersiveengineering:craftPump.desc=制作一个流体泵
-advancement.immersiveengineering:placeFloodlight=Aziz！Light！
+advancement.immersiveengineering:placeFloodlight=Aziz! Light!
 advancement.immersiveengineering:placeFloodlight.desc=放置一个泛光灯
 advancement.immersiveengineering:craftWorkbench=朋克时间
 advancement.immersiveengineering:craftWorkbench.desc=制作一个工程师装配台
@@ -978,14 +984,14 @@ advancement.immersiveengineering:craftDrill=储能镐
 advancement.immersiveengineering:craftDrill.desc=制作采矿机械钻
 advancement.immersiveengineering:upgradeDrill=Big Daddy
 advancement.immersiveengineering:upgradeDrill.desc=给采矿机械钻加装尽可能多的升级
-advancement.immersiveengineering:craftSkyhook=Booker，catch！
+advancement.immersiveengineering:craftSkyhook=Booker, catch!
 advancement.immersiveengineering:craftSkyhook.desc=制作工程师天钩
 advancement.immersiveengineering:skyhookPro=天际线大师
 advancement.immersiveengineering:skyhookPro.desc=使用天钩滑行至少一千米
 advancement.immersiveengineering:craftChemthrower=喷溅与祈祷
 advancement.immersiveengineering:craftChemthrower.desc=制作化学喷射器
 advancement.immersiveengineering:craftRailgun=财富的赠送
-advancement.immersiveengineering:craftRailgun.desc=制作一个轨道炮
+advancement.immersiveengineering:craftRailgun.desc=制作一个磁轨炮
 
 advancement.immersiveengineering:mbImprovedBlastFurnace=精炼的艺术
 advancement.immersiveengineering:mbImprovedBlastFurnace.desc=搭建精制高炉多方块结构
@@ -1022,34 +1028,37 @@ immersiveengineering.potion.concreteFeet=缓慢
 immersiveengineering.potion.flashed=闪现
 
 #MANUAL
+ie.manual.currentVersion=- 当前
+ie.manual.newerVersion=- 最新
 #ie.manual.entry..name=
 #ie.manual.entry..subtext=
 #ie.manual.entry.=
 
+
 ie.manual.category.update.name=最新动态！
 ie.manual.entry.updateNews_0.name=版本0.6.0更新内容
-ie.manual.entry.updateNews_0.subtext=Old，new；borrowed and Blu
+ie.manual.entry.updateNews_0.subtext=Old, new; borrowed and Blu
 ie.manual.entry.updateNews_00=亲爱的工程师们！<br><br>自从你们上次与ImmersiveEngineering合作，许多东西都发生了改变！新的内容包括：村民房屋、<link;lighting;§o§n全§o§n新§o§n的§o§n照§o§n明§r>、<link;barrel;§o§n木§o§n桶§r>、<link;tanksilo;§o§n储§o§n罐§r>、<link;tanksilo;§o§n筒§o§n仓§r;1>和<link;fluidPipes;§o§n液§o§n体§o§n管§o§n道§r>、新的成就、<link;shader;§o§n左§o§n轮§o§n皮§o§n肤§r>、<link;assembler;§o§n装§o§n配§o§n机§r>和<link;bottlingMachine;§o§n灌§o§n装§o§n机§r>！
 ie.manual.entry.updateNews_01=然而最重要的是，能量传输的处理方式进行了较大的变更。为了避免错误的发生，请认真阅读<link;wiring;§o§n基§o§n础§o§n布§o§n线§r>，尤其是第5页，详细的讲解了线缆传输速率和接线器输入输出的区别。
 
 ie.manual.entry.updateNews_1.name=版本0.6.1更新内容
-ie.manual.entry.updateNews_1.subtext=Old，new；borrowed and Blu
+ie.manual.entry.updateNews_1.subtext=Old, new; borrowed and Blu
 ie.manual.entry.updateNews_10=亲爱的工程师们！<br><br>这次的更新为ImmersiveEngineering带来了一些改动并添加了些许新的特性：<br><br><link;metalbarrel;§o§n金§o§n属§o§n桶§r>提供了一个更稳定的便携式液体存储方案；电弧炉得到了进一步的改善，它现在能够冶炼金属同时还能够回收旧工具和盔甲；用于遮盖<link;fluidPipes;§o§n流§o§n体§o§n管§o§n道§r>的脚手架现在可以攀爬了。
 
 ie.manual.entry.updateNews_2.name=版本0.6.2更新内容
-ie.manual.entry.updateNews_2.subtext=Old，new；borrowed and Blu
+ie.manual.entry.updateNews_2.subtext=Old, new; borrowed and Blu
 ie.manual.entry.updateNews_20=亲爱的工程师们！<br><br>这次的更新为ImmersiveEngineering带来了一些改动并添加了些许新的特性：<br><br>一种新型脚手架被发明了出来。原本使用开放式钢架结构进行支撑，然后在上面随意搭几块木板的安全系数较低的结构正在逐渐被取代。铝在装饰方面竟出乎意料的实用，因此现在你本地的工程师商店里已经有铝制栅栏和脚手架出售了。
 ie.manual.entry.updateNews_21=一种全新的<link;breaker;§o§n断§o§n路§o§n开§o§n关§r;2>被发明了出来。它能够通过红石信号进行控制并且可以连接高压线缆。说到高压线缆，因为它能够危及生命的高压，现在已经禁止连接到普通的断路开关了，我们并不想找相关部门的麻烦。
 
 ie.manual.entry.updateNews_3.name=版本0.6.3更新内容
-ie.manual.entry.updateNews_3.subtext=Old，new；borrowed and Blu
+ie.manual.entry.updateNews_3.subtext=Old, new; borrowed and Blu
 ie.manual.entry.updateNews_30=亲爱的工程师们！<br><br>这次的更新为ImmersiveEngineering带来了一些改动并添加了些许新的特性：<br><br>在遭受剧烈脑震荡之后，首席工程师亚当准备着手设计<link;chemthrower;§o§n化§o§n学§o§n喷§o§n射§o§n器§r>，一种能够把任何液体喷射到任何地方的设备。它还内置了一个点火装置来引燃喷射的液体。我们觉得亚当可能是疯掉了。
 ie.manual.entry.updateNews_31=科研部门的另一项新发明是<link;chargingStation;§o§n充§o§n电§o§n站§r>，它能够让你将能量导入到你的物品当中为其充电。<br>助理工程师“眼镜蛇”也展示了他的最新发明：<link;conveyor;§o§n卸§o§n货§o§n传§o§n送§o§n带§r;2>，它能够将通过它的物品放置到它下方的存储容器中。<br>比<link;sorter;§o§n物§o§n品§o§n路§o§n由§o§n器§r>更棒的是，它能够通过设置矿物辞典，NBT数据或模糊筛选来对物品进行过滤！
 ie.manual.entry.updateNews_32=其它一些值得一提的变动均和传输与装饰相关：<br>- <link;shader;§o§n皮§o§n肤§r> 现在能够被使用在矿车上<br>- <link;skyhook;§o§n工§o§n程§o§n师§o§n天§o§n钩§r> 一个能让你在电网上高速滑行并赶超矿车的工具<br> - <link;balloon;§o§n气球§r>能够让你更方便的高空悬挂接线器并为之前提到的天钩搭建架空索<br>- <link;concrete;§o§n混§o§n凝§o§n土§r> 当你从空索上掉落时为你提供一个硬着陆~
 ie.manual.entry.updateNews_33=最后，财政部门因为无法准确追踪我们的用电量而时常找我们麻烦。在经过激烈的争论之后，他们给了我们一份有关<link;eMeter;§o§n电§o§n流§o§n互§o§n感§o§n器§r>的蓝图，一种能够测量流通能量的仪器。不用说，当他们知道电弧炉的真正能耗之后他们变得更加不开心了。
 
 ie.manual.entry.updateNews_4.name=版本0.6.4更新内容
-ie.manual.entry.updateNews_4.subtext=Old，new；borrowed and Blu
+ie.manual.entry.updateNews_4.subtext=Old, new; borrowed and Blu
 ie.manual.entry.updateNews_40=亲爱的工程师们！<br><br>这次更新的变化不大。<br>能量传输系统的区块短路bug被修复了。<br><link;furnaceHeater;§o§n外§o§n置§o§n加§o§n热§o§n器§r>也进行了加强，现在可以和神秘的炼金炉和科技前沿的电力蒸馏器配合。<br><br>目前就是这些，我们希望让它保持足够稳定。
 
 ie.manual.category.general.name=概念和资源
@@ -1143,11 +1152,11 @@ ie.manual.entry.earmuffs.subtext=好大的噪音啊！！！
 ie.manual.entry.earmuffs0=隔音耳罩是用来保护你的听力的设备。这个小东西对于那些时刻工作在<link;dieselgen;§o§n柴§o§n油§o§n发§o§n电§o§n机§r;>或其他噪音巨大的机械旁的工程师来说至关重要。<br>当佩戴此耳罩时，你听到的噪音都已被减弱九成。
 ie.manual.entry.earmuffs1=在<link;workbench;§o§n工§o§n程§o§n师§o§n装§o§n配§o§n台§r;>中可对隔音耳罩进行详细设定，比如选择性过滤一些噪音，以及降噪的幅度.<br>你还可以像皮革护甲一样为其染色。<br>将其与其它任何形式的头盔合成在一起后，就可为目标头盔附加上隔音的效果，再次将其合成可将耳罩移除并返还，方便进一步修改自定义设置。
 
-ie.manual.entry.shield.name=重型盾
+ie.manual.entry.shield.name=重型盾牌
 ie.manual.entry.shield.subtext=一夫当关
 ie.manual.entry.shield0=重型盾牌是直接由你熟悉的普通盾牌升级得到的。使用方式和普通盾牌一样，可阻挡前方的大部分进攻伤害，但其耐用性已经大大增加。
 ie.manual.entry.shield1=§6闪关灯§r是由灯泡和镁反光板结合而成的产物。受到攻击时，闪光灯会产生一束明亮的闪光，使敌人混乱并迷失方向。
-ie.manual.entry.shield2=将磁轨炮装配到盾牌中可以反击攻击你敌人。当盾牌被击中时，会发出震动，对敌人造成轻微的伤害。此外，它会反弹发射物。
+ie.manual.entry.shield2=将震击发生器装配到盾牌中可以反击攻击你敌人。当盾牌被击中时，会发出震动，对敌人造成轻微的伤害。此外，它会反弹发射物。
 ie.manual.entry.shield3=§6磁力手套§r能用一种简单的方式触发护盾。使用该升级配件，只需双击§l<keybind;key.immersiveengineering.magnetEquip>§r键，便能检索您的物品栏并将盾牌吸入你的右手。
 
 ie.manual.entry.toolbox.name=工程师工具箱
@@ -1175,6 +1184,7 @@ ie.manual.entry.wiringTransformer1=你可以将<link;wiring;§o§n变§o§n压§
 ie.manual.entry.wiringCutters=§l剪线钳§r用于移除已经被安装好的线缆，只需右击便可移除线缆。
 ie.manual.entry.wiringVoltmeter=§l电压表§r用于测量连接情况。右键右击一个电容器能读取当前的能量储存，按住Shift右击2个接线器还能计算它们之间的平均损耗。
 ie.manual.entry.wiringFeedthrough=通透绝缘体能够从墙体的一侧接线至墙体另一侧（中间需要完整的实体方块才可创建其），且它支持所有接线器（Flux与红石）。
+
 
 ie.manual.entry.generator.name=发电
 ie.manual.entry.generator.subtext=
@@ -1264,9 +1274,9 @@ ie.manual.entry.assembler0=装配机是一个能够合成物品的复杂机器�
 ie.manual.entry.assembler1=你敲击的传送带将成为输入端，上方会有蓝色标记并且机器侧面也会有箭头指示。<br>装配机内部最多可存储三个合成表并且会按顺序执行。前一个合成表的输出产物可以作为后一个的输入材料。<br>三个合成狂用于存储合成表，而下方18格子用于存放材料。
 ie.manual.entry.assembler2=输入侧不光可以输入物品，还能够输入液体用于装填机器内部的三个储罐。这些储罐中的液体可以被用于取代合成表中的液体容器例如水桶。<br>机器的能量输入在顶部中央的方块。
 
-ie.manual.entry.autoworkbench.name=自动裝配台
+ie.manual.entry.autoworkbench.name=自动装配台
 ie.manual.entry.autoworkbench.subtext=为那些无法操纵驱动杆的人设计
-ie.manual.entry.autoworkbench0=自动裝配台是小规模工程的成功案例之一。<br>该机器能够按照<link; blueprints;§o§n蓝§o§n图§r>描述的配方组装零件。
+ie.manual.entry.autoworkbench0=自动装配台是小规模工程的成功案例之一。<br>该机器能够按照<link; blueprints;§o§n蓝§o§n图§r>描述的配方组装零件。
 ie.manual.entry.autoworkbench1=组装多方块结构部件时，可以将蓝图放在其绘制台上。选择想要制作的部件后，它将开始组装。为了让机器工作，当然需要提供材料和电源。<br>物品输入端是标有蓝点的两个舱口，电源输入端位于其上方。成品在输送带的末端掉落。<br>绘制台下的红石信号可以用于控制。
 
 ie.manual.entry.bottlingMachine.name=灌装机
@@ -1275,7 +1285,7 @@ ie.manual.entry.bottlingMachine0=灌装机能够将液体注入到容器当中�
 ie.manual.entry.bottlingMachine1=液体的输入端位于底层中央，物品通过传送带输入。传送带的方向应该很清楚的展示了输入输出的方向。能量输入端位于顶部。<br>通常情况下，灌装机能够装填任何可装填的容器（桶，玻璃瓶）。他同样能够接受一些特定的液体容器，例如<link;drill;§o§n采矿机械钻§r>或<link;jerrycan;§o§n油罐§r>。
 
 ie.manual.entry.chargingStation.name=充电站
-ie.manual.entry.chargingStation.subtext=
+ie.manual.entry.chargingStation.subtext=给你的眼镜充能！
 ie.manual.entry.chargingStation0=充电站允许你为工具或其它物品进行充电。能量能够从底部或后部输入，而物品可以手动放入或自动输入。
 ie.manual.entry.chargingStation1=在前面的电子管得到物品的电流充电反馈时，充电站也将输出一个相同的比较器信号。
 
@@ -1292,18 +1302,19 @@ ie.manual.entry.multiblocks.name=多方块结构
 ie.manual.entry.multiblocks.subtext=我的内六角扳手在哪？
 ie.manual.entry.multiblocks0=除非你有魔法或者缩小光线，否则在1x1x1大小的空间内搭建多方块结构是一件极其艰难的任务，为了能搭建出拥有更为复杂的操作系统的机器，你需要用到组装块。那些最为常见的将在下面揭晓。
 
-ie.manual.entry.workbench.name=工程师装配台
-ie.manual.entry.workbench.subtext=超频
-ie.manual.entry.workbench0=在你的工程师职业生涯当中，可能会涉及到一些工具的优化与改造。为了完成这些修改，你需要使用到设备齐全的工程师装配台。<br>右键装配台，将物品放入物品栏中，然后将合适的升级放入随后出现的物品栏中。
+ie.manual.entry.workbench.name=装配台和蓝图
+ie.manual.entry.workbench.subtext=总是凌乱不堪
+ie.manual.entry.workbench0=工程师装配台是为受过培训的工程师使用的专业工作台。它广泛用于制作<link;blueprints;§o§n工§o§n程§o§n师§o§n蓝§o§n图§r>中描述的物品。<br>可以合成各种各样的蓝图，详细说明在相应的手册条目中，而少数特定的蓝图只能在世界上发现或从村民手中购买。
+ie.manual.entry.workbench1=为了在装配台中使用蓝图，蓝图需要放在位于GUI左边的格子中，并在中间的六个格子中放入必需的材料。然后可以从右侧检索需要的物品。将鼠标悬停在这些输出格子上会准确地告诉你每个物品需要哪些材料。
+ie.manual.entry.workbench2=装配台的第二个功能是修改和配置更复杂的工具。例如<link;drill;§o§n采§o§n矿§o§n机§o§n械§o§n钻§r>、<link;shield;§o§n重§o§n型§o§n盾§o§n牌§r>或<link;revolver;§o§n左§o§n轮§o§n手§o§n枪§r>。当其放置在装配台最左边的格子中时，它的用途就变成了将适用的升级组件放入出现的新格子中来修改这些工具。
 
 ie.manual.entry.blueprints.name=工程师蓝图
 ie.manual.entry.blueprints.subtext=请阅读下面的说明
-ie.manual.entry.blueprints0=仅仅是一块木头做成的九宫格工作台,是无法胜任制作结构异常精细的物品的.这些物品需要遵循精密的蓝图的指导才能在<link;workbench;§o§n工§o§n程§o§n师§o§n装§o§n配§o§n台§r>中制作。<br><br>若你能获得工程师蓝图（或着亲手制作它），你就可以把它放进工程师装配台中以加工物品。
-ie.manual.entry.blueprints1=要借助蓝图制作物品，首先你需要将材料放入中间的六个格子中，然后在右边的格子中提取成品。鼠标指针指向输出格时会显示当前缺失的材料。
+ie.manual.entry.blueprints0=这一页的特点是所有的工程师蓝图都可以用普通方法合成。其他蓝图可能需要从村民那里获得或者在世界上找到。所有的这些都可以用在<link;workbench;§o§n工§o§n程§o§n师§o§n装§o§n配§o§n台§r>中，以合成它们描述的物品。
 
-ie.manual.entry.mixer.name=混合机
+ie.manual.entry.mixer.name=混合器
 ie.manual.entry.mixer.subtext=大桶的饼干面团！
-ie.manual.entry.mixer0=混合机是一种多方块结构，可以将固体溶解在流体中，将它们混合在一起。 该结构如上图所示搭建，并使用工程锤右击中心方块上成型。
+ie.manual.entry.mixer0=混合器是一种多方块结构，可以将固体溶解在流体中，将它们混合在一起。 该结构如上图所示搭建，并使用工程锤右击中心方块上成型。
 ie.manual.entry.mixer1=这种机器最常见的用途是搅拌液态混凝土，2份沙子1份砂砾和1份粘土，也可用水配合各种成分制成药水。
 ie.manual.entry.mixer2=液体通过其电源底部的端口输入挤压机。物品可以通过后面的两个舱口输入。前面的流体端口用作流体输出。<br>在前面的控制面板上应用红石信号将停止机器，这种行为可以通过使用工程师锤来反转。
 
@@ -1343,7 +1354,7 @@ ie.manual.entry.biodiesel4=炼油厂的正前方位置是作为流体输出的�
 
 ie.manual.entry.conveyor.name=传送带
 ie.manual.entry.conveyor.subtext=谁还需要铁路？
-ie.manual.entry.conveyor0=传送带运输是把附近物品搬回家的便捷途径，当它有足够的动力时可以搬运像是牛，羊之类的生物，它们真正的优势在于物品的运输。<br>把物品丢到传送带上即可实现搬运。如果末端是能够接收物品的容器，那物品将会被放入到容器里。
+ie.manual.entry.conveyor0=传送带运输是把附近物品搬回家的便捷途径，当它有足够的动力时可以搬运像是牛、羊之类的生物，它们真正的优势在于物品的运输。<br>把物品丢到传送带上即可实现搬运。如果末端是能够接收物品的容器，那物品将会被放入到容器里。
 ie.manual.entry.conveyor1=对着传送带的漏斗可以把物品输出为可掉落形态，使用工程师锤右击可以转动传送器的方向，潜行时右击则可调整为上行或下行。<br>
 ie.manual.entry.conveyor2=卸货传送带仅仅是普通传送带中间多了一个舱口，允许货物从中间传输到下面。<br>物品会自动输送进下放的存储容器或者，如果下方是空的物品会被扔在地上。
 ie.manual.entry.conveyor3=垂直传送带可以贴在墙上，使垂直运输物品称为可能.用桶还可以让它运输实体。虽然用桶可以运输实体，但传送带还是不能运输液体。<br>这种传送带可以自动将物品输入容器中，也可以接收顶上的传送带掉下来的物品。
@@ -1421,14 +1432,14 @@ ie.manual.entry.bullets_flare=<br>§l叶绿弹§r通过使用“特种子弹”�
 ie.manual.entry.bullets_wolfpack=<br>§l狼群弹§r是一种集束子弹，发射时本身不会制导，击中目标时会分裂出六枚自动制导的弹头。
 
 ie.manual.entry.chemthrower.name=化学喷射器
-ie.manual.entry.chemthrower.subtext=
+ie.manual.entry.chemthrower.subtext=烧！掉！一！切！
 ie.manual.entry.chemthrower0=化学喷射器是一种能够将内部储液罐中液体喷射出去的装置。该装置能够装在任何液体或气体，而且右键就会将其喷洒出去。<br>若喷射出的液体是可燃液体，它还有点燃液体的功能。潜行右键来使用点火装置。
 ie.manual.entry.chemthrower1=同其它工具一样，化学喷射器可以在<link;workbench;§o§n工§o§n程§o§n师§o§n装§o§n配§o§n台§r>中进行改装。这些升级将会影响储罐的大小，喷射的范围以及喷射速度。<br><br>大型燃料缸能够增加化学喷射器的储量至2000mb。
 ie.manual.entry.chemthrower2=聚焦喷嘴会降低喷射速度但会略微增加喷射范围，让你能够更精准的击中远处目标。
-ie.manual.entry.chemthrower3=The §6Multitank§r allows the Chemthrower to store up to three different Fluids. You can select the active tank by <config;b;chemthrower_scroll;sneaking and using the scrollwheel, or through use of;using> the keybind §l<keybind;key.immersiveengineering.chemthrowerSwitch>§r if it has been set in the options.<br>This upgrade is mutually exclusive to the §6Large Tank§r
+ie.manual.entry.chemthrower3=这个液体罐允许 §6化学喷射器§r 储存多达三种不同的液体。 你可以按住潜行加鼠标滚轮 <config;b;chemthrower_scroll;切换不同的液体类型， 或使用;using> 快捷键 §l<keybind;key.immersiveengineering.chemthrowerSwitch>§r (如果你有在选项中设置)。<br>这个升级和 §6大型燃料缸§r 相互排斥。
 
 ie.manual.entry.skyhook.name=工程师天钩
-ie.manual.entry.skyhook.subtext=Booker，catch！
+ie.manual.entry.skyhook.subtext=Booker, catch!
 ie.manual.entry.skyhook0=工程师天钩是一个机动化的锁扣系统用于钩挂线缆，麻绳或钢线。<br>有了它，工程师们就可以通过电网快速穿梭于各种分站或设备中心。
 ie.manual.entry.skyhook1=只需在接近接线器时按住右键，你就会勾住线缆。<br>在任何时候松开按键或潜行都会松开索扣并掉落。<br>你无法在线缆中间进行钩挂，你必须要在接线器处使用。
 
@@ -1437,7 +1448,7 @@ ie.manual.entry.shader.subtext=蓝色！不，黄色！
 ie.manual.entry.shader0=皮肤是一些你能够在世界中找到或与村民交易获得的物品。它们本身没有什么功能，但它们可以装配到<link;revolver;§o§n左§o§n轮§o§n手§o§n枪§r>、<link;drill;§o§n机§o§n械§o§n钻§r>、<link;chemthrower;§o§n化§o§n学§o§n喷§o§n射§o§n器§r>或<link;railgun;§o§n磁§o§n轨§o§n炮§r>上，以此改变这些物品的外观设计。当然，也可以用在其它等待你发现的东西上。简单的将它们放入<link;workbench;§o§n工程师§o§n装配台§r>并将皮肤放入合适的装配栏中即可。<br>你也可以将其右键应用在矿车上！
 ie.manual.entry.shader1=皮肤奖励袋内含一种随机皮肤。可以在地牢箱子中找到，或者和村民交易以及怪物掉落.所开出的皮肤稀有度和袋子本身相同或者更稀有。当使用一个袋子时，你得到未拥有的皮肤的概率要比已获取的更高一些。
 ie.manual.entry.shader2=皮肤奖励袋能合成为两个低一级的奖励袋，让你能有机会重新尝试.皮肤本身也能够合成为一个低级的奖励袋。
-ie.manual.entry.shader3=着色器袋可以制作成两个较低级别的袋子。这将降低您获得更稀有的着色器的机会，但能为您提供更多的尝试。
+ie.manual.entry.shader3=皮肤奖励袋可以制作成两个较低级别的袋子。这将降低您获得更稀有的皮肤的机会，但能为您提供更多的尝试。
 //Shaders themselves can also be crafted into a single bag of the lower level.
 
 ie.manual.entry.shaderList.name=皮肤列表
@@ -1454,7 +1465,7 @@ ie.manual.entry.railgun.name=磁轨炮
 ie.manual.entry.railgun.subtext=突破速度的束缚
 ie.manual.entry.railgun0=磁轨炮（确切地说，是“便携式电磁感应发射器”）可谓是工程学上的奇迹。它内含两个导轨，电流可在导轨中流动，从而加速投掷物。<br>这个过程能量消耗巨大，可对各种物体进行加速。
 ie.manual.entry.railgun1=按住鼠标右键，一直充电到99%，然后发射物品栏的子弹。<br><br>可用的“炮弹”包括§6铁杆§r、§6钢杆§r<config;b;literalRailGun;、§6钢筋§r、铁路MOD的§6绝大多数导轨§r;>以及§6石墨棒§r。
-ie.manual.entry.railgun2=和其它IE工具一样，轨道炮可以在<link;workbench;§o§n工§o§n程§o§n师§o§n装§o§n配§o§n台§r>修改和定制<link;shader;§o§n皮§o§n肤§r>。<br><br>§6附加电容§r可以增加轨道炮的能量储存和减少充电时间。
+ie.manual.entry.railgun2=和其它IE工具一样，磁轨炮可以在<link;workbench;§o§n工§o§n程§o§n师§o§n装§o§n配§o§n台§r>修改和定制<link;shader;§o§n皮§o§n肤§r>。<br><br>§6附加电容§r可以增加磁轨炮的能量储存和减少充电时间。
 ie.manual.entry.railgun3=§6瞄准镜§r可以增加视野距离。潜行时可使用瞄准镜，鼠标滚轮调节视角。
 
 ie.manual.entry.razorwire.name=刀片刺网
@@ -1498,7 +1509,7 @@ ie.manual.entry.mineralsDimInvalid=§l%1$s§r<br>是一种会在除了 %2$s 的�
 ie.manual.entry.mineralsDimAny=§l%1$s§r<br>是一种会在任何世界生成的矿脉。
 
 ie.manual.entry.arcfurnace.name=电弧炉
-ie.manual.entry.arcfurnace.subtext=不是反应堆 
+ie.manual.entry.arcfurnace.subtext=不是反应堆
 ie.manual.entry.arcfurnace0=电弧炉是一种用于快速熔炼金属的重型结构。它外表被钢质外壳覆盖，顶部装有用于加热的电极。
 ie.manual.entry.arcfurnace1=因为它的高速和同时加工多个物品的能力，电弧炉相当擅长冶炼金属和炼钢，但它的工作流程也比较复杂，需要时常维护才能保持功能正常运转。<br>为保持工作，矿渣必须时常清理，损坏电极也应及时更换。
 ie.manual.entry.arcfurnace2=要搭建一台电弧炉，需要按照第一页的方式进行建造，然后用工程师锤右击炼药锅.<br><br>能量需要从后方的三个插孔中输入，并且给前端的控制面板输入红石信号将会关闭机器。右击控制面板，“桶”或外壳将会打开交互界面。

@@ -1,4 +1,4 @@
-# Blocks
+#  # Blocks
 tile.pressure_tube.name=Pressure Tube
 tile.air_compressor.name=Air Compressor
 tile.advanced_air_compressor.name=Advanced Air Compressor
@@ -14,6 +14,8 @@ tile.vacuum_pump.name=Vacuum Pump
 tile.pneumatic_door_base.name=Pneumatic Door Base
 tile.pneumatic_door.name=Pneumatic Door
 tile.assembly_io_unit.name=Assembly IO Unit
+tile.assembly_io_unit_export.name=Assembly IO Unit (export)
+tile.assembly_io_unit_import.name=Assembly IO Unit (import)
 tile.assembly_platform.name=Assembly Platform
 tile.assembly_drill.name=Assembly Drill
 tile.assembly_laser.name=Assembly Laser
@@ -47,7 +49,7 @@ tile.programmable_controller.name=Programmable Controller
 tile.gas_lift.name=Gas Lift
 tile.refinery.name=Refinery
 tile.thermopneumatic_processing_plant.name=Thermopneumatic Processing Plant
-tile.fuel   .name=Gasoline
+tile.fuel.name=Gasoline
 tile.lpg.name=LPG
 tile.kerosene.name=Kerosene
 tile.diesel.name=Diesel
@@ -56,7 +58,6 @@ tile.lubricant.name=Lubricant
 tile.plastic.name=Plastic
 tile.kerosene_lamp.name=Kerosene Lamp
 tile.sentry_turret.name=Sentry Turret
-
 tile.monster_stone_egg.name=Silverfish
 
 # Items
@@ -111,7 +112,12 @@ item.logistic_frame_storage.name=Logistic Storage Frame
 item.logistic_frame_default_storage.name=Logistic Default Storage Frame
 item.logistic_drone.name=Logistic Drone
 item.harvesting_drone.name=Harvesting Drone
-item.gun_ammo.name=Gun Ammo
+item.gun_ammo.name=Minigun Ammo
+item.gun_ammo_incendiary.name=Incendiary Minigun Ammo
+item.gun_ammo_freezing.name=Freezing Minigun Ammo
+item.gun_ammo_weighted.name=Weighted Minigun Ammo
+item.gun_ammo_ap.name=Armor-Piercing Minigun Ammo
+item.gun_ammo_explosive.name=Explosive Minigun Ammo
 item.amadron_tablet.name=Amadron Tablet
 item.heat_frame.name=Heat Frame
 item.spawner_agitator.name=Spawner Agitator
@@ -119,6 +125,7 @@ item.crop_support.name=Crop Support
 item.transfer_gadget.name=Transfer Gadget
 item.minigun.name=Minigun
 item.camo_applicator.name=Camouflage Applicator
+item.micromissiles.name=Micromissiles
 
 item.programming_puzzle.black.name=Black Programming Puzzle
 item.programming_puzzle.red.name=Red Programming Puzzle
@@ -295,6 +302,7 @@ entity.Drone.name=Drone
 entity.logisticDrone.name=Logistic Drone
 entity.harvestingDrone.name=Harvesting Drone
 entity.Villager.pneumaticcraft.mechanic=Mechanic
+entity.micromissile.name=Micromissile
 
 # Helmet hacking
 pneumaticHelmet.hacking.hacking=Hacking...
@@ -390,6 +398,7 @@ gui.tab.info.item.armor.head.scubaUpgrade=§0This upgrade allows you to breathe 
 gui.tab.info.item.armor.chest.magnetUpgrade=§0With a Magnet Upgrade installed, your chestplate can automatically pull nearby items toward you for a small air cost.  You can install up to 6 Magnet Upgrades to extend the magnet's range.
 gui.tab.info.item.armor.chest.chargingUpgrade=§0With one or more Charging Upgrades installed, your chestplate can automatically charge all other pressurizable items in your inventory, either worn or carried (note: will only charge items with a lower pressure than the chestplate).  Up to 6 Charging Upgrades can be installed to increase the charging rate.
 gui.tab.info.item.armor.chest.securityUpgrade=§0With a Security Upgrade installed, you will gain protection from fire and lava at a significant air cost: air will be rapidly dumped from the chestplate to extinguish nearby flames and solidify nearby lava.
+gui.tab.info.item.armor.chest.dispenserUpgrade=§0With one or more Dispenser Upgrades installed, you gain the ability to launch items and blocks from your offhand slot by pressing and releasing the launch key (Control + C by default). \n \n• Some items and blocks are handled specially, deploying the item/block as an entity, similar to the way a Dispenser would operate. \n• Items which don't have special handling will simply be launched as item entities. \n• Blocks which don't have special handling will be launched as "tumbling block" entities, which will try to reform as blocks on impact with any other block. \n \nUp to four Dispenser Upgrades can be installed for greater launch distances.
 gui.tab.info.item.armor.legs.speedUpgrade=§0With one or more Speed Upgrades installed in your leggings, you will be able to run faster.  Up to 3 Speed Upgrades can be installed for progressively faster speeds (and higher air usage).
 gui.tab.info.item.armor.legs.rangeUpgrade=§0With one or more Range Upgrades installed in your leggings, you will be able to jump higher.  Up to 6 Range Upgrades can be installed for progressively higher jumps (and higher air usage).  Holding Sneak while jumping will reduce the jump height to be equivalent to a single Range Upgrade.  Fall protection is included (no need to wear Pneumatic Boots).
 gui.tab.info.item.armor.feet.dispenserUpgrade=§0With a Dispenser Upgrade installed in your boots, you can kick entities in front of you at a modest air cost.  Kicked entities will take moderate damage and heavy knockback. Up to 4 upgrades can be installed; more upgrades will increase damage & knockback, but also increase air usage. \n \nThis works on non-living entities too...
@@ -408,6 +417,12 @@ gui.tab.info.item.drone.securityUpgrade=§0With one Security Upgrade inserted, t
 gui.tab.info.item.drone.volumeUpgrade=§0For each Volume Upgrade inserted, the Drone's air volume will be increased by 5000mL. This could be useful for long journeys.
 gui.tab.info.item.drone.entityTrackerUpgrade=§0When inserted, the Drone will have a minigun attached to it, allowing it to perform ranged attacks (up to 16 blocks from the target) when an Entity Attack piece is used. Gun Ammo is required to fire, which needs to be imported with an Inventory Import piece.
 gui.tab.info.item.drone.rangeUpgrade=§0Increases the range of the ranged attacks of the Drone (requiring an Entity Tracker Upgrade) by one block per upgrade (up to 16 upgrades).
+gui.tab.info.item.minigun.speedUpgrade=§0Allows the minigun to spin up faster, reducing delay before firing, and also adds a small chance of firing multiple rounds at once. This incurs a significantly increased air cost. Up to three Speed Upgrades can be added.
+gui.tab.info.item.minigun.rangeUpgrade=§0Increases the minigun's range. Up to six upgrades can be added; each upgrade adds 5 meters to the base range of 50 meters. Increased range comes at an increased air cost.
+gui.tab.info.item.minigun.dispenserUpgrade=§0Increases the chance of ammo effects (potions, explosive, freezing etc.) being activated. This can significantly increase air usage, depending on the ammo type in use. Up to three Dispenser Upgrades can be added for an increased activation chance.
+gui.tab.info.item.minigun.entityTrackerUpgrade=§0Zooms the player view when the minigun is activated. Up to four upgrades can be added for increased zoom. This has no extra air cost.
+gui.tab.info.item.minigun.itemLifeUpgrade=§0Slowly replenishes any ammo in the minigun's magazine, but at a very steep air cost. Up to four Item Life Upgrades can be added for faster ammo replenishment, but exponentially greater air usage.
+gui.tab.info.item.minigun.securityUpgrade=§0Prevents the minigun from damaging tamed entities and other players. This has no extra air cost.
 gui.tab.info.tile.pressure_chamber_interface=§0This block can be used to import/export items to/from a Pressure Chamber. It imports on the 'I' face, and exports on the 'O' face (so have the 'O' face pointing to the outside world). Use the filter slots to select which items may be imported/exported.
 gui.tab.info.tile.vacuum_pump=§0This machine is used to achieve a vacuum. To do this this machine uses pressurized air. Apply pressurized air at the '+' tube, and when 2 bar is reached, air at the '-' tube will be sucked.
 gui.tab.info.tile.assembly_controller=§0This machine is used to control other assembly machines. It can control any connected assembly machine, and the machines connecting these assembly machines, and so on... To start the assembly put a program in the program slot.
@@ -499,6 +514,9 @@ gui.tab.problems.keroseneLamp.noFuel=§7The lamp has no fuel. \n§0Add Kerosene 
 gui.tab.problems.keroseneLamp.badFuel=§7The lamp has an unsuitable fluid in the tank! \n§0Pump out the fluid with a Liquid Hopper or other fluid extraction device.
 gui.tab.problems.sentryTurret.noAmmo=§7The Sentry Turret has no ammo. \n§0Add Gun Ammo to the Ammo slots.
 gui.tab.problems.electrostatic.notEnoughGrounding=§fWhen lightning strikes with a full air tank not all the energy can be redirected! \n§0Connect up more Iron Bars to the underside of the Electrostatic Compressor
+gui.tab.problems.assembly_controller.duplicateMachine=§fDuplicate Machine Detected! \n§0Ensure there is only one %s.
+gui.tab.problems.assembly_controller.missingMachine=§fMissing Machine! \n§0Not all machines for the inserted program are present. Add one %s to your assembly system.
+gui.tab.problems.assembly_controller.no_program=§fNo Program! \n§0Insert an Assembly Program into the Controller.
 
 # Upgrades
 gui.tab.upgrades=Upgrades
@@ -511,7 +529,7 @@ gui.tab.upgrades.tile.air_compressor=§7§nSpeed Upgrade (max = 10) \n§0The Air
 gui.tab.upgrades.tile.advanced_air_compressor=§7§nSpeed Upgrade (max = 10) \n§0The Advanced Air Compressor will produce more compressed air per tick. However this is at the expense of the efficiency.
 gui.tab.upgrades.tile.assembly_controller=§7§nSpeed Upgrade (max = 10) \n§0All assembly machines that are controlled by this Controller will operate faster.
 gui.tab.upgrades.tile.charging_station=§7§nSpeed Upgrade (max = 10) \n§0The Charging Station will be able to (dis)charge items faster. \n§7§nDispenser Upgrade \n§0Adds a charge pad onto the Charging Station, allowing it to (dis)charge any Drones, items, and player inventory items that are on top of the Charging Station.
-gui.tab.upgrades.tile.elevator_base=§7§nSpeed Upgrade (max = 10) \n§0The elevator will ascend/descend faster (at a higher pressure cost). \n§7§nCharging Upgrade (max 4)\n§0Charging Upgrades allow the elevator to reclaim some of the air used to ascend when the elevator descends. This comes at a cost of slightly slowed descent. Up to 4 Charging Upgrades can be installed for progressively better air reclamation and slower descent (max: 60% air reclaimed & 40% slower descent).
+gui.tab.upgrades.tile.elevator_base=§7§nSpeed Upgrade (max = 10) \n§0The elevator will ascend/descend faster (at a higher pressure cost). \n§7§nCharging Upgrade (max = 4) \n§0Charging Upgrades allow the elevator to reclaim some of the air used to ascend when the elevator descends. This comes at a cost of slightly slowed descent. Up to 4 Charging Upgrades can be installed for progressively better air reclamation and slower descent (max: 60%% air reclaimed & 40%% slower descent).
 gui.tab.upgrades.tile.omnidirectional_hopper=§7§nSpeed Upgrade (max = 11) \n§0Increases the speed at which the Hopper transfers items.
 gui.tab.upgrades.tile.liquid_hopper=§7§nSpeed Upgrade (max = 11) \n§0Increases the speed at which the Hopper transfers liquid.  With 11 Speed Upgrades, the Liquid Hopper can transfer its entire contents in one tick.
 gui.tab.upgrades.tile.liquid_hopper.dispenser=\n§7§nDispenser Upgrade \n§0Sucks any liquid block at the input side of the Hopper, and places down any liquid at the output side. Can be used for example as water pump.
@@ -597,6 +615,8 @@ gui.tab.info.logisticsRequester.aeIntegration.title=AE2 Integration
 gui.tab.info.logisticsRequester.aeIntegration=When checked, Logistic Drones will inform the AE Network about providable items (which then can be 'crafted'). When asked to craft, the Requester Frame is set up to request the requested items.
 gui.tab.info.logisticsRequester.aeIntegration.enable=Enable Integration
 gui.tab.electrostaticCompressor.info.title=Electrostatic Info
+gui.tab.minigun.slotInfo.title=Ammo Management
+gui.tab.minigun.slotInfo=The Minigun will normally draw ammo from the lowest-numbered slot which contains any ammo. \n \n§aMiddle-click§f a slot to lock that slot: when locked, the Minigun will draw ammo from that slot only. §aMiddle-click§f a locked slot to unlock it. \n \nLocking slots is useful if you're carrying multiple ammo types.
 
 gui.programmer.button.export.programmingWhen=§aProgramming when: %s
 gui.programmer.button.export.pressingButton=Pressing button
@@ -621,7 +641,7 @@ gui.holdF1forHelp=Hold §eF1§r for help
 gui.aphorismTileEditor=Aphorism Tile Editor
 gui.aphorismTile.helpText=§a§nAphorism Tile Editor \n \n§eCursor Left/Up:§r move up a line \n§eCursor Down:§r move down a line \n§eReturn:§r new line \n§eBackspace:§r delete character \n§eDelete:§r delete line \n§e Shift-Delete:§r delete all lines §eEscape:§r finish editing \n§eAlt + §ochr§r: insert control code \n §7- codes: 0-9, a-f, l, m, n, o, r
 gui.entityFilter=Entity filter (Hold §lF1§r for help)
-gui.entityFilter.helpText=§a§nEntity Filtering \n \n§e@player§f: allows all players only \n§e@mob§f: allows all aggressive creatures only \n§e@animal§f: allows all passive creatures only \n§e@animal(age = adult)§f: allows all adult passive creatures \n§e@animal(age = baby)§f: allows all baby passive creatures \n§e@animal(breedable = yes)§f: allows all passive creatures that \n  can breed at this very moment (they'll consume wheat/carrots/...) \n§e@minecart§f: allows minecarts only \n§e@living§f: allows all living entities only \n§e@item§f: allows item entities only \n§e@drone§f: allows drone entities only \n§eCreeper§f: allows Creepers only \n§eMineMaarten§f: allows MineMaarten only \n§ec*§f: allows any entity starting with the letter 'c' only (like Creepers, or Cows). \n§e*pig*§f: allows any entity that includes 'pig' in the name only (like a Pig or Zombie Pigman) \n \nYou can specify a sequence of filters with the ";" (semicolon) separator - this is a "match any" function. \ne.g. "creeper;zombie" will match both Creepers and Zombies.
+gui.entityFilter.helpText=§a§nEntity Filtering \n \n§e@player§f: match players \n§e@mob§f: match aggressive creatures \n§e@animal§f: match passive creatures \n§e@animal(age = adult)§f: match all adult animals \n§e@animal(age = baby)§f: match all baby animals \n§e@animal(breedable = yes)§f: match all passive creatures that are ready to breed \n§e@minecart§f: match minecarts \n§e@boat§f: match boats \n§e@living§f: match all living entities \n§e@item§f: match item entities \n§e@drone§f: match drone entities \n§eCreeper§f: match Creepers \n§eMineMaarten§f: match an entity named 'MineMaarten' \n§ec*§f: match any entity starting with the letter 'c' (like Creepers, or Cows). \n§e*pig*§f: allows any entity that includes 'pig' in the name (like a Pig or Zombie Pigman) \n§ecreeper;zombie§f: match both Creepers and Zombies \n§e!@player§f: match all EXCEPT players \n§e!creeper;zombie§f match all EXCEPT Creepers and Zombies \n \n• Matches are case-insensitive \n• Prefix with "!" at start of filter to invert the test \n• Use ";" (semicolon) for multiple matches in one filter (this is an OR match)
 gui.redstone=Redstone
 gui.threshold=Threshold(bar)
 gui.tubeModule.advancedConfig=Advanced config
@@ -647,6 +667,7 @@ gui.programmer.button.showLatest=Show Latest
 gui.programmer.checkbox.showInfo=Show Info
 gui.programmer.checkbox.showFlow=Show Flow
 gui.programmer.pressIForInfo=§2Press 'I' for info
+gui.programmer.pressIForInfoTrayOpen=§2Press 'I' or middle-click for info
 gui.programmer.errors=Errors:
 gui.programmer.warnings=Warnings:
 gui.programmer.errorCount=Cannot export program: %s error(s) found.
@@ -669,7 +690,7 @@ gui.progWidget.blockOrder.lowToHigh=Low to high
 gui.progWidget.blockOrder.highToLow=High to low
 gui.progWidget.blockOrder.closest=Closest
 gui.progWidget.itemFilter.useItemCount=Use count
-gui.progWidget.itemFilter.useItemCount.tooltip=When checked, this will only allow the specified amount of items/fluid/... to be transfered.
+gui.progWidget.itemFilter.useItemCount.tooltip=When checked, this will` allow the specified amount of items/fluid/... to be transfered.
 gui.progWidget.coordinate.selectFromGPS=Select from GPS
 gui.progWidget.area.selectGPS1=Select GPS 1
 gui.progWidget.area.selectGPS2=Select GPS 2
@@ -739,6 +760,7 @@ gui.progWidget.conditionCoordinate.error.noAxisSelected=No checking axis selecte
 gui.progWidget.conditionItem.error.noCheckingItem=No checking item. Add at least one Item Filter to the topmost slot.
 gui.progWidget.conditionItem.error.noFilter=No item filter. Add at least one Item Filter to the second slot from the top.
 gui.progWidget.itemFilter.error.noFilter=No item in the filter. Either select one, or select a valid variable.
+gui.progWidget.itemFilter.error.notBlock=The filtered item is not a block!
 gui.progWidget.label.error.noLabel=No label. Attach a Text puzzle piece.
 gui.progWidget.label.error.noJumpLocation=No place to jump to. Attach a Text puzzle piece.
 gui.progWidget.liquidFilter.error.noLiquid=No liquid selected in the filter.
@@ -768,6 +790,7 @@ gui.progWidget.inventoryExport.debug.stackdoesntPassFilter=Item inside the drone
 gui.progWidget.inventoryImport.debug.filledToMax=Cannot fit more items into the Drone's inventory.
 gui.progWidget.inventoryImport.debug.stackdoesntPassFilter=Item does not pass item filter.
 gui.progWidget.itemPickup.debug.itemNotValid=Item does not pass the item filter.
+gui.progWidget.itemPickup.debug.noItems=No items in the area to pick up.
 gui.progWidget.chargingStation.debug.claimed=Charging Station is claimed by another Drone already.
 gui.progWidget.chargingStation.debug.protected=Charging Station is protected by a Security Station.
 gui.progWidget.chargingStation.debug.cantNavigate=Cannot navigate to the Charging Station.
@@ -830,8 +853,16 @@ gui.keroseneLamp.currentRange=Current Range: %s Blocks
 gui.keroseneLamp.timeLeft=Time left: %s
 gui.sentryTurret.ammo=Ammo
 gui.sentryTurret.targetFilter=Target Filter
-
 gui.liquid.empty=Empty
+gui.micromissile.topSpeed=Top Speed
+gui.micromissile.turnSpeed=Turn Speed
+gui.micromissile.damage=Damage
+gui.micromissile.saveDefault=Save as Default
+gui.micromissile.remaining=Missiles Remaining
+gui.micromissile.firingMode=Firing Mode
+gui.micromissile.mode.SMART=Smart
+gui.micromissile.mode.DUMB=Dumb
+gui.micromissile.modeTooltip=§eSmart Mode: §fmissiles actively seek out and lock to the nearest target which matches the entity filter (if any). You can balance between Top Speed, Turn Speed and Damage. \n§eDumb Mode: §fmissiles fly in a straight line only and accelerate fairly slowly, but deal high damage.
 
 key.pneumaticcraft.category=PneumaticCraft
 # gui.enableModule.coreComponents=Enable Helmet
@@ -849,6 +880,7 @@ pneumaticHelmet.upgrade.nightVision=Night Vision
 # Pneumatic Chestplate upgrades
 pneumaticHelmet.upgrade.magnet=Magnet
 pneumaticHelmet.upgrade.charging=Auto-Charger
+pneumaticHelmet.upgrade.launcher=Item Launcher
 # Pneumatic Legs upgrades
 pneumaticHelmet.upgrade.runSpeed=Run Speed
 pneumaticHelmet.upgrade.jumpBoost=Jump Boost
@@ -863,6 +895,7 @@ pneumaticHelmet.message.disableSetting=%s Disabled
 pneumaticHelmet.message.coordinateTracker.routeFound=Successfully found a route to the surface!
 pneumaticHelmet.message.coordinateTracker.harderRouteFound=Found a non-ideal route (requires actions like nerd poling)
 pneumaticHelmet.message.coordinateTracker.noRouteFound=Unable to find a route to the surface!
+pneumaticHelmet.message.targetWarning=%s is targeting you!
 
 blockTracker.module.hackables=Hackables
 blockTracker.module.inventories=Inventories
@@ -893,8 +926,8 @@ gui.tooltip.programmable.invalidPieces=Pieces displayed in red are not valid her
 gui.tooltip.programmable.requiredPieces=Required puzzle pieces:
 gui.tooltip.doesNotDespawn=§aThis item does not despawn.
 gui.tooltip.gunAmmo.ammoRemaining=Ammo: §f%d / %d
-gui.tooltip.gunAmmo=Ammo type:
-gui.tooltip.gunAmmo.combineWithPotion=Craft with any Potion to tip the bullets with that effect.
+gui.tooltip.gunAmmo=§dPotion type:
+gui.tooltip.gunAmmo.combineWithPotion=§oCraft with a Potion to tip the bullets.
 gui.tooltip.gunAmmo.splash=§aSplash
 gui.tooltip.gunAmmo.lingering=§aLingering
 gui.tooltip.sneakForInfo=Sneak for info
@@ -905,6 +938,7 @@ gui.tooltip.amadronTablet.selectItemLocation=Right click an inventory to allow i
 gui.tooltip.amadronTablet.selectFluidLocation=Right click a tank to allow it to provide fluids to vendors.
 gui.tooltip.gpsTool.variable=Linked variable: "#%s"
 gui.tooltip.aerial_interface.xpDisabled=XP handling disabled
+gui.tooltip.minigun.ammoCount=§fTotal rounds:§e %d (in %d cartridges)
 
 # Item tooltips
 gui.tooltip.item.plastic_bucket=Place in a Plastic Mixer (along with some dyes) to solidify into solid Plastic.
@@ -941,13 +975,18 @@ gui.tooltip.item.logistic_frame_passive_provider=Provides items to a Logistic Ne
 gui.tooltip.item.logistic_frame_active_provider=Provides items to a Logistic Network. Provides to both Requester Frames and Storage Frames.
 gui.tooltip.item.logistic_drone=An airborne robot which performs logistic tasks. Logistic Frames are used to define these tasks.
 gui.tooltip.item.harvesting_drone=An airborne robot which harvests any fully grown crop within a 16x16x16 area centered around the placement position. When placed on an inventory, it will pick up a Hoe and replant any crops that have been harvested (it requires a Hoe to function).
-gui.tooltip.item.gun_ammo=Bullets are used by handheld Miniguns, Sentry Turrets, and Drones with an Entity Tracker Upgrade inserted (giving them a Minigun).
+gui.tooltip.item.gun_ammo=This is regular Minigun ammo. It has no special properties, but can be crafted with a potion to gain the potion's effect.
+gui.tooltip.item.gun_ammo_incendiary=This specialized Minigun ammo sets fire to its target. Beware: it may also set fire to your surroundings!
+gui.tooltip.item.gun_ammo_freezing=This specialized Minigun ammo freezes the target, slowing it and possibly encasing it temporarily in ice. Fire-resistant mobs are particularly vulnerable to this ammo.
+gui.tooltip.item.gun_ammo_weighted=This specialized Minigun ammo does much more damage than normal, but due to its large mass has a very short range and uses air from the Minigun at a faster rate.
+gui.tooltip.item.gun_ammo_ap=This specialized Minigun ammo can penetrate armor and does slightly more damage overall than normal ammo. But it's not cheap.
+gui.tooltip.item.gun_ammo_explosive=This specialized Minigun ammo causes explosions on impact. Don't use at short range!
 gui.tooltip.item.amadron_tablet=Item used to order items/fluids, similar to Villager trading, except Items/fluids are picked up and delivered via Drones, which is way more awesome than villagers. A pick-up/drop-off location must be specified by right-clicking an inventory and/or tank with the tablet.
 gui.tooltip.item.logistics_module=This tube module when fitted on a tube will communicate with other Logistics Tube Modules on connected tubes. It will perform logistics tasks on inventories/tanks it is pointing towards, and are fitted with a Logistic Frame. It uses pressure to do so.
 gui.tooltip.item.heat_frame=Can be placed on any inventory. When heated by an adjacent heat source it will try to smelt any item in the inventory as well as freeze it when cooled. It will only succeed when there is room in the inventory for the resulting item. The more heat applied, the faster the smelting process will be, up to a maximum of 1 item smelted per second. Similarly the more it's cooled, the faster it will freeze objects.
 gui.tooltip.item.spawner_agitator=When placed on Mob Spawners, the Spawner Agitator will prevent the spawned entity to despawn when the player leaves the area. Additionally, the spawner will keep spawning while the player is not in the area. Mob farm anyone? 
 gui.tooltip.item.crop_support=When placed on soil or dirt, this will improve the growth speed of any crop or tree that grows there.
-gui.tooltip.item.minigun=This is a handheld weapon. It uses Gun Ammo to operate, which is required to be in the player's inventory.
+gui.tooltip.item.minigun=This handheld weapon requires Gun Ammo to operate, which must be placed in the gun's magazine; Sneak + Right-click to access the magazine. \nThis Minigun can be upgraded in a Charging Station.
 gui.tooltip.item.uvLightBox.successChance=Etch success chance: %d%%
 gui.tooltip.item.uvLightBox.putInLightBox=Put in a UV Light Box to progress...
 gui.tooltip.item.uvLightBox.etchProgress=Etching progress: %d%%
@@ -961,6 +1000,9 @@ gui.tooltip.item.network_component2=This component can store drone programs. It 
 gui.tooltip.item.network_component3=Required component in a Security Station. \n \nThis is the entry point for hack attempts on your Security Station.
 gui.tooltip.item.network_component4=Required component in a Security Station. \n \nThis is the target for hackers; if all Registries are hacked, the Security Station has been compromised.
 gui.tooltip.item.network_component5=This is a generic Security Station component which allows a path to be created between the required Security Station components.
+gui.tooltip.item.micromissile=Micromissiles are small, hand-launched projectiles with smart guidance systems and an explosive payload. \nSneak + Right-click to open the setup GUI.
+gui.tooltip.terrainWarning=§6WARNING: terrain damage enabled.
+gui.tooltip.terrainSafe=§eTerrain damage disabled.
 
 gui.tooltip.upgrades.empty=Insert in a Charging Station to install upgrades
 gui.tooltip.upgrades.not_empty=Upgrades Installed:
@@ -978,6 +1020,8 @@ gui.config.category.advanced=Advanced
 gui.config.category.recipes=Recipes
 gui.config.category.client=Clientside Options
 gui.config.category.helmet=Pneumatic Helmet (Clientside)
+gui.config.category.minigun=Minigun & Ammo
+gui.config.category.micromissile=Micromissiles
 
 # Side Configurator tabs
 gui.sideConfigurator.unconnected=§oUnconnected
@@ -994,19 +1038,18 @@ hud.msg.state=State
 hud.msg.active=Active
 hud.msg.inactive=Inactive
 
-waila.temperature=§7Temperature: §f%s°C
-waila.temperature.north=§7North Temperature: §f%s°C
-waila.temperature.south=§7South Temperature: §f%s°C
-waila.temperature.west=§7West Temperature: §f%s°C
-waila.temperature.east=§7East Temperature: §f%s°C
-waila.temperature.up=§7Top Temperature: §f%s°C
-waila.temperature.down=§7Bottom Temperature: §f%s°C
+waila.temperature=§7Temperature:
+waila.temperature.north=§7North Temperature:
+waila.temperature.south=§7South Temperature:
+waila.temperature.west=§7West Temperature:
+waila.temperature.east=§7East Temperature:
+waila.temperature.up=§7Top Temperature:
+waila.temperature.down=§7Bottom Temperature:
 waila.logisticsModule.transporting=§9Transporting
 waila.logisticsModule.notEnoughAir=§6Not enough pressure to transport the items/fluids over that distance.
 waila.logisticsModule.powered=§2Online
 waila.logisticsModule.noPower=§cOffline (apply at least 3 bar)
 waila.logisticsModule.channel=Channel:
-waila.fluid=§7Tank %d: §b%s
 
 # Misc
 itemGroup.tabPneumaticCraft=PneumaticCraft
@@ -1018,6 +1061,7 @@ message.seismicSensor.foundOilDetails=§a[Seismic Sensor] Found oil %s§am below
 message.seismicSensor.noOilFound=§c[Seismic Sensor] No oil found.
 message.amadronTable.setItemProvidingLocation=§a[Amadron Tablet]§f Item providing location: %s, %s, %s in dim %s (%s)
 message.amadronTable.setLiquidProvidingLocation=§a[Amadron Tablet]§f Fluid providing location: %s, %s, %s in dim %s (%s)
+message.minigun.outOfAmmo=§6Out of Ammo! Sneak & Right-click to load
 gui.regulatorTube.hudMessage.notInLine=§cA Regulator Tube Module only regulates air in line of the module.
 gui.regulatorTube.hudMessage.inverted=§cA Regulator Tube Module only regulates air in the direction of the arrow.
 gui.search=Search:
@@ -1071,7 +1115,7 @@ command.setGlobalVariable.output=Variable "%s" has been set to (%s, %s, %s).
 achievement.ingotIronCompressed=The First Explosion (of many)
 achievement.ingotIronCompressed.desc=Throw Iron on the ground and create an explosion close to it.
 achievement.airCompressor=Building up the Pressure!
-achievement.airCompressor.desc=Acquire an Air Compressor.
+achievement.airCompressor.desc=Make an Air Compressor.
 achievement.pressureTube=Totally Tubular Transfer
 achievement.pressureTube.desc=Make some Pressure Tubes to move air around.
 achievement.pneumaticWrench=Let's Torque About Tools
@@ -1083,7 +1127,7 @@ achievement.pressureChamber.desc=Assemble a multiblock Pressure Chamber
 achievement.oilBucket=Black Gold
 achievement.oilBucket.desc=Scoop up a bucket of Oil.
 achievement.refinery=A Little Refinement
-achievement.refinery.desc=Acquire a Refinery.
+achievement.refinery.desc=Make a Refinery.
 achievement.liquidCompressor=Better Than Coal
 achievement.liquidCompressor.desc=Make a Liquid Compressor for some more efficient pressure creation.
 achievement.vortexTube='Cause you're hot then you're cold
@@ -1101,13 +1145,13 @@ achievement.plastic.desc=Create Plastic by putting LPG and Coal in a TPP and run
 achievement.amadronTablet=Better Than Villagers
 achievement.amadronTablet.desc=Make an Amadron Tablet for some trading flexibility.
 achievement.pcbBlueprint=And You're Done
-achievement.pcbBlueprint.desc=Use the Amadron Tablet to order a PCB Blueprint.
+achievement.pcbBlueprint.desc=(You're not, really). Use the Amadron Tablet to order a PCB Blueprint.
 achievement.etchacidBucket=Don't Spill It On Your Shirt!
-achievement.etchacidBucket.desc=Acquire an Etching Acid Bucket. Throw in PCB's that have been processed in a UV Light Box to process and to create Unassembled PCB's.
+achievement.etchacidBucket.desc=Acquire an Etching Acid Bucket. You can use this nasty stuff to make PCB's.
 achievement.emptyPCB=Doesn't Do Much By Itself
 achievement.emptyPCB.desc=Make an Empty PCB in the Pressure Chamber.
 achievement.uvLightBox=Don't Forget Your Sunglasses!
-achievement.uvLightBox.desc=Acquire a UV Light Box.
+achievement.uvLightBox.desc=Make a UV Light Box.
 achievement.unassembledPCB=Still Doesn't Do Much By Itself
 achievement.unassembledPCB.desc=Expose an Empty PCB in a UV Lightbox, then throw it in a pool of Etching Acid.
 achievement.printedCircuitBoard=Now The Fun Starts
@@ -1131,14 +1175,14 @@ achievement.programmableController.desc=Build a Programmable Controller to run y
 achievement.aerialInterface=Interdimensional Convenience
 achievement.aerialInterface.desc=Build an Aerial Interface to manage your inventory from anywhere in any dimension.
 achievement.pneumaticArmor=Compressed Iron Man
-achievement.pneumaticArmor.desc=Wear a full suit of Pneumatic Armor. Upgrade each piece in a Charging Station.
+achievement.pneumaticArmor.desc=Wear a full suit of Pneumatic Armor. You can upgrade each piece with a Charging Station.
 achievement.entityHack=Won't Know What Hit 'em
 achievement.entityHack.desc=Hack an entity with your Pneumatic Helmet. You'll need Entity Tracker and Security Upgrades.
 achievement.blockHack=Plausible Deniability
 achievement.blockHack.desc=Hack a block with your Pneumatic Helmet. You'll need Block Tracker and Security Upgrades.
 achievement.flight=Up And Away!
 achievement.flight.desc=Use the Jet Boots Upgrade in your Pneumatic Boots to take to the skies.
-achievement.flyIntoWall=Who put that in the way?
+achievement.flyIntoWall=Who put that there?
 achievement.flyIntoWall.desc=Fly into a vertical surface fast enough to take damage.
 achievement.logisticsFrame=Smart Storage
 achievement.logisticsFrame.desc=Create some Logistics Passive Provider and Requester Frames for smart item and fluid storage and transfer.

@@ -64,6 +64,7 @@ tile.knowledge_table.name=凝视研究台
 tile.alchemy_pedestal.name=炼金术基座
 tile.alchemy_tablet.name=炼金台
 tile.item_transfer.name=物品传输过滤器
+tile.fluid_transfer.name=流体传输过滤器
 tile.core_stone.name=核心石
 tile.beam_cannon.name=光束炮
 tile.archaic_bricks.name=古代砖
@@ -137,9 +138,11 @@ item.tinker_hammer.name=铁匠锤
 item.stamp_bar.name=锭模具
 item.stamp_flat.name=平模具
 item.stamp_plate.name=板模具
+item.stamp_gear.name=齿轮模具
 item.stamp_bar_raw.name=未烧制的锭模具
 item.stamp_flat_raw.name=未烧制的平模具
 item.stamp_plate_raw.name=未烧制的板模具
+item.stamp_gear_raw.name=未烧制的齿轮模具
 item.dust_ember.name=灰烬沙砾
 item.shard_ember.name=灰烬晶体碎片
 item.crystal_ember.name=灰烬晶体
@@ -216,6 +219,12 @@ item.gear_dawnstone.name=黎明石齿轮
 item.dust_metallurgic.name=冶金粉尘
 item.diffraction_barrel.name=散射枪管
 item.focal_lens.name=聚焦镜片
+item.explosion_charm.name=炸裂吊坠
+item.nonbeliever_amulet.name=邪教徒护身符
+item.ashen_amulet.name=灰烬护身符
+item.dawnstone_mail.name=黎明石甲胄
+item.tinker_lens.name=工匠单片眼镜
+item.anti_tinker_lens.name=烟熏的工匠单片眼镜
 
 tile.block_aluminum.name=铝块
 tile.ore_aluminum.name=铝矿石
@@ -285,9 +294,40 @@ embers.aspect.silver=银
 
 embers.decimal_format.ember=0.##
 embers.decimal_format.mechanical_multiplier=0.##x
+embers.decimal_format.ember_multiplier=0.##x
 embers.decimal_format.inaccuracy=0
 embers.decimal_format.heat=0.##
 embers.decimal_format.item_amount=0x
+
+embers.tooltip.goggles.input=§9⬊§r %s
+embers.tooltip.goggles.output=§6⬉§r %s
+embers.tooltip.goggles.storage=• %s
+
+embers.tooltip.goggles.item=物品
+embers.tooltip.goggles.fluid=流体
+embers.tooltip.goggles.ember=灰烬能量
+embers.tooltip.goggles.mechanical=机械能
+embers.tooltip.goggles.filter=%s (%s)
+
+embers.tooltip.goggles.item.any=任意
+embers.tooltip.goggles.item.fuel=燃料
+embers.tooltip.goggles.item.ember=灰烬晶体
+embers.tooltip.goggles.item.stamp=模具
+embers.tooltip.goggles.item.ember_storage=便携灰烬能量存储器
+embers.tooltip.goggles.item.combustion=燃烧剂
+embers.tooltip.goggles.item.catalysis=催化剂
+embers.tooltip.goggles.item.ash=灰烬
+embers.tooltip.goggles.fluid.any=任意
+embers.tooltip.goggles.fluid.metal=熔融金属
+embers.tooltip.goggles.fluid.water=水
+embers.tooltip.goggles.fluid.steam=蒸汽
+embers.tooltip.goggles.fluid.water_or_steam=水或蒸汽
+embers.tooltip.goggles.fluid.redstone=炼金浆液
+
+embers.tooltip.goggles.upgrade_slot=• 机器升级出入口
+embers.tooltip.goggles.upgrade=• 机器升级
+embers.tooltip.goggles.accessor_slot=• 机器访问存取器出入口
+embers.tooltip.goggles.actuator_slot=• 机器运行出入口
 
 embers.tooltip.atmosEmber=大气灰烬：
 embers.tooltip.targetingBlock=指向定位：
@@ -297,6 +337,7 @@ embers.tooltip.itemdial.noitem=无
 embers.tooltip.emberdial.ember=灰烬能量：%s/%s
 embers.tooltip.fluiddial.fluid=%s: %s/%s
 embers.tooltip.fluiddial.nofluid=0/%s
+embers.tooltip.side.center=中央
 embers.tooltip.side.north=北
 embers.tooltip.side.east=东
 embers.tooltip.side.south=南
@@ -312,6 +353,7 @@ embers.tooltip.modifiers=附加强化：
 embers.tooltip.upgrade.actuator=运行速率：%s
 embers.tooltip.dial.ember_multiplier=产能倍数：%s
 embers.tooltip.dial.heat=热量：%s/%s
+embers.tooltip.item.ember=Ember: %s/%s
 
 embers.tooltip.modifier.superheater=过热 %s
 embers.tooltip.modifier.jet_augment=煤渣喷气机 %s
@@ -323,6 +365,8 @@ embers.tooltip.modifier.eldritch_insignia=怪诞 %s
 embers.tooltip.modifier.intelligent_apparatus=智能 %s
 embers.tooltip.modifier.diffraction=衍射 %s
 embers.tooltip.modifier.focal_lens=聚焦 %s
+embers.tooltip.modifier.tinker_lens=工匠的凝视
+embers.tooltip.modifier.anti_tinker_lens=盲目工匠
 
 embers.tooltip.num1=I
 embers.tooltip.num2=II
@@ -392,6 +436,9 @@ embers.research.page.bore.desc=虽然基岩可能会停止你挖掘的脚步，�
 embers.research.page.pipes=管道
 embers.research.page.pipes.title=物流运输
 embers.research.page.pipes.desc=你的野心所需的最简单的机制之一是管道，一种简单的移动材料的方法。你已开发了铁和铅管：铁管可用于输送流体，而铅管可用于运输物品。管道只能在流体储罐和物品容器输入，但是如果需要提取功能，你必须制作一个相应的泵，把它依附在毗邻容器，并给予红石信号。
+embers.research.page.routing.desc=管道中的物品和流体遵循简单的规则来确定它们的传输方向。它们将永远向前移动，不会自动反向，或上天保佑，永远不会弹出管道。在管道十字交叉并且这几根管道权重相等的情况下，它们会优先考虑传输方向直线相对的管道进行传输。当管道被打破时，物品和液体会在单一管道内循环。
+embers.research.page.valves.desc=提取泵管道有许多特殊属性，在此列出：泵管道不会连接到其他泵管道。当没有接受到红石信号时，它们可以接收到普通管道传输过来的传输物而不是仅仅从容器里提取物品。当红石信号打开时，泵管道将永远不会接收来自管道的传输物。这使得泵管道可以用作管道系统中的阀门，来控制管道的流量。
+embers.research.page.pipe_tools.desc=管道将自动连接到其他相邻管道。如果不需要连接，可以使用铁匠锤右键断开它们。（请注意，双方可以单独断开连接），有时，管道网络中的路由可能会出错。当发生这种情况时，管道会喷出烟雾以显示它们已被堵塞。要疏通管道，只需用木棍右键单击堵塞的管道即可。
 
 embers.research.page.tank=流体容器
 embers.research.page.tank.title=流体容器
@@ -412,6 +459,10 @@ embers.research.page.mini_boiler.desc=Ember是一种高能量物质，在产生�
 embers.research.page.dials=表盘
 embers.research.page.dials.title=仔细测量
 embers.research.page.dials.desc=计量表是从机器中获取信息的一种简单的方法。表盘主要有两种：灰烬能量计量表和流体计量表。将它们附加到各自的容器上后，当你指着表盘时，会显示该容器内的缓存和存储上限 。
+
+embers.research.page.tinker_lens=工匠单片眼镜
+embers.research.page.tinker_lens.title=啥，这是是啥？
+embers.research.page.tinker_lens.desc=尽管这些机器都是你自己单独制作出来的，但健忘的你有时会忘掉它们的一些功能。幸运的是，你已经设计出了一个可以用来仔细检视那些机器的目镜。当用任意一只手握住工匠单片眼镜时，你所注射的机器的那一面的功能会完整的显示出来。注意，这个工具没办法检查一个相邻的设备的功能，所以你检视机械核心时可能会遇到一些问题……
 
 
 
@@ -442,6 +493,7 @@ embers.research.page.reservoir.desc=蓄水池是存储大量流体的简单方�
 embers.research.page.transfer=物品传输过滤器
 embers.research.page.transfer.title=过滤
 embers.research.page.transfer.desc=能够对通过物品管道的物品进行过滤。默认情况下，这个设备可以为物品管道提供更高优先级的传输方向。另外，你可以拿着一个物品对着过滤器右键，设置一个白名单，使它只能允许该物品通过。过滤只支持从下方面往上方面的传输（支持扳手旋转） 。
+embers.research.page.fluid_transfer.desc=流体传输过滤器是和物品传输过滤器功能相似的设备。它们在传输方面几乎有相同的作用。只不过物品传输过滤器是过滤物品，而流体传输过滤器是过滤各种液体。你想设置一个液体过滤，你就必须拿着装有流体的桶或其他容器右键过滤器。设置过滤器时，不会消耗容器内的液体。
 
 embers.research.page.breaker=自动方块破坏器
 embers.research.page.breaker.title=打破方块
@@ -648,6 +700,8 @@ embers.research.page.materia=万用修复要素
 embers.research.page.materia.title=通用修理材料
 embers.research.page.materia.desc=万用修复要素是一种特殊的材料，它具有在某种情况下转变为其他物质的能力。它能在黎明石砧中，作为任意修理材料的替换材料来修理工具。你可以预见，它在未来将更有用……
 
+
+
 embers.research.page.cost_reduction=灰烬饰品
 embers.research.page.cost_reduction.title=降低成本
 embers.research.page.cost_reduction.desc=使用发条工具或者灰烬能量驱动的武器可能是一件非常麻烦的事，因为地幔能量罐和能量筒需要定期的补充能量。这些珠宝首饰可以一定程度上减少工具或者武器的能量损耗速率，戒指、护身符或者腰带都有不同的减速率，它们是可以叠加的。
@@ -655,6 +709,22 @@ embers.research.page.cost_reduction.desc=使用发条工具或者灰烬能量驱
 embers.research.page.mantle_bulb=地幔能量灯泡
 embers.research.page.mantle_bulb.title=隐藏起来
 embers.research.page.mantle_bulb.desc=手上拿着一个地幔能量筒或者只是在你的物品栏中放一个地幔能量罐，可能对你来说都是很麻烦的一件事。这个小玩意可以帮到你。这款灰烬能量容器可以放置在任意Baubles的饰品槽中。代价是能存储的能量大大的降低了。
+
+embers.research.page.explosion_charm=炸裂吊坠
+embers.research.page.explosion_charm.title=人造破魔石
+embers.research.page.explosion_charm.desc=当你穿戴着这个吊坠时，在你附近爆发的爆炸将会消散，爆炸的破坏力将会被吸收进这个吊坠中。不幸的是，这个吊坠没有其他特殊效果。
+
+embers.research.page.nonbeliever_amulet=邪教徒护身符
+embers.research.page.nonbeliever_amulet.title=它就这样消散了
+embers.research.page.nonbeliever_amulet.desc=那些该死的女巫和它们对超凡能力的抵抗令人不悦……这个护身符就是模仿它们的能力制作而成的。当你戴着这个护身符被任何魔法攻击击中时，90％的伤害将被抵抗消除。但请注意，这个伤害抵抗并不是完全的，你将仍然会受到一次魔法攻击至少半心的伤害。
+
+embers.research.page.ashen_amulet=灰烬护身符
+embers.research.page.ashen_amulet.title=尘归尘
+embers.research.page.ashen_amulet.desc=将万物化为灰烬……这当然是力量的象征！虽然这玩意含有的是不是很深思熟虑的力量，但无论如何，这个护身符好歹是有力量的。当一个生物在穿戴着这个护身符时杀死生物或者挖掘方块时，它们会立即变成灰烬，除了灰烬之外什么掉落物都不会掉下来。
+
+embers.research.page.dawnstone_mail=黎明石甲胄
+embers.research.page.dawnstone_mail.title=守备万一
+embers.research.page.dawnstone_mail.desc=黎明石合金拥有很多非常不错的特性，这使得它能用于甲胄的制作。这款黎明石甲胄将保护佩戴者免受所有击退。请不要质疑甲胄为什么是用板做成的。
 
 
 
@@ -707,6 +777,14 @@ embers.research.page.resonating_bell=共鸣之铃
 embers.research.page.resonating_bell.title=共振
 embers.research.page.resonating_bell.desc=共鸣之铃是嵌入到工具的升级。它能通过拥有此升级的工具右键敲击某类方块，使得附近的同类方块发光。共鸣的范围随升级的等级增加而增加。
 
+embers.research.page.tinker_lens_augment=工匠单片眼镜
+embers.research.page.tinker_lens_augment.title=啥，这是是啥？
+embers.research.page.tinker_lens_augment.desc=一直拿着单片眼镜很不方便。幸运的是，你可以将其强化到头盔上，这样你就可以在穿戴头盔时获得握着眼镜时的功能了。此强化并不占用强化槽，但太古动力核心是必要的。
+
+embers.research.page.anti_tinker_lens=烟熏的工匠单片眼镜
+embers.research.page.anti_tinker_lens.title=盲目的真相
+embers.research.page.anti_tinker_lens.desc=有时候，太多的信息可能是不必要的。有些头盔比如灰烬护目镜可以直接提供像是加装了工匠单片眼镜时的效果，但有些时候你不需要这些信息。当这个强化应用到这种头盔上时，将关闭此信息显示。此强化并不占用强化槽，但太古动力核心是必要的。
+
 embers.research.page.mystical_mechanics=神秘力学
 embers.research.page.mystical_mechanics.title=不是你想要的mod
 embers.research.page.mystical_mechanics.desc=Mystical Mechanics是Embers模组的一个可选前置兼容模组。它当前要么在配置中关闭，要么没有被安装。
@@ -724,7 +802,7 @@ embers.research.page.focal_lens.title=穿透火焰
 embers.research.page.focal_lens.desc=当使用灰烬能量射击武器时，聚焦镜片强化可以辅助增加射击的精确度。根据你将强化嵌入到发射火球或者发射射线的武器的不同，它可以衍生出跟踪弹和穿透射线两种变体强化。
 
 embers.research.page.pipes_category=管道
-embers.research.page.mystical_mechanics_category=Mystical Mechanics
+embers.research.page.mystical_mechanics_category=神秘力学
 embers.research.page.simple_alchemy_category=简单的炼金术
 embers.research.page.wildfire_category=野火核心
 embers.research.page.baubles_category=Baubles
@@ -768,6 +846,8 @@ subtitles.block.mini_boiler.rupture=微型锅炉猛地破裂开来
 subtitles.block.pump.slow=机械泵发出砂纸般的声音泵动
 subtitles.block.pump.mid=机械泵泵动
 subtitles.block.pump.fast=机械泵以极快的速度泵动
+subtitles.block.pipe.connect=管道连接
+subtitles.block.pipe.disconnect=管道断开
 subtitles.ember_transfer.emit.small=喷发出灰烬能量束
 subtitles.ember_transfer.emit.big=喷发出大型灰烬能量束
 subtitles.ember_transfer.receive.small=灰烬能量束被接收
@@ -779,14 +859,16 @@ subtitles.fireball.big.fire=大火球被释放
 subtitles.fireball.big.hit=大火球撞击
 subtitles.blazing_ray.fire=灼热射线枪射击
 subtitles.blazing_ray.empty=灼热射线枪发出咔哒声
-subtitles.cinder_staff.charge=灰烬能量充能
 subtitles.heated.level_up=物品等级上升渣冲锋
+subtitles.cinder_staff.charge=灰烬能量充能
 subtitles.cinder_staff.fail=煤渣冲锋失败
 subtitles.cinder_jet.boost=煤渣喷气上升
 subtitles.resonating_bell.ring=共鸣之铃发出铃声
 subtitles.inflictor_gem.absorb=惩罚者宝石吸收伤害
 subtitles.metallurgic_dust.convert=冶金粉尘转化矿石
 subtitles.metallurgic_dust.fail=冶金粉尘将矿石转化为了无用的材料
+subtitles.ash_amulet.burn=物品燃烧成灰烬
+subtitles.explosion_charm.absorb=爆炸被吸收了
 subtitles.ancient_golem.death=古代魔像被摧毁
 subtitles.ancient_golem.hurt=古代魔像被击中
 subtitles.ancient_golem.punch=古代魔像在击打
