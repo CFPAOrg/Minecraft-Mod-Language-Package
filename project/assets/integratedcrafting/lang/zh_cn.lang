@@ -14,14 +14,14 @@ advancement.integratedcrafting.craft_crafting_interface.desc=合成一个合成�
 advancement.integratedcrafting.insert_recipe_planks=自动切板
 advancement.integratedcrafting.insert_recipe_planks.desc=向合成接口中插入一个橡木木板合成
 advancement.integratedcrafting.craft_crafting_writer=合成²写入器
-advancement.integratedcrafting.craft_crafting_writer.desc=合成一个合成写入器
+advancement.integratedcrafting.craft_crafting_writer.desc=合成一个合成请求器
 advancement.integratedcrafting.craft_planks=高效自动切板
-advancement.integratedcrafting.craft_planks.desc=使用合成写入器开始一个木板的合成工作
+advancement.integratedcrafting.craft_planks.desc=使用合成请求器开始一个木板的合成工作
 
 # Part types
 parttype.parttypes.integratedcrafting.interface_crafting.name=合成接口
 parttype.parttypes.integratedcrafting.interface_crafting.info=存有合成变量，以便在目标机器中进行合成。
-parttype.parttypes.integratedcrafting.crafting_writer.name=合成写入器
+parttype.parttypes.integratedcrafting.crafting_writer.name=合成请求器
 parttype.parttypes.integratedcrafting.crafting_writer.info=开始合成工作
 
 # Aspect property types
@@ -53,24 +53,24 @@ aspect.aspects.integratedcrafting.write.integer.craft.info=合成指定数量的
 info_book.integratedcrafting.section.main=合成
 
 info_book.integratedcrafting.introduction=介绍
-info_book.integratedcrafting.introduction.text1=&l集成合成学&r是&l集成动力&r的一个自动合成的拓展（在&l集成动力&r网络中）。这可以合成&o物品&r, &o流体&r and &o能量&r.这需要两个部分：&l合成接口&r和&l合成写入器&r。
+info_book.integratedcrafting.introduction.text1=&l集成合成学&r是&l集成动力&r的一个自动合成的拓展（在&l集成动力&r网络中）。这可以合成&o物品&r,&o流体&r和&o能量&r。这需要两个部分：&l合成接口&r和&l合成请求器&r。
 info_book.integratedcrafting.introduction.text2=&l合成接口&r可以放置在许多种类的机器旁边，可以使用网络（可供合成）中&l变量卡&r所储存的&8合成表&0。
-info_book.integratedcrafting.introduction.text3=在这个网络中，&l合成接口&r可以使用&l合成写入器&r在卡中记录的所有的可自动执行的合成表进行合成。
+info_book.integratedcrafting.introduction.text3=在这个网络中，&l合成接口&r可以使用&l合成请求器&r在卡中记录的所有的可自动执行的合成表进行合成。
 info_book.integratedcrafting.introduction.text4=下面的内容将会显示这个过程是如何工作的。
 
 info_book.integratedcrafting.crafting_interface=合成接口
 
 info_book.integratedcrafting.crafting_interface.introduction=介绍
-info_book.integratedcrafting.crafting_interface.introduction.text1=在这本书中，我们将会介绍关于&l合成接口&r的基础知识、制作过程、配置以及特殊用法。
+info_book.integratedcrafting.crafting_interface.introduction.text1=在这节中，我们将会介绍关于&l合成接口&r的基础知识、制作过程、配置以及特殊用法。
 
 info_book.integratedcrafting.crafting_interface.basics=基础
 info_book.integratedcrafting.crafting_interface.basics.text1=&l合成接口&r 可以告诉这个网络&o什么地方&r可以制作&o什么&r东西。
-info_book.integratedcrafting.crafting_interface.basics.text2=By pointing a &lCrafting Interface&r to a machine &o(like a Crafting table or Furnace)&r, this interface will be bound to this machine to handle recipes.
-info_book.integratedcrafting.crafting_interface.basics.text3=When opening the GUI of a &lCrafting Interface&r, you can insert &lVariable Cards&r that hold &8Recipes&0. This will tell the interface that the given recipe can be crafted using the bound machine.
+info_book.integratedcrafting.crafting_interface.basics.text2=将一个&l合成接口&r贴在机器旁边&o（例如工作台或熔炉）&r,他将使用这台机器来合成。
+info_book.integratedcrafting.crafting_interface.basics.text3=在&l合成接口&r的GUI中，你需要插入一张&l变量卡&r来储存&8合成表&0。合成接口将会使用该合成表进行合成。
 
-info_book.integratedcrafting.crafting_interface.crafting=Crafting Process
-info_book.integratedcrafting.crafting_interface.crafting.text1=This section will explain how the crafting process is being handled by &lCrafting Interfaces&r. This information is essential to get the most out of this mod, and to debug any issues you may encounter.
-info_book.integratedcrafting.crafting_interface.crafting.text2=When a crafting job is started (for example with the &lCrafting Writer&r), one (or more) &lCrafting Interface(s)&r will be used that have a recipe corresponding to the given job. The &lCrafting Interface&r is responsible for inserting all inputs of the recipe into the bound machine. It will do this based on the storage network contents, as provided by &lIntegrated Tunnels interfaces&r.
+info_book.integratedcrafting.crafting_interface.crafting=合成过程
+info_book.integratedcrafting.crafting_interface.crafting.text1=本节将会解释合成接口是怎样进行合成的，这些信息可以让你更加充分的利用此mod以及解决你所遇到的问题。
+info_book.integratedcrafting.crafting_interface.crafting.text2=当一个合成任务开始(例如通过&l合成请求器&r)，一个或多个&l合成接口&r将会开始使用给定的配方进行合成。&l合成接口&r的作用是将网络中的合成原料输入机器（从连接到的合成网络中的&l物品接口&r所对的容器中提取）。
 info_book.integratedcrafting.crafting_interface.crafting.text3=A &lCrafting Interface&r will however &lnot&r import the crafting results from the bound machine. The player is responsible for making sure that the crafting results end up back into the network. The Crafting Table is an exception for this, only a &lCrafting Interface&r is required to craft with this. The &lCrafting Interface&r will track changes in the storage network, and it will only mark the crafting job as completed once the expected outputs are present in the storage network. This can be achieved by either placing an active &lIntegrated Tunnels importer&r onto the machine, or by letting the machine automatically output into the &lCrafting Interface&r. Everything (items, fluids, energy) that is inserted into the &lCrafting Interface&r will be inserted into the storage network for the configured channel.
 info_book.integratedcrafting.crafting_interface.crafting.text4=The following figures show examples of valid minimal setups for autocrafting with a Crafting Table and Furnace.
 
@@ -98,7 +98,7 @@ info_book.integratedcrafting.crafting_interface.debugging_jobs.text1=While setti
 info_book.integratedcrafting.crafting_interface.debugging_jobs.text2=You can debug these cases using crafting-related aspects from the &lNetwork Reader&r, such as getting the list of all available recipes in the network, getting all running crafting jobs, and getting all missing crafting job ingredients. Visualizing these lists in &lDisplay Panels&r can help you pinpoint the problem you are experiencing.
 info_book.integratedcrafting.crafting_interface.debugging_jobs.text3=Note that if you have &lIntegrated Terminals&r installed, you can use the &lCrafting Job Terminal&r to visualize all running crafting jobs, visualize any missing ingredients, or cancel the jobs.
 
-info_book.integratedcrafting.crafting_writer=合成写入器
+info_book.integratedcrafting.crafting_writer=合成请求器
 info_book.integratedcrafting.crafting_writer.text1=The &lCrafting Writer&r allows you to automatically start crafting jobs based on certain conditions using the recipes that are exposed by &lCrafting Interfaces&r.
 info_book.integratedcrafting.crafting_writer.text2=Using the following aspects, you can start crafting jobs for the given recipe, output item, output fluid or output energy. Using the aspect settings, you can configure the crafting channel, whether or not already-running crafting jobs should block any new jobs, if crafting jobs for any missing inputs should also be started, and whether or not the presence of ingredients in the storage network should block any new crafting jobs.
 info_book.integratedcrafting.crafting_writer.text3=If you want to insert a &lVariable Card&r for telling that &onothing&r should be crafted, just insert an empty value, such as a &lVariable Card&r for the &8Item&0 value type without an actual item in it.
