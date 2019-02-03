@@ -314,6 +314,7 @@ tile.crusher.name=Super Crusher
 tile.entityeater_eater.name=Absorption Laser
 tile.entityeater_killer.name=Laser Turret
 tile.entityeater_healer.name=Regeneration Laser
+tile.entityeater_rocket.name=Rocket Launcher
 tile.brennstoff_generator.name=Generator
 
 tile.bateriebox.name=Battery Box
@@ -401,10 +402,11 @@ tile.planks_menelaus_mushroom.name=Menelaus Planks
 tile.planks_tyros.name=Tyros Planks
 
 tile.fluid_tube.name=Fluid Tube
-tile.fluid_pump.name=Pump
+tile.fp_fluid_pump.name=Pump
 tile.fluid_tank.name=Fluid Tank
 tile.fluid.saltwater.name=Salt Water
 tile.fluid.liquid.neon.name=Liquid Neon
+tile.fluid.liquid.biogas.name=Biogas
 
 tile.wr_receiver.name=Receiver - Powderless Redstone
 tile.wr_transmitter.name=Transmitter - Powderless Redstone
@@ -424,10 +426,21 @@ tile.syncronizer.name=Synchronizer
 tile.deep_core_miner.name=Deep Core Miner
 tile.rf_ne_converter.name=Flux Transformer
 tile.fluid_intake.name=Fluid Intake
+tile.insert_node.name=The Stöpsel
+tile.opti_assembler.name=Optiassembler
+
+tile.prismid.name=Prismid
+tile.prismid_stone.name=Prismid Vein
+tile.topinambur.name=Jerusalem Artichoke
+tile.oxades.name=Oxades
+
+tile.fermentationBarrel.name=Fermentation Barrel
+tile.gasturbine.name=Gas Turbine
 
 fluid.liquid.neon=Neon Liquid
 fluid.saltwater=Salt Water
 fluid.liquid.bitripentium=Bitripentium-Fuel
+fluid.liquid.biogas=Biogas
 
 item.scrench.name=Scrench
 item.NeonBattery_full.name=Neon Battery
@@ -615,7 +628,7 @@ item.saatgranate.name=Seed Grenade
 
 item.shredder.name=Shredder
 item.lasercutter.name=Lasercutter
-item.analyzer.name=Analyzer
+item.fp_analyzer.name=Analyzer
 item.timemanipulator.name=Nanostructure Repair Unit
 
 item.pearlegger.name=Activated Pearlegger
@@ -631,6 +644,8 @@ item.record_fp_entros.name=Music Disc
 item.record.fp_entros.desc=Mantes - Voice of Entros
 item.record_fp_unknown.name=Unknown Disc
 item.record.fp_unknown.desc=Martin 1
+item.record_fp_envia.name=Music Disc
+item.record.fp_envia.desc=Mantes - Voice of Envia
 
 item.mendel_berry.name=Mendelberry
 item.mendel_seed.name=Mendelberry Seed
@@ -646,6 +661,7 @@ item.glowshroom_stew.name=Glowstew
 item.salad.name=Mixed Salad
 item.hufsteak.name=Hoofsteak
 item.grillhufsteak.name=Grilled Hoofsteak
+item.astrofood4.name=Foodtube - Alien Goo
 
 item.sword_handle.name=Sword Handle
 item.EnergyCell_full.name=Energy Cell
@@ -658,11 +674,29 @@ item.polymer.name=Biopolymer
 item.quantanium_coil.name=Quantanium Coil
 item.modul_battery.name=Energy Module
 item.modul_shield.name=Shield Generator
+item.modul_oxygen_mask.name=Oxygen Mask
+item.modul_oxygen_tank.name=Oxygen Tank
+item.modul_paraglider.name=High-Tech Paraglider
+item.modul_magnet.name=Magnet Module
+modular_armor.module.magnet.on=The Magnet Module of the Composite Armor is now active
+modular_armor.module.magnet.off=The Magnet Module of the Composite Armor is now inactive
+modular_armor.module.magnet.notinstalled=The Magnet Module in not installed in the Composite Armor
+item.modul_dynamo.name=Dynamo Module
 item.dungeon_key_0.name=Dungeon Key 1
 item.dungeon_key_1.name=Dungeon Key 2
 item.dungeon_key_2.name=Dungeon Key 3
 item.dungeon_key_3.name=Dungeon Key 4
 item.composite_fishing_rod.name=Composite Fishing Rod
+item.recipe_assembly.name=Assembler Recipe
+
+item.topinambur_potato.name=Jerusalem Artichoke Potato
+item.topinambur_flower.name=Jerusalem Artichoke Flower
+item.oxades_seed.name=Oxades
+
+item.rocket.name=Rockets
+item.rocket_blaze.name=Incendiary Rockets
+item.rocket_plasma.name=Plasma Rockets
+item.rocket_bioterium.name=Toxic Rockets
 
 itemGroup.fpTab.deco=Future Pack Materials
 itemGroup.fpTab.maschiens=Future Pack Machinery
@@ -670,6 +704,8 @@ itemGroup.fpTab.items=Future Pack Items
 
 container.opticrafting=Opti Bench
 container.collector=Ion Collector
+container.assembly=Assembling
+container.blockplacer=Block Placer
 
 entity.FP-Gehuf.name=Gehoof
 entity.FP-Crawler.name=Crawler
@@ -713,6 +749,10 @@ chat.spaceship.missingBeam=Your spaceship has no teleporter.
 chat.spaceship.missingFuel=The thrusters don't have enough fuel. You still have %s thrusters that need to be powered.
 
 chat.research.add=Your research(%s) finished. 
+
+chat.escanner.athmosphere.breathable=This atmosphere is breathable and has oxygen.
+chat.escanner.athmosphere.filled=This atmohsphere is not breathable and has no oxygen. This room is filled %s.%s %% and has enough air for %s (for one person).
+
 research.useblock.missing=You don't know how to use this object!
 
 hologram.error.set.notsupported=You can't set an hologram for this block!
@@ -720,6 +760,18 @@ hologram.error.set.notileentity=You can't set an hologram for this block!
 hologram.error.select.tileentity=You can't use this block for an hologram!
 
 laser.attack.warn.time=Restricted Area. You have %s seconds.
+
+laser.attack.player.name=Attack Players
+laser.attack.neutral.name=Attack Neutrals
+laser.attack.mobs.name=Attack Mobs
+laser.kill.not.name=Don't kill
+laser.player.warn.name=Warn targets
+laser.player.distance.name=Defend position (10 Blocks)
+laser.wait.10.name=Warn Time 10 Seconds
+laser.wait.15.name=Warn Time 15 Seconds
+laser.wait.30.name=Warn Time 30 Seconds
+laser.wait.60.name=Warn Time 60 Seconds
+laser.ballista.name=Only marked targets
 
 dungeon.message.double_power=Double Power!
 dungeon.message.much_damage=Too much damage!
@@ -805,6 +857,8 @@ info.note.read=Right click to view!
 
 key.categories.futurepack=Futurepack
 key.fp.gleiter=Paraglider open/close
+key.fp.compositearmor=Open Composite Armor
+key.fp.modul_magnet=Magnet Module on/off
 
 research.need.achievement=Needs %s
 
@@ -831,10 +885,12 @@ research.decoration=Decoration
 research.energieerzeugung=Energy Generation 1
 research.energielogistik=Energy Logistics
 research.partpress=Part Press
+research.fluidlogistik=Fluid Logistics
 
 research.upgradeT1=Research Module - Energy
 research.assembly=Chip Assembly
 research.calculation=Calculation Module
+research.armor=Armor Construction
 research.optik=Optics
 research.energiespeicher=Energy Storage
 research.energieerzeugung2=Energy Generation 2
@@ -850,7 +906,8 @@ research.aispeicher=Upgraded AI-Memory
 research.energietools=Energy Tools
 research.lasertechnik=Laser Tech 1
 research.bergbau=Mining
-research.waffentechnik=Weaponry
+research.waffentechnik1=Weaponry 1
+research.waffentechnik2=Weaponry 2
 research.production3=Production 3
 research.netzwerke=Networks
 research.hologrammtechnik=Hologram Tech
@@ -858,7 +915,9 @@ research.raumfahrt=Space Travel
 research.menelaus=Menelaus
 research.surveyscan.menelaus=Menelaus Surveyscan
 research.upgradeT3=Research Module - Experience
+research.bergbau2=Mining 2
 research.tyros=Tyros
+research.surveyscan.tyros=Tyros Surveyscan
 
 research.nanomanip=Nanostructure Manipulation
 research.quantentechnik=Quantum Tech
@@ -867,10 +926,8 @@ research.lasertechnik2=Laser Tech 2
 research.astronomie1=Astronomy 1
 
 research.drones=Drone Technology
-
-
-
 research.itempipe=Normal Pipe
+
 
 
 
@@ -918,6 +975,16 @@ research.hs.menelaus.mycel=Mycel and Mushroom
 research.hs.menelaus.mendel=Mendelberry
 research.hs.menelaus.entity=Alien Creatures
 
+research.story.tyros=Tyros Surveyscan
+research.hs.tyros.surface=Jungle Planet
+research.hs.tyros.prismid=Prismid
+research.hs.tyros.crystals=Bioterium Crystals
+research.hs.tyros.caves=Geothermal activity
+research.hs.tyros.tree=Tyros Tree
+research.hs.tyros.deadlands=Deadlands
+research.hs.tyros.topinambur=Jerusalem Artichoke
+research.hs.tyros.entity=Alien Creatures
+
 research.production.blockbreaker=Block Breaker
 research.production.blockplacer=Block Placer
 research.production.industrieofen=Industrial Furnace
@@ -954,6 +1021,7 @@ research.production.recycler.analyzer=Analyzer
 research.production.recycler.timemanipulator=Nanostructure Repair Unit
 research.production.deep_core=Deep Core Miner
 research.production.deep_core.processing=Deep Core Miner Operation
+research.production.opti_assembler=Optiassembler
 
 research.energy.generator=Generator
 research.energy.neonmotor=Neon Engine
@@ -962,6 +1030,8 @@ research.energy.solar=Solar Panel
 research.energy.wasser_turbine=Water Turbine
 research.energy.ionen=Ion Collector
 research.energy.fluxtransformer=Flux Transformator
+research.energy.fermentation=Fermentation
+research.energy.gasturbine=Gas Turbine
 
 research.log.itempipe=Normal Pipe
 research.log.cable=Cable
@@ -991,6 +1061,11 @@ research.log.flash.3=Glowstone Flashdrive
 research.log.flash.4=Crystal Flashdrive
 research.log.flash.5=Isotope Flashdrive
 research.log.flash.6=Qubit Flashdrive
+
+research.log.tube=Fluid Tube
+research.log.tank=Fluid Tank
+research.log.pump=Fluid Pump
+research.log.intake=Fluid Intake
 
 research.assembly_chip=Assembly Table
 research.motherboard=Mainboard
@@ -1062,6 +1137,7 @@ research.space.navcord.tyros=Tyros Coordinates
 research.space.dronestation=Drone Station
 research.space.claime=Zone Transmitter
 research.space.miner=Mining Drone
+research.space.turret.rocket=Rocket Launcher
 research.space.turret.killer=Laser Turret
 research.space.turret.heal=Regeneration Laser
 research.space.turret.absorb=Absorption Laser
@@ -1108,6 +1184,14 @@ research.tools.sword.retium=Retium Sword
 research.tools.sword.glowtite=Glowtite Sword
 research.tools.sword.bioterium=Bioterium Sword
 research.tools.laserrifle=Laser Rifle
+research.tools.modular_armor=Composite Armor
+research.tools.modul.oxygenmask=Oxygen Supply
+research.tools.modul.paraglider=High-Tech Paraglider
+research.tools.modul.battery=Energy Module
+research.tools.modul.magnet=Magnet Module 
+research.tools.modul.dynamo=Dynamo Module
+research.tools.modul.shield=Shield Generator
+research.tools.composite_fishingrod=Composite Fishing Rod
 
 futurepack.zentrifuge.name=Centrifuge Recipes
 futurepack.jei.neededsupport= %s SP
@@ -1119,6 +1203,7 @@ futurepack.furnace.industrial.neon.name=Industrial Neon Recipes
 futurepack.crusher.name=Super Crusher Recipes
 futurepack.airbrush.name=Airbrush Recipes
 futurepack.watercooler.name=Water Cooler Recipes
+futurepack.partpress.name=Part Press Recipes
 
 jei.recycler.analyser.makesupport=Generate SP
 jei.recycler.lasercutter.needpower=4x more NE
