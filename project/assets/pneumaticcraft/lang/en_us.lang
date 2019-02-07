@@ -89,7 +89,7 @@ item.capacitor.name=Capacitor
 item.printed_circuit_board.name=Printed Circuit Board
 item.failed_pcb.name=Failed PCB
 item.network_component.name=Network Component
-item.stop_worm.name=STOP! -Worm
+item.stop_worm.name=STOP! Worm
 item.nuke_virus.name=Nuke Virus
 item.compressed_iron_gear.name=Compressed Iron Gear
 item.pneumatic_wrench.name=Pneumatic Wrench
@@ -229,8 +229,8 @@ programmingPuzzle.blockRightClick.name=Right Click Block
 programmingPuzzle.computerCraft.name=Computer Control
 programmingPuzzle.dropItem.name=Drop Items
 programmingPuzzle.emitRedstone.name=Emit Redstone
-programmingPuzzle.liquidExport.name=Export Liquid
-programmingPuzzle.liquidImport.name=Import Liquid
+programmingPuzzle.liquidExport.name=Export Fluid
+programmingPuzzle.liquidImport.name=Import Fluid
 programmingPuzzle.entityExport.name=Export Entity
 programmingPuzzle.entityImport.name=Import Entity
 programmingPuzzle.label.name=Label
@@ -253,15 +253,15 @@ programmingPuzzle.conditionCoordinate.name=Condition: Coordinate
 programmingPuzzle.conditionRedstone.name=Condition: Redstone
 programmingPuzzle.conditionItemInventory.name=Condition: Items
 programmingPuzzle.conditionBlock.name=Condition: Block
-programmingPuzzle.conditionLiquidInventory.name=Condition: Liquid
+programmingPuzzle.conditionLiquidInventory.name=Condition: Fluid
 programmingPuzzle.conditionEntity.name=Condition: Entity
 programmingPuzzle.conditionPressure.name=Condition: Pressure
 programmingPuzzle.conditionLight.name=Condition: Light Level
 programmingPuzzle.droneConditionItem.name=Drone Condition: Items
-programmingPuzzle.droneConditionLiquid.name=Drone Condition: Liquid
+programmingPuzzle.droneConditionLiquid.name=Drone Condition: Fluid
 programmingPuzzle.droneConditionEntity.name=Drone Condition: Entity
 programmingPuzzle.droneConditionPressure.name=Drone Condition: Pressure
-programmingPuzzle.liquidFilter.name=Liquid Filter
+programmingPuzzle.liquidFilter.name=Fluid Filter
 programmingPuzzle.rfImport.name=Import RF
 programmingPuzzle.rfExport.name=Export RF
 programmingPuzzle.conditionRF.name=Condition: RF
@@ -531,6 +531,7 @@ gui.tab.upgrades.tile.assembly_controller=§7§nSpeed Upgrade (max = 10) \n§0Al
 gui.tab.upgrades.tile.charging_station=§7§nSpeed Upgrade (max = 10) \n§0The Charging Station will be able to (dis)charge items faster. \n§7§nDispenser Upgrade \n§0Adds a charge pad onto the Charging Station, allowing it to (dis)charge any Drones, items, and player inventory items that are on top of the Charging Station.
 gui.tab.upgrades.tile.elevator_base=§7§nSpeed Upgrade (max = 10) \n§0The elevator will ascend/descend faster (at a higher pressure cost). \n§7§nCharging Upgrade (max = 4) \n§0Charging Upgrades allow the elevator to reclaim some of the air used to ascend when the elevator descends. This comes at a cost of slightly slowed descent. Up to 4 Charging Upgrades can be installed for progressively better air reclamation and slower descent (max: 60%% air reclaimed & 40%% slower descent).
 gui.tab.upgrades.tile.omnidirectional_hopper=§7§nSpeed Upgrade (max = 11) \n§0Increases the speed at which the Hopper transfers items.
+gui.tab.upgrades.tile.omnidirectional_hopper.dispenser=§7§nDispenser Upgrade \n§0Ejects items into the world at the output side (if there's no inventory to take them).
 gui.tab.upgrades.tile.liquid_hopper=§7§nSpeed Upgrade (max = 11) \n§0Increases the speed at which the Hopper transfers liquid.  With 11 Speed Upgrades, the Liquid Hopper can transfer its entire contents in one tick.
 gui.tab.upgrades.tile.liquid_hopper.dispenser=\n§7§nDispenser Upgrade \n§0Sucks any liquid block at the input side of the Hopper, and places down any liquid at the output side. Can be used for example as water pump.
 gui.tab.upgrades.tile.pneumatic_door_base=§7§nRange Upgrade \n§0Increases the player detection range by one block for every upgrade. \n§7Speed Upgrade \n§0Increases the speed at which the door opens/closes.
@@ -1012,9 +1013,11 @@ pneumaticcraft.armor.options=Pneumatic Armor General Options
 pneumaticcraft.helmet.hack=Pneumatic Helmet Hacking
 pneumaticcraft.helmet.debugging.drone=Pneumatic Helmet Drone Debugging
 pneumaticcraft.boots.kick=Pneumatic Boots Kick
+pneumaticcraft.chestplate.launcher=Pneumatic Chestplate Launcher
 
 # Config Screen
 gui.config.category.general=General
+gui.config.category.pneumaticArmor=Pneumatic Armor
 gui.config.category.machine=Machine
 gui.config.category.advanced=Advanced
 gui.config.category.recipes=Recipes
@@ -1246,3 +1249,8 @@ message.amadron.addedStaticOffer=§a[Amadron] §bAdded static offer: §6%s§b fo
 # Camo Applicator
 message.camo.notEnoughBlocks=§4Out of §c%s !
 message.camo.invalidBlock=§4Invalid camo block: §c%s !
+
+# Patchouli
+patchouli.book.name=PNC:R Manual
+patchouli.book.landing=This manual is a complete reference guide to $(#228)PneumaticCraft: Repressurized/$.
+patchouli.processor.assembly.desc=$(item)%s/$ production requires an $(l:manufacturing/assembly_system)Assembly Controller/$ with a $(item)%s/$ installed.
