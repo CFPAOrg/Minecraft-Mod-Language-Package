@@ -5,7 +5,7 @@ itemGroup.buildingGadgets=Building Gadgets
 #singles: 
 singles.buildinggadgets.depth=Depth
 singles.buildinggadgets.down=Down
-singles.buildinggadgets.left=left
+singles.buildinggadgets.left=Left
 singles.buildinggadgets.right=Right
 singles.buildinggadgets.up=Up
 singles.buildinggadgets.confirm=Ok
@@ -74,6 +74,7 @@ message.gadget.toolrange= Tool Range
 message.gadget.toomanyblocks=Too Many Blocks, Limit is 32,768 (Right click empty air to reset)
 message.gadget.undofailed=Undo Failed (Too far away?)
 message.gadget.TEinCopy=Area Copied, Number of tile entities not copied
+message.gadget.boundTE=Bound Gadget to Inventory
 
 #help: 
 help.gui.buildinggadgets.area.arrow.data_flow=Represents the flow of data from one item to another; either from a template to a gadget/template, or from a gadget/template to a template or piece of paper
@@ -87,4 +88,42 @@ help.gui.buildinggadgets.button.help.exit=Exit help mode
 help.gui.buildinggadgets.button.load=Loads data onto a gadget/template from a template
 help.gui.buildinggadgets.button.paste=Pastes data on your computer's clipboard to a pre-existing template, or to a piece of paper, creating a template
 help.gui.buildinggadgets.button.save=Saves the data in the gadget/template to a pre-existing template, or to a piece of paper, creating a template
+
+#config:
+config.buildinggadgets.general.rayTraceRange=Max Build Distance
+config.buildinggadgets.general.rayTraceRange.tooltip=Defines how far away you can build
+config.buildinggadgets.general.poweredByFE=Powered by Forge Energy
+config.buildinggadgets.general.poweredByFE.tooltip=Set to true for Forge Energy Support, set to False for vanilla Item Damage
+config.buildinggadgets.general.enablePaste=Enable Construction Paste
+config.buildinggadgets.general.enablePaste.tooltip=Set to false to disable the recipe for construction paste.
+config.buildinggadgets.general.enableDestructionGadget=Enable Destruction Gadget
+config.buildinggadgets.general.enableDestructionGadget.tooltip=Set to false to disable the Destruction Gadget.
+config.buildinggadgets.general.absoluteCoordDefault=Default to absolute Coord-Mode
+config.buildinggadgets.general.absoluteCoordDefault.tooltip=Determines if the Copy/Paste GUI's coordinate mode starts in 'Absolute' mode by default.\n Set to true for Absolute, set to False for Relative.
+config.buildinggadgets.general.canOverwriteBlocks=Allow non-Air-Block-Overwrite
+config.buildinggadgets.general.canOverwriteBlocks.tooltip=Whether the Building / CopyPaste Gadget can overwrite blocks like water, lava, grass, etc (like a player can).\n False will only allow it to overwrite air blocks.
+config.buildinggadgets.general.subCategoryBlacklist=Blacklist Settings
+config.buildinggadgets.general.subCategoryBlacklist.tooltip=Configure your Blacklist-Settings here
+config.buildinggadgets.general.subCategoryBlacklist.blockBlacklist=Blacklisted Blocks
+config.buildinggadgets.general.subCategoryBlacklist.blockBlacklist.tooltip=All Blocks added to this will be treated similar to TileEntities. Not at all. \nNotice that you can use Regular Expressions as defined by Java Patterns to express more complex name combinations. \nUse for example "awfulmod:.*" to blacklist all awfulmod Blocks..
+config.buildinggadgets.general.subCategoryGadgets=Gadgets
+config.buildinggadgets.general.subCategoryGadgets.tooltip=Configure the Gadgets here
+config.buildinggadgets.general.subCategoryGadgets.maxRange=Maximum allowed Range
+config.buildinggadgets.general.subCategoryGadgets.maxRange.tooltip=The max range of the Gadgets
+config.buildinggadgets.general.subCategoryGadgets.maxEnergy=Maximum Energy
+config.buildinggadgets.general.subCategoryGadgets.maxEnergy.tooltip=The max energy of Building, Exchanging & Copy-Paste Gadget
+config.buildinggadgets.general.subCategoryGadgets.energyCost=Energy Cost
+config.buildinggadgets.general.subCategoryGadgets.energyCost.tooltip=The Gadget's Energy cost per Operation
+config.buildinggadgets.general.subCategoryGadgets.durability=Durability
+config.buildinggadgets.general.subCategoryGadgets.durability.tooltip=The Gadget's Durability (Ignored if powered by FE)
+config.buildinggadgets.general.subCategoryGadgets.gadgetBuilding=Building Gadget
+config.buildinggadgets.general.subCategoryGadgets.gadgetBuilding.tooltip=Energy Cost & Durability of the Building Gadget
+config.buildinggadgets.general.subCategoryGadgets.gadgetExchanger=Exchanging Gadget
+config.buildinggadgets.general.subCategoryGadgets.gadgetExchanger.tooltip=Energy Cost & Durability of the Exchanging Gadget
+config.buildinggadgets.general.subCategoryGadgets.gadgetDestruction=Destruction Gadget
+config.buildinggadgets.general.subCategoryGadgets.gadgetDestruction.tooltip=Energy Cost, Durability & Maximum Energy of the Destruction Gadget
+config.buildinggadgets.general.subCategoryGadgets.gadgetDestruction.maxEnergy=Maximum Energy
+config.buildinggadgets.general.subCategoryGadgets.gadgetDestruction.maxEnergy.tooltip=The max energy of the Destruction Gadget
+config.buildinggadgets.general.subCategoryGadgets.gadgetCopyPaste=Copy-Paste Gadget
+config.buildinggadgets.general.subCategoryGadgets.gadgetCopyPaste.tooltip=Energy Cost & Durability of the Copy-Paste Gadget
 
