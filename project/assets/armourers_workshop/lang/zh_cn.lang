@@ -798,12 +798,12 @@ chat.armourers_workshop:linkingTool.finish=方块连接成功.
 chat.armourers_workshop:linkingTool.fail=方块连接失败.
 chat.armourers_workshop:linkingTool.linkedToSkinnable=不能连接两个时装方块.
 # Death Messages
-death.attack.victorious=%1$s 脚被刺穿了（恭喜你发现了彩蛋）
+death.attack.victorious=%1$s 脚被维克的皇冠刺穿了。
 # Commands
-commands.armourers.usage=/armourers <giveSkin | clearSkins | setSkin | clearModelCache | setUnlockedWardrobeSlots | resyncWardrobe | adminPanel | setItemAsSkinnable| setWardrobeOption> 可以使用指令/armourers <送时装 | 清除时装 | 设置时装 | 清除模型数据| 设置皮肤栏数|重新同步衣柜|管理员面板|设置物品可加载时装|设置模特相关> 
-commands.armourers.giveSkin.usage=/armourers giveSkin <player> <skin name>
+commands.armourers.usage=/armourers <giveSkin | clearSkins | setSkin | clearModelCache | setUnlockedWardrobeSlots | resyncWardrobe | adminPanel | setItemAsSkinnable| setWardrobeOption> 可以使用指令/armourers <送时装 | 清除时装 | 设置时装 | 清除模型数据| 设置皮肤栏数|重新同步衣柜|管理员面板|设置物品可加载时装|设置模特相关>
+commands.armourers.giveSkin.usage=/armourers giveSkin <player> "<skin name>" [<dyeIndex-R,G,B[-paintType]> | <dyeIndex-0xRRGGBB[-paintType>]] 给予时装
 commands.armourers.setSkin.usage=/armourers setSkin <player> <skin name>
-commands.armourers.setWardrobeOption.usage=/armourers setWardrobeOption <player> <showHeadArmour | showChestArmour | 
+commands.armourers.setWardrobeOption.usage=/armourers setWardrobeOption <player> <showHeadArmour | showChestArmour |
 commands.armourers.fileNotFound=文件 %1$s 没有找到.
 commands.armourers.invalidDyeFormat=%1$s 不是有效的染料格式.
 # Creative tab
@@ -817,7 +817,7 @@ book.armourers_workshop:guideBook.contents.name=内容
 # Chapter 2
 book.armourers_workshop:guideBook.introduction.name=介绍
 book.armourers_workshop:guideBook.introduction.paragraph1=注: 这本书尚未完成.&p欢迎查看时装工坊指导大全.&p这本书将帮你认识时装的正确食用方法.
-book.armourers_workshop:guideBook.introduction.paragraph2=时装制作会是你拥有独一无二的武器和衣服
+book.armourers_workshop:guideBook.introduction.paragraph2=时装工坊能让你拥有独一无二的武器和衣服
 # Chapter 4
 book.armourers_workshop:guideBook.equipmentTemplates.name=空白模板
 book.armourers_workshop:guideBook.equipmentTemplates.paragraph1=空白模板可以将资源库中的储存好的数据拷贝出来从而直接穿上。
@@ -912,3 +912,24 @@ inventory.armourers_workshop:wardrobe.renderChestArmour=渲染胸甲？
 inventory.armourers_workshop:wardrobe.renderLegArmour=渲染护腿？
 inventory.armourers_workshop:wardrobe.renderFootArmour=渲染靴子？
 inventory.armourers_workshop:mannequin.label.noclip=穿墙？
+# Global Skin Library (User Skins)
+inventory.armourers_workshop:global-skin-library.userSkins.results=时装上传者 %s: 页 %d of %d - 共 of %d 结果。
+# Admin Panel
+inventory.armourers_workshop:admin-panel.recover_skins=恢复时装
+inventory.armourers_workshop:admin-panel.update_skins=更新时装
+inventory.armourers_workshop:admin-panel.clear_cache=清除缓存
+commands.armourers.clearModelCache.usage=/armourers clearModelCache <player> 清除模型缓存
+commands.armourers.clearSkins.usage=/armourers clearSkins <player> 清除时装
+commands.armourers.exportSkin.usage=/armourers exportSkin <file format> "<file name>" [scale] 输出皮肤
+commands.armourers.resyncWardrobe.usage=/armourers resyncWardrobe <player> 重新加载时装
+commands.armourers.setItemSkinnable.usage=/armourers setItemSkinnable <skintype> <add|remove> 可设置时装
+commands.armourers.setUnlockedWardrobeSlots.usage=/armourers setUnlockedWardrobeSlots <player> <skin type> <amount 1-8> 设置解除锁定
+keys.armourers_workshop.open-wardrobe=打开衣柜
+# Chapter 3
+book.armourers_workshop:guideBook.armourer.name=武器制造
+book.armourers_workshop:guideBook.armourer.paragraph1=首先，你需要开始建立你的定制盔甲是军械库。&p放下块右击它打开图形用户界面。在左边，你会看到所有可以建造的设备类型。
+book.armourers_workshop:guideBook.armorer.paragraph2=选择要装箱的设备类型，然后使用设备立方体开始构建设备。&p完成后，将设备模板放入名称中的武器类型，然后按保存。
+book.armourers_workshop:guideBook.paintingTools.paragraph1=我们提供了许多绘画工具来帮助您的创作！&p调色机&n允许您混合您喜欢的任何颜色。&p画笔&n涂料一个设备立方体。
+book.armourers_workshop:guideBook.paintingTools.paragraph2=彩色选择器&n允许您从设备立方体中选择颜色，并将颜色混合器设置为该颜色。&p油漆滚筒&n在3*3*1区域内绘制设备立方体。
+book.armourers_workshop:guideBook.paintingTools.paragraph3=燃烧工具&n使设备立方体更暗。&p闪避工具和制造设备立方体打火机。&p颜色噪声工具&n对设备多维数据集应用随机颜色噪声。
+book.armourers_workshop:guideBook.credits.localisations=本地化
