@@ -126,6 +126,8 @@ def main(handle_assets_path, handle_project_path):
     for i in os.listdir(handle_assets_path + "/assets"):
         logging.info("正在处理 " + i + " 文件夹……")
 
+        ''' 这一部分因为存在颇多的处理错误问题，目前暂定注释掉
+
         # 构建各个需要处理的文件路径
         en_us_path = handle_assets_path + "/assets/" + i + "/lang/en_us.lang"
         en_us_old_path = handle_assets_path + "/assets/" + i + "/lang/en_us_old.lang"
@@ -147,6 +149,8 @@ def main(handle_assets_path, handle_project_path):
         en_us_old_dict.clear()
         zh_cn_dict.clear()
         zh_cn_old_dict.clear()
+        
+        '''
 
     dir_util.copy_tree(handle_assets_path + "/assets", handle_project_path + "/assets")
     logging.info("==================  主体处理程序结束  ==================")
