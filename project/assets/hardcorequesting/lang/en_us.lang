@@ -11,6 +11,7 @@
 #				GENERAL
 # ======================================
 itemGroup.hqm=Hardcore Questing Mode
+hqm.message.editMode=To enter or leave HQM edit mode, run /hqm edit in creative. This message can be disabled in configuration.
 hqm.message.noHardcore=This server doesn't have Hardcore Questing Mode enabled.
 hqm.message.hardcore=This server currently has Hardcore Questing Mode enabled!
 hqm.message.livesLeft=You currently have %s [[live||lives]] left.
@@ -18,6 +19,7 @@ hqm.message.lostLife=You just lost a life. You have %s [[live||lives]] left
 hqm.message.lostTeamLife=%s just lost a life %s. You have %s [[live||lives]] left
 hqm.message.andBanned=and got banned
 hqm.message.gameOver=You're out of lives. Game over, man, it's game over!
+hqm.message.singlePlayerHardcore=BAM BAM!!! You're dead! Game over! (Hardcore doesn't really work in Single Player. Try deleting your world and starting over!)
 hqm.message.vanillaHardcore=Hardcore mode don't work together with vanilla hardcore mode. Will try to disable it...
 hqm.message.vanillaHardcoreOn=Vanilla hardcore mode is already enabled. Can't enable Hardcore Mode.
 hqm.message.vanillaHardcoreOverride=Vanilla hardcore mode has now been disabled. Please reopen your world for the change to take full effect.
@@ -51,6 +53,9 @@ hqm.message.eatRottenHearth=Why did you eat a rotten heart?
 hqm.message.hearthDecay=One or more of your hearts has just decade into a Rotten Heart.
 hqm.message.alreadyEditing=Another OP is already accessing this player's quests.
 hqm.message.bookNoPermission=You don't have permission to use this book.
+hqm.message.bookNoData=Still loading quest data.
+hqm.message.bookNoEntry=No entry was found for that player.
+hqm.message.bookNoPlayer=No player entry could be loaded for you. Please try again soon or report to your server administrator. This shouldn't happen.
 hqm.message.noTaskSelected=You currently have not selected any tasks
 
 # ======================================
@@ -60,8 +65,10 @@ tile.hqm:item_barrel.name=Quest Delivery System
 tile.hqm:item_barrel.nonBound=You currently have not bound a quest to the QDS
 tile.hqm:item_barrel.boundTo=The QDS is currently bound to '%s'
 tile.hqm:item_barrel.bindTo=You bound '%s' to the QDS
+tile.hqm:item_barrele.selectedTask=The task '%s' has been selected and can now be applied to a QDS by right-clicking with the quest book.
 tile.hqm:quest_tracker.name=Quest Tracking System
 tile.hqm:quest_tracker.offLimit=You're not in edit mode. This block is off limit.
+tile.hqm:quest_tracker.bindTo=You bound '%s' to the Quest Tracker.
 tile.hqm:quest_portal_0.name=Quest Gate System
 tile.hqm:quest_portal_0.bindTo=You bound '%s' to the QGS
 tile.hqm:quest_portal_1.name=Solid Wall
@@ -157,6 +164,16 @@ hqm.taskType.reputation.title=Reputation task
 hqm.taskType.reputation.desc=A task where the player has to reach a certain reputation.
 hqm.taskType.reputationKill.title=Rep kill task
 hqm.taskType.reputationKill.desc=A task where the player has to kill other players with certain reputations.
+hqm.taskType.tame.title=Taming task
+hqm.taskType.tame.desc=A task where the player has to tame specific creatures.
+hqm.taskType.advancement.title=Advancement
+hqm.taskType.advancement.desc=A task where the player has to complete a specific advancement.
+hqm.taskType.completion.title=Quest Complete
+hqm.taskType.completion.desc=A task where the player must have already completed another quest.
+hqm.taskType.break.title=Break Block
+hqm.taskType.break.desc=A task where the player must break one or more blocks.
+hqm.taskType.place.title=Place Block
+hqm.taskType.place.desc=A task where the player must place one or more blocks.
 
 # ======================================
 #			DEATH TYPES
@@ -219,6 +236,7 @@ hqm.precision.precise=Precise detection
 hqm.precision.nbtFuzzy=NBT independent detection
 hqm.precision.fuzzy=Fuzzy detection
 hqm.precision.oreDict=Ore dictionary detection
+hqm.precision.nbtSubset=NBT subset detection
 
 # ======================================
 #			REPEAT TYPES
@@ -259,6 +277,7 @@ hqm.editMode.size.title=Change Size
 hqm.editMode.size.desc=Click on a quest to change its size, this is purely visual and has no impact on how the quest works.
 hqm.editMode.rename.title=Edit Text
 hqm.editMode.rename.desc=Click on the text you want to edit. Works with names and descriptions for quest sets, quests, tasks, main lore, reward groups and reward tiers.
+hqm.editMode.rename.invalid_set=Invalid name for set. Set names must be unique. Sets cannot be named "sets", "reputations", "bags", any of the Windows reserved filenames, or contain the characters < > : " \ / | ? or *.
 hqm.editMode.item.title=Change Item
 hqm.editMode.item.desc=Click on an item or item slot to open the item selector. This works for quest rewards and task items to give some examples.
 hqm.editMode.task.title=Create Task
@@ -273,16 +292,16 @@ hqm.editMode.tier.title=Set group tier
 hqm.editMode.tier.desc=Selected a group and then click on a tier to set the group's tier.
 hqm.editMode.bag.title=Reward Bags
 hqm.editMode.bag.desc=Open up the reward bag menu. Here you will be able to modify the group tiers and add groups of items for the reward bags.
-hqm.editMode.location.title=Edit Location
-hqm.editMode.location.desc=Edit the target location for location tasks.
+hqm.editMode.location.title=Edit Information
+hqm.editMode.location.desc=Edit the target location for location tasks, or edit the specified advancement for advancement tasks.
 hqm.editMode.repeatable.title=Set Repeatability
 hqm.editMode.repeatable.desc=Change if a quest should be repeatable or not, and if so, the properties of the repeatability.
 hqm.editMode.trigger.title=Trigger Quests
 hqm.editMode.trigger.desc=Specify any properties for trigger quests.
-hqm.editMode.mob.title=Edit Monster
-hqm.editMode.mob.desc=Edit the monster target for killing tasks.
+hqm.editMode.mob.title=Edit Creature
+hqm.editMode.mob.desc=Edit the creature target for killing and taming tasks.
 hqm.editMode.questSelection.title=Select Quest
-hqm.editMode.questSelection.desc=Mark a quest as the selected quest. When a quest is selected you can bind it to a Quest Tracker System or a Quest Gate System by right clicking it with a book.
+hqm.editMode.questSelection.desc=Mark a quest as the selected quest. When a quest is selected you can bind it to a Quest Tracker System or a Quest Gate System by right clicking it with a book. You can also bind it to a Quest Completed task by using the Name or Change Item tool on the task.
 hqm.editMode.questOption.title=Quest Option
 hqm.editMode.questOption.desc=Click on a quest to select it and then click on the quests you want to link it to. If an option linked quest is completed all quests it's linked to becomes invisible and uncompletable.\n\nHold shift and click on the selected quest to remove all its links.
 hqm.editMode.changeTask.title=Change Task
@@ -317,6 +336,11 @@ hqm.command.fileNotFound=File not found
 hqm.command.saveFailed=Saving %s failed
 hqm.command.savedTo=Quests saved to: %s
 hqm.command.questNotFound=Quest page %s not found
+hqm.command.editMode.enabled=Editing mode is now enabled.
+hqm.command.editMode.disabled=Editing mode is now disabled.
+hqm.command.editMode.server=Editing mode does not function properly on servers and has been disabled.
+hqm.command.editMode.useOP=This command now toggles edit mode in single-player. To receive an operator quest book, use /hqm op instead. This message can be disabled in the configuration.
+hqm.command.editMode.disableSync=You must disable Server Sync in your configuration in order to properly and safely edit your quests without losing data.
 
 hqm.command.info.help.start=Available commands are:
 hqm.command.help.syntax0=/hqm help <command>
@@ -395,6 +419,20 @@ hqm.mobTask.typeMatch.desc=Matching every monster that has the selected type or 
 hqm.mobTask.allKilled=All killed
 hqm.mobTask.partKills=%s[%s%%] killed
 hqm.mobTask.totalKills=Kill a total of %s
+# ======================================
+#           TAMING TASK
+# ======================================
+hqm.tameTask.reqKills=Required tame count
+hqm.tameTask.search=Search
+hqm.tameTask.nothingSelected=Nothing Selected
+hqm.tameTask.currentlySelected=Currently Selected
+hqm.tameTask.exactMatch.title=Exact Match
+hqm.tameTask.typeMatch.title=Type Match
+hqm.tameTask.exactMatch.desc=Only matching creatures with the selected type, subtypes are not counted towards the taming count
+hqm.tameTask.typeMatch.desc=Matching every creature that has the selected type or a subtype to the selected type.
+hqm.tameTask.allTamed=All tamed
+hqm.tameTask.partTames=%s[%s%%] tamed
+hqm.tameTask.totalTames=Tame a total of %s
 
 # ======================================
 #			REPUTATION REWARD
@@ -534,6 +572,7 @@ hqm.questBook.availableQuests=%s [[quest||quests]] available for completion
 hqm.questBook.unclaimedQuests=%s [[quest||quests]] with unclaimed rewards
 hqm.questBook.inclInvisiQuests=%s [[quest||quests]] including invisible ones
 hqm.questBook.moreInfo=Click here for more info
+hqm.questBook.itemRequirementProgress=Progress
 
 # ======================================
 #			    TEAM LIST
@@ -563,6 +602,17 @@ hqm.locationMenu.visited=Visited
 hqm.locationMenu.mAway=%sm away
 hqm.locationMenu.mRadius=%sm radius
 hqm.locationMenu.wrongDim=Wrong dimension
+# ======================================
+#		  ADVANCEMENT MENU
+# ======================================
+hqm.advancementMenu.visited=Completed
+# ======================================
+#		  COMPLETION MENU
+# ======================================
+hqm.completedMenu.visited=Completed
+hqm.completionTask.firstline=Use "Quest Select" tool
+hqm.completionTask.secondline=to pick a quest then
+hqm.completionTask.thirdline=click icon to set.
 
 # ======================================
 #		    REPEAT MENU
@@ -671,3 +721,5 @@ hqm.editType.kills=kills
 hqm.editType.repBar=rep bar
 hqm.editType.betweenSets=between sets
 hqm.editType.command=commands
+hqm.editType.advancement=advancements
+hqm.editType.questCompletion=quest completions
