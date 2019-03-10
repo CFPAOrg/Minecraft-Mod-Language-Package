@@ -88,6 +88,32 @@ psi.spellpiece.rpsideas.macro_caster_weak_raycast=Macro: Weak Caster Raycast
 psi.spellpiece.rpsideas.macro_caster_weak_raycast_axis=Macro: Weak Axis Caster Raycast
 psi.spellpiece.rpsideas.operator_weak_raycast=Operator: Vector Weak Raycast
 psi.spellpiece.rpsideas.operator_weak_raycast_axis=Operator: Vector Axis Weak Raycast
+psi.spellpiece.rpsideas.operator_swizzle=Operator: Recompose Number
+psi.spellpiece.rpsideas.operator_truncate=Operator: Truncate
+psi.spellpiece.rpsideas.operator_evaluate_comment=Operator: Evaluate Comment
+psi.spellpiece.rpsideas.operator_bitwise_and=Operator: Bitwise AND
+psi.spellpiece.rpsideas.operator_bitwise_or=Operator: Bitwise OR
+psi.spellpiece.rpsideas.operator_bitwise_xor=Operator: Bitwise XOR
+psi.spellpiece.rpsideas.operator_bitwise_not=Operator: Bitwise NOT
+psi.spellpiece.rpsideas.operator_bitwise_shl=Operator: Bitwise SHL
+psi.spellpiece.rpsideas.operator_bitwise_shr=Operator: Bitwise SHR
+psi.spellpiece.rpsideas.operator_bitwise_logic_shr=Operator: Bitwise LSHR
+psi.spellpiece.rpsideas.trick_labeled_debug=Trick: Labeled Debug
+psi.spellpiece.rpsideas.trick_labeled_channeled_debug=Trick: Labeled Channeled Debug
+psi.spellpiece.rpsideas.selector_keypad=Selector: Keypad Digit
+psi.spellpiece.rpsideas.trick_clairvoyance=Trick: Clairvoyance
+psi.spellpiece.rpsideas.trick_collapse_block_sequence=Trick: Collapse Block Sequence
+psi.spellpiece.rpsideas.trick_flashbang=Trick: Flashbang
+psi.spellpiece.rpsideas.trick_night_vision=Trick: Night Vision
+psi.spellpiece.rpsideas.trick_riot=Trick: Riot
+psi.spellpiece.rpsideas.trick_silence=Trick: Silence
+psi.spellpiece.rpsideas.trick_slot_match=Trick: Slot Match
+psi.spellpiece.rpsideas.trick_slot_change=Trick: Slot Change
+psi.spellpiece.rpsideas.trick_soothe=Trick: Soothe
+
+
+psi.spellpiece.rpsideas.cross_connector=Cross Connector
+psi.spellpiece.rpsideas.cross_connector.desc=Can connect two paths
 
 
 
@@ -181,11 +207,34 @@ psi.spellpiece.rpsideas.macro_caster_weak_raycast.desc=A macro for doing a weak 
 psi.spellpiece.rpsideas.macro_caster_weak_raycast_axis.desc=A macro for doing a weak axis raycast with caster position and caster look
 psi.spellpiece.rpsideas.operator_weak_raycast.desc=Gets a raycast result, stopping at liquids (max 32)
 psi.spellpiece.rpsideas.operator_weak_raycast_axis.desc=Gets a raycast side, stopping at liquids (max 32)
+psi.spellpiece.rpsideas.operator_swizzle.desc=Reconstructs a number according to the pattern in the mask
+psi.spellpiece.rpsideas.operator_truncate.desc=Chops off the fractional component of a number
+psi.spellpiece.rpsideas.operator_evaluate_comment.desc=Evaluates a comment as a mathematical expression
+psi.spellpiece.rpsideas.operator_bitwise_and.desc=a & b (& c)
+psi.spellpiece.rpsideas.operator_bitwise_or.desc=a | b (| c)
+psi.spellpiece.rpsideas.operator_bitwise_xor.desc=a ^ b (^ c)
+psi.spellpiece.rpsideas.operator_bitwise_not.desc=! a
+psi.spellpiece.rpsideas.operator_bitwise_shl.desc=a << b
+psi.spellpiece.rpsideas.operator_bitwise_shr.desc=a >> b
+psi.spellpiece.rpsideas.operator_bitwise_logic_shr.desc=a >>> b
+psi.spellpiece.rpsideas.trick_labeled_debug.desc=Prints out the target, labeled with the comment string
+psi.spellpiece.rpsideas.trick_labeled_channeled_debug.desc=Prints out the target labeled with the comment string, replacing any previous prints with the same label
+psi.spellpiece.rpsideas.selector_keypad.desc=Selects the last digit entered with the Keypad Item
+psi.spellpiece.rpsideas.trick_clairvoyance.desc=Dislocates the caster's camera by a set offset
+psi.spellpiece.rpsideas.trick_collapse_block_sequence.desc=Collapses a sequence of blocks, as if they were sand
+psi.spellpiece.rpsideas.trick_flashbang.desc=Temporarily dazes your enemies
+psi.spellpiece.rpsideas.trick_night_vision.desc=Applies a Night Vision effect
+psi.spellpiece.rpsideas.trick_riot.desc=Angers mobs and makes primed TNT explode
+psi.spellpiece.rpsideas.trick_silence.desc=Silences an area around a position temporarily
+psi.spellpiece.rpsideas.trick_slot_match.desc=Changes the building slot to match the block at the given position
+psi.spellpiece.rpsideas.trick_slot_change.desc=Changes the building slot to one of the 36 inventory slots.
+psi.spellpiece.rpsideas.trick_soothe.desc=Calms down mobs and delays a primed TNT explosion
 
 psi.datatype.String=String
 rpsideas.datatype.String=String
 rpsideas.datatype.BlockProperties=Properties
 rpsideas.spellerror.nthroot=ERROR: Even numbered roots can't accept negative numbers
+rpsideas.spellerror.invalid_base=ERROR: Cannot interpret bases below 2
 rpsideas.spellerror.length=ERROR: Lengths can't be negative
 rpsideas.spellerror.nonaxial=ERROR: Vector cannot be non-axial
 rpsideas.spellerror.outofbounds=ERROR: The provided index is not within the range of the list
@@ -202,10 +251,13 @@ rpsideas.spellerror.scale=Scale must be between (0,4]
 rpsideas.spellerror.text=ERROR: Text must be 32 characters or less
 rpsideas.spellerror.nan_comment=Comment value is not a number
 rpsideas.spellerror.comparator=Comparators can only measure in the 4 cardinal directions
+rpsideas.spellerror.nodigit=No digit was inputted from the keypad
+rpsideas.spellerror.not_positive_and_non_zero=Number must be positive and above zero
 
 rpsideas.spellparam.root=Root
 rpsideas.spellparam.degree=Degrees
 rpsideas.spellparam.radian=Radians
+rpsideas.spellparam.mask=Mask
 rpsideas.spellparam.list=Entity List
 rpsideas.spellparam.vector=Vector
 rpsideas.spellparam.axis=Axis
@@ -225,23 +277,12 @@ rpsideas.spellparam.ray_end=Ray End
 rpsideas.spellparam.ray_start=Ray Start
 rpsideas.spellparam.text=Text
 rpsideas.spellparam.scale=Scale
+rpsideas.spellparam.from1=From
+rpsideas.spellparam.from2=From
+rpsideas.spellparam.to1=To
+rpsideas.spellparam.to2=To
+rpsideas.spellparam.punching_bag=Punching Bag
 psi.datatype.BlockProperties=Block Properties
-
-rpsideas.learn.usage=/psi-learn <group> [player]
-rpsideas.learn.success=Successfully taught %s %s
-rpsideas.learn.success.all=Successfully taught %s all of Psi
-rpsideas.learn.should_not=%s already knows %s
-rpsideas.learn.players=%s isn't a player, only players can have Psi knowledge
-rpsideas.learn.not_a_group='%s' is not a valid Psi piece group
-rpsideas.learn.unknown=A CME has occurred. The cause is unknowable.
-
-rpsideas.unlearn.usage=/psi-unlearn <group> [player]
-rpsideas.unlearn.success=Successfully made %s forget %s
-rpsideas.unlearn.success.all=Successfully made %s forget all of Psi
-rpsideas.unlearn.should_not=%s doesn't know %s
-rpsideas.unlearn.players=%s isn't a player, only players can have Psi knowledge
-rpsideas.unlearn.not_a_group='%s' is not a valid Psi piece group
-rpsideas.unlearn.unknown=A CME has occurred. The cause is unknowable.
 
 key.category.rpsideas=Random PSIdeas
 rpsideas.kb.offhandcast=Use CAD in Off-Hand slot
@@ -258,7 +299,7 @@ rpsideas.kb.switchslot10=Switch to 10th spell
 rpsideas.kb.switchslot11=Switch to 11th spell
 rpsideas.kb.switchslot12=Switch to 12th spell
 
-rpsideas.misc.psidust=Psidust Infusion
+
 
 tile.rpsideas:conjuredblock.name=Ethereal Conjured Block
 tile.rpsideas:conjured_pulsar_block.name=Conjured Pulsar Light Block
@@ -342,11 +383,24 @@ item.rpsideas:spell_bullet_sniper_active.name=Sniper Spell Bullet
 item.rpsideas:creative_colorizer.name=Creative CAD Suspension
 item.rpsideas:creative_colorizer.desc=This strange liquid perfects your CAD's stats.
 
+item.rpsideas:flash_ring.desc=&bCan be reprogrammed at any time by using it while holding %s.
+item.rpsideas:inline_caster.desc=&bStores an extra spell. Uses your main CAD's stats.
+item.rpsideas:gauss_rifle.desc=&bFires rounds that disable PSI casters.
+item.rpsideas:gauss_rifle.desc1=&bBullet items do more damage, but inflict less Psishock.
+item.rpsideas:psi_cuff_key.desc=&bUsed to unlock Psi Cuffs with the same name.
+item.rpsideas:psi_cuffs.desc=&bCraft with named Cuff keys to arm them.
+item.rpsideas:psi_cuffs.desc1=&bUse on another player while holding %s to prevent them from casting spells.
+item.rpsideas:magazine.desc=&bHolds an extra wheel of spells.
+item.rpsideas:magazine.desc1=&bUse while holding %s to swap your entire spell set, as long as it's compatible.
 item.rpsideas:battlecaster.name=Integrated Battlecaster
 item.rpsideas:battlecaster.desc=&bCraft this with a PSI tool to make it fire
 item.rpsideas:battlecaster.desc1=&bwhen you attack with it instead of use it.
+item.rpsideas:keypad.desc=&bUse with the slot change keys to send a digit between 0-9 to the CAD
 rpsideas.battlecaster_attached=&bEvent Override&7: Melee
 
+item.rpsideas:overclocked_cad_assembly.name=Overclocked Ivory CAD Assembly
+item.rpsideas:underclocked_cad_assembly.name=Underclocked Ivory CAD Assembly
+item.rpsideas:keypad.name=Keypad
 item.rpsideas:bracelet_cad.name=Bracelet CAD
 item.rpsideas:psimetal_hoe.name=Psimetal Hoe
 item.rpsideas:ivory_pickaxe.name=Ivory Flowpick
@@ -358,6 +412,9 @@ item.rpsideas:ivory_hoe_xmas.name=☃ Ivory Flow Ho Hoe ☃
 item.rpsideas:ivory_shears.name=Ivory Flowshears
 item.rpsideas:ivory_rod.name=Ivory Flowrod
 item.rpsideas:ivory_rod_cast.name=Ivory Flowrod
+item.rpsideas:psimetal_shield.name=Psimetal Shield
+item.rpsideas:ivory_shield.name=Ivory Shield
+item.rpsideas:ebony_shield.name=Ebony Shield
 item.rpsideas:ebony_pickaxe.name=Ebony Flowpick
 item.rpsideas:ebony_shovel.name=Ebony Flowspade
 item.rpsideas:ebony_axe.name=Ebony Flowaxe
@@ -442,15 +499,28 @@ psi.piecegroup.rpsideas.visual_auditive=Sight and Sound
 psi.piecegroup.rpsideas.visual_auditive.desc=This group introduces tricks that evoke visual or auditory sensations.<br><br>Various visual effects, such as Trick: Conjure Circle and Trick: Conjure Text can be found here.<br><br>Trick: Emit Note plays a sound at a given position. Its parameters are as follows:<br><br>Instrument: [0,10], corresponding to the following:<br>[0] Harp/Piano<br>[1] Bass Drum<br>[2] Snare Drum<br>[3] Clicks and Sticks<br>[4] Bass Guitar<br>[5] Flute<br>[6] Bell<br>[7] Guitar<br>[8] Chime<br>[9] Xylophone<br>[10] Strong Harp<br><br>Volume: (0,1]<br><br>Pitch: [0,24], controls what note the trick plays.
 
 psi.piecegroup.rpsideas.advanced_loopcast_control=Flow Control II
-psi.piecegroup.rpsideas.advanced_loopcast_control.desc=This group introduces various tricks and selectors to further enhance the flow control of both loopcast and spells.<br><br>The main piece of this group is Selector: Sucess Counter, which, when placed on a piece of armor, returns the amount of times a spell has been cast.<br><br>Trick: Spin Chamber takes an offset. If it is negative, it will select the previous bullet in the CAD. If the offset is positive, it will select the next bullet.
+psi.piecegroup.rpsideas.advanced_loopcast_control.desc=This group introduces various tricks and selectors to further enhance the flow control of both loopcast and spells.<br><br>The main piece of this group is Selector: Success Counter, which, when placed on a piece of armor, returns the amount of times a spell has been cast.<br><br>Trick: Spin Chamber takes an offset. If it is negative, it will select the previous bullet in the CAD. If the offset is positive, it will select the next bullet.
 
 psi.piecegroup.rpsideas.inter_cad=CAD Networking
 psi.piecegroup.rpsideas.inter_cad.desc=This group introduces a way for you to communicate with other CADs in the world. By using Trick: Broadcast and supplying a channel and signal value it will broadcast a number to everyone in radius of the position given.<br><br>This has some restrictions: It can only be used once per spellcast, and you can only broadcast one number at a time. If you broadcast one after another it will overwrite the previous one.
 
+psi.piecegroup.rpsideas.radix_numerics=Radix Numerics
+psi.piecegroup.rpsideas.radix_numerics.desc=This group concerns math with other radices than 10, such as octal, hexadecimal, or binary. Note that, for most applications, these operators truncate their inputs. You can't use fractions here.<br><br>The perceptive among you may have noticed the "Radix" input in Operator: Get Comment Value. A radix is, in simple terms, the base of your number. Base 10 has a radix of 10, binary has a radix of 2, and so on.<br><br>The first set of tools is bitwise operators. These all treat numbers as if they had radix 2, performing special operations on them. Operator: Bitwise NOT, the red piece of this group, will flip all bits in a number, turning 1 to 0 and 0 to 1, often flipping the number's sign as well. Bitwise AND will only set a bit if both inputs have that bit set. Bitwise OR will set a bit if any input is set. Bitwise XOR will set a bit if it's set in precisely one input. Bitwise SHL will move all bits over to the left, effectively multiplying them by a power of two. Bitwise SHR will move all bits over to the right, effectively dividing them by a power of two. Bitwise LSHR will do the same, but will have different behavior involving negative numbers, effectively adding 2^31 - 1 to them before shifting.<br><br>Operator: Recompose Number is an operation called Swizzling, a common operation in computer graphics and information. The mask specifies the pieces of the number to take. For example, with the mask "01213" and the number "12345", the result will be composed of the specified digits: 0; the first digit, 5; the second digit, 4; the first digit, 5; the third digit, 3, resulting in 5453. Swizzling preserves the sign of the inputs, inverting it if the mask is negative. This can be done in other radices as well. For example, with a mask of "1042", a radix of 2, and a value of 9, or "1001" in binary, your output will be "1010" in binary, or 10. Swizzling is a very specific, but very powerful, mathematical tool.
+
+psi.piecegroup.rpsideas.living_manipulation=Living Manipulation
+psi.piecegroup.rpsideas.living_manipulation.desc=After mastering the art of reversing the Eidos you branch out in hopes to control other creatures.<br><br>This group introduces a way to control a living creature's emotions.<br><br>By pulling or pushing them you're able to calm them down or to anger them.
+
+rpsideas.spelldesc.enhanced=Enhanced by: %s
 rpsideas.spelldesc.requires=Requires: %s
 rpsideas.spellerror.tricknotenabled=ERROR: Trick doesn't have an enabling component.
 rpsideas.spellerror.trickdisabled=ERROR: Trick's enabling component doesn't have its requirements met.
 rpsideas.spellerror.nomana=ERROR: Not enough mana.
+rpsideas.spellerror.radius=A distance parameter is out of range.
+rpsideas.spellerror.slot=Slot must be an integer between [0,35]
+
+rpsideas.style.infiltration=Infiltration-Style Assemblies
+rpsideas.style.grenadier=Grenadier-Style Assemblies
+rpsideas.style.sniper=Sniper-Style Assemblies
 
 entity.gauss_pulse.name=Gauss Pulse
 entity.sniper_bullet.name=Sniper Round
@@ -459,6 +529,8 @@ entity.entity_fancy_circle.name=Conjured Circle
 
 rpsideas.potion.psishock=Psionic Shock
 rpsideas.potion.psipulse=Psionic Pulse
+rpsideas.potion.unseeing=Unseeing
+rpsideas.potion.flash=Flashbang
 rpsideas.brew.psishock=Eidos Distortion
 rpsideas.brew.psipulse=Cognitive Acceleration
 
@@ -504,8 +576,6 @@ rpsideas.channelid=Channel %d
 rpsideas.misc.slot_mismatch=Your magazine doesn't fit into this CAD.
 rpsideas.misc.too_complex=This spell is too large for the socket in your Spell Magazine.
 rpsideas.misc.too_complex_bullet=This spell is too large for the socket in your Spell Magazine to transfer.
-
-jei.rpsideas.category.trick=Spell Infusion
 
 
 rpsideas.param.range=Range
