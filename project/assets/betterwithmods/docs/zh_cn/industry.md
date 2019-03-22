@@ -1,3 +1,0 @@
-# Industry Module
-
-WIP
