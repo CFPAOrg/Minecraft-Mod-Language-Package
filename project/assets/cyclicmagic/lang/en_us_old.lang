@@ -77,6 +77,7 @@ button.terraria.deposit=Deposit
 button.terraria.lootall=Loot All
 button.terraria.quickstack=Quick Stack
 button.terraria.restock=Restock
+button.waypoint.dimension=Only in dimension 
 button.waypoint.cost=Exp Cost: 
 button.waypoint.distance=Distance: 
 command.gethome.bed=Your home bed was missing or obstructed
@@ -394,6 +395,7 @@ item.sack_ender.guide=This portable item opens with the same inventory from your
 item.sack_ender.name=Ender Sack
 item.sack_ender.tooltip=Portable Ender Chest
 
+item.sandstone_sword.name=Sandstone Sword
 item.sandstone_axe.name=Sandstone Axe
 item.sandstone_hoe.name=Sandstone Hoe
 item.sandstone_pickaxe.name=Sandstone Pickaxe
@@ -541,7 +543,7 @@ potion.magnet=Magnet
 potion.slowfall=Slowfall
 potion.snow=Snow
 potion.swimspeed=Swim Speed
-potion.waterwalk=Waterwalk
+potion.waterwalk=Waterwalking
 screentext.flying.seconds=Flying: 
 screentext.noclip.seconds=NoClip: 
 spell.builder.info=Build by matching the targeted block exactly out of your inventory
@@ -676,9 +678,13 @@ tile.block_workbench.guide=A crafting table that also keeps its inventory saved.
 tile.block_workbench.name=Workbench
 tile.block_workbench.tooltip=A Crafting table that keeps its inventory
 enchantment_stack.empty=Empty; use an enchanted book to store
-tile.block_screen.name=Digital Typewriter
-tile.block_screen.tooltip=Screen that displays text in any color
-tile.block_screen.guide=Like a sign with 8 rows instead of 4.  Set color in RGB values, and enter any text
+tile.block_screen.name=Text Projector
+tile.block_screen.tooltip=Projects text with control of font size, padding, and colour
+tile.block_screen.guide=Like a slightly advanced computerized sign
+tile.screen_target.name=Sensor Display
+tile.screen_target.tooltip=Display properties of a distant block
+tile.screen_target.guide=Target a block with a GPS marker, and you can display its fluid, energy, or item content
+
 button.pulsing.tooltip=Movement
 button.pulsing.name0=Stationary
 button.pulsing.name1=Rotating
@@ -691,18 +697,30 @@ button.offsetz.tooltip=Z Offset
 button.offsetblock.name0=Top
 button.offsetblock.name1=Center
 button.offsetblock.name2=Bottom
+screen.font=Font
+screen.style=Style
+screen.fontsize=Font Size
 screen.blue=Blue
 screen.red=Red
+screen.style0=Normal
+screen.style1=%
+screen.style2=Max
 screen.green=Green
 screen.alpha=Alpha Transparency
 screen.padding=Padding
+screen.x=Horizontal Padding
+screen.y=Vertical Padding
 screen.justification=Text Alignment
+button.screen.type=What is being measured
+button.screen.item=Items
+button.screen.fluid=Fluid
+button.screen.energy=Energy
 tile.apple.name=Apple Sprout
 tile.apple.tooltip=Plant below a leaf to grow
 tile.apple.guide=A seedling of an apple that grows below any block registered in the leaf ore dictionary.  Can grow with bonemeal, and requires a certain light level to grow.  Small chance of dropping a golden apple.
 tile.block_library_ctrl.name=Ender Library
 tile.block_library_ctrl.tooltip=Surround this with Ender Bookshelves to deposit
-tile.block_library_ctrl.guide=The controller block for Ender Bookshelves.  Easy deposit into nearby Ender Bookshelves.
+tile.block_library_ctrl.guide=The controller block for Ender Bookshelves.  Surround it with Ender Bookshelves so it can connect and it will distribute enchantments.  Can be automated by piping in enchanted books and pulling out empty books.  
 tile.block_library.name=Ender Bookshelf
 tile.block_library.tooltip=Four drawers of deep enchantment storage
 tile.block_library.guide=Use enchanted books on any corner.  Each corner stores many copies of that same enchantment.  Use a book on it to withdraw.  Hold a Redstone Torch in your hand and hit it to toggle display modes.  
@@ -937,6 +955,8 @@ tool.action.x3=3x3
 tool.action.x5=5x5
 tool.action.x7=7x7
 tool.action.x9=9x9
+tool.action.x19=1x9
+tool.action.x91=9x1
 tool_prospector.found=Found: 
 tool_prospector.none=Nothing of interest up to 
 tool_spelunker.cave=Hollow at distance 
@@ -974,6 +994,23 @@ potion.potency.4=V
 potion.potency.3=IV
 potion.potency.2=III
 
+item.potion.slowfall.guide=Reduces fall speed just like a parachute
+item.potion.bounce.guide=Continually bounce and gain momentum
+item.potion.frostwalker.guide=Frost walk over water with magic cold
+item.potion.butter.guide=Randomly drop items whenever you move
+item.potion.waterwalk.guide=Walk on water
+item.potion.swim.guide=Increase swim speed well beyond normal
+item.potion.magnet.guide=Pull items and exp towards you
+item.potion.resistance.guide=Resistance for standard combat defense
+item.potion.haste.guide=Haste for improved mining speed
+item.potion.ender.guide=No damage from ender pearl throws
+item.potion.snow.guide=Place snow wherever you walk
+item.potion.levitation.guide=Levitate out of control
+item.potion.healthboost.guide=Temporary boost to max health
+item.potion.saturation.guide=Food is satisfied completely
+item.potion.wither.guide=Withered
+item.potion.blindness.guide=Blinded
+
 potion.butter.oops=Butterfingers!  Dropped something when you moved.
 potion.effect.slowfall=Potion of Slowfall
 splash_potion.effect.slowfall=Splash Potion of Slowfall
@@ -991,10 +1028,10 @@ splash_potion.effect.butter2=Splash Potion of Butterfingers II
 lingering_potion.effect.butter2=Lingering Potion of Butterfingers II
 tipped_arrow.effect.butter2=Arrow of Butterfingers II
 
-potion.effect.waterwalk=Potion of Waterwalk
-splash_potion.effect.waterwalk=Splash Potion of Waterwalk
-lingering_potion.effect.waterwalk=Lingering Potion of Waterwalk
-tipped_arrow.effect.waterwalk=Arrow of Waterwalk
+potion.effect.waterwalk=Potion of Waterwalking
+splash_potion.effect.waterwalk=Splash Potion of Waterwalking
+lingering_potion.effect.waterwalk=Lingering Potion of Waterwalking
+tipped_arrow.effect.waterwalk=Arrow of Waterwalking
 
 potion.effect.snow=Potion of Snow
 splash_potion.effect.snow=Splash Potion of Snow
@@ -1011,15 +1048,15 @@ splash_potion.effect.swim2=Splash Potion of Swim Speed II
 lingering_potion.effect.swim2=Lingering Potion of Swim Speed II
 tipped_arrow.effect.swim2=Arrow of Swim Speed II
 
-potion.effect.bounce=Potion of Bounce
-splash_potion.effect.bounce=Splash Potion of Bounce
-lingering_potion.effect.bounce=Lingering Potion of Bounce
-tipped_arrow.effect.bounce=Arrow of Bounce
+potion.effect.bounce=Potion of Bouncing
+splash_potion.effect.bounce=Splash Potion of Bouncing
+lingering_potion.effect.bounce=Lingering Potion of Bouncing
+tipped_arrow.effect.bounce=Arrow of Bouncing
 
-potion.effect.magnet=Potion of Magnet
-splash_potion.effect.magnet=Splash Potion of Magnet
-lingering_potion.effect.magnet=Lingering Potion of Magnet
-tipped_arrow.effect.magnet=Arrow of Magnet
+potion.effect.magnet=Potion of Magnetism
+splash_potion.effect.magnet=Splash Potion of Magnetism
+lingering_potion.effect.magnet=Lingering Potion of Magnetism
+tipped_arrow.effect.magnet=Arrow of Magnetism
 
 potion.effect.haste=Potion of Haste
 splash_potion.effect.haste=Splash Potion of Haste
@@ -1064,11 +1101,16 @@ splash_potion.effect.saturation=Splash Potion of Saturation
 lingering_potion.effect.saturation=Lingering Potion of Saturation
 tipped_arrow.effect.saturation=Arrow of Saturation
 
+potion.effect.hunger=Potion of Hunger
+splash_potion.effect.hunger=Splash Potion of Hunger
+lingering_potion.effect.hunger=Lingering Potion of Hunger
+tipped_arrow.effect.hunger=Arrow of Hunger
+
 potion.frostwalker=Frost Walker
-potion.effect.frostwalker=Potion of Frost Walker
-splash_potion.effect.frostwalker=Splash Potion of Frost Walker
-lingering_potion.effect.frostwalker=Lingering Potion of Frost Walker
-tipped_arrow.effect.frostwalker=Arrow of Frost Walker
+potion.effect.frostwalker=Potion of Frostwalking
+splash_potion.effect.frostwalker=Splash Potion of Frostwalking
+lingering_potion.effect.frostwalker=Lingering Potion of Frostwalking
+tipped_arrow.effect.frostwalker=Arrow of Frostwalking
 
 tile.fluid_pump.name=Fluid Extraction Cable
 tile.fluid_pump.tooltip=Extract liquid into cables or machines
@@ -1340,7 +1382,7 @@ item.netherbrick_hoe.guide=Stone mining level with improved stats
 
 pump.rate=Transfer Rate
 
-
+pump.secondline=<- / -> 
 
 
 item.card_location.name=GPS Marker
@@ -1353,10 +1395,13 @@ wireless.empty=Bind a location to a GPS Marker
 wireless.dimension=Cannot cross dimensions
 
 
-tile.cable_wireless.name=Transfer Node
-tile.cable_wireless.tooltip=Wireless transmission of fluid and items
-tile.cable_wireless.guide=Wireless transmission of fluid and items
+tile.cable_wireless.name=Item Transfer Node
+tile.cable_wireless.tooltip=Wireless transmission of items
+tile.cable_wireless.guide=Wireless transmission of items
 
+tile.cable_wireless_fluid.name=Fluid Transfer Node
+tile.cable_wireless_fluid.tooltip=Wireless transmission of fluid
+tile.cable_wireless_fluid.guide=Wireless transmission of fluid
 
 tile.cable_wireless_energy.name=Energy Transfer Node
 tile.cable_wireless_energy.tooltip=Wireless transmission of energy
@@ -1395,3 +1440,30 @@ tile.water_candle.guide=Light with flint and steel.  Greatly increases natural m
 
 extended.toolbelt= key to open in tool-belt mode
 
+tile.glass_strong.name=Tempered Glass
+tile.glass_strong.tooltip=Immune to light and explosions
+tile.glass_strong.guide=Tempered with void properties to resist light.  Explosion resistant including wither
+
+item.crystallized_obsidian.name=Crystallized Obsidian
+item.crystallized_obsidian.tooltip=Crafting material
+item.crystallized_obsidian.guide=Crystal made from an obsidian alloy.  Crafting material
+
+item.crystal_sword.name=Crystal Sword
+item.crystal_pickaxe.name=Crystal Hoe
+item.crystal_spade.name=Crystal Shovel
+item.crystal_axe.name=Crystal Axe
+item.crystal_hoe.name=Crystal Hoe
+item.crystal_sword.guide=Crystal Sword
+item.crystal_pickaxe.guide=Crystal Hoe
+item.crystal_spade.guide=Crystal Shovel
+item.crystal_axe.guide=Crystal Axe
+item.crystal_hoe.guide=Crystal Hoe
+item.crystal_sword.tooltip=Crystal Sword
+item.crystal_pickaxe.tooltip=Crystal Hoe
+item.crystal_spade.tooltip=Crystal Shovel
+item.crystal_axe.tooltip=Crystal Axe
+item.crystal_hoe.tooltip=Crystal Hoe
+
+tile.fluid_drain.name=Fluid Collector
+tile.fluid_drain.guide=Drain fluid that is nearby and below, filling it with blocks
+tile.fluid_drain.tooltip=Drain fluid that is nearby and below, filling it with blocks

@@ -57,8 +57,7 @@ commands.rc.large.error=The selection is too big! (And if it weren't, this comma
 commands.structure.notGeneric=Structure '%s' is not generic!
 commands.structure.notRegistered=No structure found by name '%s'!
 
-commands.strucGen.noPlace=The structure can't find anywhere suitable to spawn!
-commands.strucGen.canceled=The structure generation was canceled!
+commands.strucGen.failure=The structure failed to spawn: %s
 commands.strucGen.noStructure=No structure registered by the name of '%s'
 
 commands.strucImport.noStructure=No structure registered by the name of '%s'
@@ -347,11 +346,12 @@ reccomplex.transformer.pillar=Pillar
 reccomplex.transformer.pillar.dest.block=Dest Block
 reccomplex.transformer.pillar.dest.metadata= Dest Metadata
 reccomplex.transformer.pillar.tooltip=Constructs pillars down to the floor
-reccomplex.transformer.replaceAll=Replace All
-reccomplex.transformer.replaceAll.tooltip=Replaces blocks uniformly
-reccomplex.transformer.replace=Replace
+reccomplex.transformer.replaceAll=Replace
+reccomplex.transformer.replaceAll.tooltip=Replaces blocks on generation
+reccomplex.transformer.replace.uniformity.true=Uniformly
+reccomplex.transformer.replace.uniformity.false=Each differently
+reccomplex.transformer.replace.uniformity.tooltip=Whether all blocks should be<br>replaced by the same block.
 reccomplex.transformer.replace.destinations=Replace With
-reccomplex.transformer.replace.tooltip=Replaces blocks individually
 
 reccomplex.transformer.ruins=Ruins
 reccomplex.transformer.ruins.tooltip=Deconstructs and decays the structure
@@ -480,6 +480,7 @@ reccomplex.worldscript.strucGen.rotation.random=Random (if rotatable)
 reccomplex.worldscript.strucGen.mirror.random=Random (if mirrorable)
 
 reccomplex.worldscript.holder=Holder
+reccomplex.worldscript.holder.tooltip=A script holding an area<br>that will generate from the<br>script on structure generation.<br>For complex use-cases, use<br>list generation instead.
 reccomplex.worldscript.holder.capture=§aCopy area
 reccomplex.worldscript.holder.delete=§cDelete held area
 reccomplex.worldscript.holder.switch=§bSwap Areas
@@ -563,6 +564,9 @@ reccomplex.gui.inventorygen.groupid=Group ID
 reccomplex.gui.inventorygen.multi.count=Item Count
 reccomplex.gui.inventorygen.single.chance=Item Chance
 
+gui.tweakStructures.generate=Gen
+gui.tweakStructures.generate.tooltip=Generate this structure.
+
 reccomplex.gui.blockpos=Position
 reccomplex.gui.blockpos.tooltip=The coordinates x, y and z.
 reccomplex.gui.blockpos.x=x
@@ -594,8 +598,8 @@ reccomplex.placer.factors.limit.ray.weight.tooltip=The ratio to which this area 
 
 reccomplex.placer.factors.limit.rays.move=Move
 reccomplex.placer.factors.limit.rays.move.tooltip=Move a specific amount of blocks.
-reccomplex.placer.factors.limit.rays.move.title=Move %s
-reccomplex.placer.factors.limit.rays.move.title.mark=Mark %s
+reccomplex.placer.factors.limit.rays.move.title=Move
+reccomplex.placer.factors.limit.rays.move.title.mark=Mark
 reccomplex.placer.factors.limit.rays.move.tooltip=Move up or down a specified distance
 reccomplex.placer.factors.limit.rays.move.distance=Distance
 
@@ -611,16 +615,12 @@ reccomplex.placer.factors.limit.rays.dynpos.type.world_height.tooltip=Top of the
 
 reccomplex.placer.factors.limit.rays.dynmove=Dynamic Move
 reccomplex.placer.factors.limit.rays.dynmove.tooltip=Move a dynamic amount of blocks
-reccomplex.placer.factors.limit.rays.dynmove.title.up=Up: %s
-reccomplex.placer.factors.limit.rays.dynmove.title.down=Down: %s
 reccomplex.placer.factors.limit.rays.dynmove.type=Amount
 reccomplex.placer.factors.limit.rays.dynmove.type.structure_height=Structure Height
 reccomplex.placer.factors.limit.rays.dynmove.type.structure_height.tooltip=The height of the spawning structure
 
 reccomplex.placer.factors.limit.rays.matcher=Finder
 reccomplex.placer.factors.limit.rays.matcher.tooltip=Move until the terrain fulfills<br>the set criteria.
-reccomplex.placer.factors.limit.rays.matcher.title.up=Finder (upwards)
-reccomplex.placer.factors.limit.rays.matcher.title.down=Finder (downwards)
 reccomplex.placer.factors.limit.rays.matcher.condition=Condition
 reccomplex.placer.factors.limit.rays.matcher.direction=Ray Direction
 reccomplex.placer.factors.limit.rays.matcher.ratio=Required Ratio
@@ -628,8 +628,6 @@ reccomplex.placer.factors.limit.rays.matcher.ratio.tooltip=The ratio of matched 
 
 reccomplex.placer.factors.limit.rays.average=Surface Finder
 reccomplex.placer.factors.limit.rays.average.tooltip=Find the average surface height<br>fulfilling the criteria.
-reccomplex.placer.factors.limit.rays.average.title.up=Average Ceiling
-reccomplex.placer.factors.limit.rays.average.title.down=Average Surface
 
 reccomplex.placer.factors.match=Match
 reccomplex.placer.factors.match.tooltip=Ensure specific blocks from the<br>structure to have fitting<br>terrain to spawn in.

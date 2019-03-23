@@ -326,7 +326,6 @@ guistrings.spawner.entity_list=Spawn List
 guistrings.spawner.min=Min
 guistrings.spawner.max=Max
 guistrings.spawner.total=Total
-guistrings.spawner.force_spawn=Forced Spawn
 guistrings.spawner.add_entity=Add Entity
 guistrings.spawner.remove=-
 guistrings.spawner.add=+
@@ -823,7 +822,7 @@ entity.ancientwarfarenpc.faction.bard.name=Faction Bard
 entity.ancientwarfarenpc.faction.siege_engineer.name=Faction Siege Engineer
 
 #commands
-command.aw.structure.usage=/awstructure save [templateName] OR /awstructure delete <templateName> [true to remove the config file] OR /awstructure build <templateName> <x> <y> <z> [north:east:south:west] OR /awstructure reload OR /awstructure scannersReloadMainSettings OR /awstructure scannersReexport OR /awstructure scannersStartProcessingCommands OR /awstructure scannersStopProcessingCommands
+command.aw.structure.usage=/awstructure save [templateName] OR /awstructure delete <templateName> [true to remove the config file] OR /awstructure build <templateName> <x> <y> <z> [north:east:south:west] OR /awstructure reload OR /awstructure name OR /awstructure scannersReexport [true to reload main settings]
 command.aw.structure.not_found=Template could not be located: %s
 command.aw.structure.file_not_found=File could not be located: %s
 command.aw.structure.template_removed=Template was removed: %s
@@ -832,6 +831,8 @@ command.aw.structure.built=Structure built: %s at: %s,%s,%s
 command.aw.structure.exported=Structure scanned and saved: %s
 command.aw.structure.incomplete_data=Not enough data in held item
 command.aw.structure.reloaded=Structure and Town templates reloaded
+command.aw.structure.name=Structure at current position: %s
+command.aw.structure.no_structure=There is no structure at current position
 command.aw.research.usage=/awresearch (add:remove:fill:clear) playerName [goalname for add/remove]
 command.aw.faction.usage=/awfaction (set | setall | get) (playername)
 command.aw.faction.set.usage=/awfaction set (playername) (faction) (amount)
@@ -1199,3 +1200,5 @@ keybind.vehicle.mouse.aim=Enable/Disable Mouse Aim
 keybind.vehicle.ammo.select=Open Ammo Selection GUI
 
 gui.ancientwarfarevehicles.ammo.no_ammo=Vehicle is not loaded with any ammo
+gui.ancientwarfarenpc.no_chest_access=This chest belongs to the %s. It will not open for you!
+

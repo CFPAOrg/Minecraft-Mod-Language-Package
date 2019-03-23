@@ -23,11 +23,13 @@ tile.ftbquests.chest.input_desc=Place items here to complete quests
 tile.ftbquests.chest.output=Output Slot
 tile.ftbquests.chest.output_desc=Rewards will appear here
 
+tile.ftbquests.loot_crate_storage.name=Loot Crate Storage
+tile.ftbquests.loot_crate_opener.name=Loot Crate Opener
+tile.ftbquests.loot_crate_opener.rightclick=Stored items: %d
+
 item.ftbquests.book.name=Quest Book
+item.ftbquests.book.disabled=Quest Book GUI is disabled!
 item.ftbquests.lootcrate.name=Loot Crate
-item.ftbquests.old_lootcrate.name=Old Loot Crate
-item.ftbquests.old_lootcrate.tooltip=Place in Crafting Table to convert to new one
-item.ftbquests.missing.name=Missing Item
 
 ftbquests.rarity.common=Common
 ftbquests.rarity.uncommon=Uncommon
@@ -49,6 +51,7 @@ ftbquests.completion_command=Completion Command
 ftbquests.dependencies=Dependencies
 ftbquests.dependency=Dependency
 
+ftbquests.null=None
 ftbquests.file=File
 ftbquests.file.completed=All chapters completed!
 ftbquests.file.allow_take_quest_blocks=Allow to Take Quest Blocks
@@ -62,6 +65,7 @@ ftbquests.file.defaults.consume_items=Task 'Consume Items'
 ftbquests.file.defaults.quest_shape=Quest Shape
 ftbquests.file.drop_loot_crates=Entities Drop Loot Crates
 ftbquests.file.loot_crate_no_drop=Entity Loot Crate Drop Empty Weight
+ftbquests.file.disable_gui=Disable GUI
 
 ftbquests.loot.entitydrops=Entity Drops
 ftbquests.loot.entitytype.passive=Passive
@@ -73,6 +77,10 @@ ftbquests.chapters=Chapters
 ftbquests.chapter.completed=Chapter completed!
 ftbquests.chapter.description=Description
 ftbquests.chapter.visibility=Visibility [WIP!]
+
+ftbquests.chapter.widget=Widget
+ftbquests.chapter.widget.text_field=Text Field
+ftbquests.chapter.widget.button=Button
 
 ftbquests.quest=Quest
 ftbquests.quests=Quests
@@ -94,6 +102,7 @@ ftbquests.quest.text=Text
 ftbquests.quest.can_repeat=Can be repeated
 ftbquests.quest.tasks_ignore_dependencies=Tasks Ignore Dependencies
 ftbquests.quest.tasks_ignore_dependencies.tooltip=Allow to start tasks without completing dependencies
+ftbquests.quest.guide_page=Guide Page
 
 ftbquests.gui.edit_file=Edit File
 ftbquests.gui.save_as_file=Save as File
@@ -122,6 +131,7 @@ ftbquests.gui.quick_complete.info_1=Submit all items
 ftbquests.gui.quick_complete.info_2=Claim all rewards
 ftbquests.gui.patreon=Like this mod? Consider supporting me on Patreon!
 ftbquests.gui.looping_dependencies=Looping dependencies!
+ftbquests.gui.open_in_guide=Open in Guide
 
 ftbquests.task=Task
 ftbquests.tasks=Tasks
@@ -160,6 +170,18 @@ ftbquests.task.ftbquests.stat.value=Value
 ftbquests.task.ftbquests.kill=Kill Entity
 ftbquests.task.ftbquests.kill.entity=Entity Name
 ftbquests.task.ftbquests.kill.value=Count
+
+ftbquests.task.ftbquests.location=Location
+ftbquests.task.ftbquests.location.dim=Dimension
+ftbquests.task.ftbquests.location.ignore_dim=Ignore Dimension
+ftbquests.task.ftbquests.location.x=X
+ftbquests.task.ftbquests.location.y=Y
+ftbquests.task.ftbquests.location.z=Z
+ftbquests.task.ftbquests.location.w=W
+ftbquests.task.ftbquests.location.h=H
+ftbquests.task.ftbquests.location.d=D
+
+ftbquests.task.ftbquests.checkmark=Checkmark
 
 ftbquests.task.ftbquests.buildcraft_mj=BuildCraft Energy
 ftbquests.task.ftbquests.buildcraft_mj.value=mJ
@@ -218,15 +240,19 @@ ftbquests.reward_table.loot_crate.passive_weight=Weight (Passive)
 ftbquests.reward_table.loot_crate.monster_weight=Weight (Monster)
 ftbquests.reward_table.loot_crate.boss_weight=Weight (Boss)
 
+ftbquests.leaderboard_progress=FTB Quests Progress
+jei.ftbquests.lootcrates=Loot Crates
+jei.ftbquests.lootcrates.chance=Chance: %s
+jei.ftbquests.lootcrates.no_chance=No item chance: %s
+jei.ftbquests.lootcrates.dropped_by=Dropped by:
+
 commands.ftbquests.usage=/ftbquests [subcommand]
 commands.ftbquests.editing_mode.usage=/ftbquests editing_mode [true|false|toggle] [player]
 commands.ftbquests.editing_mode.enabled=Editing Mode for %s Enabled
 commands.ftbquests.editing_mode.disabled=Editing Mode for %s Disabled
-commands.ftbquests.reset_progress.usage=/ftbquests reset_progress <team> [object ID]
-commands.ftbquests.reset_progress.invalid_id=Invalid Object ID!
-commands.ftbquests.reset_progress.reset=Progress has been reset!
-commands.ftbquests.complete_instantly.usage=/ftbquests complete_instantly <team> [object ID]
-commands.ftbquests.complete_instantly.text=Completed!
+commands.ftbquests.change_progress_progress.usage=/ftbquests change_progress <type> <team|*> [object ID]
+commands.ftbquests.change_progress_progress.invalid_id=Invalid Object ID!
+commands.ftbquests.change_progress_progress.text=Progress has been changed!
 commands.ftbquests.set_variable.usage=/ftbquests set_variable <team> <variable ID> <value>
 commands.ftbquests.set_variable.invalid_id=Invalid Variable ID!
 commands.ftbquests.set_variable.set=Variable set!
@@ -241,3 +267,5 @@ commands.ftbquests.import_rewards_from_chest.text=Imported %d items into %s
 commands.ftbquests.weigh_from_emc.usage=/ftbquests weigh_from_emc <reward_table> [missing_emc_weight]
 commands.ftbquests.weigh_from_emc.invalid_id=Invalid Reward Table ID!
 commands.ftbquests.weigh_from_emc.text=Changed item reward weight based on EMC in %s
+commands.ftbquests.export_rewards_to_chest.usage=/ftbquests export_rewards_to_chest <reward_table>
+commands.ftbquests.export_rewards_to_chest.text=Exported %s / %s items from '%s'

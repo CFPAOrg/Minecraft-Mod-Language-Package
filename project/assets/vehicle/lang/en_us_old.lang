@@ -9,6 +9,14 @@ vehicle.engine_info.acceleration=Acceleration
 vehicle.engine_info.additional_max_speed=Additional Max Speed
 vehicle.engine_info.fuel_consumption=Fuel Consumption
 
+vehicle.wheel_type.stock.name=Stock
+vehicle.wheel_type.sports.name=Sports
+vehicle.wheel_type.racing.name=Racing
+vehicle.wheel_type.off_road.name=Off Road
+vehicle.wheel_type.snow.name=Snow
+vehicle.wheel_type.all_terrain.name=All Terrain
+vehicle.wheel_type.plastic.name=Plastic
+
 item.small_engine.name=Small Engine
 item.large_engine.name=Large Engine
 item.electric_engine.name=Electric Engine
@@ -28,6 +36,7 @@ item.wheel.name=Wheel
 item.tow_bar.name=Tow Bar
 item.go_kart_steering_wheel.name=Steering Wheel
 item.handle_bar.name=Handle Bars
+item.hammer.name=Hammer
 
 tile.traffic_cone.name=Traffic Cone
 tile.boost_pad.name=Boost Pad
@@ -50,6 +59,7 @@ fluid.blaze_juice=Blaze Juice
 
 container.fluid_extractor=Fluid Extractor
 container.fluid_mixer=Fluid Mixer
+container.edit_vehicle.window_help=Click to move and rotate
 
 vehicle.info_help=Hold SHIFT for Info
 vehicle.tile.boost_pad.info=Drive on this Boost Pad to give your vehicle a speed boost!
@@ -80,6 +90,8 @@ entity.vehicle.jet_ski.name=Jet Ski
 entity.vehicle.trailer.name=Vehicle Trailer
 entity.vehicle.atv.name=ATV
 entity.vehicle.storage_trailer.name=Storage Trailer
+entity.vehicle.seeder_trailer.name=Seeder
+entity.vehicle.fertilizer_trailer.name=Fertilizer
 
 vehicle.config.title=MrCrayfish's Vehicle Mod Config
 vehicle.config.client=Client
@@ -88,6 +100,8 @@ vehicle.config.client.debug=Debug
 vehicle.config.client.debug.tooltip=Configuration options for debugging vehicles
 vehicle.config.client.debug.render_outlines=Render Vehicle Outlines
 vehicle.config.client.debug.render_outlines.tooltip=If true, renders an outline of all the elements on a vehicle's model. Useful for debugging interactions.
+vehicle.config.client.debug.raytracer.continuous_reload=Reload Raytracer Each Tick
+vehicle.config.client.debug.raytracer.continuous_reload.tooltip=If true, the raytracer will be reloaded each tick.	
 vehicle.config.client.interaction=Interaction
 vehicle.config.client.interaction.tooltip=Configuration options for vehicle interaction
 vehicle.config.client.interaction.left_click=Left-Click Enabled
@@ -105,8 +119,14 @@ vehicle.config.server=Server
 vehicle.config.server.tooltip=Server-only configs
 vehicle.config.server.fuel_enabled=Fuel Enabled
 vehicle.config.server.fuel_enabled.tooltip=If true, vehicles will require fuel for them to be driven.
+vehicle.config.server.vehicle_damage=Vehicle Damage
+vehicle.config.server.vehicle_damage.tooltip=If true, vehicles will take damage.
 vehicle.config.server.trailer_detach_threshold=Trailed Detach Threshold
 vehicle.config.server.trailer_detach_threshold.tooltip=The distance before the trailer detaches from a vehicle
+vehicle.config.server.trailer_sync_cooldown=Trailer Sync Cooldown
+vehicle.config.server.trailer_sync_cooldown.tooltip=The amount of ticks to wait before syncing data to clients about the trailer connection. This is important for smooth trailer movement on client side.
+vehicle.config.server.trailer_inventory_sync_cooldown=Trailer Inventory Sync Cooldown
+vehicle.config.server.trailer_inventory_sync_cooldown.tooltip=The amount of ticks to wait before syncing trailer inventory to tracking clients. If the value is set to 0 or less, the inventory will not sync and will save on network usage.
 
 vehicle.chat.pump.power=§bPower Mode:§r %s
 vehicle.chat.pump.power.off=requires signal off

@@ -30,13 +30,6 @@ tile.uranium_ore.name=Uranium Ore
 
 tile.surface_ice.name=Surface Ice
 
-tile.mars_diamond.name=Diamond Ore
-tile.mars_gold.name=Gold Ore
-tile.mars_coal.name=Coal Ore
-tile.mars_redstone.name=Redstone Ore
-tile.mars_silicon.name=Silicon Ore
-tile.mars_aluminum.name=Aluminum Ore
-
 tile.futureglass_none.name=Future Glass
 tile.futureglass_black.name=Black Future Glass
 tile.futureglass_red.name=Red Future Glass
@@ -74,8 +67,8 @@ tile.io_sulfur_ore.name=Sulfur Ore
 tile.io_volcanic_ore.name=Volcanic Ore
 tile.io_lava_geyser.name=Io Lava Geyser
 tile.io_sulfur_geyser.name=Io Sulfur Geyser
-tile.io_dungeon_top.name=Io Dungeon Top
-tile.io_dungeon_floor.name=Io Dungeon Floor
+tile.io_top.name=Io Dungeon Top
+tile.io_floor.name=Io Dungeon Floor
 
 tile.europa_grunt.name=Europa Surface Ice
 tile.europa_stone.name=Europa Stone
@@ -119,7 +112,7 @@ tile.proxima_b_tin_ore.name=Tin Ore
 tile.proxima_b_copper_ore.name=Copper Ore
 tile.proxima_b_coal_ore.name=Coal Ore
 tile.proxima_b_silicon_ore.name=Silicon Ore
-tile.proxima_b_emerald_ore.name=Emerald Ore
+tile.proxima_b_diamond_ore.name=Diamond Ore
 tile.proxima_b_log_1.name=Burnt Wood
 tile.proxima_b_log_2.name=Frozen Wood
 # |/////////////////////////////////////////|
@@ -147,7 +140,7 @@ tile.universal_recycler.name=Universal Recycler
 tile.universal_recycler.desc=Recycles one resource in another. So, too, can recycle the material into a liquid.
 
 tile.liquid_extractor.name=Liquid Extractor
-tile.liquid_extractor.desc=Collects liquid under itself. Can receive heavy water when the module is installed.
+tile.liquid_extractor.desc=Collects liquid under itself.
 
 tile.liquid_separator.name=Liquid Separator
 tile.liquid_separator.desc=Separates the liquid into its component parts or connects the parts together.
@@ -185,6 +178,12 @@ tile.gas_burner.desc=Burns supplied gas.
 tile.oxygen_storage_module_1.name=Advanced Oxygen Module
 tile.oxygen_storage_module_1.desc=Improved version of Oxygen Storage. It can store 4 times more oxygen.
 
+tile.solarwind_panel.name=Solarwind Panel
+tile.solarwind_panel.desc=Converts the solar wind into energy. Don't work on a planet's with atmosphere.
+
+tile.advanced_landing_pad.name=Advanced Landing Pad
+tile.advanced_landing_pad.desc=Advanced landing pad for rockets. Size 5x5.
+
 tile.port_nuclear_reactor.name=[WIP] Portable Nulear Reactor
 
 tile.basic_frame.name=Based Machine Frame
@@ -194,6 +193,7 @@ tile.coefficient.desc=Coefficient of generation
 tile.coefficientcraft.desc=Coefficient of speed craft
 
 tile.ceres_bricks.name=Ceres Dungeon Brick
+tile.io_bricks.name=[WIP] Io Dungeon Brick
 
 tile.treasure_t4.name=Treasure Chest Tier 4
 tile.treasure_t4.desc=Treasure Chests 4th tier will be generated at Ceres Dungeons. Available to open after kill the final boss.
@@ -261,7 +261,11 @@ item.module_smallcanister.name=Blank Fuel Tank
 item.module_lander_1.name=Lander Tier 1
 item.module_lander_2.name=Lander Tier 2
 item.module_lander_3.name=Lander Tier 3
-
+item.ion_engine.name=[WIP] Ion Engine
+item.plasma_engine.name=[WIP] Plasma Engine
+item.sublight_engine.name=Sublight Engine
+item.blackhole_engine.name=[WIP] Black Hole Engine
+ 
 item.rocket_cone.name=Durable Nose Cone
 item.rocket_body.name=Durable Rocket Body
 item.rocket_engine.name=Durable Rocket Engine
@@ -319,6 +323,7 @@ gui.module_pressure.desc= Slot for the module "Stabilization". Creates a protect
 gui.temp_shield_control.desc=Provides protection against corrosion of atmosphere, but degrade over time.
 gui.emergency_portable_teleport.desc=Emergency teleport to anchor point. Works with HP < 6. Shift+Right Click on teleport allows you to snap a point, on any block - enable/disable.
 
+
 gui.not_attached.desc=Not attached
 gui.attached.desc=Attached:
 gui.enabled.desc=Enabled
@@ -343,7 +348,10 @@ gui.message.needoxygenthermal.food=Is necessary oxygen and thermal control to us
 
 gui.message.noradiation=You not have solar radiation! It's good!
 gui.message.emergency_teleport=Emergency teleport successfully used. Coordinates:
+gui.message_can_find_in_dungeon=Can find in dungeons.
 
+gui.message.need_advanced_lp.desc=Can place only on Advanced Landing Pad.
+gui.message.engine_type.name=Engine Type:
 gui.message.effect_visible.name=Effects visible
 gui.tank.passive_oxygen_regen.desc1=Passively generate oxygen
 gui.tank.passive_oxygen_regen.desc2=if the player is in a suitable sphere (bubble, sealed room).
@@ -377,6 +385,14 @@ gui.module.stepassist=Increased Step
 gui.module.stepassist.desc=It would seem that the installation of the slimeball will lead nowhere ... But now you can run in blocks, the word is running up the stairs!
 gui.module.jump=High Jump
 gui.module.jump.desc=Installing the pistons was one of the good ideas. Now your jump is 2 times higher than usual!
+
+gui.module.sublight_engine=Sublight Engine
+gui.module.sublight_engine.desc=The engine of the new generation. Lets leave the current star system.
+
+gui.message.forrbiden_modules.name=Incompatible with:
+gui.module.active=Active module
+gui.module.passive=Passive module
+gui.module.empty_slot=Empty slot. Place item in slot.
 
 # |/////////////////////////////////////////|
 #||||||||||||||Creative Tabs|||||||||||||||
@@ -429,6 +445,15 @@ solarsystem.proxima=Proxima Centauri
 star.proxima=Proxima Centauri
 planet.proxima_b=Proxima B
 
+solarsystem.barnards=Barnard's System
+star.barnarda_a=Barnarda A
+planet.barnarda_b=Barnarda B
+planet.barnarda_c=Barnarda C
+planet.barnarda_d=Barnarda D
+planet.barnarda_e=Barnarda E
+moon.barnarda_b1=Barnarda B1
+moon.barnarda_c1=Barnarda C1
+moon.barnarda_c2=Barnarda C2
 #|/////////////////////////////////////////|
 #|||||||||||||||||||Book||||||||||||||||||||
 #|\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|
@@ -455,9 +480,6 @@ book.page.solarsystem.asteroids=The asteroid belt is a massive cluster of astero
 book.page.solarsystem.ceres=Ceres is a dwarf planet in the Asteroid Belt. It contains copious amounts of meteoric iron and dolomite crystals.
 book.page.solarsystem.jupiter=Jupiter - Gas giant with stone moons that are available to the reachable.
 book.page.solarsystem.callisto=Callisto - the farthest moon of Jupiter.
-
-
-
 #|/////////////////////////////////////////|
 #|||||||||||||||Book-Mechanics||||||||||||||
 #|\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|
