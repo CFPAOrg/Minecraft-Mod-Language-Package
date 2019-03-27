@@ -283,10 +283,13 @@ gui.remote.button.importRemoteButton=Import an existing Remote lay-out from anot
 gui.remote.button.pastebinButton=Import/Export layout from/to Pastebin.
 gui.remote.tooltip=Tooltip:
 remote.checkbox.name=CheckBox
+remote.checkbox.tooltip=A toggleable button which assigns 1 to the linked variable's X value when checked, and 0 when not checked.
 remote.label.name=Label
+remote.label.tooltip=A text label with an optional tooltip. For informational purposes only; does not have a linked variable.
 remote.button.name=Button
+remote.button.tooltip=A simple push button which directly assigns it values to the linked variable when clicked.
 remote.dropdown.name=Drop-down
-remote.dropdown.tooltip=A set of text elements which the user can choose from. The assigned variable will be set to the selected index.
+remote.dropdown.tooltip=A set of text elements which the user can choose from. The linked variable's X value is set to the (0-based) index of the selected element.
 gui.remote.label.tooltip=The text displayed on this widget.
 gui.remote.variable.tooltip=The variable modified by this widget.
 gui.remote.button.value.tooltip=When this button is pressed, the variable will be set to this coordinate.
@@ -295,7 +298,9 @@ gui.remote.enable.tooltip=When specifying a variable, this widget only will be v
 gui.remote.enableValue=Enabled when variable equals:
 gui.remote.enableValue.tooltip=The value the variable needs to equal to enable the widget.
 gui.remote.dropdown.dropDownElements=Drop-down elements:
-gui.remote.dropdown.dropDownElements.tooltip=Specifies the drop down elements. Every element needs to be separated with a ','.
+gui.remote.dropdown.dropDownElements.tooltip=Specifies the drop down elements. Every element must be separated with a ','.
+gui.remote.dropdown.sort=Sorted
+gui.remote.dropdown.sort.tooltip=If checked, sort the list of elements in alphabetical order. If unchecked, elements are added in the order you provided.
 
 # entities
 entity.Drone.name=Drone
@@ -349,7 +354,7 @@ pneumaticHelmet.hacking.finished.killed=Killed
 
 # Info
 gui.tab.info=Information
-gui.tab.info.assistIGW=For more info, install the In-Game Wiki Mod.
+gui.tab.info.assistIGW=For more detailed info, install IGW-Mod or Patchouli.
 
 gui.tab.info.tubeModule=§0In this interface you can exactly define how a module should behave dependent on the redstone signal. You can define a formula.
 gui.tab.info.heat=This machine requires or produces heat. Heat can be applied by placing a block that generates heat next to this machine. Think of a Vortex Tube (fast, but requires power), but also Lava (slow) and Torches (very slow). To cool down a machine, remove the heat sources and/or speed up the process by placing down Ice.
@@ -737,9 +742,12 @@ gui.progWidget.blockRightClick.sneaking.tooltip=When checked, the Drone will sne
 gui.progWidget.digAndPlace.useMaxActions=Limit block interactions
 gui.progWidget.digAndPlace.useMaxActions.tooltip=When checked, only the specified amount of blocks will be interacted with until the next puzzle piece is executed.
 gui.progWidget.liquidExport.placeFluidInWorld=Place fluid in world
-gui.progWidget.coordinateOperator.plus_minus=+ -
-gui.progWidget.coordinateOperator.multiply_divide=* /
-gui.progWidget.coordinateOperator.max_min=Max Min
+gui.progWidget.coordinateOperator.plus_minus=Add/Subtract
+gui.progWidget.coordinateOperator.plus_minus.hint=The variable will be set to the result of adding all the coordinates on the right of this piece, and subtracting all the coordinates to the left.
+gui.progWidget.coordinateOperator.multiply_divide=Multiply/Divide
+gui.progWidget.coordinateOperator.multiply_divide.hint=The variable will be set to the result of multiplying it by all the coordinates on the right of this piece, and dividing it by all the coordinates on the left.
+gui.progWidget.coordinateOperator.max_min=Min/Max
+gui.progWidget.coordinateOperator.max_min.hint=The variable will be set (X/Y/Z independently) to the largest coordinate from the pieces on the right, and smallest coordinate from the pieces on the left.
 gui.progWidget.externalProgram.shareVariables=Share Variables
 gui.progWidget.externalProgram.shareVariables.tooltip=When checked, the variables stored in the calling program will be shared with the called program.
 gui.progWidget.harvest.requiresHoe=Requires Hoe
@@ -767,6 +775,7 @@ gui.progWidget.label.error.noJumpLocation=No place to jump to. Attach a Text puz
 gui.progWidget.liquidFilter.error.noLiquid=No liquid selected in the filter.
 gui.progWidget.crafting.error.noCraftingRecipe=No valid crafting recipe set.
 gui.progWidget.coordinateOperator.noParameter=No parameters!
+gui.progWidget.coordinateOperator.divideByZero=Attempt to divide by zero!
 
 gui.progWidget.general.debug.cantNavigate=Can't navigate to one or more blocks.
 gui.progWidget.blockInteraction.debug.noBlocksValid=No blocks can be interacted with.
@@ -898,6 +907,8 @@ pneumaticHelmet.message.coordinateTracker.harderRouteFound=Found a non-ideal rou
 pneumaticHelmet.message.coordinateTracker.noRouteFound=Unable to find a route to the surface!
 pneumaticHelmet.message.targetWarning=%s is targeting you!
 
+jetboots.module.builderMode=Builder Mode
+
 blockTracker.module.hackables=Hackables
 blockTracker.module.inventories=Inventories
 blockTracker.module.misc=Miscellaneous Blocks
@@ -926,6 +937,7 @@ blockTracker.message.stopSpam=Stopped spam on %s
 gui.tooltip.programmable.invalidPieces=Pieces displayed in red are not valid here.
 gui.tooltip.programmable.requiredPieces=Required puzzle pieces:
 gui.tooltip.doesNotDespawn=§aThis item does not despawn.
+gui.tooltip.gunAmmo.loaded=Loaded Ammo:
 gui.tooltip.gunAmmo.ammoRemaining=Ammo: §f%d / %d
 gui.tooltip.gunAmmo=§dPotion type:
 gui.tooltip.gunAmmo.combineWithPotion=§oCraft with a Potion to tip the bullets.
@@ -933,13 +945,13 @@ gui.tooltip.gunAmmo.splash=§aSplash
 gui.tooltip.gunAmmo.lingering=§aLingering
 gui.tooltip.sneakForInfo=Sneak for info
 gui.tooltip.maxPressure=Max pressure: %s bar
+gui.tooltip.pressure=Pressure: %s bar
 gui.tooltip.amadronTablet.itemLocation=Item Providing Location: %s, %s, %s in dimension %s
 gui.tooltip.amadronTablet.fluidLocation=Fluid Providing Location: %s, %s, %s in dimension %s
 gui.tooltip.amadronTablet.selectItemLocation=Right click an inventory to allow it to provide items to vendors.
 gui.tooltip.amadronTablet.selectFluidLocation=Right click a tank to allow it to provide fluids to vendors.
 gui.tooltip.gpsTool.variable=Linked variable: "#%s"
 gui.tooltip.aerial_interface.xpDisabled=XP handling disabled
-gui.tooltip.minigun.ammoCount=§fTotal rounds:§e %d (in %d cartridges)
 
 # Item tooltips
 gui.tooltip.item.plastic_bucket=Place in a Plastic Mixer (along with some dyes) to solidify into solid Plastic.
@@ -1193,6 +1205,8 @@ achievement.logisticsConfigurator=Smart Configuration
 achievement.logisticsConfigurator.desc=Make a Logistics Configurator to manage your Logistics frames. This tool also works on attachments like the Heat Frame, Spawner Agitator and Crop Supports.
 achievement.logisticsDrone=Clever Little Helper
 achievement.logisticsDrone.desc=Create and deploy a Logistics Drone to move items around your logistics network.
+achievement.minigun=Say Hello to my Little Friend
+achievement.minigun.desc=Craft a Minigun.
 
 achievement.dw9x9=The Perfect Size
 achievement.dw9x9.desc=Build a 9x9 house made out of Cobblestone, the perfect size according to Direwolf20.

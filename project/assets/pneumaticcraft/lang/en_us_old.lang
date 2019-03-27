@@ -89,7 +89,7 @@ item.capacitor.name=Capacitor
 item.printed_circuit_board.name=Printed Circuit Board
 item.failed_pcb.name=Failed PCB
 item.network_component.name=Network Component
-item.stop_worm.name=STOP! -Worm
+item.stop_worm.name=STOP! Worm
 item.nuke_virus.name=Nuke Virus
 item.compressed_iron_gear.name=Compressed Iron Gear
 item.pneumatic_wrench.name=Pneumatic Wrench
@@ -229,8 +229,8 @@ programmingPuzzle.blockRightClick.name=Right Click Block
 programmingPuzzle.computerCraft.name=Computer Control
 programmingPuzzle.dropItem.name=Drop Items
 programmingPuzzle.emitRedstone.name=Emit Redstone
-programmingPuzzle.liquidExport.name=Export Liquid
-programmingPuzzle.liquidImport.name=Import Liquid
+programmingPuzzle.liquidExport.name=Export Fluid
+programmingPuzzle.liquidImport.name=Import Fluid
 programmingPuzzle.entityExport.name=Export Entity
 programmingPuzzle.entityImport.name=Import Entity
 programmingPuzzle.label.name=Label
@@ -253,15 +253,15 @@ programmingPuzzle.conditionCoordinate.name=Condition: Coordinate
 programmingPuzzle.conditionRedstone.name=Condition: Redstone
 programmingPuzzle.conditionItemInventory.name=Condition: Items
 programmingPuzzle.conditionBlock.name=Condition: Block
-programmingPuzzle.conditionLiquidInventory.name=Condition: Liquid
+programmingPuzzle.conditionLiquidInventory.name=Condition: Fluid
 programmingPuzzle.conditionEntity.name=Condition: Entity
 programmingPuzzle.conditionPressure.name=Condition: Pressure
 programmingPuzzle.conditionLight.name=Condition: Light Level
 programmingPuzzle.droneConditionItem.name=Drone Condition: Items
-programmingPuzzle.droneConditionLiquid.name=Drone Condition: Liquid
+programmingPuzzle.droneConditionLiquid.name=Drone Condition: Fluid
 programmingPuzzle.droneConditionEntity.name=Drone Condition: Entity
 programmingPuzzle.droneConditionPressure.name=Drone Condition: Pressure
-programmingPuzzle.liquidFilter.name=Liquid Filter
+programmingPuzzle.liquidFilter.name=Fluid Filter
 programmingPuzzle.rfImport.name=Import RF
 programmingPuzzle.rfExport.name=Export RF
 programmingPuzzle.conditionRF.name=Condition: RF
@@ -283,10 +283,13 @@ gui.remote.button.importRemoteButton=Import an existing Remote lay-out from anot
 gui.remote.button.pastebinButton=Import/Export layout from/to Pastebin.
 gui.remote.tooltip=Tooltip:
 remote.checkbox.name=CheckBox
+remote.checkbox.tooltip=A toggleable button which assigns 1 to the linked variable's X value when checked, and 0 when not checked.
 remote.label.name=Label
+remote.label.tooltip=A text label with an optional tooltip. For informational purposes only; does not have a linked variable.
 remote.button.name=Button
+remote.button.tooltip=A simple push button which directly assigns it values to the linked variable when clicked.
 remote.dropdown.name=Drop-down
-remote.dropdown.tooltip=A set of text elements which the user can choose from. The assigned variable will be set to the selected index.
+remote.dropdown.tooltip=A set of text elements which the user can choose from. The linked variable's X value is set to the (0-based) index of the selected element.
 gui.remote.label.tooltip=The text displayed on this widget.
 gui.remote.variable.tooltip=The variable modified by this widget.
 gui.remote.button.value.tooltip=When this button is pressed, the variable will be set to this coordinate.
@@ -295,7 +298,9 @@ gui.remote.enable.tooltip=When specifying a variable, this widget only will be v
 gui.remote.enableValue=Enabled when variable equals:
 gui.remote.enableValue.tooltip=The value the variable needs to equal to enable the widget.
 gui.remote.dropdown.dropDownElements=Drop-down elements:
-gui.remote.dropdown.dropDownElements.tooltip=Specifies the drop down elements. Every element needs to be separated with a ','.
+gui.remote.dropdown.dropDownElements.tooltip=Specifies the drop down elements. Every element must be separated with a ','.
+gui.remote.dropdown.sort=Sorted
+gui.remote.dropdown.sort.tooltip=If checked, sort the list of elements in alphabetical order. If unchecked, elements are added in the order you provided.
 
 # entities
 entity.Drone.name=Drone
@@ -349,7 +354,7 @@ pneumaticHelmet.hacking.finished.killed=Killed
 
 # Info
 gui.tab.info=Information
-gui.tab.info.assistIGW=For more info, install the In-Game Wiki Mod.
+gui.tab.info.assistIGW=For more detailed info, install IGW-Mod or Patchouli.
 
 gui.tab.info.tubeModule=§0In this interface you can exactly define how a module should behave dependent on the redstone signal. You can define a formula.
 gui.tab.info.heat=This machine requires or produces heat. Heat can be applied by placing a block that generates heat next to this machine. Think of a Vortex Tube (fast, but requires power), but also Lava (slow) and Torches (very slow). To cool down a machine, remove the heat sources and/or speed up the process by placing down Ice.
@@ -531,6 +536,7 @@ gui.tab.upgrades.tile.assembly_controller=§7§nSpeed Upgrade (max = 10) \n§0Al
 gui.tab.upgrades.tile.charging_station=§7§nSpeed Upgrade (max = 10) \n§0The Charging Station will be able to (dis)charge items faster. \n§7§nDispenser Upgrade \n§0Adds a charge pad onto the Charging Station, allowing it to (dis)charge any Drones, items, and player inventory items that are on top of the Charging Station.
 gui.tab.upgrades.tile.elevator_base=§7§nSpeed Upgrade (max = 10) \n§0The elevator will ascend/descend faster (at a higher pressure cost). \n§7§nCharging Upgrade (max = 4) \n§0Charging Upgrades allow the elevator to reclaim some of the air used to ascend when the elevator descends. This comes at a cost of slightly slowed descent. Up to 4 Charging Upgrades can be installed for progressively better air reclamation and slower descent (max: 60%% air reclaimed & 40%% slower descent).
 gui.tab.upgrades.tile.omnidirectional_hopper=§7§nSpeed Upgrade (max = 11) \n§0Increases the speed at which the Hopper transfers items.
+gui.tab.upgrades.tile.omnidirectional_hopper.dispenser=§7§nDispenser Upgrade \n§0Ejects items into the world at the output side (if there's no inventory to take them).
 gui.tab.upgrades.tile.liquid_hopper=§7§nSpeed Upgrade (max = 11) \n§0Increases the speed at which the Hopper transfers liquid.  With 11 Speed Upgrades, the Liquid Hopper can transfer its entire contents in one tick.
 gui.tab.upgrades.tile.liquid_hopper.dispenser=\n§7§nDispenser Upgrade \n§0Sucks any liquid block at the input side of the Hopper, and places down any liquid at the output side. Can be used for example as water pump.
 gui.tab.upgrades.tile.pneumatic_door_base=§7§nRange Upgrade \n§0Increases the player detection range by one block for every upgrade. \n§7Speed Upgrade \n§0Increases the speed at which the door opens/closes.
@@ -897,6 +903,8 @@ pneumaticHelmet.message.coordinateTracker.harderRouteFound=Found a non-ideal rou
 pneumaticHelmet.message.coordinateTracker.noRouteFound=Unable to find a route to the surface!
 pneumaticHelmet.message.targetWarning=%s is targeting you!
 
+jetboots.module.builderMode=Builder Mode
+
 blockTracker.module.hackables=Hackables
 blockTracker.module.inventories=Inventories
 blockTracker.module.misc=Miscellaneous Blocks
@@ -932,6 +940,7 @@ gui.tooltip.gunAmmo.splash=§aSplash
 gui.tooltip.gunAmmo.lingering=§aLingering
 gui.tooltip.sneakForInfo=Sneak for info
 gui.tooltip.maxPressure=Max pressure: %s bar
+gui.tooltip.pressure=Pressure: %s bar
 gui.tooltip.amadronTablet.itemLocation=Item Providing Location: %s, %s, %s in dimension %s
 gui.tooltip.amadronTablet.fluidLocation=Fluid Providing Location: %s, %s, %s in dimension %s
 gui.tooltip.amadronTablet.selectItemLocation=Right click an inventory to allow it to provide items to vendors.
@@ -1012,9 +1021,11 @@ pneumaticcraft.armor.options=Pneumatic Armor General Options
 pneumaticcraft.helmet.hack=Pneumatic Helmet Hacking
 pneumaticcraft.helmet.debugging.drone=Pneumatic Helmet Drone Debugging
 pneumaticcraft.boots.kick=Pneumatic Boots Kick
+pneumaticcraft.chestplate.launcher=Pneumatic Chestplate Launcher
 
 # Config Screen
 gui.config.category.general=General
+gui.config.category.pneumaticArmor=Pneumatic Armor
 gui.config.category.machine=Machine
 gui.config.category.advanced=Advanced
 gui.config.category.recipes=Recipes
@@ -1190,6 +1201,8 @@ achievement.logisticsConfigurator=Smart Configuration
 achievement.logisticsConfigurator.desc=Make a Logistics Configurator to manage your Logistics frames. This tool also works on attachments like the Heat Frame, Spawner Agitator and Crop Supports.
 achievement.logisticsDrone=Clever Little Helper
 achievement.logisticsDrone.desc=Create and deploy a Logistics Drone to move items around your logistics network.
+achievement.minigun=Say Hello to my Little Friend
+achievement.minigun.desc=Craft a Minigun.
 
 achievement.dw9x9=The Perfect Size
 achievement.dw9x9.desc=Build a 9x9 house made out of Cobblestone, the perfect size according to Direwolf20.
@@ -1246,3 +1259,8 @@ message.amadron.addedStaticOffer=§a[Amadron] §bAdded static offer: §6%s§b fo
 # Camo Applicator
 message.camo.notEnoughBlocks=§4Out of §c%s !
 message.camo.invalidBlock=§4Invalid camo block: §c%s !
+
+# Patchouli
+patchouli.book.name=PNC:R Manual
+patchouli.book.landing=This manual is a complete reference guide to $(#228)PneumaticCraft: Repressurized/$.
+patchouli.processor.assembly.desc=$(item)%s/$ production requires an $(l:manufacturing/assembly_system)Assembly Controller/$ with a $(item)%s/$ installed.
