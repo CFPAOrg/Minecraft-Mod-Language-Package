@@ -77,11 +77,15 @@ tile.wrapped_sealed_planks.name=Reinforced Sealed Planks
 tile.vacuum.name=Item Vacuum
 tile.breaker.name=Automatic Breaker
 tile.ember_injector.name=Ember Injector
-tile.seed.0.name=Iron Crystal Seed
-tile.seed.1.name=Gold Crystal Seed
-tile.seed.2.name=Copper Crystal Seed
-tile.seed.3.name=Lead Crystal Seed
-tile.seed.4.name=Silver Crystal Seed
+tile.seed_iron.name=Iron Crystal Seed
+tile.seed_gold.name=Gold Crystal Seed
+tile.seed_copper.name=Copper Crystal Seed
+tile.seed_lead.name=Lead Crystal Seed
+tile.seed_silver.name=Silver Crystal Seed
+tile.seed_aluminum.name=Aluminium Crystal Seed
+tile.seed_nickel.name=Nickel Crystal Seed
+tile.seed_tin.name=Tin Crystal Seed
+tile.seed_dawnstone.name=Dawnstone Crystal Seed
 tile.boiler.name=Pressure Refinery
 tile.archaic_edge.name=Archaic Edge
 tile.archaic_tile.name=Archaic Tile
@@ -106,6 +110,8 @@ tile.ember_siphon.name=Ember Siphon
 tile.stirling.name=Wildfire Stirling
 tile.clockwork_attenuator.name=Clockwork Attenuator
 tile.explosion_pedestal.name=Explosion Charm Pedestal
+tile.stone_valve.name=Caminite Valve
+tile.geo_separator.name=Geologic Separator
 
 fluid.iron=Molten Iron
 fluid.gold=Molten Gold
@@ -338,6 +344,9 @@ embers.tooltip.goggles.upgrade=• Machine Upgrade
 embers.tooltip.goggles.accessor_slot=• Machine Accessor Slot
 embers.tooltip.goggles.actuator_slot=• Actuator Slot
 
+embers.tooltip.crystal.level=Level %s
+embers.tooltip.crystal.xp=Refinement %s/%s
+
 embers.tooltip.atmosEmber=Atmospheric Ember:
 embers.tooltip.targetingBlock=Targeting:
 embers.tooltip.itemdial.slot=Slot %s: %s
@@ -365,6 +374,8 @@ embers.tooltip.dial.heat=Heat: %s/%s
 embers.tooltip.item.ember=Ember: %s/%s
 embers.tooltip.attenuator.on=When active: %s Speed
 embers.tooltip.attenuator.off=When inactive: %s Speed
+embers.tooltip.forge.cannot_start=There is not enough Ember to ignite the forge.
+embers.tooltip.broken=Broken
 
 embers.tooltip.modifier.superheater=Superheating %s
 embers.tooltip.modifier.jet_augment=Cinder Jet %s
@@ -415,38 +426,47 @@ embers.research.multipage=%s (%s/%s)
 
 embers.research.page.ores=Ores
 embers.research.page.ores.title=Raw Minerals
+embers.research.page.ores.tags=Copper;Lead;Silver;Nickel;Ferrous;Aluminum;Aluminium;Quartz;Ore;
 embers.research.page.ores.desc=Deep in the vaults of the solid earth, the novice digger may find many useful minerals, namely Copper, Lead, Silver, and Quartz. Copper has many applications as a conductor, Lead as a dull and malleable metal, and Silver as a channeler for the arcane. Quartz, as well, proves a good source of raw crystalline matter.
 
 embers.research.page.hammer=Tinker Hammer
 embers.research.page.hammer.title=Smashing
+embers.research.page.hammer.tags=Hammer;Plate;Tool;
 embers.research.page.hammer.desc=With a dense head of lead and iron, the Tinker Hammer proves a wieldy tool. It can be used to pound two ingots of metal into a plate, and you can imagine it being useful for getting certain machines to cooperate.
 
 embers.research.page.ancient_golem=Ancient Constructs
 embers.research.page.ancient_golem.title=Antique Adversaries
+embers.research.page.ancient_golem.tags=Golem;Rock Goblin;Annoying;Cyclops;Archaic;
 embers.research.page.ancient_golem.desc=Rarely in the world, strange constructs resembling humanoids have been known to be found. These enigmatic golems will emit rays of pure heat, and possess unnatural strength, yet seem to require no fuel or sustenance. How such an automaton could come to be is beyond you, but perhaps the unknown materials and mechanisms within it may prove useful.
 
 embers.research.page.gauge=Atmospheric Gauge
 embers.research.page.gauge.title=Prospecting
+embers.research.page.gauge.tags=Ember;Gauge;Tool;Info;
 embers.research.page.gauge.desc=Evidenced by the existence of hot molten stone deep in the earth, or the glowing heat sustaining the strange golems you fight, you have come to believe that at the center of your world lies a powerful energy source. Using some copper and iron, you have found a way to create a device capable of measuring the density of this energy, henceforth referred to as "Ember", at a position in the world.
 
 embers.research.page.caminite=Caminite
 embers.research.page.caminite.title=Sturdy Ceramic
+embers.research.page.caminite.tags=Ceramic;Caminite;Brick;Clay;Sand;
 embers.research.page.caminite.desc=Caminite is a very sturdy ceramic, mixed from a bit of clay and sand. The mixture yields, when baked, a material that you believe will be hard enough for your purposes throughout all of your mechanical ambitions.
 
 embers.research.page.activator=Ember Activator
 embers.research.page.activator.title=Extraction
+embers.research.page.activator.tags=Ember;Activator;Generator;
 embers.research.page.activator.desc=The Ember Activator is an ingenious device, finally allowing you to extract usable energy from Ember Crystals and Shards. Simply insert said Crystals and Shards into the bottom of the device using a Hopper or other item transportation method, and soon, marked by a fiery burst, activated Ember will appear within the copper cage atop the machine.
 
 embers.research.page.crystals=Crystallized Ember
 embers.research.page.crystals.title=Solid Heat
+embers.research.page.crystals.tags=Ember;Crystal;Shard;Ore;
 embers.research.page.crystals.desc=The Ember Bore's excavation yields several curious glowing crystals. These crystals come in several sizes, the larger Ember Crystal and the smaller Ember Shard. These crystals are clear evidence that the power of the Core of the world both exists and can be indirectly tapped: through the immolation of these crystals, you believe, you may be able to activate the power within them for other use.
 
 embers.research.page.bore=Ember Bore
 embers.research.page.bore.title=Diggy Diggy Hole
+embers.research.page.bore.tags=Ember;Bore;Ore;
 embers.research.page.bore.desc=While bedrock may halt your downward advances, it will not halt your machines. The Ember Bore must be fueled with normal furnace fuel items, and must be placed at a position where the blades of the Bore can touch bedrock. When fueled, the Bore will dig up Ember Crystals from deeper into the earth, for your future use. Hoppers and other item transporters must be used to extract and insert fuel and crystals from the Bore.
 
 embers.research.page.pipes=Pipes
 embers.research.page.pipes.title=Transportation
+embers.research.page.pipes.tags=Pipe;Transport;Item;Fluid;Liquid;
 embers.research.page.pipes.desc=One of the simplest mechanisms necessary for your ambitions is the pipe, a simple means of moving materials. You have developed both iron and lead pipes: Iron Pipes can be used to transport fluids, while Lead Pipes can be used to transport items. Pipes can only insert to tanks or inventories, however: to extract, you must craft a corresponding Pump, place it adjacent to the container, and power it with redstone.
 embers.research.page.routing.desc=Items and Fluids in pipes follow simple rules to determine where they will go. They will always go forward, and will never bounce back or, heavens forbid, pop out of the pipe. At an intersection, they will always prioritize the opposite exit, so long as the other exits are weighed equally. When a tie must be broken, items and fluids will round-robin.
 embers.research.page.valves.desc=Extractors have a number of special properties, listed here: They never connect to other Extractors. When turned off, they can receive items instead of only extracting from containers. When turned on by a redstone signal, they will never accept items from pipes. This makes Extractors useful as valves in pipe systems, for flow control.
@@ -454,110 +474,135 @@ embers.research.page.pipe_tools.desc=Pipes will automatically connect to other a
 
 embers.research.page.tank=Fluid Vessel
 embers.research.page.tank.title=Liquid Container
+embers.research.page.tank.tags=Tank;Storage;Liquid;Fluid;Portable;Caminite;
 embers.research.page.tank.desc=Liquids such as water or lava are common occurrences in your world. This tank, a simple construction of metal and caminite, should be able to hold a substantial quality of any fluid, and will retain its contents when broken and replaced.
 
 embers.research.page.bin=Bin
 embers.research.page.bin.title=Storage Bin
+embers.research.page.bin.tags=Bin;Chest;Storage;Item;Hopper;
 embers.research.page.bin.desc=A simple barrel of iron with an open top, the Bin can hold up to a stack of any item. It can also be used to automatically collect outputs from some machines.
 
 embers.research.page.boiler=Pressure Refinery
 embers.research.page.boiler.title=Steam Chamber
+embers.research.page.boiler.tags=Boiler;Refinery;Ember;Pressure;Generator;Water;Steam;Heat;
 embers.research.page.boiler.desc=While the Activator can refine crystalline Ember, it produces only a modest amount. The Pressure Refinery is a means of getting much higher yields per crystal. It requires both water and Ember to be pumped into it, resulting in a default 1.5x yield from the Activator. However, if placed on a metal block with lava or fire around it, it can reach up to 3x yields depending on how many hot blocks there are around the base.
 
 embers.research.page.mini_boiler=Mini Boiler
 embers.research.page.mini_boiler.title=Piggy-backing for explosions
+embers.research.page.mini_boiler.tags=Boiler;Pressure;Water;Steam;Heat;Explosion;
 embers.research.page.mini_boiler.desc=Ember is a highly energetic substance, that produces heat both, when consumed and when produced. It would be a shame to let that heat go to waste. By attaching this pressure vessel to the side of an Ember-consuming or -producing machine, you can boil water into steam for other purposes. But beware that at high pressures, the boiler can easily rupture...
 
 embers.research.page.dials=Dials
 embers.research.page.dials.title=Careful Measurements
+embers.research.page.dials.tags=Info;Item;Fluid;Liquid;Ember;Dial;Gauge;
 embers.research.page.dials.desc=Dials are a simple way to get information from a machine. Two exist: the Ember and Fluid Dials. Attached to their respective containers, each dial will graphically display the contents of that container when looked at.
 
 embers.research.page.tinker_lens=Tinker's Lens
 embers.research.page.tinker_lens.title=What's What?
+embers.research.page.tinker_lens.tags=Info;Modifier;Augment;Armor;Tool;
 embers.research.page.tinker_lens.desc=Despite you creating all this machinery yourself, some of its functionality can be a bit obtuse at times. Fortunately you've devised an eyepiece you can use to examine machines more closely. When held in either hand, you will always be able to tell which purpose a face on a machine has. Note that this tool is not a periscope, so you might have some trouble with Mechanical Cores...
 
 
 
 embers.research.page.melter=Melter
 embers.research.page.melter.title=Melting Things Down
+embers.research.page.melter.tags=Ore;Machine;Melt;Duplication;Processing;Liquid;Fluid;Item;Multiblock;Multi Block;
 embers.research.page.melter.desc=Using the power of activated Ember, you have devised a way to melt down objects. When the Melter's bottom block is provided with Ember, it will melt down meltable items in its top block into their liquid state, where the molten fluid can be piped out for external use.
 
 embers.research.page.stamper=Stamper
 embers.research.page.stamper.title=Pound It Flat
+embers.research.page.stamper.tags=Ore;Machine;Melt;Aspectus;Plate;Duplication;Processing;Stamp;Liquid;Fluid;Item;Multiblock;Multi Block;Bin;
 embers.research.page.stamper.desc=To shape molten metal into useful forms, you have devised the Stamper. To stamp molten metal requires two parts: the Stamper itself and the Stamper Base. Place the Stamper two blocks above the Stamper Base, give it Ember, as well as a particular Stamp. Pipe molten metal into the Stamper Base and the Stamper should begin to process it. You may place a Bin beneath the Stamper Base to automatically collect the products.
 
 embers.research.page.hearth_coil=Hearth Coil
 embers.research.page.hearth_coil.title=Open Fire
+embers.research.page.hearth_coil.tags=Furnace;Coil;Hearth;Machine;Smelt;Processing;Item;Multiblock;Multi Block;
 embers.research.page.hearth_coil.desc=Gone are the days of using solid fuels in a stone furnace to cook your items. Making use of Ember power, you have developed the Hearth Coil. When supplied with Ember, the Coil will heat up. The hotter it gets, the faster it will smelt the items on top of it. All smelted items will be contained within the inventory of the Coil, and can be piped out from the bottom or from some Accessor.
 
 embers.research.page.mixer=Mixer Centrifuge
 embers.research.page.mixer.title=Mix It Up
+embers.research.page.mixer.tags=Mix;Mixer;Melt;Machine;Processing;Liquid;Fluid;Multiblock;Multi Block;
 embers.research.page.mixer.desc=While you have been using various metals to control the flow of Ember before, through the Mixer Centrifuge, you believe you may be able to create new alloys. Each face of the bottom of the Centrifuge is its own tank. When fluid is pumped into these tanks, in a particular combination, and the top block of the Centrifuge is given Ember, a molten alloy will be created which can be pumped out of the top block.
 
 embers.research.page.access=Mechanical Access
 embers.research.page.access.title=Interface
+embers.research.page.access.tags=Core;Mechanical;Proxy;Capability;Side;Port;Interface;Access;Upgrade;
 embers.research.page.access.desc=Machines such as the Ember Bore or Hearth Coil are a bit large. As such, they only have one port with which to interface. Using the Mechanical Core and Machine Accessor, however, you can extend this port: the Mechanical Core will act as a proxy to the inventory, fluid storage, or Ember storage of any large machine it touches, while Machine Accessors can attach to the Mechanical Core to provide a more extended interface.
 
 embers.research.page.reservoir=Reservoir
 embers.research.page.reservoir.title=Massive Tanks
+embers.research.page.reservoir.tags=Tank;Storage;Liquid;Fluid;Caminite;Multiblock;Multi Block;
 embers.research.page.reservoir.desc=The Reservoir is a simple means of storing large quantities of fluids. While it will only store about 40 buckets' worth of fluid by default, its capacity can be extended by placing Caminite Rings atop the Reservoir base, by 40 buckets for each ring. The Reservoir may only be filled or drained through the port on its bottom, or through a Mechanical Core or Accessor attached to that port.
 
 embers.research.page.transfer=Item Transfer
 embers.research.page.transfer.title=Filtering
+embers.research.page.transfer.tags=Pipe;Transport;Item;Fluid;Liquid;Filter;Transfer;
 embers.research.page.transfer.desc=Item Pipes may be a simple way to get items from place to place, but only with the development of the Item Transfer have you created a way to filter items out. The Item Transfer functions much like a normal pipe, with a few rules. It can only connect to pipes on its front and on its back, and it will take priority over all other pipes when items are being sent. It can also be given an item filter by right-clicking it.
 embers.research.page.fluid_transfer.desc=Fluid Transfers are the fluid equivalent to Item Transfers. They function equivalent in almost all aspects. Only to set the filter on a Fluid Transfer, a bucket or other container holding some fluid is needed instead. The fluid inside the container is not consumed when setting a filter.
 
 embers.research.page.breaker=Automatic Breaker
 embers.research.page.breaker.title=Breaking Blocks
+embers.research.page.breaker.tags=Machine;Break;Block;Item;Bin;
 embers.research.page.breaker.desc=The Automatic Breaker is a simple contraption. Place it facing in a particular direction, and the grinding blade on its front will break the block in front of it. By default, these blocks will simply drop into the world, but they can be automatically collected by placing a Bin behind the Breaker.
 
 embers.research.page.pump=Mechanical Pump
 embers.research.page.pump.title=Pump It Up
+embers.research.page.pump.tags=Machine;Pump;Fluid;Liquid;Mechanical;
 embers.research.page.pump.desc=Since the Pressure Refinery consumes water to boost its Ember production, you need a way to collect it automatically. A mechanical pump should do fine, but Ember converts poorly to mechanical energy. Running this pump solely using Ember will be very slow and it would likely be good to build multiple of them.
 
 embers.research.page.vacuum=Item Vacuum
 embers.research.page.vacuum.title=Automated Collection
+embers.research.page.vacuum.tags=Pipe;Transport;Item;Filter;Transfer;Collect;Vacuum;Hopper;
 embers.research.page.vacuum.desc=The Item Vacuum is a means of sucking in items in the world. Simply power it with redstone, and it will draw in all items in a large area in front of it. It will automatically push items through pipes attached to its back face.
 embers.research.page.vacuum_transfer.desc=Item Vacuums don't have an internal inventory, they will directly push items into a connected pipe or container. Using this property, you can filter which items will be sucked up by attaching an Item Transfer to its back face.
 
 embers.research.page.dropper=Item Dropper
 embers.research.page.dropper.title=Dropped Down
+embers.research.page.dropper.tags=Pipe;Transport;Item;Drop;Hopper;Trash;Void;
 embers.research.page.dropper.desc=The Item Dropper is very simple. When items are piped into the port on its top face, it will quickly spew them out in a vertical line into the world, directly beneath it.
 
 embers.research.page.dawnstone=Dawnstone
 embers.research.page.dawnstone.title=Bright Alloy
+embers.research.page.dawnstone.tags=Dawnstone;Alloy;Metal;Metallurgy;
 embers.research.page.dawnstone.desc=Dawnstone is a strong alloy of gold and copper in equal parts, created using the Mixer Centrifuge. With Ember imbued into its very nature in its creation, you believe this alloy should allow you to create the material structure for many more advanced Ember mechanisms.
 
 embers.research.page.emitters=Ember Transfer
 embers.research.page.emitters.title=Send and Receive
+embers.research.page.emitters.tags=Hammer;Transfer;Transport;Ember;Receptor;Emitter;Receive;Send;Redstone;Lever;Link;Connect;
 embers.research.page.emitters.desc=The actual manipulation of the Ember you receive from your Activator or other refineries involves two main blocks: Ember Emitters and Ember Receptors. Emitters function as the sending end. Simply place them on a machine and they will suck out Ember from the machine into their internal buffer. Then, while powered by redstone, they will periodically expel Ember.
 embers.research.page.receivers.desc=Receptors function as the receiving end. When they receive an Ember burst from an Emitter, they will push the Ember into the attached machine, no redstone required. Note that if Ember is received, but the receptor can't take all of it, some of it will be lost, signified by a plume of smoke and sparks.
 embers.research.page.linking.desc=To link Emitters and Receptors together, simply shift-right-click the Receptor with your Tinker Hammer, and right-click the Emitter with the hammer. There is no distance limit to linking, but after an Ember Burst has been in transit for a while, it can fade away, losing all of the Ember it carried.
 
 embers.research.page.copper_cell=Copper Cell
 embers.research.page.copper_cell.title=Capacitor
+embers.research.page.copper_cell.tags=Cell;Copper;Ember;Storage;Portable;Capacitor;
 embers.research.page.copper_cell.desc=The Copper Cell fulfills a very simple purpose: Ember storage. It can be given Ember using an Ember Receptor, or have Ember removed from it through an Ember Emitter. Note that when a Copper Cell is broken, it will retain its stored Ember.
 
 embers.research.page.clockwork_attenuator=Clockwork Attenuator
 embers.research.page.clockwork_attenuator.title=Throttle Control
+embers.research.page.clockwork_attenuator.tags=Dial;Control;Redstone;Speed;Upgrade;
 embers.research.page.clockwork_attenuator.desc=Fine-tuning your machine setups is hard when all of your machines run until they run out of fuel, without compromise. This dial can directly control a machine's speed. It has two internal settings that toggle on a redstone signal: active and inactive. The settings can be modified by right-clicking and sneak-right-clicking the dial while the respective setting is in action.
 
 
 
 embers.research.page.gearbox=Gearboxes
 embers.research.page.gearbox.title=Mechanical Junction
+embers.research.page.gearbox.tags=Gear;Box;Gearbox;Mechanical;Split;Divide;Junction;
 embers.research.page.gearbox.desc=Gearbox Frames are the heart-piece of mechanical transfer. One gear can be attached on each side, but only sides with axles or other machines attached will need one. There is an input side marked by a strip, and all other sides are outputs. The input power will be divided between each used output, so if two axles were attached, each would receive half power.
 
 embers.research.page.mergebox=Mergeboxes
 embers.research.page.mergebox.title=Mechanical Fusion
+embers.research.page.mergebox.tags=Gear;Box;Gearbox;Mergebox;Mechanical;Merge;Fusion;
 embers.research.page.mergebox.desc=Mergebox Frames are another important part in mechanical systems. They function opposite to a regular gearbox, instead of splitting power, power will be merged together. Note that all inputs must be the same speed to be summed up. Additionally, anytime the power changes, the mergebox will disengage the output gear for a short time as the internal ratios adjust.
 
 embers.research.page.axle_iron=Iron Axle
 embers.research.page.axle_iron.title=Axial Rotation
+embers.research.page.axle_iron.tags=Axle;Mechanical;Iron Axle;Transport;Transfer;Connect;
 embers.research.page.axle_iron.desc=Axles are used to transfer mechanical power between generators, gearboxes and machines that use it. Axles don't lose power over distance, so their transfer range is virtually unlimited.
 
 embers.research.page.gear_iron=Iron Gear
 embers.research.page.gear_iron.title=Cogs of the Machine
+embers.research.page.gear_iron.tags=Gear;Mechanical;Iron Gear;Gold Gear;Dawnstone Gear;Attach;Interface;Cog;
 embers.research.page.gear_iron.desc=Gears are used as interfaces for connecting axles to gearboxes or machines. Iron Gears are cheap and robust, but they have a power limit. Power past the limit is mostly lost.
 embers.research.page.gear_gold.desc=This gear is mostly the same as an iron gear, but it has a higher power limit.
 embers.research.page.gear_redstone.desc=These redstone-encrusted gears provide the ability to control gearboxes externally. When a redstone signal is applied to a gearbox, the Redstone Gear will start to turn, while the inverted Redstone Gear will turn off. These gears have a similar power limit to gold gears.
@@ -565,6 +610,7 @@ embers.research.page.gear_dawnstone.desc=Dawnstone Gears are more suitable for h
 
 embers.research.page.actuator=Mechanical Actuator
 embers.research.page.actuator.title=Alternate Energy
+embers.research.page.actuator.tags=Gear;Mechanical;Machine;Upgrade;Bore;Pump;Stamp;Mixer;Hammer;
 embers.research.page.actuator.desc=Some machines that are powered using Ember could potentially be powered by mechanical energy instead. This machine attachment has 4 input sides for mechanical energy. Similar to a gearbox, a gear needs to be attached to a side in order to attach an axle to it. The power from each side is combined together internally, but most machines have diminishing returns for the amount of power provided, so more power may not always be better.
 embers.research.page.actuator_bore.desc=The Ember Bore is almost purely mechanical and lends itself well to being powered by mechanical energy. Powering it this way is more coal efficient, but initially a bit slower.
 embers.research.page.actuator_pump.desc=The Pump is a machine that really suffers from being powered by Ember. Even small amounts of mechanical power speed it up significantly, and it can be pushed to become quite fast.
@@ -574,41 +620,50 @@ embers.research.page.actuator_auto_hammer.desc=The Automatic Hammer is very simi
 
 embers.research.page.steam_engine=Steam Engine
 embers.research.page.steam_engine.title=Industrial Revolution
+embers.research.page.steam_engine.tags=Mechanical;Engine;Generator;Steam;Water;Coal;Fuel;
 embers.research.page.steam_engine.desc=The Steam Engine is the easiest way to produce mechanical power. All it needs is a bit of burnable material like coal and some water, and it will produce a meager amount of rotation on its output face. While Steam Engines are more fuel efficient than powering an Ember Bore with the same amount of fuel, they can also be wasteful if improperly handled: If the engine runs out of water as its burning a piece of fuel, the rest of that piece will simply be lost.
 embers.research.page.steam_engine_overclock.desc=Since you've already dabbled with producing steam from Ember-powered machinery, you could put this steam to use for powering your engines. Directly pumping in steam from the outside significantly increases the effectiveness of the engine, and it will output a lot more power, but the steam will be consumed very quickly, possibly requiring several boilers per engine or attaching them to machines that use a lot of Ember.
 
 
 embers.research.page.pulser=Ember Ejector
 embers.research.page.pulser.title=Full Power Destruction
+embers.research.page.pulser.tags=Ember;Funnel;Ejector;Transport;Transfer;Receptor;Emitter;Receive;Send;Redstone;Lever;Link;Connect;Loss;
 embers.research.page.pulser.desc=Simple Ember Emitters are useful and all, but sometimes you may want a bit more raw throughput. The Ember Ejector is a sturdier Emitter -- functionally identical to its predecessor, but capable of draining and emitting ten times as much Ember in a given time. Note that Receptors are quickly overwhelmed with this massive quantity and any surplus Ember may be lost in transfer.
 embers.research.page.ember_funnel.desc=Since losing Ember in transfer isn't good, you've devised the Ember Funnel that catches Ember from multiple sources and rapidly transfers it to the connected machine.
 
 embers.research.page.splitter=Beam Splitter
 embers.research.page.splitter.title=Ember Division
+embers.research.page.splitter.tags=Ember;Split;Transport;Transfer;Link;Connect;
 embers.research.page.splitter.desc=Using the new Dawnstone alloy, you have discovered a way to divide Ember bursts. The Beam Splitter has four faces: two with a smaller copper port, and two with larger copper-and-dawnstone ports. Each of the larger ports will function as its own Ember Emitter. When Ember is fed into the Splitter, it will split the Ember it receives between those two ports, which can each be bound independently.
 
 embers.research.page.dawnstone_anvil=Dawnstone Anvil
 embers.research.page.dawnstone_anvil.title=Repairs
+embers.research.page.dawnstone_anvil.tags=Dawnstone;Anvil;Repair;Break;Damage;Hammer;
 embers.research.page.dawnstone_anvil.desc=The resilience of Dawnstone lends itself well to use in and Anvil. The Dawnstone Anvil may be used to both repair items, or break down items into their component parts. Place a damaged item on the anvil, then its repair material, then give it a good couple whacks with the Tinker Hammer to repair it. Place the damaged item alone and give it some strong blows, and it will break apart into its component pieces.
 
 embers.research.page.autohammer=Automatic Hammer
 embers.research.page.autohammer.title=Automatic Hammer
+embers.research.page.autohammer.tags=Hammer;Anvil;Machine;Processing;
 embers.research.page.autohammer.desc=Hammering bits of metal into your tools by hand takes a very long time. With a bit of Ember power, you believe you have a solution. The Automatic Hammer simply requires redstone power and a bit of Ember power, and will handle the hammering of the Dawnstone Anvil much more forcefully and faster than you manually could.
 
 embers.research.page.crystal_cell=Crystal Cell
 embers.research.page.crystal_cell.title=Mass Storage
+embers.research.page.crystal_cell.tags=Cell;Crystal;Ember;Storage;Capacitor;
 embers.research.page.crystal_cell.desc=Your past methods of Ember storage have never had much capacity, and the Crystal Cell is your solution. The Crystal Cell will start small, and can have Ember inserted and extracted from it. It can also have Ember fuel items such as Ember Crystals inserted into it as well. Each fuel item will increase the maximum capacity of the Cell, eventually causing physical growth in the glowing crystal atop it.
 
 embers.research.page.charger=Copper Charger
 embers.research.page.charger.title=Ember Charging
+embers.research.page.charger.tags=Charge;Ember;Machine;
 embers.research.page.charger.desc=The Charger is a very simple device. Provide it with Ember, and it will charge the item inside it, if the item can be charged. The item inside can be simply right-clicked in or out.
 
 embers.research.page.jars=Mantle Containers
 embers.research.page.jars.title=Portable Ember
+embers.research.page.jars.tags=Ember;Portable;Storage;Mantle;Cartridge;Jar;Battery;
 embers.research.page.jars.desc=For field purposes, carrying around a Crystal Cell is simply impractical. With a bit of glass and Ember crystal, you have developed the Mantle Jar and Mantle Cartridge. Both can contain Ember, and can be charged at the Copper Charger. However, while Mantle Jars can be accessed by Ember-powered items anywhere in the inventory, Mantle Cartridges must be held in your hand to be used.
 
 embers.research.page.clockwork_tools=Clockwork Tools
 embers.research.page.clockwork_tools.title=Power Tools
+embers.research.page.clockwork_tools.tags=Ember;Weapon;Tool;Clockwork;Pickaxe;Hammer;Axe;Sword;Shovel;
 embers.research.page.clockwork_tools.desc=Making use of your recently-discovered Ember containers, you have fashioned tools of Dawnstone. All three tools share certain properties: They require accessible Ember in your inventory to be used, and they are unbreakable. They also have high base damage, allowing all of them to double as weapons. Additionally, when powered with Ember they will set hit enemies on fire.
 embers.research.page.clockwork_pickaxe.desc=The Clockwork Pickaxe functions as a powerful pickaxe and shovel at the same time. Like the other tools, it requires Ember to break blocks or attack enemies. As it doubles as a weapon, it can receive both, weapon and tool enchantments.
 embers.research.page.clockwork_hammer.desc=The Grandhammer is a powerful melee weapon. Like the other tools it requires Ember to break blocks or attack enemies. If it is used to break a block, it will obliterate it completely, leaving no drops. Like the pickaxe, it can receive weapon and tool enchantments, but due to its nature it cannot be enchanted with Fortune or Silk Touch.
@@ -616,96 +671,119 @@ embers.research.page.clockwork_axe.desc=The Clockwork Axe functions as a powerfu
 
 embers.research.page.cinder_staff=Cinder Staff
 embers.research.page.cinder_staff.title=Magic Missile
+embers.research.page.cinder_staff.tags=Ember;Weapon;Staff;Projectile;Missile;Cinder;
 embers.research.page.cinder_staff.desc=Strange, isn't it, how silver metal can have such control over the chaotic fire of Ember. As the Cinder Staff channels Ember from accessible containers in your inventory, it charges up a large sphere of pure Ember in front of you. The longer it is charged, the more damaging the sphere will be, culminating in just shy of enough damage to instantly kill a typical monster.
 
 embers.research.page.blazing_ray=Blazing Ray
 embers.research.page.blazing_ray.title=Ember Cannon
+embers.research.page.blazing_ray.tags=Ember;Weapon;Gun;Ray;Cannon;Projectile;Missile;Blaze;Blazing;
 embers.research.page.blazing_ray.desc=While the Blazing Ray may resemble a mundane firearm in shape, it more functionally resembles a piece of artillery. When fired, it will unleash a straight beam of pure Ember, shooting forth until it strikes a solid block or a creature.
 
 embers.research.page.aspecti=Metal Aspecti
 embers.research.page.aspecti.title=Alchemic Foci
+embers.research.page.aspecti.tags=Alchemy;Focus;Aspect;Aspectus;Foci;Stamp;Shard;Transmutation;
 embers.research.page.aspecti.desc=Wrapping molten metal about an Ember Shard, you have devised the Aspectus. These items can focus the alchemical energies produced by burning ash into a particular elemental alignment, when placed on Alchemy Pedestals during a Transmutation.
 
 embers.research.page.cinder_plinth=Cinder Plinth
 embers.research.page.cinder_plinth.title=Incineration
+embers.research.page.cinder_plinth.tags=Alchemy;Machine;Ash;Processing;Void;Trash;Transmutation;Plinth;Incineration;Incinerate;Cinder;
 embers.research.page.cinder_plinth.desc=The Cinder Plinth is a simple machine: place any item into it, power it with Ember, and it will burn the item into black Ash. It can automatically place the ash into a Bin placed beneath it as well. Ash has several uses: it can be burned as a poor fuel item, it can be applied to stone to change its color and texture, and you believe the energies released in its combustion may have other applications.
 
 embers.research.page.beam_cannon=Beam Cannon
 embers.research.page.beam_cannon.title=Heat Ray
+embers.research.page.beam_cannon.tags=Alchemy;Weapon;Machine;Cannon;Projectile;Beam;Ray;Transmutation;
 embers.research.page.beam_cannon.desc=The Beam Cannon is perhaps your most dangerous device yet. Aim it by shift-right-clicking with a Tinker Hammer on a target block, then right-clicking the Cannon with the hammer. When it is given enough Ember, it will fire off a beam of pure radiant heat. This beam can kill nearly any unarmored creature, and also initiate transmutation at the Exchange Tablet.
 
 embers.research.page.alchemy=Energetic Alchemy
 embers.research.page.alchemy.title=Transmutation
+embers.research.page.alchemy.tags=Alchemy;Transmutation;Tablet;Exchange;Ash;Pedestal;Aspect;Aspectus;
 embers.research.page.alchemy.desc=Ember alchemy is truly a marvelous discovery. The first key is the Exchange Tablet: right-click on its various faces to insert items into their respective slots. The next is the Alchemy Pedestal: these bear aspecti and can contain ash. For an alchemy recipe, place a pedestal for each needed aspectus about the Tablet, fill it with ash within the determined range, and strike the Tablet with the Beam Cannon.
 
 embers.research.page.catalytic_plug=Catalytic Plug
 embers.research.page.catalytic_plug.title=Overdrive Injection
+embers.research.page.catalytic_plug.tags=Speed;Upgrade;Redstone;Alchemy;Alchemical Redstone;
 embers.research.page.catalytic_plug.desc=Catalytic Plugs are fantastic devices for the impatient. When hooked up to a machine the plug doubles the speed of the machine, but only if also supplied with Alchemical Slurry from the back, which is consumed in the process. Up to 2 Catalytic Plugs can be attached to a single machine, to quadruple its speed.
 
 embers.research.page.ember_siphon=Ember Siphon
 embers.research.page.ember_siphon.title=Reversing The Flow
+embers.research.page.ember_siphon.tags=Upgrade;Reverse;Siphon;Ember;Charge;Discharge;
 embers.research.page.ember_siphon.desc=The Ember Siphon is a machine upgrade that can be placed underneath a Charger to invert it's function. Instead of filling an ember container with ember, it will empty it instead, and store the drained ember in its internal buffer. Ember can then be extracted from the charger or the sides of the siphon using the usual transfer mechanisms.
 
 
 
 embers.research.page.waste=Experimentation
 embers.research.page.waste.title=Alchemical Process
+embers.research.page.waste.tags=Waste;Alchemy;Transmutation;Experiment;Ash;Stamp;
 embers.research.page.waste.desc=You have quickly discovered that alchemical transmutations do not always work. For all but one particular combination of ash values, your alchemy will fail and result in Alchemic Waste. This waste can be placed in the Stamper to reclaim some of the Ash used in the alchemy, and can be visibly analyzed to determine how far off you were from the true recipe of your desired product.
 
 embers.research.page.hellish_synthesis=Assorted Syntheses
 embers.research.page.hellish_synthesis.title=Strange Materials
+embers.research.page.hellish_synthesis.tags=Alchemy;Transmutation;Nether;Netherrack;Soulsand;Soul;Sand;
 embers.research.page.hellish_synthesis.desc=Through alchemical processes, you have discovered a way to create several new substances. These include strange red rock and sand, which you have read in ancient documents make up the land of a strange faraway realm.
 
 embers.research.page.archaic_brick=Archaic Bricks
 embers.research.page.archaic_brick.title=Ancient Building Material
+embers.research.page.archaic_brick.tags=Alchemy;Transmutation;Archaic;Brick;
 embers.research.page.archaic_brick.desc=The ancient sentinels that roam the land often break apart into what appears to be bricks. Through peculiar alchemy you've discovered that you can replicate them, so long you have one to begin with. These should go well with your caminite buildings.
 
 embers.research.page.motive_core=Motive Cores
 embers.research.page.motive_core.title=Precursor Technology
+embers.research.page.motive_core.tags=Alchemy;Transmutation;Archaic;Core;Motive;Golem;
 embers.research.page.motive_core.desc=Alchemy doesn't just allow you to replicate bricks. Motive Cores appear to be the lifeblood and spark of Ancient Golems, and through alchemy, this power now rests at your fingertips.
 
 embers.research.page.adhesive=Adhesive
 embers.research.page.adhesive.title=Sticky Solution
+embers.research.page.adhesive.tags=Alchemy;Transmutation;Slime;Glue;Adhesive;
 embers.research.page.adhesive.desc=The peculiar animated slimes you happen across underground are useful, but altogether too rare to be practical. The synthesized Adhesive will function as a replacement for balls of slime in recipes.
 
 embers.research.page.tyrfing=Tyrfing
 embers.research.page.tyrfing.title=Wicked Blade
+embers.research.page.tyrfing.tags=Alchemy;Transmutation;Ash;Weapon;Sword;Armor;Lead;Damage;
 embers.research.page.tyrfing.desc=A strange construct to be sure, the Tyrfing is a pulsating lead weapon with a design shaped through alchemy. While it is slightly dulled against most targets compared to the Lead Sword used to create it, its unique shape permits it to deal high damage to armored foes. The more armor your opponent is wearing, the more damage the blade will inflict.
 
 embers.research.page.ashen_cloak=Ashen Armor
 embers.research.page.ashen_cloak.title=Cloak of the Mage
+embers.research.page.ashen_cloak.tags=Alchemy;Transmutation;Ash;Ashen;Cloak;Inflictor;Gem;Fabric;
 embers.research.page.ashen_cloak.desc=By imbuing mundane cloth with alchemical ash, you have managed to synthesize a flexible yet strong Ashen fabric, with which you have designed armor. The armor on its own is fairly strong, and you believe it looks quite dashing, but you have a feeling it may be able to upgraded far further...
 
 embers.research.page.inflictor=Inflictor Gems
 embers.research.page.inflictor.title=Absorbing Pain
+embers.research.page.inflictor.tags=Alchemy;Transmutation;Ash;Ashen;Cloak;Inflictor;Gem;Fabric;
 embers.research.page.inflictor.desc=The Inflictor Gem is a strange crystal indeed. While holding it in your hand, when taking damage, it will absorb the type of damage taken. By stitching one to your Ashen Cloak in a crafting table with a piece of string, it will reduce the damage you take from that damage source by approximately a third. They can be removed by placing an Ashen Cloak in a crafting table on its own, and up to seven may be placed on a Cloak at a time.
 
 embers.research.page.glimmer=Glimmer Crystal
 embers.research.page.glimmer.title=Light on, Light off
-embers.research.page.glimmer.desc=By infusing quartz with heat and ember, you have devised a luminescent material that appears to be eager to part with its own luminosity. This allows you to place light sources at will, although it will deplete the crystal. However, while you are exposed to light, the crystal will slowly regenerate itself.
+embers.research.page.glimmer.tags=Alchemy;Transmutation;Light;Glimmer;Crystal;Tool;Quartz;
+embers.research.page.glimmer.desc=By infusing quartz with heat and ember, you have devised a luminescent material that appears to be eager to part with its own luminosity. This allows you to place light sources at will, although it will deplete the crystal. However, while you are exposed to sunlight, the crystal will slowly regenerate itself.
 
 embers.research.page.metallurgic_dust=Metallurgic Dust
 embers.research.page.metallurgic_dust.title=This for that
+embers.research.page.metallurgic_dust.tags=Alchemy;Transmutation;Ore;Dust;Metal;Metallurgy;
 embers.research.page.metallurgic_dust.desc=Sometimes what you find in the bowels of the earth isn't what you were looking for. And indeed, what we've learnt about alchemy can easily solve that. By combining the transmutative properties of metal seeds with redstone and ember grit, a fine white powder is created. When it comes into contact with ore, it will quickly transmute the entire vein into a different type. Some of the ore may be transmuted into worthless stone however...
 
 embers.research.page.cluster=Ember Clusters
 embers.research.page.cluster.title=Purified Crystals
+embers.research.page.cluster.tags=Alchemy;Transmutation;Ember;Shard;Crystal;Cluster;
 embers.research.page.cluster.desc=The smaller crystalline Ember items you have used in the past are handy, but you believe you will soon require more power. By alchemically fusing several Ember Crystals and Ember Shards together, you have created the Ember Cluster, a larger bunch of crystals that you believe will help you energize future machines.
 
 embers.research.page.field_chart=Field Chart
 embers.research.page.field_chart.title=Tactical Overview
+embers.research.page.field_chart.tags=Field;Chart;Ember;Gauge;Info;
 embers.research.page.field_chart.desc=Finding spots with High Ember concentration can be tedious when your only measurement device is an Atmospheric Gauge. However, it seems that Ember resonates with itself, and by suitable manufacture you've devised the Field Chart, a map of Ember concentrations for a larger area than can be covered on foot.
 
 embers.research.page.wildfire=Wildfire Core
 embers.research.page.wildfire.title=Controlling the Flame
+embers.research.page.wildfire.tags=Alchemy;Transmutation;Wildfire;Core;
 embers.research.page.wildfire.desc=The Ember Cluster, however, is a bit too uncontrolled for all purposes. While it is suitable for the immolation of items in the Combustor or Catalyzer, a Wildfire Core must be created from it for refined purposes.
 
 embers.research.page.injector=Metal Crystals
 embers.research.page.injector.title=Seeds of the World
+embers.research.page.injector.tags=Alchemy;Transmutation;Crystal;Seed;Metal;Ember;Injector;Machine;Grow;Processing;
 embers.research.page.injector.desc=You have discovered a means of synthesizing metal Crystal Seeds for various metal types through alchemy, as well as the Ember Injector, a machine designed to control them. By placing a Crystal Seed in the world, then placing Ember Injectors facing it and powering them with Ember, the Seed will begin to be fed and grow slowly. At a certain threshold, the Seed will let loose several metal nuggets which can be collected.
 
 embers.research.page.combustor=Combustion Chamber
 embers.research.page.combustor.title=Immolation
+embers.research.page.combustor.tags=Combustion;Combust;Machine;Reactor;Chamber;Upgrade;Multiblock;Multi Block;
 embers.research.page.combustor.desc=The Combustion Chamber is a simple machine that does little on its own. It can, quite simply, burn combustible fuels. Each fuel used has a particular power level: Coal has a power level of two, Nether Brick items have a power level of three, and Blaze Powder has a power level of four.
 
 embers.research.image.combustor_coal=Coefficient: 2x
@@ -714,6 +792,7 @@ embers.research.image.combustor_blaze_powder=Coefficient: 4x
 
 embers.research.page.catalyzer=Catalysis Chamber
 embers.research.page.catalyzer.title=Chemical Power
+embers.research.page.catalyzer.tags=Catalysis;Catalyst;Machine;Reactor;Chamber;Upgrade;Multiblock;Multi Block;
 embers.research.page.catalyzer.desc=The Catalysis Chamber is a simple machine that does little on its own, simply using up catalyst items. Each catalyst item has a particular catalyst level: Redstone has a level of two, Gunpowder a level of three, and Glowstone Dust a level of four.
 
 embers.research.image.catalyzer_redstone=Coefficient: 2x
@@ -722,128 +801,158 @@ embers.research.image.catalyzer_glowstone=Coefficient: 4x
 
 embers.research.page.reactor=Ignem Reactor
 embers.research.page.reactor.title=Ember Chemistry
+embers.research.page.reactor.tags=Wildfire;Core;Catalysis;Catalyst;Combustion;Combust;Generator;Reactor;Chamber;Multiblock;Multi Block;
 embers.research.page.reactor.desc=The Ignem Reactor is a very powerful means of refining Ember crystals. It must be placed adjacent to the top parts of both a Combustion and Catalysis Chamber. When both the Combustion Chamber and Catalysis Chamber are active, the Reactor will refine crystalline Ember with a multiplier equal to the fuel level and catalyst level of the attached chambers added together, plus one. The catalyst level and combustion level must also be fairly close.
 
 embers.research.page.materia=Isolated Materia
 embers.research.page.materia.title=Universal Repair
+embers.research.page.materia.tags=Alchemy;Transmutation;Repair;Metal;Materia;Isolated;Matter;Anvil;
 embers.research.page.materia.desc=The Isolated Materia is a peculiar material. It has the property of being able to transform into the materials of other items in certain circumstances. For your purposes at the moment, it will enable you to repair items at the Dawnstone Anvil, replacing their repair material with the Materia. You can foresee it having uses in the future as well...
 
 embers.research.page.stirling=Wildfire Stirling
 embers.research.page.stirling.title=Reductio Ad Absurdum
+embers.research.page.stirling.tags=Wildfire;Stirling;Ember;Upgrade;Steam;
 embers.research.page.stirling.desc=This piece of machinery is the counterpart of the Catalytic Plug. When attached to a machine and supplied with steam, the Wildfire Stirling will reduce the ember cost of all machine operations by half. A second Stirling can be attached to quarter the cost.
 
 
 
 embers.research.page.cost_reduction=Ember Jewelry
 embers.research.page.cost_reduction.title=Cost Reduction
+embers.research.page.cost_reduction.tags=Ember;Ring;Amulet;Belt;Bauble;
 embers.research.page.cost_reduction.desc=Using clockwork tools or Ember-powered weaponry can be quite cumbersome, as Mantle Jars or Cartridges need to be refilled periodically. These pieces of jewelry counteract this by reducing the amount of Ember consumed by a factor. The ring, amulet and belt all have different reduction rates, but they all stack together additively.
 
 embers.research.page.mantle_bulb=Mantle Bulb
 embers.research.page.mantle_bulb.title=Tucked Away
+embers.research.page.mantle_bulb.tags=Ember;Storage;Bulb;Mantle;Bauble;Portable;
 embers.research.page.mantle_bulb.desc=If holding a Mantle Cartridge in your offhand or even just holding a Mantle Jar in your pack is too unwieldy for you, this bauble can help. Instead of holding it in your inventory, this Ember container can be worn in any bauble slot. This comes, however, at a vastly reduced capacity.
 
 embers.research.page.explosion_charm=Explosion Charm
 embers.research.page.explosion_charm.title=Manufacted Nethicite
+embers.research.page.explosion_charm.tags=Explosion;Charm;Bauble;
 embers.research.page.explosion_charm.desc=While wearing this charm, explosions that go off near you will be dissipated, their destructive force absorbed into the charm, but unfortunately, for no other special effect.
 
 embers.research.page.explosion_pedestal=Explosion Charm Pedestal
 embers.research.page.explosion_pedestal.title=Vylon Sphere
+embers.research.page.explosion_pedestal.tags=Explosion;Charm;Pedestal;Bauble;
 embers.research.page.explosion_pedestal.desc=Explosion Charms are useful, but normally only usable while on your person. By making minor modifications to the pedestal used in alchemy, you've managed to suspend a charm on it to act as a passive explosion absorbent.
 
 embers.research.page.nonbeliever_amulet=Amulet of the Heretic
 embers.research.page.nonbeliever_amulet.title=And it goes away
+embers.research.page.nonbeliever_amulet.tags=Amulet;Heretic;Magic;Witch;Bauble;
 embers.research.page.nonbeliever_amulet.desc=Damn witches and their resistance to the otherworldly... This amulet will be the gateway to becoming like them. When you are hit by any magical attack while wearing the amulet, 90%% of the damage will be nullified. Note however, that you will always take at least half a heart of damage from magical attacks.
 
 embers.research.page.ashen_amulet=Ashen Amulet
 embers.research.page.ashen_amulet.title=Ashes to Ashes
+embers.research.page.ashen_amulet.tags=Amulet;Ash;Ashen;Bauble;
 embers.research.page.ashen_amulet.desc=Turning things to ash is... certainly a display of power. Not very well thought-out power, but power that rests in this amulet regardless. When a creature is slain or a block is broken while wearing this amulet, it will instantly be turned to ash, and drop nothing but ash.
 
 embers.research.page.dawnstone_mail=Dawnstone Mail
 embers.research.page.dawnstone_mail.title=Defense Position
+embers.research.page.dawnstone_mail.tags=Mail;Dawnstone;Knockback;Armor;Bauble;
 embers.research.page.dawnstone_mail.desc=Dawnstone is a material with many properties that make it suitable for vestments and armor. This Dawnstone Mail will protect the wearer from all knockback. Just don't question why mail is made from plates.
 
 
 
 embers.research.page.modifiers=Attaching Modifiers
 embers.research.page.modifiers.title=Upgrades
+embers.research.page.modifiers.tags=Modifier;Augment;Anvil;Hammer;Level;Tool;Weapon;Armor;
 embers.research.page.modifiers.desc=You believe that with sufficiently advanced mechanisms, you may be able to create devices that grant additional abilities to your equipment. These items can be applied to armor, tools, or weapons, and must be hammered on at a Dawnstone Anvil. Place the original item down, then the modifier, then hammer away. Modifiers have levels, which will boost their power.
 
 embers.research.page.heat=Heat
 embers.research.page.heat.title=Well Worn
+embers.research.page.heat.tags=Modifier;Augment;Anvil;Hammer;Level;Tool;Weapon;Armor;Heat;Core;Archaic;Ancient;Motive;
 embers.research.page.heat.desc=Just as you used the Dawnstone Anvil to break apart items or repair them, you can also use it to attach modifiers to equipment. Place a tool, sword, or armor piece on the anvil, then place an Ancient Motive Core on the anvil. When the hammer swings down, the tool will gain the ability to absorb heat. This heat is accrued through normal use of the tool.
 
 embers.research.page.dismantling=Detaching Modifiers
 embers.research.page.dismantling.title=We have to go back
+embers.research.page.dismantling.tags=Modifier;Augment;Anvil;Hammer;Level;Tool;Weapon;Armor;Remove;Detach;Break;
 embers.research.page.dismantling.desc=Sometimes you might add an augment to a tool or armor and eventually find that it no longer suits you. Augments are not permanent additions however, and the Dawnstone Anvil can help you deal with that. By placing the tool or armor on the anvil without an item on top and hammering it, you can remove all modifiers for no cost. The core itself and its accumulated heat will always remain on the tool however, and such tools cannot be completely destroyed.
 
 embers.research.page.inferno_forge=Inferno Forge
 embers.research.page.inferno_forge.title=Leveling Up
+embers.research.page.inferno_forge.tags=Modifier;Augment;Anvil;Hammer;Level;Tool;Weapon;Armor;Heat;Inferno;Forge;Machine;Multiblock;Multi Block;
 embers.research.page.inferno_forge.desc=Once the Heat bar of an item has filled up, it must be tempered. When supplied with Ember power, the Inferno Forge can do just this. Open up the hatch on top, toss in your Heat-filled item, as well as some crystalline Ember. The more Ember crystal you put in, the more likely you will succeed. Once you level up the item, you grant it a modifier slot. Modifiers can then be attached to the item at the Dawnstone Anvil, up to the level of the item.
 
 embers.research.page.superheater=Superheater
 embers.research.page.superheater.title=Heating Up
+embers.research.page.superheater.tags=Modifier;Augment;Tool;Weapon;Armor;Smelt;Cook;
 embers.research.page.superheater.desc=The Superheater is a simple augment that can be applied to items that have accrued Heat. When applied, all broken blocks and dropped items from creatures will be cooked automatically, and additional damage will be added to the item as it burns targets. The higher the modifier level, the higher the burning damage. It will require accessible Ember in your inventory to function.
 
 embers.research.page.cinder_jet=Cinder Jet
 embers.research.page.cinder_jet.title=Dashing Forward
+embers.research.page.cinder_jet.tags=Modifier;Augment;Armor;Dash;Jet;Cinder;
 embers.research.page.cinder_jet.desc=The Cinder Jet is an armor augment that allows you to perform a dash. When applied, whenever you begin to sprint and enough Ember is accessible from the inventory, it will propel its vessel forth with increasing velocity depending on its modifier level.
 
 embers.research.page.blasting_core=Blasting Core
 embers.research.page.blasting_core.title=Volatile
+embers.research.page.blasting_core.tags=Modifier;Augment;Tool;Weapon;Armor;Explosion;
 embers.research.page.blasting_core.desc=The Blasting Core is an augment that creates explosions. When applied to tools, it will break nearby blocks whenever a block is broken with the tool. When applied to weapons, an explosion will occur and damage nearby creatures. When applied to armors, an explosion will occur when the armor sustains damage and blow back nearby creatures. All three effects increase in power with modifier level.
 
 embers.research.page.caster_orb=Caster Orb
 embers.research.page.caster_orb.title=Ember Launcher
+embers.research.page.caster_orb.tags=Modifier;Augment;Tool;Weapon;Projectile;Missile;
 embers.research.page.caster_orb.desc=The Caster Orb is a tool and weapon augment that creates projectiles of activated Ember. Whenever an item with this augment is swung, and sufficient Ember is accessible in the inventory, a small projectile of Ember will be fired forth. The size and damage of this projectile increase with modifier level.
 embers.research.page.caster_orb_addendum.desc=Since the Caster Orb allows tools and weapons to shoot projectiles made of Ember, a tool or weapon augmented with it can also accept augments that modify projectiles.
 
 embers.research.page.flame_barrier=Flame Barrier
 embers.research.page.flame_barrier.title=Fiery Defenses
+embers.research.page.flame_barrier.tags=Modifier;Augment;Armor;Fire;Shield;Barrier;Defense;
 embers.research.page.flame_barrier.desc=The Flame Barrier is an armor augment that creates a shield of flames around the wearer when struck. Upon taking a hit, if this augment is present on a player's armor, the attacker will be ignited and take some damage. This damage increases with modifier level.
 
 embers.research.page.eldritch_insignia=Eldritch Insignia
 embers.research.page.eldritch_insignia.title=Eerie Mark
+embers.research.page.eldritch_insignia.tags=Modifier;Augment;Armor;Fear;Eerie;
 embers.research.page.eldritch_insignia.desc=While the Eldritch Insignia augment is placed on your armor, certain mobs will become afraid of you. You will gain the ability to intimidate creatures that would otherwise attack into submission, only to attack back if provoked. The proportion of creatures that will fear the bearer of these symbols increases with modifier level.
 
 embers.research.page.intelligent_apparatus=Intelligent Apparatus
 embers.research.page.intelligent_apparatus.title=Fallen Wisdom
+embers.research.page.intelligent_apparatus.tags=Modifier;Augment;Armor;Experience;Wisdom;
 embers.research.page.intelligent_apparatus.desc=The Intelligent Apparatus is a simple armor augment that boosts experience obtained from creatures slain by the wearer of such augmented armor. The amount of additional experience dropped increases with modifier level.
 
 embers.research.page.resonating_bell=Resonating Bell
 embers.research.page.resonating_bell.title=Vibrations
+embers.research.page.resonating_bell.tags=Modifier;Augment;Tool;Weapon;Light;Bell;
 embers.research.page.resonating_bell.desc=The Resonating Bell allows a tool or weapon to ring through blocks and find particular objects. By right-clicking on a block, nearby blocks of that type will illuminate with glowing light, unless the block was already a very significant part of nearby material. The area the resonation effects increases with modifier level.
 
 embers.research.page.tinker_lens_augment=Tinker's Lens
 embers.research.page.tinker_lens_augment.title=What's What
+embers.research.page.tinker_lens_augment.tags=Modifier;Augment;Armor;Info;
 embers.research.page.tinker_lens_augment.desc=Holding this thing in your hand all the time is inconvenient. Fortunately, you can apply this to a helmet to receive the benefit of holding it all the time while wearing the helmet. This augment doesn't take up any slots, but it does need a Motive Core applied first.
 
 embers.research.page.anti_tinker_lens=Smoky Tinker's Lens
 embers.research.page.anti_tinker_lens.title=Blind to the Truth
+embers.research.page.anti_tinker_lens.tags=Modifier;Augment;Armor;Info;
 embers.research.page.anti_tinker_lens.desc=Sometimes, too much information can be a curse. Some helmets, like the Ashen Goggles can provide information about blocks like a Tinker's Lens, but this is not always desirable. This augment, when put on such a helmet, will turn this information off. This augment doesn't take up any slots, but it does need a Motive Core applied first.
 
 embers.research.page.mystical_mechanics=Mystical Mechanics
 embers.research.page.mystical_mechanics.title=Not the mod you're looking for
+embers.research.page.mystical_mechanics.tags=Mechanical;Gear;Axle;Engine;
 embers.research.page.mystical_mechanics.desc=Embers has Mystical Mechanics compatibility, but it's an optional dependency, and it's currently either turned off in the config, or Mystical Mechanics is not installed.
 
 embers.research.page.baubles=Baubles
 embers.research.page.baubles.title=Not the mod you're looking for
+embers.research.page.baubles.tags=Bauble;Amulet;Ring;Belt;Charm;
 embers.research.page.baubles.desc=Embers has Baubles compatibility, but it's an optional dependency, and it's currently either turned off in the config, or Baubles is not installed.
 
 embers.research.page.diffraction_barrel=Diffraction Barrel
 embers.research.page.diffraction_barrel.title=This... is my Boomstick!
+embers.research.page.diffraction_barrel.tags=Modifier;Augment;Weapon;Projectile;Gun;Shotgun;Spread;
 embers.research.page.diffraction_barrel.desc=The Blazing Ray can be a quite inaccurate weapon when fired in quick succession. This Barrel augment can be placed on not only the Blazing Ray, but any Ember projectile weapon, and will effectively turn said weapon into a shotgun of sorts. Note that instead of a ray, the Blazing Ray would fire a spread of projectiles instead.
 
 embers.research.page.focal_lens=Focal Lens
 embers.research.page.focal_lens.title=Piercing Blaze
+embers.research.page.focal_lens.tags=Modifier;Augment;Weapon;Projectile;Homing;Pierce;
 embers.research.page.focal_lens.desc=A Focal Lens augment can help firing precision when using Ember weaponry a lot. Dependent on whether you place it on a weapon that shoots fireballs or rays, it will either produce homing projectiles, or a piercing ray instead.
 
 embers.research.page.winding_gears=Winding Gears
 embers.research.page.winding_gears.title=Windup Toy
+embers.research.page.winding_gears.tags=Modifier;Augment;Armor;Tool;Weapon;Gear;Wind;Spool;Bounce;
 embers.research.page.winding_gears.desc=When Winding Gears are applied to a tool, a spool will be shown on your HUD in place of the experience bar to show how much it is wound up. Winding the tool up by right-clicking will grant you auto-attack (hold left-click to attack over and over). The tool will however wind down slowly over time. Winding up also has some other effects, as detailed on the following pages.
 embers.research.page.winding_gears_boots.desc=Winding Gears can also be applied to your boots. You will jump much higher based on the charge left in the spring. You will also bounce without taking fall damage when impacting the ground. Additionally, if you sprint before jumping, you will also cross a much larger distance. You must also hold a wound up tool in hand to use these effect.
 
 embers.research.page.shifting_scales=Shifting Scales
 embers.research.page.shifting_scales.title=Extraneous Armor
+embers.research.page.shifting_scales.tags=Modifier;Augment;Armor;Scale;Heart;Health;Defense;
 embers.research.page.shifting_scales.desc=Shifting Scales can be applied to any piece of armor. While you are wearing the armor and are resting in place (not moving and not recently attacked), you will grow one third of a protective scale. On each hit you take, some of the scales will break away, and protect you from most external damage, but not from damage incurred by hunger or drowning.
 
 embers.research.page.pipes_category=Pipes
