@@ -25,7 +25,7 @@ tile.nuclearcraft.ingot_block.aluminum.name=Aluminum Block
 tile.nuclearcraft.ingot_block.silver.name=Silver Block
 
 info.moderator.power=baseRF*cellEff/%s RF/t for each adjacent reactor cell
-info.moderator.heat=baseHeat*cellEff/%s H/t for each adjacent reactor cell. If there is no adjacent cell, it will instead produce some additional heat equal to the base heat of the fuel
+info.moderator.heat=baseHeat*cellEff/%s H/t for each adjacent reactor cell
 info.moderator.desc=Fission Reactor Moderator
 
 tile.nuclearcraft.fission_block.casing.name=Fission Reactor Casing
@@ -57,7 +57,7 @@ tile.nuclearcraft.cooler.quartz.name=Quartz Cooler
 tile.nuclearcraft.cooler.quartz.desc=Must touch at least one active moderator block.
 
 tile.nuclearcraft.cooler.gold.name=Gold Cooler
-tile.nuclearcraft.cooler.gold.desc=Must touch at least one active Water Cooler and one active Redstone Cooler.
+tile.nuclearcraft.cooler.gold.desc=Must touch at least one valid Water Cooler and one valid Redstone Cooler.
 
 tile.nuclearcraft.cooler.glowstone.name=Glowstone Cooler
 tile.nuclearcraft.cooler.glowstone.desc=Must touch at least two active moderator blocks.
@@ -66,10 +66,10 @@ tile.nuclearcraft.cooler.lapis.name=Lapis Cooler
 tile.nuclearcraft.cooler.lapis.desc=Must touch at least one Reactor Cell and one Reactor Casing.
 
 tile.nuclearcraft.cooler.diamond.name=Diamond Cooler
-tile.nuclearcraft.cooler.diamond.desc=Must touch at least one active Water Cooler and one active Quartz Cooler.
+tile.nuclearcraft.cooler.diamond.desc=Must touch at least one valid Water Cooler and one valid Quartz Cooler.
 
 tile.nuclearcraft.cooler.helium.name=Liquid Helium Cooler
-tile.nuclearcraft.cooler.helium.desc=Must touch exactly one active Redstone Cooler and at least one Reactor Casing.
+tile.nuclearcraft.cooler.helium.desc=Must touch exactly one valid Redstone Cooler and at least one Reactor Casing.
 
 tile.nuclearcraft.cooler.enderium.name=Enderium Cooler
 tile.nuclearcraft.cooler.enderium.desc=Must touch exactly three Reactor Casings at exactly one vertex.
@@ -78,30 +78,30 @@ tile.nuclearcraft.cooler.cryotheum.name=Cryotheum Cooler
 tile.nuclearcraft.cooler.cryotheum.desc=Must touch at least two Reactor Cells.
 
 tile.nuclearcraft.cooler.iron.name=Iron Cooler
-tile.nuclearcraft.cooler.iron.desc=Must touch at least one active Gold Cooler.
+tile.nuclearcraft.cooler.iron.desc=Must touch at least one valid Gold Cooler.
 
 tile.nuclearcraft.cooler.emerald.name=Emerald Cooler
 tile.nuclearcraft.cooler.emerald.desc=Must touch at least one active moderator block and one Reactor Cell.
 
 tile.nuclearcraft.cooler.copper.name=Copper Cooler
-tile.nuclearcraft.cooler.copper.desc=Must touch at least one active Glowstone Cooler.
+tile.nuclearcraft.cooler.copper.desc=Must touch at least one valid Glowstone Cooler.
 
 tile.nuclearcraft.cooler.tin.name=Tin Cooler
-tile.nuclearcraft.cooler.tin.desc=Must touch at least two active Lapis Coolers along a common axis.
+tile.nuclearcraft.cooler.tin.desc=Must touch at least two valid Lapis Coolers along a common axis.
 
 tile.nuclearcraft.cooler.magnesium.name=Magnesium Cooler
 tile.nuclearcraft.cooler.magnesium.desc=Must touch at least one Reactor Casing and one active moderator block.
 
 tile.nuclearcraft.cooler.cooling_rate=Cooling rate:
 
-tile.nuclearcraft.block_depleted_thorium.name=Depleted Thorium Block
-tile.nuclearcraft.block_depleted_uranium.name=Depleted Uranium Block
-tile.nuclearcraft.block_depleted_neptunium.name=Depleted Neptunium Block
-tile.nuclearcraft.block_depleted_plutonium.name=Depleted Plutonium Block
-tile.nuclearcraft.block_depleted_americium.name=Depleted Americium Block
-tile.nuclearcraft.block_depleted_curium.name=Depleted Curium Block
-tile.nuclearcraft.block_depleted_berkelium.name=Depleted Berkelium Block
-tile.nuclearcraft.block_depleted_californium.name=Depleted Californium Block
+tile.nuclearcraft.block_depleted_thorium.name=Thorium-230 Block
+tile.nuclearcraft.block_depleted_uranium.name=Uranium-238 Block
+tile.nuclearcraft.block_depleted_neptunium.name=Neptunium-237 Block
+tile.nuclearcraft.block_depleted_plutonium.name=Plutonium-242 Block
+tile.nuclearcraft.block_depleted_americium.name=Americium-243 Block
+tile.nuclearcraft.block_depleted_curium.name=Curium-246 Block
+tile.nuclearcraft.block_depleted_berkelium.name=Berkelium-247 Block
+tile.nuclearcraft.block_depleted_californium.name=Californium-252 Block
 
 tile.nuclearcraft.block_ice.name=Supercold Ice
 
@@ -192,7 +192,7 @@ tile.nuclearcraft.buffer.name=Buffer
 tile.nuclearcraft.buffer.desc=Can store up to a stack of items, 32000 RF of energy and 16000 mB of fluid. Can be placed in the shell of fission structures for transportation into and out of the reactor.
 
 tile.nuclearcraft.active_cooler.name=Active Fluid Cooler
-tile.nuclearcraft.active_cooler.desc=Pump coolant into this block to cool down fission and fusion reactors. Must be placed in a fission structure or on the diagonal of a fusion ring. If used to cool a fission reactor, the requirements for each fluid type are the same as the passive counterpart. If used to cool a fusion reactor, it is much more efficient for a cooler to have a partner on the exact opposite side of the entire fusion ring.
+tile.nuclearcraft.active_cooler.desc=Pump coolant into this block to cool down fission and fusion reactors. Must be placed in a fission structure or on the diagonal of a fusion ring. If used to cool a fission reactor, the requirements for each fluid type are the same as the passive counterpart, but active coolers can not be used to support other coolers' placement rules. If used to cool a fusion reactor, it is much more efficient for a cooler to have a partner on the exact opposite side of the entire fusion ring.
 
 tile.nuclearcraft.bin.name=Universal Bin
 tile.nuclearcraft.bin.desc=Destroys items, fluids and energy.
@@ -225,7 +225,7 @@ tile.nuclearcraft.solar_panel_elite.name=Elite Solar Panel
 tile.nuclearcraft.solar_panel.desc=Produces %s constantly during daytime.
 
 tile.nuclearcraft.decay_generator.name=Decay Generator
-tile.nuclearcraft.decay_generator.desc=Produces power from the heat generated by the decay of adjacent thorium and uranium blocks. After some time, the blocks will decay and produce less power.
+tile.nuclearcraft.decay_generator.desc=Produces power from the heat generated by the decay of adjacent radioactive blocks. After some time, the blocks will decay and produce less power.
 
 tile.nuclearcraft.voltaic_pile_basic.name=Basic Voltaic Pile
 tile.nuclearcraft.voltaic_pile_advanced.name=Advanced Voltaic Pile
@@ -265,6 +265,8 @@ tile.nuclearcraft.salt_fission_retriever.name=Molten Salt Depleted Fuel Retrieve
 tile.nuclearcraft.salt_fission_retriever.desc=Placed in the wall of the reactor - will take depleted fuel from all vessels at a limited rate.
 tile.nuclearcraft.salt_fission_redstone_port.name=Molten Salt Reactor Redstone Port
 tile.nuclearcraft.salt_fission_redstone_port.desc=Used to turn the reactor on and off. The heat level of the reactor can be read with a comparator from this block.
+tile.nuclearcraft.salt_fission_computer_port.name=Molten Salt Reactor Computer Port
+tile.nuclearcraft.salt_fission_computer_port.desc=Used to access the reactor via OpenComputers.
 
 tile.nuclearcraft.heat_exchanger_controller.name=Heat Exchanger Controller
 tile.nuclearcraft.heat_exchanger_controller.desc=The heart of the exchanger - one is needed in the wall for it to form.
@@ -273,12 +275,14 @@ tile.nuclearcraft.heat_exchanger_glass.name=Transparent Heat Exchanger Shell
 tile.nuclearcraft.heat_exchanger_frame.name=Heat Exchanger Frame
 tile.nuclearcraft.heat_exchanger_frame.desc=Comprises the skeleton of the exchanger.
 tile.nuclearcraft.heat_exchanger_vent.name=Heat Exchanger Vent
-tile.nuclearcraft.heat_exchanger_vent.desc=Used to move fluid in and out of the reactor. Will push to [accept from] accepting [pushing] tubes.
+tile.nuclearcraft.heat_exchanger_vent.desc=Used to move fluid in and out of the exchanger. Will push to [accept from] accepting [pushing] tubes.
 tile.nuclearcraft.heat_exchanger_tube_copper.name=Copper Heat Exchanger Tube
 tile.nuclearcraft.heat_exchanger_tube_hard_carbon.name=Hard Carbon Heat Exchanger Tube
 tile.nuclearcraft.heat_exchanger_tube_thermoconducting.name=Thermoconducting Alloy Heat Exchanger Tube
 tile.nuclearcraft.heat_exchanger_tube.fixd=Conductivity Multiplier: %s
 tile.nuclearcraft.heat_exchanger_tube.desc=Holds and transports the heat-exchanging fluids. Place against another tube while sneaking to copy across its side configuration.
+tile.nuclearcraft.heat_exchanger_computer_port.name=Heat Exchanger Computer Port
+tile.nuclearcraft.heat_exchanger_computer_port.desc=Used to access the exchanger via OpenComputers.
 
 tile.nuclearcraft.turbine_controller.name=Turbine Controller
 tile.nuclearcraft.turbine_controller.desc=The heart of the turbine - one is needed in the wall for it to form.
@@ -300,18 +304,20 @@ tile.nuclearcraft.turbine_rotor_bearing.name=Turbine Rotor Bearing
 tile.nuclearcraft.turbine_dynamo_coil.magnesium.name=Magnesium Turbine Dynamo Coil
 tile.nuclearcraft.turbine_dynamo_coil.magnesium.desc=Must touch at least one Rotor Bearing Block.
 tile.nuclearcraft.turbine_dynamo_coil.beryllium.name=Beryllium Turbine Dynamo Coil
-tile.nuclearcraft.turbine_dynamo_coil.beryllium.desc=Must touch at least one active Magnesium Dynamo Coil.
+tile.nuclearcraft.turbine_dynamo_coil.beryllium.desc=Must touch at least one valid Magnesium Dynamo Coil.
 tile.nuclearcraft.turbine_dynamo_coil.aluminum.name=Aluminum Turbine Dynamo Coil
-tile.nuclearcraft.turbine_dynamo_coil.aluminum.desc=Must touch at least one active Dynamo Coil of any type other than Aluminum.
+tile.nuclearcraft.turbine_dynamo_coil.aluminum.desc=Must touch at least one valid Dynamo Coil of any type other than Aluminum.
 tile.nuclearcraft.turbine_dynamo_coil.gold.name=Gold Turbine Dynamo Coil
-tile.nuclearcraft.turbine_dynamo_coil.gold.desc=Must touch at least one active Beryllium Dynamo Coil.
+tile.nuclearcraft.turbine_dynamo_coil.gold.desc=Must touch at least one valid Beryllium Dynamo Coil.
 tile.nuclearcraft.turbine_dynamo_coil.copper.name=Copper Turbine Dynamo Coil
-tile.nuclearcraft.turbine_dynamo_coil.copper.desc=Must touch at least one active Gold Dynamo Coil.
+tile.nuclearcraft.turbine_dynamo_coil.copper.desc=Must touch at least one valid Gold Dynamo Coil.
 tile.nuclearcraft.turbine_dynamo_coil.silver.name=Silver Turbine Dynamo Coil
-tile.nuclearcraft.turbine_dynamo_coil.silver.desc=Must touch at least one active Magnesium Dynamo Coil and one active Gold Dynamo Coil.
+tile.nuclearcraft.turbine_dynamo_coil.silver.desc=Must touch at least one valid Magnesium Dynamo Coil and one valid Gold Dynamo Coil.
 tile.nuclearcraft.turbine_dynamo_coil.conductivity=Conductivity Multiplier:
 tile.nuclearcraft.turbine_inlet.name=Turbine Fluid Inlet
 tile.nuclearcraft.turbine_outlet.name=Turbine Fluid Outlet
+tile.nuclearcraft.turbine_computer_port.name=Turbine Computer Port
+tile.nuclearcraft.turbine_computer_port.desc=Used to access the turbine via OpenComputers.
 
 tile.nuclearcraft.fusion_electromagnet_idle.name=Fusion Electromagnet
 tile.nuclearcraft.fusion_electromagnet_idle.desc=Requires %s to stay active.
@@ -348,6 +354,8 @@ tile.nuclearcraft.nitrogen_collector.name=Nitrogen Collector
 tile.nuclearcraft.nitrogen_collector_compact.name=Compact Nitrogen Collector
 tile.nuclearcraft.nitrogen_collector_dense.name=Dense Nitrogen Collector
 tile.nuclearcraft.nitrogen_collector.desc=Produces %s of nitrogen constantly.
+
+nuclearcraft.collector.jei_name=Collector
 
 tile.nuclearcraft.radiation_scrubber.name=Radiation Scrubber
 tile.nuclearcraft.radiation_scrubber.desc=Reduces the radiation level of the chunk it is placed in. Its effectiveness is dependent on the amount of free space around it, removing a maximum of %s of the radiation in its chunk. %s
@@ -1640,6 +1648,16 @@ item.nuclearcraft.geiger_counter.rads=Radiation:
 item.nuclearcraft.rad_shielding.light.name=Light Radiation Shielding
 item.nuclearcraft.rad_shielding.medium.name=Medium Radiation Shielding
 item.nuclearcraft.rad_shielding.heavy.name=Heavy Radiation Shielding
+item.nuclearcraft.rad_shielding.desc=Can be applied to armor to give the player %s radiation resistance while worn.
+item.nuclearcraft.rad_shielding.desc_hardcore=Can be applied to armor to give the player %s radiation resistance while worn. Can also be applied to containers to shield against irradiation from its contents.
+item.nuclearcraft.rad_shielding.not_hardcore=Failed to install shielding. Hardcore containers is disabled in the configs!
+item.nuclearcraft.rad_shielding.install_fail=Failed to install shielding. The container already has a resistance level of
+item.nuclearcraft.rad_shielding.install_success=Successfully installed shielding! The container now has a resistance level of
+
+item.nuclearcraft.radiation_badge.name=Radiation Badge
+item.nuclearcraft.radiation_badge.desc=Informs the player of how irradiated they have been while being worn on every %s of radiation detected, up to a maximum of %s.
+item.nuclearcraft.radiation_badge.exposure=Your Radiation Badge has been exposed to
+item.nuclearcraft.radiation_badge.broken=Your Radiation Badge disintegrated...
 
 item.nuclearcraft.radaway.name=RadAway
 item.nuclearcraft.radaway.desc=Removes %s [%s].
@@ -1669,6 +1687,7 @@ item.nuclearcraft.marshmallow.desc=Many civilizations would not have fallen with
 
 item.nuclearcraft.smore.name=S'more S'mingot
 item.nuclearcraft.moresmore.name=MoreS'more DoubleS'mingot
+item.nuclearcraft.foursmore.name=FourS'more QuadS'mingot
 
 item.nuclearcraft.record_wanderer.name=Music Disc
 item.nuclearcraft.record_wanderer.des0=Dion - The Wanderer
@@ -1684,6 +1703,9 @@ item.nuclearcraft.record_hyperspace.des0=Ur-Quan Masters - Hyperspace
 item.nuclearcraft.record_hyperspace.des1=Originally by Riku Nuottajärvi
 
 jei.nuclearcraft.chance_output=Output: %s-%s [Average: %s]
+
+jei.nuclearcraft.active_fission_cooling=Fission Cooling Rate:
+jei.nuclearcraft.active_fusion_cooling=Base Fusion Cooling Rate:
 
 jei.nuclearcraft.solid_fuel_time=Base depletion time:
 jei.nuclearcraft.solid_fuel_power=Base power gen:
@@ -1710,17 +1732,17 @@ jei.nuclearcraft.turbine_expansion=Fluid Expansion:
 jei.nuclearcraft.coolant_heater.nak=Must touch at least one active Fission Vessel or active moderator.
 jei.nuclearcraft.coolant_heater.redstone_nak=Must touch at least one active Fission Vessel.
 jei.nuclearcraft.coolant_heater.quartz_nak=Must touch at least one active moderator.
-jei.nuclearcraft.coolant_heater.gold_nak=Must touch at least one active NaK Coolant Heater and one active NaK-Redstone Coolant Heater.
+jei.nuclearcraft.coolant_heater.gold_nak=Must touch at least one valid NaK Coolant Heater and one valid NaK-Redstone Coolant Heater.
 jei.nuclearcraft.coolant_heater.glowstone_nak=Must touch at least two active moderator blocks.
 jei.nuclearcraft.coolant_heater.lapis_nak=Must touch at least one active Fission Vessel and one Reactor Wall.
-jei.nuclearcraft.coolant_heater.diamond_nak=Must touch at least one active NaK Coolant Heater and one active NaK-Quartz Coolant Heater.
-jei.nuclearcraft.coolant_heater.liquidhelium_nak=Must touch exactly one active NaK-Redstone Coolant Heater and at least one Reactor Wall.
+jei.nuclearcraft.coolant_heater.diamond_nak=Must touch at least one valid NaK Coolant Heater and one valid NaK-Quartz Coolant Heater.
+jei.nuclearcraft.coolant_heater.liquidhelium_nak=Must touch exactly one valid NaK-Redstone Coolant Heater and at least one Reactor Wall.
 jei.nuclearcraft.coolant_heater.ender_nak=Must touch exactly three Reactor Walls at exactly one vertex.
 jei.nuclearcraft.coolant_heater.cryotheum_nak=Must touch at least two Fission Vessels.
-jei.nuclearcraft.coolant_heater.iron_nak=Must touch at least one active NaK-Gold Coolant Heater.
+jei.nuclearcraft.coolant_heater.iron_nak=Must touch at least one valid NaK-Gold Coolant Heater.
 jei.nuclearcraft.coolant_heater.emerald_nak=Must touch at least one active moderator and one active Fission Vessel.
-jei.nuclearcraft.coolant_heater.copper_nak=Must touch at least one active NaK-Glowstone Coolant Heater.
-jei.nuclearcraft.coolant_heater.tin_nak=Must touch at least two active NaK-Lapis Coolant Heaters along a common axis.
+jei.nuclearcraft.coolant_heater.copper_nak=Must touch at least one valid NaK-Glowstone Coolant Heater.
+jei.nuclearcraft.coolant_heater.tin_nak=Must touch at least two valid NaK-Lapis Coolant Heaters along a common axis.
 jei.nuclearcraft.coolant_heater.magnesium_nak=Must touch at least one Reactor Wall and one active moderator.
 
 itemGroup.nuclearcraft=NuclearCraft
@@ -1805,7 +1827,7 @@ gui.config.category.generators.tooltip=Configure generators.
 gui.config.generators.rtg_power=RTG Power Gen
 gui.config.generators.rtg_power.comment=RF/t generated. Order: Uranium, Plutonium, Americium, Californium.
 gui.config.generators.solar_power=Solar Panel Power Gen
-gui.config.generators.solar_power.comment=RF/t generated. Order: Basic.
+gui.config.generators.solar_power.comment=RF/t generated. Order: Basic, Advanced, DU, Elite.
 gui.config.generators.decay_power=Decay Generator Power Gen
 gui.config.generators.decay_power.comment=RF/s generated by adjacent radioactive blocks. Order: Thorium, Uranium, Depleted Thorium, Depleted Uranium, Depleted Neptunium, Depleted Plutonium, Depleted Americium, Depleted Curium, Depleted Berkelium, Depleted Californium.
 gui.config.generators.generator_rf_per_eu=RF Use per EU Emitted
@@ -1825,7 +1847,7 @@ gui.config.fission.fission_cooling_rate.comment=Base heat removed per tick. Orde
 gui.config.fission.fission_active_cooling_rate=Active Cooling Rates
 gui.config.fission.fission_active_cooling_rate.comment=Heat removed per tick/mB. Order: water, redstone, quartz, gold, glowstone, lapis, diamond, liquid helium, ender, cryotheum, iron, emerald, copper, tin, magnesium.
 gui.config.fission.fission_water_cooler_requirement=Water Cooler Requirement
-gui.config.fission.fission_water_cooler_requirement.comment=Do water coolers have to fulfill their position requirements to be active?
+gui.config.fission.fission_water_cooler_requirement.comment=Do water coolers have to fulfill their position requirements to be valid?
 gui.config.fission.fission_overheat=Enable Meltdowns
 gui.config.fission.fission_overheat.comment=Can fission reactors overheat?
 gui.config.fission.fission_explosions=Enable Explosions
@@ -2002,6 +2024,8 @@ gui.config.heat_exchanger.heat_exchanger_conductivity=Tube Conductivity
 gui.config.heat_exchanger.heat_exchanger_conductivity.comment=Multiplier for heat transfer rate to and from this type of tube. Heating recipes will be faster by this factor, while cooling recipes will be slower by this factor. Order: copper, hard carbon, thermoconducting alloy.
 gui.config.heat_exchanger.heat_exchanger_coolant_mult=Coolant Heat Multiplier
 gui.config.heat_exchanger.heat_exchanger_coolant_mult.comment=Multiplier for the heat required to cool hot coolant.
+gui.config.heat_exchanger.heat_exchanger_alternate_exhaust_recipe=Alternate Exhaust Steam Recipe
+gui.config.heat_exchanger.heat_exchanger_alternate_exhaust_recipe.comment=Will exhaust steam be heated into standard steam rather than low pressure steam?
 
 gui.config.category.turbine=Turbine Configs
 gui.config.category.turbine.tooltip=Configure aspects of turbines.
@@ -2043,7 +2067,7 @@ gui.config.category.energy_storage=Energy Storage Configs
 gui.config.category.energy_storage.tooltip=Configure energy storages.
 
 gui.config.energy_storage.battery_capacity=Battery Capacities
-gui.config.energy_storage.battery_capacity.comment=Maximum RF storable. Order: Voltaic Pile, Lithium Ion Battery.
+gui.config.energy_storage.battery_capacity.comment=Maximum RF storable. Order: Voltaic Pile [Basic, Advanced, DU, Elite], Lithium Ion Battery [Basic, Advanced, DU, Elite].
 
 gui.config.category.tools=Tool Configs
 gui.config.category.tools.tooltip=Configure tools.
@@ -2058,8 +2082,10 @@ gui.config.tools.tool_attack_damage=Attack Damages
 gui.config.tools.tool_attack_damage.comment=Related to the damage done per hit (wood = 0.0, stone = 1.0, etc.). Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe.
 gui.config.tools.tool_enchantability=Enchantabilities
 gui.config.tools.tool_enchantability.comment=Determines the quality of applied enchantments. Order: boron, boron spaxelhoe, tough alloy, tough alloy spaxelhoe, hard carbon, hard carbon spaxelhoe, boron nitride, boron nitride spaxelhoe.
-gui.config.tools.tool_speed=TiC Handle Modifiers
-gui.config.tools.tool_speed.comment=Determines the Tinkers' Construct handle modifiers of the materials. Order: boron, tough alloy, hard carbon, boron nitride.
+gui.config.tools.tool_handle_modifier=TiC Handle Modifiers
+gui.config.tools.tool_handle_modifier.comment=Determines the Tinkers' Construct handle modifiers of the materials. Order: boron, tough alloy, hard carbon, boron nitride.
+gui.config.tools.tool_tic_register=TiC Tool Material Registration
+gui.config.tools.tool_tic_register.comment=Will these materials be registered as tool materials for Tinkers' Construct? Order: boron, tough alloy, hard carbon, boron nitride, thorium, uranium, magnesium, chocolate.
 
 gui.config.category.armor=Armor Configs
 gui.config.category.armor.tooltip=Configure armor.
@@ -2078,6 +2104,8 @@ gui.config.armor.armor_enchantability=Enchantabilities
 gui.config.armor.armor_enchantability.comment=Determines the quality of applied enchantments. Order: boron, tough alloy, hard carbon, boron nitride.
 gui.config.armor.armor_toughness=Toughnesses
 gui.config.armor.armor_toughness.comment=Toughnesses of armor types. Order: boron, tough alloy, hard carbon, boron nitride.
+gui.config.armor.armor_conarm_register=ConArm Armor Material Registration
+gui.config.armor.armor_conarm_register.comment=Will these materials be registered as armor materials for Construct's Armory? Order: boron, tough alloy, hard carbon, boron nitride, thorium, uranium, magnesium, chocolate.
 
 gui.config.category.radiation=Radiation Configs
 gui.config.category.radiation.tooltip=Configure aspects of nuclear radiation.
@@ -2091,9 +2119,15 @@ gui.config.radiation.radiation_player_tick_rate=Radiation Player Tick Rate
 gui.config.radiation.radiation_player_tick_rate.comment=The rate at which player radiation data updates.
 
 gui.config.radiation.radiation_worlds=World Background Radiation
-gui.config.radiation.radiation_worlds.comment=List of dimensions and their background radiation levels. Format: 'modid:dimID_radiationLevel'.
+gui.config.radiation.radiation_worlds.comment=List of dimensions and their background radiation levels. Format: 'dimID_radiationLevel'.
 gui.config.radiation.radiation_biomes=Biome Background Radiation
 gui.config.radiation.radiation_biomes.comment=List of biomes and their background radiation levels. These values stack with the underlying world's background radiation. Format: 'modid:biomeName_radiationLevel'.
+gui.config.radiation.radiation_world_limits=World Radiation Limit
+gui.config.radiation.radiation_world_limits.comment=List of dimensions and their radiation level limits. Format: 'dimID_radiationLimit'.
+gui.config.radiation.radiation_biome_limits=Biome Radiation Limit
+gui.config.radiation.radiation_biome_limits.comment=List of biomes and their radiation level limits. These values stack with the underlying world's background radiation. Format: 'modid:biomeName_radiationLimit'.
+gui.config.radiation.radiation_from_biomes_dims_blacklist=Biome Radiation Dimension Blacklist
+gui.config.radiation.radiation_from_biomes_dims_blacklist.comment=List of IDs of dimensions to blacklist for biome background radiation.
 
 gui.config.radiation.radiation_ores=Ore Stack Radiation
 gui.config.radiation.radiation_ores.comment=List of ore dict entries and their stack radiation levels. Can be used to overwrite default values. Format: 'oreName_radiationLevel'.
@@ -2111,12 +2145,20 @@ gui.config.radiation.radiation_blocks_blacklist.comment=List of blocks that will
 
 gui.config.radiation.max_player_rads=Max Player Rads
 gui.config.radiation.max_player_rads.comment=The maximum number of rads a player can have before the radiation is fatal.
-gui.config.radiation.radiation_spread_rate=Radiation Spread Rate
+gui.config.radiation.radiation_player_decay_rate=Player Radiation Decay Rate
+gui.config.radiation.radiation_player_decay_rate.comment=The rate at which player radiation decreases over time, as a fraction of the player's current radiation level per tick.
+gui.config.radiation.radiation_entity_decay_rate=Entity Radiation Decay Rate
+gui.config.radiation.radiation_entity_decay_rate.comment=The rate at which entity radiation decreases over time, as a fraction of the entity's current radiation level per tick.
+gui.config.radiation.radiation_spread_rate=Chunk Radiation Spread Rate
 gui.config.radiation.radiation_spread_rate.comment=Controls the rate at which radiation will spread from chunk to chunk.
-gui.config.radiation.radiation_decay_rate=Radiation Decay Rate
+gui.config.radiation.radiation_spread_gradient=Chunk Radiation Spread Gradient
+gui.config.radiation.radiation_spread_gradient.comment=Controls how high the ratio of radiation levels between chunks must be for radiation to spread between them.
+gui.config.radiation.radiation_decay_rate=Chunk Radiation Decay Rate
 gui.config.radiation.radiation_decay_rate.comment=Controls the rate at which radiation decreases in a chunk over time.
 gui.config.radiation.radiation_lowest_rate=Lowest Radiation Rate
 gui.config.radiation.radiation_lowest_rate.comment=The lowest rate of player and chunk irradiation possible in Rads/t - amounts below this are ignored.
+gui.config.radiation.radiation_chunk_limit=Chunk Radiation Limit
+gui.config.radiation.radiation_chunk_limit.comment=The maximum chunk radiation level possible in Rads/t. A negative value means there is no limit.
 
 gui.config.radiation.radiation_radaway_amount=RadAway Rads Removed
 gui.config.radiation.radiation_radaway_amount.comment=The total number of rads removed when using RadAway.
@@ -2132,6 +2174,8 @@ gui.config.radiation.radiation_rad_x_cooldown=Rad-X Cooldown Time
 gui.config.radiation.radiation_rad_x_cooldown.comment=The time that must be waited between doses of Rad-X in ticks.
 gui.config.radiation.radiation_shielding_level=Radiation Shielding Levels
 gui.config.radiation.radiation_shielding_level.comment=The radiation resistance levels provided by the three levels of shielding. Order: light, medium, heavy.
+gui.config.radiation.radiation_tile_shielding=Radiation Container Shielding
+gui.config.radiation.radiation_tile_shielding.comment=If enabled along with hardcore containers, radiation shielding can be applied to tile entities.
 gui.config.radiation.radiation_hazmat_shielding=Radiation Hazmat Shielding
 gui.config.radiation.radiation_hazmat_shielding.comment=The radiation resistance levels provided by each piece of the hazmat suit. Order: headwear, chestpiece, leggings, boots.
 gui.config.radiation.radiation_scrubber_fraction=Scrubber Max Removal Rate
@@ -2161,9 +2205,22 @@ gui.config.radiation.radiation_hud_text_outline.comment=If enabled, a black outl
 
 gui.config.radiation.radiation_require_counter=Counter Required For Info
 gui.config.radiation.radiation_require_counter.comment=If disabled, the rads overlay will show and the ticking will be heard even when a Geiger Counter is not being held.
+gui.config.radiation.radiation_chunk_boundaries=Counter/Scrubber Chunk Boundaries
+gui.config.radiation.radiation_chunk_boundaries.comment=If enabled, chunk boundaries will be shown while holding or looking at a geiger counter block or radiation scrubber.
+gui.config.radiation.radiation_unit_prefixes=Radiation Unit Prefixes
+gui.config.radiation.radiation_unit_prefixes.comment=If set to a positive integer, radiation levels will be shown without unit prefixes to this number of significant figures.
+
+gui.config.radiation.radiation_badge_durability=Radiation Badge Durability
+gui.config.radiation.radiation_badge_durability.comment=Determines the total radiation that a Radiation Badge can be exposed to before disintegrating.
+gui.config.radiation.radiation_badge_info_rate=Radiation Badge Info Rate
+gui.config.radiation.radiation_badge_info_rate.comment=Determines the amount of exposed radiation after which the Radiation Badge will inform the player of its total exposure level as a fraction of the durability.
 
 gui.config.radiation.radiation_hardcore_stacks=Hardcore Stacks
-gui.config.radiation.radiation_hardcore_stacks.comment=If enabled, the radioactive stacks in a player's inventory irradiate the chunk the player is in as well as the player directly.
+gui.config.radiation.radiation_hardcore_stacks.comment=If enabled, the radioactive stacks in a player's inventory will irradiate the chunk the player is in as well as the player directly.
+gui.config.radiation.radiation_hardcore_containers=Hardcore Containers
+gui.config.radiation.radiation_hardcore_containers.comment=The radioactive stacks in container blocks will irradiate the chunk the tile entity is in at a rate of this fraction of their base radiation level.
+gui.config.radiation.radiation_dropped_items=Radiation From Dropped Items
+gui.config.radiation.radiation_dropped_items.comment=Radioactive items dropped on the ground will irradiate the chunk they are in.
 gui.config.radiation.radiation_death_persist=Radiation Death Persistence
 gui.config.radiation.radiation_death_persist.comment=If enabled, players' rad levels will persist on death.
 gui.config.radiation.radiation_death_persist_fraction=Death Persistence Fraction
@@ -2171,10 +2228,13 @@ gui.config.radiation.radiation_death_persist_fraction.comment=Specifies the frac
 gui.config.radiation.radiation_death_immunity_time=Post-Death Immunity Time
 gui.config.radiation.radiation_death_immunity_time.comment=Number of seconds players will have radiation immunity after death due to radiation.
 
-gui.config.radiation.radiation_passive_debuffs=Passive Entity Debuffs
-gui.config.radiation.radiation_passive_debuffs.comment=If enabled, passive entities will be debuffed and hurt if irradiated.
-gui.config.radiation.radiation_mob_buffs=Mob Buffs
-gui.config.radiation.radiation_mob_buffs.comment=If enabled, mobs will be buffed if irradiated.
+gui.config.radiation.radiation_passive_debuff_lists=Passive Entity Radiation Effects
+gui.config.radiation.radiation_passive_debuff_lists.comment=Lists of potion effects experienced at various percentages of radiation level by passive entities. Format: 'radPercent_potionNameA@strength,potionNameB@strength,...,potionNameZ@strength'.
+gui.config.radiation.radiation_mob_buff_lists=Mob Radiation Effects
+gui.config.radiation.radiation_mob_buff_lists.comment=Lists of potion effects experienced at various percentages of radiation level by mobs. Format: 'radPercent_potionNameA_strength,potionNameB_strength,...,potionNameZ_strength'.
+
+gui.config.radiation.radiation_horse_armor=Horse Armor
+gui.config.radiation.radiation_horse_armor.comment=If enabled, horses can be equipped with radiation-protective armor.
 
 gui.config.category.other=Other Configs
 gui.config.category.other.tooltip=Miscellaneous configurations.
@@ -2224,7 +2284,7 @@ gui.config.other.dungeon_loot.comment=Will NuclearCraft loot generate in chests?
 gui.config.other.register_fluid_blocks=Register Fission Fluid Blocks
 gui.config.other.register_fluid_blocks.comment=Register fission fluid and molten salt coolant blocks? Keep false if running low on block IDs.
 gui.config.other.register_cofh_fluids=Register CoFH Fluid Alternatives
-gui.config.other.register_cofh_fluids.comment=Register alternative redstone, glowstone, cryotheum and ender fluids? It is recommended that this is set to true if no CoFH mods are installed.
+gui.config.other.register_cofh_fluids.comment=Register alternative Thermal Foundation fluids? It is recommended that this is set to true if no CoFH mods are installed.
 
 gui.config.other.ore_dict_priority_bool=Enable Ore Dict Mod Priority
 gui.config.other.ore_dict_priority_bool.comment=Will Ore Dictionary outputs be prioritised according to the mod list below? If false, the default Ore Dict entry will be used when deciding machine outputs.
@@ -2544,6 +2604,9 @@ advancement.nuclearcraft.smore.desc=Make a S'more S'mingot
 advancement.nuclearcraft.moresmore.name=S'more of the Same
 advancement.nuclearcraft.moresmore.desc=Make a MoreS'more DoubleS'mingot
 
+advancement.nuclearcraft.foursmore.name=Even S'more Where That Came From
+advancement.nuclearcraft.foursmore.desc=Make a FourS'more QuadS'mingot
+
 block.fusion_run=Fusion Reactor Running
 block.accelerator_run=Accelerator Running
 player.geiger_tick=Geiger Tick
@@ -2582,6 +2645,8 @@ message.nuclearcraft.rad_x_cooling_down=Your Rad-X cooldown is at
 message.nuclearcraft.scrubber_removal_rate=Radiation removal rate:
 
 hud.nuclearcraft.rad_immune=Immune for:
+
+commands.nuclearcraft.set_chunk_radiation.usage=/nc_set_chunk_radiation <radiation_level> [coord_x] [coord_z]
 
 death.attack.superfluid_freeze=%1$s was Bose-Einstein condensated
 death.attack.plasma_burn=%1$s was incinerated by plasma

@@ -178,6 +178,7 @@ item.armor_upgrade.name=Armor Upgrade
 item.jet_boots_upgrade.name=Jet Boots Upgrade
 item.night_vision_upgrade.name=Night Vision Upgrade
 item.scuba_upgrade.name=SCUBA Upgrade
+item.creative_upgrade.name=Creative Supply Upgrade
 
 item.assembly_program0.name=Assembly Program: Drill
 item.assembly_program1.name=Assembly Program: Laser
@@ -369,7 +370,7 @@ gui.tab.info.tile.air_cannon=§0This machine can be used to transport items thro
 gui.tab.info.aerialInterface.liquidXp.info.title=Interfacing XP
 gui.tab.info.aerialInterface.liquidXp.info=§0With a Dispenser Upgrade installed in the Aerial Interface, you can pump liquid XP into or out of the Interface, directly filling or draining the player's stored experience. You can select which type of liquid XP to use with the above button; clicking it cycles through the available types, as well as the (default) disabled setting. \n \nAvailable XP types:
 gui.tab.info.aerialInterface.interfacingRF.info.title=Interfacing Energy
-gui.tab.info.aerialInterface.interfacingRF.info=The Aerial Interface accepts Forge Energy (compatible with RF and many other mods). The energy stored in its internal buffer (100,000 RF) is used to charge any chargeable item in the player's inventory at up to 1,000 FE/tick. \nNote: Energy is interfaced regardless of whether a Dispenser Upgrade is inserted.
+gui.tab.info.aerialInterface.interfacingRF.info=The Aerial Interface accepts Forge Energy (compatible with RF and many other mods). The energy stored in its internal buffer (100,000 FE) is used to charge any chargeable item in the player's inventory at up to 1,000 FE/tick. \nNote: Energy is always interfaced regardless of whether or not a Dispenser Upgrade is inserted.
 gui.tab.info.aerialInterface.interfacingFood=Interfacing Food & XP
 gui.tab.info.aerialInterface.interfacingItems=Interfacing Items
 gui.tab.info.aerialInterface.insertDispenser=Insert a Dispenser Upgrade to switch to interfacing food and experience.
@@ -470,10 +471,10 @@ gui.tab.info.tile.drone_interface=§0A block that allows ComputerCraft and OpenC
 gui.tab.info.tile.kerosene_lamp=§0A Kerosene Lamp is a light source that runs on Kerosene. It is similar to the long range light sources you might be used to, like Thaumcraft's Arcane Lamp, or Factorization's Wrath Lamp.
 gui.tab.info.tile.sentry_turret=§0A Sentry Turret is an autonomous defensive weapon. When provided with Gun Ammo it will fire at any living entity within a 16 block range (extendable with Range Upgrades). You can filter which entities to attack by entering a filter in the 'Target Filter' field. When the Sentry Gun is covered by a Security Station, players allowed by the Security Station will not be targeted.
 
-gui.tab.info.logistic_frame_requester=§0Requester frames can request resources from any other framed inventory. \n \nHere you can specify which resources and quantities that Logistics Drones should keep supplied in the framed inventory. Either insert items from your inventory, or search for an item/fluid by right clicking an empty slot.
+gui.tab.info.logistic_frame_requester=§0Requester frames can request resources from any other framed inventory. \n \nHere you can specify the resources and quantities that Logistics Drones / Logistics Modules should keep stocked in the framed inventory. Either insert items from your inventory, or search for an item/fluid by right clicking an empty slot.
 gui.tab.info.logistic_frame_passive_provider=§0Passive Provider frames can provide resources to Requester Frames. \n \nBy default the framed inventory will provide every item in the inventory. By adding items to this filter, only those items will be provided. Add items from your inventory, or search for an item/fluid by right clicking an empty slot.
 gui.tab.info.logistic_frame_active_provider=§0Active Provider frames can provide resources to Requester frames and Storage / Default Storage frames. \n \nBy default the framed inventory will provide every item in the inventory. By adding items to this filter, only items specified will be provided. Add items from your inventory or search for an item/fluid by right clicking an empty slot.
-gui.tab.info.logistic_frame_storage=§0Storage frames can receive resources from Active Providers and supply items to Requesters. \n \nBy default the framed inventory accepts any item from providing inventories. By adding items to this filter, only items specified can be inserted via the logistics network. Add items from your inventory or search for an item/fluid by right clicking an empty slot.
+gui.tab.info.logistic_frame_storage=§0Storage frames can receive resources from Active Providers and supply resources to Requesters. \n \nBy default the framed inventory accepts any item from providing inventories. By adding items to this filter, only items specified can be inserted via the logistics network. Add items from your inventory or search for an item/fluid by right clicking an empty slot.
 gui.tab.info.logistic_frame_default_storage=§0Default Storage frames can receive resources from Active Providers and supply resources to Requesters and Storage Frames. They have a lower priority than Storage frames, which will be always be used first if possible. \n \nBy default the framed inventory will accept any resources from providing inventories. By adding items to this filter, only items specified can be inserted via the logistics network. Add items from your inventory or search for an item/fluid by right clicking an empty slot.
 
 # Pressure
@@ -486,38 +487,39 @@ gui.tab.problems.noProblems=No Problems
 gui.tab.problems.redstoneDisallows=§fRedstone disallows this machine to function.
 gui.tab.problems.provideRedstone=§0Provide a redstone signal.
 gui.tab.problems.removeRedstone=§0Remove the redstone signal.
-gui.tab.problems.notEnoughPressure=§7Not enough pressure.
+gui.tab.problems.notEnoughPressure=§fNot enough pressure.
 gui.tab.problems.applyPressure=§0Apply at least %s bar.
-gui.tab.problems.notEnoughHeat=§7Not enough heat. \n§0Apply more heat by adding blocks that generate heat around this machine.
+gui.tab.problems.notEnoughHeat=§fNot enough heat. \n§0Apply more heat by adding blocks that generate heat around this machine.
+gui.tab.problems.exposedFaces=§fMachine is poorly insulated. \n§0%d of %d block faces are exposed to the air, which wastes heat. Ensure no neighboring blocks are air blocks to insulate the machine for better performance.
 gui.tab.problems.aerialInterface.linked=§0Machine linked with %s.
-gui.tab.problems.fluxCompressor.noRF=§7The machine is out of RF. \n§0Add more powah!
-gui.tab.problems.plasticMixer.noPlastic=§7No plastic to melt down. \n§0Add plastic in the bottom slot of the 'Item' section.
-gui.tab.problems.plasticMixer.plasticOverflow=§7There's no inventory space to allow the liquid plastic to freeze into plastic. \n§0Remove the plastic from the bottom slot in the 'Item' section.
-gui.tab.problems.plasticMixer.noDye=§7No dye left. \n§0Add %s.
-gui.tab.problems.plasticMixer.noProblems=§7No problems. \n§0Click on the plastic of the desired color in the Plastic Selection tab.
-gui.tab.problems.liquidCompressor.noFuel=§7The machine has no fuel. \n§0Add any of the fuels listed in the 'Available Fuels' tab.
+gui.tab.problems.fluxCompressor.noRF=§fThe machine is out of RF. \n§0Add more powah!
+gui.tab.problems.plasticMixer.noPlastic=§fNo plastic to melt down. \n§0Add plastic in the top §7Item§0 slot.
+gui.tab.problems.plasticMixer.plasticOverflow=§fThere's no inventory space to allow the liquid plastic to solidify into plastic. \n§0Remove the plastic from the bottom §7Item§0 slot.
+gui.tab.problems.plasticMixer.noDye=§fNo dye left. \n§0Add %s.
+gui.tab.problems.plasticMixer.noProblems=§fNo problems. \n§0Click on the plastic of the desired color in the Plastic Selection tab.
+gui.tab.problems.liquidCompressor.noFuel=§fThe machine has no fuel. \n§0Add any of the fuels listed in the 'Available Fuels' tab.
 gui.tab.problems.advancedAirCompressor.efficiency=§fThe Compressor is running at a suboptimal efficiency. Efficiency: %s \n§0Cool the machine down to under 50°C.
-gui.tab.problems.programmableController.noProgram=§7No program inserted to run. \n§0Insert a programmed Network API or Drone.
-gui.tab.problems.gasLift.noLiquidSpace=§7Not enough tank space to pump. \n§0Connect up a tank.
-gui.tab.problems.gasLift.noTubes=§7No tubes! \n§0Place Pressure Tubes in the inventory.
-gui.tab.problems.gasLift.noTubeSpace=§7No space for tubes! \n§0Remove the Pressure Tubes from the inventory.
-gui.tab.problems.gasLift.stuck=§7Tubes stuck! \n§0Tubes have encountered an unbreakable block, and can't dig any further down here.
-gui.tab.problems.refinery.noOil=§7No input fluid. \n§0Pump fluid into the Refinery.
-gui.tab.problems.refinery.outputBlocked=§7No space for fluids to be outputted. \n§0Remove any output fluid.
-gui.tab.problems.refinery.notEnoughRefineries=§7Not enough Refineries. \n§0Refineries need to be stacked on top of each other, ranging from 2 to 4 Refineries.
-gui.tab.problems.refinery.tooManyRefineries=§7Too many Refineries. \n§0Refineries need to be stacked on top of each other, ranging from 2 to 4 Refineries.
-gui.tab.problems.thermopneumaticProcessingPlant.noSufficientIngredients=§7No (valid) ingredients, or no room for output! \n§0Add (the right) ingredients or empty the output tank.
-gui.tab.problems.amadron.noItemProvider=§7No item inventory selected. \n§0Right-click an inventory with your Amadron Tablet.
-gui.tab.problems.amadron.noFluidProvider=§7No tank selected. \n§0Right-click a tank with your Amadron Tablet.
-gui.tab.problems.amadron.notEnoughItemSpace=§7Can't store more items than currently buying. \n§0Create space in the bound inventory.
-gui.tab.problems.amadron.notEnoughFluidSpace=§7Can't store more fluid than currently buying. \n§0Bind a bigger tank and make sure no other fluid is in this tank.
-gui.tab.problems.amadron.notEnoughItems=§7Out of items to sell! \n§0Add more items in the bound inventory.
-gui.tab.problems.amadron.notEnoughFluid=§7Out of fluid to sell! \n§0Add more fluid in the bound tank. Or bind a bigger tank.
-gui.tab.problems.amadron.outOfStock=§7Out of stock! \n§0Come back later, maybe the vendor will resupply later.
+gui.tab.problems.programmableController.noProgram=§fNo program inserted to run. \n§0Insert a programmed Network API or Drone.
+gui.tab.problems.gasLift.noLiquidSpace=§fNot enough tank space to pump. \n§0Connect up a tank.
+gui.tab.problems.gasLift.noTubes=§fNo tubes! \n§0Place Pressure Tubes in the inventory.
+gui.tab.problems.gasLift.noTubeSpace=§fNo space for tubes! \n§0Remove the Pressure Tubes from the inventory.
+gui.tab.problems.gasLift.stuck=§fTubes stuck! \n§0Tubes have encountered an unbreakable block, and can't dig any further down here.
+gui.tab.problems.refinery.noOil=§fNo input fluid. \n§0Pump fluid into the Refinery.
+gui.tab.problems.refinery.outputBlocked=§fNo output space for fluids. \n§0Remove any output fluids.
+gui.tab.problems.refinery.notEnoughRefineries=§fNot enough Refineries. \n§0Refineries need to be stacked on top of each other, ranging from 2 to 4 Refineries.
+gui.tab.problems.refinery.tooManyRefineries=§fToo many Refineries. \n§0Refineries need to be stacked on top of each other, ranging from 2 to 4 Refineries.
+gui.tab.problems.thermopneumaticProcessingPlant.noSufficientIngredients=§fNo (valid) ingredients, or no room for output! \n§0Add (the right) ingredients or empty the output tank.
+gui.tab.problems.amadron.noItemProvider=§fNo item inventory selected. \n§0Right-click an inventory with your Amadron Tablet.
+gui.tab.problems.amadron.noFluidProvider=§fNo tank selected. \n§0Right-click a tank with your Amadron Tablet.
+gui.tab.problems.amadron.notEnoughItemSpace=§fCan't store more items than currently buying. \n§0Create space in the bound inventory.
+gui.tab.problems.amadron.notEnoughFluidSpace=§fCan't store more fluid than currently buying. \n§0Bind a bigger tank and make sure no other fluid is in this tank.
+gui.tab.problems.amadron.notEnoughItems=§fOut of items to sell! \n§0Add more items in the bound inventory.
+gui.tab.problems.amadron.notEnoughFluid=§fOut of fluid to sell! \n§0Add more fluid in the bound tank. Or bind a bigger tank.
+gui.tab.problems.amadron.outOfStock=§fOut of stock! \n§0Come back later, maybe the vendor will resupply later.
 gui.tab.problems.keroseneLamp.lowFuel=§fThe lamp is low on fuel. \n§0Add Kerosene through a fluid insertion method (like a Liquid Hopper or Logistic Drone).
-gui.tab.problems.keroseneLamp.noFuel=§7The lamp has no fuel. \n§0Add Kerosene by placing a Kerosene Bucket in the slot, or through a fluid insertion method (like a Liquid Hopper or Logistic Drone).
-gui.tab.problems.keroseneLamp.badFuel=§7The lamp has an unsuitable fluid in the tank! \n§0Pump out the fluid with a Liquid Hopper or other fluid extraction device.
-gui.tab.problems.sentryTurret.noAmmo=§7The Sentry Turret has no ammo. \n§0Add Gun Ammo to the Ammo slots.
+gui.tab.problems.keroseneLamp.noFuel=§fThe lamp has no fuel. \n§0Add Kerosene by placing a Kerosene Bucket in the slot, or through a fluid insertion method (like a Liquid Hopper or Logistic Drone).
+gui.tab.problems.keroseneLamp.badFuel=§fThe lamp has an unsuitable fluid in the tank! \n§0Pump out the fluid with a Liquid Hopper or other fluid extraction device.
+gui.tab.problems.sentryTurret.noAmmo=§fThe Sentry Turret has no ammo. \n§0Add Gun Ammo to the Ammo slots.
 gui.tab.problems.electrostatic.notEnoughGrounding=§fWhen lightning strikes with a full air tank not all the energy can be redirected! \n§0Connect up more Iron Bars to the underside of the Electrostatic Compressor
 gui.tab.problems.assembly_controller.duplicateMachine=§fDuplicate Machine Detected! \n§0Ensure there is only one %s.
 gui.tab.problems.assembly_controller.missingMachine=§fMissing Machine! \n§0Not all machines for the inserted program are present. Add one %s to your assembly system.
@@ -528,6 +530,7 @@ gui.tab.upgrades=Upgrades
 gui.tab.upgrades.volume=§7§nVolume Upgrade \n§0Adds 5L more air capacity for each upgrade inserted.  Adding volume upgrades will increase the air that can be stored, causing a pressure drop.  Removing upgrades will keep the pressure constant, losing air from the machine.
 gui.tab.upgrades.volumeCapacity=§7§nVolume Upgrade \n§0Increases the heat capacity of this machine. It will heat up slower, but it also will cool down slower.
 gui.tab.upgrades.security=§7§nSecurity Upgrade \n§0Adds a built-in Safety Valve Tube to the pneumatic machine.
+gui.tab.upgrades.creative=§d§nCreative Upgrade \n§0Allows the hopper to provide items/fluids infinitely.
 gui.tab.upgrades.tile.aerial_interface=§7§nDispenser Upgrade \n§0Allows interfacing of Food & Experience instead of items. Only food items will be accepted through the Aerial Interface; see the Feed Mode tab opposite for how the food is handled. \n \nIf a suitable XP fluid is available, it can be pumped in or out of the Aerial Interface and will convert to or from player levels.  See the Interfacing XP tab opposite to choose which fluid type to use.
 gui.tab.upgrades.tile.air_cannon=§7§nDispenser Upgrade \n§0Will make the cannon act like a Dispenser. Any item that would act special in a Dispenser, will be handled the same way in here. \n§7§nEntity Tracker Upgrade (max = 5) \n§0When fired, the Air Cannon will grab the closest living entity and shoot it to the set coordinate. This can be used as player transport. It has a grabbing radius of 1 by default. Per inserted Entity Tracker Upgrade the radius will increase by one. \n§7§nBlock Tracker Upgrade \n§0When fired, items being shot automatically will try to go into inventories they hit. When firing at a Chest for example, items will land in the Chest without needing a Hopper. \n§7§nItem Life Upgrade \n§0By default the Air Cannon shoots items which have a lifespan of 60 seconds. For each of this upgrades you put in you get an additional 30 seconds. \n§7§nSpeed Upgrade (max = 10) \n§0The cannon will turn faster. \n§7§nRange Upgrade \n§0The shooting range will increase by about 25 blocks per upgrade, up to 250 blocks.
 gui.tab.upgrades.tile.air_compressor=§7§nSpeed Upgrade (max = 10) \n§0The Air Compressor will produce more compressed air per tick. However this is at the expense of the efficiency.
@@ -664,7 +667,6 @@ gui.setKeybind=Press key to bind
 gui.enableModule=Enable %s
 gui.pressureChamber=Pressure Chamber
 gui.pressureChamberTitle=%s Pressure Chamber
-gui.thermopneumatic.dumpInput=Dump Input Tank \n§7Get rid of any unwanted fluids which have found their way into the processing plant
 gui.universalSensor.button.showRange=Show Range
 gui.programmer.button.showArea=Show Area
 gui.programmer.button.stopShowingArea=Stop Showing Area
@@ -855,6 +857,13 @@ gui.logistic_frame.whitelist=Whitelist
 gui.logistic_frame.blacklist=Blacklist
 gui.logistic_frame.no_items=§o• No items
 gui.logistic_frame.no_fluids=§o• No fluids
+gui.logistic_frame.facing=Facing
+gui.logistic_frame.facing.tooltip=Defines the face of the framed inventory/tank which will be accessed by Drones. This is ignored by Logistics Modules; they always access the inventory/tank on the side they face.
+gui.logistic_frame.min_amount=Minimum Order Size
+gui.logistic_frame.min_items=Minimum Items
+gui.logistic_frame.min_items.tooltip=This frame will not order fewer items than this at a time. Useful to prevent drones making many trips with tiny loads when a single trip could be more efficient.
+gui.logistic_frame.min_fluid=Minimum Fluid (mB)
+gui.logistic_frame.min_fluid.tooltip=This frame will not order less fluid than this at a time. Useful to prevent drones making many trips with tiny loads when a single trip could be more efficient.
 gui.plasticMixer.lockSelection=Lock Selection
 gui.plasticMixer.lockSelection.tooltip=Locks the selected plastic
 gui.keroseneLamp.maxRange=Max Range:
@@ -1037,6 +1046,7 @@ gui.config.category.client=Clientside Options
 gui.config.category.helmet=Pneumatic Helmet (Clientside)
 gui.config.category.minigun=Minigun & Ammo
 gui.config.category.micromissile=Micromissiles
+gui.config.category.integration=Mod Integration
 
 # Side Configurator tabs
 gui.sideConfigurator.unconnected=§oUnconnected
@@ -1046,9 +1056,10 @@ gui.sideConfigurator.items.armorInv=Armor Slots
 gui.sideConfigurator.items.offhandInv=Offhand Slot
 gui.sideConfigurator.items.enderInv=Ender Inventory
 gui.sideConfigurator.items.droneInv=Drone Inventory
+gui.sideConfigurator.items.baublesInv=Baubles Slots
 gui.sideConfigurator.items.programmableInv=Programmable Slot
 
-# Waila
+# Waila/TOP
 hud.msg.state=State
 hud.msg.active=Active
 hud.msg.inactive=Inactive
@@ -1065,6 +1076,9 @@ waila.logisticsModule.notEnoughAir=§6Not enough pressure to transport the items
 waila.logisticsModule.powered=§2Online
 waila.logisticsModule.noPower=§cOffline (apply at least 3 bar)
 waila.logisticsModule.channel=Channel:
+
+waila.interface.mode.import=Importing Items
+waila.interface.mode.export=Exporting Items
 
 # Misc
 itemGroup.tabPneumaticCraft=PneumaticCraft
@@ -1263,6 +1277,9 @@ message.amadron.addedStaticOffer=§a[Amadron] §bAdded static offer: §6%s§b fo
 # Camo Applicator
 message.camo.notEnoughBlocks=§4Out of §c%s !
 message.camo.invalidBlock=§4Invalid camo block: §c%s !
+
+message.dispenser.direction=§eEject to: %s
+message.dispenser.clickToSet=§e§oRight-click any block to set eject direction
 
 # Patchouli
 patchouli.book.name=PNC:R Manual

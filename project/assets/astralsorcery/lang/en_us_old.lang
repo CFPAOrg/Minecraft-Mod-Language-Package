@@ -26,6 +26,8 @@ config.astralsorcery.category.fluid_rarities=Fluids: Neromantic Prime
 config.astralsorcery.category.fluid_rarities.tooltip=Defines the fluids the Prime can find.
 config.astralsorcery.category.herdable_animals_blacklist=Blacklist: Herdable Animals
 config.astralsorcery.category.herdable_animals_blacklist.tooltip=Defines which animals the Bootes ritual can't interact with.
+config.astralsorcery.category.perk_void_trash_replacement='Trash to Treasure'-Perk Replacement List
+config.astralsorcery.category.perk_void_trash_replacement.tooltip=Defines which oredict-items (including weights) are randomly given out when generating a valuable item with the 'Trash to Treasure' Perk.
 
 advancements.astralsorcery.attune_crystal.title=Picking up good vibrations
 advancements.astralsorcery.attune_crystal.desc=Attune a crystal to a Constellation.
@@ -273,7 +275,7 @@ astralsorcery.journal.TOOL_WANDS.1.text=The attempt to channel Starlight energie
 astralsorcery.journal.TOOL_WANDS.3.text=Pick the block to be used for placement or replacement by right-clicking a block of that type while holding Shift. Blocks needed will be drawn from the wielder’s inventory.<NL>Upon channeling some of this ethereal energy into the wand, it leaves the wielder a bit drained afterwards. Utilizing the alignment gauge when using those kinds of gadgets may be helpful to avoid an overload or short-circuit of some type...
 
 research.GRAPPLE_WAND.name=Impulsion Wand
-astralsorcery.journal.GRAPPLE_WAND.1.text=Enderpearls would be very useful if they weren't so hard to obtain, weren't so easily used up, and self-damaging upon use.<NL>Thanks to your knowledge about the strange patterns of Starlight energy, a wand can be created to channels these energies through Enderpearls to provide a safer means of transportation.<NL>In contrast to the pearls, though, the wand has only limited range and pulls its user towards whatever it finds rather than providing an instant teleportation.
+astralsorcery.journal.GRAPPLE_WAND.1.text=Enderpearls would be very useful if they weren't so hard to obtain, weren't so easily used up, and self-damaging upon use.<NL>Thanks to your knowledge about the strange patterns of Starlight energy, a wand can be created to channel these energies through Enderpearls to provide a safer means of transportation.<NL>In contrast to the pearls, though, the wand has only limited range and pulls its user towards whatever it finds rather than providing an instant teleportation.
 
 research.RIT_PEDESTAL.name=Ritual Pedestal
 astralsorcery.journal.RIT_PEDESTAL.1.text=While an Attuned crystal can almost manifest the power of a constellation directly, a specialized pedestal is needed to focus the collected Starlight.<NL>As manifesting received starlight power is stressful, and Fractures will occur over time. The pedestal having an internal Liquid Starlight reservoir helps dissipate the stressful energies, but even it has limits, and crystals will need to be manually soaked in Liquid Starlight to repair if Fracturing begins accruing.
@@ -771,6 +773,20 @@ perk.category.focus.name=Focus Perk
 
 perk.astralsorcery.compat.thaumcraft=Astral Sorcery: Thaumcraft Compat
 
+perk.reader.infostar=Statistics
+perk.reader.gui=Perk Statistics
+perk.reader.limit.default=(limited to %s)
+perk.reader.limit.percent=(limited to %s%%)
+perk.reader.postprocess.default=Forced to %s
+
+##
+# Note: B = 'Base Value', A = 'Added Multipliers', I = 'Increase/Decrease Multipliers', M = 'More/Less Multipliers'
+##
+perk.reader.description.head=B %s
+perk.reader.description.addition=A + %s
+perk.reader.description.increase=I   * %s
+perk.reader.description.moreless=M     * %s
+
 ###
 # Note: Different modifiers may have different formats.
 ###
@@ -788,6 +804,9 @@ perk.modifier.added_multiply.sub=%% decreased
 perk.modifier.stacking_multiply.add=%% more
 perk.modifier.stacking_multiply.sub=%% less
 
+perk.attribute.astralsorcery.thorns.modifier.name=%% of melee damage taken is reflected
+perk.attribute.astralsorcery.lifeleech.modifier.name=%% of damage dealt gained as life
+
 perk.attribute.astralsorcery.meleeattackdamage.name=Melee Damage
 perk.attribute.astralsorcery.projectileattackdamage.name=Projectile Damage
 perk.attribute.astralsorcery.projectilespeed.name=Projectile Speed
@@ -798,6 +817,7 @@ perk.attribute.astralsorcery.armor.name=Armor
 perk.attribute.astralsorcery.armortoughness.name=Armor Toughness
 perk.attribute.astralsorcery.attackspeed.name=Attack Speed
 perk.attribute.astralsorcery.reach.name=Reach
+perk.attribute.astralsorcery.dynenchantmenteffect.name=Amulet Enchantments
 
 perk.attribute.astralsorcery.liferecovery.name=Life Recovery
 perk.attribute.astralsorcery.potionduration.name=PotionEffect Duration
@@ -812,8 +832,8 @@ perk.attribute.astralsorcery.critmulti.name=Critical Damage Multiplier
 perk.attribute.astralsorcery.allres.name=Elemental Resistances
 perk.attribute.astralsorcery.expgain.name=Perk Experience gained
 perk.attribute.astralsorcery.dodge.name=Dodge Chance
-perk.attribute.astralsorcery.thorns.name=%% of melee damage taken is reflected
-perk.attribute.astralsorcery.lifeleech.name=%% of damage dealt gained as life
+perk.attribute.astralsorcery.thorns.name=Damage reflected
+perk.attribute.astralsorcery.lifeleech.name=Life Leech
 
 perk.attribute.astralsorcery.compat.thaumcraft.runicshield.name=Runic Shielding
 
@@ -915,8 +935,8 @@ perk.astralsorcery.inc_mine_perk.name=Increased Mining Speed
 perk.astralsorcery.inc_life_rec.name=Increased Life Recovery
 
 perk.astralsorcery.cst_gelu.name=Focus: Gelu
-perk.astralsorcery.cst_gelu.desc.1=Gain +3%% increased Perk Experience per allocated Perk.
-perk.astralsorcery.cst_gelu.desc.2=Other modifiers to Perk Experience no longer apply.
+perk.astralsorcery.cst_gelu.desc.1=Gain +3%% increased Perk Effect per allocated Perk.
+perk.astralsorcery.cst_gelu.desc.2=Other modifiers to Perk Effect no longer apply.
 perk.astralsorcery.cst_gelu.desc.4=You can only unlock 1 Focus Perk.
 perk.astralsorcery.cst_ulteria.name=Focus: Ulteria
 perk.astralsorcery.cst_ulteria.desc.1=+5%% more Perk Experience per unspent Perk Point.
@@ -1024,7 +1044,7 @@ perk.astralsorcery.key_armor_life_conversion.desc.2=You have no armor.
 perk.astralsorcery.key_cheat_death.name=Phoenix Blessing
 perk.astralsorcery.key_cheat_death.desc=Can save you from death in dire situations.
 perk.astralsorcery.key_no_armor.name=Diamond Skin
-perk.astralsorcery.key_no_armor.desc.1=Take reduced damage when wearing
+perk.astralsorcery.key_no_armor.desc.1=Take 30% less damage when wearing
 perk.astralsorcery.key_no_armor.desc.2=less than 2 armor pieces.
 perk.astralsorcery.key_swim_conversion.name=Additional Fins
 perk.astralsorcery.key_swim_conversion.desc.1=Increases and decreases to Movement Speed also
@@ -1173,7 +1193,7 @@ knowledge.astralsorcery.fragment.constellation.illumwand.description=Blocks conv
 
 knowledge.astralsorcery.fragment.constellation.prism.name=Enchantment Improvements
 knowledge.astralsorcery.fragment.constellation.prism.bookmark=Enchantments
-knowledge.astralsorcery.fragment.constellation.prism.description=Each Resplendent Prims has three modifiers for changing enchantments, with each modifier providing up to a +3 bonus to one or more enchantments. Any combination of boosting existing enchantments or adding new enchantments is possible. However, any modifier that increases all existing enchantments will occupy two of these modifier slots.<NL>The color of the Prism is random, with white being far more rare than all the others.
+knowledge.astralsorcery.fragment.constellation.prism.description=Each Resplendent Prism has three modifiers for changing enchantments, with each modifier providing up to a +3 bonus to one or more enchantments. Any combination of boosting existing enchantments or adding new enchantments is possible. However, any modifier that increases all existing enchantments will occupy two of these modifier slots.<NL>The color of the Prism is random, with white being far more rare than all the others.
 
 knowledge.astralsorcery.fragment.constellation.clusterbonus.name=Boosting Crystal Yield
 knowledge.astralsorcery.fragment.constellation.clusterbonus.bookmark=Growth yield

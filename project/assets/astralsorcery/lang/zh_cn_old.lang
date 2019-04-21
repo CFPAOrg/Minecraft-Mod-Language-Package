@@ -26,6 +26,8 @@ config.astralsorcery.category.fluid_rarities=流体：纳耳狂曼喷口
 config.astralsorcery.category.fluid_rarities.tooltip=定义了喷口能找到的流体。
 config.astralsorcery.category.herdable_animals_blacklist=黑名单：可聚集动物
 config.astralsorcery.category.herdable_animals_blacklist.tooltip=定义了不受牧夫座效应影响的动物。
+config.astralsorcery.category.perk_void_trash_replacement=“变废为宝”的过滤名单
+config.astralsorcery.category.perk_void_trash_replacement.tooltip=定义“变废为宝”在随机生成贵重物品时的权重与矿物辞典。
 
 advancements.astralsorcery.attune_crystal.title=开始共振
 advancements.astralsorcery.attune_crystal.desc=将一个水晶石与星座进行共鸣。
@@ -276,7 +278,7 @@ research.GRAPPLE_WAND.name=冲击星杖
 astralsorcery.journal.GRAPPLE_WAND.1.text=如果末影珍珠不那么难获得且不会在使用中受伤的话将是一个极好的道具。<NL>基于对这些星能的奇特图形的研究结果，可以制作一种能将星能注入末影珍珠来维持一个更安全的传送方式的星杖。<NL>与珍珠的不同之处在于它的范围有限，且不是直接传送到目标而是给使用者一种推力。
 
 research.RIT_PEDESTAL.name=效应放大器
-astralsorcery.journal.RIT_PEDESTAL.1.text=虽然共鸣水晶石几乎可以直接投影星座的力量，但要真正让其生效还额外需要一个放大器来聚集散乱的星能。<NL>作为投影星座力量的代价就是水晶石将受到强大的应力，随着时间推移可以产生裂缝。放大器内部的星能液缓存可以适当的减弱应力，当然这种减弱应力的方式也有着一定的限制，如果水晶石已经开始产生裂缝，那就只能手动将其泡在星能液中进行修复。
+astralsorcery.journal.RIT_PEDESTAL.1.text=虽然共鸣水晶石几乎可以直接投影星座的力量，但要真正让其生效还额外需要一个放大器来聚集散乱的星能。<NL>作为投影星座力量的代价就是水晶石将受到强大的应力，随着时间推移将会产生裂缝。放大器内部的星能液缓存可以适当的减弱应力，当然这种减弱应力的方式也有着一定的限制，如果水晶石已经开始产生裂缝，那就只能手动将其泡在星能液中进行修复。
 
 research.TELESCOPE.name=天文望远镜
 astralsorcery.journal.TELESCOPE.1.text=手持望远镜虽然使用方便，但一直拿着太累了，看的也不清晰。而且一晚很难观测到一个以上的星座，想找到所有星图上的星座不知道要到什么时候。<NL>望远镜或许需要一个固定装置。这样一来，应该更容易深入天空，寻找更遥远的星星和星座。
@@ -643,7 +645,7 @@ tile.blockborehead.vortex.name=费萨利德喷口
 tile.blockportalnode.name=
 tile.blockobservatory.name=瞭望台
 tile.blockgemcrystals.stage_0.name==宝石水晶簇
-tile.blockgemcrystals.stage_1.name==宝石水晶簇
+tile.blockgemcrystals.stage_1.name=宝石水晶簇
 tile.blockgemcrystals.stage_2_sky.name=宝石水晶簇
 tile.blockgemcrystals.stage_2_day.name=宝石水晶簇
 tile.blockgemcrystals.stage_2_night.name=宝石水晶簇
@@ -773,6 +775,20 @@ perk.category.focus.name=固有技能
 
 perk.astralsorcery.compat.thaumcraft=星芒宝典：神秘时代兼容
 
+perk.reader.infostar=统计数据
+perk.reader.gui=技能统计数据
+perk.reader.limit.default=(限制为 %s)
+perk.reader.limit.percent=(限制为 %s%%)
+perk.reader.postprocess.default=强制为 %s
+
+##
+# Note: B = 'Base Value', A = 'Added Multipliers', I = 'Increase/Decrease Multipliers', M = 'More/Less Multipliers'
+##
+perk.reader.description.head=B %s
+perk.reader.description.addition=A + %s
+perk.reader.description.increase=I   * %s
+perk.reader.description.moreless=M     * %s
+
 ###
 # Note: Different modifiers may have different formats.
 ###
@@ -785,10 +801,13 @@ perk.modifier.format.lifeleech=%%1$s%%3$s
 ###
 perk.modifier.addition.add= 增加
 perk.modifier.addition.sub= 到
-perk.modifier.added_multiply.add=增加 %%
-perk.modifier.added_multiply.sub=减少 %%
-perk.modifier.stacking_multiply.add=比原来多 %%
-perk.modifier.stacking_multiply.sub=比原来少 %%
+perk.modifier.added_multiply.add= %% 额外叠加的
+perk.modifier.added_multiply.sub= %% 扣除的
+perk.modifier.stacking_multiply.add= %% 额外增加的
+perk.modifier.stacking_multiply.sub= %% 额外减少的
+
+perk.attribute.astralsorcery.thorns.modifier.name= %% 近战伤害反弹率
+perk.attribute.astralsorcery.lifeleech.modifier.name= %% 的伤害输出转换为生命值
 
 perk.attribute.astralsorcery.meleeattackdamage.name=近战伤害
 perk.attribute.astralsorcery.projectileattackdamage.name=抛射物伤害
@@ -800,6 +819,7 @@ perk.attribute.astralsorcery.armor.name=护甲
 perk.attribute.astralsorcery.armortoughness.name=护甲韧性
 perk.attribute.astralsorcery.attackspeed.name=攻击速度
 perk.attribute.astralsorcery.reach.name=范围
+perk.attribute.astralsorcery.dynenchantmenteffect.name=护身加持术
 
 perk.attribute.astralsorcery.liferecovery.name=生命回复
 perk.attribute.astralsorcery.potionduration.name=药水效果的持续时间
@@ -814,8 +834,8 @@ perk.attribute.astralsorcery.critmulti.name=暴击伤害倍数
 perk.attribute.astralsorcery.allres.name=元素抗性
 perk.attribute.astralsorcery.expgain.name=技能经验获取
 perk.attribute.astralsorcery.dodge.name=躲避几率
-perk.attribute.astralsorcery.thorns.name=反弹 %% 的近战伤害
-perk.attribute.astralsorcery.lifeleech.name=将 %% 的伤害转化生命值
+perk.attribute.astralsorcery.thorns.name=伤害反弹
+perk.attribute.astralsorcery.lifeleech.name=生命窃取
 
 perk.attribute.astralsorcery.compat.thaumcraft.runicshield.name=符文护盾
 
@@ -917,8 +937,8 @@ perk.astralsorcery.inc_mine_perk.name=提高挖掘速度
 perk.astralsorcery.inc_life_rec.name=增加生命回复
 
 perk.astralsorcery.cst_gelu.name=定向：寒冰座
-perk.astralsorcery.cst_gelu.desc.1=获得技能经验时额外+3%%。
-perk.astralsorcery.cst_gelu.desc.2=其他对技能经验的修改将无效。
+perk.astralsorcery.cst_gelu.desc.1=每个技能额外+3%%的技能效果。
+perk.astralsorcery.cst_gelu.desc.2=其他对技能效果的修改将无效化。
 perk.astralsorcery.cst_gelu.desc.3=
 perk.astralsorcery.cst_gelu.desc.4=你只能拥有一个固有技能。
 perk.astralsorcery.cst_ulteria.name=定向：避役座
@@ -1032,7 +1052,7 @@ perk.astralsorcery.key_cheat_death.name=凤凰守护
 perk.astralsorcery.key_cheat_death.desc=给你一次涅槃重生的机会。
 perk.astralsorcery.key_no_armor.name=皮糙肉厚
 perk.astralsorcery.key_no_armor.desc.1=当所穿的护甲低于
-perk.astralsorcery.key_no_armor.desc.2=2件时减少伤害。
+perk.astralsorcery.key_no_armor.desc.2=2件时减少至少30%伤害。
 perk.astralsorcery.key_swim_conversion.name=额外的鳍
 perk.astralsorcery.key_swim_conversion.desc.1=在水中的移动速度也相应的
 perk.astralsorcery.key_swim_conversion.desc.2=在原来的基础上增减50%%。
@@ -1100,11 +1120,11 @@ knowledge.astralsorcery.fragment.discovery.startable.description=虽然只有自
 
 knowledge.astralsorcery.fragment.exploration.lightwellprod.name=生产效率
 knowledge.astralsorcery.fragment.exploration.lightwellprod.bookmark=效率
-knowledge.astralsorcery.fragment.exploration.lightwellprod.description=虽然催化剂的持续时间受世界的影响是个玄学问题，但在这期间星能液的生成速率将大大增加。将聚星缸放置在高星能场或链接到星能网络将显著提高效率。<NL>各类催化剂的耐用性排列如下海蓝宝石、共振宝石、水晶石、天体水晶石、共鸣水晶石、共鸣天体水晶石。
+knowledge.astralsorcery.fragment.exploration.lightwellprod.description=虽然催化剂的持续时间受世界的影响是个玄学问题，但在这期间星能液的生成速率将大大增加。将聚星缸放置在高星能场或链接到星能网络将显著提高效率。<NL>各类催化剂的耐用性排列如下：海蓝宝石、共振宝石、水晶石、天体水晶石、共鸣水晶石、共鸣天体水晶石。
 
 knowledge.astralsorcery.fragment.exploration.lightwelluses.name=其他用途
 knowledge.astralsorcery.fragment.exploration.lightwelluses.bookmark=替代用途
-knowledge.astralsorcery.fragment.exploration.lightwelluses.description=聚星缸不仅仅能生成星能液。还能通过雪或冰块获得水。同样也能利用地狱岩和岩浆块来获得熔岩。提高生成的效率的方式与星能液相同。
+knowledge.astralsorcery.fragment.exploration.lightwelluses.description=聚星缸不仅仅能生成星能液，还能通过雪或冰块获得水。同样也能利用地狱岩和岩浆块来获得熔岩，提高生成的效率的方式与星能液相同。
 
 knowledge.astralsorcery.fragment.exploration.crystalgrowth.name=晶体分裂
 knowledge.astralsorcery.fragment.exploration.crystalgrowth.bookmark=分裂
@@ -1184,7 +1204,7 @@ knowledge.astralsorcery.fragment.constellation.prism.description=每个璀璨棱
 
 knowledge.astralsorcery.fragment.constellation.clusterbonus.name=晶体产量提升
 knowledge.astralsorcery.fragment.constellation.clusterbonus.bookmark=生长量
-knowledge.astralsorcery.fragment.constellation.clusterbonus.description=测验表面，水晶簇不仅生长的更快，而且若是种植在星辉矿石上时有几率获得更多的水晶石、初步结果表面，这种方法获得的水晶石的纯度极高。
+knowledge.astralsorcery.fragment.constellation.clusterbonus.description=测试表明，水晶簇不仅生长得更快，而且若是种植在星辉矿石上时有几率获得更多的水晶石。初步结果表明，这种方法获得的水晶石的纯度极高。
 
 knowledge.astralsorcery.fragment.constellation.clusterspeed.name=提高生长速度
 knowledge.astralsorcery.fragment.constellation.clusterspeed.bookmark=生长率
