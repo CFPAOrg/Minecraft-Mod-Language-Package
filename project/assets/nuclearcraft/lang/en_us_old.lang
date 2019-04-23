@@ -1814,6 +1814,8 @@ gui.config.processors.cobble_gen_power=Cobble Gen Power Use
 gui.config.processors.cobble_gen_power.comment=RF/s required for Cobblestone Generator to run.
 gui.config.processors.ore_processing=Ore Processing
 gui.config.processors.ore_processing.comment=Can NuclearCraft machines process ores?
+gui.config.processors.manufactory_wood=Manufactory Wood Processing
+gui.config.processors.manufactory_wood.comment=Specify the size of the output stack for Manufactory wood processing recipes. Order: Logs->Planks, Planks->Sticks.
 gui.config.processors.smart_processor_input=Smart Processor Input
 gui.config.processors.smart_processor_input.comment=Will a machine's valid inputs depend on the stacks already in its input slots as well as its possible recipes?
 gui.config.processors.passive_permeation=Passive Permeation
@@ -1984,7 +1986,9 @@ gui.config.fusion.fusion_fuel_time.comment=Base ticks the fuel combos last. Orde
 gui.config.fusion.fusion_power=Fusion Fuel Combo Power Gen
 gui.config.fusion.fusion_power.comment=Base RF/t the fuel combos produce. Order: H-H, H-D, H-T, H-He3, H-Li6, H-Li7, H-B11, D-D, D-T, D-He3, ..., D-B11, T-T, ..., T-B11, ..., B11-B11.
 gui.config.fusion.fusion_heat_variable=Fusion Fuel Combo Heat Variables
-gui.config.fusion.fusion_heat_variable.comment=Heat variables that determine the efficiency curves of the fuel combos - roughly proportional to the optimal temperatures. Order: H-H, H-D, H-T, H-He3, H-Li6, H-Li7, H-B11, D-D, D-T, D-He3, ..., D-B11, T-T, ..., T-B11, ..., B11-B11.
+gui.config.fusion.fusion_heat_variable.comment=Heat variables that determine the efficiency curves of the fuel combos. These are proportional to the optimal temperatures. Order: H-H, H-D, H-T, H-He3, H-Li6, H-Li7, H-B11, D-D, D-T, D-He3, ..., D-B11, T-T, ..., T-B11, ..., B11-B11.
+gui.config.fusion.fusion_radiation=Fusion Fuel Combo Radiation
+gui.config.fusion.fusion_radiation.comment=Base radiation the fuel combos produce while processing. Order: H-H, H-D, H-T, H-He3, H-Li6, H-Li7, H-B11, D-D, D-T, D-He3, ..., D-B11, T-T, ..., T-B11, ..., B11-B11.
 gui.config.fusion.fusion_electromagnet_power=Electromagnet Power
 gui.config.fusion.fusion_electromagnet_power.comment=RF/s required to keep an electromagnet active.
 
@@ -2313,20 +2317,20 @@ zerocore.api.nc.multiblock.validation.invalid_part_for_interior=Block at %1$d, %
 nc.block.fluid_toggle=Toggled side to
 nc.block.fluid_toggle_opposite=Toggled opposite side to
 
-nc.block.salt_heater_fluid_side.in=HOT COOLANT OUT
-nc.block.salt_heater_fluid_side.out=COOLANT SPREAD
-nc.block.salt_heater_fluid_side.both=DEFAULT
-nc.block.salt_heater_fluid_side.non=DISABLED
+nc.block.salt_heater_fluid_side.default=DEFAULT
+nc.block.salt_heater_fluid_side.disabled=DISABLED
+nc.block.salt_heater_fluid_side.hot_coolant_out=HOT COOLANT OUT
+nc.block.salt_heater_fluid_side.coolant_spread=COOLANT SPREAD
 
-nc.block.salt_vessel_fluid_side.in=DEPLETED OUT
-nc.block.salt_vessel_fluid_side.out=FUEL SPREAD
-nc.block.salt_vessel_fluid_side.both=DEFAULT
-nc.block.salt_vessel_fluid_side.non=DISABLED
+nc.block.salt_vessel_fluid_side.default=DEFAULT
+nc.block.salt_vessel_fluid_side.disabled=DISABLED
+nc.block.salt_vessel_fluid_side.depleted_out=DEPLETED OUT
+nc.block.salt_vessel_fluid_side.fuel_spread=FUEL SPREAD
 
-nc.block.exchanger_tube_fluid_side.in=PRODUCT OUT
-nc.block.exchanger_tube_fluid_side.out=INPUT SPREAD
-nc.block.exchanger_tube_fluid_side.both=DEFAULT
-nc.block.exchanger_tube_fluid_side.non=DISABLED
+nc.block.exchanger_tube_fluid_side.disabled=DISABLED
+nc.block.exchanger_tube_fluid_side.default=DEFAULT
+nc.block.exchanger_tube_fluid_side.product_out=PRODUCT OUT
+nc.block.exchanger_tube_fluid_side.input_spread=INPUT SPREAD
 
 gui.inventory.shift_for_info=Hold Shift for more info
 gui.inventory.ctrl_for_info=Hold Ctrl for more info
@@ -2422,6 +2426,8 @@ gui.container.change_tanks_mode=Prevent Input Overflow
 gui.container.void_leftover_fluid=Void Leftover Fluid
 gui.container.void_outputs=Void Output Overflow
 gui.container.comparator_mode=Efficiency/Heat Comparator
+gui.container.redstone_control=Redstone Control
+gui.container.shift_clear_multiblock=Shift Click to clear ALL fluid
 
 nuclearcraft.multiblock_validation.invalid_block=%4$s is not a valid block at [%1$d, %2$d, %3$d]
 nuclearcraft.multiblock_validation.no_controller=There must be a controller for the multiblock to form

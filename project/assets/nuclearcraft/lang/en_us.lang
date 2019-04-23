@@ -186,10 +186,10 @@ tile.nuclearcraft.rock_crusher_idle.desc=Smashes up rock to produce mineral dust
 tile.nuclearcraft.rock_crusher_active.name=Rock Crusher
 
 tile.nuclearcraft.machine_interface.name=Machine Interface
-tile.nuclearcraft.machine_interface.desc=Automation can access the machine directly adjacent to this block. Make sure that there is only one adjacent machine at maximum.
+tile.nuclearcraft.machine_interface.desc=Automation can access the machine directly adjacent to this block. Can only extend one adjacent machine at maximum.
 
 tile.nuclearcraft.buffer.name=Buffer
-tile.nuclearcraft.buffer.desc=Can store up to a stack of items, 32000 RF of energy and 16000 mB of fluid. Can be placed in the shell of fission structures for transportation into and out of the reactor.
+tile.nuclearcraft.buffer.desc=Can store up to a stack of items, 32000 RF of energy and 16000 mB of fluid. Will offload energy and materials into adjacent machines and active coolers. Can be placed in the shell of fission structures for transportation into and out of the reactor.
 
 tile.nuclearcraft.active_cooler.name=Active Fluid Cooler
 tile.nuclearcraft.active_cooler.desc=Pump coolant into this block to cool down fission and fusion reactors. Must be placed in a fission structure or on the diagonal of a fusion ring. If used to cool a fission reactor, the requirements for each fluid type are the same as the passive counterpart, but active coolers can not be used to support other coolers' placement rules. If used to cool a fusion reactor, it is much more efficient for a cooler to have a partner on the exact opposite side of the entire fusion ring.
@@ -280,7 +280,12 @@ tile.nuclearcraft.heat_exchanger_tube_copper.name=Copper Heat Exchanger Tube
 tile.nuclearcraft.heat_exchanger_tube_hard_carbon.name=Hard Carbon Heat Exchanger Tube
 tile.nuclearcraft.heat_exchanger_tube_thermoconducting.name=Thermoconducting Alloy Heat Exchanger Tube
 tile.nuclearcraft.heat_exchanger_tube.fixd=Conductivity Multiplier: %s
-tile.nuclearcraft.heat_exchanger_tube.desc=Holds and transports the heat-exchanging fluids. Place against another tube while sneaking to copy across its side configuration.
+tile.nuclearcraft.heat_exchanger_tube.desc=Holds and transports heat-exchanging fluids. If heating/cooling and adjacent to a cooling/heating exchanger tube, heat will be received/extracted at a rate proportional to the other tube's recipe temperature difference. If the output temperature of the cooled fluid is lower than the output temperature of the heated fluid, the adjacent tubes flows must not be parallel. Place against another exchanger tube while sneaking to copy across its side configuration.
+tile.nuclearcraft.heat_exchanger_condenser_tube_copper.name=Copper Condensation Tube
+tile.nuclearcraft.heat_exchanger_condenser_tube_hard_carbon.name=Hard Carbon Condensation Tube
+tile.nuclearcraft.heat_exchanger_condenser_tube_thermoconducting.name=Thermoconducting Alloy Condensation Tube
+tile.nuclearcraft.heat_exchanger_condenser_tube.fixd=Conductivity Multiplier: %s
+tile.nuclearcraft.heat_exchanger_condenser_tube.desc=Holds and transports fluids to condense. The condensation rate is proportional to the number of adjacent blocks of fluid colder than the input condensing fluid temperature; the colder the adjacent fluid, the faster the condensation. Place against another condensation tube while sneaking to copy across its side configuration.
 tile.nuclearcraft.heat_exchanger_computer_port.name=Heat Exchanger Computer Port
 tile.nuclearcraft.heat_exchanger_computer_port.desc=Used to access the exchanger via OpenComputers.
 
@@ -291,16 +296,18 @@ tile.nuclearcraft.turbine_glass.name=Transparent Turbine Wall
 tile.nuclearcraft.turbine_frame.name=Turbine Frame
 tile.nuclearcraft.turbine_frame.desc=Comprises the skeleton of the turbine.
 tile.nuclearcraft.turbine_rotor_shaft.name=Turbine Rotor Shaft
+tile.nuclearcraft.turbine_rotor_shaft.desc=Connects the rotor blades to the dynamo to convert the generated kinetic energy into electrical energy. Must be placed axially as a cuboid along the centre of the turbine interior.
 tile.nuclearcraft.turbine_rotor_blade_steel.name=Steel Turbine Rotor Blade
 tile.nuclearcraft.turbine_rotor_blade_extreme.name=Extreme Alloy Turbine Rotor Blade
 tile.nuclearcraft.turbine_rotor_blade_sic_sic_cmc.name=SiC-SiC CMC Turbine Rotor Blade
 tile.nuclearcraft.turbine_rotor_blade_efficiency.fixd=Efficiency Multiplier: %s
 tile.nuclearcraft.turbine_rotor_blade_expansion.fixd=Expansion Coefficient: %s
-tile.nuclearcraft.turbine_rotor_blade.desc=Used to convert the energy of the oncoming fluid flow into rotational energy in the turbine shaft. The expansion coefficient is larger than unity, so the volume of the fluid flow will increase each time it passes through a set.
+tile.nuclearcraft.turbine_rotor_blade.desc=Used to convert the energy of the oncoming fluid flow into rotational energy in the rotor shaft. The expansion coefficient is larger than unity, so the volume of the fluid flow will increase each time it passes through a set. Must be placed in complete sets of four coplanar groups extending from the turbine shaft to the wall.
 tile.nuclearcraft.turbine_rotor_stator.name=Turbine Rotor Stator
 tile.nuclearcraft.turbine_rotor_stator_expansion.fixd=Expansion Coefficient: %s
-tile.nuclearcraft.turbine_rotor_stator.desc=Used to increase the density of the oncoming fluid flow, which can increase the efficiency of the turbine by counteracting overexpansion generated by sets of rotor blades.
+tile.nuclearcraft.turbine_rotor_stator.desc=Used to increase the density of the oncoming fluid flow, which can increase the efficiency of the turbine by counteracting overexpansion generated by sets of rotor blades. Must be placed in complete sets of four coplanar groups extending from the turbine shaft to the wall.
 tile.nuclearcraft.turbine_rotor_bearing.name=Turbine Rotor Bearing
+tile.nuclearcraft.turbine_rotor_bearing.desc=Connects the rotor shaft to the turbine wall and dynamo. Must cover the full area of each end of the shaft.
 tile.nuclearcraft.turbine_dynamo_coil.magnesium.name=Magnesium Turbine Dynamo Coil
 tile.nuclearcraft.turbine_dynamo_coil.magnesium.desc=Must touch at least one Rotor Bearing Block.
 tile.nuclearcraft.turbine_dynamo_coil.beryllium.name=Beryllium Turbine Dynamo Coil
@@ -1660,7 +1667,9 @@ item.nuclearcraft.radiation_badge.exposure=Your Radiation Badge has been exposed
 item.nuclearcraft.radiation_badge.broken=Your Radiation Badge disintegrated...
 
 item.nuclearcraft.radaway.name=RadAway
-item.nuclearcraft.radaway.desc=Removes %s [%s].
+item.nuclearcraft.radaway.desc=Removes %s [%s] at a rate of %s.
+item.nuclearcraft.radaway_slow.name=Slow-Acting RadAway
+item.nuclearcraft.radaway_slow.desc=Removes %s [%s] at a rate of %s.
 item.nuclearcraft.rad_x.name=Rad-X
 item.nuclearcraft.rad_x.desc=Increases radiation resistance by %s for %s. The effect can be stacked, but higher levels of resistance will wear off more quickly.
 
@@ -1704,8 +1713,11 @@ item.nuclearcraft.record_hyperspace.des1=Originally by Riku Nuottajärvi
 
 jei.nuclearcraft.chance_output=Output: %s-%s [Average: %s]
 
-jei.nuclearcraft.active_fission_cooling=Fission Cooling Rate:
-jei.nuclearcraft.active_fusion_cooling=Base Fusion Cooling Rate:
+jei.nuclearcraft.base_process_time=Base process time:
+jei.nuclearcraft.base_process_power=Base process power:
+
+jei.nuclearcraft.active_fission_cooling=Fission cooling rate:
+jei.nuclearcraft.active_fusion_cooling=Base Fusion cooling rate:
 
 jei.nuclearcraft.solid_fuel_time=Base depletion time:
 jei.nuclearcraft.solid_fuel_power=Base power gen:
@@ -1714,6 +1726,9 @@ jei.nuclearcraft.solid_fuel_heat=Base heat gen:
 jei.nuclearcraft.fusion_time=Base combo lifetime:
 jei.nuclearcraft.fusion_power=Base max power:
 jei.nuclearcraft.fusion_temp=Optimal temperature:
+
+jei.nuclearcraft.decay_gen_lifetime=Mean lifetime:
+jei.nuclearcraft.decay_gen_power=Power gen:
 
 jei.nuclearcraft.salt_fuel_time=Depletion time:
 jei.nuclearcraft.salt_fuel_heat=Base heat gen:
@@ -1726,8 +1741,11 @@ jei.nuclearcraft.exchanger_cooling_provided=Cooling provided:
 jei.nuclearcraft.exchanger_heating_required=Heating required:
 jei.nuclearcraft.exchanger_cooling_required=Cooling required:
 
-jei.nuclearcraft.turbine_energy_density=Base Energy Density:
-jei.nuclearcraft.turbine_expansion=Fluid Expansion:
+jei.nuclearcraft.condenser_condensing_temp=Condensing temperature:
+jei.nuclearcraft.condenser_heat_removal_req=Heat removal required:
+
+jei.nuclearcraft.turbine_energy_density=Base energy density:
+jei.nuclearcraft.turbine_expansion=Fluid expansion:
 
 jei.nuclearcraft.coolant_heater.nak=Must touch at least one active Fission Vessel or active moderator.
 jei.nuclearcraft.coolant_heater.redstone_nak=Must touch at least one active Fission Vessel.
@@ -2025,7 +2043,7 @@ gui.config.heat_exchanger.heat_exchanger_min_size.comment=Minimum side length of
 gui.config.heat_exchanger.heat_exchanger_max_size=Maximum Structure Length
 gui.config.heat_exchanger.heat_exchanger_max_size.comment=Maximum side length of heat exchangers.
 gui.config.heat_exchanger.heat_exchanger_conductivity=Tube Conductivity
-gui.config.heat_exchanger.heat_exchanger_conductivity.comment=Multiplier for heat transfer rate to and from this type of tube. Heating recipes will be faster by this factor, while cooling recipes will be slower by this factor. Order: copper, hard carbon, thermoconducting alloy.
+gui.config.heat_exchanger.heat_exchanger_conductivity.comment=Multiplier for heat transfer rate to and from this type of tube. For heat exchanging tubes, heating recipes will be faster by this factor while cooling recipes will be slower by this factor. For condensation tubes, recipes will simply be faster by this factor. Order: copper, hard carbon, thermoconducting alloy.
 gui.config.heat_exchanger.heat_exchanger_coolant_mult=Coolant Heat Multiplier
 gui.config.heat_exchanger.heat_exchanger_coolant_mult.comment=Multiplier for the heat required to cool hot coolant.
 gui.config.heat_exchanger.heat_exchanger_alternate_exhaust_recipe=Alternate Exhaust Steam Recipe
@@ -2048,6 +2066,8 @@ gui.config.turbine.turbine_coil_conductivity=Dynamo Coil Conductivity
 gui.config.turbine.turbine_coil_conductivity.comment=Multiplier for the energy generated by this type of dynamo coil. Order: magnesium, beryllium, aluminum, gold, copper, silver.
 gui.config.turbine.turbine_power_per_mb=Steam Base RF per mB
 gui.config.turbine.turbine_power_per_mb.comment=Base RF produced per processed mB of this type of steam. Order: high pressure, low pressure, standard.
+gui.config.turbine.turbine_expansion_level=Steam Expansion Level
+gui.config.turbine.turbine_expansion_level.comment=Expansion level for this type of steam's recipe. Order: high pressure, low pressure, standard.
 gui.config.turbine.turbine_mb_per_blade=Rotor Blade Maximum Process Rate
 gui.config.turbine.turbine_mb_per_blade.comment=Maximum mB of fluid processed per tick per rotor blade.
 
@@ -2168,6 +2188,8 @@ gui.config.radiation.radiation_radaway_amount=RadAway Rads Removed
 gui.config.radiation.radiation_radaway_amount.comment=The total number of rads removed when using RadAway.
 gui.config.radiation.radiation_radaway_rate=RadAway Rad Removal Rate
 gui.config.radiation.radiation_radaway_rate.comment=The rate at which rads is removed when using RadAway in Rads/t.
+gui.config.radiation.radiation_radaway_slow_rate=Slow-Acting RadAway Rad Removal Rate
+gui.config.radiation.radiation_radaway_slow_rate.comment=The rate at which rads is removed when using Slow-Acting RadAway in Rads/t.
 gui.config.radiation.radiation_radaway_cooldown=RadAway Cooldown Time
 gui.config.radiation.radiation_radaway_cooldown.comment=The time that must be waited between doses of RadAway in ticks.
 gui.config.radiation.radiation_rad_x_amount=Rad-X Radiation Resistance
@@ -2395,15 +2417,15 @@ gui.container.salt_fission_controller.reactor=Molten Salt Reactor
 gui.container.salt_fission_controller.pos=BlockPos
 gui.container.salt_fission_controller.vessels=Fission Vessels:
 gui.container.salt_fission_controller.heaters=Coolant Heaters:
-gui.container.salt_fission_controller.efficiency=Mean Fuel Efficiency:
+gui.container.salt_fission_controller.raw_efficiency=Mean Raw Efficiency:
 gui.container.salt_fission_controller.heat_mult=Mean Heat Multiplier:
-gui.container.salt_fission_controller.cooling_rate=Cooling Efficiency:
-gui.container.salt_fission_controller.heat=Heat Level:
-gui.container.salt_fission_controller.heat_gen=Net Heat Gen:
-gui.container.salt_fission_controller.cooling=Cooling Rate:
+gui.container.salt_fission_controller.cooling_efficiency=Cooling Efficiency:
+gui.container.salt_fission_controller.heat_stored=Heat Stored:
+gui.container.salt_fission_controller.net_heat_gen=Net Heat Gen:
+gui.container.salt_fission_controller.cooling_rate=Cooling Rate:
 
 gui.container.heat_exchanger_controller.heat_exchanger=Heat Exchanger
-gui.container.heat_exchanger_controller.tubes=Exchanger Tubes:
+gui.container.heat_exchanger_controller.tubes=Number of Tubes:
 gui.container.heat_exchanger_controller.efficiency=Average Efficiency:
 gui.container.heat_exchanger_controller.active_percent=Tubes Active:
 
@@ -2444,9 +2466,9 @@ nuclearcraft.multiblock_validation.turbine.missing_blades=Each section of the ro
 
 nuclearcraft.multiblock_gui.salt_fission.jei_name=Molten Salt Fission
 nuclearcraft.multiblock_gui.coolant_heater.jei_name=Molten Salt Cooling
-nuclearcraft.multiblock_gui.heat_exchanger.jei_name=Heat Exchanger
+nuclearcraft.multiblock_gui.heat_exchanger.jei_name=Heat Exchanger Tube
+nuclearcraft.multiblock_gui.condenser.jei_name=Condensation Tube
 nuclearcraft.multiblock_gui.turbine.jei_name=Turbine
-nuclearcraft.multiblock_gui.condenser.jei_name=Condenser
 
 advancement.nuclearcraft.root.name=NuclearCraft
 advancement.nuclearcraft.root.desc=Nuclear Physics, Minecraft Style
@@ -2648,7 +2670,7 @@ modifier.withering_armor.desc=§oDeath makes monsters of us all.§r\nWithers ene
 message.nuclearcraft.rad_x_wore_off=Your Rad-X wore off...
 message.nuclearcraft.radaway_cooling_down=Your RadAway cooldown is at
 message.nuclearcraft.rad_x_cooling_down=Your Rad-X cooldown is at
-message.nuclearcraft.scrubber_removal_rate=Radiation removal rate:
+message.nuclearcraft.scrubber_removal_rate=Active radiation removal rate:
 
 hud.nuclearcraft.rad_immune=Immune for:
 
