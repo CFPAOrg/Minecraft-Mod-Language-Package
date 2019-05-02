@@ -178,6 +178,7 @@ item.armor_upgrade.name=Armor Upgrade
 item.jet_boots_upgrade.name=Jet Boots Upgrade
 item.night_vision_upgrade.name=Night Vision Upgrade
 item.scuba_upgrade.name=SCUBA Upgrade
+item.creative_upgrade.name=Creative Supply Upgrade
 
 item.assembly_program0.name=Assembly Program: Drill
 item.assembly_program1.name=Assembly Program: Laser
@@ -369,7 +370,7 @@ gui.tab.info.tile.air_cannon=§0This machine can be used to transport items thro
 gui.tab.info.aerialInterface.liquidXp.info.title=Interfacing XP
 gui.tab.info.aerialInterface.liquidXp.info=§0With a Dispenser Upgrade installed in the Aerial Interface, you can pump liquid XP into or out of the Interface, directly filling or draining the player's stored experience. You can select which type of liquid XP to use with the above button; clicking it cycles through the available types, as well as the (default) disabled setting. \n \nAvailable XP types:
 gui.tab.info.aerialInterface.interfacingRF.info.title=Interfacing Energy
-gui.tab.info.aerialInterface.interfacingRF.info=The Aerial Interface accepts Forge Energy (compatible with RF and many other mods). The energy stored in its internal buffer (100,000 RF) is used to charge any chargeable item in the player's inventory at up to 1,000 FE/tick. \nNote: Energy is interfaced regardless of whether a Dispenser Upgrade is inserted.
+gui.tab.info.aerialInterface.interfacingRF.info=The Aerial Interface accepts Forge Energy (compatible with RF and many other mods). The energy stored in its internal buffer (100,000 FE) is used to charge any chargeable item in the player's inventory at up to 1,000 FE/tick. \nNote: Energy is always interfaced regardless of whether or not a Dispenser Upgrade is inserted.
 gui.tab.info.aerialInterface.interfacingFood=Interfacing Food & XP
 gui.tab.info.aerialInterface.interfacingItems=Interfacing Items
 gui.tab.info.aerialInterface.insertDispenser=Insert a Dispenser Upgrade to switch to interfacing food and experience.
@@ -529,6 +530,7 @@ gui.tab.upgrades=Upgrades
 gui.tab.upgrades.volume=§7§nVolume Upgrade \n§0Adds 5L more air capacity for each upgrade inserted.  Adding volume upgrades will increase the air that can be stored, causing a pressure drop.  Removing upgrades will keep the pressure constant, losing air from the machine.
 gui.tab.upgrades.volumeCapacity=§7§nVolume Upgrade \n§0Increases the heat capacity of this machine. It will heat up slower, but it also will cool down slower.
 gui.tab.upgrades.security=§7§nSecurity Upgrade \n§0Adds a built-in Safety Valve Tube to the pneumatic machine.
+gui.tab.upgrades.creative=§d§nCreative Upgrade \n§0Allows the hopper to provide items/fluids infinitely.
 gui.tab.upgrades.tile.aerial_interface=§7§nDispenser Upgrade \n§0Allows interfacing of Food & Experience instead of items. Only food items will be accepted through the Aerial Interface; see the Feed Mode tab opposite for how the food is handled. \n \nIf a suitable XP fluid is available, it can be pumped in or out of the Aerial Interface and will convert to or from player levels.  See the Interfacing XP tab opposite to choose which fluid type to use.
 gui.tab.upgrades.tile.air_cannon=§7§nDispenser Upgrade \n§0Will make the cannon act like a Dispenser. Any item that would act special in a Dispenser, will be handled the same way in here. \n§7§nEntity Tracker Upgrade (max = 5) \n§0When fired, the Air Cannon will grab the closest living entity and shoot it to the set coordinate. This can be used as player transport. It has a grabbing radius of 1 by default. Per inserted Entity Tracker Upgrade the radius will increase by one. \n§7§nBlock Tracker Upgrade \n§0When fired, items being shot automatically will try to go into inventories they hit. When firing at a Chest for example, items will land in the Chest without needing a Hopper. \n§7§nItem Life Upgrade \n§0By default the Air Cannon shoots items which have a lifespan of 60 seconds. For each of this upgrades you put in you get an additional 30 seconds. \n§7§nSpeed Upgrade (max = 10) \n§0The cannon will turn faster. \n§7§nRange Upgrade \n§0The shooting range will increase by about 25 blocks per upgrade, up to 250 blocks.
 gui.tab.upgrades.tile.air_compressor=§7§nSpeed Upgrade (max = 10) \n§0The Air Compressor will produce more compressed air per tick. However this is at the expense of the efficiency.
@@ -665,7 +667,6 @@ gui.setKeybind=Press key to bind
 gui.enableModule=Enable %s
 gui.pressureChamber=Pressure Chamber
 gui.pressureChamberTitle=%s Pressure Chamber
-gui.thermopneumatic.dumpInput=Dump Input Tank \n§7Get rid of any unwanted fluids which have found their way into the processing plant
 gui.universalSensor.button.showRange=Show Range
 gui.programmer.button.showArea=Show Area
 gui.programmer.button.stopShowingArea=Stop Showing Area
@@ -1045,6 +1046,7 @@ gui.config.category.client=Clientside Options
 gui.config.category.helmet=Pneumatic Helmet (Clientside)
 gui.config.category.minigun=Minigun & Ammo
 gui.config.category.micromissile=Micromissiles
+gui.config.category.integration=Mod Integration
 
 # Side Configurator tabs
 gui.sideConfigurator.unconnected=§oUnconnected
@@ -1054,6 +1056,7 @@ gui.sideConfigurator.items.armorInv=Armor Slots
 gui.sideConfigurator.items.offhandInv=Offhand Slot
 gui.sideConfigurator.items.enderInv=Ender Inventory
 gui.sideConfigurator.items.droneInv=Drone Inventory
+gui.sideConfigurator.items.baublesInv=Baubles Slots
 gui.sideConfigurator.items.programmableInv=Programmable Slot
 
 # Waila/TOP
@@ -1274,6 +1277,9 @@ message.amadron.addedStaticOffer=§a[Amadron] §bAdded static offer: §6%s§b fo
 # Camo Applicator
 message.camo.notEnoughBlocks=§4Out of §c%s !
 message.camo.invalidBlock=§4Invalid camo block: §c%s !
+
+message.dispenser.direction=§eEject to: %s
+message.dispenser.clickToSet=§e§oRight-click any block to set eject direction
 
 # Patchouli
 patchouli.book.name=PNC:R Manual
