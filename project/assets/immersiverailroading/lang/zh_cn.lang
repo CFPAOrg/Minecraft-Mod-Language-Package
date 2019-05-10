@@ -17,6 +17,7 @@ item.immersiverailroading:item_rail.name=轨道蓝图
 item.immersiverailroading:item_conductor_whistle.name=乘务员口哨
 item.immersiverailroading:item_golden_spike.name=金道钉
 item.immersiverailroading:item_radio_control_card.name=列车无线遥控卡
+item.immersiverailroading:item_switch_key.name=开关钥匙
 
 tile.immersiverailroading:block_rail.name=铁轨
 tile.immersiverailroading:block_rail_gag.name=铁轨（终止）
@@ -25,8 +26,8 @@ tile.immersiverailroading:block_steam_hammer.name=蒸汽锤
 
 chat.immersiverailroading:stock.built=%s 完成组装！
 chat.immersiverailroading:stock.dissasembled=%s 被拆卸了！
-chat.immersiverailroading:stock.missing=缺失：%s
-chat.immersiverailroading:stock.invalid=错误：服务器上不存在此机车。无法放置
+chat.immersiverailroading:stock.missing=缺少：%s
+chat.immersiverailroading:stock.invalid=错误：服务器上不存在此机车，无法放置。
 chat.immersiverailroading:stock.wrong_gauge=轨距错误！
 chat.immersiverailroading:stock.placement=机车必须放在直行铁轨上
 chat.immersiverailroading:stock.deadmans_switch_enabled=失能开关开启
@@ -38,28 +39,28 @@ chat.immersiverailroading:coupler.disengaged=车钩 %s 设置为调车模式
 chat.immersiverailroading:coupler.status.coupled=%s 车钩连接到 %s（%s，%s，%s）
 chat.immersiverailroading:coupler.status.decoupled.engaged=%s 车钩在正常模式下被解开
 chat.immersiverailroading:coupler.status.decoupled.disengaged=%s 车钩在分流模式下解开
-chat.immersiverailroading:build.missing.ties=缺失 %s 个防腐木
-chat.immersiverailroading:build.missing.rails=缺失 %s 个铁轨段
-chat.immersiverailroading:build.missing.rail_bed=缺失 %s 个道砟
-chat.immersiverailroading:build.missing.rail_bed_fill=缺失 %s 个道砟填方
+chat.immersiverailroading:build.missing=缺少 %s 个%s
 chat.immersiverailroading:augment.set=设置参数在 %s 时发挥作用
 chat.immersiverailroading:augment.reset=设置参数作用于任意铁轨
 chat.immersiverailroading:misc.wood_planks=木板
-chat.immersiverailroading:build.invalid_block=（x=%s y=%s z=%s）处有非法方块
+chat.immersiverailroading:build.invalid_block=在（x=%s y=%s z=%s）处有非法方块
 chat.immersiverailroading:radio.link=遥控卡已经连接到机车
 chat.immersiverailroading:radio.relink=遥控卡已经连接到新的机车
 chat.immersiverailroading:radio.unlink=遥控卡与机车分离
 chat.immersiverailroading:radio.nolink=遥控卡没有连接的机车
 chat.immersiverailroading:radio.cant_link=%s 机车没有无线控制装置
 chat.immersiverailroading:brush.no.variants=这辆车没有涂装变体
+chat.immersiverailroading:switch_state.unlocked=开关已解锁
+chat.immersiverailroading:switch_state.locked=开关已锁定到：%s
 
 gui.immersiverailroading:label.brake=制动
 gui.immersiverailroading:label.throttle=节流阀
 gui.immersiverailroading:selector.type=类型：%s
 gui.immersiverailroading:selector.gauge=轨距：%s
-gui.immersiverailroading:selector.quarters=%s 度弯道
-gui.immersiverailroading:selector.rail_bed=铁轨基座：%s
-gui.immersiverailroading:selector.rail_bed_fill=铁轨基座填方：%s
+gui.immersiverailroading:selector.track=轨道样式：%s
+gui.immersiverailroading:selector.quarters=%s°弯道
+gui.immersiverailroading:selector.rail_bed=道砟：%s
+gui.immersiverailroading:selector.rail_bed_fill=道砟填方：%s
 gui.immersiverailroading:selector.position=位置：%s
 gui.immersiverailroading:selector.direction=方向：%s
 gui.immersiverailroading:selector.place_blueprint=放置蓝图
@@ -68,16 +69,18 @@ gui.immersiverailroading:selector.plate_type=板材类型：%s
 gui.immersiverailroading:selector.plate_boiler=锅炉板材：%s
 gui.immersiverailroading:selector.cast_single=单次铸造
 gui.immersiverailroading:selector.cast_repeat=循环铸造
+
+gui.immersiverailroading:item.switch_key=右键单击一个开关可在以下之间循环：【锁定直行、锁定转动、解锁】，锁定时会忽略红石信号！
 gui.immersiverailroading:none=无
 
 gui.immersiverailroading:track.type=类型：%s
 gui.immersiverailroading:track.length=长度：%s
 gui.immersiverailroading:track.gauge=轨距：%s
-gui.immersiverailroading:track.quarters=%s 度转弯
+gui.immersiverailroading:track.quarters=%s°转弯
 gui.immersiverailroading:track.position=位置：%s
 gui.immersiverailroading:track.direction=方向：%s
-gui.immersiverailroading:track.rail_bed=基座：%s
-gui.immersiverailroading:track.rail_bed_fill=基座填方：%s
+gui.immersiverailroading:track.rail_bed=道砟：%s
+gui.immersiverailroading:track.rail_bed_fill=道砟填方：%s
 gui.immersiverailroading:track.place_blueprint_true=放置：蓝图
 gui.immersiverailroading:track.place_blueprint_false=放置：轨道
 
@@ -199,6 +202,10 @@ immersiverailroading:loco_control_mode.computer=电脑
 immersiverailroading:coupler_augment_mode.engaged=连接
 immersiverailroading:coupler_augment_mode.disengaged=断连
 
+immersiverailroading:switch_state.none=无
+immersiverailroading:switch_state.straight=直行
+immersiverailroading:switch_state.turn=分叉
+
 key.categories.immersiverailroading=沉浸铁路
 ir_keys.increase_throttle=增大节流阀
 ir_keys.zero_throttle=关闭节流阀
@@ -207,6 +214,7 @@ ir_keys.increase_brake=增加空气制动
 ir_keys.zero_brake=关闭空气制动
 ir_keys.decrease_brake=减少空气制动
 ir_keys.horn=鸣笛
+ir_keys.bell=响铃
 ir_keys.dead_mans_switch=失能开关
 ir_keys.start_stop_engine=启动/停止引擎
 
