@@ -159,7 +159,7 @@ def main():
     # 剔除整合黑名单
     for i in MODPACK_LIST.copy():
         if i in MODPACK_BLACKLIST:
-            MODPACK_BLACKLIST.remove(i)
+            MODPACK_LIST.remove(i)
     logging.info("黑名单整合已剔除：" + str(MODPACK_BLACKLIST))
 
     for modpack in MODPACK_LIST:
