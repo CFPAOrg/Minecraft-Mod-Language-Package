@@ -13,26 +13,119 @@ workbench.schema_list.temporary=Made available by an item in your inventory
 ###############################
 # CAPABILITIES
 ###############################
-hammer=Hammer
-hammer.unavailable=This action requires a tier %d hammer
-axe=Chop
-axe.unavailable=This action requires a tier %d axe
-pickaxe=Mine
-pickaxe.unavailable=This action requires a tier %d pickaxe
-shovel=Dig
-shovel.unavailable=This action requires a tier %d shovel
-cut=Cut
-cut.unavailable=This action requires a tier %d cutting implement
+capability.hammer=Hammer
+capability.hammer.requirement=This action requires a tier %d hammer
+capability.axe=Chop
+capability.axe.requirement=This action requires a tier %d axe
+capability.pickaxe=Mine
+capability.pickaxe.requirement=This action requires a tier %d pickaxe
+capability.shovel=Dig
+capability.shovel.requirement=This action requires a tier %d shovel
+capability.cut=Cut
+capability.cut.requirement=This action requires a tier %d cutting implement
+capability.pry=Pry
+capability.pry.requirement=This action requires a tier %d prying implement
+
+capability.available=You have tier %d available
+
+###############################
+# STATS
+###############################
+stats.durability=Durability
+stats.durability.tooltip=This item has §e%s§r durability
+
+stats.speed=Speed
+stats.speed.tooltip=Affects how fast this item can be swinged\n\n§e%s §7seconds between swings\n§ex%s§7 gathering speed multiplier
+
+stats.damage=Damage
+stats.damage.tooltip=Deals §e%s §rdamage
+
+stats.bleeding=Bleeding
+stats.bleeding.tooltip=Hitting entities has a 30%% chance to cause them to bleed for §e%s§r damage over 2 seconds
+
+stats.backstab=Backstab
+stats.backstab.tooltip=Hitting entities from behind cause critical hits that deal §e%s§r bonus damage
+
+stats.armorPenetration=Penetrating
+stats.armorPenetration.tooltip=Hitting an entity will always deal at least §e%s§r damage regardless of the targets armor
+
+stats.unarmoredDamage=Severing
+stats.unarmoredDamage.tooltip=Deals §e%s§r bonus damage when attacking entities with no armor
+
+stats.knockback=Knockback
+stats.knockback.tooltip=Increases how far hit entities are knocked back by a factor of §e%s
+
+stats.looting=Looting
+stats.looting.tooltip=Increases drops from killing entities
+
+stats.fiery=Fiery
+stats.fiery.tooltip=Hitting an entity sets it on fire for §e%s§r seconds
+
+stats.smite=Smite
+stats.smite.tooltip=Deals §e%s§r bonus damage when attacking undead entities
+
+stats.arthropod=Arthropod
+stats.arthropod.tooltip=Deals §e%s§r bonus damage when attacking an arthropod and applies slowness IV for 1 to §e%s§r seconds
+
+stats.sweeping=Sweeping
+stats.sweeping.tooltip=Attacking an entity also hits all adjacent enemies for §e%s§r weapon damage
+
+stats.unbreaking=Unbreaking
+stats.unbreaking.tooltip=Has a chance to not take durability damage on use\n\n§7Unbreaking level: §e%s§7\nAvoid chance: §e%s%%
+
+stats.mending=Mending
+stats.mending.tooltip=Consumes gathered experience orbs to repair durability by §e%s§r per experience point\n\n§7Only active while held in the mainhand or the offhand
+
+stats.silkTouch=Silktouch
+stats.silkTouch.tooltip=Harvesting blocks cause the block to drop instead of the usual item
+
+stats.fortune=Fortune
+stats.fortune.tooltip=Increases drop chance when harvesting or salvaging blocks
+
+stats.quickStrike=Quick
+stats.quickStrike.tooltip=Reduces the minimum damage dealt to §e%s§r while the attack cooldown is active
+
+stats.softStrike=SoftStrike
+stats.softStrike.tooltip=Items crafted using this tool gains increased durability
+
+stats.fierySelf=Blazing
+stats.fierySelf.tooltip=Using the item has a chance to set the wielder on fire, occurs less frequent in cold biomes\n\n§7Base chance: §e%s§7\nFire duration: §e%s
+
+stats.enderReverb=Reverb
+stats.enderReverb.tooltip=Using the item angers nearby endermen and nearby ender teleportation has a chance to also teleport the wielder\n\n§7Base chance: §e%s§7
+
+stats.toolbelt.quickslot=Quickslots
+stats.toolbelt.storage.tooltip=Has §e%s§r quickslots
+
+stats.toolbelt.potion_storage=Potion slots
+stats.toolbelt.potion_storage.tooltip=Has §e%s§r potion slots
+
+stats.toolbelt.storage=Storage slots
+stats.toolbelt.storage.tooltip=Has §e%s§r storage slots
+
+stats.toolbelt.quiver=Quiver slots
+stats.toolbelt.quiver.tooltip=Has §e%s§r quiver slots
+
+stats.toolbelt.booster=Boost strength
+stats.toolbelt.booster.tooltip=Provides jump boost and limited flight with strength §e%s
+
+
+stats.hammer.tooltip=This item can be used for hammering, usable when crafting and salvaging\n\n§7Hammer tier: §e%s§7\nHammer efficiency: §e%s
+stats.axe.tooltip=This item can be used for chopping wood\n\n§7Axe tier: §e%s§7\nAxe efficiency: §e%s
+stats.pickaxe.tooltip=This item can be used for mining\n\n§7Pickaxe tier: §e%s§7\nPickaxe efficiency: §e%s
+stats.shovel.tooltip=This item can be used for digging\n\n§7Shovel tier: §e%s§7\nShovel efficiency: §e%s
+stats.cut.tooltip=This item can be used for cutting, usable for crafting and for breaking webs and plants\n\n§7Cut tier: §e%s§7\nCut efficiency: §e%s
+stats.pry.tooltip=This item can be used for prying things open, usable for salvaging\n\n§7Pry tier: §e%s§7\nPry efficiency: §e%s
+
+stats.integrity_usage=Integrity usage: %s/%s
+stats.integrity_usage.tooltip=Integrity is provided by some modules (often in a specific slot), while it is required by other modules and most improvements.
+
 
 ###############################
 # MISC
 ###############################
 item.modular.broken=Broken
 item.modular.empty_slot=Empty
-item.modular.tier=Tier
-item.modular.durability=Durability
-item.modular.speed=Swing speed
-item.modular.integrity_usage=Integrity usage: %d/%d
 
 ###############################
 # GEODE
@@ -115,22 +208,33 @@ duplex/binding=Binding
 duplex/accessory=Accessory
 
 ###############################
+# MODULE PROGRESSION
+###############################
+settled.name=Settled
+settled.description=Due to extended use this module has settled into place, it provides additional integrity
+settled.toast=A module has settled!
+arrested.name=Arrested
+arrested.description=This module cannot settle, its integrity will not improve over time
+hone.progress=Honing progress: %s%%
+hone.available=Honing available
+
+###############################
 # REPAIR SCHEMA
 ###############################
 repair_schema.name=Repair
-repair_schema.description=Repair the item using various materials.
+repair_schema.description=Patch up damage and wear using various materials.
 
 ###############################
 # REMOVE SCHEMA
 ###############################
-remove_schema.name=Remove part
-remove_schema.description=Remove the part in the selected slot.
+remove_schema.name=Remove module
+remove_schema.description=Remove the module in the selected slot.
 
 ###############################
 # BOOK ENCHANT SCHEMA
 ###############################
 book_enchant.name=Apply enchantment
-book_enchant.description=Apply the enchantments from an enchanted book to the selected part.
+book_enchant.description=Apply the enchantments from an enchanted book to the selected module.
 book_enchant.slot1=Enchanted book
 
 ###############################
@@ -161,6 +265,67 @@ enchantment/fortune.description=Increases drops when breaking things
 enchantment/silk_touch.name=Silk Touch
 enchantment/silk_touch.description=Harvested blocks will not break
 
+###############################
+# BLADE HONING SHARED
+###############################
+blade_hone_damage_1_schema.name=Hone: Damage I
+blade_hone_damage_1_schema.description=Hone the module to increase the damage dealt by 0.5.
+blade_hone_damage_2_schema.name=Hone: Damage II
+blade_hone_damage_2_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 0.5 to 1.
+blade_hone_damage_3_schema.name=Hone: Damage III
+blade_hone_damage_3_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 1 to 1.5.
+blade_hone_damage_4_schema.name=Hone: Damage IV
+blade_hone_damage_4_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 1.5 to 2.
+blade_hone_damage_5_schema.name=Hone: Damage V
+blade_hone_damage_5_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 2 to 3.
+
+blade_hone/damage.name=Hone: Damage
+blade_hone/damage.description=Increases damage dealt
+
+blade_hone_speed_1_schema.name=Hone: Speed I
+blade_hone_speed_1_schema.description=Hone the module to increase the overall swing speed by 7%%.
+blade_hone_speed_2_schema.name=Hone: Speed II
+blade_hone_speed_2_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 7%% to 15%%.
+blade_hone_speed_3_schema.name=Hone: Speed III
+blade_hone_speed_3_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 15%% to 22%%.
+blade_hone_speed_4_schema.name=Hone: Speed IV
+blade_hone_speed_4_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 22%% to 30%%.
+blade_hone_speed_5_schema.name=Hone: Speed V
+blade_hone_speed_5_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 30%% to 40%%.
+
+blade_hone/speed.name=Hone: Speed
+blade_hone/speed.description=Increases swing speed
+
+###############################
+# HILT HONING SHARED
+###############################
+hilt_hone_damage_1_schema.name=Hone: Damage I
+hilt_hone_damage_1_schema.description=Hone the module to increase the overall damage by 5%%.
+hilt_hone_damage_2_schema.name=Hone: Damage II
+hilt_hone_damage_2_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 5%% to 10%%.
+hilt_hone_damage_3_schema.name=Hone: Damage III
+hilt_hone_damage_3_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 10%% to 15%%.
+hilt_hone_damage_4_schema.name=Hone: Damage IV
+hilt_hone_damage_4_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 15%% to 20%%.
+hilt_hone_damage_5_schema.name=Hone: Damage V
+hilt_hone_damage_5_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 20%% to 25%%.
+
+hilt_hone/damage.name=Hone: Damage
+hilt_hone/damage.description=Increases damage dealt
+
+hilt_hone_speed_1_schema.name=Hone: Speed I
+hilt_hone_speed_1_schema.description=Hone the module to increase the overall swing speed by 0.05.
+hilt_hone_speed_2_schema.name=Hone: Speed II
+hilt_hone_speed_2_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.05 to 0.1.
+hilt_hone_speed_3_schema.name=Hone: Speed III
+hilt_hone_speed_3_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.1 to 0.15.
+hilt_hone_speed_4_schema.name=Hone: Speed IV
+hilt_hone_speed_4_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.15 to 0.2.
+hilt_hone_speed_5_schema.name=Hone: Speed V
+hilt_hone_speed_5_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.2 to 0.25.
+
+hilt_hone/speed.name=Hone: Speed
+hilt_hone/speed.description=Increases swing speed
 
 ###############################
 # BASIC BLADE
@@ -236,10 +401,24 @@ basic_blade/serrated.description=Attacks may inflict bleed
 
 serrated_blade_schema.name=Serrate
 serrated_blade_schema.description=Serrates the blade, providing a saw-tooth edged blade. Has a 30%% chance to cause the target to bleed for 4 damage over 2 seconds. Not effective against undead.
+blade_hone_serrated_2_schema.name=Hone: Serrated II
+blade_hone_serrated_2_schema.description=Hone the serrated improvement, increases the damage dealt to 2.
+blade_hone_serrated_3_schema.name=Hone: Serrated III
+blade_hone_serrated_3_schema.description=Further hone the serrated improvement, increases the damage dealt to 4.
+
 tempered_blade_schema.name=Temper
 tempered_blade_schema.description=Temper the point of the blade, greatly increasing it's hardness. Causes half of the damage dealt to ignore armor.
+blade_hone_tempered_2_schema.name=Hone: Tempered II
+blade_hone_tempered_2_schema.description=Hone the tempered improvement, increases the amount of damage that penetrates armor to 3.
+blade_hone_tempered_3_schema.name=Hone: Tempered III
+blade_hone_tempered_3_schema.description=Further hone the serrated improvement, increases the amount of damage that penetrates armor to 5.
+
 hooked_blade_schema.name=Notch hook
 hooked_blade_schema.description=Notch the back side of the blade, providing additional damage when striking unsuspecting enemies. Cause critical strikes when attacking enemies from behind.
+blade_hone_hooked_2_schema.name=Hone: Hooked II
+blade_hone_hooked_2_schema.description=Hone the hooked improvement, increases the bonus damage dealt when striking enemies from behind to 75%%.
+blade_hone_hooked_3_schema.name=Hone: Hooked III
+blade_hone_hooked_3_schema.description=Further hone the hooked improvement, increases the bonus damage dealt when striking enemies from behind to 125%%.
 
 ###############################
 # BASIC HILT
@@ -276,17 +455,25 @@ basic_hilt/ender_reverb.name=Ender reverb
 basic_hilt/ender_reverb.description=Reacts negatively with nearby entities originating from the end
 
 basic_hilt/wrap_string.name=String wrap
-basic_hilt/wrap_string.description=Slightly increases damage and speed.\nReduces negative hilt effects:\n §2-33%%§r probability\n §2-41%%§r severity
+basic_hilt/wrap_string.description=Slightly increases damage and speed, reduces negative hilt effects.
 basic_hilt/wrap_leather.name=Leather wrap
-basic_hilt/wrap_leather.description=Slightly increases damage and speed.\nReduces negative hilt effects:\n §2-50%%§r probability\n §2-41%%§r severity
+basic_hilt/wrap_leather.description=Slightly increases damage and speed, reduces negative hilt effects.
 basic_hilt/wrap_hide.name=Hide wrap
-basic_hilt/wrap_hide.description=Slightly increases damage and speed.\nReduces negative hilt effects:\n §2-33%%§r probability\n §2-70%%§r severity
+basic_hilt/wrap_hide.description=Slightly increases damage and speed, reduces negative hilt effects.
 basic_hilt/wrap_vine.name=Vine wrap
-basic_hilt/wrap_vine.description=Slightly increases damage and speed.\nReduces negative hilt effects:\n §2-33%%§r probability\n §2-41%%§r severity
+basic_hilt/wrap_vine.description=Slightly increases damage and speed, reduces negative hilt effects.
 
 wrap_hilt_schema.name=Wrap hilt
 wrap_hilt_schema.slot1=Material
 wrap_hilt_schema.description=Wrap the hilt using the provided materials. Slighly increases damage and speed, and reduces negative effects potentially caused by the hilt.
+
+wrap_hilt_hone_1_schema.name=Hone: Wrap II
+wrap_hilt_hone_1_schema.slot1=Material
+wrap_hilt_hone_1_schema.description=Improve the hilt wrap, further increasing damage and speed, and reducing negative effects.
+
+wrap_hilt_hone_2_schema.name=Hone: Wrap III
+wrap_hilt_hone_2_schema.slot1=Material
+wrap_hilt_hone_2_schema.description=Further improve the hilt wrap, increasing damage and speed, and reducing negative effects.
 
 ###############################
 # DECORATIVE POMMEL
@@ -370,10 +557,21 @@ wide_guard/fierymetal=Wide fierymetal guard
 wide_guard/knightmetal=Wide knightmetal guard
 
 ###############################
+# SWORD SOCKET
+###############################
+sword_socket_schema.name=Socket
+sword_socket_schema.description=Socket a gem into the sword, providing different effects depending on the gem.\n\n§7Does not have to be repaired.
+sword_socket_schema.slot1=Gem
+
+sword_socket/diamond=Socket [§bDiamond§r]
+sword_socket/emerald=Socket [§aEmerald§r]
+sword_socket/lapis=Socket [§9Lapis§r]
+
+###############################
 # COUNTERWEIGHT
 ###############################
 counterweight_schema.name=Counterweight
-counterweight_schema.description=Balance the blade with a counterweight. Greatly increases attack speed if the counterweight consumes the same amount of integrity as all other parts combined. If integrity usage differs the bonus is reduced, a large difference reduces the bonus further and may even reduce the attack speed.
+counterweight_schema.description=Balance the blade with a counterweight. Greatly increases attack speed if the counterweight consumes the same amount of integrity as all other modules combined. If integrity usage differs the bonus is reduced, a large difference reduces the bonus further and may even reduce the attack speed.
 counterweight_schema.slot1=Material
 
 counterweight/oak=Wooden counterweight §7II
@@ -793,6 +991,111 @@ machete/knightmetal=Knightmetal machete
 machete/knightmetal.prefix=Knightmetal
 
 ###############################
+# DUPLEX HEAD HONING SHARED
+###############################
+duplex_head_hone_durability_1_schema.name=Hone: Durability I
+duplex_head_hone_durability_1_schema.description=Hone the module to increase the durability it provides by 4%%.
+duplex_head_hone_durability_2_schema.name=Hone: Durability II
+duplex_head_hone_durability_2_schema.description=Further hone the durability improvement for this module, increasing the durability bonus from 4%% to 9%%.
+duplex_head_hone_durability_3_schema.name=Hone: Durability III
+duplex_head_hone_durability_3_schema.description=Further hone the durability improvement for this module, increasing the durability bonus from 9%% to 13%%.
+duplex_head_hone_durability_4_schema.name=Hone: Durability IV
+duplex_head_hone_durability_4_schema.description=Further hone the durability improvement for this module, increasing the durability bonus from 13%% to 18%%.
+duplex_head_hone_durability_5_schema.name=Hone: Durability V
+duplex_head_hone_durability_5_schema.description=Further hone the durability improvement for this module, increasing the durability bonus from 18%% to 22%%.
+
+hone/durability.name=Hone: Durability
+hone/durability.description=Increases durability
+
+duplex_head_hone_speed_1_schema.name=Hone: Speed I
+duplex_head_hone_speed_1_schema.description=Hone the module to increase the overall swing speed by 0.03.
+duplex_head_hone_speed_2_schema.name=Hone: Speed II
+duplex_head_hone_speed_2_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.03 to 0.07.
+duplex_head_hone_speed_3_schema.name=Hone: Speed III
+duplex_head_hone_speed_3_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.07 to 0.1.
+duplex_head_hone_speed_4_schema.name=Hone: Speed IV
+duplex_head_hone_speed_4_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.1 to 0.14.
+duplex_head_hone_speed_5_schema.name=Hone: Speed V
+duplex_head_hone_speed_5_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 0.14 to 0.17.
+
+hone/speed.name=Hone: Speed
+hone/speed.description=Increases swing speed
+
+duplex_hone_damage_flat_1_schema.name=Hone: Damage I
+duplex_hone_damage_flat_1_schema.description=Hone the module to increase the damage dealt by 0.5.
+duplex_hone_damage_flat_2_schema.name=Hone: Damage II
+duplex_hone_damage_flat_2_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 0.5 to 1.
+duplex_hone_damage_flat_3_schema.name=Hone: Damage III
+duplex_hone_damage_flat_3_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 1 to 1.5.
+duplex_hone_damage_flat_4_schema.name=Hone: Damage IV
+duplex_hone_damage_flat_4_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 1.5 to 2.
+duplex_hone_damage_flat_5_schema.name=Hone: Damage V
+duplex_hone_damage_flat_5_schema.description=Further hone the damage improvement for this module, increasing the damage bonus from 2 to 3.
+
+hone/damage.name=Hone: Damage
+hone/damage.description=Increases damage dealt
+
+duplex_hone_axe_efficiency_1_schema.name=Hone: Chop Eff. I
+duplex_hone_axe_efficiency_1_schema.description=Hone the module to increase efficiency for chopping by 1.
+duplex_hone_axe_efficiency_2_schema.name=Hone: Chop Eff. II
+duplex_hone_axe_efficiency_2_schema.description=Further hone the chop efficiency improvement for this module, increasing the efficiency bonus from 1 to 2.5.
+duplex_hone_axe_efficiency_3_schema.name=Hone: Chop Eff. III
+duplex_hone_axe_efficiency_3_schema.description=Further hone the chop efficiency improvement for this module, increasing the efficiency bonus from 2.5 to 5.
+duplex_hone_axe_efficiency_4_schema.name=Hone: Chop Eff. IV
+duplex_hone_axe_efficiency_4_schema.description=Further hone the chop efficiency improvement for this module, increasing the efficiency bonus from 5 to 10.
+duplex_hone_axe_efficiency_5_schema.name=Hone: Chop Eff. V
+duplex_hone_axe_efficiency_5_schema.description=Further hone the chop efficiency improvement for this module, increasing the efficiency bonus from 10 to 15.
+
+hone/axe_efficiency.name=Hone: Chop Efficiency
+hone/axe_efficiency.description=Increases chopping efficiency
+
+duplex_hone_axe_tier_1_schema.name=Hone: Chop Tier I
+duplex_hone_axe_tier_1_schema.description=Hone the module to increase chopping tier by 1.
+
+hone/axe_tier.name=Hone: Chop Tier
+hone/axe_tier.description=Increases chopping tier by 1
+
+duplex_hone_shovel_efficiency_1_schema.name=Hone: Dig Eff. I
+duplex_hone_shovel_efficiency_1_schema.description=Hone the module to increase efficiency for digging by 1.
+duplex_hone_shovel_efficiency_2_schema.name=Hone: Dig Eff. II
+duplex_hone_shovel_efficiency_2_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 1 to 2.5.
+duplex_hone_shovel_efficiency_3_schema.name=Hone: Dig Eff. III
+duplex_hone_shovel_efficiency_3_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 2.5 to 5.
+duplex_hone_shovel_efficiency_4_schema.name=Hone: Dig Eff. IV
+duplex_hone_shovel_efficiency_4_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 5 to 10.
+duplex_hone_shovel_efficiency_5_schema.name=Hone: Dig Eff. V
+duplex_hone_shovel_efficiency_5_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 10 to 15.
+
+hone/shovel_efficiency.name=Hone: Dig Efficiency
+hone/shovel_efficiency.description=Increases digging efficiency
+
+duplex_hone_shovel_tier_1_schema.name=Hone: Dig Tier I
+duplex_hone_shovel_tier_1_schema.description=Hone the module to increase digging tier by 1.
+
+hone/shovel_tier.name=Hone: Dig Tier
+hone/shovel_tier.description=Increases digging tier by 1
+
+duplex_hone_pickaxe_efficiency_1_schema.name=Hone: Mine Eff. I
+duplex_hone_pickaxe_efficiency_1_schema.description=Hone the module to increase efficiency for mining by 1.
+duplex_hone_pickaxe_efficiency_2_schema.name=Hone: Mine Eff. II
+duplex_hone_pickaxe_efficiency_2_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 1 to 2.5.
+duplex_hone_pickaxe_efficiency_3_schema.name=Hone: Mine Eff. III
+duplex_hone_pickaxe_efficiency_3_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 2.5 to 5.
+duplex_hone_pickaxe_efficiency_4_schema.name=Hone: Mine Eff. IV
+duplex_hone_pickaxe_efficiency_4_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 5 to 10.
+duplex_hone_pickaxe_efficiency_5_schema.name=Hone: Mine Eff. V
+duplex_hone_pickaxe_efficiency_5_schema.description=Further hone the dig efficiency improvement for this module, increasing the efficiency bonus from 10 to 15.
+
+hone/pickaxe_efficiency.name=Hone: Mine Efficiency
+hone/pickaxe_efficiency.description=Increases mining efficiency
+
+duplex_hone_pickaxe_tier_1_schema.name=Hone: Mine Tier I
+duplex_hone_pickaxe_tier_1_schema.description=Hone the module to increase mining tier by 1.
+
+hone/pickaxe_tier.name=Hone: Mine Tier
+hone/pickaxe_tier.description=Increases mining tier by 1
+
+###############################
 # DUPLEX SYNERGY NAMES
 ###############################
 duplex/axe_hammer=Carpenter's hammer
@@ -840,17 +1143,47 @@ basic_handle/ender_reverb.name=Ender reverb
 basic_handle/ender_reverb.description=Reacts negatively with nearby entities originating from the end.
 
 basic_handle/wrap_string.name=String wrap
-basic_handle/wrap_string.description=Slightly increases damage and speed.\nReduces negative handle effects:\n §2-33%%§r probability\n §2-41%%§r severity
+basic_handle/wrap_string.description=Slightly increases damage and speed, reduces negative handle effects.
 basic_handle/wrap_leather.name=Leather wrap
-basic_handle/wrap_leather.description=Slightly increases damage and speed.\nReduces negative handle effects:\n §2-50%%§r probability\n §2-41%%§r severity
+basic_handle/wrap_leather.description=Slightly increases damage and speed, reduces negative handle effects.
 basic_handle/wrap_hide.name=Hide wrap
-basic_handle/wrap_hide.description=Slightly increases damage and speed.\nReduces negative handle effects:\n §2-33%%§r probability\n §2-70%%§r severity
+basic_handle/wrap_hide.description=Slightly increases damage and speed, reduces negative handle effects.
 basic_handle/wrap_vine.name=Vine wrap
-basic_handle/wrap_vine.description=Slightly increases damage and speed.\nReduces negative handle effects:\n §2-33%%§r probability\n §2-41%%§r severity
+basic_handle/wrap_vine.description=Slightly increases damage and speed, reduces negative handle effects.
 
 wrap_handle_schema.name=Wrap handle
 wrap_handle_schema.slot1=Material
 wrap_handle_schema.description=Wrap the handle using the provided materials. Slighly increases damage and speed, and reduces negative effects potentially caused by the handle.
+
+wrap_handle_hone_1_schema.name=Hone: Wrap II
+wrap_handle_hone_1_schema.slot1=Material
+wrap_handle_hone_1_schema.description=Improve the handle wrap, further increasing damage and speed, and reducing negative effects.
+
+wrap_handle_hone_2_schema.name=Hone: Wrap III
+wrap_handle_hone_2_schema.slot1=Material
+wrap_handle_hone_2_schema.description=Further improve the handle wrap, increasing damage and speed, and reducing negative effects.
+
+handle_hone_speed_1_schema.name=Hone: Speed I
+handle_hone_speed_1_schema.description=Hone the handle to increase the overall swing speed by 4%%.
+handle_hone_speed_2_schema.name=Hone: Speed II
+handle_hone_speed_2_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 4%% to 9%%.
+handle_hone_speed_3_schema.name=Hone: Speed III
+handle_hone_speed_3_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 9%% to 13%%.
+handle_hone_speed_4_schema.name=Hone: Speed IV
+handle_hone_speed_4_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 13%% to 18%%.
+handle_hone_speed_5_schema.name=Hone: Speed V
+handle_hone_speed_5_schema.description=Further hone the swing speed improvement for this module, increasing the speed bonus from 18%% to 22%%.
+
+###############################
+# DUPLEX SOCKET
+###############################
+duplex_socket_schema.name=Socket
+duplex_socket_schema.description=Socket a gem into the tool, providing different effects depending on the gem.\n\n§7Does not have to be repaired.
+duplex_socket_schema.slot1=Gem
+
+duplex_socket/diamond=Socket [§bDiamond§r]
+duplex_socket/emerald=Socket [§aEmerald§r]
+duplex_socket/lapis=Socket [§9Lapis§r]
 
 ###############################
 # AXE HEAD
@@ -1390,7 +1723,6 @@ belt/inlaid.prefix=Inlaid
 ###############################
 # TOOLBELT STRAPS
 ###############################
-stats.toolbelt.quickslot=Quickslots
 
 strap_schema1.name=Single belt strap
 strap_schema1.description=Attach a single strap to the belt, which can be used for carrying and quickly accessing tools or other items.
@@ -1417,7 +1749,6 @@ strap4/iron=4 Iron loops
 ###############################
 # POTION BAG
 ###############################
-stats.toolbelt.potion_storage=Potion slots
 
 potion_storage_schema.name=Potion bag
 potion_storage_schema.description=Attach a small bag specifically designed for carrying potions. The bag stores a large amount of potions, but can only support a small set of different types of potions.
@@ -1431,7 +1762,6 @@ potion_storage/hide=Small potion bag
 ###############################
 # STORAGE POUCH
 ###############################
-stats.toolbelt.storage=Storage slots
 
 storage_schema.name=Storage pouch
 storage_schema.description=Attach a small pouch to the toolbelt, which can store a large amount of items. While the items in the pouch are not easily accessible, held items can be stored into the pouch as easily as with other toolbelt attachments.
@@ -1445,7 +1775,6 @@ storage/hide=Small pouch
 ###############################
 # QUIVER
 ###############################
-stats.toolbelt.quiver=Quiver slots
 
 quiver_schema.name=Quiver
 quiver_schema.description=Attach a quiver to the toolbelt. The quiver can hold a large amount of arrows.
@@ -1459,7 +1788,6 @@ quiver/hide=Hide quiver
 ###############################
 # BOOSTER
 ###############################
-stats.booster=Boost strength
 
 booster_schema.name=Booster
 booster_schema.description=Attach a booster unit, which grants the ability to jump long distances or even fly for shorter periods of time. Activate by crouching before a jump, or by jumping mid air or while flying with an elytra. §oUses gunpowder as fuel.

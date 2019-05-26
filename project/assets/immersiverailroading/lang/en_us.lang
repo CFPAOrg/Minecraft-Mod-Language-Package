@@ -16,6 +16,8 @@ item.immersiverailroading:item_manual.name=Immersive Railroading Manual
 item.immersiverailroading:item_rail.name=Track Blueprint
 item.immersiverailroading:item_conductor_whistle.name=Conductor's Whistle
 item.immersiverailroading:item_golden_spike.name=Golden Spike
+item.immersiverailroading:item_radio_control_card.name=Train Radio-control Card
+item.immersiverailroading:item_switch_key.name=Switch Key
 
 tile.immersiverailroading:block_rail.name=Rail
 tile.immersiverailroading:block_rail_gag.name=Rail (Gag)
@@ -37,19 +39,25 @@ chat.immersiverailroading:coupler.disengaged=Coupler %s set to shunting mode
 chat.immersiverailroading:coupler.status.coupled=%s Coupler is coupled to %s (%s, %s, %s)
 chat.immersiverailroading:coupler.status.decoupled.engaged=%s Coupler is decoupled in normal mode
 chat.immersiverailroading:coupler.status.decoupled.disengaged=%s Coupler is decoupled in shunting mode
-chat.immersiverailroading:build.missing.ties=Missing %s ties
-chat.immersiverailroading:build.missing.rails=Missing %s rails
-chat.immersiverailroading:build.missing.rail_bed=Missing %s rail_bed
-chat.immersiverailroading:build.missing.rail_bed_fill=Missing %s rail bed fill
+chat.immersiverailroading:build.missing=Missing %s %s
 chat.immersiverailroading:augment.set=Set Augment to act only upon %s
 chat.immersiverailroading:augment.reset=Set Augment to act upon any stock
 chat.immersiverailroading:misc.wood_planks=Wood Planks
 chat.immersiverailroading:build.invalid_block=Invalid block at x=%s y=%s z=%s
+chat.immersiverailroading:radio.link=Card linked to locomotive
+chat.immersiverailroading:radio.relink=Card linked to new locomotive
+chat.immersiverailroading:radio.unlink=Card unlinked from its locomotive
+chat.immersiverailroading:radio.nolink=Card has no linked locomotive
+chat.immersiverailroading:radio.cant_link=Locomotive %s does not have radio control equipment
+chat.immersiverailroading:brush.no.variants=This stock has no livery variants
+chat.immersiverailroading:switch_state.unlocked=Switch unlocked
+chat.immersiverailroading:switch_state.locked=Switch locked to %s
 
 gui.immersiverailroading:label.brake=Brake
 gui.immersiverailroading:label.throttle=Throttle
 gui.immersiverailroading:selector.type=Type: %s
 gui.immersiverailroading:selector.gauge=Gauge: %s
+gui.immersiverailroading:selector.track=Track Style: %s
 gui.immersiverailroading:selector.quarters=%s Degree Turn
 gui.immersiverailroading:selector.rail_bed=Rail Bed: %s
 gui.immersiverailroading:selector.rail_bed_fill=Rail Bed Fill: %s
@@ -61,6 +69,8 @@ gui.immersiverailroading:selector.plate_type=Plate Type: %s
 gui.immersiverailroading:selector.plate_boiler=Plate Boiler: %s
 gui.immersiverailroading:selector.cast_single=Single Casting
 gui.immersiverailroading:selector.cast_repeat=Repeat Casting
+
+gui.immersiverailroading:item.switch_key=Right-Click a switch to cycle between: [ locked straight, locked turn, unlocked ]. Redstone is ignored when locked!!
 gui.immersiverailroading:none=None
 
 gui.immersiverailroading:track.type=Type:      %s
@@ -84,6 +94,8 @@ gui.immersiverailroading:cast.raw=Requires processing in the steam hammer before
 gui.immersiverailroading:stock.tank_capacity=Capacity:       %s Buckets
 gui.immersiverailroading:stock.freight_capacity=Capacity:       %s Stacks
 gui.immersiverailroading:stock.weight=Weight:          %s Kg
+gui.immersiverailroading:stock.modeler=Modeler:        %s
+gui.immersiverailroading:stock.pack=Pack:            %s
 
 immersiverailroading:gauge.brunel=Brunel
 immersiverailroading:gauge.standard=Standard
@@ -190,6 +202,10 @@ immersiverailroading:loco_control_mode.computer=Computer
 immersiverailroading:coupler_augment_mode.engaged=Coupling
 immersiverailroading:coupler_augment_mode.disengaged=Decoupling
 
+immersiverailroading:switch_state.none=None
+immersiverailroading:switch_state.straight=Straight
+immersiverailroading:switch_state.turn=Diverge
+
 key.categories.immersiverailroading=Immersive Railroading
 ir_keys.increase_throttle=Increase Throttle
 ir_keys.zero_throttle=Zero Throttle
@@ -198,5 +214,6 @@ ir_keys.increase_brake=Increase Air Brake
 ir_keys.zero_brake=Zero Air Brake
 ir_keys.decrease_brake=Decrease Air Brake
 ir_keys.horn=Sound Horn
+ir_keys.bell=Sound Bell
 ir_keys.dead_mans_switch=Deadman's Switch
 ir_keys.start_stop_engine=Start/Stop engine

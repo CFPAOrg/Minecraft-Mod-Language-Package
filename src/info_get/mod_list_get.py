@@ -140,16 +140,17 @@ def main():
     th_list.clear()  # 打扫干净屋子再请客
     # 从 asdflj 的 api 处获取文字 ID 和语义化 ID 的映射表
     # 从而方便获取整合中的模组列表
-    URL_ID_MAP.update(requests.get("https://mc.meitangdehulu.com/message/mods_url_map"
-                                   "?api_key=" + ASDFLJ_API_KEY).json()["data"])
-    logging.info("从 asdflj 源中成功获取映射表")
+    # 此网站现已失效
+    # URL_ID_MAP.update(requests.get("https://mc.meitangdehulu.com/message/mods_url_map"
+    #                               "?api_key=" + ASDFLJ_API_KEY).json()["data"])
+    # logging.info("从 asdflj 源中成功获取映射表")
 
     # 本地缓存的映射表，装入 URL_ID_MAP 中
     local_cache_map = CURSOR.execute("SELECT URL, ID from URL_ID_MAP")
     for row in local_cache_map:
-        if row[0] not in URL_ID_MAP.keys():
-            logging.debug("服务端 API 中不存在的映射：" + str(row))
-            URL_ID_MAP[row[0]] = row[1]
+        #if row[0] not in URL_ID_MAP.keys():
+            # logging.debug("服务端 API 中不存在的映射：" + str(row))
+        URL_ID_MAP[row[0]] = row[1]
 
     # 存入整合白名单
     MODPACK_LIST.extend(MODPACK_WHITELIST)
@@ -158,7 +159,7 @@ def main():
     # 剔除整合黑名单
     for i in MODPACK_LIST.copy():
         if i in MODPACK_BLACKLIST:
-            MODPACK_BLACKLIST.remove(i)
+            MODPACK_LIST.remove(i)
     logging.info("黑名单整合已剔除：" + str(MODPACK_BLACKLIST))
 
     for modpack in MODPACK_LIST:
