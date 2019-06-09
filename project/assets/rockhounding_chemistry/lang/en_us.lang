@@ -240,7 +240,7 @@ tile.rockhounding_chemistry:misc_blocks_a.raw_salt.name=Raw Salt Block
 tile.rockhounding_chemistry:misc_blocks_a.separator.name=Separator
 tile.rockhounding_chemistry:misc_blocks_a.gan_vessel.name=GAN Pressure Vessel
 tile.rockhounding_chemistry:misc_blocks_a.gan_compressor.name=GAN Compressor
-tile.rockhounding_chemistry:misc_blocks_a.extractor_charger.name=Extraction Charger
+tile.rockhounding_chemistry:misc_blocks_a.extractor_charger.name=Charger
 tile.rockhounding_chemistry:misc_blocks_a.gan_tower.name=GAN Tower
 tile.rockhounding_chemistry:misc_blocks_a.gan_tower_top.name=GAN Tower Top
 tile.rockhounding_chemistry:misc_blocks_a.gan_injector.name=GAN Injector
@@ -274,7 +274,7 @@ tile.rockhounding_chemistry:machines_a.lab_oven_chamber.name=Lab Oven Reactor
 tile.rockhounding_chemistry:machines_a.fluid_input_tank.name=Fluid Input System
 tile.rockhounding_chemistry:machines_a.fluid_output_tank.name=Fluid Output System
 tile.rockhounding_chemistry:machines_a.lab_blender_controller.name=Lab Blender Controller
-tile.rockhounding_chemistry:machines_a.lab_blender_tank.name=Blending Unit
+tile.rockhounding_chemistry:machines_a.lab_blender_tank.name=Lab Blender Controller
 tile.rockhounding_chemistry:machines_a.evaporation_tank.name=Evaporation Tank
 tile.rockhounding_chemistry:machines_a.seasoning_rack.name=Seasoning Rack
 tile.rockhounding_chemistry:machines_a.profiling_bench.name=Profiling Bench
@@ -329,19 +329,29 @@ tile.rockhounding_chemistry:machines_d.waste_dumper.name=Chemical Dumper
 tile.rockhounding_chemistry:machines_d.flotation_tank.name=Flotation Tank
 tile.rockhounding_chemistry:machines_d.containment_tank.name=Containment Tank
 tile.rockhounding_chemistry:machines_e.laser_emitter.name=Laser Emitter
-tile.rockhounding_chemistry:machines_e.exhaustion_valve.name=Exhaustion Valve
+tile.rockhounding_chemistry:machines_e.exhaustion_valve.name=Exhaust Valve
 tile.rockhounding_chemistry:machines_e.water_pump.name=Water Pump
+tile.rockhounding_chemistry:machines_e.catalyst_regen.name=Catalyst Regenerator
+tile.rockhounding_chemistry:machines_e.disposer.name=Disposer
+tile.rockhounding_chemistry:machines_e.slurry_drum.name=Heavy Drum
+tile.rockhounding_chemistry:machines_e.buffer_tank.name=Buffer Tank
+tile.rockhounding_chemistry:machines_e.stirred_tank_base.name=Electrochemical CSTR
+tile.rockhounding_chemistry:machines_e.stirred_tank_top.name=Electrochemical CSTR
+tile.rockhounding_chemistry:machines_e.stirred_tank_out.name=CSTR Container
+tile.rockhounding_chemistry:machines_e.precipitation_chamber.name=Precipitation Chamber
+tile.rockhounding_chemistry:machines_e.precipitation_controller.name=Precipitation Chamber
+tile.rockhounding_chemistry:machines_e.precipitation_reactor.name=Precipitation Reactor
 #containers
 container.pipeline_valve=Fluid Pipeline Valve
 container.mineral_sizer_controller=Mineral Sizer
 container.mineral_sizer_tank=Mineral Sizer
-container.power_generator=Engine
-container.mineral_sizer_collector=Mineral Sizer
+container.power_generator=Power Station
+container.mineral_sizer_collector=Gangue Collector
 container.generic_fluid_tank=Fluid Tank
 container.lab_oven_controller=Lab Oven
 container.lab_oven_intank=Fluid Input System
 container.lab_oven_outtank=Fluid Output System
-container.lab_oven_chamber=Lab Oven Precipitator
+container.lab_oven_chamber=Precipitator
 container.lab_blender_controller=Lab Blender
 container.lab_blender_tank=Lab Blender
 container.seasoning_rack=Seasoning Rack
@@ -361,9 +371,9 @@ container.gas_expander=Expansion Chamber
 container.multivessel=Gas Bulbs
 container.leaching_vat_controller=Leaching Vat
 container.leaching_vat_tank=Leaching Vat
-container.leaching_vat_collector=Leaching Vat
+container.leaching_vat_collector=Specimen Collector
 container.retention_vat=Retention Vat
-container.extractor_injector=Extraction Injector
+container.extractor_injector=Glassware Holder
 container.extractor_cabinet_base=Elements Cabinet
 container.extractor_controller=Extraction Controller
 container.extractor_balance=Lab Balance
@@ -386,6 +396,14 @@ container.fluidpedia=Fluidpedia
 container.waste_dumper=Chemical Dumper
 container.flotation_tank=Flotation Tank
 container.containment_tank=Containment Tank
+container.catalyst_regen=Catalyst Regenerator
+container.disposer=Disposer
+container.slurry_drum=Heavy Drum
+container.buffer_tank=Buffer Tank
+container.stirred_tank_top=Electrochemical CSTR
+container.stirred_tank_out=CSTR Container
+container.precipitation_chamber=Precipitation Chamber
+container.precipitation_controller=Precipitation Chamber
 #jei
 jei.rockhounding_chemistry.mineral_sizer.name=Mineral Sizer
 jei.rockhounding_chemistry.slurry_pond.name=Slurry Pond
@@ -411,12 +429,18 @@ jei.rockhounding_chemistry.transposer.name=Transposer
 jei.rockhounding_chemistry.mutation.name=Toxic Mutation
 jei.rockhounding_chemistry.pollutant_fluids.name=Pollutant Fluids
 jei.rockhounding_chemistry.pollutant_gases.name=Pollutant Gases
+jei.rockhounding_chemistry.catalyst_regen.name=Catalyst Regenerator
+jei.rockhounding_chemistry.slurry_drum.name=Heavy Drum
+jei.rockhounding_chemistry.stirred_tank.name=Electrochemical CSTR
+jei.rockhounding_chemistry.evaporation_tank.name=Evaporantion Tank
+jei.rockhounding_chemistry.precipitation_chamber.name=Precipitation Chamber
 #consumables
 item.rockhounding_chemistry:crushing_gear.name=Crushing Gear
 item.rockhounding_chemistry:slurry_agitator.name=Slurry Agitator
 item.rockhounding_chemistry:test_tube.name=Test Tube
 item.rockhounding_chemistry:graduated_cylinder.name=Graduated Cylinder
-item.rockhounding_chemistry:ingot_pattern.name=Mold Pattern
+item.rockhounding_chemistry:ingot_pattern.name=Mold Pattern (Ingot)
+item.rockhounding_chemistry:block_pattern.name=Mold Pattern (Block)
 
 #### ITEMS ####
 #pattern
@@ -467,6 +491,14 @@ item.rockhounding_chemistry:misc_items.cosm_rod.name=CoSm Rod
 item.rockhounding_chemistry:misc_items.hastelloy_rod.name=Hastelloy Rod
 item.rockhounding_chemistry:misc_items.nimonic_coil.name=Nimonic Coil
 item.rockhounding_chemistry:misc_items.nimonic_casing.name=Nimonic Casing
+item.rockhounding_chemistry:misc_items.iron_impeller.name=Iron Impeller
+item.rockhounding_chemistry:misc_items.aluminum_impeller.name=Aluminum Impeller
+item.rockhounding_chemistry:misc_items.stellite_impeller.name=Stellite Impeller
+item.rockhounding_chemistry:misc_items.aluminum_foil.name=Aluminum Foil
+item.rockhounding_chemistry:misc_items.stellite_foil.name=Stellite Foil
+item.rockhounding_chemistry:misc_items.refractory_casing.name=Refractory Upgrade
+item.rockhounding_chemistry:misc_items.flyash_ball.name=Fly Ash Ball
+item.rockhounding_chemistry:misc_items.flyash_brick.name=Fly Ash Brick
 
 #### MATERIALS ####
 #alloys
@@ -550,6 +582,23 @@ tile.rockhounding_chemistry:alloy_bricks_tech.tantaloy.name=Tantaloy Brick
 item.rockhounding_chemistry:alloy_items_tech.tantaloy_dust.name=Tantaloy Dust
 item.rockhounding_chemistry:alloy_items_tech.tantaloy_ingot.name=Tantaloy Ingot
 item.rockhounding_chemistry:alloy_items_tech.tantaloy_nugget.name=Tantaloy Nugget
+
+tile.rockhounding_chemistry:alloy_blocks_tech_b.nial.name=NiAl Block
+tile.rockhounding_chemistry:alloy_bricks_tech_b.nial.name=NiAl Brick
+item.rockhounding_chemistry:alloy_items_tech_b.nial_dust.name=NiAl Dust
+item.rockhounding_chemistry:alloy_items_tech_b.nial_ingot.name=NiAl Ingot
+item.rockhounding_chemistry:alloy_items_tech_b.nial_nugget.name=NiAl Nugget
+tile.rockhounding_chemistry:alloy_blocks_tech_b.inconel.name=Inconel Block
+tile.rockhounding_chemistry:alloy_bricks_tech_b.inconel.name=Inconel Brick
+item.rockhounding_chemistry:alloy_items_tech_b.inconel_dust.name=Inconel Dust
+item.rockhounding_chemistry:alloy_items_tech_b.inconel_ingot.name=Inconel Ingot
+item.rockhounding_chemistry:alloy_items_tech_b.inconel_nugget.name=Inconel Nugget
+tile.rockhounding_chemistry:alloy_blocks_tech_b.zircaloy.name=Zircaloy Block
+tile.rockhounding_chemistry:alloy_bricks_tech_b.zircaloy.name=Zircaloy Brick
+item.rockhounding_chemistry:alloy_items_tech_b.zircaloy_dust.name=Zircaloy Dust
+item.rockhounding_chemistry:alloy_items_tech_b.zircaloy_ingot.name=Zircaloy Ingot
+item.rockhounding_chemistry:alloy_items_tech_b.zircaloy_nugget.name=Zircaloy Nugget
+
 tile.rockhounding_chemistry:alloy_blocks_deco.mischmetal.name=Mischmetal Block
 tile.rockhounding_chemistry:alloy_bricks_deco.mischmetal.name=Mischmetal Brick
 item.rockhounding_chemistry:alloy_items_deco.mischmetal_dust.name=Mischmetal Dust
@@ -610,11 +659,22 @@ tile.rockhounding_chemistry:alloy_bricks_deco.cosm.name=CoSm Brick
 item.rockhounding_chemistry:alloy_items_deco.cosm_dust.name=CoSm Dust
 item.rockhounding_chemistry:alloy_items_deco.cosm_ingot.name=CoSm Ingot
 item.rockhounding_chemistry:alloy_items_deco.cosm_nugget.name=CoSm Nugget
-tile.rockhounding_chemistry:alloy_blocks_gems.nd_yag.name=Nd:YAG Block
-tile.rockhounding_chemistry:alloy_bricks_gems.nd_yag.name=Nd:YAG Brick
-item.rockhounding_chemistry:alloy_items_gems.nd_yag_dust.name=Nd:YAG Dust
-item.rockhounding_chemistry:alloy_items_gems.nd_yag_gem.name=Nd:YAG Gem
-item.rockhounding_chemistry:alloy_items_gems.nd_yag_nugget.name=Nd:YAG Nugget
+
+tile.rockhounding_chemistry:alloy_blocks_gems.nd_yag.name=Neodymium YAG Block
+tile.rockhounding_chemistry:alloy_bricks_gems.nd_yag.name=Neodymium YAG Brick
+item.rockhounding_chemistry:alloy_items_gems.nd_yag_dust.name=Neodymium YAG Dust
+item.rockhounding_chemistry:alloy_items_gems.nd_yag_gem.name=Neodymium YAG Gem
+item.rockhounding_chemistry:alloy_items_gems.nd_yag_nugget.name=Neodymium YAG Nugget
+tile.rockhounding_chemistry:alloy_blocks_gems.er_yag.name=Erbium YAG Block
+tile.rockhounding_chemistry:alloy_bricks_gems.er_yag.name=Erbium YAG Brick
+item.rockhounding_chemistry:alloy_items_gems.er_yag_dust.name=Erbium YAG Dust
+item.rockhounding_chemistry:alloy_items_gems.er_yag_gem.name=Erbium YAG Gem
+item.rockhounding_chemistry:alloy_items_gems.er_yag_nugget.name=Erbium YAG Nugget
+tile.rockhounding_chemistry:alloy_blocks_gems.yb_yag.name=Ytterbium YAG Block
+tile.rockhounding_chemistry:alloy_bricks_gems.yb_yag.name=Ytterbium YAG Brick
+item.rockhounding_chemistry:alloy_items_gems.yb_yag_dust.name=Ytterbium YAG Dust
+item.rockhounding_chemistry:alloy_items_gems.yb_yag_gem.name=Ytterbium YAG Gem
+item.rockhounding_chemistry:alloy_items_gems.yb_yag_nugget.name=Ytterbium YAG Nugget
 #parts
 item.rockhounding_chemistry:alloy_parts.vanadium_coin.name=Vanadium Coin
 item.rockhounding_chemistry:alloy_parts.vanadium_gear.name=Vanadium Gear
@@ -703,9 +763,15 @@ item.rockhounding_chemistry:alloy_parts.nib_plate.name=NIB Plate
 item.rockhounding_chemistry:alloy_parts.cosm_coin.name=CoSm Coin
 item.rockhounding_chemistry:alloy_parts.cosm_gear.name=CoSm Gear
 item.rockhounding_chemistry:alloy_parts.cosm_plate.name=CoSm Plate
+item.rockhounding_chemistry:alloy_parts.inconel_coin.name=Inconel Coin
+item.rockhounding_chemistry:alloy_parts.inconel_gear.name=Inconel Gear
+item.rockhounding_chemistry:alloy_parts.inconel_plate.name=Inconel Plate
+item.rockhounding_chemistry:alloy_parts.zircaloy_coin.name=Zircaloy Coin
+item.rockhounding_chemistry:alloy_parts.zircaloy_gear.name=Zircaloy Gear
+item.rockhounding_chemistry:alloy_parts.zircaloy_plate.name=Zircaloy Plate
 #materials
 item.rockhounding_chemistry:metal_items.vanadium_ingot.name=Vanadium Ingot
-item.rockhounding_chemistry:metal_items.nial_ingot.name=NiAl Ingot
+item.rockhounding_chemistry:metal_items.zirconium_ingot.name=Zirconium Ingot
 item.rockhounding_chemistry:metal_items.osmium_ingot.name=Osmium Ingot
 item.rockhounding_chemistry:metal_items.aluminum_ingot.name=Aluminum Ingot
 item.rockhounding_chemistry:metal_items.titanium_ingot.name=Titanium Ingot
@@ -720,13 +786,19 @@ item.rockhounding_chemistry:metal_items.molybdenum_ingot.name=Molybdenum Ingot
 item.rockhounding_chemistry:metal_items.nickel_ingot.name=Nickel Ingot
 #upgrades
 item.rockhounding_chemistry:speed_items.base.name=Alloy Ingredients
-item.rockhounding_chemistry:speed_items.iron.name=Iron Speed Upgrade
-item.rockhounding_chemistry:speed_items.scal.name=ScAl Speed Upgrade
-item.rockhounding_chemistry:speed_items.cube.name=CuBe Speed Upgrade
-item.rockhounding_chemistry:speed_items.bam.name=BAM Speed Upgrade
-item.rockhounding_chemistry:speed_items.vanasteel.name=Vanasteel Speed Upgrade
-item.rockhounding_chemistry:speed_items.carbide.name=Widia Speed Upgrade
-item.rockhounding_chemistry:speed_items.nitride.name=Tinite Speed Upgrade
+item.rockhounding_chemistry:speed_items.iron.name=Speed Upgrade (Tier 1)
+item.rockhounding_chemistry:speed_items.scal.name=Speed Upgrade (Tier 2)
+item.rockhounding_chemistry:speed_items.cube.name=Speed Upgrade (Tier 3)
+item.rockhounding_chemistry:speed_items.bam.name=Speed Upgrade  (Tier 4)
+item.rockhounding_chemistry:speed_items.vanasteel.name=Speed Upgrade  (Tier 5)
+item.rockhounding_chemistry:speed_items.carbide.name=Speed Upgrade (Tier 6)
+item.rockhounding_chemistry:speed_items.nitride.name=Speed Upgrade (Tier 7)
+item.rockhounding_chemistry:filter_items.base.name=Base Leaching Filter Upgrade
+item.rockhounding_chemistry:filter_items.one.name=Leaching Filter Upgrade (Tier 1)
+item.rockhounding_chemistry:filter_items.two.name=Leaching Filter Upgrade (Tier 2)
+item.rockhounding_chemistry:filter_items.three.name=Leaching Filter Upgrade (Tier 3)
+item.rockhounding_chemistry:filter_items.four.name=Leaching Filter Upgrade (Tier 4)
+item.rockhounding_chemistry:filter_items.five.name=Leaching Filter Upgrade (Tier 5)
 #probes
 item.rockhounding_chemistry:probe_items.iron.name=Iron Probe
 item.rockhounding_chemistry:probe_items.copper.name=Copper probe
@@ -746,6 +818,7 @@ item.rockhounding_chemistry:nl_catalyst.name=NiAl Catalyst
 item.rockhounding_chemistry:au_catalyst.name=Gold Catalyst
 item.rockhounding_chemistry:mo_catalyst.name=Molybdenum Catalyst
 item.rockhounding_chemistry:ni_catalyst.name=Nickel Catalyst
+item.rockhounding_chemistry:in_catalyst.name=Inconel Mesh
 #chemicals
 item.rockhounding_chemistry:chemical_items.cracked_coal.name=Cracked Coal
 item.rockhounding_chemistry:chemical_items.flyash_compound.name=Fly Ash Compound
@@ -756,7 +829,7 @@ item.rockhounding_chemistry:chemical_items.fluorite_compound.name=Fluorite Beari
 item.rockhounding_chemistry:chemical_items.chloride_compound.name=Chloride Bearing Compound
 item.rockhounding_chemistry:chemical_items.coal_tar_compound.name=Coal Tar Compound
 item.rockhounding_chemistry:chemical_items.graphite_compound.name=Graphite Compound
-item.rockhounding_chemistry:chemical_items.calcium_compound.name=Calcium Compound
+item.rockhounding_chemistry:chemical_items.cracked_lime.name=Cracked Lime Compound
 item.rockhounding_chemistry:chemical_items.zeolite_pellet.name=Zeolite Pellet
 item.rockhounding_chemistry:chemical_items.zeolite_compound.name=Zeolite Compound
 item.rockhounding_chemistry:chemical_items.silicon_compound.name=Silicon Compound
@@ -767,6 +840,8 @@ item.rockhounding_chemistry:chemical_items.widia_compound.name=Widia Compound
 item.rockhounding_chemistry:chemical_items.yag_compound.name=YAG Compound
 item.rockhounding_chemistry:chemical_items.pure_yag_compound.name=Pure YAG Compound
 item.rockhounding_chemistry:chemical_items.sand_compound.name=Filtered Sand
+item.rockhounding_chemistry:chemical_items.coke_compound.name=Coke Compound
+item.rockhounding_chemistry:chemical_items.ammonium_chloride.name=Ammonium Chloride
 
 #### FLUID ####
 #fluid blocks
@@ -795,6 +870,7 @@ tile.rockhounding_chemistry:fluid.methanol.name=Methanol
 tile.rockhounding_chemistry:fluid.toxic_waste.name=Toxic Waste
 tile.rockhounding_chemistry:fluid.toxic_sludge.name=Toxic Sludge
 tile.rockhounding_chemistry:fluid.organic_slurry.name=Organic Slurry
+tile.rockhounding_chemistry:fluid.coal_tar.name=Coal Tar
 #fluids
 fluid.sulfuric_acid=Sulfuric Acid
 fluid.sodium_hydroxide=Sodium Hydroxide
@@ -820,6 +896,7 @@ fluid.methanol=Methanol
 fluid.toxic_waste=Toxic Waste
 fluid.toxic_sludge=Toxic Sludge
 fluid.organic_slurry=Organic Slurry
+fluid.coal_tar=Coal Tar
 
 #### MOLTEN ####
 #molten blocks
@@ -839,6 +916,9 @@ tile.rockhounding_chemistry:fluid.molten_vanasteel.name=Molten Vanasteel
 tile.rockhounding_chemistry:fluid.molten_tantaloy.name=Molten Tantaloy
 tile.rockhounding_chemistry:fluid.molten_corten.name=Molten Corten Steel
 tile.rockhounding_chemistry:fluid.molten_pewter.name=Molten Pewter
+tile.rockhounding_chemistry:fluid.molten_nial.name=Molten NiAl
+tile.rockhounding_chemistry:fluid.molten_inconel.name=Molten Inconel
+tile.rockhounding_chemistry:fluid.molten_zircaloy.name=Molten Zircaloy
 #molten
 fluid.molten_vanadium=Molten Vanadium
 fluid.molten_titanium=Molten Titanium
@@ -856,6 +936,9 @@ fluid.molten_vanasteel=Molten Vanasteel
 fluid.molten_tantaloy=Molten Tantaloy
 fluid.molten_corten=Molten Corten Steel
 fluid.molten_pewter=Molten Pewter
+fluid.molten_nial=Molten NiAl
+fluid.molten_inconel=Molten Inconel
+fluid.molten_zircaloy=Molten Zircaloy
 
 #### GAS ####
 #gas blocks
@@ -875,6 +958,8 @@ tile.rockhounding_chemistry:fluid.krypton.name=Krypton
 tile.rockhounding_chemistry:fluid.xenon.name=Xenon
 tile.rockhounding_chemistry:fluid.water_vapour.name=Water Vapour
 tile.rockhounding_chemistry:fluid.ammonia.name=Ammonia
+tile.rockhounding_chemistry:fluid.raw_flue_gas.name=Raw Flue Gas
+tile.rockhounding_chemistry:fluid.flue_gas.name=Flue Gas
 #gases
 fluid.compressed_air=Compressed Air
 fluid.refined_air=Refined Air
@@ -892,6 +977,8 @@ fluid.krypton=Krypton
 fluid.xenon=Xenon
 fluid.water_vapour=Water Vapour
 fluid.ammonia=Ammonia
+fluid.raw_flue_gas=Raw Flue Gas
+fluid.flue_gas=Flue Gas
 
 #### TEXT ####
 death.attack.acid="%1$s took refuge in a somewhat acid irony"
@@ -900,3 +987,11 @@ death.attack.chemicals="Epic chemistry gone wrong for %1$s"
 death.attack.chemicals.item="Epic chemistry gone wrong for %1$s"
 death.attack.spill="%1$s tried to clean up his own mess"
 death.attack.spill.item="%1$s tried to clean up his own mess"
+
+#### LABELS ####
+label.rockhounding_chemistry:descr.activation=Activation
+label.rockhounding_chemistry:descr.void=Void Tank. Content will be lost
+label.rockhounding_chemistry:descr.speed=Speed Upgrade
+label.rockhounding_chemistry:descr.refractory=Refractory Upgrade
+label.rockhounding_chemistry:descr.insulation=Insulation Upgrade
+label.rockhounding_chemistry:descr.casing=Casing Upgrade

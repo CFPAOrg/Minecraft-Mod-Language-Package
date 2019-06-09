@@ -19,6 +19,7 @@ gui.active=激活
 gui.inactive=未激活
 gui.settings=设置
 gui.rename=重命名
+gui.search_box=搜索中……
 
 ## Labels
 gui.other=其他
@@ -66,7 +67,9 @@ teleporting=传送中……
 cooldown=冷却
 cant_use_now=现在无法使用！
 cant_use_now_cooldown=现在无法使用，冷却时间：%s
-action_bar=Action Bar
+action_bar=动作栏
+nothing_changed=没有改变！
+player_must_be_online=玩家必须在线！
 
 ftblib.lang.reload_server_button=重载服务端
 ftblib.lang.reload_server=FTBLib：服务端重载耗时 %s
@@ -80,8 +83,19 @@ ftblib.lang.add_fake_player.invalid_uuid=非法的 UUID！
 ftblib.lang.add_fake_player.player_exists=玩家已经存在！
 ftblib.lang.add_fake_player.added=Fake player %s 被添加！
 
+ftblib.select_fluid.gui=选择流体
+ftblib.select_fluid.none=无
+ftblib.select_item.list_mode=列出模式：%s
+ftblib.select_item.list_mode.all=所有物品
+ftblib.select_item.list_mode.inv=物品栏
+ftblib.select_item.count=设置大小
+ftblib.select_item.meta=设置Metadata
+ftblib.select_item.nbt=编辑NBT
+ftblib.select_item.caps=编辑功能
+ftblib.select_team.gui=选择组
+
 # Config
-ftblib.general.clientless_mode=Clientless Mode
+ftblib.general.clientless_mode=无客户端模式
 ftblib.general.replace_reload_command=替换 /reload 命令
 ftblib.general.merge_offline_mode_players=合并离线玩家数据
 
@@ -133,7 +147,7 @@ ftblib.lang.team.member_left=%s 离开了你的组！
 ftblib.lang.team.member_joined=%s 加入了你的组！
 ftblib.lang.team.transferred_ownership=新的组长是 %s
 ftblib.lang.team.invited=已经邀请 %s 到“%s”组
-ftblib.lang.team.invited_you=你被邀请到“%s”, 邀请者是 %s
+ftblib.lang.team.invited_you=你被邀请到“%s”，邀请者是 %s
 ftblib.lang.team.cancel_invite=拒绝邀请
 ftblib.lang.team.error.not_found=组“%s”没有找到！
 ftblib.lang.team.error.no_team=你必须在一个组里面才能这样做！
@@ -210,3 +224,24 @@ click_action.show_cmd=显示命令
 click_action.url=打开 URL
 click_action.file=打开文件
 click_action.gui=打开 GUI
+
+# Commands
+commands.reload.usage=/reload [*|domain:*|domain:id]
+commands.my_settings.usage=/my_settings <设置id> [值]
+commands.team.usage=/team
+commands.team.settings.usage=/team settings <配置 id> [值]
+commands.team.create.usage=/team create <id> [颜色]
+commands.team.leave.usage=/team leave
+commands.team.transfer_ownership.usage=/team transfer_ownership <玩家>
+commands.team.kick.usage=/team kick <玩家>
+commands.team.join.usage=/team join <组>
+commands.team.status.usage=/team status <玩家> [设置的状态]
+commands.team.status.set=%s的状态设置为%s
+commands.team.status.cant_set=状态不能被设置！
+commands.team.msg.usage=/team msg <消息>
+commands.team.delete.usage=/team delete <组>
+commands.team.request_invite.usage=/team request_invite <组>
+commands.add_fake_player.usage=/add_fake_player <uuid> <名称>
+
+# Client Commands
+commands.client_config.usage=/client_config

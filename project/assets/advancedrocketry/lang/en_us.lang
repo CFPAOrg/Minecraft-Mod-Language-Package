@@ -4,6 +4,7 @@ itemGroup.advancedRocketryOres=Advanced Rocketry Ores
 death.attack.Vacuum=You have been depressurized
 death.attack.Vacuum.player=Was depressurized
 entity.advancedRocketry.rocket.name=Rocket
+entity.rocket.name=Rocket
 
 tile.landingPad.name=Landing Pad
 tile.seat.name=Seat
@@ -76,7 +77,7 @@ tile.citrine.name=Yellow Crystal Block
 tile.wulfentite.name=Orange Crystal Block
 tile.amethyst.name=Violet Crystal Block
 tile.orientationControl.name=Orientation Controller
-tile.gravityControl.name=Gravity Controller
+tile.gravityControl.name=Station Gravity Controller
 tile.drill.name=Drill
 tile.dataPipe.name=Data Cable(Deprecated)
 tile.liquidPipe.name=Liquid Pipe(Deprecated)
@@ -103,12 +104,13 @@ tile.planetHoloSelector.name=Holographic Planet Selector
 tile.lens.name=Lens
 tile.forceField.name=Force Field
 tile.forceFieldProjector.name=Force Field Projector
-tile.gravityMachine.name=Gravity Controller
+tile.gravityMachine.name=Area Gravity Controller
 tile.pipeSeal.name=Pipe Seal
 tile.spaceElevatorController.name=Space Elevator
 tile.beacon.name=Beacon
 tile.thermiteTorch.name=Thermite Torch
 tile.wirelessTransciever.name=Wireless Transciever
+tile.blackholegenerator.name=Black Hole Generator
 
 tile.Dilithium.name=Dilithium Ore
 
@@ -244,9 +246,14 @@ achievement.suitedUp.desc=Wear a full spacesuit
 
 
 
-key.controls.advancedRocketry=Advanced Rocketry
+key.controls.advancedrocketry=Advanced Rocketry
 key.openRocketUI=Open Rocket GUI
 key.toggleJetpack=Toggle Jetpack
+key.togglercs=Toggle RCS
+key.turnRocketLeft=Rotate Rocket Left
+key.turnRocketRight=Rotate Rocket Right
+key.turnRocketUp=Move Rocket Up
+key.turnRocketDown=Move Rocket Down
 
 enchantment.advancedrocketry.spacebreathing.desc=Allows the piece of armor to form an airtight seal
 
@@ -269,7 +276,7 @@ msg.spaceElevator.noChipError=One or both of the space elevators has no chip ins
 msg.spaceElevator.newDstAdded=New Destination Added!
 msg.spaceElevator.ascentReady=Getting ready for ascent 
 msg.spaceElevator.label.chip=Elevator Chip
-msg.spaceElevator.turnedoff=Elevator is turned off
+msg.spaceElevator.turnedOff=Elevator is turned off
 msg.fuelingStation.link=You program the linker with the fueling station at
 msg.monitoringStation.missionProgressNA=Mission Progress: N/A
 msg.monitoringStation.link=You program the linker with the monitoring station at
@@ -306,9 +313,10 @@ msg.terraformer.notrunning=Not running
 msg.terraformer.status=Status
 msg.terraformer.pressure=Pressure
 msg.biomescanner.gas=nyehhh, Gassy, ain't it?
+msg.biomescanner.star=If only my sensors had sunshades
 msg.gravitycontroller.radius=Radius: 
 msg.gravitycontroller.targetgrav=Target Gravity: 
-msg.gravitycontroller.none
+# msg.gravitycontroller.none
 msg.gravitycontroller.activeset=Active: set
 msg.gravitycontroller.activeadd=Active: add
 msg.gravitycontroller.targetdir.1=Target->
@@ -373,15 +381,16 @@ msg.rocketbuilder.scan=Scan
 msg.solar.collectingEnergy=Collecting Energy:
 msg.solar.cannotcollectEnergy=Unable to collect Energy
 msg.asteroidChip.asteroid=Asteroid
-msg.atmanal.atmType=Atmosphere Type: 
+msg.atmanal.atmtype=Atmosphere Type: 
 msg.atmanal.canbreathe=Breathable: 
 msg.biomechanger.scan=Scan Biome
 msg.biomechanger.nosat=Satellite not yet launched
 msg.biomechanger.selBiome=Selected Biome: 
 msg.biomechanger.numBiome=Num Biomes Scanned: 
 msg.itemorescanner.nosat=Satellite not yet launched
-msg.itemorescanner.maxzoom=Max zoom:
+msg.itemorescanner.maxzoom=Max zoom: 
 msg.itemorescanner.filter=Can filter ore: 
+msg.itemorescanner.value=Value: 
 msg.itemplanetidchip.planetname=Planet Name: 
 msg.itemplanetidchip.stationid=Station Id: 
 msg.itemplanetidchip.artifacts=Artifacts:
@@ -410,11 +419,13 @@ msg.entity.rocket.descend.1=Press Space to descend!
 msg.entity.rocket.descend.2=Auto descend in 
 msg.entity.rocket.ascend.1=Press Space to take off!
 msg.entity.rocket.ascend.2=Dest: 
+msg.entity.rocket.launch=Launch in T-
+msg.entity.rocket.launch2=Press [Space] to abort
 msg.entity.rocket.station=Station 
 msg.entity.rocket.pad=Pad: 
 msg.entity.rocket.disass=Dissassemble
-msg.entity.rocket.seldst=Select Dst
 msg.entity.rocket.clear=Clear
+msg.entity.rocket.rcs=RCS Mode
 msg.entity.rocket.none=None Selected
 msg.wirelessTransciever.extract=extract
 

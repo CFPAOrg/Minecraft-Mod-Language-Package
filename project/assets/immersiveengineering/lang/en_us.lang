@@ -1,4 +1,4 @@
-ï»¿ Byte Order Mark, because fuck you IntelliJ
+# ï»¿ Byte Order Mark, because fuck you IntelliJ
 # BLOCKS
 tile.immersiveengineering.ore.copper.name=Copper Ore
 tile.immersiveengineering.ore.aluminum.name=Bauxite Ore
@@ -135,6 +135,8 @@ tile.immersiveengineering.metal_decoration2.aluminum_wallmount.name=Aluminium Wa
 tile.immersiveengineering.metal_decoration2.lantern.name=Lantern
 tile.immersiveengineering.metal_decoration2.razor_wire.name=Razor Wire
 tile.immersiveengineering.metal_decoration2.toolbox.name=Engineer's Toolbox
+tile.immersiveengineering.metal_decoration2.steel_slope.name=Steel Structural Arm
+tile.immersiveengineering.metal_decoration2.alu_slope.name=Aluminium Structural Arm
 
 tile.immersiveengineering.metal_decoration1_slab.steel_scaffolding_0.name=Steel Scaffolding Slab
 tile.immersiveengineering.metal_decoration1_slab.steel_scaffolding_1.name=Steel Scaffolding Slab
@@ -194,6 +196,7 @@ tile.immersiveengineering.conveyor.immersiveengineering:conveyor.name=Conveyor B
 tile.immersiveengineering.conveyor.immersiveengineering:uncontrolled.name=Conveyor Belt
 tile.immersiveengineering.conveyor.immersiveengineering:uncontrolled.flavour=Ignores Redstone Control
 tile.immersiveengineering.conveyor.immersiveengineering:dropper.name=Dropping Conveyor Belt
+tile.immersiveengineering.conveyor.immersiveengineering:droppercovered.name=Dropping Covered Conveyor Belt
 tile.immersiveengineering.conveyor.immersiveengineering:vertical.name=Vertical Conveyor Belt
 tile.immersiveengineering.conveyor.immersiveengineering:splitter.name=Splitting Conveyor Belt
 tile.immersiveengineering.conveyor.immersiveengineering:covered.name=Covered Conveyor Belt
@@ -429,6 +432,7 @@ item.immersiveengineering.faraday_suit_feet.name=Faraday Boots
 item.immersiveengineering.fluorescent_tube.name=Fluorescent Tube
 item.immersiveengineering.powerpack.name=Capacitor Backpack
 item.immersiveengineering.shield.name=Heavy Plated Shield
+item.immersiveengineering.maintenance_kit.name=Maintenance Kit
 
 item.immersiveengineering.map_orevein.name=Mineral Deposit Map
 
@@ -709,6 +713,7 @@ desc.immersiveengineering.info.shader.immersiveengineering:railgun=Railgun
 desc.immersiveengineering.info.shader.immersiveengineering:shield=Plated Shield
 desc.immersiveengineering.info.shader.immersiveengineering:minecart=Minecart
 desc.immersiveengineering.info.shader.immersiveengineering:balloon=Balloon
+desc.immersiveengineering.info.shader.immersiveengineering:banner=Banner
 desc.immersiveengineering.info.shader.set=§lShader Set§r:
 desc.immersiveengineering.info.shader.reference=§lReference to Popculture§r:
 desc.immersiveengineering.info.shader.details=§lAdditional Info§r:
@@ -791,6 +796,8 @@ desc.immersiveengineering.flavour.drillhead.speed=Mining Speed: %1$s
 desc.immersiveengineering.flavour.drillhead.damage=Attack Damage: %1$s
 
 desc.immersiveengineering.flavour.skyhook=A new form of travel
+desc.immersiveengineering.flavour.skyhook.speedLimit=Limited speed
+desc.immersiveengineering.flavour.skyhook.noLimit=Unlimited speed
 
 desc.immersiveengineering.flavour.toolupgrade.drill_waterproof=Allows the Mining Drill to operate under water
 desc.immersiveengineering.flavour.toolupgrade.drill_lube=Reduces the damage the Mining Drill's head sustains
@@ -838,6 +845,8 @@ gui.immersiveengineering.config.assembler.clearRecipe=Clear Recipe
 gui.immersiveengineering.config.assembler.recursiveIngredients=Recursive use of ingredients
 gui.immersiveengineering.config.assembler.nonRecursiveIngredients=Non-Recursive use of ingredients
 
+gui.immersiveengineering.config.arcfurnace.distribute=Distribute Inputs
+
 #CHAT
 chat.immersiveengineering.warning.wrongCable=You cannot attach this wire here
 chat.immersiveengineering.warning.wrongDimension=You are in the wrong dimension
@@ -846,6 +855,8 @@ chat.immersiveengineering.warning.tooFar=You are too far away from the previous 
 chat.immersiveengineering.warning.cantSee=The connection is obstructed
 chat.immersiveengineering.warning.connectionExists=The connection exists already
 chat.immersiveengineering.warning.invalidPoint=One of the connection points is invalid
+chat.immersiveengineering.info.skyhookLimited=The skyhook will automatically limit its speed
+chat.immersiveengineering.info.skyhookUnlimited=The speed of the skyhook is unlimited
 chat.immersiveengineering.info.averageLoss=Average loss between points: %1$s%%
 chat.immersiveengineering.info.energyStorage=Energy Stored: %1$s/%2$s Flux
 chat.immersiveengineering.info.tooHot=This fluid is too hot for the container!
@@ -904,6 +915,7 @@ subtitle.immersiveengineering.spark=Electrical sparks
 subtitle.immersiveengineering.railgunFire=Railgun fire
 subtitle.immersiveengineering.tesla=Tesla Coil zapping
 subtitle.immersiveengineering.direSwitch=Direwolf20 imitating a knifeswitch
+subtitle.immersiveengineering.skyhook=Skyhook slides along a wire
 
 #RECIPES
 recipe.immersiveengineering.hammerCrushing=Crushing
@@ -1023,9 +1035,12 @@ immersiveengineering.potion.concreteFeet=Concrete Feet
 immersiveengineering.potion.flashed=Flashed
 
 #MANUAL
-#ie.manual.entry..name=
-#ie.manual.entry..subtext=
+ie.manual.currentVersion= - CURRENT
+ie.manual.newerVersion= - NEW
+#ie.manual.entry.name=
+#ie.manual.entry.subtext=
 #ie.manual.entry.=
+
 
 ie.manual.category.update.name=UPDATE NEWS!
 ie.manual.entry.updateNews_0.name=What's new in v0.6.0
@@ -1103,7 +1118,7 @@ ie.manual.entry.hemp3=Strip Curtains are pieces of fabric that are mounted to do
 
 ie.manual.entry.cokeoven.name=Coke Oven
 ie.manual.entry.cokeoven.subtext=Hot topic!
-ie.manual.entry.cokeoven0=The Coke Oven is the first important machine you will need to create in order to proceed with Immersive Engineering. Its functionality is simple, it will heat up coal or blocks of coal without supplying it with oxygen, creating Coal Coke, a carbon rich fuel. More importantly, this process creates §lCreosote Oil§r, which is used as a <link;treated_wood;§o§npreservative §o§nfor §o§nwood§r>. Similarly you can also burn wooden logs into charcoal with this oven, albeit with a smaller yield of creosote.
+ie.manual.entry.cokeoven0=The Coke Oven is the first important machine you will need to create in order to proceed with Immersive Engineering. Its functionality is simple, it will heat up coal or blocks of coal without supplying it with oxygen, creating Coal Coke, a carbon rich fuel. More importantly, this process creates §lCreosote Oil§r, which is used as a <link;treatedwood;§o§npreservative §o§nfor §o§nwood§r>. Similarly you can also burn wooden logs into charcoal with this oven, albeit with a smaller yield of creosote.
 ie.manual.entry.cokeovenBlock=To form a Coke Oven, arrange 27 of these blocks in a 3x3x3 cube, and rightclick one of the sides' center blocks with an Engineer's Hammer.<br>See the following page for a diagram.
 
 ie.manual.entry.alloysmelter.name=Alloy Kiln
@@ -1175,10 +1190,10 @@ ie.manual.entry.wiringTransformer0=§lTransformers§r allow you to transition be
 ie.manual.entry.wiringTransformer1=You can attach <link;wiring;§o§ntransformers §o§nto §o§nwooden §o§npoles§r;3> as shown on the second image on page 4, however only non-HV Transformers can be placed like this.
 ie.manual.entry.wiringCutters=The §lWire Cutters§r are used to removed all the wires connected to a block by simply rightclicking it.
 ie.manual.entry.wiringVoltmeter=The §lVoltmeter§r is used to measure connections. Aiming it at any energy storage or rightclicking it will read its current storage. Sneak+rightclick two connectors to calculate the average loss between them.
-ie.manual.entry.wiringFeedthrough=Feedthrough Insulators allow connecting wiring from one side of a wall to wiring on the other side without a hole. They can be created with any "normal" solid block in the middle. All common types of connectors (power and redstone) can be used to create feedthrough insulators for the corresponding wire type.
+ie.manual.entry.wiringFeedthrough0=Feedthrough Insulators allow connecting wiring from one side of a wall to wiring on the other side without a hole. They can be created with any "normal" solid block in the middle. All common types of connectors (power and redstone) can be used to create feedthrough insulators for the
+ie.manual.entry.wiringFeedthrough1=corresponding wire type. Right-click one of the connectors with a hammer to form the multiblock.
 
 ie.manual.entry.generator.name=Power Generation
-ie.manual.entry.generator.subtext=
 ie.manual.entry.generator0=Transferring power is quite helpful provided you have power. To actually generate Flux, you can use the kinetic forces of windmills and waterwheels. Connecting these to a dynamo will generate power based on how fast they turn.
 ie.manual.entry.generator1=The Water Wheel is a fairly easy way of powering a dynamo. It's turning speed is based on the water flowing around it, so for optimal results, you'll want to direct the water in a semi-circle from the top down one side and along the bottom. Up to three water wheels can be placed against each other.
 ie.manual.entry.generator2=The Windmill is a free and easy way of generating power, albeit not a very powerful one. Its speed depends the space in front of it, with its kinetic output reducing greatly if the airflow is obscured. Additionally, weather conditions like rain or thunderstorms result in stronger winds and increased rotation speeds.
@@ -1293,14 +1308,15 @@ ie.manual.entry.multiblocks.name=Multiblock Constructions
 ie.manual.entry.multiblocks.subtext=Where's my Allen Wrench?
 ie.manual.entry.multiblocks0=Fitting complex machinery into a single 1x1x1 cube seems to be a task unmanageable without the use of magic or possibly shrink rays. So in order to create more complex machines, you will need component blocks. The most common ones have been listed on the following pages.
 
-ie.manual.entry.workbench.name=Engineer's Workbench
-ie.manual.entry.workbench.subtext=Overclocking
-ie.manual.entry.workbench0=Over the course of your Engineering career you may come to deal with some tools that can be optimized and modified. To apply these modifications, you should use a properly equipped Engineer's Workbench.<br>Rightclick the Workbench, insert the item into the slot and insert applicable upgrades into the new slots that appear.
+ie.manual.entry.workbench.name=Workbench & Blueprints
+ie.manual.entry.workbench.subtext=Always cluttered
+ie.manual.entry.workbench0=The Engineer's Workbench is a professional worktable for the educated engineer. It is widely used to construct the items described in <link;blueprints;§o§nEngineer's §o§nBlueprints§r>.<br>A wide variety of blueprints can be crafted, as detailed in the respective manual entry, whereas a few select ones can only be discovered in the world or purchased from villagers.
+ie.manual.entry.workbench1=To use a blueprint in the Workbench, it in the slot on the left of the GUI and the necessary ingredients in the six slots in the middle. The resulting items can then be retrieved from the right side. Hovering your mouse over these output slots will inform you exactly which materials are needed for each item.
+ie.manual.entry.workbench2=A secondary function of the Workbench is the modification and configuration of more complex tools and gadgets. Examples like the <link;drill;§o§nMining §o§nDrill§r>, <link;shield;§o§nHeavy §o§nPlated §o§nShield§r> or <link;revolver;§o§nRevolver§r> are examples of such items. When placed in the main slot of the workbench, it's use becomes that of modifying these tools by inserting applicable upgrades into the new slots that appear.
 
 ie.manual.entry.blueprints.name=Engineer's Blueprints
-ie.manual.entry.blueprints.subtext=RTFM
-ie.manual.entry.blueprints0=There are certain items which are very complex in their construction and require more than just a simple block of wood with a grid on it. These items will need to be created under the instructions of precise Blueprints on an <link;workbench;§o§nEngineer's §o§nWorkbench§r>.<br><br>Should you come across an Engineer's Blueprint (or maybe even create one yourself), you can place it in the slot of the Engineer's Workbench.
-ie.manual.entry.blueprints1=To create the items detailed in the Blueprint, you insert the required materials into the 6 slots in the middle, and retrieve the assembled results from the output slots to the right. Hovering your mouse over these output slots will inform you exactly which materials are needed for each item.
+ie.manual.entry.blueprints.subtext=Back to the drawing board
+ie.manual.entry.blueprints0=This page features all Engineer's Blueprints that can be crafted by normal means. Other Blueprints may need to be acquired from villagers or found in the world. All of these can be used in an <link;workbench;§o§nEngineer's §o§nWorkbench§r> to craft the items they describe.
 
 ie.manual.entry.mixer.name=Mixer
 ie.manual.entry.mixer.subtext=Vats of Cookie Dough!
@@ -1347,11 +1363,11 @@ ie.manual.entry.conveyor.subtext=Who needs rails anyway?
 ie.manual.entry.conveyor0=Conveyor Belts are an easy way of transporting all sorts of things around your base. While they are strong enough to move living creatures like cows or sheep, their true strength lies in transporting items.<br>Throwing items atop them will have the items move along the belt. Should the belt lead into an inventory, the item will be inserted.
 ie.manual.entry.conveyor1=Blocks like hoppers will be able to drop items onto the belts. Use an Engineer's Hammer to rotate the belts (rightclick) or adjust whether they should run up- or downwards (sneak + rightclick).<br>Using a redstone signal on a conveyor will turn it off, this behavior can be disabled by crafting it into a redstone-ignoring version. <br>Rightclicking a conveyor with any dye will colour the walls of the conveyor to easily identify where it is going.
 ie.manual.entry.conveyor2=The Dropping Conveyor Belt is quite simply a conveyor with a hatch in the middle, allowing it to drop items that pass over it downwards.<br>Items will be inserted into inventories below or simply dropped if there is an empty space below the conveyor.
-ie.manual.entry.conveyor3=The Extracting Conveyor Belt posesses the ability to extract items from an inventory in a similar fashion to a Hopper. Unlike the latter however, it posesses no internal inventory and will place extracted items on the belt.<br>Sneak + rightlick with an Engineer's Hammer to change its input side. Use a wirecutter to adjust its tickrate.
+ie.manual.entry.conveyor3=The Extracting Conveyor Belt possesses the ability to extract items from an inventory in a similar fashion to a Hopper. Unlike the latter however, it posesses no internal inventory and will place extracted items on the belt.<br>Sneak + rightlick with an Engineer's Hammer to change its input side. Use a wirecutter to adjust its tickrate.
 ie.manual.entry.conveyor4=The Vertical Conveyor Belt is a belt meant to be mounted on walls. Using the buckets attached to it, it will lift entities straight up. Despite the use of the term "bucket", it will not lift fluids.<br>This belt can insert into inventories above it or simply expel items over the edge at the top onto more conveyors.
 ie.manual.entry.conveyor5=The Splitting Conveyor Belt alternates between redirecting Items and Entities left and right, plain and simple. This feature can be used to achieve a more equal distribution in your factories.
 ie.manual.entry.conveyor6=The Covered Conveyor Belt works just like a normal conveyor, however it is covered by a piece of scaffolding, which prevents players from picking up items from it.<br>You can rightclick it with other types of scaffold or glass to change the cover's appearance.
-ie.manual.entry.conveyor7=Similarly, the Extracting and Vertical Conveyors can also be covered in scaffolding to achieve the same benefits of "pickup-prevention" while still functioning as they normally do.
+ie.manual.entry.conveyor7=Similarly, the Dropping, Extracting and Vertical Conveyors can also be covered in scaffolding to achieve the same benefits of "pickup-prevention" while still functioning as they normally do.
 
 ie.manual.entry.furnaceHeater.name=External Heater
 ie.manual.entry.furnaceHeater.subtext=Now you're cooking with flux!
@@ -1399,6 +1415,11 @@ ie.manual.entry.drill3=The §6Advanced Lubrication System§r applies additional 
 ie.manual.entry.drill4=By adding §6Additional Augers§r to the drill, its destructive potential is increased, increasing its damage against living creatures and allowing it to run and dig faster.<br>The upgrade stacks up to three times.
 ie.manual.entry.drill5=The §6Large Fuel Tank§r allows the drill to store more fuel internally, extending the time you can use it before refilling.
 
+ie.manual.entry.maintenanceKit.name=Maintenance Kit
+ie.manual.entry.maintenanceKit.subtext=On the go repairs
+ie.manual.entry.maintenanceKit0=Among those Engineers that travel the world or spend much of their time in mines, one problem crystalizes itself. Their tools require constant maintenance, and carrying around an entire workbench just isn't viable. Fortunately, the majority of minor repairs and re-configurations can be performed with a maintenance kit.
+ie.manual.entry.maintenanceKit1=A set of tools, wrapped in sturdy hemp cloth, the maintenance kit allows you to customize your tools much in the way the <link;workbench;§o§nEngineer's §o§nWorkbench§r> does. No longer will you have to deal with resurfacing to change the head on your Mining Drill or head back to your workshop to configure your Ear Defenders. All of this can now be performed on the go with the Maintenance Kit!
+
 ie.manual.entry.revolver.name=Revolver
 ie.manual.entry.revolver.subtext=Wanted: Dead or Alive
 ie.manual.entry.revolver0=The Revolver, a more elegant weapon from a more civilized age, is an achievement of small mechanics. Small being relative here, since this weapon is chambered for 12-gauge.<br>Similar to the Mining Drill, the Revolver will allow for modification in the <link;workbench;§o§nEngineer's §o§nWorkbench§r>, as detailed on the last pages.
@@ -1408,7 +1429,6 @@ ie.manual.entry.revolver3=The §6Extended Magazine§r allows loading 6 more cart
 ie.manual.entry.revolver4=The §6Amplifying Electron Tubes§r apply an electric shock to fired projectiles. This shock persists till it hits the target (don't ask how it works) and is passed on. The target will be stunned for a fraction of a second and all powered equipment they may be using will suffer a slight discharge.
 
 ie.manual.entry.bullets.name=Revolver Cartridges
-ie.manual.entry.bullets.subtext=
 ie.manual.entry.bullets0=Cartridges are created in the Engineer's Workbench, by the use of specific <link;blueprints;§o§nEngineer's §o§nBlueprints§r>. Blueprints for normal ammunition you can create yourself, but some more advanced types of ammunition will require you to buy adequate blueprints from someone else.
 ie.manual.entry.bullets1=§lEmpty §lCasings§r and §lShells§r are the basis for every projectile. Empty Casings can also be crafted in the <link;metalPress;§o§nMetal §o§nPress§r>, using the appropriate mold, at a greatly reduced cost.
 ie.manual.entry.bullets_casull=§lCasull §lCartridges§r are created with a "Common Projectiles" blueprint. They are a simple lead projectile inflicting medium damage.
@@ -1431,15 +1451,15 @@ ie.manual.entry.chemthrower3=The §6Multitank§r allows the Chemthrower to store
 ie.manual.entry.skyhook.name=Engineer's Skyhook
 ie.manual.entry.skyhook.subtext=Booker, catch!
 ie.manual.entry.skyhook0=The Engineer's Skyhook is a motorized grabber system designed to hook onto wires, hemp ropes or steel cables.<br>With it, engineers can quickly traverse the length of a powerline to move between substations or other installations.
-ie.manual.entry.skyhook1=Simply hold the right mousebutton while close to a connector and you will be attached to the wire.<br>Releasing the button at any time or sneaking will cause you to dismount.<br>You cannot start in the middle of a wire, you must attach at a connector.
+ie.manual.entry.skyhook1=Simply hold the right mouse button while close to a wire and you will be attached to it.<br>The button can be released while riding the wire, but letting go of the skyhook or sneaking will cause you to dismount.<br>Gravity will be sufficient to move along decending wires at a decent speed, the standard movement keys can be used to move along ascending wires.<br>When the skyhook reaches an intersection it will continue in as close to the direction the player is looking as possible.
 
 ie.manual.entry.shader.name=Shaders
 ie.manual.entry.shader.subtext=Blue! No, yellow!
-ie.manual.entry.shader0=Shaders are items you can find in the world or aquire by trading with villagers. They don't have a purpose by themselves, but they can be equipped to <link;revolver;§o§nRevolvers§r>, <link;drill;§o§nDrills§r>, <link;chemthrower;§o§nChemical §o§nThrowers§r>, <link;shield;§o§nPlated §o§nShield§r> or <link;railgun;§o§nRailguns§r>(and possibly other things you still have to discover) to change the designs of the item. Simply put the item in an <link;workbench;§o§nEngineer's §o§nWorkbench§r> and equip the shader in the appropriate slot.<br>You can also apply them to a Minecart or a <link;balloon;§o§nBalloon§r> by rightclicking!
+ie.manual.entry.shader0=Shaders are items you can find in the world or aquire by trading with villagers. They don't have a purpose by themselves, but they can be equipped to <link;revolver;§o§nRevolvers§r>, <link;drill;§o§nDrills§r>, <link;chemthrower;§o§nChemical §o§nThrowers§r>, <link;shield;§o§nPlated §o§nShield§r> or <link;railgun;§o§nRailguns§r>(and possibly other things you still have to discover) to change the designs of the item. Simply put the item in an <link;workbench;§o§nEngineer's §o§nWorkbench§r> and equip the shader in the appropriate slot.<br>You can also apply them to a Minecart, Banner or a <link;balloon;§o§nBalloon§r> by rightclicking!
 ie.manual.entry.shader1=For a full list of all available shaders, their looks, references and more details, <link;shaderList;§o§ncheck §o§nhere§r>
 ie.manual.entry.shader2=Shader Grabbags are items containing a random shader. They can be found in crates, traded from villagers or dropped by bosses. The rarity of the contained shader is equal to, or better than the rarity of the bag. When using a bag, you are more likely to get a shader you do not yet own, than one you already posess.
 ie.manual.entry.shader3=Shaders bags can be crafted into two bags of a lower level. This will lower your chances of getting rarer shaders but provide you with more attempts.
-//Shaders themselves can also be crafted into a single bag of the lower level.
+# //Shaders themselves can also be crafted into a single bag of the lower level.
 
 ie.manual.entry.shaderList.name=List of Shaders
 ie.manual.entry.shaderList.noInfo=You have not unlocked this shader yet!
@@ -1481,7 +1501,7 @@ ie.manual.entry.crusher.name=Crusher
 ie.manual.entry.crusher.subtext=Keep your hands out!
 ie.manual.entry.crusher0=Crushing an ore is an effective way of increasing their yield, for each ore creates two dusts which you can then smelt. This industrial-size crusher is a quick way of doing so. The machine's processing speed depends on the power supplied to it.
 ie.manual.entry.crusher1=Applying a redstone signal to the control panel at the front will halt the crushers process, this behavior can be inverted by use of the Engineer's Hammer.<br>The structure is formed by right clicking the central block of the front. The front is the wide side of the structure which has a light engineering block at the bottom.
-//However, it is not only used for crushing ores. Every living being to fall into the machine will take grave damage and the crusher will output the relevant drops. Likewise, all items that cannot be processed will be destroyed.<br>
+# //However, it is not only used for crushing ores. Every living being to fall into the machine will take grave damage and the crusher will output the relevant drops. Likewise, all items that cannot be processed will be destroyed.<br>
 
 ie.manual.entry.lightningrod.name=Lightning Rod
 ie.manual.entry.lightningrod.subtext=Thunderstruck!
