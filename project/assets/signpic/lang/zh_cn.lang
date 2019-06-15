@@ -1,19 +1,33 @@
 # Overlay
 ## Overlay
-signpic.over.mode.place=放置告示牌以及使用图像
-signpic.over.mode.setpreview=单击方块和设置预览位置
-
+### Mode
+signpic.over.mode.place=放置告示牌
+signpic.over.mode.option=右键单击告示牌图片以打开设置界面
+signpic.over.mode.setpreview=右键单击方块以设定预览位置
 ## F3
-signpic.over.sign=[§6告示牌§r] §7[§r%s§7]
-signpic.over.id=[§6告示牌-网址§r] %s
-signpic.over.size=[§6告示牌-尺寸§r] §7[§r%s§7] [§d告示牌:§7[§r%s§7×§r%s§7], §d图像:§7[§r%s§7×§r%s§7], §d视图:§7[§r%s§7×§r%s§7]]
-signpic.over.status=[§6告示牌-状态§r] %s
-signpic.over.advmsg=[§6告示牌-资讯§r] %s
-signpic.over.raw=[§6告示牌-未加工§r] [[§r%s§7], [§r%s§7], [§r%s§7], [§r%s§7]]
-signpic.over.local=[§6告示牌-地方§r] §7[§r%s§7]
+signpic.over.sign=[§6文本§r] §7[§r%s§7]
+signpic.over.id=[§6链接§r] %s
+signpic.over.size=[§6尺寸§r] §7[§r%s§7] [§d设定大小：§r%s§7×§r%s，§d图片分辨率：§r%s§7×§r%s，§d实际大小：§r%s§7×§r%s§7]
+signpic.over.status=[§6状态§r] %s
+signpic.over.advmsg=[§6信息§r] %s
+signpic.over.raw=[§6原始§r] [[§r%s§7], [§r%s§7], [§r%s§7], [§r%s§7]]
+signpic.over.local=[§6本地§r] §7[§r%s§7]
 
 # Chat
-signpic.chat.error.place=[§6图片牌子§r] 很抱歉，由于发生错误，您无法使用此功能。
+signpic.chat.error.place=[§6告示牌图片§r] 很抱歉，由于发生错误，你无法使用此功能。
+
+# Item
+signpic.item.hold=§7按住 §3§o%s §7查看详情
+signpic.item.sign.desc=§d按下 §a%s§d 编辑告示牌图片
+signpic.item.sign.desc.keyconflict=使用 §a%1$s§c §c打开 §a%2$s§c 并解除按键冲突!
+signpic.item.sign.desc.keyconflict.key=§c按键冲突 §a%2$s§c 在 §a%1$s
+signpic.item.sign.desc.named=告示牌图片§r §7(%s)
+signpic.item.sign.desc.named.prop.size=§7大小: %s×%s
+signpic.item.sign.desc.named.prop.offset=§7偏移: ⇨:%s, ⇧:%s, ↗:%s
+signpic.item.sign.desc.named.prop.rotation=§7旋转: %s
+signpic.item.sign.desc.named.url=§7链接: %s§7
+signpic.item.sign.desc.named.meta=§7元数据: %s§7
+signpic.item.sign.desc.named.raw=§7名称: [%s§7]
 
 # Key
 signpic.key.category=告示牌图片
@@ -21,86 +35,118 @@ signpic.key.gui=打开GUI
 
 # GUI
 ## Sign Editor
-signpic.gui.editor.see=显示牌子
+signpic.gui.editor.see=显示告示牌
 signpic.gui.editor.preview=预览
 signpic.gui.editor.continue=连续
+signpic.gui.editor.option=设置告示牌
 signpic.gui.editor.place=放置
 signpic.gui.editor.cancel=取消
 signpic.gui.editor.file=上传
-signpic.gui.editor.paste=粘贴
-signpic.gui.editor.textfield=请输入网址！
+signpic.gui.editor.paste=粘贴链接
+signpic.gui.editor.openurl=打开链接
+signpic.gui.editor.textfield=请输入图片链接！
 ### Size
 signpic.gui.editor.size.category=尺寸
 signpic.gui.editor.size.width=宽度
 signpic.gui.editor.size.height=高度
+signpic.gui.editor.size.width.unknown=纵横比
+signpic.gui.editor.size.height.unknown=纵横比
 ### Offset
 signpic.gui.editor.offset.category=偏移
 ### Rotation
 signpic.gui.editor.rotation.category=旋转
 ## Settings
-signpic.gui.settings.api.upimage=图像上传设置
+signpic.gui.settings.api.upimage=图片
+signpic.gui.settings.api.upimage.desc=图片上传设置
+signpic.gui.settings.api.urlshortener=短链接服务
+signpic.gui.settings.api.urlshortener.desc=短链接服务设置
 signpic.gui.settings.api.type=API 类型
-signpic.gui.settings.api.key=API 密码
-signpic.gui.settings.default=预设
+signpic.gui.settings.api.key=API 密钥
+signpic.gui.settings.default=默认
 signpic.gui.settings.config=配置
-signpic.gui.settings.paas=防止作弊
+signpic.gui.settings.paas=反防作弊
+signpic.gui.settings.hide=禁用（不显示图片）
+### Sign Option
+signpic.gui.settings.sign=设置告示牌
+signpic.gui.settings.sign.load=获取链接和属性
+signpic.gui.settings.sign.load.content=获取链接
+signpic.gui.settings.sign.load.meta=获取属性
+signpic.gui.settings.sign.openurl=用浏览器打开链接
+signpic.gui.settings.sign.loadcancel=取消加载
+signpic.gui.settings.sign.reload=重新加载
+signpic.gui.settings.sign.redownload=重新下载
+signpic.gui.settings.sign.block=冻结
+signpic.gui.settings.sign.unblock=解除冻结
+signpic.gui.settings.sign.reloadall=重新加载全部
+signpic.gui.settings.sign.redownloadall=重新下载全部
 ## Update
-signpic.gui.update.message=新版本的SignPicture可用！ 请点击这里更新。
+signpic.gui.update.message=新版本的 SignPicture 可用！请点击此处进行更新。
 ## Prevent Anti-AutoSign
-signpic.gui.paas.count=请稍候 ( %d / %d 字母 )
-signpic.gui.paas.time=Esc取消 ( %.2f / %.2f 秒 )
+signpic.gui.paas.count=请稍等（%d / %d 字母）
+signpic.gui.paas.time=按下 Esc 取消（%.2f / %.2f 秒）
 
 # Notice
 signpic.gui.notice.paste.unsupported=不支持
 signpic.gui.notice.paste.typeunsupported=不支持的类型
-signpic.gui.notice.paste.error=贴上时错误: %s
+signpic.gui.notice.paste.error=粘贴时错误：%s
 signpic.gui.notice.uploading=上传中... %s
 signpic.gui.notice.uploaded=上传完成 %s
-signpic.gui.notice.uploadfailed=上传失败: §7%s
+signpic.gui.notice.uploadfailed=上传失败：§7%s
 signpic.gui.notice.downloading=下载中... %s
 signpic.gui.notice.downloaded=下载完成 %s
-signpic.gui.notice.downloadfailed=下载失败: §7%s
-signpic.gui.notice.versioning.downloadedAlready=关闭您的游戏，删除旧版本，并重新加载更新！
-signpic.gui.notice.versioning.downloadingAlready=已下载更新！
+signpic.gui.notice.downloadfailed=下载失败：§7%s
+signpic.gui.notice.openurlfailed=链接打开失败：§7%s
+signpic.gui.notice.openurlfailed.invalid=无效的链接
+signpic.gui.notice.versioning.downloadedAlready=关闭你的游戏，删除旧版本的 SignPicture 并重新打开游戏以更新！
+signpic.gui.notice.versioning.downloadingAlready=更新已经在下载了！
+signpic.gui.notice.shortening=请稍等，正在转换短链接
+signpic.gui.notice.shortened=已转换为短链接
+signpic.gui.notice.shorteningfailed=转换短链接失败
+signpic.gui.notice.shorteningother=请稍等，有未完成的转换短链接操作
 
 # Upload UI
-signpic.ui.title=木牌图片文件
-signpic.ui.description=文件上传！
-signpic.ui.drop=拖放图像
+signpic.ui.title=告示牌图片文件
+signpic.ui.description=文件上传工具
+signpic.ui.drop=拖入一张图片
 signpic.ui.select=或选择要上传的图像
-signpic.ui.title.file=木牌图片文件
+signpic.ui.title.file=告示牌图片文件
 
 # Image State
-signpic.state.init=等候中...
-signpic.state.initalized=初始化！
-signpic.state.downloading=正在下载...(%d%%)
+signpic.state.init=等待中
+signpic.state.initalized=已初始化！
+signpic.state.downloading=正在下载（%d%%）
 signpic.state.downloaded=下载完成！
-signpic.state.loading=载入中... (%d%%)
+signpic.state.loading=加载中（%d%%）
 signpic.state.loaded=已完成加载！
-signpic.state.available=可用！ (%d%%)
-signpic.state.failed=加载失败... (%d%%)
+signpic.state.available=可用（%d%%）
+signpic.state.failed=加载失败（%d%%）
 signpic.state.error=错误
 signpic.state.format.unsupported=不支持，请尝试新版本！
 
 # Image State Additional Message
-signpic.advmsg.invalidurl=无效的网址
-signpic.advmsg.loadstopped=终止下载中...
-signpic.advmsg.capacityover=容量结束
+signpic.advmsg.invalidurl=无效的链接
+signpic.advmsg.loadstopped=下载已被终止
+signpic.advmsg.capacityover=超过容量
+signpic.advmsg.blocked=图片已被冻结
+signpic.advmsg.retryover=超过最大尝试次数
 signpic.advmsg.invalidimage=无效的图片
-signpic.advmsg.ioerror=读取失败: §7%s
-signpic.advmsg.unknown=未知的错误: §7%s
-signpic.advmsg.format.unsupported=不支援的标志图片
+signpic.advmsg.ioerror=读取失败：§7%s
+signpic.advmsg.unknown=未知的错误：§7%s
+signpic.advmsg.format.unsupported=不支持的告示牌图片
 signpic.advmsg.format.needupdate=尝试新版本！
+signpic.advmsg.format.outdated=旧版本的告示牌图片！
+signpic.advmsg.format.needreplace=使用“设置”导入并替换！
 
 # Version Checking
 signpic.versioning.check.start=开始检查
-signpic.versioning.check.cooldown=检查失败: §7需要冷却时间
+signpic.versioning.check.cooldown=检查失败：§7需要冷却时间
 signpic.versioning.noupdate=没有可用的更新
-signpic.versioning.updateMessage=["[",{"text":"SignPicture","color":"gold"},"] 有新的版本可用: ",{"text":"$new$","color":"green"},"."," [",{"text":"下载","color":"green","hoverEvent":{"action":"show_text","value":{"text":"单击此按钮可自动下载最新版本","color":"green"}},"clickEvent":$download$},"] [",{"text":"网站","color":"green","hoverEvent":{"action":"show_text","value":{"text":"点击这个去mod的网站","color":"green"}},"clickEvent":$website$},"] [",{"text":"Changelog","color":"green","hoverEvent":{"action":"show_text","value":{"text":"单击此转到版本更新日志","color":"green"}},"clickEvent":$changelog$},"]"]
-signpic.versioning.startingDownload=[{"text":"开始下载 %s. 请不要删除您的硬盘。 享受 ","color":"aqua"}]
-signpic.versioning.doneDownloading=完成下载 %s. 删除您的旧签名图片 .jar 并重新载入您的游戏更新。
-signpic.versioning.doneDownloadingWithFile=已完成下载 %s. 删除 %s 并重新载入您的游戏以进行更新。
-signpic.versioning.downloadedAlready=您已经下载了最新版本。 关闭您的游戏，从您的mods文件夹中删除旧版本，并重新加载更新！
+signpic.versioning.updateMessage=["[",{"text":"告示牌图片","color":"gold"},"] 有新的版本可用：",{"text":"$new$","color":"green"},"."," [",{"text":"下载","color":"green","hoverEvent":{"action":"show_text","value":{"text":"单击此按钮可自动下载最新版本","color":"green"}},"clickEvent":$download$},"] [",{"text":"网站","color":"green","hoverEvent":{"action":"show_text","value":{"text":"点击此处进入此模组的网站","color":"green"}},"clickEvent":$website$},"] [",{"text":"更新日志","color":"green","hoverEvent":{"action":"show_text","value":{"text":"点击此处查看此版本的更新日志","color":"green"}},"clickEvent":$changelog$},"]"]
+signpic.versioning.changelog=[§6告示牌图片§r] [§a更新§r] %s
+signpic.versioning.startingDownload=[{"text":"开始下载 %s。请勿移除你的硬盘。体验吧 ","color":"aqua"}]
+signpic.versioning.doneDownloading=完成下载 %s。删除旧版本的 SignPicture.jar 并重新启动你的游戏以更新。
+signpic.versioning.doneDownloadingWithFile=已完成下载 %s。删除 %s 并重新启动你的游戏以更新。
+signpic.versioning.downloadedAlready=你已经下载了最新版本。关闭你的游戏，把 Sign Picture 的旧版本从 mods 文件夹中删除，然后重新启动游戏以完成更新！
 signpic.versioning.downloadingAlready=更新已经在下载，需要一些时间。
-signpic.versioning.error=噢，尝试下载标志图片更新时似乎发生了问题。
+signpic.versioning.error=噢，尝试下载告示牌图片更新时似乎发生了问题。
 signpic.versioning.disabled=抱歉，此功能目前已停用。
