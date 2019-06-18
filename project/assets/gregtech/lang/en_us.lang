@@ -27,14 +27,19 @@ gregtech.multiblock.electric_blast_furnace.description=The Electric Blast Furnac
 gregtech.multiblock.multi_smelter.description=The Multi Smelter is multiblock structure used for smelting massive amounts of items at once. Different tiers of coils provide speed boost and energy efficiency gain. 16 is base value of items smelted per operation, and can be multiplied by using higher level coils.
 gregtech.multiblock.large_boiler.description=Large Boilers are multiblocks that generate steam from energy source and water. Usually either solid fuel or some high-density fluid acts like energy source for large boiler. Tiers differ only by amount of steam outputted.
 gregtech.multiblock.large_turbine.description=Large Turbines are multiblocks that generate power from steam, gases and plasma by them spinning turbine's rotor. Energy output is based on rotor efficiency and current speed of turbine.
-metaitem.dust.tooltip.purify=Throw into Cauldron to get clean Dust
-metaitem.generic.fluid_container.tooltip=%d/%dL %s
-metaitem.generic.fluid_container.tooltip_empty=Empty
-metaitem.generic.electric_item.tooltip=%d/%d EU - Tier §e%d
-metaitem.int_circuit.configuration=Configuration: %d
+
 item.invalid.name=Invalid item
 fluid.empty=Empty
 
+metaitem.generic.fluid_container.tooltip=%d/%dL %s
+metaitem.generic.fluid_container.tooltip_empty=Empty
+metaitem.generic.electric_item.tooltip=%d/%d EU - Tier §e%d
+metaitem.electric.discharge_mode.enabled=§eDischarge Mode Enabled
+metaitem.electric.discharge_mode.disabled=§eDischarge Mode Disabled
+metaitem.electric.discharge_mode.tooltip=Shift click to toggle discharge mode
+
+metaitem.dust.tooltip.purify=Throw into Cauldron to get clean Dust
+metaitem.int_circuit.configuration=Configuration: %d
 metaitem.credit.copper.name=Copper Credit
 metaitem.credit.copper.tooltip=0.125 Credits
 metaitem.credit.cupronickel.name=Cupronickel Credit
@@ -68,6 +73,13 @@ metaitem.shape.empty.name=Empty Shape Plate
 metaitem.shape.empty.tooltip=Raw Plate to make Molds and Extrude Shapes
 
 metaitem.dynamite.name=Dynamite
+
+metaitem.power_unit.lv.name=Power Unit (LV)
+metaitem.power_unit.mv.name=Power Unit (MV)
+metaitem.power_unit.hv.name=Power Unit (HV)
+metaitem.jackhammer_base.name=JackHammer Base (HV)
+metaitem.nano_saber.name=Nano Saber
+metaitem.nano_saber.tooltip=Ryujin no ken wo kurae!
 
 metaitem.shape.mold.plate.name=Mold (Plate)
 metaitem.shape.mold.plate.tooltip=Mold for making Plates
@@ -669,6 +681,9 @@ metaitem.tool.tooltip.durability=Durability: %d/%d
 metaitem.tool.tooltip.rotor.efficiency=Rotor Efficiency: %d%%
 metaitem.tool.tooltip.hammer.extra_drop=Has a chance to drop double crushed ores
 
+cover.filter.blacklist.disabled=Whitelist
+cover.filter.blacklist.enabled=Blacklist
+
 cover.ore_dictionary_filter.title=Ore Dictionary Filter
 cover.ore_dictionary_filter.title1=Ore Dictionary Name
 cover.ore_dictionary_filter.title2=(use * for wildcard)
@@ -697,7 +712,7 @@ cover.robotic_arm.title=Robotic Arm Settings (%s)
 cover.robotic_arm.transfer_mode.transfer_any=Transfer Any
 cover.robotic_arm.transfer_mode.transfer_exact=Supply Exact
 cover.robotic_arm.transfer_mode.keep_exact=Keep Exact
-cover.robotic_arm.transfer_mode.description=§eTransfer Any§r - in this mode, cover will transfer as much items matching it's filter as possible./n§eSupply Exact§r - in this mode, cover will supply items in portions specified in item filter slots (or transfer rate for ore dictionary filter). If amount of items is less than portion size, items won't be moved./n§eKeep Exact§r - in this mode, cover will keep specified amount of items in the destination inventory, supplying additional amount of items if required./n§7Tip: left/right click on filter slots to change item amount,  use shift clicking to change amount faster.
+cover.robotic_arm.transfer_mode.description=§eTransfer Any§r - in this mode, cover will transfer as much items matching it's filter as possible./n§eSupply Exact§r - in this mode, cover will supply items in portions specified in item filter slots (or variable under this button for ore dictionary filter). If amount of items is less than portion size, items won't be moved./n§eKeep Exact§r - in this mode, cover will keep specified amount of items in the destination inventory, supplying additional amount of items if required./n§7Tip: left/right click on filter slots to change item amount,  use shift clicking to change amount faster.
 
 cover.pump.title=Pump Cover Settings (%s)
 cover.pump.transfer_rate=%s mb/s
@@ -1550,6 +1565,7 @@ behaviour.soft_hammer=Click machine to allow/disallow it to work
 behaviour.lighter.tooltip=Can light things on fire
 behaviour.lighter.uses=Remaining uses: %d
 behavior.plunger.description=Right click on machine to clear 1000 mb out of it's output tank./nUse while sneaking to clear 1000 mb out of machine's input tank./nInput tank clearing works only on GTCE machines!
+behavior.toggle_energy_consumer.tooltip=Click to toggle mode
 
 enchantment.damage.endermen=Disjunction
 enchantment.damage.radioactivity=Radioactivity
@@ -1663,10 +1679,8 @@ tile.multiblock_casing.assembler.name=Assembler Machine Casing
 tile.multiblock_casing.fusion.name=Fusion Machine Casing
 tile.multiblock_casing.fusion_mk2.name=Fusion Machine Casing MK II
 
-#Machine general things
-gregtech.machine.tooltip.added_by=§c§oAdded by: %s
-
 # Chests
+gregtech.machine.small_wooden_chest.name=Small Wooden Chest
 gregtech.machine.wooden_chest.name=Wooden Chest
 gregtech.machine.bronze_chest.name=Bronze Chest
 gregtech.machine.steel_chest.name=Steel Chest
@@ -2180,6 +2194,15 @@ gregtech.machine.air_collector.description=Collects air from adjacent blocks
 #Tesla Coil
 gregtech.machine.tesla_coil.name=Tesla Coil
 gregtech.machine.tesla_coil.description=Damages all living entities within 7 blocks range/nConsumes 2500 EU for 1 damage point/nInternal buffer Capacity: §e256k EU
+
+#Fisher
+gregtech.machine.fisher.lv.name=Basic Fisher
+gregtech.machine.fisher.mv.name=Advanced Fisher
+gregtech.machine.fisher.hv.name=Advanced Fisher II
+gregtech.machine.fisher.ev.name=Advanced Mechanical Cat III
+gregtech.machine.fisher.tooltip=Costs string to fish. Each string is good for once.
+gregtech.machine.fisher.speed=Gets a fish (or whatnot) every %d ticks
+gregtech.machine.fisher.requirement=Requires a square of water with size of %d blocks directly below.
 
 # General machinery
 gregtech.machine.basic.input_from_output_side.allow=Allow Input from Output Side
