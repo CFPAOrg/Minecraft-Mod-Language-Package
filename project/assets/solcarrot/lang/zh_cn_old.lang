@@ -1,15 +1,17 @@
 # Tooltips
-tooltip.solcarrot.not_eaten_1=还没尝过呢!
-tooltip.solcarrot.not_eaten_2=尝起来怎么样?
-tooltip.solcarrot.eaten=已食用: 用于增加生命值
+tooltip.solcarrot.not_eaten.common=还没尝过呢!
+tooltip.solcarrot.not_eaten.hearty=尝起来怎么样?
+tooltip.solcarrot.eaten.hearty=已食用: 用于增加生命值
+tooltip.solcarrot.eaten.cheap=已食用: 没有明显效果
+tooltip.solcarrot.cheap=这种食物不足以提升您的生命值.
 
 # Commands
 command.solcarrot.foodlist.usage=/foodlist <size|clear|sync>
 
-command.solcarrot.foodlist.size.desc.foods_eaten.singular=你已经品尝了1种独特的食物!
-command.solcarrot.foodlist.size.desc.foods_eaten.plural=你已经品尝了%s种独特的食物!
-command.solcarrot.foodlist.size.desc.milestone.max=你无法从新食物中获得更多生命值.
-command.solcarrot.foodlist.size.desc.milestone.more=你还需要%s种食物来增加最大生命值.
+command.solcarrot.foodlist.size.desc.foods_eaten.singular=您已经品尝了1种独特的食物!
+command.solcarrot.foodlist.size.desc.foods_eaten.plural=您已经品尝了%s种独特的食物!
+command.solcarrot.foodlist.size.desc.milestone.max=您无法从新食物中获得更多生命值.
+command.solcarrot.foodlist.size.desc.milestone.more=您还需要%s种食物来增加最大生命值.
 
 command.solcarrot.foodlist.clear.success=食物清单已重置!
 
@@ -19,9 +21,9 @@ command.solcarrot.foodlist.sync.success=食物清单已同步!
 message.solcarrot.chat_wrapper=[SoL: Carrot] %s
 message.solcarrot.hearts.singular=1颗红心
 message.solcarrot.hearts.plural=%s颗红心
-message.solcarrot.milestone_achieved=多么独特的味道! 你已经获得了%s!
-message.solcarrot.finished.chat=你寻找独特食物的愿望终于得到满足.
-message.solcarrot.finished.hotbar=你已经获得了%s. 你寻找独特食物的愿望终于得到满足.
+message.solcarrot.milestone_achieved=多么独特的味道! 您已经获得了%s!
+message.solcarrot.finished.chat=您追寻独特食物的愿望终于得到满足.
+message.solcarrot.finished.hotbar=您已经获得了%s. 您追寻独特食物的愿望终于得到满足.
 
 # Items
 item.solcarrot.food_book.name=食物清单
@@ -30,19 +32,33 @@ item.solcarrot.food_book.name=食物清单
 gui.solcarrot.food_book.stats=概要
 gui.solcarrot.food_book.eaten_foods=已食用: %s
 gui.solcarrot.food_book.uneaten_foods=未食用: %s
+gui.solcarrot.food_book.config=配置
 
-gui.solcarrot.food_book.stats.fraction=%1$s/%2$s
-gui.solcarrot.food_book.stats.foods_tasted=食物品尝
+gui.solcarrot.food_book.fraction=%1$s/%2$s
+
+gui.solcarrot.food_book.stats.foods_tasted=品尝食物
 gui.solcarrot.food_book.stats.hearts_gained=获得红心
-gui.solcarrot.food_book.stats.tooltip.previous_milestone=上一个里程碑
-gui.solcarrot.food_book.stats.tooltip.next_milestone=下一个里程碑
-gui.solcarrot.food_book.stats.tooltip.total_foods=所有食物
-gui.solcarrot.food_book.stats.tooltip.foods_tasted=食物品尝
-gui.solcarrot.food_book.stats.tooltip.hearts_per_milestone=每个里程碑的红心
+gui.solcarrot.food_book.stats.tooltip.progress=还需要%s种食物才能达到下一个里程碑
+gui.solcarrot.food_book.stats.tooltip.progress.max=已达到最高里程碑!
+gui.solcarrot.food_book.stats.tooltip.previous_milestone=上一个里程碑: %s
+gui.solcarrot.food_book.stats.tooltip.next_milestone=下一个里程碑: %s
+gui.solcarrot.food_book.stats.tooltip.total_foods=食物总数: %s
+gui.solcarrot.food_book.stats.tooltip.foods_tasted=品尝食物: %s
+gui.solcarrot.food_book.stats.tooltip.hearts_per_milestone.singular=每个里程碑可获得1颗红心
+gui.solcarrot.food_book.stats.tooltip.hearts_per_milestone.plural=每个里程碑可获得%s颗红心
+
+gui.solcarrot.food_book.config.minimum_food_value=最低食用价值
+gui.solcarrot.food_book.config.tooltip.minimum_food_value=将食物计入里程碑所需要提供的最低饥饿值.
+gui.solcarrot.food_book.config.hearty_fraction=营养的食物
+gui.solcarrot.food_book.config.tooltip.hearty_fraction=在%1$s种食物中有%2$s种食物的营养价值足以提升您的健康.
+gui.solcarrot.food_book.config.eaten_cheap_foods=乏味的食物
+gui.solcarrot.food_book.config.tooltip.eaten_cheap_foods=其中有%1$s种食物的营养价值不足以提升您的健康, 您已经食用了%2$s种.
+gui.solcarrot.food_book.config.blacklist=隐藏的食物
+gui.solcarrot.food_book.config.tooltip.blacklist=这些食物仍然可以加入计数, 只是不显示在食物清单中.
 
 # Config GUI
 config.solcarrot.base_hearts=基础红心
-config.solcarrot.hearts_per_milestone=每个里程碑的红心
+config.solcarrot.hearts_per_milestone=每个里程碑可获得的红心
 config.solcarrot.milestones=里程碑
 config.solcarrot.is_food_tooltip_enabled=启用食物提示
 config.solcarrot.should_show_progress_above_hotbar=在工具栏上方显示进度
@@ -51,3 +67,4 @@ config.solcarrot.should_play_milestone_sounds=启用里程碑提示音
 config.solcarrot.should_spawn_intermediate_particles=启用中间粒子效果
 config.solcarrot.should_spawn_milestone_particles=启用里程碑粒子效果
 config.solcarrot.food_blacklist=隐藏的食物
+config.solcarrot.minimum_food_value=最低食用价值

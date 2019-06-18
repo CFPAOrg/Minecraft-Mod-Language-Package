@@ -32,8 +32,22 @@ embers.research.page.eitr.title=Miyazaki Why
 embers.research.page.eitr.desc=By investigating the sulfur you've discovered in the Caverns, you've devised the perfect union of everybody's favorite mechanics. Eitr is a wretched hunk of metal infused with alchemical substances that corrode anything it touches. It's very weak, even weaker than its mirror image, the ashen Tyrfing. But when striking an enemy, half the damage will be converted into pure durability damage to the opponents armor.
 
 embers.research.page.alchemy_globe=Alchemical Recombulator
-embers.research.page.alchemy_globe.title=I.O.U
-embers.research.page.alchemy_globe.desc=I owe you one documentation of the Alchemical Recombulator.
+embers.research.page.alchemy_globe.title=Hyphenated Dissemination
+embers.research.page.alchemy_globe.desc=Through alchemical experimentation you've landed a breakthrough. You've squared the bottles and kleined the circles. Or maybe vice-versa. You designed a vessel that is able to hold the alchemical spark used to create it in condensed form. The device ripples the fabric of reality around it, and is able to coerce fluids into the same alchemical processes that the exchange tablet allows you to perform.
+embers.research.page.alchemy_globe_setup.desc=To assemble an alchemical mixing setup, begin by placing the globe on any side of the top block of a Mixer Centrifuge. Then place any number of pedestals around it. Either block of a pedestal must be on the same plane as the globe. Apply metal aspecti to the pedestals as per usual.
+embers.research.page.alchemy_globe_crafting.desc=When crafting, the Recombulator works similar to the Mixer Centrifuge. Fluids must be piped into the bottom block and extracted from the top. Then ash must be added to the pedestals. The ash is not consumed when crafting. Then, right-click the globe to begin crafting. When the machine runs out of fluids or the output fills up, crafting will stop but the Recombulator will remain charged and not consume power.
+
+embers.research.page.antimony=Antimony
+embers.research.page.antimony.title=Allmacht Alloy
+embers.research.page.antimony.desc=Testing your newly devised machinery revealed a new type of alloy to you. A malleable, dense metal with a green sheen and several interesting alchemical properties. Surely, you will discover the wide variety of uses this metal has shortly.
+
+embers.research.page.antimony_signet=Signet of Antimony
+embers.research.page.antimony_signet.title=Actually worth loads of mony.
+embers.research.page.antimony_signet.desc=Antimony is green and villagers are greedy, long-nosed bastards. An idea festered in your mind: Perhaps you could press this metal into a shape suitable for trading and trick them with it? And indeed, villagers will trade antimony instead of emeralds... You feel like something is lost on you, but you can't really place your finger on it...
+
+embers.research.page.metal_leveling=Metal Leveling
+embers.research.page.metal_leveling.title=Lead to Gold
+embers.research.page.metal_leveling.desc=As a side effect of squaring the circles, you find yourself able to do a wide variety of things that would otherwise be considered impossible. Like turning worthless metal into gold. The Alchemical Recombulator can, when fed with metal and alchemical slurry, transmute lead to gold. Step-by-step, the metal transmutation chain goes like §fLead → Tin → Iron → Copper → Silver → Gold§r.
 
 embers.research.page.mundane_stone=Mundane Stone
 embers.research.page.mundane_stone.title=Legends Never Die
@@ -63,7 +77,7 @@ embers.research.page.alchemy_dial.desc=Experienced brewers may analyse brewing o
 
 embers.research.page.ale=Ale
 embers.research.page.ale.title=Thanks Lucy
-embers.research.page.ale.desc=Do you know why our ancestors stopped hunting the mammoth with stone swords? The answer is Ale, which made them powerful enough to just punch the poor animal to death with their bare hands. Drinking Ale will give you a stacking damage boost. This damage boost will stack up to 5 times, for up to +400%! However, when you take a hit while under the effects of Ale, you will also take extra damage.
+embers.research.page.ale.desc=Do you know why our ancestors stopped hunting the mammoth with stone swords? The answer is Ale, which made them powerful enough to just punch the poor animal to death with their bare hands. Drinking Ale will give you a stacking damage boost. This damage boost will stack up to 5 times, for up to +400%%! However, when you take a hit while under the effects of Ale, you will also take extra damage.
 
 embers.research.page.vodka=Vodka
 embers.research.page.vodka.title=Na sdorówje!
@@ -218,13 +232,19 @@ effect.snowpoff=Snowpoff
 effect.steadfast=Steadfast
 effect.witchburn=Witchburn
 
-embers.tooltip.modifier.mundane=Mundane
+embers.tooltip.modifier.mundane=Mundane %s
 embers.tooltip.modifier.witchburn=Witchburn %s
 
 attribute.name.generic.physicalDamageRate=Physical Damage Taken
 attribute.name.generic.fireDamageRate=Fire Damage Taken
 attribute.name.generic.fireAspect=Fire Aspect
 attribute.name.generic.barehandedPower=Barehanded Attack Damage
+
+death.attack.witchBurn=%1$s burnt at the stake
+death.attack.scalding=%1$s drank too much hot coffee
+death.attack.acid=%1$s dissolved
+
+message.scalding=§cOuch! Hot...!
 
 distilling.effect.header=Distilling Effects:
 distilling.effect.add=%s +%d
@@ -237,6 +257,9 @@ distilling.effect.steadfast=Steadfast
 distilling.effect.enlightened=Enlightened
 distilling.effect.thick_soup=Thickened
 distilling.effect.double_distillation=Double Distillation
+distilling.effect.double_distillation.desc=Requires Auxiliary Filter Upgrade
+distilling.effect.decanter=Essence Extraction
+distilling.effect.decanter.desc=Requires Essence Decanter Upgrade
 distilling.modifier.toxicity.name=Toxicity
 distilling.modifier.concentration.name=Concentration
 distilling.modifier.duration.name=Duration
@@ -246,38 +269,33 @@ distilling.modifier.light.name=Luminescence
 distilling.modifier.health.name=Health Restored
 distilling.modifier.hunger.name=Hunger Restored
 distilling.modifier.saturation.name=Saturation Restored
+distilling.modifier.ale.name=Glass
+distilling.modifier.stoutness.name=Stout
+distilling.modifier.inner_fire.name=Inner Fire
+distilling.modifier.inspiration.name=Inspiration
+distilling.modifier.fire_lung.name=Fire Lung
+distilling.modifier.snowpoff.name=Snowpoff
 distilling.modifier.lifedrinker.name=Lifedrinker
 distilling.modifier.steadfast.name=Steadfast
 distilling.modifier.enlightened.name=Enlightened
 distilling.modifier.volume.name=Volume
 distilling.modifier.fuel.name=Flammability
 
-distilling.modifier.dial.linear=- %s: %d
-distilling.modifier.dial.percent=- %s: %d%%
+embers.decimal_format.distilling.linear=0
+embers.decimal_format.distilling.percent=0'%%'
+embers.decimal_format.distilling.multiplier=0.#x
+embers.decimal_format.distilling.health=+0;-0
+embers.decimal_format.distilling.hunger=+0;-0
+
 distilling.modifier.dial.name=- %s
-distilling.modifier.dial.add_health=- +%d Health
-distilling.modifier.dial.sub_health=- %d Health
-distilling.modifier.dial.add_hunger=- +%d Food
-distilling.modifier.dial.sub_hunger=- %d Food
+distilling.modifier.dial.linear=- %s: %s
+distilling.modifier.dial.percent=- %s: %s
+distilling.modifier.dial.multiplier=- %s: %s
+distilling.modifier.dial.name_only=- %s:
+distilling.modifier.dial.health=- %s Health
+distilling.modifier.dial.hunger=- %d Food
 distilling.modifier.dial.slower_chugging=- Slower Chugging
 distilling.modifier.dial.faster_chugging=- Faster Chugging
 distilling.modifier.dial.fire_retardant=- Fire Retardant
 
-subtitles.embers.alchemy.fail=Energetic Alchemy fails...
-subtitles.embers.alchemy.success=Energetic Alchemy succeeds!
-subtitles.embers.alchemy.start=Energetic Alchemy begins
-subtitles.embers.beam_cannon.fire=Beam Cannon fires
-subtitles.embers.beam_cannon.hit=Beam impacts
-subtitles.embers.crystalcell=Crystal Cell hums
-subtitles.embers.activator=Ember is released
-subtitles.embers.stamp.down=Stamp slams down
-subtitles.embers.stamp.up=Stamp recedes
-subtitles.embers.bore.start=Ember Bore rumbles to life
-subtitles.embers.bore.stop=Ember Bore sighs and stops
 subtitles.sulfur_ore.vent=Sulfur Ore releases corrosive cloud
-subtitles.fireball.small.fire=Fireball is released
-subtitles.fireball.small.hit=Fireball impacts
-subtitles.fireball.big.fire=Big fireball is unleashed
-subtitles.fireball.big.hit=Big fireball impacts
-subtitles.blazing_ray.fire=Blazing Ray fires
-subtitles.blazing_ray.empty=Blazing Ray clicks
