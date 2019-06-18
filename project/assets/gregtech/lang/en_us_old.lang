@@ -611,7 +611,7 @@ metaitem.tool.file.name=%s File
 metaitem.tool.crowbar.name=%s Crowbar
 metaitem.tool.crowbar.tooltip=Dismounts covers and rotates rails
 metaitem.tool.screwdriver.name=%s Screwdriver
-metaitem.tool.screwdriver.tooltip=/nRight click on a machine side to increment/nit's output tank filter index/nWhen output tank filter is set up,/nonly fluids from specified tank index/nare allowed to be outputted on that side/nClick on cover to configure it
+metaitem.tool.screwdriver.tooltip=Click on cover to configure it
 metaitem.tool.mortar.name=%s Mortar
 metaitem.tool.wire_cutter.name=%s Wire Cutter
 metaitem.tool.scoop.name=%s Scoop
@@ -653,6 +653,15 @@ metaitem.turbine_rotor.name=%s Turbine Rotor
 metaitem.turbine_rotor.tooltip=Turbine Rotors for your power station
 metaitem.tool.magnifying_glass.name=%s Magnifying Glass
 
+metaitem.jack_hammer.mode.three_by_three=3x3 Panel
+metaitem.jack_hammer.mode.vertical_line=Vertical Line
+metaitem.jack_hammer.mode.horizontal_line=Horizontal Line
+metaitem.jack_hammer.mode.single_block=Single Block
+
+metaitem.behavior.mode_switch.tooltip=Shift Click to switch mode
+metaitem.behavior.mode_switch.mode_switched=§eMode Set to: %s
+metaitem.behavior.mode_switch.current_mode=Mode: %s
+
 metaitem.tool.tooltip.primary_material=Material: %s (%s lvl)
 metaitem.tool.tooltip.attack_damage=Attack damage: %d
 metaitem.tool.tooltip.mining_speed=Mining speed: %d
@@ -671,6 +680,10 @@ cover.fluid_filter.mode.filter_drain=Filter Drain
 cover.item_filter.title=Item Filter
 cover.filter.mode.filter_insert=Filter Insert
 cover.filter.mode.filter_extract=Filter Extract
+cover.item_filter.ignore_damage.enabled=Ignore Damage
+cover.item_filter.ignore_damage.disabled=Respect Damage
+cover.item_filter.ignore_nbt.enabled=Ignore NBT
+cover.item_filter.ignore_nbt.disabled=Respect NBT
 
 cover.conveyor.title=Conveyor Cover Settings (%s)
 cover.conveyor.transfer_rate=%s items/sec
@@ -1784,6 +1797,14 @@ gregtech.machine.magic_energy_converter.name=Magic Energy Converter
 gregtech.machine.magic_energy_converter.tooltip=Voltage OUT: §a128 §7(§aMV§7)/nCollects essentia from containers within 16 blocks/nConsumes 20 Potentia per second
 
 # Machines
+gregtech.machine.block_breaker.lv.name=Basic Block Breaker
+gregtech.machine.block_breaker.mv.name=Advanced Block Breaker
+gregtech.machine.block_breaker.hv.name=Advanced Block Breaker II
+gregtech.machine.block_breaker.ev.name=Advanced Block Breaker III
+gregtech.machine.block_breaker.tooltip=Mines block on front face and collects it's drops
+gregtech.machine.block_breaker.consumption=Consumes §e%d EU§7 per operation
+gregtech.machine.block_breaker.speed_bonus=Speed Bonus: §e%d%%
+
 gregtech.machine.electric_furnace.lv.name=Basic Electric Furnace
 gregtech.machine.electric_furnace.mv.name=Advanced Electric Furnace
 gregtech.machine.electric_furnace.hv.name=Advanced Electric Furnace II
@@ -1832,7 +1853,7 @@ gregtech.machine.bender.mv.name=Advanced Bending Machine
 gregtech.machine.bender.hv.name=Advanced Bending Machine II
 gregtech.machine.bender.ev.name=Advanced Bending Machine III
 
-gregtech.machine.brewery.tooltip=Brewing your Drinks
+gregtech.machine.brewery.tooltip=Compact and efficient potion brewing
 
 gregtech.machine.brewery.lv.name=Basic Brewery
 gregtech.machine.brewery.mv.name=Advanced Brewery
@@ -1911,7 +1932,7 @@ gregtech.machine.fermenter.mv.name=Advanced Fermenter
 gregtech.machine.fermenter.hv.name=Advanced Fermenter II
 gregtech.machine.fermenter.ev.name=Advanced Fermenter III
 
-gregtech.machine.fluid_canner.tooltip=Puts Fluids into and out of Containers
+gregtech.machine.fluid_canner.tooltip=Puts fluids into and out of fluid containers
 
 gregtech.machine.fluid_canner.lv.name=Basic Fluid Canner
 gregtech.machine.fluid_canner.mv.name=Advanced Fluid Canner
@@ -2161,8 +2182,8 @@ gregtech.machine.tesla_coil.name=Tesla Coil
 gregtech.machine.tesla_coil.description=Damages all living entities within 7 blocks range/nConsumes 2500 EU for 1 damage point/nInternal buffer Capacity: §e256k EU
 
 # General machinery
-gregtech.machine.basic.output_override.reset=Output filter: all tanks.
-gregtech.machine.basic.output_override.set=Output filter: tank #%s.
+gregtech.machine.basic.input_from_output_side.allow=Allow Input from Output Side
+gregtech.machine.basic.input_from_output_side.disallow=Disallow Input from Output Side
 
 # Achievement ores
 achievement.Naquadah=Find Naquadah Ore
@@ -2766,6 +2787,10 @@ gregtech.fluid.state_gas=§7State: Gaseous
 gregtech.fluid.state_liquid=§7State: Liquid
 gregtech.gui.fuel_amount=Fuel Amount:
 gregtech.gui.fluid_amount=Fluid Amount:
+gregtech.gui.toggle_view.disabled=Toggle View (Fluids)
+gregtech.gui.toggle_view.enabled=Toggle View (Items)
+gregtech.gui.overclock.enabled=Allow Overclocking
+gregtech.gui.overclock.disabled=Disable Overclocking
 gregtech.gui.sort=Sort
 
 gregtech.item_filter.empty_item=Empty (No Item)
