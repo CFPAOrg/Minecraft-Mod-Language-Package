@@ -102,7 +102,7 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
 
 def main(path_mods, path_assets):
     logging.info("==================  解压部分开始  ==================")
-    # 开始遍历模组临时文件夹，解压得到内部的语言文件，并更新ASSET_MAP
+    # 开始遍历模组临时文件夹，解压得到内部的语言文件，并更新 ASSET_MAP
     for zf in os.listdir(path_mods):
         # 如果是 zip 文件，进行解压
         if zipfile.is_zipfile(path_mods + "/" + zf):
@@ -114,6 +114,9 @@ def main(path_mods, path_assets):
                     for domain in asset_domain:
                         if not domain in ASSET_MAP[modid]:
                             ASSET_MAP[modid].append(domain)
+    # 保存 ASSET_MAP
+    with open(ASSET_MAP_FILE, 'w') as f:
+        f.write(json.dumps(ASSET_MAP, indent=4, sort_keys=True))
     logging.info("==================  解压部分结束  ==================")
 
 
