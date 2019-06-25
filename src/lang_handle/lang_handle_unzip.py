@@ -27,7 +27,7 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
                 zip_tmp_dir_path = unzip_path_assets + "/" + i.filename[:-11]
 
                 # 类似的方法拿到asset domain文件夹名
-                asset_name = i.filename[7:-16]
+                asset_name = i.filename[7:-16].lower()
                 asset_domain.add(asset_name)
 
                 # 先判定文件夹在不在，不在的话创建文件夹
@@ -54,8 +54,9 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
                     for ann in class_ann['annotations']:
                         if ann['type'] == 'CLASS' and ann['name'] == 'Lnet/minecraftforge/fml/common/Mod;':
                             mod_id.add(ann['values']['modid']['value'])
-        
-        # 如果没有缓存的注释文件
+        if len(mod_id) != 0:
+            return (mod_id,asset_domain)
+        # 如果没有缓存的注释文件或没有找到modid
         else: 
             # 没有asset，也不用再找modid了
             if len(asset_domain)==0:
@@ -71,9 +72,12 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
                             jc = JavaClass(f.read())
                             strings = jc.get_constant_string()
                             for i in range(len(strings) - 2):
-                                if strings[i] == 'Lnet/minecraftforge/fml/common/Mod;' and strings[i+1] == 'modid':
-                                    mod_id.add(strings[i+2])    
-                        except:
+                                if strings[i] == 'Lnet/minecraftforge/fml/common/Mod;':
+                                    for j in range(1,5):
+                                        if strings[i+j] == 'modid':
+                                            mod_id.add(strings[i+j+1])
+                                            break
+                        except Exception as e:
                             success = False
             
             # 没有报错，返回
@@ -109,6 +113,8 @@ def main(path_mods, path_assets):
         if zipfile.is_zipfile(path_mods + "/" + zf):
             mod_id,asset_domain = unzip(zf, path_mods, path_assets)
             if len(asset_domain) != 0:
+                if len(mod_id) == 0:
+                    logging.error('%s模组 modid 解析失败' % zf)
                 for modid in mod_id:
                     if not modid in ASSET_MAP:
                         ASSET_MAP[modid]=[]
