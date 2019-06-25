@@ -123,6 +123,8 @@ def main(path_mods, path_assets):
     ASSET_MAP['<UNKNOWN>'] = Unknown
 
     # 保存 ASSET_MAP
+    for modid in ASSET_MAP:
+        ASSET_MAP[modid].sort()
     with open(ASSET_MAP_FILE, 'w') as f:
         f.write(json.dumps(ASSET_MAP, indent=4, sort_keys=True))
     logging.info("==================  解压部分结束  ==================")
