@@ -1,6 +1,7 @@
 import re
 import zipfile
 import json
+import os
 
 from src.bytecode_parse.parser import JavaClass
 from src.baka_init import *
@@ -114,6 +115,13 @@ def main(path_mods, path_assets):
                     for domain in asset_domain:
                         if not domain in ASSET_MAP[modid]:
                             ASSET_MAP[modid].append(domain)
+    # ASSET_MAP 中加入 Unknown
+    all_assets = os.listdir('./project/assets')
+    known_domain = []
+    list(map(known_domain.extend, [ASSET_MAP[modid] for modid in ASSET_MAP if not modid == '<UNKNOWN>']))
+    Unknown = [domain for domain in all_assets if not domain in known_domain]
+    ASSET_MAP['<UNKNOWN>'] = Unknown
+
     # 保存 ASSET_MAP
     with open(ASSET_MAP_FILE, 'w') as f:
         f.write(json.dumps(ASSET_MAP, indent=4, sort_keys=True))
