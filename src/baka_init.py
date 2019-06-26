@@ -2,6 +2,7 @@ import logging
 import os
 import sqlite3
 import tempfile
+import json
 
 import yaml
 
@@ -30,6 +31,9 @@ URL_ID_MAP = {}  # 存储 URL ID -> 数字 ID 的映射表
 MOD_INFO_OLD = []  # 存储上次更新的模组详细文件信息
 MOD_INFO = []  # 存储最新的所有需要维护的模组详细文件信息
 MOD_DOWNLOAD = []  # 存储本次更新需要重下的模组
+ASSET_MAP = {} # 存储 modid -> asset domain 的映射表
+
+ASSET_MAP_FILE = './database/asset_map.json'
 
 # 从环境变量中获取私密数据
 WEBLATE_TOKEN = os.environ.get("WEBLATE_TOKEN")
@@ -118,6 +122,12 @@ CURSOR.execute(
     ");")
 CONN.commit()
 logging.info("找到或创建成功所需要的表")
+
+# 加载 ASSET_MAP
+# 没有使用 SQL ，使用外部的 JSON 存储，考虑到 ASSET_MAP 会在其他地方被使用
+if os.path.exists(ASSET_MAP_FILE):
+    with open(ASSET_MAP_FILE) as f:
+        ASSET_MAP = json.load(f)
 
 # 创建临时文件夹
 # 放置模组的临时文件夹

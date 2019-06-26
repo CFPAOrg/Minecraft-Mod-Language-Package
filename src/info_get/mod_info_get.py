@@ -56,26 +56,9 @@ def get_num_id_from_url_page(gnifup_url):
     else:
         return 9  # ⑨才是最强的，笨蛋是不会被传染的哦
 
-
-def main():
-    logging.info("==================  信息获取函数开始  ==================")
-
-    # 再次重新从数据库中读取模组列表
-    # 因为可能这次爬的列表中并不包含上次的模组
-    local_cache_map = CURSOR.execute("SELECT URL from MOD_LIST")
-    for row in local_cache_map:
-        if row[0] not in MOD_LIST:
-            MOD_LIST.append(row[0])
-            logging.debug("这次爬虫重新获取中没有包含：" + str(row))
-
-    # 提取上次更新的模组文件信息，等会用作对比更新用
-    local_cache_mod_info = CURSOR.execute("SELECT * from MOD_INFO")
-    for row in local_cache_mod_info:
-        MOD_INFO_OLD.append([row[0], row[1], row[2], row[3]])
-    logging.debug("上次模组文件信息已经提取")
-
+def multi_thread_download(mod_list):
     # 开始对模组切片，进行多线程信息获取
-    tmp_mod_list = list_slice(MOD_LIST, THREADS_NUM)
+    tmp_mod_list = list_slice(mod_list, THREADS_NUM)
 
     # 开始多线程下载
     for i in tmp_mod_list:
@@ -98,6 +81,25 @@ def main():
             threads[j].join()
 
         logging.debug("多线程信息获取结束")
+
+def main():
+    logging.info("==================  信息获取函数开始  ==================")
+
+    # 再次重新从数据库中读取模组列表
+    # 因为可能这次爬的列表中并不包含上次的模组
+    local_cache_map = CURSOR.execute("SELECT URL from MOD_LIST")
+    for row in local_cache_map:
+        if row[0] not in MOD_LIST:
+            MOD_LIST.append(row[0])
+            logging.debug("这次爬虫重新获取中没有包含：" + str(row))
+
+    # 提取上次更新的模组文件信息，等会用作对比更新用
+    local_cache_mod_info = CURSOR.execute("SELECT * from MOD_INFO")
+    for row in local_cache_mod_info:
+        MOD_INFO_OLD.append([row[0], row[1], row[2], row[3]])
+    logging.debug("上次模组文件信息已经提取")
+
+    multi_thread_download(MOD_LIST)
 
     # 对比，算出增量更新的内容，方便后面进行下载
     for i in MOD_INFO:
