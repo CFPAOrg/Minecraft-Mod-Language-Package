@@ -29,7 +29,7 @@ def main(mod_download_tmp_dir):
     # 先将数据凑成可用的下载链接，下载文件名
     tmp_download_url = []
     for i in MOD_DOWNLOAD:
-        tmp_download_url.append(["https://minecraft.curseforge.com/projects/{}/files/{}/download".format(i[0], i[2]),
+        tmp_download_url.append(["https://www.curseforge.com/minecraft/mc-mods/{}/download/{}/file".format(i[0], i[1]),
                                  i[0]])
 
     # 而后进行切片
