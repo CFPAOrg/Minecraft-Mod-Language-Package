@@ -23,13 +23,29 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
                 # en_us.lang -> 保持不变
                 # zh_cn.lang -> zh_cn_old.lang
                 # 所以此次需要尝试替换下字符串
-                zip_tmp_file_path = unzip_path_assets + "/" + i.filename.lower().replace("zh_cn.lang", "zh_cn_old.lang")
-                # 剔除最后 11 字符，这样正好获取得到了文件夹路径
-                zip_tmp_dir_path = unzip_path_assets + "/" + i.filename[:-11]
-
-                # 类似的方法拿到asset domain文件夹名
+                
+                # 拿到asset domain文件夹名
                 asset_name = i.filename[7:-16].lower()
+
+                # 重名 domain 处理
+                # unzip_file_name 在这里就是 curseforge 项目名
+                curseforge_project_name = unzip_file_name
+                if asset_name in CURSE_PROJECT:
+                    if CURSE_PROJECT[asset_name] == curseforge_project_name:
+                        # 没有重名 domain 问题，或有重名但不是这个项目被改名
+                        pass
+                    else:
+                        # 需要重命名，加上 curseforge 项目名作为后缀，curseforge 项目名是唯一的
+                        asset_name = asset_name + '-' + curseforge_project_name
+                        CURSE_PROJECT[asset_name] = curseforge_project_name
+                else:
+                    # 新模组
+                    CURSE_PROJECT[asset_name] = curseforge_project_name
+
                 asset_domain.add(asset_name)
+
+                zip_tmp_dir_path = os.path.join(unzip_path_assets, 'assets', asset_name, 'lang')
+                zip_tmp_file_path = os.path.join(zip_tmp_dir_path, i.filename[-10:].lower().replace("zh_cn.lang", "zh_cn_old.lang"))
 
                 # 先判定文件夹在不在，不在的话创建文件夹
                 # exist_ok 用来跳过文件夹存在错误
@@ -118,9 +134,10 @@ def main(path_mods, path_assets):
                 if len(mod_id) == 0:
                     logging.error('%s模组 modid 解析失败' % zf)
                 for modid in mod_id:
+                    #ASSET_MAP[modid]=list(asset_domain)
                     if not modid in ASSET_MAP:
                         ASSET_MAP[modid]=[]
-                    for domain in asset_domain:
+                    for domain in asset_domain:    
                         if not domain in ASSET_MAP[modid]:
                             ASSET_MAP[modid].append(domain)
     # ASSET_MAP 中加入 Unknown
@@ -135,6 +152,10 @@ def main(path_mods, path_assets):
         ASSET_MAP[modid].sort()
     with open(ASSET_MAP_FILE, 'w') as f:
         f.write(json.dumps(ASSET_MAP, indent=4, sort_keys=True))
+    
+    # 保存 CURSE_PROJECT
+    with open(CURSE_PROJECT_FILE, 'w') as f:
+         f.write(json.dumps(CURSE_PROJECT, indent=4, sort_keys=True))
     logging.info("==================  解压部分结束  ==================")
 
 
