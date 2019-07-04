@@ -2,6 +2,7 @@ import re
 import zipfile
 import json
 import os
+import io
 
 from src.bytecode_parse.parser import JavaClass
 from src.baka_init import *
@@ -47,6 +48,7 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
         fml_cache_annotation_file='META-INF/fml_cache_annotation.json'
         if fml_cache_annotation_file in z.namelist():
             with z.open(fml_cache_annotation_file) as f:
+                f=io.TextIOWrapper(f,encoding='utf8')
                 annotations = json.load(f)
                 for class_ann in annotations.values():
                     if not 'annotations' in class_ann:
@@ -57,7 +59,7 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
         if len(mod_id) != 0:
             return (mod_id,asset_domain)
         # 如果没有缓存的注释文件或没有找到modid
-        else: 
+        else:
             # 没有asset，也不用再找modid了
             if len(asset_domain)==0:
                 return (mod_id,asset_domain)
@@ -79,7 +81,7 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
                                             break
                         except Exception as e:
                             success = False
-            
+
             # 没有报错，返回
             if success:
                 return (mod_id,asset_domain)
@@ -101,7 +103,7 @@ def unzip(unzip_file_name, unzip_path_mods, unzip_path_assets):
                     except:
                         # TODO: log
                         pass
-            
+
     return (mod_id,asset_domain)
 
 
