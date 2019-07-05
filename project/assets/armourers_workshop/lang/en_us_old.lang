@@ -55,6 +55,7 @@ tile.armourers_workshop:skinning-table.name=Skinning Table
 tile.armourers_workshop:dye-table.name=Dye Table
 tile.armourers_workshop:skinnable.name=Skinnable Block
 tile.armourers_workshop:hologram-projector.name=Hologram Projector
+tile.armourers_workshop:outfit-maker.name=Outfit Maker
 
 
 # Block flavour text
@@ -70,6 +71,7 @@ tile.armourers_workshop:colour-mixer.flavour=Mix up colors to paint your equipme
 tile.armourers_workshop:mannequin.flavour=Show your equipment off with a creepy mannequin!%nRight click with a name tag to set a skin.
 tile.armourers_workshop:doll.flavour=Mini mannequin!
 tile.armourers_workshop:skinning-table.flavour=Apply and remove skins from items.
+tile.armourers_workshop:outfit-maker.flavour=Use to combine multiple skins into one.
 
 
 # Item names
@@ -104,6 +106,7 @@ item.armourers_workshop:skin-unlock.1.name=Chest Skin Slot Unlock
 item.armourers_workshop:skin-unlock.2.name=Legs Skin Slot Unlock
 item.armourers_workshop:skin-unlock.3.name=Feet Skin Slot Unlock
 item.armourers_workshop:skin-unlock.4.name=Wings Skin Slot Unlock
+item.armourers_workshop:skin-unlock.5.name=Outfit Skin Slot Unlock
 item.armourers_workshop:linking-tool.name=Linking Tool
 item.armourers_workshop:gift-sack.name=Gift Sack
 item.armourers_workshop:armour-container.name=Armour Container
@@ -111,7 +114,6 @@ item.armourers_workshop:armour-container-head.name=Head Armour Container
 item.armourers_workshop:armour-container-chest.name=Chest Armour Container
 item.armourers_workshop:armour-container-legs.name=Legs Armour Container
 item.armourers_workshop:armour-container-feet.name=Feet Armour Container
-item.armourers_workshop:outfit.name=Outfit
 
 
 # Item flavour text
@@ -137,6 +139,7 @@ item.armourers_workshop:skin-unlock.1.flavour=Unlocks 1 additional chest skin sl
 item.armourers_workshop:skin-unlock.2.flavour=Unlocks 1 additional leg skin slot in the wardrobe.
 item.armourers_workshop:skin-unlock.3.flavour=Unlocks 1 additional feet skin slot in the wardrobe.
 item.armourers_workshop:skin-unlock.4.flavour=Unlocks 1 additional wings skin slot in the wardrobe.
+item.armourers_workshop:skin-unlock.5.flavour=Unlocks 1 additional outfit skin slot in the wardrobe.
 item.armourers_workshop:linking-tool.flavour=Use to link usable blocks to block skins.%nFirst right click on a usable block then%nright click on a block skin to link them.
 
 
@@ -192,6 +195,7 @@ tooloption.armourers_workshop:intensity=Intensity
 tooloption.armourers_workshop:radius=Radius
 tooloption.armourers_workshop:radius.sample=Sample Radius
 tooloption.armourers_workshop:radius.effect=Effect Radius
+tooloption.armourers_workshop:planeRestrict=Restrict Plane
 
 
 # Paint Types
@@ -204,6 +208,12 @@ paintType.armourers_workshop:dye_5.name=Dye 5
 paintType.armourers_workshop:dye_6.name=Dye 6
 paintType.armourers_workshop:dye_7.name=Dye 7
 paintType.armourers_workshop:dye_8.name=Dye 8
+paintType.armourers_workshop:texture.name=Texture
+paintType.armourers_workshop:rainbow.name=Rainbow
+paintType.armourers_workshop:pulse_1.name=Pulse 1
+paintType.armourers_workshop:pulse_2.name=Pulse 2
+paintType.armourers_workshop:flicker_1.name=Flicker 1
+paintType.armourers_workshop:flicker_2.name=Flicker 2
 paintType.armourers_workshop:none.name=None
 paintType.armourers_workshop:skin.name=Skin
 paintType.armourers_workshop:hair.name=Hair
@@ -238,6 +248,7 @@ skinType.armourers:block.name=Block
 skinType.armourers:multiblock.name=Multiblock
 skinType.armourers:horse.name=Horse
 skinType.armourers:advanced.name=Advanced
+skinType.armourers:outfit.name=Outfit
 
 
 # Skin Part Types
@@ -289,6 +300,7 @@ inventory.armourers_workshop:skinning-table.name=Skinning Table
 inventory.armourers_workshop:dye-table.name=Dye Table
 inventory.armourers_workshop:skinnable.name=Skinnable Block
 inventory.armourers_workshop:hologram-projector.name=Hologram Projector
+inventory.armourers_workshop:outfit-maker.name=Outfit Maker
 
 
 # Inventory Controls
@@ -329,6 +341,11 @@ inventory.armourers_workshop:skin-library.dialog.overwrite.close=Close
 inventory.armourers_workshop:skin-library.dialog.overwrite.ok=OK
 inventory.armourers_workshop:skin-library.dialog.overwrite.overwriteFile=Overwrite file "%s"?
 
+# Outfit Maker
+inventory.armourers_workshop:outfit-maker.save=Save Outfit
+inventory.armourers_workshop:outfit-maker.load=Load Outfit
+inventory.armourers_workshop:outfit-maker.skinName=Skin Name
+inventory.armourers_workshop:outfit-maker.skinFlavour=Flavor Text
 
 # Armourer
 inventory.armourers_workshop:armourer.label.itemName=Item Name:
@@ -361,14 +378,22 @@ inventory.armourers_workshop:armourer.multiblock=Multiblock?
 inventory.armourers_workshop:armourer.bed=Bed?
 inventory.armourers_workshop:armourer.inventory=Inventory?
 inventory.armourers_workshop:armourer.enderInventory=Ender Inventory?
+
 inventory.armourers_workshop:armourer.modelOverrideHead=Head Override?
 inventory.armourers_workshop:armourer.modelOverrideChest=Chest Override?
 inventory.armourers_workshop:armourer.modelOverrideArmLeft=Left Arm Override?
 inventory.armourers_workshop:armourer.modelOverrideArmRight=Right Arm Override?
 inventory.armourers_workshop:armourer.modelOverrideLegLeft=Left Leg Override?
 inventory.armourers_workshop:armourer.modelOverrideLegRight=Right Leg Override?
-inventory.armourers_workshop:armourer.hideOverlay=Hide Overlay?
-inventory.armourers_workshop:armourer.limitLimbs=Limit limb movement?
+
+inventory.armourers_workshop:armourer.hideOverlayHead=Hide Head Overlay?
+inventory.armourers_workshop:armourer.hideOverlayChest=Hide Chest Overlay?
+inventory.armourers_workshop:armourer.hideOverlayArmLeft=Hide Left Arm Overlay?
+inventory.armourers_workshop:armourer.hideOverlayArmRight=Hide Right Arm Overlay?
+inventory.armourers_workshop:armourer.hideOverlayLegLeft=Hide Left Leg Overlay?
+inventory.armourers_workshop:armourer.hideOverlayLegRight=Hide Right Leg Overlay?
+
+inventory.armourers_workshop:armourer.limitLimbs=Limit Limb Movement?
 inventory.armourers_workshop:armourer.tab.main=Main
 inventory.armourers_workshop:armourer.tab.displaySettings=Display Settings
 inventory.armourers_workshop:armourer.tab.skinSettings=Skin Settings
@@ -385,6 +410,12 @@ inventory.armourers_workshop:armourer.dialog.copy.copy=Copy
 inventory.armourers_workshop:armourer.dialog.copy.srcPart=Source Part:
 inventory.armourers_workshop:armourer.dialog.copy.desPart=Destination Part:
 inventory.armourers_workshop:armourer.dialog.copy.mirror=Mirror?
+
+inventory.armourers_workshop:armourer.main.help.skinType=Select a skin type.
+inventory.armourers_workshop:armourer.main.help.save=Saves the blocks in the world into a skin item.
+inventory.armourers_workshop:armourer.main.help.load=Loads a skin item into the world as blocks.
+inventory.armourers_workshop:armourer.main.help.itemName=Enter a name for your item.
+inventory.armourers_workshop:armourer.main.help.itemFlavour=Text that is displayed in the items tool-tip.
 
 
 # Color Mixer
@@ -661,3 +692,6 @@ book.armourers_workshop:guideBook.credits.premade Skins=Premade Skins
 book.armourers_workshop:guideBook.credits.textures=Textures
 book.armourers_workshop:guideBook.credits.sound=Sound
 book.armourers_workshop:guideBook.credits.localisations=Localizations
+
+# Temp
+inventory.armourers_workshop:mannequin.unfinished=Mannequin equipment has not been implemented in 1.12.2 yet, please check back later.
