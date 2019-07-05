@@ -76,7 +76,7 @@ def main():
             # URL 相等时
             if i[0] == j[0]:
                 # 文件 ID 变了
-                if i[2] != j[2]:
+                if i[1] != j[1]:
                     MOD_DOWNLOAD.append(i)
                 in_old = True  # 我在里面了
                 break  # 既然 URL 相等了，那么后面不用比较了，进行下一个 URL 比较
