@@ -32,9 +32,11 @@ MOD_INFO_OLD = []  # 存储上次更新的模组详细文件信息
 MOD_INFO = []  # 存储最新的所有需要维护的模组详细文件信息
 MOD_DOWNLOAD = []  # 存储本次更新需要重下的模组
 ASSET_MAP = {} # 存储 modid -> asset domain 的映射表
+CURSE_PROJECT = {} # 存储 asset domain 对应的 curseforge 项目名
 
 ASSET_MAP_FILE = './database/asset_map.json'
 MOD_LIST_FILE = './database/mod_list.json'
+CURSE_PROJECT_FILE = './database/curse_project.json'
 
 # 从环境变量中获取私密数据
 WEBLATE_TOKEN = os.environ.get("WEBLATE_TOKEN")
@@ -125,6 +127,10 @@ if os.path.exists(ASSET_MAP_FILE):
 if os.path.exists(MOD_LIST_FILE):
     with open(MOD_LIST_FILE) as f:
         MOD_LIST = json.load(f)
+
+if os.path.exists(CURSE_PROJECT_FILE):
+    with open(CURSE_PROJECT_FILE) as f:
+        CURSE_PROJECT = json.load(f)
 
 # 创建临时文件夹
 # 放置模组的临时文件夹
