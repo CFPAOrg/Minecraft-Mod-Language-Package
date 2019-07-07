@@ -27,9 +27,10 @@ before_install:
 - chmod 600 id_rsa
 - ssh-add id_rsa
 after_success:
-- git branch
-- git remote
-- git checkout -b origin/1.12.2-release
-- git add ./assets/*
-- git commit -m "Auto-update"
+- git clone --branch=1.12.2-release https://github.com/CFPAOrg/Minecraft-Mod-Language-Package.git release
+- mv ./assets/ ./release/
+- cd release && git add * && git commit -m "Auto-update"
 - git push origin 1.12.2-release
+- git remote add tctdev https://git.dev.tencent.com/baka943/Minecraft-Mod-Language-Package.git
+- git push tctdev 1.12.2-release
+- cd ..
