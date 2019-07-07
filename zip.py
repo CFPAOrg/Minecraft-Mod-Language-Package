@@ -38,6 +38,7 @@ if __name__ == '__main__':
     os.system('mv ./project/assets ./')  # 移动资源包文件夹到主目录下
     os.system('mv ./project/pack.mcmeta ./')  # 移动 pack.mcmeta 文件到主目录下
     os.system('mv ./project/pack.png ./')  # 移动 pack.png 到主目录下
+    os.system('cp ./database/asset_map.json ./assets/i18nmod/asset_map') # 将 asset_map 作为资源文件放入资源包
 
     # 打包“资源包，资源包 meta 文件，资源包图标，说明，许可证”
     os.system('zip -r -9 "Minecraft-Mod-Language-Modpack.zip" "assets" "pack.mcmeta"  "pack.png" "README.md" "LICENSE"')
