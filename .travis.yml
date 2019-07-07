@@ -32,7 +32,7 @@ addons:
   - git.dev.tencent.com
 after_deploy:
 - git clone --branch=1.12.2-release git@github.com:CFPAOrg/Minecraft-Mod-Language-Package.git release
-- mv ./assets/ ./release/
+- cp -rf ./assets/* ./release/assets/
 - cd release && git add * && git commit -m "Auto-update"
 - git push origin 1.12.2-release
 - git remote add tctdev git@git.dev.tencent.com:baka943/Minecraft-Mod-Language-Package.git
