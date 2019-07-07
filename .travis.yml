@@ -21,7 +21,7 @@ deploy:
     repo: CFPAOrg/Minecraft-Mod-Language-Package
     branch: 1.12.2
 before_install:
-- openssl aes-256-cbc -K $encrypted_c3d9dd7d0451_key -iv $encrypted_c3d9dd7d0451_iv
+- openssl aes-256-cbc -K $encrypted_9398a758e4ed_key -iv $encrypted_9398a758e4ed_iv
   -in id_rsa.enc -out id_rsa -d
 - eval "$(ssh-agent -s)"
 - chmod 600 id_rsa
@@ -31,7 +31,8 @@ addons:
   - github.com
   - git.dev.tencent.com
 after_deploy:
-- git clone --branch=1.12.2-release git@github.com:CFPAOrg/Minecraft-Mod-Language-Package.git release
+- git clone --branch=1.12.2-release git@github.com:CFPAOrg/Minecraft-Mod-Language-Package.git
+  release
 - cd release
 - git rm -r /assets/
 - mv ../assets ./
