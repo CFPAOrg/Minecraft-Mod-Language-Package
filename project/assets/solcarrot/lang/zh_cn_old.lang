@@ -1,12 +1,17 @@
 # Tooltips
-tooltip.solcarrot.not_eaten.common=还没尝过呢!
-tooltip.solcarrot.not_eaten.hearty=尝起来怎么样?
-tooltip.solcarrot.eaten.hearty=已食用: 用于增加生命值
-tooltip.solcarrot.eaten.cheap=已食用: 没有明显效果
-tooltip.solcarrot.cheap=这种食物不足以提升您的生命值.
+tooltip.solcarrot.hearty.not_eaten=还没尝过呢! 尝起来怎么样?
+tooltip.solcarrot.hearty.eaten=已食用: 用于增加生命值
+tooltip.solcarrot.cheap.eaten=已食用: 没有明显效果
+tooltip.solcarrot.cheap=该食物不足以提升您的生命值.
+tooltip.solcarrot.disabled.blacklist=该食物已被加入黑名单, 因此无法用于增加生命值.
+tooltip.solcarrot.disabled.whitelist=该食物未被加入白名单, 因此无法用于增加生命值.
+tooltip.solcarrot.disabled.eaten=已食用: 没有明显效果
 
 # Commands
-command.solcarrot.foodlist.usage=/foodlist <size|clear|sync>
+command.solcarrot.foodlist.size.usage=/foodlist size [player]
+command.solcarrot.foodlist.clear.usage=/foodlist clear [player]
+command.solcarrot.foodlist.sync.usage=/foodlist sync [player]
+command.solcarrot.foodlist.no_permissions=您没有将此命令应用于其他玩家的权限!
 
 command.solcarrot.foodlist.size.desc.foods_eaten.singular=您已经品尝了1种独特的食物!
 command.solcarrot.foodlist.size.desc.foods_eaten.plural=您已经品尝了%s种独特的食物!
@@ -53,8 +58,10 @@ gui.solcarrot.food_book.config.hearty_fraction=营养的食物
 gui.solcarrot.food_book.config.tooltip.hearty_fraction=在%1$s种食物中有%2$s种食物的营养价值足以提升您的健康.
 gui.solcarrot.food_book.config.eaten_cheap_foods=乏味的食物
 gui.solcarrot.food_book.config.tooltip.eaten_cheap_foods=其中有%1$s种食物的营养价值不足以提升您的健康, 您已经食用了%2$s种.
-gui.solcarrot.food_book.config.blacklist=隐藏的食物
-gui.solcarrot.food_book.config.tooltip.blacklist=这些食物仍然可以加入计数, 只是不显示在食物清单中.
+gui.solcarrot.food_book.config.blacklist=黑名单食物
+gui.solcarrot.food_book.config.whitelist=白名单食物
+gui.solcarrot.food_book.config.tooltip.blacklist=黑名单中禁用的食物.
+gui.solcarrot.food_book.config.tooltip.whitelist=白名单中允许的食物.
 
 # Config GUI
 config.solcarrot.base_hearts=基础红心
@@ -66,5 +73,7 @@ config.solcarrot.should_show_uneaten_foods=显示未品尝食物
 config.solcarrot.should_play_milestone_sounds=启用里程碑提示音
 config.solcarrot.should_spawn_intermediate_particles=启用中间粒子效果
 config.solcarrot.should_spawn_milestone_particles=启用里程碑粒子效果
-config.solcarrot.food_blacklist=隐藏的食物
+config.solcarrot.food_blacklist=黑名单
+config.solcarrot.food_whitelist=白名单(禁用黑名单)
 config.solcarrot.minimum_food_value=最低食用价值
+config.solcarrot.reset_on_death=死亡重置
