@@ -1,6 +1,20 @@
 itemGroup.tetra=Tetra
 
 ###############################
+# JOURNAL
+###############################
+item.journal.name=Holosphere
+journal.craft.breadcrumb.root=Items
+journal.craft.sword=Blades
+journal.craft.toolbelt=Toolbelts
+journal.craft.tool=Tools
+journal.craft.slot=Slot
+journal.craft.requirements=Requirements
+journal.craft.improvements=Improvements
+journal.craft.stats=Stats
+journal.craft.variants=Variants
+
+###############################
 # WORKBENCH
 ###############################
 workbench.schema_list.empty=No upgrades available for the selected slot.
@@ -37,6 +51,9 @@ stats.durability.tooltip=This item has §e%s§r durability
 stats.speed=Speed
 stats.speed.tooltip=Affects how fast this item can be swinged\n\n§e%s §7seconds between swings\n§ex%s§7 gathering speed multiplier
 
+stats.speed_normalized=Speed
+stats.speed_normalized.tooltip=Changes attack speed by §e%s
+
 stats.damage=Damage
 stats.damage.tooltip=Deals §e%s §rdamage
 
@@ -45,6 +62,9 @@ stats.bleeding.tooltip=Hitting entities has a 30%% chance to cause them to bleed
 
 stats.backstab=Backstab
 stats.backstab.tooltip=Hitting entities from behind cause critical hits that deal §e%s§r bonus damage
+
+stats.armor=Armor
+stats.armor.tooltip=Provides §e%s§r armor when held
 
 stats.armorPenetration=Penetrating
 stats.armorPenetration.tooltip=Hitting an entity will always deal at least §e%s§r damage regardless of the targets armor
@@ -110,12 +130,17 @@ stats.toolbelt.booster=Boost strength
 stats.toolbelt.booster.tooltip=Provides jump boost and limited flight with strength §e%s
 
 
-stats.hammer.tooltip=This item can be used for hammering, usable when crafting and salvaging\n\n§7Hammer tier: §e%s§7\nHammer efficiency: §e%s
-stats.axe.tooltip=This item can be used for chopping wood\n\n§7Axe tier: §e%s§7\nAxe efficiency: §e%s
-stats.pickaxe.tooltip=This item can be used for mining\n\n§7Pickaxe tier: §e%s§7\nPickaxe efficiency: §e%s
-stats.shovel.tooltip=This item can be used for digging\n\n§7Shovel tier: §e%s§7\nShovel efficiency: §e%s
-stats.cut.tooltip=This item can be used for cutting, usable for crafting and for breaking webs and plants\n\n§7Cut tier: §e%s§7\nCut efficiency: §e%s
-stats.pry.tooltip=This item can be used for prying things open, usable for salvaging\n\n§7Pry tier: §e%s§7\nPry efficiency: §e%s
+stats.hammer.tooltip=This item can be used for hammering, usable when crafting and salvaging\n\n§7Hammer tier: §e%s\n§7:sHammer efficiency: §e%s
+stats.axe.tooltip=This item can be used for chopping wood\n\n§7Axe tier: §e%s\n§7:sAxe efficiency: §e%s
+stats.pickaxe.tooltip=This item can be used for mining\n\n§7Pickaxe tier: §e%s\n§7:sPickaxe efficiency: §e%s
+stats.shovel.tooltip=This item can be used for digging\n\n§7Shovel tier: §e%s\n§7:sShovel efficiency: §e%s
+stats.cut.tooltip=This item can be used for cutting, usable for crafting and for breaking webs and plants\n\n§7Cut tier: §e%s\n§7:sCut efficiency: §e%s
+stats.pry.tooltip=This item can be used for prying things open, usable for salvaging\n\n§7Pry tier: §e%s\n§7:sPry efficiency: §e%s
+
+
+stats.integrity=Integrity
+stats.integrity.tooltip_positive=This module provides §e%s§r integrity
+stats.integrity.tooltip_negative=This module requires §e%s§r integrity
 
 stats.integrity_usage=Integrity usage: %s/%s
 stats.integrity_usage.tooltip=Integrity is provided by some modules (often in a specific slot), while it is required by other modules and most improvements.
@@ -233,15 +258,15 @@ remove_schema.description=Remove the module in the selected slot.
 ###############################
 # BOOK ENCHANT SCHEMA
 ###############################
-book_enchant.name=Apply enchantment
-book_enchant.description=Apply the enchantments from an enchanted book to the selected module.
+book_enchant.name=Enchant
+book_enchant.description=Apply the enchantments from an enchanted book onto the selected part.
 book_enchant.slot1=Enchanted book
 
 ###############################
 # ENCHANTS
 ###############################
 enchantment/fire_aspect.name=Fire Aspect
-enchantment/fire_aspect.description=Striking entities sets them on fire
+enchantment/fire_aspect.description=Hitting entities sets them on fire
 enchantment/looting.name=Looting
 enchantment/looting.description=Increases drops when killing entities
 enchantment/unbreaking.name=Unbreaking
@@ -413,12 +438,12 @@ blade_hone_tempered_2_schema.description=Hone the tempered improvement, increase
 blade_hone_tempered_3_schema.name=Hone: Tempered III
 blade_hone_tempered_3_schema.description=Further hone the serrated improvement, increases the amount of damage that penetrates armor to 5.
 
-hooked_blade_schema.name=Notch hook
-hooked_blade_schema.description=Notch the back side of the blade, providing additional damage when striking unsuspecting enemies. Cause critical strikes when attacking enemies from behind.
+hooked_blade_schema.name=Carve hook
+hooked_blade_schema.description=Carve a hook into the back side of the blade, providing additional damage when hitting unsuspecting enemies. Cause critical strikes when attacking enemies from behind.
 blade_hone_hooked_2_schema.name=Hone: Hooked II
-blade_hone_hooked_2_schema.description=Hone the hooked improvement, increases the bonus damage dealt when striking enemies from behind to 75%%.
+blade_hone_hooked_2_schema.description=Hone the hooked improvement, increases the bonus damage dealt when hitting enemies from behind to 75%%.
 blade_hone_hooked_3_schema.name=Hone: Hooked III
-blade_hone_hooked_3_schema.description=Further hone the hooked improvement, increases the bonus damage dealt when striking enemies from behind to 125%%.
+blade_hone_hooked_3_schema.description=Further hone the hooked improvement, increases the bonus damage dealt when hitting enemies from behind to 125%%.
 
 ###############################
 # BASIC HILT
@@ -828,7 +853,7 @@ short_blade/knightmetal.name=Dagger
 
 short_blade/hooked.name=Hooked blade
 short_blade/hooked.prefix=Hooked
-short_blade/hooked.description=Striking enemies from behind cause critical damage
+short_blade/hooked.description=Hitting enemies from behind cause critical damage
 
 short_blade/tempered.name=Tempered point
 short_blade/tempered.prefix=Tempered

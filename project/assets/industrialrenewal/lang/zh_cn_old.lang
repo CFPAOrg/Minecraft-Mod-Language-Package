@@ -5,14 +5,14 @@ itemGroup.industrialrenewalwip=工业复兴丨未完成内容
 
 
 item.industrialrenewal.ir_manual.name=工业复兴手册
-item.industrialrenewal.cartridge_plus.name=Redstone Cartridge +
-item.industrialrenewal.cartridge_minus.name=Redstone Cartridge -
-item.industrialrenewal.cartridge_half.name=Redstone Cartridge ½
-item.industrialrenewal.cartridge_double.name=Redstone Cartridge x2
-item.industrialrenewal.cartridge_inverter.name=Redstone Cartridge逆变器
+item.industrialrenewal.cartridge_plus.name=红石配线盒+
+item.industrialrenewal.cartridge_minus.name=红石配线盒-
+item.industrialrenewal.cartridge_half.name=红石配线盒½
+item.industrialrenewal.cartridge_double.name=红石配线盒x2
+item.industrialrenewal.cartridge_inverter.name=红石配线逆变器
 item.industrialrenewal.ingot_steel.name=钢锭
 item.industrialrenewal.item_fire_extinguisher.name=灭火器
-item.industrialrenewal.log_cart.name=Log Cart
+item.industrialrenewal.log_cart.name=原木运输车厢
 item.industrialrenewal.passenger_car.name=客运车厢
 item.industrialrenewal.safety_belt.name=安全带
 item.industrialrenewal.safety_helmet.name=安全帽
@@ -23,6 +23,7 @@ item.industrialrenewal.stick_steel.name=钢棒
 item.industrialrenewal.steam_locomotive.name=蒸汽机车(WIP)
 item.industrialrenewal.cargo_container.name=集装箱货车
 item.industrialrenewal.fluid_container.name=流体罐车(WIP)
+item.industrialrenewal.minecart_flat.name=Flat Cart
 item.industrialrenewal.plow_iron.name=铁雪犁(WIP)
 item.industrialrenewal.screwdrive.name=电动螺丝刀
 item.industrialrenewal.screwdrive.des0=这个模组的万用工具
@@ -30,7 +31,11 @@ item.industrialrenewal.medkit.name=医疗包
 item.industrialrenewal.medkit.des0=用于治疗
 item.industrialrenewal.steel_saw.name=钢锯
 item.industrialrenewal.steel_saw.des0=能够切割石材的锯子
-item.industrialrenewal.barrel_item.name=Barrel
+item.industrialrenewal.barrel_item.name=大号铁桶
+item.industrialrenewal.battery.name=Battery
+item.industrialrenewal.motor.name=Motor
+item.industrialrenewal.firebox_solid.name=Firebox for Solid Fuel
+item.industrialrenewal.firebox_fluid.name=Firebox for Fluid Fuel
 
 
 item.industrialrenewal.record_royal_entrance.name=唱片
@@ -53,7 +58,7 @@ tile.industrialrenewal.brace.name=斜向支撑梁
 tile.industrialrenewal.brace_steel.name=钢制斜向支撑梁
 tile.industrialrenewal.buffer_stop_rail.name=缓冲车挡器轨道
 tile.industrialrenewal.cargo_loader.name=货物转运器
-tile.industrialrenewal.fluid_loader.name=Fluid Loader (WIP)
+tile.industrialrenewal.fluid_loader.name=流体装载器 (WIP)
 tile.industrialrenewal.cart_container=集装箱货车
 tile.industrialrenewal.catwalk.name=栈桥
 tile.industrialrenewal.catwalk_steel.name=钢栈桥
@@ -111,18 +116,30 @@ tile.industrialrenewal.electric_gate.name=电闸门
 tile.industrialrenewal.record_player.name=多唱片播放器
 tile.industrialrenewal.sensor_rain.name=雨水传感器
 tile.industrialrenewal.solar_panel.name=基础太阳能板
-tile.industrialrenewal.fluid_gauge.name=Gauge
-tile.industrialrenewal.button_red.name=Emergency Button
-tile.industrialrenewal.fence_big_column.name=Big Fence Column
-tile.industrialrenewal.fence_big_corner.name=Big Fence Corner
-tile.industrialrenewal.fence_big_wire.name=Big Fence Wire
+tile.industrialrenewal.fluid_gauge.name=压力表
+tile.industrialrenewal.button_red.name=紧急按钮
+tile.industrialrenewal.fence_big_column.name=大型围栏柱
+tile.industrialrenewal.fence_big_corner.name=大型围栏角
+tile.industrialrenewal.fence_big_wire.name=大型围栏线缆
+tile.industrialrenewal.electric_pump.name=电动泵
+tile.industrialrenewal.battery_bank.name=电池组
+tile.industrialrenewal.steam_boiler.name=蒸汽锅炉
+tile.industrialrenewal.steam_turbine.name=蒸汽轮机
+tile.industrialrenewal.firebox_solid.name=蒸汽锅炉燃烧室(固态燃料)
+tile.industrialrenewal.steam.name=蒸汽
+tile.industrialrenewal.trash.name=垃圾桶
+tile.industrialrenewal.eotm.name=Employee of the Month Award
+
+# Fluids
+fluid.steam=蒸汽
 
 
 entity.industrialrenewal.cargo_container.name=集装箱货车
 entity.industrialrenewal.fluid_container.name=流体罐车(WIP)
 entity.industrialrenewal.steam_locomotive.name=蒸汽机车(WIP)
-entity.industrialrenewal.log_cart.name=Log Cart
+entity.industrialrenewal.log_cart.name=原木运输车厢
 entity.industrialrenewal.passenger_car.name=客运车厢
+entity.industrialrenewal.minecart_flat.name=Flat Cart
 
 
 gui.config.main_title=工业复兴模组配置
@@ -137,7 +154,19 @@ gui.config.recipes.startwithmanual.name=以手册开始
 gui.config.recipes.startwithmanual.comment=开启/关闭在首次进入世界时获得工业复兴手册(默认关闭)
 gui.config.electric_fence_damage_type.name=电围网伤害模式
 gui.config.electric_fence_damage_amount.name=电围网伤害量
-
+gui.config.electric_fence_knockback_amount.name=电围栏击退强度
+gui.config.pump_infinity_water.name=无尽水泵
+gui.config.alarm_volume.name=报警音量
+gui.config.barrel_capacity.name=大桶容量
+gui.config.fluidcontainer_capacity.name=流体罐车容量
+gui.config.batterybank_capacity.name=电池组储能量
+gui.config.batterybank_input.name=电池组最大输入
+gui.config.batterybank_output.name=电池组最大输出
+gui.config.medkit_duration.name=医疗包效果持续时间
+gui.config.temp_mode.name=温度模式
+gui.config.steam_factor.name=蒸汽转换比例(水:蒸汽)
+gui.config.nether_extinguisher.name=灭火器在虚空中的行为
+gui.config.fluidFuel.name=流体燃料白名单
 
 
 tile.industrialrenewal.crossing_rail.info=在车厢经过时鸣笛
@@ -163,9 +192,9 @@ gui.industrialrenewal.first-aid_box.text0=这是存放多个一个急救包\n的
 gui.industrialrenewal.rails.text0=- 轨道,充能轨道,探测轨道:\n与原版功能一致，但是使用\n了3D的模型。\n- 缓冲车挡器：\n可以阻拦车厢继续前进。\n- 交叉道口轨道：\n当车厢通过时使其鸣笛。\n- 转运轨道：\n放置在货物转运器的上方\n或下方，能根据货物转运\n器的配置来决定是否停下\n车厢。
 
 
-gui.industrialrenewal.blockfirstaidkit.bandages.tooltip=医疗包格子
-gui.industrialrenewal.blockrecordplayer.discs.tooltip=光盘格子
-gui.industrialrenewal.entity_steamlocomotive.plow.tooltip=铁雪犁格子
+gui.industrialrenewal.blockfirstaidkit.bandages.tooltip=放置医疗包
+gui.industrialrenewal.blockrecordplayer.discs.tooltip=放置光盘
+gui.industrialrenewal.entity_steamlocomotive.plow.tooltip=放置铁雪犁
 gui.industrialrenewal.button.distance=距离:
 gui.industrialrenewal.button.entity=实体:
 gui.industrialrenewal.button.all=全部
@@ -182,7 +211,7 @@ gui.industrialrenewal.button.never=永不
 gui.industrialrenewal.button.play=播放
 gui.industrialrenewal.button.stop=停止
 gui.industrialrenewal.fuel.tooltip=燃料
-gui.industrialrenewal.fusebox.input=红石输入:
-gui.industrialrenewal.fusebox.output=红石输出:
-gui.industrialrenewal.fusebox.slots.tooltip=Redstone Cartridge格子
+gui.industrialrenewal.fusebox.input=红石输入强度:
+gui.industrialrenewal.fusebox.output=红石输出强度:
+gui.industrialrenewal.fusebox.slots.tooltip=放置红石配线盒
 

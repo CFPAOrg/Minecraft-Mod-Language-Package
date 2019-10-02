@@ -7,8 +7,8 @@ tile.wizardry:creative_mana_battery.name=Creative Mana Battery
 tile.wizardry:nacre.name=Liquid Nacre
 tile.wizardry:mana.name=Liquid Mana
 tile.wizardry:cloud.name=Cloud
-tile.wizardry:jar_block.name=Jar
-tile.wizardry:pearl_holder.name=Pearl Holder
+tile.wizardry:jar_block.name=Empty Jar
+tile.wizardry:pearl_holder.name=Orb Holder
 tile.wizardry:nacre_block.name=Nacre Block
 tile.wizardry:nacre_block_brick.name=Nacre Bricks
 tile.wizardry:mana_magnet.name=Mana Magnet
@@ -60,9 +60,20 @@ item.wizardry:fairy_imbued_apple.name=Fairy Imbued Apple
 item.wizardry:fairy_wings.name=Fairy Wings
 item.wizardry:unicorn_horn.name=Unicorn Horn
 item.wizardry:unicorn_dagger.name=Unicorn Horn Dagger
-item.wizardry:jar.name=Jar
+item.wizardry:jar.name=Empty Jar
+item.wizardry:jar_empty.name=Empty Jar
 item.wizardry:jar_fairy.name=Fairy in a Jar
 item.wizardry:jar_jam.name=Fairy Jam
+item.wizardry.fairy_jar.dulled.name=Slaved Fairy In A Jar
+item.wizardry.fairy_jar.barely_excited.name=Barely Excited Fairy In A Jar
+item.wizardry.fairy_jar.moderately_excited.name=Moderately Excited Fairy In A Jar
+item.wizardry.fairy_jar.very_excited.name=Very Excited Fairy In A Jar
+item.wizardry.fairy_jar.overloaded.name=Overloaded Fairy In A Jar
+item.wizardry.fairy_jar.dulled.info=This fairy now obeys you
+item.wizardry.fairy_jar.barely_excited.info=This fairy needs more mana, it's hardly charged
+item.wizardry.fairy_jar.moderately_excited.info=This fairy is half way charged. It needs more mana
+item.wizardry.fairy_jar.very_excited.info=This fairy is almost fully charged with mana. It needs a little more
+item.wizardry.fairy_jar.overloaded.info=This fairy is completely overloaded and unstable.
 item.wizardry:syringe.name=Empty Syringe
 item.wizardry:syringe_mana.name=ManaBooster Lite™
 item.wizardry:syringe_mana.desc=Refills your mana bar by 50%%.
@@ -85,6 +96,14 @@ item.wizardry:sky_dust.name=Sky Dust
 item.wizardry:glue_stick.name=Glue Stick
 item.wizardry:blackened_spirit.name=Blackened Spirit
 item.wizardry:ring.name=Ring
+item.wizardry:pearl_belt.name=Pearl Belt
+
+item.wizardry:fairy_bell=Fairy Bell
+item.wizardry:fairy_bell_moving_mode=Fairy Bell [mode: move fairy]
+item.wizardry:fairy_bell_aiming_mode=Fairy Bell [mode: aim fairy]
+item.wizardry:fairy_bell.status.deselected=Fairy Deselected
+item.wizardry:fairy_bell.status.fairy_moving=Fairy Selected. [mode: fairy moving]
+item.wizardry:fairy_bell.status.fairy_aiming=Fairy Selected. [mode: fairy aiming]
 
 item.wizardry:glass_orb.fill.0.name=Glass Orb
 item.wizardry:mana_orb.fill.0.name=Mana Orb 0%
@@ -98,6 +117,18 @@ item.wizardry:mana_orb.fill.70.name=Mana Orb 70%
 item.wizardry:mana_orb.fill.80.name=Mana Orb 80%
 item.wizardry:mana_orb.fill.90.name=Mana Orb 90%
 item.wizardry:mana_orb.fill.100.name=Mana Orb 100%
+
+item.wizardry:levitation_orb.fill.0.name=Levitation Orb 0%
+item.wizardry:levitation_orb.fill.10.name=Levitation Orb 10%
+item.wizardry:levitation_orb.fill.20.name=Levitation Orb 20%
+item.wizardry:levitation_orb.fill.30.name=Levitation Orb 30%
+item.wizardry:levitation_orb.fill.40.name=Levitation Orb 40%
+item.wizardry:levitation_orb.fill.50.name=Levitation Orb 50%
+item.wizardry:levitation_orb.fill.60.name=Levitation Orb 60%
+item.wizardry:levitation_orb.fill.70.name=Levitation Orb 70%
+item.wizardry:levitation_orb.fill.80.name=Levitation Orb 80%
+item.wizardry:levitation_orb.fill.90.name=Levitation Orb 90%
+item.wizardry:levitation_orb.fill.100.name=Levitation Orb 100%
 
 item.wizardry:wisdom_stick.name=Wisdom Wood Stick
 item.wizardry:wisdom_wood_door.name=Wisdom Wood Door
@@ -192,8 +223,10 @@ wizardry.spell.effect_crasher_fall.name=Crashing Fall
 wizardry.spell.effect_crasher_fall.desc=Distribute some of the target's impact damage into any nearby entities.
 wizardry.spell.effect_crasher_fall.desc.range=<RANGE> increases area checked for nearby entities.
 wizardry.spell.effect_crasher_fall.desc.duration=Effect lasts half a second for each point of <DURATION>.
-wizardry.spell.effect_disarm.name=Disarm
-wizardry.spell.effect_disarm.desc=Releases the target's grip on their held item.
+wizardry.spell.effect_extract.name=Extract
+wizardry.spell.effect_extract.desc=Extracts items from the target entity or block with an inventory. Respects locked containers.
+wizardry.spell.effect_extract.desc.duration=The time it takes the item to delay pickup by the nearest entity.
+wizardry.spell.effect_extract.desc.potency=Less than quarter power searches inventory back to front, less than half searches front to back (hotbar first), more than that removes baubles first, then armpr, then inventory front to back.
 wizardry.spell.effect_frost.name=Frost
 wizardry.spell.effect_frost.desc=Makes opponents slip and slide as if on ice, extinguishes fires, cools liquids, and causes snowfall.
 wizardry.spell.effect_frost.desc.area=Extinguishes fires, cools liquids, and places snow within <AREA> blocks of the target. No effect on entities.
@@ -208,7 +241,7 @@ wizardry.spell.effect_leap.desc=Thrusts you upwards and forwards.
 wizardry.spell.effect_leap.desc.potency=Can jump in the air once for every 10 points of <POTENCY>. Divides fall distance by 1 + <POTENCY>/8, rounded up.
 wizardry.spell.effect_leech.name=Leech
 wizardry.spell.effect_leech.desc=Will deal magic damage to a target. If that target dies, you get some of their mana into yourself.
-wizardry.spell.effect_leech.desc.potency=Does half a point of magic damage (1/4 heart) per point of <POTENCY>. 
+wizardry.spell.effect_leech.desc.potency=Does a point of magic damage (1 heart) per point of <POTENCY>.
 wizardry.spell.effect_light.name=Illumination
 wizardry.spell.effect_light.desc=Places a magical light source at the target location.
 wizardry.spell.effect_lightning.name=Lightning
@@ -241,6 +274,9 @@ wizardry.spell.effect_time_slow.name=Time Slow
 wizardry.spell.effect_time_slow.desc=Dilates an entity's time. Can suspend their time completely.
 wizardry.spell.effect_time_slow.desc.potency=Slows down an entity to 1/<POTENCY> normal time.
 wizardry.spell.effect_time_slow.desc.duration=Effect lasts half a second per point of <DURATION>.
+wizardry.spell.effect_time_lock.name=Time Lock
+wizardry.spell.effect_time_lock.desc=Once the spell expires, reverts the target block or entity to its previous state when the spell was cast.
+wizardry.spell.effect_time_lock.desc.duration=Effect lasts half a second per point of <DURATION>.
 wizardry.spell.effect_vanish.name=Vanish
 wizardry.spell.effect_vanish.desc=The target can't see anyone when they're moving, but when they're still, they're invisible.
 wizardry.spell.effect_vanish.desc.duration=Effect lasts for <DURATION> seconds.
@@ -323,13 +359,26 @@ wizardry.advancement.begin.desc=Discover a pool of raw liquid Mana
 wizardry.gui.index=Index
 wizardry.gui.recipe=Spell Recipe
 
-wizardry.command.usage=/wizardry <reload/reset> [config/inventory]
-wizardry.command.success=Successfully reloaded modules.
-wizardry.command.reset=Attempting to reset moduleSet directory... Any modifications made to it will be lost!
-wizardry.command.success_delete=Successfully deleted %s
-wizardry.command.fail=Could not delete %s
-wizardry.command.fail_dir_delete=Could not delete moduleSet directory
-wizardry.command.fail_dir_create=Could not create moduleSet directory
+
+
+wizardry.command.notplayer=You are not a player.
+
+wizardry.command.usage=/wizardry help
+
+wizardry.command.genstaff.usage=/wizardry genstaff
+
+wizardry.command.genpearl.usage=/wizardry genpearl
+
+wizardry.command.tptorikki.usage=/wizardry tptorikki
+
+wizardry.command.tpunderworld.usage=/wizardry tpunderworld
+
+wizardry.command.listmodules.usage=/wizardry listmodules
+
+wizardry.command.debug.usage=/wizardry debug <module name>. Get a list of all modules from /wizardry listmodules
+wizardry.command.debug.module_not_found=Module not found. Get a list of all modules from /wizardry listmodules
+
+
 
 wizardry.update0=Don't let your bugs be thugs! Use our patented Magic-o-gon spray for only $9.99
 wizardry.update1=There's magic in the air...
@@ -340,6 +389,9 @@ wizardry.update5=it's outdated my dudes
 wizardry.update6=yo dawg we heard you like changelogs so we put changelogs in your changelogs so you can change while you log
 wizardry.update7=*:･ﾟ✧ᕕ( ᐛ )ᕗ
 
+wizardry.pearlui.belt_full=Belt Full
+wizardry.pearlui.pop_pearls=Click any of the pearls to pop them out of the belt
+wizardry.pearlui.attach_pearls=Click here to attach all pearls in your inventory to this belt
 
 wizardry.table.spell_loaded=Spell loaded from condex.
 wizardry.table.paper_cleared=Paper cleared.

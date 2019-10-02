@@ -1,40 +1,45 @@
 import re
 import threading
 import time
+from enum import Enum
 
 import requests
 
 from src.baka_init import *
 
+class Source(Enum):
+    CurseForge = 1
+    FTB = 2
 
 # 获取模组信息的多线程类的构建
-class ModInfoGet(threading.Thread):
+class GetProjectsFromPage(threading.Thread):
     # 初始化
     # mig_page_num：具体的页数
     # mode：模式（1：curseforge 模组区；2：feed the beast 整合区）
-    def __init__(self, mig_page_num, mig_mode):
+    def __init__(self, mig_page_num, source):
         threading.Thread.__init__(self)
         self.num = mig_page_num
-        self.mode = mig_mode
+        self.source = source
 
     # 主体程序
     def run(self):
         # 正式爬取
-        if self.mode == 1:
+        if self.source == Source.CurseForge:
             mig_page = requests.get(
-                "https://minecraft.curseforge.com/mc-mods"
+                "https://www.curseforge.com/minecraft/mc-mods"
                 "?filter-game-version={}&filter-sort=5&page={}".format(VERSION, self.num),
                 headers=HEADERS,
                 proxies=PROXIES).text
 
             # 正则抓取所有模组列表
-            mig_list = re.findall(r'<a href="/projects/(.*?)">', mig_page)
+            mig_list = re.findall(r'<a href="/minecraft/mc-mods/(.*?)/download" class="button button--hollow">', mig_page)
             MOD_LIST.extend(mig_list)
 
-        if self.mode == 2:
+        if self.source == Source.FTB:
+            # 按最近更新顺序排序，爬 FTB 新包
             modpack_info_get_page = requests.get(
                 "https://www.feed-the-beast.com/modpacks"
-                "?filter-game-version={}&filter-sort=5&page={}".format(VERSION, self.num),
+                "?filter-game-version={}&filter-sort=2&page={}".format(VERSION, self.num),
                 headers=HEADERS,
                 proxies=PROXIES).text
 
@@ -46,17 +51,32 @@ class ModInfoGet(threading.Thread):
 class ModpackModInfoGet(threading.Thread):
     # 初始化
     # mig_page：具体的页面
-    def __init__(self, mmig_id):
+    def __init__(self, mmig_id, source):
         threading.Thread.__init__(self)
         self.id = mmig_id
+        self.source = source
 
     # 主体程序
     def run(self):
-        # 此处混有 FTB 和 CurseForge 的包，两者实际上 URL 不太相同，但是爬虫部分可以通用
-        # 不妨通过找到相同之处，然后稍作修改即可
-        url_var = "www.feed-the-beast.com"  # 这个变量决定 URL
-        if self.id in MODPACK_WHITELIST:
-            url_var = "minecraft.curseforge.com"
+        if self.source == Source.CurseForge:
+            mmig_page = requests.get(
+                    "https://www.curseforge.com/minecraft/modpacks/{}/files/all?filter-game-version={}".format(self.id, VERSION),
+                    headers=HEADERS,
+                    proxies=PROXIES).text
+            mmig_list = re.findall(r'<a data-action="modpack-file-link" href="/minecraft/modpacks/.*?/files/(\d+)">' ,mmig_page)
+            
+            if len(mmig_list) != 0:
+                mmig_file_page = requests.get("https://www.curseforge.com/minecraft/modpacks/{}/files/{}".format(self.id, mmig_list[0]),
+                         headers=HEADERS,
+                         proxies=PROXIES).text
+                mmig_modlist = re.findall(r'<a href="/minecraft/mc-mods/([^/]*)" class="truncate float-left w-full">', mmig_page)
+                for mmig_n in mmig_modlist:
+                    if mmig_n not in MOD_LIST and len(mmig_n) > 0:
+                        MOD_LIST.append(mmig_n)
+            return
+
+        elif self.source == Source.FTB:
+            url_var = "www.feed-the-beast.com"
 
         # 正式爬取
         mmig_page = requests.get(
@@ -67,10 +87,18 @@ class ModpackModInfoGet(threading.Thread):
         # 正则抓取该页面最新版整合
         mmig_list = re.findall(
             r'class="overflow-tip twitch-link" href="/projects/.*?/files/(\d+)"', mmig_page)
+        
+        # 似乎 FTB 网站只有 release 版的页面才会有模组列表
+        mmit_release_type = re.findall(r'<div class="release-phase tip" title="Release">|<div class="beta-phase tip" title="Beta">', mmig_page)
+        release_index = -1
+        for i in range(len(mmit_release_type)):
+            if mmit_release_type[i] == '<div class="release-phase tip" title="Release">':
+                release_index = i
+                break
 
         # 提取出模组列表
-        if len(mmig_list) != 0:
-            mmig_file_page = requests.get("https://{}/projects/{}/files/{}".format(url_var, self.id, mmig_list[0]),
+        if release_index != -1 and len(mmig_list) > release_index:
+            mmig_file_page = requests.get("https://{}/projects/{}/files/{}".format(url_var, self.id, mmig_list[release_index]),
                                           headers=HEADERS,
                                           proxies=PROXIES).text
 
@@ -92,7 +120,7 @@ class ModpackModInfoGet(threading.Thread):
                     mmig_url = requests.get("https://www.feed-the-beast.com/projects/{}".format(mmig_i),
                                             headers=HEADERS, proxies=PROXIES).url
                     # 正则抓取处语义化 ID
-                    mmig_match = re.findall(r"/projects/(.*?)$", mmig_url)
+                    mmig_match = re.findall(r'mc-mods/([^/]*)', mmig_url)
                     # 判定抓取情况，进行存储
                     if len(mmig_match) > 0:
                         logging.debug("源表中不存在的映射：" + str(mmig_match))
@@ -108,13 +136,15 @@ class ModpackModInfoGet(threading.Thread):
 
 def main():
     logging.info("==================  模组列表获取函数开始  ==================")
+    
+    global MOD_LIST
 
     # 下面是逐个多线程获取信息的部分
     th_list = []  # 放置线程的 list
     # 模组页面多线程
     for num in range(1, MOD_PAGE + 1):
         # 逐次放入线程
-        th_list.append(ModInfoGet(num, 1))
+        th_list.append(GetProjectsFromPage(num, Source.CurseForge))
     for th in th_list:
         # 延时 0.5 秒逐个启动线程
         th.start()
@@ -127,7 +157,7 @@ def main():
     th_list.clear()  # 打扫干净屋子再请客
     for num in range(1, MODPACK_PAGE + 1):
         # 逐次放入线程
-        th_list.append(ModInfoGet(num, 2))
+        th_list.append(GetProjectsFromPage(num, Source.FTB))
     for th in th_list:
         # 延时 0.5 秒逐个启动线程
         th.start()
@@ -164,7 +194,8 @@ def main():
 
     for modpack in MODPACK_LIST:
         # 逐次放入线程
-        th_list.append(ModpackModInfoGet(modpack))
+        source = Source.CurseForge if modpack in MODPACK_WHITELIST else Source.FTB
+        th_list.append(ModpackModInfoGet(modpack, source))
     for th in th_list:
         # 延时 0.5 秒逐个启动线程
         th.start()
@@ -186,10 +217,11 @@ def main():
     # 开始执行数据存储，出现错误则回滚
     try:
         # 存储模组列表
-        for i in MOD_LIST:
-            CURSOR.execute("INSERT OR IGNORE INTO MOD_LIST (URL) "
-                           "VALUES ('{}');".format(i))
-        CONN.commit()
+        # 去重，排序
+        MOD_LIST=list(set(MOD_LIST))
+        MOD_LIST.sort()
+        with open(MOD_LIST_FILE, 'w') as f:
+            f.write(json.dumps(MOD_LIST, indent=4, sort_keys=True))
 
         # 存储映射表
         for k, v in URL_ID_MAP.items():

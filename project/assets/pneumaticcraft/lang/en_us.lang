@@ -315,7 +315,7 @@ entity.Villager.pneumaticcraft.mechanic=Mechanic
 entity.micromissile.name=Micromissile
 
 # Helmet hacking
-pneumaticHelmet.hacking.hacking=Hacking...
+pneumaticHelmet.hacking.hacking=Hacking (%d%%%%)...
 
 pneumaticHelmet.hacking.result.disarm=Hack to disarm
 pneumaticHelmet.hacking.result.neutralize=Hack to neutralize
@@ -335,6 +335,7 @@ pneumaticHelmet.hacking.result.stopTeleport=Hack to prevent teleporting
 pneumaticHelmet.hacking.result.callBack=Hack to call back
 pneumaticHelmet.hacking.result.resumeTasks=Hack to resume tasks
 pneumaticHelmet.hacking.result.kill=Hack to kill
+pneumaticHelmet.hacking.result.resetTrades=Hack to reset trades
 
 pneumaticHelmet.hacking.finished.disarmed=Disarmed
 pneumaticHelmet.hacking.finished.neutralized=Neutralized
@@ -354,6 +355,7 @@ pneumaticHelmet.hacking.finished.stopTeleporting=Preventing teleports
 pneumaticHelmet.hacking.finished.calledBack=Called back
 pneumaticHelmet.hacking.finished.resumedTasks=Resumed tasks
 pneumaticHelmet.hacking.finished.killed=Killed
+pneumaticHelmet.hacking.finished.resetTrades=Trades reset
 
 ########## GUI tabs
 
@@ -852,6 +854,9 @@ gui.progWidget.debug.followActive=Follow Active Widget
 gui.progWidget.harvest.debug.missingHoe=No damageable hoe found.
 gui.progWidget.dig.debug.missingDiggingTool=No damageable digging tool found.
 
+gui.misc.no_items=§o• No items
+gui.misc.no_fluids=§o• No fluids
+
 gui.pastebin.button.login=Log In
 gui.pastebin.button.logout=Log Out
 gui.pastebin.button.upload=Upload to Pastebin
@@ -888,15 +893,13 @@ gui.logistic_frame.fuzzyMeta=Ignore Item Metadata
 gui.logistic_frame.fuzzyNBT=Ignore Item NBT
 gui.logistic_frame.whitelist=Whitelist
 gui.logistic_frame.blacklist=Blacklist
-gui.logistic_frame.no_items=§o• No items
-gui.logistic_frame.no_fluids=§o• No fluids
 gui.logistic_frame.facing=Facing
 gui.logistic_frame.facing.tooltip=Defines the face of the framed inventory/tank which will be accessed by Drones. This is ignored by Logistics Modules; they always access the inventory/tank on the side they face.
 gui.logistic_frame.min_amount=Minimum Order Size
 gui.logistic_frame.min_items=Minimum Items
-gui.logistic_frame.min_items.tooltip=This frame will not order fewer items than this at a time. Useful to prevent drones making many trips with tiny loads when a single trip could be more efficient.
+gui.logistic_frame.min_items.tooltip=This frame will not order fewer items than this at a time. Useful to prevent drones making many trips with tiny loads when a single trip could be more efficient. Keep this value lower than the requested amount.
 gui.logistic_frame.min_fluid=Minimum Fluid (mB)
-gui.logistic_frame.min_fluid.tooltip=This frame will not order less fluid than this at a time. Useful to prevent drones making many trips with tiny loads when a single trip could be more efficient.
+gui.logistic_frame.min_fluid.tooltip=This frame will not order less fluid than this at a time. Useful to prevent drones making many trips with tiny loads when a single trip could be more efficient. Keep this value lower than the requested amount.
 gui.plasticMixer.lockSelection=Lock Selection
 gui.plasticMixer.lockSelection.tooltip=When locked, selecting an item will produce as many as possible of that item
 gui.keroseneLamp.maxRange=Max Range:
@@ -952,8 +955,27 @@ pneumaticHelmet.message.targetWarning=%s is targeting you!
 
 jetboots.module.builderMode=Builder Mode
 
+entityTracker.info.health=Health: %d%%%%
+entityTracker.info.drone.routine=Routine: %s
+entityTracker.info.drone.debugging=Debugging this drone
+entityTracker.info.drone.debugging.key=Press [%s] for debugger
+entityTracker.info.drone.pressDebugKey=Press [%s] to debug
+entityTracker.info.growsUpIn=Becomes adult in %s
+entityTracker.info.canBreedIn=Can breed in %s
+entityTracker.info.canBreedNow=Ready to breed
+entityTracker.info.canTame=Can be tamed
+entityTracker.info.tamed=Owner: %s
+entityTracker.info.creeper.fuse=FUSE: %d
+entityTracker.info.creeper.coolDown=Cooling down: %d
+entityTracker.info.player.armor=Armor:
+entityTracker.info.player.holding=Carrying:
+entityTracker.info.painting.art=Artwork: %s
+entityTracker.info.itemframe.item=Item: %s
+entityTracker.info.itemframe.rotation=Rotation: %d°
+
 blockTracker.module.hackables=Hackables
 blockTracker.module.inventories=Inventories
+blockTracker.module.fluids=Fluid Tanks
 blockTracker.module.misc=Miscellaneous Blocks
 blockTracker.module.bcEnergy=BuildCraft Energy Blocks
 blockTracker.module.hydraulicraft=Hydraulicraft Power Blocks
@@ -973,6 +995,9 @@ blockTracker.info.thaumcraft.nodeModifier=Node Modifier:
 
 blockTracker.info.peripheral.title=ComputerCraft Peripheral
 blockTracker.info.peripheral.availableMethods=Available Methods:
+
+blockTracker.info.fluids.tankFull=Tank %d: %d/%dmB %s
+blockTracker.info.fluids.tankEmpty=Tank %d: 0/%dmB
 
 blockTracker.message.stopSpam=Stopped spam on %s
 
