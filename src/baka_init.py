@@ -2,6 +2,7 @@ import logging
 import os
 import sqlite3
 import tempfile
+import json
 
 import yaml
 
@@ -30,6 +31,12 @@ URL_ID_MAP = {}  # 存储 URL ID -> 数字 ID 的映射表
 MOD_INFO_OLD = []  # 存储上次更新的模组详细文件信息
 MOD_INFO = []  # 存储最新的所有需要维护的模组详细文件信息
 MOD_DOWNLOAD = []  # 存储本次更新需要重下的模组
+ASSET_MAP = {} # 存储 modid -> asset domain 的映射表
+CURSE_PROJECT = {} # 存储 asset domain 对应的 curseforge 项目名
+
+ASSET_MAP_FILE = './database/asset_map.json'
+MOD_LIST_FILE = './database/mod_list.json'
+CURSE_PROJECT_FILE = './database/curse_project.json'
 
 # 从环境变量中获取私密数据
 WEBLATE_TOKEN = os.environ.get("WEBLATE_TOKEN")
@@ -76,13 +83,6 @@ logging.info("连接数据库成功")
 CURSOR = CONN.cursor()
 logging.info("游标创建成功")
 
-# 创建模组列表
-CURSOR.execute(
-    "CREATE TABLE IF NOT EXISTS MOD_LIST("
-    "URL TEXT PRIMARY KEY"
-    ");")
-CONN.commit()
-
 # 创建 URL -> ID 映射表
 CURSOR.execute(
     "CREATE TABLE IF NOT EXISTS URL_ID_MAP("
@@ -102,9 +102,7 @@ CONN.commit()
 CURSOR.execute(
     "CREATE TABLE IF NOT EXISTS MOD_INFO("
     "URL TEXT PRIMARY KEY,"
-    "ID INTEGER NOT NULL,"
-    "FILE_ID INTEGER NOT NULL,"
-    "UPLOAD_DATE INTEGER NOT NULL"
+    "FILE_ID INTEGER NOT NULL"
     ");")
 CONN.commit()
 
@@ -118,6 +116,21 @@ CURSOR.execute(
     ");")
 CONN.commit()
 logging.info("找到或创建成功所需要的表")
+
+# 加载 ASSET_MAP
+# 没有使用 SQL ，使用外部的 JSON 存储，考虑到 ASSET_MAP 会在其他地方被使用
+if os.path.exists(ASSET_MAP_FILE):
+    with open(ASSET_MAP_FILE) as f:
+        ASSET_MAP = json.load(f)
+
+# 模组列表也用 JSON 吧
+if os.path.exists(MOD_LIST_FILE):
+    with open(MOD_LIST_FILE) as f:
+        MOD_LIST = json.load(f)
+
+if os.path.exists(CURSE_PROJECT_FILE):
+    with open(CURSE_PROJECT_FILE) as f:
+        CURSE_PROJECT = json.load(f)
 
 # 创建临时文件夹
 # 放置模组的临时文件夹

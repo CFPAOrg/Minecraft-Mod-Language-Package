@@ -400,10 +400,10 @@ upgrade.anchor=Anchor
 upgrade.anchor.desc=Keeps a machine's chunk loaded.
 
 # Key description text
-key.mode=Item Mode Switch
-key.armorMode=Armor Mode Switch
-key.feetMode=Feet Mode Switch
-key.voice=Voice
+mekanism.key.mode=Item Mode Switch
+mekanism.key.armorMode=Armor Mode Switch
+mekanism.key.feetMode=Feet Mode Switch
+mekanism.key.voice=Voice
 
 # Entities
 entity.Robit.name=Robit
@@ -415,6 +415,7 @@ mekanism.configgui.ctgy.machines=Machine Settings
 mekanism.configgui.ctgy.tier=Tier Settings
 mekanism.configgui.ctgy.usage=Usage Settings
 mekanism.configgui.ctgy.client=Client Settings
+mekanism.configgui.ctgy.storage=Energy Storage Settings
 
 # Config Tooltips
 mekanism.configgui.ctgy.general.tooltip=General settings regarding Mekanism and all its modules
@@ -422,6 +423,7 @@ mekanism.configgui.ctgy.machines.tooltip=Settings regarding enabling and disabli
 mekanism.configgui.ctgy.tier.tooltip=Settings regarding Mekanism tiers and their corresponding values
 mekanism.configgui.ctgy.usage.tooltip=Settings regarding machinery and their energy usage
 mekanism.configgui.ctgy.client.tooltip=Client-specific settings regarding Mekanism and all its modules
+mekanism.configgui.ctgy.storage.tooltip=Settings regarding machinery and their energy storage maximum
 
 # Gui text
 gui.condensentrating=Condensentrating
@@ -496,6 +498,7 @@ gui.dynamicTank=Dynamic Tank
 gui.industrialTurbine=Industrial Turbine
 gui.thermoelectricBoiler=Thermoelectric Boiler
 gui.visuals=Visuals
+mekanism.gui.visuals.toobig=Radius too big to display visuals
 gui.noEject=Can't Eject
 gui.undefined=Undefined
 gui.owner=Owner
@@ -510,6 +513,7 @@ gui.producing=Producing
 gui.maxOutput=Max Output
 gui.storing=Storing
 gui.skyBlocked=Sky blocked
+gui.noWind=No wind
 gui.using=Using
 gui.needed=Needed
 mekanism.gui.bufferfree=Free Buffer
@@ -580,6 +584,7 @@ gui.maxWaterOutput=Max Water Output
 gui.stockControl=Stock Control
 gui.allowDefault=Allow Default
 gui.sizeMode=Size Mode
+mekanism.gui.sizeModeConflict=has no effect currently, because single item mode is turned on.
 
 gui.reactor.injectionRate=Injection Rate
 
@@ -615,6 +620,7 @@ gui.factory.Combining=Combining
 gui.factory.Purifying=Purifying
 gui.factory.Injecting=Injecting
 gui.factory.Infusing=Infusing
+gui.factory.Sawing=Sawing
 
 gui.seismicReader.short=S. Reader
 gui.seismicReader.solids=Solids
@@ -665,9 +671,13 @@ gui.password.identical=Identical
 gui.password.invalid=Invalid
 gui.password=Password
 
-gui.logisticalSorter.default=Default
-gui.logisticalSorter.auto=Auto
-gui.logisticalSorter.roundRobin=Round-robin
+mekanism.gui.logisticalSorter.default=Default
+mekanism.gui.logisticalSorter.autoEject=Auto
+mekanism.gui.logisticalSorter.autoEject.tooltip=Ejects items automatically to connected inventories.
+mekanism.gui.logisticalSorter.roundRobin=RR
+mekanism.gui.logisticalSorter.roundRobin.tooltip=Cycles between all connected inventories when sending items.
+mekanism.gui.logisticalSorter.singleItem=Single
+mekanism.gui.logisticalSorter.singleItem.tooltip=Sends a single item instead of a whole stack each time (overrides min and max set in ItemStack filters).
 
 gui.teleporter.notReady=Not ready
 gui.teleporter.ready=Ready
@@ -741,7 +751,7 @@ tooltip.recipeType=Recipe type
 tooltip.hold=Hold
 tooltip.forDesc=for a description
 tooltip.forDetails=for details
-tooltip.fireMode=Fire Mode
+mekanism.tooltip.fireMode=Fire Mode: %s
 tooltip.capacity=Capacity
 tooltip.pumpRate=Pump Rate
 tooltip.items=Items
@@ -755,6 +765,7 @@ tooltip.diversionDesc=Controllable by redstone
 tooltip.noGas=No gas stored
 tooltip.stored=Stored
 tooltip.channel=Channel
+tooltip.walkie_disabled=Voice server disabled.
 tooltip.mode=Mode
 tooltip.efficiency=Efficiency
 tooltip.modeToggle=Mode toggled to
@@ -769,7 +780,7 @@ tooltip.tile=Tile
 tooltip.keysFound=Key(s) found
 tooltip.noKey=No key
 tooltip.hp=HP
-tooltip.configureState=Configure State
+mekanism.tooltip.configureState=Configure State: %s
 tooltip.outputRate=Output Rate
 tooltip.insufficientFuel=Insufficient Fuel
 tooltip.readyForReaction=Ready for Reaction
@@ -784,7 +795,7 @@ tooltip.conduction=Conduction
 tooltip.insulation=Insulation
 tooltip.heatCapacity=Heat Capacity
 
-tooltip.portableTank.bucketMode=Bucket Mode
+mekanism.tooltip.portableTank.bucketMode=Bucket Mode: %s
 
 tooltip.disassembler.normal=normal
 tooltip.disassembler.slow=slow
@@ -808,7 +819,7 @@ tooltip.freerunner.disabled=Disabled
 tooltip.flamethrower.combat=Combat
 tooltip.flamethrower.heat=Heat
 tooltip.flamethrower.inferno=Inferno
-tooltip.flamethrower.modeBump=Flamethrower mode bumped to
+mekanism.tooltip.flamethrower.modeBump=Flamethrower mode bumped to %s
 
 tooltip.seismicReader.needsEnergy=Not enough energy to interpret vibration
 tooltip.seismicReader.noVibrations=Unable to discover any vibrations
@@ -978,9 +989,6 @@ reactor.depleted.desc=The reactor has insufficient fuel to sustain a reaction
 # Creative tab
 itemGroup.tabMekanism=Mekanism
 
-# NEI stuff
-nei.chemicalInjectionChamber=C. Injection Chamber
-
 ############
 # GENERATORS
 ############
@@ -1132,3 +1140,24 @@ mekanism.configgui.ctgy.tools.tools=Tools Balance
 mekanism.configgui.ctgy.tools.general.tooltip=Settings regarding MekanismTools' general configuration
 mekanism.configgui.ctgy.tools.armor.tooltip=Settings regarding the protection values and balance of MekanismTools armor sets
 mekanism.configgui.ctgy.tools.tools.tooltip=Settings regarding the efficiency values and balance of MekanismTools tool sets
+
+# Commands
+cmd.mek.testrules.usage=Setup world rules for testing (no mob spawning, daylight cycle or weather)
+cmd.mek.testrules=Mob spawning, daylight cycle and weather disabled!
+cmd.mek.tp.usage=Teleport to new coordinates, saving last position on a stack
+cmd.mek.tp=Teleported to %d,%d,%d - saved last position on stack
+cmd.mek.tp.missing.args=Teleporting requires three coordinates: x, y, z
+cmd.mek.tpop.usage=Return to last position on stack
+cmd.mek.tpop=Returned to %d,%d,%d; %d positions on stack
+cmd.mek.tpop.empty.stack=No positions on stack
+
+cmd.mek.chunk.watch.usage=Add caller's chunk to watch list for loading/unloading events
+cmd.mek.chunk.watch=Chunk %d,%d added to watch list
+cmd.mek.chunk.unwatch.usage=Remove caller's chunk from watch list for chunk loading/unloading events
+cmd.mek.chunk.unwatch=Chunk %d,%d removed from watch list
+cmd.mek.chunk.clear.usage=Remove all chunks from watch list for chunk loading/unloading events
+cmd.mek.chunk.clear=%d chunks removed from watch list
+cmd.mek.chunk.flush=%d chunks unloaded
+
+#chat messages
+chat.mek.multiblockformed=Multiblock Formed

@@ -271,6 +271,7 @@ necronomicon.information.dreadplague=恐惧侵染
 necronomicon.information.placesofpower=Places of Power
 necronomicon.information.structures=Structures
 necronomicon.information.pantheon=Pantheon
+necronomicon.information.casting=Casting
 
 #死灵之书文字
 #注意：每个字符串的最大字数为368个（184汉字）。
@@ -527,6 +528,8 @@ necronomicon.text.entity.sacthoth.1=末日先驱萨多斯能在黑暗领域中�
 necronomicon.text.entity.sacthoth.2=萨多斯是在黑暗领域里的最为强大的生物，同时也是活阴影的统治者。他离开黑暗领域出现在你面前的唯一方法就是通过湮灭弹的爆炸。他有一把能撕裂活物灵魂的强大的剑。
 necronomicon.text.entity.coraliumsquid.1=被珊瑚感染的鱿鱼发现在深渊荒芜之地里的液态珊瑚池中。
 necronomicon.text.entity.coraliumsquid.2=这些鱿鱼已经被珊瑚侵染改造，使他们能够将侵染转移到感染者所感染的受害者身上，或者它们喷洒的目标上。
+necronomicon.text.entity.shuboffspring.1=Dark Offspring are vile beasts resembling a goat mixed with a dead tree, and are the offspring of Shub-Niggurath.
+necronomicon.text.entity.shuboffspring.2=These beasts can rarely be found in forests (most common in Roofed Forests and Darklands Forests). You know you're getting close to one if you start hearing sheep out of nowhere. You're most likely to encounter one at night during a new moon.
 
 necronomicon.text.rituals.info=检查关于仪式的部分信息，或者其它章节有关可用仪式的信息。“位置”指定仪式能在哪里进行。
 
@@ -576,8 +579,16 @@ necronomicon.text.coraliumplague.2=珊瑚侵染解药可以用水瓶、荒原之
 necronomicon.text.dreadplague.1=恐惧侵染是一种源自恐惧之地的疾病。它是一种传染性很强的疾病，能在宿主之间迅速传播，但也会改变受它影响的人周围的环境，从而使侵染变得更强。唯一一个对恐惧侵染完全免疫的地方是奥穆索。
 necronomicon.text.dreadplague.2=恐惧侵染解药可以用水瓶，恐惧之地树苗，恐惧碎片和恐惧修格斯腐肉来制作。
 
+necronomicon.text.placesofpower.info=Structures of devotion appeasing the Great Old Ones, allowing for safe PE generation.
+
 necronomicon.text.placesofpower.1=Places of Power are shrine-like structures built to show devotion to the Great Old Ones. These sites of worship spread the word of the Great Old Ones, while also enabling harvesting of PE without disruptions. Along with the safe retrieval of energy, these structures can also boost various stats of the statues contained in them.
 necronomicon.text.placesofpower.2=In the structures section you can view the structures you've gained knowledge on how to build, their dimensions and what stats they amplify (if any). The point where you form the structure (by sneak right-clicking it with your Necronomicon) will change block in the preview to indicate where it is.
+
+necronomicon.text.spells.info=Check the information section for information regarding spells, or the compendium for available spells.
+
+necronomicon.text.spells.1=In order to get started with spells you need to obtain some scrolls to inscribe the spells onto. Most of the available scrolls (except the greater) can be created through rituals or bought from Remnants. Spells in the compendium show which scroll they require (if the center slot is empty you can use any scroll).
+necronomicon.text.spells.2=Currently the quality of the scroll used has no impact on the inscribed spell, but in a future update some aspects of a spell will improve depending on which scroll you use. The unique scrolls will likely do something beyond that.
+necronomicon.text.spells.3=Spellcasting is done by right-clicking while holding an inscribed scroll (you also need an item that holds PE in your inventory for the casting to tap into). If the spell type is "Charging", you need to hold down the mouse button for 3 seconds, otherwise it's instant. Depending on the spell, you might need to target something specific while casting.
 
 necronomicon.text.wip=这章节还未完成。
 
@@ -770,6 +781,12 @@ ac.ritual.resurrection=黑暗复活
 ac.ritual.resurrection.desc=提供类似于生命六种元素的结晶混合物，一个活祭品和一个写有堕落伙伴名字的命名牌，来复活它。结晶的大小与堕落伙伴的生成规模有关（例如一只鸡，一群马，或者介于它们之间的什么东西）。但是生命是有限的。
 ac.ritual.purging=净化仪式
 ac.ritual.purging.desc=提供4个结晶钙簇和大量的能量，你从该地区净化了所有的恐惧侵染（和恐怖之地），并在此停下来（也杀死附近的生物）。虽然它使该地区不适合居住，没有侵染将能够在这里蔓延。在恐惧之地不起作用。
+ac.ritual.basicScroll=Basic Scroll
+ac.ritual.basicScroll.desc=A Basic Scroll is created with 4 Books
+ac.ritual.lesserScroll=Lesser Scroll
+ac.ritual.lesserScroll.desc=A Lesser Scroll is created with 2 Books, a Wasteland's Thorn and a Luminous Thistle
+ac.ritual.moderateScroll=Moderate Scroll
+ac.ritual.moderateScroll.desc=A Moderate Scroll is created with 2 Books, a Dread Fragment and a Dreaded Shard of Abyssalnite
 
 #Spells
 ac.spell.lifedrain=Life Drain
@@ -797,6 +814,8 @@ ac.spell.teleporthostiles.desc=By sacrificing the life of an innocent child, the
 
 #Places of Power
 ac.structure.basic.description=A small and simple shrine. Provides a range boost to affected statues.
+ac.structure.totempole.description=Now you just need a campfire, some instruments and a jingle dress!
+ac.structure.archway.description=A small piece that can be used in a decorative manner. Any stair, slab and wall blocks can be used to form it.
 
 #撕裂
 ac.rending.shadowgem=阴影宝石可以从活阴影收获阴影能量得到。
@@ -940,7 +959,7 @@ tile.ingotblock.2.name=恐惧块
 tile.ingotblock.3.name=伊桑斯块
 tile.coraliumstone.name=蕴含珊瑚的石头
 tile.odbcore.name=湮灭弹核心
-tile.crate.name=木制板条箱
+tile.woodencrate.name=木制板条箱
 tile.abyportal.name=深渊传送门
 tile.darkstoneslab1.name=黑暗石台阶
 tile.darkstoneslab2.name=黑暗石双层台阶
@@ -1114,7 +1133,7 @@ crystalfragment.postfix=%s断片
 #物品
 item.devsword.name=恶魔之刃
 item.oc.name=湮灭媒介
-item.staff.name=守门者之杖
+item.gatekeeperstaff.name=守门者之杖
 item.gatewaykey.name=门钥匙
 item.powerstonetracker.name=蕴能石追踪器
 item.eoa.name=深渊之眼
@@ -1182,7 +1201,7 @@ item.fishp.name=盘子上的熟鱼
 item.dirtyplate.name=脏盘子
 item.friedegg.name=煎鸡蛋
 item.eggp.name=盘子上的煎鸡蛋
-item.cloth.name=洗碟布
+item.washcloth.name=洗碟布
 item.shadowfragment.name=阴影碎片
 item.shadowshard.name=阴影宝石碎片
 item.shadowgem.name=阴影宝石
@@ -1268,7 +1287,7 @@ item.ethaxiumplate.name=伊桑斯胸甲
 item.ethaxiumlegs.name=伊桑斯护腿
 item.ethaxiumboots.name=伊桑斯靴子
 item.ethaxiumu.name=伊桑斯升级套件
-item.coin.name=钱币
+item.blankcoin.name=钱币
 item.cthulhucoin.name=刻有克苏鲁的钱币
 item.eldercoin.name=刻有接骨木的钱币
 item.jzaharcoin.name=刻有扎哈尔的钱币
@@ -1340,6 +1359,7 @@ item.antidote.coralium.name=珊瑚侵染解药
 item.antidote.dread.name=恐惧侵染解药
 item.door_dlt.name=Darklands Oak Wood Door
 item.door_drt.name=Dreadlands Wood Door
+item.cha_rcoal.name=Cha'rcoal
 
 #实体
 entity.abyssalcraft.depthsghoul.name=深渊食尸鬼
@@ -1390,6 +1410,7 @@ entity.abyssalcraft.demonchicken.name=恶魔鸡
 entity.abyssalcraft.evilsheep.name=羊
 entity.abyssalcraft.demonsheep.name=恶魔羊
 entity.abyssalcraft.coraliumsquid.name=被珊瑚感染的鱿鱼
+entity.abyssalcraft.shuboffspring.name=Dark Offspring
 
 #药水
 potion.Cplague=珊瑚侵染

@@ -271,6 +271,7 @@ necronomicon.information.dreadplague=The Dread Plague
 necronomicon.information.placesofpower=Places of Power
 necronomicon.information.structures=Structures
 necronomicon.information.pantheon=Pantheon
+necronomicon.information.casting=Casting
 
 #Necronomicon Text
 #Note: the maximum amount of letters per string is 368
@@ -523,6 +524,8 @@ necronomicon.text.entity.sacthoth.1=Sacthoth, Harbinger of Doom is found in The 
 necronomicon.text.entity.sacthoth.2=Sacthoth is the strongest being in The Dark Realm, and the ruler of living shadows. The only way for him to leave The Dark Realm is through the explosion of an Oblivion Deathbomb. He carries a powerful sword capable of tearing out the souls of the living.
 necronomicon.text.entity.coraliumsquid.1=Coralium Infested Squids are found in pools of Liquid Coralium inside the Abyssal Wasteland.
 necronomicon.text.entity.coraliumsquid.2=These Squids have been transformed by the Coralium Plague, enabling them to transfer it to victims touched by them, or the ink they squirt on their targets.
+necronomicon.text.entity.shuboffspring.1=Dark Offspring are vile beasts resembling a goat mixed with a dead tree, and are the offspring of Shub-Niggurath.
+necronomicon.text.entity.shuboffspring.2=These beasts can rarely be found in forests (most common in Roofed Forests and Darklands Forests). You know you're getting close to one if you start hearing sheep out of nowhere. You're most likely to encounter one at night during a new moon.
 
 necronomicon.text.rituals.info=Check the information section for information regarding rituals, or the other sections for information about available rituals. "Location" specifies where the ritual can be performed.
 
@@ -572,8 +575,16 @@ necronomicon.text.coraliumplague.2=An antidote for the Coralium Plague can be ma
 necronomicon.text.dreadplague.1=The Dread Plague is a disease originating from the Dreadlands. It's a very infectious disease, swiftly travelling between hosts, but also transforming the ground around those afflicted by it, thus allowing the plague to grow stronger. The only place known to be completely immune to the Dread Plague is Omothol.
 necronomicon.text.dreadplague.2=An antidote for the Dread Plague can be made with a Water Bottle, a Dreadlands Sapling, a Dread Fragment and a piece of Dreaded Shoggoth Flesh.
 
+necronomicon.text.placesofpower.info=Structures of devotion appeasing the Great Old Ones, allowing for safe PE generation.
+
 necronomicon.text.placesofpower.1=Places of Power are shrine-like structures built to show devotion to the Great Old Ones. These sites of worship spread the word of the Great Old Ones, while also enabling harvesting of PE without disruptions. Along with the safe retrieval of energy, these structures can also boost various stats of the statues contained in them.
 necronomicon.text.placesofpower.2=In the structures section you can view the structures you've gained knowledge on how to build, their dimensions and what stats they amplify (if any). The point where you form the structure (by sneak right-clicking it with your Necronomicon) will change block in the preview to indicate where it is.
+
+necronomicon.text.spells.info=Check the information section for information regarding spells, or the compendium for available spells.
+
+necronomicon.text.spells.1=In order to get started with spells you need to obtain some scrolls to inscribe the spells onto. Most of the available scrolls (except the greater) can be created through rituals or bought from Remnants. Spells in the compendium show which scroll they require (if the center slot is empty you can use any scroll).
+necronomicon.text.spells.2=Currently the quality of the scroll used has no impact on the inscribed spell, but in a future update some aspects of a spell will improve depending on which scroll you use. The unique scrolls will likely do something beyond that.
+necronomicon.text.spells.3=Spellcasting is done by right-clicking while holding an inscribed scroll (you also need an item that holds PE in your inventory for the casting to tap into). If the spell type is "Charging", you need to hold down the mouse button for 3 seconds, otherwise it's instant. Depending on the spell, you might need to target something specific while casting.
 
 necronomicon.text.wip=This section is incomplete.
 
@@ -766,6 +777,12 @@ ac.ritual.resurrection=Dark Resurrection
 ac.ritual.resurrection.desc=By presenting crystallized compounds resembling the elements of life, a living sacrifice and a Name Tag with the name of a fallen companion, you resurrect it. The Crystal size scale with the companion (Shards for something the size of a Chicken, Clusters for a Horse, normal for anything inbetween). Life has limits, however.
 ac.ritual.purging=Ritual of Purging
 ac.ritual.purging.desc=By presenting 4 Crystallized Calcium Clusters and a large amount of energy, you purge every trace of the Dread Plague (and the Dreadlands) from the area, putting a stop to it here (also kills nearby mobs). While it renders the area uninhabitable, no plagues will be able to spread here. Doesn't work in the Dreadlands.
+ac.ritual.basicScroll=Basic Scroll
+ac.ritual.basicScroll.desc=A Basic Scroll is created with 4 Books
+ac.ritual.lesserScroll=Lesser Scroll
+ac.ritual.lesserScroll.desc=A Lesser Scroll is created with 2 Books, a Wasteland's Thorn and a Luminous Thistle
+ac.ritual.moderateScroll=Moderate Scroll
+ac.ritual.moderateScroll.desc=A Moderate Scroll is created with 2 Books, a Dread Fragment and a Dreaded Shard of Abyssalnite
 
 #Spells
 ac.spell.lifedrain=Life Drain
@@ -793,6 +810,8 @@ ac.spell.teleporthostiles.desc=By sacrificing the life of an innocent child, the
 
 #Places of Power
 ac.structure.basic.description=A small and simple shrine. Provides a range boost to affected statues.
+ac.structure.totempole.description=Now you just need a campfire, some instruments and a jingle dress!
+ac.structure.archway.description=A small piece that can be used in a decorative manner. Any stair, slab and wall blocks can be used to form it.
 
 #Rending
 ac.rending.shadowgem=Shadow Gems are made from harvesting Shadow Energy from living shadows.
@@ -936,7 +955,7 @@ tile.ingotblock.2.name=Block of Dreadium
 tile.ingotblock.3.name=Block of Ethaxium
 tile.coraliumstone.name=Coralium Infused Stone
 tile.odbcore.name=ODB Core
-tile.crate.name=Wooden Crate
+tile.woodencrate.name=Wooden Crate
 tile.abyportal.name=Abyssal Gateway
 tile.darkstoneslab1.name=Darkstone Slab
 tile.darkstoneslab2.name=Darkstone Doubleslab
@@ -1110,7 +1129,7 @@ crystalfragment.postfix=%s Fragment
 #Items
 item.devsword.name=The Dev Blade
 item.oc.name=Oblivion Catalyst
-item.staff.name=Staff of The Gatekeeper
+item.gatekeeperstaff.name=Staff of The Gatekeeper
 item.gatewaykey.name=Gateway Key
 item.powerstonetracker.name=Powerstone Tracker
 item.eoa.name=Eye of The Abyss
@@ -1178,7 +1197,7 @@ item.fishp.name=Fish on A Plate
 item.dirtyplate.name=Dirty Plate
 item.friedegg.name=Fried Egg
 item.eggp.name=Fried Egg on A Plate
-item.cloth.name=Washcloth
+item.washcloth.name=Washcloth
 item.shadowfragment.name=Shadow Fragment
 item.shadowshard.name=Shadow Gem Shard
 item.shadowgem.name=Shadow Gem
@@ -1264,7 +1283,7 @@ item.ethaxiumplate.name=Ethaxium Chestplate
 item.ethaxiumlegs.name=Ethaxium Leggings
 item.ethaxiumboots.name=Ethaxium Boots
 item.ethaxiumu.name=Ethaxium Upgrade Kit
-item.coin.name=Coin
+item.blankcoin.name=Coin
 item.cthulhucoin.name=Cthulhu Engraved Coin
 item.eldercoin.name=Elder Engraved Coin
 item.jzaharcoin.name=J'zahar Engraved Coin
@@ -1336,6 +1355,7 @@ item.antidote.coralium.name=Coralium Plague Antidote
 item.antidote.dread.name=Dread Plague Antidote
 item.door_dlt.name=Darklands Oak Wood Door
 item.door_drt.name=Dreadlands Wood Door
+item.cha_rcoal.name=Cha'rcoal
 
 #Entities
 entity.abyssalcraft.depthsghoul.name=Depths Ghoul
@@ -1386,6 +1406,7 @@ entity.abyssalcraft.demonchicken.name=Demon Chicken
 entity.abyssalcraft.evilsheep.name=Sheep
 entity.abyssalcraft.demonsheep.name=Demon Sheep
 entity.abyssalcraft.coraliumsquid.name=Coralium Infested Squid
+entity.abyssalcraft.shuboffspring.name=Dark Offspring
 
 #Potions
 potion.Cplague=Coralium Plague

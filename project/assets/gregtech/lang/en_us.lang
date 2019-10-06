@@ -8,6 +8,8 @@ death.attack.explosion.player=%s exploded with help of %s.
 death.attack.heat.player=%s was boiled alive by %s.
 death.attack.crusher=%s was grinded dead.
 
+enchantment.disjunction=Disjunction
+
 gregtech.top.energy_stored=Energy:
 gregtech.top.progress=Progress:
 gregtech.top.working_disabled=Working Disabled
@@ -25,14 +27,19 @@ gregtech.multiblock.electric_blast_furnace.description=The Electric Blast Furnac
 gregtech.multiblock.multi_smelter.description=The Multi Smelter is multiblock structure used for smelting massive amounts of items at once. Different tiers of coils provide speed boost and energy efficiency gain. 16 is base value of items smelted per operation, and can be multiplied by using higher level coils.
 gregtech.multiblock.large_boiler.description=Large Boilers are multiblocks that generate steam from energy source and water. Usually either solid fuel or some high-density fluid acts like energy source for large boiler. Tiers differ only by amount of steam outputted.
 gregtech.multiblock.large_turbine.description=Large Turbines are multiblocks that generate power from steam, gases and plasma by them spinning turbine's rotor. Energy output is based on rotor efficiency and current speed of turbine.
-metaitem.dust.tooltip.purify=Throw into Cauldron to get clean Dust
-metaitem.generic.fluid_container.tooltip=%d/%dL %s
-metaitem.generic.fluid_container.tooltip_empty=Empty
-metaitem.generic.electric_item.tooltip=%d/%d EU - Tier §e%d
-metaitem.int_circuit.configuration=Configuration: %d
+
 item.invalid.name=Invalid item
 fluid.empty=Empty
 
+metaitem.generic.fluid_container.tooltip=%d/%dL %s
+metaitem.generic.fluid_container.tooltip_empty=Empty
+metaitem.generic.electric_item.tooltip=%d/%d EU - Tier §e%d
+metaitem.electric.discharge_mode.enabled=§eDischarge Mode Enabled
+metaitem.electric.discharge_mode.disabled=§eDischarge Mode Disabled
+metaitem.electric.discharge_mode.tooltip=Shift click to toggle discharge mode
+
+metaitem.dust.tooltip.purify=Throw into Cauldron to get clean Dust
+metaitem.int_circuit.configuration=Configuration: %d
 metaitem.credit.copper.name=Copper Credit
 metaitem.credit.copper.tooltip=0.125 Credits
 metaitem.credit.cupronickel.name=Cupronickel Credit
@@ -66,6 +73,15 @@ metaitem.shape.empty.name=Empty Shape Plate
 metaitem.shape.empty.tooltip=Raw Plate to make Molds and Extrude Shapes
 
 metaitem.dynamite.name=Dynamite
+
+metaitem.power_unit.lv.name=Power Unit (LV)
+metaitem.power_unit.mv.name=Power Unit (MV)
+metaitem.power_unit.hv.name=Power Unit (HV)
+metaitem.jackhammer_base.name=JackHammer Base (HV)
+metaitem.nano_saber.name=Nano Saber
+metaitem.nano_saber.tooltip=Ryujin no ken wo kurae!
+metaitem.energy_field_projector.name=Energy Field Projector
+metaitem.energy_field_projector.tooltip=Repels objects in close proximity to wearer
 
 metaitem.shape.mold.plate.name=Mold (Plate)
 metaitem.shape.mold.plate.tooltip=Mold for making Plates
@@ -609,7 +625,7 @@ metaitem.tool.file.name=%s File
 metaitem.tool.crowbar.name=%s Crowbar
 metaitem.tool.crowbar.tooltip=Dismounts covers and rotates rails
 metaitem.tool.screwdriver.name=%s Screwdriver
-metaitem.tool.screwdriver.tooltip=/nRight click on a machine side to increment/nit's output tank filter index/nWhen output tank filter is set up,/nonly fluids from specified tank index/nare allowed to be outputted on that side/nClick on cover to configure it
+metaitem.tool.screwdriver.tooltip=Click on cover to configure it
 metaitem.tool.mortar.name=%s Mortar
 metaitem.tool.wire_cutter.name=%s Wire Cutter
 metaitem.tool.scoop.name=%s Scoop
@@ -651,12 +667,24 @@ metaitem.turbine_rotor.name=%s Turbine Rotor
 metaitem.turbine_rotor.tooltip=Turbine Rotors for your power station
 metaitem.tool.magnifying_glass.name=%s Magnifying Glass
 
+metaitem.jack_hammer.mode.three_by_three=3x3 Panel
+metaitem.jack_hammer.mode.vertical_line=Vertical Line
+metaitem.jack_hammer.mode.horizontal_line=Horizontal Line
+metaitem.jack_hammer.mode.single_block=Single Block
+
+metaitem.behavior.mode_switch.tooltip=Shift Click to switch mode
+metaitem.behavior.mode_switch.mode_switched=§eMode Set to: %s
+metaitem.behavior.mode_switch.current_mode=Mode: %s
+
 metaitem.tool.tooltip.primary_material=Material: %s (%s lvl)
 metaitem.tool.tooltip.attack_damage=Attack damage: %d
 metaitem.tool.tooltip.mining_speed=Mining speed: %d
 metaitem.tool.tooltip.durability=Durability: %d/%d
 metaitem.tool.tooltip.rotor.efficiency=Rotor Efficiency: %d%%
 metaitem.tool.tooltip.hammer.extra_drop=Has a chance to drop double crushed ores
+
+cover.filter.blacklist.disabled=Whitelist
+cover.filter.blacklist.enabled=Blacklist
 
 cover.ore_dictionary_filter.title=Ore Dictionary Filter
 cover.ore_dictionary_filter.title1=Ore Dictionary Name
@@ -669,6 +697,10 @@ cover.fluid_filter.mode.filter_drain=Filter Drain
 cover.item_filter.title=Item Filter
 cover.filter.mode.filter_insert=Filter Insert
 cover.filter.mode.filter_extract=Filter Extract
+cover.item_filter.ignore_damage.enabled=Ignore Damage
+cover.item_filter.ignore_damage.disabled=Respect Damage
+cover.item_filter.ignore_nbt.enabled=Ignore NBT
+cover.item_filter.ignore_nbt.disabled=Respect NBT
 
 cover.conveyor.title=Conveyor Cover Settings (%s)
 cover.conveyor.transfer_rate=%s items/sec
@@ -682,13 +714,25 @@ cover.robotic_arm.title=Robotic Arm Settings (%s)
 cover.robotic_arm.transfer_mode.transfer_any=Transfer Any
 cover.robotic_arm.transfer_mode.transfer_exact=Supply Exact
 cover.robotic_arm.transfer_mode.keep_exact=Keep Exact
-cover.robotic_arm.transfer_mode.description=§eTransfer Any§r - in this mode, cover will transfer as much items matching it's filter as possible./n§eSupply Exact§r - in this mode, cover will supply items in portions specified in item filter slots (or transfer rate for ore dictionary filter). If amount of items is less than portion size, items won't be moved./n§eKeep Exact§r - in this mode, cover will keep specified amount of items in the destination inventory, supplying additional amount of items if required./n§7Tip: left/right click on filter slots to change item amount,  use shift clicking to change amount faster.
+cover.robotic_arm.transfer_mode.description=§eTransfer Any§r - in this mode, cover will transfer as much items matching it's filter as possible./n§eSupply Exact§r - in this mode, cover will supply items in portions specified in item filter slots (or variable under this button for ore dictionary filter). If amount of items is less than portion size, items won't be moved./n§eKeep Exact§r - in this mode, cover will keep specified amount of items in the destination inventory, supplying additional amount of items if required./n§7Tip: left/right click on filter slots to change item amount,  use shift clicking to change amount faster.
 
 cover.pump.title=Pump Cover Settings (%s)
 cover.pump.transfer_rate=%s mb/s
 cover.pump.mode.export=Mode: Export
 cover.pump.mode.import=Mode: Import
 cover.pump.fluid_filter.title=Fluid Filter
+
+cover.machine_controller.name=Machine Controller Settings
+cover.machine_controller.normal=Normal
+cover.machine_controller.inverted=Inverted
+cover.machine_controller.redstone=Min Redstone Strength: %d
+cover.machine_controller.mode.machine=Control Machine
+cover.machine_controller.mode.cover_up=Control Cover (Top)
+cover.machine_controller.mode.cover_down=Control Cover (Bottom)
+cover.machine_controller.mode.cover_south=Control Cover (South)
+cover.machine_controller.mode.cover_north=Control Cover (North)
+cover.machine_controller.mode.cover_east=Control Cover (East)
+cover.machine_controller.mode.cover_west=Control Cover (West)
 
 # %s is a localized material name
 item.material.oreprefix.oreBlackgranite=Granite %s Ore
@@ -1523,6 +1567,7 @@ behaviour.soft_hammer=Click machine to allow/disallow it to work
 behaviour.lighter.tooltip=Can light things on fire
 behaviour.lighter.uses=Remaining uses: %d
 behavior.plunger.description=Right click on machine to clear 1000 mb out of it's output tank./nUse while sneaking to clear 1000 mb out of machine's input tank./nInput tank clearing works only on GTCE machines!
+behavior.toggle_energy_consumer.tooltip=Click to toggle mode
 
 enchantment.damage.endermen=Disjunction
 enchantment.damage.radioactivity=Radioactivity
@@ -1636,10 +1681,8 @@ tile.multiblock_casing.assembler.name=Assembler Machine Casing
 tile.multiblock_casing.fusion.name=Fusion Machine Casing
 tile.multiblock_casing.fusion_mk2.name=Fusion Machine Casing MK II
 
-#Machine general things
-gregtech.machine.tooltip.added_by=§c§oAdded by: %s
-
 # Chests
+gregtech.machine.small_wooden_chest.name=Small Wooden Chest
 gregtech.machine.wooden_chest.name=Wooden Chest
 gregtech.machine.bronze_chest.name=Bronze Chest
 gregtech.machine.steel_chest.name=Steel Chest
@@ -1770,6 +1813,14 @@ gregtech.machine.magic_energy_converter.name=Magic Energy Converter
 gregtech.machine.magic_energy_converter.tooltip=Voltage OUT: §a128 §7(§aMV§7)/nCollects essentia from containers within 16 blocks/nConsumes 20 Potentia per second
 
 # Machines
+gregtech.machine.block_breaker.lv.name=Basic Block Breaker
+gregtech.machine.block_breaker.mv.name=Advanced Block Breaker
+gregtech.machine.block_breaker.hv.name=Advanced Block Breaker II
+gregtech.machine.block_breaker.ev.name=Advanced Block Breaker III
+gregtech.machine.block_breaker.tooltip=Mines block on front face and collects it's drops
+gregtech.machine.block_breaker.consumption=Consumes §e%d EU§7 per operation
+gregtech.machine.block_breaker.speed_bonus=Speed Bonus: §e%d%%
+
 gregtech.machine.electric_furnace.lv.name=Basic Electric Furnace
 gregtech.machine.electric_furnace.mv.name=Advanced Electric Furnace
 gregtech.machine.electric_furnace.hv.name=Advanced Electric Furnace II
@@ -1818,7 +1869,7 @@ gregtech.machine.bender.mv.name=Advanced Bending Machine
 gregtech.machine.bender.hv.name=Advanced Bending Machine II
 gregtech.machine.bender.ev.name=Advanced Bending Machine III
 
-gregtech.machine.brewery.tooltip=Brewing your Drinks
+gregtech.machine.brewery.tooltip=Compact and efficient potion brewing
 
 gregtech.machine.brewery.lv.name=Basic Brewery
 gregtech.machine.brewery.mv.name=Advanced Brewery
@@ -1897,7 +1948,7 @@ gregtech.machine.fermenter.mv.name=Advanced Fermenter
 gregtech.machine.fermenter.hv.name=Advanced Fermenter II
 gregtech.machine.fermenter.ev.name=Advanced Fermenter III
 
-gregtech.machine.fluid_canner.tooltip=Puts Fluids into and out of Containers
+gregtech.machine.fluid_canner.tooltip=Puts fluids into and out of fluid containers
 
 gregtech.machine.fluid_canner.lv.name=Basic Fluid Canner
 gregtech.machine.fluid_canner.mv.name=Advanced Fluid Canner
@@ -2146,9 +2197,18 @@ gregtech.machine.air_collector.description=Collects air from adjacent blocks
 gregtech.machine.tesla_coil.name=Tesla Coil
 gregtech.machine.tesla_coil.description=Damages all living entities within 7 blocks range/nConsumes 2500 EU for 1 damage point/nInternal buffer Capacity: §e256k EU
 
+#Fisher
+gregtech.machine.fisher.lv.name=Basic Fisher
+gregtech.machine.fisher.mv.name=Advanced Fisher
+gregtech.machine.fisher.hv.name=Advanced Fisher II
+gregtech.machine.fisher.ev.name=Advanced Mechanical Cat III
+gregtech.machine.fisher.tooltip=Costs string to fish. Each string is good for once.
+gregtech.machine.fisher.speed=Gets a fish (or whatnot) every %d ticks
+gregtech.machine.fisher.requirement=Requires a square of water with size of %d blocks directly below.
+
 # General machinery
-gregtech.machine.basic.output_override.reset=Output filter: all tanks.
-gregtech.machine.basic.output_override.set=Output filter: tank #%s.
+gregtech.machine.basic.input_from_output_side.allow=Allow Input from Output Side
+gregtech.machine.basic.input_from_output_side.disallow=Disallow Input from Output Side
 
 # Achievement ores
 achievement.Naquadah=Find Naquadah Ore
@@ -2711,6 +2771,11 @@ gregtech.machine.rotor_holder.zpm.name=Rotor Holder (ZPM)
 gregtech.machine.rotor_holder.uv.name=Rotor Holder (UV)
 gregtech.machine.rotor_holder.max.name=Rotor Holder (MAX)
 
+gregtech.machine.fluid_tank.fluid=Contains %s mb of %s
+
+gregtech.machine.item_controller.tooltip.redstone=Requires Redstone Input To Work
+gregtech.machine.item_controller.tooltip.consumption=While working, constantly consumes %d EU/t
+
 # Universal tooltips
 gregtech.universal.tooltip.voltage_in=Voltage IN: §a%d §7(§a%s§7)
 gregtech.universal.tooltip.voltage_out=Voltage OUT: §a%d §7(§a%s§7)
@@ -2721,8 +2786,7 @@ gregtech.universal.tooltip.amperage_out=Amperage OUT: §e%d
 gregtech.universal.tooltip.amperage_out_till=Amperage OUT up to: §e%d
 gregtech.universal.tooltip.item_storage_capacity=Item Slots: %d
 gregtech.universal.tooltip.fluid_storage_capacity=Fluid Capacity: %d mb
-
-gregtech.machine.fluid_tank.fluid=Contains %s mb of %s
+gregtech.universal.tooltip.max_voltage_in=Max Voltage IN: §a%d §7(§a%s§7)
 
 gregtech.recipe.total=Total: %d EU
 gregtech.recipe.eu=Usage: %d EU/t
@@ -2748,6 +2812,11 @@ gregtech.fluid.state_gas=§7State: Gaseous
 gregtech.fluid.state_liquid=§7State: Liquid
 gregtech.gui.fuel_amount=Fuel Amount:
 gregtech.gui.fluid_amount=Fluid Amount:
+gregtech.gui.toggle_view.disabled=Toggle View (Fluids)
+gregtech.gui.toggle_view.enabled=Toggle View (Items)
+gregtech.gui.overclock.enabled=Allow Overclocking
+gregtech.gui.overclock.disabled=Disable Overclocking
+gregtech.gui.sort=Sort
 
 gregtech.item_filter.empty_item=Empty (No Item)
 gregtech.item_filter.footer=§eClick with item to override

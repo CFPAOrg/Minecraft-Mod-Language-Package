@@ -18,8 +18,8 @@
 * [屏幕](screen1.md)
 
 ### 存储
-* [硬盘](diskDrive.md)
-* [磁盘阵列](raid.md)
+* [软盘驱动器](diskDrive.md)
+* [硬盘阵列](raid.md)
 
 ### 扩展
 * [适配器](adapter.md)

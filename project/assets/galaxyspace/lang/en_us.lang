@@ -48,6 +48,13 @@ tile.futureglass_magneta.name=Magneta Future Glass
 tile.futureglass_orange.name=Orange Future Glass
 tile.futureglass_white.name=White Future Glass
 
+tile.mars_diamond.name=Diamond Ore
+tile.mars_gold.name=Gold Ore
+tile.mars_coal.name=Coal Ore
+tile.mars_redstone.name=Redstone Ore
+tile.mars_silicon.name=Silicon Ore
+tile.mars_aluminum.name=Aluminum Ore
+
 tile.ceres_grunt.name=Ceres Surface Grunt
 tile.ceres_subgrunt.name=Ceres Subsurface Grunt
 tile.ceres_dolomite_ore.name=Dolomite Ore
@@ -99,8 +106,13 @@ tile.titan_stone.name=Titan Stone
 tile.miranda_grunt.name=Miranda Surface Grunt
 tile.miranda_subgrunt.name=Miranda Subsurface Grunt
 tile.miranda_stone.name=Miranda Stone
+tile.miranda_ice.name=Miranda Ice
 tile.miranda_iron_ore.name=Iron Ore
 tile.miranda_dolomite_ore.name=Dolomite Ore
+tile.miranda_diamond_ore.name=Diamond Ore
+tile.miranda_quartz_ore.name=Quartz Ore
+tile.miranda_cobalt_ore.name=Cobalt Ore
+tile.miranda_nickel_ore.name=Nickel Ore
 
 tile.proxima_b_surface.name=Proxima B Surface
 tile.proxima_b_subsurface.name=Proxima B Subsurface
@@ -175,7 +187,7 @@ tile.modification_table.desc=Allows you to install modules in a space suit.
 tile.gas_burner.name=Gas Burner
 tile.gas_burner.desc=Burns supplied gas.
 
-tile.oxygen_storage_module_1.name=Advanced Oxygen Module
+tile.oxygen_storage_module_1.name=Oxygen Storage Cluster
 tile.oxygen_storage_module_1.desc=Improved version of Oxygen Storage. It can store 4 times more oxygen.
 
 tile.solarwind_panel.name=Solarwind Panel
@@ -184,7 +196,16 @@ tile.solarwind_panel.desc=Converts the solar wind into energy. Don't work on a p
 tile.advanced_landing_pad.name=Advanced Landing Pad
 tile.advanced_landing_pad.desc=Advanced landing pad for rockets. Size 5x5.
 
-tile.port_nuclear_reactor.name=[WIP] Portable Nulear Reactor
+tile.adv_circuit_fabricator.name=Advanced Circuit Fabricator
+tile.adv_circuit_fabricator.desc=Advanced version circuit fabricator. More effectively 2 times. Supports modules.
+
+tile.adv_electric_compressor.name=Advanced Electric Compressor
+tile.adv_electric_compressor.desc=Advanced version electric compressor. More effectively 2 times. Supports modules.
+
+tile.planet_shield.name=Planetar Shield
+tile.planet_shield.desc=Protects the area from falling meteorites.
+
+tile.port_nuclear_reactor.name=[WIP] Portable Nuclear Reactor
 
 tile.basic_frame.name=Based Machine Frame
 tile.advance_frame.name=Advanced Machine Frame
@@ -247,14 +268,20 @@ item.wafer_modern.name=Modern Wafer
 item.hematite.name=Hematite
 item.antiradiation_tablets.name=Antiradiation Tablets
 item.schematic_box.name=Schematics Box
+item.module_base.name=Black Module
 item.volcanic_stone.name=Volcanic Shard
-item.module_expander.name=Module "Expander"
-item.module_stabiliser.name=Module "Stabilization"
+item.meteoric_iron_fragments.name=Meteoric Iron Fragments
 item.uranium_fragments.name=Uranium
 item.temp_shield_control.name=Prototype Controller Shield
 item.ice_bucket.name=Bucket with Ice
 item.emergency_portable_teleport.name=Emergency Portable Teleport
 item.guide_book.name=[WIP] Info-Pad
+item.advanced_emergency_kit.name=Advanced Emergency Kit
+
+item.module_expander.name=Module "Expander"
+item.module_stabiliser.name=Module "Stabilization"
+item.module_speed.name=Module "Speed"
+item.module_energy.name=Module "Energy"
 
 item.module_small_fuelcanister.name=Small Fuel Canister
 item.module_smallcanister.name=Blank Fuel Tank
@@ -288,6 +315,7 @@ item.ultimate_battery.name=Ultimate Battery
 item.hydrogen_canister.name=Hydrogen Canister
 item.ethane_canister.name=Ethane Canister
 item.em_canister.name=Ethane-Methane Canister
+item.helium_canister.name=Helium-3 Canister
 # |/////////////////////////////////////////|
 #||||||||||||||||||Fluids||||||||||||||||||
 # |\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|
@@ -323,7 +351,6 @@ gui.module_pressure.desc= Slot for the module "Stabilization". Creates a protect
 gui.temp_shield_control.desc=Provides protection against corrosion of atmosphere, but degrade over time.
 gui.emergency_portable_teleport.desc=Emergency teleport to anchor point. Works with HP < 6. Shift+Right Click on teleport allows you to snap a point, on any block - enable/disable.
 
-
 gui.not_attached.desc=Not attached
 gui.attached.desc=Attached:
 gui.enabled.desc=Enabled
@@ -348,7 +375,7 @@ gui.message.needoxygenthermal.food=Is necessary oxygen and thermal control to us
 
 gui.message.noradiation=You not have solar radiation! It's good!
 gui.message.emergency_teleport=Emergency teleport successfully used. Coordinates:
-gui.message_can_find_in_dungeon=Can find in dungeons.
+gui.message.can_find_in_dungeon=Can find in dungeons.
 
 gui.message.need_advanced_lp.desc=Can place only on Advanced Landing Pad.
 gui.message.engine_type.name=Engine Type:
@@ -385,6 +412,8 @@ gui.module.stepassist=Increased Step
 gui.module.stepassist.desc=It would seem that the installation of the slimeball will lead nowhere ... But now you can run in blocks, the word is running up the stairs!
 gui.module.jump=High Jump
 gui.module.jump.desc=Installing the pistons was one of the good ideas. Now your jump is 2 times higher than usual!
+gui.module.energy=Advanced Battery
+gui.module.energy.desc=Increases the maximum energy supply by 2 times.
 
 gui.module.sublight_engine=Sublight Engine
 gui.module.sublight_engine.desc=The engine of the new generation. Lets leave the current star system.
@@ -470,7 +499,7 @@ book.category.mechanics.name=Mechanics
 #|\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|
 book.page.about_addon.name=About Galaxy Space
 book.page.about_addon.text=Galaxy Space - addon for Galacticraft, adding an impressive amount of in-game content. !nThe development of the addon has been going on for more than 4 years, contributing more and more game content. !n!nAll star systems are made on the basis of real data and are as close to reality as the Minecraft engine allows. The emphasis of the addon is also towards realism. 
-
+book.page.actual_update.name=Actual Update
 #|/////////////////////////////////////////|
 #||||||||||||Book-Celestial Bodies||||||||||
 #|\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\|

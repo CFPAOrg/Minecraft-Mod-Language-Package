@@ -35,6 +35,7 @@ button.fan.particles1=No Particles
 button.fan.pushpull.tooltip=Toggle direction
 button.fan.pushpull0=Push
 button.fan.pushpull1=Pull
+button.fan.sound.tooltip=Toggle Sound
 button.fan.range.tooltip=Control the range
 button.fan.speed.tooltip=Control the speed
 button.harvester.mode.tooltip=Area will attempt to harvest the whole area at once at the cost of fuel
@@ -151,6 +152,12 @@ entity.cyclicmagic.turretminecart.name=Turret Minecart
 fluid.milk=Milk
 fluid.poison=Poison
 fluid.xpjuice=Experience
+fluid.amber=Amber
+tile.amber.name=Amber
+fluid.biomass=Biomass
+tile.biomass.name=Biomass
+tile.crystal.name=Crystallized Obsidian
+fluid.crystal=Crystallized Obsidian
 gui.chatexp=Not enough experience
 gui.enderbook.go=Go
 gui.enderbook.back=Back
@@ -329,7 +336,7 @@ item.food_step.tooltip=Eating increases your step height to a full block like a 
 item.glove_climb.guide=Lets you climb any surface like it was a ladder.  Right click in your inventory to turn it off.  To climb down, sneak and walk into the wall.  To hold still in mid-air, walk forward into the wall and then also sneak while walking forward; this will cause you to come to a full stop.  Compatible with baubles.  
 item.glove_climb.name=Climbing Gloves
 item.glove_climb.tooltip=Climb any vertical surface
-item.glowing_chorus.guide=A balanced way to get the power of flight.
+item.glowing_chorus.guide=A balanced way to get the power of flight.  Gives you a few (stackable) minutes of creative flight each time its eaten.  Use milk to remove.  
 item.glowing_chorus.name=Glowing Chorus Fruit
 item.glowing_chorus.tooltip=Gives you a few (stackable) minutes of creative flight each time its eaten.
 item.gold_furnace_minecart.guide=The plain Furnace Minecarts in the game are unusable; they lose speed quite fast, especially on corners, so the fuel cannot even overpowere the drag/friction.  This Gold furnace minecart has much less drag while it has fuel, so it wont stop after two corners.
@@ -496,7 +503,7 @@ item.tool_spelunker.name=Cavefinder
 item.tool_spelunker.tooltip=Search for underground caves
 item.tool_swap.guide=Exchange the blocks selected with ones in your inventory.
 item.tool_swap.name=Standard Exchange Scepter
-item.tool_swap.tooltip=Replaces blocks with your inventory contents. Left click to change size
+item.tool_swap.tooltip=Replaces blocks and air with your inventory contents. Left click to change size
 item.tool_swap_match.guide=Exchange the blocks selected with ones in your inventory.  Only replaces blocks that match with the targeted center block.
 item.tool_swap_match.name=Gentle Exchange Scepter
 item.tool_swap_match.tooltip=Replaces blocks that match the target. Left click to change size
@@ -588,7 +595,10 @@ spell.spawnegg.name=Respawn Egg
 teleport.dimension=Cannot cross dimensions
 tile.trash.name=Trash Void
 tile.trash.tooltip=Dispose of any fluid or item
-tile.trash.guide=Dispose of any fluid or item by pumping items into this with hoppers or cables.  
+tile.trash.guide=Dispose of any fluid or item by pumping items into this with hoppers or cables. 
+button.trash.fluid.tooltip=Accepts and deletes Fluids
+button.trash.items.tooltip=Accepts and deletes Items
+tile.trash.warning=Warning! DELETES all items
 tile.auto_crafter.guide=Set the recipe, and this will autocraft as many as it can.  Has slots for input materials and output.
 tile.auto_crafter.name=Auto Crafter
 tile.auto_crafter.tooltip=Automated 3x3 crafting
@@ -697,6 +707,7 @@ button.offsetz.tooltip=Z Offset
 button.offsetblock.name0=Top
 button.offsetblock.name1=Center
 button.offsetblock.name2=Bottom
+screen.offset=Block Offset
 screen.font=Font
 screen.style=Style
 screen.fontsize=Font Size
@@ -846,9 +857,7 @@ tile.password_block.usersallowed.tooltip=Who can active this block with the pass
 tile.placer_block.guide=Place single blocks in the world.
 tile.placer_block.name=Block Placer
 tile.placer_block.tooltip=Places blocks in front on a timer or redstone
-tile.plate_launch.tooltip13=Jump Strength: 8 blocks
-tile.plate_launch.tooltip18=Jump Strength: 14 blocks
-tile.plate_launch.tooltip8=Jump Strength: 3 blocks
+tile.plate_launch.tooltip=Jump Strength: 
 tile.plate_launch_large.guide=Launch entites up into the air.  Works on both living and non-living entities such as item stacks and experience orbs.
 tile.plate_launch_large.name=Hardened Slime Plate
 tile.plate_launch_med.guide=Launch entites up into the air.  Works on both living and non-living entities such as item stacks and experience orbs.
@@ -856,6 +865,9 @@ tile.plate_launch_med.name=Slime Plate
 tile.plate_launch_small.guide=Jump pad will launch up any entity.  There are three plates each with different jump strength.
 tile.plate_launch_small.guide=Launch entites up into the air.  Works on both living and non-living entities such as item stacks and experience orbs.
 tile.plate_launch_small.name=Soft Slime Plate
+
+tile.plate_launch_extra.guide=Launch entites up into the air.  Works on both living and non-living entities such as item stacks and experience orbs.
+tile.plate_launch_extra.name=Extreme Slime Plate
 
 tile.plate_push.guide=A simple conveyor belt that pushes entities around.  Works on both living and non-living entities such as item stacks and experience orbs.  Rotate with Wrench.
 tile.plate_push.name=Conveyor Belt
@@ -1206,6 +1218,12 @@ tile.battery_infinite.guide=Creative mode infinite energy source (for cheating a
 
 
 
+tile.zinc_nether_ore.name=Nether Zinc Ore
+tile.zinc_end_ore.name=End Zinc Ore
+
+tile.tritanium_nether_ore.name=Nether Tritanium Ore
+tile.tritanium_end_ore.name=End Tritanium Ore
+
 tile.titanium_nether_ore.name=Nether Titanium Ore
 tile.titanium_end_ore.name=End Titanium Ore
 tile.aquamarine_nether_ore.name=Nether Aquamarine Ore
@@ -1387,7 +1405,7 @@ pump.secondline=<- / ->
 
 item.card_location.name=GPS Marker
 item.card_location.tooltip=Saves the location of a block
-item.card_location.guide=Use on a block to save a location and use in a wireless machine
+item.card_location.guide=Use on a block to save a location and use in a wireless machine.  Use on bedrock to clear item data. 
 item.location.saved=Saved 
 
 wireless.target=Detect target block
@@ -1409,7 +1427,7 @@ tile.cable_wireless_energy.guide=Wireless transmission of energy
 
 chest_sack.error.pickup=Error detected when attempting pickup - action cancelled (see logs for details)
 chest_sack.error.place=Error detected when attempting to place - action cancelled (see logs for details)
-chest_sack.error.null=Error on pickup - null block state or tile entity
+chest_sack.error.null=No tile entity found
 chest_sack.error.blacklist=Pickup disabled by config blacklist
 
 
@@ -1448,22 +1466,32 @@ item.crystallized_obsidian.name=Crystallized Obsidian
 item.crystallized_obsidian.tooltip=Crafting material
 item.crystallized_obsidian.guide=Crystal made from an obsidian alloy.  Crafting material
 
+item.crystallized_amber.name=Crystallized Amber
+item.crystallized_amber.tooltip=Crafting material
+item.crystallized_amber.guide=Amber Alloy made from an alloy of raw materials, elemental magic, and liquid gemstones.  Crafting material
+
 item.crystal_sword.name=Crystal Sword
-item.crystal_pickaxe.name=Crystal Hoe
+item.crystal_pickaxe.name=Crystal Pickaxe
 item.crystal_spade.name=Crystal Shovel
 item.crystal_axe.name=Crystal Axe
 item.crystal_hoe.name=Crystal Hoe
 item.crystal_sword.guide=Crystal Sword
-item.crystal_pickaxe.guide=Crystal Hoe
+item.crystal_pickaxe.guide=Crystal Pickaxe
 item.crystal_spade.guide=Crystal Shovel
 item.crystal_axe.guide=Crystal Axe
 item.crystal_hoe.guide=Crystal Hoe
-item.crystal_sword.tooltip=Crystal Sword
-item.crystal_pickaxe.tooltip=Crystal Hoe
-item.crystal_spade.tooltip=Crystal Shovel
-item.crystal_axe.tooltip=Crystal Axe
-item.crystal_hoe.tooltip=Crystal Hoe
 
 tile.fluid_drain.name=Fluid Collector
 tile.fluid_drain.guide=Drain fluid that is nearby and below, filling it with blocks
 tile.fluid_drain.tooltip=Drain fluid that is nearby and below, filling it with blocks
+
+tile.melter.name=Melter
+tile.melter.guide=Melt items into liquid, with JEI support and Crafttweaker zenscript support.
+tile.melter.tooltip=Place over lava to melt items
+
+button.fan.sound.tooltip=Enable or disable sound
+tile.heat.level=Heat  
+
+tile.solidifier.name=Solidifier
+tile.solidifier.guide=Cool fluid into solid items, with JEI support and Crafttweaker zenscript support.
+tile.solidifier.tooltip=Convert fluid into items

@@ -1,4 +1,4 @@
-# 可挂载的磁盘
+# 可挂载的软盘驱动器
 
 ![Snuggly](oredict:oc:diskDriveMountable)
 

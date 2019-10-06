@@ -16,6 +16,8 @@ text.vampirism.skill.blood_vision=Blood vision
 text.vampirism.skill.blood_vision.desc=Allows you to see entities through walls in the dark. Toggle with key.
 text.vampirism.skill.poisonous_bite=Poisonous Teeth
 text.vampirism.skill.poisonous_bite.desc=Poisons the creatures you bite
+text.vampirism.skill.advanced_biter=Advanced biter
+text.vampirism.skill.advanced_biter.desc=Allows you to suck blood more efficiently and stop at the right moment. Also increases you bite damage.
 text.vampirism.skill.more_bite_damage=Hardened Teeth
 text.vampirism.skill.more_bite_damage.desc=Deal more damage when biting
 text.vampirism.skill.less_blood_thirst=Frugal vampire
@@ -37,6 +39,8 @@ text.vampirism.skill.freeze.desc=Temporarily freeze all nearby creatures
 text.vampirism.skill.vampire_rage.desc=Action that gives you a speed and damage boost on cost of increased blood usage
 text.vampirism.skill.summon_bats.desc=Summon a lot of bats around you while in bat mode to distract enemies
 text.vampirism.skill.sunscreen.desc=Grants temporary immunity from direct sundamage. Has a long cooldown.
+text.vampirism.skill.garlic_blood_vision=Garlic blood vision
+text.vampirism.skill.garlic_blood_vision.desc=Allows you to additionally detect entities with poisonous blood
 
 #HUNTER SKILLS
 text.vampirism.skill.ihunterplayer=Becoming an hunter
@@ -84,6 +88,7 @@ text.vampirism.skill.holy_water_enhanced=Enhanced Holy Water
 text.vampirism.skill.holy_water_enhanced.desc=Create enhanced Holy Water instead of normal one.
 text.vampirism.skill.garlic_beacon_improved=Improved diffuser
 text.vampirism.skill.garlic_beacon_improved.desc=Learn how to craft a garlic diffuser with a higher range
+text.vampirism.skill.awareness=Sense nearby vampire players or entities
 text.vampirism.command.available_subcommands=Available Subcommands:
 text.vampirism.command.subcommand_help=Use '/%s help <subcommand>' to get more information
 text.vampirism.command.usage=/%s <subcommand> <params> | Use /%s help to get all available subcommands
@@ -112,6 +117,7 @@ action.vampirism.vampire.halfinvulnerable_skill=Damage Limiter
 
 #HUNTER ACTIONS
 action.vampirism.hunter.disguise=Disguise
+action.vampirism.hunter.awareness=Vampire Awareness
 
 #BLOOD POTIONS
 text.vampirism.blood_potion.might_cause=Might cause:
@@ -126,9 +132,10 @@ text.vampirism.blood_potion.category.special_other=Special other effects
 
 #ENTITIES
 entity.vampirism.hunter_trainer.name=Vampire Hunter Trainer
+entity.vampirism.hunter_trainer_dummy.name=Undercover Hunter Trainer
 entity.vampirism.advanced_vampire.name=Advanced Vampire
 entity.vampirism.advanced_hunter.name=Advanced Hunter
-entity.vampirism.hunter_villager.name=Angry Villager
+entity.vampirism.villager_angry.name=Angry Villager
 entity.vampirism.vampire_hunter.name=Vampire Hunter
 entity.vampirism.vampire.name=Vampire
 entity.vampirism.ghost.name=Ghost
@@ -139,10 +146,13 @@ entity.vampirism.blinding_bat.name=Bat
 entity.vampirism.dracula.name=Dracula
 entity.vampirism.dead_mob.name=Dead mob
 entity.vampirism.portal_guard.name=Portal Guard
-entity.vampirism.converted_villager.name=Vampire Villager
+entity.vampirism.villager_converted.name=Vampire Villager
+entity.vampirism.villager_vampire_faction.name=Vampire Expert
+entity.vampirism.villager_hunter_faction.name=Hunter Expert
 text.vampirism.entity_level=Level
 entity.Villager.vampirism.hunter_priest=Alchemical Priest
 entity.Villager.vampirism.vampire_expert=Vampire Expert
+entity.Villager.vampirism.hunter_expert=Hunter Expert
 
 #RITUALS
 text.vampirism.ritual_missing_items=Missing %s of "%s" for this ritual
@@ -200,6 +210,8 @@ tile.vampirism.garlic_beacon.tooltip2=Affects a %s by %s chunk area.
 tile.vampirism.blood_pedestal.name=Blood Pedestal
 tile.vampirism.blood_grinder.name=Blood Grinder
 tile.vampirism.blood_sieve.name=Blood Sieve
+tile.vampirism.totem_top.name=Village totem top
+tile.vampirism.totem_base.name=Village totem base
 
 #ITEMS
 item.vampirism.hunter_intel.name=Hunter Intel
@@ -247,7 +259,6 @@ item.vampirism.gem_of_binding.name=Gem of Binding
 item.vampirism.blood_eye.name=Blood Eye
 item.vampirism.weak_vampire_fang.name=Weak Vampire Fang
 item.vampirism.weak_human_heart.name=Weak Human Heart
-item.vampirism.item_tent.name=Tent
 item.vampirism.concentrated_garlic.name=Concentrated Garlic
 item.vampirism.garlic_bomb.name=Garlic Bomb
 item.vampirism.vampire_book.name=Vampire Book
@@ -282,16 +293,9 @@ item.vampirism.heart_striker.name=Heartstriker
 item.vampirism.blood_infused_iron_ingot.name=Blood Infused Iron Ingot
 item.vampirism.blood_infused_enhanced_iron_ingot.name=Enhanced Blood Infused Iron Ingot
 item.vampirism.soul_orb_vampire.name=Vampire Soul
-item.vampirism.vampire_cloak.white_black.name=Vampire Cloak
-item.vampirism.vampire_cloak.black_white.name=Vampire Cloak
-item.vampirism.vampire_cloak.black_red.name=Vampire Cloak
-item.vampirism.vampire_cloak.black_blue.name=Vampire Cloak
-item.vampirism.vampire_cloak.red_black.name=Vampire Cloak
+item.vampirism.vampire_cloak.name=Vampire Cloak
 
-#VILLAGE RELATED
-text.vampirism.hunter_villager.trade_successful=Thank you for hunting down those vampires
-text.vampirism.hunter_villager.decline_trade_vampire=I do not trade with wicked vampires
-text.vampirism.hunter_villager.decline_trade_normal=Sorry, but my trades are only interesting for vampire hunters
+
 
 #KEYS
 keys.vampirism.select_skills=Select Skills
@@ -330,7 +334,7 @@ advancement.vampirism.extra_storage.desc=Get yourself a blood container for all 
 advancement.vampirism.ancient_knowledge=Ancient knowledge
 advancement.vampirism.ancient_knowledge.desc=Find a old vampire book
 advancement.vampirism.betrayal=Betrayal
-advancement.vampirism.betrayal.desc=Kill another hunter while being a hunter yourself
+advancement.vampirism.betrayal.desc=Kill a hunter after having become a hunter yourself
 advancement.vampirism.regicide=Regicide
 advancement.vampirism.regicide.desc=Defeat a vampire baron
 advancement.vampirism.blood_cult=Blood cult
@@ -348,6 +352,7 @@ effect.vampirism.saturation=Saturation
 effect.vampirism.sanguinare=Sanguinare Vampiris
 effect.vampirism.fire_protection=Fire Protection
 effect.vampirism.garlic=Garlic
+effect.vampirism.poison=Toxicant
 
 #FLUIDS
 fluid.vampirism.vampirismblood=Blood
@@ -402,6 +407,30 @@ command.vampirism.base.levelup.max=Player is already on the highest level
 enchantment.vampirism.arrow_frugality=Arrow Frugality
 enchantment.vampirism.vampire_slayer=Vampire Slayer
 
+#Village
+text.vampirism.village.faction_capturing=%s are capturing this village
+text.vampirism.village.faction_controlling=%s are controlling this village
+text.vampirism.village.neutral=Neutral village
+text.vampirism.village.totem_destroy.fail_other_capturing=Cannot destroy totem while another faction is capturing it
+text.vampirism.village.totem_destroy.fail_capture_in_progress=Cannot destroy totem while someone is capturing it
+text.vampirism.village.totem_destroy.fail_other_faction=Cannot destroy a totem of another faction
+text.vampirism.village.village_captured_by=A nearby village has been captured by %s
+text.vampirism.village.village_capture_aborted=The attack on a nearby village has been aborted
+text.vampirism.village.neutral_village_under_attack=A nearby neutral village is under attack from %s
+text.vampirism.village.faction_village_under_attack=A nearby %s village is under attack from %s
+text.vampirism.village.almost_captured=Village almost captured. %s defenders left
+text.vampirism.village.bossinfo.capture=Village capturing progress
+text.vampirism.village.no_near_village=No village nearby
+text.vampirism.village.defender_remaining=Defender remaining
+text.vampirism.hunter_villager.trade_successful=Thank you for hunting down those vampires
+text.vampirism.hunter_villager.decline_trade_vampire=I do not trade with wicked vampires
+text.vampirism.hunter_villager.decline_trade_normal=Sorry, but my trades are only interesting for vampire hunters
+text.vampirism.vampire_villager.trade_successful=Thank you for saving us from vampire hunters
+text.vampirism.vampire_villager.decline_trade_vampire=I do not trade with wicked vampire hunters
+text.vampirism.vampire_villager.decline_trade_normal=Sorry, but my trades are only interesting for vampire
+
+
+
 #ETC
 text.vampirism.vampire=Vampire
 text.vampirism.vampires=Vampires
@@ -447,6 +476,7 @@ text.vampirism.ritual_requirements_not_met=Not all requirements for this ritual 
 text.vampirism.purity=Purity
 text.vampirism.ritual_no_vampire=You need to be a vampire for this ritual
 text.vampirism.cant_fly_day=You cannot fly at daytime
+text.vampirism.cant_fly_garlic=You cannot fly under the effect of garlic
 text.vampirism.cant_fly_end=You are not able to transfrom into a bat in the End
 text.vampirism.no_more_minions=You are not able to control any more minions
 text.vampirism.coffin.no_sleep=You can only sleep at day
@@ -484,15 +514,15 @@ text.vampirism.structure=Structure
 text.vampirism.pillar_blocks=Pillar Blocks
 text.vampirism.no_dracula_to_call=Dracula is dead and cannot be called
 text.vampirism.garlic_weapons=This weapon is coated with garlic and poisons vampires./nBut the garlic wears off.
-text.vampirism.no_dracula_to_call=Dracula is dead and cannot be called
 text.vampirism.outdated=You are running Vampirism %s, the latest version is %s.
 text.vampirism.update_message=["Click for... [",{"text":"Download","color":"green","hoverEvent":{"action":"show_text","value":{"text":"Click this to go to the download page","color":"green"}},"clickEvent":{"action":"open_url","value":"@download@"}},"] [",{"text":"Website","color":"green","hoverEvent":{"action":"show_text","value":{"text":"Click this to go to the mod's forum page","color":"green"}},"clickEvent":{"action":"open_url","value":"@forum@"}},"] [",{"text":"Changelog","color":"green","hoverEvent":{"action":"show_text","value":{"text":"Click this see the version's Changelog","color":"green"}},"clickEvent":{"action":"run_command","value":"/vampirism changelog"}},"]"]
 text.vampirism.action.cooldown_not_over=Cooldown is not over yet
+text.vampirism.action.disallowed=You cannot use this action here and now
 text.vampirism.item_tier.normal=Normal
 text.vampirism.item_tier.enhanced=Enhanced
 text.vampirism.item_tier.ultimate=Special
 text.vampirism.poisonous_to_vampires=Poisonous to vampires
-text.vampirism.poisonous_to_hunter=Poisonous to hunter
+text.vampirism.poisonous_to_hunters=Poisonous to hunters
 text.vampirism.deals_more_damage_to=Deals %s percent more damage against
 text.vampirism.liquid_container=Any liquid container
 text.vampirism.translators=None
@@ -501,6 +531,8 @@ text.vampirism.sword_trained=Trained:
 text.vampirism.integrations_available.first=There is an integrations mod for Vampirism that adds enhanced compatibility for the following installed mods:
 text.vampirism.integrations_available.second=["Please consider downloading this mod for an improved experience [",{"text":"Download","color":"green","hoverEvent":{"action":"show_text","value":{"text":"Click this to go to the mod page","color":"green"}},"clickEvent":{"action":"open_url","value":"@download@"}},"]"]
 text.vampirism.basic_hunter.levelup=I hope you have learned something
+text.vampirism.trainer_disabled=I am not a hunter
+text.vampirism.trainer_disabled_hunter=It is not safe enought to train you here. Please free the village.
 
 
 #MINION COMMANDS
@@ -536,7 +568,6 @@ category.vampirism.balance_mob_prop=Vampirism Mob Properties
 category.vampirism.balance_mob_prop.tooltip=Change properties of the mobs added by Vampirism
 category.vampirism.balance_village=Village Vampire properties
 category.vampirism.balance_village.tooltip=Change the way hunters in villages act and adjust other village related stuff
-category.vampirism.balance_leveling=Leveling Config
 category.vampirism.balance_leveling.tooltip=Configure Player Leveling
 category.vampirism.disable=Disable Features
 category.vampirism.disable.tooltip=Disable parts of the mod (Not recommend)
