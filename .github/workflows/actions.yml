@@ -25,6 +25,7 @@ jobs:
     - name: Pack
       run: |
         python ./zip.py
+        git tag "汉化资源包-Snapshot-$(date +'%Y%m%d%H%M%S')"
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:

@@ -47,32 +47,34 @@ if __name__ == '__main__':
     # 从环境变量获取 Access Key 和 Secret Key
     access_key = os.getenv('Access_Key')
     secret_key = os.getenv('Secret_Key')
-    # 构建鉴权对象
-    q = qiniu.Auth(access_key, secret_key)
+    
+    if access_key and secret_key:
+        # 构建鉴权对象
+        q = qiniu.Auth(access_key, secret_key)
 
-    # 要上传的空间
-    bucket_name = 'langpack'
-    # 上传到七牛后保存的文件名
-    key = 'Minecraft-Mod-Language-Modpack.zip'
-    # 生成上传 Token，可以指定过期时间等
-    token = q.upload_token(bucket_name, key, 120)
-    # 要上传文件的本地路径
-    localfile = './Minecraft-Mod-Language-Modpack.zip'
-    # 将文件放入对象，进行上传
-    ret, info = qiniu.put_file(token, key, localfile)
+        # 要上传的空间
+        bucket_name = 'langpack'
+        # 上传到七牛后保存的文件名
+        key = 'Minecraft-Mod-Language-Modpack.zip'
+        # 生成上传 Token，可以指定过期时间等
+        token = q.upload_token(bucket_name, key, 120)
+        # 要上传文件的本地路径
+        localfile = './Minecraft-Mod-Language-Modpack.zip'
+        # 将文件放入对象，进行上传
+        ret, info = qiniu.put_file(token, key, localfile)
 
-    logging.info(info)
+        logging.info(info)
 
-    # 断言这两个返回值，确保上传的文件名和哈希值与本地一致
-    assert ret['key'] == key
-    assert ret['hash'] == qiniu.etag(localfile)
+        # 断言这两个返回值，确保上传的文件名和哈希值与本地一致
+        assert ret['key'] == key
+        assert ret['hash'] == qiniu.etag(localfile)
 
-    # 刷新七牛云文件缓存
-    cdn_manager = qiniu.CdnManager(q)
-    # 需要刷新的文件链接
-    urls = [
-        'http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip'
-    ]
-    # 刷新链接
-    refresh_url_result = cdn_manager.refresh_urls(urls)
-    logging.info(refresh_url_result)
+        # 刷新七牛云文件缓存
+        cdn_manager = qiniu.CdnManager(q)
+        # 需要刷新的文件链接
+        urls = [
+            'http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip'
+        ]
+        # 刷新链接
+        refresh_url_result = cdn_manager.refresh_urls(urls)
+        logging.info(refresh_url_result)
