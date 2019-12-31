@@ -1,0 +1,33 @@
+name: Python application
+
+on: 
+  push:
+    branches:
+      - 1.12.2
+  pull_request:
+    branches:
+      - 1.12.2
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Pack
+      run: |
+        python ./zip.py
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: Minecraft-Mod-Language-Modpack.zip
+        path: ./
+        
