@@ -1,0 +1,24 @@
+name: .NET Core
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.100
+    - name: Build with dotnet
+      run: dotnet publish -c Release -o ./ -r ubuntu-x64 .\src\LangPack\Pack\Pack.csproj /p:PublishSingleFile=true
+    - name: Run pack
+      run: ./Pack
+    - name: Upload
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: Minecraft-Mod-Language-Modpack
+        path: ./Minecraft-Mod-Language-Modpack.zip
