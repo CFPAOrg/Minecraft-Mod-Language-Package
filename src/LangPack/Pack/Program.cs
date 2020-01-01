@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
+using Qiniu.CDN;
+using Qiniu.Storage;
+using Qiniu.Util;
+using FileInfo = System.IO.FileInfo;
 
 namespace Pack
 {
@@ -38,8 +43,26 @@ namespace Pack
 
             ZipFile.CreateFromDirectory(@"./out", @"./Minecraft-Mod-Language-Modpack.zip", CompressionLevel.Optimal, includeBaseDirectory: false);
             Console.WriteLine("Finished!");
+
             var access_key = Environment.GetEnvironmentVariable("Access_Key");
             var secret_key = Environment.GetEnvironmentVariable("Secret_Key");
+            if ((!string.IsNullOrEmpty(access_key))&&(!string.IsNullOrEmpty(secret_key)))
+            {
+                Mac mac = new Mac(access_key,secret_key);
+                PutPolicy putPolicy = new PutPolicy
+                {
+                    Scope = "langpack"
+                };
+                putPolicy.SetExpires(120);
+                string token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
+                UploadManager um = new UploadManager(new Config());
+                var result = um.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
+                    "Minecraft-Mod-Language-Modpack.zip",token,new PutExtra());
+                Console.WriteLine(result.Text);
+                var cdnm = new CdnManager(mac);
+                var refreshResult =  cdnm.RefreshUrls(new[] {"http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip"});
+                Console.WriteLine(refreshResult.Text);
+            }
         }
     }
 }
