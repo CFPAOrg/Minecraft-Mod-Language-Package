@@ -1,6 +1,12 @@
-name: .NET Core
+name: Pack
 
-on: [push]
+on:
+  pull_request:
+    branches:
+    - 1.12.2
+  push:
+    branches: 
+    - 1.12.2
 
 jobs:
   build:
@@ -21,4 +27,4 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: Minecraft-Mod-Language-Modpack
-        path: ./Minecraft-Mod-Language-Modpack.zip
+        path: ./out
