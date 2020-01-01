@@ -1,0 +1,34 @@
+name: Pack
+
+on:
+  pull_request:
+    branches:
+    - 1.12.2
+  push:
+    branches: 
+    - 1.12.2
+env:
+      Access_Key: ${{ secrets.Access_Key }}
+      Secret_Key: ${{ secrets.Secret_Key }}
+      repo-token: ${{ secrets.Personal_Token }}
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.100
+    - name: Build with dotnet
+      run: dotnet publish -c Release -o ./ -r ubuntu-x64 ./src/LangPack/Pack/Pack.csproj /p:PublishSingleFile=true
+    - name: Pack and release
+      run: ./Pack
+    - name: Upload
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: Minecraft-Mod-Language-Modpack
+        path: ./out
