@@ -31,6 +31,8 @@ namespace Pack
             
             File.Copy(@"./project/pack.png", Path.Combine(@"./out", "pack.png"));
             File.Copy(@"./project/pack.mcmeta", Path.Combine(@"./out", "pack.mcmeta"));
+            File.Copy(@"./README.md", Path.Combine(@"./out", "README.md"));
+            File.Copy(@"./LICENSE", Path.Combine(@"./out", "LICENSE"));
             Directory.CreateDirectory(Path.Combine(@"./out", @"./assets/i18nmod/asset_map/"));
             File.Copy(@"./database/asset_map.json", Path.Combine(@"./out", @"./assets/i18nmod/asset_map/asset_map.json"));
 
