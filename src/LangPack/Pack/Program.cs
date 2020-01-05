@@ -14,12 +14,12 @@ namespace Pack
     {
         public static async Task Main(string[] args)
         {
-            var access_key = Environment.GetEnvironmentVariable("Access_Key");
-            var secret_key = Environment.GetEnvironmentVariable("Secret_Key");
-            var reference = Environment.GetEnvironmentVariable("GITHUB_REF");
-            var sha = Environment.GetEnvironmentVariable("GITHUB_SHA");
-            var github_actor = Environment.GetEnvironmentVariable("GITHUB_ACTOR");
-            var github_token = Environment.GetEnvironmentVariable("repo-token");
+            var access_key = Environment.GetEnvironmentVariable("ak");
+            var secret_key = Environment.GetEnvironmentVariable("sk");
+            var reference = Environment.GetEnvironmentVariable("ref");
+            var sha = Environment.GetEnvironmentVariable("sha");
+            var github_actor = Environment.GetEnvironmentVariable("actor");
+            var github_token = Environment.GetEnvironmentVariable("repo_token");
             if (Directory.Exists(@"./out"))
             {
                 Directory.Delete(@"./out", recursive: true);

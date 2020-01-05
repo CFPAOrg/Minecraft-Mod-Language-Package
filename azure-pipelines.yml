@@ -1,0 +1,37 @@
+trigger:
+- 1.12.2
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  ak: $(Access_Key)
+  sk: $(Secret_Key)
+  repo_token: $(Personal_Token)
+  sha: $(Build.SourceVersion)
+  ref: $(Build.SourceBranch)
+  actor: $(Build.RequestedFor)
+  
+steps:
+  - task: UseDotNet@2
+    inputs:
+      version: 3.1.100
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'publish'
+      publishWebProjects: false
+      arguments: '-f netcoreapp3.1 -c Release -o ./ -r win-x64 .\src\LangPack\Pack\Pack.csproj /p:PublishSingleFile=true'
+      zipAfterPublish: false
+      modifyOutputPath: false
+      workingDirectory: './'
+
+  - task: CmdLine@2
+    inputs:
+      script: './Pack'
+      workingDirectory: '$(Build.SourcesDirectory)'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'langpack'
+      publishLocation: 'Container'
