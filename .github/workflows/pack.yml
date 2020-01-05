@@ -27,8 +27,3 @@ jobs:
       run: dotnet publish -c Release -o ./ -r ubuntu-x64 ./src/LangPack/Pack/Pack.csproj /p:PublishSingleFile=true
     - name: Pack and release
       run: ./Pack
-    - name: Upload
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: Minecraft-Mod-Language-Modpack
-        path: ./out
