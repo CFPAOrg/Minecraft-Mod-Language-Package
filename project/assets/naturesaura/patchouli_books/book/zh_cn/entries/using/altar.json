@@ -1,13 +1,19 @@
 {
-    "name": "自然祭坛灌注",
+    "name": "自然祭坛",
     "icon": "naturesaura:nature_altar",
     "category": "using",
     "advancement": "naturesaura:altar",
     "priority": true,
+    "turnin": "naturesaura:infused_materials",
     "pages": [
         {
             "type": "text",
             "text": "当$(l:collecting/altar)自然祭坛$()已经收集了足够的$(#419600)灵气$()时，它可以用某些物质注入物品，将其转化为更为强力的材料。做法是将任意材料类物品放置在祭坛核心上，然后等待转换完成。$(br2)接下来的页面将列举出植物学家经常需要的强力材料。"
+        },
+        {
+            "type": "multiblock",
+            "multiblock_id": "naturesaura:altar",
+            "text": "如何搭建$(item)自然祭坛$()"
         },
         {
             "type": "naturesaura:altar",
@@ -18,6 +24,11 @@
             "type": "naturesaura:altar",
             "text": "制造$(item)灌注石$()，一种受$(#419600)灵气$()影响的常见材料。",
             "recipe": "naturesaura:infused_stone"
+        },
+        {
+            "type": "crafting",
+            "recipe": "naturesaura:gold_brick",
+            "text": "制作$(item)金色石砖$()，一种用来搭建$(item)自然祭坛$()的建筑材料"
         }
     ]
 }
