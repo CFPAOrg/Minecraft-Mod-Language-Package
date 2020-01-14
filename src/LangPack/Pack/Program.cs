@@ -35,17 +35,18 @@ namespace Pack
 
             Directory.CreateDirectory(@"./out");
             Console.WriteLine($"Totall found {paths.CountAsync()} files ");
-            await using var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip"); 
-            using var zipArchive = new ZipArchive(zipFile,ZipArchiveMode.Create);
-            await foreach (var path in paths)
-            {
-                await using var fs = File.OpenRead(path.src);
-                var entry = zipArchive.CreateEntry(path.dest, CompressionLevel.Optimal);
-                await using var zipStream = entry.Open();
-                await fs.CopyToAsync(zipStream);
-                Console.WriteLine($"Added {path.dest}!");
+            await using (var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip")){
+                using var zipArchive = new ZipArchive(zipFile, ZipArchiveMode.Create);
+                await foreach (var path in paths)
+                {
+                    await using var fs = File.OpenRead(path.src);
+                    var entry = zipArchive.CreateEntry(path.dest, CompressionLevel.Optimal);
+                    await using var zipStream = entry.Open();
+                    await fs.CopyToAsync(zipStream);
+                    Console.WriteLine($"Added {path.dest}!");
+                }
+                Console.WriteLine("Completed!");
             }
-            Console.WriteLine("Completed!");
             var upload = Task.Run(() => UploadQiniu());
             var release = ReleaseAsync();
             Task.WaitAll(release, upload);
