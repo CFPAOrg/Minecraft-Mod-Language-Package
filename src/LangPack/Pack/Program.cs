@@ -16,14 +16,6 @@ namespace Pack
         public static async Task Main(string[] args)
         {
             Stopwatch sw = Stopwatch.StartNew();
-            var access_key = Environment.GetEnvironmentVariable("ak");
-            var secret_key = Environment.GetEnvironmentVariable("sk");
-            var reference = Environment.GetEnvironmentVariable("ref");
-            var sha = Environment.GetEnvironmentVariable("sha");
-            var github_actor = Environment.GetEnvironmentVariable("actor");
-            var github_token = Environment.GetEnvironmentVariable("repo_token");
-
-
             var repoPath = GetTargetParentDirectory(Environment.CurrentDirectory, ".git");
             Directory.SetCurrentDirectory(repoPath);
             if (File.Exists(@"./Minecraft-Mod-Language-Modpack.zip"))
@@ -54,11 +46,25 @@ namespace Pack
                 Console.WriteLine($"Added {path.dest}!");
             }
             Console.WriteLine("Completed!");
+            var upload = Task.Run(() => UploadQiniu());
+            var release = ReleaseAsync();
+            Task.WaitAll(release, upload);
+            sw.Stop();
+            Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
+        }
+
+        private static async Task ReleaseAsync()
+        {
+            var reference = Environment.GetEnvironmentVariable("ref");
+            var sha = Environment.GetEnvironmentVariable("sha");
+            var github_actor = Environment.GetEnvironmentVariable("actor");
+            var github_token = Environment.GetEnvironmentVariable("repo_token");
             if (!string.IsNullOrEmpty(github_token))
             {
-                var client = new GitHubClient(new ProductHeaderValue("CFPA"));
-
-                client.Credentials = new Credentials(github_token);
+                var client = new GitHubClient(new ProductHeaderValue("CFPA"))
+                {
+                    Credentials = new Credentials(github_token)
+                };
                 var user = await client.User.Current();
                 var actor = await client.User.Get(github_actor);
                 var repo = await client.Repository.Get(user.Name, "Minecraft-Mod-Language-Package");
@@ -85,17 +91,22 @@ namespace Pack
                 };
                 var releaseResult = await client.Repository.Release.Create(repo.Id, newRelease);
                 Console.WriteLine("Created release id {0}", releaseResult.Id);
-
+                await using var rawData = File.OpenRead(@"./Minecraft-Mod-Language-Modpack.zip");
                 var assetUpload = new ReleaseAssetUpload()
                 {
                     FileName = "Minecraft-Mod-Language-Modpack.zip",
                     ContentType = "application/zip",
-                    RawData = zipFile
+                    RawData = rawData
                 };
                 var release = await client.Repository.Release.Get(repo.Id, releaseResult.Id);
                 var asset = await client.Repository.Release.UploadAsset(release, assetUpload);
             }
+        }
 
+        private static void UploadQiniu()
+        {
+            var access_key = Environment.GetEnvironmentVariable("ak");
+            var secret_key = Environment.GetEnvironmentVariable("sk");
             if ((!string.IsNullOrEmpty(access_key)) && (!string.IsNullOrEmpty(secret_key)))
             {
                 Mac mac = new Mac(access_key, secret_key);
@@ -112,13 +123,9 @@ namespace Pack
                 var cdnm = new CdnManager(mac);
                 var refreshResult = cdnm.RefreshUrls(new[] { "http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip" });
                 Console.WriteLine(refreshResult.Text);
-
-                sw.Stop();
-                Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
             }
+                
         }
-            
-            
 
             
         private static string GetTargetParentDirectory(string path, string containDir)
