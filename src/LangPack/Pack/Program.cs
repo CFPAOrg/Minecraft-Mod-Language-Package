@@ -3,6 +3,7 @@ using Qiniu.CDN;
 using Qiniu.Storage;
 using Qiniu.Util;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Pack
     {
         public static async Task Main(string[] args)
         {
+            Stopwatch sw = Stopwatch.StartNew();
             var access_key = Environment.GetEnvironmentVariable("ak");
             var secret_key = Environment.GetEnvironmentVariable("sk");
             var reference = Environment.GetEnvironmentVariable("ref");
@@ -53,31 +55,10 @@ namespace Pack
                 Console.WriteLine($"Added {path.dest}!");
             }
             Console.WriteLine("Completed!");
-
-            
-            if ((!string.IsNullOrEmpty(access_key)) && (!string.IsNullOrEmpty(secret_key)))
-            {
-                Mac mac = new Mac(access_key, secret_key);
-                PutPolicy putPolicy = new PutPolicy
-                {
-                    Scope = "langpack"
-                };
-                putPolicy.SetExpires(120);
-                string token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
-                UploadManager um = new UploadManager(new Config());
-                var result = um.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
-                    "Minecraft-Mod-Language-Modpack.zip", token, new PutExtra());
-                Console.WriteLine(result.Text);
-                var cdnm = new CdnManager(mac);
-                var refreshResult = cdnm.RefreshUrls(new[] { "http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip" });
-                Console.WriteLine(refreshResult.Text);
-            }
-
-            
             if (!string.IsNullOrEmpty(github_token))
             {
                 var client = new GitHubClient(new ProductHeaderValue("CFPA"));
-                
+
                 client.Credentials = new Credentials(github_token);
                 var user = await client.User.Current();
                 var actor = await client.User.Get(github_actor);
@@ -102,7 +83,7 @@ namespace Pack
                 Console.WriteLine("Created a tag for {0} at {1}", tagResult.Tag, tagResult.Sha);
                 var newRelease = new NewRelease(tagName)
                 {
-                    Name = tagName+$":{commitMessage}",
+                    Name = tagName + $":{commitMessage}",
                     Body = tag.Message,
                     Draft = false,
                     Prerelease = false
@@ -116,12 +97,37 @@ namespace Pack
                     ContentType = "application/zip",
                     RawData = zipFile
                 };
-                var release = await client.Repository.Release.Get(repo.Id,releaseResult.Id);
+                var release = await client.Repository.Release.Get(repo.Id, releaseResult.Id);
                 var asset = await client.Repository.Release.UploadAsset(release, assetUpload);
             }
 
-        }
+            await zipFile.DisposeAsync();
 
+            if ((!string.IsNullOrEmpty(access_key)) && (!string.IsNullOrEmpty(secret_key)))
+            {
+                Mac mac = new Mac(access_key, secret_key);
+                PutPolicy putPolicy = new PutPolicy
+                {
+                    Scope = "langpack"
+                };
+                putPolicy.SetExpires(120);
+                string token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
+                UploadManager um = new UploadManager(new Config());
+                var result = um.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
+                    "Minecraft-Mod-Language-Modpack.zip", token, new PutExtra());
+                Console.WriteLine(result.Text);
+                var cdnm = new CdnManager(mac);
+                var refreshResult = cdnm.RefreshUrls(new[] { "http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip" });
+                Console.WriteLine(refreshResult.Text);
+
+                sw.Stop();
+                Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
+            }
+        }
+            
+            
+
+            
         private static string GetTargetParentDirectory(string path, string containDir)
         {
             if (Directory.Exists(Path.Combine(path, containDir)))
