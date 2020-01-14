@@ -66,6 +66,8 @@ namespace Pack
                 if (repo.Fork)
                 {
                     client.Credentials = new Credentials(repo_token);
+                    user = await client.User.Current();
+                    repo = await client.Repository.Get(user.Name, "Minecraft-Mod-Language-Package");
                 }
                 var commitMessage = (await client.Repository.Commit.Get(repo.Id, reference)).Commit.Message;
                 var comment = string.Join("\n",
