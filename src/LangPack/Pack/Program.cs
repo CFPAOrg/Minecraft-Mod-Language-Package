@@ -96,8 +96,6 @@ namespace Pack
                 var asset = await client.Repository.Release.UploadAsset(release, assetUpload);
             }
 
-            await zipFile.DisposeAsync();
-
             if ((!string.IsNullOrEmpty(access_key)) && (!string.IsNullOrEmpty(secret_key)))
             {
                 Mac mac = new Mac(access_key, secret_key);
@@ -108,6 +106,7 @@ namespace Pack
                 putPolicy.SetExpires(120);
                 string token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
                 UploadManager um = new UploadManager(new Config());
+                await zipFile.DisposeAsync();
                 var result = um.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
                     "Minecraft-Mod-Language-Modpack.zip", token, new PutExtra());
                 Console.WriteLine(result.Text);
