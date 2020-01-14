@@ -21,10 +21,9 @@ namespace Pack
             var reference = Environment.GetEnvironmentVariable("ref");
             var sha = Environment.GetEnvironmentVariable("sha");
             var github_actor = Environment.GetEnvironmentVariable("actor");
-            var repo_token = Environment.GetEnvironmentVariable("repo_token");
-            var github_token = Environment.GetEnvironmentVariable("github_token");
-            
-            
+            var github_token = Environment.GetEnvironmentVariable("repo_token");
+
+
             var repoPath = GetTargetParentDirectory(Environment.CurrentDirectory, ".git");
             Directory.SetCurrentDirectory(repoPath);
             if (File.Exists(@"./Minecraft-Mod-Language-Modpack.zip"))
@@ -63,12 +62,6 @@ namespace Pack
                 var user = await client.User.Current();
                 var actor = await client.User.Get(github_actor);
                 var repo = await client.Repository.Get(user.Name, "Minecraft-Mod-Language-Package");
-                if (repo.Fork)
-                {
-                    client.Credentials = new Credentials(repo_token);
-                    user = await client.User.Current();
-                    repo = await client.Repository.Get(user.Name, "Minecraft-Mod-Language-Package");
-                }
                 var commitMessage = (await client.Repository.Commit.Get(repo.Id, reference)).Commit.Message;
                 var comment = string.Join("\n",
                     (await client.Repository.Comment.GetAllForCommit(repo.Id, sha)).Select(c => c.Body));
