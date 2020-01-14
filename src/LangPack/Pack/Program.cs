@@ -106,7 +106,6 @@ namespace Pack
                 putPolicy.SetExpires(120);
                 string token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
                 UploadManager um = new UploadManager(new Config());
-                await zipFile.DisposeAsync();
                 var result = um.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
                     "Minecraft-Mod-Language-Modpack.zip", token, new PutExtra());
                 Console.WriteLine(result.Text);
