@@ -28,6 +28,4 @@ jobs:
       with:
         dotnet-version: 3.1.100
     - name: Build with dotnet
-      run: dotnet publish -c Release -f netcoreapp3.1 -o ./ -r ubuntu-x64 ./src/LangPack/Pack/Pack.csproj /p:PublishSingleFile=true
-    - name: Pack and release
-      run: ./Pack
+      run: dotnet run -c Release -f netcoreapp3.1 -p ./src/LangPack/Pack/Pack.csproj
