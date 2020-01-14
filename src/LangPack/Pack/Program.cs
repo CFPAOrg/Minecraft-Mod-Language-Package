@@ -19,36 +19,39 @@ namespace Pack
             var reference = Environment.GetEnvironmentVariable("ref");
             var sha = Environment.GetEnvironmentVariable("sha");
             var github_actor = Environment.GetEnvironmentVariable("actor");
-            var github_token = Environment.GetEnvironmentVariable("repo_token");
-            if (Directory.Exists(@"./out"))
-            {
-                Directory.Delete(@"./out", recursive: true);
-            }
+            var repo_token = Environment.GetEnvironmentVariable("repo_token");
+            var github_token = Environment.GetEnvironmentVariable("github_token");
+            
+            
+            var repoPath = GetTargetParentDirectory(Environment.CurrentDirectory, ".git");
+            Directory.SetCurrentDirectory(repoPath);
             if (File.Exists(@"./Minecraft-Mod-Language-Modpack.zip"))
             {
                 File.Delete(@"./Minecraft-Mod-Language-Modpack.zip");
             }
             Console.WriteLine("Start packing!");
 
-            var paths = Directory.EnumerateFiles(@"./project", "*", SearchOption.AllDirectories)
-                .Where(_ => _.EndsWith("zh_cn.lang"));
-            Directory.CreateDirectory(@"./out");
-            Console.WriteLine($"Totall found {paths.Count()} files ");
-            foreach (var path in paths)
-            {
-                var newPath = Path.Combine(@"./out", Path.GetRelativePath(@"./project", path));
-                Directory.CreateDirectory(Path.GetDirectoryName(newPath));
-                File.Copy(path, newPath);
-                Console.WriteLine($"Added {path}!");
-            }
-            File.Copy(@"./project/pack.png", @"./out/pack.png");
-            File.Copy(@"./project/pack.mcmeta", @"./out/pack.mcmeta");
-            File.Copy(@"./README.md", @"./out/README.md");
-            File.Copy(@"./LICENSE", @"./out/LICENSE");
-            Directory.CreateDirectory(@"./out/assets/i18nmod/asset_map/");
-            File.Copy(@"./database/asset_map.json", @"./out/assets/i18nmod/asset_map/asset_map.json");
+            var paths = Directory.EnumerateFiles(@"./project", "*", SearchOption.AllDirectories).ToAsyncEnumerable()
+                .Where(_ => _.EndsWith("zh_cn.lang"))
+                .Append(@"./project/pack.png")
+                .Append(@"./project/pack.mcmeta")
+                .Select(_ => new { src = _, dest = Path.GetRelativePath(@"./project", _) })
+                .Append(new {src= @"./README.md",dest= @"README.md" })
+                .Append(new {src= @"./LICENSE", dest= @"LICENSE" })
+                .Append(new {src= @"./database/asset_map.json", dest= @"assets/i18nmod/asset_map/asset_map.json" });
 
-            ZipFile.CreateFromDirectory(@"./out", @"./Minecraft-Mod-Language-Modpack.zip", CompressionLevel.Optimal, includeBaseDirectory: false);
+            Directory.CreateDirectory(@"./out");
+            Console.WriteLine($"Totall found {paths.CountAsync()} files ");
+            await using var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip"); 
+            using var zipArchive = new ZipArchive(zipFile,ZipArchiveMode.Create);
+            await foreach (var path in paths)
+            {
+                await using var fs = File.OpenRead(path.src);
+                var entry = zipArchive.CreateEntry(path.dest, CompressionLevel.Optimal);
+                await using var zipStream = entry.Open();
+                await fs.CopyToAsync(zipStream);
+                Console.WriteLine($"Added {path.dest}!");
+            }
             Console.WriteLine("Completed!");
 
             
@@ -74,11 +77,15 @@ namespace Pack
             if (!string.IsNullOrEmpty(github_token))
             {
                 var client = new GitHubClient(new ProductHeaderValue("CFPA"));
-                var tokenAuth = new Credentials(github_token);
-                client.Credentials = tokenAuth;
+                
+                client.Credentials = new Credentials(github_token);
                 var user = await client.User.Current();
                 var actor = await client.User.Get(github_actor);
                 var repo = await client.Repository.Get(user.Name, "Minecraft-Mod-Language-Package");
+                if (repo.Fork)
+                {
+                    client.Credentials = new Credentials(repo_token);
+                }
                 var commitMessage = (await client.Repository.Commit.Get(repo.Id, reference)).Commit.Message;
                 var comment = string.Join("\n",
                     (await client.Repository.Comment.GetAllForCommit(repo.Id, sha)).Select(c => c.Body));
@@ -103,17 +110,31 @@ namespace Pack
                 var releaseResult = await client.Repository.Release.Create(repo.Id, newRelease);
                 Console.WriteLine("Created release id {0}", releaseResult.Id);
 
-                await using var archiveContents = File.OpenRead("./Minecraft-Mod-Language-Modpack.zip");
                 var assetUpload = new ReleaseAssetUpload()
                 {
                     FileName = "Minecraft-Mod-Language-Modpack.zip",
                     ContentType = "application/zip",
-                    RawData = archiveContents
+                    RawData = zipFile
                 };
                 var release = await client.Repository.Release.Get(repo.Id,releaseResult.Id);
                 var asset = await client.Repository.Release.UploadAsset(release, assetUpload);
             }
 
+        }
+
+        private static string GetTargetParentDirectory(string path, string containDir)
+        {
+            if (Directory.Exists(Path.Combine(path, containDir)))
+            {
+                return path;
+            }else
+            {
+                if (Path.GetPathRoot(path) == path)
+                {
+                    throw new DirectoryNotFoundException($"The {nameof(containDir)} doesn't contain in any parent of {nameof(path)}");
+                }
+                return GetTargetParentDirectory(Directory.GetParent(path).FullName, containDir);
+            }
         }
     }
 }
