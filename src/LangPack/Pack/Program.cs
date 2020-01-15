@@ -69,10 +69,9 @@ namespace Pack
                     Credentials = new Credentials(github_token)
                 };
                 var user = await client.User.Current();
-                var orgs = await client.Organization.GetAllForUser(user.Name);
                 var actor = await client.User.Get(github_actor);
                 Repository repo;
-                if (orgs.Any(o=>o.Name==orgName))
+                if (await client.Repository.Collaborator.IsCollaborator(orgName, "Minecraft-Mod-Language-Package", user.Name))
                 {
                     repo = await client.Repository.Get(orgName, "Minecraft-Mod-Language-Package");
                 }
