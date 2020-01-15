@@ -75,8 +75,7 @@ namespace Pack
                 try
                 {
                     isCollaborator = await client.Repository.Collaborator.IsCollaborator(orgName, "Minecraft-Mod-Language-Package", user.Name)
-                }
-                catch (Exception)
+                }catch (Exception)
                 {
                     isCollaborator = false;
                 }
