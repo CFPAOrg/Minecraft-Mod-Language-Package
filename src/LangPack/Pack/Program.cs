@@ -59,7 +59,6 @@ namespace Pack
         {
             var reference = Environment.GetEnvironmentVariable("ref");
             var sha = Environment.GetEnvironmentVariable("sha");
-            var github_actor = Environment.GetEnvironmentVariable("actor");
             var github_token = Environment.GetEnvironmentVariable("repo_token");
             var identity = Environment.GetEnvironmentVariable("repo").Split("/");
             var owner = identity[0];
@@ -70,8 +69,6 @@ namespace Pack
                 {
                     Credentials = new Credentials(github_token)
                 };
-                var actor = await client.User.Get(github_actor);
-                Console.WriteLine($"This build is triggered by {actor.Name}:{actor.Email}");
                 var commitMessage = (await client.Repository.Commit.Get(owner, repoName, reference)).Commit.Message;
                 var comment = string.Join("\n",
                     (await client.Repository.Comment.GetAllForCommit(owner, repoName, sha)).Select(c => c.Body));
@@ -82,7 +79,7 @@ namespace Pack
                     Message = comment,
                     Tag = tagName,
                     Type = TaggedType.Commit,
-                    Tagger = new Committer(name: actor.Name, email: actor.Email, date: DateTimeOffset.UtcNow)
+                    Tagger = new Committer(name: "tartaric_acid", email: "bakabaka943@gmail.com", date: DateTimeOffset.UtcNow)
                 };
                 var tagResult = await client.Git.Tag.Create(owner, repoName, tag);
                 Console.WriteLine("Created a tag for {0} at {1}", tagResult.Tag, tagResult.Sha);
