@@ -71,6 +71,7 @@ namespace Pack
                     Credentials = new Credentials(github_token)
                 };
                 var actor = await client.User.Get(github_actor);
+                Console.WriteLine($"This build is triggered by {actor.Name}:{actor.Email}");
                 var commitMessage = (await client.Repository.Commit.Get(owner, repoName, reference)).Commit.Message;
                 var comment = string.Join("\n",
                     (await client.Repository.Comment.GetAllForCommit(owner, repoName, sha)).Select(c => c.Body));
