@@ -29,13 +29,14 @@ namespace Pack
                 .Append(@"./project/pack.png")
                 .Append(@"./project/pack.mcmeta")
                 .Select(_ => new { src = _, dest = Path.GetRelativePath(@"./project", _) })
-                .Append(new {src= @"./README.md",dest= @"README.md" })
-                .Append(new {src= @"./LICENSE", dest= @"LICENSE" })
-                .Append(new {src= @"./database/asset_map.json", dest= @"assets/i18nmod/asset_map/asset_map.json" });
+                .Append(new { src = @"./README.md", dest = @"README.md" })
+                .Append(new { src = @"./LICENSE", dest = @"LICENSE" })
+                .Append(new { src = @"./database/asset_map.json", dest = @"assets/i18nmod/asset_map/asset_map.json" });
 
             Directory.CreateDirectory(@"./out");
             Console.WriteLine($"Totall found {paths.CountAsync()} files ");
-            await using (var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip")){
+            await using (var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip"))
+            {
                 using var zipArchive = new ZipArchive(zipFile, ZipArchiveMode.Create);
                 await foreach (var path in paths)
                 {
@@ -60,28 +61,19 @@ namespace Pack
             var sha = Environment.GetEnvironmentVariable("sha");
             var github_actor = Environment.GetEnvironmentVariable("actor");
             var github_token = Environment.GetEnvironmentVariable("repo_token");
+            var identity = Environment.GetEnvironmentVariable("repo").Split("/");
+            var owner = identity[0];
+            var repoName = identity[1];
             if (!string.IsNullOrEmpty(github_token))
             {
-                var orgName = "CFPAOrg";
-                
-                var client = new GitHubClient(new ProductHeaderValue(orgName))
+                var client = new GitHubClient(new ProductHeaderValue(owner))
                 {
                     Credentials = new Credentials(github_token)
                 };
-                var user = await client.User.Current();
                 var actor = await client.User.Get(github_actor);
-                Repository repo;
-                if (await client.Repository.Collaborator.IsCollaborator(orgName, "Minecraft-Mod-Language-Package", user.Name))
-                {
-                    repo = await client.Repository.Get(orgName, "Minecraft-Mod-Language-Package");
-                }
-                else
-                {
-                    repo = await client.Repository.Get(user.Name, "Minecraft-Mod-Language-Package");
-                }
-                var commitMessage = (await client.Repository.Commit.Get(repo.Id, reference)).Commit.Message;
+                var commitMessage = (await client.Repository.Commit.Get(owner, repoName, reference)).Commit.Message;
                 var comment = string.Join("\n",
-                    (await client.Repository.Comment.GetAllForCommit(repo.Id, sha)).Select(c => c.Body));
+                    (await client.Repository.Comment.GetAllForCommit(owner, repoName, sha)).Select(c => c.Body));
                 var tagName = $"汉化资源包-Snapshot-{DateTime.UtcNow.ToString("yyyyMMddhhmmss")}";
                 var tag = new NewTag
                 {
@@ -91,7 +83,7 @@ namespace Pack
                     Type = TaggedType.Commit,
                     Tagger = new Committer(name: actor.Name, email: actor.Email, date: DateTimeOffset.UtcNow)
                 };
-                var tagResult = await client.Git.Tag.Create(repo.Id, tag);
+                var tagResult = await client.Git.Tag.Create(owner, repoName, tag);
                 Console.WriteLine("Created a tag for {0} at {1}", tagResult.Tag, tagResult.Sha);
                 var newRelease = new NewRelease(tagName)
                 {
@@ -100,7 +92,7 @@ namespace Pack
                     Draft = false,
                     Prerelease = false
                 };
-                var releaseResult = await client.Repository.Release.Create(repo.Id, newRelease);
+                var releaseResult = await client.Repository.Release.Create(owner, repoName, newRelease);
                 Console.WriteLine("Created release id {0}", releaseResult.Id);
                 await using var rawData = File.OpenRead(@"./Minecraft-Mod-Language-Modpack.zip");
                 var assetUpload = new ReleaseAssetUpload()
@@ -109,7 +101,7 @@ namespace Pack
                     ContentType = "application/zip",
                     RawData = rawData
                 };
-                var release = await client.Repository.Release.Get(repo.Id, releaseResult.Id);
+                var release = await client.Repository.Release.Get(owner, repoName, releaseResult.Id);
                 var asset = await client.Repository.Release.UploadAsset(release, assetUpload);
             }
         }
@@ -135,16 +127,17 @@ namespace Pack
                 var refreshResult = cdnm.RefreshUrls(new[] { "http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip" });
                 Console.WriteLine(refreshResult.Text);
             }
-                
+
         }
 
-            
+
         private static string GetTargetParentDirectory(string path, string containDir)
         {
             if (Directory.Exists(Path.Combine(path, containDir)))
             {
                 return path;
-            }else
+            }
+            else
             {
                 if (Path.GetPathRoot(path) == path)
                 {
