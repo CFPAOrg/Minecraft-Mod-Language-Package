@@ -62,13 +62,23 @@ namespace Pack
             var github_token = Environment.GetEnvironmentVariable("repo_token");
             if (!string.IsNullOrEmpty(github_token))
             {
-                var client = new GitHubClient(new ProductHeaderValue("CFPA"))
+                var header = new ProductHeaderValue("CFPAOrg");
+                var client = new GitHubClient(header)
                 {
                     Credentials = new Credentials(github_token)
                 };
                 var user = await client.User.Current();
+                var org = await client.Organization.Get(header.Name);
                 var actor = await client.User.Get(github_actor);
-                var repo = await client.Repository.Get(user.Name, "Minecraft-Mod-Language-Package");
+                Repository repo;
+                try
+                {
+                    repo = await client.Repository.Get(user.Name, "Minecraft-Mod-Language-Package");
+                }
+                catch (Exception)
+                {
+                    repo = await client.Repository.Get(org.Name, "Minecraft-Mod-Language-Package");
+                }
                 var commitMessage = (await client.Repository.Commit.Get(repo.Id, reference)).Commit.Message;
                 var comment = string.Join("\n",
                     (await client.Repository.Comment.GetAllForCommit(repo.Id, sha)).Select(c => c.Body));
