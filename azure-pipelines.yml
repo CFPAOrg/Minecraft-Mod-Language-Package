@@ -1,0 +1,13 @@
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '3.1.101'
+- script: dotnet run --configuration Release -f netcoreapp3.1 -p ./src/LangPack/Spider/Spider.csproj
+  displayName: 'dotnet'
+  env:
+    token: $(tk)

@@ -1,0 +1,1345 @@
+{
+  "print": {
+    "tooltip": [
+      "Prints the text given into the function into the Minecraft console",
+      "To show text in the chat, use log(...)"
+    ]
+  },
+  "highlightEntity": {
+    "definition": "highlightEntity( id, prop[, flag])",
+    "tooltip": [
+      "Force an entity to render with",
+      "'xray' or 'glow' (prop)"
+    ],
+    "types": [
+      [
+        "number",
+        "string",
+        "opt_boolean"
+      ]
+    ]
+  },
+  "image": {
+    "new()": {
+      "getFonts": {
+        "definition": "getFonts",
+        "tooltip": "Gets a list of available fonts",
+        "types": [
+          []
+        ]
+      }
+    }
+  },
+  "gui": {
+    "new()": {
+      "newRectangle": {
+        "definition": "newRectangle([x, y, width, height])",
+        "tooltip": [
+          "create a new rectangle with",
+          "default position of 0, 0",
+          "and default size of 0, 0"
+        ],
+        "types": [
+          [
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_number"
+          ]
+        ]
+      },
+      "newBox": {
+        "definition": "newBox([x, y, width, height, thickness])",
+        "tooltip": [
+          "create a new outline of a rectangle with",
+          "default position of 0, 0",
+          "default size of 0, 0",
+          "and default thickness of 1"
+        ],
+        "types": [
+          [
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_number"
+          ]
+        ]
+      },
+      "newGroup": {
+        "definition": "newGroup()",
+        "tooltip": [
+          "create a new group to manager multiple",
+          "gui elements at the same time."
+        ],
+        "types": []
+      },
+      "newText": {
+        "definition": "newText([text, x, y, size])",
+        "tooltip": [
+          "create a new text element with",
+          "default text \"\"",
+          "default position of 0,0",
+          "default size of 12"
+        ],
+        "types": [
+          [
+            "opt_string",
+            "opt_number",
+            "opt_number",
+            "opt_number"
+          ]
+        ]
+      },
+      "newTextArea": {
+        "definition": "newTextArea([x, y, width, height, text])",
+        "tooltip": [
+          "create a text area like the one in the editor",
+          "default position is 0, 0",
+          "default size is 0, 0",
+          "defaut text is \"\""
+        ],
+        "types": [
+          [
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_string"
+          ]
+        ]
+      },
+      "newScrollBar": {
+        "definition": "newScrollBar([x, y, width, height, orientation])",
+        "tooltip": [
+          "create a scrollbar defaults 0, 0, 0, 0, \"vertical\"",
+          "default position 0, 0",
+          "default size 0, 0",
+          "default orientation \"vertical\"",
+          "\"h\", \"horiz\", \"horizontal\", \"v\", \"vert\", \"vertical\"",
+          "are all valid orientations"
+        ],
+        "types": [
+          [
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_string"
+          ]
+        ]
+      },
+      "newMinecraftTextField": {
+        "definition": "newMinecraftTextField([x, y, width, height, text])",
+        "tooltip": [
+          "create a text field like the ones MC uses",
+          "default position 0, 0",
+          "default size 0, 20",
+          "default text \"\""
+        ],
+        "types": [
+          [
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_string"
+          ]
+        ]
+      },
+      "newImage": {
+        "definition": "newImage([image, x, y, width, height])",
+        "tooltip": [
+          "create a new image element",
+          "default image nil, may be an image",
+          "  from image library or path to image (include drive letter)",
+          "default pos 0, 0",
+          "default size 0, 0"
+        ],
+        "types": [
+          [
+            "opt_table",
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_number"
+          ],
+          [
+            "opt_string",
+            "opt_number",
+            "opt_number",
+            "opt_number",
+            "opt_number"
+          ]
+        ]
+      },
+      "newItem": {
+        "definition": "newItem([stack, x, y, count])",
+        "tooltip": [
+          "create an item icon",
+          "stack is a string with the format",
+          "\"modid:item_id\" or",
+          "\"modid:item_id:damage\"",
+          "defaults nil, 0, 0, 1"
+        ],
+        "types": [
+          [
+            "opt_string",
+            "opt_number",
+            "opt_number",
+            "opt_number"
+          ]
+        ]
+      },
+      "open": {
+        "definition": "open()",
+        "tooltip": [
+          "opens the gui"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "close": {
+        "definition": "close()",
+        "tooltip": [
+          "closes the gui"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "setParentGui": {
+        "definition": "setParentGui( [gui] )",
+        "tooltip": [
+          "sets the gui to render behind this one",
+          "argument may be nil"
+        ],
+        "types": [
+          "opt_table"
+        ]
+      },
+      "getParentGui": {
+        "definition": "getParentGui()",
+        "tooltip": [
+          "returns the gui behind this gui",
+          "returns nil if none is set"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "getSize": {
+        "definition": "getSize()",
+        "tooltip": [
+          "returns the dimenisons of this gui",
+          "ex: width, height = getSize()"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "setName": {
+        "definition": "setName( name )",
+        "tooltip": [
+          "sets the name of this gui",
+          "this is used in the GUIOpened event"
+        ],
+        "types": [
+          "string"
+        ]
+      },
+      "getName": {
+        "definition": "getName()",
+        "tooltip": [
+          "returns this gui's name"
+        ],
+        "types": [
+          []
+        ]
+      }
+    }
+  },
+  "hud2D": {
+    "clearAll": {
+      "definition": "clearAll()",
+      "tooltip": "removes all 2D hud elements",
+      "types": [
+        []
+      ]
+    },
+    "getSize": {
+      "definition": "getSize()",
+      "tooltip": [
+        "returns the scaled resolution",
+        "of the Minecraft HUD"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "newBox": {
+      "definition": "newBox( [x, y, wid, hei, thickness] )",
+      "tooltip": [
+        "Creates a rectangular frame",
+        "Default values x,y,wid, hei is 0",
+        "Default thickness is 1",
+        "Returns a table with controls"
+      ],
+      "types": [
+        [
+          "opt_number",
+          "opt_number",
+          "opt_number",
+          "opt_number",
+          "opt_number"
+        ]
+      ]
+    },
+    "newImage": {
+      "definitions": "newImage( [img, x, y, wid, hei] )",
+      "tooltip": [
+        "Creates an image on your 2D hud",
+        "Returns a table with controls"
+      ],
+      "types": [
+        [
+          "opt_number",
+          "opt_number",
+          "opt_number",
+          "opt_number"
+        ]
+      ]
+    },
+    "newItem": {
+      "definition": "newItem([stack, x, y, count])",
+      "tooltip": [
+        "create an item icon",
+        "stack is a string with the format",
+        "\"modid:item_id\" or",
+        "\"modid:item_id:damage\"",
+        "defaults nil, 0, 0, 1"
+      ],
+      "types": [
+        [
+          "opt_string",
+          "opt_number",
+          "opt_number",
+          "opt_number"
+        ]
+      ]
+    },
+    "newRectangle": {
+      "definition": "newRectangle([x, y, width, height])",
+      "tooltip": [
+        "create a new rectangle with",
+        "default position of 0, 0",
+        "and default size of 0, 0"
+      ],
+      "types": [
+        [
+          "opt_number",
+          "opt_number",
+          "opt_number",
+          "opt_number"
+        ]
+      ]
+    },
+    "newText": {
+      "definition": "newText([text, x, y, size])",
+      "tooltip": [
+        "create a new text element with",
+        "default text \"\"",
+        "default position of 0,0",
+        "default size of 12"
+      ],
+      "types": [
+        [
+          "opt_string",
+          "opt_number",
+          "opt_number",
+          "opt_number"
+        ]
+      ]
+    }
+  },
+  "hud3D": {
+    "hudItem": {
+      "destroy": {
+        "definition": "destroy()",
+        "tooltip": [
+          "Deletes this element",
+          "(also stops drawing)"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "setPos": {
+        "definition": "setPos( x, y, z )",
+        "tooltip": [
+          "Sets this elements position"
+        ],
+        "types": [
+          [
+            "number",
+            "number",
+            "number"
+          ]
+        ]
+      },
+      "setX": {
+        "definition": "setX( x )",
+        "tooltip": [
+          "Set this elements x position"
+        ],
+        "types": [
+          [
+            "number"
+          ]
+        ]
+      },
+      "setY": {
+        "definition": "setY( y )",
+        "tooltip": [
+          "Set this elements y position"
+        ],
+        "types": [
+          [
+            "number"
+          ]
+        ]
+      },
+      "setZ": {
+        "definition": "setZ( z )",
+        "tooltip": [
+          "Set this elements z position"
+        ],
+        "types": [
+          [
+            "number"
+          ]
+        ]
+      },
+      "setRot": {
+        "definition": "setRot( yaw, pitch, roll )",
+        "tooltip": [
+          "Set this elements rotation"
+        ],
+        "types": [
+          [
+            "number",
+            "number",
+            "number"
+          ]
+        ]
+      },
+      "setOpacity": {
+        "definition": "setOpacity( amount )",
+        "tooltip": [
+          "Sets the opacity of this element's color",
+          "Values range 0 to 1"
+        ],
+        "types": [
+          [
+            "number"
+          ]
+        ]
+      },
+      "getOpacity": {
+        "definition": "getOpacity()",
+        "tooltip": [
+          "Return this element's opacity from its color"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "getPos": {
+        "definition": "getPos()",
+        "tooltip": [
+          "Return this elements position"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "getRot": {
+        "definition": "getRot()",
+        "tooltip": [
+          "Returns this elements rotation",
+          "(yaw, pitch, roll)"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "enableDraw": {
+        "definition": "enableDraw( [bool] )",
+        "tooltip": [
+          "Set if the hud should render this element",
+          "(Default value true)"
+        ],
+        "types": [
+          [
+            "opt_boolean"
+          ]
+        ]
+      },
+      "disableDraw": {
+        "definition": "disableDraw()",
+        "tooltip": [
+          "Set this element to stop rendering"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "isDrawing": {
+        "definition": "isDrawing()",
+        "tooltip": [
+          "Check if this element is set to render",
+          "Returns boolean"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "xray": {
+        "definition": "xray( [bool] )",
+        "tooltip": [
+          "Set this element to render over the world",
+          "This makes it effectivly 'always on top'",
+          "(Default value true)"
+        ],
+        "types": [
+          [
+            "opt_boolean"
+          ]
+        ]
+      }
+    },
+    "clearAll": {
+      "definition": "\"clearAll()\"",
+      "tooltip": "\"removes all 2D hud elements\"",
+      "types": [
+        []
+      ]
+    },
+    "newBlock": {
+      "definition": "newBlock( [x, y, z, texture] )",
+      "tooltip": [
+        "Create a new cube.",
+        "Default pos at Player x, y, z",
+        "Default texture is the Hud Block texture"
+      ],
+      "types": [
+        [
+          "opt_number",
+          "opt_number",
+          "opt_number",
+          "opt_table"
+        ]
+      ]
+    },
+    "newBlock()": {
+      "setWidth": {
+        "definition": "setWidth( width )",
+        "tooltip": [
+          "Set the width of this cube",
+          "(all sides)"
+        ],
+        "types": [
+          [
+            "number"
+          ]
+        ]
+      },
+      "changeTexture": {
+        "definition": "changeTexture( texture[, side] )",
+        "tooltip": [
+          "Set the default texture or on a single side.",
+          "Valid sides:",
+          "up/top, north, south, east",
+          "west, south, down/bottom"
+        ],
+        "types": [
+          [
+            "table",
+            "opt_string"
+          ],
+          [
+            "string",
+            "opt_string"
+          ]
+        ]
+      },
+      "setUV": {
+        "definition": "setUV( uMin, vMin, uMax, vMax )",
+        "tooltip": [
+          "UV coordinates define where in your texture",
+          "is displayed",
+          "Values should range between 0 and 1",
+          "Default mins are 0, maxs are 1"
+        ],
+        "types": [
+          [
+            "number",
+            "number",
+            "number",
+            "number"
+          ]
+        ]
+      },
+      "overlay": {
+        "definition": "overlay( [x, y, z] )",
+        "tooltip": [
+          "Quickly makes this block slightly larger than",
+          "a normal block, this will stop it from looking",
+          "weird where it interescts a normal block.",
+          "Opt args are a new position."
+        ],
+        "types": [
+          [
+            "opt_number",
+            "opt_number",
+            "opt_number"
+          ]
+        ]
+      },
+      "setColor": {
+        "definition": "setColor( color[, side] )",
+        "tooltip": [
+          "Sets tint for the color for either the",
+          "whole cube, or just one side",
+          "Valid sides: up/top, down/bottom,",
+          "north, south, east, west"
+        ],
+        "types": [
+          [
+            "table",
+            "opt_string"
+          ],
+          [
+            "number",
+            "opt_string"
+          ]
+        ]
+      },
+      "getColor": {
+        "definition": "getColor( [side] )",
+        "tooltip": [
+          "For no arg:",
+          "Returns the default color",
+          "With arg:",
+          "up/top, north, south, east",
+          "west, south, down/bottom",
+          "Returns the color on that side."
+        ],
+        "types": [
+          [
+            "opt_string"
+          ]
+        ]
+      }
+    },
+    "newText": {
+      "definition": "newText( [text, x, y, z] )",
+      "tooltip": [
+        "Create a 3D text element",
+        "Default text is \"\"",
+        "Default pos is player x, y, z"
+      ],
+      "types": [
+        [
+          "opt_string",
+          "opt_number",
+          "opt_number",
+          "opt_number"
+        ]
+      ]
+    },
+    "newText()": {
+      "getText": {
+        "definition": "getText()",
+        "tooltip": [
+          "Returns the current text"
+        ],
+        "types": [
+          []
+        ]
+      },
+      "setText": {
+        "definition": "setText( text )",
+        "tooltip": [
+          "Sets the text",
+          "(Tip: & codes will work here)"
+        ],
+        "types": [
+          [
+            "string"
+          ]
+        ]
+      }
+    },
+    "newPane": {
+      "definition": "newPane( [face, x, y, z, texture] )",
+      "tooltip": [
+        "Make a new 2D rectangle",
+        "Sides can be xy, xz, or yz",
+        "adding + or - to the end will set the face cull",
+        "side"
+      ],
+      "types": [
+        [
+          "string",
+          "opt_number",
+          "opt_number",
+          "opt_number",
+          "opt_table"
+        ]
+      ]
+    }
+  },
+  "rayTrace": {
+    "definition": "rayTrace( <yaw, pitch>, <from xyz>, <dist>, <includeLiquid> )",
+    "tooltip": [
+      "Raytrace to get a block or entity",
+      "Defaults:  yaw, pitch is player rotation",
+      "from x,y,z is player's eye position (x, y+eyeHeight, z)",
+      "dist is your reach distance (normaly 5)",
+      "includeLiquid is false"
+    ],
+    "types": [
+      [
+        "opt_number",
+        "opt_number",
+        "opt_number",
+        "opt_number",
+        "opt_number",
+        "opt_number",
+        "opt_boolean"
+      ]
+    ]
+  },
+  "openInventory()": {
+    "close": {
+      "definition": "close()",
+      "tooltip": [
+        "closes the inventory interface"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "closeAndDrop": {
+      "definition": "closeAndDrop()",
+      "tooltip": [
+        "closes the inventory interface and",
+        "tosses any item held by the mouse"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "swap": {
+      "definition": "swap( slot1, slot2 )",
+      "tooltip": [
+        "Swap 2 stacks in an inventory"
+      ],
+      "types": [
+        [
+          "number",
+          "number"
+        ]
+      ]
+    },
+    "split": {
+      "definition": "split( slot1, slot2 )",
+      "tooltip": [
+        "split the stack in slot 1 and put the other half in slot 2"
+      ],
+      "types": [
+        [
+          "number",
+          "number"
+        ]
+      ]
+    },
+    "getHeld": {
+      "definition": "getHeld()",
+      "tooltip": [
+        "returns the item held by the mouse"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "getSlot": {
+      "definition": "getSlot( slot )",
+      "tooltip": [
+        "gets the item in given slot number"
+      ],
+      "types": [
+        [
+          "number"
+        ]
+      ]
+    },
+    "quick": {
+      "definition": "quick( slot )",
+      "tooltip": [
+        "preforms a shift click on the given slot"
+      ],
+      "types": [
+        [
+          "number"
+        ]
+      ]
+    },
+    "grabAll": {
+      "definition": "grabAll( slot )",
+      "tooltip": [
+        "preforms a double click to collect matching items",
+        "items are left in the mouse"
+      ],
+      "types": [
+        [
+          "number"
+        ]
+      ]
+    },
+    "click": {
+      "definition": "click( slot <, button> )",
+      "tooltip": [
+        "Preform a click on a slot",
+        "button number defaults to LMB"
+      ],
+      "types": [
+        [
+          "number",
+          "opt_number"
+        ]
+      ]
+    }
+  },
+  "guiEvent#anvil": {
+    "setName": {
+      "definition": "setName( itemName )",
+      "tooltip": [
+        "Set the name for the item in the anvil"
+      ],
+      "types": [
+        [
+          "string"
+        ]
+      ]
+    },
+    "getName": {
+      "definition": "getName()",
+      "tooltip": [
+        "Returns the current value of the anvil's",
+        "text field"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "getCost": {
+      "definition": "getCost()",
+      "tooltip": [
+        "Returns the cost to change the item."
+      ],
+      "types": [
+        []
+      ]
+    }
+  },
+  "guiEvent#villager": {
+    "getTrades": {
+      "definition": "getTrades()",
+      "tooltip": [
+        "Return a table listing available trades."
+      ],
+      "types": [
+        []
+      ]
+    },
+    "getType": {
+      "definition": "getType()",
+      "tooltip": [
+        "Return the type of villager"
+      ],
+      "types": [
+        []
+      ]
+    }
+  },
+  "guiEvent#enchant": {
+    "pickOption": {
+      "definition": "pickOption( optionNumber )",
+      "tooltip": [
+        "Enchants the item with the given option number."
+      ],
+      "types": [
+        [
+          "number"
+        ]
+      ]
+    },
+    "getOptions": {
+      "definition": "getOptions()",
+      "tooltip": [
+        "Returns a table with the current",
+        "enchantmetn options."
+      ],
+      "types": [
+        []
+      ]
+    }
+  },
+  "guiEvent#sign": {
+    "setLine": {
+      "definition": "setLine( lineNum, text )",
+      "tooltip": [
+        "Sets the text on the given line number",
+        "Default text is \"\""
+      ],
+      "types": [
+        [
+          "number",
+          "opt_string"
+        ]
+      ]
+    },
+    "setLines": {
+      "definition": "setLines( ... )",
+      "tooltip": [
+        "Set all the lines for the sign.",
+        "Arg 1 may be a table containing all 4 lines.",
+        "4 args containg the lines may be used.",
+        "Default text is \"\""
+      ],
+      "types": [
+        [
+          "table"
+        ],
+        [
+          "opt_string",
+          "opt_string",
+          "opt_string",
+          "opt_string"
+        ]
+      ]
+    },
+    "done": {
+      "definition": "done()",
+      "tooltip": [
+        "Saves changes and exits gui"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "getLines": {
+      "definition": "getLines()",
+      "tooltip": [
+        "Returns the lines from this sign in",
+        "vararg form"
+      ],
+      "types": [
+        []
+      ]
+    }
+  },
+  "guiEvent#book": {
+    "setText": {
+      "definition": "setText( text )",
+      "tooltip": [
+        "Set the text on the current page"
+      ],
+      "types": [
+        [
+          "string"
+        ]
+      ]
+    },
+    "getText": {
+      "definition": "getText()",
+      "tooltip": [
+        "Get the text on the current page"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "getPages": {
+      "definition": "getPages()",
+      "tooltip": [
+        "Return a table containing",
+        "text from all pages"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "getAuthor": {
+      "definition": "getAuthor()",
+      "tooltip": [
+        "Return the author of this book",
+        "Unsigned books will return \"\""
+      ],
+      "types": [
+        []
+      ]
+    },
+    "addPage": {
+      "definition": "addPage()",
+      "tooltip": [
+        "Add another page to the end of this book",
+        "Returns false if it could not create the page",
+        "Page limit is 50"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "nextPage": {
+      "definition": "nextPage()",
+      "tooltip": [
+        "Go to the next page in the book.",
+        "Creates a page if it doesn't exist yet.",
+        "Returns false if the page could not be created",
+        "Page limit is 50"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "prevPage": {
+      "definition": "prevPage",
+      "tooltip": [
+        "Go to the previous page",
+        "Returns false if the page does not exist",
+        "(out of bounds)"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "save": {
+      "definition": "save()",
+      "tooltip": [
+        "Save changes to the book without signing it."
+      ],
+      "types": [
+        []
+      ]
+    },
+    "getTitle": {
+      "definition": "getTitle()",
+      "tooltip": [
+        "Returns the title of this book",
+        "Returns \"\" for unsigned books"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "sign": {
+      "definition": "sign( title )",
+      "tooltip": [
+        "Sign the book with the given title.",
+        "Also closes the gui",
+        "Char limit 16"
+      ],
+      "types": [
+        [],
+        "string"
+      ]
+    },
+    "currentPage": {
+      "definition": "currentPage()",
+      "tooltip": [
+        "Returns the current page number"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "gotoPage": {
+      "definition": "gotoPage( number )",
+      "tooltip": [
+        "Goes to the given page number"
+      ],
+      "types": [
+        [
+          "number"
+        ]
+      ]
+    },
+    "pageCount": {
+      "definition": "pageCount()",
+      "tooltip": [
+        "Returns the number of pages in",
+        "this book"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "isSigned": {
+      "definition": "isSigned()",
+      "tooltip": [
+        "Check if this book has been signed"
+      ],
+      "types": [
+        []
+      ]
+    }
+  },
+  "guiEvent#commandBlock": {
+    "getText": {
+      "definition": "getText()",
+      "tooltip": [
+        "Returns the text in the command field",
+        "of this command block"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "setText": {
+      "definition": "setText( cmd )",
+      "tooltip": [
+        "Set the text in the command field of",
+        "this command block"
+      ],
+      "types": [
+        [
+          "string"
+        ]
+      ]
+    },
+    "getMode": {
+      "definition": "getMode()",
+      "tooltip": [
+        "Returns \"impulse\", \"chain\" or \"repeat\"",
+        "depending on the command blocks mode"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "setImpulse": {
+      "definition": "setImpulse()",
+      "tooltip": [
+        "Set this command block to",
+        "\"impulse\" mode"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "setChain": {
+      "definition": "setChain()",
+      "tooltip": [
+        "Set this command block to",
+        "\"chain\" mode"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "setRepeat": {
+      "definition": "setRepeat()",
+      "tooltip": [
+        "Set this command block to",
+        "\"repeat\" mode"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "setConditional": {
+      "definition": "setConditional( <boolean> )",
+      "tooltip": [
+        "Sets if this command block is",
+        "conditional",
+        "Defaults true"
+      ],
+      "types": [
+        [
+          "opt_boolean"
+        ]
+      ]
+    },
+    "getOutput": {
+      "definition": "getOutput()",
+      "tooltip": [
+        "Return the text from the output field"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "isConditional": {
+      "definition": "isConditional()",
+      "tooltip": [
+        "Return if this command block is",
+        "conditional"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "setNeedsRedstone": {
+      "definition": "setNeedsRedstone( <boolean> )",
+      "tooltip": [
+        "Set if this command block needs redstone to",
+        "activate",
+        "Defaults true"
+      ],
+      "types": [
+        [
+          "opt_boolean"
+        ]
+      ]
+    },
+    "isNeedsRedstone": {
+      "definition": "isNeedsRedstone()",
+      "tooltip": [
+        "Returns if this command block",
+        "needs redstone power to activate"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "setTrackOutput": {
+      "definition": "setTrackOutput( <boolean> )",
+      "tooltip": [
+        "Set if this command block should",
+        "track its output",
+        "Defaults true"
+      ],
+      "types": [
+        [
+          "opt_boolean"
+        ]
+      ]
+    },
+    "isTrackOutput": {
+      "definition": "isTrackOutput()",
+      "tooltip": [
+        "Returns if this command block",
+        "is tracking its output"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "done": {
+      "definition": "done()",
+      "tooltip": [
+        "Saves changes and exits"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "setMode": {
+      "definition": "setMode( mode )",
+      "tooltip": [
+        "Set this command block's mode",
+        "Valid modes are:",
+        "\"impulse\", \"chain\", or \"repeat\""
+      ],
+      "types": [
+        [
+          "string"
+        ]
+      ]
+    }
+  },
+  "newMutex": {
+    "definition": "newMutex( String:key )",
+    "tooltip": [
+      "Creates a new mutex.",
+      "Mutexes are used in multithreading",
+      "to prevent 2 or more threads from running",
+      "sections of code at the same time."
+    ],
+    "types": [
+      [
+        "string"
+      ]
+    ]
+  },
+  "newMutex()": {
+    "lock": {
+      "definition": "lock(<timeout>)",
+      "tooltip": [
+        "Locks this mutex",
+        "If it's already locked by another thread it will wait"
+      ],
+      "types": [
+        [
+          "opt_number"
+        ]
+      ]
+    },
+    "tryLock": {
+      "definition": "tryLock",
+      "tooltip": [
+        "Attempt to lock the mutex",
+        "returns false if it is already locked by another thread",
+        "returns true if locked succesfuly"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "unlock": {
+      "definition": "unlock()",
+      "tooltip": [
+        "unlocks the mutex",
+        "This will throw an error if you attempt to unlock",
+        "a mutex locked by another thread"
+      ],
+      "types": [
+        []
+      ]
+    },
+    "getKey": {
+      "definition": "getKey()",
+      "tooltip": [
+        "Returns the key used to make this mutex"
+      ],
+      "types": [
+        []
+      ]
+    }
+  },
+  "disconnect": {
+    "definition": "disconnect()",
+    "tooltip": [
+      "Disconnects from the world"
+    ],
+    "types": [
+      []
+    ]
+  },
+  "connect": {
+    "definition": "connect( ip/hostName )",
+    "tooltip": [
+      "Connect to an ip or domain name",
+      "Will disconnect you from your current game"
+    ],
+    "types": [
+      [
+        "string"
+      ]
+    ]
+  }
+}
