@@ -11,6 +11,10 @@ item.LTColorTube.name=Little Paint Brush
 item.LTUtilityKnife.name=Little Utility Knife
 item.LTGrabber.name=Little Glove
 item.LTRecipeAdvanced.name=Advanced Recipe
+item.LTColorBottleBlack.name=Black Bottle
+item.LTColorBottleCyan.name=Cyan Bottle
+item.LTColorBottleMagenta.name=Magenta Bottle
+item.LTColorBottleYellow.name=Yellow Bottle
 
 tile.LTParticleBlock.name=Little Particle Block
 tile.LTColoredBlock.clean.name=Colored Block Clean
@@ -69,17 +73,15 @@ action.entity.notfound=Entity not found
 action.structure.notloaded=Structure is not loaded
 action.revert.notavailable=Action cannot be reverted
 
-exception.ingredient.color=Not enough color
-exception.ingredient.volume=Not enough material
-exception.ingredient.space.volume=Not enough space for material
-exception.ingredient.space.color=Not enough space for color
-exception.ingredient.stack=Missing 
+exception.ingredient.missing=Not enough ingredients
+exception.ingredient.space=Not enough space for
 exception.permission.edit=You are not allowed to edit more than %s blocks
 exception.permission.place.color=You are not allowed to place something with alpha below %s
 exception.permission.place=You are not allowed to place more than %s blocks
 exception.door.notloaded=Cannot interact with door (not all tiles are loaded)
 exception.door.brokenparent=Cannot interact with door (broken connection to parent)
 exception.door.brokenchild=Cannot interact with door (broken connection to child)
+exception.door.notenoughspace=Something is in the way
 
 color.unit.black=black
 color.unit.cyan=cyan
@@ -87,6 +89,13 @@ color.unit.magenta=magenta
 color.unit.yellow=yellow
 color.unit.single=unit
 color.unit.multiple=units
+
+volume.unit.big.single=block
+volume.unit.big.multiple=blocks
+volume.unit.big.short=b
+volume.unit.small.single=pixel
+volume.unit.small.multiple=pixels
+volume.unit.small.short=p
 
 selector.ingredients=Ingredients
 
@@ -107,6 +116,7 @@ markmode.gui.switchpos=Switch Position
 
 commands.open.usage=Opens all doors at the given coordinate
 commands.open.notloaded=Structure is not loaded
+commands.open.tovanilla=Convert all loaded tileentites to vanilla blocks if possible
 
 item.LTPremade.workbench.name=Little Workbench
 item.LTPremade.importer.name=Little Importer
@@ -146,9 +156,18 @@ gui.door.duration=Duration
 gui.door.stayAnimated=Stay Animated
 gui.door.stayAnimatedTooltip=Only use if necessary, it will affect your FPS
 gui.door.children=Children
+gui.door.events=Events
+gui.door.rightclick=Allow right click
+gui.door.pick-sound=Pick Sound
+gui.door.open=Opening
+gui.door.close=Closing
+gui.sound.volume=Volume
+gui.sound.pitch=Pitch
 gui.structure.hierarchy=Hierarchy
+gui.color.rightclick=right click to drain
 
 animation.event.child.name=Activate Child
+animation.event.sound-event.name=Play Sound Event
 
 config.littletiles.invertStickToGrid=Invert stick to grid
 config.littletiles.maxSavedActions=Maximum number of saved actions
@@ -159,3 +178,5 @@ config.littletiles.renderingThreadCount=Number of Rendering Threads
 config.littletiles.highlightStructureBox=Highlight Structure Boundingbox
 config.littletiles.previewLines=Line Preview
 config.littletiles.enableRandomDisplayTick=Enable Random Display Tick
+config.littletiles.useQuadCache=Use Quad-Cache
+config.littletiles.useCubeCache=Use Cube-Cache
