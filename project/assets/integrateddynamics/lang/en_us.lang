@@ -8,7 +8,6 @@ general.integrateddynamics.true=True
 general.integrateddynamics.false=False
 
 # Gui
-gui.integrateddynamics.keybinding=Key Binding
 gui.integrateddynamics.button.save=Save
 gui.integrateddynamics.button.rename=Rename
 gui.integrateddynamics.button.copy=Copy
@@ -207,7 +206,7 @@ advancement.integrateddynamics.recursive_recursion.desc=Create an infinite List,
 advancement.integrateddynamics.tool_for_obsidian=Tools for Obsidian?
 advancement.integrateddynamics.tool_for_obsidian.desc=Check if a Stone Pickaxe can break an Obsidian block, and show the result in a Display Panel.
 advancement.integrateddynamics.smart_pressure_plate=Smart Pressure Plate
-advancement.integrateddynamics.smart_pressure_plate.desc=Create a system that automatically opens a door when you pass by an Entity Reader based on entity name matching, using a Redstone Writer directly pointing to the door. (Hint: pass an entity name as first argument into the equals operator)
+advancement.integrateddynamics.smart_pressure_plate.desc=Create a system that automatically opens a door when you pass by an Entity Reader based on entity name matching, using a Redstone Writer directly pointing to the door.
 
 # Value types
 valuetype.integrateddynamics.error.value=Invalid value
@@ -367,8 +366,6 @@ aspect.aspects.integrateddynamics.write.integer.audio.instrument.bassguitar.info
 
 aspect.aspects.integrateddynamics.write.string.audio.sound.name=Sound
 aspect.aspects.integrateddynamics.write.string.audio.sound.info=Play the given sound name
-aspect.aspects.integrateddynamics.write.string.audio.text.name=Text
-aspect.aspects.integrateddynamics.write.string.audio.text.info=Convert the given text to speech
 
 ## Effect aspects
 aspect.aspects.integrateddynamics.write.double.effect.particle.fireworksspark.name=Particle: Fireworks Spark
@@ -454,10 +451,6 @@ aspect.aspects.integrateddynamics.read.integer.block.posz.name=Z Coordinate
 aspect.aspects.integrateddynamics.read.integer.block.posz.info=The Z coordinate of the target
 aspect.aspects.integrateddynamics.read.nbt.block.tile.name=Tile Entity NBT
 aspect.aspects.integrateddynamics.read.nbt.block.tile.info=The target Tile Entity as NBT
-aspect.aspects.integrateddynamics.read.string.block.biome.name=Biome
-aspect.aspects.integrateddynamics.read.string.block.biome.info=The biome name at the target
-aspect.aspects.integrateddynamics.read.integer.block.light.name=Light Level
-aspect.aspects.integrateddynamics.read.integer.block.light.info=The light level at the target
 
 aspect.aspects.integrateddynamics.read.block.block.name=Block
 aspect.aspects.integrateddynamics.read.block.block.info=The target block
@@ -712,7 +705,6 @@ aspect.aspecttypes.integrateddynamics.integer.offset.name=Pulse Time Offset
 
 aspect.aspecttypes.integrateddynamics.double.volume.name=Volume
 aspect.aspecttypes.integrateddynamics.double.frequency.name=Frequency
-aspect.aspecttypes.integrateddynamics.integer.range.name=Range
 
 aspect.aspecttypes.integrateddynamics.double.offset_x.name=X Offset
 aspect.aspecttypes.integrateddynamics.double.offset_y.name=Y Offset
@@ -741,13 +733,11 @@ operator.integrateddynamics.error.wrong_input_length=The operator %s received an
 operator.integrateddynamics.error.null_type=The operator %s received an input with a null variable at position %s.
 operator.integrateddynamics.error.wrong_type=The operator %s received an input with type %s at position %s while the type %s was expected.
 operator.integrateddynamics.error.wrong_currying_type=The operator %s received an input with type %s at position %s while the type %s was expected for currying.
-operator.integrateddynamics.error.currying_overflow=While currying the operator %s (%s inputs) with %s inputs, an operator was expected as output, but got %s.
 operator.integrateddynamics.error.wrong_predicate=The operator %s received an input operator that outputs the type %s while the type %s was expected.
 operator.integrateddynamics.error.illegal_property=The property is expected to output %s, while %s was found for operator %s.
 operator.integrateddynamics.error.variable_not_in_network=Variable with id %s could not be found within the current network.
 operator.integrateddynamics.error.cyclic_reference=Variable with id %s depends on itself, infinite recursion.
 operator.integrateddynamics.error.wrong_input_length_virtual=The operator %s received the operator %s with input length %s while length %s is required.
-operator.integrateddynamics.error.operator_recursion_limit=Reached the operator recursion limit of %s invocations for %s. Trying to crash the game, are you?
 
 operator.operators.integrateddynamics.logical.name=Logical
 operator.operators.integrateddynamics.logical.basename=Logical %s
@@ -833,8 +823,6 @@ operator.operators.integrateddynamics.string.replace.name=Replace
 operator.operators.integrateddynamics.string.replace.info=Find all instances of the search term and replace them with the given string, in the given string.
 operator.operators.integrateddynamics.string.replace_regex.name=Replace Regex
 operator.operators.integrateddynamics.string.replace_regex.info=Find all matches of the search pattern and replace them with the given string, in the given string.
-operator.operators.integrateddynamics.string.join.name=Join
-operator.operators.integrateddynamics.string.join.info=Create a joined string with the given string delimiter and the given list of strings.
 operator.operators.integrateddynamics.string.name.name=Name
 operator.operators.integrateddynamics.string.name.info=Get the name of a named object or converts it to a string
 operator.operators.integrateddynamics.string.unique_name.name=Unique Name
@@ -989,8 +977,6 @@ operator.operators.integrateddynamics.itemstack.itemlistcount.name=Item List Cou
 operator.operators.integrateddynamics.itemstack.itemlistcount.info=Get the total item count of exactly the given item in a list.
 operator.operators.integrateddynamics.itemstack.nbt.name=Item NBT
 operator.operators.integrateddynamics.itemstack.nbt.info=Get the NBT tag of the given item.
-operator.operators.integrateddynamics.itemstack.hasnbt.name=Has NBT
-operator.operators.integrateddynamics.itemstack.hasnbt.info=If the item stack has an NBT tag.
 
 operator.operators.integrateddynamics.entity.name=Entity
 operator.operators.integrateddynamics.entity.basename=Entity %s
@@ -1266,10 +1252,6 @@ operator.operators.integrateddynamics.virtual.piped.info=A chain of operators
 operator.operators.integrateddynamics.cast.name=Cast
 operator.operators.integrateddynamics.cast.basename=Cast
 operator.operators.integrateddynamics.cast.tooltip=Cast %s to %s
-
-operator.operators.integrateddynamics.parse.name=Parse
-operator.operators.integrateddynamics.parse.basename=Parse
-operator.operators.integrateddynamics.parse.tooltip=Parse %s
 
 ## Config categories
 config.integrateddynamics.item=Item settings
