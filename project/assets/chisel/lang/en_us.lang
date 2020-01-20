@@ -5,20 +5,59 @@ item.chisel.offsettool.name=Ender Offset Wand
 
 chisel.spawnwither=A Chisel can be a dangerous thing...
 
-item.chisel.chisel.desc.gui=Right-click to open GUI
-item.chisel.chisel.desc.lc1=Left-click to chisel blocks in the world
-item.chisel.chisel.desc.lc2=Target a block by leaving it in the inventory
+item.chisel.chisel.desc.gui=%sRight-click%s to open GUI
+item.chisel.chisel.desc.lc1=%sLeft-click%s to chisel blocks in the world
+item.chisel.chisel.desc.lc2=%sTarget a block%s by leaving it in the inventory
 
 item.chisel.chisel.desc.modes=Has multiple chiseling modes.
+item.chisel.chisel.desc.modes.selected=Selected mode: %s
 
 container.chisel.title=Chisel
+container.chisel.hitech.preview=Preview
+container.chisel.hitech.preview.panel=Panel
+container.chisel.hitech.preview.hollow=Hollow
+container.chisel.hitech.preview.plus=Plus
+container.chisel.hitech.preview.single=Single
+
+container.chisel.hitech.chisel=Chisel
+container.chisel.hitech.chisel_all=Chisel All
+
+chisel.mode.single.name=Single
+chisel.mode.single.desc=Chisel a single block.
+
+chisel.mode.panel.name=Panel
+chisel.mode.panel.desc=Chisel a 3x3 square of blocks.
+
+chisel.mode.column.name=Column
+chisel.mode.column.desc=Chisel a 3x1 column of blocks.
+
+chisel.mode.row.name=Row
+chisel.mode.row.desc=Chisel a 1x3 row of blocks.
+
+chisel.mode.contiguous.name=Contiguous
+chisel.mode.contiguous.desc=Chisel an area of alike blocks, extending 10 blocks in any direciton.
+
+chisel.mode.contiguous_2d.name=Contiguous 2D
+chisel.mode.contiguous_2d.desc=Chisel an area of alike blocks, extending 10 blocks along the plane of the current side.
+
+tile.chisel.autochisel.name=Auto Chisel
+container.autochisel.title=Auto Chisel
+chisel.tooltip.power.stored=%s/%s FE
+chisel.tooltip.power.pertick=%s FE/t
 
 itemGroup.chiselCreativeTab=Chisel
 chisel.jei.title=Chiseling
 
+jei.chisel.desc.chisel_generic=A chisel can be used to create different variations of many different blocks. It can either be used with the GUI, by right clicking, or in the world, by left clicking. If a target is selected in the GUI, when the chisel is used in the world, it will only chisel to that type.
+jei.chisel.desc.chisel_iron=The iron chisel is the most basic chisel, it has a low durability, and can only chisel one block in the world at a time.
+jei.chisel.desc.chisel_diamond=The diamond chisel is the mid-tier chisel, it has a high durability, and the ability to chisel up to 3x3 (9) blocks at once!
+jei.chisel.desc.chisel_hitech=The iChisel is the newest revolution in chiseling technology! No more moving stacks around, just click on the source (in your inventory) and then the target (in the selection slots), then the button on the left to chisel away. Holding SHIFT allows you to chisel every stack of the same type at once. The handy preview window at the top left shows what the target block will look like in the world. Finally, the iChisel allows you to chisel OVER 9000 blocks in the world! Using the Contiguous and Contiguous 2D modes you can chisel an area of similar blocks at the same time.
 jei.chisel.desc.concrete_making=Just add water and you can make your very own Concrete!\n\nSubmerge Concrete Powder into water by placing it next to water, or letting it fall into water as a falling block.
 
 chisel.tooltip.blockname=%1$s (%2$s)
+
+subtitle.chisel.chiseling.fallback=Object Chiseled
+subtitle.chisel.chiseling.wood=Wood Chiseled
 
 tile.chisel.blockAluminum.name=Block of Aluminum
 tile.chisel.blockAluminum.caution.desc.1=Caution
@@ -1387,6 +1426,7 @@ tile.chisel.emerald.emeraldPrismatic.desc.1=Prism
 
 tile.chisel.endstone.name=Endstone
 tile.chisel.endstone.cracked.desc.1=Cracked
+tile.chisel.endstone.bricks-solid.desc.1=Bricks
 tile.chisel.endstone.bricks-soft.desc.1=Weathered Bricks
 tile.chisel.endstone.bricks-cracked.desc.1=Cracked Bricks
 tile.chisel.endstone.bricks-triple.desc.1=Wide Bricks
@@ -1721,7 +1761,7 @@ tile.chisel.granite.poison.desc.1=Poison
 tile.chisel.granite.bricks-chaotic.desc.1=Trodden Bricks
 tile.chisel.granite.cuts.desc.1=Cuts
 
-tile.chisel.hardenedclay.name=Hardened Clay
+tile.chisel.hardenedclay.name=Terracotta
 tile.chisel.hardenedclay.cracked.desc.1=Cracked
 tile.chisel.hardenedclay.bricks-soft.desc.1=Weathered Bricks
 tile.chisel.hardenedclay.bricks-cracked.desc.1=Cracked Bricks
@@ -1748,7 +1788,6 @@ tile.chisel.hardenedclay.circularct.desc.1=Circular
 tile.chisel.hardenedclay.circularct.desc.2=Has CTM
 tile.chisel.hardenedclay.weaver.desc.1=Celtic
 tile.chisel.hardenedclay.bricks-chaotic.desc.1=Trodden Bricks
-tile.chisel.hardenedclay.name=Hardened Clay
 tile.chisel.hardenedclay.bricks-solid.desc.1=Bricks
 tile.chisel.hardenedclay.bricks-small.desc.1=Small Bricks
 tile.chisel.hardenedclay.circular.desc.1=Circular
@@ -1852,20 +1891,20 @@ tile.chisel.iron.terrain-iron-spaceblack.desc.1=Black Space
 tile.chisel.iron.terrain-iron-vents.desc.1=Vents
 tile.chisel.iron.terrain-iron-simple.desc.1=Simple
 
-tile.chisel.ironpane.name=Iron Bars (WIP!)
-tile.chisel.ironpane.fenceIron.desc.1=Frameless Bars
-tile.chisel.ironpane.barbedwire.desc.1=Modern Fence
+tile.chisel.ironpane.name=Iron Bars
+tile.chisel.ironpane.borderless.desc.1=Frameless Bars
+tile.chisel.ironpane.borderless-topper.desc.1=Frameless Topper
+tile.chisel.ironpane.barbedwire.desc.1=Barbed Wire
 tile.chisel.ironpane.cage.desc.1=Thick Cage
-tile.chisel.ironpane.fenceIronTop.desc.1=Pointy Spikes
-tile.chisel.ironpane.terrain-glass-thickgrid.desc.1=Thick Grid
-tile.chisel.ironpane.terrain-glass-thingrid.desc.1=Thin Grid
-tile.chisel.ironpane.terrain-glass-ornatesteel.desc.1=Ornate
+tile.chisel.ironpane.thickgrid.desc.1=Thick Grid
+tile.chisel.ironpane.thingrid.desc.1=Thin Grid
+tile.chisel.ironpane.ornatesteel.desc.1=Ornate
 tile.chisel.ironpane.bars.desc.1=Straight
-tile.chisel.ironpane.spikes.desc.1=Bounded
-tile.chisel.ironpane.a1-ironbars-ironclassicnew.desc.1=Classic
-tile.chisel.ironpane.a1-ironbars-ironfence.desc.1=Tight
-tile.chisel.ironpane.a1-ironbars-ironfencemodern.desc.1=Modern Fence
-tile.chisel.ironpane.a1-ironbars-ironclassic.desc.1=Modern
+tile.chisel.ironpane.spikes.desc.1=Spikes
+tile.chisel.ironpane.fence.desc.1=Fence
+tile.chisel.ironpane.modern.desc.1=Modern Fence
+tile.chisel.ironpane.classic.desc.1=Classic
+tile.chisel.ironpane.classicnew.desc.1=Classic Thin
 
 tile.chisel.laboratory.name=Laboratory Block
 tile.chisel.laboratory.wallpanel.desc.1=White Panel
@@ -2497,6 +2536,23 @@ tile.chisel.sandstonered.poison.desc.1=Poison
 tile.chisel.sandstonered.cuts.desc.1=Cuts
 
 tile.chisel.sandstone-scribbles.name=Sandstone Scribbles
+tile.chisel.sandstone-scribbles.scribbles-0.desc.1=Hieroglyphs 1
+tile.chisel.sandstone-scribbles.scribbles-1.desc.1=Hieroglyphs 2
+tile.chisel.sandstone-scribbles.scribbles-2.desc.1=Hieroglyphs 3
+tile.chisel.sandstone-scribbles.scribbles-3.desc.1=Skull 1
+tile.chisel.sandstone-scribbles.scribbles-4.desc.1=Eye of Horus
+tile.chisel.sandstone-scribbles.scribbles-5.desc.1=Bird
+tile.chisel.sandstone-scribbles.scribbles-6.desc.1=Halo
+tile.chisel.sandstone-scribbles.scribbles-7.desc.1=Hieroglyphs 4
+tile.chisel.sandstone-scribbles.scribbles-8.desc.1=Man with Staff
+tile.chisel.sandstone-scribbles.scribbles-9.desc.1=Waves
+tile.chisel.sandstone-scribbles.scribbles-10.desc.1=Landscape 1
+tile.chisel.sandstone-scribbles.scribbles-11.desc.1=Skull Landscape
+tile.chisel.sandstone-scribbles.scribbles-12.desc.1=Pattern 1
+tile.chisel.sandstone-scribbles.scribbles-13.desc.1=Pattern 2
+tile.chisel.sandstone-scribbles.scribbles-14.desc.1=Hieroglyphs 5
+tile.chisel.sandstone-scribbles.scribbles-15.desc.1=Hieroglyphs 6
+
 
 tile.chisel.blockSilver.name=Block of Silver
 tile.chisel.blockSilver.caution.desc.1=Caution
@@ -2553,6 +2609,7 @@ tile.chisel.stonebrick.tiles-medium.desc.1=Tiles
 tile.chisel.stonebrick.pillar.desc.1=Pillar
 tile.chisel.stonebrick.twisted.desc.1=Twisted
 tile.chisel.stonebrick.prism.desc.1=Prism
+tile.chisel.stonebrick.largeornate.desc.1=Large Ornate
 tile.chisel.stonebrick.raw.desc.1=Raw
 tile.chisel.stonebrick.emboss.desc.1=Embossed
 tile.chisel.stonebrick.indent.desc.1=Indented
@@ -2800,8 +2857,8 @@ tile.chisel.wool_purple.name=Purple Wool
 tile.chisel.wool_purple.legacy_purple.desc.1=Legacy Carpet
 tile.chisel.wool_purple.llama_purple.desc.1=Llama Carpet
 tile.chisel.wool_blue.name=Blue Wool
-tile.chisel.wool_blue.legacy_purple.desc.1=Legacy Carpet
-tile.chisel.wool_blue.llama_purple.desc.1=Llama Carpet
+tile.chisel.wool_blue.legacy_blue.desc.1=Legacy Carpet
+tile.chisel.wool_blue.llama_blue.desc.1=Llama Carpet
 tile.chisel.wool_brown.name=Brown Wool
 tile.chisel.wool_brown.legacy_brown.desc.1=Legacy Carpet
 tile.chisel.wool_brown.llama_brown.desc.1=Llama Carpet
