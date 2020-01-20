@@ -61,10 +61,10 @@ namespace Pack
             var sha = Environment.GetEnvironmentVariable("sha");
             var github_token = Environment.GetEnvironmentVariable("repo_token");
             var identity = Environment.GetEnvironmentVariable("repo").Split("/");
-            var owner = identity[0];
-            var repoName = identity[1];
             if (!string.IsNullOrEmpty(github_token))
             {
+                var owner = identity[0];
+                var repoName = identity[1];
                 var client = new GitHubClient(new ProductHeaderValue(owner))
                 {
                     Credentials = new Credentials(github_token)
