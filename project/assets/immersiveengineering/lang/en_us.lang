@@ -1,5 +1,4 @@
-# ï»¿ Byte Order Mark, because fuck you IntelliJ
-# BLOCKS
+ï»¿ Byte Order Mark, because fuck you IntelliJ\n# BLOCKS
 tile.immersiveengineering.ore.copper.name=Copper Ore
 tile.immersiveengineering.ore.aluminum.name=Bauxite Ore
 tile.immersiveengineering.ore.lead.name=Lead Ore
@@ -203,6 +202,10 @@ tile.immersiveengineering.conveyor.immersiveengineering:covered.name=Covered Con
 tile.immersiveengineering.conveyor.immersiveengineering:verticalcovered.name=Vertical Covered Conveyor Belt
 tile.immersiveengineering.conveyor.immersiveengineering:extract.name=Extracting Conveyor Belt
 tile.immersiveengineering.conveyor.immersiveengineering:extractcovered.name=Covered Extracting Conveyor Belt
+tile.immersiveengineering.conveyor.immersiveengineering:chute_iron.name=Sheetmetal Chute
+tile.immersiveengineering.conveyor.immersiveengineering:chute_steel.name=Sheetmetal Chute
+tile.immersiveengineering.conveyor.immersiveengineering:chute_aluminum.name=Sheetmetal Chute
+tile.immersiveengineering.conveyor.immersiveengineering:chute_copper.name=Sheetmetal Chute
 
 tile.immersiveengineering.metal_multiblock.metal_press.name=Metal Press
 tile.immersiveengineering.metal_multiblock.crusher.name=Crusher
@@ -433,6 +436,10 @@ item.immersiveengineering.fluorescent_tube.name=Fluorescent Tube
 item.immersiveengineering.powerpack.name=Capacitor Backpack
 item.immersiveengineering.shield.name=Heavy Plated Shield
 item.immersiveengineering.maintenance_kit.name=Maintenance Kit
+item.immersiveengineering.steel_armor_head.name=Steel Helmet
+item.immersiveengineering.steel_armor_chest.name=Steel Chestplate
+item.immersiveengineering.steel_armor_legs.name=Steel Leggings
+item.immersiveengineering.steel_armor_feet.name=Steel Boots
 
 item.immersiveengineering.map_orevein.name=Mineral Deposit Map
 
@@ -597,6 +604,7 @@ entity.Villager.immersiveengineering.engineer=Structural Engineer
 entity.Villager.immersiveengineering.machinist=Machinist
 entity.Villager.immersiveengineering.electrician=Electrician
 entity.Villager.immersiveengineering.outfitter=Outfitter
+entity.Villager.immersiveengineering.gunsmith=Gunsmith
 
 key.immersiveengineering.magnetEquip=Magnetic Shield Glove (doubletap)
 key.immersiveengineering.chemthrowerSwitch=Switch Chemthrower Tanks
@@ -605,7 +613,8 @@ desc.immersiveengineering.info.attachedTo=Linking from %1$s, %2$s, %3$s
 desc.immersiveengineering.info.attachedToDim=Linking from %1$s, %2$s, %3$s in Dimension %4$s
 desc.immersiveengineering.info.energyStored=Energy stored: %1$s Flux
 desc.immersiveengineering.info.energyStoredEU=Energy stored: %1$s EU
-desc.immersiveengineering.info.blastFuelTime=Blast Fuel: %1$s Ticks
+desc.immersiveengineering.info.blastFuelTime=Burn time:
+desc.immersiveengineering.info.seconds=%1$s Seconds
 desc.immersiveengineering.info.gasStored=Gas stored: %1$s
 desc.immersiveengineering.info.colour=Colour: %1$s
 desc.immersiveengineering.info.day=%1$sd
@@ -702,6 +711,28 @@ desc.immersiveengineering.info.blueprint.specialBullet=Specialized Projectiles
 desc.immersiveengineering.info.blueprint.electrode=Arc Furnace Electrodes
 
 desc.immersiveengineering.info.electrodeIntegrity=Integrity
+
+desc.immersiveengineering.info.revolver.perk.cooldown=Firerate: %1$s%%
+desc.immersiveengineering.info.revolver.perk.cooldown.tier-3=Slow %1$s
+desc.immersiveengineering.info.revolver.perk.cooldown.tier-2=Stuttering %1$s
+desc.immersiveengineering.info.revolver.perk.cooldown.tier-1=Squeaky %1$s
+desc.immersiveengineering.info.revolver.perk.cooldown.tier1=Fanned %1$s
+desc.immersiveengineering.info.revolver.perk.cooldown.tier2=Selfrepeating %1$s
+desc.immersiveengineering.info.revolver.perk.cooldown.tier3=Autococking %1$s
+desc.immersiveengineering.info.revolver.perk.noise=Noise: %1$s%%
+desc.immersiveengineering.info.revolver.perk.noise.tier-3=Bellowing %1$s
+desc.immersiveengineering.info.revolver.perk.noise.tier-2=Loud %1$s
+desc.immersiveengineering.info.revolver.perk.noise.tier-1=Noisy %1$s
+desc.immersiveengineering.info.revolver.perk.noise.tier1=Whisper %1$s
+desc.immersiveengineering.info.revolver.perk.noise.tier2=Silenced %1$s
+desc.immersiveengineering.info.revolver.perk.noise.tier3=Muted %1$s
+desc.immersiveengineering.info.revolver.perk.luck=Luck: %1$s%%
+desc.immersiveengineering.info.revolver.perk.luck.tier-3=Tough %1$s
+desc.immersiveengineering.info.revolver.perk.luck.tier-2=Unlucky %1$s
+desc.immersiveengineering.info.revolver.perk.luck.tier-1=Inauspicious %1$s
+desc.immersiveengineering.info.revolver.perk.luck.tier1=Fortunate %1$s
+desc.immersiveengineering.info.revolver.perk.luck.tier2=Lucky %1$s
+desc.immersiveengineering.info.revolver.perk.luck.tier3=Gamblers %1$s
 
 desc.immersiveengineering.info.bullet.flareColour=Flare Colour: %1$s
 
@@ -1368,6 +1399,8 @@ ie.manual.entry.conveyor4=The Vertical Conveyor Belt is a belt meant to be mount
 ie.manual.entry.conveyor5=The Splitting Conveyor Belt alternates between redirecting Items and Entities left and right, plain and simple. This feature can be used to achieve a more equal distribution in your factories.
 ie.manual.entry.conveyor6=The Covered Conveyor Belt works just like a normal conveyor, however it is covered by a piece of scaffolding, which prevents players from picking up items from it.<br>You can rightclick it with other types of scaffold or glass to change the cover's appearance.
 ie.manual.entry.conveyor7=Similarly, the Dropping, Extracting and Vertical Conveyors can also be covered in scaffolding to achieve the same benefits of "pickup-prevention" while still functioning as they normally do.
+ie.manual.entry.conveyor8=Chutes are simple constructions made from sheetmetal that allow entities to drop down straight. They can insert into inventories below them and be inserted into by conveyors or similar devices. Items within them won't be picked up by players and should be immune to most forms of attraction, magnetic or magical.
+ie.manual.entry.conveyor9=Sneak + rightclick with an Engineer's Hammer to turn the chute into a corner piece that directs an entity to the side.
 
 ie.manual.entry.furnaceHeater.name=External Heater
 ie.manual.entry.furnaceHeater.subtext=Now you're cooking with flux!
@@ -1423,18 +1456,19 @@ ie.manual.entry.maintenanceKit1=A set of tools, wrapped in sturdy hemp cloth, th
 ie.manual.entry.revolver.name=Revolver
 ie.manual.entry.revolver.subtext=Wanted: Dead or Alive
 ie.manual.entry.revolver0=The Revolver, a more elegant weapon from a more civilized age, is an achievement of small mechanics. Small being relative here, since this weapon is chambered for 12-gauge.<br>Similar to the Mining Drill, the Revolver will allow for modification in the <link;workbench;§o§nEngineer's §o§nWorkbench§r>, as detailed on the last pages.
-ie.manual.entry.revolver1=There are different <link;bullets;§o§ntypes §o§nof §o§nammunition§r;> the Revolver will accept. To load it, sneak+rightclick the weapon, then place cartridges into the slots.<br>A loaded Speedloader in your inventory will be used to refill the revolver after you've fired your last shot.
+ie.manual.entry.revolver1=There are different <link;bullets;§o§ntypes §o§nof §o§nammunition§r;> the Revolver will accept. To load it, sneak+rightclick the weapon, then place cartridges into the slots.<br>A loaded Speedloader in your inventory will be used to refill the revolver after you've fired your last shot.<br><br>Note that firing the revolver is quite noisy, and will attract the attention of hostile mobs in the area!
 ie.manual.entry.revolver2=By attaching a §6bayonet§r to the revolver, you outfit it with close-quarter-combat capabilities, allowing for melee damage as powerful as an Iron Sword.
 ie.manual.entry.revolver3=The §6Extended Magazine§r allows loading 6 more cartridges into the revolver. This magazine does not get refilled by a speedloader.
 ie.manual.entry.revolver4=The §6Amplifying Electron Tubes§r apply an electric shock to fired projectiles. This shock persists till it hits the target (don't ask how it works) and is passed on. The target will be stunned for a fraction of a second and all powered equipment they may be using will suffer a slight discharge.
+ie.manual.entry.revolver5=Rarely, when exploring villages and trading with the local engineers, you may find special crafting components for the revolver. These components come with certain intrinsic perks and when used to craft a revolver, they will imbue those perks into it, affecting the §ofirerate§r, the amount of §onoise§r it makes and augmenting the wielder's §oluck§r.
 
 ie.manual.entry.bullets.name=Revolver Cartridges
 ie.manual.entry.bullets0=Cartridges are created in the Engineer's Workbench, by the use of specific <link;blueprints;§o§nEngineer's §o§nBlueprints§r>. Blueprints for normal ammunition you can create yourself, but some more advanced types of ammunition will require you to buy adequate blueprints from someone else.
 ie.manual.entry.bullets1=§lEmpty §lCasings§r and §lShells§r are the basis for every projectile. Empty Casings can also be crafted in the <link;metalPress;§o§nMetal §o§nPress§r>, using the appropriate mold, at a greatly reduced cost.
 ie.manual.entry.bullets_casull=§lCasull §lCartridges§r are created with a "Common Projectiles" blueprint. They are a simple lead projectile inflicting medium damage.
-ie.manual.entry.bullets_armorPiercing=§lArmor-Piercing §lCartridges§r are created with the same blueprint. They do the same amount of damage but penetrate armor by sheer kinetic force.
+ie.manual.entry.bullets_armor_piercing=§lArmor-Piercing §lCartridges§r are created with the same blueprint. They do the same amount of damage but penetrate armor by sheer kinetic force.
 ie.manual.entry.bullets_buckshot=§lBuckshot §lCartridges§r, created with the aformentioned blueprint, are filled with multiple small projectiles that are fired out in a cone shape. This cartridge is highly effective at short range.
-ie.manual.entry.bullets_HE=§lHigh-Explosive §lCartridges§r are created with a "Common Projectiles" blueprint. They fire a projectile that explodes on impact, causing damage to living creatures and terrain.
+ie.manual.entry.bullets_he=§lHigh-Explosive §lCartridges§r are created with a "Common Projectiles" blueprint. They fire a projectile that explodes on impact, causing damage to living creatures and terrain.
 ie.manual.entry.bullets_silver=§lSilver §lCartridges§r consist of a lead core wrapped in silver, making them highly effective against undead.
 ie.manual.entry.bullets_dragonsbreath=§lDragon's §lBreath Cartridges§r are created with a "Specialized Projectiles" blueprint. Similarly to Buckshot, they are effective at short range, but instead of small metal shots, they are filled with a flammable metal dust, creating a blast of flame.
 ie.manual.entry.bullets_potion=§lPhial §lCartridges§r are also created with the "Specialized" blueprint. They can be filled with any potion by crafting them together in a crafting grid and this potion will then be applied on impact. Normal potions require a direct hit, splash potions have an area of effect and Lingering Potions will create a temporary, lingering potion cloud.
@@ -1459,8 +1493,7 @@ ie.manual.entry.shader0=Shaders are items you can find in the world or aquire by
 ie.manual.entry.shader1=For a full list of all available shaders, their looks, references and more details, <link;shaderList;§o§ncheck §o§nhere§r>
 ie.manual.entry.shader2=Shader Grabbags are items containing a random shader. They can be found in crates, traded from villagers or dropped by bosses. The rarity of the contained shader is equal to, or better than the rarity of the bag. When using a bag, you are more likely to get a shader you do not yet own, than one you already posess.
 ie.manual.entry.shader3=Shaders bags can be crafted into two bags of a lower level. This will lower your chances of getting rarer shaders but provide you with more attempts.
-# //Shaders themselves can also be crafted into a single bag of the lower level.
-
+//Shaders themselves can also be crafted into a single bag of the lower level.\n
 ie.manual.entry.shaderList.name=List of Shaders
 ie.manual.entry.shaderList.noInfo=You have not unlocked this shader yet!
 ie.manual.entry.shaderList.unlock=Unlock this shader
@@ -1501,8 +1534,7 @@ ie.manual.entry.crusher.name=Crusher
 ie.manual.entry.crusher.subtext=Keep your hands out!
 ie.manual.entry.crusher0=Crushing an ore is an effective way of increasing their yield, for each ore creates two dusts which you can then smelt. This industrial-size crusher is a quick way of doing so. The machine's processing speed depends on the power supplied to it.
 ie.manual.entry.crusher1=Applying a redstone signal to the control panel at the front will halt the crushers process, this behavior can be inverted by use of the Engineer's Hammer.<br>The structure is formed by right clicking the central block of the front. The front is the wide side of the structure which has a light engineering block at the bottom.
-# //However, it is not only used for crushing ores. Every living being to fall into the machine will take grave damage and the crusher will output the relevant drops. Likewise, all items that cannot be processed will be destroyed.<br>
-
+//However, it is not only used for crushing ores. Every living being to fall into the machine will take grave damage and the crusher will output the relevant drops. Likewise, all items that cannot be processed will be destroyed.<br>\n
 ie.manual.entry.lightningrod.name=Lightning Rod
 ie.manual.entry.lightningrod.subtext=Thunderstruck!
 ie.manual.entry.lightningrod0=Lightning is a phenomenon of nature. It contains a huge amount of raw power, and this lightning rod is able to harness that power.<br>By stacking a lot of steel fences on this multiblock, you increase the chance of a lightning bolt striking it during rain or thunderstorms.
