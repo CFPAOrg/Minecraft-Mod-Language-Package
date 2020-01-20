@@ -1,0 +1,21 @@
+name: Spider
+
+on:
+  schedule:
+    - cron:  '0 */1 * * *'
+env:
+  token: ${{ secrets.tk }}
+      
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: run with dotnet
+      run: dotnet run -c Release -f netcoreapp3.1 -p ./src/LangPack/Spider/Spider.csproj
