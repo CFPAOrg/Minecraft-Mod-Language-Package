@@ -34,7 +34,7 @@ namespace Pack
                 .Append(new { src = @"./database/asset_map.json", dest = @"assets/i18nmod/asset_map/asset_map.json" });
 
             Directory.CreateDirectory(@"./out");
-            Console.WriteLine($"Totall found {paths.CountAsync()} files ");
+            Console.WriteLine($"Totally found {paths.CountAsync()} files ");
             await using (var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip"))
             {
                 using var zipArchive = new ZipArchive(zipFile, ZipArchiveMode.Create);
