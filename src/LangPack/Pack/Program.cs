@@ -47,7 +47,7 @@ namespace Pack
                 }
             }
 
-            var upload = Task.Run(UploadQiniu);
+            var upload = UploadQiniuAsync();
             var release = ReleaseAsync();
             Task.WaitAll(release, upload);
             sw.Stop();
@@ -101,26 +101,30 @@ namespace Pack
             }
         }
 
-        private static void UploadQiniu()
+        private static async Task UploadQiniuAsync()
         {
             var accessKey = Environment.GetEnvironmentVariable("ak");
             var secretKey = Environment.GetEnvironmentVariable("sk");
             if (string.IsNullOrEmpty(accessKey) || string.IsNullOrEmpty(secretKey)) return;
             var mac = new Mac(accessKey, secretKey);
+            const string bucket = "langpack";
             var putPolicy = new PutPolicy
             {
-                Scope = "langpack"
+                Scope = bucket
             };
+            var key = "Minecraft-Mod-Language-Modpack.zip";
             putPolicy.SetExpires(120);
             var token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
-            var um = new UploadManager(new Config());
-            var result = um.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
+            var uploadManager = new UploadManager(new Config());
+            var result = await uploadManager.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
                 "Minecraft-Mod-Language-Modpack.zip", token, new PutExtra());
+            Trace.Assert(result.RefInfo["key"]==key);
+            Trace.Assert(result.RefInfo["hash"]==ETag.CalcHash(@"./Minecraft-Mod-Language-Modpack.zip"));
             Console.WriteLine(result.Text);
             var cdnManager = new CdnManager(mac);
-            var refreshResult = cdnManager.RefreshUrls(new[]
+            var refreshResult = await cdnManager.RefreshUrls(new[]
                 {"http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip"});
-            Console.WriteLine(refreshResult.Text);
+            Console.WriteLine(refreshResult.Result);
         }
 
 
