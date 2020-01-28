@@ -116,7 +116,7 @@ namespace Pack
             var token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
             var config = new Config
             {
-                Zone = Zone.ZoneCnEast, UseHttps = true, UseCdnDomains = true, ChunkSize = ChunkUnit.U512K
+                Zone = Zone.ZoneCnSouth, UseHttps = true, UseCdnDomains = true, ChunkSize = ChunkUnit.U512K
             };
             var target = new FormUploader(config);
             var result = await target.UploadFile(filePath, key, token, null);
@@ -127,9 +127,6 @@ namespace Pack
             if (ret.Code != (int) HttpCode.OK) Console.WriteLine(ret.ToString());
             Console.WriteLine(ret.Result.Code);
             Console.WriteLine(ret.Result.Error);
-            Console.WriteLine(ret.Result.UrlQuotaDay);
-            Console.WriteLine(ret.Result.UrlSurplusDay);
-            Console.WriteLine(ret.Result.RequestId);
             if (ret.Result.InvalidUrls != null)
                 foreach (var url in ret.Result.InvalidUrls)
                     Console.WriteLine(url);
