@@ -111,7 +111,7 @@ namespace Pack
             const string key = "Minecraft-Mod-Language-Modpack.zip";
             const string filePath = @"./Minecraft-Mod-Language-Modpack.zip";
             const string Bucket = "langpack";
-            var putPolicy = new PutPolicy {Scope = Bucket};
+            var putPolicy = new PutPolicy {Scope = Bucket+":"+key};
             putPolicy.SetExpires(120);
             var token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
             var config = new Config
