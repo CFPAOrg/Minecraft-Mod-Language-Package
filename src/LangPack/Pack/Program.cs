@@ -1,13 +1,14 @@
-﻿using Octokit;
-using Qiniu.CDN;
-using Qiniu.Storage;
-using Qiniu.Util;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
+using Octokit;
+using Qiniu.CDN;
+using Qiniu.Http;
+using Qiniu.Storage;
+using Qiniu.Util;
 
 namespace Pack
 {
@@ -107,24 +108,28 @@ namespace Pack
             var secretKey = Environment.GetEnvironmentVariable("sk");
             if (string.IsNullOrEmpty(accessKey) || string.IsNullOrEmpty(secretKey)) return;
             var mac = new Mac(accessKey, secretKey);
-            const string bucket = "langpack";
-            var putPolicy = new PutPolicy
-            {
-                Scope = bucket
-            };
-            var key = "Minecraft-Mod-Language-Modpack.zip";
+            const string key = "Minecraft-Mod-Language-Modpack.zip";
+            const string filePath = @"./Minecraft-Mod-Language-Modpack.zip";
+            const string Bucket = "langpack";
+            var putPolicy = new PutPolicy {Scope = Bucket+":"+key};
             putPolicy.SetExpires(120);
             var token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
-            var uploadManager = new UploadManager(new Config());
-            var result = await uploadManager.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
-                "Minecraft-Mod-Language-Modpack.zip", token, new PutExtra());
-            Trace.Assert(result.RefInfo["key"]==key);
-            Trace.Assert(result.RefInfo["hash"]==ETag.CalcHash(@"./Minecraft-Mod-Language-Modpack.zip"));
-            Console.WriteLine(result.Text);
-            var cdnManager = new CdnManager(mac);
-            var refreshResult = await cdnManager.RefreshUrls(new[]
-                {"http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip"});
-            Console.WriteLine(refreshResult.Result);
+            var config = new Config
+            {
+                Zone = Zone.ZoneCnSouth, UseHttps = true, UseCdnDomains = true, ChunkSize = ChunkUnit.U512K
+            };
+            var target = new FormUploader(config);
+            var result = await target.UploadFile(filePath, key, token, null);
+            Console.WriteLine("form upload result: " + result.Text);
+            var manager = new CdnManager(mac);
+            string[] urls = { "http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip" };
+            var ret = await manager.RefreshUrls(urls);
+            if (ret.Code != (int) HttpCode.OK) Console.WriteLine(ret.ToString());
+            Console.WriteLine(ret.Result.Code);
+            Console.WriteLine(ret.Result.Error);
+            if (ret.Result.InvalidUrls != null)
+                foreach (var url in ret.Result.InvalidUrls)
+                    Console.WriteLine(url);
         }
 
 
@@ -134,7 +139,9 @@ namespace Pack
             {
                 if (Directory.Exists(Path.Combine(path, containDir))) return path;
 
-                if (Path.GetPathRoot(path) == path) throw new DirectoryNotFoundException($"The {nameof(containDir)} doesn't contain in any parent of {nameof(path)}");
+                if (Path.GetPathRoot(path) == path)
+                    throw new DirectoryNotFoundException(
+                        $"The {nameof(containDir)} doesn't contain in any parent of {nameof(path)}");
                 path = Directory.GetParent(path).FullName;
             }
         }
