@@ -108,18 +108,16 @@ namespace Pack
             if (string.IsNullOrEmpty(accessKey) || string.IsNullOrEmpty(secretKey)) return;
             var mac = new Mac(accessKey, secretKey);
             const string bucket = "langpack";
+            const string key = "Minecraft-Mod-Language-Modpack.zip";
             var putPolicy = new PutPolicy
             {
                 Scope = bucket
             };
-            var key = "Minecraft-Mod-Language-Modpack.zip";
             putPolicy.SetExpires(120);
             var token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
             var uploadManager = new UploadManager(new Config());
             var result = await uploadManager.UploadFile(@"./Minecraft-Mod-Language-Modpack.zip",
-                "Minecraft-Mod-Language-Modpack.zip", token, new PutExtra());
-            Trace.Assert(result.RefInfo["key"]==key);
-            Trace.Assert(result.RefInfo["hash"]==ETag.CalcHash(@"./Minecraft-Mod-Language-Modpack.zip"));
+                key, token, null);
             Console.WriteLine(result.Text);
             var cdnManager = new CdnManager(mac);
             var refreshResult = await cdnManager.RefreshUrls(new[]
