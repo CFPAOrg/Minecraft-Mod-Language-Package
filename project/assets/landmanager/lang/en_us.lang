@@ -1,0 +1,239 @@
+####Creative Tab
+
+
+itemGroup.landmanage=Land Manager
+
+
+####Item
+
+
+item.admin.nam=Area Creation Tool
+item.admin.tooltip.notse=First position not set
+item.admin.tooltip.se=Dim Id: %d, BlockPos: %s
+
+
+####Block
+
+
+tile.home.nam=Home Block
+
+
+####Messages
+
+
+message.tool.save=Saved block position %d, %d, %d
+message.tool.diffdi=Cannot form area with two positions in different dimensions!
+message.tool.cleare=Cleared saved position
+message.create.adde=Added area '%s'
+message.create.nam=An area with the name %s already exists!
+message.create.intersect=New area intersects with an existing area!
+message.create.invalid_nam=Area name is invalid! It must not contain spaces or special characters other than '_'
+message.create.invali=Area is invalid!
+message.areas.sho=Now showing all nearby areas
+message.areas.hid=Turned off showing all nearby areas
+message.protection.brea=Cannot break blocks in this area!
+message.protection.plac=Cannot place blocks in this area!
+message.protection.interac=Cannot interact with blocks in this area!
+message.home.non=This Home Block is not within an area!
+message.home.notMembe=You are not a member of this area!
+message.error.maxJoine=You can't join any more areas! You are a member of %s areas.
+message.error.noPer=You do not have permission to edit this area
+message.error.noPlayerNam=Can't find the player '%s'
+message.error.noPlaye=Can't find the player
+message.error.cantJoi=The player '%s' can't join any more areas
+message.error.alreadyMembe=The player %s is already a member of this area
+message.misc.tru=True
+message.misc.fals=False
+
+
+####Commands
+
+
+lm.command.usag=Use "/lm <subcommand>"
+
+
+##Misc command translations
+
+
+lm.command.non=Couldn't find area '%s'
+lm.command.noplaye=Could not find player %s
+lm.command.playe=You need to be a player to use this command
+lm.command.areaNam=No area name provided!
+lm.command.dat=Failed to get areas from the world with dimension id %s
+lm.command.reqdat=Failed to get requests data
+lm.command.pag=Page: %s
+lm.command.noPer=You do not have permission to edit the area '%s'!
+lm.command.notInAre=You are not standing in an area!
+
+
+##Non-op Commands
+
+
+#Area
+lm.command.area.usag=Use "/lm area <areaName>" to see details about the area
+lm.command.area.non=None
+lm.command.area.nam=Area Name:
+lm.command.area.di=Dimension ID:
+lm.command.area.owne=Owner:
+lm.command.area.member=Members:
+lm.command.area.posmi=Block Pos Min:
+lm.command.area.posma=Block Pos Max:
+lm.command.area.passive=Can Passive Entities Spawn:
+lm.command.area.hostile=Can Hostile Entities Spawn:
+lm.command.area.explosion=Explosions:
+lm.command.area.interaction=Block Interactions:
+
+
+#Areas
+lm.command.areas.usag=Use "/lm areas [page] [areaNameRegex]" to list all the areas, optionally with a regex filter
+lm.command.areas.non=No areas found
+lm.command.areas.titl=Areas - Page %s / %s
+
+
+#Claim
+lm.command.claim.usag=Use "/lm claim [areaName]" to claim an area. Providing no area will try claiming the area you're standing in
+lm.command.claim.disable=Area claiming is not enabled! Ask an OP to allocate you an area.
+lm.command.claim.claime=Area %s claimed
+lm.command.claim.alread=Someone already owns area %s
+lm.command.claim.request.succes=Claim request successfully created for area %s
+lm.command.claim.request.faile=Claim request failed - you already have one for the area %s!
+lm.command.claim.request.opMessag=§7New claim request (%s) from %s for area %s
+
+
+#Members
+lm.command.members.usag=Use "/lm members <subcommand>"
+lm.command.members.add.usag=Use "/lm members add <areaName> <playerName>" to add the player to the area
+lm.command.members.add.succes=%s was successfully added to area %s
+lm.command.members.add.alread=%s is already a member of area %s
+lm.command.members.remove.usag=Use "/lm members remove <areaName> <playerName>" to remove the player from the area
+lm.command.members.remove.succes=%s was successfully remove from area %s
+lm.command.members.remove.alread=%s already isn't a member of area %s
+
+
+#MyAreas
+lm.command.myareas.usag=Use "/lm myareas [page] [areaNameRegex]" to list all your areas, optionally with a regex filter
+lm.command.myareas.non=No areas found
+lm.command.myareas.titl=My Areas - Page %s / %s
+
+
+#SetOwner
+lm.command.setowner.usag=Use "/lm setowner <areaName> [playerName]" to set the player as the new owner of the area. OPs can provide no player to remove the owner
+lm.command.setowner.o=You must be an OP or owner of the area to use this command
+lm.command.setowner.succes=The new owner of the area %s is %s
+
+
+#Show
+lm.command.show.usag=Use "/lm show [areaName]". Providing no area will show all areas nearby
+lm.command.show.showin=Now showing area %s
+
+
+#Showoff
+lm.command.showoff.usag=Use "/lm showoff"
+lm.command.showof=Not showing any areas
+
+
+##Op Commands
+
+
+lm.command.op.usag=Use "/lm op <subcommand>"
+
+
+#Approve
+lm.command.approve.usag=Use "/lm op approve <requestId>" to approve a claim request. Check for requests using the 'requests' command
+lm.command.approve.noReques=No request with id %s
+lm.command.approve.noAre=Area %s does not exist
+lm.command.approve.succes=Approved request %s - %s is now the owner of area %s
+lm.command.approve.playerMessag=Your request for area %s has been approved by %s!
+
+
+#Delete
+lm.command.delete.usag=Use "/lm op delete <areaName>" to delete an area
+lm.command.delete.delete=Deleted area %s
+lm.command.delete.faile=Failed to delete area %s
+lm.command.delete.notif=The area %s that you were a member of has been deleted!
+
+
+#Disapprove
+lm.command.disapprove.usag=Use "/lm op disapprove <requestId>" to disapprove a claim request. Check for requests using the 'requests' command
+lm.command.disapprove.noReques=No request with id %s
+lm.command.disapprove.noAre=Area %s does not exist
+lm.command.disapprove.succes=Disapproved request %s from %s for area %s
+lm.command.disapprove.playerMessag=Your request for area %s has been disapproved by %s!
+
+
+#Requests
+lm.command.requests.usag=Use "/lm op requests [page] [areaNameRegex]". You can display requests for an area without providing the page
+lm.command.requests.non=No requests found
+lm.command.requests.titl=Requests - Page %s / %s
+lm.command.requests.approv=Approve request %s
+lm.command.requests.disapprov=Disapprove request %s
+
+
+##Optional Commands
+
+
+#Explosions
+lm.command.explosions.usag=Use "/lm explosions <areaName>" to toggle explosion damage
+lm.command.explosions.usage.o=Use "/lm op explosions <areaName>" to toggle explosion damage
+lm.command.explosions.succes=Set explosions to %s for area %s
+
+
+#Hostiles
+lm.command.hostiles.usag=Use "/lm hostiles <areaName>" to toggle hostile entity spawning
+lm.command.hostiles.usage.o=Use "/lm op hostiles <areaName>" to toggle hostile entity spawning
+lm.command.hostiles.succes=Set hostile entity spawning to %s for area %s
+
+
+#Interactions
+lm.command.interactions.usag=Use "/lm interactions <areaName>" to toggle player interactions (right clicking) with blocks
+lm.command.interactions.usage.o=Use "/lm op interactions <areaName>" to toggle player interactions (right clicking) with blocks
+lm.command.interactions.succes=Set interactions to %s for area %s
+
+
+#Passives
+lm.command.passives.usag=Use "/lm passives <areaName>" to toggle passive entity spawning
+lm.command.passives.usage.o=Use "/lm op passives <areaName>" to toggle passive entity spawning
+lm.command.passives.succes=Set passive entity spawning to %s for area %s
+
+
+#Rename
+lm.command.rename.usag=Use "/lm rename <areaName> <newAreaName>" to rename an area
+lm.command.rename.usage.o=Use "/lm op rename <areaName> <newAreaName>" to rename an area
+lm.command.rename.succes=You successfully renamed the area %s to %s
+lm.command.rename.invali=The new area name '%s' is invalid! It must not contain spaces or special characters other than '_'
+
+
+#Tool
+lm.command.tool.usag=Use "/lm tool" to give yourself the admin tool
+lm.command.tool.usage.o=Use "/lm op tool" to give yourself the admin tool
+lm.command.tool.inventor=No room in inventory for tool
+
+
+####Log Types
+
+
+area.change.creat=CREATE
+area.change.delet=DELETE
+area.change.allocat=ALLOCATE
+area.change.clear_allocatio=CLEAR_ALLOCATION
+area.change.clai=CLAIM
+
+
+####Gui
+
+
+gui.create.checkbo=Min/Max Y
+gui.create.confir=Confirm
+gui.create.are=Area name:
+
+
+gui.home.ad=Add
+gui.home.kic=Kick
+gui.home.pas=Pass
+gui.home.boundarie=Show Boundaries
+gui.home.interaction=Interactions
+gui.home.passive=Passive Spawning
+gui.home.hostile=Hostiles Spawning
+gui.home.explosion=Explosions
+gui.home.owne=Owner
+gui.home.toggleDisable=You don't have permission to change this!
