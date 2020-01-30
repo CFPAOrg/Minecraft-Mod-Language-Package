@@ -35,7 +35,7 @@ namespace Spider
 
                 Directory.CreateDirectory(Path.Combine(Configuration.OutputPath, path));
                 var fullPath = Path.Combine(Configuration.OutputPath, path, "en_us.lang");
-                await File.AppendAllTextAsync(fullPath, language.OutPutText).ContinueWith(
+                await File.WriteAllTextAsync(fullPath, language.OutPutText).ContinueWith(
                     t => Log.Information($"写入了一个语言文件到: {fullPath}")).ConfigureAwait(false);
             }
 
