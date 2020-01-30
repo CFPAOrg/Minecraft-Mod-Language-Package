@@ -10,19 +10,17 @@ using Qiniu.Http;
 using Qiniu.Storage;
 using Qiniu.Util;
 
-namespace Pack
+namespace Packer
 {
     internal class Program
     {
-        public static async Task Main(string[] args)
+        public static async Task Main()
         {
             var sw = Stopwatch.StartNew();
             var repoPath = GetTargetParentDirectory(Environment.CurrentDirectory, ".git");
             Directory.SetCurrentDirectory(repoPath);
             if (File.Exists(@"./Minecraft-Mod-Language-Modpack.zip"))
                 File.Delete(@"./Minecraft-Mod-Language-Modpack.zip");
-            Console.WriteLine("Start packing!");
-
             var paths = Directory.EnumerateFiles(@"./project", "*", SearchOption.AllDirectories)
                 .Where(_ => _.EndsWith("zh_cn.lang"))
                 .Append(@"./project/pack.png")
@@ -30,10 +28,9 @@ namespace Pack
                 .Select(_ => new {src = _, dest = Path.GetRelativePath(@"./project", _)})
                 .Append(new {src = @"./README.md", dest = @"README.md"})
                 .Append(new {src = @"./LICENSE", dest = @"LICENSE"})
-                .Append(new {src = @"./database/asset_map.json", dest = @"assets/i18nmod/asset_map/asset_map.json"})
+                .Append(new {src = @"./data/asset_map.json", dest = @"assets/i18nmod/asset_map/asset_map.json"})
                 .ToList();
 
-            Directory.CreateDirectory(@"./out");
             Console.WriteLine($"Totally found {paths.Count} files ");
             await using (var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip"))
             {
@@ -58,15 +55,15 @@ namespace Pack
         private static async Task ReleaseAsync()
         {
             var sha = Environment.GetEnvironmentVariable("sha");
-            var githubToken = Environment.GetEnvironmentVariable("repo_token");
+            var token = Environment.GetEnvironmentVariable("token");
             var identity = Environment.GetEnvironmentVariable("repo")?.Split("/");
-            if (!string.IsNullOrEmpty(githubToken))
+            if (!string.IsNullOrEmpty(token))
             {
                 var owner = identity?[0];
                 var repoName = identity?[1];
                 var client = new GitHubClient(new ProductHeaderValue(owner))
                 {
-                    Credentials = new Credentials(githubToken)
+                    Credentials = new Credentials(token)
                 };
                 var comment = string.Join("\n",
                     (await client.Repository.Comment.GetAllForCommit(owner, repoName, sha)).Select(c => c.Body));
@@ -77,7 +74,7 @@ namespace Pack
                     Message = comment,
                     Tag = tagName,
                     Type = TaggedType.Commit,
-                    Tagger = new Committer("tartaric_acid", "bakabaka943@gmail.com", DateTimeOffset.UtcNow)
+                    Tagger = new Committer("CFPABot", "bot@cfpa.team", DateTimeOffset.UtcNow)
                 };
                 var tagResult = await client.Git.Tag.Create(owner, repoName, tag);
                 Console.WriteLine($"Created a tag for {tagResult.Tag} at {tagResult.Sha}");
@@ -98,7 +95,7 @@ namespace Pack
                     RawData = rawData
                 };
                 var release = await client.Repository.Release.Get(owner, repoName, releaseResult.Id);
-                var asset = await client.Repository.Release.UploadAsset(release, assetUpload);
+                await client.Repository.Release.UploadAsset(release, assetUpload);
             }
         }
 
@@ -110,19 +107,22 @@ namespace Pack
             var mac = new Mac(accessKey, secretKey);
             const string key = "Minecraft-Mod-Language-Modpack.zip";
             const string filePath = @"./Minecraft-Mod-Language-Modpack.zip";
-            const string Bucket = "langpack";
-            var putPolicy = new PutPolicy {Scope = Bucket+":"+key};
+            const string bucket = "langpack";
+            var putPolicy = new PutPolicy {Scope = bucket + ":" + key};
             putPolicy.SetExpires(120);
             var token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
             var config = new Config
             {
-                Zone = Zone.ZoneCnSouth, UseHttps = true, UseCdnDomains = true, ChunkSize = ChunkUnit.U512K
+                Zone = Zone.ZoneCnSouth,
+                UseHttps = true,
+                UseCdnDomains = true,
+                ChunkSize = ChunkUnit.U512K
             };
             var target = new FormUploader(config);
             var result = await target.UploadFile(filePath, key, token, null);
             Console.WriteLine("form upload result: " + result.Text);
             var manager = new CdnManager(mac);
-            string[] urls = { "http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip" };
+            string[] urls = {"http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip"};
             var ret = await manager.RefreshUrls(urls);
             if (ret.Code != (int) HttpCode.OK) Console.WriteLine(ret.ToString());
             Console.WriteLine(ret.Result.Code);
