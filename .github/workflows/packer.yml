@@ -1,0 +1,24 @@
+name: Packer
+
+on:
+  push:
+    branches: 
+    - 1.12.2
+env:
+      ak: ${{ secrets.Access_Key }}
+      sk: ${{ secrets.Secret_Key }}
+      token: ${{ secrets.token }}
+      repo: ${{ github.repository }}
+      sha: ${{github.sha}}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: run
+      run: dotnet run -c Release -p ./src/Packer/Packer.csproj
