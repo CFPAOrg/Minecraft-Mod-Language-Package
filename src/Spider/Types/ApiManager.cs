@@ -24,7 +24,7 @@ namespace Spider.Types
             return json.EnumerateArray().Select(j =>
             {
                 var gameVersionLatestFiles = j.GetProperty("gameVersionLatestFiles").EnumerateArray().ToList();
-                var gameVersionLatestFile = gameVersionLatestFiles.First(_ => _.GetProperty("gameVersion").GetString().StartsWith("1.12"));
+                var gameVersionLatestFile = gameVersionLatestFiles.First(_ => _.GetProperty("gameVersion").GetString()==Configuration.Version);
                 var projectFileId = gameVersionLatestFile.GetProperty("projectFileId").GetString();
                 var projectFileName = gameVersionLatestFile.GetProperty("projectFileName").GetString();
                 var downloadUrl =
