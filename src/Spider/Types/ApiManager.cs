@@ -23,13 +23,17 @@ namespace Spider.Types
             var json = JsonDocument.Parse(str).RootElement;
             return json.EnumerateArray().Select(j =>
             {
-                var downloadUrl = j.GetProperty("latestFiles")[0]
-                    .GetProperty("downloadUrl").GetString();
+                var gameVersionLatestFiles = j.GetProperty("gameVersionLatestFiles").EnumerateArray().ToList();
+                var gameVersionLatestFile = gameVersionLatestFiles.First(_ => _.GetProperty("gameVersion").GetString()==Configuration.Version);
+                var projectFileId = gameVersionLatestFile.GetProperty("projectFileId").GetInt32().ToString();
+                var projectFileName = gameVersionLatestFile.GetProperty("projectFileName").GetString();
+                var downloadUrl =
+                    $"https://edge.forgecdn.net/files/{projectFileId[..4]}/{projectFileId[5..]}/{projectFileName}";
                 var id = j.GetProperty("id").GetInt64();
                 var name = j.GetProperty("name").GetString();
                 var url = j.GetProperty("websiteUrl").GetString();
                 //var dateTime = DateTime.Parse(j.GetProperty("dateModified").GetString());
-                var mod = new Mod(id) {Name = name, DownloadUrl = downloadUrl, Url = url};
+                var mod = new Mod(id) { Name = name, DownloadUrl = downloadUrl, Url = url };
                 if (!Configuration.ModBlackList.Contains(mod.ShortUrl)) return mod;
                 Interlocked.Decrement(ref counter);
                 Log.Information($"跳过了一个黑名单中的模组:{mod.Name}");

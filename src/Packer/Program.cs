@@ -19,12 +19,8 @@ namespace Packer
             var sw = Stopwatch.StartNew();
             var repoPath = GetTargetParentDirectory(Environment.CurrentDirectory, ".git");
             Directory.SetCurrentDirectory(repoPath);
-            if (File.Exists(@"./Minecraft-Mod-Language-Modpack.zip"))
-                File.Delete(@"./Minecraft-Mod-Language-Modpack.zip");
             var paths = Directory.EnumerateFiles(@"./project", "*", SearchOption.AllDirectories)
-                .Where(_ => _.EndsWith("zh_cn.lang"))
-                .Append(@"./project/pack.png")
-                .Append(@"./project/pack.mcmeta")
+                .Where(_ => !_.EndsWith("en_us.lang",StringComparison.OrdinalIgnoreCase))
                 .Select(_ => new {src = _, dest = Path.GetRelativePath(@"./project", _)})
                 .Append(new {src = @"./README.md", dest = @"README.md"})
                 .Append(new {src = @"./LICENSE", dest = @"LICENSE"})
