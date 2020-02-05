@@ -17,7 +17,7 @@ namespace Spider
                 .CreateLogger();
 
             var mods = (await ApiManager.GetModsAsync()).ToList();
-            await ModDownloadManager.DownloadModsAsync(mods);
+            ModDownloadManager.DownloadModsAsync(mods).Wait();
             LangManager.ProcessLangFiles(mods);
             var languages = mods.SelectMany(_ => _.Languages).Where(_ => !_.IsInBlackList).ToList();
             foreach (var language in languages)
@@ -39,6 +39,10 @@ namespace Spider
                     t => Log.Information($"写入了一个语言文件到: {fullPath}")).ConfigureAwait(false);
             }
 
+            foreach (var mod in mods)
+            {
+                mod.Dispose();
+            }
             RepositoryManager.PushToGithub();
             Log.CloseAndFlush();
         }

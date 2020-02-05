@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
 namespace Spider.Models
 {
-    internal class Mod
+    internal class Mod : IDisposable
     {
         private bool _isInBlackList;
 
@@ -31,5 +32,14 @@ namespace Spider.Models
         }
 
         public Stream Stream { get; set; }
+
+        public void Dispose()
+        {
+            Stream?.Dispose();
+            if (!IsInBlackList&&Languages.Count!=0)
+            {
+                Languages.ForEach(_ => _.Stream?.Dispose());
+            }
+        }
     }
 }
