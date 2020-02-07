@@ -20,6 +20,7 @@ namespace Spider
             ModDownloadManager.DownloadModsAsync(mods).Wait();
             LangManager.ProcessLangFiles(mods);
             var languages = mods.SelectMany(_ => _.Languages).Where(_ => !_.IsInBlackList).ToList();
+            Log.Information($"共收集到了{languages.Count}个语言文件.");
             foreach (var language in languages)
             {
                 string path;
