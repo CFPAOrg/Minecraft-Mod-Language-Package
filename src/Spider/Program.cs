@@ -28,7 +28,7 @@ namespace Spider
                     _ = languages.Single(_ => _.AssetDomain == language.AssetDomain);
                     path = $"assets/{language.AssetDomain}/lang/";
                 }
-                catch
+                catch (Exception)
                 {
                     path = $"assets/{language.AssetDomain}-{language.BaseMod.ShortUrl}/lang/";
                 }
