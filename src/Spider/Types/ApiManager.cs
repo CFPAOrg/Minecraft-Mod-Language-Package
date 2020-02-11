@@ -28,8 +28,7 @@ namespace Spider.Types
                 var gameVersionLatestFile = gameVersionLatestFiles.First(_ => _.GetProperty("gameVersion").GetString()==Configuration.Version);
                 var projectFileId = gameVersionLatestFile.GetProperty("projectFileId").GetInt32().ToString();
                 var projectFileName = gameVersionLatestFile.GetProperty("projectFileName").GetString();
-                var downloadUrl =
-                    $"https://edge.forgecdn.net/files/{projectFileId[..4]}/{projectFileId[5..]}/{projectFileName}";
+                var downloadUrl = Utils.GetDownloadUrl(projectFileId, projectFileName);
                 var id = j.GetProperty("id").GetInt64();
                 var name = j.GetProperty("name").GetString();
                 var url = j.GetProperty("websiteUrl").GetString();
