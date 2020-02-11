@@ -25,6 +25,7 @@ schematica.gui.point.red=Red point
 schematica.gui.point.blue=Blue point
 schematica.gui.save=Save
 schematica.gui.saveselection=Save the selection as a schematic
+schematica.gui.format=Format: %s
 
 
 # gui - general - control
@@ -35,6 +36,7 @@ schematica.gui.operations=Operations
 schematica.gui.unload=Unload
 schematica.gui.all=ALL
 schematica.gui.layers=Layers
+schematica.gui.below=All below
 schematica.gui.hide=Hide
 schematica.gui.show=Show
 schematica.gui.movehere=Move here
@@ -42,6 +44,8 @@ schematica.gui.flip=Flip
 schematica.gui.rotate=Rotate
 schematica.gui.materialname=Material
 schematica.gui.materialamount=Amount
+schematica.gui.materialavailable=Available
+schematica.gui.materialmissing=Missing
 schematica.gui.materialdump=Save to file
 
 
@@ -147,16 +151,18 @@ schematica.key.layerToggle=Toggle All/Layer Mode
 schematica.key.renderToggle=Toggle Rendering
 schematica.key.printerToggle=Toggle Printer
 schematica.key.moveHere=Move here
+schematica.key.pickBlock=Pick Block
 
 
 # commands - save
-schematica.command.save.usage=/schematicaSave <startX> <startY> <startZ> <endX> <endY> <endZ> <name>
+schematica.command.save.usage=/schematicaSave <startX> <startY> <startZ> <endX> <endY> <endZ> <name> [format]
 schematica.command.save.playersOnly=This command can only be used by players.
 schematica.command.save.started=Started saving %d chunks into %s.
 schematica.command.save.saveSucceeded=Successfully saved %s.
 schematica.command.save.saveFailed=There was a problem saving the schematic %s.
 schematica.command.save.quotaExceeded=You have exceeded your quota on the server. Please use /schematicaList and /schematicaRemove to remove some old schematics.
 schematica.command.save.playerSchematicDirUnavailable=There was a problem on the server and your schematic was not saved. Please contact the server administrator.
+schematica.command.save.unknownFormat=Unknown format "%s".
 
 
 # commands - list
@@ -194,3 +200,10 @@ schematica.message.togglePrinter=Printer: %s
 schematica.message.invalidBlock="%s" does not exist.
 schematica.message.invalidProperty="%s" is not a valid property.
 schematica.message.invalidPropertyForBlock="%s" is not a valid property for "%s".
+
+
+# schematic formats
+schematica.format.classic=Classic
+schematica.format.alpha=Alpha (standard)
+schematica.format.structure=Structure block
+schematica.format.invalid=Invalid

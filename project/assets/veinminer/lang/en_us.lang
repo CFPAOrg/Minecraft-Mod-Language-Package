@@ -1,8 +1,17 @@
 # Command usage/error
-command.veinminer=/veinminer mode/blocklist/toollist/blocklimit/radius/per_tick/saveconfig/help
+command.veinminer=/veinminer mode/blocklist/toollist/blocklimit/radius/per_tick/saveconfig/reloadconfig/help
 command.veinminer.enable=/veinminer mode auto/sneak/no_sneak
 command.veinminer.blocklist=/veinminer blocklist %s add/remove <mod id>:<block name> <metadata>
 command.veinminer.toollist=/veinminer toollist %s add/remove <tool id>
+
+
+command.veinminer.hasclient=You seem to have a veinminer on the client. Please use /veinminerc instead.
+
+
+# Client command usage
+command.veinminerc.set.disabled=Veinminer client keybind disabled.
+command.veinminerc.set.pressed=Veinminer client keybind set to activate on pressing the key.
+command.veinminerc.set.released=Veinminer client keybind set to deactivate on pressing the key.
 
 
 # Command result/Mode status
@@ -35,6 +44,7 @@ command.veinminer.pertick.set=Set to destroy %d blocks per tick
 
 
 command.veinminer.saveconfig=Saved settings to config file
+command.veinminer.loadconfig=Reloaded settings from config file
 
 
 command.veinminer.cannotuse=Non-players cannot use veinminer commands
@@ -48,6 +58,7 @@ mod.veinminer.preferredmode.nosneak=Veinminer set to deactivate on sneak.
 
 
 mod.veinminer.finished.tooHungry=You are too hungry to use VeinMiner.
+mod.veinminer.finished.noExp=You don't have enough experience to use VeinMiner.
 
 
 # Controls
@@ -64,7 +75,8 @@ command.veinminer.help5='blocklimit': Set the limit on the number of blocks that
 command.veinminer.help6='radius': Set the maximum distance Veinminer will collect blocks from the first block destroyed
 command.veinminer.help7='per_tick': Set the rate at which blocks are destroyed by VeinMiner
 command.veinminer.help8='saveconfig': Save current config values to config file
-command.veinminer.help9='help': This text
+command.veinminer.help9='reloadconfig': Load config values from config file
+command.veinminer.help10='help': This text
 command.veinminer.help.enable1=Available activation modes:
 command.veinminer.help.enable2='auto': Activate on keybind (useless without mod on client).
 command.veinminer.help.enable3='sneak': Activate while sneaking
@@ -86,7 +98,11 @@ gui.veinminer.config.blocklimit.infinite=Block limit: Infinite blocks
 gui.veinminer.config.toolTypes=Tool Types
 gui.veinminer.config.blocklist=Block List
 gui.veinminer.config.toollist=Tool List
-gui.veinminer.unknown=<Unknown>
+gui.veinminer.config.multiplayer1=You are in multiplayer.
+gui.veinminer.config.multiplayer2=Configure server with /veinminer command.
+gui.veinminer.config.multiplayer3=Configure single player from main menu.
+gui.veinminer.config.multiplayer4=(or here when in single player)
+ggui.veinminer.unknown=<Unknown>
 gui.veinminer.item.delete=Delete from list
 gui.veinminer.item.add=Add
 gui.veinminer.item.clear=Clear
