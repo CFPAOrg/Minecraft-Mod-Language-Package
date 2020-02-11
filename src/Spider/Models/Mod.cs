@@ -21,15 +21,7 @@ namespace Spider.Models
         public string DownloadUrl { get; set; }
         public List<Language> Languages { get; set; } = new List<Language>();
 
-        public bool IsInBlackList
-        {
-            get
-            {
-                if (Languages.Count == 0) return _isInBlackList;
-                return Languages.All(_ => _.IsInBlackList) || _isInBlackList;
-            }
-            set => _isInBlackList = value;
-        }
+        public bool IsInBlackList { get; set; }
 
         public Stream Stream { get; set; }
 
