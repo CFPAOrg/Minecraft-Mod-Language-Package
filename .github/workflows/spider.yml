@@ -1,9 +1,8 @@
 name: Spider
 
 on:
-  push:
-    branches: 1.12.2
-    paths-ignore: 'project'
+  schedule:
+  - cron: "0 4 * * *"
 
 env:
   token: ${{ secrets.token }}
@@ -19,3 +18,4 @@ jobs:
         dotnet-version: 3.1.101
     - name: run
       run: dotnet run --configuration Release --project ./src/Spider/Spider.csproj
+      
