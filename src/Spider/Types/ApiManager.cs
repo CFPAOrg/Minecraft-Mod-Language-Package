@@ -32,7 +32,6 @@ namespace Spider.Types
                 var id = j.GetProperty("id").GetInt64();
                 var name = j.GetProperty("name").GetString();
                 var url = j.GetProperty("websiteUrl").GetString();
-                //var dateTime = DateTime.Parse(j.GetProperty("dateModified").GetString());
                 var mod = new Mod(id) { Name = name, DownloadUrl = downloadUrl, Url = url };
                 if (!Configuration.ModBlackList.Contains(mod.ShortUrl)) return mod;
                 Interlocked.Decrement(ref counter);
