@@ -15,5 +15,6 @@ namespace Spider
                 path = Directory.GetParent(path).FullName;
             }
         }
+        public static string GetDownloadUrl(string fileId, string fileName) => $"https://edge.forgecdn.net/files/{fileId.Substring(0, 4)}/{fileId[4..]}/{fileName}";
     }
 }
