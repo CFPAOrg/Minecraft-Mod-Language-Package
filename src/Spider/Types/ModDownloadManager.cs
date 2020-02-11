@@ -21,6 +21,7 @@ namespace Spider.Types
                 sw1.Stop();
                 Log.Information($"所有模组下载完成,耗时{sw1.ElapsedMilliseconds}ms");
             }).ConfigureAwait(false);
+            Log.Information($"模组已全部下载完毕,共有{collection.Count}个模组被下载");
         }
 
         private static async Task DownloadModAsync(Mod mod)
