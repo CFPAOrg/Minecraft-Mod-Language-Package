@@ -82,6 +82,8 @@ mod.chiselsandbits.result.has_changed=Block has changed
 mod.chiselsandbits.result.missing_bits=Not enough bits or chisel durability!
 mod.chiselsandbits.result.nothing_to_undo=Nothing to Undo
 mod.chiselsandbits.result.nothing_to_redo=Nothing to Redo
+mod.chiselsandbits.result.require_bag=You need empty slots in your inventory or a bag before you can use this item!
+mod.chiselsandbits.result.void_excess=Your inventory has filled up, any excess bits have been voided!
 
 
 mod.chiselsandbits.other.rotate.ccw=Rotate Held Counter Clockwise
@@ -90,7 +92,12 @@ mod.chiselsandbits.other.mode=Radial Menu
 mod.chiselsandbits.other.undo=Undo
 mod.chiselsandbits.other.redo=Redo
 mod.chiselsandbits.other.pickbit=Pick Bit
+mod.chiselsandbits.other.offgrid=Place Off Grid
 mod.chiselsandbits.other.add_to_clipboard=Pick Block to Clipboard
+
+
+mod.chiselsandbits.other.roll_x=Rotate X Clockwise
+mod.chiselsandbits.other.roll_z=Rotate Z Clockwise
 
 
 mod.chiselsandbits.help.shiftdetails=<Hold Shift For Details>
@@ -98,35 +105,39 @@ mod.chiselsandbits.help.empty=Empty
 mod.chiselsandbits.help.filled=Filled
 
 
-mod.chiselsandbits.help.chiseled_block=Left click to place;Sneak to ignore block grid;Mouse Wheel to cycle placement rotation.
+mod.chiselsandbits.help.chiseled_block={} to place;{} to ignore block grid;Mouse Wheel to cycle placement rotation.
 mod.chiselsandbits.help.bit_bag=Automatically re-stock, and store bits.
-mod.chiselsandbits.help.wrench=Right click blocks to rotate.
-mod.chiselsandbits.help.bit=Left click to chisel;Right click to place;Use {} to display menu.
-mod.chiselsandbits.help.positiveprint=Right click to write;Right click to chisel/place or Craft with bits/bags.;Mouse Wheel to cycle rotation;Use {} to display menu.
-mod.chiselsandbits.help.negativeprint=Right click to write;Right click to chisel.;Mouse Wheel to cycle rotation.
-mod.chiselsandbits.help.mirrorprint=Right click the face you wish to mirror from;Craft with positive/negative design to transfer.
-mod.chiselsandbits.help.chisel=Left click to chisel;Use {} to display menu.
+mod.chiselsandbits.help.wrench={} blocks to rotate.
+mod.chiselsandbits.help.bit={} to chisel;{} to place;Use {} to display menu.
+mod.chiselsandbits.help.positiveprint={} to write;{} to chisel/place or Craft with bits/bags.;Mouse Wheel to cycle rotation;Use {} to display menu.
+mod.chiselsandbits.help.negativeprint={} to write;{} to chisel.;Mouse Wheel to cycle rotation.
+mod.chiselsandbits.help.mirrorprint={} the face you wish to mirror from;Craft with positive/negative design to transfer.
+mod.chiselsandbits.help.chisel={} to chisel;Use {} to display menu.
 mod.chiselsandbits.help.bitsaw=Craft with Blocks or Chiseled blocks;Cut along any of the 3 axis.
 mod.chiselsandbits.help.bittank=Fill with fluid and extract bits.
-mod.chiselsandbits.help.tape_measure=Right click and drag to measure;Sneak + right click to clear;Use {} to display menu.
+mod.chiselsandbits.help.tape_measure={} and drag to measure;{} + {} to clear;Use {} to display menu.
 
 
-mod.chiselsandbits.help.chiseled_block.long=Left click to place the block. Sneak while placing to ignore block grid. Shift + Mouse Wheel to cycle placement rotation.
-mod.chiselsandbits.help.bit_bag.long=Automatically re-stocks, and store bits when you exceed or go under a stack in your inventory.
-mod.chiselsandbits.help.wrench.long=Right click blocks to rotate them around the axis of the face you click.
-mod.chiselsandbits.help.tape_measure.long=Left click to and drag to measure spaces. Sneak Use to remove previously created measurements. Use the menu to switch between measurement modes.
-mod.chiselsandbits.help.bit.long=Left click to chisel the highlighted area. Right click to place at the designated area.
-mod.chiselsandbits.help.positiveprint.long=Right click on a chiseled block to write the design. Right click on a block to chisel it adding and removing any bits that do not match the design. You can also place the design in a crafting table and Craft with bits/bags. Shift + Mouse Wheel can be used to cycle rotations without moving.
-mod.chiselsandbits.help.negativeprint.long=Right click on a chiseled block to write the design. Right click on a block to chisel it removing any bits that are not in the negative design. Shift + Mouse Wheel can be used to cycle rotations without moving.
-mod.chiselsandbits.help.mirrorprint.long=Right click on a chiseled block face on wish to mirror from, clicking an east facing face will mirror it along the east->west axis. Craft written design with a positive or negative design to transfer the mirror image to the type of design you want.
-mod.chiselsandbits.help.chisel.long=Left click any compatible block to chisel. Right click to cycle thought chisel modes, you can also use Shift + Mouse Wheel to cycle modes.
+mod.chiselsandbits.help.chiseled_block.long=Left-click to place the block. Sneak while placing to ignore block grid. Shift + Mouse Wheel to cycle placement rotation.
+mod.chiselsandbits.help.bit_bag.long=Automatically re-stocks, and store bits when you exceed or go under a stack in your inventory.\n\nCraft with any dye to color.
+mod.chiselsandbits.help.wrench.long=Right-click blocks to rotate them around the axis of the face you click.
+mod.chiselsandbits.help.tape_measure.long=Left-click to and drag to measure spaces. Sneak Use to remove previously created measurements. Use the menu to switch between measurement modes.
+mod.chiselsandbits.help.bit.long=Left-click to chisel the highlighted area. Right-click to place at the designated area.
+mod.chiselsandbits.help.positiveprint.long=Right-click on a chiseled block to write the design. Right-click on a block to chisel it adding and removing any bits that do not match the design. You can also place the design in a crafting table and Craft with bits/bags. Shift + Mouse Wheel can be used to cycle rotations without moving.
+mod.chiselsandbits.help.negativeprint.long=Right-click on a chiseled block to write the design. Right-click on a block to chisel it removing any bits that are not in the negative design. Shift + Mouse Wheel can be used to cycle rotations without moving.
+mod.chiselsandbits.help.mirrorprint.long=Right-click on a chiseled block face on wish to mirror from, clicking an east facing face will mirror it along the east->west axis. Craft written design with a positive or negative design to transfer the mirror image to the type of design you want.
+mod.chiselsandbits.help.chisel.long=Left-click any compatible block to chisel. Right-click to cycle through chisel modes, you can also use Shift + Mouse Wheel to cycle modes.
 mod.chiselsandbits.help.bitsaw.long=Craft this saw with supported blocks, or symmetrical chiseled blocks to cut them in half. The axis of cutting is determined by the position of the saw related the block, cut along the X axis with the saw to the side, along the Y axis if the saw is above or below, and Z is if the saw is diagonal.
-mod.chiselsandbits.help.bittank.long=Right click with a bucket to insert/remove fluid. Right click without a bucket to extract bits from a filled tank, shift+right click inserts bits in your hand, inserting with an empty hand will attempt to insert as many bits as possible. You can use automation such as hoppers to extract bits from a tank with fluid in it.
+mod.chiselsandbits.help.bittank.long=Right-click with a bucket to insert/remove fluid. Right-click without a bucket to extract bits from a filled tank, shift+right click inserts bits in your hand, inserting with an empty hand will attempt to insert as many bits as possible. You can use automation such as hoppers to extract bits from a tank with fluid in it.
 
 
+mod.chiselsandbits.help.nobind=No Key Bind
+mod.chiselsandbits.help.leftshift=Left Shift
+mod.chiselsandbits.help.rightshift=Right Shift
 mod.chiselsandbits.help.leftalt=Left Alt
 mod.chiselsandbits.help.rightalt=Right Alt
 mod.chiselsandbits.help.trash=Delete Bag Contents, Hold Item to filter.
+mod.chiselsandbits.help.sort=Condense and Combine
 mod.chiselsandbits.help.trashitem=Delete only %s
 mod.chiselsandbits.help.reallytrash=Click again to confirm deletion of all
 mod.chiselsandbits.help.reallytrash_blank=Click again to confirm deletion of %s
@@ -154,7 +165,7 @@ chiselsandbits.color.yellow=Yellow
 chiselsandbits.color.lime=Lime
 chiselsandbits.color.pink=Pink
 chiselsandbits.color.gray=Gray
-chiselsandbits.color.silver=Silver
+chiselsandbits.color.silver=Light Gray
 chiselsandbits.color.cyan=Cyan
 chiselsandbits.color.purple=Purple
 chiselsandbits.color.blue=Blue
@@ -213,7 +224,7 @@ mod.chiselsandbits.config.perChiselMode=Store selected mode per chisel
 mod.chiselsandbits.config.chatModeNotification=Notify mode changes with chat
 mod.chiselsandbits.config.itemNameModeDisplay=Notify mode changes with tool highlight
 mod.chiselsandbits.config.dynamicModelFaceCount=Max faces for static render
-mod.chiselsandbits.config.dynamicModelFaceCount.tooltip=Models more complicated than this will use dyanmic rendering.
+mod.chiselsandbits.config.dynamicModelFaceCount.tooltip=Models more complicated than this will use dynamic rendering.
 mod.chiselsandbits.config.dynamicModelRange=Max Distance for dynamic render
 mod.chiselsandbits.config.dynamicModelRange.tooltip=Dynamically rendered blocks outside of this range will not render.
 mod.chiselsandbits.config.dynamicModelMinimizeLatancy=Minimize Latency for dynamic renders
@@ -254,6 +265,11 @@ mod.chiselsandbits.config.ironChiselUses=Iron Chisel Uses
 mod.chiselsandbits.config.diamondChiselUses=Diamond Chisel Uses
 mod.chiselsandbits.config.goldChiselUses=Gold Chisel uses
 mod.chiselsandbits.config.wrenchUses=Wrench Uses
+mod.chiselsandbits.config.logEligibilityErrors=Log Exceptions when calculating Eligibility
+mod.chiselsandbits.config.disableCustomVertexFormats=Disable Using Custom Vertex Formats
+mod.chiselsandbits.config.enableModelCompression=Compress Vertex Data In Memory
+mod.chiselsandbits.config.useGetLightValue=Use Get Light Value to get light value of blocks.
+mod.chiselsandbits.config.enableFaceLightmapExtraction=Use Model Analysis to get Lightmap Data.
 mod.chiselsandbits.config.enableRightClickModeChange=Cycle Chisel mode on right click
 mod.chiselsandbits.config.enableSetBitCommand=Enable /setbit Command
 mod.chiselsandbits.config.maxMillisecondsPerBlock=Max Milliseconds Per Block
@@ -266,8 +282,14 @@ mod.chiselsandbits.config.useVBO=Use VBOs
 mod.chiselsandbits.config.defaultToDynamicRenderer.tooltip=By default C&B uses the static renderer, and changes to the Dynamic Renderer on update, This setting reverse that; After determining the detail of the model it will decide to revert to the static renderer, helpful for more complicated scenes that cause stalls when using the static renderer.
 mod.chiselsandbits.config.forceDynamicRenderer.tooltip=Debug Setting, that disable the static render entirely.
 mod.chiselsandbits.config.useVBO.tooltip=By Default uses the same setting as MC, but can be overridden.
+mod.chiselsandbits.config.blacklistTickingBlocks=Black List Ticking Blocks
 mod.chiselsandbits.config.radialMenuVolume='Click' volume for radial menu.
 mod.chiselsandbits.config.radialMenuVolume.tooltip=Setting to Zero will disable it.
+mod.chiselsandbits.config.enableVivecraftCompatibility=Enable Vivecraft Compatibility
 mod.chiselsandbits.config.enableChiselCrafting=Enable Chiseling Blocks in Crafting Table
 mod.chiselsandbits.config.dynamicRenderFullChunksOnly=Dynamic Renderer Full Chunks Only
 mod.chiselsandbits.config.dynamicRenderFullChunksOnly.tooltip=Prevents Subdividing of dynamically rendered chunks into single blocks. This increases performance for most common cases ( chunks with a handful of complicated blocks ), but decreases performance for the worst cases ( chunks full of super complicated designs ).
+mod.chiselsandbits.config.requireBagSpace=Require Inventory/Bag Space
+mod.chiselsandbits.config.requireBagSpace.tooltip=Requires there to be an empty slot in a bag or in the player's inventory before allowing them to use the chisel.
+mod.chiselsandbits.config.voidExcessBits=Void Excess Bits
+mod.chiselsandbits.config.voidExcessBits.tooltip=Voids any bits that couldn't be fit into a bag or your inventory. Improves server performance. The undo action could have issues as some bits are voided.
