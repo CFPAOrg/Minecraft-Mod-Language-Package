@@ -7,8 +7,6 @@ namespace Spider.Models
 {
     internal class Mod : IDisposable
     {
-        private bool _isInBlackList;
-
         public Mod(long id)
         {
             Id = id;

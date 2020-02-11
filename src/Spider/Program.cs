@@ -9,15 +9,15 @@ namespace Spider
 {
     internal static class Program
     {
-        private static void Main()
+        private static async Task Main()
         {
             Directory.CreateDirectory(Configuration.OutputPath);
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
 
-            var mods = ApiManager.GetModsAsync().Result.ToList();
-            ModDownloadManager.DownloadModsAsync(mods).Wait();
+            var mods = (await ApiManager.GetModsAsync()).ToList();
+            await ModDownloadManager.DownloadModsAsync(mods);
             LangManager.ProcessLangFiles(mods);
             var languages = mods.SelectMany(_ => _.Languages).Where(_ => !_.IsInBlackList).ToList();
             Log.Information($"共收集到了{languages.Count}个语言文件.");
@@ -29,7 +29,7 @@ namespace Spider
                     _ = languages.Single(_ => _.AssetDomain == language.AssetDomain);
                     path = $"assets/{language.AssetDomain}/lang/";
                 }
-                catch (Exception)
+                catch
                 {
                     path = $"assets/{language.AssetDomain}-{language.BaseMod.ShortUrl}/lang/";
                 }
