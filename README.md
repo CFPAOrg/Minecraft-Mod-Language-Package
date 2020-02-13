@@ -3,7 +3,7 @@
 
 | CurseForge 下载量 | 支持版本 | 翻译进度 | Github Actions | 最新快照版本 |
 | :--: | :--: | :--: | :--: | :--: |
-| [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) | [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)  | ![weblate](https://weblate.exz.me/widgets/langpack/-/svg-badge.svg) | [![actions](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/workflows/Pack/badge.svg?branch=1.12.2&event=push)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/actions) | [![GitHub release](https://img.shields.io/github/release/CFPAOrg/Minecraft-Mod-Language-Package.svg)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) |
+| [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) | [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)  | ![weblate](https://weblate.exz.me/widgets/langpack/-/svg-badge.svg) | ![Packer](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/workflows/Packer/badge.svg?branch=1.12.2) | [![GitHub release](https://img.shields.io/github/release/CFPAOrg/Minecraft-Mod-Language-Package.svg)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) |
 
 ## 仓库说明
 
@@ -30,7 +30,7 @@
 ## 相关信息
 
 **目前的翻译计划是什么样的呢？我可以递交想翻译的列表么？**<br>
-目前是基于 curseforge 网站，选取了 1.12.2 版本，按照下载了排名的前20页模组（大约有380多个）。如果你有什么想要额外添加翻译的模组，可以通过 github 的 issue，或者直接邮箱递交意见或建议。<br>
+目前是基于 curseforge 网站，选取了 1.12.2 版本，按照受欢迎程度下载了 600 多个模组。如果你有什么想要额外添加翻译的模组，可以通过 github 的 issue，或者直接邮箱递交意见或建议。<br>
 其他版本目前还暂时没有涉足计划（不过1.7.10应该是不会做了）。
 
 关于具体的宣传，可以参见 [MCBBS 推广宣传帖](http://www.mcbbs.net/thread-774087-1-1.html)；<br>
@@ -40,12 +40,11 @@
 emmmm，原理其实很简单。<br>
 
 - 通过爬虫爬取 curseforge 的热门模组；
-- 脚本扒出语言文件，然后对比更新；
 - 脚本推送回 GitHub 仓库；
 - Weblate 检测到仓库变动，自动抓取 GitHub 变动；
 - 翻译人员在 Weblate 上翻译，Weblate 自动推回到 GitHub；
-- Travis CI 检测到仓库变动，自动构建并打包；
-- Travis CI 自动发布到 GitHub 的 release 上，以供下载；
+- Github Actions 检测到仓库变动，自动构建并打包；
+- Github Actions 自动发布到 GitHub 的 release 上，以供下载；
 
 ## 鸣谢
 
