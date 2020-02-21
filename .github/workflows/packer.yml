@@ -23,4 +23,16 @@ jobs:
         dotnet-version: 3.1.101
     - name: run
       run: dotnet run -c Release -p ./src/Packer/Packer.csproj
-    - run: sshpass -p ${{ env.password }} scp ./Minecraft-Mod-Language-Modpack.zip root@115.231.219.184:/var/www/html/Minecraft-Mod-Language-Modpack.zip
+    - name: SCP Command to Transfer Files
+    - name: SCP Command to Transfer Files
+      uses: appleboy/scp-action@v0.0.6
+      with:
+        host: 115.231.219.184 
+        port: 22
+        username: root
+        password: ${{password}}
+        target: /var/www/html/
+        source: ./*.zip
+        rm: false
+        overwrite: true
+
