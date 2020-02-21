@@ -36,14 +36,15 @@ namespace Packer
                 fs.CopyTo(zipStream);
                 Console.WriteLine($"Added {path.dest}!");
             }
-            Upload(zipFile);
-            await ReleaseAsync(zipFile);
             zipArchive.Dispose();
+            Upload();
+            await ReleaseAsync();
+            
             sw.Stop();
             Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
         }
 
-        private static async Task ReleaseAsync(Stream file)
+        private static async Task ReleaseAsync()
         {
             var sha = Environment.GetEnvironmentVariable("sha");
             var token = Environment.GetEnvironmentVariable("token");
@@ -78,17 +79,18 @@ namespace Packer
                 };
                 var releaseResult = await client.Repository.Release.Create(owner, repoName, newRelease);
                 Console.WriteLine($"Created release id {releaseResult.Id}");
+                using var raw = File.OpenRead("./Minecraft-Mod-Language-Modpack.zip");
                 var assetUpload = new ReleaseAssetUpload
                 {
                     FileName = "Minecraft-Mod-Language-Modpack.zip",
                     ContentType = "application/zip",
-                    RawData = file
+                    RawData = raw
                 };
                 var release = await client.Repository.Release.Get(owner, repoName, releaseResult.Id);
                 await client.Repository.Release.UploadAsset(release, assetUpload);
             }
         }
-        private static void Upload(Stream file)
+        private static void Upload()
         {
             var keyFile = Environment.GetEnvironmentVariable("sshprivatekey");
             var passPhrase = Environment.GetEnvironmentVariable("passphrase");
@@ -101,7 +103,8 @@ namespace Packer
                 RemotePathTransformation = RemotePathTransformation.ShellQuote
             };
             client.Connect();
-            client.Upload(file, "/var/www/html/Minecraft-Mod-Language-Modpack.zip");
+            using var raw = File.OpenRead("./Minecraft-Mod-Language-Modpack.zip");
+            client.Upload(raw, "/var/www/html/Minecraft-Mod-Language-Modpack.zip");
             Console.WriteLine("上传完成.");
         }
 
