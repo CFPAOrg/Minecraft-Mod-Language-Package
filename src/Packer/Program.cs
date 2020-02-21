@@ -36,14 +36,14 @@ namespace Packer
                     await fs.CopyToAsync(zipStream);
                     Console.WriteLine($"Added {path.dest}!");
                 }
-                await ReleaseAsync(); 
+                await ReleaseAsync(zipFile); 
                 Upload(zipFile);
             }
             sw.Stop();
             Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
         }
 
-        private static async Task ReleaseAsync()
+        private static async Task ReleaseAsync(Stream file)
         {
             var sha = Environment.GetEnvironmentVariable("sha");
             var token = Environment.GetEnvironmentVariable("token");
@@ -78,12 +78,11 @@ namespace Packer
                 };
                 var releaseResult = await client.Repository.Release.Create(owner, repoName, newRelease);
                 Console.WriteLine($"Created release id {releaseResult.Id}");
-                await using var rawData = File.OpenRead(@"./Minecraft-Mod-Language-Modpack.zip");
                 var assetUpload = new ReleaseAssetUpload
                 {
                     FileName = "Minecraft-Mod-Language-Modpack.zip",
                     ContentType = "application/zip",
-                    RawData = rawData
+                    RawData = file
                 };
                 var release = await client.Repository.Release.Get(owner, repoName, releaseResult.Id);
                 await client.Repository.Release.UploadAsset(release, assetUpload);
