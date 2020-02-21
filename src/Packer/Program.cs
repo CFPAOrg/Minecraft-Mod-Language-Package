@@ -95,16 +95,18 @@ namespace Packer
             var keyFile = Environment.GetEnvironmentVariable("sshprivatekey");
             var passPhrase = Environment.GetEnvironmentVariable("passphrase");
             if (string.IsNullOrEmpty(keyFile) || string.IsNullOrEmpty(passPhrase)) return;
-            using var stream = new MemoryStream();
-            using var sw = new StreamWriter(stream);
+            var stream = new MemoryStream();
+            var sw = new StreamWriter(stream);
             sw.Write(keyFile);
-            using var client = new ScpClient("115.231.219.184", "root", new PrivateKeyFile(stream))
+            using var client = new ScpClient("115.231.219.184", "root", new PrivateKeyFile(stream,passPhrase))
             {
                 RemotePathTransformation = RemotePathTransformation.ShellQuote
             };
             client.Connect();
             var fi = new FileInfo("./Minecraft-Mod-Language-Modpack.zip");
             client.Upload(fi, "/var/www/html/Minecraft-Mod-Language-Modpack.zip");
+            sw.Dispose();
+            stream.Dispose();
             Console.WriteLine("上传完成.");
         }
 
