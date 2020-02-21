@@ -35,9 +35,10 @@ namespace Packer
                 await fs.CopyToAsync(zipStream);
                 Console.WriteLine($"Added {path.dest}!");
             }
-            zipArchive.Dispose();
+            
             await ReleaseAsync(zipFile); 
             Upload(zipFile);
+            zipArchive.Dispose();
             await zipFile.DisposeAsync();
             sw.Stop();
             Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
