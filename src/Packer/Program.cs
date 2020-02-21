@@ -26,7 +26,7 @@ namespace Packer
                 .ToList();
 
             Console.WriteLine($"Totally found {paths.Count} files ");
-            var zipFile = File.Open(@"./Minecraft-Mod-Language-Modpack.zip",FileMode.Create);
+            var zipFile = File.Open("./Minecraft-Mod-Language-Modpack.zip",FileMode.Create,FileAccess.ReadWrite);
             var zipArchive = new ZipArchive(zipFile, ZipArchiveMode.Create);
             foreach (var path in paths)
             {
@@ -36,14 +36,15 @@ namespace Packer
                 fs.CopyTo(zipStream);
                 Console.WriteLine($"Added {path.dest}!");
             }
-            Upload(zipFile);
-            await ReleaseAsync(zipFile);
             zipArchive.Dispose();
+            Upload();
+            await ReleaseAsync();
+            
             sw.Stop();
             Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
         }
 
-        private static async Task ReleaseAsync(Stream file)
+        private static async Task ReleaseAsync()
         {
             var sha = Environment.GetEnvironmentVariable("sha");
             var token = Environment.GetEnvironmentVariable("token");
@@ -78,30 +79,28 @@ namespace Packer
                 };
                 var releaseResult = await client.Repository.Release.Create(owner, repoName, newRelease);
                 Console.WriteLine($"Created release id {releaseResult.Id}");
+                using var raw = File.OpenRead("./Minecraft-Mod-Language-Modpack.zip");
                 var assetUpload = new ReleaseAssetUpload
                 {
                     FileName = "Minecraft-Mod-Language-Modpack.zip",
                     ContentType = "application/zip",
-                    RawData = file
+                    RawData = raw
                 };
                 var release = await client.Repository.Release.Get(owner, repoName, releaseResult.Id);
                 await client.Repository.Release.UploadAsset(release, assetUpload);
             }
         }
-        private static void Upload(Stream file)
+        private static void Upload()
         {
-            var keyFile = Environment.GetEnvironmentVariable("sshprivatekey");
-            var passPhrase = Environment.GetEnvironmentVariable("passphrase");
-            if (string.IsNullOrEmpty(keyFile) || string.IsNullOrEmpty(passPhrase)) return;
-            using var stream = new MemoryStream();
-            using var sw = new StreamWriter(stream);
-            sw.Write(keyFile);
-            using var client = new ScpClient("115.231.219.184", "root", new PrivateKeyFile(stream))
+            var password = Environment.GetEnvironmentVariable("password");
+            if (string.IsNullOrEmpty(password)) return;
+            using var client = new ScpClient("115.231.219.184", "root",password)
             {
                 RemotePathTransformation = RemotePathTransformation.ShellQuote
             };
             client.Connect();
-            client.Upload(file, "/var/www/html/Minecraft-Mod-Language-Modpack.zip");
+            var fi = new FileInfo("./Minecraft-Mod-Language-Modpack.zip");
+            client.Upload(fi, "/var/www/html/Minecraft-Mod-Language-Modpack.zip");
             Console.WriteLine("上传完成.");
         }
 
