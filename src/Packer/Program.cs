@@ -26,7 +26,7 @@ namespace Packer
 
             Console.WriteLine($"Totally found {paths.Count} files ");
             var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip");
-            using var zipArchive = new ZipArchive(zipFile, ZipArchiveMode.Create);
+            var zipArchive = new ZipArchive(zipFile, ZipArchiveMode.Create);
             foreach (var path in paths)
             {
                 await using var fs = File.OpenRead(path.src);
@@ -35,6 +35,7 @@ namespace Packer
                 await fs.CopyToAsync(zipStream);
                 Console.WriteLine($"Added {path.dest}!");
             }
+            zipArchive.Dispose();
             await ReleaseAsync(zipFile); 
             Upload(zipFile);
             await zipFile.DisposeAsync();
