@@ -26,7 +26,7 @@ namespace Packer
                 .ToList();
 
             Console.WriteLine($"Totally found {paths.Count} files ");
-            var zipFile = File.Open(@"./Minecraft-Mod-Language-Modpack.zip",FileMode.Create);
+            var zipFile = File.Open(@"./Minecraft-Mod-Language-Modpack.zip",FileMode.Create,FileAccess.ReadWrite);
             var zipArchive = new ZipArchive(zipFile, ZipArchiveMode.Create);
             foreach (var path in paths)
             {
