@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Octokit;
 using Renci.SshNet;
+using FileMode = System.IO.FileMode;
 
 namespace Packer
 {
@@ -25,7 +26,7 @@ namespace Packer
                 .ToList();
 
             Console.WriteLine($"Totally found {paths.Count} files ");
-            var zipFile = File.OpenWrite(@"./Minecraft-Mod-Language-Modpack.zip");
+            var zipFile = File.Open(@"./Minecraft-Mod-Language-Modpack.zip",FileMode.Create);
             var zipArchive = new ZipArchive(zipFile, ZipArchiveMode.Create);
             foreach (var path in paths)
             {
@@ -35,11 +36,9 @@ namespace Packer
                 await fs.CopyToAsync(zipStream);
                 Console.WriteLine($"Added {path.dest}!");
             }
-            
             await ReleaseAsync(zipFile); 
             Upload(zipFile);
             zipArchive.Dispose();
-            await zipFile.DisposeAsync();
             sw.Stop();
             Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
         }
