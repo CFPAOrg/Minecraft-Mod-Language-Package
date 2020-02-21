@@ -5,10 +5,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Threading.Tasks;
 using Octokit;
-using Qiniu.CDN;
-using Qiniu.Http;
-using Qiniu.Storage;
-using Qiniu.Util;
+using Renci.SshNet;
 
 namespace Packer
 {
@@ -39,11 +36,9 @@ namespace Packer
                     await fs.CopyToAsync(zipStream);
                     Console.WriteLine($"Added {path.dest}!");
                 }
+                await ReleaseAsync(); 
+                Upload(zipFile);
             }
-
-            var upload = UploadQiniuAsync();
-            var release = ReleaseAsync();
-            Task.WaitAll(release, upload);
             sw.Stop();
             Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
         }
@@ -94,40 +89,22 @@ namespace Packer
                 await client.Repository.Release.UploadAsset(release, assetUpload);
             }
         }
-
-        private static async Task UploadQiniuAsync()
+        private static void Upload(Stream file)
         {
-            var accessKey = Environment.GetEnvironmentVariable("ak");
-            var secretKey = Environment.GetEnvironmentVariable("sk");
-            if (string.IsNullOrEmpty(accessKey) || string.IsNullOrEmpty(secretKey)) return;
-            var mac = new Mac(accessKey, secretKey);
-            const string key = "Minecraft-Mod-Language-Modpack.zip";
-            const string filePath = @"./Minecraft-Mod-Language-Modpack.zip";
-            const string bucket = "langpack";
-            var putPolicy = new PutPolicy {Scope = bucket + ":" + key};
-            putPolicy.SetExpires(120);
-            var token = Auth.CreateUploadToken(mac, putPolicy.ToJsonString());
-            var config = new Config
+            var keyFile = Environment.GetEnvironmentVariable("sshprivatekey");
+            var passPhrase = Environment.GetEnvironmentVariable("passphrase");
+            if (string.IsNullOrEmpty(keyFile) || string.IsNullOrEmpty(passPhrase)) return;
+            using var stream = new MemoryStream();
+            using var sw = new StreamWriter(stream);
+            sw.Write(keyFile);
+            using var client = new ScpClient("115.231.219.184", "root", new PrivateKeyFile(stream))
             {
-                Zone = Zone.ZoneCnSouth,
-                UseHttps = true,
-                UseCdnDomains = true,
-                ChunkSize = ChunkUnit.U512K
+                RemotePathTransformation = RemotePathTransformation.ShellQuote
             };
-            var target = new FormUploader(config);
-            var result = await target.UploadFile(filePath, key, token, null);
-            Console.WriteLine("form upload result: " + result.Text);
-            var manager = new CdnManager(mac);
-            string[] urls = {"http://downloader.meitangdehulu.com/Minecraft-Mod-Language-Modpack.zip"};
-            var ret = await manager.RefreshUrls(urls);
-            if (ret.Code != (int) HttpCode.OK) Console.WriteLine(ret.ToString());
-            Console.WriteLine(ret.Result.Code);
-            Console.WriteLine(ret.Result.Error);
-            if (ret.Result.InvalidUrls != null)
-                foreach (var url in ret.Result.InvalidUrls)
-                    Console.WriteLine(url);
+            client.Connect();
+            client.Upload(file, "/var/www/html/Minecraft-Mod-Language-Modpack.zip");
+            Console.WriteLine("上传完成.");
         }
-
 
         private static string GetTargetParentDirectory(string path, string containDir)
         {
