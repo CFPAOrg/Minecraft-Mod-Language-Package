@@ -103,8 +103,9 @@ namespace Packer
                 RemotePathTransformation = RemotePathTransformation.ShellQuote
             };
             client.Connect();
-            using var raw = File.OpenRead("./Minecraft-Mod-Language-Modpack.zip");
+            var raw = File.OpenRead("./Minecraft-Mod-Language-Modpack.zip");
             client.Upload(raw, "/var/www/html/Minecraft-Mod-Language-Modpack.zip");
+            raw.Dispose();
             Console.WriteLine("上传完成.");
         }
 
