@@ -33,11 +33,11 @@ namespace Packer
                 await using var fs = File.OpenRead(path.src);
                 var entry = zipArchive.CreateEntry(path.dest, CompressionLevel.Optimal);
                 await using var zipStream = entry.Open();
-                await fs.CopyToAsync(zipStream);
+                fs.CopyTo(zipStream);
                 Console.WriteLine($"Added {path.dest}!");
             }
-            await ReleaseAsync(zipFile); 
             Upload(zipFile);
+            await ReleaseAsync(zipFile);
             zipArchive.Dispose();
             sw.Stop();
             Console.WriteLine($"All works finished in {sw.Elapsed.Milliseconds}ms");
