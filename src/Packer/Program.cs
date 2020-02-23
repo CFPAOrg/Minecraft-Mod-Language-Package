@@ -37,7 +37,6 @@ namespace Packer
                 Console.WriteLine($"Added {path.dest}!");
             }
             zipArchive.Dispose();
-            Upload();
             await ReleaseAsync();
             
             sw.Stop();
