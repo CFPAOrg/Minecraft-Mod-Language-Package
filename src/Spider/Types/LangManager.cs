@@ -11,10 +11,9 @@ namespace Spider.Types
         public static void ProcessLangFiles(IEnumerable<Mod> mods)
         {
             var sw1 = Stopwatch.StartNew();
-            var collection1 = mods.Where(_ => !_.IsInBlackList).ToList();
-            var collection2 = collection1.SelectMany(_ => _.Languages).ToList();
+            var collection = mods.Where(_ => !_.IsInBlackList).SelectMany(_ => _.Languages).ToList();
             var assetDomainBlackList = Configuration.AssetDomainBlackList;
-            collection2.ForEach(_ =>
+            collection.ForEach(_ =>
             {
                 var assetDomain = _.AssetDomain;
                 if (assetDomain == null) return;
@@ -25,6 +24,7 @@ namespace Spider.Types
                     _.IsInBlackList = true;
                 }
             });
+            Log.Information($"语言文件已全部处理完毕,共有{collection.Count}个语言文件被处理，其中有{collection.Count(_=>_.IsInBlackList)}文件在黑名单中");
         }
     }
 }

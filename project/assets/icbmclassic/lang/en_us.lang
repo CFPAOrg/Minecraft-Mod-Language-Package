@@ -6,9 +6,56 @@ itemGroup.icbmclassic=ICBM-Classic
 config.icbmclassic:main.title=General
 config.icbmclassic:launcher.title=Launcher
 config.icbmclassic:blast.title=Blast
+config.icbmclassic:blast.fusetimes.title=Fuse Times
+config.icbmclassic:blast.fusetimes.bombcarts.title=Bomb Carts
+config.icbmclassic:blast.fusetimes.explosives.title=Explosives
+config.icbmclassic:blast.fusetimes.grenades.title=Grenades
 config.icbmclassic:emp.title=EMP
 config.icbmclassic:missile.title=Missile
 config.icbmclassic:battery.title=Battery
+config.icbmclassic:thread.title=Thread
+config.icbmclassic:item.title=Item
+config.icbmclassic:ic2.title=Industrial Craft 2
+config.icbmclassic:debug.title=Debug
+
+
+## Chat commands
+
+
+
+
+### Blast Trigger Command: Good outputs - shared by blast spread command
+command.icbmclassic:icbm.blast.triggered=Blast triggered with explosive %1$s and scale %2$f at [%3$s@%4$d, %5$d, %6$d, %7$d].
+command.icbmclassic:icbm.blast.threaded=Blast sent queue with explosive %1$s and scale %2$f. When done processing it will trigger at [%3$s@%4$d, %5$d, %6$d, %7$d].
+
+
+### Blast Trigger Command: Errors Blast Triggering - shared by blast spread command
+command.icbmclassic:icbm.blast.error=Unexpect error creating blast, see console for details.
+command.icbmclassic:icbm.blast.error.blocked=Blast was blocked by a forge event, see console for details.
+command.icbmclassic:icbm.blast.error.null=BlastFactory did not generate a blast, see console for details.
+command.icbmclassic:icbm.blast.error.triggered=Blast was already triggered, this should never happen and is a bug.
+command.icbmclassic:icbm.blast.error.unknown=Command received an unknown blast status code, see console for details.
+
+
+### Blast Trigger Command: Errors Input data - shared by blast spread command
+command.icbmclassic:icbm.blast.error.explosive.id=Explosive with ID '%1$s' could not be found
+command.icbmclassic:icbm.blast.error.scale.zero=Scale must be greater than zero!
+
+
+### Blast Spread Command: Good outputs
+command.icbmclassic:icbm.spread.started=Triggering %10$d blasts with explosive %1$s and scale %2$f at [%3$s@%4$d, %5$d, %6$d, %7$d] with a spread of %8$d over a distance %9$d.
+
+
+### Lag Command
+command.icbmclassic:icbm.lag.remove=Removed %1$d blast and %2$d entities within %3$d meters
+
+
+### Remove Command
+command.icbmclassic:icbm.remove=Removed %1%d entities within %2$d meters
+
+
+### Generic errors
+command.icbmclassic:icbm.error.unknown.command=Unknown command. See %s help for more info.
 
 
 ## Potions
@@ -36,7 +83,7 @@ item.icbmclassic:poisonPowder.info=Used in the creation of explosives
 
 
 item.icbmclassic:antidote.name=Antidote
-item.icbmclassic:antidote.info=Cures all affects
+item.icbmclassic:antidote.info=Cures all effects
 
 
 item.icbmclassic:radarGun.name=Radar Gun
@@ -56,15 +103,16 @@ item.icbmclassic:laserDetonator.info.info=Remotely fire a missile
 
 
 item.icbmclassic:tracker.name=Tracker
-item.icbmclassic:tracker.info=Track entities and, set homing missiles
+item.icbmclassic:tracker.info=Track entities and set homing missiles
 
 
 item.icbmclassic:signalDisrupter.name=Signal Disrupter
-item.icbmclassic:signalDisrupter.info=Jam frequencies to prevent detection, or missile launches
+item.icbmclassic:signalDisrupter.info=Jam frequencies to prevent detection or missile launches
 
 
 item.icbmclassic:rocketLauncher.name=Rocket Launcher
-item.icbmclassic:rocketLauncher.info=This rocket launcher can, fire up to Tier %s rockets
+item.icbmclassic:rocketLauncher.info=This rocket launcher can fire up to Tier %s rockets
+item.icbmclassic:rocketLauncher.info.creative=Creative: Bypasses tier restriction
 
 
 ## Crafting items
@@ -116,11 +164,11 @@ tile.icbmclassic:emptower.info=Drains energy from tiles, entities and devices
 
 
 tile.icbmclassic:cruiselauncher.name=Cruise Launcher
-tile.icbmclassic:cruiselauncher.info=Dummy fires a missile, without target data
+tile.icbmclassic:cruiselauncher.info=Dummy-fires a missile without target data
 
 
 tile.icbmclassic:missilecoordinator.name=Missile Coordinator
-tile.icbmclassic:missilecoordinator.info=Over sized calculator, calculates flight paths
+tile.icbmclassic:missilecoordinator.info=Oversized calculator. Calculates flight paths
 
 
 ## Blocks
@@ -128,182 +176,179 @@ tile.icbmclassic:reinforcedRail.name=Reinforced Rail
 tile.icbmclassic:reinforcedRail.info=Hardened against explosives
 
 
-tile.icbmclassic:redmatter.ore.name=Redmatter ore
-tile.icbmclassic:redmatter.ore.info=On Shiz, How did you get that!, Put it down, it could explode!
+tile.icbmclassic:redmatter.ore.name=Redmatter Ore
+tile.icbmclassic:redmatter.ore.info=Oh shiz, how did you get that? Put it down, it could explode!
 
 
 ## ICBM Explosives
 
 
+## Tiers
+tier.icbmclassic.one=One
+tier.icbmclassic.two=Two
+tier.icbmclassic.three=Three
+tier.icbmclassic.four=Four
+
+
 ## Block Form
-icbm.explosive.condensed.name=Condensed Explosives
-icbm.explosive.shrapnel.name=Shrapnel Explosives
-icbm.explosive.incendiary.name=Incendiary Explosives
-icbm.explosive.debilitation.name=Debilitation Explosives
-icbm.explosive.chemical.name=Chemical Explosives
-icbm.explosive.anvil.name=Anvil Explosives
-icbm.explosive.repulsive.name=Repulsive Explosives
-icbm.explosive.attractive.name=Attractive Explosives
-icbm.explosive.nightmare.name=Nightmare Explosives
+explosive.icbmclassic:condensed.name=Condensed Explosives
+explosive.icbmclassic:shrapnel.name=Shrapnel Explosives
+explosive.icbmclassic:incendiary.name=Incendiary Explosives
+explosive.icbmclassic:debilitation.name=Debilitation Explosives
+explosive.icbmclassic:chemical.name=Chemical Explosives
+explosive.icbmclassic:anvil.name=Anvil Explosives
+explosive.icbmclassic:repulsive.name=Repulsive Explosives
+explosive.icbmclassic:attractive.name=Attractive Explosives
+explosive.icbmclassic:nightmare.name=Nightmare Explosives
 
 
-icbm.explosive.fragmentation.name=Fragmentation Explosives
-icbm.explosive.contagious.name=Contagious Explosives
-icbm.explosive.sonic.name=Sonic Explosives
-icbm.explosive.breaching.name=Breaching Explosives
-icbm.explosive.rejuvenation.name=Rejuvenation Explosives
-icbm.explosive.thermobaric.name=Thermobaric Explosives
+explosive.icbmclassic:fragmentation.name=Fragmentation Explosives
+explosive.icbmclassic:contagious.name=Contagious Explosives
+explosive.icbmclassic:sonic.name=Sonic Explosives
+explosive.icbmclassic:breaching.name=Breaching Explosives
+explosive.icbmclassic:thermobaric.name=Thermobaric Explosives
 
 
-icbm.explosive.nuclear.name=Nuclear Explosives
-icbm.explosive.emp.name=EMP Explosives
-icbm.explosive.exothermic.name=Exothermic Explosives
-icbm.explosive.endothermic.name=Endothermic Explosives
-icbm.explosive.antiGravitational.name=Anti-Gravitational Explosives
-icbm.explosive.ender.name=Ender Explosives
-icbm.explosive.hypersonic.name=Hypersonic Explosives
+explosive.icbmclassic:nuclear.name=Nuclear Explosives
+explosive.icbmclassic:emp.name=EMP Explosives
+explosive.icbmclassic:exothermic.name=Exothermic Explosives
+explosive.icbmclassic:endothermic.name=Endothermic Explosives
+explosive.icbmclassic:antigravitational.name=Anti-Gravitational Explosives
+explosive.icbmclassic:ender.name=Ender Explosives
+explosive.icbmclassic:hypersonic.name=Hypersonic Explosives
 
 
-icbm.explosive.antimatter.name=Antimatter Explosives
-icbm.explosive.redMatter.name=Red Matter Explosives
-
-
-icbm.explosive.sMine.name=S-Mine
-
-
-## Explosive Info
-icbm.explosive.condensed.info=Slightly more destructive version of TNT
-icbm.explosive.shrapnel.info=Erupts in a barrage of metal fragments
-icbm.explosive.incendiary.info=Catches the place on fire
-icbm.explosive.debilitation.info=Confusion and disorientation for all around
-icbm.explosive.chemical.info=Can't fight if you can't breathe
-icbm.explosive.anvil.info=Whats up doc
-icbm.explosive.repulsive.info=Pushes everyone away
-icbm.explosive.attractive.info=Pulls everyone in
-
-
-icbm.explosive.fragmentation.info=Devastates the landscape, with high velocity fragments
-icbm.explosive.contagious.info=Have you ever heard the plague?
-icbm.explosive.sonic.info=Who needs to be a ninja to, sneak in after that much noise
-icbm.explosive.breaching.info=When you need a door
-icbm.explosive.rejuvenation.info=You can't be blamed for damage, if there's none to be found...
-icbm.explosive.thermobaric.info=Mini-nuke in a can, or at least as close, as the North can get
-
-
-icbm.explosive.nuclear.info=Hi! I'm a nuclearholic..
-icbm.explosive.emp.info=Over 9000? Not anymore
-icbm.explosive.exothermic.info=You thought the sun was hot
-icbm.explosive.endothermic.info=They call me Mr.Freeze
-icbm.explosive.antiGravitational.info=I think your base looks better floating
-icbm.explosive.ender.info=Lets relocate that base of yours
-icbm.explosive.hypersonic.info=I feel bad for your ears
-
-
-icbm.explosive.antimatter.info=matter + antimatter = no matter
-
-
-icbm.explosive.xmas.info=No, don't do it, he's evil!
-
-
-##Some extra messages just to honor the great Yogscast https://www.youtube.com/watch?v=F2ohslGivm8
-icbm.explosive.redMatter.info.count=11
-icbm.explosive.redMatter.info.0=Yogscast? Diggy diggy hole
-icbm.explosive.redMatter.info.1=Be a shame if your base was compacted into nothing
-icbm.explosive.redMatter.info.2=Voltz special... The Bomb
-icbm.explosive.redMatter.info.3=The wheels on the bus go round and round
-icbm.explosive.redMatter.info.4=Did a cow just fly by the window?
-icbm.explosive.redMatter.info.5=Oh god it's sucking me in
-icbm.explosive.redMatter.info.6=There is no escape
-icbm.explosive.redMatter.info.7=Not even light....
-icbm.explosive.redMatter.info.8=Into the void
-icbm.explosive.redMatter.info.9=Oh? You think you can escape
-icbm.explosive.redMatter.info.10=Oh baby come back
-
-
-icbm.explosive.sMine.info=Bouncing betty with, the kick of a fat guy
+explosive.icbmclassic:antimatter.name=Antimatter Explosives
+explosive.icbmclassic:redmatter.name=Red Matter Explosives
 
 
 ## Missile Form
-icbm.missile.condensed.name=Conventional Missile
-icbm.missile.shrapnel.name=Shrapnel Missile
-icbm.missile.incendiary.name=Incendiary Missile
-icbm.missile.debilitation.name=Debilitation Missile
-icbm.missile.chemical.name=Chemical Missile
-icbm.missile.anvil.name=Anvil Missile
-icbm.missile.repulsive.name=Repulsive Missile
-icbm.missile.attractive.name=Attractive Missile
+missile.icbmclassic:condensed.name=Conventional Missile
+missile.icbmclassic:shrapnel.name=Shrapnel Missile
+missile.icbmclassic:incendiary.name=Incendiary Missile
+missile.icbmclassic:debilitation.name=Debilitation Missile
+missile.icbmclassic:chemical.name=Chemical Missile
+missile.icbmclassic:anvil.name=Anvil Missile
+missile.icbmclassic:repulsive.name=Repulsive Missile
+missile.icbmclassic:attractive.name=Attractive Missile
 
 
-icbm.missile.fragmentation.name=Fragmentation Missile
-icbm.missile.contagious.name=Contagious Missile
-icbm.missile.sonic.name=Sonic Missile
-icbm.missile.breaching.name=Breaching Missile
-icbm.missile.rejuvenation.name=Rejuvenation Missile
-icbm.missile.thermobaric.name=Thermobaric Missile
+missile.icbmclassic:fragmentation.name=Fragmentation Missile
+missile.icbmclassic:contagious.name=Contagious Missile
+missile.icbmclassic:sonic.name=Sonic Missile
+missile.icbmclassic:breaching.name=Breaching Missile
+missile.icbmclassic:thermobaric.name=Thermobaric Missile
 
 
-icbm.missile.nuclear.name=Nuclear Missile
-icbm.missile.emp.name=EMP Missile
-icbm.missile.exothermic.name=Exothermic Missile
-icbm.missile.endothermic.name=Endothermic Missile
-icbm.missile.antiGravitational.name=Anti-Gravitational Missile
-icbm.missile.ender.name=Ender Missile
-icbm.missile.hypersonic.name=Hypersonic Missile
+missile.icbmclassic:nuclear.name=Nuclear Missile
+missile.icbmclassic:emp.name=EMP Missile
+missile.icbmclassic:exothermic.name=Exothermic Missile
+missile.icbmclassic:endothermic.name=Endothermic Missile
+missile.icbmclassic:antigravitational.name=Anti-Gravitational Missile
+missile.icbmclassic:ender.name=Ender Missile
+missile.icbmclassic:hypersonic.name=Hypersonic Missile
 
 
-icbm.missile.antimatter.name=Antimatter Missile
-icbm.missile.redMatter.name=Red Matter Missile
-
-
-icbm.missile.xmas.zombie.name=Zombie Gift Missile
-icbm.missile.xmas.skeleton.name=Skeleton Gift Missile
-
-
-## Special Missiles
-icbm.missile.missileModule.name=Missile Module
-icbm.missile.antiBallistic.name=Anti-ballistic Missile
-icbm.missile.cluster.name=Cluster Missile
-icbm.missile.nuclearCluster.name=Nuclear Cluster Missile
-icbm.missile.homing.name=Homing Missile
-
-
-## Grenades
-icbm.grenade.condensed.name=Conventional Grenade
-icbm.grenade.shrapnel.name=Shrapnel Grenade
-icbm.grenade.incendiary.name=Incendiary Grenade
-icbm.grenade.debilitation.name=Debilitation Grenade
-icbm.grenade.chemical.name=Chemical Grenade
-icbm.grenade.anvil.name=Anvil Grenade
-icbm.grenade.repulsive.name=Repulsive Grenade
-icbm.grenade.attractive.name=Attractive Grenade
-
-
-icbm.grenade.xmas.zombie.name=Zombie Gift Grenade
-icbm.grenade.xmas.skeleton.name=Skeleton Gift Grenade
+missile.icbmclassic:antimatter.name=Antimatter Missile
+missile.icbmclassic:redmatter.name=Red Matter Missile
 
 
 ## Explosive Minecarts
-icbm.minecart.condensed.name=Explosive Cart
-icbm.minecart.shrapnel.name=Shrapnel Minecart
-icbm.minecart.incendiary.name=Incendiary Minecart
-icbm.minecart.debilitation.name=Debilitation Minecart
-icbm.minecart.chemical.name=Chemical Minecart
-icbm.minecart.anvil.name=Anvil Minecart
-icbm.minecart.repulsive.name=Repulsive Minecart
-icbm.minecart.attractive.name=Attractive Minecart
-icbm.minecart.nightmare.name=Nightmare Minecart
+bombcart.icbmclassic:condensed.name=Explosive Cart
+bombcart.icbmclassic:shrapnel.name=Shrapnel Minecart
+bombcart.icbmclassic:incendiary.name=Incendiary Minecart
+bombcart.icbmclassic:debilitation.name=Debilitation Minecart
+bombcart.icbmclassic:chemical.name=Chemical Minecart
+bombcart.icbmclassic:anvil.name=Anvil Minecart
+bombcart.icbmclassic:repulsive.name=Repulsive Minecart
+bombcart.icbmclassic:attractive.name=Attractive Minecart
+bombcart.icbmclassic:nightmare.name=Nightmare Minecart
 
 
-icbm.minecart.fragmentation.name=Fragmentation Minecart
-icbm.minecart.contagious.name=Contagious Minecart
-icbm.minecart.sonic.name=Sonic Minecart
-icbm.minecart.breaching.name=Breaching Minecart
-icbm.minecart.rejuvenation.name=Rejuvenation Minecart
-icbm.minecart.thermobaric.name=Thermobaric Minecart
+bombcart.icbmclassic:fragmentation.name=Fragmentation Minecart
+bombcart.icbmclassic:contagious.name=Contagious Minecart
+bombcart.icbmclassic:sonic.name=Sonic Minecart
+bombcart.icbmclassic:breaching.name=Breaching Minecart
+bombcart.icbmclassic:thermobaric.name=Thermobaric Minecart
 
 
-icbm.minecart.xmas.zombie.name=Zombie Gift Cart
-icbm.minecart.xmas.skeleton.name=Skeleton Gift Cart
+bombcart.icbmclassic:nuclear.name=Nuclear Minecart
+bombcart.icbmclassic:emp.name=EMP Minecart
+bombcart.icbmclassic:exothermic.name=Exothermic Minecart
+bombcart.icbmclassic:endothermic.name=Endothermic Minecart
+bombcart.icbmclassic:antigravitational.name=Anti-Gravitational Minecart
+bombcart.icbmclassic:ender.name=Ender Minecart
+bombcart.icbmclassic:hypersonic.name=Hypersonic Minecart
+
+
+bombcart.icbmclassic:antimatter.name=Antimatter Minecart
+bombcart.icbmclassic:redmatter.name=Red Matter Minecart
+
+
+## Explosive Info
+explosive.icbmclassic:condensed.info=Slightly more destructive version of TNT
+explosive.icbmclassic:shrapnel.info=Erupts in a barrage of metal fragments
+explosive.icbmclassic:incendiary.info=Catches the place on fire
+explosive.icbmclassic:debilitation.info=Confusion and disorientation for all around
+explosive.icbmclassic:chemical.info=Can't fight if you can't breathe
+explosive.icbmclassic:anvil.info=What's up doc
+explosive.icbmclassic:repulsive.info=Pushes everyone away
+explosive.icbmclassic:attractive.info=Pulls everyone in
+
+
+explosive.icbmclassic:fragmentation.info=Devastates the landscape with high velocity fragments
+explosive.icbmclassic:contagious.info=Have you ever heard of the plague?
+explosive.icbmclassic:sonic.info=Who needs to be a ninja to sneak in after that much noise?
+explosive.icbmclassic:breaching.info=When you need a door
+explosive.icbmclassic:thermobaric.info=Mini-nuke in a can. Or at least as close as the North can get
+
+
+explosive.icbmclassic:nuclear.info=Hi! I'm a nuclearholic..
+explosive.icbmclassic:emp.info=Over 9000? Not anymore
+explosive.icbmclassic:exothermic.info=You thought the sun was hot
+explosive.icbmclassic:endothermic.info=They call me Mr. Freeze
+explosive.icbmclassic:antigravitational.info=I think your base looks better floating
+explosive.icbmclassic:ender.info=Let's relocate that base of yours
+explosive.icbmclassic:hypersonic.info=I feel bad for your ears
+
+
+explosive.icbmclassic:antimatter.info=Matter + antimatter = No matter
+
+
+##Some extra messages just to honor the great Yogscast https://www.youtube.com/watch?v=F2ohslGivm8
+explosive.icbmclassic:redMatter.info.count=11
+explosive.icbmclassic:redMatter.info.0=Yogscast? Diggy diggy hole
+explosive.icbmclassic:redMatter.info.1=Be a shame if your base was compacted into nothing
+explosive.icbmclassic:redMatter.info.2=Voltz special... The Bomb
+explosive.icbmclassic:redMatter.info.3=The wheels on the bus go round and round
+explosive.icbmclassic:redMatter.info.4=Did a cow just fly by the window?
+explosive.icbmclassic:redMatter.info.5=Oh god it's sucking me in
+explosive.icbmclassic:redMatter.info.6=There is no escape
+explosive.icbmclassic:redMatter.info.7=Not even light....
+explosive.icbmclassic:redMatter.info.8=Into the void
+explosive.icbmclassic:redMatter.info.9=Oh? You think you can escape
+explosive.icbmclassic:redMatter.info.10=Oh baby come back
+
+
+## Special Missiles
+missile.name=Missile Module
+missile.icbmclassic:antiBallistic.name=Anti-ballistic Missile
+missile.icbmclassic:cluster.name=Cluster Missile
+missile.icbmclassic:nuclearCluster.name=Nuclear Cluster Missile
+missile.icbmclassic:homing.name=Homing Missile
+
+
+## Grenades
+grenade.icbmclassic:condensed.name=Conventional Grenade
+grenade.icbmclassic:shrapnel.name=Shrapnel Grenade
+grenade.icbmclassic:incendiary.name=Incendiary Grenade
+grenade.icbmclassic:debilitation.name=Debilitation Grenade
+grenade.icbmclassic:chemical.name=Chemical Grenade
+grenade.icbmclassic:anvil.name=Anvil Grenade
+grenade.icbmclassic:repulsive.name=Repulsive Grenade
+grenade.icbmclassic:attractive.name=Attractive Grenade
+
+
 
 
 ## ICBM Misc Blocks
@@ -324,6 +369,9 @@ tile.icbmclassic:spikes.1.name=Poison Spikes
 tile.icbmclassic:spikes.2.name=Flammable Spikes
 
 
+tile.icbmclassic:batterybox.0.name=Battery Box
+
+
 ## Chat messages
 message.tracker.nowtrack=Now tracking:
 message.tracker.nopower=Tracker out of electricity!
@@ -335,19 +383,19 @@ message.defuser.nopower=Defuser out of electricity!
 
 message.designator.callTime=Calling air strike in:
 message.designator.blast=Incoming air strike!
-message.designator.setFreq=Laser designator frequency Set:
+message.designator.setFreq=Laser Designator frequency set:
 message.designator.failFreq=Frequency must be greater than zero.
 message.designator.callBlast=Calling air strike into designated position!
 message.designator.nopower=Laser designator out of electricity!
 message.designator.noFreq=Laser designator frequency not set!
 
 
-message.radarGun.scanned=Scanned Coordinates: X:%x, Y:%y, Z:%z - Distance: %d
-message.radarGun.nopower=Radar gun out of electricity!
+message.radarGun.scanned=Scanned coordinates: X:%x Y:%y Z:%z - Distance: %d
+message.radarGun.nopower=Radar Gun out of electricity!
 message.radarGun.transfer=Coordinate information transferred!
 message.radarGun.noCoords=You must scan a coordinate!
 message.launcher.protected=Region is being protected.
-message.detonator.locked=Remote Locked to: X:%x, Y:%y, Z:%z
+message.detonator.locked=Remote locked to: X:%x Y:%y Z:%z
 message.detonator.nopower=Remote out of electricity!
 message.radar.redstone.on=Radar set to emit redstone
 message.radar.redstone.off=Radar set to not emit redstone
@@ -411,6 +459,7 @@ gui.launcherscreen.statusInvalid=Target is invalid!
 gui.launcherscreen.statusClose=Target too close!
 gui.launcherscreen.statusFar=Target too far!
 gui.launcherscreen.statusReady=Ready to launch!
+gui.launcherscreen.launch=Launch
 
 
 
@@ -429,22 +478,22 @@ gui.launcherCruise.noRoom=3x3 not clear!
 gui.launcherCruise.statusReady=Ready!
 
 
-## Chat warning if user tries to fire by hand, %1 is status message from GUI
-chat.launcher.status=Status: %1
-chat.launcher.failedToFire=Warning can not fire missile due to status error!
+## Chat warning if user tries to fire by hand, %s is status message from GUI
+chat.launcher.status=Status: %s
+chat.launcher.failedToFire=Warning: Cannot fire missile due to status error!
 chat.launcher.toolTargetSet=Target data transferred from tool.
 chat.launcher.toolWorldNotMatch=Target data's world is not the same as this one!
 chat.launcher.noTargetInTool=Tool does not contain any target data!
-chat.launcher.toolFrequencySet=Frequency set to %1
+chat.launcher.toolFrequencySet=Frequency set to %s
 
 
 gui.coordinator.name=Missile Coordinator
 gui.coordinator.sim=Path Simulator
 gui.coordinator.from=From:
 gui.coordinator.to=To:
-gui.coordinator.displace=Displacement: %p Meters
-gui.coordinator.arc=Arc: %p Meters
-gui.coordinator.time=Time: %p Seconds
+gui.coordinator.displace=Displacement: %p meters
+gui.coordinator.arc=Arc: %p meters
+gui.coordinator.time=Time: %p seconds
 gui.coordinator.direction=Direction:
 gui.coordinator.wip=More features coming soon!
 
@@ -453,8 +502,8 @@ gui.radar.coords=Coordinates:
 gui.radar.range=Range
 gui.radar.range.trigger=Trigger:
 gui.radar.range.detection=Detection:
-gui.radar.on=Radar On!
-gui.radar.nopower=No Electricity!
+gui.radar.on=Radar on!
+gui.radar.nopower=No electricity!
 
 
 gui.terminal.name=Terminal
@@ -467,32 +516,25 @@ gui.platform.access=User Access
 ## Tooltips
 info.misc.freq=Frequency:
 info.tracker.tracking=Tracking:
-info.designator.noFreq=Frequency: Not Set
-info.radarGun.savedCoords=Saved Coordinates:
+info.designator.noFreq=Frequency: Not set
+info.radarGun.savedCoords=Saved coordinates:
 info.radarGun.meters=Meters
-info.detonator.linked=Linked Explosive:
-info.detonator.noLink=No Linked Explosive
-info.misc.tier=Explosive Tier
-info.tracker.tooltip=Left Click on a mob (players aswell), and I Will point to it.
+info.detonator.linked=Linked explosive:
+info.detonator.noLink=No Linked explosive
+info.misc.tier=Explosive tier
+info.tracker.tooltip=Left-click on a mob (players aswell) and I will point to it.
 
 
 ## Death messages
 death.attack.icbm.redmatter=%s was crushed by the immense mass of the mighty black hole.
+death.attack.icbm.chemical=%s suddenly started feeling not so well.
+death.attack.icbm.contagious=%s breathed in too much of the green stuff.
 
 
 ## GPS
-gps.pos.set.name=GPS Data Saved
-gps.error.pos.invalid.name=Invalid Location
+gps.pos.set.name=GPS data saved
+gps.error.pos.invalid.name=Invalid location
+gps.error.pos.invalid.world.name=Can't target another world
+gps.error.pos.invalid.null.name=No target set
 gps.data.transferred.name=Data transferred
-gps.cleared.name=GPS Data Cleared
-
-
-## Entity
-entity.icbmclassic:skeleton.xmas.elf.name=Ice Skeleton
-entity.icbmclassic:skeleton.xmas.boss.name=Ice Skeleton Lord
-entity.icbmclassic:skeleton.xmas.snowman.name=Tactical Snowman
-
-
-entity.icbmclassic:zombie.xmas.elf.name=Fire Zombie
-entity.icbmclassic:zombie.xmas.boss.name=Fire Zombie Boss
-entity.icbmclassic:zombie.xmas.creeper.name=Creeper Sentinel
+gps.cleared.name=GPS data cleared

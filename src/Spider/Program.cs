@@ -17,26 +17,27 @@ namespace Spider
                 .CreateLogger();
 
             var mods = (await ApiManager.GetModsAsync()).ToList();
-            ModDownloadManager.DownloadModsAsync(mods).Wait();
+            await ModDownloadManager.DownloadModsAsync(mods);
             LangManager.ProcessLangFiles(mods);
             var languages = mods.SelectMany(_ => _.Languages).Where(_ => !_.IsInBlackList).ToList();
+            Log.Information($"共收集到了{languages.Count}个语言文件.");
             foreach (var language in languages)
             {
                 string path;
                 try
                 {
-                    _= languages.Single(_ => _.AssetDomain == language.AssetDomain);
+                    _ = languages.Single(_ => _.AssetDomain == language.AssetDomain);
                     path = $"assets/{language.AssetDomain}/lang/";
                 }
-                catch (Exception)
+                catch
                 {
                     path = $"assets/{language.AssetDomain}-{language.BaseMod.ShortUrl}/lang/";
                 }
 
                 Directory.CreateDirectory(Path.Combine(Configuration.OutputPath, path));
                 var fullPath = Path.Combine(Configuration.OutputPath, path, "en_us.lang");
-                await File.WriteAllTextAsync(fullPath, language.OutPutText).ContinueWith(
-                    t => Log.Information($"写入了一个语言文件到: {fullPath}")).ConfigureAwait(false);
+                File.WriteAllText(fullPath, language.OutPutText);
+                Log.Information($"写入了一个语言文件到: {fullPath}");
             }
 
             foreach (var mod in mods)
