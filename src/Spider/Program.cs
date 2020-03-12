@@ -34,7 +34,11 @@ namespace Spider
                     path = $"assets/{language.AssetDomain}-{language.BaseMod.ShortUrl}/lang/";
                 }
 
-                Directory.CreateDirectory(Path.Combine(Configuration.OutputPath, path));
+                var directoryInfo = Directory.CreateDirectory(Path.Combine(Configuration.OutputPath, path));
+                if (!directoryInfo.EnumerateFiles().Any(_=>_.Name.EndsWith("zh_cn.lang")))
+                {
+                    File.Create(Path.Combine(Configuration.OutputPath, path, "zh_cn.lang")).Dispose();
+                }
                 var fullPath = Path.Combine(Configuration.OutputPath, path, "en_us.lang");
                 File.WriteAllText(fullPath, language.OutPutText);
                 Log.Information($"写入了一个语言文件到: {fullPath}");
