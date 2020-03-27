@@ -39,6 +39,7 @@ item.infinity_gauntlet_cast.name=Infinity Gauntlet Cast
 tile.construction_table.name=Construction Table
 tile.suit_stand.name=Suit Stand
 tile.extractor.name=Extractor
+tile.boiler.name=Boiler
 tile.infinity_generator.name=Infinity Generator
 tile.furnace_generator.name=Furnace Generator
 
@@ -172,6 +173,7 @@ fluid.palladium=Molten Palladium
 fluid.titanium=Molten Titanium
 fluid.vibranium=Molten Vibranium
 fluid.osmium=Molten Osmium
+fluid.iridium=Molten Iridium
 fluid.dwarfstaralloy=Molten Dwarf Star Alloy
 fluid.bronze=Molten Bronze
 fluid.goldtitaniumalloy=Molten Gold-Titanium-Alloy
@@ -266,6 +268,25 @@ lucraftcore.abilities.tough_lungs.name=Tough Lungs
 lucraftcore.abilities.tough_lungs.desc=Makes you able to breath in space (Galacticraft required)
 lucraftcore.abilities.invisibility.name=Invisibility
 lucraftcore.abilities.invisibility.desc=Makes you invisible
+lucraftcore.abilities.command.name=Command
+lucraftcore.abilities.command.desc=Executes a command
+
+lucraftcore.ability.condition.superpower=Needs %s superpower
+lucraftcore.ability.condition.ability=Needs %s ability
+lucraftcore.ability.condition.level=Requires level %s
+lucraftcore.ability.condition.requires=Requires...
+lucraftcore.ability.condition.or=OR
+lucraftcore.ability.condition.requires_not=Requires following to be disabled...
+lucraftcore.ability.condition.and=AND
+lucraftcore.ability.condition.held_item=Requires %s in %s
+lucraftcore.ability.condition.main_hand=Main Hand
+lucraftcore.ability.condition.off_hand=Off Hand
+lucraftcore.ability.condition.open_armor=Requires item in %s slot to be open
+lucraftcore.ability.condition.open_armor.head=helmet
+lucraftcore.ability.condition.open_armor.chest=chestplate
+lucraftcore.ability.condition.open_armor.legs=legs
+lucraftcore.ability.condition.open_armor.feet=feet
+lucraftcore.ability.condition.potion_weakness=Turns off when exposed to %s
 
 
 # Key Bindings
@@ -332,21 +353,23 @@ lucraftcore.advancedcombat.you_are_grabbing=You are grabbing! Press %s to choke 
 
 
 # Commands
-commands.superpower.usage=/superpower <player> [superpower/remove]
+commands.superpower.usage=/superpower <entity> [superpower/remove]
 commands.superpower.success.self=Your new superpower is %s
 commands.superpower.success.other=%s's new superpower is %s
 commands.superpower.remove.success.self=Your superpower was removed
 commands.superpower.remove.success.other=%s's superpower was removed
 commands.superpower.playerspower=%s's superpower is %s
 commands.superpower.nopower=%s has no superpower
+commands.superpower.powerdoesntexist=This superpower does not exist!
+commands.superpower.not_living_entity=That entity can not have superpowers!
 
-commands.superpowerxp.failure.widthdrawXp=Cannot give player negative experience points to his superpower
+commands.superpowerxp.failure.widthdrawXp=Cannot give entity negative experience points to his superpower
 commands.superpowerxp.success=Given %s superpower XP to %s
 commands.superpowerxp.success.levels=Given %s superpower levels to %s
 commands.superpowerxp.success.negative.levels=Taken %s superpower levels from %s
-commands.superpowerxp.usage=/superpowerxp <amount> [player] OR /superpowerxp <amount>L [player]
-commands.superpowerxp.nosuperpower=That player doesn't have a superpower!
-commands.superpowerxp.cantlevelup=That player's superpower can't level up!
+commands.superpowerxp.usage=/superpowerxp <amount> [entity] OR /superpowerxp <amount>L [entity]
+commands.superpowerxp.nosuperpower=That entity doesn't have a superpower!
+commands.superpowerxp.cantlevelup=That entity's superpower can't level up!
 
 commands.karma.usage=/karma [player] OR set <player> <amount>
 commands.karma.playersstats=%s's stats:
@@ -365,6 +388,8 @@ commands.size.nosizechanger=This size changer does not exist!
 
 # Sounds
 subtitles.energy_blast=Energy Blast
+subtitles.infinity_stone_equip=Equip Infinity Stone
+subtitles.use_infinity_gauntlet=Use Infinity Gauntlet
 
 
 # Advancements
@@ -413,3 +438,7 @@ lucraftcore.jei.information=Information
 lucraftcore.info.infinity_gauntlet_cast_info=You can find this cast in the chest of a blacksmith in a village.
 lucraftcore.info.no_perm_ability=§cYou don't have permissions for this ability!
 lucraftcore.info.no_perms=§cYou don't have permissions!
+lucraftcore.info.energy_display=%,d %s
+lucraftcore.info.energy_storage_display=%,d / %,d %s
+lucraftcore.info.fluid_display=%,d %s
+lucraftcore.info.fluidtank_display=%,d / %,d %s

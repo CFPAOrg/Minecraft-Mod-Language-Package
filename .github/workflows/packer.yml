@@ -1,0 +1,37 @@
+name: Packer
+
+on:
+  push:
+    branches: 
+    - 1.12.2
+env:
+      ak: ${{ secrets.Access_Key }}
+      sk: ${{ secrets.Secret_Key }}
+      token: ${{ secrets.token }}
+      repo: ${{ github.repository }}
+      sha: ${{github.sha}}
+      password: ${{ secrets.password }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101
+    - name: run
+      run: dotnet run -c Release -p ./src/Packer/Packer.csproj
+    - name: SCP Command to Transfer Files
+      uses: appleboy/scp-action@v0.0.6
+      with:
+        host: 115.231.219.184 
+        port: 22
+        username: root
+        password: ${{env.password}}
+        target: /var/www/html/files/
+        source: ./*.zip
+        rm: false
+        overwrite: true
+
