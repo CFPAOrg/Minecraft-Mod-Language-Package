@@ -49,5 +49,5 @@ jobs:
         $currentDirectory = Get-Location
         $keyPath = Join-Path -Path $currentDirectory  "id_rsa"
         New-Item $keyPath -Value $keyFileByte -ItemType File
-        scp -i $keyPath .\Minecraft-Mod-Language-Package.zip root@115.231.219.184 /var/www/html/files/Minecraft-Mod-Language-Package.zip
+        scp -i $keyPath .\Minecraft-Mod-Language-Package.zip root@115.231.219.184:/var/www/html/files/Minecraft-Mod-Language-Package.zip
         Remove-Item $keyPath
