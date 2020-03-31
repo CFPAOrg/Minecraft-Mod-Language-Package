@@ -14,7 +14,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Pack files
       id: pack_files
-      run: pwsh ./packer.ps1
+      run: ./packer.ps1
+      shell: pwsh
 
      # Create the release:  https://github.com/actions/create-release
     - name: Create release
@@ -23,8 +24,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: Snapshot-${{steps.pack_files.outputs.timestamp}}
-        release_name:  汉化资源包-Snapshot-${{steps.pack_files.outputs.timestamp}}
+        tag_name: Snapshot-${{ steps.pack_files.outputs.timestamp }}
+        release_name:  汉化资源包-Snapshot-${{ steps.pack_files.outputs.timestamp }}
         draft: false
         prerelease: false
 
