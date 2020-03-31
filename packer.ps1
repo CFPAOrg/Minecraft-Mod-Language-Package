@@ -1,6 +1,6 @@
 $projectPath = Join-Path $PWD -ChildPath "project";
 $outputPath = Join-Path $PWD -ChildPath "output";
-$zipArchivePath = Join-Path $PWD -ChildPath "Minecraft-Mod-Language-Package.zip";
+$zipArchivePath = Join-Path $PWD -ChildPath "Minecraft-Mod-Language-Modpack.zip";
 
 Remove-Item $outputPath -Recurse -Force -ErrorAction Ignore;
 Remove-Item $zipArchivePath -Force -ErrorAction Ignore;

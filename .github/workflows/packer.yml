@@ -38,8 +38,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}  # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: Minecraft-Mod-Language-Package.zip  # Use the full path here because environment variables are not in scope
-        asset_name: Minecraft-Mod-Language-Package.zip
+        asset_path: Minecraft-Mod-Language-Modpack.zip  # Use the full path here because environment variables are not in scope
+        asset_name: Minecraft-Mod-Language-Modpacke.zip
         asset_content_type: application/zip
 
     - name: Upload to server
@@ -49,5 +49,5 @@ jobs:
         $currentDirectory = Get-Location
         $keyPath = Join-Path -Path $currentDirectory  "id_rsa"
         New-Item $keyPath -Value $keyFileByte -ItemType File
-        scp -i $keyPath .\Minecraft-Mod-Language-Package.zip root@115.231.219.184:/var/www/html/files/Minecraft-Mod-Language-Modpack.zip
+        scp -i $keyPath .\Minecraft-Mod-Language-Modpack.zip root@115.231.219.184:/var/www/html/files/
         Remove-Item $keyPath
