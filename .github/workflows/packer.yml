@@ -4,9 +4,6 @@ on:
   push:
     branches: [ 1.12.2 ]
 
-env:
-  password: ${{ secrets.password }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -48,12 +45,14 @@ jobs:
         asset_name: Minecraft-Mod-Language-Modpack.zip
         asset_content_type: application/zip
 
-    - name: Upload to server
-      id: upload-file
-      run: |
-        $keyFileByte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Key }}")
-        $currentDirectory = Get-Location
-        $keyPath = Join-Path -Path $currentDirectory  "id_rsa"
-        New-Item $keyPath -Value $keyFileByte -ItemType File
-        scp -i $keyPath .\Minecraft-Mod-Language-Modpack.zip root@115.231.219.184:/var/www/html/files/
-        Remove-Item $keyPath
+    - name: SCP Command to Transfer Files
+      uses: appleboy/scp-action@v0.0.6
+      with:
+        host: 115.231.219.184 
+        port: 22
+        username: root
+        password: ${{secrets.password}}
+        target: /var/www/html/files/
+        source: ./*.zip
+        rm: false
+        overwrite: true
