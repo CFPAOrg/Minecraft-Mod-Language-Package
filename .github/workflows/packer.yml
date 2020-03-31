@@ -9,7 +9,7 @@ env:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
@@ -17,6 +17,12 @@ jobs:
     - name: Pack files
       id: pack_files
       run: ./packer.ps1
+      shell: pwsh
+    
+    - name: Create timestamp
+      id: create_timestamp
+      run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%S')"
+      shell: sh
 
      # Create the release:  https://github.com/actions/create-release
     - name: Create release
@@ -25,8 +31,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: Snapshot-${{ steps.pack_files.outputs.timestamp }}
-        release_name:  汉化资源包-Snapshot-${{ steps.pack_files.outputs.timestamp }}
+        tag_name: Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
+        release_name:  汉化资源包-Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
         draft: false
         prerelease: false
 
