@@ -45,7 +45,7 @@ jobs:
     - name: Upload to server
       id: upload-file
       run: |
-        $keyFileByte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Pfx }}")
+        $keyFileByte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Key }}")
         $currentDirectory = Get-Location
         $keyPath = Join-Path -Path $currentDirectory  "id_rsa"
         [IO.File]::WriteAllBytes("$keyPath", $keyFileByte)
