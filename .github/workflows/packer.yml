@@ -48,6 +48,6 @@ jobs:
         $keyFileByte = [System.Convert]::FromBase64String("${{ secrets.Base64_Encoded_Key }}")
         $currentDirectory = Get-Location
         $keyPath = Join-Path -Path $currentDirectory  "id_rsa"
-        New-Item $keyPath -Value $keyFileByte
+        New-Item $keyPath -Value $keyFileByte -ItemType File
         scp -i .\Minecraft-Mod-Language-Package.zip root@115.231.219.184 /var/www/html/files/
         Remove-Item $keyPath
