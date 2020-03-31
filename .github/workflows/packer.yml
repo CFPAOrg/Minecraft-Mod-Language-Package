@@ -11,6 +11,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - uses: actions/checkout@v2
     - name: Pack files
       id: pack_files
       run: pwsh ./packer.ps1
