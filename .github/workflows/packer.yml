@@ -9,13 +9,12 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Pack files
       id: pack_files
-      run: ./packer.ps1
-      shell: pwsh
-      
+      run: pwsh ./packer.ps1
+
      # Create the release:  https://github.com/actions/create-release
     - name: Create release
       id: create_release
