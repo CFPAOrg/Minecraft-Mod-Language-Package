@@ -8,4 +8,4 @@ Get-ChildItem $projectPath -Exclude "en_us.lang" -Recurse|
 ForEach-Object {
     Copy-Item -Path $_  -Destination (Join-Path $outputPath -ChildPath ([IO.Path]::GetRelativePath($projectPath,$_)));
 }
-Compress-Archive "$outputPath/*" - $zipArchivePath -CompressionLevel Optimal;
+Compress-Archive "$outputPath/*" $zipArchivePath -CompressionLevel Optimal;
