@@ -9,4 +9,4 @@ ForEach-Object {
     Copy-Item -Path $_  -Destination (Join-Path $outputPath -ChildPath ([IO.Path]::GetRelativePath($projectPath,$_)));
 }
 Compress-Archive $outputPath $zipArchivePath -CompressionLevel Optimal;
-[System.Console]::Write(("::set-output name=timestamp::{0}" -F (Get-Date -Format "yyyyMMddhhmmss" )));
+Write-Output ("::set-output name=timestamp::{0}" -F (Get-Date -Format "yyyyMMddhhmmss" ));
