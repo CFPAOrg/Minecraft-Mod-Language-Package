@@ -3,6 +3,7 @@
 # Copyright (c) 2011-2018  Techbrew Interactive, LLC <techbrew.net>.  All Rights Reserved.
 #
 
+
 ### JourneyMap 5.5.0 Resource Bundle - en_US
 ### Notes for translators:
 ### Do not translate or alter the codes used for color changes (§b, §e, §f, etc.)
@@ -268,6 +269,10 @@ jm.common.webserver_and_mapgui_disabled=JourneyMap is disabled by jm.common.prop
 jm.common.webserver_and_mapgui_ready=Press [§b%1$s§f] or open browser to§b§n http://localhost%2$s §f
 jm.common.webserver_only_ready=Open browser to§b§n http://localhost%1$s §f. (In-game map disabled)
 jm.common.website=Help and How-To articles on using JourneyMap
+jm.common.system_time_format=System Time Format
+jm.common.system_time_format.tooltip="Time format for the InfoSlot:System Time"
+jm.common.time_format=Ream Game Time Format
+jm.common.time_format.tooltip="Time format for the InfoSlot:Real Game Time"
 jm.config.category.advanced=Advanced Options
 jm.config.category.advanced.tooltip=Caution! Changing some of these values can cause significant problems and/or crashes.
 jm.config.category.cartography=Cartography
@@ -295,6 +300,7 @@ jm.config.file_header_5=For more information, go to: %1$s
 jm.config.reset=Reset
 jm.config.reset.tooltip=Reset all options in this section back to their default values
 jm.config.tooltip_format=%1$s%2$s
+jm.debug.region_info_toggle=Toggle region info
 jm.error.compatability=Incompatability error running %1$s for Forge %2$s. Ensure your version of Forge is compatible.
 jm.error.java6=JourneyMap requires Java 7 or Java 8. Update your launcher profile to use a newer version of Java.
 jm.feature.fairplay=FairPlay
@@ -322,6 +328,8 @@ jm.minimap.compass.e=E
 jm.minimap.compass.n=N
 jm.minimap.compass.s=S
 jm.minimap.compass.w=W
+jm.fullscreen.search=Open location finder
+jm.fullscreen.search_execute=Pan to location
 jm.minimap.compass_font_scale=Compass Font Scale
 jm.minimap.compass_font_scale.tooltip=The font scale used for compass point labels
 jm.minimap.enable_minimap=Enable MiniMap
@@ -401,8 +409,7 @@ jm.theme.labelsource.blank=Blank
 jm.theme.labelsource.blank.tooltip=Show nothing
 jm.theme.labelsource.fps=FPS
 jm.theme.labelsource.fps.tooltip=Show current Frames Per Second
-jm.theme.labelsource.gametime12=Game Time 12hr
-jm.theme.labelsource.gametime24=Game Time 24hr
+jm.theme.labelsource.gametime.real=Game Time Real
 jm.theme.labelsource.gametime=Game Time
 jm.theme.labelsource.gametime.tooltip=Show the world time (20 minute cycle)
 jm.theme.labelsource.gametime.day=Daytime
@@ -428,6 +435,16 @@ jm.waypoint.teleport_command=Custom Waypoint Teleport Command
 jm.waypoint.teleport_command.tooltip=Set the teleport command for your server. Create the custom command for your server with these keys. Player Name:{name} - Waypoint Coordinates:{x} {y} {z} - Target Dimension:{dim}.
 jm.waypoint.current_location=Current Location: %1$s
 jm.waypoint.deathpoint=Death
+jm.waypoint.auto_remove_deathpoints=Auto Remove Death Waypoints
+jm.waypoint.auto_remove_deathpoints.tooltip=Automatically removes death waypoints as you approach them
+jm.waypoint.auto_deathpoint_remove_distance=Auto Remove Death Waypoint Distance
+jm.waypoint.auto_deathpoint_remove_distance.tooltip=The distance which the death waypoint is removed, minimum 2 or it will get removed when created.
+jm.waypoint.show_death_point_label_on_map=Display Death Waypoint Label on map overlay.
+jm.waypoint.show_death_point_label_on_map.tooltip=Disables death waypoint the label on the fullscreen and minimap.
+jm.waypoint.death_date_format=Death Date Format
+jm.waypoint.death_date_format.tooltip=Date format for death waypoints.
+jm.waypoint.death_time_format=Death Time Format
+jm.waypoint.death_time_format.tooltip=Time format for death waypoints.
 jm.waypoint.dimension=Dimension: %1$s
 jm.waypoint.dimension_all=All
 jm.waypoint.dimensions=Dimensions
@@ -564,6 +581,7 @@ jm.webmap.worldname_text=World Name:
 jm.webmap.worldtime_text=World Time:
 jm.webmap.zoom_slider_name=Zoom
 
+
 jm.server.edit.label.admin.edit=Server Admin
 jm.server.edit.label.selection.global.tooltip=These are the default properties for the server. Enable individual dimension properties to override the global properties.
 jm.server.edit.label.selection.default.tooltip=The settings here will be the default for any new dimensions created.
@@ -593,8 +611,8 @@ jm.server.edit.chkbox.world.id=World ID
 jm.server.edit.chkbox.world.id.tooltip=§1[Enable/Disable]§f: Enabling will change the save directory for this servers mapping data.
 jm.server.edit.chkbox.world.id.tooltip2=The primary use is to prevent maps and settings from being over-written when using a multi-world setup and when users do not give servers unique names.
 jm.server.edit.chkbox.world.id.tooltip3=§4WARNING§f: If §c[disabled]§f and then §9[enabling]§f on an active server will reset all user mapping data.
-jm.server.edit.slider.update.pre=Update Time:
-jm.server.edit.slider.update.post= ms
+jm.server.edit.slider.update.pre=Update Every
+jm.server.edit.slider.update.post= ticks
 jm.server.edit.slider.update.tooltip=How often the client can poll the server to get player location updates.
 jm.server.edit.toggle.base.all=§a[All]§f: Everyone can use this feature.
 jm.server.edit.toggle.base.op=§a[Op]§f: Only Ops/Admins can use this feature.
@@ -627,6 +645,7 @@ jm.server.edit.mapping.toggle.topo.tooltip=§1[Enable/Disable]§f: Topography Ma
 jm.server.edit.mapping.toggle.cave.label=Cave
 jm.server.edit.mapping.toggle.cave.tooltip=§1[Enable/Disable]§f: Cave Mapping for users.
 
+
 key.journeymap.toggle_waypoints=Toggle all Waypoints
 key.journeymap.create_waypoint=Create Waypoint
 key.journeymap.day=Show Day Map
@@ -646,3 +665,5 @@ key.journeymap.fullscreen.east=Pan East (16 Blocks)
 key.journeymap.fullscreen.west=Pan West (16 Blocks)
 key.journeymap.fullscreen_create_waypoint=Create Waypoint (at cursor)
 key.journeymap.fullscreen_chat_position=Chat Position (at cursor)
+
+

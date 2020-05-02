@@ -31,6 +31,22 @@ tile.buildinggadgets.constructionblockpowder.name=Construction Block Powder
 tile.buildinggadgets.effectblock.name=(Unused)Effect Block
 tile.buildinggadgets.templatemanager.name=Template Manager
 
+#block: 
+block.buildinggadgets.constructionblock.name=Construction Block
+block.buildinggadgets.constructionblockpowder.name=Construction Block Powder
+block.buildinggadgets.effectblock.name=(Unused)Effect Block
+block.buildinggadgets.templatemanager.name=Template Manager
+
+#modes:
+modes.buildinggadgets.surface=Surface
+modes.buildinggadgets.grid=Grid
+modes.buildinggadgets.horizontal_column=Horizontal Column
+modes.buildinggadgets.horizontal_wall=Horizontal Wall
+modes.buildinggadgets.vertical_column=Vertical Column
+modes.buildinggadgets.vertical_wall=Vertical Wall
+modes.buildinggadgets.stair=Stair
+modes.buildinggadgets.axis_chasing=Build To Me
+
 #key: 
 key.categories.buildingGadgets=Building Gadgets
 key.anchor=Anchor
@@ -40,6 +56,7 @@ key.rotate_mirror=Rotate / Mirror
 key.undo=Undo
 key.fuzzy=Fuzzy
 key.connected_area=Connected Area
+key.material_list=Material List
 
 #tooltip: 
 tooltip.constructionblockpowder.helptext=Place next to water
@@ -51,6 +68,7 @@ tooltip.gadget.energy=Energy
 tooltip.gadget.mode=Mode
 tooltip.gadget.range=Range
 tooltip.gadget.fuzzy=Fuzzy
+tooltip.gadget.copypaste.opengui=Edit Placement
 tooltip.gadget.raytrace_fluid=Raytrace Fluid
 tooltip.gadget.building.place_atop=Place On Top
 tooltip.gadget.connected=Connected
@@ -83,13 +101,13 @@ message.gadget.connectedsurface=Connected Surface
 message.gadget.invalidblock=Invalid Block
 message.gadget.nothingtoundo=Nothing To Undo
 message.gadget.pastefailed=Paste Failed, Invalid JSON
-message.gadget.pastefailed.linkcopied=Paste Failed. Please copy the raw json data, instead of an Link
+message.gadget.pastefailed.linkcopied=Paste Failed. Please copy the raw json data, instead of a Link
 message.gadget.pastesuccess=Paste from Clipboard successful
 message.gadget.pastetoobig=Paste is too large
 message.gadget.rotated=Blocks Rotated
 message.gadget.mirrored=Blocks Mirrored
 message.gadget.toobigarea=Area too Large, max area is 125x125x125 (Right click empty air to reset)
-message.gadget.toolmode=Tool Mode
+message.gadget.toolmode=Tool Mode: %s
 message.gadget.toolrange= Tool Range
 message.gadget.toomanyblocks=Too Many Blocks, Limit is 32,768 (Right click empty air to reset)
 message.gadget.undofailed=Undo Failed (Too far away?)
@@ -109,6 +127,26 @@ help.gui.buildinggadgets.button.help.exit=Exit help mode
 help.gui.buildinggadgets.button.load=Loads data onto a gadget/template from a template
 help.gui.buildinggadgets.button.paste=Pastes data on your computer's clipboard to a pre-existing template, or to a piece of paper, creating a template
 help.gui.buildinggadgets.button.save=Saves the data in the gadget/template to a pre-existing template, or to a piece of paper, creating a template
+
+#gui button name:
+gui.buildinggadgets.materialList.button.close=Close
+gui.buildinggadgets.materialList.button.copyList=Copy
+gui.buildinggadgets.materialList.button.sortingMode.countReversed=Count ↑
+gui.buildinggadgets.materialList.button.sortingMode.name=Name ↓
+gui.buildinggadgets.materialList.button.sortingMode.nameReversed=Name ↑
+gui.buildinggadgets.materialList.button.sortingMode.count=Count ↓
+gui.buildinggadgets.materialList.button.sortingMode.countReversed=Count ↑
+
+#gui texts:
+gui.buildinggadgets.materialList.text.statusTemplate=%s/%s
+
+#gui messages:
+gui.buildinggadgets.materialList.message.copiedMaterialList=Successfully copied %s material list
+gui.buildinggadgets.materialList.message.copiedMaterialList.simple=simple
+gui.buildinggadgets.materialList.message.copiedMaterialList.detailed=detailed
+
+#gui title:
+gui.buildinggadgets.materialList.title=Material List
 
 #config:
 config.buildinggadgets.general.rayTraceRange=Max Build Distance

@@ -44,8 +44,7 @@ item.ebwizardry\:spell_book.name=Spell Book
 item.ebwizardry\:spell_book.apply_to_wizard=Replaced %1$s's spell %2$s with %3$s
 
 item.ebwizardry\:arcane_tome.name=Tome of Arcana
-item.ebwizardry\:arcane_tome.desc1=Upgrades any %1$s
-item.ebwizardry\:arcane_tome.desc2=wand to %1$s tier
+item.ebwizardry\:arcane_tome.desc=Upgrades any %1$s wand with sufficient progression to %2$s tier
 
 item.ebwizardry\:wizard_handbook.name=The Wizard's Handbook
 item.ebwizardry\:wizard_handbook.desc=by %1$s
@@ -313,7 +312,7 @@ item.ebwizardry\:amulet_auto_shield.desc=Grants a 25%% chance to trigger the shi
 item.ebwizardry\:charm_haggler.name=Haggler's Sign
 item.ebwizardry\:charm_haggler.desc=Wizards are guaranteed to offer a new trade every time you trade with them
 item.ebwizardry\:charm_experience_tome.name=Tome of the Diligent
-item.ebwizardry\:charm_experience_tome.desc=Increases the rate at which wands gain progression by 40%%
+item.ebwizardry\:charm_experience_tome.desc=Increases the rate at which wands gain progression by 50%%
 item.ebwizardry\:charm_auto_smelt.name=Metallurgist's Mark
 item.ebwizardry\:charm_auto_smelt.desc=Pocket furnace triggers automatically when bound to a wand on your hotbar
 item.ebwizardry\:charm_lava_walking.name=Nether Ice Core
@@ -498,6 +497,13 @@ advancement.ebwizardry\:enchant_scroll=Scroll Up!
 advancement.ebwizardry\:enchant_scroll.desc=Craft a blank scroll and enchant it with a spell at an arcane workbench
 
 handbook.toast.title=New Handbook Section Unlocked!
+
+gui.ebwizardry\:spell_book.tier=Tier: %s
+gui.ebwizardry\:spell_book.element=Element: %s
+gui.ebwizardry\:spell_book.element_undiscovered=Element: ?
+gui.ebwizardry\:spell_book.mana_cost=Mana Cost: %s
+gui.ebwizardry\:spell_book.mana_cost_continuous=Mana Cost: %s/second
+gui.ebwizardry\:spell_book.mana_cost_undiscovered=Mana Cost: ?
 
 container.ebwizardry\:arcane_workbench=Arcane Workbench
 container.ebwizardry\:arcane_workbench.apply=Apply
@@ -719,14 +725,14 @@ spell.ebwizardry\:arc.desc=Fires a spark of lightning at the target.
 spell.ebwizardry\:arcane_jammer.desc=Prevents the target from using magic for 15 seconds.
 spell.ebwizardry\:arcane_lock.desc=Creates an impenetrable barrier of force around a container, protecting it from being opened or destroyed. The caster and their allies may still open it, however.
 spell.ebwizardry\:arrow_rain.desc="Archers, fire!"
-spell.ebwizardry\:banish.desc=Teleports the target against its will to a random locations within a certain range.
+spell.ebwizardry\:banish.desc=Teleports the target against its will to a random location within a certain range.
 spell.ebwizardry\:black_hole.desc=Tear reality asunder.
 spell.ebwizardry\:blink.desc=Teleports the caster over a short distance to where they are pointing.
 spell.ebwizardry\:blizzard.desc=Creates a zone of swirling icy wind which slows and continually damages anything trapped inside. The caster is immune to the damage but is still slowed.
 spell.ebwizardry\:bubble.desc=Fires a jet of bubbles which causes anything it hits to float upwards helplessly. The target will fall after a certain time or if it is damaged.
 spell.ebwizardry\:chain_lightning.desc=Fires a spark of lightning at the target, which then chains to additional targets up to twice.
 spell.ebwizardry\:charge.desc=Causes the caster to charge rapidly in the direction they are looking, damaging and knocking back anything in their path.
-spell.ebwizardry\:clairvoyance.desc=Reveals the path to a remembered locations. With this spell selected, sneak-right-click on a block to set the locations. Cast this spell normally to reveal the path. The path will fade after 90 seconds.
+spell.ebwizardry\:clairvoyance.desc=Reveals the path to a remembered location. With this spell selected, sneak-right-click on a block to set the location. Cast this spell normally to reveal the path. The path will fade after 90 seconds.
 spell.ebwizardry\:cobwebs.desc=Creates cobwebs where you are pointing, which greatly hamper the movement of any creatures caught amongst them. The cobwebs will vanish after 20 seconds or if broken.
 spell.ebwizardry\:combustion_rune.desc=Places a magical landmine on the ground where you are pointing, which explodes when stepped upon.
 spell.ebwizardry\:conjure_armour.desc=Creates spectral armor around the caster which offers protection equal to that of iron armor. The armor lasts for 60 seconds. The caster must have an empty armor slot.
@@ -895,9 +901,9 @@ spell.ebwizardry\:transportation.undefined=You must remember the location of a s
 spell.ebwizardry\:transportation.wrongdimension=No remembered stone circle in this dimension...
 spell.ebwizardry\:clairvoyance.searching=Searching...
 spell.ebwizardry\:clairvoyance.confirm=The path revealed upon casting %1$s will now lead back to this point
-spell.ebwizardry\:clairvoyance.outofrange=Your remembered locations is too far away or inaccessible...
-spell.ebwizardry\:clairvoyance.undefined=You must remember a locations first!
-spell.ebwizardry\:clairvoyance.wrongdimension=Your remembered locations is in another dimension...
+spell.ebwizardry\:clairvoyance.outofrange=Your remembered location is too far away or inaccessible...
+spell.ebwizardry\:clairvoyance.undefined=You must remember a location first!
+spell.ebwizardry\:clairvoyance.wrongdimension=Your remembered location is in another dimension...
 spell.ebwizardry\:possession.insufficienthealth=You don't have enough health to possess %1$s!
 spell.ebwizardry\:possession.success=Press %s to stop possessing
 spell.ebwizardry\:divination.nothing=Nothing happened.
@@ -1003,6 +1009,16 @@ enchantment.ebwizardry\:magic_protection=Magic Protection
 enchantment.ebwizardry\:frost_protection=Frost Protection
 enchantment.ebwizardry\:shock_protection=Shock Protection
 
+enchantment.ebwizardry.magic_sword.desc=Part of the Imbue Weapon spell; unobtainable in survival mode (the book won't work).
+enchantment.ebwizardry.magic_bow.desc=Part of the Imbue Weapon spell; unobtainable in survival mode (the book won't work).
+enchantment.ebwizardry.flaming_weapon.desc=Part of the Flaming Weapon spell; unobtainable in survival mode (the book won't work).
+enchantment.ebwizardry.freezing_weapon.desc=Part of the Freezing Weapon spell; unobtainable in survival mode (the book won't work).
+enchantment.ebwizardry.shocking_weapon.desc=Part of the Shocking Weapon spell; unobtainable in survival mode (the book won't work).
+
+enchantment.ebwizardry.magic_protection.desc=Reduces damage from all magic.
+enchantment.ebwizardry.frost_protection.desc=Reduces the effects of frost damage.
+enchantment.ebwizardry.shock_protection.desc=Reduces the effects of shock damage.
+
 key.categories.ebwizardry=Wizardry
 
 key.ebwizardry.next_spell=Next Spell
@@ -1011,7 +1027,7 @@ key.ebwizardry.previous_spell=Previous Spell
 death.attack.wizardry_magic=%1$s was killed by %2$s using magic
 death.attack.indirect_wizardry_magic=%1$s was killed by %2$s using magic
 
-soundCategory.ebwizardry\:spells=Spells
+soundCategory.ebwizardry_spells=Spells
 
 commands.ebwizardry\:cast.usage=/%1$s <spell> [player | x y z direction] [duration] [modifiers]
 commands.ebwizardry\:cast.success=Successfully cast %s
@@ -1107,6 +1123,8 @@ config.ebwizardry.creative_bypasses_arcane_lock.true=Anyone in creative mode
 config.ebwizardry.creative_bypasses_arcane_lock.false=Only ops in creative mode
 config.ebwizardry.slow_time_affects_players=Slow Time Affects Players
 config.ebwizardry.slow_time_affects_players.tooltip=Whether players are slowed when another nearby player uses the slow time spell. If this is disabled, mobs and projectiles will still be affected but players will move at normal speed.
+config.ebwizardry.bonemeal_grows_crystal_flowers=Bonemeal Grows Crystal Flowers
+config.ebwizardry.bonemeal_grows_crystal_flowers.tooltip=Whether using bonemeal on grass blocks has a chance to grow crystal flowers.
 config.ebwizardry.mob_loot_table_whitelist=Mob Loot Table Whitelist
 config.ebwizardry.mob_loot_table_whitelist.tooltip=Whitelist for loot tables to inject additional mob drops (as specified in loot_tables/entities/mob_additions.json) into. Wizardry makes a best guess as to which loot tables belong to hostile mobs, but this may not always be correct or appropriate; add loot table locations (not entity IDs) to this list to manually include them.
 config.ebwizardry.mob_loot_table_blacklist=Mob Loot Table Blacklist
@@ -1154,27 +1172,27 @@ config.ebwizardry.fast_worldgen.tooltip=Controls which algorithm wizardry uses f
 config.ebwizardry.fast_worldgen.true=Fast
 config.ebwizardry.fast_worldgen.false=Fancy
 config.ebwizardry.tower_dimensions=Tower Dimensions
-config.ebwizardry.tower_dimensions.tooltip=List of ids of dimensions in which wizard towers will generate.
+config.ebwizardry.tower_dimensions.tooltip=List of ids of dimensions in which wizard towers will generate. Remove all dimensions to disable wizard towers completely.
 config.ebwizardry.tower_rarity=Tower Rarity
 config.ebwizardry.tower_rarity.tooltip=Rarity of wizard towers. 1 in this many chunks will contain a wizard tower, meaning higher numbers are rarer.
 config.ebwizardry.evil_wizard_chance=Evil Wizard Chance
 config.ebwizardry.evil_wizard_chance.tooltip=The chance for wizard towers to generate with an evil wizard and chest inside, instead of a friendly wizard.
 config.ebwizardry.tower_files=Tower Structure Files
-config.ebwizardry.tower_files.tooltip=List of structure file locations for wizard towers without loot chests. One of these files will be randomly selected each time a wizard tower is generated. File locations are of the format [mod id]\:[filename], which refers to the file assets/[mod id]/structures/[filename].nbt. Duplicate entries are permitted, allowing for simple weighting without duplicating the structure files themselves.
+config.ebwizardry.tower_files.tooltip=List of structure file locations for wizard towers without loot chests. One of these files will be randomly selected each time a wizard tower is generated. File locations are of the format [mod id]\:[filename], which refers to the file assets/[mod id]/structures/[filename].nbt. Duplicate entries are permitted, allowing for simple weighting without duplicating the structure files themselves. This list should not be empty; to disable wizard towers, use the tower dimensions setting.
 config.ebwizardry.tower_with_chest_files=Tower With Chest Structure Files
-config.ebwizardry.tower_with_chest_files.tooltip=List of structure file locations for wizard towers with loot chests. One of these files will be randomly selected each time a wizard tower is generated. File locations are of the format [mod id]\:[filename], which refers to the file assets/[mod id]/structures/[filename].nbt. Duplicate entries are permitted, allowing for simple weighting without duplicating the structure files themselves.
+config.ebwizardry.tower_with_chest_files.tooltip=List of structure file locations for wizard towers with loot chests. One of these files will be randomly selected each time a wizard tower is generated. File locations are of the format [mod id]\:[filename], which refers to the file assets/[mod id]/structures/[filename].nbt. Duplicate entries are permitted, allowing for simple weighting without duplicating the structure files themselves. This list should not be empty; to disable wizard towers, use the tower dimensions setting.
 config.ebwizardry.obelisk_dimensions=Obelisk Dimensions
-config.ebwizardry.obelisk_dimensions.tooltip=List of ids of dimensions in which obelisks will generate.
+config.ebwizardry.obelisk_dimensions.tooltip=List of ids of dimensions in which obelisks will generate. Remove all dimensions to disable obelisks completely.
 config.ebwizardry.obelisk_rarity=Obelisk Rarity
 config.ebwizardry.obelisk_rarity.tooltip=Rarity of obelisks. 1 in this many chunks will contain an obelisk, meaning higher numbers are rarer.
 config.ebwizardry.obelisk_files=Obelisk Structure Files
-config.ebwizardry.obelisk_files.tooltip=List of structure file locations for obelisks. One of these files will be randomly selected each time an obelisk is generated. File locations are of the format [mod id]\:[filename], which refers to the file assets/[mod id]/structures/[filename].nbt. Duplicate entries are permitted, allowing for simple weighting without duplicating the structure files themselves.
+config.ebwizardry.obelisk_files.tooltip=List of structure file locations for obelisks. One of these files will be randomly selected each time an obelisk is generated. File locations are of the format [mod id]\:[filename], which refers to the file assets/[mod id]/structures/[filename].nbt. Duplicate entries are permitted, allowing for simple weighting without duplicating the structure files themselves. This list should not be empty; to disable obelisks, use the obelisk dimensions setting.
 config.ebwizardry.shrine_dimensions=Shrine Dimensions
-config.ebwizardry.shrine_dimensions.tooltip=List of ids of dimensions in which shrines will generate.
+config.ebwizardry.shrine_dimensions.tooltip=List of ids of dimensions in which shrines will generate. Remove all dimensions to disable shrines completely.
 config.ebwizardry.shrine_rarity=Shrine Rarity
 config.ebwizardry.shrine_rarity.tooltip=Rarity of shrines. 1 in this many chunks will contain a shrine, meaning higher numbers are rarer.
 config.ebwizardry.shrine_files=Shrine Structure Files
-config.ebwizardry.shrine_files.tooltip=List of structure file locations for shrines. One of these files will be randomly selected each time a shrine is generated. File locations are of the format [mod id]\:[filename], which refers to the file assets/[mod id]/structures/[filename].nbt. Duplicate entries are permitted, allowing for simple weighting without duplicating the structure files themselves.
+config.ebwizardry.shrine_files.tooltip=List of structure file locations for shrines. One of these files will be randomly selected each time a shrine is generated. File locations are of the format [mod id]\:[filename], which refers to the file assets/[mod id]/structures/[filename].nbt. Duplicate entries are permitted, allowing for simple weighting without duplicating the structure files themselves. This list should not be empty; to disable shrines, use the shrine dimensions setting.
 config.ebwizardry.tree_blocks=Tree Blocks
 config.ebwizardry.tree_blocks.tooltip=List of registry names of blocks which can be overwritten by wizardry's structure generators, affecting both fast and fancy structure generation. Most tree blocks and other foliage should work automatically, but those that don't can be added manually here. Block names are not case sensitive. For mod blocks, prefix with the mod ID (e.g. dynamictrees:oakbranch).
 config.ebwizardry.ore_dimensions=Ore Dimensions
@@ -1273,8 +1291,13 @@ config.ebwizardry.auto_place_shrine_markers.tooltip=Controls whether wizardry au
 
 integration.jei.category.ebwizardry\:arcane_workbench=Arcane Workbench
 
-integration.antiqueatlas.marker.ebwizardry\:wizard_tower=Wizard Tower
-integration.antiqueatlas.marker.ebwizardry\:obelisk=Obelisk
-integration.antiqueatlas.marker.ebwizardry\:shrine=Shrine
+integration.antiqueatlas.marker.ebwizardry.wizard_tower=Wizard Tower
+integration.antiqueatlas.marker.ebwizardry.obelisk=Obelisk
+integration.antiqueatlas.marker.ebwizardry.shrine=Shrine
+
+spell.ebwizardry\:magic_missile_festive=Magic Mistletoe
+spell.ebwizardry\:summon_snow_golem_festive=Summon Frosty The Snowman
+spell.ebwizardry\:invigorating_presence_festive=Invigorating Presents
+spell.ebwizardry\:empowering_presence_festive=Empowering Presents
 
 wizard.debug=%1$s, %2$s, %3$s

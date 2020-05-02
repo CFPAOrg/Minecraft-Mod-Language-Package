@@ -34,6 +34,7 @@ item.minecolonies.scepterGold.name=Building Tool
 item.minecolonies.scepterSteel.name=Scan Tool
 item.minecolonies.caliper.name=Caliper
 
+
 item.scepterSteel.point=Point one saved: %d %d %d
 item.scepterSteel.point2=Point two saved: %d %d %d.
 item.scepterSteel.samePoint=That was the same point
@@ -57,7 +58,6 @@ entity.miner.messageNeedBlockAndItem=I need %s!
 entity.miner.messageNeedBetterTools=I need better tools!
 entity.miner.messageMoreBlocks=I need more %s!
 entity.miner.messageRequiresBetterHut=Please upgrade my hut to dig deeper!
-entity.fisherman.messageWaterTooFar=Fisherman's hut is too far from water!
 entity.Barbarian.name=Barbarian
 entity.minecolonies.Barbarian.name=Barbarian
 entity.minecolonies.ArcherBarbarian.name=Archer Barbarian
@@ -96,9 +96,7 @@ achievement.size.town.desc=A healthy colony
 achievement.size.city=City
 achievement.size.city.desc=The Capital
 entity.builder.messageNoBuilder=You need a builder in order to build or upgrade this building.
-entity.farmer.noSeedSet=Please define a seed to grow in the scarecrow.
 entity.farmer.NeedSeed=I need %s to plant.
-entity.farmer.noFreeFields=Place more fields to get me working.
 achievement.upgrade.fisher.first=A fisherman.
 entity.citizen.noJob=%s would like to have a job.
 entity.citizen.demandsJob=%s demands to have a job and is getting very upset standing around.
@@ -121,8 +119,15 @@ achievement.upgrade.townhall.first.desc=Build a townhall!
 tile.minecolonies.blockHutGuardTower.name=GuardTower
 tile.blockHutTownHall.messageWorkerDead=The %s %s has died at %d %d %d of %s!
 item.minecolonies.scepterGuard.name=Guard-scepter
+item.minecolonies.scepterLumberjack.name=Lumberjack-scepter
+item.minecolonies.scepterLumberjack.usedStart=First position set.
+item.minecolonies.scepterLumberjack.usedEnd=Second position set.
+item.minecolonies.scepterLumberjack.restrictionTooBig=Area %s is too large. Maximum restricted area for the lumberjack is %s blocks.
+item.minecolonies.scepterLumberjack.restrictionSet=Lumberjack restricted area set. Size is %s blocks. Max size is %s blocks.
+
 
 com.minecolonies.configgui.title=MineColonies Config
+
 
 com.minecolonies.coremod.status.worker.goingToHut=Going to Hut
 com.minecolonies.coremod.status.herder.breeding=Breeding
@@ -154,38 +159,43 @@ com.minecolonies.coremod.gui.townHall.citizens=Citizens
 com.minecolonies.coremod.error.supplyChestAlreadyPlaced=You have already placed a supply ship or supply camp!
 com.minecolonies.coremod.gui.citizen.skills.endurance=Endurance: %d
 com.minecolonies.coremod.gui.townHall.rename.title=Rename Your Colony
+com.minecolonies.coremod.gui.townHall.mercenary.title=Mercenary help
 com.minecolonies.coremod.gui.workerHuts.information=Information
 com.minecolonies.coremod.gui.hiring.description=Choose a worker for the job.
 com.minecolonies.coremod.gui.assigning.description=Choose a citizen to assign to live here.
 
-com.minecolonies.coremod.gui.townHall.population.totalCitizens=Number of Citizens: %d/%d
-com.minecolonies.coremod.gui.townHall.population.deliverymen=Deliverymen: %d
-com.minecolonies.coremod.gui.townHall.population.miners=Miners: %d
-com.minecolonies.coremod.gui.townHall.population.fishermen=Fishermen: %d
-com.minecolonies.coremod.gui.townHall.population.guards=Guards: %d
-com.minecolonies.coremod.gui.townHall.population.lumberjacks=Lumberjacks: %d
-com.minecolonies.coremod.gui.townHall.population.farmers=Farmers: %d
-com.minecolonies.coremod.gui.townHall.population.bakers=Bakers: %d
-com.minecolonies.coremod.gui.townHall.population.smelters=Smelters: %d
-com.minecolonies.coremod.gui.townHall.population.shepherds=Shepherds: %d
-com.minecolonies.coremod.gui.townHall.population.chickenherders=Chickenherders: %d
-com.minecolonies.coremod.gui.townHall.population.cowboys=Cowboys: %d
-com.minecolonies.coremod.gui.townHall.population.swineherders=Swineherders: %d
-com.minecolonies.coremod.gui.townHall.population.composters=Composters: %d
-com.minecolonies.coremod.gui.townHall.population.builders=Builders: %d
-com.minecolonies.coremod.gui.townHall.population.cooks=Cooks: %d
-com.minecolonies.coremod.gui.townHall.population.rangers=Rangers: %d
-com.minecolonies.coremod.gui.townHall.population.knights=Knights: %d
-com.minecolonies.coremod.gui.townHall.population.students=Students: %d
 
-com.minecolonies.coremod.gui.townHall.population.sifters=Sifter: %d
-com.minecolonies.coremod.gui.townHall.population.crushers=Crusher: %d
-com.minecolonies.coremod.gui.townHall.population.sawmills=Miller: %d
-com.minecolonies.coremod.gui.townHall.population.combattrainings=Squires: %d
-com.minecolonies.coremod.gui.townHall.population.archertrainings=Bowmen: %d
-com.minecolonies.coremod.gui.townHall.population.stonesmelterys=Stonesmelter: %d
-com.minecolonies.coremod.gui.townHall.population.stonemasons=Stonemason: %d
-com.minecolonies.coremod.gui.townHall.population.blacksmiths=Blacksmiths: %d
+com.minecolonies.coremod.gui.townHall.population.totalCitizens=Number of Citizens: %d/%d
+com.minecolonies.coremod.gui.townHall.population.deliverymen=Deliverymen: %d/%d
+com.minecolonies.coremod.gui.townHall.population.miners=Miners: %d/%d
+com.minecolonies.coremod.gui.townHall.population.fishermen=Fishermen: %d/%d
+com.minecolonies.coremod.gui.townHall.population.guards=Guards: %d/%d
+com.minecolonies.coremod.gui.townHall.population.lumberjacks=Lumberjacks: %d/%d
+com.minecolonies.coremod.gui.townHall.population.farmers=Farmers: %d/%d
+com.minecolonies.coremod.gui.townHall.population.bakers=Bakers: %d/%d
+com.minecolonies.coremod.gui.townHall.population.smelters=Smelters: %d/%d
+com.minecolonies.coremod.gui.townHall.population.shepherds=Shepherds: %d/%d
+com.minecolonies.coremod.gui.townHall.population.chickenherders=Chickenherders: %d/%d
+com.minecolonies.coremod.gui.townHall.population.cowboys=Cowboys: %d/%d
+com.minecolonies.coremod.gui.townHall.population.swineherders=Swineherders: %d/%d
+com.minecolonies.coremod.gui.townHall.population.composters=Composters: %d/%d
+com.minecolonies.coremod.gui.townHall.population.builders=Builders: %d/%d
+com.minecolonies.coremod.gui.townHall.population.cooks=Cooks: %d/%d
+com.minecolonies.coremod.gui.townHall.population.rangers=Rangers: %d/%d
+com.minecolonies.coremod.gui.townHall.population.knights=Knights: %d/%d
+com.minecolonies.coremod.gui.townHall.population.students=Students: %d/%d
+
+
+com.minecolonies.coremod.gui.townHall.population.sifters=Sifter: %d/%d
+com.minecolonies.coremod.gui.townHall.population.crushers=Crusher: %d/%d
+com.minecolonies.coremod.gui.townHall.population.sawmills=Miller: %d/%d
+com.minecolonies.coremod.gui.townHall.population.combattrainings=Squires: %d/%d
+com.minecolonies.coremod.gui.townHall.population.archertrainings=Bowmen: %d/%d
+com.minecolonies.coremod.gui.townHall.population.stonesmelterys=Stonesmelter: %d/%d
+com.minecolonies.coremod.gui.townHall.population.stonemasons=Stonemason: %d/%d
+com.minecolonies.coremod.gui.townHall.population.blacksmiths=Blacksmiths: %d/%d
+
+
 
 
 com.minecolonies.coremod.gui.workerHuts.upgradeUnavailable=No Upgrade Available
@@ -209,10 +219,11 @@ com.minecolonies.coremod.gui.buildtool.hut=Huts
 com.minecolonies.coremod.gui.townHall.addPlayer=Add Player:
 com.minecolonies.coremod.gui.townHall.addBlock=Add Block/Position:
 
+
 com.minecolonies.coremod.gui.warehouse.visitCitizenChests=Visit Citizen Chests:
 com.minecolonies.coremod.gui.workerHuts.mobsList=Mob Attack List
-com.minecolonies.coremod.job.Ranger=Knight
-com.minecolonies.coremod.job.Knight=Ranger
+com.minecolonies.coremod.job.Ranger=Ranger
+com.minecolonies.coremod.job.Knight=Knight
 com.minecolonies.coremod.gui.warehouse.visitCitizenChests=Visit Citizenchests:
 com.minecolonies.coremod.gui.townHall.population.unemployed=Unemployed: %d
 com.minecolonies.coremod.gui.workerHuts.minerNode=Nodes
@@ -232,6 +243,9 @@ com.minecolonies.coremod.gui.workerHuts.workOrder=Work Orders
 com.minecolonies.coremod.gui.buildtool.nohut=No Huts
 com.minecolonies.coremod.gui.citizen.skills=Skills
 com.minecolonies.coremod.gui.townHall.repair=Repair Town Hall
+com.minecolonies.coremod.gui.townHall.mercenary=Hire mercenaries
+com.minecolonies.coremod.gui.townHall.mercenaryHire=Hire
+com.minecolonies.coremod.gui.townHall.mercenaryStory=You've encountered some mercenaries nearby your Colony. They offer to help a while with defending your colony. A price they did not name, but you get the feeling that they will not leave bare-handed. Hire at your own risk!
 com.minecolonies.coremod.gui.townHall.hire=Citizen recruitment
 com.minecolonies.coremod.gui.townHall.hirecitizen1=Choose which recruitment package you want to send.
 com.minecolonies.coremod.gui.townHall.hirecitizen2=Citizens stats increase from Hay - Books - Emeralds to Diamonds.
@@ -307,10 +321,6 @@ entity.worker.simpleToolRequest=I need a %s.
 entity.worker.specificToolRequest=I need a %s of a grade of %s.
 entity.worker.toolAtLeastRequest=I need a %s of at least grade of %s.
 entity.worker.enchantedToolRequest=I need a %s with maximum enchantment level of %d.
-com.minecolonies.coremod.wareHouse.full=The Warehouse is full, please upgrade or make space.
-com.minecolonies.coremod.job.deliveryman.noWarehouse=Please upgrade or build a Warehouse for me to work at.
-com.minecolonies.coremod.job.deliveryman.workerChestFull=Can't deliver because of a full worker chest.
-com.minecolonies.coremod.job.deliveryman.namedWorkerChestFull=Can't deliver because of a full %s's chest.
 tile.minecolonies.blockHutWareHouse.name=Warehouse
 com.minecolonies.coremod.gui.workerHuts.buildingWareHouse=Warehouse
 tile.minecolonies.blockHutDeliveryman.name=Deliveryman
@@ -329,6 +339,9 @@ com.minecolonies.coremod.gui.structure.delete.title=Delete Structure
 com.minecolonies.coremod.gui.structure.delete.body=Do you want to delete %s?
 com.minecolonies.coremod.gui.workerHuts.deliveryPrio.static=Static
 com.minecolonies.coremod.gui.workerHuts.deliveryPrio.automatic=Automatic
+com.minecolonies.coremod.mercenary.mercenaryStealCitizen=%s is unhappy, a mercenary took the %s away!
+com.minecolonies.coremod.mercenary.stealBuilding=A mercenary just stole %s from a building!
+
 
 com.minecolonies.coremod.gui.happiness.happinessModifier=Happiness Modifiers
 com.minecolonies.coremod.gui.happiness.food=Food Modifier
@@ -350,6 +363,7 @@ achievement.lumberjack.death.tree.desc=Your lumberjack is killed by a tree.
 achievement.fisher.death.guardian.desc=Your fisherman is killed by a guardian.
 achievement.guard.death.enderman.desc=Your guard is killed by an enderman.
 achievement.player.death.guard.desc=You are killed by one of your guards.
+
 
 # //statistics achievements
 achievement.builder.hutsBuilt.one=A roof over my head.
@@ -453,14 +467,17 @@ achievement.farmer.wheatHarvested.100.desc=Your farmers harvested 100 wheat.
 achievement.farmer.wheatHarvested.500.desc=Your farmers harvested 500 wheat.
 achievement.farmer.wheatHarvested.1000.desc=Your farmers harvested 1000 wheat.
 
+
 com.minecolonies.coremod.permission.no=You do not have permission to do this in this colony!
 com.minecolonies.coremod.gui.townHall.freeBlocks=Free for interaction
 com.minecolonies.coremod.gui.townHall.add=Add
+
 
 com.minecolonies.coremod.permission.access_huts=Access GUIs
 com.minecolonies.coremod.permission.guards_attack=Fight guards
 com.minecolonies.coremod.permission.place_huts=Place huts
 com.minecolonies.coremod.permission.break_huts=Break huts
+
 
 com.minecolonies.coremod.permission.edit_permissions=Edit permissions
 com.minecolonies.coremod.permission.manage_huts=Manage huts
@@ -480,6 +497,9 @@ com.minecolonies.coremod.permission.attack_citizen=Attack citizens
 com.minecolonies.coremod.permission.attack_entity=Attack entities
 com.minecolonies.coremod.permission.access_free_blocks=Access free-blocks
 com.minecolonies.coremod.permission.explode=Explode
+com.minecolonies.coremod.permission.receive_messages_far_away=Distant Messages
+com.minecolonies.coremod.permission.can_keep_colony_active_while_away=Keep colony loaded
+
 
 item.supplyCampDeployer.invalid=Requiring a flat ground of at least 16*17 without grass or flowers on them.
 item.supplyCampDeployer.invalid.solid_block_needed=Placing a supply camp requires flat ground of at least 16*17 without grass or flowers on them..  These blocks must be solid: %s.
@@ -494,6 +514,7 @@ com.minecolonies.coremod.saturation.3=I'm quite hungry, I feel very unproductive
 com.minecolonies.coremod.saturation.5=I'm hungry, I'm not that productive anymore
 com.minecolonies.coremod.saturation.7=I'm quite saturated, but I'll have to eat again soon
 
+
 com.minecolonies.coremod.item.permissionscepter.setmode=Set to mode '%s'
 com.minecolonies.coremod.item.permissionscepter.permission.deny=You do not have permission to edit blocks with this tool.
 com.minecolonies.coremod.item.permissionscepter.addblock.success=Added block type '%s'
@@ -502,10 +523,12 @@ com.minecolonies.coremod.item.permissionscepter.removeblock.success=Removed bloc
 com.minecolonies.coremod.item.permissionscepter.removelocation.success=Removed location '%d %d %d'
 tile.blockHut.warehouse.limit=The amount of warehouses is limited to 1 per colony.
 
-com.minecolonies.coremod.gui.workerHuts.baker=Baker
-com.minecolonies.coremod.baker.noFurnace=My building doesn't have any furnaces, please repair it.
-com.minecolonies.coremod.job.baker=Baker
+
+com.minecolonies.coremod.gui.workerHuts.bakery=Baker
+com.minecolonies.coremod.bakery.noFurnace=My building doesn't have any furnaces, please repair it.
+com.minecolonies.coremod.job.bakery=Baker
 com.minecolonies.coremod.gui.workerHuts.saplingList=Tasklist
+
 
 com.minecolonies.coremod.gui.townHall.housing=Housing assignment mode:
 com.minecolonies.coremod.gui.townHall.movein=Citizens can move in:
@@ -515,6 +538,7 @@ tile.minecolonies.blockMinecoloniesRack.name=Rack
 tile.minecolonies.blockcactustrapdoordoor.name= Cactus Trapdoor
 tile.minecolonies.blockcactusstair.name= Cactus Stair
 tile.minecolonies.blockcactusslab.name= Cactus Slab
+
 
 com.minecolonies.coremod.status.waitingForWork=Searching job
 com.minecolonies.coremod.status.deciding=Deciding
@@ -549,12 +573,16 @@ tile.minecolonies.blockWayPoint.name=Waypoint placeholder
 tile.minecolonies.blockHutBarracksTower.name=BarracksTower
 tile.minecolonies.blockHutBarracks.name=Barracks
 com.minecolonies.coremod.gui.workerHuts.buildBarracks=Barracks
+com.minecolonies.coremod.gui.barracks.spieshire=Hire
+com.minecolonies.coremod.gui.barracks.spies.desc=During raids you can hire spies here, to infiltrate the enemy lines. Those then let you know enemy positions although they demand some gold as payment. Put the gold into the barracks inventory to automatically pay them.
+
 
 com.minecolonies.coremod.permission.teleport_to_colony=Teleport to Colony
 com.minecolonies.coremod.gui.hiring.buttonFire=Fire
 com.minecolonies.coremod.worker.noUpgrade=No Upgrade available.
 com.minecolonies.coremod.worker.needBarracks=Please upgrade the Barracks first.
 com.minecolonies.coremod.gui.warehouse.upgrade=Upgrade Storage
+
 
 com.minecolonies.coremod.job.cook=Cook
 com.minecolonies.coremod.gui.workerHuts.cook=Cook
@@ -571,7 +599,9 @@ com.minecolonies.coremod.status.idling=Idling
 com.minecolonies.coremod.status.mining=Mining
 com.minecolonies.coremod.status.smeltingdown=Smelting down
 
+
 item.minecolonies.scepterPermission.name=PermissionScepter
+
 
 com.minecolonies.coremod.request.delivery=Delivery of:
 com.minecolonies.coremod.request.food=Food
@@ -581,7 +611,9 @@ com.minecolonies.coremod.request.tool.pretype=Tool of class:
 com.minecolonies.coremod.request.tool.preminlevel=with minimal level:
 com.minecolonies.coremod.request.tool.premaxlevel=with maximal level:
 
+
 com.minecolonies.coremod.general.and=and
+
 
 com.minecolonies.coremod.tooltype.none=Unknown
 com.minecolonies.coremod.tooltype.pickaxe=Pickaxe
@@ -598,12 +630,15 @@ com.minecolonies.coremod.tooltype.leggings=Leggings
 com.minecolonies.coremod.tooltype.chestplate=Chest Plate
 com.minecolonies.coremod.tooltype.boots=Boots
 
+
 com.minecolonies.coremod.gui.citizen.requests=Open requests:
 com.minecolonies.coremod.gui.citizen.requestTitle=Requests
 com.minecolonies.coremod.gui.citizen.requestsCancel=Cancel
 com.minecolonies.coremod.gui.citizen.requestsFulfill=Fulfill
 
+
 item.minecolonies.clipboard.name=Clipboard
+
 
 com.minecolonies.coremod.item.clipboard.needColony=Please shift-right click the colony to register your clipboard to it.
 com.minecolonies.coremod.item.clipboard.registered=Registered to colony %d.
@@ -613,11 +648,13 @@ com.minecolonies.requestsystem.playerresolver=%s is in need of %s at %s.
 com.minecolonies.coremod.buildings.warehouse.name=Warehouse
 tile.minecolonies.blockPaperwall.name=Paper wall
 
+
 com.minecolonies.coremod.gui.workerHuts.buildPrio=Delivery Priority:
 item.supplyChestDeployer.invalid=You must place it in a fitting pool of water.
 item.supplyChestDeployer.missing=Are you trying to trick me, pick up that Supplyship again?
 com.minecolonies.coremod.citizen.rename.same=Renaming failed: 2 Citizens are not allowed to have the same name!
 com.minecolonies.coremod.citizen.rename.notAllowed=Renaming failed: You're not allowed to rename your Citizen.
+
 
 tile.minecolonies.blockshingle_oak.name=Oak Shingle
 tile.minecolonies.blockshingle_birch.name=Birch Shingle
@@ -634,6 +671,7 @@ tile.minecolonies.blockshingle_dark_oak.name=Dark Oak Shingle
 tile.minecolonies.blockshingle_acacia.name=Acacia Shingle
 tile.minecolonies.blockshingleslab.name=Shingle slab
 
+
 com.minecolonies.coremod.request.smeltableore=Smeltable Ore
 tile.minecolonies.blockhutsmeltery.name=Smeltery
 com.minecolonies.coremod.job.smelter=Smelter
@@ -643,17 +681,21 @@ com.minecolonies.coremod.leavingColony=Farewell, you're leaving %s's colony.
 com.minecolonies.coremod.enteringColonyNotify=Beware, %s just entered %s.
 com.minecolonies.coremod.leavingColonyNotify=Farewell %s, they just left %s.
 
+
 com.minecolonies.coremod.mourning=There has been a death in the colony. The colony will mourn %s tomorrow out of respect.
 
-event.minecolonies.raidMessage1=§4Mysterious warriors have been spotted close to %s.
-event.minecolonies.raidMessage2=§4Citizens report rumors of raiders close to %s!
-event.minecolonies.raidMessage3=§4Buckle up cowboy! There's some darn raiders comin' for %s tonight!
-event.minecolonies.raidMessage4=§4A huge horde of raiders is comin' to %s, and they're not here to play!
 
-event.minecolonies.raidMessage_p1=§4Mysterious sailors have been spotted close to %s, they sailed in on a small Sloop, you should consider destroying it.
-event.minecolonies.raidMessage_p2=§4Citizens report rumors of pirates close to %s, they brought a ship, better destroy it!
-event.minecolonies.raidMessage_p3=§4Arr Comrade! There's some darn pirates comin' for %s tonight, they sailed here and will continue attacking until we destroy their Caravel!
-event.minecolonies.raidMessage_p4=§4A huge horde of pirates are sailin' to %s and they're not here to play! Their rigorous waves will hit us unless we destroy their Galleon!
+event.minecolonies.raidMessage1=§4Mysterious warriors have been spotted %s of %s.
+event.minecolonies.raidMessage2=§4Citizens report rumors of raiders %s of %s!
+event.minecolonies.raidMessage3=§4Buckle up cowboy! There's some darn raiders comin' for %s tonight, from %s!
+event.minecolonies.raidMessage4=§4A huge horde of raiders is comin' to %s from %s, and they're not here to play!
+
+
+event.minecolonies.raidMessage_p1=§4Mysterious sailors have been spotted close to %s of %s, they sailed in on a small Sloop, you should consider destroying it.
+event.minecolonies.raidMessage_p2=§4Citizens report rumors of pirates close to %s of %s, they brought a ship, better destroy it!
+event.minecolonies.raidMessage_p3=§4Arr Comrade! There's some darn pirates from %s comin' for %s tonight, they sailed here and will continue attacking until we destroy their Caravel!
+event.minecolonies.raidMessage_p4=§4A huge horde of pirates are sailin' %s of %s and they're not here to play! Their rigorous waves will hit us unless we destroy their Galleon!
+
 
 com.minecolonies.coremod.gui.workerHuts.toggleAllOn=Toggle all (on)
 com.minecolonies.coremod.gui.workerHuts.toggleAllOff=Toggle all (off)
@@ -664,9 +706,16 @@ com.minecolonies.coremod.gui.workerHuts.listRecipes=List of recipes
 com.minecolonies.coremod.resolvers.crafter.private=Crafting
 com.minecolonies.coremod.gui.workerHuts.toggleReplantSaplingsOn=Replant (on)
 com.minecolonies.coremod.gui.workerHuts.toggleReplantSaplingsOff=Replant (off)
+com.minecolonies.coremod.gui.workerHuts.togglerestrictionon=Restriction (on)
+com.minecolonies.coremod.gui.workerHuts.togglerestrictionoff=Restriction (off)
+com.minecolonies.coremod.gui.workerHuts.spies=Hire spies
+
+
 com.minecolonies.coremod.resolvers.crafter.public=Crafter
 
+
 com.minecolonies.coremod.compat.jei.crafting.teaching.unknown.recipe=You have not learned this recipe yet!
+
 
 com.minecolonies.coremod.gui.townHall.allies=Allies:
 com.minecolonies.coremod.gui.townHall.feuds=Feuds:
@@ -675,6 +724,7 @@ com.minecolonies.coremod.gui.workerHuts.switchStyle=Switch Style
 com.minecolonies.coremod.gui.townHall.tooLow=TH too low
 com.minecolonies.coremod.gui.recipe.full=Max reached for level
 com.minecolonies.coremod.cook.full=Can't bring food to the worker since their inventory is full.
+
 
 tile.minecolonies.blockTimberFrame_oak_plain.name= Oak Plain Timber Frame
 tile.minecolonies.blockTimberFrame_oak_doublecrossed.name= Oak Crossed Timber Frame
@@ -742,9 +792,11 @@ item.minecolonies.cactusdoor.name=Cactus Door
 tile.minecolonies.blockcactusslab_half.name=Cactus Slab
 
 
-com.minecolonies.coremod.request.toolow=Can't mine block %s at %s. Need to upgrade the building to use a tool with higher mining level.
+
+
 com.minecolonies.coremod.dimension.no=You are not allowed to place colonies in other dimensions. (Triggered by config value)
 com.minecolonies.coremod.max.schematic.reached=Max schematic size of %d blocks reached.
+
 
 com.minecolonies.coremod.max.schematic.quiteclose=Quite close in the
 com.minecolonies.coremod.max.schematic.quitefar=Quite far in the
@@ -755,8 +807,10 @@ com.minecolonies.coremod.barbarians.left=Only %d raiders left!
 com.minecolonies.coremod.barbarians.killed=You succesfully defended your colony against the intruders!
 com.minecolonies.coremod.gui.workerHuts.reposition=Reposition
 
+
 com.minecolonies.coremod.tooClose=Too close to world spawn, needs to be at least %d blocks away.
 com.minecolonies.coremod.tooFar=Too far away from the world spawn, needs to be max %d blocks away.
+
 
 com.minecolonies.coremod.gui.scanTool.showRes=Show Resources
 com.minecolonies.coremod.gui.scanTool.to=To:
@@ -767,10 +821,14 @@ com.minecolonies.coremod.gui.scanTool.replace=Replace
 com.minecolonies.coremod.gui.scan.replace.title=Block Replacement GUI
 com.minecolonies.coremod.gui.scanTool.select=Select
 
+
 com.minecolonies.coremod.gui.townHall.guards=Number of guards:
 com.minecolonies.coremod.gui.townHall.house=Number of houses:
 com.minecolonies.coremod.gui.townHall.saturation=Saturation of citizens:
 com.minecolonies.coremod.gui.workerHuts.happiness=Happiness
+
+
+
 
 
 
@@ -779,16 +837,20 @@ item.minecolonies.compost.name=Compost
 tile.minecolonies.blockHutComposter.name=Composter Hut
 com.minecolonies.gui.workerHuts.composter.compostables=Items to compost
 
+
 com.minecolonies.coremod.gui.townHall.citizens.unemployed=Unemployed
 com.minecolonies.coremod.gui.townHall.events=Events
 com.minecolonies.coremod.gui.townHall.workorders=Workorders
 com.minecolonies.coremod.request.stacklist=StackList
 
+
 entity.composter.noItems=Please define a list of items to be composted.
 entity.barrel.working=The barrel is working!
 
+
 com.minecolonies.coremod.status.fillingBarrels=Filling the barrels
 com.minecolonies.coremod.status.harvestingBarrels=Harvesting the barrels
+
 
 com.minecolonies.coremod.pvp.townhall.break.start=Beware! %s started breaking your town-hall!
 com.minecolonies.coremod.pvp.townhall.broke=Beware!!! %s broke your town-hall by over %d%%! At 100%% it will be lost!!!
@@ -799,8 +861,10 @@ com.minecolonies.coremod.job.student=Student
 item.minecolonies.resourcescroll.name=Resource-Scroll
 com.minecolonies.coremod.gui.resourcescroll.nobuilder=Couldn't find a registered builder, please shift-right-click an existing builders hut.
 
+
 com.minecolonies.coremod.gui.workerHuts.baker.recipes=Recipes
 com.minecolonies.coremod.gui.workerHuts.getTool=Get GuardTool
+
 
 com.minecolonies.coremod.progress.supplies_placed=§6 Welcome to Minecolonies. Now that you have your supplies, how about searching a nice location to place your town hall to create your colony ... though far away from a village, if possible.
 com.minecolonies.coremod.progress.colony_founded=§6 Word is out about a new colony. Soon the first settlers will join your newly founded colony, if there is enough space around the town hall. (Experienced magistrates can turn off these helpful messages in the Town Hall block.)
@@ -826,9 +890,11 @@ com.minecolonies.coremod.progress.newChild=§6 A new child is now happily living
 com.minecolonies.coremod.progress.childGrow=%s grew up and wants a job now.
 com.minecolonies.coremod.progress.hireCitizen=§6 Your recruitment package was accepted, a new Citizen arrived!
 
+
 com.minecolonies.coremod.gui.townHall.printProgress=Print help messages:
 com.minecolonies.coremod.gui.townHall.on=On
 com.minecolonies.coremod.gui.townHall.off=Off
+
 
 com.minecolonies.coremod.gui.hiring.buttonPaused=Pause
 com.minecolonies.coremod.gui.hiring.buttonUnpaused=Unpause
@@ -839,11 +905,13 @@ com.minecolonies.coremod.gui.townHall.buildingLevel=Building level
 com.minecolonies.coremod.job.composter=Composter
 com.minecolonies.coremod.gui.warehouse.sort=Sort
 com.minecolonies.coremod.gui.auto.hire.warning=Turn the hiring mode of the building or colony to manual to fire this worker or hire another one.
-com.minecolonies.coremod.citizens.nospace=<Mysterious Voice> Colonists can't arrive at your colony because there is not enough space around the town hall!
+com.minecolonies.coremod.citizens.nospace=<Mysterious Voice> Colonists can't arrive at your colony because there is not enough space at pos X:%d Y:%d Z:%d
+
 
 entity.Pirate.name=Pirate
 entity.ArcherPirate.name=Pirate Archer
 entity.ChiefPirate.name=Pirate Captain
+
 
 entity.minecolonies.Pirate.name=Pirate
 entity.minecolonies.ArcherPirate.name=Pirate Archer
@@ -854,16 +922,18 @@ death.attack.entity.ChiefPirate=%d was Macerated by a Great Captain!
 death.attack.entity.ArcherPirate=%d was ravaged by an Archer Pirate
 item.minecolonies.iron_scimitar.name=Scimitar
 
+
 item.pirate_hat.name=Pirate Hat
 item.pirate_top.name=Pirate Top
 item.pirate_legs.name=Pirate Legs
 item.pirate_boots.name=Pirate Boots
 
+
 item.pirate_cap.name=Pirate Cap
 item.pirate_chest.name=Pirate Chest
 item.pirate_leggins.name=Pirate Leggings
 item.pirate_shoes.name=Pirate Shoes
-com.minecolonies.coremod.pirates.sailing.away=A pirate ship close to %s just sailed away to search another victim.
+com.minecolonies.coremod.pirates.sailing.away=A pirate ship %s of %s just sailed away to search another victim.
 com.minecolonies.coremod.cook.serve.player=%s: Here you go Sir, take this food!
 tile.minecolonies.blockHutArchery.name=Archery
 com.minecolonies.coremod.gui.workerHuts.Archery=Archery
@@ -871,19 +941,20 @@ tile.minecolonies.blockHutCombatAcademy.name=Combat Academy
 com.minecolonies.coremod.gui.workerHuts.CombatAcademy=Combat Academy
 item.santa_hat.name=Santa hat
 
+
 com.minecolonies.coremod.gui.workerHuts.Sawmill=Sawmill
 tile.minecolonies.blockHutSawmill.name=Sawmill
 com.minecolonies.coremod.recipe.unable=Unable to store the blueprint. Either the %s has no space for any more blueprints, or the blueprint doesn't correspond with its profession.
 com.minecolonies.coremod.request.crafting=Crafter
 entity.builder.messageBuildersTooFar=There is no builder close enough to work at this building, assign a builder to it manually in the build screen or build it closer to the existing builders!
-com.minecolonies.coremod.baker.noRecipe=Please tell me which recipe you want me to prepare in the Bakery!
+com.minecolonies.coremod.bakery.noRecipe=Please tell me which recipe you want me to prepare in the Bakery!
 com.minecolonies.coremod.request.compostable=Compostable
 com.minecolonies.coremod.request.fertilizer=Fertilizer
 com.minecolonies.coremod.gui.workerHuts.composter=Composter Hut
-com.minecolonies.coremod.furnaceUser.noFuel=Please tell me what kind of fuel to use in my furnace!
 tile.minecolonies.blockpostbox.name=Postbox
 com.minecolonies.coremod.gui.citizen.stacks=Blocks to Request:
 com.minecolonies.coremod.gui.workerHuts.request=Request
+
 
 com.minecolonies.coremod.gui.workerHuts.Blacksmith=Blacksmith
 com.minecolonies.coremod.gui.workerHuts.Stonemason=Stonemason
@@ -896,6 +967,7 @@ com.minecolonies.coremod.job.Stonemason=Stonemason
 com.minecolonies.coremod.job.Sawmill=Woodworker
 com.minecolonies.coremod.ai.wrongFood=The food I have is too raw to eat!
 
+
 com.minecolonies.coremod.gui.homeHut.current=Current home:
 com.minecolonies.coremod.gui.homeHut.currently=Currently: %d blocks
 tile.minecolonies.blockHutCrusher.name=Crusher
@@ -903,6 +975,7 @@ com.minecolonies.coremod.gui.workerHuts.Crusher=Crusher
 com.minecolonies.coremod.gui.workerHuts.crusherSettings=Settings
 com.minecolonies.coremod.gui.workerHuts.save=save
 com.minecolonies.coremod.crusher.toomuch=Set to the current daily max of %d.
+
 
 tile.blockHutTownHall.messagePlacedAlreadyDel=You have placed a Town Hall already, if you want to delete your colony to start a new one click:
 tile.blockHutTownHall.messagePlacedAlreadyInfi=You have placed a Town Hall already, if you want to delete your colony to start a new one click [DELETE], if you want to start a new colony but not delete your old one click [ABANDON].
@@ -912,9 +985,14 @@ tile.blockHutTownHall.deleteMessageLink=[DELETE]
 tile.blockHutTownHall.abandonMessageLink=[ABANDON]
 tile.blockHutTownHall.addOfficerMessageLink=[ADD AS OFFICER]
 
+
 com.minecolonies.coremod.gui.shepherd.autoDye=Random sheep dyeing:
 com.minecolonies.coremod.general.onBig=On
 com.minecolonies.coremod.general.offBig=Off
+
+
+com.minecolonies.coremod.general.cantTakeEquipped=The only armour you have got is what you are wearing. Put it in your inventory if you want to give it to me.
+
 
 com.minecolonies.coremod.gui.workerHuts.sifterSettings=Daily limit
 tile.minecolonies.blockHutSifter.name=Sifter
@@ -932,12 +1010,180 @@ com.minecolonies.coremod.gui.hiringmode.auto=Automatic
 com.minecolonies.coremod.gui.hiringmode.manual=Manual
 com.minecolonies.coremod.gui.name.tooLong=We reduced the string to "%s" since it exceeded the limit of 15 letters.
 
+
 tile.minecolonies.decorationcontroller.name=Decoration Controller
 com.minecolonies.coremod.gui.deco.namescan=Final file path and filename, no level:
 com.minecolonies.coremod.gui.deco.name=The name of the decoration:
 com.minecolonies.coremod.gui.deco.level=The level of the decoration:
 
+
 com.minecolonies.coremod.gui.placement.warning=We suggest to use the buildtool GUI to place the building to be able to adjust the exact position of placement.
 com.minecolonies.coremod.gui.placement.buildtool=Use Buildtool
 com.minecolonies.coremod.gui.placement.direct=Place anyway
 com.minecolonies.coremod.gui.townHall.population.childs=Children: %d
+
+
+com.minecolonies.coremod.info.Builder.0.name=Introduction
+com.minecolonies.coremod.info.Builder.0=The builder is the heart of your colony, without it you wouldn't ever be able to get anything done!\n Every hut worker has to have their building built to at least level 1 before they can do anything, except the builder, the builder at level 0 (no hut) is able to build one thing, their own hut.\n\n In order for your builder to build or upgrade a hut that isn't their own, their hut must be at least the same level as the other hut, e.g. their hut must be level 3 or above to build a level 3 hut.
+com.minecolonies.coremod.info.Builder.1.name=Restrictions
+com.minecolonies.coremod.info.Builder.1=Now let's cover builder restrictions:\n\n 1. Builders (and most workers in general) unlock certain tool levels per their hut level:\n   lvl 0. Wood/Gold Tools\n   lvl 1. Stone Tools\n   lvl 2. Iron Tools\n   lvl 4. Diamond Tools\n   lvl 5. Enchanted Tools\n\n 2. Builders have a maximum range of 100 blocks for buildings for automatic assignment, if your building is outside that range, in the top right of the build building UI you can select which builder to assign to a building
+com.minecolonies.coremod.info.Builder.2.name=FAQ
+com.minecolonies.coremod.info.Builder.2=Now let's cover some frequently asked questions:\n\n Q 1. I'm seeing an item in the Required Resources page that seems unobtainable, or requires Silk Touch?\n   A 1. Things like Air, Dirt Paths, and other blocks will show up in the required resources tab from time to time, while they do show up focus mainly on your builder's Request tab, he'll usually request the correct block and convert it accordingly (e.g. request Dirt and then use a shovel on it).
+com.minecolonies.coremod.info.Builder.3.name=Leveling
+com.minecolonies.coremod.info.Builder.3=As all workers the builder levels up while building.\n With higher levels the builders speed increases. The higher the hut level is the quicker they level up. \n However, their level is capped by the level of their home. Thus, if they are unhappy with their living conditions they will stop leveling until you provide them with better housing.
+
+
+com.minecolonies.coremod.info.Lumberjack.0.name=Introduction
+com.minecolonies.coremod.info.Lumberjack.0=The lumberjack is a very simple worker, give him an axe and he'll cut down any trees around him, he'll also replant a sapling where the tree was if he has any.\n If you wish to apply restrictions on what trees he can or can't cut, take a look at the second page.\n Even cooler is the third page, here you can tell the lumberjack to not replant saplings, or you can tell him to be restricted to a certain area (selected with the tool given by the third button on the page).
+com.minecolonies.coremod.info.Lumberjack.1.name=Restrictions
+com.minecolonies.coremod.info.Lumberjack.1=Now that we've covered that, let's cover restrictions:\n\n 1. Lumberjacks unlock certain tool levels per their hut level:\n   lvl 0. Wood/Gold Tools\n   lvl 1. Stone Tools\n   lvl 2. Iron Tools\n   lvl 4. Diamond Tools\n   lvl 5. Enchanted Tools\n\n 2. Lumberjacks are able to search for trees within a 150 blocks of their worker (not the hut), while searching they start with a 50 block search range and then increase that range by 5 when they do not find a tree.
+com.minecolonies.coremod.info.Lumberjack.2.name=Tree Detection
+com.minecolonies.coremod.info.Lumberjack.2=3. The definition of a "Tree" in Minecraft is pretty hazy at best, we've done our best to define a tree, but in some cases it may not be enough. Generally we define a tree as a log and leaves (within a near vicinity), due to this some of your huts or decorations may be affected by the lumberjack, to counter this you can place a piece of Cobblestone below a log to mark it as "not a tree".
+com.minecolonies.coremod.info.Lumberjack.3.name=Leveling
+com.minecolonies.coremod.info.Lumberjack.3=As all workers the lumberjack levels up while building.\n Similar to the builder, with higher levels their speed increases. The higher the hut level is the quicker they level up. \n However, their level is capped by the level of their home. Thus, if they are unhappy with their living conditions they will stop leveling until you provide them with better housing.
+
+
+tile.minecolonies.composted_dirt.name=Composted Dirt
+com.minecolonies.coremod.composted_dirt.player_use_message=This block can be only used by the Florist worker!
+com.minecolonies.coremod.job.florist=Florist
+tile.minecolonies.blockHutFlorist.name=Flower Shop
+com.minecolonies.coremod.gui.workerHuts.florist=Florist
+com.minecolonies.gui.workerHuts.florist.flowers=Plantables
+com.minecolonies.gui.workerhuts.florist.toolow=The florist currently randomly generates the flowers in the list, upgrade to level 4 or above to select them manually!
+com.minecolonies.gui.workerhuts.florist.toomany=You can deactivate max 5 options. Upgrade to level 5 to restrict it further!
+com.minecolonies.coremod.gui.townHall.population.florists=Florists: %d/%d
+com.minecolonies.coremod.gui.townHall.population.bakerys=Bakeries: %d
+tile.minecolonies.blockhutenchanter.name=Enchanter
+com.minecolonies.coremod.job.enchanter=Enchanter
+com.minecolonies.coremod.gui.workerHuts.enchanter=Enchanter
+com.minecolonies.gui.workerhuts.enchanter.workers=Gather Targets
+com.minecolonies.gui.workerhuts.enchanter.daily=Daily XP drain
+com.minecolonies.coremod.enchanter.nodrainingsset=Please configure some workers I can drain experience from to work!
+com.minecolonies.coremod.gui.workerHuts.bakery=Bakery
+
+
+advancements.minecolonies.root.title=MineColonies
+advancements.minecolonies.root.description=Start off MineColonies by crafting a Supply Camp or Ship and placing it via right clicking the item on the ground, this will open up the MineColonies Advancements tab!
+advancements.minecolonies.place_townhall.title=Start Your Colony
+advancements.minecolonies.place_townhall.description=Now's the time to start your colony, Grab that build tool and TownHall block and find a nice clear area, right click with the Build Tool to select the style you want, where you want it, and other nifty things!
+advancements.minecolonies.create_build_request_1_builder.title=Start your Builder
+advancements.minecolonies.create_build_request_1_builder.description=Great, you've started your colony! To start building your colony up you need to craft & place a builder down (Use the build tool again!), hire a builder (Usually Automatic), and then tell them to build their building!
+advancements.minecolonies.click_gui_button_fulfill.title=Fulfill a Request
+advancements.minecolonies.click_gui_button_fulfill.description=Now that you've told your builder what to do, check out his Requests tab to see what resources or tools he needs and fulfill one of them by clicking that fulfill button!
+advancements.minecolonies.citizen_eat_food_first.title=Feed your Citizens
+advancements.minecolonies.citizen_eat_food_first.description=Citizens, much like you, Need to eat to be able to work, put some food in your citizen's inventory and they'll eat it when they need to!
+advancements.minecolonies.building_add_recipe_torch.title=Teach Torch Crafting
+advancements.minecolonies.building_add_recipe_torch.description=If you're anything like us, you're probably going to get sick of having to craft everything for your workers, right now you can teach your builder 2x2 recipes, go ahead and teach them how to craft a torch!
+advancements.minecolonies.complete_build_request_1_builder.title=Building the Builder
+advancements.minecolonies.complete_build_request_1_builder.description=Make sure to keep your builder fed, fulfill and requests, and he should start and finish building your first hut!
+advancements.minecolonies.citizen_eat_food_rotten_flesh.title=Last Resort
+advancements.minecolonies.citizen_eat_food_rotten_flesh.description=So this is what kind of leader you are, feeding your citizens Rotten Flesh? Shame, Shame, Shame!
+advancements.minecolonies.complete_build_request_1_lumberjack.title=Build the Lumberjack
+advancements.minecolonies.complete_build_request_1_lumberjack.description=Now that you've got that awesome Builder you're going to want to start gathering wood for more huts! Complete building a Lumberjack Hut (Don't forget your build tool for placing!)
+advancements.minecolonies.complete_build_request_1_miner.title=Build the Miner
+advancements.minecolonies.complete_build_request_1_miner.description=No doubt you're wanting to get some of those tasty ores and some cobble for crafting and building with, Complete building a Mine Hut (Again, don't forget to use your build tool!)
+advancements.minecolonies.complete_build_request_1_guard_tower.title=Build Protection
+advancements.minecolonies.complete_build_request_1_guard_tower.description=Once you get to 5 citizens in your colony, other entities might take notice of your growing town, make sure to build and hire a Guard to protect against these creatures!
+advancements.minecolonies.complete_build_request_1_farmer.title=Build a Farm
+advancements.minecolonies.complete_build_request_1_farmer.description=To get started with some good food production for your citizens, you're going to want to build a Farm for wheat. You'll also want to place down a Field block once you've got your farmer to mark where to farm.
+advancements.minecolonies.complete_build_request_1_citizen.title=Home Sweet Home
+advancements.minecolonies.complete_build_request_1_citizen.description=Your citizens need a place to live! Build them a citizen hut, each level facilitates one citizen.
+advancements.minecolonies.complete_build_request_1_town_hall.title=The Centrepiece
+advancements.minecolonies.complete_build_request_1_town_hall.description=Once you've got your town setup nicely with a good flow of resources you might want to think about building your Town Hall, there are only a couple benefits of this currently, but it's a cool centre piece!
+advancements.minecolonies.colony_population_5.title=Growing Population
+advancements.minecolonies.colony_population_5.description=You're going to need to get more citizens if you want to get things done! Children will be born when two citizens of opposite gender are in the same house during the night, children need to be fed and sleep well to grow up!
+advancements.minecolonies.complete_build_request_1_warehouse.title=Storage
+advancements.minecolonies.complete_build_request_1_warehouse.description=I'm sure at this point you're wanting to start automating stuff right? Well first we've got to place and build a Warehouse to store all those goodies we're getting in a central location!
+advancements.minecolonies.complete_build_request_1_delivery_person.title=Requesting Items
+advancements.minecolonies.complete_build_request_1_delivery_person.description=Now that we've got a good central storage location, lets start automatically answering citizen requests! Build a Delivery Man's hut to have them respond to Worker's requests.
+advancements.minecolonies.complete_build_request_1_sawmill.title=Crafting Wood!
+advancements.minecolonies.complete_build_request_1_sawmill.description=With the Delivery Person by your side, you can now start using crafting workers! We recommend starting off with the sawmill, place and build one to start your new crafting experience!
+advancements.minecolonies.building_add_recipe_door.title=Adoorable Crafting
+advancements.minecolonies.building_add_recipe_door.description=Now that you've unlocked 3x3 crafting with your sawmill, teach them how to craft a door! Note: Crafters will only craft on requests, and have a limit on what they can craft, see their info tab in their hut for more.
+advancements.minecolonies.complete_build_request_1_stonemason.title=Such a Stoner
+advancements.minecolonies.complete_build_request_1_stonemason.description=A Stonemason can craft 3x3 recipes using Stone as their main ingredient, build one to take advantage of their skill!
+advancements.minecolonies.complete_build_request_1_smeltery.title=Smelt that ore!
+advancements.minecolonies.complete_build_request_1_smeltery.description=Smeltery workers are pretty awesome, they'll smelt your ores for you! And, at higher levels they can get pretty efficient....
+advancements.minecolonies.complete_build_request_1_stone_smeltery.title=It's getting Hot in here
+advancements.minecolonies.complete_build_request_1_stone_smeltery.description=In order for your stonemason to make stone bricks and things like that you're going to need some Stone, place and build a Stone Smeltery to automate the creation of that resource and more!
+advancements.minecolonies.complete_build_request_1_baker.title=Get Baked
+advancements.minecolonies.complete_build_request_1_baker.description=Your citizens need some carbs in their lives, build a baker to automatically create bread for them!
+advancements.minecolonies.complete_build_request_1_blacksmith.title=Good ol' Smithy
+advancements.minecolonies.complete_build_request_1_blacksmith.description=Most citizens need some form of tool, and crafting those can be a very specialised process, Build the Blacksmith to allow the creation of those tools!
+advancements.minecolonies.complete_build_request_1_barracks.title=Building an Army
+advancements.minecolonies.complete_build_request_1_barracks.description=If you really want to protect your colony, you're going to need a whole lot more guards, building a barracks will allow you to hire a lot more in a much smaller space!
+advancements.minecolonies.complete_build_request_1_barracks_tower.title=Beautiful Towers
+advancements.minecolonies.complete_build_request_1_barracks_tower.description=Now you've got your barracks, you need to build the Barracks Towers inside it, these towers are locked to the same level as the barracks and will increase their max guards every level!
+advancements.minecolonies.complete_build_request_1_chicken_herder.title=A Poultry Sum of Meat
+advancements.minecolonies.complete_build_request_1_chicken_herder.description=Chickens may be noisy, but they're also tasty! Build a Chicken Herder to bring in those sweet chicken legs. Don't forget to gather up some chickens in their stable!
+advancements.minecolonies.complete_build_request_1_combat_academy.title=Taking Knight classes
+advancements.minecolonies.complete_build_request_1_combat_academy.description=If you want to truly protect your citizens you're going to need well trained knights, build a Combat Academy and assign a citizen to it to increase his guard levels without the risk of losing their life!
+advancements.minecolonies.complete_build_request_1_composter.title=Fertile Lands
+advancements.minecolonies.complete_build_request_1_composter.description=A composter will take your left over saplings, leaves, and like items and expose them to the elements, doing this will produce fertilizer for your crops!
+advancements.minecolonies.complete_build_request_1_cook.title=Feeding the Masses
+advancements.minecolonies.complete_build_request_1_cook.description=Building a restaurant will give your citizens a place to go to get food, the cook will cook any meats needed and give food items to your citizens, and even you!
+advancements.minecolonies.complete_build_request_1_cowboy.title=YeeeeHaww!
+advancements.minecolonies.complete_build_request_1_cowboy.description=Build a cowboy to bring in that tasty tasty beef, remember you'll need to bring the cows to your Cowboy for them to be usable.
+advancements.minecolonies.complete_build_request_1_crusher.title=I'm crushed
+advancements.minecolonies.complete_build_request_1_crusher.description=Building a crusher will enable you to get things like Gravel from cobblestone!
+advancements.minecolonies.complete_build_request_1_fisherman.title=Something smells Fishy
+advancements.minecolonies.complete_build_request_1_fisherman.description=Build a fisherman close to water to bring in those deep sea morsels
+advancements.minecolonies.complete_build_request_1_library.title=Higher Learning
+advancements.minecolonies.complete_build_request_1_library.description=If you want more skilled labour you'd best build a Library to teach your citizens!
+advancements.minecolonies.complete_build_request_1_shepherd.title=Mary had a little Lamb
+advancements.minecolonies.complete_build_request_1_shepherd.description=Sometimes you really need some soft wool in your life, Build a Shepherd to take advantage of those poor unsuspecting sheep!
+advancements.minecolonies.complete_build_request_1_sifter.title=Diamond in the Rough
+advancements.minecolonies.complete_build_request_1_sifter.description=Sometimes you'll find goodies inside those crappy other blocks, Build a sifter to see if you can take advantage of that!
+advancements.minecolonies.complete_build_request_1_swine_herder.title=Getting the Bacon
+advancements.minecolonies.complete_build_request_1_swine_herder.description=Nobody can resist bacon, build a Swine Herder so that your citizens don't miss out!
+advancements.minecolonies.complete_build_request_2_builder.title=Level Up!
+advancements.minecolonies.complete_build_request_2_builder.description=In order to upgrade other huts beyond level 1, you'll need to have a builder that's been upgraded!
+advancements.minecolonies.colony_population_10.title=Getting Busy
+advancements.minecolonies.colony_population_10.description=10 Citizens means more workers, and more workers means more resources!
+advancements.minecolonies.colony_population_25.title=Small Town
+advancements.minecolonies.colony_population_25.description=25 Citizens is a lot, I hope you're keeping them alive!
+advancements.minecolonies.colony_population_50.title=Big Town
+advancements.minecolonies.colony_population_50.description=50 Citizens is enough to have almost 2 of every worker, Wow!
+advancements.minecolonies.complete_build_request_3_smeltery.title=Double Trouble!
+advancements.minecolonies.complete_build_request_3_smeltery.description=A level 3 Smeltery has a 100% chance of doubling ore output, nice!
+advancements.minecolonies.complete_build_request_5_smeltery.title=Ore Tripling
+advancements.minecolonies.complete_build_request_5_smeltery.description=A level 5 Smeltery has a chance of tripling every ore output, the chance is equal to the Worker's Level!
+advancements.minecolonies.complete_build_request_5_town_hall.title=A Building to be Proud Of
+advancements.minecolonies.complete_build_request_5_town_hall.description=While there's not a lot of benefit to having a level 5 Town hall it sure does look pretty!
+advancements.minecolonies.complete_build_request_1_archery.title=Bull's Eye
+advancements.minecolonies.complete_build_request_1_archery.description=While Knights are pretty great, they're even better when they've got backup in the form of archers, better train some of those as well!
+advancements.minecolonies.complete_build_request_1_florist.title=Floral Arrangements
+advancements.minecolonies.complete_build_request_1_florist.description=The floral hut will use compost, or other types of "bonemeal" to grow you all those pesky flowers your buildings tend to want!
+advancements.minecolonies.complete_build_request_1_enchanter.title=Enchanting Experience
+advancements.minecolonies.complete_build_request_1_enchanter.description=The enchanter hut will consume Ancient tomes and Other workers experience to produce enchanted books for your personal usage!
+
+
+com.minecolonies.coremod.gui.chat.okay=I will work on it!
+com.minecolonies.coremod.gui.chat.ignore=That has to do for now!
+com.minecolonies.coremod.gui.chat.remindmelater=Please remind me later!
+
+
+entity.fisherman.messageWaterTooFar=My hut seems to be too far away from the water, and I can't find any water to fish in! It should be an area of at least 7 x 7, and on the same height as my hut.
+com.minecolonies.coremod.furnaceUser.noFuel=Please tell me what kind of fuel I should use in my furnace!
+com.minecolonies.coremod.furnaceuser.noore=Please tell me what kind of ore I should smelt in my furnace!
+com.minecolonies.coremod.florist.noplantground=I don't have any composted dirt to plant on! Please repair or upgrade my building!
+com.minecolonies.coremod.florist.nocompost=I need compost to plant my flowers!
+com.minecolonies.coremod.florist.noflowers=I can't work, all flowers are disabled!
+com.minecolonies.coremod.request.toolow=I can't mine the %s at %d %d %d. You need to upgrade the building, so I can use a tool with higher mining level.
+entity.farmer.noSeedSet=Please define the seed you want me to grow by placing it in the scarecrow!
+entity.farmer.noFreeFields=Place more fields to get me working.
+
+
+com.minecolonies.coremod.wareHouse.full=The Warehouse is full, please upgrade or make space.
+com.minecolonies.coremod.job.deliveryman.noWarehouse=Please upgrade or build a Warehouse for me to work at.
+com.minecolonies.coremod.job.deliveryman.workerChestFull=I can't deliver because of a full worker chest.
+com.minecolonies.coremod.job.deliveryman.namedWorkerChestFull=I can't deliver because of a full %s's chest.
+com.minecolonies.requestsystem.playerresolver.normal=I need %s to continue working.
+com.minecolonies.requestsystem.playerresolver.async=It would make my job much easier if I had %s.
+com.minecolonies.coremod.gui.chat.cancel=Try cancel that request!
+com.minecolonies.coremod.gui.chat.fulfill=More details please!
+com.minecolonies.coremod.movebuilding.invalid=Can't reposition to this position, undestroyable block at destination!
+
+
+com.minecolonies.coremod.resourcescroll.nobuilder=Please register a builder hut first by shift right clicking a builder hut!
+com.minecolonies.coremod.resourcescroll.null=Something went wrong opening the resource scroll, please try again

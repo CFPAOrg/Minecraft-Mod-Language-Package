@@ -16,8 +16,14 @@ quarkmisc.keyboundButton=%sPress %s
 quarkmisc.nowAfk=You are now AFK (Away From Keyboard).
 quarkmisc.leftAfk=You are no longer AFK.
 quarkmisc.personSleeping=%s is now sleeping.
+quarkmisc.personNotSleeping=%s has stopped sleeping.
+quarkmisc.personNapping=%s is now napping.
+quarkmisc.personNotNapping=%s has stopped napping.
+quarkmisc.nightHasPassed=The night has passed.
+quarkmisc.dayHasPassed=The day has passed.
 # The %s is very important!
 quarkmisc.sleepingListHeader=Sleeping Players: %s
+quarkmisc.nappingListHeader=Napping Players: %s
 quarkmisc.buried_chest_map=Buried Treasure Map
 quarkmisc.trashButtonOpen=Click to Delete
 quarkmisc.trashButtonShift=Hold Shift to Open
@@ -35,8 +41,31 @@ quarkmisc.matrixRightClick=Right Click to Rotate
 quarkmisc.matrixMerge=Click to Upgrade
 quarkmisc.matrixMin=Min: %d
 quarkmisc.matrixUpgrade=Upgrade: %d/%d
+quarkmisc.matrixInfluence=Candle Influence: +%d%%
 quarkmisc.pendingEnchants=Has Pending Enchantments
+quarkmisc.item_out_of_stock=Out of stock, check back later
 quarkmisc.out_of_stock=%s is out of stock, come back later
+quarkmisc.me_or_my_son=Don't talk to me or my son ever again.
+
+
+quarkmisc.you_came_to_the_wrong_neighborhood.0=Six letter word just to get me along
+quarkmisc.you_came_to_the_wrong_neighborhood.1=It's a intricacy and I'm coding on my mod and I,
+quarkmisc.you_came_to_the_wrong_neighborhood.2=I keep fixin', and keepin' it together
+quarkmisc.you_came_to_the_wrong_neighborhood.3=People around gotta find something to play now
+quarkmisc.you_came_to_the_wrong_neighborhood.4=Holding back, every mod's the same
+quarkmisc.you_came_to_the_wrong_neighborhood.5=Don't wanna be a loser
+quarkmisc.you_came_to_the_wrong_neighborhood.6=Listen to me, oh no, I don't break anything at all
+quarkmisc.you_came_to_the_wrong_neighborhood.7=But with nothing to consider they forget my name
+quarkmisc.you_came_to_the_wrong_neighborhood.8='ame, 'ame, 'ame
+quarkmisc.you_came_to_the_wrong_neighborhood.9=They call me Vaskii
+quarkmisc.you_came_to_the_wrong_neighborhood.10=They call me Vazki
+quarkmisc.you_came_to_the_wrong_neighborhood.11=They call me Voskii
+quarkmisc.you_came_to_the_wrong_neighborhood.12=They call me Vazkki
+quarkmisc.you_came_to_the_wrong_neighborhood.13=That's not my name
+quarkmisc.you_came_to_the_wrong_neighborhood.14=That's not my name
+quarkmisc.you_came_to_the_wrong_neighborhood.15=That's not my name
+quarkmisc.you_came_to_the_wrong_neighborhood.16=That's not my name
+
 
 # SUBTITLES
 quark.subtitles.soulpowder_scream=Soul escapes
@@ -57,13 +86,22 @@ quark.subtitles.kill_stoneling=Stoneling breaks
 quark.subtitles.purr=Stoneling "purrs"
 quark.subtitles.hump_day=Wednesday is, my dudes
 quark.subtitles.throw_pickarang=Pickarang is flung
+quark.subtitles.clank_pickarang=Pickarang clanks
+quark.subtitles.pickup_pickarang=Pickarang is taken
 quark.subtitles.frog_die=Frog croaks
 quark.subtitles.frog_hurt=Frog squeaks
 quark.subtitles.frog_idle=Frog ribbits
 quark.subtitles.frog_jump=Frog hops
+quark.subtitles.horse_whistle=High-pitched screeching
+quark.subtitles.do_it=Motivation
+quark.subtitles.michael_here=Michael is here
+
 
 # COMMANDS
-commands.quarkconfig.usage=/quarkconfig <module> <category> <key> <value> [save?] [player]
+commands.quarkconfig.usage=/quark-config <category> <key> <value> [player] [save?]
+commands.quarkconfig.invalid_property=The property %s.%s doesn't exist
+commands.quarkconfig.invalid_category=The category %s doesn't exist
+
 
 # CONFIG STRINGS
 quark.config.title=Quark Configuration
@@ -108,6 +146,7 @@ quark.config.module.tweaks=Tweaks
 quark.config.module.vanity=Vanity
 quark.config.module.world=World
 quark.config.module.oddities=Oddities
+
 
 # BLOCK NAMES
 tile.quark:hardened_clay_tiles.name=Terracotta Shingles
@@ -173,6 +212,14 @@ tile.quark:stone_limestone.name=Limestone
 tile.quark:stone_limestone_smooth.name=Polished Limestone
 tile.quark:stone_limestone_slab.name=Limestone Slab
 tile.quark:stone_limestone_stairs.name=Limestone Stairs
+tile.quark:stone_jasper.name=Jasper
+tile.quark:stone_jasper_smooth.name=Polished Jasper
+tile.quark:stone_jasper_slab.name=Jasper Slab
+tile.quark:stone_jasper_stairs.name=Jasper Stairs
+tile.quark:stone_slate.name=Slate
+tile.quark:stone_slate_smooth.name=Polished Slate
+tile.quark:stone_slate_slab.name=Slate Slab
+tile.quark:stone_slate_stairs.name=Slate Stairs
 tile.quark:stone_stairs.name=Stone Stairs
 tile.quark:stone_granite_slab.name=Granite Slab
 tile.quark:stone_granite_stairs.name=Granite Stairs
@@ -194,24 +241,32 @@ tile.quark:stone_andesite_bricks.name=Andesite Bricks
 tile.quark:stone_basalt_bricks.name=Basalt Bricks
 tile.quark:stone_marble_bricks.name=Marble Bricks
 tile.quark:stone_limestone_bricks.name=Limestone Bricks
+tile.quark:stone_jasper_bricks.name=Jasper Bricks
+tile.quark:stone_slate_bricks.name=Slate Bricks
 tile.quark:stone_diorite_bricks_slab.name=Diorite Brick Slab
 tile.quark:stone_granite_bricks_slab.name=Granite Brick Slab
 tile.quark:stone_andesite_bricks_slab.name=Andesite Brick Slab
 tile.quark:stone_basalt_bricks_slab.name=Basalt Brick Slab
 tile.quark:stone_marble_bricks_slab.name=Marble Brick Slab
 tile.quark:stone_limestone_bricks_slab.name=Limestone Brick Slab
+tile.quark:stone_jasper_bricks_slab.name=Jasper Brick Slab
+tile.quark:stone_slate_bricks_slab.name=Slate Brick Slab
 tile.quark:stone_diorite_bricks_stairs.name=Diorite Brick Stairs
 tile.quark:stone_granite_bricks_stairs.name=Granite Brick Stairs
 tile.quark:stone_andesite_bricks_stairs.name=Andesite Brick Stairs
 tile.quark:stone_basalt_bricks_stairs.name=Basalt Brick Stairs
 tile.quark:stone_marble_bricks_stairs.name=Marble Brick Stairs
 tile.quark:stone_limestone_bricks_stairs.name=Limestone Brick Stairs
+tile.quark:stone_jasper_bricks_stairs.name=Jasper Brick Stairs
+tile.quark:stone_slate_bricks_stairs.name=Slate Brick Stairs
 tile.quark:stone_diorite_carved.name=Chiseled Diorite Bricks
 tile.quark:stone_granite_carved.name=Chiseled Granite Bricks
 tile.quark:stone_andesite_carved.name=Chiseled Andesite Bricks
 tile.quark:stone_basalt_carved.name=Chiseled Basalt Bricks
 tile.quark:stone_marble_carved.name=Chiseled Marble Bricks
 tile.quark:stone_limestone_carved.name=Chiseled Limestone Bricks
+tile.quark:stone_jasper_carved.name=Chiseled Jasper Bricks
+tile.quark:stone_slate_carved.name=Chiseled Slate Bricks
 tile.quark:obsidian_pressure_plate.name=Obsidian Pressure Plate
 tile.quark:lit_lamp.name=Lit Redstone Lamp
 tile.quark:blaze_lantern.name=Blaze Lantern
@@ -226,6 +281,7 @@ tile.quark:reed_block_slab.name=Sugar Cane Slab
 tile.quark:reed_block_stairs.name=Sugar Cane Stairs
 tile.quark:paper_wall.name=Paper Wall
 tile.quark:paper_wall_big.name=Big Paper Wall
+tile.quark:paper_wall_sakura.name=Decorated Paper Wall
 tile.quark:bark_oak.name=Oak Bark
 tile.quark:bark_spruce.name=Spruce Bark
 tile.quark:bark_birch.name=Birch Bark
@@ -264,11 +320,15 @@ tile.quark:stone_andesite_bricks_wall.name=Andesite Brick Wall
 tile.quark:stone_basalt_bricks_wall.name=Basalt Brick Wall
 tile.quark:stone_marble_bricks_wall.name=Marble Brick Wall
 tile.quark:stone_limestone_bricks_wall.name=Limestone Brick Wall
+tile.quark:stone_jasper_bricks_wall.name=Jasper Brick Wall
+tile.quark:stone_slate_bricks_wall.name=Slate Brick Wall
 tile.quark:sandy_bricks_wall.name=Sandy Brick Wall
 tile.quark:reed_block_wall.name=Sugar Cane Wall
 tile.quark:basalt_wall.name=Basalt Wall
 tile.quark:marble_wall.name=Marble Wall
 tile.quark:limestone_wall.name=Limestone Wall
+tile.quark:jasper_wall.name=Jasper Wall
+tile.quark:slate_wall.name=Slate Wall
 tile.quark:polished_stone.name=Polished Stone
 tile.quark:carved_oak_wood.name=Carved Oak Wood
 tile.quark:carved_spruce_wood.name=Carved Spruce Wood
@@ -338,6 +398,8 @@ tile.quark:birch_leaf_carpet.name=Birch Leaf Carpet
 tile.quark:jungle_leaf_carpet.name=Jungle Leaf Carpet
 tile.quark:acacia_leaf_carpet.name=Acacia Leaf Carpet
 tile.quark:dark_oak_leaf_carpet.name=Dark Oak Leaf Carpet
+tile.quark:swamp_leaf_carpet.name=Swamp Oak Leaf Carpet
+tile.quark:sakura_leaf_carpet.name=Blossoming Leaf Carpet
 tile.oak_bookshelf.name=Oak Bookshelf
 tile.quark:bookshelf_spruce.name=Spruce Bookshelf
 tile.quark:bookshelf_birch.name=Birch Bookshelf
@@ -365,6 +427,16 @@ tile.quark:crystal_green.name=Green Cave Crystal
 tile.quark:crystal_blue.name=Blue Cave Crystal
 tile.quark:crystal_indigo.name=Indigo Cave Crystal
 tile.quark:crystal_violet.name=Violet Cave Crystal
+tile.quark:crystal_black.name=Black Cave Crystal
+tile.quark:crystal_white_pane.name=White Cave Crystal Sheet
+tile.quark:crystal_red_pane.name=Red Cave Crystal Sheet
+tile.quark:crystal_orange_pane.name=Orange Cave Crystal Sheet
+tile.quark:crystal_yellow_pane.name=Yellow Cave Crystal Sheet
+tile.quark:crystal_green_pane.name=Green Cave Crystal Sheet
+tile.quark:crystal_blue_pane.name=Blue Cave Crystal Sheet
+tile.quark:crystal_indigo_pane.name=Indigo Cave Crystal Sheet
+tile.quark:crystal_violet_pane.name=Violet Cave Crystal Sheet
+tile.quark:crystal_black_pane.name=Black Cave Crystal Sheet
 tile.quark:stained_planks_black.name=Black Stained Planks
 tile.quark:stained_planks_blue.name=Blue Stained Planks
 tile.quark:stained_planks_brown.name=Brown Stained Planks
@@ -442,20 +514,24 @@ tile.quark:duskbound_lantern.name=Duskbound Lantern
 tile.quark:sturdy_stone.name=Sturdy Stone
 tile.quark:fire_stone.name=Brimstone
 tile.quark:icy_stone.name=Permafrost
+tile.quark:cobbed_stone.name=Cobbedstone
 tile.quark:fire_stone_brick.name=Brimstone Bricks
 tile.quark:icy_stone_brick.name=Permafrost Bricks
 tile.quark:glowcelium.name=Glowcelium
 tile.quark:glowshroom.name=Glowshroom
 tile.quark:fire_stone_slab.name=Brimstone Slab
 tile.quark:icy_stone_slab.name=Permafrost Slab
+tile.quark:cobbed_stone_slab.name=Cobbedstone Slab
 tile.quark:fire_stone_brick_slab.name=Brimstone Bricks Slab
 tile.quark:icy_stone_brick_slab.name=Permafrost Bricks Slab
 tile.quark:fire_stone_stairs.name=Brimstone Stairs
 tile.quark:icy_stone_stairs.name=Permafrost Stairs
+tile.quark:cobbed_stone_stairs.name=Cobbedstone Stairs
 tile.quark:fire_stone_brick_stairs.name=Brimstone Bricks Stairs
 tile.quark:icy_stone_brick_stairs.name=Permafrost Bricks Stairs
 tile.quark:fire_stone_wall.name=Brimstone Wall
 tile.quark:icy_stone_wall.name=Permafrost Wall
+tile.quark:cobbed_stone_wall.name=Cobbedstone Wall
 tile.quark:fire_stone_brick_wall.name=Brimstone Bricks Wall
 tile.quark:icy_stone_brick_wall.name=Permafrost Bricks Wall
 tile.quark:iron_rod.name=Iron Rod
@@ -534,6 +610,8 @@ tile.quark:andesite_speleothem.name=Andesite Speleothem
 tile.quark:basalt_speleothem.name=Basalt Speleothem
 tile.quark:marble_speleothem.name=Marble Speleothem
 tile.quark:limestone_speleothem.name=Limestone Speleothem
+tile.quark:jasper_speleothem.name=Jasper Speleothem
+tile.quark:slate_speleothem.name=Slate Speleothem
 tile.quark:netherrack_speleothem.name=Netherrack Speleothem
 tile.quark:spruce_pressure_plate.name=Spruce Pressure Plate
 tile.quark:birch_pressure_plate.name=Birch Pressure Plate
@@ -557,9 +635,12 @@ tile.quark:stone_andesite_pavement.name=Andesite Pavement
 tile.quark:stone_basalt_pavement.name=Basalt Pavement
 tile.quark:stone_marble_pavement.name=Marble Pavement
 tile.quark:stone_limestone_pavement.name=Limestone Pavement
+tile.quark:stone_jasper_pavement.name=Jasper Pavement
+tile.quark:stone_slate_pavement.name=Slate Pavement
 tile.quark:framed_glass.name=Framed Glass
 tile.quark:framed_glass_pane.name=Framed Glass Pane
 tile.quark:paper_lantern.name=Paper Lamp
+tile.quark:paper_lantern_sakura.name=Decorated Paper Lamp
 tile.quark:pipe.name=Item Pipe
 tile.quark:turf.name=Turf Block
 tile.quark:turf_stairs.name=Turf Stairs
@@ -585,6 +666,29 @@ tile.quark:elder_prismarine_dark_wall.name=Dark Elder Prismarine Wall
 tile.quark:monster_box.name=Monster Box
 tile.quark:frame.name=Frame
 tile.quark:frame_slab.name=Frame Slab
+tile.quark:tiny_potato.name=Tiny Potato
+tile.quark:tiny_potato.angry.name=Angry Potato
+tile.quark:gravisand.name=Gravisand
+tile.quark:cobblestone_mossy_stairs.name=Moss Stone Stairs
+tile.quark:cobblestone_mossy_slab.name=Moss Stone Slab
+tile.quark:stonebrick_mossy_stairs.name=Mossy Stone Brick Stairs
+tile.quark:stonebrick_mossy_slab.name=Mossy Stone Brick Slab
+tile.quark:stonebrick_mossy_wall.name=Mossy Stone Brick Wall
+tile.quark:redstone_inductor.name=Redstone Inductor
+tile.quark:swamp_leaves.name=Swamp Oak Leaves
+tile.quark:sakura_leaves.name=Blossoming Leaves
+tile.quark:swamp_sapling.name=Swamp Oak Sapling
+tile.quark:sakura_sapling.name=Blossoming Sapling
+tile.quark:rope.name=Rope Coil
+tile.quark:blaze_rod.name=Blaze Rod (Block)
+tile.quark:grate.name=Iron Grate
+tile.green_slime_block.name=Green Slime Block
+tile.quark:slime_red.name=Red Slime Block
+tile.quark:slime_blue.name=Blue Slime Block
+tile.quark:slime_cyan.name=Cyan Slime Block
+tile.quark:slime_magenta.name=Magenta Slime Block
+tile.quark:slime_yellow.name=Yellow Slime Block
+
 
 # ITEM NAMES
 item.quark:glass_shard.name=Glass Shard
@@ -690,6 +794,12 @@ item.quark:frog_leg.name=Frog Leg
 item.quark:frog_maybe_leg.name=Frog "Leg"
 item.quark:cooked_frog_leg.name=Cooked Frog Leg
 item.quark:golden_frog_leg.name=Golden Frog Leg
+item.quark:horse_whistle.name=Horse Whistle
+item.quark:crab_leg.name=Crab Leg
+item.quark:cooked_crab_leg.name=Cooked Crab Leg
+item.quark:crab_shell.name=Crab Shell Fragment
+item.quark:chain.name=Iron Chain
+
 
 # ENTITY NAMES
 entity.quark:colored_item_frame.name=Colored Item Frame
@@ -704,10 +814,19 @@ entity.quark:totem_of_holding.name=Totem of Holding
 entity.quark:archaeologist.name=Archaeologist
 entity.quark:stoneling.name=Stoneling
 entity.quark:frog.name=Frog
+entity.quark:pickarang.name=Pickarang
+entity.quark:foxhound.name=Foxhound
+entity.quark:crab.name=Crab
+
 
 # POTION NAMES
 quark.potion.curse.name=Curse
 quark.potion.danger_sight.name=Danger Sight
+quark.potion.blue.name=Blueberry
+quark.potion.white.name=Whitening
+quark.potion.black.name=Darkening
+quark.potion.resilience.name=Resilience
+
 
 potion.effect.haste=Potion of Haste
 splash_potion.effect.haste=Splash Potion of Haste
@@ -725,6 +844,11 @@ potion.effect.danger_sight=Potion of Danger Sight
 splash_potion.effect.danger_sight=Splash Potion of Danger Sight
 lingering_potion.effect.danger_sight=Lingering Potion of Danger Sight
 tipped_arrow.effect.danger_sight=Arrow of Danger Sight
+potion.effect.resilience=Potion of Stability
+splash_potion.effect.resilience=Splash Potion of Stability
+lingering_potion.effect.resilience=Lingering Potion of Stability
+tipped_arrow.effect.resilience=Arrow of Stability
+
 
 # KEYBINDS
 quark.gui.keygroupMisc=Quark Misc
@@ -740,6 +864,7 @@ quark.keybind.chestDropoff=Deposit
 quark.keybind.chestMerge=Merge
 quark.keybind.chestRestock=Restock
 quark.keybind.chestExtract=Extract
+
 
 # GUI STUFF
 quark.gui.emotes=Emotes
@@ -763,6 +888,7 @@ quark.emote.zombie=Zombie
 quark.emote.exorcist=Exorcist
 quark.emote.jet=Jet
 
+
 quark.dyedElytra=Dyed %s
 quark.dye.white=White
 quark.dye.orange=Orange
@@ -783,6 +909,7 @@ quark.dye.black=Black
 generator.quark_realistic=Realistic
 generator.quark_realistic.info=[Quark] Realistic World Type by /u/Soniop
 
+
 quark.biomeMap.ice_flats=Ice Plains Pathfinder Map
 quark.biomeMap.extreme_hills=Extreme Hills Pathfinder Map
 quark.biomeMap.roofed_forest=Roofed Forest Pathfinder Map
@@ -795,6 +922,7 @@ quark.biomeMap.jungle=Jungle Pathfinder Map
 quark.biomeMap.mesa=Mesa Pathfinder Map
 quark.biomeMap.mushroom_island=Mushroom Island Pathfinder Map
 quark.biomeMap.mutated_ice_flats=Ice Spikes Pathfinder Map
+
 
 # BANNER NAMES
 item.banner.quark_dragon.black=Black Dragon Charge
@@ -814,6 +942,7 @@ item.banner.quark_dragon.magenta=Magenta Dragon Charge
 item.banner.quark_dragon.orange=Orange Dragon Charge
 item.banner.quark_dragon.white=White Dragon Charge
 
+
 item.banner.quark_eye.black=Black Eye Charge
 item.banner.quark_eye.red=Red Eye Charge
 item.banner.quark_eye.green=Green Eye Charge
@@ -830,6 +959,7 @@ item.banner.quark_eye.lightBlue=Light Blue Eye Charge
 item.banner.quark_eye.magenta=Magenta Eye Charge
 item.banner.quark_eye.orange=Orange Eye Charge
 item.banner.quark_eye.white=White Eye Charge
+
 
 item.banner.quark_sword.black=Black Sword Charge
 item.banner.quark_sword.red=Red Sword Charge
@@ -848,6 +978,7 @@ item.banner.quark_sword.magenta=Magenta Sword Charge
 item.banner.quark_sword.orange=Orange Sword Charge
 item.banner.quark_sword.white=White Sword Charge
 
+
 item.banner.quark_shield.black=Black Shield Charge
 item.banner.quark_shield.red=Red Shield Charge
 item.banner.quark_shield.green=Green Shield Charge
@@ -864,4 +995,23 @@ item.banner.quark_shield.lightBlue=Light Blue Shield Charge
 item.banner.quark_shield.magenta=Magenta Shield Charge
 item.banner.quark_shield.orange=Orange Shield Charge
 item.banner.quark_shield.white=White Shield Charge
+
+
+item.banner.quark_tiny_potato.black=Black Tiny Potato Charge
+item.banner.quark_tiny_potato.red=Red Tiny Potato Charge
+item.banner.quark_tiny_potato.green=Green Tiny Potato Charge
+item.banner.quark_tiny_potato.brown=Brown Tiny Potato Charge
+item.banner.quark_tiny_potato.blue=Blue Tiny Potato Charge
+item.banner.quark_tiny_potato.purple=Purple Tiny Potato Charge
+item.banner.quark_tiny_potato.cyan=Cyan Tiny Potato Charge
+item.banner.quark_tiny_potato.silver=Light Gray Tiny Potato Charge
+item.banner.quark_tiny_potato.gray=Gray Tiny Potato Charge
+item.banner.quark_tiny_potato.pink=Pink Tiny Potato Charge
+item.banner.quark_tiny_potato.lime=Lime Tiny Potato Charge
+item.banner.quark_tiny_potato.yellow=Yellow Tiny Potato Charge
+item.banner.quark_tiny_potato.lightBlue=Light Blue Tiny Potato Charge
+item.banner.quark_tiny_potato.magenta=Magenta Tiny Potato Charge
+item.banner.quark_tiny_potato.orange=Orange Tiny Potato Charge
+item.banner.quark_tiny_potato.white=White Tiny Potato Charge
+
 
