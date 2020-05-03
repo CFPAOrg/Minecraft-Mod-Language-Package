@@ -20,4 +20,4 @@ if ([System.IO.File]::Exists($credentialPath)) {
 }
 git add .
 git commit -m "Automatically updated."
-git push origin $config.game_version
+git push origin --all
