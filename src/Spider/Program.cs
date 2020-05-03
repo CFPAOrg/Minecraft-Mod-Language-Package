@@ -139,7 +139,14 @@ namespace Spider
                 }
                 else
                 {
-                    zipArchiveEntries.ForEach(s => mod.Languages.Add(new Language(mod, s.Open(), s.FullName)));
+                    foreach (var zipArchiveEntry in zipArchiveEntries)
+                    {
+                        var stream = new MemoryStream();
+                        var s = zipArchiveEntry.Open();
+                        s.CopyTo(stream);
+                        s.Dispose();
+                        return new Language(mod, stream, zipArchiveEntry.FullName);
+                    }
                 }
 
                 sw.Stop();
