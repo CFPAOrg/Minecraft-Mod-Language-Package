@@ -2,7 +2,7 @@ name: Spider
 
 on:
   schedule:
-  - cron: "0 */8 * * *"
+  - cron: "0 1 17 * *"
 
 jobs:
   build:
@@ -20,5 +20,5 @@ jobs:
       run: ./spider.ps1
       shell: pwsh
       env:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.my_token }}
       
