@@ -20,4 +20,4 @@ if ([System.IO.File]::Exists($credentialPath)) {
 }
 git add .
 git commit -m "Automatically updated by Cfpabot."
-git push origin --all -v
+git push origin 1.12.2 -v
