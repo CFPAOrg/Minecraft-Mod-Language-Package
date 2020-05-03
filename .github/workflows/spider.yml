@@ -2,7 +2,7 @@ name: Spider
 
 on:
   schedule:
-  - cron: "0 4 * * *"
+  - cron: "0 3 * * *"
 
 jobs:
   build:
@@ -13,7 +13,17 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.101
-    - name: run
-      run: dotnet run --configuration Release --project ./src/Spider/Spider.csproj
+        dotnet-version: 5.0.100-preview.3
+    
+    - name: Setup Java JDK
+      uses: actions/setup-java@v1.3.0
+      with:
+        java-version: 1.8
+
+    # Runs a single command using the runners shell
+    - name: Run spider
+      run: ./spider.ps1
+      shell: pwsh
+      env:
+        token: ${{ Secrets.my_token }}
       
