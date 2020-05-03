@@ -7,11 +7,6 @@ namespace Spider
 {
     internal static class Configuration
     {
-        static Configuration()
-        {
-            LangFileInfo.Create();
-        }
-
         public static FileInfo ConfigFileInfo { get; } =
             new FileInfo(Path.Combine(RepositoryPath, "config.json"));
 

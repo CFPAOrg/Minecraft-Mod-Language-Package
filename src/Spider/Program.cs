@@ -48,17 +48,16 @@ namespace Spider
                 Log.Information($"写入了一个语言文件到: {fullPath}");
             }
 
+            var sw = Configuration.LangFileInfo.CreateText();
+            var str = JsonSerializer.Serialize(languages);
+            sw.Write(str);
+            Log.Information($"写入了一个语言文件信息到: {Configuration.LangFileInfo.FullName}");
+            sw.Dispose();
             foreach (var mod in mods)
             {
                 mod.Dispose();
             }
             Log.CloseAndFlush();
-            var fs = Configuration.LangFileInfo.OpenWrite();
-            var str = JsonSerializer.Serialize(languages);
-            var sw = new StreamWriter(fs){AutoFlush = true};
-            sw.Write(str);
-            sw.Dispose();
-            fs.Dispose();
         }
 
         public static async Task<IEnumerable<Mod>> GetModsAsync()
