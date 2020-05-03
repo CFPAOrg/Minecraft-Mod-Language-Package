@@ -20,4 +20,4 @@ if ([System.IO.File]::Exists($credentialPath)) {
 }
 git add .
 git commit -m "Automatically updated."
-git push origin --all
+git push origin --all -v
