@@ -19,5 +19,5 @@ if ([System.IO.File]::Exists($credentialPath)) {
     Add-Content $credentialPath $credential -Force -InformationAction Ignore;
 }
 git add .
-git commit -m "Automatically updated."
-git push origin $config.game_version
+git commit -m "Automatically updated by Cfpabot."
+git push origin HEAD:1.12.2 -v
