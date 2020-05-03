@@ -7,6 +7,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -86,9 +87,9 @@ namespace Spider
                 Log.Information($"跳过了一个黑名单中的模组:{mod.Name}");
                 mod.IsInBlackList = true;
                 return mod;
-            });
+            }).ToList();
             sw.Stop();
-            Log.Information($"成功获取所有模组信息，耗时{sw.ElapsedMilliseconds}ms.");
+            Log.Information($"成功获取所有{result.Count}个模组的信息，耗时{sw.ElapsedMilliseconds}ms.");
             return result;
         }
 
