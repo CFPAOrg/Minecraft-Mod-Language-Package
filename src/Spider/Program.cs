@@ -135,7 +135,6 @@ namespace Spider
                 if (zipArchiveEntries.Count == 0)
                 {
                     mod.IsInBlackList = true;
-                    mod.Stream.Dispose();
                     Log.Information($"跳过了一个无语言文件的模组:{mod.Name}");
                 }
                 else
