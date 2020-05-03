@@ -56,6 +56,7 @@ namespace Spider
             var fs = Configuration.LangFileInfo.OpenWrite();
             var str = JsonSerializer.Serialize(languages);
             var sw = new StreamWriter(fs){AutoFlush = true};
+            sw.Write(str);
             sw.Dispose();
             fs.Dispose();
         }
