@@ -14,6 +14,7 @@ namespace Spider.Models
         public Mod(long id)
         {
             Id = id;
+
         }
 
         public long Id { get; set; }
@@ -48,6 +49,7 @@ namespace Spider.Models
 
         private string FindModId()
         {
+            Stream.Position = 0;
             var zipArchive = new ZipArchive(Stream,mode:ZipArchiveMode.Read,leaveOpen:true);
             var modId = "";
             foreach (var zipArchiveEntry in zipArchive.Entries.Where(_=>_.FullName.EndsWith(".class")))
