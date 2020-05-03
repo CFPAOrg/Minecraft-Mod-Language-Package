@@ -129,7 +129,7 @@ namespace Spider
                     throw;
                 }
 
-                var zipArchive = new ZipArchive(mod.Stream, ZipArchiveMode.Read);
+                var zipArchive = new ZipArchive(mod.Stream, ZipArchiveMode.Read,leaveOpen:true);
                 var zipArchiveEntries = zipArchive.Entries.Where(entry =>
                     entry.Name.EndsWith("en_us.lang", StringComparison.OrdinalIgnoreCase)).ToList();
                 if (zipArchiveEntries.Count == 0)
