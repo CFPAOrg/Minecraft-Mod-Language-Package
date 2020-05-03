@@ -19,5 +19,5 @@ if ([System.IO.File]::Exists($credentialPath)) {
     Add-Content $credentialPath $credential -Force -InformationAction Ignore;
 }
 git add .
-git commit -m "Automatically updated."
+git commit -m "Automatically updated by Cfpabot."
 git push origin --all -v
