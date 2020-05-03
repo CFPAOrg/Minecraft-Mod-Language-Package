@@ -129,12 +129,13 @@ namespace Spider
                     throw;
                 }
 
-                var zipArchive = new ZipArchive(mod.Stream, ZipArchiveMode.Read,leaveOpen:true);
+                var zipArchive = new ZipArchive(mod.Stream, ZipArchiveMode.Read);
                 var zipArchiveEntries = zipArchive.Entries.Where(entry =>
                     entry.Name.EndsWith("en_us.lang", StringComparison.OrdinalIgnoreCase)).ToList();
                 if (zipArchiveEntries.Count == 0)
                 {
                     mod.IsInBlackList = true;
+                    mod.Stream.Dispose();
                     Log.Information($"跳过了一个无语言文件的模组:{mod.Name}");
                 }
                 else
@@ -145,7 +146,7 @@ namespace Spider
                         var s = zipArchiveEntry.Open();
                         s.CopyTo(stream);
                         s.Dispose();
-                        return new Language(mod, stream, zipArchiveEntry.FullName);
+                        mod.Languages.Add(new Language(mod, stream, zipArchiveEntry.FullName));
                     }
                 }
 
