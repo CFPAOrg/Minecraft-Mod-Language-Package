@@ -53,9 +53,11 @@ namespace Spider
                 mod.Dispose();
             }
             Log.CloseAndFlush();
-            await using var fs = Configuration.LangFileInfo.OpenWrite();
-            await JsonSerializer.SerializeAsync(fs, languages);
-            await fs.FlushAsync();
+            var fs = Configuration.LangFileInfo.OpenWrite();
+            var str = JsonSerializer.Serialize(languages);
+            var sw = new StreamWriter(fs){AutoFlush = true};
+            sw.Dispose();
+            fs.Dispose();
         }
 
         public static async Task<IEnumerable<Mod>> GetModsAsync()
