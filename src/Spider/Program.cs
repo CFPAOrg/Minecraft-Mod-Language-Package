@@ -29,17 +29,15 @@ namespace Spider
             Log.Information($"共收集到了{languages.Count}个语言文件.");
             foreach (var language in languages)
             {
-                string path;
                 try
                 {
-                    _ = languages.Single(_ => _.AssetDomain == language.AssetDomain);
-                    path = $"assets/{language.AssetDomain}/lang/";
+                    _  = languages.Single(_ => _.AssetDomain == language.AssetDomain);
                 }
                 catch
                 {
-                    path = $"assets/{language.AssetDomain}-{language.BaseMod.ShortUrl}/lang/";
+                    language.AssetDomain = $"{language.AssetDomain}-{language.BaseMod.ShortUrl}";
                 }
-
+                var path = $"assets/{language.AssetDomain}/lang/";
                 var directoryInfo = Directory.CreateDirectory(Path.Combine(Configuration.OutputPath, path));
                 if (!directoryInfo.EnumerateFiles().Any(_=>_.Name.EndsWith("zh_cn.lang")))
                 {
@@ -55,6 +53,9 @@ namespace Spider
                 mod.Dispose();
             }
             Log.CloseAndFlush();
+            await using var fs = Configuration.LangFileInfo.OpenWrite();
+            await JsonSerializer.SerializeAsync(fs, languages);
+            await fs.FlushAsync();
         }
 
         public static async Task<IEnumerable<Mod>> GetModsAsync()

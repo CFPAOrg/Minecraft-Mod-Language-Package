@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using Serilog;
 
 namespace Spider.Models
@@ -23,7 +24,9 @@ namespace Spider.Models
 
         public string Id { get; set; }
         public Mod BaseMod { get; }
-
+        [JsonPropertyName(nameof(ModId))]
+        public string ModId => BaseMod.ModId;
+        [JsonIgnore]
         public Stream Stream
         {
             get => _stream;
@@ -34,9 +37,9 @@ namespace Spider.Models
                 _stream = value;
             }
         }
-
+        [JsonPropertyName(nameof(AssetPath))]
         public string AssetPath { get; }
-
+        [JsonIgnore]
         public string PlainText { get; private set; }
 
         public string OutPutText
@@ -47,8 +50,8 @@ namespace Spider.Models
                 return _outputText;
             }
         }
-
-        public string AssetDomain { get; private set; }
+        [JsonPropertyName(nameof(AssetDomain))]
+        public string AssetDomain { get; set; }
 
         public bool IsInBlackList { get; set; }
         public List<LanguageEntry> LangEntries { get; set; } = new List<LanguageEntry>();
