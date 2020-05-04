@@ -14,6 +14,7 @@ namespace Spider.Models
         public Mod(long id)
         {
             Id = id;
+
         }
 
         public long Id { get; set; }
@@ -64,11 +65,7 @@ namespace Spider.Models
                 }
             }
             zipArchive.Dispose();
-            if (string.IsNullOrEmpty(modId))
-            {
-                return null;
-            }
-            return modId;
+            return string.IsNullOrEmpty(modId) ? null : modId;
         }
     }
 }

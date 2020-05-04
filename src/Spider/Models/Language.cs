@@ -21,10 +21,10 @@ namespace Spider.Models
             UpdateAssetDomain();
             BuildLangEntries();
         }
-
+        [JsonIgnore]
         public string Id { get; set; }
+        [JsonIgnore]
         public Mod BaseMod { get; }
-        [JsonPropertyName(nameof(ModId))]
         public string ModId => BaseMod.ModId;
         [JsonIgnore]
         public Stream Stream
@@ -37,7 +37,6 @@ namespace Spider.Models
                 _stream = value;
             }
         }
-        [JsonPropertyName(nameof(AssetPath))]
         public string AssetPath { get; }
         [JsonIgnore]
         public string PlainText { get; private set; }
@@ -50,10 +49,10 @@ namespace Spider.Models
                 return _outputText;
             }
         }
-        [JsonPropertyName(nameof(AssetDomain))]
         public string AssetDomain { get; set; }
-
+        [JsonIgnore]
         public bool IsInBlackList { get; set; }
+        [JsonIgnore]
         public List<LanguageEntry> LangEntries { get; set; } = new List<LanguageEntry>();
 
         private void UpdateAssetDomain()

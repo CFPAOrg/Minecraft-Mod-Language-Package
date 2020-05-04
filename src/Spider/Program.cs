@@ -7,6 +7,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -48,14 +49,16 @@ namespace Spider
                 Log.Information($"写入了一个语言文件到: {fullPath}");
             }
 
+            var sw = Configuration.LangFileInfo.CreateText();
+            var str = JsonSerializer.Serialize(languages);
+            sw.Write(str);
+            Log.Information($"写入了一个语言文件信息到: {Configuration.LangFileInfo.FullName}");
+            sw.Dispose();
             foreach (var mod in mods)
             {
                 mod.Dispose();
             }
             Log.CloseAndFlush();
-            await using var fs = Configuration.LangFileInfo.OpenWrite();
-            await JsonSerializer.SerializeAsync(fs, languages);
-            await fs.FlushAsync();
         }
 
         public static async Task<IEnumerable<Mod>> GetModsAsync()
@@ -84,9 +87,9 @@ namespace Spider
                 Log.Information($"跳过了一个黑名单中的模组:{mod.Name}");
                 mod.IsInBlackList = true;
                 return mod;
-            });
+            }).ToList();
             sw.Stop();
-            Log.Information($"成功获取所有模组信息，耗时{sw.ElapsedMilliseconds}ms.");
+            Log.Information($"成功获取所有{result.Count}个模组的信息，耗时{sw.ElapsedMilliseconds}ms.");
             return result;
         }
 
@@ -138,7 +141,14 @@ namespace Spider
                 }
                 else
                 {
-                    zipArchiveEntries.ForEach(s => mod.Languages.Add(new Language(mod, s.Open(), s.FullName)));
+                    foreach (var zipArchiveEntry in zipArchiveEntries)
+                    {
+                        var stream = new MemoryStream();
+                        var s = zipArchiveEntry.Open();
+                        s.CopyTo(stream);
+                        s.Dispose();
+                        mod.Languages.Add(new Language(mod, stream, zipArchiveEntry.FullName));
+                    }
                 }
 
                 sw.Stop();
