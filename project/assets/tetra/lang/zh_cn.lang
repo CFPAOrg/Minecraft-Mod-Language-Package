@@ -244,7 +244,7 @@ basic_handle/steel=钢手柄
 basic_handle/stick=劣质手柄
 basic_handle/treated_wood=防腐木手柄
 basic_handle_schema.description=坚固的手柄能够支持更重、更高级的工具头。
-basic_handle_schema.name=工具手柄
+basic_handle_schema.name=基础手柄
 basic_handle_schema.slot1=手柄材料
 basic_hilt/acacia=金合欢剑柄
 basic_hilt/baobab=猴面包木剑柄
@@ -483,7 +483,7 @@ forefinger_ring/steeleaf=钢叶圆环
 forefinger_ring/stone=圆石圆环
 forefinger_ring/thaumium=神秘圆环
 forefinger_ring/tin=锡圆环
-forefinger_ring_schema.description=在剑柄上附加圆环，能够有效提升控制力。攻击速度从 20%% 提升到 40%%，同时提升最小伤害。
+forefinger_ring_schema.description=在剑柄上附加圆环，能够有效提升控制力。在攻击太快时提升最小伤害。
 forefinger_ring_schema.name=食指圆环
 forefinger_ring_schema.slot1=材料
 grip_loop/acacia=金合欢圆圈
@@ -664,7 +664,7 @@ item.magmatic_cell.charge_empty=§c空
 item.magmatic_cell.charge_full=§a满
 item.magmatic_cell.charge_good=§a好
 item.magmatic_cell.charge_low=§e低
-item.magmatic_cell.name=岩浆单元
+item.magmatic_cell.name=热力单元
 item.modular.broken=损坏的
 item.modular.durability=耐久
 item.modular.empty_slot=空
@@ -825,13 +825,13 @@ reinforced_fuller/steeleaf=钢叶强化附层
 reinforced_fuller/stone=圆石强化附层
 reinforced_fuller/thaumium=神秘强化附层
 reinforced_fuller/tin=锡强化附层
-reinforced_fuller_schema.description=使用指定材料对其附加强化附层。提供额外的完整度能够降低物品损坏的几率（耐久 I），但是剑会更重，攻击速度更慢。
+reinforced_fuller_schema.description=使用指定材料对其附加强化镀层。提供额外的完整度并能够降低物品损坏的几率，但是剑会更重，攻击速度更慢。
 reinforced_fuller_schema.name=强化附层
 reinforced_fuller_schema.slot1=材料
 remove_schema.description=移除选定格子的组件。
 remove_schema.name=移除组件
 repair_action.label=修理
-repair_schema.description=使用各种材料修复耐久。
+repair_schema.description=修复损坏和磨损的模块。逐个浏览物品的模块，一次修复一个模块。
 repair_schema.name=修理
 serrated_blade_schema.description=给剑刃附上锯齿。拥有 30%% 的几率对目标造成 4 点的、持续 2 秒的流血伤害。对亡灵类生物无效。
 serrated_blade_schema.name=锯齿
@@ -1002,16 +1002,16 @@ strap_schema3.slot1=皮带材质
 strap_schema4.description=为腰带附加四层皮带，能够快速携带、访问工具或者其他物品。
 strap_schema4.name=四层皮带
 strap_schema4.slot1=皮带材质
-sword/basic_blade.name=剑
+sword/basic_blade.name=简易剑刃
 sword/blade=剑刃
 sword/fuller=附层
 sword/guard=护手
-sword/heavy_blade.name=大剑
+sword/heavy_blade.name=重型剑刃
 sword/hilt=剑柄
 sword/machete.name=弯刀
 sword/pommel=剑柄圆头
 sword/short_blade.name=短剑刃
-tempered_blade_schema.description=给剑刃附上回火，能够极大地提升硬度。能够无视护甲造成一半的伤害。
+tempered_blade_schema.description=对剑刃的尖端进行回火，能够极大地提升硬度。能够无视护甲造成一些伤害。
 tempered_blade_schema.name=回火
 tetra.general.geode_contents=晶洞内容
 tetra.general.geode_contents.tooltip=配置当晶洞被破坏时能够获得什么物品。配置数值分为三组：物品ID，最大数量，权重。最大数量指的是破坏晶洞时候能够获得的最大数量物品，权重标定着物品发现的几率。
@@ -1076,7 +1076,7 @@ wide_guard_schema.name=宽护手
 wide_guard_schema.slot1=护手材质
 workbench.schema_detail.back=返回
 workbench.schema_detail.craft=合成
-workbench.schema_list.empty=选定格子无升级可用。
+workbench.schema_list.empty=所选插槽没有可用的升级。
 hammer.unavailable=这个行为需要 %d 级的锤子
 axe=砍
 axe.unavailable=这个行为需要 %d 级的斧子
@@ -1100,12 +1100,12 @@ basic_hammer/steeleaf.name=锤
 basic_hammer/fierymetal.name=锤
 tile.block_geode.name=晶洞方块
 break_geode_action.label=破开
-workbench.schema_list.temporary=按物品栏中的物品提供
+workbench.schema_list.temporary=你背包中的可用物品
 tile.forged_vent.name=锻造通风口
 tile.forged_crate.name=锻造板条箱
 tile.forged_container.name=锻造容器
 forged_container.compartment=隔间 %s
-item.forged_bolt.name=弩箭
+item.forged_bolt.name=螺栓
 salvage_bolt_action.label=回收
 item.forged_beam.name=结构横梁
 salvage_beam_action.label=回收
@@ -1243,34 +1243,34 @@ toolbelt.effect.tooltip.storage.cellSocket=模块可以从这个位置中的电�
 ###############################
 # CAPABILITIES
 ###############################
-capability.hammer=锤打
-capability.hammer.requirement=这个动作需要一个 %d 级的锤
-capability.axe=砍伐
-capability.axe.requirement=这个动作需要一个 %d 级的斧
-capability.pickaxe=挖掘
-capability.pickaxe.requirement=这个动作需要一个 %d 级的镐
-capability.shovel=掘土
-capability.shovel.requirement=这个动作需要一个 %d 级的铲
-capability.cut=切断
-capability.cut.requirement=这个动作需要一个 %d 级的切割工具
-capability.pry=撬动
-capability.pry.requirement=这个动作需要一个 %d 级的撬棍工具
-capability.available=你有一个 %d 级的
+capability.hammer=锤
+capability.hammer.requirement=此操作需要%d级的锤
+capability.axe=斧
+capability.axe.requirement=此操作需要%d级的斧
+capability.pickaxe=镐
+capability.pickaxe.requirement=此操作需要%d级的镐
+capability.shovel=锹
+capability.shovel.requirement=此操作需要%d级的锹
+capability.cut=切割
+capability.cut.requirement=此操作需要%d级的切割工具
+capability.pry=撬
+capability.pry.requirement=此操作需要%d级的撬具
+capability.available=你有一个%d级的
 ###############################
 # STATS
 ###############################
 stats.durability=耐久
-stats.durability.tooltip=这个物品有 §e%s§r 的耐久
+stats.durability.tooltip=这个物品有§e%s§r点耐久
 stats.speed=速度
-stats.speed.tooltip=决定了物品可以被挥舞得多快\n\n§e%s §7秒的挥舞间隔\n§ex%s§7 的挖掘速度倍率
+stats.speed.tooltip=影响此物品的挥动速度\\n\\n§e%s§7秒间隔\\n§ex%s§7倍率
 stats.damage=伤害
 stats.damage.tooltip=造成 §e%s §r伤害
 stats.bleeding=流血
 stats.bleeding.tooltip=攻击生物时有 30%% 的概率使它们以 §e%s§r 的伤害持续流血 2 秒
 stats.backstab=背刺
-stats.backstab.tooltip=从后方攻击生物能造成 §e%s§r 的额外伤害
+stats.backstab.tooltip=从背后击中目标会造成致命一击，造成§e%s§r点额外伤害
 stats.armorPenetration=穿甲
-stats.armorPenetration.tooltip=攻击生物时总会造成 §e%s§r 的最低伤害，无视护甲
+stats.armorPenetration.tooltip=击中目标将造成至少§e%s§r点伤害，无视护甲
 stats.unarmoredDamage=切割
 stats.unarmoredDamage.tooltip=攻击无护甲的生物时造成 §e%s§r 的额外伤害
 stats.knockback=击退
@@ -1305,12 +1305,12 @@ stats.toolbelt.storage.tooltip=有 §e%s§r 个存储空间
 stats.toolbelt.quiver.tooltip=有 §e%s§r 个箭袋空间
 stats.toolbelt.booster=力量提升
 stats.toolbelt.booster.tooltip=提供跳跃提升和强度为 §e%s§r 的有限制的飞行
-stats.hammer.tooltip=这个物品可被用于捶打，可在合成和回收时使用\n\n§7锤等级：§e%s\n§7:s锤效率：§e%s
-stats.axe.tooltip=这个物品可被用于砍伐木头\n\n§7斧等级： §e%s\n§7:s斧效率：§e%s
-stats.pickaxe.tooltip=这个物品可被用于挖掘\n\n§7镐等级：§e%s\n§7:s镐效率：§e%s
-stats.shovel.tooltip=这个物品可被用于掘土\n\n§7铲子等级：§e%s\n§7:s铲子效率：§e%s
-stats.cut.tooltip=这个物品可被用于切割，可用于合成和破坏蜘蛛网与植物\n\n§7切割等级：§e%s\n§7:s切割效率：§e%s
-stats.pry.tooltip=这个物品可被用于撬开东西，可被用于回收\n\n§7撬棍等级：§e%s\n§7:s撬棍效率：§e%s
+stats.hammer.tooltip=这个物品可被用于捶打，可在合成和回收时使用\n\n§7锤等级：§e%s\n§7锤效率：§e%s
+stats.axe.tooltip=这个物品可被用于砍伐木头\n\n§7斧等级：§e%s\n§7斧效率：§e%s
+stats.pickaxe.tooltip=这个物品可被用于挖掘\n\n§7镐等级：§e%s\n§7镐效率：§e%s
+stats.shovel.tooltip=这个物品可被用于掘土\n\n§7铲子等级：§e%s\n§7铲子效率：§e%s
+stats.cut.tooltip=这个物品可被用于切割、合成或破坏蜘蛛网与植物\n\n§7切割等级：§e%s\n§7切割效率：§e%s
+stats.pry.tooltip=这个物品可被用于撬开东西，可被用于回收\n\n§7撬棍等级：§e%s\n§7撬棍效率：§e%s
 stats.integrity_usage=完整度使用：%s/%s
 stats.integrity_usage.tooltip=完整度由一些组件提供（通常在一些特定的位置），其它组件和大多数的改进需要完整度。
 ###############################
@@ -1378,9 +1378,9 @@ hilt_hone_speed_5_schema.description=进一步打磨组件的使用速度增益�
 hilt_hone/speed.name=打磨：速度
 hilt_hone/speed.description=增加使用速度
 blade_hone_serrated_2_schema.name=打磨：锯齿 II
-blade_hone_serrated_2_schema.description=打磨锯齿，增加造成的伤害到 2。
+blade_hone_serrated_2_schema.description=打磨锯齿，将造成的伤害提高到8点。
 blade_hone_serrated_3_schema.name=打磨：锯齿 III
-blade_hone_serrated_3_schema.description=进一步打磨锯齿，增加造成的伤害到 4。
+blade_hone_serrated_3_schema.description=进一步打磨锯齿，将造成的伤害提高到16点。
 blade_hone_tempered_2_schema.name=打磨：淬火 II
 blade_hone_tempered_2_schema.description=进一步淬火，增加穿透护甲的伤害量到 3。
 blade_hone_tempered_3_schema.name=打磨：淬火 III
@@ -1399,7 +1399,7 @@ wrap_hilt_hone_2_schema.description=进一步改良裹柄，增加伤害和使�
 # SWORD SOCKET
 ###############################
 sword_socket_schema.name=镶嵌
-sword_socket_schema.description=在剑中镶嵌一枚宝石，根据宝石提供不同的效果。\n\n§7无需修理。
+sword_socket_schema.description=在剑中镶嵌一枚宝石，根据宝石提供不同的效果。
 sword_socket_schema.slot1=宝石
 sword_socket/diamond=镶嵌 [§b钻石§r]
 sword_socket/emerald=镶嵌 [§a绿宝石§r]
@@ -1511,12 +1511,12 @@ handle_hone_speed_5_schema.description=进一步打磨组件的使用速度增�
 # DUPLEX SOCKET
 ###############################
 duplex_socket_schema.name=镶嵌
-duplex_socket_schema.description=在工具中镶嵌一枚宝石，根据宝石提供不同的效果。\n\n§7无需修理。
+duplex_socket_schema.description=在工具中镶嵌一枚宝石，根据宝石提供不同的效果。
 duplex_socket_schema.slot1=宝石
 duplex_socket/diamond=镶嵌 [§b钻石§r]
 duplex_socket/emerald=镶嵌 [§a绿宝石§r]
 duplex_socket/lapis=镶嵌 [§9青金石§r]
-stats.softStrike=软打击
+stats.softStrike=轻击
 ###############################
 # JOURNAL
 ###############################
@@ -1525,7 +1525,7 @@ journal.craft.breadcrumb.root=物品
 journal.craft.sword=剑刃
 journal.craft.toolbelt=工具带
 journal.craft.tool=工具
-journal.craft.slot=快卸销
+journal.craft.slot=插槽
 journal.craft.requirements=需求
 journal.craft.improvements=改进
 journal.craft.stats=属性
@@ -1533,7 +1533,163 @@ journal.craft.variants=变种
 stats.speed_normalized=速度
 stats.speed_normalized.tooltip=将攻击速度改变§e%s
 stats.armor=护甲
-stats.armor.tooltip=持有时提供§e%s§r的护甲
+stats.armor.tooltip=持有时提供§e%s§r点护甲值
 stats.integrity=完整度
 stats.integrity.tooltip_positive=这个组件提供 §e%s§r 的完整度
 stats.integrity.tooltip_negative=这个组件需要 §e%s§r 的完整度
+###############################
+# CONFIG TOOLTIPS
+###############################
+tetra.general.geodegenerate=生成晶洞玉石
+tetra.general.geodegenerate.tooltip=切换关闭以禁用生成晶洞玉石。已经生成的区块可能仍包含晶洞玉石§o需要重启。§r
+tetra.general.generatefeatures=生成结构
+tetra.general.generatefeatures.tooltip=启用生成地形结构，例如古代遗迹。禁用后将不会删除已经生成的结构。§o需要重启。§r
+tetra.general.maxfeaturedepth=最大结构深度
+tetra.general.maxfeaturedepth.tooltip=用于限制结构生成器递归到结构子级中的深度，有助于避免递归循环和在3d-party生成结构中级联世界生成。
+tetra.general.development=开发模式
+tetra.general.development.tooltip=将tetra置于开发模式，导致几个配置文件被连续重新加载并初始化渲染结构助手。启用将对性能产生负面影响。§o需要重启。§r
+tetra.general.moduleprogression=模块进度
+tetra.general.moduleprogression.tooltip=允许四项物品在使用一定时间后“升级”，允许玩家选择不同的方式来“磨练”该物品上的1个模块。一段时间后，主要模块也会稳定下来，从而提高其完整性。
+tetra.general.workbenchdroptable=工作台掉落
+tetra.general.workbenchdroptable.tooltip=启用会导致工作台在破坏时掉落自身，而不是掉落原版工作台。
+tetra.general.settlelimitbase=镶嵌极限基数
+tetra.general.settlelimitbase.tooltip=组件镶嵌所需的使用次数的基准值。
+tetra.general.settlelimitlevelmultiplier=镶嵌极限等级乘数
+tetra.general.settlelimitlevelmultiplier.tooltip=用于镶嵌极限的等级乘数。值为3将导致已经镶嵌一次的模块在重新镶嵌之前需要3倍的使用量。
+tetra.general.settlelimitdurabilitymultiplier=稳定极限耐久性乘数
+tetra.general.settlelimitdurabilitymultiplier.tooltip=耐久性乘数用于稳定极限。值为1会使具有75个耐久性的模块在沉降之前需要再使用75次。
+tetra.general.honeswordbase=磨砺极限基数 - 剑
+tetra.general.honeswordbase.tooltip=可以磨剑之前所需使用次数的基本值。
+item.journal.tooltip1=轻触一下，球体便将图和文字投射到空中
+item.journal.tooltip2=[右键使用]
+###############################
+# WORKBENCH
+###############################
+workbench.slot_detail.details_tab=详情
+workbench.slot_detail.craft_tab=合成
+workbench.slot_detail.tweak_tab=调整
+workbench.slot_detail.tweak_apply=应用
+workbench.module_detail.empty=空槽
+workbench.module_detail.not_tweakable=调整不可用
+workbench.schema_detail.experience=此操作需要%d经验等级
+###############################
+# STATS
+###############################
+stats.efficiency_suffix=效率
+stats.strength_suffix=力量
+stats.tier_suffix=层数
+stats.level_suffix=等级
+stats.toolbelt.quickslot.tooltip=有§e%s§r个快速插槽
+stats.criticalStrike=暴击
+stats.criticalStrike.tooltip=击中目标或破坏方块时有一定几率暴击。\\n\\n§e%s§7的概率造成§e%s§7伤害\\n§e%s§7的概率立即破坏方块\\n\\n§7对于异常坚硬的方块不会产生效果
+stats.intuit=直觉
+stats.intuit.tooltip=杀死目标或破坏方块所获得的经验以§e%sx§r的比例是磨砺值增加
+stats.magicCapacity=魔力容量
+stats.magicCapacity.tooltip=模块可以容纳的魔力数量，这种能力可以通过附魔之类的升级来应用。\\n\\n§7魔力容量：§e%s
+item.modular.magic_capacity.label=魔力
+item.modular.repair_material.label=维修材料：
+item.modular.repair_material.empty=不需要维修
+item.pristine_diamond.name=原始钻石
+shatter_diamond_action.label=打碎
+item.pristine_emerald.name=原始绿宝石
+shatter_emerald_action.label=打碎
+item.pristine_lapis.name=原始青金石
+shatter_lapis_action.label=打碎
+tile.transfer_unit.name=传输单元
+tile.core_extractor.name=核心提取器
+tile.extractor_piston.name=提取活塞
+tile.extractor_pipe.name=提取管道
+tile.seeping_bedrock.name=渗流基岩
+item.modular.synergy_indicator.header=协同奖励：
+destabilized/fire_aspect.name=§5不稳定：火焰附加
+destabilized/fire_aspect.description=使用这个可能会让你着火，在高温环境中更严重
+destabilized/looting.name=§5不稳定：抢夺
+destabilized/looting.description=降低抢夺的效果
+destabilized/unbreaking.name=§5不稳定：耐久
+destabilized/unbreaking.description=降低耐久的效果
+destabilized/sharpness.name=§5不稳定：锋利
+destabilized/sharpness.description=减少造成的伤害
+destabilized/smite.name=§5不稳定：亡灵杀手
+destabilized/smite.description=降低亡灵杀手的效果
+destabilized/bane_of_arthropods.name=§5不稳定：节肢杀手
+destabilized/bane_of_arthropods.description=降低节肢杀手的效果
+destabilized/knockback.name=§5不稳定：击退
+destabilized/knockback.description=降低击退的效果
+destabilized/mending.name=§5不稳定：经验修补
+destabilized/mending.description=降低经验修补的效果
+###############################
+# SYNERGY
+###############################
+item.modular.synergy_indicator.empty=该模块没有潜在的协同增益
+cleanse_schema.name=净化
+cleanse_schema.description=净化不稳定所带来的负面影响。\\n\\n经验成本会因魔力容量和不稳定效果的增加而增加。
+sword/basic_blade.item_name=剑
+sword/basic_blade.description=具有平均伤害、攻击速度和完整性使用的简易剑刃。
+sword/basic_hilt.name=简易剑柄
+sword/basic_hilt.description=一个简易剑柄。剑柄是剑完整度的主要来源。
+###############################
+# DECORATIVE POMMEL
+###############################
+sword/decorative_pommel.name=装饰性剑柄圆头
+sword/decorative_pommel.description=一种装饰性剑柄圆头，它提供了部分耐久度，但是没有功能性。
+###############################
+# MAKESHIFT GUARD
+###############################
+sword/makeshift_guard.name=简易护手
+sword/makeshift_guard.description=剑护手，其构造为挥舞的手提供了少许保护。
+sword/wide_guard.name=宽护手
+sword/wide_guard.description=保护挥剑手的宽护手。当剑握在主手或副手中时，会提供额外的护甲。
+sword/socket.name=插槽
+sword_socket/amber=镶嵌[§6琥珀§r]
+sword_socket/pristine_diamond=镶嵌[§b钻石+§r]
+sword_socket/pristine_emerald=镶嵌[§a绿宝石+§r]
+sword_socket/pristine_lapis=镶嵌[§9青金石+§r]
+sword/counterweight.name=平衡锤
+sword/counterweight.description=附在尾部的配重。如果配重消耗的完整性与所有其他模块的总和相同，那么攻击速度将大大提高。如果完整性使用不同，增益将减少，越大的差异会减少更多增益，甚至可能降低攻击速度。
+sword/reinforced_fuller.name=强化附层
+sword/reinforced_fuller.description=附加强化附层可以提供额外的完整度并能够降低物品损坏的几率，但是剑会更重，攻击速度更慢。
+###############################
+# SWORD BINDING
+###############################
+sword_binding_schema.name=镶边
+sword_binding_schema.description=通过用绳子或皮包裹剑柄或使用完全不同的材料和方法来加强剑柄和剑刃之间的连接。
+sword_binding_schema.slot1=材料
+sword/binding.name=镶边
+sword_binding/string=线镶边
+sword_binding/string.description=绑紧的线加强了剑刃与剑柄之间的连接。
+sword_binding/leather=皮革镶边
+sword_binding/leather.description=绑紧的皮革加强了剑刃与剑柄之间的连接。
+sword_binding/hide=皮革镶边
+sword_binding/hide.description=绑紧的皮革加强了剑刃与剑柄之间的连接。
+sword_binding/vine=藤蔓镶边
+sword_binding/vine.description=绑紧的藤蔓加强了剑刃与剑柄之间的连接。
+sword_binding/bolt=螺栓镶板
+sword_binding/bolt.description=可调节螺栓将剑刃连接到剑柄上。
+sword_tweak/binding_bolt.label=紧固螺栓
+sword_tweak/binding_bolt.tooltip=§e拧紧§r螺栓，使剑更坚硬，增加伤害。\\n§e松开§r螺栓，使剑更有韧性，从而有效地提高耐用性。
+sword_tweak/binding_bolt.left=松弛
+sword_tweak/binding_bolt.right=紧绷
+sword/forefinger_ring.name=食指圆环
+sword/forefinger_ring.description=在剑柄上附加圆环，能够有效提升控制力。在攻击太快时提升最小伤害。
+sword/grip_loop.name=控制圆圈
+sword/grip_loop.description=在剑柄上附加圆环，能够有效提升控制力。在攻击太快时提升最小伤害。
+sword/short_blade.description=比常规剑刃更短、更轻的剑刃。能够提供更高的攻速，但是每次攻击的伤害要稍小一些。
+sword/short_blade.item_name=短剑刃
+sword/heavy_blade.description=重型剑刃牺牲了攻击速度以增加伤害。在完全蓄力时有更大的攻击范围。
+sword/heavy_blade.item_name=大剑
+sword/machete.description=一种弯刀，能够砍掉一大片区域内的植物。它造成的伤害中等，攻速也中等。\\n\\n弯刀和大部分工具工作方式都不太相同，能够瞬间采掘方块，但是冷却时间摇摆不定。
+sword/machete.item_name=弯刀
+duplex/basic_handle.name=基础手柄
+duplex/basic_handle.description=基础工具手柄。手柄是工具完整度的主要来源。
+duplex/socket.name=镶嵌
+duplex_socket/amber=镶嵌[§6琥珀§r]
+duplex_socket/pristine_diamond=镶嵌[§b钻石+§r]
+duplex_socket/pristine_emerald=镶嵌[§a绿宝石+§r]
+duplex_socket/pristine_lapis=镶嵌[§9青金石+§r]
+###############################
+# DUPLEX BINDING
+###############################
+duplex_binding_schema.name=镶边
+duplex_binding_schema.description=用绳子或皮带将工具头绑到手柄上，或使用其它的材料和方法将其绑到手柄上。
+duplex_binding_schema.slot1=材料
+duplex/binding.name=镶边
