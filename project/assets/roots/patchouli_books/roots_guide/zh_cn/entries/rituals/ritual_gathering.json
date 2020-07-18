@@ -1,0 +1,35 @@
+{
+  "name": "集聚",
+  "icon": "roots:ritual_gathering",
+  "category": "rituals",
+  "advancement": "roots:wildewheet",
+  "flag": "roots:ritual_gathering",
+  "pages": [
+    {
+      "type": "text",
+      "text": "仪式将会以一定的时间间隔搜寻并拾捡附近的物品，并将这些物品储存至柴堆下方的容器中。$(br2)$(standing_stones) $(l:rituals/ritual_gathering#multiblock)这一仪式需要石柱进行辅助。$()"
+    },
+    {
+      "type": "pyre_template",
+      "ritual": "ritual_gathering"
+    },
+    {
+      "type": "multiblock",
+      "anchor": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:bonfire",
+          "R": "roots:runestone",
+          "C": "roots:chiseled_runestone",
+          "I": "minecraft:chest"
+        },
+        "pattern": [
+          ["       ","       ","       ","       ","       ","       ","       "],
+          ["   C   ","       ","       ","       ","       ","       ","       "],
+          ["   R   ","       ","       ","       ","       ","       ","       "],
+          ["   R   ","       ","       ","   0I  ","       ","       ","       "]
+        ]
+      }
+    }
+  ]
+}

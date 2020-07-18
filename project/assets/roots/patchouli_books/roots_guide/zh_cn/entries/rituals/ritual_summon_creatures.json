@@ -1,0 +1,42 @@
+{
+  "name": "召唤生物",
+  "icon": "roots:ritual_summon_creatures",
+  "category": "rituals",
+  "advancement": "roots:wildewheet",
+  "flag": "roots:ritual_summon_creatures",
+  "pages": [
+    {
+      "type": "text",
+      "text": "从彼岸中召回死去的灵魂，并将其将其遣返至世界中的一具肉体内。被召来的生物的种类，取决于附近的$(l:apparatus/offering_plate)供奉盘$()中摆放的物品，($(l:rituals/ritual_summon_creatures#multiblock)参看下面的布局$())。$(br2)$(warning) 遗憾的是，由于本书的限制，完整的生物以及物品列表需要在JEI中查看。"
+    },
+    {
+      "type": "pyre_template",
+      "ritual": "ritual_summon_creatures"
+    },
+    {
+      "type": "multiblock",
+      "anchor": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:bonfire",
+          "W": "roots:offertory_plate[facing=west]",
+          "E": "roots:offertory_plate[facing=east]",
+          "N": "roots:offertory_plate[facing=north]",
+          "S": "roots:offertory_plate[facing=south]"
+        },
+        "pattern": [
+          ["       ","       ","       ","       ","       ","       ","       "],
+          ["       ","       ","       ","       ","       ","       ","       "],
+          ["   W   ","       ","       ","N  0  S","       ","       ","   E   "]
+        ]
+      },
+      "text": "最多只能在周围摆放10个供奉盘(最远距离为6格)。"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "apparatus/offering_plate"
+      ]
+    }
+  ]
+}
