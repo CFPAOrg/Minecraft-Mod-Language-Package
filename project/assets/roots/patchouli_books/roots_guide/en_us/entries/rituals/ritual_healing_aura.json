@@ -1,0 +1,36 @@
+{
+  "name": "Healing Aura",
+  "icon": "roots:ritual_healing_aura",
+  "category": "rituals",
+  "advancement": "roots:pyre",
+  "flag": "roots:ritual_healing_aura",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Nearby creatures are healed back to full health while in the proximity of this short ritual.$(br2)$(warning) Hostile creatures will also be healed. Be wary!$(br2)$(standing_stones) $(l:rituals/ritual_healing_aura#multiblock)This ritual requires standing stones.$()"
+    },
+    {
+      "type": "pyre_template",
+      "ritual": "ritual_healing_aura"
+    },
+    {
+      "type": "multiblock",
+      "anchor": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:bonfire",
+          "R": "roots:runestone",
+          "C": "roots:chiseled_runestone",
+          "L": "minecraft:leaves[variant=birch]",
+          "W": "minecraft:log[variant=birch]"
+        },
+        "pattern": [
+          ["       ","       ","       ","       ","       ","   L   ","       "],
+          ["       ","   C   ","       ","       ","  LLL  ","  LLL  ","  LLL  "],
+          ["       ","   R   ","       ","       ","       ","   W   ","       "],
+          ["       ","   R   ","       ","   0   ","       ","   W   ","       "]
+        ]
+      }
+    }
+  ]
+}

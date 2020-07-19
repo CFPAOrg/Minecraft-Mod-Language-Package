@@ -1,0 +1,33 @@
+{
+  "name": "动物采收",
+  "icon": "roots:ritual_animal_harvest",
+  "category": "rituals",
+  "advancement": "roots:wildewheet",
+  "flag": "roots:ritual_animal_harvest",
+  "pages": [
+    {
+      "type": "text",
+      "text": "站在仪式附近的动物会愿意放弃掉自身的部分肉体精华，且这一过程不会对动物造成伤害。$(info)受到仪式影响的动物会短暂地发光。$(br2)$(standing_stones) $(l:rituals/ritual_animal_harvest#multiblock)这一仪式需要使用石柱。$()"
+    },
+    {
+      "type": "pyre_template",
+      "ritual": "ritual_animal_harvest"
+    },
+    {
+      "type": "multiblock",
+      "anchor": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:bonfire",
+          "R": "roots:runestone",
+          "C": "roots:chiseled_runestone"
+        },
+        "pattern": [
+          ["   C   ","       ","       ","C     C","       ","       ","       "],
+          ["   R   ","       ","       ","R     R","       ","       ","       "],
+          ["   R   ","       ","       ","R  0  R","       ","       ","       "]
+        ]
+      }
+    }
+  ]
+}
