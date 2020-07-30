@@ -121,6 +121,12 @@ namespace Spider.Models
                 }
 
                 var index = _.IndexOf('=');
+                if(string.IsNullOrWhiteSpace(_[(index + 1)..]))
+                {
+                    LangEntries.Add(LanguageEntry.EmptyLanguageEntry);
+                    Log.Information($"移除值为空的条目:{_[..index]}");
+                    return;
+                }
                 LangEntries.Add(new LanguageEntry(_[..index], _[(index + 1)..], false));
             });
             LangEntries.Where(_ => !_.IsComment).ToList().ForEach(_ =>

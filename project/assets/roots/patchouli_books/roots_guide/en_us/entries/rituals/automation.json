@@ -1,0 +1,54 @@
+{
+    "name": "Ritual Automation",
+    "icon": "roots:bonfire",
+    "category": "rituals",
+    "advancement": "roots:pyre",
+    "priority": true,
+    "sortnum": 0,
+    "pages": [
+        {
+          "type": "text",
+          "text": "Once a ritual has been begun on a Pyre, the Pyre will begin looking for the same ingredients (or similar where the ore dictionary is used) in inventories below it. If found, these will be inserted into the Pyre.$(br2)At the end of a ritual, if the Pyre contains the items to repeat itself, the fire does not go out but starts anew, consuming the items."
+        },
+        {
+          "type": "multiblock",
+          "name": "Chest Location",
+          "multiblock": {
+            "mapping": {
+              "0": "minecraft:chest",
+              "R": "roots:bonfire"
+            },
+            "pattern": [
+              [" ", "R", " "],
+              [" ", "0", " "],
+              [" ", " ", " "],
+              [" ", " ", " "]
+            ]
+          },
+          "text": "Any inventory will suffice, be it vanilla or modded."
+        },
+      {
+        "type": "text",
+        "text": "In addition to consuming items, the Pyre will also attempt to consume nearby fire in order to light itself.$(br2)Given the correct ingredients, the decay of nearby fire will be hastened and the ritual will be started.$(br2)Fire can be placed anywhere in a 3x3x3 cube around the Pyre, as demonstrated in the following visualisation.$(br2)$(warning) Currently only vanilla fire is supported."
+      },
+      {
+          "type": "multiblock",
+          "name": "Fire Locations",
+          "multiblock": {
+            "mapping": {
+              "0": "roots:bonfire",
+              "G": "minecraft:grass",
+              "I": "minecraft:iron_bars"
+            },
+            "pattern": [
+              ["     ", "     ", "     "],
+              [" III ", " III ", " III "],
+              [" III ", " I0I ", " III "],
+              [" GGG ", " GGG ", " GGG "],
+              ["     ", "     ", "     "]
+            ]
+          },
+          "text": "All positions of bars & grass are places the Pyre will look for fire."
+      }
+    ]
+}
