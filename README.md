@@ -18,7 +18,7 @@
 
 ## 授权
 
-本作品采用 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）进行许可，协议全文可[在此]找到(./LICENSE)。<br>
+本作品采用 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）进行许可，协议全文可 [在此] 找到(./LICENSE)。<br>
 
 ## 使用方式
 
@@ -33,7 +33,7 @@
 其他版本目前还暂时没有涉足计划（不过 1.7.10 应该是不会做了）。
 
 关于具体的宣传，可以参见 [MCBBS 推广宣传帖](http://www.mcbbs.net/thread-774087-1-1.html)；<br>
-关于整个事情的经过，可以查看酒石酸菌的[博客帖子](https://baka943.coding.me/2018/01/03/2018-01-03-AnIntroForWeblate/);
+关于整个事情的经过，可以查看酒石酸菌的 [博客帖子](https://baka943.coding.me/2018/01/03/2018-01-03-AnIntroForWeblate/);
 
 **你们是怎么做到流水线式的翻译的？**<br>
 emmmm，原理其实很简单。<br>
@@ -53,6 +53,6 @@ emmmm，原理其实很简单。<br>
 感谢 `雪尼`、`yuanjie000` 对 weblate 管理的维护和帮助； 感谢`卡米西村`各位提供的技术支持和服务器，能够使爬虫运行。<br>
 感谢本项目的最初贡献者 `Aemande123`，`DYColdWind`，`Snownee`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`，`luckyu19` 提供的汉化。（排名不分先后）<br>
 感谢玩家 `R_liu` 提供的拔刀剑本地化；<br>
-资源包中镶嵌了 `3TUSK` 提供的[全角标点修复文件](./project/assets/minecraft/readme.md)；<br>
+资源包中镶嵌了 `3TUSK` 提供的 [全角标点修复文件](./project/assets/minecraft/readme.md)；<br>
 最后感谢那些参与翻译，并致力于本地化推广的各位玩家，你们辛苦了。<br>
-在本页面的 [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) 页面可以查看所有翻译贡献者。
+在本仓库的 [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) 页面可以查看所有翻译贡献者。
