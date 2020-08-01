@@ -14,7 +14,7 @@
 
 直接向本仓库提交 PR 亦可；
 
-翻译还是需要注意一些事项，具体参见：[《Minecraft Mod简体中文翻译规范与指南》](https://github.com/Meow-J/Mod-Translation-Styleguide/blob/master/README.md)。
+你在翻译时, 应先了解需注意的有关事项，具体参见：[《Minecraft Mod简体中文翻译规范与指南》](https://github.com/Meow-J/Mod-Translation-Styleguide/blob/master/README.md)。
 
 ## 授权
 
