@@ -16,7 +16,6 @@ item.qmd.dust.calcium.name=钙粉
 item.qmd.dust.strontium.name=锶粉
 item.qmd.dust2.yttrium.name=钇粉
 item.qmd.dust2.neodymium.name=钕粉
-item.qmd.dust2.germanium.name=锗粉
 
 item.qmd.ingot.tungsten.name=钨锭
 item.qmd.ingot.niobium.name=铌锭
@@ -35,7 +34,28 @@ item.qmd.ingot.calcium.name=钙锭
 item.qmd.ingot.strontium.name=锶锭
 item.qmd.ingot2.yttrium.name=钇锭
 item.qmd.ingot2.neodymium.name=钕锭
-item.qmd.ingot2.germanium.name=锗锭
+
+item.qmd.waste_fission.light.name=低危裂变废料
+item.qmd.waste_fission.heavy.name=高危裂变废料
+item.qmd.waste_spallation.californium.name=锎散裂废料
+item.qmd.waste_spallation.berkelium.name=锫散裂废料
+item.qmd.waste_spallation.curium.name=锔散裂废料
+item.qmd.waste_spallation.americium.name=镅散裂废料
+item.qmd.waste_spallation.plutonium.name=钚散裂废料
+item.qmd.waste_spallation.neptunium.name=镎散裂废料
+item.qmd.waste_spallation.uranium.name=铀散裂废料
+item.qmd.waste_spallation.protactinium.name=镤散裂废料
+item.qmd.waste_spallation.thorium.name=钍散裂废料
+item.qmd.waste_spallation.radium.name=镭散裂废料
+item.qmd.waste_spallation.polonium.name=钋散裂废料
+item.qmd.waste_spallation.bismuth.name=铋散裂废料
+item.qmd.waste_spallation.lead.name=铅散裂废料
+item.qmd.waste_spallation.gold.name=金散裂废料
+item.qmd.waste_spallation.platinum.name=铂散裂废料
+item.qmd.waste_spallation.iridium.name=铱散裂废料
+item.qmd.waste_spallation2.osmium.name=锇散裂废料
+item.qmd.waste_spallation2.tungsten.name=钨散裂废料
+item.qmd.waste_spallation2.hafnium.name=铪散裂废料
 
 item.qmd.ingot_alloy.tungsten_carbide.name=碳化钨锭
 item.qmd.ingot_alloy.niobium_tin.name=铌锡锭
@@ -53,15 +73,11 @@ item.qmd.source_sodium_22.name=钠-22源
 item.qmd.source_cobalt_60.name=钴-60源
 item.qmd.source_iridium_192.name=铱-192源
 
-
 item.qmd.isotope.sodium_22.name=钠-22
 item.qmd.isotope.promethium_147.name=钷-147
 item.qmd.isotope.magnesium_26.name=镁-26
 item.qmd.isotope.magnesium_24.name=镁-24
 item.qmd.isotope.beryllium_7.name=铍-7
-item.qmd.isotope.lead_210.name=铅-210
-item.qmd.isotope.lead_210.name=铅-210
-# Repetitive?
 item.qmd.isotope.vanadium_50.name=钒-50
 item.qmd.isotope.strontium_90.name=锶-90
 item.qmd.isotope.uranium_234.name=铀-234
@@ -119,6 +135,7 @@ tile.qmd.accelerator_casing.name=加速器外壳
 tile.qmd.accelerator_glass.name=透明加速器外壳
 tile.qmd.accelerator_vent.name=加速器冷却液出入口
 tile.qmd.accelerator_beam_port.name=加速器波束端口
+tile.qmd.accelerator_synchrotron_port.name=加速器同步接口
 tile.qmd.accelerator_energy_port.name=加速器能量端口
 tile.qmd.accelerator_source.name=加速器离子源
 tile.qmd.accelerator_cavity.copper.name=铜RF腔
@@ -199,10 +216,6 @@ tile.qmd.argon_collector.name=氩收集器
 tile.qmd.beamline.desc=运输粒子。
 tile.qmd.rtg.desc=持续产出%s。
 
-# I'm not sure here, but by infering from the message Tom sent on Discord those "a"s should be "at least one"s.
-# List of those ones:
-# water iron end_stone lead quartz copper purpur lapis
-# nether_brick lithium magnesium boron enderium
 tile.qmd.accelerator.cooler.cooling_rate=冷却速率：
 tile.qmd.accelerator.cooler.water.desc=必须接触至少一个有效的RF腔。
 tile.qmd.accelerator.cooler.iron.desc=必须接触至少一个有效的电磁铁。
@@ -331,6 +344,7 @@ qmd.multiblock_validation.accelerator.ring.must_be_dipole_in_conner=加速器的
 qmd.multiblock_validation.accelerator.ring.must_be_dipole=波束端口通入处必须有一个双极磁铁。
 qmd.multiblock_validation.accelerator.ring.beam_port_must_connect=必须有一个波束方块与波束端口相连接。
 qmd.multiblock_validation.accelerator.ring.must_have_io=必须只有一个模式为输入的波束端口，一个模式为输出的波束端口。
+qmd.multiblock_validation.accelerator.ring.to_many_synchrotron_ports=只能有一个同步接口。
 
 qmd.multiblock_validation.beam_director.must_be_cube=波束转向器必须是一个5x5x5的，内有一个双极磁铁的立方体。
 qmd.multiblock_validation.beam_director.must_be_beam=中间必须有一个波束方块。
@@ -430,7 +444,12 @@ qmd.particle.antitriton.name=反氚核
 qmd.particle.boron_ion.name=硼离子
 qmd.particle.kaon_plus.name=k介子 +
 qmd.particle.kaon_naught.name=k介子 0
+qmd.particle.antikaon_naught.name=反k介子 0
 qmd.particle.kaon_minus.name=k介子 -
+qmd.particle.eta.name=η介子
+qmd.particle.eta_prime.name=η素介子
+qmd.particle.charmed_eta.name=η粲介子
+qmd.particle.bottom_eta.name=η底介子
 
 //粒子描述
 qmd.particle.up_quark.desc=上夸克是次轻的夸克。上下夸克结合在一起以构成质子和中子。
@@ -476,11 +495,15 @@ qmd.particle.pion_naught.desc=π介子是让核子组在一起的粒子。尽管
 qmd.particle.pion_minus.desc=π介子是让核子组在一起的粒子。尽管它们本身并未着色，它们之间仍然分布着“残余的”强力以组合核子。
 qmd.particle.triton.desc=氚核是氚原子的原子核。
 qmd.particle.antitriton.desc=反氚核是氚核对应的反物质。
-
 qmd.particle.boron_ion.desc=缺少一个电子的硼原子。
-qmd.particle.kaon_plus.desc=k介子是带有奇异性的介子。
-qmd.particle.kaon_naught.desc=k介子是带有奇异性的介子。
-qmd.particle.kaon_minus.desc=k介子是带有奇异性的介子。
+qmd.particle.kaon_plus.desc=k介子 +是奇异性为1的介子。
+qmd.particle.kaon_naught.desc=k介子 0是奇异性为1的介子。
+qmd.particle.antikaon_naught.desc=反k介子 0是奇异性为-1的介子。
+qmd.particle.kaon_minus.desc=k介子 -是奇异性为1的介子。
+qmd.particle.eta.desc=η介子是无味介子，也即奇异性与味量子数皆为0的介子。
+qmd.particle.eta_prime.desc=η介子是无味介子，也即奇异性与味量子数皆为0的介子。
+qmd.particle.charmed_eta.desc=η介子是无味介子，也即奇异性与味量子数皆为0的介子。
+qmd.particle.bottom_eta.desc=η介子是无味介子，也即奇异性与味量子数皆为0的介子。
 
 //粒子堆叠信息
 gui.qmd.particlestack.amount=数量：%s
@@ -537,7 +560,7 @@ gui.qmd.config.accelerator.accelerator_ring_max_size=同步加速器最大尺寸
 gui.qmd.config.accelerator.accelerator_ring_max_size.comment=同步加速器最大的长度（包括外壳），范围：[11,255]。
 
 gui.qmd.config.accelerator.beam_attenuation_rate=波束衰减率
-gui.qmd.config.accelerator.beam_attenuation_rate.comment=粒子波束每经过一个方块的衰减量（单位：focus），范围：[0,255]。
+gui.qmd.config.accelerator.beam_attenuation_rate.comment=粒子波束每经过一个方块的衰减量，范围：[0,255]。
 
 gui.qmd.config.accelerator.beam_diverter_radius=波束转向器半径
 gui.qmd.config.accelerator.beam_diverter_radius.comment=波束转向器在计算中有效的半径，范围：[0,1000]。
@@ -626,5 +649,5 @@ gui.qmd.config.tools.tool_speed.comment=不同方块的挖掘速度。顺序：�
 gui.qmd.config.tools.tool_attack_damage=攻击伤害
 gui.qmd.config.tools.tool_attack_damage.comment=每一击造成的伤害。顺序：碳化钨。
 
-gui.qmd.config.tools.tool_enchantability=附魔
+gui.qmd.config.tools.tool_enchantability=可附魔性
 gui.qmd.config.tools.tool_enchantability.comment=附魔的品质。顺序：碳化钨。
