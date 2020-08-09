@@ -30,7 +30,7 @@ function Get-ModId {
                 $modIds+=""
             }
         }
-        $jobs=+$job
+        $jobs+=$job
         Receive-Job $jobs -Wait
         return $modIds
     }

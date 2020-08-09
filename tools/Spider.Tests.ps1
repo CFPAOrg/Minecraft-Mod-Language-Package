@@ -10,11 +10,11 @@ Describe "Spider" {
         $filePaths
         It "Test Get-ModFile" {
             $filePaths = Get-ModFile -ModCount 10 -GameVersion '1.12.2'
-            Get-ModId -Path $filePaths
+            $filePaths|Out-Host
         }
 
         It "Test Get-ModId" {
-            
+            Get-ModId -Path $filePaths|Out-Host
         }
     }
 }
