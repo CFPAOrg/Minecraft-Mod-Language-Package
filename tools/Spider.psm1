@@ -36,7 +36,7 @@ function Get-ModId {
         #Receive-Job $jobs -Wait
     }
     return $modIds
-    Write-Host $modIds
+    # Write-Host $modIds
 }
 function Get-ModFile {
     param (
