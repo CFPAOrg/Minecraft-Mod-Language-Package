@@ -1,7 +1,7 @@
 # TODO
 function DecompileJar {
     param (
-        [string]$file
+        [string]$File
     )
-    java -jar cfr.jar $file
+    java -jar cfr.jar $File
 }
