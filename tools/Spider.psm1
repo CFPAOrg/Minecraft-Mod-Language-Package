@@ -1,7 +1,7 @@
 
 function Start-Spider {
     param ()
-    $paths = Get-ModFile -ModCount 1000 -GameVersion '1.12.2'
+    $paths = Get-ModFile -ModCount 100 -GameVersion '1.12.2'
     Get-ModId -Path $paths | Out-Host
 }
 
