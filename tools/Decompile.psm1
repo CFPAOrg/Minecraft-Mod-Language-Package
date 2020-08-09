@@ -3,5 +3,7 @@ function DecompileJar {
     param (
         [string]$File
     )
-    java -jar cfr.jar $File
+    foreach ($FilePath in $File) {
+        java -jar "./tools/cfr-0.150.jar" $FilePath
+    }
 }
