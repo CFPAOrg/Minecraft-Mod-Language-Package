@@ -19,7 +19,7 @@ function Get-ModId {
             [bool]$isMatch
             while (-not $reader.EndOfStream) {
                 $line = $reader.ReadLine()
-                if ($regex.IsMatch($line) {
+                if ($regex.IsMatch($line)) {
                     $match = $regex.Match($line)
                     $modIds+=$match.Value
                     $isMatch = $true
