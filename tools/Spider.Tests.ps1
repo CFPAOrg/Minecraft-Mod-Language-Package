@@ -1,5 +1,4 @@
 Import-Module ./tools/Spider.psm1
-Import-Module ./tools/Decompile.psm1
 
 Describe "Spider" {
     InModuleScope Spider {
@@ -9,7 +8,7 @@ Describe "Spider" {
         #     $actual | Should -Be $expected
         # }
         It "Test Get-ModFile" {
-            Get-ModFile -ModCount 10 -GameVersion '1.12.2' | DecompileJar
+            (Get-ModFile -ModCount 10 -GameVersion '1.12.2')[0]|Get-ModId
         }
     }
 }
