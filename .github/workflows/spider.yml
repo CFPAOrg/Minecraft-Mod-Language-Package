@@ -14,16 +14,9 @@ jobs:
         with:
           java-version: 1.8
 
-      # - name: Download GitHub Release
-      #   uses: Legion2/download-release-action@v2.1.0
-      #   with:
-      #     repository: leibnitz27/cfr
-      #     tag: "0.150"
-      #     file: cfr-0.150.jar
       - uses: robinraju/release-downloader@v1
         with:
           repository: "leibnitz27/cfr"
-          latest: true
           tag: '0.150'
           fileName: 'cfr-0.150.jar'
           out-file-path: "./tools/"
