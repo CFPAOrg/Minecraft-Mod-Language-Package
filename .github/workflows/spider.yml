@@ -1,10 +1,6 @@
 name: Spider
 
-on: workflow_dispatch
-  #push:
-  #  branches: [ 1.12.2 ]
-  #schedule:
-  # - cron: "0 */3 * * *"
+on: [push,pull-request]
 
 jobs:
   build:
@@ -30,7 +26,10 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Run spider
-      run: ./spider.ps1
+      run: |
+        #Import-Module ./tools/Spider.psm1 -Verbose
+        #Start-Spider
+        Invoke-Pester 
       shell: pwsh
       env:
         token: ${{ Secrets.my_token }}

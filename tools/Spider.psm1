@@ -3,7 +3,7 @@ function Start-Spider {
     param (
         
     )
-    
+    Get-ModFile -ModCount 10 -GameVersion '1.12.2'
 }
 
 function Get-ModFile {
