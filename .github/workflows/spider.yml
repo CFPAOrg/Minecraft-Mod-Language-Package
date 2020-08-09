@@ -4,30 +4,29 @@ on: [push]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v1
-    
-    - name: Setup Java JDK
-      uses: actions/setup-java@v1.3.0
-      with:
-        java-version: 1.8
+      - uses: actions/checkout@v1
 
-    - name: Download GitHub Release
-      uses: Legion2/download-release-action@v2.1.0
-      with:
-        repository: leibnitz27/cfr
-        tag: '0.150'
-        file: cfr-0.150.jar
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.3.0
+        with:
+          java-version: 1.8
 
-    - name: Run spider
-      run: |
-        #Import-Module ./tools/Spider.psm1 -Verbose
-        #Start-Spider
-        Import-Module Pester
-        Invoke-Pester 
-      shell: pwsh
-      env:
-        token: ${{ Secrets.my_token }}
-      
+      # - name: Download GitHub Release
+      #   uses: Legion2/download-release-action@v2.1.0
+      #   with:
+      #     repository: leibnitz27/cfr
+      #     tag: "0.150"
+      #     file: cfr-0.150.jar
+
+      - name: Run spider
+        run: |
+          #Import-Module ./tools/Spider.psm1 -Verbose
+          #Start-Spider
+          Import-Module Pester
+          Invoke-Pester
+        shell: pwsh
+        env:
+          token: ${{ Secrets.my_token }}
