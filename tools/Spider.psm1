@@ -4,6 +4,40 @@ function Start-Spider {
     Get-ModFile -ModCount 10 -GameVersion '1.12.2'
 }
 
+function Get-LangFile {
+    param (
+        [string[]]$Path,
+        [string]$language
+    )
+    $regex = [regex]::new("assets\\[^\\]+\\lang")
+    $tempPath = [io.path]::GetTempPath()
+    $langFiles = @()
+    foreach($aPath in $Path) {
+        $destPath = [io.path]::Combine($tempPath, [System.Random]::new().Next()) # Generate a temp random PATH (not file), may be further optimized
+        $index = $destPath.Length
+        Expand-Archive -Path $aPath -DestinationPath $destPath
+        $resultFiles = Get-ChildItem "$destPath*" -Include "$aPath.lang" -Recurse
+        if($resultFiles.Length -eq 0) {
+            Write-Host "Detected one mod without any language file." # May find a way to add modid in the string......
+            $langFiles += ""
+            continue
+        }
+        $match = $false
+        foreach($resultFile in $resultFiles) {
+            if($regex.Ismatch($resultFile.DirectoryName.SubString($index))) {
+                $match = $true
+                $langFiles += $resultFile.FullName
+                break
+            }
+        }
+        if(-not $match) {
+            Write-Host "Detected one mod with irregular language file position."
+            $langFiles += ""
+        }
+    }
+    return $langFiles
+}
+
 function Get-ModId {
     param (
         [string[]]$Path
