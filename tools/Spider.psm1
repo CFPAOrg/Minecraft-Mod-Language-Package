@@ -6,32 +6,34 @@ function Start-Spider {
 }
 
 function Get-ModId {
-    param ($Path)
-    [string[]]$modIds = @()
-    
-    $regex = [regex]::new('(?<=modid.*?=").*?(?=")')
-    foreach ($aPath in $Path) {
+    param (
+        [string[]]$Path
+    )
+    $map = @{}
+    $Path | ForEach-Object -Parallel -ThrottleLimit 10 {
         $process = [System.Diagnostics.Process]::new()
         $process.StartInfo.UseShellExecute = $false;  
         $process.StartInfo.RedirectStandardOutput = $true;
         $process.StartInfo.FileName = "java"
-        $process.StartInfo.Arguments = "-jar ./tools/cfr-0.150.jar $aPath"
+        $process.StartInfo.Arguments = "-jar ./tools/cfr-0.150.jar $_"
         $process.Start() | Out-Null
         [bool]$isMatch = $false
+        
+        $regex = [regex]::new('(?<=modid.*?=").*?(?=")')
         while (-not $process.StandardOutput.EndOfStream) {
             $line = $process.StandardOutput.ReadLine()
             if ($regex.IsMatch($line)) {
                 $match = $regex.Match($line)
-                $modIds += $match.Value
+                $map.Add($_,$match.Value)
                 $isMatch = $true
                 break
             }
         }
         if (-not $isMacth) {
-            $modIds += ""
+            $map.Add($_,$null)
         }
     }
-    return $modIds
+    return $map
 }
 function Get-ModFile {
     param (
