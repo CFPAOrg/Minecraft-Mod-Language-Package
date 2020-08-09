@@ -6,9 +6,7 @@ function Start-Spider {
 }
 
 function Get-ModId {
-    param (
-        [string[]]$Path
-    )
+    param ($Path)
     $jobs = @()
     $modIds = @()
     foreach ($aPath in $Path) {
@@ -18,7 +16,7 @@ function Get-ModId {
         $process.StartInfo.RedirectStandardOutput = $true;
         $process.StartInfo.FileName = "java"
         $process.StartInfo.Arguments = "-jar ./tools/cfr-0.150.jar $aPath"
-        $process.Start()|Out-Null
+        $process.Start() | Out-Null
         $regex = [regex]::new('(?<=modid.*?=").*?(?=")')
         [bool]$isMatch = $false
         while (-not $process.StandardOutput.EndOfStream) {
