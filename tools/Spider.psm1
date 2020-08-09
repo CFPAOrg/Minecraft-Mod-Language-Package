@@ -24,13 +24,13 @@ function Get-ModId {
             $line = $process.StandardOutput.ReadLine()
             if ($regex.IsMatch($line)) {
                 $match = $regex.Match($line)
-                $map.Add($_,$match.Value)
+                $using:map.Add($_,$match.Value)
                 $isMatch = $true
                 break
             }
         }
         if (-not $isMacth) {
-            $map.Add($_,$null)
+            $using:map.Add($_,$null)
         }
     } -ThrottleLimit 20
     return $map
