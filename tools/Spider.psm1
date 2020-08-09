@@ -34,10 +34,7 @@ function Get-ModId {
         #}
         #$jobs += $job
         #Receive-Job $jobs -Wait
-<<<<<<< HEAD
-=======
         return $modIds
->>>>>>> new-spider
     }
     return $modIds
     Write-Host $modIds
