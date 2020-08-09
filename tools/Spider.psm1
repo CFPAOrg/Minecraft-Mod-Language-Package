@@ -9,7 +9,7 @@ function Get-ModId {
     param (
         [string[]]$Path
     )
-    $map = @{}
+    $map = New-Object hashtable
     $Path | ForEach-Object -Parallel {
         $process = [System.Diagnostics.Process]::new()
         $process.StartInfo.UseShellExecute = $false;  
@@ -24,13 +24,13 @@ function Get-ModId {
             $line = $process.StandardOutput.ReadLine()
             if ($regex.IsMatch($line)) {
                 $match = $regex.Match($line)
-                $using:map.Add($_,$match.Value)
+                $map.Add($_,$match.Value)
                 $isMatch = $true
                 break
             }
         }
         if (-not $isMacth) {
-            $using:map.Add($_,$null)
+            $map.Add($_,$null)
         }
     } -ThrottleLimit 20
     return $map
