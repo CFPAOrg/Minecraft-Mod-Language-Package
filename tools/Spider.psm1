@@ -10,7 +10,7 @@ function Get-ModId {
         [string[]]$Path
     )
     $map = @{}
-    $Path | ForEach-Object -Parallel -ThrottleLimit 10 {
+    $Path | ForEach-Object -Parallel {
         $process = [System.Diagnostics.Process]::new()
         $process.StartInfo.UseShellExecute = $false;  
         $process.StartInfo.RedirectStandardOutput = $true;
@@ -32,7 +32,7 @@ function Get-ModId {
         if (-not $isMacth) {
             $map.Add($_,$null)
         }
-    }
+    } -ThrottleLimit 20
     return $map
 }
 function Get-ModFile {
@@ -48,14 +48,13 @@ function Get-ModFile {
         $downloadUrls += $downloadUrl
     }
     $paths = @()
-    $jobs = $downloadUrls | ForEach-Object { 
+    $downloadUrls | ForEach-Object -Parallel { 
         $oldPath = [io.path]::GetTempFileName()
         $newPath = [io.path]::ChangeExtension($oldPath, [io.path]::GetExtension($_))
         [io.file]::Move($oldPath, $newPath)
         $paths += $newPath
-        Invoke-WebRequest -Uri $_ -OutFile $newPath &
-    }
-    Receive-Job $jobs -Wait
+        Invoke-WebRequest -Uri $_ -OutFile $newPath
+    } -ThrottleLimit 20
     return $paths
 }
 
