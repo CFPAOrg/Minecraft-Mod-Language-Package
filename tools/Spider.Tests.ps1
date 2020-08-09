@@ -7,6 +7,7 @@ Describe "Spider" {
         #     $actual = Join-DownloadUrl -FileId '2724357' -FileName 'SkyFactory4-4.0.8.zip'
         #     $actual | Should -Be $expected
         # }
+        $filePaths
         It "Test Get-ModFile" {
             $filePaths = Get-ModFile -ModCount 10 -GameVersion '1.12.2'
             $filePaths|Out-Host
