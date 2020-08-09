@@ -20,7 +20,14 @@ jobs:
       #     repository: leibnitz27/cfr
       #     tag: "0.150"
       #     file: cfr-0.150.jar
-
+      - uses: robinraju/release-downloader@v1
+        with:
+          repository: "leibnitz27/cfr"
+          latest: true
+          tag: '0.150'
+          fileName: 'cfr-0.150.jar'
+          out-file-path: "./tools/"
+      
       - name: Run spider
         run: |
           #Import-Module ./tools/Spider.psm1 -Verbose
