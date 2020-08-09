@@ -4,6 +4,13 @@ function Start-Spider {
     Get-ModFile -ModCount 10 -GameVersion '1.12.2'
 }
 
+function Get-ModId {
+    param (
+        [string]$Path
+    )
+    $process = [System.Diagnostics.Process]::Start("java","-jar ./tools/cfr-0.150.jar $Path -jar")
+    $output = $process.StandardOutput
+}
 function Get-ModFile {
     param (
         [int]$ModCount,
