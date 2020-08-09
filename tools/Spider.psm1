@@ -21,7 +21,7 @@ function Get-ModFile {
         $oldPath = [io.path]::GetTempFileName()
         $newPath = [io.path]::ChangeExtension($oldPath,[io.path]::GetExtension($_))
         [io.file]::Move($oldPath,$newPath)
-        $paths+=$newPath
+        $paths += $newPath
         Invoke-WebRequest -Uri $_ -OutFile $newPath &
     }
     Receive-Job $jobs -Wait
