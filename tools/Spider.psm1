@@ -1,7 +1,7 @@
 
 function Start-Spider {
     param ()
-    $paths = Get-ModFile -ModCount 10 -GameVersion '1.12.2'
+    $paths = Get-ModFile -ModCount 1000 -GameVersion '1.12.2'
     Get-ModId -Path $paths | Out-Host
 }
 
@@ -11,7 +11,6 @@ function Get-ModId {
     
     $regex = [regex]::new('(?<=modid.*?=").*?(?=")')
     foreach ($aPath in $Path) {
-        #$job = Start-Job -ScriptBlock {
         $process = [System.Diagnostics.Process]::new()
         $process.StartInfo.UseShellExecute = $false;  
         $process.StartInfo.RedirectStandardOutput = $true;
@@ -31,12 +30,8 @@ function Get-ModId {
         if (-not $isMacth) {
             $modIds += ""
         }
-        #}
-        #$jobs += $job
-        #Receive-Job $jobs -Wait
     }
     return $modIds
-    # Write-Host $modIds
 }
 function Get-ModFile {
     param (
