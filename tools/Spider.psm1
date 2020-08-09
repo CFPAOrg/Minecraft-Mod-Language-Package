@@ -8,7 +8,7 @@ function Get-ModId {
     param (
         [string]$Path
     )
-    $process = [System.Diagnostics.Process]::Start("java","-jar ./tools/cfr-0.150.jar $Path -jar")
+    $process = [System.Diagnostics.Process]::Start("java","-jar ./tools/cfr-0.150.jar $Path")
     $output = $process.StandardOutput
 }
 function Get-ModFile {
