@@ -34,7 +34,6 @@ function Get-ModId {
         #}
         #$jobs += $job
         #Receive-Job $jobs -Wait
-        return $modIds
     }
     return $modIds
     Write-Host $modIds
