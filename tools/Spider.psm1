@@ -1,8 +1,6 @@
 
 function Start-Spider {
-    param (
-        
-    )
+    param ()
     Get-ModFile -ModCount 10 -GameVersion '1.12.2'
 }
 
@@ -29,6 +27,7 @@ function Get-ModFile {
     Receive-Job $jobs -Wait
     return $paths
 }
+
 function Join-DownloadUrl {
     param (
         [string]$FileId,
@@ -38,6 +37,7 @@ function Join-DownloadUrl {
     $secondPart = $FileId[4..6]|Join-String
     return "https://edge.forgecdn.net/files/$firstPart/$secondPart/$FileName"
 }
+
 function Invoke-CurseForgeApiQuery {
     param (
         [string]$CategoryId,

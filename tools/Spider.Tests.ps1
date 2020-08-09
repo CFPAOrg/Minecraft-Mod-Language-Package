@@ -9,7 +9,7 @@ Describe "Spider" {
             $actual | Should -Be $expected
         }
         It "Test Get-ModFile" {
-            Get-ModFile -ModCount 10 -GameVersion '1.12.2'|Out-Host
+            Get-ModFile -ModCount 10 -GameVersion '1.12.2'| Out-Host
         }
     }
 }
