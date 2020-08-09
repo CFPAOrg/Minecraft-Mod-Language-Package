@@ -1,7 +1,8 @@
 
 function Start-Spider {
     param ()
-    Get-ModFile -ModCount 10 -GameVersion '1.12.2'
+    $paths = Get-ModFile -ModCount 10 -GameVersion '1.12.2'
+    Get-ModId -Path $paths | Out-Host
 }
 
 function Get-ModId {
@@ -11,27 +12,30 @@ function Get-ModId {
     $jobs = @()
     $modIds = @()
     foreach ($aPath in $Path) {
-        $job = Start-Job -ScriptBlock {
-            [System.Diagnostics.Process]$process = [System.Diagnostics.Process]::Start("java", "-jar ./tools/cfr-0.150.jar $aPath")
-            $output = $process.StandardOutput
-            $reader = [io.streamreader]::new($output)
-            $regex = [regex]::new('(?<=modid.*?=").*?(?=")')
-            [bool]$isMatch
-            while (-not $reader.EndOfStream) {
-                $line = $reader.ReadLine()
-                if ($regex.IsMatch($line)) {
-                    $match = $regex.Match($line)
-                    $modIds+=$match.Value
-                    $isMatch = $true
-                    break
-                }
-            }
-            if (-not $isMacth) {
-                $modIds+=""
+        #$job = Start-Job -ScriptBlock {
+        $process = [System.Diagnostics.Process]::new()
+        $process.StartInfo.UseShellExecute = $false;  
+        $process.StartInfo.RedirectStandardOutput = $true;
+        $process.StartInfo.FileName = "java"
+        $process.StartInfo.Arguments = "-jar ./tools/cfr-0.150.jar $aPath"
+        $process.Start()|Out-Null
+        $regex = [regex]::new('(?<=modid.*?=").*?(?=")')
+        [bool]$isMatch = $false
+        while (-not $process.StandardOutput.EndOfStream) {
+            $line = $process.StandardOutput.ReadLine()
+            if ($regex.IsMatch($line)) {
+                $match = $regex.Match($line)
+                $modIds += $match.Value
+                $isMatch = $true
+                break
             }
         }
-        $jobs+=$job
-        Receive-Job $jobs -Wait
+        if (-not $isMacth) {
+            $modIds += ""
+        }
+        #}
+        #$jobs += $job
+        #Receive-Job $jobs -Wait
         return $modIds
     }
 }
