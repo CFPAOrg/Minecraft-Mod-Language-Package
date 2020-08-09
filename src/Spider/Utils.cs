@@ -1,20 +1,16 @@
-﻿using System.IO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Spider
 {
-    internal static class Utils
+    public class Utils
     {
-        public static string GetTargetParentDirectory(string path, string targetDirectory)
+        public static string JoinDownloadUrl(string fileId, string fileName)
         {
-            while (true)
-            {
-                if (Directory.Exists(Path.Combine(path, targetDirectory))) return path;
-                if (Path.GetPathRoot(path) == path)
-                    throw new DirectoryNotFoundException(
-                        $"The {nameof(targetDirectory)} doesn't contain in any parent of {nameof(path)}");
-                path = Directory.GetParent(path).FullName;
-            }
+            return $"https://edge.forgecdn.net/files/{fileId[..4]}/{fileId[4..]}/{fileName}";
         }
-        public static string GetDownloadUrl(string fileId, string fileName) => $"https://edge.forgecdn.net/files/{fileId.Substring(0, 4)}/{fileId[4..]}/{fileName}";
     }
 }
