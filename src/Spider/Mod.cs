@@ -8,5 +8,6 @@ namespace Spider
     {
         public string DownloadUrl { get; set; }
         public string Path { get; set; }
+        public string ModId { get; set; }
     }
 }

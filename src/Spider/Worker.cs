@@ -31,6 +31,8 @@ namespace Spider
                 .Select(modFile => Utils.JoinDownloadUrl(modFile.ProjectFileId.ToString(), modFile.ProjectFileName))
                 .Select(downloadUrl => new Mod {DownloadUrl = downloadUrl}).ToList();
             mods = await _modManager.DownloadModAsync(mods);
+            mods = await _modManager.GetModIdAsync(mods);
+
             _logger.LogCritical("Exiting application...");
             _hostApplicationLifetime.StopApplication();
         }

@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using Spider.Properties;
 
 namespace Spider
 {
@@ -27,16 +31,15 @@ namespace Spider
             uriBuilder.Query =
                 $"categoryId=0&gameId=432&index=0&pageSize={modCount}&gameVersion={gameVersion}&sectionId=6&sort=1";
             var uri = uriBuilder.Uri;
-
             return await httpClinet.GetFromJsonAsync<List<Addon>>(uri);
         }
 
         public async Task<List<Mod>> DownloadModAsync(IEnumerable<Mod> mods)
         {
-            var httpClinet = _httpClientFactory.CreateClient();
+            var httpClient = _httpClientFactory.CreateClient();
             var tasks = mods.Select(async _ =>
             {
-                var bytes = await httpClinet.GetByteArrayAsync(_.DownloadUrl);
+                var bytes = await httpClient.GetByteArrayAsync(_.DownloadUrl);
                 var oldPath = Path.GetTempFileName();
                 var newPath = Path.ChangeExtension(oldPath, Path.GetExtension(_.DownloadUrl));
                 File.Move(oldPath, newPath);
@@ -47,6 +50,49 @@ namespace Spider
             });
             var result = await Task.WhenAll(tasks);
             return result.ToList();
+        }
+
+        public async Task<List<Mod>> GetModIdAsync(IEnumerable<Mod> mods)
+        {
+            File.WriteAllBytes("./cfr.jar", Resources.cfr_0_150);
+            var regex = new Regex("(?<=modid=\").*?(?=\")");
+            var result = mods.Select(_ =>
+            {
+                return Task.Run(() =>
+                {
+                    _logger.LogInformation($"开始对 {_.Path} 进行反编译以获得modid.");
+                    var process = new Process
+                    {
+                        StartInfo =
+                        {
+                            FileName = "java",
+                            Arguments = $"-jar ./cfr.jar {_.Path}",
+                            RedirectStandardOutput = true,
+                            UseShellExecute = false
+                        }
+                    };
+                    process.Start();
+                    var modid = string.Empty;
+                    while (!process.StandardOutput.EndOfStream)
+                    {
+                        var line = process.StandardOutput.ReadLine();
+                        if (!string.IsNullOrEmpty(line))
+                        {
+                            if (regex.IsMatch(line))
+                            {
+                                modid = regex.Match(line).Value;
+                                break;
+                            }
+                        }
+                    }
+
+                    _logger.LogCritical($"找到了modid: {modid}");
+                    _.ModId = modid;
+                    return _;
+                });
+            });
+
+            return (await Task.WhenAll(result)).ToList();
         }
     }
 }
