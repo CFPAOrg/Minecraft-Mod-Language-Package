@@ -27,7 +27,7 @@ namespace Fucker
                         var random = new Random();
                         var newPath = path + "/rubbish/" + random.Next() + ".lang";
                         File.Move(file, newPath);
-                        Console.WriteLine("将{0}移动到{1}",path,newPath);
+                        Console.WriteLine("将{0}移动到{1}", path, newPath);
                         break;
                 }
 
