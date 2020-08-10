@@ -19,7 +19,7 @@ namespace Fucker
 
             if (config.RunSortFiles)
             {
-                Utils.SortFiles(path, config.TargetVersion);
+                Utils.DelDeduplicationFiles(path, config.TargetVersion);
             }
         }
 

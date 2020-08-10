@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Xml;
 
 namespace Fucker
 {
@@ -60,48 +61,14 @@ namespace Fucker
             }
         }
 
-        public static void SortFiles(string path, string version)
+        public static void DelDeduplicationFiles(string path, string version)
         {
             if (version == "1.12.2")
             {
-                var files = Directory.GetFiles(path + "project/" + version, "*.lang", SearchOption.AllDirectories);
-                foreach (var file in files)
-                {
-                    var name = Path.GetFileName(file);
-                    if (name == "zh_cn.lang" || name == "zh_CN.lang")
-                    {
-                        var directory = Path.GetDirectoryName(file);
-                        if (File.Exists(directory + "/lang/en_us.lang"))
-                        {
-
-                        }
-                        else if (File.Exists(directory + "/lang/en_US.lang"))
-                        {
-
-                        }
-                    }
-                }
+                
             }
             else
-            {
-                var files = Directory.GetFiles(path + "project/" + version, "*.json", SearchOption.AllDirectories);
-                foreach (var file in files)
-                {
-                    var name = Path.GetFileName(file);
-                    if (name == "zh_cn.json" || name == "zh_CN.json")
-                    {
-                        var directory = Path.GetDirectoryName(file);
-                        if (File.Exists(directory + "/lang/en_us.json"))
-                        {
-
-                        }
-                        else if (File.Exists(directory + "/lang/en_US.json"))
-                        {
-
-                        }
-                    }
-                }
-            }
+                Console.WriteLine("非1.12.2文件不可去重。");
         }
     }
 }
