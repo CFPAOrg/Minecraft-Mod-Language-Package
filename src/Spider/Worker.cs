@@ -25,7 +25,7 @@ namespace Spider
         {
             var modInfo = await _modManager.GetModInfoAsync(10, "1.12.2");
 
-            Environment.Exit(0);
+            await StopAsync(CancellationToken.None);
         }
 
         
