@@ -16,7 +16,7 @@ namespace Spider
         private readonly ModManager _modManager;
         private readonly IHostApplicationLifetime _hostApplicationLifetime;
 
-        public Worker(ILogger<Worker> logger,IHostApplicationLifetime hostApplicationLifetime,ModManager modManager)
+        public Worker(ILogger<Worker> logger, IHostApplicationLifetime hostApplicationLifetime, ModManager modManager)
         {
             _logger = logger;
             _hostApplicationLifetime = hostApplicationLifetime;
@@ -27,9 +27,10 @@ namespace Spider
         {
             var modInfo = await _modManager.GetModInfoAsync(10, "1.12.2");
 
+            _logger.LogCritical("Exiting application...");
             _hostApplicationLifetime.StopApplication();
         }
 
-        
+
     }
 }

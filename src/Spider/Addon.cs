@@ -34,7 +34,7 @@ namespace Spider
         public long DefaultFileId { get; set; }
 
         [JsonPropertyName("downloadCount")]
-        public long DownloadCount { get; set; }
+        public double DownloadCount { get; set; }
 
         [JsonPropertyName("latestFiles")]
         public List<LatestFile> LatestFiles { get; set; }
@@ -145,7 +145,7 @@ namespace Spider
         public long UserId { get; set; }
 
         [JsonPropertyName("twitchId")]
-        public long TwitchId { get; set; }
+        public long? TwitchId { get; set; }
     }
 
     public class Category
