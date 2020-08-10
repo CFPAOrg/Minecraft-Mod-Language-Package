@@ -25,10 +25,13 @@ jobs:
           fileName: 'cfr-0.150.jar'
           out-file-path: "./tools/"
       
+
+      - name: Build spider
+        run: dotnet publish .\src\Spider\Spider.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
+        
       - name: Run spider
-        run: |
-          dotnet publish .\src\Spider\Spider.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
-          .\Spider
+        run: .\Spider
+          
         shell: pwsh
         env:
           token: ${{ Secrets.my_token }}
