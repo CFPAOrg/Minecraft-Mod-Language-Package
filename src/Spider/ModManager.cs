@@ -117,18 +117,24 @@ namespace Spider
                         switch (currentChar)
                         {
                             case '\n': // 新行
-                                if (!isOverlap)
+                                if(iskey)
+                                { // 空行？
+                                    var current = builder.ToString();
+                                    if(!string.IsNullOrWhiteSpace(current)) // 如果确实是空行，什么都不用做，让reader接着往下读
+                                    { // 不是空行，算作非法注释，删掉
+                                        _logger.LogInformation("删除一条非法注释：{0}", current);
+                                    }
+                                }
+                                else
                                 {
-                                    addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey) ;
-                                    builder.Clear();
+                                    if (!isOverlap)
+                                    {
+                                        addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey) ;
+                                        builder.Clear();
+                                    }
                                 }
                                 break;
                             case '#':
-                                if (!isOverlap)
-                                {
-                                    addAndValidateValue(builder.ToString(), ref values, ref keys,ref iskey);
-                                    builder.Clear();
-                                }
                                 reader.ReadLine(); // 直接读到本行的末尾，因为这种 comment 是单行的；丢弃读取结果
                                 isOverlap = false;
                                 break;
@@ -138,20 +144,10 @@ namespace Spider
                                 switch (nextChar)
                                 {
                                     case '/':
-                                        if (!isOverlap)
-                                        {
-                                            addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey);
-                                            builder.Clear();
-                                        }
                                         reader.ReadLine(); // //注释，单行，丢弃
                                         isOverlap = false;
                                         break;
                                     case '*':
-                                        if (!isOverlap)
-                                        {
-                                            addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey);
-                                            builder.Clear();
-                                        }
                                         // 多行注释，需要一些处理，可能可读性不是很好
                                         while (true)
                                         {
@@ -163,12 +159,25 @@ namespace Spider
                                                 }
                                             } // 仍然在注释里，接着循环
                                         }
+                                        // 后面会剩一点空格/换行符，跳过一下
+                                        reader.ReadLine();
                                         break;
                                     case '\n': // 是的，还要再来一次
-                                        if (!isOverlap)
+                                        if(iskey)
+                                        { // 空行？
+                                            var current = builder.ToString();
+                                            if(!string.IsNullOrWhiteSpace(current)) // 如果确实是空行，什么都不用做，让reader接着往下读
+                                            { // 不是空行，算作非法注释，删掉
+                                                _logger.LogInformation("删除一条非法注释：{0}", current);
+                                            }
+                                        }
+                                        else
                                         {
-                                            addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey);
-                                            builder.Clear();
+                                            if (!isOverlap)
+                                            {
+                                                addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey) ;
+                                                builder.Clear();
+                                            }
                                         }
                                         break;
                                     default: // 不是 comment
@@ -184,7 +193,7 @@ namespace Spider
                                     if (keys.Contains(key))
                                     { // 重key，跳过value
                                         _logger.LogInformation("移除一处重key。key:{0}", key);
-                                        isOverlap = true; // 因为多行注释的存在，甚至不能直接 ReadLine();
+                                        reader.ReadLine(); // 终于可以直接跳过了
                                     }
                                     else
                                     {
