@@ -10,7 +10,7 @@ namespace Fucker
     {
         static void Main(string[] args)
         {
-            var path = @"D:\repos\Minecraft-Mod-Language-Package/";
+            var path = @"./";
             var config = ReaderConfig(path);
             if (config.RunDelFiles)
             {
