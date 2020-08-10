@@ -1,6 +1,12 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.Design;
 using System.IO;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
 
 namespace Fucker
@@ -65,7 +71,61 @@ namespace Fucker
         {
             if (version == "1.12.2")
             {
-                
+                var files = Directory.GetFiles(path + "project/" + version, "*.lang", SearchOption.AllDirectories);
+                foreach (var file in files)
+                {
+                    var name = Path.GetFileName(file);
+                    if (file.Contains("0x_trans_fix"))
+                        continue;
+                    if (name == "zh_cn.lang")
+                    {
+                        var list = new List<string>();
+                        foreach (string str in File.ReadAllLines(file, Encoding.UTF8))
+                        {
+                            var keyReg = new Regex(".+(?==)");
+                            var nameReg = new Regex("(?<==).+");
+                            var findEqual = new Regex("=+");
+                            if (findEqual.IsMatch(str))
+                            {
+                                if (nameReg.IsMatch(str))
+                                {
+                                    if (keyReg.IsMatch(str))
+                                    {
+                                        if (!list.Contains(str))
+                                        {
+                                            list.Add(str);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        File.WriteAllLines(file,list);
+                    }
+                    else if (name == "zn_CN.lang")
+                    {
+                        var list = new List<string>();
+                        foreach (string str in File.ReadAllLines(file, Encoding.UTF8))
+                        {
+                            var keyReg = new Regex(".+(?==)");
+                            var nameReg = new Regex("(?<==).+");
+                            var findEqual = new Regex("=+");
+                            if (findEqual.IsMatch(str))
+                            {
+                                if (nameReg.IsMatch(str))
+                                {
+                                    if (keyReg.IsMatch(str))
+                                    {
+                                        if (!list.Contains(str))
+                                        {
+                                            list.Add(str);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        File.WriteAllLines(file, list);
+                    }
+                }
             }
             else
                 Console.WriteLine("非1.12.2文件不可去重。");
