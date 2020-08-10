@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -27,6 +29,24 @@ namespace Spider
             var uri = uriBuilder.Uri;
 
             return await httpClinet.GetFromJsonAsync<List<Addon>>(uri);
+        }
+
+        public async Task<List<Mod>> DownloadModAsync(IEnumerable<Mod> mods)
+        {
+            var httpClinet = _httpClientFactory.CreateClient();
+            var tasks = mods.Select(async _ =>
+            {
+                var bytes = await httpClinet.GetByteArrayAsync(_.DownloadUrl);
+                var oldPath = Path.GetTempFileName();
+                var newPath = Path.ChangeExtension(oldPath, Path.GetExtension(_.DownloadUrl));
+                File.Move(oldPath, newPath);
+                await File.WriteAllBytesAsync(newPath, bytes);
+                _.Path = newPath;
+                _logger.LogInformation($"下载了 {_.DownloadUrl} 到{_.Path}!");
+                return _;
+            });
+            var result = await Task.WhenAll(tasks);
+            return result.ToList();
         }
     }
 }

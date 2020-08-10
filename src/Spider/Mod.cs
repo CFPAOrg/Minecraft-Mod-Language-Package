@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Spider
 {
-    class Mod
+    public class Mod
     {
+        public string DownloadUrl { get; set; }
+        public string Path { get; set; }
     }
 }
