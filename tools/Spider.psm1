@@ -1,7 +1,8 @@
 
 function Start-Spider {
     param ()
-    Get-ModFile -ModCount 10 -GameVersion '1.12.2'
+    $paths = Get-ModFile -ModCount 100 -GameVersion '1.12.2'
+    Get-ModId -Path $paths | Out-Host
 }
 
 function Get-LangFile {
@@ -42,32 +43,31 @@ function Get-ModId {
     param (
         [string[]]$Path
     )
-    $jobs = @()
-    $modIds = @()
-    foreach ($aPath in $Path) {
-        $job = Start-Job -ScriptBlock {
-            [System.Diagnostics.Process]$process = [System.Diagnostics.Process]::Start("java", "-jar ./tools/cfr-0.150.jar $aPath")
-            $output = $process.StandardOutput
-            $reader = [io.streamreader]::new($output)
-            $regex = [regex]::new('(?<=modid.*?=").*?(?=")')
-            [bool]$isMatch
-            while (-not $reader.EndOfStream) {
-                $line = $reader.ReadLine()
-                if ($regex.IsMatch($line)) {
-                    $match = $regex.Match($line)
-                    $modIds+=$match.Value
-                    $isMatch = $true
-                    break
-                }
-            }
-            if (-not $isMacth) {
-                $modIds+=""
+    $map = New-Object hashtable
+    $Path | ForEach-Object -Parallel {
+        $process = [System.Diagnostics.Process]::new()
+        $process.StartInfo.UseShellExecute = $false;  
+        $process.StartInfo.RedirectStandardOutput = $true;
+        $process.StartInfo.FileName = "java"
+        $process.StartInfo.Arguments = "-jar ./tools/cfr-0.150.jar $_"
+        $process.Start() | Out-Null
+        [bool]$isMatch = $false
+        
+        $regex = [regex]::new('(?<=modid.*?=").*?(?=")')
+        while (-not $process.StandardOutput.EndOfStream) {
+            $line = $process.StandardOutput.ReadLine()
+            if ($regex.IsMatch($line)) {
+                $match = $regex.Match($line)
+                $map.Add($_,$match.Value)
+                $isMatch = $true
+                break
             }
         }
-        $jobs+=$job
-        Receive-Job $jobs -Wait
-        return $modIds
-    }
+        if (-not $isMacth) {
+            $map.Add($_,$null)
+        }
+    } -ThrottleLimit 20
+    return $map
 }
 function Get-ModFile {
     param (
@@ -82,14 +82,13 @@ function Get-ModFile {
         $downloadUrls += $downloadUrl
     }
     $paths = @()
-    $jobs = $downloadUrls | ForEach-Object { 
+    $downloadUrls | ForEach-Object -Parallel { 
         $oldPath = [io.path]::GetTempFileName()
         $newPath = [io.path]::ChangeExtension($oldPath, [io.path]::GetExtension($_))
         [io.file]::Move($oldPath, $newPath)
         $paths += $newPath
-        Invoke-WebRequest -Uri $_ -OutFile $newPath &
-    }
-    Receive-Job $jobs -Wait
+        Invoke-WebRequest -Uri $_ -OutFile $newPath
+    } -ThrottleLimit 20
     return $paths
 }
 

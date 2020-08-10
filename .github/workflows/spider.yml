@@ -23,10 +23,10 @@ jobs:
       
       - name: Run spider
         run: |
-          #Import-Module ./tools/Spider.psm1 -Verbose
-          #Start-Spider
-          Import-Module Pester
-          Invoke-Pester
+          Import-Module ./tools/Spider.psm1 -Verbose
+          Start-Spider
+          #Import-Module Pester
+          #Invoke-Pester
         shell: pwsh
         env:
           token: ${{ Secrets.my_token }}
