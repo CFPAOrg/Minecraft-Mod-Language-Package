@@ -12,28 +12,28 @@ function Get-LangFile {
     )
     $regex = [regex]::new("assets\\[^\\]+\\lang")
     $tempPath = [io.path]::GetTempPath()
-    $langFiles = @()
-    foreach($aPath in $Path) {
+    $langFiles = New-Object hashtable
+    foreach($aPath in $Path) { # Maybe make this parallel??
         $destPath = [io.path]::Combine($tempPath, [System.Random]::new().Next()) # Generate a temp random PATH (not file), may be further optimized
         $index = $destPath.Length
         Expand-Archive -Path $aPath -DestinationPath $destPath
-        $resultFiles = Get-ChildItem "$destPath*" -Include "$aPath.lang" -Recurse
+        $resultFiles = Get-ChildItem "$destPath*" -Include "$language.lang" -Recurse
         if($resultFiles.Length -eq 0) {
             Write-Host "Detected one mod without any language file." # May find a way to add modid in the string......
-            $langFiles += ""
+            $langFiles.Add($aPath, "")
             continue
         }
         $match = $false
         foreach($resultFile in $resultFiles) {
             if($regex.Ismatch($resultFile.DirectoryName.SubString($index))) {
                 $match = $true
-                $langFiles += $resultFile.FullName
+                $langFiles.Add($aPath, $resultFile.FullName)
                 break
             }
         }
         if(-not $match) {
             Write-Host "Detected one mod with irregular language file position."
-            $langFiles += ""
+            $langFiles.Add($aPath, "")
         }
     }
     return $langFiles
