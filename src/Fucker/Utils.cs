@@ -6,10 +6,9 @@ namespace Fucker
 {
     public class Utils
     {
-        public static void DelFiles(string path,out bool status)
+        public static void DelFiles(string path, string version)
         {
-            status = false;
-            var files = Directory.GetFiles(path, "*.lang", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(path + "project/" + version, "*.lang", SearchOption.AllDirectories);
             foreach (var file in files)
             {
                 var name = Path.GetFileName(file);
@@ -30,8 +29,27 @@ namespace Fucker
                         Console.WriteLine("将{0}移动到{1}", path, newPath);
                         break;
                 }
+            }
+        }
 
-                status = true;
+        public static void SortFiles(string path, string version)
+        {
+            var files = Directory.GetFiles(path + "project/" + version, "*.lang", SearchOption.AllDirectories);
+            foreach (var file in files)
+            {
+                var name = Path.GetFileName(file);
+                if (name == "zh_cn.lang" || name == "zh_CN.lang")
+                {
+                    var directory = Path.GetDirectoryName(file);
+                    if (File.Exists(directory + "/lang/en_us.lang"))
+                    {
+
+                    }
+                    else if (File.Exists(directory + "/lang/en_US.lang"))
+                    {
+                        
+                    }
+                }
             }
         }
     }
