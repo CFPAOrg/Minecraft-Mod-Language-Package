@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Hosting.Internal;
 
 namespace Spider
 {
@@ -20,6 +21,7 @@ namespace Spider
                 {
                     services.AddHttpClient();
                     services.AddSingleton<ModManager>();
+                    services.AddSingleton<IHostApplicationLifetime, ApplicationLifetime>();
                     services.AddHostedService<Worker>();
                 });
     }
