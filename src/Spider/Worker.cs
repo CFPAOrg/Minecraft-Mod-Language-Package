@@ -25,7 +25,11 @@ namespace Spider
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            var modInfo = await _modManager.GetModInfoAsync(10, "1.12.2");
+            var addons = await _modManager.GetModInfoAsync(10, "1.12.2");
+            foreach (var addon in addons)
+            {
+                
+            }
 
             _logger.LogCritical("Exiting application...");
             _hostApplicationLifetime.StopApplication();
