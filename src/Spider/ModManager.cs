@@ -55,7 +55,7 @@ namespace Spider
 
         public async Task<List<Mod>> GetModIdAsync(IEnumerable<Mod> mods)
         {
-            SemaphoreSlim semaphore = new SemaphoreSlim(0,20);
+            SemaphoreSlim semaphore = new SemaphoreSlim(0,10);
             File.WriteAllBytes("./cfr.jar", Resources.cfr_0_150);
             var regex = new Regex("(?<=modid=\").*?(?=\")");
             var result = mods.Select(_ =>

@@ -26,7 +26,7 @@ namespace Spider
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             var gameVersion = "1.12.2";
-            var addons = await _modManager.GetModInfoAsync(1000, gameVersion);
+            var addons = await _modManager.GetModInfoAsync(40, gameVersion);
             var mods = addons.Select(addon => addon.GameVersionLatestFiles.First(_ => _.GameVersion == gameVersion))
                 .Select(modFile => Utils.JoinDownloadUrl(modFile.ProjectFileId.ToString(), modFile.ProjectFileName))
                 .Select(downloadUrl => new Mod {DownloadUrl = downloadUrl}).ToList();
