@@ -14,10 +14,12 @@ namespace Spider
     {
         private readonly ILogger<Worker> _logger;
         private readonly ModManager _modManager;
+        private readonly IHostApplicationLifetime _hostApplicationLifetime;
 
-        public Worker(ILogger<Worker> logger,ModManager modManager)
+        public Worker(ILogger<Worker> logger,IHostApplicationLifetime hostApplicationLifetime,ModManager modManager)
         {
             _logger = logger;
+            _hostApplicationLifetime = hostApplicationLifetime;
             _modManager = modManager;
         }
 
@@ -25,7 +27,7 @@ namespace Spider
         {
             var modInfo = await _modManager.GetModInfoAsync(10, "1.12.2");
 
-            await StopAsync(CancellationToken.None);
+            _hostApplicationLifetime.StopApplication();
         }
 
         
