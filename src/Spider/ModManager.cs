@@ -97,6 +97,140 @@ namespace Spider
             });
 
             return (await Task.WhenAll(result)).ToList();
+
+        public void ProcessLangFile(IEnumerable<Mod> mods) // 暂时没找到把他 async 的办法
+        {
+            mods.ToList().ForEach(_ =>
+            {
+                using var file = File.Open(_.Path, FileMode.Open);
+                var keys = new List<string>();
+                var values = new List<string>();
+                var builder = new StringBuilder();
+                using (var reader = new StreamReader(file, Encoding.UTF8))
+                {
+                    var iskey = false;
+                    var isOverlap = false;
+                    while (!reader.EndOfStream)
+                    {
+                        // 暂时先不处理PARSE_ESCAPE
+                        var currentChar = reader.Read();
+                        switch (currentChar)
+                        {
+                            case '\n': // 新行
+                                if (!isOverlap)
+                                {
+                                    addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey) ;
+                                    builder.Clear();
+                                }
+                                break;
+                            case '#':
+                                if (!isOverlap)
+                                {
+                                    addAndValidateValue(builder.ToString(), ref values, ref keys,ref iskey);
+                                    builder.Clear();
+                                }
+                                reader.ReadLine(); // 直接读到本行的末尾，因为这种 comment 是单行的；丢弃读取结果
+                                isOverlap = false;
+                                break;
+                            case '/':
+                                // 需要注意是 //还是/*还是其他
+                                var nextChar = reader.Read();
+                                switch (nextChar)
+                                {
+                                    case '/':
+                                        if (!isOverlap)
+                                        {
+                                            addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey);
+                                            builder.Clear();
+                                        }
+                                        reader.ReadLine(); // //注释，单行，丢弃
+                                        isOverlap = false;
+                                        break;
+                                    case '*':
+                                        if (!isOverlap)
+                                        {
+                                            addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey);
+                                            builder.Clear();
+                                        }
+                                        // 多行注释，需要一些处理，可能可读性不是很好
+                                        while (true)
+                                        {
+                                            if (reader.Read() == '*') // 发现了 *，需要考虑是否是 */（结束注释）
+                                            {
+                                                if (reader.Read() == '/')
+                                                {
+                                                    break; // 结束注释，跳出循环
+                                                }
+                                            } // 仍然在注释里，接着循环
+                                        }
+                                        break;
+                                    case '\n': // 是的，还要再来一次
+                                        if (!isOverlap)
+                                        {
+                                            addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey);
+                                            builder.Clear();
+                                        }
+                                        break;
+                                    default: // 不是 comment
+                                        builder.Append(currentChar);
+                                        builder.Append(nextChar);
+                                        break;
+                                }
+                                break;
+                            case '=': // 分隔key与value
+                                if (iskey)
+                                {
+                                    var key = builder.ToString();
+                                    if (keys.Contains(key))
+                                    { // 重key，跳过value
+                                        _logger.LogInformation("移除一处重key。key:{0}", key);
+                                        isOverlap = true; // 因为多行注释的存在，甚至不能直接 ReadLine();
+                                    }
+                                    else
+                                    {
+                                        keys.Add(key);
+                                    }
+                                    iskey = false;
+                                    builder.Clear();
+                                }
+                                else // 等号在 value 里，记得接着加
+                                {
+                                    builder.Append(currentChar);
+                                }
+                                break;
+                            default:
+                                builder.Append(currentChar);
+                                break;
+                        }
+                    }
+                    // 事后检查：是否还有什么没读完的？
+                    if (!iskey) // 不是 key，也就是 value 读取未结束，有可能是文件末尾没有换行
+                    {
+                        addAndValidateValue(builder.ToString(), ref values, ref keys, ref iskey); // 事实上 iskey 可以不用了...
+                    }
+                }
+                Debug.Assert(keys.Count == values.Count); // value 和 key 理应一一对应
+                using var writer = new StreamWriter(file);
+                for(int i = 0; i < keys.Count; ++i)
+                {
+                    writer.WriteLine($"{keys[i]}={values[i]}"); // 写入文件
+                }
+            });
+
+            // 下方是提取出来的一个高度重复的代码片段
+            void addAndValidateValue(string value, ref List<string> values, ref List<string> keys, ref bool iskey)
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    _logger.LogInformation("移除一处空词条。key:{0}", keys[^1]);
+                    keys.RemoveAt(keys.Count() - 1); // 为什么 RemoveAt 没有输入 Index 的重载...
+                }
+                else
+                {
+                    values.Add(value);
+                }
+                iskey = true; // 读完value了，下一个就确实是 key
+            }
         }
     }
 }
