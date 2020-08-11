@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -29,21 +30,33 @@ namespace Spider
             await Task.Delay(100);
             if (!stoppingToken.IsCancellationRequested)
             {
-                var gameVersion = "1.12.2";
-                var addons = await _modManager.GetModInfoAsync(2, gameVersion);
-                var mods = addons.Select(addon => addon.GameVersionLatestFiles.First(_ => _.GameVersion == gameVersion))
-                    .Select(modFile => Utils.JoinDownloadUrl(modFile.ProjectFileId.ToString(), modFile.ProjectFileName))
-                    .Select(downloadUrl => new Mod { DownloadUrl = downloadUrl }).ToList();
+                var gameVersion = Configuration.Current.EnabledGameVersions[0];
+                await Configuration.InitializeConfigurationAsync("./config/spider.json");
+                var addons = await _modManager.GetModInfoAsync(Configuration.Current.ModCount, gameVersion);
+                var mods = new List<Mod>();
+                foreach (var addon in addons)
+                {
+                    var modFile = addon.GameVersionLatestFiles.First(_ => _.GameVersion == gameVersion);
+                    var downloadUrl = Utils.JoinDownloadUrl(modFile.ProjectFileId.ToString(), modFile.ProjectFileName);
+                    var mod = new Mod
+                    {
+                        Name =  addon.Name,
+                        ProjectId = addon.Id,
+                        ProjectUrl = addon.WebsiteUrl,
+                        DownloadUrl = downloadUrl
+
+                    };
+                    mods.Add(mod);
+                }
                 _logger.LogInformation($"从api获取了{mods.Count}个mod的信息.");
                 mods = await _modManager.DownloadModAsync(mods);
                 mods = await _modManager.GetModIdAsync(mods);
-                _logger.LogInformation($"共有{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}个mod的有modid.");
+                _logger.LogInformation($"共有{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}个mod有modid.");
+                await _modManager.SaveModInfoAsync(Configuration.Current.ModInfoPath, mods);
+                _logger.LogInformation($"存储了所有 {mods.Count} 个mod信息到 {Path.GetFullPath(Configuration.Current.ModInfoPath)} ");
                 _logger.LogInformation("Exiting application...");
                 _hostApplicationLifetime.StopApplication();
             }
-            
         }
-
-
     }
 }

@@ -36,7 +36,7 @@ namespace Spider
                 {
                     services.AddHttpClient();
                     services.AddSingleton<ModManager>();
-                    services.AddSingleton<ApplicationLifetime>();
+                    services.AddSingleton<IHostApplicationLifetime,ApplicationLifetime>();
                     services.AddHostedService<Worker>();
                 });
     }

@@ -11,9 +11,9 @@ namespace Spider
 {
     public class Utils
     {
-        public static string JoinDownloadUrl(string fileId, string fileName)
+        public static Uri JoinDownloadUrl(string fileId, string fileName)
         {
-            return $"https://edge.forgecdn.net/files/{fileId[..4]}/{fileId[4..]}/{fileName}";
+            return new Uri($"https://edge.forgecdn.net/files/{fileId[..4]}/{fileId[4..]}/{fileName}");
         }
     }
 }

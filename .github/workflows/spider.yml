@@ -1,11 +1,13 @@
 name: Spider
 
-on: [push]
+on: 
+  push:
+    paths-ignore: '**/modInfo.json'
+    
 
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v1
 
@@ -13,22 +15,35 @@ jobs:
       #   uses: actions/setup-dotnet@v1.5.0
       #   with:
       #     dotnet-version: 5.0.100-preview.7.20366.6
-          
+
       - name: Setup Java JDK
-        uses: actions/setup-java@v1.3.0
+        uses: actions/setup-java@v1.4.1
         with:
           java-version: 1.8
-
-      - uses: robinraju/release-downloader@v1
-        with:
-          repository: "leibnitz27/cfr"
-          tag: '0.150'
-          fileName: 'cfr-0.150.jar'
-          out-file-path: "./tools/"
-      
+          java-package: jre
 
       - name: Build spider
         run: dotnet publish .\src\Spider\Spider.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
-        
+
       - name: Run spider
         run: .\Spider
+
+      - name: Push modinfo.json to github repo
+        if: ${{github.event}} == 'push'
+        run: |
+          ri .\Spider.exe -Force
+          $ErrorActionPreference ='Continue'
+          git config --global credential.helper manager
+          git config --global user.email "bot@cfpa.com"
+          git config --global user.name "CfpaBot"
+          @"
+          protocol=https
+          host=github.com
+          username=summpot
+          password=${{secrets.SUMMPOT_TOKEN}}
+          "@ > .\1.txt
+          gc 1.txt|git credential-manager  store
+          ri .\1.txt -Force
+          git add .
+          git commit -m "Update modInfo.json"
+          git push origin HEAD:${{ github.ref }}

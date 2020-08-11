@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Net.WebSockets;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -29,25 +29,26 @@ namespace Spider
         public async Task<List<Addon>> GetModInfoAsync(int modCount, string gameVersion)
         {
             var httpClinet = _httpClientFactory.CreateClient();
-            var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search");
-            uriBuilder.Query =
-                $"categoryId=0&gameId=432&index=0&pageSize={modCount}&gameVersion={gameVersion}&sectionId=6&sort=1";
-            var uri = uriBuilder.Uri;
-            return await httpClinet.GetFromJsonAsync<List<Addon>>(uri);
+            var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search")
+            {
+                Query =
+                $"categoryId=0&gameId=432&index=0&pageSize={modCount}&gameVersion={gameVersion}&sectionId=6&sort=1"
+            };
+            return await httpClinet.GetFromJsonAsync<List<Addon>>(uriBuilder.Uri);
         }
 
         public async Task<List<Mod>> DownloadModAsync(IEnumerable<Mod> mods)
         {
             var httpClient = _httpClientFactory.CreateClient();
-            var tasks = mods.Select(async _ =>
+            var tasks = mods.Select(async mod =>
             {
-                var bytes = await httpClient.GetByteArrayAsync(_.DownloadUrl);
+                var bytes = await httpClient.GetByteArrayAsync(mod.DownloadUrl);
                 var oldPath = Path.GetTempFileName();
-                var newPath = Path.ChangeExtension(oldPath, Path.GetExtension(_.DownloadUrl));
+                var newPath = Path.ChangeExtension(oldPath, Path.GetExtension(mod.DownloadUrl.ToString()));
                 File.Move(oldPath, newPath);
                 await File.WriteAllBytesAsync(newPath, bytes);
-                _.Path = newPath;
-                return _;
+                mod.Path = newPath;
+                return mod;
             });
             var result = await Task.WhenAll(tasks);
             return result.ToList();
@@ -55,20 +56,21 @@ namespace Spider
 
         public async Task<List<Mod>> GetModIdAsync(IEnumerable<Mod> mods)
         {
-            _logger.LogCritical("开始反编译");
-            await File.WriteAllBytesAsync("./cfr.jar", Resources.cfr_0_150);
-            _logger.LogCritical("释放了cfr到当前目录.");
-            var semaphore = new SemaphoreSlim(0, 5);
+            var cfrPath = Path.Combine(Directory.GetCurrentDirectory(), "cfr.jar");
+            _logger.LogInformation("开始反编译");
+            await File.WriteAllBytesAsync(cfrPath, Resources.cfr_0_150);
+            _logger.LogInformation("释放了cfr到当前目录.");
+            var semaphore = new SemaphoreSlim(10);
             var regex = new Regex("(?<=modid=\").*?(?=\")");
             var tasks = new List<Task<Mod>>();
             foreach (var mod in mods)
             {
-                await semaphore.WaitAsync();
-                try
+                var task = Task.Run(async () =>
                 {
-                    var task = Task.Run(() =>
+                    try
                     {
-                        _logger.LogInformation($"开始对 {mod.Path} 进行反编译以获得modid.");
+                        await semaphore.WaitAsync();
+                        _logger.LogInformation($"开始对 {mod.Path} 进行反编译以获得modid,当前还有{semaphore.CurrentCount}个信号量.");
                         var process = new Process
                         {
                             StartInfo =
@@ -93,24 +95,43 @@ namespace Spider
                                 }
                             }
                         }
-
-                        _logger.LogCritical($"找到了modid: {modid}");
+                        process.Kill();
+                        _logger.LogInformation($"找到了modid: {modid}");
                         mod.ModId = modid;
-                        return mod;
-                    }); 
-                    tasks.Add(task);
-                }
-                finally
-                {
-                    semaphore.Release(1);
-                }
+                        
+                    }
+                    finally
+                    {
+                        semaphore.Release();
+                    }
+                    return mod;
+                });
+                tasks.Add(task);
+
             }
             var result = await Task.WhenAll(tasks);
-            if (File.Exists("./cfr.jar"))
-            {
-                File.Delete("./cfr.jar");
-            }
+
             return result.ToList();
+        }
+
+
+        public async Task<List<Mod>> RestoreModInfoAsync(string path)
+        {
+            var fullPath = Path.GetFullPath(path);
+            if (File.Exists(fullPath))
+            {
+                return JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(path));
+            }
+            throw new Exception();
+        }
+
+        public async Task SaveModInfoAsync(string path, IEnumerable<Mod> mods)
+        {
+            var fullPath = Path.GetFullPath(path);
+            await File.WriteAllBytesAsync(fullPath, JsonSerializer.SerializeToUtf8Bytes(mods,new JsonSerializerOptions()
+            {
+                WriteIndented = true
+            }));
         }
     }
 }
