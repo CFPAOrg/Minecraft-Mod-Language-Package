@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Net.WebSockets;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -46,7 +47,6 @@ namespace Spider
                 File.Move(oldPath, newPath);
                 await File.WriteAllBytesAsync(newPath, bytes);
                 _.Path = newPath;
-                _logger.LogInformation($"下载了 {_.DownloadUrl} 到{_.Path}!");
                 return _;
             });
             var result = await Task.WhenAll(tasks);
@@ -55,48 +55,62 @@ namespace Spider
 
         public async Task<List<Mod>> GetModIdAsync(IEnumerable<Mod> mods)
         {
-            SemaphoreSlim semaphore = new SemaphoreSlim(0,10);
-            File.WriteAllBytes("./cfr.jar", Resources.cfr_0_150);
+            _logger.LogCritical("开始反编译");
+            await File.WriteAllBytesAsync("./cfr.jar", Resources.cfr_0_150);
+            _logger.LogCritical("释放了cfr到当前目录.");
+            var semaphore = new SemaphoreSlim(0, 5);
             var regex = new Regex("(?<=modid=\").*?(?=\")");
-            var result = mods.Select(_ =>
+            var tasks = new List<Task<Mod>>();
+            foreach (var mod in mods)
             {
-                return Task.Run(async () =>
+                await semaphore.WaitAsync();
+                try
                 {
-                    await semaphore.WaitAsync();
-                    _logger.LogInformation($"开始对 {_.Path} 进行反编译以获得modid.");
-                    var process = new Process
+                    var task = Task.Run(() =>
                     {
-                        StartInfo =
+                        _logger.LogInformation($"开始对 {mod.Path} 进行反编译以获得modid.");
+                        var process = new Process
                         {
-                            FileName = "java",
-                            Arguments = $"-jar ./cfr.jar {_.Path}",
-                            RedirectStandardOutput = true,
-                            UseShellExecute = false
-                        }
-                    };
-                    process.Start();
-                    var modid = string.Empty;
-                    while (!process.StandardOutput.EndOfStream)
-                    {
-                        var line = process.StandardOutput.ReadLine();
-                        if (!string.IsNullOrEmpty(line))
-                        {
-                            if (regex.IsMatch(line))
+                            StartInfo =
                             {
-                                modid = regex.Match(line).Value;
-                                break;
+                                FileName = "java",
+                                Arguments = $"-jar ./cfr.jar {mod.Path}",
+                                RedirectStandardOutput = true,
+                                UseShellExecute = false
+                            }
+                        };
+                        process.Start();
+                        var modid = string.Empty;
+                        while (!process.StandardOutput.EndOfStream)
+                        {
+                            var line = process.StandardOutput.ReadLine();
+                            if (!string.IsNullOrEmpty(line))
+                            {
+                                if (regex.IsMatch(line))
+                                {
+                                    modid = regex.Match(line).Value;
+                                    break;
+                                }
                             }
                         }
-                    }
 
-                    _logger.LogCritical($"找到了modid: {modid}");
-                    _.ModId = modid;
+                        _logger.LogCritical($"找到了modid: {modid}");
+                        mod.ModId = modid;
+                        return mod;
+                    }); 
+                    tasks.Add(task);
+                }
+                finally
+                {
                     semaphore.Release(1);
-                    return _;
-                });
-            });
-
-            return (await Task.WhenAll(result)).ToList();
+                }
+            }
+            var result = await Task.WhenAll(tasks);
+            if (File.Exists("./cfr.jar"))
+            {
+                File.Delete("./cfr.jar");
+            }
+            return result.ToList();
         }
     }
 }
