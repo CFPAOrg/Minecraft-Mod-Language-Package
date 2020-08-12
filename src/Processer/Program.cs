@@ -24,6 +24,11 @@ namespace Processer
 
             if (config.RunSortFiles)
             {
+                //Utils.DelDeduplicationFiles(path, config.TargetVersion);
+                var files = Utils.SearchAllFiles("./", config.TargetVersion);
+                files.ForEach(_ => langFiles.Add(new LangFile(_, config.ModBlackList, config.PathBlackList)));
+                //langFiles.ForEach(_ => Log.Information("路径:{0}语言:{1}是否需要处理：{2}",_.LangPath,_.Language,_.IsNeeded));
+                langFiles.ForEach(_ => _.ProcessLangFile());
             }
         }
 
