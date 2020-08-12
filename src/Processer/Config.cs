@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Processer
 {
-    public class Addon
+    public class Config
     {
         [JsonPropertyName("targetVersion")]
         public string TargetVersion { get; set; }

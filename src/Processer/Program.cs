@@ -32,10 +32,10 @@ namespace Processer
             }
         }
 
-        static Addon ReaderConfig(string path)
+        static Config ReaderConfig(string path)
         {
             var reader = File.ReadAllBytes(path + "config/processer.json");
-            return JsonSerializer.Deserialize<Addon>(reader);
+            return JsonSerializer.Deserialize<Config>(reader);
         }
     }
 }
