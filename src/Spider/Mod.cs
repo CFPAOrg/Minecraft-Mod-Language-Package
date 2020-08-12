@@ -17,6 +17,12 @@ namespace Spider
         public Uri DownloadUrl { get; set; }
         [JsonPropertyName("modId")]
         public string ModId { get; set; }
+        [JsonPropertyName("assetDomain")]
+        public string AssetDomain { get; set; }
+        [JsonPropertyName("lastUpdateTime")]
+        public DateTimeOffset LastUpdateTime { get; set; }
+        [JsonPropertyName("lastCheckUpdateTime")]
+        public DateTimeOffset LastCheckUpdateTime { get; set; }
         [JsonPropertyName("languageFilePaths")]
         public List<string> LanguageFilePaths { get; set; }
         [JsonIgnore]

@@ -24,9 +24,6 @@ namespace Processer
 
             if (config.RunSortFiles)
             {
-                var files = Utils.SearchAllFiles("./", config.TargetVersion);
-                files.ForEach(_ => langFiles.Add(new LangFile(_, config.ModBlackList, config.PathBlackList)));
-                langFiles.ForEach(_ => _.ProcessLangFile(_));
             }
         }
 

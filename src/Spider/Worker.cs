@@ -28,35 +28,33 @@ namespace Spider
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             await Task.Delay(100);
-            if (!stoppingToken.IsCancellationRequested)
+            var gameVersion = Configuration.Current.EnabledGameVersions[0];
+            await Configuration.InitializeConfigurationAsync("./config/spider.json");
+            var addons = await _modManager.GetModInfoAsync(Configuration.Current.ModCount, gameVersion);
+            var mods = new List<Mod>();
+            foreach (var addon in addons)
             {
-                var gameVersion = Configuration.Current.EnabledGameVersions[0];
-                await Configuration.InitializeConfigurationAsync("./config/spider.json");
-                var addons = await _modManager.GetModInfoAsync(Configuration.Current.ModCount, gameVersion);
-                var mods = new List<Mod>();
-                foreach (var addon in addons)
+                var modFile = addon.GameVersionLatestFiles.First(_ => _.GameVersion == gameVersion);
+                var downloadUrl = Utils.JoinDownloadUrl(modFile.ProjectFileId.ToString(), modFile.ProjectFileName);
+                var mod = new Mod
                 {
-                    var modFile = addon.GameVersionLatestFiles.First(_ => _.GameVersion == gameVersion);
-                    var downloadUrl = Utils.JoinDownloadUrl(modFile.ProjectFileId.ToString(), modFile.ProjectFileName);
-                    var mod = new Mod
-                    {
-                        Name =  addon.Name,
-                        ProjectId = addon.Id,
-                        ProjectUrl = addon.WebsiteUrl,
-                        DownloadUrl = downloadUrl
-
-                    };
-                    mods.Add(mod);
-                }
-                _logger.LogInformation($"从api获取了{mods.Count}个mod的信息.");
-                mods = await _modManager.DownloadModAsync(mods);
-                mods = await _modManager.GetModIdAsync(mods);
-                _logger.LogInformation($"共有{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}个mod有modid.");
-                await _modManager.SaveModInfoAsync(Configuration.Current.ModInfoPath, mods);
-                _logger.LogInformation($"存储了所有 {mods.Count} 个mod信息到 {Path.GetFullPath(Configuration.Current.ModInfoPath)} ");
-                _logger.LogInformation("Exiting application...");
-                _hostApplicationLifetime.StopApplication();
+                    Name = addon.Name,
+                    ProjectId = addon.Id,
+                    ProjectUrl = addon.WebsiteUrl,
+                    DownloadUrl = downloadUrl,
+                    LastCheckUpdateTime = DateTimeOffset.Now,
+                    LastUpdateTime = addon.DateModified
+                };
+                mods.Add(mod);
             }
+            _logger.LogInformation($"从api获取了{mods.Count}个mod的信息.");
+            mods = await _modManager.DownloadModAsync(mods);
+            mods = await _modManager.GetModIdAsync(mods);
+            _logger.LogInformation($"共有{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}个mod有modid.");
+            await _modManager.SaveModInfoAsync(Configuration.Current.ModInfoPath, mods);
+            _logger.LogInformation($"存储了所有 {mods.Count} 个mod信息到 {Path.GetFullPath(Configuration.Current.ModInfoPath)} ");
+            _logger.LogInformation("Exiting application...");
+            _hostApplicationLifetime.StopApplication();
         }
     }
 }
