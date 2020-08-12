@@ -11,13 +11,28 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # - name: Setup .NET Core SDK
-      #   uses: actions/setup-dotnet@v1.5.0
-      #   with:
-      #     dotnet-version: 5.0.100-preview.7.20366.6
-
       - name: Build processer
         run: dotnet publish .\src\Processer\Processer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
       - name: Run processer
         run: .\Processer
+
+      - name: Push  to github repo
+        if: ${{github.event}} == 'push'
+        run: |
+          ri .\Processer.exe -Force
+          $ErrorActionPreference ='Continue'
+          git config --global credential.helper manager
+          git config --global user.email "bot@cfpa.com"
+          git config --global user.name "CfpaBot"
+          @"
+          protocol=https
+          host=github.com
+          username=baka-gourd
+          password=${{secrets.BAKA_GOURD_TOKEN}}
+          "@ > .\1.txt
+          gc 1.txt|git credential-manager  store
+          ri .\1.txt -Force
+          git add .
+          git commit -m "Update resource"
+          git push origin HEAD:${{ github.ref }}
