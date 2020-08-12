@@ -57,7 +57,7 @@ namespace Spider
         public async Task<List<Mod>> GetModIdAsync(IEnumerable<Mod> mods)
         {
             var cfrPath = Path.Combine(Directory.GetCurrentDirectory(), "cfr.jar");
-            _logger.LogInformation("开始反编译");
+            _logger.LogInformation("开始反编译.");
             await File.WriteAllBytesAsync(cfrPath, Resources.cfr_0_150);
             _logger.LogInformation("释放了cfr到当前目录.");
             var semaphore = new SemaphoreSlim(10);
