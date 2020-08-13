@@ -27,7 +27,7 @@ namespace Processer
         static List<JObject> GetModInfo()
         {
             var folder = Program.ReaderFolder();
-            var jFIle = new JsonTextReader(File.OpenText(folder.Config + "/modInfo.json"));
+            var jFIle = new JsonTextReader(File.OpenText(folder.Config + "/mod_info.json"));
             var list = JToken.ReadFrom(jFIle);
             var objects = new List<JObject>();
             foreach (var jToken in list)
@@ -39,14 +39,14 @@ namespace Processer
 
         public static void RenameDirectory()
         {
-            var infoDirectory = new Dictionary<long, Tuple<string,string>>();
+            var infoDirectory = new Dictionary<string, Tuple<long,string>>();
             var infos = GetModInfo();
             infos.ForEach(_ =>
             {
-                if (!infoDirectory.ContainsKey(Int64.Parse(_["projectId"]?.ToString() ?? string.Empty)))
+                if (!infoDirectory.ContainsKey(_["assetDomain"]?.ToString() ?? string.Empty))
                 {
-                    infoDirectory.Add(Int64.Parse(_["projectId"]?.ToString() ?? string.Empty),
-                        new Tuple<string, string>(_["modId"]?.ToString(), _["assetDomain"]?.ToString()));
+                    infoDirectory.Add(_["assetDomain"]?.ToString() ?? string.Empty,
+                        new Tuple<long, string>(Int64.Parse(_["projectId"]?.ToString() ?? string.Empty), _["modId"]?.ToString()));
                 }
             });
             foreach (var (key, value) in infoDirectory)
