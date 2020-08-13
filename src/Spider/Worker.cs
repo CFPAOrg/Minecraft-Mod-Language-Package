@@ -78,6 +78,7 @@ namespace Spider
             mods = mods.Select(_ =>
             {
                 _.LangAssetsPaths = ModHelper.GetAssetPaths(_);
+                _.AssetDomain = ModHelper.GetAssetDomain(_);
                 return _;
             }).ToHashSet();
             mods = (await _modManager.GetModIdAsync(mods)).ToHashSet();
