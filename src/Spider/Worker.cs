@@ -31,21 +31,23 @@ namespace Spider
             await Task.Delay(100, stoppingToken);
             var gameVersion = Configuration.Current.EnabledGameVersions[0];
             await Configuration.InitializeConfigurationAsync("./config/spider.json");
-            List<Mod> existingMods;
+            var existingMods = new HashSet<Mod>();
+            var mods = new HashSet<Mod>();
+            var skiped = new HashSet<Mod>();
             try
             {
-                existingMods =
-                    JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(Configuration.Current.ModInfoPath, stoppingToken));
+                var tempMods = JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(Configuration.Current.ModInfoPath, stoppingToken));
+                existingMods.UnionWith(tempMods??new List<Mod>());
+                    
             }
             catch (Exception e)
             {
-                existingMods = new List<Mod>();
+                
                 _logger.LogError(e, "");
             }
             var addons = await _modManager.GetModInfoAsync(Configuration.Current.ModCount+existingMods!.Count, gameVersion);
             
-            var mods = new HashSet<Mod>();
-            var skiped = new HashSet<Mod>();
+            
             foreach (var addon in addons)
             {
                 var modFile = addon.GameVersionLatestFiles.First(_ => _.GameVersion == gameVersion);
@@ -59,8 +61,7 @@ namespace Spider
                     LastCheckUpdateTime = DateTimeOffset.Now,
                     LastUpdateTime = addon.DateModified
                 };
-                var list = existingMods.ToList();
-                var old = list.Find(_ => _.ProjectId == mod.ProjectId);
+                var old = existingMods.SingleOrDefault(_ => _.ProjectId == mod.ProjectId);
                 if (old != default(Mod))
                 {
                     if (old!.LastCheckUpdateTime >= mod.LastUpdateTime)
