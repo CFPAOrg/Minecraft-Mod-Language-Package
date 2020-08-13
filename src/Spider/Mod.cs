@@ -23,8 +23,8 @@ namespace Spider
         public DateTimeOffset LastUpdateTime { get; set; }
         [JsonPropertyName("lastCheckUpdateTime")]
         public DateTimeOffset LastCheckUpdateTime { get; set; }
-        [JsonPropertyName("languageFilePaths")]
-        public List<string> LanguageFilePaths { get; set; }
+        [JsonPropertyName("langAssetsPaths")]
+        public HashSet<string> LangAssetsPaths { get; set; }
         [JsonIgnore]
         public string Path { get; set; }
 

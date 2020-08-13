@@ -33,7 +33,7 @@ namespace Spider
             await Configuration.InitializeConfigurationAsync("./config/spider.json");
             var existingMods = new HashSet<Mod>();
             var mods = new HashSet<Mod>();
-            var skiped = new HashSet<Mod>();
+            var skipped = new HashSet<Mod>();
             try
             {
                 var tempMods = JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(Configuration.Current.ModInfoPath, stoppingToken));
@@ -62,12 +62,12 @@ namespace Spider
                     LastUpdateTime = addon.DateModified
                 };
                 var old = existingMods.SingleOrDefault(_ => _.ProjectId == mod.ProjectId);
-                if (old != default(Mod))
+                if (old!.Equals(default))
                 {
                     if (old!.LastCheckUpdateTime >= mod.LastUpdateTime)
                     {
                         _logger.LogInformation($"跳过了已存在的mod: {mod.Name}");
-                        skiped.Add(old);
+                        skipped.Add(old);
                         continue;
                     }
                 }
@@ -75,10 +75,15 @@ namespace Spider
             }
             _logger.LogInformation($"从api获取了{mods.Count}个mod的信息.");
             mods = (await _modManager.DownloadModAsync(mods)).ToHashSet();
+            mods = mods.Select(_ =>
+            {
+                _.LangAssetsPaths = ModHelper.GetAssetPaths(_);
+                return _;
+            }).ToHashSet();
             mods = (await _modManager.GetModIdAsync(mods)).ToHashSet();
             _logger.LogInformation($"共有{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}个mod有modid.");
-            mods.UnionWith(skiped);
-            await _modManager.SaveModInfoAsync(Configuration.Current.ModInfoPath, mods);
+            mods.UnionWith(skipped);
+            await ModHelper.SaveModInfoAsync(Configuration.Current.ModInfoPath, mods);
             _logger.LogInformation($"存储了所有 {mods.Count} 个mod信息到 {Path.GetFullPath(Configuration.Current.ModInfoPath)} ");
             _logger.LogInformation("Exiting application...");
             _hostApplicationLifetime.StopApplication();
