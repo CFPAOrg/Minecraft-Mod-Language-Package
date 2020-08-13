@@ -30,7 +30,7 @@ namespace Spider
 
         public bool Equals(Mod other)
         {
-            return ProjectId == other.ProjectId && Equals(ProjectUrl, other.ProjectUrl) && ModId == other.ModId && AssetDomain == other.AssetDomain && Equals(LanguageFilePaths, other.LanguageFilePaths);
+            return ProjectId == other.ProjectId && Equals(ProjectUrl, other.ProjectUrl) && AssetDomain == other.AssetDomain && Equals(LanguageFilePaths, other.LanguageFilePaths);
         }
 
         public override bool Equals(object obj)
@@ -43,7 +43,7 @@ namespace Spider
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(ProjectId, ProjectUrl, ModId, AssetDomain, LanguageFilePaths);
+            return HashCode.Combine(ProjectId, ProjectUrl, AssetDomain, LanguageFilePaths);
         }
 
         private sealed class ModEqualityComparer : IEqualityComparer<Mod>
@@ -54,12 +54,12 @@ namespace Spider
                 if (ReferenceEquals(x, null)) return false;
                 if (ReferenceEquals(y, null)) return false;
                 if (x.GetType() != y.GetType()) return false;
-                return x.ProjectId == y.ProjectId && Equals(x.ProjectUrl, y.ProjectUrl) && x.ModId == y.ModId && x.AssetDomain == y.AssetDomain && Equals(x.LanguageFilePaths, y.LanguageFilePaths);
+                return x.ProjectId == y.ProjectId && Equals(x.ProjectUrl, y.ProjectUrl)  && x.AssetDomain == y.AssetDomain && Equals(x.LanguageFilePaths, y.LanguageFilePaths);
             }
 
             public int GetHashCode(Mod obj)
             {
-                return HashCode.Combine(obj.ProjectId, obj.ProjectUrl, obj.ModId, obj.AssetDomain, obj.LanguageFilePaths);
+                return HashCode.Combine(obj.ProjectId, obj.ProjectUrl,  obj.AssetDomain, obj.LanguageFilePaths);
             }
         }
 

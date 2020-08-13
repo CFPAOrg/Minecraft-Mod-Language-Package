@@ -70,7 +70,7 @@ namespace Spider
                     try
                     {
                         await semaphore.WaitAsync();
-                        _logger.LogInformation($"开始对 {mod.Path} 进行反编译以获得modid,当前还有{semaphore.CurrentCount}个信号量.");
+                        _logger.LogInformation($"开始对 {mod.Name} 进行反编译以获得modid,当前还有{semaphore.CurrentCount}个信号量.");
                         var process = new Process
                         {
                             StartInfo =

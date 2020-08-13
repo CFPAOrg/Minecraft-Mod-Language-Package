@@ -31,7 +31,6 @@ namespace Spider
             await Task.Delay(100, stoppingToken);
             var gameVersion = Configuration.Current.EnabledGameVersions[0];
             await Configuration.InitializeConfigurationAsync("./config/spider.json");
-            var addons = await _modManager.GetModInfoAsync(Configuration.Current.ModCount, gameVersion);
             List<Mod> existingMods;
             try
             {
@@ -41,10 +40,11 @@ namespace Spider
             catch (Exception e)
             {
                 existingMods = new List<Mod>();
-                _logger.LogError(e,"");
+                _logger.LogError(e, "");
             }
+            var addons = await _modManager.GetModInfoAsync(Configuration.Current.ModCount+existingMods!.Count, gameVersion);
+            
             var mods = new List<Mod>();
-            mods.AddRange(existingMods!);
             foreach (var addon in addons)
             {
                 var modFile = addon.GameVersionLatestFiles.First(_ => _.GameVersion == gameVersion);
@@ -60,6 +60,7 @@ namespace Spider
                 };
                 if (ModHelper.ShouldPassMod(mod,existingMods))
                 {
+                    _logger.LogInformation($"跳过了已存在的mod: {mod.Name}");
                     break;
                 }
                 mods.Add(mod);
@@ -68,6 +69,7 @@ namespace Spider
             mods = await _modManager.DownloadModAsync(mods);
             mods = await _modManager.GetModIdAsync(mods);
             _logger.LogInformation($"共有{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}个mod有modid.");
+            mods.AddRange(existingMods!);
             await _modManager.SaveModInfoAsync(Configuration.Current.ModInfoPath, mods);
             _logger.LogInformation($"存储了所有 {mods.Count} 个mod信息到 {Path.GetFullPath(Configuration.Current.ModInfoPath)} ");
             _logger.LogInformation("Exiting application...");
