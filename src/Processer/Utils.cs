@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -36,22 +37,26 @@ namespace Processer
             return objects;
         }
 
-        public static void RenameDirectory()
+        public static Dictionary<string, string> ReturnDictionary()
         {
-            var infoDirectory = new Dictionary<string, Tuple<long,string>>();
+            var infoDirectory = new Dictionary<string, string>();
             var infos = GetModInfo();
             infos.ForEach(_ =>
             {
-                if (!infoDirectory.ContainsKey(_["assetDomain"]?.ToString() ?? string.Empty))
+                if (!infoDirectory.ContainsKey(_["modId"]?.ToString() ?? string.Empty))
                 {
-                    infoDirectory.Add(_["assetDomain"]?.ToString() ?? string.Empty,
-                        new Tuple<long, string>(Int64.Parse(_["projectId"]?.ToString() ?? string.Empty), _["modId"]?.ToString()));
+                    if (_["modId"]?.ToString() != "" && _["assetDomain"] != null)
+                    {
+                        infoDirectory.Add(_["modId"]?.ToString() ?? string.Empty, _["assetDomain"]?.ToString());
+                    }
                 }
             });
-            foreach (var (key, value) in infoDirectory)
+            foreach (var keyValuePair in infoDirectory)
             {
-                Console.WriteLine("{0},{1},{2}",key,value.Item1,value.Item2);
+                Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
             }
+
+            return infoDirectory;
         }
     }
     public partial class LangFile
