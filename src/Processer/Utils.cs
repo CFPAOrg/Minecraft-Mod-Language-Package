@@ -11,17 +11,17 @@ namespace Processer
 {
     public class Utils
     {
-        public static List<string> SearchAllFiles(string path ,string version)
-        {
-            var allFiles = new List<string>();
-            var files1 = Directory.GetFiles(path + "projects/" + version, "*.lang", SearchOption.AllDirectories);
-            var files2 = Directory.GetFiles(path + "projects/" + version, "*.json", SearchOption.AllDirectories);
-            foreach (var s in files1)
-                allFiles.Add(s);
-            foreach (var s in files2)
-                allFiles.Add(s);
-            return allFiles;
-        }
+        //public static List<string> SearchAllFiles(string path ,string version)
+        //{
+        //    var allFiles = new List<string>();
+        //    var files1 = Directory.GetFiles(path + "projects/" + version, "*.lang", SearchOption.AllDirectories);
+        //    var files2 = Directory.GetFiles(path + "projects/" + version, "*.json", SearchOption.AllDirectories);
+        //    foreach (var s in files1)
+        //        allFiles.Add(s);
+        //    foreach (var s in files2)
+        //        allFiles.Add(s);
+        //    return allFiles;
+        //}
 
         static List<JObject> GetModInfo()
         {
