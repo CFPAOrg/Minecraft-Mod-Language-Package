@@ -37,7 +37,7 @@ namespace Spider
             return await httpClinet.GetFromJsonAsync<List<Addon>>(uriBuilder.Uri);
         }
 
-        public async Task<List<Mod>> DownloadModAsync(IEnumerable<Mod> mods)
+        public async Task<IEnumerable<Mod>> DownloadModAsync(IEnumerable<Mod> mods)
         {
             var httpClient = _httpClientFactory.CreateClient();
             var tasks = mods.Select(async mod =>
@@ -54,7 +54,7 @@ namespace Spider
             return result.ToList();
         }
 
-        public async Task<List<Mod>> GetModIdAsync(IEnumerable<Mod> mods)
+        public async Task<IEnumerable<Mod>> GetModIdAsync(IEnumerable<Mod> mods)
         {
             var cfrPath = Path.Combine(Directory.GetCurrentDirectory(), "cfr.jar");
             _logger.LogInformation("开始反编译.");

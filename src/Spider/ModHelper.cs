@@ -7,13 +7,13 @@ namespace Spider
 {
     public static class ModHelper
     {
-        public static bool ShouldPassMod(Mod mod, IEnumerable<Mod> mods)
+        public static bool ShouldSkipMod(Mod mod, IEnumerable<Mod> mods)
         {
 
             var list = mods.ToList();
-            if (list.Contains(mod))
+            var old = list.Find(_ => _.ProjectId == mod.ProjectId);
+            if (old != default(Mod))
             {
-                var old = list.Find(_ => _.Equals(mod));
                 if (old!.LastCheckUpdateTime < mod.LastUpdateTime)//检查是否有更新
                 {
                     return false;
