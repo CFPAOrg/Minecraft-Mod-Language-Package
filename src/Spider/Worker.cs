@@ -67,7 +67,7 @@ namespace Spider
                     {
                         _logger.LogInformation($"跳过了已存在的mod: {mod.Name}");
                         skiped.Add(old);
-                        break;
+                        continue;
                     }
                 }
                 mods.Add(mod);
