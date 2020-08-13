@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Serilog;
 
@@ -19,6 +22,37 @@ namespace Processer
             foreach (var s in files2)
                 allFiles.Add(s);
             return allFiles;
+        }
+
+        static List<JObject> GetModInfo()
+        {
+            var folder = Program.ReaderFolder();
+            var jFIle = new JsonTextReader(File.OpenText(folder.Config + "/modInfo.json"));
+            var list = JToken.ReadFrom(jFIle);
+            var objects = new List<JObject>();
+            foreach (var jToken in list)
+            {
+                objects.Add((JObject)jToken);
+            }
+            return objects;
+        }
+
+        public static void RenameDirectory()
+        {
+            var infoDirectory = new Dictionary<long, Tuple<string,string>>();
+            var infos = GetModInfo();
+            infos.ForEach(_ =>
+            {
+                if (!infoDirectory.ContainsKey(Int64.Parse(_["projectId"]?.ToString() ?? string.Empty)))
+                {
+                    infoDirectory.Add(Int64.Parse(_["projectId"]?.ToString() ?? string.Empty),
+                        new Tuple<string, string>(_["modId"]?.ToString(), _["assetDomain"]?.ToString()));
+                }
+            });
+            foreach (var (key, value) in infoDirectory)
+            {
+                Console.WriteLine("{0},{1},{2}",key,value.Item1,value.Item2);
+            }
         }
     }
     public partial class LangFile
