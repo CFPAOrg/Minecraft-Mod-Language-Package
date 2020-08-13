@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
+using System.Threading.Tasks;
 using Serilog;
 using Serilog.Core;
 
@@ -18,6 +19,7 @@ namespace Processer
             var folder = ReaderFolder();
             var langFiles = new List<LangFile>();
             var config = ReaderConfig(folder.Config);
+            Utils.RenameDirectory();
             if (config.RunDelFiles)
             {
             }
@@ -38,9 +40,9 @@ namespace Processer
             return JsonSerializer.Deserialize<Config>(reader);
         }
 
-        static Folder ReaderFolder()
+        public static Folder ReaderFolder()
         {
-            var reader = File.ReadAllBytes("./config/folder.json");
+            var reader = File.ReadAllBytes(@"D:\repos\Minecraft-Mod-Language-Package/config" + "/folder.json");
             return JsonSerializer.Deserialize<Folder>(reader);
         }
     }
