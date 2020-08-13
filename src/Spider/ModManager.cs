@@ -113,26 +113,5 @@ namespace Spider
 
             return result.ToList();
         }
-
-
-        public async Task<List<Mod>> RestoreModInfoAsync(string path)
-        {
-            var fullPath = Path.GetFullPath(path);
-            if (File.Exists(fullPath))
-            {
-                return JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(path));
-            }
-            throw new Exception();
-        }
-
-        public async Task SaveModInfoAsync(string path, IEnumerable<Mod> mods)
-        {
-            var fullPath = Path.GetFullPath(path);
-            await File.WriteAllBytesAsync(fullPath, JsonSerializer.SerializeToUtf8Bytes(mods,new JsonSerializerOptions()
-            {
-                WriteIndented = true
-            }));
-        }
-        
     }
 }
