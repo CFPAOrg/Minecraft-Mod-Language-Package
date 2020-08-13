@@ -33,7 +33,7 @@ namespace Spider
 
                 Log.Error(e, "");
             }
-            var addons = await ModManager.GetModInfoAsync(Configuration.Current.ModCount + existingMods!.Count, gameVersion);
+            var addons = await ModHelper.GetModInfoAsync(Configuration.Current.ModCount + existingMods!.Count, gameVersion);
 
 
             foreach (var addon in addons)
@@ -62,14 +62,14 @@ namespace Spider
                 mods.Add(mod);
             }
             Log.Information($"从api获取了{mods.Count}个mod的信息.");
-            mods = (await ModManager.DownloadModAsync(mods)).ToHashSet();
+            mods = (await ModHelper.DownloadModAsync(mods)).ToHashSet();
             mods = mods.Select(_ =>
             {
                 _.LangAssetsPaths = ModHelper.GetAssetPaths(_);
                 _.AssetDomain = ModHelper.GetAssetDomain(_);
                 return _;
             }).ToHashSet();
-            mods = (await ModManager.GetModIdAsync(mods)).ToHashSet();
+            mods = (await ModHelper.GetModIdAsync(mods)).ToHashSet();
             Log.Information($"共有{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}个mod有modid.");
             mods.UnionWith(skipped);
             await ModHelper.SaveModInfoAsync(Configuration.Current.ModInfoPath, mods);
