@@ -20,12 +20,14 @@ namespace Spider
             var old = list.Find(_ => _.ProjectId == mod.ProjectId);
             if (old != default(Mod))
             {
-                if (old!.LastCheckUpdateTime < mod.LastUpdateTime)//检查是否有更新
+                if (old!.LastCheckUpdateTime < mod.LastUpdateTime) //检查是否有更新
                 {
                     return false;
                 }
+
                 return true;
             }
+
             return false;
         }
 
@@ -37,10 +39,11 @@ namespace Spider
         public static async Task SaveModInfoAsync(string path, IEnumerable<Mod> mods)
         {
             var fullPath = Path.GetFullPath(path);
-            await File.WriteAllBytesAsync(fullPath, JsonSerializer.SerializeToUtf8Bytes(mods,new JsonSerializerOptions()
-            {
-                WriteIndented = true
-            }));
+            await File.WriteAllBytesAsync(fullPath, JsonSerializer.SerializeToUtf8Bytes(mods,
+                new JsonSerializerOptions()
+                {
+                    WriteIndented = true
+                }));
         }
 
         public static async Task<List<Mod>> RestoreModInfoAsync(string path)
@@ -50,13 +53,28 @@ namespace Spider
             {
                 return JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(path));
             }
+
             throw new Exception();
         }
 
         public static string GetAssetDomain(string path)
         {
-            var paths = GetAssetPaths(path);
-            return paths.Select(_ => _.Split("/")).GroupBy(_ => _[1]).OrderByDescending(_ => _.Count()).First().Key;
+            try
+            {
+                var paths = GetAssetPaths(path);
+                if (paths == null || paths.Count == 0)
+                {
+                    return null;
+                }
+                var assetDomain = paths.Select(_ => _.Split("/")).GroupBy(_ => _[1]).OrderByDescending(_ => _.Count()).First().Key;
+                Log.Information($"拿到了assetdomain: {assetDomain}");
+                return assetDomain;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         public static string GetAssetDomain(Mod mod)
