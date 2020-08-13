@@ -62,7 +62,7 @@ namespace Spider
                     LastUpdateTime = addon.DateModified
                 };
                 var old = existingMods.SingleOrDefault(_ => _.ProjectId == mod.ProjectId);
-                if (old!.Equals(default))
+                if (!(old is null))
                 {
                     if (old!.LastCheckUpdateTime >= mod.LastUpdateTime)
                     {
