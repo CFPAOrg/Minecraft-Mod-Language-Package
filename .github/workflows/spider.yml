@@ -2,7 +2,7 @@ name: Spider
 
 on: 
   push:
-    paths-ignore: '**/modInfo.json'
+    paths-ignore: '**/*nfo.json'
     
 
 jobs:
@@ -28,7 +28,7 @@ jobs:
       - name: Run spider
         run: .\Spider
 
-      - name: Push modinfo.json to github repo
+      - name: Push  to github
         if: ${{github.event}} == 'push'
         run: |
           ri .\Spider.exe -Force
@@ -45,5 +45,5 @@ jobs:
           gc 1.txt|git credential-manager  store
           ri .\1.txt -Force
           git add .
-          git commit -m "Update modInfo.json"
+          git commit -m "Update mod_info.json"
           git push origin HEAD:${{ github.ref }}
