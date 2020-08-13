@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -52,7 +53,16 @@ namespace Spider
             throw new Exception();
         }
 
+        public static string GetAssetDomain(string path)
+        {
+            var paths = GetAssetPaths(path);
+            return paths.Select(_ => _.Split("/")).GroupBy(_ => _[1]).OrderByDescending(_ => _.Count()).First().Key;
+        }
 
+        public static string GetAssetDomain(Mod mod)
+        {
+            return GetAssetDomain(mod.Path);
+        }
         public static HashSet<string> GetAssetPaths(Mod mod)
         {
             return GetAssetPaths(mod?.Path);
@@ -67,7 +77,7 @@ namespace Spider
                 var entries = zipArchive.Entries
                     .Where(_ => _.FullName.StartsWith("assets/", StringComparison.OrdinalIgnoreCase))
                     .Where(_ => _.FullName.Contains("/lang/")).ToList();
-                return entries.Select(_ => _.FullName).ToHashSet();
+                return entries.Select(_ => _.FullName).Where(Path.HasExtension).ToHashSet();
             }
             catch (Exception e)
             {
