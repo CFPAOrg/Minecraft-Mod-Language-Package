@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Serilog;
@@ -15,8 +14,8 @@ namespace Processer
         public static List<string> SearchAllFiles(string path ,string version)
         {
             var allFiles = new List<string>();
-            var files1 = Directory.GetFiles(path + "projects/langresource/" + version, "*.lang", SearchOption.AllDirectories);
-            var files2 = Directory.GetFiles(path + "projects/langresource/" + version, "*.json", SearchOption.AllDirectories);
+            var files1 = Directory.GetFiles(path + "projects/" + version, "*.lang", SearchOption.AllDirectories);
+            var files2 = Directory.GetFiles(path + "projects/" + version, "*.json", SearchOption.AllDirectories);
             foreach (var s in files1)
                 allFiles.Add(s);
             foreach (var s in files2)
