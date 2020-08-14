@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
@@ -59,7 +60,7 @@ namespace Processer
             });
             foreach (var keyValuePair in idDirectory)
             {
-                Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
+                //Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
             }
 
             return idDirectory;
@@ -69,20 +70,34 @@ namespace Processer
         public static void Do()
         {
             var folder = Program.ReaderFolder();
-            var idD = GetIdDictionary();
+            //var idD = GetIdDictionary();
             var root = new DirectoryInfo(folder.Projects + "/1.12.2/assets");
             foreach (var info in root.GetDirectories())
             {
-                var str = info.Name;
-                if (str.Contains("."))
-                {
-                    var strs = str.Split(".",2);
-                    var id = strs[1];
-                    string name;
-                    idD.TryGetValue(id, out name);
-                    Console.WriteLine(name);
-                    Directory.Move(info.ToString(), folder.Projects + "/1.12.2/assets" + "/" + name);
-                }
+                var r = new DirectoryInfo(info.ToString());
+                var boo = false;
+                r.GetDirectories().ToList().ForEach(_ => {
+                    if (_.Name == "lang")
+                    {
+                        r.MoveTo(folder.Projects + "/1.12.2/assets/1old/" + r.Name);
+                    }
+                });
+
+
+
+
+                //var str = info.Name;
+                //if (str.Contains("."))
+                //{
+                //    var strs = str.Split(".",2);
+                //    var id = strs[1];
+                //    string name;
+                //    idD.TryGetValue(id, out name);
+                //    Console.WriteLine(name);
+                //    Directory.Move(info.ToString(), folder.Projects + "/1.12.2/assets" + "/" + name);
+                //}
+
+
                 //if (idD.ContainsValue(info.Name))
                 //{
                 //    var modid = idD.FirstOrDefault(_ => _.Value == info.Name).Key;
