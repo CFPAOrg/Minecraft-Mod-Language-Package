@@ -13,7 +13,7 @@ namespace Spider
         public static Configuration Default { get; }=new Configuration()
         {
             EnabledGameVersions = new List<string>{"1.12.2"},
-            ModCount = 2000,
+            ModCount = 2400,
             ModInfoPath = "./mod_info.json"
         };
 
