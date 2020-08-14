@@ -37,26 +37,54 @@ namespace Processer
             return objects;
         }
 
-        public static Dictionary<string, string> ReturnDictionary()
+        public static Dictionary<string, string> GetIdDictionary()
         {
-            var infoDirectory = new Dictionary<string, string>();
+            var idDirectory = new Dictionary<string, string>();
             var infos = GetModInfo();
             infos.ForEach(_ =>
             {
-                if (!infoDirectory.ContainsKey(_["modId"]?.ToString() ?? string.Empty))
+                if (!idDirectory.ContainsKey(_["modId"]?.ToString() ?? string.Empty))
                 {
-                    if (_["modId"]?.ToString() != "" && _["assetDomain"] != null)
+                    if (_["modId"]?.ToString() != "")
                     {
-                        infoDirectory.Add(_["modId"]?.ToString() ?? string.Empty, _["assetDomain"]?.ToString());
+                        if (_["assetDomain"]?.ToString() != "")
+                        {
+                            idDirectory.Add(_["modId"]?.ToString() ?? string.Empty, _["assetDomain"]?.ToString());
+                        }
                     }
                 }
             });
-            foreach (var keyValuePair in infoDirectory)
+            foreach (var keyValuePair in idDirectory)
             {
                 Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
             }
 
-            return infoDirectory;
+            return idDirectory;
+        }
+
+        public static Dictionary<string, string> GetProjectIdDictionary()
+        {
+            var pidDirectory = new Dictionary<string, string>();
+            var infos = GetModInfo();
+            infos.ForEach(_ =>
+            {
+                if (!pidDirectory.ContainsKey(_["modId"]?.ToString() ?? string.Empty))
+                {
+                    if (_["modId"]?.ToString() != "")
+                    {
+                        if (_["projectId"]?.ToString() != "")
+                        {
+                            pidDirectory.Add(_["modId"]?.ToString() ?? string.Empty, _["projectId"]?.ToString());
+                        }
+                    }
+                }
+            });
+            foreach (var keyValuePair in pidDirectory)
+            {
+                Log.Logger.Information("{0},{1}", keyValuePair.Key, keyValuePair.Value);
+            }
+
+            return pidDirectory;
         }
     }
     public partial class LangFile
