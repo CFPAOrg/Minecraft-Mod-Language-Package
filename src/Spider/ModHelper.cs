@@ -114,12 +114,13 @@ namespace Spider
 
         public static async Task<IEnumerable<Mod>> DownloadModAsync(IEnumerable<Mod> mods)
         {
-            SemaphoreSlim semaphore = new SemaphoreSlim(1000);
+            SemaphoreSlim semaphore = new SemaphoreSlim(600);
             var tasks = mods.Select(async mod =>
             {
-                await semaphore.WaitAsync();
+                
                 try
                 {
+                    await semaphore.WaitAsync();
                     using var httpClient = new HttpClient();
                     var bytes = await httpClient.GetByteArrayAsync(mod.DownloadUrl);
                     var oldPath = Path.GetTempFileName();
