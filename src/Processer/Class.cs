@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Processer
 {
-    public partial class LangFile
+    public abstract partial class LangFile
     {
         public string LangPath { get; set; }
         public Format Format { get; set; }

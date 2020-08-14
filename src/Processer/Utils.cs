@@ -70,21 +70,10 @@ namespace Processer
         public static void Do()
         {
             var folder = Program.ReaderFolder();
-            //var idD = GetIdDictionary();
+            var idD = GetIdDictionary();
             var root = new DirectoryInfo(folder.Projects + "/1.12.2/assets");
             foreach (var info in root.GetDirectories())
             {
-                var r = new DirectoryInfo(info.ToString());
-                var boo = false;
-                r.GetDirectories().ToList().ForEach(_ => {
-                    if (_.Name == "lang")
-                    {
-                        r.MoveTo(folder.Projects + "/1.12.2/assets/1old/" + r.Name);
-                    }
-                });
-
-
-
 
                 //var str = info.Name;
                 //if (str.Contains("."))
@@ -112,7 +101,7 @@ namespace Processer
             }
         }
     }
-    public partial class LangFile
+    public abstract partial class LangFile
     {
         public void ProcessLangFile()
         {

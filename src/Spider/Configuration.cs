@@ -14,7 +14,7 @@ namespace Spider
         {
             EnabledGameVersions = new List<string>{"1.12.2"},
             ModCount = 2200,
-            ModInfoPath = "./mod_info.json"
+            ModInfoPath = "./config/mod_info.json"
         };
 
         public List<string> EnabledGameVersions { get; set; }
