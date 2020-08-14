@@ -114,7 +114,7 @@ namespace Spider
 
         public static async Task<IEnumerable<Mod>> DownloadModAsync(IEnumerable<Mod> mods)
         {
-            SemaphoreSlim semaphore = new SemaphoreSlim(600);
+            SemaphoreSlim semaphore = new SemaphoreSlim(500);
             var tasks = mods.Select(async mod =>
             {
                 
