@@ -18,23 +18,21 @@ namespace Spider
             .WriteTo.Console()
             .CreateLogger();
 
-            var gameVersion = Configuration.Current.EnabledGameVersions[0];
-            await Configuration.InitializeConfigurationAsync("./config/spider.json");
+            var gameVersion = Configuration.Default.EnabledGameVersions[0];
             var existingMods = new HashSet<Mod>();
             var mods = new HashSet<Mod>();
             var skipped = new HashSet<Mod>();
-            try
-            {
-                var tempMods = JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(Configuration.Current.ModInfoPath));
-                existingMods.UnionWith(tempMods ?? new List<Mod>());
-
-            }
-            catch (Exception e)
-            {
-
-                Log.Error(e, "");
-            }
-            var addons = await ModHelper.GetModInfoAsync(Configuration.Current.ModCount + existingMods!.Count, gameVersion);
+            //try
+            //{
+            //    var tempMods = JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(Configuration.Default.ModInfoPath));
+            //    existingMods.UnionWith(tempMods ?? new List<Mod>());
+            //}
+            //catch (Exception e)
+            //{
+            //    Log.Error(e, "");
+            //    throw;
+            //}
+            var addons = await ModHelper.GetModInfoAsync(Configuration.Default.ModCount + existingMods!.Count, gameVersion);
 
 
             foreach (var addon in addons)
@@ -51,16 +49,16 @@ namespace Spider
                     LastCheckUpdateTime = DateTimeOffset.Now,
                     LastUpdateTime = addon.DateModified
                 };
-                var old = existingMods.SingleOrDefault(_ => _.ProjectId == mod.ProjectId);
-                if (!(old is null))
-                {
-                    if (old!.LastCheckUpdateTime >= mod.LastUpdateTime)
-                    {
-                        Log.Information($"跳过了已存在的mod: {mod.Name}");
-                        skipped.Add(old);
-                        continue;
-                    }
-                }
+                //var old = existingMods.SingleOrDefault(_ => _.ProjectId == mod.ProjectId);
+                //if (!(old is null))
+                //{
+                //    if (old!.LastCheckUpdateTime >= mod.LastUpdateTime)
+                //    {
+                //        Log.Information($"跳过了已存在的mod: {mod.Name}");
+                //        skipped.Add(old);
+                //        continue;
+                //    }
+                //}
                 mods.Add(mod);
             }
             Log.Information($"从api获取了{mods.Count}个mod的信息.");
@@ -71,11 +69,10 @@ namespace Spider
                 _.AssetDomains = ModHelper.GetAssetDomains(_);
                 return _;
             }).ToHashSet();
-            mods = (await ModHelper.GetModIdAsync(mods)).ToHashSet();
             Log.Information($"共有{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}个mod有modid.");
-            mods.UnionWith(skipped);
-            await ModHelper.SaveModInfoAsync(Configuration.Current.ModInfoPath, mods);
-            Log.Information($"存储了所有 {mods.Count} 个mod信息到 {Path.GetFullPath(Configuration.Current.ModInfoPath)} ");
+            //mods.UnionWith(skipped);
+            await ModHelper.SaveModInfoAsync(Configuration.Default.ModInfoPath, mods);
+            Log.Information($"存储了所有 {mods.Count} 个mod信息到 {Path.GetFullPath(Configuration.Default.ModInfoPath)} ");
             Log.Information("Exiting application...");
         }
 
