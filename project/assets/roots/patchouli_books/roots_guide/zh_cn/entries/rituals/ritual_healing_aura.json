@@ -1,0 +1,36 @@
+{
+  "name": "治疗光环",
+  "icon": "roots:ritual_healing_aura",
+  "category": "rituals",
+  "advancement": "roots:pyre",
+  "flag": "roots:ritual_healing_aura",
+  "pages": [
+    {
+      "type": "text",
+      "text": "这一仪式的持续时间很短，但是受到影响仪式影响的生物的生命值将会完全恢复。$(br2)$(warning)敌对生物也会受到治疗，注意！$(br2)$(standing_stones) $(l:rituals/ritual_healing_aura#multiblock)本仪式需要使用到石柱。$()"
+    },
+    {
+      "type": "pyre_template",
+      "ritual": "ritual_healing_aura"
+    },
+    {
+      "type": "multiblock",
+      "anchor": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:bonfire",
+          "R": "roots:runestone",
+          "C": "roots:chiseled_runestone",
+          "L": "minecraft:leaves[variant=birch]",
+          "W": "minecraft:log[variant=birch]"
+        },
+        "pattern": [
+          ["       ","       ","       ","       ","       ","   L   ","       "],
+          ["       ","   C   ","       ","       ","  LLL  ","  LLL  ","  LLL  "],
+          ["       ","   R   ","       ","       ","       ","   W   ","       "],
+          ["       ","   R   ","       ","   0   ","       ","   W   ","       "]
+        ]
+      }
+    }
+  ]
+}
