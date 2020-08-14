@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
@@ -12,15 +13,15 @@ namespace Processer
 {
     public class Utils
     {
-        //public static List<string> SearchAllFiles(string path ,string version)
+        //public static List<string> SearchAllFiles(string path, string version)
         //{
         //    var allFiles = new List<string>();
         //    var files1 = Directory.GetFiles(path + "projects/" + version, "*.lang", SearchOption.AllDirectories);
-        //    var files2 = Directory.GetFiles(path + "projects/" + version, "*.json", SearchOption.AllDirectories);
+        //    //var files2 = Directory.GetFiles(path + "projects/" + version, "*.json", SearchOption.AllDirectories);
         //    foreach (var s in files1)
         //        allFiles.Add(s);
-        //    foreach (var s in files2)
-        //        allFiles.Add(s);
+        //    //foreach (var s in files2)
+        //    //    allFiles.Add(s);
         //    return allFiles;
         //}
 
@@ -37,7 +38,7 @@ namespace Processer
             return objects;
         }
 
-        public static Dictionary<string, string> GetIdDictionary()
+        static Dictionary<string, string> GetIdDictionary()
         {
             var idDirectory = new Dictionary<string, string>();
             var infos = GetModInfo();
@@ -62,7 +63,7 @@ namespace Processer
             return idDirectory;
         }
 
-        public static Dictionary<string, string> GetProjectIdDictionary()
+        static Dictionary<string, string> GetProjectIdDictionary()
         {
             var pidDirectory = new Dictionary<string, string>();
             var infos = GetModInfo();
@@ -85,6 +86,28 @@ namespace Processer
             }
 
             return pidDirectory;
+        }
+
+        public static void Do()
+        {
+            var folder = Program.ReaderFolder();
+            var idD = GetIdDictionary();
+            var pidD = GetProjectIdDictionary();
+            var root = new DirectoryInfo(folder.Projects + "/1.12.2/assets");
+            foreach (var info in root.GetDirectories())
+            {
+                if (idD.ContainsValue(info.Name))
+                {
+                    var modid = idD.FirstOrDefault(_ => _.Value == info.Name).Key;
+                    modid = modid.Replace("|", "_");
+                    var pid = pidD.GetValueOrDefault(modid);
+                    if (!Directory.Exists(folder.Projects + "/1.12.2/assets/" + modid + "." + pid))
+                    {
+                        Directory.CreateDirectory(folder.Projects + "/1.12.2/assets/" + modid + "." + pid);
+                    }
+                    info.MoveTo(folder.Projects + "/1.12.2/assets/" + modid + "." + pid + "/" + info.Name);
+                }
+            }
         }
     }
     public partial class LangFile

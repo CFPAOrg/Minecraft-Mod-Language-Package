@@ -19,8 +19,9 @@ namespace Processer
             var folder = ReaderFolder();
             var langFiles = new List<LangFile>();
             var config = ReaderConfig(folder.Config);
-            Utils.GetIdDictionary();
-            Utils.GetProjectIdDictionary();
+            //Utils.GetIdDictionary();
+            //Utils.GetProjectIdDictionary();
+            Utils.Do();
             if (config.RunDelFiles)
             {
             }

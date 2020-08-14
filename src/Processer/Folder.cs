@@ -7,16 +7,13 @@ namespace Processer
         [JsonPropertyName("rubbish")]
         public string Rubbish { get; set; }
 
-        [JsonPropertyName("extendResource")]
-        public string ExtendResource { get; set; }
-
-        [JsonPropertyName("langResource")]
-        public string LangResource { get; set; }
+        [JsonPropertyName("projects")]
+        public string Projects { get; set; }
 
         [JsonPropertyName("config")]
         public string Config { get; set; }
 
-        [JsonPropertyName("pullRequests")]
-        public string PullRequests { get; set; }
+        [JsonPropertyName("pending")]
+        public string Pending { get; set; }
     }
 }
