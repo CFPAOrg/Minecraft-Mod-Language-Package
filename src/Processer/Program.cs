@@ -44,7 +44,7 @@ namespace Processer
 
         public static Folder ReaderFolder()
         {
-            var reader = File.ReadAllBytes(@"./config" + "/folder.json");
+            var reader = File.ReadAllBytes(@"D:\repos\Minecraft-Mod-Language-Package/config" + "/folder.json");
             return JsonSerializer.Deserialize<Folder>(reader);
         }
     }
