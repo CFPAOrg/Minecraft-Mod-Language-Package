@@ -114,16 +114,26 @@ namespace Spider
 
         public static async Task<IEnumerable<Mod>> DownloadModAsync(IEnumerable<Mod> mods)
         {
+            SemaphoreSlim semaphore = new SemaphoreSlim(500);
             var tasks = mods.Select(async mod =>
             {
-                using var httpClient = new HttpClient();
-                var bytes = await httpClient.GetByteArrayAsync(mod.DownloadUrl);
-                var oldPath = Path.GetTempFileName();
-                var newPath = Path.ChangeExtension(oldPath, Path.GetExtension(mod.DownloadUrl.ToString()));
-                File.Move(oldPath, newPath);
-                await File.WriteAllBytesAsync(newPath, bytes);
-                mod.Path = newPath;
-                return mod;
+                
+                try
+                {
+                    await semaphore.WaitAsync();
+                    using var httpClient = new HttpClient();
+                    var bytes = await httpClient.GetByteArrayAsync(mod.DownloadUrl);
+                    var oldPath = Path.GetTempFileName();
+                    var newPath = Path.ChangeExtension(oldPath, Path.GetExtension(mod.DownloadUrl.ToString()));
+                    File.Move(oldPath, newPath);
+                    await File.WriteAllBytesAsync(newPath, bytes);
+                    mod.Path = newPath;
+                    return mod;
+                }
+                finally
+                {
+                    semaphore.Release();
+                }
             });
             var result = await Task.WhenAll(tasks);
             return result.ToList();
