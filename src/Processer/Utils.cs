@@ -5,10 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Serilog;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Processer
 {
@@ -66,7 +68,6 @@ namespace Processer
             return idDirectory;
         }
 
-
         public static void Do()
         {
             var folder = Program.ReaderFolder();
@@ -99,6 +100,42 @@ namespace Processer
                 //    info.MoveTo(folder.Projects + "/1.12.2/assets/" + modid + "." + pid + "/" + info.Name);
                 //}
             }
+        }
+
+        public static void UpdateInfo()
+        {
+            var folder = Program.ReaderFolder();
+            var config = Program.ReaderConfig();
+            var idD = GetIdDictionary();
+            var jArray = (JArray)JsonConvert.DeserializeObject(File.ReadAllText(Path.Combine(folder.Root, "info.json"),Encoding.UTF8));
+            var jObjects = new List<JObject>();
+            foreach (var jObject in jArray)
+            {
+                   jObjects.Add((JObject)jObject);
+            }
+
+            var targetJobject = jObjects.FirstOrDefault(_ => _["version"]?.ToString() == config.TargetVersion);
+            jObjects.Remove(jObjects.FirstOrDefault(_ => _["version"]?.ToString() == config.TargetVersion));
+            var targetJarr = new JArray(targetJobject["info"]);
+            var root = new DirectoryInfo(Path.Combine(folder.Projects,config.TargetVersion,"assets"));
+            foreach (var directory in root.GetDirectories())
+            {
+                if (directory.Name == "1old")
+                {
+                    continue;
+                }
+                var obj = new JObject();
+                var pid = idD.FirstOrDefault(_ => _.Value == directory.Name).Key;
+                obj.Add("project_name",directory.Name);
+                obj.Add("project_id",pid);
+                targetJarr.Add(obj);
+            }
+
+            targetJobject["info"] = targetJarr;
+            //Console.WriteLine(targetJobject.ToString());
+            jObjects.Add(targetJobject);
+            //Console.WriteLine(jObjects);
+            //File.WriteAllLines(Path.Combine(folder.Root, "info.json"),jObjects.ToArray());
         }
     }
     public abstract partial class LangFile
