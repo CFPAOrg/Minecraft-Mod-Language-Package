@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Text.Json.Serialization;
 
-namespace Spider
+namespace LangPack.Core
 {
-    public class Mod:IEquatable<Mod>
+    public class Mod : IEquatable<Mod>
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }
@@ -15,10 +14,12 @@ namespace Spider
         public Uri ProjectUrl { get; set; }
         [JsonPropertyName("downloadUrl")]
         public Uri DownloadUrl { get; set; }
+        [JsonPropertyName("shortProjectUrl")]
+        public string ShortProjectUrl { get; set; }
         [JsonPropertyName("modId")]
         public string ModId { get; set; }
-        [JsonPropertyName("assetDomain")]
-        public string AssetDomain { get; set; }
+        [JsonPropertyName("assetDomains")]
+        public List<string> AssetDomains { get; set; }
         [JsonPropertyName("lastUpdateTime")]
         public DateTimeOffset LastUpdateTime { get; set; }
         [JsonPropertyName("lastCheckUpdateTime")]
@@ -30,6 +31,7 @@ namespace Spider
 
         public bool Equals(Mod other)
         {
+            if (other == null) throw new ArgumentNullException(nameof(other));
             return ProjectId == other.ProjectId;
         }
 
@@ -57,7 +59,7 @@ namespace Spider
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((Mod) obj);
+            return Equals((Mod)obj);
         }
 
         public override int GetHashCode()

@@ -12,6 +12,7 @@ using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using LangPack.Core;
 using Serilog;
 using Spider.Properties;
 
@@ -19,24 +20,12 @@ namespace Spider
 {
     public static class ModHelper
     {
-        public static bool ShouldSkipMod(Mod mod, IEnumerable<Mod> mods)
+        public static string GetShortUrl(Uri uri)
         {
-
-            var list = mods.ToList();
-            var old = list.Find(_ => _.ProjectId == mod.ProjectId);
-            if (old != default(Mod))
-            {
-                if (old!.LastCheckUpdateTime < mod.LastUpdateTime) //检查是否有更新
-                {
-                    return false;
-                }
-
-                return true;
-            }
-
-            return false;
+            var url = uri.ToString();
+            var start = url.LastIndexOf('/') + 1;
+            return url[start..];
         }
-
         public static Uri JoinDownloadUrl(string fileId, string fileName)
         {
             return new Uri($"https://edge.forgecdn.net/files/{fileId[..4]}/{fileId[4..]}/{fileName}");
@@ -63,7 +52,7 @@ namespace Spider
             throw new Exception();
         }
 
-        public static string GetAssetDomain(string path)
+        public static List<string> GetAssetDomains(string path)
         {
             try
             {
@@ -72,9 +61,9 @@ namespace Spider
                 {
                     return null;
                 }
-                var assetDomain = paths.Select(_ => _.Split("/")).GroupBy(_ => _[1]).OrderByDescending(_ => _.Count()).First().Key;
-                Log.Information($"拿到了assetdomain: {assetDomain}");
-                return assetDomain;
+                var assetDomains = paths.Select(_ => _.Split("/")).GroupBy(_ => _[1]).Select(_=>_.Key).ToList();
+                Log.Information($"拿到了assetdomain: {assetDomains}");
+                return assetDomains;
             }
             catch (Exception e)
             {
@@ -83,9 +72,9 @@ namespace Spider
             }
         }
 
-        public static string GetAssetDomain(Mod mod)
+        public static List<string> GetAssetDomains(Mod mod)
         {
-            return GetAssetDomain(mod.Path);
+            return GetAssetDomains(mod.Path);
         }
         public static HashSet<string> GetAssetPaths(Mod mod)
         {
@@ -197,5 +186,6 @@ namespace Spider
 
             return result.ToList();
         }
+
     }
 }

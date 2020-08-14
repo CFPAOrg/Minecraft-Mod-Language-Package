@@ -23,7 +23,7 @@ namespace Spider
             EnabledGameVersions = new List<string>{"1.12.2"},
             ModCount = 2,
             VersionsPath = "./projects/versions.json",
-            ModInfoPath = "./modInfo.json"
+            ModInfoPath = "./mod_info.json"
         };
 
         public static async Task InitializeConfigurationAsync(string configPath)

@@ -5,12 +5,13 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using LangPack.Core;
 
 namespace Spider
 {
     public class Program
     {
-        public static async Task Main(string[] args)
+        public static async Task Main()
         {
             Log.Logger = new LoggerConfiguration()
             .Enrich.FromLogContext()
@@ -46,6 +47,7 @@ namespace Spider
                     ProjectId = addon.Id,
                     ProjectUrl = addon.WebsiteUrl,
                     DownloadUrl = downloadUrl,
+                    ShortProjectUrl = ModHelper.GetShortUrl(addon.WebsiteUrl),
                     LastCheckUpdateTime = DateTimeOffset.Now,
                     LastUpdateTime = addon.DateModified
                 };
@@ -66,7 +68,7 @@ namespace Spider
             mods = mods.Select(_ =>
             {
                 _.LangAssetsPaths = ModHelper.GetAssetPaths(_);
-                _.AssetDomain = ModHelper.GetAssetDomain(_);
+                _.AssetDomains = ModHelper.GetAssetDomains(_);
                 return _;
             }).ToHashSet();
             mods = (await ModHelper.GetModIdAsync(mods)).ToHashSet();
@@ -77,6 +79,6 @@ namespace Spider
             Log.Information("Exiting application...");
         }
 
-        
+
     }
 }

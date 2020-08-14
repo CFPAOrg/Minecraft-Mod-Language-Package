@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Spider
+namespace LangPack.Core
 {
     public class Addon
     {
