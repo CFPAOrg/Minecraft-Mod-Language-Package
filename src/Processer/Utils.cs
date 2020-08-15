@@ -128,6 +128,10 @@ namespace Processer
             foreach (var info in root.GetDirectories())
             {
                 var pid = dD.FirstOrDefault(_ => _.Value == info.Name).Key;
+                if (pid == null)
+                {
+                    continue;
+                }
                 string name;
                 idD.TryGetValue(pid, out name);
                 if (Directory.Exists(Path.Combine(folder.Projects, config.TargetVersion, "assets", name)))
