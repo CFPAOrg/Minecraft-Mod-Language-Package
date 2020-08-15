@@ -31,7 +31,7 @@ namespace Processer
         static List<JObject> GetModInfo()
         {
             var folder = Program.ReaderFolder();
-            var jFIle = new JsonTextReader(File.OpenText(folder.Config + "/mod_info.json"));
+            var jFIle = new JsonTextReader(File.OpenText(Path.Combine(folder.Config, "mod_info.json")));
             var list = JToken.ReadFrom(jFIle);
             var objects = new List<JObject>();
             foreach (var jToken in list)

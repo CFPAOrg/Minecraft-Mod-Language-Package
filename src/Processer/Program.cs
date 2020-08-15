@@ -39,13 +39,13 @@ namespace Processer
         public static Config ReaderConfig()
         {
             var foder = ReaderFolder();
-            var reader = File.ReadAllBytes(foder.Config + "/processer.json");
+            var reader = File.ReadAllBytes(Path.Combine(foder.Config, "processer.json"));
             return JsonSerializer.Deserialize<Config>(reader);
         }
 
         public static Folder ReaderFolder()
         {
-            var reader = File.ReadAllBytes(@"D:\repos\Minecraft-Mod-Language-Package/config" + "/folder.json");
+            var reader = File.ReadAllBytes(@"./config" + "/folder.json");
             return JsonSerializer.Deserialize<Folder>(reader);
         }
     }
