@@ -148,7 +148,7 @@ namespace Processer
                 {
                     Directory.Move(info.FullName, newPath);
                 }
-                catch (Exception e)
+                catch
                 {
                     Directory.Delete(newPath);
                     Directory.Move(info.FullName, newPath);
