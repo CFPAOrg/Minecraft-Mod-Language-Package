@@ -16,7 +16,7 @@ namespace Spider
 #if DEBUG
             ModCount = 1,
 #else
-            ModCount = 3000,
+            ModCount = 4000,
 #endif
             ModInfoPath = "./mod_info.json"
         };
