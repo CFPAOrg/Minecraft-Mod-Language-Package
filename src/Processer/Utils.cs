@@ -105,7 +105,7 @@ namespace Processer
                     {
                         if (_["assetDomain"]?.ToString() != "")
                         {
-                            domainDictionary.Add(_["projectId"]?.ToString() ?? string.Empty, _["assetDomain"]?.ToString());
+                            domainDictionary.Add(_["projectId"]?.ToString() ?? string.Empty, _["assetDomains"]?.ToString());
                         }
                     }
                 }
@@ -127,7 +127,7 @@ namespace Processer
             var root = new DirectoryInfo(folder.Pending);
             foreach (var info in root.GetDirectories())
             {
-                var pid = dD.FirstOrDefault(_ => _.Value.Contains(info.Name)).Key;
+                var pid = dD.FirstOrDefault(_ => _.Value == info.Name).Key;
                 if (pid == null)
                 {
                     continue;
