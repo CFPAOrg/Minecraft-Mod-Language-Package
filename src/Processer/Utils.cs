@@ -142,6 +142,7 @@ namespace Processer
             var targetJobject = jObjects.FirstOrDefault(_ => _["version"]?.ToString() == config.TargetVersion);
             jObjects.Remove(jObjects.FirstOrDefault(_ => _["version"]?.ToString() == config.TargetVersion));
             var targetJarr = new JArray(targetJobject["info"]);
+            targetJarr.RemoveAll();
             var root = new DirectoryInfo(Path.Combine(folder.Projects,config.TargetVersion,"assets"));
             foreach (var directory in root.GetDirectories())
             {
@@ -152,14 +153,14 @@ namespace Processer
                 var obj = new JObject();
                 var pid = idD.FirstOrDefault(_ => _.Value == directory.Name).Key;
                 Tuple<string, string, JArray> tuple = new Tuple<string,string,JArray>(null,null,null);
-                obj.Add("project_name", directory.Name);
-                obj.Add("project_id", pid);
+                obj.TryAdd("project_name", directory.Name);
+                obj.TryAdd("project_id", pid);
                 if (pid != null)
                 {
                     exD.TryGetValue(pid, out tuple);
-                    obj.Add("name", tuple.Item1);
-                    obj.Add("modid", tuple.Item2);
-                    obj.Add("domains", tuple.Item3);
+                    obj.TryAdd("name", tuple.Item1);
+                    obj.TryAdd("modid", tuple.Item2);
+                    obj.TryAdd("domains", tuple.Item3);
                 }
                 //Console.WriteLine("{0},{1},{2}",tuple.Item1,tuple.Item2,tuple.Item3);
                 targetJarr.Add(obj);
