@@ -16,12 +16,12 @@ namespace Processer
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
-            var folder = ReaderFolder();
             var langFiles = new List<LangFile>();
-            var config = ReaderConfig(folder.Config);
+            var config = ReaderConfig();
             //Utils.GetIdDictionary();
             //Utils.GetProjectIdDictionary();
-            Utils.Do();
+            //Utils.Do();
+            Utils.UpdateInfo();
             if (config.RunDelFiles)
             {
             }
@@ -36,15 +36,16 @@ namespace Processer
             }
         }
 
-        static Config ReaderConfig(string path)
+        public static Config ReaderConfig()
         {
-            var reader = File.ReadAllBytes(path + "/processer.json");
+            var foder = ReaderFolder();
+            var reader = File.ReadAllBytes(Path.Combine(foder.Config, "processer.json"));
             return JsonSerializer.Deserialize<Config>(reader);
         }
 
         public static Folder ReaderFolder()
         {
-            var reader = File.ReadAllBytes(@"D:\repos\Minecraft-Mod-Language-Package/config" + "/folder.json");
+            var reader = File.ReadAllBytes(@"./config" + "/folder.json");
             return JsonSerializer.Deserialize<Folder>(reader);
         }
     }

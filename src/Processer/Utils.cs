@@ -5,10 +5,12 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Serilog;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Processer
 {
@@ -29,7 +31,7 @@ namespace Processer
         static List<JObject> GetModInfo()
         {
             var folder = Program.ReaderFolder();
-            var jFIle = new JsonTextReader(File.OpenText(folder.Config + "/mod_info.json"));
+            var jFIle = new JsonTextReader(File.OpenText(Path.Combine(folder.Config, "mod_info.json")));
             var list = JToken.ReadFrom(jFIle);
             var objects = new List<JObject>();
             foreach (var jToken in list)
@@ -66,25 +68,37 @@ namespace Processer
             return idDirectory;
         }
 
+        static Dictionary<string, Tuple<string, string, JArray>> GetExtendDictionary()
+        {
+            var extendDictionary = new Dictionary<string, Tuple<string, string, JArray>>();
+            var infos = GetModInfo();
+            infos.ForEach(_ =>
+            {
+                if (!extendDictionary.ContainsKey(_["projectId"]?.ToString() ?? string.Empty))
+                {
+                    if (_["projectId"]?.ToString() != "")
+                    {
+                        if (_["assetDomain"]?.ToString() != "")
+                        {
+                            extendDictionary.Add(_["projectId"]?.ToString() ?? string.Empty, new Tuple<string, string, JArray>(_["name"]?.ToString(), _["modId"]?.ToString(), _["assetDomains"]?.ToObject<JArray>()));
+                        }
+                    }
+                }
+            });
+            foreach (var keyValuePair in extendDictionary)
+            {
+                //Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
+            }
 
+            return extendDictionary;
+        }
         public static void Do()
         {
             var folder = Program.ReaderFolder();
-            //var idD = GetIdDictionary();
+            var idD = GetIdDictionary();
             var root = new DirectoryInfo(folder.Projects + "/1.12.2/assets");
             foreach (var info in root.GetDirectories())
             {
-                var r = new DirectoryInfo(info.ToString());
-                var boo = false;
-                r.GetDirectories().ToList().ForEach(_ => {
-                    if (_.Name == "lang")
-                    {
-                        r.MoveTo(folder.Projects + "/1.12.2/assets/1old/" + r.Name);
-                    }
-                });
-
-
-
 
                 //var str = info.Name;
                 //if (str.Contains("."))
@@ -111,8 +125,66 @@ namespace Processer
                 //}
             }
         }
+
+        public static void UpdateInfo()
+        {
+            var folder = Program.ReaderFolder();
+            var config = Program.ReaderConfig();
+            var idD = GetIdDictionary();
+            var exD = GetExtendDictionary();
+            var jArray = (JArray)JsonConvert.DeserializeObject(File.ReadAllText(Path.Combine(folder.Root, "info.json"),Encoding.UTF8));
+            var jObjects = new List<JObject>();
+            foreach (var jObject in jArray)
+            {
+                   jObjects.Add((JObject)jObject);
+            }
+
+            var targetJobject = jObjects.FirstOrDefault(_ => _["version"]?.ToString() == config.TargetVersion);
+            jObjects.Remove(jObjects.FirstOrDefault(_ => _["version"]?.ToString() == config.TargetVersion));
+            var targetJarr = new JArray(targetJobject["info"]);
+            targetJarr.RemoveAll();
+            var root = new DirectoryInfo(Path.Combine(folder.Projects,config.TargetVersion,"assets"));
+            foreach (var directory in root.GetDirectories())
+            {
+                if (directory.Name == "1old")
+                {
+                    continue;
+                }
+                var obj = new JObject();
+                var pid = idD.FirstOrDefault(_ => _.Value == directory.Name).Key;
+                Tuple<string, string, JArray> tuple = new Tuple<string,string,JArray>(null,null,null);
+                obj.TryAdd("project_name", directory.Name);
+                obj.TryAdd("project_id", pid);
+                if (pid != null)
+                {
+                    exD.TryGetValue(pid, out tuple);
+                    obj.TryAdd("name", tuple.Item1);
+                    obj.TryAdd("modid", tuple.Item2);
+                    obj.TryAdd("domains", tuple.Item3);
+                }
+                //Console.WriteLine("{0},{1},{2}",tuple.Item1,tuple.Item2,tuple.Item3);
+                targetJarr.Add(obj);
+            }
+
+            targetJobject["info"] = targetJarr;
+            //Console.WriteLine(targetJobject.ToString());
+            jObjects.Add(targetJobject);
+            string[] str = new string[jObjects.Count];
+            var sw = new StreamWriter(Path.Combine(folder.Root, "info.json"));
+            var jw = new JsonTextWriter(sw);
+            jw.Formatting = Formatting.Indented;
+            jw.WriteStartArray();
+            jObjects.ForEach(_ => _.WriteTo(jw));
+            jw.WriteEndArray();
+            jw.Close();
+            sw.Close();
+            Log.Logger.Information("info更新完成");
+            //File.WriteAllText(Path.Combine(folder.Root, "info.json"),JsonSerializer.Serialize(jObjects));
+            //Console.WriteLine(jObjects);
+            //File.WriteAllLines(Path.Combine(folder.Root, "info.json"),jObjects.ToArray());
+        }
     }
-    public partial class LangFile
+    public abstract partial class LangFile
     {
         public void ProcessLangFile()
         {

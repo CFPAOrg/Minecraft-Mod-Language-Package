@@ -4,8 +4,8 @@ namespace Processer
 {
     public class Folder
     {
-        [JsonPropertyName("rubbish")]
-        public string Rubbish { get; set; }
+        [JsonPropertyName("root")]
+        public string Root { get; set; }
 
         [JsonPropertyName("projects")]
         public string Projects { get; set; }
