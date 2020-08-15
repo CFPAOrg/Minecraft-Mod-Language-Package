@@ -92,37 +92,49 @@ namespace Processer
 
             return extendDictionary;
         }
-        public static void Do()
+
+        static Dictionary<string, string> GetDomainDictionary()
         {
+            var domainDictionary = new Dictionary<string, string>();
+            var infos = GetModInfo();
+            infos.ForEach(_ =>
+            {
+                if (!domainDictionary.ContainsKey(_["projectId"]?.ToString() ?? string.Empty))
+                {
+                    if (_["projectId"]?.ToString() != "")
+                    {
+                        if (_["assetDomain"]?.ToString() != "")
+                        {
+                            domainDictionary.Add(_["projectId"]?.ToString() ?? string.Empty, _["assetDomain"]?.ToString());
+                        }
+                    }
+                }
+            });
+            foreach (var keyValuePair in domainDictionary)
+            {
+                //Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
+            }
+
+            return domainDictionary;
+        }
+
+        public static void ProcessFiles()
+        {
+            var config = Program.ReaderConfig();
             var folder = Program.ReaderFolder();
             var idD = GetIdDictionary();
-            var root = new DirectoryInfo(folder.Projects + "/1.12.2/assets");
+            var dD = GetDomainDictionary();
+            var root = new DirectoryInfo(folder.Pending);
             foreach (var info in root.GetDirectories())
             {
-
-                //var str = info.Name;
-                //if (str.Contains("."))
-                //{
-                //    var strs = str.Split(".",2);
-                //    var id = strs[1];
-                //    string name;
-                //    idD.TryGetValue(id, out name);
-                //    Console.WriteLine(name);
-                //    Directory.Move(info.ToString(), folder.Projects + "/1.12.2/assets" + "/" + name);
-                //}
-
-
-                //if (idD.ContainsValue(info.Name))
-                //{
-                //    var modid = idD.FirstOrDefault(_ => _.Value == info.Name).Key;
-                //    modid = modid.Replace("|", "_");
-                //    var pid = pidD.GetValueOrDefault(modid);
-                //    if (!Directory.Exists(folder.Projects + "/1.12.2/assets/" + modid + "." + pid))
-                //    {
-                //        Directory.CreateDirectory(folder.Projects + "/1.12.2/assets/" + modid + "." + pid);
-                //    }
-                //    info.MoveTo(folder.Projects + "/1.12.2/assets/" + modid + "." + pid + "/" + info.Name);
-                //}
+                var pid = dD.FirstOrDefault(_ => _.Value == info.Name).Key;
+                string name;
+                idD.TryGetValue(pid, out name);
+                if (Directory.Exists(Path.Combine(folder.Projects, config.TargetVersion, "assets", name)))
+                {
+                    Directory.CreateDirectory(Path.Combine(folder.Projects, config.TargetVersion, "assets", name));
+                }
+                info.MoveTo(Path.Combine(folder.Projects, config.TargetVersion, "assets", name));
             }
         }
 

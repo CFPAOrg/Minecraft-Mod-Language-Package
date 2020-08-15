@@ -18,7 +18,7 @@ namespace Spider
 #else
             ModCount = 6000,
 #endif
-            ModInfoPath = "./mod_info.json"
+            ModInfoPath = "./config/mod_info.json"
         };
 
         public List<string> EnabledGameVersions { get; set; }
