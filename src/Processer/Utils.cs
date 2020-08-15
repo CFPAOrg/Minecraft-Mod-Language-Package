@@ -134,6 +134,7 @@ namespace Processer
             targetJobject["info"] = targetJarr;
             //Console.WriteLine(targetJobject.ToString());
             jObjects.Add(targetJobject);
+            jObjects.OrderBy(_ => _["local"]);
             string[] str = new string[jObjects.Count];
             var sw = new StreamWriter(Path.Combine(folder.Root, "info.json"));
             var jw = new JsonTextWriter(sw);
