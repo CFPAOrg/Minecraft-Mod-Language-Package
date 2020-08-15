@@ -134,6 +134,16 @@ namespace Processer
             targetJobject["info"] = targetJarr;
             //Console.WriteLine(targetJobject.ToString());
             jObjects.Add(targetJobject);
+            string[] str = new string[jObjects.Count];
+            var sw = new StreamWriter(Path.Combine(folder.Root, "info.json"));
+            var jw = new JsonTextWriter(sw);
+            jw.Formatting = Formatting.Indented;
+            jw.WriteStartArray();
+            jObjects.ForEach(_ => _.WriteTo(jw));
+            jw.WriteEndArray();
+            jw.Close();
+            sw.Close();
+            //File.WriteAllText(Path.Combine(folder.Root, "info.json"),JsonSerializer.Serialize(jObjects));
             //Console.WriteLine(jObjects);
             //File.WriteAllLines(Path.Combine(folder.Root, "info.json"),jObjects.ToArray());
         }
