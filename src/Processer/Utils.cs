@@ -127,7 +127,7 @@ namespace Processer
             var root = new DirectoryInfo(folder.Pending);
             foreach (var info in root.GetDirectories())
             {
-                var pid = dD.FirstOrDefault(_ => _.Value == info.Name).Key;
+                var pid = dD.FirstOrDefault(_ => _.Value.Contains(info.Name)).Key;
                 if (pid == null)
                 {
                     continue;
