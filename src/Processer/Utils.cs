@@ -138,11 +138,13 @@ namespace Processer
                 {
                     continue;
                 }
-                if (Directory.Exists(Path.Combine(folder.Projects, config.TargetVersion, "assets", name)))
+                if (!Directory.Exists(Path.Combine(folder.Projects, config.TargetVersion, "assets", name)))
                 {
                     Directory.CreateDirectory(Path.Combine(folder.Projects, config.TargetVersion, "assets", name));
                 }
-                info.MoveTo(Path.Combine(folder.Projects, config.TargetVersion, "assets", name , info.Name));
+
+                var newPath = Path.Combine(folder.Projects, config.TargetVersion, "assets", name, info.Name);
+                Directory.Move(info.FullName,newPath);
                 Log.Logger.Information("文件处理完成");
             }
         }
