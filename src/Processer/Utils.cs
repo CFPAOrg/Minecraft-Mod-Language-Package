@@ -142,7 +142,8 @@ namespace Processer
                 {
                     Directory.CreateDirectory(Path.Combine(folder.Projects, config.TargetVersion, "assets", name));
                 }
-                info.MoveTo(Path.Combine(folder.Projects, config.TargetVersion, "assets", name));
+                info.MoveTo(Path.Combine(folder.Projects, config.TargetVersion, "assets", name , info.Name));
+                Log.Logger.Information("文件处理完成");
             }
         }
 
