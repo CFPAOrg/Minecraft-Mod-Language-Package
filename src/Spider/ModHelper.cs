@@ -64,7 +64,7 @@ namespace Spider
                     return null;
                 }
                 var assetDomains = paths.Select(_ => _.Split("/")).GroupBy(_ => _[1]).Select(_=>_.Key).ToList();
-                Log.Information("拿到了{@List<string>}:",assetDomains);
+                Log.Information("拿到了{@AssetDomains}:",assetDomains);
                 return assetDomains;
             }
             catch (Exception e)

@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 using System.Security.Permissions;
 using System.Text;
+using Serilog;
 
 namespace Spider
 {
@@ -20,7 +21,15 @@ namespace Spider
             var sb = new StringBuilder(260);
             var quickDemand = typeof(FileIOPermission).GetMethod("QuickDemand",BindingFlags.Static|BindingFlags.NonPublic);
             quickDemand?.Invoke(null, new object[] {FileIOPermissionAccess.Write, path});
-            GetTempFileName(path, extension, 0, sb);
+            try
+            {
+                GetTempFileName(path, extension, 0, sb);
+            }
+            catch (Exception e)
+            {
+                Log.Error(e,"");
+                throw;
+            }
             return sb.ToString();
         }
     }
