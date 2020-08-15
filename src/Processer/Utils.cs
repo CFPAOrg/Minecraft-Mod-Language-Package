@@ -68,6 +68,30 @@ namespace Processer
             return idDirectory;
         }
 
+        static Dictionary<string, Tuple<string, string, JArray>> GetExtendDictionary()
+        {
+            var extendDictionary = new Dictionary<string, Tuple<string, string, JArray>>();
+            var infos = GetModInfo();
+            infos.ForEach(_ =>
+            {
+                if (!extendDictionary.ContainsKey(_["projectId"]?.ToString() ?? string.Empty))
+                {
+                    if (_["projectId"]?.ToString() != "")
+                    {
+                        if (_["assetDomain"]?.ToString() != "")
+                        {
+                            extendDictionary.Add(_["projectId"]?.ToString() ?? string.Empty, new Tuple<string, string, JArray>(_["name"]?.ToString(), _["modId"]?.ToString(), _["assetDomains"]?.ToObject<JArray>()));
+                        }
+                    }
+                }
+            });
+            foreach (var keyValuePair in extendDictionary)
+            {
+                //Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
+            }
+
+            return extendDictionary;
+        }
         public static void Do()
         {
             var folder = Program.ReaderFolder();
@@ -107,6 +131,7 @@ namespace Processer
             var folder = Program.ReaderFolder();
             var config = Program.ReaderConfig();
             var idD = GetIdDictionary();
+            var exD = GetExtendDictionary();
             var jArray = (JArray)JsonConvert.DeserializeObject(File.ReadAllText(Path.Combine(folder.Root, "info.json"),Encoding.UTF8));
             var jObjects = new List<JObject>();
             foreach (var jObject in jArray)
@@ -126,8 +151,17 @@ namespace Processer
                 }
                 var obj = new JObject();
                 var pid = idD.FirstOrDefault(_ => _.Value == directory.Name).Key;
-                obj.Add("project_name",directory.Name);
-                obj.Add("project_id",pid);
+                Tuple<string, string, JArray> tuple = new Tuple<string,string,JArray>(null,null,null);
+                obj.Add("project_name", directory.Name);
+                obj.Add("project_id", pid);
+                if (pid != null)
+                {
+                    exD.TryGetValue(pid, out tuple);
+                    obj.Add("name", tuple.Item1);
+                    obj.Add("modid", tuple.Item2);
+                    obj.Add("domains", tuple.Item3);
+                }
+                //Console.WriteLine("{0},{1},{2}",tuple.Item1,tuple.Item2,tuple.Item3);
                 targetJarr.Add(obj);
             }
 
@@ -143,6 +177,7 @@ namespace Processer
             jw.WriteEndArray();
             jw.Close();
             sw.Close();
+            Log.Logger.Information("info更新完成");
             //File.WriteAllText(Path.Combine(folder.Root, "info.json"),JsonSerializer.Serialize(jObjects));
             //Console.WriteLine(jObjects);
             //File.WriteAllLines(Path.Combine(folder.Root, "info.json"),jObjects.ToArray());
