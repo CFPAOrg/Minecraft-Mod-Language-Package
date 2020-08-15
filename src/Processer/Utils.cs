@@ -150,7 +150,8 @@ namespace Processer
                 }
                 catch
                 {
-                    Directory.Delete(newPath);
+                    var di = new DirectoryInfo(newPath);
+                    di.Delete(true);
                     Directory.Move(info.FullName, newPath);
                 }
                 Log.Logger.Information("文件处理完成");
