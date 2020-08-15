@@ -122,11 +122,9 @@ namespace Spider
                     await semaphore.WaitAsync();
                     using var httpClient = new HttpClient();
                     var bytes = await httpClient.GetByteArrayAsync(mod.DownloadUrl);
-                    var oldPath = Path.GetTempFileName();
-                    var newPath = Path.ChangeExtension(oldPath, Path.GetExtension(mod.DownloadUrl.ToString()));
-                    File.Move(oldPath, newPath);
-                    await File.WriteAllBytesAsync(newPath, bytes);
-                    mod.Path = newPath;
+                    var path = PathUtils.GetTempFileName(Path.GetExtension(mod.DownloadUrl.ToString()));
+                    await File.WriteAllBytesAsync(path, bytes);
+                    mod.Path = path;
                     return mod;
                 }
                 finally
