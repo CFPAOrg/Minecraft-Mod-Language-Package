@@ -144,7 +144,15 @@ namespace Processer
                 }
 
                 var newPath = Path.Combine(folder.Projects, config.TargetVersion, "assets", name, info.Name);
-                Directory.Move(info.FullName,newPath);
+                try
+                {
+                    Directory.Move(info.FullName, newPath);
+                }
+                catch (Exception e)
+                {
+                    Directory.Delete(newPath);
+                    Directory.Move(info.FullName, newPath);
+                }
                 Log.Logger.Information("文件处理完成");
             }
         }
