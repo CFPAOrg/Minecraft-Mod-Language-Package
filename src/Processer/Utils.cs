@@ -134,6 +134,10 @@ namespace Processer
                 }
                 string name;
                 idD.TryGetValue(pid, out name);
+                if (name == null)
+                {
+                    continue;
+                }
                 if (Directory.Exists(Path.Combine(folder.Projects, config.TargetVersion, "assets", name)))
                 {
                     Directory.CreateDirectory(Path.Combine(folder.Projects, config.TargetVersion, "assets", name));
