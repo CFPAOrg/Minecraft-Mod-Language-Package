@@ -21,22 +21,18 @@ namespace Packer
             using var stream = File.Create(".\\Minecraft-Mod-Language-Package.zip"); // 生成空 zip 文档
             using var archive = new ZipArchive(stream, ZipArchiveMode.Update);
             InitializeArchive(archive, config);
-            var existingModids = new HashSet<string>();
+            var existingModids = new Dictionary<string, string>();
             var assetsToBePacked = new DirectoryInfo($".\\projects\\{config.Version}\\assets")
                 .EnumerateDirectories()
-                .Select(_ =>
-                {
-                    if (config.BlockList.Contains(_.Name))
+                .SelectMany(_ => _.GetDirectories()
+                    .Select(descend => new
                     {
-                        Log.Information("跳过一个黑名单中的目录：{0}", _.Name);
-                        return null;
+                        modid = descend.Name,
+                        name = _.Name,
+                        assetPath = descend,
+                        prefixLength = _.FullName.Length
                     }
-                    var descend = _.GetDirectories()[0]; // 在目前的格式下 modid-projectid 下只有一个文件夹，表示 asset-domain
-                    Log.Information("将 {0}（asset-domain：{1}）加入待打包的清单", _.Name, descend.Name);
-                    return new { modid = descend.Name, 
-                        assetPath = descend, 
-                        prefixLength = _.FullName.Length };
-                });
+                ));
             foreach (var asset in assetsToBePacked)
             {
                 if(asset is null)
@@ -44,10 +40,11 @@ namespace Packer
                     continue;
                 }
                 var id = asset.modid;
-                Log.Information("正在打包 asset-domain：{0}", id);
-                if (existingModids.Contains(id))
+                var name = asset.name;
+                Log.Information("正在打包 {0}（asset-domain：{1}）", name, id);
+                if (existingModids.ContainsKey(id))
                 {
-                    Log.Warning("检测到此 asset-domain 与其他 mod 重合");
+                    Log.Warning("检测到 asset-domain 与 {0} 重合", existingModids[id]);
                     foreach(var file in asset.assetPath.EnumerateFiles("*", SearchOption.AllDirectories))
                     {
                         var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}";
@@ -76,8 +73,8 @@ namespace Packer
                         archive.CreateEntryFromFile(file.FullName, destinationPath);
                         Log.Information("添加了 {0}", destinationPath);
                     }
+                    existingModids.Add(id, name);
                 }
-                existingModids.Add(id);
             }
         }
 
