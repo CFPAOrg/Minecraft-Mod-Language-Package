@@ -18,7 +18,7 @@ namespace Processer
                 .CreateLogger();
             var langFiles = new List<LangFile>();
             var config = ReaderConfig();
-            Utils.ProcessFiles();
+            //Utils.ProcessFiles();
             Utils.UpdateInfo();
             if (config.RunDelFiles)
             {
