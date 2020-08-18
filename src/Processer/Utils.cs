@@ -178,7 +178,7 @@ namespace Processer
             var root = new DirectoryInfo(Path.Combine(folder.Projects,config.TargetVersion,"assets"));
             foreach (var directory in root.GetDirectories())
             {
-                if (directory.Name == "1old")
+                if (directory.Name == "1UNKNOWN")
                 {
                     continue;
                 }
