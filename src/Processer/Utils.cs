@@ -10,7 +10,6 @@ using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Serilog;
-using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace Processer
 {
@@ -124,7 +123,7 @@ namespace Processer
             var folder = Program.ReaderFolder();
             var idD = GetIdDictionary();
             var dD = GetDomainDictionary();
-            var root = new DirectoryInfo(folder.Pending);
+            var root = new DirectoryInfo(Path.Combine(folder.Projects,config.TargetVersion, "assets", "1UNKNOWN"));
             foreach (var info in root.GetDirectories())
             {
                 var pid = dD.FirstOrDefault(_ => _.Value.Contains(info.Name)).Key;
