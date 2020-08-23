@@ -11,12 +11,12 @@ namespace Processor
 {
     static class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
-            var a = ReadInfo();
+            var a = await ReadInfo();
             a.ForEach(_ => Console.WriteLine(_.ShortProjectUrl));
             //Utils.ProcessFiles();
             //Utils.UpdateInfo();
@@ -34,16 +34,16 @@ namespace Processor
             //}
         }
 
-        public static Configuration ReadConfig()
+        public static async Task<Configuration> ReadConfig()
         {
-            var reader = File.ReadAllBytes(@"./config/processor.json");
+            var reader = await File.ReadAllBytesAsync(@"./config/processor.json");
             return JsonSerializer.Deserialize<Configuration>(reader);
         }
 
-        public static List<Info> ReadInfo()
+        public static async Task<List<Info>> ReadInfo()
         {
             //var configuration = ReadConfig();
-            var reader = File.ReadAllBytes(Path.Combine(Configuration.Debug.CustomSittings.RootFolder,"config", "mod_info.json"));
+            var reader = await File.ReadAllBytesAsync(Path.Combine(Configuration.Debug.CustomSittings.RootFolder,"config", "mod_info.json"));
             return JsonSerializer.Deserialize<List<Info>>(reader);
         }
     }
