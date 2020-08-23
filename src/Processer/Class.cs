@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace Processer
+namespace Processor
 {
     public abstract partial class LangFile
     {

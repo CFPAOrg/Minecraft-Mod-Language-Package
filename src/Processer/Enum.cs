@@ -1,4 +1,4 @@
-﻿namespace Processer
+﻿namespace Processor
 {
     public enum Format
     {

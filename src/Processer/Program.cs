@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Serilog;
 using Serilog.Core;
 
-namespace Processer
+namespace Processor
 {
     class Program
     {
@@ -34,17 +34,10 @@ namespace Processer
             }
         }
 
-        public static Config ReaderConfig()
+        public static Configuration ReaderConfig()
         {
-            var foder = ReaderFolder();
-            var reader = File.ReadAllBytes(Path.Combine(foder.Config, "processer.json"));
-            return JsonSerializer.Deserialize<Config>(reader);
-        }
-
-        public static Folder ReaderFolder()
-        {
-            var reader = File.ReadAllBytes(@"./config" + "/folder.json");
-            return JsonSerializer.Deserialize<Folder>(reader);
+            //var reader = File.ReadAllBytes(Path.Combine(foder.Config, "processer.json"));
+            //return JsonSerializer.Deserialize<Configuration>(reader);
         }
     }
 }
