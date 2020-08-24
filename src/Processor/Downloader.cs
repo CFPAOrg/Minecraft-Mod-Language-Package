@@ -41,6 +41,7 @@ namespace Processor
                 catch (HttpRequestException e)
                 {
                     Log.Logger.Error(e.Message);
+                    return null;
                 }
             });
             var result = await Task.WhenAll(tasks);
