@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
@@ -35,6 +36,7 @@ namespace Processor
                     await File.WriteAllBytesAsync(path, bytes);
                     ranO.ModPath = path;
                     ranO.Name = mod.ShortProjectUrl;
+                    ranO.Domains = mod.AssetDomains;
                     return ranO;
                 }
                 catch (HttpRequestException e)
@@ -50,11 +52,20 @@ namespace Processor
             var result = await Task.WhenAll(tasks);
             return result.ToList();
         }
+
+        public static void ExJar(Configuration configuration, List<PendingMod> pm)
+        {
+            foreach (var pendingMod in pm)
+            {
+                ZipFile.ExtractToDirectory(pendingMod.ModPath,Path.Combine(configuration.CustomSittings.ProjectsFolder,configuration.VersionList[0],"temp",pendingMod.Name));
+            }
+        }
     }
 
     public class PendingMod
     {
         public string ModPath { get; set; }
         public string Name { get; set; }
+        public List<string> Domains { get; set; }
     }
 }
