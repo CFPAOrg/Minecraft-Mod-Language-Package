@@ -30,15 +30,17 @@ namespace Processor
                     var ranO = new PendingMod();
                     Log.Logger.Information($"下载：{mod.ShortProjectUrl},信号量：{semaphore.CurrentCount}");
                     var bytes = await httpCli.GetByteArrayAsync(mod.DownloadUrl);
-                    var path = Path.Combine(Path.GetTempPath(),random.Next().ToString() + Path.GetExtension(mod.DownloadUrl.ToString()));
+                    var path = Path.Combine(Path.GetTempPath(),
+                        random.Next().ToString() + Path.GetExtension(mod.DownloadUrl.ToString()));
                     await File.WriteAllBytesAsync(path, bytes);
                     ranO.ModPath = path;
                     ranO.Name = mod.ShortProjectUrl;
+                    semaphore.Release();
                     return ranO;
                 }
-                finally
+                catch (HttpRequestException e)
                 {
-                    semaphore.Release(1);
+                    Log.Logger.Error(e.Message);
                 }
             });
             var result = await Task.WhenAll(tasks);
