@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -16,8 +17,24 @@ namespace Processor
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
-            var a = await ReadInfo();
-            a.ForEach(_ => Console.WriteLine(_.ShortProjectUrl));
+            if (args.Length == 0)
+            {
+                Log.Logger.Information("请输入参数!");
+                return;
+            }
+            else
+            {
+                foreach (var s in args)
+                {
+                    Log.Logger.Information($"参数 {s}");
+                }
+            }
+
+            if (args.Contains("--DEBUG"))
+            {
+                var a = await ReadInfo(Configuration.Debug.CustomSittings.RootFolder);
+                a.ForEach(_ => Console.WriteLine(_.ShortProjectUrl));
+            }
             //Utils.ProcessFiles();
             //Utils.UpdateInfo();
             //if (config.RunDelFiles)
@@ -40,10 +57,10 @@ namespace Processor
             return JsonSerializer.Deserialize<Configuration>(reader);
         }
 
-        public static async Task<List<Info>> ReadInfo()
+        public static async Task<List<Info>> ReadInfo(string rootPath)
         {
             //var configuration = ReadConfig();
-            var reader = await File.ReadAllBytesAsync(Path.Combine(Configuration.Debug.CustomSittings.RootFolder,"config", "mod_info.json"));
+            var reader = await File.ReadAllBytesAsync(Path.Combine(rootPath,"config", "mod_info.json"));
             return JsonSerializer.Deserialize<List<Info>>(reader);
         }
     }
