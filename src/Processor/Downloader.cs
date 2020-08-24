@@ -15,7 +15,7 @@ namespace Processor
         {
             var pr = configuration.CustomSittings.ProjectsFolder;
             var version = configuration.VersionList[0];
-            var semaphore = new SemaphoreSlim(50);
+            var semaphore = new Semaphore(50,60);
             //foreach (var info in mods)
             //{
             //    await Console.Out.WriteLineAsync(info.ShortProjectUrl);
@@ -24,24 +24,27 @@ namespace Processor
             {
                 try
                 {
-                    await semaphore.WaitAsync();
+                    semaphore.WaitOne();
                     var httpCli = new HttpClient();
                     var random = new Random();
                     var ranO = new PendingMod();
-                    Log.Logger.Information($"下载：{mod.ShortProjectUrl},信号量：{semaphore.CurrentCount}");
+                    Log.Logger.Information($"下载：{mod.ShortProjectUrl}");
                     var bytes = await httpCli.GetByteArrayAsync(mod.DownloadUrl);
                     var path = Path.Combine(Path.GetTempPath(),
                         random.Next().ToString() + Path.GetExtension(mod.DownloadUrl.ToString()));
                     await File.WriteAllBytesAsync(path, bytes);
                     ranO.ModPath = path;
                     ranO.Name = mod.ShortProjectUrl;
-                    semaphore.Release();
                     return ranO;
                 }
                 catch (HttpRequestException e)
                 {
                     Log.Logger.Error(e.Message);
                     return null;
+                }
+                finally
+                {
+                    semaphore.Release();
                 }
             });
             var result = await Task.WhenAll(tasks);
