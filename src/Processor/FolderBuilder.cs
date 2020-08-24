@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Processor
 {
-    class Class1
+    class FolderBuilder
     {
+        public static async Task<bool> CheckProjectFolder()
+        {
+            return false;
+        }
     }
 }
