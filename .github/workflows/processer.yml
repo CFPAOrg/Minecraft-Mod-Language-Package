@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Build processer
+      - name: Build processor
         run: dotnet publish .\src\Processor\Processor.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
       - name: Run processer
@@ -21,7 +21,7 @@ jobs:
       - name: Push  to github repo
         if: ${{github.event}} == 'push'
         run: |
-          ri .\Processer.exe -Force
+          ri .\Processor.exe -Force
           $ErrorActionPreference ='Continue'
           git config --global credential.helper manager
           git config --global user.email "fanng233@gmail.com"
