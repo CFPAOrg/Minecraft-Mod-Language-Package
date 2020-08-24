@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Build processer
-        run: dotnet publish .\src\Processer\Processer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
+        run: dotnet publish .\src\Processor\Processor.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
       - name: Run processer
         run: .\Processer --DEBUG
