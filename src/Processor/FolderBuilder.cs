@@ -1,15 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Processor
 {
-    class FolderBuilder
+    static class FolderBuilder
     {
-        public static async Task<bool> CheckProjectFolder()
+        public static bool CheckProjectFolder(Configuration configuration)
         {
-            return false;
+            var projects = configuration.VersionList;
+            var b1 = false;
+            foreach (var t in projects)
+            {
+                b1 = Directory.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder, t));
+                if (!b1)
+                {
+                    break;
+                }
+            }
+            return b1;
         }
     }
 }

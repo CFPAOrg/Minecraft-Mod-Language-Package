@@ -32,8 +32,11 @@ namespace Processor
 
             if (args.Contains("--DEBUG"))
             {
-                var a = await ReadInfo(Configuration.Debug.CustomSittings.RootFolder);
+                var a = await Reader.ReadInfo(Configuration.Debug.CustomSittings.RootFolder);
+                //var b = await Reader.ReadConfig();
                 a.ForEach(_ => Console.WriteLine(_.ShortProjectUrl));
+                var c = FolderBuilder.CheckProjectFolder(Configuration.Debug);
+                Console.WriteLine(c);
             }
             //Utils.ProcessFiles();
             //Utils.UpdateInfo();
@@ -49,19 +52,6 @@ namespace Processor
             //langFiles.ForEach(_ => Log.Information("路径:{0}语言:{1}是否需要处理：{2}",_.LangPath,_.Language,_.IsNeeded));
             //langFiles.ForEach(_ => _.ProcessLangFile());
             //}
-        }
-
-        public static async Task<Configuration> ReadConfig()
-        {
-            var reader = await File.ReadAllBytesAsync(@"./config/processor.json");
-            return JsonSerializer.Deserialize<Configuration>(reader);
-        }
-
-        public static async Task<List<Info>> ReadInfo(string rootPath)
-        {
-            //var configuration = ReadConfig();
-            var reader = await File.ReadAllBytesAsync(Path.Combine(rootPath,"config", "mod_info.json"));
-            return JsonSerializer.Deserialize<List<Info>>(reader);
         }
     }
 }
