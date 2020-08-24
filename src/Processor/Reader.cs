@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Processor
 {
-    public class Reader
+    public static class Reader
     {
         public static async Task<Configuration> ReadConfig()
         {

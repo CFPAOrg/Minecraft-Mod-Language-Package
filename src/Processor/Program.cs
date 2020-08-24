@@ -32,11 +32,13 @@ namespace Processor
 
             if (args.Contains("--DEBUG"))
             {
-                var a = await Reader.ReadInfo(Configuration.Debug.CustomSittings.RootFolder);
-                //var b = await Reader.ReadConfig();
-                a.ForEach(_ => Console.WriteLine(_.ShortProjectUrl));
-                var c = FolderBuilder.CheckProjectFolder(Configuration.Debug);
-                Console.WriteLine(c);
+                //var a = await Reader.ReadInfo(Configuration.Debug.CustomSittings.RootFolder);
+                var b = await Reader.ReadConfig();
+                //a.ForEach(async _ => await Console.Out.WriteLineAsync(_.ShortProjectUrl));
+                //var c = FolderBuilder.CheckProjectFolder(Configuration.Debug);
+                var d = await Downloader.ParseModFile(b, await Reader.ReadInfo(b.CustomSittings.RootFolder));
+                d.ForEach(async _ =>await Console.Out.WriteLineAsync(_.Name));
+                //Console.WriteLine(c);
             }
             //Utils.ProcessFiles();
             //Utils.UpdateInfo();
