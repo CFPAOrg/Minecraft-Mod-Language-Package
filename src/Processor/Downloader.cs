@@ -38,7 +38,7 @@ namespace Processor
                 }
                 finally
                 {
-                    semaphore.Release();
+                    semaphore.Release(1);
                 }
             });
             var result = await Task.WhenAll(tasks);
