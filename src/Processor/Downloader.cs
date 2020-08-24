@@ -15,7 +15,7 @@ namespace Processor
         {
             var pr = configuration.CustomSittings.ProjectsFolder;
             var version = configuration.VersionList[0];
-            var semaphore = new SemaphoreSlim(500);
+            var semaphore = new SemaphoreSlim(50);
             //foreach (var info in mods)
             //{
             //    await Console.Out.WriteLineAsync(info.ShortProjectUrl);
@@ -28,7 +28,7 @@ namespace Processor
                     var httpCli = new HttpClient();
                     var random = new Random();
                     var ranO = new PendingMod();
-                    Log.Logger.Information($"下载：{mod.ShortProjectUrl}");
+                    Log.Logger.Information($"下载：{mod.ShortProjectUrl},信号量：{semaphore.CurrentCount}");
                     var bytes = await httpCli.GetByteArrayAsync(mod.DownloadUrl);
                     var path = Path.Combine(Path.GetTempPath(),random.Next().ToString() + Path.GetExtension(mod.DownloadUrl.ToString()));
                     await File.WriteAllBytesAsync(path, bytes);
