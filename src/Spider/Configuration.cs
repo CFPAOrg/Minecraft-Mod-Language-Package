@@ -14,9 +14,9 @@ namespace Spider
         {
             EnabledGameVersions = new List<string>{"1.16.1"},
 #if DEBUG
-            ModCount = 1,
+            ModCount = 30,
 #else
-            ModCount = 6000,
+            ModCount = 3000,
 #endif
             ModInfoPath = "./mod_info.json"
         };
