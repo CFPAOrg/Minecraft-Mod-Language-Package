@@ -17,7 +17,7 @@ jobs:
         run: dotnet publish .\src\Processor\Processor.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
       - name: Run processer
-        run: .\Processor --DEBUG
+        run: .\Processor --update
 
       - name: Push  to github repo
         if: ${{github.event}} == 'push'

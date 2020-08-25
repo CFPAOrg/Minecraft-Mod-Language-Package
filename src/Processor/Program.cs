@@ -42,6 +42,13 @@ namespace Processor
                 //Downloader.ExJar(Configuration.Debug, new List<PendingMod>() { new PendingMod() { Domains = new List<string>() { "chisel_guide", "chisel" }, ModPath = @"C:\Users\Nullpinter\Downloads\Chisel-MC1.12.2-1.0.2.45.jar", Name = "1919810" } });
                 //Console.WriteLine(c);
             }
+
+            if (args.Contains("--update"))
+            {
+                var conf = await Reader.ReadConfig();
+                var ms = await Downloader.ParseModFile(conf, await Reader.ReadInfo(conf.CustomSittings.RootFolder));
+                Downloader.ExJar(conf, ms);
+            }
             //Utils.ProcessFiles();
             //Utils.UpdateInfo();
             //if (config.RunDelFiles)
