@@ -1,7 +1,7 @@
 ![pack.png](https://i.loli.net/2018/02/18/5a8974407b453.png)
 ---
 
-| CurseForge 下载量 | 支持版本 | 翻译进度 | Github Actions | 最新快照版本 |
+| CurseForge 下载量 | 支持版本 | 翻译进度 | GitHub Actions | 最新快照版本 |
 | :--: | :--: | :--: | :--: | :--: |
 | [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) | [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)  | ![weblate](https://weblate.exz.me/widgets/langpack/-/svg-badge.svg) | ![Packer](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/workflows/Packer/badge.svg?branch=1.12.2) | [![GitHub release](https://img.shields.io/github/release/CFPAOrg/Minecraft-Mod-Language-Package.svg)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) |
 
@@ -14,11 +14,11 @@
 
 直接向本仓库提交 PR 亦可；
 
-你在翻译时, 应先了解需注意的有关事项，具体参见：[《Minecraft Mod简体中文翻译规范与指南》](https://github.com/Meow-J/Mod-Translation-Styleguide/blob/master/README.md)。
+你在翻译时，应先了解需注意的有关事项，具体参见：[《Minecraft Mod简体中文翻译规范与指南》](https://github.com/Meow-J/Mod-Translation-Styleguide/blob/master/README.md)。
 
 ## 授权
 
-本作品采用 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）进行许可，协议全文可 [在此](./LICENSE) 找到。<br>
+本作品采用 [知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）进行许可，协议全文可 [在此](./LICENSE) 找到。<br>
 
 ## 使用方式
 
@@ -42,8 +42,8 @@ emmmm，原理其实很简单。<br>
 - 脚本推送回 GitHub 仓库；
 - Weblate 检测到仓库变动，自动抓取 GitHub 变动；
 - 翻译人员在 Weblate 上翻译，Weblate 自动推回到 GitHub；
-- Github Actions 检测到仓库变动，自动构建并打包；
-- Github Actions 自动发布到 GitHub 的 release 上，以供下载；
+- GitHub Actions 检测到仓库变动，自动构建并打包；
+- GitHub Actions 自动发布到 GitHub 的 release 上，以供下载；
 
 ## 鸣谢
 
