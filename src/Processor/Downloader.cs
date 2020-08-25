@@ -84,7 +84,7 @@ namespace Processor
                                     File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
                                         configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
                                 }
-                                zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "temp", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
                                 Log.Logger.Information($"已更新{pendingMod.Name}的英文文件");
                             }
                         }
