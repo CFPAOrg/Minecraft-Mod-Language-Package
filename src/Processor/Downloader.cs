@@ -60,35 +60,51 @@ namespace Processor
                 //ZipFile.ExtractToDirectory(pendingMod.ModPath,Path.Combine(configuration.CustomSittings.ProjectsFolder,configuration.VersionList[0],"temp",pendingMod.Name));
                 if (pendingMod.Domains.Count == 0)
                 {
+                    Log.Logger.Information($"跳过：{pendingMod.Name}");
                     continue;
                 }
-                var archive = ZipFile.OpenRead(pendingMod.ModPath);
-                foreach (var zipArchiveEntry in archive.Entries)
-                {
-                    foreach (var domain in pendingMod.Domains)
-                    {
-                        if (zipArchiveEntry.FullName.Contains($"assets/{domain}/lang/") && zipArchiveEntry.FullName != $"assets/{domain}/lang/")
-                        {
-                            if (zipArchiveEntry.Name.ToLower() == "en_us.lang" || zipArchiveEntry.Name.ToLower() == "en_us.json")
-                            {
-                                Console.WriteLine(zipArchiveEntry.FullName);
-                                if (!Directory.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang")))
-                                {
-                                    Directory.CreateDirectory(Path.Combine(configuration.CustomSittings.ProjectsFolder,
-                                        configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang"));
-                                }
 
-                                if (File.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder,
-                                    configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name)))
+                if (pendingMod.ModPath == "")
+                {
+                    Log.Logger.Information($"跳过：{pendingMod.Name}");
+                    continue;
+                }
+
+                var archive = ZipFile.OpenRead(pendingMod.ModPath);
+                try
+                {
+                    foreach (var zipArchiveEntry in archive.Entries)
+                    {
+                        foreach (var domain in pendingMod.Domains)
+                        {
+                            if (zipArchiveEntry.FullName.Contains($"assets/{domain}/lang/") && zipArchiveEntry.FullName != $"assets/{domain}/lang/")
+                            {
+                                if (zipArchiveEntry.Name.ToLower() == "en_us.lang" || zipArchiveEntry.Name.ToLower() == "en_us.json")
                                 {
-                                    File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
-                                        configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                    Console.WriteLine(zipArchiveEntry.FullName);
+                                    if (!Directory.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang")))
+                                    {
+                                        Directory.CreateDirectory(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang"));
+                                    }
+
+                                    if (File.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                        configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name)))
+                                    {
+                                        File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                    }
+                                    zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                    Log.Logger.Information($"已更新{pendingMod.Name}的英文文件");
                                 }
-                                zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
-                                Log.Logger.Information($"已更新{pendingMod.Name}的英文文件");
                             }
                         }
                     }
+                }
+                catch (Exception e)
+                {
+                    Log.Logger.Error(e.Message);
+                    Log.Logger.Error($"{pendingMod.Name}更新失败！");
                 }
             }
         }
