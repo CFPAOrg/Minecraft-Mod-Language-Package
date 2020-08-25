@@ -1,0 +1,458 @@
+############################################
+#                 Commands                 #
+############################################
+
+devotion:commands.irc.usage=/irc <command>
+devotion:commands.servirc.usage=/servirc <command>
+devotion:commands.irc.list.general=General Commands:
+devotion:commands.irc.list.irc=IRC Commands:
+devotion:commands.irc.list.interop=InterOp Commands:
+devotion:commands.irc.list.special=Special Commands:
+
+devotion:commands.connect.usage=/[serv]irc connect <server> [password]
+devotion:commands.connect.error=Could not connect to %s
+
+devotion:commands.disconnect.usage=/[serv]irc disconnect [server]
+devotion:commands.disconnect=Disconnecting from %s
+
+devotion:commands.join.usage=/[serv]irc join [server/]<channel> (ex. irc.esper.net/#DevotionIRC)
+devotion:commands.join=Joining channel %s on %s
+
+devotion:commands.leave.usage=/[serv]irc leave [server/]<channel> (ex. irc.esper.net/#DevotionIRC)
+devotion:commands.leave=Leaving channel %s on %s
+
+devotion:commands.who.usage=/[serv]irc who [(<server>|<channel>)]
+devotion:commands.who.usersOnline=%s users online in %s
+devotion:commands.who.noUsersOnline=[%s] No users online in %s.
+
+devotion:commands.msg.usage=/[serv]irc msg <channel|nick> <message ...>
+devotion:commands.msg.disabled=Private messages are not enabled.
+
+devotion:commands.ctcp.usage=/[serv]irc ctcp <channel|nick> <ctcp query ...>
+devotion:commands.ctcp.disabled=CTCP queries are not enabled.
+
+devotion:commands.help.usage=/[serv]irc help <topic>
+
+devotion:commands.nick.usage=/[serv]irc nick [server] <nick>
+devotion:commands.nick=[%s] Changing nick to %s
+
+devotion:commands.twitch.usage=/servirc twitch <username> <oauth>
+devotion:commands.ghost.usage=/irc ghost [server] <username>
+
+devotion:commands.nickserv.usage=/servirc nickserv <username> <password>
+devotion:commands.nickserv=Updated nickserv information for %s
+
+devotion:commands.color.usage=/irc color <color>
+devotion:commands.color.set=Name color set to '%s'.
+devotion:commands.color.reset=Name color reset.
+devotion:commands.color.blacklist=The color '%s' is not allowed on this server.
+devotion:commands.color.invalid='%s' is not a valid color. Use TAB to loop through valid options.
+
+devotion:commands.ignore.usage=/irc ignore <nick>
+devotion:commands.ignore.alreadyIgnored=The user %s is already on your ignore list.
+devotion:commands.ignore.notKnown=The user %s is not known to DevotionIRC yet.
+devotion:commands.ignore.added=The user %s has been added to your ignore list.
+
+devotion:commands.unignore.usage=/irc unignore <nick>
+devotion:commands.unignore.notIgnored=The user %s is not on your ignore list.
+devotion:commands.unignore.notKnown=The user %s is not known to DevotionIRC yet.
+devotion:commands.unignore.removed=The user %s has been removed from your ignore list.
+
+devotion:commands.interop.disabled=InterOP is not enabled.
+devotion:commands.op.usage=/irc op <channel> <user>
+devotion:commands.op=Opping user %s from channel %s
+devotion:commands.deop.usage=/irc deop <channel> <user>
+devotion:commands.deop=Deopping user %s from channel %s
+devotion:commands.voice.usage=/irc voice <channel> <user>
+devotion:commands.voice=Voicing user %s from channel %s
+devotion:commands.devoice.usage=/irc devoice <channel> <user>
+devotion:commands.devoice=Devoicing user %s from channel %s
+devotion:commands.kick.usage=/irc kick <channel> <user> [reason]
+devotion:commands.kick=Kicking user %s from channel %s
+devotion:commands.ban.usage=/irc ban <channel> <user> [reason]
+devotion:commands.ban=Banning user %s from channel %s
+devotion:commands.unban.usage=/irc unban <channel> <user>
+devotion:commands.unban=Unbanning user %s from channel %s
+devotion:commands.umode.usage=/irc umode <channel> <user> <flags>
+devotion:commands.umode=Mode %s for user %s in channel %s
+devotion:commands.mode.usage=/irc mode <channel> <flags>
+devotion:commands.mode=Mode %s for channel %s
+devotion:commands.topic.usage=/irc topic <channel> <topic>
+devotion:commands.topic=Topic for channel %s set to "%s"
+
+devotion:commands.list.activeConnections=DevotionIRC is connected to:
+
+devotion:commands.config.usage=/[serv]irc config (global|<server>|<channel>) <key> [value] OR /[serv]irc config reload
+devotion:commands.config.noAbuse=To prevent abuse, this setting can only be changed in the config file.
+devotion:commands.config.change=[%s] Setting config option '%s' to '%s'
+devotion:commands.config.lookup=[%s] Config option '%s' is set to '%s'
+devotion:commands.config.invalidOption=[%s] Invalid config option '%s'. Use TAB to loop through valid options.
+devotion:commands.config.requiresRestart=This config option requires a restart to take effect.
+devotion:commands.config.invalidDisplayMode=Invalid display mode '%s'
+devotion:commands.config.reload=Reloading config from file...
+
+############################################
+#                   GUI                    #
+############################################
+
+devotion:gui.options=Options
+devotion:gui.chatTarget=Chatting to: %s
+devotion:gui.shiftToSwitch=Shift+%s to switch channel.
+devotion:gui.yes=Yes
+devotion:gui.no=No
+devotion:gui.none=None
+devotion:gui.save=Save
+devotion:gui.back=Back
+devotion:gui.delete=Delete
+
+devotion:gui.config=DevotionIRC Config
+devotion:gui.config.theme=Theme (%s)
+devotion:gui.config.bot=Bot Settings (%s)
+devotion:gui.config.other=Other Settings (%s)
+
+devotion:gui.menu.servers=Servers
+devotion:gui.menu.twitch=Twitch
+devotion:gui.menu.screenshots=Screenshots
+devotion:gui.menu.channels=DevotionIRC Channels
+devotion:gui.menu.help=Help
+devotion:gui.menu.settings=Settings
+
+devotion:gui.image.loading=Loading...
+devotion:gui.image.fullscreen=View Fullscreen
+devotion:gui.image.openBrowser=Open in Browser
+devotion:gui.image.toClipboard=URL to Clipboard
+devotion:gui.image.clickToGoBack=Click anywhere to go back.
+
+devotion:gui.screenshots.search=Search...
+devotion:gui.screenshots.openFolder=Open Folder
+devotion:gui.screenshots.favorite=Favorite
+devotion:gui.screenshots.upload=Upload
+devotion:gui.screenshots.reupload=Re-Upload
+devotion:gui.screenshots.toClipboard=To Clipboard
+devotion:gui.screenshots.fullscreen=View Fullscreen
+devotion:gui.screenshots.deleteConfirm=Do you really want to delete this screenshot?
+devotion:gui.screenshots.deleteNoUndo=This can't be undone, so be careful!
+devotion:gui.screenshots.uploading=Uploading...
+devotion:gui.screenshots.all=All
+devotion:gui.screenshots.favorited=Favorited
+devotion:gui.screenshots.today=Today
+devotion:gui.screenshots.thisWeek=This Week
+devotion:gui.screenshots.thisMonth=This Month
+devotion:gui.screenshots.thisYear=This Year
+devotion:gui.screenshots.older=Older
+
+devotion:gui.override=Override Settings
+devotion:gui.override.theme=Configure Theme...
+devotion:gui.override.bot=Configure Bot...
+devotion:gui.override.other=Other Settings...
+
+devotion:gui.server.new=<new>
+devotion:gui.server.address=Address
+devotion:gui.server.nick=Nick
+devotion:gui.server.nickServName=Nickserv Username
+devotion:gui.server.nickServPassword=Nickserv Password
+devotion:gui.server.serverPassword=Server Password
+devotion:gui.server.useSSL=Use SSL
+devotion:gui.server.autoConnect=Auto Connect
+devotion:gui.server.charset=Charset
+devotion:gui.server.connect=Connect
+devotion:gui.server.connecting=Connecting...
+devotion:gui.server.disconnect=Disconnect
+devotion:gui.server.disconnecting=Disconnect...
+devotion:gui.server.channels=Channels
+devotion:gui.server.advanced=Advanced
+devotion:gui.server.deleteConfirm=Do you really want to delete this server configuration?
+devotion:gui.server.deleteNoUndo=This can't be undone, so be careful!
+
+devotion:gui.channel.name=Channel Name
+devotion:gui.channel.password=Channel Password
+devotion:gui.channel.autoJoin=Auto Join
+devotion:gui.channel.deleteConfirm=Do you really want to delete this channel configuration?
+devotion:gui.channel.deleteNoUndo=This can't be undone, so be careful!
+devotion:gui.channel.multiChannel=You have joined more than one channel.
+devotion:gui.channel.suggestClassic=Do you want to switch to a message format that includes the channel name?
+
+devotion:gui.welcome=Welcome to DevotionIRC!
+devotion:gui.welcome.suggestedChannels=If you just want to find some people to talk to,\nthis a list of IRC channels you should check out:
+devotion:gui.welcome.recommendedOnly=Show recommended channels only
+devotion:gui.welcome.dontShowAgain=Don't show this message again
+devotion:gui.welcome.submit=Suggest Channel
+devotion:gui.welcome.recommended=recommended
+
+devotion:gui.twitch.username=Twitch Username
+devotion:gui.twitch.oauth=OAuth Token
+devotion:gui.twitch.anonymous=Login anonymously (read-only)
+devotion:gui.twitch.connect=Connect
+
+devotion:gui.error=Oops! Something went wrong.
+devotion:gui.error.toClipboard=To Clipboard
+
+devotion:gui.redirect=The server would like to redirect DevotionIRC:
+devotion:gui.redirect.server=Server:
+devotion:gui.redirect.channels=Channel(s):
+devotion:gui.redirect.disable=The server would like to disable DevotionIRC.
+devotion:gui.redirect.trust=Always allow this server to redirect me
+devotion:gui.redirect.allow=Allow
+devotion:gui.redirect.reject=Reject
+
+############################################
+#                   Bot                    #
+############################################
+
+devotion:bot.cmdlist=Channel Bot Commands: %s
+devotion:bot.unknownCommand=Unknown command. Type HELP to see a list of all available commands.
+devotion:bot.msgSent=Message sent to %s: %s
+devotion:bot.playersOnline=%d players online:
+devotion:bot.noPlayersOnline=No players online.
+devotion:bot.noPermission=You do not have permission to use this command.
+devotion:bot.notAuthed=You are not authenticated with IRC services.
+devotion:bot.interOpBlacklist=This command has been blacklisted from InterOp.
+
+############################################
+#                 General                  #
+############################################
+
+devotion:general.noSuchPlayer=That player cannot be found.
+devotion:general.notMultiplayer=This is not a multiplayer world. Use /irc instead.
+devotion:general.serverOnlyCommand=This command only works on the server side. Use the GUI (default: I) or the config file for the client settings.
+devotion:general.usage=Usage:
+devotion:general.linkRemoved=<link removed>
+devotion:general.notSupported=%s is not supported on this server.
+devotion:general.chattingTo=Now chatting to %s
+devotion:general.connecting=Connecting to %s
+devotion:general.reconnecting=Reconnecting to %s in %d seconds...
+devotion:general.connected=Connected to %s
+devotion:general.disconnected=Disconnected from %s
+devotion:general.topicChange=%s has changed the topic for %s:
+devotion:general.readOnly=The channel %s is configured as read-only.
+
+############################################
+#                  Errors                  #
+############################################
+
+devotion:error.nickInUse=Nickname %s is already in use. Trying %s
+devotion:error.nickInvalid=%s is not a valid nickname.
+devotion:error.couldNotConnect=Could not connect to %s: %s
+devotion:error.genericTarget=IRC Error: '%s' %s
+devotion:error.generic=IRC Error: %s
+devotion:error.targetTooFast=IRC Error: Calm down, you're typing too fast!
+devotion:error.servicesDown=IRC Error: Services are currently offline.
+devotion:error.alreadyConnected=You are already connected to %s
+devotion:error.alreadyJoined=You have joined %s in %s already.
+devotion:error.specifyChannel=You have to specify a channel.
+devotion:error.specifyServer=You have to specify a server.
+devotion:error.serverNotFound=The server at %s cannot be found.
+devotion:error.userNotFound=The user %s cannot be found.
+devotion:error.invalidTarget=Invalid target. Expected %s.
+devotion:error.notConnected=You are not connected to the server at %s.
+devotion:error.notConnectedToIRC=You are not connected to IRC.
+devotion:error.notOnChannel=You are not on channel %s
+devotion:error.notIdentified=You need to be identified with IRC services to join %s
+
+############################################
+#                  Config                  #
+############################################
+
+# Categories
+devotion:config.category.general=General
+devotion:config.category.general.tooltip=Basic DevotionIRC Settings
+devotion:config.category.network=Network (Advanced)
+devotion:config.category.network.tooltip=Advanced network settings to configure SSL usage and proxies
+devotion:config.category.screenshots=Screenshots
+devotion:config.category.screenshots.tooltip=Screenshot Settings
+devotion:config.category.notifications=Notifications
+devotion:config.category.notifications.tooltip=Notification Settings
+devotion:config.category.compatibility=Compatibility (Advanced)
+devotion:config.category.compatibility.tooltip=Compatibility Settings
+devotion:config.category.theme=Theme
+devotion:config.category.theme.tooltip=Color settings for names and text in chat. Can be overridden by servers and channels.
+devotion:config.category.bot=Bot Settings
+devotion:config.category.bot.tooltip=Bot settings and behaviour for the IRC chat. Can be overridden by servers and channels.
+devotion:config.category.settings=Chat Settings
+devotion:config.category.settings.tooltip=General settings for IRC connections. Can be overridden by servers and channels.
+devotion:config.category.addons=Addon Settings
+devotion:config.category.addons.tooltip=Settings for DevotionIRC addons that are not part of the core of the mod.
+
+# Properties (Shared)
+devotion:config.property.enablePlayerColors=Enable Player Colors
+devotion:config.property.enablePlayerColors.tooltip=If set to true, players can use the '/irc color' command to set a color for their MC nick. See also: colorBlacklist
+devotion:config.property.colorBlacklist=Player Color Blacklist
+devotion:config.property.colorBlacklist.tooltip=A list of colors that players are not allowed to use as name colors when using the '/irc color' command.
+devotion:config.property.registerShortCommands=Register Short Commands
+devotion:config.property.registerShortCommands.tooltip=If set to true, DevotionIRC will link commands such as /join, /msg or /nick to it's /irc <command> variants for quicker usage.
+devotion:config.property.hidePlayerTags=Hide Player Tags
+devotion:config.property.hidePlayerTags.tooltip=If set to true, DevotionIRC will attempt to strip player name tags such as [Admin] (that were added by other mods) when sending to IRC.
+devotion:config.property.debugMode=Debug Mode
+devotion:config.property.debugMode.tooltip=[Advanced] If set to true, raw IRC messages will be printed into the log for investigation purposes.
+devotion:config.property.sslTrustAllCerts=[SSL] Trust all certificates
+devotion:config.property.sslTrustAllCerts.tooltip=[Advanced] If set to true, DevotionIRC will accept all SSL certificates without checking the truststore.
+devotion:config.property.sslCustomTrustStore=[SSL] Custom TrustStore Path
+devotion:config.property.sslCustomTrustStore.tooltip=[Advanced] The path to a custom SSL truststore.
+devotion:config.property.sslDisableDiffieHellman=[SSL] Disable Diffie Hellman encryption
+devotion:config.property.sslDisableDiffieHellman.tooltip=[Advanced] If set to true, disables DiffieHellman encryption for SSL connections to work around a Java issue.
+devotion:config.property.proxyHost=[Proxy] Host Address
+devotion:config.property.proxyHost.tooltip=[Advanced] The address to a proxy you want connections to go through.
+devotion:config.property.proxyUsername=[Proxy] Username
+devotion:config.property.proxyUsername.tooltip=[Advanced] The username to authenticate with the proxy, if necessary.
+devotion:config.property.proxyPassword=[Proxy] Password
+devotion:config.property.proxyPassword.tooltip=[Advanced] The password to authenticate with the proxy, if necessary.
+devotion:config.property.bindIP=Bind to IP
+devotion:config.property.bindIP.tooltip=[Advanced] The IP address to use for outgoing connections.
+devotion:config.property.defaultChat=Default Chat
+devotion:config.property.defaultChat.tooltip=The default chat target to select when opening the chat for the first time.
+devotion:config.property.autoResetChat=Auto Reset Chat
+devotion:config.property.autoResetChat.tooltip=Automatically switch back to Minecraft chat when the chat window is closed.
+devotion:config.property.preventUserPing=Prevent User Ping
+devotion:config.property.preventUserPing.tooltip=This adds an invisible character to player names sent to IRC to prevent pinging those users of the same name on IRC. Thanks to Simon Meskens!
+devotion:config.property.twitchNameColors=Twitch Name Colors
+devotion:config.property.twitchNameColors.tooltip=If enabled, DevotionIRC will attempt to map Twitch colors to Minecraft colors for nicks.
+devotion:config.property.antiFloodTime=Anti-Flood Time
+devotion:config.property.antiFloodTime.tooltip=The time in milliseconds to wait in between bigger bunches of messages to prevent Excess Flood issues.
+devotion:config.property.ircCommandPrefix=IRC Command Prefix
+devotion:config.property.ircCommandPrefix.tooltip=The prefix to be used for running commands in an IRC channel.
+
+## Properties (Client)
+devotion:config.property.imageLinkPreview=Show Image Link Preview
+devotion:config.property.imageLinkPreview.tooltip=If set to true, clicking an image link in the chat will open a preview screen inside Minecraft.
+devotion:config.property.persistentConnection=Persistent Connection
+devotion:config.property.persistentConnection.tooltip=If set to true, the IRC connection will remain open after leaving a world or server (until Minecraft closes).
+devotion:config.property.uploadHoster=Upload Hoster
+devotion:config.property.uploadHoster.tooltip=The name of the hoster to upload screenshots to. Valid values are: imgur, DirectUpload
+devotion:config.property.uploadBufferSize=Buffer Size
+devotion:config.property.uploadBufferSize.tooltip=[Advanced] Why would you even touch this option?
+devotion:config.property.screenshotShare=Share Screenshot
+devotion:config.property.screenshotShare.tooltip=Key code to take a screenshot and share it in the current channel.
+devotion:config.property.openScreenshots=Open Screenshot Archives
+devotion:config.property.openScreenshots.tooltip=Key code to open the screenshot archive.
+devotion:config.property.toggleTarget=Toggle Chat Target
+devotion:config.property.toggleTarget.tooltip=Key code to switch between the current chat channel.
+devotion:config.property.openMenu=Open DevotionIRC Menu
+devotion:config.property.openMenu.tooltip=Key code to open the DevotionIRC menu.
+devotion:config.property.soundName=Notification Sound
+devotion:config.property.soundName.tooltip=Name of a sound known to Minecraft to play on notifications.
+devotion:config.property.soundVolume=Notification Volume
+devotion:config.property.soundVolume.tooltip=Volume for the sound to play on notifications.
+devotion:config.property.friendJoined=Friend Joined
+devotion:config.property.friendJoined.tooltip=0: none, 1: text, 2: sound, 3: text and sound
+devotion:config.property.nameMentioned=Name Mentioned
+devotion:config.property.nameMentioned.tooltip=0: none, 1: text, 2: sound, 3: text and sound
+devotion:config.property.userRecording=User Recording
+devotion:config.property.userRecording.tooltip=0: none, 1: text, 2: sound, 3: text and sound
+devotion:config.property.privateMessage=Private Message
+devotion:config.property.privateMessage.tooltip=0: none, 1: text, 2: sound, 3: text and sound
+devotion:config.property.clientBridge=Enable Client Bridge
+devotion:config.property.clientBridge.tooltip=[Experimental] If set to true, DevotionIRC will act like on a server and send chat messages to both Minecraft and IRC. May cause duplicate messages on servers with custom IRC nicks set up.
+devotion:config.property.disableChatToggle=Disable Chat Toggle
+devotion:config.property.disableChatToggle.tooltip=Disables the chat toggle at the top left.
+devotion:config.property.chatNoOverride=No Chat Override
+devotion:config.property.chatNoOverride.tooltip=[Advanced] Makes DevotionIRC not apply any changes to the Minecraft Chat GUI at all. Only use with DevotionIRC compatible chat-overriding mods!
+devotion:config.property.showWelcomeScreen=Show Welcome Screen
+devotion:config.property.showWelcomeScreen.tooltip=If set to true, DevotionIRC will show the welcome screen with suggested channels when joining a world.
+devotion:config.property.terminalStyleInput=Terminal Style Input
+devotion:config.property.terminalStyleInput.tooltip=Puts the target channel name right into the chat box.
+devotion:config.property.eirairc_enableFancyOverlay=Enable Fancy Overlay
+devotion:config.property.eirairc_enableFancyOverlay.tooltip=Should join/leave messages be displayed on a separate, smaller overlay?
+devotion:config.property.eirairc_fancyOverlayLifetime=Fancy Overlay Lifetime
+devotion:config.property.eirairc_fancyOverlayLifetime.tooltip=Time in ticks that messages should stay on the overlay.
+devotion:config.property.eirairc_fancyOverlayScale=Fancy Overlay Scale
+devotion:config.property.eirairc_fancyOverlayScale.tooltip=How should the fancy overlay be scaled compared to the chat?
+devotion:config.property.eiramoticons_twitchNameBadges=Twitch Name Badges
+devotion:config.property.eiramoticons_twitchNameBadges.tooltip=If enabled, Twitch users will have their subscriber, mod and caster badges in chat. Requires EiraMoticons.
+devotion:config.property.eiramoticons_alwaysShowSubBadge=Always Show Subscriber Badges
+devotion:config.property.eiramoticons_alwaysShowSubBadge.tooltip=Should Twitch subscriber badges be visible for every user of a channel, despite their subscription state?
+
+## Properties (Bot)
+devotion:config.property.relayDeathMessages=Relay Death Messages
+devotion:config.property.relayDeathMessages.tooltip=If set to true, Minecraft death messages will be sent to this IRC context.
+devotion:config.property.relayMinecraftJoinLeave=Relay Minecraft Join/Leave
+devotion:config.property.relayMinecraftJoinLeave.tooltip=If set to true, Minecraft join/leave messages will be sent to this IRC context.
+devotion:config.property.relayIRCJoinLeave=Relay IRC Join/Leave
+devotion:config.property.relayIRCJoinLeave.tooltip=If set to true, IRC join/leave messages from this IRC context will be sent to Minecraft chat.
+devotion:config.property.relayNickChanges=Relay Nick Changes
+devotion:config.property.relayNickChanges.tooltip=If set to true, IRC nick changes from this IRC context will be sent to Minecraft chat.
+devotion:config.property.relayAchievements=Relay Achievements
+devotion:config.property.relayAchievements.tooltip=If set to true, Minecraft Achievement messages will be sent to this IRC context.
+devotion:config.property.filterLinks=Enable Link Filter
+devotion:config.property.filterLinks.tooltip=If set to true, links from this IRC context will be replaced by <removed link>.
+devotion:config.property.hideNotices=Hide IRC Notices
+devotion:config.property.hideNotices.tooltip=If set to true, NOTICE messages from this IRC context will only be printed in the console.
+devotion:config.property.convertColors=Convert Color Codes
+devotion:config.property.convertColors.tooltip=If set to true, colors from this IRC context will be translated into Minecraft colors and vice-versa.
+devotion:config.property.allowPrivateMessages=Allow Private Messages
+devotion:config.property.allowPrivateMessages.tooltip=If set to true, private messages can be sent and received from this IRC context.
+devotion:config.property.allowCTCP=Allow CTCP Queries
+devotion:config.property.allowCTCP.tooltip=If set to true, CTCP queries from this IRC context will be allowed.
+devotion:config.property.sendAutoWho=Send Auto Who
+devotion:config.property.sendAutoWho.tooltip=If set to true, users who join this IRC context will be sent a list of all online Minecraft players.
+devotion:config.property.relayBroadcasts=Relay Broadcast Messages
+devotion:config.property.relayBroadcasts.tooltip=If set to true, Minecraft server broadcasts (/say) will be sent to this IRC context.
+devotion:config.property.ident=Ident
+devotion:config.property.ident.tooltip=The ident for your IRC user. No effect in channels.
+devotion:config.property.description=Description
+devotion:config.property.description.tooltip=The description for your IRC user. No effect in channels.
+devotion:config.property.quitMessage=Quit Message
+devotion:config.property.quitMessage.tooltip=The message shown to others when you leave IRC.
+devotion:config.property.messageFormat=Message Format
+devotion:config.property.messageFormat.tooltip=The name to the message format used to display chat messages. See /eirairc/formats/.
+devotion:config.property.mcNickFormat=Nick Format
+devotion:config.property.mcNickFormat.tooltip=The format to put the nick in (previously nickPrefix and nickSuffix). %s will be replaced by the nick. No effect in channels. Example: %s-IG
+devotion:config.property.interOp=Enable InterOp
+devotion:config.property.interOp.tooltip=Allows the usage of InterOp commands between Minecraft and IRC.
+devotion:config.property.interOpAuthList=InterOp Auth List
+devotion:config.property.interOpAuthList.tooltip=The list of IRC auth usernames that may run InterOp commands from IRC.
+devotion:config.property.disabledNativeCommands=Disabled Native Commands
+devotion:config.property.disabledNativeCommands.tooltip=The list of IRC commands (such as !who) that are disabled. Supports "*" for all.
+devotion:config.property.disabledInterOpCommands=Disabled InterOp Commands
+devotion:config.property.disabledInterOpCommands.tooltip=The list of minecraft commands (such as /stop) that are disabled for InterOp.
+
+## Properties (General Settings)
+devotion:config.property.autoJoin=Auto Join
+devotion:config.property.autoJoin.tooltip=If set to true, DevotionIRC will automatically join this server / channel on startup.
+devotion:config.property.autoWho=List Users on Join
+devotion:config.property.autoWho.tooltip=If set to true, DevotionIRC will automatically print a list of all IRC users to the chat.
+devotion:config.property.readOnly=Read Only
+devotion:config.property.readOnly.tooltip=If set to true, DevotionIRC will only read messages from IRC, but never send any to this IRC context.
+devotion:config.property.muted=Muted
+devotion:config.property.muted.tooltip=If set to true, DevotionIRC will not show messages from this IRC context in chat at all.
+devotion:config.property.showNameFlags=Show Name Flags
+devotion:config.property.showNameFlags.tooltip=Should names be prefixed with @ for OPs and + for voice?
+devotion:config.property.subOnly=Sub Only (Twitch)
+devotion:config.property.subOnly.tooltip=Should only messages from Twitch subscribers be shown in Minecraft?
+
+# Properties (Theme)
+devotion:config.property.mcNameColor=Name Color (Minecraft)
+devotion:config.property.mcNameColor.tooltip=Color for default Minecraft names.
+devotion:config.property.mcOpNameColor=Name Color (Minecraft OP)
+devotion:config.property.mcOpNameColor.tooltip=Color for operator Minecraft names.
+devotion:config.property.ircNameColor=Name Color (IRC)
+devotion:config.property.ircNameColor.tooltip=Color for default IRC names.
+devotion:config.property.ircOpNameColor=Name Color (IRC OP)
+devotion:config.property.ircOpNameColor.tooltip=Color for operator IRC names.
+devotion:config.property.ircVoiceNameColor=Name Color (IRC Voice)
+devotion:config.property.ircVoiceNameColor.tooltip=Color for voiced IRC names.
+devotion:config.property.ircPrivateNameColor=Name Color (IRC Private)
+devotion:config.property.ircPrivateNameColor.tooltip=Color for IRC names in private chat.
+devotion:config.property.ircNoticeTextColor=Text Color (IRC Notice)
+devotion:config.property.ircNoticeTextColor.tooltip=Color for IRC NOTICE messages.
+devotion:config.property.emoteTextColor=Text Color (Emote)
+devotion:config.property.emoteTextColor.tooltip=Color for emote messages.
+
+############################################
+#                 Controls                 #
+############################################
+
+key.categories.irc=DevotionIRC
+key.irc.screenshotShare=Share Screenshot
+key.irc.toggleRecording=Recording Notification
+key.irc.toggleLive=Livestream Notification
+key.irc.toggleTarget=Toggle Chat Target
+key.irc.openScreenshots=Open Screenshot Archive
+key.irc.openMenu=Open DevotionIRC Menu
+
+############################################
+#                  Addons                  #
+############################################
+devotion:addons.twitch.channelBroadcaster=Channel Broadcaster
+devotion:addons.twitch.channelModerator=Channel Moderator
+devotion:addons.twitch.channelSubscriber=Channel Subscriber
+devotion:addons.twitch.turbo=Twitch Turbo
