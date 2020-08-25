@@ -58,7 +58,7 @@ namespace Processor
             foreach (var pendingMod in pm)
             {
                 //ZipFile.ExtractToDirectory(pendingMod.ModPath,Path.Combine(configuration.CustomSittings.ProjectsFolder,configuration.VersionList[0],"temp",pendingMod.Name));
-                if (pendingMod.Domains.Count == 0)
+                if (pendingMod.Domains == null || pendingMod.Domains.Count == 0)
                 {
                     Log.Logger.Information($"跳过：{pendingMod.Name}");
                     continue;
