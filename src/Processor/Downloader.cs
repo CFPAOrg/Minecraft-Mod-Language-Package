@@ -57,7 +57,24 @@ namespace Processor
         {
             foreach (var pendingMod in pm)
             {
-                ZipFile.ExtractToDirectory(pendingMod.ModPath,Path.Combine(configuration.CustomSittings.ProjectsFolder,configuration.VersionList[0],"temp",pendingMod.Name));
+                //ZipFile.ExtractToDirectory(pendingMod.ModPath,Path.Combine(configuration.CustomSittings.ProjectsFolder,configuration.VersionList[0],"temp",pendingMod.Name));
+                var a = ZipFile.OpenRead(pendingMod.ModPath);
+                foreach (var zipArchiveEntry in a.Entries)
+                {
+                    foreach (var domain in pendingMod.Domains)
+                    {
+                        if (zipArchiveEntry.FullName.Contains($"assets/{domain}/lang/") && zipArchiveEntry.FullName != $"assets/{domain}/lang/")
+                        {
+                            if (zipArchiveEntry.Name.ToLower() == "en_us.lang")
+                            {
+                                Console.WriteLine(zipArchiveEntry.FullName);
+                                Directory.CreateDirectory(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                    configuration.VersionList[0], "temp", pendingMod.Name, domain, "lang"));
+                                zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "temp", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                            }
+                        }
+                    }
+                }
             }
         }
     }
