@@ -16,7 +16,7 @@ namespace Processor
         {
             var pr = configuration.CustomSittings.ProjectsFolder;
             var version = configuration.VersionList[0];
-            var semaphore = new Semaphore(50,60);
+            var semaphore = new Semaphore(50, 60);
             //foreach (var info in mods)
             //{
             //    await Console.Out.WriteLineAsync(info.ShortProjectUrl);
@@ -58,19 +58,34 @@ namespace Processor
             foreach (var pendingMod in pm)
             {
                 //ZipFile.ExtractToDirectory(pendingMod.ModPath,Path.Combine(configuration.CustomSittings.ProjectsFolder,configuration.VersionList[0],"temp",pendingMod.Name));
-                var a = ZipFile.OpenRead(pendingMod.ModPath);
-                foreach (var zipArchiveEntry in a.Entries)
+                if (pendingMod.Domains.Count == 0)
+                {
+                    continue;
+                }
+                var archive = ZipFile.OpenRead(pendingMod.ModPath);
+                foreach (var zipArchiveEntry in archive.Entries)
                 {
                     foreach (var domain in pendingMod.Domains)
                     {
                         if (zipArchiveEntry.FullName.Contains($"assets/{domain}/lang/") && zipArchiveEntry.FullName != $"assets/{domain}/lang/")
                         {
-                            if (zipArchiveEntry.Name.ToLower() == "en_us.lang")
+                            if (zipArchiveEntry.Name.ToLower() == "en_us.lang" || zipArchiveEntry.Name.ToLower() == "en_us.json")
                             {
                                 Console.WriteLine(zipArchiveEntry.FullName);
-                                Directory.CreateDirectory(Path.Combine(configuration.CustomSittings.ProjectsFolder,
-                                    configuration.VersionList[0], "temp", pendingMod.Name, domain, "lang"));
+                                if (!Directory.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang")))
+                                {
+                                    Directory.CreateDirectory(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                        configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang"));
+                                }
+
+                                if (File.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                    configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name)))
+                                {
+                                    File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                        configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                }
                                 zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "temp", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                Log.Logger.Information($"已更新{pendingMod.Name}的英文文件");
                             }
                         }
                     }

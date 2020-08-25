@@ -33,12 +33,13 @@ namespace Processor
             if (args.Contains("--DEBUG"))
             {
                 //var a = await Reader.ReadInfo(Configuration.Debug.CustomSittings.RootFolder);
-                //var b = await Reader.ReadConfig();
+                var b = await Reader.ReadConfig();
                 //a.ForEach(async _ => await Console.Out.WriteLineAsync(_.ShortProjectUrl));
                 //var c = FolderBuilder.CheckProjectFolder(Configuration.Debug);
-                //var d = await Downloader.ParseModFile(b, await Reader.ReadInfo(b.CustomSittings.RootFolder));
+                var d = await Downloader.ParseModFile(b, await Reader.ReadInfo(b.CustomSittings.RootFolder));
                 //d.ForEach(async _ =>await Console.Out.WriteLineAsync(_.Name));
-                Downloader.ExJar(Configuration.Debug,new List<PendingMod>(){ new PendingMod() { Domains = new List<string>(){ "actuallyadditions" }, ModPath = @"D:\Applications\MultiMC\instances\This-Is-My-World-IV-Trial-of-God-v1.1.13\minecraft\mods\ActuallyAdditions-1.12.2-r149.jar", Name = "114514" } });
+                Downloader.ExJar(b, d);
+                //Downloader.ExJar(Configuration.Debug, new List<PendingMod>() { new PendingMod() { Domains = new List<string>() { "chisel_guide", "chisel" }, ModPath = @"C:\Users\Nullpinter\Downloads\Chisel-MC1.12.2-1.0.2.45.jar", Name = "1919810" } });
                 //Console.WriteLine(c);
             }
             //Utils.ProcessFiles();
