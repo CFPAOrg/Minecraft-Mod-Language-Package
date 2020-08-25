@@ -1,0 +1,1155 @@
+death.attack.additions.bash=%s was smacked to death
+death.attack.additions.bash.player=%1$s was smacked to death by %2$s
+death.attack.additions.thrown=%1$s was dispatched by %2$s
+death.attack.additions.thrown.player=%1$s was dispatched by %2$s using %3$s
+death.attack.additions.projectile=%1$s was shot by %2$s
+death.attack.additions.projectile.player=%1$s was shot by %2$s using %3$s
+
+commands.additions.damage.usage=/additions.damage <entity> <type> <amount> [options separated by commas (if type is 'custom')] [death message (if type is 'custom')]
+commands.additions.damage.notvaliddamage=The damage type '%s' is not valid
+commands.additions.damage.success=Applied %1$s hitpoints of %2$s damage to %3$s
+
+commands.additions.damageitem.usage=/additions.damageitem <entity|block>
+commands.additions.damageitem.block.usage=/additions.damageitem entity <entity> <slot> <amount>
+commands.additions.damageitem.entity.usage/additions.damageitem block <block> <x> <y> <z> <slot> <amount>
+commands.additions.damageitem.success=Damaged item in slot '%1$s' by %2$s
+
+commands.additions.throw.usage=/additions.throw <entity thrown> [speed] [inaccuracy] [entity thrown tag]
+commands.additions.throw.noThrower=There was no thrower! Must be executed by an entity.
+commands.additions.throw.noLightning=Lightning bolts can't be thrown! Sadly... =(
+commands.additions.throw.failure=%1$s failed to throw '%2$s'
+commands.additions.throw.success=%1$s successfully threw %2$s
+
+commands.additions.move.usage=/additions.move <global | relative | facing | toward>
+commands.additions.move.global.usage=/additions.move global <x speed> <y speed> <z speed>
+commands.additions.move.facing.usage=/additions.move relative <horizontal speed forward/back> [speed y] [horizontal speed right/left]
+commands.additions.move.facing.usage=/additions.move facing <speed forward/back> [speed up/down] [speed right/left]
+commands.additions.move.toward.usage=/additions.move toward <entity> <speed>
+commands.additions.move.noEntity=There was no entity! Must be executed by an entity.
+commands.additions.move.unknownType=Unknown movement type '%s'. Should be global, relative, facing, or toward.
+commands.additions.move.success=Successfully set %1$s's motion to %2$s
+
+commands.additions.explode.usage=/additions.explode (<entity> | <x> <y> <z>) <explosion size> <destroys terrain> <is fiery>
+commands.additions.explode.success=Created an explosion of size %1$s at %2$s
+
+commands.additions.mount.usage=/additions.mount <mount>
+commands.additions.mount.failure.noRider=Couldn't find a rider! Must be executed by an entity.
+commands.additions.mount.failure.self=Can't mount %s onto itself!
+commands.additions.mount.success=Mounted %1$s onto %2$s
+
+commands.additions.dismount.usage=/additions.dismount
+commands.additions.dismount.failure.noRider=Couldn't find a rider! Must be executed by an entity.
+commands.additions.dismount.failure.notRiding=%s isn't riding anything!
+commands.additions.dismount.success=Dismounted %s
+
+commands.additions.ejectpassengers.usage=/additions.ejectpassengers
+commands.additions.ejectpassengers.failure.noMount=Couldn't find a mount! Must be executed by an entity.
+commands.additions.ejectpassengers.failure.noPassengers=%s doesn't have any passengers!
+commands.additions.ejectpassengers.success=Ejected passengers from %s
+
+commands.additions.loot.usage=/additions.loot <loot table> [x] [y] [z] [seed]
+commands.additions.loot.failure.noItems=The loot table %s generated no items!
+commands.additions.loot.success=Generated loot table %1$s at %2$s
+
+commands.additions.structure.usage=/additions.structure <structure name> [x] [y] [z] [ignore entities] [rotation] [mirror type] [integrity] [seed]
+commands.additions.structure.failure.noStructure=Couldn't find a structure called %s!
+commands.additions.structure.failure.invalidRotation=The rotation '%s' is invalid. It can only be 0, 90, 180, or 270.
+commands.additions.structure.failure.invalidMirror=The mirror '%s' is invalid. It can only be left-right, front-back, or none.
+commands.additions.structure.success=Generated structure %1$s at %2$s
+
+commands.additions.entitydata.usage=/additions.entitydata <entity> <tag>
+
+commands.additions.condition.usage=/additions.condition {if:"/command test", then:"/command if true", else:"/command if false"} OR {if:["/this should be true", "/and this should also"], then:"/command if true", else:"/command if false"}
+commands.additions.condition.failure.parse=Unable to parse NBT: %s
+commands.additions.condition.failure.noConditions=There needs to be at least 1 condition command!
+commands.additions.condition.success.noThen=Condition was true, but there was no "then" command to run
+commands.additions.condition.success.noElse=Condition was false, but there was no "else" command to run
+commands.additions.condition.success.then=Condition was true, so ran the "then" command
+commands.additions.condition.success.else=Condition was false, so ran the "else" command
+
+commands.additions.grow.usage=/additions.grow <x> <y> <z> [grow fully]
+commands.additions.grow.failure.notGrowable=Block at %s is not growable
+commands.additions.grow.success=Successfully grew block at %s
+
+entity.additions_projectile.name=Projectile
+
+subtitles.block.cauldron.wash=Item is washed
+subtitles.item.shield.bash=Shield bashes
+subtitles.item.shield.swing=Shield swings
+
+item.shield.info.bashDamage=%s Bash Attack Damage
+item.shield.info.bashSpeed=%s Bash Speed
+item.projectile.info.damage=%s Projectile Damage
+item.bow.info.drawTime=%s Draw Speed
+item.gun.info.reloadTime=%s Reload Speed
+
+type.item.simple.title=Simple
+type.item.simple.description=Just a simple item. Good for crafting ingredients.
+type.item.food.title=Food or Drink
+type.item.food.description=An item you can eat or drink! You can set effects when eaten as well.
+type.item.armor.title=Armor
+type.item.armor.description=A piece of armor, either helmet, chestplate, leggings, or boots.
+type.item.hat.title=Hat
+type.item.hat.description=An item you put on your head. Uses an item model on your head, so great for masks and fancy hats! It can also have a screen overlay, like a pumpkin.
+type.item.sword.title=Sword
+type.item.sword.description=A blade you can attack with, that also cuts cobwebs.
+type.item.pickaxe.title=Pickaxe
+type.item.pickaxe.description=A pickaxe you can break stone with.
+type.item.shovel.title=Shovel
+type.item.shovel.description=A shovel you can dig dirt with.
+type.item.axe.title=Axe
+type.item.axe.description=An axe you can chop wood with, which also disables shields.
+type.item.hoe.title=Hoe
+type.item.hoe.description=A hoe you can till the ground with.
+type.item.multitool.title=Multitool
+type.item.multitool.description=A multitool, that can be multiple tool types at once.
+type.item.club.title=Club
+type.item.club.description=A blunt weapon you can attack with, which also disables shields.
+type.item.shears.title=Shears
+type.item.shears.description=A set of shears you can cut cobwebs, collect plants, and shear sheep with.
+type.item.firestarter.title=Firestarter
+type.item.firestarter.description=A flint-and-steel like item you can start fires, set off tnt, and ignite creepers with.
+type.item.shield.title=Shield
+type.item.shield.description=A shield you can block attacks with. Can also have a bash attack.
+type.item.bow.title=Bow
+type.item.bow.description=A bow you can draw back and shoot projectiles from.
+type.item.gun.title=Gun
+type.item.gun.description=A gun you can fire projectiles from, with a 'reload' cooldown.
+type.item.throwable.title=Throwable
+type.item.throwable.description=An item you can throw, or shoot from a bow/gun you create.
+type.item.arrow.title=Arrow
+type.item.arrow.description=An arrow you can shoot from a vanilla bow, or from a gun/bow you create.
+type.item.projectile.title=Projectile
+type.item.projectile.description=A projectile you can only shoot from a gun/bow you create. Good for things like bullets and laser blasts.
+type.item.record.title=Record
+type.item.record.description=A record you can play in a jukebox.
+
+type.block.simple.title=Simple
+type.block.simple.description=A simple block. Good for decorations and resource blocks.
+type.block.falling.title=Falling
+type.block.falling.description=A block that falls, like sand, anvils, and dragon eggs.
+type.block.stairs.title=Stairs
+type.block.stairs.description=A block of stairs.
+type.block.slab.title=Slab
+type.block.slab.description=A slab block. Can have horizontal and optionally vertical slabs.
+type.block.carpet.title=Carpet or Tile
+type.block.carpet.description=A carpet or tile-like block. Can be placed on the floor, or optionally walls and ceilings.
+type.block.facing.title=Facing
+type.block.facing.description=A block that can face different directions like a pumpkin, or glazed terracotta. Can face horizontally and optionally vertically.
+type.block.pillar.title=Log or Pillar
+type.block.pillar.description=A wooden log or pillar block.
+type.block.pane.title=Pane or Bars
+type.block.pane.description=A block like glass panes or iron bars.
+type.block.ladder.title=Ladder
+type.block.ladder.description=A ladder you can climb.
+type.block.wall.title=Wall
+type.block.wall.description=A block like cobblestone walls.
+type.block.fence.title=Fence
+type.block.fence.description=A fence block.
+type.block.fenceGate.title=Fence Gate
+type.block.fenceGate.description=A fence gate block.
+type.block.plant.title=Plant
+type.block.plant.description=A plant-like block. Good for blocks like flowers and tall grass.
+type.block.vine.title=Vine
+type.block.vine.description=A vine you can climb that spreads.
+type.block.grass.title=Grass
+type.block.grass.description=A grass-like block that spreads.
+type.block.leaves.title=Leaves
+type.block.leaves.description=A block of leaves that decays automatically when the logs near it are destroyed.
+type.block.cake.title=Cake
+type.block.cake.description=A block you can eat! Could also be used for foods like pizza.
+type.block.workbench.title=Crafting Table.
+type.block.workbench.description=A crafting table.
+type.block.furnace.title=Furnace
+type.block.furnace.description=A furnace with configurable speed and fuel consumption.
+type.block.luckyBlock.title=Lucky Block
+type.block.luckyBlock.description=A block which drops a loot table. The loot table's quality can be affected by a luck attribute on the block itself as well as the player's luck.
+
+type.lootTable.preset.empty.title=Empty Loot Table
+type.lootTable.preset.empty.description=A loot table that drops nothing.
+type.lootTable.preset.otherLootTable.title=Another Loot Table
+type.lootTable.preset.otherLootTable.description=A loot table that drops another loot table. Useful if you have several drops that drop the same thing (so you don't have to re-write it every time).
+type.lootTable.preset.blockItself.title=Block Drops Itself
+type.lootTable.preset.blockItself.description=A loot table for a block that drops itself.
+type.lootTable.preset.blockItem.title=Block Drops Item
+type.lootTable.preset.blockItem.description=A loot table for a block that drops an item other than itself, like diamond ore. Optionally affected by fortune and silk touch.
+
+type.recipe.crafting.shaped.title=Crafting - Shaped
+type.recipe.crafting.shaped.description=A crafting recipe where the items must be in a specific shape.
+type.recipe.crafting.shapeless.title=Crafting - Shapeless
+type.recipe.crafting.shapeless.description=A crafting recipe where the items can be in any order.
+type.recipe.crafting.tipProjectile.title=Crafting - Tip Projectile
+type.recipe.crafting.tipProjectile.description=A crafting recipe to tip a projectile/throwable with any lingering potion.
+type.recipe.crafting.dyeItem.title=Crafting - Dye Item
+type.recipe.crafting.dyeItem.description=A crafting recipe to dye an item, like dyeing leather armor.
+type.recipe.crafting.modifyDamage.title=Crafting - Modify Item Damage
+type.recipe.crafting.modifyDamage.description=A crafting recipe to modify an item's damage.
+type.recipe.crafting.modifyNbt.title=Crafting - Modify Item Tag
+type.recipe.crafting.modifyNbt.description=A crafting recipe to modify an item's nbt tag.
+type.recipe.smelting.title=Smelting
+type.recipe.smelting.description=A recipe for smelting in a furnace.
+type.recipe.brewing.title=Brewing - Single Recipe
+type.recipe.brewing.description=A recipe for brewing a potion in a brewing stand.
+type.recipe.brewing.complete.title=Brewing - Complete Set of Recipes
+type.recipe.brewing.complete.description=A vanilla-like set of brewing recipes to brew regular, splash, and lingering potions, with redstone and glowstone. Saves creating up to 30 other recipes!
+
+type.effectCause.held.title=Item is Held
+type.effectCause.held.description=Runs the effect when an item is in your mainhand, offhand, or either.
+type.effectCause.inInventory.title=Item is in Inventory
+type.effectCause.inInventory.description=Runs the effect when an item is in your inventory.
+type.effectCause.equipped.title.singular=Item is Equipped
+type.effectCause.equipped.title.plural=Items are Equipped
+type.effectCause.equipped.description=Runs the effect when you wear a piece of armor, or set of armor, optionally including mainhand and offhand.
+type.effectCause.itemRightClick.title=Item is Right Clicked
+type.effectCause.itemRightClick.description=Runs the effect when you right click the item.
+type.effectCause.itemRightClickBlock.title=Item Interacts with Block
+type.effectCause.itemRightClickBlock.description=Runs the effect when you right click a block with the item.
+type.effectCause.itemRightClickEntity.title=Item Interacts with Entity
+type.effectCause.itemRightClickEntity.description=Runs the effect when you right click an entity with the item.
+type.effectCause.itemUsing.title=Using Item
+type.effectCause.itemUsing.description=Runs the effect when you are using an item, like eating food, drawing a bow, etc.
+type.effectCause.itemLeftClick.title=Item is Left Clicked
+type.effectCause.itemLeftClick.description=Runs the effect when you left click the item in the air (not against a block or entity).
+type.effectCause.itemDigging.title=Digging with Item
+type.effectCause.itemDigging.description=Runs the effect when you are digging a block with this item.
+type.effectCause.itemBreakBlock.title=Break Block with Item
+type.effectCause.itemBreakBlock.description=Runs the effect when you break a block with this item.
+type.effectCause.itemAttack.title=Attacking with Item
+type.effectCause.itemAttack.description=Runs the effect when you attack a mob with this item.
+type.effectCause.itemKill.title=Killing with Item
+type.effectCause.itemKill.description=Runs the effect when you kill a mob with this item.
+type.effectCause.standOnBlock.title=Standing on Block
+type.effectCause.standOnBlock.description=Runs the effect when you are standing on a block.
+type.effectCause.standInBlock.title=Standing inside Block
+type.effectCause.standInBlock.description=Runs the effect when you are standing inside a block.
+type.effectCause.rightClickBlock.title=Block is Right Clicked
+type.effectCause.rightClickBlock.description=Runs the effect when you right click a block.
+type.effectCause.placeBlock.title=Block is Placed
+type.effectCause.placeBlock.description=Runs the effect when you place a block.
+type.effectCause.digBlock.title=Digging Block
+type.effectCause.digBlock.description=Runs the effect when you are digging a block.
+type.effectCause.breakBlock.title=Block is Broken
+type.effectCause.breakBlock.description=Runs the effect when you break a block.
+type.effectCause.entitySpawned.title=Entity is Spawned
+type.effectCause.entitySpawned.description=Runs the effect when an entity is spawned.
+type.effectCause.entityUdpate.title=Entity Updates
+type.effectCause.entityUdpate.description=Runs the effect when an entity updates.
+type.effectCause.rightClickEntity.title=Entity is Right Clicked
+type.effectCause.rightClickEntity.description=Runs the effect when you right click an entity.
+type.effectCause.entityAttacked.title=Entity is Attacked
+type.effectCause.entityAttacked.description=Runs the effect when you attack an entity.
+type.effectCause.entityAttack.title=Entity Attacks
+type.effectCause.entityAttack.description=Runs the effect when an entity attacks its target.
+type.effectCause.entityKill.title=Entity Kills
+type.effectCause.entityKill.description=Runs the effect when an entity kills its target.
+type.effectCause.entityDeath.title=Entity Dies
+type.effectCause.entityDeath.description=Runs the effect when an entity dies.
+
+type.effect.potion.title=Apply Potion Effect
+type.effect.potion.title.withName=Apply Potion Effect: %s
+type.effect.potion.description=Applies a potion effect to the living entity, if there is one.
+type.effect.command.title=Run Command
+type.effect.command.title.withName=Run Command: %s
+type.effect.command.description=Runs a command as the entity affected, or at the position.
+type.effect.lootTableInside.title=Generate Loot Table Inside
+type.effect.lootTableInside.title.withName=Generate Loot Table Inside: %s
+type.effect.lootTableInside.description=Generates a loot table inside a block or entity if it has an inventory, like chests and minecart chests.
+type.effect.lootTableAt.title=Generate Loot Table
+type.effect.lootTableAt.title.withName=Generate Loot Table: %s
+type.effect.lootTableAt.description=Generate items from a loot table, and drops them on the ground.
+type.effect.cancelNormal.title=Cancel Normal Effect
+type.effect.cancelNormal.description=If something normally happens (like a mob taking damage, or dying), then this will cancel that.
+type.effect.consumeItem.title=Consume Item
+type.effect.consumeItem.title.withAmount=Consume %s Items
+type.effect.consumeItem.description=Consume an item from the item stack. Only works in some cases. Won't trigger if the player is in creative mode.
+type.effect.damageItem.title=Damage Item
+type.effect.damageItem.title.withAmount=Damage Item by %s
+type.effect.damageItem.description=Damage the item, if it is damageable. Only works in some cases. Won't trigger if the player is in creative mode.
+
+attribute.modifier.noEffect=No Effect
+
+gui.buttons.yes=Yes
+gui.buttons.no=No
+gui.buttons.back=Back
+gui.buttons.cancel=Cancel
+gui.buttons.close=Close
+gui.buttons.continue=Continue
+gui.buttons.create=Create
+gui.buttons.delete=Delete
+gui.buttons.done=Done
+gui.buttons.duplicate=Duplicate
+gui.buttons.replace=Replace
+gui.buttons.edit=Edit
+gui.buttons.save=Save
+gui.buttons.update=Update
+gui.buttons.add=Add
+gui.buttons.new=New
+gui.buttons.unlock=Unlock
+gui.buttons.share=Share
+gui.buttons.goToFolder=Go To Folder
+gui.buttons.goToFolders=Go To Folders
+gui.buttons.selectFile=Select File
+
+gui.notification.problemCount.singular=Additions encountered %s problem while loading
+gui.notification.problemCount.plural=Additions encountered %s problems while loading
+gui.notification.fileLocation=Problems saved to file: %s
+gui.notification.openFile=Click to open file
+gui.notification.button.view=View Problems
+gui.notification.title=Problem Notifications
+gui.notification.problem.directlyInFolder=The file can't be directly in the %s folder. It must be inside another folder.
+
+gui.dropdown.nothingToShow=Nothing to Show
+gui.dropdown.itemMaterial.armor.addNew=++ Add New Armor Material ++
+gui.dropdown.itemMaterial.tool.addNew=++ Add New Tool Material ++
+gui.dropdown.soundEvent.addNew=++ Add New Sound Event ++
+gui.dropdown.soundFile.addNew=++ Add New Sound File ++
+
+gui.suggestion.noSuggestions=No Suggestions
+
+gui.loadingError.title=Problem Loading Addon
+gui.loadingError.modNotFound=The addon %1$s requires %2$s of mod '%3$s'
+gui.loadingError.addonNotFound=The addon %1$s requires %2$s of addon '%3$s'
+gui.loadingError.version=version %s
+gui.loadingError.version.any=any version
+gui.loadingError.dependancyCycle=A cycle in the addon depenencies was found. The first addon in the cycle is %s.
+
+gui.additions.main.byAuthor=(%2$s) By %1$s
+
+gui.warnDialogue.problem.title=Uh Oh!
+gui.warnDialogue.unsaved.title=Unsaved Changes
+gui.warnDialogue.unsaved.message=You have unsaved changes! Save them first?
+gui.warnDialogue.unsaved.continue=Don't Save
+gui.warnDialogue.delete.title=Confirm Delete
+gui.warnDialogue.delete.message=Are you sure you want to delete this? It cannot be undone.
+gui.warnDialogue.restart.created.title=Successfully Created!
+gui.warnDialogue.restart.created.message=Addition successfully created! You must restart the game for it to show up ingame and in some lists. Restart now? (Will close your game)
+gui.warnDialogue.restart.updated.title=Successfully Updated!
+gui.warnDialogue.restart.updated.message=Addition successfully updated! You may have to restart the game for some updates to show up. Restart now? (Will close your game)
+gui.warnDialogue.restart.continue=Restart Now
+gui.warnDialogue.restart.close=Restart Later
+gui.warnDialogue.noTypeGui.message=Couldn't find a screen registered for the type %s!
+
+gui.popup.reloadResources.title=Reloading Resources
+gui.popup.reloadResources.message=Reloading resources. Please wait.
+
+gui.popup.selectFile.title=Select a File
+gui.popup.selectFile.message=Select a file from the file chooser.
+
+gui.popup.texture.animation.title=Set Up Animation
+gui.popup.texture.animation.message=Looks like your image is an animation. Would you like to select a .mcmeta file, or generate a default one?
+gui.popup.texture.animation.file.label=Animation File
+gui.popup.texture.animation.button.generate=Generate Default
+gui.popup.texture.animation.generated.title=Animation File Generated
+gui.popup.texture.animation.generated.message=Animation file successfully generated!
+gui.popup.texture.animation.loaded.title=Animation File Loaded
+gui.popup.texture.animation.loaded.message=Animation file successfully loaded!
+gui.popup.texture.animation.problem.title=Problem Loading Animation
+gui.popup.texture.animation.problem.message=Couldn't load your animation file selected. Make sure it exists, and try again!
+
+gui.popup.model.title=Custom Model
+gui.popup.model.item.message=You'll have to manually create and add your textures and item model! Place the item model in this folder and call it: %s 
+gui.popup.model.item.armor.message=You'll have to manually create and add your textures and item model! Place the item model in this folder and call it: %1$s, and call the armor texture: %2$s, with the armor overlay texture (if you need one): %3$s
+gui.popup.model.item.hatOverlay.message=You'll have to manually create and add your textures and item model! Place the item model in this folder and call it: %1$s, and if you want one, call the screen overlay texture: %2$s
+gui.popup.model.block.message=You'll have to manually create and add your textures, block model, and block state! Place it in this folder and call the block state: %s 
+gui.popup.model.block.withItem.message=You'll have to manually create and add your textures, item model, block model, and block state! Place the block state and item models in these folders and call the block state: %1$s and the item model: %2$s
+
+gui.popup.itemStack.title=Edit Item Stack
+gui.popup.itemStack.item.label=Item
+gui.popup.itemStack.anyDamage.label=Any Damage
+gui.popup.itemStack.anyDamage.info=If true, this item stack can have any metadata/damage.
+gui.popup.itemStack.meta.label=Metadata
+gui.popup.itemStack.count.label=Count
+gui.popup.itemStack.items.label=Items
+gui.popup.itemStack.nbt.label=NBT Tag
+
+gui.popup.attributeModifier.title=Edit Attribute Modifier
+gui.popup.attributeModifier.attributeName.label=Attribute Name
+gui.popup.attributeModifier.amount.label=Amount
+gui.popup.attributeModifier.operation.label=Operation
+gui.popup.attributeModifier.operation.info=0 adds the modifier, 1 and 2 multiply it by (1 + amount) in slightly different ways. For more info, check out %s.
+gui.popup.attributeModifier.slot.label=Slot
+gui.popup.attributeModifier.uuid.label=UUID
+gui.popup.attributeModifier.uuid.info=Leave the UUID blank to generate a default one.
+gui.popup.attributeModifier.problem.slotRequired.title=Slot Needed
+gui.popup.attributeModifier.problem.slotRequired.message=You need to specify a slot!
+
+gui.popup.potionEffect.title=Edit Potion Effect
+gui.popup.potionEffect.potion.label=Potion
+gui.popup.potionEffect.duration.label=Duration
+gui.popup.potionEffect.duration.info=The potion effect's duration in ticks, with 20 ticks per second.
+gui.popup.potionEffect.amplifier.label=Amplifier
+gui.popup.potionEffect.amplifier.info=The potion effect's amplifier. An amplifier of 0 is potion level 1, 1 is level 2, etc.
+gui.popup.potionEffect.particle.label=Particle Type
+gui.popup.potionEffect.particle.normal.label=Normal
+gui.popup.potionEffect.particle.faded.label=Faded
+gui.popup.potionEffect.particle.none.label=None
+
+gui.popup.equipmentItem.title=Edit Equipment Item
+gui.popup.equipmentItem.slot.label=Slot
+gui.popup.equipmentItem.item.label=Item
+gui.popup.equipmentItem.problem.slotRequired.title=Slot Needed
+gui.popup.equipmentItem.problem.slotRequired.message=You must select a slot!
+gui.popup.equipmentItem.display.head=On Head: %s
+gui.popup.equipmentItem.display.chest=On Chest: %s
+gui.popup.equipmentItem.display.legs=On Legs: %s
+gui.popup.equipmentItem.display.feet=On Feet: %s
+gui.popup.equipmentItem.display.mainhand=In Mainhand: %s
+gui.popup.equipmentItem.display.offhand=In Offhand: %s
+
+gui.popup.itemMaterial.armor.delete.message=Are you sure you want to delete this? Any items with this material will have their material set to leather. This cannot be undone.
+gui.popup.itemMaterial.tool.delete.message=Are you sure you want to delete this? Any items with this material will have their material set to wood. This cannot be undone.
+
+gui.popup.advancement.addAdvancement.title=Add Advancement
+gui.popup.advancement.addAdvancement.message=Adding/Editing advancements isn't supported through the gui yet (since they are rather complex!), but you can open the folder and add them manually. Then you can run the /reload command ingame to refresh the advancements.
+
+gui.popup.lootTable.addLootTable.title=Add Loot Table
+gui.popup.lootTable.addLootTable.message=You can add a simple loot table using a preset. However, adding/editing full loot tables isn't supported through the gui yet (since they are rather complex!). You can open the folder and add them manually, though, then run the /reload command ingame to refresh the loot tables.
+gui.popup.lootTable.usePreset=Use Preset
+
+gui.popup.structure.addStructure.title=Add Structure
+gui.popup.structure.addStructure.message=Structures must be created ingame using structure blocks. Once you have saved one, select it here to add it to your addon.
+
+gui.popup.selectSound.title=Add a New Sound
+gui.popup.selectSound.message.id=First, give your new sound an id.
+gui.popup.selectSound.message.select=Then, select the file below.
+gui.popup.selectSound.id.label=Sound Id
+gui.popup.selectSound.problem.title=Problem Adding Sound
+gui.popup.selectSound.problem.message=Uh oh, the sound file didn't save correctly (error message was %s). You can try selecting it again.
+gui.popup.selectSound.duplicate.title=Replace Old Sound?
+gui.popup.selectSound.duplicate.message=A sound with id '%s' already exists. Replace it?
+
+gui.popup.color.title=Edit Color
+
+gui.popup.deleteAddon.title=Delete %s
+gui.popup.deleteAddon.message=Warning! If you delete %s, you will lose all of your work. You may want to make a backup first, if you haven't. Are you sure you want to delete it and restart the game?
+gui.popup.deleteAddon.problem.noDelete.title=Problem Deleting %s
+gui.popup.deleteAddon.problem.noDelete.message=Couldn't delete the addon. The message was '%1$s'. You can close the game and delete the file '%2$s' yourself.
+
+gui.popup.addonDeleted.title=Deleted %s
+gui.popup.addonDeleted.message=%s has been deleted. The game must be restarted for the changes to take effect. Click below to close the game so you can restart it.
+gui.popup.addonDeleted.button.restart=Restart Game
+
+gui.popup.shareAddon.title=Share Your Addon!
+gui.popup.shareAddon.button=Share Your Addon
+gui.popup.shareAddon.message1=Zip your addon so you can share it!
+gui.popup.shareAddon.message2=Only do this once your addon is done and you have no more changes to make, since this will lock your addon from further changes.
+gui.popup.shareAddon.success.title=Addon Ready for Sharing!
+gui.popup.shareAddon.success.message=Successfully zipped the addon! It is called '%s'. Click below to go to the folder so you can share it.
+gui.popup.shareAddon.problem.title=Problem Zipping Addon
+gui.popup.shareAddon.problem.message=There was a problem zipping the addon. The message was '%s'. You could try again, but things might be in a weird state now.
+
+gui.popup.lockAddon.title=Zipping Addon
+gui.popup.lockAddon.message=This might take a while, please wait...
+
+gui.popup.addonVersion.title=Version Your Addon
+gui.popup.addonVersion.message=Give your addon a version number! It can only have numbers and dots.
+gui.popup.addonVersion.message.lastVersion=Give your addon a version number! It can only have numbers and dots. The last version was '%s'.
+gui.popup.addonVersion.label=Addon Version
+gui.popup.addonVersion.problem.noVersion.title=Addon Version Needed
+gui.popup.addonVersion.problem.noVersion.message=You need an addon version!
+
+gui.popup.unlockAddon.title=Unzipping Addon
+gui.popup.unlockAddon.message=This might take a while, please wait...
+gui.popup.unlockAddon.warning.title=Unlock Warning
+gui.popup.unlockAddon.warning.message=If you unlock this addon, it will be unzipped and moved to the addons/Additions folder. If you are not the addon author, you probably don't want this. Are you sure you want to unlock it?
+gui.popup.unlockAddon.problem.title=Problem Unzipping Addon
+gui.popup.unlockAddon.problem.message=There was a problem unzipping the addon. The message was '%s'. You could try again, but things might be in a weird state now.
+gui.popup.unlockAddon.problem.noDelete.title=Problem Deleting '%s'
+gui.popup.unlockAddon.problem.noDelete.message1=Your addon unzipped successfully. However, the old zipped file '%s' couldn't be deleted, which happens pretty often.
+gui.popup.unlockAddon.problem.noDelete.message2=Go to the folder and delete it yourself (after closing the game), or the game won't start up properly.
+gui.popup.unlockAddon.success.title=Addon Unlocked
+gui.popup.unlockAddon.success.message=Successfully unlocked the addon!
+
+gui.view.showAdvanced=Show Advanced
+gui.view.additionType.type=Type: %s
+gui.view.additionType.id=Id: %s
+gui.view.additionType.name=Name: %s
+gui.view.additionType.description=Description: %s
+gui.view.additionType.count=Count: %s
+gui.view.additionType.items=Items: %s
+gui.view.additionType.material=Material: %s
+gui.view.additionType.commands=Commands: %s
+gui.view.additionType.sounds=Sounds: %s
+gui.view.additionType.preset=Preset: %s
+gui.view.additionType.cause=When %s
+gui.view.additionType.effects.singular=Then run %s effect
+gui.view.additionType.effects.plural=Then run %s effects
+
+gui.view.addon.items.label=View Items Added (%s)
+gui.view.addon.items.title=Items for %s
+gui.view.addon.items.none.message=There are no items for %s
+gui.view.addon.itemMaterials.label=View Item Materials Added (%s)
+gui.view.addon.itemMaterials.title=Item Materials for %s
+gui.view.addon.itemMaterials.none.message=There are no item materials for %s
+gui.view.addon.blocks.label=View Blocks Added (%s)
+gui.view.addon.blocks.title=Blocks for %s
+gui.view.addon.blocks.none.message=There are no blocks for %s
+gui.view.addon.creativeTabs.label=View Creative Tabs Added (%s)
+gui.view.addon.creativeTabs.title=Creative Tabs for %s
+gui.view.addon.creativeTabs.none.message=There are no creative tabs for %s
+gui.view.addon.recipes.label=View Recipes Added (%s)
+gui.view.addon.recipes.title=Recipes for %s
+gui.view.addon.recipes.none.message=There are no recipes for %s
+gui.view.addon.effects.label=View Effects Added (%s)
+gui.view.addon.effects.title=Effects for %s
+gui.view.addon.effects.none.message=There are no effects for %s
+gui.view.addon.functions.label=View Functions Added (%s)
+gui.view.addon.functions.title=Functions for %s
+gui.view.addon.functions.none.message=There are no functions for %s
+gui.view.addon.advancements.label=View Advancements Added (%s)
+gui.view.addon.advancements.title=Advancements for %s
+gui.view.addon.advancements.none.message=There are no advancements for %s
+gui.view.addon.structures.label=View Structures Added (%s)
+gui.view.addon.structures.title=Structures for %s
+gui.view.addon.structures.none.message=There are no structures for %s
+gui.view.addon.lootTables.label=View Loot Tables Added (%s)
+gui.view.addon.lootTables.title=Loot Tables for %s
+gui.view.addon.lootTables.none.message=There are no loot tables for %s
+gui.view.addon.soundEvents.label=View Sound Events Added (%s)
+gui.view.addon.soundEvents.title=Sound Events for %s
+gui.view.addon.soundEvents.none.message=There are no sound events for %s
+
+gui.view.addon.locked.message=This addon is locked! If you want to make any changes to it, you will have to unlock it first.
+
+gui.edit.editing=Editing %s
+gui.edit.id.info=The Id can only contain lower case letters, numbers, or underscores.
+gui.edit.id.withFolders.info=The Id can only contain lower case letters, numbers, underscores, or slashes.
+gui.edit.id.noEdit.info=The Id cannot change after being created.
+gui.edit.problem.noId=The Id cannot be blank.
+gui.edit.problem.noName=The Name cannot be blank.
+
+gui.edit.addon.title=Create New Addon
+gui.edit.addon.addonId.label=Addon Id
+gui.edit.addon.addonName.label=Addon Name
+gui.edit.addon.addonAuthor.label=Author
+gui.edit.addon.addonIcon.label=Addon Icon
+gui.edit.addon.required.info=These are useful if you require items/recipes/etc. from other mods or addons. Also add addons to the 'Load Before' list as well, so they load before! You can also add a version range, like mod dependencies. Like additions@[1.1,) means at least version 1.1 of additions.
+gui.edit.addon.required.warning=WARNING! The game will not start if these mods or addons are not found. So no touchie unless your addon really needs these mods or addons!
+gui.edit.addon.requiredMods.label=Required Mods
+gui.edit.addon.requiredAddons.label=Required Addons
+gui.edit.addon.loadOrder.info=These are useful if you need another addon to load before/after your addon (like if it loads items you need). * means everything.
+gui.edit.addon.dependencies.label=Load Before This
+gui.edit.addon.dependents.label=Load After This
+gui.edit.addon.loopFunction.label=Loop Function
+gui.edit.addon.loopFunction.info=Function for this addon that will run every game tick
+gui.edit.addon.problem.title=Problem Creating Addon
+gui.edit.addon.problem.duplicate=An Addon with Id '%s' already exists!
+gui.edit.addon.problem.noAddonId=The Addon Id cannot be blank.
+gui.edit.addon.problem.noAddonName=The Addon Name cannot be blank.
+gui.edit.addon.problem.allBeforeAfter=Can't load * (everything) both before and after this addon!
+gui.edit.addon.problem.bothBeforeAfter=Can't have the same addon '%s' in both Load Before and Load After lists!
+gui.edit.addon.problem.beforeAll=Can't have an addon '%s' in Load After if * (everything) is in Load Before!
+gui.edit.addon.problem.afterAll=Can't have an addon '%s' in Load Before if * (everything) is in Load After!
+
+gui.edit.selectType.label=Select Type
+gui.edit.selectType.descrpition.default=Select a Type above.
+gui.edit.selectType.descrpition.none=No description found for this type.
+
+gui.edit.item.title=Create New Item
+gui.edit.item.itemType.label=Item Type
+gui.edit.item.itemId.label=Item Id
+gui.edit.item.itemName.label=Item Name
+gui.edit.item.itemShines.label=Item Always Shines
+gui.edit.item.burnTime.label=Fuel Burn Time
+gui.edit.item.burnTime.info=How many ticks this item burns as a fuel in a furnace. 0 means it is not a fuel.
+gui.edit.item.isBeaconPayment.label=Is Beacon Payment
+gui.edit.item.itemTooltip.label=Item Tooltip
+gui.edit.item.updateTexture.label=Update Item Texture
+gui.edit.item.itemContainer.label=Item Container
+gui.edit.item.maxStackSize.label=Max Stack Size
+gui.edit.item.oreDictEntries.label=Ore Dictionary Entries
+gui.edit.item.attributeModifiers.label=Item Attributes
+gui.edit.item.applyVanillaAttributes.label=Apply Vanilla Attributes
+gui.edit.item.repairStacks.label=Repair Items
+gui.edit.item.enchantability.label=Enchantability
+gui.edit.item.enchantability.info=How good this material's natural enchantments are. 0 means not enchantable. Stone is 5, diamond is 10, gold is 22.
+gui.edit.item.durability.label=Durability
+gui.edit.item.hasPotionEffects.label=Has Potion Effects
+gui.edit.item.hasPotionEffect.info=If true, the item can have different potion effects like a potion, or tipped arrow. The potion's color will apply to the item's color layer.
+gui.edit.item.useEfficiency.label=Use Efficiency
+gui.edit.item.useEfficiency.info=Can this item use the efficiency enchantment to improve its speed? 0.5 means at efficiency 5, it will be twice as fast. 1.0 means at efficiency 5 it will be instant.
+gui.edit.item.efficiencyMultiplier.label=Efficiency Multiplier
+gui.edit.item.problem.title=Problem Creating Item
+gui.edit.item.problem.duplicate=An item with id '%s' already exists!
+gui.edit.item.problem.noId=The Item Id cannot be blank.
+gui.edit.item.problem.noName=The Item Name cannot be blank.
+
+gui.edit.item.simple.title=Create New Simple Item
+
+gui.edit.item.food.title=Create New Food Item
+gui.edit.item.food.hunger.label=Hunger Restored
+gui.edit.item.food.hunger.info=Number of hunger points (half drumsticks) this food restores.
+gui.edit.item.food.saturation.label=Saturation Restored
+gui.edit.item.food.saturation.info=How 'full' you get. Cookies are 0.4, apples are 2.4, bread is 6, and golden apples are 9.6.
+gui.edit.item.food.eatTime.label=Eat Time
+gui.edit.item.food.eatTime.info=Time it takes to eat the food, in ticks (20 ticks per second).
+gui.edit.item.food.alwaysEdible.label=Always Edible
+gui.edit.item.food.wolvesEat.label=Wolves Eat
+gui.edit.item.food.isDrink.label=Is Drink
+gui.edit.item.food.eatenEffects.label=Effects When Eaten
+
+gui.edit.item.record.title=Create New Record
+gui.edit.item.record.music.label=Music Track
+gui.edit.item.record.description.label=Music Description
+gui.edit.item.record.description.info=Shows when the record plays in a jukebox
+gui.edit.item.record.problem.noMusic=You must select a music track.
+
+gui.edit.item.armor.title=Create New Armor Item
+gui.edit.item.armor.material.label=Armor Material
+gui.edit.item.armor.slot.label=Armor Slot
+gui.edit.item.armor.colored.label=Colored
+gui.edit.item.armor.problem.noMaterial=The Armor Material cannot be blank.
+gui.edit.item.armor.problem.noSlot=The Armor Slot cannot be blank.
+gui.edit.item.armor.problem.noOverlay.title=Update Armor Texture
+gui.edit.item.armor.problem.noOverlay.message=The armor can be colored, but no overlay armor texture was found. Add one now?
+
+gui.edit.item.hat.title=Create New Hat
+gui.edit.item.hat.hasScreenOverlay.label=Has Screen Overlay
+gui.edit.item.hat.problem.noOverlay.title=Update Hat Screen Overlay
+gui.edit.item.hat.problem.noOverlay.message=The hat has a screen overlay, but no overlay was found. Add one now?
+
+gui.edit.item.tool.material.label=Tool Material
+gui.edit.item.tool.problem.noMaterial=The Tool Material cannot be blank.
+
+gui.edit.item.sword.title=Create New Sword
+
+gui.edit.item.club.title=Create New Club
+
+gui.edit.item.pickaxe.title=Create New Pickaxe
+
+gui.edit.item.axe.title=Create New Axe
+
+gui.edit.item.shovel.title=Create New Shovel
+
+gui.edit.item.hoe.title=Create New Hoe
+
+gui.edit.item.shears.title=Create New Shears
+
+gui.edit.item.firestarter.title=Create New Firestarter
+
+gui.edit.item.multitool.title=Create New Multitool
+gui.edit.item.multitool.harvestRadius.label=Harvest Radius
+gui.edit.item.multitool.harvestRadius.info=This tool will harvest blocks in a square with sides this far away from the middle. For a 3x3 harvest area, the radius is 1, 5x5 is 2, etc.
+gui.edit.item.multitool.harvestDepth.label=Harvest Depth
+gui.edit.item.multitool.harvestDepth.info=How far back the harvest area goes past the block broken.
+gui.edit.item.multitool.toolTypes.label=Tool Types
+
+gui.edit.item.shield.title=Create New Shield
+gui.edit.item.shield.bashDamage.label=Bash Damage
+gui.edit.item.shield.bashCooldown.label=Bash Cooldown
+gui.edit.item.shield.bashSwingSound.label=Bash Swing Sound
+gui.edit.item.shield.bashHitSound.label=Bash Hit Sound
+
+gui.edit.item.shooter.damage.label=Damage
+gui.edit.item.shooter.scattering.label=Scattering
+gui.edit.item.shooter.shotCount.label=Shot Count
+gui.edit.item.shooter.firesVanillaArrows.label=Fires Vanilla Arrows
+gui.edit.item.shooter.alwaysInfinite.label=Always Infinite
+gui.edit.item.shooter.infinityRequiresAmmo.label=Infinity Requires Ammo
+gui.edit.item.shooter.infinityRequiresAmmo.info=Does this require at least one arrow (or whatever ammo it shoots) to be in your inventory for infinity to work?
+gui.edit.item.shooter.consumesOneAmmo.label=Consumes One Ammo
+gui.edit.item.shooter.consumesOneAmmo.info=If this shoots more than one projectile and doesn't have infinity, it will only consume one.
+gui.edit.item.shooter.shotSound.label=Shot Sound
+gui.edit.item.shooter.ammoItems.label=Ammo Items
+gui.edit.item.shooter.shotEffects.label=Shot Effects
+
+gui.edit.item.bow.title=Create New Bow
+gui.edit.item.bow.drawTime.label=Draw Time
+
+gui.edit.item.gun.title=Create New Gun
+gui.edit.item.gun.shotVelocity.label=Shot Velocity
+gui.edit.item.gun.reloadTime.label=Reload Time
+
+gui.edit.item.projectile.baseDamage.label=Damage
+gui.edit.item.projectile.basePunch.label=Knockback
+gui.edit.item.projectile.gravity.label=Gravity
+gui.edit.item.projectile.worksInWater.label=Works in Water
+gui.edit.item.projectile.piercesEntities.label=Pierces Entities
+gui.edit.item.projectile.sticksInGround.label=Sticks in Ground
+gui.edit.item.projectile.worksWithInfinity.label=Works with Infinity
+gui.edit.item.projectile.damageIgnoresSpeed.label=Damage Ignores Speed
+gui.edit.item.projectile.damageIgnoresSpeed.info=The projectile will always do the same damage, regardless of speed. Good if you want to make a gun that does little damage.
+gui.edit.item.projectile.renders3D.label=Renders 3D
+gui.edit.item.projectile.hitSound.label=Hit Sound
+gui.edit.item.projectile.hitEffects.label=Hit Effects
+
+gui.edit.item.throwable.title=Create New Throwable
+gui.edit.item.throwable.velocity.label=Velocity
+gui.edit.item.throwable.inaccuracy.label=Inaccuracy
+gui.edit.item.throwable.throwSound.label=Throw Sound
+gui.edit.item.throwable.throwEffects.label=Throw Effects
+
+gui.edit.item.arrow.title=Create New Arrow
+
+gui.edit.item.projectile.title=Create New Projectile
+
+gui.edit.itemMaterial.armor.title=Create New Armor Material
+gui.edit.itemMaterial.tool.title=Create New Tool Material
+gui.edit.itemMaterial.id.label=Material Id
+gui.edit.itemMaterial.repairStack.label=Repair Item
+gui.edit.itemMaterial.baseToolDurability.label=Tool Durability
+gui.edit.itemMaterial.baseToolDurability.info=Durability for these tools. Stone is 131, iron is 250, diamond is 1561.
+gui.edit.itemMaterial.harvestLevel.label=Harvest Level
+gui.edit.itemMaterial.harvestLevel.info=What level of ores these tools can harvest. For example, stone/coal are 0, iron/lapis are 1, gold/diamond/redstone are 2, obsidian is 3.
+gui.edit.itemMaterial.efficiency.label=Tool Efficiency
+gui.edit.itemMaterial.efficiency.info=How fast these tools breaks blocks they work on. Stone is 4.0, diamond is 8.0, gold is 12.0.
+gui.edit.itemMaterial.baseAttackDamage.label=Base Attack Damage
+gui.edit.itemMaterial.baseAttackDamage.info=Base attack damage of these tools. Wood/gold are 0.0, stone is 1.0, iron is 2.0, diamond is 3.0.
+gui.edit.itemMaterial.baseArmorDurability.label=Armor Durability
+gui.edit.itemMaterial.baseArmorDurability.info=Base durability factor for armor of this material. Leather is 5, iron is 15, diamond is 33.
+gui.edit.itemMaterial.toughness.label=Armor Toughness
+gui.edit.itemMaterial.helmetArmor.label=Helmet Armor
+gui.edit.itemMaterial.chestplateArmor.label=Chestplate Armor
+gui.edit.itemMaterial.leggingsArmor.label=Leggings Armor
+gui.edit.itemMaterial.bootsArmor.label=Boots Armor
+gui.edit.itemMaterial.equipSound.label=Equip Sound
+gui.edit.itemMaterial.problem.title=Problem Creating Item Material
+gui.edit.itemMaterial.problem.duplicate=An item material with id '%s' already exists!
+gui.edit.itemMaterial.problem.noEquipSound=An equip sound must be selected!
+gui.edit.itemMaterial.success.title=Updated Item Material
+gui.edit.itemMaterial.success.message=Successfully updated your item material.
+
+gui.edit.block.title=Create New Block
+gui.edit.block.blockType.label=Block Type
+gui.edit.block.blockId.label=Block Id
+gui.edit.block.blockName.label=Block Name
+gui.edit.block.blockMaterial.label=Block Material
+gui.edit.block.updateTexture.label=Update Block Texture
+gui.edit.block.mapColor.label=Map Color
+gui.edit.block.hardness.label=Hardness
+gui.edit.block.hardness.info=How long it takes to break this block. -1 means unbreakable. For example, dirt is 0.5, wood is 2.0, stone is 1.5, ores are 3.0, obsidian is 50.0, and bedrock is -1.0.
+gui.edit.block.resistance.label=Explosion Resistance
+gui.edit.block.resistance.info=How well this block resists explosions. For example, dirt is 0.0, wood and ores are 5.0, stone is 10.0, obsidian is 2000.0, and bedrock is 6000000.0.
+gui.edit.block.harvestLevel.label=Harvest Level
+gui.edit.block.harvestLevel.info=What level of tools is needed to harvest this block. For example, stone is 0, iron is 1, diamond ore is 2, and obsidian is 3. -1 means anything.
+gui.edit.block.harvestTool.label=Harvest Tool
+gui.edit.block.harvestTool.info=What tool type is required to dig this block (like pickaxe for stone). Leave blank if you can dig it by hand. However, some block materials are forced to require a tool, so leaving it blank won't work: stone, metal, anvil, snow, and snow_layer.
+gui.edit.block.effectiveTools.label=Effective Tools
+gui.edit.block.transparent.label=Transparent
+gui.edit.block.transparent.info=Can light pass through this block?
+gui.edit.block.semiTransparent.label=Semi-Transparent
+gui.edit.block.semiTransparent.info=Does this block's texture have semi-transparent parts like stained glass or ice?
+gui.edit.block.opacity.label=Opacity
+gui.edit.block.opacity.info=How much light is blocked going through this block. For example, glass is 0, ice is 3.
+gui.edit.block.lightLevel.label=Light Level
+gui.edit.block.lightLevel.info=How much light this block gives off, with 0 being none, and 15 being max.
+gui.edit.block.flammability.label=Flammability
+gui.edit.block.flammability.info=How quickly this block burns. For example, planks are 20, plants are 100, tnt is 15, and logs are 5.
+gui.edit.block.fireSpreadSpeed.label=Fire Spread Speed
+gui.edit.block.fireSpreadSpeed.info=How quickly fire spreads to this block. For example, planks and logs are 5, plants are 60, and tnt is 100.
+gui.edit.block.bookshelfStrength.label=Bookshelf Strength
+gui.edit.block.bookshelfStrength.info=How much this block influences an enchantment table. Bookshelves are 1.
+gui.edit.block.beaconColorMultiplier.label=Beacon Color Multiplier
+gui.edit.block.slipperiness.label=Slipperiness
+gui.edit.block.slipperiness.info= How slippery this block is. Normal blocks are 0.6, ice is 0.98.
+gui.edit.block.isSlime.label=Is Slime
+gui.edit.block.isBeaconBase.label=Is Beacon Base
+gui.edit.block.canPistonsPush.label=Can Pistons Push
+gui.edit.block.hasCollisionBox.label=Has Collision Box
+gui.edit.block.sameCollisionBoundingBox.label=Same Collision/Bounding
+gui.edit.block.sameCollisionBoundingBox.info=Is the block's collision box is the same as its bounding box?
+gui.edit.block.boundingBoxMinX.label=Bounding Box Min X
+gui.edit.block.boundingBoxMinY.label=Bounding Box Min Y
+gui.edit.block.boundingBoxMinZ.label=Bounding Box Min Z
+gui.edit.block.boundingBoxMaxX.label=Bounding Box Max X
+gui.edit.block.boundingBoxMaxY.label=Bounding Box Max Y
+gui.edit.block.boundingBoxMaxZ.label=Bounding Box Max Z
+gui.edit.block.collisionBoxMinX.label=Collision Box Min X
+gui.edit.block.collisionBoxMinY.label=Collision Box Min Y
+gui.edit.block.collisionBoxMinZ.label=Collision Box Min Z
+gui.edit.block.collisionBoxMaxX.label=Collision Box Max X
+gui.edit.block.collisionBoxMaxY.label=Collision Box Max Y
+gui.edit.block.collisionBoxMaxZ.label=Collision Box Max Z
+gui.edit.block.placeSound.label=Custom Place Sound
+gui.edit.block.breakSound.label=Custom Break Sound
+gui.edit.block.hitSound.label=Custom Dig Sound
+gui.edit.block.stepSound.label=Custom Footstep Sound
+gui.edit.block.fallSound.label=Custom Falling On Sound
+gui.edit.block.drop.label=Block Drop
+gui.edit.block.drop.option.nothing=Nothing
+gui.edit.block.drop.option.itself=Itself
+gui.edit.block.drop.option.item=Resource Item: %s
+gui.edit.block.drop.option.lootTable=Loot Table: %s
+gui.edit.block.drop.option.custom=Custom
+gui.edit.block.drop.explosion.label=Dropped from Explosions
+gui.edit.block.drop.explosion.option.normal=Normal (Based on explosion)
+gui.edit.block.drop.explosion.option.never=Never
+gui.edit.block.drop.explosion.option.always=Always
+gui.edit.block.problem.title=Problem Creating Block
+gui.edit.block.problem.duplicate=A block or item with id '%s' already exists!
+gui.edit.block.problem.noId=The Block Id cannot be blank.
+gui.edit.block.problem.noName=The Block Name cannot be blank.
+gui.edit.block.problem.noMaterial=The Block Material cannot be blank.
+
+gui.edit.block.simple.title=Create New Simple Block
+
+gui.edit.block.falling.title=Create New Falling Block
+
+gui.edit.block.stairs.title=Create New Stairs Block
+
+gui.edit.block.slab.title=Create New Slab Block
+gui.edit.block.slab.placeOnWalls.label=Place on Walls
+gui.edit.block.slab.placeOnWalls.info=If true, this slab can be placed vertically as well as horizontally.
+
+gui.edit.block.carpet.title=Create New Carpet/Tile Block
+gui.edit.block.carpet.placeOnWalls.label=Place on Walls
+gui.edit.block.carpet.placeOnWalls.info=If true, this carpet/tile can be placed on walls as well as on the ground.
+gui.edit.block.carpet.placeOnCeiling.label=Place on Ceiling
+gui.edit.block.carpet.placeOnCeiling.info=If true, this capet/tile can be placed on the ceiling.
+gui.edit.block.carpet.needsSupport.label=Needs Support
+gui.edit.block.carpet.needsSupport.info=If true, the block must be placed on a non-air block.
+
+gui.edit.block.facing.title=Create new Facing Block
+gui.edit.block.facing.canFaceVertically.label=Can Face Vertically
+gui.edit.block.facing.canFaceVertically.info=If true, this block can be placed facing up and down.
+
+gui.edit.block.pillar.title=Create new Log/Pillar Block
+
+gui.edit.block.ladder.title=Create new Ladder Block
+gui.edit.block.ladder.needsSupport.label=Needs Support
+gui.edit.block.ladder.needsSupport.info=Does this ladder need support, or can it be placed anywhere?
+gui.edit.block.ladder.supportBack.label=Support Behind
+gui.edit.block.ladder.supportTop.label=Support Above
+gui.edit.block.ladder.supportTop.info=Can this ladder be placed below itself or solid blocks? Good for blocks like ropes hanging from the ceiling.
+gui.edit.block.ladder.supportBottom.label=Support Below
+gui.edit.block.ladder.supportBottom.info=Can this ladder be placed above itself or solid blocks? Good for blocks like scaffolding.
+gui.edit.block.ladder.placeDownward.label=Auto Place Downward
+gui.edit.block.ladder.placeDownward.info=If you right click this ladder on itself and are not sneaking, should it automatically place at the bottom of the stack of ladders?
+gui.edit.block.ladder.problem.needsSupport=Needs Support is true, but there are no support types selected! (behind, above, or below)
+
+gui.edit.block.pane.title=Create new Pane/Bars Block
+
+gui.edit.block.fence.title=Create new Fence Block
+
+gui.edit.block.wall.title=Create new Wall Block
+
+gui.edit.creativeTab.title=Create New Creative Tab
+gui.edit.creativeTab.id.label=Tab Id
+gui.edit.creativeTab.name.label=Tab Name
+gui.edit.creativeTab.hasSearchBar.label=Has Search Bar
+gui.edit.creativeTab.icon.label=Tab Icon
+gui.edit.creativeTab.items.label=Tab Items
+gui.edit.creativeTab.problem.title=Problem Creating Creative Tab
+gui.edit.creativeTab.problem.noItems=You must add items to your creative tab in Tab Items!
+gui.edit.creativeTab.problem.duplicate=A creative tab with id '%s' already exists!
+gui.edit.creativeTab.success.title=Updated Creative Tab
+gui.edit.creativeTab.success.message=Successfully updated your creative tab.
+
+gui.edit.recipe.title=Create New Recipe
+gui.edit.recipe.id.label=Recipe Id
+gui.edit.recipe.addItem.info=Click to add item
+gui.edit.recipe.problem.title=Problem Creating Recipe
+gui.edit.recipe.problem.noId=The Recipe Id cannot be blank.
+gui.edit.recipe.problem.noInput=You must give your recipe an input!
+gui.edit.recipe.problem.noOutput=You must give your recipe an output!
+gui.edit.recipe.problem.duplicate=A recipe with id '%s' already exists!
+gui.edit.recipe.success.title=Updated Recipe
+gui.edit.recipe.success.message=Successfully updated your recipe.
+
+gui.edit.recipe.crafting.group.label=Recipe Group
+gui.edit.recipe.crafting.group.info=Recipes with the same group will show up together in the vanilla crafting book. If you don't start it with a domain (like minecraft:), %s: will be added to it.
+
+gui.edit.recipe.crafting.shapeless.title=Create New Shapeless Recipe
+gui.edit.recipe.crafting.shapeless.recipe.label=Shapeless Recipe
+
+gui.edit.recipe.crafting.shaped.title=Create New Shaped Recipe
+gui.edit.recipe.crafting.shaped.button.useThisItem=Use This Item
+gui.edit.recipe.crafting.shaped.recipe.label=Shaped Recipe
+gui.edit.recipe.crafting.shaped.mirror.label=Mirror Recipe
+gui.edit.recipe.crafting.shaped.mirror.info=If true, the recipe will work mirrored vertically (like how you can craft bows with the string on either side)
+gui.edit.recipe.crafting.shaped.replaceAll.title=Replace All Ingredients Like This? 
+gui.edit.recipe.crafting.shaped.replaceAll.message1.singular=Found %s other ingredient like
+gui.edit.recipe.crafting.shaped.replaceAll.message1.plural=Found %s other ingredients like
+gui.edit.recipe.crafting.shaped.replaceAll.message2=Replace all of them? Or just this one?
+gui.edit.recipe.crafting.shaped.replaceAll.button.all=All of them
+gui.edit.recipe.crafting.shaped.replaceAll.button.one=Just this one
+
+gui.edit.recipe.crafting.dyeItem.title=Create New Dyeing Recipe
+gui.edit.recipe.crafting.dyeItem.item.label=Item to Dye
+gui.edit.recipe.crafting.dyeItem.washInCauldron.label=Wash in Cauldron
+gui.edit.recipe.crafting.dyeItem.washInCauldron.info=If you right click a cauldron full of water with this item, can you wash the dye off like vanilla leather armor?
+gui.edit.recipe.crafting.dyeItem.colorTagPath.label=Color Tag Path
+gui.edit.recipe.crafting.dyeItem.problem.noItemToDye.message=You must give your recipe an item to dye!
+gui.edit.recipe.crafting.dyeItem.problem.noColorTagPath.message=You must give a path to the color tag!
+
+gui.edit.recipe.crafting.tipProjectile.title=Create New Projectile Tipping Recipe
+gui.edit.recipe.crafting.tipProjectile.untippedProjectile.label=Untipped Projectile
+gui.edit.recipe.crafting.tipProjectile.tippedProjectile.label=Tipped Projectile
+gui.edit.recipe.crafting.tipProjectile.problem.noUntipped.message=You must give your recipe a projectile to tip!
+gui.edit.recipe.crafting.tipProjectile.problem.noTipped.message=You must give your recipe a tipped projectile!
+
+gui.edit.recipe.crafting.modify.label=Modifier
+gui.edit.recipe.crafting.modify.itemToModify.label=Item to Modify
+gui.edit.recipe.crafting.modify.differentOutput.label=Has Different Output
+gui.edit.recipe.crafting.modify.differentOutput.info=If true, the recipe will output a different item, and leave the modified item in the crafting table
+gui.edit.recipe.crafting.modify.output.label=Recipe Output
+gui.edit.recipe.crafting.modify.modifiers.label=Modifiers
+gui.edit.recipe.crafting.modify.problem.noItemToModify.message=You must give your recipe an item to modify!
+gui.edit.recipe.crafting.modify.problem.noModifiers.message=You must give your recipe modifiers!
+
+gui.edit.recipe.crafting.modifyDamage.title=Create New Modify Damage Recipe
+
+gui.edit.recipe.crafting.modifyNbt.title=Create New Modify Tag Recipe
+gui.edit.recipe.crafting.modifyNbt.nbtPath.label=Tag Path
+gui.edit.recipe.crafting.modifyNbt.problem.noNbtPath.message=You must give a path to the tag!
+
+gui.edit.recipe.smelting.title=Create New Smelting Recipe
+gui.edit.recipe.smelting.input.label=Smelting Input
+gui.edit.recipe.smelting.output.label=Smelting Output
+gui.edit.recipe.smelting.xp.label=Smelting XP
+gui.edit.recipe.smelting.xp.info=The chance you will get xp from smelting. For instance, smelting cobblestone into stone has 0.1, baking potatos has 0.35, and smelting gold ore has 1.0.
+
+gui.edit.recipe.brewing.title=Create New Brewing Recipe
+gui.edit.recipe.brewing.ingredient.label=Ingredient
+gui.edit.recipe.brewing.input.label=Potion Input
+gui.edit.recipe.brewing.output.label=Potion Output
+gui.edit.recipe.brewing.problem.noIngredient.message=You must have an ingredient!
+
+gui.edit.recipe.brewing.complete.title=Create Brewing Recipe Set
+gui.edit.recipe.brewing.complete.inputTag.label=Input Tag
+gui.edit.recipe.brewing.complete.inputExtendedTag.label=Extended Input Tag
+gui.edit.recipe.brewing.complete.inputPoweredTag.label=Strong Input Tag
+gui.edit.recipe.brewing.complete.outputTag.label=Potion Tag
+gui.edit.recipe.brewing.complete.outputExtendedTag.label=Extended Potion Tag
+gui.edit.recipe.brewing.complete.outputPoweredTag.label=Strong Potion Tag
+gui.edit.recipe.brewing.complete.allowExtended.label=Allow Redstone
+gui.edit.recipe.brewing.complete.allowExtended.info=Add a tag for the potion when brewed with redstone
+gui.edit.recipe.brewing.complete.allowPowered.label=Allow Glowstone
+gui.edit.recipe.brewing.complete.allowPowered.info=Add a tag for the potion when brewed with glowstone
+gui.edit.recipe.brewing.complete.allowMundane.label=Allow Mundane
+gui.edit.recipe.brewing.complete.allowMundane.info=Will brewing the ingredient with a water bottle create a mundane potion?
+gui.edit.recipe.brewing.complete.allowSplash.label=Allow Splash
+gui.edit.recipe.brewing.complete.allowLingering.label=Allow Lingering
+gui.edit.recipe.brewing.complete.problem.noInputTag.message=You must have an input tag!
+gui.edit.recipe.brewing.complete.problem.noOutputTag.message=You must have an output tag!
+
+gui.edit.effectList.title=Create New Effect
+gui.edit.effectList.when.message=When...
+gui.edit.effectList.then.message=Then...
+gui.edit.effectList.id.label=Effect Id
+gui.edit.effectList.cause.label=Cause
+gui.edit.effectList.effects.label=Effects
+gui.edit.effectList.problem.title=Problem Creating Effect
+gui.edit.effectList.problem.duplicate.message=An effect with id '%s' already exists!
+gui.edit.effectList.problem.noCause.message=You must have a cause!
+gui.edit.effectList.problem.noEffects.message=You must have effects!
+gui.edit.effectList.success.title=Updated Effect
+gui.edit.effectList.success.message=Successfully updated your effect.
+
+gui.edit.effectCause.title=Edit Cause
+gui.edit.effectCause.type.label=Cause Type
+gui.edit.effectCause.targetSelf.label=Target Self
+gui.edit.effectCause.noGui.message=Couldn't find a GUI to edit this type of cause! Select a different type above.
+gui.edit.effectCause.problem.title=Problem Creating Cause
+gui.edit.effectCause.problem.noGui.message=There is no GUI for this cause, so there is no way to save it!
+
+gui.edit.effectCause.item.item.label=Item
+gui.edit.effectCause.item.problem.noItem.message=You must have an item!
+
+gui.edit.effectCause.held.itemStack.label=Held Item
+gui.edit.effectCause.held.hand.label=Hand
+gui.edit.effectCause.held.hand.mainhand.label=Mainhand
+gui.edit.effectCause.held.hand.offhand.label=Offhand
+gui.edit.effectCause.held.hand.both.label=Either Hand
+gui.edit.effectCause.held.problem.noItem.message=You must have a held item!
+gui.edit.effectCause.held.problem.noHand.message=You must select a hand type!
+
+gui.edit.effectCause.equipped.items.label=Equipped Items
+gui.edit.effectCause.equipped.allRequired.label=All Required
+gui.edit.effectCause.equipped.required.label=Pieces Needed
+gui.edit.effectCause.equipped.required.info=Number of items that must be equipped to get the effect.
+gui.edit.effectCause.equipped.problem.noItems.message=You must add equipment items!
+
+gui.edit.effectCause.using.timeRequired.label=Time Required
+gui.edit.effectCause.using.timeRequired.info=How many ticks you must use this item for the effect to start triggering, with 20 ticks per second.
+
+gui.edit.effectCause.block.againstBlock.label=Against Block
+gui.edit.effectCause.block.againstBlock.info=If true, the effect will target against the block, instead of inside it. Good for items meant to place entities or blocks.
+gui.edit.effectCause.block.exceptReplaceable.label=Except Replaceable
+gui.edit.effectCause.block.exceptReplaceable.info=If true, the against block will ignore "replaceable" blocks like tallgrass and snow layers. Good if you are placing a block.
+
+gui.edit.effect.title=Edit Effect
+gui.edit.effect.type.label=Effect Type
+gui.edit.effect.chance.label=Effect Chance
+gui.edit.effect.chance.info=The chance this effect will happen, with 0.0 being no chance and 1.0 being all the time.
+gui.edit.effect.noGui.message=Couldn't find a GUI to edit this type of effect! Select a different type above.
+gui.edit.effect.problem.title=Problem Creating Effect
+gui.edit.effect.problem.noGui.message=There is no GUI for this effect, so there is no way to save it!
+
+gui.edit.effect.potion.type.label=Type of Potion
+gui.edit.effect.potion.type.preset.label=Potion Preset
+gui.edit.effect.potion.type.custom.label=Customized Potion
+gui.edit.effect.potion.delay.label=Application Delay
+gui.edit.effect.potion.delay.info=Delay in ticks until this potion applies again. Important for potions like regeneration, which give an effect over time, when you are applying the potion constantly (like when wearing a piece of armor).
+gui.edit.effect.potion.problem.noType.message=You must select a type of potion!
+gui.edit.effect.potion.problem.noPreset.message=You must select a potion preset!
+gui.edit.effect.potion.problem.noCustom.message=You must create a customized potion!
+
+gui.edit.effect.command.command.label=Command
+gui.edit.effect.command.commandSenderName.label=Command Sender Name
+gui.edit.effect.command.commandSenderName.info=Name of the command sender if not run by a mob.
+gui.edit.effect.command.hideFeedback.label=Hide Command Feedback
+gui.edit.effect.command.problem.noCommand.message=You must enter a command!
+
+gui.edit.effect.lootTable.lootTable.label=Loot Table
+gui.edit.effect.lootTable.useLootTableSeed.label=Use Loot Table Seed
+gui.edit.effect.lootTable.lootTableSeed.label=Loot Table Seed
+gui.edit.effect.lootTable.problem.noLootTable.message=You must enter a loot table!
+
+gui.edit.effect.consumeItem.amount.label=Amount to Consume
+gui.edit.effect.consumeItem.amount.info=Number of items to consume
+
+gui.edit.effect.damageItem.amount.label=Damage Amount
+gui.edit.effect.damageItem.amount.info=How much damage the item will take
+
+gui.edit.function.title=Create New Function
+gui.edit.function.id.label=Function Id
+gui.edit.function.commands.label=Commands
+gui.edit.function.problem.title=Problem Creating Function
+gui.edit.function.problem.noCommands=You must add commands to your function!
+gui.edit.function.problem.duplicate=A function with id '%s' already exists!
+gui.edit.function.success.title=Updated Function
+gui.edit.function.success.message=Successfully updated your function.
+
+gui.edit.lootTable.title=Create New Loot Table
+gui.edit.lootTable.id.label=Loot Table Id
+gui.edit.lootTable.problem.title=Problem Creating Loot Table
+gui.edit.lootTable.problem.noId=The Loot Table Id cannot be blank.
+gui.edit.lootTable.success.title=Updated Loot Table
+gui.edit.lootTable.success.message=Successfully updated your loot table.
+
+gui.edit.lootTable.preset.empty.title=Create New Empty Loot Table
+
+gui.edit.lootTable.preset.otherLootTable.title=Create New Loot Table That Drops Another Loot Table
+gui.edit.lootTable.preset.otherLootTable.lootTable.label=Loot Table
+gui.edit.lootTable.preset.otherLootTable.problem.noLootTable=You must select a Loot Table!
+
+gui.edit.lootTable.preset.blockItself.title=Create New Block Drop Loot Table
+gui.edit.lootTable.preset.blockItself.block.label=Block
+gui.edit.lootTable.preset.blockItself.problem.noBlock=You must select a Block!
+
+gui.edit.lootTable.preset.blockItem.title=Create New Block Item Drop Loot Table
+gui.edit.lootTable.preset.blockItem.block.label=Block
+gui.edit.lootTable.preset.blockItem.item.label=Item
+gui.edit.lootTable.preset.blockItem.itemMin.label=Item Min
+gui.edit.lootTable.preset.blockItem.itemMax.label=Item Max
+gui.edit.lootTable.preset.blockItem.fortunable.label=Uses Fortune
+gui.edit.lootTable.preset.blockItem.silkTouchable.label=Uses Silk Touch
+gui.edit.lootTable.preset.blockItem.problem.noBlock=You must select a Block!
+gui.edit.lootTable.preset.blockItem.problem.noItem=You must select an Item!
+
+gui.edit.soundEvent.title=Create New Sound Event
+gui.edit.soundEvent.id.label=Sound Event Id
+gui.edit.soundEvent.subtitle.label=Subtitle
+gui.edit.soundEvent.replace.label=Replace Existing
+gui.edit.soundEvent.sounds.label=Sounds
+gui.edit.soundEvent.sounds.sound.label=Sound
+gui.edit.soundEvent.problem.title=Problem Creating Sound Event
+gui.edit.soundEvent.problem.noSounds=You must add sounds to your sound event!
+gui.edit.soundEvent.problem.duplicate=A sound event with id '%s' already exists!
+gui.edit.soundEvent.success.title=Updated Sound Event
+gui.edit.soundEvent.success.message=Successfully updated your sound event.
+
+gui.edit.sound.title=Edit Sound
+gui.edit.sound.type.label=Sound Type
+gui.edit.sound.type.info=Either select another sound event or a sound file.
+gui.edit.sound.sound.label=Sound File
+gui.edit.sound.event.label=Sound Event
+gui.edit.sound.volume.label=Sound Volume
+gui.edit.sound.pitch.label=Sound Pitch
+gui.edit.sound.stream.label=Stream Sound
+gui.edit.sound.weight.label=Weight
+gui.edit.sound.weight.info=How likely this sound is to be chosen. Higher means more likely.
+
+gui.edit.itemStackGroup.title=Edit Item Stack Group
+gui.edit.itemStackGroup.message.oreOrGroup=You can use an ore dictionary entry or a list of items. (Or both, if you really want)
+gui.edit.itemStackGroup.oreDict=Ore Dict Entry
+gui.edit.itemStackGroup.itemGroup=Item List
+
+gui.edit.blockDrop.title=Edit Block Drop
+gui.edit.blockDrop.type.label=Drop Type
+gui.edit.blockDrop.type.nothing=Nothing
+gui.edit.blockDrop.type.itself=Itself
+gui.edit.blockDrop.type.item=Resource Item
+gui.edit.blockDrop.type.lootTable=Loot Table
+gui.edit.blockDrop.type.custom=Custom
+gui.edit.blockDrop.nothing.message=The block will drop nothing
+gui.edit.blockDrop.itself.message=The block will drop itself
+gui.edit.blockDrop.custom.message=The block has a custom drop right now. There's no simple way to edit it here, but you can still change it to one of the types above.
+gui.edit.blockDrop.xp.min.label=XP Min
+gui.edit.blockDrop.xp.min.info=The minimum xp dropped when the block is broken and drops something other than itself. For instance, with coal ore this is 0, with quartz ore this is 2, and with diamond ore this is 3.
+gui.edit.blockDrop.xp.max.label=XP Max
+gui.edit.blockDrop.xp.max.info=The maximum xp dropped when the block is broken and drops something other than itself. For instance, with coal ore this is 2, with quartz ore this is 5, and with diamond ore this is 7.
+
+gui.edit.blockDrop.popup.title=Customize Your Block Drop!
+gui.edit.blockDrop.popup.message=Customize the drop for your block, or just leave it as the default drop for now.
+gui.edit.blockDrop.popup.customize=Customize Drop
+gui.edit.blockDrop.popup.useDefault=Use Default
+
+gui.edit.blockDrop.cancel.title=Cancel Adding Block Drop
+gui.edit.blockDrop.cancel.message=Cancel adding custom block drop and use the default one?
+
+gui.edit.texture.addTexturesLater=Add Later
+gui.edit.texture.customModel=Custom Model
+gui.edit.texture.success.title=Texture Loaded
+gui.edit.texture.success.message=Successfully updated the texture!
+gui.edit.texture.problem.title=Problem Loading Texture
+gui.edit.texture.problem.noTexture.message=You need to select a texture!
+gui.edit.texture.problem.noTexture.specific.message=You need to select the %s!
+gui.edit.texture.problem.cantLoad.message=Couldn't load at least one of the images selected. Make sure they still exist and are valid images!
+gui.edit.texture.problem.wrongDimensions.title=Wrong Image Dimensions
+gui.edit.texture.problem.wrongDimensions.notSidesx2.message=The png image must have sides as a power of 2. (like 8x8, 16x16, 32x32, 64x64, etc.)
+gui.edit.texture.problem.wrongDimensions.tooWide.message=The png image can't be wider than it is tall (it can be taller than it is wide, as an animation).
+gui.edit.texture.problem.wrongDimensions.badAnimation.message=Image isn't tall enough to be an animation but is too tall to be a regular image. It must either be square or a stack of squares.
+
+gui.edit.texture.item.title=Texturize your Item!
+gui.edit.texture.item.base.message=Select a texture for %s, which should be a png file. If you want a custom model, however, you will have to create that yourself!
+gui.edit.texture.item.base.label=Item Texture
+gui.edit.texture.item.color.message=If your item can be dyed (like leather armor), add the overlay that will be colored here. Leave it blank to remove any existing overlay.
+gui.edit.texture.item.color.label=Color Texture
+gui.edit.texture.item.colored.label=Is Colored
+
+gui.edit.texture.armor.base.message=Select an armor texture for %s, which should be a png file which is twice as wide as tall. If your armor is colored, this is the texture that gets colored.
+gui.edit.texture.armor.base.label=Armor Texture
+gui.edit.texture.armor.overlay.message=Select an armor overlay texture for %s, which will render over the colored part. Leave it blank to remove any existing overlay.
+gui.edit.texture.armor.overlay.label=Armor Overlay
+gui.edit.texture.armor.enableColor.message=To add color overlays, enable the Colored toggle in the edit screen.
+gui.edit.texture.armor.problem.noTexture.message=You need to select an armor texture!
+gui.edit.texture.armor.problem.wrongDimensions.notSidesx2.message=The png image must have sides as a power of 2, and must be twice as wide as tall. (like 64x32, 128x64, 256x128, etc.)
+
+gui.edit.texture.hatOverlay.message=Optionally, select a screen overlay texture for when people wear %s, which should be a square png file. Leave it blank to remove any existing overlay.
+gui.edit.texture.hatOverlay.label=Screen Overlay
+gui.edit.texture.hatOverlay.hasHatOverlay.input=Has Screen Overlay
+gui.edit.texture.hatOverlay.problem.wrongDimensions.notSquare.message=The hat overlay texture must be square.
+
+gui.edit.texture.bow.base0.message=Select a texture for when the bow starts pulling.
+gui.edit.texture.bow.base0.label=Pull Texture 0
+gui.edit.texture.bow.color0.message=Select a color overlay for when the bow starts pulling.
+gui.edit.texture.bow.color0.label=Pull Color Texture 0
+gui.edit.texture.bow.base1.message=Select a texture for when the bow is in the middle of pulling.
+gui.edit.texture.bow.base1.label=Pull Texture 1
+gui.edit.texture.bow.color1.message=Select a color overlay for when the bow is in the middle of pulling.
+gui.edit.texture.bow.color1.label=Pull Color Texture 1
+gui.edit.texture.bow.base2.message=Select a texture for when the bow finishes pulling.
+gui.edit.texture.bow.base2.label=Pull Texture 2
+gui.edit.texture.bow.color2.message=Select a color overlay for when the bow finishes pulling.
+gui.edit.texture.bow.color2.label=Pull Color Texture 2
+
+gui.edit.texture.block.title=Texturize your Block!
+gui.edit.texture.block.message=Select a texture for %s, which should be a png file. If you want a custom model, however, you will have to create that yourself!
+gui.edit.texture.block.message.plural=Select textures for %s, which should be png files. If you want a custom model, however, you will have to create that yourself!
+gui.edit.texture.block.label=Block Texture
+gui.edit.texture.block.problem.semiTransparent.title=Semi-Transparent Texture
+gui.edit.texture.block.problem.semiTransparent.message=Looks like the texture you selected is semi-transparent (translucent). Would you like to set the block as semi-transparent too so it renders correctly?
+gui.edit.texture.block.problem.transparent.title=Transparent Texture
+gui.edit.texture.block.problem.transparent.message=Looks like the texture you selected has transparent parts. Would you like to set the block as transparent too so it renders correctly?
+
+gui.edit.texture.block.facing.front.message=Select a texture for the front of %s.
+gui.edit.texture.block.facing.front.label=Front Texture
+gui.edit.texture.block.facing.side.message=Select a texture for the sides of %s.
+gui.edit.texture.block.facing.side.label=Side Texture
+gui.edit.texture.block.facing.top.message=Select a texture for the top and bottom of %s.
+gui.edit.texture.block.facing.top.label=Top/Bottom Texture
+
+gui.edit.texture.block.pane.face.message=Select a texture for the face of %s.
+gui.edit.texture.block.pane.face.label=Face Texture

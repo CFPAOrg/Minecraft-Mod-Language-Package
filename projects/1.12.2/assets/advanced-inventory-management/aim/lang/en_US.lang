@@ -1,0 +1,436 @@
+
+itemGroup.AIMTab=Advanced Inventory Management
+
+tile.aimcore.name=Inventory Management Core
+tile.networkcable.name=Network Cable
+tile.inventoryrelay.name=Inventory Relay
+tile.armorrelay.name=Armor Relay
+tile.enderchestrelay.name=Ender Chest Relay
+tile.slotselectionrelay.name=Slot Selection Relay
+tile.slotselectionrelay.name.short=Slot Relay
+tile.shulkerboxrelay.name=Shulker Box Relay
+tile.hungerrelay.name=Hunger Relay
+tile.potionrelay.name=Potion Relay
+tile.xprelay.name=Experience Relay
+tile.xprelay.name.short=XP Relay
+tile.xprelay_liquid.name=Experience Relay (Liquids)
+tile.xprelay_liquid.name.short=XP Relay (Liquids)
+tile.energyrelay.name=Energy Relay
+tile.scanner.name=Player Scanner
+tile.scannerbase.name=Scanner Base
+tile.playermonitor.name=Player Monitor
+tile.generator.name=Solid Fuel Generator
+tile.solargenerator.name=Solar Generator
+tile.togglecable.name=Toggle Cable
+tile.motioneditor.name=Motion Editor
+tile.hotbarselectioneditor.name=Hotbar Selection Editor
+tile.positioneditor.name=Position Editor
+tile.networksignalbridge.name=Network Signal Bridge
+
+tile.fluid_moltenxp.name=Molten XP
+
+item.aimupgrade_security.name=Security Upgrade
+item.aimupgrade_redstone.name=Redstone Control Upgrade
+item.aimupgrade_energy.name=Energy Upgrade
+item.aimwrench.name=Network Wrench
+item.infoprovider.name=Network Information Provider
+item.inventorymanagementmanual.name=Inventory Management Manual
+item.craftingcomponent_conductordust.name=Conductor Dust
+item.craftingcomponent_playercrystal.name=Player Crystal
+item.craftingcomponent_reinforcedmetal.name=Reinforced Metal Plate
+item.aimpositioncard.name=Position Card
+
+key.changeAccess=Change AIM-Accessibility
+key.categories.aim=Advanced Inventory Management
+
+#Chat messages
+message.changedAccessibility.true=Your inventory can now be accessed by any AIM-Machines bound to you.
+message.changedAccessibility.false=Your inventory can no longer be accessed by any AIM-Machines.
+message.coreaccess.false=This Network belongs to %1$s! You are not permitted to modify the network!
+message.modechange=Device mode changed to %1$s.
+message.rsmodechange=Redstone behaviour changed to %1$s.
+message.noCore=This device is not connected to a core.
+message.playerAccessibility.true=Currently your inventory can be accessed by any AIM-Devices.
+message.playerAccessibility.false=Currently your inventory cannot be accessed by any AIM-Devices.
+
+message.scannererr.toomanyplayers=There are too many players on the scanner.
+message.scannererr.wrongsetup=The setup of scanner base blocks is wrong.
+message.scannererr.noPower=The network hasn't enough power to start the scan.
+message.scannererr.needsRedstone=No errors found. Apply a redstone Signal to the scanner base to start the process.
+message.scannererr.playerMissing=The scanned player is no longer on the scanner platform.
+message.scannererr.dataSendingFailed=Player data could not be sent to network core.
+message.scannererr.playerEqual=The scanned player is already linked to this network.
+message.scannererr.playerNotIdentified=The scan could not be finished because the scan was interrupted by other players.
+message.scannererr.accessdenied=Data could not be sent because you are not permitted to modifiy the network.
+message.scannerfinish=Scan finished. Player %1$s has been linked to the network.
+
+message.slotidchanged.slotDesc.hotbar=Slot ID set to %1$s (Hotbar Slot)
+message.slotidchanged.slotDesc.maininv=Slot ID set to %1$s (Main Inventory Slot)
+message.slotidchanged.slotDesc.armor=Slot ID set to %1$s (Armor Slot)
+message.slotidchanged.slotDesc.offhand=Slot ID set to %1$s (Offhand Slot)
+message.slotidchanged.nocore=Cannot change slot ID when no active core is connected.
+
+message.shulkerboxrelay.filtercleared=Shulker box name filter cleared.
+message.shulkerboxrelay.filterset=Shulker box name filter set to name "%1$s". Right-click with an empty name tag to remove the filter.
+
+message.true=True
+message.false=False
+
+message.noteleportallowed=Teleporting between dimensions not allowed. Please change the relevant setting in your config file.
+message.teleportblocked=Teleport cancelled. Something is blocking the destination location.
+message.teleportnopower=Teleport cancelled. Your network does not have enough power.
+
+message.cardsaved=Card data transferred. Destination set to %1$d, %2$d, %3$d (Dimension %4$d).
+
+message.destinationsaved=Card data transferred. Bridge linked to destination at %1$d, %2$d, %3$d (Dimension %4$d).
+message.destinationoccupied=Card destination is already linked to another network bridge. A network signal bridge can only be linked to one destination at the time!
+message.carderror=Card data could not be saved because the destination's dimension does not match the dimension of the network. Network Signal Bridges do not work across dimensions! Use two different networks instead!
+message.carddestinationnotfound=Card destination could not be identified as a network signal bridge. Please build both end points first before connecting the bridges.
+message.destinationcleared=Destination unset.
+message.destinationredundant=A network signal bridge cannot be linked to itself!
+
+message.nodestinationset=No destination was set for this Network Signal Bridge!
+message.destinationat=This Bridge is linked to a Network Signal Bridge at %1$s, %2$s, %3$s
+
+#Gui-Elements
+gui.aiminfo.coreheader=Core Stats
+gui.aiminfo.networkheader=Network Stats
+gui.aiminfo.power=Core Power:
+gui.aiminfo.power.value=%1$d RF / %2$d RF
+gui.aiminfo.powerdrain=Power-Usage:
+gui.aiminfo.powerdrain.value=%1$d RF/t
+gui.aiminfo.isactive=Is Active:
+gui.aiminfo.booltrue=true
+gui.aiminfo.boolfalse=false
+gui.aiminfo.connectedplayer=Connected Player:
+gui.aiminfo.noplayer=None
+gui.aiminfo.isplayeraccessible=Player Accessible:
+gui.aiminfo.issecured=Secured:
+gui.aiminfo.coreposition=Core Position:
+gui.aiminfo.elementsconnected=Elements Connected:
+gui.aiminfo.elementsconnected.value=%1$d + 1 Core
+gui.aiminfo.elementlist=Connected Elements:
+gui.aiminfo.amount=Amount: %1$d
+gui.aiminfo.back=Back
+gui.aiminfo.refresh=Refresh
+gui.aiminfo.corepos=Network Core at %1$d | %2$d | %3$d (Dim %4$d)
+gui.aiminfo.status=Network status: %1$s
+gui.aiminfo.status.inactive=Inactive
+gui.aiminfo.status.active=Active
+gui.aiminfo.status.unloaded=Chunk not loaded
+gui.aiminfo.problems=Potential problems:
+gui.aimcore.upgrades=Upgrades:
+gui.aimcore.problems=Problems:
+gui.aimcore.problems.none=No problems.
+gui.aimcore.problems.none.desc=No problems could be detected.\nThe network should be online.
+gui.aimcore.problems.noplayer=Missing Player
+gui.aimcore.problems.noplayer.desc=There is no player connected to this network.
+gui.aimcore.problems.nopower=Not enough power
+gui.aimcore.problems.nopower.desc=This core has not enough power to provide the\nenergy needed by this network.
+gui.aimcore.problems.wrongsetup=Invalid setup
+gui.aimcore.problems.wrongsetup.desc=The physical setup of the network is wrong.\nMaybe the network is too large or there\nare two cores built in.
+gui.aimcore.problems.playerinaccessible=Player not accessible
+gui.aimcore.problems.playerinaccessible.desc=The connected player cannot be accessed by the network.\nThe player might be dead or might have\ndisabled network accessibility.
+gui.aimcore.problems.redstonedisabled=Disabled by redstone
+gui.aimcore.problems.redstonedisabled.desc=The network has been disabled using a redstone upgrade.
+gui.advancedinfo.list.header=Available Networks
+gui.advancedinfo.list.select=Show Details
+gui.advancedinfo.list.coreheader=Network Core at %1$d | %2$d | %3$d (Dim %4$d / %5$s)
+
+#Overlay-Text
+aimoverlay.status=Status: %1$s
+aimoverlay.status.active=Active
+aimoverlay.status.inactive=Inactive
+aimoverlay.scannerstatus.ready=Ready
+aimoverlay.scannerstatus.offline=Offline
+aimoverlay.scannerstatus.active=Active
+aimoverlay.generatorstatus.offline=Offline
+aimoverlay.generatorstatus.idle=Idle
+aimoverlay.generatorstatus.active=Active
+aimoverlay.mode=Current mode: %1$s
+aimoverlay.content=Content:
+aimoverlay.content.unknown=Unknown
+aimoverlay.content.none=None
+aimoverlay.update=Right-click to update.
+aimoverlay.burntime=Remaining burn time: %1$s
+aimoverlay.burntime.value=%1$d s.
+aimoverlay.powerinput=Current power input: %1$s
+aimoverlay.powerinput.value=%1$d RF/t
+aimoverlay.poweroutput=Current power output: %1$s
+aimoverlay.poweroutput.value=%1$d RF/t
+aimoverlay.power=Power: %1$s
+aimoverlay.power.value=%1$d RF / %2$d RF
+aimoverlay.powerchange=Power change: %1$s
+aimoverlay.powerchange.value=+%1$d RF/t | -%2$d RF/t
+aimoverlay.playerconnected=Player connected: %1$s
+aimoverlay.playerconnected.value=%1$s
+aimoverlay.destinationblock=Destination: %1$s
+aimoverlay.destinationblock.value=[%1$s]
+aimoverlay.destinationblock.coordvalue=%1$d | %2$d | %3$d
+aimoverlay.destinationblock.coorddimvalue=%1$d | %2$d | %3$d (Dim %4$d)
+aimoverlay.destinationblock.none=None
+aimoverlay.redstonemode=Redstone mode: %1$s
+aimoverlay.redstonemode.value=%1$s
+aimoverlay.scannerticks=Scan time remaining: %1$s
+aimoverlay.scannerticks.value=%1$d s
+aimoverlay.selectedslot=Selected Slot: %1$s
+aimoverlay.selectedslot.value=Slot %1$d
+aimoverlay.selectedshulkerboxes=Applicable shulker boxes: %1$s
+aimoverlay.selectedshulkerboxes.value=%1$d
+aimoverlay.shulkerboxfilter=Name filter: %1$s
+aimoverlay.shulkerboxfilter.value="%1$s"
+
+fluid.fluid_moltenxp=Molten XP
+
+#Container-Names
+container.aimcore=Inventory Management Core
+
+#Modes for the Inventory Relay
+mode.inventoryrelay.all=All
+mode.inventoryrelay.maininv=Main Inventory
+mode.inventoryrelay.hotbar=Hotbar
+
+#Modes for the Hunger Relay
+mode.hungerrelay.always=Feed always
+mode.hungerrelay.hunger=Feed if player is hungry
+mode.hungerrelay.efficiency=Feed at most efficient rate
+
+#Modes for the Potion Relay
+mode.potionrelay.inlet=Potions - IN, Bottles - OUT
+mode.potionrelay.outlet=Potions - OUT, Bottles - IN
+
+#Modes for the Experience Bottle Relay
+mode.xprelay.inlet=XP - IN, Bottles - OUT
+mode.xprelay.outlet=XP - OUT, Bottles - IN
+
+#Modes for the Experience Liquid Relay
+mode.xprelay_liquid.moltenxp=Prefer Molten XP (Advanced Inventory Management)
+mode.xprelay_liquid.xpjuice=Prefer Liquid XP (OpenBlocks | EnderIO)
+
+#Modes for the Slot Selection Relay
+mode.slotselectionrelay.mainhand=Use current selected Hotbar-Slot
+mode.slotselectionrelay.offhand=Use Offhand-Slot
+mode.slotselectionrelay.slotbyid=Select Slot by its ID (Right-Click with an empty hand to change ID)
+
+#Modes for the Shulker Box Relay
+mode.shulkerboxrelay.all=Use all slots
+mode.shulkerboxrelay.mainhand=Use current selected Hotbar-Slot
+mode.shulkerboxrelay.offhand=Use Offhand-Slot
+mode.shulkerboxrelay.slotbyid=Select Slot by its ID (Right-Click with an empty hand to change ID)
+
+#Modes for the Player Monitor
+mode.monitor.health=Display Health
+mode.monitor.xp=Display XP-Level
+mode.monitor.hunger=Display Hunger
+mode.monitor.saturation=Display Saturation
+mode.monitor.air=Display Air
+mode.monitor.motionx=Display Motion in X-Direction
+mode.monitor.motiony=Display Motion in Y-Direction
+mode.monitor.motionz=Display Motion in Z-Direction
+mode.monitor.armor=Display Armor Value
+mode.monitor.posx=Display Position X
+mode.monitor.posy=Display Position Y
+mode.monitor.posz=Display Position Z
+mode.monitor.isburning=Display if player is burning
+mode.monitor.isinwater=Display if player is in water
+mode.monitor.isinlava=Display if player is in lava
+mode.monitor.isairborne=Display if player is in the air
+mode.monitor.issneaking=Display if player is sneaking
+mode.monitor.issprinting=Display if player is sprinting
+mode.monitor.isfalling=Display if player is falling
+mode.monitor.selectedslot=Display the current selected slot
+mode.monitor.dimension=Display the dimension the player is in
+
+mode.monitordisplay.health=Health:
+mode.monitordisplay.health.format=%1$s / %2$d HP
+mode.monitordisplay.xp=XP-Level:
+mode.monitordisplay.xp.format=%1$s XP
+mode.monitordisplay.hunger=Hunger:
+mode.monitordisplay.hunger.format=%1$s / %2$d
+mode.monitordisplay.saturation=Saturation:
+mode.monitordisplay.saturation.format=%1$s / %2$d
+mode.monitordisplay.air=Air:
+mode.monitordisplay.air.format=%1$s / %2$d Ticks
+mode.monitordisplay.motionx=Motion X:
+mode.monitordisplay.motionx.format=%1$s m/s
+mode.monitordisplay.motiony=Motion Y:
+mode.monitordisplay.motiony.format=%1$s m/s
+mode.monitordisplay.motionz=Motion Z:
+mode.monitordisplay.motionz.format=%1$s m/s
+mode.monitordisplay.armor=Armor Points:
+mode.monitordisplay.armor.format=%1$s / %2$d
+mode.monitordisplay.posx=Position X:
+mode.monitordisplay.posx.format=%1$s
+mode.monitordisplay.posy=Positon Y:
+mode.monitordisplay.posy.format=%1$s
+mode.monitordisplay.posz=Positon Z:
+mode.monitordisplay.posz.format=%1$s
+mode.monitordisplay.isburning=is burning:
+mode.monitordisplay.isburning.format=%1$s
+mode.monitordisplay.isinwater=is in water:
+mode.monitordisplay.isinwater.format=%1$s
+mode.monitordisplay.isinlava=is in lava:
+mode.monitordisplay.isinlava.format=%1$s
+mode.monitordisplay.isairborne=is in air:
+mode.monitordisplay.isairborne.format=%1$s
+mode.monitordisplay.issneaking=is sneaking:
+mode.monitordisplay.issneaking.format=%1$s
+mode.monitordisplay.issprinting=is sprinting:
+mode.monitordisplay.issprinting.format=%1$s
+mode.monitordisplay.isfalling=is falling:
+mode.monitordisplay.isfalling.format=%1$s
+mode.monitordisplay.selectedslot=Selected Slot:
+mode.monitordisplay.selectedslot.format=Slot %1$s / %2$d
+mode.monitordisplay.dimension=Dimension:
+mode.monitordisplay.dimension.format=DIM-%1$s
+mode.monitordisplay.boolean.true=Yes
+mode.monitordisplay.boolean.false=No
+#Percent sign is automatically added to the end
+mode.monitordisplay.percent=%1$s
+
+rsmode.monitor.0=Deactivated
+rsmode.monitor.1=Emit pulse on change
+rsmode.monitor.2=Emit pulse on change (Inverted)
+rsmode.monitor.3=Emit current value (as percentage)
+rsmode.monitor.4=Emit current value (Inverted)
+rsmode.monitor.5=Emit last change as pulse
+
+#Modes for the Motion Editor
+mode.motioneditor.down=Decrease Y-Motion
+mode.motioneditor.up=Increase Y-Motion
+mode.motioneditor.north=Decrease Z-Motion
+mode.motioneditor.south=Increase Z-Motion
+mode.motioneditor.east=Increase X-Motion
+mode.motioneditor.west=Decrease X-Motion
+
+#Modes for the Energy Relay
+mode.energyrelay.all=Charge all slots
+mode.energyrelay.hotbar=Charge only hotbar slots
+mode.energyrelay.mainhand=Charge items in currently selected hotbar slot
+mode.energyrelay.offhand=Charge items in offhand slot
+
+#Scanner Damage
+death.attack.scannerDamage=%1$s was analyzed into his atoms.
+death.attack.scannerDamage.player=%1$s was decomposed while fighting %2$s.
+
+guide.header.welcome=Welcome to
+guide.header.tableofcontents=Table of Contents
+guide.header.gettingstarted=Getting Started
+guide.header.power=Power
+guide.header.networking=Networking
+guide.header.playeraccess=Player Access Mechanics
+guide.header.aimcore=Inventory Management Core
+guide.header.networkcable=Network Cable
+guide.header.inventoryrelay=Inventory Relay
+guide.header.armorrelay=Armor Relay
+guide.header.enderchestrelay=Ender Chest Relay
+guide.header.slotselectionrelay=Slot Selection Relay
+guide.header.shulkerboxrelay=Shulker Box Relay
+guide.header.hungerrelay=Hunger Relay
+guide.header.potionrelay=Potion Relay
+guide.header.xprelay=Experience Relay
+guide.header.xprelay_liquid=Experience Relay (Liquids)
+guide.header.energyrelay=Energy Relay
+guide.header.scanner=Player Scanner
+guide.header.scannerbase=Scanner Base
+guide.header.playermonitor=Player Monitor
+guide.header.generator=Solid Fuel Generator
+guide.header.solargenerator=Solar Generator
+guide.header.aimupgrade=Upgrades
+guide.header.aimupgrade.0=Security Upgrade
+guide.header.aimupgrade.1=Redstone Upgrade
+guide.header.aimupgrade.2=Energy Upgrade
+guide.header.aimwrench=Network Wrench
+guide.header.infoprovider=Network Information Provider
+guide.header.inventorymanagementmanual=Inventory Management Manual
+guide.header.craftingcomponent=Crafting Components
+guide.header.moltenxp=Molten XP
+guide.header.togglecable=Toggle Cable
+guide.header.motioneditor=Motion Editor
+guide.header.hotbarselectioneditor=Hotbar Selection Editor
+guide.header.positioneditor=Position Editor
+guide.header.aimpositioncard=Position Card
+guide.header.networksignalbridge=Network Signal Bridge
+
+guide.picture.playeraccess=The chat message displayed when shift-clicking with a Network Information Provider
+guide.picture.gettingstarted=A basic network setup needed to get started
+guide.picture.power=A running generator connected to a core via network cables
+guide.picture.networking=A small network where all devices are connected with network cables
+guide.picture.scanner=A working scanner setup: A scanner block surrounded by 8 Scanner Base Blocks and connected to network cables at the bottom
+
+guide.content.introduction=Advanced Inventory Management is a mod designed to automate the inventory of a player. By connecting different devices to a static block network, you are able to manipulate and modify the players inventory as well as other stats like xp, hunger or potion effects. While in this book, right-click or press ESC or %1$s to return to this page at any time. Type to search for content.
+
+guide.content.gettingstarted=To get started with AIM you need to set up a simple network with at least an Inventory Management Core, a power source and a Player Scanner connected by Network Cables. Once the core has enough power (you can see the current power level in the gui of the core), set up and activate the Player Scanner to connect yourself to the network (See the Scanner Page for more details). Once the scanning process is finished and the network is online, you can connect more devices to your network. If your network doesn't go online after the scan, a look on the gui of your core might help you to find the problem. When problems are displayed in the gui, hover over them to get a more detailed description of the problem. Please note that as long as no other player is scanned, all devices will only access the player which was connected at the first time the scan succeeded.
+
+guide.content.power=Every block in your network needs a certain amount of power. The power needed for the whole network has to be supplied to your Inventory Management Core by either an external source or a connected generator for your network to stay online. When the power isn't enough for the network to run, your devices will go offline. The needed amount of power is calculated like this: %1$d RF/t base cost + %2$d RF/t per used network cable + %3$d RF/t per used device. You can always see the power consumption as well as the stored power in the gui of the core or a Network Information Provider. Although the standard unit is RF, the Inventory Management Core also accepts TESLA, J (Mekanism) and Forge Power Units. Some actions in your network like creating a potion in the potion relay can also drain power from the core, but then power is consumed only once.
+
+guide.content.playeraccess=When a network is bound to a specific player, the network has access to the player's inventory and most of his stats like xp or hunger. While a network can only be bound to one player, a player can have multiple networks connected to him. By pressing %1$s on your Keyboard, you can toggle your player's accessibility. If you deny network access, all networks connected to you will go offline until you allow a connection again. This is useful if you don't want your inventory or stats to be modified by your networks for any given time period. If your network is offline but doesn't show any problems, make sure your player can be accessed by AIM-Networks. If you want to check your current accessibility state, shift right-click in the air with a network information provider.
+
+guide.content.networking=When building a network, there are different things to consider regarding the structure and size of your network. There is no physical maximum size for your network, but your devices can only be placed up to %1$d cable blocks far from the Inventory Management Core. Also you can only have one core built into your network. Although the AIM-Devices can access the player even in other dimensions, the whole network structure has to be chunkloaded for this to work. To keep your network as compact as possible, AIM-Devices can be directly attached to each other, removing the need for Network Cables between them. It is also possible to block and unblock the connections of a Network Cable on a per-side basis by right-clicking the desired side with a wrench.
+
+guide.content.aimcore=The Inventory Management Core is the center of your network and powers and controls all other devices connected to it by network cables or direct contact. To work, it has to be supplied with power, either from an external source or from a generator connected via network cables.\n\nWhen the core of your network is offline, all other network devices except generators and scanners will be offline too. There can be only one core per network. By right-clicking the core you can open up the GUI which gives you more information about its current status and problems, that could cause your network to go offline. The Inventory Management Core can be upgraded using Redstone-, Energy- and Security-Upgrades.
+
+guide.content.networkcable=Network Cables can be used to connect devices in your network. Every cable used in your network raises the power consumption by %1$d RF/t. When transferring data between a device and the Inventory Management Core, the cables contain little visible data-packets, indicating, that the network is active. By right-clicking the outer parts of a network cable, you can block or unblock the connections on a certain side, making it possible to run 2 different cable lines next to each other without connecting. Per crafting process you get 8 cables.
+
+guide.content.generator=The Solid Fuel Generator is a machine used to supply your network with power. You can feed it with any burnable, solid fuel items by right clicking the generator with the item. When more items are added, the generator will heat up, producing more power with every level of heat up to a generation of %1$d RF/t. The current heat level is indicated by a bar on the side of the generator block. Once heat level 5 is reached, adding more fuel will increase the burn-time up to a total of 50000 ticks, but will not heat up the generator further. To provide power for your network, the generator has to be connected to an Inventory Management Core by Network Cables or be directly attached to it. It is possible to have multiple active generators in one network.
+
+guide.content.solargenerator=The Solar Generator, like the Solid Fuel Generator, can be used to supply a network with power. When exposed to the sun, this generator can provide %1$d RF/t to your network. This value increases in warm biomes like mesas or deserts. To provide power, this generator has to be connected to an Inventory Management Core.
+
+guide.content.inventoryrelay=The Inventory Relay gives you direct access to the inventory of the connected player. When items are pumped into the Inventory Relay, they are directly sorted into the player's real inventory. When items are pumped out of the Inventory Relay, they will be removed from the connected player's inventory. This works with any kind of automation, pipes or storage systems.\nThe Inventory Relay has three different modes, you can select by right-clicking it with a wrench:\n\nAll: Access the full inventory of the player (This does not include armor slots!)\n\nMain Inventory: Access only the main inventory of the player (hotbar not included)\n\nHotbar: Access only the hotbar slots of the player
+
+guide.content.hungerrelay=The Hunger Relay provides access to a player's food stats. When any eatable item is pumped into the relay, the food and saturation values of the item are added to the player's hunger bar. The values added are the same as when the player would eat the item directly.\n\nThe Hunger Relay has three modes you can select by right-clicking it with a wrench:\n\nFeed always: Always accept food (useful for effect items like golden apples)\n\nFeed if player is hungry: Only accept items if the player's hunger bar isn't full.\n\nFeed at most efficient rate: Only accept an item if the items food value is smaller or equal than the value the player would need to completely fill his hunger bar.
+
+guide.content.aimupgrade=There are three different kinds of Upgrades you can put into the Inventory Management Core's Inventory. \n\nThe Security Upgrade should only be applied once. When a security upgrade is installed on your network, no player except you is allowed to break, extend or access any parts of the network. Automating the different devices with pipes, etc. is remains possible. These rules are applied for the whole network. To let everyone access your network again, simply remove the security upgrade from your core.
+
+guide.content.aimupgrade1=The Redstone upgrade should also only be installed once in the Inventory Management Core. When this upgrade is installed, you can turn your network on and off by applying a redstone signal to your core. The network is online when there is no signal and offline if there is one.
+
+guide.content.aimupgrade2=The Energy upgrade can be installed up to a stack of 16 upgrades. This upgrade increases your networks total power storage by 1,125,000 RF / Upgrade and your maximum power input into the core by 12,500 RF/t / Upgrade. When 16 Energy Upgrades are installed, this numbers will not go up if you install more of them.
+
+guide.content.craftingcomponent=The conductor dust is an elemental part of all AIM-Machinery, as it transfers signals and helps to establish a connection with the player. You get 12 Conductor Dust from one crafting process.
+guide.content.craftingcomponent1=The player crystal is a part of the Inventory Management Core and the Player Scanner and is needed to bind the static block network to the player.
+guide.content.craftingcomponent2=The reinforced metal plate builds and supports the hull of all AIM-Machinery, protecting the circuits inside. You get 2 Plates from one crafting process.
+
+guide.content.scanner=The Player Scanner is used to connect a player to the AIM-Network. To establish this connection, a proper scanner setup is required. To scan a player, the scanner has to be connected to an Inventory Management Core via Network Cables. The cables should be connected to the bottom of the scanner. Furthermore the scanner has to be surrounded by 8 Scanner Base blocks (see picture on next page).\n\nWhen the setup is finished and the scanner is connected to an Inventory Management Core, the player who shall be scanned can step onto the scanner block. If there are no errors, a message will appear in the chat, saying that the scanning process can be started by applying a redstone signal to one of the base plates. As soon as one of the Scanner Base Blocks receives a redstone signal, the scanning process will start.
+guide.content.scanner1=Scanning a player takes 10 seconds in total to complete. During this time the scanned player has to stay on top of the Scanner Block or the scan will be cancelled. While the scanner is active, 10 RF/t are drained from the networks power storage, using a total of 2000 RF / Scan. When a player tries to step on or off the Scanner Block while the scanning lasers are active, the player will get hurt by the lasers. Once the scanning process is complete, a message appears in the chat saying that the scan has been completed. When everything went right, the scanned player is now connected to the network and therefore is accessed by all connected devices.
+
+guide.content.scannerbase=The Scanner Base is a block needed to setup and activate a player scanner. To work, the Scanner block has to be surrounded by 8 of this Scanner Base Blocks.
+
+guide.content.playermonitor=The Player Monitor can display various status information about the connected player and emit a redstone signal showing the current status. By right-clicking one of the sides with a wrench you can change the display mode, by right-clicking the top of the block, you can change the redstone mode. You can use the different redstone modes to activate or deactivate certain automation tasks (like giving food to the player, equipping specific items, etc.) depending on the current status. All display and redstone modes available are listed on the next page.  If the viewing player is not the player connected to the network, the data won't be refreshed until the block is right-clicked with an empty hand.
+guide.content.playermonitor_modes=Display Modes:\n\nHealth: Show the players Health\nHunger: Show the player's hunger value\nSaturation: Show the player's saturation value\nAir: Show the amount of air bubbles the player has left while diving\nMotion X/Y/Z: Show the player's motion in the selected direction in Blocks per Second\nArmor: Show the players armor value\nPosition X/Y/Z: Show the player's current position\nIs Burning\nIs in water\nIs in lava\nIs in air\nIs sneaking\nIs sprinting\nIs falling\nSelected slot: Shows the player's currently selected hotbar slot\nDimension: Shows the player's current dimension-ID
+guide.content.playermonitor1=Redstone Modes: \nDeactivated: Emit no Redstone at all \n\nEmit pulse on change: Emit a 5-Tick full-power redstone pulse when the current value changes.\n\nEmit pulse on change (Inverted): Always emit redstone at full power and stop for 5 ticks when the current value changes. \n\nEmit current value: Emit the current percentage value as a redstone signal between 0 (0 percent) and 15 (100 percent). Only works for values with an upper limit.\n\nEmit current Value (inverted): Emit the current percentage value as a redstone signal between 15 (0 percent) and 0 (100 percent) \n\nEmit last change as pulse: When the value changes, emit the change in percentage between 0 (0 percent) and 15 (100 percent) as a redstone-signal.
+
+guide.content.armorrelay=The Armor Relay lets you access the player's armor slots. By pumping equip-able items in and out of the relay, you can remove, add or modify the player's current armor configuration. The Armor Relay doesn't have any configuration options, the items are automatically sorted into the appropriate armor slot.
+
+guide.content.enderchestrelay=The Ender Chest Relay provides access to a connected player's ender chest inventory. It works similar to the Inventory Relay but there are no additional configuration options, all 27 slots of the chest inventory are accessed. Any items that are pumped into the Ender Chest Relay are directly transferred into the player's ender chest. Any items pumped out of the Ender Chest Relay are removed from the player's ender chest immediately.
+
+guide.content.slotselectionrelay=The Slot Selection Relay works similar to the Inventory Relay but it can only access one slot at the time. The slot of the player's inventory that is accessed can be changed by right-clicking the relay with a wrench:\n\nMainhand: Access only the current selected (mainhand) hotbar slot\n\nOffhand: Access only the offhand-slot\n\nSelect by id: Access the slot with the specified slot number. Specify the slot id by right-clicking the block with an empty hand. A message in the chat will tell you, which slot id is currently selected.
+
+guide.content.shulkerboxrelay=The Shulker Box Relay can be used to access the content of shulker boxes in the player's inventory. Through the use of different modes, much like the Slot Selection Relay, specific shulker boxes in the player's inventory might be selected, depending on their inventory slot. This selection may be specified further by right-clicking the Shulker Box Relay with a name tag. This will only allow access to shulker boxes which name matches the one set with the name tag. To remove the name filter, right-click the relay with an empty name tag. All items pumped into the Shulker Box Relay will be saved in one of the shulker boxes in the player's inventory. Similarly, all the items contained in the selected shulker boxes can be pumped out of the relay.
+
+guide.content.potionrelay=The Potion Relay provides access to a player's potion effects. It can work in one of two modes, which can be toggled by right-clicking the block with a wrench:\n\nInlet Mode: When in inlet-mode, potions can only be pumped into the relay. Once a valid item is pumped into the Potion Relay, the assigned potion effects are added to the player and the potion item is converted into an empty glass bottle, which is stored in the relay. You can pump out the glass bottles with any kind of automation. If the internal buffer of glass bottles reaches 64, no potions can be pumped in until the glass bottles are removed from the relay.\n\nOutlet mode: When in outlet mode, glass bottles have to be pumped into the relay in order for potions to be pumped out. In outlet mode, the relay can generate potion items from the effects the player currently has, removing the effect from the player. The created potions have the same power and duration the original effect on the player had. The creation of a single potion from the relay will drain %1$d RF from your network.
+
+guide.content.xprelay=The Experience Relay works a lot like the Potion Relay (see the Potion Relay article) except that instead of potions, it accepts or generates bottles o' enchanting. Per bottle pumped out, %1$d XP points are removed from the player. Per bottle pumped in, between %2$d and %3$d XP points are added to the player.
+
+guide.content.xprelay_liquid=The Experience Relay (Liquids), like the normal Experience Relay, can access the player's xp points. But instead with bottles o' enchanting this relay can work with a more liquid form of XP. Either Molten XP (AIM) or Liquid XP (EnderIO) can be pumped in or out of the relay. You can toggle between the two fluids by right-clicking the relay with a wrench. For each mB of fluid pumped into the relay, %1$d xp points are added to the player. For each mB of fluid pumped out of the relay, %2$d xp points are removed from the player. This allows for a much more efficient storage and reuse of XP, as %3$d XP can be stored in a normal 16000 mB tank.
+
+guide.content.energyrelay=The Energy Relay can accept any form of energy from outside sources and transfer it to the connected player's inventory, thereby charging any items that accept RF, TESLA or Forge Power. By changing the mode of the Energy Relay, you can limit which slots in the player's inventory are affected by the charging process.
+
+guide.content.aimwrench=The Network Wrench is a tool to configure, structure and break the blocks in your network. By right-clicking most AIM-Devices with this Wrench, you can switch between the different modes. By right-clicking on Network-Cables, you can block and unblock certain connections. By shift right-clicking any AIM-Block, you can break the block instantly without any mining delay. You can also use Wrenches from other mods, they should work for most use cases too.
+
+guide.content.infoprovider=The Network Information Provider is a tool to get more detailed information about your network. By shift-right-clicking any block of your network, you can open up a gui showing you more details about your network like power stats, connected devices or player accessibility. By shift right-clicking in the air, a list appears showing the position of all cores connected to you as well as your current accessibility state. When looking at any network block while having this item equipped, you can see an overlay showing more detailed information about the selected network component. Right-clicking the selected block will update this information.
+
+guide.content.inventorymanagementmanual=The Inventory Management Manual is your Guide to AIM. In this book, you can get information about every aspect of the mod. Should you lose this book, just craft yourself a new one using the crafting recipe displayed on the left side.
+
+guide.content.moltenxp=Molten XP is a liquid produced by the XP Relay (Liquid) when XP are removed from the player and pumped out of the relay as a fluid. Molten XP can be put in a bucket, but has no real use except for storing xp. You can exchange Molten XP and Liquid XP (EnderIO) by pumping the Molten XP into the XP-Relay (Liquids) to give it to the player, then switch the mode of the relay and pump the xp out again as Liquid XP. 1 Bucket of Molten XP converts to %1$d XP Points.
+
+guide.content.togglecable=The Toggle Cable works like a normal network cable, but by applying a redstone signal, you can prevent it from conducting any network signals so that all devices seperated from the core by a toggle cable will go offline when a redstone signal is applied. This is useful to enable or disable certain features of the network using redstone. The devices that are cut off from the network also won't drain any power from the network unless the redstone signal is removed from the Toggle Cable.
+
+guide.content.motioneditor=The Motion Editor can be used to manipulate a player's velocity. When a redstone signal is received by the device, velocity will be added to the connected player based on the strenght of the signal. A redstone strength of 1 adds 1 block/second, a signal strength of 15 adds 15 blocks/second velocity. The desired direction (Positive-X, Negative X, Positive Y...) can be selected by right-clicking the Motion Editor with a Wrench. When 1 B/s velocity is added, %1$d RF are drained from the network. This amount grows proportionally to the applied signal strenght squared, up to %2$d RF for 15 B/s. The Motion Editor will only activate if a new redstone pulse is received, meaning that the signal has to be turned off before a new signal can be processed.
+
+guide.content.hotbarselectioneditor=The Hotbar Selection Editor can force the connected player to select a specific hotbar slot. When the device receives a redstone pulse, the currently selected slot will be set according to the strength of the signal. A signal strength of 1 will force the selection of the first hotbar slot, a signal strength of 9 or above will force the selection of the last (ninth) hotbar slot. The selected slot will be updated every time a new pulse is received (see the Motion Editor for more details). It won't update if the signal strength drops to 0. Every slot selection will drain %1$d RF from your network.
+
+guide.content.positioneditor=The Position Editor can change the player's position in the world, therefore teleporting him. To setup a destination, right-click the Position Editor with a described Position Card. After doing this, apply a redstone pulse to the device to teleport yourself to the set destination. Notice that you can only teleport if there are not blocks blocking the destination. One teleportation process will drain %1$d RF from your network. This value is two times as high when teleporting across dimensions.
+
+guide.content.aimpositioncard=The Position Card is used to store a specific position in the world. When a block is right-clicked with the Position Card, the card will save the coordinates and dimension of the clicked block. The Position Card can currently only be used to set the destination for a Position Editor. Simple right-click a Position Editor to transfer the data saved on the card to the editor.
+
+guide.content.networksignalbridge=The Network Signal Bridge can be used to connect different network devices over large distances without having to link them with network cables. For a Network Signal Bridge to connect two parts of a network, one Bridge block has to be connected to the network core via cables while the other can be placed in a remote location. The two Bridge blocks may be connected by saving the position of one of the two blocks on a Position Card and right-clicking the other block with the set card. Network Signal Bridges will consume %1$d RF/t from your network per Bridge Block. They do not work over multiple dimensions, but the distance between them can be arbitrarily large, as long as the chunks on both sides are loaded.
