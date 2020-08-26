@@ -1,3 +1,3 @@
-- [ ] 我已确认文件路径正确，即 `project/assets/模组id/lang/zh_cn.lang`；
+- [ ] 我已确认文件路径正确，即 `projects/<version>/assets/<projectname>/<moddomain>/lang/zh_cn.lang`；
 - [ ] 我已确认语言文件名大小写正确，所有的语言文件全为小写；
 - [ ] 我已阅读相关协议，同意对于本项目的贡献的许可协议：[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/1.10.2/LICENSE)
