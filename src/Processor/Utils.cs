@@ -15,134 +15,15 @@ namespace Processor
 {
     public class Utils
     {
-        //public static List<string> SearchAllFiles(string path, string version)
-        //{
-        //    var allFiles = new List<string>();
-        //    var files1 = Directory.GetFiles(path + "projects/" + version, "*.lang", SearchOption.AllDirectories);
-        //    //var files2 = Directory.GetFiles(path + "projects/" + version, "*.json", SearchOption.AllDirectories);
-        //    foreach (var s in files1)
-        //        allFiles.Add(s);
-        //    //foreach (var s in files2)
-        //    //    allFiles.Add(s);
-        //    return allFiles;
-        //}
+        public static List<string> SearchLangFiles(Configuration configuration)
+        {
+            var allFiles = new List<string>();
+            var files1 = Directory.GetFiles(Path.Combine(configuration.CustomSittings.ProjectsFolder,configuration.VersionList[0],"assets"), "*.lang", SearchOption.AllDirectories);
+            foreach (var s in files1)
+                allFiles.Add(s);
+            return allFiles;
+        }
 
-        //static Dictionary<string, string> GetIdDictionary()
-        //{
-        //    var idDirectory = new Dictionary<string, string>();
-        //    var infos = GetModInfo();
-        //    infos.ForEach(_ =>
-        //    {
-        //        if (!idDirectory.ContainsKey(_["projectId"]?.ToString() ?? string.Empty))
-        //        {
-        //            if (_["projectId"]?.ToString() != "")
-        //            {
-        //                var nameL = _["projectUrl"]?.ToString().LastIndexOf("/mc-mods/") ?? 0;
-        //                var name = _["projectUrl"]?.ToString().Substring(nameL + 9);
-        //                if (_["assetDomain"]?.ToString() != "")
-        //                {
-        //                    idDirectory.Add(_["projectId"]?.ToString() ?? string.Empty, name);
-        //                }
-        //            }
-        //        }
-        //    });
-        //    foreach (var keyValuePair in idDirectory)
-        //    {
-        //        //Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
-        //    }
-
-        //    return idDirectory;
-        //}
-
-        //static Dictionary<string, Tuple<string, string, JArray>> GetExtendDictionary()
-        //{
-        //    var extendDictionary = new Dictionary<string, Tuple<string, string, JArray>>();
-        //    var infos = GetModInfo();
-        //    infos.ForEach(_ =>
-        //    {
-        //        if (!extendDictionary.ContainsKey(_["projectId"]?.ToString() ?? string.Empty))
-        //        {
-        //            if (_["projectId"]?.ToString() != "")
-        //            {
-        //                if (_["assetDomain"]?.ToString() != "")
-        //                {
-        //                    extendDictionary.Add(_["projectId"]?.ToString() ?? string.Empty, new Tuple<string, string, JArray>(_["name"]?.ToString(), _["modId"]?.ToString(), _["assetDomains"]?.ToObject<JArray>()));
-        //                }
-        //            }
-        //        }
-        //    });
-        //    foreach (var keyValuePair in extendDictionary)
-        //    {
-        //        //Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
-        //    }
-
-        //    return extendDictionary;
-        //}
-
-        //static Dictionary<string, string> GetDomainDictionary()
-        //{
-        //    var domainDictionary = new Dictionary<string, string>();
-        //    var infos = GetModInfo();
-        //    infos.ForEach(_ =>
-        //    {
-        //        if (!domainDictionary.ContainsKey(_["projectId"]?.ToString() ?? string.Empty))
-        //        {
-        //            if (_["projectId"]?.ToString() != "")
-        //            {
-        //                if (_["assetDomain"]?.ToString() != "")
-        //                {
-        //                    domainDictionary.Add(_["projectId"]?.ToString() ?? string.Empty, _["assetDomains"]?.ToString());
-        //                }
-        //            }
-        //        }
-        //    });
-        //    foreach (var keyValuePair in domainDictionary)
-        //    {
-        //        //Log.Logger.Information("{0},{1}",keyValuePair.Key,keyValuePair.Value);
-        //    }
-
-        //    return domainDictionary;
-        //}
-
-        //public static void ProcessFiles()
-        //{
-        //    var config = Program.ReadConfig();
-        //    var folder = Program.ReaderFolder();
-        //    var idD = GetIdDictionary();
-        //    var dD = GetDomainDictionary();
-        //    var root = new DirectoryInfo(Path.Combine(folder.Projects,config.TargetVersion, "assets", "1UNKNOWN"));
-        //    foreach (var info in root.GetDirectories())
-        //    {
-        //        var pid = dD.FirstOrDefault(_ => _.Value.Contains(info.Name)).Key;
-        //        if (pid == null)
-        //        {
-        //            continue;
-        //        }
-        //        string name;
-        //        idD.TryGetValue(pid, out name);
-        //        if (name == null)
-        //        {
-        //            continue;
-        //        }
-        //        if (!Directory.Exists(Path.Combine(folder.Projects, config.TargetVersion, "assets", name)))
-        //        {
-        //            Directory.CreateDirectory(Path.Combine(folder.Projects, config.TargetVersion, "assets", name));
-        //        }
-
-        //        var newPath = Path.Combine(folder.Projects, config.TargetVersion, "assets", name, info.Name);
-        //        try
-        //        {
-        //            Directory.Move(info.FullName, newPath);
-        //        }
-        //        catch
-        //        {
-        //            var di = new DirectoryInfo(newPath);
-        //            di.Delete(true);
-        //            Directory.Move(info.FullName, newPath);
-        //        }
-        //        Log.Logger.Information("文件处理完成");
-        //    }
-        //}
 
         //public static void UpdateInfo()
         //{
@@ -201,54 +82,5 @@ namespace Processor
         //    //Console.WriteLine(jObjects);
         //    //File.WriteAllLines(Path.Combine(folder.Root, "info.json"),jObjects.ToArray());
         //}
-    }
-    public abstract partial class LangFile
-    {
-        public void ProcessLangFile()
-        {
-            if (Format == Format.Lang)
-            {
-                if (IsNeeded == IsNeeded.Requested)
-                {
-                    if (Language == Language.Chinese)
-                    {
-                        var keyReg = new Regex(".+(?==)");
-                        var nameReg = new Regex("(?<==).+");
-                        var findEqual = new Regex("=+");
-                        var commentReg = new Regex("#+");
-                        var langs = new List<string>();
-                        foreach (string str in File.ReadAllLines(LangPath, Encoding.UTF8))
-                        {
-                            if (str == "")
-                            {
-                                langs.Add(str);
-                                Log.Debug("添加空行");
-                            }
-                            if (commentReg.IsMatch(str))
-                            {
-                                langs.Add(str);
-                                Log.Debug("添加规范注释");
-                            }
-                            if (findEqual.IsMatch(str))
-                            {
-                                if (keyReg.IsMatch(str))
-                                {
-                                    if (nameReg.IsMatch(str))
-                                    {
-                                        if (!langs.Contains(str))
-                                        {
-                                            langs.Add(str);
-                                            Log.Debug("添加条目:{0}", str);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        File.WriteAllLines(LangPath, langs);
-                        Log.Information("{0}检查完成", LangPath);
-                    }
-                }
-            }
-        }
     }
 }
