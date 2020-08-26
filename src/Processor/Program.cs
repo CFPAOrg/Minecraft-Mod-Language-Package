@@ -32,7 +32,7 @@ namespace Processor
 
             if (args.Contains("--DEBUG"))
             {
-                
+
             }
 
             if (args.Contains("--update"))
@@ -53,6 +53,12 @@ namespace Processor
             {
                 var conf = await Reader.ReadConfig();
                 await Format.CrateEmptyLangFile(conf);
+            }
+
+            if (args.Contains("--Cen"))
+            {
+                var conf = await Reader.ReadConfig();
+                await Format.CrateEmptyJsonFile(conf);
             }
         }
     }
