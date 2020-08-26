@@ -1,22 +1,20 @@
 name: Packer
-# Merely edited
+
 on:
   push:
     branches: [ main ]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 1
-
-    - name: Build Packer
-      run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
-
-    - name: Run Packer
-      run: .\Packer
+    - name: Pack files
+      id: pack_files
+      run: ./packer.ps1
+      shell: pwsh
     
     - name: Create timestamp
       id: create_timestamp
@@ -47,7 +45,6 @@ jobs:
         asset_name: Minecraft-Mod-Language-Package.zip
         asset_content_type: application/zip
 
-    # Does this still work?
     - name: SCP Command to Transfer Files
       uses: appleboy/scp-action@v0.0.6
       with:
