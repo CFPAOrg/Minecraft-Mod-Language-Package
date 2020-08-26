@@ -32,7 +32,7 @@ namespace Processor
 
             if (args.Contains("--DEBUG"))
             {
-                await Format.CrateEmptyLangFile(Configuration.Debug);
+                
             }
 
             if (args.Contains("--update"))
@@ -47,6 +47,12 @@ namespace Processor
                 var conf = await Reader.ReadConfig();
                 var ls = Utils.SearchLangFiles(conf);
                 await Format.FormatLangFile(ls);
+            }
+
+            if (args.Contains("--Ce"))
+            {
+                var conf = await Reader.ReadConfig();
+                await Format.CrateEmptyLangFile(conf);
             }
         }
     }
