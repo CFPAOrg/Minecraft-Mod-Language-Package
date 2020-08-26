@@ -8,8 +8,10 @@
 ## 仓库说明
 
 这是 Minecraft 模组汉化项目的仓库，本项目目前采用 Weblate 平台进行模组项目翻译；
+
 用以解决模组作者不接收汉化、汉化提交更新速度慢等诸多问题；
 想要参与翻译？请访问我们的官方网站，并仔细阅读相关事宜以加入我们：
+
 ### <https://cfpa.team>
 
 直接向本仓库提交 PR 亦可；
@@ -23,19 +25,25 @@
 ## 使用方式
 
 点击 [此处](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) 可打开 CurseForge 页面下载 release 版本资源包。
-点击 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) 可以下载快照版本资源包（推荐下载不带 Lite 的版本）。
+
+点击 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) 可以下载快照版本资源包。
+
 只需要像**普通材质包**一样，在游戏中加载上该资源包，即可拥有汉化。建议装上该资源包后重启游戏，以避免出现其他问题。
 
 ## 相关信息
 
 **目前的翻译计划是什么样的呢？我可以递交想翻译的列表么？**
+
 目前已根据在 CurseForge 网站上的受欢迎程度，选取了 1.12.2 版本下载了 3000+ 个模组。如果你有什么想要额外添加翻译的模组，可以通过我们的 [问题追踪器](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues) 递交意见，或者直接通过邮箱递交意见或建议。
+
 **对于1.16有更新的计划。**
 
-关于具体的宣传，可以参见 [MCBBS 推广宣传帖](http://www.mcbbs.net/thread-774087-1-1.html)；<br>
+关于具体的宣传，可以参见 [MCBBS 推广宣传帖](http://www.mcbbs.net/thread-774087-1-1.html)；
+
 关于整个事情的经过，可以查看酒石酸菌的 [博客帖子](https://baka943.coding.me/2018/01/03/2018-01-03-AnIntroForWeblate/);
 
 **你们是怎么做到流水线式的翻译的？**
+
 emmmm，原理其实很简单。
 
 - 通过爬虫爬取 CurseForge 的热门信息；
@@ -48,11 +56,18 @@ emmmm，原理其实很简单。
 ## 鸣谢
 
 感谢 `phi` 搭建出了 Weblate 服务器，还实现了机翻功能；
+
 感谢 `PeakXing` 制作的 logo；
+
 感谢 `雪尼`、`FledgeXu`、`asdflj` 等在内的诸多人的意见和建议；
+
 感谢 `雪尼`、`yuanjie000` 对 weblate 管理的维护和帮助； 感谢`卡米西村`各位提供的技术支持和服务器，能够使爬虫运行。
+
 感谢本项目的最初贡献者 `Aemande123`，`DYColdWind`，`Snownee`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`，`luckyu19` 提供的汉化。（排名不分先后）
 感谢玩家 `R_liu` 提供的拔刀剑本地化；
+
 资源包中镶嵌了 `3TUSK` 提供的 [全角标点修复文件](./project/assets/minecraft/readme.md)；
+
 最后感谢那些参与翻译，并致力于本地化推广的各位玩家，你们辛苦了。
+
 在本仓库的 [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) 页面可以查看所有翻译贡献者。
