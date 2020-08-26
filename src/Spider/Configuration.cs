@@ -10,15 +10,15 @@ namespace Spider
 {
     public class Configuration
     {
-        public static Configuration Default { get; }=new Configuration()
+        public static Configuration Default { get; } = new Configuration()
         {
-            EnabledGameVersions = new List<string>{"1.12.2"},
+            EnabledGameVersions = new List<string> { "1.12.2" },
 #if DEBUG
             ModCount = 60,
 #else
             ModCount = 6000,
 #endif
-            ModInfoPath = "./mod_info.json"
+            ModInfoPath = "./config/mod_info.json"
         };
 
         public List<string> EnabledGameVersions { get; set; }
