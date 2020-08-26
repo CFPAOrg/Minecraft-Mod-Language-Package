@@ -81,7 +81,7 @@ namespace Processor
                             {
                                 if (zipArchiveEntry.Name.ToLower() == "en_us.lang" || zipArchiveEntry.Name.ToLower() == "en_us.json")
                                 {
-                                    Console.WriteLine(zipArchiveEntry.FullName);
+                                    //Console.WriteLine(zipArchiveEntry.FullName);
                                     if (!Directory.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang")))
                                     {
                                         Directory.CreateDirectory(Path.Combine(configuration.CustomSittings.ProjectsFolder,
