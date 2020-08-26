@@ -19,12 +19,9 @@ jobs:
       run: .\Packer
     
     - name: Create timestamp
-      outputs:
-        timestamp:
-          description: 'A timestamp.'
       id: create_timestamp
-      run: Get-Date -Format "yyyyMMddHHmmss"
-      shell: pwsh
+      run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%S')"
+      shell: sh
 
      # Create the release:  https://github.com/actions/create-release
     - name: Create release
