@@ -32,9 +32,7 @@ namespace Processor
 
             if (args.Contains("--DEBUG"))
             {
-                var b = await Reader.ReadConfig();
-                var d = await Downloader.ParseModFile(b, await Reader.ReadInfo(b.CustomSittings.RootFolder));
-                Downloader.ExJar(b, d);
+                await Format.CrateEmptyLangFile(Configuration.Debug);
             }
 
             if (args.Contains("--update"))
