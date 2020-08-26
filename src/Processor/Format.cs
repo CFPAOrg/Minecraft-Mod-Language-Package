@@ -82,10 +82,12 @@ namespace Processor
                                 if (isParse)
                                 {
                                     await File.WriteAllTextAsync(Path.Combine(directoryInfo.FullName, "lang", "zh_cn.lang"), "#PARSE_ESCAPES\n\n");
+                                    Log.Logger.Information($"为{directoryInfo.Name}新建带#PARSE_ESCAPES的文件");
                                 }
                                 else
                                 {
                                     await File.WriteAllTextAsync(Path.Combine(directoryInfo.FullName, "lang", "zh_cn.lang"), "\n");
+                                    Log.Logger.Information($"为{directoryInfo.Name}新建空文件");
                                 }
                             }
                         }
