@@ -19,6 +19,9 @@ jobs:
       run: .\Packer
     
     - name: Create timestamp
+      outputs:
+        timestamp:
+          description: 'A timestamp.'
       id: create_timestamp
       run: Get-Date -Format "yyyyMMddHHmmss"
       shell: pwsh
@@ -30,8 +33,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: Snapshot-${{ steps.create_timestamp.outputs }}
-        release_name:  汉化资源包-Snapshot-${{ steps.create_timestamp.outputs }}
+        tag_name: Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
+        release_name:  汉化资源包-Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
         draft: false
         prerelease: false
 
@@ -43,8 +46,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}  # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: Minecraft-Mod-Language-Modpack.zip  # Use the full path here because environment variables are not in scope
-        asset_name: Minecraft-Mod-Language-Modpack.zip
+        asset_path: Minecraft-Mod-Language-Package.zip  # Use the full path here because environment variables are not in scope
+        asset_name: Minecraft-Mod-Language-Package.zip
         asset_content_type: application/zip
 
     # Does this still work?
