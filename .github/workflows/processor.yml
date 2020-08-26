@@ -1,4 +1,4 @@
-name: Processer
+name: Processor
 
 on: 
   push:
@@ -16,8 +16,8 @@ jobs:
       - name: Build processor
         run: dotnet publish .\src\Processor\Processor.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
-      - name: Run processer
-        run: .\Processor --update
+      - name: Run processor
+        run: .\Processor --formatLow
 
       - name: Push  to github repo
         if: ${{github.event}} == 'push'
