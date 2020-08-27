@@ -53,7 +53,8 @@ namespace Packer
                             Log.Information("跳过了英文原文：{0}", file.FullName[(asset.prefixLength + 1)..]);
                             continue;
                         }
-                        var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}".ToLower();
+                        var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}"
+                            .Replace("zh_CN", "zh_cn"); // 修复大小写
                         var existingFile = archive.GetEntry(destinationPath);
                         if(existingFile is null) // null 代表没有找到文件，也就是该文件没有重合
                         {
@@ -80,7 +81,8 @@ namespace Packer
                             Log.Information("跳过了英文原文：{0}", file.FullName[(asset.prefixLength + 1)..]);
                             continue;
                         }
-                        var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}".ToLower();
+                        var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}"
+                            .Replace("zh_CN", "zh_cn"); // 修复大小写
                         archive.CreateEntryFromFile(file.FullName, destinationPath);
                         Log.Information("添加了 {0}", destinationPath);
                     }
