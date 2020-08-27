@@ -1,36 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using Serilog;
+using System;
+using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
 
 namespace Spider
 {
-    internal static class Configuration
+    public class Configuration
     {
-        public static FileInfo ConfigFileInfo { get; } =
-            new FileInfo(Path.Combine(RepositoryPath, "config.json"));
+        public static Configuration Default { get; } = new Configuration()
+        {
+            EnabledGameVersions = new List<string> { "1.12.2" },
+#if DEBUG
+            ModCount = 1000,
+#else
+            ModCount = 1000,
+#endif
+            ModInfoPath = "./config/mod_info.json"
+        };
 
-        public static FileInfo LangFileInfo { get; }=new FileInfo(Path.Combine(RepositoryPath,"lang_file_info.json"));
-        
-        private static JsonElement JsonConfig { get; } = JsonDocument.Parse(
-            ConfigFileInfo.OpenRead(), new JsonDocumentOptions
-            {
-                CommentHandling = JsonCommentHandling.Skip
-            }).RootElement;
+        public List<string> EnabledGameVersions { get; set; }
 
-        public static string RepositoryPath => Utils.GetTargetParentDirectory(Directory.GetCurrentDirectory(), ".git");
-        public static string OutputPath => Path.Combine(RepositoryPath, "project");
+        public int ModCount { get; set; }
 
-        public static int ModCount => JsonConfig.GetProperty("mod_count").GetInt32();
-        public static string Version => JsonConfig.GetProperty("game_version").GetString();
-
-        public static List<string> ModBlackList { get; } = JsonConfig.GetProperty("mod_blacklist").EnumerateArray()
-            .Select(_ => _.GetString()).ToList();
-
-        public static List<string> AssetDomainBlackList { get; } = JsonConfig.GetProperty("assetdomain_blacklist")
-            .EnumerateArray().Select(_ => _.GetString()).ToList();
-
-        public static List<string> LangEntryBlackList { get; } = JsonConfig.GetProperty("key_blacklist")
-            .EnumerateArray().Select(_ => _.GetString()).ToList();
+        public string ModInfoPath { get; set; }
     }
 }
