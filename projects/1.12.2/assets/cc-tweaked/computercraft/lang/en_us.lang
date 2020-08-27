@@ -1,5 +1,3 @@
-itemGroup.computercraft=CC: Tweaked
-
 tile.computercraft:computer.name=Computer
 tile.computercraft:advanced_computer.name=Advanced Computer
 tile.computercraft:drive.name=Disk Drive
@@ -13,6 +11,7 @@ tile.computercraft:command_computer.name=Command Computer
 tile.computercraft:advanced_modem.name=Ender Modem
 tile.computercraft:speaker.name=Speaker
 
+
 tile.computercraft:turtle.name=Turtle
 tile.computercraft:turtle.upgraded.name=%s Turtle
 tile.computercraft:turtle.upgraded_twice.name=%s %s Turtle
@@ -20,16 +19,19 @@ tile.computercraft:advanced_turtle.name=Advanced Turtle
 tile.computercraft:advanced_turtle.upgraded.name=Advanced %s Turtle
 tile.computercraft:advanced_turtle.upgraded_twice.name=Advanced %s %s Turtle
 
+
 item.computercraft:disk.name=Floppy Disk
 item.computercraft:treasure_disk.name=Floppy Disk
 item.computercraft:page.name=Printed Page
 item.computercraft:pages.name=Printed Pages
 item.computercraft:book.name=Printed Book
 
+
 item.computercraft:pocket_computer.name=Pocket Computer
 item.computercraft:pocket_computer.upgraded.name=%s Pocket Computer
 item.computercraft:advanced_pocket_computer.name=Advanced Pocket Computer
 item.computercraft:advanced_pocket_computer.upgraded.name=Advanced %s Pocket Computer
+
 
 upgrade.minecraft:diamond_sword.adjective=Melee
 upgrade.minecraft:diamond_shovel.adjective=Digging
@@ -41,6 +43,7 @@ upgrade.minecraft:crafting_table.adjective=Crafty
 upgrade.computercraft:advanced_modem.adjective=Ender
 upgrade.computercraft:speaker.adjective=Noisy
 
+<<<<<<< HEAD
 chat.computercraft.wired_modem.peripheral_connected=Peripheral "%s" connected to network
 chat.computercraft.wired_modem.peripheral_disconnected=Peripheral "%s" disconnected from network
 
@@ -103,96 +106,30 @@ commands.computercraft.track.dump.computer=Computer
 commands.computercraft.reload.synopsis=Reload the ComputerCraft config file
 commands.computercraft.reload.desc=Reload the ComputerCraft config file
 commands.computercraft.reload.done=Reloaded config
+=======
+>>>>>>> parent of 58d9794... Update resource
 
-commands.computercraft.queue.synopsis=Send a computer_command event to a command computer
-commands.computercraft.queue.desc=Send a computer_command event to a command computer, passing through the additional arguments. This is mostly designed for map makers, acting as a more computer-friendly version of /trigger. Any player can run the command, which would most likely be done through a text component's click event.
-commands.computercraft.queue.usage=<id> [args...]
+gui.computercraft:wired_modem.peripheral_connected=Peripheral "%s" connected to network
+gui.computercraft:wired_modem.peripheral_disconnected=Peripheral "%s" disconnected from network
 
-commands.computercraft.generic.no_position=<no pos>
-commands.computercraft.generic.position=%s, %s, %s
-commands.computercraft.generic.yes=Y
-commands.computercraft.generic.no=N
-commands.computercraft.generic.exception=Unhandled exception (%s)
-commands.computercraft.generic.additional_rows=%d additional rows…
 
-commands.computercraft.argument.no_matching=No computers matching '%s'
-commands.computercraft.argument.many_matching=Multiple computers matching '%s' (instances %s)
-commands.computercraft.argument.not_number='%s' is not a number
-
-# Names for the various tracking fields.
-tracking_field.computercraft.tasks.name=Tasks
-tracking_field.computercraft.total.name=Total time
-tracking_field.computercraft.average.name=Average time
-tracking_field.computercraft.max.name=Max time
-
-tracking_field.computercraft.server_count.name=Server task count
-tracking_field.computercraft.server_time.name=Server task time
-
-tracking_field.computercraft.peripheral.name=Peripheral calls
-tracking_field.computercraft.fs.name=Filesystem operations
-tracking_field.computercraft.turtle.name=Turtle operations
-
-tracking_field.computercraft.http.name=HTTP requests
-tracking_field.computercraft.http_upload.name=HTTP upload
-tracking_field.computercraft.http_download.name=HTTT download
-
-tracking_field.computercraft.websocket_incoming.name=Websocket incoming
-tracking_field.computercraft.websocket_outgoing.name=Websocket outgoing
-
-tracking_field.computercraft.coroutines_created.name=Coroutines created
-tracking_field.computercraft.coroutines_dead.name=Coroutines disposed
-
-# Misc tooltips
-gui.computercraft.tooltip.copy=Copy to clipboard
-gui.computercraft.tooltip.computer_id=Computer ID: %s
-gui.computercraft.tooltip.disk_id=Disk ID: %s
-
-# Config options
-gui.computercraft:config.computer_space_limit=Computer space limit (bytes)
-gui.computercraft:config.floppy_space_limit=Floppy Disk space limit (bytes)
-gui.computercraft:config.maximum_open_files=Maximum files open per computer
+gui.computercraft:config.http_enable=Enable HTTP API
+gui.computercraft:config.http_whitelist=HTTP whitelist
+gui.computercraft:config.http_blacklist=HTTP blacklist
 gui.computercraft:config.disable_lua51_features=Disable Lua 5.1 features
 gui.computercraft:config.default_computer_settings=Default Computer settings
-gui.computercraft:config.debug_enabled=Enable debug library
-gui.computercraft:config.log_computer_errors=Log computer errors
-gui.computercraft:config.command_require_creative=Command computers require creative
-
-gui.computercraft:config.execution=Execution
-gui.computercraft:config.execution.computer_threads=Computer threads
-gui.computercraft:config.execution.max_main_global_time=Server tick global time limit
-gui.computercraft:config.execution.max_main_computer_time=Server tick computer time limit
-
-gui.computercraft:config.http=HTTP
-gui.computercraft:config.http.enabled=Enable the HTTP API
-gui.computercraft:config.http.websocket_enabled=Enable websockets
-gui.computercraft:config.http.allowed_domains=Allowed domains
-gui.computercraft:config.http.blocked_domains=Blocked domains
-
-gui.computercraft:config.http.timeout=Timeout
-gui.computercraft:config.http.max_requests=Maximum concurrent requests
-gui.computercraft:config.http.max_download=Maximum response size
-gui.computercraft:config.http.max_upload=Maximum request size
-gui.computercraft:config.http.max_websockets=Maximum concurrent websockets
-gui.computercraft:config.http.max_websocket_message=Maximum websocket message size
-
-gui.computercraft:config.peripheral=Peripherals
-gui.computercraft:config.peripheral.command_block_enabled=Enable command block peripheral
-gui.computercraft:config.peripheral.modem_range=Modem range (default)
-gui.computercraft:config.peripheral.modem_high_altitude_range=Modem range (high-altitude)
-gui.computercraft:config.peripheral.modem_range_during_storm=Modem range (bad weather)
-gui.computercraft:config.peripheral.modem_high_altitude_range_during_storm=Modem range (high-altitude, bad weather)
-gui.computercraft:config.peripheral.max_notes_per_tick=Maximum notes that a computer can play at once
-gui.computercraft:config.peripheral.monitor_renderer=Monitor renderer
-gui.computercraft:config.peripheral.monitor_renderer.best=Best
-gui.computercraft:config.peripheral.monitor_renderer.tbo=Texture Buffers
-gui.computercraft:config.peripheral.monitor_renderer.vbo=Vertex Buffers
-gui.computercraft:config.peripheral.monitor_renderer.display_list=Display Lists
-gui.computercraft:config.peripheral.monitor_bandwidth=Monitor bandwidth
-
-gui.computercraft:config.turtle=Turtles
-gui.computercraft:config.turtle.need_fuel=Enable fuel
-gui.computercraft:config.turtle.normal_fuel_limit=Turtle fuel limit
-gui.computercraft:config.turtle.advanced_fuel_limit=Advanced Turtle fuel limit
-gui.computercraft:config.turtle.obey_block_protection=Turtles obey block protection
-gui.computercraft:config.turtle.can_push=Turtles can push entities
-gui.computercraft:config.turtle.disabled_actions=Disabled turtle actions
+gui.computercraft:config.log_peripheral_errors=Log peripheral errors
+gui.computercraft:config.enable_command_block=Enable command block peripheral
+gui.computercraft:config.modem_range=Modem range (default)
+gui.computercraft:config.modem_high_altitude_range=Modem range (high-altitude)
+gui.computercraft:config.modem_range_during_storm=Modem range (bad weather)
+gui.computercraft:config.modem_high_altitude_range_during_storm=Modem range (high-altitude, bad weather)
+gui.computercraft:config.computer_space_limit=Computer space limit (bytes)
+gui.computercraft:config.floppy_space_limit=Floppy Disk space limit (bytes)
+gui.computercraft:config.turtles_need_fuel=Enable fuel
+gui.computercraft:config.turtle_fuel_limit=Turtle fuel limit
+gui.computercraft:config.advanced_turtle_fuel_limit=Advanced Turtle fuel limit
+gui.computercraft:config.turtles_obey_block_protection=Turtles obey block protection
+gui.computercraft:config.turtles_can_push=Turtles can push entities
+gui.computercraft:config.maximum_files_open=Maximum files open per computer
+gui.computercraft:config.max_notes_per_tick=Maximum notes that a computer can play at once

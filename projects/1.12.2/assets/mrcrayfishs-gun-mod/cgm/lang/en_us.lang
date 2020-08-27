@@ -1,26 +1,25 @@
-tile.cgm.workbench.name=Workbench
+tile.workbench.name=Workbench
 
-item.cgm.handgun.name=Pistol
-item.cgm.shotgun.name=Shotgun
-item.cgm.sniper_rifle.name=Sniper Rifle
-item.cgm.grenade_launcher.name=Grenade Launcher
-item.cgm.bazooka.name=Bazooka
-item.cgm.chain_gun.name=Minigun
-item.cgm.rifle.name=Rifle
-item.cgm.assault_rifle.name=Assault Rifle
-item.cgm.machine_pistol.name=Machine Pistol
+item.handgun.name=Pistol
+item.shotgun.name=Shotgun
+item.sniper_rifle.name=Sniper Rifle
+item.grenade_launcher.name=Grenade Launcher
+item.bazooka.name=Bazooka
+item.chain_gun.name=Minigun
+item.rifle.name=Rifle
+item.assault_rifle.name=Assault Rifle
 
-item.cgm.basic_ammo.name=Basic Ammo
-item.cgm.advanced_ammo.name=Advanced Ammo
-item.cgm.shell.name=Shell
-item.cgm.grenade.name=Grenade
-item.cgm.stun_grenade.name=Stun Grenade
-item.cgm.missile.name=Missile
+item.ammo_basic.name=Basic Ammo
+item.ammo_advanced.name=Advanced Ammo
+item.ammo_shell.name=Shell
+item.ammo_grenade.name=Grenade
+item.ammo_grenade_stun.name=Stun Grenade
+item.ammo_missile.name=Missile
 
-item.cgm.scope.small.name=Scope (Short)
-item.cgm.scope.medium.name=Scope (Medium)
-item.cgm.scope.long.name=Scope (Long)
-item.cgm.silencer.name=Silencer
+item.scope_small.name=Scope (Short)
+item.scope_medium.name=Scope (Medium)
+item.scope_long.name=Scope (Long)
+item.silencer.name=Silencer
 
 itemGroup.tabCGM=MrCrayfish's Gun Mod
 
@@ -49,19 +48,8 @@ config.cgm.client.display.workbench_animation=Workbench Animation
 config.cgm.client.display.workbench_animation.tooltip=If true, an animation is performed while cycling items in the Workbench
 
 config.cgm.server=Server
+
 config.cgm.server.tooltip=Server-only configs.
-config.cgm.server.grow_bounding_box_amount=Grow Bounding Box
-config.cgm.server.grow_bounding_box_amount.tooltip=The extra amount to expand an entity's bounding box when checking for projectile collision. Setting this value higher will make it easier to hit players
-config.cgm.server.enabled_head_shots=Enable Head Shots
-config.cgm.server.enabled_head_shots.tooltip=Enables the check for head shots for players. Projectiles that hit the head of a player will have increased damage.
-config.cgm.server.head_shot_damage_multiplier=Head Shot Damage Multiplier
-config.cgm.server.head_shot_damage_multiplier.tooltip=The value to multiply the damage by if projectile hit the players head
-
-config.cgm.server.network=Network
-config.cgm.server.network.tooltip=Properties relating to network
-config.cgm.server.network.projectile_tracking_range=Projectile Tracking Range
-config.cgm.server.network.projectile_tracking_range.tooltip=The distance players need to be within to be able to track new projectiles trails. Higher values means you can see projectiles from that start from further away.
-
 config.cgm.server.aggro=Aggro Mobs
 config.cgm.server.aggro.tooltip=Nearby mobs are angered and/or scared by the firing of guns.
 config.cgm.server.aggro.enabled=Aggro Mobs Enabled
@@ -74,16 +62,6 @@ config.cgm.server.aggro.unsilenced=Range Unsilenced
 config.cgm.server.aggro.unsilenced.tooltip=Any mobs within a sphere of this radius will aggro on the shooter of an unsilenced gun.
 config.cgm.server.aggro.exempt=Exempt Mob Classes
 config.cgm.server.aggro.exempt.tooltip=Any mobs of classes with class pathes in this list will not aggro on shooters.
-
-config.cgm.server.missiles.normal=Grenades
-config.cgm.server.missiles.normal.tooltip=Properties relating to missiles.
-config.cgm.server.missiles.normal.explosion_range=Explosion Radius
-config.cgm.server.missiles.normal.explosion_range.tooltip=The max distance which the explosion is effective to.
-
-config.cgm.server.grenade.normal=Grenades
-config.cgm.server.grenade.normal.tooltip=Properties relating to grenades.
-config.cgm.server.grenade.normal.explosion_range=Explosion Radius
-config.cgm.server.grenade.normal.explosion_range.tooltip=The max distance which the explosion is effective to.
 
 config.cgm.server.grenade.stun=Stun Grenades
 config.cgm.server.grenade.stun.tooltip=Blinding/deafening properties of stun grenades.
@@ -121,12 +99,48 @@ config.cgm.server.grenade.stun.effect_criteria.angle.attenuation.max.tooltip=Aft
 config.cgm.server.grenade.stun.effect_criteria.raytrace.opaque=Raytrace Opaque Blocks
 config.cgm.server.grenade.stun.effect_criteria.raytrace.opaque.tooltip=If true, the effect is only applied if the line between the eyes and the grenade does not intersect any non-liquid blocks with an opacity greater than 0.
 
-config.cgm.server.projectile_spread=Projectile Spread
-config.cgm.server.projectile_spread.tooltip=Properties relating to projectile spread
-config.cgm.server.projectile_spread.spread_threshold=Spread Threshold
-config.cgm.server.projectile_spread.spread_threshold.tooltip=The amount of time in milliseconds before logic to apply spread is skipped. The value indicates a reasonable amount of time before a weapon is considered stable again.
-config.cgm.server.projectile_spread.max_count=Max Count
-config.cgm.server.projectile_spread.max_count.tooltip=The amount of times a player has too shoot within the spread threshold before the maximum amount of spread is applied. Setting the value higher means it will take longer for the spread to be applied.
+config.cgm.server.guns=Guns
+config.cgm.server.guns.tooltip=Change the properties of guns
+config.cgm.server.guns.pistol=Handgun
+config.cgm.server.guns.pistol.tooltip=Change the properties of the Pistol
+config.cgm.server.guns.shotgun=Shotgun
+config.cgm.server.guns.shotgun.tooltip=Change the properties of the hotgun
+config.cgm.server.guns.rifle=Rifle
+config.cgm.server.guns.rifle.tooltip=Change the properties of the Rifle
+config.cgm.server.guns.grenade_launcher=Grenade Launcher
+config.cgm.server.guns.grenade_launcher.tooltip=Change the properties of the Grenade Launcher
+config.cgm.server.guns.bazooka=Bazooka
+config.cgm.server.guns.bazooka.tooltip=Change the properties of the Bazooka
+config.cgm.server.guns.chain_gun=Minigun
+config.cgm.server.guns.chain_gun.tooltip=Change the properties of the Minigun
+config.cgm.server.guns.assault_rifle=Assault Rifle
+config.cgm.server.guns.assault_rifle.tooltip=Change the properties of the Assault Rifle
+
+config.cgm.gun.general=General
+config.cgm.gun.general.tooltip=Change general properties of the gun
+config.cgm.gun.general.max_ammo=Max Ammo
+config.cgm.gun.general.max_ammo.tooltip=The maximum amount of ammo this gun can hold
+config.cgm.gun.general.reload_speed=Reload Speed
+config.cgm.gun.general.reload_speed.tooltip=The amount of bullets added to the gun on each reload
+
+config.cgm.gun.projectile=Projectile
+config.cgm.gun.projectile.tooltip=Change the properties of the projectile fired from the gun
+config.cgm.gun.projectile.visible=Visible
+config.cgm.gun.projectile.visible.tooltip=If true, will render the projectile. This is disabled for fast projectiles because of rendering issues
+config.cgm.gun.projectile.damage=Damage
+config.cgm.gun.projectile.damage.tooltip=The damage this gun will cause. Each value is equivalent to half a heart.
+config.cgm.gun.projectile.size=Size
+config.cgm.gun.projectile.size.tooltip=The amount of bullets added to the gun on each reload
+config.cgm.gun.projectile.speed=Speed
+config.cgm.gun.projectile.speed.tooltip=The amount of bullets added to the gun on each reload
+config.cgm.gun.projectile.life=Life
+config.cgm.gun.projectile.life.tooltip=The amount of ticks before the projectile is removed for the world
+config.cgm.gun.projectile.gravity=Gravity
+config.cgm.gun.projectile.gravity.tooltip=If true, the projectile will be affected by gravity and drop
+config.cgm.gun.projectile.damage_fall_off=Damage Falloff
+config.cgm.gun.projectile.damage_fall_off.tooltip=If true, the damage of the gun will reduce the further the target is away
+config.cgm.gun.projectile.damage_reduce_zoomed=Damage Reduced Not Zoomed
+config.cgm.gun.projectile.damage_reduce_zoomed.tooltip=If true, the damage of the gun will be reduced if not zoomed
 
 key.categories.gun=MrCrayfish's Gun Mod
 key.aim=Aim
