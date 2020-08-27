@@ -51,4 +51,4 @@ jobs:
       run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
     - name: Run Uploader
-      run: .\Uploader ${{ secrets.SSH_IP }} ${{ secrets.SSH_USER }} ${{ secrets.PASSWORD }}
+      run: .\Uploader ${{ secrets.SSH_IP }} ${{ secrets.SSH_USER }} ${{ secrets.SSH_PWD }}
