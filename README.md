@@ -3,7 +3,7 @@
 
 | CurseForge 下载量 | 支持版本 | 翻译进度 | Github Actions | 最新快照版本 |
 | :--: | :--: | :--: | :--: | :--: |
-| [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) | [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)  | ![weblate](https://weblate.exz.me/widgets/langpack/-/svg-badge.svg) | ![Packer](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/workflows/Packer/badge.svg?branch=1.12.2) | [![GitHub release](https://img.shields.io/github/release/CFPAOrg/Minecraft-Mod-Language-Package.svg)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) |
+| [![CurseForge](http://cf.way2muchnoise.eu/full_simplified-chinese-localization-resource-package_downloads.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) | [![CurseForge](http://cf.way2muchnoise.eu/versions/simplified-chinese-localization-resource-package.svg)](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package)  | ![weblate](https://weblate-t.exz.me/widgets/langpack/-/svg-badge.svg) | ![Packer](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/workflows/Packer/badge.svg?branch=1.12.2) | [![GitHub release](https://img.shields.io/github/release/CFPAOrg/Minecraft-Mod-Language-Package.svg)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) |
 
 ## 仓库说明
 
@@ -23,13 +23,13 @@
 ## 使用方式
 
 点击 [此处](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) 可打开 CurseForge 页面下载 release 版本资源包。<br>
-点击 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) 可以下载快照版本资源包（推荐下载不带 Lite 的版本）。<br>
+点击 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) 可以下载快照版本资源包。<br>
 只需要像**普通材质包**一样，在游戏中加载上该资源包，即可拥有汉化。建议装上该资源包后重启游戏，以避免出现其他问题。
 
 ## 相关信息
 
 **目前的翻译计划是什么样的呢？我可以递交想翻译的列表么？**<br>
-目前已根据在 CurseForge 网站上的受欢迎程度，选取了 1.12.2 版本下载了 600 多个模组。如果你有什么想要额外添加翻译的模组，可以通过我们的 [问题追踪器](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues) 递交意见，或者直接通过邮箱递交意见或建议。<br>
+目前已根据在 CurseForge 网站上的受欢迎程度，选取了 1.12.2 版本下载了 1000 多个模组。如果你有什么想要额外添加翻译的模组，可以通过我们的 [问题追踪器](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues) 递交意见，或者直接通过邮箱递交意见或建议。<br>
 其他版本目前还暂时没有涉足计划（不过 1.7.10 应该是不会做了）。
 
 关于具体的宣传，可以参见 [MCBBS 推广宣传帖](http://www.mcbbs.net/thread-774087-1-1.html)；
@@ -49,10 +49,11 @@ emmmm，原理其实很简单。<br>
 ## 鸣谢
 
 感谢 `phi` 搭建出了 Weblate 服务器，还实现了机翻功能；<br>
+感谢 `Summpot`，`Nullpinter` 制作了新版本的 C# 爬虫；<br>
 感谢 `PeakXing` 制作的 logo；<br>
 感谢 `雪尼`、`FledgeXu`、`asdflj` 等在内的诸多人的意见和建议；<br>
-感谢 `雪尼`、`yuanjie000` 对 weblate 管理的维护和帮助； 感谢`卡米西村`各位提供的技术支持和服务器，能够使爬虫运行。<br>
-感谢本项目的最初贡献者 `Aemande123`，`DYColdWind`，`Snownee`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`，`luckyu19` 提供的汉化。（排名不分先后）<br>
+感谢 `雪尼`、对 weblate 管理的维护和帮助； <br>
+感谢本项目的最初贡献者 `Aemande123`，`DYColdWind`，`Snownee`，`yuanjie000`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`，`luckyu19` 提供的汉化。（排名不分先后）<br>
 感谢玩家 `R_liu` 提供的拔刀剑本地化；<br>
 资源包中镶嵌了 `3TUSK` 提供的 [全角标点修复文件](./project/assets/minecraft/readme.md)；<br>
 最后感谢那些参与翻译，并致力于本地化推广的各位玩家，你们辛苦了。<br>
