@@ -81,7 +81,7 @@ namespace Processor
                             {
                                 if (configuration.VersionList[0] == "1.12.2")
                                 {
-                                    if (Path.GetExtension(zipArchiveEntry.Name) == "lang")
+                                    if (Path.GetExtension(zipArchiveEntry.Name) == ".lang")
                                     {
                                         if (zipArchiveEntry.Name.ToLower().Contains("en_us.lang", StringComparison.OrdinalIgnoreCase))
                                         {
@@ -140,7 +140,7 @@ namespace Processor
                                 }
                                 else
                                 {
-                                    if (Path.GetExtension(zipArchiveEntry.Name) == "json")
+                                    if (Path.GetExtension(zipArchiveEntry.Name) == ".json")
                                     {
                                         if (zipArchiveEntry.Name.ToLower().Contains("en_us.json", StringComparison.OrdinalIgnoreCase))
                                         {
