@@ -24,7 +24,9 @@ namespace Uploader
             }
             var fs = File.OpenRead("./Minecraft-Mod-Language-Package.zip");
             client.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack.zip");
+            Console.WriteLine("上传成功");
             client.Disconnect();
+            return;
         }
     }
 }
