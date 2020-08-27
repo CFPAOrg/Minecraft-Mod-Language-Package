@@ -5,4 +5,4 @@
 
 - 原作者：3TUSK
 - 原帖地址：http://blog.tritusk.info/index.php/archives/8/
-- Github：https://github.com/Team-AbCiv/FullwidthPunctuationFix
+- Github：https://github.com/3TUSK/PanI18n
