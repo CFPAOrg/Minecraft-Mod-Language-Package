@@ -63,9 +63,9 @@ jobs:
     - name: SCP Command use Powershell
       run: |
         Install-Module -Name Posh-SSH -Force
-        $username = ${{ secrets.SSH_USER }}
-        $password = ${{ secrets.PASSWORD }}
+        $username = "${{ secrets.SSH_USER }}"
+        $password = "${{ secrets.PASSWORD }}"
         $secure = $password | ConvertTo-SecureString -AsPlainText -Force
         $cred = New-Object System.Management.Automation.PSCredential($username,$secure)
-        Set-SCPFile -ComputerName ${{ secrets.SSH_IP }} -Credential $cred -RemotePath "/var/www/html/files/" -LocalFile '/Minecraft-Mod-Language-Package.zip'
+        Set-SCPFile -ComputerName "${{ secrets.SSH_IP }}" -Credential $cred -RemotePath "/var/www/html/files/" -LocalFile '/Minecraft-Mod-Language-Package.zip'
       shell: pwsh
