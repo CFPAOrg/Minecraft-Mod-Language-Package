@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.IO;
 using System.IO.Compression;
 using System.Text.Json;
@@ -47,6 +48,11 @@ namespace Packer
                     Log.Warning("检测到 asset-domain 与 {0} 重合", existingModids[id]);
                     foreach(var file in asset.assetPath.EnumerateFiles("*", SearchOption.AllDirectories))
                     {
+                        if (file.FullName.Contains("en_us", StringComparison.OrdinalIgnoreCase))
+                        {
+                            Log.Information("跳过了英文原文：{0}", file.FullName[(asset.prefixLength + 1)..]);
+                            continue;
+                        }
                         var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}";
                         var existingFile = archive.GetEntry(destinationPath);
                         if(existingFile is null) // null 代表没有找到文件，也就是该文件没有重合
@@ -69,13 +75,20 @@ namespace Packer
                 {
                     foreach (var file in asset.assetPath.EnumerateFiles("*", SearchOption.AllDirectories))
                     {
+                        if (file.FullName.Contains("en_us", StringComparison.OrdinalIgnoreCase))
+                        {
+                            Log.Information("跳过了英文原文：{0}", file.FullName[(asset.prefixLength + 1)..]);
+                            continue;
+                        }
                         var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}";
                         archive.CreateEntryFromFile(file.FullName, destinationPath);
                         Log.Information("添加了 {0}", destinationPath);
                     }
+                    Log.Information("向 asset-domain 映射表中加入：{0} -> {1}", id, name);
                     existingModids.Add(id, name);
                 }
             }
+            Log.Information("打包结束");
         }
 
         static void InitializeArchive(ZipArchive archive, Config config)
