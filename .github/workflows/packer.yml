@@ -20,8 +20,8 @@ jobs:
     
     - name: Create timestamp
       id: create_timestamp
-      run: Get-Date -Format "yyyyMMddHHmmss"
-      shell: pwsh
+      run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%S')"
+      shell: sh
 
      # Create the release:  https://github.com/actions/create-release
     - name: Create release
@@ -47,15 +47,24 @@ jobs:
         asset_name: Minecraft-Mod-Language-Package.zip
         asset_content_type: application/zip
 
-    # Does this still work?
-    - name: SCP Command to Transfer Files
-      uses: appleboy/scp-action@v0.0.6
-      with:
-        host: 115.231.219.184 
-        port: 22
-        username: root
-        password: ${{secrets.password}}
-        target: /var/www/html/files/
-        source: ./*.zip
-        rm: false
-        overwrite: true
+    # # Does this still work?
+    # - name: SCP Command to Transfer Files
+    #   uses: appleboy/scp-action@v0.0.6
+    #   with:
+    #     host: 115.231.219.184 
+    #     port: 22
+    #     username: root
+    #     password: ${{secrets.password}}
+    #     target: /var/www/html/files/
+    #     source: ./*.zip
+    #     rm: false
+    #     overwrite: true
+
+    - name: SCP Command use Powershell
+      run:
+        Install-Module -Name Posh-SSH
+        $User = "115.231.219.184\root"
+        $PWord = ConvertTo-SecureString -String ${{secrets.password}} -AsPlainText -Force
+        $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
+        Set-SCPFile -ComputerName '115.231.219.184' -Credential $Credential -RemotePath "/var/www/html/files/" -LocalFile './Minecraft-Mod-Language-Package.zip'
+      shell: pwsh
