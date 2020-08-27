@@ -1,7 +1,7 @@
 name: Processor-update
 
 on: 
-  push:
+  #push:
       #branches: [ 1.12.2 ]
       #paths-ignore: '**/*nfo.json'
   schedule:
@@ -18,7 +18,7 @@ jobs:
         run: dotnet publish .\src\Processor\Processor.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
       - name: Run processor
-        run: .\Processor --update --Ce
+        run: .\Processor --update
 
       - name: Push  to github repo
         if: ${{github.event}} == 'push'
