@@ -53,7 +53,7 @@ namespace Packer
                             Log.Information("跳过了英文原文：{0}", file.FullName[(asset.prefixLength + 1)..]);
                             continue;
                         }
-                        var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}";
+                        var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}".ToLower();
                         var existingFile = archive.GetEntry(destinationPath);
                         if(existingFile is null) // null 代表没有找到文件，也就是该文件没有重合
                         {
@@ -62,7 +62,7 @@ namespace Packer
                         }
                         else
                         {
-                            Log.Information("检测到重合文件：{0}", destinationPath);
+                            Log.Warning("检测到重合文件：{0}", destinationPath);
                             using var reader = File.OpenRead(file.FullName);
                             using var writer = existingFile.Open();
                             writer.Seek(0, SeekOrigin.End); // 置于末尾
@@ -80,7 +80,7 @@ namespace Packer
                             Log.Information("跳过了英文原文：{0}", file.FullName[(asset.prefixLength + 1)..]);
                             continue;
                         }
-                        var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}";
+                        var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}".ToLower();
                         archive.CreateEntryFromFile(file.FullName, destinationPath);
                         Log.Information("添加了 {0}", destinationPath);
                     }
@@ -93,12 +93,14 @@ namespace Packer
 
         static void InitializeArchive(ZipArchive archive, Config config)
         {
+            Log.Information("开始初始化压缩包");
             string common = $".\\projects\\{config.Version}";
             new List<string>() { "LICENSE", "pack.mcmeta", "pack.png", "README.md" }.ForEach(_ =>
               {
                   Log.Information("初始化压缩包：添加 {0}", _);
                   archive.CreateEntryFromFile($"{common}\\{_}", _);
               });
+            Log.Information("初始化完成");
         }
 
         static Config RetrieveConfig()
