@@ -48,10 +48,10 @@ emmmm，原理其实很简单。<br>
 ## 鸣谢
 
 感谢 `phi` 搭建出了 Weblate 服务器，还实现了机翻功能；<br>
- 感谢 `Summpot`，`Nullpinter` 制作了新版本的 C# 爬虫；<br>
- 感谢 `PeakXing` 制作的 logo；<br>
- 感谢 `雪尼`、`FledgeXu`、`asdflj` 等在内的诸多人的意见和建议；<br>
- 感谢本项目的最初贡献者 `Aemande123`，`DYColdWind`，`Snownee`，`yuanjie000`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`，`luckyu19` 提供的汉化。（排名不分先后）<br>
+感谢 `Summpot`，`Nullpinter` 制作了新版本的 C# 爬虫；<br>
+感谢 `PeakXing` 制作的 logo；<br>
+感谢 `雪尼`、`FledgeXu`、`asdflj` 等在内的诸多人的意见和建议；<br>
+感谢本项目的最初贡献者 `Aemande123`，`DYColdWind`，`Snownee`，`yuanjie000`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`，`luckyu19` 提供的汉化。（排名不分先后）<br>
 感谢玩家 `R_liu` 提供的拔刀剑本地化；<br>
 资源包中镶嵌了 `3TUSK` 提供的 [全角标点修复文件](./project/assets/minecraft/readme.md)；<br>
 最后感谢那些参与翻译，并致力于本地化推广的各位玩家，你们辛苦了。<br>
