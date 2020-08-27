@@ -61,7 +61,7 @@ jobs:
     #     overwrite: true
 
     - name: SCP Command use Powershell
-      run:
+      run: |
         Install-Module -Name Posh-SSH
         $User = "115.231.219.184\root"
         $PWord = ConvertTo-SecureString -String ${{secrets.password}} -AsPlainText -Force
