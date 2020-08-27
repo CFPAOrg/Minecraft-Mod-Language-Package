@@ -79,23 +79,97 @@ namespace Processor
                         {
                             if (zipArchiveEntry.FullName.Contains($"assets/{domain}/lang/") && zipArchiveEntry.FullName != $"assets/{domain}/lang/")
                             {
-                                if (zipArchiveEntry.Name.ToLower() == "en_us.lang" || zipArchiveEntry.Name.ToLower() == "en_us.json")
+                                if (configuration.VersionList[0] == "1.12.2")
                                 {
-                                    //Console.WriteLine(zipArchiveEntry.FullName);
-                                    if (!Directory.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang")))
+                                    if (zipArchiveEntry.Name.ToLower().Contains("en_us.lang",StringComparison.OrdinalIgnoreCase))
                                     {
-                                        Directory.CreateDirectory(Path.Combine(configuration.CustomSittings.ProjectsFolder,
-                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang"));
-                                    }
+                                        var folder = Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang");
+                                        var name = Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang",
+                                            zipArchiveEntry.Name);
+                                        //Console.WriteLine(zipArchiveEntry.FullName);
+                                        if (!Directory.Exists(folder))
+                                        {
+                                            Directory.CreateDirectory(folder);
+                                        }
 
-                                    if (File.Exists(Path.Combine(configuration.CustomSittings.ProjectsFolder,
-                                        configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name)))
-                                    {
-                                        File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
-                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                        if (File.Exists(name))
+                                        {
+                                            try
+                                            {
+                                                File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                                    configuration.VersionList[0], "assets", pendingMod.Name, domain,
+                                                    "lang", "en_us.lang"));
+                                            }
+                                            finally
+                                            {
+                                                Log.Information($"尝试删除{folder}下的旧文件");
+                                            }
+
+                                            try
+                                            {
+                                                File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                                    configuration.VersionList[0], "assets", pendingMod.Name, domain,
+                                                    "lang", "en_US.lang"));
+                                            }
+                                            finally
+                                            {
+                                                Log.Information($"尝试删除{folder}下的旧文件");
+                                            }
+                                        }
+                                        zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                        File.Move(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name), Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name.ToLower()));
+                                        Log.Logger.Information($"已更新{pendingMod.Name}的英文文件");
                                     }
-                                    zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
-                                    Log.Logger.Information($"已更新{pendingMod.Name}的英文文件");
+                                }
+                                else
+                                {
+                                    if (zipArchiveEntry.Name.ToLower().Contains("en_us.json", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        var folder = Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang");
+                                        var name = Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang",
+                                            zipArchiveEntry.Name);
+                                        //Console.WriteLine(zipArchiveEntry.FullName);
+                                        if (!Directory.Exists(folder))
+                                        {
+                                            Directory.CreateDirectory(folder);
+                                        }
+
+                                        if (File.Exists(name))
+                                        {
+                                            try
+                                            {
+                                                File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                                    configuration.VersionList[0], "assets", pendingMod.Name, domain,
+                                                    "lang", "en_us.json"));
+                                            }
+                                            finally
+                                            {
+                                                Log.Information($"尝试删除{folder}下的旧文件");
+                                            }
+
+                                            try
+                                            {
+                                                File.Delete(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                                    configuration.VersionList[0], "assets", pendingMod.Name, domain,
+                                                    "lang", "en_US.json"));
+                                            }
+                                            finally
+                                            {
+                                                Log.Information($"尝试删除{folder}下的旧文件");
+                                            }
+                                        }
+                                        zipArchiveEntry.ExtractToFile(Path.Combine(configuration.CustomSittings.ProjectsFolder, configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name));
+                                        File.Move(Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name), Path.Combine(configuration.CustomSittings.ProjectsFolder,
+                                            configuration.VersionList[0], "assets", pendingMod.Name, domain, "lang", zipArchiveEntry.Name.ToLower()));
+                                        Log.Logger.Information($"已更新{pendingMod.Name}的英文文件");
+                                    }
                                 }
                             }
                         }
