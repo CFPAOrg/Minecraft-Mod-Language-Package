@@ -91,23 +91,11 @@ namespace Packer
                 }
             }
             Log.Information("打包结束");
-            archive.Dispose();
             Log.Logger.Information("一次压缩完成");
-            try
-            {
-                archive.ExtractToDirectory("./cache");
-                ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package.zip");
-                File.Delete("cache.zip");
-                Directory.Delete("./cache");
-            }
-            catch
-            {
-                Log.Logger.Information("有错误");
-            }
-            finally
-            {
-                Log.Logger.Information("二次压缩完成");
-            }
+            archive.ExtractToDirectory("cache");
+            archive.Dispose();
+            ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package.zip");
+            Log.Logger.Information("二次压缩完成");
         }
 
         static void InitializeArchive(ZipArchive archive, Config config)
