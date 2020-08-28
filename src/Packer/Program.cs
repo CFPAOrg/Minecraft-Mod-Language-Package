@@ -96,11 +96,11 @@ namespace Packer
             try
             {
                 archive.ExtractToDirectory("./cache");
-                ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package.zip");
+                ZipFile.CreateFromDirectory("./cache", "./Minecraft-Mod-Language-Package.zip");
             }
-            catch
+            catch (Exception e)
             {
-                Log.Logger.Information("有错误");
+                Log.Logger.Error(e.Message);
             }
             finally
             {
