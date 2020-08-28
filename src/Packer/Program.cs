@@ -19,7 +19,7 @@ namespace Packer
                 .CreateLogger();
             var config = RetrieveConfig();
             Log.Information("开始打包。版本：{0}", config.Version);
-            using var stream = File.Create(".\\Minecraft-Mod-Language-Package.zip"); // 生成空 zip 文档
+            using var stream = File.Create(".\\cache.zip"); // 生成空 zip 文档
             using var archive = new ZipArchive(stream, ZipArchiveMode.Update);
             InitializeArchive(archive, config);
             var existingModids = new Dictionary<string, string>();
@@ -91,6 +91,21 @@ namespace Packer
                 }
             }
             Log.Information("打包结束");
+            archive.Dispose();
+            Log.Logger.Information("一次压缩完成");
+            try
+            {
+                archive.ExtractToDirectory("./cache");
+                ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package.zip");
+            }
+            catch
+            {
+                Log.Logger.Information("有错误");
+            }
+            finally
+            {
+                Log.Logger.Information("二次压缩完成");
+            }
         }
 
         static void InitializeArchive(ZipArchive archive, Config config)
