@@ -96,11 +96,13 @@ namespace Packer
             try
             {
                 archive.ExtractToDirectory("./cache");
-                ZipFile.CreateFromDirectory("./cache", "./Minecraft-Mod-Language-Package.zip");
+                ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package.zip");
+                File.Delete("cache.zip");
+                Directory.Delete("./cache");
             }
-            catch (Exception e)
+            catch
             {
-                Log.Logger.Error(e.Message);
+                Log.Logger.Information("有错误");
             }
             finally
             {
@@ -115,7 +117,7 @@ namespace Packer
             new List<string>() { "LICENSE", "pack.mcmeta", "pack.png", "README.md" }.ForEach(_ =>
               {
                   Log.Information("初始化压缩包：添加 {0}", _);
-                  archive.CreateEntryFromFile($"{common}\\{_}", _);
+                  archive.CreateEntryFromFile($"{common}\\{_}", _, CompressionLevel.Fastest);
               });
             Log.Information("初始化完成");
         }
