@@ -70,6 +70,12 @@ namespace Processor
                     continue;
                 }
 
+                if (configuration.BlackList.Contains(pendingMod.Name))
+                {
+                    Log.Logger.Information($"跳过：{pendingMod.Name}");
+                    continue;
+                }
+
                 var archive = ZipFile.OpenRead(pendingMod.ModPath);
                 try
                 {

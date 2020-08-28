@@ -8,13 +8,12 @@ namespace Processor
         public static Configuration Debug = new Configuration()
         {
             VersionList = new List<string>() { "1.16.1" },
-            CheckProjectsFolder = true,
-            DownloadModFiles = true,
             CustomSittings = new CustomSittings()
             {
                 ProjectsFolder = @"D:\repos\Minecraft-Mod-Language-Package\projects",
                 RootFolder = @"D:\repos\Minecraft-Mod-Language-Package"
-            }
+            },
+            BlackList = new List<string>(){"114514"}
         };
         [JsonPropertyName("custom_setting")]
         public CustomSittings CustomSittings { get; set; }
@@ -22,11 +21,8 @@ namespace Processor
         [JsonPropertyName("targetVersion")]
         public List<string> VersionList { get; set; }
 
-        [JsonPropertyName("check_project_folder")]
-        public bool CheckProjectsFolder { get; set; }
-
-        [JsonPropertyName("download_mod_files")]
-        public bool DownloadModFiles { get; set; }
+        [JsonPropertyName("black_list")]
+        public List<string> BlackList { get; set; }
     }
 
     public class CustomSittings
