@@ -90,12 +90,12 @@ namespace Packer
                     existingModids.Add(id, name);
                 }
             }
-            Log.Information("一次压缩完成，开始二次压缩");
-            // 神秘 bug：一次压缩出来的文件无法被 minecraft 读取
+            Log.Information("打包结束");
+            Log.Logger.Information("一次压缩完成");
             archive.ExtractToDirectory("cache");
             archive.Dispose();
-            ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-ModPack.zip");
-            Log.Information("二次压缩完成");
+            ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package.zip");
+            Log.Logger.Information("二次压缩完成");
         }
 
         static void InitializeArchive(ZipArchive archive, Config config)
