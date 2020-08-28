@@ -27,6 +27,9 @@ namespace Processor
 
         [JsonPropertyName("download_mod_files")]
         public bool DownloadModFiles { get; set; }
+
+        [JsonPropertyName("black_list")]
+        public List<string> BlackList { get; set; }
     }
 
     public class CustomSittings
