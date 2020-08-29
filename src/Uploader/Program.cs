@@ -11,7 +11,7 @@ namespace Uploader
             var host = args[0];
             var name = args[1];
             var pwd = args[2];
-            using var client = new ScpClient(host, 22, name, pwd);
+            using var client = new ScpClient(host, 12356, name, pwd);
             client.Connect();
             if (client.IsConnected)
             {

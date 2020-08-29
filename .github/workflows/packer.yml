@@ -49,8 +49,8 @@ jobs:
         asset_name: Minecraft-Mod-Language-Package.zip
         asset_content_type: application/zip
 
-    # - name: Build Uploader
-    #   run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+    - name: Build Uploader
+      run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
-    # - name: Run Uploader
-    #   run: .\Uploader ${{ secrets.SSH_IP }} ${{ secrets.SSH_USER }} ${{ secrets.SSH_PWD }}
+    - name: Run Uploader
+      run: .\Uploader ${{ secrets.SSH_IP }} ${{ secrets.SSH_USER }} ${{ secrets.SSH_PWD }}
