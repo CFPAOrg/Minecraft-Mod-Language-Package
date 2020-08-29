@@ -30,10 +30,10 @@ namespace Uploader
             var fs = File.OpenRead("./Minecraft-Mod-Language-Package.zip");
             scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack.zip.1");
             Log.Logger.Information("上传成功");
-            scpClient.Disconnect();
+            scpClient.Dispose();
             using var sshClient = new SshClient(host, 12356, name, pwd);
             sshClient.Connect();
-            if (scpClient.IsConnected)
+            if (sshClient.IsConnected)
             {
                 Log.Logger.Information("SSH服务器连接成功");
             }
@@ -43,11 +43,10 @@ namespace Uploader
                 return;
             }
             using var cmd = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack.zip");
+            cmd.Execute();
             var err = cmd.Error;
-            var output = cmd.Result;
-            Log.Logger.Information(output);
             Log.Logger.Error(err);
-            sshClient.Disconnect();
+            sshClient.Dispose();
         }
     }
 }
