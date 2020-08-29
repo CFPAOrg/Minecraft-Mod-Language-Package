@@ -94,7 +94,7 @@ namespace Packer
             Log.Logger.Information("一次压缩完成");
             archive.ExtractToDirectory("cache");
             archive.Dispose();
-            ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package.zip");
+            ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package-1-16.zip");
             Log.Logger.Information("二次压缩完成");
         }
 

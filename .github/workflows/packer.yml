@@ -44,13 +44,13 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}  # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: Minecraft-Mod-Language-Package.zip  # Use the full path here because environment variables are not in scope
-        asset_name: Minecraft-Mod-Language-Package.zip
+        asset_path: Minecraft-Mod-Language-Package-1-16.zip  # Use the full path here because environment variables are not in scope
+        asset_name: Minecraft-Mod-Language-Package-1-16.zip
         asset_content_type: application/zip
 
-    # Doesn't do so now because it messes up the server
-    # - name: Build Uploader
-    #   run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+    Doesn't do so now because it messes up the server
+    - name: Build Uploader
+      run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
-    # - name: Run Uploader
-    #   run: .\Uploader ${{ secrets.SSH_IP }} ${{ secrets.SSH_USER }} ${{ secrets.SSH_PWD }}
+    - name: Run Uploader
+      run: .\Uploader ${{ secrets.SSH_IP }} ${{ secrets.SSH_USER }} ${{ secrets.SSH_PWD }}
