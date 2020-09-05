@@ -19,7 +19,7 @@ namespace Packer
                 .CreateLogger();
             var config = RetrieveConfig();
             Log.Information("开始打包。版本：{0}", config.Version);
-            using var stream = File.Create(".\\cache.zip"); // 生成空 zip 文档
+            using var stream = File.Create(".\\cache22222.zip"); // 生成空 zip 文档
             using var archive = new ZipArchive(stream, ZipArchiveMode.Update);
             InitializeArchive(archive, config);
             var existingModids = new Dictionary<string, string>();
@@ -32,8 +32,8 @@ namespace Packer
                         name = _.Name,
                         assetPath = descend,
                         prefixLength = _.FullName.Length
-                    }
-                ));
+                    })
+                );
             foreach (var asset in assetsToBePacked)
             {
                 if(asset is null)
@@ -54,7 +54,8 @@ namespace Packer
                             continue;
                         }
                         var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}"
-                            .Replace("zh_CN", "zh_cn"); // 修复大小写
+                            .Replace("zh_CN", "zh_cn") // 修复大小写
+                            .Replace('\\', '/'); // 修复 Java 平台读取 CentralDirectory 部分时正反斜杠的问题
                         var existingFile = archive.GetEntry(destinationPath);
                         if(existingFile is null) // null 代表没有找到文件，也就是该文件没有重合
                         {
@@ -82,7 +83,8 @@ namespace Packer
                             continue;
                         }
                         var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}"
-                            .Replace("zh_CN", "zh_cn"); // 修复大小写
+                            .Replace("zh_CN", "zh_cn") // 修复大小写
+                            .Replace('\\', '/'); // 修复 Java 平台读取 CentralDirectory 部分时正反斜杠的问题
                         archive.CreateEntryFromFile(file.FullName, destinationPath);
                         Log.Information("添加了 {0}", destinationPath);
                     }
@@ -91,11 +93,6 @@ namespace Packer
                 }
             }
             Log.Information("打包结束");
-            Log.Logger.Information("一次压缩完成");
-            archive.ExtractToDirectory("cache");
-            archive.Dispose();
-            ZipFile.CreateFromDirectory("./cache", "Minecraft-Mod-Language-Package.zip");
-            Log.Logger.Information("二次压缩完成");
         }
 
         static void InitializeArchive(ZipArchive archive, Config config)
