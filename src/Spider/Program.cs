@@ -1,8 +1,7 @@
-﻿using System;
-using Serilog;
+﻿using Serilog;
 
 namespace Spider {
-    class Program {
+    static class Program {
         static void Main(string[] args) {
             Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         }
