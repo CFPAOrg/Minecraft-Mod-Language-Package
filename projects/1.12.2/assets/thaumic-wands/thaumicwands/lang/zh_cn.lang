@@ -1,5 +1,7 @@
 # --- Items ---
 
+item.item_primal_charm.name=元始护身符
+
 #Wand Rods
 item_wand_rod_greatwood.name=宏伟之木杖柄
 item_wand_rod_reed.name=甘蔗杖柄
@@ -10,7 +12,7 @@ item_wand_rod_quartz.name=石英杖柄
 item_wand_rod_bone.name=白骨杖柄
 item_wand_rod_silverwood.name=银木杖柄
 
-item_wand_rod_ta_adaminitewood.name= 鎏金木杖柄
+item_wand_rod_ta_adaminitewood.name=鎏金木杖柄
 
 #Wand Caps
 item_wand_cap_iron.name=铁杖端
@@ -30,8 +32,13 @@ item_wand_cap_ta_adaminite.name=充能精金杖端
 item_wand_cap_ta_mithminite_inert.name=惰性寒晶杖端
 item_wand_cap_ta_mithminite.name=充能寒晶杖端
 
+item_wand_cap_tb_thauminite.name=秘晶杖端
+
+item_wand_cap_pa_alkimium.name=炼化杖端
+
+
 # this is what is used to name the wand - the position of the variables can be altered so it makes more sense in other languages
-item.wand.name=%CAP %ROD %OBJ
+item.wand.name=%CAP%ROD%OBJ
 #
 item.wand.wand.obj=法杖
 item.wand.sceptre.obj=权杖
@@ -57,6 +64,11 @@ item.wand.void.cap=虚空侵蚀
 item.wand.mithrillium.cap=寒晶谐律
 item.wand.adaminite.cap=精金华饰
 item.wand.mithminite.cap=秘银闪耀
+
+item.wand.thauminite.cap=秘晶浮雕
+
+item.wand.alkimium.cap=炼化冠冕
+
 #
 
 # --- Inventory ---
@@ -64,7 +76,7 @@ tw.crystal.discount=水晶消耗减免:
 #
 
 # --- Research ---
-tc.research_category.THAUMATURGY=秘术学
+tc.research_category.THAUMATURGY=神秘学
 
 # -- Cards -- 
 
@@ -87,9 +99,13 @@ research.UNLOCKTHAUMATURGY.stage.1=尽管我不能够在制作引导工具时向
 research.BASETHAUMATURGY.stage.0=有了法杖，我就可以制造一些奥术设备了，但我有点怀疑这根法杖是否够用，也许我应该研究一下其它可用来制作法杖的材料。
 research.BASETHAUMATURGY.addendum.0=我意识到，我制作的这些法术核心不仅能够装在法师护手上，还能直接装在法杖的杖端上。有趣的是，装载在法杖上的法术核心不再从周围的灵气场中调用灵气，而是抽取法杖中的灵气使用。在某些情况下，这会很有用。
 
+# Primal Charm
+research.PRIMALCHARM.stage.0=尽管我没办法从周围的灵气场中汲取灵气，但我发现我可以吸收那些掉落在地上的，宛如尘埃一般的细小灵气球。然而，虽然灵气场中的灵气难以吸取，但总会有那么一丝的可能能够让其屈服于我，为我的法杖所用，我想我应该制造出一台设备，帮助我吸取那些可被操控的灵气。
+research.PRIMALCHARM.stage.1=我制造出了一台小设备，这个小设备基本上就是一台增强型灵气调谐器。它可以从所包含的灵气结晶的振荡中创建灵气反馈循环，将附近灵气转化为浓缩的灵气球，而这些灵气球便可被法杖收集了。 
+
 # Copper Caps
 research.CAP_COPPER.stage.0=这些工程师们使用金属来制造他们那些愚蠢的机器，又或者制作成一根根线，来传导他们称为“能量（flux）”的东西（这些蠢货可能根本不知道他们所谈论的东西是什么），我想，要是金属也能够传导灵气就好了。
-research.CAP_COPPER.stage.1=要是那些工程师们知道他们手中的东西究竟是何物的话...<BR> 这种金属，在传导Vis的性能上并不优于铁，但它有着一些有趣的性质。有时这一法杖输出的灵气会出现明显的 §7秩序§r 以及 §8混沌§r 要素偏向，这会使得在制作过程中，对应的两种灵气水晶的消耗量会降低。
+research.CAP_COPPER.stage.1=要是那些工程师们知道他们手中的东西究竟是何物的话...<BR> 这种金属，在传导Vis的性能上并不优于铁，但它有着一些有趣的性质。有时这一法杖输出的灵气会出现明显的 §7Ordo§r 以及 §8Perditio§r 要素偏向，这会使得在制作过程中，对应的两种灵气水晶的消耗量会降低。
 
 # Brass Caps
 research.CAP_BRASS.stage.0=这种金属似乎在引导灵气的能力上要优于铁，所以我为什么不把这种炼金黄铜制作为杖端呢？
@@ -109,30 +125,30 @@ research.CAP_VOID.stage.1=我成功了，我真的成功了。向杖端中注入
 
 # Greatwood Rod
 research.ROD_GREATWOOD.stage.0=在我的旅途中，我曾遇到过一颗与其它的树不太相同的树，我的法杖已经是木质的了，但这种木头看起来魔力充盈，我或许可以使用这种木头来制作杖柄。
-research.ROD_GREATWOOD.stage.1=宏伟之木确实很不错，耗费一些魔力以及§8混沌§r魔力水晶，我便能将其制作为杖柄，这种杖柄可比原来的木质杖柄好太多了。它能够容纳200点vis，新的灵气量，新的可能。但这应该还不是终点，因为最近我还发现了其它可用来制作杖柄的树。
+research.ROD_GREATWOOD.stage.1=宏伟之木确实很不错，耗费一些魔力以及 §8Perditio§r 魔力水晶，我便能将其制作为杖柄，这种杖柄可比原来的木质杖柄好太多了。它能够容纳200点vis，新的灵气量，新的可能。但这应该还不是终点，因为最近我还发现了其它可用来制作杖柄的树。
 
 # Reed Rod
-research.ROD_REED.stage.0=我有了个新想法，试试甘蔗怎么样？甘蔗能够天然地与 §e风§r 要素亲和，用甘蔗制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
+research.ROD_REED.stage.0=我有了个新想法，试试甘蔗怎么样？甘蔗能够天然地与 §eAer§r 要素亲和，用甘蔗制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
 research.ROD_REED.stage.1=有趣极了，经过奥术注魔的甘蔗足足可以容纳600点的vis，这可远超过宏伟之木的容纳量，而且奇妙的是，当我拿着这根杖柄且站得足够高时，我能感觉到它散发出的一种奇妙谐振，如果我再向上探索到足够高的地方，会发生些什么？
 
 # Blaze Rod
-research.ROD_BLAZE.stage.0=我有了个新想法，试试烈焰棒怎么样？烈焰棒能够天然地与 §6火§r 元素亲和，而且它的形状与杖柄很像，这种杖柄或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
+research.ROD_BLAZE.stage.0=我有了个新想法，试试烈焰棒怎么样？烈焰棒能够天然地与 §6Ignis§r 元素亲和，而且它的形状与杖柄很像，这种杖柄或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
 research.ROD_BLAZE.stage.1=有趣极了，经过奥术注魔的烈焰棒足足可以容纳600点的vis，这可远超过宏伟之木的容纳量，而且奇妙的是，当我拿着这根杖柄且靠近熔炉时，我能感觉到它散发出的一种奇妙谐振，如果我再将其放到足够热的地方，会发生些什么？
 
 # Ice Rod
-research.ROD_ICE.stage.0==我有了个新想法，试试冰怎么样？冰能够天然地与 §9水§r 要素亲和，用冰制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
+research.ROD_ICE.stage.0==我有了个新想法，试试冰怎么样？冰能够天然地与 §9Aqua§r 要素亲和，用冰制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
 research.ROD_ICE.stage.1=有趣极了，经过奥术注魔的冰足足可以容纳600点的vis，这可远超过宏伟之木的容纳量，而且奇妙的是，当我拿着这根杖柄且靠近雪时，我能感觉到它散发出的一种奇妙谐振，如果我再将其放到足够冷的地方，会发生些什么？
 
 # Obsidian Rod
-research.ROD_OBSIDIAN.stage.0=我有了个新想法，试试黑曜石怎么样？黑曜石能够天然地与 §2大地§r 要素亲和，用黑曜石制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
-research.ROD_OBSIDIAN.stage.1=有趣极了，经过奥术注魔的黑曜石足足可以容纳600点的vis，这可远超过宏伟之木的容纳量，而且奇妙的是，当我拿着这根杖柄且靠近地下时，我能感觉到它散发出的一种奇妙谐振，如果我再将其放到足够地的地方，会发生些什么？
+research.ROD_OBSIDIAN.stage.0=我有了个新想法，试试黑曜石怎么样？黑曜石能够天然地与 §2Terra§r 要素亲和，用黑曜石制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
+research.ROD_OBSIDIAN.stage.1=有趣极了，经过奥术注魔的黑曜石足足可以容纳600点的vis，这可远超过宏伟之木的容纳量，而且奇妙的是，当我拿着这根杖柄且靠近地下时，我能感觉到它散发出的一种奇妙谐振，如果我再将其放到足够低的地方，会发生些什么？
 
 # Quartz Rod
-research.ROD_QUARTZ.stage.0=我有了个新想法，试试石英怎么样？石英能够天然地与 §f秩序§r 要素亲和，用石英制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
+research.ROD_QUARTZ.stage.0=我有了个新想法，试试石英怎么样？石英能够天然地与 §fOrdo§r 要素亲和，用石英制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
 research.ROD_QUARTZ.stage.1=有趣极了，经过奥术注魔的石英足足可以容纳600点的vis，这可远超过宏伟之木的容纳量。
 
 # Bone Rod
-research.ROD_BONE.stage.0=我有了个新想法，试试骨头怎么样？骨头能够天然地与 §8混沌§r 要素亲和，用骨头制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
+research.ROD_BONE.stage.0=我有了个新想法，试试骨头怎么样？骨头能够天然地与 §8Perditio§r 要素亲和，用骨头制作出的法杖或许在某些方面很有用。研究这玩意儿可能要花点时间，但我对这种新型材料充满信心。
 research.ROD_BONE.stage.1=有趣极了，经过奥术注魔的骨头足足可以容纳600点的vis，这可远超过宏伟之木的容纳量。
 
 #Silverwood ROD
@@ -151,3 +167,15 @@ research.ROD_ADAMINITEWOOD.stage.1=通过向一根普通的银木杖端内注入
 
 research.CAP_MITHMINITE.stage.0=最终还是来了，这种金属内部充满了原始能量，我根本无法测量出它对灵气的操控性为几何。但我不在乎为什么它这么强大，我只想将它制作为我的杖端，我从未如此渴望过去做一件事。
 research.CAP_MITHMINITE.stage.1=我是不是傻了，居然想着用这些愚蠢的世界盐来与杖端进行反应。我向杖端中注入了我能找来的最纯净的原始能量，很昂贵，但是真的太值了，40%的灵气减免，3的水晶消耗减免，我感觉我还能继续研究，但我终究走到了这条路的尽头。
+
+# - Thaumic Bases -
+
+#Thauminite Caps
+research.CAP_THAUMINITE.stage.0=这种材料与神秘锭颇为相似，但它更为的晶莹剔透，且其内在结构更为的稳定。将这种材料制作成杖端估计不是什么难事。
+research.CAP_THAUMINITE.stage.1=好吧，这可比我想象中的还要简单。在铸造过程中甚至不需要注魔，只需要一些世界盐即可。这种杖端有着 15% 的灵气减免，以及 1 的 §7Ordo§r水晶消耗减免，这买卖可真是划得来。
+
+# - Planar Artifice -
+
+#Alkimium Caps
+research.CAP_ALKIMIUM.stage.0=从我发现了炼化金属之后，我就开始大量地使用它来替换黄铜。现在，也是时候用它换掉我的黄铜杖端了。
+research.CAP_ALKIMIUM.stage.1=由于它仅是黄铜的一种派生金属，所以我最初其实并没有对它抱有太高的期望。然而我没料到，它居然能和多种要素发生谐振。 <br> 它不仅有着 5% 的灵气减免，还有着 1 的 §3Aqua§r，§2Terra§r以及§7Ordo§r水晶消耗减免，真是妙极了。 
