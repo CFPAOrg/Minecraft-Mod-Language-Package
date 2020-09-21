@@ -1,0 +1,37 @@
+{
+  "name": "Warding Protection",
+  "icon": "roots:ritual_warding_protection",
+  "category": "rituals",
+  "advancement": "roots:stalicripe",
+  "flag": "roots:ritual_warding_protection",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Prevents injury to those near the ritual.$(br2)$(standing_stones) $(l:rituals/ritual_warding_protection#multiblock)This ritual requires standing stones.$()"
+    },
+    {
+      "type": "pyre_template",
+      "ritual": "ritual_warding_protection"
+    },
+    {
+      "type": "multiblock",
+      "anchor": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:bonfire",
+          "R": "roots:runestone",
+          "C": "roots:chiseled_runestone"
+        },
+        "pattern": [
+          ["       "," C   C ","       ","       ","       ","   C   ","       "],
+          ["   C   "," R   R ","       ","C     C","       ","   R   ","       "],
+          ["   R   "," R   R ","       ","R     R","       ","   R   ","       "],
+          ["   R   "," R   R ","       ","R  0  R","       ","   R   ","       "]
+        ]
+      }
+    },
+    { "type": "text",
+      "text": "It is not necessary for the standing stones to be in this exact configuration, merely that they be present."
+    }
+  ]
+}

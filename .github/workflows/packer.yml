@@ -1,20 +1,24 @@
 name: Packer
-
+# Merely edited
 on:
   push:
-    branches: [ 1.12.2 ]
+    branches: [ main ]
+    #paths: 
+    #- "projects/**"
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 1
-    - name: Pack files
-      id: pack_files
-      run: ./packer.ps1
-      shell: pwsh
+
+    - name: Build Packer
+      run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+
+    - name: Run Packer
+      run: .\Packer
     
     - name: Create timestamp
       id: create_timestamp
@@ -41,18 +45,12 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}  # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-        asset_path: Minecraft-Mod-Language-Modpack.zip  # Use the full path here because environment variables are not in scope
-        asset_name: Minecraft-Mod-Language-Modpack.zip
+        asset_path: Minecraft-Mod-Language-Package.zip  # Use the full path here because environment variables are not in scope
+        asset_name: Minecraft-Mod-Language-Package.zip
         asset_content_type: application/zip
 
-    - name: SCP Command to Transfer Files
-      uses: appleboy/scp-action@v0.0.6
-      with:
-        host: 115.231.219.184 
-        port: 22
-        username: root
-        password: ${{secrets.password}}
-        target: /var/www/html/files/
-        source: ./*.zip
-        rm: false
-        overwrite: true
+    - name: Build Uploader
+      run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+
+    - name: Run Uploader
+      run: .\Uploader ${{ secrets.SSH_IP }} ${{ secrets.SSH_USER }} ${{ secrets.SSH_PWD }}
