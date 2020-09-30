@@ -11,6 +11,6 @@ namespace Spider {
     }
 
     public class DownloadMod : ModBase {
-        public string ModPath { get; set; }
+        [JsonIgnore]public string ModPath { get; set; }
     }
 }
