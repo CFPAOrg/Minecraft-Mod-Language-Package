@@ -641,6 +641,7 @@ tile.block_painted_packed_ice_solid.name=Painted Packed Ice
 tile.block_painted_slab.name=Painted Slab
 tile.block_painted_stair.name=Painted Stairs
 tile.block_painted_stone.name=Painted Cobblestone
+tile.block_painted_sand.name=Painted Sand
 tile.block_painted_stone_double_slab.name=Painted Stone Slab
 tile.block_painted_stone_fence.name=Painted Stone Fence
 tile.block_painted_stone_slab.name=Painted Stone Slab
@@ -879,8 +880,8 @@ enderio.darksteel.upgrade.spoon.tooltip.detailed.line1=Who needs a shovel when y
 enderio.darksteel.upgrade.hoe.name=Fork
 enderio.darksteel.upgrade.hoe.tooltip.detailed.line1=Who needs a hoe when you have a fork...
 
-enderio.darksteel.upgrade.tnt.enabled=Explosive Active
-enderio.darksteel.upgrade.tnt.disabled=Explosive Disabled
+enderio.darksteel.upgrade.tnt.0.enabled=Explosive Active
+enderio.darksteel.upgrade.tnt.0.disabled=Explosive Disabled
 
 enderio.darksteel.upgrade.tnt.0.name=Explosive I
 enderio.darksteel.upgrade.tnt.0.tooltip.detailed.line1=Adds explosive power to the pickaxe, damaging surrounding blocks while mining.
@@ -919,9 +920,6 @@ enderio.darksteel.upgrade.anvil.1.tooltip.detailed.line2=Activate with a hotkey 
 enderio.darksteel.upgrade.anvil.2.name=Pocket Anvil
 enderio.darksteel.upgrade.anvil.2.tooltip.detailed.line1=Provides full anvil functionality and allows editing upgrades of any item in the field.
 enderio.darksteel.upgrade.anvil.2.tooltip.detailed.line2=Activate with a hotkey or by shift-right-clicking any upgradeable item that doesn't do anything else when doing that.
-
-enderio.darksteel.upgrade.step_assist.name=Step Assist
-enderio.darksteel.upgrade.step_assist.tooltip.detailed.line1=Allows you to walk up blocks as if they were stairs.
 
 item.item_dark_steel_upgrade.name=Blank Dark Steel Upgrade
 item.item_dark_steel_upgrade.with=Dark Steel Upgrade "%s"
@@ -1016,13 +1014,15 @@ enderio.darksteel.upgrade.thaumaturge_robes.legs.tooltip.detailed.line1=Vis Disc
 enderio.darksteel.upgrade.thaumaturge_robes.feet.name=Thaumaturge's Boots
 enderio.darksteel.upgrade.thaumaturge_robes.feet.tooltip.detailed.line1=Vis Discount: 2%
 
-enderio.darksteel.upgrade.jump.enabled=Jump Enabled
-enderio.darksteel.upgrade.jump.disabled=Jump Disabled
-
 enderio.darksteel.upgrade.jump_one.name=Jump
 enderio.darksteel.upgrade.jump_one.tooltip.detailed.line1=Increases step and jump height
-enderio.darksteel.upgrade.stepAssist.enabled=Step Assist Active
-enderio.darksteel.upgrade.stepAssist.disabled=Step Assist Disabled
+enderio.darksteel.upgrade.jump_one.enabled=Jump Enabled
+enderio.darksteel.upgrade.jump_one.disabled=Jump Disabled
+
+enderio.darksteel.upgrade.step_assist.name=Step Assist
+enderio.darksteel.upgrade.step_assist.tooltip.detailed.line1=Allows you to walk up blocks as if they were stairs.
+enderio.darksteel.upgrade.step_assist.enabled=Step Assist Active
+enderio.darksteel.upgrade.step_assist.disabled=Step Assist Disabled
 
 enderio.gui.step_assis_unavailable=Step Assist may be disabled by another mod
 
@@ -1036,8 +1036,8 @@ enderio.darksteel.upgrade.jump_three.tooltip.detailed.line2=Allows triple jumps
 
 enderio.darksteel.upgrade.speed_one.name=Speed
 enderio.darksteel.upgrade.speed_one.tooltip.detailed.line1=Increases movement speed
-enderio.darksteel.upgrade.speed.enabled=Speed Active
-enderio.darksteel.upgrade.speed.disabled=Speed Disabled
+enderio.darksteel.upgrade.speed_one.enabled=Speed Active
+enderio.darksteel.upgrade.speed_one.disabled=Speed Disabled
 
 enderio.darksteel.upgrade.speed_two.name=Speed II
 enderio.darksteel.upgrade.speed_two.tooltip.detailed.line1=Increases movement speed
@@ -1052,6 +1052,8 @@ enderio.darksteel.upgrade.nightVision.enabled=Night Vision Enabled
 enderio.darksteel.upgrade.nightVision.disabled=Night Vision Disabled
 
 enderio.darksteel.upgrade.top.name=The One Probe
+enderio.darksteel.upgrade.top.enabled=The One Probe Enabled
+enderio.darksteel.upgrade.top.disabled=The One Probe Disabled
 
 # These are used for the "The One Probe" integration
 enderio.top.action.header.pre=§e
@@ -1059,10 +1061,12 @@ enderio.top.action.header.post=:
 enderio.top.action.none=§4nothing
 
 enderio.top.range.header.pre=§eRange: §f
+enderio.top.range.header.post=
 # enderio.top.range is server-side only
 enderio.top.range=%sx%sx%s
 
 enderio.top.machine.side.pre=§eSide: §f
+enderio.top.machine.side.post=
 enderio.top.machine.side.north=North
 enderio.top.machine.side.south=South
 enderio.top.machine.side.west=West
@@ -1070,17 +1074,21 @@ enderio.top.machine.side.east=East
 enderio.top.machine.side.up=Up
 enderio.top.machine.side.down=Down
 enderio.top.machine.ioMode.pre=§eMode: §f
+enderio.top.machine.ioMode.post=
 enderio.top.machine.outofpower=§4No Power
 enderio.top.machine.active=active
 enderio.top.machine.idle=idle
 
 enderio.top.channel.send.pre=§eSend: §f
+enderio.top.channel.send.post=
 enderio.top.channel.recv.pre=§eRecv: §f
+enderio.top.channel.recv.post=
 enderio.top.channel.none=§7None
 
 enderio.top.progress.outofpower=§4Out of Power
 
 enderio.top.redstone.header.pre=§eCurrently: §f
+enderio.top.redstone.header.post=
 enderio.top.redstone.true=On
 enderio.top.redstone.false=Off
 
@@ -1098,13 +1106,17 @@ enderio.top.suffix.levels=\u0020Levels
 enderio.top.suffix.items=\u0020Items
 enderio.top.suffix.percent=\u0020%
 
+enderio.top.tank.content.pre=
 enderio.top.tank.content.middle=/
 enderio.top.tank.content.post=\u0020mB
 enderio.top.tank.content.empty=Empty
 
 enderio.top.tank.header.input.pre=§eInput Tank: §f
+enderio.top.tank.header.input.post=
 enderio.top.tank.header.output.pre=§eOutput Tank: §f
+enderio.top.tank.header.output.post=
 enderio.top.tank.header.storage.pre=§f
+enderio.top.tank.header.storage.post=
 
 
 # Fluids
@@ -1305,7 +1317,7 @@ enderio.loot.capacitor.title.23=Help! I'm trapped in a video game factory!
 enderio.keybind.inventory=Open Armor Inventory
 enderio.keybind.inventory.none_equipped=No armor with inventory equipped
 enderio.keybind.dsu=Open Dark Steel Upgrade Inventory
-enderio.keybind.glidertoggle=Glider/Elytra Toggle
+enderio.keybind.glidertoggle=Glider/Elytra
 enderio.keybind.soundlocator=Sound Locator
 enderio.keybind.nightvision=Night Vision
 enderio.keybind.gogglesofrevealing=Goggles of Revealing
@@ -1313,21 +1325,23 @@ enderio.keybind.stepassist=Step Assist
 enderio.keybind.speed=Speed
 enderio.keybind.jump=Jump
 enderio.keybind.tnt=Explosive
-enderio.keybind.top=Toggle The One Probe (Helmet Upgrade)
+enderio.keybind.top=The One Probe (Helmet Upgrade)
 enderio.keybind.yetawrenchmode=Yeta Wrench Mode
 enderio.keybind.magnet=Toggle Electromagnet
-enderio.keybind.fovplus=Camera: Zoom out
-enderio.keybind.fovminus=Camera: Zoom in
-enderio.keybind.fovplusfast=Camera: Zoom out fast
-enderio.keybind.fovminusfast=Camera: Zoom in fast
-enderio.keybind.fovreset=Camera: Reset Zoom
-enderio.keybind.fovunreset=Camera: Revert Zoom (to level before last reset)
-enderio.keybind.fovstore=Camera: Store Zoom Level
-enderio.keybind.fovrecall=Camera: Recall Zoom Level
+enderio.keybind.fovplus=Zoom out
+enderio.keybind.fovminus=Zoom in
+enderio.keybind.fovplusfast=Zoom out fast
+enderio.keybind.fovminusfast=Zoom in fast
+enderio.keybind.fovreset=Reset Zoom
+enderio.keybind.fovunreset=Revert Zoom (undo reset)
+enderio.keybind.fovstore=Store Zoom Level
+enderio.keybind.fovrecall=Recall Zoom Level
 
+enderio.keybind.zoom.stored: Zoom level stored
 
 key.category.darksteelarmor=Dark Steel Armor 
 key.category.tools=Tools
+key.category.camera=Camera Controls
 
 enderio.gui.probe.copied=Copied conduit settings
 enderio.gui.probe.pasted=Pasted conduit settings
@@ -1487,7 +1501,7 @@ entity.enderio.enderio.owl_egg.name=Owl Egg
 entity.enderio.primed_charge.name=Primed Charge
 entity.enderio.enderio.primed_charge.name=Primed Charge
 
-enderio.tooltip.inventory_charger.need_upgrade=§4No energy crystal installed!
+enderio.tooltip.inventory_charger.need_upgrade=§4No Empowered Upgrade installed!
 enderio.tooltip.inventory_charger.enabled=Inventory Charger enabled
 enderio.tooltip.inventory_charger.disabled=Inventory Charger disabled
 
