@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Spider {
     public static class UrlLib {
-        public static async Task<List<Addon>> GetModInfoAsync(int modCount, string gameVersion)
+        public static async Task<Addon[]> GetModInfoAsync(int modCount, string gameVersion)
         {
             using var httpClient = new HttpClient();
             var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search")
@@ -15,11 +16,12 @@ namespace Spider {
                 Query =
                     $"categoryId=0&gameId=432&index=0&pageSize={modCount}&gameVersion={gameVersion}&sectionId=6&sort=1"
             };
-            return await httpClient.GetFromJsonAsync<List<Addon>>(uriBuilder.Uri);
+            return await httpClient.GetFromJsonAsync<Addon[]>(uriBuilder.Uri);
         }
 
-        public static async Task<List<Addon>> GetModInfoWhenInWhiteList(List<string> whiteList) {
+        public static async Task<List<Addon>> GetModInfoWhenInWhiteList(string[] whiteList) {
             var res = new List<Addon>();
+            if (whiteList.ToList().Contains("null")) return res;
             foreach (var id in whiteList) {
                 using var httpClient = new HttpClient();
                 var uri = new Uri($"https://addons-ecs.forgesvc.net/api/v2/addon/{id}");

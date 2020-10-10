@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Http;
+using System.Reflection.Metadata.Ecma335;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -14,7 +16,7 @@ using Spider.Properties;
 
 namespace Spider {
     public static class Extension {
-        public static List<ModBase> GenerateBases(this List<Addon> addons, string version) {
+        public static ModBase[] GenerateBases(this Addon[] addons, string version) {
             var bases = new List<ModBase>();
             foreach (var addon in addons) {
                 var name = addon.Name;
@@ -30,10 +32,10 @@ namespace Spider {
                 bases.Add(modBase);
             }
 
-            return bases;
+            return bases.ToArray();
         }
 
-        public static async Task<List<DownloadMod>> DownloadModAsync(this List<ModBase> modBases) {
+        public static async Task<DownloadMod[]> DownloadModAsync(this ModBase[] modBases) {
             var semaphore = new Semaphore(32, 40);
             var tasks = modBases.Select(async _ => {
                 try {
@@ -64,99 +66,156 @@ namespace Spider {
             });
 
             var result = await Task.WhenAll(tasks);
-            return result.ToList();
+            return result;
         }
 
-        public static async Task<List<Info>> ParseModAsync(this List<DownloadMod> download) {
-            var cfrPath = Path.Combine(Directory.GetCurrentDirectory(), "cfr.jar");
-            Log.Logger.Information("释放反编译工具");
-            await File.WriteAllBytesAsync(cfrPath, Resources.cfr_0_150);
-            Log.Logger.Information("释放完成");
-            var tasks = new List<Task<Info>>();
-            var regex = new Regex("(?<=modid=\").*?(?=\")");
-            var semaphore = new Semaphore(10, 20);
-            foreach (var downloadMod in download) {
-                var task = Task.Run(async () => {
-                    try {
-                        semaphore.WaitOne();
-                        Log.Logger.Information($"开始反编译{downloadMod.Name}");
-                        var process = new Process() {
-                            StartInfo = {
+        public static async Task<Info[]> ParseModAsync(this DownloadMod[] download,string version,string[] bl) {
+            if (version == "1.12.2") {
+                var cfrPath = Path.Combine(Directory.GetCurrentDirectory(), "cfr.jar");
+                Log.Logger.Information("释放反编译工具");
+                await File.WriteAllBytesAsync(cfrPath, Resources.cfr_0_150);
+                Log.Logger.Information("释放完成");
+                var tasks = new List<Task<Info>>();
+                var regex = new Regex("(?<=modid=\").*?(?=\")");
+                var semaphore = new Semaphore(10, 20);
+                foreach (var downloadMod in download) {
+                    if (bl.ToList().Contains(downloadMod.ProjectId.ToString())) continue;
+                    var task = Task.Run(async () => {
+                        try {
+                            semaphore.WaitOne();
+                            Log.Logger.Information($"开始反编译{downloadMod.Name}");
+                            var process = new Process() {
+                                StartInfo = {
                                 FileName = "java",
                                 Arguments = $"-jar ./cfr.jar {downloadMod.ModPath}",
                                 RedirectStandardOutput = true,
                                 UseShellExecute = false
                             }
-                        };
-                        process.Start();
-                        var modid = string.Empty;
-                        while (!process.StandardOutput.EndOfStream) {
-                            var line = await process.StandardOutput.ReadLineAsync();
-                            if (!String.IsNullOrEmpty(line)) {
-                                if (regex.IsMatch(line)) {
-                                    if (line.StartsWith("@Mod(")) {
-                                        modid = regex.Match(line).Value;
-                                        break;
+                            };
+                            process.Start();
+                            var modid = string.Empty;
+                            while (!process.StandardOutput.EndOfStream) {
+                                var line = await process.StandardOutput.ReadLineAsync();
+                                if (!String.IsNullOrEmpty(line)) {
+                                    if (regex.IsMatch(line)) {
+                                        if (line.StartsWith("@Mod(")) {
+                                            modid = regex.Match(line).Value;
+                                            break;
+                                        }
                                     }
                                 }
                             }
+
+                            process.Kill();
+                            //Log.Logger.Information($"找到modid：{modid}");
+                            var zipArchive = new ZipArchive(File.OpenRead(downloadMod.ModPath));
+                            var languageEntries = zipArchive.Entries
+                                .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
+                                .Where(_ => _.FullName.Contains("/lang/"))
+                                .Where(_ => _.FullName.EndsWith(".lang"))
+                                .ToArray();
+                            var domainEntries = zipArchive.Entries
+                                .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
+                                .Where(_ => _.FullName.EndsWith("/lang/")).ToArray();
+                            var chineseEntries = zipArchive.Entries
+                                .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
+                                .Where(_ => _.FullName.Contains("/lang/"))
+                                .Where(_ => _.FullName.EndsWith("zh_cn.lang", StringComparison.OrdinalIgnoreCase))
+                                .ToArray();
+                            var domains = domainEntries.Select(_ => _.FullName.Split("/", 3)[1]).ToArray();
+                            var languages = languageEntries.Select(_ => _.FullName).ToArray();
+                            var info = new Info() {
+                                Domain = domains,
+                                DownloadUrl = downloadMod.DownloadUrl,
+                                HasLang = languages.Length > 0,
+                                LangList = languages,
+                                LastUpdateTime = DateTimeOffset.UtcNow,
+                                ModId = modid,
+                                Name = downloadMod.Name,
+                                ProjectId = downloadMod.ProjectId,
+                                ProjectName = downloadMod.ProjectName,
+                                ProjectUrl = downloadMod.ProjectUrl,
+                                HasChinese = chineseEntries.Length > 0,
+                                ModPath = downloadMod.ModPath
+                            };
+                            return info;
+                        } catch (Exception e) {
+                            Log.Logger.Error(e.Message);
+                            return null;
+                        } finally {
+                            semaphore.Release();
+                        }
+                    });
+                    tasks.Add(task);
+                }
+
+                var res = await Task.WhenAll(tasks);
+                return res;
+            }
+            else {
+                var regex = new Regex("(?<=modId=\").*?(?=\")");
+                var il = new List<Info>();
+                foreach (var downloadMod in download) {
+                    if (bl.ToList().Contains(downloadMod.ProjectId.ToString())) continue;
+                    Log.Logger.Information($"解析：{downloadMod.Name}");
+                    var fs = File.Open(downloadMod.ModPath, FileMode.Open);
+                    var jarArchive = new ZipArchive(fs);
+                    try {
+                        var modIdEntry = jarArchive.GetEntry("META-INF/mods.toml");
+                        var tempName = Path.GetTempFileName().Replace(".tmp", ".entryTmp");
+                        modIdEntry.ExtractToFile(tempName);
+                        foreach (var line in await File.ReadAllLinesAsync(tempName)) {
+                            if (line.StartsWith("modId=\"")) {
+                                var modId = regex.Match(line).ToString();
+                                var languageEntries = jarArchive.Entries
+                                    .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
+                                    .Where(_ => _.FullName.Contains("/lang/"))
+                                    .Where(_ => _.FullName.EndsWith(".json"))
+                                    .ToArray();
+                                var domainEntries = jarArchive.Entries
+                                    .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
+                                    .Where(_ => _.FullName.EndsWith("/lang/")).ToArray();
+                                var chineseEntries = jarArchive.Entries
+                                    .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
+                                    .Where(_ => _.FullName.Contains("/lang/"))
+                                    .Where(_ => _.FullName.EndsWith("zh_cn.json", StringComparison.OrdinalIgnoreCase))
+                                    .ToArray();
+                                var domains = domainEntries.Select(_ => _.FullName.Split("/", 3)[1]).ToArray();
+                                var languages = languageEntries.Select(_ => _.FullName).ToArray();
+                                fs.Close();
+                                il.Add(new Info() {
+                                    Domain = domains,
+                                    DownloadUrl = downloadMod.DownloadUrl,
+                                    HasLang = languages.Length > 0,
+                                    LangList = languages,
+                                    LastUpdateTime = DateTimeOffset.UtcNow,
+                                    ModId = modId,
+                                    Name = downloadMod.Name,
+                                    ProjectId = downloadMod.ProjectId,
+                                    ProjectName = downloadMod.ProjectName,
+                                    ProjectUrl = downloadMod.ProjectUrl,
+                                    HasChinese = chineseEntries.Length > 0,
+                                    ModPath = downloadMod.ModPath
+                                });
+                            }
                         }
 
-                        process.Kill();
-                        //Log.Logger.Information($"找到modid：{modid}");
-                        var zipArchive = new ZipArchive(File.OpenRead(downloadMod.ModPath));
-                        var languageEntries = zipArchive.Entries
-                            .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
-                            .Where(_ => _.FullName.Contains("/lang/"))
-                            .Where(_ => _.FullName.EndsWith(".lang"))
-                            .ToList();
-                        var domainEntries = zipArchive.Entries
-                            .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
-                            .Where(_ => _.FullName.EndsWith("/lang/")).ToList();
-                        var chineseEntries = zipArchive.Entries
-                            .Where(_ => _.FullName.StartsWith("assets", StringComparison.OrdinalIgnoreCase))
-                            .Where(_ => _.FullName.Contains("/lang/"))
-                            .Where(_ => _.FullName.EndsWith("zh_cn.lang", StringComparison.OrdinalIgnoreCase))
-                            .ToList();
-                        var domains = domainEntries.Select(_ => _.FullName.Split("/", 3)[1]).ToList();
-                        var languages = languageEntries.Select(_ => _.FullName).ToList();
-                        var info = new Info() {
-                            Domain = domains,
-                            DownloadUrl = downloadMod.DownloadUrl,
-                            HasLang = languages.Count > 0,
-                            LangList = languages,
-                            LastUpdateTime = DateTimeOffset.UtcNow,
-                            ModId = modid,
-                            Name = downloadMod.Name,
-                            ProjectId = downloadMod.ProjectId,
-                            ProjectName = downloadMod.ProjectName,
-                            ProjectUrl = downloadMod.ProjectUrl,
-                            HasChinese = chineseEntries.Count > 0,
-                            ModPath = downloadMod.ModPath
-                        };
-                        return info;
-                    }
-                    catch (Exception e) {
+                    } catch (Exception e) {
                         Log.Logger.Error(e.Message);
-                        return null;
+                        Log.Logger.Error($"找不到{downloadMod.Name}的modId");
                     }
-                    finally {
-                        semaphore.Release();
-                    }
-                });
-                tasks.Add(task);
+                }
+                return il.ToArray();
             }
-
-            var res = await Task.WhenAll(tasks);
-            return res.ToList();
         }
 
-        public static List<Info> ExtractResource(this List<Info> infos, string version) {
+        public static Info[] ExtractResource(this Info[] infos, string version) {
+            var format = version == "1.12.2" ? "en_us.lang" : "en_us.json";
             foreach (var info in infos) {
                 var zipArchive = new ZipArchive(File.OpenRead(info.ModPath));
                 if (info.HasLang) {
                     var enPath = info.LangList.Where(_ =>
-                        _.EndsWith("en_us.lang", StringComparison.CurrentCultureIgnoreCase)).ToList();
+                        _.EndsWith(format, StringComparison.CurrentCultureIgnoreCase)).ToList();
                     var entires = new List<ZipArchiveEntry>{};
                     foreach (var i in enPath) {
                         entires.Add(zipArchive.GetEntry(i));
@@ -166,8 +225,11 @@ namespace Spider {
                         foreach (var domain in info.Domain) {
                             var fullName = zipArchiveEntry.FullName;
                             if (fullName.Contains($"assets/{domain}/lang/")) {
-                                Directory.CreateDirectory($"./projects/assets/{version}/{info.ProjectName}/{domain}/lang");
-                                File.Delete($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}");
+                                Directory.CreateDirectory($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/");
+                                if (File.Exists($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}")) {
+                                    File.Delete($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}");
+                                }
+                                Log.Logger.Information($"解压：{zipArchiveEntry.FullName}");
                                 zipArchiveEntry.ExtractToFile($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}");
                             }
                         }
@@ -177,9 +239,9 @@ namespace Spider {
             return infos;
         }
 
-        public static async Task WriteToAsync(this List<Info> infos, string path) {
-            var fullPath = Path.GetFullPath(path);
-            await File.WriteAllBytesAsync(fullPath, JsonSerializer.SerializeToUtf8Bytes(infos, new JsonSerializerOptions() {
+        public static async Task WriteToAsync(this Info[] infos, string version,string name) {
+            Directory.CreateDirectory($"./config/{version}");
+            await File.WriteAllBytesAsync($"./config/{version}/{name}", JsonSerializer.SerializeToUtf8Bytes(infos, new JsonSerializerOptions() {
                 WriteIndented = true
             }));
         }
