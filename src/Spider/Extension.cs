@@ -151,10 +151,6 @@ namespace Spider {
             return res.ToList();
         }
 
-        public static async Task<List<Info>> GetModInfoAsync(this List<DownloadMod> download) {
-            return null;
-        }
-
         public static List<Info> ExtractResource(this List<Info> infos, string version) {
             foreach (var info in infos) {
                 var zipArchive = new ZipArchive(File.OpenRead(info.ModPath));

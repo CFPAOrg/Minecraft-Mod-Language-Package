@@ -13,8 +13,8 @@ namespace Spider {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
-            var mods = await UrlLib.GetModInfoAsync(10, "1.12.2");
-            Log.Logger.Information("已获取10个mod信息");
+            var mods = await UrlLib.GetModInfoAsync(50, "1.12.2");
+            Log.Logger.Information("已获取50个mod信息");
             await (await (await mods.GenerateBases("1.12.2").DownloadModAsync()).ParseModAsync()).ExtractResource("1.12.2").WriteToAsync("./a.json");
         }
     }
