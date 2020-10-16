@@ -6,11 +6,10 @@ namespace Spider {
     public class Configuration {
         [JsonPropertyName("version")] public string Version { get; set; }
         [JsonPropertyName("spider_conf")] public SpiderConfiguration SpiderConfiguration { get; set; }
-        [JsonPropertyName("black_key_list")] public string[] BlackKeyList { get; set; }
     }
 
     public class SpiderConfiguration {
-        [JsonPropertyName("base_mod_count")] public long ModCount { get; set; }
+        [JsonPropertyName("base_mod_count")] public int ModCount { get; set; }
         [JsonPropertyName("black_list")] public string[] BlackList { get; set; }
         [JsonPropertyName("white_list")] public string[] WhiteList { get; set; }
     }

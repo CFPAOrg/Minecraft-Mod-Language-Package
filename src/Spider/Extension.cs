@@ -240,7 +240,7 @@ namespace Spider {
         }
 
         public static async Task WriteToAsync(this Info[] infos, string version,string name) {
-            Directory.CreateDirectory($"./config/{version}");
+            Directory.CreateDirectory($"./config/spider/{version}");
             await File.WriteAllBytesAsync($"./config/{version}/{name}", JsonSerializer.SerializeToUtf8Bytes(infos, new JsonSerializerOptions() {
                 WriteIndented = true
             }));
