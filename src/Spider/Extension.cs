@@ -84,29 +84,30 @@ namespace Spider {
                         try {
                             semaphore.WaitOne();
                             Log.Logger.Information($"开始反编译{downloadMod.Name}");
-                            var process = new Process() {
-                                StartInfo = {
-                                FileName = "java",
-                                Arguments = $"-jar ./cfr.jar {downloadMod.ModPath}",
-                                RedirectStandardOutput = true,
-                                UseShellExecute = false
-                            }
-                            };
-                            process.Start();
+                            //var process = new Process() {
+                            //    StartInfo = {
+                            //    FileName = "java",
+                            //    Arguments = $"-jar ./cfr.jar {downloadMod.ModPath}",
+                            //    RedirectStandardOutput = true,
+                            //    UseShellExecute = false
+                            //}
+                            //};
+                            //process.Start();
                             var modid = string.Empty;
-                            while (!process.StandardOutput.EndOfStream) {
-                                var line = await process.StandardOutput.ReadLineAsync();
-                                if (!String.IsNullOrEmpty(line)) {
-                                    if (regex.IsMatch(line)) {
-                                        if (line.StartsWith("@Mod(")) {
-                                            modid = regex.Match(line).Value;
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
+                            //while (!process.StandardOutput.EndOfStream) {
+                            //    var line = await process.StandardOutput.ReadLineAsync();
+                            //    if (!String.IsNullOrEmpty(line)) {
+                            //        if (regex.IsMatch(line)) {
+                            //            if (line.StartsWith("@Mod(")) {
+                            //                modid = regex.Match(line).Value;
+                            //                break;
+                            //            }
+                            //        }
+                            //    }
+                            //}
 
-                            process.Kill();
+                            //process.Kill();
+                            modid = "off";
                             //Log.Logger.Information($"找到modid：{modid}");
                             var zipArchive = new ZipArchive(File.OpenRead(downloadMod.ModPath));
                             var languageEntries = zipArchive.Entries
@@ -241,7 +242,7 @@ namespace Spider {
 
         public static async Task WriteToAsync(this Info[] infos, string version,string name) {
             Directory.CreateDirectory($"./config/spider/{version}");
-            await File.WriteAllBytesAsync($"./config/{version}/{name}", JsonSerializer.SerializeToUtf8Bytes(infos, new JsonSerializerOptions() {
+            await File.WriteAllBytesAsync($"./config/spider/{version}/{name}", JsonSerializer.SerializeToUtf8Bytes(infos, new JsonSerializerOptions() {
                 WriteIndented = true
             }));
         }
