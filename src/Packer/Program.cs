@@ -32,8 +32,8 @@ namespace Packer
                         name = _.Name,
                         assetPath = descend,
                         prefixLength = _.FullName.Length
-                    }
-                ));
+                    })
+                );
             foreach (var asset in assetsToBePacked)
             {
                 if(asset is null)
@@ -54,7 +54,8 @@ namespace Packer
                             continue;
                         }
                         var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}"
-                            .Replace("zh_CN", "zh_cn"); // 修复大小写
+                            .Replace("zh_CN", "zh_cn") // 修复大小写
+                            .Replace('\\', '/'); // 修复 Java 平台读取 CentralDirectory 部分时正反斜杠的问题
                         var existingFile = archive.GetEntry(destinationPath);
                         if(existingFile is null) // null 代表没有找到文件，也就是该文件没有重合
                         {
@@ -82,7 +83,8 @@ namespace Packer
                             continue;
                         }
                         var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}"
-                            .Replace("zh_CN", "zh_cn"); // 修复大小写
+                            .Replace("zh_CN", "zh_cn") // 修复大小写
+                            .Replace('\\', '/'); // 修复 Java 平台读取 CentralDirectory 部分时正反斜杠的问题
                         archive.CreateEntryFromFile(file.FullName, destinationPath);
                         Log.Information("添加了 {0}", destinationPath);
                     }
@@ -100,7 +102,7 @@ namespace Packer
             new List<string>() { "LICENSE", "pack.mcmeta", "pack.png", "README.md" }.ForEach(_ =>
               {
                   Log.Information("初始化压缩包：添加 {0}", _);
-                  archive.CreateEntryFromFile($"{common}\\{_}", _);
+                  archive.CreateEntryFromFile($"{common}\\{_}", _, CompressionLevel.Fastest);
               });
             Log.Information("初始化完成");
         }
