@@ -20,7 +20,7 @@ namespace Packer
                 .CreateLogger();
             var config = RetrieveConfig();
             Log.Information("开始打包。版本：{0}", config.Version);
-            using var stream = File.Create(".\\Minecraft-Mod-Language-Package.zip"); // 生成空 zip 文档
+            using var stream = File.Create(".\\Minecraft-Mod-Language-Package-1-16.zip"); // 生成空 zip 文档
             using var archive = new ZipArchive(stream, ZipArchiveMode.Update);
             InitializeArchive(archive, config);
             var existingDomains = new Dictionary<string, string>();
