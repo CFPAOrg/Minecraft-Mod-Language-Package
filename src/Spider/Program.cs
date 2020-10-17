@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-
+using Formatter;
 using Serilog;
 
 namespace Spider {
@@ -19,6 +19,14 @@ namespace Spider {
                 allMod.AddRange(baseMod);
                 await (await (await allMod.ToArray().GenerateBases(configuration.Version).DownloadModAsync()).ParseModAsync(
                     configuration.Version, configuration.SpiderConfiguration.BlackList)).ExtractResource(configuration.Version).WriteToAsync(configuration.Version,"mod_info.json");
+                if (configuration.Version == "1.12.2") {
+                    var file = Util.SearchLangFiles(configuration.Version);
+                    await Util.FormatLangFile(file);
+                    await Util.CrateEmptyLangFile(configuration.Version);
+                }
+                else {
+                    await Util.CrateEmptyJsonFile(configuration.Version);
+                }
             }
         }
     }
