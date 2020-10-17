@@ -17,7 +17,16 @@ namespace Formatter {
             return allFiles;
         }
 
-        public static async Task FormatLangFile(List<string> lp) {
+        public static async Task<List<string>> ReadBlackKey() {
+            var res = new List<string>();
+            foreach (string str in await File.ReadAllLinesAsync("./config/blackkey.txt", Encoding.UTF8)) {
+                res.Add(str);
+            }
+
+            return res;
+        }
+
+        public static async Task FormatLangFile(List<string> lp,List<string> bl) {
             foreach (var l in lp) {
                 var keyReg = new Regex(".+(?==)");
                 var nameReg = new Regex("(?<==).+");
@@ -35,7 +44,8 @@ namespace Formatter {
                     }
                     if (findEqual.IsMatch(str)) {
                         if (keyReg.IsMatch(str)) {
-                            if (nameReg.IsMatch(str)) {
+                            if (bl.Contains(keyReg.Match(str).ToString())) continue;
+                                if (nameReg.IsMatch(str)) {
                                 if (!ls.Contains(str)) {
                                     ls.Add(str);
                                     Log.Debug("添加条目:{0}", str);

@@ -10,9 +10,10 @@ namespace Formatter
         static async Task Main(string[] args)
         {
             var config = await JsonSerializer.DeserializeAsync<Configuration[]>(File.OpenRead("./config/spider/config.json"));
+            var bl = await Util.ReadBlackKey();
             foreach (var configuration in config) {
                 var file = Util.SearchLangFiles(configuration.Version);
-                await Util.FormatLangFile(file);
+                await Util.FormatLangFile(file,bl);
             }
         }
     }
