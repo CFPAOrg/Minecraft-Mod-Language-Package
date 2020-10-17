@@ -21,7 +21,7 @@ jobs:
       - name: Push  to github
         if: ${{github.event}} == 'push'
         run: |
-          ri .\Spider.exe -Force
+          ri .\Formatter.exe -Force
           $ErrorActionPreference ='Continue'
           git config --global credential.helper manager
           git config --global user.email "fanng233@gmail.com"
