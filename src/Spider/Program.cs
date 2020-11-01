@@ -1,55 +1,81 @@
-ï»¿using Serilog;
-using Spider.Types;
+using Serilog;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
+using LangPack.Core;
 
 namespace Spider
 {
-    internal static class Program
+    public class Program
     {
-        private static async Task Main()
+        public static async Task Main()
         {
-            Directory.CreateDirectory(Configuration.OutputPath);
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.Console()
-                .CreateLogger();
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+            .CreateLogger();
 
-            var mods = (await ApiManager.GetModsAsync()).ToList();
-            await ModDownloadManager.DownloadModsAsync(mods);
-            LangManager.ProcessLangFiles(mods);
-            var languages = mods.SelectMany(_ => _.Languages).Where(_ => !_.IsInBlackList).ToList();
-            Log.Information($"å…±æ”¶é›†åˆ°äº†{languages.Count}ä¸ªè¯­è¨€æ–‡ä»¶.");
-            foreach (var language in languages)
+            var gameVersion = Configuration.Default.EnabledGameVersions[0];
+            var existingMods = new HashSet<Mod>();
+            var mods = new HashSet<Mod>();
+            var skipped = new HashSet<Mod>();
+            //try
+            //{
+            //    var tempMods = JsonSerializer.Deserialize<List<Mod>>(await File.ReadAllBytesAsync(Configuration.Default.ModInfoPath));
+            //    existingMods.UnionWith(tempMods ?? new List<Mod>());
+            //}
+            //catch (Exception e)
+            //{
+            //    Log.Error(e, "");
+            //    throw;
+            //}
+            var addons = await ModHelper.GetModInfoAsync(Configuration.Default.ModCount + existingMods!.Count, gameVersion);
+
+
+            foreach (var addon in addons)
             {
-                string path;
-                try
+                var modFile = addon.GameVersionLatestFiles.First(_ => _.GameVersion == gameVersion);
+                var downloadUrl = ModHelper.JoinDownloadUrl(modFile.ProjectFileId.ToString(), modFile.ProjectFileName);
+                var mod = new Mod
                 {
-                    _ = languages.Single(_ => _.AssetDomain == language.AssetDomain);
-                    path = $"assets/{language.AssetDomain}/lang/";
-                }
-                catch
-                {
-                    path = $"assets/{language.AssetDomain}-{language.BaseMod.ShortUrl}/lang/";
-                }
-
-                var directoryInfo = Directory.CreateDirectory(Path.Combine(Configuration.OutputPath, path));
-                if (!directoryInfo.EnumerateFiles().Any(_=>_.Name.EndsWith("zh_cn.lang")))
-                {
-                    File.Create(Path.Combine(Configuration.OutputPath, path, "zh_cn.lang")).Dispose();
-                }
-                var fullPath = Path.Combine(Configuration.OutputPath, path, "en_us.lang");
-                File.WriteAllText(fullPath, language.OutPutText);
-                Log.Information($"å†™å…¥äº†ä¸€ä¸ªè¯­è¨€æ–‡ä»¶åˆ°: {fullPath}");
+                    Name = addon.Name,
+                    ProjectId = addon.Id,
+                    ProjectUrl = addon.WebsiteUrl,
+                    DownloadUrl = downloadUrl,
+                    ShortProjectUrl = ModHelper.GetShortUrl(addon.WebsiteUrl),
+                    LastCheckUpdateTime = DateTimeOffset.Now,
+                    LastUpdateTime = addon.DateModified
+                };
+                //var old = existingMods.SingleOrDefault(_ => _.ProjectId == mod.ProjectId);
+                //if (!(old is null))
+                //{
+                //    if (old!.LastCheckUpdateTime >= mod.LastUpdateTime)
+                //    {
+                //        Log.Information($"Ìø¹ýÁËÒÑ´æÔÚµÄmod: {mod.Name}");
+                //        skipped.Add(old);
+                //        continue;
+                //    }
+                //}
+                mods.Add(mod);
             }
-
-            foreach (var mod in mods)
+            Log.Information($"´Óapi»ñÈ¡ÁË{mods.Count}¸ömodµÄÐÅÏ¢.");
+            mods = (await ModHelper.DownloadModAsync(mods)).ToHashSet();
+            mods = mods.Select(_ =>
             {
-                mod.Dispose();
-            }
-            RepositoryManager.PushToGithub();
-            Log.CloseAndFlush();
+                _.LangAssetsPaths = ModHelper.GetAssetPaths(_);
+                _.AssetDomains = ModHelper.GetAssetDomains(_);
+                return _;
+            }).ToHashSet();
+            Log.Information($"¹²ÓÐ{mods.Count(_ => !string.IsNullOrEmpty(_.ModId))}¸ömodÓÐmodid.");
+            //mods.UnionWith(skipped);
+            await ModHelper.SaveModInfoAsync(Configuration.Default.ModInfoPath, mods);
+            Log.Information($"´æ´¢ÁËËùÓÐ {mods.Count} ¸ömodÐÅÏ¢µ½ {Path.GetFullPath(Configuration.Default.ModInfoPath)} ");
+            Log.Information("Exiting application...");
         }
+
+
     }
 }

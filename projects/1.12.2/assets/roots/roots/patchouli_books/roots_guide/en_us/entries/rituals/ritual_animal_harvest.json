@@ -1,0 +1,33 @@
+{
+  "name": "Animal Harvest",
+  "icon": "roots:ritual_animal_harvest",
+  "category": "rituals",
+  "advancement": "roots:wildewheet",
+  "flag": "roots:ritual_animal_harvest",
+  "pages": [
+    {
+      "type": "text",
+      "text": "Animals in the vicinity of the ritual will willingly give up part of their physical essence, although suffering no harm to themselves in the process. $(info) Affected animals will glow briefly.$(br2)$(standing_stones) $(l:rituals/ritual_animal_harvest#multiblock)This ritual requires standing stones.$()"
+    },
+    {
+      "type": "pyre_template",
+      "ritual": "ritual_animal_harvest"
+    },
+    {
+      "type": "multiblock",
+      "anchor": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:bonfire",
+          "R": "roots:runestone",
+          "C": "roots:chiseled_runestone"
+        },
+        "pattern": [
+          ["   C   ","       ","       ","C     C","       ","       ","       "],
+          ["   R   ","       ","       ","R     R","       ","       ","       "],
+          ["   R   ","       ","       ","R  0  R","       ","       ","       "]
+        ]
+      }
+    }
+  ]
+}
