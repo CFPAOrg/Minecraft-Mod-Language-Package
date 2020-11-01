@@ -21,7 +21,7 @@ namespace Spider {
                     configuration.Version, configuration.SpiderConfiguration.BlackList)).ExtractResource(configuration.Version).WriteToAsync(configuration.Version,"mod_info.json");
                 if (configuration.Version == "1.12.2") {
                     var file = Util.SearchLangFiles(configuration.Version);
-                    await Util.FormatLangFile(file);
+                    await Util.FormatLangFile(file, await Util.ReadBlackKey());
                     await Util.CrateEmptyLangFile(configuration.Version);
                 }
                 else {
