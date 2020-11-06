@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
-namespace Spider {
+namespace Formatter {
     public class Configuration {
         [JsonPropertyName("version")] public string Version { get; set; }
         [JsonPropertyName("spider_conf")] public SpiderConfiguration SpiderConfiguration { get; set; }
