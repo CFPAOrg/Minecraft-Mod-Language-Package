@@ -172,7 +172,7 @@ namespace Formatter {
                                         var line = str;
                                         foreach (var key in map.Keys) {
                                             var skey = key as string;
-                                            line = line.Replace(skey, map[skey] as string);
+                                            line = line.Replace(skey, Regex.Unescape(map[skey] as string));
                                         }
 
                                         replaced.Add(line);
