@@ -2,7 +2,7 @@ lycanitesmobs.name=恐怖生物
 #
 # ========== Entites ==========
 entity.level=等级
-entity.health=血量
+entity.health=生命值
 entity.experience=经验值
 entity.lycanitesmobs.summoningportal.name=召唤传送门
 entity.lycanitesmobs.fear.name=恐惧
@@ -17,13 +17,13 @@ spawner.darkness.level1.back=那声音好像消失了…至少现在是…
 spawner.chaos.level1=你正在破坏大自然的平衡，请慎重行事！
 spawner.chaos.level2=你对自然的破坏加剧了混沌元素的产生！
 spawner.chaos.level3=混沌元素已经出现，请小心防范！
-spawner.chaos.level1.back=生态平衡似乎已经得以恢复…至少现在是…
+spawner.chaos.level1.back=生态平衡似乎已经得以恢复…至少现在是…#
 #
 #
 #
 # ========== Subspecies ==========
 # Common
-subspecies.normal=正常
+subspecies.normal=常态
 # Uncommon:
 subspecies.ashen.name=灰白
 subspecies.dark.name=黑暗
@@ -49,20 +49,17 @@ subspecies.celestial.name=天空
 subspecies.umber.name=棕土
 #
 # Skins:
-subspecies.moloch.name=摩洛神
+subspecies.moloch.name=深渊
 subspecies.void.name=虚空
 #
 #
 #
 # ========== Items ==========
-item.horsearmormetal.name=铁宠物盔甲
-item.horsearmorgold.name=金宠物盔甲
-item.horsearmordiamond.name=钻石宠物盔甲
 item.lycanitesmobs.charge=能量球
 item.lycanitesmobs.charge.description=充能的元素能量球。可用于升级与之相匹配的宠物和装备。也可以从发射器里被发射或者潜行时丢出。
-item.lycanitesmobs.charge.projectile=抛射：
-item.lycanitesmobs.charge.elements=元素：
-item.lycanitesmobs.charge.creature.invalid=此能量球没有任何与其元素匹配的生物元素。
+item.lycanitesmobs.charge.projectile=弹射物:
+item.lycanitesmobs.charge.elements=元素:
+item.lycanitesmobs.charge.creature.invalid=此能量球没有符合的宠物或匹配元素的装备零件。
 #
 #
 #
@@ -71,7 +68,7 @@ item.lycanitesmobs.charge.creature.invalid=此能量球没有任何与其元素�
 itemGroup.lycanitesmobs.items=恐怖生物：物品
 itemGroup.lycanitesmobs.blocks=恐怖生物：方块
 itemGroup.lycanitesmobs.creatures=恐怖生物：生物
-itemGroup.lycanitesmobs.charges=恐怖生物：能量球
+itemGroup.lycanitesmobs.charges=恐怖生物：弹射物
 itemGroup.lycanitesmobs.equipmentparts=恐怖生物：装备
 #
 # Beastiary:
@@ -105,12 +102,12 @@ gui.beastiary.summary=摘要
 gui.beastiary.combat=战斗
 gui.beastiary.habitat=栖息地
 gui.beastiary.biomes=生物群系
-gui.beastiary.biomes.none=不是该生物群系特有的
-gui.beastiary.drops=掉落物
+gui.beastiary.biomes.none=无具体的生物群系
+gui.beastiary.drops=掉落
 gui.beastiary.unlockedat=解锁时间：
 gui.beastiary.tameable=这种生物可以被驯服
 gui.beastiary.summonable=这个生物可以被召唤为一个仆从。
-gui.beastiary.mountable=这个生物可以成为坐骑。
+gui.beastiary.mountable=该生物可以成为坐骑。
 gui.beastiary.perchable=这个生物可以在你的肩膀上停留
 #
 # Pets:
@@ -156,7 +153,7 @@ gui.pet.wander=游荡
 gui.pet.sit=坐下
 #
 # Mounts:
-gui.mount.controls=按下 %control% 使用坐骑能力
+gui.mount.controls=按下 %controlA%使用坐骑能力 %controlB% 脱离坐骑。
 #%control% will be replaced with the Mount Ability key, don't translate this!
 #
 # Equipment Forge:
@@ -224,8 +221,8 @@ lyc.command.debug.set=更新 %debug%。
 lyc.command.spawners.invalid=无效参数，正确用法：/lycanitesmobs spawners [reload]
 lyc.command.spawners.reload=JSON 生成已被重新加载。
 lyc.command.spawners.creative=为创造模式玩家切换生物事件触发。
-lyc.command.spawners.test=刷怪笼测试触发器强制启用。
-lyc.command.spawners.test.unknown=未知的刷怪笼。
+lyc.command.spawners.test=刷怪笼测试被强制触发。
+lyc.command.spawners.test.unknown=未知的生成器。
 #
 # Equipment:
 lyc.command.equipment.invalid=无效参数，正确用法：/lycanitesmobs equipment [reload]
@@ -236,7 +233,7 @@ lyc.command.dungeon.invalid=无效参数，正确用法：/lycanitesmobs spawner
 lyc.command.dungeon.reload=JSON 生成已被重新加载。
 lyc.command.dungeon.enable=恐怖生物地牢已被启用，它们会自然生成在区块中。
 lyc.command.dungeon.disable=恐怖生物地牢已被禁用，它们不会自然生成在区块中。
-lyc.command.dungeon.locate=附近的地牢：
+lyc.command.dungeon.locate=附近的地牢:
 #
 # Creatures:
 lyc.command.creatures.invalid=无效参数，正确用法：/lycanitesmobs creatures [reload]
@@ -329,7 +326,7 @@ effect.envenom=剧毒
 #
 #
 # ========== Key Bindings ==========
-key.mount.dismount=卸下宠物
+key.mount.dismount=脱离坐骑 / 卸下宠物
 key.mount.descend=乘降
 key.mount.ability=坐骑能力
 key.mount.inventory=坐骑物品栏
@@ -342,10 +339,10 @@ key.minions=召唤物管理
 #
 #
 # ========== Equipment ==========
-equipment.slottype=格子类型：
-equipment.element=能量球元素类型：
-equipment.level=等级：
-equipment.feature.slot=增加格子：
+equipment.slottype=格子类型:
+equipment.element=蕴含元素:
+equipment.level=等级:
+equipment.feature.slot=增加格子:
 equipment.feature.damage=伤害：
 equipment.feature.damage.cooldown=冷却时间：
 equipment.feature.damage.knockback=击退：
@@ -378,7 +375,7 @@ item.equipment.name=合成的装备
 # ========== Creatures ==========
 creature.stat.element=元素
 creature.stat.subspecies=亚种
-creature.stat.variant=变种
+creature.stat.variant=变体
 creature.stat.variants=变种
 creature.stat.cost=召唤消耗
 creature.stat.spirit=召唤灵魂消耗
@@ -451,8 +448,8 @@ tile.frostfire.description=霜火是冰火的增强版本，在原本造成伤�
 #
 #
 # ========== Fluids ==========
-tile.moglava.name=Moglava
-tile.moglava.description=比普通熔岩更清澈，流动速度稍快，不会生成生物。可以像水一样流动。
+tile.moglava.name=纯粹的熔岩
+tile.moglava.description=一种纯净的熔岩，它不会生成火海生物并且会像水一样流动。
 #
 tile.ooze.name=胶状冰
 tile.ooze.description=胶状冰是一种胶状流体，流动十分缓慢，触碰者会受到由冰冷带来的伤害以及饥饿效果。
@@ -466,13 +463,13 @@ tile.propolis.name=蜂胶
 tile.propolis.description=一种用来搭建蜂巢地基的主要材料，它像陶瓦一样坚硬。
 # ========================================================================
 tile.soulcubedemonic.name=恶魔灵魂立方
-tile.soulcubedemonic.description=一个完美的恶魔能量源正在被释放，可以吸引到一只强大的恶魔...
+tile.soulcubedemonic.description=一个完美的恶魔能量源正在被释放，可以吸引到一直强大的恶魔...
 #
 tile.soulcubeaberrant.name=畸变灵魂立方
-tile.soulcubeaberrant.description=一种奇怪的装置，里面有未知的外星技术和魔法，也许是某种形式的信标？
+tile.soulcubeaberrant.description=一个陌生的设备，里面有未知的外星科技和魔法，也许是某种形式的信标？
 #
-tile.soulcubeundead.name=不死灵魂立方
-tile.soulcubeundead.description=里面躺着成千上万被困住的扭曲灵魂，等待着逃跑之日！
+tile.soulcubeundead.name=阴影灵魂立方
+tile.soulcubeundead.description=里面困着成千上万扭曲灵魂，正等待者逃脱！
 # ========================================================================
 tile.demonstonebrick_stairs.name=恶魔石砖楼梯
 tile.demonstonebrick_stairs.description=有人说，统治者号召了所有恶魔们用它搭建了神殿。
@@ -504,10 +501,10 @@ tile.demonstonebrick_fence.description=有人说，统治者号召了所有恶�
 tile.demonstonepillar.name=恶魔石柱
 tile.demonstonepillar.description=恶魔的神殿一般造的十分宏伟，在加上它更显辉煌。
 #
-tile.demonstonetile_slab.name=恶魔瓷瓦台阶
+tile.demonstonetile_slab.name=恶魔石瓷瓦台阶
 tile.demonstonetile_slab.description=这种邪恶的东西能映射出什么样的色彩？
 #
-tile.demonstonetile.name=恶魔瓷瓦
+tile.demonstonetile.name=恶魔石瓷瓦
 tile.demonstonetile.description=这种邪恶的东西能映射出什么样的色彩？
 #
 tile.demonstone_slab_double.name=压缩恶魔石台阶
@@ -519,7 +516,7 @@ tile.demonstonebrick.description=有人说，统治者号召了所有恶魔们�
 tile.demonstonepolished.name=平滑恶魔石
 tile.demonstonepolished.description=经过抛光之后，犹如注入新鲜血液般。
 #
-tile.demonstonetile_stairs.name=恶魔瓷瓦楼梯
+tile.demonstonetile_stairs.name=恶魔石瓷瓦楼梯
 tile.demonstonetile_stairs.description=这种邪恶的东西能映射出什么样的色彩？
 # ========================================================================
 tile.aberrantstonebrick_stairs.name=畸变石砖楼梯
@@ -528,7 +525,7 @@ tile.aberrantstonebrick_stairs.description=这些装饰方块形状古怪 。
 tile.aberrantcrystal.name=畸变水晶
 tile.aberrantcrystal.description=发出的光感觉像是来自另一个世界。。。
 #
-tile.aberrantstonechiseled.name=雕刻畸变石
+tile.aberrantstonechiseled.name=雕纹畸变石
 tile.aberrantstonechiseled.description=这些装饰方块形状古怪 。
 #
 tile.aberrantstonebrick_wall.name=畸变石砖墙
@@ -549,7 +546,7 @@ tile.aberrantstone_slab.description=这些装饰方块形状古怪 。
 tile.aberrantstonebrick_fence.name=畸变石砖栅栏
 tile.aberrantstonebrick_fence.description=这些装饰方块形状古怪 。
 #
-tile.aberrantstonepillar.name=竖纹畸变石
+tile.aberrantstonepillar.name=畸变石柱
 tile.aberrantstonepillar.description=这些装饰方块形状古怪 。
 #
 tile.aberrantstonetile_slab.name=畸变石瓷瓦台阶
@@ -561,10 +558,10 @@ tile.aberrantstonetile.description=这些装饰方块形状古怪 。
 tile.aberrantstone_slab_double.name=压缩畸变石台阶
 tile.aberrantstone_slab_double.description=这些装饰方块形状古怪 。
 #
-tile.aberrantstonebrick.name=畸变石砖
+tile.aberrantstonebrick.name=畸变石砖块
 tile.aberrantstonebrick.description=这些装饰方块形状古怪 。
 #
-tile.aberrantstonepolished.name=光滑畸变石
+tile.aberrantstonepolished.name=平滑畸变石
 tile.aberrantstonepolished.description=这些装饰方块形状古怪 。
 #
 tile.aberrantstonetile_stairs.name=畸变石瓷瓦楼梯
@@ -600,74 +597,74 @@ tile.desertstonebrick_fence.description=精致的砂岩，用于建造伟大的�
 tile.desertstonepillar.name=沙漠石柱
 tile.desertstonepillar.description=精致的砂岩，用于建造伟大的沙漠古迹。
 #
-tile.desertstonetile_slab.name=沙漠瓷瓦台阶
+tile.desertstonetile_slab.name=沙漠石瓷瓦台阶
 tile.desertstonetile_slab.description=装饰沙漠石曾经铺砌了伟大古迹的地面。
 #
-tile.desertstonetile.name=沙漠瓷瓦
+tile.desertstonetile.name=沙漠石瓷瓦
 tile.desertstonetile.description=装饰沙漠石曾经铺砌了伟大古迹的地面。
 #
 tile.desertstone_slab_double.name=压缩沙漠石台阶
 tile.desertstone_slab_double.description=精致的砂岩，用于建造伟大的沙漠古迹。
 #
-tile.desertstonebrick.name=沙漠石砖
+tile.desertstonebrick.name=沙漠石砖块
 tile.desertstonebrick.description=精致的砂岩，用于建造伟大的沙漠古迹。
 #
 tile.desertstonepolished.name=平滑沙漠石
 tile.desertstonepolished.description=精致的砂岩，用于建造伟大的沙漠古迹。
 #
-tile.desertstonetile_stairs.name=沙漠瓷瓦楼梯
+tile.desertstonetile_stairs.name=沙漠石瓷瓦楼梯
 tile.desertstonetile_stairs.description=装饰沙漠石曾经铺砌了伟大古迹的地面。
 #
 tile.soulcubedesertic.name=沙漠灵魂立方
 tile.soulcubedesertic.description=一种充满复杂光，重力和大地魔法的奇怪装置。
 # ========================================================================
 tile.lushstonebrick_stairs.name=葱郁石砖楼梯
-tile.lushstonebrick_stairs.description=大自然的本质贯穿于这块石头。
+tile.lushstonebrick_stairs.description=大自然的本质贯穿于这块石头
 #
 tile.lushcrystal.name=葱郁水晶
 tile.lushcrystal.description=这个符号就像一个守卫，被困的葱郁能量在释放邪恶的光中肆虐。
 #
 tile.lushstonechiseled.name=雕纹葱郁石
-tile.lushstonechiseled.description=大自然的本质贯穿于这块石头。
+tile.lushstonechiseled.description=大自然的本质贯穿于这块石头
 #
 tile.lushstonebrick_wall.name=葱郁石砖墙
-tile.lushstonebrick_wall.description=大自然的本质贯穿于这块石头。
+tile.lushstonebrick_wall.description=大自然的本质贯穿于这块石头
 #
 tile.lushstone.name=葱郁石
-tile.lushstone.description=大自然的本质贯穿于这块石头。
+tile.lushstone.description=大自然的本质贯穿于这块石头
 #
 tile.lushstonebrick_slab.name=葱郁石砖台阶
-tile.lushstonebrick_slab.description=大自然的本质贯穿于这块石头。
+tile.lushstonebrick_slab.description=大自然的本质贯穿于这块石头
 #
 tile.lushstone_stairs.name=葱郁石楼梯
-tile.lushstone_stairs.description=大自然的本质贯穿于这块石头。
+tile.lushstone_stairs.description=大自然的本质贯穿于这块石头
 #
 tile.lushstone_slab.name=葱郁石台阶
-tile.lushstone_slab.description=大自然的本质贯穿于这块石头。
+tile.lushstone_slab.description=大自然的本质贯穿于这块石头
 #
 tile.lushstonebrick_fence.name=葱郁石砖栅栏
-tile.lushstonebrick_fence.description=大自然的本质贯穿于这块石头。
+tile.lushstonebrick_fence.description=大自然的本质贯穿于这块石头
 #
 tile.lushstonepillar.name=葱郁石柱
-tile.lushstonepillar.description=大自然的本质贯穿于这块石头。
+tile.lushstonepillar.description=大自然的本质贯穿于这块石头
 #
 tile.lushstonetile_slab.name=葱郁石瓷瓦台阶
-tile.lushstonetile_slab.description=大自然的本质贯穿于这块石头。
+tile.lushstonetile_slab.description=大自然的本质贯穿于这块石头
 #
 tile.lushstonetile.name=葱郁石瓷瓦
-tile.lushstonetile.description=大自然的本质贯穿于这块石头。
+tile.lushstonetile.description=大自然的本质贯穿于这块石头
 #
 tile.lushstone_slab_double.name=压缩葱郁石台阶
-tile.lushstone_slab_double.description=大自然的本质贯穿于这块石头。
+tile.lushstone_slab_double.description=大自然的本质贯穿于这块石头
 #
-tile.lushstonebrick.name=葱郁石砖
-tile.lushstonebrick.description=大自然的本质贯穿于这块石头。
+tile.lushstonebrick.name=葱郁石砖块
+tile.lushstonebrick.description=大自然的本质贯穿于这块石头
 #
 tile.lushstonepolished.name=平滑葱郁石
-tile.lushstonepolished.description=大自然的本质贯穿于这块石头。
+tile.lushstonepolished.description=大自然的本质贯穿于这块石头
 #
 tile.lushstonetile_stairs.name=葱郁石瓷瓦楼梯
-tile.lushstonetile_stairs.description=大自然的本质贯穿于这块石头。
+tile.lushstonetile_stairs.description=大自然的本质贯穿于这块石头
 #
 tile.soulcubelushic.name=葱郁灵魂立方
 tile.soulcubelushic.description=附魔的水晶玻璃，如月光般闪耀。
@@ -686,19 +683,19 @@ tile.shadowcrystal.name=阴影水晶
 tile.shadowcrystal.description=随着符文能量的汇聚，它变得黑暗以至于光明。
 #
 tile.shadowstone_slab_double.name=压缩阴影石台阶
-tile.shadowstone_slab_double.description=石头是用阴影制作而成的。
+tile.shadowstone_slab_double.description=石头是用阴影制作而成的
 #
 tile.shadowstonechiseled.name=雕纹阴影石
 tile.shadowstonechiseled.description=想要雕刻阴影石，最好的方法就是用那些作为你的受害者的骨头雕刻。
 #
 tile.shadowstone.name=阴影石
-tile.shadowstone.description=石头是用阴影制作而成的。
+tile.shadowstone.description=石头是用阴影制作而成的
 #
 tile.shadowstone_stairs.name=阴影石楼梯
-tile.shadowstone_stairs.description=石头是用阴影制作而成的。
+tile.shadowstone_stairs.description=石头是用阴影制作而成的
 #
 tile.shadowstone_slab.name=阴影石台阶
-tile.shadowstone_slab.description=石头是用阴影制作而成的。
+tile.shadowstone_slab.description=石头是用阴影制作而成的
 #
 tile.shadowstonetile.name=阴影石瓷瓦
 tile.shadowstonetile.description=走在黑暗与光明之间，你已经取得了伟大的成就。
@@ -709,7 +706,7 @@ tile.shadowstonebrick_slab.description=砖块之间的缝隙似乎能吸收可�
 tile.shadowstonepolished.name=平滑阴影石
 tile.shadowstonepolished.description=将阴影和恐惧连接在一起，不失柔和，又带有些安慰…
 #
-tile.shadowstonebrick.name=阴影石砖
+tile.shadowstonebrick.name=阴影石砖块
 tile.shadowstonebrick.description=砖块之间的缝隙似乎能吸收可见光。
 #
 tile.shadowstonepillar.name=阴影石柱
@@ -1026,10 +1023,10 @@ entity.lycanitesmobs.kobold.description=小型啮齿动物总忍不住会偷东�
 entity.lycanitesmobs.kobold.habitat=这些啮齿动物通常在夜间在平原上发现。
 entity.lycanitesmobs.kobold.combat=地精通常逃离其他生物，但已知会攻击低生命值的人。
 # ========================================================================
-entity.lycanitesmobs.krake.name=八爪鱼
-entity.lycanitesmobs.krake.description=怪诞的两栖生物，八爪鱼斯既聋又瞎，他们用嘴品尝空气，对振动敏感。
+entity.lycanitesmobs.krake.name=克蛸斯
+entity.lycanitesmobs.krake.description=怪诞的两栖生物，克蛸斯既聋又瞎，他们用嘴品尝空气，对振动敏感。
 entity.lycanitesmobs.krake.habitat=这些异常经常被发现潜伏在河流或湖泊以及森林深处。
-entity.lycanitesmobs.krake.combat=八爪鱼是中立的，只有在情绪激动时才会攻击，在他们附近冲刺会威胁到他们，所以一定要避免在这些生物附近冲刺，因为它们速度惊人！
+entity.lycanitesmobs.krake.combat=克蛸斯是中立的，只有在情绪激动时才会攻击，在他们附近冲刺会威胁到他们，所以一定要避免在这些生物附近冲刺，因为它们速度惊人！
 # ========================================================================
 entity.lycanitesmobs.lacedon.name=水鬼
 entity.lycanitesmobs.lacedon.description=奇怪的类人水生生物，它们能够在一小段时间内登陆，如果下雨的话，也可以无限期地登陆。
@@ -1081,9 +1078,9 @@ entity.lycanitesmobs.pinky.description=特别喜欢吃活动物的贪吃的动�
 entity.lycanitesmobs.pinky.habitat=牛鬼在下界中游荡，寻找食物。
 entity.lycanitesmobs.pinky.combat=这些恶魔具有难以置信的攻击性，但会优先考虑更多汁的猎物，而这些猎物可以用来净化它们。
 # ========================================================================
-entity.lycanitesmobs.pixen.name=像素点
+entity.lycanitesmobs.pixen.name=皮克森
 entity.lycanitesmobs.pixen.description=淘气的小鬼，引诱他们的猎物进入一个错误的安全地带，然后瓜分和吃掉他们！
-entity.lycanitesmobs.pixen.habitat=像素点们通常会白天在森林里漫步。
+entity.lycanitesmobs.pixen.habitat=皮克森们通常会白天在森林里漫步。
 entity.lycanitesmobs.pixen.combat=这些小鬼会用产生随机减益效果的魔法球轰炸他们的目标。
 # ========================================================================
 entity.lycanitesmobs.quetzodracl.name=风神翼龙
@@ -1323,7 +1320,7 @@ creaturetype.dragon.name=龙
 creaturetype.worm.name=虫
 # ========================================================================
 death.attack.ooze=%1$s被冻死于胶状冰中！
-death.attack.acid=%1$s被酸溶解了！
+death.attack.acid=%1$s被酸痛苦的溶解了！
 # ========================================================================
 # 现在，效果名称也必须包含在基础的 zh_CN.lang 中。
 # 负面效果
@@ -1344,7 +1341,7 @@ effect.blindness.description=削弱视野，禁止疾跑。
 effect.mining_fatigue=挖掘疲劳
 effect.mining_fatigue.description=减缓挖掘与攻击速度。
 #
-effect.slowness=缓慢
+effect.slowness=缓慢 
 effect.slowness.description=减缓行走速度。
 #
 effect.burning.description=随着时间的推移会造成伤害，并可能导致死亡，但可以用水熄灭。有些生物攻击时会燃烧。
@@ -1371,12 +1368,12 @@ effect.lifeleak.description=使目标造成的伤害恢复。
 #
 effect.bleed.description=如果目标移动，会随着时间迅速造成伤害。
 #
-effect.plague.description=立即毒害目标，然后将瘟疫降低一级或毒害到附近的生物。
+effect.plague.description=立即使目标中毒，然后则将瘟疫降低至最低等级，则使附近的生物中毒。
 #
 effect.aphagia.description=防止进食和使用各种物品。
 #
 effect.repulsion=斥力
-effect.repulsion.description=推开攻击者，并防止被抓到或锁定。
+effect.repulsion.description=推开攻击者，并防止被拾取或卡住。
 #
 effect.smited.description=使目标在阳光下燃烧。
 #
@@ -1496,7 +1493,7 @@ element.nether.name=地狱
 element.nether.description=一种代表腐败、恶魔、欲望和反叛的复合元素。地狱可以从风和混沌中融合，在那里风体现流动，混沌将其扭曲成腐败。
 #
 element.void.name=虚空
-element.void.description=一种代表虚无和删除的复合元素。秩序体现了结构和一致性，秩序体现了熵和随机性，混沌抵消了秩序和混沌的融合。
+element.void.description=A para element that represents nothingness and removal. Void can be fused from Order and Chaos where Order embodies structure and consistency which is cancelled out by Chaos which embodies entropy and randomness.
 # ========================================================================
 # ========================================================================
 item.whirlwindcharge.name=旋风球
@@ -1580,8 +1577,8 @@ item.frostwebcharge.description=用于发射霜网，也可从发射器发射。
 item.chaosorbcharge.name=混沌球
 item.chaosorbcharge.description=用来释放一团混沌，也可从发射器发射。
 #
-item.lobdarklingscharge.name=高射暗弹
-item.lobdarklingscharge.description=用它来投出一个阴暗的邪恶黑鬼球！也可以从发射器发射。
+item.lobdarklingscharge.name=嗜血虱虫球
+item.lobdarklingscharge.description=Use to lob a shadowy ball of vicious Darklings! Can also be fired from a dispenser.
 #
 item.icefirecharge.name=冰火球
 item.icefirecharge.description=用于发射冰火球，也可从发射器发射。
@@ -1596,14 +1593,14 @@ item.devilstarcharge.name=恶魔之心球
 item.devilstarcharge.description=用于发射一种小型的恶魔之心，也可从发射器发射。
 #
 # ========================================================================
-item.equipmentpart.description=这个物品可用于使用装备锻造台创造功能强大的装备，也可将其制作为有用的资源。
+item.equipmentpart.description=这个物品可用于使用装备锻造台创造功能强大的装备，也可将其制作为有用的资源。item.woodenrod.name=木棒
 #
 item.ironrod.name=铁棒
 item.ironhilt.name=铁护手
 item.ironpaxel.name=铁镐尖斧
-item.ironpikejoint.name=铁质矛连接器
+item.ironpikejoint.name=铁质矛骱（jiè）
 item.ironaxehead.name=铁斧头
-item.goldscepterhead.name=金杖头
+item.goldscepterhead.name=金质杖头
 item.bansheeeye.name=女妖之眼
 item.sylphwing.name=西尔芙之翼
 item.grueclaw.name=蛴螬之爪
@@ -1784,14 +1781,14 @@ item.bucketooze.description=胶状冰是一种胶状流体，流动十分缓慢�
 item.bucketrabbitooze.name=兔子软泥桶
 item.bucketrabbitooze.description=就像普通的软泥一样寒冷和危险，但是不会生成怪物，可以像水一样流动。
 #
-item.bucketmoglava.name=Moglava桶
-item.bucketmoglava.description=比普通熔岩更清澈，流动速度稍快，而且不会生成怪物。可以像水一样流动。
+item.bucketmoglava.name=纯净熔岩桶
+item.bucketmoglava.description=一种纯净的熔岩，它不会生成火海生物并且会像水一样流动。
 #
 item.bucketacid.name=酸液桶
 item.bucketacid.description=一种致命的物质，引起渗透，并随着时间的推移造成伤害。
 #
-item.bucketsharacid.name=精炼酸桶
-item.bucketsharacid.description=精炼的酸，同样致命，但是不会生成怪物，可以像水一样流动。
+item.bucketsharacid.name=精炼酸液桶
+item.bucketsharacid.description=精炼的酸液，同样致命，但是不会生成怪物，可以像水一样流动。
 #
 item.bucketpoison.name=毒液桶
 item.bucketpoison.description=这是种肮脏的液体，能引起瘟疫。
@@ -1835,43 +1832,43 @@ item.soulstone_aberration.name=畸变灵魂石
 item.soulstone_aberration.description=一个畸形的怪异灵魂居住在这个灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_angel.name=天使灵魂石
-item.soulstone_angel.description=天使的神圣灵魂居住在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_angel.description=一尊天使的神圣灵魂居住在这块灵魂石里，释放它，让它为你服务？！
 #
 item.soulstone_aquatic.name=水生灵魂石
-item.soulstone_aquatic.description=一个水生生物优雅的灵魂居住在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_aquatic.description=一位水生生物优雅的灵魂居住在这枚灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_arthropod.name=节肢动物灵魂石
-item.soulstone_arthropod.description=节肢动物奇怪的灵魂居住这个灵魂石里，释放它，让它为你服务！
+item.soulstone_arthropod.description=节肢动物奇怪的灵魂居住在这块灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_avian.name=鸟类灵魂石
-item.soulstone_avian.description=鸟类敏捷的灵魂居住在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_avian.description=鸟类敏捷的灵魂居住这枚灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_beast.name=野兽灵魂石
-item.soulstone_beast.description=野兽的狂暴灵魂就在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_beast.description=野兽狂暴的灵魂居住在这枚灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_brute.name=狂兽人灵魂石
-item.soulstone_brute.description=狂兽人强大的灵魂居住在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_brute.description=狂兽人强大的灵魂居住在这颗灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_demon.name=恶魔灵魂石
-item.soulstone_demon.description=恶魔邪恶的灵魂居住在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_demon.description=恶魔邪恶的灵魂居住这枚灵魂石里，释放它，让它为你服务！
 #
-item.soulstone_dragon.name=龙魂石
-item.soulstone_dragon.description=龙的骄傲灵魂就在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_dragon.name=龙灵魂石
+item.soulstone_dragon.description=骄傲的龙魂就储存于这颗灵魂石中，释放它，让它为你服务！
 #
 item.soulstone_elemental.name=元素精华石
-item.soulstone_elemental.description=元素的魔法精华就在这个精华石里，释放它，让它为你服务！
+item.soulstone_elemental.description=元素的魔法精华就储存于这颗精华石中，释放它，让它为你服务？！
 #
 item.soulstone_imp.name=小鬼灵魂石
-item.soulstone_imp.description=小鬼淘气的灵魂就住在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_imp.description=小鬼淘气的灵魂就住在这枚灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_plant.name=植物灵魂石
-item.soulstone_plant.description=植物生物旺盛的灵魂居住在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_plant.description=一颗植物的生命精华就储存于这颗灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_undead.name=不死灵魂石
-item.soulstone_undead.description=不死生物不知疲倦的灵魂就在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_undead.description=不死生物不知疲倦的灵魂就存放于这枚灵魂石里，释放它，让它为你服务！
 #
 item.soulstone_worm.name=蠕虫灵魂石
-item.soulstone_worm.description=虫子无情的灵魂居住在这个灵魂石里，释放它，让它为你服务！
+item.soulstone_worm.description=虫子哪无情的灵魂居住在这灵魂石里，释放它，让它为你服务！
 #
 #
 # ========== Spawns ==========
@@ -1896,7 +1893,7 @@ item.scorchfirescepter.name=炽焰权杖
 item.scorchfirescepter.description=低等伤害，速射，着火，释放炽焰
 #
 item.devilstarscepter.name=恶魔之心权杖
-item.devilstarscepter.description=低等伤害，高速射
+item.devilstarscepter.description=低等伤害， Fast Rapid Fire
 #
 item.whirlwindscepter.name=旋风权杖
 item.whirlwindscepter.description=中等伤害，蓄能，飘浮效果，释放火苗
@@ -1912,22 +1909,22 @@ item.blizzardscepter.name=暴雪权杖
 item.blizzardscepter.description=中等伤害，速射，释放冰火
 #
 item.bloodleechscepter.name=吸血蚂蟥权杖
-item.bloodleechscepter.description=低等伤害，速射，吸血
+item.bloodleechscepter.description=低等伤害， 速射，吸血
 #
 item.waterjetscepter.name=高压水流权杖
 item.waterjetscepter.description=中等伤害，激光，穿透
 #
 item.doomfirescepter.name=死焰权杖
-item.doomfirescepter.description=中等伤害，速射，着火，释放死焰
+item.doomfirescepter.description=中等伤害， 速射，着火，释放死焰
 #
 item.frostboltscepter.name=凛冰权杖
-item.frostboltscepter.description=中等伤害，速射，减缓移动
+item.frostboltscepter.description=中等伤害， 速射，减缓移动
 #
 item.poopscepter.name=翔球权杖
-item.poopscepter.description=低等伤害，速射，缓慢和反胃效果，释放翔云
+item.poopscepter.description=低等伤害， 速射，缓慢和反胃效果，释放翔云
 #
 item.scythescepter.name=镰刀权杖
-item.scythescepter.description=中等伤害，三倍间歇发射
+item.scythescepter.description=中等伤害，，三倍间歇发射
 #
 item.tundrascepter.name=冻原权杖
 item.tundrascepter.description=高等伤害，蓄能，释放胶状冰
@@ -1942,7 +1939,7 @@ item.emberscepter.name=余烬权杖
 item.emberscepter.description=中等伤害，着火，释放火苗
 #
 item.icefirescepter.name=冰火权杖
-item.icefirescepter.description=低等伤害，速射，释放冰火
+item.icefirescepter.description=低等伤害， 速射，释放冰火
 #
 item.poisonrayscepter.name=毒腺权杖
 item.poisonrayscepter.description=中等伤害，远程射线，释放毒雾
@@ -1960,7 +1957,7 @@ item.lifedrainscepter.name=嗜血权杖
 item.lifedrainscepter.description=中等伤害，激光，生命汲取
 #
 item.frostwebscepter.name=霜网权杖
-item.frostwebscepter.description=低等伤害，速射，减缓移动，释放霜网
+item.frostwebscepter.description=低等伤害， 速射，减缓移动，释放霜网
 #
 item.boulderblastscepter.name=爆石权杖
 item.boulderblastscepter.description=高等伤害，蓄能，挖掘疲劳效果
@@ -2020,8 +2017,8 @@ item.aviantreat.description=由清淡肉类制成，你可以用它驯服一些�
 item.beasttreat.name=野兽的款待
 item.beasttreat.description=由多汁的肉制成，你可以用这个驯服一些野兽。
 #
-item.brutetreat.name=大野兽的款待
-item.brutetreat.description=由肥肉制成，大野兽的思想很简单，会不会有人受此影响？
+item.brutetreat.name=蛮兽的款待
+item.brutetreat.description=由肥肉制成，蛮兽的思想很简单，会不会有人受此影响？
 #
 item.demontreat.name=恶魔的款待
 item.demontreat.description=所有的恶魔似乎都喜欢在它们的肉食之间吃下地狱疣。
@@ -2057,7 +2054,7 @@ boss.block.protection.break=一个强大的存在阻止了你摧毁那个方块�
 boss.damage.protection.range=它太强大了，不能在这个距离对它造成伤害。
 #
 # ========== Event Names ==========
-mobevent.amalgalich.name=巫妖混合体
+mobevent.amalgalich.name=蜘蛛恐惧症
 mobevent.arachnophobia.name=蜘蛛恐惧症
 mobevent.asmodeus.name=恶魔降临
 mobevent.bamstorm.name=恶作剧风暴
@@ -2112,7 +2109,7 @@ entity.lycanitesmobs.demonicblast=恶魔冲击
 entity.lycanitesmobs.demonicspark=恶魔火花
 entity.lycanitesmobs.bloodleech=吸血蚂蟥
 entity.lycanitesmobs.acidsplash=浓酸
-entity.lycanitesmobs.lobdarklings=高射黑暗
+entity.lycanitesmobs.lobdarklings=嗜血虱虫
 entity.lycanitesmobs.faebolt=仙域
 entity.lycanitesmobs.frostweb=冰网
 entity.lycanitesmobs.chaosorb=混沌宝珠
@@ -2121,10 +2118,34 @@ entity.lycanitesmobs.ember=灰烬
 entity.lycanitesmobs.blizzard=暴雪
 entity.lycanitesmobs.doomfireball=厄运火球
 entity.lycanitesmobs.waterjet=高压水
-entity.lycanitesmobs.poop=翔
+entity.lycanitesmobs.poop=翔云
 entity.lycanitesmobs.lifedrain=生命吸取
 entity.lycanitesmobs.devilstar=恶魔之心
 entity.lycanitesmobs.aquapulse=脉冲水
 entity.lycanitesmobs.arcanelaserstorm=神秘激光风暴
 entity.lycanitesmobs.aetherwave=以太
 entity.lycanitesmobs.summoningseed=召唤种子
+item.wormtreat.description=丰富的肉，蠕虫喜欢它
+#
+item.wormtreat.name=蠕虫的款待
+item.wraithsigil.description=这个骷髅头充满了邪恶的幽灵！使用它向受害者发射一阵愤怒的游魂！ 结果可能是会爆炸的？！
+#
+item.wraithsigil.name=游魂印记
+#
+item.cooked_maka_meat.name=熟克莱肉
+item.venomshotcharge.description=低等伤害，速射，中等效果，释放毒雾
+#
+item.venomshotcharge.name=毒液球
+tile.equipmentforge_master.description=此锻造台可用于从3级或低于3级的生物身体部位创建新装备。
+#
+tile.equipmentforge_master.name=钻石锻造台（三阶）
+tile.equipmentforge_greater.description=此锻造台可用于从2级或低于2级的生物身体部位创建新装备（如果可能，更高级别的部件将降级）。
+#
+tile.equipmentforge_greater.name=铁质锻造台（二阶）
+tile.equipmentforge_lesser.description=此锻造台可用于从1级生物身体部位创建新装备（如果可能，更高级别的部件将降级）。
+#
+#
+# ========== Equipment Forges ==========
+tile.equipmentforge_lesser.name=木质锻造台（一阶）
+tile.summoningpedestal.description=该基座能够创建一个恒定的召唤门，将召唤选定的召唤物。有些基座可以是玩家所有，有些则不是。
+subspecies.lux.name=流光
