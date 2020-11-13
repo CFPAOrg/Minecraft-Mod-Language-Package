@@ -154,13 +154,7 @@ namespace Formatter {
                         if (lf.Contains(Path.Combine(directoryInfo.FullName, "lang", "zh_cn.lang")) ||
                             lf.Contains(Path.Combine(directoryInfo.FullName, "lang", "zh_CN.lang"))) {
                             var pa = lf.FirstOrDefault(_ => _.ToLower().Contains("zh_cn.lang"));
-                            var isParse = false;
-                            foreach (string str in await File.ReadAllLinesAsync(pa, Encoding.UTF8)) {
-                                if (str == "#PARSE_ESCAPES") {
-                                    isParse = true;
-                                    break;
-                                }
-                            }
+                            var isParse = true;
 
                             if (isParse) {
                                 var replaced = new List<string>();
