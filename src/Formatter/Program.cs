@@ -13,7 +13,7 @@ namespace Formatter
             var bl = await Util.ReadBlackKey();
             foreach (var configuration in config) {
                 var file = Util.SearchLangFiles(configuration.Version);
-                await Util.FormatLangFile(file,bl);
+                await Util.FormatLangFile(file, bl);
             }
         }
     }
