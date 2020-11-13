@@ -51,6 +51,11 @@ namespace Packer
                 Log.Information("初始化压缩包：添加 {0}", _);
                 archive.CreateEntryFromFile($"{commonPrefix}\\{_}", _, CompressionLevel.Fastest);
             });
+            archive.CreateEntryFromFile("./config/fix-resource/font/glyph_sizes.bin", "/assets/minecraft/font/glyph_sizes.bin");
+            archive.CreateEntryFromFile("./config/fix-resource/textures/font/unicode_page_9f.png", "/assets/minecraft/textures/font/unicode_page_9f.png");
+            archive.CreateEntryFromFile("./config/fix-resource/textures/font/unicode_page_20.png", "/assets/minecraft/textures/font/unicode_page_20.png");
+            archive.CreateEntryFromFile("./config/fix-resource/textures/font/unicode_page_e9.png", "/assets/minecraft/textures/font/unicode_page_e9.png");
+
             Log.Information("初始化完成");
         }
     }

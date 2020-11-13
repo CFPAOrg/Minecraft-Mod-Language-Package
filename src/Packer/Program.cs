@@ -5,20 +5,28 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text.Json;
-
+using System.Threading.Tasks;
+using Formatter;
 using static Packer.Utils;
 
 namespace Packer
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .CreateLogger();
+            var hashmap = await Util.ReadReplaceFontMap();
             var config = RetrieveConfig();
+            if (config.Version == "1.12.2") {
+                await Util.ReplaceFontInLang(config.Version, hashmap);
+            }
+            else {
+                await Util.ReplaceFontInJson(config.Version, hashmap);
+            }
             Log.Information("开始打包。版本：{0}", config.Version);
             using var stream = File.Create(".\\Minecraft-Mod-Language-Package-1-16.zip"); // 生成空 zip 文档
             using var archive = new ZipArchive(stream, ZipArchiveMode.Update);
