@@ -154,13 +154,7 @@ namespace Formatter {
                         if (lf.Contains(Path.Combine(directoryInfo.FullName, "lang", "zh_cn.lang")) ||
                             lf.Contains(Path.Combine(directoryInfo.FullName, "lang", "zh_CN.lang"))) {
                             var pa = lf.FirstOrDefault(_ => _.ToLower().Contains("zh_cn.lang"));
-                            var isParse = false;
-                            foreach (string str in await File.ReadAllLinesAsync(pa, Encoding.UTF8)) {
-                                if (str == "#PARSE_ESCAPES") {
-                                    isParse = true;
-                                    break;
-                                }
-                            }
+                            var isParse = true;
 
                             if (isParse) {
                                 var replaced = new List<string>();
@@ -178,7 +172,7 @@ namespace Formatter {
                                         var line = str;
                                         foreach (var key in map.Keys) {
                                             var skey = key as string;
-                                            line = line.Replace(skey, map[skey] as string);
+                                            line = line.Replace(skey, Regex.Unescape(map[skey] as string));
                                         }
 
                                         replaced.Add(line);
@@ -226,7 +220,7 @@ namespace Formatter {
                                     var line = str;
                                     foreach (var key in map.Keys) {
                                         var skey = key as string;
-                                        line = line.Replace(skey, map[skey] as string);
+                                        line = line.Replace(skey, Regex.Unescape(map[skey] as string));
                                     }
 
                                     replaced.Add(line);
