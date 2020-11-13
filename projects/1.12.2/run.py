@@ -1,6 +1,5 @@
 import os
 
-
 def get_name(path, list):
     if os.path.isdir(path):
         for file in os.listdir(path):
@@ -13,5 +12,5 @@ if __name__ == "__main__":
     l = []
     get_name("./", l)
     print(l)
-    # for f in l:
-    #     os.rename(f, f.replace("en_US.lang", "en_us.lang"))
+    for f in l:
+        os.rename(f, f.replace("en_US.lang", "en_us.lang"))
