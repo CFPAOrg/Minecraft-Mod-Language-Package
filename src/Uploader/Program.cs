@@ -31,7 +31,7 @@ namespace Uploader
             scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip.1");
             Log.Logger.Information("上传成功");
             scpClient.Dispose();
-            using var sshClient = new SshClient(host, 12356, name, pwd);
+            using var sshClient = new SshClient(host, 20002, name, pwd);
             sshClient.Connect();
             if (sshClient.IsConnected)
             {
