@@ -3,12 +3,10 @@ name: CheckMerge
 on:
   pull_request_target:
     types: [opened, labeled, unlabeled, synchronize]
-  pull_request:
-    types: [opened, labeled, unlabeled, synchronize]
 
 jobs:
   check_availability:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Check Label
         uses: jesusvasquez333/verify-pr-label-action@v1.3.1
