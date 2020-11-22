@@ -16,9 +16,3 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
           valid-labels: "needmerge"
           pull-request-number: "${{ github.event.pull_request.number }}"
-      - uses: actions/checkout@v1
-      - name: Check Weblate
-        run: |
-          git remote add weblate http://Nullpinter:${{ BAKA_GOURD_WL_API_KEY }}@weblate-t.exz.me/git/langpack/_no_edit_base_component/
-          git remote update weblate
-          git merge weblate/main
