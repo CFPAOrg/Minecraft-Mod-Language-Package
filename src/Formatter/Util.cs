@@ -54,13 +54,13 @@ namespace Formatter {
                         Log.Debug("添加空行");
                     }
 
-                    if (commentReg.IsMatch(str)) {
-                        if (!str.StartsWith("#")) {
-                            continue;
-                        }
+                    
+                    if (str.StartsWith("#")) {
                         ls.Add(str);
                         Log.Debug("添加规范注释");
                     }
+                        
+                    
 
                     if (findEqual.IsMatch(str)) {
                         if (keyReg.IsMatch(str)) {
