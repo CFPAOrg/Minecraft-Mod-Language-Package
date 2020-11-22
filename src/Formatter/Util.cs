@@ -55,6 +55,9 @@ namespace Formatter {
                     }
 
                     if (commentReg.IsMatch(str)) {
+                        if (!str.StartsWith("#")) {
+                            continue;
+                        }
                         ls.Add(str);
                         Log.Debug("添加规范注释");
                     }
