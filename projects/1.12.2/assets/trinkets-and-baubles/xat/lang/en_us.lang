@@ -9,7 +9,9 @@ xat.exampletext.4= item.item.glow_ring.0.compat.tan= For Tough as Nails
 xat.exampletext.5= item.item.glow_ring.0.compat.firstaid= For First Aid
 xat.exampletext.6= item.item.glow_ring.0.compat.enhancedvisuals= For EnhancedVisuals
 xat.exampletext.7= There are Color Codes that can be used to give the text below colors in game
+xat.exampletext.8= Color Codes Start with Hashtag # and end with a Semi colon :, Example: #gold:, #darkgreen:, etc.
 xat.exampletext.8= Colors... "black", "white", "red", "darkred", "blue", "darkblue", "green", "darkgreen", "lightpurple", "darkpurple", "yellow", "aqua", "darkaqua", "gray", "darkgray", "gold", "reset".
+xat.exampletext.9= "strikethrough", "underline", "italic", "bold". Can also be used, Example: #strikethrough:, #bold:, etc.
 xat.exampletext.end=~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 xat.holdshift=<Hold Shift>
@@ -26,6 +28,10 @@ xat.tooltip.movementspeed=Movement Speed
 xat.tooltip.swimspeed=Swim Speed
 xat.tooltip.stepheight=Step Height
 xat.tooltip.jumpheight=Jump Height
+xat.tooltip.on=#reset:(#green:On#reset:)
+xat.tooltip.off=#reset:(#red:Off#reset:)
+xat.tooltip.enabled=#reset:[#green:Enabled#reset:]
+xat.tooltip.disabled=#reset:[#red:Disabled#reset:]
 
 key.xat.category=Trinkets and Baubles
 key.xat.trinket_target.desc=Cycle Target Treasure
@@ -44,81 +50,145 @@ item.glowing_powder.name=Glowing Powder
 item.glowing_gem.name=Glowing Gem
 
 item.glow_ring.0.name=Ring of Enchanted Eyes
+item.glow_ring.0.tooltip1=#darkgreen:Grants Night Vision
 item.glow_ring.0.tooltip2=%blindness:
+item.glow_ring.0.blindness=#gold:Immunity to Blindness
 
 item.fairy_ring.0.name=Ring of the Fairies
+item.fairy_ring.0.tooltip1=#gold:Reduces size to 1/4th of normal
 item.fairy_ring.0.tooltip2=@creativeflight:
+item.fairy_ring.0.creativeflight=#gold:Grants Creative flight
 
 item.dwarf_ring.0.name=Ring of the Dwarves
+item.dwarf_ring.0.tooltip1=#gold:Reduces size to 3/4th of normal
 item.dwarf_ring.0.tooltip2=@fortune:
 item.dwarf_ring.0.tooltip3=@skilledminer:
 item.dwarf_ring.0.tooltip4=@staticminer:
+item.dwarf_ring.0.fortune=#gold:Pseudo-Fortune
+item.dwarf_ring.0.skilledminer=#darkgreen:Skilled miner
+item.dwarf_ring.0.staticminer=#darkgreen:Static mining speed
 
 item.titan_ring.0.name=Ring of the Titans
+item.titan_ring.0.tooltip1=#gold:Increases player size to 3x of normal
 
 item.weightless_stone.0.name=Stone of Negative Gravity
+item.weightless_stone.0.tooltip1=#darkgreen:Makes gravity not affect you when worn
+item.weightless_stone.0.tooltip2=<#yellow:Left Click#reset:> to go #darkgreen:up
+item.weightless_stone.0.tooltip3=<#yellow:Sneak#reset:> + <#yellow:Left Click#reset:> to go #darkgreen:down
+item.weightless_stone.0.tooltip4=#green:Grants Levitation while held
 
 item.inertia_null_stone.0.name=Stone of Inertia Null
+item.inertia_null_stone.0.tooltip1=#darkaqua:$inertianullfd:#reset:#gold: Resistance to fall damage
 
 item.greater_inertia_stone.0.name=Stone of Greater Inertia
+item.greater_inertia_stone.0.tooltip1=#darkaqua:$greaterinertiafd:#reset:#gold: Resistance to fall damage
 
 item.sea_stone.0.name=Stone of the Sea
 item.sea_stone.0.tooltip1=@bubbles:
 item.sea_stone.0.tooltip2=@betterswimming:
+item.sea_stone.0.bubbles=#gold:Infinite oxygen at #reset:[#darkaqua:$bubbles:#reset:]#gold: bubbles
+item.sea_stone.0.betterswimming=#darkgreen:Enhanced Swimming
 item.sea_stone.0.compat.tan=@tanthirst:
+item.sea_stone.0.tanthirst=#gold:Immunity to Thirst
 item.sea_stone.0.compat.enhancedvisuals=Disables the blur when entering water
 
 item.polarized_stone.0.name=Polarized Stone
 item.polarized_stone.0.tooltip1=@collect:
+item.polarized_stone.0.tooltip2=<#yellow:*magnetkb:#reset: or #yellow:Right-Click#reset:>
 item.polarized_stone.0.tooltip3=@repel:
+item.polarized_stone.0.tooltip4=<#yellow:*auxkb:#reset: + #yellow:*magnetkb:#reset: or #yellow:Sneak#reset: + #yellow:Right-Click#reset:>
+item.polarized_stone.0.collect=#gold:Pulls nearby items @collectxp:
 item.polarized_stone.0.collectxp=and XP Orbs $collecttoggle:
+item.polarized_stone.0.repel=#gold:Repels arrows $repeltoggle:
 item.polarized_stone.0.magnetmode=Collection mode $collecttoggle:
 item.polarized_stone.0.repelmode=Repel mode $repeltoggle:
 
 item.dragons_eye.0.name=Dragon's Eye
+item.dragons_eye.0.tooltip1=#gold:Grants Fire Resistance
+item.dragons_eye.0.tooltip2=#darkgreen:Grants Night Vision $nightvision: #reset:<#yellow:*denvkb:#reset:>
 item.dragons_eye.0.tooltip3=@treasurefinder:
+item.dragons_eye.0.nightvision=#darkgreen:Grants Night Vision $nightvision:
+item.dragons_eye.0.treasurefinder=#gold:Current Target: #darkaqua:#underline:$target: #reset:<#yellow:*deofkb:#reset:>
+item.dragons_eye.0.blindness=#gold:Immunity to Blindness $blindness:
+item.dragons_eye.0.treasurefinder.on=#gold:I need more#white: $target:#gold: for my Treasury $looking:
+item.dragons_eye.0.treasurefinder.notfound=#gold:I need more #red:$target:#gold: to breathe?
 item.dragons_eye.0.treasurefinder.off=I think my Treasury is sufficiently full $looking:
 item.dragons_eye.0.compat.tan=@heatimmune:
+item.dragons_eye.0.heatimmune=#gold:Immunity to heat
 item.dragons_eye.0.compat.enhancedvisuals=Disables fire splat effect
 
 item.poison_stone.0.name=Poison Stone
+item.poison_stone.0.tooltip1=#gold:Immunity To Poison
+item.poison_stone.0.tooltip2=#gold:Immunity to Hunger
 item.poison_stone.0.tooltip3=@poison:
 item.poison_stone.0.tooltip4=@bonusdamage:
+item.poison_stone.0.poison=#darkaqua:$poisonchance:#darkgreen: Chance to poison enemies
+item.poison_stone.0.bonusdamage=#darkgreen:Deals $damagemultiplier: Damage to poisoned enemies
 
 item.wither_ring.0.name=Wither Ring
+item.wither_ring.0.tooltip1=#gold:Immunity to Wither
 item.wither_ring.0.tooltip2=@wither:
 item.wither_ring.0.tooltip3=@leech:
+item.wither_ring.0.wither=#darkaqua:$witherchance:#darkgreen: Chance to wither enemies
+item.wither_ring.0.leech=#darkgreen:Heals #darkaqua:$leechamount:#darkgreen: hearts when attacking withered enemies
 
 item.ender_tiara.0.name=Ender Queen's Crown
+item.ender_tiara.0.tooltip1=#gold:Royalty
+item.ender_tiara.0.tooltip2=#darkgreen:Endermen fight for you @endermenfollow:
 item.ender_tiara.0.tooltip3=@damageignored:
 item.ender_tiara.0.tooltip4=@endermenchance:
 item.ender_tiara.0.tooltip5=@waterhurts:
+item.ender_tiara.0.damageignored=#darkaqua:$chance: #gold:Chance to ignore damage
+item.ender_tiara.0.endermenchance=#darkaqua:$chance: #gold:Chance to spawn an Enderman
 item.ender_tiara.0.endermenfollow=and follow you
+item.ender_tiara.0.waterhurts=#red:Weakness to water
+item.ender_tiara.0.compat.tan=#gold:Immunity to cold
 item.ender_tiara.0.compat.enhancedvisuals=Disabled endermen static effect
 
 item.damage_shield.0.name=Shield of Honor
 item.damage_shield.0.tooltip1=@explosionresist:
 item.damage_shield.0.tooltip2=@damageignored:
+item.damage_shield.0.explosionresist=#darkaqua:$explosionresistamount: #gold:Explosion damage resistance 
+item.damage_shield.0.damageignored=#gold:Damage ignored: #darkaqua:$damageignoredhitcount:
 item.damage_shield.0.compat.firstaid=@headshots:
+item.damage_shield.0.headshots=#darkaqua:$headshotchance:#gold: Chance to ignore headshot
 item.damage_shield.0.compat.enhancedvisuals=Disables explosion blur
 
 item.dwarf_stout.name=Dwarf Stout
+item.dwarf_stout.tooltip1=#aqua:I might be able to remove the effects
+item.dwarf_stout.tooltip2=#aqua:by drinking some sort of potion
+item.dwarf_stout.tooltip3=<#blue:Use a Potion of Restoration to undo#reset:>
 
 item.fairy_dew.name=Fairy Dew
+item.fairy_dew.tooltip1=#aqua:I might be able to remove the effects
+item.fairy_dew.tooltip2=#aqua:by drinking some sort of potion
+item.fairy_dew.tooltip3=<#blue:Use a Potion of Restoration to undo#reset:>
 
 item.titan_spirit.name=Titan's Spirit
+item.titan_spirit.tooltip1=#aqua:I might be able to remove the effects
+item.titan_spirit.tooltip2=#aqua:by drinking some sort of potion
+item.titan_spirit.tooltip3=<#blue:Use a Potion of Restoration to undo#reset:>
 
 potion.effect.enhanced=Enhanced Potion
 splash_potion.effect.enhanced=Enhanced Splash Potion
 lingering_potion.effect.enhanced=Enhanced Lingering Potion
 tipped_arrow.effect.enhanced=Enhanced Tipped Arrow
 effect.enhanced=Enhanced
+xat.item.potion.enhanced.tooltip1=#gold:Heals 2.5 hearts
+xat.item.potion.enhanced.tooltip2=#gold:Restores 50 mana
+xat.item.potion.enhanced.tooltip3=#green:Used to craft the Potion of Restoration
+xat.item.potion.enhanced.tooltip4=#green:Used to craft the Fairy Transformation Potion
+xat.item.potion.enhanced.tooltip5=#green:Used to craft the Dwarf Transformation Potion
+xat.item.potion.enhanced.tooltip6=#green:Used to craft the Titan Transformation Potion
 
 potion.effect.restorative=Potion of Restoration
 splash_potion.effect.restorative=Splash Potion of Restoration
 lingering_potion.effect.restorative=Lingering Potion of Restoration
 tipped_arrow.effect.restorative=Tipped Arrow of Restoration
 effect.restorative=Restorative
+xat.item.potion.restorative.tooltip1=#gold:Heals 10 hearts
+xat.item.potion.restorative.tooltip2=#gold:Removes potion effects
+xat.item.potion.restorative.tooltip3=#gold:Removes transformative effects from enchanted food
 
 potion.effect.fairy=Potion of Fairy Transformation
 splash_potion.effect.fairy=Splash Potion of Fairy Transformation
