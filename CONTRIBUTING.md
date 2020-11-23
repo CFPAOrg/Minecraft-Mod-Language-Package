@@ -1,4 +1,4 @@
-# Contributing for Graia Minecraft-Mod-Language-Package
+# Contributing for Minecraft-Mod-Language-Package
 
 模组汉化文件（下文亦称“汉化”），指本项目`projects/[version]/assets`中的用于提供**Minecraft**模组及本体中文本地化支持的文件（包括且**不限于**模组本体所提供的`.lang`，`.json`文件、帕秋莉手册汉化文件、模组自带手册汉化文件）。
 
