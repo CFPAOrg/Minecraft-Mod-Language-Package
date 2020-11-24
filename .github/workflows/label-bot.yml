@@ -8,9 +8,9 @@ jobs:
   add-label:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       if: contains(github.event.pull_request.title, '[NM]')
       - name: NM
+      - uses: actions/checkout@v2
       - uses: christianvuerings/add-labels@v1
         with:
           labels: needmerge
@@ -19,6 +19,7 @@ jobs:
       
       if: contains(github.event.pull_request.title, '[NR]')
       - name: NR
+      - uses: actions/checkout@v2
       - uses: christianvuerings/add-labels@v1
         with:
           labels: needreview
@@ -27,6 +28,7 @@ jobs:
       
       if: contains(github.event.pull_request.title, '[P]')
       - name: P
+      - uses: actions/checkout@v2
       - uses: christianvuerings/add-labels@v1
         with:
           labels: professional
