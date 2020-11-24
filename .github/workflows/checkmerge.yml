@@ -5,11 +5,10 @@ on:
     types: [opened, labeled, unlabeled, synchronize]
 
 jobs:
-  add-label:
+  check_availability:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
       - name: NM
         if: contains(github.event.pull_request.title, '[NM]')
         uses: christianvuerings/add-labels@v1.1
@@ -33,10 +32,7 @@ jobs:
           labels: professional
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-     
-  check_availability:
-    runs-on: ubuntu-latest
-    steps:
+        
       - name: Check Label
         uses: jesusvasquez333/verify-pr-label-action@v1.3.1
         with:
