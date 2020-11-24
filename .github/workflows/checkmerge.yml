@@ -1,7 +1,7 @@
 name: CheckMerge
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, labeled, unlabeled, synchronize]
 
 jobs:
@@ -13,7 +13,8 @@ jobs:
         if: contains(github.event.pull_request.title, '[NM]')
         uses: christianvuerings/add-labels@v1.1
         with:
-          labels: needmerge
+          labels: |
+            needmerge
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
@@ -21,7 +22,8 @@ jobs:
         if: contains(github.event.pull_request.title, '[NR]')
         uses: christianvuerings/add-labels@v1.1
         with:
-          labels: needreview
+          labels: |
+            needreview
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
@@ -29,7 +31,8 @@ jobs:
         if: contains(github.event.pull_request.title, '[P]')
         uses: christianvuerings/add-labels@v1.1
         with:
-          labels: professional
+          labels: |
+            professional
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
