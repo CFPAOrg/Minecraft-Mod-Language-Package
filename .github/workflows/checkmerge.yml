@@ -1,41 +1,13 @@
 name: CheckMerge
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, labeled, unlabeled, synchronize]
 
 jobs:
   check_availability:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: NM
-        if: contains(github.event.pull_request.title, '[NM]')
-        uses: christianvuerings/add-labels@v1.1
-        with:
-          labels: |
-            needmerge
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: NR
-        if: contains(github.event.pull_request.title, '[NR]')
-        uses: christianvuerings/add-labels@v1.1
-        with:
-          labels: |
-            needreview
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: P
-        if: contains(github.event.pull_request.title, '[P]')
-        uses: christianvuerings/add-labels@v1.1
-        with:
-          labels: |
-            professional
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
       - name: Check Label
         uses: jesusvasquez333/verify-pr-label-action@v1.3.1
         with:
