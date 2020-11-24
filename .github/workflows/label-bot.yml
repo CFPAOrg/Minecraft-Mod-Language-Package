@@ -1,0 +1,34 @@
+name: Label Bot
+
+on:
+  pull_request:
+    types: [opened, labeled, unlabeled, synchronize]
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      if: contains(github.event.pull_request.title, '[NM]')
+      - name: NM
+      - uses: christianvuerings/add-labels@v1
+        with:
+          labels: needmerge
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      if: contains(github.event.pull_request.title, '[NR]')
+      - name: NR
+      - uses: christianvuerings/add-labels@v1
+        with:
+          labels: needreview
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      if: contains(github.event.pull_request.title, '[P]')
+      - name: P
+      - uses: christianvuerings/add-labels@v1
+        with:
+          labels: professional
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
