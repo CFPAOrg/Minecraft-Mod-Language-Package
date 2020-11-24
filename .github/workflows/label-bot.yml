@@ -1,4 +1,4 @@
-name: Label Bot
+name: LabelBot
 
 on:
   pull_request:
@@ -8,8 +8,8 @@ jobs:
   add-label:
     runs-on: ubuntu-latest
     steps:
-      if: contains(github.event.pull_request.title, '[NM]')
       - name: NM
+        if: contains(github.event.pull_request.title, '[NM]')
       - uses: actions/checkout@v2
       - uses: christianvuerings/add-labels@v1
         with:
@@ -17,8 +17,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      if: contains(github.event.pull_request.title, '[NR]')
       - name: NR
+        if: contains(github.event.pull_request.title, '[NR]')
       - uses: actions/checkout@v2
       - uses: christianvuerings/add-labels@v1
         with:
@@ -26,8 +26,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      if: contains(github.event.pull_request.title, '[P]')
       - name: P
+        if: contains(github.event.pull_request.title, '[P]')
       - uses: actions/checkout@v2
       - uses: christianvuerings/add-labels@v1
         with:
