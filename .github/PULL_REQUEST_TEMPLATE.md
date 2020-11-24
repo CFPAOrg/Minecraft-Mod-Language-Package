@@ -1,4 +1,5 @@
 - [ ] 我已阅读注意事项 [#847](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/847)
+- [ ] 我已标记PR以便审查（见`CONTRIBUTING.md`）
 - [ ] 我已确认文件路径、分支均正确：
     - 如果是 1.12 翻译，应该是: `projects/1.12.2/assets/curseforge 域名/模组资源 id/lang/zh_cn.lang`
     - 如果是 1.15-1.16 翻译，应该是: `projects/1.16.1/assets/curseforge 域名/模组资源 id/lang/zh_cn.json`
