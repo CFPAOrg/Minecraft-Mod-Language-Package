@@ -1,21 +1,54 @@
+itemGroup.storagenetwork=Simple Storage Network
+
 tile.storagenetwork:kabel.name=Storage Cable
 tile.storagenetwork:storage_kabel.name=Storage Link Cable
 tile.storagenetwork:ex_kabel.name=Storage Export Cable
 tile.storagenetwork:im_kabel.name=Storage Import Cable
 tile.storagenetwork:process_kabel.name=Processing Cable
 
+tooltip.storagenetwork.kabel_S=Used to connect inventory to the network
+tooltip.storagenetwork.kabel_E=Exports items from the network into attached inventory
+tooltip.storagenetwork.kabel_I=Imports items from attached inventory into the network
+tooltip.storagenetwork.kabel_P=Can automate simple processing transactions
+tooltip.storagenetwork.kabel_L=Default cable to connect parts of your network
+
+tile.storagenetwork:simple_kabel.name=Simple Cable
+tooltip.storagenetwork.simple_kabel=Used to connect inventory to the network
+
 tile.storagenetwork:master.name=Storage Network Master
+tooltip.storagenetwork.master=One required per network
+
 tile.storagenetwork:request.name=Storage Request Table
+tooltip.storagenetwork.request=Network inventory with crafting
 
 item.storagenetwork:upgrade_0.name=Speed Upgrade
 item.storagenetwork:upgrade_1.name=Operation Upgrade
 item.storagenetwork:upgrade_2.name=Stack Upgrade
 item.storagenetwork:upgrade_3.name=Stock Upgrade
+tooltip.storagenetwork.upgrade_0=Increases the speed of importing/exporting
+tooltip.storagenetwork.upgrade_1=Activity of the cable depends on the amount of items
+tooltip.storagenetwork.upgrade_2=Increases the stack size of task
+tooltip.storagenetwork.upgrade_3=Keeps a specific amount of items in the attached inventory (only in export cable)
+
 
 item.storagenetwork:remote_0.name=Storage Remote
 item.storagenetwork:remote_1.name=Advanced Storage Remote
 item.storagenetwork:remote_2.name=Upgraded Storage Remote
 item.storagenetwork:remote_3.name=Simple Storage Remote
+tooltip.storagenetwork.remote_0=Used to access the network 64 blocks distance
+tooltip.storagenetwork.remote_1=Used to access the network from unlimited distance and across dimensions
+tooltip.storagenetwork.remote_2=Used to access the network from unlimited distance
+tooltip.storagenetwork.remote_3=Network without crafting from unlimited distance
+
+
+item.storagenetwork:picker_remote.name=Network Picker
+item.storagenetwork:picker_remote.tooltip=Tapping on a block will pull matching blocks from the network
+
+item.storagenetwork:collector_remote.name=Network Collector
+item.storagenetwork:collector_remote.tooltip=Items picked up are moved into the network
+
+item.storagenetwork:picker_remote.notfound=Not found in network
+item.storagenetwork:picker_remote.found=Item found, extracting...
 
 tile.storagenetwork:recipe.invalid=Transaction invalid: 
 tile.storagenetwork:recipe.invalidleft=Set Input on left
@@ -51,38 +84,22 @@ gui.storagenetwork.fil.tooltip_IN=Only input
 gui.storagenetwork.fil.tooltip_OUT=Only output
 gui.storagenetwork.fil.tooltip_BOTH=Input and output
 
-gui.storagenetwork.shift=Hold shift for more information.
+gui.storagenetwork.shift=Hold shift for more information
 
-gui.storagenetwork.fil.tooltip_0=Prefix @: Search for mod.
-gui.storagenetwork.fil.tooltip_1=Prefix #: Search for tooltip.
-gui.storagenetwork.fil.tooltip_2=Prefix $: Search for OreDict.
+gui.storagenetwork.fil.tooltip_0=Prefix @: Search for mod
+gui.storagenetwork.fil.tooltip_1=Prefix #: Search for tooltip
+gui.storagenetwork.fil.tooltip_2=Prefix $: Search for OreDic
 gui.storagenetwork.fil.tooltip_3=Clear text with right-click or X button
 
 gui.storagenetwork.tooltip_clear=Clear Search
 gui.storagenetwork.fil.tooltip_jei_on=JEI search enabled
 gui.storagenetwork.fil.tooltip_jei_off=JEI search disabled
 
-
-tooltip.storagenetwork.kabel_S=Used to connect inventory to the network.
-tooltip.storagenetwork.kabel_E=Exports items from the network into attached inventory.
-tooltip.storagenetwork.kabel_I=Imports items from attached inventory into the network.
-tooltip.storagenetwork.kabel_P=Can automate simple processing transactions.
-tooltip.storagenetwork.kabel_L=Default cable to connect parts of your network.
-tooltip.storagenetwork.master=The heart of the network. Only ONE per network.
-tooltip.storagenetwork.request=Used to overview and request items from the network.
-tooltip.storagenetwork.remote_0=Used to access the network 64 blocks distance.
-tooltip.storagenetwork.remote_1=Used to access the network from unlimited distance and across dimensions.
-tooltip.storagenetwork.remote_2=Used to access the network from unlimited distance.
-tooltip.storagenetwork.remote_3=Network without crafting from unlimited distance.
-
-tooltip.storagenetwork.upgrade_0=Increases the speed of importing/exporting.
-tooltip.storagenetwork.upgrade_1=Activity of the cable depends on the amount of items.
-tooltip.storagenetwork.upgrade_2=Increases the stack size of task.
-tooltip.storagenetwork.upgrade_3=Keeps a specific amount of items in the attached inventory (only in export cable).
-
-
 tile.storagenetwork:controller.name=Controller
 tooltip.storagenetwork.controller=Manage all Processing Cables in the network
+
+tile.storagenetwork:inventory.name=Storage Inventory
+tile.storagenetwork:inventory.tooltip=Network Inventory access
 
 chat.master.emptyslots=Potential Empty Slots: 
 chat.master.connectables=Connectables: 
@@ -101,3 +118,5 @@ processing.empty.ingredients=Empty Ingredients
 
 gui.storagenetwork.processing.recipe=Ingredients for each cycle will be sent as if coming from this block-side
 gui.storagenetwork.processing.extract=When pulling processing results it will be taken as if from this block-side
+
+
