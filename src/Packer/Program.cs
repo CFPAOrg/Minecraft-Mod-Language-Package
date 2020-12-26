@@ -5,9 +5,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
-using static Packer.Utils;
 
 namespace Packer
 {
@@ -19,12 +17,12 @@ namespace Packer
                 .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .CreateLogger();
-            var mapping = await ReadReplaceFontMap();
-            var config = RetrieveConfig();
+            var mapping = await Utils.ReadReplaceFontMap();
+            var config = Utils.RetrieveConfig();
             Log.Information("开始打包。版本：{0}", config.Version);
             using var stream = File.Create(".\\Minecraft-Mod-Language-Package.zip"); // 生成空 zip 文档
             using var archive = new ZipArchive(stream, ZipArchiveMode.Update);
-            InitializeArchive(archive, config);
+            archive.Initialize(config);
             var existingDomains = new Dictionary<string, string>();
             var assetsToBePacked = new DirectoryInfo($".\\projects\\{config.Version}\\assets")
                 .EnumerateDirectories()
@@ -71,7 +69,13 @@ namespace Packer
                     var destinationPath = $"assets\\{file.FullName[(asset.prefixLength + 1)..]}"
                         .Replace("zh_CN", "zh_cn") // 修复大小写
                         .Replace('\\', '/'); // 修复 Java 平台读取 CentralDirectory 部分时正反斜杠的问题
-                    var fileContent = File.ReadAllText(file.FullName, Encoding.UTF8)
+                    if (destinationPath.NeedBypass(config))
+                    {
+                        Log.Information("直接添加标记为不被处理的命名空间：{0}", destinationPath);
+                        archive.CreateEntryFromFile(file.FullName, destinationPath);
+                        continue;
+                    }
+                    var fileContent = (await File.ReadAllTextAsync(file.FullName, Encoding.UTF8))
                         .Preprocess(file.Extension, mapping);
 
                     if (conflict)
@@ -79,23 +83,32 @@ namespace Packer
                         var existingFile = archive.GetEntry(destinationPath);
                         if (existingFile is null) // null 代表没有找到文件，也就是该文件没有重合
                         {
-                            archive.CreateLangFile(destinationPath, fileContent);
+                            await archive.CreateLangFile(destinationPath, fileContent);
                             Log.Information("添加了暂未重合的 {0}", destinationPath);
                         }
                         else
                         {
                             Log.Warning("检测到重合文件：{0}", destinationPath);
-                            // 如果都传 string 进去，不如顺便把合并系统做成基于 Parse 的，但是有需求了再弄吧
-                            using var reader = new MemoryStream(Encoding.UTF8.GetBytes(fileContent));
-                            using var writer = existingFile.Open();
-                            CombineLangFiles(writer, reader, file.Extension);
+                            if (!destinationPath.Contains("/lang/"))
+                            {
+                                Log.Warning("检测到暂不支持合并的文件（{0}），取消合并", file.FullName);
+                                continue;
+                            }
+                            using (var reader = new StreamReader(existingFile.Open(),
+                                                                Encoding.UTF8,
+                                                                leaveOpen: false))
+                            {
+                                var existingContent = await reader.ReadToEndAsync();
+                                var result = Utils.CombineLangFiles(existingContent, fileContent, file.Extension);
+                                await Utils.CreateLangFile(archive, destinationPath, result);
+                            }
+                            existingFile.Delete();
                             Log.Information("完成合并");
-                            
                         }
                     }
                     else
                     {
-                        archive.CreateLangFile(destinationPath, fileContent);
+                        await archive.CreateLangFile(destinationPath, fileContent);
                         Log.Information("添加了 {0}", destinationPath);
                     }
                 }
@@ -106,12 +119,6 @@ namespace Packer
                 }
             }
             Log.Information("打包结束");
-        }
-
-        static Config RetrieveConfig()
-        {
-            var reader = File.ReadAllBytes(".\\config\\packer.json");
-            return JsonSerializer.Deserialize<Config>(reader);
         }
     }
 }
