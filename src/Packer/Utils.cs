@@ -51,6 +51,7 @@ namespace Packer
                 Log.Information("初始化压缩包：添加 {0}", _);
                 archive.CreateEntryFromFile($"{commonPrefix}\\{_}", _, CompressionLevel.Fastest);
             });
+
             Log.Information("初始化完成");
         }
     }
