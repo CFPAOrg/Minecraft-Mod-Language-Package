@@ -1,13 +1,11 @@
 name: Spider
 
 on: 
+  workflow_dispatch:
   push:
     paths: 
       - 'config/spider/config.json'
       - 'src/Spider/**'
-  #push:
-    #branches: [ 1.12.2 ]
-    #paths-ignore: '**/*nfo.json'
   schedule:
     - cron: '0 1 1,15 * *'
     
