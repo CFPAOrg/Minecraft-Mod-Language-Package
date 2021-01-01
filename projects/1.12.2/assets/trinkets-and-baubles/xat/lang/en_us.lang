@@ -49,15 +49,13 @@ item.glowing_ingot.name=Glowing Ingot
 item.glowing_powder.name=Glowing Powder
 item.glowing_gem.name=Glowing Gem
 
+item.mana_candy.name=Mana Candy
+item.mana_crystal.name=Mana Crystal
+
 item.glow_ring.0.name=Ring of Enchanted Eyes
 item.glow_ring.0.tooltip1=#darkgreen:Grants Night Vision
 item.glow_ring.0.tooltip2=%blindness:
 item.glow_ring.0.blindness=#gold:Immunity to Blindness
-
-item.fairy_ring.0.name=Ring of the Fairies
-item.fairy_ring.0.tooltip1=#gold:Reduces size to 1/4th of normal
-item.fairy_ring.0.tooltip2=@creativeflight:
-item.fairy_ring.0.creativeflight=#gold:Grants Creative flight
 
 item.dwarf_ring.0.name=Ring of the Dwarves
 item.dwarf_ring.0.tooltip1=#gold:Reduces size to 3/4th of normal
@@ -68,8 +66,22 @@ item.dwarf_ring.0.fortune=#gold:Pseudo-Fortune
 item.dwarf_ring.0.skilledminer=#darkgreen:Skilled miner
 item.dwarf_ring.0.staticminer=#darkgreen:Static mining speed
 
+item.elf_ring.0.name=Ring of the Elves
+
+item.fairy_ring.0.name=Ring of the Fairies
+item.fairy_ring.0.tooltip1=#gold:Reduces size to 1/4th of normal
+item.fairy_ring.0.tooltip2=@creativeflight:
+item.fairy_ring.0.creativeflight=#gold:Grants Creative flight
+
+item.goblin_ring.0.name=Ring of the Goblins
+
 item.titan_ring.0.name=Ring of the Titans
 item.titan_ring.0.tooltip1=#gold:Increases player size to 3x of normal
+
+item.teddy_bear.0.name=Teddy Bear
+item.teddy_bear.0.tooltip1=#gold:If held when sleeping, provides a buff
+item.teddy_bear.0.tooltip2=#gold:Removes Fear and Insomnia if Lycanites is installed
+
 
 item.weightless_stone.0.name=Stone of Negative Gravity
 item.weightless_stone.0.tooltip1=#darkgreen:Makes gravity not affect you when worn
@@ -154,6 +166,13 @@ item.damage_shield.0.compat.firstaid=@headshots:
 item.damage_shield.0.headshots=#darkaqua:$headshotchance:#gold: Chance to ignore headshot
 item.damage_shield.0.compat.enhancedvisuals=Disables explosion blur
 
+item.arcing_orb.0.name=Arcing Orb
+item.arcing_orb.0.tooltip1=#darkgreen:Grants double tap dodge ability #darkaqua:$dodgecost:MP
+item.arcing_orb.0.tooltip2=@dodgestun:
+item.arcing_orb.0.tooltip3=#gold:Hold #reset:<#yellow:*arckb:#reset:>#gold: to cast a bolt attack #darkaqua:$boltcost:MP
+item.arcing_orb.0.tooltip4=#darkaqua:$boltdamage:#gold: damage based on MP spent
+item.arcing_orb.0.dodgestun=#gold:Stun nearby enemies on dodge
+
 item.dwarf_stout.name=Dwarf Stout
 item.dwarf_stout.tooltip1=#aqua:I might be able to remove the effects
 item.dwarf_stout.tooltip2=#aqua:by drinking some sort of potion
@@ -169,67 +188,80 @@ item.titan_spirit.tooltip1=#aqua:I might be able to remove the effects
 item.titan_spirit.tooltip2=#aqua:by drinking some sort of potion
 item.titan_spirit.tooltip3=<#blue:Use a Potion of Restoration to undo#reset:>
 
-potion.effect.enhanced=Enhanced Potion
-splash_potion.effect.enhanced=Enhanced Splash Potion
-lingering_potion.effect.enhanced=Enhanced Lingering Potion
-tipped_arrow.effect.enhanced=Enhanced Tipped Arrow
-effect.enhanced=Enhanced
-xat.item.potion.enhanced.tooltip1=#gold:Heals 2.5 hearts
-xat.item.potion.enhanced.tooltip2=#gold:Restores 50 mana
-xat.item.potion.enhanced.tooltip3=#green:Used to craft the Potion of Restoration
-xat.item.potion.enhanced.tooltip4=#green:Used to craft the Fairy Transformation Potion
-xat.item.potion.enhanced.tooltip5=#green:Used to craft the Dwarf Transformation Potion
-xat.item.potion.enhanced.tooltip6=#green:Used to craft the Titan Transformation Potion
+potion.effect.xat.sparkling=Sparkling Potion
+splash_potion.effect.xat.sparkling=Sparkling Splash Potion
+lingering_potion.effect.xat.sparkling=Sparkling Lingering Potion
+tipped_arrow.effect.xat.sparkling=Sparkling Tipped Arrow
+xat.effect.sparkling=Sparkling
+xat.item.potion.sparkling.tooltip1=#gold:Heals 25% Max Health
+xat.item.potion.sparkling.tooltip2=#gold:Restores 25% Mana
 
-potion.effect.restorative=Potion of Restoration
-splash_potion.effect.restorative=Splash Potion of Restoration
-lingering_potion.effect.restorative=Lingering Potion of Restoration
-tipped_arrow.effect.restorative=Tipped Arrow of Restoration
-effect.restorative=Restorative
-xat.item.potion.restorative.tooltip1=#gold:Heals 10 hearts
+potion.effect.xat.glittering=Glittering Potion
+splash_potion.effect.xat.glittering=Glittering Splash Potion
+lingering_potion.effect.xat.glittering=Glittering Lingering Potion
+tipped_arrow.effect.xat.glittering=Glittering Tipped Arrow
+xat.effect.glittering=Glittering
+xat.item.potion.glittering.tooltip1=#gold:Heals 50% Max Health
+xat.item.potion.glittering.tooltip2=#gold:Restores 50% Mana
+
+potion.effect.xat.glowing=Glowing Potion
+splash_potion.effect.xat.glowing=Glowing Splash Potion
+lingering_potion.effect.xat.glowing=Glowing Lingering Potion
+tipped_arrow.effect.xat.glowing=Glowing Tipped Arrow
+xat.effect.glowing=Glowing
+xat.item.potion.glowing.tooltip1=#gold:Heals 100% Health
+xat.item.potion.glowing.tooltip2=#gold:Restores 100% Mana
+
+potion.effect.xat.restorative=Potion of Restoration
+splash_potion.effect.xat.restorative=Splash Potion of Restoration
+lingering_potion.effect.xat.restorative=Lingering Potion of Restoration
+tipped_arrow.effect.xat.restorative=Tipped Arrow of Restoration
+xat.effect.restorative=Restorative
+xat.item.potion.restorative.tooltip1=#gold:Heals 100% Health
 xat.item.potion.restorative.tooltip2=#gold:Removes potion effects
 xat.item.potion.restorative.tooltip3=#gold:Removes transformative effects from enchanted food
 
-potion.effect.fairy=Potion of Fairy Transformation
-splash_potion.effect.fairy=Splash Potion of Fairy Transformation
-lingering_potion.effect.fairy=Lingering Potion of Fairy Transformation
-tipped_arrow.effect.fairy=Tipped Arrow of Fairy Transformation
-effect.fairy=Fairy Transformation
+potion.effect.xat.human=Potion of Normie Transformation
+splash_potion.effect.xat.human=Splash Potion of Normie Transformation
+lingering_potion.effect.xat.human=Lingering Potion of Normie Transformation
+tipped_arrow.effect.xat.human=Tipped Arrow of Normie Transformation
+xat.effect.human=Human Transformation
+xat.item.potion.human.tooltip1=Become a Human for $humanticks: seconds
+
+potion.effect.xat.fairy=Potion of Fairy Transformation
+splash_potion.effect.xat.fairy=Splash Potion of Fairy Transformation
+lingering_potion.effect.xat.fairy=Lingering Potion of Fairy Transformation
+tipped_arrow.effect.xat.fairy=Tipped Arrow of Fairy Transformation
+xat.effect.fairy=Fairy Transformation
 xat.item.potion.fairy.tooltip1=Become a Fairy for $fairyticks: seconds
 
-potion.effect.dwarf=Potion of Dwarf Transformation
-splash_potion.effect.dwarf=Splash Potion of Dwarf Transformation
-lingering_potion.effect.dwarf=Lingering Potion of Dwarf Transformation
-tipped_arrow.effect.dwarf=Tipped Arrow of Dwarf Transformation
-effect.dwarf=Dwarf Transformation
+potion.effect.xat.dwarf=Potion of Dwarf Transformation
+splash_potion.effect.xat.dwarf=Splash Potion of Dwarf Transformation
+lingering_potion.effect.xat.dwarf=Lingering Potion of Dwarf Transformation
+tipped_arrow.effect.xat.dwarf=Tipped Arrow of Dwarf Transformation
+xat.effect.dwarf=Dwarf Transformation
 xat.item.potion.dwarf.tooltip1=Become a Dwarf for $dwarfticks: seconds
 
-potion.effect.titan=Potion of Titan Transformation
-splash_potion.effect.titan=Splash Potion of Titan Transformation
-lingering_potion.effect.titan=Lingering Potion of Titan Transformation
-tipped_arrow.effect.titan=Tipped Arrow of Titan Transformation
-effect.titan=Titan Transformation
+potion.effect.xat.titan=Potion of Titan Transformation
+splash_potion.effect.xat.titan=Splash Potion of Titan Transformation
+lingering_potion.effect.xat.titan=Lingering Potion of Titan Transformation
+tipped_arrow.effect.xat.titan=Tipped Arrow of Titan Transformation
+xat.effect.titan=Titan Transformation
 xat.item.potion.titan.tooltip1=Become a Titan for $titanticks: seconds
 
-item.glowing_ingot.info=Crafting Material
-item.glowing_powder.info=Crafting Material
-item.glowing_gem.info=Crafting Material
-item.glow_ring.info=Grants Night Vision When Worn
-item.fairy_ring.info=Imbues the Wearer with Traits of the Fairy People. Abilities include flight, climbing and a tiny stature.
-item.dwarf_ring.info=Imbues the Wearer with Traits of the Dwarven People. Abilities include enhanced mining techniques that make excavation easier and help preserve mineral deposits.
-item.weightless_stone.info=When worn the Wearer floats in place, While held in ones hand causes the holder to float into the air uncontrollably
-item.inertia_null_stone.info=When worn the Wearer Is Immune to fall damage and knockback.
-item.greater_inertia_stone.info=When worn the Wearer Is Immune to fall damage, has increased jump height and increase in speed while sprinting.
-item.sea_stone.info=When worn the Wearer can move swiftly in water, and has infinite air when on their last air bubble.
-item.polarized_stone.info=Pulls nearby Items and Xp toward the Wearer, when held it can also stop arrows in their tracks. Toggle Magnet on and off by Right-Clicking in your Hand. Toggle Repelling on and off by Sneak+Right-Clicking in your hand(Aux Key + Magnet Keybind when Equipped).
-item.dragons_eye.info=When worn Imbues the Wearer with Magical Eyes Similar to a Dragons, Immune to Fire, Able to see through the darkness and find treasure on a whim.
-item.poison_stone.info=When worn, the Wearer has immunity to Poison, and has a chance to deal extra damage to poisoned enemies. 
-item.wither_ring.info=When worn, the Wearer has immunity to Wither, and has a chance to gain health from attacking a Withered enemy.
-item.ender_tiara.info=Those who Wear this Crown are seen as Absolute Royalty in the eyes of the Endermen. If the Wearer is attacked in proximity of Endermen, they will come to the rescue. Endermen are so loyal to Royalty they will literally allow the Wearer to kill them without fighting back. They will also follow the Wearer around.
-item.damage_shield.info=Only the Most Accomplished Warrior is deserving of this Item. When Equipped Gives Resistance. (If Enabled) Ignores Damage every so many hits. (If First Aid is Installed and Enabled) has a chance to Ignore Fatal Headshot Damage.
+potion.effect.xat.goblin=Potion of Goblin Transformation
+splash_potion.effect.xat.goblin=Splash Potion of Goblin Transformation
+lingering_potion.effect.xat.goblin=Lingering Potion of Goblin Transformation
+tipped_arrow.effect.xat.goblin=Tipped Arrow of Goblin Transformation
+xat.effect.goblin=Goblin Transformation
+xat.item.potion.goblin.tooltip1=Become a Goblin for $goblinticks: seconds
 
-item.fairy_dew.info=Gives a Permanent Fairy Effect, which can be removed with the Potion of Restoration. The splash and lingering variants will NOT work!
-item.dwarf_stout.info=Gives a Permanent Dwarf Effect, which can be removed with the Potion of Restoration. The splash and lingering variants will NOT work!
+potion.effect.xat.elf=Potion of Elf Transformation
+splash_potion.effect.xat.elf=Splash Potion of Elf Transformation
+lingering_potion.effect.xat.elf=Lingering Potion of Elf Transformation
+tipped_arrow.effect.xat.elf=Tipped Arrow of Elf Transformation
+xat.effect.elf=Elf Transformation
+xat.item.potion.elf.tooltip1=Become a Elf for $elfticks: seconds
 
 xat.config.client.settings=Client Settings
 xat.config.client.settings.tooltip=Settings with only visual effects.
@@ -275,28 +307,26 @@ xat.config.potion.registry.enabled=Potions Enabled
 xat.config.potion.registry.enabled.tooltip=Should Trinkets and Baubles Potions Be Added to the Registry on Load
 xat.config.potion.toughasnails.water=Potions Give Water
 xat.config.potion.toughasnails.water.tooltip=If Tough as Nails is installed, Potions give water
-xat.config.potion.catalyst.restorative=Restoration Potion Catalyst
-xat.config.potion.catalyst.restorative.tooltip=This is the Item Used to Craft this Potion in a Brewing Stand
 
-xat.config.potion.fairy.duration=Fairy Effect Duration
-xat.config.potion.fairy.duration.tooltip=How Long in Ticks the Tranformation Lasts
-xat.config.potion.catalyst.fairy=Fairy Potion Catalyst
-xat.config.potion.catalyst.fairy.tooltip=This is the Item Used to Craft this Potion in a Brewing Stand
+xat.config.potion.catalyst=Catalyst
+xat.config.potion.catalyst.tooltip=This is the Item Used to Craft this Potion in a Brewing Stand
+xat.config.potion.duration=Duration
+xat.config.potion.duration.tooltip=How Long in Ticks the Tranformation Lasts
 
-xat.config.potion.dwarf.duration=Dwarf Effect Duration
-xat.config.potion.dwarf.duration.tooltip=How Long in Ticks the Tranformation Lasts
-xat.config.potion.catalyst.dwarf=Dwarf Potion Catalyst
-xat.config.potion.catalyst.dwarf.tooltip=This is the Item Used to Craft this Potion in a Brewing Stand
+xat.config.potion.restore.catalyst=Restoration Potion Catalyst
+xat.config.potion.restore.catalyst.tooltip=This is the Item Used to Craft this Potion in a Brewing Stand
 
-xat.config.potion.titan.duration=Titan Effect Duration
-xat.config.potion.titan.duration.tooltip=How Long in Ticks the Tranformation Lasts
-xat.config.potion.catalyst.titan=Titan Potion Catalyst
-xat.config.potion.catalyst.titan.tooltip=This is the Item Used to Craft this Potion in a Brewing Stand
+xat.config.potion.dwarf=Dwarf Potion
+xat.config.potion.elf=Elf Potion
+xat.config.potion.fairy=Fairy Potion
+xat.config.potion.goblin=Goblin Potion
+xat.config.potion.titan=Titan Potion
 
 xat.config.potion.playersonly=Potions work on Players only
 xat.config.potion.playersonly.tooltip=Whether the transformation potions should only work on players or if they should work on all mobs.
 
 xat.config.items=Item Settings
+xat.config.items.transformation=Transformation Items
 
 xat.config.glow_ring=Ring of Enchanted Eyes Settings
 xat.config.glow_ring.blindness=Prevent Blindness
@@ -349,9 +379,13 @@ xat.config.ender_tiara.endermen.items.tooltip=When Killing an Enderman Should it
 xat.config.ender_tiara.toughasnails.immunity.cold=Immune to Cold
 xat.config.ender_tiara.toughasnails.immunity.cold.tooltip=If Tough as Nails is Installed Should the player be Immune to Cold
 
+xat.config.dwarf_ring=Ring of the Dwarves Settings
+
+xat.config.elf_ring=Ring of the Elves Settings
+
 xat.config.fairy_ring=Ring of the Fairies Settings
 
-xat.config.dwarf_ring=Ring of the Dwarves Settings
+xat.config.goblin_ring=Ring of the Goblins Settings
 
 xat.config.titan_ring=Ring of the Titans Settings
 
@@ -445,6 +479,10 @@ xat.config.wither_ring.wither.tooltip=Is it Possible to Wither an Enemy?
 xat.config.wither_ring.wither.chance=Wither Chance
 xat.config.wither_ring.wither.chance.tooltip=1 in X Chance to Wither an Enemy on Attack for 2 Seconds
 
+xat.config.arcing_orb=Arcing Orb Settings
+
+xat.config.teddy_bear=Teddy Bear Settings
+
 xat.config.magic=Magic Settings
 xat.config.magic.mana.enabled=Mana Enabled
 xat.config.magic.mana.regen.ticks=Mana Regen Rate
@@ -452,21 +490,12 @@ xat.config.magic.mana.regen.ticks.tooltip=How Often in Ticks Mana Regenerates
 xat.config.magic.mana.regen.timeout=Mana Regen Timeout
 xat.config.magic.mana.regen.timeout.tooltip=How long after spending mana before it begins to regenerate
 
-xat.config.races=Race Settings
+xat.config.magic.mana.hud.shown=Render Mana
+xat.config.magic.mana.hud.shown.always=Render Mana Always
+xat.config.magic.mana.hud.horizontal=Render Horizontal
+xat.config.client.hud.settings=Mana Hud
 
-xat.config.races.fairy=Fairy Race Settings
-xat.config.races.fairy.flight=Creative Flight
-xat.config.races.fairy.flight.tooltip=Grants the player Creative Flight if Enabled
-xat.config.races.fairy.flight.speed=Creative Flight Speed
-xat.config.races.fairy.flight.speed.tooltip=Change the flight speed from the Vanilla Default of 0.05
-xat.config.races.fairy.flight.speed.amount=Creative Flight Speed Amount
-xat.config.races.fairy.flight.speed.amount.tooltip=Directly Sets the Movement speed for Creative Flight
-xat.config.races.fairy.climbing=Climbing
-xat.config.races.fairy.climbing.tooltip=Should the Player be able to Climb Blocks?
-xat.config.races.fairy.climbing.blocks.list=Climable Blocks
-xat.config.races.fairy.climbing.blocks.list.tooltip=List of Blocks the player can Climb when Wearing the Ring of the Fairies
-xat.config.races.fairy.jumpheight=Jump Height Adjustment
-xat.config.races.fairy.jumpheight.tooltip=Adjusts the players Jump and Step Height to Match the players Size
+xat.config.races=Race Settings
 
 xat.config.races.dwarf=Dwarf Race Settings
 xat.config.races.dwarf.blocks=Block Settings
@@ -490,6 +519,30 @@ xat.config.races.dwarf.skilledminer=Skilled Miner
 xat.config.races.dwarf.skilledminer.tooltip=Should the Dwarves Ring lower the mining level requirement for pickaxes. IE. an Iron Pickaxe will be able to break Obsidian?
 xat.config.races.dwarf.static_mining=Static Mining
 xat.config.races.dwarf.static_mining.tooltip=When Mining, Mining Speed is static at (Block Hardness * 4), Not Including other Modifiers.
+
+xat.config.races.elf=Elf Race Settings
+xat.config.races.elf.chargeshot.enabled=Charge Shot
+xat.config.races.elf.chargeshot.enabled.tooltip=Should Elves have the ability to enhance bow attacks with Mana
+xat.config.races.elf.chargeshot.cost=Charge Shot Cost
+xat.config.races.elf.chargeshot.cost.tooltip=How Much Mana the Charge Shot Ability Costs
+
+xat.config.races.fairy=Fairy Race Settings
+xat.config.races.fairy.flight=Creative Flight
+xat.config.races.fairy.flight.tooltip=Grants the player Creative Flight if Enabled
+xat.config.races.fairy.flight.speed=Creative Flight Speed
+xat.config.races.fairy.flight.speed.tooltip=Change the flight speed from the Vanilla Default of 0.05
+xat.config.races.fairy.flight.speed.amount=Creative Flight Speed Amount
+xat.config.races.fairy.flight.speed.amount.tooltip=Directly Sets the Movement speed for Creative Flight
+xat.config.races.fairy.climbing=Climbing
+xat.config.races.fairy.climbing.tooltip=Should the Player be able to Climb Blocks?
+xat.config.races.fairy.climbing.blocks.list=Climable Blocks
+xat.config.races.fairy.climbing.blocks.list.tooltip=List of Blocks the player can Climb when Wearing the Ring of the Fairies
+xat.config.races.fairy.jumpheight=Jump Height Adjustment
+xat.config.races.fairy.jumpheight.tooltip=Adjusts the players Jump and Step Height to Match the players Size
+
+xat.config.races.goblin=Goblin Race Settings
+xat.config.races.goblin.natural_resistance=Naturally Resistant
+xat.config.races.goblin.natural_resistance.tooltip=Should Goblins be naturally resistant to Fire and explosions
 
 xat.config.races.titan=Titan Race Settings
 xat.config.races.titan.jumpheight=Jump Height Adjustment
