@@ -60,6 +60,27 @@
 			}
 		]
 	},
+	"Rote Spells": {
+		"category": "sorcery",
+		"index": -3,
+		"tier": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Rote Spells"
+			},
+			{
+				"type": "text",
+				"value": "As you cast spells, you begin to learn more about their properties and how they work.  You can see rote progress for each individual spell part (shapes, components, and modifiers) in the Occulus.\n\nThese parts gain experience at different rates.  Once they are rote, you can use them in a book of rote to make spells with single shapes and multiple components.\n\nModifiers that you learn by rote are always available in rote spells, allowing you to make spells with more components and modifiers than you would normally be able to using the Inscription Table.\n\nThere is no crafting process or material cost when making spells in the book of rote, as it represents your memorization of the spell.  You simply make the spell you need at the time."
+			}
+		],
+		"related_recipes": [
+			{
+				"location": "mana-and-artifice:manaweaving/sorcery/book_of_rote",
+				"type": "manaweaving_altar"
+			}
+		]
+	},
 	"Occulus": {
 		"category": "basics",
 		"index": -3,
@@ -70,7 +91,7 @@
 			},
 			{
 				"type": "text",
-				"value": "神秘核心与奥秘古籍一样，能够帮助你更好的游玩本模组。它会向你展示出模组流程中解锁物品所需要做的那些事情，以及还有哪些内容是你尚未解锁的。\n\n想要知道推进进度所需要做的事，将你的鼠标移至右侧的进度条即可。"
+				"value": "神秘核心与奥秘古籍一样，能够帮助你更好的游玩本模组。它会向你展示出模组流程中解锁物品所需要做的那些事情，以及还有哪些内容是你尚未解锁的。\n\n想要知道推进进度所需要做的事，点击进度选项卡即可。"
 			}
 		],
 		"related_recipes": [
@@ -79,6 +100,86 @@
 				"type": "crafting"
 			}
 		]
+	},
+	"Commands": {
+		"category": "basics",
+		"index": 999,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Commands"
+			},
+			{
+				"type": "text",
+				"value": "This mod contains several commands that moderators can use to help those on servers, or to test in creative mode."
+			},
+			{
+				"type": "text",
+				"value": "/setMagicLevel <player> <0-75>\nSets a player's magic level and max mana."
+			},
+			{
+				"type": "text",
+				"value": "/setFaction <player> <faction_id>\nSets a player's faction.  For some reason this won't autocomplete on servers, but the valid factions are:  NONE, DEMONS, FEY_COURT, ANCIENT_WIZARDS"
+			},
+			{
+				"type": "text",
+				"value": "/completeProgression <player>\nCompletes all occulus tasks for a player at their current tier (this essentially enables the progression rituals)."
+			},
+			{
+				"type": "text",
+				"value": "/setTier <player> <1-5>\nSets a player tier, including what recipes they have access to."
+			},
+			{
+				"type": "text",
+				"value": "/makeRote <player> <part_id>\nMakes a spell part rote for the given player, allowing it to be used in the Book of Rote."
+			}
+		],
+		"related_recipes": []
+	},
+	"Vinteum": {
+		"category": "basics",
+		"index": -2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Vinteum"
+			},
+			{
+				"type": "text",
+				"value": "I'm not sure what causes this seemingly coalesced arcane energy to gather in certain stones underground."
+			},
+			{
+				"type": "item",
+				"location": "mana-and-artifice:vinteum_ore",
+				"scale": 1
+			},
+			{
+				"type": "text",
+				"value": "I do know though that I can run the ore through a furnace to turn it into a fine powder.  I'm sure there are a very large number of uses for such a thing."
+			},
+			{
+				"type": "image",
+				"location": "mana-and-artifice:textures/guide/vinteum_smelt.png",
+				"width": 128,
+				"height": 64			
+			}
+		],
+		"related_recipes": []
+	},
+	"Chimerite": {
+		"category": "basics",
+		"index": -2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Chimerite"
+			},
+			{
+				"type": "text",
+				"value": "I can't believe it's been under my nose this whole time - a hidden magical ore that I mistook for excess bits of rock when mining other valuable ores!  I call it Chimerite because it can look just like mining debris until one's magical senses are honed to be able to detect it.\n\nIt's easiest to find in emerald ore, something to do with the structure of emeralds themselves.  Most mages will be able to sense these with only a little bit of magical experience.\n\nNext are diamonds.  While not as easy as emeralds, chimerite can be found here by mages with a little bit more experience.\n\nLastly is coal.  Chimerite is technically there in trace elements, but it takes a finely tuned magical mind to pick up the traces that are large enough to be useable.\n\nOn that point, I should note that the chimerite is also often destroyed as part of the mining process, and isn't always retrievable from every mining attempt.  Emeralds seem to have the best success rate here, followed by diamonds, and then again by coal."
+			}
+		],
+		"related_recipes": []
 	},
 	"Factions": {
 		"category": "basics",
@@ -91,6 +192,96 @@
 			{
 				"type": "text",
 				"value": "在你畅游于这个奥术世界的旅途中，你必须在某个特定时刻为自己选择一个派系。派系决定了你在进阶时需要完成的仪式的种类。\n\n记住，三思而后行。\n\n一旦选择了特定的派系，就无法做出更改了。\n\n(DEV 事项：下列的玩法还没有完善)\n\n当你于特定的派系结盟之后，其余的两个派系会将你视为敌人，因此它们会派出杀手来尝试暗杀你。当你击败了这些杀手之后，你将会获得本派系的声望，从而解锁额外的交易和资源。"
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Spellbreaker": {
+		"category": "basics",
+		"index": 1,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enemy: Spellbreaker"
+			},
+			{
+				"type": "text",
+				"value": "Spell breakers are one of the soldiers of the Council of Wizards.  They have a resilient shield that can reflect certain types of spells, and can unleash a battle cry that causes nearby allies of theirs to heal quickly for a short time, and to take less damage and deal much more damage for a moderate time."
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Witch Hunter": {
+		"category": "basics",
+		"index": 1,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enemy: Witch Hunter"
+			},
+			{
+				"type": "text",
+				"value": "Witch Hunters are one of the soldiers of the Council of Wizards.  They are trained in agility, allowing them to attempt to dodge certain attacks and are expert marksman.  They use their crossbows to deadly effect and carry potions that can slow the movement or the mana regeneration of those unfortunate to be caught in their splash effect."
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Mushroom Soldier": {
+		"category": "basics",
+		"index": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enemy: Mushroom Soldier"
+			},
+			{
+				"type": "text",
+				"value": "Mushroom Soldiers are one of the soldiers of the Fey Courts.  They are quick and skilled with their spear, able to use it to toss their enemy into the air.  This can often combo with nearby pixies making them significantly more dangerous."
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Pixie": {
+		"category": "basics",
+		"index": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enemy: Pixie"
+			},
+			{
+				"type": "text",
+				"value": "Pixies are one of the soldiers of the Fey Courts.  They can spawn with one of the four elemental affinities, and each one will attack with elemental bolts.\n\nFire pixies can melt equipped armor and the heat makes those affected do less damage with their attacks.\n\nWater pixies can slow with frost, or pull you underwater.\n\nAir pixies can toss you into the air.\n\nEarth pixies can blast you with physical damage, and can pull you to the earth if you are airborne.\n\nPixies by themselves are not much more than a nuisance, but a group of them can pose a serious threat, especially when they have Mushroom Soldiers as their frontline."
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Imp": {
+		"category": "basics",
+		"index": 3,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enemy: Imp"
+			},
+			{
+				"type": "text",
+				"value": "Imps are one of the soldiers of the Demons of the Nether.  They have powerful legs that let them leap great distances at their targets, covering ground quickly.  Their sharp claws have made short work of many a wizard."
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Lantern Wraith": {
+		"category": "basics",
+		"index": 3,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enemy: Lantern Wraith"
+			},
+			{
+				"type": "text",
+				"value": "Lantern Wraiths are one of the soldiers of the Demons of the Nether.  They fire bolts made of the souls of those they've slain, and each one increasingly slows and deals more damage as their target is drained more and more.  These bolts eat away at the very life force of their target, and have been said to also drain mana of those they hit."
 			}
 		],
 		"related_recipes": []
@@ -217,6 +408,45 @@
 			}
 		]
 	},
+	"Sided Inventories": {
+		"category": "constructs",
+		"index": -1,
+		"tier": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Automation: Sided Inventories"
+			},
+			{
+				"type": "text",
+				"value": "Sided Inventories determine which sides of inventories can accept items.  This is important, because when marking a block with a Rune of Marking, the side is also stored as well as the location.  Other mods that use automation can also make use of this functionality.  The following is an explanation of which blocks input/output on which sides."
+			},
+			{
+				"type": "title",
+				"value": "Runescribing Table"
+			},
+			{
+				"type": "text",
+				"value": "The runescribing table can accept hammers and chisels from the sides, and patterns from the top and bottom.  The same goes for extracting items."
+			},
+			{
+				"type": "title",
+				"value": "Runic Anvil"
+			},
+			{
+				"type": "text",
+				"value": "The runic anvil will accept items from any side, and provide items from any side."
+			},
+			{
+				"type": "title",
+				"value": "Runeforge"
+			},
+			{
+				"type": "text",
+				"value": "The runeforge will accept items from any side if it is empty.  It will provide items from any side as long as it isn't currently cooking."
+			}
+		]
+	},
 	"Step 1: Manaweave Enchanting": {
 		"category": "enchantments",
 		"index": -1,
@@ -246,26 +476,182 @@
 			}
 		]
 	},
-	"Aqua Affinity": {
+	"Bouncy": {
 		"category": "enchantments",
 		"sections": [
 			{
 				"type": "title",
-				"value": "亲水"
+				"value": "Bouncy"
 			},
 			{
 				"type": "text",
-				"value": "亲水附魔将会加速你在水下的挖掘速度。它基本上能够将水下挖掘速度提升至与在陆地上的挖掘速度差不多的水平。"
+				"value": "This enchantment will cause me to bounce when I hit the ground after falling, provided I am not sneaking or affected by Gravity Well.  It must be applied to boots, given they're the first thing to hit the ground when falling."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/aqua_affinity_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/bouncy"
+			}
+		]
+	},
+	"Cloudstep": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Cloudstep"
 			},
 			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/aqua_affinity"
+				"type": "text",
+				"value": "This enchantment creates a burst of air beneath my boots (where the enchantment must be applied) allowing me to jump again in midair.  Higher levels of the enchantment will allow me to jump more than once in midair."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/cloudstep_i"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/cloudstep_ii"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/cloudstep_iii"
+			}
+		]
+	},
+	"Aura Repair": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Aura of Repair"
+			},
+			{
+				"type": "text",
+				"value": "This aura will periodically drain my mana in order to apply a repairing effect to all of my equipped items, and to those in close proximity to me.\n\nDue to it being a particularly complicated magical construction, I can only place it on chest armor as it has enough space for all the rune work needed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/aura/repair"
+			}
+		]
+	},
+	"Aura Healing": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Aura of Healing"
+			},
+			{
+				"type": "text",
+				"value": "This aura will periodically drain my mana in order to apply a minor healing effect to me and those in close proximity to me.\n\nDue to it being a particularly complicated magical construction, I can only place it on chest armor as it has enough space for all the rune work needed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/aura/healing"
+			}
+		]
+	},
+	"Aura Jumping": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Aura of Jumping"
+			},
+			{
+				"type": "text",
+				"value": "This aura will periodically drain my mana in order to increase my ability to jump, as well as those in close proximity to me.\n\nDue to it being a particularly complicated magical construction, I can only place it on chest armor as it has enough space for all the rune work needed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/aura/jumping"
+			}
+		]
+	},
+	"Aura Mining": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Aura of Mining"
+			},
+			{
+				"type": "text",
+				"value": "This aura will periodically drain my mana in order to apply an increase to my mining speed as well as to those around me.\n\nDue to it being a particularly complicated magical construction, I can only place it on chest armor as it has enough space for all the rune work needed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/aura/mining"
+			}
+		]
+	},
+	"Aura Running": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Aura of Running"
+			},
+			{
+				"type": "text",
+				"value": "This aura will periodically drain my mana in order to apply a movement speed increase to me and those in close proximity to me.\n\nDue to it being a particularly complicated magical construction, I can only place it on chest armor as it has enough space for all the rune work needed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/aura/running"
+			}
+		]
+	},
+	"Aura Depths": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Aura of the Depths"
+			},
+			{
+				"type": "text",
+				"value": "This aura will periodically drain my mana in order to make me more attuned to activities underwater.\n\nDue to it being a particularly complicated magical construction, I can only place it on chest armor as it has enough space for all the rune work needed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/aura/depths"
+			}
+		]
+	},
+	"Aqua Affinity": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Aqua Affinity"
+			},
+			{
+				"type": "text",
+				"value": "The Aqua Affinity enchantment speeds up how fast you can mine blocks underwater. It basically makes mining underwater the same speed as mining on land."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/aqua_affinity_i"
 			}
 		]
 	},
@@ -274,53 +660,33 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "节肢杀手"
+				"value": "Bane of Arthropods"
 			},
 			{
 				"type": "text",
-				"value": "节肢杀手附魔可以提高你对节肢动物的伤害，譬如蜘蛛，洞穴蜘蛛，蠹虫以及末影人。"
+				"value": "The Bane of Arthropods enchantment increases your attack damage against mobs such as spiders, cave spiders, silverfish, and endermites."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/bane_of_arthropods_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/bane_of_arthropods_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/bane_of_arthropods_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/bane_of_arthropods_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/bane_of_arthropods_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/bane_of_arthropods_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/bane_of_arthropods_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/bane_of_arthropods_iv"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/bane_of_arthropods_v"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/bane_of_arthropods_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/bane_of_arthropods_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/bane_of_arthropods_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/bane_of_arthropods_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/bane_of_arthropods_v"
+				"location": "mana-and-artifice:manaweaving/enchanting/bane_of_arthropods_v"
 			}
 		]
 	},
@@ -339,11 +705,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/binding_curse"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/curse_of_binding"
+				"location": "mana-and-artifice:manaweaving/enchanting/binding_curse"
 			}
 		]
 	},
@@ -362,11 +724,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/vanishing_curse"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/curse_of_vanishing"
+				"location": "mana-and-artifice:manaweaving/enchanting/vanishing_curse"
 			}
 		]
 	},
@@ -385,35 +743,19 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/blast_protection_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/blast_protection_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/blast_protection_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/blast_protection_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/blast_protection_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/blast_protection_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/blast_protection_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/blast_protection_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/blast_protection_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/blast_protection_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/blast_protection_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/blast_protection_iv"
 			}
 		]
 	},
@@ -432,11 +774,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/channeling"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/channeling"
+				"location": "mana-and-artifice:manaweaving/enchanting/channeling"
 			}
 		]
 	},
@@ -455,27 +793,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/depth_strider_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/depth_strider_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/depth_strider_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/depth_strider_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/depth_strider_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/depth_strider_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/depth_strider_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/depth_strider_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/depth_strider_iii"
 			}
 		]
 	},
@@ -494,43 +820,23 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/efficiency_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/efficiency_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/efficiency_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/efficiency_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/efficiency_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/efficiency_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/efficiency_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/efficiency_iv"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/efficiency_v"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/efficiency_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/efficiency_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/efficiency_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/efficiency_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/efficiency_v"
+				"location": "mana-and-artifice:manaweaving/enchanting/efficiency_v"
 			}
 		]
 	},
@@ -549,35 +855,19 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/feather_falling_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/feather_falling_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/feather_falling_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/feather_falling_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/feather_falling_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/feather_falling_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/feather_falling_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/feather_falling_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/feather_falling_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/feather_falling_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/feather_falling_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/feather_falling_iv"
 			}
 		]
 	},
@@ -596,19 +886,11 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fire_aspect_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/fire_aspect_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fire_aspect_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fire_aspect_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fire_aspect_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/fire_aspect_ii"
 			}
 		]
 	},
@@ -627,35 +909,19 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fire_protection_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/fire_protection_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fire_protection_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/fire_protection_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fire_protection_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/fire_protection_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fire_protection_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fire_protection_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fire_protection_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fire_protection_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fire_protection_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/fire_protection_iv"
 			}
 		]
 	},
@@ -674,11 +940,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/flame"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/flame"
+				"location": "mana-and-artifice:manaweaving/enchanting/flame"
 			}
 		]
 	},
@@ -697,27 +959,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fortune_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/fortune_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fortune_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/fortune_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/fortune_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fortune_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fortune_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/fortune_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/fortune_iii"
 			}
 		]
 	},
@@ -736,19 +986,11 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/frost_walker_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/frost_walker_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/frost_walker_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/frost_walker_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/frost_walker_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/frost_walker_ii"
 			}
 		]
 	},
@@ -767,43 +1009,23 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/impaling_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/impaling_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/impaling_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/impaling_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/impaling_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/impaling_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/impaling_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/impaling_iv"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/impaling_v"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/impaling_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/impaling_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/impaling_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/impaling_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/impaling_v"
+				"location": "mana-and-artifice:manaweaving/enchanting/impaling_v"
 			}
 		]
 	},
@@ -822,11 +1044,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/infinity"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/infinity"
+				"location": "mana-and-artifice:manaweaving/enchanting/infinity"
 			}
 		]
 	},
@@ -845,19 +1063,11 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/knockback_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/knockback_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/knockback_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/knockback_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/knockback_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/knockback_ii"
 			}
 		]
 	},
@@ -876,27 +1086,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/looting_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/looting_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/looting_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/looting_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/looting_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/looting_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/looting_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/looting_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/looting_iii"
 			}
 		]
 	},
@@ -915,27 +1113,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/loyalty_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/loyalty_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/loyalty_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/loyalty_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/loyalty_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/loyalty_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/loyalty_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/loyalty_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/loyalty_iii"
 			}
 		]
 	},
@@ -1097,27 +1283,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/luck_of_the_sea_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/luck_of_the_sea_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/luck_of_the_sea_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/luck_of_the_sea_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/luck_of_the_sea_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/luck_of_the_sea_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/luck_of_the_sea_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/luck_of_the_sea_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/luck_of_the_sea_iii"
 			}
 		]
 	},
@@ -1137,27 +1311,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/lure_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/lure_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/lure_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/lure_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/lure_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/lure_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/lure_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/lure_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/lure_iii"
 			}
 		]
 	},
@@ -1177,11 +1339,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/mending"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/mending"
+				"location": "mana-and-artifice:manaweaving/enchanting/mending"
 			}
 		]
 	},
@@ -1201,11 +1359,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/multishot"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/multishot"
+				"location": "mana-and-artifice:manaweaving/enchanting/multishot"
 			}
 		]
 	},
@@ -1225,35 +1379,19 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/piercing_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/piercing_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/piercing_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/piercing_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/piercing_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/piercing_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/piercing_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/piercing_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/piercing_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/piercing_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/piercing_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/piercing_iv"
 			}
 		]
 	},
@@ -1273,43 +1411,23 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/power_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/power_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/power_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/power_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/power_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/power_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/power_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/power_iv"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/power_v"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/power_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/power_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/power_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/power_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/power_v"
+				"location": "mana-and-artifice:manaweaving/enchanting/power_v"
 			}
 		]
 	},
@@ -1329,35 +1447,19 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/projectile_protection_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/projectile_protection_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/projectile_protection_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/projectile_protection_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/projectile_protection_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/projectile_protection_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/projectile_protection_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/projectile_protection_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/projectile_protection_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/projectile_protection_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/projectile_protection_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/projectile_protection_iv"
 			}
 		]
 	},
@@ -1377,35 +1479,19 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/protection_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/protection_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/protection_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/protection_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/protection_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/protection_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/protection_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/protection_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/protection_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/protection_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/protection_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/protection_iv"
 			}
 		]
 	},
@@ -1425,19 +1511,11 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/punch_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/punch_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/punch_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/punch_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/punch_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/punch_ii"
 			}
 		]
 	},
@@ -1457,27 +1535,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/respiration_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/respiration_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/respiration_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/respiration_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/respiration_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/respiration_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/respiration_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/respiration_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/respiration_iii"
 			}
 		]
 	},
@@ -1497,27 +1563,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/quick_charge_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/quick_charge_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/quick_charge_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/quick_charge_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/quick_charge_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/quick_charge_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/quick_charge_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/quick_charge_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/quick_charge_iii"
 			}
 		]
 	},
@@ -1537,27 +1591,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/riptide_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/riptide_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/riptide_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/riptide_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/riptide_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/riptide_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/riptide_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/riptide_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/riptide_iii"
 			}
 		]
 	},
@@ -1577,43 +1619,23 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sharpness_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/sharpness_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sharpness_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/sharpness_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sharpness_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/sharpness_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sharpness_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/sharpness_iv"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sharpness_v"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/sharpness_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/sharpness_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/sharpness_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/sharpness_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/sharpness_v"
+				"location": "mana-and-artifice:manaweaving/enchanting/sharpness_v"
 			}
 		]
 	},
@@ -1633,11 +1655,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/silk_touch"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/silk_touch"
+				"location": "mana-and-artifice:manaweaving/enchanting/silk_touch"
 			}
 		]
 	},
@@ -1657,43 +1675,23 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/smite_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/smite_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/smite_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/smite_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/smite_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/smite_iii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/smite_iv"
+				"location": "mana-and-artifice:manaweaving/enchanting/smite_iv"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/smite_v"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/smite_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/smite_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/smite_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/smite_iv"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/smite_v"
+				"location": "mana-and-artifice:manaweaving/enchanting/smite_v"
 			}
 		]
 	},
@@ -1713,27 +1711,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sweeping_edge_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/sweeping_edge_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sweeping_edge_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/sweeping_edge_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sweeping_edge_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/sweeping_edge_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/sweeping_edge_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/sweeping_edge_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/sweeping_edge_iii"
 			}
 		]
 	},
@@ -1753,27 +1739,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/thorns_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/thorns_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/thorns_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/thorns_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/thorns_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/thorns_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/thorns_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/thorns_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/thorns_iii"
 			}
 		]
 	},
@@ -1793,27 +1767,15 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/unbreaking_i"
+				"location": "mana-and-artifice:manaweaving/enchanting/unbreaking_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/unbreaking_ii"
+				"location": "mana-and-artifice:manaweaving/enchanting/unbreaking_ii"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/unbreaking_iii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/unbreaking_i"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/unbreaking_ii"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runeforge_enchants/unbreaking_iii"
+				"location": "mana-and-artifice:manaweaving/enchanting/unbreaking_iii"
 			}
 		]
 	},
@@ -1884,6 +1846,27 @@
 			}
 		],
 		"related_recipes": [
+		]
+	},
+	"Book of Rote": {
+		"index": -1,
+		"category": "sorcery",
+		"tier": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Book of Rote"
+			},
+			{
+				"type": "text",
+				"value": "Spells and incantations give me the ability to cast spells following that exact recipe, and they're pretty easy to follow.  Most anyone with basic magical theory and the appropriate amount of practice can cast them.\n\nHowever over time, I've begun memorizing various spell parts and I think I can not only start to cast them from memory, but also even use my expanded understanding of their functions to combine effects!  This will make for some very interesting spells, I think."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/book_of_rote"
+			}
 		]
 	},
 	"Scribing Spells": {
@@ -1969,6 +1952,26 @@
 			}
 		]
 	},
+	"Shape: Smite": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Smite"
+			},
+			{
+				"type": "text",
+				"value": "This spell shape will spawn a projectile high up in the sky (provided the target has a clear path to the sky), targeted at the point where the caster is pointing (if in range).  The projectile will fall quickly and will affect the first entity or block it hits."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/smite"
+			}
+		]
+	},
 	"Shape: Emanation": {
 		"index": "1",
 		"category": "sorcery",
@@ -2029,17 +2032,17 @@
 			}
 		]
 	},
-	"Shape: Rune": {
+	"Shape: Sigil": {
 		"index": "1",
 		"category": "sorcery",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文"
+				"value": "印记"
 			},
 			{
 				"type": "text",
-				"value": "形状：符文会在你所指的目标地点生成一个符文。法术距离属性影响放置的距离，半径属性将会影响符文被触发时的影响半径。\n\n增强效果将会改变符文触发的条件。\n增强 1: 任何\n增强 2: 任何活物\n增强 3: 只有玩家\n\n对符文造成伤害总是会触发符文。"
+				"value": "形状：印记会在你所指的目标地点生成一个印记。法术距离属性影响放置的距离，半径属性将会影响印记被触发时的影响半径。\n\n增强效果将会改变印记触发的条件。\n增强 1: 任何\n增强 2: 任何活物\n增强 3: 只有玩家\n\n对印记造成伤害总是会触发印记。"
 			}
 		],
 		"related_recipes": [
@@ -2279,7 +2282,7 @@
 			},
 			{
 				"type": "text",
-				"value": "我找到了一种方法，这一方法可以让我在本维度以及其它临近维度之间撕开一个小裂隙。列席的大小足以让我通过，而且我感觉列席通向的总是同一个空间。也许我可以将 我的物品储存于这个裂隙中，这样那些小偷小摸之人就侵犯不到我的财产了。\n\n有趣的是，不同的法师使用裂隙打开的空间也是不一样的，这可能是由于法术配方中的各部分之间的微妙反应不尽相同。"
+				"value": "我找到了一种方法，这一方法可以让我在本维度以及其它临近维度之间撕开一个小裂隙。裂隙的大小足以让我通过，而且我感觉裂隙通向的总是同一个空间。也许我可以将我的物品储存于这个裂隙中，这样那些小偷小摸之人就侵犯不到我的财产了。\n\n有趣的是，不同的法师使用裂隙打开的空间也是不一样的，这可能是由于法术配方中的各部分之间的微妙反应不尽相同。"
 			}
 		],
 		"related_recipes": [
@@ -2306,6 +2309,66 @@
 			{
 				"type": "spell_part",
 				"location": "mana-and-artifice:components/fling"
+			}
+		]
+	},
+	"Component: Drown": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "窒息"
+			},
+			{
+				"type": "text",
+				"value": "I've studied closely how certain fish breathe, and how water interacts with things in water.  I've figured out how to use this to force my target to start drowning.  Their breath is crushed out of them, though if they can they will just immediately take another breath, and if they are already out of breath, then I can...ahem...expedite the process.\n\nI can only imagine the effectiveness if they are actively holding their breath, or if I can hold them underwater somehow.\n\nNaturally this won't have any detrimental effect on things that can already breathe underwater or things that don't need to breathe."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/drown"
+			}
+		]
+	},
+	"Component: Poison": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "中毒"
+			},
+			{
+				"type": "text",
+				"value": "By pondering particular plants, I've perceived a process of pilfering populous parts that when pooled produce a particularly potent poison. Per this perception, it's possible I can protract this pattern and produce them using pure prestidigitation."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/poison"
+			}
+		]
+	},
+	"Component: Cauterize": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "烙灼"
+			},
+			{
+				"type": "text",
+				"value": "我反复思考：如何开发火焰法术的更多功用？我知晓许多火焰所能能办到的独特用处：温暖，烧煮食物，工业，等等。但火焰是否能应用于恢复生命值？我认为，只要足够小心地操控火焰，就能够用其封闭我的伤口。火焰尽管会在烧灼我的那一瞬间对我造成伤害，但在此之后却能带给我更大的益处。\n\n增强 1：造成伤害 2，治疗生命值 4\n\n增强 2：造成伤害 4，治疗生命值 8\n\n增强 3：造成伤害 8，治疗生命值 16"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/cauterize"
 			}
 		]
 	},
@@ -2595,7 +2658,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "照亮"
+				"value": "照明"
 			},
 			{
 				"type": "text",
@@ -3182,11 +3245,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "石质符文"
+				"value": "雕符"
 			},
 			{
 				"type": "text",
-				"value": "基础的石质符文是魔法合成中的重要组成部分。一个小小的石质空白符文，将其与各式染料混合，就可以制作出带有独特魔法样式的对应颜色符文。这些彩色符文将会在那些需要聚集魔法能量的过程中起大作用，比如仪式以及附魔。\n\n法师们也常备着一个小袋子，来专门储存这些符文。"
+				"value": "基础的雕符是魔法合成中的重要组成部分。一个小小的空白雕符，将其与各式染料混合，就可以制作出带有独特魔法样式的对应雕符。这些彩色符文将会在那些需要聚集魔法能量的过程中起大作用，比如仪式以及附魔。\n\n法师们也常备着一个小袋子，来专门储存这些雕符。"
 			}
 		],
 		"related_recipes": [
@@ -3221,13 +3284,13 @@
 			}
 		]
 	},
-	"Rune Pattern: Air": {
+	"Rune: Air": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：气"
+				"value": "符文：气"
 			},
 			{
 				"type": "text",
@@ -3238,16 +3301,20 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_air"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_air"
 			}
 		]
 	},
-	"Rune Pattern: Arcane": {
+	"Rune: Arcane": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：奥术"
+				"value": "符文：奥术"
 			},
 			{
 				"type": "text",
@@ -3258,16 +3325,20 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_arcane"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_arcane"
 			}
 		]
 	},
-	"Rune Pattern: Aura": {
+	"Rune: Aura": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：灵气"
+				"value": "符文：灵气"
 			},
 			{
 				"type": "text",
@@ -3278,16 +3349,20 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_aura"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_aura"
 			}
 		]
 	},
-	"Rune Pattern: Defense": {
+	"Rune: Defense": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：防御"
+				"value": "符文：防御"
 			},
 			{
 				"type": "text",
@@ -3298,16 +3373,20 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_defense"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_defense"
 			}
 		]
 	},
-	"Rune Pattern: Earth": {
+	"Rune: Earth": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：地"
+				"value": "符文：地"
 			},
 			{
 				"type": "text",
@@ -3318,16 +3397,20 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_earth"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_earth"
 			}
 		]
 	},
-	"Rune Pattern: Ender": {
+	"Rune: Ender": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：末影"
+				"value": "符文：末影"
 			},
 			{
 				"type": "text",
@@ -3347,7 +3430,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：火"
+				"value": "符文：火"
 			},
 			{
 				"type": "text",
@@ -3358,16 +3441,44 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_fire"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_fire"
 			}
 		]
 	},
-	"Rune Pattern: Metal Ritual Rune": {
+	"Rune: Marking": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：金属仪式符文"
+				"value": "符文：标记"
+			},
+			{
+				"type": "text",
+				"value": "The rune of marking is used to mark a location, and is used to target certain rituals.  Using the rune on a given block will store the block's coordinates within the rune.\n\nTypically these runes aren't powerful enough to have an effect over long distances."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "runescribing",
+				"location": "mana-and-artifice:runescribing/runescribe_marking"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_marking"
+			}
+		]
+	},
+	"Rune: Metal Ritual Rune": {
+		"index": 0,
+		"category": "runesmithing",
+		"sections": [
+			{
+				"type": "title",
+				"value": "符文：金属仪式符文"
 			},
 			{
 				"type": "text",
@@ -3378,16 +3489,20 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_metal_ritual_rune"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_metal_ritual_rune"
 			}
 		]
 	},
-	"Rune Pattern: Warding": {
+	"Rune: Warding": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：守护"
+				"value": "符文：守护"
 			},
 			{
 				"type": "text",
@@ -3398,16 +3513,20 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_warding"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_warding"
 			}
 		]
 	},
-	"Rune Pattern: Water": {
+	"Rune: Water": {
 		"index": 0,
 		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文样式：水"
+				"value": "符文：水"
 			},
 			{
 				"type": "text",
@@ -3418,6 +3537,10 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_water"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/runeforge_water"
 			}
 		]
 	},
@@ -3511,6 +3634,7 @@
 	},
 	"Eldritch Orb": {
 		"index": 0,
+		"tier": 3,
 		"category": "artifice",
 		"sections": [
 			{
@@ -3535,7 +3659,7 @@
 	},
 	"Mundane Bracelet": {
 		"index": 0,
-		"category": "artifice",
+		"category": "runesmithing",
 		"sections": [
 			{
 				"type": "title",
@@ -3641,6 +3765,118 @@
 			}
 		]
 	},
+	"Mundane Ring": {
+		"index": 0,
+		"category": "runesmithing",
+		"sections": [
+			{
+				"type": "title",
+				"value": "普通戒指"
+			},
+			{
+				"type": "text",
+				"value": "这种戒指仅凭自身无法提供太多助益，但它的附魔能力却赋予了它更多可能的用法。"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "runescribing",
+				"location": "mana-and-artifice:runescribing/artifice/mundane_ring_pattern"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/artifice/runeforge_mundane_ring"
+			}
+		]
+	},
+	"Ring of the Skies": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "碧空之戒"
+			},
+			{
+				"type": "text",
+				"value": "This ring, when worn, allows me to cast one more movement spell while I am airborne before I need to touch the ground again."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/air_cast_ring"
+			}
+		]
+	},
+	"Ring of Silk": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "精准之戒"
+			},
+			{
+				"type": "text",
+				"value": "This ring, when worn, will enhance my break spells to be more delicate, allowing me to harvest things I wouldn't normally be able to otherwise."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/silk_touch_ring"
+			}
+		]
+	},
+	"Rings of Fortune": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "时运之戒"
+			},
+			{
+				"type": "text",
+				"value": "These rings will enhance my luck at finding treasure when mining.  My break spell will result in more treasures than it would otherwise.\n\nI'm sure as I grow in skill and power that I will be able to make more powerful versions of these rings.  I should check back later."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/fortune_ring_minor"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/fortune_ring"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/fortune_ring_greater"
+			}
+		]
+	},
+	"Ring of the Enderman": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "末影人之戒"
+			},
+			{
+				"type": "text",
+				"value": "After studying the capabilities of Endermen, I have devised a recipe for a ring that will enhance my blink spells allowing the shapes I use to dictate where I teleport to if I target a block.\n\nWhen teleporting in this way, the effective range of my blink spell is also doubled.\n\nIf I target air or a creature, it will function as the default spell."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/blink_precision_ring"
+			}
+		]
+	},
 	"Mana Crystal Fragment": {
 		"index": 0,
 		"category": "artifice",
@@ -3692,17 +3928,11 @@
 			},
 			{
 				"type": "text",
-				"value": "在制作出附魔符文之后，附魔工序的下一步则是将这些原料放到符文铁砧上，为你的护甲附魔。但在开始使用符文铁砧之前，你还得略微完善一下整体结构。\n\n首先，你得使用金属仪式符文在铁砧旁边的地上摆出正确的样式。\n然后，你得在四个角落放下基座。"
-			},
-			{
-				"type": "image",
-				"location": "mana-and-artifice:textures/guide/runeforge_setup.png",
-				"width": 128,
-				"height": 128
+				"value": "在制作出附魔符文之后，附魔工序的下一步则是将这些原料放到符文铁砧上，为你的护甲附魔。"
 			},
 			{
 				"type": "text",
-				"value": "你得在金属仪式符文上放置正确的试剂。放置顺序并不重要，只需要它们在各自的位置上即可（有点像无序的合成配方）。\n\n接着，将你想要附魔的护甲放到符文铁砧上，再将放置附魔符文放置在最顶端。如果整体结构摆放正确，那么你就能看到魔法效果逐渐汇集到铁砧上的情景。\n\n拿起你的符文锻造锤使劲敲打，在敲打了足够多次数后，护甲就被成功附魔了，而试剂也会被消耗掉。\n\n如果整体的结构出了些差错，那么在你进行敲打时，铁砧上的物品就会直接弹出。"
+				"value": "To apply the enchantment, simply place the item you want to enchant on the anvil, then place the enchanted rune on top of it.  Take your Runesmith's Hammer and strike the anvil repeatedly (right click).  If the enchantment can't be applied to the item, the items will pop off of the anvil."
 			}
 		],
 		"related_recipes": [
@@ -3721,10 +3951,6 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_metal_ritual_rune"
-			},
-			{
-				"type": "runesmith_enchant",
-				"location": "mana-and-artifice:runescribing/runeforge_metal_ritual_rune"
 			}
 		]
 	},
@@ -3798,7 +4024,13 @@
 			},
 			{
 				"type": "text",
-				"value": "这一仪式可以将知识元素和研究元素聚合为精华。"
+				"value": "这一仪式可以将知识元素和学习元素聚合为精华。\n\nThis ritual must be done by placing enough bookshelves anywhere along the ritual's outer border.  I think ten should do the trick."
+			},
+			{
+				"type": "image",
+				"location": "mana-and-artifice:textures/guide/forgotten_lore.png",
+				"width": 128,
+				"height": 128
 			}
 		],
 		"related_recipes": [
@@ -3882,7 +4114,7 @@
 			},
 			{
 				"type": "text",
-				"value": "这一禁忌的仪式会召唤出一名仙女女王。在进行交易过后，这些仙女往往会将力量赋予那些寻求于它的人，但毋庸置疑，你得为你的渴求付出一些代价。\n\n向其供奉一个狂风凝核是一个不错的选择。\n\n与这样的生物进行结盟，会使你与其它派系变为敌对关系。"
+				"value": "这一禁忌的仪式会召唤出一名仙女女王。在进行交易过后，这些仙女往往会将力量赋予那些寻求于它的人，但毋庸置疑，你得为你的渴求付出一些代价。\n\n向其供奉一个Mote of Air是一个不错的选择。\n\n与这样的生物进行结盟，会使你与其它派系变为敌对关系。"
 			}
 		],
 		"related_recipes": [
@@ -3906,7 +4138,7 @@
 			},
 			{
 				"type": "text",
-				"value": "这一仪式会开启一场来自巫师议会的会议。通过这样的方式，你可以与巫师议会结盟，以换取它们对于高等魔法的知识、与这样的生物进行结盟，会使你与其它派系变为敌对关系。"
+				"value": "这一仪式会开启一场来自巫师议会的会议。通过这样的方式，你可以与巫师议会结盟，以换取它们对于高等魔法的知识。\n\nOnce you have summoned the council, stand in the center of them to receive their blessing, if you believe you are worthy.\n\n与这样的生物进行结盟，会使你与其它派系变为敌对关系。"
 			}
 		],
 		"related_recipes": [
@@ -3998,26 +4230,6 @@
 			}
 		]
 	},
-	"Rune Pattern: Marking": {
-		"index": 0,
-		"category": "runesmithing",
-		"sections": [
-			{
-				"type": "title",
-				"value": "符文样式：标记"
-			},
-			{
-				"type": "text",
-				"value": "标记符文用于标记区域，在一些特定的仪式中才会使用到它。对着方块右键，可以将这一方块的坐标存入符文中。\n\n这些符文往往因为内含能量较少，而无法标记过大的区域。"
-			}
-		],
-		"related_recipes": [
-			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/runescribe_marking"
-			}
-		]
-	},
 	"Unguent of Seeing": {
 		"index": 0,
 		"category": "manaweaving",
@@ -4038,13 +4250,13 @@
 			}
 		]
 	},
-	"Component: Blink": {
+	"Blink": {
 		"index": "2",
 		"category": "sorcery",
 		"sections": [
 			{
 				"type": "title",
-				"value": "构件：闪现"
+				"value": "闪现"
 			},
 			{
 				"type": "text",
@@ -4058,13 +4270,13 @@
 			}
 		]
 	},
-	"Component: Transplace": {
+	"Transplace": {
 		"index": "2",
 		"category": "sorcery",
 		"sections": [
 			{
 				"type": "title",
-				"value": "构件：转位"
+				"value": "转位"
 			},
 			{
 				"type": "text",
@@ -4109,7 +4321,7 @@
 			},
 			{
 				"type": "text",
-				"value": "Animated constructs是一种类人型的构装，被注入其中的魔法使得它们能够像生命体一样活动自如。"
+				"value": "运动构装体是一种类人型的构装，被注入其中的魔法使得它们能够像生命体一样活动自如。"
 			},
 			{
 				"type": "title",
@@ -4117,7 +4329,7 @@
 			},
 			{
 				"type": "text",
-				"value": "构装体由5个部分构成：头部，躯干，腿以及两条手臂。各个部件决定了构装体的整体能力。Take some time to look through the various parts in the Constructs section of the Codex and decide which ones you want to make.  You can modify a construct at any time by commanding it to return to an empty Construct Workbench.  The way to do so is described a little further on.\n\nOnce you know which parts you want to make, you need to decide on a material.  There are six materials that a Construct can be made from, and each changes the properties of the construct.  You can mix and match materials, and this will balance the benefits and disadvantages of the construct.  It's worthwhile to experiment with different combinations to find one that suits your needs."
+				"value": "构装体由5个部分构成：头部，躯干，腿以及两条手臂。各个部件决定了构装体的整体能力。你可以花一些时间浏览古籍中的“构装”章节，并决定如何制作的你想要的各个部件。你可以在任意时刻改装你的构装体，只需向其下令，让它回到空的构装工作台中即可。具体的操作方法见下文。\n\n一旦你确认了你想要制作的是哪一部分，接下来你就要为你的目标挑选一种制作材料了。共有六种材料供你选择，每一种材料都会给构装体带来独特的属性。 你可以任意混合不同材料制作而成的部件，这可以平衡成品构装体的“木板 长度”，反复实验，最终你可以找出你最心仪的那种组合。"
 			},
 			{
 				"type": "title",
@@ -4126,20 +4338,20 @@
 			},
 			{
 				"type": "title",
-				"value": "Wood",
+				"value": "木",
 				"newPage": true
 			},
 			{
 				"type": "text",
-				"value": "Wooden construct parts are made from any kind of wood.  They are buoyant and light, meaning the help constructs to float and move more quickly.  However they cause the construct to take more damage from fire, and they don't have much in terms of health."
+				"value": "木制构装体部件由某种木头制成，这种部件轻盈且在水中可以漂浮，这意味着木制构装体可以移动的更快，且不会沉入水底。然而，火焰对这种构装体会造成更高的伤害，并且构装体的生命值也不会也较低。"
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 1\nBuoyancy/Part: 1\nSpeed/Part: 15\nKB Resist/Part: 0%"
+				"value": "HP/每部件：1\n浮性/每部件: 1\n速度/每部件：15\n击退抗性/每部件：0%"
 			},
 			{
 				"type": "title",
-				"value": "Stone",
+				"value": "石",
 				"newPage": true
 			},
 			{
@@ -4148,11 +4360,11 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 2\nBuoyancy/Part: -1\nSpeed/Part: 12\nKB Resist/Part: 20%"
+				"value": "HP/每部件: 2\n浮性/每部件: -1\n速度/每部件: 12\n击退抗性/每部件: 20%"
 			},
 			{
 				"type": "title",
-				"value": "Iron",
+				"value": "铁",
 				"newPage": true
 			},
 			{
@@ -4161,11 +4373,11 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 5\nBuoyancy/Part: -3\nSpeed/Part: 10\nKB Resist/Part: 30%"
+				"value": "HP/每部件: 5\n浮性/每部件: -3\n速度/每部件: 10\n击退抗性/每部件: 30%"
 			},
 			{
 				"type": "title",
-				"value": "Gold",
+				"value": "金",
 				"newPage": true
 			},
 			{
@@ -4174,11 +4386,11 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 3\nBuoyancy/Part: -3\nSpeed/Part: 10\nKB Resist/Part: 40%"
+				"value": "HP/每部件: 3\n浮性/每部件: -3\n速度/每部件: 10\n击退抗性/每部件: 40%"
 			},
 			{
 				"type": "title",
-				"value": "Diamond",
+				"value": "钻石",
 				"newPage": true
 			},
 			{
@@ -4187,11 +4399,11 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 6\nBuoyancy/Part: -1\nSpeed/Part: 15\nKB Resist/Part: 0%"
+				"value": "HP/每部件: 6\n浮性/每部件: -1\n速度/每部件: 15\n击退抗性/每部件: 0%"
 			},
 			{
 				"type": "title",
-				"value": "Obsidian",
+				"value": "黑曜石",
 				"newPage": true
 			},
 			{
@@ -4200,11 +4412,11 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 10\nBuoyancy/Part: -5\nSpeed/Part: 9\nKB Resist/Part: 40%"
+				"value": "HP/每部件: 10\n浮性/每部件: -5\n速度/每部件: 9\n击退抗性/每部件: 40%"
 			},
 			{
 				"type": "title",
-				"value": "Setting up the Construct Workbench",
+				"value": "配置构装工作台",
 				"newPage": true
 			},
 			{
@@ -4219,7 +4431,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Summoning the Construct",
+				"value": "召唤构装体",
 				"newPage": true
 			},
 			{
@@ -4228,20 +4440,20 @@
 			},
 			{
 				"type": "title",
-				"value": "Affinity Effects",
+				"value": "亲和度效果",
 				"newPage": true
 			},
 			{
 				"type": "text",
-				"value": "As mentioned earlier, constructs are summoned with an affinity.  This affects what they do.  A construct can have a total of 8 affinity points.  The list below shows the effects per point of affinity.  You can mix and match freely, so find something that perhaps shores up weaknesses within the material used, or enhances the strong points.  Conflicting affinities within the construct do not matter."
+				"value": "如前文所言，被召唤而出的构装体总是拥有着亲和度，这一亲和度会影响构装体的行为。一个构装体统共可拥有 8 点的亲和点数，下方的列表显示了每点 亲和度能够带来的效果。你可以随意组合搭配，适宜的部件组合可以弥补制作材料所带来的短板，或者是进一步增强构装体的强势之处。构装体中互相冲突的亲和不会带来任何影响。"
 			},
 			{
 				"type": "text",
-				"value": "Air: 1 move speed/point\n\nArcane: 5% magic damage resistance/point\n\nEarth: 5% physical damage resist/point\n\nEnder: 1 carry capacity/point\n\nFire: 1s/point of ignition when attacking\n\nWater: 1 buoyancy/point"
+				"value": "气：1 移动速度/点\n\n奥术：5% 魔法伤害抗性/点\n\n大地： 5% 物理伤害抗性/点\n\n末影 ：1 携带物品量/点\n\n火：1 秒（攻击时的附加燃烧效果持续时间）/点 \n\n水：1 浮性/点"
 			},
 			{
 				"type": "title",
-				"value": "Swimming"
+				"value": "游泳"
 			},
 			{
 				"type": "text",
@@ -4249,7 +4461,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Basic Commands",
+				"value": "基础指令",
 				"newPage": true
 			},
 			{
@@ -4295,7 +4507,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Lodestar"
+				"value": "北极星"
 			},
 			{
 				"type": "text",
@@ -4303,7 +4515,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Take Item"
+				"value": "拿取物品"
 			},
 			{
 				"type": "text",
@@ -4311,11 +4523,27 @@
 			},
 			{
 				"type": "title",
-				"value": "Place Item"
+				"value": "放置物品"
 			},
 			{
 				"type": "text",
 				"value": "This command will cause the construct to place all held items in the given container, from the given side marked by the marking rune.  This command will be skipped if the construct doesn't have anything held."
+			},
+			{
+				"type": "title",
+				"value": "符文刻印"
+			},
+			{
+				"type": "text",
+				"value": "This command will cause the construct to attempt to chisel the pattern specified into a blank rune pattern at the given Runescribing table.  It requires that the necessary materials are already present.  This will require a hammer arm on the Construct.  The better the material, the faster the construct will work."
+			},
+			{
+				"type": "title",
+				"value": "符文锻造"
+			},
+			{
+				"type": "text",
+				"value": "This command will cause the construct to attempt to Forge the rune set up on the runic anvil.  It requires that the given materials are already present. This requires a hammer arm on the Construct.  The better the material of the arm, the faster the construct will work."
 			}
 		],
 		"related_recipes": [
@@ -4326,6 +4554,10 @@
 			{
 				"type": "runesmithing",
 				"location": "mana-and-artifice:runeforging/runeforge_marking"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:lodestar"
 			}
 		]
 	},	
@@ -4335,7 +4567,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Construct Grabber Arms"
+				"value": "构装体抓手手臂"
 			},
 			{
 				"type": "text",
@@ -4389,11 +4621,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Construct Bladed Arms"
+				"value": "构装体剑刃手臂"
 			},
 			{
 				"type": "text",
-				"value": "Construct bladed arms allow for faster, more powerful attacks."
+				"value": "构装体剑刃手臂能使得构装体的攻击更快，伤害更高。"
 			}
 		],
 		"related_recipes": [
@@ -4435,7 +4667,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Construct Hammer Arms"
+				"value": "构装体重锤手臂"
 			},
 			{
 				"type": "text",
@@ -4489,7 +4721,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Construct Basic Torso"
+				"value": "构装体基础躯干"
 			},
 			{
 				"type": "text",
@@ -4524,7 +4756,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Construct Basic Legs"
+				"value": "构装体基础腿部"
 			},
 			{
 				"type": "text",
@@ -4559,7 +4791,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Construct Basic Head"
+				"value": "构装体基础头部"
 			},
 			{
 				"type": "text",
@@ -4576,6 +4808,41 @@
 					"mana-and-artifice:manaweaving/constructs/gold/gold_head_basic",
 					"mana-and-artifice:manaweaving/constructs/diamond/diamond_head_basic",
 					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_head_basic"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_head"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_head"
+			}
+		]
+	},
+	"Construct Rebreather Head": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "构装体加装呼吸器头部"
+			},
+			{
+				"type": "text",
+				"value": "加装呼吸器头部能够让构装体在水下进行呼吸。"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_head_rebreather",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_head_rebreather",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_head_rebreather",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_head_rebreather",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_head_rebreather",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_head_rebreather"
 				]
 			},
 			{
