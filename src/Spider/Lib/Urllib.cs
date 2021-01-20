@@ -4,9 +4,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Spider.JsonLib;
+using Spider.Lib.JsonLib;
 
-namespace Spider {
+namespace Spider.Lib {
     public static class UrlLib {
         /// <summary>
         /// 使用定义的游戏版本和模组数量批量获取模组信息

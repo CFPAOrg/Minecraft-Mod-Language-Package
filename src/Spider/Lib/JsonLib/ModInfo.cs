@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Spider.JsonLib {
+namespace Spider.Lib.JsonLib {
     public class ModInfo {
         [JsonProperty("id")]
         public long Id { get; set; }

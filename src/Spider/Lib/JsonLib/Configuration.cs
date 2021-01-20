@@ -1,7 +1,7 @@
 ﻿
 using Newtonsoft.Json;
 
-namespace Spider.JsonLib {
+namespace Spider.Lib.JsonLib {
     public class Configuration {
         [JsonProperty("version")]
         public string Version { get; set; }
