@@ -16,7 +16,7 @@ namespace Spider {
             Timer.Elapsed += (s, e) => tick_Logger();
         }
 
-        public void Download() {
+        public async void Download() {
             Timer.Start();
         }
 
