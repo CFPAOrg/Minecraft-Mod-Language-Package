@@ -1,30 +1,16 @@
-﻿using Serilog;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
-namespace Spider
-{
-    public class Configuration
-    {
-        public static Configuration Default { get; } = new Configuration()
-        {
-            EnabledGameVersions = new List<string> { "1.16.1" },
-#if DEBUG
-            ModCount = 100,
-#else
-            ModCount = 100,
-#endif
-            ModInfoPath = "./config/mod_info.json"
-        };
+namespace Spider {
+    public class Configuration {
+        [JsonPropertyName("version")] public string Version { get; set; }
+        [JsonPropertyName("spider_conf")] public SpiderConfiguration SpiderConfiguration { get; set; }
+    }
 
-        public List<string> EnabledGameVersions { get; set; }
-
-        public int ModCount { get; set; }
-
-        public string ModInfoPath { get; set; }
+    public class SpiderConfiguration {
+        [JsonPropertyName("base_mod_count")] public int ModCount { get; set; }
+        [JsonPropertyName("black_list")] public string[] BlackList { get; set; }
+        [JsonPropertyName("white_list")] public string[] WhiteList { get; set; }
     }
 }
