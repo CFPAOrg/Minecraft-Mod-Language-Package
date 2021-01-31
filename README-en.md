@@ -1,6 +1,6 @@
 ![pack.png](https://i.loli.net/2018/02/18/5a8974407b453.png)
 ---
-**Languages/语言:** [中文](README.md) [**English**](README.md)
+**Languages/语言:** [中文](README.md) [**English**](README-en.md)
 
 | CurseForge Downloads | Versions Supported | Localization Progress | Github Actions | Latest Snapshot |
 | :--: | :--: | :--: | :--: | :--: |
