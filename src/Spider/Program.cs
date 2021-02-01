@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Timers;
 using Formatter;
+using Language.Core;
 using Serilog;
 
 namespace Spider {
@@ -14,8 +16,9 @@ namespace Spider {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
-            var a= new Downloader(1500,new Timer(1000));
-            a.Log += (s, e) => Log.Logger.Information($"test{e.DownloadedCount},{e.ModCount}");
+            //var a= new Downloader(1500,new Timer(1000));
+            //a.Log += (s, e) => Log.Logger.Information($"test{e.DownloadedCount},{e.ModCount}");
+            var l =LanguageConvert.Deserialize(File.OpenRead(@"C:\Users\Nullpinter\Desktop\ProcessMonitor\en_us.lang"));
             Console.ReadLine();
         }
     }
