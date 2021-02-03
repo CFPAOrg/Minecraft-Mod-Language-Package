@@ -31,137 +31,55 @@ namespace Language.Core {
         /// 格式化语言文件
         /// </summary>
         public void Format() {
-            var lineHead = true;
-            while (!_reader.EndOfStream) {
-                if (Peek() == '=') {
-                    SkipLine();
-                    continue;
-                }
-
-                // 处理一行
-                var shouldBreak = false;
-                int c;
-                while (!shouldBreak && (c = Consume()) != EOF) {
+            int c;
+            var lineStart = true;
+            var multiLineComment = false;
+            while ((c = Consume()) != EOF) {
+                if (lineStart) {
                     switch (c) {
                         case '/':
-                            if (lineHead) {
-                                switch (Peek()) {
-                                    case '/':
-                                        Consume();
-                                        Write('#');
-                                        break;
-                                    case '*':
-                                        Consume();
-                                        Write('#');
-
-                                        // 这里进入多行注释
-                                        var shouldBreak2 = false;
-                                        while (!shouldBreak2) {
-                                            var tmp1 = Consume();
-                                            switch (tmp1) {
-                                                case '*':
-                                                    var tmp2 = Peek();
-                                                    CheckEOF(tmp2);
-                                                    if (tmp2 == '/') {
-                                                        Consume();
-                                                        shouldBreak2 = true;
-                                                    }
-
-                                                    break;
-                                                case '\r':
-                                                case '\n':
-                                                    CopyLineBreak(tmp1);
-                                                    Write('#');
-                                                    break;
-                                                default:
-                                                    CheckEOF(tmp1);
-                                                    Write(tmp1);
-                                                    break;
-                                            }
-                                        }
-
-                                        break;
-                                    default:
-                                        Write('/');
-                                        break;
-                                }
+                            switch (Peek()) {
+                                // '//' 的实现仅支持行首出现 在 enderio 的语言文件有 YouTube 链接 会导致问题
+                                // 当然也可以手动设置开关
+                                case '/':
+                                    Consume();
+                                    Write('#');
+                                    continue;
+                                // '/**/' 的实现假定 '/*' 仅仅在行首出现 '*/' 仅在行末出现
+                                case '*':
+                                    Consume();
+                                    multiLineComment = true;
+                                    continue;
                             }
-                            else {
-                                Write('/');
-                            }
-
-                            lineHead = false;
                             break;
-                        case '\r':
-                        case '\n':
-                            CopyLineBreak(c);
-                            lineHead = true;
-                            shouldBreak = true;
-                            continue;
-                        case EOF:
-                            shouldBreak = true;
-                            continue;
-                        default:
-                            Write(c);
-                            lineHead = false;
+                        case '=':
+                            SkipLine();
                             continue;
                     }
-                }
-            }
 
-            void CopyLineBreak(int initChar) {
-                switch (initChar) {
-                    case '\r':
-                        Write('\r');
-                        if (Consume() != '\n') throw new FormatterException("无效换行符");
-                        Write('\n');
-                        break;
-                    case '\n':
-                        Write('\n');
-                        break;
-                    default:
-                        throw new FormatterException("调用方未检查换行符");
+                    if (multiLineComment) Write('#');
                 }
+
+                if (multiLineComment && c == '*' && Peek() == '/') {
+                    Consume();
+                    multiLineComment = false;
+                    continue;
+                }
+                lineStart = c == '\n';
+                Write(c);
             }
 
             _writer.Close();
             _writer.Dispose();
         }
-
-        // ReSharper disable once InconsistentNaming
-        static void CheckEOF(int c) {
-            if (c == EOF)
-                throw new FormatterException("意外地遇到文件尾");
-        }
-
         void SkipLine() {
-            while (true) {
-                var c = Consume();
-                if (c == '\r') {
-                    Consume(); // \r\n
-                    break;
-                }
-
-                if (c == '\n' || c == EOF) {
-                    break;
-                }
-            }
+            int c;
+            while ((c = Consume()) != '\n' && c != EOF) { }
         }
 
         int Peek() => _reader.Peek();
-
         int Consume() => _reader.Read();
-
         void Write(char c) => _writer.Write(c);
-
         void Write(int c) => Write((char)c);
-
-
-        [Serializable]
-        public class FormatterException : Exception {
-            public FormatterException(string message) : base(message) {
-            }
-        }
     }
-
 }

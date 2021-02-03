@@ -20,7 +20,7 @@ namespace Spider {
             //a.Log += (s, e) => Log.Logger.Information($"test{e.DownloadedCount},{e.ModCount}");
             //var l = new LangFormatter(new StreamReader(File.OpenRead(@"C:\Users\Nullpinter\Desktop\ProcessMonitor\z.lang")),new StreamWriter(File.OpenWrite(@"C:\Users\Nullpinter\Desktop\ProcessMonitor\a.lang")));
             //l.Format();
-            var b = new JsonFormatter(@"C:\Users\Nullpinter\Desktop\ProcessMonitor\2.json");
+            var b = new JsonFormatter(new StreamReader(@"C:\Users\Nullpinter\Desktop\ProcessMonitor\2.json"),new StreamWriter(@"C:\Users\Nullpinter\Desktop\ProcessMonitor\3.json"));
             b.Format();
             Console.ReadLine();
         }

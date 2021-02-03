@@ -2,24 +2,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace Language.Core {
-    public class JsonFormatter {
-        private readonly string _path;
+    public sealed class JsonFormatter {
+        private readonly StreamReader _reader;
+        private readonly StreamWriter _writer;
 
-        public JsonFormatter(string path) {
-            _path = path;
+        public JsonFormatter(StreamReader reader,StreamWriter writer) {
+            _reader = reader;
+            _writer = writer;
         }
 
         public void Format() {
-            var file = File.ReadAllText(_path);
-            var jsonObject = JObject.Parse(file);
-            foreach (var (key, value) in jsonObject) {
-                Console.WriteLine($"\"{key}\":\"{value.ToString()}\"");
+            var builder = new StringBuilder();
+            while (!_reader.EndOfStream) {
+                builder.AppendLine(_reader.ReadLine());
             }
+            var jsonObject = JObject.Parse(builder.ToString());
+            var writer = new JsonTextWriter(_writer);
+            writer.WriteRaw(jsonObject.ToString());
+            writer.Close();
         }
     }
 }
