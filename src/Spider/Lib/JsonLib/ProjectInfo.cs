@@ -1,17 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace Spider.Lib.JsonLib {
     public class ProjectInfo {
-        [JsonProperty("curseforge_id")]
+        [JsonPropertyName("curseforge_id")]
         public long CFId { get; set; }
 
-        [JsonProperty("patchouli_book")]
+        [JsonPropertyName("patchouli_book")]
         public bool PatchouliBook { get; set; }
 
-        [JsonProperty("update_chinese")]
+        [JsonPropertyName("update_chinese")]
         public bool UpdateChinese { get; set; }
 
-        [JsonProperty("non_update")]
+        [JsonPropertyName("non_update")]
         public bool NonUpdate { get; set; }
     }
 }

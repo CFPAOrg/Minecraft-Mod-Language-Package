@@ -1,20 +1,20 @@
 ﻿
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Spider.Lib.JsonLib {
     public class Configuration {
-        [JsonProperty("version")]
+        [JsonPropertyName("version")]
         public string Version { get; set; }
-        [JsonProperty("spider_conf")]
+        [JsonPropertyName("spider_conf")]
         public SpiderConfiguration SpiderConfiguration { get; set; }
     }
 
     public class SpiderConfiguration {
-        [JsonProperty("base_mod_count")]
+        [JsonPropertyName("base_mod_count")]
         public int ModCount { get; set; }
-        [JsonProperty("black_list")]
+        [JsonPropertyName("black_list")]
         public string[] BlackList { get; set; }
-        [JsonProperty("white_list")]
+        [JsonPropertyName("white_list")]
         public string[] WhiteList { get; set; }
     }
 }

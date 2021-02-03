@@ -5,23 +5,15 @@ namespace Spider {
     public class Downloader {
         private int ModCount { get; set; }
         private int DownloadedCount { get; set; }
-        private Timer Timer { get; set; }
+        private readonly Timer _timer;
 
         public event EventHandler<LogEventArgs> Log;
 
         public Downloader(int modCount, Timer timer) {
             ModCount = modCount;
-            Timer = timer;
+            _timer = timer;
             DownloadedCount = 0;
-            Timer.Elapsed += (s, e) => tick_Logger();
-        }
-
-        public async void Download() {
-            Timer.Start();
-        }
-
-        public void CheckCount() {
-
+            _timer.Elapsed += (s, e) => Tick_Logger();
         }
 
         public class LogEventArgs : EventArgs {
@@ -29,7 +21,7 @@ namespace Spider {
             public int DownloadedCount { get; set; }
         }
 
-        void tick_Logger() {
+        private void Tick_Logger() {
             var args = new LogEventArgs();
             args.DownloadedCount = this.DownloadedCount;
             args.ModCount = this.ModCount;
@@ -38,6 +30,14 @@ namespace Spider {
 
         protected virtual void OnLog(LogEventArgs e) {
             Log?.Invoke(this, e);
+        }
+
+        public async void Download() {
+            _timer.Start();
+        }
+
+        public void CheckCount() {
+
         }
     }
 }

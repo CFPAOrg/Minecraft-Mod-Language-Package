@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Spider.Lib.JsonLib;
 
 namespace Spider.Lib {
@@ -22,7 +22,7 @@ namespace Spider.Lib {
                 Query =
                     $"categoryId=0&gameId=432&index=0&pageSize={modCount}&gameVersion={gameVersion}&sectionId=6&sort=1"
             };
-            return JsonConvert.DeserializeObject<ModInfo[]>(await httpClient.GetStringAsync(uriBuilder.Uri));
+            return await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri);
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Spider.Lib {
             foreach (var id in whiteList) {
                 using var httpClient = new HttpClient();
                 var uri = new Uri($"https://addons-ecs.forgesvc.net/api/v2/addon/{id}");
-                var result = JsonConvert.DeserializeObject<ModInfo>(await httpClient.GetStringAsync(uri));
+                var result = await httpClient.GetFromJsonAsync<ModInfo>(uri);
                 res.Add(result);
             }
 

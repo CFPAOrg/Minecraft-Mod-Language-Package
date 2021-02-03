@@ -1,369 +1,369 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Spider.Lib.JsonLib {
     public class ModInfo {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public long Id { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("authors")]
+        [JsonPropertyName("authors")]
         public Author[] Authors { get; set; }
 
-        [JsonProperty("attachments")]
+        [JsonPropertyName("attachments")]
         public Attachment[] Attachments { get; set; }
 
-        [JsonProperty("websiteUrl")]
+        [JsonPropertyName("websiteUrl")]
         public Uri WebsiteUrl { get; set; }
 
-        [JsonProperty("gameId")]
+        [JsonPropertyName("gameId")]
         public long GameId { get; set; }
 
-        [JsonProperty("summary")]
+        [JsonPropertyName("summary")]
         public string Summary { get; set; }
 
-        [JsonProperty("defaultFileId")]
+        [JsonPropertyName("defaultFileId")]
         public long DefaultFileId { get; set; }
 
-        [JsonProperty("downloadCount")]
+        [JsonPropertyName("downloadCount")]
         public long DownloadCount { get; set; }
 
-        [JsonProperty("latestFiles")]
+        [JsonPropertyName("latestFiles")]
         public LatestFile[] LatestFiles { get; set; }
 
-        [JsonProperty("categories")]
+        [JsonPropertyName("categories")]
         public Category[] Categories { get; set; }
 
-        [JsonProperty("status")]
+        [JsonPropertyName("status")]
         public long Status { get; set; }
 
-        [JsonProperty("primaryCategoryId")]
+        [JsonPropertyName("primaryCategoryId")]
         public long PrimaryCategoryId { get; set; }
 
-        [JsonProperty("categorySection")]
+        [JsonPropertyName("categorySection")]
         public CategorySection CategorySection { get; set; }
 
-        [JsonProperty("slug")]
+        [JsonPropertyName("slug")]
         public string Slug { get; set; }
 
-        [JsonProperty("gameVersionLatestFiles")]
+        [JsonPropertyName("gameVersionLatestFiles")]
         public GameVersionLatestFile[] GameVersionLatestFiles { get; set; }
 
-        [JsonProperty("isFeatured")]
+        [JsonPropertyName("isFeatured")]
         public bool IsFeatured { get; set; }
 
-        [JsonProperty("popularityScore")]
+        [JsonPropertyName("popularityScore")]
         public double PopularityScore { get; set; }
 
-        [JsonProperty("gamePopularityRank")]
+        [JsonPropertyName("gamePopularityRank")]
         public long GamePopularityRank { get; set; }
 
-        [JsonProperty("primaryLanguage")]
+        [JsonPropertyName("primaryLanguage")]
         public string PrimaryLanguage { get; set; }
 
-        [JsonProperty("gameSlug")]
+        [JsonPropertyName("gameSlug")]
         public string GameSlug { get; set; }
 
-        [JsonProperty("gameName")]
+        [JsonPropertyName("gameName")]
         public string GameName { get; set; }
 
-        [JsonProperty("portalName")]
+        [JsonPropertyName("portalName")]
         public string PortalName { get; set; }
 
-        [JsonProperty("dateModified")]
+        [JsonPropertyName("dateModified")]
         public DateTimeOffset DateModified { get; set; }
 
-        [JsonProperty("dateCreated")]
+        [JsonPropertyName("dateCreated")]
         public DateTimeOffset DateCreated { get; set; }
 
-        [JsonProperty("dateReleased")]
+        [JsonPropertyName("dateReleased")]
         public DateTimeOffset DateReleased { get; set; }
 
-        [JsonProperty("isAvailable")]
+        [JsonPropertyName("isAvailable")]
         public bool IsAvailable { get; set; }
 
-        [JsonProperty("isExperiemental")]
+        [JsonPropertyName("isExperiemental")]
         public bool IsExperiemental { get; set; }
     }
 
     public class Attachment {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public long Id { get; set; }
 
-        [JsonProperty("projectId")]
+        [JsonPropertyName("projectId")]
         public long ProjectId { get; set; }
 
-        [JsonProperty("description")]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
 
-        [JsonProperty("isDefault")]
+        [JsonPropertyName("isDefault")]
         public bool IsDefault { get; set; }
 
-        [JsonProperty("thumbnailUrl")]
+        [JsonPropertyName("thumbnailUrl")]
         public Uri ThumbnailUrl { get; set; }
 
-        [JsonProperty("title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [JsonProperty("url")]
+        [JsonPropertyName("url")]
         public Uri Url { get; set; }
 
-        [JsonProperty("status")]
+        [JsonPropertyName("status")]
         public long Status { get; set; }
     }
 
     public class Author {
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("url")]
+        [JsonPropertyName("url")]
         public Uri Url { get; set; }
 
-        [JsonProperty("projectId")]
+        [JsonPropertyName("projectId")]
         public long ProjectId { get; set; }
 
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public long Id { get; set; }
 
-        [JsonProperty("projectTitleId")]
+        [JsonPropertyName("projectTitleId")]
         public long? ProjectTitleId { get; set; }
 
-        [JsonProperty("projectTitleTitle")]
+        [JsonPropertyName("projectTitleTitle")]
         public string ProjectTitleTitle { get; set; }
 
-        [JsonProperty("userId")]
+        [JsonPropertyName("userId")]
         public long UserId { get; set; }
 
-        [JsonProperty("twitchId")]
+        [JsonPropertyName("twitchId")]
         public long? TwitchId { get; set; }
     }
 
     public class Category {
-        [JsonProperty("categoryId")]
+        [JsonPropertyName("categoryId")]
         public long CategoryId { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("url")]
+        [JsonPropertyName("url")]
         public Uri Url { get; set; }
 
-        [JsonProperty("avatarUrl")]
+        [JsonPropertyName("avatarUrl")]
         public Uri AvatarUrl { get; set; }
 
-        [JsonProperty("parentId")]
+        [JsonPropertyName("parentId")]
         public long ParentId { get; set; }
 
-        [JsonProperty("rootId")]
+        [JsonPropertyName("rootId")]
         public long RootId { get; set; }
 
-        [JsonProperty("projectId")]
+        [JsonPropertyName("projectId")]
         public long ProjectId { get; set; }
 
-        [JsonProperty("avatarId")]
+        [JsonPropertyName("avatarId")]
         public long AvatarId { get; set; }
 
-        [JsonProperty("gameId")]
+        [JsonPropertyName("gameId")]
         public long GameId { get; set; }
     }
 
     public class CategorySection {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public long Id { get; set; }
 
-        [JsonProperty("gameId")]
+        [JsonPropertyName("gameId")]
         public long GameId { get; set; }
 
-        [JsonProperty("name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty("packageType")]
+        [JsonPropertyName("packageType")]
         public long PackageType { get; set; }
 
-        [JsonProperty("path")]
+        [JsonPropertyName("path")]
         public string Path { get; set; }
 
-        [JsonProperty("initialInclusionPattern")]
+        [JsonPropertyName("initialInclusionPattern")]
         public string InitialInclusionPattern { get; set; }
 
-        [JsonProperty("extraIncludePattern")]
+        [JsonPropertyName("extraIncludePattern")]
         public object ExtraIncludePattern { get; set; }
 
-        [JsonProperty("gameCategoryId")]
+        [JsonPropertyName("gameCategoryId")]
         public long GameCategoryId { get; set; }
     }
 
     public class GameVersionLatestFile {
-        [JsonProperty("gameVersion")]
+        [JsonPropertyName("gameVersion")]
         public string GameVersion { get; set; }
 
-        [JsonProperty("projectFileId")]
+        [JsonPropertyName("projectFileId")]
         public long ProjectFileId { get; set; }
 
-        [JsonProperty("projectFileName")]
+        [JsonPropertyName("projectFileName")]
         public string ProjectFileName { get; set; }
 
-        [JsonProperty("fileType")]
+        [JsonPropertyName("fileType")]
         public long FileType { get; set; }
 
-        [JsonProperty("gameVersionFlavor")]
+        [JsonPropertyName("gameVersionFlavor")]
         public object GameVersionFlavor { get; set; }
     }
 
     public class LatestFile {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public long Id { get; set; }
 
-        [JsonProperty("displayName")]
+        [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
 
-        [JsonProperty("fileName")]
+        [JsonPropertyName("fileName")]
         public string FileName { get; set; }
 
-        [JsonProperty("fileDate")]
+        [JsonPropertyName("fileDate")]
         public DateTimeOffset FileDate { get; set; }
 
-        [JsonProperty("fileLength")]
+        [JsonPropertyName("fileLength")]
         public long FileLength { get; set; }
 
-        [JsonProperty("releaseType")]
+        [JsonPropertyName("releaseType")]
         public long ReleaseType { get; set; }
 
-        [JsonProperty("fileStatus")]
+        [JsonPropertyName("fileStatus")]
         public long FileStatus { get; set; }
 
-        [JsonProperty("downloadUrl")]
+        [JsonPropertyName("downloadUrl")]
         public Uri DownloadUrl { get; set; }
 
-        [JsonProperty("isAlternate")]
+        [JsonPropertyName("isAlternate")]
         public bool IsAlternate { get; set; }
 
-        [JsonProperty("alternateFileId")]
+        [JsonPropertyName("alternateFileId")]
         public long AlternateFileId { get; set; }
 
-        [JsonProperty("dependencies")]
+        [JsonPropertyName("dependencies")]
         public Dependency[] Dependencies { get; set; }
 
-        [JsonProperty("isAvailable")]
+        [JsonPropertyName("isAvailable")]
         public bool IsAvailable { get; set; }
 
-        [JsonProperty("modules")]
+        [JsonPropertyName("modules")]
         public Module[] Modules { get; set; }
 
-        [JsonProperty("packageFingerprint")]
+        [JsonPropertyName("packageFingerprint")]
         public long PackageFingerprint { get; set; }
 
-        [JsonProperty("gameVersion")]
+        [JsonPropertyName("gameVersion")]
         public string[] GameVersion { get; set; }
 
-        [JsonProperty("sortableGameVersion")]
+        [JsonPropertyName("sortableGameVersion")]
         public SortableGameVersion[] SortableGameVersion { get; set; }
 
-        [JsonProperty("installMetadata")]
+        [JsonPropertyName("installMetadata")]
         public object InstallMetadata { get; set; }
 
-        [JsonProperty("changelog")]
+        [JsonPropertyName("changelog")]
         public object Changelog { get; set; }
 
-        [JsonProperty("hasInstallScript")]
+        [JsonPropertyName("hasInstallScript")]
         public bool HasInstallScript { get; set; }
 
-        [JsonProperty("isCompatibleWithClient")]
+        [JsonPropertyName("isCompatibleWithClient")]
         public bool IsCompatibleWithClient { get; set; }
 
-        [JsonProperty("categorySectionPackageType")]
+        [JsonPropertyName("categorySectionPackageType")]
         public long CategorySectionPackageType { get; set; }
 
-        [JsonProperty("restrictProjectFileAccess")]
+        [JsonPropertyName("restrictProjectFileAccess")]
         public long RestrictProjectFileAccess { get; set; }
 
-        [JsonProperty("projectStatus")]
+        [JsonPropertyName("projectStatus")]
         public long ProjectStatus { get; set; }
 
-        [JsonProperty("renderCacheId")]
+        [JsonPropertyName("renderCacheId")]
         public long RenderCacheId { get; set; }
 
-        [JsonProperty("fileLegacyMappingId")]
+        [JsonPropertyName("fileLegacyMappingId")]
         public object FileLegacyMappingId { get; set; }
 
-        [JsonProperty("projectId")]
+        [JsonPropertyName("projectId")]
         public long ProjectId { get; set; }
 
-        [JsonProperty("parentProjectFileId")]
+        [JsonPropertyName("parentProjectFileId")]
         public object ParentProjectFileId { get; set; }
 
-        [JsonProperty("parentFileLegacyMappingId")]
+        [JsonPropertyName("parentFileLegacyMappingId")]
         public object ParentFileLegacyMappingId { get; set; }
 
-        [JsonProperty("fileTypeId")]
+        [JsonPropertyName("fileTypeId")]
         public object FileTypeId { get; set; }
 
-        [JsonProperty("exposeAsAlternative")]
+        [JsonPropertyName("exposeAsAlternative")]
         public object ExposeAsAlternative { get; set; }
 
-        [JsonProperty("packageFingerprintId")]
+        [JsonPropertyName("packageFingerprintId")]
         public long PackageFingerprintId { get; set; }
 
-        [JsonProperty("gameVersionDateReleased")]
+        [JsonPropertyName("gameVersionDateReleased")]
         public DateTimeOffset GameVersionDateReleased { get; set; }
 
-        [JsonProperty("gameVersionMappingId")]
+        [JsonPropertyName("gameVersionMappingId")]
         public long GameVersionMappingId { get; set; }
 
-        [JsonProperty("gameVersionId")]
+        [JsonPropertyName("gameVersionId")]
         public long GameVersionId { get; set; }
 
-        [JsonProperty("gameId")]
+        [JsonPropertyName("gameId")]
         public long GameId { get; set; }
 
-        [JsonProperty("isServerPack")]
+        [JsonPropertyName("isServerPack")]
         public bool IsServerPack { get; set; }
 
-        [JsonProperty("serverPackFileId")]
+        [JsonPropertyName("serverPackFileId")]
         public object ServerPackFileId { get; set; }
 
-        [JsonProperty("gameVersionFlavor")]
+        [JsonPropertyName("gameVersionFlavor")]
         public object GameVersionFlavor { get; set; }
     }
 
     public class Dependency {
-        [JsonProperty("id")]
+        [JsonPropertyName("id")]
         public long Id { get; set; }
 
-        [JsonProperty("addonId")]
+        [JsonPropertyName("addonId")]
         public long AddonId { get; set; }
 
-        [JsonProperty("type")]
+        [JsonPropertyName("type")]
         public long Type { get; set; }
 
-        [JsonProperty("fileId")]
+        [JsonPropertyName("fileId")]
         public long FileId { get; set; }
     }
 
     public class Module {
-        [JsonProperty("foldername")]
+        [JsonPropertyName("foldername")]
         public string Foldername { get; set; }
 
-        [JsonProperty("fingerprint")]
+        [JsonPropertyName("fingerprint")]
         public long Fingerprint { get; set; }
 
-        [JsonProperty("type")]
+        [JsonPropertyName("type")]
         public long Type { get; set; }
     }
 
     public class SortableGameVersion {
-        [JsonProperty("gameVersionPadded")]
+        [JsonPropertyName("gameVersionPadded")]
         public string GameVersionPadded { get; set; }
 
-        [JsonProperty("gameVersion")]
+        [JsonPropertyName("gameVersion")]
         public string GameVersion { get; set; }
 
-        [JsonProperty("gameVersionReleaseDate")]
+        [JsonPropertyName("gameVersionReleaseDate")]
         public DateTimeOffset GameVersionReleaseDate { get; set; }
 
-        [JsonProperty("gameVersionName")]
+        [JsonPropertyName("gameVersionName")]
         public string GameVersionName { get; set; }
     }
 }
