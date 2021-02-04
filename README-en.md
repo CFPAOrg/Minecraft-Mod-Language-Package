@@ -8,53 +8,51 @@
 
 ## About this Repository
 
-Here is the repository of the project for translating Minecraft mods. The project is currectly using Weblate to translate.<br>
-This project aim to tackle issues such as the tardiness when localizations are submitted or waiting to be accepted by modders.<br>
-If you want to join us to translate together, please visit our official website and read the information detail:<br>
+This is the repository of the project for translating Minecraft mods into simplified Chinese, currectly using a platform called Weblate which is similar to Crowdin.<br>
+This project aims to deal with certain problems where localizations are not accepted in time or simply fail to be accepted.<br>
+If you want to join us, please visit our official website and learn more:<br>
 ### <https://cfpa.team>
 
 It is also fine to submit pull requests to this repository.
 
-Before translating, you should first learn important things from here: [*Regulations and Guidelines for Simplified Chinese Translation of Minecraft Mods*](https://github.com/Meow-J/Mod-Translation-Styleguide/blob/master/README.md).
+Before you start, check the important tips from us here: [*Regulations and Guidelines for Simplified Chinese Translation of Minecraft Mods*](https://github.com/Meow-J/Mod-Translation-Styleguide/blob/master/README.md).
 
 ## Authorizations
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)([Simplified Chinese](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)). The full text of this license can be found [here](./LICENSE).<br>
+This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)([Simplified Chinese](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)). Detail can be found [here](./LICENSE).<br>
 
 ## Usage
 
-Download the resource pack of *release* version on CourseForge from [this](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) portal.<br>
-Download the resource pack of *snapshot* version on CourseForge from [this](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest) portal.<br>
-To apply the localization, you need only to load this pack like any other resource pack. In case of some issues, restarting the game after loading  is recommended.
+Download the *released* version [here](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) or the *snapshot* version [here](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest).<br>
+To apply, simply load this pack like any other resource pack. In case of some issues, restarting Minecraft after loading is recommended.
 
 ## Related Information
 
 **How does the current localization project look like? Can I submit my list of mods that I want them to be translated?**<br>
-Currently, according to the popularity on CurseForge, we have chosen the 1.12.2 version and are tracking over 1000 mods. If you want any additional mod to be translated, you can suggest your ideas through our [bug tracker](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues), or by sending emails to us.<br>
-We have no plans for other versions so far (but 1.7.10 is unlikely to be considered).
+Currently, according to the popularity on CurseForge, we have chosen Minecraft 1.12.2 for the majority of our work, with over 1000 mods in the project. If you want any other mod to be translated, you can suggest through our [issue tracker](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues), or email us directly.<br>
 
-There are some detailed publicity on [the MCBBS page](http://www.mcbbs.net/thread-774087-1-1.html).
+We have been propagating this project on [the MCBBS page](http://www.mcbbs.net/thread-774087-1-1.html).
 
-The whole story of this project can be seen in [TartaricAcid's blog post](https://baka943.coding.me/2018/01/03/2018-01-03-AnIntroForWeblate/).
+The history of this project can be seen in [TartaricAcid's blog](https://baka943.coding.me/2018/01/03/2018-01-03-AnIntroForWeblate/).
 
-**How is it possible for your guys to achieve such a pipelining translating style?**<br>
+**How did you guys set up the workflow?**<br>
 Ummmm, it's easy though:<br>
 
 - Get the popular mods on CurseForge with the web scraper.
 - Push the files to the GitHub repository with scripts
-- Get the updates from GitHub automatically when Weblate detects changes in repositories.
+- Pull the updates from GitHub to Weblate automatically when detecting changes in the repository.
 - The translators translate on Weblate, and Weblate push the changes to GitHub automatically.
 - Github Actions builds and packs automatically when detecting changes in the repository.
 - Github Actions publish packs to the GitHub release automatically so that the packs can be downloaded.
 
-## Thanks
+## Credits
 
-Thanks `phi` for building the Weblate server and automatic translation functionality.<br>
-Thanks `Summpot` and`Nullpinter` for making the C# web scraper of newer versions.<br>
-Thanks `PeakXing` for making the logo.<br>
-Thanks `雪尼`、`FledgeXu`、`asdflj` et al. for suggestions and ideas.<br>
-Thanks the first few contributors of this project: `Aemande123`，`DYColdWind`，`Snownee`，`yuanjie000`，`forestbat`，`3TUSK`，`SihenZhang`，`MoXiaoFreak`，`gloomy_banana`，`yuanjie000`，`exia00125`，`luckyu19` for localizations (in no particular order).<br>
-Thanks `R_liu`  for the localization of mod SlashBalde.<br>
-Thanks `3TUSK` for providing the [fixes for full-angle symbols](./project/assets/minecraft/readme.md) which are embedded in the resource pack.<br>
-Finally, give thanks to the great efforts of every player who engages in providing and spreading localizations.<br>
-See all the contributors in the [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) page of this repository.
+* `phi` for setting up the Weblate server and integration with Google Translate.
+* `Summpot` and `Nullpinter` for a better version of the C# web scraper.
+* `PeakXing` for making the logo.
+* `雪尼`, `FledgeXu`, `asdflj` and others who give suggestions and ideas.
+* Pioneers of this project: `Aemande123`, `DYColdWind`, `Snownee`, `yuanjie000`, `forestbat`, `3TUSK`, `SihenZhang`, `MoXiaoFreak`, `gloomy_banana`, `yuanjie000`, `exia00125`, `luckyu19` for early localizations (in no particular order).
+* `R_liu`  for the localization of SlashBalde.
+* `3TUSK` for [fixing the display of full-width punctuation](./project/assets/minecraft/readme.md). This is originally involved in the pack.
+* Finally, give thanks to every single player who engages in providing and spreading localizations.
+See all the contributors in the [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) page.
