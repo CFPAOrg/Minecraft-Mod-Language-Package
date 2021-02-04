@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Spider.Lib.JsonLib;
 
@@ -26,21 +28,16 @@ namespace Spider.Lib {
         }
 
         /// <summary>
-        /// 获取白名单模组的信息
+        /// 获取单个模组的信息
         /// </summary>
-        /// <param name="whiteList"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        public static async Task<ModInfo[]> GetModInfoAsync(string[] whiteList) {
-            if (whiteList.ToList().Contains("null")) return Array.Empty<ModInfo>();
-            var res = new List<ModInfo>();
-            foreach (var id in whiteList) {
-                using var httpClient = new HttpClient();
-                var uri = new Uri($"https://addons-ecs.forgesvc.net/api/v2/addon/{id}");
-                var result = await httpClient.GetFromJsonAsync<ModInfo>(uri);
-                res.Add(result);
-            }
+        public static async Task<ModInfo> GetModInfoAsync(long id) {
+            var httpClient = new HttpClient();
+            var uri = new Uri($"https://addons-ecs.forgesvc.net/api/v2/addon/{id}");
+            var result = await httpClient.GetFromJsonAsync<ModInfo>(uri);
 
-            return res.ToArray();
+            return result;
         }
 
         /// <summary>
@@ -63,6 +60,29 @@ namespace Spider.Lib {
             var url = uri.ToString();
             var start = url.LastIndexOf('/') + 1;
             return url[start..];
+        }
+
+        /// <summary>
+        /// 暴力获取前9999个mod的id映射表
+        /// </summary>
+        /// <param name="version"></param>
+        public static async void GetAllModIntro(string version) {
+            using var httpClient = new HttpClient();
+            var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search") {
+                Query =
+                    $"categoryId=0&gameId=432&index=0&pageSize=9999&gameVersion={version}&sectionId=6&sort=1"
+            };
+            var tmp = ((await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri)) ?? Array.Empty<ModInfo>()).ToList();
+            var intro = tmp.Select(_ => {
+                var c = new ModIntro() {
+                    Id = _.Id,
+                    Name = GetProjectName(_.WebsiteUrl)
+                };
+                return c;
+            });
+            var str = JsonSerializer.SerializeToUtf8Bytes(intro, new JsonSerializerOptions() { WriteIndented = true });
+            await File.WriteAllBytesAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{version}\intro.json",
+                str);
         }
     }
 }

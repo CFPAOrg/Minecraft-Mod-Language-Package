@@ -28,7 +28,7 @@ namespace Spider.Lib.JsonLib {
         public long DefaultFileId { get; set; }
 
         [JsonPropertyName("downloadCount")]
-        public long DownloadCount { get; set; }
+        public float DownloadCount { get; set; }
 
         [JsonPropertyName("latestFiles")]
         public LatestFile[] LatestFiles { get; set; }
