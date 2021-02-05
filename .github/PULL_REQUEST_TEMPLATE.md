@@ -1,3 +1,7 @@
-- [ ] 我已确认文件路径正确，即 `project/assets/模组id/lang/zh_cn.lang`；
+- [ ] 我已阅读注意事项 [#847](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/847)
+- [ ] 我已标记PR以便审查（见`CONTRIBUTING.md`）
+- [ ] 我已确认文件路径、分支均正确：
+    - 如果是 1.12 翻译，应该是: `projects/1.12.2/assets/curseforge 域名/模组资源 id/lang/zh_cn.lang`
+    - 如果是 1.15-1.16 翻译，应该是: `projects/1.16.1/assets/curseforge 域名/模组资源 id/lang/zh_cn.json`
 - [ ] 我已确认语言文件名大小写正确，所有的语言文件全为小写；
 - [ ] 我已阅读相关协议，同意对于本项目的贡献的许可协议：[知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/1.10.2/LICENSE)

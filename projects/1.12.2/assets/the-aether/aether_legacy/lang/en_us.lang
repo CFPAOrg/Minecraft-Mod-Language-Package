@@ -132,6 +132,13 @@ item.developer_stick.name=Developer Stick
 item.skyroot_bed_item.name=Skyroot Bed
 item.aether_portal_frame.name=Aether Portal Frame
 
+item.tooltip.aether_tune=Aether Tune
+item.tooltip.ascending_dawn=Ascending Dawn
+item.tooltip.welcoming_skies=Welcoming Skies
+item.tooltip.legacy=Legacy
+
+item.notch_hammer.cooldown=Cooldown
+
 # Block Names
 tile.aether_portal.name=Aether Portal
 tile.aether_grass.name=Aether Grass
@@ -337,11 +344,12 @@ subtitles.aemisc.portal.idle=Aether Portal wooshes
 subtitles.aemisc.dungeon_trap.trigger=Dungeon Trap activated
 
 # GUI and Dialog
-gui.item.life_shard.maxshards=You can only use a total of 10 life shards.
+gui.item.life_shard.maxshards=You can only use a total of %s life shards.
 gui.item.developer_stick.notdev=You aren't skilled enough to use this item!
 
 gui.slider.notpickaxe=Hmm. Perhaps I need to attack it with a Pickaxe?
 gui.slider.apple=This message is only here because KingPhygieBoo asked Kino a random item and he said apple.
+gui.slider.far=It seems I'm too far away to wake it.
 
 gui.valkyrie.dialog.1=What's that? You want to fight? Aww, what a cute little human.
 gui.valkyrie.dialog.2=You're not thinking of fighting a big, strong Valkyrie are you?
@@ -379,6 +387,8 @@ gui.queen.fight=This will be your final battle!
 gui.queen.lost=As expected of a human.
 
 gui.queen.dialog.0=What can you tell me about this place?
+gui.queen.dialog.1=I wish to fight you!
+gui.queen.dialog.2=Nevermind
 
 gui.queen.answer.0=This is a sanctuary for us Valkyries who seek rest.
 gui.queen.answer.1=Very well then. Bring me ten medals from my subordinates to prove your worth, then we'll see.
@@ -425,6 +435,21 @@ gui.button.halo=Halo:
 gui.button.glow=Developer Glow:
 gui.button.aether_cape=Aether Cape:
 gui.button.gloves=Gloves:
+gui.button.glove_size=Glove Size:
+
+glove_size.option.skin=Skin
+glove_size.option.hat=Hat
+
+key.aether.category=Aether
+key.aether.accessory_menu=Open Accessories Menu
+
+gui.aether_menu.normal_theme=Normal Theme
+gui.aether_menu.aether_theme=Aether Theme
+
+gui.aether_trivia.pro_tip=Pro Tip:
+
+# Effect names
+effect.aether.inebriation=Inebriation
 
 # Death messages
 death.attack.inebriation=%1$s was inebriated
@@ -441,16 +466,17 @@ aether_legacy.general.dimension=Dimension Settings
 
 aether_legacy.general.gameplay_changes=Gameplay Changes
 aether_legacy.general.gameplay_changes.tooltip=These options affect gameplay, and how some of the content works.
-
 aether_legacy.general.gameplay_changes.aether_start=Aether Start
 aether_legacy.general.gameplay_changes.ambro_is_edible=Edible Ambrosium
 aether_legacy.general.gameplay_changes.max_life_shards=Maximum Life Shards
 aether_legacy.general.gameplay_changes.skyroot_bucket_only=Skyroot Bucket Only
 aether_legacy.general.gameplay_changes.valkyrie_cape=Valkyrie Cape
+aether_legacy.general.gameplay_changes.golden_feather=Golden Feather
 aether_legacy.general.gameplay_changes.disable_portal=Disable Portal
 aether_legacy.general.gameplay_changes.disable_startup_loot=Disable Startup Loot
 aether_legacy.general.gameplay_changes.sun_altar_multiplayer=Disable Sun Altar's Operator Requirement
 aether_legacy.general.gameplay_changes.repeat_sun_spirit_dialog=Repeat Sun Spirit Dialogue
+aether_legacy.general.gameplay_changes.disable_eternal_day=Disable Eternal Day
 
 aether_legacy.general.visual_options=Visual Options
 aether_legacy.general.visual_options.tooltip=These options do not affect gameplay, and are purely visual.
@@ -464,14 +490,17 @@ aether_legacy.general.visual_options.legacy_altar_name=Classic Altar Name
 
 aether_legacy.general.world_gen=World Generation Options
 aether_legacy.general.world_gen.tooltip=These options affect world generation.
-
 aether_legacy.general.world_gen.christmas_time=Holiday Generation
+aether_legacy.general.world_gen.seasonal_christmas=Automatic Holiday Tree Generation
 aether_legacy.general.world_gen.pink_aerclouds=Pink Aercloud Generation
 aether_legacy.general.world_gen.tallgrass_enabled=Tall Grass Generation
 
 aether_legacy.general.dimension.aether_dimension_id=Aether Dimension ID
 aether_legacy.general.dimension.aether_dimension_id.tooltip=Set the Dimension ID for the Aether.
 
+aether_legacy.general.spawnrates=Mob Spawnrate Options
+
+# Lore entries
 lore.aether_legacy.aechor_petal=The petal of an Aechor Plant, they have a sweet aroma to them. These are a Moa's favorite food, and can be used to feed baby Moas.
 lore.aether_legacy.aerogel=The result of the Aether's unique climate and lava combining. It can be crafted into various decorative blocks and is blast resistant.
 lore.aether_legacy.aerogel_slab=Crafted from Aerogel. Slabs are half blocks, versatile for decoration and smooth slopes. Try adding some to a building’s roofing!
@@ -583,8 +612,8 @@ lore.aether_legacy.leather_gloves=Dyeable gloves to match your leather tunic! Th
 lore.aether_legacy.life_shard=A very rare item found in Gold Dungeons. Using this will give you an extra permanent heart! The feeling of using it is very strange, and hard to describe.
 lore.aether_legacy.light_angelic_stone=The Light version of Angelic Stone. It is less common than Angelic Stone, but it looks really nice as a decorative block.
 lore.aether_legacy.light_hellfire_stone=The Light version of Hellfire Stone. It can be found in Gold Dungeons along with Hellfire stone, but like it's counterpart, it cannot be collected until the boss is defeated.
-lore.aether_legacy.lightning_knife=Small knives that when thrown, summon lightning bots where they land.
-lore.aether_legacy.lightning_sword=An ancient sword which summons lightning to its foes. be careful not to get too close, or you will hurt yourself with the Lightning!
+lore.aether_legacy.lightning_knife=Small knives that when thrown, summon lightning bolts where they land.
+lore.aether_legacy.lightning_sword=An ancient sword which summons lightning to its foes.
 lore.aether_legacy.lore_book=A large book containing many lore entries written by the wise Lorist. It describes every object in detail.
 lore.aether_legacy.mossy_holystone=A more aged Holystone, it is found near dungeons, and has pale colored vines growing on it, very decorative.
 lore.aether_legacy.mossy_holystone_slab=Crafted from Mossy Holystone. Slabs are half blocks, versatile for decoration and smooth slopes. Try adding some to a building’s roofing!
