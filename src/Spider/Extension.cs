@@ -27,7 +27,7 @@
 //                var mod = addon.GameVersionLatestFiles.First(_ => _.GameVersion == version);
 //                var downloadUrl = UrlLib.GetDownloadUrl(mod.ProjectFileId.ToString(), mod.ProjectFileName);
 //                var modBase = new ModBase() {
-//                    DownloadUrl = downloadUrl, Name = name, ProjectId = projectId, ProjectName = projectName,
+//                    DownloadUrl = downloadUrl, Name = name, ProjectName = projectId, ProjectName = projectName,
 //                    ProjectUrl = projectUrl
 //                };
 //                bases.Add(modBase);
@@ -51,7 +51,7 @@
 //                        DownloadUrl = _.DownloadUrl,
 //                        ModPath = path,
 //                        Name = _.Name,
-//                        ProjectId = _.ProjectId,
+//                        ProjectName = _.ProjectName,
 //                        ProjectName = _.ProjectName,
 //                        ProjectUrl = _.ProjectUrl
 //                    };
@@ -80,7 +80,7 @@
 //                var regex = new Regex("(?<=modid=\").*?(?=\")");
 //                var semaphore = new Semaphore(10, 20);
 //                foreach (var downloadMod in download) {
-//                    if (bl.ToList().Contains(downloadMod.ProjectId.ToString())) continue;
+//                    if (bl.ToList().Contains(downloadMod.ProjectName.ToString())) continue;
 //                    var task = Task.Run(async () => {
 //                        try {
 //                            semaphore.WaitOne();
@@ -134,7 +134,7 @@
 //                                LastUpdateTime = DateTimeOffset.UtcNow,
 //                                ModId = modid,
 //                                Name = downloadMod.Name,
-//                                ProjectId = downloadMod.ProjectId,
+//                                ProjectName = downloadMod.ProjectName,
 //                                ProjectName = downloadMod.ProjectName,
 //                                ProjectUrl = downloadMod.ProjectUrl,
 //                                HasChinese = chineseEntries.Length > 0,
@@ -158,7 +158,7 @@
 //                var regex = new Regex("(?<=modId=\").*?(?=\")");
 //                var il = new List<Info>();
 //                foreach (var downloadMod in download) {
-//                    if (bl.ToList().Contains(downloadMod.ProjectId.ToString())) continue;
+//                    if (bl.ToList().Contains(downloadMod.ProjectName.ToString())) continue;
 //                    Log.Logger.Information($"解析：{downloadMod.Name}");
 //                    var fs = File.Open(downloadMod.ModPath, FileMode.Open);
 //                    var jarArchive = new ZipArchive(fs);
@@ -193,7 +193,7 @@
 //                                    LastUpdateTime = DateTimeOffset.UtcNow,
 //                                    ModId = modId,
 //                                    Name = downloadMod.Name,
-//                                    ProjectId = downloadMod.ProjectId,
+//                                    ProjectName = downloadMod.ProjectName,
 //                                    ProjectName = downloadMod.ProjectName,
 //                                    ProjectUrl = downloadMod.ProjectUrl,
 //                                    HasChinese = chineseEntries.Length > 0,

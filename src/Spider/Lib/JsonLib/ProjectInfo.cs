@@ -3,15 +3,12 @@
 namespace Spider.Lib.JsonLib {
     public class ProjectInfo {
         [JsonPropertyName("curseforge_id")]
-        public long CFId { get; set; }
+        public long CfId { get; set; }
 
-        [JsonPropertyName("patchouli_book")]
-        public bool PatchouliBook { get; set; }
+        [JsonPropertyName("curseforge_name")]
+        public string CfName { get; set; }
 
-        [JsonPropertyName("update_chinese")]
-        public bool UpdateChinese { get; set; }
-
-        [JsonPropertyName("non_update")]
-        public bool NonUpdate { get; set; }
+        [JsonPropertyName("domain")]
+        public string[] Domains { get; set; }
     }
 }

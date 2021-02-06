@@ -9,7 +9,6 @@ namespace Spider.Lib.JsonLib {
         [JsonPropertyName("project_url")] public Uri ProjectUrl { get; set; }
         [JsonPropertyName("download_url")] public Uri DownloadUrl { get; set; }
         [JsonPropertyName("tmp_path")] public string TempPath { get; set; }
-        [JsonPropertyName("include_path")] public string[] Paths { get; set; }
         [JsonPropertyName("version")] public string Version { get; set; }
     }
 }
