@@ -1,0 +1,45 @@
+{
+  "name": "Heat Sources",
+  "icon": "pneumaticcraft:vortex_tube",
+  "category": "base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Static heat sources/$ are blocks and fluids which add or remove heat to/from machines when adjacent to them. When too much heat is added or removed, they may transform into other blocks or fluids. Note that heat extraction/addition is tracked externally to the block in question, so breaking/replacing blocks to reset extracted heat is not a viable strategy."
+    },
+    {
+      "type": "text",
+      "title": "Vanilla Heat Sources",
+      "text": "The following vanilla blocks & fluids act as static heat sources: $(li)Air$(li)Ice$(li)Packed Ice$(li)Snow$(li)Torch$(li)Fire (will go out)$(li)Magma (cools to Netherrack)$(li)Water (may freeze or evaporate)$(li)Lava (cools to Obsidian)"
+    },
+    {
+      "type": "text",
+      "title": "Modded Heat Sources",
+      "text": "Several blocks from mods will also function as static heat sources with differing properties, including:$(li)IC2 Steam and Superheated Steam$(li)IC2 Coolant and Hot Coolant$(li)IC2 and Immersive Engineering Uranium Blocks$(li)Quark Blaze Lanterns$(li)Quark Brimstone and Permafrost$(li)Natura Heat Sand$(li)All modded fluids have heat properties (temperature is mod-defined)"
+    },
+    {
+      "type": "text",
+      "title": "Adding Custom Sources",
+      "text": "(Primarily for modpack creators) The file $(thing)config/pneumaticcraft/BlockHeatProperties.cfg/$ can be used to define custom heat properties for pretty much any block or fluid in the game. You can freely edit this JSON file, and your changes won't be overwritten by new versions of the mod (although new entries may be added). You can delete the file to force a 'factory reset'."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:vortex_tube",
+      "text": "A $(l:machines/vortex_tube)Vortex Tube/$ is a $(thing)dynamic heat source/$ which converts $(l:base_concepts/pressure)pressure/$ directly to heat and cold."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:heat_frame",
+      "text": "A $(l:semiblocks/heat_frame)Heat Frame/$ is a gadget that can be used to heat (or freeze!) items in any inventory. Note that Heat Frames will not absorb heat directly from a $(thing)static heat source/$, but you could put a $(l:base_concepts/basic_materials#compressed_iron_block)Compressed Iron Block/$ beside it to transmit the heat."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:heat_sink",
+      "text": "A $(l:machines/heat_sink)Heat Sink/$ is a block that can be used to disperse Heat (or cold!) from the block it's attached to, into the atmosphere."
+    },
+    {
+      "type": "text",
+      "text": "$(bold)Heating a Furnace/$$(p)When connecting a $(item)Furnace/$ to any dynamic heat source (such as a $(l:machines/vortex_tube)Vortex Tube/$, but also blocks like the $(l:compressors/advanced_air_compressor)Advanced Air Compressor/$ which produces heat), the heat will be consumed by the Furnace to 'fuel' it. The Furnace will smelt faster the higher the temperature. This effect can be stacked with multiple heat sources around the Furnace. This furnace 'fueling' will start to work at 100°C."
+    }
+  ]
+}
