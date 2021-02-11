@@ -54,5 +54,6 @@ Ummmm, it's easy though:<br>
 * Pioneers of this project: `Aemande123`, `DYColdWind`, `Snownee`, `yuanjie000`, `forestbat`, `3TUSK`, `SihenZhang`, `MoXiaoFreak`, `gloomy_banana`, `yuanjie000`, `exia00125`, `luckyu19` for early localizations (in no particular order).
 * `R_liu`  for the localization of SlashBalde.
 * `3TUSK` for [fixing the display of full-width punctuation](./project/assets/minecraft/readme.md). This is originally involved in the pack.
+* `LucunJi` for the internationalization of this readme file.
 * Finally, give thanks to every single player who engages in providing and spreading localizations.
 See all the contributors in the [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) page.
