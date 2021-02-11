@@ -1,5 +1,5 @@
 {
-	"Using this Codex": {
+	"Using  this Codex": {
 		"category": "basics",
 		"index": -100,
 		"sections": [
@@ -21,6 +21,7 @@
 				"type": "text",
 				"value": "当你在查阅任意章节时，分页按钮会出现在每一页的底部（前提是当前页面有前一页或后一页）。"
 			},
+
 			{
 				"type": "text",
 				"value": "这本古籍将会指导你如何游玩本模组的内容。它记录了所有模组内的配方，器械，组件，以及获取这些东西的方法。\n\n本书最好与神秘核心搭配使用，神秘核心将会显示特定等阶所解锁的内容，以及进阶的具体方法。简单来说，神秘核心会告诉你你已经解锁了哪些内容，而奥秘古籍则是告诉你这些内容的具体操作方法。\n\n古籍中只会显示你当前等阶已解锁的全部内容。"
@@ -128,7 +129,7 @@
 			},
 			{
 				"type": "text",
-				"value": "当你在查阅配方时，你可以在配方页面的左上方看到一个固定按钮。点击该按钮之后可以将此配方固定在 HUD 上。即便古籍关闭，该配方仍能够继续显示。再次点击任何配方页面的固定按钮，可以关闭先前的配方固定显示。"
+				"value": "当你在查阅配方时，你可以在配方页面的左上方看到一个固定按钮。点击该按钮之后可以将此配方固定在 HUD 上。即便古籍关闭，该配方仍能够继续显示。再次点击任何配方页面的固定按钮，可以关闭先前所固定的配方显示，也可点击物品栏中的红色固定按钮取消固定 ，这个按钮只会在固定配方之后出现。"
 			}
 		],
 		"related_recipes": [
@@ -186,12 +187,48 @@
 				"type": "crafting"
 			},
 			{
+				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
+			},
+			{
 				"location": "mana-and-artifice:manaweaving_altar",
 				"type": "crafting"
 			},
 			{
 				"location": "mana-and-artifice:manaweave_projector",
 				"type": "crafting"
+			}
+		]
+	},
+	"Automating Manaweaving": {
+		"category": "manaweaving",
+		"index": -2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "自动化织魔"
+			},
+			{
+				"type": "text",
+				"value": "使用瓶中魔织即可进行自动化织魔。你可以使用玻璃瓶右击任何画出的或者放映的织魔图样，将其摄入瓶中。再次右击，即可像药水瓶或者雪球或者那样丢出这一瓶子，瓶子会在着陆地点生成一个织魔图样。你也可以对着放在基座上的瓶子绘制或者放映织魔图样，这样也可以制作出瓶中魔织。\n\n若要如此操作，你需要考虑自动化瓶子的放置/取出，以及放映机的图样放映，放映机的魔力来源则为一个或者多个魔力水晶。"
+			}
+		],
+		"related_recipes": [
+			{
+				"location": "mana-and-artifice:manaweaver_wand",
+				"type": "crafting"
+			},
+			{
+				"location": "mana-and-artifice:manaweave_projector",
+				"type": "crafting"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runeforging/stone_pedestal"
+			},
+			{
+				"type": "crafting",
+				"location": "minecraft:glass_bottle"
 			}
 		]
 	},
@@ -277,12 +314,66 @@
 			{
 				"type": "text",
 				"value": "符文锻造炉是一种魔法熔炉，以空气中流淌的原生魔力作为燃料，因此它不再需要额外的燃料提供。它的特有配方数量不多，但它也兼容营火，熔炉以及高炉的配方，其中，营火配方的进行速度为营火的两倍，但熔炉和高炉配方的进行速度只有原版的一半。\n\n它可以一次性接受 16 个物品，但总工作时间为单个物品时间乘以物品数量。"
+			},
+			{
+				"type": "text",
+				"value": "晋升等阶后，你会解锁符文锻炉的升级，例如速度提升以及矿物双倍化等。"
 			}
 		],
 		"related_recipes": [
 			{
 				"location": "mana-and-artifice:runeforge",
 				"type": "crafting"
+			}
+		]
+	},
+	"Runeforge Upgrade: Brimstone Forge": {
+		"category": "artifice",
+		"index": -99,
+		"tier": 4,
+		"sections": [
+			{
+				"type": "title",
+				"value": "锻炉升级：硫磺熔炼"
+			},
+			{
+				"type": "text",
+				"value": "硫磺熔炼升级可以大幅提升锻炉的工作速度。Upgrade a forge by crafting a brimstone charm and right clicking the forge with it."
+			}
+		],
+		"related_recipes": [
+			{
+				"location": "mana-and-artifice:manaweaving/artifice/brimstone_charm",
+				"type": "manaweaving_altar"
+			}
+		]
+	},
+	"Runeforge Upgrade: Chimerite Crystals": {
+		"category": "artifice",
+		"index": -99,
+		"tier": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "锻炉升级：秘鸣晶体"
+			},
+			{
+				"type": "text",
+				"value": "By placing pedestals within the immediate vicinity of a runeforge or brimstone forge with chimerite crystals on top of them, I can alter its effects slightly.\n\nRed, Yellow, or Orange crystals will apply an ore doubling effect if there are two of them.  There may be more to come in the future."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runeforging/stone_pedestal"
+			},
+			{
+				"type": "crafting",
+				"locations": [
+					"mana-and-artifice:chimerite_crystals/crystal_orange",
+					"mana-and-artifice:chimerite_crystals/crystal_red",
+					"mana-and-artifice:chimerite_crystals/crystal_yellow"
+				]
 			}
 		]
 	},
@@ -465,7 +556,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Aum",
+				"value": "根愈兰",
 				"newPage": true
 			},
 			{
@@ -475,7 +566,7 @@
 			},
 			{
 				"type": "text",
-				"value": "aum flowers，有时被称为“生命百合”，生长于森林以及平原。它在治疗以及伤口恢复方面效果不俗，虽说味道很苦就是了。"
+				"value": "根愈兰，有时被称为“生命百合”，生长于森林以及平原。它在治疗以及伤口恢复方面效果不俗，虽说味道很苦就是了。"
 			},
 			{
 				"type": "title",
@@ -655,6 +746,10 @@
 				"type": "crafting"
 			},
 			{
+				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
+			},
+			{
 				"location": "mana-and-artifice:manaweaving_altar",
 				"type": "crafting"
 			}
@@ -728,11 +823,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "符文锻造 (Runes)"
+				"value": "符文锻造（符文部分）"
 			},
 			{
 				"type": "text",
-				"value": "下一步的工作就是使用样板锻造出符文。\n\n当你制作好了符文样板，你还需要一份超热温特姆锭，以及一个作为加工场所的符文铁砧。\n\n将样板放置到铁砧上，再在其上放置超热温特姆锭。"
+				"value": "当你制作好了符文样板，你还需要一份超热温特姆锭，以及一个作为加工场所的符文铁砧。\n\n将样板放置到铁砧上，再在其上放置超热温特姆锭。"
 			},
 			{
 				"type": "image",
@@ -742,7 +837,7 @@
 			},
 			{
 				"type": "text",
-				"value": "现在，拿上你的符文锻造锤，对着已经放置在铁砧上的物品奋力敲打吧。但你要注意，一定要确保所有的东西都放置在了正确的位置，如果你将物品放置在了错误的位置并开始了锻造，那么这些物品将会从铁砧上弹出。\n\n敲打足够多的次数之后，锻造过程就完成了。下一步则是将符文放到织魔祭坛上进行进一步加工，为其附魔。"
+				"value": "现在，拿上你的符文锻造锤，对着已经放置在铁砧上的物品奋力敲打吧。但你要注意，一定要确保所有的东西都放置在了正确的位置，如果你将物品放置在了错误的位置并开始了锻造，那么这些物品将会从铁砧上弹出。\n\n敲打足够多的次数之后，锻造过程就完成了。"
 			}
 		],
 		"related_recipes": [
@@ -758,6 +853,27 @@
 				"type": "crafting",
 				"location": "mana-and-artifice:runeforge"
 			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runeforging/runic_anvil"
+			}
+		]
+	},
+	"Step 2a: Charcoal Patterns": {
+		"category": "runesmithing",
+		"index": -98,
+		"tier": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "木炭样板"
+			},
+			{
+				"type": "text",
+				"value": "Occasionally you will need Runescribing Patterns to instruct constructs.  You can make these patterns at a runic anvil by placing a completed rune on the anvil, and placing paper on top of that.  Then, activate the anvil with either coal or charcoal."
+			}
+		],
+		"related_recipes": [
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:runeforging/runic_anvil"
@@ -960,22 +1076,30 @@
 			},
 			{
 				"type": "text",
-				"value": "学会了这些，你就可以充分发挥自己的想象力，创造新的自动化流程了！统御星锥会在接收到红石信号时停止执行操作，开动你的脑筋，充分利用这一特性。至于输入箱的原料存储问题，你得自己想想办法，或许你得再造一个构装体，甚至一整套系统来维持输入箱内有充足的原料供应。好好想想如何改进你的方案，就能让你的自动化系统发挥出全部的潜力！"
+				"value": "学会了这些，你就可以充分发挥自己的想象力，创造新的自动化流程了！统御星锥会在接收到红石信号时停止执行操作，开动你的脑筋，充分利用这一特性。至于输入箱的原料存储问题，你得自己想想办法，或许你得再造一个构装体，甚至一整套系统来维持输入箱内有充足的原料供应。好好想想如何改进你的方案，就能让你的自动化系统发挥出所有潜力！"
 			}
 		]
 	},
-	"Step 1: Manaweave Enchanting": {
+	"Runic Enchanting": {
 		"category": "enchantments",
 		"index": -1,
 		"tier": 2,
 		"sections": [
 			{
 				"type": "title",
-				"value": "织魔附魔"
+				"value": "符文附魔"
 			},
 			{
 				"type": "text",
-				"value": "制作出符文后，你需要向其注入魔力，以开启符文附魔的初始阶段。\n\n将物品以及需求试剂放置到织魔祭坛上，然后，使用织魔者法杖画出祭坛上方显示的需求图案。\n\n此外，你还可以将织魔放映机放置于祭坛旁，这样你就可以在祭坛旁放映图案了。\n\n如果你不小心失误了，你可以用织魔者法杖激活织魔放映机，放映机会放映出祭坛上一个显示的图案，你可以依据这个图案重新绘制。\n\n当你以正确的顺序绘制了正确的图案，并且正确地加入了物品，祭坛会将所有东西吸入，并开始为符文进行附魔。\n\n现在，我们只需在符文铁砧上将符文与物品相互结合，一切就大功告成了、"
+				"value": "The first step in runic enchanting is to scribe and forge a rune according to the Runescribing and Runeforging mechanics.  The enchantment's recipe will let you know which one(s) you need to make.  See the Runescribing/Runeforging section of the codex for more information."
+			},
+			{
+				"type": "text",
+				"value": "After that's done, you will need to infuse mana into it to apply the initial stage of the enchantment to the rune.\n\nPlace the item along with any other required reagents onto the manaweaving altar.  Then, using a manaweaver's wand, draw the required patterns on top of the altar.\n\nAlternately, you can use a manaweave projector placed adjacent to the altar to project the patterns.\n\nIf you make a mistake, you can activate the altar with the wand in your hand to have the wand draw the most recent pattern back out of the altar.\n\nOnce you've drawn the correct patterns, in the correct order, with the correct items, the altar will draw it all in to enchant the rune.  \n\nAll that's left now is to combine the rune with an item back at the runic anvil."
+			},
+			{
+				"type": "text",
+				"value": "Place the item you want to enchant on the anvil and the now enchanted rune on top.  If the enchantment can be applied to the item (standard combination and compatibility rules apply), you will see spinning runes appear at the bottom of the anvil.  Strike the rune with a Runesmith's Hammer repeatedly until the enchantment is applied."
 			}
 		],
 		"related_recipes": [
@@ -989,7 +1113,11 @@
 			},
 			{
 				"type": "crafting",
-				"location": "mana-and-artifice:manaweave_projector"
+				"location": "mana-and-artifice:runescribing_table"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runic_anvil"
 			}
 		]
 	},
@@ -1105,7 +1233,7 @@
 			},
 			{
 				"type": "text",
-				"value": "这种灵气会定期消耗我的魔力，并给予一个能够提升我的挖掘速度的效果。靠近我的人同样也会受此裨益。\n\nDue to it being a particularly complicated magical construction, I can only place it on chest armor as it has enough space for all the rune work needed."
+				"value": "这种灵气会定期消耗我的魔力，并给予一个能够提升我的挖掘速度的效果。靠近我的人同样也会受此裨益。\n\n由于这种灵气的魔法结构特别复杂，所以我只能将其绘制于胸甲之上，因为只有胸甲才有足够的空间来容纳灵气运转所需的符文。"
 			}
 		],
 		"related_recipes": [
@@ -1124,7 +1252,7 @@
 			},
 			{
 				"type": "text",
-				"value": "这种灵气会定期消耗我的魔力，并对我施加提升移动速度的效果。靠近我的人同样也会受此裨益。\n\n由于这种灵气的魔法结构特别复杂，所以我只能将其绘制于胸甲之上，因为只有胸甲才有足够的空间来容纳灵气运转所需的符文"
+				"value": "这种灵气会定期消耗我的魔力，并对我施加提升移动速度的效果。靠近我的人同样也会受此裨益。\n\n由于这种灵气的魔法结构特别复杂，所以我只能将其绘制于胸甲之上，因为只有胸甲才有足够的空间来容纳灵气运转所需的符文。"
 			}
 		],
 		"related_recipes": [
@@ -1143,7 +1271,7 @@
 			},
 			{
 				"type": "text",
-				"value": "这种灵气会定期消耗我的魔力，使我更为习惯于海底作业。\n\n由于这种灵气的魔法结构特别复杂，所以我只能将其绘制于胸甲之上，因为只有胸甲才有足够的空间来容纳灵气运转所需的符文"
+				"value": "这种灵气会定期消耗我的魔力，使我更为习惯于海底作业。\n\n由于这种灵气的魔法结构特别复杂，所以我只能将其绘制于胸甲之上，因为只有胸甲才有足够的空间来容纳灵气运转所需的符文。"
 			}
 		],
 		"related_recipes": [
@@ -1470,7 +1598,7 @@
 			},
 			{
 				"type": "text",
-				"value": "The Transitory Step enchantment can be applied to boots, and drains small amounts of your mana to automatically place transitory tiles in front of you as if on a bridge.  You must be on the ground for it to work, and you can sneak to prevent that functionality from occurring.\n\nThis won't do anything for walking backwards or strafing, so keep moving forward!"
+				"value": "短时之步附魔可被附加到靴子上，它会消耗少量魔力在你的脚下生成短时方块，就像是一座延伸的桥。该附魔只有在你双脚着地时才能生效，潜行时该附魔则会停止生成短时方块。\n\n侧着走和倒着走是不会触发附魔效果的，所以向前直走，不要停下来！"
 			}
 		],
 		"related_recipes": [
@@ -1708,7 +1836,7 @@
 			},
 			{
 				"type": "text",
-				"value": "这一传奇的王冠是由远古时期的大巫师铸造的。戴上它之后，你能感觉到其中汹涌澎湃的能量，运用这股能量，你可以更有效率的施法。同时它还会牵引周围的原生魔力，加速你的魔力再生速度。最后，也有传言称这一王冠可以保护佩戴者免受虚弱侵袭，但似乎仅是偶尔如此。"
+				"value": "这一传奇的王冠是由远古时期的大巫师铸造的。戴上它之后，你能感觉到其中汹涌澎湃的能量，运用这股能量可以让你更有效率的施法。同时它还会牵引周围的原生魔力，加速你的魔力再生速度。最后，也有传言称这一王冠可以保护佩戴者免受虚弱侵袭，但似乎仅是偶尔如此。"
 			},
 			{
 				"type": "title",
@@ -1789,7 +1917,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "临时隧道"
+				"value": "短时隧道"
 			},
 			{
 				"type": "text",
@@ -2325,7 +2453,7 @@
 			},
 			{
 				"type": "text",
-				"value": "在魔法的领域里，许多操作都需要消耗一定的资源，而这一资源就叫做“魔力”。你的最大魔力值取决于你的魔法等级，每次魔法等级提升都会增加你的魔力上限。也有小道消息称，一些特殊的饰品、附魔、药水可以增加你的最大魔力值。\n\n无论你的最大魔力值是多少，60秒就足以将你的魔力从0恢复至满值。然而，操控魔法本身是一件比较累人的事，所以想要维持这一回复速度，你还得吃好，吃饱！Your mana bar is shown at the top left of the screen by default, along with your magic experience and your current magic level."
+				"value": "在魔法的领域里，许多操作都需要消耗一定的资源，而这一资源就叫做“魔力”。你的最大魔力值取决于你的魔法等级，每次魔法等级提升都会增加你的魔力上限。也有消息称，一些特殊的饰品、附魔、药水可以增加你的最大魔力值。\n\n无论你的最大魔力值是多少，60秒就足以将你的魔力从0恢复至满值。然而，操控魔法本身是一件比较累人的事，所以想要维持这一回复速度，你还得吃好，吃饱！你的魔力条会默认显示在屏幕左上方，同时还会显示你当前的魔法经验以及魔法等级。"
 			}
 		]
 	},
@@ -2335,11 +2463,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Affinities"
+				"value": "亲和"
 			},
 			{
 				"type": "text",
-				"value": "As you cast spells you will build up something called Affinities.  There are six affinities:  Air, Earth, Water, Fire, Ender, and Arcane.  Every affinity has an opposite.\n\nAir opposes Earth.\n\nWater opposes Fire.\n\nArcane opposes Ender.\n\nA higher affinity will give mana cost discounts on spells with the same affinity (up to 50% at max), and will also increase the mana cost of spells with an opposing affinity."
+				"value": "当你在施放法术时，你会逐渐建立起“亲和”这一能力。共有六种亲和：气，大地，水，火，末影以及奥术。每种亲和都有与其相克制的亲和。\n\n气与大地相克。\n\n水与火相克。\n\n奥术与末影相克。\n\n高亲和度会给予亲和法术一定量的魔力消耗量降低（最高为 50%），同时也会使得相克亲和的法术的魔力消耗量。\n\n最后，同亲和的法术构件，在施放时更容易获得熟记经验。"
 			}
 		]
 	},
@@ -2353,10 +2481,12 @@
 			},
 			{
 				"type": "text",
-				"value": "创造法术之后，若想激活法术，使用它即可、法术会在被激活后会尝试生效，这一尝试需要魔力维持，所以它会抽取你的魔力。\n\n你可以主副手同时握着不同的法术且同时使用它们，而究竟哪一个法术可以生效则取决于目标，而且这一过程你也无法主动选择哪个法术可以生效。"
+				"value": "编写了法术之后，若想激活法术，使用它即可。法术会在被激活后会尝试生效，这一尝试需要魔力维持，所以它会抽取你的魔力。\n\n你可以主副手同时握着不同的法术且同时使用它们，而究竟哪一个法术可以生效则取决于目标，而且这一过程你也无法主动选择哪个法术可以生效。"
 			}
 		],
-		"related_recipes": []
+		"related_recipes": [
+
+		]
 	},
 	"Spell Books": {
 		"index": -95,
@@ -2389,7 +2519,7 @@
 			},
 			{
 				"type": "text",
-				"value": "法术书确实很好，但我能否找到某种方法，将我的法术书绑定到特定的织魔印记中呢？如果我不小心遗失了这本书，又或者破坏了这本书，我又可以从印记中召回我的书，这一过程不会丢失书上分毫的内容。\n\n一定有某种方法可以做到这件事。Maybe even with a cantrip."
+				"value": "法术书确实很好，但我能否找到某种方法，将我的法术书绑定到特定的织魔印记中呢？如果我不小心遗失了这本书，又或者破坏了这本书，我又可以从印记中召回我的书，这一过程不会丢失书上分毫的内容。\n\n一定有某种方法可以做到这件事，甚至符术也可以。"
 			}
 		],
 		"related_recipes": [
@@ -2399,7 +2529,7 @@
 			}
 		]
 	},
-	"博诵之书": {
+	"Book of Rote": {
 		"index": -90,
 		"category": "sorcery",
 		"tier": 2,
@@ -2458,11 +2588,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Crafting Spells"
+				"value": "合成法术"
 			},
 			{
 				"type": "text",
-				"value": "After scribing a spell at the inscription table, I'll need to perform a ritual to infuse magic into the recipe.  I can use the spell recipe to check what I need for the ritual; I wrote it all down when I scribed the spell.\n\nThe ideology is that the raw magical essences from the ingredients are absorbed into the spell and allow me to channel my will through it in order to achieve an effect; similar to a very specifically crafted focus.  There are rumors of mages that don't need to use such foci to craft and cast spells, knowing them purely by memory."
+				"value": "After scribing a spell at the inscription table, I'll need to perform a ritual to infuse magic into the recipe. I call it the Ritual of Arcana.  I can use the spell recipe to check what I need for the ritual; I wrote it all down when I scribed the spell.\n\nThe ideology is that the raw magical essences from the ingredients are absorbed into the spell and allow me to channel my will through it in order to achieve an effect; similar to a very specifically crafted focus.  There are rumors of mages that don't need to use such foci to craft and cast spells, knowing them purely by memory."
 			}
 		],
 		"related_recipes": [
@@ -2476,23 +2606,83 @@
 			}
 		]
 	},
+	"Modifying Spells": {
+		"index": -99,
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "修饰法术"
+			},
+			{
+				"type": "text",
+				"value": "Once a spell is crafted, follow the prompt on the item to open a UI where you can change any modified values that are present on the spell.  You can also perform the Ritual of Alteration once unlocked which can add modifiers to a spell, up to a maximum of 3.  Later on, the Book of Rote can be used to make spells on the fly as you go."
+			}			
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/alteration_book"
+			},
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/alteration"
+			}			
+		]
+	},
+
+
 	"Making Leather": {
 		"index": -101,
 		"category": "sorcery",
 		"sections": [
 			{
 				"type": "title",
-				"value": "Making Leather"
+				"value": "制作皮革"
 			},
 			{
 				"type": "text",
 				"value": "Since I am unable to make vellum from paper, I'll need to find a reliable way to make leather.  I've seen the zombies that stalk the night, and though their flesh is rotten and rancid, I should be able to combine that with a little magic to return it to a usable form of leather."
 			}
+
 		],
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/leather_from_zombie_flesh"
+			}
+		]
+	},
+	"Recharging Items": {
+		"index": -101,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "物品充能"
+			},
+			{
+				"type": "text",
+				"value": "Some of the items that I make have an internal charge, such as the Amulet of Warding or the Ring of Silk.  These items will lose charge whenever they perform their effect.  They will automatically pull mana from Mana Crystal Fragments in your inventory to help them last longer.  When their charge finally runs out, some of them can be recharged by holding them in your hand and holding right click to channel mana into them.  Not all items can be recharged in this manner though.  Their tooltip will indicate which methods they allow.\n\nAll chargeable items can also be recharged by a mechanic called Pedestal Charging.  To do this, simply craft a Mana Crystal and a Pedestal, and place them within 8 blocks of each other.  Place the item on the pedestal and the crystal will charge it up over time.  A single crystal can charge multiple items."
+			}
+			
+		],
+		"related_recipes": [	
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/mana_crystal"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/mana_crystal_fragment"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/mana_crystal"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runeforging/stone_pedestal"
 			}
 		]
 	},
@@ -2519,7 +2709,8 @@
 				"value": "任何非流动的水源都可以处理皮革，但如果我们在坩埚里处理皮革，产出的皮纸的质量肯定要好上不少。"
 			}
 		],
-		"related_recipes": []
+		"related_recipes": [		
+		]
 	},
 	"Shape: Projectile": {
 		"index": "1",
@@ -2547,7 +2738,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Smite"
+				"value": "天罚"
 			},
 			{
 				"type": "text",
@@ -2747,7 +2938,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Arcane Damage"
+				"value": "奥术伤害"
 			},
 			{
 				"type": "text",
@@ -2767,7 +2958,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "临时隧道"
+				"value": "短时隧道"
 			},
 			{
 				"type": "text",
@@ -2929,13 +3120,93 @@
 			}
 		]
 	},
+	"Component: Divination": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "占卜"
+			},
+			{
+				"type": "text",
+				"value": "I can use a combination of arcane and ender magic to divine the location of nearby ores, making them visible to me through walls at a short distance.  If I hold an block in my offhand, it will focus the spell on finding that block."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/divination"
+			}
+		]
+	},
+	"Component: Confuse": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "混乱"
+			},
+			{
+				"type": "text",
+				"value": "I can use ender magic to confuse a target, making it attack targets at random, possibly even its allies.  Of course if I'm the only target at random, I suppose the spell won't do much.\n\nWARNING:  This spell can only be cast by those that have aligned themselves with the Faerie Courts!"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/confuse"
+			}
+		]
+	},
+	"Component: Mind Control": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "心智控制"
+			},
+			{
+				"type": "text",
+				"value": "I can harness some of the most powerful ender magic to bend a target's mind to my will.  It will only fight my enemies while under the duration of the spell, though it will not follow me.\n\nWARNING:  This spell can only be cast by those that have aligned themselves with the Faerie Courts!"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/mind_control"
+			}
+		]
+	},
+	"Component: Spectral Workbench": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "召唤幽冥工作台"
+			},
+			{
+				"type": "text",
+				"value": "I can conjure a phantasmal workbench that will allow me to craft items at it for a short duration.  I'm able to effortlessly maintain the workbench as long as I or any other person is close to it, but otherwise it will fade after one minute."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/spectral_workbench"
+			}
+		]
+	},
 	"Component: Animus": {
 		"index": "2",
 		"category": "sorcery",
 		"sections": [
 			{
 				"type": "title",
-				"value": "Animus"
+				"value": "唤生"
 			},
 			{
 				"type": "text",
@@ -2955,7 +3226,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Greater Invisibility"
+				"value": "消隐无形"
 			},
 			{
 				"type": "text",
@@ -2975,7 +3246,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Nethergate"
+				"value": "下界之门"
 			},
 			{
 				"type": "text",
@@ -2995,7 +3266,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Crystallize"
+				"value": "晶化"
 			},
 			{
 				"type": "text",
@@ -3015,7 +3286,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Earthsky"
+				"value": "浮地"
 			},
 			{
 				"type": "text",
@@ -3039,7 +3310,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Collapse"
+				"value": "塌陷"
 			},
 			{
 				"type": "text",
@@ -3239,7 +3510,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Absorption"
+				"value": "吸收"
 			},
 			{
 				"type": "text",
@@ -3299,7 +3570,7 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Mana Transfer"
+				"value": "魔力转送"
 			},
 			{
 				"type": "text",
@@ -3825,6 +4096,10 @@
 			},
 			{
 				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
+			},
+			{
+				"type": "crafting",
 				"location": "mana-and-artifice:manaweave_projector"
 			}
 		]
@@ -3859,13 +4134,37 @@
 			},
 			{
 				"type": "text",
-				"value": "这一仪式可以附魔指南针，这一附魔指南针可以帮助你找寻结构，村庄，或者生物群系。与制图师村民交易可以获得魔法链接，在定位你的目标时可少不了这玩意儿。由其他模组添加的结构和群系应该也能搜索到。\n\nDEV NOTE:  The cartographer thing is temporary, I have another solution in mind that I'm working on."
+				"value": "这一仪式可以附魔指南针，这一附魔指南针可以帮助你找寻结构，村庄，或者生物群系。Trade with the Wandering Wizard summoned by the aptly named Ritual of the Wandering Wizard to get the locating patterns."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "ritual",
 				"location": "mana-and-artifice:rituals/locating"
+			},
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/wandering_wizard"
+			}
+		]
+	},
+	"Wandering Wizard": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Wandering Wizard"
+			},
+			{
+				"type": "text",
+				"value": "This ritual will open a portal and summon a walker of the planes, a Wandering Wizard that will trade with you for various magical wares.  An experienced traveler, he has access to all of the patterns needed for manaweaving as well as the ritual of Locating.  The Wandering Wizard will only remain for a minute before continuing on his journey."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/wandering_wizard"
 			}
 		]
 	},
@@ -3905,6 +4204,31 @@
 			}
 		]
 	},
+	"Alteration": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of Alteration"
+			},
+			{
+				"type": "text",
+				"value": "This ritual is used to add modifiers to spells you have already crafted.  You will first need to craft a Book of Alteration, and use its radial menu (hold in your hand and hold 'Z') to select the modifier you want to add.  Then place the required items in the ritual and perform it to add the modifier to the spell.  You can only have 3 modifiers on a spell.  If you try to add more, the ritual will fail."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/alteration"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/alteration_book"
+			}
+		]
+	},
+
 	"Eventide": {
 		"index": 0,
 		"category": "rituals",
@@ -3922,6 +4246,46 @@
 			{
 				"type": "ritual",
 				"location": "mana-and-artifice:rituals/eventide"
+			}
+		]
+	},
+	"Yawning Chasm": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Yawning Chasm"
+			},
+			{
+				"type": "text",
+				"value": "This ritual will summon a powerful destructive force that will burrow straight down until it reaches bedrock.  It will not drop any blocks during this process, consuming them to continue to fuel itself."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/hole"
+			}
+		]
+	},
+	"Earthen Steppes": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Earthen Steppes"
+			},
+			{
+				"type": "text",
+				"value": "This ritual will summon a powerful destructive force that will burrow down at an angle until it reaches bedrock.  It will not drop any blocks during this process, consuming them to continue to fuel itself."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/staircase"
 			}
 		]
 	},
@@ -4149,7 +4513,7 @@
 		],
 		"related_recipes": [
 			{
-				"type": "runescribing",
+				"type": "crafting",
 				"location": "mana-and-artifice:runescribing/runescribing_table"
 			},
 			{
@@ -4159,6 +4523,26 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_metal_ritual_rune"
+			}
+		]
+	},
+	"Mana Resevoir": {
+		"index": -2,
+		"category": "manaweaving",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mana Resevoir"
+			},
+			{
+				"type": "text",
+				"value": "The mana resevoir is a container that will draw mana from mana crystals and nearby players and store it as liquid mana.  Currently it is only used as a crafting reagent and there is no point to placing it in the world."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:mana_resevoir"
 			}
 		]
 	},
@@ -4195,7 +4579,8 @@
 				"value": "在你摹画织魔图样时，如果附近没有织魔祭坛或者需求织魔的仪式，各图样就会与附近的图样相互融合。这一反应可被用于特殊的用途，例如当你到达等阶 5 后，你可以使用这一技巧召唤魔导书。"
 			}
 		],
-		"related_recipes": []
+		"related_recipes": [			
+		]
 	},
 	"Manaweaving Silks": {
 		"index": 0,
@@ -4602,6 +4987,46 @@
 			}
 		]
 	},
+	"Brimstone Boat": {
+		"index": 0,
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Brimstone Boat"
+			},
+			{
+				"type": "text",
+				"value": "The brimstone boat is an upgraded version of the bubble boat that boasts all the same functionality of the bubble boat itself, but also contains the ability to float across lava."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/brimstone_boat"
+			}
+		]
+	},
+	"Brimstone Charm": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Brimstone Charm"
+			},
+			{
+				"type": "text",
+				"value": "The brimstone charm is an upgrade ingredient for things like the bubble boat and the runeforge."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/brimstone_charm"
+			}
+		]
+	},
 	"Arcane Sentry": {
 		"index": 0,
 		"category": "artifice",
@@ -4622,6 +5047,94 @@
 			}
 		]
 	},
+	"Mage Armor": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mage Armor"
+			},
+			{
+				"type": "text",
+				"value": "I'm able to create some mage armor out of some infused silk.  When I make and wear a full set it will increase my maximum mana and mana regen due to the runes I put in it.\n\nI can also dye it any color I want, including combinations of dyes to make new colors!"
+			},
+			{
+				"type": "text",
+				"value": "It will also drain the mana from a mana crystal fragment in my inventory, and my own mana after that to repair itself."
+			},
+			{
+				"type": "text",
+				"value": "If it does fully break (it is rather brittle), it will become tattered and not effective.  However, I can take it to a Runic Anvil and repair it with some Infused Silk and a Sorcerous Sewing Kit.  Put the armor on the anvil, the silk on top of that, and activate the anvil with the sewing kit."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/mage_cowl"				
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/mage_robes"				
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/mage_leggings"				
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/mage_boots"				
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/infused_thread"				
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_defense"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_defense"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/manaweaving_infused_silk"
+			}
+		]
+	},
+	"Armor Repair": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Armor Repair"
+			},
+			{
+				"type": "text",
+				"value": "If my mage armor ever breaks, I can take it to a Runic Anvil and repair it with some Infused Silk and a Sorcerous Sewing Kit.  Put the armor on the anvil, the silk on top of that, and activate the anvil with the sewing kit."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/infused_thread"				
+			},
+			{
+				"type": "runescribing",
+				"location": "mana-and-artifice:runescribing/armor/pattern_vinteum_needle"				
+			},
+			{
+				"type": "runeforging",
+				"location": "mana-and-artifice:runeforging/armor/vinteum_needle"				
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:sorcerous_sewing_set"				
+			}
+		]
+	},
 	"Eldritch Orb": {
 		"index": 0,
 		"tier": 3,
@@ -4637,7 +5150,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Bane of Arthropods"
+				"value": "节肢杀手"
 			},
 			{
 				"type": "text",
@@ -4645,7 +5158,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Flame"
+				"value": "火焰附加"
 			},
 			{
 				"type": "text",
@@ -4653,7 +5166,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Knockback"
+				"value": "击退"
 			},
 			{
 				"type": "text",
@@ -4661,7 +5174,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Multishot"
+				"value": "多重射击"
 			},
 			{
 				"type": "text",
@@ -4669,7 +5182,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Quick Charge"
+				"value": "快速装填"
 			},
 			{
 				"type": "text",
@@ -4677,7 +5190,7 @@
 			},
 			{
 				"type": "title",
-				"value": "Smite"
+				"value": "亡灵杀手"
 			},
 			{
 				"type": "text",
@@ -4851,6 +5364,30 @@
 			}
 		]
 	},
+	"Mundane Amulet": {
+		"index": 0,
+		"category": "runesmithing",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mundane Amulet"
+			},
+			{
+				"type": "text",
+				"value": "This simple amulet doesn't offer too much on its own, but the enchantment possibilities lend it significantly more use."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "runescribing",
+				"location": "mana-and-artifice:runescribing/artifice/mundane_amulet_pattern"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/artifice/runeforge_mundane_amulet"
+			}
+		]
+	},
 	"Ring of the Skies": {
 		"index": 0,
 		"category": "artifice",
@@ -4861,13 +5398,193 @@
 			},
 			{
 				"type": "text",
-				"value": "This ring, when worn, allows me to cast one more movement spell while I am airborne before I need to touch the ground again."
+				"value": "戴上这枚戒指后，我能够在空中落地前多施放一次移动类法术。"
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/artifice/air_cast_ring"
+			}
+		]
+	},
+	"Belt of Locks": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Belt of Locks"
+			},
+			{
+				"type": "text",
+				"value": "This belt, when worn, prevents my affinity from changing when I cast spells."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/belt_of_locks"
+			}
+		]
+	},
+	"Belt of Selfishness": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Belt of Selfishness"
+			},
+			{
+				"type": "text",
+				"value": "This belt, when worn, causes aura enchantments to only affect me, and cost less mana while doing so."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/belt_of_selfishness"
+			}
+		]
+	},
+	"Staff of the Pilgrim": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Staff of the Pilgrim"
+			},
+			{
+				"type": "text",
+				"value": "When held in my offhand, this staff will channel the spirits of wanderlust to increase my movement speed, my jump height, my swim speed, and give me a form of step assist."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/staff_of_the_pilgrim"
+			}
+		]
+	},
+	"Amulet of the Battlemage": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Amulet of the Battlemage"
+			},
+			{
+				"type": "text",
+				"value": "This amulet, when worn, will increase the damage of my spells cast while I have a sword in the other hand.\n\nBecause even wizards need to multiclass."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/battlemage_amulet"
+			}
+		]
+	},
+	"Warding Amulet": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Amulet of Warding"
+			},
+			{
+				"type": "text",
+				"value": "This amulet, when worn, will reduce magic damage I take by 10%."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/warding_amulet"
+			}
+		]
+	},
+	"Witherguard Amulet": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Witherguard Amulet"
+			},
+			{
+				"type": "text",
+				"value": "This amulet, when worn, will protect me from the nefarious with effects caused by the aptly named Wither and it's skeletal minions as long as it has charge."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/witherguard_amulet"
+			}
+		]
+	},
+	"Enderguard Amulet": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enderguard Amulet"
+			},
+			{
+				"type": "text",
+				"value": "This amulet, when worn, will teleport nearby creepers that are about to explode away from me as long as it has charge remaining.  Hopefully they don't teleport near something else that's friendly."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/enderguard_amulet"
+			}
+		]
+	},
+	"Ring of Collection": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ring of Collection"
+			},
+			{
+				"type": "text",
+				"value": "This ring, when worn, will cause my break spells to automatically transport the items that would be dropped on the ground directly into my inventory.  If my inventory is full, they will drop at my feet."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/ring_of_collection"
+			}
+		]
+	},
+	"Ring of Transportation": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ring of Transportation"
+			},
+			{
+				"type": "text",
+				"value": "This ring, when worn, will cause my break spells to attempt to transport items to a contained marked by a Rune of Marking in my offhand.  If the container is for whatever reason unreachable, for example unloaded or in another dimension, it will attempt to instead put them in my inventory.  If my inventory is full, it will drop them at my feet."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/ring_of_transportation"
 			}
 		]
 	},
@@ -4881,7 +5598,7 @@
 			},
 			{
 				"type": "text",
-				"value": "This ring, when worn, will enhance my break spells to be more delicate, allowing me to harvest things I wouldn't normally be able to otherwise."
+				"value": "当穿戴者这个戒指时，我的破坏法术会变得更为精细，因而我能够采集到原先无法采集到的东西。"
 			}
 		],
 		"related_recipes": [
@@ -4901,7 +5618,7 @@
 			},
 			{
 				"type": "text",
-				"value": "These rings will enhance my luck at finding treasure when mining.  My break spell will result in more treasures than it would otherwise.\n\nI'm sure as I grow in skill and power that I will be able to make more powerful versions of these rings.  I should check back later."
+				"value": "这个戒指会增强我在挖掘时找到财宝的几率。我的破坏法术会更有可能挖掘出财宝。\n\n我确信，随着我的技巧与能力的增长，我能够制作出这一戒指的增强版本。我得记得之后再回来看看。"
 			}
 		],
 		"related_recipes": [
@@ -4925,11 +5642,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Rings of Breaking"
+				"value": "破坏戒指"
 			},
 			{
 				"type": "text",
-				"value": "These rings will enhance the power of my break spell in lieu of magnitude.  My break spell will be able to break harder blocks than it would otherwise."
+				"value": "这个戒指以破坏法术的强度换取法术的破坏力，佩戴后，破坏法术便可以破坏硬度更高的方块了。"
 			}
 		],
 		"related_recipes": [
@@ -4953,7 +5670,7 @@
 			},
 			{
 				"type": "text",
-				"value": "After studying the capabilities of Endermen, I have devised a recipe for a ring that will enhance my blink spells allowing the shapes I use to dictate where I teleport to if I target a block.\n\nWhen teleporting in this way, the effective range of my blink spell is also doubled.\n\nIf I target air or a creature, it will function as the default spell."
+				"value": "在深入研究了末影人的能力之后，我设计出了一种新的戒指，如果我的指向目标为方块，那么这种戒指能够增强我的闪现法术。\n\n若以增强的闪现法术进行传送，那么闪现的有效距离会变为原先的两倍。\n\n如果你指向的目标为空气或者生物，那么传送法术的传送距离不会改变。"
 			}
 		],
 		"related_recipes": [
@@ -4989,11 +5706,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Crystal of Memories"
+				"value": "回忆晶体"
 			},
 			{
 				"type": "text",
-				"value": "This enchanted crystal can act as a reserve of experience.  By changing the mode (sneak + use) between input and output, I can either store experience at times where I have plenty, or retrieve experience in a pinch when I need it."
+				"value": "这一魔力萦绕的晶体可用于储存经验值。只需改变它的输入输出模式（潜行+右击），我就可以在经验值较为充足的情况下将其储存起来，有或者在必要时从其中取回经验值。"
 			}
 		],
 		"related_recipes": [
@@ -5038,7 +5755,7 @@
 			},
 			{
 				"type": "text",
-				"value": "To apply the enchantment, simply place the item you want to enchant on the anvil, then place the enchanted rune on top of it.  Take your Runesmith's Hammer and strike the anvil repeatedly (right click).  If the enchantment can't be applied to the item, the items will pop off of the anvil."
+				"value": "若想将附魔应用到装备上，你得先将你想要附魔的物品放到符文铁砧上，然后在其上方放上附魔符文。接着用符文锻造锤重复敲打铁砧（也就是右击）。如果该附魔与装备不适配，那么铁砧上的物品将会弹出。"
 			}
 		],
 		"related_recipes": [
@@ -5367,7 +6084,27 @@
 			{
 				"type": "text",
 				"value": "施放符法，首先你得准备一根织魔者法杖，装备之后先进行第一个图样的绘制，绘制完毕之后图样会悬浮于空中。接着，再绘制第二个图样，绘制完毕之后它会与第一个图样相融合。若该图样组合绑定于某个符法，你会听到叮铃声，屏幕上会出现一个带着冷却条的图标。若该符法是瞄准类符法，当计时条结束时，符法会朝着你所指向的地方发射出去。"
-			}
+			},
+				{
+					"type": "title",
+					"value": "Cantrip List"
+				},
+				{
+					"type": "text",
+					"value": "The first cantrip will ignite a block you're looking at within 4 blocks after the timer reaches zero."
+				},
+				{
+					"type": "text",
+					"value": "The second cantrip will dispel harmful effects from you after a delay, akin to drinking milk."
+				},
+				{
+					"type": "text",
+					"value": "The third cantrip will summon a grimoire, a spell book that works like an ender chest."
+				},
+				{
+					"type": "text",
+					"value": "The final 3 cantrips allow you to put spells into them, and casting the cantrip will cast the spell, though without any modifiers applied."
+				}
 		],
 		"related_recipes": [
 			{
@@ -5377,6 +6114,30 @@
 			{
 				"location": "mana-and-artifice:manaweaver_wand",
 				"type": "crafting"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
+			}
+		]
+	},
+	"Improvised Manaweaving Wands": {
+		"category": "manaweaving",
+		"index": -91,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Improvised Manaweaving Wands"
+			},
+			{
+				"type": "text",
+				"value": "If I'm ever in a pinch, I'm pretty sure I can fashion a simple improvised manaweaver's wand using something as a rod and either a magical flower or chimerite.  This should allow me to do any emergency manaweaves, but likely will break after more than a few uses.  However, I can probably get a cantrip or two out of it before it breaks, and that might make all the difference."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
 			}
 		]
 	},
@@ -5500,6 +6261,8 @@
 			}
 		]
 	},
+
+	
 	"Animated Constructs": {
 		"index": "1",
 		"tier": 2,
@@ -5768,6 +6531,21 @@
 			}
 		]
 	},
+	"Command: Wait": {
+		"index": 4,
+		"tier": 2,
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Command: Wait"
+			},
+			{
+				"type": "text",
+				"value": "This command will cause the construct to wait for 5 seconds before continuing on to further instructions."
+			}
+		]
+	},
 	"Command: Place Item": {
 		"index": 4,
 		"tier": 2,
@@ -5873,6 +6651,21 @@
 			}
 		]
 	},
+	"Command: Drop Item": {
+		"index": 4,
+		"tier": 2,
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Command: Drop Item"
+			},
+			{
+				"type": "text",
+				"value": "This command will cause the construct to move to the given location and drop whatever items it is holding."
+			}
+		]
+	},	
 	"Command: Patrol": {
 		"index": 4,
 		"tier": 2,
@@ -5918,6 +6711,21 @@
 			}
 		]
 	},
+	"Command: Shear / Pluck": {
+		"index": 4,
+		"tier": 2,
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Command: Shear / Pluck"
+			},
+			{
+				"type": "text",
+				"value": "This command will cause the construct to shear nearby sheep, mooshrooms, and other animals that can be sheared, as well as periodically pluck feathers from chickens within the configured radius."
+			}
+		]
+	},		
 	"Command: Place Block": {
 		"index": 4,
 		"tier": 2,
@@ -5985,20 +6793,20 @@
 				]
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_claw"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_claw"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_claw"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_claw"
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
 			}
 		]
 	},
@@ -6039,12 +6847,12 @@
 				]
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
 			}
 		]
 	},
@@ -6084,22 +6892,111 @@
 					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_axe_arm_right"
 				]
 			},
-			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_axe"
+			{				
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_axe"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_axe"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_axe"
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
 			}
+		]
+	},
+	"Construct Mana Cannon Arms": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Mana Cannon Arms"
+			},
+			{
+				"type": "text",
+				"value": "Mana cannon arms give constructs the ability to attack at range, but due to the intricacy of the construction, this arm cannot be used for melee attacks.  These magic attacks can be very powerful, and moreso depending on the material used to craft the arm.  A mana torso is required for these to function, as well as periodic recharging by mana crystals.  See the mana torso entry for more information on capacity and recharging.  Damage per material is as follows:"
+			},
+			{
+				"type": "text",
+				"value": "Wood: 3 damage"
+			},
+			{
+				"type": "text",
+				"value": "Stone: 5 damage"
+			},
+			{
+				"type": "text",
+				"value": "Iron: 7 damage"
+			},			
+			{
+				"type": "text",
+				"value": "Obsidian: 10 damage"
+			},
+			{
+				"type": "text",
+				"value": "Diamond: 15 damage"
+			},
+			{
+				"type": "text",
+				"value": "Gold: 20 damage"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_mana_cannon_left"
+				]
+			},
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_mana_cannon_right"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_claw"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_claw"
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
+			},
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_torso_mana"
+				]
+			}			
 		]
 	},
 	"Construct Hammer Arm": {
@@ -6139,20 +7036,20 @@
 				]
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_hammer"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_hammer"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_hammer"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_hammer"
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
 			}
 		]
 	},
@@ -6182,12 +7079,154 @@
 				]
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_torso"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_torso"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_torso"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_torso"
+			}
+		]
+	},
+	"Construct Armor Torso": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Armor Torso"
+			},
+			{
+				"type": "text",
+				"value": "The armor torso greatly increases the survivability of constructs by providing armor and/or toughness values.  The values are as follows:"
+			},
+			{
+				"type": "text",
+				"value": "Wood: 3 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Stone: 5 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Iron: 6 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Gold: 7 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Diamond: 8 armor, 2 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Obsidian: 8 armor, 3 toughness"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_torso_armor"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_torso"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_torso"
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_defense"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_defense"
+			},
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/ancient_stone"
+			}
+		]
+	},
+	"Construct Mana Torso": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Mana Torso"
+			},
+			{
+				"type": "text",
+				"value": "The mana torso gives a resevoir of mana to a construct to be used by various parts, such as the mana cannon.   The mana in the resevoir does not regenerate naturally and must be recharged by having the construct within the area of effect of a Mana Crystal.\n\nBetter materials can hold more mana. The amount of mana each material can hold is as follows:"
+			},
+			{
+				"type": "text",
+				"value": "Wood: 50 mana"
+			},
+			{
+				"type": "text",
+				"value": "Stone: 75 mana"
+			},
+			{
+				"type": "text",
+				"value": "Iron: 100 mana"
+			},
+			{
+				"type": "text",
+				"value": "Gold: 400 mana"
+			},
+			{
+				"type": "text",
+				"value": "Diamond: 200 mana"
+			},
+			{
+				"type": "text",
+				"value": "Obsidian: 150 mana"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_torso_mana"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_torso"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_torso"
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_arcane"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_arcane"
+			},
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/forgotten_lore"
 			}
 		]
 	},
@@ -6217,12 +7256,12 @@
 				]
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_hips"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_hips"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_hips"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_hips"
 			}
 		]
 	},
@@ -6252,12 +7291,12 @@
 				]
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_head"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_head"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_head"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_head"
 			}
 		]
 	},
@@ -6287,12 +7326,12 @@
 				]
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_head"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_head"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_head"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_head"
 			}
 		]
 	},
@@ -6326,12 +7365,12 @@
 				]
 			},
 			{
-				"type": "runescribing",
-				"location": "mana-and-artifice:runescribing/constructs/runescribe_construct_head"
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_head"
 			},
 			{
-				"type": "runesmithing",
-				"location": "mana-and-artifice:runeforging/constructs/runeforge_construct_head"
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_head"
 			}
 		]
 	},

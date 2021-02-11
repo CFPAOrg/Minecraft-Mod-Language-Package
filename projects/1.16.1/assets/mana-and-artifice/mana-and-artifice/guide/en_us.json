@@ -129,7 +129,7 @@
 			},
 			{
 				"type": "text",
-				"value": "When viewing a recipe, in the top left you will see a pin icon.  Click this to pin a recipe to the HUD.  This recipe will show even when the codex is closed.  Click any pin on a recipe again to hide it."
+				"value": "When viewing a recipe, in the top left you will see a pin icon.  Click this to pin a recipe to the HUD.  This recipe will show even when the codex is closed.  Click any pin on a recipe again to hide it, or click the red pin button that appears in your inventory when you have a recipe pinned."
 			}
 		],
 		"related_recipes": [
@@ -187,12 +187,48 @@
 				"type": "crafting"
 			},
 			{
+				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
+			},
+			{
 				"location": "mana-and-artifice:manaweaving_altar",
 				"type": "crafting"
 			},
 			{
 				"location": "mana-and-artifice:manaweave_projector",
 				"type": "crafting"
+			}
+		]
+	},
+	"Automating Manaweaving": {
+		"category": "manaweaving",
+		"index": -2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Automating Manaweaving"
+			},
+			{
+				"type": "text",
+				"value": "Manaweave automation is done by Manaweaves in a Bottle.  You can capture any drawn or projected manaweave pattern in a bottle by right clicking it.  You can then throw it like a potion or a snowball, and it will spawn the manaweave where it lands.  You can also draw/project manaweave patterns directly into a bottle sitting on a pedestal.\n\nAutomating something to place/remove the bottles and activating a projector charged by one or more mana crystals would be a good way to automate this."
+			}
+		],
+		"related_recipes": [
+			{
+				"location": "mana-and-artifice:manaweaver_wand",
+				"type": "crafting"
+			},
+			{
+				"location": "mana-and-artifice:manaweave_projector",
+				"type": "crafting"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runeforging/stone_pedestal"
+			},
+			{
+				"type": "crafting",
+				"location": "minecraft:glass_bottle"
 			}
 		]
 	},
@@ -278,12 +314,66 @@
 			{
 				"type": "text",
 				"value": "The runeforge is a magical furnace that runs on ambient magic in the air.  It requires no additional fuel source.  It has a few of its own recipes, but will also do campfire recipes in half the time, furnace recipes in twice the time, and blast furnace recipes in twice the time.\n\nIt will accept up to 16 items at a time, but the total cook time is multiplied by the number of items in it."
+			},
+			{
+				"type": "text",
+				"value": "Once you have advanced in tier, you will unlock upgrades to the Runeforge in the form of speed increases and ore doubling."
 			}
 		],
 		"related_recipes": [
 			{
 				"location": "mana-and-artifice:runeforge",
 				"type": "crafting"
+			}
+		]
+	},
+	"Runeforge Upgrade: Brimstone Forge": {
+		"category": "artifice",
+		"index": -99,
+		"tier": 4,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Runeforge Upgrade: Brimstone Forge"
+			},
+			{
+				"type": "text",
+				"value": "The brimstone forge is an upgrade to the runeforge that greatly increases the smelting speed.  Upgrade a forge by crafting a brimstone charm and right clicking the forge with it."
+			}
+		],
+		"related_recipes": [
+			{
+				"location": "mana-and-artifice:manaweaving/artifice/brimstone_charm",
+				"type": "manaweaving_altar"
+			}
+		]
+	},
+	"Runeforge Upgrade: Chimerite Crystals": {
+		"category": "artifice",
+		"index": -99,
+		"tier": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Runeforge Upgrade: Chimerite Crystals"
+			},
+			{
+				"type": "text",
+				"value": "By placing pedestals within the immediate vicinity of a runeforge or brimstone forge with chimerite crystals on top of them, I can alter its effects slightly.\n\nRed, Yellow, or Orange crystals will apply an ore doubling effect if there are two of them.  There may be more to come in the future."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runeforging/stone_pedestal"
+			},
+			{
+				"type": "crafting",
+				"locations": [
+					"mana-and-artifice:chimerite_crystals/crystal_orange",
+					"mana-and-artifice:chimerite_crystals/crystal_red",
+					"mana-and-artifice:chimerite_crystals/crystal_yellow"
+				]
 			}
 		]
 	},
@@ -656,6 +746,10 @@
 				"type": "crafting"
 			},
 			{
+				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
+			},
+			{
 				"location": "mana-and-artifice:manaweaving_altar",
 				"type": "crafting"
 			}
@@ -733,7 +827,7 @@
 			},
 			{
 				"type": "text",
-				"value": "The next step in the overall enchanting process is to actually forge your rune from your pattern.\n\nOnce you have your completed rune pattern, you will need to take it and some superheated vinteum to your runic anvil.\n\nPlace the pattern on the anvil, and the superheated vinteum on top.  "
+				"value": "Once you have your completed rune pattern, you will need to take it and some superheated vinteum to your runic anvil.\n\nPlace the pattern on the anvil, and the superheated vinteum on top."
 			},
 			{
 				"type": "image",
@@ -743,7 +837,7 @@
 			},
 			{
 				"type": "text",
-				"value": "Take your runesmith's hammer and begin to strike the items on the anvil.  Be careful to have everything set up correctly, or the items will not fit together properly, and they will pop off the anvil.\n\nOnce you hit the item enough times, your forging will be complete.  The next step will be to take the rune to your Manaweaving Altar to put the enchantment onto the rune."
+				"value": "Take your runesmith's hammer and begin to strike the items on the anvil.  Be careful to have everything set up correctly, or the items will not fit together properly, and they will pop off the anvil.\n\nOnce you hit the item enough times, your forging will be complete."
 			}
 		],
 		"related_recipes": [
@@ -759,6 +853,27 @@
 				"type": "crafting",
 				"location": "mana-and-artifice:runeforge"
 			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runeforging/runic_anvil"
+			}
+		]
+	},
+	"Step 2a: Charcoal Patterns": {
+		"category": "runesmithing",
+		"index": -98,
+		"tier": 2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Charcoal Patterns"
+			},
+			{
+				"type": "text",
+				"value": "Occasionally you will need Runescribing Patterns to instruct constructs.  You can make these patterns at a runic anvil by placing a completed rune on the anvil, and placing paper on top of that.  Then, activate the anvil with either coal or charcoal."
+			}
+		],
+		"related_recipes": [
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:runeforging/runic_anvil"
@@ -965,18 +1080,26 @@
 			}
 		]
 	},
-	"Step 1: Manaweave Enchanting": {
+	"Runic Enchanting": {
 		"category": "enchantments",
 		"index": -1,
 		"tier": 2,
 		"sections": [
 			{
 				"type": "title",
-				"value": "Manaweave Enchanting"
+				"value": "Runic Enchanting"
 			},
 			{
 				"type": "text",
-				"value": "Now that your rune is completed, you will need to infuse mana into it to apply the initial stage of the enchantment to the rune.\n\nPlace the item along with any other required reagents onto the manaweaving altar.  Then, using a manaweaver's wand, draw the required patterns on top of the altar.\n\nAlternately, you can use a manaweave projector placed adjacent to the altar to project the patterns.\n\nIf you make a mistake, you can activate the altar with the wand in your hand to have the wand draw the most recent pattern back out of the altar.\n\nOnce you've drawn the correct patterns, in the correct order, with the correct items, the altar will draw it all in to enchant the rune.  \n\nAll that's left now is to combine the rune with an item back at the runic anvil."
+				"value": "The first step in runic enchanting is to scribe and forge a rune according to the Runescribing and Runeforging mechanics.  The enchantment's recipe will let you know which one(s) you need to make.  See the Runescribing/Runeforging section of the codex for more information."
+			},
+			{
+				"type": "text",
+				"value": "After that's done, you will need to infuse mana into it to apply the initial stage of the enchantment to the rune.\n\nPlace the item along with any other required reagents onto the manaweaving altar.  Then, using a manaweaver's wand, draw the required patterns on top of the altar.\n\nAlternately, you can use a manaweave projector placed adjacent to the altar to project the patterns.\n\nIf you make a mistake, you can activate the altar with the wand in your hand to have the wand draw the most recent pattern back out of the altar.\n\nOnce you've drawn the correct patterns, in the correct order, with the correct items, the altar will draw it all in to enchant the rune.  \n\nAll that's left now is to combine the rune with an item back at the runic anvil."
+			},
+			{
+				"type": "text",
+				"value": "Place the item you want to enchant on the anvil and the now enchanted rune on top.  If the enchantment can be applied to the item (standard combination and compatibility rules apply), you will see spinning runes appear at the bottom of the anvil.  Strike the rune with a Runesmith's Hammer repeatedly until the enchantment is applied."
 			}
 		],
 		"related_recipes": [
@@ -990,7 +1113,11 @@
 			},
 			{
 				"type": "crafting",
-				"location": "mana-and-artifice:manaweave_projector"
+				"location": "mana-and-artifice:runescribing_table"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runic_anvil"
 			}
 		]
 	},
@@ -2340,7 +2467,7 @@
 			},
 			{
 				"type": "text",
-				"value": "As you cast spells you will build up something called Affinities.  There are six affinities:  Air, Earth, Water, Fire, Ender, and Arcane.  Every affinity has an opposite.\n\nAir opposes Earth.\n\nWater opposes Fire.\n\nArcane opposes Ender.\n\nA higher affinity will give mana cost discounts on spells with the same affinity (up to 50% at max), and will also increase the mana cost of spells with an opposing affinity."
+				"value": "As you cast spells you will build up something called Affinities.  There are six affinities:  Air, Earth, Water, Fire, Ender, and Arcane.  Every affinity has an opposite.\n\nAir opposes Earth.\n\nWater opposes Fire.\n\nArcane opposes Ender.\n\nA higher affinity will give mana cost discounts on spells with the same affinity (up to 50% at max), and will also increase the mana cost of spells with an opposing affinity.\n\nLastly, you gain rote experience more quickly of components that share your affinity."
 			}
 		]
 	},
@@ -2354,7 +2481,7 @@
 			},
 			{
 				"type": "text",
-				"value": "After you have created a spell, simply hold it in your hand and activate the item.  The spell will attempt to take effect, draining your mana in the process if successful.\n\nYou can hold a spell in each hand and activate them both at the same time.  You cannot choose which one to activate, though only one of them may succeed depending on targets."
+				"value": "After you have created a spell, simply hold it in your hand and activate the item.  The first time you do so, you'll be prompted to set the name and icon for the spell.\n\nType a name, pick an icon, and hit ESC to close the UI.\n\nAfter that, whenever you right click, you will attempt to cast the spell!\n\nThe spell will attempt to take effect, draining your mana in the process if successful.\n\nYou can hold a spell in each hand and activate them both at the same time.  You cannot choose which one to activate, though only one of them may succeed depending on targets."
 			}
 		],
 		"related_recipes": [
@@ -2464,8 +2591,8 @@
 			},
 			{
 				"type": "text",
-				"value": "After scribing a spell at the inscription table, I'll need to perform a ritual to infuse magic into the recipe.  I can use the spell recipe to check what I need for the ritual; I wrote it all down when I scribed the spell.\n\nThe ideology is that the raw magical essences from the ingredients are absorbed into the spell and allow me to channel my will through it in order to achieve an effect; similar to a very specifically crafted focus.  There are rumors of mages that don't need to use such foci to craft and cast spells, knowing them purely by memory."
-			}
+				"value": "After scribing a spell at the inscription table, I'll need to perform a ritual to infuse magic into the recipe.  I call it the Ritual of Arcana.  I can use the spell recipe to check what I need for the ritual; I wrote it all down when I scribed the spell.\n\nThe ideology is that the raw magical essences from the ingredients are absorbed into the spell and allow me to channel my will through it in order to achieve an effect; similar to a very specifically crafted focus.  There are rumors of mages that don't need to use such foci to craft and cast spells, knowing them purely by memory."
+			}			
 		],
 		"related_recipes": [
 			{
@@ -2478,6 +2605,32 @@
 			}			
 		]
 	},
+	"Modifying Spells": {
+		"index": -99,
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Modifying Spells"
+			},
+			{
+				"type": "text",
+				"value": "Once a spell is crafted, follow the prompt on the item to open a UI where you can change any modified values that are present on the spell.  You can also perform the Ritual of Alteration once unlocked which can add modifiers to a spell, up to a maximum of 3.  Later on, the Book of Rote can be used to make spells on the fly as you go."
+			}			
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/alteration_book"
+			},
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/alteration"
+			}			
+		]
+	},
+	
+	
 	"Making Leather": {
 		"index": -101,
 		"category": "sorcery",
@@ -2497,6 +2650,39 @@
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/leather_from_zombie_flesh"
 			}		
+		]
+	},
+	"Recharging Items": {
+		"index": -101,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Recharging Items"
+			},
+			{
+				"type": "text",
+				"value": "Some of the items that I make have an internal charge, such as the Amulet of Warding or the Ring of Silk.  These items will lose charge whenever they perform their effect.  They will automatically pull mana from Mana Crystal Fragments in your inventory to help them last longer.  When their charge finally runs out, some of them can be recharged by holding them in your hand and holding right click to channel mana into them.  Not all items can be recharged in this manner though.  Their tooltip will indicate which methods they allow.\n\nAll chargeable items can also be recharged by a mechanic called Pedestal Charging.  To do this, simply craft a Mana Crystal and a Pedestal, and place them within 8 blocks of each other.  Place the item on the pedestal and the crystal will charge it up over time.  A single crystal can charge multiple items."
+			}
+			
+		],
+		"related_recipes": [	
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/mana_crystal"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/mana_crystal_fragment"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/mana_crystal"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runeforging/stone_pedestal"
+			}
 		]
 	},
 	"Vellum": {
@@ -2931,6 +3117,86 @@
 			{
 				"type": "spell_part",
 				"location": "mana-and-artifice:components/fling"
+			}
+		]
+	},
+	"Component: Divination": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Divination"
+			},
+			{
+				"type": "text",
+				"value": "I can use a combination of arcane and ender magic to divine the location of nearby ores, making them visible to me through walls at a short distance.  If I hold an block in my offhand, it will focus the spell on finding that block."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/divination"
+			}
+		]
+	},
+	"Component: Confuse": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Confuse"
+			},
+			{
+				"type": "text",
+				"value": "I can use ender magic to confuse a target, making it attack targets at random, possibly even its allies.  Of course if I'm the only target at random, I suppose the spell won't do much.\n\nWARNING:  This spell can only be cast by those that have aligned themselves with the Faerie Courts!"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/confuse"
+			}
+		]
+	},
+	"Component: Mind Control": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mind Control"
+			},
+			{
+				"type": "text",
+				"value": "I can harness some of the most powerful ender magic to bend a target's mind to my will.  It will only fight my enemies while under the duration of the spell, though it will not follow me.\n\nWARNING:  This spell can only be cast by those that have aligned themselves with the Faerie Courts!"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/mind_control"
+			}
+		]
+	},
+	"Component: Spectral Workbench": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Summon Spectral Workbench"
+			},
+			{
+				"type": "text",
+				"value": "I can conjure a phantasmal workbench that will allow me to craft items at it for a short duration.  I'm able to effortlessly maintain the workbench as long as I or any other person is close to it, but otherwise it will fade after one minute."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/spectral_workbench"
 			}
 		]
 	},
@@ -3830,6 +4096,10 @@
 			},
 			{
 				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
+			},
+			{
+				"type": "crafting",
 				"location": "mana-and-artifice:manaweave_projector"
 			}
 		]
@@ -3864,13 +4134,37 @@
 			},
 			{
 				"type": "text",
-				"value": "This ritual will enchant a compass to find a structure, village, or biome.  Trade with Cartographer villagers to get the Thaumaturgic Link items needed to set what you're trying to locate.  Any modded structure, biome, etc should work.\n\nDEV NOTE:  The cartographer thing is temporary, I have another solution in mind that I'm working on."
+				"value": "This ritual will enchant a compass to find a structure, village, or biome.  Trade with the Wandering Wizard summoned by the aptly named Ritual of the Wandering Wizard to get the locating patterns."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "ritual",
 				"location": "mana-and-artifice:rituals/locating"
+			},
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/wandering_wizard"
+			}
+		]
+	},
+	"Wandering Wizard": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Wandering Wizard"
+			},
+			{
+				"type": "text",
+				"value": "This ritual will open a portal and summon a walker of the planes, a Wandering Wizard that will trade with you for various magical wares.  An experienced traveler, he has access to all of the patterns needed for manaweaving as well as the ritual of Locating.  The Wandering Wizard will only remain for a minute before continuing on his journey."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/wandering_wizard"
 			}
 		]
 	},
@@ -3911,6 +4205,30 @@
 			}
 		]
 	},
+	"Alteration": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of Alteration"
+			},
+			{
+				"type": "text",
+				"value": "This ritual is used to add modifiers to spells you have already crafted.  You will first need to craft a Book of Alteration, and use its radial menu (hold in your hand and hold 'Z') to select the modifier you want to add.  Then place the required items in the ritual and perform it to add the modifier to the spell.  You can only have 3 modifiers on a spell.  If you try to add more, the ritual will fail."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/alteration"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/alteration_book"
+			}
+		]
+	},
 	"Eventide": {
 		"index": 0,
 		"category": "rituals",
@@ -3928,6 +4246,46 @@
 			{
 				"type": "ritual",
 				"location": "mana-and-artifice:rituals/eventide"
+			}
+		]
+	},
+	"Yawning Chasm": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Yawning Chasm"
+			},
+			{
+				"type": "text",
+				"value": "This ritual will summon a powerful destructive force that will burrow straight down until it reaches bedrock.  It will not drop any blocks during this process, consuming them to continue to fuel itself."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/hole"
+			}
+		]
+	},
+	"Earthen Steppes": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Earthen Steppes"
+			},
+			{
+				"type": "text",
+				"value": "This ritual will summon a powerful destructive force that will burrow down at an angle until it reaches bedrock.  It will not drop any blocks during this process, consuming them to continue to fuel itself."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/staircase"
 			}
 		]
 	},
@@ -4155,7 +4513,7 @@
 		],
 		"related_recipes": [
 			{
-				"type": "runescribing",
+				"type": "crafting",
 				"location": "mana-and-artifice:runescribing/runescribing_table"
 			},
 			{
@@ -4165,6 +4523,26 @@
 			{
 				"type": "runescribing",
 				"location": "mana-and-artifice:runescribing/runescribe_metal_ritual_rune"
+			}
+		]
+	},
+	"Mana Resevoir": {
+		"index": -2,
+		"category": "manaweaving",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mana Resevoir"
+			},
+			{
+				"type": "text",
+				"value": "The mana resevoir is a container that will draw mana from mana crystals and nearby players and store it as liquid mana.  Currently it is only used as a crafting reagent and there is no point to placing it in the world."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:mana_resevoir"
 			}
 		]
 	},
@@ -4307,7 +4685,7 @@
 			},
 			{
 				"type": "text",
-				"value": "The air rune pattern is used to apply enchantments focusing around the realm of the arcane."
+				"value": "The arcane rune pattern is used to apply enchantments focusing around the realm of the arcane."
 			}
 		],
 		"related_recipes": [
@@ -4379,7 +4757,7 @@
 			},
 			{
 				"type": "text",
-				"value": "The air rune pattern is used to apply enchantments focusing around the element of earth."
+				"value": "The earth rune pattern is used to apply enchantments focusing around the element of earth."
 			}
 		],
 		"related_recipes": [
@@ -4403,7 +4781,7 @@
 			},
 			{
 				"type": "text",
-				"value": "The air rune pattern is used to apply enchantments focusing around the realm of the end."
+				"value": "The ender rune pattern is used to apply enchantments focusing around the realm of the end."
 			}
 		],
 		"related_recipes": [
@@ -4427,7 +4805,7 @@
 			},
 			{
 				"type": "text",
-				"value": "The air rune pattern is used to apply enchantments focusing around the element of fire."
+				"value": "The fire rune pattern is used to apply enchantments focusing around the element of fire."
 			}
 		],
 		"related_recipes": [
@@ -4527,7 +4905,7 @@
 			},
 			{
 				"type": "text",
-				"value": "The air rune pattern is used to apply enchantments focusing around the element of water."
+				"value": "The water rune pattern is used to apply enchantments focusing around the element of water."
 			}
 		],
 		"related_recipes": [
@@ -4609,6 +4987,46 @@
 			}
 		]
 	},
+	"Brimstone Boat": {
+		"index": 0,
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Brimstone Boat"
+			},
+			{
+				"type": "text",
+				"value": "The brimstone boat is an upgraded version of the bubble boat that boasts all the same functionality of the bubble boat itself, but also contains the ability to float across lava."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/brimstone_boat"
+			}
+		]
+	},
+	"Brimstone Charm": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Brimstone Charm"
+			},
+			{
+				"type": "text",
+				"value": "The brimstone charm is an upgrade ingredient for things like the bubble boat and the runeforge."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/brimstone_charm"
+			}
+		]
+	},
 	"Arcane Sentry": {
 		"index": 0,
 		"category": "artifice",
@@ -4626,6 +5044,94 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/arcane_sentry"
+			}
+		]
+	},
+	"Mage Armor": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mage Armor"
+			},
+			{
+				"type": "text",
+				"value": "I'm able to create some mage armor out of some infused silk.  When I make and wear a full set it will increase my maximum mana and mana regen due to the runes I put in it.\n\nI can also dye it any color I want, including combinations of dyes to make new colors!"
+			},
+			{
+				"type": "text",
+				"value": "It will also drain the mana from a mana crystal fragment in my inventory, and my own mana after that to repair itself."
+			},
+			{
+				"type": "text",
+				"value": "If it does fully break (it is rather brittle), it will become tattered and not effective.  However, I can take it to a Runic Anvil and repair it with some Infused Silk and a Sorcerous Sewing Kit.  Put the armor on the anvil, the silk on top of that, and activate the anvil with the sewing kit."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/mage_cowl"				
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/mage_robes"				
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/mage_leggings"				
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/mage_boots"				
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/infused_thread"				
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_defense"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_defense"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/manaweaving_infused_silk"
+			}
+		]
+	},
+	"Armor Repair": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Armor Repair"
+			},
+			{
+				"type": "text",
+				"value": "If my mage armor ever breaks, I can take it to a Runic Anvil and repair it with some Infused Silk and a Sorcerous Sewing Kit.  Put the armor on the anvil, the silk on top of that, and activate the anvil with the sewing kit."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/armor/infused_thread"				
+			},
+			{
+				"type": "runescribing",
+				"location": "mana-and-artifice:runescribing/armor/pattern_vinteum_needle"				
+			},
+			{
+				"type": "runeforging",
+				"location": "mana-and-artifice:runeforging/armor/vinteum_needle"				
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:sorcerous_sewing_set"				
 			}
 		]
 	},
@@ -4858,6 +5364,30 @@
 			}
 		]
 	},
+	"Mundane Amulet": {
+		"index": 0,
+		"category": "runesmithing",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mundane Amulet"
+			},
+			{
+				"type": "text",
+				"value": "This simple amulet doesn't offer too much on its own, but the enchantment possibilities lend it significantly more use."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "runescribing",
+				"location": "mana-and-artifice:runescribing/artifice/mundane_amulet_pattern"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/artifice/runeforge_mundane_amulet"
+			}
+		]
+	},
 	"Ring of the Skies": {
 		"index": 0,
 		"category": "artifice",
@@ -4875,6 +5405,186 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/artifice/air_cast_ring"
+			}
+		]
+	},
+	"Belt of Locks": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Belt of Locks"
+			},
+			{
+				"type": "text",
+				"value": "This belt, when worn, prevents my affinity from changing when I cast spells."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/belt_of_locks"
+			}
+		]
+	},
+	"Belt of Selfishness": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Belt of Selfishness"
+			},
+			{
+				"type": "text",
+				"value": "This belt, when worn, causes aura enchantments to only affect me, and cost less mana while doing so."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/belt_of_selfishness"
+			}
+		]
+	},
+	"Staff of the Pilgrim": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Staff of the Pilgrim"
+			},
+			{
+				"type": "text",
+				"value": "When held in my offhand, this staff will channel the spirits of wanderlust to increase my movement speed, my jump height, my swim speed, and give me a form of step assist."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/staff_of_the_pilgrim"
+			}
+		]
+	},
+	"Amulet of the Battlemage": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Amulet of the Battlemage"
+			},
+			{
+				"type": "text",
+				"value": "This amulet, when worn, will increase the damage of my spells cast while I have a sword in the other hand.\n\nBecause even wizards need to multiclass."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/battlemage_amulet"
+			}
+		]
+	},
+	"Warding Amulet": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Amulet of Warding"
+			},
+			{
+				"type": "text",
+				"value": "This amulet, when worn, will reduce magic damage I take by 10%."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/warding_amulet"
+			}
+		]
+	},
+	"Witherguard Amulet": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Witherguard Amulet"
+			},
+			{
+				"type": "text",
+				"value": "This amulet, when worn, will protect me from the nefarious with effects caused by the aptly named Wither and it's skeletal minions as long as it has charge."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/witherguard_amulet"
+			}
+		]
+	},
+	"Enderguard Amulet": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enderguard Amulet"
+			},
+			{
+				"type": "text",
+				"value": "This amulet, when worn, will teleport nearby creepers that are about to explode away from me as long as it has charge remaining.  Hopefully they don't teleport near something else that's friendly."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/enderguard_amulet"
+			}
+		]
+	},
+	"Ring of Collection": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ring of Collection"
+			},
+			{
+				"type": "text",
+				"value": "This ring, when worn, will cause my break spells to automatically transport the items that would be dropped on the ground directly into my inventory.  If my inventory is full, they will drop at my feet."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/ring_of_collection"
+			}
+		]
+	},
+	"Ring of Transportation": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ring of Transportation"
+			},
+			{
+				"type": "text",
+				"value": "This ring, when worn, will cause my break spells to attempt to transport items to a contained marked by a Rune of Marking in my offhand.  If the container is for whatever reason unreachable, for example unloaded or in another dimension, it will attempt to instead put them in my inventory.  If my inventory is full, it will drop them at my feet."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/ring_of_transportation"
 			}
 		]
 	},
@@ -5374,6 +6084,26 @@
 			{
 				"type": "text",
 				"value": "To cast a cantrip, first you'll need a manaweaver's wand.  Equip that, and draw the first pattern using normal manaweaving.  It will appear in the air once complete.  Next, draw the second pattern.  Once complete it will merge with the first.  Once a cantrip pattern is matched, you will hear a tone and see an icon with a countdown bar.  For cantrips that must be aimed such as spells, it will target and cast where you are looking when that timer reaches the end."
+			},
+			{
+				"type": "title",
+				"value": "Cantrip List"
+			},
+			{
+				"type": "text",
+				"value": "The first cantrip will ignite a block you're looking at within 4 blocks after the timer reaches zero."
+			},
+			{
+				"type": "text",
+				"value": "The second cantrip will dispel harmful effects from you after a delay, akin to drinking milk."
+			},
+			{
+				"type": "text",
+				"value": "The third cantrip will summon a grimoire, a spell book that works like an ender chest."
+			},
+			{
+				"type": "text",
+				"value": "The final 3 cantrips allow you to put spells into them, and casting the cantrip will cast the spell, though without any modifiers applied."
 			}
 		],
 		"related_recipes": [
@@ -5384,6 +6114,30 @@
 			{
 				"location": "mana-and-artifice:manaweaver_wand",
 				"type": "crafting"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
+			}
+		]
+	},
+	"Improvised Manaweaving Wands": {
+		"category": "manaweaving",
+		"index": -91,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Improvised Manaweaving Wands"
+			},
+			{
+				"type": "text",
+				"value": "If I'm ever in a pinch, I'm pretty sure I can fashion a simple improvised manaweaver's wand using something as a rod and either a magical flower or chimerite.  This should allow me to do any emergency manaweaves, but likely will break after more than a few uses.  However, I can probably get a cantrip or two out of it before it breaks, and that might make all the difference."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:improvised_manaweaver_wand"
 			}
 		]
 	},
@@ -5777,6 +6531,21 @@
 			}
 		]
 	},
+	"Command: Wait": {
+		"index": 4,
+		"tier": 2,
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Command: Wait"
+			},
+			{
+				"type": "text",
+				"value": "This command will cause the construct to wait for 5 seconds before continuing on to further instructions."
+			}
+		]
+	},
 	"Command: Place Item": {
 		"index": 4,
 		"tier": 2,
@@ -5882,6 +6651,21 @@
 			}
 		]
 	},	
+	"Command: Drop Item": {
+		"index": 4,
+		"tier": 2,
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Command: Drop Item"
+			},
+			{
+				"type": "text",
+				"value": "This command will cause the construct to move to the given location and drop whatever items it is holding."
+			}
+		]
+	},	
 	"Command: Patrol": {
 		"index": 4,
 		"tier": 2,
@@ -5926,7 +6710,22 @@
 				"value": "This command will cause the construct to kill adult animals within the specified range as long as there are more than 2 adults."
 			}
 		]
-	},	
+	},
+	"Command: Shear / Pluck": {
+		"index": 4,
+		"tier": 2,
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Command: Shear / Pluck"
+			},
+			{
+				"type": "text",
+				"value": "This command will cause the construct to shear nearby sheep, mooshrooms, and other animals that can be sheared, as well as periodically pluck feathers from chickens within the configured radius."
+			}
+		]
+	},		
 	"Command: Place Block": {
 		"index": 4,
 		"tier": 2,
@@ -6111,6 +6910,95 @@
 			}
 		]
 	},
+	"Construct Mana Cannon Arms": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Mana Cannon Arms"
+			},
+			{
+				"type": "text",
+				"value": "Mana cannon arms give constructs the ability to attack at range, but due to the intricacy of the construction, this arm cannot be used for melee attacks.  These magic attacks can be very powerful, and moreso depending on the material used to craft the arm.  A mana torso is required for these to function, as well as periodic recharging by mana crystals.  See the mana torso entry for more information on capacity and recharging.  Damage per material is as follows:"
+			},
+			{
+				"type": "text",
+				"value": "Wood: 3 damage"
+			},
+			{
+				"type": "text",
+				"value": "Stone: 5 damage"
+			},
+			{
+				"type": "text",
+				"value": "Iron: 7 damage"
+			},			
+			{
+				"type": "text",
+				"value": "Obsidian: 10 damage"
+			},
+			{
+				"type": "text",
+				"value": "Diamond: 15 damage"
+			},
+			{
+				"type": "text",
+				"value": "Gold: 20 damage"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_mana_cannon_left",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_mana_cannon_left"
+				]
+			},
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_mana_cannon_right",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_mana_cannon_right"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_claw"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_claw"
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
+			},
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_torso_mana"
+				]
+			}
+		]
+	},
 	"Construct Hammer Arm": {
 		"index": "3",
 		"category": "constructs",
@@ -6197,6 +7085,148 @@
 			{
 				"type":"runesmithing",
 				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_torso"
+			}
+		]
+	},
+	"Construct Armor Torso": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Armor Torso"
+			},
+			{
+				"type": "text",
+				"value": "The armor torso greatly increases the survivability of constructs by providing armor and/or toughness values.  The values are as follows:"
+			},
+			{
+				"type": "text",
+				"value": "Wood: 3 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Stone: 5 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Iron: 6 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Gold: 7 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Diamond: 8 armor, 2 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Obsidian: 8 armor, 3 toughness"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_torso_armor",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_torso_armor"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_torso"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_torso"
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_defense"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_defense"
+			},
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/ancient_stone"
+			}
+		]
+	},
+	"Construct Mana Torso": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Mana Torso"
+			},
+			{
+				"type": "text",
+				"value": "The mana torso gives a resevoir of mana to a construct to be used by various parts, such as the mana cannon.   The mana in the resevoir does not regenerate naturally and must be recharged by having the construct within the area of effect of a Mana Crystal.\n\nBetter materials can hold more mana. The amount of mana each material can hold is as follows:"
+			},
+			{
+				"type": "text",
+				"value": "Wood: 50 mana"
+			},
+			{
+				"type": "text",
+				"value": "Stone: 75 mana"
+			},
+			{
+				"type": "text",
+				"value": "Iron: 100 mana"
+			},
+			{
+				"type": "text",
+				"value": "Gold: 400 mana"
+			},
+			{
+				"type": "text",
+				"value": "Diamond: 200 mana"
+			},
+			{
+				"type": "text",
+				"value": "Obsidian: 150 mana"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_torso_mana",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_torso_mana"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_torso"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_torso"
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_arcane"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_arcane"
+			},
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/forgotten_lore"
 			}
 		]
 	},
