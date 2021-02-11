@@ -84,5 +84,37 @@ namespace Spider.Lib {
             await File.WriteAllBytesAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{version}\intro.json",
                 str);
         }
+
+        /// <summary>
+        /// œ¬‘ÿmod
+        /// </summary>
+        /// <param name="mod"></param>
+        /// <param name="version"></param>
+        /// <returns></returns>
+        public static async Task<(Mod, bool)> DownloadAsync(ModInfo mod, string version) {
+            var httpCli = new HttpClient();
+            var path = $"{Path.GetTempFileName()}".Replace(".tmp", ".jar");
+
+            var file = mod.GameVersionLatestFiles.First(_ => _.GameVersion == version);
+            var downloadUrl = UrlLib.GetDownloadUrl(file.ProjectFileId.ToString(), file.ProjectFileName);
+            try {
+                var bytes = await httpCli.GetByteArrayAsync(downloadUrl);
+                await File.WriteAllBytesAsync(path, bytes);
+            } catch (Exception e) {
+                Serilog.Log.Logger.Error(e.ToString());
+                return (null, false);
+            }
+
+            var res = new Mod() {
+                Version = version,
+                DownloadUrl = downloadUrl,
+                Name = mod.Name,
+                ProjectId = mod.Id,
+                ProjectName = UrlLib.GetProjectName(mod.WebsiteUrl),
+                ProjectUrl = mod.WebsiteUrl,
+                TempPath = path,
+            };
+            return (res, true);
+        }
     }
 }
