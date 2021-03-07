@@ -46,8 +46,7 @@ namespace Packer
         {
             using var writer = new StreamWriter(
                 archive.CreateEntry(destination)
-                       .Open(),
-                Encoding.UTF8);
+                       .Open());
             await writer.WriteAsync(content);
             writer.Flush(); // 确保一下
         }
