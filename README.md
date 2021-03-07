@@ -1,4 +1,4 @@
-![pack.png](https://i.loli.net/2018/02/18/5a8974407b453.png)
+![pack.png](https://i.loli.net/2021/03/07/pBYnTF9g3OeXzRx.png)
 ---
 
 |                                                                                              CurseForge 下载量                                                                                              |                                                                                               支持版本                                                                                                |                               翻译进度                                |                                               Github Actions                                                |                                                                                   最新快照版本                                                                                   |
