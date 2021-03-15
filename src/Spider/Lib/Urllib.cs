@@ -11,7 +11,7 @@ using Spider.Lib.JsonLib;
 namespace Spider.Lib {
     public static class UrlLib {
         /// <summary>
-        /// Ê¹ÓÃ¶¨ÒåµÄÓÎÏ·°æ±¾ºÍÄ£×éÊıÁ¿ÅúÁ¿»ñÈ¡Ä£×éĞÅÏ¢
+        /// ä½¿ç”¨å®šä¹‰çš„æ¸¸æˆç‰ˆæœ¬å’Œæ¨¡ç»„æ•°é‡æ‰¹é‡è·å–æ¨¡ç»„ä¿¡æ¯
         /// </summary>
         /// <param name="modCount"></param>
         /// <param name="gameVersion"></param>
@@ -28,7 +28,7 @@ namespace Spider.Lib {
         }
 
         /// <summary>
-        /// »ñÈ¡µ¥¸öÄ£×éµÄĞÅÏ¢
+        /// è·å–å•ä¸ªæ¨¡ç»„çš„ä¿¡æ¯
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
@@ -41,7 +41,7 @@ namespace Spider.Lib {
         }
 
         /// <summary>
-        /// »ñÈ¡ÏÂÔØÁ´½Ó
+        /// è·å–ä¸‹è½½é“¾æ¥
         /// </summary>
         /// <param name="fileId"></param>
         /// <param name="fileName"></param>
@@ -52,7 +52,7 @@ namespace Spider.Lib {
         }
 
         /// <summary>
-        /// »ñÈ¡ÏîÄ¿Ãû³Æ
+        /// è·å–é¡¹ç›®åç§°
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
@@ -63,7 +63,7 @@ namespace Spider.Lib {
         }
 
         /// <summary>
-        /// ±©Á¦»ñÈ¡Ç°9999¸ömodµÄidÓ³Éä±í
+        /// æš´åŠ›è·å–å‰9999ä¸ªmodçš„idæ˜ å°„è¡¨
         /// </summary>
         /// <param name="version"></param>
         public static async void GetAllModIntroAsync(string version) {
@@ -86,17 +86,17 @@ namespace Spider.Lib {
         }
 
         /// <summary>
-        /// ÏÂÔØmod
+        /// ä¸‹è½½mod
         /// </summary>
         /// <param name="mod"></param>
         /// <param name="version"></param>
         /// <returns></returns>
-        public static async Task<(Mod, bool)> DownloadAsync(ModInfo mod, string version) {
+        public static async Task<(Mod, bool)> DownloadAsync(this ModInfo mod, string version) {
             var httpCli = new HttpClient();
             var path = $"{Path.GetTempFileName()}".Replace(".tmp", ".jar");
 
             var file = mod.GameVersionLatestFiles.First(_ => _.GameVersion == version);
-            var downloadUrl = UrlLib.GetDownloadUrl(file.ProjectFileId.ToString(), file.ProjectFileName);
+            var downloadUrl = GetDownloadUrl(file.ProjectFileId.ToString(), file.ProjectFileName);
             try {
                 var bytes = await httpCli.GetByteArrayAsync(downloadUrl);
                 await File.WriteAllBytesAsync(path, bytes);
@@ -110,7 +110,7 @@ namespace Spider.Lib {
                 DownloadUrl = downloadUrl,
                 Name = mod.Name,
                 ProjectId = mod.Id,
-                ProjectName = UrlLib.GetProjectName(mod.WebsiteUrl),
+                ProjectName = mod.ShortWebsiteUrl,
                 ProjectUrl = mod.WebsiteUrl,
                 TempPath = path,
             };

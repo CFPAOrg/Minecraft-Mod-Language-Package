@@ -18,11 +18,7 @@ namespace Spider {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
-            var config = await ReadLib.ReadConfigAsync();
-            var a = new Downloader(10, "1.12.2", config, new Timer(20000));
-            a.Log += (s, e) => Log.Logger.Information($"已下载：{e.DownloadedCount}\t共：{e.ModCount}");
-            var b = await a.Start();
-            b.ForEach(_ => Console.WriteLine(_.Name));
+            var config = await FileLib.ReadConfigAsync();
             Console.ReadLine();
         }
     }

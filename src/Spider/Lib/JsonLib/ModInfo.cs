@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 
 namespace Spider.Lib.JsonLib {
-    public class ModInfo {
+    public partial class ModInfo {
         [JsonPropertyName("id")]
         public long Id { get; set; }
 
@@ -365,5 +366,14 @@ namespace Spider.Lib.JsonLib {
 
         [JsonPropertyName("gameVersionName")]
         public string GameVersionName { get; set; }
+    }
+
+    public partial class ModInfo {
+        public string ShortWebsiteUrl {
+            get {
+                var start = WebsiteUrl.ToString().LastIndexOf('/') + 1;
+                return WebsiteUrl.ToString()[start..];
+            }
+        }
     }
 }
