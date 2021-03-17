@@ -52,10 +52,11 @@ namespace Spider.Lib {
         }
 
         /// <summary>
-        /// 获取项目名称
+        /// 获取项目名称（已弃用）
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
+        [Obsolete]
         public static string GetProjectName(Uri uri) {
             var url = uri.ToString();
             var start = url.LastIndexOf('/') + 1;
@@ -76,7 +77,7 @@ namespace Spider.Lib {
             var intro = tmp.Select(_ => {
                 var c = new ModIntro() {
                     Id = _.Id,
-                    Name = GetProjectName(_.WebsiteUrl)
+                    Name = _.ShortWebsiteUrl
                 };
                 return c;
             });

@@ -30,8 +30,8 @@ namespace Language.Core {
                 _writer.Close();
                 _writer.Dispose();
             }
-            catch (Exception e) {
-                File.WriteAllText($"./broken/{_modName}.json",builder.ToString());
+            catch {
+                File.WriteAllText($"{Directory.GetCurrentDirectory()}/broken/{_modName}.json",builder.ToString());
             }
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Spider.Lib.JsonLib;
 
 namespace Spider.Lib.FileLib {
-    public static class FileLib {
+    public static class JsonReader {
         /// <summary>
         /// 读取对应版本的name->id映射
         /// </summary>
@@ -29,10 +29,6 @@ namespace Spider.Lib.FileLib {
         public static async Task<Config[]> ReadConfigAsync() {
             return await JsonSerializer.DeserializeAsync<Config[]>(
                 File.OpenRead(@$"{Directory.GetCurrentDirectory()}\config\spider\config.json"));
-        }
-
-        public static async Task SerializeModMapAsync() {
-            return;
         }
     }
 }
