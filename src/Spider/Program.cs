@@ -10,6 +10,7 @@ using System.Timers;
 using Formatter;
 using Language.Core;
 using Serilog;
+using Spider.Lib;
 using Spider.Lib.FileLib;
 using Spider.Lib.JsonLib;
 
@@ -22,7 +23,12 @@ namespace Spider {
                 .WriteTo.Console()
                 .CreateLogger();
 
-            var config = await JsonReader.ReadConfigAsync();
+            var m = new Mod();
+            m.TempPath = @"C:\Users\Nullpinter\Desktop\spacesniffer_1_3_0_2\thermal_foundation-1.16.3-1.1.6.jar";
+            var c = new Lib.JsonLib.Configuration();
+            c.IncludedPath = new[] {"assets","data"};
+            c.ExtractPath = new[] {"lang", "patchouli_books" };
+            Utils.ParseFiles(m,c,"");
             Console.ReadLine();
         }
     }
