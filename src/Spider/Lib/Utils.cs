@@ -7,13 +7,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Language.Core;
 using Serilog;
-
+using Spider.Lib.FileLib;
 using Spider.Lib.JsonLib;
 
 namespace Spider.Lib
 {
     public class Utils
     {
+        /// <summary>
+        /// 解析mod
+        /// </summary>
+        /// <param name="tuple"></param>
+        /// <returns></returns>
         public static async Task ParseMods((ModInfo, Configuration) tuple)
         {
 
@@ -56,9 +61,17 @@ namespace Spider.Lib
                     ProjectUrl = mod.WebsiteUrl,
                     TempPath = path,
                 };
+
+                ParseFiles(res,cfg,$"{Directory.GetCurrentDirectory()}projects\\{(await JsonReader.ReadConfigAsync())[0].Version}");
             }
         }
 
+        /// <summary>
+        /// 导出mod的文件
+        /// </summary>
+        /// <param name="mod"></param>
+        /// <param name="cfg"></param>
+        /// <param name="rootPath"></param>
         public static void ParseFiles(Mod mod, Configuration cfg, string rootPath)
         {
             var zipArchive = new ZipArchive(File.OpenRead(mod.TempPath));
@@ -93,7 +106,7 @@ namespace Spider.Lib
                                         Console.WriteLine(info.FullName);
                                         var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
                                         var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
-                                        Console.WriteLine(path);
+                                        //Console.WriteLine(path);
                                         DirectoryCopy(info.FullName, path, true);
                                         //info.MoveTo(sb.ToString());
                                     }

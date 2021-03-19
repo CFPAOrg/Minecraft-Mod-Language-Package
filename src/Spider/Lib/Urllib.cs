@@ -92,6 +92,7 @@ namespace Spider.Lib {
         /// <param name="mod"></param>
         /// <param name="version"></param>
         /// <returns></returns>
+        [Obsolete]
         public static async Task<(Mod, bool)> DownloadAsync(this ModInfo mod, string version) {
             var httpCli = new HttpClient();
             var path = $"{Path.GetTempFileName()}".Replace(".tmp", ".jar");
