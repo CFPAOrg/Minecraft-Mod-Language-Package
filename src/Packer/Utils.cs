@@ -109,6 +109,14 @@ namespace Packer
             }
             return false;
         }
+        public static bool IsDomainValid(this string domain, Config config)
+        {
+            foreach (var validation in config.InvalidDomains)
+            {
+                if (domain == validation) return false;
+            }
+            return true;
+        }
 
         public static Config RetrieveConfig()
         {

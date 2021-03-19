@@ -19,5 +19,8 @@ namespace Packer
 
         [JsonPropertyName("noProcessNamespace")]
         public List<string> BypassedNamespace { get; set; }
+
+        [JsonPropertyName("invalidDomains")]
+        public List<string> InvalidDomains { get; set; }
     }
 }
