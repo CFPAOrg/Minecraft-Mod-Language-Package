@@ -139,7 +139,8 @@ namespace Spider.Lib
                                 var lf = new LangFormatter(new StreamReader(File.OpenRead(info.FullName)),
                                     new StreamWriter(File.Create(path)));
                                 lf.Format();
-                                //Language.Core.Utils.DeleteBlackKeys(path);
+                                Language.Core.Utils.DeleteBlackKeys(path);
+                                CreateEmptyLang(path);
                             }
                             else if (info.Name.EndsWith(".json")) {
                                 var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
@@ -149,6 +150,7 @@ namespace Spider.Lib
                                 var jf = new JsonFormatter(new StreamReader(File.OpenRead(info.FullName)),
                                     new StreamWriter(File.Create(path)), mod.ProjectName);
                                 jf.Format();
+                                CreateEmptyJson(path);
                             }
                         }
                     }
@@ -240,6 +242,39 @@ namespace Spider.Lib
             });
 
             return sb.ToString();
+        }
+
+        private static void CreateEmptyLang(string path) {
+            var isParse = false;
+            var d = Path.GetDirectoryName(path);
+            foreach (string str in File.ReadAllLines(path)) {
+                if (str == "#PARSE_ESCAPES") {
+                    isParse = true;
+                    break;
+                }
+            }
+
+            if (File.Exists(Path.Combine(d!,"zh_cn.lang"))) {
+                return;
+            }
+            if (isParse) {
+                File.WriteAllText(
+                    Path.Combine(d!, "zh_cn.lang"),
+                    "#PARSE_ESCAPES\n\n");
+            }
+            else {
+                File.WriteAllTextAsync(
+                    Path.Combine(d!, "zh_cn.lang"), "\n");
+            }
+        }
+
+        private static void CreateEmptyJson(string path) {
+            var d = Path.GetDirectoryName(path);
+            if (File.Exists(Path.Combine(d!, "zh_cn.json"))) {
+                return;
+            }
+            File.WriteAllTextAsync(Path.Combine(d!, "zh_cn.json"),
+                "{}");
         }
     }
 }
