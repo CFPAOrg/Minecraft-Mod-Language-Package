@@ -79,7 +79,13 @@ namespace Spider.Lib
             var zipArchive = new ZipArchive(File.OpenRead(mod.TempPath));
             var tmpDirectories = $"{Path.GetTempPath()}extracted\\{Path.GetFileName(mod.TempPath)}";
             Log.Logger.Debug(tmpDirectories);
-            zipArchive.ExtractToDirectory(tmpDirectories, true);
+            try {
+                zipArchive.ExtractToDirectory(tmpDirectories, true);
+            }
+            catch (Exception e) {
+                Log.Logger.Error(e.Message);
+                return;
+            }
             var directories = cfg.IncludedPath.ToList()
                 .Select(_ => new DirectoryInfo($"{tmpDirectories}\\{_}"));
             var include = cfg.ExtractPath.ToList();
@@ -200,7 +206,7 @@ namespace Spider.Lib
             foreach (FileInfo file in files)
             {
                 string tempPath = Path.Combine(destDirName, file.Name);
-                file.CopyTo(tempPath, false);
+                file.CopyTo(tempPath, true);
             }
 
             // If copying subdirectories, copy them and their contents to new location.
