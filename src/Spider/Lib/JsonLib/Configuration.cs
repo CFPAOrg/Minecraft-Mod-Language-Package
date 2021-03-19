@@ -5,6 +5,8 @@ namespace Spider.Lib.JsonLib {
     public class Config {
         [JsonPropertyName("version")]
         public string Version { get; set; }
+        [JsonPropertyName("count")]
+        public int Count { get; set; }
         [JsonPropertyName("list")]
         public List List { get; set; }
         [JsonPropertyName("default_configuration")]

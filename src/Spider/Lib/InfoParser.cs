@@ -10,7 +10,7 @@ namespace Spider.Lib {
         private readonly Configuration _defaultConfiguration;
         private readonly Configuration[] _customConfigurations;
 
-        public InfoParser(List<ModInfo> infos, Configuration defaultConfiguration, Configuration[] customConfigurations) {
+        public InfoParser(Configuration defaultConfiguration, Configuration[] customConfigurations) {
             _defaultConfiguration = defaultConfiguration;
             _customConfigurations = customConfigurations;
         }

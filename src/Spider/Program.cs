@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Serilog;
 using Spider.Lib;
+using Spider.Lib.FileLib;
 using Spider.Lib.JsonLib;
 
 namespace Spider {
@@ -14,15 +17,36 @@ namespace Spider {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
+            var cfg = (await JsonReader.ReadConfigAsync())[0];
+            var parser = new InfoParser(cfg.Configuration, cfg.CustomConfigurations);
+            var root = new DirectoryInfo(
+                $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}\\assets");
 
-            var m = new Mod();
-            m.TempPath = @"C:\Users\Nullpinter\Desktop\spacesniffer_1_3_0_2\thermal_foundation-1.16.3-1.1.6.jar";
-            m.ProjectName = "114514";
-            var c = new Lib.JsonLib.Configuration();
-            c.IncludedPath = new[] {"assets","data"};
-            c.ExtractPath = new[] {"lang", "patchouli_books"};
-            Utils.ParseFiles(m,c, @"D:\repos\Minecraft-Mod-Language-Package\projects\1.12.2");
-            Console.ReadLine();
+            var names = root.GetDirectories().Select(_ => _.Name).ToList();
+
+            foreach (var configuration in cfg.CustomConfigurations) {
+                if (!names.Contains(configuration.ProjectName)) {
+                    names.Add(configuration.ProjectName);
+                }
+            }
+
+            var allM = await UrlLib.GetModInfoAsync(cfg.Count, cfg.Version);
+            var allN = allM.ToList().Select(_ => _.ShortWebsiteUrl).ToList();
+            var pending = new List<string>();
+            foreach (var info in names) {
+                if (!allN.Contains(info)) {
+                    pending.Add(info);
+                }
+            }
+
+            Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod，{pending.Count} 个mod需要单独处理");
+
+            var dict = await JsonReader.ReadIntroAsync(cfg.Version);
+            foreach (var name in pending) {
+                if (dict.ContainsKey(name)) {
+                    var m =await UrlLib.GetModInfoAsync(dict[name]);
+                }
+            }
         }
     }
 }
