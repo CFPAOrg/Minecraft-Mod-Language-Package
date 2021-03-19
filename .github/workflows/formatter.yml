@@ -18,22 +18,34 @@ jobs:
       - name: Run formatter
         run: .\Formatter
 
-      - name: Push  to github
-        if: ${{github.event}} == 'push'
-        run: |
-          ri .\Formatter.exe -Force
-          $ErrorActionPreference ='Continue'
-          git config --global credential.helper manager
-          git config --global user.email "fanng233@gmail.com"
-          git config --global user.name "CfpaBot"
-          @"
-          protocol=https
-          host=github.com
-          username=baka-gourd
-          password=${{secrets.BAKA_GOURD_TOKEN}}
-          "@ > .\1.txt
-          gc 1.txt|git credential-manager  store
-          ri .\1.txt -Force
-          git add .
-          git commit -m "Format file"
-          git push origin HEAD:${{ github.ref }}
+      - name: Commit files
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git pull
+        git commit -m "Update file" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      # - name: Push  to github
+      #   if: ${{github.event}} == 'push'
+      #   run: |
+      #     ri .\Formatter.exe -Force
+      #     $ErrorActionPreference ='Continue'
+      #     git config --global credential.helper manager
+      #     git config --global user.email "fanng233@gmail.com"
+      #     git config --global user.name "CfpaBot"
+      #     @"
+      #     protocol=https
+      #     host=github.com
+      #     username=baka-gourd
+      #     password=${{secrets.BAKA_GOURD_TOKEN}}
+      #     "@ > .\1.txt
+      #     gc 1.txt|git credential-manager  store
+      #     ri .\1.txt -Force
+      #     git add .
+      #     git commit -m "Format file"
+      #     git push origin HEAD:${{ github.ref }}
