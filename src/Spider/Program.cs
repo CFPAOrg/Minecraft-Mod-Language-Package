@@ -55,10 +55,6 @@ namespace Spider {
                     semaphore.WaitOne();
                     await Utils.ParseMods(l);
                 }
-                catch (Exception e)
-                {
-                    Log.Logger.Error(e.Message);
-                }
                 finally
                 {
                     semaphore.Release();

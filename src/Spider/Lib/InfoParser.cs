@@ -28,7 +28,9 @@ namespace Spider.Lib {
             foreach (var c in _customConfigurations) {
                 var mod = Infos.FirstOrDefault(_ => _.ShortWebsiteUrl == c.ProjectName);
                 Infos.Remove(mod);
-                tmp.Add((mod, c));
+                if (mod is not null) {
+                    tmp.Add((mod, c));
+                }
             }
 
             foreach (var info in Infos) {

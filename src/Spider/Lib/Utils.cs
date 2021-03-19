@@ -50,7 +50,7 @@ namespace Spider.Lib
                 }
                 catch (Exception e)
                 {
-                    Log.Logger.Error(e.ToString());
+                    Log.Logger.Error($"写入文件时：{e.Message}");
                 }
 
                 var res = new Mod()
@@ -131,7 +131,7 @@ namespace Spider.Lib
                                 var lf = new LangFormatter(new StreamReader(File.OpenRead(info.FullName)),
                                     new StreamWriter(File.Create(path)));
                                 lf.Format();
-                                Language.Core.Utils.DeleteBlackKeys(path);
+                                //Language.Core.Utils.DeleteBlackKeys(path);
                             }
                             else if (info.Name.EndsWith(".json")) {
                                 var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
