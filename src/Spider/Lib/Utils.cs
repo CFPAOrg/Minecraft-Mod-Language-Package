@@ -100,6 +100,14 @@ namespace Spider.Lib
                         if (dire1.Length > 0) {
                             foreach (var dire2 in dire1)
                             {
+                                if (dire2.Name == "en_us") {
+                                    //Console.WriteLine(info.FullName);
+                                    var p = $"{rootPath}{dire2.FullName[(dire2.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
+                                    var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
+                                    //Console.WriteLine(path);
+                                    DirectoryCopy(dire2.FullName, path, true);
+                                    //info.MoveTo(sb.ToString());
+                                }
                                 var dire3 = dire2.GetDirectories();
                                 foreach (var info in dire3)
                                 {
