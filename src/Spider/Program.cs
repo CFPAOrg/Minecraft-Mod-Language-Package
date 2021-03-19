@@ -6,7 +6,9 @@ using System.Reflection;
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
+
 using Serilog;
+
 using Spider.Lib;
 using Spider.Lib.FileLib;
 using Spider.Lib.JsonLib;
@@ -50,20 +52,21 @@ namespace Spider {
 
             var semaphore = new Semaphore(32, 40);
             foreach (var l in l1) {
-                try
-                {
+                try {
                     semaphore.WaitOne();
                     await Utils.ParseMods(l);
                 }
-                finally
-                {
+                catch (Exception e) {
+                    Log.Logger.Error(e.Message);
+                }
+                finally {
                     semaphore.Release();
                 }
             }
 
             foreach (var name in pending) {
                 if (dict.ContainsKey(name)) {
-                    var m =await UrlLib.GetModInfoAsync(dict[name]);
+                    var m = await UrlLib.GetModInfoAsync(dict[name]);
                     var i = parser.Serialize(m);
                     await Utils.ParseMods(i);
                     Thread.Sleep(5000);
