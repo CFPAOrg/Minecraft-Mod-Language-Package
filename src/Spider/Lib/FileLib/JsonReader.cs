@@ -13,10 +13,10 @@ namespace Spider.Lib.FileLib {
         /// <param name="version"></param>
         /// <returns></returns>
         public static async Task<Dictionary<string, long>> ReadIntroAsync(string version) {
-            if (!File.Exists(@$"{Directory.GetCurrentDirectory()}config\spider\{version}\intro.json")) {
+            if (!File.Exists(@$"{Directory.GetCurrentDirectory()}\\config\spider\{version}\intro.json")) {
                 UrlLib.GetAllModIntroAsync(version);
             }
-            var obj = await JsonSerializer.DeserializeAsync<ModIntro[]>(File.OpenRead(@$"{Directory.GetCurrentDirectory()}config\spider\{version}\intro.json"));
+            var obj = await JsonSerializer.DeserializeAsync<ModIntro[]>(File.OpenRead(@$"{Directory.GetCurrentDirectory()}\\config\spider\{version}\intro.json"));
             var dict = new Dictionary<string, long>();
             foreach (var modIntro in obj!) {
                 dict.Add(modIntro.Name,modIntro.Id);

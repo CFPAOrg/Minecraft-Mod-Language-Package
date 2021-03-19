@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices.ComTypes;
+using System.Threading;
 using System.Threading.Tasks;
 using Serilog;
 using Spider.Lib;
@@ -42,9 +44,33 @@ namespace Spider {
             Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod，{pending.Count} 个mod需要单独处理");
 
             var dict = await JsonReader.ReadIntroAsync(cfg.Version);
+
+            parser.Infos = allM.ToList();
+            var l1 = parser.SerializeAll();
+
+            var semaphore = new Semaphore(32, 40);
+            foreach (var l in l1) {
+                try
+                {
+                    semaphore.WaitOne();
+                    await Utils.ParseMods(l);
+                }
+                catch (Exception e)
+                {
+                    Log.Logger.Error(e.Message);
+                }
+                finally
+                {
+                    semaphore.Release();
+                }
+            }
+
             foreach (var name in pending) {
                 if (dict.ContainsKey(name)) {
                     var m =await UrlLib.GetModInfoAsync(dict[name]);
+                    var i = parser.Serialize(m);
+                    await Utils.ParseMods(i);
+                    Thread.Sleep(5000);
                 }
             }
         }

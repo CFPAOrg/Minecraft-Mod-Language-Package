@@ -15,7 +15,7 @@ namespace Spider.Lib
     public class Utils
     {
         /// <summary>
-        /// ½âÎömod
+        /// è§£æmod
         /// </summary>
         /// <param name="tuple"></param>
         /// <returns></returns>
@@ -24,9 +24,11 @@ namespace Spider.Lib
 
             if (tuple.Item2.NonUpdate)
             {
+                Log.Logger.Warning($"{tuple.Item1.ShortWebsiteUrl}å·²åœ¨é»‘åå•ä¸­ï¼Œè·³è¿‡");
                 return;
             }
 
+            Log.Logger.Information($"{tuple.Item1.ShortWebsiteUrl}æ­£åœ¨è§£æ");
             var cfg = tuple.Item2;
             var mod = tuple.Item1;
             var version = cfg.Version;
@@ -48,7 +50,7 @@ namespace Spider.Lib
                 }
                 catch (Exception e)
                 {
-                    Serilog.Log.Logger.Error(e.ToString());
+                    Log.Logger.Error(e.ToString());
                 }
 
                 var res = new Mod()
@@ -62,12 +64,12 @@ namespace Spider.Lib
                     TempPath = path,
                 };
 
-                ParseFiles(res,cfg,$"{Directory.GetCurrentDirectory()}projects\\{(await JsonReader.ReadConfigAsync())[0].Version}");
+                ParseFiles(res,cfg,$"{Directory.GetCurrentDirectory()}\\projects\\{(await JsonReader.ReadConfigAsync())[0].Version}");
             }
         }
 
         /// <summary>
-        /// µ¼³ömodµÄÎÄ¼ş
+        /// å¯¼å‡ºmodçš„æ–‡ä»¶
         /// </summary>
         /// <param name="mod"></param>
         /// <param name="cfg"></param>
@@ -81,19 +83,19 @@ namespace Spider.Lib
             var directories = cfg.IncludedPath.ToList()
                 .Select(_ => new DirectoryInfo($"{tmpDirectories}\\{_}"));
             var include = cfg.ExtractPath.ToList();
-            //±éÀúËùÓĞÄ¿Â¼
+            //éå†æ‰€æœ‰ç›®å½•
             var root = directories.Select(dire =>
                 dire.EnumerateDirectories().Where(domain => domain.Name != "minecraft")
                     .Select(domain => domain.EnumerateDirectories()
                         .Where(_ => include.Contains(_.Name))));
-            //±éÀú±éÀúËùÓĞÊä³öµÄÄ¿Â¼
+            //éå†éå†æ‰€æœ‰è¾“å‡ºçš„ç›®å½•
             foreach (var a in root)
             {
                 foreach (var b in a)
                 {
                     foreach (var c in b)
                     {
-                        Console.WriteLine(c.FullName);
+                        //Console.WriteLine(c.FullName);
                         var dire1 = c.GetDirectories();
                         if (dire1.Length > 0) {
                             foreach (var dire2 in dire1)
@@ -103,7 +105,7 @@ namespace Spider.Lib
                                 {
                                     if (info.Name == "en_us")
                                     {
-                                        Console.WriteLine(info.FullName);
+                                        //Console.WriteLine(info.FullName);
                                         var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
                                         var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
                                         //Console.WriteLine(path);
@@ -129,6 +131,7 @@ namespace Spider.Lib
                                 var lf = new LangFormatter(new StreamReader(File.OpenRead(info.FullName)),
                                     new StreamWriter(File.Create(path)));
                                 lf.Format();
+                                Language.Core.Utils.DeleteBlackKeys(path);
                             }
                             else if (info.Name.EndsWith(".json")) {
                                 var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
@@ -143,7 +146,7 @@ namespace Spider.Lib
                     }
                 }
             }
-            //±È½ÏºÃ¿´µÄ
+            //æ¯”è¾ƒå¥½çœ‹çš„
             //foreach (var info in directories) {
             //    foreach (var directory in info.GetDirectories()) {
             //        if (directory.Name == "minecraft") {
@@ -160,7 +163,7 @@ namespace Spider.Lib
         }
 
         /// <summary>
-        /// °×æÎµÄÄ¿Â¼¸´ÖÆ
+        /// ç™½å«–çš„ç›®å½•å¤åˆ¶
         /// </summary>
         /// <param name="sourceDirName"></param>
         /// <param name="destDirName"></param>
@@ -202,7 +205,7 @@ namespace Spider.Lib
         }
 
         /// <summary>
-        /// ÍùÂ·¾¶ÖĞ²åÈëÏîÄ¿Ãû³Æ
+        /// å¾€è·¯å¾„ä¸­æ’å…¥é¡¹ç›®åç§°
         /// </summary>
         /// <param name="path"></param>
         /// <param name="projectName"></param>
