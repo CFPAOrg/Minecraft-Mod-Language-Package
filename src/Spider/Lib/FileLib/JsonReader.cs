@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
+
 using Spider.Lib.JsonLib;
 
 namespace Spider.Lib.FileLib {
@@ -14,12 +15,12 @@ namespace Spider.Lib.FileLib {
         /// <returns></returns>
         public static async Task<Dictionary<string, long>> ReadIntroAsync(string version) {
             if (!File.Exists(@$"{Directory.GetCurrentDirectory()}\config\spider\{version}\intro.json")) {
-                UrlLib.GetAllModIntroAsync(version);
+                await UrlLib.GetAllModIntroAsync(version);
             }
             var obj = await JsonSerializer.DeserializeAsync<ModIntro[]>(File.OpenRead(@$"{Directory.GetCurrentDirectory()}\config\spider\{version}\intro.json"));
             var dict = new Dictionary<string, long>();
             foreach (var modIntro in obj!) {
-                dict.Add(modIntro.Name,modIntro.Id);
+                dict.Add(modIntro.Name, modIntro.Id);
             }
 
             return dict;
