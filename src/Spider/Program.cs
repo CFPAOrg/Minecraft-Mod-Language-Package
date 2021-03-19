@@ -16,7 +16,7 @@ using Spider.Lib.JsonLib;
 namespace Spider {
     static class Program {
         static async Task Main(string[] args) {
-            Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new InvalidOperationException());
+            //Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new InvalidOperationException());
 
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
