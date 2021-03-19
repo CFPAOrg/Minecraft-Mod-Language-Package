@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace Packer
@@ -14,9 +12,12 @@ namespace Packer
         public List<string> FilesToInitialize { get; set; }
 
         [JsonPropertyName("modNameBlackList")]
-        public List<String> ModBlackList { get; set; }
+        public List<string> ModBlackList { get; set; }
 
         [JsonPropertyName("domainBlackList")]
-        public List<String> DomainBlackList { get; set; }
+        public List<string> DomainBlackList { get; set; }
+
+        [JsonPropertyName("noProcessNamespace")]
+        public List<string> BypassedNamespace { get; set; }
     }
 }

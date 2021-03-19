@@ -73,3 +73,4 @@ emmmm，原理其实很简单。
 最后感谢那些参与翻译，并致力于本地化推广的各位玩家，你们辛苦了。
 
 在本仓库的 [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) 页面可以查看所有翻译贡献者。
+
