@@ -138,6 +138,9 @@ namespace Spider.Lib
 
                         foreach (var info in ei) {
                             if (info.Name.EndsWith(".lang")) {
+                                if (CheckVersion(cfg.Version)) {
+                                    continue;
+                                }
                                 var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
                                 var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
                                 //Console.WriteLine(path);
@@ -149,6 +152,9 @@ namespace Spider.Lib
                                 CreateEmptyLang(path);
                             }
                             else if (info.Name.EndsWith(".json")) {
+                                if (!CheckVersion(cfg.Version)) {
+                                    continue;
+                                }
                                 var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
                                 var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
                                 //Console.WriteLine(path);
@@ -281,6 +287,88 @@ namespace Spider.Lib
             }
             File.WriteAllTextAsync(Path.Combine(d!, "zh_cn.json"),
                 "{}");
+        }
+
+        /// <summary>
+        /// true为高版本
+        /// </summary>
+        /// <param name="ver"></param>
+        /// <returns></returns>
+        private static bool CheckVersion(string ver) {
+            var result = ver switch {
+                "1.0" => false,
+                "1.1" => false,
+                "1.2.1" => false,
+                "1.2.2" => false,
+                "1.2.3" => false,
+                "1.2.4" => false,
+                "1.2.5" => false,
+                "1.3.1" => false,
+                "1.3.2" => false,
+                "1.4.2" => false,
+                "1.4.4" => false,
+                "1.4.5" => false,
+                "1.4.6" => false,
+                "1.4.7" => false,
+                "1.5.1" => false,
+                "1.5.2" => false,
+                "1.6.1" => false,
+                "1.6.2" => false,
+                "1.6.4" => false,
+                "1.7.2" => false,
+                "1.7.3" => false,
+                "1.7.4" => false,
+                "1.7.5" => false,
+                "1.7.6" => false,
+                "1.7.7" => false,
+                "1.7.8" => false,
+                "1.7.9" => false,
+                "1.7.10" => false,
+                "1.8" => false,
+                "1.8.1" => false,
+                "1.8.2" => false,
+                "1.8.3" => false,
+                "1.8.4" => false,
+                "1.8.5" => false,
+                "1.8.6" => false,
+                "1.8.7" => false,
+                "1.8.8" => false,
+                "1.8.9" => false,
+                "1.9" => false,
+                "1.9.1" => false,
+                "1.9.2" => false,
+                "1.9.3" => false,
+                "1.9.4" => false,
+                "1.10" => false,
+                "1.10.1" => false,
+                "1.10.2" => false,
+                "1.11" => false,
+                "1.11.1" => false,
+                "1.11.2" => false,
+                "1.12" => false,
+                "1.12.1" => false,
+                "1.12.2" => false,
+                "1.13" => true,
+                "1.13.1" => true,
+                "1.13.2" => true,
+                "1.14" => true,
+                "1.14.1" => true,
+                "1.14.2" => true,
+                "1.14.3" => true,
+                "1.14.4" => true,
+                "1.15" => true,
+                "1.15.1" => true,
+                "1.15.2" => true,
+                "1.16" => true,
+                "1.16.1" => true,
+                "1.16.2" => true,
+                "1.16.3" => true,
+                "1.16.4" => true,
+                "1.16.5" => true,
+                _ => true
+            };
+
+            return result;
         }
     }
 }
