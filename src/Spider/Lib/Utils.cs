@@ -238,7 +238,7 @@ namespace Spider.Lib
                     sb.Append(projectName + "\\");
                 }
                 else if (_.EndsWith(".lang") || _.EndsWith(".json")) {
-                    sb.Append(_);
+                    sb.Append(_.ToLower());
                 }
                 else
                 {
