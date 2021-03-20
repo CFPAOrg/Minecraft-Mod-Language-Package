@@ -47,6 +47,15 @@ namespace Spider {
 
             var dict = await JsonReader.ReadIntroAsync(cfg.Version);
 
+            if (names.Count > cfg.Count) {
+                var bin = allM.Where(_ => !names.Contains(_.ShortWebsiteUrl));
+                var l = allM.ToList();
+                foreach (var info in bin) {
+                    l.Remove(info);
+                }
+
+                allM = l.ToArray();
+            }
             parser.Infos = allM.ToList();
             var l1 = parser.SerializeAll();
 
@@ -68,7 +77,12 @@ namespace Spider {
                 if (dict.ContainsKey(name)) {
                     var m = await UrlLib.GetModInfoAsync(dict[name]);
                     var i = parser.Serialize(m);
-                    await Utils.ParseMods(i);
+                    try {
+                        await Utils.ParseMods(i);
+                    }
+                    catch (Exception e) {
+                        Log.Logger.Error(e.Message);
+                    }
                     Thread.Sleep(5000);
                 }
             }
