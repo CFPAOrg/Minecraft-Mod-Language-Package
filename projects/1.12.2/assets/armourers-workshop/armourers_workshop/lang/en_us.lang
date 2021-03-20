@@ -9,6 +9,7 @@
 # Email:   riskyken.web@gmail.com
 # Twitter: @RiskyKen
 # GitHub:  https://github.com/RiskyKen please send pull request to the development branch.
+# Discord: https://discord.gg/5Z3KKvU
 #
 # Please also send your Minecraft username/uuid so I can add you to the credits.
 #
@@ -49,13 +50,14 @@ tile.armourers_workshop:skin-cube-glowing.name=Skin Cube (Glowing)
 tile.armourers_workshop:skin-cube-glass.name=Glass Skin Cube
 tile.armourers_workshop:skin-cube-glass-glowing.name=Glass Skin Cube (Glowing)
 tile.armourers_workshop:colour-mixer.name=Color Mixer
-tile.armourers_workshop:mannequin.name=Mannequin
-tile.armourers_workshop:doll.name=Doll
+tile.armourers_workshop:mannequin.name=Mannequin - Obsolete Please Update
+tile.armourers_workshop:doll.name=Doll - Obsolete Please Update
 tile.armourers_workshop:skinning-table.name=Skinning Table
 tile.armourers_workshop:dye-table.name=Dye Table
 tile.armourers_workshop:skinnable.name=Skinnable Block
 tile.armourers_workshop:hologram-projector.name=Hologram Projector
 tile.armourers_workshop:outfit-maker.name=Outfit Maker
+tile.armourers_workshop:advanced-skin-builder.name=Advanced Skin Builder
 
 
 # Block flavour text
@@ -68,8 +70,6 @@ tile.armourers_workshop:skin-cube-glowing.flavour=Glow in the dark equipment cub
 tile.armourers_workshop:skin-cube-glass.flavour=Transparent equipment cube.%n(Paintable)
 tile.armourers_workshop:skin-cube-glass-glowing.flavour=Glowing transparent equipment cube!%n(Paintable)
 tile.armourers_workshop:colour-mixer.flavour=Mix up colors to paint your equipment with.%nSneak right click with tool to quickly paint.
-tile.armourers_workshop:mannequin.flavour=Show your equipment off with a creepy mannequin!%nRight click with a name tag to set a skin.
-tile.armourers_workshop:doll.flavour=Mini mannequin!
 tile.armourers_workshop:skinning-table.flavour=Apply and remove skins from items.
 tile.armourers_workshop:outfit-maker.flavour=Use to combine multiple skins into one.
 
@@ -114,6 +114,9 @@ item.armourers_workshop:armour-container-head.name=Head Armour Container
 item.armourers_workshop:armour-container-chest.name=Chest Armour Container
 item.armourers_workshop:armour-container-legs.name=Legs Armour Container
 item.armourers_workshop:armour-container-feet.name=Feet Armour Container
+item.armourers_workshop:mannequin.name=Mannequin
+item.armourers_workshop:mannequin.small.name=Doll
+item.armourers_workshop:mannequin.big.name=Giant
 
 
 # Item flavour text
@@ -141,6 +144,9 @@ item.armourers_workshop:skin-unlock.3.flavour=Unlocks 1 additional feet skin slo
 item.armourers_workshop:skin-unlock.4.flavour=Unlocks 1 additional wings skin slot in the wardrobe.
 item.armourers_workshop:skin-unlock.5.flavour=Unlocks 1 additional outfit skin slot in the wardrobe.
 item.armourers_workshop:linking-tool.flavour=Use to link usable blocks to block skins.%nFirst right click on a usable block then%nright click on a block skin to link them.
+item.armourers_workshop:mannequin.flavour=Show your equipment off with a creepy mannequin!
+item.armourers_workshop:mannequin.small.flavour=Mini mannequin!
+item.armourers_workshop:mannequin.big.flavour=Look at the size of that thing!
 
 
 # Rollover Text
@@ -155,6 +161,8 @@ item.armourers_workshop:rollover.noSettingsSaved=&cNo Settings Saved.
 item.armourers_workshop:rollover.user=&6User:&7 %s
 item.armourers_workshop:rollover.url=&6URL:&7 %s
 item.armourers_workshop:rollover.empty=&6Empty.
+item.armourers_workshop:rollover.radius.sample=&6Sample Radius:&7 %d
+item.armourers_workshop:rollover.radius.effect=&6Effect Radius:&7 %d
 item.armourers_workshop:rollover.openSettings=Sneak right click to open settings.
 
 item.armourers_workshop:rollover.hasSkin=&6Has Armouerer's Workshop Skin
@@ -214,11 +222,16 @@ paintType.armourers_workshop:pulse_1.name=Pulse 1
 paintType.armourers_workshop:pulse_2.name=Pulse 2
 paintType.armourers_workshop:flicker_1.name=Flicker 1
 paintType.armourers_workshop:flicker_2.name=Flicker 2
+paintType.armourers_workshop:flash_1.name=Flash 1
+paintType.armourers_workshop:flash_2.name=Flash 2
 paintType.armourers_workshop:none.name=None
 paintType.armourers_workshop:skin.name=Skin
 paintType.armourers_workshop:hair.name=Hair
 paintType.armourers_workshop:eye.name=Eye
-paintType.armourers_workshop:misc.name=Miscellaneous
+paintType.armourers_workshop:misc_1.name=Misc 1
+paintType.armourers_workshop:misc_2.name=Misc 2
+paintType.armourers_workshop:misc_3.name=Misc 3
+paintType.armourers_workshop:misc_4.name=Misc 4
 
 
 # Colour Families
@@ -247,7 +260,7 @@ skinType.armourers:item.name=Item
 skinType.armourers:block.name=Block
 skinType.armourers:multiblock.name=Multiblock
 skinType.armourers:horse.name=Horse
-skinType.armourers:advanced.name=Advanced
+skinType.armourers:part.name=Part
 skinType.armourers:outfit.name=Outfit
 
 
@@ -286,6 +299,31 @@ movmentType.armourers_workshop:ease=Ease
 movmentType.armourers_workshop:linear=Linear
 
 
+# Skin Report Types
+skin_report_type.armourers_workshop:sexual=Sexual
+skin_report_type.armourers_workshop:inappropriate=Inappropriate
+skin_report_type.armourers_workshop:stolen=Stolen
+skin_report_type.armourers_workshop:spam=Spam
+skin_report_type.armourers_workshop:other=Other
+
+
+# Skin Search Column
+skin_search_column.armourers_workshop:id=ID
+skin_search_column.armourers_workshop:user_id=User ID
+skin_search_column.armourers_workshop:name=Name
+skin_search_column.armourers_workshop:description=Description
+skin_search_column.armourers_workshop:date_created=Date Created
+skin_search_column.armourers_workshop:skin_type=Skin Type
+skin_search_column.armourers_workshop:downloads=Downloads
+skin_search_column.armourers_workshop:rating=Rating
+skin_search_column.armourers_workshop:rating_count=Rating Count
+
+
+# Skin Search Order
+skin_search_order.armourers_workshop:asc=Ascending
+skin_search_order.armourers_workshop:desc=Descending
+
+
 # Inventory names
 inventory.armourers_workshop:colour-mixer.name=Color Mixer
 inventory.armourers_workshop:armourer.name=Armourer
@@ -304,6 +342,17 @@ inventory.armourers_workshop:outfit-maker.name=Outfit Maker
 
 
 # Inventory Controls
+# Common
+inventory.armourers_workshop:common.button.ok=OK
+inventory.armourers_workshop:common.button.cancel=Cancel
+inventory.armourers_workshop:common.button.close=Close
+inventory.armourers_workshop:common.button.clear=Clear
+inventory.armourers_workshop:common.button.save=Save
+inventory.armourers_workshop:common.button.load=Load
+inventory.armourers_workshop:common.button.previous=Previous
+inventory.armourers_workshop:common.button.next=Next
+
+
 # Skin Library
 inventory.armourers_workshop:skin-library.label.search=Search:
 inventory.armourers_workshop:skin-library.label.filename=File Name:
@@ -341,11 +390,13 @@ inventory.armourers_workshop:skin-library.dialog.overwrite.close=Close
 inventory.armourers_workshop:skin-library.dialog.overwrite.ok=OK
 inventory.armourers_workshop:skin-library.dialog.overwrite.overwriteFile=Overwrite file "%s"?
 
+
 # Outfit Maker
 inventory.armourers_workshop:outfit-maker.save=Save Outfit
 inventory.armourers_workshop:outfit-maker.load=Load Outfit
 inventory.armourers_workshop:outfit-maker.skinName=Skin Name
 inventory.armourers_workshop:outfit-maker.skinFlavour=Flavor Text
+
 
 # Armourer
 inventory.armourers_workshop:armourer.label.itemName=Item Name:
@@ -425,6 +476,16 @@ inventory.armourers_workshop:colour-mixer.label.brightness=Brightness
 inventory.armourers_workshop:colour-mixer.label.hex=Hex
 inventory.armourers_workshop:colour-mixer.label.presets=Presets
 inventory.armourers_workshop:colour-mixer.label.paintType=Paint Type
+inventory.armourers_workshop:colour-mixer.button.add_palette=Add Palette...
+inventory.armourers_workshop:colour-mixer.button.remove_palette=Remove Palette...
+inventory.armourers_workshop:colour-mixer.button.rename_palette=Rename Palette...
+inventory.armourers_workshop:colour-mixer.help.palette=&aLeft click&r to select a%ncolor from the palette.%n%nHold &ashift&r and &aleft click&r to%nset a color in a palette.%n%nPalettes that start with ☆ are%nbuild in and can not be edited.
+inventory.armourers_workshop:colour-mixer.dialog.add_palette.title=Add Palette
+inventory.armourers_workshop:colour-mixer.dialog.add_palette.enter_name=Enter name...
+inventory.armourers_workshop:colour-mixer.dialog.remove_palette.title=Remove Palette
+inventory.armourers_workshop:colour-mixer.dialog.remove_palette.message=Are you sure you want to remove the palette %s.
+inventory.armourers_workshop:colour-mixer.dialog.rename_palette.title=Rename Palette
+inventory.armourers_workshop:colour-mixer.dialog.rename_palette.enter_name=Enter name...
 
 
 # Wardrobe
@@ -433,57 +494,73 @@ inventory.armourers_workshop:wardrobe.tab.outfits=Outfits
 inventory.armourers_workshop:wardrobe.tab.displaySettings=Display Settings
 inventory.armourers_workshop:wardrobe.tab.colourSettings=Color Settings
 inventory.armourers_workshop:wardrobe.tab.dyes=Dyes
+inventory.armourers_workshop:wardrobe.tab.contributor=Contributor
 
-inventory.armourers_workshop:wardrobe.label.skinColour=Skin Color
-inventory.armourers_workshop:wardrobe.label.hairColour=Hair Color
-inventory.armourers_workshop:wardrobe.label.eyeColour=Eye Color
-inventory.armourers_workshop:wardrobe.label.miscColour=Misc. Color
+# Wardrobe - Tab Display Settings
+inventory.armourers_workshop:wardrobe.tab.display_settings.renderHeadArmour=Render head armor?
+inventory.armourers_workshop:wardrobe.tab.display_settings.renderChestArmour=Render chest armor?
+inventory.armourers_workshop:wardrobe.tab.display_settings.renderLegArmour=Render leg armor?
+inventory.armourers_workshop:wardrobe.tab.display_settings.renderFootArmour=Render foot armor?
 
-inventory.armourers_workshop:wardrobe.selectSkin=Pick Skin Color
-inventory.armourers_workshop:wardrobe.autoSkin=Auto Skin Color
-inventory.armourers_workshop:wardrobe.selectHair=Pick Hair Color
-inventory.armourers_workshop:wardrobe.autoHair=Auto Hair Color
-inventory.armourers_workshop:wardrobe.selectEye=Pick Eye Color
-inventory.armourers_workshop:wardrobe.autoEye=Auto Eye Color
-inventory.armourers_workshop:wardrobe.selectAcc=Pick Accessory Color
+# Wardrobe - Tab Color Settings
+inventory.armourers_workshop:wardrobe.tab.colour_settings.label.skin=Skin Color:
+inventory.armourers_workshop:wardrobe.tab.colour_settings.label.hair=Hair Color:
+inventory.armourers_workshop:wardrobe.tab.colour_settings.label.eye=Eye Color:
+inventory.armourers_workshop:wardrobe.tab.colour_settings.label.misc_1=Misc. 1 Color:
+inventory.armourers_workshop:wardrobe.tab.colour_settings.label.misc_2=Misc. 2 Color:
+inventory.armourers_workshop:wardrobe.tab.colour_settings.label.misc_3=Misc. 3 Color:
+inventory.armourers_workshop:wardrobe.tab.colour_settings.label.misc_4=Misc. 4 Color:
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.skin.select=Pick Skin Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.skin.clear=Clear Skin Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.skin.auto=Auto Skin Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.hair.select=Pick Hair Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.hair.clear=Clear Hair Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.hair.auto=Auto Hair Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.eye.select=Pick Eye Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.eye.clear=Clear Eye Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.eye.auto=Auto Eye Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.misc_1.select=Pick Misc. 1 Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.misc_1.clear=Clear Misc. 1 Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.misc_2.select=Pick Misc. 2 Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.misc_2.clear=Clear Misc. 2 Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.misc_3.select=Pick Misc. 3 Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.misc_3.clear=Clear Misc. 3 Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.misc_4.select=Pick Misc. 4 Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.button.misc_4.clear=Clear Misc. 4 Color
+inventory.armourers_workshop:wardrobe.tab.colour_settings.label.palette=Palette
 
-inventory.armourers_workshop:wardrobe.label.skinOverride=Skin Override
-inventory.armourers_workshop:wardrobe.renderHeadArmour=Render head armor?
-inventory.armourers_workshop:wardrobe.renderChestArmour=Render chest armor?
-inventory.armourers_workshop:wardrobe.renderLegArmour=Render leg armor?
-inventory.armourers_workshop:wardrobe.renderFootArmour=Render foot armor?
+# Wardrobe - Tab Contributor
+inventory.armourers_workshop:wardrobe.tab.contributor.label.contributor=Thank you for helping with the development of Armourer's Workshop.\n\nMuch love from RiskyKen ❤❤❤
+
+# Wardrobe - Mannequin Tabs
+inventory.armourers_workshop:wardrobe.tab.man_rotations=Mannequin Rotations
+inventory.armourers_workshop:wardrobe.tab.man_rotations.random=Random
+inventory.armourers_workshop:wardrobe.tab.man_rotations.reset=Reset
+
+inventory.armourers_workshop:wardrobe.tab.man_texture=Mannequin Texture
+inventory.armourers_workshop:wardrobe.tab.man_texture.dropdown.user=User
+inventory.armourers_workshop:wardrobe.tab.man_texture.dropdown.url=URL
+inventory.armourers_workshop:wardrobe.tab.man_texture.set=Set
+
+inventory.armourers_workshop:wardrobe.tab.man_extras=Mannequin Extras
+inventory.armourers_workshop:wardrobe.tab.man_extras.label.isChild=Child Model?
+inventory.armourers_workshop:wardrobe.tab.man_extras.label.isExtraRenders=Extra Renders?
+inventory.armourers_workshop:wardrobe.tab.man_extras.label.isFlying=Flying?
+inventory.armourers_workshop:wardrobe.tab.man_extras.label.isVisible=Visible?
+inventory.armourers_workshop:wardrobe.tab.man_extras.label.noclip=Noclip?
+
+inventory.armourers_workshop:wardrobe.tab.man_offsets=Mannequin Offsets
+inventory.armourers_workshop:wardrobe.tab.man_offsets.button.sub.1=Subtract 1/16
+inventory.armourers_workshop:wardrobe.tab.man_offsets.button.sub.2=Subtract 1/8
+inventory.armourers_workshop:wardrobe.tab.man_offsets.button.sub.3=Subtract 1
+inventory.armourers_workshop:wardrobe.tab.man_offsets.button.add.1=Add 1/16
+inventory.armourers_workshop:wardrobe.tab.man_offsets.button.add.2=Add 1/8
+inventory.armourers_workshop:wardrobe.tab.man_offsets.button.add.3=Add 1
 
 
 # Mannequin
-inventory.armourers_workshop:mannequin.label.headRotation=Head Rotation
-inventory.armourers_workshop:mannequin.label.leftArmRotation=Left Arm Rotation
-inventory.armourers_workshop:mannequin.label.rightArmRotation=Right Arm Rotation
-inventory.armourers_workshop:mannequin.label.leftLegRotation=Left Leg Rotation
-inventory.armourers_workshop:mannequin.label.rightLegRotation=Right Leg Rotation
-inventory.armourers_workshop:mannequin.label.isChild=Child Model?
-inventory.armourers_workshop:mannequin.label.isExtraRenders=Extra Renders?
-inventory.armourers_workshop:mannequin.label.isFlying=Flying?
-inventory.armourers_workshop:mannequin.label.isVisible=Visible?
-inventory.armourers_workshop:mannequin.label.noclip=Noclip?
-inventory.armourers_workshop:mannequin.random=Random
-inventory.armourers_workshop:mannequin.reset=Reset
-inventory.armourers_workshop:mannequin.dropdown.user=User
-inventory.armourers_workshop:mannequin.dropdown.url=URL
-inventory.armourers_workshop:mannequin.set=Set
-inventory.armourers_workshop:mannequin.selectSkin=Select Skin
-inventory.armourers_workshop:mannequin.selectHair=Select Hair
-inventory.armourers_workshop:mannequin.autoSkin=Auto Skin
-inventory.armourers_workshop:mannequin.autoHair=Auto Hair
-inventory.armourers_workshop:mannequin.tab.inventory=Inventory
-inventory.armourers_workshop:mannequin.tab.rotations=Rotations
-inventory.armourers_workshop:mannequin.tab.offset=Offset
-inventory.armourers_workshop:mannequin.tab.skinAndHair=Skin & Hair Color
-inventory.armourers_workshop:mannequin.tab.name=Name
-inventory.armourers_workshop:mannequin.tab.extraRenders=Extra Renders
-
-
-# Global Skin Library
-inventory.armourers_workshop:global-skin-library.invalidJava=[Java %d Update %d] is too old. Please update to [Java 8 Update 101] or newer.
+inventory.armourers_workshop:mannequin.label.update=This mannequin is using an old format and needs to be updated. Press the button below to update the mannequin to the new format.
+inventory.armourers_workshop:mannequin.button.update=Update
 
 
 # Global Skin Library (Header)
@@ -492,7 +569,10 @@ inventory.armourers_workshop:global-skin-library.header.favourites=Favorites
 inventory.armourers_workshop:global-skin-library.header.myFiles=My Files
 inventory.armourers_workshop:global-skin-library.header.uploadSkin=Upload Skin
 inventory.armourers_workshop:global-skin-library.header.uploadSkinBan=You are banned from upload skins
-inventory.armourers_workshop:global-skin-library.header.joinBeta=Join Beta
+inventory.armourers_workshop:global-skin-library.header.join=Join
+inventory.armourers_workshop:global-skin-library.header.moderation=Moderation
+inventory.armourers_workshop:global-skin-library.header.info=Info
+inventory.armourers_workshop:global-skin-library.header.my_profile=My Profile
 
 
 # Global Skin Library (Search Box)
@@ -504,7 +584,8 @@ inventory.armourers_workshop:global-skin-library.searchBox.search=Search
 inventory.armourers_workshop:global-skin-library.home.showAllSkins=Show All Skins
 inventory.armourers_workshop:global-skin-library.home.recentlyUploaded=Recently Uploaded
 inventory.armourers_workshop:global-skin-library.home.mostDownloaded=Most Downloaded
-inventory.armourers_workshop:global-skin-library.home.mostLikes=Most Likes
+inventory.armourers_workshop:global-skin-library.home.topRated=Top Rated
+inventory.armourers_workshop:global-skin-library.home.needRated=Need Rated
 
 
 # Global Skin Library (Search Results)
@@ -513,6 +594,7 @@ inventory.armourers_workshop:global-skin-library.searchResults.small=Small
 inventory.armourers_workshop:global-skin-library.searchResults.medium=Medium
 inventory.armourers_workshop:global-skin-library.searchResults.large=Large
 inventory.armourers_workshop:global-skin-library.searchResults.label.searching=Searching...
+inventory.armourers_workshop:global-skin-library.searchResults.label.no_results=No results found.
 
 
 # Global Skin Library (Skin Info)
@@ -528,6 +610,10 @@ inventory.armourers_workshop:global-skin-library.skinInfo.downloads=Downloads: %
 inventory.armourers_workshop:global-skin-library.skinInfo.likes=Likes: %d
 inventory.armourers_workshop:global-skin-library.skinInfo.author=Author:
 inventory.armourers_workshop:global-skin-library.skinInfo.description=Description:
+inventory.armourers_workshop:global-skin-library.skinInfo.button.report_skin=Report Skin...
+inventory.armourers_workshop:global-skin-library.skinInfo.dialog.report_skin.title=Report Skin
+inventory.armourers_workshop:global-skin-library.skinInfo.dialog.report_skin.optional_message=Optional message...
+inventory.armourers_workshop:global-skin-library.skinInfo.dialog.report_skin.label.report_warning=!!! Warning !!! - Your account may be permanently ban from the global libray if you abuse the report system.
 
 
 # Global Skin Library (Upload)
@@ -539,20 +625,23 @@ inventory.armourers_workshop:global-skin-library.upload.enterTags=Enter tags
 inventory.armourers_workshop:global-skin-library.upload.skinDescription=Skin Description:
 inventory.armourers_workshop:global-skin-library.upload.enterDescription=Enter description
 inventory.armourers_workshop:global-skin-library.upload.buttonUpload=Upload Skin
+inventory.armourers_workshop:global-skin-library.upload.label.upload_warning=!!! Warning !!! - Your account may be permanently ban from the global libray if you upload content that is against the rules.
 
 
-# Global Skin Library (Beta - Will be removed later).
-inventory.armourers_workshop:global-skin-library.joinBeta.name=Join Beta
-inventory.armourers_workshop:global-skin-library.joinBeta.enterBetaCode=Enter beta code
-inventory.armourers_workshop:global-skin-library.joinBeta.closedBeta=Uploading to the global skin library is currently in closed beta. Enter your beta code if you have one, otherwise please check back later.
-inventory.armourers_workshop:global-skin-library.joinBeta.buttonJoinBeta=Join Beta
-inventory.armourers_workshop:global-skin-library.joinBeta.betaCode=Beta Code:
-inventory.armourers_workshop:global-skin-library.joinBeta.checkCode=Checking beta code.
-inventory.armourers_workshop:global-skin-library.joinBeta.codeInvalid=Code invalid.
-inventory.armourers_workshop:global-skin-library.joinBeta.joiningBeta=Joining beta.
-inventory.armourers_workshop:global-skin-library.joinBeta.joinedFailed=Failed to join beta.
-inventory.armourers_workshop:global-skin-library.joinBeta.joinedBeta=Successfully joined beta.
-inventory.armourers_workshop:global-skin-library.upload.closedBetaWarning=Warning all skins uploading during the closed beta will be wiped when the beta ends.
+# Global Skin Library (Join)
+inventory.armourers_workshop:global-skin-library.join.name=Join
+inventory.armourers_workshop:global-skin-library.join.old_java=&cYour java version is too old to join the global skin library&r\n\nYour java version [Java %d Update %d] is too old. Please update to [Java 8 Update 101] or newer.\n\nPlease check the FAQ for help fixing this issue.\n%s\n\nThere is also a video guide to help fix this issue.\n%s
+inventory.armourers_workshop:global-skin-library.join.message_1.title=Welcome
+inventory.armourers_workshop:global-skin-library.join.message_1.text=Here you can join the Armourer's Workshop global skin library. Joining the global library will allow you to:\n* upload your creations\n* fill out your profile\n* rate skins\n* create lists of skins\n* earn badges\n\nPlease read each page of the rules carefully. ignorance of the rules is not an excuse if you get banned.\n\nClick the arrow on the buttom right to go to the next page.
+inventory.armourers_workshop:global-skin-library.join.message_2.title=Rules
+inventory.armourers_workshop:global-skin-library.join.message_2.text=The global library has a 3 strike rule, if you get 3 strikes your account will be permanently ban from uploading to the global library.\n\n1. Do not upload other peoples work without their permission.\n2. Do not abuse the report system.\n3. Do not upload loads of coloured versions of the same model. (use dyes)\n4. Do not upload adult content (sexual, drug use, etc)\n5. Do not upload illegal content.\n
+inventory.armourers_workshop:global-skin-library.join.message_3.title=Derivative Works
+inventory.armourers_workshop:global-skin-library.join.message_3.text=Derivative works are allowed on the global library. Please make sure any skins you upload from others are heavily edited and credited.\n\nBasic edits like recolours or settings changes are not allowed.
+inventory.armourers_workshop:global-skin-library.join.message_4.title=Account Requirements
+inventory.armourers_workshop:global-skin-library.join.message_4.text=Please note that you must have a legitimate Minecraft account to join. This is to help with moderation and prevent spammers.
+inventory.armourers_workshop:global-skin-library.join.message_5.title=All Done
+inventory.armourers_workshop:global-skin-library.join.message_5.text=Ready to join? Click the button below to join the community!\n\nIf you have any issues joining please come by the Discord server for help.\n%s
+inventory.armourers_workshop:global-skin-library.join.button.join=Join
 
 
 # Global Skin Library (User Skins)
@@ -572,6 +661,23 @@ inventory.armourers_workshop:global-skin-library.edit.buttonDelete=Delete Skin
 inventory.armourers_workshop:global-skin-library.edit.dialog.delete.title=Delete Skin
 inventory.armourers_workshop:global-skin-library.edit.dialog.delete.ok=OK
 inventory.armourers_workshop:global-skin-library.edit.dialog.delete.cancel=Cancel
+
+
+# Global Skin Library (Info)
+inventory.armourers_workshop:global-skin-library.panel.info.name=Info
+inventory.armourers_workshop:global-skin-library.panel.info.total_skins=Total skins uploaded: %d
+inventory.armourers_workshop:global-skin-library.panel.info.download_count=Downloads last (hour %d) (day %d) (week %d).
+inventory.armourers_workshop:global-skin-library.panel.info.loading=Loading...
+inventory.armourers_workshop:global-skin-library.panel.info.error_getting_stats=Error getting stats:
+inventory.armourers_workshop:global-skin-library.panel.info.links=Links
+inventory.armourers_workshop:global-skin-library.panel.info.link.discord=Discord:
+inventory.armourers_workshop:global-skin-library.panel.info.link.github=GitHub:
+inventory.armourers_workshop:global-skin-library.panel.info.link.reddit=Reddit:
+inventory.armourers_workshop:global-skin-library.panel.info.link.donation=Thank you for using Armourer's Workshop, if you want to help please consider donating to cover running cost of the global library.
+
+
+# Global Skin Library (Info)
+inventory.armourers_workshop:global-skin-library.panel.profile.name=%s's Profile
 
 
 # Hologram Projector
@@ -616,6 +722,7 @@ chat.armourers_workshop:linkingTool.start=Started linking.
 chat.armourers_workshop:linkingTool.finish=Link created.
 chat.armourers_workshop:linkingTool.fail=Linking failed.
 chat.armourers_workshop:linkingTool.linkedToSkinnable=Can not link two skin blocks together.
+chat.armourers_workshop:mobends.warn=Incompatible mods Mo' Bends and Armourer's Workshop are installed, please remove one or the other. THIS BUG CAN NOT BE FIXED DO NOT REPORT IT.
 
 
 # Death Messages
@@ -623,22 +730,26 @@ death.attack.victorious=%1$s was stabbed to death by Vic's crown.
 
 
 # Commands
-commands.armourers.usage=/armourers <adminPanel | clearModelCache | clearSkins | exportSkin | giveSkin | resyncWardrobe | setItemSkinnable | setSkin | setUnlockedWardrobeSlots | setWardrobeOption>
-commands.armourers.clearModelCache.usage=/armourers clearModelCache <player>
-commands.armourers.clearSkins.usage=/armourers clearSkins <player>
-commands.armourers.exportSkin.usage=/armourers exportSkin <file format> "<file name>" [scale]
-commands.armourers.giveSkin.usage=/armourers giveSkin <player> "<skin name>" [<dyeIndex-R,G,B[-paintType]> | <dyeIndex-0xRRGGBB[-paintType>]]
-commands.armourers.resyncWardrobe.usage=/armourers resyncWardrobe <player>
-commands.armourers.setItemSkinnable.usage=/armourers setItemSkinnable <skintype> <add|remove>
-commands.armourers.setSkin.usage=/armourers setSkin <player> <slot id> "<skin name> [<dyeIndex-R,G,B[-paintType]> | <dyeIndex-0xRRGGBB[-paintType>]]
-commands.armourers.setUnlockedWardrobeSlots.usage=/armourers setUnlockedWardrobeSlots <player> <skin type> <amount 1-8>
-commands.armourers.setWardrobeOption.usage=/armourers setWardrobeOption <player> <showHeadArmour | showChestArmour | showLegArmour | showFootArmour | showHeadOverlay> <true | false>
+commands.armourers_workshop:armourers.usage=/armourers <admin_panel | clear_cache | export_skin | give_skin | open_folder | set_item_skinnable | wardrobe>
+commands.armourers_workshop:armourers.clear_cache.usage=/armourers clear_cache <client | server> [player if client]
+commands.armourers_workshop:armourers.export_skin.usage=/armourers export_skin <file format> "<file name>" [scale]
+commands.armourers_workshop:armourers.give_skin.usage=/armourers give_skin <player> "<skin name>" [<dyeIndex-R,G,B[-paintType]> | <dyeIndex-0xRRGGBB[-paintType>]]
+commands.armourers_workshop:armourers.set_item_skinnable.usage=/armourers set_item_skinnable <skintype> <add|remove>
+commands.armourers_workshop:armourers.wardrobe.usage=/armourers wardrobe <clear_skin | clear_skins | resync | set_colour | set_option | set_skin | set_unlocked_slots>
+commands.armourers_workshop:armourers.wardrobe.clear_skin.usage=/armourers wardrobe clear_skin <player> <skin type> <slot id>
+commands.armourers_workshop:armourers.wardrobe.clear_skins.usage=/armourers wardrobe clear_skins <player>
+commands.armourers_workshop:armourers.wardrobe.resync.usage=/armourers wardrobe resync <player>
+commands.armourers_workshop:armourers.wardrobe.set_colour.usage=/armourers wardrobe set_colour <player> <extra colour type> [<R,G,B> | <0xRRGGBB>]
+commands.armourers_workshop:armourers.wardrobe.set_option.usage=/armourers wardrobe set_option <player> <showHeadArmour | showChestArmour | showLegArmour | showFootArmour | showHeadOverlay> <true | false>
+commands.armourers_workshop:armourers.wardrobe.set_skin.usage=/armourers wardrobe set_skin <player> <slot id> <"skin name"> [<dyeIndex-R,G,B[-paintType]> | <dyeIndex-0xRRGGBB[-paintType>]]
+commands.armourers_workshop:armourers.wardrobe.set_unlocked_slots.usage=/armourers wardrobe set_unlocked_slots <player> <skin type> <count>
 commands.armourers.fileNotFound=The file %1$s was not found.
 commands.armourers.invalidDyeFormat=%1$s is not a valid dye format.
 
 
 # Creative tab
-itemGroup.armourers_workshop=Armourer's Workshop
+itemGroup.armourers_workshop_main=Armourer's Workshop - Main
+itemGroup.armourers_workshop_painting_tools=Armourer's Workshop - Building
 
 
 # Keybindings
