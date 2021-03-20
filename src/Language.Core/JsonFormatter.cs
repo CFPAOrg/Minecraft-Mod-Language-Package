@@ -31,7 +31,10 @@ namespace Language.Core {
                 _writer.Dispose();
             }
             catch {
-                File.WriteAllText($"{Directory.GetCurrentDirectory()}/broken/{_modName}.json",builder.ToString());
+                if (!Directory.Exists($"{Directory.GetCurrentDirectory()}/broken")) {
+                    Directory.CreateDirectory($"{Directory.GetCurrentDirectory()}/broken");
+                }
+                File.WriteAllText($"{Directory.GetCurrentDirectory()}/broken/{_modName}{DateTime.UtcNow.Millisecond}.json",builder.ToString());
             }
         }
     }
