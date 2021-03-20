@@ -43,6 +43,13 @@ namespace Packer
                 }
                 var domain = asset.domainName;
                 var name = asset.name;
+                if (!domain.IsDomainValid(config))
+                {
+                    // 检查 asset-domain 并非下层的 namespace
+                    // 此处去除掉由于少掉一层文件夹导致的打包问题，需要自行查看日志后修复
+                    Log.Warning("检测到错误的 asset-domain（{0}），mod 名：{1}。跳过该项", domain, name);
+                    continue;
+                }
                 if (config.ModBlackList.Contains(name))
                 {
                     Log.Information("跳过了黑名单中的 mod：{0}（asset-domain：{1}", name, domain);
