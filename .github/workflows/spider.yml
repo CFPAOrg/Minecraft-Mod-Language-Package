@@ -36,18 +36,33 @@ jobs:
       - name: Run spider
         run: .\Spider
 
-      - name: Commit files
-        run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git pull
-          git commit -m "Update file" -a
+      # - name: Commit files
+      #   run: |
+      #     ri .\Spider.exe -Force
+      #     git config http.sslVerify false
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "actions@users.noreply.github.com"
+      #     git pull origin HEAD:${{ github.ref }}
+      #     git add .
+      #     git commit -m "Update file"
+      #     git push origin HEAD:${{ github.ref }}
 
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+      - name: Commit report
+        run: |
+          $ErrorActionPreference ='Continue'
+          ri .\Spider.exe -Force
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'actions@users.noreply.github.com'
+          git add .
+          git commit -m "Update file"
+          git push origin HEAD:${{ github.ref }}
+        shell: pwsh
+
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: ${{ github.ref }}
 
       # - name: Push  to github
       #   if: ${{github.event}} == 'push'
