@@ -1,0 +1,21 @@
+{
+	"name": "Schematics",
+	"icon": "minecraft:filled_map",
+	"category": "7_about_the_mod",
+	"pages": [
+		{
+			"type": "text",
+			"text": "The $(item)mod$() uses a custom schematic format to save ships. This custom format enables support for containers (tile entities) and off-the-world data like cables or air simulation.$(br2)This custom format is modpack independant: you can transfer schematics from one world or modpack to another. This works also when upgrading Minecraft version."
+		},
+		{
+			"type": "text",
+			"text": "When restoring a schematic, the mod also supports $(item)WorldEdit$() region format (not a world schematic, just a region), and $(item)Sponge$() format. However, due to those formats' limitations, containers like chests or computers will be empty."
+		},
+		{
+			"type": "text",
+			"title": "Data fixer",
+			"text": "When restoring a schematic, invalid block ids, including missing blocks, will be replaced by air. To prevent that, you can update the $(item)DataFixer.yml$() configuration file to convert those blocks. You can even replace a missing mod by another. This won't convert items, nor internal data, but it still gives you the general shape of the ship."
+		}
+	],
+	"sortnum": 1
+}

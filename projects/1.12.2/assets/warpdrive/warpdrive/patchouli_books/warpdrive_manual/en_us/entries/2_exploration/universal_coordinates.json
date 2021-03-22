@@ -1,0 +1,31 @@
+{
+	"name": "Universal coordinates",
+	"icon": "minecraft:filled_map",
+	"category": "2_exploration",
+	"pages": [
+		{
+			"type": "text",
+			"title": "Universal coordinates",
+			"text": "A $(item)Star system$() is a space dimension connecting multiple planets. A $(item)Galaxy$() is an hyperspace dimension linking multiple star systems.$(br2)In the same galaxy, all objects can be located by their $(item)Universal Coordinates$(): from your local position on a planet, you can deduce your local position in orbit (space), higher (hyperspace), and vice versa."
+		},
+		{
+			"type": "text",
+			"text": "$(item)Universal coordinates$() are defined relative to an hyperspace dimension. In other words, for a given position, universal coordinates remains the same whatever your current dimension is.$(br2)Practically, this means X & Z coordinates are taken from hyperspace, while Y is$(li)0 to 255 for planet,$(li)256 to 511 for space,$(li)512 to 767 for hyperspace."
+		},
+		{
+			"type": "text",
+			"title": "World Border",
+			"text": "Each celestial object has its own limited size, and related $(item)world border$(). Ships can't move through it. Unlike the vanilla border, bypassing entities will be pulled pulled back in, or die instantly if they go too far.$(br2)Since planets have a limited size, we can translate between Local and Universal coordinates, allowing you to navigate around and explore the vastness of space."
+		},
+		{
+			"type": "text",
+			"text": "Sadly, as we go further away from the center of a dimension (0 0), bad things starts happening around 220km including entity jerky motion, damage and eventually death by suffocation. To account for this, hyperspace should cap at 400 km size (or 200 km radius). You should watch $(l:https://youtu.be/v6-IAntqg5w)AntVenom panel$(/l) to learn more about this.$(br2)For server owners, world borders allow to drastically reduce disk space usage."
+		},
+		{
+			"type": "text",
+			"title": "Hints",
+			"text": "When adding WarpDrive to an existing map, Vanilla world border will be automatically expanded to account for Universal coordinates. However, your existing base might be outside the default planets definition, in which case, consider changing earth offset to be around your base."
+		}
+	],
+	"sortnum": 2
+}
