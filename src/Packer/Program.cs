@@ -127,6 +127,7 @@ namespace Packer
                 }
             }
             Log.Information("打包结束");
+            stream.Close();
             var md5 = new MD5CryptoServiceProvider();
             var hash = md5.ComputeHash(await File.ReadAllBytesAsync(".\\Minecraft-Mod-Language-Package.zip"));
             var md5Str = Convert.ToString(hash);
