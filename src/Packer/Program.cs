@@ -129,7 +129,7 @@ namespace Packer
             Log.Information("打包结束");
             var md5 = new MD5CryptoServiceProvider();
             var hash = await md5.ComputeHashAsync(stream);
-            var md5Str = Convert.ToString(hash);
+            var md5Str = Convert.ToBase64String(hash);
             await File.WriteAllTextAsync($"./{config.Version}.md5",md5Str);
         }
     }
