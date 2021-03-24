@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -126,6 +127,10 @@ namespace Packer
                 }
             }
             Log.Information("打包结束");
+            var md5 = new MD5CryptoServiceProvider();
+            var hash = md5.ComputeHash(await File.ReadAllBytesAsync(".\\Minecraft-Mod-Language-Package.zip"));
+            var md5Str = Convert.ToString(hash);
+            await File.WriteAllTextAsync($"./{config.Version}.md5",md5Str);
         }
     }
 }
