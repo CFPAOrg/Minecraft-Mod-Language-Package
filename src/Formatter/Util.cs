@@ -54,10 +54,13 @@ namespace Formatter {
                         Log.Debug("添加空行");
                     }
 
-                    if (commentReg.IsMatch(str)) {
+                    
+                    if (str.StartsWith("#")) {
                         ls.Add(str);
                         Log.Debug("添加规范注释");
                     }
+                        
+                    
 
                     if (findEqual.IsMatch(str)) {
                         if (keyReg.IsMatch(str)) {
@@ -220,7 +223,7 @@ namespace Formatter {
                                     var line = str;
                                     foreach (var key in map.Keys) {
                                         var skey = key as string;
-                                        line = line.Replace(skey, Regex.Unescape(map[skey] as string));
+                                        line = line.Replace(skey, map[skey] as string);
                                     }
 
                                     replaced.Add(line);
