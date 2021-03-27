@@ -190,7 +190,6 @@ jei.ironbackpacks.addUpgradeRecipe.name=Add Upgrades
 jei.description.addUpgrade=To add an upgrade, simply craft it with the desired backpack in a crafting grid.
 jei.description.addUpgrade.additional=The backpack must be a high enough tier, have enough upgrade points available, and meet any §2special cases§r to accept the upgrade.
 jei.description.addUpgrade.specialConditions=If the upgrade is configurable, you must have enough space for another configurable upgrade. \
-Also, the upgrade must not conflict with any already applied.
 
 # Recipe Localizations (Remove Upgrade)
 jei.ironbackpacks.removeUpgradeRecipe.name=Remove Upgrades
@@ -198,7 +197,6 @@ jei.description.removeUpgrade.slot1=§2Location
 jei.description.removeUpgrade.slot2=§2Dependent
 jei.description.removeUpgrade=To remove an upgrade, place the desired backpack in the correct slot of the crafting grid.
 jei.description.removeUpgrade.locationDependent=The slot the backpack is in corresponds to the upgrade removed. \
-For example, if it is in the first slot it will remove the first upgrade, the second slot the second upgrade, etc.
 jei.description.removeUpgrade.additional=The upgrade will be returned to you when you pick up the backpack; it will be placed back in the crafting grid.
 
 # Recipe Localizations (Increase Tier)
@@ -211,18 +209,11 @@ jei.description.increaseTier.tooltip=Note that when upgrading to a new tier you 
 ###############################
 
 jei.description.backpack.generic=\
-To access the backpack's inventory, simply right click the item. Some upgrades, including the inbuilt ability of renaming backpacks, can be configured. \
-The way to open up this configurable inventory is to simply shift right click the backpack.\n\
-Every backpack can also be equipped by use of a 'equip backpack' hotkey (default 'v'), and will render a backpack on the player. \
-To open this backpack, use the 'open backpack' hotkey (default 'c'), this also works with the configurable inventory.\n\
-When altering a backpack (either by adding or removing an upgrade or by increasing it's tier), note that all the data of the backpack will be saved (i.e. items in the backpack, other upgrades, etc).\n\n\n\
-Finally, a nifty feature is that when you have the inventory for any backpack open, by simply right clicking on a different backpack in your inventory you can directly open that backpack's inventory!
 
 jei.description.backpack.storage=As you have chosen this backpack to specialize in storage it will have a lot of inventory space, at the cost of less upgrade points. This emphasis is best for storing items (as opposed to manipulating them).\n \n
 jei.description.backpack.upgrade=As you have chosen this backpack to specialize in upgrades it will have a lot of upgrade points, at the cost of less raw inventory space. This emphasis is best for manipulating items (as opposed to storing them).\n \n
 
 jei.description.backpack.basic=The most basic of all the backpacks, it can store a limited number of items and has a small amount of upgrade points. \
-When upgrading this backpack you must make the important decision of deciding to prioritize either upgrade points or raw storage.
 jei.description.backpack.iron=The main tier of backpack, more upgrades (but not all) are now available to be applied. More space is now available to store more items as well.\n \n \n \n \n
 jei.description.backpack.gold=The penultimate tier of backpack, with even more storage space and upgrade points.\n \n \n \n \n \n
 jei.description.backpack.diamond=The highest tier of backpack, able to apply any upgrade (assuming you have the upgrade points for it).\n \n \n \n \n \n
@@ -234,73 +225,29 @@ jei.description.backpack.diamond=The highest tier of backpack, able to apply any
 #IUpgrades
 jei.description.upgrade.additionalUpgradePoints=This upgrade adds additional upgrade points to the backpack so you can put more upgrades on. It can only be applied as many times as the tooltip on the backpack indicates.
 jei.description.upgrade.button=This upgrade adds 4 buttons to the default inventory and a variable number of buttons to the configurable which respectively perform these actions:\n \n \n \n\
-Moves everything from the backpack to your inventory. \n \n\
-Moves everything from your inventory (the slots above your hot-bar) to the backpack. \n \n\
-Moves everything from your hot-bar to the backpack. \n \n\
-Sorts the backpack (condenses each stack of items and rearranges the backpack according to each item's ID). \n \n\
-Adds buttons to each category in the configurable inventory which quickly clears the items in the category of the respective button.
 jei.description.upgrade.damageBar=This upgrades adds a damage bar to the backpack which reflects how full it is (in regards to it's total capacity), meaning that you can simply glance down at the \
-backpack to get a quick visual representation of how much space you have left. The level of fullness is representative of the total storage, not just the total slots used (so if it is "full" \
-of items that have a stack size of 1 (with a maximum stack size of 64), the damage bar will not be fooled into thinking that the backpack is really full).
 jei.description.upgrade.depth=This upgrade allows other backpacks's configurable upgrades to still function when they are nested inside a backpack with this upgrade. \
-For example, say you had an Iron Backpack (with a mining filter upgrade) inside of a Gold Backpack (with a nesting upgrade obviously), and you had the gold backpack equipped. \
-Then, when you picked up an ore it would go directly into your Iron Backpack (even though it is already nested inside your Gold Backpack). \
-This only works with one level of nesting (i.e. you couldn't put another backpack inside the Iron Backpack and have that one pick items up). \
-It also works with nested backpacks that have the quick deposit or restocking upgrades.
 jei.description.upgrade.eternity=This upgrade allows you to keep the backpack and all of it's contents when you die. \
-However, the upgrade will disappear after it is used, you will have to make and apply a new one if you want to keep the effect for the next time you die.
 jei.description.upgrade.renaming=This upgrade will add a bar in the configurable inventory where you can type in a new name for the backpack and then rename it (much like in an anvil).
 
 #IConflictingUpgrades
 jei.description.upgrade.conflicting=This upgrade has other upgrades that cannot be simultaneously applied alongside it, so keep that in mind when trying to apply it. \
-For example, you cannot have both a Nesting Upgrade and an Advanced Nesting Upgrade on the same backpack.
 jei.description.upgrade.nesting=This upgrade allows you to place backpacks of any previous tier inside this backpack. \
-Recall that you can right click any backpack while you have the inventory of any other backpack open to directly open the one you clicked on.
 jei.description.upgrade.nestingAdvanced=This upgrade allows you to place backpacks of any tier inside this backpack. \n\
-Recall that you can right click any backpack while you have the inventory of any other backpack open to directly open the one you clicked on.
 jei.description.upgrade.quickDeposit=This upgrade allows the player to shift right click on any inventory to deposit the contents of the backpack directly into said inventory. \
-For example, you can come home with a backpack brimming with items after a mining trip, and instead of manually clicking the items into your (sorting) chest you can just shift right click \
-the backpack's items into the chest. \n \n \n \n \n \n
 jei.description.upgrade.quickDepositPrecise=This upgrade allows the player to shift right click on any inventory to deposit the contents of the backpack directly into said inventory, but the items \
-will only be transferred if they already exist in the targeted inventory. \
-For example, if you have an ores chest and you use this upgrade, only the ores already in the chest will be deposited from the backpack for a convenient but basic sorting mechanism. \n \n \n \n
 
 #IConfigurableUpgrades
 jei.description.upgrade.configurable=This upgrade is one that adds to the configurable inventory (accessed by shift-right clicking), and it adds a variable number of slots for items to be placed in. \
-The items in this inventory are ghost items; they are not consumed and they cannot be used for anything else. Simply right click with an item over the slot to add it to the desired slot. \
-Whenever you pick up an item this item (and any on the same row of slots, i.e. the same upgrade) will then be checked and the unique upgrade's effects will occur for items like the ones specified.
 jei.description.upgrade.crafting=This upgrade adds the effect that each item in its slots will try to crafted into a new resulting item (which will be placed in the backpack). \
-This upgrade specifically simulates the item(s) specified being placed 3x3 in a crafting grid, so completely full, and looking for the result. \
-For example, if you have redstone in the crafting slot, and 64 redstone in your backpack, when you pick up an item you will now have 7 blocks of redstone and 1 (leftover) redstone and in your backpack. \
-This upgrade will sort your backpack after it condenses an item. \
-Since this upgrade occurs only when an item goes into the backpack it needs a filter upgrade to work. \
-It also works fine with the restocking upgrade.
 jei.description.upgrade.craftingSmall=This upgrade adds the effect that each item in its slots will try to crafted into a new resulting item (which will be placed in the backpack). \
-This upgrade specifically simulates the item(s) specified being placed 2x2 in a crafting grid and looking for the result. \
-For example, if you have sand in the crafting slot, and 64 sand in your backpack, when you pick up an item you will now have 16 blocks of sandstone in your backpack. \
-This upgrade will sort your backpack after it condenses an item. \
-Since this upgrade occurs only when an item goes into the backpack it needs a filter upgrade to work. \
-It also works fine with the restocking upgrade.
 jei.description.upgrade.craftingTiny=This upgrade adds the effect that each item in its slots will try to crafted into a new resulting item (which will be placed in the backpack). \
-This upgrade specifically simulates the item(s) specified being placed 1x1 in a crafting grid, so simply crafting it by itself, and looking for the result. \
-For example, if you have an oak log in the crafting slot, and 16 oak logs in your backpack, when you pick up an item you will now have 64 oak planks in your backpack. \
-This upgrade will sort your backpack after it condenses an item. \
-Since this upgrade occurs only when an item goes into the backpack it needs a filter upgrade to work. \
-It also works fine with the restocking upgrade.
 jei.description.upgrade.filter.generic=This is a filter upgrade, meaning that you can put items in the filter slot of the configurable inventory, and when that item is picked up it will be placed \
-directly in your backpack (instead of just going into your main inventory). There are special conditions for each filter.
 jei.description.upgrade.filter.basic=\nThe item(s) in the filter slot(s) must exactly match the item being picked up. \n \n
 jei.description.upgrade.filter.fuzzy=\nThe item(s) in the filter slot(s) can have different damage values and can still be picked up. \n \n
-For example, if you specify an iron sword, any iron sword, regardless of durability, will go straight into the backpack. \n
 jei.description.upgrade.filter.oreDict=\nThe item(s) in the filter slot(s) can match by the ore dictionary and can still be picked up. \
-For example, you can place an oak log in the slot, and any log you pick up, regardless of type of wood, will go straight into the backpack. \n \n
 jei.description.upgrade.filter.modSpecific=\nThe item(s) in the filter slot(s) can match simply by being in the same mod. \
-For example, if you place a yellow flower from Botania in the slot, any item from Botania that you pick up will go straight into the backpack. \n \n
 jei.description.upgrade.filter.void=\nThe item(s) in the filter slot(s) will be DELETED when they are picked up. This upgrade matches by fuzzy detection, so damage values are ignored. \n \n
 jei.description.upgrade.filter.advanced=\nThe item(s) in the filter slot(s) are configurable between exact, fuzzy, ore dictionary, mod specific, and void detection. \n\
-Simply click the button underneath the desired slot to rotate through the options. \
-This upgrade has 18 slots instead of 9 to filter from, you can get to them by either pressing the buttons on either side, or hovering your mouse over any slot and using the scroll wheel. \n \n
 jei.description.upgrade.filter.mining=\nThis upgrade automatically picks up and ores, gems, or dust, and places it directly in the backpack. \
-There are 9 slots as well that act lke the basic filter, so you can specify items like cobblestone and gravel to be picked up while on a long mining expedition. \n \n
 jei.description.upgrade.restocking=This upgrade will allow whatever is placed in its slots to refill the player's inventory from the backpack's supply. \
-For example, if you put a piece of steak in the slot, whenever you eat a piece of steak the stack in your inventory will be refilled from the backpack (assuming it has steak). \n \n
