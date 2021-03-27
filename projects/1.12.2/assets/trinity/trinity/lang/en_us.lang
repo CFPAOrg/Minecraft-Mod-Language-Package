@@ -1,6 +1,6 @@
 #Items 
 item.trinity.u233_pit.name=Subcritical Uranium-233 Sphere
-item.trinity.u235_pit.name=Subcritical Uranium-235 Sphere
+item.trinity.u235_pit.name=Subcritical Uranium-235 Spheres
 item.trinity.np237_pit.name=Subcritical Neptunium-237 Sphere
 item.trinity.pu239_pit.name=Subcritical Plutonium-239 Sphere
 item.trinity.am242_pit.name=Subcritical Americium-242 Sphere
@@ -11,14 +11,21 @@ item.trinity.cf251_pit.name=Subcritical Californium-251 Sphere
 item.trinity.gem_witherite.name=Witherite
 item.trinity.gem_dust_witherite.name=Crushed Witherite
 item.trinity.barium.name=Barium Dust
-item.trinity.compound_barium_nitrate.name=Barium Nitrate
 item.trinity.compound_barium_oxide.name=Barium Oxide
-item.trinity.compound_lithium_deuteride.name=Lithium-6 Deuteride
+item.trinity.compound_barium_nitrate.name=Barium Nitrate
+item.trinity.compound_lithium_deuteride.name=Lithium Deuteride
 item.trinity.detonator.name=Nuclear Detonator
 item.trinity.trinitite_shard.name=Trinitite Shard
 item.trinity.neutron_initiator.name=Polonium-Beryllium Neutron Initiator
+item.trinity.dust_au_198.name=Gold-198 Dust
+item.trinity.ingot_au_198.name=Gold-198
+item.trinity.source_au_198.name=Gold-198 Source
 
 #Blocks
+tile.trinity.light_container.name=Lightly-shielded Nuclear Pig
+tile.trinity.medium_container.name=Medium-shielded Nuclear Pig
+tile.trinity.heavy_container.name=Heavily-shielded Nuclear Pig
+
 tile.trinity.trinitite.name=Trinitite-covered Sand
 tile.trinity.radioactive_earth.name=Radioactive Wasteland Earth
 tile.trinity.radioactive_earth2.name=Highly Radioactive Wasteland Earth
@@ -29,17 +36,6 @@ tile.trinity.salted_sand2.name=Highly Radioactive Sand
 
 tile.trinity.solid_baratol.name=Baratol
 tile.trinity.compression_charge.name=Compression Charge
-tile.trinity.dirty_bomb.name=Dirty Bomb
-
-tile.trinity.core_custom_1.name=Custom Fission Bomb Core
-tile.trinity.core_custom_2.name=Custom Fission Bomb Core
-tile.trinity.core_custom_3.name=Custom Fission Bomb Core
-tile.trinity.core_custom_4.name=Custom Fission Bomb Core
-
-tile.trinity.salted_core_custom_1.name=Custom Fission Bomb Core
-tile.trinity.salted_core_custom_2.name=Custom Fission Bomb Core
-tile.trinity.salted_core_custom_3.name=Custom Fission Bomb Core
-tile.trinity.salted_core_custom_4.name=Custom Fission Bomb Core
 
 tile.trinity.core_u233.name=Uranium-233 Fission Bomb Core
 tile.trinity.core_u235.name=Uranium-235 Fission Bomb Core
@@ -50,18 +46,7 @@ tile.trinity.core_cm247.name=Curium-247 Fission Bomb Core
 tile.trinity.core_bk248.name=Berkelium-248 Fission Bomb Core
 tile.trinity.core_cf249.name=Californium-249 Fission Bomb Core
 tile.trinity.core_cf251.name=Californium-251 Fission Bomb Core
-
-tile.trinity.bomb_custom_1.name=Custom Fission Bomb
-tile.trinity.bomb_custom_2.name=Custom Fission Bomb
-tile.trinity.bomb_custom_3.name=Custom Fission Bomb
-tile.trinity.bomb_custom_4.name=Custom Fission Bomb
-
-tile.trinity.bomb_custom_1.name=Custom Salted Fission Bomb
-tile.trinity.bomb_custom_2.name=Custom Salted Fission Bomb
-tile.trinity.bomb_custom_3.name=Custom Salted Fission Bomb
-tile.trinity.bomb_custom_4.name=Custom Salted Fission Bomb
-
-tile.trinity.bomb_antimatter.name=Antimatter Bomb
+tile.trinity.thermonuclear_core_pu239.name=Thermonuclear Core
 
 tile.trinity.bomb_u233.name=Uranium-233 Fission Bomb
 tile.trinity.bomb_u235.name=Uranium-235 Fission Bomb
@@ -93,7 +78,11 @@ tile.trinity.salted_bomb_bk248.name=Salted Berkelium-248 Fission Bomb
 tile.trinity.salted_bomb_cf249.name=Salted Californium-249 Fission Bomb
 tile.trinity.salted_bomb_cf251.name=Salted Californium-251 Fission Bomb
 
-tile.trinity.thermonuclear_core_pu239.name=Thermonuclear Bomb Core
+tile.trinity.bomb_antimatter.name=Antimatter Bomb
+tile.trinity.dirty_bomb.name=Dirty Bomb
+tile.trinity.gold_bomb.name=Very Dirty Bomb
+tile.trinity.fusion_bomb.name=Pure Fusion Bomb
+tile.trinity.empty_fusion_bomb.name=Pure Fusion Bomb (Empty)
 #Fluids
 fluid.witherite_water=Witherite Water
 fluid.nitric_oxide=Nitric Oxide
@@ -102,12 +91,23 @@ fluid.nitric_acid=Nitric Acid
 fluid.barium_nitrate_solution=Barium Nitrate Solution
 fluid.tnt=Molten TNT
 fluid.baratol=Molten Baratol
+fluid.deuterium-tritium_mixture=Deuterium-Tritium Mixture
+
+tile.trinity.fluid_witherite_water.name=Witherite Water
+tile.trinity.fluid_nitric_oxide.name=Nitric Oxide
+tile.trinity.fluid_nitrogen_dioxide.name=Nitrogen Dioxide
+tile.trinity.fluid_nitric_acid.name=Nitric Acid
+tile.trinity.fluid_barium_nitrate_solution.name=Barium Nitrate Solution
+tile.trinity.fluid_deuterium-tritium_mixture.name=Deuterium-Tritium Mixture
 
 #Damage Sources
 death.attack.nuclear_explosion=%1$s was reduced to a nuclear shadow
 
 #Creative Tabs
 itemGroup.Trinity_Tab=Trinity
+
+#gui.container.nuclear_pig.name=Nuclear Pig
+container.nuclear_pig.name=Nuclear Pig 
 
 #Configs
 gui.config.nuke.u233_radius.comment=Uranium-233 Blast Radius
@@ -119,16 +119,18 @@ gui.config.nuke.cm247_radius.comment=Curium-247 Blast Radius
 gui.config.nuke.bk248_radius.comment=Berkelium-248 Blast Radius
 gui.config.nuke.cf249_radius.comment=Californium-249 Blast Radius
 gui.config.nuke.cf251_radius.comment=Californium-251 Blast Radius
-
-gui.config.nuke.antimatter_radius.comment=Antimatter Blast Radius
-gui.config.nuke.cust1_radius.comment=1st Custom Bomb Blast Radius
-gui.config.nuke.cust2_radius.comment=2nd Custom Bomb Blast Radius
-gui.config.nuke.cust3_radius.comment=3rd Custom Bomb Blast Radius
-gui.config.nuke.cust4_radius.comment=4th Custom Bomb Blast Radius
+gui.config.nuke.cust1_radius.comment=1st Custom Nuke Blast Radius
+gui.config.nuke.cust2_radius.comment=2nd Custom Nuke Blast Radius
+gui.config.nuke.cust3_radius.comment=3rd Custom Nuke Blast Radius
+gui.config.nuke.cust4_radius.comment=4th Custom Nuke Blast Radius
 gui.config.nuke.icbm_radius.comment=ICBM Nuclear Missile Blast Radius
+gui.config.nuke.antimatter_radius.comment=Antimatter Blast Radius
 gui.config.fallout.fallout_multiplier.comment=Fallout Radius Multiplier
-gui.config.fallout.fallout_rendering.comment=Enable Fallout Rendering?
+gui.config.fallout.fallout_rendering.comment=Enable Fallout Rendering
 gui.config.fallout.salted_burst.comment=Salted Bomb Initial Radiation Strength (Rads/t)
-gui.config.nuke.thermonuclear.comment=Enable thermonuclear bombs?
-gui.config.nuke.custom_nukes.comment=(FOR MODPACK USE ONLY) Enable custom fission bombs?
-gui.config.nuke.max_radius.comment=Maximum Possible Blast Radius
+gui.config.nuke.speed.comment=Fallout Block Update Speed
+gui.config.nuke.capacity.comment=Gold-198 Source Durability
+gui.config.nuke.thermonuclear.comment=Enable Thermonuclear Bombs
+gui.config.nuke.custom_nukes.comment=Enable Custom Nukes (Four differenr types available + salted versions of each type)
+
+#gui.config.fallout.fallout_rendering.comment=Enable fallout rendering?
