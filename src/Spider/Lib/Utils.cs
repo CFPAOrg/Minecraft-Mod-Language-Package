@@ -19,7 +19,7 @@ namespace Spider.Lib
         /// </summary>
         /// <param name="tuple"></param>
         /// <returns></returns>
-        public static async Task ParseMods((ModInfo, Configuration) tuple)
+        public static async Task ParseModsAsync((ModInfo, Configuration) tuple)
         {
 
             if (tuple.Item2.NonUpdate)
@@ -74,7 +74,7 @@ namespace Spider.Lib
         /// <param name="mod"></param>
         /// <param name="cfg"></param>
         /// <param name="rootPath"></param>
-        public static void ParseFiles(Mod mod, Configuration cfg, string rootPath)
+        private static void ParseFiles(Mod mod, Configuration cfg, string rootPath)
         {
             var zipArchive = new ZipArchive(File.OpenRead(mod.TempPath));
             var tmpDirectories = $"{Path.GetTempPath()}extracted\\{Path.GetFileName(mod.TempPath)}";
