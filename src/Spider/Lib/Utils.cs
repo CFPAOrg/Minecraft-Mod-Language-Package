@@ -64,7 +64,7 @@ namespace Spider.Lib
                     TempPath = path,
                 };
 
-                ParseFiles(res,cfg,$"{Directory.GetCurrentDirectory()}\\projects\\{(await JsonReader.ReadConfigAsync())[0].Version}");
+                ParseFiles(res,cfg,$"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}");
             }
         }
 

@@ -1,15 +1,14 @@
-﻿using System;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using System.Linq;
 using Renci.SshNet;
+
 using Serilog;
 
-namespace Uploader
-{
-    static class Program
-    {
-        static void Main(string[] args)
-        {
+namespace Uploader {
+    static class Program {
+        static void Main(string[] args) {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
@@ -18,27 +17,26 @@ namespace Uploader
             var pwd = args[2];
             using var scpClient = new ScpClient(host, 20002, name, pwd);
             scpClient.Connect();
-            if (scpClient.IsConnected)
-            {
+            if (scpClient.IsConnected) {
                 Log.Logger.Information("SCP服务器连接成功");
             }
-            else
-            {
+            else {
                 Log.Logger.Error("SCP服务器连接失败");
                 return;
             }
+
+            var md5s = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.md5");
+            md5s.ToList().ForEach(_ => {scpClient.Upload(File.OpenRead(_), $"/var/www/html/files/{Path.GetFileName(_)}");});
             var fs = File.OpenRead("./Minecraft-Mod-Language-Package.zip");
             scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack.zip.1");
             Log.Logger.Information("上传成功");
             scpClient.Dispose();
             using var sshClient = new SshClient(host, 20002, name, pwd);
             sshClient.Connect();
-            if (sshClient.IsConnected)
-            {
+            if (sshClient.IsConnected) {
                 Log.Logger.Information("SSH服务器连接成功");
             }
-            else
-            {
+            else {
                 Log.Logger.Error("SSH服务器连接失败");
                 return;
             }
