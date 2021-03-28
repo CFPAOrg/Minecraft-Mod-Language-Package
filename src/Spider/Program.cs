@@ -24,7 +24,7 @@ namespace Spider {
             var c = await JsonReader.ReadConfigAsync();
             foreach (var cfg in c) {
                 var parser = new InfoParser(cfg.Configuration, cfg.CustomConfigurations);
-                var root = new DirectoryInfo(
+                var root = Directory.CreateDirectory(
                     $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}\\assets");
 
                 var names = root.GetDirectories().Select(_ => _.Name).ToList();
@@ -64,7 +64,7 @@ namespace Spider {
                 foreach (var l in l1) {
                     try {
                         semaphore.WaitOne();
-                        await Utils.ParseMods(l);
+                        await Utils.ParseModsAsync(l);
                     }
                     catch (Exception e) {
                         Log.Logger.Error(e.Message);
@@ -79,7 +79,7 @@ namespace Spider {
                         var m = await UrlLib.GetModInfoAsync(dict[name]);
                         var i = parser.Serialize(m);
                         try {
-                            await Utils.ParseMods(i);
+                            await Utils.ParseModsAsync(i);
                         }
                         catch (Exception e) {
                             Log.Logger.Error(e.Message);
