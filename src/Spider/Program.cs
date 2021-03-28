@@ -64,7 +64,7 @@ namespace Spider {
                 foreach (var l in l1) {
                     try {
                         semaphore.WaitOne();
-                        await Utils.ParseModsAsync(l);
+                        await Utils.ParseModsAsync(l,cfg);
                     }
                     catch (Exception e) {
                         Log.Logger.Error(e.Message);
@@ -79,7 +79,7 @@ namespace Spider {
                         var m = await UrlLib.GetModInfoAsync(dict[name]);
                         var i = parser.Serialize(m);
                         try {
-                            await Utils.ParseModsAsync(i);
+                            await Utils.ParseModsAsync(i,cfg);
                         }
                         catch (Exception e) {
                             Log.Logger.Error(e.Message);
