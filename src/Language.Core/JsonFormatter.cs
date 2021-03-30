@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace Language.Core {
     public sealed class JsonFormatter {
@@ -25,7 +26,11 @@ namespace Language.Core {
 
             try {
                 var jsonObject = JsonSerializer.Deserialize<Dictionary<string, string>>(builder.ToString(), new JsonSerializerOptions() { AllowTrailingCommas = true, ReadCommentHandling = JsonCommentHandling.Skip });
-                var str = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions() { WriteIndented = true });
+                var dict = new Dictionary<string, string>();
+                foreach (var (key, value) in jsonObject) {
+                    dict.Add(Regex.Unescape(key),Regex.Unescape(value));
+                }
+                var str = JsonSerializer.Serialize(dict, new JsonSerializerOptions() { WriteIndented = true });
                 _writer.Write(str);
                 _writer.Close();
                 _writer.Dispose();
