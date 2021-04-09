@@ -25,6 +25,13 @@ namespace Language.Core {
             }
 
             try {
+                if (string.IsNullOrEmpty(builder.ToString())) {
+                    throw new NullReferenceException();
+                }
+
+                if (string.IsNullOrWhiteSpace(builder.ToString())) {
+                    throw new NullReferenceException();
+                }
                 var jsonObject = JsonSerializer.Deserialize<Dictionary<string, string>>(builder.ToString(), new JsonSerializerOptions() { AllowTrailingCommas = true, ReadCommentHandling = JsonCommentHandling.Skip });
                 var dict = new Dictionary<string, string>();
                 foreach (var (key, value) in jsonObject) {
