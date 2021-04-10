@@ -102,15 +102,16 @@ namespace Packer
                                 Log.Warning("检测到暂不支持合并的文件（{0}），取消合并", file.FullName);
                                 continue;
                             }
+                            string existingContent;
                             using (var reader = new StreamReader(existingFile.Open(),
                                                                 Encoding.UTF8,
                                                                 leaveOpen: false))
                             {
-                                var existingContent = await reader.ReadToEndAsync();
-                                var result = Utils.CombineLangFiles(existingContent, fileContent, file.Extension);
-                                await Utils.CreateLangFile(archive, destinationPath, result);
+                                existingContent = await reader.ReadToEndAsync();
                             }
-                            existingFile.Delete();
+                            existingFile.Delete(); // 在添加新文件前提前删除，以规避重名文件导致的问题
+                            var result = Utils.CombineLangFiles(existingContent, fileContent, file.Extension);
+                            await Utils.CreateLangFile(archive, destinationPath, result);
                             Log.Information("完成合并");
                         }
                     }
@@ -126,11 +127,12 @@ namespace Packer
                     existingDomains.Add(domain, name);
                 }
             }
-            Log.Information("打包结束");
+            Log.Information("打包结束。开始生成 md5 值");
             var md5 = new MD5CryptoServiceProvider();
             var hash = await md5.ComputeHashAsync(stream);
             var md5Str = Convert.ToBase64String(hash);
             await File.WriteAllTextAsync($"./{config.Version}.md5",md5Str);
+            Log.Information("生成结束。md5: {0}", md5Str);
         }
     }
 }
