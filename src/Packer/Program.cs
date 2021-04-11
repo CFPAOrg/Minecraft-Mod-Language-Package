@@ -130,9 +130,9 @@ namespace Packer
             Log.Information("打包结束。开始生成 md5 值");
             var md5 = new MD5CryptoServiceProvider();
             var hash = await md5.ComputeHashAsync(stream);
-            var md5Str = Convert.ToBase64String(hash);
-            await File.WriteAllTextAsync($"./{config.Version}.md5",md5Str);
-            Log.Information("生成结束。md5: {0}", md5Str);
+            var md5Hex = string.Concat(hash.Select(x => x.ToString("X2")));
+            await File.WriteAllTextAsync($"./{config.Version}.md5",md5Hex);
+            Log.Information("生成结束。md5: {0}", md5Hex);
         }
     }
 }
