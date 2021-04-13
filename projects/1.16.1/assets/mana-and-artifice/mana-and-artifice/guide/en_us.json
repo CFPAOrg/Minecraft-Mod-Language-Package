@@ -85,22 +85,7 @@
 			{
 				"type": "text",
 				"value": "Click the back behaviour tab at the bottom of this UI to change how you navigate through this codex.  There is support for changing back to a combination of escape, right mouse, and the UI buttons."
-			},			
-			{
-				"type": "image",
-				"location": "mana-and-artifice:textures/guide/hud_options.png",
-				"width": 41,
-				"height": 62,
-				"newPage": true
-			},
-			{
-				"type": "title",
-				"value": "HUD Display Option"
-			},
-			{
-				"type": "text",
-				"value": "Click the hud display tab at the bottom of this UI to change how the HUD displays. You can select always, conditionally (when you have a mana-consuming item equipped), or never."
-			},
+			},						
 			{
 				"type": "image",
 				"location": "mana-and-artifice:textures/guide/recipe_buttons.png",
@@ -138,6 +123,58 @@
 				"type": "crafting"
 			}
 		]
+	},
+	"The HUD": {
+		"category": "basics",
+		"index": -99,
+		"sections": [
+			{
+				"type": "title",
+				"value": "The HUD"
+			},			
+			{
+				"type": "title",
+				"value": "HUD Display Option"
+			},
+			{
+				"type": "text",
+				"value": "Click the hud display tab at the bottom of this UI to change how the HUD displays. You can select always, conditionally (when you have a mana-consuming item equipped), or never.\n\nIf you can't see your HUD, you've likely changed this option!"
+			},
+			{
+				"type": "image",
+				"location": "mana-and-artifice:textures/guide/hud_options.png",
+				"width": 41,
+				"height": 62
+			},			
+			{
+				"type": "title",
+				"value": "HUD Position Option",
+				"newPage": true
+			},
+			{
+				"type": "text",
+				"value": "Click the hud position tab at the bottom of this UI to change the HUD position."
+			},
+			{
+				"type": "image",
+				"location": "mana-and-artifice:textures/guide/hud_position.png",
+				"width": 41,
+				"height": 62
+			},
+			{
+				"type": "text",
+				"value": "If you see a red drop with a lightning bolt in it next to your mana, this means that you have an item in your inventory that's low on charge.",
+				"newPage": true
+			},
+			{
+				"type": "image",
+				"location": "mana-and-artifice:textures/guide/low_charge.png",
+				"width": 29,
+				"height": 36,
+				"newPage": true
+			}			
+		],
+		"related_recipes": []
 	},
 	"Manaweaving How-To": {
 		"category": "manaweaving",
@@ -487,7 +524,23 @@
 			},
 			{
 				"type": "text",
-				"value": "At a certain point in your journey through the world of the arcane, you will need to choose a faction.  This is given to you as a choice of a series of rituals to complete.\n\nChoose wisely.\n\nYour faction, once chosen, cannot be changed.  \n\nYou will also make enemies of the other two factions, causing them to send their assassins after you.  These assassins are very dangerous and you should make sure you have protective measures before joining a faction.  Raids will become more dangerous as you advance in level and tier."
+				"value": "At a certain point in your journey through the world of the arcane, you will need to choose a faction.  This is given to you as a choice of a series of rituals to complete.\n\nChoose wisely.\n\nYour faction, once chosen, cannot be changed."
+			},
+			{
+				"type": "text",
+				"value": "When you choose a faction, you make enemies out of the other ones.  Their mobs, which spawn naturally throughout the worlds where appropriate will become hostile to you.  However, your faction's mobs will come to your aid if they see you in trouble."
+			},
+			{
+				"type": "text",
+				"value": "Your faction gives you access to unique relics and spell parts that are specific to each faction.  The occulus shows these items by putting a badge representing your faction on their badges.  You cannot craft the spells and artifacts from the other factions, however you can trade for them either by doing the Ritual of the Iron Bell once you hit Tier 3, or by simply trading with other wizards in multiplayer."
+			},
+			{
+				"type": "text",
+				"value": "Use caution, however.  Using spells and relics from the other factions may cause them to raid you, which involves them sending very powerful assassins after you.  These assassins have more powerful abilities than their natually spawning counterparts, and therefore will have more powerful abilities.  They will also learn from their fights against you and will become more difficult over time.  If they manage to kill you however, the fights will become easier."
+			},
+			{
+				"type": "text",
+				"value": "The factions and their general feel are described below."
 			},
 			{
 				"type": "title",
@@ -1794,17 +1847,21 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Magic Broom"
+				"value": "Magic Brooms"
 			},
 			{
 				"type": "text",
-				"value": "The magic broom has been enchanted to collect all dropped items within a radius of the container it is placed on and return them to said container.  It's such a helpful construct.  I wonder if there are others I can build?\n\nI can collect the broom again if I sneak up on it and grab it (right click)."
+				"value": "The magic broom has been enchanted to collect all dropped items within a radius of the container it is placed on and return them to said container.  It's such a helpful construct.  I wonder if there are others I can build?  I'm sure I can make a more powerful version of this broom once I've gained some more knowledge.  I should check back later.\n\nI can collect the broom again if I sneak up on it and grab it (right click)."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/magic_broom"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/vortex_broom"
 			}
 		]
 	},
@@ -4168,6 +4225,26 @@
 			}
 		]
 	},
+	"Ritual of the Iron Bell": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Iron Bell"
+			},
+			{
+				"type": "text",
+				"value": "The tolling of the iron bell rings out into the either, summoning a mysterious entity only known as The Broker.  This entity will remain for one half day and will trade a combination of faction tokens (which are obtained by defeating faction enemies when encountered) and relics of my own faction for obtained relics of the other two factions.  I should ensure that I have one of each of my faction's relics available for trade and at least a stack of each of the faction tokens before calling upon the Broker."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/broker"
+			}
+		]
+	},
 	"Arcana": {
 		"index": 0,
 		"category": "rituals",
@@ -4816,6 +4893,30 @@
 			{
 				"type": "runesmithing",
 				"location": "mana-and-artifice:runeforging/runeforge_fire"
+			}
+		]
+	},
+	"Belt Buckle": {
+		"index": 0,
+		"category": "runesmithing",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Belt Buckle"
+			},
+			{
+				"type": "text",
+				"value": "The Belt Buckle is a component in enchanted belts."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "runescribing",
+				"location": "mana-and-artifice:runescribing/artifice/belt_buckle_pattern"
+			},
+			{
+				"type": "runesmithing",
+				"location": "mana-and-artifice:runeforging/artifice/runeforge_belt_buckle"
 			}
 		]
 	},
@@ -5690,13 +5791,53 @@
 			},
 			{
 				"type": "text",
-				"value": "This enchanted crystal can act as a reserve of mana.  By changing the mode (sneak + use) between input and output, I can either store mana at times where I have plenty, or retrieve mana in a pinch when I need it."
+				"value": "This enchanted crystal can act as a small reserve of mana.  By changing the mode (sneak + use) between input and output, I can either store mana at times where I have plenty, or retrieve mana in a pinch when I need it."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/mana_crystal_fragment"
+			}
+		]
+	},
+	"Minor Mana Gem": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Minor Mana Gem"
+			},
+			{
+				"type": "text",
+				"value": "This enchanted gem can act as a moderate reserve of mana.  By changing the mode (sneak + use) between input and output, I can either store mana at times where I have plenty, or retrieve mana in a pinch when I need it."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/minor_mana_gem"
+			}
+		]
+	},
+	"Major Mana Gem": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Major Mana Gem"
+			},
+			{
+				"type": "text",
+				"value": "This enchanted crystal can act as a very large reserve of mana.  By changing the mode (sneak + use) between input and output, I can either store mana at times where I have plenty, or retrieve mana in a pinch when I need it."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/major_mana_gem"
 			}
 		]
 	},
@@ -6221,6 +6362,30 @@
 			}
 		]
 	},	
+	"Tables": {
+		"index": "0",
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Tables"
+			},
+			{
+				"type": "text",
+				"value": "These tables are purely decorative.  Set things on them."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:basic_table"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:ornate_table"
+			}
+		]
+	},	
 	"Slipstream Generator": {
 		"index": "0",
 		"category": "artifice",
@@ -6300,7 +6465,7 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 1\nBuoyancy/Part: 1\nSpeed/Part: 15\nKB Resist/Part: 0%"
+				"value": "HP/Part: 1\nBuoyancy/Part: 1\nSpeed/Part: 15\nKB Resist/Part: 0%\nExplosion Resist/Part: -25%"
 			},
 			{
 				"type": "title",
@@ -6313,7 +6478,7 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 2\nBuoyancy/Part: -1\nSpeed/Part: 12\nKB Resist/Part: 20%"
+				"value": "HP/Part: 2\nBuoyancy/Part: -1\nSpeed/Part: 12\nKB Resist/Part: 20%\nExplosion Resist/Part: -10%"
 			},
 			{
 				"type": "title",
@@ -6326,7 +6491,7 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 5\nBuoyancy/Part: -3\nSpeed/Part: 10\nKB Resist/Part: 30%"
+				"value": "HP/Part: 5\nBuoyancy/Part: -3\nSpeed/Part: 10\nKB Resist/Part: 30%\nExplosion Resist/Part: 4%"
 			},
 			{
 				"type": "title",
@@ -6339,7 +6504,7 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 3\nBuoyancy/Part: -3\nSpeed/Part: 10\nKB Resist/Part: 40%"
+				"value": "HP/Part: 3\nBuoyancy/Part: -3\nSpeed/Part: 10\nKB Resist/Part: 40%\nExplosion Resist/Part: 2%"
 			},			
 			{
 				"type": "title",
@@ -6352,7 +6517,7 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 10\nBuoyancy/Part: -5\nSpeed/Part: 9\nKB Resist/Part: 40%"
+				"value": "HP/Part: 10\nBuoyancy/Part: -5\nSpeed/Part: 9\nKB Resist/Part: 40%\nExplosion Resist/Part: 8%"
 			},
 			{
 				"type": "title",
@@ -6365,7 +6530,7 @@
 			},
 			{
 				"type": "text",
-				"value": "HP/Part: 6\nBuoyancy/Part: -1\nSpeed/Part: 15\nKB Resist/Part: 0%"
+				"value": "HP/Part: 6\nBuoyancy/Part: -1\nSpeed/Part: 15\nKB Resist/Part: 0%\nExplosion Resist/Part: 16%"
 			},
 			{
 				"type": "title",
@@ -6856,6 +7021,76 @@
 			}
 		]
 	},
+	"Construct Shield Arm": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Shield Arms"
+			},
+			{
+				"type": "text",
+				"value": "Construct shield arms allow the construct to block incoming attacks in front of it, greatly increasing its survivability.  They also increase the construct's overall armor/toughness values based on their material:"
+			},
+			{
+				"type": "text",
+				"value": "Wood: 3 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Stone: 5 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Iron: 6 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Gold: 7 armor, 0 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Diamond: 8 armor, 2 toughness"
+			},
+			{
+				"type": "text",
+				"value": "Obsidian: 8 armor, 3 toughness"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_shield_arm_left",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_shield_arm_left",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_shield_arm_left",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_shield_arm_left",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_shield_arm_left",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_shield_arm_left"
+				]
+			},
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_shield_arm_right",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_shield_arm_right",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_shield_arm_right",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_shield_arm_right",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_shield_arm_right",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_shield_arm_right"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_rod"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_rod"
+			}
+		]
+	},
 	"Construct Axe Arm": {
 		"index": "3",
 		"category": "constructs",
@@ -7265,6 +7500,76 @@
 			}
 		]
 	},
+	"Construct Reinforced Legs": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Reinforced Legs"
+			},
+			{
+				"type": "text",
+				"value": "The reinforced legs give the construct more armor and also allow it to carry me.  I can control it directly if I have it commanded to stay or follow when I ride it, or if it's following a Lodestar it will simply take me along for the ride."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_legs_reinforced",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_legs_reinforced",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_legs_reinforced",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_legs_reinforced",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_legs_reinforced",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_legs_reinforced"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_hips"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_hips"
+			}
+		]
+	},
+	"Construct Ender Legs": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Ender Legs"
+			},
+			{
+				"type": "text",
+				"value": "The ender legs allow the construct to teleport short distances of between 6 and 32 blocks when performing tasks."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_legs_ender",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_legs_ender",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_legs_ender",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_legs_ender",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_legs_ender",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_legs_ender"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_hips"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_hips"
+			}
+		]
+	},
 	"Construct Basic Head": {
 		"index": "3",
 		"category": "constructs",
@@ -7323,6 +7628,41 @@
 					"mana-and-artifice:manaweaving/constructs/gold/gold_head_rebreather",
 					"mana-and-artifice:manaweaving/constructs/diamond/diamond_head_rebreather",
 					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_head_rebreather"
+				]
+			},
+			{
+				"type":"runescribing",
+				"location":"mana-and-artifice:runescribing/constructs/runescribe_construct_head"
+			},
+			{
+				"type":"runesmithing",
+				"location":"mana-and-artifice:runeforging/constructs/runeforge_construct_head"
+			}
+		]
+	},
+	"Construct Horn Head": {
+		"index": "3",
+		"category": "constructs",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Construct Horn Head"
+			},
+			{
+				"type": "text",
+				"value": "The horn head will taunt enemies that the construct attacks in melee, allowing it to force targets to focus on it."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"locations": [
+					"mana-and-artifice:manaweaving/constructs/wood/wood_head_horn",
+					"mana-and-artifice:manaweaving/constructs/stone/stone_head_horn",
+					"mana-and-artifice:manaweaving/constructs/iron/iron_head_horn",
+					"mana-and-artifice:manaweaving/constructs/gold/gold_head_horn",
+					"mana-and-artifice:manaweaving/constructs/diamond/diamond_head_horn",
+					"mana-and-artifice:manaweaving/constructs/obsidian/obsidian_head_horn"
 				]
 			},
 			{
