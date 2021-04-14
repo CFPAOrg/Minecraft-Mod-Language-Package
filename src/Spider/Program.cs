@@ -35,7 +35,7 @@ namespace Spider {
                     }
                 }
 
-                var allM = await UrlLib.GetModInfoAsync(cfg.Count, cfg.Version);
+                var allM = await UrlLib.GetModInfoAsync(cfg.Count, cfg.Configuration.Version);
                 var allN = allM.ToList().Select(_ => _.ShortWebsiteUrl).ToList();
                 var pending = new List<string>();
                 foreach (var info in names) {
