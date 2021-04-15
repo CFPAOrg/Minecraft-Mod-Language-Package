@@ -20,7 +20,7 @@ namespace Spider.Lib {
         /// </summary>
         /// <param name="tuple"></param>
         /// <returns></returns>
-        public static async Task ParseModsAsync((ModInfo, Configuration) tuple) {
+        public static async Task ParseModsAsync((ModInfo, Configuration) tuple, Config conf) {
 
             if (tuple.Item2.NonUpdate) {
                 Log.Logger.Warning($"{tuple.Item1.ShortWebsiteUrl}已在黑名单中，跳过");
@@ -59,7 +59,7 @@ namespace Spider.Lib {
                     TempPath = path,
                 };
 
-                ParseFiles(res, cfg, $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}");
+                ParseFiles(res, cfg, $"{Directory.GetCurrentDirectory()}\\projects\\{conf.Version}");
             }
         }
 
