@@ -438,6 +438,7 @@ qmd.multiblock_validation.accelerator.linear.must_be_beam=There must be a straig
 qmd.multiblock_validation.accelerator.linear.have_source_and_beam_port=There must be a Ion Source at one end of the beam and a Beam Port at the other.
 qmd.multiblock_validation.accelerator.linear.source_must_face_in=The Ion Source must face inwards at the beam.
 qmd.multiblock_validation.accelerator.linear.must_have_io=There must be a Accelerator Beam Port INPUT and OUTPUT at either end of the beam.
+qmd.multiblock_validation.accelerator.linear.must_be_5_wide=Linear Accelerators must be 5 blocks wide.
 
 qmd.multiblock_validation.accelerator.ring.must_be_square=The Accelerator must have the same length in the X and Z direction.
 qmd.multiblock_validation.accelerator.ring.to_short= Synchrotron Accelerator is not large enough.
@@ -971,20 +972,21 @@ gui.qmd.config.tools.gluon_radiation.comment=The amount of rads the gluon gun do
 gui.qmd.config.tools.gluon_range=Gluon Gun Range
 gui.qmd.config.tools.gluon_range.comment=The range in blocks of the gluon gun.
 
-gui.qmd.config.tools.armor_durability=Armor Durability
-gui.qmd.config.tools.armor_durability.comment=The base durability of each armor type. Order:[HEV].
 
-gui.qmd.config.tools.armor_enchantability=Armor Enchantability
-gui.qmd.config.tools.armor_enchantability.comment=The enchantability of each armor type. Order:[HEV].
+gui.qmd.config.tools.hev_toughness=HEV Toughness
+gui.qmd.config.tools.hev_toughness.comment=The toughness of the HEV SUIT type. Order:[Charged, Uncharged].
 
-gui.qmd.config.tools.armor_toughness=Armor Toughness
-gui.qmd.config.tools.armor_toughness.comment=The toughness of each armor type. Order:[HEV].
+gui.qmd.config.tools.hev_armour=HEV Armor Amount
+gui.qmd.config.tools.hev_armour.comment=The amount of armor each piece of the HEV Suit has. Order:[Charged Boots, Charged Leggings, Charged  Chestplate, Charged  Helmet, Uncharged Boots, Uncharged Leggings, Uncharged  Chestplate, Uncharged  Helmet].
 
-gui.qmd.config.tools.armor_hev=HEV Armor Amount
-gui.qmd.config.tools.armor_hev.comment=The amount of armor each piece of the HEV Suit has. Order:[Boots, Leggings, Chestplate, Helmet].
+gui.qmd.config.tools.hev_rad_res=HEV Radiation Resistance
+gui.qmd.config.tools.hev_rad_res.comment=The amount of radiation resistance each piece of the HEV Suit has. Order:[Boots, Leggings, Chestplate, Helmet].
 
-gui.qmd.config.tools.rad_res_hev=HEV Radiation Resistance
-gui.qmd.config.tools.rad_res_hev.comment=The amount of radiation resistance each piece of the HEV Suit has. Order:[Boots, Leggings, Chestplate, Helmet].
+gui.qmd.config.tools.hev_energy=HEV Energy Capacity
+gui.qmd.config.tools.hev_energy.comment=The RF capacity of each piece of the HEV Suit has. Order:[Boots, Leggings, Chestplate, Helmet].
+
+gui.qmd.config.tools.hev_power=HEV Power Consumption
+gui.qmd.config.tools.hev_power.comment=The amount of RF certain operations of the HEV Suit take. Order:[per damage taken, per jump boost, per long jump, per fall damage reduction, per wither/poison reduction].
 
 gui.qmd.config.fission.reflector_efficiency=Neutron Reflector Efficiency
 gui.qmd.config.fission.reflector_efficiency.comment= The efficiency of each type of neutron reflector. Order:[Tungsten Carbide].
@@ -1009,6 +1011,9 @@ gui.qmd.config.copernicium_efficiency.comment=Base efficiencies of the fuels. Or
 
 gui.qmd.config.copernicium_criticality=Copernicium Fuel Criticality Factors
 gui.qmd.config.copernicium_criticality.comment=Criticality factors of the fuels. Order:[ MTRISO-291, MOX-291, MNI-291, MZA-291].
+
+gui.qmd.config.copernicium_decay_factor=Copernicium Fuel Decay Factors
+gui.qmd.config.copernicium_decay_factor.comment=Decay factors of the fuels. Order:[ MTRISO-291, MOX-291, MNI-291, MZA-291].
 
 gui.qmd.config.copernicium_self_priming=Copernicium Fuel Self Priming
 gui.qmd.config.copernicium_self_priming.comment=Are fuel self priming. Order:[ MTRISO-291, MOX-291, MNI-291, MZA-291].
@@ -1047,3 +1052,5 @@ gui.qmd.config.other.turbine_blade_efficiency.comment=The efficiency of each Tur
 gui.qmd.config.other.turbine_blade_expansion=Turbine Blade Expansions
 gui.qmd.config.other.turbine_blade_expansion.comment=The expansion of each Turbine Blade. Order:[Super Alloy].
 
+gui.qmd.config.other.cell_capacity=Source Capacity
+gui.qmd.config.other.cell_capacity.comment=The max amount each cell has. Order:[Empty, Anti-Hydrogen, Anti-Deuterium, Anti-Tritium, Anti-Helium 3, Anti-Helium, Positronium, Muonium, Tauonium, Glueballs].
