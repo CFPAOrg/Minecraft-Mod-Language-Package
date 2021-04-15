@@ -5,25 +5,24 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+
 using Language.Core;
+
 using Serilog;
+
 using Spider.Lib.FileLib;
 using Spider.Lib.JsonLib;
 
-namespace Spider.Lib
-{
-    public class Utils
-    {
+namespace Spider.Lib {
+    public class Utils {
         /// <summary>
         /// 解析mod
         /// </summary>
         /// <param name="tuple"></param>
         /// <returns></returns>
-        public static async Task ParseModsAsync((ModInfo, Configuration) tuple)
-        {
+        public static async Task ParseModsAsync((ModInfo, Configuration) tuple) {
 
-            if (tuple.Item2.NonUpdate)
-            {
+            if (tuple.Item2.NonUpdate) {
                 Log.Logger.Warning($"{tuple.Item1.ShortWebsiteUrl}已在黑名单中，跳过");
                 return;
             }
@@ -40,21 +39,17 @@ namespace Spider.Lib
                 var file = mod.GameVersionLatestFiles.First(_ => _.GameVersion == version);
                 downloadUrl = UrlLib.GetDownloadUrl(file.ProjectFileId.ToString(), file.ProjectFileName);
             }
-            if (downloadUrl is not null)
-            {
+            if (downloadUrl is not null) {
 
-                try
-                {
+                try {
                     var bytes = await httpCli.GetByteArrayAsync(downloadUrl);
                     await File.WriteAllBytesAsync(path, bytes);
                 }
-                catch (Exception e)
-                {
+                catch (Exception e) {
                     Log.Logger.Error($"写入文件时：{e.Message}");
                 }
 
-                var res = new Mod()
-                {
+                var res = new Mod() {
                     Version = version,
                     DownloadUrl = downloadUrl,
                     Name = mod.Name,
@@ -64,7 +59,7 @@ namespace Spider.Lib
                     TempPath = path,
                 };
 
-                ParseFiles(res,cfg,$"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}");
+                ParseFiles(res, cfg, $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}");
             }
         }
 
@@ -74,8 +69,7 @@ namespace Spider.Lib
         /// <param name="mod"></param>
         /// <param name="cfg"></param>
         /// <param name="rootPath"></param>
-        private static void ParseFiles(Mod mod, Configuration cfg, string rootPath)
-        {
+        private static void ParseFiles(Mod mod, Configuration cfg, string rootPath) {
             var zipArchive = new ZipArchive(File.OpenRead(mod.TempPath));
             var tmpDirectories = $"{Path.GetTempPath()}extracted\\{Path.GetFileName(mod.TempPath)}";
             Log.Logger.Debug(tmpDirectories);
@@ -95,17 +89,13 @@ namespace Spider.Lib
                     .Select(domain => domain.EnumerateDirectories()
                         .Where(_ => include.Contains(_.Name))));
             //遍历遍历所有输出的目录
-            foreach (var a in root)
-            {
-                foreach (var b in a)
-                {
-                    foreach (var c in b)
-                    {
+            foreach (var a in root) {
+                foreach (var b in a) {
+                    foreach (var c in b) {
                         //Console.WriteLine(c.FullName);
                         var dire1 = c.GetDirectories();
                         if (dire1.Length > 0) {
-                            foreach (var dire2 in dire1)
-                            {
+                            foreach (var dire2 in dire1) {
                                 if (dire2.Name == "en_us") {
                                     //Console.WriteLine(info.FullName);
                                     var p = $"{rootPath}{dire2.FullName[(dire2.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
@@ -115,10 +105,8 @@ namespace Spider.Lib
                                     //info.MoveTo(sb.ToString());
                                 }
                                 var dire3 = dire2.GetDirectories();
-                                foreach (var info in dire3)
-                                {
-                                    if (info.Name == "en_us")
-                                    {
+                                foreach (var info in dire3) {
+                                    if (info.Name == "en_us") {
                                         //Console.WriteLine(info.FullName);
                                         var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
                                         var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
@@ -190,13 +178,11 @@ namespace Spider.Lib
         /// <param name="sourceDirName"></param>
         /// <param name="destDirName"></param>
         /// <param name="copySubDirs"></param>
-        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
-        {
+        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs) {
             // Get the subdirectories for the specified directory.
             DirectoryInfo dir = new DirectoryInfo(sourceDirName);
 
-            if (!dir.Exists)
-            {
+            if (!dir.Exists) {
                 throw new DirectoryNotFoundException(
                     "Source directory does not exist or could not be found: "
                     + sourceDirName);
@@ -209,17 +195,14 @@ namespace Spider.Lib
 
             // Get the files in the directory and copy them to the new location.
             FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo file in files)
-            {
+            foreach (FileInfo file in files) {
                 string tempPath = Path.Combine(destDirName, file.Name);
                 file.CopyTo(tempPath, true);
             }
 
             // If copying subdirectories, copy them and their contents to new location.
-            if (copySubDirs)
-            {
-                foreach (DirectoryInfo subdir in dirs)
-                {
+            if (copySubDirs) {
+                foreach (DirectoryInfo subdir in dirs) {
                     string tempPath = Path.Combine(destDirName, subdir.Name);
                     DirectoryCopy(subdir.FullName, tempPath, copySubDirs);
                 }
@@ -233,21 +216,18 @@ namespace Spider.Lib
         /// <param name="projectName"></param>
         /// <param name="root"></param>
         /// <returns></returns>
-        private static string GeneratePath(string path, string projectName,string[] root) {
+        private static string GeneratePath(string path, string projectName, string[] root) {
             var sb = new StringBuilder();
             var p = path.Split("\\").ToList();
-            p.ForEach(_ =>
-            {
-                if (root.ToList().Contains(_))
-                {
+            p.ForEach(_ => {
+                if (root.ToList().Contains(_)) {
                     sb.Append(_ + "\\");
                     sb.Append(projectName + "\\");
                 }
                 else if (_.EndsWith(".lang") || _.EndsWith(".json")) {
                     sb.Append(_.ToLower());
                 }
-                else
-                {
+                else {
                     sb.Append(_ + "\\");
                 }
 
@@ -266,7 +246,7 @@ namespace Spider.Lib
                 }
             }
 
-            if (File.Exists(Path.Combine(d!,"zh_cn.lang"))) {
+            if (File.Exists(Path.Combine(d!, "zh_cn.lang"))) {
                 return;
             }
             if (isParse) {
