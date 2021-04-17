@@ -1,10 +1,12 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.RegularExpressions;
+using System.Text.Unicode;
 
 namespace Language.Core {
     public sealed class JsonFormatter {
@@ -12,7 +14,7 @@ namespace Language.Core {
         private readonly StreamWriter _writer;
         private readonly string _modName;
 
-        public JsonFormatter(StreamReader reader, StreamWriter writer,string modName) {
+        public JsonFormatter(StreamReader reader, StreamWriter writer, string modName) {
             _reader = reader;
             _writer = writer;
             _modName = modName;
@@ -32,12 +34,13 @@ namespace Language.Core {
                 if (string.IsNullOrWhiteSpace(builder.ToString())) {
                     throw new NullReferenceException();
                 }
-                var jsonObject = JsonSerializer.Deserialize<Dictionary<string, string>>(builder.ToString(), new JsonSerializerOptions() { AllowTrailingCommas = true, ReadCommentHandling = JsonCommentHandling.Skip });
-                var dict = new Dictionary<string, string>();
-                foreach (var (key, value) in jsonObject) {
-                    dict.Add(Regex.Unescape(key), Regex.Unescape(value));
-                }
-                var str = JsonSerializer.Serialize(dict, new JsonSerializerOptions() { WriteIndented = true });
+                //有憨憨作者在json里写除了string以外的内容全部抛出
+                var jsonObject = JsonSerializer.Deserialize<Dictionary<string, string>>(builder.ToString(), new JsonSerializerOptions() {
+                    AllowTrailingCommas = true,
+                    ReadCommentHandling = JsonCommentHandling.Skip,
+                    Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
+                });
+                var str = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions() { WriteIndented = true });
                 _writer.Write(str);
                 _writer.Close();
                 _writer.Dispose();
@@ -46,7 +49,7 @@ namespace Language.Core {
                 if (!Directory.Exists($"{Directory.GetCurrentDirectory()}/broken")) {
                     Directory.CreateDirectory($"{Directory.GetCurrentDirectory()}/broken");
                 }
-                File.WriteAllText($"{Directory.GetCurrentDirectory()}/broken/{_modName}{DateTime.UtcNow.Millisecond}.json",builder.ToString());
+                File.WriteAllText($"{Directory.GetCurrentDirectory()}/broken/{_modName}{DateTime.UtcNow.Millisecond}.json", builder.ToString());
             }
         }
     }
