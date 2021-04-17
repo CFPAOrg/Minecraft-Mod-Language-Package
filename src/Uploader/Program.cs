@@ -34,8 +34,8 @@ namespace Uploader {
 
             command.Description = "Config of uploader";
 
-            command.Handler = CommandHandler.Create<string,string,string,string>((version, host, name, pwd) => {
-                using var scpClient = new ScpClient(host, 20002, name, pwd);
+            command.Handler = CommandHandler.Create<string,string,string,string>((version, host, name, password) => {
+                using var scpClient = new ScpClient(host, 20002, name, password);
                 scpClient.Connect();
                 if (scpClient.IsConnected) {
                     Log.Logger.Information("SCP服务器连接成功");
@@ -51,7 +51,7 @@ namespace Uploader {
                 scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack.zip.1");
                 Log.Logger.Information("上传成功");
                 scpClient.Dispose();
-                using var sshClient = new SshClient(host, 20002, name, pwd);
+                using var sshClient = new SshClient(host, 20002, name, password);
                 sshClient.Connect();
                 if (sshClient.IsConnected) {
                     Log.Logger.Information("SSH服务器连接成功");
