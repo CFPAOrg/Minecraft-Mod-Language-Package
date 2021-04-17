@@ -67,6 +67,7 @@ namespace Spider.Lib {
         /// 暴力获取前9999个mod的id映射表
         /// </summary>
         /// <param name="version"></param>
+        /// <param name="path"></param>
         public static async Task GetAllModIntroAsync(string version,string path) {
             using var httpClient = new HttpClient();
             var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search") {

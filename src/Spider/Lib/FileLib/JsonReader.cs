@@ -13,9 +13,9 @@ namespace Spider.Lib.FileLib {
         /// </summary>
         /// <param name="version"></param>
         /// <returns></returns>
-        public static async Task<Dictionary<string, long>> ReadIntroAsync(string version) {
+        public static async Task<Dictionary<string, long>> ReadIntroAsync(string version,string path) {
             if (!File.Exists(@$"{Directory.GetCurrentDirectory()}\config\spider\{version}\intro.json")) {
-                await UrlLib.GetAllModIntroAsync(version);
+                await UrlLib.GetAllModIntroAsync(version,path);
             }
             var obj = await JsonSerializer.DeserializeAsync<ModIntro[]>(File.OpenRead(@$"{Directory.GetCurrentDirectory()}\config\spider\{version}\intro.json"));
             var dict = new Dictionary<string, long>();

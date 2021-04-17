@@ -22,8 +22,10 @@ namespace Spider {
                 .WriteTo.Console()
                 .CreateLogger();
             var c = await JsonReader.ReadConfigAsync();
+
             foreach (var cfg in c) {
                 var parser = new InfoParser(cfg.Configuration, cfg.CustomConfigurations);
+                var modTask = UrlLib.GetModInfoAsync(cfg.Count, cfg.Configuration.Version);
                 var root = Directory.CreateDirectory(
                     $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}\\assets");
 
@@ -35,7 +37,7 @@ namespace Spider {
                     }
                 }
 
-                var allM = await UrlLib.GetModInfoAsync(cfg.Count, cfg.Configuration.Version);
+                var allM = await modTask;
                 var allN = allM.ToList().Select(_ => _.ShortWebsiteUrl).ToList();
                 var pending = new List<string>();
                 foreach (var info in names) {
