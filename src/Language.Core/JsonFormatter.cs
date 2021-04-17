@@ -38,9 +38,12 @@ namespace Language.Core {
                 var jsonObject = JsonSerializer.Deserialize<Dictionary<string, string>>(builder.ToString(), new JsonSerializerOptions() {
                     AllowTrailingCommas = true,
                     ReadCommentHandling = JsonCommentHandling.Skip,
-                    Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
                 });
-                var str = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions() { WriteIndented = true });
+                var str = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions() {
+                    WriteIndented = true,
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                });
                 _writer.Write(str);
                 _writer.Close();
                 _writer.Dispose();
