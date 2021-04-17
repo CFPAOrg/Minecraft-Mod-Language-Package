@@ -46,7 +46,7 @@ namespace Spider {
 
                 Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod，{pending.Count} 个mod需要单独处理");
 
-                var dict = await JsonReader.ReadIntroAsync(cfg.Version);
+                var dict = await JsonReader.ReadIntroAsync(cfg.Configuration.Version,cfg.Version);
 
                 if (names.Count > cfg.Count) {
                     var bin = allM.Where(_ => !names.Contains(_.ShortWebsiteUrl));
