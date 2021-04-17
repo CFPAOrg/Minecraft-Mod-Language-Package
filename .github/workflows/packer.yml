@@ -13,8 +13,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          fetch-depth: 20
           ref: main
+
+      - name: Check changed path on 1.12
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: 1-12-2
+        with:
+          paths: projects/1.12.2
+
+      - name: Check changed path on 1.16
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: 1-16
+        with:
+          paths: projects/1.16
 
       - name: Build Packer
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
@@ -25,7 +37,7 @@ jobs:
       - name: Create timestamp
         id: create_timestamp
         run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
-        shell: sh
+        shell: bash
 
         # Create the release:  https://github.com/actions/create-release
       - name: Create release
