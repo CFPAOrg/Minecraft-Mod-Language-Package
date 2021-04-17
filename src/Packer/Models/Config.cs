@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace Packer
 {
-    class Config
+    public class Config
     {
         [JsonPropertyName("targetVersion")]
         public string Version { get; set; }
@@ -20,7 +20,6 @@ namespace Packer
         [JsonPropertyName("noProcessNamespace")]
         public List<string> BypassedNamespace { get; set; }
 
-        [JsonPropertyName("invalidDomains")]
-        public List<string> InvalidDomains { get; set; }
+        public Dictionary<string, string> CharatcerReplacement { get; set; } // 该项似乎无法通过 json 初始化
     }
 }
