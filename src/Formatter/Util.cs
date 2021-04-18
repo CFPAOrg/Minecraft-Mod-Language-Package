@@ -17,16 +17,24 @@ namespace Formatter {
         public static List<string> SearchLangFiles() {
             var allFiles = new List<string>();
             var files1 = Directory.GetFiles($"./projects", "*.lang", SearchOption.AllDirectories);
-            foreach (var s in files1)
+            foreach (var s in files1) {
+                if (s.Contains(".placeholder")) {
+                    continue;
+                }
                 allFiles.Add(s);
+            }
             return allFiles;
         }
 
         public static List<string> SearchJsonFiles() {
             var allFiles = new List<string>();
             var files1 = Directory.GetFiles($"./projects", "*.json", SearchOption.AllDirectories);
-            foreach (var s in files1)
+            foreach (var s in files1) {
+                if (s.Contains(".placeholder")) {
+                    continue;
+                }
                 allFiles.Add(s);
+            }
             return allFiles;
         }
 
