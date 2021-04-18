@@ -68,8 +68,6 @@ namespace Formatter {
         public static async Task FormatJsonFile(List<string> lp, List<string> bl) {
             foreach (var path in lp) {
                 var fileStream = File.Open(path,FileMode.Open);
-                var jsonFormatter = new JsonFormatter(new StreamReader(fileStream), new StreamWriter(fileStream), "format");
-                jsonFormatter.Format();
                 var obj = await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(fileStream);
                 foreach (var key in bl) {
                     if (obj!.ContainsKey(key)) {
@@ -80,11 +78,10 @@ namespace Formatter {
                     WriteIndented = true,
                     Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
                 });
-                var fileStream2 = File.Open(path, FileMode.Open);
-                var writer = new StreamWriter(fileStream2);
-                await writer.WriteAsync(str);
-                writer.Close();
-                await writer.DisposeAsync();
+                var streamWriter = new StreamWriter(fileStream);
+                await streamWriter.WriteAsync(str);
+                streamWriter.Close();
+                await streamWriter.DisposeAsync();
             }
         }
     }

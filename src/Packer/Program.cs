@@ -31,7 +31,7 @@ namespace Packer {
                 var mapping = await Utils.ReadReplaceFontMap();
                 var config = Utils.RetrieveConfig(version);
                 Log.Information("开始打包。版本：{0}", config.Version);
-                using var stream = File.Create($".\\Minecraft-Mod-Language-Package-{version}.zip"); // 生成空 zip 文档
+                await using var stream = File.Create($".\\Minecraft-Mod-Language-Package-{version}.zip"); // 生成空 zip 文档
                 using var archive = new ZipArchive(stream, ZipArchiveMode.Update);
                 archive.Initialize(config);
                 var existingDomains = new Dictionary<string, string>();

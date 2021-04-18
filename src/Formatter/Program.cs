@@ -13,7 +13,7 @@ namespace Formatter
             var bl = await Util.ReadBlackKey();
             var l = Util.SearchLangFiles();
             var j = Util.SearchJsonFiles();
-            await Util.FormatLangFile(l, bl);
+            //await Util.FormatLangFile(l, bl);
             await Util.FormatJsonFile(j, bl);
         }
     }
