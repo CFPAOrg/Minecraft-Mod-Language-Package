@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Packer {
     class Program {
-        static async Task Main(string[] args) {
+        static int Main(string[] args) {
             var command = new RootCommand() {
                 new Option<string>(
                     "--version",
@@ -129,6 +129,7 @@ namespace Packer {
                 Log.Information("生成结束。md5: {0}", md5Hex);
             });
 
+            return command.Invoke(args);
         }
     }
 }
