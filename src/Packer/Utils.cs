@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
@@ -118,10 +119,11 @@ namespace Packer
             return true;
         }
 
-        public static Config RetrieveConfig()
+        public static Config RetrieveConfig(string version)
         {
             var reader = File.ReadAllBytes(".\\config\\packer.json");
-            return JsonSerializer.Deserialize<Config>(reader);
+            var configs = JsonSerializer.Deserialize<Config[]>(reader);
+            return configs!.ToList().Where(_ => _.Version == version).ToArray()[0];
         }
     }
 }
