@@ -12,7 +12,7 @@ namespace Packer
         {
             return extension switch
             {
-                ".json" => JsonSerializer.Serialize<Dictionary<string, string>>(assetMap, new JsonSerializerOptions
+                ".json" => JsonSerializer.Serialize(assetMap, new JsonSerializerOptions
                 {
                     WriteIndented = true
                 }),
@@ -77,7 +77,12 @@ namespace Packer
                     {
                         Log.Verbose("添加对应映射：{0}", line);
                         var spiltPosition = line.IndexOf('=');
-                        result.Add(line[..(spiltPosition)], line[(spiltPosition + 1)..]);
+                        try {
+                            result.Add(line[..spiltPosition], line[(spiltPosition + 1)..]);
+                        }
+                        catch (Exception e) {
+                            Log.Verbose(e.ToString());
+                        }
                     }
                 }
             );
