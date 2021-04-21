@@ -3,6 +3,7 @@ name: Packer
 on:
   workflow_dispatch:
   push:
+    branches: [main]
     paths: 
       - 'config/packer.json'
       - 'projects/**'
@@ -79,7 +80,7 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: Minecraft-Mod-Language-Package-1.12.2.zip # Use the full path here because environment variables are not in scope
-          asset_name: Minecraft-Mod-Language-Package.zip
+          asset_name: Minecraft-Mod-Language-Package-1.12.2.zip
           asset_content_type: application/zip
         if: steps.changed-1122.outputs.changed == 'true'
 
@@ -91,6 +92,6 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           asset_path: Minecraft-Mod-Language-Package-1.16.zip # Use the full path here because environment variables are not in scope
-          asset_name: Minecraft-Mod-Language-Package.zip
+          asset_name: Minecraft-Mod-Language-Package-1.16.zip
           asset_content_type: application/zip
         if: steps.changed-116.outputs.changed == 'true'
