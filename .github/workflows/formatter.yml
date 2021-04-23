@@ -1,9 +1,9 @@
 name: Formatter
 
 on: 
-  push:
-    #branches: [ 1.12.2 ]
-    paths-ignore: '**/*nfo.json'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 1,15 * *'
     
 
 jobs:

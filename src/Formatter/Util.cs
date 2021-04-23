@@ -9,7 +9,9 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
 using Language.Core;
+
 using Serilog;
 
 namespace Formatter {
@@ -61,29 +63,31 @@ namespace Formatter {
                     list.Add(line.Trim());
                 }
 
-                await File.WriteAllLinesAsync(l,list);
+                await File.WriteAllLinesAsync(l, list);
             }
         }
 
         public static async Task FormatJsonFile(List<string> lp, List<string> bl) {
             foreach (var path in lp) {
-                var fileStream = File.Open(path,FileMode.Open);
-                var obj = await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(fileStream);
-                foreach (var key in bl) {
-                    if (obj!.ContainsKey(key)) {
-                        obj.Remove(key);
+                try {
+                    var fileStream = File.Open(path, FileMode.Open);
+                    var obj = await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(fileStream);
+                    foreach (var key in bl) {
+                        if (obj!.ContainsKey(key)) {
+                            obj.Remove(key);
+                        }
                     }
+                    var str = JsonSerializer.Serialize(obj, new JsonSerializerOptions() {
+                        WriteIndented = true,
+                        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                    });
+                    await File.WriteAllTextAsync(path, str);
                 }
-                var str = JsonSerializer.Serialize(obj, new JsonSerializerOptions() {
-                    WriteIndented = true,
-                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-                });
-                var streamWriter = new StreamWriter(fileStream);
-                await streamWriter.WriteAsync(str);
-                streamWriter.Close();
-                await streamWriter.DisposeAsync();
+                catch (Exception) {
+                    Log.Logger.Verbose($"发生错误，已跳过{path}");
+                }
             }
         }
     }
 }
-        
+
