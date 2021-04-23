@@ -60,7 +60,7 @@ namespace Formatter {
                             continue;
                         }
                     }
-                    list.Add(line.Trim());
+                    list.Add(line);
                 }
 
                 await File.WriteAllLinesAsync(l, list);
