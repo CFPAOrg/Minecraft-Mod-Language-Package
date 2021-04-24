@@ -1,32 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
+
 using Packer.Models;
 using Serilog;
-//public static string CombineLangFiles(string destination, string added, string extension)
-//{
-//    if (!new List<string> { ".json", ".lang" }.Contains(extension))
-//    {
-//        Log.Warning("检测到暂不支持的拓展名（{0}），取消合并", extension);
-//        return destination;
-//    }
-//    Log.Information("正在反序列化目标文件");
-//    var destMap = AssetSerializer.Deserialize(destination, extension);
-//    Log.Information("正在反序列化目标文件");
-//    var addMap = AssetSerializer.Deserialize(added, extension);
-//    foreach (var pair in addMap)
-//    {
-//        if (!destMap.TryAdd(pair.Key, pair.Value))
-//        {
-//            Log.Warning("检测到相同 key 的条目：{0} -> {1} | {2}，选取 {1}", pair.Key, destMap[pair.Key], pair.Value);
-//        }
-//    }
-//    Log.Information("正在序列化合并后的文件");
-//    return AssetSerializer.Serialize(destMap, extension);
-//}
 
 namespace Packer.Extensions
 {
@@ -36,7 +14,7 @@ namespace Packer.Extensions
         {
             return category switch
             {
-                FileCategory.JsonTranslationFormat => JsonSerializer.Serialize(assetMap, 
+                FileCategory.JsonTranslationFormat => JsonSerializer.Serialize(assetMap,
                     new JsonSerializerOptions
                     {
                         WriteIndented = true
@@ -109,7 +87,5 @@ namespace Packer.Extensions
             Log.Verbose("反序列化完成");
             return result;
         }
-
     }
-
 }

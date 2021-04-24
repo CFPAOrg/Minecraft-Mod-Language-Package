@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Packer.Extensions;
 using Serilog;
 
@@ -22,7 +20,7 @@ namespace Packer.Models
         JsonOthers = JsonAlike | OtherFiles,              // */<not-lang>/*.json
         LangOthers = LangAlike | OtherFiles               // */<not-lang>/*.lang
     }
-    public class TranslatedFile 
+    public class TranslatedFile
     {
         public string relativePath;
         public readonly string stringifiedContent;
@@ -32,7 +30,7 @@ namespace Packer.Models
         { // 注：文件流在此处被关闭
             using var reader = new StreamReader(stream);
             stringifiedContent = reader.ReadToEnd().Preprocess(category, config);
-            this.category = category; 
+            this.category = category;
         }
         public TranslatedFile(FileCategory category, string content)
         {
@@ -42,7 +40,7 @@ namespace Packer.Models
         virtual public TranslatedFile Combine(TranslatedFile file)
         {
             Log.Information("检测到不支持合并的文件。取消合并");
-            return this; 
+            return this;
         }
     }
     class LangFile : TranslatedFile
@@ -54,7 +52,7 @@ namespace Packer.Models
         {
             deserializedContent = null;
         }
-        public LangFile(FileCategory category, Dictionary<string, string> content) : base(category, 
+        public LangFile(FileCategory category, Dictionary<string, string> content) : base(category,
                                                                                           content.SerializeAsset(category))
         {
             deserializedContent = content;
@@ -72,7 +70,7 @@ namespace Packer.Models
         public override LangFile Combine(TranslatedFile file)
         {
             var castedFile = (LangFile)file;
-            if (castedFile is null)
+            if ((castedFile is null) || castedFile.category != this.category)
             {
                 Log.Information("检测到不支持合并的文件。取消合并");
                 return this;
@@ -80,11 +78,11 @@ namespace Packer.Models
             this.Deserialize();
             castedFile.Deserialize();
             var resultMap = new Dictionary<string, string>(deserializedContent);
-            foreach(var pair in castedFile.deserializedContent)
+            foreach (var pair in castedFile.deserializedContent)
             {
-                if(!resultMap.TryAdd(pair.Key, pair.Value))
+                if (!resultMap.TryAdd(pair.Key, pair.Value))
                 {
-                    Log.Warning("检测到相同 key 的条目：{0} -> {1} | {2}，选取 {1}", 
+                    Log.Warning("检测到相同 key 的条目：{0} -> {1} | {2}，选取 {1}",
                         pair.Key, resultMap[pair.Key], pair.Value);
                 }
             }

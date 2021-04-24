@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
+
 using Serilog;
 using Packer.Models;
 
 namespace Packer.Extensions
 {
-    
     public static class ContentExtension
     {
         public static string Preprocess(this string content, FileCategory category, Config config)
@@ -21,7 +16,7 @@ namespace Packer.Extensions
                 {
                     Log.Information("正在进行特殊符号替换：{0} -> {1}", mapping.Key, mapping.Value);
                 }
-                if((category & FileCategory.JsonAlike) == FileCategory.JsonAlike)
+                if ((category & FileCategory.JsonAlike) == FileCategory.JsonAlike)
                 { // 替换为 unicode 转义码
                     content = content.Replace(mapping.Key, mapping.Value);
                 }
@@ -38,8 +33,7 @@ namespace Packer.Extensions
         {
             foreach (var @namespace in config.BypassedNamespace)
             {
-                Log.Information("{0}|{1}", location, @namespace);
-                if (location.Contains(@namespace + "/")) return true;
+                if (location.StartsWith(@namespace + "\\")) return true;
             }
             return false;
         }

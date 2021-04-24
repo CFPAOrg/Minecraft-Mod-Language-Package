@@ -1,9 +1,7 @@
-﻿using Serilog;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+using Serilog;
 
 namespace Packer.Models
 {
@@ -19,38 +17,28 @@ namespace Packer.Models
         public IEnumerable<TranslatedFile> contents;
         public Asset Combine(Asset other)
         {
-            try
+            var mapping = new Dictionary<string, TranslatedFile>();
+            if (!contents.Any()) return other;
+            if (!other.contents.Any()) return this;
+            foreach (var file in contents)
             {
-                var mapping = new Dictionary<string, TranslatedFile>();
-                Log.Information("1");
-                foreach (var file in contents)
-                {
-                    Log.Information("2");
-                    if (file is null) continue;
-                    if (file.relativePath is null) continue;
-                    mapping.Add(file.relativePath, file);
-                }
-                foreach (var file in other.contents)
-                {
-                    if (file is null) continue;
-                    if (file.relativePath is null) continue;
-                    if (!mapping.TryAdd(file.relativePath, file))
-                    {
-                        mapping.Remove(file.relativePath, out var existing);
-                        mapping.Add(existing.relativePath, existing.Combine(file));
-                    }
-                }
-                return new Asset()
-                {
-                    domainName = this.domainName,
-                    contents = mapping.Select(_ => _.Value)
-                };
+                if (file.relativePath is null) continue; // 无效文件
+                mapping.Add(file.relativePath, file);
             }
-            catch(Exception ex)
+            foreach (var file in other.contents)
             {
-                Log.Error(ex, "合并失败。");
-                return this;
+                if (file.relativePath is null) continue; // 无效文件
+                if (!mapping.TryAdd(file.relativePath, file))
+                {
+                    mapping.Remove(file.relativePath, out var existing);
+                    mapping.Add(existing.relativePath, existing.Combine(file));
+                }
             }
+            return new Asset()
+            {
+                domainName = this.domainName,
+                contents = mapping.Select(_ => _.Value)
+            };
         }
     }
 }
