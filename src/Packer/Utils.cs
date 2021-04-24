@@ -12,9 +12,9 @@ namespace Packer
 {
     static class Utils
     {
-        static async public Task<List<Config>> RetrieveConfig(string configPath, string mappingPath)
+        static async public Task<Config> RetrieveConfig(string configPath, string mappingPath, string version)
         {
-            Log.Information("正在获取配置。");
+            Log.Information("正在获取配置");
             var reader = await File.ReadAllBytesAsync(configPath);
             var configs = JsonSerializer.Deserialize<List<Config>>(reader);
             var replacement = await ReadReplaceFontMap(mappingPath);
@@ -22,8 +22,7 @@ namespace Packer
             { // 提取特殊字符替换，并加入 Config 中
                 _.CharatcerReplacement = replacement;
             });
-            Log.Information("获取完毕");
-            return configs;
+            return configs.Where(_ => _.Version == version).FirstOrDefault(); // 仅选取指定版本，忽略重复
         }
 
         public static async Task<Dictionary<string, string>> ReadReplaceFontMap(string path) // 从隔壁弄过来改了一下，就放这里了
