@@ -1,22 +1,25 @@
-﻿using Serilog;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
 
-namespace Packer
+using Packer.Models;
+using Serilog;
+
+namespace Packer.Extensions
 {
-    static class AssetSerializer
+    static class SerializingExtension
     {
-        public static string Serialize(Dictionary<string, string> assetMap, string extension)
+        public static string SerializeAsset(this Dictionary<string, string> assetMap, FileCategory category)
         {
-            return extension switch
+            return category switch
             {
-                ".json" => JsonSerializer.Serialize(assetMap, new JsonSerializerOptions
-                {
-                    WriteIndented = true
-                }),
-                ".lang" => SerializeFromLang(assetMap),
+                FileCategory.JsonTranslationFormat => JsonSerializer.Serialize(assetMap,
+                    new JsonSerializerOptions
+                    {
+                        WriteIndented = true
+                    }),
+                FileCategory.LangTranslationFormat => SerializeFromLang(assetMap),
                 _ => null // 其实不应该执行到这个地方
             };
         }
@@ -32,12 +35,12 @@ namespace Packer
             return sb.ToString();
         }
 
-        public static Dictionary<string, string> Deserialize(string content, string extension)
+        public static Dictionary<string, string> DeserializeAsset(this string content, FileCategory category)
         {
-            return extension switch
+            return category switch
             {
-                ".json" => JsonSerializer.Deserialize<Dictionary<string, string>>(content), // 直接有的算法
-                ".lang" => DeserializeFromLang(content),
+                FileCategory.JsonTranslationFormat => JsonSerializer.Deserialize<Dictionary<string, string>>(content), // 直接有的算法
+                FileCategory.LangTranslationFormat => DeserializeFromLang(content),
                 _ => null // 其实不应该执行到这个地方
             };
         }
@@ -89,6 +92,5 @@ namespace Packer
             Log.Verbose("反序列化完成");
             return result;
         }
-
     }
 }
