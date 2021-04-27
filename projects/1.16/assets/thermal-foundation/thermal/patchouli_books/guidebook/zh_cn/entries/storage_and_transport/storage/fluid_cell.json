@@ -1,1 +1,32 @@
-{  "name": "Fluid Cell",  "icon": "thermal:fluid_cell",  "category": "thermal:storage",  "read_by_default": true,  "flag": "mod:thermal_expansion",  "pages": [    {      "type": "text",      "text": "The Fluid Cell can be used to store and distribute fluids. The fluid cell starts with 128,000mb of capacity and 8,000mb/t max in/out rate. This can be improved using augments. It can only store one fluid at a time. Each side can be configured to in/output. The fluid cell always auto-outputs and never auto-inputs. Provides a comparator output proportional to how full it is."    },    {      "type": "crafting",      "recipe": "thermal:fluid_cell_frame",      "recipe2": "thermal:fluid_cell"    },    {      "type": "text",      "text": "The transfer rate of the fluid cell can be precisely configured. In the GUI, on both sides of the fluid gauge, are the input and output transfer rates. These can be set manually using the '+' and '-' buttons in order to precisely control the rate of fluid transfer. Left/right clicking will change the rate by 50/10 mb per tick. Ctrl-clicking changes the rate by 5/1. Shift-clicking will instead change the rate by 1000/100. Ctrl-shift-clicking changes the rate by 10k/1k."    },    {      "type": "text",      "text": "The Fluid cell can be right clicked with buckets to fill or empty it one bucket at a time. Beware that there is currently a bug with Forge where trying to bucket a nonbucketable fluid voids your bucket!"    },    {      "type": "text",      "title": "Augment Compatibility",      "text": "$(li)$(l:thermal:technology/augments/integral_components)Integral Components$(/l)$(li)$(l:thermal:technology/augments/fluid_tank)Expanded Tank Construction$(/l)"    }  ]} 
+{
+  "name": "流体单元",
+  "icon": "thermal:fluid_cell",
+  "category": "thermal:storage",
+  "read_by_default": true,
+  "flag": "mod:thermal_expansion",
+  "pages": [
+    {
+      "type": "text",
+      "text": "流体单元可用以存储与输出流体。初始状态下的流体单元拥有 128,000mB 的总流体储量以及 8,000mB/t 的最大出入功率，可以使用增强来提升这些性能数值。流体单元无法同时存储多种流体。其每个侧面虽可设置为输入或输出模式，但输出面的自动输出无法禁用，输入面也无法自动从外部抽入流体。可以通过比较器来呈现当前的流体存储程度，信号输出与存储程度成正比。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "thermal:fluid_cell_frame",
+      "recipe2": "thermal:fluid_cell"
+    },
+    {
+      "type": "text",
+      "text": "在流体单元的界面中对其进行传输功率调整的操作与红石通量单元相仿，在$(l:thermal:storage_and_transport/storage/energy_cell#fine_tune_rule)这里$(/l)可以阅览相关页面。"
+    },
+    {
+      "type": "text",
+      "text": "可以持桶右击流体单元进行流体转移。注意：因当前的 Forge 版本存在的问题，持空桶尝试取出实际无法桶装的流体时，操作不会被阻止，但 1,000mB 的流体会直接损失。"
+    },
+    {
+      "type": "text",
+      "title": "兼容增强",
+      "text": "$(li)$(l:thermal:technology/augments/integral_components)整合组件$(/l)$(li)$(l:thermal:technology/augments/fluid_tank)液槽扩容升级$(/l)"
+    }
+
+  ]
+} 
