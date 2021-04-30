@@ -79,6 +79,7 @@ exception.ingredient.space=Not enough space for
 exception.permission.edit=You are not allowed to edit more than %s blocks
 exception.permission.place.color=You are not allowed to place something with alpha below %s
 exception.permission.place=You are not allowed to place more than %s blocks
+exception.permission.density=Only %s tiles are allowed in block
 exception.door.notloaded=Cannot interact with door (not all tiles are loaded)
 exception.door.brokenparent=Cannot interact with door (broken connection to parent)
 exception.door.brokenchild=Cannot interact with door (broken connection to child)
@@ -87,6 +88,7 @@ exception.pattern.empty=empty
 exception.pattern.circular=circular reference
 exception.pattern.novalidchildren=broken children
 exception.permission.convert=Cannot edit more than %s blocks
+exception.permission.area-protected=area protected
 
 color.unit.black=black
 color.unit.cyan=cyan
@@ -112,9 +114,16 @@ placement.mode.fill.tooltip=Will try to fill in the tiles if they don't fit.
 placement.mode.all=All Mode
 placement.mode.all.tooltip=Can only be placed if there is space for all tiles.
 placement.mode.overwrite=Overwrite Mode
-placement.mode.overwrite.tooltip=Will place all tiles and remove the overlapping space.\nCannot removed structure tiles.
+placement.mode.overwrite.tooltip=Will place all tiles and remove the overlapping space.\nCannot remove structure tiles.
+placement.mode.overwriteall=Overwrite All Mode
+placement.mode.overwriteall.tooltip=Will place all tiles and remove the entire block.\nCannot remove structure tiles.
 placement.mode.replace=Replace Mode
 placement.mode.replace.tooltip=Will only place the tiles at the overlapping space.\nCannot removed structure tiles.
+placement.mode.stencil=Stencil Mode
+placement.mode.stencil.tooltip=Will remove all tiles at the overlapping space.\nDoes not place anything.
+placement.mode.colorize=Colorize Mode
+placement.mode.colorize.tooltip=Will color all tiles at the overlapping space.\nDoes not place anything.
+
 
 markmode.gui.allowlowresolution=Low resolution
 markmode.gui.switchpos=Switch Position
@@ -141,6 +150,9 @@ item.LTPremade.single_output4.name=Single Output (4-bit)
 item.LTPremade.single_output16.name=Single Output (16-bit)
 
 item.LTPremade.particle_emitter.name=Particle Emitter
+item.LTPremade.signal_display_16.name=Signal Display (16 bit)
+item.LTPremade.item_holder.name=Item Holder
+item.LTPremade.structure_builder.name=Structure Builder
 
 selection.clear=clear
 selection.dialog.clear=Do you really want to clear all content?
@@ -157,6 +169,22 @@ selection.save=Save
 selection.scale=Scale
 mode.selection.area=Area
 
+shape.tile=Tile
+shape.type=Tiles of Type
+shape.box=Box
+shape.connected=Connected Tiles
+shape.slice=Slope
+shape.inner_corner=Inner Slope Corner
+shape.outer_corner=Outer Slope Corner
+shape.polygon=Pixel Polygon
+shape.wall=Wall
+shape.pillar=Pillar
+shape.curve=Curve
+shape.curvewall=Curved Wall
+shape.cylinder=Cylinder
+shape.sphere=Sphere
+shape.pyramid=Pyramid
+
 structure.none.name=None
 structure.fixed.name=Fixed
 structure.chair.name=Chair
@@ -169,6 +197,9 @@ structure.slidingDoor.name=Sliding Door
 structure.advancedDoor.name=Advanced Door
 structure.doorActivator.name=Door Activator
 structure.light.name=Light
+structure.message.name=Message
+structure.item_holder.name=Item Holder
+structure.little_frame.name=Little Frame
 
 structure.category.simple=Simple
 structure.category.door=Doors
@@ -182,6 +213,7 @@ gui.door.children=Children
 gui.door.events=Events
 gui.door.settings=Settings
 gui.door.noClip=No-Clip
+gui.door.playPlaceSounds=Play Place Sounds
 gui.door.useInternalOutput=Listen to signal
 gui.door.rightclick=Allow right click
 gui.door.pick-sound=Pick Sound
@@ -229,6 +261,12 @@ gui.signal.configuration.input.operation.type.none=none
 gui.signal.configuration.input.operation.type.operation=operation
 gui.signal.configuration.input.operation.type.pattern=pattern
 gui.signal.configuration.input.operation.type.equation=equation
+
+gui.frame_builder.width=Width:
+gui.frame_builder.height=Height:
+gui.frame_builder.thickness=Thickness:
+gui.frame_builder.craft=Craft
+gui.frame_builder.failed=Missing blueprint
 
 animation.event.child.name=Activate Child
 animation.event.sound-event.name=Play Sound Event
@@ -282,3 +320,11 @@ config.littletiles.creative.limitPlaceBlocks.comment=If the amount a player can 
 config.littletiles.creative.maxPlaceBlocks.comment=Only affects the range if place limitation is enabled.
 config.littletiles.creative.minimumTransparency.comment=Transparency will be enabled if the minimum is smaller than 255.
 config.littletiles.creative.dyeVolume.comment=How many blocks can painted with one dye\nassuming the tile has the exact same color
+
+littletiles.chisel.tooltip=%s\n'%s' to pick block\nHold 'CTRL' to place more points\n'%s' to mark the position\n'%s' to configure tool\n'%s' to configure grid size
+littletiles.grabber.tooltip=%s\n'%s' to configure tool\n'%s' to configure grid size
+littletiles.hammer.tooltip=%s\nHold 'CTRL' to place more points\n'%s' to mark the position\n'%s' to configure tool\n'%s' to configure grid size and filter
+littletiles.colortube.tooltip=%s\n'%s' to pick color\nHold 'CTRL' to place more points\n'%s' to mark the position\n'%s' to configure tool\n'%s' to configure grid size and filter
+littletiles.recipeadvanced.tooltip='%s' first position\n'%s' second position\n'%s' pick shape/ structure\n'%s' confirm/ configure selection
+littletiles.saw.tooltip='%s' extend tile\n'%s' shrink tile\nHold 'CTRL' to go further
+littletiles.screwdriver.tooltip='%s' first position\n'%s' second position\n'%s' modify selection

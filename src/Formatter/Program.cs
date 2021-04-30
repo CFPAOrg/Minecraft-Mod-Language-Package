@@ -1,20 +1,23 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+
 using Serilog;
 
-namespace Formatter
-{
-    static class Program
-    {
-        static async Task Main(string[] args)
-        {
-            var config = await JsonSerializer.DeserializeAsync<Configuration[]>(File.OpenRead("./config/spider/config.json"));
+namespace Formatter {
+    static class Program {
+        static async Task Main() {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                .Enrich.FromLogContext()
+                .CreateLogger();
             var bl = await Util.ReadBlackKey();
-            foreach (var configuration in config) {
-                var file = Util.SearchLangFiles(configuration.Version);
-                await Util.FormatLangFile(file, bl);
-            }
+            var l = Util.SearchLangFiles();
+            var j = Util.SearchJsonFiles();
+            await Util.FormatLangFile(l, bl);
+            await Util.FormatJsonFile(j, bl);
         }
     }
 }
