@@ -1,0 +1,59 @@
+{
+	"name": "可编程方块",
+	"icon": "warpdrive:component:8",
+	"category": "0_basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "大多数机器自带了适用于 $(item)ComputerCraft$() 和 $(item)OpenComputers$() 的脚本：只需要紧贴方块放置一台电脑，即可开始使用。右击电脑打开命令行。$(br2)你可以通过$(item)有线调制解调器$()或者$(item)线缆$()进行远程连接。使用自定义脚本的话，无线远程控制也是有可能的。"
+		},
+		{
+			"type": "text",
+			"text": "主要机器都有$(item)启动$()脚本，会在开机时自动运行并显示用户界面。有这种脚本的机器有$(l:4_movement/ship_core)飞船核心$()、$(l:3_advanced_machines/accelerator_controller)加速器控制器$()、$(l:5_combat/weapon_controller)武器控制器$()和$(l:3_advanced_machines/enantiomorphic_reactor)对称反应堆核心$()。$(br2)对于更简单的机器，脚本会在安装$(item)电脑接口$()升级后列在对应的外设页面中。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "warpdrive:component@8x2",
+			"title": "电脑接口",
+			"text": "右击曲率驱动机器，或者查看其提示文本可查看是否能安装$(item)电脑接口$()升级。"
+		},
+		{
+			"type": "text",
+			"title": "ComputerCraft",
+			"text": "你可以使用 $(item)ls$() 查看方块自带的脚本。$(br)如果你只看到了 $(item)rom$()，那么你的电脑无法连接到机器：$(li)检查电脑是不是紧挨着你想接入的机器，然后$(li)检查$(item)网络电缆$()有没有中断，$(li)检查$(item)有线调制解调器$()是不是红色/在线，$(li)检查机器是不是缺少$(item)电脑接口$()升级。"
+		},
+		{
+			"type": "text",
+			"title": "ComputerCraft 使用提示",
+			"text": "长按$(item)Ctrl-R$()数秒可重置电脑。$(br2)长按$(item)Ctrl-T$()数秒可终结当前程序。$(br2)输入 $(item)monitor $(o)side$(/o) $(o)program$() 可将程序重定向至相连显示器进行显示，$(br)其中 $(o)side$() 是显示器相对电脑的位置（top、bottom、left、right、back）。"
+		},
+		{
+			"type": "text",
+			"text": "要了解更多，可参考$(l:http://www.computercraft.info/wiki/Main_Page)这个$() ComputerCraft 模组的 wiki，也可以简单地输入 $(item)help$()。"
+		},
+		{
+			"type": "text",
+			"title": "脚本自定义",
+			"text": "你可以通过重写启动脚本自定义一个用于 ComputerCraft 的自带脚本。$(br)一个方法是：$(br)$(li)将电脑连接到机器，$(br)$(li)启动电脑，$(br)$(li)终结脚本程序，$(br)$(li)通过输入$(item)copy startup mystartup$() 复制脚本，$(br)$(li)断开电脑和机器的连接，"
+		},
+		{
+			"type": "text",
+			"text": "$(li)重启电脑，$(br)$(li)通过输入 $(br)$(item)move mystartup startup$() 重命名脚本，$(br)$(li)输入 $(br)$(item)edit startup$() 编辑脚本，$(br)$(li)重新连接机器，$(br)$(li)然后享受！$(br)$(br2)最后，记得在曲率驱动发布新版时更新脚本。"
+		},
+		{
+			"type": "text",
+			"title": "OpenComputers",
+			"text": "输入 $(item)df$() 可以查看已连接设备的列表，并检查机器是否已连接。$(br)如果没有一行是以“warpdrive”开头的，那你的电脑没有连接到机器：$(li)请尝试检查电脑是不是紧挨着你想接入的机器，$(li)检查机器是不是缺少$(item)电脑接口$()升级。"
+		},
+		{
+			"type": "text",
+			"text": "OpenComputers 有一点“老派”，所以你需要挂载一个 $(l:http://ocdoc.cil.li/tutorial:oc3_hard_drives)硬盘或者软盘$()来保存你的配置。$(br2)下面是安装脚本的步骤：$(br)$(li)安装新硬盘和含 OpenOS 的软盘，并启动电脑。$(br)$(li)输入 $(item)install$()，选择 OpenOS，等一会，重启并移除软盘。$(br)$(li)输入 $(item)install$()，选择你想要的机器，等一会，重启。$(br)$(li)享受！"
+		},
+		{
+			"type": "text",
+			"title": "OpenComputers 使用提示",
+			"text": "长按 $(item)Ctrl-R$() 数秒可重置电脑。$(br2)长按 $(item)Ctrl-C$() 数秒可终结当前程序。$(br2)一旦脚本安装好了，你就可以按照喜好直接对其进行自定义。"
+		}
+	],
+	"sortnum": 11
+}

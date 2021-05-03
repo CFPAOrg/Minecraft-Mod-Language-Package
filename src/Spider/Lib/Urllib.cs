@@ -67,7 +67,8 @@ namespace Spider.Lib {
         /// 暴力获取前9999个mod的id映射表
         /// </summary>
         /// <param name="version"></param>
-        public static async Task GetAllModIntroAsync(string version) {
+        /// <param name="path"></param>
+        public static async Task GetAllModIntroAsync(string version,string path) {
             using var httpClient = new HttpClient();
             var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search") {
                 Query =
@@ -82,7 +83,10 @@ namespace Spider.Lib {
                 return c;
             });
             var str = JsonSerializer.SerializeToUtf8Bytes(intro, new JsonSerializerOptions() { WriteIndented = true });
-            await File.WriteAllBytesAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{version}\intro.json",
+            if (Directory.Exists(@$"{Directory.GetCurrentDirectory()}\config\spider\{path}")) {
+                Directory.CreateDirectory(@$"{Directory.GetCurrentDirectory()}\config\spider\{path}");
+            }
+            await File.WriteAllBytesAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{path}\intro.json",
                 str);
         }
 

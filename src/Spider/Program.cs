@@ -22,8 +22,10 @@ namespace Spider {
                 .WriteTo.Console()
                 .CreateLogger();
             var c = await JsonReader.ReadConfigAsync();
+
             foreach (var cfg in c) {
                 var parser = new InfoParser(cfg.Configuration, cfg.CustomConfigurations);
+                var modTask = UrlLib.GetModInfoAsync(cfg.Count, cfg.Configuration.Version);
                 var root = Directory.CreateDirectory(
                     $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}\\assets");
 
@@ -35,7 +37,7 @@ namespace Spider {
                     }
                 }
 
-                var allM = await UrlLib.GetModInfoAsync(cfg.Count, cfg.Version);
+                var allM = await modTask;
                 var allN = allM.ToList().Select(_ => _.ShortWebsiteUrl).ToList();
                 var pending = new List<string>();
                 foreach (var info in names) {
@@ -46,7 +48,7 @@ namespace Spider {
 
                 Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod，{pending.Count} 个mod需要单独处理");
 
-                var dict = await JsonReader.ReadIntroAsync(cfg.Version);
+                var dict = await JsonReader.ReadIntroAsync(cfg.Configuration.Version,cfg.Version);
 
                 if (names.Count > cfg.Count) {
                     var bin = allM.Where(_ => !names.Contains(_.ShortWebsiteUrl));
@@ -64,7 +66,7 @@ namespace Spider {
                 foreach (var l in l1) {
                     try {
                         semaphore.WaitOne();
-                        await Utils.ParseModsAsync(l);
+                        await Utils.ParseModsAsync(l,cfg);
                     }
                     catch (Exception e) {
                         Log.Logger.Error(e.Message);
@@ -79,7 +81,7 @@ namespace Spider {
                         var m = await UrlLib.GetModInfoAsync(dict[name]);
                         var i = parser.Serialize(m);
                         try {
-                            await Utils.ParseModsAsync(i);
+                            await Utils.ParseModsAsync(i,cfg);
                         }
                         catch (Exception e) {
                             Log.Logger.Error(e.Message);
