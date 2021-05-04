@@ -69,9 +69,12 @@ namespace Formatter {
 
         public static async Task FormatJsonFile(List<string> lp, List<string> bl) {
             foreach (var path in lp) {
+                var fileStream = await File.ReadAllTextAsync(path);
+                if (string.IsNullOrWhiteSpace(fileStream)) {
+                    await File.WriteAllTextAsync(path, "{}");
+                }
                 try {
-                    var fileStream = File.Open(path, FileMode.Open);
-                    var obj = await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(fileStream);
+                    var obj = await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(new MemoryStream(Encoding.UTF8.GetBytes(fileStream ?? "")));
                     foreach (var key in bl) {
                         if (obj!.ContainsKey(key)) {
                             obj.Remove(key);
