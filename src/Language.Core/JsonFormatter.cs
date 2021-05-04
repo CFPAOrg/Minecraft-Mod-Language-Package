@@ -52,6 +52,9 @@ namespace Language.Core {
                 if (!Directory.Exists($"{Directory.GetCurrentDirectory()}/broken")) {
                     Directory.CreateDirectory($"{Directory.GetCurrentDirectory()}/broken");
                 }
+                _writer.Write("{}");
+                _writer.Close();
+                _writer.Dispose();
                 File.WriteAllText($"{Directory.GetCurrentDirectory()}/broken/{_modName}{DateTime.UtcNow.Millisecond}.json", builder.ToString());
             }
         }
