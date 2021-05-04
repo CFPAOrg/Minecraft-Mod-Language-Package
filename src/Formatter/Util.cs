@@ -74,7 +74,7 @@ namespace Formatter {
                     await File.WriteAllTextAsync(path, "{}");
                 }
                 try {
-                    var obj = await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(fileStream);
+                    var obj = await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(new MemoryStream(Encoding.UTF8.GetBytes(fileStream ?? "")));
                     foreach (var key in bl) {
                         if (obj!.ContainsKey(key)) {
                             obj.Remove(key);
