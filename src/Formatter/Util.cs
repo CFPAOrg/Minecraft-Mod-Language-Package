@@ -71,7 +71,7 @@ namespace Formatter {
             foreach (var path in lp) {
                 var fileStream = await File.ReadAllTextAsync(path);
                 if (string.IsNullOrWhiteSpace(fileStream)) {
-                    File.WriteAllTextAsync(path, "{}");
+                    await File.WriteAllTextAsync(path, "{}");
                 }
                 try {
                     var obj = await JsonSerializer.DeserializeAsync<Dictionary<string, string>>(fileStream);
