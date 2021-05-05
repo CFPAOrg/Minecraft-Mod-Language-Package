@@ -47,7 +47,7 @@ namespace Packer
                                                 Log.Information("跳过了标记为直接加入的命名空间：{0}", assetDirectory.Name);
                                                 bypassed.Add(file.FullName, Path.Combine("assets",
                                                                   assetDirectory.Name,
-                                                                  relativePath));
+                                                                  relativePath).Replace('\\', '/'));
                                                 return null;
                                             }
                                             if (relativePath.Contains("en_us", StringComparison.OrdinalIgnoreCase))

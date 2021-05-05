@@ -28,7 +28,7 @@ namespace Packer.Extensions
             string commonPrefix = $"./projects/{config.Version}";
             config.FilesToInitialize.ForEach(path =>
             {
-                var destination = path.Replace("/1UNKNOWN", ""); // 除掉一层文件夹（在 assets/ 里的各种 fix）
+                var destination = path.Replace('\\', '/').Replace("/1UNKNOWN", ""); // 除掉一层文件夹（在 assets/ 里的各种 fix）
                 Log.Information("初始化压缩包：添加 {0}", destination);
                 archive.CreateEntryFromFile($"{commonPrefix}/{path}", destination);
             });
