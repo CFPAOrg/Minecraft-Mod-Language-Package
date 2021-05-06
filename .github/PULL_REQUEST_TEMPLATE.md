@@ -1,6 +1,6 @@
-- [ ] 我已阅读注意事项 [#847](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/847)
-- [ ] 我已确定中文文件中没有未翻译的文本，如有以删除
-- [ ] 我已对 PR 作出标记以便审查（见 [CONTRIBUTING.md](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)）
+- [ ] 我已阅读注意事项 [#847](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/847)；
+- [ ] 我已确定中文文件中没有未翻译的文本，如有已删除；
+- [ ] 我已对 PR 作出标记以便审查（见 [CONTRIBUTING.md](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)）；
 - [ ] 我已确认文件路径、分支均正确：
     - 如果是 1.12 翻译，应该是：`projects/1.12.2/assets/CurseForge 项目名称/ModID/lang/zh_cn.lang`
     - 如果是 1.15-1.16 翻译，应该是：`projects/1.16.1/assets/CurseForge 项目名称/ModID/lang/zh_cn.json`
