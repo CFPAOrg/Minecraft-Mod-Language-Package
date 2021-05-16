@@ -34,6 +34,7 @@ namespace Packer
             archive.Initialize(config);
             await archive.WriteContent(Lib.RetrieveContent(config, out var bypassed));
             archive.WriteBypassed(bypassed); // 将跳过的文件一并加入
+            stream.close();
             await Utils.WriteMd5(File.OpenRead($".\\Minecraft-Mod-Language-package-{config.Version}.zip"), config);
             Log.Information("对版本 {0} 的打包结束", config.Version);
         }
