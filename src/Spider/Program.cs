@@ -62,26 +62,41 @@ namespace Spider {
                 parser.Infos = allM.ToList();
                 var l1 = parser.SerializeAll();
 
-                var semaphore = new Semaphore(32, 40);
-                foreach (var l in l1) {
+                var parallelOption = new ParallelOptions {
+                    MaxDegreeOfParallelism = 32
+                };
+
+                Parallel.ForEach(l1, parallelOption, (async tuple => {
                     try {
-                        semaphore.WaitOne();
-                        await Utils.ParseModsAsync(l,cfg);
+                        await Utils.ParseModsAsync(tuple, cfg);
                     }
                     catch (Exception e) {
                         Log.Logger.Error(e.Message);
                     }
-                    finally {
-                        semaphore.Release();
-                    }
-                }
+                }));
+
+                //var semaphore = new Semaphore(32, 40);
+                //foreach (var l in l1) {
+                //    try {
+                //        semaphore.WaitOne();
+                //        await Utils.ParseModsAsync(l,cfg);
+                //    }
+                //    catch (Exception e) {
+                //        Log.Logger.Error(e.Message);
+                //    }
+                //    finally {
+                //        semaphore.Release();
+                //    }
+                //}
 
                 foreach (var name in pending) {
                     if (dict.ContainsKey(name)) {
                         var m = await UrlLib.GetModInfoAsync(dict[name]);
                         var i = parser.Serialize(m);
                         try {
-                            await Utils.ParseModsAsync(i,cfg);
+                            var task = new Task(async () => await Utils.ParseModsAsync(i, cfg));
+                            task.Start();
+                            //await Utils.ParseModsAsync(i,cfg);
                         }
                         catch (Exception e) {
                             Log.Logger.Error(e.Message);
