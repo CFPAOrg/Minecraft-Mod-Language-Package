@@ -99,7 +99,14 @@ namespace Spider {
                         var m = await UrlLib.GetModInfoAsync(dict[name]);
                         var i = parser.Serialize(m);
                         try {
-                            var task = new Task(async () => await Utils.ParseModsAsync(i, cfg));
+                            var task = new Task(async () => {
+                                try {
+                                    await Utils.ParseModsAsync(i, cfg);
+                                }
+                                catch (Exception e) {
+                                    Log.Logger.Error(e.Message);
+                                }
+                            });
                             task.Start();
                             //await Utils.ParseModsAsync(i,cfg);
                         }
