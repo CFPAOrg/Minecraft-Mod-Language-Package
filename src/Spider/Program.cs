@@ -66,12 +66,17 @@ namespace Spider {
                     MaxDegreeOfParallelism = 32
                 };
 
+                var semaphore = new Semaphore(32, 40);
                 Parallel.ForEach(l1, parallelOption, (async tuple => {
                     try {
+                        semaphore.WaitOne();
                         await Utils.ParseModsAsync(tuple, cfg);
                     }
                     catch (Exception e) {
                         Log.Logger.Error(e.Message);
+                    }
+                    finally {
+                        semaphore.Release();
                     }
                 }));
 
