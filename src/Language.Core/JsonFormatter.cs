@@ -72,6 +72,8 @@ namespace Language.Core {
                 _writer.Write("{}");
                 _writer.Close();
                 _writer.Dispose();
+                _reader.Close();
+                _reader.Dispose();
                 File.WriteAllText($"{Directory.GetCurrentDirectory()}/broken/{_modName}{DateTime.UtcNow.Millisecond}.json", builder.ToString());
             }
         }
