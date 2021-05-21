@@ -62,6 +62,8 @@ namespace Language.Core {
                 _writer.Write(jo.ToString());
                 _writer.Close();
                 _writer.Dispose();
+                _reader.Close();
+                _reader.Dispose();
             }
             catch {
                 if (!Directory.Exists($"{Directory.GetCurrentDirectory()}/broken")) {

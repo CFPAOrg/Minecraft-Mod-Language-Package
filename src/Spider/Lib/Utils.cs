@@ -97,8 +97,10 @@ namespace Spider.Lib {
 
             foreach (var (entry, modDomain) in result) {
                 var originPath = entry.FullName;
+                var flag = true;
+                var cflag = true;
                 if (originPath.Contains($"assets/{modDomain}/lang")) {
-                    var flag = entry.Name switch {
+                    flag = entry.Name switch {
                         "en_us.lang" => false,
                         "en_US.lang" => false,
                         "en_us.json" => false,
@@ -106,7 +108,7 @@ namespace Spider.Lib {
                         _ => true
                     };
 
-                    var cflag = true;
+                    
                     if (cfg.UpdateChinese) {
                         cflag = entry.Name switch {
                             "zh_cn.lang" => false,
@@ -130,7 +132,28 @@ namespace Spider.Lib {
                 if (!Directory.Exists(localPath)) {
                     Directory.CreateDirectory(localPath);
                 }
-                entry.ExtractToFile(localPath+"/"+entry.Name.ToLower(),true);
+
+                var p = localPath + "/" + entry.Name.ToLower();
+                if (!flag) {
+                    if (Path.GetExtension(entry.Name) == ".json" && CheckVersion(cfg.Version)) {
+                        entry.ExtractToFile(p+".tmp", true);
+                        var jf = new JsonFormatter(new StreamReader(File.OpenRead(p + ".tmp")), new StreamWriter(File.Create(p)),
+                            mod.ProjectName);
+                        jf.Format();
+                        CreateEmptyJson(p);
+                        File.Delete(p + ".tmp");
+                    }
+                    if (Path.GetExtension(entry.Name) == ".lang" && !CheckVersion(cfg.Version)) {
+                        entry.ExtractToFile(p + ".tmp", true);
+                        var lf = new LangFormatter(new StreamReader(File.OpenRead(p + ".tmp")), new StreamWriter(File.Create(p)));
+                        lf.Format();
+                        CreateEmptyLang(p);
+                        File.Delete(p + ".tmp");
+                    }
+                }
+                else {
+                    entry.ExtractToFile(p, true);
+                }
             }
 
             //老旧的方法

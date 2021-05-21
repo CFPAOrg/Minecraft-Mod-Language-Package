@@ -71,6 +71,8 @@ namespace Language.Core {
 
             _writer.Close();
             _writer.Dispose();
+            _reader.Close();
+            _reader.Dispose();
         }
         void SkipLine() {
             int c;
