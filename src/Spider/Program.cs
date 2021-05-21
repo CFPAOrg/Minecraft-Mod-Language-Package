@@ -63,10 +63,10 @@ namespace Spider {
                 var l1 = parser.SerializeAll();
 
                 var parallelOption = new ParallelOptions {
-                    MaxDegreeOfParallelism = 32
+                    MaxDegreeOfParallelism = 16
                 };
 
-                var semaphore = new Semaphore(32, 40);
+                var semaphore = new Semaphore(16, 16);
                 Parallel.ForEach(l1, parallelOption, (async tuple => {
                     try {
                         semaphore.WaitOne();
