@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace Language.Core {
 
@@ -33,12 +31,6 @@ namespace Language.Core {
         /// 格式化语言文件
         /// </summary>
         public void Format() {
-            var lines = new List<string>();
-            while (!_reader.EndOfStream) {
-                lines.Add(_reader.ReadLine());
-            }
-
-            _reader.BaseStream.Seek(0, SeekOrigin.Begin);
             int c;
             var lineStart = true;
             var multiLineComment = false;
@@ -77,28 +69,10 @@ namespace Language.Core {
                 Write(c);
             }
 
-            _reader.BaseStream.Seek(0, SeekOrigin.Begin);
-            lines.Clear();
-            while (!_reader.EndOfStream) {
-                lines.Add(_reader.ReadLine());
-            }
-
-            _writer.Flush();
-            _writer.BaseStream.Seek(0, SeekOrigin.Begin);
-            if (!lines.Contains("#PARSE_ESCAPES")) {
-                var result = from line in lines
-                             where line.Contains("=") || line.StartsWith("#") || string.IsNullOrWhiteSpace(line) || string.IsNullOrEmpty(line)
-                             select line;
-
-                foreach (var s in result) {
-                    _writer.WriteLineAsync(s);
-                }
-            }
-
-            _reader.Close();
-            _reader.Dispose();
             _writer.Close();
             _writer.Dispose();
+            _reader.Close();
+            _reader.Dispose();
         }
         void SkipLine() {
             int c;

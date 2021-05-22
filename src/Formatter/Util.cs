@@ -59,10 +59,21 @@ namespace Formatter {
             foreach (var l in lp) {
                 var list = new List<string>();
                 var lines = await File.ReadAllLinesAsync(l);
+                var parse = !lines.Contains("#PARSE_ESCAPES");
                 foreach (var line in lines) {
                     if (keyReg.IsMatch(line)) {
                         if (bl.Contains(keyReg.Match(line).Value)) {
                             continue;
+                        }
+                    }
+                    else {
+                        if (parse) {
+                            if (!line.StartsWith("#") || !string.IsNullOrWhiteSpace(line) || !string.IsNullOrEmpty(line)) {
+                                list.Add(line);
+                            }
+                            else {
+                                continue;
+                            }
                         }
                     }
                     list.Add(line);
