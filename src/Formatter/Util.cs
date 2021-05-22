@@ -75,9 +75,6 @@ namespace Formatter {
                                 continue;
                             }
                         }
-                    }
-
-                    if (!parse) {
                         list.Add(line);
                     }
 
