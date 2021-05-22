@@ -1,5 +1,4 @@
 # Items
-# Items
 item.blank_module.name=Blank Module
 item.receiver_module.name=Receiver Module
 item.puller_module.name=Puller Module Mk1
@@ -51,19 +50,13 @@ item.mimic_augment.name=Mimic Augment
 item.pushing_augment.name=Pushing Augment
 item.GuideBook.name=§l§nModular Routers
 
-
-# Blocks
 # Blocks
 tile.item_router.name=Item Router
 tile.template_frame.name=Template Frame
 
-
-# Tab Group
 # Tab Group
 itemGroup.modularrouters=Modular Routers
 
-
-# GUI Labels & tooltips
 # GUI Labels & tooltips
 guiText.tooltip.BLACKLIST.1=Whitelist\nAn empty whitelist will match nothing.
 guiText.tooltip.IGNORE_META.1=Match Metadata\ne.g. distinguish between different colors of wool
@@ -118,7 +111,6 @@ guiText.tooltip.xpVacuum.ejectFluid=XP Fluids Ejected
 guiText.tooltip.fluidForceEmpty.false=§bForce Emptying Disabled \nIf the block next to the router is not completely empty, no fluid will be transferred out of the router.
 guiText.tooltip.fluidForceEmpty.true=§bForce Emptying Enabled \nFluid will always be transferred out of the router if possible, even if that would cause fluid to be lost (e.g. emptying water into an existing water block)
 
-
 guiText.label.direction=Direction
 guiText.label.modules=Modules
 guiText.label.upgrades=Upgrades
@@ -151,7 +143,6 @@ guiText.label.xpVacuum=XP Type
 guiText.label.xpVacuum.eject=Eject
 guiText.label.fluidForceEmpty=Force
 
-
 guiText.popup.filter=§a§nFilter \n \n§rPlace ghost copies of items here to filter what this module works on.  If the item in the router's buffer doesn't match the filter item(s) here, then the module will not run.  See also the filter control buttons below.
 guiText.popup.filterControl=§a§nFilter Control \n \n§rThese buttons control how the filter is applied to the item in the router's buffer. See individual tooltips on each button for more information.
 guiText.popup.direction=§a§nDirection Control \n \n§rThis area of the GUI allows you to define the direction the module operates in. This direction is relative to the front of the router. The default direction is NONE, which for most modules means the module will not run; you will need to define a direction.
@@ -174,8 +165,6 @@ guiText.popup.xpVacuum=§a§nXP Collection Type \n \n§rHere you can define how 
 guiText.popup.xpVacuum.eject=§a§nXP Fluid Ejection \n \n§rIf checked, the router will attempt to eject any XP fluid into a suitable adjacent tank (sides checked in order: D, U, N, S, W, E). Note that only XP fluids are considered for ejection, not solid XP items. \n \nThis may be useful if you don't have a mod that provides a tank which can be filled as an item in the router's buffer.
 guiText.popup.distributor.strategy=§a§nDistribution Strategy \n \n§rFour possible strategies exist: \n \n§eRound Robin§r - Each targeted inventory will be attempted in turn. \n \n§eRandom§r - A random inventory is attempted on each tick. \n \n§eNearest First§r - The closest inventory with space to insert will be used. \n \n§eFurthest First§r - The most distant inventory with space to insert will be used.
 
-
-# Config GUI
 # Config GUI
 gui.config.mainTitle=Modular Routers Configuration
 gui.config.ctgy.router=Routers
@@ -213,8 +202,6 @@ gui.config.lowPowerTickRate=An eco-mode router in low-power mode will only tick 
 gui.config.backgroundTint=Tint module GUI backgrounds with the same color as the module item
 gui.config.startWithGuide=New players start with a copy of the guide book
 
-
-# Item tooltips
 # Item tooltips
 itemText.misc.holdShiftCtrl=Hold §e§oShift§7 for settings, §e§oCtrl§7 for info
 itemText.misc.holdCtrl=Hold §e§oCtrl§r§7 for info
@@ -272,8 +259,6 @@ itemText.distributor.strategy.NEAREST_FIRST=Nearest First
 itemText.distributor.strategy.FURTHEST_FIRST=Furthest First
 itemText.distributor.strategy.RANDOM=Random
 
-
-# Usage tooltips
 # Usage tooltips
 itemText.usage.item.breaker_module=Breaks a block adjacent to the router in the module's configured direction, pulling it as an item into the router's buffer.
 itemText.usage.item.dropper_module=Drops items from the router's buffer in the module's configured direction.
@@ -319,8 +304,6 @@ itemText.usage.item.xp_vacuum_augment=Allows the Vacuum Module to collect XP orb
 itemText.usage.item.mimic_augment=Allows the fake blocks placed by the Extruder Mk2 to also mimic lighting, redstone emission, hardness and blast resistance of the blocks whose appearance is being mimicked.
 itemText.usage.item.pushing_augment=Increases the force by which Extruder Mk1/2 can push entities away when extruding blocks.  Can be stacked.
 
-
-# Player chat messages
 # Player chat messages
 chatText.misc.inventoryMerged=Merged %d item(s) into the %s
 chatText.security.accessDenied=§c--[Access Denied]--
@@ -344,8 +327,6 @@ chatText.targetValidation.OUT_OF_RANGE=§c✘ Out of Range
 chatText.targetValidation.NOT_LOADED=§c✘ Not Loaded
 chatText.targetValidation.NOT_INVENTORY=§c✘ No Inventory
 
-
-# Guidebook text
 # Guidebook text
 guidebook.para.introText=§lWelcome to Modular Routers!\n\This is a highly flexible mod for moving items around the world in various ways.  With a single block - the Item Router - and one or more plug-in modules, you can pull items from an inventory (including modded inventories like Storage Drawers), send them to other inventories near & far, place items as blocks, break blocks, drop items into the world, sort items, and much more.\n\nThink of the Item Router like a super-configurable Hopper on steroids...
 guidebook.para.routerText=The §lItem Router§r is the central block of the routing system.  By itself, it does nothing other than serve as a one-slot inventory (which can be piped into and out of by hoppers and other mod piping systems).\n\nTo do anything useful with a router, however, you need to install one or more (up to nine) §lModules§r.  Every time a router ticks - once per second by default - it will execute every installed module, in order.  Each of these modules will operate on the item(s) in the buffer or on the world around the router in a specific way - see the §lModules§r section for info on each individual module type.\n\nThe router's operation can also be modified with §lUpgrades§r - speed it up, let it handle more items per tick, increase the range of certain modules...
@@ -363,8 +344,6 @@ guidebook.words.overview=Overview
 guidebook.words.ecoMode=Eco Mode
 guidebook.words.augments=Module Augments
 
-
-# JEI text
 # JEI text
 jei.recipe.reset.name=Module Reset
 jei.recipe.reset.description=Completely resets the module to its newly-crafted state.  Beware: ALL data, including filter settings and enchantments, will be lost (but any installed augments will be returned)
