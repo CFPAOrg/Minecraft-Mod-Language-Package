@@ -65,6 +65,7 @@ namespace Formatter {
                         if (bl.Contains(keyReg.Match(line).Value)) {
                             continue;
                         }
+                        list.Add(line);
                     }
                     else {
                         if (parse) {
