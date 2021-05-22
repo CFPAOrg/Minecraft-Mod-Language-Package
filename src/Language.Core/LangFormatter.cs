@@ -83,6 +83,7 @@ namespace Language.Core {
                 lines.Add(_reader.ReadLine());
             }
 
+            _writer.Flush();
             _writer.BaseStream.Seek(0, SeekOrigin.Begin);
             if (!lines.Contains("#PARSE_ESCAPES")) {
                 var result = from line in lines
