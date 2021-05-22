@@ -1,4 +1,5 @@
 # gui - general
+# gui - general
 schematica.gui.x=X:
 schematica.gui.y=Y:
 schematica.gui.z=Z:
@@ -12,12 +13,16 @@ schematica.gui.south=South
 schematica.gui.west=West
 schematica.gui.east=East
 
+
+# gui - general - load
 # gui - general - load
 schematica.gui.title=Select schematic file
 schematica.gui.folderInfo=(Place schematic files here)
 schematica.gui.openFolder=Open schematic folder
 schematica.gui.noschematic=-- No schematic --
 
+
+# gui - general - save
 # gui - general - save
 schematica.gui.point.red=Red point
 schematica.gui.point.blue=Blue point
@@ -25,6 +30,8 @@ schematica.gui.save=Save
 schematica.gui.saveselection=Save the selection as a schematic
 schematica.gui.format=Format: %s
 
+
+# gui - general - control
 # gui - general - control
 schematica.gui.moveschematic=Move schematic
 schematica.gui.materials=Materials
@@ -45,6 +52,8 @@ schematica.gui.materialavailable=Available
 schematica.gui.materialmissing=Missing
 schematica.gui.materialdump=Save to file
 
+
+# gui - config - categories
 # gui - config - categories
 schematica.config.category.debug=Debug
 schematica.config.category.debug.tooltip=Debug/developer settings.\nDon't touch unless you know what you're doing.
@@ -59,12 +68,16 @@ schematica.config.category.general.tooltip=General settings.
 schematica.config.category.server=Server
 schematica.config.category.server.tooltip=Server-side settings.
 
+
+# gui - config - debug
 # gui - config - debug
 schematica.config.dumpBlockList=Dump Block List
 schematica.config.dumpBlockList.tooltip=Dump all block states on startup.
 schematica.config.showDebugInfo=Show Debug Info
 schematica.config.showDebugInfo.tooltip=Display extra information on the debug screen (F3).
 
+
+# gui - config - render
 # gui - config - render
 schematica.config.alphaEnabled=Alpha Enabled
 schematica.config.alphaEnabled.tooltip=Enable transparent textures.
@@ -79,6 +92,8 @@ schematica.config.blockDelta.tooltip=Delta value used for highlighting (if you e
 schematica.config.renderDistance=Render Distance
 schematica.config.renderDistance.tooltip=Schematic render distance.
 
+
+# gui - config - printer
 # gui - config - printer
 schematica.config.placeDelay=Placement Delay
 schematica.config.placeDelay.tooltip=Delay between placement attempts (in ticks).
@@ -95,6 +110,8 @@ schematica.config.destroyInstantly.tooltip=Destroy all blocks that can be destro
 schematica.config.placeAdjacent=Place Only Adjacent
 schematica.config.placeAdjacent.tooltip=Place blocks only if there is an adjacent block next to them.
 
+
+# gui - config - printer - swap slots
 # gui - config - printer - swap slots
 schematica.config.swapSlot0=Allow Slot 1
 schematica.config.swapSlot0.tooltip=Allow the printer to use the hotbar slot 1.
@@ -115,12 +132,16 @@ schematica.config.swapSlot7.tooltip=Allow the printer to use the hotbar slot 8.
 schematica.config.swapSlot8=Allow Slot 9
 schematica.config.swapSlot8.tooltip=Allow the printer to use the hotbar slot 9.
 
+
+# gui - config - general
 # gui - config - general
 schematica.config.schematicDirectory=Schematic Directory
 schematica.config.schematicDirectory.tooltip=Schematic directory.
 schematica.config.extraAirBlocks=Extra Air Blocks
 schematica.config.extraAirBlocks.tooltip=Extra blocks to consider as air for the schematic renderer.
 
+
+# gui - config - server
 # gui - config - server
 schematica.config.printerEnabled=Allow Printer
 schematica.config.printerEnabled.tooltip=Allow players to use the printer.
@@ -129,6 +150,8 @@ schematica.config.saveEnabled.tooltip=Allow players to save schematics.
 schematica.config.loadEnabled=Allow Loading
 schematica.config.loadEnabled.tooltip=Allow players to load schematics.
 
+
+# keys
 # keys
 schematica.key.category=Schematica
 schematica.key.load=Load schematic
@@ -142,6 +165,8 @@ schematica.key.printerToggle=Toggle Printer
 schematica.key.moveHere=Move here
 schematica.key.pickBlock=Pick Block
 
+
+# commands - save
 # commands - save
 schematica.command.save.usage=/schematicaSave <startX> <startY> <startZ> <endX> <endY> <endZ> <name> [format]
 schematica.command.save.playersOnly=This command can only be used by players.
@@ -152,6 +177,8 @@ schematica.command.save.quotaExceeded=You have exceeded your quota on the server
 schematica.command.save.playerSchematicDirUnavailable=There was a problem on the server and your schematic was not saved. Please contact the server administrator.
 schematica.command.save.unknownFormat=Unknown format "%s".
 
+
+# commands - list
 # commands - list
 schematica.command.list.usage=/schematicaList [page]
 schematica.command.list.notAvailable=There was a problem retrieving your list of schematics.
@@ -161,29 +188,39 @@ schematica.command.list.header=--- Showing schematics page %d of %d ---
 schematica.command.list.noSuchPage=No such page
 schematica.command.list.noSchematics=You have no schematics available.
 
+
+# commands - remove
 # commands - remove
 schematica.command.remove.usage=/schematicaRemove <name>
 schematica.command.remove.schematicRemoved=Schematic "%s" removed.
 schematica.command.remove.schematicNotFound=Schematic "%s" could not be found.
 schematica.command.remove.areYouSure=Are you sure?
 
+
+# commands - download
 # commands - download
 schematica.command.download.usage=/schematicaDownload <name>
 schematica.command.download.started=Started downloading %s...
 schematica.command.download.downloadSucceeded=Successfully downloaded %s.
 schematica.command.download.downloadFail=Download failed.
 
+
+# commands - replace
 # commands - replace
 schematica.command.replace.usage=/schematicaReplace <original> <replacement>
 schematica.command.replace.noSchematic=You don't have a schematic loaded.
 schematica.command.replace.success=Replaced %s blocks.
 
+
+# messages
 # messages
 schematica.message.togglePrinter=Printer: %s
 schematica.message.invalidBlock="%s" does not exist.
 schematica.message.invalidProperty="%s" is not a valid property.
 schematica.message.invalidPropertyForBlock="%s" is not a valid property for "%s".
 
+
+# schematic formats
 # schematic formats
 schematica.format.classic=Classic
 schematica.format.alpha=Alpha (standard)
