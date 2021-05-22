@@ -69,7 +69,7 @@ namespace Formatter {
                     }
                     else {
                         if (parse) {
-                            if (line.StartsWith("#") || string.IsNullOrWhiteSpace(line) || string.IsNullOrEmpty(line)) {
+                            if (line.Trim().StartsWith("#") || string.IsNullOrWhiteSpace(line) || string.IsNullOrEmpty(line)) {
                                 list.Add(line);
                             }
                         }
