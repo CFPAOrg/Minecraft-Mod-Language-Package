@@ -76,7 +76,11 @@ namespace Formatter {
                             }
                         }
                     }
-                    list.Add(line);
+
+                    if (!parse) {
+                        list.Add(line);
+                    }
+
                 }
 
                 await File.WriteAllLinesAsync(l, list);
