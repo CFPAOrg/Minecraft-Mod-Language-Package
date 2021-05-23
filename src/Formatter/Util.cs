@@ -59,13 +59,25 @@ namespace Formatter {
             foreach (var l in lp) {
                 var list = new List<string>();
                 var lines = await File.ReadAllLinesAsync(l);
+                var parse = !lines.Contains("#PARSE_ESCAPES");
                 foreach (var line in lines) {
                     if (keyReg.IsMatch(line)) {
                         if (bl.Contains(keyReg.Match(line).Value)) {
                             continue;
                         }
+                        list.Add(line);
                     }
-                    list.Add(line);
+                    else {
+                        if (parse) {
+                            if (line.Trim().StartsWith("#") || string.IsNullOrWhiteSpace(line) || string.IsNullOrEmpty(line)) {
+                                list.Add(line);
+                            }
+                        }
+                        else {
+                            list.Add(line);
+                        }
+                    }
+
                 }
 
                 await File.WriteAllLinesAsync(l, list);
@@ -74,38 +86,47 @@ namespace Formatter {
 
         public static async Task FormatJsonFile(List<string> lp, List<string> bl) {
             foreach (var path in lp) {
-                var reader = new StreamReader(File.OpenRead(path));
+                File.Copy(path,path+".tmp",true);
+                var reader = new StreamReader(File.OpenRead(path + ".tmp"));
                 var builder = new StringBuilder();
                 while (!reader.EndOfStream) {
                     builder.AppendLine(await reader.ReadLineAsync());
                 }
 
                 reader.BaseStream.Seek(0, SeekOrigin.Begin);
-                var fileStream = await File.ReadAllTextAsync(path);
+                var fileStream = await File.ReadAllTextAsync(path + ".tmp");
                 if (string.IsNullOrWhiteSpace(fileStream)) {
                     await File.WriteAllTextAsync(path, "{}");
                 }
+
                 try {
-                    JsonSerializer.Deserialize<Dictionary<string, string>>(builder.ToString(), new JsonSerializerOptions() {
-                        AllowTrailingCommas = true,
-                        ReadCommentHandling = JsonCommentHandling.Skip,
-                        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-                    });
+                    JsonSerializer.Deserialize<Dictionary<string, string>>(builder.ToString(),
+                        new JsonSerializerOptions() {
+                            AllowTrailingCommas = true,
+                            ReadCommentHandling = JsonCommentHandling.Skip,
+                            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                        });
 
                     var jr = new JsonTextReader(reader);
                     var jo = new JObject();
-                    var jt = (JObject)await JToken.ReadFromAsync(jr, new JsonLoadSettings() { DuplicatePropertyNameHandling = DuplicatePropertyNameHandling.Ignore, CommentHandling = CommentHandling.Ignore });
+                    var jt = (JObject) await JToken.ReadFromAsync(jr,
+                        new JsonLoadSettings() {
+                            DuplicatePropertyNameHandling = DuplicatePropertyNameHandling.Ignore,
+                            CommentHandling = CommentHandling.Ignore
+                        });
                     foreach (var (key, value) in jt) {
                         //Console.WriteLine(key + "\t" + value.Value<string>());
                         if (bl.Contains(key)) {
                             continue;
                         }
+
                         jo.Add(key, value.Value<string>());
                     }
+
                     await File.WriteAllTextAsync(path, jo.ToString());
                 }
                 catch (Exception) {
-                    Log.Logger.Verbose($"发生错误，已跳过{path}");
+                    Log.Logger.Error($"发生错误，已跳过{path}");
                 }
             }
         }
