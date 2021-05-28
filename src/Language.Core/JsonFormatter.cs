@@ -52,13 +52,8 @@ namespace Language.Core {
                 var jo = new JObject();
                 var jt = (JObject)JToken.ReadFrom(jr,new JsonLoadSettings(){DuplicatePropertyNameHandling = DuplicatePropertyNameHandling.Ignore,CommentHandling = CommentHandling.Ignore});
                 foreach (var (key, value) in jt) {
-                    //Console.WriteLine(key+"\t"+value.Value<string>());
                     jo.Add(key, value.Value<string>());
                 }
-                //var str = JsonSerializer.Serialize(jsonObject, new JsonSerializerOptions() {
-                //    WriteIndented = true,
-                //    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
-                //});
                 _writer.Write(jo.ToString());
                 _writer.Close();
                 _writer.Dispose();
