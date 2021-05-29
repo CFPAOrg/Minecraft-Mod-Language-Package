@@ -6,8 +6,8 @@ on:
     paths: 
       - 'config/spider/config.json'
       - 'src/Spider/**'
-#  schedule:
-#    - cron: '0 1 1,15 * *'
+  schedule:
+    - cron: '0 1 1,15 * *'
     
 
 jobs:
@@ -46,6 +46,12 @@ jobs:
       #     git add .
       #     git commit -m "Update file"
       #     git push origin HEAD:${{ github.ref }}
+
+      - name: Build formatter
+        run: dotnet publish .\src\Formatter\Formatter.csproj -c Release -o ./ -r win-x64 -p:PublishSingleFile=true
+
+      - name: Run formatter
+        run: .\Formatter
 
       - name: Commit report
         run: |
