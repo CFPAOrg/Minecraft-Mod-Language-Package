@@ -1,5 +1,6 @@
 name: Labeler
-on: [pull_request]
+on:
+- pull_request_target
 
 jobs:
   label:
@@ -13,4 +14,5 @@ jobs:
     - uses: actions/labeler@v2
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: ".github/labeler_cfg.yml"
         sync-labels: true
