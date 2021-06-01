@@ -310,6 +310,8 @@ item.item_material.black_paper.name=Black Paper
 item.item_material.token_animal.name=Animal Token
 item.item_material.token_monster.name=Monster Token
 item.item_material.token_player.name=Player Token
+item.item_material.death_urn_unfired.name=Unfired Death Urn
+item.item_material.death_urn_unfired.tooltip.detailed=Needs to be fired to be useful
 
 item.item_alloy_endergy_ingot_crude_steel.name=Crude Steel Ingot
 item.item_alloy_endergy_ingot_crystalline_alloy.name=Crystalline Alloy Ingot
@@ -391,11 +393,13 @@ tile.block_infinity_fog.tooltip.detailed.line1=When Grains of Infinity are groun
 tile.block_infinity_fog.tooltip.detailed.line2=Released into the air it forms a volatile dust cloud. Touching it is unhealthy at the least. And when the dust settles, it may leave some nasty things behind.
 tile.block_infinity_fog.tooltip.detailed.line3=§6Has a chance of spawning §lEndermen§r§6 and other monsters.
 
-tile.block_holy_fog.name=Glowstone Nano-Particles
-tile.block_holy_fog.tooltip.common.line1=(PM2.5)
-tile.block_holy_fog.tooltip.detailed.line1=Grinding down glowstone into ultra-fine particles allows the dust to hang in the air forever.
-tile.block_holy_fog.tooltip.detailed.line2=One hand-full of nano-particles can cover up to 16 blocks.
-tile.block_holy_fog.tooltip.detailed.line3=Has a chance of hurting the §lUndead§r§6.
+tile.block_holy_fog.name=Glowstone Nano-Particles (old)
+
+tile.block_holier_fog.name=Glowstone Nano-Particles
+tile.block_holier_fog.tooltip.common.line1=(PM2.5)
+tile.block_holier_fog.tooltip.detailed.line1=Grinding down glowstone into ultra-fine particles allows the dust to hang in the air forever.
+tile.block_holier_fog.tooltip.detailed.line2=One hand-full of nano-particles can cover a wide area.
+tile.block_holier_fog.tooltip.detailed.line3=Has a chance of hurting the §lUndead§r§6. Will be washed out by fluids and rain.
 
 tile.block_infinity_0.name=Infinity Dust Block
 tile.block_infinity_0.tooltip.common.line1=Not quite solid
@@ -675,6 +679,11 @@ tile.block_self_resetting_lever10i.name=Inverted Self-resetting Lever (10 second
 tile.block_self_resetting_lever30i.name=Inverted Self-resetting Lever (30 seconds)
 tile.block_self_resetting_lever60i.name=Inverted Self-resetting Lever (1 Minute)
 tile.block_self_resetting_lever300i.name=Inverted Self-resetting Lever (5 Minutes)
+
+tile.block_death_pouch.name=Dead Player
+item.block_death_pouch.name=Death Urn
+item.block_death_pouch.tooltip.detailed=Collects your items on death but gets used up. Must be in your inventory to work
+enderio.gui.block_death_pouch.not_owner=This is not your stuff!
 
 
 enderio.machine.tooltip.configured=%s (Configured)
@@ -1337,7 +1346,7 @@ enderio.keybind.fovunreset=Revert Zoom (undo reset)
 enderio.keybind.fovstore=Store Zoom Level
 enderio.keybind.fovrecall=Recall Zoom Level
 
-enderio.keybind.zoom.stored: Zoom level stored
+enderio.keybind.zoom.stored=Zoom level stored
 
 key.category.darksteelarmor=Dark Steel Armor 
 key.category.tools=Tools
@@ -1347,7 +1356,9 @@ enderio.gui.probe.copied=Copied conduit settings
 enderio.gui.probe.pasted=Pasted conduit settings
 
 # unless we want to copy the sound, it will always show this subtitle.
+# subtitles.entity.enderman.teleport=Something teleports
 # just because I feel that way...
+# container.chestDouble=Double Chest
 
 # Achie...um...Advancements
 
@@ -1530,6 +1541,24 @@ enderio.gui.travel_accessable.outofrange=Destination out of range
 enderio.gui.travel_accessable.invalidtarget=Destination is obstructed
 
 enderio.gui.too_many_levels=You have more than 21862 levels, that's too much XP
+
+enderio.command.config.help.0=The config command allows you to manipulate the Ender IO configuration on a dedicated server. This is not intended as a primary way of configuring Ender IO. For that, you should start a singleplayer game and use the configuration GUI, then upload the config files to the server.
+enderio.command.config.help.1=This command acts on the raw config values as they are stored in the config file. That means you can enter invalid values, just like you can with the file. An just as with those, invalid values will silently be ignored here, too.
+enderio.command.config.help.2=When you set a config value, it will first be held in memory. You need to manually save it with the save command to have it written into the config file.
+enderio.command.config.help.3=The configuration contains 3 kinds of values: Ones that are synced to clients when they connect, ones that are client-only, and ones that must be set to the same value on both manually. Only the first kind can be safely changed with this command-but clients must reconnect for the sync to happen.
+enderio.command.config.help.4=We recommand that you always run a "config get" on a config value before changing it. This will display the comment which also contains information on possible values. Also, the "list" command can be used to search for sections. Just ender a partial name.
+enderio.command.config.help.more=More with /enderio config help %s
+enderio.command.config.saved=Ender IO Configuration saved
+enderio.command.config.error.section=No such section
+enderio.command.config.error.key=No such key
+enderio.command.config.error.value=Invalid value. Possible: %s
+enderio.command.config.warn.clientvalue=Setting this value on the server probably has no effect
+enderio.command.config.warn.reconnect=Players need to reconnect to experience the change
+enderio.command.config.warn.notsynced=This value must ALSO be set on the clients, it is NOT synced"
+enderio.command.config.warn.unchecked=Restrictions on possible values may apply
+enderio.command.config.warn.save=You need to save the config for this change to persist
+
+
 
 #PARSE_ESCAPES
 # ^ having this in the first line allows us to use "\uXXXX" escapes in this file
@@ -1938,7 +1967,7 @@ tile.fluid.energetic_silver=Molten Energetic Silver
 fluid.vivid_alloy=Molten Vivid Alloy
 tile.fluid.vivid_alloy=Molten Vivid Alloy
 
-# Inv Panel
+// Inv Panel
 tile.block_inventory_panel.name=Inventory Panel
 tile.block_inventory_panel.tooltip.basic.line1=Remote access and crafting
 tile.block_inventory_panel.tooltip.detailed.line1=Allows remote access to inventories via
@@ -1949,7 +1978,7 @@ tile.block_inventory_panel.tooltip.detailed.line5=Sneak-Click with a dye to colo
 
 enderio.item_data_conduit.name=Data Conduit
 
-# Gui
+// Gui
 enderio.gui.inventorypanel.header.crafting=Crafting grid
 enderio.gui.inventorypanel.header.return=Return area
 enderio.gui.inventorypanel.header.storage=Storage area
@@ -2004,7 +2033,7 @@ enderio.gui.inventorypanel.tooltip.recipe.load=CLICK to load recipe
 enderio.gui.inventorypanel.tooltip.recipe.loadstacks=SHIFT-CLICK to load recipe with stacks
 enderio.gui.inventorypanel.tooltip.recipe.delete=CTRL-RIGHT-CLICK to delete recipe
 
-# Sensor
+// Sensor
 tile.block_inventory_panel_sensor.name=Inventory Sensor
 tile.block_inventory_panel_sensor.tooltip.detailed.line1=Emits redstone signals based
 tile.block_inventory_panel_sensor.tooltip.detailed.line2=on the number of an item available
@@ -2013,7 +2042,7 @@ tile.block_inventory_panel_sensor.tooltip.detailed.line3=in an Inventory Panel n
 enderio.gui.inventorySensor.control1=Start when < 
 enderio.gui.inventorySensor.control2=Stop when >=
 
-# Remotes
+// Remotes
 enderio.remoteinv.chat.set=Target set
 enderio.remoteinv.chat.notarget=ERROR: No target
 enderio.remoteinv.chat.outofrange=ERROR: Out of range
@@ -2039,7 +2068,7 @@ item.item_inventory_remote_ender.tooltip.detailed.line1=Allows you to access an 
 item.item_inventory_remote_ender.tooltip.detailed.line2=Crouch-Right-Click a panel to bind the remote to it.
 item.item_inventory_remote_ender.tooltip.detailed.line3=Uses {FLUIDNAME} to open a connection and RF to keep it open.
 
-# Warehouses
+// Warehouses
 tile.block_inventory_chest_tiny.name=Tiny Inventory System Storage
 tile.block_inventory_chest_small.name=Small Inventory System Storage
 tile.block_inventory_chest_medium.name=Medium Inventory System Storage
@@ -2324,6 +2353,9 @@ tile.block_solar_panel.simple.name=Simple Photovoltaic Cell
 tile.block_solar_panel.name=Photovoltaic Cell
 tile.block_solar_panel.advanced.name=Advanced Photovoltaic Cell
 tile.block_solar_panel.vibrant.name=Vibrant Photovoltaic Cell
+tile.block_solar_panel.compressed.name=Crystalline Photovoltaic Cell
+tile.block_solar_panel.concentrated.name=Melodic Photovoltaic Cell
+tile.block_solar_panel.ultimate.name=Stellar Photovoltaic Cell
 tile.block_solar_panel.tooltip.common.line1=Solar Power!
 tile.block_solar_panel.tooltip.detailed.line1=Produces power during daylight hours
 tile.block_solar_panel.tooltip.detailed.line2=Must have a clear line of sight to the sky
@@ -2484,6 +2516,15 @@ enderio.darksteel.upgrade.solar_2.tooltip.detailed.line1=Generates power from th
 
 enderio.darksteel.upgrade.solar_3.name=Solar III
 enderio.darksteel.upgrade.solar_3.tooltip.detailed.line1=Generates power from the sun.
+
+enderio.darksteel.upgrade.solar_4.name=Solar IV
+enderio.darksteel.upgrade.solar_4.tooltip.detailed.line1=Generates power from the sun.
+
+enderio.darksteel.upgrade.solar_5.name=Solar V
+enderio.darksteel.upgrade.solar_5.tooltip.detailed.line1=Generates power from the sun.
+
+enderio.darksteel.upgrade.solar_6.name=Solar VI
+enderio.darksteel.upgrade.solar_6.tooltip.detailed.line1=Generates power from the sun.
 
 enderio.config.capacitor=Capacitor Values
 enderio.config.client=Client Settings
