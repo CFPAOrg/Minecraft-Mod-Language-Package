@@ -80,7 +80,7 @@ item.item_conduit_facade.transparent.hardened.tooltip.detailed.line1=若使用�
 item.item_conduit_facade.transparent.hardened.tooltip.detailed.line2=抵抗破坏和爆炸
 
 item.item_conduit_probe.name=导管探测器
-item.item_conduit_probe.tooltip.detailed=探测模式下右击导管显示其网络的详情丨复制/粘贴模式下 Shift 右击复制导管的连接设置丨右击以粘贴丨使用 Shift+鼠标滚轮或 Y 键切换模式
+item.item_conduit_probe.tooltip.detailed=探测模式下右击导管显示其网络的详情丨复制/粘贴模式下 Shift 右击复制导管的连接设置丨右击以粘贴丨使用 Shift + 鼠标滚轮或 Y 键切换模式
 
 item.item_coord_selector.name=坐标选择仪
 item.item_coord_selector.tooltip.detailed.line1=记录一个方块的坐标。
@@ -255,8 +255,8 @@ item.item_material.vibrant_crystal.name=脉冲水晶
 item.item_material.vibrant_powder.name=脉冲水晶粉
 item.item_material.weather_crystal.name=天气水晶
 item.item_material.organic_green_dye.name=有机绿色染料
-item.item_material.powder_photovoltaic.name=光合粉
-item.item_material.plate_photovoltaic.name=太阳能板
+item.item_material.powder_photovoltaic.name=光伏粉
+item.item_material.plate_photovoltaic.name=光伏板
 item.item_material.organic_green_dye.tooltip.detailed.line1=工业加工的植物材料，具有“天然”的水洗色。
 item.item_material.organic_green_dye.tooltip.detailed.line2=§7不可食用。避免与眼睛接触。如接触到眼睛，请立即用大量清水冲洗并就医。
 item.item_material.organic_brown_dye.name=有机棕色染料
@@ -310,6 +310,8 @@ item.item_material.black_paper.name=黑纸
 item.item_material.token_animal.name=动物标记徽章
 item.item_material.token_monster.name=怪物标记徽章
 item.item_material.token_player.name=玩家标记徽章
+item.item_material.death_urn_unfired.name=未烧制的死亡之瓮
+item.item_material.death_urn_unfired.tooltip.detailed=烧制后才能发挥作用
 
 item.item_alloy_endergy_ingot_crude_steel.name=粗钢锭
 item.item_alloy_endergy_ingot_crystalline_alloy.name=晶化合金锭
@@ -380,7 +382,7 @@ item.item_yeta_wrench.tooltip.detailed.line2=Shift 右击可立即
 item.item_yeta_wrench.tooltip.detailed.line3=拆除机器与导管
 item.item_yeta_wrench.tooltip.detailed.line4=Shift 左击一个导管
 item.item_yeta_wrench.tooltip.detailed.line5=可打开导管设置 GUI
-item.item_yeta_wrench.tooltip.detailed.line6=Shift+鼠标滚轮或者按 “%s” 键
+item.item_yeta_wrench.tooltip.detailed.line6=Shift + 鼠标滚轮或者按 “%s” 键
 item.item_yeta_wrench.tooltip.detailed.line7=可渲染单种类型导管
 
 item.item_enderface.name=末影接口
@@ -391,11 +393,13 @@ tile.block_infinity_fog.tooltip.detailed.line1=当基岩粉被磨成细小尘埃
 tile.block_infinity_fog.tooltip.detailed.line2=释放到空气中形成一个挥发性尘埃云，触碰它至少是不健康的。当尘埃落定时，它可能会留下一些令人讨厌的东西。
 tile.block_infinity_fog.tooltip.detailed.line3=§6有几率生成§l末影人§r§6和其他怪物。
 
-tile.block_holy_fog.name=荧石纳米颗粒
-tile.block_holy_fog.tooltip.common.line1=（PM2.5）
-tile.block_holy_fog.tooltip.detailed.line1=当荧石被磨成细小的尘埃时，它将散布在空气中无法消散。
-tile.block_holy_fog.tooltip.detailed.line2=一个荧石纳米颗粒可以覆盖 16 格方块的空间。
-tile.block_holy_fog.tooltip.detailed.line3=有几率对§l亡灵生物§r§6造成伤害。
+tile.block_holy_fog.name=荧石纳米颗粒（旧）
+
+tile.block_holier_fog.name=荧石纳米颗粒
+tile.block_holier_fog.tooltip.common.line1=（PM2.5）
+tile.block_holier_fog.tooltip.detailed.line1=当荧石被磨成细小的尘埃时，它将散布在空气中无法消散。
+tile.block_holier_fog.tooltip.detailed.line2=一个荧石纳米颗粒可以覆盖 16 格方块的空间。
+tile.block_holier_fog.tooltip.detailed.line3=有几率对§l亡灵生物§r§6造成伤害。会被液体和雨水洗掉。
 
 tile.block_infinity_0.name=基岩粉块
 tile.block_infinity_0.tooltip.common.line1=并不能算作固体
@@ -675,6 +679,11 @@ tile.block_self_resetting_lever10i.name=反向自复原拉杆（10 秒）
 tile.block_self_resetting_lever30i.name=反向自复原拉杆（30 秒）
 tile.block_self_resetting_lever60i.name=反向自复原拉杆（1 分钟）
 tile.block_self_resetting_lever300i.name=反向自复原拉杆（5 分钟）
+
+tile.block_death_pouch.name=已死亡的玩家
+item.block_death_pouch.name=死亡之瓮
+item.block_death_pouch.tooltip.detailed=死亡时会消耗该物品来收集你的物品。必须放在物品栏才能生效
+enderio.gui.block_death_pouch.not_owner=这不是你的东西！
 
 
 enderio.machine.tooltip.configured=%s（已配置）
@@ -1061,10 +1070,12 @@ enderio.top.action.header.post=：
 enderio.top.action.none=§4无
 
 enderio.top.range.header.pre=§e范围：§f
+# enderio.top.range.header.post=
 # enderio.top.range is server-side only
 enderio.top.range=%sx%sx%s
 
 enderio.top.machine.side.pre=§e方向：§f
+# enderio.top.machine.side.post=
 enderio.top.machine.side.north=北面
 enderio.top.machine.side.south=南面
 enderio.top.machine.side.west=西面
@@ -1072,21 +1083,25 @@ enderio.top.machine.side.east=东面
 enderio.top.machine.side.up=上面
 enderio.top.machine.side.down=下面
 enderio.top.machine.ioMode.pre=§e模式：§f
+# enderio.top.machine.ioMode.post=
 enderio.top.machine.outofpower=§4能量不足
 enderio.top.machine.active=激活状态
 enderio.top.machine.idle=闲置状态
 
 enderio.top.channel.send.pre=§e发送方：§f
+# enderio.top.channel.send.post=
 enderio.top.channel.recv.pre=§e接收方：§f
+# enderio.top.channel.recv.post=
 enderio.top.channel.none=§7无
 
 enderio.top.progress.outofpower=§4能量不足
 
 enderio.top.redstone.header.pre=§e当前状态：§f
+# enderio.top.redstone.header.post=
 enderio.top.redstone.true=开
 enderio.top.redstone.false=关
 
-enderio.top.paint.header=§e喷涂颜色：
+enderio.top.paint.header=§e喷涂着：
 enderio.top.owner.header=§e拥有者：
 enderio.top.rf.header.maxin=§e最大输入：
 enderio.top.rf.header.maxout=§e最大输出：
@@ -1100,13 +1115,17 @@ enderio.top.suffix.levels=等级
 enderio.top.suffix.items=物品
 enderio.top.suffix.percent=%
 
+# enderio.top.tank.content.pre=
 enderio.top.tank.content.middle=/
 enderio.top.tank.content.post=mB
 enderio.top.tank.content.empty=空
 
 enderio.top.tank.header.input.pre=§e输入槽：§f
+# enderio.top.tank.header.input.post=
 enderio.top.tank.header.output.pre=§e输出槽：§f
+# enderio.top.tank.header.output.post=
 enderio.top.tank.header.storage.pre=§f
+# enderio.top.tank.header.storage.post=
 
 
 # Fluids
@@ -1225,7 +1244,7 @@ enderio.facing.east=东
 enderio.facing.up=上
 enderio.facing.down=下
 
-enderio.generic.tooltip.paintedWith=喷涂颜色：%s
+enderio.generic.tooltip.paintedWith=喷涂着：%s
 enderio.generic.tooltip.unpainted=未喷涂
 
 enderio.wrench.permission.denied=§c否认§r许可！
@@ -1275,10 +1294,10 @@ enderio.loot.capacitor.entry.3=emmmm……“%s”这名字有点东西。
 enderio.loot.capacitor.entry.4=恕我直言，“%s”这名字太辣鸡了。
 enderio.loot.capacitor.entry.5=这个“%s”是 Randalf 工匠的财产。未经允许不准拿走！
 enderio.loot.capacitor.entry.6=此“%s”是 Randalf 前工匠的财产。欢迎随意取用！
-enderio.loot.capacitor.entry.7=您的：%s"现可免费升级为“电容器 plus”。按下 ok 键可开始升级，也可选择取消操作。
+enderio.loot.capacitor.entry.7=你的“%s”现可免费升级为“电容器 plus”。按下 ok 键可开始升级，也可选择取消操作。
 enderio.loot.capacitor.entry.8=不妨试试把“%s”放进不同的机器，或许效果还不一样？当然，你也可以问问度娘。
 
-enderio.loot.capacitor.title.count=22
+enderio.loot.capacitor.title.count=24
 enderio.loot.capacitor.title.0=卓越的电容
 enderio.loot.capacitor.title.1=不起眼的电容
 enderio.loot.capacitor.title.2=失落的电容
@@ -1337,7 +1356,9 @@ enderio.gui.probe.copied=复制导管设置
 enderio.gui.probe.pasted=粘贴导管设置
 
 # unless we want to copy the sound, it will always show this subtitle.
+# subtitles.entity.enderman.teleport=Something teleports
 # just because I feel that way...
+# container.chestDouble=Double Chest
 
 # Achie...um...Advancements
 
@@ -1502,10 +1523,10 @@ item.item_inventory_charger.tooltip.detailed.line1=充能物品栏所有物品�
 item.item_inventory_charger_vibrant.name=脉冲物品栏充能器
 item.item_inventory_charger_vibrant.tooltip.detailed.line1=充能物品栏所有物品。右击启用或禁用。
 
-enderio.network.bad_config=错误：末影接口在客户端与服务端数值“%s.%s”不同，此数值决定着游戏如何开始，现在使用服务端数据为时已晚，无法继续进行游戏。为了修复此问题，请手动同步服务端与客户端的末影接口配置，或者手动把此数值设置为“%s”。
-enderio.network.autosync.connected=§4§l此数值由服务端决定！\n§e%s
-enderio.network.autosync.offline=%s\n§o此数值必须与服务端保持同步！
-enderio.network.manusync=%s\n§o此数值将由服务端决定。
+enderio.network.bad_config=错误：末影接口在客户端与服务端配置值“%s.%s”不同，此值决定着游戏如何开始，现在使用服务端数据为时已晚，无法继续进行游戏。为了修复此问题，请手动同步服务端与客户端的末影接口配置，或者手动把此数值设置为“%s”。
+enderio.network.autosync.connected=§4§l此值由服务端决定！\n§e%s
+enderio.network.autosync.offline=%s\n§o此值必须与服务端保持同步！
+enderio.network.manusync=%s\n§o此值将由服务端决定。
 
 enderio.jei.notSimple.line1=这个合成无法在
 enderio.jei.notSimple.line2=简易机器中进行
@@ -1520,6 +1541,24 @@ enderio.gui.travel_accessable.outofrange=目标地点超出范围
 enderio.gui.travel_accessable.invalidtarget=目标地点被阻挡
 
 enderio.gui.too_many_levels=你的经验超过 21862 级，太多了
+
+enderio.command.config.help.0=config 指令允许你在专用服务端上操作末影接口的配置。这并不打算作为配置末影接口的主要方法。对此，你应该启动一个单人游戏并使用配置界面，之后再将配置文件上传到服务端。
+enderio.command.config.help.1=此指令针对存储在配置文件中的原始配置值。这意味着你可以输入无效值，就像你可以使用文件一样。就像那些文件，无效的值也会被忽略。
+enderio.command.config.help.2=当你设置一个配置值时，它会先被保存在内存中。你需要输入 save 指令手动保存，才能将它写进配置文件。
+enderio.command.config.help.3=该配置包含 3 种值。一种是在客户端连接时同步的值，一种是客户端专用的值，还有一种是必须手动设置为相同的值。唯有第一种值可以被此指令安全改变-但客户端必须重新连接，才能同步。
+enderio.command.config.help.4=建议你在改变一个配置值之前，总是对其输入“config get”。这会显示相关注释，其中也包含可能值的信息。另外，“list”指令也可以用来搜索 section。只需输入部分名称。
+enderio.command.config.help.more=更多帮助信息请输入 /enderio config help %s
+enderio.command.config.saved=末影接口配置已保存
+enderio.command.config.error.section=没有该 section
+enderio.command.config.error.key=没有该键
+enderio.command.config.error.value=无效值。可能值：%s
+enderio.command.config.warn.clientvalue=在服务端上设置此值可能没有任何效果
+enderio.command.config.warn.reconnect=玩家需要重新连接才能感受到改动
+enderio.command.config.warn.notsynced=此值必须同时在客户端上设置，并不会被同步
+enderio.command.config.warn.unchecked=对可能值的限制可能会应用
+enderio.command.config.warn.save=你需要保存配置以保持此改动
+
+
 
 #PARSE_ESCAPES
 # ^ having this in the first line allows us to use "\uXXXX" escapes in this file
@@ -1928,6 +1967,7 @@ tile.fluid.energetic_silver=熔融充能银
 fluid.vivid_alloy=熔融生动合金
 tile.fluid.vivid_alloy=熔融生动合金
 
+# Inv Panel
 tile.block_inventory_panel.name=存储面板
 tile.block_inventory_panel.tooltip.basic.line1=远程访问与合成
 tile.block_inventory_panel.tooltip.detailed.line1=允许通过数据和物品导管
@@ -1938,6 +1978,7 @@ tile.block_inventory_panel.tooltip.detailed.line5=潜行点击染料以染色。
 
 enderio.item_data_conduit.name=数据导管
 
+# Gui
 enderio.gui.inventorypanel.header.crafting=合成格
 enderio.gui.inventorypanel.header.return=返还区
 enderio.gui.inventorypanel.header.storage=存储区
@@ -1958,9 +1999,9 @@ enderio.gui.inventorypanel.tooltip.filterslot.line3=以选择要显示的物品�
 enderio.gui.inventorypanel.tooltip.sort.name_down.line1=按名称排序
 enderio.gui.inventorypanel.tooltip.sort.name_up.line1=按名称排序
 enderio.gui.inventorypanel.tooltip.sort.name_up.line2=从字母表倒序开始
-enderio.gui.inventorypanel.tooltip.sort.mod_down.line1=按模组ID排序
+enderio.gui.inventorypanel.tooltip.sort.mod_down.line1=按模组 ID 排序
 enderio.gui.inventorypanel.tooltip.sort.mod_down.line2=同一模组的物品按名称排序
-enderio.gui.inventorypanel.tooltip.sort.mod_up.line1=按模组ID排序
+enderio.gui.inventorypanel.tooltip.sort.mod_up.line1=按模组 ID 排序
 enderio.gui.inventorypanel.tooltip.sort.mod_up.line2=同一模组的物品按名称排序
 enderio.gui.inventorypanel.tooltip.sort.mod_up.line3=从字母表倒序开始
 enderio.gui.inventorypanel.tooltip.sort.count_down.line1=按数量排序
@@ -1992,6 +2033,7 @@ enderio.gui.inventorypanel.tooltip.recipe.load=左击加载配方
 enderio.gui.inventorypanel.tooltip.recipe.loadstacks=Shift 左击加载配方（堆叠）
 enderio.gui.inventorypanel.tooltip.recipe.delete=Ctrl 右击删除配方
 
+# Sensor
 tile.block_inventory_panel_sensor.name=物品感应器
 tile.block_inventory_panel_sensor.tooltip.detailed.line1=根据一个物品在
 tile.block_inventory_panel_sensor.tooltip.detailed.line2=存储面板网络中的可用数量
@@ -2000,6 +2042,7 @@ tile.block_inventory_panel_sensor.tooltip.detailed.line3=输出红石信号。
 enderio.gui.inventorySensor.control1=开始于 < 
 enderio.gui.inventorySensor.control2=停止于 >=
 
+# Remotes
 enderio.remoteinv.chat.set=目标设定
 enderio.remoteinv.chat.notarget=错误：无目标
 enderio.remoteinv.chat.outofrange=错误：超出范围
@@ -2025,6 +2068,7 @@ item.item_inventory_remote_ender.tooltip.detailed.line1=允许你在任意地方
 item.item_inventory_remote_ender.tooltip.detailed.line2=潜行右击一个面板以绑定远程面板。
 item.item_inventory_remote_ender.tooltip.detailed.line3=使用{FLUIDNAME}以开启连接，消耗能量保持连接。
 
+# Warehouses
 tile.block_inventory_chest_tiny.name=微型存储系统仓库
 tile.block_inventory_chest_small.name=小型存储系统仓库
 tile.block_inventory_chest_medium.name=中型存储系统仓库
@@ -2204,7 +2248,7 @@ tile.block_enchanter.tooltip.detailed.line1=使用经验让物品与§6书与笔
 tile.block_farm_station.name=种植站
 tile.block_farm_station.tooltip.detailed.line1=种植与收割作物
 tile.block_farm_station.tooltip.detailed.line2=需要能量和合适的工具（锄，斧，剪刀，树苗）
-tile.block_farm_station.tooltip.detailed.line3=工具上的掠夺 / 时运效果在收割时仍然有效
+tile.block_farm_station.tooltip.detailed.line3=工具上的掠夺/时运效果在收割时仍然有效
 tile.block_farm_station.tooltip.detailed.line4=升级电容可增加范围，但同时也增加能耗
 
 enderio.gui.obelisk.no_vials=需要灵魂瓶！
@@ -2305,10 +2349,13 @@ tile.block_enhanced_sag_mill.tooltip.detailed.line3=升级电容可增加工作�
 tile.block_slice_and_splice.name=头颅装配机
 tile.block_slice_and_splice.tooltip.detailed.line1=切开头颅并装入各种有用的装置
 
-tile.block_solar_panel.simple.name=简易光伏板
-tile.block_solar_panel.name=光伏板
-tile.block_solar_panel.advanced.name=强化光伏板
-tile.block_solar_panel.vibrant.name=脉冲光伏板
+tile.block_solar_panel.simple.name=简易光伏电池
+tile.block_solar_panel.name=光伏电池
+tile.block_solar_panel.advanced.name=强化光伏电池
+tile.block_solar_panel.vibrant.name=脉冲光伏电池
+tile.block_solar_panel.compressed.name=晶化光伏电池
+tile.block_solar_panel.concentrated.name=旋律光伏电池
+tile.block_solar_panel.ultimate.name=恒星光伏电池
 tile.block_solar_panel.tooltip.common.line1=太阳能！
 tile.block_solar_panel.tooltip.detailed.line1=白天产能
 tile.block_solar_panel.tooltip.detailed.line2=顶部必须直对天空
@@ -2317,10 +2364,10 @@ enderio.jei.solar_panel.range.line1=实际发电量取决于天气和太阳的�
 enderio.block_solar_panel.tooltip.maxoutput=最大输出：%s
 
 # These 4 use the brain-dead TextComponentTranslation format
-enderio.block_solar_panel.probe.production=%1$s个光伏板当前产能为 %2$s µI/t，峰值产能为 %3$s µI/t
+enderio.block_solar_panel.probe.production=%1$s 个光伏电池当前产能为 %2$s µI/t，峰值产能为 %3$s µI/t
 enderio.block_solar_panel.probe.last_access=最后一次产能是在 %s ticks 前
-enderio.block_solar_panel.probe.no_sun=位于 %s 的光伏板看不到太阳！
-enderio.block_solar_panel.probe.all_sun=所有光伏板都可以看到太阳！
+enderio.block_solar_panel.probe.no_sun=位于 %s 的光伏电池见不到太阳！
+enderio.block_solar_panel.probe.all_sun=所有光伏电池都可以见到太阳！
 
 tile.block_soul_binder.name=灵魂绑定器
 tile.block_soul_binder.tooltip.detailed.line1=用于转变破损的刷怪箱刷怪类型
@@ -2458,21 +2505,31 @@ enderio.jei.recipe=配方：“%s”
 enderio.jei.lavagen.cooling=冷却为可选
 enderio.jei.lavagen.heat=随着热量积累而减少
 
-enderio.darksteel.upgrade.solar_0.name=简易太阳能板
+enderio.darksteel.upgrade.solar_0.name=简易太阳能
 enderio.darksteel.upgrade.solar_0.tooltip.detailed.line1=利用阳光产能。
 
-enderio.darksteel.upgrade.solar_1.name=太阳能板 I 型
+enderio.darksteel.upgrade.solar_1.name=太阳能 I
 enderio.darksteel.upgrade.solar_1.tooltip.detailed.line1=利用阳光产能。
 
-enderio.darksteel.upgrade.solar_2.name=太阳能板 II 型
+enderio.darksteel.upgrade.solar_2.name=太阳能 II
 enderio.darksteel.upgrade.solar_2.tooltip.detailed.line1=利用阳光产能。
 
-enderio.darksteel.upgrade.solar_3.name=太阳能板 III 型
+enderio.darksteel.upgrade.solar_3.name=太阳能 III
 enderio.darksteel.upgrade.solar_3.tooltip.detailed.line1=利用阳光产能。
+
+enderio.darksteel.upgrade.solar_4.name=太阳能 IV
+enderio.darksteel.upgrade.solar_4.tooltip.detailed.line1=利用阳光产能。
+
+enderio.darksteel.upgrade.solar_5.name=太阳能 V
+enderio.darksteel.upgrade.solar_5.tooltip.detailed.line1=利用阳光产能。
+
+enderio.darksteel.upgrade.solar_6.name=太阳能 VI
+enderio.darksteel.upgrade.solar_6.tooltip.detailed.line1=利用阳光产能。
 
 enderio.config.capacitor=电容设置
 enderio.config.client=客户端设置
 
+enderio.config.soulbinder=灵魂绑定器
 enderio.config.spawner=电动刷怪箱
 enderio.config.spawner.tooltip=我想不出幽默的注释。
 enderio.config.vacuum=虚空箱子与虚空经验箱
@@ -2490,7 +2547,7 @@ enderio.config.tranceiver=空间传送器
 enderio.config.generator=发电机
 enderio.config.generator.combustion=燃烧发电机
 enderio.config.generator.zombie=僵尸发电机
-enderio.config.generator.solar=光伏板
+enderio.config.generator.solar=光伏电池
 
 # Achie...um...Advancements
 
@@ -2539,6 +2596,6 @@ enderio.advancement.sagmill.a_powder_coating.desc=制作一些机器涂料
 enderio.advancement.stirling.1_stirling_generator_get.name=利用热能
 enderio.advancement.stirling.1_stirling_generator_get.desc=制作一个简易斯特林发电机
 
-enderio.advancement.machines.root.name=末影接口机械
+enderio.advancement.machines.root.name=末影接口｜机械
 enderio.advancement.machines.root.desc=开始你的自动化之旅
 

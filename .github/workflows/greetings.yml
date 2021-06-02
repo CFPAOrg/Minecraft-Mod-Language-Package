@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: '提issue之前请搜索是否有相同或重复的问题。'
+        pr-message: '没有完工的汉化仍可提交pr，但请设置为draft。\n不要望文生义，有些看起来十分离谱的东西可能是正确的。\n尽量做到边开游戏边翻译。\n请确认翻译能够正常使用并按照规范格式提交。\n善用更新、提交等词语。提交汉化文件时请一并上传英文原文。提交英文原文时请一并上传空白中文文件（1.12的文件为无内容的文件，1.16的文件为为只包含左右花括号的文件，例如 https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json ）。'
