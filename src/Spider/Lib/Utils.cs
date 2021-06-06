@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -77,46 +78,35 @@ namespace Spider.Lib {
             var extract = cfg.ExtractPath.ToList();
             var entries = zipArchive.Entries.ToList();
 
-            var result = from entry in entries.AsParallel()
-                         from baseDomain in include.AsParallel()
-                         from processDomain in extract.AsParallel()
-                         where entry.FullName.Split("/")[0] == baseDomain
-                         let withoutBaseDomain = entry.FullName.Replace($"{baseDomain}/", "")
-                         where withoutBaseDomain != ""
-                         let modDomain = withoutBaseDomain.Split("/")[0]
-                         where modDomain != "minecraft"
-                         let withoutModDomain = withoutBaseDomain.Replace($"{modDomain}/", "")
-                         where withoutModDomain != ""
-                         let preDomain = withoutModDomain.Split("/")[0]
-                         where preDomain == processDomain
-                         let withoutPreDomain = withoutModDomain.Replace($"{preDomain}/", "")
-                         where withoutPreDomain != ""
-                         where !withoutPreDomain.EndsWith("/")
-                         select (entry, modDomain);
+            IEnumerable<(ZipArchiveEntry, string)> Selector() {
+                foreach (var zipArchiveEntry in entries) {
+                    var split = zipArchiveEntry.FullName.Split('/');
+                    if (split.Length<3) continue;
+                    if (split.Last() == "") continue;
+                    var baseDomain = split[0];
+                    var modDomain = split[1];
+                    var preDomain = split[2];
+                    if (modDomain == "minecraft") {
+                        continue;
+                    }
+                    if (include.Contains(baseDomain) && extract.Contains(preDomain)) {
+                        yield return (zipArchiveEntry, modDomain);
+                    }
+                }
+            }
 
-            foreach (var (entry, modDomain) in result) {
+            foreach (var (entry, modDomain) in Selector()) {
                 var originPath = entry.FullName;
                 var flag = true;
                 var cflag = true;
                 if (originPath.Contains($"assets/{modDomain}/lang")) {
-                    flag = entry.Name switch {
-                        "en_us.lang" => false,
-                        "en_US.lang" => false,
-                        "en_us.json" => false,
-                        "en_US.json" => false,
-                        _ => true
-                    };
+                    flag = !(entry.Name.Equals("en_us.lang", StringComparison.OrdinalIgnoreCase) ||
+                             entry.Name.Equals("en_us.json", StringComparison.OrdinalIgnoreCase));
 
                     
                     if (cfg.UpdateChinese) {
-                        cflag = entry.Name switch {
-                            "zh_cn.lang" => false,
-                            "zh_CN.lang" => false,
-                            "zh_cn.json" => false,
-                            "zh_CN.json" => false,
-                            _ => true
-                        };
-
+                        cflag = (entry.Name.Equals("zh_cn.lang",StringComparison.OrdinalIgnoreCase) ||
+                                entry.Name.Equals("zn_cn.json",StringComparison.OrdinalIgnoreCase));
                     }
 
                     if (cflag) {
@@ -165,7 +155,7 @@ namespace Spider.Lib {
         /// <param name="copySubDirs"></param>
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs) {
             // Get the subdirectories for the specified directory.
-            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+            DirectoryInfo dir = new (sourceDirName);
 
             if (!dir.Exists) {
                 throw new DirectoryNotFoundException(
