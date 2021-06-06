@@ -60,17 +60,30 @@ namespace Spider {
                     allM = l.ToArray();
                 }
                 parser.Infos = allM.ToList();
-                var l1 = parser.SerializeAll();
+                var l1 = parser.SerializeAll().ToList();
 
-                var parallelOption = new ParallelOptions {
-                    MaxDegreeOfParallelism = 16
-                };
+                //var parallelOption = new ParallelOptions {
+                //    MaxDegreeOfParallelism = 16
+                //};
 
-                var semaphore = new Semaphore(16, 16);
-                Parallel.ForEach(l1, parallelOption, (async tuple => {
+                var semaphore = new SemaphoreSlim(16,16);
+                //Parallel.ForEach(l1, parallelOption, (async tuple => {
+                //    try {
+                //        semaphore.WaitOne();
+                //        await Utils.ParseModsAsync(tuple, cfg);
+                //    }
+                //    catch (Exception e) {
+                //        Log.Logger.Error(e.Message);
+                //    }
+                //    finally {
+                //        semaphore.Release();
+                //    }
+                //}));
+
+                var tasks = l1.Select(async _ => {
                     try {
-                        semaphore.WaitOne();
-                        await Utils.ParseModsAsync(tuple, cfg);
+                        await semaphore.WaitAsync();
+                        await Utils.ParseModsAsync(_, cfg);
                     }
                     catch (Exception e) {
                         Log.Logger.Error(e.Message);
@@ -78,7 +91,9 @@ namespace Spider {
                     finally {
                         semaphore.Release();
                     }
-                }));
+                });
+
+                await Task.WhenAll(tasks);
 
                 //var semaphore = new Semaphore(32, 40);
                 //foreach (var l in l1) {
