@@ -23,11 +23,7 @@ labelerFlags:
 ##### Greetings ########################################################################################################
 # Comment to be posted to welcome users when they open their first PR
 firstPRWelcomeComment: >
-  - 没有完工的汉化仍可提交pr，但请设置为draft。
-  - 不要望文生义，有些看起来十分离谱的东西可能是正确的。
-  - 尽量做到边开游戏边翻译。
-  - 请确认翻译能够正常使用并按照规范格式提交。
-  - 善用更新、提交等词语。提交汉化文件时请一并上传英文原文。提交英文原文时请一并上传空白中文文件（1.12的文件为无内容的文件，1.16的文件为为只包含左右花括号的文件，例如 https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json ）。
+  - 没有完工的汉化仍可提交pr，但请设置为draft。\n- 不要望文生义，有些看起来十分离谱的东西可能是正确的。\n- 尽量做到边开游戏边翻译。\n- 请确认翻译能够正常使用并按照规范格式提交。\n- 善用更新、提交等词语。提交汉化文件时请一并上传英文原文。提交英文原文时请一并上传空白中文文件（1.12的文件为无内容的文件，1.16的文件为为只包含左右花括号的文件，例如 https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json ）。
 
 # Comment to be posted to congratulate user on their first merged PR
 firstPRMergeComment: >
@@ -53,12 +49,12 @@ verifyTitles:
   # If set to false it will check all commit messages. This is useful when you do not squash commits at merge.
   validateEitherPrOrSingleCommitTitle: true
   # The title the GitHub status should appear from.
-  statusTitle: "Title Validator"
+  statusTitle: "标题检测器"
   # A custom message to be displayed when the title passes validation.
   successMessage: "您的标题是正确的，感谢您的配合。"
   # A custom message to be displayed when the title fails validation.
   # Allows insertion of ${type} (commit/PR), ${title} (the title validated) and ${regex} (the titleRegexp above).
-  failureMessage: "错误的${type}标题：${title}"
+  failureMessage: "错误的${type}标题：${title}。请检查方括号里是否只包含英文大写字母和英文逗号(,)。"
 
   ###### PR/Branch Up-To-Date Checker ####################################################################################
 # Check if the branch is up to date with master when certain files are modified
