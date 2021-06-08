@@ -29,7 +29,7 @@
 ## 相关信息
 
 **目前的翻译计划是什么样的呢？我可以递交想翻译的列表么？**<br>
-目前已根据在 CurseForge 网站上的受欢迎程度，选取了 1.16 版本下载了 1000 多个模组。如果你有什么想要额外添加翻译的模组，可以通过我们的 [问题追踪器](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues) 递交意见，或者直接通过邮箱递交意见或建议。<br>
+目前已根据在 CurseForge 网站上的受欢迎程度，选取了 1.16.5 版本下载了 1000 多个模组。如果你有什么想要额外添加翻译的模组，可以通过我们的 [问题追踪器](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues) 递交意见，或者直接通过邮箱递交意见或建议。<br>
 其他版本目前还暂时没有涉足计划（不过 1.7.10 应该是不会做了）。
 
 关于具体的宣传，可以参见 [MCBBS 推广宣传帖](http://www.mcbbs.net/thread-774087-1-1.html)；

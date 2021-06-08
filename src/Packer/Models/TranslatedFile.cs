@@ -86,7 +86,10 @@ namespace Packer.Models
                         pair.Key, resultMap[pair.Key], pair.Value);
                 }
             }
-            return new LangFile(category, resultMap);
+            return new LangFile(category, resultMap)
+            {
+                relativePath = this.relativePath
+            };
         }
     }
 }
