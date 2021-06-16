@@ -60,13 +60,30 @@ namespace Spider {
                     allM = l.ToArray();
                 }
                 parser.Infos = allM.ToList();
-                var l1 = parser.SerializeAll();
+                var l1 = parser.SerializeAll().ToList();
 
-                var semaphore = new Semaphore(32, 40);
-                foreach (var l in l1) {
+                //var parallelOption = new ParallelOptions {
+                //    MaxDegreeOfParallelism = 16
+                //};
+
+                var semaphore = new SemaphoreSlim(16,16);
+                //Parallel.ForEach(l1, parallelOption, (async tuple => {
+                //    try {
+                //        semaphore.WaitOne();
+                //        await Utils.ParseModsAsync(tuple, cfg);
+                //    }
+                //    catch (Exception e) {
+                //        Log.Logger.Error(e.Message);
+                //    }
+                //    finally {
+                //        semaphore.Release();
+                //    }
+                //}));
+
+                var tasks = l1.Select(async _ => {
                     try {
-                        semaphore.WaitOne();
-                        await Utils.ParseModsAsync(l,cfg);
+                        await semaphore.WaitAsync();
+                        await Utils.ParseModsAsync(_, cfg);
                     }
                     catch (Exception e) {
                         Log.Logger.Error(e.Message);
@@ -74,14 +91,39 @@ namespace Spider {
                     finally {
                         semaphore.Release();
                     }
-                }
+                });
+
+                await Task.WhenAll(tasks);
+
+                //var semaphore = new Semaphore(32, 40);
+                //foreach (var l in l1) {
+                //    try {
+                //        semaphore.WaitOne();
+                //        await Utils.ParseModsAsync(l,cfg);
+                //    }
+                //    catch (Exception e) {
+                //        Log.Logger.Error(e.Message);
+                //    }
+                //    finally {
+                //        semaphore.Release();
+                //    }
+                //}
 
                 foreach (var name in pending) {
                     if (dict.ContainsKey(name)) {
                         var m = await UrlLib.GetModInfoAsync(dict[name]);
                         var i = parser.Serialize(m);
                         try {
-                            await Utils.ParseModsAsync(i,cfg);
+                            var task = new Task(async () => {
+                                try {
+                                    await Utils.ParseModsAsync(i, cfg);
+                                }
+                                catch (Exception e) {
+                                    Log.Logger.Error(e.Message);
+                                }
+                            });
+                            task.Start();
+                            //await Utils.ParseModsAsync(i,cfg);
                         }
                         catch (Exception e) {
                             Log.Logger.Error(e.Message);

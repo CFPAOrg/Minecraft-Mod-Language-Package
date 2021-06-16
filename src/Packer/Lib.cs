@@ -19,69 +19,64 @@ namespace Packer
             // <mod-name> 是唯一的，但 <asset-domain> 和 <namespace> 都不是唯一的
             // 目标文件层级：
             // assets/<asset-domain>/<namespace>/path/to/the/file
+            Log.Information("开始生成待打包的文件");
             var bypassed = new Dictionary<string, string>(); // full path -> destination
             var result = new Dictionary<string, Asset>();
             var existingDomains = new Dictionary<string, string>();
             var mods = new DirectoryInfo($"./projects/{config.Version}/assets")
                 .EnumerateDirectories() // assets/ 的下级文件夹
-                .Select(modDirectory =>
+                .Select(modDirectory => new Mod()
                 {
-                    return new Mod()
-                    {
-                        modName = modDirectory.Name,
-                        assets = modDirectory
-                            .EnumerateDirectories() // <mod-name>/ 的下级文件夹
-                            .Select(assetDirectory =>
-                            {
-                                return new Asset()
-                                {
-                                    domainName = assetDirectory.Name,
-                                    contents = assetDirectory
-                                        .EnumerateFiles("*", SearchOption.AllDirectories)
-                                        .Select(file =>
-                                        { // <asset-domain>/ 的下级文件夹
-                                            var prefixLength = assetDirectory.FullName.Length;
-                                            var relativePath = file.FullName[(prefixLength + 1)..];
-                                            if (relativePath.NeedBypass(config))
-                                            {
-                                                Log.Information("跳过了标记为直接加入的命名空间：{0}", assetDirectory.Name);
-                                                bypassed.Add(file.FullName, Path.Combine("assets",
+                    modName = modDirectory.Name,
+                    assets = modDirectory
+                        .EnumerateDirectories() // <mod-name>/ 的下级文件夹
+                        .Select(assetDirectory => new Asset()
+                        {
+                            domainName = assetDirectory.Name,
+                            contents = assetDirectory
+                                .EnumerateFiles("*", SearchOption.AllDirectories)
+                                .Select(file =>
+                                { // <asset-domain>/ 的下级文件夹
+                                    var prefixLength = assetDirectory.FullName.Length;
+                                    var relativePath = file.FullName[(prefixLength + 1)..];
+                                    if (relativePath.NeedBypass(config))
+                                    {
+                                        Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('\\')[0]);
+                                        bypassed.Add(file.FullName,
+                                                     Path.Combine("assets",
                                                                   assetDirectory.Name,
                                                                   relativePath));
-                                                return null;
-                                            }
-                                            if (relativePath.Contains("en_us", StringComparison.OrdinalIgnoreCase))
-                                            {
-                                                return null;
-                                            }
-                                            var parsingCategory = file.Extension switch
-                                            {
-                                                ".json" => FileCategory.JsonAlike,
-                                                _ => FileCategory.LangAlike
-                                            };
-                                            if (relativePath.StartsWith("lang\\"))
-                                            {
-                                                return new LangFile(file.OpenRead(),
-                                                                    parsingCategory | FileCategory.LanguageFile,
-                                                                    config)
-                                                {
-                                                    relativePath = relativePath
-                                                };
-                                            }
-                                            else
-                                            {
-                                                parsingCategory |= FileCategory.OtherFiles;
-                                                return new TranslatedFile(file.OpenRead(),
-                                                                    parsingCategory | FileCategory.OtherFiles,
-                                                                    config)
-                                                {
-                                                    relativePath = relativePath
-                                                };
-                                            }
-                                        }).Where(_ => _ is not null) // 排除掉跳过的文件
-                                };
-                            })
-                    };
+                                        return null;
+                                    }
+                                    if (relativePath.Contains("en_us", StringComparison.OrdinalIgnoreCase))
+                                    {
+                                        return null;
+                                    }
+                                    var parsingCategory = file.Extension switch
+                                    {
+                                        ".json" => FileCategory.JsonAlike,
+                                        _ => FileCategory.LangAlike
+                                    };
+                                    if (relativePath.StartsWith("lang\\"))
+                                    {
+                                        return new LangFile(file.OpenRead(),
+                                                            parsingCategory | FileCategory.LanguageFile,
+                                                            config)
+                                               {
+                                                   relativePath = relativePath
+                                               };
+                                    }
+                                    else
+                                    {
+                                        return new TranslatedFile(file.OpenRead(),
+                                                                  parsingCategory | FileCategory.OtherFiles,
+                                                                  config)
+                                               {
+                                                   relativePath = relativePath
+                                               };
+                                    }
+                                }).Where(_ => _ is not null) // 排除掉跳过的文件
+                        })
                 });
             foreach (var mod in mods)
             {
@@ -118,6 +113,7 @@ namespace Packer
                 }
             }
             unprocessed = bypassed;
+            Log.Information("文件列表生成完毕");
             return result.Select(_ => _.Value);
         }
     }

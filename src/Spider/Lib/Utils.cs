@@ -1,11 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Xml;
 using Language.Core;
 
 using Serilog;
@@ -73,103 +74,77 @@ namespace Spider.Lib {
             var zipArchive = new ZipArchive(File.OpenRead(mod.TempPath));
             var tmpDirectories = $"{Path.GetTempPath()}extracted\\{Path.GetFileName(mod.TempPath)}";
             Log.Logger.Debug(tmpDirectories);
-            try {
-                zipArchive.ExtractToDirectory(tmpDirectories, true);
-            }
-            catch (Exception e) {
-                Log.Logger.Error(e.Message);
-                return;
-            }
-            var directories = cfg.IncludedPath.ToList()
-                .Select(_ => new DirectoryInfo($"{tmpDirectories}\\{_}"));
-            var include = cfg.ExtractPath.ToList();
-            //遍历所有目录
-            var root = directories.Select(dire =>
-                dire.EnumerateDirectories().Where(domain => domain.Name != "minecraft")
-                    .Select(domain => domain.EnumerateDirectories()
-                        .Where(_ => include.Contains(_.Name))));
-            //遍历遍历所有输出的目录
-            foreach (var a in root) {
-                foreach (var b in a) {
-                    foreach (var c in b) {
-                        //Console.WriteLine(c.FullName);
-                        var dire1 = c.GetDirectories();
-                        if (dire1.Length > 0) {
-                            foreach (var dire2 in dire1) {
-                                if (dire2.Name == "en_us") {
-                                    //Console.WriteLine(info.FullName);
-                                    var p = $"{rootPath}{dire2.FullName[(dire2.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
-                                    var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
-                                    //Console.WriteLine(path);
-                                    DirectoryCopy(dire2.FullName, path, true);
-                                    //info.MoveTo(sb.ToString());
-                                }
-                                var dire3 = dire2.GetDirectories();
-                                foreach (var info in dire3) {
-                                    if (info.Name == "en_us") {
-                                        //Console.WriteLine(info.FullName);
-                                        var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
-                                        var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
-                                        //Console.WriteLine(path);
-                                        DirectoryCopy(info.FullName, path, true);
-                                        //info.MoveTo(sb.ToString());
-                                    }
-                                }
-                            }
-                        }
+            var include = cfg.IncludedPath.ToList();
+            var extract = cfg.ExtractPath.ToList();
+            var entries = zipArchive.Entries.ToList();
 
-                        var fi = c.GetFiles().ToList();
-                        var ei = fi.Where(_ => _.Name.StartsWith("en_us", StringComparison.OrdinalIgnoreCase)).ToList();
-                        if (cfg.UpdateChinese) {
-                            ei.AddRange(fi.Where(_ => _.Name.StartsWith("zh_cn", StringComparison.OrdinalIgnoreCase)).ToList());
-                        }
-
-                        foreach (var info in ei) {
-                            if (info.Name.EndsWith(".lang")) {
-                                if (CheckVersion(cfg.Version)) {
-                                    continue;
-                                }
-                                var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
-                                var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
-                                //Console.WriteLine(path);
-                                Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-                                var lf = new LangFormatter(new StreamReader(File.OpenRead(info.FullName)),
-                                    new StreamWriter(File.Create(path)));
-                                lf.Format();
-                                Language.Core.Utils.DeleteBlackKeys(path);
-                                CreateEmptyLang(path);
-                            }
-                            else if (info.Name.EndsWith(".json")) {
-                                if (!CheckVersion(cfg.Version)) {
-                                    continue;
-                                }
-                                var p = $"{rootPath}{info.FullName[(info.FullName.LastIndexOf(Path.GetFileName(mod.TempPath)!, StringComparison.Ordinal) + Path.GetFileName(mod.TempPath)!.Length)..]}";
-                                var path = GeneratePath(p, mod.ProjectName, cfg.IncludedPath);
-                                //Console.WriteLine(path);
-                                Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-                                var jf = new JsonFormatter(new StreamReader(File.OpenRead(info.FullName)),
-                                    new StreamWriter(File.Create(path)), mod.ProjectName);
-                                jf.Format();
-                                CreateEmptyJson(path);
-                            }
-                        }
+            IEnumerable<(ZipArchiveEntry, string)> Selector() {
+                foreach (var zipArchiveEntry in entries) {
+                    var split = zipArchiveEntry.FullName.Split('/');
+                    if (split.Length<3) continue;
+                    if (split.Last() == "") continue;
+                    var baseDomain = split[0];
+                    var modDomain = split[1];
+                    var preDomain = split[2];
+                    if (modDomain == "minecraft") {
+                        continue;
+                    }
+                    if (include.Contains(baseDomain) && extract.Contains(preDomain)) {
+                        yield return (zipArchiveEntry, modDomain);
                     }
                 }
             }
-            //比较好看的
-            //foreach (var info in directories) {
-            //    foreach (var directory in info.GetDirectories()) {
-            //        if (directory.Name == "minecraft") {
-            //            continue;
-            //        }
 
-            //        var root = directory.EnumerateDirectories()
-            //            .Where(_ => include.Contains(_.Name))
-            //            .Select(_ => _.FullName);
+            foreach (var (entry, modDomain) in Selector()) {
+                var originPath = entry.FullName;
+                var flag = true;
+                var cflag = true;
+                if (originPath.Contains($"assets/{modDomain}/lang")) {
+                    flag = !(entry.Name.Equals("en_us.lang", StringComparison.OrdinalIgnoreCase) ||
+                             entry.Name.Equals("en_us.json", StringComparison.OrdinalIgnoreCase));
 
-            //        root.ToList().ForEach(Console.WriteLine);
-            //    }
-            //}
+                    
+                    if (cfg.UpdateChinese) {
+                        cflag = (entry.Name.Equals("zh_cn.lang",StringComparison.OrdinalIgnoreCase) ||
+                                entry.Name.Equals("zn_cn.json",StringComparison.OrdinalIgnoreCase));
+                    }
+
+                    if (cflag) {
+                        if (flag) {
+                            continue;
+                        }
+                    }
+                }
+
+                var truePath = GeneratePath(originPath, mod.ProjectName, cfg.IncludedPath);
+                var localPath = Path.GetDirectoryName(Path.Combine(rootPath, truePath).Replace("\\", "/"))!.Replace("\\", "/");
+                if (!Directory.Exists(localPath)) {
+                    Directory.CreateDirectory(localPath);
+                }
+
+                var p = localPath + "/" + entry.Name.ToLower();
+                if (!flag) {
+                    if (Path.GetExtension(entry.Name) == ".json" && CheckVersion(cfg.Version)) {
+                        entry.ExtractToFile(p+".tmp", true);
+                        var jf = new JsonFormatter(new StreamReader(File.OpenRead(p + ".tmp")), new StreamWriter(File.Create(p)),
+                            mod.ProjectName);
+                        jf.Format();
+                        CreateEmptyJson(p);
+                        File.Delete(p + ".tmp");
+                    }
+                    if (Path.GetExtension(entry.Name) == ".lang" && !CheckVersion(cfg.Version)) {
+                        entry.ExtractToFile(p + ".tmp", true);
+                        var lf = new LangFormatter(new StreamReader(File.OpenRead(p + ".tmp")), new StreamWriter(File.Create(p)));
+                        lf.Format();
+                        CreateEmptyLang(p);
+                        File.Delete(p + ".tmp");
+                    }
+                }
+                else {
+                    entry.ExtractToFile(p, true);
+                }
+            }
+
         }
 
         /// <summary>
@@ -180,7 +155,7 @@ namespace Spider.Lib {
         /// <param name="copySubDirs"></param>
         private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs) {
             // Get the subdirectories for the specified directory.
-            DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+            DirectoryInfo dir = new (sourceDirName);
 
             if (!dir.Exists) {
                 throw new DirectoryNotFoundException(
@@ -218,17 +193,17 @@ namespace Spider.Lib {
         /// <returns></returns>
         private static string GeneratePath(string path, string projectName, string[] root) {
             var sb = new StringBuilder();
-            var p = path.Split("\\").ToList();
+            var p = path.Split("/").ToList();
             p.ForEach(_ => {
                 if (root.ToList().Contains(_)) {
-                    sb.Append(_ + "\\");
-                    sb.Append(projectName + "\\");
+                    sb.Append(_ + "/");
+                    sb.Append(projectName + "/");
                 }
                 else if (_.EndsWith(".lang") || _.EndsWith(".json")) {
                     sb.Append(_.ToLower());
                 }
                 else {
-                    sb.Append(_ + "\\");
+                    sb.Append(_ + "/");
                 }
 
             });
