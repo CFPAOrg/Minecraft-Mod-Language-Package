@@ -29,6 +29,7 @@ namespace Packer
                 throw new ArgumentException("无效的版本参数", nameof(version));
             }
             Log.Information("开始对版本 {0} 的打包", config.Version);
+            Utils.CreateTimeStamp(config.Version);
             await using var stream = File.Create($".\\Minecraft-Mod-Language-package-{config.Version}.zip");
             var archive = new ZipArchive(stream, ZipArchiveMode.Update);
             archive.Initialize(config);
