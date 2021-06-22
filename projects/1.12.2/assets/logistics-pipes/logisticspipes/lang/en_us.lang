@@ -1,7 +1,13 @@
 # Master language file
 
-# Insert %c and the name found in logisticspipes.utils.string.ChatColor to add colors
-# Example '%cYELLOW ' (The space behind will be removed)
+# Insert $ and the name of the TextFormatting entries.
+# Colors: BLACK, DARK_BLUE, DARK_GREEN, DARK_AQUA, DARK_RED, DARK_PURPLE,
+#       GOLD, GRAY, DARK_GRAY, BLUE, GREEN, AQUA, RED, LIGHT_PURPLE, YELLOW and WHITE
+# Formatting: OBFUSCATED, BOLD, STRIKETHROUGH, UNDERLINE and ITALIC.
+#
+# You can also use RESET to clear all.
+#
+# Example '$YELLOW'
 
 # Pipes
 item.logisticspipes.pipe_transport_basic.name=Unrouted Transport Pipe
@@ -139,6 +145,7 @@ item.logisticspipes.pipe_fluid_provider.name=Logistics Fluid Provider Pipe
 item.logisticspipes.pipe_fluid_request.name=Logistics Fluid Request Pipe
 item.logisticspipes.pipe_fluid_extractor.name=Logistics Fluid Extractor Pipe
 item.logisticspipes.pipe_fluid_satellite.name=Logistics Fluid Satellite Pipe
+item.logisticspipes.pipe_fluid_terminus.name=Logistics Fluid Terminus Pipe
 item.logisticspipes.pipe_request_table.name=Logistics Request Table
 
 item.logisticspipes.pipe_hs_curve.name=Highspeed Curve Tube
@@ -181,8 +188,11 @@ item.logisticspipes.module_item_sink_creativetab.name=Creative Tab Based ItemSin
 # Items
 
 item.logisticspipes.broken_item.name=Logistics Broken Item
+item.logisticspipes.broken_item.tip1=This is an useless item
+item.logisticspipes.broken_item.tip2=You get this by trying to break a protected pipe
+
 item.logisticspipes.fluid_container.name=Logistics Fluid Container
-# %cRED (DEPRECATED) %cRESET
+# $RED (DEPRECATED) $RESET
 item.logisticspipes.upgrade_manager.name=Upgrade Manager
 item.logisticspipes.parts.0.name=Logistics HUD Bow
 item.logisticspipes.parts.1.name=Logistics HUD Glass
@@ -190,7 +200,7 @@ item.logisticspipes.parts.2.name=Logistics HUD Nose Bridge
 item.logisticspipes.parts.3.name=Nano Hopper
 item.logisticspipes.item_card.0.name=Logistics Item Card
 item.logisticspipes.disk.name=Logistics Disk
-# %cRED (DEPRECATED) %cRESET
+# $RED (DEPRECATED) $RESET
 item.logisticspipes.network_monitor.name=Network Monitor
 item.logisticspipes.sign_creator.0.name=Crafting Sign Creator
 item.logisticspipes.sign_creator.1.name=Item Amount Sign Creator
@@ -210,17 +220,14 @@ item.logisticspipes.chip_fpga_raw.name=Raw FPGA
 item.logisticspipes.guide_book.name=Logistics Pipes' Guide Book
 
 # Tooltips
-tooltip.brokenItem.1=This is an useless item
-tooltip.brokenItem.2=You get this by trying to
-tooltip.brokenItem.3=break a protected pipe
 tooltip.logisticsItemCard=This is no valid Card
 
 tooltip.programmerForModule=Module program loaded
 tooltip.programmerForPipe=Pipe program loaded
 tooltip.programmerForUpgrade=Upgrade program loaded
-tooltip.programmerForUnknown.1=%cRED No valid program loaded %cRESET
-tooltip.programmerForUnknown.2=%cRED YOU %cITALIC NEED %cRESET %cRED TO FLASH A PROGRAM %cRESET
-tooltip.programmerForUnknown.3=%cRED BEFORE YOU CAN USE THIS FOR CRAFTING %cRESET
+tooltip.programmerForUnknown.1=$REDNo valid program loaded $RESET
+tooltip.programmerForUnknown.2=$REDYOU $ITALICNEED$RESET $REDTO FLASH A PROGRAM $RESET
+tooltip.programmerForUnknown.3=$REDBEFORE YOU CAN USE THIS FOR CRAFTING $RESET
 
 # Upgrades
 
@@ -264,10 +271,10 @@ item.logisticspipes.upgrade_item_stack_extraction.name=ItemStack Extraction Upgr
 
 #Upgrade info
 
-item.upgrade.info.both1=Can be applied to %cYELLOW {0} %cRESET %cGRAY pipes
-item.upgrade.info.both2=and %cYELLOW {0} %cRESET %cGRAY modules
-item.upgrade.info.pipe=Can be applied to %cYELLOW {0} %cRESET %cGRAY pipes
-item.upgrade.info.module=Can be applied to %cYELLOW {0} %cRESET %cGRAY modules
+item.upgrade.info.both1=Can be applied to $YELLOW{0}$RESET$GRAY pipes
+item.upgrade.info.both2=and $YELLOW{0} $RESET$GRAYmodules
+item.upgrade.info.pipe=Can be applied to $YELLOW{0}$RESET$GRAY pipes
+item.upgrade.info.module=Can be applied to $YELLOW{0}$RESET$GRAY modules
 item.upgrade.info.all=All
 item.upgrade.info.crafting=Crafting
 item.upgrade.info.provider=Provider
@@ -294,7 +301,7 @@ tile.logisticspipes.program_compiler.name=Logistics Program Compiler
 
 # Misc
 itemGroup.Logistics_Pipes=Logistics Pipes
-misc.holdshift=<Hold %cYELLOW %cITALIC Shift %cRESET %cGRAY for details>
+misc.holdshift=<Hold $YELLOW$ITALICShift$RESET$GRAY for details>
 misc.extractionmode.Normal=Normal
 misc.extractionmode.LeaveFirst=Leave 1st stack
 misc.extractionmode.LeaveLast=Leave last stack
@@ -303,6 +310,11 @@ misc.extractionmode.Leave1PerStack=Leave 1 item per stack
 misc.extractionmode.Leave1PerType=Leave 1 item per type
 misc.selectType=Select Type
 misc.selectOreDict=Select OreDict Type
+misc.guide_book.home_button=Return to landing page.
+misc.guide_book.bookmark_button.add=Add current page to bookmarks.
+misc.guide_book.bookmark_button.remove=Remove current page from bookmarks.
+misc.guide_book.missing_page_title=Page not found
+misc.guide_book.missing_page=The requested page´s file ´{0}´ was not found.
 
 #Misc Chat messages
 
@@ -414,6 +426,9 @@ gui.routingstats.RoutingTableSize=RoutingTableSize
 gui.routingstats.exit=Press <ESC> to exit
 
 gui.satellite.SatelliteName=Satellite Name
+gui.satellite.naming_result.success=Success
+gui.satellite.naming_result.duplicate_name=Name already used.
+gui.satellite.naming_result.blank_name=Name can't be blank.
 
 gui.securitystation.Open=Open
 gui.securitystation.EditTable=Edit Table
@@ -475,8 +490,8 @@ gui.compiler.logisticspipes.compilercategory.chassis_3=Chassis 3
 gui.compiler.logisticspipes.compilercategory.modded=Modded
 
 gui.compiler.processing=Processing...
-gui.compiler.nopower.1=%cRED No power %cRESET
-gui.compiler.nopower.2=%cRED Connect to LP network %cRESET
+gui.compiler.nopower.1=$REDNo power$RESET
+gui.compiler.nopower.2=$REDConnect to LP network$RESET
 
 gui.settings.pipenewrenderer=Use New Renderer
 gui.settings.pipefallbackrenderer=Use Fallback Renderer
@@ -507,6 +522,65 @@ gui.popup.selectsatellite.select=Select
 gui.popup.selectsatellite.exit=Exit
 gui.popup.selectsatellite.unset=Unset
 
-itemstackinfo.lprouteditem=%cRED Item with stored LogisticsPipes routing information
-itemstackinfo.lproutediteminfo=%cYELLOW Drop to remove routing information and get original items back
+itemstackinfo.lprouteditem=$REDItem with stored LogisticsPipes routing information
+itemstackinfo.lproutediteminfo=$YELLOWDrop to remove routing information and get original items back
 itemstackinfo.lprouteditemtype=Stored item
+
+top.logisticspipes.general.upgrades=Installed upgrades: %s
+top.logisticspipes.general.no_upgrades=$REDNo installed upgrades.
+top.logisticspipes.general.is_default_route=This $GREENis$WHITE set as a default route.
+top.logisticspipes.general.is_not_default_route=This $REDis not§f set as a default route.
+
+top.logisticspipes.module.provider.all=Providing $GREENall$WHITE items.
+top.logisticspipes.module.provider.none=Providing $REDno$WHITE items.
+top.logisticspipes.module.provider.but=Providing all $YELLOWexcept$WHITE: %s
+top.logisticspipes.module.provider.only=Providing $YELLOWonly$WHITE: %s
+top.logisticspipes.module.provider.mode=Mode:
+
+top.logisticspipes.module.crafting.result=Crafting $AQUA%s$WHITE.
+top.logisticspipes.module.crafting.no_result=$REDNo crafting recipe set.
+top.logisticspipes.module.crafting.result_with_byproduct=Crafting $AQUA%s$WHITE with $AQUA%s$WHITE as byproduct.
+
+top.logisticspipes.module.terminus.filter=Terminated items: %s
+top.logisticspipes.module.terminus.no_filter=There are $REDno terminated items$RESET.
+
+top.logisticspipes.module.passive_supplier.filter=Requesting: %s
+top.logisticspipes.module.passive_supplier.no_filter=Requesting $REDno$WHITE items.
+
+top.logisticspipes.module.active_supplier.filter=Items: %s
+top.logisticspipes.module.active_supplier.no_filter=$REDNo$WHITE items being supplied.
+top.logisticspipes.module.active_supplier.mode=Requesting items in $AQUA%s$WHITE mode.
+
+top.logisticspipes.module.enchantment_sink.filter=Accepting items: %s
+top.logisticspipes.module.enchantment_sink.no_filter=There are $REDno items set$WHITE to filter.
+
+top.logisticspipes.module.mod_item_sink.filter=Accepting items from mods: %s
+top.logisticspipes.module.mod_item_sink.no_filter=There are $REDno mods set$WHITE to filter.
+
+top.logisticspipes.module.creative_tab_item_sink.filter=Accepting items from tabs: %s
+top.logisticspipes.module.creative_tab_item_sink.no_filter=There are $REDno creative tabs set$WHITE to filter.
+
+top.logisticspipes.module.ore_item_sink.filter=Accepting ores matching: %s
+top.logisticspipes.module.ore_item_sink.no_filter=There are $REDno ores set$WHITE to filter.
+
+top.logisticspipes.module.extractor.side=Extracting from $AQUA%s$WHITE.
+
+top.logisticspipes.module.advanced_extractor.all=Extracting $GREENall$WHITE items.
+top.logisticspipes.module.advanced_extractor.none=Extracting $REDno$WHITE items.
+top.logisticspipes.module.advanced_extractor.but=Extracting all $YELLOWexcept$WHITE: %s
+top.logisticspipes.module.advanced_extractor.only=Extracting $YELLOWonly$WHITE: %s
+
+top.logisticspipes.pipe.satellite.name=Satellite name: $AQUA%s$RESET.
+top.logisticspipes.pipe.satellite.no_name=Satellite name $REDnot set$RESET.
+
+top.logisticspipes.pipe.firewall.providing=Providing: %s
+top.logisticspipes.pipe.firewall.crafting=Crafting: %s
+top.logisticspipes.pipe.firewall.sorting=Sorting: %s
+top.logisticspipes.pipe.firewall.power=Power: %s
+top.logisticspipes.pipe.firewall.filtering=$AQUA%d$WHITE items are being %s.
+top.logisticspipes.pipe.firewall.allowed=$GREENallowed$WHITE
+top.logisticspipes.pipe.firewall.blocked=$REDblocked$WHITE
+
+top.logisticspipes.pipe.unrouted.too_many_connections=Unrouted pipes $REDshould not$RESET have more than 2 connections!
+
+top.logisticspipes.pipe.chassis.no_modules=$REDNo modules installed.

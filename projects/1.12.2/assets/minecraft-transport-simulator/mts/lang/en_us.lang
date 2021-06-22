@@ -1,5 +1,10 @@
 #Translated by don_bruce
 
+death.attack.bullet.null.null=%1$s was shot by a spy
+death.attack.bullet.null.player=%1$s got distracted while fighting %2$s and got shot by a spy
+death.attack.bullet.player.null=%2$s was shot by %1$s
+death.attack.bullet.player.player=%1$s got distracted while fighting %2$s and got shot by %3$s
+
 death.attack.propellor.null.null=%1$s was shredded by a propeller
 death.attack.propellor.null.player=%1$s was shredded by a propeller while fighting %2$s
 death.attack.propellor.player.null=%1$s was shredded by %2$s's propeller
@@ -20,15 +25,11 @@ death.attack.wheel.null.player=%1$s was was run over while fighting %2$s
 death.attack.wheel.player.null=%1$s was run over by %2$s 
 death.attack.wheel.player.player=%1$s was run over by %2$s while fighting %3$s
 
-death.attack.planecrash.null.null=%1$s died in a plane crash
-death.attack.planecrash.null.player=%1$s got distracted while fighting %2$s and died in a plane crash
-death.attack.planecrash.player.null=%2$s crashed their plane and killed %1$s
-death.attack.planecrash.player.player=%1$s got distracted while fighting %2$s and let %3$s crash a plane into them
-
-death.attack.carcrash.null.null=%1$s died in a car crash
-death.attack.carcrash.null.player=%1$s got distracted while fighting %2$s and died in a car crash
-death.attack.carcrash.player.null=%2$s crashed their car and killed %1$s
-death.attack.carcrash.player.player=%1$s got distracted while fighting %2$s and let %3$s crash a car into them
+death.attack.crash.null.null=%1$s died in a crash
+death.attack.crash.null.player=%1$s got distracted while fighting %2$s and died in a crash
+death.attack.crash.player.null=%2$s crashed their vehicle and killed %1$s
+death.attack.crash.player.player=%1$s got distracted while fighting %2$s and let %3$s crashed their vehicle
+ 
 interact.key.info.lock=Vehicle locked!
 interact.key.info.unlock=Vehicle unlocked!
 interact.key.info.own=You are now the owner of this vehicle!
@@ -37,6 +38,10 @@ interact.key.failure.notowner=Only the owner of this vehicle may make new keys!
 interact.key.failure.wrongkey=This key does not go to this vehicle!
 interact.key.failure.alreadyowned=You are not the owner of this vehicle, you cannot change ownership!
 
+interact.fuelpump.toofar=The fuel pump is too far away from the vehicle.  The pump should be no more than 16 blocks away.
+interact.fuelpump.nofuel=The fuel pump does not have any fuel in it.  You need fuel in the fuel pump to use it.
+interact.fuelpump.wrongtype=This pump does not contain the same liquid as what is in the vehicle.
+interact.fuelpump.wrongengines=The fuel in this pump is not a valid fuel for the engines in the vehicle.  Check the manual for details.
 interact.fuelpump.connect=Fuel pump connected and pumping.
 interact.fuelpump.complete=Vehicle is full, disconnecting.
 interact.fuelpump.empty=Fuel pump is empty, disconnecting.
@@ -46,12 +51,11 @@ interact.jerrycan.empty=This jerrycan is empty and cannot fuel this vehicle.
 interact.jerrycan.wrongtype=This jerrycan does not contain the same liquid as what is in the vehicle.
 interact.jerrycan.toofull=This vehicle is already full of fuel.  You cannot add any more.
 interact.jerrycan.success=Added 1000mb of fluid to this vehicle.
-=======
-interact.fuelpump.toofar=The fuel pump is too far away from the vehicle.  The pump should be no less than 16 blocks away.
+ 
 interact.failure.seattaken=This seat is taken!
 interact.failure.vehiclelocked=This vehicle is locked!
-interact.failure.vehicleowned=You are not the owner of this vehicle and therefore cannot remove it or its parts!
-
+interact.failure.vehicleowned=You are not the owner of this vehicle and therefore cannot change it or its parts!
+interact.failure.nospace=There is not enough space to place down this vehicle here.
 
 interact.jumpercable.firstlink=Linking first engine to jumper cable.
 interact.jumpercable.secondlink=Engines linked.  Transmitting power.
@@ -60,6 +64,24 @@ interact.jumpercable.powerequal=The two engines now have the same battery level.
 interact.jumpercable.alreadylinked=This engine is already linked to another engine and cannot be linked.
 interact.jumpercable.toofar=The two engines are too far away.  They should be no further than 16 blocks apart.
 interact.jumpercable.samevehicle=The two engines are on the same vehicle.  That's not going to work well...
+
+interact.jumperpack.success=Charged vehicle battery to maximum.
+
+interact.fuelhose.firstlink=Source tank linked to fuel hose.
+interact.fuelhose.secondlink=Linked to tank/vehicle.  Transfering fluid.
+interact.fuelhose.linkdropped=The linked tanks have moved too far apart from one another.  Breaking link.
+interact.fuelhose.tankempty=Source tank is empty, disconnecting.
+interact.fuelhose.tankfull=Destination tank is full, disconnecting.
+interact.fuelhose.alreadylinked=This tank is already linked to another tank and cannot be linked.
+interact.fuelhose.toofar=The two tanks are too far away.  They should be no further than 16 blocks apart.
+interact.fuelhose.differentfluids=The source and destination tanks do not contain the same fluid and cannot be linked.
+
+interact.trailer.connect=Trailer connected.
+interact.trailer.disconnect=Trailer disconnected.
+interact.trailer.notfound=No trailers were found anywhere near this vehicle.
+interact.trailer.toofar=The trailer is too far from the vehicle.  The trailer needs to be less than 2 blocks away.
+interact.trailer.wronghitch=This vehicle does not have the correct hitch for this trailer.
+interact.trailer.wrongplacement=A hitch was found that is close enough to connect, but was not the correct type.  Also, a matching hitch was found, but it was too far to connect.  Are you trying to use the wrong hitch?
 
 input.aircraft.mod=Mod
 input.aircraft.camlock=CamLock
@@ -78,10 +100,12 @@ input.aircraft.throttle_d=ThrottleDown
 input.aircraft.flaps_u=FlapsUp
 input.aircraft.flaps_d=FlapsDown
 input.aircraft.brake=Brake
-input.aircraft.brake_analog=Brake
+input.aircraft.brake_digital=Brake
 input.aircraft.panel=Panel
 input.aircraft.park=ParkingBrake
-input.aircraft.gun=Gun
+input.aircraft.gun_fire=Gun
+input.aircraft.gun_switch=Switch Gun
+input.aircraft.radio=Radio
 input.aircraft.zoom_i=ZoomIn
 input.aircraft.zoom_o=ZoomOut
 input.aircraft.changeview=ChangeView
@@ -90,7 +114,6 @@ input.aircraft.look_r=LookRight
 input.aircraft.look_u=LookUp
 input.aircraft.look_d=LookDown
 input.aircraft.look_a=LookDirectional
-input.aircraft.changehud=HUDMode
 input.aircraft.trim_yaw_r=TrimYawRight
 input.aircraft.trim_yaw_l=TrimYawLeft
 input.aircraft.trim_pitch_u=TrimPitchUp
@@ -98,6 +121,7 @@ input.aircraft.trim_pitch_d=TrimPitchDown
 input.aircraft.trim_roll_r=TrimRollRight
 input.aircraft.trim_roll_l=TrimRollLeft
 input.aircraft.reverse=Reverse
+input.aircraft.js_inhibit=DisableJoystick
 
 input.car.mod=Mod
 input.car.camlock=CamLock
@@ -106,16 +130,16 @@ input.car.turn_r=TurnRight
 input.car.turn_l=TurnLeft
 input.car.gas=Gas
 input.car.brake=Brake
-input.car.brake_analog=Brake
+input.car.brake_digital=Brake
+input.car.panel=Panel
 input.car.shift_u=ShiftUp
 input.car.shift_d=ShiftDown
-input.car.start=StartEngine
 input.car.horn=Horn
-input.car.siren=Siren
-input.car.lights=Lights
-input.car.lights_special=SpecialLights
 input.car.park=ParkingBrake
-input.car.gun=Gun
+input.car.trailer=TrailerLink
+input.car.gun_fire=Fire Gun
+input.car.gun_switch=Switch Gun
+input.car.radio=Radio
 input.car.zoom_i=ZoomIn
 input.car.zoom_o=ZoomOut
 input.car.changeview=ChangeView
@@ -124,10 +148,11 @@ input.car.look_r=LookRight
 input.car.look_u=LookUp
 input.car.look_d=LookDown
 input.car.look_a=LookDirectional
-input.car.changehud=HUDMode
-input.car.stop=StopEngine
-input.car.turnsignal_r=RightTurnSignal
-input.car.turnsignal_l=LeftTurnSignal
+input.car.slow=Slow
+input.car.lights=Lights
+input.car.turnsignal_r=RightSignal
+input.car.turnsignal_l=LeftSignal
+input.car.js_inhibit=DisableJoystick
 
 gui.trafficsignalcontroller.scan=Scan For Signals & Components
 gui.trafficsignalcontroller.scandistance=Scan Distance: 
@@ -136,13 +161,15 @@ gui.trafficsignalcontroller.primary=Primary axis:
 gui.trafficsignalcontroller.signalmode=Mode: 
 gui.trafficsignalcontroller.modetime=Time Delay
 gui.trafficsignalcontroller.modetrigger=Vehicle Trigger
+gui.trafficsignalcontroller.moderedstone=Redstone Trigger
+gui.trafficsignalcontroller.moderemote=Redstone Control
 gui.trafficsignalcontroller.greenmaintime=Time main signal is Green:
 gui.trafficsignalcontroller.greencrosstime=Time cross signal is Green: 
-gui.trafficsignalcontroller.yellowtime=Time all signals are Yellow: 
+gui.trafficsignalcontroller.yellowmaintime=Time main signal is Yellow: 
+gui.trafficsignalcontroller.yellowcrosstime=Time cross signal is Yellow: 
 gui.trafficsignalcontroller.allredtime=Time all signals are Red:
 gui.trafficsignalcontroller.confirm=CONFIRM 
 
-gui.vehicle_bench.type=Type
 gui.vehicle_bench.weight=Weight (kg)
 gui.vehicle_bench.fuel=Fuel Cap. (mb)
 gui.vehicle_bench.controllers=Drivers/Pilots
@@ -157,12 +184,24 @@ gui.panel.navigationlights=NAV
 gui.panel.strobelights=STROBE
 gui.panel.taxilights=TAXI
 gui.panel.landinglights=LAND
+gui.panel.off=OFF
+gui.panel.on=ON
+gui.panel.start=START
 gui.panel.magneto=MAG
-gui.panel.starter=START
+gui.panel.engine=ENGINE
 gui.panel.trim_roll=ROLL TRIM
 gui.panel.trim_pitch=PITCH TRIM
 gui.panel.trim_yaw=YAW TRIM
-gui.panel.reverse=REVERSE THRUST
+gui.panel.reverse=REV
+gui.panel.gear=GEAR
+gui.panel.beacon=BEACON
+gui.panel.autopilot=AUTO
+gui.panel.cruisecontrol=CRUISE
+gui.panel.headlights=LIGHTS
+gui.panel.turnsignals=TURNSGNL
+gui.panel.emergencylights=EMERLTS
+gui.panel.siren=SIREN
+gui.panel.trailer=TRAILER
 
 gui.instruments.main=Main Instruments
 gui.instruments.control=Control Panel
@@ -170,13 +209,14 @@ gui.instruments.clear=CLEAR
 gui.instruments.idle=Select an instrument.
 gui.instruments.decide=Click an instrument to add, or CLEAR to remove.
 
-gui.config.header.config=CONFIG
+gui.config.header.config.rendering=RENDERING
+gui.config.header.config.controls=CONFIG
 gui.config.header.controls=CONTROLS
-gui.config.controls.title=Chose a configuration to change:
+gui.config.controls.title=Choose a configuration to change:
 gui.config.controls.aircraft.keyboard=AIRCRAFT KEYBOARD
 gui.config.controls.aircraft.joystick=AIRCRAFT JOYSTICK
-gui.config.controls.car.keyboard=CAR KEYBOARD
-gui.config.controls.car.joystick=CAR JOYSTICK
+gui.config.controls.car.keyboard=CAR/BOAT KEYBOARD
+gui.config.controls.car.joystick=CAR/BOAT JOYSTICK
 gui.config.controls.confirm=Confirm
 gui.config.joystick.error=ERROR: MTS could not initialize the control system!  This is likely due to a device mis-representing itself as a joystick to Java.  Mice have been known to have this issue, especially Corsair mice, so try a different mouse.  If the issue persists please contact the mod author.
 gui.config.joystick.select=Choose a joystick:
@@ -189,9 +229,7 @@ gui.config.joystick.assignment=Assigned to:
 gui.config.joystick.cancel=Cancel
 gui.config.joystick.clear=Clear Assignment
 gui.config.joystick.choosemap=Choose what gets mapped to this button.
-gui.config.joystick.selectdigital=This DIGITAL button can control:
-gui.config.joystick.selectanalog=This ANALOG button can control:
-gui.config.joystick.calibrate1=Move the axis until the numbers stop changing.
+gui.config.joystick.calibrate1=Move axis until numbers stop changing.
 gui.config.joystick.calibrate2=Then hit confirm to save settings.
 gui.config.joystick.axismode=Axis mode: 
 gui.config.joystick.normal=Normal
@@ -209,16 +247,21 @@ info.item.engine.automatic=Transmission: Automatic
 info.item.engine.manual=Transmission: Manual
 info.item.engine.numbergears=Number gears: 
 info.item.engine.gearratios=Gear Ratios: 
+info.item.engine.jetpowerfactor=Jet Power: 
 info.item.engine.bypassratio=Bypass Ratio: 
 info.item.engine.maxrpm=Max Possible RPM: 
 info.item.engine.maxsaferpm=Max safe RPM: 
 info.item.engine.fuelconsumption=Fuel use (mb/t): 
+info.item.engine.supercharged=Supercharged
+info.item.engine.superchargerfuelconsumption=Supercharger fuel use (mb/t): 
+info.item.engine.superchargerefficiency=Supercharger efficiency: 
+info.item.engine.fueltype=Fuel type: 
 info.item.engine.hours=Runtime hours: 
 info.item.engine.oilleak=Has an oil leak!
 info.item.engine.fuelleak=Has a fuel leak!
 info.item.engine.brokenstarter=Electric starter is broken!
-info.item.engine.creative=Creative: Uses no fuel
-info.item.ground_device.diameter=Climb height: 
+info.item.engine.creative=Creative: Needs no fuel, accumulates no hours, cannot blow up.
+info.item.ground_device.diameter=Diameter: 
 info.item.ground_device.motivefriction=Power friction: 
 info.item.ground_device.lateralfriction=Turning friction: 
 info.item.ground_device.rotatesonshaft_true=Is a wheel 
@@ -232,62 +275,34 @@ info.item.propeller.pitch=Pitch:
 info.item.propeller.diameter=Diameter: 
 info.item.propeller.maxrpm=Max RPM: 
 info.item.propeller.health=Health: 
-info.item.gun.type.fixed=Type: Fixed-Mount Gun 
-info.item.gun.diameter=Diameter (mm): 
-info.item.gun.length=Length (mm): 
+info.item.gun.diameter=Barrel Diameter (mm): 
+info.item.gun.length=Barrel Length (m): 
+info.item.gun.caseRange=Case Range (mm): 
 info.item.gun.fireDelay=Fire Delay (ticks): 
 info.item.gun.muzzleVelocity=Velocity (blk/s): 
 info.item.gun.capacity=Bullet Capacity: 
+info.item.gun.autoReload=Auto-Reloads
 info.item.gun.yawRange=Yaw Range: 
 info.item.gun.pitchRange=Pitch Range: 
 info.item.bullet.type.normal=Normal Bullet
 info.item.bullet.type.explosive=Explosive Bullet
 info.item.bullet.type.incendiary=Incendiary Bullet
 info.item.bullet.type.armor_piercing=Armor Piercing Bullet
+info.item.bullet.type.tracer=Tracer Bullet
+info.item.bullet.type.water=Water Bullet
 info.item.bullet.diameter=Diameter (mm): 
+info.item.bullet.caseLength=Case Length (mm): 
+info.item.bullet.penetration=Penetration (mm): 
 info.item.bullet.quantity=Quantity: 
-info.item.barrel.capacity=Capacity: 
-info.item.crate.capacity=Capacity: 
+info.item.interactable.capacity=Capacity: 
+info.item.jerrycan.fill=Fill can by right-clicking a fuel pump.
+info.item.jerrycan.drain=Fill vehicle by right-clicking with full can.
+info.item.jerrycan.empty=Can is currently empty.
+info.item.jerrycan.contains=Can contains: 
 
-info.item.wrench.use=Use on vehicle to change instruments.
-info.item.wrench.attack=Attack a part to remove.
-info.item.wrench.sneakattack=Sneak-attack to remove vehicle.
-info.item.key.line1=Use on a vehicle to lock.
-info.item.key.line2=Vehicle may only be opened with key.
-info.item.key.line3=Sneak-use to take ownership.
-info.item.key.line4=Sneak-use again to relinquish.
-info.item.key.line5=Owned vehicles may only be destroyed by you and OPs.
-info.item.jumpercable.line1=Use on an engine to select.
-info.item.jumpercable.line2=Use on second engine to link.
-info.item.jumpercable.line3=Linked engines will exchange power.
-info.item.jumpercable.line4=Engines will un-link when power is even, 
-info.item.jumpercable.line5=or if they get too far away.
 
-item.wrench.name=Wrench
-item.key.name=Key
-item.manual.name=MTS Manual (READ ME!)
-item.jumpercable.name=Jumper Cables
-
-item.vehiclebench.name=Drafting Table
-item.propellerbench.name=Propeller Bench
-item.enginebench.name=Engine Hoist
-item.wheelbench.name=Wheel Workbench
-item.seatbench.name=Table Saw
-item.gunbench.name=Rifling Machine
-item.custombench.name=Tool Bench
-item.instrumentbench.name=Instrument Bench
-
-item.fuelpump.name=Fuel Pump
-item.fuelpump.level=LVL:
-item.fuelpump.dispensed=DISP:
-
-item.trafficsignalcontroller.name=Traffic Signal Controller
-
-tile.pole.name=Pole
-tile.polebase.name=Pole Base
-tile.trafficsignal.name=Traffic Signal
-tile.streetlight.name=Street Light
-tile.trafficsign.name=Traffic Sign
+tile.fuelpump.level=LVL:
+tile.fuelpump.dispensed=DISP:
 
 itemGroup.tabMTSCore=MTS Core Components
 key.categories.mts=Minecraft Transport Simulator
@@ -298,8 +313,6 @@ advancements.mts.root.description=Start your journey into powered transport!
 advancements.mts.rtfm.title=RTFM
 advancements.mts.rtfm.description=Craft a Manual
 
-advancements.mts.componentbench.title=You Can Buy Anything Online
-advancements.mts.componentbench.description=Create a Component Bench
 advancements.mts.custombench.title=Custom Parts
 advancements.mts.custombench.description=Create a Tool Bench
 advancements.mts.decorbench.title=I Thought This Was Decocraft...
@@ -310,6 +323,8 @@ advancements.mts.gunbench.title=Pew Pew
 advancements.mts.gunbench.description=Create a Rifling Machine
 advancements.mts.instrumentbench.title=Instrumental
 advancements.mts.instrumentbench.description=Create an Instrument Bench
+advancements.mts.itembench.title=You Can Buy Anything Online
+advancements.mts.itembench.description=Create an Item Bench
 advancements.mts.propellerbench.title=Propwash
 advancements.mts.propellerbench.description=Create a Propeller Bench
 advancements.mts.seatbench.title=Seats, Supplies, and Storage
@@ -319,91 +334,23 @@ advancements.mts.vehiclebench.description=Create a Drafting Bench
 advancements.mts.wheelbench.title=Moving on the Ground (or Water)
 advancements.mts.wheelbench.description=Create a Wheel Workbench
 
+advancements.mts.fuelhose.title=Transfer Time
+advancements.mts.fuelhose.description=Create a fuel hose
 advancements.mts.fuelpump.title=Fill 'Er Up
 advancements.mts.fuelpump.description=Create a fuel pump
 advancements.mts.jerrycan.title=Just in Case...
 advancements.mts.jerrycan.description=Create a jerrycan
 advancements.mts.jumpercable.title=Jump Start
 advancements.mts.jumpercable.description=Create some jumper cables
+advancements.mts.jumperpack.title=Power in Your Pocket
+advancements.mts.jumperpack.description=Create a battery jumper
 advancements.mts.key.title=Swiper no Swiping
 advancements.mts.key.description=Create a Key for locking vehicles
+advancements.mts.paintgun.title=Pay 'n' Spray
+advancements.mts.paintgun.description=Create a Paint Gun for re-painting vehicles
+advancements.mts.partscanner.title=OBD 3.0
+advancements.mts.partscanner.description=Create a part scanner
+advancements.mts.ticket.title=Ticket to Ride
+advancements.mts.ticket.description=Create a Ticket to load entities into vehicles
 advancements.mts.wrench.title=Better Than Duct Tape
 advancements.mts.wrench.description=Create a wrench for reparing vehicles
-key.config=Open configuration screen
-
-manual.1.title=Introduction
-manual.1.1=Thank you for downloading Minecraft Transport Simulator, the new and improved version of Minecraft Flight Simulator!  This manual contains lots of important information, so please read closely.  It's STRONGLY recommended you read the portions on flight if you plan on piloting MTS planes, especially if you haven't had experience with planes outside of video games or simulators.
-manual.1.2=If there's something that is not included in this manual please see the MTS team on Discord.  We'll be happy to answer your question and add it to the manual in a later update.  One final note: every manual keeps their place when closed individually, so you can have multiple copies turned to specific sections that you reference frequently.  You can also scroll through this manual with your mouse wheel if your mouse is equipped with one.
-
-manual.2.title=Basic Crafting
-manual.2.1=Like most mods that have packs and lots of content, MTS uses crafting benches for crafting.  The Drafting Table is used to craft vehicles, while the other benches craft their own parts.  You'll likely want to start filling your garage early with these benches as most vehicles use at least one type of every part.
-manual.2.2=If you're looking to edit the recipes for crafting for use on servers you will need to do so in the JSON files included in the packs you have downloaded.  Look for the materials[] section and edit those values to your liking.
-
-manual.3.title=Vehicle Assembly
-manual.3.1=Assembling vehicles is a simple as clicking them with the required parts.  When holding a valid part a green hologram will appear in locations where you can place it.  Simply right-click with that part and it will attach to the vehicle.  Note that some parts may require other parts to be installed before they may be placed, such as propellers that connect to aircraft engines.
-manual.3.2=Also note that you must not be inside the vehicle in order to work on it, so no mid-air repairs of failing plane engines!  If you are holding a part and the hologram is red, it means the part is the correct type, but the wrong size.  One common example is a wheel that is too big or too small for the vehicle.  You may also have a vehicle that the pack creator specified a specific part for (such as a specific wheel), so try parts from the pack first.
-
-manual.4.title=Vehicle Destruction
-manual.4.1=There may become a time when you find yourself needing to repair a part on your vehicle.  Be it a flat tire due to a pesky archer, or a blown engine from one too many long flights.  To remove a part simply left-click it with a wrench and it will drop as an item (if it's not broken).  You can also destroy the whole vehicle with a shift-left-click.  This will drop all the parts as items as well as the vehicle itself.
-manual.4.2=Sometimes, however, the destruction of your vehicle may not be your choice.  Hitting blocks at speed is likely to result in something breaking, and if you do it fast enough you should expect an explosion, with more fuel equaling more explosion.  Note that while parts will be spawned when a vehicle crashes, a big enough explosion is likely to destroy them.  Explosions may be disabled in the config if you are a server owner and don't feel like getting into the road-repair business.
-
-manual.5.title=Fueling
-manual.5.1=Vehicles are fueled from the fuel pump block.  Just click the fuel pump and it will automatically connect to the nearest vehicle.  The pump will then transfer fuel at a rate of 10 mb/t.  The pump itself has a 15000mb reservoir and can be filled directly from liquid-holding containers, or by connecting a pipe to the bottom from pipe systems compatible with Forge liquids.
-manual.5.2=What exactly MTS considers a fuel is determined by the settings in the config file.  Lava is set as fuel by default, but other liquids can be added to the config by running MTS once with them installed.  Fuel is determined by a number that represents how much the fuel fills the tanks of vehicles (all new liquids are set to 0.0 by default).  Again, that value is NOT potency of the fuel, but the conversion factor; adjust fuel potency using the FuelUsageFactor in the config file.
-
-manual.6.title=Theft Prevention
-manual.6.1=The only thing worse than getting your nice car blown up by a creeper is having it (or parts of it) stolen by other players.  Normally vehicles can be messed with by anyone, but by using a key you can mark them as owned allowing only you to change their parts.  This also extends to entering the vehicle or accessing the contents of inventories inside of it.
-manual.6.2=You can even lock yourself in vehicles while moving to prevent stowaways.  Keys can be given to other players, allowing them to enter, but not modify, your vehicles.  It is HIGHLY recommended to make more than one key, as locked vehicles cannot be unlocked without their keys, nor can owned vehicles be relinquished.  Note that OPs bypass these restrictions to allow server admins to move/remove abandoned vehicles.
-
-manual.7.title=Keyboard Controls
-manual.7.1=MTS offers multiple control schemes.  The standard scheme is the keyboard control.  Unlike other mods, MTS is equipped with a no-bind system.  This prevents it from clogging up keybindings and from intercepting and taking other mod's keystrokes.  Configuration for this mode, and the other control modes, can be activated by pressing the config key (P by default).
-manual.7.2=This key is the only one that's bound in the standard way in the controls menu, and may be double-bound by default in some modpacks, so if you can't bring up the config menu check your keybindings.  Do note that while MTS will not block other mod's key signals, it may still be affected by the signals of other mods who do not use context-sensitive triggers.  Keep this in mind when controlling vehicles.
-
-manual.8.title=Joystick Controls
-manual.8.1=The second control scheme is a Joystick-Keyboard hybrid.  This controller MUST be connected at the time you start Minecraft.  Configuration is done though the JOYSTICK section of the P-key menu.  When an axis such as yaw or pitch is being controlled by a joystick it will be unavailable on the keyboard.  Button inputs will also be disabled, but can be re-enabled though a CONFIG setting.
-manual.8.2=The final method of control available is a mouse-yoke system similar to both Flan's and MCHeli.  This system is currently in Beta and is not perfect, but should be functional enough for general use.  For all of these controls, there are a few extra settings in the P-key CONFIG menu.  These can be used to control joystick dead-zone, sensitivity, keyboard cooldown, as well as other general control settings.
-
-manual.9.title=Engines
-manual.9.1=No matter if they are in cars or planes, engines form the heart of your vehicle.  Not having one is like having a base without a furnace.  Engines come in a variety of fuel consumptions and max RPMs, so chose carefully based on your application.  There is even a fuel-less engine in the creative inventory if you don't want to mess with fuel.  Engines are crafted on the engine hoist.
-manual.9.2=Beware: engines will gradually accumulate hours and lose their power, going so far as to start backfiring when really worn out.  Over-revving, over-heating, and running the engine too fast before it has warmed up will quickly add hours to an otherwise new engine.  Engines may also accumulate hours from damage, going so far as to spring leaks or lose their electric starters.
-
-manual.10.title=Ground Devices
-manual.10.1=If it touches the ground, it's a ground device.  Ground devices come in all sorts of configurations and types.  The most common ground device you will encounter are wheels.  These may be powered or un-powered depending on how the vehicle is set up.  Floating ground devices like pontoons are also available, so check the stats of the device before you decide to make it.
-manual.10.2=Wheels also have a few rules that do not apply to other ground devices.  The first is that for cars, wheels MUST be used on the axles if they are to provide power.  While you can equip a vehicle with half pontoons and half wheels, only the wheels will provide power.  Wheels may also blow out if spun too much, so that white smoke you see when doing burnouts is there for more that just show.  All ground devices are created on the Wheel Workbench.
-
-manual.11.title=Propellers
-manual.11.1=If you're going to fly an aircraft, it will likely need one of these (well, unless it's a jet).  Larger diameter propellers provide more thrust than smaller ones; however, larger-diameter propellers also need larger engines to turn, so it may be that a weak engine can produce more thrust with a smaller propeller than a larger one.  Propellers are created on the Propeller Bench.
-manual.11.2=Propeller pitch is also important, perhaps moreso than diameter, as it determines the optimal speed at any RPM.  Anything below this speed will speed the aircraft up, anything below will slow it down.  Note that propellers that have dynamic pitch will adjust their pitch in flight to maintain optimum thrust, and may also be reversed by pressing the REVERSE THRUST button in the plane panel.  Reversed propellers are not very effective, so make sure to use plenty of throttle and watch your temps!
-
-manual.12.title=Seats/Crates
-manual.12.1=Seats and crates may both be placed in vehicles, however exactly where they may be placed depends on the vehicle itself.  The total number of seats and crates a vehicle can contain is shown in the Drafting Table, so use this to determine if the vehicle meets your needs or not.  Some vehicles allow
-#  for either seats or crates in some spots, which means you can add or remove them as you see fit.
-manual.12.2=Note that crates hold their inventory when in item form and will still have that inventory if placed in another vehicle or if the vehicle they are in is destroyed.  This allows for quick transfer of items from one vehicle to another.  Both seats and crates are created on the Table Saw.
-
-manual.13.title=Instruments
-manual.13.1=Instruments make piloting a plane and driving a car much more immersive.  They are also useful for monitoring key properties like fuel levels, RPM, and engine temps, and make flying in the dark much less hazardous.
-manual.13.2=Instruments are added to vehicles by using the wrench on them.  The resulting GUI shows a view of the HUD and all instruments in your possession that work on that vehicle.  Simply click the slot you want to put the instrument in, and click that instrument.  Instruments are created on the Instrument Workbench.
-
-manual.14.title=Driver's Ed
-manual.14.1=Driving a car is so simple, even a villager could do it.  Simply hop in a car and press the Z key to turn engage the starter.  Once the engine is running press the R key to shift into forwards gear and press the W key to give it some gas and off you go!  The A and D keys can be used to steer the car, while S key activates the brake.  Some vehicles are also equipped with lights, horns, sirens, or even turn signals.
-manual.14.2=Do note that all cars start in neutral, and you pressing R puts them into forwards.  Pressing F will shift into neutral, and F again will shift into reverse.  Shifting should be done while stopped to avoid scary transmission noises.  The only exception are engines with manual transmissions.  These must be shifted up and down manually, which means they have multiple "forwards" gears for you to shift though.  If you hear the engine getting noisy and red-lining, it means it's time to shift!
-
-manual.15.title=Time to Fly!
-manual.15.1=Before your first flight you should be aware of a few key facts.  First, planes do not go up when you pull up.  We repeat: PLANES DO NOT GO UP WHEN YOU PULL UP!  This is the #1 cause of crashes for new pilots.  In MTS, and in real-life, planes gain lift through moving air over the wings.  Therefore the proper way to lift off the ground is to go fast so lots of air moves over the wings and makes lots of lift.
-manual.15.2=This means that you will need a decent runway for takeoff, and it is highly recommended you avoid taking off towards high things like trees and mountains.  If you are piloting a plane equipped with flaps you can set a few notches to increase the lifting power of the plane.  Note that this will cause a loss in fuel efficiency and add extra drag, so only use flaps when performing takeoffs and landings.  Also note that weight (items in inventory and cargo) is a factor in plane handling, so make sure not to overload your plane.
-
-manual.16.title=Plane Engine Panel
-manual.16.1=Unlike cars, plane starting is a bit more involved.  The first thing you need to do is open the plane panel by getting in the pilot's seat and pressing U.  From there, you need to turn the magnetos (MAG) on.  These are essentially the on/off switches for the engines.  Once these are on, hold the stater button next to them and wait for the engines to catch.
-manual.16.2=Numerous other things are located on this panel besides the starters.  The switches for the different lights are on the left side, and trim controls for the aircraft are towards the middle-left.  These don't give any indication as to the trim status, so installation of a trim indicator is a wise investment if you plan on using these.  You can also find the thrust reverse button, which will cause the plane to move backward if equipped with dynamic-pitch propellers.
-
-manual.17.title=In-Flight
-manual.17.1=Once your plane is up in the air flying just becomes a matter of two things: not crashing into wild mountains, and not crashing into the ground.  The former can simply be dodged by banking the plane into a turn by rolling the airplane (A and D) or simply flying above build height.  Turns will slowly decrease your altitude, so watch that if you're close to terrain.
-manual.17.2=While flying you may have to keep holding inputs to make your plane behave the way you want.  If you keep climbing, it's because you have too much thrust and should let off the throttle.  You can also add some trim and keep the throttle up to get a bit more speed at the cost of fuel economy.  You may also move to other seats while flying by right-clicking them, and some planes even allow for multiple pilots.  Check the Vehicle Data section for specifics on seat and pilot counts.
-
-manual.18.title=Landing
-manual.18.1=There is a fine line between successfully landing a plane and a controlled crash.  To avoid that second category it is important to remember the saying, "To go down you need to slow down."  Speed is what keeps your plane aloft, so a reduction in speed is needed to land.  This can be as simple as lowering the throttle and applying the flaps.
-manual.18.2=Some times, however, you end up in that second category.  Running out of fuel is the most common way to get down quickly, but is not necessarily deadly.  Planes can glide without engines, giving you a short amount of time to pick a flat spot to become an impromptu runway.  Should one not be available a body of water is also a good choice as it will prevent explosions on a hard crash or will allow you to bail while in mid-air.  Anything hilly should be avoided at all costs.
-
-manual.19.title=Crafting
-manual.19.1=The following section includes the recipes for all the benches used to create components for the mod.
-manual.19.2=Note that the crafting of the vehicle components themselves is restricted to the benches, so see those for the materials required.  This is done to prevent an overload of crafting recipes on the vanilla crafting bench system. 

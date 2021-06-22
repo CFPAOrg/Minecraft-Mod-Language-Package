@@ -98,12 +98,19 @@ item.warpdrive.energy.IC2reactorLaserFocus.name=IC2 Reactor Laser Focus
 item.warpdrive.force_field.shape.none.name=No shape
 item.warpdrive.force_field.shape.none.tooltip=§4Invalid item
 item.warpdrive.force_field.shape.sphere.name=Sphere shape
+item.warpdrive.force_field.shape.sphere.tooltip=
 item.warpdrive.force_field.shape.cylinder_h.name=Horizontal cylinder shape
+item.warpdrive.force_field.shape.cylinder_h.tooltip=
 item.warpdrive.force_field.shape.cylinder_v.name=Vertical cylinder shape
+item.warpdrive.force_field.shape.cylinder_v.tooltip=
 item.warpdrive.force_field.shape.cube.name=Cube shape
+item.warpdrive.force_field.shape.cube.tooltip=
 item.warpdrive.force_field.shape.plane.name=Plane shape
+item.warpdrive.force_field.shape.plane.tooltip=
 item.warpdrive.force_field.shape.tube.name=Tube shape
+item.warpdrive.force_field.shape.tube.tooltip=
 item.warpdrive.force_field.shape.tunnel.name=Tunnel shape
+item.warpdrive.force_field.shape.tunnel.tooltip=
 item.warpdrive.force_field.shape.tooltip.usage=§bRight click a projector§r to upgrade it\n§bSneak-right click§r to downgrade
 
 item.warpdrive.force_field.upgrade.none.name=No upgrade
@@ -292,9 +299,13 @@ tile.warpdrive.building.ship_scanner.superior.name=Frigate Ship Scanner
 tile.warpdrive.collection.laser_tree_farm.name=Laser Tree Farm
 tile.warpdrive.collection.mining_laser.name=Mining Laser
 
+tile.warpdrive.detection.biometric_scanner.name=Biometric Scanner
+tile.warpdrive.detection.biometric_scanner.tooltip=§bRight click§r to get identified.
 tile.warpdrive.detection.camera.name=Camera
 tile.warpdrive.detection.cloaking_coil.name=Cloaking Coil
 tile.warpdrive.detection.cloaking_core.name=Cloaking Core
+tile.warpdrive.detection.environmental_sensor.name=Environmental Sensor
+tile.warpdrive.detection.environmental_sensor.tooltip=Reports local time and weather
 tile.warpdrive.detection.monitor.name=Monitor
 tile.warpdrive.detection.radar.name=Radar
 tile.warpdrive.detection.warp_isolation.name=Warp-field Isolation Block
@@ -310,6 +321,14 @@ tile.warpdrive.detection.siren_military.advanced.name=Advanced Air Raid Siren
 tile.warpdrive.detection.siren_military.superior.name=Superior Air Raid Siren
 tile.warpdrive.detection.siren_military.tooltip=Triggered by redstone
 tile.warpdrive.detection.siren_military.tooltip.usage=Sounds an alarm up to %1$d m away.
+tile.warpdrive.detection.speaker.basic.name=Basic Speaker
+tile.warpdrive.detection.speaker.advanced.name=Advanced Speaker
+tile.warpdrive.detection.speaker.superior.name=Superior Speaker
+tile.warpdrive.detection.speaker.tooltip.usage=Sends messages to players up to %1$d m away.
+tile.warpdrive.detection.virtual_assistant.basic.name=Basic Virtual Assistant
+tile.warpdrive.detection.virtual_assistant.advanced.name=Advanced Virtual Assistant
+tile.warpdrive.detection.virtual_assistant.superior.name=Superior Virtual Assistant
+tile.warpdrive.detection.virtual_assistant.tooltip.usage=Detects messages from players up to %1$d m away.
 
 tile.warpdrive.energy.enan_reactor_core.basic.name=Basic Enantiomorphic Reactor Core
 tile.warpdrive.energy.enan_reactor_core.advanced.name=Advanced Enantiomorphic Reactor Core
@@ -679,8 +698,10 @@ warpdrive.control_channel.status_line.valid=Control channel %1$d is valid.
 warpdrive.control_channel.status_line.invalid=Control channel %1$d is invalid.
 warpdrive.control_channel.status_line.undefined=Undefined Control channel.\n§bUse a Tuning fork§r to set it.
 
-warpdrive.is_enabled.set.enabled=Switched ON!
-warpdrive.is_enabled.set.disabled=Switched off!
+warpdrive.machine.is_enabled.set.disabled=Switched off!
+warpdrive.machine.is_enabled.set.enabled=Switched ON!
+warpdrive.machine.is_enabled.get.disabled=System is off.
+warpdrive.machine.is_enabled.get.enabled=System is ON.
 
 # %1 is signature name, %2 is item name, %3 is block name
 warpdrive.core_signature.tooltip=Signature is set to %1$d
@@ -704,7 +725,9 @@ warpdrive.tooltip.item_tag.no_fall_damage=§bAbsorbs fall damage§r.
 warpdrive.upgrade.description.base.computer_interface=Enables computer connection.
 warpdrive.upgrade.description.chunk_loader.efficiency=Reduces energy cost.
 warpdrive.upgrade.description.chunk_loader.range=Increases maximum range.
+warpdrive.upgrade.description.lift.security=Enables access restriction.
 warpdrive.upgrade.description.mining_laser.pumping=Enables fluid removal.
+warpdrive.upgrade.description.camera.recognition_range=Increases image recognition range.
 warpdrive.upgrade.description.cloaking.transparency=Enables full transparency.
 warpdrive.upgrade.description.capacitor.efficiency=Reduces energy transfer loss.
 warpdrive.upgrade.description.transporter.energy_storage=Increases energy storage.
@@ -782,6 +805,12 @@ warpdrive.accelerator.status_line.missing_superior_chiller=Missing superior chil
 warpdrive.accelerator.status_line.missing_injector=Missing accelerator injector node.
 warpdrive.accelerator.status_line.missing_collider_node=Missing accelerator collider node.
 
+warpdrive.biometric_scanner.start_scanning.in_progress=Scan already in progress, %1$d s to go...
+warpdrive.biometric_scanner.start_scanning.started=Scanning started, please stay still...
+warpdrive.biometric_scanner.status_line.invalid=Last scan had no result.
+warpdrive.biometric_scanner.status_line.scan_in_progress=Scan is in progress, %1$d s to go...
+warpdrive.biometric_scanner.status_line.valid=Last scan has identified %1$s (%2$s).
+
 warpdrive.breathing.alarm=Breathing alarm
 warpdrive.breathing.invalid_setup=No breathing helmet\nor incomplete armor
 warpdrive.breathing.low_reserve=Low air reserve!
@@ -805,6 +834,7 @@ warpdrive.builder.guide.too_many_players=Too many players detected: please stand
 warpdrive.builder.guide.no_ship_token=Please come back once you've a Ship token.
 warpdrive.builder.guide.ship_token_detected=Ship token '%1$s' detected!
 warpdrive.builder.guide.ship_materialization_countdown=Stand by for ship materialization in %2$d...
+warpdrive.builder.guide.ship_is_higher_tier=Ship is too big for this deployement area, look for a more advanced builder.
 warpdrive.builder.guide.ship_deployed=Ship deployed. Teleporting captain to the main deck...
 warpdrive.builder.guide.welcome_aboard=Welcome aboard captain! Use the computer to get moving...
 
@@ -880,6 +910,9 @@ warpdrive.mining_laser.status_line._insufficient_energy= - Out of energy
 
 warpdrive.monitor.viewing_camera=Viewing camera at %2$d, %3$d, %4$d on video channel %1$d
 
+warpdrive.optical_sensor.status_line.no_result=No entity in sight.
+warpdrive.optical_sensor.status_line.result_count=%1$d entities in sight.
+
 warpdrive.particle.ion.name=ion
 warpdrive.particle.ion.tooltip=Produced by colliding a particle bunch in a basic accelerator
 warpdrive.particle.proton.name=proton
@@ -907,7 +940,7 @@ warpdrive.ship.guide.too_large_side_for_tier=Ship is too large, max is %1$d m pe
 warpdrive.ship.guide.too_much_mass_for_planet=Ship is too big for a planet.\nReduce your mass to %1$d t or less.
 warpdrive.ship.guide.insufficient_mass_for_tier=Ship is too light, min is %1$d t.\nDowngrade ship core or increase mass.
 warpdrive.ship.guide.too_much_mass_for_tier=Ship is too heavy, max is %1$d t.\nUpgrade ship core or reduce your mass.
-warpdrive.ship.guide.insufficient_mass_for_hyperspace=Ship is too light to engage Alcubierre drive.\nIncrease your mass to %2$d t or more.
+warpdrive.ship.guide.insufficient_mass_for_hyperspace=Ship is too light to engage Alcubierre drive.\nIncrease your mass to %1$d t or more.
 warpdrive.ship.guide.jumpgate_is_too_far=Ship is not inside a jumpgate.
 warpdrive.ship.guide.jumpgate_partially_entered=Ship is only %.1f%% inside a jumpgate.\nSorry, we'll loose too much crew as is.
 warpdrive.ship.guide.jumpgate_not_defined=Destination jumpgate '%1$s' is unknown.
@@ -970,6 +1003,9 @@ warpdrive.transporter_signature.set_missing=Transporter beacon needs to be linke
 warpdrive.transporter_signature.set_self=Transporter room can't target itself!
 warpdrive.transporter_signature.set_same=Transporter room is already linked to %1$s.
 warpdrive.transporter_signature.set=Transporter room is now linked to %1$s.
+
+warpdrive.virtual_assistant.status_line.none=No pending command to process.
+warpdrive.virtual_assistant.status_line.last_command=Last command received was '%1$s'.
 
 warpdrive.world_border.in_range=Proximity alert: world border is only %1$d m away!
 warpdrive.world_border.outside=You're %1$d m outside the world border...

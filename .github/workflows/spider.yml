@@ -1,13 +1,11 @@
 name: Spider
 
 on: 
+  workflow_dispatch:
   push:
     paths: 
       - 'config/spider/config.json'
       - 'src/Spider/**'
-  #push:
-    #branches: [ 1.12.2 ]
-    #paths-ignore: '**/*nfo.json'
   schedule:
     - cron: '0 1 1,15 * *'
     
@@ -38,22 +36,65 @@ jobs:
       - name: Run spider
         run: .\Spider
 
-      - name: Push  to github
-        if: ${{github.event}} == 'push'
+      # - name: Commit files
+      #   run: |
+      #     ri .\Spider.exe -Force
+      #     git config http.sslVerify false
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "actions@users.noreply.github.com"
+      #     git pull origin HEAD:${{ github.ref }}
+      #     git add .
+      #     git commit -m "Update file"
+      #     git push origin HEAD:${{ github.ref }}
+
+      - name: Build formatter
+        run: dotnet publish .\src\Formatter\Formatter.csproj -c Release -o ./ -r win-x64 -p:PublishSingleFile=true
+
+      - name: Run formatter
+        run: .\Formatter
+
+      - name: Commit report
         run: |
-          ri .\Spider.exe -Force
           $ErrorActionPreference ='Continue'
-          git config --global credential.helper manager
-          git config --global user.email "fanng233@gmail.com"
-          git config --global user.name "CfpaBot"
+          ri .\Formatter.exe -Force
+          ri .\Spider.exe -Force
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'actions@users.noreply.github.com'
           @"
           protocol=https
           host=github.com
-          username=baka-gourd
-          password=${{secrets.BAKA_GOURD_TOKEN}}
+          username=github-actions[bot]
+          password=${{ secrets.GITHUB_TOKEN }}
           "@ > .\1.txt
           gc 1.txt|git credential-manager  store
           ri .\1.txt -Force
           git add .
-          git commit -m "Update file"
+          git commit -m "[Spider]Update file"
           git push origin HEAD:${{ github.ref }}
+        shell: pwsh
+
+      # - name: Push changes
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: ${{ github.ref }}
+
+      # - name: Push  to github
+      #   if: ${{github.event}} == 'push'
+      #   run: |
+      #     ri .\Spider.exe -Force
+      #     $ErrorActionPreference ='Continue'
+      #     git config --global credential.helper manager
+      #     git config --global user.email "fanng233@gmail.com"
+      #     git config --global user.name "CfpaBot"
+      #     @"
+      #     protocol=https
+      #     host=github.com
+      #     username=baka-gourd
+      #     password=${{secrets.BAKA_GOURD_TOKEN}}
+      #     "@ > .\1.txt
+      #     gc 1.txt|git credential-manager  store
+      #     ri .\1.txt -Force
+      #     git add .
+      #     git commit -m "Update file"
+      #     git push origin HEAD:${{ github.ref }}

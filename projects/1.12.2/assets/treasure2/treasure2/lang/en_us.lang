@@ -66,23 +66,9 @@ tile.treasure2:wither_branch.name=Wither Branch
 tile.treasure2:wither_root.name=Wither Root
 tile.treasure2:wither_planks.name=Wither Planks
 
-#fogs
-tile.treasure2:fog.name=Fog
-tile.treasure2:high_fog.name=High Fog
-tile.treasure2:med_fog.name=Medium Fog
-tile.treasure2:low_fog.name=Low Fog
-
-tile.treasure2:wither_fog.name=Wither Fog
-tile.treasure2:high_wither_fog.name=High Wither Fog
-tile.treasure2:med_wither_fog.name=Medium Wither Fog
-tile.treasure2:low_wither_fog.name=Low Wither Fog
-
-tile.treasure2:poison_fog.name=Poison Fog
-tile.treasure2:high_poison_fog.name=High Poison Fog
-tile.treasure2:med_poison_fog.name=Medium Poison Fog
-tile.treasure2:low_poison_fog.name=Low Poison Fog
-
 #ores
+tile.treasure2:amethyst_ore.name=Amethyst Ore
+tile.treasure2:onyx_ore.name=Onyx Ore
 tile.treasure2:sapphire_ore.name=Sapphire Ore
 tile.treasure2:ruby_ore.name=Ruby Ore
 
@@ -113,6 +99,29 @@ item.treasure2:pouch.name=Coin Pouch
 item.treasure2:lucky_pouch.name=Lucky Pouch
 item.treasure2:apprentices_pouch.name=Apprentice's Pouch
 item.treasure2:masters_pouch.name=Master's Pouch
+
+item.treasure2:silver_ring.name=Silver Ring
+item.treasure2:silver_signet_ring.name=Silver Signet Ring
+item.treasure2:amethyst_silver_ring.name=Amethyst Ring
+item.treasure2:gold_ring.name=Gold Ring
+item.treasure2:ruby_gold_ring.name=Ruby Ring
+item.treasure2:onyx_gold_ring.name=Onyx Ring
+item.treasure2:sapphire_gold_ring.name=Sapphire Ring
+item.treasure2:diamond_gold_ring.name=Diamond Ring
+item.treasure2:emerald_gold_ring.name=Emerald Ring
+item.treasure2:castle_ring.name=Castle Ring
+item.treasure2:silver_necklace.name=Silver Necklace
+item.treasure2:gold_necklace.name=Gold Necklace
+item.treasure2:amethyst_gold_amulet.name=Amethyst Amulet
+item.treasure2:onyx_gold_amulet.name=Onyx Amulet
+item.treasure2:ruby_gold_amulet.name=Ruby Amulet
+item.treasure2:sapphire_silver_amulet.name=Sapphire Amulet
+item.treasure2:sapphire_amulet.name=Sapphire Amulet
+item.treasure2:gold_bracelet.name=Gold Bracelet
+item.treasure2:pocket_watch.name=Pocket Watch
+
+item.treasure2:bracelet_of_wonder=Bracelet of Wonder
+item.treasure2:ring_of_fortitude=Ring of Fortitude
 
 item.treasure2:key_ring.name=Key Ring
 item.treasure2:wood_key.name=Wood Key
@@ -163,6 +172,8 @@ item.treasure2:painting_blocks_wood.name=Wood by o2xygeno
 item.treasure2:eye_patch.name=Eye Patch
 item.treasure2:skull_sword.name=Skull Sword
 item.treasure2:spanish_moss.name=Spanish Moss
+item.treasure2:amethyst.name=Amethyst
+item.treasure2:onyx.name=Onyx
 item.treasure2:sapphire.name=Sapphire
 item.treasure2:ruby.name=Ruby
 item.treasure2:skeleton_item.name=Skeleton
@@ -201,7 +212,11 @@ tooltip.label.key_ring=Container for keys
 tooltip.label.coin_pouch=Holds coins, gems, pearls, and charms
 tooltip.label.treasure_tool=Required for Key/Pick recipes
 tooltip.label.charmed=Hold in hand or in coin pouch for buffs
+tooltip.label.charmed.adornment=Hold in hand, coin pouch, or hotbar for buffs
 tooltip.label.charms=Charms:
+tooltip.label.charmable=To charm, add charmed items to slots
+tooltip.label.charmable.slots=Charm Capacity: %s[available/activated/max.]
+tooltip.label.charmable.slots.stats=[%s/%s/%s]
 
 tooltip.label.max_locks=Max Locks: %s
 tooltip.label.container_size=Inventory Size: %s
@@ -216,52 +231,124 @@ tooltip.thiefs_lock_pick.specials=Opens COMMON (%s%%), UNCOMMON (%s%%) and SCARC
 tooltip.jewelled_key.specials=Opens any lock in GEMS category
 
 tooltip.charm.healing_rate=- heals 0.5 hearts/sec
-tooltip.charm.lesser_healing=Lesser Healing [%s/%s]
-tooltip.charm.healing=Healing [%s/%s]
-tooltip.charm.greater_healing=Greater Healing [%s/%s]
-tooltip.charm.grand_healing=Grand Healing [%s/%s]
-tooltip.charm.salandaars_convalescence=Salandaar's Charm of Convalescence [%s/%s]
+tooltip.charm.healing=Healing
 
-tooltip.charm.shield_rate=- absorbs %s%% of damage
-tooltip.charm.durable_shielding=Durable Shielding [%s/%s]
-tooltip.charm.stout_shielding=Stout Shielding [%s/%s]
-tooltip.charm.hardened_shielding=Hardened Shielding [%s/%s]
-tooltip.charm.powerful_shielding=Powerful Shielding [%s/%s]
-tooltip.charm.armadillo_shielding=Shield of the Armadillo [%s/%s]
+# legacy tooltip labels
+#tooltip.charm.treasure2:lesser_healing=Lesser Healing
+#tooltip.charm.treasure2:healing=Healing
+#tooltip.charm.treasure2:greater_healing=Greater Healing
+#tooltip.charm.treasure2:grand_healing=Grand Healing
+tooltip.charm.treasure2:salandaars_convalescence=Salandaar's Charm of Convalescence
+
+tooltip.charm.shielding_rate=- absorbs %s%% of damage
+tooltip.charm.shielding=Shielding
+#tooltip.charm.treasure2:durable_shielding=Durable Shielding
+#tooltip.charm.treasure2:stout_shielding=Stout Shielding
+#tooltip.charm.treasure2:hardened_shielding=Hardened Shielding
+#tooltip.charm.treasure2:powerful_shielding=Powerful Shielding
+#tooltip.charm.treasure2:armadillo_shielding=Shield of the Armadillo
+
+tooltip.charm.absolute_shielding=Absolute Shielding
+#tooltip.charm.treasure2:small_absolute_shielding=Small Absolute Shielding
+#tooltip.charm.treasure2:medium_absolute_shielding=Medium Absolute Shielding
+#tooltip.charm.treasure2:large_absolute_shielding=Large Absolute Shielding
+#tooltip.charm.treasure2:grand_absolute_shielding=Grand Absolute Shielding
+tooltip.charm.treasure2:whale_absolute_shielding=Absolute Shielding of the Whale
+
+tooltip.charm.small_absolute_shielding=Small Absolute Shielding [%s/%s]
+tooltip.charm.medium_absolute_shielding=Medium Absolute Shielding [%s/%s]
+tooltip.charm.large_absolute_shielding=Large Absolute Shielding [%s/%s]
+tooltip.charm.grand_absolute_shielding=Grand Absolute Shielding [%s/%s]
+tooltip.charm.whale_absolute_shielding=Absolute Shielding of the Whale [%s/%s]
 
 tooltip.charm.fullness_rate=- restores 0.5 hunger/sec
-tooltip.charm.fullness=Fullness [%s/%s]
-tooltip.charm.sated_fullness=Sated Fullness [%s/%s]
-tooltip.charm.overfed_fullness=Overfed Fullness [%s/%s]
-tooltip.charm.gorged_fullness=Gorged Fullness [%s/%s]
-tooltip.charm.bursting_fullness=Bursting Fullness [%s/%s]
+tooltip.charm.fullness=Fullness
+#tooltip.charm.treasure2:fullness=Fullness
+#tooltip.charm.treasure2:sated_fullness=Sated Fullness
+#tooltip.charm.treasure2:overfed_fullness=Overfed Fullness
+#tooltip.charm.treasure2:gorged_fullness=Gorged Fullness
+#tooltip.charm.treasure2:bursting_fullness=Bursting Fullness
 
 tooltip.charm.harvest_rate=- harvests %sX the drop
-tooltip.charm.minor_harvesting=Minor Harvesting [%s/%s]
-tooltip.charm.harvesting=Harvesting [%s/%s]
-tooltip.charm.major_harvesting=Major Harvesting [%s/%s]
-tooltip.charm.grand_harvesting=Grand Harvesting [%s/%s]
-tooltip.charm.glorious_harvesting=Glorious Harvesting [%s/%s]
+tooltip.charm.harvesting=Harvesting
+#tooltip.charm.treasure2:minor_harvesting=Minor Harvesting
+#tooltip.charm.treasure2:harvesting=Harvesting
+#tooltip.charm.treasure2:major_harvesting=Major Harvesting
+#tooltip.charm.treasure2:grand_harvesting=Grand Harvesting
+#tooltip.charm.treasure2:glorious_harvesting=Glorious Harvesting
 
 tooltip.charm.illumination_rate=- illuminates every 5 sec
-tooltip.charm.lesser_illumination=Lesser Illumination [%s/%s]
-tooltip.charm.illumination=Illumination [%s/%s]
-tooltip.charm.greater_illumination=Greater Illumination [%s/%s]
-tooltip.charm.grand_illumination=Grand Illumination [%s/%s]
-tooltip.charm.glorious_illumination=Glorious Illumination [%s/%s]
+tooltip.charm.illumination=Illumination
+#tooltip.charm.treasure2:lesser_illumination=Lesser Illumination
+#tooltip.charm.treasure2:illumination=Illumination
+#tooltip.charm.treasure2:greater_illumination=Greater Illumination
+#tooltip.charm.treasure2:grand_illumination=Grand Illumination
+#tooltip.charm.treasure2:glorious_illumination=Glorious Illumination
+
+tooltip.charm.fire_resistence_rate=- absorbs %s%% of fire damage
+tooltip.charm.fire_resistence=Fire Resistence
+
+tooltip.charm.fire_immunity_rate=- absorbs all fire damage
+tooltip.charm.fire_immunity=Fire Immunity
+
+tooltip.charm.life_strike_rate=- inflicts +%s%% damage for 1 heart health
+tooltip.charm.life_strike=Life Strike
+
+tooltip.charm.reflection_rate=- reflects %s%% damage to all in %s block radius
+tooltip.charm.reflection=Reflection
+
+tooltip.charm.drain_rate=- drains 0.5 hearts/5 sec from all in %s block radius
+tooltip.charm.drain=Drain
 
 # curses
 tooltip.charm.decay_rate=- decays 1 heart/5 sec
-tooltip.charm.lesser_decay=Lesser Decay [%s/%s]
-tooltip.charm.decay=Decay [%s/%s]
-tooltip.charm.greater_decay=Greater Decay [%s/%s]
-tooltip.charm.perishing_decay=Perishing Decay [%s/%s]
+tooltip.charm.decay=Decay
+#tooltip.charm.treasure2:lesser_decay=Lesser Decay
+#tooltip.charm.treasure2:decay=Decay
+#tooltip.charm.treasure2:greater_decay=Greater Decay
+#tooltip.charm.treasure2:perishing_decay=Perishing Decay
+
+tooltip.charm.ruin_rate=- ruins 1 damage/%s sec
+tooltip.charm.ruin=Ruin
+
+tooltip.charm.decrepit_rate=- you take +%s%% damage when hit
+tooltip.charm.decrepit=Decrepit
+
+# dirt curses = use specific mod level labels
+tooltip.charm.treasure2:dirt_fill_1=Dirt
+tooltip.charm.treasure2:dirt_fill_2=Dirt
+
+tooltip.charm.treasure2:dirt_walk_1=Dirt
+tooltip.charm.treasure2:dirt_walk_2=Dirt
+
+# charm uses gauge
+tooltip.charm.uses_gauge=[%s/%s]
+
+# charm levels (general)
+tooltip.charm.prefix.level1=Lesser
+tooltip.charm.prefix.level2=
+tooltip.charm.prefix.level3=Greater
+tooltip.charm.prefix.level4=Grand
+tooltip.charm.prefix.level5=Huge
+tooltip.charm.prefix.level6=Massive
+tooltip.charm.prefix.level8=Giant
+tooltip.charm.prefix.level9=Cyclopean
+tooltip.charm.prefix.level10=Colossal
+
+tooltip.charm.suffix.level11=of the Leviathan
+tooltip.charm.suffix.level12=of the Demogorgon
+tooltip.charm.suffix.level13=of the Whale
+
+# charm levels (shielding)
+tooltip.charm.shielding.prefix.level1=Durable
+tooltip.charm.shielding.prefix.level2=Stout
+tooltip.charm.shielding.prefix.level3=Hardened
+tooltip.charm.shielding.prefix.level4=Powerful
 
 tooltip.painting.name=%s
 tooltip.painting.collection=Collection: %s
 tooltip.painting.issue=Issue: %s/%s
 tooltip.painting.artist=by %s
-
 
 #gui
 display.wood_chest.name=Wood Chest
@@ -278,9 +365,6 @@ display.wither_chest.name=Wither Chest
 display.skull_chest.name=Skull Chest
 display.gold_skull_chest.name=Golden Skull Chest
 display.cauldron_chest.name=Cauldron Chest
-#display.whale_bone_pirate_chest.name=Whale Bone Pirate Chest
-#display.clam_chest.name=Clam
-#display.oyster_chest.name=Oyster
 display.spider_chest.name=Spider Chest
 display.viking_chest.name=Viking Chest
 display.cardboard_box.name=Cardboard Box

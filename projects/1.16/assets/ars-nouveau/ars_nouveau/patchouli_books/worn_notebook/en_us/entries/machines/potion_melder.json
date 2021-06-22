@@ -1,0 +1,35 @@
+{
+    "name": "Potion Melder",
+    "icon": "ars_nouveau:potion_melder",
+    "category": "automation",
+    "pages": [
+        {
+            "type": "text",
+            "text": "Converts three doses of a potion from two adjacent Potion Jars, and outputs a single dose of mixed potion into a Potion Jar beneath it. The Potion Melder requires Mana per mix."
+        },
+    {
+      "type": "apparatus_recipe",
+      "recipe": "ars_nouveau:potion_melder"
+    },{
+	"type":"multiblock",
+	"multiblock":{
+		"mapping":{
+			"C":"ars_nouveau:potion_jar",
+			"0":"ars_nouveau:potion_melder",
+			"J":"ars_nouveau:mana_jar"
+		},
+		"pattern":[
+			["   "],
+			["C0C"],
+			[" C "]
+		],
+		"symmetrical": true
+	},
+	"text":"Takes from two adjacent jars and outputs beneath in a 3:1 ratio."
+	},
+		{
+            "type": "relations",
+            "entries":["machines/potion_jar"]        
+        }
+    ]
+}

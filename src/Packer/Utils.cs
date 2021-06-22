@@ -1,58 +1,76 @@
-﻿using Serilog;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.IO.Compression;
-
+using System.Text.Json;
+using System.Threading.Tasks;
+using System;
+using System.Security.Cryptography;
+using System.Linq;
+using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json.Serialization;
+using Packer.Models;
+using Serilog;
 namespace Packer
 {
     static class Utils
     {
-        public static void CombineLangFiles(Stream destination, Stream added, string extension)
+        static async public Task<Config> RetrieveConfig(string configPath, string mappingPath, string version)
         {
-            // 需要注意的是，不同格式的文件需要不同的处理，因此需要传入拓展名
-            switch (extension)
-            {
-                case ".json":
-                    if (destination.Length < 5)
-                    { // 说明目标文件是个空 object，直接把 added 覆盖过去，不需要裁剪
-                        destination.Seek(0, SeekOrigin.Begin); // 确保一下
-                        added.CopyTo(destination);
-                        break;
-                    }
-                    // 在 Json 中，想要合并需要移除源文件最后的花括号（}）
-                    // 值得注意的是，从一个 Stream 的中间开始 Write 会将原 Stream 的后面内容覆盖掉
-                    // 另外的，还需要去掉 2 个 \n\r
-                    // 因此，将目标文件seek到末尾前 2 + 2 + 1 = 5 位才可以把花括号覆盖掉（offset -5）
-                    destination.Seek(-5, SeekOrigin.End);
-                    // 在此之上，还需要一个逗号（,）在条目之间
-                    {   // CS8647  using 变量不能直接在 switch 部分中使用
-                        using var writer = new StreamWriter(destination);
-                        writer.Write(',');
-                        writer.Flush(); // 避免留存在 buffer 中
-                        // 同样的，还需要移除添加文件的开头的花括号（{），通过跳过该字符处理
-                        added.Seek(1, SeekOrigin.Begin);
-                        // 现在可以合并了：
-                        added.CopyTo(destination);
-                    }
-                    break;
-                case ".lang": // 对于 lang，可以直接合并
-                default: // 其他格式也直接合并（出问题的提出来再弄）
-                    destination.Seek(0, SeekOrigin.End);
-                    added.CopyTo(destination);
-                    break;
-            }
+            Log.Information("正在获取配置");
+            var reader = await File.ReadAllBytesAsync(configPath);
+            var configs = JsonSerializer.Deserialize<List<Config>>(reader);
+            var replacement = await ReadReplaceFontMap(mappingPath);
+            configs.ForEach(_ =>
+            { // 提取特殊字符替换，并加入 Config 中
+                _.CharatcerReplacement = replacement;
+            });
+            return configs.Where(_ => _.Version == version).FirstOrDefault(); // 仅选取指定版本，忽略重复
         }
 
-        public static void InitializeArchive(ZipArchive archive, Config config)
+        public static async Task<Dictionary<string, string>> ReadReplaceFontMap(string path) // 从隔壁弄过来改了一下，就放这里了
         {
-            Log.Information("开始初始化压缩包");
-            string commonPrefix = $".\\projects\\{config.Version}";
-            config.FilesToInitialize.ForEach(_ =>
+            var mapping = new Dictionary<string, string>();
+            foreach (string str in await File.ReadAllLinesAsync(path))
             {
-                Log.Information("初始化压缩包：添加 {0}", _);
-                archive.CreateEntryFromFile($"{commonPrefix}\\{_}", _, CompressionLevel.Fastest);
-            });
+                var kv = str.Split('>', StringSplitOptions.TrimEntries);
+                var key = kv[0];
+                var value = kv[1];
+                Log.Verbose("添加了映射：{0} -> {1}", key, value);
+                mapping.Add(key, value);
+            }
+            return mapping;
+        }
 
-            Log.Information("初始化完成");
+        public static async Task WriteMd5(Stream stream, Config config)
+        {
+            Log.Information("开始生成 md5 值");
+            var md5 = MD5.Create();
+            var hash = await md5.ComputeHashAsync(stream);
+            var md5Hex = string.Concat(hash.Select(x => x.ToString("X2")));
+            await File.WriteAllTextAsync($"./{config.Version}.md5", md5Hex);
+            Log.Information("生成结束。md5: {0}", md5Hex);
+        }
+        public static async Task WriteMd5(byte[] bytes, Config config)
+        {
+            Log.Information("开始生成 md5 值");
+            var md5 = MD5.Create();
+            //var md5 = SHA256.Create();
+            var hash = md5.ComputeHash(bytes);
+            var md5Hex = string.Concat(hash.Select(x => x.ToString("X2")));
+            await File.WriteAllTextAsync($"./{config.Version}.md5", md5Hex);
+            Log.Information("生成结束。md5: {0}", md5Hex);
+        }
+
+        public static void CreateTimeStamp(string version) {
+            var mcmeta = $"./projects/{version}/pack.mcmeta";
+            var meta = JsonSerializer.Deserialize<McMeta>(File.ReadAllText(mcmeta));
+            var time = DateTime.UtcNow.AddHours(8);
+            meta.Pack.Description += $"打包时间：{time:yyyy-MM-dd HH:mm}";
+            var result = JsonSerializer.Serialize(meta,new JsonSerializerOptions() {
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true
+            });
+            File.WriteAllText(mcmeta,result);
         }
     }
 }

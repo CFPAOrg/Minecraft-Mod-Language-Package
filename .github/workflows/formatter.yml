@@ -1,9 +1,9 @@
 name: Formatter
 
 on: 
-  push:
-    #branches: [ 1.12.2 ]
-    paths-ignore: '**/*nfo.json'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 9 1,15 * *'
     
 
 jobs:
@@ -18,22 +18,59 @@ jobs:
       - name: Run formatter
         run: .\Formatter
 
-      - name: Push  to github
-        if: ${{github.event}} == 'push'
+      # - name: Commit files
+      #   run: |
+      #     ri .\Formatter.exe -Force
+      #     git config http.sslVerify false
+      #     git config user.name "github-actions[bot]"
+      #     git config user.email "actions@users.noreply.github.com"
+      #     git pull origin HEAD:${{ github.ref }}
+      #     git add .
+      #     git commit -m "Update file"
+      #     git push origin HEAD:${{ github.ref }}
+
+      - name: Commit report
         run: |
-          ri .\Formatter.exe -Force
           $ErrorActionPreference ='Continue'
-          git config --global credential.helper manager
-          git config --global user.email "fanng233@gmail.com"
-          git config --global user.name "CfpaBot"
+          ri .\Formatter.exe -Force
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'actions@users.noreply.github.com'
           @"
           protocol=https
           host=github.com
-          username=baka-gourd
-          password=${{secrets.BAKA_GOURD_TOKEN}}
+          username=github-actions[bot]
+          password=${{ secrets.GITHUB_TOKEN }}
           "@ > .\1.txt
           gc 1.txt|git credential-manager  store
           ri .\1.txt -Force
           git add .
-          git commit -m "Format file"
+          git commit -m "[Formatter]Update file"
           git push origin HEAD:${{ github.ref }}
+        shell: pwsh
+
+      # - name: Push changes
+      #   git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      #   git config --local user.name "github-actions[bot]"
+      #   uses: ad-m/github-push-action@master
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: ${{ github.ref }}
+      # - name: Push  to github
+      #   if: ${{github.event}} == 'push'
+      #   run: |
+      #     ri .\Formatter.exe -Force
+      #     $ErrorActionPreference ='Continue'
+      #     git config --global credential.helper manager
+      #     git config --global user.email "fanng233@gmail.com"
+      #     git config --global user.name "CfpaBot"
+      #     @"
+      #     protocol=https
+      #     host=github.com
+      #     username=baka-gourd
+      #     password=${{secrets.BAKA_GOURD_TOKEN}}
+      #     "@ > .\1.txt
+      #     gc 1.txt|git credential-manager  store
+      #     ri .\1.txt -Force
+      #     git add .
+      #     git commit -m "Format file"
+      #     git push origin HEAD:${{ github.ref }}
