@@ -103,7 +103,7 @@ item.qmd.part.laser_assembly.name=激光器组件
 item.qmd.semiconductor.silicon_p_doped.name=P 型掺杂硅
 item.qmd.semiconductor.silicon_n_doped.name=N 型掺杂硅
 item.qmd.semiconductor.silicon_boule.name=硅晶柱
-item.qmd.semiconductor.silicon_wafer.name=硅晶片
+item.qmd.semiconductor.silicon_wafer.name=硅晶圆
 item.qmd.semiconductor.basic_processor.name=基础处理器
 item.qmd.semiconductor.advanced_processor.name=高级处理器
 item.qmd.semiconductor.elite_processor.name=精英处理器
@@ -286,7 +286,7 @@ tile.qmd.strontium_titanate_block.name=钛酸锶晶体
 
 tile.qmd.creative_particle_source.name=创造粒子源
 
-qmd.guide_book.name=量子动力学指导手册
+qmd.guide_book.name=量子块动力学指导手册
 qmd.guide_book.edition=未完成
 qmd.guide_book.desc=这是本模组的指导手册。本书目前尚未完成，因此请前往维基获取相关信息。
 
@@ -608,7 +608,7 @@ qmd.particle.photon.desc=光子是构成光的粒子。光子是电磁力的载�
 qmd.particle.gluon.desc=胶子是强力的载体。强力是令夸克结合在一起构成包括光子等的复合粒子的力。
 qmd.particle.w_plus_boson.desc=Z 和 W 玻色子是弱力的载体。弱力制约放射性衰变，也是 β 衰变的原因。
 qmd.particle.w_minus_boson.desc=Z 和 W 玻色子是弱力的载体。弱力制约放射性衰变，也是 β 衰变的原因。
-qmd.particle.z_boson.desc=Z和W玻色子是弱力的载体。弱力制约放射性衰变，也是β衰变的原因。
+qmd.particle.z_boson.desc=Z 和 W 玻色子是弱力的载体。弱力制约放射性衰变，也是 β 衰变的原因。
 qmd.particle.higgs_boson.desc=希格斯玻色子是给予粒子质量的希格斯场中的玻色子。
 qmd.particle.proton.desc=质子是核子之一，与中子一同构成原子核。
 qmd.particle.antiproton.desc=反质子是质子对应的反物质。
@@ -677,9 +677,9 @@ tile.qmd.irradiator_fuel.name=辐照器燃料
 tile.qmd.accelerator_cooling.name=加速器冷却
 tile.qmd.cell_filling.name=单元填充与提取
 
-itemGroup.qmd.items=量子动力学丨物品
-itemGroup.qmd.blocks=量子动力学丨方块
-itemGroup.qmd.multiblocks=量子动力学丨结构
+itemGroup.qmd.items=量子块动力学丨物品
+itemGroup.qmd.blocks=量子块动力学丨方块
+itemGroup.qmd.multiblocks=量子块动力学丨结构
 
 qmd.block.accelerator_port_setting_toggle=调整端口红石设定至：
 qmd.block.port_mode_toggle=调整端口至：
@@ -872,20 +872,35 @@ gui.qmd.config.tools.tool_attack_damage.comment=每一击造成的伤害。顺�
 gui.qmd.config.tools.tool_enchantability=可附魔性
 gui.qmd.config.tools.tool_enchantability.comment=附魔的品质。顺序：碳化钨。
 
-gui.qmd.config.tools.armor_durability=耐久度
-gui.qmd.config.tools.armor_durability.comment=盔甲的耐久度。顺序：HEV。
+# gui.qmd.config.tools.armor_durability=耐久度
+# gui.qmd.config.tools.armor_durability.comment=盔甲的耐久度。顺序：HEV。
 
-gui.qmd.config.tools.armor_enchantability=附魔能力
-gui.qmd.config.tools.armor_enchantability.comment=附魔的品质。顺序：HEV。
+# gui.qmd.config.tools.armor_enchantability=附魔能力
+# gui.qmd.config.tools.armor_enchantability.comment=附魔的品质。顺序：HEV。
 
-gui.qmd.config.tools.armor_toughness=韧性
-gui.qmd.config.tools.armor_toughness.comment=盔甲的韧性。顺序：HEV。
+# gui.qmd.config.tools.armor_toughness=韧性
+# gui.qmd.config.tools.armor_toughness.comment=盔甲的韧性。顺序：HEV。
 
-gui.qmd.config.tools.armor_hev=HEV盔甲护甲值
-gui.qmd.config.tools.armor_hev.comment=不同部位盔甲的有效护甲值。顺序：靴子，护腿，胸甲，头盔。
+# gui.qmd.config.tools.armor_hev=HEV 盔甲护甲值
+# gui.qmd.config.tools.armor_hev.comment=不同部位盔甲的有效护甲值。顺序：靴子，护腿，胸甲，头盔。
 
-gui.qmd.config.tools.rad_res_hev=HEV 盔甲辐射抗性
-gui.qmd.config.tools.rad_res_hev.comment=HEV 盔甲不同部位的辐射抗性。顺序：靴子，护腿，胸甲，头盔。
+# gui.qmd.config.tools.rad_res_hev=HEV 盔甲辐射抗性
+# gui.qmd.config.tools.rad_res_hev.comment=HEV 盔甲不同部位的辐射抗性。顺序：靴子，护腿，胸甲，头盔。
+
+gui.qmd.config.tools.hev_toughness=HEV 盔甲韧性
+gui.qmd.config.tools.hev_toughness.comment=HEV 盔甲的韧性。顺序：已充能，未充能。
+
+gui.qmd.config.tools.hev_armour=HEV 盔甲护甲值
+gui.qmd.config.tools.hev_armour.comment=HEV 盔甲不同部位的护甲值。顺序：已充能靴子，已充能护腿，已充能胸甲，已充能头盔，未充能靴子，未充能护腿，未充能胸甲，未充能头盔。
+
+gui.qmd.config.tools.hev_rad_res=HEV 盔甲辐射抗性
+gui.qmd.config.tools.hev_rad_res.comment=HEV 盔甲不同部位的辐射抗性。顺序：靴子，护腿，胸甲，头盔。
+
+gui.qmd.config.tools.hev_energy=HEV 能量容纳
+gui.qmd.config.tools.hev_energy.comment=HEV 盔甲不同部位能存储的能量。顺序：靴子，护腿，胸甲，头盔。
+
+gui.qmd.config.tools.hev_power=HEV 盔甲能量消耗
+gui.qmd.config.tools.hev_power.comment=进行各类操作时，HEV 盔甲消耗的能量。顺序：每点伤害承受，每次跳跃增高，每次跳跃增长，每点摔落伤害减免，每点凋零或中毒伤害减免。
 
 gui.qmd.config.containment.max_temp.comment=遏制器结构的最大操作温度（单位：K）。
 gui.qmd.config.containment.max_temp=遏制器最高温度
@@ -941,7 +956,7 @@ gui.qmd.config.category.processors=处理器
 gui.qmd.config.category.tools.tooltip=工具及武器的配置。
 gui.qmd.config.category.tools=工具
 
-gui.qmd.config.main_title=量子动力学配置
+gui.qmd.config.main_title=量子块动力学配置
 gui.qmd.config.other.canister_capacity.comment=罐的最大容量。顺序：空，氢，氘，氚，氦-3，氦，乙硼烷。
 gui.qmd.config.other.canister_capacity=罐容量
 

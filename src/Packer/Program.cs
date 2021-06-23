@@ -29,13 +29,15 @@ namespace Packer
                 throw new ArgumentException("无效的版本参数", nameof(version));
             }
             Log.Information("开始对版本 {0} 的打包", config.Version);
-            using var stream = File.Create($".\\Minecraft-Mod-Language-package-{config.Version}.zip");
-            using var archive = new ZipArchive(stream, ZipArchiveMode.Update);
+            Utils.CreateTimeStamp(config.Version);
+            await using var stream = File.Create($".\\Minecraft-Mod-Language-package-{config.Version}.zip");
+            var archive = new ZipArchive(stream, ZipArchiveMode.Update);
             archive.Initialize(config);
             await archive.WriteContent(Lib.RetrieveContent(config, out var bypassed));
-            Log.Information("开始添加未经处理的文件");
             archive.WriteBypassed(bypassed); // 将跳过的文件一并加入
-            await Utils.WriteMd5(stream, config);
+            archive.Dispose();
+            //stream.Dispose();
+            await Utils.WriteMd5(await File.ReadAllBytesAsync($".\\Minecraft-Mod-Language-package-{config.Version}.zip"), config);
             Log.Information("对版本 {0} 的打包结束", config.Version);
         }
     }

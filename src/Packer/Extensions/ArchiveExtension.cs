@@ -28,7 +28,8 @@ namespace Packer.Extensions
             string commonPrefix = $"./projects/{config.Version}";
             config.FilesToInitialize.ForEach(path =>
             {
-                var destination = path.Replace("/1UNKNOWN", ""); // 除掉一层文件夹（在 assets/ 里的各种 fix）
+                var destination = path.Replace("/1UNKNOWN", "") // 除掉一层文件夹（在 assets/ 里的各种 fix）
+                                      .NormalizePath();
                 Log.Information("初始化压缩包：添加 {0}", destination);
                 archive.CreateEntryFromFile($"{commonPrefix}/{path}", destination);
             });
@@ -38,13 +39,13 @@ namespace Packer.Extensions
 
         public static async Task WriteContent(this ZipArchive archive, IEnumerable<Asset> content)
         {
+            Log.Information("添加写入处理后的文件");
             var tasks = new List<Task>();
             foreach (var asset in content)
             {
                 Log.Information("正在添加 asset-domain: {0}", asset.domainName);
                 foreach (var file in asset.contents)
                 {
-                    if (file.relativePath is null) continue; // 无效文件
                     tasks.Add(archive.CreateLangFile(Path.Combine("assets",
                                                                   asset.domainName,
                                                                   file.relativePath),
@@ -52,16 +53,19 @@ namespace Packer.Extensions
                 }
             }
             await Task.WhenAll(tasks);
+            Log.Information("添加完毕");
         }
 
         public static void WriteBypassed(this ZipArchive archive, Dictionary<string, string> bypassed)
         {
+            Log.Information("添加写入未经处理的文件");
             foreach (var pair in bypassed)
             {
                 Log.Information("正在添加 {0}", pair.Value);
                 archive.CreateEntryFromFile(sourceFileName: pair.Key,
-                                            entryName: pair.Value);
+                                            entryName: pair.Value.NormalizePath());
             }
+            Log.Information("添加完毕");
         }
     }
 }
