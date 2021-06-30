@@ -29,23 +29,20 @@ namespace Spider {
                 var dict = await JsonReader.ReadIntroAsync(cfg.Configuration.Version, cfg.Version);
                 var all = new List<string>();
                 var pending = new List<string>();
-                var names = new List<string>();
-                for (int index = 0; index < num; index++) {
-                    var modTask = UrlLib.GetModInfoAsync(50, cfg.Configuration.Version,index);
-                    var root = Directory.CreateDirectory(
-                        $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}\\assets");
+                var root = Directory.CreateDirectory(
+                    $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}\\assets");
 
-                    names = root.GetDirectories().Select(_ => _.Name).ToList();
+                var names = root.GetDirectories().Select(_ => _.Name).ToList();
 
-                    foreach (var configuration in cfg.CustomConfigurations) {
-                        if (!names.Contains(configuration.ProjectName)) {
-                            names.Add(configuration.ProjectName);
-                        }
+                foreach (var configuration in cfg.CustomConfigurations) {
+                    if (!names.Contains(configuration.ProjectName)) {
+                        names.Add(configuration.ProjectName);
                     }
+                }
 
-                    var allM = await modTask;
-                    var allN = allM.ToList().Select(_ => _.ShortWebsiteUrl).ToList();
-                    all.AddRange(allN);
+                for (int index = 0; index < num; index++) {
+                    var allM = await UrlLib.GetModInfoAsync(50, cfg.Configuration.Version, index); ;
+
 
                     Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod");
 
@@ -59,6 +56,8 @@ namespace Spider {
 
                         allM = l.ToArray();
                     }
+                    var allN = allM.ToList().Select(_ => _.ShortWebsiteUrl).ToList();
+                    all.AddRange(allN);
                     var l1 = parser.SerializeAll(allM).ToList();
 
                     //var parallelOption = new ParallelOptions {
@@ -94,7 +93,7 @@ namespace Spider {
 
                     await Task.WhenAll(tasks);
                     Log.Logger.Information($"Index: {index}");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(5000);
                 }
 
                 foreach (var str in names) {
