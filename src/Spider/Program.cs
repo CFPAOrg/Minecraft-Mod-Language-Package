@@ -41,7 +41,7 @@ namespace Spider {
                 }
 
                 for (int index = 0; index < num; index++) {
-                    var allM = UrlLib.GetModInfoAsync(50, cfg.Configuration.Version, index).Result;
+                    var allM = await UrlLib.GetModInfoAsync(50, cfg.Configuration.Version, index);
 
 
                     Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod");
