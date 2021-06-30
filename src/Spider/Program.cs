@@ -93,7 +93,8 @@ namespace Spider {
                     });
 
                     await Task.WhenAll(tasks);
-
+                    Log.Logger.Information($"Index: {index}");
+                    Thread.Sleep(2000);
                 }
 
                 foreach (var str in names) {

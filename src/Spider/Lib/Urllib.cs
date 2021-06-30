@@ -15,6 +15,7 @@ namespace Spider.Lib {
         /// </summary>
         /// <param name="modCount"></param>
         /// <param name="gameVersion"></param>
+        /// <param name="index"></param>
         /// <returns></returns>
         public static async Task<ModInfo[]> GetModInfoAsync(int modCount, string gameVersion,int index)
         {
