@@ -88,10 +88,9 @@ namespace Spider {
                         Log.Logger.Error(e.Message);
                     }
                     finally {
-                        Log.Logger.Information($"{_.Item1.ShortWebsiteUrl} 解析完成");
                         semaphore.Release();
                     }
-                }).ToList();
+                });
 
                 await Task.WhenAll(tasks);
 
