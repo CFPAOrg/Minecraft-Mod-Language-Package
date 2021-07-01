@@ -89,7 +89,7 @@ namespace Spider {
                         finally {
                             semaphore.Release();
                         }
-                    });
+                    }).ToList();
 
                     await Task.WhenAll(tasks);
                     Log.Logger.Information($"Index: {index}");
