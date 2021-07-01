@@ -27,7 +27,6 @@ namespace Spider {
                 var parser = new InfoParser(cfg.Configuration, cfg.CustomConfigurations);
                 var num = (int)Math.Ceiling((decimal)cfg.Count / 50);
                 var dict = await JsonReader.ReadIntroAsync(cfg.Configuration.Version, cfg.Version);
-                var all = new List<string>();
                 var pending = new List<string>();
                 var root = Directory.CreateDirectory(
                     $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}\\assets");
@@ -40,67 +39,61 @@ namespace Spider {
                     }
                 }
 
-                for (int index = 0; index < num; index++) {
-                    var allM = await UrlLib.GetModInfoAsync(50, cfg.Configuration.Version, index);
+                var allM = await UrlLib.GetModInfoAsync(cfg.Count, cfg.Configuration.Version);
 
 
-                    Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod");
-
-
-                    if (names.Count > cfg.Count) {
-                        var bin = allM.Where(_ => !names.Contains(_.ShortWebsiteUrl));
-                        var l = allM.ToList();
-                        foreach (var info in bin) {
-                            l.Remove(info);
-                        }
-
-                        allM = l.ToArray();
+                if (names.Count > cfg.Count) {
+                    var bin = allM.Where(_ => !names.Contains(_.ShortWebsiteUrl));
+                    var l = allM.ToList();
+                    foreach (var info in bin) {
+                        l.Remove(info);
                     }
-                    var allN = allM.ToList().Select(_ => _.ShortWebsiteUrl).ToList();
-                    all.AddRange(allN);
-                    var l1 = parser.SerializeAll(allM).ToList();
 
-                    //var parallelOption = new ParallelOptions {
-                    //    MaxDegreeOfParallelism = 16
-                    //};
-
-                    var semaphore = new SemaphoreSlim(16, 16);
-                    //Parallel.ForEach(l1, parallelOption, (async tuple => {
-                    //    try {
-                    //        semaphore.WaitOne();
-                    //        await Utils.ParseModsAsync(tuple, cfg);
-                    //    }
-                    //    catch (Exception e) {
-                    //        Log.Logger.Error(e.Message);
-                    //    }
-                    //    finally {
-                    //        semaphore.Release();
-                    //    }
-                    //}));
-
-                    var tasks = l1.Select(async _ => {
-                        try {
-                            await semaphore.WaitAsync();
-                            await Utils.ParseModsAsync(_, cfg);
-                        }
-                        catch (Exception e) {
-                            Log.Logger.Error(e.Message);
-                        }
-                        finally {
-                            semaphore.Release();
-                        }
-                    }).ToList();
-
-                    await Task.WhenAll(tasks);
-                    Log.Logger.Information($"Index: {index}");
-                    Thread.Sleep(5000);
+                    allM = l.ToArray();
                 }
+                var allN = allM.ToList().Select(_ => _.ShortWebsiteUrl).ToList();
+                var l1 = parser.SerializeAll(allM).ToList();
+
+                //var parallelOption = new ParallelOptions {
+                //    MaxDegreeOfParallelism = 16
+                //};
 
                 foreach (var str in names) {
-                    if (!all.Contains(str)) {
+                    if (!allN.Contains(str)) {
                         pending.Add(str);
                     }
                 }
+
+                Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod，有 {pending.Count} 要单独处理");
+                var semaphore = new SemaphoreSlim(16, 16);
+                //Parallel.ForEach(l1, parallelOption, (async tuple => {
+                //    try {
+                //        semaphore.WaitOne();
+                //        await Utils.ParseModsAsync(tuple, cfg);
+                //    }
+                //    catch (Exception e) {
+                //        Log.Logger.Error(e.Message);
+                //    }
+                //    finally {
+                //        semaphore.Release();
+                //    }
+                //}));
+
+                var tasks = l1.Select(async _ => {
+                    try {
+                        await semaphore.WaitAsync();
+                        await Utils.ParseModsAsync(_, cfg);
+                    }
+                    catch (Exception e) {
+                        Log.Logger.Error(e.Message);
+                    }
+                    finally {
+                        semaphore.Release();
+                    }
+                });
+
+                await Task.WhenAll(tasks);
+
 
                 foreach (var name in pending) {
                     if (dict.ContainsKey(name)) {

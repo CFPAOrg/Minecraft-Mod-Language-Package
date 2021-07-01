@@ -5,7 +5,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text.Json;
+using System.Threading;
 using System.Threading.Tasks;
+using Serilog;
 using Spider.Lib.JsonLib;
 
 namespace Spider.Lib {
@@ -17,15 +19,21 @@ namespace Spider.Lib {
         /// <param name="gameVersion"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        public static async Task<ModInfo[]> GetModInfoAsync(int modCount, string gameVersion,int index)
-        {
+        public static async Task<ModInfo[]> GetModInfoAsync(int modCount, string gameVersion) {
+            var mIo = new List<ModInfo>();
             using var httpClient = new HttpClient();
-            var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search")
-            {
-                Query =
-                    $"categoryId=0&gameId=432&index={index}&pageSize={modCount}&gameVersion={gameVersion}&sectionId=6&sort=1"
-            };
-            return await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri);
+            var num = (int)Math.Ceiling((decimal)modCount / 50);
+            for (int i = 0; i < num; i++) {
+                var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search") {
+                    Query =
+                        $"categoryId=0&gameId=432&index={i}&pageSize=50&gameVersion={gameVersion}&sectionId=6&sort=1"
+                };
+                mIo.AddRange(await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri) ?? Array.Empty<ModInfo>());
+                Thread.Sleep(3000);
+                Log.Logger.Information($"第 {i} 次获取");
+            }
+
+            return mIo.Distinct().Take(modCount).ToArray();
         }
 
         /// <summary>
