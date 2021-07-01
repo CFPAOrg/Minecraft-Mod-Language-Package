@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+
 using Serilog;
+
 using Spider.Lib.JsonLib;
 
 namespace Spider.Lib {
     public class InfoParser {
-        public List<ModInfo> Infos { get; set; }
         private readonly Configuration _defaultConfiguration;
-        private readonly Configuration[] _customConfigurations;
+        private readonly IncompleteConfiguration[] _customConfigurations;
 
-        public InfoParser(Configuration defaultConfiguration, Configuration[] customConfigurations) {
+        public InfoParser(Configuration defaultConfiguration, IncompleteConfiguration[] customConfigurations) {
             _defaultConfiguration = defaultConfiguration;
             _customConfigurations = customConfigurations;
         }
@@ -19,34 +20,67 @@ namespace Spider.Lib {
             Log.Logger.Debug("解析器已回收");
         }
 
-        public (ModInfo,Configuration)[] SerializeAll() {
-            if (Infos is null) {
+        public (ModInfo, Configuration)[] SerializeAll(IEnumerable<ModInfo> infos) {
+            if (infos is null) {
                 throw new NullReferenceException("Empty infos!");
             }
 
             var tmp = new List<(ModInfo, Configuration)>();
-            foreach (var c in _customConfigurations) {
-                var mod = Infos.FirstOrDefault(_ => _.ShortWebsiteUrl == c.ProjectName);
-                Infos.Remove(mod);
-                if (mod is not null) {
-                    tmp.Add((mod, c));
-                }
-            }
 
-            foreach (var info in Infos) {
-                tmp.Add((info, _defaultConfiguration));
+            foreach (var info in infos) {
+                var cfg = _customConfigurations.ToList().FirstOrDefault(_ => _.ProjectName == info.ShortWebsiteUrl);
+                if (cfg is null) {
+                    tmp.Add((info, _defaultConfiguration));
+                }
+                else {
+                    var completedCfg = new Configuration() {
+                        ExtractPath = cfg.ExtensionData.TryGetValue("extract_path", out var value1)
+                            ? value1.GetStringArray()
+                            : _defaultConfiguration.ExtractPath,
+                        Version = cfg.Version,
+                        IncludedPath = cfg.ExtensionData.TryGetValue("included_path", out var value2)
+                            ? value2.GetStringArray()
+                            : _defaultConfiguration.IncludedPath,
+                        NonUpdate = cfg.ExtensionData.TryGetValue("non_update", out var value3)
+                            ? value3.GetBoolean()
+                            : _defaultConfiguration.NonUpdate,
+                        ProjectName = cfg.ProjectName,
+                        UpdateChinese = cfg.ExtensionData.TryGetValue("update_chinese", out var value4)
+                            ? value3.GetBoolean()
+                            : _defaultConfiguration.UpdateChinese
+                    };
+
+                    tmp.Add((info, completedCfg));
+                }
             }
 
             return tmp.ToArray();
         }
 
         public (ModInfo, Configuration) Serialize(ModInfo info) {
-            foreach (var cfg in _customConfigurations) {
-                if (cfg.ProjectName == info.ShortWebsiteUrl) {
-                    return (info, cfg);
-                }
+            var cfg = _customConfigurations.ToList().FirstOrDefault(_ => _.ProjectName == info.ShortWebsiteUrl);
+            if (cfg is null) {
+                return (info, _defaultConfiguration);
             }
-            return (info, _defaultConfiguration);
+
+            var completedCfg = new Configuration() {
+                ExtractPath = cfg.ExtensionData.TryGetValue("extract_path", out var value1)
+                    ? value1.GetStringArray()
+                    : _defaultConfiguration.ExtractPath,
+                Version = cfg.Version,
+                IncludedPath = cfg.ExtensionData.TryGetValue("included_path", out var value2)
+                    ? value2.GetStringArray()
+                    : _defaultConfiguration.IncludedPath,
+                NonUpdate = cfg.ExtensionData.TryGetValue("non_update", out var value3)
+                    ? value3.GetBoolean()
+                    : _defaultConfiguration.NonUpdate,
+                ProjectName = cfg.ProjectName,
+                UpdateChinese = cfg.ExtensionData.TryGetValue("update_chinese", out var value4)
+                    ? value4.GetBoolean()
+                    : _defaultConfiguration.UpdateChinese
+            };
+
+            return (info, completedCfg);
         }
     }
 }

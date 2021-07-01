@@ -15,14 +15,15 @@ namespace Spider.Lib {
         /// </summary>
         /// <param name="modCount"></param>
         /// <param name="gameVersion"></param>
+        /// <param name="index"></param>
         /// <returns></returns>
-        public static async Task<ModInfo[]> GetModInfoAsync(int modCount, string gameVersion)
+        public static async Task<ModInfo[]> GetModInfoAsync(int modCount, string gameVersion,int index)
         {
             using var httpClient = new HttpClient();
             var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search")
             {
                 Query =
-                    $"categoryId=0&gameId=432&index=0&pageSize={modCount}&gameVersion={gameVersion}&sectionId=6&sort=1"
+                    $"categoryId=0&gameId=432&index={index}&pageSize={modCount}&gameVersion={gameVersion}&sectionId=6&sort=1"
             };
             return await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri);
         }
