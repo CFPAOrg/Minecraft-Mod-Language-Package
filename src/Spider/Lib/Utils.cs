@@ -5,13 +5,11 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
-using System.Xml;
 using Language.Core;
 
 using Serilog;
-
-using Spider.Lib.FileLib;
 using Spider.Lib.JsonLib;
 
 namespace Spider.Lib {
@@ -324,6 +322,28 @@ namespace Spider.Lib {
             };
 
             return result;
+        }
+    }
+
+    public static class JsonElementExtension {
+        public static string[] GetStringArray(this JsonElement elem) {
+            var tmp = new List<string>();
+            var enumerator = elem.EnumerateArray();
+            while (enumerator.MoveNext()) {
+                tmp.Add(enumerator.Current.GetString());
+            }
+
+            return tmp.ToArray();
+        }
+
+        public static List<string> GetStringList(this JsonElement elem) {
+            var tmp = new List<string>();
+            var enumerator = elem.EnumerateArray();
+            while (enumerator.MoveNext()) {
+                tmp.Add(enumerator.Current.GetString());
+            }
+
+            return tmp;
         }
     }
 }
