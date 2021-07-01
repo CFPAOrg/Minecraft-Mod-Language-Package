@@ -18,6 +18,7 @@ namespace Spider.Lib {
         /// 解析mod
         /// </summary>
         /// <param name="tuple"></param>
+        /// <param name="conf"></param>
         /// <returns></returns>
         public static async Task ParseModsAsync((ModInfo, Configuration) tuple, Config conf) {
 
@@ -26,7 +27,6 @@ namespace Spider.Lib {
                 return;
             }
 
-            Log.Logger.Information($"{tuple.Item1.ShortWebsiteUrl}正在解析");
             var cfg = tuple.Item2;
             var mod = tuple.Item1;
             var version = cfg.Version;
