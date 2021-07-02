@@ -21,8 +21,8 @@ namespace Spider.Lib {
         /// <returns></returns>
         public static async Task ParseModsAsync((ModInfo, Configuration) tuple, Config conf) {
 
-            if (tuple.Item2.NonUpdate) {
-                Log.Logger.Warning($"{tuple.Item1.ShortWebsiteUrl}已在黑名单中，跳过");
+            if (tuple.Item2.NonUpdate != null && tuple.Item2.NonUpdate.Value) {
+                Log.Logger.Warning($"{tuple.Item1.Slug}已在黑名单中，跳过");
                 return;
             }
 
@@ -52,12 +52,13 @@ namespace Spider.Lib {
                     DownloadUrl = downloadUrl,
                     Name = mod.Name,
                     ProjectId = mod.Id,
-                    ProjectName = mod.ShortWebsiteUrl,
+                    ProjectName = mod.Slug,
                     ProjectUrl = mod.WebsiteUrl,
                     TempPath = path,
                 };
 
                 ParseFiles(res, cfg, $"{Directory.GetCurrentDirectory()}\\projects\\{conf.Version}");
+                Log.Logger.Information("{0} 解析完成", tuple.Item1.Slug);
             }
         }
 
@@ -101,7 +102,7 @@ namespace Spider.Lib {
                              entry.Name.Equals("en_us.json", StringComparison.OrdinalIgnoreCase));
 
                     
-                    if (cfg.UpdateChinese) {
+                    if (cfg.UpdateChinese != null && cfg.UpdateChinese.Value) {
                         cflag = (entry.Name.Equals("zh_cn.lang",StringComparison.OrdinalIgnoreCase) ||
                                 entry.Name.Equals("zn_cn.json",StringComparison.OrdinalIgnoreCase));
                     }
@@ -321,28 +322,6 @@ namespace Spider.Lib {
             };
 
             return result;
-        }
-    }
-
-    public static class JsonElementExtension {
-        public static string[] GetStringArray(this JsonElement elem) {
-            var tmp = new List<string>();
-            var enumerator = elem.EnumerateArray();
-            while (enumerator.MoveNext()) {
-                tmp.Add(enumerator.Current.GetString());
-            }
-
-            return tmp.ToArray();
-        }
-
-        public static List<string> GetStringList(this JsonElement elem) {
-            var tmp = new List<string>();
-            var enumerator = elem.EnumerateArray();
-            while (enumerator.MoveNext()) {
-                tmp.Add(enumerator.Current.GetString());
-            }
-
-            return tmp;
         }
     }
 }

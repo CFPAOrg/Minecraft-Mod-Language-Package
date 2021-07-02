@@ -26,14 +26,16 @@ namespace Spider.Lib {
             for (int i = 0; i < num; i++) {
                 var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search") {
                     Query =
-                        $"categoryId=0&gameId=432&index={i}&pageSize=50&gameVersion={gameVersion}&sectionId=6&sort=1"
+                        $"categoryId=0&gameId=432&index={i*50}&pageSize=50&gameVersion={gameVersion}&sectionId=6&sort=1"
                 };
                 mIo.AddRange(await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri) ?? Array.Empty<ModInfo>());
                 Thread.Sleep(3000);
-                Log.Logger.Information($"第 {i} 次获取");
+                Log.Logger.Information("GET {0}",uriBuilder.Uri);
             }
 
-            return mIo.Distinct().Take(modCount).ToArray();
+            var tmp = mIo.DistinctBy(_ => _.Slug).Take(modCount).ToArray();
+
+            return tmp;
         }
 
         /// <summary>
@@ -65,7 +67,7 @@ namespace Spider.Lib {
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
-        [Obsolete]
+        [Obsolete("该方法已被添加进ModInfo属性")]
         public static string GetProjectName(Uri uri) {
             var url = uri.ToString();
             var start = url.LastIndexOf('/') + 1;
@@ -87,7 +89,7 @@ namespace Spider.Lib {
             var intro = tmp.Select(_ => {
                 var c = new ModIntro() {
                     Id = _.Id,
-                    Name = _.ShortWebsiteUrl
+                    Name = _.Slug
                 };
                 return c;
             });
@@ -105,7 +107,7 @@ namespace Spider.Lib {
         /// <param name="mod"></param>
         /// <param name="version"></param>
         /// <returns></returns>
-        [Obsolete]
+        [Obsolete("单独的下载方法已不被使用")]
         public static async Task<(Mod, bool)> DownloadAsync(this ModInfo mod, string version) {
             var httpCli = new HttpClient();
             var path = $"{Path.GetTempFileName()}".Replace(".tmp", ".jar");
