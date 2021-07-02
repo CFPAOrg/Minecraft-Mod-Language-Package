@@ -72,8 +72,8 @@ namespace Spider.Lib {
             var zipArchive = new ZipArchive(File.OpenRead(mod.TempPath));
             var tmpDirectories = $"{Path.GetTempPath()}extracted\\{Path.GetFileName(mod.TempPath)}";
             Log.Logger.Debug(tmpDirectories);
-            var include = cfg.IncludedPath.ToList();
-            var extract = cfg.ExtractPath.ToList();
+            var include = (cfg.IncludedPath ?? Array.Empty<string>()).ToList();
+            var extract = (cfg.ExtractPath ?? Array.Empty<string>()).ToList();
             var entries = zipArchive.Entries.ToList();
 
             IEnumerable<(ZipArchiveEntry, string)> Selector() {
