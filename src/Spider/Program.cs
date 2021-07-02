@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,7 +9,6 @@ using Serilog;
 
 using Spider.Lib;
 using Spider.Lib.FileLib;
-using Spider.Lib.JsonLib;
 
 namespace Spider {
     static class Program {
@@ -82,7 +79,11 @@ namespace Spider {
                 var tasks = l1.Select(async _ => {
                     try {
                         await semaphore.WaitAsync();
-                        await Utils.ParseModsAsync(_, cfg);
+                        var task = Utils.ParseModsAsync(_, cfg);
+                        await task;
+                        if (task.Status == TaskStatus.RanToCompletion) {
+                            Log.Logger.Information($"{_.Item1.ShortWebsiteUrl} 解析完成");
+                        }
                     }
                     catch (Exception e) {
                         Log.Logger.Error(e.Message);
