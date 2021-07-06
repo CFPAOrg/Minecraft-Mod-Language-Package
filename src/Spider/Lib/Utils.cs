@@ -5,13 +5,11 @@ using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
-using System.Xml;
 using Language.Core;
 
 using Serilog;
-
-using Spider.Lib.FileLib;
 using Spider.Lib.JsonLib;
 
 namespace Spider.Lib {
@@ -23,12 +21,11 @@ namespace Spider.Lib {
         /// <returns></returns>
         public static async Task ParseModsAsync((ModInfo, Configuration) tuple, Config conf) {
 
-            if (tuple.Item2.NonUpdate) {
-                Log.Logger.Warning($"{tuple.Item1.ShortWebsiteUrl}已在黑名单中，跳过");
+            if (tuple.Item2.NonUpdate != null && tuple.Item2.NonUpdate.Value) {
+                Log.Logger.Warning($"{tuple.Item1.Slug}已在黑名单中，跳过");
                 return;
             }
 
-            Log.Logger.Information($"{tuple.Item1.ShortWebsiteUrl}正在解析");
             var cfg = tuple.Item2;
             var mod = tuple.Item1;
             var version = cfg.Version;
@@ -55,12 +52,13 @@ namespace Spider.Lib {
                     DownloadUrl = downloadUrl,
                     Name = mod.Name,
                     ProjectId = mod.Id,
-                    ProjectName = mod.ShortWebsiteUrl,
+                    ProjectName = mod.Slug,
                     ProjectUrl = mod.WebsiteUrl,
                     TempPath = path,
                 };
 
                 ParseFiles(res, cfg, $"{Directory.GetCurrentDirectory()}\\projects\\{conf.Version}");
+                Log.Logger.Information("{0} 解析完成", tuple.Item1.Slug);
             }
         }
 
@@ -74,8 +72,8 @@ namespace Spider.Lib {
             var zipArchive = new ZipArchive(File.OpenRead(mod.TempPath));
             var tmpDirectories = $"{Path.GetTempPath()}extracted\\{Path.GetFileName(mod.TempPath)}";
             Log.Logger.Debug(tmpDirectories);
-            var include = cfg.IncludedPath.ToList();
-            var extract = cfg.ExtractPath.ToList();
+            var include = (cfg.IncludedPath ?? Array.Empty<string>()).ToList();
+            var extract = (cfg.ExtractPath ?? Array.Empty<string>()).ToList();
             var entries = zipArchive.Entries.ToList();
 
             IEnumerable<(ZipArchiveEntry, string)> Selector() {
@@ -104,7 +102,7 @@ namespace Spider.Lib {
                              entry.Name.Equals("en_us.json", StringComparison.OrdinalIgnoreCase));
 
                     
-                    if (cfg.UpdateChinese) {
+                    if (cfg.UpdateChinese != null && cfg.UpdateChinese.Value) {
                         cflag = (entry.Name.Equals("zh_cn.lang",StringComparison.OrdinalIgnoreCase) ||
                                 entry.Name.Equals("zn_cn.json",StringComparison.OrdinalIgnoreCase));
                     }

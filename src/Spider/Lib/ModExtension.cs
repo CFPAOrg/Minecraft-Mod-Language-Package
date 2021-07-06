@@ -40,13 +40,13 @@ namespace Spider.Lib {
         }
     }
     public static class ModExtension {
-        public static FullMod AnalyzeMod(this Mod mod, Config[] config) {
-            var version = mod.Version;
-            var customConfig = config.ToList().First(_ => _.Version == version).CustomConfigurations
-                .Where(_ => _.ProjectName == mod.ProjectName).ToArray()[0] ?? config.ToList().First(_ => _.Version == version).Configuration;
+        //public static FullMod AnalyzeMod(this Mod mod, Config[] config) {
+        //    var version = mod.Version;
+        //    var customConfig = config.ToList().First(_ => _.Version == version).CustomConfigurations
+        //        .Where(_ => _.ProjectName == mod.ProjectName).ToArray()[0] ?? config.ToList().First(_ => _.Version == version).Configuration;
 
-            var fullMod = new FullMod(mod, customConfig);
-            return fullMod;
-        }
+        //    var fullMod = new FullMod(mod, customConfig);
+        //    return fullMod;
+        //}
     }
 }

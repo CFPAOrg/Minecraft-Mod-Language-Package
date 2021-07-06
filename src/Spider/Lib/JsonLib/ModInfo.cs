@@ -369,10 +369,12 @@ namespace Spider.Lib.JsonLib {
     }
 
     public partial class ModInfo {
+        [Obsolete("目前看来与Slug重复")]
         public string ShortWebsiteUrl {
             get {
-                var start = WebsiteUrl.ToString().LastIndexOf('/') + 1;
-                return WebsiteUrl.ToString()[start..];
+                return Slug;
+                //var start = WebsiteUrl.ToString().LastIndexOf('/') + 1;
+                //return WebsiteUrl.ToString()[start..];
             }
         }
     }
