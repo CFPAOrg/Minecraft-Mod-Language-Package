@@ -133,6 +133,10 @@
 				"value": "HUD"
 			},			
 			{
+				"type": "text",
+				"value": "首先是最主要的HUD——魔力条。魔力条外观为一条横条，横条内标识着你的魔法等级，整个横条则代表着你的魔力量。而在横条的下方还有一根小横条，它代表了你升至下一魔法等级所需的经验值。当你手持一个法术时，魔力条会有一部分变暗，变暗的部分代表着法术的魔力使用量；而如果是引导类法术，则代表了起始引导所需要的魔力。"
+			},	
+			{
 				"type": "title",
 				"value": "HUD 显示选项"
 			},
@@ -290,6 +294,35 @@
 			}
 		]
 	},
+	"Ley Lines": {
+		"category": "basics",
+		"index": -91,
+		"tier": 3,
+		"sections": [
+			{
+				"type": "title",
+				"value": "魔脉"
+			},
+			{
+				"type": "text",
+				"value": "在世界中存在着一种能量节点网络，它开枝散叶，遍布各处。这些节点被称为“魔脉”。那些与巫师议会结盟的人可以使用“魔脉传送”法术，穿梭于节点之间。而魔脉手镯则可以抽取魔脉之内的能量，只要离魔脉够近，那么法术的魔力消耗量将会得到降低。\n\n魔脉通常情况下是不可见的，只有在视之药膏的帮助下，你才能一睹魔脉的真容。但即使你看不到魔脉，你仍可以利用魔脉。\n\n魔脉会在未来版本添加更多的功能。"
+			}
+		],
+		"related_recipes": [			
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sight_unguent"
+			},
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/ley_line_transport"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/ley_line_bracelet"
+			}
+		]
+	},
 	"Manaweaver Villagers": {
 		"category": "basics",
 		"index": -9999,
@@ -396,7 +429,7 @@
 			},
 			{
 				"type": "text",
-				"value": "在符文或硫磺锻炉旁边放上基座，再在基座上放置一块秘鸣晶体，我可以稍许改变锻炉的效力。\n\n若在锻炉旁放置了两块以上的红色，黄色或者橙色晶体，那么锻炉可以双倍化矿物烧炼。在未来版本还会有更多的内容。"
+				"value": "在符文或硫磺锻炉旁边放上基座，再在基座上放置一块秘鸣晶体，我可以稍许改变锻炉的效力。\n\n若在锻炉旁放置了两块以上的红色，黄色或者橙色晶体，那么锻炉可以双倍化矿物烧炼。\n\n白色，青色，蓝色或者淡蓝色晶体，会让锻炉尝试修复放进去的物品，但在修复之前，锻炉会先尝试烧制它。\n\n在未来版本还会有更多的内容。"
 			}
 		],
 		"related_recipes": [
@@ -409,7 +442,11 @@
 				"locations": [
 					"mana-and-artifice:chimerite_crystals/crystal_orange",
 					"mana-and-artifice:chimerite_crystals/crystal_red",
-					"mana-and-artifice:chimerite_crystals/crystal_yellow"
+					"mana-and-artifice:chimerite_crystals/crystal_yellow",
+					"mana-and-artifice:chimerite_crystals/crystal_light_blue",
+					"mana-and-artifice:chimerite_crystals/crystal_blue",
+					"mana-and-artifice:chimerite_crystals/crystal_cyan",
+					"mana-and-artifice:chimerite_crystals/crystal_white"					
 				]
 			}
 		]
@@ -509,10 +546,50 @@
 			},
 			{
 				"type": "text",
-				"value": "难以置信，如此愚蠢的事情居然还真在我的眼皮子底下发生了——这种有魔法萦绕于其上的矿石，居然一直以来被我当做开采矿石时的多余石头给扔掉了！之所以我将其称为秘鸣宝石，是因为粗看上去它与挖掘时产生的矿物碎片差不多，而只有魔法感知能力足够敏锐之后，你才能察觉到它的真实样貌。\n\n它大量蕴藏于绿宝石矿石之中，这与绿宝石本身的精巧结构颇有关系。就算是那种初入魔法门道的愣头青，其中的绝大多数也可以感知到秘鸣宝石，也许魔法等级 5 级就足以发现它的存在了。\n\n钻石矿的秘鸣宝石蕴藏量要次于绿宝石。也因此，探寻到蕴藏在钻石矿中的秘鸣宝石自然也需要更强的魔法感知能力，当然，只是稍微多一些，大约魔法等级 10 级就够了。\n\n煤矿石中的蕴藏量是最低的。确切地说，秘鸣宝石在其中简直就像是可怜的微量元素，而想要将其中的点点微量聚合成为足够大的，可用的形态，非得那些已经浸淫魔法多年，心灵已与魔法高度谐鸣的人才可能办到。我敢说，低于魔法等级 20 级，想都别想。\n\n关于开采几率，我还得再补充一下，在开采过程中，秘鸣宝石有可能会遭到破坏，所以并不是每一次挖掘都能有所收获。挖掘绿宝石是最有可能开采到的，其次是钻石，最后是煤。"
+				"value": "难以置信，如此愚蠢的事情居然还真在我的眼皮子底下发生了——这种有魔法萦绕于其上的矿石，居然一直以来被我当做开采矿石时的多余石头给扔掉了！之所以我将其称为秘鸣宝石，是因为粗看上去它与挖掘时产生的矿物碎片差不多，而只有魔法感知能力足够敏锐之后，你才能察觉到它的真实样貌。\n\n它大量蕴藏于绿宝石矿石之中，这与绿宝石本身的精巧结构颇有关系。就算是那种初入魔法门道的愣头青，其中的绝大多数也可以感知到秘鸣宝石，也许魔法等级 5 级就足以发现它的存在了。\n\n钻石矿的秘鸣宝石蕴藏量要次于绿宝石。也因此，探寻到蕴藏在钻石矿中的秘鸣宝石自然也需要更强的魔法感知能力，当然，只是稍微多一些，大约魔法等级 10 级就够了。\n\n煤矿石中的蕴藏量是最低的。确切地说，秘鸣宝石在其中简直就像是可怜的微量元素，而想要将其中的点点微量聚合成为足够大的，可用的形态，非得那些已经浸淫魔法多年，心灵已与魔法高度谐鸣的人才可能办到。我敢说，低于魔法等级 20 级，想都别想。\n\n关于开采几率，我还得再补充一下，在开采过程中，秘鸣宝石有可能会遭到破坏，所以并不是每一次挖掘都能有所收获。挖掘绿宝石是最有可能开采到的，其次是钻石，最后是煤。\n\n你可以在工作台上将其制作为一整个块，反之亦可。"
 			}
 		],
 		"related_recipes": []
+	},
+	"Useful Vanilla Recipes": {
+		"category": "basics",
+		"index": -2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "一些好用的原版配方"
+			},
+			{
+				"type": "text",
+				"value": "本模组为原版的物品添加了少量配方，这些物品在本模组中的使用率较高，或者获取较为困难。下面列出了这些物品。其中的一些有等阶要求，得等你逐步进阶之后，这些配方才会出现。"
+			},
+			{
+				"type": "text",
+				"value": "配方包括：\n\n皮革\n哭泣的黑曜石\n海晶砂粒\n海晶碎片\n镶金黑石"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/leather"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/crying_obsidian"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/prismarine_crystal"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/prismarine_shard"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/gilded_blackstone"
+			}
+		]
 	},
 	"Factions": {
 		"category": "basics",
@@ -536,7 +613,7 @@
 			},
 			{
 				"type": "text",
-				"value": "然而，使用这些不属于你的派系的物品时要当心。因为你的使用可能会招致其他派系的突袭，在突袭中，他们会派出非常强大的刺杀者紧盯着你，这些刺杀者比他们对应的，自然生成的版本要多了许多强大的能力。他们还会从与你的战斗中吸取教训，随着战斗次数的增多，他们会变得愈发难缠。但是，如果他们决定直接杀掉你，那战斗会更容易一些。"
+				"value": "然而，使用这些不属于你的派系的物品时要当心。因为你的使用最终会招致其他派系的突袭，在突袭中，他们会派出非常强大的刺杀者紧盯着你，这些刺杀者比他们对应的，自然生成的版本要多了许多毁灭性的能力，击败它们的难度直线上升。他们还会从与你的战斗中吸取教训，随着战斗次数的增多，他们会变得愈发难缠。但是，如果他们决定直接杀掉你，那战斗会更容易一些。"
 			},
 			{
 				"type": "text",
@@ -549,7 +626,7 @@
 			},
 			{
 				"type": "text",
-				"value": "下界之恶魔将“进攻即一切”这条原则贯彻到底。它们的圣物与此原则一脉相承：狱火权杖可以增强它所引导的火焰法术；烬明手镯可保你于火焰中无恙，还可烧灼你击中的敌人；以及一些特有的法术构件，例如爆炸和烙灼。当你在查阅奥秘之眼时，任何需要恶魔派系作为要求的对象，都会带有如下的图标："
+				"value": "下界之恶魔将“进攻即一切”这条原则贯彻到底。它们的圣物与此原则一脉相承：狱火权杖可以增强它所引导的火焰法术；烬明手镯可保你于火焰中无恙，还可烧灼你击中的敌人；一些特有的法术构件，例如爆炸和烙灼。当你在查阅奥秘之眼时，任何需要恶魔派系作为要求的对象，都会带有如下的图标："
 			},
 			{
 				"type": "image",
@@ -564,7 +641,7 @@
 			},
 			{
 				"type": "text",
-				"value": "相较于其它，仙女之庭更青睐于一些奇诡之术，因而它们的圣物也颇具奇诡之风格：幽冥鞘翅是一种增强版本的鞘翅，只要魔力充足，天空不再是极限；欺诈手镯可以让你于潜行时遁入无形，且此时你的攻击可以将敌人狠狠地击飞；以及一些特有的法术构件，例如诱像和治疗。当你在查阅奥秘之眼时，任何需要仙女之庭派系作为要求的对象，都会带有如下的图标："
+				"value": "相较于其它，仙女之庭更青睐于一些奇诡之术，因而它们的圣物也颇具奇诡之风格：幽冥鞘翅是一种增强版本的鞘翅，只要魔力充足，天空不再是极限；欺诈手镯可以让你于潜行时遁入无形，且此时你的攻击可以将敌人狠狠地击飞；一些特有的法术构件，例如诱像和治疗。当你在查阅奥秘之眼时，任何需要仙女之庭派系作为要求的对象，都会带有如下的图标："
 			},
 			{
 				"type": "image",
@@ -579,7 +656,7 @@
 			},
 			{
 				"type": "text",
-				"value": "远古巫师议会更侧重于防御以及魔力操纵，它们的圣物则也多与此有关：奥术王冠可以增加你的魔力值上限，并且还会自动驱散掉那些有害的效果状态；魔脉手镯则可以抽取附近蕴藏于魔脉中的原生魔力，使你在施法时消耗的魔力得到下降；以及一些特有的法术构件，例如护盾和魔力转送。当你在查阅奥秘之眼时，任何需要远古巫师议会派系作为要求的对象，都会带有如下的图标："
+				"value": "远古巫师议会更侧重于防御以及魔力操纵，它们的圣物则也多与此有关：奥术王冠可以增加你的魔力值上限，并且还会自动驱散掉那些有害的效果状态；魔脉手镯则可以抽取附近蕴藏于魔脉中的原生魔力，使你在施法时消耗的魔力得到下降；一些特有的法术构件，例如护盾和魔力转送。当你在查阅奥秘之眼时，任何需要远古巫师议会派系作为要求的对象，都会带有如下的图标："
 			},
 			{
 				"type": "image",
@@ -696,7 +773,7 @@
 			},
 			{
 				"type": "text",
-				"value": "破法者乃是远古巫师议会的士兵之一。它们身上的反弹护盾可以让它们反弹特定种类的法术，战斗号哭则可以短时间内为附近友军迅速恢复生命值，并能减轻它们所遭受的伤害，同时增强它们的攻击力。"
+				"value": "破法者乃是远古巫师议会的兵种之一。它们身上的反弹护盾可以让它们反弹特定种类的法术，战斗号哭则可以短时间内为附近友军迅速恢复生命值，并能减轻它们所遭受的伤害，同时增强它们的攻击力。"
 			}
 		],
 		"related_recipes": []
@@ -712,7 +789,7 @@
 			},
 			{
 				"type": "text",
-				"value": "女巫猎人乃是远古巫师议会的士兵之一。它们身手矫健，可以闪避掉特定种类的攻击，并在射击方面颇有建树。它们的十字弩是敌人的丧钟；而那些不幸沾染上了女巫药水的人，或步履维艰，行走艰难；又或魔力运转晦涩不堪，难以再生。"
+				"value": "女巫猎人乃是远古巫师议会的兵种之一。它们身手矫健，可以闪避掉特定种类的攻击，并在射击方面颇有建树。它们的十字弩是敌人的丧钟；而那些不幸沾染上了女巫药水的人，或步履维艰，行走艰难；又或魔力运转晦涩不堪，难以再生。"
 			}
 		],
 		"related_recipes": []
@@ -728,7 +805,7 @@
 			},
 			{
 				"type": "text",
-				"value": "蘑菇士兵乃是仙女之庭的士兵之一。它们身形灵活，长矛技艺精湛，可以用矛将敌人挑飞至空中。这一招往往会与周围的小精灵相互配合，杀伤性大增。"
+				"value": "蘑菇士兵乃是仙女之庭的兵种之一。它们身形灵活，长矛技艺精湛，可以用矛将敌人挑飞至空中。这一招往往会与周围的小精灵相互配合，杀伤性大增。"
 			}
 		],
 		"related_recipes": []
@@ -744,7 +821,7 @@
 			},
 			{
 				"type": "text",
-				"value": "小精灵乃是仙女之庭的士兵之一。每只小精灵在出生时都会与四种元素中随机一种相互亲和，它们会发出与亲和元素对应的闪电攻击敌人。\n\n火精灵可以熔毁敌人的盔甲，同时高温的烧灼则会让它的敌人倍感软弱无力。\n\n水精灵会用冰霜迟缓敌人的脚步，或者将敌人埋葬于水底。\n\n气精灵可以把敌人抛向空中。\n\n地精灵会以物理伤害的形式对敌人造成伤害，同时，若它的敌人试图飞向空中，那它也不介意将其重新拉回大地母亲的怀抱。\n\n如果只有小精灵，那还不算是太难对付，但若是整合成了一大群，那可就算是十分危险了，尤其是有蘑菇士兵帮忙打头阵的时候。"
+				"value": "小精灵乃是仙女之庭的兵种之一。每只小精灵在出生时都会与四种元素中随机一种相互亲和，它们会发出与亲和元素对应的闪电攻击敌人。\n\n火精灵可以熔毁敌人的盔甲，同时高温的烧灼则会让它的敌人倍感软弱无力。\n\n水精灵会用冰霜迟缓敌人的脚步，或者将敌人埋葬于水底。\n\n气精灵可以把敌人抛向空中。\n\n地精灵会以物理伤害的形式对敌人造成伤害，同时，若它的敌人试图飞向空中，那它也不介意将其重新拉回大地母亲的怀抱。\n\n如果只有小精灵，那还不算是太难对付，但若是整合成了一大群，那可就算是十分危险了，尤其是有蘑菇士兵帮忙打头阵的时候。"
 			}
 		],
 		"related_recipes": []
@@ -777,6 +854,38 @@
 			{
 				"type": "text",
 				"value": "灯之幽魂是下界恶魔的爪牙之一。它们射出的能量球，乃是用被其所杀害之人的灵魂凝结而成的。这些球的飞行速度会越来越慢，但所造成的伤害却会不断上升，被球锁定的人只能左支右绌的进行闪躲，最后精疲力竭。这些球会收割掉被击中者的生命力，而且据说还会吸取魔力。"
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Hulking Zombie": {
+		"category": "basics",
+		"index": 3,
+		"tier": 3,
+		"sections": [
+			{
+				"type": "title",
+				"value": "重型僵尸"
+			},
+			{
+				"type": "text",
+				"value": "重型僵尸是亡灵派系的兵种之一。它们能够承受大量的伤害，并将所承受的伤害转嫁出去。它们的攻击可以将敌人击退或是击飞至空中，并且它们还能够高高跳起，将飞在半空中的敌人狠狠地拽回地面（在这种情况下，它们自身的安全就得不到保障了）。"
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Skeleton Assassin": {
+		"category": "basics",
+		"index": 3,
+		"tier": 3,
+		"sections": [
+			{
+				"type": "title",
+				"value": "骷髅刺客"
+			},
+			{
+				"type": "text",
+				"value": "骷髅刺客是亡灵派系的兵种之一。这种令人惊惧的追猎者可以施放出烟雾弹遮掩自身。它们对于放冷箭的技术了如指掌，能够对敌人造成大量的伤害。它们还能掷出高速而致命的手里剑进行攻击，而对于飞在空中的敌人，它们则会掷出一把大刀，尝试将敌人打回至地面上。"
 			}
 		],
 		"related_recipes": []
@@ -890,7 +999,11 @@
 			},
 			{
 				"type": "text",
-				"value": "现在，拿上你的符文工匠锤，对着已经放置在铁砧上的物品奋力敲打吧。但你要注意，一定要确保所有的东西都放置在了正确的位置，如果你将物品放置在了错误的位置并开始了锻造，那么这些物品将会从铁砧上弹出。\n\n敲打足够多的次数之后，锻造过程就完成了。"
+				"value": "现在，拿上你的符文工匠锤，对着已经放置在铁砧上的物品奋力敲打吧。但你要注意，一定要确保所有的东西都放置在了正确的位置，如果你将物品放置在了错误的位置并开始了锻造，那么这些物品将会从铁砧上弹出。\n\n敲打足够多的次数之后，锻造过程就完成了。"			
+			},
+			{
+					"type": "text",
+					"value": "符文样板还是有些脆弱的，锻造了四次之后就会损坏。如果是构装体使用，那就不太一样了：这种不太精致的自动小玩偶，每次符文锻造完成后都会破坏掉样板（每个样板只能用一次，而不是四次——这在做自动化的时候很有帮助！）。"
 			}
 		],
 		"related_recipes": [
@@ -1129,7 +1242,7 @@
 			},
 			{
 				"type": "text",
-				"value": "学会了这些，你就可以充分发挥自己的想象力，创造新的自动化流程了！统御星锥会在接收到红石信号时停止执行操作，开动你的脑筋，充分利用这一特性。至于输入箱的原料存储问题，你得自己想想办法，或许你得再造一个构装体，甚至一整套系统来维持输入箱内有充足的原料供应。好好想想如何改进你的方案，就能让你的自动化系统发挥出所有潜力！"
+				"value": "学会了这些，你就可以充分发挥自己的想象力，创造新的自动化流程了！统御星锥会在接收到红石信号时停止执行操作，开动你的脑筋，充分利用这一特性。至于输入箱的原料存储问题，你得自己想想办法，或许你得再造一个构装体，甚至一整套系统来维持输入箱内有充足的原料供应。好好想想如何改进你的方案，就发挥出你的自动化系统的所有潜力！"
 			}
 		]
 	},
@@ -1166,11 +1279,46 @@
 			},
 			{
 				"type": "crafting",
-				"location": "mana-and-artifice:runescribing_table"
+				"location": "mana-and-artifice:runescribing/runescribing_table"
 			},
 			{
 				"type": "crafting",
-				"location": "mana-and-artifice:runic_anvil"
+				"location": "mana-and-artifice:runeforging/runic_anvil"
+			}
+		]
+	},
+	"Beheading": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "斩首"
+			},
+			{
+				"type": "text",
+				"value": "I can apply this enchantment to weapons to help guarantee that the heads of enemies I defeat will remain intact for later use.  This enchantment increases the chance that a head will drop from a kill.  If the loot generated already contains a head, it will not be increased more by this enchant."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_i"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_ii"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_iii"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_iv"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_v"
 			}
 		]
 	},
@@ -1642,6 +1790,25 @@
 			}
 		]
 	},
+	"Fireproof": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Fireproof"
+			},
+			{
+				"type": "text",
+				"value": "The Fireproof enchantment makes the item impervious to fire and lava."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/fireproof"
+			}
+		]
+	},
 	"Transitory Step": {
 		"category": "enchantments",
 		"sections": [
@@ -1874,7 +2041,7 @@
 			},
 			{
 				"type": "text",
-				"value": "我打算创造一张可以让我瞬间部署回返仪式的圆盘 。我得在其中设置好正确的仪式结构，然后只需要一些魔力驱动我进行传送即可。"
+				"value": "我打算创造一张可以让我瞬间部署回返仪式的圆盘 。我得在其中设置好正确的仪式结构，然后只需要一些魔力驱动我进行传送即可。\n\nThe Ender Disc can support multiple locations, each with a name.  Quick select locations using the UI key (default 'z')."
 			}
 		],
 		"related_recipes": [
@@ -1935,6 +2102,41 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/spectral_elytra"
+			}
+		]
+	},
+	"Faction Horns": {
+		"category": "artifice",		
+		"sections": [
+			{
+				"type": "title",
+				"value": "Faction Horns"
+			},
+			{
+				"type": "text",
+				"value": "I have found a spell for a given device that resonates deeply with members of my faction.  I can turn this into a horn that when blown will summon allies from my faction to aid me.  This can only be done very infrequently, and my allies will only remain for a short duration."
+			},
+			{
+				"type": "text",
+				"value": "You can only craft/use the horn of your faction."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/horn_council"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/horn_demons"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/horn_fey"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/horn_undead"
 			}
 		]
 	},
@@ -2444,6 +2646,34 @@
 			}
 		]
 	},
+	"Soul Speed": {
+		"index": 0,
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Soul Speed"
+			},
+			{
+				"type": "text",
+				"value": "The Soul Speed enchantment allows you to move faster on soul sand and soul soil. This increased speed is very useful when travelling through the Soul Sand Valley biome in the Nether dimension."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/soul_speed_i"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/soul_speed_ii"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/soul_speed_iii"
+			}
+		]
+	},
 	"Thorns": {
 		"index": 0,
 		"category": "enchantments",
@@ -2581,8 +2811,8 @@
 		],
 		"related_recipes": [
 			{
-				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sorcery/cantrip_book"
+				"type": "crafting",
+				"location": "mana-and-artifice:manaweaver_wand"
 			}
 		]
 	},
@@ -2799,13 +3029,137 @@
 			},
 			{
 				"type": "text",
-				"value": "形状：坠击会在高空中生成一个弹射物（前提是目标地点可以直视天空），这个弹射物会以施术者的指向位置作为目标点（前提是该位置处于施术者的触及范围内）。弹射物会快速下坠，并对撞到的第一个实体或者方块生效。"
+				"value": "形状：坠击会在高空中生成一个弹射物（前提是目标地点可以直视天空），这个弹射物会以施术者的指向位置作为目标点（前提是该位置处于施术者的触及范围内）。弹射物会快速下坠，并对撞到的第一个实体或者方块生效。The smite shape deals extra damage on impact due to its difficulty to target."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "spell_part",
 				"location": "mana-and-artifice:shapes/smite"
+			}
+		]
+	},
+	"Shape: Wrath": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Wrath"
+			},
+			{
+				"type": "text",
+				"value": "This incredibly powerful channeled spell shape will call down smiting blasts of magic to strike all around me within its radius.  Like smite, it must have a clear path to the sky, so it won't be as useful in tight spaces."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/wrath"
+			}
+		]
+	},
+	"Shape: Bound Sword": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Bound Sword"
+			},
+			{
+				"type": "text",
+				"value": "This shape will cause the spell (or spell staff/book) to coalesce into a bound sword.  The components will be applied to whatever mob I hit with it.  The sword has a constant minor mana drain, and consumes a burst of mana with each hit.\n\nTo return it to a spell, either run out of mana or drop the sword on the ground."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/bound_sword"
+			}
+		]
+	},
+	"Shape: Bound Shield": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Bound Shield"
+			},
+			{
+				"type": "text",
+				"value": "This shape will cause the spell (or spell staff/book) to coalesce into a bound shield.  The components will be applied to whatever mob I block with it, as long as they are within 5 blocks of me.  The shield has a constant minor mana drain that increases while actively blocking, and consumes a burst of mana with each block.\n\nTo return it to a spell, either run out of mana or drop the shield on the ground."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/bound_shield"
+			}
+		]
+	},
+	"Shape: Bound Axe": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Bound Axe"
+			},
+			{
+				"type": "text",
+				"value": "This shape will cause the spell (or spell staff/book) to coalesce into a bound axe.  The components will be applied to whatever mob I hit with it.  The axe has a constant minor mana drain, and consumes a burst of mana with each hit.\n\nTo return it to a spell, either run out of mana or drop the axe on the ground."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/bound_axe"
+			}
+		]
+	},
+	"Shape: Bound Bow": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Bound Bow"
+			},
+			{
+				"type": "text",
+				"value": "This shape will cause the spell (or spell staff/book) to coalesce into a bound bow.  The components will be applied to whatever mob I hit with its arrows.  The bow has a constant minor mana drain, and consumes a burst of mana with each arrow fired.  However, the arrows are made of pure mana and don't require nor consume any arrows from my pack.\n\nTo return it to a spell, either run out of mana or drop the bow on the ground."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/bound_bow"
+			}
+		]
+	},
+	"Shape: Summon": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Summon"
+			},
+			{
+				"type": "text",
+				"value": "I can make use of the arcane arts to summon creatures to defend me.  First, I will need to fill a Crystal Phylactery with souls from the creature I want to summon.  This is done simply by having it in my pack when I kill them.  Then, I hold the spell in one hand, and the phylactery in the other.  That will determine what I summon.\n\nIt's also worth noting that any components I put into the spell will be applied to the creature when it is summoned, so I should be aware of the implications...and the possibilities."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/summon"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/crystal_phylactery"
 			}
 		]
 	},
@@ -3147,7 +3501,7 @@
 			},
 			{
 				"type": "text",
-				"value": "我找到了一种方法，这一方法可以让我在本维度以及其它临近维度之间撕开一个小裂隙。裂隙的大小足以让我通过，而且我感觉裂隙通向的总是同一个空间。也许我可以将我的物品储存于这个裂隙中，这样那些小偷小摸之人就侵犯不到我的财产了。\n\n有趣的是，不同的巫师使用裂隙打开的空间也是不一样的，这可能是由于法术构成式中的各部分之间的微妙反应不尽相同。"
+				"value": "我找到了一种方法，这一方法可以让我在本维度以及其它临近维度之间撕开一个小裂隙。裂隙的大小不足以让我通过，但我感觉裂隙通向的总是同一个空间。也许我可以将我的物品储存于这个裂隙中，这样那些小偷小摸之人就侵犯不到我的财产了。\n\n有趣的是，不同的巫师使用裂隙打开的空间也是不一样的，这可能是由于法术构成式中的各部分之间的微妙反应不尽相同。"
 			}
 		],
 		"related_recipes": [
@@ -3174,6 +3528,206 @@
 			{
 				"type": "spell_part",
 				"location": "mana-and-artifice:components/fling"
+			}
+		]
+	},
+	"Component: Felled Oak": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Felled Oak"
+			},
+			{
+				"type": "text",
+				"value": "Using a similar form of magic to Break, I can cause entire trees to fall at my whim."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/felled_oak"
+			}
+		]
+	},
+	"Component: Mist Form": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mist Form"
+			},
+			{
+				"type": "text",
+				"value": "I can use the necromantic arts to turn myself into living mist.  While I am in the form of mist, I can fly, pass through any non-solid block, and take reduced damage when attacked, but I can't interact with any block, item, or entity.\n\nTo end the effect early, double tap space as if to fly.\n\nWARNING:  This spell part can only be crafted by those who have aligned themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/mist_form"
+			}
+		]
+	},
+	"Component: Mind Vision": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mind Vision"
+			},
+			{
+				"type": "text",
+				"value": "I can use a forbidden branch of magic to access the mind of another, seeing what they see for a short time.\n\nTo end the effect early, double tap space as if to fly.\n\nWARNING:  This spell part can only be crafted by those who have aligned themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/mind_vision"
+			}
+		]
+	},
+	"Component: Recall": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Recall"
+			},
+			{
+				"type": "text",
+				"value": "I can focus my arcane magic on a Rune of Marking held in my hand to transport the spell's target to its marked location instantly.  It can go about 500 blocks per magnitude, and might get them into trouble if the marked location is in a different dimension.  In those cases, a Ritual of Return would be the better choice."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/recall"
+			}
+		]
+	},
+	"Component: Ley Line Transport": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ley Line Transport"
+			},
+			{
+				"type": "text",
+				"value": "By focusing on the ambient streams of magic that form the ley lines of the world, I can attune my own magic to them and cause my target to be swept up and carried along them at immense speed.\n\nThis spell requires being cast twice in order to work.  The first cast no matter the target will cause my target to start seeing ley lines for about 10 seconds.  The second cast will cause the target to launch along the closest ley line to where they are looking.\n\nIt seems this spell can only target other wizards, and only if they are allied with me (Minecraft Scoreboard Teams)."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/ley_line_transport"
+			}
+		]
+	},
+	"Component: Summon Skeletal Horse": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Summon Skeletal Horse"
+			},
+			{
+				"type": "text",
+				"value": "I can reach across the border of death to animate bones to carry me where I need to go.\n\nWARNING:  This spell part can only be crafted by those who have aligned themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/summon_skeletal_horse"
+			}
+		]
+	},
+	"Component: Possession": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Possession"
+			},
+			{
+				"type": "text",
+				"value": "I can invade the mind of another to force them to do my bidding.  Left clicking while posessing a target may sometimes yield special abilities.\n\nTo end the effect early, double tap space as if to fly.\n\nWARNING:  This spell part can only be crafted by those who have aligned themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/posession"
+			}
+		]
+	},
+	"Component: Living Bomb": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Living Bomb"
+			},
+			{
+				"type": "text",
+				"value": "I can ignite my target into a living bomb.  They will take fire damage based on the magnitude of the spell.  If they die while under the effect of this spell, they will explode based on the magnitude of the spell."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/living_bomb"
+			}
+		]
+	},
+	"Component: Wither": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Wither"
+			},
+			{
+				"type": "text",
+				"value": "I can tap into the slow decay of the grave and accelerate the process, making my target wither before my very eyes."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/wither"
+			}
+		]
+	},
+	"Component: Transitory Tunnel": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Transitory Tunnel"
+			},
+			{
+				"type": "text",
+				"value": "I can target simple blocks to make them passable for a short time before they return to their original state."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/transitory_tunnel"
 			}
 		]
 	},
@@ -3267,7 +3821,7 @@
 			},
 			{
 				"type": "text",
-				"value": "我可以使用魔法，短时间内予以方块生命！在回到他们原先位置之前，他们会在我的周围一蹦一蹦的闲逛，还会帮助我攻击敌人。"
+				"value": "我可以使用魔法，短时间内予以方块生命！在回到他们原先位置之前，他们会在我的周围一蹦一蹦的闲逛，还会帮助我攻击敌人。\n\nWARNING: This can only be crafted by those who have aligned themselves to the Ancient Council of Wizards."
 			}
 		],
 		"related_recipes": [
@@ -3591,7 +4145,7 @@
 			},
 			{
 				"type": "text",
-				"value": "我曾见过，某人从仙女之庭中召唤出具有保护能力的荆棘与藤蔓，这些荆棘会保护我免受与它相似的植物的伤害，比如仙人掌，甜浆果丛，以及其他的荆棘。\n\n注意：只有与仙女之庭结盟的人才能运用这一法术构件。"
+				"value": "我曾见过，某人从仙女之庭中召唤出具有保护能力的荆棘与藤蔓，这些荆棘会保护我免受与它相似的植物的伤害，比如仙人掌，甜浆果丛，以及其他的荆棘。It will also retaliate against attackers, and provides some armor as attacks will have a hard time finding their way through the thick thorns.\n\n注意：只有与仙女之庭结盟的人才能运用这一法术构件。"
 			}
 		],
 		"related_recipes": [
@@ -3671,7 +4225,7 @@
 			},
 			{
 				"type": "text",
-				"value": "有些巫师话真的很多，我得想出一种办法来让他们闭嘴。"
+				"value": "有些巫师话真的很多，我得想出一种办法来让他们闭嘴。This spell should quiet them down, and at the same time prevent them from casting spells.  I'm not sure which one is more valuable."
 			}
 		],
 		"related_recipes": [
@@ -4041,6 +4595,26 @@
 			}
 		]
 	},
+	"Modifier: Delay": {
+		"index": "3",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Delay"
+			},
+			{
+				"type": "text",
+				"value": "I can choose to make the components within my spells affect the target a short delay after hitting them.  It doesn't matter if they move, teleport, run, or hide.  They're mine."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:modifiers/delay"
+			}
+		]
+	},
 	"Modifier: Range": {
 		"index": "3",
 		"category": "sorcery",
@@ -4235,7 +4809,7 @@
 			},
 			{
 				"type": "text",
-				"value": "铁钟嗡鸣，响彻天际。这会召唤出一名神秘的实体，人们都称其为派系中间人。这一实体会停留于此半天时间，你可以用自身所属派系的生物以及一些派系标志（通过击败你遇到的派系敌人获得），来换取其他两个派系的圣物。我得确保在召唤它之前准备好至少一个可用于交易的圣物，以及各派系各一组的标志才行。"
+				"value": "铁钟嗡鸣，响彻太虚。一名神秘的实体会被召来此处，人们都称其为派系中间人。这一实体会停留于此半天时间，你可以用自身所属派系的生物以及一些派系标志（通过击败你遇到的派系敌人获得），来换取其他两个派系的圣物。我得确保在召唤它之前准备好至少一个可用于交易的圣物，以及各派系各一组的标志才行。"
 			}
 		],
 		"related_recipes": [
@@ -4564,13 +5138,17 @@
 			},
 			{
 				"type": "text",
-				"value": "一笔一划地在地上画出仪式，一次还好，次数多了既费时又耗力。使用仪式袋可以帮助你解决这一问题。\n\n激活仪式后，仪式会显示出所需要的耗材，摆放好耗材之后，拿着仪式袋潜行右键仪式中心，即可将仪式袋与该仪式绑定。\n\n潜行右键空气可以打开袋子。在其中你可以放上粉笔以及仪式耗材。\n\n对着平坦且空间足够的表面右键仪式袋，将会立刻在目标处开启一个与仪式袋绑定的仪式。这一过程消耗的是仪式袋内的物品。\n\n此外，使用仪式袋布置的仪式，在仪式运行速度上将会比手动布置的仪式快很多。"
+				"value": "一笔一划地在地上画出仪式，一次还好，次数多了既费时又耗力。使用仪式袋可以帮助你解决这一问题。\n\n激活仪式后，仪式会显示出所需要的耗材，摆放好耗材之后，拿着仪式袋潜行右键仪式中心，即可将仪式袋与该仪式绑定。\n\n潜行右键空气可以打开袋子。在其中你可以放上粉笔以及仪式耗材。\n\n对着平坦且空间足够的表面右键仪式袋，将会立刻在目标处开启一个与仪式袋绑定的仪式。这一过程消耗的是仪式袋内的物品。\n\n此外，使用仪式袋布置的仪式，在仪式运行速度上将会比手动布置的仪式快很多。\n\nRitual kits can store multiple rituals.  Select a slot before binding or placing using the UI key (default 'z') and the radial menu."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:rituals/ritual_kit"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/rituals/fast_ritual_kit"
 			}
 		]
 	},
@@ -5124,7 +5702,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/brimstone_charm"
+				"location": "mana-and-artifice:manaweaving/artifice/brimstone_charm"
 			}
 		]
 	},
@@ -5367,13 +5945,33 @@
 			},
 			{
 				"type": "text",
-				"value": "这一魔力充盈的手镯会保护我不受火焰与熔岩的侵害。当然，我还是得谨慎些，因为它并不能永远的保护我，最终还是会受损破碎的。\n\n这一手镯只能由那些与下界恶魔结成同盟的人制作出来。"
+				"value": "这一魔力充盈的手镯会保护我不受火焰与熔岩的侵害。当然，我还是得谨慎些，因为它并不能永远的保护我，最终还是会停止工作的，需要重新充能方可恢复使用。\n\n这一手镯只能由那些与下界恶魔结成同盟的人制作出来。"
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/artifice/emberglow_bracelet"
+			}
+		]
+	},
+	"Coffin": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Coffin"
+			},
+			{
+				"type": "text",
+				"value": "A staple of the undead, the coffin functions like a bed but only for those that have joined the ranks of the undead.  It also restores a portion of the souls that the undead use to fuel their spells.\n\nThis coffin can only be crafted by those that have allied themselves with the ranks of the undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/coffin"
 			}
 		]
 	},
@@ -5387,7 +5985,7 @@
 			},
 			{
 				"type": "text",
-				"value": "这一魔力充盈的手镯会牵引周围残存的魔法微粒，当我魔力捉襟见肘时，可以利用这一手镯为我的法术充能。还是比较值的，毕竟谁都会有魔力不够用的情况。\n\n这一手镯只能由那些与远古巫师议会结成同盟的人制作出来。"
+				"value": "这一魔力充盈的手镯会牵引周围残存的魔法微粒，如果我离魔脉的距离足够近，它也可以抽取魔脉中的能量。当我魔力捉襟见肘时，可以利用这一手镯为我的法术充能。还是比较值的，毕竟谁都会有魔力不够用的情况。\n\n这一手镯只能由那些与远古巫师议会结成同盟的人制作出来。"
 			}
 		],
 		"related_recipes": [
@@ -5506,6 +6104,26 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/artifice/air_cast_ring"
+			}
+		]
+	},
+	"Ring of Brittle Bone": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ring of Brittle Bone"
+			},
+			{
+				"type": "text",
+				"value": "This sinister ring, when worn, seems to draw more of the mystical life force out of targets killed by undead wizards.\n\nWARNING: This ring can only be crafted by those that have allied themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/bone_ring"
 			}
 		]
 	},
@@ -5669,13 +6287,13 @@
 			}
 		]
 	},
-	"Ring of Transportation": {
+	"Ring of Collection (Greater)": {
 		"index": 0,
 		"category": "artifice",
 		"sections": [
 			{
 				"type": "title",
-				"value": "运送戒指"
+				"value": "高级收集之戒"
 			},
 			{
 				"type": "text",
@@ -6104,6 +6722,54 @@
 			}
 		]
 	},
+	"Cold Dark": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Cold Dark"
+			},
+			{
+				"type": "text",
+				"value": "This ritual calls out to the legions of the Undead.  By doing so, you are offering to align yourself with the undead in exchange for access to their dark powers.\n\nIf the undead respond, they will give you a sign.  Follow the instructions if you believe you are worthy.\n\nAllying oneself with such entities will almost assuredly make enemies of others."
+			},
+			{
+				"type": "text",
+				"value": "WARNING:  The undead faction is a much more difficult faction to play.  Your casting resource becomes souls, something that does not naturally regenerate.  You must kill others to obtain their souls.  Other undead give the least, then animals, then monsters, then villagers, then players.\n\nYou can sleep in coffins as if they were beds, will burn in sunlight, but can breathe underwater.  Wearing a helmet can mitigate the burning but eventually the helmet will burn away and break.\n\nChoose this path at your own risk."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/cold_dark"
+			}
+		]
+	},
+	"Sanctum Invocation": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of Sanctum Invocation"
+			},
+			{
+				"type": "text",
+				"value": "This ritual Designates a place of power for your faction.  Upon completion, it spawns a single block, a 'circle of power'.  Right click this block to display a structure that you will then need to build.  Upon completion, the circle of power will activate.  Allied faction players (and you of course) when standing near or within the completed structure will gain a powerful buff to their spell casting, causing more damage with spells and making their buffs last significantly longer."
+			},
+			{
+				"type": "text",
+				"value": "For the undead, this sanctum serves an additional purpose.  Enemies within the sanctum will be given the 'Vulnerable Soul' debuff.  Killing enemies with this debuff will yield significantly more souls than normal."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/circle_of_power"
+			}
+		]
+	},
 	"Flat Lands": {
 		"index": 0,
 		"category": "rituals",
@@ -6216,7 +6882,7 @@
 			},
 			{
 				"type": "text",
-				"value": "符法虽是一种法术，但却无需额外材料，仅凭绘画织魔图样即可进行施法。每当你的等阶提升时，你都会解锁一些新的符法。\n\n你可以在你的符法之书内设置符法的图样组合（每个图样组合至少包含两个图样），之后，你甚至可以将非引导类符法组合起来，组成自定义符法。"
+				"value": "符法虽是一种法术，但却无需额外材料，仅凭绘画织魔图样即可进行施法。每当你的等阶提升时，你都会解锁一些新的符法。\n\n你可以在你的织魔者之杖内设置/查看符法的图样组合（每个图样组合至少包含两个图样），之后，你甚至可以将非引导类符法组合起来，组成自定义符法。"
 			},
 			{
 				"type": "title",
@@ -6249,10 +6915,6 @@
 		],
 		"related_recipes": [
 			{
-				"location": "mana-and-artifice:manaweaving/sorcery/cantrip_book",
-				"type": "manaweaving_altar"
-			},
-			{
 				"location": "mana-and-artifice:manaweaver_wand",
 				"type": "crafting"
 			},
@@ -6268,11 +6930,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "即兴织魔者之杖"
+				"value": "临时织魔者之杖"
 			},
 			{
 				"type": "text",
-				"value": "在紧要关头，我很确定我能够仅凭一根木棍以及一朵魔法花或者秘鸣宝石，打造出一根即兴织魔者之杖。它能让我在紧急情况下进行魔力编织，但使用数次后便会损毁。然而，这几次的使用机会足以让我施放一次或者两次的符法，关键时刻足以扭转乾坤。"
+				"value": "在紧要关头，我很确定我能够仅凭一根木棍以及一朵魔法花或者秘鸣宝石，打造出一根临时织魔者之杖。它能让我在紧急情况下进行魔力编织，但使用数次后便会损毁。然而，这几次的使用机会足以让我施放一次或者两次的符法，关键时刻足以扭转乾坤。"
 			}
 		],
 		"related_recipes": [
@@ -6362,6 +7024,46 @@
 			}
 		]
 	},
+	"Runic Light": {
+		"index": "0",
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Runic Light"
+			},
+			{
+				"type": "text",
+				"value": "The runic light is a decoration block that gives a rustic magical feel wherever it is placed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runic_light"
+			}
+		]
+	},	
+	"Runic Torch": {
+		"index": "0",
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Runic Torch"
+			},
+			{
+				"type": "text",
+				"value": "The runic torch is a decoration block that gives a medieval magical feel wherever it is placed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runic_torch"
+			}
+		]
+	},	
 	"Tables": {
 		"index": "0",
 		"category": "artifice",
@@ -6549,7 +7251,7 @@
 			},
 			{
 				"type": "text",
-				"value": "当你完成了工作台配制以及部件制作之后，你需要决定向你的构装体中注入何种元素的亲和，每种亲和都会给构装体带来不一样的属性。对这周围 8 格秘鸣晶体施放特定亲和的法术，即可为你的构装体设置亲和度。当你这么做之后，晶体上方会出现印记，显示出当前晶体的亲和度。接着，在工作台上放置好构装体所必须的 5 个部件，然后空手右击激活工作台，开启制造过程。当注入结束后，你就可以对你的构装体下指令了。"
+				"value": "当你完成了工作台配制以及部件制作之后，你需要决定向你的构装体中注入何种元素的亲和，每种亲和都会给构装体带来不一样的属性。对这周围 8 格秘鸣晶体施放特定亲和的法术，即可为你的构装体设置亲和度。The spells must directly target the crystals, so channeled spells, AoE spells and self spells, for example, will not work. 当你这么做之后，晶体上方会出现印记，显示出当前晶体的亲和度。接着，在工作台上放置好构装体所必须的 5 个部件，然后空手右击激活工作台，开启制造过程。当注入结束后，你就可以对你的构装体下指令了。"
 			},
 			{
 				"type": "title",

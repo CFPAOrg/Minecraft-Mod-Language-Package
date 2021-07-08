@@ -131,7 +131,11 @@
 			{
 				"type": "title",
 				"value": "The HUD"
-			},			
+			},
+			{
+				"type": "text",
+				"value": "The main hud is the mana bar.  In this you will see a badge with your level in it, a main bar representing your mana, and a smaller bar below representing your magic XP to next level.  The main bar also has a darker section when holding a spell; this represents the estimated mana cost of the spell, or in the case of a channeled spell, the cost to start channeling it."
+			},	
 			{
 				"type": "title",
 				"value": "HUD Display Option"
@@ -290,6 +294,35 @@
 			}
 		]
 	},
+	"Ley Lines": {
+		"category": "basics",
+		"index": -91,
+		"tier": 3,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ley Lines"
+			},
+			{
+				"type": "text",
+				"value": "There is a network of nodes of power scattered through the world.  These nodes are called Ley Lines.  Those aligned with the Council of Wizards can use the Ley Line Transport spell to travel between them, and the Ley Line Bracelet to draw power from these ley lines when in close proximity to reduce the mana cost of their spells.\n\nLey Lines are invisible unless the Unguent of Seeing is active, but it is not required to make use of ley lines.\n\nLey Lines will have additional functionality in the future."
+			}
+		],
+		"related_recipes": [			
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sight_unguent"
+			},
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/ley_line_transport"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/ley_line_bracelet"
+			}
+		]
+	},
 	"Manaweaver Villagers": {
 		"category": "basics",
 		"index": -9999,
@@ -354,7 +387,7 @@
 			},
 			{
 				"type": "text",
-				"value": "Once you have advanced in tier, you will unlock upgrades to the Runeforge in the form of speed increases and ore doubling."
+				"value": "Once you have advanced in tier, you will unlock upgrades to the Runeforge in the form of speed increases, ore doubling, and item repair."
 			}
 		],
 		"related_recipes": [
@@ -396,7 +429,7 @@
 			},
 			{
 				"type": "text",
-				"value": "By placing pedestals within the immediate vicinity of a runeforge or brimstone forge with chimerite crystals on top of them, I can alter its effects slightly.\n\nRed, Yellow, or Orange crystals will apply an ore doubling effect if there are two of them.  There may be more to come in the future."
+				"value": "By placing pedestals within the immediate vicinity of a runeforge or brimstone forge with chimerite crystals on top of them, I can alter its effects slightly.\n\nRed, Yellow, or Orange crystals will apply an ore doubling effect if there are two of them.\n\nWhite, Cyan, Blue, or Light Blue will cause the forge to repair items put into it, though it will attempt to smelt them first.\n\nThere may be more to come in the future."
 			}
 		],
 		"related_recipes": [
@@ -409,7 +442,11 @@
 				"locations": [
 					"mana-and-artifice:chimerite_crystals/crystal_orange",
 					"mana-and-artifice:chimerite_crystals/crystal_red",
-					"mana-and-artifice:chimerite_crystals/crystal_yellow"
+					"mana-and-artifice:chimerite_crystals/crystal_yellow",
+					"mana-and-artifice:chimerite_crystals/crystal_light_blue",
+					"mana-and-artifice:chimerite_crystals/crystal_blue",
+					"mana-and-artifice:chimerite_crystals/crystal_cyan",
+					"mana-and-artifice:chimerite_crystals/crystal_white"					
 				]
 			}
 		]
@@ -509,10 +546,50 @@
 			},
 			{
 				"type": "text",
-				"value": "I can't believe it's been under my nose this whole time - a hidden magical ore that I mistook for excess bits of rock when mining other valuable ores!  I call it Chimerite because it can look just like mining debris until one's magical senses are honed to be able to detect it.\n\nIt's easiest to find in emerald ore, something to do with the structure of emeralds themselves.  Most mages will be able to sense these with only a little bit of magical experience, probably mages that are at least level 5.\n\nNext are diamonds.  While not as easy as emeralds, chimerite can be found here by mages with a little bit more experience, above level 10.\n\nLastly is coal.  Chimerite is technically there in trace elements, but it takes a finely tuned magical mind to pick up the traces that are large enough to be useable.  I would say no mage under level 20 would see it.\n\nOn that point, I should note that the chimerite is also often destroyed as part of the mining process, and isn't always retrievable from every mining attempt.  Emeralds seem to have the best success rate here, followed by diamonds, and then again by coal."
+				"value": "I can't believe it's been under my nose this whole time - a hidden magical ore that I mistook for excess bits of rock when mining other valuable ores!  I call it Chimerite because it can look just like mining debris until one's magical senses are honed to be able to detect it.\n\nIt's easiest to find in emerald ore, something to do with the structure of emeralds themselves.  Most mages will be able to sense these with only a little bit of magical experience, probably mages that are at least level 5.\n\nNext are diamonds.  While not as easy as emeralds, chimerite can be found here by mages with a little bit more experience, above level 10.\n\nLastly is coal.  Chimerite is technically there in trace elements, but it takes a finely tuned magical mind to pick up the traces that are large enough to be useable.  I would say no mage under level 20 would see it.\n\nOn that point, I should note that the chimerite is also often destroyed as part of the mining process, and isn't always retrievable from every mining attempt.  Emeralds seem to have the best success rate here, followed by diamonds, and then again by coal.\n\nIt can be crafted into blocks and back using a crafting table."
 			}
 		],
 		"related_recipes": []
+	},
+	"Useful Vanilla Recipes": {
+		"category": "basics",
+		"index": -2,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Useful Vanilla Recipes"
+			},
+			{
+				"type": "text",
+				"value": "This mod adds a few recipes for vanilla items that are often used in the mod or just generally difficult to obtain.  They are listed here.  Some are tier locked and will appear as you advance."
+			},
+			{
+				"type": "text",
+				"value": "The included recipes are:\n\nLeather\nCrying Obsidian\nPrismarine Crystal\nPrismarine Shard\nGilded Blackstone"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/leather"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/crying_obsidian"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/prismarine_crystal"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/prismarine_shard"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/utility/gilded_blackstone"
+			}
+		]
 	},
 	"Factions": {
 		"category": "basics",
@@ -536,7 +613,7 @@
 			},
 			{
 				"type": "text",
-				"value": "Use caution, however.  Using spells and relics from the other factions may cause them to raid you, which involves them sending very powerful assassins after you.  These assassins have more powerful abilities than their natually spawning counterparts, and therefore will have more powerful abilities.  They will also learn from their fights against you and will become more difficult over time.  If they manage to kill you however, the fights will become easier."
+				"value": "Though you must take care: using spells and relics from the other factions will eventually cause them to raid you, which involves them sending very powerful assassins after you.  These assassins have more devastating abilities than their natually spawning counterparts, and will prove significantly tougher to defeat.  They will also learn from their fights against you and will become more difficult over time.  If they manage to kill you, the fights will become easier."
 			},
 			{
 				"type": "text",
@@ -781,6 +858,38 @@
 		],
 		"related_recipes": []
 	},
+	"Enemy: Hulking Zombie": {
+		"category": "basics",
+		"index": 3,
+		"tier": 3,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enemy: Hulking Zombie"
+			},
+			{
+				"type": "text",
+				"value": "Hulking Zombies are one of the soldiers of the Undead.  They can take an extreme amount of damage, and can dish it out as well.  Their attacks can either knock their target back or up into the air, and they've been known to leap at airborne targets with the intent of spiking them back down to the ground (often at the expense of their own safety)."
+			}
+		],
+		"related_recipes": []
+	},
+	"Enemy: Skeleton Assassin": {
+		"category": "basics",
+		"index": 3,
+		"tier": 3,
+		"sections": [
+			{
+				"type": "title",
+				"value": "Enemy: Skeleton Assassin"
+			},
+			{
+				"type": "text",
+				"value": "Skeleton Assassins are one of the soldiers of the Undead.  These terrifying stalkers have the ability to drop smoke bombs to make themselves invisible.  They know how to attack from concealment, making their attacks deal significantly more damage.  They also can throw deadly shurikens with high speed, and will throw bolos at flying targets in an attempt to bring them to the ground."
+			}
+		],
+		"related_recipes": []
+	},
 	"Manaweaving Altar": {
 		"category": "manaweaving",
 		"sections": [
@@ -891,6 +1000,10 @@
 			{
 				"type": "text",
 				"value": "Take your runesmith's hammer and begin to strike the items on the anvil.  Be careful to have everything set up correctly, or the items will not fit together properly, and they will pop off the anvil.\n\nOnce you hit the item enough times, your forging will be complete."
+			},
+			{
+				"type": "text",
+				"value": "Rune patterns are somewhat brittle and will break after forging 4 times.  The exception to this is constructs; they aren't the most graceful of automati and will unfortunately break the pattern every time they forge a rune (getting one use out of it instead of four - this helps with making automations!)"
 			}
 		],
 		"related_recipes": [
@@ -1166,11 +1279,46 @@
 			},
 			{
 				"type": "crafting",
-				"location": "mana-and-artifice:runescribing_table"
+				"location": "mana-and-artifice:runescribing/runescribing_table"
 			},
 			{
 				"type": "crafting",
-				"location": "mana-and-artifice:runic_anvil"
+				"location": "mana-and-artifice:runeforging/runic_anvil"
+			}
+		]
+	},
+	"Beheading": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Beheading"
+			},
+			{
+				"type": "text",
+				"value": "I can apply this enchantment to weapons to help guarantee that the heads of enemies I defeat will remain intact for later use.  This enchantment increases the chance that a head will drop from a kill.  If the loot generated already contains a head, it will not be increased more by this enchant."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_i"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_ii"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_iii"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_iv"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/beheading_v"
 			}
 		]
 	},
@@ -1642,6 +1790,25 @@
 			}
 		]
 	},
+	"Fireproof": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Fireproof"
+			},
+			{
+				"type": "text",
+				"value": "The Fireproof enchantment makes the item impervious to fire and lava."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/fireproof"
+			}
+		]
+	},
 	"Transitory Step": {
 		"category": "enchantments",
 		"sections": [
@@ -1874,7 +2041,7 @@
 			},
 			{
 				"type": "text",
-				"value": "I've managed to create a disc that can instantly perform a ritual of return.  I just need to set the correct pattern in it, then it uses some of my mana to move me around."
+				"value": "I've managed to create a disc that can instantly perform a ritual of return.  I just need to set the correct pattern in it, then it uses some of my mana to move me around.\n\nThe Ender Disc can support multiple locations, each with a name.  Quick select locations using the UI key (default 'z')."
 			}
 		],
 		"related_recipes": [
@@ -1935,6 +2102,41 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/spectral_elytra"
+			}
+		]
+	},
+	"Faction Horns": {
+		"category": "artifice",		
+		"sections": [
+			{
+				"type": "title",
+				"value": "Faction Horns"
+			},
+			{
+				"type": "text",
+				"value": "I have found a spell for a given device that resonates deeply with members of my faction.  I can turn this into a horn that when blown will summon allies from my faction to aid me.  This can only be done very infrequently, and my allies will only remain for a short duration."
+			},
+			{
+				"type": "text",
+				"value": "You can only craft/use the horn of your faction."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/horn_council"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/horn_demons"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/horn_fey"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/horn_undead"
 			}
 		]
 	},
@@ -2444,6 +2646,34 @@
 			}
 		]
 	},
+	"Soul Speed": {
+		"index": 0,
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Soul Speed"
+			},
+			{
+				"type": "text",
+				"value": "The Soul Speed enchantment allows you to move faster on soul sand and soul soil. This increased speed is very useful when travelling through the Soul Sand Valley biome in the Nether dimension."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/soul_speed_i"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/soul_speed_ii"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/soul_speed_iii"
+			}
+		]
+	},
 	"Thorns": {
 		"index": 0,
 		"category": "enchantments",
@@ -2580,8 +2810,8 @@
 		],
 		"related_recipes": [
 			{
-				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/sorcery/cantrip_book"
+				"type": "crafting",
+				"location": "mana-and-artifice:manaweaver_wand"
 			}
 		]
 	},
@@ -2705,7 +2935,7 @@
 		"related_recipes": [	
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/leather_from_zombie_flesh"
+				"location": "mana-and-artifice:manaweaving/utility/leather"
 			}		
 		]
 	},
@@ -2799,13 +3029,137 @@
 			},
 			{
 				"type": "text",
-				"value": "This spell shape will spawn a projectile high up in the sky (provided the target has a clear path to the sky), targeted at the point where the caster is pointing (if in range).  The projectile will fall quickly and will affect the first entity or block it hits."
+				"value": "This spell shape will spawn a projectile high up in the sky (provided the target has a clear path to the sky), targeted at the point where the caster is pointing (if in range).  The projectile will fall quickly and will affect the first entity or block it hits.  The smite shape deals extra damage on impact due to its difficulty to target."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "spell_part",
 				"location": "mana-and-artifice:shapes/smite"
+			}
+		]
+	},
+	"Shape: Wrath": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Wrath"
+			},
+			{
+				"type": "text",
+				"value": "This incredibly powerful channeled spell shape will call down smiting blasts of magic to strike all around me within its radius.  Like smite, it must have a clear path to the sky, so it won't be as useful in tight spaces."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/wrath"
+			}
+		]
+	},
+	"Shape: Bound Sword": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Bound Sword"
+			},
+			{
+				"type": "text",
+				"value": "This shape will cause the spell (or spell staff/book) to coalesce into a bound sword.  The components will be applied to whatever mob I hit with it.  The sword has a constant minor mana drain, and consumes a burst of mana with each hit.\n\nTo return it to a spell, either run out of mana or drop the sword on the ground."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/bound_sword"
+			}
+		]
+	},
+	"Shape: Bound Shield": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Bound Shield"
+			},
+			{
+				"type": "text",
+				"value": "This shape will cause the spell (or spell staff/book) to coalesce into a bound shield.  The components will be applied to whatever mob I block with it, as long as they are within 5 blocks of me.  The shield has a constant minor mana drain that increases while actively blocking, and consumes a burst of mana with each block.\n\nTo return it to a spell, either run out of mana or drop the shield on the ground."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/bound_shield"
+			}
+		]
+	},
+	"Shape: Bound Axe": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Bound Axe"
+			},
+			{
+				"type": "text",
+				"value": "This shape will cause the spell (or spell staff/book) to coalesce into a bound axe.  The components will be applied to whatever mob I hit with it.  The axe has a constant minor mana drain, and consumes a burst of mana with each hit.\n\nTo return it to a spell, either run out of mana or drop the axe on the ground."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/bound_axe"
+			}
+		]
+	},
+	"Shape: Bound Bow": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Bound Bow"
+			},
+			{
+				"type": "text",
+				"value": "This shape will cause the spell (or spell staff/book) to coalesce into a bound bow.  The components will be applied to whatever mob I hit with its arrows.  The bow has a constant minor mana drain, and consumes a burst of mana with each arrow fired.  However, the arrows are made of pure mana and don't require nor consume any arrows from my pack.\n\nTo return it to a spell, either run out of mana or drop the bow on the ground."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/bound_bow"
+			}
+		]
+	},
+	"Shape: Summon": {
+		"index": "1",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Summon"
+			},
+			{
+				"type": "text",
+				"value": "I can make use of the arcane arts to summon creatures to defend me.  First, I will need to fill a Crystal Phylactery with souls from the creature I want to summon.  This is done simply by having it in my pack when I kill them.  Then, I hold the spell in one hand, and the phylactery in the other.  That will determine what I summon.\n\nIt's also worth noting that any components I put into the spell will be applied to the creature when it is summoned, so I should be aware of the implications...and the possibilities."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:shapes/summon"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/crystal_phylactery"
 			}
 		]
 	},
@@ -3147,7 +3501,7 @@
 			},
 			{
 				"type": "text",
-				"value": "I have discovered how to tear a small rift between this dimension and one of the neighbouring ones.  It's large enough to fit myself through, but it does always seem to go to the same place for me.  Maybe I can use it to store a few things safely away from prying eyes and sticky fingers.\n\nInterestingly, other mages that have cast this spell have their rift open to a different location.  It must be something to do with how their magic interacts with the spell's formula."
+				"value": "I have discovered how to tear a small rift between this dimension and one of the neighbouring ones.  It's not large enough to fit myself through, but it does always seem to go to the same place for me.  Maybe I can use it to store a few things safely away from prying eyes and sticky fingers.\n\nInterestingly, other mages that have cast this spell have their rift open to a different location.  It must be something to do with how their magic interacts with the spell's formula."
 			}
 		],
 		"related_recipes": [
@@ -3177,6 +3531,206 @@
 			}
 		]
 	},
+	"Component: Felled Oak": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Felled Oak"
+			},
+			{
+				"type": "text",
+				"value": "Using a similar form of magic to Break, I can cause entire trees to fall at my whim."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/felled_oak"
+			}
+		]
+	},
+	"Component: Mist Form": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mist Form"
+			},
+			{
+				"type": "text",
+				"value": "I can use the necromantic arts to turn myself into living mist.  While I am in the form of mist, I can fly, pass through any non-solid block, and take reduced damage when attacked, but I can't interact with any block, item, or entity.\n\nTo end the effect early, double tap space as if to fly.\n\nWARNING:  This spell part can only be crafted by those who have aligned themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/mist_form"
+			}
+		]
+	},
+	"Component: Mind Vision": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Mind Vision"
+			},
+			{
+				"type": "text",
+				"value": "I can use a forbidden branch of magic to access the mind of another, seeing what they see for a short time.\n\nTo end the effect early, double tap space as if to fly.\n\nWARNING:  This spell part can only be crafted by those who have aligned themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/mind_vision"
+			}
+		]
+	},
+	"Component: Recall": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Recall"
+			},
+			{
+				"type": "text",
+				"value": "I can focus my arcane magic on a Rune of Marking held in my hand to transport the spell's target to its marked location instantly.  It can go about 500 blocks per magnitude, and might get them into trouble if the marked location is in a different dimension.  In those cases, a Ritual of Return would be the better choice."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/recall"
+			}
+		]
+	},
+	"Component: Ley Line Transport": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ley Line Transport"
+			},
+			{
+				"type": "text",
+				"value": "By focusing on the ambient streams of magic that form the ley lines of the world, I can attune my own magic to them and cause my target to be swept up and carried along them at immense speed.\n\nThis spell requires being cast twice in order to work.  The first cast no matter the target will cause my target to start seeing ley lines for about 10 seconds.  The second cast will cause the target to launch along the closest ley line to where they are looking.\n\nIt seems this spell can only target other wizards, and only if they are allied with me (Minecraft Scoreboard Teams)."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/ley_line_transport"
+			}
+		]
+	},
+	"Component: Summon Skeletal Horse": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Summon Skeletal Horse"
+			},
+			{
+				"type": "text",
+				"value": "I can reach across the border of death to animate bones to carry me where I need to go.\n\nWARNING:  This spell part can only be crafted by those who have aligned themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/summon_skeletal_horse"
+			}
+		]
+	},
+	"Component: Possession": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Possession"
+			},
+			{
+				"type": "text",
+				"value": "I can invade the mind of another to force them to do my bidding.  Left clicking while posessing a target may sometimes yield special abilities.\n\nTo end the effect early, double tap space as if to fly.\n\nWARNING:  This spell part can only be crafted by those who have aligned themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/posession"
+			}
+		]
+	},
+	"Component: Living Bomb": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Living Bomb"
+			},
+			{
+				"type": "text",
+				"value": "I can ignite my target into a living bomb.  They will take fire damage based on the magnitude of the spell.  If they die while under the effect of this spell, they will explode based on the magnitude of the spell."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/living_bomb"
+			}
+		]
+	},
+	"Component: Wither": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Wither"
+			},
+			{
+				"type": "text",
+				"value": "I can tap into the slow decay of the grave and accelerate the process, making my target wither before my very eyes."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/wither"
+			}
+		]
+	},
+	"Component: Transitory Tunnel": {
+		"index": "2",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Transitory Tunnel"
+			},
+			{
+				"type": "text",
+				"value": "I can target simple blocks to make them passable for a short time before they return to their original state."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:components/transitory_tunnel"
+			}
+		]
+	},
 	"Component: Divination": {
 		"index": "2",
 		"category": "sorcery",
@@ -3187,7 +3741,7 @@
 			},
 			{
 				"type": "text",
-				"value": "I can use a combination of arcane and ender magic to divine the location of nearby ores, making them visible to me through walls at a short distance.  If I hold an block in my offhand, it will focus the spell on finding that block."
+				"value": "I can use a combination of arcane and ender magic to divine the location of nearby ores, making them visible to me through walls at a short distance.  If I hold a block in my offhand, it will focus the spell on finding that block."
 			}
 		],
 		"related_recipes": [
@@ -3196,7 +3750,7 @@
 				"location": "mana-and-artifice:components/divination"
 			}
 		]
-	},
+	},	
 	"Component: Confuse": {
 		"index": "2",
 		"category": "sorcery",
@@ -3267,7 +3821,7 @@
 			},
 			{
 				"type": "text",
-				"value": "I can use my magic to bring blocks to life for a short time!  They'll hop around and attack my enemies before returning to a block where they stand."
+				"value": "I can use my magic to bring blocks to life for a short time!  They'll hop around and attack my enemies before returning to a block where they stand.\n\nWARNING: This can only be crafted by those who have aligned themselves to the Ancient Council of Wizards."
 			}
 		],
 		"related_recipes": [
@@ -3591,7 +4145,7 @@
 			},
 			{
 				"type": "text",
-				"value": "I have been shown how to pull protective thorns and vines from the very fey court itself.  These thorns will protect me from others like them, such as cacti and sweet berries or other thorns.\n\nWARNING: This can only be crafted by those allied with the Fey Courts."
+				"value": "I have been shown how to pull protective thorns and vines from the very fey court itself.  These thorns will protect me from others like them, such as cacti and sweet berries or other thorns.  It will also retaliate against attackers, and provides some armor as attacks will have a hard time finding their way through the thick thorns.\n\nWARNING: This can only be crafted by those allied with the Fey Courts."
 			}
 		],
 		"related_recipes": [
@@ -3671,7 +4225,7 @@
 			},
 			{
 				"type": "text",
-				"value": "Other wizards talk too much.  I should do something about that."
+				"value": "Other wizards talk too much.  I should do something about that.  This spell should quiet them down, and at the same time prevent them from casting spells.  I'm not sure which one is more valuable."
 			}
 		],
 		"related_recipes": [
@@ -4041,6 +4595,26 @@
 			}
 		]
 	},
+	"Modifier: Delay": {
+		"index": "3",
+		"category": "sorcery",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Delay"
+			},
+			{
+				"type": "text",
+				"value": "I can choose to make the components within my spells affect the target a short delay after hitting them.  It doesn't matter if they move, teleport, run, or hide.  They're mine."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "spell_part",
+				"location": "mana-and-artifice:modifiers/delay"
+			}
+		]
+	},
 	"Modifier: Range": {
 		"index": "3",
 		"category": "sorcery",
@@ -4235,7 +4809,7 @@
 			},
 			{
 				"type": "text",
-				"value": "The tolling of the iron bell rings out into the either, summoning a mysterious entity only known as The Broker.  This entity will remain for one half day and will trade a combination of faction tokens (which are obtained by defeating faction enemies when encountered) and relics of my own faction for obtained relics of the other two factions.  I should ensure that I have one of each of my faction's relics available for trade and at least a stack of each of the faction tokens before calling upon the Broker."
+				"value": "The tolling of the iron bell rings out into the ether, summoning a mysterious entity only known as The Broker.  This entity will remain for one half day and will trade a combination of faction tokens (which are obtained by defeating faction enemies when encountered) and relics of my own faction for obtained relics of the other two factions.  I should ensure that I have one of each of my faction's relics available for trade and at least a stack of each of the faction tokens before calling upon the Broker."
 			}
 		],
 		"related_recipes": [
@@ -4564,13 +5138,17 @@
 			},
 			{
 				"type": "text",
-				"value": "Having to draw out a ritual each and every time can be time consuming.  Enter the ritual kit.\n\nTo bind the kit to a specific ritual pattern, sneak while activating the centre of a ritual.\n\nSneak right click the kit on empty space to open the bag.  Place all items needed for the ritual inside the kit.\n\nActivating the kit on a sufficiently sized, empty flat space will instantly place and activate the ritual.  Items will be consumed from the kit.\n\nAdditionally, rituals activated from a kit complete significantly faster than ones drawn manually."
+				"value": "Having to draw out a ritual each and every time can be time consuming.  Enter the ritual kit.\n\nTo bind the kit to a specific ritual pattern, sneak while activating the centre of a ritual.\n\nSneak right click the kit on empty space to open the bag.  Place all items needed for the ritual inside the kit.\n\nActivating the kit on a sufficiently sized, empty flat space will instantly place and activate the ritual.  Items will be consumed from the kit.\n\nAdditionally, rituals activated from a kit complete significantly faster than ones drawn manually.\n\nRitual kits can store multiple rituals.  Select a slot before binding or placing using the UI key (default 'z') and the radial menu."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:rituals/ritual_kit"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/rituals/fast_ritual_kit"
 			}
 		]
 	},
@@ -5124,7 +5702,7 @@
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/brimstone_charm"
+				"location": "mana-and-artifice:manaweaving/artifice/brimstone_charm"
 			}
 		]
 	},
@@ -5367,13 +5945,33 @@
 			},
 			{
 				"type": "text",
-				"value": "This enchanted bracelet will protect me from fire and lava.  I must take care though, as it's protection will not last forever and it will eventually break.\n\nThis bracelet can only be crafted by those that have aligned themselves with the Demons of the Nether."
+				"value": "This enchanted bracelet will protect me from fire and lava.  I must take care though, as it's protection will not last forever and it will eventually stop working, needing to be recharged.\n\nThis bracelet can only be crafted by those that have aligned themselves with the Demons of the Nether."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/artifice/emberglow_bracelet"
+			}
+		]
+	},
+	"Coffin": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Coffin"
+			},
+			{
+				"type": "text",
+				"value": "A staple of the undead, the coffin functions like a bed but only for those that have joined the ranks of the undead.  It also restores a portion of the souls that the undead use to fuel their spells.\n\nThis coffin can only be crafted by those that have allied themselves with the ranks of the undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/coffin"
 			}
 		]
 	},
@@ -5387,7 +5985,7 @@
 			},
 			{
 				"type": "text",
-				"value": "This enchanted bracelet allows me to draw power from nearby motes of residual magic.  I can use this to fuel my spells when I would otherwise not have enough mana.  It might be worth making something to help me see them.\n\nThis bracelet can only be crafted by those that have aligned themselves with the Council of Wizards."
+				"value": "This enchanted bracelet allows me to draw power from nearby motes of residual magic as well as ley lines if I am close enough.  I can use this to fuel my spells when I would otherwise not have enough mana.  It might be worth making something to help me see them.\n\nThis bracelet can only be crafted by those that have aligned themselves with the Council of Wizards."
 			}
 		],
 		"related_recipes": [
@@ -5509,6 +6107,26 @@
 			}
 		]
 	},
+	"Ring of Brittle Bone": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ring of Brittle Bone"
+			},
+			{
+				"type": "text",
+				"value": "This sinister ring, when worn, seems to draw more of the mystical life force out of targets killed by undead wizards.\n\nWARNING: This ring can only be crafted by those that have allied themselves with the Undead."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/artifice/bone_ring"
+			}
+		]
+	},
 	"Belt of Locks": {
 		"index": 0,
 		"category": "artifice",
@@ -5619,7 +6237,7 @@
 			},
 			{
 				"type": "text",
-				"value": "This amulet, when worn, will protect me from the nefarious with effects caused by the aptly named Wither and it's skeletal minions as long as it has charge."
+				"value": "This amulet, when worn, will protect me from the nefarious effects caused by the aptly named Wither and its skeletal minions as long as it has charge."
 			}
 		],
 		"related_recipes": [
@@ -5669,13 +6287,13 @@
 			}
 		]
 	},
-	"Ring of Transportation": {
+	"Ring of Collection (Greater)": {
 		"index": 0,
 		"category": "artifice",
 		"sections": [
 			{
 				"type": "title",
-				"value": "Ring of Transportation"
+				"value": "Ring of Collection (Greater)"
 			},
 			{
 				"type": "text",
@@ -6104,6 +6722,54 @@
 			}
 		]
 	},
+	"Cold Dark": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of the Cold Dark"
+			},
+			{
+				"type": "text",
+				"value": "This ritual calls out to the legions of the Undead.  By doing so, you are offering to align yourself with the undead in exchange for access to their dark powers.\n\nIf the undead respond, they will give you a sign.  Follow the instructions if you believe you are worthy.\n\nAllying oneself with such entities will almost assuredly make enemies of others."
+			},
+			{
+				"type": "text",
+				"value": "WARNING:  The undead faction is a much more difficult faction to play.  Your casting resource becomes souls, something that does not naturally regenerate.  You must kill others to obtain their souls.  Other undead give the least, then animals, then monsters, then villagers, then players.\n\nYou can sleep in coffins as if they were beds, will burn in sunlight, but can breathe underwater.  Wearing a helmet can mitigate the burning but eventually the helmet will burn away and break.\n\nChoose this path at your own risk."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/cold_dark"
+			}
+		]
+	},
+	"Sanctum Invocation": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of Sanctum Invocation"
+			},
+			{
+				"type": "text",
+				"value": "This ritual Designates a place of power for your faction.  Upon completion, it spawns a single block, a 'circle of power'.  Right click this block to display a structure that you will then need to build.  Upon completion, the circle of power will activate.  Allied faction players (and you of course) when standing near or within the completed structure will gain a powerful buff to their spell casting, causing more damage with spells and making their buffs last significantly longer."
+			},
+			{
+				"type": "text",
+				"value": "For the undead, this sanctum serves an additional purpose.  Enemies within the sanctum will be given the 'Vulnerable Soul' debuff.  Killing enemies with this debuff will yield significantly more souls than normal."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/circle_of_power"
+			}
+		]
+	},
 	"Flat Lands": {
 		"index": 0,
 		"category": "rituals",
@@ -6216,7 +6882,7 @@
 			},
 			{
 				"type": "text",
-				"value": "Cantrips are spells that you can cast using nothing but manaweaving pattern combination.  You unlock new cantrips every time you tier up.\n\nYou can use the cantrip book to set the pattern combinations for your cantrips (minimum of 2 patterns), and later on even set custom cantrip spells, provided they are not channeled."
+				"value": "Cantrips are spells that you can cast using nothing but manaweaving pattern combination.  You unlock new cantrips every time you tier up.\n\nYou can use a manaweaving wand to set/check the pattern combinations for your cantrips (minimum of 2 patterns), and later on even set custom cantrip spells, provided they are not channeled."
 			},
 			{
 				"type": "title",
@@ -6248,10 +6914,6 @@
 			}
 		],
 		"related_recipes": [
-			{
-				"location": "mana-and-artifice:manaweaving/sorcery/cantrip_book",
-				"type": "manaweaving_altar"
-			},
 			{
 				"location": "mana-and-artifice:manaweaver_wand",
 				"type": "crafting"
@@ -6359,6 +7021,46 @@
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:brazier"
+			}
+		]
+	},	
+	"Runic Light": {
+		"index": "0",
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Runic Light"
+			},
+			{
+				"type": "text",
+				"value": "The runic light is a decoration block that gives a rustic magical feel wherever it is placed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runic_light"
+			}
+		]
+	},	
+	"Runic Torch": {
+		"index": "0",
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Runic Torch"
+			},
+			{
+				"type": "text",
+				"value": "The runic torch is a decoration block that gives a medieval magical feel wherever it is placed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runic_torch"
 			}
 		]
 	},	
@@ -6554,7 +7256,7 @@
 			},
 			{
 				"type": "text",
-				"value": "Once you have your workbench set up and your parts made, you'll need to choose what affinities you want to imbue into the construct.  Each affinity changes attributes of the construct.  You set the affinity by casting spells of the given affinity at each of the 8 nearby chimerite crystals.  When you do, a sigil will appear above the crystal indicating the affinity.  Place all five parts of the construct on the workbench and activate the workbench itself with an empty hand to begin the crafting process.  Once the imbuing is complete. you can start to command your construct."
+				"value": "Once you have your workbench set up and your parts made, you'll need to choose what affinities you want to imbue into the construct.  Each affinity changes attributes of the construct.  You set the affinity by casting spells of the given affinity at each of the 8 nearby chimerite crystals.  The spells must directly target the crystals, so channeled spells, AoE spells and self spells, for example, will not work.  When you do, a sigil will appear above the crystal indicating the affinity.  Place all five parts of the construct on the workbench and activate the workbench itself with an empty hand to begin the crafting process.  Once the imbuing is complete. you can start to command your construct."
 			},
 			{
 				"type": "title",
