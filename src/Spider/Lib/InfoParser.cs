@@ -6,34 +6,44 @@ using Serilog;
 
 using Spider.Lib.JsonLib;
 
-namespace Spider.Lib {
-    public class InfoParser {
+namespace Spider.Lib
+{
+    public class InfoParser
+    {
         private readonly Configuration _defaultConfiguration;
         private readonly Configuration[] _customConfigurations;
 
-        public InfoParser(Configuration defaultConfiguration, Configuration[] customConfigurations) {
+        public InfoParser(Configuration defaultConfiguration, Configuration[] customConfigurations)
+        {
             _defaultConfiguration = defaultConfiguration;
             _customConfigurations = customConfigurations;
         }
 
-        ~InfoParser() {
+        ~InfoParser()
+        {
             Log.Logger.Debug("解析器已回收");
         }
 
-        public (ModInfo, Configuration)[] SerializeAll(IEnumerable<ModInfo> infos) {
-            if (infos is null) {
+        public (ModInfo, Configuration)[] SerializeAll(IEnumerable<ModInfo> infos)
+        {
+            if (infos is null)
+            {
                 throw new NullReferenceException("Empty infos!");
             }
 
             var tmp = new List<(ModInfo, Configuration)>();
 
-            foreach (var info in infos) {
+            foreach (var info in infos)
+            {
                 var cfg = _customConfigurations.ToList().FirstOrDefault(_ => _.ProjectName == info.Slug);
-                if (cfg is null) {
+                if (cfg is null)
+                {
                     tmp.Add((info, _defaultConfiguration));
                 }
-                else {
-                    var completedCfg = new Configuration() {
+                else
+                {
+                    var completedCfg = new Configuration()
+                    {
                         ExtractPath = cfg.ExtractPath ?? _defaultConfiguration.ExtractPath,
                         Version = cfg.Version,
                         IncludedPath = cfg.IncludedPath ?? _defaultConfiguration.IncludedPath,
@@ -49,13 +59,16 @@ namespace Spider.Lib {
             return tmp.ToArray();
         }
 
-        public (ModInfo, Configuration) Serialize(ModInfo info) {
+        public (ModInfo, Configuration) Serialize(ModInfo info)
+        {
             var cfg = _customConfigurations.ToList().FirstOrDefault(_ => _.ProjectName == info.Slug);
-            if (cfg is null) {
+            if (cfg is null)
+            {
                 return (info, _defaultConfiguration);
             }
 
-            var completedCfg = new Configuration() {
+            var completedCfg = new Configuration()
+            {
                 ExtractPath = cfg.ExtractPath ?? _defaultConfiguration.ExtractPath,
                 Version = cfg.Version,
                 IncludedPath = cfg.IncludedPath ?? _defaultConfiguration.IncludedPath,

@@ -7,11 +7,15 @@ using System.Net.Http.Json;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+
 using Serilog;
+
 using Spider.Lib.JsonLib;
 
-namespace Spider.Lib {
-    public static class UrlLib {
+namespace Spider.Lib
+{
+    public static class UrlLib
+    {
         /// <summary>
         /// 使用定义的游戏版本和模组数量批量获取模组信息
         /// </summary>
@@ -19,18 +23,21 @@ namespace Spider.Lib {
         /// <param name="gameVersion"></param>
         /// <param name="index"></param>
         /// <returns></returns>
-        public static async Task<ModInfo[]> GetModInfoAsync(int modCount, string gameVersion) {
+        public static async Task<ModInfo[]> GetModInfoAsync(int modCount, string gameVersion)
+        {
             var mIo = new List<ModInfo>();
             using var httpClient = new HttpClient();
             var num = (int)Math.Ceiling((decimal)modCount / 50);
-            for (int i = 0; i < num; i++) {
-                var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search") {
+            for (int i = 0; i < num; i++)
+            {
+                var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search")
+                {
                     Query =
-                        $"categoryId=0&gameId=432&index={i*50}&pageSize=50&gameVersion={gameVersion}&sectionId=6&sort=1"
+                        $"categoryId=0&gameId=432&index={i * 50}&pageSize=50&gameVersion={gameVersion}&sectionId=6&sort=1"
                 };
                 mIo.AddRange(await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri) ?? Array.Empty<ModInfo>());
                 Thread.Sleep(3000);
-                Log.Logger.Information("GET {0}",uriBuilder.Uri);
+                Log.Logger.Information("GET {0}", uriBuilder.Uri);
             }
 
             var tmp = mIo.DistinctBy(_ => _.Slug).Take(modCount).ToArray();
@@ -43,7 +50,8 @@ namespace Spider.Lib {
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public static async Task<ModInfo> GetModInfoAsync(long id) {
+        public static async Task<ModInfo> GetModInfoAsync(long id)
+        {
             var httpClient = new HttpClient();
             var uri = new Uri($"https://addons-ecs.forgesvc.net/api/v2/addon/{id}");
             var result = await httpClient.GetFromJsonAsync<ModInfo>(uri);
@@ -68,7 +76,8 @@ namespace Spider.Lib {
         /// <param name="uri"></param>
         /// <returns></returns>
         [Obsolete("该方法已被添加进ModInfo属性")]
-        public static string GetProjectName(Uri uri) {
+        public static string GetProjectName(Uri uri)
+        {
             var url = uri.ToString();
             var start = url.LastIndexOf('/') + 1;
             return url[start..];
@@ -79,22 +88,35 @@ namespace Spider.Lib {
         /// </summary>
         /// <param name="version"></param>
         /// <param name="path"></param>
-        public static async Task GetAllModIntroAsync(string version,string path) {
+        public static async Task GetAllModIntroAsync(string version, string path)
+        {
             using var httpClient = new HttpClient();
-            var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search") {
-                Query =
-                    $"categoryId=0&gameId=432&index=0&pageSize=9999&gameVersion={version}&sectionId=6&sort=1"
-            };
-            var tmp = ((await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri)) ?? Array.Empty<ModInfo>()).ToList();
-            var intro = tmp.Select(_ => {
-                var c = new ModIntro() {
+            var i = 0;
+            var t = new List<ModInfo>();
+            while (true)
+            {
+                var uriBuilder = new UriBuilder("https://addons-ecs.forgesvc.net/api/v2/addon/search")
+                {
+                    Query =
+                        $"categoryId=0&gameId=432&index={i * 50}&pageSize=50&gameVersion={version}&sectionId=6&sort=1"
+                };
+                var tmp = await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri) ?? Array.Empty<ModInfo>();
+                t.AddRange(tmp);
+                if (tmp.Length < 50) break;
+                i++;
+            }
+            var intro = t.Select(_ =>
+            {
+                var c = new ModIntro()
+                {
                     Id = _.Id,
                     Name = _.Slug
                 };
                 return c;
             });
             var str = JsonSerializer.SerializeToUtf8Bytes(intro, new JsonSerializerOptions() { WriteIndented = true });
-            if (Directory.Exists(@$"{Directory.GetCurrentDirectory()}\config\spider\{path}")) {
+            if (Directory.Exists(@$"{Directory.GetCurrentDirectory()}\config\spider\{path}"))
+            {
                 Directory.CreateDirectory(@$"{Directory.GetCurrentDirectory()}\config\spider\{path}");
             }
             await File.WriteAllBytesAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{path}\intro.json",
@@ -108,21 +130,26 @@ namespace Spider.Lib {
         /// <param name="version"></param>
         /// <returns></returns>
         [Obsolete("单独的下载方法已不被使用")]
-        public static async Task<(Mod, bool)> DownloadAsync(this ModInfo mod, string version) {
+        public static async Task<(Mod, bool)> DownloadAsync(this ModInfo mod, string version)
+        {
             var httpCli = new HttpClient();
             var path = $"{Path.GetTempFileName()}".Replace(".tmp", ".jar");
 
             var file = mod.GameVersionLatestFiles.First(_ => _.GameVersion == version);
             var downloadUrl = GetDownloadUrl(file.ProjectFileId.ToString(), file.ProjectFileName);
-            try {
+            try
+            {
                 var bytes = await httpCli.GetByteArrayAsync(downloadUrl);
                 await File.WriteAllBytesAsync(path, bytes);
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 Serilog.Log.Logger.Error(e.ToString());
                 return (null, false);
             }
 
-            var res = new Mod() {
+            var res = new Mod()
+            {
                 Version = version,
                 DownloadUrl = downloadUrl,
                 Name = mod.Name,

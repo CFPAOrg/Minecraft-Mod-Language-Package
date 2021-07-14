@@ -7,21 +7,27 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+
 using Language.Core;
 
 using Serilog;
+
 using Spider.Lib.JsonLib;
 
-namespace Spider.Lib {
-    public class Utils {
+namespace Spider.Lib
+{
+    public class Utils
+    {
         /// <summary>
         /// 解析mod
         /// </summary>
         /// <param name="tuple"></param>
         /// <returns></returns>
-        public static async Task ParseModsAsync((ModInfo, Configuration) tuple, Config conf) {
+        public static async Task ParseModsAsync((ModInfo, Configuration) tuple, Config conf)
+        {
 
-            if (tuple.Item2.NonUpdate != null && tuple.Item2.NonUpdate.Value) {
+            if (tuple.Item2.NonUpdate != null && tuple.Item2.NonUpdate.Value)
+            {
                 Log.Logger.Warning($"{tuple.Item1.Slug}已在黑名单中，跳过");
                 return;
             }
@@ -37,17 +43,21 @@ namespace Spider.Lib {
                 var file = mod.GameVersionLatestFiles.First(_ => _.GameVersion == version);
                 downloadUrl = UrlLib.GetDownloadUrl(file.ProjectFileId.ToString(), file.ProjectFileName);
             }
-            if (downloadUrl is not null) {
+            if (downloadUrl is not null)
+            {
 
-                try {
+                try
+                {
                     var bytes = await httpCli.GetByteArrayAsync(downloadUrl);
                     await File.WriteAllBytesAsync(path, bytes);
                 }
-                catch (Exception e) {
+                catch (Exception e)
+                {
                     Log.Logger.Error($"写入文件时：{e.Message}");
                 }
 
-                var res = new Mod() {
+                var res = new Mod()
+                {
                     Version = version,
                     DownloadUrl = downloadUrl,
                     Name = mod.Name,
@@ -68,7 +78,8 @@ namespace Spider.Lib {
         /// <param name="mod"></param>
         /// <param name="cfg"></param>
         /// <param name="rootPath"></param>
-        private static void ParseFiles(Mod mod, Configuration cfg, string rootPath) {
+        private static void ParseFiles(Mod mod, Configuration cfg, string rootPath)
+        {
             var zipArchive = new ZipArchive(File.OpenRead(mod.TempPath));
             var tmpDirectories = $"{Path.GetTempPath()}extracted\\{Path.GetFileName(mod.TempPath)}";
             Log.Logger.Debug(tmpDirectories);
@@ -76,39 +87,48 @@ namespace Spider.Lib {
             var extract = (cfg.ExtractPath ?? Array.Empty<string>()).ToList();
             var entries = zipArchive.Entries.ToList();
 
-            IEnumerable<(ZipArchiveEntry, string)> Selector() {
-                foreach (var zipArchiveEntry in entries) {
+            IEnumerable<(ZipArchiveEntry, string)> Selector()
+            {
+                foreach (var zipArchiveEntry in entries)
+                {
                     var split = zipArchiveEntry.FullName.Split('/');
-                    if (split.Length<3) continue;
+                    if (split.Length < 3) continue;
                     if (split.Last() == "") continue;
                     var baseDomain = split[0];
                     var modDomain = split[1];
                     var preDomain = split[2];
-                    if (modDomain == "minecraft") {
+                    if (modDomain == "minecraft")
+                    {
                         continue;
                     }
-                    if (include.Contains(baseDomain) && extract.Contains(preDomain)) {
+                    if (include.Contains(baseDomain) && extract.Contains(preDomain))
+                    {
                         yield return (zipArchiveEntry, modDomain);
                     }
                 }
             }
 
-            foreach (var (entry, modDomain) in Selector()) {
+            foreach (var (entry, modDomain) in Selector())
+            {
                 var originPath = entry.FullName;
                 var flag = true;
                 var cflag = true;
-                if (originPath.Contains($"assets/{modDomain}/lang")) {
+                if (originPath.Contains($"assets/{modDomain}/lang"))
+                {
                     flag = !(entry.Name.Equals("en_us.lang", StringComparison.OrdinalIgnoreCase) ||
                              entry.Name.Equals("en_us.json", StringComparison.OrdinalIgnoreCase));
 
-                    
-                    if (cfg.UpdateChinese != null && cfg.UpdateChinese.Value) {
-                        cflag = (entry.Name.Equals("zh_cn.lang",StringComparison.OrdinalIgnoreCase) ||
-                                entry.Name.Equals("zn_cn.json",StringComparison.OrdinalIgnoreCase));
+
+                    if (cfg.UpdateChinese != null && cfg.UpdateChinese.Value)
+                    {
+                        cflag = (entry.Name.Equals("zh_cn.lang", StringComparison.OrdinalIgnoreCase) ||
+                                entry.Name.Equals("zn_cn.json", StringComparison.OrdinalIgnoreCase));
                     }
 
-                    if (cflag) {
-                        if (flag) {
+                    if (cflag)
+                    {
+                        if (flag)
+                        {
                             continue;
                         }
                     }
@@ -116,21 +136,25 @@ namespace Spider.Lib {
 
                 var truePath = GeneratePath(originPath, mod.ProjectName, cfg.IncludedPath);
                 var localPath = Path.GetDirectoryName(Path.Combine(rootPath, truePath).Replace("\\", "/"))!.Replace("\\", "/");
-                if (!Directory.Exists(localPath)) {
+                if (!Directory.Exists(localPath))
+                {
                     Directory.CreateDirectory(localPath);
                 }
 
                 var p = localPath + "/" + entry.Name.ToLower();
-                if (!flag) {
-                    if (Path.GetExtension(entry.Name) == ".json" && CheckVersion(cfg.Version)) {
-                        entry.ExtractToFile(p+".tmp", true);
+                if (!flag)
+                {
+                    if (Path.GetExtension(entry.Name) == ".json" && CheckVersion(cfg.Version))
+                    {
+                        entry.ExtractToFile(p + ".tmp", true);
                         var jf = new JsonFormatter(new StreamReader(File.OpenRead(p + ".tmp")), new StreamWriter(File.Create(p)),
                             mod.ProjectName);
                         jf.Format();
                         CreateEmptyJson(p);
                         File.Delete(p + ".tmp");
                     }
-                    if (Path.GetExtension(entry.Name) == ".lang" && !CheckVersion(cfg.Version)) {
+                    if (Path.GetExtension(entry.Name) == ".lang" && !CheckVersion(cfg.Version))
+                    {
                         entry.ExtractToFile(p + ".tmp", true);
                         var lf = new LangFormatter(new StreamReader(File.OpenRead(p + ".tmp")), new StreamWriter(File.Create(p)));
                         lf.Format();
@@ -138,7 +162,8 @@ namespace Spider.Lib {
                         File.Delete(p + ".tmp");
                     }
                 }
-                else {
+                else
+                {
                     entry.ExtractToFile(p, true);
                 }
             }
@@ -151,11 +176,13 @@ namespace Spider.Lib {
         /// <param name="sourceDirName"></param>
         /// <param name="destDirName"></param>
         /// <param name="copySubDirs"></param>
-        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs) {
+        private static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
+        {
             // Get the subdirectories for the specified directory.
-            DirectoryInfo dir = new (sourceDirName);
+            DirectoryInfo dir = new(sourceDirName);
 
-            if (!dir.Exists) {
+            if (!dir.Exists)
+            {
                 throw new DirectoryNotFoundException(
                     "Source directory does not exist or could not be found: "
                     + sourceDirName);
@@ -168,14 +195,17 @@ namespace Spider.Lib {
 
             // Get the files in the directory and copy them to the new location.
             FileInfo[] files = dir.GetFiles();
-            foreach (FileInfo file in files) {
+            foreach (FileInfo file in files)
+            {
                 string tempPath = Path.Combine(destDirName, file.Name);
                 file.CopyTo(tempPath, true);
             }
 
             // If copying subdirectories, copy them and their contents to new location.
-            if (copySubDirs) {
-                foreach (DirectoryInfo subdir in dirs) {
+            if (copySubDirs)
+            {
+                foreach (DirectoryInfo subdir in dirs)
+                {
                     string tempPath = Path.Combine(destDirName, subdir.Name);
                     DirectoryCopy(subdir.FullName, tempPath, copySubDirs);
                 }
@@ -189,18 +219,23 @@ namespace Spider.Lib {
         /// <param name="projectName"></param>
         /// <param name="root"></param>
         /// <returns></returns>
-        private static string GeneratePath(string path, string projectName, string[] root) {
+        private static string GeneratePath(string path, string projectName, string[] root)
+        {
             var sb = new StringBuilder();
             var p = path.Split("/").ToList();
-            p.ForEach(_ => {
-                if (root.ToList().Contains(_)) {
+            p.ForEach(_ =>
+            {
+                if (root.ToList().Contains(_))
+                {
                     sb.Append(_ + "/");
                     sb.Append(projectName + "/");
                 }
-                else if (_.EndsWith(".lang") || _.EndsWith(".json")) {
+                else if (_.EndsWith(".lang") || _.EndsWith(".json"))
+                {
                     sb.Append(_.ToLower());
                 }
-                else {
+                else
+                {
                     sb.Append(_ + "/");
                 }
 
@@ -209,33 +244,41 @@ namespace Spider.Lib {
             return sb.ToString();
         }
 
-        private static void CreateEmptyLang(string path) {
+        private static void CreateEmptyLang(string path)
+        {
             var isParse = false;
             var d = Path.GetDirectoryName(path);
-            foreach (string str in File.ReadAllLines(path)) {
-                if (str == "#PARSE_ESCAPES") {
+            foreach (string str in File.ReadAllLines(path))
+            {
+                if (str == "#PARSE_ESCAPES")
+                {
                     isParse = true;
                     break;
                 }
             }
 
-            if (File.Exists(Path.Combine(d!, "zh_cn.lang"))) {
+            if (File.Exists(Path.Combine(d!, "zh_cn.lang")))
+            {
                 return;
             }
-            if (isParse) {
+            if (isParse)
+            {
                 File.WriteAllText(
                     Path.Combine(d!, "zh_cn.lang"),
                     "#PARSE_ESCAPES\n\n");
             }
-            else {
+            else
+            {
                 File.WriteAllTextAsync(
                     Path.Combine(d!, "zh_cn.lang"), "\n");
             }
         }
 
-        private static void CreateEmptyJson(string path) {
+        private static void CreateEmptyJson(string path)
+        {
             var d = Path.GetDirectoryName(path);
-            if (File.Exists(Path.Combine(d!, "zh_cn.json"))) {
+            if (File.Exists(Path.Combine(d!, "zh_cn.json")))
+            {
                 return;
             }
             File.WriteAllTextAsync(Path.Combine(d!, "zh_cn.json"),
@@ -247,8 +290,10 @@ namespace Spider.Lib {
         /// </summary>
         /// <param name="ver"></param>
         /// <returns></returns>
-        private static bool CheckVersion(string ver) {
-            var result = ver switch {
+        private static bool CheckVersion(string ver)
+        {
+            var result = ver switch
+            {
                 "1.0" => false,
                 "1.1" => false,
                 "1.2.1" => false,

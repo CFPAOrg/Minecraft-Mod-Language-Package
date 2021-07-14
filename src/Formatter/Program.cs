@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 using Serilog;
 
-namespace Formatter {
-    static class Program {
-        static async Task Main() {
+namespace Formatter
+{
+    static class Program
+    {
+        static async Task Main()
+        {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .Enrich.FromLogContext()

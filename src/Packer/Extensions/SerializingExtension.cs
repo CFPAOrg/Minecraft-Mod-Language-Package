@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 
 using Packer.Models;
+
 using Serilog;
 
 namespace Packer.Extensions
@@ -80,10 +81,12 @@ namespace Packer.Extensions
                     {
                         Log.Verbose("添加对应映射：{0}", line);
                         var spiltPosition = line.IndexOf('=');
-                        try {
+                        try
+                        {
                             result.Add(line[..spiltPosition], line[(spiltPosition + 1)..]);
                         }
-                        catch (Exception e) {
+                        catch (Exception e)
+                        {
                             Log.Verbose(e.ToString());
                         }
                     }

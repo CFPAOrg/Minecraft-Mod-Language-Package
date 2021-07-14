@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Spider.Lib.JsonLib {
-    public class Config {
+namespace Spider.Lib.JsonLib
+{
+    public class Config
+    {
         [JsonPropertyName("version")]
         public string? Version { get; set; }
         [JsonPropertyName("count")]
@@ -18,12 +20,14 @@ namespace Spider.Lib.JsonLib {
         public Configuration[]? CustomConfigurations { get; set; }
     }
 
-    public class List {
+    public class List
+    {
         [JsonPropertyName("black_list")] public string[]? BlackList { get; set; }
         [JsonPropertyName("white_list")] public string[]? WhiteList { get; set; }
     }
 
-    public class Configuration {
+    public class Configuration
+    {
         [JsonPropertyName("project_name")] public string? ProjectName { get; set; }
         [JsonPropertyName("version")] public string? Version { get; set; }
         [JsonPropertyName("included_path")] public string[]? IncludedPath { get; set; }
