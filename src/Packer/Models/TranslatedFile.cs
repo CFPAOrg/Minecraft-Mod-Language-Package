@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 
 using Packer.Extensions;
+
 using Serilog;
 
 namespace Packer.Models

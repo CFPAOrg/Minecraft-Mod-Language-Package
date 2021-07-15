@@ -9,9 +9,12 @@ using Renci.SshNet;
 
 using Serilog;
 
-namespace Uploader {
-    static class Program {
-        static int Main(string[] args) {
+namespace Uploader
+{
+    static class Program
+    {
+        static int Main(string[] args)
+        {
             Log.Logger = new LoggerConfiguration()
                 .WriteTo.Console()
                 .CreateLogger();
@@ -34,13 +37,16 @@ namespace Uploader {
 
             command.Description = "Config of uploader";
 
-            command.Handler = CommandHandler.Create<string,string,string,string>((version, host, name, password) => {
+            command.Handler = CommandHandler.Create<string, string, string, string>((version, host, name, password) =>
+            {
                 using var scpClient = new ScpClient(host, 20002, name, password);
                 scpClient.Connect();
-                if (scpClient.IsConnected) {
+                if (scpClient.IsConnected)
+                {
                     Log.Logger.Information("SCP服务器连接成功");
                 }
-                else {
+                else
+                {
                     Log.Logger.Error("SCP服务器连接失败");
                     return;
                 }
@@ -48,7 +54,8 @@ namespace Uploader {
                 var md5s = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.md5");
                 md5s.ToList().ForEach(_ => { scpClient.Upload(File.OpenRead(_), $"/var/www/html/files/{Path.GetFileName(_)}"); });
                 var fs = File.OpenRead($"./Minecraft-Mod-Language-Package-{version}.zip");
-                switch (version) {
+                switch (version)
+                {
                     case "1.12.2":
                         scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack.zip.1");
                         break;
@@ -62,14 +69,17 @@ namespace Uploader {
                 scpClient.Dispose();
                 using var sshClient = new SshClient(host, 20002, name, password);
                 sshClient.Connect();
-                if (sshClient.IsConnected) {
+                if (sshClient.IsConnected)
+                {
                     Log.Logger.Information("SSH服务器连接成功");
                 }
-                else {
+                else
+                {
                     Log.Logger.Error("SSH服务器连接失败");
                     return;
                 }
-                switch (version) {
+                switch (version)
+                {
                     case "1.12.2":
                         var cmd1 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack.zip");
                         cmd1.Execute();

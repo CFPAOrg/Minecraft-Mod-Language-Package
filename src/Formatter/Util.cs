@@ -19,13 +19,18 @@ using Newtonsoft.Json;
 using Serilog;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace Formatter {
-    public static class Util {
-        public static List<string> SearchLangFiles() {
+namespace Formatter
+{
+    public static class Util
+    {
+        public static List<string> SearchLangFiles()
+        {
             var allFiles = new List<string>();
             var files1 = Directory.GetFiles($"./projects", "*.lang", SearchOption.AllDirectories);
-            foreach (var s in files1) {
-                if (s.Contains(".placeholder")) {
+            foreach (var s in files1)
+            {
+                if (s.Contains(".placeholder"))
+                {
                     continue;
                 }
                 allFiles.Add(s);
@@ -33,11 +38,14 @@ namespace Formatter {
             return allFiles;
         }
 
-        public static List<string> SearchJsonFiles() {
+        public static List<string> SearchJsonFiles()
+        {
             var allFiles = new List<string>();
             var files1 = Directory.GetFiles($"./projects", "*.json", SearchOption.AllDirectories);
-            foreach (var s in files1) {
-                if (s.Contains(".placeholder")) {
+            foreach (var s in files1)
+            {
+                if (s.Contains(".placeholder"))
+                {
                     continue;
                 }
                 allFiles.Add(s);
@@ -45,35 +53,46 @@ namespace Formatter {
             return allFiles;
         }
 
-        public static async Task<List<string>> ReadBlackKey() {
+        public static async Task<List<string>> ReadBlackKey()
+        {
             var res = new List<string>();
-            foreach (string str in await File.ReadAllLinesAsync("./config/blackkey.txt", Encoding.UTF8)) {
+            foreach (string str in await File.ReadAllLinesAsync("./config/blackkey.txt", Encoding.UTF8))
+            {
                 res.Add(str);
             }
 
             return res;
         }
 
-        public static async Task FormatLangFile(List<string> lp, List<string> bl) {
+        public static async Task FormatLangFile(List<string> lp, List<string> bl)
+        {
             var keyReg = new Regex(".+(?==)");
-            foreach (var l in lp) {
+            foreach (var l in lp)
+            {
                 var list = new List<string>();
                 var lines = await File.ReadAllLinesAsync(l);
                 var parse = !lines.Contains("#PARSE_ESCAPES");
-                foreach (var line in lines) {
-                    if (keyReg.IsMatch(line)) {
-                        if (bl.Contains(keyReg.Match(line).Value)) {
+                foreach (var line in lines)
+                {
+                    if (keyReg.IsMatch(line))
+                    {
+                        if (bl.Contains(keyReg.Match(line).Value))
+                        {
                             continue;
                         }
                         list.Add(line);
                     }
-                    else {
-                        if (parse) {
-                            if (line.Trim().StartsWith("#") || string.IsNullOrWhiteSpace(line) || string.IsNullOrEmpty(line)) {
+                    else
+                    {
+                        if (parse)
+                        {
+                            if (line.Trim().StartsWith("#") || string.IsNullOrWhiteSpace(line) || string.IsNullOrEmpty(line))
+                            {
                                 list.Add(line);
                             }
                         }
-                        else {
+                        else
+                        {
                             list.Add(line);
                         }
                     }
@@ -84,24 +103,30 @@ namespace Formatter {
             }
         }
 
-        public static async Task FormatJsonFile(List<string> lp, List<string> bl) {
-            foreach (var path in lp) {
-                File.Copy(path,path+".tmp",true);
+        public static async Task FormatJsonFile(List<string> lp, List<string> bl)
+        {
+            foreach (var path in lp)
+            {
+                File.Copy(path, path + ".tmp", true);
                 var reader = new StreamReader(File.OpenRead(path + ".tmp"));
                 var builder = new StringBuilder();
-                while (!reader.EndOfStream) {
+                while (!reader.EndOfStream)
+                {
                     builder.AppendLine(await reader.ReadLineAsync());
                 }
 
                 reader.BaseStream.Seek(0, SeekOrigin.Begin);
                 var fileStream = await File.ReadAllTextAsync(path + ".tmp");
-                if (string.IsNullOrWhiteSpace(fileStream)) {
+                if (string.IsNullOrWhiteSpace(fileStream))
+                {
                     await File.WriteAllTextAsync(path, "{}");
                 }
 
-                try {
+                try
+                {
                     JsonSerializer.Deserialize<Dictionary<string, string>>(builder.ToString(),
-                        new JsonSerializerOptions() {
+                        new JsonSerializerOptions()
+                        {
                             AllowTrailingCommas = true,
                             ReadCommentHandling = JsonCommentHandling.Skip,
                             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
@@ -109,14 +134,17 @@ namespace Formatter {
 
                     var jr = new JsonTextReader(reader);
                     var jo = new JObject();
-                    var jt = (JObject) await JToken.ReadFromAsync(jr,
-                        new JsonLoadSettings() {
+                    var jt = (JObject)await JToken.ReadFromAsync(jr,
+                        new JsonLoadSettings()
+                        {
                             DuplicatePropertyNameHandling = DuplicatePropertyNameHandling.Ignore,
                             CommentHandling = CommentHandling.Ignore
                         });
-                    foreach (var (key, value) in jt) {
+                    foreach (var (key, value) in jt)
+                    {
                         //Console.WriteLine(key + "\t" + value.Value<string>());
-                        if (bl.Contains(key)) {
+                        if (bl.Contains(key))
+                        {
                             continue;
                         }
 
@@ -125,7 +153,8 @@ namespace Formatter {
 
                     await File.WriteAllTextAsync(path, jo.ToString());
                 }
-                catch (Exception) {
+                catch (Exception)
+                {
                     Log.Logger.Error($"发生错误，已跳过{path}");
                 }
             }
