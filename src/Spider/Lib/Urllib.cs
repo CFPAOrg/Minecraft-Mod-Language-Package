@@ -102,6 +102,7 @@ namespace Spider.Lib
                 };
                 var tmp = await httpClient.GetFromJsonAsync<ModInfo[]>(uriBuilder.Uri) ?? Array.Empty<ModInfo>();
                 t.AddRange(tmp);
+                Thread.Sleep(3000);
                 if (tmp.Length < 50) break;
                 i++;
             }
