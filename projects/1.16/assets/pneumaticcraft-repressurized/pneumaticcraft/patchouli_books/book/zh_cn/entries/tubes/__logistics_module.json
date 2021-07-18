@@ -1,0 +1,37 @@
+{
+  "name": "Logistics Module",
+  "icon": "pneumaticcraft:logistics_module",
+  "category": "tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This powerful module is used to connect inventories to a $(l:logistics/overview)Logistics System/$, effectively allowing controlled item and fluid transfer via pressure tubes.$(p)The inventory or fluid tank that the module points at must be fitted with a $(l:logistics/frames)Logistics Frame/$.$(p)The Logistics Module does not accept an $(l:tubes/advanced_pcb)Advanced PCB/$."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/logistics_module.png"
+      ],
+      "border": "true",
+      "text": "Two Logistics Modules connecting chests with $(l:logistics/frames#passive_provider)Passive Provider/$ and $(l:logistics/frames#requester)Requester/$ Frames."
+    },
+    {
+      "type": "text",
+      "text": "A network of Logistics Modules is defined by all the modules connected to each other by $(l:tubes/pressure_tubes)Pressure Tubes/$; note that any air-using machines do $(italic)not/$ form part of the network.$(p)You can select a channel via the module GUI, or by right-clicking with any $(item)dye/$; only Logistics Modules of the same color will communicate with each other, effectively giving you 16 $(thing)channels/$ on each network."
+    },
+    {
+      "type": "text",
+      "text": "Logistics Modules need $(l:base_concepts/pressure)pressure/$; 3 bar is required to let the modules operate. The air used is a multiplication of distance, amount transported and a constant. This means that it requires more air to transport a full stack of items, and also more to transport it a long way. The air is used at the $(italic)receiving/$ Logistics Module, since the air is flowing towards that module."
+    },
+    {
+      "type": "text",
+      "text": "Indicator lights are fitted to signify the status:$(p)$(li)$(#f00)Red/$: Not enough pressure, apply at least 3 bar.$(li)$(#f80)Orange/$: More than 3 bar, but not enough pressure to transport the items/fluids this distance.$(li)$(#0f0)Green/$: Enough pressure, on standby.$(li)$(#00f)Blue (pulse)/$: Items/fluids are being transported."
+    },
+    {
+      "type": "crafting",
+      "text": "Creating the Logistics Module",
+      "recipe": "pneumaticcraft:logistics_module"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "Tanks",
+  "icon": "pneumaticcraft:small_tank",
+  "category": "machines",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "There are four fluid storage tanks, imaginatively titled the $(item)Small Tank/$, the $(item)Medium Tank/$, the $(item)Large Tank/$, and the $(item)Huge Tank/$. While $(l:machines/liquid_hopper)Liquid Hoppers/$ are also suitable for fluid storage, these tanks provide denser storage and some useful stacking functionality, and don't automatically transfer fluids (although they can push fluids if a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$) is added."
+    },
+    {
+      "type": "text",
+      "title": "Stacking",
+      "text": "All four types of tank can be $(thing)stacked/$ vertically with each other, and formed into a sort-of-multiblock. To do this, right-click the tank with a $(l:tools/pneumatic_wrench)Wrench/$; wrenching the top half will attempt to join the tank to the tank above, and vice versa for the tank below.$(p)Once tanks are stacked, any fluid in $(ttcolor)$(t:If the fluid has a density of < 0, it will move up rather than down)higher tanks/$ will automatically flow down to lower tanks, assuming there is space."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/small_tanks.png"
+      ],
+      "border": "true",
+      "text": "Three stacked Small Tanks"
+    },
+    {
+      "type": "text",
+      "text": "There are some restrictions to this:$(li)To combine two tanks, either both must contain the same fluid (or no fluid), or one of the tanks must be empty$(li)Fluid will $(italic)not/$ move upwards; therefore fluid should be pumped into the top tank of a stack, and pumped out of the bottom tank for best results$(li)The tank GUI will only show the fluid quantity of the tank that was right-clicked."
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:small_tank",
+      "recipe2": "pneumaticcraft:medium_tank"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:large_tank",
+      "recipe2": "pneumaticcraft:huge_tank"
+    }
+  ]
+}

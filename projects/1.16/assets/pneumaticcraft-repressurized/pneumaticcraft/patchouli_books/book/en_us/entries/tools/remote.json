@@ -1,0 +1,63 @@
+{
+  "name": "Remote",
+  "icon": "pneumaticcraft:remote",
+  "category": "tools",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "With a Remote you can create your own GUI to remotely control $(l:tools/drone)Drones/$ or $(l:machines/universal_sensor)Universal Sensors/$ via $(l:programming/variables#global)global variable/$ manipulation. Note that with $(item)Universal Sensors/$, you can use the $(item)Remote/$ to create wireless redstone!$(p)To start creating your own GUI, $(thing)sneak+right-click/$ the $(item)Remote/$ to open up the editor window."
+    },
+    {
+      "type": "text",
+      "text": "Filling in the window works similarly to how programming in a $(l:programming/programmer)Programmer/$ works; simply click and drag widgets from the right-hand panel into the main panel on the left.$(p)To copy a widget, $(thing)middle-click/$ and drag an existing widget. To edit the properties of a widget, $(thing)right-click/$ the widget. For example, for a button, this will open up the following window:"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/remote_button.png"
+      ],
+      "text": "In this window you can configure how the button should look and behave."
+    },
+    {
+      "type": "text",
+      "text": "The following properties are common to $(italic)all/$ widgets:$(li)$(thing)Text/$ - the displayed text on the widget$(li)$(thing)Tooltip/$ - tooltip displayed when hovering over that widget$(li)$(thing)Enabling Variable/$ - you can control whether or not the widget is shown by linking it to a $(l:programming/coordinate_operator)variable/$. By giving the X/Y/Z fields a value, you can ensure that the widget is only shown if the linked variable is equal to the values you specify."
+    },
+    {
+      "type": "text",
+      "title": "Label Widget",
+      "anchor": "label",
+      "text": "This widget simply displays some text, with an optional tooltip, for informational purposes. While the label can't $(italic)change/$ variables, it can $(italic)display/$ a variable, using the syntax $(thing)${#globalvarname}/$, which can be useful for debugging purposes.$(p)The Label widget has no fields other than the default fields."
+    },
+    {
+      "type": "text",
+      "title": "Button Widget",
+      "text": "The Button widget sets the value of the linked variable when pressed.$(li)$(thing)Variable Name/$ - the linked $(l:programming/variables#global)global variable/$.$(li)$(thing)Setting Value/$ - the X/Y/Z values to assign to the linked variable when the button is pressed.$(li)$(thing)Width/Height/$ - dimensions of the button."
+    },
+    {
+      "type": "text",
+      "title": "Checkbox Widget",
+      "text": "The Checkbox widget sets the X value of the linked variable to 1 when checked, and to 0 otherwise.$(li)$(thing)Variable Name/$ - the linked $(l:programming/variables#global)global variable/$."
+    },
+    {
+      "type": "text",
+      "title": "Dropdown Widget",
+      "text": "The Dropdown widget sets the X value of the linked variable to the index of the selected element.$(li)$(thing)Drop-down Elements/$ - a comma-separated list of text labels.$(li)$(thing)Variable Name/$ - the linked $(l:programming/variables#global)global variable/$.$(li)$(thing)Sorted/$ - if checked, the elements in the list will be alphabetically sorted. Otherwise, the elements will appear in the order you provided."
+    },
+    {
+      "type": "text",
+      "title": "Example",
+      "text": "Using the $(thing)Pastebin/$ button at the left of the Editor GUI, import $(l:https://pastebin.com/4yxKG5Jc)this layout/$.$(p)This adds three checkboxes, setting global variables $(thing)signal1, signal2 & signal3/$.$(p)Now place down three $(l:machines/universal_sensor)Universal Sensors/$, and give them some pressure. Put a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$ in each $(item)Sensor/$. Run some redstone from each $(item)Sensor/$ (place them a block apart to keep the redstone separate)."
+    },
+    {
+      "type": "text",
+      "title": "Example (cont.)",
+      "text": "In each $(item)Sensor/$ GUI:$(li)Select the $(thing)Dispenser/$ button$(li)Select $(thing)World/$$(li)Select $(thing)Global Variable/$$(li)In the $(thing)Variable Name/$ textfield, enter 'signal1', 'signal2' & 'signal3' respectively.$(p)Now, $(thing)right-click/$ your $(item)Remote/$, and try selecting/deselecting each checkbox. The corresponding $(item)Sensor/$ will emit a redstone signal as appropriate: wireless redstone!"
+    },
+    {
+      "type": "crafting",
+      "text": "Creating the Remote",
+      "recipe": "pneumaticcraft:remote"
+    }
+  ]
+}

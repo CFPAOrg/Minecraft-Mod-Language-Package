@@ -1,0 +1,34 @@
+{
+  "name": "Entity Attack Widget",
+  "icon": "pneumaticcraft:textures/progwidgets/attack_piece.png",
+  "category": "widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The $(l:tools/drone)Drone/$ will attack every living creature within the area.$(p)Keep in mind that any $(l:programming/area)Area/$ widgets connected to this widget must have an area type of $(thing)Box/$; this is only supported shape. It's possible to create different shapes, though, by using whitelisting/blacklisting of areas."
+    },
+    {
+      "type": "text",
+      "title": "Filtering Entities",
+      "text": "You can specify which creatures may be attacked by using $(l:programming/text)Text/$ widgets as an $(l:base_concepts/entity_filter)Entity Filter/$. E.g. if you want the $(item)Drone/$ to attack all players, connect a $(thing)Text/$ widget to the $(italic)right/$ of the $(thing)Entity Attack/$ widget containing $(#600)@player/$.$(p)If you don't want to be attacked yourself, connect up a $(thing)Text/$ widget on the $(italic)left/$ containing your player name."
+    },
+    {
+      "type": "text",
+      "title": "Melee Attacks",
+      "text": "$(l:tools/drone)Drones/$ will equip and use any melee weapon in their inventory to attack. If a $(item)Drone/$ has multiple weapons in its inventory, it will equip the most damaging one. $(p)You can use an $(l:programming/inventory_import)Inventory Import/$ widget to provide the $(item)Drone/$ with a weapon, which is strongly recommended - its unarmed melee attack is weak."
+    },
+    {
+      "type": "text",
+      "title": "Ranged Attacks",
+      "text": "By inserting an $(l:base_concepts/upgrades#minigun)Minigun Upgrade/$ into the $(l:tools/drone)Drone/$, it will have a $(l:tools/minigun)Minigun/$ attached to it. When provided with $(l:tools/minigun_ammo)Gun Ammo/$ (using an $(l:programming/inventory_import)Inventory Import/$ widget) the $(item)Drone/$ will use this Minigun to perform ranged attacks on its foes.$(p)The default range is 16 blocks, which can be upgraded by inserting up to 16 $(l:base_concepts/upgrades#range_upgrade)Range Upgrades/$, for a maximum range of 32 blocks."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/attack_piece.png"
+      ],
+      "text": "$(italic)I'll be back/$"
+    }
+  ]
+}

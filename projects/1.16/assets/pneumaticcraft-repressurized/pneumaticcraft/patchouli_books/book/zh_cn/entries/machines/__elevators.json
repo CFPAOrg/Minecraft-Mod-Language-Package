@@ -1,0 +1,58 @@
+{
+  "name": "Elevators",
+  "icon": "pneumaticcraft:elevator_base",
+  "category": "machines",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The $(thing)Elevator/$ is a machine that can be used to vertically transport any entities, whether it be an item, mob, animal or player.$(p)You need to place an $(item)Elevator Base/$ at the bottom. You can stack multiple bases on top of each other.$(p)On top of this, place $(item)Elevator Frames/$, which act as a support for the elevator."
+    },
+    {
+      "type": "text",
+      "text": "Both the number of $(item)Elevator Bases/$ and the number of $(item)Elevator Frames/$ determine how high the $(thing)Elevator/$ can extend. The maximum height of an $(thing)Elevator/$ is the lower of:$(li)1 x the number of vertically-stacked $(item)Elevator Frames/$, or$(li)$(ttcolor)$(t:You can change this multiplier in mod config - see 'I:elevatorBaseBlocksPerBase')6 x/$ the number of vertically-stacked $(item)Elevator Bases/$"
+    },
+    {
+      "type": "text",
+      "text": "The $(thing)Elevator/$ can operate in one of two modes:$(li)$(bold)Redstone/$: a $(#f00)redstone signal/$ applied to any $(item)Elevator Base/$ controls the elevator's height, proportional to the signal strength (no signal = 0% extension, full signal = 100% extension).$(li)$(bold)Elevator Caller/$: The $(l:machines/elevators#caller)Elevator Caller/$ can provide some more sophisticated control over the elevator."
+    },
+    {
+      "type": "text",
+      "title": "Multiblock Elevators",
+      "text": "You can create bigger $(thing)Elevators/$ by placing more $(item)Elevator Bases/$ next to each other horizontally. When the top $(item)Elevator Base/$ of every connected $(thing)Elevator/$ is at the same height, the $(thing)Elevators/$ will share the floors (defined by $(l:machines/elevators#caller)Elevator Callers/$), redstone input, and therefore act as a single multiblock."
+    },
+    {
+      "type": "text",
+      "title": "Saving Air",
+      "text": "The $(item)Elevator Base/$ can accept up to four $(l:base_concepts/upgrades#charging)Charging Upgrades/$, which allow it to reclaim used air when the elevator descends (normally descent costs no air but does not regenerate air either).$(p)This comes at a cost of slower descent; with 4 upgrades installed, air is reclaimed at 60% of the cost to rise that distance, but descent will be 40% slower."
+    },
+    {
+      "type": "text",
+      "anchor": "caller",
+      "title": "Elevator Caller",
+      "text": "$(item)Elevator Callers/$ placed next to $(item)Elevator Frames/$ are used to control the height of the $(thing)Elevator/$. When you place down an $(item)Elevator Frame/$, it'll calculate how many $(thing)floors/$ there are, defined by other $(item)Elevator Callers/$.$(p)$(thing)Floors/$ can be named in the $(item)Elevator Base/$ GUI; floor names will be displayed as buttons on each $(item)Elevator Caller/$. They can be clicked to call the $(thing)Elevator/$ to that floor."
+    },
+    {
+      "type": "text",
+      "title": "Elevator Caller (cont.)",
+      "text": "In addition, an $(item)Elevator Caller/$ will emit a $(#f00)redstone signal/$ when the $(thing)Elevator/$ is at its floor, and providing a Caller with a $(#f00)redstone pulse/$ will call the $(thing)Elevator/$ to its floor.$(p)Finally, the $(item)Elevator Caller/$ can be camouflaged to look like other blocks with the $(l:tools/camo_applicator)Camouflage Applicator/$ tool."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/elevator.png"
+      ],
+      "border": "true",
+      "text": "$(italic)A small Elevator with 3 Elevator Callers/$"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:elevator_base_1",
+      "recipe2": "pneumaticcraft:elevator_frame"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:elevator_caller"
+    }
+  ]
+}

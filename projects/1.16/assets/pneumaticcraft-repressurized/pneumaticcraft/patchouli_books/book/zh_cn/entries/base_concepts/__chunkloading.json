@@ -1,0 +1,30 @@
+{
+  "name": "Chunk Loading",
+  "icon": "minecraft:ender_eye",
+  "category": "base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "It is a fundamental mechanic of Minecraft that only parts of the world are loaded into memory at a time. This is essential for performance; no affordable computer could keep an entire world (especially a modded one) loaded and ticking all at once. The world is thus divided into 16x16 (in the horizontal axes) $(thing)chunks/$, only of few of which are loaded at once."
+    },
+    {
+      "type": "text",
+      "text": "This has important ramifications for designing reliable modded builds; if you want processing to happen when you're not at your base, you need to $(thing)chunkload/$ the relevant machines. The information following is primary intended as hints to achieve reliable $(pncr) builds, but much of it applies to other mods too."
+    },
+    {
+      "type": "text",
+      "title": "Chunkloading Methods",
+      "text": "$(li)Vanilla has a $(thing)/forceload/$ command to force one or more chunks to remain always loaded, but this does require op privileges to use$(li)Many mods offer player-usable chunkloading solutions, e.g. $(thing)FTB Chunks/$, $(thing)Chicken Chunks/$, $(thing)Weirding Gadgets/$ and more.$(li)The $(l:programming/programmable_controller)Programmable Controller/$ from this mod offers some limited chunkloading functionality too."
+    },
+    {
+      "type": "text",
+      "title": "Chunkloading Safety",
+      "text": "The following hints will assist in building reliable chunkloaded systems:$(li)$(thing)Try to keep your builds within chunk boundaries/$. If part of your build is chunkloaded and part of it isn't, the results can be highly unpredictable. Have either all of it or none of it loaded.$(li)$(thing)Use Security Upgrades in machines./$ This prevents explosions; even with good redstone control, chunkloading or server performance issues can be problematic."
+    },
+    {
+      "type": "text",
+      "title": "Chunkloading Safety (cont)",
+      "text": "$(li)$(thing)Keep multiblocks within a single chunk if possible./$ Even when all relevant chunks are chunkloaded, it's not ideal to have multiblocks like the $(l:manufacturing/pressure_chamber)Pressure Chamber/$ span two or more chunks."
+    }
+  ]
+}
