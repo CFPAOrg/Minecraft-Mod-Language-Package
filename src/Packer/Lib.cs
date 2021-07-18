@@ -62,18 +62,18 @@ namespace Packer
                                         return new LangFile(file.OpenRead(),
                                                             parsingCategory | FileCategory.LanguageFile,
                                                             config)
-                                               {
-                                                   relativePath = relativePath
-                                               };
+                                        {
+                                            relativePath = relativePath
+                                        };
                                     }
                                     else
                                     {
                                         return new TranslatedFile(file.OpenRead(),
                                                                   parsingCategory | FileCategory.OtherFiles,
                                                                   config)
-                                               {
-                                                   relativePath = relativePath
-                                               };
+                                        {
+                                            relativePath = relativePath
+                                        };
                                     }
                                 }).Where(_ => _ is not null) // 排除掉跳过的文件
                         })

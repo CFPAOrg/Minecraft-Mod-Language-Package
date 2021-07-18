@@ -7,7 +7,7 @@ namespace Packer.Extensions
 {
     public static class ContentExtension
     {
-        public static string NormalizePath(this string path) 
+        public static string NormalizePath(this string path)
             => path.Replace('\\', '/') // 修正正反斜杠导致的压缩文件读取问题
                    .ToLower(); // 确保大小写
 

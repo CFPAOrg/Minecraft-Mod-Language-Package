@@ -1,10 +1,12 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Packer.Models {
+namespace Packer.Models
+{
     /// <summary>
     /// .mcmeta format
     /// </summary>
-    public class McMeta {
+    public class McMeta
+    {
         /// <summary>
         /// 
         /// </summary>
@@ -14,7 +16,8 @@ namespace Packer.Models {
     /// <summary>
     /// pack format
     /// </summary>
-    public class McMetaPack {
+    public class McMetaPack
+    {
         /// <summary>
         /// version
         /// </summary>

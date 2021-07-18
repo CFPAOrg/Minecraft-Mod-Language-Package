@@ -10,9 +10,12 @@ using Serilog;
 using Spider.Lib;
 using Spider.Lib.FileLib;
 
-namespace Spider {
-    static class Program {
-        static async Task Main() {
+namespace Spider
+{
+    static class Program
+    {
+        static async Task Main()
+        {
             //Directory.SetCurrentDirectory(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) ?? throw new InvalidOperationException());
 
             Log.Logger = new LoggerConfiguration()
@@ -22,10 +25,12 @@ namespace Spider {
                 .CreateLogger();
             var c = await JsonReader.ReadConfigAsync();
 
-            foreach (var cfg in c) {
+            foreach (var cfg in c)
+            {
                 var parser = new InfoParser(cfg.Configuration, cfg.CustomConfigurations);
 
-                if (cfg.Configuration != null) {
+                if (cfg.Configuration != null)
+                {
                     var dict = await JsonReader.ReadIntroAsync(cfg.Configuration.Version, cfg.Version);
                     var pending = new List<string>();
                     var root = Directory.CreateDirectory(
@@ -34,20 +39,25 @@ namespace Spider {
                     var names = root.GetDirectories().Select(_ => _.Name).ToList();
 
                     if (cfg.CustomConfigurations != null)
-                        foreach (var configuration in cfg.CustomConfigurations) {
-                            if (!names.Contains(configuration.ProjectName)) {
+                        foreach (var configuration in cfg.CustomConfigurations)
+                        {
+                            if (!names.Contains(configuration.ProjectName))
+                            {
                                 names.Add(configuration.ProjectName);
                             }
                         }
 
-                    if (cfg.Count != null) {
+                    if (cfg.Count != null)
+                    {
                         var allM = await UrlLib.GetModInfoAsync(cfg.Count.Value, cfg.Configuration.Version);
 
 
-                        if (names.Count > cfg.Count) {
+                        if (names.Count > cfg.Count)
+                        {
                             var bin = allM.Where(_ => !names.Contains(_.Slug));
                             var l = allM.ToList();
-                            foreach (var info in bin) {
+                            foreach (var info in bin)
+                            {
                                 l.Remove(info);
                             }
 
@@ -60,8 +70,10 @@ namespace Spider {
                         //    MaxDegreeOfParallelism = 16
                         //};
 
-                        foreach (var str in names) {
-                            if (!allN.Contains(str)) {
+                        foreach (var str in names)
+                        {
+                            if (!allN.Contains(str))
+                            {
                                 pending.Add(str);
                             }
                         }
@@ -81,15 +93,19 @@ namespace Spider {
                         //    }
                         //}));
 
-                        var tasks = l1.Select(async _ => {
-                            try {
+                        var tasks = l1.Select(async _ =>
+                        {
+                            try
+                            {
                                 await semaphore.WaitAsync();
                                 await Utils.ParseModsAsync(_, cfg);
                             }
-                            catch (Exception e) {
+                            catch (Exception e)
+                            {
                                 Log.Logger.Error(e.Message);
                             }
-                            finally {
+                            finally
+                            {
                                 semaphore.Release();
                             }
                         });
@@ -98,23 +114,30 @@ namespace Spider {
                     }
 
 
-                    foreach (var name in pending) {
-                        if (dict.ContainsKey(name)) {
+                    foreach (var name in pending)
+                    {
+                        if (dict.ContainsKey(name))
+                        {
                             var m = await UrlLib.GetModInfoAsync(dict[name]);
                             var i = parser.Serialize(m);
-                            try {
-                                var task = new Task(async () => {
-                                    try {
+                            try
+                            {
+                                var task = new Task(async () =>
+                                {
+                                    try
+                                    {
                                         await Utils.ParseModsAsync(i, cfg);
                                     }
-                                    catch (Exception e) {
+                                    catch (Exception e)
+                                    {
                                         Log.Logger.Error(e.Message);
                                     }
                                 });
                                 task.Start();
                                 //await Utils.ParseModsAsync(i,cfg);
                             }
-                            catch (Exception e) {
+                            catch (Exception e)
+                            {
                                 Log.Logger.Error(e.Message);
                             }
                             Thread.Sleep(5000);

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Text.Json.Serialization;
 
-namespace Spider.Lib.JsonLib {
-    public class Mod {
+namespace Spider.Lib.JsonLib
+{
+    public class Mod
+    {
         [JsonPropertyName("name")] public string Name { get; set; }
         [JsonPropertyName("project_name")] public string ProjectName { get; set; }
         [JsonPropertyName("project_id")] public long ProjectId { get; set; }
