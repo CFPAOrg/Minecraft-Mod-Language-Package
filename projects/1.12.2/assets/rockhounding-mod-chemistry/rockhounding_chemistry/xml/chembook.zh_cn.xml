@@ -776,6 +776,7 @@
 												<p>实验室反应器：实验室反应器</p>
 												<p>气体重整器：重整控制器</p>
 												<p>化学萃取机：反应稳定器</p>
+												<p>固定床反应器：控制器</p>
 												<p space="2" />
 												<image src="rockhounding_chemistry:gbook/screens/catalyst_regen" tw="90" th="66"/>
 											</page>
@@ -1178,6 +1179,7 @@
 									<p><stack item="rockhounding_chemistry:machines_c" meta="0" count="1" /> <link ref="tierthree:gan_page" color="#333399">-&gt; 低温蒸馏塔</link></p>
 									<p><stack item="rockhounding_chemistry:machines_d" meta="5" count="1" /> <link ref="tierthree:deposition_page" color="#333399">-&gt; 气相沉积室</link></p>
 									<p><stack item="rockhounding_chemistry:machines_d" meta="8" count="1" /> <link ref="tierthree:pulling_page" color="#333399">-&gt; 拉晶坩埚</link></p>
+									<p><stack item="rockhounding_chemistry:machines_f" meta="5" count="1" /> <link ref="tierthree:bedreactor_page" color="#333399">-&gt; 固定床反应器</link></p>
 								</page>
 							</chapter>
 
@@ -1389,6 +1391,49 @@
 												<p space="7" />
 												<p color="#0000FF">预览</p>
 												<link ref="galleries:gal_pulling" color="#336633">前视图</link>
+											</page>
+
+											<page id="bedreactor_page">
+												<p><stack item="rockhounding_chemistry:machines_f" meta="5" count="1" /> <link ref="tier_three:tier_three_page" color="#CC3333">&lt;- 固定床反应器</link></p>
+												<p>这台机器使气体与催化剂接触来生产新气体。至多可使用8片催化剂，以增加一次处理的气体量。输出的容器安装在侧面，排出多余原料的容器安装在后面。推荐使用储气罐输入。</p>
+												<p space="4" />
+												<p color="#0000FF">组装需求</p>
+												<p>1x 固定床反应器控制器</p>
+												<p>1x 固定床反应室</p>
+												<p>1x 管道系统</p>
+												<p>1x 气体导流器</p>
+												<p>6x <link ref="utilities:pressure_vessel_page" color="#000000">压力容器/储气罐</link></p>								
+												<p>1x <link ref="utilities:engine_page" color="#000000">电站</link> (两种能量皆需)</p>
+												<p>1x <link ref="utilities:server_page" color="#000000">服务器</link></p>
+												<p space="4" />
+												<p color="#0000FF">机器结构</p>
+												<layer_1_2 />
+												<bedreactor_slots_1>
+													<stack item="rockhounding_chemistry:machines_a" meta="14" count="1" />
+													<stack item="rockhounding_chemistry:machines_b" meta="9" count="1" />
+													<stack item="rockhounding_chemistry:machines_f" meta="0" count="1" />
+													<stack item="rockhounding_chemistry:machines_f" meta="4" count="1" />
+													<stack item="rockhounding_chemistry:machines_a" meta="2" count="1" />
+												</bedreactor_slots_1>
+											</page>
+
+											<page>
+												<layer_3_4_5 />
+												<bedreactor_slots_2>
+													<stack item="rockhounding_chemistry:machines_f" meta="2" count="1" />
+													<stack item="rockhounding_chemistry:misc_blocks_a" meta="14" count="1" />
+													<stack item="rockhounding_chemistry:machines_b" meta="9" count="1" />
+												</bedreactor_slots_2>
+												<p space="8" />
+												<p color="#0000FF">如何使用固定床反应器：</p>
+												<p>> 在控制器内选择要运行的配方。</p>
+												<p space="4" />
+												<p>> 依据自动设置好的过滤，向顶部的容器内输入气体。</p>
+												<p space="4" />
+												<p>> 插入至多8片催化剂，以增加一次处理的气体量。8片不是强制性的，每插入一片都会增加一定的处理量。</p>
+												<p space="7" />
+												<p color="#0000FF">预览</p>
+												<link ref="galleries:bed_reactor" color="#336633">前视图</link>
 											</page>
 
 										</chapter>
@@ -1741,6 +1786,11 @@
 						<link ref="tiertwo:cstr_page" color="#CC3333">&lt;- 回到电化学CSTR页</link>
 						<p space="5" />
 						<image src="rockhounding_chemistry:gbook/screens/cstr" tw="180" th="183"/>
+					</page>
+					<page id="bed_reactor">
+						<link ref="tierthree:bedreactor_page" color="#CC3333">&lt;- 回到固定床反应器页</link>
+						<p space="5" />
+						<image src="rockhounding_chemistry:gbook/screens/bed_reactor" tw="180" th="246"/>
 					</page>
 					<page id="gal_signal">
 						<link ref="structures:signal_page" color="#CC3333">&lt;- 回到红石交互页</link>
