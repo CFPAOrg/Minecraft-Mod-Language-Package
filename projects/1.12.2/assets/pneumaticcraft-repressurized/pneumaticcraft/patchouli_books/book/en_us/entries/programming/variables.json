@@ -1,0 +1,57 @@
+{
+  "name": "Variables",
+  "icon": "minecraft:paper",
+  "category": "programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Variables/$ allow drone programs to store and manipulate block positions (aka coordinates) to provide some advanced drone functionality.$(p)To create or manipulate variables from within a drone program, use the $(l:programming/coordinate_operator)Coordinate Operator/$ and $(l:programming/coordinate)Coordinate/$ widgets, and to run tests on variables, use the $(l:programming/condition_coordinate)Condition: Coordinate/$ widget."
+    },
+    {
+      "type": "text",
+      "text": "In the $(l:programming/area)Area/$ widget you can, instead of using a GPS coordinate, use a $(thing)variable/$ name.$(p)These $(thing)variables/$ persist across world reloads, so could be used to create an endless mining program, for example, where the Drone's dig position is tracked by a $(thing)variable/$.$(p)For an old but still relevant tutorial, see $(l:https://www.youtube.com/watch?v=FIjEdD_Yj9Y)this YouTube video by MineMaarten/$."
+    },
+    {
+      "type": "text",
+      "text": "While $(thing)variables/$ only store coordinates (an X/Y/Z triple), if you think about it you will see that you can work with $(thing)integers/$ and $(thing)booleans/$ too. Just use only one axis for integers, and for booleans, define something like '0' = false, and everything else = true. Have fun!"
+    },
+    {
+      "type": "text",
+      "title": "Types of Variable",
+      "text": "There are three types of variable:$(li)$(thing)Local variables/$: these are stored per-drone and are referenced simply as 'varname'.$(li)$(thing)Global variables/$: as the name suggests, these are global to all drones and can be used for sharing data between drones. They are referenced as '#varname'.$(li)$(thing)Special Variables/$ can be used to retrieve some metadata about the drone and are referenced as '$varname'."
+    },
+    {
+      "type": "text",
+      "anchor": "global",
+      "title": "Global Variables",
+      "text": "$(thing)Global variables/$ are prefixed with '#'. Normal variables are unique per $(l:tools/drone)Drone/$; they can't be shared. Global variables are variables that $(italic)are/$ shared. $(p)This allows Drones to communicate with each other. Additionally, the $(l:machines/universal_sensor)Universal Sensor/$ can look for global variables, and emit a $(#f00)redstone signal/$ based on them, and the $(l:tools/remote)Remote/$ can display and modify them."
+    },
+    {
+      "type": "text",
+      "title": "Global Variables (cont.)",
+      "text": "For convenience, $(thing)global variables/$ can be set by using the command $(#800)/setGlobalVariable <varName> <x> <y> <z>/$. This is useful in custom maps or for debugging. Execution of this command is not limited to just Server Ops.$(p)To get the variable state (useful for debugging), use $(#800)/getGlobalVariable <varName>/$. This will get both the coordinate and item value."
+    },
+    {
+      "type": "text",
+      "anchor": "special",
+      "title": "Special Variables",
+      "text": "The following special variables are recognised:$(li)$(thing)$owner/$: the coordinate of the player who owns the $(l:tools/drone)Drone/$. This is 0,0,0 if the owner is not online.$(li)$(thing)$drone/$: gets the coordinate of the drone itself.$(li)$(thing)$player=<playername>/$: Gets the coordinate of the player '<playername>' (case insensitive). This is 0,0,0 if the player does not exist or is not online."
+    },
+    {
+      "type": "text",
+      "title": "Debugging",
+      "text": "Sometimes it's useful to display the value of a variable for debugging purposes. You can display a variable's value in a few ways:$(li)Using the $(l:programming/rename)Rename/$ widget to show the variable as a drone's nameplate$(li)Writing text with the $(l:programming/edit_sign)Edit Sign/$ widget$(li)Using a $(l:tools/remote#label)label/$ in a $(l:tools/remote)Remote/$."
+    },
+    {
+      "type": "text",
+      "title": "Debugging (cont.)",
+      "text": "To interpolate a variable into text displayed by one of the above methods, use the syntax $(thing)${varname}/$.$(p)Note that the special & global variable prefixes still apply here, so to interpolate a drone's position, you would use $(thing)${$drone}/$, and to interpolate a global variable, you would use $(thing)${#globalvarname}/$."
+    },
+    {
+      "type": "text",
+      "title": "Debugging (cont.)",
+      "text": "You can also display only the X, Y or Z component of the coordinate by suffixing the variable name with $(thing).x/$, $(thing).y/$ or $(thing).z/$ respectively.$(p)E.g. to show the drone owner's Y coordinate, use $(thing)${$owner.y}/$."
+    }
+  ]
+}

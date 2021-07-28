@@ -13,6 +13,9 @@ key.metamorph.demorph=Demorph (turn back to player)
 # GUI
 metamorph.gui.body_parts.pick=Pick morph
 metamorph.gui.body_parts.use_target=Use target
+metamorph.gui.body_parts.enabled=Enabled
+metamorph.gui.body_parts.animate=Animate
+metamorph.gui.body_parts.animate_tooltip=This option enables animation of body part's transformations when parent morph gets animated
 metamorph.gui.body_parts.parts=Body parts
 metamorph.gui.body_parts.limbs=Limbs
 metamorph.gui.body_parts.open=Open body parts
@@ -21,6 +24,8 @@ metamorph.gui.body_parts.dupe_tooltip=Dupe currently selected body part...
 metamorph.gui.body_parts.remove_tooltip=Remove currently selected body part...
 metamorph.gui.body_parts.copy_tooltip=Copy all body parts...
 metamorph.gui.body_parts.paste_tooltip=Paste copied body parts...
+metamorph.gui.body_parts.context.copy=Copy body part
+metamorph.gui.body_parts.context.paste=Paste copied body part
 
 metamorph.gui.add=Add
 metamorph.gui.remove=Remove
@@ -67,9 +72,12 @@ metamorph.gui.creative.context.add_category=Add a new category
 metamorph.gui.creative.context.rename_category=Rename category
 metamorph.gui.creative.context.rename_category_modal=Give a new name to given category...
 metamorph.gui.creative.context.remove_category=Remove category
-metamorph.gui.creative.context.clear_category=Clear
+metamorph.gui.creative.context.remove_category_modal=Are you sure you want to remove this morph category? It will be gone forever...
+metamorph.gui.creative.context.clear_category=Remove all morphs
+metamorph.gui.creative.context.clear_category_modal=Are you sure you want to remove all morphs in this category? It will be gone forever... 
 metamorph.gui.creative.context.to_recent=Copy to recent
-metamorph.gui.creative.context.remove_morph=Remove morph
+metamorph.gui.creative.context.remove_morph=Remove the morph
+metamorph.gui.creative.context.copy_command=Copy /morph command
 metamorph.gui.creative.context.copy=Copy NBT
 metamorph.gui.creative.context.paste=Paste NBT
 metamorph.gui.creative.context.paste_modal=Paste or input the NBT tag of your morph...
@@ -83,6 +91,8 @@ metamorph.gui.survival.keys.toggle_favorites=Toggle favorite morphs
 metamorph.gui.survival.keys.focus_keybind=Focus keybind
 
 metamorph.gui.editor.settings=Morph settings
+metamorph.gui.editor.keybind=Keybind
+metamorph.gui.editor.keybind_tooltip=Setting keybind here will allow you to morph into this morph by pressing this key either in the world or in survival morph menu
 metamorph.gui.editor.display_name=Display name
 metamorph.gui.editor.health=Health
 metamorph.gui.editor.speed=Speed
@@ -95,6 +105,14 @@ metamorph.gui.editor.item_morph=Item
 metamorph.gui.editor.keys.category=Morph editor keybinds
 metamorph.gui.editor.keys.cycle=Cycle between morph panels
 
+metamorph.gui.editor.hitbox.enabled=Custom hitbox
+metamorph.gui.editor.hitbox.size=Size
+metamorph.gui.editor.hitbox.width=Hitbox width
+metamorph.gui.editor.hitbox.height=Hitbox height
+metamorph.gui.editor.hitbox.sneaking_height=Hitbox sneaking height
+metamorph.gui.editor.hitbox.eye=Eye position
+metamorph.gui.editor.hitbox.eye_tooltip=Eye height factor of the height, where 0 is at the bottom and 1 on the top of the hitbox
+
 metamorph.gui.label.label=Label
 metamorph.gui.label.max_width=Max width
 metamorph.gui.label.anchor=Anchor
@@ -104,11 +122,18 @@ metamorph.gui.label.shadow_offset=Shadow offset
 metamorph.gui.label.shadow_color=Shadow color
 metamorph.gui.label.lighting=Lighting
 metamorph.gui.label.lighting_tooltip=When disabled, Minecraft's lightmap won't be applied, meaning it would glow in the dark. Shader packs, that have bloom effect, will make this morph look like neon sign
+metamorph.gui.label.background=Background
+metamorph.gui.label.billboard=Look at player
 
 metamorph.gui.edit=Edit
 metamorph.gui.panels.nbt_data=NBT data
 metamorph.gui.panels.username=Username
 metamorph.gui.panels.updating=Updating...
+
+metamorph.gui.animation.animates=Animates
+metamorph.gui.animation.ignored=Ignored
+metamorph.gui.animation.animation_duration=Duration
+metamorph.gui.animation.pick_interpolation=Pick interpolation
 
 metamorph.gui.status.tight_space=There is not enough space to morph here
 
@@ -148,6 +173,19 @@ metamorph.config.morphs.pause_gui_in_sp=Pause morph GUIs
 metamorph.config.comments.morphs.pause_gui_in_sp=Whether creative and survival morph GUIs should be paused in singleplayer
 metamorph.config.morphs.max_recent_morphs=Max. recent morphs
 metamorph.config.comments.morphs.max_recent_morphs=The maximum amount of recent morphs that can be added in the morph menu before being discarded
+metamorph.config.morphs.allow_morphing_into_category_morphs=Allow morphing into category morphs
+metamorph.config.comments.morphs.allow_morphing_into_category_morphs=When enabled, this option allows to morph into recent and custom category morphs while being in survival. This option also allows to open creative morph menu in survival
+metamorph.config.morphs.load_entity_morphs=Load entity morphs
+metamorph.config.comments.morphs.load_entity_morphs=Whether entity morphs should be loaded in creative morph menu
+metamorph.config.morphs.render_bodypart_axis=Render Axis for body parts
+metamorph.config.comments.morphs.render_bodypart_axis=When enabled, body part axes are displayed in the body part editor GUI
+
+# OP access config
+op_access.config.metamorph.title=Metamorph
+op_access.config.metamorph.tooltip=Metamorph's OP access options
+
+op_access.config.metamorph.entity_selectors=Entity selectors
+op_access.config.comments.metamorph.entity_selectors=Can non-OP players edit entity selectors?
 
 # Commands
 metamorph.commands.morph=Morph command. This command is responsible for morphing player into specified morph.\n\n/morph <username> [morph_name] [data_tag]

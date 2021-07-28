@@ -1,8 +1,12 @@
 name: Packer
 # cloned from main branch, merely edited
 on:
+  workflow_dispatch:
   push:
     branches: [main]
+    paths: 
+      - 'config/packer.json'
+      - 'projects/**'
     #paths:
     #  - "projects/**"
 
@@ -12,19 +16,36 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 1
+          fetch-depth: 20
           ref: main
+
+      - name: Check changed path on 1.12
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: changed-1122
+        with:
+          paths: projects/1.12.2
+
+      - name: Check changed path on 1.16
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: changed-116
+        with:
+          paths: projects/1.16
 
       - name: Build Packer
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
       - name: Run Packer
-        run: ./Packer
+        run: ./Packer --version="1.12.2"
+        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Packer
+        run: ./Packer --version="1.16"
+        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Create timestamp
         id: create_timestamp
         run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
-        shell: sh
+        shell: bash
 
         # Create the release:  https://github.com/actions/create-release
       - name: Create release
@@ -38,21 +59,39 @@ jobs:
           draft: false
           prerelease: false
 
-      # Upload release asset:   https://github.com/actions/upload-release-asset
-      - name: Update release asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: Minecraft-Mod-Language-Package.zip # Use the full path here because environment variables are not in scope
-          asset_name: Minecraft-Mod-Language-Package.zip
-          asset_content_type: application/zip
-
       # Doesn't do so now because it messes up the server
       - name: Build Uploader
         run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
       - name: Run Uploader
-        run: .\Uploader ${{ secrets.SSH_IP }} ${{ secrets.SSH_USER }} ${{ secrets.SSH_PWD }}
+        run: .\Uploader --version="1.12.2" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
+        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Uploader
+        run: .\Uploader --version="1.16" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
+        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+        
+      # Upload release asset:   https://github.com/actions/upload-release-asset
+      - name: Update release asset
+        id: upload-release-asset1
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: Minecraft-Mod-Language-Package-1.12.2.zip # Use the full path here because environment variables are not in scope
+          asset_name: Minecraft-Mod-Language-Package-1.12.2.zip
+          asset_content_type: application/zip
+        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Update release asset
+        id: upload-release-asset2
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: Minecraft-Mod-Language-Package-1.16.zip # Use the full path here because environment variables are not in scope
+          asset_name: Minecraft-Mod-Language-Package-1.16.zip
+          asset_content_type: application/zip
+        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'

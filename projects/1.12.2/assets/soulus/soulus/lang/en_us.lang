@@ -1,5 +1,9 @@
 itemGroup.soulus=Soulus
 
+# ESSENCE TYPES
+
+misc.essence_type.minecraft:vindication_illager.name=Illager
+
 
 # ITEMS
 
@@ -24,6 +28,7 @@ item.soulus:dust_iron.name=Iron Dust
 item.soulus:dust_gold.name=Gold Dust
 item.soulus:dust_wood.name=Wood Dust
 item.soulus:dust_stone.name=Stone Dust
+item.soulus:dust_end_stone.name=End Stone Dust
 item.soulus:dust_ender_iron.name=Ender-Iron Dust Blend
 item.soulus:dust_ender_iron_ashen.name=Ash-Ender-Iron Dust Blend
 item.soulus:dust_niobium.name=Niobium Dust
@@ -133,7 +138,17 @@ tile.soulus:soul_totem.name=Soul Totem
 death.attack.soulus:crystal_blood=%1$s sacrificed themselves to a Blood Crystal
 death.attack.soulus:crystal_dark=%1$s was consumed by a Midnight Crystal
 death.attack.soulus:skewer=%1$s became a shishkebab
-death.attack.soulus:skewer_player=%1$s became a shishkebab
+
+
+# ACTION BAR MESSAGES
+
+message.actionbar.soulus:feed_wolf_bone.normal=The wolf accepts your meager offering and allows you to live. For now.
+message.actionbar.soulus:feed_wolf_bone.fungal=The wolf eyes you suspiciously for giving it such a moldy old fossil.
+message.actionbar.soulus:feed_wolf_bone.frozen=The bone is too cold for the wolf, and it whines pitifully.
+message.actionbar.soulus:feed_wolf_bone.dry=The wolf does not like sand, coarse and rough and irritating and it gets everywhere.
+message.actionbar.soulus:feed_wolf_bone.scale=The wolf is not a big fan of sushi, but accepts the scale nonetheless.
+message.actionbar.soulus:feed_wolf_bone.nether=The wolf becomes enraged!
+message.actionbar.soulus:feed_wolf_bone.ender=The wolf is very confused and loses all interest in you.
 
 
 # ITEM TOOLTIPS
@@ -166,6 +181,7 @@ waila.soulus:skewer.upgrades_poison=%1$s/%2$s §2Spider Eyes §8(Poison)
 waila.soulus:skewer.upgrades_power=%1$s/%2$s §cRedstone Torch §8(Power)
 waila.soulus:skewer.upgrades_player=%1$s/%2$s §6Soul Catalyst §8(Player)
 waila.soulus:skewer.upgrades_tether=%1$s/%2$s §7Ash §8(Tether)
+waila.soulus:skewer.upgrades_looting=%1$s/%2$s §3Bottles o' Enchanting §8(Looting)
 
 waila.soulus:summoner.summon_percentage=§a%1$s%% §8summoned
 waila.soulus:summoner.summons_remaining=%1$s%% §8souls remaining
@@ -187,11 +203,15 @@ waila.soulus:composer.upgrades_delay=%1$s/%2$s §3Oscillating Gears §8(Speed)
 waila.soulus:composer.upgrades_efficiency=%1$s/%2$s §9Niobium Gears §8(Efficiency)
 waila.soulus:composer.craft_percentage=§a%1$s%% §8composed
 waila.soulus:composer.required_creatures=Required Consumption:
+waila.soulus:composer.required_creatures_count=Required Consumption: §c%1$s
 waila.soulus:composer.required_creature=§8%1$s: §c%2$s
 waila.soulus:composer.no_recipe=§8No Valid Recipe
 waila.soulus:composer_cell.no_items=§8Contains No Items
 waila.soulus:composer_cell.contained_item=%1$s/%2$s §6%3$s
 waila.soulus:composer_cell.slot=Slot %1$s
+waila.soulus:composer_cell.auto_marrow_contained_gears=Marrowing: %1$s/%2$s §3Oscillating Gears
+waila.soulus:composer_cell.auto_marrow=§8§oInsert bone chunks to marrow
+waila.soulus:composer_cell.auto_marrow_contained_chunks=Chunks: %1$s/%2$s §6%3$s
 
 waila.soulus:enderlink.upgrades_range=%1$s/%2$s §6Murky Orbs §8(Range)
 waila.soulus:misc.color.black=Color: §0Black
@@ -251,6 +271,7 @@ jei.description.soulus:dust_ender_iron_ashen=A mixture of the glowing dust, iron
 jei.description.soulus:dust_iron=Iron ground into a fine powder.
 jei.description.soulus:dust_gold=Gold ground into a fine powder.
 jei.description.soulus:dust_stone=Stone crushed into a fine powder.
+jei.description.soulus:dust_end_stone=End Stone crushed into a fine powder.
 jei.description.soulus:dust_wood=Wood crushed into a fine powder.
 jei.description.soulus:emerald_burnt=A crystal forged from fire.
 jei.description.soulus:emerald_coated=A crystal forged from fire, covered in blood.
@@ -319,6 +340,10 @@ advancement.soulus:soulbook.title=Soulbook
 advancement.soulus:soulbook.description=A container for souls
 advancement.soulus:soulbook_fill.title=One Whole Soul
 advancement.soulus:soulbook_fill.description=Fill a soulbook with a type of essence
+advancement.soulus:soul_inquirer.title=I'd Like to Make a Soul Inquiry
+advancement.soulus:soul_inquirer.description=Please forward all soul-related inquiries to my business account, @soulcerer69
+advancement.soulus:soul_inquirer_upgrade_max.title=Machine of Sight
+advancement.soulus:soul_inquirer_upgrade_max.description=Max out each kind of upgrade on any soul inquirer
 advancement.soulus:endersteel.title=Alien Metal
 advancement.soulus:endersteel.description=Use an ender-iron dust blend to create a magical alloy
 advancement.soulus:summoner.title=The Cornerstone of Restoration
@@ -333,9 +358,9 @@ advancement.soulus:skewer.title=Who's Hungry?
 advancement.soulus:skewer.description=Craft a skewer
 advancement.soulus:skewer_kill.title=Shishkebab
 advancement.soulus:skewer_kill.description=Skewer a summoned creature
-advancement.soulus:skewer_upgrade_max.title=Death Machine
+advancement.soulus:skewer_upgrade_max.title=Machine of Death
 advancement.soulus:skewer_upgrade_max.description=Max out each kind of upgrade on any skewer
-advancement.soulus:summoner_upgrade_max.title=Life Machine
+advancement.soulus:summoner_upgrade_max.title=Machine of Life
 advancement.soulus:summoner_upgrade_max.description=Max out each kind of upgrade on any summoner
 advancement.soulus:gear_oscillating.title=Grim Reaper
 advancement.soulus:gear_oscillating.description=Use the bones of summoned creatures to craft a magic cog
@@ -349,8 +374,14 @@ advancement.soulus:ash.title=Decimation of Plantae
 advancement.soulus:ash.description=Use a malignant powder to collect ash
 advancement.soulus:endersteel_dark.title=A Dastardly Metal
 advancement.soulus:endersteel_dark.description=Combine alien remains, iron, and ash to craft a maddening ingot
+advancement.soulus:composer_cell_auto_marrow.title=No More Dirtied Hands
+advancement.soulus:composer_cell_auto_marrow.description=Automatically extract essence from a bone chunk
+advancement.soulus:composer_cell_auto_fill.title=No More Dirtied Hands II: Even Less Dirty
+advancement.soulus:composer_cell_auto_fill.description=Automatically fill a soulbook, murky orb, or soul catalyst with essence or ash
 advancement.soulus:composer.title=Hands Free Crafting
 advancement.soulus:composer.description=And now you can imbue souls as well!
+advancement.soulus:composer_upgrade_max.title=Machine of Alchemy
+advancement.soulus:composer_upgrade_max.description=Max out each kind of upgrade on any composer
 advancement.soulus:compose.title=Exploit the Summoned
 advancement.soulus:compose.description=I mean, they're alive, but it's not like they have lives...
 advancement.soulus:alchemy_endersteel.title=Fauxmetal Alchemist
@@ -359,6 +390,8 @@ advancement.soulus:crystal_dark.title=Witching Hour
 advancement.soulus:crystal_dark.description=Compose the blood and souls of many Animalia into a Midnight Jewel
 advancement.soulus:enderlink.title=Magnetic Darkness
 advancement.soulus:enderlink.description=Construct a machine capable of teleportation
+advancement.soulus:enderlink_upgrade_max.title=Machine of Travel
+advancement.soulus:enderlink_upgrade_max.description=Max out each kind of upgrade on any enderlink
 advancement.soulus:teleport.title=Free Teleportation
 advancement.soulus:teleport.description=It just takes a bit of an investment
 advancement.soulus:teleport_multiple.title=What is this, a circus?
@@ -379,6 +412,8 @@ advancement.soulus:soul_totem.title=A Structure With a Presence
 advancement.soulus:soul_totem.description=Construct a Soul Totem
 advancement.soulus:soul_totem_summon.title=Closed Feedback Loop
 advancement.soulus:soul_totem_summon.description=Summon creatures without the presence of your human soul
+advancement.soulus:soul_totem_upgrade_max.title=Machine of Soul
+advancement.soulus:soul_totem_upgrade_max.description=Max out each kind of upgrade on any soul totem
 
 
 # PATCHOULI GUIDEBOOK

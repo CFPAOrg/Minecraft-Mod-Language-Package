@@ -1,0 +1,66 @@
+{
+	"name": "调频工具",
+	"icon": "warpdrive:tuning_fork:1",
+	"category": "0_basics",
+	"pages": [
+		{
+			"type": "text",
+			"text": "调频工具用于在不同的无线网络参数上将方块链接到一起：$(item)视频频道$()、$(item)光束频率$()和$(item)控制频道$()。$(br2)这些参数可使用静态的$(item)音叉$()、可调的$(item)调频起子$()或更通用的 LUA 脚本调节。"
+		},
+		{
+			"type": "text",
+			"title": "视频频道",
+			"text": "$(l:3_advanced_machines/camera_and_monitor)摄像机和监视器$()需要通过$(item)视频频道$()链接。每个加载的摄像机需要使用自己的频道来输出其信号。要在监视器上查看特定的摄像机，你需要将其监视器与摄像机的$(item)视频频道$()调谐。$(br)视频频道的值可以是从 0 到 999999999 的任何整数。$(br2)相关的 LUA 属性是 $(item)videoChannel$()。"
+		},
+		{
+			"type": "text",
+			"title": "光束频率",
+			"text": "$(t:Laser cannon and forcefields)基于能量的武器$(/t)有一个可调的$(item)光束频率$()，范围从 1 到 65000。默认值是 0，此时是无效的。注意， 1420 是一个特殊的$(item)光束频率$()，就像在$(l:5_combat/lasers_advanced_boosting)激光设置（高级）$()中解释的那样。$(br2)光束颜色会根据其$(item)光束频率$()改变，而且会涉及技术问题。$(br2)相关的 LUA 属性是 $(item)beamFrequency$()。"
+		},
+		{
+			"type": "text",
+			"title": "控制频道",
+			"text": "像$(l:3_advanced_machines/large_hadron_collider)大型强子对撞机$()这样的大型复杂机器有着相互距离较远的组成方块。它们通过一个$(item)控制频道$()远程互联。频道的范围是从 0 到 999999999 的整数。$(br2)相关的 LUA 属性是 $(item)controlChannel$()。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "warpdrive:tuning_fork@15",
+			"recipe2": "warpdrive:tuning_fork@15_dye",
+			"title": "音叉",
+			"text": "合成中可以使用任何染料。"
+		},
+		{
+			"type": "text",
+			"text": "早期，你可以简单地制作一个$(item)音叉$()来调节你的机器。合成后，这个工具会固定在 16 种预定义值之一。$(br2)右击方块可调节其主要参数。$(br)Shift 右击方块可调节其次要参数。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "warpdrive:tuning_driver@0",
+			"title": "调频起子",
+			"text": "使用自定义值进行远程控制时，对系统进行黑客攻击要困难得多。这可以通过使用$(item)调频起子$()重现配置实现。它也是博士最棒的工具，但那是你知道的谁的另一个故事。"
+		},
+		{
+			"type": "text",
+			"text": "一旦合成，该工具可使用染料调频；颜色和顺序对于输出值有直接的影响，与之前输出的值完全独立。$(br2)右击方块可调节方块的参数。$(br)Shift 右击方块可获得方块的当前值。$(br)对空气右击可在不同参数间切换。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "warpdrive:tuning_driver@0_video2",
+			"title": "设置视频频道",
+			"text": "将起子与红石和 7 个染料合成可调整$(item)视频频道$()。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "warpdrive:tuning_driver@1_bream_frequency2",
+			"title": "设置光束频率",
+			"text": "将起子与红石和 4 个染料合成可调整$(item)光束频率$()。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "warpdrive:tuning_driver@2_control_channel2",
+			"title": "设置控制频道",
+			"text": "将起子与红石和 7 个染料合成可调整$(item)控制频道$()。"
+		}
+	],
+	"sortnum": 12
+}
