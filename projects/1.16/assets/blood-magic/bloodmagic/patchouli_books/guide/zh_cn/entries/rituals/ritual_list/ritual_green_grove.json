@@ -6,72 +6,58 @@
     {
       "type": "multiblock",
       "name": "Ritual of the Green Grove",
-      "multiblock":{
-        "pattern":[
-          ["EWE",
-           "W0W",
-           "EWE"]
-        ],
-        "mapping":{
-          "0": "bloodmagic:masterritualstone",
-          "E": "bloodmagic:earthritualstone",
-          "W": "bloodmagic:waterritualstone"
-        },
-        "symetrical": true
-      },
+      "multiblock_id": "bloodmagic:green_grove",
       "text": "Use a $(l:bloodmagic:rituals/ritual_diviner)Ritual Diviner$(/l) for easier construction."
     },
     {
-      "type": "text",
-      "text": "Grows crops within its area.$(br2)$(water)Water Runes: 4$() $(br)$(earth)Earth Runes: 4$() $(br2)Total Runes: 8" 
+      "type": "bloodmagic:ritual_info",
+      "ritual": "green_grove"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:defaultcrystal",
-      "title": "Raw",
-      "text": "Increases the speed of all ritual operations based on the total amount of $(raw)Raw Will$() in the Aura."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "green_grove",
+      "page_type": "raw",
+      "text_overrides": [
+        ["Raw Will", "raw"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:corrosivecrystal",
-      "title": "Corrosive",
-      "text": "Entities within range are attacked by nearby plants, leeching away their life to feed their own growth."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "green_grove",
+      "page_type": "corrosive"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:vengefulcrystal",
-      "title": "Vengeful",
-      "text": "Increases the rate that a growth tick is successful."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "green_grove",
+      "page_type": "vengeful"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:destructivecrystal",
-      "title": "Destructive",
-      "text": "Increases the maximum growth range of the ritual based on the total amount of $(destructive)Destructive Will$() in the Aura."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "green_grove",
+      "page_type": "destructive",
+      "text_overrides": [
+        ["Destructive Will", "destructive"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:steadfastcrystal",
-      "title": "Steadfast",
-      "text": "Seeds are replanted and blocks are hydrated within the specified range."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "green_grove",
+      "page_type": "steadfast"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Growth) The area that the ritual will grow plants in. $(br) $(li)Maximum Volume: 81 $(li)Horizontal Radius: 4 $(li)Vertical Radius: 4"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "green_grove",
+      "page_type": "growing"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Steadfast) Blocks within this range are rehydrated into farmland, and seeds within the area are planted nearby. $(br) $(li)Maximum Volume: Full Range. $(li)Horizontal Radius: 15 $(li)Vertical Radius: 15"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "green_grove",
+      "page_type": "hydrate"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Corrosive) Entities in this area have their life drained to grow nearby crops. $(br) $(li)Maximum Volume: Full Range. $(li)Horizontal Radius: 15 $(li)Vertical Radius: 15"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "green_grove",
+      "page_type": "leech"
     }
   ]
 }

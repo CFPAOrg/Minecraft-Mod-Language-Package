@@ -6,32 +6,24 @@
     {
       "type": "multiblock",
       "name": "Crack of the Fractured Crystal",
-      "multiblock":{
-        "pattern":[
-          ["_______", "_______", "___D___", "__D_D__", "___D___", "_______", "_______"],
-          ["ED___DE", "D_____D", "__A_A__", "___0___", "__A_A__", "D_____D", "ED___DE"],
-          ["E_FFF_E", "___F___", "F__F__F", "FFF_FFF", "F__F__F", "___F___", "E_FFF_E"]
-        ],
-        "mapping":{
-          "0": "bloodmagic:masterritualstone",
-          "A": "bloodmagic:airritualstone",
-          "F": "bloodmagic:fireritualstone",
-          "E": "bloodmagic:earthritualstone",
-          "D": "bloodmagic:duskritualstone"
-        },
-        "symetrical": true
-      },
+      "multiblock_id": "bloodmagic:crystal_harvest",
       "text": "Use a $(l:bloodmagic:rituals/ritual_diviner#dusk)Ritual Diviner [Dusk]$(/l) for easier construction."
     },
     {
-      "type": "text",
-      "text": "Breaks $(raw)Demon Will$() Crystal Clusters of all aspects within its range, dropping the results on top of the crystals. $(br2)$(air)Air Runes: 4 $(br)$(fire)Fire Runes: 20 $(br)$(earth)Earth Runes: 8 $(br)$()Dusk Runes: 12 $(br2)$()Total Runes: 44" 
+      "type": "bloodmagic:ritual_info",
+      "ritual": "crystal_harvest",
+      "text_overrides": [
+        ["Demon Will Crystal Clusters", "l:bloodmagic:demon_will/crystallized_will"],
+        ["aspects", "l:bloodmagic:demon_will/aspected_will"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Crystal) All $(raw)Demon Will$() crystal clusters have a single crystal broken off, spawning the crystal into the world. If there is only one crystal on the cluster, it will not break it. $(br) $(li)Maximum Volume: 250 $(li)Horizontal Radius: 5 $(li)Vertical Radius: 7"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "crystal_harvest",
+      "page_type": "crystal",
+      "text_overrides": [
+        ["Demon Will", "raw"]
+      ]
     }
   ]
 }

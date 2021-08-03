@@ -6,66 +6,49 @@
     {
       "type": "multiblock",
       "name": "Ritual of the Shepherd",
-      "multiblock":{
-        "pattern":[
-          ["_EDE_",
-           "A_W_A",
-           "DW0WD",
-           "A_W_A",
-           "_EDE_"]
-        ],
-        "mapping":{
-          "0": "bloodmagic:masterritualstone",
-          "W": "bloodmagic:waterritualstone",
-          "A": "#bloodmagic:ritual_stones/air_or_earth",
-          "E": "#bloodmagic:ritual_stones/earth_or_air",
-          "D": "bloodmagic:duskritualstone"
-        },
-        "symetrical": true
-      },
+      "multiblock_id": "bloodmagic:animal_growth",
       "text": "Use a $(l:bloodmagic:rituals/ritual_diviner#dusk)Ritual Diviner [Dusk]$(/l) for easier construction."
     },
     {
-      "type": "text",
-      "text": "Increases the maturity rate of baby animals within its range.$(br2)$(water)Water Runes: 4$(br)$(air)Air Runes: 4$(br)$(br)$(earth)Earth Runes: 4$(br)$()Dusk Runes: 4$(br2)$()Total Runes: 16" 
+      "type": "bloodmagic:ritual_info",
+      "ritual": "animal_growth"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:defaultcrystal",
-      "title": "Raw",
-      "text": "Increases the speed of the ritual based on the total amount of $(raw)Raw Will$() in the Aura."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "animal_growth",
+      "page_type": "raw",
+      "text_overrides": [
+        ["Raw Will", "raw"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:vengefulcrystal",
-      "title": "Vengeful",
-      "text": "Decreases the time it takes for adults to breed again."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "animal_growth",
+      "page_type": "vengeful"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:destructivecrystal",
-      "title": "Destructive",
-      "text": "Causes adults that have not bred lately to run at mobs and explode."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "animal_growth",
+      "page_type": "destructive"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:steadfastcrystal",
-      "title": "Steadfast",
-      "text": "Automatically breeds adults within its area using items in the connected chest."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "animal_growth",
+      "page_type": "steadfast",
+      "text_overrides": [
+        ["chest", "item"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Growth) Animals within this range will grow much faster. $(br) $(li)Maximum Volume: Full Range. $(li)Horizontal Radius: 7 $(li)Vertical Radius: 7"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "animal_growth",
+      "page_type": "growing"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Chest) Chest for breeding items (if properly augmented, requires $(steadfast)Steadfast Will$()).$(br) $(li)Maximum Volume: 1 $(li)Horizontal Radius: 3 $(li)Vertical Radius: 3"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "animal_growth",
+      "page_type": "chest",
+      "text": "Requires $(steadfast)Steadfast Will$()."
     }
   ]
 }
-
-
