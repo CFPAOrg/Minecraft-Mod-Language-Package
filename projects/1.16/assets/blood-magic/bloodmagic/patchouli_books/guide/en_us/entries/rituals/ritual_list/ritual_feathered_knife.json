@@ -6,72 +6,68 @@
     {
       "type": "multiblock",
       "name": "Ritual of the Feathered Knife",
-      "multiblock":{
-        "pattern":[
-          ["_EE___EE_", "EA_____AE", "E_______E", "____D____", "___D0D___", "____D____", "E_______E", "EA_____AE", "_EE___EE_"],
-          ["__F___F__", "_________", "F___W___F", "___A_A___", "__W___W__", "___A_A___", "F___W___F", "_________", "__F___F__"]
-        ],
-        "mapping":{
-          "0": "bloodmagic:masterritualstone",
-          "W": "bloodmagic:waterritualstone",
-          "A": "bloodmagic:airritualstone",
-          "F": "bloodmagic:fireritualstone",
-          "E": "bloodmagic:earthritualstone",
-          "D": "bloodmagic:duskritualstone"
-        },
-        "symetrical": true
-      },
+      "multiblock_id": "bloodmagic:feathered_knife",
       "text": "Use a $(l:bloodmagic:rituals/ritual_diviner#dusk)Ritual Diviner [Dusk]$(/l) for easier construction."
     },
     {
-      "type": "text",
-      "text": "Drains health from players in its area and puts the LP into a nearby blood altar. LP Gains are affected by $(l:bloodmagic:altar/blood_rune/self_sacrifice_rune)Runes of Self Sacrifice.$() $(br2)$(water)Water Runes: 4$() $(br)$(air)Air Runes: 8$() $(br)$(fire)Fire Runes: 8$() $(br)$(earth)Earth Runes: 16$() $(br)Dusk Runes: 4 $(br2)Total Runes: 40" 
+      "type": "bloodmagic:ritual_info",
+      "ritual": "feathered_knife",
+      "text_overrides": [
+        ["LP", "blood"],
+        ["blood altar", "l:bloodmagic:altar/blood_altar"],
+        ["Runes of Self Sacrifice", "l:bloodmagic:altar/blood_rune/self_sacrifice_rune"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:defaultcrystal",
-      "title": "Raw",
-      "text": "Increases the speed of the ritual based on the total amount of $(raw)Raw Will$() in the Aura."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "feathered_knife",
+      "page_type": "raw",
+      "text_overrides": [
+        ["Raw Will", "raw"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:corrosivecrystal",
-      "title": "Corrosive",
-      "text": "Uses the player's current Incense Bonus (if any) to increase the yield. Stand near an $(l:bloodmagic:utility/incense_altar)Incense Altar$() to maintain this bonus."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "feathered_knife",
+      "page_type": "corrosive",
+      "text_overrides": [
+        ["Incense Bonus", "thing"],
+        ["Incense Altar", "l:bloodmagic:utility/incense_altar"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:vengefulcrystal",
-      "title": "Vengeful",
-      "text": "Sets the minimum health for sacrificing to 10%. Overridden by $(steadfast)Steadfast$() for the Owner if active."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "feathered_knife",
+      "page_type": "vengeful",
+      "text_overrides": [
+        ["Steadfast", "steadfast"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:destructivecrystal",
-      "title": "Destructive",
-      "text": "Increases the yield of the ritual based on the total amount of $(destructive)Destructive Will$() in the Aura."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "feathered_knife",
+      "page_type": "destructive",
+      "text_overrides": [
+        ["Destructive Will", "destructive"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:steadfastcrystal",
-      "title": "Steadfast",
-      "text": "Sets the minimum health for sacrificing from 30% to 70%."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "feathered_knife",
+      "page_type": "steadfast"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Altar) This range defines the area that the ritual searches for the $(l:bloodmagic:altar/blood_altar)Blood Altar$(/l). Changing this will either expand or limit the range to a certain region. $(br) $(li)Maximum Volume: Full Range. $(li)Horizontal Radius: 10 $(li)Vertical Radius: 15"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "feathered_knife",
+      "page_type": "altar",
+      "text_overrides": [
+        ["Blood Altar", "l:bloodmagic:altar/blood_altar"]
+      ]
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Damage) This defines where the ritual will damage a player. Players inside of this range will receive damage over time up to the specified limit. $(br) $(li)Maximum Volume: Full Range. $(li)Horizontal Radius: 25 $(li)Vertical Radius: 15"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "feathered_knife",
+      "page_type": "damage"
     }
   ]
 }
-
-
-
-

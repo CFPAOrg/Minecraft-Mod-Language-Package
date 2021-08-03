@@ -6,44 +6,28 @@
     {
       "type": "multiblock",
       "name": "Ritual of Regeneration",
-      "multiblock":{
-        "pattern":[
-          ["EEW_F_F_WEE", "E____F____E", "W_D_____D_W", "___________", "A_________A", "_A___0___A_", "A_________A", "___________", "W_D_____D_W", "E____F____E", "EEW_F_F_WEE"],
-          ["_E_______E_", "E_________E", "___________", "___________", "___________", "___________", "___________", "___________", "___________", "E_________E", "_E_______E_"]
-        ],
-        "mapping":{
-          "0": "bloodmagic:masterritualstone",
-          "W": "bloodmagic:waterritualstone",
-          "A": "#bloodmagic:ritual_stones/air_or_fire",
-          "F": "#bloodmagic:ritual_stones/fire_or_air",
-          "E": "bloodmagic:earthritualstone",
-          "D": "bloodmagic:duskritualstone"
-        },
-        "symetrical": true
-      },
+      "multiblock_id": "bloodmagic:regeneration",
       "text": "Use a $(l:bloodmagic:rituals/ritual_diviner#dusk)Ritual Diviner [Dusk]$(/l) for easier construction."
     },
     {
-      "type": "text",
-      "text": "Casts regeneration on entities within its range if they are missing health. $(br2)$(water)Water Runes: 8 $(br)$(air)Air Runes: 6 $(br)$(fire)Fire Runes: 6 $(br)$(earth)Earth Runes: 20 $(br)$()Dusk Runes: 4$(br2)$()Total Runes: 44" 
+      "type": "bloodmagic:ritual_info",
+      "ritual": "regeneration"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:corrosivecrystal",
-      "title": "Corrosive",
-      "text": "Steals health from non-players inside of its Vampirism range and directly heals players."
+      "type": "bloodmagic:ritual_data",
+      "ritual": "regeneration",
+      "page_type": "corrosive"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Healing) Entities within this range will receive a regeneration buff. $(br) $(li)Maximum Volume: Full Range. $(li)Horizontal Radius: 20 $(li)Vertical Radius: 20"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "regeneration",
+      "page_type": "heal"
     },
     {
-      "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Vampirism) Mobs within this range have their health syphoned to heal players in the Healing range. $(br) $(li)Maximum Volume: Full Range. $(li)Horizontal Radius: 20 $(li)Vertical Radius: 20"
+      "type": "bloodmagic:ritual_data",
+      "ritual": "regeneration",
+      "page_type": "vampire",
+      "text": "Requires $(corrosive)Corrosive Will$()."
     }
   ]
 }

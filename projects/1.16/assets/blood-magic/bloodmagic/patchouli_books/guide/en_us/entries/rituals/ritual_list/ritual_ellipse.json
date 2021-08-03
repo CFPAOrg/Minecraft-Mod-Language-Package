@@ -6,47 +6,26 @@
     {
       "type": "multiblock",
       "name": "Focus of the Ellipsoid",
-      "multiblock":{
-        "pattern":[
-          ["_____AAA___",
-           "_____A_____",
-           "__WWW__EE__",
-           "F_W_____E__",
-           "F___D_D_E__",
-           "FF___0___FF",
-           "__E_D_D___F",
-           "__E_____W_F",
-           "__EE__WWW__",
-           "_____A_____",
-           "___AAA_____"]
-        ],
-        "mapping":{
-          "0": "bloodmagic:masterritualstone",
-          "W": "#bloodmagic:ritual_stones/water_or_earth",
-          "A": "#bloodmagic:ritual_stones/air_or_fire",
-          "F": "#bloodmagic:ritual_stones/fire_or_air",
-          "E": "#bloodmagic:ritual_stones/earth_or_water",
-          "D": "bloodmagic:duskritualstone"
-        },
-        "symetrical": false
-      },
+      "multiblock_id": "bloodmagic:ellipsoid",
       "text": "Use a $(l:bloodmagic:rituals/ritual_diviner#dusk)Ritual Diviner [Dusk]$(/l) for easier construction."
     },
     {
+      "type": "bloodmagic:ritual_info",
+      "ritual": "ellipsoid"
+    },
+    {
       "type": "text",
-      "text": "Creates a hollow spheroid around the ritual using the blocks in the attached chest. Good for building complicated shapes, such as the mighty gold dome above your Evil Lair. ... You do have one of those, right? $(br2)$(water)Water Runes: 8$(br)$(air)Air Runes: 8$(br)$(fire)Fire Runes: 8$(br)$(earth)Earth Runes: 8$(br)$()Dusk Runes: 4$(br2)$()Total Runes: 36" 
+      "text": "This ritual is purely aesthetic in nature, designed for the budding, yet lazy, builder that resides in all of us. It's particularly good for building complicated shapes, such as the mighty gold dome above your Evil Lair. ...You do have one of those, right?"
     },
 	{
-	  "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Chest) The location of the inventory that the ritual will grab blocks from to place in the world. $(br) $(li)Maximum Volume: 1 $(li)Horizontal Radius: 3 $(li)Vertical Radius: 3"
+	  "type": "bloodmagic:ritual_data",
+	  "ritual": "ellipsoid",
+	  "page_type": "chest"
 	},
 	{
-	  "type": "spotlight",
-      "item": "bloodmagic:ritualtinkerer",
-      "title": "Range",
-      "text": "(Placement) The range that the ritual will place its blocks in. Note that the Spheroid is centered on the ritual - if one side is shorter than the side opposite, the spheroid will be truncated. $(br) $(li)Maximum Volume: Full Range. $(li)Horizontal Radius: 32 $(li)Vertical Radius: 32"
+	  "type": "bloodmagic:ritual_data",
+	  "ritual": "ellipsoid",
+	  "page_type": "spheroidRange"
 	}
   ]
 }
