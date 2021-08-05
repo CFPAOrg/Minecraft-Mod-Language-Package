@@ -67,39 +67,24 @@ namespace Formatter
         public static async Task FormatLangFile(List<string> lp, List<string> bl)
         {
             var keyReg = new Regex(".+(?==)");
-            foreach (var l in lp)
+            foreach (var path in lp)
             {
+                File.Copy(path, path + ".tmp", true);
                 var list = new List<string>();
-                var lines = await File.ReadAllLinesAsync(l);
-                var parse = !lines.Contains("#PARSE_ESCAPES");
+                var lines = File.ReadAllLinesAsync(path).Result;
                 foreach (var line in lines)
                 {
-                    if (keyReg.IsMatch(line))
+                    if (bl.Contains(keyReg.Match(line).Value))
                     {
-                        if (bl.Contains(keyReg.Match(line).Value))
-                        {
-                            continue;
-                        }
-                        list.Add(line);
+                        continue;
                     }
-                    else
-                    {
-                        if (parse)
-                        {
-                            if (line.Trim().StartsWith("#") || string.IsNullOrWhiteSpace(line) || string.IsNullOrEmpty(line))
-                            {
-                                list.Add(line);
-                            }
-                        }
-                        else
-                        {
-                            list.Add(line);
-                        }
-                    }
-
+                    list.Add(line);
                 }
-
-                await File.WriteAllLinesAsync(l, list);
+                await File.WriteAllLinesAsync(path, list);
+                var reader = new StreamReader(File.OpenRead(path + ".tmp"));
+                var writer = new StreamWriter(File.OpenWrite(path));
+                new LangFormatter(reader, writer).Format();
+                File.Delete(path + ".tmp");
             }
         }
 
