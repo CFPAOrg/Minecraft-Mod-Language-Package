@@ -69,9 +69,8 @@ namespace Formatter
             var keyReg = new Regex(".+(?==)");
             foreach (var path in lp)
             {
-                File.Copy(path, path + ".tmp", true);
                 var list = new List<string>();
-                var lines = File.ReadAllLinesAsync(path).Result;
+                var lines = await File.ReadAllLinesAsync(path);
                 foreach (var line in lines)
                 {
                     if (bl.Contains(keyReg.Match(line).Value))
@@ -80,7 +79,8 @@ namespace Formatter
                     }
                     list.Add(line);
                 }
-                await File.WriteAllLinesAsync(path, list);
+                await File.WriteAllLinesAsync(path + ".tmp", list);
+                File.Delete(path);
                 var reader = new StreamReader(File.OpenRead(path + ".tmp"));
                 var writer = new StreamWriter(File.OpenWrite(path));
                 new LangFormatter(reader, writer).Format();
