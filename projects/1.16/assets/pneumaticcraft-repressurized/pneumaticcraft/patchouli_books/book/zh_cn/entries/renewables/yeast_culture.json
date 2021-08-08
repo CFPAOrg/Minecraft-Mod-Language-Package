@@ -1,0 +1,43 @@
+{
+  "name": "酵母菌",
+  "icon": "pneumaticcraft:yeast_culture_bucket",
+  "category": "renewables",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)酵母菌/$是生产$(l:renewables/ethanol)乙醇/$和$(l:renewables/sourdough)酸面团/$的过程中的必需品。其可以通过以下几种方式制取："
+    },
+    {
+      "type": "spotlight",
+      "item": "minecraft:red_mushroom",
+      "title": "方法 1",
+      "text": "这是起初可以采用的唯一办法。向$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中装填$(thing)水/$和蘑菇。这一方法相对较慢（并需要准备足够的蘑菇），但很容易就可以制取第一桶酵母菌。"
+    },
+    {
+      "type": "text",
+      "title": "方法 1（续）",
+      "text": "这一过程具有温度要求：需要将热气动加工机的温度保持在 30℃ 到 60℃ 间。这一点在温暖群系中很容易办到，但在寒冷群系中或许要花点精力处理——值得注意的是，当地室温随着高度的降低而升高，所以在温和群系中或许在地下进行生产更为合适。"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/yeast_culture"
+    },
+    {
+      "type": "text",
+      "flag": "!pneumaticcraft:inWorldYeastCrafting",
+      "title": "重要注意事项",
+      "text": "$(italic)在目前的配置环境下，下面几页描述的世界内的酵母生产已被禁用。/$"
+    },
+    {
+      "type": "text",
+      "title": "方法 2",
+      "text": "作为一种有机体，$(thing)酵母菌/$可以自行复制。要实现这一点，放置下一桶酵母菌，并向其中丢入一些$(thing)糖/$。$(p)此后，在相邻方块处放置一桶$(thing)水/$；在几秒后，水将被转化为酵母菌。"
+    },
+    {
+      "type": "text",
+      "title": "方法 2（续）",
+      "text": "需要注意的是，合成检查在放置下水而非加入糖时进行。$(p)这一方法只需要一点预先设计就可以被自动化，甚至可以在游戏的早期进行（注：安装有$(l:base_concepts/upgrades#dispenser)发射器升级/$的$(l:machines/omnidirectional_hopper)全方位漏斗/$和$(l:machines/liquid_hopper)流体漏斗/$或许会很有用）。"
+    }
+  ]
+}
