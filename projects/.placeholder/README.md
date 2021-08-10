@@ -1,2 +1,2 @@
-placeholder files for weblate base component
+Placeholder files for weblate base component
 
