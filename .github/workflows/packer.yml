@@ -59,18 +59,6 @@ jobs:
           draft: false
           prerelease: false
 
-      # Doesn't do so now because it messes up the server
-      - name: Build Uploader
-        run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
-
-      - name: Run Uploader
-        run: .\Uploader --version="1.12.2" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
-        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Uploader
-        run: .\Uploader --version="1.16" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
-        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
       # Upload release asset:   https://github.com/actions/upload-release-asset
       - name: Update release asset
         id: upload-release-asset1
@@ -94,4 +82,16 @@ jobs:
           asset_path: Minecraft-Mod-Language-Package-1.16.zip # Use the full path here because environment variables are not in scope
           asset_name: Minecraft-Mod-Language-Package-1.16.zip
           asset_content_type: application/zip
+        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      # Doesn't do so now because it messes up the server
+      - name: Build Uploader
+        run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+
+      - name: Run Uploader
+        run: .\Uploader --version="1.12.2" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
+        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Uploader
+        run: .\Uploader --version="1.16" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
         if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
