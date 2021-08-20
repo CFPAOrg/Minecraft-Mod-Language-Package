@@ -1,54 +1,98 @@
 {
-    "name": "自动化仪式",
-    "icon": "roots:bonfire",
-    "category": "rituals",
-    "advancement": "roots:pyre",
-    "priority": true,
-    "sortnum": 0,
-    "pages": [
-        {
-          "type": "text",
-          "text": "一旦柴堆开启了某个仪式，柴堆就会在其下方的容器内搜寻与目前所使用的原料相同(或者相似，如果是以矿物词典的形式进行合成) 的物品。如果检测到有相同的物品，那么柴堆就会将这些物品置入它的内置空间中。$(br2)仪式将要结束时，如果柴堆还有着足够重复进行仪式的材料，柴堆就会开始新一轮的仪式，当然，会消耗原料。"
+  "name": "Ritual Automation",
+  "icon": "roots:pyre",
+  "category": "rituals_ritual",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Ingredients can be fed into a ritual by placing an inventory containing them beneath the pyre (see diagram).$(br2)These are then drawn into the pyre when it is empty. If matching ingredients are found when the ritual ends, it will consume them and begin anew.$(br2)$(warning) You must start the first ritual to lock the pyre in before automation can begin."
+    },
+    {
+      "type": "multiblock",
+      "name": "Chest Location",
+      "multiblock": {
+        "mapping": {
+          "0": "minecraft:chest",
+          "R": "roots:pyre"
         },
-        {
-          "type": "multiblock",
-          "name": "箱子位置",
-          "multiblock": {
-            "mapping": {
-              "0": "minecraft:chest",
-              "R": "roots:bonfire"
-            },
-            "pattern": [
-              [" ", "R", " "],
-              [" ", "0", " "],
-              [" ", " ", " "],
-              [" ", " ", " "]
-            ]
-          },
-          "text": "任意的容器都可以，无论是原版的还是mod添加的。"
-        },
-      {
-        "type": "text",
-        "text": "除了物品消耗，柴堆还会尝试消耗附近的火种来点亮自身。$(br2)在有了正确的原料以及配比后，附近的火焰熄灭速度会加快，仪式也即将开始。$(br2)火焰方块可以放置在柴堆附近的3x3x3的空间内，下方有可视详解图。$(br2)$(warning)目前可用于消耗的火焰种类仅包括原版火焰。"
+        "pattern": [
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "0",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ]
+        ]
       },
-      {
-          "type": "multiblock",
-          "name": "火焰位置",
-          "multiblock": {
-            "mapping": {
-              "0": "roots:bonfire",
-              "G": "minecraft:grass",
-              "I": "minecraft:iron_bars"
-            },
-            "pattern": [
-              ["     ", "     ", "     "],
-              [" III ", " III ", " III "],
-              [" III ", " I0I ", " III "],
-              [" GGG ", " GGG ", " GGG "],
-              ["     ", "     ", "     "]
-            ]
-          },
-          "text": "柴堆会在上图中的所有铁栅栏以及草方块的位置寻找火焰。"
-      }
-    ]
+      "text": "Any inventory should be sufficient, as long as it is located directly below the pyre."
+    },
+    {
+      "type": "text",
+      "title": "Starting",
+      "text": "In addition to rituals continuing with valid ingredients, it is possible to automatically start a pyre by placing fire on any blocks in a 3x3 area around it. (See diagram)$(br2)$(info) Fire not on a fire source block will be consumed and extinguished to start the ritual.$(br2)$(warning) Currently this only functions for vanilla fire."
+    },
+    {
+      "type": "multiblock",
+      "name": "Fire Locations",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:pyre",
+          "G": "minecraft:grass",
+          "I": "minecraft:torch"
+        },
+        "pattern": [
+          [
+            "     ",
+            "     ",
+            "     "
+          ],
+          [
+            " III ",
+            " III ",
+            " III "
+          ],
+          [
+            " III ",
+            " I0I ",
+            " III "
+          ],
+          [
+            " GGG ",
+            " GGG ",
+            " GGG "
+          ],
+          [
+            "     ",
+            "     ",
+            "     "
+          ]
+        ]
+      },
+      "text": "All positions of torches and the grass beneath are eligible for fire automation."
+    },
+    {
+      "type": "relations",
+      "anchor": "related",
+      "entries": [
+        "crafting/pyres",
+        "rituals/introduction",
+        "rituals/standing_stones"
+      ]
+    }
+  ]
 }

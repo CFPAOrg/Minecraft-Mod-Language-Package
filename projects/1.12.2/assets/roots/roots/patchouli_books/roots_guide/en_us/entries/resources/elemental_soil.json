@@ -2,50 +2,47 @@
   "name": "Elemental Soil",
   "icon": "roots:elemental_soil",
   "category": "resources",
-  "priority": true,
-  "advancement": "roots:fey_crafter",
+  "read_by_default": true,
   "pages": [
     {
+      "type": "text",
+      "text": "Elemental soil is all that is required in order to grow either of the four elemental plants: $(l:herbs/infernal_bulb)infernal bulb$(), $(l:herbs/dewgonia)dewgonia$(), $(l:herbs/stalicripe)stalicripe$() and $(l:herbs/cloud_berry)cloud berry$().$(br2)$(info) This soil can also grow almost any other crop, giving them all a growth boost.$(br2)There are also variants of elemental soil aligned with each of the four elements, with special crafting methods."
+    },
+    {
       "type": "spotlight",
-      "item": "roots:elemental_soil",
       "link_recipe": true,
-      "text": "Elementally attuned herbs can be picky about where - as fickle as the elements themselves. Elemental soil itself increases the rate at which any plant grows, but it can also be imbued with an element to allow the corresponding plant to grow."
-    },
-    {
-      "type": "fey_crafting_template",
-      "recipe": "elemental_soil"
-    },
-    {
-      "type": "spotlight",
-      "item": "roots:elemental_soil_fire",
-      "link_recipe": true,
-      "text": "$(l:herbs/infernal_bulb)Infernal Bulbs$() grow on magmatic soil. Obtained by throwing elemental soil (as a dropped item) into the $(warning) top of a pool of lava.$(br2)Other plants grown on magmatic soil will have drops cooked when harvested, if cookable. In addition, each plant harvested may drop experience."
-    },
-    {
-      "type": "spotlight",
-      "item": "roots:elemental_soil_water",
-      "link_recipe": true,
-      "text": "$(l:herbs/dewgonia)Dewgonia$() grows on aquatic soil. Obtained by soaking elemental soil (as a dropped item) briefly in water.$(br2)Normal plants grown on the soil will be harvested automagically, the drops placed in containers below the soil or on the surface if none exists. $(info) Gravel beneath prevents this behaviour."
-    },
-    {
-      "type": "spotlight",
       "item": "roots:elemental_soil_air",
-      "link_recipe": true,
-      "text": "$(l:herbs/cloud_berry)Cloud Berries$() grow on caelic, air-bound soil. Obtained by exposing elemental soil (as a dropped item) to the airy heights and the open skies ($(info) 90 blocks or higher).$(br2)Normal plants can also be grown on caelic soil, and the soil will grow them much faster than normal."
+      "text": "Caelic soil is produced when elemental soil is thrown onto the ground above the height of $(config:air_min_y), where, after $(config:air_delay) seconds, the proximity to the sky will convert it.$(br2)$(info) It accelerates the growth of anything planted upon."
     },
     {
       "type": "spotlight",
-      "item": "roots:elemental_soil_earth",
       "link_recipe": true,
-      "text": "$(l:herbs/stalicripe)Stalicripe$() grow on terran soil. Obtained by exposing elemental soil (as a dropped item) to the dark, $(info) covered depths of underground caves and chasms ($(info) 30 blocks or lower).$(br2)Normal plants can also be grown on terran soil, and the fertile earth will yield much more for the crop."
+      "item": "roots:elemental_soil_earth",
+      "text": "Terran soil is produced by throwing elemental soil onto the floor of an underground cave (at least below the height of $(config:earth_max_y)). After $(config:earth_delay) seconds absorbing the depths, the soil can be collected.$(br2)$(info) Terran soil is exceedingly fertile, occasionally causing plants to produce additional drops."
+    },
+    {
+      "type": "spotlight",
+      "link_recipe": true,
+      "item": "roots:elemental_soil_water",
+      "text": "Aqueous soil is produced by submerging elemental soil in water for at least $(config:water_delay) seconds. Once thoroughly soaked, the imbued soil can be collected.$(br2)$(info) Aqueous soil automatically harvests any plant grown on it, unless gravel is placed directly below the soil."
+    },
+    {
+      "type": "spotlight",
+      "link_recipe": true,
+      "item": "roots:elemental_soil_fire",
+      "text": "Magmatic soil is produced by throwing elemental soil directly into lava. The harsh flames will immediately convert the soil and return it for collection.$(br2)$(info) Magmatic soil automatically cooks a portion of the drops of all plants grown upon it, occasionally granting experience for harvesting."
     },
     {
       "type": "relations",
+      "anchor": "related",
       "entries": [
-        "herbs/cloud_berry",
+        "crafting/fey_crafter",
         "herbs/infernal_bulb",
         "herbs/dewgonia",
-        "herbs/stalicripe"
+        "herbs/cloud_berry",
+        "herbs/stalicripe",
+        "herbs/renewable_resources",
+        "automation/aqueous_soil"
       ]
     }
   ]
