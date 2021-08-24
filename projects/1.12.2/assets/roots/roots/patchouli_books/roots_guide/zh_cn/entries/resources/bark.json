@@ -1,64 +1,36 @@
 {
-    "name": "树皮",
-    "icon": "roots:bark_oak",
-    "category": "resources",
-    "pages": [
-      {
-        "type": "text",
-        "text": "树木中的自然能量大多汇集于树皮之中，而德鲁伊可以使用$(l:apparatus/knives)小刀$()破坏原木，把原木上的树皮扒下来。$(br2)$(info)树皮的获得量会受到时运附魔的影响。"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_oak",
-        "title": "橡木树皮",
-        "text": "使用$(l:apparatus/knives)小刀$()破坏橡木获得。"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_birch",
-        "title": "白桦树皮",
-        "text": "使用$(l:apparatus/knives)小刀$()破坏白桦木获得。"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_spruce",
-        "title": "云杉树皮",
-        "text": "使用$(l:apparatus/knives)小刀$()破坏云杉木获得。"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_jungle",
-        "title": "丛林木树皮",
-        "text": "使用$(l:apparatus/knives)小刀$()破坏丛林木获得。"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_acacia",
-        "title": "金合欢树皮",
-        "text": "使用$(l:apparatus/knives)小刀$()破坏金合欢木获得。"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_dark_oak",
-        "title": "深色橡木树皮",
-        "text": "使用$(l:apparatus/knives)小刀$()破坏深色橡木获得。"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_wildwood",
-        "title": "野木树皮",
-        "advancement": "roots:spirit_herb",
-        "text": "使用$(l:apparatus/knives)小刀$()破坏野木原木获得。"
-      },
-      {
-        "type": "relations",
-        "entries": [
-          "basics/other_imbuer",
-          "basics/letter",
-          "apparatus/knives",
-          "rituals/ritual_spreading_forest",
-          "rituals/ritual_wild_growth"
-        ]
-      }
-    ]
-  }
+  "name": "Bark",
+  "icon": "roots:bark_acacia",
+  "category": "resources",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Created by breaking the relevant log with a $(l:crafting/knives)knife$(), the stripped-away bark contains much wild magic within it.$(br2)Different trees produce different barks, but each contain a considerable amount of wild magic.$(br2)$(info) The amount of bark obtained when breaking logs can be increased with the fortune enchantment."
+    },
+    {
+      "type": "bark_template_quint",
+      "recipe1": "roots:oak",
+      "recipe2": "roots:birch",
+      "recipe3": "roots:jungle",
+      "recipe4": "roots:acacia",
+      "recipe5": "roots:spruce",
+      "name": "Bark Types"
+    },
+    {
+      "type": "bark_template_double",
+      "recipe1": "roots:dark_oak",
+      "recipe2": "roots:wildwood",
+      "anchor": "dark_oak",
+      "name": "Bark Types",
+      "text": "Obtained from breaking logs with knives.$(br2)$(info) Other, modded bark types may be available. For a full listing, $(uses:roots:stone_knife)see JEI$()."
+    },
+    {
+      "type": "relations",
+      "anchor": "related",
+      "entries": [
+        "crafting/knives"
+      ]
+    }
+  ]
+}
