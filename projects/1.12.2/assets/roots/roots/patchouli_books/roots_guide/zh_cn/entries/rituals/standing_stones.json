@@ -1,53 +1,259 @@
 {
-    "name": "石柱",
-    "icon": "roots:chiseled_runestone",
-    "category": "rituals",
-    "advancement": "roots:pyre",
-    "priority": true,
-    "sortnum": 1,
-    "pages": [
-        {
-          "type": "text",
-          "text": "一些仪式除了需要$(l:basics/pyre)柴堆$()以及仪式材料，还需要石柱。$(br2)这些两格或者三格高的 $(resources/runestone)符文石$()，其上还会放上一些$(resources/runestone#chiseled)雕凿符文石$()作为加盖。石柱的详细的数据会在对应仪式章节中介绍。$(br2)$(warning) 石柱摆放的位置可以与书上所说的位置不一致，但石柱最底下的符文石$(bold)必须$()与柴堆处于同一水平面。"
+  "name": "Standing Stones & Pillars",
+  "icon": "roots:chiseled_runestone",
+  "category": "rituals_ritual",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Some rituals require standing stones or runed pillars in addition to the $(l:crafting/pyres)pyre$().$(br2)$(info) All rituals which require additional features to function properly will list them as such in their ritual entry.$(br2)$(info) Only rituals of $(l:rituals/tiers)Tier I$() or higher may require standing stones or pillars."
+    },
+    {
+      "type": "text",
+      "title": "Standing Stones",
+      "text": "Standing stones are defined as pillars, generally between three and four blocks high, made of $(l:resources/runestone)runestone$() or $(l:resources/runed_obsidian)runed obsidian$(), with the top stone made of $(l:crafting/runestone)chiseled runestone$() or $(l:crafting/runed_obsidian)chiseled runed obsidian$().$(br2)$(info) Runed obsidian is resistant to all vanilla bosses, and can be combined with a reinforced pyre to provide ritual support when fighting such creatures."
+    },
+    {
+      "type": "multiblock",
+      "name": "Standing Stones",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:chiseled_runestone",
+          "R": "roots:runestone"
         },
-        {
-          "type": "multiblock",
-          "name": "三格高石柱",
-          "multiblock": {
-            "mapping": {
-              "0": "roots:chiseled_runestone",
-              "R": "roots:runestone"
-            },
-            "pattern": [
-              [" ", "0", " "],
-              [" ", "R", " "],
-              [" ", "R", " "],
-              [" ", " ", " "],
-              [" ", " ", " "]
-            ]
-          }
-        },
-      {
-          "type": "multiblock",
-          "name": "四格高石柱",
-          "multiblock": {
-            "mapping": {
-              "0": "roots:chiseled_runestone",
-              "R": "roots:runestone"
-            },
-            "pattern": [
-              [" ", "0", " "],
-              [" ", "R", " "],
-              [" ", "R", " "],
-              [" ", "R", " "],
-              [" ", " ", " "]
-            ]
-          }
+        "pattern": [
+          [
+            " ",
+            "0",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ]
+        ]
       },
-      {
-        "type": "text",
-        "text": "不是所有的仪式都需要石柱，有些仪式还会需要使用别的东西(譬如供奉盘以及树木)。$(br2)有着额外需求的仪式都会有$(standing_stones) 这一提示，同时还会给出一个链接，这一链接会显示一种石柱的潜在排列可能。$(br2)此外，所有的操作都可以在世界中以可视化的形式出现，只需点击一下演示图例左下角的那个小眼睛。"
-      }
-
-    ]
+      "text": "Bricks can be used instead of normal runestone when forming the base."
+    },
+    {
+      "type": "multiblock",
+      "name": "Standing Stones",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:chiseled_runestone",
+          "R": "roots:runestone"
+        },
+        "pattern": [
+          [
+            " ",
+            "0",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ]
+        ]
+      },
+      "text": "The maximum height required for standings stones and pillars is four blocks."
+    },
+    {
+      "type": "multiblock",
+      "name": "Runed Pillar",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:runed_acacia",
+          "R": "minecraft:log2[variant=acacia]"
+        },
+        "pattern": [
+          [
+            " ",
+            "0",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ]
+        ]
+      },
+      "text": "Runed Pillars can be constructed of any vanilla wood, and simply consists of logs topped with $(l:resources/runed_wood)runed wood$()."
+    },
+    {
+      "type": "multiblock",
+      "name": "Runed Pillar",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:runed_oak",
+          "R": "minecraft:log[variant=oak]"
+        },
+        "pattern": [
+          [
+            " ",
+            "0",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ]
+        ]
+      },
+      "text": "The type of wood required for the pillar will also be specified in the ritual entry."
+    },
+    {
+      "advancement": "roots:runed_obsidian",
+      "type": "multiblock",
+      "name": "Standing Stones",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:chiseled_runed_obsidian",
+          "R": "roots:runed_obsidian"
+        },
+        "pattern": [
+          [
+            " ",
+            "0",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ]
+        ]
+      },
+      "text": "In addition to being wither- and ender dragon-proof, these standing stones are blast resistant."
+    },
+    {
+      "type": "multiblock",
+      "name": "Standing Stones",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:chiseled_runed_obsidian",
+          "R": "roots:runed_obsidian"
+        },
+        "pattern": [
+          [
+            " ",
+            "0",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ]
+        ]
+      },
+      "text": "Runed obsidian bricks can be used instead of runed obsidian."
+    },
+    {
+      "type": "text",
+      "text": "Indeed, not all rituals require standing stones or pillars, however, all rituals with such requirements will show an icon: $(standing_stones) along with a link to visualisation of one potential arrangement.$(br2)In addition, these displays can be visualised in-world by clicking on the eye in the bottom-left corner."
+    },
+    {
+      "type": "relations",
+      "anchor": "related",
+      "entries": [
+        "resources/runestone",
+        "resources/runed_obsidian",
+        "resources/runed_wood"
+      ]
+    }
+  ]
 }

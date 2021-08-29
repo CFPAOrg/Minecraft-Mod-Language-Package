@@ -13,7 +13,7 @@
     * [奥术卷轴](arcane_scrolls.md)
     * [炸药](dynamite.md)
 
-- 后续更新...
+- 后续更新……
     * [生物约束](restraint.md)
     * [鞣制皮革护甲](tanned_armor.md)
     * [炼狱之火](hellfire_dust.md)
@@ -26,4 +26,4 @@
     * [齿轮](gear.md)
     * [树皮](bark.md)
     * [手柄](haft.md)
-    * More...
+    * 更多……
