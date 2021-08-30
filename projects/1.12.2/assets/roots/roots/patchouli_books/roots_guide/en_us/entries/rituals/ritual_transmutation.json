@@ -2,23 +2,24 @@
   "name": "Transmutation",
   "icon": "roots:ritual_transmutation",
   "category": "rituals",
-  "advancement": "roots:runestone",
+  "read_by_default": true,
   "flag": "roots:ritual_transmutation",
   "pages": [
     {
       "type": "text",
-      "text": "Some natural delights are harder to find than others. Thankfully, with the energies of the pyre, you can convert more mundane objects into more precious items.$(br2)$(standing_stones) $(l:rituals/ritual_transmutation#multiblock)This ritual requires standing stones.$()"
+      "text": "Through the process of Transmutation, objects can be transformed into other objects provided the requirements are met.$(br2)Blocks are transformed into blocks or items, although care must be taken to prevent potential loops.$(br2)$(warning) Recipes cannot be listed in this guide. A complete list can be found $(uses:roots:ritual_transmutation)using JEI$()."
     },
     {
       "type": "pyre_template",
-      "ritual": "ritual_transmutation"
+      "ritual": "ritual_transmutation",
+      "text": "$(standing_stones) As a $(l:rituals/tiers)$(bold)tier I$() ritual, $(l:rituals/ritual_transmutation#multiblock)a single standing stone is required to begin$(). Please see later pages of this entry."
     },
     {
       "type": "multiblock",
       "anchor": "multiblock",
       "multiblock": {
         "mapping": {
-          "0": "roots:bonfire",
+          "0": "roots:pyre",
           "R": "roots:runestone",
           "C": "roots:chiseled_runestone"
         },
@@ -28,73 +29,20 @@
           ["   R   ","       ","       ","       ","       ","       ","       "],
           ["   R   ","       ","       ","   0   ","       ","       ","       "]
         ]
-      }
+      },
+      "text": "A single $(l:rituals/standing_stones)standing stone$() of runestone or runed obsidian is required."
     },
     {
-      "type": "spotlight",
-      "item": "minecraft:dye:3",
-      "link_recipe": true,
-      "text": "Dead bushes will turn into cocoa beans."
+      "type": "text",
+      "title": "Ritual Specifics",
+      "text": "$(bold)Duration:$() The ritual lasts $(ritual:transmutation/SECONDS/duration) seconds, with transmutation taking place every $(ritual:transmutation/SECONDS/interval) seconds for the duration.$(br2)$(bold)Size:$() The ritual will try to transmute blocks within an area of $(ritual:transmutation/radius_x) and $(ritual:transmutation/radius_z) blocks horizontally, and $(ritual:transmutation/radius_y) blocks vertically.$(br2)"
     },
     {
-      "type": "spotlight",
-      "item": "minecraft:log:3",
-      "link_recipe": true,
-      "text": "Birch logs will transform into jungle."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:leaves:3",
-      "link_recipe": true,
-      "text": "Birch leaves will transform into jungle."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:melon_block",
-      "link_recipe": true,
-      "text": "Pumpkins planted $(info) above still or flowing water will transform into melons."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:cactus",
-      "link_recipe": true,
-      "text": "Pumpkins planted $(info) on sand will turn into cactuses."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:waterlily",
-      "link_recipe": true,
-      "text": "Carpets (of any colour) placed over water $(info) by placing carpet on the next block and then sneak-right-clicking the edge of the carpet on top of the water will be converted into lilypads."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:web",
-      "link_recipe": true,
-      "text": "Trapdoors placed on top of wool blocks will be turned into cobwebs."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:carrot",
-      "link_recipe": true,
-      "text": "Cocoa beens (of any growth stage) will be converted to carrots."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:beetroot",
-      "link_recipe": true,
-      "text": "Fully-grown carrot crops will be converted into newly-planted beetroot crops."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:vine",
-      "link_recipe": true,
-      "text": "Redstone dust placed on top of leaves will be converted to vines."
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:pumpkin",
-      "link_recipe": true,
-      "text": "Melons placed on top of cobblestone will revert to pumpkins."
+      "type": "relations",
+      "anchor": "related",
+      "entries": [
+        "rituals/standing_stones"
+      ]
     }
   ]
 }
