@@ -1,30 +1,31 @@
 {
-  "name": "灵魂草",
+  "name": "Spirit Herb",
   "icon": "roots:spirit_herb",
   "category": "herbs",
-  "advancement": "roots:runic_shears",
-  
+  "read_by_default": true,
+  "turnin": "roots:spirit_herb",
   "pages": [
     {
-      "type": "spotlight",
-      "item": "roots:spirit_herb",
-      "link_recipe": true,
-      "text": "早在远古时代，灵魂草就已是庆典上不可或缺的植物，这一植物可以与已死去的灵魂共鸣。$(br2)$(info)将灵魂草稍加处理就可以得到它的种子。种子可以种在耕地上。"
+      "type": "text",
+      "text": "Said to gather the souls and ghosts of the noblest of departed animals, much of their wisdom may be found in its leaves.$(br2)The heat of a pyre is not enough to rekindle this herb.$(br2)Special care and $(l:crafting/runic_shears)runic shears$() are required to reach through to the fey realm and pluck a single leaf."
     },
     {
       "type": "runic_shears_template",
       "recipe": "spirit_herb",
-      "name": "灵魂草",
-      "text": "对着成熟的甜菜根使用符文剪刀，这也可以获得灵魂草。"
+      "name": "Spirit Herb",
+      "text": "The closest plant cognate in our world is the humble beetroot.$(br2)Using $(l:crafting/runic_shears)runic shears$(), you can harvest the beetroot crop and simultaneously reaching through to the fey realm, exchanging it for spirit herb.$(br2)Once obtained, it becomes a $(l:herbs/spirit_herb#renew)renewable$() crop."
     },
     {
       "type": "crafting",
-      "recipe": "roots:spirit_herb_seed"
+      "recipe": "roots:spirit_herb_seed",
+      "anchor": "renew",
+      "text": "Once extracted, the seeds of the spirit herb can be planted on any farmland that can support normal crop growth.$(br2)When mature, the intertwined leaves of the plant turn a bright green."
     },
     {
       "type": "relations",
+      "anchor": "related",
       "entries": [
-        "apparatus/runic_shears"
+        "crafting/runic_shears"
       ]
     }
   ]

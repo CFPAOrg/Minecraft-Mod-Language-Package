@@ -1,51 +1,48 @@
 {
-  "name": "元素土",
+  "name": "Elemental Soil",
   "icon": "roots:elemental_soil",
   "category": "resources",
-  "priority": true,
-  "advancement": "roots:fey_crafter",
+  "read_by_default": true,
   "pages": [
     {
-      "type": "spotlight",
-      "item": "roots:elemental_soil",
-      "link_recipe": false,
-      "text": "带有元素倾向的药草总是显得很挑剔 - 它们的喜好就像是元素那样变化无常。元素土可以加快所有生长于其上的植物的生长速度，且你也可以向元素土中注入额外的元素，经过这样处理的元素土可以使得对应元素倾向的植株在其上生长。"
-    },
-    {
-    "type": "fey_crafting_template",
-    "recipe": "elemental_soil"
+      "type": "text",
+      "text": "Elemental soil is all that is required in order to grow either of the four elemental plants: $(l:herbs/infernal_bulb)infernal bulb$(), $(l:herbs/dewgonia)dewgonia$(), $(l:herbs/stalicripe)stalicripe$() and $(l:herbs/cloud_berry)cloud berry$().$(br2)$(info) This soil can also grow almost any other crop, giving them all a growth boost.$(br2)There are also variants of elemental soil aligned with each of the four elements, with special crafting methods."
     },
     {
       "type": "spotlight",
-      "item": "roots:elemental_soil_fire",
       "link_recipe": true,
-      "text": "$(l:herbs/infernal_bulb)地狱鳞茎$()可以在火素土上生长。将元素土投入岩浆池中即可获得火素土。$(br2)生长在火素土上的其它作物，会在采收时将可被烧制的作物自动冶炼为熟食。此外，冶炼还会掉落经验。"
-    },
-    {
-      "type": "spotlight",
-      "item": "roots:elemental_soil_water",
-      "link_recipe": true,
-      "text": "$(l:herbs/dewgonia)露海棠$()可生长于水素土，将一块元素土放入水中浸润一会，水素土就做好了。$(br2)生长于其上的普通作物会自动采收。如果水素土下方有容器，那么掉落物将会被拾捡进入下方，若无容器则掉落物放置于原地。$(info) 在水素土下方放置砂砾，可以使得水素土不会自动采收作物。"
-    },
-    {
-      "type": "spotlight",
       "item": "roots:elemental_soil_air",
-      "link_recipe": true,
-      "text": "$(l:herbs/cloud_berry)云莓$()生长于风素土上，将元素土放置于露天的高处即可获得风素土。$(br2)风素土将会加快种在其上的普通作物的生长速度。"
+      "text": "Caelic soil is produced when elemental soil is thrown onto the ground above the height of $(config:air_min_y), where, after $(config:air_delay) seconds, the proximity to the sky will convert it.$(br2)$(info) It accelerates the growth of anything planted upon."
     },
     {
       "type": "spotlight",
-      "item": "roots:elemental_soil_earth",
       "link_recipe": true,
-      "text": "$(l:herbs/stalicripe)石笋$()生长于地素土，将元素土放置于深入地底的洞穴或者峡谷裂缝之中，即可获得地素土。$(br2)地素土可以增加种植在其上的作物的作物产量。"
+      "item": "roots:elemental_soil_earth",
+      "text": "Terran soil is produced by throwing elemental soil onto the floor of an underground cave (at least below the height of $(config:earth_max_y)). After $(config:earth_delay) seconds absorbing the depths, the soil can be collected.$(br2)$(info) Terran soil is exceedingly fertile, occasionally causing plants to produce additional drops."
+    },
+    {
+      "type": "spotlight",
+      "link_recipe": true,
+      "item": "roots:elemental_soil_water",
+      "text": "Aqueous soil is produced by submerging elemental soil in water for at least $(config:water_delay) seconds. Once thoroughly soaked, the imbued soil can be collected.$(br2)$(info) Aqueous soil automatically harvests any plant grown on it, unless gravel is placed directly below the soil."
+    },
+    {
+      "type": "spotlight",
+      "link_recipe": true,
+      "item": "roots:elemental_soil_fire",
+      "text": "Magmatic soil is produced by throwing elemental soil directly into lava. The harsh flames will immediately convert the soil and return it for collection.$(br2)$(info) Magmatic soil automatically cooks a portion of the drops of all plants grown upon it, occasionally granting experience for harvesting."
     },
     {
       "type": "relations",
+      "anchor": "related",
       "entries": [
-        "herbs/cloud_berry",
+        "crafting/fey_crafter",
         "herbs/infernal_bulb",
         "herbs/dewgonia",
-        "herbs/stalicripe"
+        "herbs/cloud_berry",
+        "herbs/stalicripe",
+        "herbs/renewable_resources",
+        "automation/aqueous_soil"
       ]
     }
   ]

@@ -1,24 +1,25 @@
 {
-  "name": "自然嬗变",
+  "name": "Transmutation",
   "icon": "roots:ritual_transmutation",
   "category": "rituals",
-  "advancement": "roots:runestone",
+  "read_by_default": true,
   "flag": "roots:ritual_transmutation",
   "pages": [
     {
       "type": "text",
-      "text": "大自然的馈赠通常难于窥见，好在借助柴堆的神力，你可以将许多平凡之物嬗变为宝。$(br2)$(standing_stones) $(l:rituals/ritual_transmutation#multiblock)本仪式需要石柱。$()"
+      "text": "Through the process of Transmutation, objects can be transformed into other objects provided the requirements are met.$(br2)Blocks are transformed into blocks or items, although care must be taken to prevent potential loops.$(br2)$(warning) Recipes cannot be listed in this guide. A complete list can be found $(uses:roots:ritual_transmutation)using JEI$()."
     },
     {
       "type": "pyre_template",
-      "ritual": "ritual_transmutation"
+      "ritual": "ritual_transmutation",
+      "text": "$(standing_stones) As a $(l:rituals/tiers)$(bold)tier I$() ritual, $(l:rituals/ritual_transmutation#multiblock)a single standing stone is required to begin$(). Please see later pages of this entry."
     },
     {
       "type": "multiblock",
       "anchor": "multiblock",
       "multiblock": {
         "mapping": {
-          "0": "roots:bonfire",
+          "0": "roots:pyre",
           "R": "roots:runestone",
           "C": "roots:chiseled_runestone"
         },
@@ -28,73 +29,20 @@
           ["   R   ","       ","       ","       ","       ","       ","       "],
           ["   R   ","       ","       ","   0   ","       ","       ","       "]
         ]
-      }
+      },
+      "text": "A single $(l:rituals/standing_stones)standing stone$() of runestone or runed obsidian is required."
     },
     {
-      "type": "spotlight",
-      "item": "minecraft:dye:3",
-      "link_recipe": true,
-      "text": "枯死的草丛会嬗变为可可豆。"
+      "type": "text",
+      "title": "Ritual Specifics",
+      "text": "$(bold)Duration:$() The ritual lasts $(ritual:transmutation/SECONDS/duration) seconds, with transmutation taking place every $(ritual:transmutation/SECONDS/interval) seconds for the duration.$(br2)$(bold)Size:$() The ritual will try to transmute blocks within an area of $(ritual:transmutation/radius_x) and $(ritual:transmutation/radius_z) blocks horizontally, and $(ritual:transmutation/radius_y) blocks vertically.$(br2)"
     },
     {
-      "type": "spotlight",
-      "item": "minecraft:log:3",
-      "link_recipe": true,
-      "text": "白桦木会嬗变为丛林木。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:leaves:3",
-      "link_recipe": true,
-      "text": "白桦树叶会嬗变为丛林树叶。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:melon_block",
-      "link_recipe": true,
-      "text": "放置在$(info)流动水或静止水之上的南瓜会嬗变为西瓜。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:cactus",
-      "link_recipe": true,
-      "text": "放置在$(info)沙子上的南瓜会嬗变为仙人掌。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:waterlily",
-      "link_recipe": true,
-      "text": "$(info)在水边的方块表面放置一块地毯，然后对准这块地毯临近水的那一边的边缘，手持地毯潜行右键，就可以将另一个地毯放置在水面上了，而这种放置在水上的地毯 (任何颜色均可)将会被嬗变为睡莲。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:web",
-      "link_recipe": true,
-      "text": "放置在羊毛上的活板门将会嬗变为蜘蛛网。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:carrot",
-      "link_recipe": true,
-      "text": "可可豆(任何生长阶段均可)将会嬗变为胡萝卜。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:beetroot",
-      "link_recipe": true,
-      "text": "完全成熟的胡萝卜将会被嬗变为刚种下的甜菜根。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:vine",
-      "link_recipe": true,
-      "text": "放在树叶顶部的红石将会嬗变为藤蔓。"
-    },
-    {
-      "type": "spotlight",
-      "item": "minecraft:pumpkin",
-      "link_recipe": true,
-      "text": "放在圆石顶部的西瓜将会嬗变为南瓜。"
+      "type": "relations",
+      "anchor": "related",
+      "entries": [
+        "rituals/standing_stones"
+      ]
     }
   ]
 }

@@ -1,64 +1,36 @@
 {
-    "name": "Tree Bark",
-    "icon": "roots:bark_oak",
-    "category": "resources",
-    "pages": [
-      {
-        "type": "text",
-        "text": "Much of the natural energy in wood comes from the bark, and a druid can strip away that bark by breaking a log with a $(l:apparatus/knives)knife$().$(br2)$(info) The amount of bark produced can be increased with the fortune enchantment."
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_oak",
-        "title": "Oak Bark",
-        "text": "Dropped when breaking an Oak Log with a $(l:apparatus/knives)Knife.$()"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_birch",
-        "title": "Birch Bark",
-        "text": "Dropped when breaking a Birch Log with a $(l:apparatus/knives)Knife.$()"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_spruce",
-        "title": "Spruce Bark",
-        "text": "Dropped when breaking a Spruce Log with a $(l:apparatus/knives)Knife.$()"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_jungle",
-        "title": "Jungle Bark",
-        "text": "Dropped when breaking a Jungle Log with a $(l:apparatus/knives)Knife.$()"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_acacia",
-        "title": "Acacia Bark",
-        "text": "Dropped when breaking an Acacia Log with a $(l:apparatus/knives)Knife.$()"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_dark_oak",
-        "title": "Dark Oak Bark",
-        "text": "Dropped when breaking a Dark Oak Log with a $(l:apparatus/knives)Knife.$()"
-      },
-      {
-        "type": "spotlight",
-        "item": "roots:bark_wildwood",
-        "title": "Wildwood Bark",
-        "advancement": "roots:spirit_herb",
-        "text": "Dropped when breaking a Wildwood Log with a $(l:apparatus/knives)Knife.$()"
-      },
-      {
-        "type": "relations",
-        "entries": [
-          "basics/other_imbuer",
-          "basics/letter",
-          "apparatus/knives",
-          "rituals/ritual_spreading_forest",
-          "rituals/ritual_wild_growth"
-        ]
-      }
-    ]
-  }
+  "name": "Bark",
+  "icon": "roots:bark_acacia",
+  "category": "resources",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Created by breaking the relevant log with a $(l:crafting/knives)knife$(), the stripped-away bark contains much wild magic within it.$(br2)Different trees produce different barks, but each contain a considerable amount of wild magic.$(br2)$(info) The amount of bark obtained when breaking logs can be increased with the fortune enchantment."
+    },
+    {
+      "type": "bark_template_quint",
+      "recipe1": "roots:oak",
+      "recipe2": "roots:birch",
+      "recipe3": "roots:jungle",
+      "recipe4": "roots:acacia",
+      "recipe5": "roots:spruce",
+      "name": "Bark Types"
+    },
+    {
+      "type": "bark_template_double",
+      "recipe1": "roots:dark_oak",
+      "recipe2": "roots:wildwood",
+      "anchor": "dark_oak",
+      "name": "Bark Types",
+      "text": "Obtained from breaking logs with knives.$(br2)$(info) Other, modded bark types may be available. For a full listing, $(uses:roots:stone_knife)see JEI$()."
+    },
+    {
+      "type": "relations",
+      "anchor": "related",
+      "entries": [
+        "crafting/knives"
+      ]
+    }
+  ]
+}
