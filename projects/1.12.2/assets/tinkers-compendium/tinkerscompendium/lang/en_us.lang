@@ -4,10 +4,9 @@ tile.armorstation.name=Armor Station
 tile.finishinganvil.name=Finishing Anvil
 tile.hammeringtable.name=Hammering Table
 item.null.name=[null]
-item.regdummy.name=[regdummy]
+item.regdummy.name=Ignore Me
 
-# //Fluids
-# //Fluids
+//Fluids
 fluid.tinkerscompendium.aeonsteel.name=Molten Aeonsteel
 fluid.tinkerscompendium.queensgold.name=Molten Queensgold
 fluid.tinkerscompendium.dogbearium.name=Molten Dogbearium
@@ -27,8 +26,7 @@ fluid.tinkerscompendium.slush.name=Liquid Slush
 fluid.tinkerscompendium.quartz.name=Molten Nether Quartz
 fluid.tinkerscompendium.dragonsbreath.name=liquid Dragons Breath
 
-# //Materials
-# //Materials
+//Materials
 material.aeonsteel.name=Aeonsteel
 material.queensgold.name=Queensgold
 material.dogbearium.name=Dogbearium
@@ -82,12 +80,13 @@ material.garnet.name=Garnet
 material.opal.name=Opal
 material.tanzinite.name=Tanzinite
 material.amber.name=Amber
+material.mithril.name=Mithril
 
-# //New Items
-# //New Items
+//New Items
 item.canister.name=Filled Canister
 item.empty_canister.name=Empty Canister
 item.rebreather.name=Rebreather
+item.eldergills.name=Elder Gills
 item.goggles.name=Goggles
 item.nightvisiongoggles.name=Night Vision Goggles
 item.glowsole.name=Glowing Crystal
@@ -412,6 +411,7 @@ item.coin_ardite.name=Ardite Coin
 item.coin_cobalt.name=Cobalt Coin
 item.coin_Manyullyn.name=Manyullyn Coin
 
+item.gear_mithril.name.name=Mithril Gear
 item.gear_aeonsteel.name=Aeonsteel Gear
 item.gear_queensgold.name=Queensgold Gear
 item.gear_dogbearium.name=Dogbearium Gear
@@ -536,8 +536,7 @@ item.coin.name=Coin
 item.wire.name=Wire
 item.foil.name=Foil
 
-# //New Blocks
-# //New Blocks
+//New Blocks
 tile.stone_ore_silver.name=Silver Ore
 tile.stone_ore_copper.name=Copper Ore
 tile.stone_ore_platinum.name=Platinum Ore
@@ -551,6 +550,8 @@ tile.stone_ore_citrine.name=Citrine Crystal Ore
 tile.stone_ore_amethyst.name=Amethyst Crystal Ore
 tile.stone_ore_sapphire.name=Sapphire Crystal Ore
 tile.stone_ore_ruby.name=Ruby Crystal Ore
+
+tile.crackedobsidian.name=Cracked Obsidian
 
 tile.roughspunblock.name=Roughspun Block
 
@@ -831,13 +832,19 @@ tile.trapdoor_electrum.name=Electrum Trapdoor
 tile.trapdoor_lead.name=Lead Trapdoor
 tile.trapdoor_steel.name=Steel Trapdoor
 
-# //Tools, Armors, & Armorstation Descriptions
-# //Tools, Armors, & Armorstation Descriptions
+//Tools, Armors, & Armorstation Descriptions
 item.fishingrod.desc=Fish big game or little, this modular fishing rod can do nearly everything except get that boot dropped into the water the other day.
 
 item.shears.desc=Shears are usefull to any farmer looking to have a steady flow of wool, wool for use in crafting or trade for profit.
 
-item.firedrill.name=The Fire Drill is a useful tool for starting fires without Flint and Steel or other similar items by consuming Sticks in your inventory. The higher the durability, the higher the chance it has to successfully light a block on fire.
+item.saw.name=Saw
+item.saw.desc=Not sure what to do with a your saw? \nGood neither am I . . .
+
+item.mallet.name=Mallet
+item.mallet.desc=When used in cunjunction with the hammering table you can process ores for more efficient smelting or alloying.
+
+item.firedrill.name=Fire Drill
+item.firedrill.desc=The Fire Drill is a useful tool for starting fires without Flint and Steel or other similar items by consuming Sticks in your inventory. The higher the durability, the higher the chance it has to successfully light a block on fire.
 
 item.roundshield.name=Buckler Shield
 item.roundshield.desc=A small shield with low protection but allows the user to maintain manuverablitly in combat.\n \nAbilities: \nCounter attacks - With a bish bash bosh of the shield, slowing down your oponenets is a breaze.\nSmall Stature - leaves little room for modifiers.
@@ -876,6 +883,7 @@ item.tinkersgrieves.desc=A heavy set of interlocking plates to protect the legs 
 item.tinkerssabatons.name=Sabatons
 item.tinkerssabatons.desc=A heavy set of interlocking plates to protect the feet from most damage.
 
+//Tooltips & Stats
 tooltip.armor.rating=Armor Rating
 tooltip.armor.toughness=Armor Toughness
 tooltip.armor.potency=Magic Potency
@@ -889,70 +897,76 @@ stat.armor.toughness.desc=Material's Toughness is taken into acount when determi
 stat.armor.potency.name=Magic Potency
 stat.cloth.potency.desc=Magical Potency determines how acepting of magic the completed armor is.
 
-# //Stats
-# //Stats
 stat.shield.name=Shield
 stat.shield.durability.name=Durability
+stat.shield.durability.desc=Material's base durability
+stat.shield.percentblocked.desc=Percentage of all incoming blocked
 stat.shield.percentblocked.name=Percent Blocked
 
-stat.armor.toughness.name=Armor Toughness
-stat.armor.potency.name=Armor Potency
+stat.helm.name=Helm
+stat.chest.name=Chest
+stat.legs.name=Legs
+stat.feet.name=Feet
 
 stat.fabric.name=Fabric
 
-# //Unsorted Tinker Traits & Modifiers
-modifier.td_photosynthetic.name=Photosynthetic
-modifier.td_photosynthetic.desc=Tasty tasty sunshine.
-# //Unsorted Tinker Traits & Modifiers
+//Unsorted Traits
 modifier.td_workhardened.name=Work-Hardened
 modifier.td_workhardened.desc=Hardened via me mallet stikes.
 modifier.td_heroic.name=Heroic
 modifier.td_heroic.desc=Only bronze is worn by hero
-modifier.td_shifting.name=Shifting
-modifier.td_shifting.desc=It apears to move on its own.
-modifier.td_aqualung.name=Aqua Lung
-modifier.td_aqualung.desc=Wish you had gills?
-modifier.td_pyrosynthetic_2.name=Pyrosynthetic II
-modifier.td_pyrosynthetic_2.desc=Delicious Fire.
-modifier.td_hellbound.name=Hellbound
-modifier.td_hellbound.desc=On the highway to HELL.
-modifier.td_retribution1.name=Retribution I
-modifier.td_retribution1.desc=Justice will prevail.
-
-modifier.td_pyrosynthetic_1.name=Pyrosynthetic I
-modifier.td_pyrosynthetic_1.desc=Delicious Fire.
-modifier.td_demonic.name=Demonic
-modifier.td_demonic.desc=Sacrifices the first-born.
 modifier.td_acknowledged.name=Welucated
 modifier.td_acknowledged.desc=Acknoledgement in its finest.
-
 modifier.td_tempered.name=Tempered
 modifier.td_tempered.desc=Better than Work-Hardening.
 modifier.td_rigid.name=Rigid
 modifier.td_rigid.desc=Naturally Tough!
+modifier.td_cornered.name=Cornered
+modifier.td_toothy.name=Toothy
+modifier.td_ethereal.name=Ethereal
+modifier.td_ticktock.name=Tick-Tock
+modifier.td_ticktock.desc=§oThe Clock is Ticking!§r\nTool stats increase over time.
 
+//Armor Traits
+//Wood
 modifier.photosynthetic.name=Photosynthetic
 modifier.photosynthetic.desc=Tasty tasty sunshine.
 modifier.td_rooted.name=Rooted
 modifier.td_rooted.desc=Like the mighty oak I stand strong.
+//Stone
 modifier.td_blockhead.name=Blockhead
 modifier.td_blockhead.desc=Someone put a block where your brains should be.
 modifier.td_stoned.name=Stoned
 modifier.td_stoned.desc=Bearing a heavy weight.
 modifier.td_earthbound.name=Earthbound
 modifier.td_earthbound.desc=I am one with the rock and stone. It's strength is mine.
+//Flint
 modifier.td_glassine.name=Glassine
 modifier.td_glassine.desc=High magical potential with a tendency to shatter.
+//Cactus
 modifier.td_peyote.name=Peyote
 modifier.td_peyote.desc=Cactus Juice, it's the quenchiest!
 modifier.td_pricked.name=Prickly
 modifier.td_pricked.desc=Accupuncture for dummies.
 modifier.td_spiny.name=Spiny
 modifier.td_spiny.desc=Don't touch me!
+//Bone
 modifier.td_thickheaded.name=Thickheaded
 modifier.td_thickheaded.desc=Skull so thick you can't even get a headache.
+modifier.td_calcium.name=Calcium
+modifier.td_calcium.desc=Sticks and stones won't break my bones.
+modifier.td_collagen.name=Collagen
+modifier.td_collagen.desc=Keeps bones from breaking, especially when you hit the floor.
+modifier.td_bonespurs.name=Bonespurs
+modifier.td_bonespurs.desc=[desc]
+//Obsidian
 modifier.td_peleshair.name=Pele's hair
 modifier.td_peleshair.desc=A bad luck charm for some, a good luck charm for others.
+modifier.td_pillarsoftitans.name=Pillars of Titans
+modifier.td_pillarsoftitans.desc=I will not be moved.
+modifier.td_emberwalker.name=Emberwalker
+modifier.td_emberwalker.desc=[Desc]
+//Prismarine
 modifier.td_gills.name=Gills
 modifier.td_gills.desc=Breathing underwater just got easier.
 modifier.td_buoyant.name=Buoyant
@@ -961,6 +975,7 @@ modifier.td_currentrider.name=Currentrider
 modifier.td_currentrider.desc=[desc]
 modifier.td_finned.name=Finned
 modifier.td_finned.desc=[desc]
+//Endstone
 modifier.td_warpedmind.name=Enderwarped
 modifier.td_warpedmind.desc=Reality tends to get twisted.
 modifier.td_td_warp.name=Enderperception
@@ -969,40 +984,33 @@ modifier.td_hydrophobic.name=Hydrophobic
 modifier.td_hydrophobic.desc=Allergic to water.
 modifier.td_voidcaller.name=Voidcaller
 modifier.td_voidcaller.desc=End to Aid!\
-modifier.td_warp.name=Enderperception
-modifier.td_warp.desc=Reality tends to get twisted.
+//Paper
 modifier.td_arrowcatcher.name=Arrowcatcher
 modifier.td_arrowcatcher.desc=This is my arrow now. 
 modifier.td_novel.name=Novel
 modifier.td_novel.desc=Weapons and armor all tell a story, some more literally than others.
+//Sponge
 modifier.td_soggy.name=Soggy
 modifier.td_soggy.desc=Retaining water has its benefits.
+/Firewood
 modifier.td_hothead.name=Hothead
 modifier.td_hothead.desc=Getting hit makes me angry!
-
-modifier.td_calcium.name=Calcium
-modifier.td_calcium.desc=Sticks and stones won't break my bones.
 modifier.td_toasty.name=Toasty
 modifier.td_toasty.desc=It feels like an oven in here...
 modifier.td_incinerate.name=Incinerate
 modifier.td_incenerate.desc=I'll burn your petty tools to ash.
 modifier.td_hotfoot.name=Hotfoot
 modifier.td_hotfoot.desc=Too hot, gotta run!
+//Iron
 modifier.td_hardhat.name=Hardhat
 modifier.td_hardhat.desc=OSHA approved PPE.
 modifier.td_magnetism.name=Magnetism
 modifier.td_magnetism.desc=Tends to grab onto metal things and holdfast.
-
-modifier.td_callagen.name=Collagen
-modifier.td_callagen.desc=Keeps bones from breaking, especially when you hit the floor.
-modifier.td_pillarsofttitans.name=Pillaars of Titans
-modifier.td_pillarsofttitans.desc=I will not be moved.
-
+modifier.td_ironclad.name=Ironclad
+modifier.td_ironclad.desc=[Desc]
 modifier.td_maglock.name=Maglock
 modifier.td_maglock.desc=My feet have a magnetic personality.
-modifier.td_maglock.name=My feet have a magnetic personality.
-
-
+//Pig Iron
 modifier.td_piggy.name=Piggy
 modifier.td_piggy.desc=Open up your face and feed it!
 modifier.td_hog.name=Hog
@@ -1011,81 +1019,63 @@ modifier.td_sounder.name=Hog
 modifier.td_sounder.desc=[Desc]
 modifier.td_trotters.name=Trotters
 modifier.td_trotters.desc=[Desc]
+/Knightslime
+modifier.td_shifting.name=Shifting
+modifier.td_shifting.desc=It apears to move on its own.
 modifier.td_gumshoe2.name=Gumshoe II
 modifier.td_gumshoe2.desc=[Desc]
-
-modifier.td_antiblindness.name=Anti-Blindness
-modifier.td_antiblindness.desc=results may vary, Dont look directly at the sun.
-modifier.td_deadmansswitch.name=Deadmans Switch
-modifier.td_deadmansswitch.desc=What comes around goes around.
-modifier.td_nightvision.name=Night Vision
-modifier.td_nightvision.desc=Nights Eye's
-modifier.td_protection.name=Protection
-modifier.td_protection.desc=Protection Description
-modifier.td_projprotection.name=Projectile Protection
-modifier.td_projprotection.desc=Projectile Protection Description
-modifier.td_fireprotection.name=Fire Protection
-modifier.td_fireprotection.desc=Fire Protection Description
-modifier.td_blastprotection.name=Blast Protection
-modifier.td_blastprotection.desc=Blast Protection Description
-modifier.td_respirationI.name=Respiration I
-modifier.td_respirationI.desc=Armor with Gills
-modifier.td_cornered.name=Cornered
-modifier.td_toothy.name=Toothy
-modifier.td_ethereal.name=Ethereal
-modifier.td_ticktock.name=Tick-Tock
-modifier.td_ticktock.desc=§oThe Clock is Ticking!§r\nTool stats increase over time.
-
-modifier.mythical.name=Mythical
-modifier.mythical.desc=§oStronger when Reforged!§r\nConverts XP into a modifier when used after it has been broken and repaired fully. The tool needs to have a good amount of max durability to gain more modifiers.
-modifier.mythical.voiceRing=A voice rings in your head...
-modifier.mythical.instructions="Repair me fully. Then, when wielding vast worldly knowledge, I shall bestow a gift when you use me again."
-modifier.mythical.modifier_up=Upon using the tool, new opportunities reveal themselves to you.
-
-
-
-# //Head Modifiers
+//Slime
 modifier.td_forestmask.name=Forest Mask
-modifier.td_forestmask.desc=Needs Description.
-modifier.td_windy.name=Windy
-modifier.td_windy.desc=Needs Description.
-
+modifier.td_forestmask.desc=[Desc]
+modifier.td_slick.name=Slick
+modifier.td_slick.desc=[Desc]
+modifier.td_greenthum.name=Green Thumb
+modifier.td_greenthum.desc=[Desc]
+//Blueslime
 modifier.td_goggles.name=Goggles
 modifier.td_goggles.desc=Natural yet slimey eye protection.
-
-# //Chest Modifiers
+modifier.td_aqualung.name=Aqua Lung
+modifier.td_aqualung.desc=Wish you had gills?
+//Magmaslime
+modifier.td_pyrosynthetic_1.name=Pyrosynthetic I
+modifier.td_pyrosynthetic_1.desc=Delicious Fire.
+modifier.td_pyrosynthetic_2.name=Pyrosynthetic II
+modifier.td_pyrosynthetic_2.desc=Delicious Fire.
+modifier.td_firewalker.name=Firewalker
+modifier.td_firewalker.desc=[Desc]
+modifier.td_hellbound.name=Hellbound
+modifier.td_hellbound.desc=On the highway to HELL.
+//Netherrack
+modifier.td_demonic.name=Demonic
+modifier.td_demonic.desc=Sacrifices the first-born.
+modifier.td_damnation.name=Damnation
+modifier.td_damnation.desc=[Desc]
+modifier.td_ignite.name=Ignite
+modifier.td_ignite.desc=[Desc]
+//Cobalt
+modifier.td_windy.name=Windy
+modifier.td_windy.desc=[Desc]
 modifier.td_aerodynamic.name=Aerodynamic
 modifier.td_aerodynamic.desc=[Desc]
 modifier.td_flexible.name=Flexible
 modifier.td_flexible.desc=[Desc]
 modifier.td_supersonic.name=Supersonic
 modifier.td_supersonic.desc=[Desc]
-
-
-
-
-
-# //Head Modifiers
-
-
-# //Chest Modifiers
-modifier.td_aerodynamic.desc=Needs Description.
-
-
+//Ardite
 modifier.td_statuesque.name=Statuesque
 modifier.td_statuesque.desc=Balanced, as it should be.
-
-# //Leg Modifiers
-modifier.td_sheavyweight.name=Heavy Weight
-modifier.td_sheavyweight.desc=Needs Description.
-modifier.td_supersonic.desc=Needs Description.
-
-# //Feet Modifires
+modifier.td_heavyweight.name=Heavy Weight
+modifier.td_heavyweight.desc=Needs Description.
 modifier.td_stonekin.name=Stonekin
 modifier.td_stonekin.desc=Needs Description.
+//Manyullyn
 modifier.td_combatadvantage.name=Combat Advantage
 modifier.td_battlehardened.name=Battle Hardened
 modifier.td_reflex.name=Reflex
+//Silver
+modifier.td_retribution1.name=Retribution I
+modifier.td_retribution1.desc=Justice will prevail.
+//Aeonsteel
 modifier.td_truesight.name=Truesight
 modifier.td_truesight.desc=[Desc]
 modifier.td_td_intangible.name=Intangable
@@ -1095,7 +1085,9 @@ modifier.td_undo_nyi.desc=[Desc]
 modifier.td_td_timewarp.name=Timewarp
 modifier.td_td_timewarp.desc=[Desc]
 modifier.ticktock.name=Tick-Tock
+//Queens Gold
 
+//Dogbearium
 modifier.td_ihunger.name=I Hunger
 modifier.td_ihunger.desc=[Desc]
 modifier.td_hellbeast.name=Hellbeast
@@ -1105,12 +1097,14 @@ modifier.td_alpha.desc=[Desc]
 modifier.td_hunt.name=Hunter
 modifier.td_hunt.desc=[Desc]
 
+//Mithril Traits
+modifier.mythical.name=Mythical
+modifier.mythical.desc=§oStronger when Reforged!§r\nConverts XP into a modifier when used after it has been broken and repaired fully. The tool needs to have a good amount of max durability to gain more modifiers.
+modifier.mythical.voiceRing=A voice rings in your head...
+modifier.mythical.instructions="Repair me fully. Then, when wielding vast worldly knowledge, I shall bestow a gift when you use me again."
+modifier.mythical.modifier_up=Upon using the tool, new opportunities reveal themselves to you.
 
-modifier.td_flexible.desc=Needs Description.
-
-# //Sheild Modifiers
-
-# //Sheild Modifiers
+//Shield Traits
 modifier.td_securiphilic.name=Securiphilic
 modifier.td_securiphilic.desc=Needs Description.
 
@@ -1123,9 +1117,10 @@ modifier.td_dulling.desc=Does extra durability damage to attackers weapon.
 modifier.td_barbed.name=Barbed
 modifier.td_barbed.desc=Causes damage to attacker and victim.
 
+//Aditional Modifiers
+modifier.td_deadmansswitch.name=Deadmans Switch
+modifier.td_deadmansswitch.desc=What comes around goes around.
 
-# //Aditional Modifiers
-# //Aditional Modifiers
 modifier.protection.name=Protection
 modifier.protection.desc=Protection
 modifier.fireprotection.name= Fire Protection
@@ -1150,6 +1145,7 @@ modifier.frostwalker.desc=Water Walking!
 modifier.firewalker.name=Firewalker
 modifier.firewalker.desc=Lava Walking!
 
+//Armor Materials
 item.td_armor_plate.name=Armor Plate
 item.td_chainmail.name=Chainmail
 item.td_rivets.name=Rivets
@@ -1158,10 +1154,3 @@ item.td_filigree.name=Filigree
 item.td_fabric.name=Fabric
 item.td_ringShank.name=Ring Shank
 item.td_setting.name=Ring Setting
-# //Armor Materials
-item.armor_plate.name=Armor Plate
-item.chainmail.name=Chainmail
-item.rivets.name=Rivets
-item.clasp.name=Clasp
-item.filigree.name=Filigree
-item.fabric.name=Fabric
