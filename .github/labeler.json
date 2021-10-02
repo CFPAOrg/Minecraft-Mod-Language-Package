@@ -1,0 +1,121 @@
+{
+    "labels": {
+        "s": {
+            "name": "S",
+            "colour": "ff0000",
+            "description": "Size label."
+        },
+        "xs": {
+            "name": "XS",
+            "colour": "ff0000",
+            "description": "Size label."
+        },
+        "m": {
+            "name": "M",
+            "colour": "ff0000",
+            "description": "Size label."
+        },
+        "l": {
+            "name": "L",
+            "colour": "ff0000",
+            "description": "Size label."
+        },
+        "xl": {
+            "name": "XL",
+            "colour": "ff0000",
+            "description": "Size label."
+        },
+        "xxl": {
+            "name": "XXL",
+            "colour": "ff0000",
+            "description": "Size label."
+        },
+        "rejected": {
+            "name": "Rejected",
+            "colour": "ee0701",
+            "description": "Rejected."
+        }
+    },
+    "runners": [
+        {
+            "Root": "*",
+            "projectType": "other",
+            "versioning": {
+                "source": "milestones",
+                "type": "SemVer"
+            },
+            "pr": {
+                "labels": {
+                    "xs": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 0,
+                                "max": 10
+                            }
+                        ]
+                    },
+                    "s": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 10,
+                                "max": 30
+                            }
+                        ]
+                    },
+                    "m": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 40,
+                                "max": 100
+                            }
+                        ]
+                    },
+                    "l": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 100,
+                                "max": 500
+                            }
+                        ]
+                    },
+                    "xl": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 500,
+                                "max": 1000
+                            }
+                        ]
+                    },
+                    "xxl": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 1000
+                            }
+                        ]
+                    },
+                    "rejected": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "requestedChanges",
+                                "value": true
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
