@@ -44,6 +44,24 @@
                 "source": "milestones",
                 "type": "SemVer"
             },
+            "prereleaseName": "release",
+            "sharedConfig": {
+                "labels": {
+                    "bug": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "titleMatches",
+                                "pattern": "/^bug(\\(.*\\))?(!)?:/i"
+                            },
+                            {
+                                "type": "descriptionMatches",
+                                "pattern": "/(created|new|opened|made)( an| a)? bug/i"
+                            }
+                        ]
+                    }
+                }
+            },
             "pr": {
                 "labels": {
                     "XS": {
