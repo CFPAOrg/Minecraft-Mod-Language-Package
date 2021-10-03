@@ -1,24 +1,30 @@
 name: Label PRs
 
 on:
-- pull_request
+    issues:
+        types: [opened, edited, closed, reopened]
+    pull_request:
+        types: [opened, edited, closed, reopened, synchronize]
+    project_card:
+        types: [created, moved, deleted]
 
 permissions:
-  actions: write
-  checks: write
-  contents: write
-  deployments: write
-  issues: none
-  pull-requests: write
-  repository-projects: write
-  statuses: write
+    actions: write
+    checks: write
+    contents: write
+    deployments: write
+    issues: write
+    pull-requests: write
+    repository-projects: write
+    statuses: write
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-latest
 
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: srvaroa/labeler@master
-      env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        steps:
+            - uses: actions/checkout@v2
+            - name: Label Mastermind
+              uses: Videndum/label-mastermind@1.4.0-alpha.5
+              with:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
