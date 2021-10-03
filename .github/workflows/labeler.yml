@@ -3,8 +3,7 @@ name: Label PRs
 on:
     issues:
         types: [opened, edited, closed, reopened]
-    pull_request:
-        types: [opened, edited, closed, reopened, synchronize]
+    pull_request_target:
     project_card:
         types: [created, moved, deleted]
 
@@ -27,4 +26,4 @@ jobs:
             - name: Label Mastermind
               uses: Videndum/label-mastermind@1.4.0-alpha.5
               with:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  GITHUB_TOKEN: ${{ secrets.BAKA_GOURD_TOKEN }}
