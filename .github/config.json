@@ -1,0 +1,190 @@
+{
+    "labels": {
+        "s": {
+            "name": "S",
+            "color": "1d76db",
+            "description": "Size label."
+        },
+        "xs": {
+            "name": "XS",
+            "color": "1d76db",
+            "description": "Size label."
+        },
+        "m": {
+            "name": "M",
+            "color": "1d76db",
+            "description": "Size label."
+        },
+        "l": {
+            "name": "L",
+            "color": "1d76db",
+            "description": "Size label."
+        },
+        "xl": {
+            "name": "XL",
+            "color": "1d76db",
+            "description": "Size label."
+        },
+        "xxl": {
+            "name": "XXL",
+            "color": "1d76db",
+            "description": "Size label."
+        },
+        "rejected": {
+            "name": "Rejected",
+            "color": "ee0701",
+            "description": "Rejected."
+        },
+        "bug": {
+            "name": "bug",
+            "color": "ee0701",
+            "description": "Bug."
+        },
+        "wip": {
+            "name": "in progress",
+            "color": "ededed",
+            "description": "WIP"
+        },
+        "hard": {
+            "name": "hard",
+            "color": "ededed",
+            "description": "High difficulty."
+        },
+        "review": {
+            "name": "need review",
+            "color": "ededed",
+            "description": "Need review."
+        }
+    },
+    "runners": [
+        {
+            "Root": "*",
+            "projectType": "other",
+            "versioning": {
+                "source": "milestones",
+                "type": "SemVer"
+            },
+            "prereleaseName": "release",
+            "sharedConfig": {
+                "labels": {
+                    "bug": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "titleMatches",
+                                "pattern": "/^bug(\\(.*\\))?(!)?:/i"
+                            },
+                            {
+                                "type": "descriptionMatches",
+                                "pattern": "/(created|new|opened|made)( an| a)? bug/i"
+                            }
+                        ]
+                    }
+                }
+            },
+            "pr": {
+                "labels": {
+                    "xs": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 0,
+                                "max": 10
+                            }
+                        ]
+                    },
+                    "s": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 10,
+                                "max": 40
+                            }
+                        ]
+                    },
+                    "m": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 40,
+                                "max": 100
+                            }
+                        ]
+                    },
+                    "l": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 100,
+                                "max": 500
+                            }
+                        ]
+                    },
+                    "xl": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 500,
+                                "max": 1000
+                            }
+                        ]
+                    },
+                    "xxl": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 1000
+                            }
+                        ]
+                    },
+                    "rejected": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "requestedChanges",
+                                "value": true
+                            }
+                        ]
+                    },
+                    "wip": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "isDraft",
+                                "value": true
+                            },
+                            {
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)WIP(?=\\])"
+                            }
+                        ]
+                    },
+                    "hard": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)P(?=\\])"
+                            }
+                        ]
+                    },
+                    "review": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)R(?=\\])"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}
