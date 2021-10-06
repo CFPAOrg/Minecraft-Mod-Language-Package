@@ -62,7 +62,7 @@ namespace Spider.Lib
 
         public static async Task<ModInfo[]> GetModInfosAsync(IEnumerable<string> mods)
         {
-            var content = string.Concat(mods, ",");
+            var content = string.Join(",", mods);
             var httpClient = new HttpClient();
             var message = await httpClient.PostAsync("https://addons-ecs.forgesvc.net/api/v2/addon", new StringContent($"[{content}]", Encoding.UTF8, "application/json"));
             return await JsonSerializer.DeserializeAsync<ModInfo[]>(await message.Content.ReadAsStreamAsync());
