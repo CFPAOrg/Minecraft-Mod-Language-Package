@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -57,6 +58,14 @@ namespace Spider.Lib
             var result = await httpClient.GetFromJsonAsync<ModInfo>(uri);
 
             return result;
+        }
+
+        public static async Task<ModInfo[]> GetModInfosAsync(IEnumerable<string> mods)
+        {
+            var content = string.Concat(mods, ",");
+            var httpClient = new HttpClient();
+            var message = await httpClient.PostAsync("https://addons-ecs.forgesvc.net/api/v2/addon", new StringContent($"[{content}]", Encoding.UTF8, "application/json"));
+            return await JsonSerializer.DeserializeAsync<ModInfo[]>(await message.Content.ReadAsStreamAsync());
         }
 
         /// <summary>
