@@ -23,7 +23,7 @@
 
 ### 1. 安装模组（推荐）
 
-下载并安装 [I18nUpdateMod](https://www.curseforge.com/minecraft/mc-mods/i18nupdatemod) 模组，详情请查看 [MCMOD](https://www.mcmod.cn/class/1188.html) 页面。
+下载并安装 [I18nUpdateMod](https://www.curseforge.com/minecraft/mc-mods/i18nupdatemod) 模组，详情请查看此模组的 [MCMOD](https://www.mcmod.cn/class/1188.html) 页面。
 
 |                        模组下载量                         |                             模组支持版本                              |
 | :-------------------------------------------------------: | :-------------------------------------------------------------------: |
@@ -42,7 +42,7 @@
 
 ## 加入我们
 
-若想提交翻译、贡献代码，请仔细阅读 [CONTRIBUTING](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)。
+若想提交翻译、贡献代码，请**仔细**阅读 [CONTRIBUTING](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)。
 
 ## 授权方式
 
