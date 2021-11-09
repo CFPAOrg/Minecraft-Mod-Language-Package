@@ -1,7 +1,7 @@
 name: 模组翻译反馈
 description: 模组翻译的质量、建议反馈
 title: '[模组翻译]：'
-labels: ['translation feedback']
+labels: ['bug']
 body:
   - type: input
     id: modpack_info
@@ -11,14 +11,24 @@ body:
       placeholder: 如 1.16，2021-11-08 14:24
     validations:
       required: true
+  - type: input
+    id: name
+    attributes:
+      label: 模组英文名
+    validations:
+      required: true
+  - type: input
+    id: ver
+    attributes:
+      label: mod-ver
+      description: 模组版本
+    validations:
+      required: true
   - type: textarea
     id: detail
     attributes:
       label: 详细信息
       description: 详细描述翻译相关问题
-      value: |
-        - 模组英文名称：
-        - 模组版本：
-        - 支持 MC 版本：
     validations:
       required: true
+
