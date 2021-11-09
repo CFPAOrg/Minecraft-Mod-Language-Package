@@ -87,9 +87,11 @@
 
 #### 提交文件路径的例子
 
-Tinkers Construct 的 CruseForge 页面地址为 <https://www.curseforge.com/minecraft/mc-mods/tinkers-construct>，则 {CurseForge 项目名称} 为 **tinkers-construct**。
+此例子演示的是 1.16 json 文件路径，而 1.12 lang 文件路径也十分类似。
 
-Tinkers Construct 英文原文的路径为 `assets/tconstruct/lang/en_us.json`，则 {ModId} 为 **tconstruct**。
+Tinkers Construct 的 CruseForge 页面地址为 <https://www.curseforge.com/minecraft/mc-mods/tinkers-construct>，则 `{CurseForge 项目名称}` 为 `tinkers-construct`。
+
+Tinkers Construct 英文原文的路径为 `assets/tconstruct/lang/en_us.json`，则 `{ModId}` 为 `tconstruct`。
 
 最终你要提交翻译文件的路径为 `projects/1.16/assets/tinkers-construct/tconstruct/lang/zh_cn.json`
 
