@@ -31,7 +31,7 @@
 
 ### 2. 手动添加资源包
 
-在 [GitHub Releases](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases) 下载并添加资源包（后缀对应版本）。
+在 [GitHub Releases](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases) 下载并添加资源包（后缀对应支持的 MC 版本）。
 
 若资源包不生效，请检查资源包的优先级。
 
