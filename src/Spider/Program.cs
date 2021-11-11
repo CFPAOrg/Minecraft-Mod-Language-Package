@@ -124,8 +124,8 @@ namespace Spider
                             Directory.CreateDirectory(
                                 @$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}");
                         }
-                        await File.WriteAllTextAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}\intro.json",
-                            JsonSerializer.Serialize(dict));
+                        await File.WriteAllTextAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Version}\intro.json",
+                            JsonSerializer.Serialize(dict, new JsonSerializerOptions() { WriteIndented = true }));
                     }
 
                     var ids = pending.Where(name => dict.ContainsKey(name)).Select(name => dict[name].ToString());
