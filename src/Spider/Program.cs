@@ -53,6 +53,10 @@ namespace Spider
                         var allM = await UrlLib.GetModInfoAsync(cfg.Count.Value, cfg.Configuration.Version);
                         foreach (var modInfo in allM)
                         {
+                            if (dict.ContainsKey(modInfo.Slug) || dict.ContainsValue(modInfo.Id))
+                            {
+                                continue;
+                            }
                             dict.Add(modInfo.Slug, modInfo.Id);
                         }
 
