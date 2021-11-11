@@ -119,7 +119,7 @@ namespace Spider
                         });
 
                         await Task.WhenAll(tasks);
-                        await File.WriteAllTextAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\config.json",
+                        await File.WriteAllTextAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}\intro.json",
                             JsonSerializer.Serialize(dict));
                     }
 
