@@ -119,6 +119,11 @@ namespace Spider
                         });
 
                         await Task.WhenAll(tasks);
+                        if (!Directory.Exists(@$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}"))
+                        {
+                            Directory.CreateDirectory(
+                                @$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}");
+                        }
                         await File.WriteAllTextAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}\intro.json",
                             JsonSerializer.Serialize(dict));
                     }
