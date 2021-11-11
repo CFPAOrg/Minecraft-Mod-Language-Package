@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -29,7 +30,7 @@ namespace Spider
             {
                 var parser = new InfoParser(cfg.Configuration, cfg.CustomConfigurations);
 
-                if (cfg.Configuration != null)
+                if (cfg.Configuration is not null)
                 {
                     var dict = await JsonReader.ReadIntroAsync(cfg.Configuration.Version, cfg.Version);
                     var pending = new List<string>();
@@ -38,7 +39,7 @@ namespace Spider
 
                     var names = root.GetDirectories().Select(_ => _.Name).ToList();
 
-                    if (cfg.CustomConfigurations != null)
+                    if (cfg.CustomConfigurations is not null)
                         foreach (var configuration in cfg.CustomConfigurations)
                         {
                             if (!names.Contains(configuration.ProjectName))
@@ -47,10 +48,13 @@ namespace Spider
                             }
                         }
 
-                    if (cfg.Count != null)
+                    if (cfg.Count is not null)
                     {
                         var allM = await UrlLib.GetModInfoAsync(cfg.Count.Value, cfg.Configuration.Version);
-
+                        foreach (var modInfo in allM)
+                        {
+                            dict.Add(modInfo.Slug, modInfo.Id);
+                        }
 
                         if (names.Count > cfg.Count)
                         {
@@ -111,6 +115,8 @@ namespace Spider
                         });
 
                         await Task.WhenAll(tasks);
+                        await File.WriteAllTextAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\config.json",
+                            JsonSerializer.Serialize(dict));
                     }
 
                     var ids = pending.Where(name => dict.ContainsKey(name)).Select(name => dict[name].ToString());
@@ -137,51 +143,7 @@ namespace Spider
                     });
 
                     await Task.WhenAll(postTask);
-                    //foreach (var name in pending)
-                    //{
-                    //    if (dict.ContainsKey(name))
-                    //    {
-                    //        var m = await UrlLib.GetModInfoAsync(dict[name]);
-                    //        var i = parser.Serialize(m);
-                    //        try
-                    //        {
-                    //            var task = new Task(async () =>
-                    //            {
-                    //                try
-                    //                {
-                    //                    await Utils.ParseModsAsync(i, cfg);
-                    //                }
-                    //                catch (Exception e)
-                    //                {
-                    //                    Log.Logger.Error(e.Message);
-                    //                }
-                    //            });
-                    //            task.Start();
-                    //            //await Utils.ParseModsAsync(i,cfg);
-                    //        }
-                    //        catch (Exception e)
-                    //        {
-                    //            Log.Logger.Error(e.Message);
-                    //        }
-                    //        Thread.Sleep(5000);
-                    //  }
-                    //}
                 }
-
-                //var semaphore = new Semaphore(32, 40);
-                //foreach (var l in l1) {
-                //    try {
-                //        semaphore.WaitOne();
-                //        await Utils.ParseModsAsync(l,cfg);
-                //    }
-                //    catch (Exception e) {
-                //        Log.Logger.Error(e.Message);
-                //    }
-                //    finally {
-                //        semaphore.Release();
-                //    }
-                //}
-
             }
         }
     }

@@ -93,7 +93,7 @@ namespace Spider.Lib
         }
 
         /// <summary>
-        /// 暴力获取前9999个mod的id映射表
+        /// API受限，获取100个
         /// </summary>
         /// <param name="version"></param>
         /// <param name="path"></param>
@@ -113,6 +113,7 @@ namespace Spider.Lib
                 t.AddRange(tmp);
                 Thread.Sleep(3000);
                 if (tmp.Length < 50) break;
+                if (i is 1) break;
                 i++;
             }
             var intro = t.Select(_ =>
