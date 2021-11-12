@@ -26,7 +26,7 @@ namespace Spider.Lib.FileLib
             var dict = new Dictionary<string, long>();
             foreach (var modIntro in obj!)
             {
-                dict.Add(modIntro.Name, modIntro.Id);
+                dict.TryAdd(modIntro.Name, modIntro.Id);
             }
 
             return dict;

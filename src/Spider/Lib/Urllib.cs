@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
@@ -59,6 +60,18 @@ namespace Spider.Lib
             return result;
         }
 
+        public static async Task<ModInfo[]> GetModInfosAsync(IEnumerable<string> mods)
+        {
+            if (mods.Count() is 0)
+            {
+                return new ModInfo[] { };
+            }
+            var content = string.Join(",", mods);
+            var httpClient = new HttpClient();
+            var message = await httpClient.PostAsync("https://addons-ecs.forgesvc.net/api/v2/addon", new StringContent($"[{content}]", Encoding.UTF8, "application/json"));
+            return await JsonSerializer.DeserializeAsync<ModInfo[]>(await message.Content.ReadAsStreamAsync());
+        }
+
         /// <summary>
         /// 获取下载链接
         /// </summary>
@@ -84,7 +97,7 @@ namespace Spider.Lib
         }
 
         /// <summary>
-        /// 暴力获取前9999个mod的id映射表
+        /// API受限，获取100个
         /// </summary>
         /// <param name="version"></param>
         /// <param name="path"></param>
@@ -104,6 +117,7 @@ namespace Spider.Lib
                 t.AddRange(tmp);
                 Thread.Sleep(3000);
                 if (tmp.Length < 50) break;
+                if (i is 1) break;
                 i++;
             }
             var intro = t.Select(_ =>

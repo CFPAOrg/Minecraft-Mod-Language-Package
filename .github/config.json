@@ -1,0 +1,220 @@
+{
+    "labels": {
+        "s": {
+            "name": "S",
+            "color": "c5def5",
+            "description": "Size label."
+        },
+        "xs": {
+            "name": "XS",
+            "color": "c5def5",
+            "description": "Size label."
+        },
+        "m": {
+            "name": "M",
+            "color": "c5def5",
+            "description": "Size label."
+        },
+        "l": {
+            "name": "L",
+            "color": "c5def5",
+            "description": "Size label."
+        },
+        "xl": {
+            "name": "XL",
+            "color": "c5def5",
+            "description": "Size label."
+        },
+        "xxl": {
+            "name": "XXL",
+            "color": "c5def5",
+            "description": "Size label."
+        },
+        "xxxl": {
+            "name": "XXXL",
+            "color": "c5def5",
+            "description": "Size label."
+        },
+        "xxxxl": {
+            "name": "XXXXL",
+            "color": "c5def5",
+            "description": "Size label."
+        },
+        "main": {
+            "name": "main",
+            "color": "c5def5",
+            "description": ""
+        },
+        "bug": {
+            "name": "bug",
+            "color": "ee0701",
+            "description": "Bug."
+        },
+        "wip": {
+            "name": "in progress",
+            "color": "ededed",
+            "description": "WIP"
+        },
+        "hard": {
+            "name": "hard",
+            "color": "ededed",
+            "description": "High difficulty."
+        },
+        "review": {
+            "name": "need review",
+            "color": "ededed",
+            "description": "Need review."
+        }
+    },
+    "runners": [
+        {
+            "Root": "*",
+            "projectType": "other",
+            "versioning": {
+                "source": "milestones",
+                "type": "SemVer"
+            },
+            "prereleaseName": "release",
+            "sharedConfig": {
+                "labels": {
+                    "bug": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "titleMatches",
+                                "pattern": "/^bug(\\(.*\\))?(!)?:/i"
+                            },
+                            {
+                                "type": "descriptionMatches",
+                                "pattern": "/(created|new|opened|made)( an| a)? bug/i"
+                            }
+                        ]
+                    }
+                }
+            },
+            "pr": {
+                "labels": {
+                    "xs": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 0,
+                                "max": 10
+                            }
+                        ]
+                    },
+                    "s": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 10,
+                                "max": 40
+                            }
+                        ]
+                    },
+                    "m": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 40,
+                                "max": 100
+                            }
+                        ]
+                    },
+                    "l": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 100,
+                                "max": 500
+                            }
+                        ]
+                    },
+                    "xl": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 500,
+                                "max": 1000
+                            }
+                        ]
+                    },
+                    "xxl": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 1000,
+                                "max": 2000
+                            }
+                        ]
+                    },
+                    "xxxl": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 2000,
+                                "max": 5000
+                            }
+                        ]
+                    },
+                    "xxxxl": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "changesSize",
+                                "min": 5000
+                            }
+                        ]
+                    },
+                    "main": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+	"type": "branchMatches",
+	"pattern": "main"
+                            }
+                        ]
+                    },
+                    "wip": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "isDraft",
+                                "value": true
+                            },
+                            {
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)WIP(?=\\])"
+                            }
+                        ]
+                    },
+                    "hard": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)P(?=\\])"
+                            }
+                        ]
+                    },
+                    "review": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)R(?=\\])"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

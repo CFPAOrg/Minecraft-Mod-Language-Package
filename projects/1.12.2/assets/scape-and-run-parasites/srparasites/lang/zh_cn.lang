@@ -33,7 +33,7 @@ entity.srparasites.incompleteform_small.name=未转化完全状态
 entity.srparasites.overseer.name=监察兽
 entity.srparasites.bomber_light.name=轻型轰炸兽
 entity.srparasites.carrier_heavy.name=重型母体
-entity.srparasites.lodo.name=虫灵
+entity.srparasites.buglin.name=虫灵
 entity.srparasites.carrier_flying.name=飞行母体
 entity.srparasites.rupter.name=裂兽
 entity.srparasites.beckon_si.name=I 阶唤兽棘柱
@@ -52,15 +52,17 @@ entity.srparasites.anc_overlord.name=远古君魔
 entity.srparasites.vigilante.name=巡兽
 entity.srparasites.movingflesh.name=移动肉块
 entity.srparasites.tendril.name=卷须兽
-entity.srparasites.anc_pod.name=Pod
+entity.srparasites.anc_pod.name=空投吊舱
+entity.srparasites.biomass.name=生物质
+entity.srparasites.gore.name=遗骸
 
-entity.srparasites.ada_longarms.name=进化长臂兽
-entity.srparasites.ada_summoner.name=进化召唤兽
-entity.srparasites.ada_manducater.name=进化咀骨兽
-entity.srparasites.ada_reeker.name=进化毒腥兽
-entity.srparasites.ada_yelloweye.name=进化黄眸兽
-entity.srparasites.ada_bolster.name=进化协增兽
-entity.srparasites.ada_arachnida.name=进化蛛形兽
+entity.srparasites.ada_longarms.name=成熟长臂兽
+entity.srparasites.ada_summoner.name=成熟召唤兽
+entity.srparasites.ada_manducater.name=成熟咀骨兽
+entity.srparasites.ada_reeker.name=成熟毒腥兽
+entity.srparasites.ada_yelloweye.name=成熟黄眸兽
+entity.srparasites.ada_bolster.name=成熟协增兽
+entity.srparasites.ada_arachnida.name=成熟蛛形兽
 
 #Creative Tab
 
@@ -130,10 +132,13 @@ item.srparasites.itemmobspawner_ranracadapted.name=成熟蛛形兽刷怪蛋
 
 item.srparasites.itemthrow.name=无
 item.srparasites.itemtab.name=无
+item.srparasites.evclock.name=肮脏的时钟
 item.srparasites.weapon_scythe.name=活体镰刀
 item.srparasites.weapon_scythe_sentient.name=感知镰刀
 item.srparasites.weapon_bow.name=活体巨弓
-item.srparasites.weapon_axe.name=感知巨斧
+item.srparasites.weapon_bow_sentient.name=感知巨弓
+item.srparasites.weapon_axe.name=活体巨斧
+item.srparasites.weapon_axe_sentient.name=感知巨斧
 
 item.srparasites.bow_upperlimb.name=活体巨弓上弓臂
 item.srparasites.bow_lowerlimb.name=活体巨弓下弓臂
@@ -167,6 +172,10 @@ tile.srparasites.parasitesapling_tree.name=树苗
 tile.srparasites.parasitesapling_treethin.name=树苗
 tile.srparasites.parasitesapling_flowetall.name=树苗
 
+tile.srparasites.parasitebush_tendril.name=寄生网络
+tile.srparasites.parasitebush_pop.name=寄生囊泡
+tile.srparasites.parasitebush_bine.name=寄生发丝
+
 tile.srparasites.srpweb.name=网方块
 tile.srparasites.biomeheart.name=生物群系核心
 tile.srparasites.colonyheart.name=种群核心
@@ -177,17 +186,26 @@ tile.srparasites.parasitemouth.name=嘴
 tile.srparasites.parasitetendril.name=卷须
 tile.srparasites.parasitefog.name=雾
 
+tile.srparasites.gore_sim_small.name=同化遗骸
+tile.srparasites.gore_sim_big.name=同化遗骸
+tile.srparasites.gore_pri_small.name=原始遗骸
+tile.srparasites.gore_pri_big.name=原始遗骸
+tile.srparasites.gore_ada_small.name=高等遗骸
+tile.srparasites.gore_ada_big.name=高等遗骸
+tile.srparasites.gore_pure_small.name=纯粹遗骸
+tile.srparasites.gore_pure_big.name=纯粹遗骸
+
 tile.srparasites.infestedstain.name=感染泥土
 tile.srparasites.infestedtrunk.name=感染原木
 tile.srparasites.infestedrubble.name=感染石头
 tile.srparasites.infestremain.name=感染方块残渣
 
-tile.srparasites.parasitebush_infected.name=草脉
-tile.srparasites.parasitebush_grass1.name=草脉
-tile.srparasites.parasitebush_flower1.name=草脉
-tile.srparasites.parasitebush_spine.name=草脉
-tile.srparasites.parasitebush_vine.name=草脉
-tile.srparasites.parasitebush_arc.name=草脉
+tile.srparasites.infestedbush_infected.name=草脉
+tile.srparasites.infestedbush_grass1.name=草脉
+tile.srparasites.infestedbush_flower1.name=草脉
+tile.srparasites.infestedbush_spine.name=草脉
+tile.srparasites.infestedbush_vine.name=草脉
+tile.srparasites.infestedbush_arc.name=草脉
 
 tile.srparasites.parasitecanister_sac.name=树囊
 tile.srparasites.parasitecanister_cyst.name=囊泡
@@ -261,10 +279,22 @@ potion.effect.srparasites:viral=病毒药水
 lingering_potion.effect.srparasites:viral=滞留型病毒药水
 tipped_arrow.effect.srparasites:viral=病毒之箭
 
+mob_effect.srparasites:rage=狂怒
+splash_potion.effect.srparasites:rage=喷溅型病毒药水
+potion.effect.srparasites:rage=狂怒药水
+lingering_potion.effect.srparasites:rage=滞留型狂怒药水
+tipped_arrow.effect.srparasites:rage=狂怒之箭
+
+mob_effect.srparasites:repel=伪装
+splash_potion.effect.srparasites:repel=喷溅型伪装药水
+potion.effect.srparasites:repel=伪装药水
+lingering_potion.effect.srparasites:repel=滞留型伪装药水
+tipped_arrow.effect.srparasites:repel=伪装之箭
+
 #extra
 
 message.srparasites.lure=点数减少！
 message.srparasites.fearitem=你正处于恐慌状态！
 message.srparasites.fearblock=你正处于恐慌状态！
 message.srparasites.feargui=你正处于恐慌状态！
-message.srparasites.evolutionsleep=你现在无法入睡......
+message.srparasites.evolutionsleep=你现在无法入睡……
