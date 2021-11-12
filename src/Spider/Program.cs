@@ -10,6 +10,7 @@ using Serilog;
 
 using Spider.Lib;
 using Spider.Lib.FileLib;
+using Spider.Lib.JsonLib;
 
 namespace Spider
 {
@@ -124,8 +125,14 @@ namespace Spider
                             Directory.CreateDirectory(
                                 @$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}");
                         }
+
+                        var inf = new List<ModIntro>();
+                        foreach (var (key, value) in dict)
+                        {
+                            inf.Add(new ModIntro() { Name = key, Id = value });
+                        }
                         await File.WriteAllTextAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Version}\intro.json",
-                            JsonSerializer.Serialize(dict, new JsonSerializerOptions() { WriteIndented = true }));
+                            JsonSerializer.Serialize(inf, new JsonSerializerOptions() { WriteIndented = true }));
                     }
 
                     var ids = pending.Where(name => dict.ContainsKey(name)).Select(name => dict[name].ToString());
