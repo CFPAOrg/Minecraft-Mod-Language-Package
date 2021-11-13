@@ -40,15 +40,9 @@ namespace Language.Core
 
                         ls.Add(str);
                     }
-                    else
-                    {
-                        ls.Add(str);
-                    }
+                    else ls.Add(str);
                 }
-                else
-                {
-                    ls.Add(str);
-                }
+                else ls.Add(str);
             }
 
             File.WriteAllLines(path, ls);

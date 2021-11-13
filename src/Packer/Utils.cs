@@ -66,7 +66,7 @@ namespace Packer
             var mcmeta = $"./projects/{version}/pack.mcmeta";
             var meta = JsonSerializer.Deserialize<McMeta>(File.ReadAllText(mcmeta));
             var time = DateTime.UtcNow.AddHours(8);
-            meta.Pack.Description += $"打包时间：{time:yyyy-MM-dd HH:mm}";
+            meta.Pack.Description += $"打包时间：{time:yyyy-MM-ddTHH:mm:ssZ}";
             var result = JsonSerializer.Serialize(meta, new JsonSerializerOptions()
             {
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
