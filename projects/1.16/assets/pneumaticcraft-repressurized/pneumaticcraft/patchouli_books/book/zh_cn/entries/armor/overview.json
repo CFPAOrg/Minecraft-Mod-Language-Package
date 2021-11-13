@@ -1,5 +1,5 @@
 {
-  "name": "盔甲总览",
+  "name": "气动盔甲总览",
   "icon": "minecraft:written_book",
   "category": "armor",
   "priority": "true",
@@ -19,11 +19,16 @@
     },
     {
       "type": "text",
-      "text": "尽管如此，该盔甲的具有高度可升级性。要对其安装升级（并充气），将其放入$(l:machines/charging_station)充气站/$中。$(p)下列几页是对于所有盔甲部件通用的升级。各个部件特有的升级在各部件的页面中。"
+      "text": "尽管如此，该盔甲可以被高度升级。要对其安装升级（并充气），将其放入$(l:machines/charging_station)充气站/$中。$(p)下列几页是对于所有盔甲部件通用的升级。各个部件特有的升级在各部件的页面中。"
     },
     {
       "type": "text",
-      "text": "穿戴盔甲时，盔甲将耗费数秒的时间$(thing)启动/$。可以按下 $(thing)$(k:pneumaticcraft.armor.options)/$ 键打开配置界面，在此可以配置安装的升级并调节悬浮窗口。安装更多升级后，界面中会出现更多选项。$(p)值得注意的是，所有升级都可以在配置界面通过复选框开关，甚至可以将开关操作进行键位绑定，以便在未打开界面时开关。"
+      "text": "穿戴盔甲时，盔甲将耗费数秒的时间$(thing)启动/$。可以按下 $(thing)$(k:pneumaticcraft.armor.options)/$ 键打开配置界面，在此可以配置安装的升级并调节悬浮窗口。安装更多升级后，界面中会出现更多选项。$(p)值得注意的是，所有升级都可以在配置界面通过复选框开关，甚至可以将开关操作进行键位绑定，以便在未打开界面时开关特定功能。"
+    },
+    {
+      "type": "text",
+      "title": "染色",
+      "text": "每一件气动盔甲都可以随时染色；其各自拥有独立的$(thing)主色/$和$(thing)次色/$设置；头盔的$(thing)目镜/$也可以独立染色。$(p)要调整色彩，在盔甲主界面中转至$(bold)色彩……/$界面。这一点不需要升级：这一功能是自带的。"
     },
     {
       "type": "spotlight",
@@ -33,23 +38,24 @@
     {
       "type": "spotlight",
       "item": "pneumaticcraft:volume_upgrade",
-      "text": "$(l:base_concepts/upgrades#volume)容量升级/$提升每件盔甲的$(l:base_concepts/pressure)空气容量/$；这会使其充气时间更长，同时压力随使用的衰减降低。对该升级数目的实际限制仅有升级槽位的数量。"
+      "text": "$(l:base_concepts/upgrades#volume)容量升级/$提升每件盔甲的$(l:base_concepts/pressure)空气容量/$；这会使其充气时间更长，同时压力随使用的衰减速率降低。可安装的数目最大为 25 个；且安装数量较大时将会有边际递减效应。"
     },
     {
       "type": "spotlight",
       "item": "pneumaticcraft:armor_upgrade",
-      "text": "$(l:base_concepts/upgrades#armor)护甲升级/$提升每件盔甲的防御点数和盔甲韧性。安装 2 个升级后，每件盔甲的防护能力等价于对应的$(thing)钻石盔甲/$。安装最大 6 个升级后，这一防护能力就优于$(thing)钻石盔甲/$。"
+      "text": "$(l:base_concepts/upgrades#armor)护甲升级/$提升每件盔甲的防御点数和盔甲韧性。安装 2 个升级后，每件盔甲的防护能力等价于对应的$(thing)钻石盔甲/$。安装最大 4 个升级后，这一防护能力就优于$(thing)钻石盔甲/$。"
     },
     {
       "type": "spotlight",
       "item": "pneumaticcraft:item_life_upgrade",
-      "text": "$(l:base_concepts/upgrades#item_life)物品寿命升级/$缓慢地修复每件盔甲，同时消耗$(base_concepts/pressure)空气/$。最多可安装 6 个升级，从而提供显著更快（但以空气计效率更低）的修复。"
+      "text": "$(l:base_concepts/upgrades#item_life)物品寿命升级/$缓慢地修复每件盔甲，同时消耗$(l:base_concepts/pressure)空气/$。最多可安装 6 个升级，从而提供显著更快（但以空气计效率更低）的修复。"
     },
     {
-      "type": "text",
-      "title": "神秘时代",
-      "flag": "mod:thaumcraft",
-      "text": "$(l:base_concepts/upgrades#thaumcraft)神秘时代升级/$向每件盔甲提供等价于对应的$(thing)神秘使套装/$的 Vis 减免。此外，安装了神秘时代升级的$(l:armor/pneumatic_helmet)头盔/$执行$(item)揭示之护目镜/$的功能：显示$(thing)灵气节点/$于容器中的$(thing)要素/$量。"
+      "type": "spotlight",
+      "flag": "mod:mekanism",
+      "title": "Mekanism 辐射防护",
+      "item": "pneumaticcraft:radiation_shielding_upgrade",
+      "text": "$(l:base_concepts/upgrades#radiation_shielding)辐射防护升级/$对 Mekanism 辐射效果的防护，等同于 Mekanism 的$(l:https://wiki.aidancbrady.com/wiki/Radiation_Shielding_Unit)辐射屏蔽单元/$。注：防护效果在每件盔甲都安装了辐射防护升级时达到最佳。"
     }
   ]
 }
