@@ -64,7 +64,27 @@
             "name": "need review",
             "color": "ededed",
             "description": "Need review."
-        }
+        },
+	"1.12.x": {
+            "name": "1.12.x",
+            "color": "1d76db",
+            "description": ""
+        },
+	"1.16.x": {
+            "name": "1.16.x",
+            "color": "1d76db",
+            "description": ""
+        },
+        "config": {
+            "name": "config",
+            "color": "fef2c0",
+            "description": ""
+        },
+        "source": {
+            "name": "source",
+            "color": "fef2c0",
+            "description": ""
+        },
     },
     "runners": [
         {
@@ -177,8 +197,8 @@
                         "requires": 1,
                         "conditions": [
                             {
-	"type": "branchMatches",
-	"pattern": "main"
+				"type": "branchMatches",
+				"pattern": "main"
                             }
                         ]
                     },
@@ -211,6 +231,42 @@
                                 "type": "titleMatches",
                                 "pattern": "(?<=\\[)R(?=\\])"
                             }
+                        ]
+                    }.
+                    "1.12.x": {
+                        "requires": 1,
+                        "conditions": [
+			    {
+				"type": "filesMatch",
+				"glob": "projects/1.12.2/**"
+			     }
+                        ]
+                    },
+                    "1.16.x": {
+                        "requires": 1,
+                        "conditions": [
+			    {
+				"type": "filesMatch",
+				"glob": "projects/1.16/**"
+			    }
+                        ]
+                    },
+                    "config": {
+                        "requires": 1,
+                        "conditions": [
+			    {
+				"type": "filesMatch",
+				"glob": "config/**"
+			    }
+                        ]
+                    },
+                    "source": {
+                        "requires": 1,
+                        "conditions": [
+			    {
+				"type": "filesMatch",
+				"glob": "src/**"
+			    }
                         ]
                     }
                 }
