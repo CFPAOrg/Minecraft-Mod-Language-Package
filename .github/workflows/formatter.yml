@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '0 9 1,15 * *'
-  pull_request_target:
+  pull_request:
     
 
 jobs:
@@ -36,7 +36,7 @@ jobs:
           ri .\Formatter.exe -Force
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'actions@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.GITHUB_REPOSITORY }}
           git add .
           git commit -m "[Formatter]Update file"
           git push origin HEAD:${{ github.ref }}
