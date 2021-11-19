@@ -93,7 +93,7 @@
 
 Tinkers Construct 的 CurseForge 页面地址为 <https://www.curseforge.com/minecraft/mc-mods/tinkers-construct>，则 `{CurseForge 项目名称}` 为 `mc-mods/` 后面的内容（或 `mc-mods/` 和 下一个 `/` 之间的内容），即 `tinkers-construct`。
 
-Tinkers Construct 英文原文的路径为 `assets/tconstruct/lang/en_us.json`，则 `{ModId}` 为 `assets/` 和 `/lang` 中间的内容，即 `tconstruct`。
+Tinkers Construct 英文原文的路径为 `assets/tconstruct/lang/en_us.json`，则 `{ModId}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。
 
 最终你要提交翻译文件的路径为 `projects/1.16/assets/tinkers-construct/tconstruct/lang/zh_cn.json`。
 
