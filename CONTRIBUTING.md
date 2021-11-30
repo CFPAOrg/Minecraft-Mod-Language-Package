@@ -37,8 +37,8 @@
 - 请确保提交的语言文件名称大小写正确，一般情况下语言文件名称应为**小写**。
 - 提交翻译文件时，请一并提交/更新英文原文。
 - 若只提交英文原文，请一并提交空白翻译文件。
-  - 1.12 的文件为无内容的文件
-  - 1.16 的文件为只包含左右花括号的文件，[例子](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json)
+  - 1.12 空白翻译文件为无内容的文件
+  - 1.16 空白翻译文件为只包含左右花括号的文件，[例子](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json)
 
 有关**审查**的说明：
 
@@ -67,8 +67,6 @@
 
 ### GitHub PR
 
-#### 提交前
-
 - 默认你对 Git、GitHub 已经有了**一定**的了解，并且懂得使用 PR。
 - 请提交 PR 至 **main** 分支。
 - 若要提交多个模组的翻译，请尽量分多个 PR 提交。
@@ -78,16 +76,13 @@
   - `[P]`（难度较大）
   - `[WIP]`（未完成）
   - 多个标记的例子：`[R][P][WIP]`
-- PR 标题需简洁明了，格式一般为 `[R] {模组英文名} {补充信息}}`。
+- PR 标题需简洁明了，格式一般为 `[R] {模组英文名（必须）} {补充信息}}`。
   - 一个例子：`[R] Tinkers Construct 翻译提交`
 - 请确保提交文件的路径是**正确**的（[例子](#提交文件路径的例子)）。
   - 如果是 1.12 翻译，应该是：`projects/1.12.2/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.lang`
   - 如果是 1.16 翻译，应该是：`projects/1.16/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.json`
 - 未完工的翻译仍可提交 PR，可以先设置为 Draft。
 - 善用相关词语填写 PR 信息或 Commit 信息，如提交、更新/修改、删除。
-
-#### 提交后
-
 - 提交 PR 后，后续跟进消息会以邮件的方式通知，请**留意**注册邮箱（有可能会被处理为垃圾邮件）。
 - 请勿对本地化修复文件做出任何改动。
 - **请勿在提交翻译的 Commit 中同时更改配置以及代码，除非你明白且愿意承担所造成的相关后果。**
@@ -96,11 +91,11 @@
 
 此例子演示的是 1.16 json 文件路径，而 1.12 lang 文件路径也十分类似。
 
-Tinkers Construct 的 CruseForge 页面地址为 <https://www.curseforge.com/minecraft/mc-mods/tinkers-construct>，则 `{CurseForge 项目名称}` 为 `tinkers-construct`。
+Tinkers Construct 的 CurseForge 页面地址为 <https://www.curseforge.com/minecraft/mc-mods/tinkers-construct>，则 `{CurseForge 项目名称}` 为 `mc-mods/` 后面的内容（或 `mc-mods/` 和 下一个 `/` 之间的内容），即 `tinkers-construct`。
 
-Tinkers Construct 英文原文的路径为 `assets/tconstruct/lang/en_us.json`，则 `{ModId}` 为 `tconstruct`。
+Tinkers Construct 英文原文的路径为 `assets/tconstruct/lang/en_us.json`，则 `{ModId}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。
 
-最终你要提交翻译文件的路径为 `projects/1.16/assets/tinkers-construct/tconstruct/lang/zh_cn.json`
+最终你要提交翻译文件的路径为 `projects/1.16/assets/tinkers-construct/tconstruct/lang/zh_cn.json`。
 
 ## 代码贡献指南
 
