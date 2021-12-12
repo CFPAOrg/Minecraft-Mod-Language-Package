@@ -1,2 +1,0 @@
-- [ ] 反馈问题之前，我确认我用的是该仓库最新版翻译：[最新版下载地址](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest)；
-- [ ] 我所反馈的翻译问题版本正确，是 `1.12.2/1.15/1.16` 的翻译；

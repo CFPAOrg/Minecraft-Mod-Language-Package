@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,6 +10,7 @@ using Serilog;
 
 using Spider.Lib;
 using Spider.Lib.FileLib;
+using Spider.Lib.JsonLib;
 
 namespace Spider
 {
@@ -27,18 +29,19 @@ namespace Spider
 
             foreach (var cfg in c)
             {
+                Log.Logger.Information("Loading version configration: {0}",cfg.Version);
+                //初始化parser
                 var parser = new InfoParser(cfg.Configuration, cfg.CustomConfigurations);
 
-                if (cfg.Configuration != null)
+                if (cfg.Configuration is not null)
                 {
                     var dict = await JsonReader.ReadIntroAsync(cfg.Configuration.Version, cfg.Version);
-                    var pending = new List<string>();
                     var root = Directory.CreateDirectory(
                         $"{Directory.GetCurrentDirectory()}\\projects\\{cfg.Version}\\assets");
 
                     var names = root.GetDirectories().Select(_ => _.Name).ToList();
 
-                    if (cfg.CustomConfigurations != null)
+                    if (cfg.CustomConfigurations is not null)
                         foreach (var configuration in cfg.CustomConfigurations)
                         {
                             if (!names.Contains(configuration.ProjectName))
@@ -47,32 +50,36 @@ namespace Spider
                             }
                         }
 
-                    if (cfg.Count != null)
+                    if (cfg.Count is not null)
                     {
-                        var allM = await UrlLib.GetModInfoAsync(cfg.Count.Value, cfg.Configuration.Version);
-
+                        var allMods = await UrlLib.GetModInfoAsync(cfg.Count.Value, cfg.Configuration.Version);
+                        foreach (var modInfo in allMods)
+                        {
+                            if (dict.ContainsKey(modInfo.Slug) || dict.ContainsValue(modInfo.Id))
+                            {
+                                continue;
+                            }
+                            dict.Add(modInfo.Slug, modInfo.Id);
+                        }
 
                         if (names.Count > cfg.Count)
                         {
-                            var bin = allM.Where(_ => !names.Contains(_.Slug));
-                            var l = allM.ToList();
+                            var bin = allMods.Where(_ => !names.Contains(_.Slug));
+                            var l = allMods.ToList();
                             foreach (var info in bin)
                             {
                                 l.Remove(info);
                             }
 
-                            allM = l.ToArray();
+                            allMods = l.ToArray();
                         }
-                        var allN = allM.ToList().Select(_ => _.Slug).Distinct().ToList();
-                        var l1 = parser.SerializeAll(allM).Distinct().ToList();
+                        var allNames = allMods.ToList().Select(_ => _.Slug).Distinct().ToList();
+                        var l1 = parser.SerializeAll(allMods).Distinct().ToList();
 
-                        //var parallelOption = new ParallelOptions {
-                        //    MaxDegreeOfParallelism = 16
-                        //};
-
+                        var pending = new List<string>();
                         foreach (var str in names)
                         {
-                            if (!allN.Contains(str))
+                            if (!allNames.Contains(str))
                             {
                                 pending.Add(str);
                             }
@@ -80,25 +87,13 @@ namespace Spider
 
                         Log.Logger.Information($"该版本[assets]文件夹下含有 {names.Count} 个mod，有 {pending.Count} 要单独处理");
                         var semaphore = new SemaphoreSlim(16, 16);
-                        //Parallel.ForEach(l1, parallelOption, (async tuple => {
-                        //    try {
-                        //        semaphore.WaitOne();
-                        //        await Utils.ParseModsAsync(tuple, cfg);
-                        //    }
-                        //    catch (Exception e) {
-                        //        Log.Logger.Error(e.Message);
-                        //    }
-                        //    finally {
-                        //        semaphore.Release();
-                        //    }
-                        //}));
 
-                        var tasks = l1.Select(async _ =>
+                        var tasks = l1.Select(async mod =>
                         {
                             try
                             {
                                 await semaphore.WaitAsync();
-                                await Utils.ParseModsAsync(_, cfg);
+                                await Utils.ParseModsAsync(mod, cfg);
                             }
                             catch (Exception e)
                             {
@@ -111,77 +106,43 @@ namespace Spider
                         });
 
                         await Task.WhenAll(tasks);
+                        if (!Directory.Exists(@$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}"))
+                        {
+                            Directory.CreateDirectory(
+                                @$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Configuration.Version}");
+                        }
+
+                        var inf = new List<ModIntro>();
+                        foreach (var (key, value) in dict) inf.Add(new ModIntro() { Name = key, Id = value });
+                        await File.WriteAllTextAsync(@$"{Directory.GetCurrentDirectory()}\config\spider\{cfg.Version}\intro.json",
+                            JsonSerializer.Serialize(inf, new JsonSerializerOptions() { WriteIndented = true }));
+
+                        var ids = pending.Where(name => dict.ContainsKey(name)).Select(name => dict[name].ToString());
+
+                        var infos = await UrlLib.GetModInfosAsync(ids);
+                        var cfgs = parser.SerializeAll(infos);
+
+                        var semaphore2 = new SemaphoreSlim(16, 16);
+                        var postTask = cfgs.Select(async _ =>
+                        {
+                            try
+                            {
+                                await semaphore2.WaitAsync();
+                                await Utils.ParseModsAsync(_, cfg);
+                            }
+                            catch (Exception e)
+                            {
+                                Log.Logger.Error(e.Message);
+                            }
+                            finally
+                            {
+                                semaphore2.Release();
+                            }
+                        });
+
+                        await Task.WhenAll(postTask);
                     }
-
-                    var ids = pending.Where(name => dict.ContainsKey(name)).Select(name => dict[name].ToString());
-
-                    var infos = await UrlLib.GetModInfosAsync(ids);
-                    var cfgs = parser.SerializeAll(infos);
-
-                    var semaphore2 = new SemaphoreSlim(16, 16);
-                    var postTask = cfgs.Select(async _ =>
-                    {
-                        try
-                        {
-                            await semaphore2.WaitAsync();
-                            await Utils.ParseModsAsync(_, cfg);
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Logger.Error(e.Message);
-                        }
-                        finally
-                        {
-                            semaphore2.Release();
-                        }
-                    });
-
-                    await Task.WhenAll(postTask);
-                    //foreach (var name in pending)
-                    //{
-                    //    if (dict.ContainsKey(name))
-                    //    {
-                    //        var m = await UrlLib.GetModInfoAsync(dict[name]);
-                    //        var i = parser.Serialize(m);
-                    //        try
-                    //        {
-                    //            var task = new Task(async () =>
-                    //            {
-                    //                try
-                    //                {
-                    //                    await Utils.ParseModsAsync(i, cfg);
-                    //                }
-                    //                catch (Exception e)
-                    //                {
-                    //                    Log.Logger.Error(e.Message);
-                    //                }
-                    //            });
-                    //            task.Start();
-                    //            //await Utils.ParseModsAsync(i,cfg);
-                    //        }
-                    //        catch (Exception e)
-                    //        {
-                    //            Log.Logger.Error(e.Message);
-                    //        }
-                    //        Thread.Sleep(5000);
-                    //  }
-                    //}
                 }
-
-                //var semaphore = new Semaphore(32, 40);
-                //foreach (var l in l1) {
-                //    try {
-                //        semaphore.WaitOne();
-                //        await Utils.ParseModsAsync(l,cfg);
-                //    }
-                //    catch (Exception e) {
-                //        Log.Logger.Error(e.Message);
-                //    }
-                //    finally {
-                //        semaphore.Release();
-                //    }
-                //}
-
             }
         }
     }
