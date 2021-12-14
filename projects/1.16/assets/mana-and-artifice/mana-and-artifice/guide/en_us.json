@@ -364,6 +364,10 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/wellspring_sight_unguent"
+			},	
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/wellspring_dowsing_rod"
 			},			
 			{
 				"type": "manaweaving_altar",
@@ -715,7 +719,16 @@
 				"height": 64			
 			}
 		],
-		"related_recipes": []
+		"related_recipes": [
+			{
+				"location": "mana-and-artifice:vinteum_dust_block",
+				"type": "crafting"
+			},
+			{
+				"location": "mana-and-artifice:vinteum_dust_from_block",
+				"type": "crafting"
+			}
+		]
 	},
 	"Chimerite": {
 		"category": "basics",
@@ -3646,7 +3659,7 @@
 			},
 			{
 				"type": "text",
-				"value": "This effect drastically lowers the temperature of whatever it targets.  The shock from the temperature change can cause significant damage."
+				"value": "This effect drastically lowers the temperature of whatever it targets.  The shock from the temperature change can cause significant damage.  As the damage of the frost increases, it can freeze water to temporary ice (or permanent ice if the damage is high enough), and lava to obsidian."
 			}
 		],
 		"related_recipes": [
@@ -3800,7 +3813,7 @@
 		"related_recipes": [
 			{
 				"type": "spell_part",
-				"location": "mana-and-artifice:components/levitate"
+				"location": "mana-and-artifice:components/levitation"
 			}
 		]
 	},
@@ -5096,6 +5109,26 @@
 			}
 		]
 	},
+	"Odin's Call": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Ritual of Odin's Call"
+			},
+			{
+				"type": "text",
+				"value": "This ritual challenges a diety of magic, Odin himself.  Be on your guard, this fight is extremely deadly."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/odins_call"
+			}
+		]
+	},
 	"Locating": {
 		"index": 0,
 		"category": "rituals",
@@ -5469,27 +5502,215 @@
 			}
 		]
 	},
-	"Ritual Kits": {
+	"Practitioner's Pouch": {
 		"index": -1,
 		"category": "rituals",
 		"sections": [
 			{
 				"type": "title",
-				"value": "Ritual Kits"
+				"value": "Practitioner's Pouch"
 			},
 			{
 				"type": "text",
-				"value": "Having to draw out a ritual each and every time can be time consuming.  Enter the ritual kit.\n\nTo bind the kit to a specific ritual pattern, sneak while activating the centre of a ritual.\n\nHold the GUI key (default left Ctrl) and right click the kit to open the bag.  Place all items needed for the ritual inside the kit.\n\nActivating the kit on a sufficiently sized, empty flat space will instantly place and activate the ritual.  Items will be consumed from the kit.\n\nAdditionally, rituals activated from a kit complete significantly faster than ones drawn manually.\n\nRitual kits can store multiple rituals.  Select a slot before binding or placing using the UI key (default 'z') and the radial menu."
+				"value": "Having to draw out a ritual each and every time can be time consuming.  Enter the practitioner's pouch.\n\nTo bind the pouch to a specific ritual pattern, sneak while activating the centre of a ritual.\n\nHold the GUI key (default left Ctrl) and right click the pouch to open it.  Place all items needed for the ritual inside the pouch.\n\nActivating the pouch on a sufficiently sized, empty flat space will instantly place and activate the ritual.  Items will be consumed from the pouch.\n\nPractitioner's Pouches can store multiple rituals.  Select a slot before binding or placing using the UI key (default 'z') and the radial menu."
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "crafting",
-				"location": "mana-and-artifice:rituals/ritual_kit"
+				"location": "mana-and-artifice:rituals/practitioners_pouch"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Void": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Void"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch along with a Collection Patch, a Void Patch provides an additional sixteen slot filter. Upon collecting an item in this filter, it will be destroyed if all stacks of that item in the Pouch are full instead of being placed into the player's inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/void"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Depth": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Depth"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Depth patch increases the stack limit of items within the Pouch to four times their normal value.\n\nAccomplished magicians can create improved Depth Patches that can be sewn on top of the basic Depth Patch. Stitching an improved patch onto a Pouch that already has a Depth Patch increases the stack limits of the items within by four times again (sixteen times its normal limit in total)."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/depth_i"
+			},
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/patches/depth_ii"				
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Speed": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Speed"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Speed Patch increases the rate at which a ritual bound to the Pouch draws and readies itself by 30%.\n\nAccomplished magicians can create improved Speed Patches that can be sewn on top of the basic Speed Patch. Stitching an improved patch onto a Pouch that already has a Speed Patch further increases the rate at which bound rituals ready themselves by an additional 30% each (to a maximum of 90% increased ritual speed)."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/speed_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/rituals/fast_ritual_kit"
+				"location": "mana-and-artifice:manaweaving/patches/speed_ii"
+			},
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/patches/speed_iii"				
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Glyph": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Glyph"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Glyph Patch provides an additional sixteen slot inventory that can only hold dyed glyphs.\n\nThe additional inventory can be accessed by clicking on the green + icon over the Glyph Patch icon, and can be closed by clicking on the red - icon in the upper right of the patch inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/glyph"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Mote": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Mote"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Mote Patch provides an additional twelve slot inventory that can only hold motes and greater motes.\n\nThe additional inventory can be accessed by clicking on the green + icon over the Mote Patch icon, and can be closed by clicking on the red - icon in the upper right of the patch inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/mote"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Rift": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Rift"
+			},
+			{
+				"type": "text",
+				"value": "Normally, a ritual bound to a Practitioner's Pouch needs all of the necessary items within itself. When sewn onto a Practitioner's Pouch, a Rift Patch allows a ritual to search for missing items within the user's Rift storage instead. If necessary items are contained both in the Pouch and the Rift, items in the Rift will be consumed first."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/patches/rift"				
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Weave": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Weave"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Weave Patch provides an additional twelve slot inventory that can only hold bottles containing manaweave patterns. When a ritual is started with the Pouch, any necessary manaweave patterns stored in the Weave Patch will be consumed automatically. If all manaweaves are present in bottles, no manaweaving will be necessary to complete the ritual.\n\nThe additional inventory can be accessed by clicking on the green + icon over the Weave Patch icon, and can be closed by clicking on the red - icon in the upper right of the patch inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/weave"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Conveyance": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Conveyance"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Conveyance Patch provides a single slot that can only hold a Rune of Marking.\n\nNormally, a ritual bound to a Practitioner's Pouch needs all of the necessary items within itself. A Conveyance Patch allows a ritual to search for missing items within the inventory the provided Rune of Marking points to, if it is loaded.\n\nIf necessary items are contained both in the Pouch and the marked inventory, items in the marked inventory will be consumed first. If the Pouch has both a Conveyance Patch and a Rift Patch, items in the Rift will be consumed before items in the marked inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/patches/conveyance"				
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Collection": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Practitioner's Pouch Patch: Collection"
+			},
+			{
+				"type": "text",
+				"value": "Normally, items must be inserted into a Practitioner's Pouch manually. When sewn on, a Collection Patch causes any items picked up to automatically go to the Pouch's inventory instead.\n\nItems will only enter the Pouch if the item already exists in the pouch and is not at its stack limit."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/collection"
 			}
 		]
 	},
@@ -5619,11 +5840,7 @@
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:stone_runes/rune_blank"
-			},
-			{
-				"type": "crafting",
-				"location": "mana-and-artifice:stone_runes/rune_bag"
-			},
+			},			
 			{
 				"type": "crafting",
 				"locations": [
@@ -5970,20 +6187,52 @@
 				"location": "mana-and-artifice:wand_a"
 			},
 			{
+				"type": "crafting",
+				"location": "mana-and-artifice:wand_b"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:wand_c"
+			}
+		]
+	},
+	"Attaching Spells to Magic Staves and Wands": {
+		"index": 0,
+		"category": "manaweaving",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Attaching Spells to Magic Staves and Wands"
+			},
+			{
+				"type": "text",
+				"value": "In addition to their enchantability and melee capabilities, staves and wands can also have spells bound to them.  They grant no tangible benefits to the spell itself (and never will), but offer an aesthetic variant.  Be warned, once the spell is attached to the staff it cannot be removed, however a new spell can overwrite an existing one."
+			}
+		],
+		"related_recipes": [
+			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/manaweaving_staff_a"
+				"location": "mana-and-artifice:manaweaving/sorcery/staff_a_add_spell"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/manaweaving_staff_b"
+				"location": "mana-and-artifice:manaweaving/sorcery/staff_b_add_spell"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/manaweaving_staff_c"
+				"location": "mana-and-artifice:manaweaving/sorcery/staff_c_add_spell"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/manaweaving_wand"
+				"location": "mana-and-artifice:manaweaving/sorcery/wand_a_add_spell"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/wand_b_add_spell"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/wand_c_add_spell"
 			}
 		]
 	},
@@ -6549,6 +6798,26 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/wellspring_sight_unguent"
+			}
+		]
+	},
+	"Cowl of Consumption": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Cowl of Consumption"
+			},
+			{
+				"type": "text",
+				"value": "Though it appears little less than a simple cloth hood, this cowl is a powerful artifact for the undead.  Every time the undead would gain souls, some of them are consumed to keep the undead satiated and well fed."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/artifice/cowl_of_consumption"				
 			}
 		]
 	},
@@ -8069,6 +8338,26 @@
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:lodestar"
+			}
+		]
+	},
+	"Magician's Workbench": {
+		"index": "0",
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Magician's Workbench"
+			},
+			{
+				"type": "text",
+				"value": "This workbench is a handy tool for the novice wizard.  It has an internal inventory, items do not get removed from the crafting grids when closed, and it remembers the last 8 recipes you crafted.  Clicking on one of these recipes will attempt to place it in one of the workbench crafting grids if there is room."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runescribing/magicians_workbench"
 			}
 		]
 	},
