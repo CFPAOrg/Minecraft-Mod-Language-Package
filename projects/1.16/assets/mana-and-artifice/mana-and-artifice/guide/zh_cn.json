@@ -364,7 +364,11 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/wellspring_sight_unguent"
-			},			
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/wellspring_dowsing_rod"
+			},
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/eldrin_sight_unguent"
@@ -715,7 +719,16 @@
 				"height": 64
 			}
 		],
-		"related_recipes": []
+		"related_recipes": [
+			{
+				"location": "mana-and-artifice:vinteum_dust_block",
+				"type": "crafting"
+			},
+			{
+				"location": "mana-and-artifice:vinteum_dust_from_block",
+				"type": "crafting"
+			}		
+		]
 	},
 	"Chimerite": {
 		"category": "basics",
@@ -1611,6 +1624,44 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/enchanting/cloudstep_iii"
+			}
+		]
+	},
+	"Gilded": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Gilded"
+			},
+			{
+				"type": "text",
+				"value": "This enchantment uses a small amount of gold to mask my armor to piglins, making it appear gold to them and keeping them docile, provided I don't provoke them in other ways.\n\nOnly one piece of my armor needs this enchant to gain the benefit of it."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/gilded"
+			}
+		]
+	},
+	"Fireproof": {
+		"category": "enchantments",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Fireproof"
+			},
+			{
+				"type": "text",
+				"value": "This enchantment will prevent the enchanted item from burning when thrown into lava or fire.  It won't however, make it float in lava.  This enchantment also only protects the item from burning up; it won't protect the wearer, nor will it protect from wear and tear damage done while being worn."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/enchanting/fireproof"
 			}
 		]
 	},
@@ -3645,7 +3696,7 @@
 			},
 			{
 				"type": "text",
-				"value": "这一效果构件可以急剧降低目标的温度，由温度急速变换而带来的打击将会对目标造成巨大的伤害。"
+				"value": "这一效果构件可以急剧降低目标的温度，由温度急速变换而带来的打击将会对目标造成巨大的伤害。As the damage of the frost increases, it can freeze water to temporary ice (or permanent ice if the damage is high enough), and lava to obsidian."
 			}
 		],
 		"related_recipes": [
@@ -3799,7 +3850,7 @@
 		"related_recipes": [
 			{
 				"type": "spell_part",
-				"location": "mana-and-artifice:components/levitate"
+				"location": "mana-and-artifice:components/levitation"
 			}
 		]
 	},
@@ -4237,7 +4288,7 @@
 			},
 			{
 				"type": "text",
-				"value": "将气魔法与地魔法粗略混合，我可以使简单的方块暂时违逆重力，并漂浮到半空中，然后它会在一个适当的位置停住。\n\n这一构件会将法术内的其余构件的效果转移至漂浮的方块上，而不是原先的目标。"
+				"value": "将气魔法与地魔法粗略混合，我可以使简单的方块暂时违逆重力，并漂浮到半空中，然后它会在一个适当的位置停住。"
 			},
 			{
 				"type": "text",
@@ -4261,7 +4312,7 @@
 			},
 			{
 				"type": "text",
-				"value": "我可以使用地魔法，使得一些简单的方块在短时间内受到重力的影响。\n\n这一构件会将法术内的其余构件的效果转移至受重力的方块上，而不是原先的目标。\n\n下一次见到苦力怕，我得先把它抛斥开，然后再对着它旁边的隧道使用塌陷魔法！"
+				"value": "我可以使用地魔法，使得一些简单的方块在短时间内受到重力的影响。\n\n下一次见到苦力怕，我得先把它抛斥开，然后再对着它旁边的隧道使用塌陷魔法！"
 			}
 		],
 		"related_recipes": [
@@ -5094,6 +5145,26 @@
 				"location": "mana-and-artifice:rituals/aurora"
 			}
 		]
+	},	
+	"Odin's Call": {
+		"index": 0,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "奥丁之唤仪式"
+			},
+			{
+				"type": "text",
+				"value": "这一仪式会指引你挑战魔法之神——奥丁。这场战斗极为危险，请务必打起十二分精神。只有在处于雷暴天气下的露天之处才能进行此仪式。"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "ritual",
+				"location": "mana-and-artifice:rituals/odins_call"
+			}
+		]
 	},
 	"Locating": {
 		"index": 0,
@@ -5468,27 +5539,215 @@
 			}
 		]
 	},
-	"Ritual Kits": {
+	"Practitioner's Pouch": {
 		"index": -1,
 		"category": "rituals",
 		"sections": [
 			{
 				"type": "title",
-				"value": "仪式用具袋"
+				"value": "布仪者之袋"
 			},
 			{
 				"type": "text",
-				"value": "一笔一划地在地上画出仪式，一次还好，次数多了既费时又耗力。使用仪式袋可以帮助你解决这一问题。\n\n激活仪式后，仪式会显示出所需要的耗材，摆放好耗材之后，拿着仪式袋按住 GUI 键（默认为左 Ctrl）并右击仪式中心，即可将仪式袋与该仪式绑定。\n\n潜行右击空气可以打开袋子。在其中你可以放上粉笔以及仪式耗材。\n\n对着平坦且空间足够的表面右击仪式袋，将会立刻在目标处开启一个与仪式袋绑定的仪式。这一过程消耗的是仪式袋内的物品。\n\n此外，使用仪式袋布置的仪式，在仪式运行速度上将会比手动布置的仪式快很多。\n\n仪式用具带可以储存多种仪式。在绑定或是放置仪式前，请先选择一个槽位。按住 UI 键（默认为“Z”）即可唤出放射列表进行选择。"
+				"value": "一笔一划地在地上画出仪式，一次还好，次数多了既费时又耗力。使用布仪者之袋可以帮助你解决这一问题。\n\n激活仪式后，仪式会显示出所需要的耗材，摆放好耗材之后，拿着布仪者之袋按住 GUI 键（默认为左 Ctrl）并右击仪式中心，即可将布仪者之袋与该仪式绑定。\n\n潜行右击空气可以打开袋子。在其中你可以放上粉笔以及仪式耗材。\n\n对着平坦且空间足够的地表右击布仪者之袋，将会立刻在目标处开启一个与布仪者之袋绑定的仪式。这一过程消耗的是布仪者之袋内的物品。\n\n此外，使用布仪者之袋布置的仪式，在仪式运行速度上将会比手动布置的仪式快很多。\n\n仪式用具带可以储存多种仪式。在绑定或是放置仪式前，请先选择一个槽位。按住 UI 键（默认为“Z”）即可唤出放射列表进行选择。"
 			}
 		],
 		"related_recipes": [
 			{
 				"type": "crafting",
-				"location": "mana-and-artifice:rituals/ritual_kit"
+				"location": "mana-and-artifice:rituals/practitioners_pouch"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Void": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：虚空"
+			},
+			{
+				"type": "text",
+				"value": "当与收集补丁一同缝在布仪者之袋后，虚空补丁可以提供额外的十六个过滤槽。当袋子收集到与过滤匹配的物品时，若袋中的所有槽位均已满，则袋子会销毁掉这些匹配的物品，而不是将其放置到玩家的物品栏中。"
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/void"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Depth": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：深度"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Depth patch increases the stack limit of items within the Pouch to four times their normal value.\n\nAccomplished magicians can create improved Depth Patches that can be sewn on top of the basic Depth Patch. Stitching an improved patch onto a Pouch that already has a Depth Patch increases the stack limits of the items within by four times again (sixteen times its normal limit in total)."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/depth_i"
+			},
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/patches/depth_ii"				
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Speed": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：速度"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Speed Patch increases the rate at which a ritual bound to the Pouch draws and readies itself by 30%.\n\nAccomplished magicians can create improved Speed Patches that can be sewn on top of the basic Speed Patch. Stitching an improved patch onto a Pouch that already has a Speed Patch further increases the rate at which bound rituals ready themselves by an additional 30% each (to a maximum of 90% increased ritual speed)."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/speed_i"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/rituals/fast_ritual_kit"
+				"location": "mana-and-artifice:manaweaving/patches/speed_ii"
+			},
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/patches/speed_iii"				
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Glyph": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：雕符"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Glyph Patch provides an additional sixteen slot inventory that can only hold dyed glyphs.\n\nThe additional inventory can be accessed by clicking on the green + icon over the Glyph Patch icon, and can be closed by clicking on the red - icon in the upper right of the patch inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/glyph"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Mote": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：纳核"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Mote Patch provides an additional twelve slot inventory that can only hold motes and greater motes.\n\nThe additional inventory can be accessed by clicking on the green + icon over the Mote Patch icon, and can be closed by clicking on the red - icon in the upper right of the patch inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/mote"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Rift": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：裂隙"
+			},
+			{
+				"type": "text",
+				"value": "Normally, a ritual bound to a Practitioner's Pouch needs all of the necessary items within itself. When sewn onto a Practitioner's Pouch, a Rift Patch allows a ritual to search for missing items within the user's Rift storage instead. If necessary items are contained both in the Pouch and the Rift, items in the Rift will be consumed first."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/patches/rift"				
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Weave": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：编织"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Weave Patch provides an additional twelve slot inventory that can only hold bottles containing manaweave patterns. When a ritual is started with the Pouch, any necessary manaweave patterns stored in the Weave Patch will be consumed automatically. If all manaweaves are present in bottles, no manaweaving will be necessary to complete the ritual.\n\nThe additional inventory can be accessed by clicking on the green + icon over the Weave Patch icon, and can be closed by clicking on the red - icon in the upper right of the patch inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/weave"
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Conveyance": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：传输"
+			},
+			{
+				"type": "text",
+				"value": "When sewn onto a Practitioner's Pouch, a Conveyance Patch provides a single slot that can only hold a Rune of Marking.\n\nNormally, a ritual bound to a Practitioner's Pouch needs all of the necessary items within itself. A Conveyance Patch allows a ritual to search for missing items within the inventory the provided Rune of Marking points to, if it is loaded.\n\nIf necessary items are contained both in the Pouch and the marked inventory, items in the marked inventory will be consumed first. If the Pouch has both a Conveyance Patch and a Rift Patch, items in the Rift will be consumed before items in the marked inventory."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/patches/conveyance"				
+			}
+		]
+	},
+	"Practitioner's Pouch Patch: Collection": {
+		"index": -1,
+		"category": "rituals",
+		"sections": [
+			{
+				"type": "title",
+				"value": "布仪者之袋补丁：收集"
+			},
+			{
+				"type": "text",
+				"value": "Normally, items must be inserted into a Practitioner's Pouch manually. When sewn on, a Collection Patch causes any items picked up to automatically go to the Pouch's inventory instead.\n\nItems will only enter the Pouch if the item already exists in the pouch and is not at its stack limit."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/patches/collection"
 			}
 		]
 	},
@@ -5618,11 +5877,7 @@
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:stone_runes/rune_blank"
-			},
-			{
-				"type": "crafting",
-				"location": "mana-and-artifice:stone_runes/rune_bag"
-			},
+			},			
 			{
 				"type": "crafting",
 				"locations": [
@@ -5633,11 +5888,11 @@
 					"mana-and-artifice:stone_runes/rune_gray",
 					"mana-and-artifice:stone_runes/rune_green",
 					"mana-and-artifice:stone_runes/rune_light_blue",
-					"mana-and-artifice:stone_runes/rune_light_gray",
+					"mana-and-artifice:stone_runes/rune_light_gray",					
 					"mana-and-artifice:stone_runes/rune_lime",
 					"mana-and-artifice:stone_runes/rune_magenta",
 					"mana-and-artifice:stone_runes/rune_orange",
-					"mana-and-artifice:stone_runes/rune_pink",
+					"mana-and-artifice:stone_runes/rune_pink",					
 					"mana-and-artifice:stone_runes/rune_purple",
 					"mana-and-artifice:stone_runes/rune_red",
 					"mana-and-artifice:stone_runes/rune_white",
@@ -5969,20 +6224,52 @@
 				"location": "mana-and-artifice:wand_a"
 			},
 			{
+				"type": "crafting",
+				"location": "mana-and-artifice:wand_b"
+			},
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:wand_c"
+			}
+		]
+	},
+	"Attaching Spells to Magic Staves and Wands": {
+		"index": 0,
+		"category": "manaweaving",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Attaching Spells to Magic Staves and Wands"
+			},
+			{
+				"type": "text",
+				"value": "In addition to their enchantability and melee capabilities, staves and wands can also have spells bound to them.  They grant no tangible benefits to the spell itself (and never will), but offer an aesthetic variant.  Be warned, once the spell is attached to the staff it cannot be removed, however a new spell can overwrite an existing one."
+			}
+		],
+		"related_recipes": [
+			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/manaweaving_staff_a"
+				"location": "mana-and-artifice:manaweaving/sorcery/staff_a_add_spell"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/manaweaving_staff_b"
+				"location": "mana-and-artifice:manaweaving/sorcery/staff_b_add_spell"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/manaweaving_staff_c"
+				"location": "mana-and-artifice:manaweaving/sorcery/staff_c_add_spell"
 			},
 			{
 				"type": "manaweaving_altar",
-				"location": "mana-and-artifice:manaweaving/manaweaving_wand"
+				"location": "mana-and-artifice:manaweaving/sorcery/wand_a_add_spell"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/wand_b_add_spell"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/sorcery/wand_c_add_spell"
 			}
 		]
 	},
@@ -6544,6 +6831,26 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/wellspring_sight_unguent"
+			}
+		]
+	},
+	"Cowl of Consumption": {
+		"index": 0,
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Cowl of Consumption"
+			},
+			{
+				"type": "text",
+				"value": "Though it appears little less than a simple cloth hood, this cowl is a powerful artifact for the undead.  When the undead causes pain, if they cause enough of it, they will regain a small amount of hunger and satiation."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "eldrin_altar",
+				"location": "mana-and-artifice:eldrin_altar/artifice/cowl_of_consumption"				
 			}
 		]
 	},
@@ -7416,17 +7723,17 @@
 			}
 		]
 	},
-	"Unguent of Seeing": {
+	"Sight Unguents": {
 		"index": 0,
 		"category": "manaweaving",
 		"sections": [
 			{
 				"type": "title",
-				"value": "视之药膏"
+				"value": "艾得灵之视药膏"
 			},
 			{
 				"type": "text",
-				"value": "视之药膏是一种混合物，将其敷在眼睛上时，可以让使用者在一小段时间内看清环绕在他周围的灵气。\n\n它同样可以帮助你看破由其他巫师所制造出来的幻象。"
+				"value": "艾得灵之视药膏是一种混合物，将其敷在眼睛上时，可以让使用者在一小段时间内看清环绕在他周围的灵气。\n\n它同样可以帮助你看破由其他巫师所制造出来的幻象。\n\nCreating the Eldrin Sight Unguent requires the creator to be aligned with the Council of Wizards."
 			},
 			{
 				"type": "title",
@@ -7435,6 +7742,14 @@
 			{
 				"type": "text",
 				"value": "The unguent of Wellspring Seeing is a less powerful version of the Sight Unguent, which allows those not aligned with the Council to see eldrin wellsprings, though without any of the other benefits the Sight Unguent provides."
+			},
+			{
+				"type": "title",
+				"value": "Wellspring Dowsing Rod"
+			},
+			{
+				"type": "text",
+				"value": "Unless allied with the council (and therefore given access to use Eldrin Flight), other wizards must use more mundane methods to locate wellsprings.  Enter the Wellspring Dowsing Rod.  This rod, when used continually (hold) will gradually point the user towards the nearest wellspring.  A trickle of mana is required to make the rod work, but it shouldn't tax any mage significantly."
 			}
 		],
 		"related_recipes": [
@@ -7445,6 +7760,10 @@
 			{
 				"type": "manaweaving_altar",
 				"location": "mana-and-artifice:manaweaving/wellspring_sight_unguent"
+			},
+			{
+				"type": "manaweaving_altar",
+				"location": "mana-and-artifice:manaweaving/wellspring_dowsing_rod"
 			}
 		]
 	},
@@ -7686,7 +8005,7 @@
 			},
 			{
 				"type": "text",
-				"value": "冲流生成器，当之无愧的气魔法应用的杰出代表。\n\nWhen placed, it affects an area 50 blocks in front of the vortex face, in a single block column.  It works horizontally as well as vertically.\n\nAdditional generators stacked opposite the vortex (for example directly below when facing up) will collectively increase the range of the effect.\n\n站在柱形范围内的巫师，会被牵引到冲流中。\n\n如果巫师向上看，他会在冲流中做上升运动。\n如果巫师向下看，他会缓缓的向下降落，这一过程十分安全。\n\n上升或下降的速度取决于巫师向上看或向下看的程度。\n\n潜行状态下，巫师会停滞在当前的位置上，如此一来，你便无需担心冲流的影响，寻找东西，进行方块交互，想做啥就做啥。"
+				"value": "冲流生成器，当之无愧的气魔法应用杰出代表。\n\n放置后，它会影响带着漩涡的那一面的前方长度 50 格、宽度 1 格的区域。它既能水平工作，也能垂直工作。\n\n如果在漩涡面的反面（例如，漩涡面朝上时，在方块下方放置）叠加更多的冲流生成器，所有生成器的效果会叠加在一起，增加影响的范围。\n\n站在柱形范围内的巫师，会被牵引到冲流中。\n\n如果巫师向上看，他会在冲流中做上升运动。\n如果巫师向下看，他会缓缓的向下降落，这一过程十分安全。\n\n上升或下降的速度取决于巫师向上看或向下看的程度。\n\n潜行状态下，巫师会停滞在当前的位置上，如此一来，你便无需担心冲流的影响，无论寻找东西还是进行方块交互，想做啥就做啥。"
 			}
 		],
 		"related_recipes": [
@@ -7702,11 +8021,11 @@
 		"sections": [
 			{
 				"type": "title",
-				"value": "Redstone Spell Trigger"
+				"value": "红石法术触发器"
 			},
 			{
 				"type": "text",
-				"value": "The Redstone Spell Trigger will emit redstone from all sides when struck by a spell.  It emits full power that decreases slowly back to 0 over a few seconds."
+				"value": "红石法术触发器会在被法术击中后向各个方向发射红石信号。发射信号的强度为满级，并会在一小段时间内缓慢减低到强度 0。"
 			}
 		],
 		"related_recipes": [
@@ -7726,7 +8045,7 @@
 			},
 			{
 				"type": "text",
-				"value": "石质基座可以容纳物品，所容纳的物品会在其上展示出来。They are also used as part of Runeforge upgrades."
+				"value": "石制基座可以容纳物品，所容纳的物品会在其上展示出来。它们也可以作为符文锻炉升级的一部分。"
 			}
 		],
 		"related_recipes": [
@@ -7876,7 +8195,7 @@
 			},
 			{
 				"type": "text",
-				"value": "木质构装体部件由某种木头制成，这种部件轻盈且在水中可以漂浮，这意味着木制构装体可以移动的更快，且不会沉入水底。然而，火焰对这种构装体会造成更高的伤害，并且构装体的生命值也较低。"
+				"value": "木制构装体部件由某种木头制成，这种部件轻盈且在水中可以漂浮，这意味着木制构装体可以移动的更快，且不会沉入水底。然而，火焰对这种构装体会造成更高的伤害，并且构装体的生命值也较低。"
 			},
 			{
 				"type": "text",
@@ -7889,7 +8208,7 @@
 			},
 			{
 				"type": "text",
-				"value": "石质构装体要比木质构装体更结实，但是你得注意，它们在水中可是会沉底的。虽说比木头更结实，但与其他材料相比，结实程度还是逊色很多。由于这种材料较重，所以，构装体加装的石质部件越多，自身的击退抗性也就越强。"
+				"value": "石制构装体要比木制构装体更结实，但是你得注意，它们在水中可是会沉底的。虽说比木头更结实，但与其他材料相比，结实程度还是逊色很多。由于这种材料较重，所以，构装体加装的石制部件越多，自身的击退抗性也就越强。"
 			},
 			{
 				"type": "text",
@@ -7902,7 +8221,7 @@
 			},
 			{
 				"type": "text",
-				"value": "作为村民傀儡的主要构成材料，铁的用量可谓巨大。相较于石头，铁质构装体的恢复能力更强，同时，在水中下沉的也更快，移动速度也更慢，同样数量下的部件，铁质部件所给予的击退抗性更高。铁质构装体会在等阶 3 时解锁。"
+				"value": "作为村民傀儡的主要构成材料，铁的用量可谓巨大。相较于石头，铁制构装体的恢复能力更强，同时，在水中下沉的也更快，移动速度也更慢，同样数量下的部件，铁制部件所给予的击退抗性更高。铁制构装体会在等阶 3 时解锁。"
 			},
 			{
 				"type": "text",
@@ -7915,7 +8234,7 @@
 			},
 			{
 				"type": "text",
-				"value": "金质构装体与铁质的较为相似，只不过金质构装体的击退抗性会稍微高一些，但代价就是自身的血量。金质构装体会在等阶 3 时解锁。"
+				"value": "金制构装体与铁制的较为相似，只不过金制构装体的击退抗性会稍微高一些，但代价就是自身的血量。金制构装体会在等阶 3 时解锁。"
 			},
 			{
 				"type": "text",
@@ -8059,6 +8378,26 @@
 			{
 				"type": "crafting",
 				"location": "mana-and-artifice:lodestar"
+			}
+		]
+	},
+	"Magician's Workbench": {
+		"index": "0",
+		"category": "artifice",
+		"sections": [
+			{
+				"type": "title",
+				"value": "Magician's Workbench"
+			},
+			{
+				"type": "text",
+				"value": "This workbench is a handy tool for the novice wizard.  It has an internal inventory, items do not get removed from the crafting grids when closed, and it remembers the last 8 recipes you crafted.  Clicking on one of these recipes will attempt to place it in one of the workbench crafting grids if there is room."
+			}
+		],
+		"related_recipes": [
+			{
+				"type": "crafting",
+				"location": "mana-and-artifice:runescribing/magicians_workbench"
 			}
 		]
 	},
