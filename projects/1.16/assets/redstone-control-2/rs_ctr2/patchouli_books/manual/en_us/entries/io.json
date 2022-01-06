@@ -1,0 +1,42 @@
+{
+	"name": "External I/O",
+	"icon": "rs_ctr2:analog_out",
+	"category": "rs_ctr2:basics",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "The ports on microblock components can only interact with each other but not with any non port based mechanics of external blocks. So to make signal components receive or emit regular Redstone signals or components with item master ports access regular chests for example, you have to use special adapter components that translate between Ports and external systems."
+		}, {
+			"type": "patchouli:text",
+			"text": "These adapters will interact with the adjacent block they are facing and have to be placed so that they touch this adjacent block.\\pSome of the Adapters also have Block Interaction ports that optionally let them connect with remote blocks instead."
+		}, {
+			"type": "rs_ctr2:spotlight2",
+			"a.item": "rs_ctr2:logic_out",
+			"b.item": "rs_ctr2:logic_in",
+			"_.title": "Logic Signal I/O",
+			"_.text": "The \\iLogic reader\\d and \\iLogic emitter\\d convert external Redstone signals to port based data signals and back. But they only distinguish between the states ON and OFF (true or false) and won't preserve signal strength.\\pThey are good for converting inputs and outputs of logic gates."
+		}, {
+			"type": "rs_ctr2:spotlight3",
+			"a.item": "rs_ctr2:analog_out",
+			"b.item": "rs_ctr2:analog_in",
+			"c.item": "rs_ctr2:comp_in",
+			"_.title": "Analog Signal I/O",
+			"_.text": "The \\iAnalog reader\\d and \\iAnalog emitter\\d convert the signal strength of a Redstone signal into a numeric data signal and back. And the \\iComparator reader\\d is a normal Minecraft Comparator + Analog reader compacted into one part.\\pNote: Don't mix analog and logic signals unless you $(l:bitwise)know what you're doing$(/l)!"
+		}, {
+			"type": "rs_ctr2:spotlight2",
+			"a.item": "rs_ctr2:growth_sensor",
+			"b.item": "rs_ctr2:hardness_sensor",
+			"_.title": "Block Sensors",
+			"_.text": "These measure different properties of blocks and return them as numeric value. Unlike the Redstone readers they don't update continuously and instead need clock pulses to refresh their readings.\\p\\/Can operate with with \\oRemote Block Interaction\\d."
+		}, {
+			"anchor": "resource",
+			"type": "rs_ctr2:spotlight4",
+			"a.item": "rs_ctr2:power_io",
+			"b.item": "rs_ctr2:fluid_io",
+			"c.item": "rs_ctr2:item_io",
+			"d.item": "rs_ctr2:item_dropper",
+			"_.title": "Resource I/O",
+			"_.text": "Used to interface with inventory, fluid tank and energy storage capabilities of external blocks.\\p\\/Can operate with with \\oRemote Block Interaction\\d."
+		}
+	]
+}
