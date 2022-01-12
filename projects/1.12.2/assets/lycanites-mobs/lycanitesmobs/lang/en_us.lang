@@ -4,8 +4,11 @@ lycanitesmobs.name=Lycanites Mobs
 entity.level=Lvl
 entity.health=HP
 entity.experience=XP
-entity.lycanitesmobs.summoningportal.name=Summoning Portal
-entity.lycanitesmobs.fear.name=Feared
+entity.reputation=Taming
+entity.phase=Phase
+entity.summoningportal.name=Summoning Portal
+entity.fear.name=Feared
+entity.baby=Baby
 #
 #
 #
@@ -51,6 +54,8 @@ subspecies.umber.name=Umber
 # Skins:
 subspecies.moloch.name=Moloch
 subspecies.void.name=Void
+subspecies.sand.name=Sand
+
 #
 #
 #
@@ -97,7 +102,7 @@ gui.beastiary.index.changes.minor=Minor
 gui.beastiary.creatures=Creatures
 gui.beastiary.creatures.empty.title=No Creatures
 gui.beastiary.creatures.empty.info=You currently do not have any creatures added to your Beastiary. To discover new creatures you must craft a Soulgazer and then use it on any creatures that you find or kill many of them.
-gui.beastiary.creatures.descovered=Creatures Descovered
+gui.beastiary.creatures.discovered=Creatures Descovered
 gui.beastiary.creatures.select=Select a group and then select a creature.
 gui.beastiary.website=View On Website
 gui.beastiary.diet=Diet
@@ -185,12 +190,18 @@ diet.geovore=Geovore
 #
 # ========== Messages ==========
 # Beastiary:
-message.beastiary.new=You have gained Knowledge Rank %rank% of the %creature%! Check your Beastiary!
+message.beastiary.new=You discover the %creature% and begin to add notes to your Beastiary!
+message.beastiary.rank=You learn more of the %creature% unlocking Knowledge Rank %rank%!
+message.beastiary.tameable=You are now able to tame the %creature%.
 message.beastiary.summonable=You are now able to summon the %creature% as a temporary minion! You will need a Summoning Item to summon it.
 message.beastiary.summonable.colors=You can now summon variations of the %creature%!
 message.beastiary.summonable.skins=You can now summon subspecies of the %creature%!
 message.beastiary.known=You have already have Knowledge Rank %rank% of the %creature%.
 message.beastiary.unknown=There is nothing to be learnt about this creature.
+message.beastiary.study=Knowledge:
+message.beastiary.study.recharging=You must wait a moment before you are able to study a creature again.
+message.beastiary.study.cooldown=Study Cooldown:
+message.beastiary.study.full=Creature Knowledge Full:
 #
 # Soulstone:
 message.soulstone.untamed=The Soulstone can only bind to a tamed creature.
@@ -206,10 +217,20 @@ message.soulkey.invalid=The Soulkey begins to trigger the Altar... But the Altar
 message.soulkey.badlocation=The Soulkey almost activates, but then fails, it seems this is the wrong place...
 message.soulkey.active=The Soulkey activates the Altar!
 #
+# Soul Contract:
+message.soul_contract.invalid= This creature does not have it's soul bound, first attempt to use a Soulstone to bind it for contract magic.
+message.soul_contract.not_owner= The creature's soul is not bound to you, first have it's owner bind the creature's soul to this contract.
+message.soul_contract.wrong_target= This contract is not bound to this creature.
+message.soul_contract.owner_missing= This contract owner must be present.
+message.soul_contract.bound= The creature's soul has been bound to this contract, you may now trade this contract to a new owner where they must use it on the bound creature to claim it.
+message.soul_contract.unbound= The creature's soul has been unbound from this contract.
+message.soul_contract.transferred= The creature's soulbind has been transferred successfully.
+#
 # Pet:
 # %creature% will be replaced with the name of the tamed creature, don't translate this!
 message.pet.tamed=The %creature% seems to love you now!
 message.pet.tamefail=The %creature% wants more!
+message.pet.tamefail.knowledge=You gained knowledge by feeding the %creature%. At Rank 2 you may tame it!
 message.pet.mount.baby=The %creature% is too young to carry you!
 #
 #
@@ -254,6 +275,7 @@ lyc.command.mobevent.invalid=Invalid arguments, usage: /lycanitesmobs mobevent [
 lyc.command.mobevent.start.invalid=Invalid arguments, usage: mobevent start <event name> for example mobevent start hellsfury
 lyc.command.mobevent.start.unknown=Unknown mob event. Use /lycanitesmobs mobevent list for a list of event names.
 lyc.command.mobevent.start.noworld=Command Sender dimension ID object not found, please enter a valid dimension ID.
+lyc.command.mobevent.start.conditions=Mob Event cannot start at this location.
 lyc.command.mobevent.start=Mob Event started.
 lyc.command.mobevent.random=Random Mob Event started.
 lyc.command.mobevent.stop=Stopped all Mob Events.
@@ -345,6 +367,9 @@ key.minions=Minion Selection
 equipment.slottype=Slot Type:
 equipment.element=Charge Elements:
 equipment.level=Level:
+equipment.sharpness=Sharpness:
+equipment.mana=Mana:
+equipment.item.repair=This item can be used to repair Crafted Equipment.
 equipment.feature.slot=Adds Slot:
 equipment.feature.damage=Damage:
 equipment.feature.damage.cooldown=Cooldown:
@@ -368,10 +393,6 @@ equipment.feature.projectile.trigger.secondary=Secondary Use
 equipment.feature.projectile.pattern=Pattern:
 equipment.feature.projectile.pattern.spread=Spread
 equipment.feature.projectile.pattern.ring=Ring
-item.woodenrod.name=Wooden Rod
-item.woodenhilt.name=Wooden Hilt
-item.woodenpaxel.name=Wooden Paxel
-item.equipment.name=Crafted Equipment
 #
 #
 #
@@ -412,6 +433,9 @@ tile.equipmentforge_master.description=This forge can be used to create new Equi
 tile.equipment_infuser=Equipment Infuser
 tile.equipment_infuser.description=Used to infuse Charge items into Equipment Parts with matching Elements in order to level them up. Can also be used to apply dyes to equipment parts.
 #
+tile.equipment_station=Equipment Station
+tile.equipment_station.description=Used to restore Equipment Sharpness and Mana.
+#
 #
 # ========== Special ==========
 tile.frostweb.name=Frostweb
@@ -431,6 +455,9 @@ tile.poopcloud.description=A very smelly cloud that applies slowness and nausea!
 tile.scorchfire.name=Scorchfire
 tile.scorchfire.description=An enchanted fire, not as hot as normal fire but it applies penetration, increasing the damage taken.
 #
+tile.primefire.name=Primefire
+tile.primefire.description=A perfect white-blue flame of the highest temperature that burns everything aorund it rapidly, will cause high damage and apply smoldering.
+#
 tile.doomfire.name=Doomfire
 tile.doomfire.description=An evil flame writhing with demonic rage. Burns and spreads faster than regular fire.
 #
@@ -449,6 +476,11 @@ tile.frostcloud.description=A small snow cloud that applies movement slowdown an
 tile.frostfire.name=Frostfire
 tile.frostfire.description=A magical flame that superfreezes, will cause damage and apply movement slowdown. Can spawn Reivers.
 #
+tile.smitefire.name=Smitefire
+tile.smitefire.description=A sacred flame that smites the abhorrent, damages and applies smite causing the afflicted to burn in sunlight.
+#
+tile.Primefire.name=Primefire
+tile.Primefire.description=A perfect white-blue flame of the highest temperature that burns everything aorund it rapidly, will cause high damage and apply smoldering.
 #
 # ========== Fluids ==========
 tile.moglava.name=Moglava
@@ -619,7 +651,7 @@ tile.desertstonetile_stairs.name=Desertstone Tile Stairs
 tile.desertstonetile_stairs.description=Decorated desertstone used to pave the floors of great monuments.
 #
 tile.soulcubedesertic.name=Desertic Soulcube
-tile.soulcubedesertic.description=A strange device full of complex light, gravity and earth magic.
+tile.soulcubedesertic.description=A strange device full of complex light, arcane and earth magic.
 # ========================================================================
 tile.lushstonebrick_stairs.name=Lushstone Brick Stairs
 tile.lushstonebrick_stairs.description=The very essence of nature courses through this stone.
@@ -668,9 +700,6 @@ tile.lushstonepolished.description=The very essence of nature courses through th
 #
 tile.lushstonetile_stairs.name=Lushstone Tile Stairs
 tile.lushstonetile_stairs.description=The very essence of nature courses through this stone.
-#
-tile.soulcubelushic.name=Lushic Soulcube
-tile.soulcubelushic.description=Enchanted crystal glass that glows like moonlight.
 # ========================================================================
 #
 tile.shadowstonebrick_stairs.name=Shadowstone Brick Stairs
@@ -721,607 +750,691 @@ tile.shadowstonetile_slab.description=Walk upon the darkness and smile, you have
 tile.shadowstonebrick_wall.name=Shadowstone Brick Wall
 tile.shadowstonebrick_wall.description=The caps between the bricks seem to suck in the light.
 # ========================================================================
-entity.lycanitesmobs.abaia.name=Abaia
-entity.lycanitesmobs.abaia.description=Aggressive eels that generate an electric current through their body.
-entity.lycanitesmobs.abaia.habitat=These fish are catadromous meaning they are born in saltwater oceans and then migrate and mature in freshwater rivers before returning to saltwater again, some end up trapped in lakes and create a colony there also, so they can be found in most locations.
-entity.lycanitesmobs.abaia.combat=While Abaia use their electrical current to shock anything near them, they also have a nasty bite.
-# ========================================================================
-entity.lycanitesmobs.abtu.name=Abtu
-entity.lycanitesmobs.abtu.description=Vicious fish with big teeth! It is rare to find adults as their reckless nature means they don't live too long!
-entity.lycanitesmobs.abtu.habitat=These fish are found commonly in saltwater oceans and beaches.
-entity.lycanitesmobs.abtu.combat=Once an Abtu has sense of it's prey, it will stop at nothing to devour it, they are known to even jump onto land and chase their prey! Adult Abtu are more reserved but also rare, they will call nearby infants to swarm their prey.
-# ========================================================================
-entity.lycanitesmobs.aegis.name=Aegis
-entity.lycanitesmobs.aegis.description=Law enforcing Order Elementals, Aegis have been known to enforce the law around villages, even petty thieves will be mercilessly pursued.
-entity.lycanitesmobs.aegis.habitat=Being Order Elementals, Aegis manifest in areas rich in the Order element, thus villages very commonly create these creatures.
-entity.lycanitesmobs.aegis.combat=Aegis have two modes that they shift between, a defensive Shield Mode where they will block most damage with two large rotating shields and an offensive Sword Mode where they will shred through their target with four spinning blades.
-# ========================================================================
-entity.lycanitesmobs.afrit.name=Afrit
-entity.lycanitesmobs.afrit.description=Wicked flame imps that are bent on destruction, they will aggressively burn the world around them.
-entity.lycanitesmobs.afrit.habitat=These imps are usually found bathing in pools of lava.
-entity.lycanitesmobs.afrit.combat=Afrits usually attack from a distance by throwing balls of Scorchfire, a deadly combination of hot fire and a strong acid that weakens the defenses of anything that is hit.
-# ========================================================================
-entity.lycanitesmobs.aglebemu.name=Aglebemu
-entity.lycanitesmobs.aglebemu.description=Large poisonous frogs with excellent swimming ability as well as amazing jumping power and a deadly long tongue!
-entity.lycanitesmobs.aglebemu.habitat=These amphibians are usually found in swamplands.
-entity.lycanitesmobs.aglebemu.combat=Aglebemu use their powerful, extremely long and sharp tongues to spear their victims and inject a deadly concoction of contagious bacteria.
-# ========================================================================
-entity.lycanitesmobs.archvile.name=Archvile
-entity.lycanitesmobs.archvile.description=Malicious demons that rule of areas of the nether, Archviles enjoy the smell of their victim's burning flesh and enjoy watching other demons tear their victims apart!
-entity.lycanitesmobs.archvile.habitat=Archviles live within the depths of the Nether.
-entity.lycanitesmobs.archvile.combat=Archviles prefer to avoid combat themselves, instead they will strengthen any nearby demons and they will slowly engulf their target in flames.
-# ========================================================================
-entity.lycanitesmobs.argus.name=Argus
-entity.lycanitesmobs.argus.description=Disruptive Chaos elementals, Argi (plural) spread havoc in their wake.
-entity.lycanitesmobs.argus.habitat=Being Chaos Elementals, Argi are formed when there is a large concentration of Chaos in the area, this can be caused by several things but usually destroying other Elementals causes a high concentration of Chaos.
-entity.lycanitesmobs.argus.combat=These Elementals attack by launching an orb of concentrated Chaos energy, the trajectory of these orbs can be unpredictable and on impact, these orbs disrupt the very fabric of reality causing instability.
-# ========================================================================
-entity.lycanitesmobs.arisaur.name=Arisaur
-entity.lycanitesmobs.arisaur.description=Large plant covered sauropods, Arisaurs are peaceful and normally graze from trees or from their own backs sharing a symbiotic relationship.
-entity.lycanitesmobs.arisaur.habitat=Arisaurs are usually found in dense forests but can also be seen migrating through plains.
-entity.lycanitesmobs.arisaur.combat=Arisaurs are usually peaceful.
-# ========================================================================
-entity.lycanitesmobs.arix.name=Arix
-entity.lycanitesmobs.arix.description=Naughty ice imps that are constantly searching for food.
-entity.lycanitesmobs.arix.habitat=Arix thrive in cold temperatures and are often found in cold biomes as well as bathing in icy ooze.
-entity.lycanitesmobs.arix.combat=These imps wield Icefire, a form of Frost Magic that looks and behaves as though it was fire but freezes instead of burns.
-# ========================================================================
-entity.lycanitesmobs.asmodeus.name=Asmodeus
-entity.lycanitesmobs.asmodeus.description=Asmodeus is known to be the mastermind behind any form of demonic invasion, sometimes even Rahovart falls in line.
-entity.lycanitesmobs.asmodeus.habitat=It is said that Asmodeus originate from the vast Hell Planes of endless flesh called Purgatory and that they were originally powerful Astaroth meaning that once in their existence they were but mere Trites!
-entity.lycanitesmobs.asmodeus.combat=This great demon, or devil, has a wide array of attacks and is capable of jumping great heights with it's demonic mech. It will use it's huge Gatling Gun periodically to barrage targets and is also swarming with Trites that will defend it.  Phase 1: Asmodeus will release rings of projectiles outwards.  Phase 2: Asmodeus will summon large Astaroths that will project a shield around him until they are destroyed.  Phase 3: The Astaroth will instead heal Asmodeus and Cacodemons are also summoned.
-# ========================================================================
-entity.lycanitesmobs.aspid.name=Aspid
-entity.lycanitesmobs.aspid.description=Peaceful reptiles with strange growths on their backs. Aspids love mushrooms and can be farmed with them. Be careful however as they constantly emit a cloud of poison and usually leave a trail of this behind them.
-entity.lycanitesmobs.aspid.habitat=These creatures are usually found in swamps, dark forests and mushroom islands due to their love of the shroom!
-entity.lycanitesmobs.aspid.combat=Aspids are usually peaceful but the poisonous clouds they emit can be quite dangerous, these don't stop passionate farmers however!
-# ========================================================================
-entity.lycanitesmobs.astaroth.name=Astaroth
-entity.lycanitesmobs.astaroth.description=Demonic brain-like beings mounted on a mechanical platforms made from demonic redstone technology maintained by Trite minions. If you manage to get past their rapid fire weapons and destroy them, all resident Trites will crawl out and attack!
-entity.lycanitesmobs.astaroth.habitat=These demons are said to originate from the endless Hell plane of flesh called Purgatory and that they were once mere Trites, they can often be found stalking the Nether.
-entity.lycanitesmobs.astaroth.combat=Astaroth use powerful rapid weapons that extract their demonic energizes into powerful projectiles called Devil Stars, on impact these can cause wither. Should an Astaroth fall, a small force of Trites will come out of their corpse and proceed to attack!
-# ========================================================================
-entity.lycanitesmobs.banshee.name=Banshee
-entity.lycanitesmobs.banshee.description=Banshees are terrifying Phase Elementals that can phase through reality itself, they can often be heard 'singing'. It is said that the elemental is actually the pair of eyes and not the corpse that it 're-purposed'. Geonach and Djinn elementals can also fuse into a powerful Banshee.
-entity.lycanitesmobs.banshee.habitat=These elementals haunt eerie and abandoned places where they are usually found around abandoned mineshafts as well as dark forests and other locations that embody unease.
-entity.lycanitesmobs.banshee.combat=On contact with Banshees, the very soul of their victim is shocked with Phase Magic, this usually induces fear and panic.
-# ========================================================================
-entity.lycanitesmobs.barghest.name=Barghest
-entity.lycanitesmobs.barghest.description=Deadly mountain predators capable of making high leaps. Barghests are also very competent climbers making them exceptional mounts for the mountains.
-entity.lycanitesmobs.barghest.habitat=These beasts are usually found in mountainous areas as well as savannas.
-entity.lycanitesmobs.barghest.combat=Barghests are known to leap at their prey and tear at them causing bleeding.
-# ========================================================================
-entity.lycanitesmobs.behemoth.name=Behemoth
-entity.lycanitesmobs.behemoth.description=Tall demonic monstrosities, Behemoth are powerful demons bent on destruction.
-entity.lycanitesmobs.behemoth.habitat=Behemoth can be found in the Nether and will also invade through unprotected portals if they are large enough.
-entity.lycanitesmobs.behemoth.combat=These demons lob balls of Hellfire, a green flame created by tearing apart souls, not only do these flames burn, but they wither as well.
-# ========================================================================
-entity.lycanitesmobs.beholder.name=Beholder
-entity.lycanitesmobs.beholder.description=Large hostile masses of eyes and tentacles with an eternal hunger for magic energy!
-entity.lycanitesmobs.beholder.habitat=Beholders can be found in the mountains as they like high up places and dwell in large caves and ruins and come out at night.
-entity.lycanitesmobs.beholder.combat=These Aberrations bend gravity and void magic to create powerful Arcane Storms, that they blast from their mouths, these attacks then release deadly lasers in all directions and can be explosive on impact.
-# ========================================================================
-entity.lycanitesmobs.belph.name=Belph
-entity.lycanitesmobs.belph.description=Small but dangerous demons with a one track mind bent on killing and eating.
-entity.lycanitesmobs.belph.habitat=These demons can be found in the Nether and will invade through portals.
-entity.lycanitesmobs.belph.combat=Belphs throw balls of Doomfire, a flame made from Nether Magic, that burn an unnatural red.
-# ========================================================================
-entity.lycanitesmobs.cacodemon.name=Cacodemon
-entity.lycanitesmobs.cacodemon.description=Large floating abominations of life. Cacodemons like to bully Ghasts for their delicious tears. Can be tamed as a flying pet.
-entity.lycanitesmobs.cacodemon.habitat=These demons fly around the fiery skies of the Nether.
-entity.lycanitesmobs.cacodemon.combat=Cacodemons spit large balls of Demonic Lightning, while not actually electrical, these are balls of explosive Nether energy that will wither on impact and release smaller Demonic Sparks in all direction.
-# ========================================================================
-entity.lycanitesmobs.calpod.name=Calpod
-entity.lycanitesmobs.calpod.description=Nasty termite-like insects that swarm their prey!
-entity.lycanitesmobs.calpod.habitat=These insects can be found in the forest undergrowth and come out at night.
-entity.lycanitesmobs.calpod.combat=Calpods have a nasty bite but must be killed quickly as they will rapidly call more Calpods to join them.
-# ========================================================================
-entity.lycanitesmobs.cephignis.name=Cephignis
-entity.lycanitesmobs.cephignis.description=Large peaceful fish that have adapted to live in extreme temperatures, their bodies are as hot as lava. Cephignis can be farmed using coal or charcoal!
-entity.lycanitesmobs.cephignis.habitat=These fish can be found swimming in lava and cannot survive outside it for long.
-entity.lycanitesmobs.cephignis.combat=Cephignis are usually passive relying on their environment to protect them from most predators.
-# ========================================================================
-entity.lycanitesmobs.chupacabra.name=Chupacabra
-entity.lycanitesmobs.chupacabra.description=Dreadful creatures, their insatiable hunger for flesh can be used to manipulate and farm them.
-entity.lycanitesmobs.chupacabra.habitat=Chupacabras usually live underground in dark caves.
-entity.lycanitesmobs.chupacabra.combat=These beasts are incredibly aggressive with a deadly bite and sharp claws, however their greed can be used against them as they will prioritize large prey. Their attacks will also heal them.
-# ========================================================================
-entity.lycanitesmobs.cinder.name=Cinder
-entity.lycanitesmobs.cinder.description=Violent Fire Elementals that seeks only to burn other creatures around them.
-entity.lycanitesmobs.cinder.habitat=Being Fire Elementals, Cinders are manifested from pure Fire and so they will spawns frequently in locations with a lot of fire. They don't manifest around impure flames such as Scorchfire or Doomfire however.
-entity.lycanitesmobs.cinder.combat=Cinders release a powerful gout for fire that will burn their enemies, these flames are too weak to spread more fire however.
-# ========================================================================
-entity.lycanitesmobs.clink.name=Clink
-entity.lycanitesmobs.clink.description=Strange imps that rapidly grow metallic blades on their arms that can then be easily detached.
-entity.lycanitesmobs.clink.habitat=These imps are often found in deserts as they thrive on consuming minerals as well as flesh, they are wingless so aren't found in mountainous areas.
-entity.lycanitesmobs.clink.combat=Clinks detach the blades they grow and throw them at their enemies.
-# ========================================================================
-entity.lycanitesmobs.cockatrice.name=Cockatrice
-entity.lycanitesmobs.cockatrice.description=Deadly giant chicken-like wyverns, very dangerous, stay away!
-entity.lycanitesmobs.cockatrice.habitat=These wyvern dragons are usually found in tropical areas such as jungles as they like to consume fruit as well as devour large insects, of course, anything that moves is on the menu!
-entity.lycanitesmobs.cockatrice.combat=Cockatrice peck with beaks that drip with paralysing and aphagia inducing toxins that are said make their victims feel like they're turned into stone.
-# ========================================================================
-entity.lycanitesmobs.conba.name=Conba
-entity.lycanitesmobs.conba.description=Mischievous apes with a passion for poop!
-entity.lycanitesmobs.conba.habitat=These apes can be found in tropical biomes like jungles.
-entity.lycanitesmobs.conba.combat=Comba like to throw their sticky poop at people causing slowness and nausea as well as creating a poop cloud which extends these effects. These beast will also try to keep their distance.
-entity.lycanitesmobs.conba.infected=Infected Conba
-# ========================================================================
-entity.lycanitesmobs.concapede.name=Concapede
-entity.lycanitesmobs.concapede.description=Strange beetles that connect to each other. Heads lead the way and grow extra segments from behind and if fed, will become preoccupied allowing their segments to be attacked, this technique is used by farmers.
-entity.lycanitesmobs.concapede.habitat=These insects can be found in tropical areas like jungles.
-entity.lycanitesmobs.concapede.combat=Concapedes have a poisonous bite but are only hostile at night.
-# ========================================================================
-entity.lycanitesmobs.concapedesegment.name=Concapede Segment
-entity.lycanitesmobs.concapedesegment.description=Strange beetles that connect to each other. Segments are usually attached to and are grown by heads. If detached from a head or another segment in front, it will grow into a head. Segments alone are defenseless.
-entity.lycanitesmobs.concapedesegment.habitat=Segments grow from heads which can be found in tropical areas like jungles.
-entity.lycanitesmobs.concapedesegment.combat=Segments are defenseless but will be protected by Heads unless those Heads are busy eating.
-# ========================================================================
-entity.lycanitesmobs.crusk.name=Crusk
-entity.lycanitesmobs.crusk.description=Large sand worms with a thick exoskeleton protecting them. Smaller baby Crusks can be tamed, however they take a very long time to grow but make excellent protective pets.
-entity.lycanitesmobs.crusk.habitat=These creatures can be found digging through the desert dunes.
-entity.lycanitesmobs.crusk.combat=Crusks have a very powerful bite and can submerge and hide themselves within soft terrain like sand, grass or dirt.
-# ========================================================================
-entity.lycanitesmobs.cryptkeeper.name=Cryptkeeper
-entity.lycanitesmobs.cryptkeeper.description=Mummified corpses, unlike the usual undead, these do not burn in sunlight.
-entity.lycanitesmobs.cryptkeeper.habitat=These undead often wonder the desert at night.
-entity.lycanitesmobs.cryptkeeper.combat=Cryptkeepers attack at melee and spread a nasty bacteria that inflicts aphagia.
-# ========================================================================
-entity.lycanitesmobs.darkling.name=Darkling
-entity.lycanitesmobs.darkling.description=Foul little shadow insects that like to latch onto their victim and slowly drain their blood! You best swat these pests off fast!
-entity.lycanitesmobs.darkling.habitat=These insects can be found in dark underground areas.
-entity.lycanitesmobs.darkling.combat=Darklings will leap at their victims and latch on where they will begin to rapidly drain blood, this will heal them, it is vital that they are killed fast.
-# ========================================================================
-entity.lycanitesmobs.dawon.name=Dawon
-entity.lycanitesmobs.dawon.description=Crystaline felines, sometimes rare crystals can be found on their body.
-entity.lycanitesmobs.dawon.habitat=These beasts can be found in jungles.
-entity.lycanitesmobs.dawon.combat=Dawon will pounce at their target, crippling their prey reducing movement speed.
-# ========================================================================
-entity.lycanitesmobs.djinn.name=Djinn
-entity.lycanitesmobs.djinn.description=Proud Air Elementals that guard the skies from those that they think shouldn't be up there!
-entity.lycanitesmobs.djinn.habitat=Being Air Elementals, these creatures commonly manifest high up in the sky.
-entity.lycanitesmobs.djinn.combat=Djinn unleash deadly whirlwind rings that inflict the levitation debuff on impact.
-# ========================================================================
-entity.lycanitesmobs.dweller.name=Dweller
-entity.lycanitesmobs.dweller.description=Water bound amphibians that can sliver onto land for a small period of time, they must return to the water when they get too dry as they can die if on land for too long. They are fast and deadly in the water and can survive on land during rain.
-entity.lycanitesmobs.dweller.habitat=These creatures can be found in the waters of swamps, dark forests and jungles.
-entity.lycanitesmobs.dweller.combat=Dwellers have a poisonous scratch and excel when in water, on land they can be defeated easily unless it is raining.
-# ========================================================================
-entity.lycanitesmobs.eechetik.name=Eechetik
-entity.lycanitesmobs.eechetik.description=Dangerous Poison Elementals bursting with deadly plagues that infect all around them. They have a fondness for mushrooms! Jengu and Argus elementals can also fuse into a powerful Eechetik.
-entity.lycanitesmobs.eechetik.habitat=Being Poison Elementals, Eechetik manifest in areas of poison and parasitic growths, mushrooms seem to frequently cause them to manifest when it is dark.
-entity.lycanitesmobs.eechetik.combat=These elementals are inspect like in appearance and attack will their many stringer arms, their attacks rapidly spread plague so be prepared with healing items.
-# ========================================================================
-entity.lycanitesmobs.ent.name=Ent
-entity.lycanitesmobs.ent.description=Protectors of the forest, they will attack anything they deem a threat to the forest on sight.
-entity.lycanitesmobs.ent.habitat=Ents can be found wandering forests at night but also merge into trees so be careful when chopping down trees!
-entity.lycanitesmobs.ent.combat=Ents have a poisonous attack and will regenerate in water, they will also drain health when attacking. Axes and similar tools are very effective.
-# ========================================================================
-entity.lycanitesmobs.epion.name=Epion
-entity.lycanitesmobs.epion.description=Giant shadow blood bats. When in contact with direct sunlight, wild Epions panic drop to the ground and explode on impact! Tamed Epions can be trained to not explode in sunlight however.
-entity.lycanitesmobs.epion.habitat=These bats come out at night during a full moon.
-entity.lycanitesmobs.epion.combat=Epions spit Bloodleeches at their victims, draining health on hit.
-# ========================================================================
-entity.lycanitesmobs.erepede.name=Erepede
-entity.lycanitesmobs.erepede.description=Wild rock covered insectsthat like to hunt Jousts and will attack Crusks on sight too.
-entity.lycanitesmobs.erepede.habitat=These insects can be found roaming hot, dry terrains like deserts and mesas.
-entity.lycanitesmobs.erepede.combat=Erepedes spit out a dangerous mud shots that weakens the target.
-# ========================================================================
-entity.lycanitesmobs.ettin.name=Ettin
-entity.lycanitesmobs.ettin.description=Large twin headed monstrosities. These brutes are feared for their destructive capabilities.
-entity.lycanitesmobs.ettin.habitat=These brutes often live in swamps.
-entity.lycanitesmobs.ettin.combat=Ettins are slow but pack a nasty blow. If you get too close during combat they will panic and destroy nearby soft blocks such as wood or dirt.
-# ========================================================================
-entity.lycanitesmobs.eyewig.name=Eyewig
-entity.lycanitesmobs.eyewig.description=In the dark Eyewigs are hostile and can climb as well as skit across water surfaces.
-entity.lycanitesmobs.eyewig.habitat=These insects are often found in swamps, dark forests and jungles.
-entity.lycanitesmobs.eyewig.combat=Eyewigs can fire a poisonous laser from their giant eye! Their bite can also cause blindness!
-# ========================================================================
-entity.lycanitesmobs.fear.name=Fear
-entity.lycanitesmobs.fear.description=This is a dummy entity used for the fear effect, if this is in the beastiary or has a spawn egg this is a bug, please report it!
-entity.lycanitesmobs.fear.habitat=Dummy entity.
-entity.lycanitesmobs.fear.combat=Dummy entity.
-# ========================================================================
-entity.lycanitesmobs.feradon.name=Feradon
-entity.lycanitesmobs.feradon.description=Lion-like predators that are excellent hunters.
-entity.lycanitesmobs.feradon.habitat=These beasts thrive in plains and savannas.
-entity.lycanitesmobs.feradon.combat=Feradon attack with a powerful bite that offenses the defenses of the victim.
-# ========================================================================
-entity.lycanitesmobs.frostweaver.name=Frostweaver
-entity.lycanitesmobs.frostweaver.description=Spitting spiders that thrive in cold environments.
-entity.lycanitesmobs.frostweaver.habitat=These spiders can be found in cold areas such as taigas or ice plains.
-entity.lycanitesmobs.frostweaver.combat=Frostweavers spit an icy web that causes slowness and creates a temporary frost web.
-# ========================================================================
-entity.lycanitesmobs.geist.name=Geist
-entity.lycanitesmobs.geist.description=Geists are opportunistic undead that deform and climb into other undead lifeforms or corpses and feed off whatever their host is capable of killing. When their host dies, Geists leap out and reform for a surprise attack!
-entity.lycanitesmobs.geist.habitat=Geists usually come from other undead creatures but can also be found lurking in Dark Forests and the End.
-entity.lycanitesmobs.geist.combat=Geists have a simple melee attack but on death release shadow fire, while this doesn't burn, it does cause damage and blindness.
-# ========================================================================
-entity.lycanitesmobs.amalgalich.name=Amalgalich
-entity.lycanitesmobs.amalgalich.description=A powerful lich that has engulfed so many souls to power it's colossal form that it has lost it's identity and succumbed to madness. This ravaging monstrosity must be put down!
-entity.lycanitesmobs.amalgalich.habitat=The Amalgalich is not natural and has no habitat data.
-entity.lycanitesmobs.amalgalich.combat=The Amalgalich is a massive undead that will constantly bombard targets with giant Spectral Bolts which cause fear and blindness, it is vital that these are avoid as fear can lead to doom! Phase 1: The Amalgalich summons Reapers and will periodically use Consumption a powerful attack that sucks everything in leading to instant death! Any Reapers consumed will also heal the Amalgalich. So be sure to run away when it's eyes light up try not to leave too many Reapers alive for it to eat! Phase 2: The Amalgalich will stop trying to eat, for now, instead Geists and giant Epions are summoned. Overtime the Geists will grow and grow and then eventually burst into large areas of dangerous Shadowfire, killing the Geists before they pop will stop this. If there is too much Shadowfire, killing the Epions will clear any Shadowfire beneath them. Try to keep the arena clear for Phase 3. Phase 3: The Amalgalich is hungry again, so you better run! This time giant balls of Darklings are lobbed around the arena, it is best to keep the Darklings at bay and just damage down the boss without getting eaten. If there are too many Geists or Epions left from Phase 2, the boss can and will eat these to regain health possibly putting it back into Phase 2 again so keep those minions at bay!
-# ========================================================================
-entity.lycanitesmobs.geken.name=Geken
-entity.lycanitesmobs.geken.description=Venomous reptiles with excellent jumping abilities.
-entity.lycanitesmobs.geken.habitat=These creatures like in tropical areas like jungles but can also be found in swamps.
-entity.lycanitesmobs.geken.combat=Gekens constantly jump about making them harder to hit, their scratches are sharp and cause bleeding.
-# ========================================================================
-entity.lycanitesmobs.geonach.name=Geonach
-entity.lycanitesmobs.geonach.description=Geonachs are brutal Earth Elementals commonly found by unsuspecting miners when disturbing the earth.
-entity.lycanitesmobs.geonach.habitat=Being Earth Elementals, Geonach manifest where the Earth is strong, usually within ores, breaking these ores will aggravate them.
-entity.lycanitesmobs.geonach.combat=Geonach will attack rapidly with their spear arm as well as occasionally with their heavier fist for more damage. Their attacks will inflict the weight debuff which commonly traps their victims. Pickaxes and similar tools are very effective.
-# ========================================================================
-entity.lycanitesmobs.ghoul.name=Ghoul
-entity.lycanitesmobs.ghoul.description=Foul poisonous undead, Ghouls are smaller than the average zombie allowing them to crawl into smaller places.
-entity.lycanitesmobs.ghoul.habitat=Ghouls can be found lurking around swamps, dark forests and jungles at night.
-entity.lycanitesmobs.ghoul.combat=Ghouls attack at melee and inflict poison.
-# ========================================================================
-entity.lycanitesmobs.gorger.name=Gorger
-entity.lycanitesmobs.gorger.description=Huge magma worms that swim through molten lava, they can also survive on land and can burrow into soft ground like dirt.
-entity.lycanitesmobs.gorger.habitat=These creatures can be found in large bodies of lava.
-entity.lycanitesmobs.gorger.combat=Gorgers attack by release several balls of lava everywhere, while these attacks are powerful, they are inaccurate leaving them open.
-# ========================================================================
-entity.lycanitesmobs.gorgomite.name=Gorgomite
-entity.lycanitesmobs.gorgomite.description=Small rock beetles, they are known to be quite aggressive but are scared of Manticores.
-entity.lycanitesmobs.gorgomite.habitat=Gorgomites are often found in the desert where they come out at night.
-entity.lycanitesmobs.gorgomite.combat=These beetles are just a nuisance at first with a simple weak bite, but they will rapidly call for other Gorgomites and will begin to swarm so it is vital that they are eliminated quickly.
-# ========================================================================
-entity.lycanitesmobs.grue.name=Grue
-entity.lycanitesmobs.grue.description=When it is pitch black, you are likely to be eaten by a Grue! It is impossible to see these Shadow Elementals in complete darkness. Cinder and Argus elementals can fuse to create powerful Grues.
-entity.lycanitesmobs.grue.habitat=Being Shadow Elementals, Grues spawn where it is dark and usually deep underground.
-entity.lycanitesmobs.grue.combat=Grues have a nasty melee attack that inflicts blindness on top of this they will occasionally teleport behind their victim. Also, if their victim has any good effects active, Grues will devour these effects and heal!
-# ========================================================================
-entity.lycanitesmobs.gnekk.name=Gnekk
-entity.lycanitesmobs.gnekk.description=Lean pale Imps that cannot fly but use their wings to whip deadly poisonous.
-entity.lycanitesmobs.gnekk.habitat=Gnekks lurk deep in dark caverns, they have adapted very effectively to this environment.
-entity.lycanitesmobs.gnekk.combat=Gnekks are incredibly fast, can climb and glide and attack rapidly at melee range inflicting plague.
-# ========================================================================
-entity.lycanitesmobs.herma.name=Herma
-entity.lycanitesmobs.herma.description=Giant crabs that usually keep to themselves unless something gets too close!
-entity.lycanitesmobs.herma.habitat=These creatures are found in saltwater oceans and on beaches.
-entity.lycanitesmobs.herma.combat=Herma attack with their strong claws.
-# ========================================================================
-entity.lycanitesmobs.ignibus.name=Ignibus
-entity.lycanitesmobs.ignibus.description=Large fiery Drake Dragons with a hot temper, searing claws, blazing breath and a burning desire to melt your face off!
-entity.lycanitesmobs.ignibus.habitat=Ignibi (plural) can be found within very large lakes, they are rare but incredibly powerful.
-entity.lycanitesmobs.ignibus.combat=These Drake Dragons unleash a powerful gout of Scorchfire and hot embers that will ignite the ground and anything hit. The Scorchfire will also inflict penetration weakening defenses.
-# ========================================================================
-entity.lycanitesmobs.ika.name=Ika
-entity.lycanitesmobs.ika.description=Slow snail-turtle-shellfish! Ika can be lured and bred with vegetables, however they can only survive on land for a small amount of time. Farm with care!
-entity.lycanitesmobs.ika.habitat=Ika can be found in saltwater oceans and pools on beaches.
-entity.lycanitesmobs.ika.combat=Ika are usually passive.
-# ========================================================================
-entity.lycanitesmobs.ioray.name=Ioray
-entity.lycanitesmobs.ioray.description=Beautiful creatures that gracefully swim at a very fast rate, they have a large collection of precious gems on their back, they are quite aggressive however.
-entity.lycanitesmobs.ioray.habitat=These creatures can be found in saltwater oceans.
-entity.lycanitesmobs.ioray.combat=Iorays have a deadly Water Jet attack that will strip away the defenses of anything hit.
-# ========================================================================
-entity.lycanitesmobs.jabberwock.name=Jabberwock
-entity.lycanitesmobs.jabberwock.description=Vicious deer like creatures that rip their prey to shreds.
-entity.lycanitesmobs.jabberwock.habitat=Jabberwocks can be found stalking the mountains at night.
-entity.lycanitesmobs.jabberwock.combat=Jabberwocks have hooked claws will cause a weight effect pulling their victim down, this prevents any jumping and increases falling damage, making Jabberwocks deadly in the mountains.
-# ========================================================================
-entity.lycanitesmobs.jengu.name=Jengu
-entity.lycanitesmobs.jengu.description=Water Elementals known as the protectors of pure water, they will attack anything they see as a threat to their water's purity.
-entity.lycanitesmobs.jengu.habitat=Being Water Elementals, Jengu manifest from large bodies of water in the dark.
-entity.lycanitesmobs.jengu.combat=Jengu attack be throwing large blasts of water, on impact these create a temporary pool of water.
-# ========================================================================
-entity.lycanitesmobs.joust.name=Joust
-entity.lycanitesmobs.joust.description=Fierce arthropod creatures, they can be farmed and love cactus green!
-entity.lycanitesmobs.joust.habitat=These creatures can be found in deserts and mesas.
-entity.lycanitesmobs.joust.combat=Jousts are usually peaceful but will bite back if hit and will follow the command of aggressive Alpha Jousts.
-# ========================================================================
-entity.lycanitesmobs.joustalpha.name=Joust Alpha
-entity.lycanitesmobs.joustalpha.description=Larger Jousts and leaders, they will attack other Joust Alphas on sight and will also command all none alphas, they are very hostile.
-entity.lycanitesmobs.joustalpha.habitat=These creatures can be found in deserts and mesas.
-entity.lycanitesmobs.joustalpha.combat=Jousts are fast and attack rapidly, they will also rally other none alpha Jousts to attack with them.
-# ========================================================================
-entity.lycanitesmobs.khalk.name=Khalk
-entity.lycanitesmobs.khalk.description=Large magma beasts known for their incredible defense and deadly offense. On death, their bodies break down into lava!
-entity.lycanitesmobs.khalk.habitat=These beasts can be found deep in lakes of lava that are underground.
-entity.lycanitesmobs.khalk.combat=Khalk have an incredibly powerful melee attack that inflicts smouldering, however they are incredibly slow. Be sure to keep back when they die as they turn into a small pool of temporary lava.
-# ========================================================================
-entity.lycanitesmobs.kobold.name=Kobold
-entity.lycanitesmobs.kobold.description=Small rodents that can't resist stealing items including torches! Killing them will cause them to drop their stolen goods.
-entity.lycanitesmobs.kobold.habitat=These rodents can usually be found in the plains at night.
-entity.lycanitesmobs.kobold.combat=Kobolds usually flee from other creatures but are known to attack people who are low on health.
-# ========================================================================
-entity.lycanitesmobs.krake.name=Krake
-entity.lycanitesmobs.krake.description=Bizarre amphibious creatures, Krakes are both deaf and blind, they taste the air with their mouths and are sensitive to vibrations.
-entity.lycanitesmobs.krake.habitat=These aberrations are often found lurking by rivers or lakes as well as deep within forests.
-entity.lycanitesmobs.krake.combat=Krakes are neutral and will only attack if agitated, sprinting near them will threaten them so be sure to avoid sprinting near these creatures as they are incredibly fast!
-# ========================================================================
-entity.lycanitesmobs.lacedon.name=Lacedon
-entity.lycanitesmobs.lacedon.description=Strange humanoid aquatic creatures, they are able to come onto land for a small amount of time and indefinitely if it is raining.
-entity.lycanitesmobs.lacedon.habitat=Lacedon can be found in saltwater oceans.
-entity.lycanitesmobs.lacedon.combat=Lacedon inflict a weight debuff when attacking which will usually end with their victim being dragged into the bottom of the ocean.
-# ========================================================================
-entity.lycanitesmobs.lobber.name=Lobber
-entity.lycanitesmobs.lobber.description=Large lava brutes, Lobbers are incredibly powerful creatures.
-entity.lycanitesmobs.lobber.habitat=These brutes are found in lava lakes.
-entity.lycanitesmobs.lobber.combat=Lobbers are named for their attacks where they lob large balls of magma at their victims, this very quickly begins to flood the area with temporary lava.
-# ========================================================================
-entity.lycanitesmobs.lurker.name=Lurker
-entity.lycanitesmobs.lurker.description=Lurkers are able to completely blend in with their environment. Their Once inflicted, they will hide, letting the poison do the work. Can be tamed as excellent pets, also great as Creeper guards!
-entity.lycanitesmobs.lurker.habitat=These creatures can be found in forests and swamps but avoid cold areas.
-entity.lycanitesmobs.lurker.combat=Lurker bites will both poison and blind, after biting the Lurker will flee and attempt to hide allowing the poison to do it's work, they will attack again if the poison wears off.
-# ========================================================================
-entity.lycanitesmobs.maka.name=Maka
-entity.lycanitesmobs.maka.description=Large peaceful herbivores. Can be farmed with vegetables for their meat and leather. Be careful around alphas.
-entity.lycanitesmobs.maka.habitat=Makas can be found in plans and savannas.
-entity.lycanitesmobs.maka.combat=Makas are usually peaceful.
-# ========================================================================
-entity.lycanitesmobs.makaalpha.name=Maka Alpha
-entity.lycanitesmobs.makaalpha.description=Larger Makas, alphas are usually peaceful but will sometimes attack, they also spar with each other a lot. Alphas Makas will protect the rest of the herd, thus they making farming Makas tricky at times.
-entity.lycanitesmobs.makaalpha.habitat=Maka Alphas can be found in plans and savannas.
-entity.lycanitesmobs.makaalpha.combat=When aggravated, Alpha Makas have a powerful bite and spiked tail causing high melee damage.
-# ========================================================================
-entity.lycanitesmobs.manticore.name=Manticore
-entity.lycanitesmobs.manticore.description=Vicious bat-like beasts with scorpion like tails. They like to hunt down Gorgomites and other small prey.
-entity.lycanitesmobs.manticore.habitat=Manticores fly around the desert skies at night.
-entity.lycanitesmobs.manticore.combat=A Manticore's sting will leave you feeling very weak and hungry!
-# ========================================================================
-entity.lycanitesmobs.maug.name=Maug
-entity.lycanitesmobs.maug.description=Large wolf-like arctic bears.
-entity.lycanitesmobs.maug.habitat=These beasts can be found in cold areas like snowy mountains or taigas.
-entity.lycanitesmobs.maug.combat=Maugs have a powerful maul that will cripple causing slowness.
-# ========================================================================
-entity.lycanitesmobs.morock.name=Morock
-entity.lycanitesmobs.morock.description=Aggressive Wyvern Dragons, while they can't breathe fire, they still have a devastating bite!
-entity.lycanitesmobs.morock.habitat=Morocks are found stalking the skies of open areas with a lot of tasty prey like plains, fortunately they are fairly rare.
-entity.lycanitesmobs.morock.combat=Morocks are fast and bite hard, it is best to use their large size against them.
-# ========================================================================
-entity.lycanitesmobs.nymph.name=Nymph
-entity.lycanitesmobs.nymph.description=Whimsical Fae Elementals bursting with healing energy that heals all around them. They have a fondness for flowers! While harmless directly, they can cause trouble if scared. Jengu and Aegis Elementals can fuse to create powerful Nymphs.
-entity.lycanitesmobs.nymph.habitat=Being Fae Elementals, Nymphs manifest around sources of life and as such manifest around flowers in sunlight.
-entity.lycanitesmobs.nymph.combat=Nymphs are peaceful and will healing anything around them, this can be harmful to undead. If hit, Nymphs will flee firing flowers with sharp thorns that inflict bleed.
-# ========================================================================
-entity.lycanitesmobs.pinky.name=Pinky
-entity.lycanitesmobs.pinky.description=Gluttonous beasts that especially love to devour live animals. Can be farmed and bred using live large animals. Baby Pinkies can be tamed and when matured, can be used as battle mounts.
-entity.lycanitesmobs.pinky.habitat=Pinkies roam the Nether looking for anything to eat.
-entity.lycanitesmobs.pinky.combat=These demons are incredibly aggressive but will prioritize bigger juicier prey which ca be used to pure them.
-# ========================================================================
-entity.lycanitesmobs.pixen.name=Pixen
-entity.lycanitesmobs.pixen.description=Mischievous little imps that lure their prey into a false sense of security before grouping up and eating them!
-entity.lycanitesmobs.pixen.habitat=Pixens can usually be found roaming around forests during the day.
-entity.lycanitesmobs.pixen.combat=These Imps will bombard their targets with balls of magic that apply random debuffs.
-# ========================================================================
-entity.lycanitesmobs.quetzodracl.name=Quetzodracl
-entity.lycanitesmobs.quetzodracl.description=Powerful flying wyvern dragons that still share a strong resemblance to their dragon ancestors the pterosaurs.
-entity.lycanitesmobs.quetzodracl.habitat=These wyverns can be found flying over oceans.
-entity.lycanitesmobs.quetzodracl.combat=Quetzodracl are incredibly power and will pickup their prey, it is best to use their size against them.
-# ========================================================================
-entity.lycanitesmobs.quillbeast.name=Quillbeast
-entity.lycanitesmobs.quillbeast.description=Large rodents with razor sharp quills on their back, they are easily threatened and will fire these quills from afar.
-entity.lycanitesmobs.quillbeast.habitat=These beasts can be found in plains, savannas and forests.
-entity.lycanitesmobs.quillbeast.combat=Quillbeasts attack with their deadly quills that also cut through long grass.
-# ========================================================================
-entity.lycanitesmobs.rahovart.name=Rahovart
-entity.lycanitesmobs.rahovart.description=As the lord of the underworld, Rahovart's name alone strikes fear and terror into the hearts of even the most evil of beings.
-entity.lycanitesmobs.rahovart.habitat=It is said that Rahovart is a very old and powerful Behemoth that originates from the Underworld a vast plane of Hell.
-entity.lycanitesmobs.rahovart.combat=Rahovart is a powerful demon that attacks with a powerful Hellfire Cannon. Phase 1: Rahovart summons Belphs, overtime these Belphs become empowered and eventually explode giving Rahovart a Hellfire Orb. With 5 orbs, Rahovart will unleash a large wave of hellfire that causes great damage and burns away any good effects, it is important to kill the Belphs to reduce how much this happens.  Phase 2: Rahovart continues to summon Belphs but no longer empowers them instead he also summons Behemoth that get empowered, these will give him the orbs instead, at 5 orbs Rahovart will create a giant Hellfire Wall that rotates around him, this deals damage and removes effect like wave but lasts longer so kill the Behemoths as quickly as possible.  Phase 3: Rahovart will now create orbs on his own and will create Hellfire Barriers, these don't move but will eventually take over the area around Rahovart, however killing his minions will remove these barriers so if there are too many, kill the Belphs and Behemoth to lower the barriers.
-# ========================================================================
-entity.lycanitesmobs.raiko.name=Raiko
-entity.lycanitesmobs.raiko.description=Large sea birds known to dive into the ocean and snatch their prey.
-entity.lycanitesmobs.raiko.habitat=These birds can be found flying over oceans.
-entity.lycanitesmobs.raiko.combat=Raiko will pickup their prey, it is important to kill them before they carry you too far up. Eventually Raiko will release their prey with the weight effect, this can cause great falling damage but usually drops their victim into the deep ocean.
-# ========================================================================
-entity.lycanitesmobs.reaper.name=Reaper
-entity.lycanitesmobs.reaper.description=Twisted spirits that feed on death, Reapers are attracted to death and sometimes mistake people who are asleep as dead!
-entity.lycanitesmobs.reaper.habitat=These spirits sometimes appear when a creature dies and sometimes when someone is attempting to sleep.
-entity.lycanitesmobs.reaper.combat=Reapers have ranged attacks cause their victims to run around fear!
-# ========================================================================
-entity.lycanitesmobs.reiver.name=Reiver
-entity.lycanitesmobs.reiver.description=Icy Frost Elementals, Reivers seek to freeze everything around them. Jengu and Djinn Elementals can fuse to create powerful Reivers.
-entity.lycanitesmobs.reiver.habitat=Reivers are sometimes found roaming the night sky in cold areas and will also manifest from Frostfire spread by other creatures.
-entity.lycanitesmobs.reiver.combat=These elementals fire icy frostbolts that freeze victims hit slowing their movement.
-# ========================================================================
-entity.lycanitesmobs.remobra.name=Remobra
-entity.lycanitesmobs.remobra.description=Small, flying Amphithere Dragons that spit venom.
-entity.lycanitesmobs.remobra.habitat=These dragons can be found in swamps and dark forests.
-entity.lycanitesmobs.remobra.combat=Remobra attack by spitting venom, if their spit hits their victim it inflicts plague, if it hits the ground, it will burst into a poisonous cloud.
-# ========================================================================
-entity.lycanitesmobs.roa.name=Roa
-entity.lycanitesmobs.roa.description=Ferocious sharks that dominate the sea! The brave or foolish attempt to tame them as mounts.
-entity.lycanitesmobs.roa.habitat=These sharks can be found in saltwater oceans.
-entity.lycanitesmobs.roa.combat=Roas create deadly whirlpools around them to pull their prey towards their deadly jaws! These can pull land creatures into the water as well, sneaking helps stop them pull you off the edge of a ledge.
-# ========================================================================
-entity.lycanitesmobs.roc.name=Roc
-entity.lycanitesmobs.roc.description=Rocs fly in the sky searching for prey at night.
-entity.lycanitesmobs.roc.habitat=These birds usually fly over plains and savanna.
-entity.lycanitesmobs.roc.combat=Rocs have strange tails that act as giant claws, they use these to pickup their vitims. Rocs are only hostile at night or in the dark however.
-# ========================================================================
-entity.lycanitesmobs.salamander.name=Salamander
-entity.lycanitesmobs.salamander.description=Deadly amphibians that have adapted to incredible temperatures. Tamed Salamanders make great mounts and even protect their rider from fire!
-entity.lycanitesmobs.salamander.habitat=These creatures live in lakes of lava.
-entity.lycanitesmobs.salamander.combat=Salamanders have a fiery bite that inflict smouldering.
-# ========================================================================
-entity.lycanitesmobs.serpix.name=Serpix
-entity.lycanitesmobs.serpix.description=Notorious ice worms that burrow through the frozen earth.
-entity.lycanitesmobs.serpix.habitat=These worms can be found in large pools of icy ooze and cold areas like ice plains.
-entity.lycanitesmobs.serpix.combat=Serpix attack by roaring a deadly blizzard, casting Frostfire upon the ground which both damages and slows.
-# ========================================================================
-entity.lycanitesmobs.shade.name=Shade
-entity.lycanitesmobs.shade.description=Large decrepit serpentine aberrations spawned from the very shadows themselves. There are legends of the four mighty Serpent Riders who rode these beasts into battle: D'sparil, Korax, Eidelon and Lycanite.
-entity.lycanitesmobs.shade.habitat=These aberrations can be found in the darkest of places, deep underground.
-entity.lycanitesmobs.shade.combat=Shades drain a bit of health when attacking and they have a horrific howl sending all that oppose them running in fear!
-# ========================================================================
-entity.lycanitesmobs.shambler.name=Shambler
-entity.lycanitesmobs.shambler.description=Overgrown shrub creatures. Can be tamed and are an excellent way to liven up the your garden!
-entity.lycanitesmobs.shambler.habitat=Shamblers spawn in dense forests and jungles.
-entity.lycanitesmobs.shambler.combat=Shamblers regenerate from water and can inflict paralysis, they are dangerous but very slow.
-# ========================================================================
-entity.lycanitesmobs.silex.name=Silex
-entity.lycanitesmobs.silex.description=Beautiful fish with scales encrusted with Lapis Lazuli. Silex are known to eat the Lapis off of each other's scales as well as natural formations from rocks.
-entity.lycanitesmobs.silex.habitat=These fish are often found in freshwater lakes and rivers.
-entity.lycanitesmobs.silex.combat=Silex are peaceful creatures.
-# ========================================================================
-entity.lycanitesmobs.skylus.name=Skylus
-entity.lycanitesmobs.skylus.description=Squid like creatures that form and live in tough shells. If damaged enough, their shells will break.
-entity.lycanitesmobs.skylus.habitat=These creatures can be found in saltwater oceans.
-entity.lycanitesmobs.skylus.combat=Skylus with grasp their prey and drag them deep underwater, their attacks also blind with ink. When their shell is destroyed they become a lot faster but also more vulnerable to damage.
-# ========================================================================
-entity.lycanitesmobs.spectre.name=Spectre
-entity.lycanitesmobs.spectre.description=Mysterious Void Elementals, they seek to break down reality itself into nothing. Aegis and Argus Elementals can fuse to create a powerful Spectre.
-entity.lycanitesmobs.spectre.habitat=Being Void Elementals, Spectres manifest close to the void very deep underground and in the skies of the End.
-entity.lycanitesmobs.spectre.combat=Spectres will attempt to suck in their prey and will attack at close range.
-# ========================================================================
-entity.lycanitesmobs.spriggan.name=Spriggan
-entity.lycanitesmobs.spriggan.description=Mystical Arbour Elementals, Spriggans protect nature against those who would threaten it. Jengu and Geonach Elementals can fuse to create powerful Spriggans.
-entity.lycanitesmobs.spriggan.habitat=Being Arbour Elementals, Spriggans can be found occasionally wandering forests and rapidly manifest in the defense of plant life so take care when harvesting plants.
-entity.lycanitesmobs.spriggan.combat=Spriggans fire powerful lasers that are poisonous and drain life healing the Spriggan.
-# ========================================================================
-entity.lycanitesmobs.strider.name=Strider
-entity.lycanitesmobs.strider.description=These giant amphibious creatures somewhat resemble a shrimp, they are feared for their dreadful tentacle claws from which they ensnare and consume their victims.
-entity.lycanitesmobs.strider.habitat=These creatures are usually found in large lakes or rivers.
-entity.lycanitesmobs.strider.combat=Striders will pickup their victims and slowly drain the life out of them, they are also fast when in the water or if it raining.
-# ========================================================================
-entity.lycanitesmobs.sutiramu.name=Sutiramu
-entity.lycanitesmobs.sutiramu.description=Aggressive giant scorpions.
-entity.lycanitesmobs.sutiramu.habitat=These creatures can be found roaming the desert and mesa.
-entity.lycanitesmobs.sutiramu.combat=Sutiramu attack with a venom that induce hunger.
-# ========================================================================
-entity.lycanitesmobs.sylph.name=Sylph
-entity.lycanitesmobs.sylph.description=Holy Aether Elementals that curse those who trespass upon holy ground. Djinn and Aegis can fuse to create powerful Sylphs.
-entity.lycanitesmobs.sylph.habitat=Being Aether Elementals, Sylphs manifest in areas of worship such as Pyramids or Temples.
-entity.lycanitesmobs.sylph.combat=Sylphs will release a large wave of Aether Magic smiting those hit where they will burn in the sunlight!
-# ========================================================================
-entity.lycanitesmobs.tarantula.name=Tarantula
-entity.lycanitesmobs.tarantula.description=Poisonous jumping spiders that leave behind a trail of temporary sticky green webbing.
-entity.lycanitesmobs.tarantula.habitat=Tarantulas can be found in jungles and swamps.
-entity.lycanitesmobs.tarantula.combat=These spiders have a poisonous bite and jump frequently, it is important to be wary of their sticky green webs.
-# ========================================================================
-entity.lycanitesmobs.thresher.name=Thresher
-entity.lycanitesmobs.thresher.description=Giant majestic water creatures with a massive appetite and powerful fins capable of creating huge whirlpools to pull in their prey! Very dangerous!
-entity.lycanitesmobs.thresher.habitat=These aquatic creatures can be found in both freshwater lakes and large rivers as well as saltwater oceans.
-entity.lycanitesmobs.thresher.combat=Threshers create large whirlpools that pull in their prey from all around, it is even unsafe on land as they will also pull their prey up into the air towards them.
-# ========================================================================
-entity.lycanitesmobs.treant.name=Treant
-entity.lycanitesmobs.treant.description=Large guardians of the forest, very much like Ents only much bigger and stronger.
-entity.lycanitesmobs.treant.habitat=Although rare, Trents can be found in dense forests.
-entity.lycanitesmobs.treant.combat=Treants cause paralysis, drain health when attacking and regenerate from water. Axes and similar tools are very effective.
-# ========================================================================
-entity.lycanitesmobs.tremor.name=Tremor
-entity.lycanitesmobs.tremor.description=Explosive Quake Elementals, Tremors are incredibly destructive. Geonach and Argus Elementals can fuse to create powerful Tremors.
-entity.lycanitesmobs.tremor.habitat=Being Quake Elementals, Tremors manifest from combustion and loud sounds and so occasionally manifest from large explosions.
-entity.lycanitesmobs.tremor.combat=Tremors attack by creating small explosions around them, they are fairly weak but can be quite destructive and should be eliminated quickly.
-# ========================================================================
-entity.lycanitesmobs.triffid.name=Triffid
-entity.lycanitesmobs.triffid.description=Large carnivorous plants, slow but incredibly poisonous and deadly!
-entity.lycanitesmobs.triffid.habitat=These plant creatures often lurk in swamps due to it being moist, not too cold and full of prey for them to devour.
-entity.lycanitesmobs.triffid.combat=These creatures are very slow but should be handled with care as their attacks are incredibly strong and spread plague. Axes are very effective, but take heed for they will heal in water!
-# ========================================================================
-entity.lycanitesmobs.trite.name=Trite
-entity.lycanitesmobs.trite.description=Small and fast demonic creatures that appear to be a brain with spider-like legs.
-entity.lycanitesmobs.trite.habitat=Trites roam all over the nether, it is said they come from Purgatory a Hell Plane of endless flesh.
-entity.lycanitesmobs.trite.combat=Trites are very weak but can be hard to hit due to their speed and small size, their bites also apply wither.
-# ========================================================================
-entity.lycanitesmobs.troll.name=Troll
-entity.lycanitesmobs.troll.description=In the sun a Troll's skin is as hard as stone, in the dark a gruesome green flesh. Trolls are known to be destructive.
-entity.lycanitesmobs.troll.habitat=These brutes are often found living up in the mountains.
-entity.lycanitesmobs.troll.combat=Trolls have a strong melee attack and will destroy soft terrain around them. When in sunlight they become as hard as stone and have higher defense but are vulnerable to pickaxes, out of the sun they are lose their defense and are very weak to fire.
-# ========================================================================
-entity.lycanitesmobs.uvaraptor.name=Uvaraptor
-entity.lycanitesmobs.uvaraptor.description=Colorful raptors with extreme jumping and gliding abilities. Can be tamed as useful high jumping mounts, can almost sustain flight.
-entity.lycanitesmobs.uvaraptor.habitat=These raptors are commonly found in jungles.
-entity.lycanitesmobs.uvaraptor.combat=Uvaraptors leap into the air and attack their prey making them trickier to hit but also vulnerable to ranged attacks.
-# ========================================================================
-entity.lycanitesmobs.vapula.name=Vapula
-entity.lycanitesmobs.vapula.description=Powerful Gravity Elementals that embody the essence of structure itself. Geonach and Aegis Elementals can fuse to create powerful Vapula.
-entity.lycanitesmobs.vapula.habitat=Being Gravity Elementals, Vapula manifest from sources of compression and structure where they are often mount amongst gemstones like diamonds.
-entity.lycanitesmobs.vapula.combat=Vapula fire a round of sharp crystal projectiles from their back rapidly, once the round is fired they must recharge making them vulnerable. pickaxes and similar tools are very effective.
-# ========================================================================
-entity.lycanitesmobs.ventoraptor.name=Ventoraptor
-entity.lycanitesmobs.ventoraptor.description=Swift raptors that glide at incredible speeds. Can be tamed as one of the fastest known mounts.
-entity.lycanitesmobs.ventoraptor.habitat=These raptors like to hunt across the plains.
-entity.lycanitesmobs.ventoraptor.combat=Ventoraptors are very fast and will leap towards their prey and attack.
-# ========================================================================
-entity.lycanitesmobs.vespid.name=Vespid
-entity.lycanitesmobs.vespid.description=Invasive giant wasps with a poisonous sting. Vespid alone aren't much of a problem but in groups or with a Queen Vespid, they can be very dangerous. They are known to build hives when near a Queen.
-entity.lycanitesmobs.vespid.habitat=These insects live in tropical areas like jungles.
-entity.lycanitesmobs.vespid.combat=Vespids are fast but fairly weak, their stings are poisonous. They are often in groups and can have dangerous numbers when in a hive.
-# ========================================================================
-entity.lycanitesmobs.vespidqueen.name=Vespid Queen
-entity.lycanitesmobs.vespidqueen.description=Large Vespids that are protected by a swarm of standard Vespids. Queens will have nearby standard Vespids build a hive for them. Vespid Queens are known to inject eggs into Conba turning them into infected moving nests waiting to hatch!
-entity.lycanitesmobs.vespidqueen.habitat=These insects live in tropical areas like jungles.
-entity.lycanitesmobs.vespidqueen.combat=Vespid Queens are tougher than regular Vespids with a more powerful sting that is poisonous. They are usually surrounded by regular Vespids which will prioritize protecting their Queen above anything else.
-# ========================================================================
-entity.lycanitesmobs.volcan.name=Volcan
-entity.lycanitesmobs.volcan.description=Searing Lava Elementals, Volcans will melt everything in their path! Cinders and Geonach Elementals can fuse to create powerful Volcans.
-entity.lycanitesmobs.volcan.habitat=Being Lava Elementals, Volcans manifest around large volumes of lava underground, they are quite rare.
-entity.lycanitesmobs.volcan.combat=Volcans will melt any stone around them into lava so must be eliminated fast. Volcans attack at melee and apply the smouldering effect, however they also have a heat aura burning anything close to them.
-# ========================================================================
-entity.lycanitesmobs.warg.name=Warg
-entity.lycanitesmobs.warg.description=Large wolf-like beasts with a vicious bite! They are known to hunt in packs. When tamed they make fantastic mounts!
-entity.lycanitesmobs.warg.habitat=These beasts often roam forests.
-entity.lycanitesmobs.warg.combat=Wargs have a deadly leap that briefly paralyses anything near their landing location.
-# ========================================================================
-entity.lycanitesmobs.wendigo.name=Wendigo
-entity.lycanitesmobs.wendigo.description=Large icy brutes known for leaving a trail of Frostfire in their wake!
-entity.lycanitesmobs.wendigo.habitat=These brutes can be found in cold areas like ice plains a well as large pools of icy ooze.
-entity.lycanitesmobs.wendigo.combat=Wendigo are slow but hurl Tundra Blasts which create pools of icy ooze on impact. They also leave Frostfire where they walk which is known to manifest Reivers if left unchecked.
-# ========================================================================
-entity.lycanitesmobs.wildkin.name=Wildkin
-entity.lycanitesmobs.wildkin.description=Powerful bipedal owl-bear beasts that are fast and swift for their size.
-entity.lycanitesmobs.wildkin.habitat=These beasts are known to live in mountains and cold areas like ice plains.
-entity.lycanitesmobs.wildkin.combat=Wildkin have a strong maul attack that inflicts the weight effect.
-# ========================================================================
-entity.lycanitesmobs.wisp.name=Wisp
-entity.lycanitesmobs.wisp.description=Bright Light Elementals, Wisps can sometimes be seen playing catch with each other throwing a deadly ball of radiation. While they're friendly, it is not wise to provoke a Wisp. Cinder and Aegis Elementals can fuse to create powerful Wisps.
-entity.lycanitesmobs.wisp.habitat=being Light Elementals, Wisps manifest out in direct sunlight.
-entity.lycanitesmobs.wisp.combat=Wisps will throw a ball of light radiation at their victims, on impact this will cause them to glow revealing them to any nearby potential predators. Wisps also have a light aura that cause anything near them to glow but also grants night vision, they will also burn nearby undead.
-# ========================================================================
-entity.lycanitesmobs.wraamon.name=Wraamon
-entity.lycanitesmobs.wraamon.description=Deadly rodents loaded with chaotic energy, they emit this through the spines on their back in order to attack their prey. Very few creatures dare attack these dangerous rodents.
-entity.lycanitesmobs.wraamon.habitat=These rodents live deep underground, it is said they come through tiny random chaotic portals that occasionally show up through the world, where they portals lead is a mystery.
-entity.lycanitesmobs.wraamon.combat=Wraamon can be a big menace, their bites inflict instability, a powerful chaos curse that causes the afflicted to randomly jolt about the place. They are fairly weak but small and fast.
-# ========================================================================
-entity.lycanitesmobs.wraith.name=Wraith
-entity.lycanitesmobs.wraith.description=Wicked Nether Elementals that are a symbol of pain and suffering. Djinn and Argus Elementals can fuse to create a powerful Wraith.
-entity.lycanitesmobs.wraith.habitat=Being Nether Elementals, Wraiths manifest in areas of concentrated evil such as the skies of the Nether.
-entity.lycanitesmobs.wraith.combat=Wraiths are fast and will fly recklessly to their victim and attack on impact, they are fairly weak but explode upon their destruction.
-# ========================================================================
-entity.lycanitesmobs.xaphan.name=Xaphan
-entity.lycanitesmobs.xaphan.description=Corrosive Acid Elementals that embody the aspect of breaking down and dissolving away. Cinders and Jengu Elementals can fuse to create a powerful Xaphan.
-entity.lycanitesmobs.xaphan.habitat=Being Acid Elementals, Xaphan manifest from mixtures such as when water meets lava.
-entity.lycanitesmobs.xaphan.combat=Xaphan are constantly dripping acid beneath them and will release a ring of acid splashes all around them when attacking. Their acid is damaging and inflicts penetration increasing any incoming damage.
-# ========================================================================
-entity.lycanitesmobs.yale.name=Yale
-entity.lycanitesmobs.yale.description=Strange fluffy ram-like beasts, however under the coat of wool, they are not what they seem. Yales provide wool which can be obtained using shears, they can also be farmed with vegetables. Their horns are actually strange limbs and they have tiny hooked arms that they use to sift through grass with.
-entity.lycanitesmobs.yale.habitat=These beasts can be found roaming the mountains.
-entity.lycanitesmobs.yale.combat=Yales are usually passive.
-# ========================================================================
-entity.lycanitesmobs.yeti.name=Yeti
-entity.lycanitesmobs.yeti.description=Large frosty mammals that like to eat the frozen vegetation of the arctic. They can be farmed using vegetables, but watch out for their frost clouds. Yeti milk is a delicacy!
-entity.lycanitesmobs.yeti.habitat=These beasts often roam cold and snowy areas such as taiga.
-entity.lycanitesmobs.yeti.combat=Yetis are usually passive.
-# ========================================================================
-entity.lycanitesmobs.zephyr.name=Zephyr
-entity.lycanitesmobs.zephyr.description=Fierce Electric Elementals with a powerful electric field around them. Cinders and Djinn Elementals can fuse to create powerful Zephyr.
-entity.lycanitesmobs.zephyr.habitat=Being Electric Elementals, Zephyr manifest from electric weather such as thunderstorms, they can also rarely manifest during regular rainstorms as well.
-entity.lycanitesmobs.zephyr.combat=Zephyrs will shock any foe close to them and direct attacks from them cause paralysis.
-# ========================================================================
-entity.lycanitesmobs.zoataur.name=Zoataur
-entity.lycanitesmobs.zoataur.description=Zoataur are incredibly resilient drakes, while they are too bulky to be able to fly, their wings are incredibly dense and are used to block enemy attacks.
-entity.lycanitesmobs.zoataur.habitat=These beasts can be found roaming open plains and deserts.
-entity.lycanitesmobs.zoataur.combat=Zoataur are slow but hit hard, they will also block with their wings so it is best to hit them with slow heavy attacks when they are exposed. They can't attack when blocking.
+tile.ashenstonebrick_stairs.name=Ashenstone Brick Stairs
+tile.ashenstonebrick_stairs.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashencrystal.name=Ashen Crystal
+tile.ashencrystal.description=A powerful bond of lava and earth magic power this crystal endlessly.
+#
+tile.ashenstonechiseled.name=Chiseled Ashenstone
+tile.ashenstonechiseled.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonebrick_wall.name=Ashenstone Brick Wall
+tile.ashenstonebrick_wall.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstone.name=Ashenstone
+tile.ashenstone.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonebrick_slab.name=Ashenstone Brick Slab
+tile.ashenstonebrick_slab.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstone_stairs.name=Ashenstone Stairs
+tile.ashenstone_stairs.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstone_slab.name=Ashenstone Slab
+tile.ashenstone_slab.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonebrick_fence.name=Ashenstone Brick Fence
+tile.ashenstonebrick_fence.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonepillar.name=Ashenstone Pillar
+tile.ashenstonepillar.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonetile_slab.name=Ashenstone Tile Slab
+tile.ashenstonetile_slab.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonetile.name=Ashenstone Tile
+tile.ashenstonetile.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstone_slab_double.name=Double Ashenstone Slab
+tile.ashenstone_slab_double.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonebrick.name=Ashenstone Brick
+tile.ashenstonebrick.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonepolished.name=Polished Ashenstone
+tile.ashenstonepolished.description=The primordial forces of earth and lava surge through this stone.
+#
+tile.ashenstonetile_stairs.name=Ashenstone Tile Stairs
+tile.ashenstonetile_stairs.description=The primordial forces of earth and lava surge through this stone.
+# ========================================================================
+entity.lycanitesmobs.creature.name.format=age|variant|subspecies|species|level
+# ========================================================================
+entity.abaia.name=Abaia
+entity.abaia.description=Aggressive eels that generate an electric current through their body.
+entity.abaia.habitat=These fish are catadromous meaning they are born in saltwater oceans and then migrate and mature in freshwater rivers before returning to saltwater again, some end up trapped in lakes and create a colony there also, so they can be found in most locations.
+entity.abaia.combat=While Abaia use their electrical current to shock anything near them, they also have a nasty bite.
+# ========================================================================
+entity.abtu.name=Abtu
+entity.abtu.description=Vicious fish with big teeth! It is rare to find adults as their reckless nature means they don't live too long!
+entity.abtu.habitat=These fish are found commonly in saltwater oceans and beaches.
+entity.abtu.combat=Once an Abtu has sense of it's prey, it will stop at nothing to devour it, they are known to even jump onto land and chase their prey! Adult Abtu are more reserved but also rare, they will call nearby infants to swarm their prey.
+# ========================================================================
+entity.aegis.name=Aegis
+entity.aegis.description=Law enforcing Order Elementals, Aegis have been known to enforce the law around villages, even petty thieves will be mercilessly pursued.
+entity.aegis.habitat=Being Order Elementals, Aegis manifest in areas rich in the Order element, thus villages very commonly create these creatures.
+entity.aegis.combat=Aegis have two modes that they shift between, a defensive Shield Mode where they will block most damage with two large rotating shields and an offensive Sword Mode where they will shred through their target with four spinning blades.
+# ========================================================================
+entity.afrit.name=Afrit
+entity.afrit.description=Wicked flame imps that are bent on destruction, they will aggressively burn the world around them.
+entity.afrit.habitat=These imps are usually found bathing in pools of lava.
+entity.afrit.combat=Afrits usually attack from a distance by throwing balls of Scorchfire, a deadly combination of hot fire and a strong acid that weakens the defenses of anything that is hit.
+# ========================================================================
+entity.aglebemu.name=Aglebemu
+entity.aglebemu.description=Large poisonous frogs with excellent swimming ability as well as amazing jumping power and a deadly long tongue!
+entity.aglebemu.habitat=These amphibians are usually found in swamplands.
+entity.aglebemu.combat=Aglebemu use their powerful, extremely long and sharp tongues to spear their victims and inject a deadly concoction of contagious bacteria.
+# ========================================================================
+entity.archvile.name=Apollyon
+entity.archvile.description=Malicious demons that rule of areas of the nether, Apollyon enjoy the smell of their victim's burning flesh and enjoy watching other demons tear their victims apart!
+entity.archvile.habitat=Apollyon live within the depths of the Nether.
+entity.archvile.combat=Apollyon prefer to avoid combat themselves, instead they will strengthen any nearby demons and they will slowly engulf their target in flames.
+# ========================================================================
+entity.argus.name=Argus
+entity.argus.description=Disruptive Chaos elementals, Argi (plural) spread havoc in their wake.
+entity.argus.habitat=Being Chaos Elementals, Argi are formed when there is a large concentration of Chaos in the area, this can be caused by several things but usually destroying other Elementals causes a high concentration of Chaos.
+entity.argus.combat=These Elementals attack by launching an orb of concentrated Chaos energy, the trajectory of these orbs can be unpredictable and on impact, these orbs disrupt the very fabric of reality causing instability.
+# ========================================================================
+entity.arisaur.name=Arisaur
+entity.arisaur.description=Large plant covered sauropods, Arisaurs are peaceful and normally graze from trees or from their own backs sharing a symbiotic relationship.
+entity.arisaur.habitat=Arisaurs are usually found in dense forests but can also be seen migrating through plains.
+entity.arisaur.combat=Arisaurs are usually peaceful.
+# ========================================================================
+entity.arix.name=Arix
+entity.arix.description=Naughty ice imps that are constantly searching for food.
+entity.arix.habitat=Arix thrive in cold temperatures and are often found in cold biomes as well as bathing in icy ooze.
+entity.arix.combat=These imps wield Icefire, a form of Frost Magic that looks and behaves as though it was fire but freezes instead of burns.
+# ========================================================================
+entity.asmodeus.name=Asmodeus
+entity.asmodeus.description=Asmodeus is known to be the mastermind behind any form of demonic invasion, sometimes even Rahovart falls in line.
+entity.asmodeus.habitat=It is said that Asmodeus originate from the vast Hell Planes of endless flesh called Purgatory and that they were originally powerful Astaroth meaning that once in their existence they were but mere Trites!
+entity.asmodeus.combat=This great demon, or devil, has a wide array of attacks and is capable of jumping great heights with it's demonic mech. It will use it's huge Gatling Gun periodically to barrage targets and is also swarming with Trites that will defend it.  Phase 1: Asmodeus will release rings of projectiles outwards.  Phase 2: Asmodeus will summon large Astaroths that will project a shield around him until they are destroyed.  Phase 3: The Astaroth will instead heal Asmodeus and Cacodemons are also summoned.
+# ========================================================================
+entity.aspid.name=Aspid
+entity.aspid.description=Peaceful reptiles with strange growths on their backs. Aspids love mushrooms and can be farmed with them. Be careful however as they constantly emit a cloud of poison and usually leave a trail of this behind them.
+entity.aspid.habitat=These creatures are usually found in swamps, dark forests and mushroom islands due to their love of the shroom!
+entity.aspid.combat=Aspids are usually peaceful but the poisonous clouds they emit can be quite dangerous, these don't stop passionate farmers however!
+# ========================================================================
+entity.astaroth.name=Astaroth
+entity.astaroth.description=Demonic brain-like beings mounted on a mechanical platforms made from demonic redstone technology maintained by Trite minions. If you manage to get past their rapid fire weapons and destroy them, all resident Trites will crawl out and attack!
+entity.astaroth.habitat=These demons are said to originate from the endless Hell plane of flesh called Purgatory and that they were once mere Trites, they can often be found stalking the Nether.
+entity.astaroth.combat=Astaroth use powerful rapid weapons that extract their demonic energizes into powerful projectiles called Devil Stars, on impact these can cause wither. Should an Astaroth fall, a small force of Trites will come out of their corpse and proceed to attack!
+# ========================================================================
+entity.balayang.name=Balayang
+entity.balayang.description=Vicious cyclopsian bats with deadly fangs. They like to hunt down Gorgomites and other small prey, including you!
+entity.balayang.habitat=Balayangs fly around the desert and mesa skies at night.
+entity.balayang.combat=A Balayang's bite will leave you bleeding with poor eye sight!
+# ========================================================================
+entity.banshee.name=Banshee
+entity.banshee.description=Banshees are terrifying Phase Elementals that can phase through reality itself, they can often be heard 'singing'. It is said that the elemental is actually the pair of eyes and not the corpse that it 're-purposed'. Geonach and Zephyr elementals can also fuse into a powerful Banshee.
+entity.banshee.habitat=These elementals haunt eerie and abandoned places where they are usually found around abandoned mineshafts as well as dark forests and other locations that embody unease.
+entity.banshee.combat=On contact with Banshees, the very soul of their victim is shocked with Phase Magic, this usually induces fear and panic.
+# ========================================================================
+entity.barghest.name=Barghest
+entity.barghest.description=Deadly mountain predators capable of making high leaps. Barghests are also very competent climbers making them exceptional mounts for the mountains.
+entity.barghest.habitat=These beasts are usually found in mountainous areas as well as savannas.
+entity.barghest.combat=Barghests are known to leap at their prey and tear at them causing bleeding.
+# ========================================================================
+entity.behemoth.name=Behemophet
+entity.behemoth.description=Tall demonic monstrosities, Behemophet are powerful demons bent on destruction.
+entity.behemoth.habitat=Behemophet can be found in the Nether and will also invade through unprotected portals if they are large enough.
+entity.behemoth.combat=These demons lob balls of Hellfire, a green flame created by tearing apart souls, not only do these flames burn, but they wither as well.
+# ========================================================================
+entity.beholder.name=Naxiris
+entity.beholder.description=Large hostile masses of eyes and tentacles with an eternal hunger for magic energy!
+entity.beholder.habitat=Naxiris can be found in the mountains as they like high up places and dwell in large caves and ruins and come out at night.
+entity.beholder.combat=These Aberrations create powerful Arcane Storms that they blast from their mouths, these attacks then release deadly lasers in all directions and can be explosive on impact.
+# ========================================================================
+entity.necrovore.name=Necrovore
+entity.necrovore.description=Terrible undead hounds that crave rotten flesh but wont hesitate to consume yours as well.
+entity.necrovore.habitat=Necrovore tend to rise during the darkest night of a New Moon as well as dwell within cursed lands.
+entity.necrovore.combat=These Undead hounds are fast and relentless with a wicked bite.
+# ========================================================================
+entity.belph.name=Belphegor
+entity.belph.description=Small but dangerous demons with a one track mind bent on killing and eating.
+entity.belph.habitat=These demons can be found in the Nether and will invade through portals.
+entity.belph.combat=Belphegor throw balls of Doomfire, a flame made from Nether Magic, that burn an unnatural red.
+# ========================================================================
+entity.cacodemon.name=Malwrath
+entity.cacodemon.description=Large floating abominations of life. Malwrath like to bully Ghasts for their delicious tears. Can be tamed as a flying pet.
+entity.cacodemon.habitat=These demons fly around the fiery skies of the Nether.
+entity.cacodemon.combat=Malwrath spit large balls of Demonic Lightning, while not actually electrical, these are balls of explosive Nether energy that will wither on impact and release smaller Demonic Sparks in all direction.
+# ========================================================================
+entity.calpod.name=Calpod
+entity.calpod.description=Nasty termite-like insects that swarm their prey!
+entity.calpod.habitat=These insects can be found in the forest undergrowth and come out at night.
+entity.calpod.combat=Calpods have a nasty bite but must be killed quickly as they will rapidly call more Calpods to join them.
+# ========================================================================
+entity.cephignis.name=Cephignis
+entity.cephignis.description=Large peaceful fish that have adapted to live in extreme temperatures, their bodies are as hot as lava. Cephignis can be farmed using coal or charcoal!
+entity.cephignis.habitat=These fish can be found swimming in lava and cannot survive outside it for long.
+entity.cephignis.combat=Cephignis are usually passive relying on their environment to protect them from most predators.
+# ========================================================================
+entity.chupacabra.name=Chupacabra
+entity.chupacabra.description=Dreadful creatures, their insatiable hunger for flesh can be used to manipulate and farm them.
+entity.chupacabra.habitat=Chupacabras usually live underground in dark caves.
+entity.chupacabra.combat=These beasts are incredibly aggressive with a deadly bite and sharp claws, however their greed can be used against them as they will prioritize large prey. Their attacks will also heal them.
+# ========================================================================
+entity.cinder.name=Cinder
+entity.cinder.description=Violent Fire Elementals that seeks only to burn other creatures around them.
+entity.cinder.habitat=Being Fire Elementals, Cinders are manifested from pure Fire and so they will spawns frequently in locations with a lot of fire. They don't manifest around impure flames such as Scorchfire or Doomfire however.
+entity.cinder.combat=Cinders release a powerful gout for fire that will burn their enemies, these flames are too weak to spread more fire however.
+# ========================================================================
+entity.clink.name=Clink
+entity.clink.description=Strange imps that rapidly grow metallic blades on their arms that can then be easily detached.
+entity.clink.habitat=These imps are often found in deserts as they thrive on consuming minerals as well as flesh, they are wingless so aren't found in mountainous areas.
+entity.clink.combat=Clinks detach the blades they grow and throw them at their enemies.
+# ========================================================================
+entity.cockatrice.name=Cockatrice
+entity.cockatrice.description=Deadly giant chicken-like wyverns, very dangerous, stay away!
+entity.cockatrice.habitat=These wyvern dragons are usually found in tropical areas such as jungles as they like to consume fruit as well as devour large insects, of course, anything that moves is on the menu!
+entity.cockatrice.combat=Cockatrice peck with beaks that drip with paralysing and aphagia inducing toxins that are said make their victims feel like they're turned into stone.
+# ========================================================================
+entity.conba.name=Conba
+entity.conba.description=Mischievous apes with a passion for poop!
+entity.conba.habitat=These apes can be found in tropical biomes like jungles.
+entity.conba.combat=Comba like to throw their sticky poop at people causing slowness and nausea as well as creating a poop cloud which extends these effects. These beast will also try to keep their distance.
+entity.conba.infected=Infected Conba
+# ========================================================================
+entity.concapede.name=Concapede
+entity.concapede.description=Strange beetles that connect to each other. Heads lead the way and grow extra segments from behind and if fed, will become preoccupied allowing their segments to be attacked, this technique is used by farmers.
+entity.concapede.habitat=These insects can be found in tropical areas like jungles.
+entity.concapede.combat=Concapedes have a poisonous bite but are only hostile at night.
+# ========================================================================
+entity.concapedesegment.name=Concapede Segment
+entity.concapedesegment.description=Strange beetles that connect to each other. Segments are usually attached to and are grown by heads. If detached from a head or another segment in front, it will grow into a head. Segments alone are defenseless.
+entity.concapedesegment.habitat=Segments grow from heads which can be found in tropical areas like jungles.
+entity.concapedesegment.combat=Segments are defenseless but will be protected by Heads unless those Heads are busy eating.
+# ========================================================================
+entity.crusk.name=Crusk
+entity.crusk.description=Large sand worms with a thick exoskeleton protecting them. Smaller baby Crusks can be tamed, however they take a very long time to grow but make excellent protective pets.
+entity.crusk.habitat=These creatures can be found digging through the desert dunes.
+entity.crusk.combat=Crusks have a very powerful bite and can submerge and hide themselves within soft terrain like sand, grass or dirt.
+# ========================================================================
+entity.cryptkeeper.name=Cryptkeeper
+entity.cryptkeeper.description=Mummified corpses, unlike the usual undead, these do not burn in sunlight.
+entity.cryptkeeper.habitat=These undead often wonder the desert at night.
+entity.cryptkeeper.combat=Cryptkeepers attack at melee and spread a nasty bacteria that inflicts aphagia.
+# ========================================================================
+entity.darkling.name=Darkling
+entity.darkling.description=Foul little shadow insects that like to latch onto their victim and slowly drain their blood! You best swat these pests off fast!
+entity.darkling.habitat=These insects can be found in dark underground areas.
+entity.darkling.combat=Darklings will leap at their victims and latch on where they will begin to rapidly drain blood, this will heal them, it is vital that they are killed fast.
+# ========================================================================
+entity.dawon.name=Dawon
+entity.dawon.description=Crystaline felines, sometimes rare crystals can be found on their body.
+entity.dawon.habitat=These beasts can be found in jungles.
+entity.dawon.combat=Dawon will pounce at their target, crippling their prey reducing movement speed.
+# ========================================================================
+entity.djinn.name=Zephyr
+entity.djinn.description=Proud Air Elementals that guard the skies from those that they think shouldn't be up there!
+entity.djinn.habitat=Being Air Elementals, these creatures commonly manifest high up in the sky.
+entity.djinn.combat=Zephyr unleash deadly whirlwind rings that inflict the levitation debuff on impact.
+# ========================================================================
+entity.dweller.name=Ningen
+entity.dweller.description=Water bound amphibians that can sliver onto land for a small period of time, they must return to the water when they get too dry as they can die if on land for too long. They are fast and deadly in the water and can survive on land during rain.
+entity.dweller.habitat=These creatures can be found in the waters of swamps, dark forests and jungles.
+entity.dweller.combat=Ningen have a poisonous scratch and excel when in water, on land they can be defeated easily unless it is raining.
+# ========================================================================
+entity.eechetik.name=Eechetik
+entity.eechetik.description=Dangerous Poison Elementals bursting with deadly plagues that infect all around them. They have a fondness for mushrooms! Jengu and Argus elementals can also fuse into a powerful Eechetik.
+entity.eechetik.habitat=Being Poison Elementals, Eechetik manifest in areas of poison and parasitic growths, mushrooms seem to frequently cause them to manifest when it is dark.
+entity.eechetik.combat=These elementals are inspect like in appearance and attack will their many stringer arms, their attacks rapidly spread plague so be prepared with healing items.
+# ========================================================================
+entity.ent.name=Ent
+entity.ent.description=Protectors of the forest, they will attack anything they deem a threat to the forest on sight.
+entity.ent.habitat=Ents can be found wandering forests at night but also merge into trees so be careful when chopping down trees!
+entity.ent.combat=Ents have a poisonous attack and will regenerate in water, they will also drain health when attacking. Axes and similar tools are very effective.
+# ========================================================================
+entity.epion.name=Epion
+entity.epion.description=Giant shadow blood bats. When in contact with direct sunlight, wild Epions panic drop to the ground and explode on impact! Tamed Epions can be trained to not explode in sunlight however.
+entity.epion.habitat=These bats come out at night during a full moon.
+entity.epion.combat=Epions spit Bloodleeches at their victims, draining health on hit.
+# ========================================================================
+entity.erepede.name=Erepede
+entity.erepede.description=Wild rock covered insects that like to hunt Joustes and will attack Crusks on sight too.
+entity.erepede.habitat=These insects can be found roaming hot, dry terrains like deserts and mesas.
+entity.erepede.combat=Erepedes spit out a dangerous mud shots that weakens the target.
+# ========================================================================
+entity.ettin.name=Ettin
+entity.ettin.description=Large twin headed monstrosities. These brutes are feared for their destructive capabilities.
+entity.ettin.habitat=These brutes often live in swamps.
+entity.ettin.combat=Ettins are slow but pack a nasty blow. If you get too close during combat they will panic and destroy nearby soft blocks such as wood or dirt.
+# ========================================================================
+entity.eyewig.name=Eyewig
+entity.eyewig.description=In the dark Eyewigs are hostile and can climb as well as skit across water surfaces.
+entity.eyewig.habitat=These insects are often found in swamps, dark forests and jungles.
+entity.eyewig.combat=Eyewigs can fire a poisonous laser from their giant eye! Their bite can also cause blindness!
+# ========================================================================
+entity.fear.name=Fear
+entity.fear.description=This is a dummy entity used for the fear effect, if this is in the beastiary or has a spawn egg this is a bug, please report it!
+entity.fear.habitat=Dummy entity.
+entity.fear.combat=Dummy entity.
+# ========================================================================
+entity.feradon.name=Feradon
+entity.feradon.description=Lion-like predators that are excellent hunters.
+entity.feradon.habitat=These beasts thrive in plains and savannas.
+entity.feradon.combat=Feradon attack with a powerful bite that offenses the defenses of the victim.
+# ========================================================================
+entity.frostweaver.name=Frostweaver
+entity.frostweaver.description=Spitting spiders that thrive in cold environments.
+entity.frostweaver.habitat=These spiders can be found in cold areas such as taigas or ice plains.
+entity.frostweaver.combat=Frostweavers spit an icy web that causes slowness and creates a temporary frost web.
+# ========================================================================
+entity.geist.name=Geist
+entity.geist.description=Geists are opportunistic undead that deform and climb into other undead lifeforms or corpses and feed off whatever their host is capable of killing. When their host dies, Geists leap out and reform for a surprise attack!
+entity.geist.habitat=Geists usually come from other undead creatures but can also be found lurking in Dark Forests and the End.
+entity.geist.combat=Geists have a simple melee attack but on death release shadow fire, while this doesn't burn, it does cause damage and blindness.
+# ========================================================================
+entity.amalgalich.name=Amalgalich
+entity.amalgalich.description=A powerful lich that has engulfed so many souls to power it's colossal form that it has lost it's identity and succumbed to madness. This ravaging monstrosity must be put down!
+entity.amalgalich.habitat=The Amalgalich is not natural and has no habitat data.
+entity.amalgalich.combat=The Amalgalich is a massive undead that will constantly bombard targets with giant Spectral Bolts which cause fear and blindness, it is vital that these are avoid as fear can lead to doom! Phase 1: The Amalgalich summons Reapers and will periodically use Consumption a powerful attack that sucks everything in leading to instant death! Any Reapers consumed will also heal the Amalgalich. So be sure to run away when it's eyes light up try not to leave too many Reapers alive for it to eat! Phase 2: The Amalgalich will stop trying to eat, for now, instead Geists and giant Epions are summoned. Overtime the Geists will grow and grow and then eventually burst into large areas of dangerous Shadowfire, killing the Geists before they pop will stop this. If there is too much Shadowfire, killing the Epions will clear any Shadowfire beneath them. Try to keep the arena clear for Phase 3. Phase 3: The Amalgalich is hungry again, so you better run! This time giant balls of Darklings are lobbed around the arena, it is best to keep the Darklings at bay and just damage down the boss without getting eaten. If there are too many Geists or Epions left from Phase 2, the boss can and will eat these to regain health possibly putting it back into Phase 2 again so keep those minions at bay!
+# ========================================================================
+entity.geken.name=Geken
+entity.geken.description=Venomous reptiles with excellent jumping abilities.
+entity.geken.habitat=These creatures like in tropical areas like jungles but can also be found in swamps.
+entity.geken.combat=Gekens constantly jump about making them harder to hit, their scratches are sharp and cause bleeding.
+# ========================================================================
+entity.geonach.name=Geonach
+entity.geonach.description=Geonachs are brutal Earth Elementals commonly found by unsuspecting miners when disturbing the earth.
+entity.geonach.habitat=Being Earth Elementals, Geonach manifest where the Earth is strong, usually within ores, breaking these ores will aggravate them.
+entity.geonach.combat=Geonach will attack rapidly with their spear arm as well as occasionally with their heavier fist for more damage. Their attacks will inflict the weight debuff which commonly traps their victims. Pickaxes and similar tools are very effective.
+# ========================================================================
+entity.ghoul.name=Ghoul
+entity.ghoul.description=Foul poisonous undead, Ghouls are smaller than the average zombie allowing them to crawl into smaller places.
+entity.ghoul.habitat=Ghouls can be found lurking around swamps, dark forests and jungles at night.
+entity.ghoul.combat=Ghouls attack at melee and inflict poison.
+# ========================================================================
+entity.gorger.name=Gorger
+entity.gorger.description=Huge magma worms that swim through molten lava, they can also survive on land and can burrow into soft ground like dirt.
+entity.gorger.habitat=These creatures can be found in large bodies of lava.
+entity.gorger.combat=Gorgers attack by release several balls of lava everywhere, while these attacks are powerful, they are inaccurate leaving them open.
+# ========================================================================
+entity.grell.name=Grell
+entity.grell.description=Strange floating creatures of writhing flesh that produce a deadly acid.
+entity.grell.habitat=These creatures inhabit the fleshscapes of the Nether.
+entity.grell.combat=Grell fire a deadly glob of acid, have a wicked bite and let off pheromones to control nearby Grigori.
+# ========================================================================
+entity.grigori.name=Grigori
+entity.grigori.description=Aggressive lumps of flesh with bonecrushing teeth that float through the sky. Grigori are known to travel in large swarms and hunt using taste and smell.
+entity.grigori.habitat=These creatures can be found floating through the skies of the Nether.
+entity.grigori.combat=Grigori have a devastating bite that cause their victims to bleed, they are simple minded creatures that attack on instinct.
+# ========================================================================
+entity.gorgomite.name=Gorgomite
+entity.gorgomite.description=Small rock beetles, they are known to be quite aggressive but are scared of Manticores.
+entity.gorgomite.habitat=Gorgomites are often found in the desert where they come out at night.
+entity.gorgomite.combat=These beetles are just a nuisance at first with a simple weak bite, but they will rapidly call for other Gorgomites and will begin to swarm so it is vital that they are eliminated quickly.
+# ========================================================================
+entity.grue.name=Grue
+entity.grue.description=When it is pitch black, you are likely to be eaten by a Grue! It is impossible to see these Shadow Elementals in complete darkness. Cinder and Argus elementals can fuse to create powerful Grues.
+entity.grue.habitat=Being Shadow Elementals, Grues spawn where it is dark and usually deep underground.
+entity.grue.combat=Grues have a nasty melee attack that inflicts blindness on top of this they will occasionally teleport behind their victim. Also, if their victim has any good effects active, Grues will devour these effects and heal!
+# ========================================================================
+entity.gnekk.name=Gnekk
+entity.gnekk.description=Lean pale Imps that cannot fly but use their wings to whip deadly poisonous.
+entity.gnekk.habitat=Gnekks lurk deep in dark caverns, they have adapted very effectively to this environment.
+entity.gnekk.combat=Gnekks are incredibly fast, can climb and glide and attack rapidly at melee range inflicting plague.
+# ========================================================================
+entity.herma.name=Herma
+entity.herma.description=Giant crabs that usually keep to themselves unless something gets too close!
+entity.herma.habitat=These creatures are found in saltwater oceans and on beaches.
+entity.herma.combat=Herma attack with their strong claws.
+# ========================================================================
+entity.ignibus.name=Ignibus
+entity.ignibus.description=Large fiery Drake Dragons with a hot temper, searing claws, blazing breath and a burning desire to melt your face off!
+entity.ignibus.habitat=Ignibi (plural) can be found within very large lakes, they are rare but incredibly powerful.
+entity.ignibus.combat=These Drake Dragons unleash a powerful gout of Scorchfire and hot embers that will ignite the ground and anything hit. The Scorchfire will also inflict penetration weakening defenses.
+# ========================================================================
+entity.ika.name=Ika
+entity.ika.description=Slow snail-turtle-shellfish! Ika can be lured and bred with vegetables, however they can only survive on land for a small amount of time. Farm with care!
+entity.ika.habitat=Ika can be found in saltwater oceans and pools on beaches.
+entity.ika.combat=Ika are usually passive.
+# ========================================================================
+entity.ioray.name=Ioray
+entity.ioray.description=Beautiful creatures that gracefully swim at a very fast rate, they have a large collection of precious gems on their back, they are quite aggressive however.
+entity.ioray.habitat=These creatures can be found in saltwater oceans.
+entity.ioray.combat=Iorays have a deadly Water Jet attack that will strip away the defenses of anything hit.
+# ========================================================================
+entity.jabberwock.name=Jabberwock
+entity.jabberwock.description=Vicious deer like creatures that rip their prey to shreds.
+entity.jabberwock.habitat=Jabberwocks can be found stalking the mountains at night.
+entity.jabberwock.combat=Jabberwocks have hooked claws will cause a weight effect pulling their victim down, this prevents any jumping and increases falling damage, making Jabberwocks deadly in the mountains.
+# ========================================================================
+entity.jengu.name=Jengu
+entity.jengu.description=Water Elementals known as the protectors of pure water, they will attack anything they see as a threat to their water's purity.
+entity.jengu.habitat=Being Water Elementals, Jengu manifest from large bodies of water in the dark.
+entity.jengu.combat=Jengu attack be throwing large blasts of water, on impact these create a temporary pool of water.
+# ========================================================================
+entity.joust.name=Jouste
+entity.joust.description=Fierce large insects that stomp across the sandy dunes, despite their appearance, Joustes can be farmed for their meat by feeding them cactus green and similar plant extracts!
+entity.joust.habitat=These creatures can be found in deserts and mesas.
+entity.joust.combat=Joustes are usually peaceful but will bite back if hit and will follow the command of aggressive Alpha Joustes.
+# ========================================================================
+entity.joustalpha.name=Jouste Alpha
+entity.joustalpha.description=Larger Joustes and leaders, they will attack other Jouste Alphas on sight and will also command all none alphas, they are very hostile.
+entity.joustalpha.habitat=These creatures can be found in deserts and mesas.
+entity.joustalpha.combat=Joustes are fast and attack rapidly, they will also rally other none alpha Joustes to attack with them.
+# ========================================================================
+entity.khalk.name=Khalk
+entity.khalk.description=Large magma beasts known for their incredible defense and deadly offense. On death, their bodies break down into lava!
+entity.khalk.habitat=These beasts can be found deep in lakes of lava that are underground.
+entity.khalk.combat=Khalk have an incredibly powerful melee attack that inflicts smouldering, however they are incredibly slow. Be sure to keep back when they die as they turn into a small pool of temporary lava.
+# ========================================================================
+entity.kobold.name=Kobold
+entity.kobold.description=Small rodents that can't resist stealing items including torches! Killing them will cause them to drop their stolen goods.
+entity.kobold.habitat=These rodents can usually be found in the plains at night.
+entity.kobold.combat=Kobolds usually flee from other creatures but are known to attack people who are low on health.
+# ========================================================================
+entity.krake.name=Krake
+entity.krake.description=Bizarre amphibious creatures, Krakes are both deaf and blind, they taste the air with their mouths and are sensitive to vibrations.
+entity.krake.habitat=These aberrations are often found lurking by rivers or lakes as well as deep within forests.
+entity.krake.combat=Krakes are neutral and will only attack if agitated, sprinting near them will threaten them so be sure to avoid sprinting near these creatures as they are incredibly fast!
+# ========================================================================
+entity.lacedon.name=Lacedon
+entity.lacedon.description=Strange humanoid aquatic creatures, they are able to come onto land for a small amount of time and indefinitely if it is raining.
+entity.lacedon.habitat=Lacedon can be found in saltwater oceans.
+entity.lacedon.combat=Lacedon inflict a weight debuff when attacking which will usually end with their victim being dragged into the bottom of the ocean.
+# ========================================================================
+entity.lobber.name=Cherufe
+entity.lobber.description=Large lava brutes, Cherufes are incredibly powerful creatures.
+entity.lobber.habitat=These golems are found in lava lakes.
+entity.lobber.combat=Cherufes are named for their attacks where they lob large balls of magma at their victims, this very quickly begins to flood the area with temporary lava.
+# ========================================================================
+entity.lurker.name=Ostimien
+entity.lurker.description=Ostimien are able to completely blend in with their environment. They bite with a chaotic venom and once their victims are inflicted, they will hide, letting the poison do the work. Can be tamed as excellent pets, also great as Creeper guards!
+entity.lurker.habitat=These creatures can be found in forests and swamps but avoid cold areas.
+entity.lurker.combat=Ostimien bites will both poison and blind, after biting the Lurker will flee and attempt to hide allowing the poison to do it's work, they will attack again if the poison wears off.
+# ========================================================================
+entity.maka.name=Maka
+entity.maka.description=Large peaceful herbivores. Can be farmed with vegetables for their meat and leather. Be careful around alphas.
+entity.maka.habitat=Makas can be found in plans and savannas.
+entity.maka.combat=Makas are usually peaceful.
+# ========================================================================
+entity.makaalpha.name=Maka Alpha
+entity.makaalpha.description=Larger Makas, alphas are usually peaceful but will sometimes attack, they also spar with each other a lot. Alphas Makas will protect the rest of the herd, thus they making farming Makas tricky at times.
+entity.makaalpha.habitat=Maka Alphas can be found in plans and savannas.
+entity.makaalpha.combat=When aggravated, Alpha Makas have a powerful bite and spiked tail causing high melee damage.
+# ========================================================================
+entity.manticore.name=Manticore
+entity.manticore.description=Vicious bat-like beasts with scorpion like tails. They like to hunt down Gorgomites and other small prey.
+entity.manticore.habitat=Manticores fly around the desert skies at night.
+entity.manticore.combat=A Manticore's sting will leave you feeling very weak and hungry!
+# ========================================================================
+entity.maug.name=Maug
+entity.maug.description=Large wolf-like arctic bears.
+entity.maug.habitat=These beasts can be found in cold areas like snowy mountains or taigas.
+entity.maug.combat=Maugs have a powerful maul that will cripple causing slowness.
+# ========================================================================
+entity.morock.name=Morock
+entity.morock.description=Aggressive Wyvern Dragons, while they can't breathe fire, they still have a devastating bite!
+entity.morock.habitat=Morocks are found stalking the skies of open areas with a lot of tasty prey like plains, fortunately they are fairly rare.
+entity.morock.combat=Morocks are fast and bite hard, it is best to use their large size against them.
+# ========================================================================
+entity.nymph.name=Nymph
+entity.nymph.description=Whimsical Fae Elementals bursting with healing energy that heals all around them. They have a fondness for flowers! While harmless directly, they can cause trouble if scared. Jengu and Aegis Elementals can fuse to create powerful Nymphs.
+entity.nymph.habitat=Being Fae Elementals, Nymphs manifest around sources of life and as such manifest around flowers in sunlight.
+entity.nymph.combat=Nymphs are peaceful and will healing anything around them, this can be harmful to undead. If hit, Nymphs will flee firing flowers with sharp thorns that inflict bleed.
+# ========================================================================
+entity.pinky.name=Kathoga
+entity.pinky.description=Gluttonous beasts that especially love to devour live animals. Can be farmed and bred using live large animals. Baby Kathoga can be tamed and when matured, can be used as battle mounts.
+entity.pinky.habitat=Kathoga roam the Nether looking for anything to eat.
+entity.pinky.combat=These demons are incredibly aggressive but will prioritize bigger juicier prey which ca be used to pure them.
+# ========================================================================
+entity.pixen.name=Pixen
+entity.pixen.description=Mischievous little imps that lure their prey into a false sense of security before grouping up and eating them!
+entity.pixen.habitat=Pixens can usually be found roaming around forests during the day.
+entity.pixen.combat=These Imps will bombard their targets with balls of magic that apply random debuffs.
+# ========================================================================
+entity.quetzodracl.name=Quetzodracl
+entity.quetzodracl.description=Powerful flying wyvern dragons that still share a strong resemblance to their dragon ancestors the pterosaurs.
+entity.quetzodracl.habitat=These wyverns can be found flying over oceans.
+entity.quetzodracl.combat=Quetzodracl are incredibly power and will pickup their prey, it is best to use their size against them.
+# ========================================================================
+entity.quillbeast.name=Brucha
+entity.quillbeast.description=Large rodents with razor sharp quills on their back, they are easily threatened and will fire these quills from afar.
+entity.quillbeast.habitat=These beasts can be found in plains, savannas and forests.
+entity.quillbeast.combat=Brucha attack with their deadly quills that also cut through long grass.
+# ========================================================================
+entity.rahovart.name=Rahovart
+entity.rahovart.description=As the lord of the underworld, Rahovart's name alone strikes fear and terror into the hearts of even the most evil of beings.
+entity.rahovart.habitat=It is said that Rahovart is a very old and powerful Behemoth that originates from the Underworld a vast plane of Hell.
+entity.rahovart.combat=Rahovart is a powerful demon that attacks with a powerful Hellfire Cannon. Phase 1: Rahovart summons Belphs, overtime these Belphs become empowered and eventually explode giving Rahovart a Hellfire Orb. With 5 orbs, Rahovart will unleash a large wave of hellfire that causes great damage and burns away any good effects, it is important to kill the Belphs to reduce how much this happens.  Phase 2: Rahovart continues to summon Belphs but no longer empowers them instead he also summons Behemoth that get empowered, these will give him the orbs instead, at 5 orbs Rahovart will create a giant Hellfire Wall that rotates around him, this deals damage and removes effect like wave but lasts longer so kill the Behemoths as quickly as possible.  Phase 3: Rahovart will now create orbs on his own and will create Hellfire Barriers, these don't move but will eventually take over the area around Rahovart, however killing his minions will remove these barriers so if there are too many, kill the Belphs and Behemoth to lower the barriers.
+# ========================================================================
+entity.raiko.name=Raiko
+entity.raiko.description=Large sea birds known to dive into the ocean and snatch their prey.
+entity.raiko.habitat=These birds can be found flying over oceans.
+entity.raiko.combat=Raiko will pickup their prey, it is important to kill them before they carry you too far up. Eventually Raiko will release their prey with the weight effect, this can cause great falling damage but usually drops their victim into the deep ocean.
+# ========================================================================
+entity.reaper.name=Reaper
+entity.reaper.description=Twisted spirits that feed on death, Reapers are attracted to death and sometimes mistake people who are asleep as dead!
+entity.reaper.habitat=These spirits sometimes appear when a creature dies and sometimes when someone is attempting to sleep.
+entity.reaper.combat=Reapers have ranged attacks cause their victims to run around fear!
+# ========================================================================
+entity.reiver.name=Reiver
+entity.reiver.description=Icy Frost Elementals, Reivers seek to freeze everything around them. Jengu and Zephyr Elementals can fuse to create powerful Reivers.
+entity.reiver.habitat=Reivers are sometimes found roaming the night sky in cold areas and will also manifest from Frostfire spread by other creatures.
+entity.reiver.combat=These elementals fire icy frostbolts that freeze victims hit slowing their movement.
+# ========================================================================
+entity.remobra.name=Remobra
+entity.remobra.description=Small, flying Amphithere Dragons that spit venom.
+entity.remobra.habitat=These dragons can be found in swamps and dark forests.
+entity.remobra.combat=Remobra attack by spitting venom, if their spit hits their victim it inflicts plague, if it hits the ground, it will burst into a poisonous cloud.
+# ========================================================================
+entity.roa.name=Roa
+entity.roa.description=Ferocious sharks that dominate the sea! The brave or foolish attempt to tame them as mounts.
+entity.roa.habitat=These sharks can be found in saltwater oceans.
+entity.roa.combat=Roas create deadly whirlpools around them to pull their prey towards their deadly jaws! These can pull land creatures into the water as well, sneaking helps stop them pull you off the edge of a ledge.
+# ========================================================================
+entity.roc.name=Roc
+entity.roc.description=Rocs fly in the sky searching for prey at night.
+entity.roc.habitat=These birds usually fly over plains and savanna.
+entity.roc.combat=Rocs have strange tails that act as giant claws, they use these to pickup their vitims. Rocs are only hostile at night or in the dark however.
+# ========================================================================
+entity.salamander.name=Salamander
+entity.salamander.description=Deadly amphibians that have adapted to incredible temperatures. Tamed Salamanders make great mounts and even protect their rider from fire!
+entity.salamander.habitat=These creatures live in lakes of lava.
+entity.salamander.combat=Salamanders have a fiery bite that inflict smouldering.
+# ========================================================================
+entity.serpix.name=Serpix
+entity.serpix.description=Notorious ice worms that burrow through the frozen earth.
+entity.serpix.habitat=These worms can be found in large pools of icy ooze and cold areas like ice plains.
+entity.serpix.combat=Serpix attack by roaring a deadly blizzard, casting Frostfire upon the ground which both damages and slows.
+# ========================================================================
+entity.shade.name=Shade
+entity.shade.description=Large decrepit serpentine aberrations spawned from the very shadows themselves. There are legends of the four mighty Serpent Riders who rode these beasts into battle: D'sparil, Korax, Eidelon and Lycanite.
+entity.shade.habitat=These aberrations can be found in the darkest of places, deep underground.
+entity.shade.combat=Shades drain a bit of health when attacking and they have a horrific howl sending all that oppose them running in fear!
+# ========================================================================
+entity.shambler.name=Shambler
+entity.shambler.description=Overgrown shrub creatures. Can be tamed and are an excellent way to liven up the your garden!
+entity.shambler.habitat=Shamblers spawn in dense forests and jungles.
+entity.shambler.combat=Shamblers regenerate from water and can inflict paralysis, they are dangerous but very slow.
+# ========================================================================
+entity.silex.name=Silex
+entity.silex.description=Beautiful fish with scales encrusted with Lapis Lazuli. Silex are known to eat the Lapis off of each other's scales as well as natural formations from rocks.
+entity.silex.habitat=These fish are often found in freshwater lakes and rivers.
+entity.silex.combat=Silex are peaceful creatures.
+# ========================================================================
+entity.skylus.name=Skylus
+entity.skylus.description=Squid like creatures that form and live in tough shells. If damaged enough, their shells will break.
+entity.skylus.habitat=These creatures can be found in saltwater oceans.
+entity.skylus.combat=Skylus with grasp their prey and drag them deep underwater, their attacks also blind with ink. When their shell is destroyed they become a lot faster but also more vulnerable to damage.
+# ========================================================================
+entity.spectre.name=Spectre
+entity.spectre.description=Mysterious Void Elementals, they seek to break down reality itself into nothing. Aegis and Argus Elementals can fuse to create a powerful Spectre.
+entity.spectre.habitat=Being Void Elementals, Spectres manifest close to the void very deep underground and in the skies of the End.
+entity.spectre.combat=Spectres will attempt to suck in their prey and will attack at close range.
+# ========================================================================
+entity.spriggan.name=Spriggan
+entity.spriggan.description=Mystical Arbour Elementals, Spriggans protect nature against those who would threaten it. Jengu and Geonach Elementals can fuse to create powerful Spriggans.
+entity.spriggan.habitat=Being Arbour Elementals, Spriggans can be found occasionally wandering forests and rapidly manifest in the defense of plant life so take care when harvesting plants.
+entity.spriggan.combat=Spriggans fire powerful lasers that are poisonous and drain life healing the Spriggan.
+# ========================================================================
+entity.strider.name=Stryder
+entity.strider.description=These giant amphibious creatures somewhat resemble a shrimp, they are feared for their dreadful tentacle claws from which they ensnare and consume their victims.
+entity.strider.habitat=These creatures are usually found in large lakes or rivers.
+entity.strider.combat=Stryder will pickup their victims and slowly drain the life out of them, they are also fast when in the water or if it raining.
+# ========================================================================
+entity.sutiramu.name=Sutiramu
+entity.sutiramu.description=Aggressive giant scorpions.
+entity.sutiramu.habitat=These creatures can be found roaming the desert and mesa.
+entity.sutiramu.combat=Sutiramu attack with a venom that induce hunger.
+# ========================================================================
+entity.sylph.name=Sylph
+entity.sylph.description=Holy Aether Elementals that curse those who trespass upon holy ground. Zephyr and Aegis can fuse to create powerful Sylphs.
+entity.sylph.habitat=Being Aether Elementals, Sylphs manifest in areas of worship such as Pyramids or Temples.
+entity.sylph.combat=Sylphs will release a large wave of Aether Magic smiting those hit where they will burn in the sunlight!
+# ========================================================================
+entity.tarantula.name=Lycosa
+entity.tarantula.description=Poisonous jumping spiders that leave behind a trail of temporary sticky green webbing.
+entity.tarantula.habitat=Lycosa can be found in jungles and swamps.
+entity.tarantula.combat=These spiders have a poisonous bite and jump frequently, it is important to be wary of their sticky green webs.
+# ========================================================================
+entity.thresher.name=Thresher
+entity.thresher.description=Giant majestic water creatures with a massive appetite and powerful fins capable of creating huge whirlpools to pull in their prey! Very dangerous!
+entity.thresher.habitat=These aquatic creatures can be found in both freshwater lakes and large rivers as well as saltwater oceans.
+entity.thresher.combat=Threshers create large whirlpools that pull in their prey from all around, it is even unsafe on land as they will also pull their prey up into the air towards them.
+# ========================================================================
+entity.treant.name=Treant
+entity.treant.description=Large guardians of the forest, very much like Ents only much bigger and stronger.
+entity.treant.habitat=Although rare, Trents can be found in dense forests.
+entity.treant.combat=Treants cause paralysis, drain health when attacking and regenerate from water. Axes and similar tools are very effective.
+# ========================================================================
+entity.tremor.name=Tremor
+entity.tremor.description=Explosive Quake Elementals, Tremors are incredibly destructive. Geonach and Argus Elementals can fuse to create powerful Tremors.
+entity.tremor.habitat=Being Quake Elementals, Tremors manifest from combustion and loud sounds and so occasionally manifest from large explosions.
+entity.tremor.combat=Tremors attack by creating small explosions around them, they are fairly weak but can be quite destructive and should be eliminated quickly.
+# ========================================================================
+entity.triffid.name=Triffid
+entity.triffid.description=Large carnivorous plants, slow but incredibly poisonous and deadly!
+entity.triffid.habitat=These plant creatures often lurk in swamps due to it being moist, not too cold and full of prey for them to devour.
+entity.triffid.combat=These creatures are very slow but should be handled with care as their attacks are incredibly strong and spread plague. Axes are very effective, but take heed for they will heal in water!
+# ========================================================================
+entity.tpumpkyn.name=Tpumpkyn
+entity.tpumpkyn.description=It is like a pumpkin...
+entity.tpumpkyn.habitat=Tpumpkyn like to be around other Tpumpkyn...
+entity.tpumpkyn.combat=Your soul, is tasty for Tpumpkyn...
+# ========================================================================
+entity.trite.name=Trite
+entity.trite.description=Small and fast demonic creatures that appear to be a brain with spider-like legs.
+entity.trite.habitat=Trites roam all over the nether, it is said they come from Purgatory a Hell Plane of endless flesh.
+entity.trite.combat=Trites are very weak but can be hard to hit due to their speed and small size, their bites also apply wither.
+# ========================================================================
+entity.troll.name=Troll
+entity.troll.description=In the sun a Troll's skin is as hard as stone, in the dark a gruesome green flesh. Trolls are known to be destructive.
+entity.troll.habitat=These brutes are often found living up in the mountains.
+entity.troll.combat=Trolls have a strong melee attack and will destroy soft terrain around them. When in sunlight they become as hard as stone and have higher defense but are vulnerable to pickaxes, out of the sun they are lose their defense and are very weak to fire.
+# ========================================================================
+entity.uvaraptor.name=Uvaraptor
+entity.uvaraptor.description=Colorful raptors with extreme jumping and gliding abilities. Can be tamed as useful high jumping mounts, can almost sustain flight.
+entity.uvaraptor.habitat=These raptors are commonly found in jungles.
+entity.uvaraptor.combat=Uvaraptors leap into the air and attack their prey making them trickier to hit but also vulnerable to ranged attacks.
+# ========================================================================
+entity.vapula.name=Vapula
+entity.vapula.description=Powerful Gravity Elementals that embody the essence of structure itself. Geonach and Aegis Elementals can fuse to create powerful Vapula.
+entity.vapula.habitat=Being Gravity Elementals, Vapula manifest from sources of compression and structure where they are often mount amongst gemstones like diamonds.
+entity.vapula.combat=Vapula fire a round of sharp crystal projectiles from their back rapidly, once the round is fired they must recharge making them vulnerable. pickaxes and similar tools are very effective.
+# ========================================================================
+entity.ventoraptor.name=Ventoraptor
+entity.ventoraptor.description=Swift raptors that glide at incredible speeds. Can be tamed as one of the fastest known mounts.
+entity.ventoraptor.habitat=These raptors like to hunt across the plains.
+entity.ventoraptor.combat=Ventoraptors are very fast and will leap towards their prey and attack.
+# ========================================================================
+entity.vespid.name=Vespid
+entity.vespid.description=Invasive giant wasps with a poisonous sting. Vespid alone aren't much of a problem but in groups or with a Queen Vespid, they can be very dangerous. They are known to build hives when near a Queen.
+entity.vespid.habitat=These insects live in tropical areas like jungles.
+entity.vespid.combat=Vespids are fast but fairly weak, their stings are poisonous. They are often in groups and can have dangerous numbers when in a hive.
+# ========================================================================
+entity.vespidqueen.name=Vespid Queen
+entity.vespidqueen.description=Large Vespids that are protected by a swarm of standard Vespids. Queens will have nearby standard Vespids build a hive for them. Vespid Queens are known to inject eggs into Conba turning them into infected moving nests waiting to hatch!
+entity.vespidqueen.habitat=These insects live in tropical areas like jungles.
+entity.vespidqueen.combat=Vespid Queens are tougher than regular Vespids with a more powerful sting that is poisonous. They are usually surrounded by regular Vespids which will prioritize protecting their Queen above anything else.
+# ========================================================================
+entity.volcan.name=Volcan
+entity.volcan.description=Searing Lava Elementals, Volcans will melt everything in their path! Cinders and Geonach Elementals can fuse to create powerful Volcans.
+entity.volcan.habitat=Being Lava Elementals, Volcans manifest around large volumes of lava underground, they are quite rare.
+entity.volcan.combat=Volcans will melt any stone around them into lava so must be eliminated fast. Volcans attack at melee and apply the smouldering effect, however they also have a heat aura burning anything close to them.
+# ========================================================================
+entity.vorach.name=Vorach
+entity.vorach.description=Foul demons that produce a deadly substance from the back of their heads, their tails evolved into a third leg to allow for climing.
+entity.vorach.habitat=Vorach lurk around the dark corners of the nether.
+entity.vorach.combat=These demons throw the substance that grows from the back of theirs heads, these projectiles have a mind of their own and will home in on the Vorach's target.
+# ========================================================================
+entity.warg.name=Warg
+entity.warg.description=Large wolf-like beasts with a vicious bite! They are known to hunt in packs. When tamed they make fantastic mounts!
+entity.warg.habitat=These beasts often roam forests.
+entity.warg.combat=Wargs have a deadly leap that briefly paralyses anything near their landing location.
+# ========================================================================
+entity.wendigo.name=Wendigo
+entity.wendigo.description=Large icy brutes known for leaving a trail of Frostfire in their wake!
+entity.wendigo.habitat=These brutes can be found in cold areas like ice plains a well as large pools of icy ooze.
+entity.wendigo.combat=Wendigo are slow but hurl Tundra Blasts which create pools of icy ooze on impact. They also leave Frostfire where they walk which is known to manifest Reivers if left unchecked.
+# ========================================================================
+entity.wildkin.name=Wildkin
+entity.wildkin.description=Powerful bipedal owl-bear beasts that are fast and swift for their size.
+entity.wildkin.habitat=These beasts are known to live in mountains and cold areas like ice plains.
+entity.wildkin.combat=Wildkin have a strong maul attack that inflicts the weight effect.
+# ========================================================================
+entity.wisp.name=Wisp
+entity.wisp.description=Bright Light Elementals, Wisps can sometimes be seen playing catch with each other throwing a deadly ball of radiation. While they're friendly, it is not wise to provoke a Wisp. Cinder and Aegis Elementals can fuse to create powerful Wisps.
+entity.wisp.habitat=being Light Elementals, Wisps manifest out in direct sunlight.
+entity.wisp.combat=Wisps will throw a ball of light radiation at their victims, on impact this will cause them to glow revealing them to any nearby potential predators. Wisps also have a light aura that cause anything near them to glow but also grants night vision, they will also burn nearby undead.
+# ========================================================================
+entity.wraamon.name=Wraamon
+entity.wraamon.description=Deadly rodents loaded with chaotic energy, they emit this through the spines on their back in order to attack their prey. Very few creatures dare attack these dangerous rodents.
+entity.wraamon.habitat=These rodents live deep underground, it is said they come through tiny random chaotic portals that occasionally show up through the world, where they portals lead is a mystery.
+entity.wraamon.combat=Wraamon can be a big menace, their bites inflict instability, a powerful chaos curse that causes the afflicted to randomly jolt about the place. They are fairly weak but small and fast.
+# ========================================================================
+entity.wraith.name=Wraith
+entity.wraith.description=Wicked Nether Elementals that are a symbol of pain and suffering. Zephyr and Argus Elementals can fuse to create a powerful Wraith.
+entity.wraith.habitat=Being Nether Elementals, Wraiths manifest in areas of concentrated evil such as the skies of the Nether.
+entity.wraith.combat=Wraiths are fast and will fly recklessly to their victim and attack on impact, they are fairly weak but explode upon their destruction.
+# ========================================================================
+entity.xaphan.name=Xaphan
+entity.xaphan.description=Corrosive Acid Elementals that embody the aspect of breaking down and dissolving away. Cinders and Jengu Elementals can fuse to create a powerful Xaphan.
+entity.xaphan.habitat=Being Acid Elementals, Xaphan manifest from mixtures such as when water meets lava.
+entity.xaphan.combat=Xaphan are constantly dripping acid beneath them and will release a ring of acid splashes all around them when attacking. Their acid is damaging and inflicts penetration increasing any incoming damage.
+# ========================================================================
+entity.yale.name=Yale
+entity.yale.description=Strange fluffy ram-like beasts, however under the coat of wool, they are not what they seem. Yales provide wool which can be obtained using shears, they can also be farmed with vegetables. Their horns are actually strange limbs and they have tiny hooked arms that they use to sift through grass with.
+entity.yale.habitat=These beasts can be found roaming the mountains.
+entity.yale.combat=Yales are usually passive.
+# ========================================================================
+entity.bobeko.name=Bobeko
+entity.bobeko.description=Large frosty mammals that like to eat the frozen vegetation of the arctic. They can be farmed using vegetables, but watch out for their frost clouds. Bobeko milk is a delicacy!
+entity.bobeko.habitat=These beasts often roam cold and snowy areas such as taiga.
+entity.bobeko.combat=Bobekos are usually passive.
+# ========================================================================
+entity.zephyr.name=Raidra
+entity.zephyr.description=Fierce Electric Elementals with a powerful electric field around them. Cinders and Zephyr Elementals can fuse to create powerful Raidra.
+entity.zephyr.habitat=Being Electric Elementals, Raidra manifest from electric weather such as thunderstorms, they can also rarely manifest during regular rainstorms as well.
+entity.zephyr.combat=Raidra will shock any foe close to them and direct attacks from them cause paralysis.
+# ========================================================================
+entity.zoataur.name=Zoataur
+entity.zoataur.description=Zoataur are incredibly resilient drakes, while they are too bulky to be able to fly, their wings are incredibly dense and are used to block enemy attacks.
+entity.zoataur.habitat=These beasts can be found roaming open plains and deserts.
+entity.zoataur.combat=Zoataur are slow but hit hard, they will also block with their wings so it is best to hit them with slow heavy attacks when they are exposed. They can't attack when blocking.
 # ========================================================================
 creaturetype.spawn=Spawn
 creaturetype.beast.name=Beast
 creaturetype.avian.name=Avian
-creaturetype.arthropod.name=Arthropod
+creaturetype.amphibian.name=Amphibian
+creaturetype.reptile.name=Reptile
+creaturetype.insect.name=Insect
+creaturetype.arachnid.name=Arachnid
 creaturetype.plant.name=Plant
 creaturetype.aquatic.name=Aquatic
 creaturetype.aberration.name=Aberration
 creaturetype.undead.name=Undead
-creaturetype.brute.name=Brute
+creaturetype.anthronian.name=Anthronian
 creaturetype.imp.name=Imp
 creaturetype.demon.name=Demon
 creaturetype.angel.name=Angel
 creaturetype.elemental.name=Elemental
 creaturetype.dragon.name=Dragon
 creaturetype.worm.name=Worm
+creaturetype.golem.name=Golem
 # ========================================================================
 death.attack.ooze=%1$s was frozen in the icy ooze!
 death.attack.acid=%1$s was painfully dissolved by acid!
@@ -1462,6 +1575,24 @@ effect.freezeaura.description=Slows enemies around the affected.
 effect.envenom=Envenom
 effect.envenom.description=Adds poison to any attacks.
 # ========================================================================
+element.xeno.name=Xeno
+element.xeno.description=As a Super element,Xeno is an unstable element which converts regular matter into Xeno magic on contact but is very unstable and decays quickly into chaos magic.
+#
+element.coda.name=Coda
+element.coda.description=As a Super element,Coda is able to rearrange the order of events and efficiently speed up and slow down time.
+#
+element.bose.name=Bose
+element.bose.description=As a Super element,Bose is a tightly packed set of molecules which are so dense they act as one particle, it is almost indestructible.
+#
+element.mote.name=Mote
+element.mote.description=As a Super element,Mote is an element of disintegration, blasts of it turn things into infinitely fine dust.
+#
+element.murati.name=Murati
+element.murati.description=As a Super element,Murati is a form of water which has a swarming property, it acts like a superfluid so it ripples indefinitely and swarms around things.
+#
+element.glasma.name=Glasma
+element.glasma.description=As a Super element,Glasma is an extremely hot substance forged with two fire crystals (which in turn are forged by the twin suns of the eldritch expanse), it flows upwards and burns everything it touches.
+#
 element.fire.name=Fire
 element.fire.description=A base element that represents plasma and raw energy. It can be extracted from the para elements: Acid, Lava, Lightning, Light and Shadow.
 #
@@ -1469,13 +1600,13 @@ element.water.name=Water
 element.water.description=A base element that represents fluids, predominantly water itself. Water can be extracted from the para elements: Acid, Arbour, Frost, Fae and Poison.
 #
 element.earth.name=Earth
-element.earth.description=A base element that represents solid form, from the dirt to rocks, crystals and even metal or bone. It can be extracted from the para elements: Lava, Arbour, Phase, Gravity and Quake.
+element.earth.description=A base element that represents solid form, from the dirt to rocks, crystals and even metal or bone. It can be extracted from the para elements: Lava, Arbour, Phase, arcane and Quake.
 #
 element.air.name=Air
 element.air.description=A base element that represents gas but is often known only for its ability to control the flow of wind. It can be extracted from the para elements: Lightning, Ice, Phase, Aether and Nether.
 #
 element.order.name=Order
-element.order.description=A base element that represents sequence and balance, while these are very hypothetical concepts, Order has a very physical presence in magical universes with a basic form being raw force. Order can be extracted from the para elements: Light, Fae, Gravity, Aether and Void.
+element.order.description=A base element that represents sequence and balance, while these are very hypothetical concepts, Order has a very physical presence in magical universes with a basic form being raw force. Order can be extracted from the para elements: Light, Fae, arcane, Aether and Void.
 #
 element.chaos.name=Chaos
 element.chaos.description=A base element that represents entropy, growth and destruction. It can be extracted from the para elements: Shadow, Poison, Quake, Nether and Void.
@@ -1510,8 +1641,8 @@ element.poison.description=A para element that represents chemical substances, u
 element.phase.name=Phase
 element.phase.description=A para element that represents phase shifting or spiritual reality, a space layered on top of the physical world, it is what spirits are made of and use. Phase can be fused from the base elements Earth and Air as it embodies the solid form of Earth and the flowing non-solid of Air.
 #
-element.gravity.name=Gravity
-element.gravity.description=A para element that represents gravitation, magnetism, bonding, compression and artificial structure. Gravity can be fused from Earth and Order where it embodies the solid physical presence of Earth and the structure and laws of Order.
+element.arcane.name=Arcane
+element.arcane.description=A para element that represents gravitation, magnetism, bonding, compression and artificial structure. arcane can be fused from Earth and Order where it embodies the solid physical presence of Earth and the structure and laws of Order.
 #
 element.quake.name=Quake
 element.quake.description=A para element that represents vibration, sound, combustion and destruction. Quake can be fused from Earth and Chaos where Earth embodies solid form which is then broke apart by Chaos.
@@ -1524,7 +1655,9 @@ element.nether.description=A para element that represents corruption, demonism, 
 #
 element.void.name=Void
 element.void.description=A para element that represents nothingness and removal. Void can be fused from Order and Chaos where Order embodies structure and consistency which is cancelled out by Chaos which embodies entropy and randomness.
+f:\projects\lycanites mobs 1.12.2\src\main\resources\assets\lycanitesmobs\lang\en_us\extract.txt
 # ========================================================================
+[Error] - File could not be written...
 # ========================================================================
 item.whirlwindcharge.name=Whirlwind Charge
 item.whirlwindcharge.description=Use to release a ring of whirlwinds or fire from a dispenser.
@@ -1549,6 +1682,9 @@ item.boulderblastcharge.description=Use to throw a giant boulder! Can be fired f
 #
 item.acidsplashcharge.name=Acid Splash Charge
 item.acidsplashcharge.description=Use to fire a wave of acid. Can also be fired from a dispenser.
+#
+item.acidglobcharge.name=Acid Glob Charge
+item.acidglobcharge.description=Use to fire a glob of acid. Can also be fired from a dispenser.
 #
 item.faeboltcharge.name=Faebolt Charge
 item.faeboltcharge.description=Use to fire a bolt of fae energy, this deals no damage but applies the lifeleak debuff converting all damage dealt into healing. Can also be fired from a dispenser.
@@ -1622,10 +1758,35 @@ item.waterjetcharge.description=Use to fire a water jet or fire from a dispenser
 item.devilstarcharge.name=Devilstar Charge
 item.devilstarcharge.description=Use to throw a small devilstar. Can also be rapid fired from a dispenser.
 #
+item.smitefireballcharge.name=Smite Fireball Charge
+item.smitefireballcharge.description=Use to launch a ball of smitefire. Can also be fired from a dispenser.
+#
+item.primefireember.name=Prime Ember Charge
+item.primefireember.description=Use to throw a small primefire ember. Can also be rapid fired from a dispenser.
+#
 # ========================================================================
 item.equipment.name=Crafted Equipment
 item.equipment.description=
 item.equipmentpart.description=This item can be used to create powerful equipment using an Equipment Forge or can be crafted into a useful resource.
+#
+equipment.slot.base=Base
+equipment.slot.head=Head
+equipment.slot.blade=Blade
+equipment.slot.pike=Pike
+equipment.slot.axe=Axe
+equipment.slot.jewel=Jewel
+equipment.slot.pommel=Pommel
+#
+equipment.harvest.type.pickaxe=Pickaxe
+equipment.harvest.type.axe=Axe
+equipment.harvest.type.shovel=Shovel
+equipment.harvest.type.sword=Sword
+equipment.harvest.type.shears=Shears
+equipment.harvest.type.hoe=Hoe
+#
+equipment.harvest.shape.block=Block
+equipment.harvest.shape.random=Random
+equipment.harvest.shape.cross=Cross
 #
 item.woodenrod.name=Wooden Rod
 item.woodenhilt.name=Wooden Guard
@@ -1642,14 +1803,14 @@ item.grueclaw.name=Grue Claw
 item.geonachspear.name=Geonach Spear
 item.remobrawing.name=Remobra Wing
 item.astarothclaw.name=Astaroth Claw
-item.zephyrblade.name=Zephyr Blade
+item.raidrablade.name=Raidra Blade
 item.sutiramustinger.name=Sutiramu Stinger
 item.wendigoantler.name=Wendigo Antler
 item.clinkscythe.name=Clink Scythe
 item.vespidstinger.name=Vespid Stinger
 item.argustail.name=Argus Tail
 item.wargskull.name=Warg Skull
-item.djinncloud.name=Djinn Cloud
+item.zephyrcloud.name=Zephyr Cloud
 item.ventoraptorskull.name=Ventoraptor Skull
 item.uvaraptorskull.name=Uvaraptor Skull
 item.darklingskull.name=Darkling Skull
@@ -1665,11 +1826,32 @@ item.vapulacrystal.name=Vapula Crystal
 item.reiverhorns.name=Reiver Horns
 item.eechetikarm.name=Eechetik Arm
 item.gammasphere.name=Gamma Sphere
+item.apollyonclaw.name=Apollyon Claw
+item.behemophethand.name=Behemophet Hand
+item.naxiriseye.name=Naxiris Eye
+item.belphegorarm.name=Belphegor Arm
+item.malwratheye.name=Malwrath Eye
+item.conbabutt.name=Conba Butt
+item.epionwing.name=Epion Wing
+item.eyewigeye.name=Eyewig Eye
+item.frostweaverleg.name=Frostweaver Leg
+item.ioraystinger.name=Ioray Stinger
+item.lacedonhead.name=Lacedon Head
+item.bruchaquill.name=Brucha Quill
+item.reaperclaw.name=Reaper Claw
+item.serpixmandible.name=Serpix Mandible
+item.wildkinarm.name=Wildkin Arm
+item.cherufecore.name=Cherufe Core
+item.stryderheart.name=Stryder Heart
+item.afritlung.name=Afrit Lung
+item.arixbrain.name=Arix Brain
+item.erepededrill.name=Erepede Drill
+item.ettinclub.name=Ettin Club
 # ========================================================================
 item.raw_arisaur_meat.name=Raw Arisaur Meat
 item.raw_arisaur_meat.description=A beef-like meat. 'Stunningly good' to eat raw!
 #
-item.cooked_joust_meat.name=Cooked Joust Meat
+item.cooked_joust_meat.name=Cooked Jouste Meat
 item.cooked_joust_meat.description=A chicken-like meat. Spicy! Tastes like peri peri chicken!
 #
 item.amber_cake.name=Amber Cake
@@ -1724,7 +1906,7 @@ item.raw_ika_meat.name=Raw Ika Meat
 item.raw_ika_meat.description=A fish-like meat! It feels very heavy.
 #
 item.seashell_maki.name=Seashell Maki
-item.seashell_maki.description=A taste infusion from the deep blue sea! Applies water breathing!
+item.seashell_maki.description=A taste infusion from the deep blue sea! Improves swimming speed!
 #
 item.cooked_chupacabra_meat.name=Cooked Chupacabra Meat
 item.cooked_chupacabra_meat.description=A beef-like meat. While the creature it comes from is disgusting, once cooked, this rich meat is absolutely delicious!
@@ -1738,8 +1920,8 @@ item.moss_pie.description=A hearty, rich meaty pie! Applies regeneration.
 item.cooked_aspid_meat.name=Cooked Aspid Meat
 item.cooked_aspid_meat.description=A beef-like meat. Crumbles apart in the mouth, delicious, a bit like slow cooked beef!
 #
-item.cooked_yeti_meat.name=Cooked Yeti Meat
-item.cooked_yeti_meat.description=A pork-like meat. Incredibly juicy.
+item.cooked_bobeko_meat.name=Cooked Bobeko Meat
+item.cooked_bobeko_meat.description=A pork-like meat. Incredibly juicy.
 #
 item.raw_chupacabra_meat.name=Raw Chupacabra Meat
 item.raw_chupacabra_meat.description=A beef-like meat. Scaly flesh that oozes with blood. Eating it raw can cause terrifying hallucinations!
@@ -1753,8 +1935,8 @@ item.raw_aspid_meat.description=A beef-like meat. Smells like beef seasoned with
 item.cooked_silex_meat.name=Cooked Silex Meat
 item.cooked_silex_meat.description=A fish-like meat. Very refreshing!
 #
-item.raw_yeti_meat.name=Raw Yeti Meat
-item.raw_yeti_meat.description=A pork-like meat. It feels very cold...
+item.raw_bobeko_meat.name=Raw Bobeko Meat
+item.raw_bobeko_meat.description=A pork-like meat. It feels very cold...
 #
 item.cooked_concapede_meat.name=Cooked Concapede Meat
 item.cooked_concapede_meat.description=A rabbit-like meat. Tastes like rabbit! Does not look like it though!
@@ -1762,7 +1944,7 @@ item.cooked_concapede_meat.description=A rabbit-like meat. Tastes like rabbit! D
 item.cooked_arisaur_meat.name=Cooked Arisaur Meat
 item.cooked_arisaur_meat.description=A beef-like meat. Imbued with the gift of nature with impurities cooked out, increases all healing received.
 #
-item.raw_joust_meat.name=Raw Joust Meat
+item.raw_joust_meat.name=Raw Jouste Meat
 item.raw_joust_meat.description=A chicken-like meat. Looks chewy and smells like feet, applies movement slowdown, best cook it.
 #
 item.pale_soup.name=Pale Soup
@@ -1790,8 +1972,18 @@ item.caecilian_ramen.description=A delightful dish with a fresh fried egg on top
 item.soulgazer.name=Soulgazer
 item.soulgazer.description=Use on a creature to add it to the Beastiary. To open your Beastiary, either click on the Beastiary tab of your survival inventory or press the Beastiary key (set via the Controls menu).
 #
+item.soul_contract.name= Soul Contract
+item.soul_contract.description= This Contract is signed using magic to bind souls. The owner of a pet must first use this contract on their pet to bind it, then the new owner must take this contract and also click on the pet to transfer the soulbind.
+item.lycanitesmobs.soul_contract.bound= Bound To:
+item.lycanitesmobs.soul_contract.owner= Owned By:
+item.lycanitesmobs.soul_contract.offline= Owner not present.
+item.lycanitesmobs.soul_contract.released= The bound creature has been released, this contract is void.
+#
 item.mobtoken.name=Mob Token
 item.mobtoken.description=A cosmetic item used to display creature models as achievement icons, etc.
+#
+item.wraithsigil.name=Wraith Sigil
+item.wraithsigil.description=A preserved Wraith in stasis flowing with Nether magic, by wielding this, one can unleash the fury of this Nether Elemental!
 #
 #
 # ========== Consumables ==========
@@ -1817,7 +2009,7 @@ item.bucketrabbitooze.name=Rabbitooze Bucket
 item.bucketrabbitooze.description=Just as cold and dangerous as regular Ooze but no mobs spawn in this and can be renewed like water.
 #
 item.bucketmoglava.name=Moglava Bucket
-item.bucketmoglava.description=Clearer that regular lava, flows slightly faster and no mobs spawn in this. Can be renewed like water.
+item.bucketmoglava.description=Clearer than regular lava, flows slightly faster and no mobs spawn in this. Can be renewed like water.
 #
 item.bucketacid.name=Acid Bucket
 item.bucketacid.description=A deadly substance, causes penetration and applies damage over time.
@@ -1831,6 +2023,9 @@ item.bucketpoison.description=A foul liquid, causes plague.
 item.bucketvesspoison.name=Vesspoison Bucket
 item.bucketvesspoison.description=Just as foul as regular poison but no mobs spawn in this and can be renewed like water.
 #
+#
+item.bucketveshoney.name=Veshoney Bucket
+item.bucketveshoney.description=A tasty, sticky and healthy fluid formed and found in Vespid hives, causes slowness.
 #
 # ========== Seasonal ==========
 item.halloweentreat.name=Halloween Treat
@@ -1881,8 +2076,8 @@ item.soulstone_avian.description=The swift soul of an Avian creature resides wit
 item.soulstone_beast.name=Beast Soulstone
 item.soulstone_beast.description=The vicious soul of a Beast resides within this Soulstone, unleash it and make it yours!
 #
-item.soulstone_brute.name=Brute Soulstone
-item.soulstone_brute.description=The mighty soul of a Brute resides within this Soulstone, unleash it and make it yours!
+item.soulstone_anthronian.name=Anthronian Soulstone
+item.soulstone_anthronian.description=The mighty soul of an Anthronian resides within this Soulstone, unleash it and make it yours!
 #
 item.soulstone_demon.name=Demon Soulstone
 item.soulstone_demon.description=The wicked soul of a Demon resides within this Soulstone, unleash it and make it yours!
@@ -1905,6 +2100,24 @@ item.soulstone_undead.description=The tireless soul of an Undead creature reside
 item.soulstone_worm.name=Worm Soulstone
 item.soulstone_worm.description=The relentless soul of a Worm resides within this Soulstone, unleash it and make it yours!
 #
+item.soulstone_amphibian.name=Amphibian Soulstone
+item.soulstone_amphibian.description=The strange soul of an Amphibian resides within this Soulstone, unleash it and make it yours!
+#
+item.soulstone_arachnid.name=Arachnid Soulstone
+item.soulstone_arachnid.description=The twisted soul of an Arachnid resides within this Soulstone, unleash it and make it yours!
+#
+item.soulstone_insect.name=Insect Soulstone
+item.soulstone_insect.description=The creepy soul of an Insect resides within this Soulstone, unleash it and make it yours!
+#
+item.soulstone_reptile.name=Reptile Soulstone
+item.soulstone_reptile.description=The majestic soul of a Reptile resides within this Soulstone, unleash it and make it yours!
+#
+item.soulstone_golem.name=Golem Soulstone
+item.soulstone_golem.description=The mechanical soul of a Golem resides within this Soulstone, unleash it and make it yours!
+#
+item.soulstone_slime.name=Slime Soulstone
+item.soulstone_slime.description=The remnant soul of a Slime resides within this Soulstone, unleash it and make it yours!
+#
 #
 # ========== Spawns ==========
 item.forestspawn.name=Spawn
@@ -1920,85 +2133,6 @@ item.shadowspawn.name=Spawn
 item.infernospawn.name=Spawn
 item.demonspawn.name=Spawn
 item.freshwaterspawn.name=Spawn
-# ========================================================================
-item.aquapulsescepter.name=Aqua Pulse Scepter
-item.aquapulsescepter.description=Low Damage, Charge Up, Applies Penetration, Places Water
-#
-item.scorchfirescepter.name=Scorchfire Scepter
-item.scorchfirescepter.description=Low Damage, Rapid Fire, Applies Fire, Places Scorchfire
-#
-item.devilstarscepter.name=Devilstar Scepter
-item.devilstarscepter.description=Low Damage, Fast Rapid Fire
-#
-item.wraithsigil.name=Wraith Sigil
-item.wraithsigil.description=This skull is full to the brim with evil Wraiths! Use to fire a wave of angry Wraiths forwards towards your victim! Results can be explosive!
-#
-item.quillscepter.name=Quill Scepter
-item.quillscepter.description=Mid Damage, Rapid Fire
-#
-item.mudshotscepter.name=Mudshot Scepter
-item.mudshotscepter.description=Mid Damage, Rapid Fire, Applies Weakness
-#
-item.venomshotscepter.name=Venom Shot Scepter
-item.venomshotscepter.description=Low Damage, Rapid Fire, Applies Poison, Places Poison Clouds
-#
-item.blizzardscepter.name=Blizzard Scepter
-item.blizzardscepter.description=Mid Damage, Spray Fire, Places Icefire
-#
-item.bloodleechscepter.name=Bloodleech Scepter
-item.bloodleechscepter.description=Low Damage, Rapid Fire, Drains Health
-#
-item.waterjetscepter.name=Water Jet Scepter
-item.waterjetscepter.description=Mid Damage, Laser, Applies Penetration
-#
-item.doomfirescepter.name=Doomfire Scepter
-item.doomfirescepter.description=Mid Damage, Rapid Fire, Applies Fire, Places Fire
-#
-item.frostboltscepter.name=Frostbolt Scepter
-item.frostboltscepter.description=Mid Damage, Rapid Fire, Applies Move Slowdown
-#
-item.poopscepter.name=Poop Scepter
-item.poopscepter.description=Low Damage, Rapid Fire, Applies Slowness and Nausea, Places Poop Clouds
-#
-item.scythescepter.name=Scythe Scepter
-item.scythescepter.description=Mid Damage, Triple Pulse Fire
-#
-item.tundrascepter.name=Tundra Scepter
-item.tundrascepter.description=High Damage, Charge Up, Places Ooze
-#
-item.magmascepter.name=Magma Scepter
-item.magmascepter.description=High Damage, Charge Up, Applies Fire, Places Lava
-#
-item.hellfirescepter.name=Hellfire Scepter
-item.hellfirescepter.description=High Damage, Charge Up, Applies Fire, Places Hellfire
-#
-item.emberscepter.name=Ember Scepter
-item.emberscepter.description=Mid Damage, Spray Fire, Applies Fire
-#
-item.icefirescepter.name=Icefire Scepter
-item.icefirescepter.description=Low Damage, Rapid Fire, Places Icefire
-#
-item.poisonrayscepter.name=Poison Ray Scepter
-item.poisonrayscepter.description=Mid Damage, Laser, Applies Poison
-#
-item.arcanelaserstormscepter.name=Arcane Laser Storm Scepter
-item.arcanelaserstormscepter.description=High Damage, Charge Up, Lasers Fly Off
-#
-item.demoniclightningscepter.name=Demonic Lightning Scepter
-item.demoniclightningscepter.description=High Damage, Charge Up, Applies Wither, Damaging Sparks Fly Off
-#
-item.spectralboltscepter.name=Spectral Bolt Scepter
-item.spectralboltscepter.description=Medium Damage, Rapid Fire, Causes Fear
-#
-item.lifedrainscepter.name=Life Drain Scepter
-item.lifedrainscepter.description=Mid Damage, Laser, Drains Health
-#
-item.frostwebscepter.name=Frostweb Scepter
-item.frostwebscepter.description=Low Damage, Rapid Fire, Applies Move Slowdown, Places Frostwebs
-#
-item.boulderblastscepter.name=Boulder Blast Scepter
-item.boulderblastscepter.description=High Damage, Charge Up, Applies Dig Speed Slowdown
-#
 # ========================================================================
 # ========== Summoning Staves ==========
 item.summoningstaff.name=Summoning Staff
@@ -2045,8 +2179,8 @@ item.angeltreat.description=There are currently no Angel creatures added yet.
 item.aquatictreat.name=Aquatic Treat
 item.aquatictreat.description=Made from tender fish, you can tame some aquatic creatures with this.
 #
-item.arthropodtreat.name=Arthropod Treat
-item.arthropodtreat.description=Made from fresh fruits, all sorts of arthropods will want to gorge on this.
+item.amphibiantreat.name=Amphibian Treat
+item.amphibiantreat.description=Made from smelly slimes, you can tame some amphibians creatures with this.
 #
 item.aviantreat.name=Avian Treat
 item.aviantreat.description=Made from light meats, you can tame some avian creatures with this.
@@ -2054,8 +2188,8 @@ item.aviantreat.description=Made from light meats, you can tame some avian creat
 item.beasttreat.name=Beast Treat
 item.beasttreat.description=Made from juicy meats, you can tame some beasts with this.
 #
-item.brutetreat.name=Brute Treat
-item.brutetreat.description=Made from fatty meats, Brutes are quite simple minded, could any be swayed by this?
+item.anthroniantreat.name=Anthronian Treat
+item.anthroniantreat.description=Made from fatty meats, Brutes are quite simple minded, could any be swayed by this?
 #
 item.demontreat.name=Demon Treat
 item.demontreat.description=All demons seem to enjoy snacking on Nether Wart between their meals of live flesh.
@@ -2077,6 +2211,78 @@ item.undeadtreat.description=Made from the finest rotten flesh, but can any unde
 #
 item.wormtreat.name=Worm Treat
 item.wormtreat.description=Made from very gamey meat, those worm creatures seem to like that.
+#
+item.arachnidtreat.name=Arachnid Treat
+item.arachnidtreat.description=Made from fresh fruits, all sorts of arachnids will want to gorge on this.
+#
+item.insecttreat.name=Insect Treat
+item.insecttreat.description=Made from fresh fruits, all sorts of insects will want to gorge on this.
+#
+item.reptiletreat.name=Reptile Treat
+item.reptiletreat.description=Made from juicy meats, you can tame some reptiles with this.
+#
+item.golemtreat.name=Golem Treat
+item.golemtreat.description=Made from the finest machine parts, those golem creatures seem to like that.
+#
+item.slimetreat.name=Slime Treat
+item.slimetreat.description=Made from very bouncy slime, those slime creatures seem to like that.
+# ========================================================================
+item.saddle_aberration.name=Aberration Saddle
+item.saddle_aberration.description=A specially adapted saddle for the most obscure of creatures.
+#
+item.saddle_angel.name=Angel Saddle
+item.saddle_angel.description=There are currently no Angel creatures added yet.
+#
+item.saddle_aquatic.name=Aquatic Saddle
+item.saddle_aquatic.description=An aquadynamic saddle built for deep dives.
+#
+item.saddle_amphibian.name=Amphibian Saddle
+item.saddle_amphibian.description=This saddle is especially fitted for slippery creatures and exposure to various fluids.
+#
+item.saddle_arachnid.name=Arachnid Saddle
+item.saddle_arachnid.description=A saddle built to fit all manner of 8 or so legged creatures.
+#	
+item.saddle_insect.name=Insect Saddle
+item.saddle_insect.description=A lightweight saddle with modular fitting mechanisms.
+#	
+item.saddle_avian.name=Avian Saddle
+item.saddle_avian.description=An aerodynamic saddle built especially for flight and glide adapted creatures, also feather friendly.
+#
+item.saddle_beast.name=Beast Saddle
+item.saddle_beast.description=A sturdy saddle with tight yet comfortable strapping.
+#
+item.saddle_reptile.name=Reptile Saddle
+item.saddle_reptile.description=A saddle with specialised thermal padding and cushioned fittings.
+#	
+item.saddle_anthronian.name=Anthronian Saddle
+item.saddle_anthronian.description=A saddle that looks more like a backpack or papoose, ideal for more bipedal mounts!
+#
+item.saddle_demon.name=Demon Saddle
+item.saddle_demon.description=A saddle with wicked enchantments, tempered for the most demonic of beings.
+#
+item.saddle_dragon.name=Dragon Saddle
+item.saddle_dragon.description=A jeweled saddle with special enchantments woven within each precious gem, worthy of a mighty dragon!
+#
+item.saddle_elemental.name=Elemental Saddle
+item.saddle_elemental.description=Creative only, no elementals can be mounted currently.
+#
+item.saddle_imp.name=Imp Saddle
+item.saddle_imp.description=A strange backpack shaped saddle with several small straps.
+#
+item.saddle_plant.name=Plant Saddle
+item.saddle_plant.description=A specialised saddle made from materials that are plant friendly.
+#
+item.saddle_undead.name=Undead Saddle
+item.saddle_undead.description=A saddle with enchantments designed to suppress and control spirits.
+#
+item.saddle_worm.name=Worm Saddle
+item.saddle_worm.description=A long saddle with wide fittings, suitable for the longest and squirmiest of mounts!
+#
+item.saddle_golem.name=Golem Saddle
+item.saddle_golem.description=Made from the finest machine parts, those golem creatures seem to like that.
+#
+item.saddle_slime.name=Slime Saddle
+item.saddle_slime.description=A saddle with special pads that can be filled and drained of chemicals which act as temporary adhesives to slime creatures.
 # ========================================================================
 # %event% will be replaced with the name of the event, don't translate this!
 event.started=%event% has begun!
@@ -2091,6 +2297,7 @@ boss.block.protection.break=The presence of a powerful being prevents you from d
 boss.damage.protection.range=That being is too powerful to be damaged from this range.
 #
 # ========== Event Names ==========
+mobevent.aberrant_assimilation.name=Aberrant Assimilation
 mobevent.amalgalich.name=Amalgalich
 mobevent.arachnophobia.name=Arachnophobia
 mobevent.asmodeus.name=Asmodeus
@@ -2124,41 +2331,44 @@ mobevent.windstorm.name=Windstorm
 mobevent.wingedvenom.name=Winged Venom
 mobevent.wintersgrasp.name=Winters Grasp
 # ========================================================================
-entity.lycanitesmobs.ember.name=Ember
-entity.lycanitesmobs.whirlwind=Whirlwind
-entity.lycanitesmobs.lightball=Light Ball
-entity.lycanitesmobs.mudshot=Mudshot
-entity.lycanitesmobs.crystalshard=Crystal Shard
-entity.lycanitesmobs.magma=Magma
-entity.lycanitesmobs.frostbolt=Frostbolt
-entity.lycanitesmobs.tundra=Tundra
-entity.lycanitesmobs.spectralbolt=Spectral Bolt
-entity.lycanitesmobs.venomshot=Venomshot
-entity.lycanitesmobs.devilstar=Devilstar"
-entity.lycanitesmobs.boulderblast=Boulder Blast
-entity.lycanitesmobs.icefireball=Icefireball
-entity.lycanitesmobs.hellfireball=Hellfireball
-entity.lycanitesmobs.quill=Quill
-entity.lycanitesmobs.scorchfireball=Scorchfireball
-entity.lycanitesmobs.throwingscythe=Throwing Scythe
-entity.lycanitesmobs.tricksterflare=Trickster Flare
-entity.lycanitesmobs.demonicblast=Demonic Blast
-entity.lycanitesmobs.demonicspark=Demonic Spark
-entity.lycanitesmobs.bloodleech=Bloodleech
-entity.lycanitesmobs.acidsplash=Acid Splash
-entity.lycanitesmobs.lobdarklings=Lob Darklings
-entity.lycanitesmobs.faebolt=Faebolt
-entity.lycanitesmobs.frostweb=Frost Web
-entity.lycanitesmobs.chaosorb=Chaos Orb
-entity.lycanitesmobs.poisonray=Poison Ray
-entity.lycanitesmobs.ember=Ember
-entity.lycanitesmobs.blizzard=Blizzard
-entity.lycanitesmobs.doomfireball=Doomfireball
-entity.lycanitesmobs.waterjet=Water Jet
-entity.lycanitesmobs.poop=Poop
-entity.lycanitesmobs.lifedrain=Life Drain
-entity.lycanitesmobs.devilstar=Devilstar
-entity.lycanitesmobs.aquapulse=Aqua Pulse
-entity.lycanitesmobs.arcanelaserstorm=Arcane Laser Storm
-entity.lycanitesmobs.aetherwave=Aetherwave
-entity.lycanitesmobs.summoningseed=Summoning Seed
+entity.ember.name=Ember
+entity.whirlwind=Whirlwind
+entity.lightball=Light Ball
+entity.mudshot=Mudshot
+entity.crystalshard=Crystal Shard
+entity.magma=Magma
+entity.frostbolt=Frostbolt
+entity.tundra=Tundra
+entity.spectralbolt=Spectral Bolt
+entity.venomshot=Venomshot
+entity.devilstar=Devilstar"
+entity.boulderblast=Boulder Blast
+entity.icefireball=Icefireball
+entity.hellfireball=Hellfireball
+entity.quill=Quill
+entity.scorchfireball=Scorchfireball
+entity.throwingscythe=Throwing Scythe
+entity.tricksterflare=Trickster Flare
+entity.demonicblast=Demonic Blast
+entity.demonicspark=Demonic Spark
+entity.bloodleech=Bloodleech
+entity.acidsplash=Acid Splash
+entity.acidglob=Acid Glob
+entity.lobdarklings=Lob Darklings
+entity.faebolt=Faebolt
+entity.frostweb=Frost Web
+entity.chaosorb=Chaos Orb
+entity.poisonray=Poison Ray
+entity.ember=Ember
+entity.blizzard=Blizzard
+entity.doomfireball=Doomfireball
+entity.waterjet=Water Jet
+entity.poop=Poop
+entity.lifedrain=Life Drain
+entity.devilstar=Devilstar
+entity.aquapulse=Aqua Pulse
+entity.arcanelaserstorm=Arcane Laser Storm
+entity.aetherwave=Aetherwave
+entity.summoningseed=Summoning Seed
+entity.primeember=Prime Ember
+entity.smitefireball=Smitefireball
