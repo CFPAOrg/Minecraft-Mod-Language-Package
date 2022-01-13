@@ -27,6 +27,7 @@ spawner.chaos.level1.back=生态平衡似乎已经得以恢复…至少现在是
 # ========== Subspecies ==========
 # Common
 subspecies.normal=常态
+subspecies.normal.name=常态
 # Uncommon:
 subspecies.ashen.name=灰白
 subspecies.dark.name=黑暗
@@ -81,8 +82,8 @@ itemGroup.lycanitesmobs.equipmentparts=恐怖生物：装备
 #
 # Beastiary:
 gui.beastiary.name=生物图鉴
-gui.beastiary.player.spirit=召唤力
-gui.beastiary.player.focus=召唤力点数
+gui.beastiary.player.spirit=宠物能量
+gui.beastiary.player.focus=仆从能量
 #
 # Index:
 gui.beastiary.index.title=索引
@@ -113,8 +114,8 @@ gui.beastiary.biomes=生物群系
 gui.beastiary.biomes.none=无具体的生物群系
 gui.beastiary.drops=掉落
 gui.beastiary.unlockedat=解锁时间：
-gui.beastiary.tameable=这种生物可以成为宠物
-gui.beastiary.summonable=这种生物可以成为仆从
+gui.beastiary.tameable=这种生物可以招为宠物，需要物品
+gui.beastiary.summonable=这种生物可以招为仆从
 gui.beastiary.mountable=这种生物可以成为坐骑
 gui.beastiary.perchable=这种生物可以成为妖精
 #
@@ -142,8 +143,8 @@ gui.beastiary.elements.debuffs=有害效果
 gui.summoningpedestal.name=召唤基座
 #
 # Pet/Minion:
-gui.pet.actions=活动
-gui.pet.stance=站立
+gui.pet.actions=命令
+gui.pet.stance=行动
 gui.pet.movement=移动
 gui.pet.active=启用
 gui.pet.summon=召唤
@@ -310,8 +311,8 @@ generic.rangedSpeed=远程攻击速度
 #
 #
 # ========== Stats ==========
-stat.spirit.name=召唤力
-stat.spirit.description=用召唤力来召唤你的宠物和坐骑。每个宠物都消耗不同的量的召唤力。若你的宠物或是坐骑被放逐或是死亡，则召唤力会缓慢恢复。
+stat.spirit.name=宠物召唤力
+stat.spirit.description=用宠物召唤力来召唤你的宠物和坐骑。每个宠物都消耗不同的量的召唤力。若你的宠物或是坐骑被放逐或是死亡，则召唤力会缓慢恢复。
 stat.portal.name=最大召唤数量
 stat.portal.description=召唤传送门只能维持一定量的生物并且无法召唤更多生物，直到现存生物消失或死亡为止。
 #
@@ -355,11 +356,11 @@ key.mount.dismount=脱离坐骑 / 卸下宠物
 key.mount.descend=乘降
 key.mount.ability=坐骑能力
 key.mount.inventory=坐骑物品栏
-key.index=索引
+key.index=主页索引
 key.beastiary=生物图鉴
-key.pets=宠物
-key.summoning=召唤物
-key.minions=召唤物管理
+key.pets=宠物列表
+key.summoning=仆从列表
+key.minions=仆从选择
 #
 #
 #
@@ -402,12 +403,12 @@ creature.stat.subspecies=亚种
 creature.stat.variant=变体
 creature.stat.variants=变种
 creature.stat.cost=召唤消耗
-creature.stat.spirit=召唤灵魂消耗
-creature.stat.focus=召唤指数消耗
+creature.stat.spirit=召唤消耗
+creature.stat.focus=召唤消耗
 creature.stat.respawning=重生
 creature.stat.knowledge=知识点数
 creature.stat.base=基础属性
-creature.stat.health=生命
+creature.stat.health=生命值
 creature.stat.defense=防御
 creature.stat.speed=速度
 creature.stat.damage=近战伤害
@@ -417,7 +418,7 @@ creature.stat.level=等级
 creature.stat.experience=经验
 # ========================================================================
 tile.summoningpedestal.name=召唤基座
-tile.shadowstone.description=由阴影注入的石头。
+tile.summoningpedestal.description=这个底座可以创建一个固定的召唤门来召唤被选中的仆从。有些底座是玩家放置的，有些则不是。
 #
 #
 # ========== Equipment Forges ==========
@@ -434,7 +435,7 @@ tile.equipment_infuser=装备注能
 tile.equipment_infuser.description=用于将相匹配的能量球注入对应属性的装备以便升级。也可用于装备的染色。
 #
 tile.equipment_station=装备修复站
-tile.equipment_station.description=用于恢复装备的耐久度和魔法槽。
+tile.equipment_station.description=用于恢复装备的耐久度和魔法能量。
 #
 #
 # ========== Special ==========
@@ -1973,14 +1974,14 @@ item.soul_contract.name=灵魂契约
 item.soul_contract.description=这个契约是用魔法来转移宠物灵魂的。宠物的主人必须先在自己的宠物身上使用这个契约来绑定它，然后新主人必须拿着这个契约并点击宠物来转移灵魂绑定。
 item.lycanitesmobs.soul_contract.bound=绑定到：
 item.lycanitesmobs.soul_contract.owner=所有者：
-item.lycanitesmobs.soul_contract.offline=所有者不存在.
+item.lycanitesmobs.soul_contract.offline=所有者不存在。
 item.lycanitesmobs.soul_contract.released=绑定的生物已被释放，此契约失效。
 #
 item.mobtoken.name=怪物标记
 item.mobtoken.description=一个装饰用道具，用于展示怪物完整形象，等等。
 #
 item.wraithsigil.name=游魂印记
-item.wraithsigil.description=这个骷髅头充满了邪恶的幽灵！使用它向受害者发射一阵愤怒的游魂！结果可能是会爆炸的？！
+item.wraithsigil.description=这个骷髅头充满了邪恶的幽灵！使用它向目标发射一些愤怒的游魂！结果可能是会爆炸的？！
 #
 #
 # ========== Consumables ==========
@@ -2053,7 +2054,7 @@ item.soulkeyemerald.description=更好的灵魂钥匙能召唤更强大的BOSS�
 #
 # ========== Soulstones ==========
 item.soulstone.name=灵魂石
-item.soulstone.description=用来将驯服的宠物与你的精神连接允许你在任何地方召唤它或者解除它的绑定。绑定的坐骑或宠物都将在死后重生。
+item.soulstone.description=将驯服的生物与你的精神连接，让你在任何地方都可以召唤它。绑定的宠物和坐骑都将在死后重生。
 #
 item.soulstone_aberration.name=畸变灵魂石
 item.soulstone_aberration.description=一个畸变的灵魂被禁锢于此！你可以打开看看里面到底有什么…
@@ -2132,21 +2133,20 @@ item.demonspawn.name=生成
 item.freshwaterspawn.name=生成
 # ========================================================================
 # ========== Summoning Staves ==========
-item.summoningstaff.name=召唤之杖
-item.summoningstaff.description=召唤听命于你的宠物！创建传送门后，随着时间的推移传送门将耗尽你的召唤力（在生存模式的饱食度条上方）。
+item.summoningstaff.name=仆从召唤之杖
+item.summoningstaff.description=召唤听命于你的仆从！创建传送门后，随着时间的推移传送门将耗尽你的仆从能量（在生存模式的饱食度条上方）。
 #
-item.stablesummoningstaff.name=稳定的召唤之杖
-item.stablesummoningstaff.description=召唤的野兽持续时间更长但消耗更多的精力。
+item.stablesummoningstaff.name=稳定的仆从召唤之杖
+item.stablesummoningstaff.description=召唤仆从的持续时间更长，但消耗更多的仆从能量。
 #
-item.bloodsummoningstaff.name=流血的召唤之杖
-item.bloodsummoningstaff.description=通过献祭你的生命，只消耗一半的召唤力来召唤。
+item.bloodsummoningstaff.name=流血的仆从召唤之杖
+item.bloodsummoningstaff.description=召唤仆从只消耗一半的仆从能量，但需要额外消耗你的生命值。
 #
-item.savagesummoningstaff.name=野蛮的召唤之杖
-item.savagesummoningstaff.description=召唤两只生物，每次消耗一半生命。
+item.savagesummoningstaff.name=野蛮的仆从召唤之杖
+item.savagesummoningstaff.description=召唤两个相同仆从，每个仆从只消耗一半仆从能量。
 #
-item.sturdysummoningstaff.name=坚挺的召唤之杖
-item.sturdysummoningstaff.description=召唤物持续时间更长但消耗更多的精力。
-#
+item.sturdysummoningstaff.name=坚挺的仆从召唤之杖
+item.sturdysummoningstaff.description=召唤仆从的持续时间更长，但消耗更多的仆从能量。
 #
 # ========== Weapons ==========
 item.cinderfallsword.name=落灰之剑
