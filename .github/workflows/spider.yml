@@ -6,8 +6,8 @@ on:
     paths: 
       - 'config/spider/config.json'
       - 'src/Spider/**'
-  schedule:
-    - cron: '0 1 1,15 * *'
+  #schedule:
+    #- cron: '0 1 1,15 * *'
     
 
 jobs:
@@ -16,10 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      # - name: Setup .NET Core SDK
-      #   uses: actions/setup-dotnet@v1.5.0
-      #   with:
-      #     dotnet-version: 3.1.401
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.100-preview.4.21255.9
       
       # - name: Setup BuildXL
       #   uses: summpot/setup-bxl@v1.0.0
@@ -60,14 +60,7 @@ jobs:
           ri .\Spider.exe -Force
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'actions@users.noreply.github.com'
-          @"
-          protocol=https
-          host=github.com
-          username=github-actions[bot]
-          password=${{ secrets.GITHUB_TOKEN }}
-          "@ > .\1.txt
-          gc 1.txt|git credential-manager  store
-          ri .\1.txt -Force
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git add .
           git commit -m "[Spider]Update file"
           git push origin HEAD:${{ github.ref }}

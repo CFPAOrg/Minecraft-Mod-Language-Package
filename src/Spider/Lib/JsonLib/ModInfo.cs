@@ -2,8 +2,10 @@
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 
-namespace Spider.Lib.JsonLib {
-    public partial class ModInfo {
+namespace Spider.Lib.JsonLib
+{
+    public partial class ModInfo
+    {
         [JsonPropertyName("id")]
         public long Id { get; set; }
 
@@ -89,7 +91,8 @@ namespace Spider.Lib.JsonLib {
         public bool IsExperiemental { get; set; }
     }
 
-    public class Attachment {
+    public class Attachment
+    {
         [JsonPropertyName("id")]
         public long Id { get; set; }
 
@@ -115,7 +118,8 @@ namespace Spider.Lib.JsonLib {
         public long Status { get; set; }
     }
 
-    public class Author {
+    public class Author
+    {
         [JsonPropertyName("name")]
         public string Name { get; set; }
 
@@ -141,7 +145,8 @@ namespace Spider.Lib.JsonLib {
         public long? TwitchId { get; set; }
     }
 
-    public class Category {
+    public class Category
+    {
         [JsonPropertyName("categoryId")]
         public long CategoryId { get; set; }
 
@@ -170,7 +175,8 @@ namespace Spider.Lib.JsonLib {
         public long GameId { get; set; }
     }
 
-    public class CategorySection {
+    public class CategorySection
+    {
         [JsonPropertyName("id")]
         public long Id { get; set; }
 
@@ -196,7 +202,8 @@ namespace Spider.Lib.JsonLib {
         public long GameCategoryId { get; set; }
     }
 
-    public class GameVersionLatestFile {
+    public class GameVersionLatestFile
+    {
         [JsonPropertyName("gameVersion")]
         public string GameVersion { get; set; }
 
@@ -213,7 +220,8 @@ namespace Spider.Lib.JsonLib {
         public object GameVersionFlavor { get; set; }
     }
 
-    public class LatestFile {
+    public class LatestFile
+    {
         [JsonPropertyName("id")]
         public long Id { get; set; }
 
@@ -329,7 +337,8 @@ namespace Spider.Lib.JsonLib {
         public object GameVersionFlavor { get; set; }
     }
 
-    public class Dependency {
+    public class Dependency
+    {
         [JsonPropertyName("id")]
         public long Id { get; set; }
 
@@ -343,7 +352,8 @@ namespace Spider.Lib.JsonLib {
         public long FileId { get; set; }
     }
 
-    public class Module {
+    public class Module
+    {
         [JsonPropertyName("foldername")]
         public string Foldername { get; set; }
 
@@ -354,7 +364,8 @@ namespace Spider.Lib.JsonLib {
         public long Type { get; set; }
     }
 
-    public class SortableGameVersion {
+    public class SortableGameVersion
+    {
         [JsonPropertyName("gameVersionPadded")]
         public string GameVersionPadded { get; set; }
 
@@ -368,11 +379,16 @@ namespace Spider.Lib.JsonLib {
         public string GameVersionName { get; set; }
     }
 
-    public partial class ModInfo {
-        public string ShortWebsiteUrl {
-            get {
-                var start = WebsiteUrl.ToString().LastIndexOf('/') + 1;
-                return WebsiteUrl.ToString()[start..];
+    public partial class ModInfo
+    {
+        [Obsolete("目前看来与Slug重复")]
+        public string ShortWebsiteUrl
+        {
+            get
+            {
+                return Slug;
+                //var start = WebsiteUrl.ToString().LastIndexOf('/') + 1;
+                //return WebsiteUrl.ToString()[start..];
             }
         }
     }

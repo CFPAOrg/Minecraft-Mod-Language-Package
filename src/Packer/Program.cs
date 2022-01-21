@@ -4,6 +4,7 @@ using System.IO.Compression;
 using System.Threading.Tasks;
 
 using Packer.Extensions;
+
 using Serilog;
 
 namespace Packer
@@ -21,9 +22,9 @@ namespace Packer
             {
                 throw new ArgumentNullException(nameof(version));
             }
-            var config = await Utils.RetrieveConfig(configPath:  "./config/packer.json",
+            var config = await Utils.RetrieveConfig(configPath: "./config/packer.json",
                                                     mappingPath: "./config/fontmap.txt",
-                                                    version:     version);
+                                                    version: version);
             if (config is null)
             {
                 throw new ArgumentException("无效的版本参数", nameof(version));

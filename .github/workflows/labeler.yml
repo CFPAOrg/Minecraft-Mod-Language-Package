@@ -1,0 +1,31 @@
+name: Label PRs
+
+on:
+    issues:
+        types: [opened, edited, closed, reopened]
+    pull_request_target:
+        types: [opened, edited, closed, reopened, synchronize]
+    project_card:
+        types: [created, moved, deleted]
+    workflow_dispatch:
+
+permissions:
+    actions: write
+    checks: write
+    contents: write
+    deployments: write
+    issues: write
+    pull-requests: write
+    repository-projects: write
+    statuses: write
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            - name: Label Mastermind
+              uses: Videndum/label-mastermind@1.4.0-alpha.5
+              with:
+                  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}

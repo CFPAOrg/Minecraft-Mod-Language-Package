@@ -1,44 +1,74 @@
 {
-  "name": "大地苔藓",
+  "name": "Terra Moss",
   "icon": "roots:terra_moss",
   "category": "herbs",
+  "read_by_default": true,
+  "turnin": "roots:terra_moss",
   "priority": true,
+  "sortnum": 4,
   "pages": [
     {
       "type": "spotlight",
-      "item": "roots:terra_moss",
-      "link_recipe": true,
-      "text": "在魔法植物中，最常见的莫过于大地苔藓了，很少有人能够认识到它体内所蕴含的魔力。大地苔藓可以通过大地苔藓孢子种植得来，而孢子则可以通过破坏高草找到。$(info)孢子的种植方法为：将获得的大地苔藓孢子注入圆石内，$(warning)且这一圆石必须在水平方向上与水接触。"
+      "item": "roots:terra_spores",
+      "text": "Commonly overlooked, terra moss grows in many places in the world, and can be scraped from many mossy surfaces by right-clicking with a $(l:crafting/knives)knife$().$(br2)Likewise, you will find terra spores when breaking tall grass. Under the correct circumstances, these will provide a mossy surface to scrape from."
+    },
+    {
+      "type": "moss_template",
+      "name": "Mossy Surfaces",
+      "text": "Many blocks are suitable for scraping moss from, leaving behind their pristine form and providing you with terra moss.$(br2)$(warning) Manually creating such a surface requires specific conditions."
+    },
+    {
+      "type": "multiblock",
+      "anchor": "conditions",
+      "multiblock": {
+        "mapping": {
+          "0": "minecraft:cobblestone",
+          "M": "minecraft:water"
+        },
+        "pattern": [
+          [" M ","M0M"," M "]
+        ]
+      },
+      "text": "Cobblestone or any suitable surface, placed adjacent to water, provides the perfect conditions for moss growth."
     },
     {
       "type": "multiblock",
       "multiblock": {
         "mapping": {
-          "0": "minecraft:water",
-          "M": "minecraft:cobblestone"
+          "0": "minecraft:mossy_cobblestone",
+          "M": "minecraft:water"
         },
         "pattern": [
-          ["   M   ","  M0M  ","   M   "]
+          [" M ","M0M"," M "]
         ]
-      }
+      },
+      "text": "$(info) Simply right-click a water-adjacent block with terra spores to convert it into its mossy equivalent."
     },
     {
       "type": "spotlight",
-      "item": "minecraft:mossy_cobblestone",
+      "item": "roots:terra_moss",
       "link_recipe": true,
-      "text": "一旦将孢子注入到邻近于水的圆石，它的外观就会转变为和普通的苔石差不多的样子，使用小刀将上面的苔藓小心刮下，你就获得了大地苔藓。值得一提的是，大地苔藓还可以从那些自然生成的的苔石上刮取下来。"
+      "text": "Once the spores have been imbued and the moss has spread to cover the entirety of the block (a process that happens rapidly), it is now ready to be harvest.$(br2)$(info) Simply right-click the mossy surface with a knife and you will obtain the moss, returning the block to its original form."
     },
     {
-      "type": "moss_template",
-      "name": "大地苔藓",
-      "text": "刮取大量的其它苔石也会获得大地苔藓。$(br2)$(info)这些苔石也可以被注入大地孢子，就像是圆石那样。"
+      "type": "text",
+      "anchor": "renew",
+      "title": "Renewability",
+      "text": "While it may seem tedious to go through the process of gathering & applying spores and then scraping the moss repeatedly, this system is both renewable and $(l:herbs/terra_moss#auto)automatable$().$(br2)The $(l:rituals/ritual_overgrowth)Overgrowth$() ritual bypass the need for terra spores entirely, magically causing moss to grow on $(l:herbs/terra_moss#conditions)blocks that meet the conditions$() of being water-adjacent."
+    },
+    {
+      "type": "text",
+      "anchor": "auto",
+      "title": "Automation",
+      "text": "$(l:automation/ritual_overgrowth)This ritual can easily be automated$() using vanilla methods."
     },
     {
       "type": "relations",
+      "anchor": "related",
       "entries": [
-        "apparatus/knives",
+        "crafting/knives",
         "rituals/ritual_overgrowth",
-        "basics/resources"
+        "automation/ritual_overgrowth"
       ]
     }
   ]

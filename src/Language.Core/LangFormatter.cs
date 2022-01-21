@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
 
-namespace Language.Core {
+namespace Language.Core
+{
 
     /*
      * MIT LICENSE
@@ -11,7 +12,8 @@ namespace Language.Core {
      * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
      * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
      */
-    public sealed class LangFormatter {
+    public sealed class LangFormatter
+    {
         readonly StreamReader _reader;
         readonly StreamWriter _writer;
         // ReSharper disable once InconsistentNaming
@@ -22,7 +24,8 @@ namespace Language.Core {
         /// </summary>
         /// <param name="reader"></param>
         /// <param name="writer"></param>
-        public LangFormatter(StreamReader reader, StreamWriter writer) {
+        public LangFormatter(StreamReader reader, StreamWriter writer)
+        {
             _reader = reader;
             _writer = writer;
         }
@@ -30,15 +33,20 @@ namespace Language.Core {
         /// <summary>
         /// 格式化语言文件
         /// </summary>
-        public void Format() {
+        public void Format()
+        {
             int c;
             var lineStart = true;
             var multiLineComment = false;
-            while ((c = Consume()) != EOF) {
-                if (lineStart) {
-                    switch (c) {
+            while ((c = Consume()) != EOF)
+            {
+                if (lineStart)
+                {
+                    switch (c)
+                    {
                         case '/':
-                            switch (Peek()) {
+                            switch (Peek())
+                            {
                                 // '//' 的实现仅支持行首出现 在 enderio 的语言文件有 YouTube 链接 会导致问题
                                 // 当然也可以手动设置开关
                                 case '/':
@@ -60,7 +68,8 @@ namespace Language.Core {
                     if (multiLineComment) Write('#');
                 }
 
-                if (multiLineComment && c == '*' && Peek() == '/') {
+                if (multiLineComment && c == '*' && Peek() == '/')
+                {
                     Consume();
                     multiLineComment = false;
                     continue;
@@ -74,7 +83,8 @@ namespace Language.Core {
             _reader.Close();
             _reader.Dispose();
         }
-        void SkipLine() {
+        void SkipLine()
+        {
             int c;
             while ((c = Consume()) != '\n' && c != EOF) { }
         }

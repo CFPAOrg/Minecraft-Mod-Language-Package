@@ -1,54 +1,98 @@
 {
-    "name": "Ritual Automation",
-    "icon": "roots:bonfire",
-    "category": "rituals",
-    "advancement": "roots:pyre",
-    "priority": true,
-    "sortnum": 0,
-    "pages": [
-        {
-          "type": "text",
-          "text": "Once a ritual has been begun on a Pyre, the Pyre will begin looking for the same ingredients (or similar where the ore dictionary is used) in inventories below it. If found, these will be inserted into the Pyre.$(br2)At the end of a ritual, if the Pyre contains the items to repeat itself, the fire does not go out but starts anew, consuming the items."
+  "name": "Ritual Automation",
+  "icon": "roots:pyre",
+  "category": "rituals_ritual",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "text",
+      "text": "Ingredients can be fed into a ritual by placing an inventory containing them beneath the pyre (see diagram).$(br2)These are then drawn into the pyre when it is empty. If matching ingredients are found when the ritual ends, it will consume them and begin anew.$(br2)$(warning) You must start the first ritual to lock the pyre in before automation can begin."
+    },
+    {
+      "type": "multiblock",
+      "name": "Chest Location",
+      "multiblock": {
+        "mapping": {
+          "0": "minecraft:chest",
+          "R": "roots:pyre"
         },
-        {
-          "type": "multiblock",
-          "name": "Chest Location",
-          "multiblock": {
-            "mapping": {
-              "0": "minecraft:chest",
-              "R": "roots:bonfire"
-            },
-            "pattern": [
-              [" ", "R", " "],
-              [" ", "0", " "],
-              [" ", " ", " "],
-              [" ", " ", " "]
-            ]
-          },
-          "text": "Any inventory will suffice, be it vanilla or modded."
-        },
-      {
-        "type": "text",
-        "text": "In addition to consuming items, the Pyre will also attempt to consume nearby fire in order to light itself.$(br2)Given the correct ingredients, the decay of nearby fire will be hastened and the ritual will be started.$(br2)Fire can be placed anywhere in a 3x3x3 cube around the Pyre, as demonstrated in the following visualisation.$(br2)$(warning) Currently only vanilla fire is supported."
+        "pattern": [
+          [
+            " ",
+            "R",
+            " "
+          ],
+          [
+            " ",
+            "0",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ],
+          [
+            " ",
+            " ",
+            " "
+          ]
+        ]
       },
-      {
-          "type": "multiblock",
-          "name": "Fire Locations",
-          "multiblock": {
-            "mapping": {
-              "0": "roots:bonfire",
-              "G": "minecraft:grass",
-              "I": "minecraft:iron_bars"
-            },
-            "pattern": [
-              ["     ", "     ", "     "],
-              [" III ", " III ", " III "],
-              [" III ", " I0I ", " III "],
-              [" GGG ", " GGG ", " GGG "],
-              ["     ", "     ", "     "]
-            ]
-          },
-          "text": "All positions of bars & grass are places the Pyre will look for fire."
-      }
-    ]
+      "text": "Any inventory should be sufficient, as long as it is located directly below the pyre."
+    },
+    {
+      "type": "text",
+      "title": "Starting",
+      "text": "In addition to rituals continuing with valid ingredients, it is possible to automatically start a pyre by placing fire on any blocks in a 3x3 area around it. (See diagram)$(br2)$(info) Fire not on a fire source block will be consumed and extinguished to start the ritual.$(br2)$(warning) Currently this only functions for vanilla fire."
+    },
+    {
+      "type": "multiblock",
+      "name": "Fire Locations",
+      "multiblock": {
+        "mapping": {
+          "0": "roots:pyre",
+          "G": "minecraft:grass",
+          "I": "minecraft:torch"
+        },
+        "pattern": [
+          [
+            "     ",
+            "     ",
+            "     "
+          ],
+          [
+            " III ",
+            " III ",
+            " III "
+          ],
+          [
+            " III ",
+            " I0I ",
+            " III "
+          ],
+          [
+            " GGG ",
+            " GGG ",
+            " GGG "
+          ],
+          [
+            "     ",
+            "     ",
+            "     "
+          ]
+        ]
+      },
+      "text": "All positions of torches and the grass beneath are eligible for fire automation."
+    },
+    {
+      "type": "relations",
+      "anchor": "related",
+      "entries": [
+        "crafting/pyres",
+        "rituals/introduction",
+        "rituals/standing_stones"
+      ]
+    }
+  ]
 }

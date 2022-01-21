@@ -21,7 +21,10 @@ tile.futuremc.stripped_birch_log.name=去皮白桦原木
 tile.futuremc.stripped_jungle_log.name=去皮丛林原木
 tile.futuremc.stripped_acacia_log.name=去皮金合欢原木
 tile.futuremc.stripped_dark_oak_log.name=去皮深色橡木原木
-death.attack.sweet_berry_bush=%1$s被甜浆果丛刺死了
+death.attack.berryBush=%1$s被甜浆果丛刺死了
+death.attack.sting=%1$s被蛰死了
+death.attack.trident=%1$s被%2$s刺穿了
+death.attack.trident.item=%1$s被%2$s用%3$s刺穿了
 
 # Wall
 tile.futuremc.brick_wall.name=砖块墙
@@ -41,9 +44,9 @@ tile.futuremc.red_nether_brick_wall.name=红色下界砖墙
 tile.futuremc.granite_slab.name=花岗岩台阶
 tile.futuremc.andesite_slab.name=安山岩台阶
 tile.futuremc.diorite_slab.name=闪长岩台阶
-tile.futuremc.polished_granite_slab.name=花岗岩台阶
-tile.futuremc.polished_andesite_slab.name=安山岩台阶
-tile.futuremc.polished_diorite_slab.name=闪长岩台阶
+tile.futuremc.polished_granite_slab.name=磨制花岗岩台阶
+tile.futuremc.polished_andesite_slab.name=磨制安山岩台阶
+tile.futuremc.polished_diorite_slab.name=磨制闪长岩台阶
 tile.futuremc.stone_slab.name=石台阶
 tile.futuremc.prismarine_slab.name=海晶石台阶
 tile.futuremc.dark_prismarine_slab.name=暗海晶石台阶
@@ -120,7 +123,7 @@ item.futuremc.dye.2.name=棕色染料
 item.futuremc.dye.3.name=黑色染料
 
 # Item
-item.futuremc.Trident.name=三叉戟
+item.futuremc.trident.name=三叉戟
 item.futuremc.crossbow.name=弩
 item.futuremc.crossbow_loaded.name=弩（已装弹）
 item.futuremc.suspicious_stew.name=迷之炖菜
@@ -132,6 +135,7 @@ item.futuremc.banner_pattern.creeper=苦力怕盾徽
 item.futuremc.banner_pattern.skull=头颅盾徽
 item.futuremc.banner_pattern.thing=Mojang徽标
 item.futuremc.banner_pattern.globe=地球
+item.futuremc.banner_pattern.snout=猪鼻
 item.futuremc.honey_bottle.name=蜂蜜瓶
 item.futuremc.honeycomb.name=蜜脾
 item.futuremc.nautilus_shell.name=鹦鹉螺壳
@@ -150,10 +154,23 @@ item.futuremc.netherite_chestplate.name=下界合金胸甲
 item.futuremc.netherite_leggings.name=下界合金护腿
 item.futuremc.netherite_boots.name=下界合金靴子
 item.futuremc.netherite_ingot.name=下界合金锭
+item.record.futuremc.pigstep.desc=Lena Raine - Pigstep
 item.futuremc.record_pigstep.name=音乐唱片
 
 # GUI
+container.barrel=木桶
+container.blast_furnace=高炉
+container.smoker=烟熏炉
 container.grindstone=修复和祛魔
+container.stonecutter=切石机
+container.loom=织布机
+container.smithing=升级装备
+container.fmc_villager.trades=交易
+container.fmc_villager.novice=新手
+container.fmc_villager.apprentice=学徒
+container.fmc_villager.journeyman=老手
+container.fmc_villager.expert=专家
+container.fmc_villager.master=大师
 
 # Entity
 entity.futuremc:trident.name=三叉戟
@@ -166,20 +183,99 @@ entity.futuremc:tropical_fish.name=热带鱼
 
 # Enchantment
 enchantment.loyalty=忠诚
+enchantment.futuremc.loyalty.desc=三叉戟在投掷后返回。更高的等级会减少返回时间。
 enchantment.channeling=引雷
+enchantment.futuremc.channeling.desc=三叉戟将一道闪电引向一个被击中的实体。只在雷雨天气和目标没有被不透明方块遮挡的情况下发挥作用。
 enchantment.riptide=激流
+enchantment.futuremc.riptide.desc=投掷三叉戟时发射玩家。只在水中或雨天发挥作用。
 enchantment.impaling=穿刺
+enchantment.futuremc.impaling.desc=对在海洋中自然生成的生物造成额外伤害。
 enchantment.quick_charge=快速装填
+enchantment.futuremc.quick_charge.desc=减少装填时间。
 
 # Creative Tab
 itemGroup.futuremc=Future MC
 
 # JEI
 container.jei.futuremc.campfire.name=营火
-container.jei.futuremc.blast_furnace.name=高炉
-container.jei.futuremc.smoker.name=烟熏炉
-container.jei.futuremc.stonecutter.name=切石机
+container.jei.futuremc.blast_furnace.name=高温烧炼
+container.jei.futuremc.smoker.name=烟熏
+container.jei.futuremc.stonecutter.name=石材切割
+container.jei.futuremc.smithing.name=锻造
+container.jei.futuremc.composter.name=堆肥
 container.jei.futuremc.campfire.duration=烧制所需时间
+container.jei.futuremc.composter.chance=随机
 
 # Config
 futuremc.config.blue_ice=蓝冰
+
+# Vanilla Override
+tile.sandStone.smooth.name=切制砂岩
+tile.redSandStone.smooth.name=切制红砂岩
+
+# Quark Compatibility
+item.futuremc.banner_pattern.quark_dragon=龙盾徽
+item.futuremc.banner_pattern.quark_eye_of_ender=眼盾徽
+item.futuremc.banner_pattern.quark_sword=剑盾徽
+item.futuremc.banner_pattern.quark_shield=盾牌盾徽
+
+# Subtitles
+futuremc.subtitles.barrel_close=木桶：关闭
+futuremc.subtitle.barrel_open=木桶：打开
+futuremc.subtitle.trident_throw=三叉戟：铿锵
+futuremc.subtitle.trident_pierce=三叉戟：突刺
+futuremc.subtitle.trident_ground_impact=三叉戟：振动
+futuremc.subtitle.trident_channeling=三叉戟：电闪雷鸣
+futuremc.subtitle.trident_loyalty=三叉戟：收回
+futuremc.subtitle.riptide_trident=三叉戟：突进
+futuremc.subtitle.crossbow_charge=弩：蓄力
+futuremc.subtitle.crossbow_shoot=弩：发射
+futuremc.subtitle.grindstone_use=砂轮：使用
+futuremc.subtitles.panda_aggressive_ambient=熊猫：发怒
+futuremc.subtitles.panda_ambient=熊猫：喘息
+futuremc.subtitles.panda_bite=熊猫：撕咬
+futuremc.subtitles.panda_cannot_breed=熊猫：哀鸣
+futuremc.subtitles.panda_death=熊猫：死亡
+futuremc.subtitles.panda_eat=熊猫：进食
+futuremc.subtitles.panda_hurt=熊猫：受伤
+futuremc.subtitles.panda_pre_sneeze=熊猫：鼻痒
+futuremc.subtitles.panda_sneeze=熊猫：打喷嚏
+futuremc.subtitles.panda_step=熊猫：脚步声
+futuremc.subtitles.panda_worried_ambient=熊猫：呜咽
+futuremc.subtitles.campfire_crackle=营火：噼啪作响
+futuremc.subtitles.bell_ring=钟：响起
+futuremc.subtitles.bell_resonate=钟：回响
+futuremc.subtitles.bee_enter_hive=蜜蜂：入巢
+futuremc.subtitles.bee_exit_hive=蜜蜂：离巢
+futuremc.subtitles.bee_sting=蜜蜂：蛰
+futuremc.subtitles.bee_death=蜜蜂：死亡
+futuremc.subtitles.bee_hurt=蜜蜂：受伤
+futuremc.subtitles.bee_pollinate=蜜蜂：高兴地嗡嗡叫
+futuremc.subtitles.bee_work=蜜蜂：工作
+futuremc.subtitles.bee_aggressive=蜜蜂：愤怒地嗡嗡叫
+futuremc.subtitles.bee_passive=蜜蜂：嗡嗡
+futuremc.subtitles.honey_bottle_drink=吞咽蜂蜜
+futuremc.subtitles.shear_hive=剪刀：刮削
+futuremc.subtitles.honey_block_slide=从蜂蜜块滑下
+futuremc.subtitles.equip_netherite=下界合金盔甲：铿锵
+futuremc.subtitles.smithing_table_use=锻造台：使用
+futuremc.subtitles.cod_swim=鳕鱼：游动
+futuremc.subtitles.cod_hurt=鳕鱼：受伤
+futuremc.subtitles.cod_death=鳕鱼：死亡
+futuremc.subtitles.cod_flop=鳕鱼：扑腾
+futuremc.subtitles.salmon_swim=鲑鱼：游动
+futuremc.subtitles.salmon_hurt=鲑鱼：受伤
+futuremc.subtitles.salmon_death=鲑鱼：死亡
+futuremc.subtitles.salmon_flop=鲑鱼：扑腾
+futuremc.subtitles.pufferfish_swim=河豚：游动
+futuremc.subtitles.pufferfish_hurt=河豚：受伤
+futuremc.subtitles.pufferfish_death=河豚：死亡
+futuremc.subtitles.pufferfish_flop=河豚：扑腾
+futuremc.subtitles.tropical_fish_swim=热带鱼：游动
+futuremc.subtitles.tropical_fish_hurt=热带鱼：受伤
+futuremc.subtitles.tropical_fish_death=热带鱼：死亡
+futuremc.subtitles.tropical_fish_flop=热带鱼：扑腾
+futuremc.subtitles.iron_golem_repair=铁傀儡：修复
+futuremc.subtitles.pufferfish_inflate=河豚：膨胀
+futuremc.subtitles.pufferfish_deflate=河豚：收缩
+futuremc.subtitles.pufferfish_sting=河豚：刺蛰
