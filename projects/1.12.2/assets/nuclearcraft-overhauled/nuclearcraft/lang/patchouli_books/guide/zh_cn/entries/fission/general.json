@@ -1,0 +1,59 @@
+{
+	"name": "概要信息",
+	"icon": "nuclearcraft:fission_casing",
+	"category": "nuclearcraft:fission",
+	"sortnum": 0,
+	"pages": [
+		{
+			"anchor": "intro",
+			"type": "text",
+			"text": "裂变反应堆从裂变燃料的自持核裂变反应中获取热量。这些热量最终将被转化为可用的能量，转化的方式取决于建造的反应堆类型。"
+		},
+		{
+			"anchor": "casing",
+			"type": "blocks/2",
+			"header": "裂变反应堆外壳",
+			"block1": "nuclearcraft:fission_casing",
+			"block2": "nuclearcraft:fission_glass",
+			"text": "反应堆的内部组件被包含在一个正方体结构中。正方体结构的十二条边（含角）必须由裂变反应堆外壳构成，其他面可以由透明裂变反应堆外壳替代。当多方块结构成形时，在边上的裂变反应堆外壳的材质将发生变化。"
+		},
+		{
+			"anchor": "controller",
+			"type": "blocks/3",
+			"header": "裂变反应堆控制器",
+			"block1": "nuclearcraft:pebble_fission_controller",
+			"block2": "nuclearcraft:solid_fission_controller",
+			"block3": "nuclearcraft:salt_fission_controller",
+			"text": "反应堆的类型由控制器决定，必须安装在反应堆外壳的某个面上。没有控制器的反应堆多方块结构将不会成形。控制器的GUI将显示反应堆的整体信息，如相关组件的平均状态信息等等。"
+		},
+		{
+			"anchor": "conductor",
+			"type": "blocks/1",
+			"header": "裂变反应堆导体",
+			"block": "nuclearcraft:fission_conductor",
+			"text": "假如反应堆中存在与外壳不相连的组件簇，多方块结构将不会成形。反应堆导体可以用于将这些孤立的组件簇连接到反应堆壁上。$(l)集群$()之间也能用反应堆导体相连接。"
+		},
+		{
+			"anchor": "clusters",
+			"type": "text",
+			"title": "反应堆集群",
+			"text": "集群即是相互连接的可导热的组件簇。具备激活和休眠状态的组件只会在工作时导热，而被动方块（反应堆导体等）则永远能导热。减速剂和反射器方块$(l)不参与$()集群的构成。集群中的组件拥有一个共享的热量等级，所以在集群热量过高时它们会一同过热。"
+		},
+		{
+			"anchor": "monitor",
+			"type": "blocks/1",
+			"header": "裂变反应堆显示器",
+			"block": "nuclearcraft:fission_monitor",
+			"text": "裂变反应堆显示器用于获取裂变反应堆的更多局部信息，特别是某个单独集群的状态信息。"
+		},
+		{
+			"anchor": "fuel_component",
+			"type": "blocks/3",
+			"header": "裂变反应堆燃料组件",
+			"block1": "nuclearcraft:pebble_fission_chamber",
+			"block2": "nuclearcraft:solid_fission_cell",
+			"block3": "nuclearcraft:salt_fission_vessel",
+			"text": "每种类型的反应堆都有一种相关联的燃料组件来安放裂变燃料。"
+		}
+	]
+}
