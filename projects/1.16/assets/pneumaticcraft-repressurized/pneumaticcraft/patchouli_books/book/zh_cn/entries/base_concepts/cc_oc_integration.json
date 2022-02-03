@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "text",
-      "text": "同时安装了$(thing)电脑/$模组或者$(thing)开放式电脑/$模组时，可以使用其与$(pncr)的任何机器，以及$(l:machines/drone_interface)无人机/$进行交互。$(p)下面列出的所有机器都可以以 CC/OC 外设的形式被交互。"
+      "text": "若安装了$(thing)电脑/$模组或者$(thing)开放式电脑/$模组，可以使用这些模组与$(pncr)的机器以及$(l:machines/drone_interface)无人机/$进行交互。$(p)下面列出的所有机器都可以以 CC/OC 外设的形式被交互。"
     },
     {
       "type": "text",
@@ -23,12 +23,12 @@
     {
       "type": "text",
       "title": "一般方法",
-      "text": "下列方法对于$(italic)所有/$$(pncr)的机器都适用：$(li)$(#800)getPressure(), getPressure(<面>)/$：获取该方块的压力。<面>参数是可选的，只在获取$(l:machines/vacuum_pump)真空泵/$的压力时用到，因为其有与朝向相关的压力值。$(li)$(#800)getDangerPressure()/$：获取机器可能爆炸的压力极限。$(li)$(#800)getCriticalPressure()/$：获取机器必定会爆炸的压力极限。"
+      "text": "下列方法对于$(pncr)中$(italic)所有/$机器都适用：$(li)$(#800)getPressure(), getPressure(<面>)/$：获取该方块的压力。<面>参数是可选的，只在获取$(l:machines/vacuum_pump)真空泵/$的压力时用到，因为其有与朝向相关的压力值。$(li)$(#800)getDangerPressure()/$：获取机器可能爆炸的压力极限。$(li)$(#800)getCriticalPressure()/$：获取机器必定会爆炸的压力极限。"
     },
     {
       "type": "text",
       "title": "热相关方法",
-      "text": "下列方法对于$(italic)所有/$$(pncr)的支持$(l:base_concepts/heat)热量/$的机器都适用：$(li)$(#800)getTemperature(), getTemperature(<面>)/$：获取该方块的温度。<面>参数是可选的，只在获取$(l:machines/vortex_tube)涡流管/$的温度时用到，因为其有与朝向相关的温度值。"
+      "text": "下列方法对于$(pncr)中$(italic)所有/$支持$(l:base_concepts/heat)热量/$的机器都适用：$(li)$(#800)getTemperature(), getTemperature(<面>)/$：获取该方块的温度。<面>参数是可选的，只在获取$(l:machines/vortex_tube)涡流管/$的温度时用到，因为其有与朝向相关的温度值。"
     },
     {
       "type": "spotlight",
@@ -59,10 +59,9 @@
       "text": "$(li)$(#800)getMinWorkingPressure()/$：返回使电梯上升的最小压力（机器界面中内黄色与绿色的分界线）。电梯下降过程不需要压力。$(li)$(#800)setTargetHeight(<高度>)/$：把电梯的目标高度设为传入的高度（单位为米/格，浮点数）。$(li)$(#800)getTargetHeight()/$：获取电梯的目标高度（单位为米/格，浮点数）。$(li)$(#800)getCurrentHeight()/$：获取电梯的当前高度（单位为米/格，浮点数）。"
     },
     {
-      "type": "spotlight",
-      "anchor": "plastic_mixer",
-      "item": "pneumaticcraft:plastic_mixer",
-      "text": "$(li)$(#800)selectColor(<色彩索引>)/$：设置所选要生产的塑料颜色设为索引（1-16）指定的颜色。调用 $(#800)selectColor(0)/$ 将取消颜色选择。"
+      "type": "text",
+      "title": "电梯（续表）",
+      "text": "$(li)$(#800)getVelocity()/$：获取电梯当前的速度，单位为$(thing)格每刻/$（其中，20 刻 = 1 秒）。负值表示电梯向下运行。"
     },
     {
       "type": "spotlight",
