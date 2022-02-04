@@ -14,6 +14,7 @@ elementaristics.config.mind_dimension_id=“精神”维度ID
 
 elementaristics.config.particle_amount=元素秘学粒子效果数量
 elementaristics.config.show_magan_bar=显示源力条
+elementaristics.config.cultist_textures=基于要素的信徒材质
 
 #Potion effect
 elementaristics.potion.intoxicated=迷醉
@@ -49,7 +50,6 @@ death.attack.damage_psychic.item=%1$s 的心智因为 %2$s 使用了 %3$s 而崩
 death.attack.damage_aether=%1$s 看到了他
 death.attack.damage_aether.player=%1$s 因为 %2$s 而看到了他
 death.attack.damage_aether.item==%1$s 因 %2$s 使用的 %3$s 而看到了他
-
 
 #Spells
 elementaristics:damage_dragon=龙息
@@ -139,7 +139,7 @@ item.motion_captured.name=运动剪影
 item.stardust.name=星尘
 item.sparks_brightest.name=极明火花
 item.wine_redmost.name=殷红之酒
-item.thoughts_battling.name=战斗冲动
+item.thoughts_battling.name=喧争思绪
 item.vacuum_selfsustaining.name=自在虚空
 item.lightning_tangible.name=实形闪电
 item.moss_everchanging.name=万变苔藓
@@ -162,6 +162,7 @@ item.thaumagral_diamond.name=钻石神秘护手
 item.charger_soul.name=源力积聚室
 item.tool_channeling.name=引导工具
 item.body_water.name=亲水之躯
+item.key_winged.name=生翼钥匙
 item.gunpowder_energized.name=充能火药
 
 item.phial_nectar.name=神酒瓶
@@ -175,6 +176,7 @@ item.fragment_mother.name=母亲之碎片
 
 item.poison_glassblood.name=璃血之毒
 tooltip.poison_glassblood.name=又一种能够榨干你的魔力的毒药
+
 item.poison_wintersbreath.name=寒冬吐息
 tooltip.poison_wintersbreath.name=首先袭来的是来自寒冬的吐息，紧随其后的是无比的饥饿
 
@@ -182,6 +184,11 @@ item.poison_sandthroat.name=干裂之喉
 item.sandthroat_concentrated.name=浓缩干裂之喉
 tooltip.poison_sandthroat.name=嘶！唉呀！烫！烫死了！
 
+item.scale_air.name=气之鳞片
+item.scale_earth.name=地之鳞片
+item.scale_fire.name=火之鳞片
+item.scale_water.name=水之鳞片
+item.scale_aether.name=以太鳞片
 
 #Essences (Items and Blocks)
 item.essence_air.name=气之源质
@@ -215,9 +222,12 @@ tile.block_golden_thread.name=金黄门径
 
 #Blocks-Important Ones
 tile.pedestal.name=基座
-tile.purifier.name=净化器
+tile.purifier.name=提纯器
 tile.concentrator.name=浓缩器
+tile.tunneler.name=加速隧道
+tile.filter_holder.name=滤层支架
 tile.reactor.name=反应器
+tile.casing_essence.name=Essence Casing
 tile.altar.name=祭坛
 tile.basin_infusion.name=注魔盆
 
@@ -228,6 +238,7 @@ tile.flower_contentment.name=欣悦兰
 tile.flower_dread.name=惊惧百合
 tile.flower_laughter.name=觉喜葵
 tile.flower_silence.name=默中茕
+tile.mushroom_intoxicating.name=Shimmershroom
 tile.moss.name=苔藓
 tile.block_moss_everchanging.name=万变苔藓
 
@@ -258,7 +269,9 @@ tile.symbol_sun.name=太阳之象征
 tile.symbol_harbinger.name=先知之象征
 tile.symbol_queen.name=寡食王后之象征
 tile.symbol_goat.name=森之山羊象征
+tile.symbol_moth.name=Symbol of the Moth
 tile.symbol_thread.name=门径之象征
+tile.symbol_mirror.name=Symbol of the Mirror
 tile.symbol_dancer.name=舞者之象征
 tile.symbol_king.name=盛宴之王象征
 tile.symbol_mother.name=母亲之象征
@@ -283,6 +296,7 @@ advancement.elementaristics.tunneler=哗啦啦！
 advancement.elementaristics.reactor=并不是那种超大的版本
 advancement.elementaristics.basin=自由流动
 advancement.elementaristics.energy=注意：这是科技！
+advancement.elementaristics.binding=Just a frame of bones?
 advancement.elementaristics.glory=神耀加身！
 advancement.elementaristics.water_purest=多么新鲜！
 advancement.elementaristics.slime=微震，所有人！
@@ -306,6 +320,7 @@ advancement.elementaristics.concentrator.desc=制造出浓缩器，并通过两�
 advancement.elementaristics.purifier.desc=制造出一个“魔法洗碗器”
 advancement.elementaristics.chaos.desc=掌握混沌之力！
 advancement.elementaristics.forging.desc=激活最纯净的热，神秘版本的那种
+advancement.elementaristics.tunneler.desc=Build a Tunneler to accelerate item particles
 advancement.elementaristics.reactor.desc=制造出反应器来进行化学（炼金）反应
 advancement.elementaristics.basin.desc=制造出注魔盆，并向物品中注入源质
 advancement.elementaristics.energy.desc=制造出引导工具
@@ -361,6 +376,7 @@ tooltip.spell_current=当前法术：
 tooltip.no_current=当前无法术
 
 tooltip.badge.owner=主人：
+tooltip.badge.members=Acquaintances:
 
 #Tooltips-Rites
 tooltip.aspect_tool.aspects=要素：
@@ -380,6 +396,7 @@ rite.elementaristics:rite_feast.name=灵魂之上的盛宴
 rite.elementaristics:rite_chaos.name=混沌仪式
 rite.elementaristics:rite_forging.name=锻造仪式
 rite.elementaristics:rite_recruiting.name=狂人仪式
+rite.elementaristics:conflagration_soul.name=Soul's Conflagration
 rite.elementaristics:rage_wind.name=风之盛怒
 rite.elementaristics:gaias_gaze.name=盖亚的凝视
 rite.elementaristics:space_exilation.name=空间放逐
@@ -388,7 +405,10 @@ rite.elementaristics:soul_compression.name=灵魂压缩
 rite.elementaristics:rite_day.name=曜日仪式
 rite.elementaristics:rite_night.name=月华仪式
 rite.elementaristics:rite_weather.name=流云仪式
+rite.elementaristics:rite_binding.name=Rite of the Shared Frame
+rite.elementaristics:rite_unbinding.name=Rite of the Falling Towers
 rite.elementaristics:rite_reforging.name=重铸仪式
+rite.elementaristics:rite_health_share.name=Rite of the Patchwork
 rite.elementaristics:rite_glorious.name=光荣仪式
 rite.elementaristics:rite_emptiness.name=空魂仪式
 rite.elementaristics:rite_pact.name=契约仪式
@@ -406,6 +426,7 @@ entity.elemental_aether.name=以太元素
 category.elementaristics=元素秘学
 key.elementaristics_down=下一页
 key.elementaristics_up=上一页
+key.elementaristics_master=Slime Master Key
 
 #Hud Elements
 
@@ -413,7 +434,10 @@ hud.current_tasks.name=当前任务：
 hud.goto=前往
 
 hud.fetch=获取
+hud.fetch.any=Grab a stack
+hud.store.any=Store a stack
 
+hud.pos=Navigate to
 hud.wait=等待
 hud.take=收集
 hud.store=储存
@@ -441,9 +465,11 @@ message.position_set=绑定位置：
 message.position_set_for=将绑定位置设置为
 
 message.task_added=§2成功添加任务
+message.too_many_tasks=§cThere are too many tasks specified for another to be added
 message.reset_tasks=§2清除储存的任务
 message.slime_task_set=§2原生质史莱姆将会执行你所给予的任务
 message.slime_task_reset=§d原生质史莱姆将会停止执行你所给予的任务
+message.task_timer_cant_add=§cNo timer specified
 
 message.vision.1=§6“魔法出现之前，虚无之中有七个孩子”
 message.vision.2=§6“当魔法创生，祂之表面就此失去”
@@ -459,6 +485,7 @@ message.cultist.deny=这名信徒不再属于你的团队
 message.protoplasm.sit=原生质史莱姆会在此待命
 message.protoplasm.follow=原生质史莱姆会跟随着你
 message.protoplasm.task=原生质史莱姆会在完成任务之后跟随你
+message.slime_task_copied=Copied tasks to the Thaumagral
 
 message.protoplasm.task_need_inventory=该方块必须带有储存栏
 
@@ -470,6 +497,7 @@ message.soul_creative.name=你当前的灵魂为
 message.soul_switch_creative.name=你的灵魂种类切换为
 
 message.soul_unknown.name=你尚未知晓你的灵魂种类
+message.view_stats.name=Viewing stats for
 message.max_magan.name=你的源力最大值为
 message.current_magan.name=你当前的源力值为
 message.regen_per_tick.name=你的每tick源力恢复率为
@@ -482,15 +510,40 @@ message.call_cultist_error.name=信徒的出现需要更大的空间
 message.no_cultists_secured.name=在没有任何效忠于你的信徒的情况下去造访“精神”，这可不是什么好主意
 message.interact_silver_thread.error_fight=这片区域内已经存在有了银白门径
 
+message.deity_tick.name=Tick time:
 message.deity_hour.name=辰时：
 message.deity_active_current.name=当前辰时为：
 message.deity_active_none.name=没有神性掌管当前时间
 
 message.deity_belong.name=这一神龛属于
+message.deity_active.name=This deity is active for 1000 ticks after tick time
 
 display.spell_locked=锁定法术
 
 message.sense_influence_soul_magan=§6在重重编织中，心展露了自身，源力灵魂赫然在此。
+message.sense_influence_soul_air=§bHere, the heart is the feather which it is weighted against. Here is an Air Soul influence.
+message.sense_influence_soul_earth=§2As the heart spots an Earth Soul influence, it feels like it is one of stone once again.
+message.sense_influence_soul_water=§1The blood of the heart jumps and flows as it spots a Water Soul influence.
+message.sense_influence_soul_fire=§cThe heart beats stronger than it did before as it spots a Fire Soul influence.
+
+message.sense_influence_soul_mana=§dThe heart is a skull and the heart is a string. This is a Mana Soul influence.
+message.sense_influence_soul_unstable=§4The heart falls apart but is then rethought in the influence of an Unstable Soul!
+message.sense_influence_soul_immutable=§7The heart stops beating, but it will not die either, as it is in a Immutable Soul influence.
+message.sense_influence_soul_balanced=§fThe heart is awash with vitality as it sports a Balanced Soul influence!
+
+message.sense_influence_soul_dragon=§eThe heart sings a song that should not be heard in this world.
+message.sense_influence_soul_ancient=§0The heart spots a force of the ancient, a force that should not be found in the world.
+
+message.sense_influence_soul_servant=§3This place is not a part of this world. This place serves something else.
+message.sense_influence_soul_sentient=§9This place feels.
+message.sense_influence_soul_machine=§8This is not a place, this is a machine.
+message.sense_influence_soul_first=§fThe Garden?
+message.sense_influence_soul_true=§fThe Thought?
+message.sense_influence_soul_apostle=§4The Legacy?
+
+message.sense_influence_none=§4Deprived of a body, the heart throbs in your hand.
+
+message.golden_thread_space.not_enough=The Golden Thread needs more space
 
 #Messages-Ascension
 message.ascension_1.standard=§6墙倒塌了。那限制了我潜能的墙。
@@ -596,3 +649,65 @@ research.BASEELEMENTARISTICS.title=元素秘学
 research.BASEELEMENTARISTICS.stage.1=正如我所认为的……这本书中的知识对我的元素秘学研究很有帮助，这完全就是另一种魔法流派。<BR>我需要另一本书来完成这一工作。
 
 research.ESSENCECREATION.title=源质创生
+research.ESSENCECREATION.stage.1=I sense potential support for the creation of elementaristic essences. However, I will need to invest some time in research.
+research.ESSENCECREATION.stage.2=My research was successful!<BR>I can now create essences with a template, a "Blank Essence". This template closely resembles the structure of elementaristic essences and has an affinity for simple reactions.<LINE><PAGE>In order to create a Blank Essence, I will need to obtain Quartz and Chaotic Matter, matter that was through some alchemical reactions. Blank Essences may be transformed into other essences, depending on how I manipulate them.
+
+research.CREATION_FIRE.title=Creating Fire Essence
+research.CREATION_WATER.title=Creating Water Essence
+research.CREATION_EARTH.title=Creating Earth Essence
+research.CREATION_AIR.title=Creating Air Essence
+research.CREATION_AETHER.title=Creating Aether Essence
+
+research.CREATION_LIGHT.title=Creating Light Essence
+research.CREATION_ICE.title=Creating Ice Essence
+
+research.CREATION_LIFE.title=Creating Life Essence
+
+research.CREATION_CRYSTAL.title=Creating Crystal Essence
+
+research.CREATION.stage.1=I could perform some experiments to find another way of creating this essence.
+research.CREATION.stage.2=The experiments were successful. I have added the recipe to this entry.
+
+research.MATSTUDMAGANIZED_MATTER.title=Material Studies: Maganized Matter
+research.MATSTUDMAGANIZED_MATTER.stage.1=I could enhance my repertoire of materials by studying a rather unconventional material...Maganized Matter. <BR> While it seems like a bad idea to use a material of such weirdly definable consistency, golems made out of it seem stable. <BR>Furthermore, these golems are incredibly light, yet they are more durable and stronger than other lightweight golems.
+research.f_MAGANIZED_MATTER.text=Examine a piece of Maganized Matter
+golem.material.maganized_matter=Maganized Matter
+golem.material.text.maganized_matter=These golems are light, yet durable.
+
+research.MATSTUDPROTOPLASM.title=Material Studies: Protoplasm
+research.MATSTUDPROTOPLASM.stage.1=Protoplasm is a sticky organic material capable of repairing itself.<BR>Is this a good idea? <BR><BR><BR><BR><BR><BR><BR><BR><BR>Maybe.
+research.f_PROTOPLASM.text=Examine a piece of Protoplasm
+golem.material.protoplasm=Protoplasm
+golem.material.text.protoplasm=These golems are organic...
+
+research.FOCUSSTABILIZE.title=Focus Effect: Stabilize
+research.FOCUSSTABILIZE.stage.1=My recent discoveries have shown that stabilizing abnormalities in infusion matrices is indeed possible. <BR>I should invest research in creating an according focus effect.
+research.FOCUSSTABILIZE.stage.2=This stabilization effect will (when cast on an Infusion Matrix) increase the target's stability for a bit.<BR>This could be useful in some infusions.
+
+research.MUSHROOM_INTOXICATING.title=Shimmershroom
+research.MUSHROOM_INTOXICATING.stage.1=Recently, I started experiments with intoxicating herbs... relatively expensive intoxicating herbs.<BR>I could invest research into finding a cheap way of short intoxication.<BR>Maybe I should start by looking at a familiar fungus, one that already has minor intoxicating effects.
+research.MUSHROOM_INTOXICATING.stage.2=Inspecting these mushrooms has proven useful; however, I will need to investigate further, and find ways of enhancing this fungus' properties.<BR>Examining rather occult manifestations of the mind will prove useful.
+research.MUSHROOM_INTOXICATING.stage.3=I have completed my research.<BR>This modified fungus will intoxicate anyone that touches it, for a short period of time.<BR>It's quite smelly.
+
+research.f_SHROOM.text=Examine Vishrooms
+research.f_PASSION.text=Examine Fabric of Passion
+research.f_REASON.text=Examine Fabric of Reason
+
+elementaristics.STABILIZE.name=Stabilize
+elementaristics.STABILIZE.text=Stabilizes infusion matrices.
+focus.stabilization.power=Intensity
+
+research.FOCUSRIFTCLOSER.title=Focus Effect: Close Rifts
+research.FOCUSRIFTCLOSER.stage.1=Now that I have found a way of removing flux rifts, I should invest into reducing the cost of doing so.<BR>A focus would be optimal.
+research.FOCUSRIFTCLOSER.stage.2=This focus is able of closing rifts matching its power at the cost of flux (which can be decreased). <BR>Removing flux rifts with the pure power of a focus seems to have its downsides. The destroyed rift won't drop any useful objects and will just disappear.
+
+elementaristics.RIFTCLOSER.name=Close Rifts
+elementaristics.RIFTCLOSER.text=Completely removes flux rifts at the cost of flux generation. No items will drop.
+focus.rift_closer.power=Power
+focus.rift_closer.cleanliness=Cleanliness
+
+focus.rift_closer.cleanliness.1=Worst
+focus.rift_closer.cleanliness.2=Bad
+focus.rift_closer.cleanliness.3=Adequate
+focus.rift_closer.cleanliness.4=Good
+focus.rift_closer.cleanliness.5=Perfect
