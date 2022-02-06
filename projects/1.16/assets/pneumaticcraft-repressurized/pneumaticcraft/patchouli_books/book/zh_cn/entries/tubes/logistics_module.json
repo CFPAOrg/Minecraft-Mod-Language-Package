@@ -2,11 +2,11 @@
   "name": "物流管道模块",
   "icon": "pneumaticcraft:logistics_module",
   "category": "tubes",
-  "advancement": "pneumaticcraft:plastic",
+  "advancement": "pneumaticcraft:pressure_tube",
   "pages": [
     {
       "type": "text",
-      "text": "该模块将容器连接到$(l:logistics/overview)物流系统/$中，相当于在压力管道中控制物品运输。$(p)模块所指向的容器或储罐需要装有$(l:logistics/frames)物流框架/$。$(p)物流管道模块并不接受$(l:tubes/advanced_pcb)高级印刷电路板/$升级。"
+      "text": "该模块将容器连接到$(l:logistics/overview)物流系统/$中，相当于在压力管道中控制物品和流体运输。$(p)模块所指向的容器或储罐需要装有$(l:logistics/frames)物流框架/$。$(p)物流管道模块并不接受$(l:tubes/advanced_pcb)高级印刷电路板/$升级。"
     },
     {
       "type": "image",
@@ -14,11 +14,11 @@
         "pneumaticcraft:textures/patchouli/logistics_module.png"
       ],
       "border": "true",
-      "text": "两个物流管道模块，将装有$(l:logistics/frames#passive_provider)物流被动供应框架/$和$(l:logistics/frames#requester)物流请求框架/$的箱子连接"
+      "text": "两个物流管道模块，连接装有$(l:logistics/frames#passive_provider)物流被动供应框架/$和$(l:logistics/frames#requester)物流请求框架/$的箱子"
     },
     {
       "type": "text",
-      "text": "物流管道模块组成的物流网络由所连接的$(l:tubes/pressure_tubes)压力管道/$构成的管网定义；需要注意的是，气动机器$(italic)并不/$参与构建管网。$(p)使用$(item)染料/$右击物流管道模块以将其染色；只有具有相同颜色的物流管道模块才可相互通信，实际上相当于每个物流网络上独立的 16 个$(thing)频道/$。"
+      "text": "物流管道模块组成的物流网络由所连接的$(l:tubes/pressure_tubes)压力管道/$构成的管网指定；需要注意的是，官网上消耗空气的机器$(italic)并不/$参与构建管网。$(p)可以在模块的配置界面中指定频道，或使用$(item)染料/$右击物流管道模块以将其染色；只有具有相同颜色的物流管道模块才可相互通信，实际上相当于每个管网上独立的 16 个$(thing)频道/$。"
     },
     {
       "type": "text",
@@ -31,8 +31,7 @@
     {
       "type": "crafting",
       "text": "物流管道模块的合成表",
-      "recipe": "pneumaticcraft:logistics_module_v1",
-      "recipe2": "pneumaticcraft:logistics_module_v2"
+      "recipe": "pneumaticcraft:logistics_module"
     }
   ]
 }
