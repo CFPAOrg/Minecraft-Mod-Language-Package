@@ -18,6 +18,11 @@
     },
     {
       "type": "text",
+      "title": "物品变量",
+      "text": "在前几页中，我们称变量$(italic)仅/$存储坐标。这句话其实不太准确：$(thing)物品变量/$的确存在，而其存储（正如其名）物品值。这一类变量由$(l:programming/item_assign)物品赋值/$和$(l:programming/for_each_item)对于每个物品/$拼图生成，并在$(l:programming/item_filter)物品过滤器/$中用到。"
+    },
+    {
+      "type": "text",
       "title": "变量的种类",
       "text": "变量有三个种类：$(li)$(thing)本地变量/$：这些变量存储在无人机中，可以直接以变量名引用。$(li)$(thing)全局变量/$：正如其名，这些变量是全局的，可以被所有无人机访问，因而可以用于在无人机间传递信息。其可以以 #变量名 的形式引用。$(li)$(thing)特指变量/$：这些变量可以用于获取无人机的部分元数据。其可以以 $变量名 的形式引用。"
     },
@@ -25,7 +30,7 @@
       "type": "text",
       "anchor": "global",
       "title": "全局变量",
-      "text": "$(thing)全局变量/$前缀有 #。一般的变量按$(l:tools/drone)无人机/$存储，无法跨无人机使用。全局变量则$(italic)可以/$跨无人机使用。$(p)这使得无人机可以相互传递数据。此外，$(l:machines/universal_sensor)万能传感器/$可以监测全局变量，并据此发出$(#f00)红石信号/$；$(l:tools/remote)遥控器/$可以显示并更改全局变量。"
+      "text": "$(thing)全局变量/$前缀有 #。一般的变量按$(l:tools/drone)无人机/$存储，无法跨无人机使用。然而，全局变量则$(italic)可以/$跨无人机使用。这使得无人机可以相互传递数据。$(p)此外，$(l:tools/gps_tool)定位工具/$可以与全局变量链接并修改全局变量；$(l:machines/universal_sensor)万能传感器/$可以监测全局变量，并据此发出$(#f00)红石信号/$；$(l:tools/remote)遥控器/$可以显示并更改全局变量。"
     },
     {
       "type": "text",
@@ -36,7 +41,19 @@
       "type": "text",
       "anchor": "special",
       "title": "特指变量",
-      "text": "特指变量有下列几类：$(li)$(thing)$owner/$：$(l:tools/drone)无人机/$的所有者的坐标。若所有者不在线，其值为 0,0,0。$(li)$(thing)$drone/$：无人机所在的坐标。$(li)$(thing)$player=<玩家名>/$：名称为 <玩家名>（忽略大小写）的玩家的位置。若该玩家不存在或不在线，其值为 0,0,0。"
+      "text": "特指变量有下列几类：$(li)$(thing)$owner_pos/$：$(l:tools/drone)无人机/$的所有者的坐标（按头部坐标计）。若所有者不在线，其值为 (0,0,0)。$(li)$(thing)$drone_pos/$：无人机所在的方块坐标。$(li)$(thing)$player_pos=<玩家名>/$：名称为 <玩家名>（忽略大小写）的玩家的位置（按头部坐标计）。若该玩家不存在或不在线，其值为 (0,0,0)。"
+    },
+    {
+      "type": "text",
+      "anchor": "special",
+      "title": "特指变量（续）",
+      "text": "$(li)$(thing)$owner_look/$：表示无人机所有者朝向的向量；各个分量的值为 -1、0、1 之一。$(li)$(thing)$controller_pos/$: 控制无人机的$(l:programming/programmable_controller)可编程控制器/$的方块位置。若无人机不由可编程控制器操纵，其值为 (0,0,0)。"
+    },
+    {
+      "type": "text",
+      "anchor": "special",
+      "title": "特指变量（续）",
+      "text": "还有部分已弃用的特指变量，出于兼容考虑仍保留（但仍旧建议使用前几页的变量）：$(li)$(thing)$owner/$：即$(thing)$owner_pos/$。$(li)$(thing)$drone/$：返回无人机$(italic)上方一格/$的方块位置。这是遗留问题（也是弃用该变量的原因）。$(li)$(thing)$player=<玩家名>/$：即 $(thing)$player_pos=<玩家名>/$。"
     },
     {
       "type": "text",
@@ -46,12 +63,12 @@
     {
       "type": "text",
       "title": "调试（续）",
-      "text": "要将变量值插入上述方法之一显示的文本，使用格式符 $(thing)${变量名}/$。$(p)注：此处仍使用全局变量与特指变量的前缀，因此需要使用 $(thing)${$drone}/$ 插入无人机的位置，使用 $(thing)${#全局变量名}/$插入全局变量值。"
+      "text": "要将变量值插入上述方法之一显示的文本，使用格式符 $(thing)${变量名}/$。$(p)注：此处仍使用全局变量与特指变量的前缀，因此需要使用 $(thing)${$drone_pos}/$ 插入无人机的位置，使用 $(thing)${#全局变量名}/$插入全局变量值。"
     },
     {
       "type": "text",
-      "title": "Debugging (cont.)",
-      "text": "可以限制只显示一个坐标的 x/y/z 值，使用后缀 $(thing).x/$，$(thing).y/$ 或 $(thing).z/$分别做到。$(p)例如，要显示无人机所有者的 y 坐标，使用 $(thing)${$owner.y}/$。"
+      "title": "调试（续）",
+      "text": "可以限制只显示一个坐标的 X/Y/Z 值：使用后缀 $(thing).x/$，$(thing).y/$ 或 $(thing).z/$。$(p)例如，要显示无人机所有者的 y 坐标，使用 $(thing)${$owner_pos.y}/$。$(p)若变量为$(thing)物品变量/$，可添加 $(thing).id/$ 后缀以获取物品的注册名而非本地化名（默认行为）。这对于在$(l:machines/aphorism_tile#items)格言瓷砖/$上显示物品很有帮助。"
     }
   ]
 }
