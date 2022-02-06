@@ -16,13 +16,13 @@
     },
     {
       "type": "spotlight",
-      "item": "pneumaticcraft:assembly_io_unit",
+      "item": "pneumaticcraft:assembly_io_unit_import",
       "text": "容器与$(item)装配平台/$的连接。其机械臂可以访问斜向相邻的方块。$(p)装配台 IO 设备可以输出已完成的物品，或输入合成用的物品。可以使用任何容器：原版$(item)箱子/$或其他模组的容器方块。"
     },
     {
       "type": "text",
       "title": "装配台 IO 设备（续）",
-      "text": "$(thing)装配线/$必须含有$(italic)两个/$$(item)装配线 IO 设备/$；一个处于输入模式，一个处于输出模式。$(p)可以通过使用（气动）扳手切换$(item)装配台 IO 设备/$的模式：$(6)橙色/$代表输出模式，$(9)蓝色/$代表输入模式。要使$(item)装配台 IO 设备/$运行，其需要可以与$(item)装配平台/$与可供输入/输出物品（取决于其模式）的容器。"
+      "text": "$(thing)装配线/$必须含有$(italic)两个/$$(item)装配线 IO 设备/$；一个输入设备，一个输出设备。$(6)橙色/$代表输出，$(9)蓝色/$代表输入。要使$(item)装配台 IO 设备/$运行，其需要可以访问$(item)装配平台/$与可供输入/输出物品（取决于其模式）的容器。"
     },
     {
       "type": "spotlight",
@@ -49,7 +49,7 @@
       "flag": "mod:crafttweaker",
       "title": "CraftTweaker",
       "text": "$(thing)装配线/$中的合成配方支持被 $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$ 修改：合成配方可以被加入或移除，见下面链接以获得更多信息。",
-      "url": "https://docs.blamejared.com/1.12/zh/Mods/PneumaticCraft_Repressurized/Assembly/",
+      "url": "https://docs.blamejared.com/1.16/zh/mods/PneumaticCraft-Repressurized/AssemblySystem/",
       "link_text": "CraftTweaker 文档"
     },
     {
@@ -59,12 +59,18 @@
     },
     {
       "type": "crafting",
-      "recipe": "pneumaticcraft:assembly_io_unit",
-      "recipe2": "pneumaticcraft:assembly_drill"
+      "recipe": "pneumaticcraft:assembly_io_unit_import",
+      "recipe2": "pneumaticcraft:assembly_io_unit_export"
     },
     {
       "type": "crafting",
-      "recipe": "pneumaticcraft:assembly_laser"
+      "recipe": "pneumaticcraft:assembly_io_unit_import_from_export",
+      "recipe2": "pneumaticcraft:assembly_io_unit_export_from_import"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:assembly_drill",
+      "recipe2": "pneumaticcraft:assembly_laser"
     }
   ]
 }
