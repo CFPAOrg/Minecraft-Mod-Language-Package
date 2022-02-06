@@ -6,20 +6,20 @@
   "pages": [
     {
       "type": "text",
-      "text": "$(thing)电梯/$是一个可以用于纵向运输任何实体的机器，无论其是物品，怪物，动物或是玩家。$(p)需要在结构的底部放置$(item)电梯基座/$。可以叠加多个电梯基座。$(p)在此之上，放置$(item)电梯框架/$，作为对电梯的支撑。"
+      "text": "$(thing)电梯/$可以用于纵向运输任何实体，包括物品、怪物、动物和玩家。$(p)需要在电梯结构的底部放置$(item)电梯基座/$。可以叠加多个电梯基座。$(p)在此之上，放置$(item)电梯框架/$，作为对电梯的支撑。"
     },
     {
       "type": "text",
-      "text": "$(item)电梯基座/$和$(item)电梯框架/$各自的数量共同决定了$(thing)电梯/$可以上升的高度。这一最大高度为下面两个数据的较小值：$(li)1 x 竖直堆叠的$(item)电梯框架/$的个数$(li)$(ttcolor)$(t:这一乘数可以在配置文件中更改 - 见 'I:elevatorBaseBlocksPerBase')4 x/$ 竖直堆叠的$(item)电梯基座/$的数目"
+      "text": "$(item)电梯基座/$和$(item)电梯框架/$各自的数量共同决定了$(thing)电梯/$可以上升的高度。这一最大高度为下面两个数据的较小值：$(li)1 x 竖直堆叠的$(item)电梯框架/$的个数$(li)$(ttcolor)$(t:这一乘数可以在配置文件中更改 - 见 'I:elevatorBaseBlocksPerBase')6 x/$ 竖直堆叠的$(item)电梯基座/$的数目"
     },
     {
       "type": "text",
-      "text": "$(thing)电梯/$可以在以下两种模式里运行：$(li)$(bold)红石模式/$：施加于$(item)电梯基座/$的$(#f00)红石信号/$控制电梯的高度，正比于信号强度（信号为 0 时位于最底端，信号为 15 时位于最顶端）。$(li)$(bold)电梯呼叫器/$：$(l:machines/elevators#caller)电梯呼叫器/$可以提供对电梯更复杂的控制。"
+      "text": "$(thing)电梯/$可以按以下两种模式运行：$(li)$(bold)红石模式/$：施加于$(item)电梯基座/$的$(#f00)红石信号/$控制电梯的高度，正比于信号强度（信号为 0 时位于最底端，信号为 15 时位于最顶端）。$(li)$(bold)电梯呼叫器/$：$(l:machines/elevators#caller)电梯呼叫器/$可以提供对电梯更复杂的控制。"
     },
     {
       "type": "text",
       "title": "多方块的电梯",
-      "text": "可以通过水平连接$(item)电梯基座/$以扩展$(thing)电梯/$的大小。当相邻的$(thing)电梯/$的顶部$(item)电梯基座/$位于统一高度时，$(thing)电梯/$将会共享楼层（由$(l:machines/elevators#caller)电梯呼叫器/$定义）于红石输出，因而形成一个“多方块结构”。"
+      "text": "可以通过水平连接$(item)电梯基座/$以扩展$(thing)电梯/$的大小。当相邻的$(thing)电梯/$的顶部$(item)电梯基座/$位于统一高度时，$(thing)电梯/$将会共享楼层（由$(l:machines/elevators#caller)电梯呼叫器/$定义）与红石输出，因而形成一个“多方块结构”。"
     },
     {
       "type": "text",
@@ -35,7 +35,7 @@
     {
       "type": "text",
       "title": "电梯呼叫器（续）",
-      "text": "此外，$(item)电梯呼叫器/$将会在$(thing)电梯/$位于该楼层时发出$(#f00)红石信号/$，而对电梯呼叫器施加一个$(#f00)红石信号/$将呼叫$(thing)电梯/$至该楼层。$(p)最后，像其他方块一样，$(item)电梯呼叫器/$可以使用$(l:tools/camo_applicator)伪装涂敷器/$进行伪装。"
+      "text": "此外，$(item)电梯呼叫器/$将会在$(thing)电梯/$位于该楼层时发出$(#f00)红石信号/$，而对电梯呼叫器施加一个$(#f00)红石信号/$将呼叫$(thing)电梯/$至该楼层。$(p)可以使用$(l:tools/camo_applicator)伪装涂敷器/$对$(item)电梯呼叫器/$进行覆盖。"
     },
     {
       "type": "image",
@@ -47,7 +47,7 @@
     },
     {
       "type": "crafting",
-      "recipe": "pneumaticcraft:elevator_base",
+      "recipe": "pneumaticcraft:elevator_base_1",
       "recipe2": "pneumaticcraft:elevator_frame"
     },
     {
