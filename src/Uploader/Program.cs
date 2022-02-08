@@ -62,6 +62,9 @@ namespace Uploader
                     case "1.16":
                         scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip.1");
                         break;
+                    case "1.18":
+                        scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip.1");
+                        break;
                     default:
                         break;//不应该
                 }
@@ -88,6 +91,12 @@ namespace Uploader
                         break;
                     case "1.16":
                         var cmd = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip");
+                        cmd.Execute();
+                        var err = cmd.Error;
+                        Log.Logger.Error(err);
+                        break;
+                    case "1.18":
+                        var cmd = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip");
                         cmd.Execute();
                         var err = cmd.Error;
                         Log.Logger.Error(err);

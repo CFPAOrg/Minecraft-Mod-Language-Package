@@ -31,6 +31,12 @@ jobs:
         with:
           paths: projects/1.16
 
+      - name: Check changed path on 1.16
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: changed-118
+        with:
+          paths: projects/1.18
+
       - name: Build Packer
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
@@ -41,6 +47,10 @@ jobs:
       - name: Run Packer
         run: ./Packer --version="1.16"
         if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Packer
+        run: ./Packer --version="1.18"
+        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Create timestamp
         id: create_timestamp
@@ -84,6 +94,18 @@ jobs:
           asset_content_type: application/zip
         if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
+      - name: Update release asset
+        id: upload-release-asset2
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: Minecraft-Mod-Language-Package-1.18.zip # Use the full path here because environment variables are not in scope
+          asset_name: Minecraft-Mod-Language-Package-1.18.zip
+          asset_content_type: application/zip
+        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
       # Doesn't do so now because it messes up the server
       - name: Build Uploader
         run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
@@ -95,3 +117,7 @@ jobs:
       - name: Run Uploader
         run: .\Uploader --version="1.16" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
         if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Uploader
+        run: .\Uploader --version="1.18" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
+        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
