@@ -90,16 +90,16 @@ namespace Uploader
                         Log.Logger.Error(err1);
                         break;
                     case "1.16":
-                        var cmd = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip");
-                        cmd.Execute();
-                        var err = cmd.Error;
-                        Log.Logger.Error(err);
+                        var cmd2 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip");
+                        cmd2.Execute();
+                        var err2 = cmd2.Error;
+                        Log.Logger.Error(err2);
                         break;
                     case "1.18":
-                        var cmd = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip");
-                        cmd.Execute();
-                        var err = cmd.Error;
-                        Log.Logger.Error(err);
+                        var cmd3 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip");
+                        cmd3.Execute();
+                        var err3 = cmd3.Error;
+                        Log.Logger.Error(err3);
                         break;
                     default:
                         break;//不应该
