@@ -1,0 +1,35 @@
+{
+    "name": "block.ars_nouveau.potion_melder",
+    "icon": "ars_nouveau:potion_melder",
+    "category": "machines",
+    "pages": [
+        {
+            "type": "text",
+            "text": "ars_nouveau.page1.potion_melder"
+        },
+    {
+      "type": "apparatus_recipe",
+      "recipe": "ars_nouveau:potion_melder"
+    },{
+	"type":"multiblock",
+	"multiblock":{
+		"mapping":{
+			"C":"ars_nouveau:potion_jar",
+			"0":"ars_nouveau:potion_melder",
+			"J":"ars_nouveau:mana_jar"
+		},
+		"pattern":[
+			["   "],
+			["C0C"],
+			[" C "]
+		],
+		"symmetrical": true
+	},
+	"text":"从两个相邻药水罐抽取并向下方输出，比例为 3:1。"
+	},
+		{
+            "type": "relations",
+            "entries":["machines/potion_jar"]        
+        }
+    ]
+}
