@@ -169,7 +169,7 @@ item.qmd.depleted_fuel_copernicium.mix_291_za.name=Depleted MZA-291 Fuel Pellet
 
 item.qmd.lepton_cannon.name=Lepton Cannon
 item.qmd.gluon_gun.name=Gluon Gun
-item.qmd.antimatter_lancher.name=Antimatter Launcher
+item.qmd.antimatter_launcher.name=Antimatter Launcher
 
 item.qmd.helm_hev.name=HEV Helmet
 item.qmd.chest_hev.name=HEV Chestplate
@@ -325,7 +325,7 @@ qmd.guide_book.desc=This is a Guide to Quantum Minecraft Dynamics. It still WIP 
 #death messages
 death.attack.gluon_gun=%1$s was vaporized by %2$s with a Gluon Gun
 death.attack.lepton_cannon=%1$s was killed by %2$s with a Lepton Cannon
-death.attack.antimatter_lancher=%1$s was Annihilated by %2$s with a Antimatter Launcher
+death.attack.antimatter_launcher=%1$s was Annihilated by %2$s with a Antimatter Launcher
 
 
 #block descriptions
@@ -482,7 +482,7 @@ info.qmd.item.heat=Heat Produced: %s H/t
 info.qmd.item.power=Base Power: %s RF/t
 info.qmd.item.max_temp=Maximum Operating Temperature: %s K
 info.qmd.item.energy_used=Energy Used: %s
-info.qmd.item.amount=Amount: %s / %s
+info.qmd.item.amount=Amount: %s / %s pu
 
 info.qmd.particle_chamber.detector.efficiency=Particle Efficiency: %s
 info.qmd.particle_chamber.detector.power=Base Power: %s RF/t
@@ -498,6 +498,9 @@ message.qmd.atmosphere_collector_no_fluid=Collecting no gas
 
 
 #multiblock validation
+zerocore.api.nc.multiblock.validation.cannot_be_multiblock_part=This block position cannot be part of the multiblock.
+
+
 qmd.multiblock_validation.need_energy_ports=There must be at least 1 Energy Port.
 qmd.multiblock_validation.no_inlet=There must be at least 1 Coolant Vent INPUT.
 qmd.multiblock_validation.no_outlet=There must be at least 1 Coolant Vent OUTPUT.
@@ -602,7 +605,7 @@ gui.qmd.container.linear_accelerator_controller.name=Linear Accelerator
 gui.qmd.container.ring_accelerator_controller.name=Synchrotron Accelerator
 gui.qmd.container.beam_diverter_controller.name=Beam Diverter
 gui.qmd.container.beam_splitter_controller.name=Beam Splitter
-gui.qmd.container.decelerator_controller.name=Decelerator Accelerator
+gui.qmd.container.decelerator_controller.name=Decelerator
 gui.qmd.container.accelerator.cavitys=RF Cavities: %s at %s 
 gui.qmd.container.accelerator.quadrupoles=Quadrupoles: %s at %s
 gui.qmd.container.accelerator.dipoles=Dipoles: %s at %s 
@@ -701,7 +704,7 @@ qmd.particle.antisigma_naught.name=Anti-Sigma 0
 qmd.particle.sigma_minus.name=Sigma -
 qmd.particle.antisigma_minus.name=Anti-Sigma -
 qmd.particle.delta_plus_plus.name=Delta ++
-qmd.particle.antidelta_plus_plus.name=Anti-Delta -
+qmd.particle.antidelta_plus_plus.name=Anti-Delta ++
 qmd.particle.delta_minus.name=Delta -
 qmd.particle.antidelta_minus.name=Anti-Delta -
 
@@ -808,6 +811,7 @@ gui.qmd.jei.reaction.range=Range: %s
 gui.qmd.jei.reaction.energy_released=Released Energy: %s
 gui.qmd.jei.reaction.cross_section=Cross Section: %s%%
 gui.qmd.jei.reaction.heat_released=Heat Released: %s
+gui.qmd.jei.reaction.max_energy=Maximum Energy: %s
 
 #jei trick
 tile.qmd.irradiator_fuel.name=Irradiator Fuel
@@ -938,10 +942,10 @@ gui.qmd.config.category.accelerator=Accelerators
 gui.qmd.config.category.accelerator.tooltip=Accelerator and accelerator parts configs
 
 gui.qmd.config.category.particle_chamber=Particle Chambers
-gui.qmd.config.category.particle_chamber,tooltip=Particle chamber and particle chamber parts configs
+gui.qmd.config.category.particle_chamber.tooltip=Particle chamber and particle chamber parts configs
 
-gui.qmd.config.category.containment=Containment Chambers
-gui.qmd.config.category.containment.tooltip=Containment chamber and containment chamber parts configs
+gui.qmd.config.category.vacuum_chamber=Vacuum Chambers
+gui.qmd.config.category.containment.tooltip=Vacuum chamber and Vacuum chamber parts configs
 
 gui.qmd.config.category.fission=Fission
 gui.qmd.config.category.fission.tooltip=Fission parts and fuels configs
@@ -956,10 +960,13 @@ gui.qmd.config.category.other=Other
 gui.qmd.config.category.other.tooltip=Other configs
 
 gui.qmd.config.processors.power=Machine Power Usage
-gui.qmd.config.processors.power.comment=The default amount of RF/t a machine uses. Order:[Ore Leacher].
+gui.qmd.config.processors.power.comment=The default amount of RF/t a machine uses. Order:[Ore Leacher, atmosphere collector].
 
 gui.qmd.config.processors.time=Machine Process Time
 gui.qmd.config.processors.time.comment=The default time a machine takes to process in ticks. Order:[Ore Leacher, Irradiator].
+
+gui.qmd.config.processors.irradiator_rad_res=Irradiator Rad Resistance
+gui.qmd.config.processors.irradiator_rad_res.comment=The base radiation resistance the irradiation has. This does nothing if hardcore containers is not on.
 
 gui.qmd.config.processors.atmosphere_collector_recipes=Atmosphere Collector Recipes
 gui.qmd.config.processors.atmosphere_collector_recipes.comment=Defines what the atmosphere collector collects in each dimension. Format dimesionID:fluidName:milibucketsPerTick
@@ -993,6 +1000,9 @@ gui.qmd.config.accelerator.accelerator_thermal_conductivity.comment=The thermal 
 
 gui.qmd.config.accelerator.minimium_accelerator_ring_input_particle_energy=Minimum Synchrotron Input Particle Energy
 gui.qmd.config.accelerator.minimium_accelerator_ring_input_particle_energy.comment=The minimum particle energy allowed to be inputted into a Synchrotron Accelerator in keV.
+
+gui.qmd.config.accelerator.ion_source_output=Ion source Output
+gui.qmd.config.accelerator.ion_source_output.comment=The default ion source pu/t output. Increasing this makes recipes go faster.
 
 
 gui.qmd.config.accelerator.beam_attenuation_rate=Beam Attenuation Rate
@@ -1103,6 +1113,9 @@ gui.qmd.config.tools.tool_attack_damage.comment=The attack damage of tool types.
 gui.qmd.config.tools.tool_enchantability=Tool Enchantability
 gui.qmd.config.tools.tool_enchantability.comment=The enchantability of tool types. Order:[Tungsten Carbide].
 
+gui.qmd.config.tools.lepton_particle_usage=Lepton Cannon Particle Usage
+gui.qmd.config.tools.lepton_particle_usage.comment=The amount of particle units (pu) each shot with the lepton cannon costs.
+
 gui.qmd.config.tools.lepton_damage=Lepton Cannon Damage
 gui.qmd.config.tools.lepton_damage.comment=The damage each type of ammo does in the lepton cannon. Order:[Positronium, Muonium, Tauonium].
 
@@ -1113,7 +1126,10 @@ gui.qmd.config.tools.lepton_range=Lepton Cannon Range
 gui.qmd.config.tools.lepton_range.comment=The range in blocks each type of ammo has in the lepton cannon. Order:[Positronium, Muonium, Tauonium].
 
 gui.qmd.config.tools.lepton_cool_down=Lepton Cannon Cooldown
-gui.qmd.config.tools.lepton_cool_down.comment=The firing cool down time of lepton cannon in ticks.
+gui.qmd.config.tools.lepton_cool_down.comment=The firing cool down time of the lepton cannon in ticks.
+
+gui.qmd.config.tools.gluon_particle_usage=Gluon Gun Particle Usage
+gui.qmd.config.tools.gluon_particle_usage.comment=The amount of particle units (pu) each tick it costs to run the gluon gun.
 
 gui.qmd.config.tools.gluon_damage=Gluon Gun Damage
 gui.qmd.config.tools.gluon_damage.comment=The amount of damage the gluon gun does per hit.
@@ -1124,6 +1140,11 @@ gui.qmd.config.tools.gluon_radiation.comment=The amount of rads the gluon gun do
 gui.qmd.config.tools.gluon_range=Gluon Gun Range
 gui.qmd.config.tools.gluon_range.comment=The range in blocks of the gluon gun.
 
+gui.qmd.config.tools.antimatter_launcher_usage=Antimatter Launcher Particle Usage
+gui.qmd.config.tools.antimatter_launcher_usage.comment=The amount of particle units (pu) each shot with the antimatter launcher costs.
+
+gui.qmd.config.tools.antimatter_launcher_cool_down=Antimatter Launcher Cooldown
+gui.qmd.config.tools.antimatter_launcher_cool_down.comment=The firing cool down time of the antimatter launcher in ticks.
 
 gui.qmd.config.tools.hev_toughness=HEV Toughness
 gui.qmd.config.tools.hev_toughness.comment=The toughness of the HEV SUIT type. Order:[Charged, Uncharged].
@@ -1180,17 +1201,8 @@ gui.qmd.config.other.rtg_power.comment=The Amount of RF/t generated by each RTG 
 gui.qmd.config.other.processor_passive_rate=Passive Collector Rate
 gui.qmd.config.other.processor_passive_rate.comment=The Amount of mB/t generated by each Gas Collector type. Order:[Helium, Neon, Argon].
 
-gui.qmd.config.other.source_particle_amount=Base Source Particle Amount
-gui.qmd.config.other.source_particle_amount.comment=The base particle units per tick a source outputs.
 
-gui.qmd.config.other.source_capacity=Source Capacity
-gui.qmd.config.other.source_capacity.comment=The max amount each source has. Order:[Tungsten Filament, Sodium 22, Cobalt 60, Iridium 192, calcium 48].
 
-gui.qmd.config.other.canister_capacity=Canister Capacity
-gui.qmd.config.other.canister_capacity.comment=The max amount each canister has. Order:[Empty, Hydrogen, Deuterium, Tritium, Helium 3, Helium, Diborane].
-
-gui.qmd.config.other.cell_capacity=Source Capacity
-gui.qmd.config.other.cell_capacity.comment=The max amount each cell has. Order:[Empty, Anti-Hydrogen, Anti-Deuterium, Anti-Tritium, Anti-Helium 3, Anti-Helium, Positronium, Muonium, Tauonium, Glueballs].
 
 gui.qmd.config.other.override_nc_recipes=Override Nuclearcraft Recipes
 gui.qmd.config.other.override_nc_recipes.comment=Allow QMD override NC recipes to better fit in.
@@ -1204,5 +1216,3 @@ gui.qmd.config.other.turbine_blade_efficiency.comment=The efficiency of each Tur
 gui.qmd.config.other.turbine_blade_expansion=Turbine Blade Expansions
 gui.qmd.config.other.turbine_blade_expansion.comment=The expansion of each Turbine Blade. Order:[Super Alloy].
 
-gui.qmd.config.other.cell_capacity=Source Capacity
-gui.qmd.config.other.cell_capacity.comment=The max amount each cell has. Order:[Empty, Anti-Hydrogen, Anti-Deuterium, Anti-Tritium, Anti-Helium 3, Anti-Helium, Positronium, Muonium, Tauonium, Glueballs].

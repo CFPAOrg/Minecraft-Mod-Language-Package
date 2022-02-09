@@ -1,8 +1,8 @@
 #Creative Tabs
-itemGroup.SpaceItemsTab=额外行星：物品
-itemGroup.SpaceBlocksTab=额外行星：方块
-itemGroup.SpaceToolsTab=额外行星：工具
-itemGroup.SpaceArmorTab=额外行星：装备
+itemGroup.SpaceItemsTab=额外行星丨物品
+itemGroup.SpaceBlocksTab=额外行星丨方块
+itemGroup.SpaceToolsTab=额外行星丨工具
+itemGroup.SpaceArmorTab=额外行星丨装备
 
 #Galaxies
 galaxy.whirlpool=涡状星系
@@ -48,8 +48,11 @@ planet.haumea=妊神星
 planet.MercuryEP=水星 2.0
 planet.CeresEP=谷神星 2.0
 planet.JupiterEP=木星 2.0
+planet.SaturnEP=土星 2.0
+planet.UranusEP=天王星 2.0
 planet.NeptuneEP=海王星 2.0
 planet.PlutoEP=冥王星 2.0
+planet.ErisEP=阋神星 2.0
 
 planet.kepler62b=开普勒-62b
 planet.kepler62c=开普勒-62c
@@ -105,6 +108,10 @@ moon.ioEP=木卫一 2.0
 moon.deimosEP=火卫二 2.0
 moon.phobosEP=火卫一 2.0
 moon.oberonEP=天卫四 2.0
+moon.titanEP=土卫六 2.0
+moon.rheaEP=土卫五 2.0
+moon.iapetusEP=土卫八 2.0
+moon.titaniaEP=天卫三 2.0
 
 #Planet Blocks
 tile.mercury.surface.name=水星地表岩石
@@ -470,13 +477,13 @@ container.basic.densifier.name=基础浓缩机
 container.basic.decontamination.unit.name=基础辐射消除装置
 
 #GUI Components/Messages
-gui.salt_water_tank.desc.4=结晶水箱
+gui.salt_water_tank.desc.4=液态结晶水箱
 gui.message.salt_water.name=结晶水
-gui.salt_water_input.desc.0=将结晶水桶放置在这
-gui.salt_water_input.desc.1=个槽以填充结晶水箱
-gui.salt_water_input.desc.2=每桶结晶水会填充 1000mB
-gui.salt_water_output.desc.0=将空桶放置在这个槽以用
-gui.salt_water_output.desc.1=结晶水箱中的结晶水装满桶
+gui.salt_water_input.desc.0=将液态结晶水桶放置在这
+gui.salt_water_input.desc.1=个槽以填充液态结晶水箱。
+gui.salt_water_input.desc.2=每桶液态结晶水会填充 1000mB
+gui.salt_water_output.desc.0=将原版空桶放置在这个槽
+gui.salt_water_output.desc.1=以用箱中的结晶水装满桶
 gui.status.injecting.name=注入中
 gui.status.smasher.name=粉碎中
 gui.status.crystallizing.name=结晶中
@@ -495,13 +502,13 @@ gui.message.infected_water.name=污染水
 gui.clean_water_tank.desc.4=清水箱
 gui.message.clean_water.name=清水
 gui.radioactive_water_input.desc.0=将放射性水桶放置在这
-gui.radioactive_water_input.desc.1=个槽以填充放射性水箱
+gui.radioactive_water_input.desc.1=个槽以填充放射性水箱。
 gui.radioactive_water_input.desc.2=每桶放射性水会填充 1000mB
 gui.infected_water_input.desc.0=将污染水桶放置在这
-gui.infected_water_input.desc.1=个槽以填充污染水箱
+gui.infected_water_input.desc.1=个槽以填充污染水箱。
 gui.infected_water_input.desc.2=每桶污染水会填充 1000mB
-gui.clean_water_output.desc.0=将空桶放置在这个槽以用
-gui.clean_water_output.desc.1=清水箱中的清水装满桶
+gui.clean_water_output.desc.0=将原版空桶放置在这个槽
+gui.clean_water_output.desc.1=以用箱中的清水装满桶
 gui.bucket.message.finding=你可以在
 gui.bucket.message.finding.2.infected_water_fluid=水星得到这种液体
 gui.bucket.message.finding.2.radioactive_water_fluid=谷神星和木卫二得到这种液体
@@ -537,7 +544,8 @@ gui.radiation.type.message=的辐射
 gui.status.waiting.on.player.name=没有玩家在机器内
 gui.message.finding.block=可以在
 gui.message.finding.volcanic.rock=木星和木卫一找到
-gui.message.decontamination.unit=减少了 10% 的辐射等级
+gui.message.finding.potash=水星，地下深处
+gui.message.decontamination.unit=减少了 {PERCENT} 的辐射等级
 gui.battery_slot.desc.custom=建议使用究极电池
 gui.radiation.cancel.message=你可以使用带有环境温度控制器升级的氧气供给机来充分保护你不受辐射和压强的影响
 currently.unused.name=当前未被使用！
@@ -596,6 +604,7 @@ gui.module.installed.name=已安装模块！
 gui.module.missing_requirements.name=对不起，你不符合安装此模块的要求！
 gui.module.already_installed.name=你已经安装了此模块！
 gui.module.missing_armour.name=由于太空服装甲部件缺失，无法安装！
+gui.module.inventory_full.name=由于你的物品栏，无法卸载此模块！
 gui.module.description.name=模块描述
 gui.module.name.name=模块名称
 gui.module.type.name=模块类型
@@ -613,6 +622,8 @@ gui.module.pre_launch_checklist.name=发射检查表
 gui.module.nasa_workbench.name=便携式 NASA 工作台
 gui.module.oxygen_tank_switch.name=氧气罐自动交换器
 gui.module.auto_space_gear_equip.name=太空齿轮自动装备
+gui.module.basic_solar_panel.name=基础便携太阳能电池板
+gui.module.advanced_solar_panel.name=高级便携太阳能电池板
 
 gui.module.sensor_glasses.desc=功能与星系的探测目镜相同
 gui.module.no_fall_damage.desc=移除玩家的摔落伤害
@@ -622,6 +633,8 @@ gui.module.pre_launch_checklist.desc=允许轻松访问星系的发射检查表�
 gui.module.nasa_workbench.desc=允许便携地访问星系的 NASA 工作台，请参见控制按键以打开它
 gui.module.oxygen_tank_switch.desc=将装备好的空罐与物品栏中任何可用的非空氧气罐互换
 gui.module.auto_space_gear_equip.desc=在你的物品栏中自动装备任何与太空相关的装备
+gui.module.basic_solar_panel.desc=白天时会非常缓慢地给你的太空服充能
+gui.module.advanced_solar_panel.desc=白天时会缓慢地给你的太空服充能
 
 #Other Blocks
 tile.nuclear_bomb.name=核弹
@@ -631,12 +644,12 @@ tile.ash_rock.name=灰烬块
 tile.frozen_nitrogen.name=冷冻氮
 tile.dense_ice.name=坚冰
 tile.fossil.name=化石块
-tile.ore_lead.name=铅矿
+tile.ore_lead.name=铅矿石
 tile.potash.name=草木灰
 tile.red_sand.name=红沙
 tile.red_sandstone.name=红砂岩
-tile.orange_sand.name=橘沙
-tile.orange_sandstone.name=橘砂岩
+tile.orange_sand.name=橙沙
+tile.orange_sandstone.name=橙砂岩
 
 #CandyCane/Cake/Icing Blocks
 tile.candy_blocks.candy_cane_red.name=红色糖果块
@@ -670,7 +683,7 @@ tile.cake_blocks.white_icing_pink_dots.name=粉红点装饰的白色糖衣
 tile.cake_blocks.white_icing_orange_dots.name=橙点装饰的白色糖衣
 tile.cake_blocks.cookie_rocks.name=曲奇岩石
 
-tile.white_sugar_cane.name=白色甘蔗
+tile.white_sugar_cane.name=白色甘蔗块
 
 #Decorative Blocks
 tile.decorative_blocks.marble.name=大理石
@@ -855,11 +868,11 @@ item.wafer.blue_gem_wafer.name=蓝色宝石晶圆
 item.wafer.white_gem_wafer.name=白色宝石晶圆
 
 #Buckets
-item.bucket_glowstone.name=荧石水桶
-item.bucket_salt.name=结晶水桶
-item.bucket_magma.name=岩浆水桶
+item.bucket_glowstone.name=荧石桶
+item.bucket_salt.name=液态结晶水桶
+item.bucket_magma.name=岩浆桶
 item.bucket_frozen_water.name=冰水桶
-item.bucket_nitrogen.name=液氮桶
+item.bucket_nitrogen.name=氮桶
 item.bucket_clean_water.name=清水桶
 item.bucket_infected_water.name=污染水桶
 item.bucket_radioactive_water.name=放射性水桶
@@ -1068,6 +1081,10 @@ item.green_diamond_chest.name=绿色钻石胸甲
 item.green_diamond_legings.name=绿色钻石护腿
 item.green_diamond_boots.name=绿色钻石靴子
 
+item.tier0_space_suit_helmet.name=Temporary Space Suit Helmet
+item.tier0_space_suit_chest.name=Temporary Space Suit Chestplate
+item.tier0_space_suit_legings.name=Temporary Space Suit Leggings
+item.tier0_space_suit_boots.name=Temporary Space Suit Boots
 item.tier1_space_suit_helmet.name=一阶太空服头盔
 item.tier1_space_suit_chest.name=一阶太空服胸甲
 item.tier1_space_suit_jetpack_chest.name=一阶太空服喷气背包胸甲
@@ -1101,6 +1118,9 @@ space.suit.information.extra.3=太空服等级越高，
 space.suit.information.extra.4=获得辐射的速度就越慢
 space.suit.power.info=支持下列能量系统：
 space.suit.power.info.2=RF、通用机械的 Mekanism Joules、星系的 GC Joules、IC2 的 EU
+space.suit.power.info.3=Power is only required for modules
+space.suit.temp.information=Temporary/One Time Use, Obtained via Enviro Emergency Kit
+space.suit.temp.ticks=Use Time Left
 
 item_desc.spacesuit.shift.name=按下 %s 键获取压强和辐射信息
 item_desc.spacesuit.module.shift.name=按下 %s 键查看已安装的模块
@@ -1186,6 +1206,8 @@ item.tier4_un_prepared_space_suit_boots.name=四阶未完成太空服靴子
 item.module_items.no_fall_boots.name=无摔落伤害模块
 item.module_items.oxygen_controller.name=氧气控制器
 item.module_items.space_gear_controller.name=太空齿轮控制器
+item.enviro_emergency_kit.name=Environment Emergency Kit
+item.enviro_emergency_kit.description=Right click to equip Temporary Space Suit. Warning: One time use!
 
 #Oxygen Tanks
 item.oxygen_tank_very_heavy_full.name=超重型氧气罐
@@ -1431,8 +1453,8 @@ achievement.craft_rocket_9.desc=制作九阶火箭
 achievement.craft_rocket_10.desc=制作十阶火箭
 
 #Liquids/Fluid
-tile.glowstone.name=荧石水
-#tile.magma.name=岩浆水
+tile.glowstone.name=液态荧石
+tile.magma_block.name=液态岩浆
 tile.nitrogen.name=液氮
 tile.frozen_water.name=冰水
 tile.salt.name=盐水
@@ -1445,8 +1467,8 @@ tile.liquid_hydrocarbon.name=液态烃
 tile.liquid_chocolate.name=液态巧克力
 tile.liquid_caramel.name=液态焦糖
 
-fluid.glowstone_fluid=荧石水
-fluid.magma_fluid=岩浆水
+fluid.glowstone_fluid=液态荧石
+fluid.magma_fluid=液态岩浆
 fluid.nitrogen_fluid=液氮
 fluid.frozen_water_fluid=冰水
 fluid.salt_fluid=盐水
@@ -1506,10 +1528,10 @@ tile.veuns.dungeon_brick.name=金星地牢砖
 
 #Liquids/Fluid
 tile.glowstone_fluid.name=液态荧石
-tile.magma_fluid.name=岩浆水
+tile.magma_fluid.name=液态岩浆
 tile.nitrogen_fluid.name=液氮
-tile.frozen_water_fluid.name=冰
-tile.salt_fluid.name=结晶水
+tile.frozen_water_fluid.name=冰水
+tile.salt_fluid.name=液态结晶水
 tile.radioactive_water_fluid.name=放射性水
 tile.infected_water_fluid.name=污染水
 tile.methane_fluid.name=液态甲烷
@@ -1566,6 +1588,8 @@ tile.neptuneDungeonBrickStoneStairs.name=海王星地牢砖台阶
 
 #Planets
 planet.Venus=金星
+
+planet.VenusEP=金星 2.0
 
 #Other Blocks
 tile.slime_block.name=粘液块

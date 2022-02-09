@@ -1,0 +1,32 @@
+{
+  "name": "邮箱",
+  "category": "delivery:getting_started",
+  "icon": "delivery:mailbox",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "text",
+      "title": "邮箱",
+      "text": "邮箱可用以接收与寄送邮件。$(br2)你可以在这里收到：$(br)$(li)$(l:getting_started/mailbox_contracts)订单$(/l)$(li)订单报酬$(li)$(l:advanced_delivery/computer#minternet)网购货物$(/l)$(br2)$(l:packaging/envelope)信封$(/l)和$(l:packaging/parcel)包裹$(/l)也可以在此被寄出。$(br2)每天早晨 6 点邮箱将执行一次清算。"
+    },
+    {
+      "type": "multiblock",
+      "multiblock": {
+        "mapping": {
+          "M": "delivery:mailbox",
+          "0": "delivery:mailbox_post"
+        },
+        "pattern": [
+          ["M"],
+          ["0"],
+          [" "]
+        ]
+      },
+      "text": "成功创建$(l:getting_started/groups)小组$(/l)后，你将收到一个邮箱。"
+    },
+    {
+      "type": "text",
+      "text": "你可以同时保有多个邮箱，同组的所有成员将共享同一个邮箱空间。"
+    }
+  ]
+}
