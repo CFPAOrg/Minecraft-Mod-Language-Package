@@ -423,7 +423,7 @@ metaitem.board.fiber_reinforced.name=纤维强化电路板
 metaitem.board.multilayer.fiber_reinforced.name=多层纤维增强电路板
 metaitem.board.phenolic.name=酚醛电路板
 metaitem.board.plastic.name=塑料电路板
-metaitem.board.wetware.name=湿件生物电路板
+metaitem.board.wetware.name=湿件电路板
 
 metaitem.circuit.vacuum_tube.name=真空管
 metaitem.circuit.vacuum_tube.description=简单电路
@@ -550,18 +550,18 @@ metaitem.cover.facade.name=%s伪装板
 metaitem.cover.facade.tooltip=对管道和线缆进行伪装
 
 metaitem.cover.screen.name=电脑屏幕覆盖板
-metaitem.cover.screen.tooltip=显示数据与 GUI
+metaitem.cover.screen.tooltip=显示数据
 metaitem.cover.crafting.name=工作台覆盖板
-metaitem.cover.crafting.tooltip=总比木质工作台好
+metaitem.cover.crafting.tooltip=安装在机器侧面的高级工作台
 metaitem.cover.shutter.name=扇板
-metaitem.cover.shutter.tooltip=阻塞本侧的物品/流体缓存。与机器控制覆盖板共同使用。
+metaitem.cover.shutter.tooltip=阻止机器侧面的任何交互行为
 
 metaitem.cover.solar.panel.name=太阳能覆盖板
 metaitem.cover.solar.panel.tooltip=愿太阳与你同在
 metaitem.cover.solar.panel.ulv.name=太阳能覆盖板（8V）
-metaitem.cover.solar.panel.ulv.tooltip=8V 太阳能覆盖板
+metaitem.cover.solar.panel.ulv.tooltip=8V 太阳能板
 metaitem.cover.solar.panel.lv.name=太阳能覆盖板（LV）
-metaitem.cover.solar.panel.lv.tooltip=LV 太阳能覆盖板
+metaitem.cover.solar.panel.lv.tooltip=LV 太阳能板
 
 metaitem.tool.cheat.name=调试扫描仪
 metaitem.tool.cheat.tooltip=也是一个无限的能量源
@@ -1141,7 +1141,7 @@ material.hydrogen_sulfide=硫化氢
 
 material.phosphorous_pentoxide=五氧化二磷
 material.phosphoric_acid=磷酸
-material.polyvinyl_acetate=聚醋酸乙烯酯
+material.polyvinyl_acetate=聚乙酸乙烯酯
 material.phenol=苯酚
 material.bisphenol_a=双酚A
 material.epoxid=环氧树脂
@@ -1180,7 +1180,7 @@ material.dimethyldichlorosilane=二甲基二氯硅烷
 material.styrene=苯乙烯
 material.polystyrene=聚苯乙烯
 material.butadiene=丁二烯
-material.raw_styrene_butadiene_rubber=丁苯生胶
+material.raw_styrene_butadiene_rubber=生丁苯橡胶
 material.styrene_butadiene_rubber=丁苯橡胶
 material.dichlorobenzene=二氯苯
 material.hydrochloric_acid=盐酸
@@ -1244,7 +1244,7 @@ material.allyl_chloride=烯丙基氯
 material.isoprene=异戊二烯
 material.massicot=铅黄
 material.antimony_trioxide=三氧化锑
-material.zincite=锌矿
+material.zincite=红锌矿
 material.cobalt_oxide=氧化钴
 material.arsenic_trioxide=三氧化砷
 material.cupric_oxide=氧化铜
@@ -1752,9 +1752,9 @@ tile.machine_casing.steel_bricks_hull.name=砖砌钢外壳
 tile.machine_casing.steel_bricks_hull.tooltip=用以制作更高等级的蒸汽机器
 
 # Turbine casing blocks
-tile.turbine_casing.bronze_gearbox.name=青铜齿轮外壳
-tile.turbine_casing.steel_gearbox.name=钢齿轮外壳
-tile.turbine_casing.titanium_gearbox.name=钛齿轮外壳
+tile.turbine_casing.bronze_gearbox.name=青铜齿轮箱外壳
+tile.turbine_casing.steel_gearbox.name=钢齿轮箱外壳
+tile.turbine_casing.titanium_gearbox.name=钛齿轮箱外壳
 tile.turbine_casing.steel_turbine_casing.name=钢涡轮外壳
 tile.turbine_casing.titanium_turbine_casing.name=钛涡轮外壳
 tile.turbine_casing.stainless_turbine_casing.name=不锈钢涡轮外壳
@@ -2882,7 +2882,7 @@ gregtech.machine.fluid_tank.max_multiblock=多方块结构最大尺寸：%,dx%,d
 gregtech.machine.fluid_tank.fluid=含有 %s mB %s
 
 gregtech.machine.item_controller.tooltip.redstone=需要放入红石方可运作
-gregtech.machine.item_controller.tooltip.consumption=工作时不断消耗%,d EU / t
+gregtech.machine.item_controller.tooltip.consumption=运作耗能功率为%,d EU / t
 
 # Universal tooltips
 gregtech.universal.tooltip.voltage_in=输入电压：§a%,d§7（§a%s§7）
@@ -2897,15 +2897,15 @@ gregtech.universal.tooltip.fluid_storage_capacity=流体储量：%,d mB
 gregtech.universal.tooltip.max_voltage_in=最大电压输入：§a%,d§7（§a%s§7）
 
 gregtech.recipe.total=电量总计：%,d EU
-gregtech.recipe.eu=Usage: %,d EU/t (%s)
-gregtech.recipe.eu_inverted=输出功率：%,d EU/t
+gregtech.recipe.eu=耗能功率：%,d EU/t (%s)
+gregtech.recipe.eu_inverted=产能功率：%,d EU/t
 gregtech.recipe.duration=耗时：%,.1f 秒
 gregtech.recipe.amperage=电流：%,d
 gregtech.recipe.not_consumed=不在加工时消耗
 gregtech.recipe.chance=出产概率：%s%% +%s%%/每电压等级
 gregtech.recipe.blast_furnace_temperature=温度：%,d K（%s）
 gregtech.recipe.explosive=Explosive: %s
-gregtech.recipe.eu_to_start=启动耗电：%,d EU
+gregtech.recipe.eu_to_start=启动耗能：%,d EU
 
 gregtech.fluid.click_to_fill=§7手持空的流体容器点击流体槽以取走流体。
 gregtech.fluid.click_to_fill.shift=§7（Shift+单击将装满所有手持容器）
