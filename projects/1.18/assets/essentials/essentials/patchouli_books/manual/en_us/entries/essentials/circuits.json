@@ -1,0 +1,96 @@
+{
+	"category": "essentials:essentials",
+	"name": "Circuitry",
+	"icon": "essentials:circuit_wrench",
+	"sortnum": 0,
+	"priority": false,
+	"read_by_default": "true",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"title": "Circuitry",
+			"item": "essentials:circuit_wrench",
+			"text": "<item>Circuits/$ are redstone devices like Repeaters or Comparators that are low-lag and can do advanced logic compactly, easily, and cheaply.$(br2)Place <item>Circuit Wire Plate/$, and use a <item>Circuit Wrench/$ to convert the wire into the selected circuit (this consumes 1 Nether Quartz "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "per circuit). Shift-right-clicking with the <item>Circuit Wrench/$ opens a menu to choose which circuit to place, and which describes each circuit type. Shift-right clicking with a <item>Circuit Wrench/$ on a circuit will rotate that circuit instead (normal <item>$(l:essentials/wrench)wrenches/$ can still rotate circuits). Example circuits are <item>AND/$, <item>XOR/$, and <item>Multiplication/$, which do what the names suggest.$(br2)"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<item>Circuits/$ that are either adjacent or connected with <item>Wire Plate/$ can transfer redstone values other than the vanilla 0-15 integers, including values up to 1 billion, decimals, and negative numbers.$(br2)<item>Circuits/$ themselves can connect directly to vanilla redstone, and a <item>Wire Splice Plate/$ can connect <item>Wire Plate/$ with vanilla redstone. Each <item>Circuit"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<item>/$ other than <item>Wire Plate/$ and <item>Wire Splice Plate/$ has a two tick delay (1 redstone tick).$(br2)While holding a <item>Circuit Wrench/$, all nearby <item>Circuits/$ will display their output signal strength over them. When multiple circuits are outputting on the same <item>Wire Plate/$, the output value <em>farthest from zero/$ will be used (3 wins over 2, -3 wins over 2, 3 wins "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "over -3).$(br2)<item>Circuits/$ can be divided into a few categories:$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"anchor": "reader",
+			"border": "true",
+			"title": "Reader circuit",
+			"images": [
+				"essentials:textures/book/circuit_reader.png"
+			],
+			"text": "Basic circuits, like <item>Wire Junction/$ or <item>Constant/$, do not consume nether quartz to place "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "with a <item>Circuit Wrench/$. They do basic tasks and will be part of most circuit setups. <item>Constant circuits/$ accept a constant value to output via UI, and can accept mathematical expressions (like 'pi*(3-2)E-2)'). <item>Reader circuits/$ act like comparators in that they can read inventories and machines. Some modded machines- especially from $(l:essentials/welcome#crossroads)Crossroads/$- can output values greater than 15 or non-integers "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "through a <item>Reader Circuit/$.$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"anchor": "logic",
+			"border": "true",
+			"title": "Two AND circuits",
+			"images": [
+				"essentials:textures/book/circuit_and.png"
+			],
+			"text": "Logic circuits, like <item>AND/$ and <item>NOT/$ do the basic logical operations. They consider 0 "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "and negative values false, and any value greater than 0 true. They output 1 for true and 0 for false.$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"anchor": "math",
+			"border": "true",
+			"title": "Quadratic Formula",
+			"images": [
+				"essentials:textures/book/circuit_math.png"
+			],
+			"text": "Math circuits, like <item>Addition/$ and <item>Logarithm/$ do mathematical operations. Any operation "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "with an invalid output (like sqrt(-4)) will output 0 instead.$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"anchor": "time",
+			"border": "true",
+			"title": "Clock circuit output",
+			"images": [
+				"essentials:textures/book/circuit_timer.png"
+			],
+			"text": "Time circuits, like <item>Clock/$ and <item>Delay/$, do things involving redstone pulses. The <item>Clock "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<item>Circuit/$ creates pulses with a duration and period set via the UI. The <item>Delay Circuit/$ delays any change in the input by a time set via the UI (in redstone ticks, minimum 1), before outputting it. Unlike a vanilla repeater, the <item>Delay Circuit/$ doesn't lengthen pulses or change the signal strength.$(br2)Circuits where the symbol in the <item>Circuit Wrench"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<item>/$ UI is in red have ticking tile entities- while less laggy than vanilla redstone versions of those circuits, they may still create lag when used excessively.$(br2)"
+		}
+	]
+}

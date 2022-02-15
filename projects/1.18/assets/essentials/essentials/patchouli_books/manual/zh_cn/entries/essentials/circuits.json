@@ -1,0 +1,96 @@
+{
+	"category": "essentials:essentials",
+	"name": "电路学",
+	"icon": "essentials:circuit_wrench",
+	"sortnum": 0,
+	"priority": false,
+	"read_by_default": "true",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"title": "电路学",
+			"item": "essentials:circuit_wrench",
+			"text": "<item>电路/$是类似中继器和比较器的低延迟红石设备，能够紧凑、简单、廉价地实现高级逻辑。$(br2)只需放下<item>电路接线板/$，然后使用<item>电路扳手/$就能将线路转换为选中的电路（每个电路消耗一个下界石英）"
+		},
+		{
+			"type": "patchouli:text",
+			"text": " 手持<item>电路扳手/$shift右击会打开一个菜单，其中能够选择放置哪种电路，并有着每种电路的说明。手持<item>电路扳手/$ shift 右击一个电路则会旋转该电路（普通<item>$(l:essentials/wrench)扳手/$也可以）。示例中的电路为<item>与/$，<item>异或/$和 <item>乘法/$，其功能与名字一致。$(br2)"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "相邻或使用<item>接线板/$相连的<item>电路/$能传输原版 0 到 15 之外的红石值，包括大至十亿的整数、小数和负数。$(br2)<item>电路/$本身不能直接与原版红石线相连，但<item>电路接口板/$可以将<item>接线板/$与原版红石相连。"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "每个除了<item>接线板/$和<item>电路接口板/$外的<item>电路/$都有两 tick 的延迟（一个红石 tick）。$(br2)当手持一个<item>电路扳手/$，所有附近的<item>电路/$会在其上方显示输出信号强度。当多个电路往同一个<item>接线板/$输出时，<em>绝对值最大/$的输出值会被采用。（绝对值相同时优先采用正值）"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "$(br2)<item>电路/$能分成几类：$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"anchor": "reader",
+			"border": "true",
+			"title": "读取器电路",
+			"images": [
+				"essentials:textures/book/circuit_reader.png"
+			],
+			"text": "基础电路，像是<item>电路交叉点/$或者<item>常量/$用<item>电路扳手/$放置时不消耗下界石英。 "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "它们在电路中起到基础的作用，而且是大多数电路配置的一部分。<item>常量电路/$可在 UI 设置要输出的常量，并且接受数学表达式（例如“pi*(3-2)E-2)”）。<item>读取器电路/$类似比较器，能够读取容器和机器。一些模组的机器，特别是来自$(l:essentials/welcome#crossroads)交错道途/$的机器，"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "能够通过<item>读取器电路/$输出大于 15 或者非整数的红石信号。$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"anchor": "logic",
+			"border": "true",
+			"title": "两个与电路",
+			"images": [
+				"essentials:textures/book/circuit_and.png"
+			],
+			"text": "逻辑电路，像是<item>与/$和<item>非/$电路，会进行基本逻辑操作。"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "这类电路会将 0 视为假，非 0 值视为真。它们输出真时输出 1，假则是 0。$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"anchor": "math",
+			"border": "true",
+			"title": "二次方程",
+			"images": [
+				"essentials:textures/book/circuit_math.png"
+			],
+			"text": "数学电路，例如<item>加法/$和<item>对数/$电路会进行数学运算。运算操作的输出无效时"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "（如sqrt(-4)）会输出0。$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"anchor": "time",
+			"border": "true",
+			"title": "时钟电路输出",
+			"images": [
+				"essentials:textures/book/circuit_timer.png"
+			],
+			"text": "时间电路，例如<item>时钟/$和<item>延迟/$电路，会涉及到红石脉冲。"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<item>时钟电路/$会根据 UI 设定的时长和周期发出脉冲。<item>延迟电路/$会将输入的任何变化在输出前延后一个可用 UI 设定的时长（单位为红石 tick，最小为 1）。与原版的中继器不同的是，<item>延迟电路/$不会延长脉冲或者改变信号强度。$(br2)<item>电路扳手/$ UI 中红色的电路图标"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "代表该电路有一个每 tick 更新的方块实体（只有时间电路是这样）。尽管没有原版红石版本这么卡，但过度使用还是会带来延迟。$(br2)"
+		}
+	]
+}

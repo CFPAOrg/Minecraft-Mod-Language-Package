@@ -1,0 +1,43 @@
+{
+	"category": "essentials:technomancy",
+	"name": "时间加速器",
+	"icon": "crossroads:temporal_accelerator",
+	"sortnum": 0,
+	"priority": false,
+	"advancement": "crossroads:progress/path/technomancy",
+	"read_by_default": "true",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"title": "时间加速器",
+			"item": "crossroads:temporal_accelerator",
+			"text": "<item>时间加速器/$能在 5x5x5 区域内加速时间。它能控制影响方块或实体，还是一起影响。机器会消耗<thing>$(l:crossroads:beam/time)时间光束/$并产生副产物<thing>$(l:crossroads:intro/technomancy)时间熵/$。$(br2)手持<item>$(l:essentials/wrench)扳手/$时，受影响的 5x5x5 区域会被高亮，"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "右击<item>时间加速器/$会使其转向，shift 右击则会使影响模式在只有实体、只有方块和实体与方块间切换。$(br2)<item>时间加速器/$需要从背面射入<thing>$(l:crossroads:beam/time)时间光束/$。受影响区域的时间速度加值为每 tick 添加 (<thing>$(l:crossroads:intro/beam)光束功率/$)/4 个额外tick（或者 (<thing>$(l:crossroads:intro/beam)光束功率/$)*25%）。加速时间时，<thing>$(l:crossroads:intro/technomancy)时间熵"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<thing>$(l:crossroads:intro/technomancy)/$会被产生，产生的数量随加速速度呈指数关系，每周期产生 (2^(额外tick)) * 2 单位<thing>$(l:crossroads:intro/technomancy)时间熵/$（也就是速度 +100% 时产生 4 时间熵/周期，+200% 时产生 8 时间熵/周期，+300% 时产生 16 时间熵/周期，等等）。$(br2)多个重叠的<item>时间加速器s/$的效果也会叠加。<item>时间加速器/$本身的时间不能被加速。"
+		},
+		{
+			"type": "patchouli:text",
+			"text": ""
+		},
+		{
+			"type": "patchouli:spotlight",
+			"anchor": "chunk",
+			"item": "crossroads:chunk_accelerator",
+			"text": "<item>分布式时间加速器/$是<item>时间加速器/$的大范围版本，能够影响所在区块的每一个方块实体。它<em>只影响方块实体/$，不会影响方块tick或者实体。$(br2)它需要更强的"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<thing>$(l:crossroads:beam/time)时间光束/$，而且比普通<item>时间加速器/$产生更多<thing>$(l:crossroads:intro/technomancy)时间熵/$，但在光束利用效率和受影响方块的平均产生熵量上更有优势。$(br2)它使用<thing>$(l:crossroads:beam/time)时间光束/$在每 tick 后创造 (<thing>$(l:crossroads:intro/beam)光束功率/$)/16 个额外 tick（或者 (<thing>$(l:crossroads:intro/beam)光束功率/$)*6.25%）。它每周期产生 (2^(额外 tick)) * 8 单位<thing>$(l:crossroads:intro/technomancy)时间熵/$（也就是速度 +100% 时"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "产生 16 时间熵/周期，+200% 时产生 32 时间熵/周期，+300% 时产生 64 时间熵/周期）。$(br2)多个重叠的<item>分布式时间加速器/$的效果也会叠加。<item>分布式时间加速器/$本身的时间不能被加速。$(br2)"
+		}
+	]
+}

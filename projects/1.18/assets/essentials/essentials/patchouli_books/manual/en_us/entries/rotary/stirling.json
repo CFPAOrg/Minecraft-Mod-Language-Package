@@ -1,0 +1,48 @@
+{
+	"category": "essentials:rotary",
+	"name": "Stirling Engine",
+	"icon": "crossroads:stirling_engine",
+	"sortnum": 0,
+	"priority": false,
+	"read_by_default": "true",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"title": "Stirling Engine",
+			"item": "crossroads:stirling_engine",
+			"text": "The <item>Stirling Engine/$ is a way of producing <thing>$(l:essentials:intro/rotary)rotary power/$ from <thing>$(l:essentials:intro/heat)heat/$. Or more specifically, from a temperature difference.$(br2)The <item>stirling engine/$ has two separate heat connections- one on bottom and one on the sides. The greater the difference in temperature between "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "the two inputs, the more power is produced, and the more efficient the <item>stirling engine/$ is. There must be a minimum 20°C difference to produce any power. Heat will be exchanged between the two inputs- the higher the temperature difference, the faster heat is consumed (-1°C/t per 20°C difference at the hot side).$(br2)The <item>stirling engine/$ will "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "stop producing any power above speeds of 2rad/s [config controlled- trust the tooltip]. The <item>stirling engine/$ also has <em>no minimum temperature/$, only a minimum temperature difference.$(br2)Heat is consumed on the hot side, and produced on the cold side. However, more heat is consumed than is produced- the lost heat is mostly converted to rotary "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "power. The bigger the temperature difference, the more efficient this is.$(br2)By default (trust the tooltip), below 500°C temperature difference, <thing>$(l:essentials:intro/fluid)steam power/$ is more efficient per degree heat consumed. Above 500°C, the <item>stirling engine/$ is more efficient, and gets better the higher the temperature difference (capped at 2000°C).$(br2)"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<page>$(br2)Tips:$(br2)-This machine is a really efficient but more complicated way to make a LOT of rotary power. For lower powers, (below 500°C temperature difference), use <thing>$(l:essentials:intro/fluid)steam power/$ instead.$(br2)-Because the speed is capped at 2rad/s, you'll probably want <item>$(l:essentials:rotary/gear_large)gearing"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<item>$(l:essentials:rotary/gear_large)/$ to get higher speeds.$(br2)-If one side is room temperature, and the other side is extremely cold, this can also produce power. You can generate power from cooling instead of heating if you want.$(br2)-You can use the heat generated on the cold side to run machines, power another <item>stirling engine/$ for extra "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "efficiency (but the gain is tiny), or just <item>$(l:essentials:heat/sink)vent it/$.$(br2)<page>$(br2)Formulas (for nerds and min-maxers):$(br2)ΔT: Temperature difference$(br2)Qh: Heat consumed from the hot side, °C/t$(br2)"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "Qc: Heat produced on the cold side, °C/t$(br2)W: Rotary power produced, Joules/t$(br2)K: Conversion constant, configurable (Default 20)$(br2)Qh = ΔT/20 <- Rounded down$(br2)Qc = ΔT/40 - (ΔT)²/100,000 (for ΔT<2000; Qc=ΔT/400 for "
+		},
+		{
+			"type": "patchouli:text",
+			"text": "ΔT>2000)$(br2)W = K*(ΔT)²/50,000 (for ΔT<2000; W=K*ΔT/25 for ΔT>2000)$(br2)"
+		}
+	]
+}

@@ -1,0 +1,80 @@
+{
+	"category": "essentials:technomancy",
+	"name": "传送门",
+	"icon": "crossroads:gateway_frame",
+	"sortnum": 0,
+	"priority": false,
+	"advancement": "crossroads:progress/path/technomancy",
+	"read_by_default": "true",
+	"pages": [
+		{
+			"type": "patchouli:spotlight",
+			"title": "传送门",
+			"item": "crossroads:gateway_frame",
+			"text": "<thing>传送门/$是一种能创建世界级跨维度传送网络的多方块结构，可以让玩家和其他实体穿过。<item>传送门框架/$和一个<item>传送门控制器/$可以建造出一个多方块<item>传送门/$。$(br2)要使两个<item>传送门"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<item>/$互相连接，其中一个必须进行拨号，而且这过程也会产生<thing>$(l:crossroads:intro/technomancy)时间熵/$作为副产物。$(br2)"
+		},
+		{
+			"type": "patchouli:image",
+			"border": "true",
+			"title": "未成型的多方块结构",
+			"images": [
+				"crossroads:textures/book/gateway_multi.png"
+			],
+			"text": "<item>传送门/$多方块的建筑需要用<item>传送门框架/$摆出竖直摆放的中空正方形，"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "顶部边的中央方块换成<item>传送门控制器/$。正方形边长必须是奇数，最小的结构大小为 5x5，深度为1个方块，边框宽度应为 (边长)/5 格（向下取整）。所以 5x5、7x7 或者 9x9 的传送门边框有 1 个方块宽，11x11 或者 13x13 的传送门有 2 个方块宽，等等。多方块可通过使用<item>$(l:essentials/wrench)扳手/$"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "右击<item>传送门控制器/$成型。$(br2)"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "每个<item>传送门/$都有一个独一无二的由 4 个<thing>$(l:crossroads:intro/beam)色域/$组成的地址。可以用<item>$(l:crossroads:intro/omnimeter)万用表/$或装有石英的<item>$(l:crossroads:technomancy/goggles)模块化目镜/$查看。要使两个<item>传送门/$相连以相互传送，其中一个<item>传送门/$必须拨打另一个的“地址”。$(br2)<item>传送门/$需要使用<thing>$(l:crossroads:intro/beam)光束/$和一个连接到顶部中央方块的<thing>$(l:crossroads:intro/rotary)轴或齿轮/$。"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "成型的<item>传送门/$多方块中央有一个巨大的八边形“拨号轮”，每一条边都标记着代表不同<thing>$(l:crossroads:intro/beam)光束色域/$的图标。$(br2)当<item>传送门控制器/$（顶部中央方块）收到<thing>$(l:crossroads:intro/beam)光束/$脉冲时，当前选中的<thing>$(l:crossroads:intro/beam)色域/$会被拨打。选中的<thing>$(l:crossroads:intro/beam)色域/$是"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "接近多方块结构顶部的指针指向的“拨号轮”上的色域。$(br2)拨号轮旋转的角度以弧度为单位，等于顶部<item>控制器/$的<thing>$(l:crossroads:intro/rotary)旋转连接/$的<thing>$(l:crossroads:intro/rotary)转速/$。拨号轮不会在输入<thing>$(l:crossroads:intro/rotary)转速/$改变后立即移到对应的角度——它会缓慢旋转（速度为 π/2"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "rad/s，切换的最大时间为 2 秒）到对应角度。每次拨打了 4 个<thing>$(l:crossroads:intro/beam)色域/$之一，<thing>不同输入转速代表的角度会改变/$。在拨打了第一个<thing>$(l:crossroads:intro/beam)色域/$后，拨号轮的角度会是 <thing>(输入转速)/$ - (第一次拨打时的转速) 弧度。在拨打了第二个<thing>$(l:crossroads:intro/beam)色域/$后，会是 <thing>(输入转速)"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "<thing>/$ - (第二次拨打时的转速) 弧度。依此类推。在拨打出最后一个<thing>$(l:crossroads:intro/beam)色域/$后，参考的速度会重新设置成 0，角度会再次等于 <thing>(输入速度)/$。<item>传送门/$本身的 <thing>$(l:crossroads:intro/rotary)I 值/$为 0。$(br2)当拨出第四个<thing>$(l:crossroads:intro/beam)色域/$后，<item>传送门/$会链接到该“地址”对应的<item>传送门/$，"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "“拨号轮”的角度会重置。传送门的连接会持续到成功拨打下一个新“地址”。$(br2)拨打出连接的<item>传送门/$（不是接收端！）会在成功连接时每 tick 产生 1 <thing>$(l:crossroads:intro/technomancy)时间熵/$。玩家和其他实体都可通过<item>传送门/$。$(br2)对<item>传送门/$任意方块都可用<item>$(l:essentials/circuits#reader)电路/$测量"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "已拨打的<thing>$(l:crossroads:intro/beam)色域/$数量。$(br2)"
+		},
+		{
+			"type": "patchouli:spotlight",
+			"anchor": "destination",
+			"item": "crossroads:gateway_controller_destination",
+			"text": "<item>端点控制器/$可放置在<item>传送门控制器/$的位置作为更廉价和简单的替代。利用<item>端点控制器/$搭建的<item>传送门/$不产生<thing>$(l:crossroads:intro/technomancy)时间熵/$，不需要<thing>$(l:crossroads:intro/rotary)旋转输入/$，也不需要<thing>$(l:crossroads:intro/beam)光束/$。$(br2)不过，"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "它不能拨号到任何<thing>传送门/$，只能让其他<thing>传送门/$对它拨号。建立的连接仍然是双向的。$(br2)除此之外，如果<item>端点控制器/$被通入红石信号，它会创建通向上次连接过的<item>传送门/$（会产生<thing>$(l:crossroads:intro/technomancy)时间熵/$的拨出传送门）的连接。$(br2)"
+		},
+		{
+			"type": "patchouli:text",
+			"text": "这意味着你可以建造一个有全套拨号系统的普通<thing>传送门/$，然后使其通向许多不同的可以连接回来的简单<thing>端点传送门/$，从而实现一个传送枢纽。$(br2)"
+		}
+	]
+}
