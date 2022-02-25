@@ -35,12 +35,15 @@ jobs:
           ri .\Formatter.exe -Force
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'actions@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.GITHUB_REPOSITORY }}
           git add .
           git commit -m "[Formatter]Update file"
-          git push origin HEAD:${{ github.ref }}
         shell: pwsh
 
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
       # - name: Push changes
       #   git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
       #   git config --local user.name "github-actions[bot]"
