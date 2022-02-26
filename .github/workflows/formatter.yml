@@ -45,18 +45,23 @@ jobs:
           git add .
           git commit -m "[Formatter]Update file"
         shell: pwsh
+        if: github.event_name != 'pull_request'
         
       - uses: gr2m/create-or-update-pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        if: ${{ github.event_name }} == 'pull_request'
+        with:
+          commit-message: "[Formatter]Update file"
+          author: "github-actions[bot] <actions@users.noreply.github.com>"
+          branch: ${{ github.ref }}
+        if: github.event_name == 'pull_request'
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
-        if: ${{ github.event_name }} != 'pull_request'
+        if: github.event_name != 'pull_request'
       # - name: Push changes
       #   git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
       #   git config --local user.name "github-actions[bot]"
