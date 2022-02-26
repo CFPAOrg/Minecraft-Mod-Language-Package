@@ -16,6 +16,8 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
       - name: Build formatter
         run: dotnet publish .\src\Formatter\Formatter.csproj -c Release -o ./ -r win-x64 -p:PublishSingleFile=true
@@ -40,18 +42,21 @@ jobs:
           ri .\Formatter.exe -Force
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'actions@users.noreply.github.com'
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.action_repository }}
           git add .
           git commit -m "[Formatter]Update file"
-          git push origin HEAD:${{ github.ref }}
         shell: pwsh
+        
+      - uses: gr2m/create-or-update-pull-request-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ github.event_name }} == 'pull_request'
 
-      #- name: Push changes
-      #  uses: ad-m/github-push-action@master
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-      #    branch: ${{ github.ref }}
-      #    repository: ${{ github.action_repository }}
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+        if: ${{ github.event_name }} != 'pull_request'
       # - name: Push changes
       #   git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
       #   git config --local user.name "github-actions[bot]"
