@@ -1,0 +1,82 @@
+# This is a basic workflow to help you get started with Actions
+
+name: pr-packer
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    branches: [ main ]
+    paths: 
+      - 'config/packer.json'
+      - 'projects/**'
+
+
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 20
+          ref: main
+
+      - name: Check changed path on 1.12
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: changed-1122
+        with:
+          paths: projects/1.12.2
+
+      - name: Check changed path on 1.16
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: changed-116
+        with:
+          paths: projects/1.16
+
+      - name: Check changed path on 1.16
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: changed-118
+        with:
+          paths: projects/1.18
+
+      - name: Build Packer
+        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
+
+      - name: Run Packer
+        run: ./Packer --version="1.12.2"
+        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Packer
+        run: ./Packer --version="1.16"
+        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Packer
+        run: ./Packer --version="1.18"
+        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Create timestamp
+        id: create_timestamp
+        run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
+        shell: bash
+
+      - name: Upload Artifact 1.12.2
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: Minecraft-Mod-Language-Package-1.12.2.zip
+          path: Minecraft-Mod-Language-Package-1.12.2.zip
+        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Upload Artifact 1.16
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: Minecraft-Mod-Language-Package-1.16.zip
+          path: Minecraft-Mod-Language-Package-1.16.zip
+        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Upload Artifact 1.18
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: Minecraft-Mod-Language-Package-1.18.zip
+          path: Minecraft-Mod-Language-Package-1.18.zip
+        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+        
