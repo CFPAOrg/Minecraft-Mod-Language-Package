@@ -1,3 +1,5 @@
+<!--要勾选下面的复选框 可以将文本[ ]改为[x]-->
+
 - [ ] 我已**仔细**阅读注意事项 [CONTRIBUTING](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)；
 - [ ] 我已对 PR 作出 [标记](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md#github-pr)；
 - [ ] 我已确认英文原文（如 en_us.json）存在且完整，内容与中文对应；
