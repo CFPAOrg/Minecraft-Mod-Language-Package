@@ -84,3 +84,6 @@ emmmm，原理其实很简单。
 本项目的所有贡献者可在 [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) 页面查看。
 
 [osTicket]: <https://ticket.cyllive.cn>
+
+## 状态
+![Alt](https://repobeats.axiom.co/api/embed/fab4d8d1692c23f3728abede45c9654f039b8813.svg "Repobeats analytics image")

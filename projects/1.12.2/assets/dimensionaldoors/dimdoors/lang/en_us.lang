@@ -11,7 +11,7 @@ tile.quartz_dimensional_door.name=Quartz Dimensional Door
 tile.unstable_dimensional_door.name=Unstable Dimensional Door
 tile.oak_dimensional_door.name=Oak Dimensional Door
 tile.dimensional_trapdoor.name=Oak Dimensional Trapdoor
-tile.dimensional_portal.name=Dimensional Portal
+tile.dimensional_portal.name=Transient Portal
 
 tile.fabric.black.name=Fabric of Reality
 tile.fabric.white.name=Altered Fabric
@@ -103,10 +103,6 @@ item.stabilized_rift_signature.unbound.info=First click stores a location, \noth
 item.unstable_dimensional_door.info=Caution: Leads to random destination
 item.oak_dimensional_door.info=Place on the block under a rift \nto create a portal, or place anywhere \nin a pocket dimension to exit.
 
-item.record.creepy.desc=Creepy - The sound of Limbo
-
-fluid.eternal_fabric=Eternal Fabric
-
 entity.dimdoors.monolith.name=Monolith
 
 commands.dimteleport.usage=/dimteleport <dimension> <x> <y> <z> [yaw] [pitch]
@@ -120,7 +116,7 @@ commands.saveschem.success=Pocket %s has been successfully saved
 commands.generic.dimdoors.not_in_pocket_dim=You must be in a pocket dimension to use this command.
 commands.generic.dimdoors.not_in_pocket=You must be in a pocket to use this command.
 
-rifts.unlinked=This rift doesn't lead anywhere
+rifts.unlinked=This rift has no destinations
 rifts.destinations.escape.cannot_escape_limbo=Nice try, but you'll need to either die or find some eternal fabric to get out of Limbo.
 rifts.destinations.escape.not_in_pocket_dim=You can only use this to escape from a pocket dimension!
 rifts.destinations.escape.did_not_use_rift=You didn't use a rift to enter the pocket dimension, so you ended up in Limbo!
@@ -145,6 +141,7 @@ dimdoors.general.depthSpreadFactor=Depth Spread Factor
 dimdoors.general.depthSpreadFactor.tooltip=The scale of the dispersion when escaping from a pocket or limbo, in blocks/depth. It is important to remember that by default, limbo is treated as depth 50.
 dimdoors.general.riftCloseSpeed=Rift Close Speed
 dimdoors.general.riftCloseSpeed.tooltip=The speed at which rifts close when using the rift remover, in units of rift size per tick.
+dimdoors.general.closeDoorBehind.tooltip=When true, Dimensional Doors will automatically close when the player enters their portal.
 dimdoors.general.teleportOffset=Teleport Offset
 dimdoors.general.teleportOffset.tooltip=Distance in blocks to teleport the player in front of the dimensional door.
 dimdoors.general.riftBoundingBoxInCreative=Rift Bounding Box in Creative
@@ -162,22 +159,17 @@ dimdoors.pockets.publicPocketSize=Public Pocket Size
 dimdoors.pockets.publicPocketSize.tooltip=Sets the minimum size of a newly created Public Pocket. If this is set to any value bigger than privatePocketSize, the value of privatePocketSize will be used instead.
 dimdoors.pockets.loadAllSchematics=Load All Schematics
 dimdoors.pockets.loadAllSchematics.tooltip= When true, all available Pocket Schematics will be loaded on game-start, even if the gridSize and pocketSize configuration fields would exclude these schematics from being used in 'naturally generated' pockets. The /pocket command can be used to force-generate these pockets for dungeon building or testing purposes.
-dimdoors.pockets.cachedSchematics=Maximum number of cached schematics
-dimdoors.pockets.cachedSchematics.tooltip= The maximum number of schematics cached as NBT instead of bytes. If a schematic is cached, it will be faster to place, but takes up more RAM. Schematics that are used more are more likely to be cached. The cache resets on restart.
-dimdoors.pockets.dyeAlreadyAbsorbed=The pocket is already that color, so the rift didn't absorb the dye.
-dimdoors.pocket.pocketHasBeenDyed=The pocket has been dyed %s.
-dimdoors.pocket.remainingNeededDyes=The pocket has %s/%s of the dyes needed to be colored %s.
 
 dimdoors.world=World Generation Settings
 dimdoors.world.tooltip=Settings that determine where dimensional gateways and rift clusters can be generated and at what frequency
 dimdoors.world.clusterGenChance=Cluster Generation Chance
-dimdoors.world.clusterGenChance.tooltip=Sets the chance (out of 1) that a cluster of rifts will generate in a given chunk.
+dimdoors.world.clusterGenChance.tooltip=Sets the chance (out of 1.0) that a cluster of Rift Scars will generate in a given chunk.
 dimdoors.world.gatewayGenChance=Gateway Generation Chance
-dimdoors.world.gatewayGenChance.tooltip=Sets the chance (out of 1) that a dimensional gateway will generate in a given chunk.
+dimdoors.world.gatewayGenChance.tooltip=Sets the chance (out of 1.0) that a Transient Portal gateway will generate in a given chunk.
 dimdoors.world.clusterDimBlacklist=Cluster Dimension Blacklist
 dimdoors.world.clusterDimBlacklist.tooltip=Dimension Blacklist for the generation of Rift Scar clusters. Add a dimension ID here to prevent generation in certain dimensions.
 dimdoors.world.gatewayDimBlacklist=Gateway Dimension Blacklist
-dimdoors.world.gatewayDimBlacklist.tooltip=Dimension Blacklist for the generation of Dimensional Portal gateways. Add a dimension ID here to prevent generation in certain dimensions.
+dimdoors.world.gatewayDimBlacklist.tooltip=Dimension Blacklist for the generation of Transient Portal gateways. Add a dimension ID here to prevent generation in certain dimensions.
 
 dimdoors.dungeons=Dungeon Settings
 dimdoors.dungeons.tooltip=Settings that affect the generation of pocket dungeons
@@ -207,4 +199,4 @@ dimdoors.graphics.showRiftCore.tooltip=Set this to true to always show rifts' co
 dimdoors.graphics.riftSize=Rift Size
 dimdoors.graphics.riftSize.tooltip=Multiplier affecting how large rifts should be rendered, 1 being the default size.
 dimdoors.graphics.riftJitter=Rift Jitter
-dimdoors.graphics.riftJitter.tooltip=Multiplier affecting how much rifts should jitter, 1 being the default size.
+dimdoors.graphics.riftSize.tooltip=Multiplier affecting how much rifts should jitter, 1 being the default size.
