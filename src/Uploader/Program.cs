@@ -62,8 +62,14 @@ namespace Uploader
                     case "1.16":
                         scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip.1");
                         break;
+                    case "1.16-fabric":
+                        scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-16-Fabric.zip.1");
+                        break;
                     case "1.18":
                         scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip.1");
+                        break;
+                    case "1.18-fabric":
+                        scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-18-Fabric.zip.1");
                         break;
                     default:
                         break;//不应该
@@ -95,8 +101,20 @@ namespace Uploader
                         var err2 = cmd2.Error;
                         Log.Logger.Error(err2);
                         break;
+                    case "1.16-fabric":
+                        var cmd2 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16-Fabric.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16-Fabric.zip");
+                        cmd2.Execute();
+                        var err2 = cmd2.Error;
+                        Log.Logger.Error(err2);
+                        break;
                     case "1.18":
                         var cmd3 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip");
+                        cmd3.Execute();
+                        var err3 = cmd3.Error;
+                        Log.Logger.Error(err3);
+                        break;
+                    case "1.18-fabric":
+                        var cmd3 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18-Fabric.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18-Fabric.zip");
                         cmd3.Execute();
                         var err3 = cmd3.Error;
                         Log.Logger.Error(err3);
