@@ -15,9 +15,9 @@
 
 ## 仓库说明
 
-这里是 Minecraft 模组翻译项目的仓库；
+这里是 Minecraft 模组简体中文翻译项目的仓库。
 
-用以解决模组作者不接收翻译、翻译更新速度慢等诸多问题；
+该项目的目的是解决模组作者不接收翻译、翻译更新速度慢等诸多问题。
 
 ## 如何使用
 
@@ -31,14 +31,14 @@
 
 ### 2. 手动添加资源包
 
-在 [GitHub Releases](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases) 下载并添加资源包（后缀对应支持的 MC 版本）。
+在 [GitHub Releases](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases) 下载并添加资源包（后缀对应支持的 MC 版本和 Modloader 类型）。
 
 若资源包不生效，请检查资源包的优先级。
 
 ## 问题反馈
 
-1. [osTicket 工单系统][osTicket]
-2. [GitHub Issue](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues)
+1. [GitHub Issue](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues)
+2. [osTicket 工单系统][osTicket]
 
 ## 加入我们
 
@@ -48,11 +48,36 @@
 
 本项目采用 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）进行许可，协议全文可在 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/LICENSE) 查看。
 
+## 翻译资源库
+
+### 工具
+
+[Maz-T/Minecraft-Mods-Translator](https://github.com/Maz-T/Minecraft-Mods-Translator) - 简易 CAT 工具
+[汉化小工具](https://translatorassistant.pages.dev/) - LANG 转 JSON，JSON 更新，JSON 补全
+
+### 词典
+
+[Saladict 沙拉查词](https://saladict.crimx.com/)
+[剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Google Dictionary](https://chrome.google.com/webstore/detail/google-dictionary-by-goog/mgijmajocgfcbeboacabfgobmjgjcoja?hl=zh-CN)
+[词源在线](https://www.etymonline.com/cn)
+
+### MC 相关翻译资源
+
+[Minecraft Wiki:译名标准化](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96) - 原版词汇中英对照
+[Minecraft Wiki:译名标准化/历史](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇变更历史
+[Minecraft模组翻译参考词典](https://dict.mcmod.cn/) - 以英文检索本仓库中的翻译条目
+
+### 其他
+
+[术语在线](https://www.termonline.cn/index) - 全国科学技术名词审定委员会审定的术语
+[CNKI翻译助手](https://dict.cnki.net/index) - 学科词典聚合和机器翻译
+[WantWords 反向词典](https://wantwords.net/) - 寻找相似词，词穷拯救者
+
 ## 相关信息
 
 [MCBBS 推广宣传帖](https://www.mcbbs.net/thread-774087-1-1.html)
 
-**你们是怎么做到流水线式的翻译的？**
+<!-- **你们是怎么做到流水线式的翻译的？**
 
 emmmm，原理其实很简单。
 
@@ -62,6 +87,8 @@ emmmm，原理其实很简单。
 - 翻译人员在 Weblate 上翻译，Weblate 自动推回到 GitHub；
 - GitHub Actions 检测到仓库变动，自动构建并打包；
 - GitHub Actions 自动发布到 GitHub 的 Release 上，以供下载；
+
+-->
 
 ## 鸣谢
 
@@ -86,4 +113,5 @@ emmmm，原理其实很简单。
 [osTicket]: <https://ticket.cyllive.cn>
 
 ## 状态
+
 ![Alt](https://repobeats.axiom.co/api/embed/fab4d8d1692c23f3728abede45c9654f039b8813.svg "Repobeats analytics image")
