@@ -48,34 +48,37 @@
 
 本项目采用 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）进行许可，协议全文可在 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/LICENSE) 查看。
 
+## 相关信息
+
+[MCBBS 推广宣传帖](https://www.mcbbs.net/thread-774087-1-1.html)
+[MC 百科上的自动汉化更新模组](https://www.mcmod.cn/class/1188.html)
+
 ## 翻译资源库
 
 ### 工具
 
-- [Maz-T/Minecraft-Mods-Translator](https://github.com/Maz-T/Minecraft-Mods-Translator) - 简易 CAT 工具
-- [汉化小工具](https://translatorassistant.pages.dev/) - LANG 转 JSON，JSON 更新，JSON 补全
+- [Saladict 沙拉查词](https://saladict.crimx.com/)
+- [Minecraft Mods Translator](https://github.com/Maz-T/Minecraft-Mods-Translator) - 简易 CAT 工具。
+- [汉化小工具](https://translatorassistant.pages.dev/) - LANG 转 JSON，JSON 更新，JSON 补全。
+- [Octotree](https://www.octotree.io/) - 树型展示 GitHub 项目文件结构，懒加载，独立收藏系统。
 
 ### 词典
 
-- [Saladict 沙拉查词](https://saladict.crimx.com/)
-- [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Google Dictionary](https://chrome.google.com/webstore/detail/google-dictionary-by-goog/mgijmajocgfcbeboacabfgobmjgjcoja?hl=zh-CN)
+- [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[谷歌词典](https://chrome.google.com/webstore/detail/google-dictionary-by-goog/mgijmajocgfcbeboacabfgobmjgjcoja?hl=zh-CN)
 - [词源在线](https://www.etymonline.com/cn)
 
 ### MC 相关翻译资源
 
-- [Minecraft Wiki:译名标准化](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96) - 原版词汇中英对照
-- [Minecraft Wiki:译名标准化/历史](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇变更历史
-- [Minecraft 模组翻译参考词典](https://dict.mcmod.cn/) - 以英文检索本仓库中的翻译条目
+- [Minecraft Wiki:译名标准化](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96) - 原版词汇中英对照。
+- [Minecraft Wiki:译名标准化/历史](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇变更历史。
+- [Minecraft 模组翻译参考词典](https://dict.mcmod.cn/) - 以英文检索本仓库中的翻译条目。
+- [MCBBS 识海漫谈版下的翻译讨论分类](https://www.mcbbs.net/forum.php?mod=forumdisplay&fid=1015&page=1&filter=typeid&typeid=2250) - 原版译名讨论、投票、解析。
 
 ### 其他
 
-- [术语在线](https://www.termonline.cn/index) - 全国科学技术名词审定委员会审定的术语
-- [CNKI 翻译助手](https://dict.cnki.net/index) - 学科词典聚合和机器翻译
-- [WantWords 反向词典](https://wantwords.net/) - 寻找相似词，词穷拯救者
-
-## 相关信息
-
-[MCBBS 推广宣传帖](https://www.mcbbs.net/thread-774087-1-1.html)
+- [术语在线](https://www.termonline.cn/index) - 全国科学技术名词审定委员会审定的术语。
+- [CNKI 翻译助手](https://dict.cnki.net/index) - 学科词典聚合和机器翻译。
+- [WantWords 反向词典](https://wantwords.net/) - 寻找相似词，词穷拯救者。
 
 <!-- **你们是怎么做到流水线式的翻译的？**
 
