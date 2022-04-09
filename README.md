@@ -50,8 +50,8 @@
 
 ## 相关信息
 
-[MCBBS 推广宣传帖](https://www.mcbbs.net/thread-774087-1-1.html)
-[MC 百科上的自动汉化更新模组](https://www.mcmod.cn/class/1188.html)
+- [MCBBS 推广宣传帖](https://www.mcbbs.net/thread-774087-1-1.html)
+- [MC 百科上的自动汉化更新模组](https://www.mcmod.cn/class/1188.html)
 
 ## 翻译资源库
 
