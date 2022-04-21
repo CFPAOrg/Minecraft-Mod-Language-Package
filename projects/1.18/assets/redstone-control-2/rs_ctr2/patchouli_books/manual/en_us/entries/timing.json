@@ -1,0 +1,20 @@
+{
+ "name": "Timing",
+ "icon": "rs_ctr2:delay",
+ "category": "rs_ctr2:basics",
+ "pages": [
+  {
+   "type": "patchouli:text",
+   "text": "Just like Redstone Torches and Repeaters have propagation delays, most components have a signal latency of one tick (twice as fast as normal Redstone). This means that output values of an operation will be based on the input values from the previous tick.\\pIn item tool-tips this is indicated by a [t+1] on outputs or a [t-1] on inputs."
+  }, {
+   "type": "patchouli:text",
+   "text": "On a few parts you may also encounter [t+1/2], which means an event happens between two circuit ticks. Regular world events like Block/Entity updates all happen between t and t+1/2.\\pThere are also some operators with only one input that have a zero tick latency, meaning their outputs react instantly to changed inputs. These operators also count towards the \\c$(t:see stats tool-tip on Splitter item)Splitter chain limit$(/t)\\d, so you may need to manually insert ->"
+  }, {
+   "type": "patchouli:text",
+   "text": " \\iDalay Lines\\d or other parts with delay to reset the chain count.\\p\\iDelay Lines\\d are also essential for changing the relative timing of different signals to make them arrive simultaneously at a device or make devices perform actions in a specific order."
+  }, {
+   "type": "patchouli:text",
+   "text": "When building complex machinery, you will find that signal propagation delay is usually the main bottleneck for speed. Over-clocking machinery beyond what its circuitry supports will result in incorrect control signals that create a big mess. So if things stop working correctly you might be running them too fast.\\pOptimizing circuits to handle higher clock-rates can be a rewarding challenge for advanced players."
+  }
+ ]
+}
