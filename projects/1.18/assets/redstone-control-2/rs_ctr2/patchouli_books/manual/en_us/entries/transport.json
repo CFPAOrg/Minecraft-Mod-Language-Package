@@ -1,0 +1,40 @@
+{
+	"name": "Item & Fluid transport",
+	"icon": "rs_ctr2:item_cable",
+	"category": "rs_ctr2:automation",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Except for the different components used, item and fluid transport work basically the same. The main $(l:connecting)active$(/l) devices that cause things to move are the \\iItem Translocator\\d and the \\iFluid Pump\\d.\\pWhen receiving a $(l:signals#clock)clock pulse$(/l) they take a signal based amount of Items / Fluid from whatever is connected on their input side to whatever is connected on their output side."
+		}, {
+			"type": "patchouli:text",
+			"text": "The entire transfer happens in one tick and no items or fluid is ever stored inside cables or other components (except $(l:transport#buffer)buffers$(/l) of course). After transfer, the device will emit a signal with the amount that was actually moved. Requesting to move negative amounts is allowed and will effectively swap input and output side.\\pWithout sufficient energy supply, no operation takes place and the output signal will be 0."
+		}, {
+			"type": "patchouli:text",
+			"title": "Transfer endpoints",
+			"text": "Transfer endpoints are the components that actually accept or provide items/fluids for the Translocator/Pump to move around. These include $(l:io#resource)external connectors$(/l) that interact with the outside world, \\ibuffers\\d that simply store things, as well as a few machines that have passive item or fluid ports on them."
+		}, {
+			"anchor": "buffer",
+			"type": "rs_ctr2:spotlight2",
+			"a.item": "rs_ctr2:item_buffer",
+			"b.item": "rs_ctr2:fluid_buffer",
+			"_.title": "Buffers",
+			"_.text": "These can form connected structures within the same block and any exposed face can be turned into a port by right-clicking it with a \\iFluid / Item Cable\\d.\\nUnlike chests, the \\iItem Buffer\\d has a \"global\" stack limit that is shared across all stored item types and lets items stack beyond their normal stack limit."
+		}, {
+			"type": "rs_ctr2:spotlight2",
+			"a.item": "rs_ctr2:item_filter",
+			"b.item": "rs_ctr2:fluid_filter",
+			"_.title": "Filters",
+			"_.text": "Filters can be placed between a Translocator / Pump and its \\otransfer endpoints\\d for more control. They work in two different ways, depending on whether things are being inserted or extracted from them:\\pFor insertion, the filter simply controls where the thing goes depending on match."
+		}, {
+			"type": "patchouli:text",
+			"text": "For extraction, a signal controls whether the filter should act as blacklist, whitelist or \"pass through\" and \\iItem Filters\\d additionally allow selecting individual items (see the item tool-tips for details).\\pYou can put Filters on both sides of a Translocator/Pump and even chain multiple Filters in series (through the \"else path\") up to the $(t:see Item / Fluid Splitter stats tool-tip)splitter chain limit$(/t)."
+		}, {
+			"type": "rs_ctr2:spotlight2",
+			"a.item": "rs_ctr2:item_counter",
+			"b.item": "rs_ctr2:fluid_counter",
+			"_.title": "Counters",
+			"_.text": "Counters let you read the amount of Items or Fluid stored in a \\otransfer endpoint\\d as signal for control circuitry. Filters placed in between will affect the reading according to their extraction behavior and let you count specific Items or Fluid types."
+		}
+	]
+}
