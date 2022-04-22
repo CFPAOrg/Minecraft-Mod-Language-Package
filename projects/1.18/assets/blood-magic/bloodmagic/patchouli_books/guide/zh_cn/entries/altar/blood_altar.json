@@ -1,0 +1,107 @@
+{
+  "name": "血之祭坛",
+  "icon": "bloodmagic:altar",
+  "category": "bloodmagic:altar",
+  "priority": "true",
+  "extra_recipe_mappings":[
+    ["bloodmagic:daggerofsacrifice", 13]
+    ],
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)血之祭坛$()是本模组的核心方块，它能够将未经处理的$(blood)血液$()转化为纯粹的$(blood)生命源质$()。虽然刚开始的时候，祭坛又小又无甚大用，但随着你对本模组的探索逐渐深入，它的能力以及体积都会随之增强变大，离了它，你的实力十不存一。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "bloodmagic:blood_altar"
+    },
+    {
+      "type": "text",
+      "text": "放置在世界中时，$(item)血之祭坛$()能将$(blood)血液$()转化为$(blood)生命源质$(), 血之祭坛可以利用这些源质，转化放置在祭坛中的物品。看向祭坛时按下[$(k:use)]，你可以将单个手中的物品放入祭坛内部的物品栏。空手按下[$(k:use)]则可以将内部的物品拿出来。"
+    },
+    {
+      "type": "multiblock",
+      "name": "等级 1 血之祭坛",
+      "multiblock_id": "bloodmagic:altar_one",
+      "text": "等级 1 的血之祭坛，这一级别的祭坛没有符文。"
+    },
+    {
+      "type": "text",
+      "text": "我们将“生命源质（Life Essence）”简称为“$(blood)LP$()”，你若想增加 $(blood)LP$()，你首先就得合成一把$(item)献祭匕首$()。手持匕首对着空气按下[$(k:use)]，你可以“提取”出$(blood)200 点 LP$()，这会消耗掉你一颗心的血量，并将这些 LP 转移到附近的祭坛里。祭坛最开始的时候最多只可以容纳 10,000LP，祭坛上的池子的血液高度显示了祭坛内填充了百分之几的 LP。$(l:bloodmagic:alchemy_array/sigil/divination)占卜印记$(/l)可以帮助你查看祭坛的详细数据。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "bloodmagic:sacrificial_dagger",
+      "anchor": "knife",
+      "text": "时刻牢记，祭坛会将自身容量上限的 10% 的 $(blood)LP$()，吸收到一个它内部不可见的流体槽中，这一流体槽可以从祭坛中提取出 LP，或是向祭坛提供 $(blood)LP$()。"
+    },
+    {
+      "type": "text",
+      "text": "一旦有玩家将物品放入到血之祭坛中，祭坛就会尝试开始合成（或是会等待一次周期性的 5 秒）。在祭坛中的 $(blood)LP$() 会被缓慢地抽取（外显红色粒子），进行物品转化。如果祭坛内没有足够的 $(blood)LP$()，祭坛会冒出灰色的烟雾，提示你祭坛的合成进度正在丢失。一旦消耗了足够多的 $(blood)LP$()（总量为物品数量 x 单个物品消耗），整堆物品都会被转化为新物品。"
+    },
+    {
+      "type": "text",
+      "text": "第一个你需要制作的物品，便是$(l:bloodmagic:altar/soul_network)虚弱气血宝珠$(/l)，默认情况下，制作原料为一颗钻石，加上 $(blood)2000 LP$() ，制作场所为等级 1 血之祭坛。使用 Just Enough Items（JEI）即可查看血之祭坛可以合成的所有物品。"
+    },
+    {
+      "type": "text",
+      "anchor": "blank_rune",
+      "text": "若想升级血之祭坛，你需要制作出$(item)血之符文$()，并将符文摆在祭坛四周。血之符文就像是祭坛的升级，并且，使用高级版本的血之符文，你还可以给予你的祭坛不同的效果。 基础版本的血之符文为$(item)空白符文$()，没有任何的提升效果 - 它只是单纯地能够提升你的祭坛等级而已。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "bloodmagic:blood_rune_blank"
+    },
+    {
+      "type": "text",
+      "text": "想要将血之祭坛升到等级 2，你必须在祭坛周围放置 8 个$(item)血之符文$()。非四角的符文可以提供提升效果，而四角符文无法提供提升效果，直到等级 3 血之祭坛，四角处的符文才能充当提升效果符文。"
+    },
+    {
+      "type": "multiblock",
+      "name": "等级 2 血之祭坛",
+      "multiblock_id": "bloodmagic:altar_two",
+      "text": "等级 2 血之祭坛，有 8 个符文。"
+    },
+    {
+      "type": "text",
+	  "anchor": "dagger_of_sacrifice",
+      "text": "现在，你有了一个等级 2 祭坛，所以你可以尝试从别人身上搞来$(blood)生命源质$()了。你现在可以用$(item)献祭匕首$()献祭站在祭坛旁两格以内的别的生物（怪物或是被动生物），被献祭的生物会被秒杀，并给予你适量的$(blood)LP$()。$(l:bloodmagic:altar/blood_rune/sacrifice_rune)献祭符文$()可以提升你献祭生物所获得的 $(blood)LP$() 量。不同生物在献祭后所给予的 $(blood)LP$() 量也不同。参看配置文件可以获得更加详细的信息。"
+    },
+    {
+      "type": "crafting_altar",
+      "heading": "献祭匕首",
+      "recipe": "bloodmagic:altar/daggerofsacrifice",
+      "text": "献祭村民，有趣有益！"
+    },
+    {
+      "type": "text",
+      "text": "若想将血之祭坛升到等级 3，你需要在之前的符文圈的每边外的一层低、两格远的地方，再放上一圈$(item)血之符文$()，然后再在四角方块的上方放上两格方块（也就是示例中$(item)石砖$()的位置），这样就构成了新一圈的符文。接着再在每个柱子的顶部放上$(item)荧石方块$()。$(br)若想确认升级成功，你可以用$(l:bloodmagic:alchemy_array/sigil/divination)占卜印记$(/l)确认祭坛的等级。注意，四角柱子的的底部方块可以使任何非空气方块。"
+    },
+    {
+      "type": "multiblock",
+      "name": "等级 3 血之祭坛",
+      "multiblock_id": "bloodmagic:altar_three",
+      "text": "等级 3 血之祭坛，共有 28 个符文。"
+    },
+    {
+      "type": "text",
+      "text": "若想将血之祭坛升到等级 4，你需要在之前的符文圈的每边外的一层低、两格远的地方，再放上 7 个$(item)血之符文$()。然后在四个角各放上一个固体方块，这样就构成了新一圈的符文。接着再在每个柱子的顶部放上$(l:bloodmagic:utility/bloodstone_bricks)血石砖$(/l)以及 / 或者$(l:bloodmagic:utility/bloodstone_bricks)大血石砖$(/l)。"
+    },
+    {
+      "type": "multiblock",
+      "name": "等级 4 血之祭坛",
+      "multiblock_id": "bloodmagic:altar_four",
+      "text": "等级 4 血之祭坛，共有 56 个符文。"
+    },
+    {
+      "type": "text",
+      "text": "[WIP Notes]$(br)[等级-5 has No Content yet!]"
+    },
+    {
+      "type": "multiblock",
+      "name": "等级 5 血之祭坛",
+      "multiblock_id": "bloodmagic:altar_five",
+      "text": "等级 5 血之祭坛，共有 108 个符文。"
+    }
+  ]
+}
