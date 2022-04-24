@@ -1,0 +1,30 @@
+{
+	"name": "Digital signals",
+	"icon": "rs_ctr2:not_gate",
+	"category": "rs_ctr2:basics",
+	"pages": [
+		{
+			"type": "patchouli:text",
+			"text": "Microblock components such as logic gates use their own signal system that requires $(l:io)converters$(/l) to interface with regular Minecraft Redstone. The main differences to Redstone are:\\n\\+Only $(l:connecting#cable)directional 1 to 1 connections$(/l) between inputs and outputs are possible.\\+Transmission is lossless and without distance limit."
+		}, {
+			"type": "patchouli:text",
+			"text": "\\+The supported value range extends from -2.147.483.648 to +2.147.483.647 (instead of 0 to 15) and values are represented in binary with 32 individual logic channels in one cable.\\+Disconnected inputs are floating, meaning they will \\*not reset to zero\\. but instead retain whatever state they had received before.\\pThe last two points are especially relevant for circuit behavior."
+		}, {
+			"type": "patchouli:text",
+			"title": "Bitwise operators",
+			"text": "Some operators (including all logic gates) operate bitwise, meaning they perform their logic on all 32 bit channels in parallel:\\nThe output's first bit is the result of combining the first bits of all inputs together, the output's second bit comes from the second bits of all inputs and so on ...\\pThe \\iBit shuffle gate\\d can be used to set, flip and reorder individual bits of a signal."
+		}, {
+			"type": "patchouli:text",
+			"text": "In some cases, for example as result of a comparison, signals are supposed to represent pure boolean states (either true or false). Pure booleans have either all bit channels set to 1 (true) or all bits set to 0 (false).\\nThis convention has the convenient property that any bitwise logic operation on only pure booleans will also result in a pure boolean.\\pThe \\iOR-Buffer Gate\\d converts to pure boolean by OR-ing all bit channels together."
+		}, {
+			"type": "patchouli:text",
+			"anchor": "clock",
+			"title": "Clock signals",
+			"text": "Many devices use clock signals to trigger actions. The convention used throughout the mod is that: a trigger happens every time any bit in the signal changes from 0 to 1 and there is at most one trigger per tick even if multiple bits change.\\pIt's easiest to work with pure boolean clock signals, but they can trigger at most once every two ticks."
+		}, {
+			"type": "patchouli:text",
+			"title": "Floating inputs",
+			"text": "The fact that disconnected inputs retain their last state means that you can remove constants after their value is set to save space and parts. And if you only need two inputs of a 3-input logic gate, you can leave the last one unconnected because they have their inputs initialized to the operationally neutral value.\\pBe careful to not mess up floating inputs by accidentally connecting them!"
+		}
+	]
+}
