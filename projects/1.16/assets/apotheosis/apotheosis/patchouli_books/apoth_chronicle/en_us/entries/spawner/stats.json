@@ -1,0 +1,67 @@
+{
+    "name": "Spawner Stats",
+    "icon": "minecraft:writable_book",
+    "category": "apotheosis:spawner/spawner",
+	"flag": "apotheosis:spawner",
+	"sortnum": 0,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Each Mob Spawner has $(9)Spawner Stats$(), which dictate their operation.$(p)How long between spawns, how many mobs are spawned, etc.$(p)This chapter details all of them."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Spawn Delay",
+            "text": "After a Mob Spawner spawns an entity, there is a delay until the next spawn.$(p)That delay is a random number between the $(9)Min Spawn Delay$() and the $(9)Max Spawn Delay$().$(p)If the Max Delay is ever below the Min Delay, the Min Delay is used."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Spawn Count",
+            "text": "The $(9)Spawn Count$() dictates how many mobs are spawned at once.$(p)Not all spawns will succeed, so sometimes less entities will spawn.$(p)The spawn is counted as successful (and the delay reset) as long as one entity spawns."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Max Entities",
+            "text": "Mob Spawners track the number of entities nearby.$(p)If that number ever exceeds the $(9)Max Entities$(), spawning stops.$(p)Only entities of the same type as the spawned one are counted."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Activation Range",
+            "text": "Mob Spawners require a nearby player to operate.$(p)That player must be within the $(9)Activation Range$(), which is a radius in blocks, for the spawner to run."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Spawn Range",
+            "text": "The $(9)Spawn Range$() is a radius in blocks of how far out entities may spawn.$(p)Try to make sure this area is suitable for entities, otherwise some spawns may fail."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Ignores Players",
+            "text": "A spawner that $(9)Ignores Players$() does not need a player within the $(9)Activation Range$().$(p)It will operate with or without one."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Ignores Conditions",
+            "text": "A spawner that $(9)Ignores Conditions$() will no longer require certain mob-specific spawn conditions.$(p)These include things like the grass requirement for animals.$(p)It will just need sufficient space, and a lack of nearby entities."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Redstone Control",
+            "text": "A spawner with $(9)Redstone Control$() requires a redstone signal to operate.$(p)This lets you control when the spawner is operating."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "Ignores Light",
+            "text": "A spawner that $(9)Ignores Light$() will work in all light levels.$(p)This means mobs can spawn in daylight.$(p)If it already $(9)Ignores Conditions$(), then this modifier does nothing."
+        },
+		{
+            "type": "patchouli:text",
+			"title": "No AI",
+            "text": "A spawner with $(9)No AI$() enabled will spawn mobs without any AI.$(p)Normally, these mobs will just simply float there, immobile, doing nothing.$(p)However, the ones created by Apotheosis can still be moved."
+        },
+		{
+            "type": "patchouli:text",
+            "text": "If you are making large mob farms, you should always utilize the $(9)No AI$() upgrade.$(p)It causes significantly reduced server load, and it makes the mobs easier to control."
+        }
+	]
+}
