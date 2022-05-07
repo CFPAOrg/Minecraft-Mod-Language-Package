@@ -24,7 +24,7 @@
 在提交翻译之前，我们**默认**以下几点：
 
 1. **你已阅读并同意 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）**
-2. **你已阅读翻译相关注意事项：[Minecraft 模组简体中文翻译规范与指南](https://rules.cfpa.team/)（十分重要）**
+2. **你已阅读翻译相关注意事项：[Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)（十分重要）**
 
 有关**翻译**的说明：
 
