@@ -1,0 +1,62 @@
+{
+  "name": "建筑的大门",
+  "icon": "twilightforest:miniature_structure:0",
+  "category": "world",
+  "sortnum": -1010,
+  "pages": [
+    {
+      "type": "multiblock",
+      "name": "暮色入门",
+      "text": "首先在地上挖出2x2x1并灌满非流动水，然后四边用任意植物围起来。",
+      "multiblock": {
+        "pattern": [
+          [ " FF ", "FAAF", "FAAF", " FF " ],
+          [ " GG ", "G0WG", "GWWG", " GG " ],
+          [ "    ", " DD ", " DD ", "    " ]
+        ],
+        "mapping": {
+          " ": "ANY",
+          "A": "AIR",
+          "0": "minecraft:water",
+          "W": "minecraft:water",
+          "F": "minecraft:red_flower",
+          "G": "minecraft:grass",
+          "D": "minecraft:dirt"
+        },
+        "symmetrical": true,
+        "offset"     : [0, 1, 0],
+        "view_offset": [0, 0, 0]
+      }
+    }, {
+      "type": "spotlight",
+      "title": "激活物品",
+      "item": "minecraft:diamond",
+      "text": "最后丢入一颗钻石，一道闪电从天而降，传送门就此开启!"
+    }, {
+      "type": "multiblock",
+      "name": "完成暮色入门",
+      "text": "如果你看到紫色的漩涡，马上跳进去!",
+      "enable_visualize": false,
+      "advancement": "twilightforest:root",
+      "multiblock": {
+        "pattern": [
+          [ " FF ", "F0AF", "FAAF", " FF " ],
+          [ " GG ", "GWWG", "GWWG", " GG " ],
+          [ "    ", " DD ", " DD ", "    " ]
+        ],
+        "mapping": {
+          " ": "ANY",
+          "A": "AIR",
+          "0": "AIR",
+          "W": "twilightforest:twilight_portal",
+          "F": "minecraft:red_flower",
+          "G": "minecraft:grass",
+          "D": "minecraft:dirt"
+        },
+        "symmetrical": true,
+        "offset"     : [0, 1, 0],
+        "view_offset": [0, 0, 0]
+      }
+    }
+  ]
+}
