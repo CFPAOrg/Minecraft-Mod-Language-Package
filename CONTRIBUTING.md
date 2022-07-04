@@ -72,8 +72,11 @@
 - 默认你对 Git、GitHub 已经有了**一定**的了解，并且懂得使用 PR。
 - 请提交 PR 至 **main** 分支。
 - 若要提交多个模组的翻译，请尽量分多个 PR 提交。
-- PR 标题需简洁明了，格式一般为 `{模组英文名（必须）} {补充信息}}`。
-  - 一个例子：`Tinkers Construct 翻译提交`
+- PR 标题需简洁明了，格式应为 `{模组英文全名} {简述}`。
+  - ✔️`Tinkers Construct 翻译提交`
+  - ✔️`Tinkers Construct 更新至 1.18.2 `
+  - ❌`TiC3 翻译更新`（未使用全名）
+  - ❌`匠魂翻译更新`（未包含英文名）
 - 请确保提交文件的路径是**正确**的（[例子](#提交文件路径的例子)）。
   - 如果是 1.12 翻译，应该是：`projects/1.12/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.lang`
   - 如果是 1.16 及以上的翻译，应该是：`projects/{版本}/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.json`
