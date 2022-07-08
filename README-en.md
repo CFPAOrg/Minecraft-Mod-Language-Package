@@ -11,7 +11,7 @@
 This is the repository of the project for translating Minecraft mods into simplified Chinese, currectly using a platform called Weblate which is similar to Crowdin.<br>
 This project aims to deal with certain problems where localizations are not accepted in time or simply fail to be accepted.<br>
 If you want to join us, please visit our official website and learn more:<br>
-### <https://cfpa.site>
+### <https://cfpa.team>
 
 It is also fine to submit pull requests to this repository.
 

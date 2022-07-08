@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Website](https://img.shields.io/badge/%E5%AE%98%E7%BD%91-cfpa.site-brightgreen)](https://cfpa.site/)
+[![Website](https://img.shields.io/badge/%E5%AE%98%E7%BD%91-cfpa.team-brightgreen)](https://cfpa.team/)
 ![Weblate](https://weblate-t.exz.me/widgets/langpack/-/svg-badge.svg)
 ![Packer](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/workflows/Packer/badge.svg?branch=main)
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/LICENSE)
