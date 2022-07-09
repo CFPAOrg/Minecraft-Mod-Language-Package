@@ -52,23 +52,18 @@ jobs:
 
       - name: Run Packer
         run: ./Packer --version="1.12.2"
-        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Run Packer
         run: ./Packer --version="1.16"
-        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Run Packer
         run: ./Packer --version="1.16-fabric"
-        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Run Packer
         run: ./Packer --version="1.18"
-        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         
       - name: Run Packer
         run: ./Packer --version="1.18-fabric"
-        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Create timestamp
         id: create_timestamp
@@ -98,7 +93,6 @@ jobs:
           asset_path: Minecraft-Mod-Language-Package-1.12.2.zip
           asset_name: Minecraft-Mod-Language-Package-1.12.2.zip
           asset_content_type: application/zip
-        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Update release asset
         id: upload-release-asset2
@@ -110,7 +104,6 @@ jobs:
           asset_path: Minecraft-Mod-Language-Package-1.16.zip
           asset_name: Minecraft-Mod-Language-Package-1.16.zip
           asset_content_type: application/zip
-        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
         
       - name: Update release asset
@@ -123,7 +116,6 @@ jobs:
           asset_path: Minecraft-Mod-Language-Package-1.16-fabric.zip
           asset_name: Minecraft-Mod-Language-Package-1.16-fabric.zip
           asset_content_type: application/zip
-        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Update release asset
         id: upload-release-asset4
@@ -135,7 +127,6 @@ jobs:
           asset_path: Minecraft-Mod-Language-Package-1.18.zip
           asset_name: Minecraft-Mod-Language-Package-1.18.zip
           asset_content_type: application/zip
-        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Update release asset
         id: upload-release-asset5
@@ -147,7 +138,6 @@ jobs:
           asset_path: Minecraft-Mod-Language-Package-1.18-fabric.zip
           asset_name: Minecraft-Mod-Language-Package-1.18-fabric.zip
           asset_content_type: application/zip
-        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       # Doesn't do so now because it messes up the server
       - name: Build Uploader
