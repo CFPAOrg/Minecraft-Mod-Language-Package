@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Website](https://img.shields.io/badge/%E5%AE%98%E7%BD%91-cfpa.com-brightgreen)](https://cfpa.team/)
+[![Website](https://img.shields.io/badge/%E5%AE%98%E7%BD%91-cfpa.team-brightgreen)](https://cfpa.team/)
 ![Weblate](https://weblate-t.exz.me/widgets/langpack/-/svg-badge.svg)
 ![Packer](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/workflows/Packer/badge.svg?branch=main)
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/LICENSE)
@@ -59,7 +59,7 @@
 
 - [Saladict 沙拉查词](https://saladict.crimx.com/)
 - [Minecraft Mods Translator](https://github.com/Maz-T/Minecraft-Mods-Translator) - 简易 CAT 工具。
-- [汉化小工具](https://translatorassistant.pages.dev/) - LANG 转 JSON，JSON 更新，JSON 补全。
+- [汉化小工具](https://tt.nullpointer.icu/) - LANG 转 JSON，JSON 更新，JSON 补全。
 - [Octotree](https://www.octotree.io/) - 树型展示 GitHub 项目文件结构，懒加载，独立收藏系统。
 
 ### 词典
