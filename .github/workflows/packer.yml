@@ -52,18 +52,23 @@ jobs:
 
       - name: Run Packer
         run: ./Packer --version="1.12.2"
+        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Run Packer
         run: ./Packer --version="1.16"
+        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Run Packer
         run: ./Packer --version="1.16-fabric"
+        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Run Packer
         run: ./Packer --version="1.18"
+        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         
       - name: Run Packer
         run: ./Packer --version="1.18-fabric"
+        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Create timestamp
         id: create_timestamp
