@@ -90,6 +90,7 @@ jobs:
       # Upload release asset: https://github.com/actions/upload-release-asset
       - name: Update release asset
         id: upload-release-asset1
+        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -101,6 +102,7 @@ jobs:
 
       - name: Update release asset
         id: upload-release-asset2
+        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -113,6 +115,7 @@ jobs:
         
       - name: Update release asset
         id: upload-release-asset3
+        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -124,6 +127,7 @@ jobs:
 
       - name: Update release asset
         id: upload-release-asset4
+        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -135,6 +139,7 @@ jobs:
 
       - name: Update release asset
         id: upload-release-asset5
+        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
