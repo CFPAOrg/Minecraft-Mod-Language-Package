@@ -7,7 +7,7 @@
   "pages": [
     {
       "type": "text",
-      "text": "无人机接口是一个与$(l:tools/drone)无人机/$交互的 $(thing)ComputerCraft/OpenComputers 外设/$。要做到这一点，对$(item)无人机/$编入含有$(l:programming/computer_control)电脑控制/$拼图的程序。当无人机执行该拼图时，其将会试图连接到给定区域内$(ttcolor)$(t:每个无人机接口只能同时与一个无人机连接)可用/$的$(item)无人机接口/$。"
+      "text": "无人机接口是一个与$(l:tools/drone)无人机/$交互的$(thing)ComputerCraft/OpenComputers外设/$。要做到这一点，对$(item)无人机/$编入含有$(l:programming/computer_control)电脑控制/$拼图的程序。当无人机执行该拼图时，其将会试图连接到给定区域内$(ttcolor)$(t:每个无人机接口只能同时与一个无人机连接)可用/$的$(item)无人机接口/$。"
     },
     {
       "type": "spotlight",
@@ -17,7 +17,7 @@
     {
       "type": "text",
       "title": "示例",
-      "text": "下面是一个示例 Lua 程序：$(p)$(#008)m = peripheral.wrap(\"right\")$(br)m.addArea(100, 64, 100, 120, 4, 120, \"Filled\")$(br)m.setAction(\"dig\")$(br)m.clearArea()$(br)m.addArea(80, 65, 80)$(br)m.setAction(\"standby\")$(p)/$该程序操控无人机挖掘一片区域——从 (100,64,100) 到 (120,4,120) 的区域——然后回到 (80,65,80) 并进入待机状态。"
+      "text": "下面是一个示例Lua程序：$(p)$(#008)m = peripheral.wrap(\"right\")$(br)m.addArea(100, 64, 100, 120, 4, 120, \"Filled\")$(br)m.setAction(\"dig\")$(br)m.clearArea()$(br)m.addArea(80, 65, 80)$(br)m.setAction(\"standby\")$(p)/$该程序操控无人机挖掘一片区域——从 (100,64,100) 到 (120,4,120) 的区域——然后回到 (80,65,80) 并进入待机状态。"
     },
     {
       "type": "text",
@@ -27,7 +27,7 @@
     {
       "type": "text",
       "title": "addArea()",
-      "text": "$(#800)addArea(<x1>,<y1>,<z1>)/$$(p)$(#800)addArea(<x1>,<y1>,<z1>,<x2>,<y2>,<z2>,<区域类型>)/$$(p)向无人机目前存储的区域添加一个区域。当使用后一个重载时，x1,y1,z1 表示的是第一个点（代表手动添加时第一个定位工具），x1,y2,z2 表示第二个点。"
+      "text": "$(#800)addArea(<x1>,<y1>,<z1>)/$$(p)$(#800)addArea(<x1>,<y1>,<z1>,<x2>,<y2>,<z2>,<区域类型>)/$$(p)向无人机目前存储的区域添加一个区域。当使用后一个重载时，x1,y1,z1表示的是第一个点（代表手动添加时第一个定位工具），x2,y2,z2表示第二个点。"
     },
     {
       "type": "text",
@@ -47,7 +47,7 @@
     {
       "type": "text",
       "title": "addWhitelistItemFilter()",
-      "text": "$(#800)addWhitelistItemFilter(<物品/方块名>, <使用NBT>, <使用模组匹配>)/$$(p)作为连接在右侧的$(l:programming/item_filter)物品过滤器/$。物品/方块名使用其注册名，如：$(thing)pneumaticcraft:pressureTube/$。‘使用xxx’参数确定哪些过滤器会被使用的 bool 参数（和配置界面里的复选框功能一样）。"
+      "text": "$(#800)addWhitelistItemFilter(<物品/方块名>, <使用NBT>, <使用模组匹配>)/$$(p)作为连接在右侧的$(l:programming/item_filter)物品过滤器/$。物品/方块名使用其注册名，如：$(thing)pneumaticcraft:pressureTube/$。“使用xxx”参数确定在过滤器中用到的 bool 参数（和配置界面里的复选框功能一样）。"
     },
     {
       "type": "text",
@@ -98,7 +98,7 @@
     {
       "type": "text",
       "title": "evaluateCondition()",
-      "text": "$(#800)evaluateCondition()/$$(p)返回 true/false。仅用于$(l:programming/conditions)条件/$拼图。该方法取决于是否满足条件返回 true/false。无人机条件可以在调用 $(#800)setAction()/$ 后即被检查。非无人机条件需要等到 $(#800)isActionDone()/$ 返回 true 才可检查条件。"
+      "text": "$(#800)evaluateCondition()/$$(p)返回true/false。仅用于$(l:programming/conditions)条件/$拼图。该方法根据条件程序是否满足返回true/false。无人机条件可以在调用$(#800)setAction()/$后即被检查。非无人机条件需要等到$(#800)isActionDone()/$返回true才可检查。"
     },
     {
       "type": "text",
@@ -113,7 +113,7 @@
     {
       "type": "text",
       "title": "getAction()",
-      "text": "$(#800)getAction()/$$(p)返回代表由 $(#800)setAction()/$ 所设置的上一个操作的字符串。如果未设置操作，返回 $(thing)nil/$。可以用于确保只在该方法不返回 nil 时才调用 $(#800)isActionDone()/$。"
+      "text": "$(#800)getAction()/$$(p)返回代表由$(#800)setAction()/$所设置的上一个操作的字符串。如果未设置操作，返回$(thing)nil/$。可以用于确保只在该方法不返回nil时才调用 $(#800)isActionDone()/$。"
     },
     {
       "type": "text",
@@ -123,12 +123,17 @@
     {
       "type": "text",
       "title": "getAreaTypes()",
-      "text": "$(#800)getAreaTypes()/$$(p)返回所有可行的区域类型（如 filled（填充），frame（框架），sphere（球）等）。"
+      "text": "$(#800)getAreaTypes()/$$(p)返回所有可行的区域类型（如filled（填充），frame（框架），sphere（球）等）。"
     },
     {
       "type": "text",
       "title": "getDronePosition()",
-      "text": "$(#800)getDronePosition()/$$(p)返回包含有无人机的 x, y, z 坐标的 double 类型值的列表。"
+      "text": "$(#800)getDronePosition()/$$(p)返回包含有无人机的x、y、z坐标的列表。该方法仅为兼容性保留；建议使用改进后的$(#800)getDronePositionVec()/$方法。"
+    },
+    {
+      "title": "getDronePositionVec()",
+      "text": "$(#800)getDronePosition()/$$(p)返回包含无人机的x、y、z坐标的映射表。可以通过访问.x、.y、.z项提取各个分量的数值。如：$(#800)xpos = getDronePosition().x/$。",
+      "type": "text"
     },
     {
       "type": "text",
@@ -138,28 +143,28 @@
     {
       "type": "text",
       "title": "getUpgrades()",
-      "text": "$(#800)getUpgrades(<升级名>)/$$(p)返回给定升级所安装的数量。升级名由如下方式给出：打开高级信息显示（F3+H），将鼠标指针指向升级物品，并将物品注册名中的 $(thing)_upgrade/$ 部分删去，即得到升级名。$(p)如：若注册名为 $(thing)pneumaticcraft:speed_upgrade/$（即速度升级），升级名则为 $(thing)speed/$。"
+      "text": "$(#800)getUpgrades(<升级名>)/$$(p)返回给定升级所安装的数量。升级名由如下方式给出：打开高级信息显示（F3+H），将鼠标指针指向升级物品，并将物品注册名中的$(thing)_upgrade/$部分删去，即得到升级名。$(p)如：若注册名为$(thing)pneumaticcraft:speed_upgrade/$（即速度升级），升级名则为$(thing)speed/$。"
     },
     {
       "type": "text",
       "title": "getVariable()",
-      "text": "$(#800)getVariable(<变量名>)/$$(p)返回无人机的对应变量的值（x,y,z）。同样可以获取$(l:programming/variables#global)全局变量/$（前缀 #）和$(l:programming/variables#special)特指变量/$（前缀 $）的值。"
+      "text": "$(#800)getVariable(<变量名>)/$$(p)返回无人机的对应变量的值（形式：列表x,y,z）。同样可以获取$(l:programming/variables#global)全局变量/$（前缀#）和$(l:programming/variables#special)特指变量/$（前缀$）的值。"
     },
     {
       "type": "text",
       "title": "hideArea()",
-      "text": "$(#800)hideArea()/$$(p)停止高亮 $(#800)showArea()/$ 方法高亮出的无人机当前存储的区域。"
+      "text": "$(#800)hideArea()/$$(p)停止高亮$(#800)showArea()/$方法高亮出的无人机当前存储的区域。"
     },
     {
       "type": "text",
       "title": "isActionDone()",
-      "text": "$(#800)isActionDone()/$$(p)如果当前操作已完成（如：去往位置操作（goto）已到达目标位置，从容器提取物品操作（inventory_import）无法输入更多物品，挖掘方块操作（dig）已经挖掘了所有方块，等等），返回 true。"
+      "text": "$(#800)isActionDone()/$$(p)如果当前操作已完成（如：去往位置操作（goto）已到达目标位置，从容器提取物品操作（inventory_import）无法输入更多物品，挖掘方块操作（dig）已经挖掘了所有方块，等等），返回true。"
 
     },
     {
       "type": "text",
       "title": "isConnectedToDrone()",
-      "text": "$(#800)isConnectedToDrone()/$$(p)如果一个无人机与该无人机接口连接（即无人机的程序运行到了电脑控制拼图，并且连接成功），返回 true。"
+      "text": "$(#800)isConnectedToDrone()/$$(p)如果一个无人机与该无人机接口连接（即无人机的程序运行到了电脑控制拼图，并且连接成功），返回true。"
     },
     {
       "type": "text",
@@ -169,7 +174,7 @@
     {
       "type": "text",
       "title": "setAction()",
-      "text": "$(#800)setAction(<操作>)/$$(p)设置要执行的操作。<操作>是表示该操作的字符串。该字符串应当属于 getAllActions() 返回的列表；输入的字符串对应于$(l:programming/programmer#ids)编程器/$中的一个编程拼图，对应关系由其注册名（可使用 F3+H 打开高级信息显示以获取）。$(p)注：对于前缀为$(thing)pneumaticcraft:/$的操作（即为所有本模组自带的操作），这一前缀可以略去。"
+      "text": "$(#800)setAction(<操作>)/$$(p)设置要执行的操作。<操作>是表示该操作的字符串。该字符串应当属于getAllActions()返回的列表；输入的字符串对应于$(l:programming/programmer#ids)编程器/$中的一个编程拼图，对应关系由其注册名（可使用F3+H打开高级信息显示以获取）。$(p)注：对于前缀为$(thing)pneumaticcraft:/$的操作（即为所有本模组自带的操作），这一前缀可以略去。"
     },
     {
       "type": "text",
@@ -179,7 +184,7 @@
     {
       "type": "text",
       "title": "setCanSteal()",
-      "text": "$(#800)setCanSteal(<true/false>)/$$(p)执行拾起物品（pickup_item）操作时，该方法控制无人机十分可以捡拾不应捡拾的物品，如：放置在$(thing)沉浸工程/$的传送带上的物品$(p)默认值为 $(thing)false/$：无人机不会捡拾不应捡拾的物品。"
+      "text": "$(#800)setCanSteal(<true/false>)/$$(p)执行拾起物品（pickup_item）操作时，该方法控制无人机可以捡拾不应捡拾的物品，如：放置在$(thing)沉浸工程/$的传送带上的物品$(p)默认值为$(thing)false/$：无人机不会捡拾不应捡拾的物品。"
     },
     {
       "type": "text",
@@ -189,7 +194,7 @@
     {
       "type": "text",
       "title": "setCraftingGrid()",
-      "text": "$(#800)setCraftingGrid(<物品/方块名>, <物品/方块名>, ...(9个))/$$(p)设置在执行合成操作（crafting）时使用的合成表。需要指定合成配方的所有 9 个物品。对于空物品，使用 $(thing)nil/$ 代替。命名格式和物品过滤的格式相同。"
+      "text": "$(#800)setCraftingGrid(<物品/方块名>, <物品/方块名>, ...(9个))/$$(p)设置在执行合成操作（crafting）时使用的合成表。需要指定合成配方的所有9个物品。对于空物品，使用$(thing)nil/$代替。命名格式和物品过滤的格式相同。"
     },
     {
       "type": "text",
@@ -204,7 +209,7 @@
     {
       "type": "text",
       "title": "setIsAndFunction()",
-      "text": "$(#800)setIsAndFunction(<true/false>)/$$(p)仅用于$(l:programming/conditions)条件/$拼图。设置为 true 时，所有被检查的方块需要满足条件（如 >= 10）才能使条件为真。"
+      "text": "$(#800)setIsAndFunction(<true/false>)/$$(p)仅用于$(l:programming/conditions)条件/$拼图。设置为true时，所有被检查的方块需要满足条件（如>=10）才能使条件为真。"
     },
     {
       "type": "text",
@@ -214,12 +219,12 @@
     {
       "type": "text",
       "title": "setOperator()",
-      "text": "$(#800)setOperator(<\">=\" / \"=\">)/$$(p)仅用于$(l:programming/conditions)条件/$拼图。设置条件为等于（\"=\"）或是大于等于（\">=\"）指定数量。这个“指定数量”可以用 setCount() 方法设置。"
+      "text": "$(#800)setOperator(<\">=\" / \"=\">)/$$(p)仅用于$(l:programming/conditions)条件/$拼图。设置条件为等于（\"=\"）或是大于等于（\">=\"）指定数量。这个“指定数量”可以用setCount()方法设置。"
     },
     {
       "type": "text",
       "title": "setPlaceFluidBlocks()",
-      "text": "$(#800)setPlaceFluidBlocks(<true/false>)/$$(p)仅用于输出流体操作（liquid_export）。传参为 true 时无人机可以放置下流体方块。默认值为 false。"
+      "text": "$(#800)setPlaceFluidBlocks(<true/false>)/$$(p)仅用于输出流体操作（liquid_export）。传参为true时无人机可以放置下流体方块。默认值为false。"
     },
     {
       "type": "text",
@@ -234,7 +239,7 @@
     {
       "type": "text",
       "title": "setRightClickType()",
-      "text": "$(#800)setRightClickType(\"click_item\" / \"click_block\")/$$(p)执行右击方块操作（block_right_click）时，该方法控制无人机执行所持物品（click_item）的右击逻辑（如使用$(item)打火石/$点火）还是执行目标方块的右击逻辑（如拨动$(item)拉杆/$）。默认值为 click_item。"
+      "text": "$(#800)setRightClickType(\"click_item\" / \"click_block\")/$$(p)执行右击方块操作（block_right_click）时，该方法控制无人机执行所持物品（click_item）的右击逻辑（如使用$(item)打火石/$点火）还是执行目标方块的右击逻辑（如拨动$(item)拉杆/$）。默认值为click_item。"
     },
     {
       "type": "text",
@@ -244,7 +249,7 @@
     {
       "type": "text",
       "title": "setSides()",
-      "text": "$(#800)setSides(<下>, <上>, <北>, <南>, <东>, <西>)/$$(p)与上一方法相同，但是一次性设置所有面。该方法接受六个 bool 参数。"
+      "text": "$(#800)setSides(<下>, <上>, <北>, <南>, <东>, <西>)/$$(p)与上一方法相同，但是一次性设置所有面。该方法接受六个bool参数。"
     },
     {
       "type": "text",
@@ -259,12 +264,12 @@
     {
       "type": "text",
       "title": "setUseCount()",
-      "text": "$(#800)setUseCount(<true/false>)/$$(p)设置无人机是否有最大输入/输出/投掷物品限制。如果设置为 true，需要一并调用 setCount()。"
+      "text": "$(#800)setUseCount(<true/false>)/$$(p)设置无人机是否有最大输入/输出/投掷物品限制。如果设置为true，需要一并调用setCount()。"
     },
     {
       "type": "text",
       "title": "setUseMaxActions()",
-      "text": "$(#800)setUseMaxActions(<true/false>)/$$(p)设置是否具有在指令被认为完成前对方块上执行的最多操作限制。该方法对放置方块（place）、挖掘方块（dig）、右击方块（block_right_click）操作适用。如果设置为 true，需要一并调用 setMaxActions()。"
+      "text": "$(#800)setUseMaxActions(<true/false>)/$$(p)设置是否具有在指令被认为完成前对方块上执行的最多操作限制。该方法对放置方块（place）、挖掘方块（dig）、右击方块（block_right_click）操作适用。如果设置为true，需要一并调用setMaxActions()。"
     },
     {
       "type": "text",
@@ -274,7 +279,7 @@
     {
       "type": "text",
       "title": "setVariable()",
-      "text": "$(#800)setVariable(<变量名>, <true/false>)/$$(p)将无人机的一个$(l:programming/variables)变量/$设置为指定值。true 等价于坐标 (1,0,0)，false 等价于坐标 (0,0,0)。"
+      "text": "$(#800)setVariable(<变量名>, <true/false>)/$$(p)将无人机的一个$(l:programming/variables)变量/$设置为指定值。true等价于坐标1,0,0，false等价于坐标0,0,0。"
     },
     {
       
