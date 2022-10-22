@@ -7,4 +7,4 @@
 - [ ] 我已确认英文原文（如 en_us.json）存在且完整，内容与中文对应；
 - [ ] 我已阅读并同意按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议发布我的作品；
 - [ ] 刷新 PR 的标签/状态，有需要再点击；
-- [ ] 我已使用`/diff`指令自我检查`zh_cn`
+- [ ] 我已使用`/diff`指令检查`zh_cn`术语使用
