@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Website](https://img.shields.io/badge/%E5%AE%98%E7%BD%91-cfpa.com-brightgreen)](https://cfpa.team/)
+[![Website](https://img.shields.io/badge/%E5%AE%98%E7%BD%91-cfpa.team-brightgreen)](https://cfpa.team/)
 ![Weblate](https://weblate-t.exz.me/widgets/langpack/-/svg-badge.svg)
 ![Packer](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/workflows/Packer/badge.svg?branch=main)
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue)](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/LICENSE)
@@ -72,7 +72,8 @@
 - [Minecraft Wiki:译名标准化](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96) - 原版词汇中英对照。
 - [Minecraft Wiki:译名标准化/历史](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇变更历史。
 - [Minecraft 模组翻译参考词典](https://dict.mcmod.cn/) - 以英文检索本仓库中的翻译条目。
-- [MCBBS 识海漫谈版下的翻译讨论分类](https://www.mcbbs.net/forum.php?mod=forumdisplay&fid=1015&page=1&filter=typeid&typeid=2250) - 原版译名讨论、投票、解析。
+- [MCBBS 的翻译讨论](https://www.mcbbs.net/forum.php?mod=forumdisplay&fid=1015&page=1&filter=typeid&typeid=2250) - 原版翻译讨论、投票、公告。
+- [MC百科社群的翻译讨论](https://bbs.mcmod.cn/forum.php?mod=forumdisplay&fid=31&filter=typeid&typeid=116) - 模组翻译讨论，零散汉化发布。
 
 ### 其他
 
