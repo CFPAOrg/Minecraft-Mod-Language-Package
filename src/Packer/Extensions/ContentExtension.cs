@@ -31,7 +31,8 @@ namespace Packer.Extensions
         public static string StripeModName(this string path)
         {
             var _ = path.Split('/').ToList();
-            _.RemoveAt(1); // 认为模组名在第一处 / 的后面
+
+            if (_.Count >= 2) _.RemoveAt(1); // 认为模组名在第一处 / 的后面
             return Path.Join(_.ToArray());
         }
 
