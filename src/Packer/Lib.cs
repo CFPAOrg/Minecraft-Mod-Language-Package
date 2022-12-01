@@ -11,6 +11,12 @@ namespace Packer
 {
     static class Lib
     {
+        /// <summary>
+        /// 从主库中选出所需文本。
+        /// </summary>
+        /// <param name="config">所使用的配置</param>
+        /// <param name="unprocessed">传出非文本处理的文件</param>
+        /// <returns></returns>
         public static IEnumerable<Asset> RetrieveContent(Config config, out Dictionary<string, string> unprocessed)
         {
             // 注：仓库的文件结构如下：（仅考虑主要翻译文件）
@@ -19,10 +25,14 @@ namespace Packer
             // <mod-name> 是唯一的，但 <asset-domain> 和 <namespace> 都不是唯一的
             // 目标文件层级：
             // assets/<asset-domain>/<namespace>/path/to/the/file
+
+            // 预备工作
             Log.Information("开始生成待打包的文件");
-            var bypassed = new Dictionary<string, string>(); // full path -> destination
+            var bypassed = new Dictionary<string, string>(); // 文件完整路径 -> 压缩包中的完整路径
             var result = new Dictionary<string, Asset>();
-            var existingDomains = new Dictionary<string, string>();
+            var existingDomains = new Dictionary<string, string>(); // domain -> 模组名
+
+            // 下面开始检索模组：
             var mods = new DirectoryInfo($"./projects/{config.Version}/assets")
                 .EnumerateDirectories() // assets/ 的下级文件夹
                 .Select(modDirectory => new Mod()
@@ -34,11 +44,14 @@ namespace Packer
                         {
                             domainName = assetDirectory.Name,
                             contents = assetDirectory
-                                .EnumerateFiles("*", SearchOption.AllDirectories)
-                                .Select(file =>
-                                { // <asset-domain>/ 的下级文件夹
+                                .EnumerateFiles("*", SearchOption.AllDirectories) // <asset-domain>/ 的下级文件夹
+                                .Select(file => 
+                                { 
+                                    // 这里开始真正的检索。被跳过的文本用 null 代替
+
                                     var prefixLength = assetDirectory.FullName.Length;
-                                    var relativePath = file.FullName[(prefixLength + 1)..];
+                                    var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置
+
                                     if (relativePath.NeedBypass(config))
                                     {
                                         Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('\\')[0]);
@@ -48,10 +61,12 @@ namespace Packer
                                                                   relativePath));
                                         return null;
                                     }
-                                    if (relativePath.Contains("en_us", StringComparison.OrdinalIgnoreCase))
+
+                                    if (relativePath.IsSkippedLang(config))
                                     {
                                         return null;
                                     }
+
                                     var parsingCategory = file.Extension switch
                                     {
                                         ".json" => FileCategory.JsonAlike,
@@ -78,6 +93,7 @@ namespace Packer
                                 }).Where(_ => _ is not null) // 排除掉跳过的文件
                         })
                 });
+
             foreach (var mod in mods)
             {
                 var name = mod.modName;
@@ -112,7 +128,7 @@ namespace Packer
                     }
                 }
             }
-            unprocessed = bypassed;
+            unprocessed = bypassed; // 传出非文本文件
             Log.Information("文件列表生成完毕");
             return result.Select(_ => _.Value);
         }
