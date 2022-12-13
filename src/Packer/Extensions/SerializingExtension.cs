@@ -11,15 +11,18 @@ namespace Packer.Extensions
 {
     static class SerializingExtension
     {
+
         public static string SerializeAsset(this Dictionary<string, string> assetMap, FileCategory category)
         {
             return category switch
             {
+                // Json 文件，直接写出
                 FileCategory.JsonTranslationFormat => JsonSerializer.Serialize(assetMap,
                     new JsonSerializerOptions
                     {
                         WriteIndented = true
                     }),
+                // Lang文件
                 FileCategory.LangTranslationFormat => SerializeFromLang(assetMap),
                 _ => null // 其实不应该执行到这个地方
             };
@@ -27,6 +30,7 @@ namespace Packer.Extensions
 
         static string SerializeFromLang(Dictionary<string, string> assetMap)
         {
+            // lang格式化还好说
             var sb = new StringBuilder();
             foreach (var pair in assetMap)
             {
@@ -48,6 +52,8 @@ namespace Packer.Extensions
 
         static Dictionary<string, string> DeserializeFromLang(string content)
         {
+            // 甚至不是自动机...所以不敢多用，否则会炸
+
             // 下面的 Verbose 仅供调试，不会在 log 里出现
             // .lang的格式真的乱...
             Log.Verbose("开始反序列化 .lang 文件");
