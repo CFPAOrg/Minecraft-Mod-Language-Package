@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 using System;
 using System.Security.Cryptography;
 using System.Linq;
-using System.Text;
 using System.Text.Encodings.Web;
-using System.Text.Json.Serialization;
+
 using Packer.Models;
 using Serilog;
 namespace Packer
@@ -40,6 +39,8 @@ namespace Packer
             }
             return mapping;
         }
+
+        // 下面的这些...其实都不是我写的...
 
         public static async Task WriteMd5(Stream stream, Config config)
         {
