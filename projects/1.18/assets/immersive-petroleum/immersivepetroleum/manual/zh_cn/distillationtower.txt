@@ -1,14 +1,34 @@
 精馏塔
-环境不友好
+对环境不友好
 <&distillationtower0>精馏塔是能将石油分馏成若干种产品的大型多方块设备。<np>
-其结构如下图所示；需要用工程师锤敲击红石工程块完成建造。
+其结构如上图所示，需用工程师锤敲击红石工程块完成搭建。
 
-向控制面板施加红石信号将停止机器的进程，这种行为可使用螺丝刀来反转。
+在前面的控制面板上通入红石信号将停止机器的进程，可以用工程师螺丝刀来反转。
 
-原油可从其后面带有蓝点的输入端输入。原油在塔中会被加热，最终分成若干层不同的产物。这个过程会产出柴油，以及可能产出作为副产物存在的沥青。
+原油需从其后面带有蓝色圆点的舱口输入。原油在塔中会被加热，最终分成若干层不同的产物。这个过程会产出多种流体，以及可能产出副产物沥青。
 
-精馏塔每次运行会消耗<config;i;distillationtower_operationcost>Flux，每刻最多将75mB原油转化为柴油、润滑油、汽油和沥青。产出的混合流体会从侧面带有橙色标记的端口输出；副产物沥青则从正面输出。<np>
+当消耗<config;i;distillationtower_operationcost>Flux/t时，其将按如下加工：
+按50mB/t将原油加工为：
+|   15mB/t 石脑油
+|   18mB/t 煤油
+|   30mB/t 含硫柴油
+|   12mB/t 润滑油
+|   和一些沥青
 
-柴油可用于<link;diesel_generator;§o§n发电§r>，润滑油可用于<link;immersivepetroleum:lubricant;§o§n润滑机器§r>，汽油可用于<link;immersivepetroleum:portablegenerator;§o§n发电§r>、<link;immersivepetroleum:speedboat;§o§n载具燃料§r>、或者<link;immersivepetroleum:napalm;§o§n凝固汽油§r>。
-沥青用于制造<link;immersivepetroleum:asphalt;§o§n沥青混凝土§r>，并可进一步加工以在<link;immersivepetroleum:cokerunit;§o§n焦化器§r>中获得石油焦。<np>
-<&distillationtower1>以下是精馏塔的多方块结构示意图：
+产出的混合流体会从侧面带有橙色圆点的舱口输出，副产物沥青则从正面输出。
+
+按10mB/t将裂化石脑油加工为：
+|   6mB/t 乙烯
+|   2mB/t 丙烯
+|   2mB/t 苯
+
+按12mB/t将裂化润滑油加工为：
+|   6mB/t 煤油
+|   10mB/t 含硫柴油
+
+按10mB/t将煤油加工为：
+|   2mB/t 石脑油
+|   3mB/t 汽油添加剂
+|   5mB/t 含硫柴油
+<np>
+柴油可用于<link;diesel_generator;§o§n发电§r>，润滑油可用于<link;immersivepetroleum:lubricant;§o§n润滑机器§r>，煤油可用于<link;diesel_generator;§o§n发电§r>，石脑油可用于<link;immersivepetroleum:portablegenerator;§o§n发电§r>和制造<link;immersivepetroleum:plastics;§o§n塑料§r>。沥青可用于制造<link;immersivepetroleum:asphalt;§o§n沥青混凝土§r>，并可进一步加工以在<link;immersivepetroleum:cokerunit;§o§n焦化器§r>中制得石油焦。
