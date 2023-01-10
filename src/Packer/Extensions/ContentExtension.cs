@@ -21,7 +21,8 @@ namespace Packer.Extensions
         /// <returns></returns>
         public static string NormalizePath(this string path)
             => path.Replace('\\', '/') // 修正正反斜杠导致的压缩文件读取问题
-                   .ToLower(); // 确保大小写
+                 //.ToLower() // 确保大小写  *  由于语言类型需要大小写而禁用该条
+                   ;
 
         /// <summary>
         /// 移除模组名一级，在基础文件处理处用到

@@ -25,14 +25,17 @@ namespace Packer
             // <mod-name> 是唯一的，但 <asset-domain> 和 <namespace> 都不是唯一的
             // 目标文件层级：
             // assets/<asset-domain>/<namespace>/path/to/the/file
+            // 
+            // 在目标层级以外的文件不支持处理，需要作为基础文件加入
 
             // 预备工作
             Log.Information("开始生成待打包的文件");
             var bypassed = new Dictionary<string, string>(); // 文件完整路径 -> 压缩包中的完整路径
-            var result = new Dictionary<string, Asset>();
+            var result = new Dictionary<string, Asset>(); // domain -> 该domain对应的Asset对象
             var existingDomains = new Dictionary<string, string>(); // domain -> 模组名
 
             // 下面开始检索模组：
+            // 以后可能会用更好看的linq语法写，但是现在就这样了
             var mods = new DirectoryInfo($"./projects/{config.Version}/assets")
                 .EnumerateDirectories() // assets/ 的下级文件夹
                 .Select(modDirectory => new Mod()
@@ -44,7 +47,7 @@ namespace Packer
                         {
                             domainName = assetDirectory.Name,
                             contents = assetDirectory
-                                .EnumerateFiles("*", SearchOption.AllDirectories) // <asset-domain>/ 的下级文件夹
+                                .EnumerateFiles("*", SearchOption.AllDirectories) // <asset-domain>/ 的下级文件
                                 .Select(file => 
                                 { 
                                     // 这里开始真正的检索。被跳过的文本用 null 代替
@@ -52,6 +55,13 @@ namespace Packer
                                     var prefixLength = assetDirectory.FullName.Length;
                                     var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置
 
+                                    // 跳过英文文件
+                                    if (relativePath.IsSkippedLang(config))
+                                    {
+                                        return null;
+                                    }
+
+                                    // 选出不经过处理路径的文件
                                     if (relativePath.NeedBypass(config))
                                     {
                                         Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('\\')[0]);
@@ -62,11 +72,7 @@ namespace Packer
                                         return null;
                                     }
 
-                                    if (relativePath.IsSkippedLang(config))
-                                    {
-                                        return null;
-                                    }
-
+                                    // 处理正常的语言文件
                                     var parsingCategory = file.Extension switch
                                     {
                                         ".json" => FileCategory.JsonAlike,

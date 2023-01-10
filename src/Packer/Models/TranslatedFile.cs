@@ -105,13 +105,14 @@ namespace Packer.Models
         public Dictionary<string, string> deserializedContent;
 
         // 继承构造函数
-        public LangFile(Stream stream, FileCategory category, Config config) : base(stream, category, config)
+        public LangFile(Stream stream, FileCategory category, Config config)
+            : base(stream, category, config)
         {
             deserializedContent = null;
         }
         // 从kv对顺便构造字符串内容备用
-        public LangFile(FileCategory category, Dictionary<string, string> content) : base(category,
-                                                                                          content.SerializeAsset(category))
+        public LangFile(FileCategory category, Dictionary<string, string> content)
+            : base(category, content.SerializeAsset(category))
         {
             deserializedContent = content;
         }
