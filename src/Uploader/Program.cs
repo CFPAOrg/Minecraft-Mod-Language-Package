@@ -13,119 +13,54 @@ namespace Uploader
 {
     static class Program
     {
-        static int Main(string[] args)
+        static int Main(string host, string name, string password)
         {
             Log.Logger = new LoggerConfiguration()
+                .Enrich.FromLogContext()
                 .WriteTo.Console()
                 .CreateLogger();
-            var command = new RootCommand() {
-                new Option<string>(
-                    "--version",
-                    getDefaultValue: (() => "1.12.2"),
-                    description: "Set upload version."),
-                new Option<string>(
-                    "--host",
-                    getDefaultValue:(() => ""),
-                    description:"Set the host."),
-                new Option<string>(
-                    "--name",
-                    description:"Set user name."),
-                new Option<string>(
-                    "--password",
-                    description:"Set password.")
-            };
 
-            command.Description = "Config of uploader";
+            using var scpClient = new ScpClient(host, 20002, name, password);
+            scpClient.Connect(); // 与下载服务器建立连接
 
-            command.Handler = CommandHandler.Create<string, string, string, string>((version, host, name, password) =>
+            if (scpClient.IsConnected)
             {
-                using var scpClient = new ScpClient(host, 20002, name, password);
-                scpClient.Connect();
-                if (scpClient.IsConnected)
-                {
-                    Log.Logger.Information("SCP服务器连接成功");
-                }
-                else
-                {
-                    Log.Logger.Error("SCP服务器连接失败");
-                    return;
-                }
+                Log.Information("SCP服务器连接成功");
+            }
+            else
+            {
+                Log.Error("SCP服务器连接失败");
+                return -1;
+            }
 
-                var md5s = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.md5");
-                md5s.ToList().ForEach(_ => { scpClient.Upload(File.OpenRead(_), $"/var/www/html/files/{Path.GetFileName(_)}"); });
-                var fs = File.OpenRead($"./Minecraft-Mod-Language-Package-{version}.zip");
-                switch (version)
-                {
-                    case "1.12.2":
-                        scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack.zip.1");
-                        break;
-                    case "1.16":
-                        scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip.1");
-                        break;
-                    case "1.16-fabric":
-                        scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-16-Fabric.zip.1");
-                        break;
-                    case "1.18":
-                        scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip.1");
-                        break;
-                    case "1.18-fabric":
-                        scpClient.Upload(fs, "/var/www/html/files/Minecraft-Mod-Language-Modpack-1-18-Fabric.zip.1");
-                        break;
-                    default:
-                        break;//不应该
-                }
-                Log.Logger.Information("上传成功");
-                scpClient.Dispose();
-                using var sshClient = new SshClient(host, 20002, name, password);
-                sshClient.Connect();
-                if (sshClient.IsConnected)
-                {
-                    Log.Logger.Information("SSH服务器连接成功");
-                }
-                else
-                {
-                    Log.Logger.Error("SSH服务器连接失败");
-                    return;
-                }
-                switch (version)
-                {
-                    case "1.12.2":
-                        var cmd1 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack.zip");
-                        cmd1.Execute();
-                        var err1 = cmd1.Error;
-                        Log.Logger.Error(err1);
-                        break;
-                    case "1.16":
-                        var cmd2 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16.zip");
-                        cmd2.Execute();
-                        var err2 = cmd2.Error;
-                        Log.Logger.Error(err2);
-                        break;
-                    case "1.16-fabric":
-                        var cmd3 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16-Fabric.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-16-Fabric.zip");
-                        cmd3.Execute();
-                        var err3 = cmd3.Error;
-                        Log.Logger.Error(err3);
-                        break;
-                    case "1.18":
-                        var cmd4 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18.zip");
-                        cmd4.Execute();
-                        var err4 = cmd4.Error;
-                        Log.Logger.Error(err4);
-                        break;
-                    case "1.18-fabric":
-                        var cmd5 = sshClient.CreateCommand("mv /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18-Fabric.zip.1 /var/www/html/files/Minecraft-Mod-Language-Modpack-1-18-Fabric.zip");
-                        cmd5.Execute();
-                        var err5 = cmd5.Error;
-                        Log.Logger.Error(err5);
-                        break;
-                    default:
-                        break;//不应该
-                }
-                sshClient.Dispose();
-            });
+            var currentDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());
+            var md5List = currentDirectory
+                          .EnumerateFiles("*.md5",
+                                          SearchOption.TopDirectoryOnly);
+            var packList = currentDirectory
+                           .EnumerateFiles("Mincreaft-Mod-Language-Package-*.zip",
+                                           SearchOption.TopDirectoryOnly);
 
-            return command.Invoke(args);
+            var timestamp = DateTime.Now.Ticks;
+
+            md5List.ToList()
+                   .ForEach(_ =>
+                   {
+                       var fileName = _.Name;
+                       var tweakedName = fileName.Insert(fileName.LastIndexOf('.') - 1, timestamp.ToString());
+                       scpClient.Upload(_.OpenRead(),$"/var/www/html/files/{tweakedName}");
+                   });
+
+            packList.ToList()
+                   .ForEach(_ =>
+                   {
+                       var fileName = _.Name;
+                       var tweakedName = fileName.Insert(fileName.LastIndexOf('.') - 1, timestamp.ToString())
+                                                 .Replace("Package", "ModPack"); // 历史遗留问题
+                       scpClient.Upload(_.OpenRead(), $"/var/www/html/files/{tweakedName}");
+                   });
+
+            return 0;
         }
     }
 }

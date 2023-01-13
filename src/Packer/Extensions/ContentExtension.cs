@@ -6,6 +6,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace Packer.Extensions
 {
@@ -96,6 +97,17 @@ namespace Packer.Extensions
                 if (location.Contains(lang, StringComparison.OrdinalIgnoreCase)) return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// 计算给定流中全体内容的MD5值。
+        /// </summary>
+        /// <param name="stream">被计算的流</param>
+        /// <returns></returns>
+        public static string ComputeMD5(this Stream stream)
+        {
+            stream.Seek(0, SeekOrigin.Begin);
+            return Convert.ToHexString(MD5.Create().ComputeHash(stream));
         }
     }
 }

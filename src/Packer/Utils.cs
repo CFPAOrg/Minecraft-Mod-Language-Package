@@ -42,32 +42,12 @@ namespace Packer
 
         // 下面的这些...其实都不是我写的...
 
-        public static async Task WriteMd5(Stream stream, Config config)
-        {
-            Log.Information("开始生成 md5 值");
-            var md5 = MD5.Create();
-            var hash = await md5.ComputeHashAsync(stream);
-            var md5Hex = string.Concat(hash.Select(x => x.ToString("X2")));
-            await File.WriteAllTextAsync($"./{config.Version}.md5", md5Hex);
-            Log.Information("生成结束。md5: {0}", md5Hex);
-        }
-        public static async Task WriteMd5(byte[] bytes, Config config)
-        {
-            Log.Information("开始生成 md5 值");
-            var md5 = MD5.Create();
-            //var md5 = SHA256.Create();
-            var hash = md5.ComputeHash(bytes);
-            var md5Hex = string.Concat(hash.Select(x => x.ToString("X2")));
-            await File.WriteAllTextAsync($"./{config.Version}.md5", md5Hex);
-            Log.Information("生成结束。md5: {0}", md5Hex);
-        }
-
         public static void CreateTimeStamp(string version)
         {
             var mcmeta = $"./projects/{version}/pack.mcmeta";
             var meta = JsonSerializer.Deserialize<McMeta>(File.ReadAllText(mcmeta));
             var time = DateTime.UtcNow.AddHours(8);
-            meta.Pack.Description += $"打包时间：{time:yyyy-MM-ddTHH:mm:ssZ}";
+            meta.Pack.Description += $"\\n打包时间：{time:yyyy-MM-ddTHH:mm:ssZ}";
             var result = JsonSerializer.Serialize(meta, new JsonSerializerOptions()
             {
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
