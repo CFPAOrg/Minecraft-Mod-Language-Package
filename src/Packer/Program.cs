@@ -4,7 +4,6 @@ using System.IO.Compression;
 using System.Threading.Tasks;
 
 using Packer.Extensions;
-
 using Serilog;
 
 namespace Packer
@@ -41,20 +40,14 @@ namespace Packer
 
             Utils.CreateTimeStamp(config.Version);
             await using var stream = File.Create(packName);
-            var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true);
+            var archive = new ZipArchive(stream, ZipArchiveMode.Update);
             archive.Initialize(config);
 
             await archive.WriteContent(Lib.RetrieveContent(config, out var bypassed));
             archive.WriteBypassed(bypassed); // 将跳过的文件一并加入
 
-            archive.Dispose(); // 确保ZipArchive的工作已经终止；底层流不会终止
-
-            Log.Information("开始生成 MD5 值");
-            var md5 = stream.ComputeMD5();
-            await File.WriteAllTextAsync($"./{config.Version}.md5", md5);
-            Log.Information("生成结束。MD5: {0}", md5);
-
             Log.Information("对版本 {0} 的打包结束", config.Version);
+            archive.Dispose();
         }
     }
 }

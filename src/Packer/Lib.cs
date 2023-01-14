@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
-using Packer.Models;
 using Packer.Extensions;
+using Packer.Models;
 using Serilog;
 
 namespace Packer
@@ -48,8 +47,8 @@ namespace Packer
                             domainName = assetDirectory.Name,
                             contents = assetDirectory
                                 .EnumerateFiles("*", SearchOption.AllDirectories) // <asset-domain>/ 的下级文件
-                                .Select(file => 
-                                { 
+                                .Select(file =>
+                                {
                                     // 这里开始真正的检索。被跳过的文本用 null 代替
 
                                     var prefixLength = assetDirectory.FullName.Length;

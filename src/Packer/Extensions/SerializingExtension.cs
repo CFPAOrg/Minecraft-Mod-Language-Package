@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Packer.Models;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
-
-using Packer.Models;
-
-using Serilog;
 
 namespace Packer.Extensions
 {
