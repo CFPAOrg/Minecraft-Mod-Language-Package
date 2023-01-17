@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.IO.Compression;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 
 using Packer.Extensions;
@@ -40,14 +41,18 @@ namespace Packer
 
             Utils.CreateTimeStamp(config.Version);
             await using var stream = File.Create(packName);
-            var archive = new ZipArchive(stream, ZipArchiveMode.Update);
+            var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true);
             archive.Initialize(config);
 
             await archive.WriteContent(Lib.RetrieveContent(config, out var bypassed));
             archive.WriteBypassed(bypassed); // 将跳过的文件一并加入
 
             Log.Information("对版本 {0} 的打包结束", config.Version);
-            archive.Dispose();
+            archive.Dispose(); // 关闭压缩文档，不关闭流
+
+            // 临时操作
+            File.WriteAllText($".\\{config.Version}.md5", stream.ComputeMD5());
+            stream.Dispose();
         }
     }
 }

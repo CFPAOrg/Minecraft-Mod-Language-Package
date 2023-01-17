@@ -96,5 +96,17 @@ namespace Packer.Extensions
             }
             return false;
         }
+
+        // 临时方法
+        /// <summary>
+        /// 计算给定流中全体内容的MD5值。
+        /// </summary>
+        /// <param name="stream">被计算的流</param>
+        /// <returns></returns>
+        public static string ComputeMD5(this Stream stream)
+        {
+            stream.Seek(0, SeekOrigin.Begin); // 确保文件流的位置被重置
+            return Convert.ToHexString(MD5.Create().ComputeHash(stream));
+        }
     }
 }

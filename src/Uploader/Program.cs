@@ -35,6 +35,7 @@ namespace Uploader
             var currentDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());
             var packList = currentDirectory
                            .EnumerateFiles("Minecraft-Mod-Language-Package-*.zip");
+            
             Log.Information("检测到的资源包数目：{0}", packList.Count());
 
             packList.ToList()
@@ -47,19 +48,30 @@ namespace Uploader
                         // hash的对象是文件内容，不包括文件名（当然）
                         // hash应该是全大写
                         var fileName = _.Name.Replace("Package", "ModPack"); // 历史遗留问题
+
                         // 选择性地加上该文件的md5值，以便生成patch
                         var tweakedName = fileName.Insert(fileName.LastIndexOf('.'), "-" + md5);
 
-                        // 传递不带带md5值的最新版本；会覆写已有文件
+                        // 传递不带md5值的最新版本；会覆写已有文件
                         scpClient.Upload(_.OpenRead(), $"/var/www/html/files/{fileName}");
                         Log.Information("向远程服务器写入文件：{0}", $"/var/www/html/files/{fileName}");
 
-                        // 传递带md5值的历史版本，一般不会覆写已有文件
-                        scpClient.Upload(_.OpenRead(), $"/var/www/html/files/history/{tweakedName}");
-                        Log.Information("向远程服务器写入文件：{0}", $"/var/www/html/files/history/{tweakedName}");
+                        //// 传递带md5值的历史版本，一般不会覆写已有文件
+                        //scpClient.Upload(_.OpenRead(), $"/var/www/html/files/history/{tweakedName}");
+                        //Log.Information("向远程服务器写入文件：{0}", $"/var/www/html/files/history/{tweakedName}");
                     });
 
-            Log.Information("资源包传递完毕")
+            // 临时操作 在使用旧md5校验的程序弃用以后需要删除
+            var md5List = currentDirectory
+                          .EnumerateFiles("*.md5");
+            md5List.ToList()
+                   .ForEach(_ =>
+            {
+                scpClient.Upload(_.OpenRead(), $"/var/www/html/files/{_.Name}");
+                Log.Information("向远程服务器写入文件：{0}", $"/var/www/html/files/{_.Name}");
+            });
+
+            Log.Information("资源包传递完毕");
             return 0;
         }
 
