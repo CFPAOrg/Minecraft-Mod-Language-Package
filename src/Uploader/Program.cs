@@ -47,7 +47,7 @@ namespace Uploader
                         // 文件名格式：Minecraft-Mod-Language-ModPack-[version]-[md5-hash].zip
                         // hash的对象是文件内容，不包括文件名（当然）
                         // hash应该是全大写
-                        var fileName = _.Name.Replace("Package", "ModPack"); // 历史遗留问题
+                        var fileName = _.Name.Replace("Package", "Modpack"); // 历史遗留问题
 
                         // 选择性地加上该文件的md5值，以便生成patch
                         var tweakedName = fileName.Insert(fileName.LastIndexOf('.'), "-" + md5);
