@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 
 using Packer.Extensions;
-
 using Serilog;
 
 namespace Packer.Models
 {
     /// <summary>
-    /// 标志文件类型的枚举。目前而言有[是否按json]和[是否按\lang\]两类
+    /// 标志文件类型的枚举。目前而言有[是否按.json]和[是否按\lang\]两类
     /// </summary>
     [Flags]
     public enum FileCategory
@@ -17,15 +16,15 @@ namespace Packer.Models
         /// <summary>
         /// 仅用于初始化为默认态
         /// </summary>
-        None = 0,      
+        None = 0,
         /// <summary>
         /// 类 .json，标识需要转义与 json 式序列化
         /// </summary>
-        JsonAlike = 1,   
+        JsonAlike = 1,
         /// <summary>
         /// 类 .lang，标识无需转义与 lang 式序列化
         /// </summary>
-        LangAlike = 2,    
+        LangAlike = 2,
         /// <summary>
         /// 位于 /lang/ 中的文件，进行合并等
         /// </summary>
@@ -33,7 +32,7 @@ namespace Packer.Models
         /// <summary>
         /// 位于其余位置的文件，不进行合并
         /// </summary>
-        OtherFiles = 8,  
+        OtherFiles = 8,
         /// <summary>
         /// */lang/*.json
         /// </summary>
@@ -105,13 +104,14 @@ namespace Packer.Models
         public Dictionary<string, string> deserializedContent;
 
         // 继承构造函数
-        public LangFile(Stream stream, FileCategory category, Config config) : base(stream, category, config)
+        public LangFile(Stream stream, FileCategory category, Config config)
+            : base(stream, category, config)
         {
             deserializedContent = null;
         }
         // 从kv对顺便构造字符串内容备用
-        public LangFile(FileCategory category, Dictionary<string, string> content) : base(category,
-                                                                                          content.SerializeAsset(category))
+        public LangFile(FileCategory category, Dictionary<string, string> content)
+            : base(category, content.SerializeAsset(category))
         {
             deserializedContent = content;
         }
