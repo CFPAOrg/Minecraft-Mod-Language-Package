@@ -11,21 +11,24 @@ labelPRBasedOnFilePath:
     1.18.x:
         - "projects/1.18/**"
         - "projects/1.18-fabric/**"
-        
+    
+    1.19.x:
+        - "projects/1.19/**"
+      # - "projects/1.19-fabric/**"
+    
     Forge:
         - "projects/1.12.2/**"
         - "projects/1.16/**"
         - "projects/1.18/**"
+        - "projects/1.19/**"
     
     Fabric:
         - "projects/1.16-fabric/**"
         - "projects/1.18-fabric/**"
-        
+      # - "projects/1.19-fabric/**"
+      
     Patchouli:
         - "projects/**/patchouli_books/**"
-
-    configuration:
-        - "config/**"
 
     source:
         - "src/**"
@@ -75,7 +78,7 @@ verifyTitles:
     successMessage: "您的标题是正确的，感谢您的配合。"
     # A custom message to be displayed when the title fails validation.
     # Allows insertion of ${type} (commit/PR), ${title} (the title validated) and ${regex} (the titleRegexp above).
-    failureMessage: "错误的${type}标题：${title}。请检查方括号里是否只包含英文大写字母和英文逗号(,)。"
+    failureMessage: "错误的${type}标题：${title}。请检查是否符合“模组英文名+简要说明”的格式"
 
     ###### PR/Branch Up-To-Date Checker ####################################################################################
 # Check if the branch is up to date with master when certain files are modified

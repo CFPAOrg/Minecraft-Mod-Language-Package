@@ -59,7 +59,7 @@
 
 - [Saladict 沙拉查词](https://saladict.crimx.com/)
 - [Minecraft Mods Translator](https://github.com/Maz-T/Minecraft-Mods-Translator) - 简易 CAT 工具。
-- [汉化小工具](https://tt.nullpointer.icu/) - LANG 转 JSON，JSON 更新，JSON 补全。
+- [汉化小工具](https://tt.nptr.cc/) - LANG 转 JSON，JSON 更新，JSON 补全。
 - [Octotree](https://www.octotree.io/) - 树型展示 GitHub 项目文件结构，懒加载，独立收藏系统。
 
 ### 词典
@@ -72,7 +72,8 @@
 - [Minecraft Wiki:译名标准化](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96) - 原版词汇中英对照。
 - [Minecraft Wiki:译名标准化/历史](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇变更历史。
 - [Minecraft 模组翻译参考词典](https://dict.mcmod.cn/) - 以英文检索本仓库中的翻译条目。
-- [MCBBS 识海漫谈版下的翻译讨论分类](https://www.mcbbs.net/forum.php?mod=forumdisplay&fid=1015&page=1&filter=typeid&typeid=2250) - 原版译名讨论、投票、解析。
+- [MCBBS 的翻译讨论](https://www.mcbbs.net/forum.php?mod=forumdisplay&fid=1015&page=1&filter=typeid&typeid=2250) - 原版翻译讨论、投票、公告。
+- [MC百科社群的翻译讨论](https://bbs.mcmod.cn/forum.php?mod=forumdisplay&fid=31&filter=typeid&typeid=116) - 模组翻译讨论，零散汉化发布。
 
 ### 其他
 
