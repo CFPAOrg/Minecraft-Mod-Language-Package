@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using Serilog;
-
 namespace Packer.Models
 {
     /// <summary>
@@ -45,12 +43,12 @@ namespace Packer.Models
             if (!other.contents.Any()) return this;
             foreach (var file in contents)
             {
-                if (file.relativePath is null) continue; // 无效文件  // 预备删去该行？
+                //if (file.relativePath is null) continue; // 无效文件  // 预备删去该行？
                 mapping.Add(file.relativePath, file);
             }
             foreach (var file in other.contents)
             {
-                if (file.relativePath is null) continue; // 无效文件  // 预备删去该行？
+                //if (file.relativePath is null) continue; // 无效文件  // 预备删去该行？
                 if (!mapping.TryAdd(file.relativePath, file))
                 {
                     mapping.Remove(file.relativePath, out var existing);

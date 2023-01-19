@@ -4,7 +4,6 @@ using System.IO.Compression;
 using System.Threading.Tasks;
 
 using Packer.Models;
-
 using Serilog;
 
 namespace Packer.Extensions
@@ -85,7 +84,7 @@ namespace Packer.Extensions
         /// <param name="bypassed">非文本处理的文件</param>
         public static void WriteBypassed(this ZipArchive archive, Dictionary<string, string> bypassed)
         {
-            Log.Information("添加写入未经处理的文件");
+            Log.Information("添加未经处理的文件");
             foreach (var pair in bypassed)
             {
                 Log.Information("正在添加 {0}", pair.Value);

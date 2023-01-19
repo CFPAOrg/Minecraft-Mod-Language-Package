@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Packer.Models;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
-
-using Packer.Models;
-
-using Serilog;
 
 namespace Packer.Extensions
 {
@@ -44,7 +42,12 @@ namespace Packer.Extensions
         {
             return category switch
             {
-                FileCategory.JsonTranslationFormat => JsonSerializer.Deserialize<Dictionary<string, string>>(content), // 直接有的算法
+                FileCategory.JsonTranslationFormat
+                    => JsonSerializer.Deserialize<Dictionary<string, string>>(content,
+                    new JsonSerializerOptions
+                    {
+                        ReadCommentHandling = JsonCommentHandling.Skip // 打包过程应当兼容注释，但不需要写入注释
+                    }), // 直接有的算法
                 FileCategory.LangTranslationFormat => DeserializeFromLang(content),
                 _ => null // 其实不应该执行到这个地方
             };
@@ -65,7 +68,8 @@ namespace Packer.Extensions
                 .ForEach(line =>
                 {
                     var isSingleLineComment = false;
-                    new List<string> { "//", "#" }.ForEach(_ => { isSingleLineComment = line.StartsWith(_); });
+                    new List<string> { "//", "#" }
+                        .ForEach(_ => { isSingleLineComment |= line.StartsWith(_); });
                     if (isSingleLineComment)
                     {
                         Log.Verbose("跳过了单行注释：{0}", line);
@@ -74,7 +78,7 @@ namespace Packer.Extensions
                     {
                         Log.Verbose("{0}", line);
                         if (line.Trim()
-                                   .EndsWith("*/"))
+                                .EndsWith("*/"))
                         {
                             isInComment = false;  // 跳出注释
                         }
@@ -93,7 +97,7 @@ namespace Packer.Extensions
                         }
                         catch (Exception e)
                         {
-                            Log.Verbose(e.ToString());
+                            Log.Warning(e.ToString());
                         }
                     }
                 }
