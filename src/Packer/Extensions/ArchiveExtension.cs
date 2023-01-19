@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Packer.Models;
+using Serilog;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
-
-using Packer.Models;
-using Serilog;
 
 namespace Packer.Extensions
 {
@@ -60,7 +59,7 @@ namespace Packer.Extensions
         /// <returns></returns>
         public static async Task WriteContent(this ZipArchive archive, IEnumerable<Asset> content)
         {
-            Log.Information("添加写入处理后的文件");
+            Log.Information("添加处理后的文件");
             var tasks = new List<Task>();
             foreach (var asset in content)
             {

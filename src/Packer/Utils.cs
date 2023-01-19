@@ -1,19 +1,20 @@
-﻿using System;
+﻿using Packer.Models;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
-using Packer.Models;
-using Serilog;
 
 namespace Packer
 {
     static class Utils
     {
-        static async public Task<Config> RetrieveConfig(string configPath, string mappingPath, string version)
+        public static async Task<Config> RetrieveConfig(string configPath, string mappingPath, string version)
         {
             Log.Information("正在获取配置");
             var reader = await File.ReadAllBytesAsync(configPath);
@@ -25,6 +26,43 @@ namespace Packer
             });
             return configs.Where(_ => _.Version == version).FirstOrDefault(); // 仅选取指定版本，忽略重复
         }
+
+        public static PackerStrategy RetrieveStrategy(FileInfo file)
+        {
+            return file is null
+                ? new PackerStrategy { Type = PackerStrategyType.NoAction } // 默认类型
+                : JsonSerializer.Deserialize<PackerStrategy>(file.OpenText().ReadToEnd(), new JsonSerializerOptions
+                {
+                    Converters = { new JsonStringEnumConverter() }
+                });
+        }
+
+        /// <summary>
+        /// 将两个带有<c>TranslatedFile</c>的列表合并，对冲突项按照target优先进行合并。
+        /// </summary>
+        /// <param name="target">合并对象，优先选择</param>
+        /// <param name="incoming">合并对象，非优先</param>
+        /// <returns></returns>
+        public static IEnumerable<TranslatedFile> MergeFiles(IEnumerable<TranslatedFile> target, IEnumerable<TranslatedFile> incoming)
+        {
+            var mapping = new Dictionary<string, TranslatedFile>(); // asset-domain下的目标位置 -> 文件
+            if (!target.Any()) return incoming;
+            if (!incoming.Any()) return target;
+            foreach (var file in target)
+            {
+                mapping.Add(file.relativePath, file);
+            }
+            foreach (var file in incoming)
+            {
+                if (!mapping.TryAdd(file.relativePath, file))
+                {
+                    mapping.Remove(file.relativePath, out var existing);
+                    mapping.Add(existing.relativePath, existing.Combine(file));
+                }
+            }
+            return mapping.Values;
+        }
+
 
         public static async Task<Dictionary<string, string>> ReadReplaceFontMap(string path) // 从隔壁弄过来改了一下，就放这里了
         {

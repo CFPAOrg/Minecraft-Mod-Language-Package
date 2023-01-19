@@ -1,18 +1,16 @@
-﻿using System;
+﻿using Packer.Extensions;
+using Serilog;
+using System;
 using System.IO;
 using System.IO.Compression;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
-
-using Packer.Extensions;
-using Serilog;
 
 namespace Packer
 {
     class Program
     {
         // 由于某些魔法，这里可以直接加参数
-        public static async Task Main(string version = null)
+        public static async Task Main(string version)
         {
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()

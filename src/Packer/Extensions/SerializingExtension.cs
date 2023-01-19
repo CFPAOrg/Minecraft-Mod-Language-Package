@@ -9,7 +9,6 @@ namespace Packer.Extensions
 {
     static class SerializingExtension
     {
-
         public static string SerializeAsset(this Dictionary<string, string> assetMap, FileCategory category)
         {
             return category switch
