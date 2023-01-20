@@ -30,7 +30,7 @@ namespace Packer
         public List<string> FilesToInitialize { get; set; }
 
         /// <summary>
-        /// 不进行打包的mod（按<c>[curseforge-]name</c>>处理）<br></br>
+        /// 不进行打包的mod（按<c>[curseforge-]name</c>处理）<br></br>
         /// 有可能作为基础文件
         /// </summary>
         [JsonPropertyName("modNameBlackList")]
