@@ -1,6 +1,5 @@
 ﻿using Packer.Models;
 using Serilog;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,7 +13,7 @@ namespace Packer.Extensions
     public static class DirectoryExtension
     {
 
-        
+
         /// <summary>
         /// 从[namespace]生成所需的Asset对象，采用本目录下放置的配置文件
         /// </summary>
@@ -29,7 +28,7 @@ namespace Packer.Extensions
             // 读取局域配置文件；若为空，配置为“无操作”（直接处理文件）
             var policy = Utils.RetrieveStrategy(assetPath.GetFiles("packer-policy.json").FirstOrDefault());
 
-            if (policy.Type != PackerStrategyType.NoAction) 
+            if (policy.Type != PackerStrategyType.NoAction)
                 Log.Information("对asset-domain {2} 采用非标准检索策略：{0} w/ {1}",
                                 policy.Type,
                                 policy.Parameters,
@@ -62,32 +61,32 @@ namespace Packer.Extensions
                                                         Dictionary<string, JsonElement> parameters);
 
         static IEnumerable<TranslatedFile> FromMixedDirectory(DirectoryInfo assetDirectory,
-                                                                        Config config,
-                                                                        ref Dictionary<string, string> unprocessed,
-                                                                        Dictionary<string, JsonElement> parameters) 
+                                                              Config config,
+                                                              ref Dictionary<string, string> unprocessed,
+                                                              Dictionary<string, JsonElement> parameters)
             => Utils.MergeFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
                                 FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
 
         static IEnumerable<TranslatedFile> FromIndirectDirectory(DirectoryInfo assetDirectory,
-                                                                        Config config,
-                                                                        ref Dictionary<string, string> unprocessed,
-                                                                        Dictionary<string, JsonElement> parameters)
+                                                                 Config config,
+                                                                 ref Dictionary<string, string> unprocessed,
+                                                                 Dictionary<string, JsonElement> parameters)
             => FromImmediateDirectory(new DirectoryInfo(parameters["source"].GetString()), config, ref unprocessed, parameters);
 
         static IEnumerable<TranslatedFile> FromPatches(DirectoryInfo assetDirectory,
-                                                                Config config,
-                                                                ref Dictionary<string, string> unprocessed,
-                                                                Dictionary<string, JsonElement> parameters)
+                                                       Config config,
+                                                       ref Dictionary<string, string> unprocessed,
+                                                       Dictionary<string, JsonElement> parameters)
         {
             var reference = FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters)
-                           .ToDictionary(_ => _.relativePath);
+                           .ToDictionary(_ => _.RelativePath);
             var patchList = JsonSerializer.Deserialize<Dictionary<string, string>>(parameters["patches"]);
-            foreach ( var patch in patchList )
+            foreach (var patch in patchList)
             {
                 Log.Information("{0}", reference.Keys);
                 Log.Information("对文件 {0} 应用 {1} 处的 patch。", patch.Key, patch.Value);
                 var target = reference[patch.Key];
-                var patchText = string.Join('\n',File.ReadAllLines(patch.Value)); // 不要问我为什么D-M-P默认换行是LF
+                var patchText = string.Join('\n', File.ReadAllLines(patch.Value)); // 不要问我为什么D-M-P默认换行是LF
                 target.ApplyPatch(patchText);
             }
             return reference.Values;
@@ -95,9 +94,9 @@ namespace Packer.Extensions
 
         // 目前所有策略的终点方法
         static IEnumerable<TranslatedFile> FromImmediateDirectory(DirectoryInfo assetDirectory,
-                                                                         Config config,
-                                                                         ref Dictionary<string, string> unprocessed,
-                                                                         Dictionary<string, JsonElement> parameters)
+                                                                  Config config,
+                                                                  ref Dictionary<string, string> unprocessed,
+                                                                  Dictionary<string, JsonElement> parameters)
         {
             var bypassed = unprocessed;
             var result = assetDirectory.EnumerateFiles("*", SearchOption.AllDirectories) // <asset-domain>/ 的下级文件
@@ -113,7 +112,7 @@ namespace Packer.Extensions
                     }
 
                     // 跳过检索策略文件
-                    if(relativePath == "packer-policy.json")
+                    if (relativePath == "packer-policy.json")
                     {
                         return null;
                     }
@@ -141,7 +140,7 @@ namespace Packer.Extensions
                                             parsingCategory | FileCategory.LanguageFile,
                                             config)
                         {
-                            relativePath = relativePath
+                            RelativePath = relativePath
                         };
                     }
                     else
@@ -150,7 +149,7 @@ namespace Packer.Extensions
                                                   parsingCategory | FileCategory.OtherFiles,
                                                   config)
                         {
-                            relativePath = relativePath
+                            RelativePath = relativePath
                         };
                     }
                 }).Where(_ => _ is not null); // 排除掉跳过的文件

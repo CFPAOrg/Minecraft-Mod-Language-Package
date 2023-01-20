@@ -10,7 +10,7 @@ namespace Packer
     class Program
     {
         // 由于某些魔法，这里可以直接加参数
-        public static async Task Main(string version)
+        public static async Task Main(string version = null)
         {
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()

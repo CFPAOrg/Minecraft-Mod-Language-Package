@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace Packer.Models
 {
@@ -38,7 +37,7 @@ namespace Packer.Models
         /// <returns></returns>
         public Asset Combine(Asset other)
         {
-            
+
             return new Asset()
             {
                 domainName = this.domainName,

@@ -20,22 +20,17 @@ namespace Packer
             var reader = await File.ReadAllBytesAsync(configPath);
             var configs = JsonSerializer.Deserialize<List<Config>>(reader);
             var replacement = await ReadReplaceFontMap(mappingPath);
-            configs.ForEach(_ =>
-            { // 提取特殊字符替换，并加入 Config 中
-                _.CharatcerReplacement = replacement;
-            });
+            configs.ForEach(_ => _.CharatcerReplacement = replacement);
             return configs.Where(_ => _.Version == version).FirstOrDefault(); // 仅选取指定版本，忽略重复
         }
 
         public static PackerStrategy RetrieveStrategy(FileInfo file)
-        {
-            return file is null
-                ? new PackerStrategy { Type = PackerStrategyType.NoAction } // 默认类型
-                : JsonSerializer.Deserialize<PackerStrategy>(file.OpenText().ReadToEnd(), new JsonSerializerOptions
-                {
-                    Converters = { new JsonStringEnumConverter() }
-                });
-        }
+            => file is null
+               ? new PackerStrategy { Type = PackerStrategyType.NoAction } // 默认类型
+               : JsonSerializer.Deserialize<PackerStrategy>(file.OpenText().ReadToEnd(), new JsonSerializerOptions
+               {
+                   Converters = { new JsonStringEnumConverter() }
+               });
 
         /// <summary>
         /// 将两个带有<c>TranslatedFile</c>的列表合并，对冲突项按照target优先进行合并。
@@ -50,14 +45,14 @@ namespace Packer
             if (!incoming.Any()) return target;
             foreach (var file in target)
             {
-                mapping.Add(file.relativePath, file);
+                mapping.Add(file.RelativePath, file);
             }
             foreach (var file in incoming)
             {
-                if (!mapping.TryAdd(file.relativePath, file))
+                if (!mapping.TryAdd(file.RelativePath, file))
                 {
-                    mapping.Remove(file.relativePath, out var existing);
-                    mapping.Add(existing.relativePath, existing.Combine(file));
+                    mapping.Remove(file.RelativePath, out var existing);
+                    mapping.Add(existing.RelativePath, existing.Combine(file));
                 }
             }
             return mapping.Values;

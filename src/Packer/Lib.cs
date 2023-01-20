@@ -32,9 +32,8 @@ namespace Packer
             var result = new Dictionary<string, Asset>(); // domain -> 该domain对应的Asset对象
             var existingDomains = new Dictionary<string, string>(); // domain -> 模组名
 
-            // 下面开始检索模组：
+            // 下面开始检索模组
             // 以后可能会用更好看的linq语法写，但是现在就这样了
-
             var mods = new DirectoryInfo($"./projects/{config.Version}/assets")
                 .EnumerateDirectories() // assets/ 的下级文件夹
                 .Select(modDirectory => new Mod()
@@ -46,14 +45,13 @@ namespace Packer
                         {
                             domainName = assetDirectory.Name,
                             contents = assetDirectory.AggregateAssetFiles(config, ref bypassed)
-
                         })
                 });
-
             foreach (var mod in mods)
             {
                 var name = mod.modName;
                 if (!mod.assets.Any()) continue; // 没有 asset 的情况
+
                 foreach (var asset in mod.assets)
                 {
                     var domain = asset.domainName;
@@ -85,7 +83,7 @@ namespace Packer
                 }
             }
             Log.Information("文件列表生成完毕");
-            unprocessed = bypassed;
+            unprocessed = bypassed; // 正式传出非文本文件
             return result.Select(_ => _.Value);
         }
     }

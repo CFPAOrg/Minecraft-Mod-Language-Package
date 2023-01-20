@@ -20,7 +20,7 @@ namespace Packer.Extensions
         /// <returns></returns>
         public static string NormalizePath(this string path)
             => path.Replace('\\', '/') // 修正正反斜杠导致的压缩文件读取问题
-                                       //.ToLower() // 确保大小写  *  由于语言类型需要大小写而禁用该条
+                 //.ToLower()          // 确保大小写  *  由于语言类型需要大小写而禁用该条
                    ;
 
         /// <summary>
@@ -28,7 +28,7 @@ namespace Packer.Extensions
         /// </summary>
         /// <param name="path">目标文件在库中<c>assets\1\2\...</c>>式位置</param>
         /// <returns></returns>
-        public static string StripeModName(this string path)
+        public static string StripModName(this string path)
         {
             var _ = path.Split('/').ToList();
 
