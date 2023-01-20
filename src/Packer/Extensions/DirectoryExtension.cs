@@ -30,7 +30,10 @@ namespace Packer.Extensions
             var policy = Utils.RetrieveStrategy(assetPath.GetFiles("packer-policy.json").FirstOrDefault());
 
             if (policy.Type != PackerStrategyType.NoAction) 
-                Log.Information("采用非标准检索策略：{0} w/ {1}", policy.Type, policy.Parameters);
+                Log.Information("对asset-domain {2} 采用非标准检索策略：{0} w/ {1}",
+                                policy.Type,
+                                policy.Parameters,
+                                assetPath.Name);
 
             // Delegate是个好东西 要不然这参数不知道要多长
             // 不过，什么时候能支持集合字面量......这样子就甚至不用写类型了
@@ -62,8 +65,8 @@ namespace Packer.Extensions
                                                                         Config config,
                                                                         ref Dictionary<string, string> unprocessed,
                                                                         Dictionary<string, JsonElement> parameters) 
-            => Utils.MergeFiles(FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters),
-                                FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters));
+            => Utils.MergeFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
+                                FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
 
         static IEnumerable<TranslatedFile> FromIndirectDirectory(DirectoryInfo assetDirectory,
                                                                         Config config,
@@ -84,12 +87,13 @@ namespace Packer.Extensions
                 Log.Information("{0}", reference.Keys);
                 Log.Information("对文件 {0} 应用 {1} 处的 patch。", patch.Key, patch.Value);
                 var target = reference[patch.Key];
-                var patchText = File.ReadAllText(patch.Value);
+                var patchText = string.Join('\n',File.ReadAllLines(patch.Value)); // 不要问我为什么D-M-P默认换行是LF
                 target.ApplyPatch(patchText);
             }
             return reference.Values;
         }
 
+        // 目前所有策略的终点方法
         static IEnumerable<TranslatedFile> FromImmediateDirectory(DirectoryInfo assetDirectory,
                                                                          Config config,
                                                                          ref Dictionary<string, string> unprocessed,
@@ -104,6 +108,12 @@ namespace Packer.Extensions
 
                     // 跳过英文文件
                     if (relativePath.IsSkippedLang(config))
+                    {
+                        return null;
+                    }
+
+                    // 跳过检索策略文件
+                    if(relativePath == "packer-policy.json")
                     {
                         return null;
                     }

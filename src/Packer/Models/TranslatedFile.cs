@@ -149,6 +149,7 @@ namespace Packer.Models
         /// <returns></returns>
         public override LangFile Combine(TranslatedFile file)
         {
+            Log.Information("合并文件：{0}", this.relativePath);
             var castedFile = (LangFile)file;
             if ((castedFile is null) || castedFile.category != this.category)
             {
