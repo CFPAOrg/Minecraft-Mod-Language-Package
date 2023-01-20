@@ -44,21 +44,29 @@ namespace Uploader
                         using var stream = _.OpenRead();
                         var md5 = stream.ComputeMD5();
 
-                        // 文件名格式：Minecraft-Mod-Language-ModPack-[version]-[md5-hash].zip
+                        // 文件名格式：Minecraft-Mod-Language-Modpack-[dashed-version]-[md5-hash].zip
+                        // 如：Minecraft-Mod-Language-Modpack-1-12-2-0000000000000000.zip
                         // hash的对象是文件内容，不包括文件名（当然）
                         // hash应该是全大写
-                        var fileName = _.Name.Replace("Package", "Modpack"); // 历史遗留问题
+
+                        var fileExtensionName = _.Extension; // 带点名称，应当为 ".zip"
+                        var fileName = _.Name[0..^fileExtensionName.Length]
+                                        .Replace("Package", "Modpack")
+                                        .Replace('.', '-'); // 历史遗留问题
 
                         // 选择性地加上该文件的md5值，以便生成patch
-                        var tweakedName = fileName.Insert(fileName.LastIndexOf('.'), "-" + md5);
+                        var tweakedName = fileName + "-" + md5;
+
+                        var destinationName = $"/var/www/html/files/{fileName + fileExtensionName}";
+                        var tweakedDestinationName = $"/var/www/html/files/{tweakedName + fileExtensionName}";
 
                         // 传递不带md5值的最新版本；会覆写已有文件
-                        scpClient.Upload(_.OpenRead(), $"/var/www/html/files/{fileName}");
-                        Log.Information("向远程服务器写入文件：{0}", $"/var/www/html/files/{fileName}");
+                        scpClient.Upload(_.OpenRead(), destinationName);
+                        Log.Information("向远程服务器写入文件：{0}", destinationName);
 
                         //// 传递带md5值的历史版本，一般不会覆写已有文件
-                        //scpClient.Upload(_.OpenRead(), $"/var/www/html/files/history/{tweakedName}");
-                        //Log.Information("向远程服务器写入文件：{0}", $"/var/www/html/files/history/{tweakedName}");
+                        //scpClient.Upload(_.OpenRead(), tweakedDestinationName);
+                        //Log.Information("向远程服务器写入文件：{0}", tweakedDestinationName);
                     });
 
             // 临时操作 在使用旧md5校验的程序弃用以后需要删除
