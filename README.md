@@ -61,6 +61,7 @@
 - [Minecraft Mods Translator](https://github.com/Maz-T/Minecraft-Mods-Translator) - 简易 CAT 工具。
 - [汉化小工具](https://tt.nptr.cc/) - LANG 转 JSON，JSON 更新，JSON 补全。
 - [Octotree](https://www.octotree.io/) - 树型展示 GitHub 项目文件结构，懒加载，独立收藏系统。
+- [自动无缝翻页](https://greasyfork.org/scripts/419215-%E8%87%AA%E5%8A%A8%E6%97%A0%E7%BC%9D%E7%BF%BB%E9%A1%B5) - 无缝加载下一页内容至网页底部，类似瀑布流。（[使用前需安装插件](https://greasyfork.org/help/installing-user-scripts)）
 
 ### 词典
 
