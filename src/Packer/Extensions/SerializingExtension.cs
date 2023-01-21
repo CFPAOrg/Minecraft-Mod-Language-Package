@@ -9,10 +9,8 @@ namespace Packer.Extensions
 {
     static class SerializingExtension
     {
-
         public static string SerializeAsset(this Dictionary<string, string> assetMap, FileCategory category)
-        {
-            return category switch
+            => category switch
             {
                 // Json 文件，直接写出
                 FileCategory.JsonTranslationFormat => JsonSerializer.Serialize(assetMap,
@@ -24,7 +22,6 @@ namespace Packer.Extensions
                 FileCategory.LangTranslationFormat => SerializeFromLang(assetMap),
                 _ => null // 其实不应该执行到这个地方
             };
-        }
 
         static string SerializeFromLang(Dictionary<string, string> assetMap)
         {
@@ -39,8 +36,7 @@ namespace Packer.Extensions
         }
 
         public static Dictionary<string, string> DeserializeAsset(this string content, FileCategory category)
-        {
-            return category switch
+            => category switch
             {
                 FileCategory.JsonTranslationFormat
                     => JsonSerializer.Deserialize<Dictionary<string, string>>(content,
@@ -51,7 +47,6 @@ namespace Packer.Extensions
                 FileCategory.LangTranslationFormat => DeserializeFromLang(content),
                 _ => null // 其实不应该执行到这个地方
             };
-        }
 
         static Dictionary<string, string> DeserializeFromLang(string content)
         {
