@@ -16,7 +16,7 @@ packer-policy.json
     - `noaction` 默认选项。不进行特殊处理，直接按照此处的文件结构打包。如果没有对文件同步或版本对照的特殊要求，使用该类型。如：[示例文件](./projects/1.19/assets/0-example-nop/nop/packer-policy.json)
     - `plainclone` 直接引用另一位置的文件结构。如果需要文本完全同步，使用该类型。如：[示例文件](./projects/1.19/assets/0-example-simple-clone/clone/packer-policy.json)
       - `source` string -> 复制的源地址。需要从本仓库的根目录开始计算，使用`./`前缀。
-    - `mixedclone` 使用此处的文件结构，但在检索完文件后，根据另一位置的文件结构补充文本。对于出现冲突的条目，若为`lang/`下的内容，将会按照`key`合并，冲突项采用此处的文本；若为其他位置的文件，直接采用此处的文件。如：[示例文件](./projects/1.19/assets/0-example-mixed-clone/mixed-clone/packer-policy.json)
+    - `clonemissing` 使用此处的文件结构，但在检索完文件后，根据另一位置的文件结构补充文本。对于出现冲突的条目，若为`lang/`下的内容，将会按照`key`合并，冲突项采用此处的文本；若为其他位置的文件，直接采用此处的文件。如：[示例文件](./projects/1.19/assets/0-example-mixed-clone/mixed-clone/packer-policy.json)
       - `source` string -> 补充文件的源地址。需要从本仓库的根目录开始计算，使用`./`前缀。
     - `patch` 引用另一位置的文件结构，但在其中的部分文件上额外应用自定义的修改。修改使用[Google Diff-Match-Patch算法](https://github.com/google/diff-match-patch)生成；尽管原则上可以放在任意位置、采用任意后缀名，建议将修改文件放在被修改文件相应的位置，采用`.patch`后缀，以保持统一性。如：[示例文件](./projects/1.19/assets/0-example-patch/patch/packer-policy.json)
       - `source` string -> 复制的源地址。需要从本仓库的根目录开始计算，使用`./`前缀。
