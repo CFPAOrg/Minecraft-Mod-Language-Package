@@ -1,11 +1,12 @@
 name: Packer
-# cloned from main branch, merely edited
+
 on:
   workflow_dispatch:
   push:
     branches: [main]
     paths: 
       - 'config/packer.json'
+      - 'config/fontmap.txt'
       - 'projects/**'
 
 jobs:
@@ -28,13 +29,13 @@ jobs:
         id: changed-116
         with:
           paths: projects/1.16
-      
+
       - name: Check changed path on 1.16 fabric
         uses: MarceloPrado/has-changed-path@v1.0
         id: changed-116-fabric
         with:
           paths: projects/1.16-fabric
-
+          
       - name: Check changed path on 1.18
         uses: MarceloPrado/has-changed-path@v1.0
         id: changed-118
@@ -47,28 +48,48 @@ jobs:
         with:
           paths: projects/1.18-fabric
 
+      - name: Check changed path on 1.19
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: changed-119
+        with:
+          paths: projects/1.19
+
+      # - name: Check changed path on 1.19 fabric
+      #   uses: MarceloPrado/has-changed-path@v1.0
+      #   id: changed-119-fabric
+      #   with:
+      #     paths: projects/1.19-fabric
+          
       - name: Build Packer
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
-      - name: Run Packer
+      - name: Run Packer for 1.12.2
         run: ./Packer --version="1.12.2"
         if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
-      - name: Run Packer
+      - name: Run Packer for 1.16
         run: ./Packer --version="1.16"
         if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Packer
+        
+      - name: Run Packer for 1.16-fabric
         run: ./Packer --version="1.16-fabric"
         if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Packer
+        
+      - name: Run Packer for 1.18
         run: ./Packer --version="1.18"
         if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         
-      - name: Run Packer
+      - name: Run Packer for 1.18-fabric
         run: ./Packer --version="1.18-fabric"
         if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Packer for 1.19
+        run: ./Packer --version="1.19"
+        if: steps.changed-119.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+        
+      # - name: Run Packer for 1.19-fabric
+      #   run: ./Packer --version="1.19-fabric"
+      #   if: steps.changed-119-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
       - name: Create timestamp
         id: create_timestamp
@@ -88,7 +109,7 @@ jobs:
           prerelease: false
 
       # Upload release asset: https://github.com/actions/upload-release-asset
-      - name: Update release asset
+      - name: Update release asset for 1.12
         id: upload-release-asset1
         if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
@@ -100,7 +121,7 @@ jobs:
           asset_name: Minecraft-Mod-Language-Package-1.12.2.zip
           asset_content_type: application/zip
 
-      - name: Update release asset
+      - name: Update release asset for 1.16
         id: upload-release-asset2
         if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
@@ -113,7 +134,7 @@ jobs:
           asset_content_type: application/zip
 
         
-      - name: Update release asset
+      - name: Update release asset for 1.16-fabric
         id: upload-release-asset3
         if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
@@ -125,7 +146,7 @@ jobs:
           asset_name: Minecraft-Mod-Language-Package-1.16-fabric.zip
           asset_content_type: application/zip
 
-      - name: Update release asset
+      - name: Update release asset for 1.18
         id: upload-release-asset4
         if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
@@ -137,7 +158,7 @@ jobs:
           asset_name: Minecraft-Mod-Language-Package-1.18.zip
           asset_content_type: application/zip
 
-      - name: Update release asset
+      - name: Update release asset for 1.18-fabric
         id: upload-release-asset5
         if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
@@ -149,26 +170,32 @@ jobs:
           asset_name: Minecraft-Mod-Language-Package-1.18-fabric.zip
           asset_content_type: application/zip
 
-      # Doesn't do so now because it messes up the server
+      - name: Update release asset for 1.19
+        id: upload-release-asset6
+        if: steps.changed-119.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: Minecraft-Mod-Language-Package-1.19.zip
+          asset_name: Minecraft-Mod-Language-Package-1.19.zip
+          asset_content_type: application/zip
+
+      # - name: Update release asset for 1.18-fabric
+      #   id: upload-release-asset7
+      #   if: steps.changed-119-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: Minecraft-Mod-Language-Package-1.19-fabric.zip
+      #     asset_name: Minecraft-Mod-Language-Package-1.19-fabric.zip
+      #     asset_content_type: application/zip
+
       - name: Build Uploader
         run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
       - name: Run Uploader
-        run: .\Uploader --version="1.12.2" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
-        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Uploader
-        run: .\Uploader --version="1.16" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
-        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Uploader
-        run: .\Uploader --version="1.16-fabric" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
-        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Uploader
-        run: .\Uploader --version="1.18" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
-        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Uploader
-        run: .\Uploader --version="1.18-fabric" --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
-        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+        run: .\Uploader --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"

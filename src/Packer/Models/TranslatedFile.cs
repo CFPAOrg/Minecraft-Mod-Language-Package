@@ -1,15 +1,14 @@
-﻿using System;
+﻿using DiffMatchPatch;
+using Packer.Extensions;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.IO;
-
-using Packer.Extensions;
-
-using Serilog;
 
 namespace Packer.Models
 {
     /// <summary>
-    /// 标志文件类型的枚举。目前而言有[是否按json]和[是否按\lang\]两类
+    /// 标志文件类型的枚举。目前而言有[是否按.json]和[是否按\lang\]两类
     /// </summary>
     [Flags]
     public enum FileCategory
@@ -17,15 +16,15 @@ namespace Packer.Models
         /// <summary>
         /// 仅用于初始化为默认态
         /// </summary>
-        None = 0,      
+        None = 0,
         /// <summary>
         /// 类 .json，标识需要转义与 json 式序列化
         /// </summary>
-        JsonAlike = 1,   
+        JsonAlike = 1,
         /// <summary>
         /// 类 .lang，标识无需转义与 lang 式序列化
         /// </summary>
-        LangAlike = 2,    
+        LangAlike = 2,
         /// <summary>
         /// 位于 /lang/ 中的文件，进行合并等
         /// </summary>
@@ -33,7 +32,7 @@ namespace Packer.Models
         /// <summary>
         /// 位于其余位置的文件，不进行合并
         /// </summary>
-        OtherFiles = 8,  
+        OtherFiles = 8,
         /// <summary>
         /// */lang/*.json
         /// </summary>
@@ -61,32 +60,32 @@ namespace Packer.Models
         /// <summary>
         /// asset-domain下的位置
         /// </summary>
-        public string relativePath;
+        public string RelativePath { get; set; }
         /// <summary>
         /// 该文件的文本，用<i>字符串</i>表示<br></br>
         /// 因此，不能存储非文本文件！
         /// </summary>
-        public readonly string stringifiedContent;
+        public string StringifiedContent { get; private set; }
         /// <summary>
         /// 文件类型
         /// </summary>
-        public FileCategory category;
+        public FileCategory Category { get; set; }
         /// <summary>
         /// 从文件流构造内容
         /// </summary>
         public TranslatedFile(Stream stream, FileCategory category, Config config)
         { // 注：文件流在此处被关闭
             using var reader = new StreamReader(stream);
-            stringifiedContent = reader.ReadToEnd().Preprocess(category, config);
-            this.category = category;
+            StringifiedContent = reader.ReadToEnd().Preprocess(category, config);
+            this.Category = category;
         }
         /// <summary>
         /// 从文本构造内容
         /// </summary>
         public TranslatedFile(FileCategory category, string content)
         {
-            this.category = category;
-            stringifiedContent = content;
+            this.Category = category;
+            StringifiedContent = content;
         }
         /// <summary>
         /// 伪合并文件
@@ -98,20 +97,39 @@ namespace Packer.Models
             Log.Information("检测到不支持合并的文件。取消合并");
             return this;
         }
+        /// <summary>
+        /// 对该文件的内容进行Google Diff-Match-Patch算法
+        /// </summary>
+        /// <param name="patch"></param>
+        public void ApplyPatch(string patch)
+        {
+            // 对应的Patch可以自行生成，或者也可以做一个小工具，虽然不在这里
+            // 应用Patch时，需要先根据Patch文本生成Patch列表，再应用Patch
+            //
+            // patch_apply 返回object[] [0]=string [1]=bool[]
+            var dmp = new diff_match_patch();
+            var patchList = dmp.patch_fromText(patch);
+            StringifiedContent = (string)dmp.patch_apply(patchList, StringifiedContent)[0];
+        }
     }
+
+    /// <summary>
+    /// 可以按照/lang/文件夹下解析的文件。这是衍生类
+    /// </summary>
     class LangFile : TranslatedFile
     {
-        public bool deserialized = false; // 非必要不解析，免得残废的lang解析炸掉
+        bool deserialized = false; // 非必要不解析，免得残废的lang解析炸掉
         public Dictionary<string, string> deserializedContent;
 
         // 继承构造函数
-        public LangFile(Stream stream, FileCategory category, Config config) : base(stream, category, config)
+        public LangFile(Stream stream, FileCategory category, Config config)
+            : base(stream, category, config)
         {
             deserializedContent = null;
         }
         // 从kv对顺便构造字符串内容备用
-        public LangFile(FileCategory category, Dictionary<string, string> content) : base(category,
-                                                                                          content.SerializeAsset(category))
+        public LangFile(FileCategory category, Dictionary<string, string> content)
+            : base(category, content.SerializeAsset(category))
         {
             deserializedContent = content;
         }
@@ -121,7 +139,7 @@ namespace Packer.Models
             if (!deserialized)
             {
                 deserialized = true;
-                deserializedContent = stringifiedContent.DeserializeAsset(category);
+                deserializedContent = StringifiedContent.DeserializeAsset(Category);
             }
         }
         /// <summary>
@@ -131,12 +149,15 @@ namespace Packer.Models
         /// <returns></returns>
         public override LangFile Combine(TranslatedFile file)
         {
+            Log.Information("合并文件：{0}", this.RelativePath);
+
             var castedFile = (LangFile)file;
-            if ((castedFile is null) || castedFile.category != this.category)
+            if ((castedFile is null) || castedFile.Category != this.Category)
             {
                 Log.Information("检测到不支持合并的文件。取消合并");
                 return this;
             }
+
             this.Deserialize();
             castedFile.Deserialize();
             var resultMap = new Dictionary<string, string>(deserializedContent);
@@ -148,9 +169,10 @@ namespace Packer.Models
                         pair.Key, resultMap[pair.Key], pair.Value);
                 }
             }
-            return new LangFile(category, resultMap)
+
+            return new LangFile(Category, resultMap)
             {
-                relativePath = this.relativePath
+                RelativePath = this.RelativePath
             };
         }
     }

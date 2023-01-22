@@ -59,7 +59,7 @@
 
 - [Saladict 沙拉查词](https://saladict.crimx.com/)
 - [Minecraft Mods Translator](https://github.com/Maz-T/Minecraft-Mods-Translator) - 简易 CAT 工具。
-- [汉化小工具](https://tt.nullpointer.icu/) - LANG 转 JSON，JSON 更新，JSON 补全。
+- [汉化小工具](https://tt.nptr.cc/) - LANG 转 JSON，JSON 更新，JSON 补全。
 - [Octotree](https://www.octotree.io/) - 树型展示 GitHub 项目文件结构，懒加载，独立收藏系统。
 
 ### 词典

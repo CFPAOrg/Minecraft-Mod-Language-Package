@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
-
-using Serilog;
 
 namespace Packer.Models
 {
@@ -40,27 +37,11 @@ namespace Packer.Models
         /// <returns></returns>
         public Asset Combine(Asset other)
         {
-            var mapping = new Dictionary<string, TranslatedFile>(); // asset-domain下的目标位置 -> 文件
-            if (!contents.Any()) return other;
-            if (!other.contents.Any()) return this;
-            foreach (var file in contents)
-            {
-                if (file.relativePath is null) continue; // 无效文件  // 预备删去该行？
-                mapping.Add(file.relativePath, file);
-            }
-            foreach (var file in other.contents)
-            {
-                if (file.relativePath is null) continue; // 无效文件  // 预备删去该行？
-                if (!mapping.TryAdd(file.relativePath, file))
-                {
-                    mapping.Remove(file.relativePath, out var existing);
-                    mapping.Add(existing.relativePath, existing.Combine(file));
-                }
-            }
+
             return new Asset()
             {
                 domainName = this.domainName,
-                contents = mapping.Select(_ => _.Value)
+                contents = Utils.MergeFiles(this.contents, other.contents)
             };
         }
     }
