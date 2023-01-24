@@ -1,0 +1,35 @@
+{
+  "name": "Comparing Point Machine",
+  "icon": "minecraft:comparator",
+  "category": "point_machines",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Comparing Point Machine is a comparator placed with input to the switch. If the comparator's mode is compare, the switch will divert if the minecart has a comparator signal equal to or great than input, or if the mode is subtract, the switch will divert if the minecart's signal is less than input. Note: Not all minecarts react to comparators."
+    },
+    {
+      "type": "multiblock",
+      "name": "Comparing Point Machine",
+      "multiblock": {
+        "mapping": {
+          "R": "minecraft:rail[shape=east_west]",
+          "D": "minecraft:rail",
+          "0": "transport:switch_rail[straight_shape=east_west,diverge_shape=south_west,diverge=true]",
+          "L": "minecraft:lever[face=floor,facing=south,powered=true]",
+          "T": "minecraft:redstone_torch",
+          "E": "minecraft:redstone_wire[east=side,power=15,west=side]",
+          "C": "minecraft:comparator[facing=south]"
+        },
+        "pattern": [
+          [
+            "TR ",
+            "ER ",
+            "C0D",
+            " R "
+          ]
+        ],
+        "enable_visualize": false
+      }
+    }
+  ]
+}
