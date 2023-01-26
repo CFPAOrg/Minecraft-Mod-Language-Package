@@ -70,10 +70,11 @@ Minecraft-Mod-Language-Package
 
 以下内容只针对对 [projects](./projects) 文件夹下的贡献。
 
-在提交翻译之前，我们默认以下几点：
+发布 PR 即代表：
 
 1. **你已阅读并同意按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议发布你的作品**。
-2. **你已阅读 [Minecraft 模组简体中文翻译规范与指南](https://rules.cfpa.team/)**。
+2. **你已阅读 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)**。
+3. 你能够**接受**因翻译质量问题而提出的批评，并在收到建议后**愿意**与批评者讨论是否接受更改。
 
 ### Pull Request 相关规定
 
@@ -94,17 +95,16 @@ Minecraft-Mod-Language-Package
 - 若只提交英文原文，请一并提交空白中文文件。
   - 1.12 空白翻译文件为无内容的文件。
   - 1.16 及以上空白翻译文件为只包含左右花括号即`{}`的文件，[例子](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json)。
-- 如果上传的文件中包含**非文本文件**（如`.ttf`等字体文件，`.jpg`等图片），**有可能需要修改 [Packer 配置](config/packer.json)**。
+- 如果上传的文件中包含**非文本文件**（如`.ttf`，`.jpg`等），**有可能需要修改 [Packer 配置](config/packer.json)**，否则它们会被打包器排除，不会进入用户使用的资源包。
   - 如果这些文件放置在`font`或`textures`中，一般不用修改配置；默认已经对这两处进行了特殊处理。
-  - 当然，如果实在弄不清楚怎么改，也可以让我们代劳。
 - 不同版本的同一模组可通过[自定义文件检索策略](./Packer-Index-Doc.md)同步翻译。
 
 ### 翻译质量控制
 
 - **本项目对机翻、生硬翻译并不友好，还请在提交具有这些特征的文件时深思熟虑。**
 - 无论是哪种提交方式，都需要在**审查（review）通过**后才会推送至本项目。
-- 你愿意等待**长时间**的审查（极端情况下可能长达数月）。
-- 你能够**接受**因翻译质量问题而提出的批评，并在收到建议后**愿意**与批评者讨论是否接受更改。
+- 审查时间可能极长，极端情况下可能长达数月。
+- CFPABot
 <!--
 ### Weblate
 
@@ -157,7 +157,7 @@ Minecraft-Mod-Language-Package
 - 增加新翻译版本
   - 需要将所有项填写一遍，同时需要更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及 [CFPABot](https://github.com/Cyl18/CFPABot) 等相关服务。没有规划最好不要乱动。
 - 处理非文本文件
-  1. 如果该文件所在的`命名空间`对**任何模组都**不会有文本文件（如font\），将该`namespace`加入对应版本的`noProcessNamespace`中。
+  1. 如果该文件所在的文件夹与`lang`文件夹同级，且对**任何模组都**不会有文本文件（如font\），将该文件夹加入对应版本的`noProcessNamespace`中。
   2. 否则，将该模组的`CurseForge 项目名称`或`命名空间`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`，并将**所有**受影响的文件的相对位置加入`additionalContents`。
 - 添加非标准位置（在`assets/`以外）的文件
   - 直接加入`additionalContents`
