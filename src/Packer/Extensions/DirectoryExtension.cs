@@ -113,7 +113,7 @@ namespace Packer.Extensions
                     var prefixLength = assetDirectory.FullName.Length;
                     var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置，用反斜杠分割
 
-                    // 跳过非中尉文件
+                    // 跳过非中文文件
                     if (!relativePath.IsTargetLang(config))
                     {
                         return null;
