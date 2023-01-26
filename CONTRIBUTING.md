@@ -43,6 +43,10 @@
 - 若只提交英文原文，请一并提交空白翻译文件。
   - 1.12 空白翻译文件为无内容的文件
   - 1.16、1.18 空白翻译文件为只包含左右花括号即`{}`的文件，[例子](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json)
+- 如果上传的文件中包含_**非文本文件**_（如`.ttf`等字体文件，`.jpg`等图片），**有可能需要修改[Packer配置](./CONTRIBUTING.md#configpackerjson)**。
+  - 如果这些文件放置在`font`/`textures`中，一般不用修改配置；默认已经对这两处进行了特殊处理。
+  - 当然，如果实在弄不清楚怎么改，也可以让我们代劳。
+- 如果涉及到Packer的文件检索模式，请参照[这里](./Packer-Index-Doc.md)
 
 有关**审查**（Review）的说明：
 
@@ -69,7 +73,7 @@
   - ❌`TiC3 翻译更新`（未使用全名）
   - ❌`匠魂翻译更新`（未包含英文名）
 - 请确保提交文件的路径是**正确**的（[例子](#提交文件路径的例子)）。
-  - 如果是 1.12 翻译，应该是：`projects/1.12/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.lang`
+  - 如果是 1.12 翻译，应该是：`projects/1.12.2/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.lang`
   - 如果是 1.16 及以上的翻译，应该是：`projects/{版本}/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.json`
 - 未完工的翻译仍可提交 PR，可以先设置为 Draft。
 - 善用相关词语填写 PR 信息或 Commit 信息，如提交、更新/修改、删除。
@@ -100,7 +104,11 @@
 
 ## 配置更改指南
 
-**建议更改的配置仅为 `config/spider/config.json`，故其他文件不做说明**
+**这里只列出了部分修改可能较大的文件**
+
+### config/spider/config.json
+
+> Spider目前暂时停用，以下事项仅作参考。
 
 - `"version"`：游戏版本，**请勿修改**
 - `"spider_conf"`：爬虫相关设置
@@ -112,6 +120,26 @@
 
 - 请不要随意删除黑名单模组，这些模组在这里是有原因的。
 - 请不要在**未经同意**的情况下修改默认爬取数量。
+
+
+### config/packer.json
+
+该文件内放置了**所有**正在维护的版本的打包配置。
+最好不要随意*删去*内容，除非你知道它曾经是干什么的，现在为什么不需要了。
+*加入*内容相对而言宽松一些，但最好还是说明理由。
+
+*下面没有提到的一般都不适合改动；如果需要，最好说明理由。*
+
+主要的更改场景：
+- 增加新翻译版本
+  - 需要将所有项填写一遍，同时需要更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及CFPABot等相关服务。没有规划最好不要乱动。
+- 处理非文本文件
+  1. 如果该文件所在的`namespace`（`asset-domain`下方的一级）对**任何模组都**不会有文本文件（如font\），将该`namespace`加入对应版本的`noProcessNamespace`中
+  2. 否则，将该模组的`curseforge项目名`或`asset-domain`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`（对应），
+  并将**所有**受影响的文件的相对位置加入`additionalContents`（格式可以仿照已有的文件）
+- 添加非标准位置（在`assets/`以外）的文件
+  - 直接加入`additionalContents`
+
 
 ## 最后需要注意的
 
