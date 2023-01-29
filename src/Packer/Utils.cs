@@ -35,15 +35,15 @@ namespace Packer
         /// <summary>
         /// 将两个带有<c>TranslatedFile</c>的列表合并，对冲突项按照target优先进行合并。
         /// </summary>
-        /// <param name="target">合并对象，优先选择</param>
+        /// <param name="baseFile">合并对象，优先选择</param>
         /// <param name="incoming">合并对象，非优先</param>
         /// <returns></returns>
-        public static IEnumerable<TranslatedFile> MergeFiles(IEnumerable<TranslatedFile> target, IEnumerable<TranslatedFile> incoming)
+        public static IEnumerable<TranslatedFile> MergeFiles(IEnumerable<TranslatedFile> baseFile, IEnumerable<TranslatedFile> incoming)
         {
             var mapping = new Dictionary<string, TranslatedFile>(); // asset-domain下的目标位置 -> 文件
-            if (!target.Any()) return incoming;
-            if (!incoming.Any()) return target;
-            foreach (var file in target)
+            if (!baseFile.Any()) return incoming;
+            if (!incoming.Any()) return baseFile;
+            foreach (var file in baseFile)
             {
                 mapping.Add(file.RelativePath, file);
             }
@@ -58,6 +58,24 @@ namespace Packer
             return mapping.Values;
         }
 
+        public static IEnumerable<TranslatedFile> PortFiles(IEnumerable<TranslatedFile> baseFile, IEnumerable<TranslatedFile> incoming)
+        {
+            var mapping = new Dictionary<string, TranslatedFile>(); // asset-domain下的目标位置 -> 文件
+            if (!incoming.Any()) return baseFile;
+            foreach (var file in baseFile)
+            {
+                mapping.Add(file.RelativePath, file);
+            }
+            foreach (var file in incoming)
+            {
+                if (!mapping.TryAdd(file.RelativePath, file))
+                {
+                    mapping.Remove(file.RelativePath, out var existing);
+                    mapping.Add(existing.RelativePath, existing.Port(file));
+                }
+            }
+            return mapping.Values;
+        }
 
         public static async Task<Dictionary<string, string>> ReadReplaceFontMap(string path) // 从隔壁弄过来改了一下，就放这里了
         {
