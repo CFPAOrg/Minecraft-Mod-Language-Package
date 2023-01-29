@@ -94,8 +94,18 @@ namespace Packer.Models
         /// <returns></returns>
         virtual public TranslatedFile Combine(TranslatedFile file)
         {
-            Log.Information("检测到不支持合并的文件。取消合并");
+            Log.Information("文件不支持合并。取消合并");
             return this;
+        }
+        /// <summary>
+        /// 伪适配文件
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
+        virtual public TranslatedFile Port(TranslatedFile file)
+        {
+            Log.Information("文件不支持适配。直接覆盖");
+            return file;
         }
         /// <summary>
         /// 对该文件的内容进行Google Diff-Match-Patch算法
@@ -152,7 +162,7 @@ namespace Packer.Models
             Log.Information("合并文件：{0}", this.RelativePath);
 
             var castedFile = (LangFile)file;
-            if ((castedFile is null) || castedFile.Category != this.Category)
+            if (castedFile is null)
             {
                 Log.Information("检测到不支持合并的文件。取消合并");
                 return this;
@@ -170,7 +180,32 @@ namespace Packer.Models
                 }
             }
 
-            return new LangFile(Category, resultMap)
+            return new LangFile(this.Category, resultMap)
+            {
+                RelativePath = this.RelativePath
+            };
+        }
+
+        public override TranslatedFile Port(TranslatedFile file)
+        {
+            var castedFile = (LangFile)file;
+            if (castedFile is null)
+            {
+                Log.Information("检测到不支持合并的文件。取消合并");
+                return file;
+            }
+            this.Deserialize();
+            castedFile.Deserialize();
+            var resultMap = deserializedContent;
+            foreach(var key in resultMap.Keys)
+            {
+                if(castedFile.deserializedContent.TryGetValue(key, out var value))
+                {
+                    Log.Information("正在替换适配项：<{0}> {1} => {2}", key, resultMap[key], value);
+                    resultMap[key] = value;
+                }
+            }
+            return new LangFile(this.Category, resultMap)
             {
                 RelativePath = this.RelativePath
             };
