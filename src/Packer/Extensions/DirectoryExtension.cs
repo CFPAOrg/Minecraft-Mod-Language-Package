@@ -42,7 +42,8 @@ namespace Packer.Extensions
                 { PackerStrategyType.NoAction, FromImmediateDirectory },
                 { PackerStrategyType.PlainClone, FromIndirectDirectory },
                 { PackerStrategyType.CloneMissing, FromMixedDirectory },
-                { PackerStrategyType.Patch, FromPatches}
+                { PackerStrategyType.BackPort, FromBackPort },
+                { PackerStrategyType.Patch, FromPatches }
             };
             return functionTable[policy.Type](assetPath, config, ref bypassed, policy.Parameters);
         }
@@ -67,6 +68,13 @@ namespace Packer.Extensions
             => Utils.MergeFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
                                 FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
 
+        static IEnumerable<TranslatedFile> FromBackPort(DirectoryInfo assetDirectory,
+                                                              Config config,
+                                                              ref Dictionary<string, string> unprocessed,
+                                                              Dictionary<string, JsonElement> parameters)
+            => Utils.PortFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
+                                FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
+
         static IEnumerable<TranslatedFile> FromIndirectDirectory(DirectoryInfo assetDirectory,
                                                                  Config config,
                                                                  ref Dictionary<string, string> unprocessed,
@@ -83,7 +91,7 @@ namespace Packer.Extensions
             var patchList = JsonSerializer.Deserialize<Dictionary<string, string>>(parameters["patches"]);
             foreach (var patch in patchList)
             {
-                Log.Information("{0}", reference.Keys);
+                //Log.Information("{0}", reference.Keys);
                 Log.Information("对文件 {0} 应用 {1} 处的 patch。", patch.Key, patch.Value);
                 var target = reference[patch.Key];
                 var patchText = string.Join('\n', File.ReadAllLines(patch.Value)); // 不要问我为什么D-M-P默认换行是LF
@@ -103,10 +111,10 @@ namespace Packer.Extensions
                                        .Select(file =>
                 {   // 这里开始真正的检索。被跳过的文本用 null 代替
                     var prefixLength = assetDirectory.FullName.Length;
-                    var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置
+                    var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置，用反斜杠分割
 
-                    // 跳过英文文件
-                    if (relativePath.IsSkippedLang(config))
+                    // 跳过非中文文件
+                    if (!relativePath.IsTargetLang(config))
                     {
                         return null;
                     }
