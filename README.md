@@ -33,16 +33,14 @@
 
 在 [GitHub Releases](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases) 下载并添加资源包（后缀对应支持的 MC 版本和 Modloader 类型）。
 
-若资源包不生效，请检查资源包的优先级。
-
 ## 问题反馈
 
 1. [GitHub Issue](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues)
-2. [osTicket 工单系统][osTicket]
+2. [兔小巢][[osTicket](https://support.qq.com/product/382723)]
 
 ## 加入我们
 
-若想提交翻译、贡献代码，请**仔细**阅读 [CONTRIBUTING](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)。
+若想提交翻译、贡献代码，请**仔细**阅读[贡献方针](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)。
 
 ## 授权方式
 
