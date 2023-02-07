@@ -29,7 +29,6 @@
 |                        模组下载量                         |                             模组支持版本                              |
 | :-------------------------------------------------------: | :-------------------------------------------------------------------: |
 | ![CurseForgePage](https://cf.way2muchnoise.eu/297404.svg) | ![CurseForgeVersion](https://cf.way2muchnoise.eu/versions/297404.svg) |
-https://cf.way2muchnoise.eu/240630.svg?badge_style=for_the_badge
 
 ### 选择二：手动添加资源包
 
