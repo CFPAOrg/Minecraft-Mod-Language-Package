@@ -20,17 +20,20 @@
 
 ## 如何使用
 
-### 1. 安装模组（推荐）
+注意：资源包中的帕秋莉手册翻译需安装[帕秋莉手册加载补丁](https://www.mcmod.cn/class/8906.html)才能完整应用到游戏中。
 
-下载并安装 [I18nUpdateMod](https://www.curseforge.com/minecraft/mc-mods/i18nupdatemod) 模组，详情请查看此模组的 [MC百科](https://www.mcmod.cn/class/1188.html) 页面。
+### 选择一：安装模组（推荐）
+
+下载并安装 [I18nUpdateMod](https://www.curseforge.com/minecraft/mc-mods/i18nupdatemod) 模组，详情请查看此模组的 [MC百科](https://www.mcmod.cn/class/1188.html) 页面。同时也可在 [MC百科](https://www.mcmod.cn/download/1188.html) 或 [Modrinth](https://modrinth.com/mod/i18nupdatemod) 下载。
 
 |                        模组下载量                         |                             模组支持版本                              |
 | :-------------------------------------------------------: | :-------------------------------------------------------------------: |
 | ![CurseForgePage](https://cf.way2muchnoise.eu/297404.svg) | ![CurseForgeVersion](https://cf.way2muchnoise.eu/versions/297404.svg) |
+https://cf.way2muchnoise.eu/240630.svg?badge_style=for_the_badge
 
-### 2. 手动添加资源包
+### 选择二：手动添加资源包
 
-在 [GitHub Releases](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases) 下载并添加资源包（后缀对应支持的 MC 版本和 Modloader 类型）。
+在[官网](https://cfpa.site/)下载并添加资源包。
 
 ## 问题反馈
 
@@ -44,11 +47,6 @@
 ## 授权方式
 
 本项目采用 [知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc-sa/4.0/)（[简体中文](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)）进行许可，协议全文可在 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/LICENSE) 查看。
-
-## 相关信息
-
-- [MCBBS 推广宣传帖](https://www.mcbbs.net/thread-774087-1-1.html)
-- [MC 百科上的自动汉化更新模组](https://www.mcmod.cn/class/1188.html)
 
 ## 翻译资源库
 
@@ -76,7 +74,6 @@
 - [CNKI 翻译助手](https://dict.cnki.net/index) - 学科词典聚合和机器翻译。
 - [中国自然标本馆](http://www.cfh.ac.cn/)丨[iPlant 植物智](http://www.iplant.cn/)丨[EOL 生命大百科](https://eol.org/zh-CN)丨[iNaturalist](https://www.inaturalist.org/) - 物种译名查询。
 - [WantWords 反向词典](https://wantwords.net/) - 寻找相似词，词穷拯救者。
-
 
 <!-- **你们是怎么做到流水线式的翻译的？**
 

@@ -1,5 +1,6 @@
 ![pack.png](https://i.loli.net/2018/02/18/5a8974407b453.png)
 ---
+
 **Languages/语言:** [中文](README.md) [**English**](README-en.md)
 
 | CurseForge Downloads | Versions Supported | Localization Progress | Github Actions | Latest Snapshot |
@@ -11,6 +12,7 @@
 This is the repository of the project for translating Minecraft mods into simplified Chinese, currectly using a platform called Weblate which is similar to Crowdin.<br>
 This project aims to deal with certain problems where localizations are not accepted in time or simply fail to be accepted.<br>
 If you want to join us, please visit our official website and learn more:<br>
+
 ### <https://cfpa.team>
 
 It is also fine to submit pull requests to this repository.
@@ -47,13 +49,13 @@ Ummmm, it's easy though:<br>
 
 ## Credits
 
-* `phi` for setting up the Weblate server and integration with Google Translate.
-* `Summpot` and `Nullpinter` for a better version of the C# web scraper.
-* `PeakXing` for making the logo.
-* `雪尼`, `FledgeXu`, `asdflj` and others who give suggestions and ideas.
-* Pioneers of this project: `Aemande123`, `DYColdWind`, `Snownee`, `yuanjie000`, `forestbat`, `3TUSK`, `SihenZhang`, `MoXiaoFreak`, `gloomy_banana`, `yuanjie000`, `exia00125`, `luckyu19` for early localizations (in no particular order).
-* `R_liu`  for the localization of SlashBalde.
-* `3TUSK` for [fixing the display of full-width punctuation](./project/assets/minecraft/readme.md). This is originally involved in the pack.
-* `LucunJi` for the internationalization of this readme file.
-* Finally, give thanks to every single player who engages in providing and spreading localizations.
+- `phi` for setting up the Weblate server and integration with Google Translate.
+- `Summpot` and `Nullpinter` for a better version of the C# web scraper.
+- `PeakXing` for making the logo.
+- `雪尼`, `FledgeXu`, `asdflj` and others who give suggestions and ideas.
+- Pioneers of this project: `Aemande123`, `DYColdWind`, `Snownee`, `yuanjie000`, `forestbat`, `3TUSK`, `SihenZhang`, `MoXiaoFreak`, `gloomy_banana`, `yuanjie000`, `exia00125`, `luckyu19` for early localizations (in no particular order).
+- `R_liu`  for the localization of SlashBalde.
+- `3TUSK` for [fixing the display of full-width punctuation](./project/assets/minecraft/readme.md). This is originally involved in the pack.
+- `LucunJi` for the internationalization of this readme file.
+- Finally, give thanks to every single player who engages in providing and spreading localizations.
 See all the contributors in the [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) page.
