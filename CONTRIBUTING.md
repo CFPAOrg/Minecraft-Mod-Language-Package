@@ -80,6 +80,8 @@ Minecraft-Mod-Language-Package
 
 可查看[视频教程](https://www.bilibili.com/video/BV1Xi4y1r7S2/)或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
 
+视频或文字教程中与翻译贡献方针不同的地方，以本方针为准。
+
 - 提交 PR 至`main`分支。
 - 若要提交多个模组的翻译，尽量按一个 PR 仅含一个模组的原则来提交。
   - 若多个模组包含的中文总行数不超过 200，允许合并为一个 PR（#1770）。
@@ -91,7 +93,9 @@ Minecraft-Mod-Language-Package
 - 确保提交文件的路径是正确的：`projects/{版本}/assets/{CurseForge 项目名称}/{命名空间}/lang`
 - 未完工的翻译仍可提交 PR，可以将其设置为 draft。
 - 尽量用相关词语填写 commit massage，如`提交`、`更新`、`修改`、`删除`。
-- 提交翻译文件时，请一并提交/更新英文原文。
+- 必须包含简体中文及翻译源语言的语言文件。
+  - 若翻译源语言不是英文，请附上英文语言文件（如有）以供参考。
+  - 禁止提交除上述三种语言以外的语言文件。
 - 若只提交英文原文，请一并提交空白中文文件。
   - 1.12 空白翻译文件为无内容的文件。
   - 1.16 及以上空白翻译文件为只包含左右花括号即`{}`的文件，[例子](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json)。
@@ -104,7 +108,7 @@ Minecraft-Mod-Language-Package
 - **本项目对机翻、生硬翻译并不友好，还请在提交具有这些特征的文件时深思熟虑。**
 - 无论是哪种提交方式，都需要在**审查（review）通过**后才会推送至本项目。
 - 审查时间可能极长，极端情况下可能长达数月。
-- CFPABot
+- CFPABot 的报错需要二次确认
 <!--
 ### Weblate
 
@@ -166,4 +170,4 @@ Minecraft-Mod-Language-Package
 
 ## 联系我们
 
-若有不明白的地方，可前往 QQ 群（630943368，**较为活跃**）或 [Discord](https://discord.com/invite/SGve5Fn) 提问。
+若有不明白的地方，可[前往 QQ 群](https://jq.qq.com/?_wv=1027&k=5geO1T21)（630943368，**较为活跃**）或 [Discord](https://discord.com/invite/SGve5Fn) 提问。
