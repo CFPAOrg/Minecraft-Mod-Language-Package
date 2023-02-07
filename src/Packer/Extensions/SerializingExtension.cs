@@ -1,32 +1,31 @@
-﻿using System;
+﻿using Packer.Models;
+using Serilog;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
-
-using Packer.Models;
-
-using Serilog;
 
 namespace Packer.Extensions
 {
     static class SerializingExtension
     {
         public static string SerializeAsset(this Dictionary<string, string> assetMap, FileCategory category)
-        {
-            return category switch
+            => category switch
             {
+                // Json 文件，直接写出
                 FileCategory.JsonTranslationFormat => JsonSerializer.Serialize(assetMap,
                     new JsonSerializerOptions
                     {
                         WriteIndented = true
                     }),
+                // Lang文件
                 FileCategory.LangTranslationFormat => SerializeFromLang(assetMap),
                 _ => null // 其实不应该执行到这个地方
             };
-        }
 
         static string SerializeFromLang(Dictionary<string, string> assetMap)
         {
+            // lang格式化还好说
             var sb = new StringBuilder();
             foreach (var pair in assetMap)
             {
@@ -37,17 +36,22 @@ namespace Packer.Extensions
         }
 
         public static Dictionary<string, string> DeserializeAsset(this string content, FileCategory category)
-        {
-            return category switch
+            => category switch
             {
-                FileCategory.JsonTranslationFormat => JsonSerializer.Deserialize<Dictionary<string, string>>(content), // 直接有的算法
+                FileCategory.JsonTranslationFormat
+                    => JsonSerializer.Deserialize<Dictionary<string, string>>(content,
+                    new JsonSerializerOptions
+                    {
+                        ReadCommentHandling = JsonCommentHandling.Skip // 打包过程应当兼容注释，但不需要写入注释
+                    }), // 直接有的算法
                 FileCategory.LangTranslationFormat => DeserializeFromLang(content),
                 _ => null // 其实不应该执行到这个地方
             };
-        }
 
         static Dictionary<string, string> DeserializeFromLang(string content)
         {
+            // 甚至不是自动机...所以不敢多用，否则会炸
+
             // 下面的 Verbose 仅供调试，不会在 log 里出现
             // .lang的格式真的乱...
             Log.Verbose("开始反序列化 .lang 文件");
@@ -59,7 +63,8 @@ namespace Packer.Extensions
                 .ForEach(line =>
                 {
                     var isSingleLineComment = false;
-                    new List<string> { "//", "#" }.ForEach(_ => { isSingleLineComment = line.StartsWith(_); });
+                    new List<string> { "//", "#" }
+                        .ForEach(_ => { isSingleLineComment |= line.StartsWith(_); });
                     if (isSingleLineComment)
                     {
                         Log.Verbose("跳过了单行注释：{0}", line);
@@ -68,7 +73,7 @@ namespace Packer.Extensions
                     {
                         Log.Verbose("{0}", line);
                         if (line.Trim()
-                                   .EndsWith("*/"))
+                                .EndsWith("*/"))
                         {
                             isInComment = false;  // 跳出注释
                         }
@@ -87,7 +92,7 @@ namespace Packer.Extensions
                         }
                         catch (Exception e)
                         {
-                            Log.Verbose(e.ToString());
+                            Log.Warning(e.ToString());
                         }
                     }
                 }
