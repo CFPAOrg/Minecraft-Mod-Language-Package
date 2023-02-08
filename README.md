@@ -20,15 +20,11 @@
 
 ## 如何使用
 
-注意：资源包中的帕秋莉手册翻译需安装[帕秋莉手册加载补丁](https://www.mcmod.cn/class/8906.html)才能完整应用到游戏中。
+注意：部分[帕秋莉手册](https://www.mcmod.cn/class/1388.html)翻译需安装[帕秋莉手册加载补丁](https://www.mcmod.cn/class/8906.html)才能完整应用到游戏中。
 
 ### 选择一：安装模组（推荐）
 
-下载并安装 [I18nUpdateMod](https://www.curseforge.com/minecraft/mc-mods/i18nupdatemod) 模组，详情请查看此模组的 [MC百科](https://www.mcmod.cn/class/1188.html) 页面。同时也可在 [MC百科](https://www.mcmod.cn/download/1188.html) 或 [Modrinth](https://modrinth.com/mod/i18nupdatemod) 下载。
-
-|                        模组下载量                         |                             模组支持版本                              |
-| :-------------------------------------------------------: | :-------------------------------------------------------------------: |
-| ![CurseForgePage](https://cf.way2muchnoise.eu/297404.svg) | ![CurseForgeVersion](https://cf.way2muchnoise.eu/versions/297404.svg) |
+下载并安装[自动汉化更新](https://www.curseforge.com/minecraft/mc-mods/i18nupdatemod)模组，详情请查看此模组的 [MC百科](https://www.mcmod.cn/class/1188.html) 页面。同时也可在 [MC百科](https://www.mcmod.cn/download/1188.html) 或 [Modrinth](https://modrinth.com/mod/i18nupdatemod) 下载。
 
 ### 选择二：手动添加资源包
 
