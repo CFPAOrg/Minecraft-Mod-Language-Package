@@ -9,11 +9,11 @@
 
 ## About this Repository
 
-This is the repository of the project for translating Minecraft mods into simplified Chinese, currectly using a platform called Weblate which is similar to Crowdin.<br>
-This project aims to deal with certain problems where localizations are not accepted in time or simply fail to be accepted.<br>
-If you want to join us, please visit our official website and learn more:<br>
+This is the repository of the project for translating Minecraft mods into simplified Chinese, currectly using a platform called Weblate which is similar to Crowdin.
 
-### <https://cfpa.team>
+This project aims to deal with certain problems where localizations are not accepted in time or simply fail to be accepted.
+
+If you want to join us, please visit our official website and learn more: <https://cfpa.site>
 
 It is also fine to submit pull requests to this repository.
 
@@ -21,7 +21,7 @@ Before you start, check the important tips from us here: [*Regulations and Guide
 
 ## Authorizations
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)([Simplified Chinese](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)). Detail can be found [here](./LICENSE).<br>
+This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/) ([Simplified Chinese](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh)). Detail can be found [here](./LICENSE).
 
 ## Usage
 
@@ -30,15 +30,17 @@ To apply, simply load this pack like any other resource pack. In case of some is
 
 ## Related Information
 
-**How does the current localization project look like? Can I submit my list of mods that I want them to be translated?**<br>
-Currently, according to the popularity on CurseForge, we have chosen Minecraft 1.12.2 for the majority of our work, with over 1000 mods in the project. If you want any other mod to be translated, you can suggest through our [issue tracker](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues), or email us directly.<br>
+**How does the current localization project look like? Can I submit my list of mods that I want them to be translated?**
+
+Currently, according to the popularity on CurseForge, we have chosen Minecraft 1.12.2 for the majority of our work, with over 1000 mods in the project. If you want any other mod to be translated, you can suggest through our [issue tracker](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues), or email us directly.
 
 We have been propagating this project on [the MCBBS page](http://www.mcbbs.net/thread-774087-1-1.html).
 
 The history of this project can be seen in [TartaricAcid's blog](https://baka943.coding.me/2018/01/03/2018-01-03-AnIntroForWeblate/).
 
-**How did you guys set up the workflow?**<br>
-Ummmm, it's easy though:<br>
+**How did you guys set up the workflow?**
+
+Ummmm, it's easy though:
 
 - Get the popular mods on CurseForge with the web scraper.
 - Push the files to the GitHub repository with scripts
