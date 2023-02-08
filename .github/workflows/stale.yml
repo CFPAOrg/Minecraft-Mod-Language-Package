@@ -1,0 +1,25 @@
+name: Close inactive PRs
+on:
+  schedule:
+    # 每天凌晨5点
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+jobs:
+  close-issues:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/stale@v5
+        with:
+          days-before-issue-stale: -1
+          days-before-issue-close: -1
+          stale-pr-message: "提醒：审核者需要您的回复，7+7已进入第二阶段，该PR即将关闭。"
+          close-pr-message: "因审核者请求您更新该PR，且回复时间超过规定期限，该PR现暂时关闭。如您需再次提交可重新打开该PR，感谢您的贡献:heart:。"
+          days-before-pr-stale: 7
+          days-before-pr-close: 7
+          any-of-pr-labels: "needs author action,changes required"
+          stale-pr-label: "ready to reject"
+          start-date: 2023-02-11
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
