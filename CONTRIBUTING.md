@@ -18,6 +18,8 @@
   - [翻译用语共识](#翻译用语共识)
   - [翻译贡献方针](#翻译贡献方针)
     - [Pull Request 相关规定](#pull-request-相关规定)
+      - [标题与文字内容](#标题与文字内容)
+      - [PR 内容](#pr-内容)
     - [翻译质量控制](#翻译质量控制)
   - [代码贡献指南](#代码贡献指南)
   - [配置更改指南](#配置更改指南)
@@ -35,7 +37,7 @@ Minecraft-Mod-Language-Package
   │   └─assets
   │     ├─(CurseForge 项目名称) ---- // 见下
   │     │ └─(命名空间) ------------- // 见下
-  │     │   └─lang ----------------- // 语言文件文件夹，若模
+  │     │   └─lang ----------------- // 语言文件文件夹
   │     │     ├─en_us.json --------- // 英文（US）语言文件
   │     │     └─zh_cn.json --------- // 简体中文（中国）语言文件
   │     ├─minecraft
@@ -62,6 +64,8 @@ Minecraft-Mod-Language-Package
 
 **命名空间（Namespace）**：以匠魂为例，它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://minecraft.fandom.com/zh/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
 
+仓库中“命名空间”文件夹下的目录结构与[资源包](https://minecraft.fandom.com/zh/wiki/%E8%B5%84%E6%BA%90%E5%8C%85)的相应结构相同。
+
 ## 翻译用语共识
 
 1. “材料+质/制+中心词”的翻译，如“铁质涡轮”“铁制涡轮”，二者皆合理。只需单模组内统一。
@@ -82,14 +86,21 @@ Minecraft-Mod-Language-Package
 
 视频或文字教程中与翻译贡献方针不同的地方，以本方针为准。
 
-- 提交 PR 至`main`分支。
-- 若要提交多个模组的翻译，尽量按一个 PR 仅含一个模组的原则来提交。
-  - 若多个模组包含的中文总行数不超过 200，允许合并为一个 PR（#1770）。
+#### 标题与文字内容
+
 - PR 标题需简洁明了，格式应为 `{模组英文全名} {简述}`。
   - ✔️`Tinkers Construct 翻译提交`
   - ✔️`Tinkers Construct 和 Tinkers' Reforged 译名修正`
   - ❌`TiC3 翻译更新`（未使用全名）
   - ❌`匠魂翻译更新`（未包含英文名）
+  - ❌`提交 Tinkers Construct 翻译`（英文名前不应有文字）
+- PR 模板中的检查单应照做并完成勾选，详见 #2539。
+
+#### PR 内容
+
+- 提交 PR 至`main`分支。
+- 若要提交多个模组的翻译，尽量按一个 PR 仅含一个模组的原则来提交。
+  - 若多个模组包含的中文总行数不超过 200，允许合并为一个 PR（#1770）。
 - 确保提交文件的路径是正确的：`projects/{版本}/assets/{CurseForge 项目名称}/{命名空间}/lang`
 - 未完工的翻译仍可提交 PR，可以将其设置为 draft。
 - 尽量用相关词语填写 commit massage，如`提交`、`更新`、`修改`、`删除`。
