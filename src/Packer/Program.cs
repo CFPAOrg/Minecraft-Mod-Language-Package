@@ -1,11 +1,9 @@
-﻿using System;
+﻿using Packer.Extensions;
+using Serilog;
+using System;
 using System.IO;
 using System.IO.Compression;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
-
-using Packer.Extensions;
-using Serilog;
 
 namespace Packer
 {

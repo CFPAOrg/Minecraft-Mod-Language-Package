@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Packer.Models;
+using Serilog;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Threading.Tasks;
-
-using Packer.Models;
-using Serilog;
 
 namespace Packer.Extensions
 {
@@ -43,7 +42,7 @@ namespace Packer.Extensions
             string commonPrefix = $"./projects/{config.Version}";
             config.FilesToInitialize.ForEach(path =>
             {
-                var destination = path.StripeModName() // 除掉一层文件夹（在 assets/ 里的各种 fix）
+                var destination = path.StripModName() // 除掉一层文件夹（在 assets/ 里的各种 fix）
                                       .NormalizePath();
                 Log.Information("初始化压缩包：添加 {0}", destination);
                 archive.CreateEntryFromFile($"{commonPrefix}/{path}", destination);
@@ -60,7 +59,7 @@ namespace Packer.Extensions
         /// <returns></returns>
         public static async Task WriteContent(this ZipArchive archive, IEnumerable<Asset> content)
         {
-            Log.Information("添加写入处理后的文件");
+            Log.Information("添加处理后的文件");
             var tasks = new List<Task>();
             foreach (var asset in content)
             {
@@ -69,8 +68,8 @@ namespace Packer.Extensions
                 {
                     tasks.Add(archive.CreateLangFile(Path.Combine("assets",
                                                                   asset.domainName,
-                                                                  file.relativePath),
-                                                     file.stringifiedContent));
+                                                                  file.RelativePath),
+                                                     file.StringifiedContent));
                 }
             }
             await Task.WhenAll(tasks);
@@ -89,7 +88,7 @@ namespace Packer.Extensions
             {
                 Log.Information("正在添加 {0}", pair.Value);
                 archive.CreateEntryFromFile(sourceFileName: pair.Key,
-                                            entryName: pair.Value.NormalizePath());
+                                            entryName:      pair.Value.NormalizePath());
             }
             Log.Information("添加完毕");
         }

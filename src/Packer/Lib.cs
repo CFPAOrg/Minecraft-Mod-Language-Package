@@ -1,10 +1,9 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-
-using Packer.Extensions;
+﻿using Packer.Extensions;
 using Packer.Models;
 using Serilog;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 namespace Packer
 {
@@ -33,7 +32,7 @@ namespace Packer
             var result = new Dictionary<string, Asset>(); // domain -> 该domain对应的Asset对象
             var existingDomains = new Dictionary<string, string>(); // domain -> 模组名
 
-            // 下面开始检索模组：
+            // 下面开始检索模组
             // 以后可能会用更好看的linq语法写，但是现在就这样了
             var mods = new DirectoryInfo($"./projects/{config.Version}/assets")
                 .EnumerateDirectories() // assets/ 的下级文件夹
@@ -45,64 +44,14 @@ namespace Packer
                         .Select(assetDirectory => new Asset()
                         {
                             domainName = assetDirectory.Name,
-                            contents = assetDirectory
-                                .EnumerateFiles("*", SearchOption.AllDirectories) // <asset-domain>/ 的下级文件
-                                .Select(file =>
-                                {
-                                    // 这里开始真正的检索。被跳过的文本用 null 代替
-
-                                    var prefixLength = assetDirectory.FullName.Length;
-                                    var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置
-
-                                    // 跳过英文文件
-                                    if (relativePath.IsSkippedLang(config))
-                                    {
-                                        return null;
-                                    }
-
-                                    // 选出不经过处理路径的文件
-                                    if (relativePath.NeedBypass(config))
-                                    {
-                                        Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('\\')[0]);
-                                        bypassed.Add(file.FullName,
-                                                     Path.Combine("assets",
-                                                                  assetDirectory.Name,
-                                                                  relativePath));
-                                        return null;
-                                    }
-
-                                    // 处理正常的语言文件
-                                    var parsingCategory = file.Extension switch
-                                    {
-                                        ".json" => FileCategory.JsonAlike,
-                                        _ => FileCategory.LangAlike
-                                    };
-                                    if (relativePath.StartsWith("lang\\"))
-                                    {
-                                        return new LangFile(file.OpenRead(),
-                                                            parsingCategory | FileCategory.LanguageFile,
-                                                            config)
-                                        {
-                                            relativePath = relativePath
-                                        };
-                                    }
-                                    else
-                                    {
-                                        return new TranslatedFile(file.OpenRead(),
-                                                                  parsingCategory | FileCategory.OtherFiles,
-                                                                  config)
-                                        {
-                                            relativePath = relativePath
-                                        };
-                                    }
-                                }).Where(_ => _ is not null) // 排除掉跳过的文件
+                            contents = assetDirectory.AggregateAssetFiles(config, ref bypassed)
                         })
                 });
-
             foreach (var mod in mods)
             {
                 var name = mod.modName;
                 if (!mod.assets.Any()) continue; // 没有 asset 的情况
+
                 foreach (var asset in mod.assets)
                 {
                     var domain = asset.domainName;
@@ -133,8 +82,8 @@ namespace Packer
                     }
                 }
             }
-            unprocessed = bypassed; // 传出非文本文件
             Log.Information("文件列表生成完毕");
+            unprocessed = bypassed; // 正式传出非文本文件
             return result.Select(_ => _.Value);
         }
     }

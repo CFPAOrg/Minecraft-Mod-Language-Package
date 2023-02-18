@@ -46,6 +46,7 @@
 - 如果上传的文件中包含_**非文本文件**_（如`.ttf`等字体文件，`.jpg`等图片），**有可能需要修改[Packer配置](./CONTRIBUTING.md#configpackerjson)**。
   - 如果这些文件放置在`font`/`textures`中，一般不用修改配置；默认已经对这两处进行了特殊处理。
   - 当然，如果实在弄不清楚怎么改，也可以让我们代劳。
+- 如果涉及到Packer的文件检索模式，请参照[这里](./Packer-Index-Doc.md)
 
 有关**审查**（Review）的说明：
 
@@ -107,6 +108,8 @@
 
 ### config/spider/config.json
 
+> Spider目前暂时停用，以下事项仅作参考。
+
 - `"version"`：游戏版本，**请勿修改**
 - `"spider_conf"`：爬虫相关设置
 - `"base_mod_count"`：默认爬取模组的数量
@@ -129,9 +132,9 @@
 
 主要的更改场景：
 - 增加新翻译版本
-  - 需要将所有项填写一遍，同时有可能需要同时修改其他事宜。没有规划最好不要乱动。
+  - 需要将所有项填写一遍，同时需要更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及CFPABot等相关服务。没有规划最好不要乱动。
 - 处理非文本文件
-  1. 如果该文件所在的`namespace`（`asset-domain`下方的一级）对**任何模组都**不会有文本文件，将该`namespace`加入对应版本的`noProcessNamespace`中
+  1. 如果该文件所在的`namespace`（`asset-domain`下方的一级）对**任何模组都**不会有文本文件（如font\），将该`namespace`加入对应版本的`noProcessNamespace`中
   2. 否则，将该模组的`curseforge项目名`或`asset-domain`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`（对应），
   并将**所有**受影响的文件的相对位置加入`additionalContents`（格式可以仿照已有的文件）
 - 添加非标准位置（在`assets/`以外）的文件
