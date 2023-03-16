@@ -2,7 +2,9 @@
 
 项目主页：https://cfpa.site/
 参与贡献：https://cfpa.site/joinus.html
+反馈问题：https://support.qq.com/product/382723
 GitHub 仓库：https://github.com/CFPAOrg/Minecraft-Mod-Language-Package
+
 
 如果你是手动下载的本资源包，欢迎使用 I18n Update Mod 模组自动下载安装资源包。
 
