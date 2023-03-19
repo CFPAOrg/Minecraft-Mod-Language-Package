@@ -33,6 +33,28 @@ labelPRBasedOnFilePath:
     source:
         - "src/**"
 
+    小语种:
+        - "projects/**/assets/**/**/lang/de_de.json"
+        - "projects/**/assets/**/**/lang/lt_lt.json"
+        - "projects/**/assets/**/**/lang/ko_kr.json"
+        - "projects/**/assets/**/**/lang/ja_jp.json"
+        - "projects/**/assets/**/**/lang/es_es.json"
+        - "projects/**/assets/**/**/lang/fr_fr.json"
+        - "projects/**/assets/**/**/lang/ru_ru.json"
+        - "projects/**/assets/**/**/lang/ar_sa.json"
+        - "projects/**/assets/**/**/lang/bg_bg.json"
+        - "projects/**/assets/**/**/lang/pt_br.json"
+        - "projects/**/assets/**/**/lang/de_de.lang"
+        - "projects/**/assets/**/**/lang/lt_lt.lang"
+        - "projects/**/assets/**/**/lang/ko_kr.lang"
+        - "projects/**/assets/**/**/lang/ja_jp.lang"
+        - "projects/**/assets/**/**/lang/es_es.lang"
+        - "projects/**/assets/**/**/lang/fr_fr.lang"
+        - "projects/**/assets/**/**/lang/ru_ru.lang"
+        - "projects/**/assets/**/**/lang/ar_sa.lang"
+        - "projects/**/assets/**/**/lang/bg_bg.lang"
+        - "projects/**/assets/**/**/lang/pt_br.lang"
+
 # Various Flags to control behaviour of the "Labeler"
 labelerFlags:
     # If this flag is changed to 'false', labels would only be added when the PR is first created and not when existing
@@ -43,19 +65,17 @@ labelerFlags:
 ##### Greetings ########################################################################################################
 # Comment to be posted to welcome users when they open their first PR
 firstPRWelcomeComment: |
-    - 没有完工的汉化仍可提交pr，但请设置为draft。
-    - 不要望文生义，有些看起来十分离谱的东西可能是正确的。
-    - 尽量做到边开游戏边翻译。
-    - 请确认翻译能够正常使用并按照规范格式提交。
-    - 善用更新、提交等词语。提交汉化文件时请一并上传英文原文。提交英文原文时请一并上传空白中文文件（1.12的文件为无内容的文件，1.16的文件为为只包含左右花括号的文件，例如 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json) ）。
+    你已成功发送你在 CFPA 仓库的第一个 Pull Request！请再次检查以下事项：
+    标题是否正确丨翻译文件的路径是否正确丨检查单是否勾选了前三项。
+    确认无误后请耐心等待审阅，并在审阅人提出意见给出答复或修改内容。
 
 # Comment to be posted to congratulate user on their first merged PR
 firstPRMergeComment: >
-    感谢您的提交。
+    干得好！你在 CFPA 的第一份翻译已成功入库，将在次日通过自动汉化更新模组分发给广大玩家。
 
 # Comment to be posted to on first time issues
-firstIssueWelcomeComment: >
-    感谢您来反馈问题。请在反馈前后检查是否有相同的问题。
+# firstIssueWelcomeComment: >
+#     感谢你来反馈问题。请在反馈前后检查是否有相同的问题。
 
 ###### Title Validator #################################################################################################
 # Verifies if commit/PR titles match the regexp specified
@@ -75,7 +95,7 @@ verifyTitles:
     # The title the GitHub status should appear from.
     statusTitle: "标题检测器"
     # A custom message to be displayed when the title passes validation.
-    successMessage: "您的标题是正确的，感谢您的配合。"
+    successMessage: "你的标题是正确的，感谢你的配合。"
     # A custom message to be displayed when the title fails validation.
     # Allows insertion of ${type} (commit/PR), ${title} (the title validated) and ${regex} (the titleRegexp above).
     failureMessage: "错误的${type}标题：${title}。请检查是否符合“模组英文名+简要说明”的格式"
