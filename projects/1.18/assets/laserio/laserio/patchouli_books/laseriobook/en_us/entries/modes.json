@@ -1,0 +1,27 @@
+{
+  "name": "Modes",
+  "sortnum": 1,
+  "category": "laserio:mechanics",
+  "icon": "laserio:textures/gui/buttons/modestocker.png",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Modes determine what a card fundamentally does. The following pages define each mode type currently available.$(br2)Each type of card (Item/Fluid/Energy) supports the the following three modes. Item cards are used as an example.$(br2)Redstone cards will support a different set of modes."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "laserio:card_item{channel:0b,exact:0b,inv:{Items:[],Size:2},itemextractamt:1b,itemextractspeed:20,mode:0b,priority:0s,regulate:0b,roundRobin:0,sneaky:-1b}",
+      "text": "Insert Mode cards are a validate destination for objects being extracted by Extract Mode cards.$(br2)Stock mode cards will attempt to pull from Insert Mode cards."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "laserio:card_item{channel:0b,exact:0b,inv:{Items:[],Size:2},itemextractamt:1b,itemextractspeed:20,mode:1b,priority:0s,regulate:0b,roundRobin:0,sneaky:-1b}",
+      "text": "Extract Mode cards attempt to remove objects from their adjacent block. Items, for example, will be removed from an adjacent chest and sent to an insert card."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "laserio:card_item{channel:0b,exact:0b,inv:{Items:[],Size:2},itemextractamt:1b,itemextractspeed:20,mode:2b,priority:0s,regulate:0b,roundRobin:0,sneaky:-1b}",
+      "text": "Stock Mode cards attempt to find the designated items in their filter, and pull them from other Insert Nodes in the same network.$(br2)Stock mode cards require a filter set to Allow."
+    }
+  ]
+}
