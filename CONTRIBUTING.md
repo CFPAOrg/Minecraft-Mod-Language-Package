@@ -7,7 +7,6 @@
 - 配置文件（下文亦称“配置”），指本项目 `config` 目录下所有代码文件。
 - 本地化修复文件（下文亦称“修复文件”），包括由 3TUSK 提供的全角标点修复文件，酒石酸菌所制作的生僻字兼容文件。
 - Weblate 翻译平台（下文亦称“Weblate”），是一个高度集成了版本控制功能的 web-based 翻译工具。本项目的 Weblate 由 Phi 部署搭建。
-- osTicket 工单系统（下文亦称“工单系统”）。
 - Pull Requests（下文亦称“PR”）。
 
 > 请在贡献前**仔细阅读**此文档（**特别是加粗部分**）
@@ -44,6 +43,10 @@
 - 若只提交英文原文，请一并提交空白翻译文件。
   - 1.12 空白翻译文件为无内容的文件
   - 1.16、1.18 空白翻译文件为只包含左右花括号即`{}`的文件，[例子](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json)
+- 如果上传的文件中包含_**非文本文件**_（如`.ttf`等字体文件，`.jpg`等图片），**有可能需要修改[Packer配置](./CONTRIBUTING.md#configpackerjson)**。
+  - 如果这些文件放置在`font`/`textures`中，一般不用修改配置；默认已经对这两处进行了特殊处理。
+  - 当然，如果实在弄不清楚怎么改，也可以让我们代劳。
+- 如果涉及到Packer的文件检索模式，请参照[这里](./Packer-Index-Doc.md)
 
 有关**审查**（Review）的说明：
 
@@ -51,15 +54,7 @@
 - 你愿意等待**长时间**的审查（极端情况下可能长达数月）。
 - 你能够**接受**因翻译质量问题而提出的批评，并在收到建议后**愿意**与批评者讨论是否接受更改。
 
-为本项目贡献翻译有以下三种方法：
-
-### 工单系统
-
-- 使用前需先在 [工单系统][osTicket] 注册工单账号。
-- 完成注册后，请使用**注册邮箱**（而不是用户名）登录工单系统。
-- 请在工单系统中选择**请求添加模组翻译**工单，并根据提示进行后续操作。
-- 提交工单后，后续跟进消息会以邮件的方式通知，请**留意**注册邮箱（有可能会被处理为垃圾邮件）。
-
+为本项目贡献翻译有以下两种方法：
 ### Weblate
 
 - Weblate 自 2022 年 4 月起暂停新用户注册。
@@ -78,7 +73,7 @@
   - ❌`TiC3 翻译更新`（未使用全名）
   - ❌`匠魂翻译更新`（未包含英文名）
 - 请确保提交文件的路径是**正确**的（[例子](#提交文件路径的例子)）。
-  - 如果是 1.12 翻译，应该是：`projects/1.12/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.lang`
+  - 如果是 1.12 翻译，应该是：`projects/1.12.2/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.lang`
   - 如果是 1.16 及以上的翻译，应该是：`projects/{版本}/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.json`
 - 未完工的翻译仍可提交 PR，可以先设置为 Draft。
 - 善用相关词语填写 PR 信息或 Commit 信息，如提交、更新/修改、删除。
@@ -109,7 +104,11 @@
 
 ## 配置更改指南
 
-**建议更改的配置仅为 `config/spider/config.json`，故其他文件不做说明**
+**这里只列出了部分修改可能较大的文件**
+
+### config/spider/config.json
+
+> Spider目前暂时停用，以下事项仅作参考。
 
 - `"version"`：游戏版本，**请勿修改**
 - `"spider_conf"`：爬虫相关设置
@@ -122,10 +121,28 @@
 - 请不要随意删除黑名单模组，这些模组在这里是有原因的。
 - 请不要在**未经同意**的情况下修改默认爬取数量。
 
+
+### config/packer.json
+
+该文件内放置了**所有**正在维护的版本的打包配置。
+最好不要随意*删去*内容，除非你知道它曾经是干什么的，现在为什么不需要了。
+*加入*内容相对而言宽松一些，但最好还是说明理由。
+
+*下面没有提到的一般都不适合改动；如果需要，最好说明理由。*
+
+主要的更改场景：
+- 增加新翻译版本
+  - 需要将所有项填写一遍，同时需要更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及CFPABot等相关服务。没有规划最好不要乱动。
+- 处理非文本文件
+  1. 如果该文件所在的`namespace`（`asset-domain`下方的一级）对**任何模组都**不会有文本文件（如font\），将该`namespace`加入对应版本的`noProcessNamespace`中
+  2. 否则，将该模组的`curseforge项目名`或`asset-domain`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`（对应），
+  并将**所有**受影响的文件的相对位置加入`additionalContents`（格式可以仿照已有的文件）
+- 添加非标准位置（在`assets/`以外）的文件
+  - 直接加入`additionalContents`
+
+
 ## 最后需要注意的
 
 若有不明白的地方，可前往 QQ 群（630943368，**较为活跃**）或 [Discord](https://discord.com/invite/SGve5Fn) 提问。
 
 **本项目的每个贡献者都是理应感谢的人。**
-
-[osTicket]: <https://ticket.cyllive.cn>
