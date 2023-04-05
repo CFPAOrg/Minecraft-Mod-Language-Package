@@ -137,6 +137,7 @@ Minecraft-Mod-Language-Package
 - 审阅人部分情况下可能不曾了解或游玩过此模组，提出的部分修改意见仅供参考。
 - 审查时间可能极长，极端情况下可能长达数月。
 - 若确有为 PR **添加 label（标签）的需求**，请在 PR 中提出，待**维护者（collaborator）评估**后即会添加相关 label。
+- 对于审查后无响应的 PR，本仓库遵循 [“7+7”原则](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2658)。
 
 ## 代码贡献指南
 
