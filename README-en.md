@@ -3,7 +3,9 @@
   <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59107734/230642247-ccc8452c-a807-497e-8822-dd46f6386b00.png">
   <img alt="pack.png" src="https://user-images.githubusercontent.com/59107734/230642247-ccc8452c-a807-497e-8822-dd46f6386b00.png">
 </picture>
+
 ---
+
 **Languages/语言:** [中文](README.md) [**English**](README-en.md)
 
 | CurseForge Downloads | Versions Supported | Localization Progress | Github Actions | Latest Snapshot |
