@@ -50,9 +50,10 @@ Minecraft-Mod-Language-Package
   │     │       ├─unicode_page_20.png ---- // 生僻字兼容文件
   │     │       ├─unicode_page_9f.png ---- // 生僻字兼容文件
   │     │       └─unicode_page_e9.png ---- // 生僻字兼容文件
-  │     └─1UNKNOWN ----------------- // 存放不在 CurseForge 上发布的模组
-  │       └─(命名空间)
-  │         └─lang
+  │     ├─1UNKNOWN ----------------- // 存放不在 CurseForge 和 Modrinth 上发布的模组
+  │     │   └─(命名空间)
+  │     │     └─lang
+  │     └─0-modrinth-mod ----------- // 存放仅发布在 Modrinth 上的模组
   └─src --------------- // 各种自动化工具的源码
     ├─Formatter ------- // 格式化工具，用于统一翻译文件格式
     ├─Language.Core 
@@ -61,7 +62,7 @@ Minecraft-Mod-Language-Package
     └─Uploader -------- // 上传器，用于将资源包文件上传到文件分发服务器
 ```
 
-**CurseForge 项目名称**：以匠魂为例，它的 CurseForge 页面地址是 `https://www.curseforge.com/minecraft/mc-mods/tinkers-construct`，则 `CurseForge 项目名称` 为 `tinkers-construct`。因为它是唯一的，被用来追溯模组来源；若此模组仅发布在 Modrinth，请在此处填写 `0-modrinth-mod` 以标记为 Modrinth 模组；若此模组并非发布于以上提及的两个平台，请在此处填写 `1UNKNOWN`。
+**CurseForge 项目名称**：以匠魂为例，它的 CurseForge 页面地址是 `https://www.curseforge.com/minecraft/mc-mods/tinkers-construct`，则 `CurseForge 项目名称` 为 `tinkers-construct`。因为它是唯一的，被用来追溯模组来源。
 
 **命名空间（Namespace）**：以匠魂为例，它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://minecraft.fandom.com/zh/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
 
