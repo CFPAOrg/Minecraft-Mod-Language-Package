@@ -70,7 +70,7 @@ Minecraft-Mod-Language-Package
 ## 翻译用语共识
 
 1. “材料+质/制+中心词”的翻译，如“铁质涡轮”“铁制涡轮”，二者皆合理。只需单模组内统一。
-2. 关于“木制品名称”的翻译，可参考(#2715)[https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/2715#discussion_r1056901664] 中的解决方法。
+2. 关于“木制品名称”的翻译，可参考 https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/2715#discussion_r1056901664 中的解决方法。
 
 ## 翻译贡献方针
 
