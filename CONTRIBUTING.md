@@ -4,10 +4,10 @@
 
 定义：
 
-- 模组翻译文件（下文亦称“翻译”），指本项目 `projects/{版本}/assets` 中的用于提供 **Minecraft 模组**及本体中文本地化支持的文件（包括且**不限于**模组本体所提供的 `lang`，`json` 文件、手册翻译文件）。
+- 语言文件，指 Minecraft 中为显示文本提供支持的文件，囊括所有语言，包括但不限于模组本体所提供的 LANG 文件、JSON文件、手册语言文件。
+  - 翻译文件（下文亦称“翻译”），即中文语言文件。指本项目的翻译文件存放在 `projects/{版本}/assets` 中。
 - 代码文件（下文亦称“代码”），指本项目 `src` 目录下所有代码文件。
 - 配置文件（下文亦称“配置”），指本项目 `config` 目录下所有代码文件。
-- 本地化修复文件（下文亦称“修复文件”），包括由 3TUSK 提供的全角标点修复文件，酒石酸菌所制作的生僻字兼容文件。
 - Pull Requests（下文亦称“PR”）：指在[本页面](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pulls)提交的请求。
 <!--- Weblate 翻译平台（下文亦称“Weblate”），是一个高度集成了版本控制功能的 web-based 翻译工具。本项目的 Weblate 由 Phi 部署搭建。-->
 
@@ -54,6 +54,8 @@ Minecraft-Mod-Language-Package
   │     │   └─(命名空间)
   │     │     └─lang
   │     └─0-modrinth-mod ----------- // 存放仅发布在 Modrinth 上的模组
+  │         └─(命名空间)
+  │           └─lang
   └─src --------------- // 各种自动化工具的源码
     ├─Formatter ------- // 格式化工具，用于统一翻译文件格式
     ├─Language.Core 
@@ -102,17 +104,17 @@ Minecraft-Mod-Language-Package
 #### PR 内容
 
 - 提交 PR 至`main`分支。
-- 若要提交多个模组的翻译，尽量按一个 PR 仅含一个模组的原则来提交。
-  - 若多个模组包含的中文总行数不超过 200，允许合并为一个 PR（#1770）。
 - 确保提交的语言文件的路径是正确的：`projects/{版本}/assets/{CurseForge 项目名称}/{命名空间}/lang`
 - 未完工的翻译仍可提交 PR，可以将其设置为 draft。
-- 尽量用相关词语填写 commit massage，如`提交`、`更新`、`修改`、`删除`。
 - 必须包含简体中文及翻译源语言的语言文件。
   - 若翻译源语言不是英文，请附上英文语言文件（如有）以供参考。
   - 禁止提交除上述三种语言以外的语言文件。
+- 若要提交多个模组的翻译，尽量按一个 PR 仅含一个模组的原则来提交。
+  - 若多个模组包含的中文总行数不超过 200，允许合并为一个 PR（<https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/discussions/1770>）。
 - 若只提交英文原文，请一并提交空白中文文件。
   - 1.12 空白翻译文件为无内容的文件。
   - 1.16 及以上空白翻译文件为只包含左右花括号即`{}`的文件，[例子](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json)。
+- 尽量用相关词语填写 commit massage，如`提交`、`更新`、`修改`、`删除`。
 - 如果上传的文件中包含**非文本文件**（如`.ttf`，`.jpg`等），**有可能需要修改 [Packer 配置](config/packer.json)**，否则它们会被打包器排除，不会进入用户使用的资源包。
   - 如果这些文件放置在`font`或`textures`中，一般不用修改配置；默认已经对这两处进行了特殊处理。
 - 不同版本的同一模组可通过[自定义文件检索策略](./Packer-Index-Doc.md)同步翻译。
@@ -133,13 +135,14 @@ Minecraft-Mod-Language-Package
 
 ### 翻译内容审查
 
-- **涉及机翻、生硬翻译的部分将在审查时被提出并要求作者更改**
-- 除**仓库的维护者（collaborator）外**，其他人也可对翻译进行审查。
-- 请尊重每一位审阅人提出的建议，并且能够依照建议修正中翻译中存在的失误。
-- 审阅人部分情况下可能不曾了解或游玩过此模组，提出的部分修改意见仅供参考。
+- **涉及机翻、生硬翻译的部分将在审查时被提出并要求作者更改**。
+- 除**仓库的外部协作者（Outside Collaborator）外**，其他人也可对审查翻译。
+- 请尊重每一位审查人提出的建议，并且能够依照建议修正中翻译中存在的失误。
+- 审查人部分情况下可能不曾了解或游玩过此模组，提出的部分修改意见仅供参考。
 - 审查时间可能极长，极端情况下可能长达数月。
-- 若确有为 PR **添加 label（标签）的需求**，请在 PR 中提出，待**维护者（collaborator）评估**后即会添加相关 label。
-- 对于审查后无响应的 PR，本仓库遵循 [“7+7”原则与“3+7原则”](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2658)。
+- 若确有为 PR **添加标签（Label）的需求**，请在 PR 中提出，待**协作者（Collaborator）评估**后即会添加相关标签。
+- 对于审查后 PR 作者无响应的 PR，本仓库遵循 [“7+7”原则与“3+7原则”](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2658)。
+- 每个 PR 需要至少一个外部协作者及以上权限用户的批准（Approval）才能合并。
 
 ## 代码贡献指南
 
