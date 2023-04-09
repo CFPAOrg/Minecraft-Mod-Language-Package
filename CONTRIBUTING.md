@@ -61,7 +61,7 @@ Minecraft-Mod-Language-Package
     └─Uploader -------- // 上传器，用于将资源包文件上传到文件分发服务器
 ```
 
-**CurseForge 项目名称**：以匠魂为例，它的 CurseForge 页面地址是 `https://www.curseforge.com/minecraft/mc-mods/tinkers-construct`，则 `CurseForge 项目名称` 为 `tinkers-construct`。因为它是唯一的，被用来追溯模组来源。
+**CurseForge 项目名称**：以匠魂为例，它的 CurseForge 页面地址是 `https://www.curseforge.com/minecraft/mc-mods/tinkers-construct`，则 `CurseForge 项目名称` 为 `tinkers-construct`。因为它是唯一的，被用来追溯模组来源；若此模组仅发布在 Modrinth，请在此处填写 `0-modrinth-mod` 以标记为 Modrinth 模组；若此模组并非发布于以上提及的两个平台，请在此处填写 `1UNKNOWN`。
 
 **命名空间（Namespace）**：以匠魂为例，它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://minecraft.fandom.com/zh/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
 
@@ -137,7 +137,7 @@ Minecraft-Mod-Language-Package
 - 审阅人部分情况下可能不曾了解或游玩过此模组，提出的部分修改意见仅供参考。
 - 审查时间可能极长，极端情况下可能长达数月。
 - 若确有为 PR **添加 label（标签）的需求**，请在 PR 中提出，待**维护者（collaborator）评估**后即会添加相关 label。
-- 对于审查后无响应的 PR，本仓库遵循 [“7+7”原则](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2658)。
+- 对于审查后无响应的 PR，本仓库遵循 [“7+7”原则与“3+7原则”](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2658)。
 
 ## 代码贡献指南
 
