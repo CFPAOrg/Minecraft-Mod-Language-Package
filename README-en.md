@@ -1,6 +1,13 @@
-![pack.png](https://i.loli.net/2018/02/18/5a8974407b453.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59107734/230642301-61a8e538-3275-4587-87f7-749c6f9f1951.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59107734/230642247-ccc8452c-a807-497e-8822-dd46f6386b00.png">
+  <img alt="pack.png" src="https://user-images.githubusercontent.com/59107734/230642247-ccc8452c-a807-497e-8822-dd46f6386b00.png">
+</picture>
 
 ---
+
+**Languages/语言:** [中文](README.md) [**English**](README-en.md)
+
 
 <div align="center">
 
