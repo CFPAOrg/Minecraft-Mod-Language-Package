@@ -51,14 +51,9 @@
             "description": "WIP"
         },
         "hard": {
-            "name": "hard",
+            "name": "棘手的",
             "color": "ededed",
             "description": "High difficulty."
-        },
-        "review": {
-            "name": "need review",
-            "color": "ededed",
-            "description": "Need review."
         },
         "1.12.x": {
             "name": "1.12.x",
@@ -84,6 +79,9 @@
             "name": "source",
             "color": "fef2c0",
             "description": ""
+        },
+        "helpwanted": {
+            "name": "Help Wanted"
         }
     },
     "runners": [
@@ -103,10 +101,19 @@
                             {
                                 "type": "titleMatches",
                                 "pattern": "/^bug(\\(.*\\))?(!)?:/i"
-                            },
+                            }
+                        ]
+                    },
+                    "helpwanted": {
+                        "requires": 1,
+                        "conditions": [
                             {
                                 "type": "descriptionMatches",
-                                "pattern": "/(created|new|opened|made)( an| a)? bug/i"
+                                "pattern": "Help\\s?(W|要)anted|需要(\\S| )*(帮助|协助)"
+                            },
+                            {
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)H(?=\\])"
                             }
                         ]
                     }
