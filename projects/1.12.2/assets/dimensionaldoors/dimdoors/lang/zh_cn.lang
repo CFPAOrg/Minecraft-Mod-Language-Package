@@ -103,6 +103,8 @@ item.stabilized_rift_signature.unbound.info=第一次右击将存储点击位置
 item.unstable_dimensional_door.info=警告：它将把你传送到一个随机的位置
 item.oak_dimensional_door.info=放置在裂痕核心下方的方块\n以进入裂痕对应的地方，或放置在地牢维度的\n任何地方以离开地牢维度
 
+item.record.creepy.desc=Creepy - The sound of Limbo
+
 entity.dimdoors.monolith.name=灵狱之碑
 
 commands.dimteleport.usage=/dimteleport <维度> <x> <y> <z> [水平角度] [垂直角度]
@@ -141,10 +143,21 @@ dimdoors.general.depthSpreadFactor=Y轴扩散范围
 dimdoors.general.depthSpreadFactor.tooltip=逃离口袋维度或灵薄狱后Y轴的扩散范围, 以格每单位深度计。强烈建议记录此项的默认值。灵薄狱的默认深度为50。
 dimdoors.general.riftCloseSpeed=裂痕闭合速度
 dimdoors.general.riftCloseSpeed.tooltip=在使用裂痕移除器之后裂痕闭合的速度，以单位裂痕大小每游戏刻计。
+
+
 dimdoors.general.teleportOffset=传送修正
 dimdoors.general.teleportOffset.tooltip=传送后玩家距离维度门的距离，以格计。
 dimdoors.general.riftBoundingBoxInCreative=创造模式裂痕碰撞体积
 dimdoors.general.riftBoundingBoxInCreative.tooltip=启用：在创造模式将显示裂痕方块的碰撞体积。
+dimdoors.rifts.enableRiftDecay=裂痕侵蚀
+dimdoors.rifts.enableRiftDecay.tooltip=启用：裂痕将会破坏四周的方块并掉落世界纤维
+dimdoors.rifts.blockRiftDecayBlackList=裂痕侵蚀黑名单
+dimdoors.rifts.blockRiftDecayBlackList.tooltip=不会被裂痕侵蚀的方块列表
+dimdoors.rifts.maxRiftSize=最大裂痕大小
+dimdoors.rifts.maxRiftSize.tooltip=设置裂痕可以扩大到的最大大小，设置为-1以禁用。备注：裂痕将以对数形式扩大。
+dimdoors.rifts.enableWildRifts=野外裂痕生成
+dimdoors.rifts.enableWildRifts.tooltip=启用：将会自然生成裂痕
+
 
 dimdoors.pockets=口袋维度设置
 dimdoors.pockets.tooltip=用于调整口袋维度内房间的间隔和大小
@@ -158,6 +171,8 @@ dimdoors.pockets.publicPocketSize=公用口袋维度大小
 dimdoors.pockets.publicPocketSize.tooltip=设置新生成的私人口袋维度的空间大小。如果此数值大于“私人口袋维度大小”，则将会按照“私人口袋维度大小”来处理。
 dimdoors.pockets.loadAllSchematics=自动加载结构
 dimdoors.pockets.loadAllSchematics.tooltip=启用时，任何可用的结构都将在口袋维度自动加载，即使是结构体积大于“房间生成间隔”和“最大维度大小”的情况下。输入/pocket指令以用于强制生成和测试这些结构。
+dimdoors.pockets.cachedSchematics=最大缓存结构数量
+dimdoors.pockets.cachedSchematics.tooltip=以NBT而不是字节形式缓存的最大数量。如果一个结构被缓存，它将获得更快的加载速度，但会带来更多内存消耗。使用次数更多的结构更有可能被缓存。缓存将在游戏重启时清空。
 
 dimdoors.world=世界生成设置
 dimdoors.world.tooltip=用于配置裂痕集群和临时维度门的生成
@@ -169,6 +184,8 @@ dimdoors.world.clusterDimBlacklist=裂痕集群生成黑名单
 dimdoors.world.clusterDimBlacklist.tooltip=禁用一个维度的裂痕集群生成。在此写入对应的维度ID以禁用。
 dimdoors.world.gatewayDimBlacklist=临时维度门生成黑名单
 dimdoors.world.gatewayDimBlacklist.tooltip=禁用一个维度的临时维度门生成。在此写入对应的维度ID以禁用。
+dimdoors.world.enableDecayDrops=裂痕侵蚀掉落
+dimdoors.world.enableDecayDrops.tooltip=启用：被裂痕侵蚀破坏的方块将掉落世界纤维
 
 dimdoors.dungeons=地牢维度设置
 dimdoors.dungeons.tooltip=用于配置地牢维度的属性
@@ -178,9 +195,9 @@ dimdoors.dungeons.maxDungeonDepth.tooltip=设置被判定为灵薄狱区域的�
 dimdoors.monoliths=灵狱之碑设置
 dimdoors.monoliths.tooltip=用于配置灵狱之碑的威胁度
 dimdoors.monoliths.dangerousLimboMonoliths=危险的灵薄狱内灵狱之碑
-dimdoors.monoliths.dangerousLimboMonoliths.tooltip=启用后，灵薄狱内的灵狱之碑将会攻击玩家并造成伤害。
+dimdoors.monoliths.dangerousLimboMonoliths.tooltip=启用：灵薄狱内的灵狱之碑将会攻击玩家并造成伤害。
 dimdoors.monoliths.monolithTeleportation=灵狱之碑传送
-dimdoors.monoliths.monolithTeleportation.tooltip=启用后，如果被灵狱之碑注视时间过长，将把玩家传送至灵薄狱顶层。
+dimdoors.monoliths.monolithTeleportation.tooltip=启用：如果被灵狱之碑注视时间过长，将把玩家传送至灵薄狱顶层。
 
 dimdoors.limbo=灵薄狱设置
 dimdoors.limbo.tooltip=用于配置灵薄狱的属性
@@ -188,13 +205,17 @@ dimdoors.limbo.universalLimbo=全局启用灵薄狱
 dimdoors.limbo.universalLimbo.tooltip=启用：玩家在除灵薄狱以外的任何维度死亡都将导致被送入灵薄狱。禁用：玩家仅于口袋维度中死亡时才被送入灵薄狱。
 dimdoors.limbo.hardcoreLimbo=硬核灵薄狱
 dimdoors.limbo.hardcoreLimbo.tooltip=启用：玩家将无法通过死亡逃离灵薄狱，这将使得金质次元门和永恒之壁成为逃离的唯二手段。
+dimdoors.limbo.enableLimboDecay=启用破碎侵蚀
+dimdoors.limbo.enableLimboDecay.tooltip=启用：玩家逃离灵薄狱将导致逃离点被边境之壁侵蚀。
+dimdoors.limbo.blockLimboDecayBlackList=破碎侵蚀黑名单
+dimdoors.limbo.blockLimboDecayBlackList.tooltip=不会被破碎侵蚀的方块列表。
 
 dimdoors.graphics=图像设置
 dimdoors.graphics.tooltip=用于控制此模组的图像渲染，例如裂痕动画等
 dimdoors.graphics.highlightRiftCoreFor=裂痕核心高亮持续时间
 dimdoors.graphics.highlightRiftCoreFor.tooltip=在裂痕旁（并非直接放置于裂痕上）放置次元门时高亮裂痕的时间。单位为毫秒。设置为-1以禁用。
 dimdoors.graphics.showRiftCore=始终高亮裂痕核心
-dimdoors.graphics.showRiftCore.tooltip=启用后，所有裂痕的核心都将以旋转的彩色方框形式高亮。
+dimdoors.graphics.showRiftCore.tooltip=启用：所有裂痕的核心都将以旋转的彩色方框形式高亮。
 dimdoors.graphics.riftSize=裂痕渲染大小
 dimdoors.graphics.riftSize.tooltip=裂痕渲染大小倍率，默认为1。
 dimdoors.graphics.riftJitter=裂痕抖动强度
