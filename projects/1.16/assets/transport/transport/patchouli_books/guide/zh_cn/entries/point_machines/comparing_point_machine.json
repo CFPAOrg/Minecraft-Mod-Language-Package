@@ -1,0 +1,35 @@
+{
+  "name": "比较转辙机",
+  "icon": "minecraft:comparator",
+  "category": "point_machines",
+  "pages": [
+    {
+      "type": "text",
+      "text": "比较转辙机由一个输入端对着转辙铁轨的比较器组成。如果比较器的模式为比较，当矿车的信号大于等于比较器输入时，转辙铁轨就会变道；如果模式为减法，当矿车的信号小于比较器输入时，转辙铁轨就会变道。注：不是所有矿车都对比较器有反应。"
+    },
+    {
+      "type": "multiblock",
+      "name": "比较转辙机",
+      "multiblock": {
+        "mapping": {
+          "R": "minecraft:rail[shape=east_west]",
+          "D": "minecraft:rail",
+          "0": "transport:switch_rail[straight_shape=east_west,diverge_shape=south_west,diverge=true]",
+          "L": "minecraft:lever[face=floor,facing=south,powered=true]",
+          "T": "minecraft:redstone_torch",
+          "E": "minecraft:redstone_wire[east=side,power=15,west=side]",
+          "C": "minecraft:comparator[facing=south]"
+        },
+        "pattern": [
+          [
+            "TR ",
+            "ER ",
+            "C0D",
+            " R "
+          ]
+        ],
+        "enable_visualize": false
+      }
+    }
+  ]
+}

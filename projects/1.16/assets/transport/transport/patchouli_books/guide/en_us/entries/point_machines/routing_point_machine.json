@@ -1,0 +1,31 @@
+{
+  "name": "Routing Point Machine",
+  "icon": "minecraft:lectern",
+  "category": "point_machines",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Routing Point Machine is a Lectern placed facing a switch. It allows a book to have routing instructions written into it. See $(l:routing/basics)Routing Basics$() for more info"
+    },
+    {
+      "type": "multiblock",
+      "name": "Routing Point Machine",
+      "multiblock": {
+        "mapping": {
+          "R": "minecraft:rail[shape=east_west]",
+          "D": "minecraft:rail",
+          "0": "transport:switch_rail[straight_shape=east_west,diverge_shape=south_west,diverge=true]",
+          "L": "minecraft:lectern[facing=north,has_book=true]"
+        },
+        "pattern": [
+          [
+            " R ",
+            "L0D",
+            " R "
+          ]
+        ],
+        "enable_visualize": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "Redstone Point Machine",
+  "icon": "minecraft:repeater",
+  "category": "point_machines",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Redstone Point Machine is a redstone repeater placed with output. The switch will divert if the repeater is powered."
+    },
+    {
+      "type": "multiblock",
+      "name": "Redstone Point Machine",
+      "multiblock": {
+        "mapping": {
+          "R": "minecraft:rail[shape=east_west]",
+          "D": "minecraft:rail",
+          "0": "transport:switch_rail[straight_shape=east_west,diverge_shape=south_west,diverge=true]",
+          "L": "minecraft:lever[face=floor,facing=south,powered=true]",
+          "T": "minecraft:redstone_torch",
+          "E": "minecraft:repeater[powered=true]"
+        },
+        "pattern": [
+          [
+            "  R ",
+            "TE0D",
+            "  R "
+          ]
+        ],
+        "enable_visualize": false
+      }
+    }
+  ]
+}
