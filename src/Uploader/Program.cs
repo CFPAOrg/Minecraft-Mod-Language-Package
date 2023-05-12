@@ -45,14 +45,15 @@ namespace Uploader
                         var md5 = stream.ComputeMD5();
 
                         // 文件名格式：Minecraft-Mod-Language-Modpack-[dashed-version]-[md5-hash].zip
-                        // 如：Minecraft-Mod-Language-Modpack-1-12-2-0000000000000000.zip
+                        // 如：Minecraft-Mod-Language-Modpack-1-16-Fabric-0000000000000000.zip
                         // hash的对象是文件内容，不包括文件名（当然）
                         // hash应该是全大写
 
                         var fileExtensionName = _.Extension; // 带点名称，应当为 ".zip"
                         var fileName = _.Name[0..^fileExtensionName.Length]
                                         .Replace("Package", "Modpack")
-                                        .Replace('.', '-'); // 历史遗留问题
+                                        .Replace('.', '-') // 历史遗留问题，版本号需要输杠
+                                        .Replace("-1-12-2",""); // 历史遗留问题，1.12.2文件没有版本号
 
                         // 选择性地加上该文件的md5值，以便生成patch
                         var tweakedName = fileName + "-" + md5;
