@@ -142,6 +142,12 @@ namespace Packer.Extensions
                         return null;
                     }
 
+                    // 跳过非中文文件
+                    if (!relativePath.IsTargetLang(config))
+                    {
+                        return null;
+                    }
+
                     // 处理正常的语言文件
                     // TODO：Json5支持
                     var parsingCategory = file.Extension switch
