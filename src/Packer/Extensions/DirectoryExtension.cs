@@ -66,7 +66,7 @@ namespace Packer.Extensions
                                                               ref Dictionary<string, string> unprocessed,
                                                               Dictionary<string, JsonElement> parameters)
             => Utils.MergeFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
-                                FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
+                                 FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
 
         static IEnumerable<TranslatedFile> FromBackPort(DirectoryInfo assetDirectory,
                                                               Config config,
@@ -113,11 +113,8 @@ namespace Packer.Extensions
                     var prefixLength = assetDirectory.FullName.Length;
                     var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置，用反斜杠分割
 
-                    // 跳过非中文文件
-                    if (!relativePath.IsTargetLang(config))
-                    {
-                        return null;
-                    }
+                    // 处理被跳过的文本。处理顺序：policy -> [bypass](font, textures) -> !zh_cn
+                    // 顺序乱了会导致字体文件被丢弃，因为没有带zh_cn
 
                     // 跳过检索策略文件
                     if (relativePath == "packer-policy.json")
@@ -136,7 +133,14 @@ namespace Packer.Extensions
                         return null;
                     }
 
+                    // 跳过非中文文件
+                    if (!relativePath.IsTargetLang(config))
+                    {
+                        return null;
+                    }
+
                     // 处理正常的语言文件
+                    // TODO：Json5支持
                     var parsingCategory = file.Extension switch
                     {
                         ".json" => FileCategory.JsonAlike,
