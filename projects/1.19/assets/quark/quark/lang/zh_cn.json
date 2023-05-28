@@ -219,8 +219,8 @@
   "quark.jei.hint.rope": "必须放置在天花板上，可以攀爬。右击已经放置的绳索可以下放绳索，潜行时右击可以拉起。可以移动最底端接触到的方块。",
   "quark.jei.hint.seed_pouch": "可以容纳一堆（640个）任何同种种子/树苗，只需右键单击它们来放入/取出。主手或副手拿着种子袋时，它会自动收起你拾取的同种种子/树苗。主手拿着种子袋时潜行右击耕地可种植3x3区域。",
   "quark.jei.hint.shale": "可以在寒冷的生物群系中找到它的大型矿脉。",
-  "quark.jei.hint.slime_in_a_bucket": "Use a Bucket on a tiny slime to pick it up. It'll start jumping in the bucket when you're inside a slime chunk.",
-  "quark.jei.hint.soul_bead": "Drops from Wraiths in Soul Sand Valleys. Will fly towards the nearest Nether Fortress when used.",
+  "quark.jei.hint.slime_in_a_bucket": "对小型史莱姆使用桶，将其装入桶内。当你在史莱姆区块中时，它会开始跳动。",
+  "quark.jei.hint.soul_bead": "Drops from Wraiths in Soul Sand Valleys. Will fly towards the nearest Nether Fortress when used.由灵魂沙峡谷的游魂掉落。被使用时会飞向最近的下界要塞。",
   "quark.jei.hint.sturdy_stone": "Can not be moved by pistons.",
   "quark.jei.hint.tiny_potato": "It believes in you!",
   "quark.jei.hint.torch_arrow": "Will place an arrow wherever it lands.",
@@ -424,8 +424,8 @@
   "quark.misc.repaired": "（已修复）",
   "quark.misc.celebration": "庆祝Vazkii模组十周年（2021）",
   "quark.misc.ancient_tome_tooltip": "+I %s（最高为%s）",
-  "quark.misc.ancient_tome_tooltip_curse": "Applies a random curse",
-  "quark.misc.ancient_tome_tooltip_any": "(Any Enchantment)",
+  "quark.misc.ancient_tome_tooltip_curse": "附上一条随机诅咒",
+  "quark.misc.ancient_tome_tooltip_any": "（无魔咒）",
   "quark.misc.autowalking": "自动行走",
   "quark.misc.rightclick_to_craft": "右击合成",
   "quark.misc.opened_screen": "已打开界面%s",
@@ -764,7 +764,7 @@
   "block.quark.chorus_fruit_block": "紫颂果块",
   "block.quark.cocoa_beans_sack": "袋装可可豆",
   "block.quark.berry_sack": "袋装甜浆果",
-  "block.quark.glowberry_sack": "袋装荧光浆果",
+  "block.quark.glowberry_sack": "袋装发光浆果",
   "block.quark.golden_apple_crate": "箱装金苹果",
   "block.quark.gunpowder_sack": "袋装火药",
   "block.quark.nether_wart_sack": "袋装下界疣",
@@ -1168,7 +1168,7 @@
   "block.quark.iron_pillar": "铁柱",
   "block.quark.deepslate_furnace": "深板岩熔炉",
   "block.quark.blackstone_furnace": "黑石熔炉",
-  "block.quark.glow_lichen_growth": "荧光地衣增长物",
+  "block.quark.glow_lichen_growth": "发光地衣增长物",
   "block.quark.glow_shroom": "荧光菇",
   "block.quark.glow_shroom_stem": "荧光菇柄",
   "block.quark.glow_shroom_block": "荧光菇方块",
@@ -1366,7 +1366,7 @@
   "block.quark.potted_weeping_vines": "垂泪藤盆栽",
   "block.quark.potted_wheat": "小麦盆栽",
   "block.quark.potted_yellow_blossom_sapling": "阳光花树苗盆栽",
-  "block.quark.potted_glow_lichen_growth": "荧光地衣盆栽",
+  "block.quark.potted_glow_lichen_growth": "发光地衣盆栽",
   "block.quark.potted_glow_shroom": "荧光菇盆栽",
   "block.quark.potted_chorus_weeds": "紫颂杂草盆栽",
   "block.quark.potted_chorus_twist": "紫颂缠草盆栽",
@@ -1395,7 +1395,7 @@
   "advancements.quark.mine_toretoise.title": "矿石龟！",
   "advancements.quark.mine_toretoise.description": "用镐子挖取野生乌龟背上的矿物",
   "advancements.quark.mine_fed_toretoise.title": "我们发财了！",
-  "advancements.quark.mine_fed_toretoise.description": "给乌龟喂食荧光浆果之后再次收获其背上的矿物",
+  "advancements.quark.mine_fed_toretoise.description": "给乌龟喂食发光浆果之后再次收获其背上的矿物",
   "advancements.quark.throw_pickarang.title": "不知怎么的就回来了",
   "advancements.quark.throw_pickarang.description": "扔出一个皮卡镖",
   "advancements.quark.retreive_flamerang.title": "翱翔吧，火焰鸟",
@@ -1534,7 +1534,7 @@
   "quark.config.building.celebratory_lamps.desc": "新的灯具方块，可以使用石头/石砖、玻璃和火把制作。\n它们有石头和石砖变体，提供亮度等级为15的光照。\n它们是V姐为庆祝其模组生涯十周年而添加的纪念物品。\n（V姐的模组生涯：2011 - 2021，从 Lamps 模组开始。）",
 
   "quark.config.building.compressed_blocks.name": "压缩方块",
-  "quark.config.building.compressed_blocks.desc": "现在有一堆方块可以制作压缩变体。\n(1) 木炭可以制作木炭块，它将永远燃烧。\n(2) 烈焰棒和烈焰粉可以制作烈焰灯。它也会永远燃烧。\n(3) 皮革可以制作打包皮革。\n(4) 甘蔗、竹子、仙人掌、紫颂果和树枝可以制成各种方块，可以像柱那样放置。\n(5) 马铃薯、（金）苹果、（金）胡萝卜和甜菜根可以制作成箱装变体。箱装金苹果可用作信标基座方块。\n(6) 荧光浆果（1.18+版本）、可可豆、甜浆果、下界疣和火药可以制作成袋装变体。如果启用了袋装下界疣，则下界疣块的配方更改为2x2。",
+  "quark.config.building.compressed_blocks.desc": "现在有一堆方块可以制作压缩变体。\n(1) 木炭可以制作木炭块，它将永远燃烧。\n(2) 烈焰棒和烈焰粉可以制作烈焰灯。它也会永远燃烧。\n(3) 皮革可以制作打包皮革。\n(4) 甘蔗、竹子、仙人掌、紫颂果和树枝可以制成各种方块，可以像柱那样放置。\n(5) 马铃薯、（金）苹果、（金）胡萝卜和甜菜根可以制作成箱装变体。箱装金苹果可用作信标基座方块。\n(6) 发光浆果（1.18+版本）、可可豆、甜浆果、下界疣和火药可以制作成袋装变体。如果启用了袋装下界疣，则下界疣块的配方变为2x2。",
 
   "quark.config.building.duskbound_blocks.name": "黯缚块",
   "quark.config.building.duskbound_blocks.desc": "由紫珀块和黯幻境石制成的紫色外观方块，完整具有楼梯、台阶和墙壁变体。\n还包括黯缚灯，由黯缚块和末影珍珠制成。\n仅限1.16+版本：黯缚块和所有变体也免疫龙的伤害。",
@@ -1553,6 +1553,13 @@
 
   "quark.config.building.bamboo_backport1.name": "",
   "quark.config.building.bamboo_backport1.desc": "",
+
+
+
+  "quark.config.tools.ancient_tomes.name": "古卷",
+  "quark.config.tools.ancient_tomes.desc": "",
+  "quark.config.tools.ancient_tomes.curse_gear.name": "诅咒装备",
+  "quark.config.tools.ancient_tomes.curse_gear.desc": "使用古卷的同时也会给你的物品随机附上诅咒",
 
   "_avoid_json_format_fault": ""
 }
