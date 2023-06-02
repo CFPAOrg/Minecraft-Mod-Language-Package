@@ -1,5 +1,5 @@
 # RAM模块
-![不适合笨蛋.](item:tis3d:random_access_memory_module)
+![不适合笨蛋](item:tis3d:random_access_memory_module)
 
 RAM模块存储了大量的，总共256个值，以供后续检索。正如它的名字所说，里面存储的每个值都可以独立访问。请注意，由于高存储密度，内存模块限定为8位值，不像TIS-3D计算机本体那样惊人地支持16位值。
 
