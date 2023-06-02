@@ -1,5 +1,5 @@
 # ROM模块
-![ROM会记住的.](item:tis3d:read_only_memory_module)
+![ROM会记住的](item:tis3d:read_only_memory_module)
 
 只读存储器模块(ROM模块)很像[RAM模块](random_access_memory_module.md)，因为它也存储了256个8-bit数值以供后续检索，访问存储的值的方法和[RAM模块](random_access_memory_module.md)相同。
 
