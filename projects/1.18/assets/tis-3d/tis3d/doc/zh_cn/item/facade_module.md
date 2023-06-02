@@ -1,5 +1,5 @@
 # 伪装板模块
-![你搁这逗我玩呢!?](item:tis3d:facade_module)
+![你搁这逗我玩呢！？](item:tis3d:facade_module)
 
 伪装板模块没有技术性的功能，它仅仅被用来盖住[外壳](../block/casing.md)上面未使用的模块插槽。
 
