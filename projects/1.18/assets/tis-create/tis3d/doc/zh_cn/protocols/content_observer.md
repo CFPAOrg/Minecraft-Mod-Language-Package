@@ -1,5 +1,5 @@
 # 物品侦测器
-![让我仔细看看...](block:create:content_observer)
+![让我仔细看看……](block:create:content_observer)
 
 串口模块可以与物品侦测器交互，回报其附着的容器中物品与流体的数量。返回的数量值会考虑物品侦测器的过滤器配置。此接口同时支持读写操作。
 
