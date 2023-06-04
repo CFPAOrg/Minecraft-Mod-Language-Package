@@ -1,5 +1,5 @@
 # 执行模块
-![执——行!](item:tis3d:execution_module)
+![执——行！](item:tis3d:execution_module)
 
 执行模块是用来给TIS-3D计算机编程的主要手段。当它 被安装在[外壳](../block/casing.md)上面时，对着它使用里面写着代码的（MC原版）书就可以导入程序。
 为了得到更加便捷的开发体验，可以考虑使用[编码书](code_book.md)， 它是每位专业人士真正的、经过实践检验的工具。
