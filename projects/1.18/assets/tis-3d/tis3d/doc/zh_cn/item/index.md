@@ -22,5 +22,5 @@
 
 ## 实用工具
 - [钥匙](key.md)
-- [TIS-3D 参考手册](manual.md)
+- [TIS-3D参考手册](manual.md)
 - [编码书](code_book.md)
