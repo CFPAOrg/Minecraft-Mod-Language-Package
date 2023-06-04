@@ -1,4 +1,4 @@
-# 七段显示门
+# 七段数码管
 
 ![展示你数字的完美手段！](item:tisadvanced:seven_segment_display)
 
