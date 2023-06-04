@@ -1,5 +1,5 @@
 # 应力表
-![可把我累坏了... :(](block:create:stressometer)
+![可把我累坏了…… :(](block:create:stressometer)
 
 串口模块能够与应力表交互，回报网络的当前应力消耗，或网络的最大应力容量。
 
