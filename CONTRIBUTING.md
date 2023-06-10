@@ -4,8 +4,8 @@
 
 定义：
 
-- 语言文件，指 Minecraft 中为显示文本提供支持的文件，囊括所有语言，包括但不限于模组本体所提供的 LANG 文件、JSON文件、手册语言文件。
-  - 翻译文件（下文亦称“翻译”），即中文语言文件。指本项目的翻译文件存放在 `projects/{版本}/assets` 中。
+- 语言文件，指 Minecraft 中为显示文本提供支持的文件，包括所有语言，包括但不限于模组本体所提供的 LANG 文件、JSON文件、手册语言文件。
+  - 翻译文件（下文亦称“翻译”），专指中文语言文件。本项目的翻译文件存放在 `projects/{版本}/assets` 中。
 - 代码文件（下文亦称“代码”），指本项目 `src` 目录下所有代码文件。
 - 配置文件（下文亦称“配置”），指本项目 `config` 目录下所有代码文件。
 - Pull Requests（下文亦称“PR”）：指在[本页面](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pulls)提交的请求。
@@ -22,6 +22,10 @@
       - [PR 内容](#pr-内容)
     - [翻译质量控制](#翻译质量控制)
     - [翻译内容审查](#翻译内容审查)
+      - [审查规则](#审查规则)
+      - [审查人](#审查人)
+      - [PR 作者](#pr-作者)
+    - [搁置规则](#搁置规则)
   - [代码贡献指南](#代码贡献指南)
   - [配置更改指南](#配置更改指南)
     - [Packer](#packer)
@@ -66,24 +70,20 @@ Minecraft-Mod-Language-Package
 
 **CurseForge 项目名称**：以匠魂为例，它的 CurseForge 页面地址是 `https://www.curseforge.com/minecraft/mc-mods/tinkers-construct`，则 `CurseForge 项目名称` 为 `tinkers-construct`。因为它是唯一的，被用来追溯模组来源。
 
-**命名空间（Namespace）**：以匠魂为例，它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://minecraft.fandom.com/zh/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
+**命名空间（Namespace）**：以匠魂为例，用压缩软件打开模组文件（JAR 格式），它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://minecraft.fandom.com/zh/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
 
 仓库中“命名空间”文件夹下的目录结构与[资源包](https://minecraft.fandom.com/zh/wiki/%E8%B5%84%E6%BA%90%E5%8C%85)的相应结构相同。
 
 ## 翻译用语共识
 
 1. “材料+质/制+中心词”的翻译，如“铁质涡轮”“铁制涡轮”，二者皆合理。只需单模组内统一。
-2. 关于“木制品名称”的翻译，可参考 https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/2715#discussion_r1056901664 中的解决方法。
+2. 关于“木制品名称”的翻译，可参考 <https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/2715#discussion_r1056901664> 中的解决方法。
 
 ## 翻译贡献方针
 
 以下内容只针对对 [projects](./projects) 文件夹下的贡献。
 
-发布 PR 即代表：
-
-1. **你已阅读并同意按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议发布你的作品**。
-2. **你已阅读 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)**。
-3. 你能够**接受**因翻译质量问题而提出的批评，并在收到建议后**愿意**与批评者讨论是否接受更改。
+本仓库中的所有翻译**必须**符合 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)的规定。
 
 ### Pull Request 相关规定
 
@@ -93,28 +93,24 @@ Minecraft-Mod-Language-Package
 
 #### 标题与文字内容
 
-- PR 标题需简洁明了，格式应为 `{模组英文全名} {简述}`。
+- PR 标题**应该**简洁明了，格式为 `{模组英文全名}{空格}{简述}`。
   - ✔️`Tinkers Construct 翻译提交`
   - ✔️`Tinkers Construct 和 Tinkers' Reforged 译名修正`
   - ❌`TiC3 翻译更新`（未使用全名）
   - ❌`匠魂翻译更新`（未包含英文名）
   - ❌`提交 Tinkers Construct 翻译`（英文名前不应有文字）
-- PR 模板中的检查单应照做并完成勾选，详见[“检查单”使用说明](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2539)。
+- PR 模板中的检查单**必须**照做并完成勾选，详见[“检查单”使用说明](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2539)。
 
 #### PR 内容
 
-- 提交 PR 至`main`分支。
-- 确保提交的语言文件的路径是正确的：`projects/{版本}/assets/{CurseForge 项目名称}/{命名空间}/lang`
-- 未完工的翻译仍可提交 PR，可以将其设置为 draft。
-- 必须包含简体中文及翻译源语言的语言文件。
-  - 若翻译源语言不是英文，请附上英文语言文件（如有）以供参考。
-  - 禁止提交除上述三种语言以外的语言文件。
-- 若要提交多个模组的翻译，尽量按一个 PR 仅含一个模组的原则来提交。
-  - 若多个模组包含的中文总行数不超过 200，允许合并为一个 PR（<https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/discussions/1770>）。
-- 若只提交英文原文，请一并提交空白中文文件。
-  - 1.12 空白翻译文件为无内容的文件。
-  - 1.16 及以上空白翻译文件为只包含左右花括号即`{}`的文件，[例子](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json)。
-- 尽量用相关词语填写 commit massage，如`提交`、`更新`、`修改`、`删除`。
+- **必须**提交 PR 至`main`分支。
+- **必须**路径合规，详见[仓库结构](#仓库结构)。
+- **必须**包含简体中文、翻译源语言的语言文件。
+  - 若翻译源语言不是英语，且模组有英语语言文件，则**必须**包含英语语言文件。
+- **建议**每个 PR 仅含一个模组。
+  - 若多个模组的中文总行数不超过 200，**建议**合并为一个 PR（<https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/discussions/1770>）。
+
+- **建议**用相关词语填写提交消息（Commit Message），如`提交`、`更新`、`修改`、`删除`。
 - 如果上传的文件中包含**非文本文件**（如`.ttf`，`.jpg`等），**有可能需要修改 [Packer 配置](config/packer.json)**，否则它们会被打包器排除，不会进入用户使用的资源包。
   - 如果这些文件放置在`font`或`textures`中，一般不用修改配置；默认已经对这两处进行了特殊处理。
 - 不同版本的同一模组可通过[自定义文件检索策略](./Packer-Index-Doc.md)同步翻译。
@@ -123,7 +119,7 @@ Minecraft-Mod-Language-Package
 
 - **本项目对机翻、生硬翻译并不友好，还请在提交具有这些特征的文件时深思熟虑。**
 - 无论是哪种提交方式，都需要在**审查（review）通过**后才会推送至本项目。
-- CFPABot 的报错需要二次确认。
+- CFPABot 已停止维护，其报错需要二次确认。
 <!--
 ### Weblate
 
@@ -135,14 +131,24 @@ Minecraft-Mod-Language-Package
 
 ### 翻译内容审查
 
-- **涉及机翻、生硬翻译的部分将在审查时被提出并要求作者更改**。
-- 除**仓库的外部协作者（Outside Collaborator）外**，其他人也可对审查翻译。
-- 请尊重每一位审查人提出的建议，并且能够依照建议修正中翻译中存在的失误。
-- 审查人部分情况下可能不曾了解或游玩过此模组，提出的部分修改意见仅供参考。
-- 审查时间可能极长，极端情况下可能长达数月。
-- 若确有为 PR **添加标签（Label）的需求**，请在 PR 中提出，待**协作者（Collaborator）评估**后即会添加相关标签。
-- 对于审查后 PR 作者无响应的 PR，本仓库遵循 [“7+7”原则与“3+7原则”](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2658)。
-- 每个 PR 需要至少一个外部协作者及以上权限用户的批准（Approval）才能合并。
+#### 审查规则
+
+- 审查的基本依据**是**[翻译贡献方针](#翻译贡献方针)。
+- 审查流程**必须**满足本文档[翻译内容审查](#翻译内容审查)内容所述。
+- 审查过程中各方**应**遵守[礼仪](https://zh.wikipedia.org/wiki/Wikipedia:%E7%A4%BC%E4%BB%AA)。
+
+#### 审查人
+
+- 任何人都能利用 GitHub 提供的[相关功能](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request)来审查 PR 中翻译。所有参与审查的用户即为审查人。
+- [CFPA团队](https://github.com/CFPAOrg)的成员（Member）和[仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人。
+- 至少一位具有官方身份的审查人对 PR 给出批准（Approval）审查后，PR 才能合并。
+
+#### PR 作者
+
+- PR 作者**应**对审查人并作出合理回应。
+- PR 作者应及时做出回应，否则 PR 可能会按搁置规则关闭。
+
+### 搁置规则
 
 ## 代码贡献指南
 

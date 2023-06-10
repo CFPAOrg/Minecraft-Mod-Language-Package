@@ -4,7 +4,7 @@
 若对检查单有疑惑，请查看Issues列表的 #2539 “检查单”使用说明 & 错误“检查单”使用情况报告
 -->
 
-- [ ] 我已**仔细**阅读贡献指南 [CONTRIBUTING](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)；
-- [ ] 我已确认英文原文（如 en_us.json）存在且完整，内容与中文对应；
+- [ ] 我已**仔细**阅读[贡献方针](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)（CONTRIBUTING）；
+- [ ] 我已确认外语原文（en_us.json）存在且完整，内容与中文对应；
 - [ ] 我已阅读并同意按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议发布我的作品；
 - [ ] 刷新 PR 的标签/状态，有需要再点击；
