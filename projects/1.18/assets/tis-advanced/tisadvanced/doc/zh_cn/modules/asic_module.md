@@ -15,9 +15,9 @@
 - ASIN：反正弦（arcsin）
 - ACOS：反余弦（arccos）
 - ATAN：反正切（arctan）
-- SINH：双曲正弦
-- COSH：双曲余弦
-- TANH：双曲正切
+- SINH：双曲正弦（sinh）
+- COSH：双曲余弦（cosh）
+- TANH：双曲正切（tanh）
 
 手持此物品然后右键就可以循环选中下一个功能，潜行右键可以向上循环选中功能。
 
