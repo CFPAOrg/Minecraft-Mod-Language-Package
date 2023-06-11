@@ -2,7 +2,7 @@
 
 ![我还要更多数学！](item:tisadvanced:asic_module)
 
-专用集成电路（Application Specific Integrated Circuit ，缩写为ASIC）模块支持进行一些手动实现太复杂的高级数学运算操作。可用的功能在下面列出：
+专用集成电路（Application Specific Integrated Circuit ，缩写为ASIC）模块支持进行一些手动实现太复杂的高级数学运算操作。可用的功能如下所示：
 
 - SIN：正弦（sin）
 - COS：余弦（cos）
