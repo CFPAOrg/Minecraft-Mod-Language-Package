@@ -9,7 +9,7 @@ TIS Advanced包含如下新内容：五个新的模块，还有执 行模块的�
 - [ASIC模块](modules/asic_module.md)
 - [磁带存储模块](modules/tape_storage.md)
 - [无线电模块](modules/radio_module.md)
-- [七段显示门](modules/seven_segment_display.md)
+- [七段数码管](modules/seven_segment_display.md)
 - [雷达模块](modules/radar_module.md)
 
 ## 执行模块的新指令
