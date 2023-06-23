@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using System.Text.Encodings.Web;
 
 namespace Packer.Extensions
 {
@@ -49,17 +50,19 @@ namespace Packer.Extensions
             // 特殊符号替换
             foreach (var mapping in config.CharatcerReplacement)
             {
+                var escaped = JavaScriptEncoder.Default.Encode(mapping.Value);
                 if (content.Contains(mapping.Key))
                 {
-                    Log.Information("正在进行特殊符号替换：{0} -> {1}", mapping.Key, mapping.Value);
+                    Log.Information("正在进行特殊符号替换：{0} -> {1}", mapping.Key, escaped);
                 }
+                
                 if ((category & FileCategory.JsonAlike) == FileCategory.JsonAlike)
                 { // 替换为 unicode 转义码
-                    content = content.Replace(mapping.Key, mapping.Value);
+                    content = content.Replace(mapping.Key, escaped);
                 }
                 else
                 { // 替换为 unicode 字符
-                    content = content.Replace(mapping.Key, Regex.Unescape(mapping.Value));
+                    content = content.Replace(mapping.Key, mapping.Value);
                 }
 
             }

@@ -46,6 +46,18 @@ namespace Packer.Extensions
                 var destination = path.StripModName() // 除掉一层文件夹（在 assets/ 里的各种 fix）
                                       .NormalizePath();
                 Log.Information("初始化压缩包：添加 {0}", destination);
+
+                // pack.mcmeta 特殊处理：添加时间戳
+                if(destination == "pack.mcmeta")
+                {
+                    using var writer = new StreamWriter(
+                        archive.CreateEntry(destination)
+                               .Open());
+
+                    writer.Write(Utils.AppendTimestamp($"{commonPrefix}/{path}"));
+                    return;
+                }
+
                 archive.CreateEntryFromFile($"{commonPrefix}/{path}", destination);
             });
 
