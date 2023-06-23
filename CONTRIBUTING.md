@@ -46,7 +46,7 @@
 - 如果上传的文件中包含_**非文本文件**_（如`.ttf`等字体文件，`.jpg`等图片），**有可能需要修改[Packer配置](./CONTRIBUTING.md#configpackerjson)**。
   - 如果这些文件放置在`font`/`textures`中，一般不用修改配置；默认已经对这两处进行了特殊处理。
   - 当然，如果实在弄不清楚怎么改，也可以让我们代劳。
-- 如果涉及到Packer的文件检索模式，请参照[这里](./Packer-Index-Doc.md)
+- 如果涉及到多版本翻译，可以考虑使用**Packer的非标准文件检索模式**。请参照[这里](./Packer-Index-Doc.md)。
 
 有关**审查**（Review）的说明：
 
@@ -122,9 +122,9 @@
 - 请不要在**未经同意**的情况下修改默认爬取数量。
 
 
-### config/packer.json
+### config/packer/[version].json
 
-该文件内放置了**所有**正在维护的版本的打包配置。
+该文件夹内放置了**所有**正在维护的版本的打包配置。
 最好不要随意*删去*内容，除非你知道它曾经是干什么的，现在为什么不需要了。
 *加入*内容相对而言宽松一些，但最好还是说明理由。
 
@@ -132,7 +132,12 @@
 
 主要的更改场景：
 - 增加新翻译版本
-  - 需要将所有项填写一遍，同时需要更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及CFPABot等相关服务。没有规划最好不要乱动。
+  - 需要在新文件`<version>.json`将所有项填写一遍，同时需要创建正确的文件结构、基础文件，更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及CFPABot等相关服务。没有规划最好不要乱动。
+- 从资源包中移除某模组，但保留原文件
+  - 将此模组的`curseforge项目名`加入`modNameBlackList`。
+- 更改字符替换表
+  - 对`replacementMap`进行修改，格式与已有文本一致。Unicode BMP以外的字符使用UTF-16代理对输入，否则可能无法识别。
+  - 同时可能需要修改字体文件。
 - 处理非文本文件
   1. 如果该文件所在的`namespace`（`asset-domain`下方的一级）对**任何模组都**不会有文本文件（如font\），将该`namespace`加入对应版本的`noProcessNamespace`中
   2. 否则，将该模组的`curseforge项目名`或`asset-domain`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`（对应），
