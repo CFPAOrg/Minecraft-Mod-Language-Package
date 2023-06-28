@@ -94,18 +94,18 @@ Minecraft-Mod-Language-Package
 
 ### Pull Request 相关规定
 
-可查看[视频教程](https://www.bilibili.com/video/BV1Xi4y1r7S2/)（已过时）或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
+可查看[视频教程1](https://www.bilibili.com/video/BV1Xi4y1r7S2/)（已过时）、[视频教程2](https://www.bilibili.com/video/BV1Ph4y1R7M8/)或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
 
 视频或文字教程中与翻译贡献方针不同的地方，以本方针为准。
 
 #### 标题与文字内容
 
 - PR 标题**应该**简洁明了，格式为 `{模组英文全名}{空格}{简述}`。
-  - ✔️`Tinkers Construct 翻译提交`
-  - ✔️`Tinkers Construct 和 Tinkers' Reforged 译名修正`
+  - ✔️`Tinkers' Construct 翻译提交`
+  - ✔️`Tinkers' Construct 和 Tinkers' Reforged 译名修正`
   - ❌`TiC3 翻译更新`（未使用全名）
   - ❌`匠魂翻译更新`（未包含英文名）
-  - ❌`提交 Tinkers Construct 翻译`（英文名前不应有文字）
+  - ❌`提交 Tinkers' Construct 翻译`（英文名前不应有文字）
 - PR 模板中的检查单**必须**照做并完成勾选，详见[“检查单”使用说明](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2539)。
 
 #### PR 内容
@@ -151,7 +151,7 @@ Minecraft-Mod-Language-Package
 
 搁置规则的目的是解决由于 PR 作者迟迟不出面相应审查要求而导致的 PR 积压问题。
 
-1. 若 PR 中存在未作者未响应的审查超过 7 天，审查人**可以**提及（@）PR 作者，提醒其相应审查意见，然后加上“即将被搁置”标签。
+1. 若 PR 中存在未作者未响应的审查超过 7 天，审查人有权提及（@）PR 作者，提醒其相应审查意见，然后加上“即将被搁置”标签。
 2. 若“即将被搁置”标签存在超过 7 天，PR 将被关闭。
 3. 在 1、2 所述过程中，若 PR 作者有实质性回应，审查人**应**去除“即将被搁置”标签，计时重新从 1 开始。
 
