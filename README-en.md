@@ -19,7 +19,7 @@
 
 ## About this Repository
 
-This is the repository of the project for translating Minecraft mods into simplified Chinese, currectly using a platform called Weblate which is similar to Crowdin.
+This is the repository of the project for translating Minecraft mods into simplified Chinese.
 
 This project aims to deal with certain problems where localizations are not accepted in time or simply fail to be accepted.
 
@@ -35,16 +35,7 @@ This project is licensed under the [Creative Commons Attribution-NonCommercial-S
 
 ## Usage
 
-Download the *released* version [here](https://minecraft.curseforge.com/projects/simplified-chinese-localization-resource-package) or the *snapshot* version [here](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/releases/latest).<br>
-To apply, simply load this pack like any other resource pack. In case of some issues, restarting Minecraft after loading is recommended.
-
-## Related Information
-
-**How does the current localization project look like? Can I submit my list of mods that I want them to be translated?**
-
-Currently, according to the popularity on CurseForge, we have chosen Minecraft 1.12.2 for the majority of our work, with over 1000 mods in the project. If you want any other mod to be translated, you can suggest through our [issue tracker](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues), or email us directly.
-
-We have been propagating this project on [the MCBBS page](http://www.mcbbs.net/thread-774087-1-1.html).
+Download the resourcepack of your game version in Release page and simply apply it like other resourcepacks.
 
 ## Credits
 
