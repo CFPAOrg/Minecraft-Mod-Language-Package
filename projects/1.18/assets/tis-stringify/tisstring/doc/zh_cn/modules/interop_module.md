@@ -15,7 +15,7 @@
 `casing.pushInt(Number)`
 向模块压入一个整数，如果超过Short.MAX_VALUE（即16位有符号数范围上限）会自动判断符号。
 `casing.pushFloat(Number)`
-向模块压入一个浮点数，预计将会丢失精度
+向模块压入一个浮点数，可能会出现精度丢失
 `casing.getLen():Number`
 返回当前互操作模块里面可供取出的数值有多少
 
