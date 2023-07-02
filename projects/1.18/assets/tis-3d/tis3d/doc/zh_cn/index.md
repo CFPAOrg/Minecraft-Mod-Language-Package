@@ -2,7 +2,7 @@
 “Tessellated Intelligence System(嵌合智能系统，TIS)是一 个大规模并行计算机架构，由非均匀的互联异构节点构成。TIS系统对于那些需要处理复杂数据流的应用来说十分合适，如自动金融贸易、大数据收集、以及公民行为分析。”
 —— *TIS-100参考手册*
 
-TIS-3D是对TIS系统设计在三维上的重新展现。它的目的 是控制Minecraft世界中的各种原本需要复杂红石操纵的机器和机制。或者说仅仅提供一个有趣的挑战，也就是它本身！
+TIS-3D是对TIS系统设计在三维上的重新展现。它的目的 是控制Minecraft世界中各种原本需要复杂红石才能操纵的机器和机制。或者仅是作为一个有趣的挑战！
 
 ## 计算机详述
 借助TIS-3D可构建强大的模块化计算机。一台计算机包 括一台[控制器](block/controller.md)和最多16个[外壳](block/casing.md)。[外壳](block/casing.md)与控制器通过共面 连接在一起。注意，与[控制器](block/controller.md)的连接是可以传递的： 也就是说，若[外壳](block/casing.md)`C1`连接到了一台[控制器](block/controller.md)上，[外壳](block/casing.md)`C2`连接到了[外壳](block/casing.md)`C1`上，那`C2`也会自动与这个[控制器](block/controller.md)相连。
