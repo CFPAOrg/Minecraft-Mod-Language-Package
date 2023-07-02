@@ -10,7 +10,7 @@
 ![表1](../img/seq_gearshift/table1.png)
 向可编程齿轮箱写入停止指令会清空它下面的所有指令
 
-下面的表格描述了每个数据类型的值范围：
+各个数据类型值范围表格如下：
 
 ![表2](../img/seq_gearshift/table2.png)
 
