@@ -75,7 +75,7 @@
 - 请确保提交文件的路径是**正确**的（[例子](#提交文件路径的例子)）。
   - 如果是 1.12 翻译，应该是：`projects/1.12.2/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.lang`
   - 如果是 1.16 及以上的翻译，应该是：`projects/{版本}/assets/{CurseForge 项目名称}/{ModID}/lang/zh_cn.json`
-- 未完工的翻译仍可提交 PR，可以先设置为 Draft。[如何设置 PR 为 Draft](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/raw/main/%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AEPR%E4%B8%BADraft.jpg)
+- 未完工的翻译仍可提交 PR，可以先设置为 Draft。[如何设置 PR 为 Draft](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request)
 - 善用相关词语填写 PR 信息或 Commit 信息，如提交、更新/修改、删除。
 - 提交 PR 后，后续跟进消息会以邮件的方式通知，请**留意**注册邮箱（有可能会被处理为垃圾邮件）。
 - 请勿对本地化修复文件做出任何改动。
