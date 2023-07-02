@@ -3,7 +3,7 @@
 
 （警告：此模块可能不存在，请不必担心，这意味着你没有安装ComputerCraft）
 
-互操作模块让你能够使用CC电脑与TIS-3D计算机交互， 只需用`peripheral.find("casing")`来绑定安装了此模块的外壳，就可以尽情享受它提供的功能，此模块始终可读写。
+互操作模块使你能用CC电脑与TIS-3D计算机交互， 只需用`peripheral.find("casing")`来绑定安装了此模块的外壳，就可以尽情使用它提供的功能，此模块始终可读写。
 
 提供给CC的函数有：
 `casing.popInt(): Number|nil`
