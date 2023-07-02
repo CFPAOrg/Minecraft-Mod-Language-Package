@@ -5,7 +5,7 @@
 
 互操作模块使你能用CC电脑与TIS-3D计算机交互， 只需用`peripheral.find("casing")`来绑定安装了此模块的外壳，就可以尽情使用它提供的功能，此模块始终可读写。
 
-提供给CC的函数有：
+可用的CC函数有：
 `casing.popInt(): Number|nil`
 从互操作模块取出一个数值（有符号整数），如果为空则返回`nil`
 `casing.popUint(): Number|nil`
