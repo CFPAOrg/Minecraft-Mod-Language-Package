@@ -5,7 +5,7 @@
 TIS-3D是对TIS系统设计在三维上的重新展现。它的目的 是控制Minecraft世界中各种原本需要复杂红石才能操纵的机器和机制。或者仅是作为一个有趣的挑战！
 
 ## 计算机详述
-借助TIS-3D可构建强大的模块化计算机。一台计算机包 括一台[控制器](block/controller.md)和最多16个[外壳](block/casing.md)。[外壳](block/casing.md)与控制器通过共面 连接在一起。注意，与[控制器](block/controller.md)的连接是可以传递的： 也就是说，若[外壳](block/casing.md)`C1`连接到了一台[控制器](block/controller.md)上，[外壳](block/casing.md)`C2`连接到了[外壳](block/casing.md)`C1`上，那`C2`也会自动与这个[控制器](block/controller.md)相连。
+可借助TIS-3D构建强大的模块化计算机。一台计算机包 括一台[控制器](block/controller.md)和最多16个[外壳](block/casing.md)。[外壳](block/casing.md)与控制器共面 连接。注意，与[控制器](block/controller.md)的连接是可传递的： 也就是说，若[外壳](block/casing.md)`C1`连接到了一台[控制器](block/controller.md)上，[外壳](block/casing.md)`C2`连接到了[外壳](block/casing.md)`C1`上，那`C2`也会自动与这个[控制器](block/controller.md)相连。
 
 计算机有且只能有一台[控制器](block/controller.md)。如果多个[控制器](block/controller.md)直接或间接地连接，计算机就无法启动。一台计算机如果有超过16个[外壳](block/casing.md)也无法启动。
 
