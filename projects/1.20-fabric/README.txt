@@ -1,4 +1,4 @@
-本资源包是适用于 Minecraft 1.19.4 的简体中文资源包，提供模组的简体中文本地化。
+本资源包是适用于 Minecraft 1.20.1 Fabric 的简体中文资源包，提供模组的简体中文本地化。
 
 项目主页：https://cfpa.site/
 参与贡献：https://cfpa.site/joinus.html
