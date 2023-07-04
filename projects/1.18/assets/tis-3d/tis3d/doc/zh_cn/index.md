@@ -5,7 +5,7 @@
 TIS-3D是对TIS系统设计在三维上的重新展现。它的目的 是控制Minecraft世界中各种原本需要复杂红石才能操纵的机器和机制。或者仅是作为一个有趣的挑战！
 
 ## 计算机详述
-可借助TIS-3D构建强大的模块化计算机。一台计算机包 括一台[控制器](block/controller.md)和最多16个[外壳](block/casing.md)。[外壳](block/casing.md)与控制器共面 连接。注意，与[控制器](block/controller.md)的连接是可传递的： 也就是说，若[外壳](block/casing.md)`C1`连接到了一台[控制器](block/controller.md)上，[外壳](block/casing.md)`C2`连接到了[外壳](block/casing.md)`C1`上，那`C2`也会自动与这个[控制器](block/controller.md)相连。
+可借助TIS-3D构建强大的模块化计算机。一台计算机包 括一台[控制器](block/controller.md)和最多16个[外壳](block/casing.md)。[外壳](block/casing.md)与控制器共面连接 。注意，与[控制器](block/controller.md)的连接是可传递的：也就是说，若[外壳](block/casing.md)`C1`连接到了一台[控制器](block/controller.md)上，[外壳](block/casing.md)`C2`连接到了[外壳](block/casing.md)`C1`上，那`C2`也会自动与这个[控制器](block/controller.md)相连。
 
 计算机有且只能有一台[控制器](block/controller.md)。如果多个[控制器](block/controller.md)直接或间接连接，计算机就无法启动。一台计算机如果有超过十六个[外壳](block/casing.md)也无法启动。
 
@@ -14,5 +14,5 @@ TIS-3D是对TIS系统设计在三维上的重新展现。它的目的 是控制M
 ## 模块详述
 [外壳](block/casing.md)提供了安装六个[模块](item/index.md)的空间，六个模块需安装在[外壳](block/casing.md)的六个面上。 每个[模块](item/index.md)有四个端口，分别为：`UP`、`RIGHT`、`DOWN`、`LEFT`，即上右下左。这些端口使得[模块](item/index.md)可以通过读取和写入值来进行通信。
 
-读写操作是阻塞操作。[模块](item/index.md)通常在执行操作时加锁， 直到操作完成后才会释锁。*可能存在供应方指定的例外情况*
-两个[模块](item/index.md)在共同端口上同时进行读取操作，会导致它们陷入死锁。如果[模块](item/index.md)写入一个没有连接其他[模块](item/index.md)的端口，它自己也会死锁。解除死锁需重启计算机。对[模块](item/index.md)进行热插拔在技术上是可行的，但通常会导致不可预知的结果。
+读写操作是阻塞操作。[模块](item/index.md)通常在执行操作时加锁， 直到操作完成后才会释锁。*可能存在供应方指定的例 外情况*
+两个[模块](item/index.md)在共同端口上同时进行读取操作，会导致它们陷入死锁。如果[模块](item/index.md)写入一个没有连接其他[模块](item/index.md)的端 口，它自己也会死锁。解除死锁需重启计算机。对[模块](item/index.md)进行热插拔在技术上是可行的，但通常会导致不可预知的结果。
