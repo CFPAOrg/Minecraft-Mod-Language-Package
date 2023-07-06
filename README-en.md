@@ -27,7 +27,7 @@ If you want to join us, please visit our official website and learn more: <https
 
 It is also fine to submit pull requests to this repository.
 
-Before you start, check the important tips from us here: [*Regulations and Guidelines for Simplified Chinese Translation of Minecraft Mods*](https://github.com/Meow-J/Mod-Translation-Styleguide/blob/master/README.md).
+Before you start, check the important tips from us here: [*Regulations and Guidelines for Simplified Chinese Translation of Minecraft Mods*](https://cfpa.site/TransRules/).
 
 ## Authorizations
 

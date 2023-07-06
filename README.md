@@ -24,7 +24,7 @@
 
 ## 如何使用
 
-注意：部分[帕秋莉手册](https://www.mcmod.cn/class/1388.html)翻译需安装[帕秋莉手册加载补丁](https://www.mcmod.cn/class/8906.html)才能完整应用到游戏中。
+注意：部分[帕秋莉手册](https://www.mcmod.cn/class/1388.html)翻译需安装[帕秋莉手册加载补丁](https://www.mcmod.cn/download/8906.html)才能完整应用到游戏中。
 
 ### 选择一：安装模组（推荐）
 

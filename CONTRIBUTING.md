@@ -38,23 +38,21 @@
 Minecraft-Mod-Language-Package
   ├─.github --------------- // GitHub 相关配置文件
   ├─config ---------------- // 配置文件
+  │ └─packer -------------- // 打包器配置文件
   ├─projects -------------- // 翻译文件
   │ └─(Minecraft 版本) ---- // 不带 fabric 字样的是用于 Forge 的
   │   └─assets
   │     ├─(CurseForge 项目名称) ---- // 见下
   │     │ └─(命名空间) ------------- // 见下
   │     │   └─lang ----------------- // 语言文件文件夹
-  │     │     ├─en_us.json --------- // 英文（US）语言文件
-  │     │     └─zh_cn.json --------- // 简体中文（中国）语言文件
+  │     │     ├─en_us.json --------- // English (United States) 语言文件
+  │     │     └─zh_cn.json --------- // 中文 (简体) 语言文件
   │     ├─minecraft
   │     │ └─minecraft -------------- // Minecraft 原版使用的命名空间
   │     │   ├─font
   │     │   │ └─glyph_sizes.bin ---- // 全角标点修复文件
   │     │   └─textures
-  │     │     └─font
-  │     │       ├─unicode_page_20.png ---- // 生僻字兼容文件
-  │     │       ├─unicode_page_9f.png ---- // 生僻字兼容文件
-  │     │       └─unicode_page_e9.png ---- // 生僻字兼容文件
+  │     │     └─font --------------- // 全角标点修复文件
   │     ├─1UNKNOWN ----------------- // 存放不在 CurseForge 和 Modrinth 上发布的模组
   │     │   └─(命名空间)
   │     │     └─lang
@@ -62,7 +60,7 @@ Minecraft-Mod-Language-Package
   │         └─(命名空间)
   │           └─lang
   └─src --------------- // 各种自动化工具的源码
-    ├─Formatter ------- // 格式化工具，用于统一翻译文件格式
+    ├─Formatter ------- // 格式化工具，曾用于统一翻译文件格式
     ├─Language.Core 
     ├─Packer ---------- // 打包器，用于自动生成资源包文件并发布 Release
     ├─Spider ---------- // 爬虫，曾用于爬取热门模组的语言文件供翻译
@@ -195,7 +193,7 @@ Minecraft-Mod-Language-Package
 路径：[./config/packer.json](./config/packer.json)
 
 该文件内放置了**所有**正在维护的版本的打包配置。
-最好不要随意*删去*内容，除非你知道它曾经是干什么的，现在为什么不需要了。
+不要随意*删去*内容，除非你知道它为什么弃用。
 加入内容相对而言宽松一些，但最好还是说明理由。
 
 *下面没有提到的一般都不适合改动；如果需要，最好说明理由。*
@@ -207,7 +205,7 @@ Minecraft-Mod-Language-Package
 - 处理非文本文件
   1. 如果该文件所在的文件夹与`lang`文件夹同级，且对**任何模组都**不会有文本文件（如font\），将该文件夹加入对应版本的`noProcessNamespace`中。
   2. 否则，将该模组的`CurseForge 项目名称`或`命名空间`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`，并将**所有**受影响的文件的相对位置加入`additionalContents`。
-- 添加非标准位置（在`assets/`以外）的文件
+- 添加非标准位置（在`assets/`以外）的文件 
   - 直接加入`additionalContents`
 - 停止对某模组的支持
   - 把该模组的`CurseForge 项目名称`或`命名空间`中的加入相应的`modNameBlackList`或`domainBlackList`（二者取其一）。

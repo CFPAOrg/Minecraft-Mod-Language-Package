@@ -12,4 +12,4 @@ MC百科：https://www.mcmod.cn/download/1188.html
 CurseForge：https://www.curseforge.com/minecraft/mc-mods/i18nupdatemod
 Modrinth：https://modrinth.com/mod/i18nupdatemod
 
-本资源包中的部分帕秋莉手册翻译需安装帕秋莉手册加载补丁才能使用，下载地址：https://www.mcmod.cn/class/8906.html
+本资源包中的部分帕秋莉手册翻译需安装帕秋莉手册加载补丁才能使用，下载地址：https://www.mcmod.cn/download/8906.html
