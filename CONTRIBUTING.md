@@ -138,7 +138,8 @@ Minecraft-Mod-Language-Package
 - 任何人都能利用 GitHub 提供的[相关功能](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request)来审查 PR 中翻译。所有参与审查的用户即为审查人。
 - [CFPA团队](https://github.com/CFPAOrg)的成员（Member）和[仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人。
 - 至少一位具有官方身份的审查人对 PR 给出批准（Approval）审查后，PR 才能合并。
-- 审查人在给出批准审查后**应**给 PR 加上“即将合并”标签，24 小时内没有新动态则可合并 PR。
+- 审查人在给出批准审查后**应**给 PR 加上“即将合并”标签，此后需等待大于 24 小时，若等待期间没有新动态则可以合并 PR。
+  - “动态”包括但不限于 PR 作者发送提交（Commit）、审查人提出意见。
 
 #### PR 作者
 
