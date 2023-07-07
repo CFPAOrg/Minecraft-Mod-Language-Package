@@ -11,21 +11,57 @@ labelPRBasedOnFilePath:
     1.18.x:
         - "projects/1.18/**"
         - "projects/1.18-fabric/**"
-        
+    
+    1.19.x:
+        - "projects/1.19/**"
+      # - "projects/1.19-fabric/**"
+    
     Forge:
         - "projects/1.12.2/**"
         - "projects/1.16/**"
         - "projects/1.18/**"
+        - "projects/1.19/**"
     
     Fabric:
         - "projects/1.16-fabric/**"
         - "projects/1.18-fabric/**"
-        
+      # - "projects/1.19-fabric/**"
+      
     Patchouli:
         - "projects/**/patchouli_books/**"
 
     source:
         - "src/**"
+
+# 小语种
+    德语:
+        - "projects/**/assets/**/**/lang/de_*.*"
+        - "projects/**/assets/**/**/lang/*_de.*"
+        - "projects/**/assets/**/**/lang/sxu.*"
+    意大利语:
+        - "projects/**/assets/**/**/lang/it_*.*"
+        - "projects/**/assets/**/**/lang/*_it.*"
+    韩语:
+        - "projects/**/assets/**/**/lang/ko_kr.*"
+    日语:
+        - "projects/**/assets/**/**/lang/ja_jp.*"
+    西班牙语:
+        - "projects/**/assets/**/**/lang/es_*.*"
+        - "projects/**/assets/**/**/lang/*_es.*"
+    法语:
+        - "projects/**/assets/**/**/lang/fr_*.*"
+        - "projects/**/assets/**/**/lang/*_fr.*"
+    俄语:
+        - "projects/**/assets/**/**/lang/ru_*.*"
+        - "projects/**/assets/**/**/lang/*_ru.*"
+        - "projects/**/assets/**/**/lang/rpr.*"
+    阿拉伯语:
+        - "projects/**/assets/**/**/lang/ar_sa.*"
+    保加利亚语:
+        - "projects/**/assets/**/**/lang/bg_bg.*"
+    葡萄牙语:
+        - "projects/**/assets/**/**/lang/pt_*.*"
+
 
 # Various Flags to control behaviour of the "Labeler"
 labelerFlags:
@@ -37,19 +73,17 @@ labelerFlags:
 ##### Greetings ########################################################################################################
 # Comment to be posted to welcome users when they open their first PR
 firstPRWelcomeComment: |
-    - 没有完工的汉化仍可提交pr，但请设置为draft。
-    - 不要望文生义，有些看起来十分离谱的东西可能是正确的。
-    - 尽量做到边开游戏边翻译。
-    - 请确认翻译能够正常使用并按照规范格式提交。
-    - 善用更新、提交等词语。提交汉化文件时请一并上传英文原文。提交英文原文时请一并上传空白中文文件（1.12的文件为无内容的文件，1.16的文件为为只包含左右花括号的文件，例如 [此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/50b4d47d320ac9b78192e9adec19bff0a4948d57/projects/1.16.1/assets/pams-harvestcraft-2-food-extended/pamhc2foodextended/zh_cn.json) ）。
+    你已成功发送你在 CFPA 仓库的第一个 Pull Request！请再次检查以下事项：
+    标题是否正确丨翻译文件的路径是否正确丨检查单是否勾选了前三项。
+    确认无误后请耐心等待审阅，并在审阅人提出意见给出答复或修改内容。
 
 # Comment to be posted to congratulate user on their first merged PR
 firstPRMergeComment: >
-    感谢您的提交。
+    干得好！你在 CFPA 的第一份翻译已成功入库，将在次日通过自动汉化更新模组分发给广大玩家。
 
 # Comment to be posted to on first time issues
-firstIssueWelcomeComment: >
-    感谢您来反馈问题。请在反馈前后检查是否有相同的问题。
+# firstIssueWelcomeComment: >
+#     感谢你来反馈问题。请在反馈前后检查是否有相同的问题。
 
 ###### Title Validator #################################################################################################
 # Verifies if commit/PR titles match the regexp specified
@@ -69,7 +103,7 @@ verifyTitles:
     # The title the GitHub status should appear from.
     statusTitle: "标题检测器"
     # A custom message to be displayed when the title passes validation.
-    successMessage: "您的标题是正确的，感谢您的配合。"
+    successMessage: "你的标题是正确的，感谢你的配合。"
     # A custom message to be displayed when the title fails validation.
     # Allows insertion of ${type} (commit/PR), ${title} (the title validated) and ${regex} (the titleRegexp above).
     failureMessage: "错误的${type}标题：${title}。请检查是否符合“模组英文名+简要说明”的格式"
