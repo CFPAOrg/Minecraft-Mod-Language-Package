@@ -144,6 +144,8 @@ Minecraft-Mod-Language-Package
 #### PR 作者
 
 - PR 作者**应**对审查作出合理回应，或接受建议，或提出异议。
+  - 在接受审查人的建议后，PR 作者**应**解决（Revolve）相应的对话（Conversation）。
+  - 若拒绝审查人的建议，或和审查人的观点相左，PR 作者**不应**急于解决（Revolve）对话（Conversation）
 - PR 作者**应**及时做出回应，否则 PR 可能会按[搁置规则](#搁置规则)关闭。
 
 ### 搁置规则
