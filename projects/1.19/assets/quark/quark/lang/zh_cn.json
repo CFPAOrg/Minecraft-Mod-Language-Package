@@ -217,7 +217,7 @@
   "quark.jei.hint.red_blossom_sapling": "可以在恶地生物群系中找到。",
   "quark.jei.hint.redstone_randomizer": "随机将输入信号传向左边或右边。",
   "quark.jei.hint.rope": "必须放置在天花板上，可以由玩家/发射器（可设置）放置，可以攀爬。对已经放置的绳卷方块使用绳卷可以下放，潜行时使用绳卷可以拉起，使用非绳卷物品也行。可以移动末端接触到的方块。",
-  "quark.jei.hint.seed_pouch": "可以容纳一堆（10组/640个）任何同种种子/树苗，只需右击即可存入/取出。主手或副手拿着种子袋时，它会自动收起你拾取的同种种子/树苗，潜行状态下对耕地使用可播种3x3的区域。",
+  "quark.jei.hint.seed_pouch": "可以容纳一堆（默认 10 组/64*10 个）任何同种种子，只需右击即可存入/取出。主手或副手拿着种子袋时，它会自动收起你拾取的同种种子，潜行状态下对耕地使用可播种（默认）3x3 的区域。（树苗等也算种子）",
   "quark.jei.hint.shale": "可以在寒冷的生物群系中找到它的大型矿脉。",
   "quark.jei.hint.slime_in_a_bucket": "对小型史莱姆使用桶，将其装入桶内。当你在史莱姆区块中时，它会开始跳动。",
   "quark.jei.hint.soul_bead": "由灵魂沙峡谷的游魂掉落。使用时会飞向最近的下界要塞。",
@@ -228,18 +228,18 @@
   "quark.jei.hint.yellow_blossom_sapling": "可以在平原生物群系中找到。",
   "quark.jei.hint.ancient_tome": "可以将物品/附魔书的魔咒提升一级，最多超过正常上限一级。偶尔能在地牢或要塞中发现它。",
   "quark.jei.hint.hollow_logs": "走向空洞一侧，进入潜行状态就会钻进去，而且里面可以爬。",
-  "quark.jei.hint.skull_pikes": "放在栅栏上面时，能吓跑附近徘徊的简单怪物（译注：非Boss/袭击者的怪物，袭击者指袭击中生成的生物，包括掠夺者、卫道士、唤魔者、劫掠兽、恼鬼和女巫）。",
+  "quark.jei.hint.skull_pikes": "放在栅栏上面时，能吓跑附近（默认）5 格范围内徘徊的简单怪物（译注：非Boss/袭击者的怪物，袭击者指袭击中生成的生物，包括掠夺者、卫道士、唤魔者、劫掠兽、恼鬼和女巫）。",
   "quark.jei.hint.pottable_stuff": "现在可以放进花盆里了。",
   "quark.jei.hint.stools": "可以坐在上面，并作为整体被活塞移动。在上面放置方块后，凳子会变成桌子。",
   "quark.jei.hint.posts": "Can be placed in any axis. Chains and Lanaterns can connect to this block.",
   "quark.jei.hint.soul_fire_candles": "When placed on any block that can produce Soul Fire when lit, it'll do so as well.",
   "quark.jei.hint.wool_muffling": "Can be used to silence minecarts if placed under the rail.",
   "quark.jei.hint.shulker_box_right_click": "类似收纳袋，可以右击将物品收入潜影盒。",
-  "quark.jei.hint.rotating_bundles": "Scrolling while hovering over a bundle will rotate the items inside.",
+  "quark.jei.hint.rotating_bundles": "在收纳袋上悬停时，滚动滑轮，可旋转内部物品。（像圆一样首尾相接循环往复）",
   "quark.jei.hint.crab_info": "Crabs can be found in Beaches, and bred with Wheat, Chicken, or any type of Fish.",
   "quark.jei.hint.ambience_discs": "Ambience Discs can be gotten when a Skeleton kills a Spider. Unlike Music Discs, these loop infinitely.",
   "quark.jei.hint.runes": "在铁砧中，将它们与附魔物品结合，可以改变物品的光效颜色。这是纯视觉效果。",
-  "quark.jei.hint.parrot_eggs": "Throw to create a baby parrot. Feed a parrot many Beetroot Seeds until it loves you, and then it'll lay one after 10 minutes.",
+  "quark.jei.hint.parrot_eggs": "丢出后，会造出一只幼年鹦鹉。喂食大量甜菜根种子来驯服鹦鹉，然后它下一颗蛋需要 10 分钟（默认）。",
   "quark.jei.hint.doors_open_together": "When creating a double door, they'll open/close together.",
   "quark.jei.hint.fence_gates_open_together": "When another fence gate is placed above or below it, they'll open/close together.",
   "quark.jei.hint.item_frame_dyeing": "Can be dyed the same way you'd dye leather armor.",
@@ -1529,7 +1529,7 @@
 
 
 
-  "_comment": "Config Translations, Put it at the end of this file for comparison and update of non-configuration parts",
+  "_comment": "Config Translations, placed at the end of this file, facilitates the comparison and update of non-config parts",
   "quark.config.general.q_button_on_the_right.name": "「q」按钮位于右侧",
 
   "quark.config.general.advancement_visibility_depth.name": "进度可见深度",
@@ -1596,7 +1596,7 @@
 
 
   "quark.config.automation.chains_connect_blocks.name": "锁链连接方块",
-  "quark.config.automation.chains_connect_blocks.desc": "锁链连接方块\n锁链可以将方块连接到一起，被活塞视为整体移动。\n活塞不必移动锁链本身，锁链间接连接的其他方块会跟着被移动。\n此外，锁链连接到黏液块和其他黏性来源时的黏性行为也被改变了。\n现在，只有在锁链和它们视觉上也连接时才会被视为整体，这允许你整些超酷的将戏。",
+  "quark.config.automation.chains_connect_blocks.desc": "锁链连接方块\n锁链可以将方块连接到一起，被活塞视为整体移动。\n活塞不必移动锁链本身，锁链间接连接的其他方块会跟着被移动。\n此外，锁链连接到黏液块和其他黏性来源时的黏性行为也被改变了。\n现在，只有在锁链和它们视觉上也连接时才会被视为整体，这允许你整些超酷的把戏。",
 
   "quark.config.automation.chute.name": "溜槽",
   "quark.config.automation.chute.desc": "溜槽\n溜槽是一个新的自动化方块。\n物品可以通过自动化途径（漏斗、投掷器等）输入溜槽，输入的任何物品都总是会立即精准掉到它下方的正中心。\n通入红石信号或在溜槽下方放置方块可以禁用它。",
@@ -1914,7 +1914,7 @@
   "quark.config.tools.ancient_tomes.deepslate_tweak_needs_haste2.name": "深板岩微调需要急迫 2 效果",
   "quark.config.tools.ancient_tomes.deepslate_tweak_needs_haste2.desc": "深板岩微调需要急迫 2 效果\n仅当带有急迫 II 状态时，深板岩微调才会生效",
   "quark.config.tools.ancient_tomes.item_quality.name": "物品的 quality",
-  "quark.config.tools.ancient_tomes.item_quality.desc": "物品的 quality\nnquality 是「战利品表」中的概念，下面引用 Minecraft Wiki的描述：\nquality：（可选，默认为0，小于0修正为0）基于战利品表上下文实体的幸运修改物品堆被选择的权重。经过修改的权重为 floor(b+ql)（就是向下取整），其中 b 为 weight 的值，q 为此项的值，l 为上下文中 killer_entity（战利品表类型为 entity 时）或 this_entity（战利品表类型不为 entity 时）实体的 generic.luck 属性值。\nweight：（可选，默认为1）决定了这个物品堆被选择的基础权重。物品堆被选中的概率为 w⁄s，其中 w 是物品堆经过幸运修改后的权重，s 是所有物品堆的总权重。",
+  "quark.config.tools.ancient_tomes.item_quality.desc": "物品的 quality\nnquality 是「战利品表」中的概念，下面引用 Minecraft Wiki 的描述：\nquality：（可选，默认为0，小于0修正为0）基于战利品表上下文实体的幸运修改物品堆被选择的权重。经过修改的权重为 floor(b+ql)（就是向下取整），其中 b 为 weight 的值，q 为此项的值，l 为上下文中 killer_entity（战利品表类型为 entity 时）或 this_entity（战利品表类型不为 entity 时）实体的 generic.luck 属性值。\nweight：（可选，默认为1）决定了这个物品堆被选择的基础权重。物品堆被选中的概率为 w⁄s，其中 w 是物品堆经过幸运修改后的权重，s 是所有物品堆的总权重。",
   "quark.config.tools.ancient_tomes.librarians_exchange_ancient_tomes.name": "图书管理员交易古卷",
   "quark.config.tools.ancient_tomes.librarians_exchange_ancient_tomes.desc": "图书管理员交易古卷\n大师级的图书管理员将提供古卷的交易，前提是你要给他们一本最高等级对应魔咒的附魔书。",
   "quark.config.tools.ancient_tomes.limit_break_upgrade_cost.name": "突破上限时的升级花费",
@@ -1936,11 +1936,14 @@
   "quark.config.tools.beacon_redirection.horizontal_move_limit.name": "水平移动上限",
 
   "quark.config.tools.bottled_cloud.name": "瓶中云",
-  "quark.config.tools.bottled_cloud.desc": "瓶中云\n在云层（默认为 192-196）中使用玻璃瓶，你将获得一份瓶中云。nn使用瓶装云可以产生一个（非固体）方块，它会在你面前的半空中漂浮。云块会在几秒后消失，但你可以手持方块对它使用，将它替换成手上的方块，之后云朵会回到瓶子里。\n注意：1.18之前的版本，瓶中云生成的方块是固体方块，且云层高度不同（默认为 126-132）。",
+  "quark.config.tools.bottled_cloud.desc": "瓶中云\n在云层（默认为 192-196）中使用玻璃瓶，你将获得一份瓶中云。\n使用瓶装云可以产生一个（非固体）方块，它会在你面前的半空中漂浮。云块会在几秒后消失，但你可以手持方块对它使用，将它替换成手上的方块，之后云朵会回到瓶子里。\n注意：1.18之前的版本，瓶中云生成的方块是固体方块，且云层高度不同（默认为 126-132）。",
   "quark.config.tools.bottled_cloud.cloud_level_bottom.name": "云层底部",
   "quark.config.tools.bottled_cloud.cloud_level_bottom.desc": "云层底部\n假想云层最底部的 Y 坐标",
   "quark.config.tools.bottled_cloud.cloud_level_top.name": "云层顶部",
   "quark.config.tools.bottled_cloud.cloud_level_top.desc": "云层顶部\n假想云层最顶部的 Y 坐标",
+
+  "quark.config.tools.bundle_recipe.name": "收纳袋配方",
+  "quark.config.tools.bundle_recipe.desc": "收纳袋配方\n现在可以使用与原版相同的配方来制作收纳袋。",
 
   "quark.config.tools.color_runes.name": "彩色符文",
   "quark.config.tools.color_runes.desc": "彩色符文\n彩色符文是地牢、神庙和下界要塞中会出现的稀有战利品。在铁砧中，你可以将它们应用于附魔物品和磁石指针，使附魔光效的颜色从紫色变为符文的颜色。它们具有光谱中的全部 16 种颜色。\n玩得够久时，凑齐了彩虹色的七种彩色符文后，你可以将它们合在一起来制作彩虹符文。随着时间的推移它会改变颜色，看起来真的很酷！\n仅限 1.16.4+ 版本：箱子中不再生成彩色符文。作为替代，你会找到空白符文。它可以与任何染料结合，制作你想要的符文。",
@@ -1950,17 +1953,49 @@
   "quark.config.tools.color_runes.desert_temple_weight.name": "沙漠神庙中的权重",
   "quark.config.tools.color_runes.dungeon_weight.name": "地牢中的权重",
   "quark.config.tools.color_runes.item_quality.name": "物品的 quality",
-  "quark.config.tools.color_runes.item_quality.desc": "物品的 quality\nnquality 是「战利品表」中的概念，下面引用 Minecraft Wiki的描述：\nquality：（可选，默认为0，小于0修正为0）基于战利品表上下文实体的幸运修改物品堆被选择的权重。经过修改的权重为 floor(b+ql)（就是向下取整），其中 b 为 weight 的值，q 为此项的值，l 为上下文中 killer_entity（战利品表类型为 entity 时）或 this_entity（战利品表类型不为 entity 时）实体的 generic.luck 属性值。\nweight：（可选，默认为1）决定了这个物品堆被选择的基础权重。物品堆被选中的概率为 w⁄s，其中 w 是物品堆经过幸运修改后的权重，s 是所有物品堆的总权重。",
+  "quark.config.tools.color_runes.item_quality.desc": "物品的 quality\nquality 是「战利品表」中的概念，下面引用 Minecraft Wiki 的描述：\nquality：（可选，默认为0，小于0修正为0）基于战利品表上下文实体的幸运修改物品堆被选择的权重。经过修改的权重为 floor(b+ql)（就是向下取整），其中 b 为 weight 的值，q 为此项的值，l 为上下文中 killer_entity（战利品表类型为 entity 时）或 this_entity（战利品表类型不为 entity 时）实体的 generic.luck 属性值。\nweight：（可选，默认为1）决定了这个物品堆被选择的基础权重。物品堆被选中的概率为 w⁄s，其中 w 是物品堆经过幸运修改后的权重，s 是所有物品堆的总权重。",
   "quark.config.tools.color_runes.jungle_temple_weight.name": "丛林神庙中的权重",
   "quark.config.tools.color_runes.nether_fortress_weight.name": "下界要塞中的权重",
   "quark.config.tools.color_runes.rainbow_rune_craftable.name": "彩虹符文可制作",
   "quark.config.tools.color_runes.rainbow_rune_craftable.desc": "彩虹符文可制作\n是否可以混合每种「原」色的符文（加上白色）来制作彩虹符文。",
 
+  "quark.config.tools.endermosh_music_disc.name": "「Endermosh（末影冲撞）」音乐唱片",
+  "quark.config.tools.endermosh_music_disc.desc": "「Endermosh（末影冲撞）」音乐唱片\n「Endermosh（末影冲撞）」是一张新的音乐唱片，可以在末地城中找到。\n这首歌由 Kain Vinosec 创作，你可以在 YouTube 上找到它。",
+  "quark.config.tools.endermosh_music_disc.add_to_end_city_loot.name": "加入末地城的战利品中",
+  "quark.config.tools.endermosh_music_disc.loot_quality.name": "战利品 Quality",
+  "quark.config.tools.endermosh_music_disc.loot_quality.desc": "战利品 Quality\nquality 是「战利品表」中的概念，下面引用 Minecraft Wiki 的描述：\nquality：（可选，默认为0，小于0修正为0）基于战利品表上下文实体的幸运修改物品堆被选择的权重。经过修改的权重为 floor(b+ql)（就是向下取整），其中 b 为 weight 的值，q 为此项的值，l 为上下文中 killer_entity（战利品表类型为 entity 时）或 this_entity（战利品表类型不为 entity 时）实体的 generic.luck 属性值。\nweight：（可选，默认为1）决定了这个物品堆被选择的基础权重。物品堆被选中的概率为 w⁄s，其中 w 是物品堆经过幸运修改后的权重，s 是所有物品堆的总权重。",
+  "quark.config.tools.endermosh_music_disc.loot_weight.name": "战利品权重",
+  "quark.config.tools.endermosh_music_disc.loot_weight.desc": "战利品权重\n权重（weight）是「战利品表」中的概念，下面引用 Minecraft Wiki 的描述：\nweight：（可选，默认为1）决定了这个物品堆被选择的基础权重。物品堆被选中的概率为 w⁄s，其中 w 是物品堆经过幸运修改后的权重，s 是所有物品堆的总权重。",
+  "quark.config.tools.endermosh_music_disc.play_endermosh_during_enderdragon_fight.name": "在与末影龙战斗时播放「Endermosh（末影冲撞）」",
 
+  "quark.config.tools.parrot_eggs.name": "鹦鹉蛋",
+  "quark.config.tools.parrot_eggs.desc": "鹦鹉蛋\n鹦鹉现在会下蛋，丢出后会孵化出与蛋的颜色相同的鹦鹉。\n喂食甜菜根种子后，鹦鹉偶尔会开始下蛋，且下蛋需要 10 分钟（默认）。",
+  "quark.config.tools.parrot_eggs.chance.name": "几率",
+  "quark.config.tools.parrot_eggs.chance.desc": "几率\n喂食后，鹦鹉会下蛋的几率",
+  "quark.config.tools.parrot_eggs.egg_time.name": "下蛋耗时",
+  "quark.config.tools.parrot_eggs.egg_time.desc": "下蛋耗时\n下一颗蛋需要花多少时间",
+  "quark.config.tools.parrot_eggs.enable_special_awesome_parrot.name": "启用特殊的漂亮鹦鹉",
 
-
+  "quark.config.tools.pathfinder_maps.name": "寻路地图",
+  "quark.config.tools.pathfinder_maps.desc": "寻路地图\n制图师村民现在会出售寻路羽毛笔，随着时间推移，它可以用来生成寻路地图，新地图将带你到某些生物群落。每个制图师都会存有随机品种的寻路羽毛笔，默认情况下可能的交易如下：\n专家级：积雪的平原、风袭丘陵、黑森林、沙漠、热带草原、丛林、竹林、恶地\n大师级：沼泽、原始松木针叶林、繁花森林、蘑菇岛、冰刺平原\n流浪商人：会携带随机选择的任意羽毛笔。\n使用添加更多生物群系的模组时，可以在配置文件中添加更多羽毛笔。",
+  "quark.config.tools.pathfinder_maps.add_to_cartographer.name": "加入制图师交易",
+  "quark.config.tools.pathfinder_maps.add_to_wandering_trader_forced.name": "（强制）加入流浪商人交易",
+  "quark.config.tools.pathfinder_maps.add_to_wandering_trader_generic.name": "加入流浪商人（普通）交易",
+  "quark.config.tools.pathfinder_maps.add_to_wandering_trader_rare.name": "加入流浪商人（特殊）交易",
   "quark.config.tools.pathfinder_maps.allow_retrying.name": "允许重试",
   "quark.config.tools.pathfinder_maps.allow_retrying.desc": "允许重试\n允许在寻路羽毛笔未能找到附近的生物群系后重试。\n如果你觉得此项过于强大，就关闭它吧。",
+  "quark.config.tools.pathfinder_maps.apply_default_trades.name": "应用默认交易",
+  "quark.config.tools.pathfinder_maps.apply_default_trades.desc": "应用默认交易\n设为 false 后，内置的默认夸克寻路地图不会加入交易，只有自定义的会加入。",
+  "quark.config.tools.pathfinder_maps.customs.name": "自定义",
+  "quark.config.tools.pathfinder_maps.customs.desc": "自定义\n在此部分中，你可以添加自定义寻路地图。这对原版和模组的生物群系都适用。\n每种自定义地图必须独占一行。\n自定义地图的格式如下：\n<id>,<level>,<min_price>,<max_price>,<color>,<name>\n\n描述如下：\n - <id> 是生物群落的 ID 名称。你可以在这里找到原版的名称  https://minecraft.fandom.com/wiki/Biome#Biome_IDs（对比中文 wiki 使用）\n - <level> 是制图师村民解锁地图所需的等级\n - <min_price> 是地图的最低价格（单位：绿宝石）\n - <max_price> 是地图的最高价格（单位：绿宝石）\n - <color> 是地图要显示的十六进制颜色（不带 #）。你可以在此处生成一个 - https://htmlcolorcodes.com/\n\n以下是定位冰山的地图的示例：\nminecraft:ice_mountains,2,8,14,7FE4FF",
+  "quark.config.tools.pathfinder_maps.draw_hud.name": "绘制 HUD",
+  "quark.config.tools.pathfinder_maps.hud_on_top.name": "HUD 位于顶部",
+  "quark.config.tools.pathfinder_maps.multi_threaded.name": "多线程化",
+  "quark.config.tools.pathfinder_maps.multi_threaded.desc": "多线程化\n实验性功能。决定羽毛笔是否使用多线程。启用后将无视羽毛笔的速度。\n这可以极大地提高性能，因为它在主线程之外执行逻辑，理论上不会造成任何卡顿。",
+  "quark.config.tools.pathfinder_maps.pathfinders_quill_speed.name": "寻路羽毛笔的速度",
+  "quark.config.tools.pathfinder_maps.pathfinders_quill_speed.desc": "寻路羽毛笔的速度\n寻路羽毛笔每刻应执行多少步搜索？该值越高，找到结果就越快，但同时游戏卡顿的可能性就越大。",
+  "quark.config.tools.pathfinder_maps.search_radius.name": "搜索半径",
+  "quark.config.tools.pathfinder_maps.xp_from_trade.name": "交易产生的经验",
 
   "quark.config.tools.pickarang.name": "皮卡镖",
   "quark.config.tools.pickarang.desc": "皮卡镖\n一种新的挖矿工具！皮卡镖是一把镐头回旋镖 - 抛出后，它会破坏击中的东西，并带着掉落物回到你身上。\n皮卡镖是用钻石之心（来自生物类别中的石精灵，或者，如果它被禁用的话，只需要钻石）制作的，并且可以附上效率、耐久、时运、精准采集和穿透魔咒。",
@@ -2026,8 +2061,28 @@
   "quark.config.tools.pickarang.pickarang.timeout.name": "超时时间",
   "quark.config.tools.pickarang.pickarang.timeout.desc": "超时时间\n皮卡镖没有击中任何东西时，需要多长时间才开始返回玩家身上。",
 
+  "quark.config.tools.seed_pouch.name": "种子袋",
+  "quark.config.tools.seed_pouch.desc": "种子袋\n种子袋是一种新的实用物品，最多可存放（默认） 10 组（64*10 个）任何类型的种子。只要在物品栏里拿起要存入的种子，然后对种子袋右击，即可将种子存入种子袋。或者，你也可以拿起种子袋，右击要存入的种子（仅限 1.18+ 版本）。存入之后，你可以右击种子袋来取出种子，一次最多一组。（树苗等也算种子）\n还有一小组实用功能，包括：\n(1) 对可耕种对应种子的土壤使用种子袋，可以播种袋内种子。潜行状态下使用可播种（默认）3x3 的区域。\n(2) 主手或副手拿着种子袋时，会将拾取的对应种子直接收进种子袋。\n(3) 如果启用了方块计数器功能，它将显示种子还剩多少。",
+  "quark.config.tools.seed_pouch.max_items.name": "最大容纳量",
+  "quark.config.tools.seed_pouch.shift_range.name": "区域种植的边长",
+  "quark.config.tools.seed_pouch.show_all_variants_in_creative.name": "在创造模式物品栏中显示所有变体",
+
   "quark.config.tools.skull_pikes.name": "头颅尖桩",
-  "quark.config.tools.skull_pikes.desc": "头颅尖桩\n将骷髅头颅、僵尸的头或苦力怕的头放在栅栏上面，就制造了一个头颅尖桩。\n附近5格范围内有视觉的怪物会注意到它，而后怯懦地逃窜。\n注意：Boss和袭击者会稍微精明一些，不会上当受骗。\n此外，大家都知道凋灵骷髅总是会掉落头颅，龙首也都是廉价的假货，因此它们都不管用。\n（注：袭击者指袭击中生成的生物，包括掠夺者、卫道士、唤魔者、劫掠兽、恼鬼和女巫）",
+  "quark.config.tools.skull_pikes.desc": "头颅尖桩\n将骷髅头颅、僵尸的头或苦力怕的头放在栅栏上面，就制造了一个头颅尖桩。\n附近（默认）5 格范围内有视觉的怪物会注意到它，而后怯懦地逃窜。\n注意：Boss和袭击者会稍微精明一些，不会上当受骗。\n此外，大家都知道凋灵骷髅总是会掉落头颅，龙首也都是廉价的假货，因此它们都不管用。\n（注：袭击者指袭击中生成的生物，包括掠夺者、卫道士、唤魔者、劫掠兽、恼鬼和女巫）",
+  "quark.config.tools.skull_pikes.pike_range.name": "尖桩有效半径",
+
+  "quark.config.tools.slime_in_a_bucket.name": "桶中史莱姆",
+  "quark.config.tools.slime_in_a_bucket.desc": "桶中史莱姆\n对小型史莱姆使用桶，将其装入桶内。虽然它平常很安定，但当你处于史莱姆区块中时，它会开始跳动。\n还可以对方块使用，将史莱姆放生回世界上。也可以用它充当黏液球的替代品。你这个怪物。",
+
+  "quark.config.tools.torch_arrow.name": "火把箭",
+  "quark.config.tools.torch_arrow.desc": "火把箭\n火把箭可以用普通的火把和箭来制作。\n它们会点燃实体，或是在命中地点放置火把。",
+  "quark.config.tools.torch_arrow.extinguish_on_miss.name": "未命中时熄灭",
+
+  "quark.config.tools.trowel.name": "抹泥铲",
+  "quark.config.tools.trowel.desc": "抹泥铲\n抹泥铲可以用铁和木棍制作。使用抹泥铲时，会随机放置快捷栏中的方块，这对建造废墟或路径来说很有用。\n1.16.4 之前的版本，抹泥铲在放置（默认）256 个方块（4 组）后就会损坏。",
+  "quark.config.tools.trowel.trowel_max_durability.name": "抹泥铲的最大耐久度",
+
+
 
   "quark.config.tweaks.simple_harvest.villagers_use_simple_harvest.name": "村民使用简单收获",
   "quark.config.tweaks.simple_harvest.villagers_use_simple_harvest.desc": "村民使用简单收获\n村民是否应该使用简单收获，从而不再破坏作物？",
