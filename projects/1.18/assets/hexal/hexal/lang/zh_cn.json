@@ -109,12 +109,12 @@
 
   "hexal.entry.wisps": "咒灵",
   "hexal.page.wisps.0": "我发现了一种能单以媒质创造法术构造体的方式，它们能被他人看见，能移动，也有一定自主行动能力。它们能代替我施法，就和$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$类似。不过保持它们的形态确实要耗费些我的注意力，而且如果太多咒灵要同时施法，我也只能同时运行其中一部分，剩下的则要稍作延迟。",
-  "hexal.page.wisps.1": "创造咒灵时我会给它们分配它们能访问的一块媒质“储库”（后称媒质池）。这些媒质由我提供，用于形成咒灵本身。咒灵会常态消耗媒质，而当其运行其携带的图案列表时，那些操作要消耗的媒质也会从媒质池中抽取。所有种类的咒灵似乎都需要 3 个$(l:items/amethyst)$(item)紫水晶粉/$才能召唤，也会同时消耗等同于其媒质池容量的媒质。",
+  "hexal.page.wisps.1": "创造咒灵时我会给它们分配它们能访问的一块媒质“储库”（后称媒质库）。这些媒质由我提供，用于形成咒灵本身。咒灵会常态消耗媒质，而当其运行其携带的图案列表时，那些操作要消耗的媒质也会从媒质库中抽取。所有种类的咒灵似乎都需要 3 个$(l:items/amethyst)$(item)紫水晶粉/$才能召唤，也会同时消耗等同于其媒质库容量的媒质。",
   "hexal.page.wisps.wisp/summon/projectile.0": "这种咒灵被召唤时会像箭一样被弹射出去，而后会在其击中的事物上施放咒术。其初始栈包含一个代表其自身的 iota，以及一个代表所击中事物的 iota。",
-  "hexal.page.wisps.wisp/summon/projectile.1": "后者可为位置向量或实体 iota。第一参数向量是咒灵的召唤位置，其会沿第二参数向量的方向弹射，且第二参数向量的模似乎会影响咒灵的速度。法术的消耗随速度向量模的平方增长而增长。所接受的数决定了咒灵媒质池的大小，以$(l:items/amethyst)$(item)紫水晶粉/$计。其被召唤后每秒消耗 1 个$(l:items/amethyst)$(item)紫水晶粉/$，且其影响区域半径为 4 格。",
+  "hexal.page.wisps.wisp/summon/projectile.1": "后者可为位置向量或实体 iota。第一参数向量是咒灵的召唤位置，其会沿第二参数向量的方向弹射，且第二参数向量的模似乎会影响咒灵的速度。法术的消耗随速度向量模的平方增长而增长。所接受的数决定了咒灵媒质库的大小，以$(l:items/amethyst)$(item)紫水晶粉/$计。其被召唤后每秒消耗 1 个$(l:items/amethyst)$(item)紫水晶粉/$，且其影响区域半径为 4 格。",
   "hexal.page.wisps.wisp/summon/ticking.0": "此法术与召唤弹射式咒灵类似，但只会接受一个代表召唤位置的向量。循环式咒灵一经召唤就不再移动，而是会以每秒 20 次的频率施法。",
-  "hexal.page.wisps.wisp/summon/ticking.1": "其初始栈包含一个代表其自身的 iota，而后每次施法时的初始状态则是保留上一次施法后的栈和渡鸦之思。这种咒灵的形态较不稳定，导致其常态消耗率远大于弹射式咒灵。其每秒消耗 1 个$(l:items/amethyst)$(item)紫水晶粉/$，同时也会消耗与媒质池中剩余媒质量成正比的媒质。其影响区域半径为 8 格。",
-  "hexal.page.wisps.wisp/media": "将咒灵媒质池中剩余的媒质量压入栈顶。此操作必须由咒灵执行。尝试用法杖执行会招致可怖的事故。",
+  "hexal.page.wisps.wisp/summon/ticking.1": "其初始栈包含一个代表其自身的 iota，而后每次施法时的初始状态则是保留上一次施法后的栈和渡鸦之思。这种咒灵的形态较不稳定，导致其常态消耗率远大于弹射式咒灵。其每秒消耗 1 个$(l:items/amethyst)$(item)紫水晶粉/$，同时也会消耗与媒质库中剩余媒质量成正比的媒质。其影响区域半径为 8 格。",
+  "hexal.page.wisps.wisp/media": "将咒灵媒质库中剩余的媒质量压入栈顶。此操作必须由咒灵执行。尝试用法杖执行会招致可怖的事故。",
   "hexal.page.wisps.wisp/hex": "移除一个咒灵实体，并返回该咒灵所携带的咒术。所给 iota 必须代表由我召唤的咒灵。",
   "hexal.page.wisps.wisp/owner": "移除一个咒灵实体和一个实体，若该实体是该咒灵的主人，返回 1；否则返回 0。",
   "hexal.page.wisps.wisp/move/target/set": "移除栈顶位置向量。运行此图案的循环式咒灵会沿直线移动至所给位置（会与途中地形地貌等碰撞），直至抵达该位置处。",
@@ -145,7 +145,7 @@
 
   "hexal.entry.great_wisps": "卓越咒灵法术",
   "hexal.page.great_wisps.wisp/consume.0": "移除栈顶咒灵实体，并拆解该咒灵。咒灵携带的图案不可追回，但是如果此法术是由其他咒灵施放的，那么被拆解咒灵所剩的媒质还可再加利用。",
-  "hexal.page.great_wisps.wisp/consume.1": "若咒灵的所有者是我，消耗 1 个$(l:items/amethyst)$(item)紫水晶碎片/$；若咒灵的所有者是他人，则消耗该咒灵所拥有的媒质量的一半。媒质的再利用效率不算特别高，会在传输过程中损耗掉被拆解咒灵媒质池容量的 1/20。",
+  "hexal.page.great_wisps.wisp/consume.1": "若咒灵的所有者是我，消耗 1 个$(l:items/amethyst)$(item)紫水晶碎片/$；若咒灵的所有者是他人，则消耗该咒灵所拥有的媒质量的一半。媒质的再利用效率不算特别高，会在传输过程中损耗掉被拆解咒灵媒质库容量的 1/20。",
   "hexal.page.great_wisps.wisp/seon/set": "在该我所有的咒灵和我之间建立更紧密的联系。我只能同时绑定一个咒灵，但绑定咒灵的常态消耗将大大减少。",
   "hexal.page.great_wisps.wisp/seon/get": "返回我当前绑定的咒灵。（这并不是卓越法术，记载于此是为了方便查找。）",
 
@@ -159,15 +159,15 @@
 
   "hexal.entry.everbook": "永恒之书",
   "hexal.page.everbook.0": "永恒之书是一片奇特的空间，如今已对我残破的意识开放。似乎有许多个我共用所有永恒之书的记录，共享不同世界的研究成果，又不断重新研究。永恒之书能够将图案和 iota 对应并存储，和$(l:hexcasting:greatwork/akashiclib)$(item)阿卡夏记录/$类似。不过考虑到如今我意识的脆弱，可能还是把永恒之书的访问权限全部交给$(l:hexcasting:greatwork/akashiclib)$(item)阿卡夏记录/$比较好。只要在某个世界中获得启迪，我就能在那个世界中访问永恒之书的所有内容。",
-  "hexal.page.everbook.everbook/read": "接受指向$(l:hexcasting:greatwork/akashiclib)$(item)阿卡夏记录/$的位置向量，与一个作为密钥的图案，并返回永恒之书中对应密钥处的 iota，若能存储则同时会将其存至给定的$(l:hexcasting:greatwork/akashiclib)$(item)阿卡夏记录/$中。",
-  "hexal.page.everbook.everbook/write": "接受指向$(l:hexcasting:greatwork/akashiclib)$(item)阿卡夏记录/$的位置向量，与一个作为密钥的图案，并将阿卡夏记录中该图案对应的 iota 以同个图案存至永恒之书中。",
+  "hexal.page.everbook.everbook/read": "接受指向$(l:hexcasting:greatwork/akashiclib)$(item)阿卡夏记录/$的位置向量，与一个作为键的图案，并返回永恒之书中对应键处的 iota，若能存储则同时会将其存至给定的$(l:hexcasting:greatwork/akashiclib)$(item)阿卡夏记录/$中。",
+  "hexal.page.everbook.everbook/write": "接受指向$(l:hexcasting:greatwork/akashiclib)$(item)阿卡夏记录/$的位置向量，与一个作为键的图案，并将阿卡夏记录中该图案对应的 iota 以同个图案存至永恒之书中。",
   "hexal.page.everbook.everbook/delete": "接受一个图案，并移除永恒之书中该图案对应的条目。",
   "hexal.page.everbook.everbook/toggle_macro.0": "接受一个图案，并以该图案标记永恒之书中对应条目，使得绘制该图案所产生的效果和自然创造的其他图案相仿。",
   "hexal.page.everbook.everbook/toggle_macro.1": "当绘制被标记的永恒之书条目所对应的图案时，如果对应条目存有一个列表，则自然会如同$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$一样依次执行列表中各元素，但不会消耗递归层数。试图将不存在的条目或是会无限递归的条目标记为图案则会失败。",
 
   "hexal.entry.everbook_entries": "永恒之书条目",
-  "hexal.page.everbook_entries.0": "此条目中每一页都会显示我$(l:hexal:patterns/everbook)$(action)永恒之书/$中某一条目对应的图案密钥。",
+  "hexal.page.everbook_entries.0": "此条目中每一页都会显示我$(l:hexal:patterns/everbook)$(action)永恒之书/$中某一条目对应的图案键。",
 
-  "hexal.everbook_pattern_entry.header": "存储密钥：%d",
-  "hexal.everbook_pattern_entry.macro_header": "宏密钥：%d"
+  "hexal.everbook_pattern_entry.header": "存储键：%d",
+  "hexal.everbook_pattern_entry.macro_header": "宏键：%d"
 }
