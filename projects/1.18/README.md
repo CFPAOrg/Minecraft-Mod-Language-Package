@@ -1,4 +1,4 @@
-本资源包是适用于 Minecraft 1.12.2 的简体中文资源包，提供数千个模组的简体中文本地化。
+本资源包是适用于 Minecraft 1.18.2 的简体中文资源包，提供数千个模组的简体中文本地化。
 
 署名：CFPA团队（完整贡献者名单：https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors）
 
