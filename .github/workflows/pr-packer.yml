@@ -9,6 +9,7 @@ on:
     branches: [ main ]
     paths: 
       - 'config/packer.json'
+      - 'config/fontmap.txt'
       - 'projects/**'
 
 
@@ -50,30 +51,50 @@ jobs:
         id: changed-118-fabric
         with:
           paths: projects/1.18-fabric
+
+      - name: Check changed path on 1.19
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: changed-119
+        with:
+          paths: projects/1.19
+
+      # - name: Check changed path on 1.19 fabric
+      #   uses: MarceloPrado/has-changed-path@v1.0
+      #   id: changed-119-fabric
+      #   with:
+      #     paths: projects/1.19-fabric
           
       - name: Build Packer
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
-      - name: Run Packer
+      - name: Run Packer for 1.12.2
         run: ./Packer --version="1.12.2"
         if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
-      - name: Run Packer
+      - name: Run Packer for 1.16
         run: ./Packer --version="1.16"
         if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         
-      - name: Run Packer
+      - name: Run Packer for 1.16-fabric
         run: ./Packer --version="1.16-fabric"
         if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         
-      - name: Run Packer
+      - name: Run Packer for 1.18
         run: ./Packer --version="1.18"
         if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         
-      - name: Run Packer
+      - name: Run Packer for 1.18-fabric
         run: ./Packer --version="1.18-fabric"
         if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Run Packer for 1.19
+        run: ./Packer --version="1.19"
+        if: steps.changed-119.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         
+      # - name: Run Packer for 1.19-fabric
+      #   run: ./Packer --version="1.19-fabric"
+      #   if: steps.changed-119-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
       - name: Create timestamp
         id: create_timestamp
         run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
@@ -82,11 +103,13 @@ jobs:
      # 额 要两分半才能传完 然而 GitHub actions 直接传的话 会压成 zip 内套 zip 就这样了吧 --cy
       - name: Unzip Files
         run:  |
+          unzip -q Minecraft-Mod-Language-Package-1.19.zip -d Minecraft-Mod-Language-Package-1.19 || echo 0
           unzip -q Minecraft-Mod-Language-Package-1.16.zip -d Minecraft-Mod-Language-Package-1.16 || echo 0
           unzip -q Minecraft-Mod-Language-Package-1.18.zip -d Minecraft-Mod-Language-Package-1.18 || echo 0
           unzip -q Minecraft-Mod-Language-Package-1.16-fabric.zip -d Minecraft-Mod-Language-Package-1.16-fabric || echo 0
           unzip -q Minecraft-Mod-Language-Package-1.18-fabric.zip -d Minecraft-Mod-Language-Package-1.18-fabric || echo 0
           unzip -q Minecraft-Mod-Language-Package-1.12.2.zip -d Minecraft-Mod-Language-Package-1.12.2 || echo 0
+        # unzip -q Minecraft-Mod-Language-Package-1.19-fabric.zip -d Minecraft-Mod-Language-Package-1.19-fabric || echo 0
         shell: bash
           
       - name: Upload Artifact 1.12.2
@@ -123,4 +146,18 @@ jobs:
           name: Minecraft-Mod-Language-Package-1.18-fabric
           path: Minecraft-Mod-Language-Package-1.18-fabric/*
         if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
+      - name: Upload Artifact 1.19
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: Minecraft-Mod-Language-Package-1.19
+          path: Minecraft-Mod-Language-Package-1.19/*
+        if: steps.changed-119.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+        
+      # - name: Upload Artifact 1.19 fabric
+      #   uses: actions/upload-artifact@v3.0.0
+      #   with:
+      #     name: Minecraft-Mod-Language-Package-1.19-fabric
+      #     path: Minecraft-Mod-Language-Package-1.19-fabric/*
+      #   if: steps.changed-119-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         

@@ -1,6 +1,7 @@
 <!--
-要勾选下面的复选框 可以将文本[ ]改为[x]，注意别误删前后的空格。
+要勾选下面的复选框，可以将文本[ ]改为[x]，注意别误删前后的空格。
 务必认真阅读并完成此检查单。如有其他需说明的事项请写在检查单之前。
+若对检查单有疑惑，请查看Issues列表的 #2539 “检查单”使用说明 & 错误“检查单”使用情况报告
 -->
 
 - [ ] 我已**仔细**阅读贡献指南 [CONTRIBUTING](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)；
