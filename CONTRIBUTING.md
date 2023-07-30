@@ -92,7 +92,7 @@ Minecraft-Mod-Language-Package
 - PR 标题**应该**简洁明了，格式为 `{模组英文全名}{空格}{简述}`。
   - ✔️`Tinkers' Construct 翻译提交`
   - ✔️`Tinkers' Construct 和 Tinkers' Reforged 译名修正`
-  - ❌`TiC3 翻译更新`（未使用全名）
+  - ❌`TiC 翻译更新`（未使用全名）
   - ❌`匠魂翻译更新`（未包含英文名）
   - ❌`提交 Tinkers' Construct 翻译`（英文名前不应有文字）
 - 提交时应签署[贡献者许可协议](https://cla-assistant.io/CFPAOrg/Minecraft-Mod-Language-Package)，也可发送 PR 后签署。
