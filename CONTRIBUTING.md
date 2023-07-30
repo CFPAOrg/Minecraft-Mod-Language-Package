@@ -62,7 +62,7 @@ Minecraft-Mod-Language-Package
 
 **命名空间（Namespace）**：以匠魂为例，用压缩软件打开模组文件（JAR 格式），它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://minecraft.fandom.com/zh/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
 
-仓库中“命名空间”文件夹下的目录结构与[资源包](https://minecraft.fandom.com/zh/wiki/%E8%B5%84%E6%BA%90%E5%8C%85)的相应结构相同。
+仓库中“命名空间”文件夹下的目录结构与[资源包](https://minecraft.fandom.com/zh/wiki/%E8%B5%84%E6%BA%90%E5%8C%85)的相应结构相同，其他可用资源包加载的本地化文件亦可接收。
 
 ## 翻译用语共识
 
