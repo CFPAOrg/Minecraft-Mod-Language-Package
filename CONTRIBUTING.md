@@ -83,7 +83,8 @@ Minecraft-Mod-Language-Package
 
 ### Pull Request 相关规定
 
-可查看[视频教程](https://www.bilibili.com/video/BV1Ph4y1R7M8/)或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
+可查看[视频教程](https://www.bilibili.com/video/BV1Ph4y1R7M8/)（已过时）或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
+
 
 视频或文字教程中与翻译贡献方针不同的地方，以本方针为准。
 
