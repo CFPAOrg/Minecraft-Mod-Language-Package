@@ -70,8 +70,8 @@
 
 - [术语在线](https://www.termonline.cn/index) - 全国科学技术名词审定委员会审定的术语。
 - [CNKI 翻译助手](https://dict.cnki.net/index) - 学科词典聚合和机器翻译。
-- [中国自然标本馆](http://www.cfh.ac.cn/)丨[iPlant 植物智](http://www.iplant.cn/)丨[EOL 生命大百科](https://eol.org/zh-CN)丨[iNaturalist](https://www.inaturalist.org/) - 物种译名查询。
-- [WantWords 反向词典](https://wantwords.net/) - 寻找相似词，词穷拯救者。
+- [中国自然标本馆](http://www.cfh.ac.cn/)丨[iNaturalist](https://www.inaturalist.org/)丨[iPlant 植物智](http://www.iplant.cn/)丨[EOL 生命大百科](https://eol.org/zh-CN) - 物种译名查询。
+- [深言达意](https://www.shenyandayi.com/) - 据意查词，反向词典。
 
 <!-- **你们是怎么做到流水线式的翻译的？**
 
