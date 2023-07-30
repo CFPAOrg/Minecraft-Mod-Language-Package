@@ -1,10 +1,7 @@
 <!--
-要勾选下面的复选框，可以将文本[ ]改为[x]，注意别误删前后的空格。
-务必认真阅读并完成此检查单。如有其他需说明的事项请写在检查单之前。
-若对检查单有疑惑，请查看Issues列表的 #2539 “检查单”使用说明 & 错误“检查单”使用情况报告
--->
+欢迎贡献。贡献前请认真阅读下列协议并签署，你也可以在提交PR后签署：
+https://cla-assistant.io/CFPAOrg/Minecraft-Mod-Language-Package
 
-- [ ] 我已**仔细**阅读[贡献方针](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)（CONTRIBUTING）；
-- [ ] 我已确认外语原文（如 en_us.json）存在且完整，内容与中文对应；
-- [ ] 我已阅读并同意按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议发布我的作品；
-- [ ] 刷新 PR 的标签/状态，有需要再点击；
+提交PR前请认真阅读下列文件：
+贡献方针：https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md
+-->
