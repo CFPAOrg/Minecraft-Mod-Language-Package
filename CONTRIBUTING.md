@@ -95,7 +95,7 @@ Minecraft-Mod-Language-Package
   - ❌`TiC3 翻译更新`（未使用全名）
   - ❌`匠魂翻译更新`（未包含英文名）
   - ❌`提交 Tinkers' Construct 翻译`（英文名前不应有文字）
-- PR 模板中的检查单**必须**照做并完成勾选，详见[“检查单”使用说明](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/2539)。
+- 提交时应签署[贡献者许可协议](https://cla-assistant.io/CFPAOrg/Minecraft-Mod-Language-Package)，也可发送 PR 后签署。
 
 #### PR 内容
 
