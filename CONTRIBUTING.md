@@ -83,7 +83,7 @@ Minecraft-Mod-Language-Package
 
 ### Pull Request 相关规定
 
-可查看[视频教程1](https://www.bilibili.com/video/BV1Xi4y1r7S2/)（已过时）、[视频教程2](https://www.bilibili.com/video/BV1Ph4y1R7M8/)或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
+可查看[视频教程](https://www.bilibili.com/video/BV1Ph4y1R7M8/)或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
 
 视频或文字教程中与翻译贡献方针不同的地方，以本方针为准。
 
@@ -104,7 +104,7 @@ Minecraft-Mod-Language-Package
 - **必须**包含简体中文、翻译源语言的语言文件。
   - 若翻译源语言不是英语，且模组有英语语言文件，则**必须**包含英语语言文件。
 - **建议**每个 PR 仅含一个模组。
-  - 若多个模组的中文总行数不超过 200，**建议**合并为一个 PR（<https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/discussions/1770>）。
+  - 若多个模组的中文总行数不超过 200，**建议**合并为一个 PR。
 - **建议**用相关词语填写提交消息（Commit Message），如`提交`、`更新`、`修改`、`删除`。
 
 <!--
@@ -144,8 +144,10 @@ Minecraft-Mod-Language-Package
 搁置规则的目的是解决由于 PR 作者迟迟不出面响应审查要求而导致的 PR 积压问题。
 
 1. 若 PR 中存在未作者未响应的审查超过 7 天，审查人有权提及（@）PR 作者，提醒其相应审查意见，然后加上“即将被搁置”标签。
-2. 若“即将被搁置”标签存在超过 7 天，PR 将被加上“即将拒收”标签。1 天后 PR将被关闭。
-3. 在 1、2 所述过程中，若 PR 作者做出回应，标签将被清除，计时重新从 1 开始。
+2. 若“即将被搁置”标签存在超过 7 天，PR 作者将被视为无法回应。
+   2.1 若审查意见要求 PR 作者参与，PR 将被加上“即将拒收”标签。7 天后 PR 将被关闭。
+   2.2 若审查意见无需 PR 作者参与，PR 将被加上“即将拒收”标签。7 天缓冲期内官方审查人**可以**直接采纳审查意见，并终止及时，转入合并流程。
+3. 在 1、2 所述过程中，若 PR 作者做出了实质上的回应，标签将被清除，计时重新从 1 开始。
 
 ### 提示
 
