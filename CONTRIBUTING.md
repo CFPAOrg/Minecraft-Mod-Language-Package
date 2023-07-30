@@ -83,7 +83,8 @@ Minecraft-Mod-Language-Package
 
 ### Pull Request 相关规定
 
-可查看[视频教程](https://www.bilibili.com/video/BV1Ph4y1R7M8/)或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
+可查看[视频教程](https://www.bilibili.com/video/BV1Ph4y1R7M8/)（已过时）或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
+
 
 视频或文字教程中与翻译贡献方针不同的地方，以本方针为准。
 
@@ -92,7 +93,7 @@ Minecraft-Mod-Language-Package
 - PR 标题**应该**简洁明了，格式为 `{模组英文全名}{空格}{简述}`。
   - ✔️`Tinkers' Construct 翻译提交`
   - ✔️`Tinkers' Construct 和 Tinkers' Reforged 译名修正`
-  - ❌`TiC3 翻译更新`（未使用全名）
+  - ❌`TiC 翻译更新`（未使用全名）
   - ❌`匠魂翻译更新`（未包含英文名）
   - ❌`提交 Tinkers' Construct 翻译`（英文名前不应有文字）
 - 提交时应签署[贡献者许可协议](https://cla-assistant.io/CFPAOrg/Minecraft-Mod-Language-Package)，也可发送 PR 后签署。
