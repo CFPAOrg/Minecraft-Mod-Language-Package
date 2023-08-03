@@ -126,7 +126,7 @@ namespace Packer.Extensions
                     // 选出不经过处理路径的文件
                     if (relativePath.NeedBypass(config))
                     {
-                        Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('\\')[0]);
+                        Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('/')[0]);
                         bypassed.Add(file.FullName,
                                      Path.Combine("assets",
                                                   assetDirectory.Name,
@@ -147,7 +147,7 @@ namespace Packer.Extensions
                         ".json" => FileCategory.JsonAlike,
                         _ => FileCategory.LangAlike
                     };
-                    if (relativePath.StartsWith("lang\\"))
+                    if (relativePath.StartsWith("lang/"))
                     {
                         return new LangFile(file.OpenRead(),
                                             parsingCategory | FileCategory.LanguageFile,
