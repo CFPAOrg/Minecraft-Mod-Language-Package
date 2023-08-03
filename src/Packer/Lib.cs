@@ -1,9 +1,11 @@
 ﻿using Packer.Extensions;
 using Packer.Models;
 using Serilog;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Packer
 {
@@ -68,6 +70,12 @@ namespace Packer
                         continue;
                     }
                     Log.Information("正在处理 {0}（asset-domain：{1}）", name, domain);
+
+                    // 强制中止打包，防止异常文件流出
+                    if(!Regex.IsMatch(domain, @"^[a-z0-9_\-.]+$", RegexOptions.Singleline))
+                        throw new ArgumentOutOfRangeException(paramName: nameof(domain),
+                                                              actualValue: domain,
+                                                              message: "非法的命名空间名称。强制中止");
 
                     if (!existingDomains.ContainsKey(domain))
                     {
