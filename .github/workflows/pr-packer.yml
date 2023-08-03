@@ -18,8 +18,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: main
 
       # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
       # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
@@ -27,8 +25,9 @@ jobs:
         id: cache-packer
         uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('source/Pakcer/**') }}
+          key: ${{ runner.os }}-${{ hashFiles('src/Pakcer/**') }}
           path: Packer.exe
+          lookup-only: true
 
       # 构造程序
       - name: Build Packer if not cached
@@ -49,15 +48,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 20
-          ref: main
+          fetch-depth: 20 # 显然，需要有提交历史才能比较提交。20这个数是任意的。
       
       # 由于Github的限制，这里需要重新拉取打包程序。
       - name: Restore Packer
         id: cache-restore
         uses: actions/cache/restore@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('source/Pakcer/**') }}
+          key: ${{ runner.os }}-${{ hashFiles('src/Pakcer/**') }}
           path: Packer.exe
           fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
 
@@ -66,7 +64,7 @@ jobs:
         id: check-changes
         with:
           # 判断位置：该版本文件、该版本配置、代码
-          paths: | 
+          paths: > 
             projects/${{ matrix.version }}
             config/packer/${{ matrix.version }}.json
             src/**
@@ -80,6 +78,7 @@ jobs:
       - name: Unzip Files
         run: unzip -q Minecraft-Mod-Language-Package-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
         shell: bash
+        if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
           
       - name: Upload Artifact for ${{ matrix.version }}
         uses: actions/upload-artifact@v3.0.0
