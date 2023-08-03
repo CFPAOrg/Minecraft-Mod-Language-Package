@@ -126,11 +126,13 @@ namespace Packer.Extensions
                     // 选出不经过处理路径的文件
                     if (relativePath.NeedBypass(config))
                     {
-                        Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('/')[0]);
-                        bypassed.Add(file.FullName,
-                                     Path.Combine("assets",
+                        var target = Path.Combine("assets",
                                                   assetDirectory.Name,
-                                                  relativePath));
+                                                  relativePath);
+                        Log.Information("跳过了标记为直接加入的命名空间：{0} -> {1}",
+                                        relativePath.Split('/')[0],
+                                        target);
+                        bypassed.Add(file.FullName, target);
                         return null;
                     }
 
