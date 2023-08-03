@@ -1,55 +1,64 @@
-# labeler.yml 中的 Videndum/label-mastermind 的配置文件，已废弃。
 {
     "labels": {
         "s": {
             "name": "10+",
             "color": "c5def5",
-            "description": "改动行数标签。"
+            "description": "Size label."
         },
         "xs": {
             "name": "1+",
             "color": "c5def5",
-            "description": "改动行数标签。"
+            "description": "Size label."
         },
         "m": {
             "name": "40+",
             "color": "c5def5",
-            "description": "改动行数标签。"
+            "description": "Size label."
         },
         "l": {
             "name": "100+",
             "color": "c5def5",
-            "description": "改动行数标签。"
+            "description": "Size label."
         },
         "xl": {
             "name": "500+",
             "color": "c5def5",
-            "description": "改动行数标签。"
+            "description": "Size label."
         },
         "xxl": {
             "name": "1000+",
             "color": "c5def5",
-            "description": "改动行数标签。"
+            "description": "Size label."
         },
         "xxxl": {
             "name": "2000+",
             "color": "c5def5",
-            "description": "改动行数标签。"
+            "description": "Size label."
         },
         "xxxxl": {
             "name": "5000+",
             "color": "c5def5",
-            "description": "改动行数标签。"
+            "description": "Size label."
         },
         "bug": {
             "name": "bug",
             "color": "ee0701",
             "description": "Bug."
         },
-        "hard": {
-            "name": "棘手的",
+        "wip": {
+            "name": "in progress",
             "color": "ededed",
-            "description": "难度高或数量多的"
+            "description": "WIP"
+        },
+        "hard": {
+            "name": "hard",
+            "color": "ededed",
+            "description": "High difficulty."
+        },
+        "review": {
+            "name": "need review",
+            "color": "ededed",
+            "description": "Need review."
         },
         "1.12.x": {
             "name": "1.12.x",
@@ -75,9 +84,6 @@
             "name": "source",
             "color": "fef2c0",
             "description": ""
-        },
-        "helpwanted": {
-            "name": "Help Wanted"
         }
     },
     "runners": [
@@ -97,19 +103,10 @@
                             {
                                 "type": "titleMatches",
                                 "pattern": "/^bug(\\(.*\\))?(!)?:/i"
-                            }
-                        ]
-                    },
-                    "helpwanted": {
-                        "requires": 1,
-                        "conditions": [
-                            {
-                                "type": "descriptionMatches",
-                                "pattern": "Help\\s?(W|要)anted|需要(\\S| )*(帮助|协助)"
                             },
                             {
-                                "type": "titleMatches",
-                                "pattern": "(?<=\\[)H(?=\\])"
+                                "type": "descriptionMatches",
+                                "pattern": "/(created|new|opened|made)( an| a)? bug/i"
                             }
                         ]
                     }
@@ -196,12 +193,25 @@
                             }
                         ]
                     },
+                    "wip": {
+                        "requires": 1,
+                        "conditions": [
+                            {
+                                "type": "isDraft",
+                                "value": true
+                            },
+                            {
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)WIP(?=\\])"
+                            }
+                        ]
+                    },
                     "hard": {
                         "requires": 1,
                         "conditions": [
                             {
-                                "type": "descriptionMatches",
-                                "pattern": "棘手的"
+                                "type": "titleMatches",
+                                "pattern": "(?<=\\[)P(?=\\])"
                             }
                         ]
                     },

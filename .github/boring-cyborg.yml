@@ -15,23 +15,17 @@ labelPRBasedOnFilePath:
     1.19.x:
         - "projects/1.19/**"
       # - "projects/1.19-fabric/**"
-
-    1.20.x:
-        - "projects/1.20/**"
-        - "projects/1.20-fabric/**"
     
     Forge:
         - "projects/1.12.2/**"
         - "projects/1.16/**"
         - "projects/1.18/**"
         - "projects/1.19/**"
-        - "projects/1.20/**"
     
     Fabric:
         - "projects/1.16-fabric/**"
         - "projects/1.18-fabric/**"
       # - "projects/1.19-fabric/**"
-        - "projects/1.20-fabric/**"
       
     Patchouli:
         - "projects/**/patchouli_books/**"
@@ -95,7 +89,7 @@ firstPRMergeComment: >
 # Verifies if commit/PR titles match the regexp specified
 verifyTitles:
     # Regular expression that should be matched by titles of commits or PR
-    titleRegexp: ^[A-Za-z\s]+\s[\u4e00-\u9fa5]+$
+    titleRegexp: ^(\[[A-Z,]{1,}\]|[\u4e00-\u9fa5]*|)\s*[A-Za-z\s]+\s*[\u4e00-\u9fa5]*.*$
     # If set to true, it will always check the PR title (as opposed to the individual commits).
     alwaysUsePrTitle: true
     # If set to true, it will only check the commit in case there is a single commit.
@@ -112,7 +106,7 @@ verifyTitles:
     successMessage: "你的标题是正确的，感谢你的配合。"
     # A custom message to be displayed when the title fails validation.
     # Allows insertion of ${type} (commit/PR), ${title} (the title validated) and ${regex} (the titleRegexp above).
-    failureMessage: "${type}标题不合规。应为“模组英文名+简要说明”的格式"
+    failureMessage: "错误的${type}标题：${title}。请检查是否符合“模组英文名+简要说明”的格式"
 
     ###### PR/Branch Up-To-Date Checker ####################################################################################
 # Check if the branch is up to date with master when certain files are modified

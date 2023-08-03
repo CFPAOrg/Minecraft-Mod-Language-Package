@@ -13,7 +13,6 @@
 ### 策略文件的格式
 
 packer-policy.json
-
 - 根标签
   - `type` string -> 策略的类型。可为以下选项之一：
     - `noaction` 默认选项。不进行特殊处理，直接按照此处的文件结构打包。如果没有对文件同步或版本对照的特殊要求，使用该类型。如：[示例文件](./projects/1.19/assets/0-example-nop/nop/packer-policy.json)
