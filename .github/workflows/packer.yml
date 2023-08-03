@@ -3,7 +3,7 @@ name: Packer
 on:
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: [ main ]
     paths: 
       - 'src/**'
       - 'config/packer/**'
@@ -12,14 +12,12 @@ on:
 
       
 jobs:
-  build:
+  build-packer:
     if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
-    name: Build / Cache Packer and Uploader
+    name: Build / Cache Packer
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: main
 
       # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
       # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
@@ -27,41 +25,77 @@ jobs:
         id: cache-packer
         uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('source/Pakcer/**') }}
+          key: ${{ runner.os }}-${{ hashFiles('src/Pakcer/**') }}
           path: Packer.exe
+          lookup-only: true
 
-      - name: Cache Uploader
-        id: cache-uploader
-        uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-${{ hashFiles('source/Uploader/**') }}
-          path: Uploader.exe
-      
       # 构造程序
       - name: Build Packer if not cached
         if: steps.cache-packer.outputs.cache_hit != 'true'
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
+  build-uploader:
+    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    name: Build / Cache Uploader
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
+      # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
+      - name: Cache Uploader
+        id: cache-uploader
+        uses: actions/cache@v3
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('src/Uploader/**') }}
+          path: Uploader.exe
+          lookup-only: true
+
+      # 构造程序
       - name: Build Uploader if not cached
         if: steps.cache-uploader.outputs.cache_hit != 'true'
         run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
+  initialize-release:
+    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    name: Initialize Release
+    runs-on: windows-latest
+    steps:
+
+      - name: Create timestamp
+        id: create_timestamp
+        run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
+        shell: bash
+      
+        # Create the release: https://github.com/actions/create-release
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
+          release_name: 汉化资源包-Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
+          draft: false
+          prerelease: false
+    outputs:
+      upload-url: ${{ steps.create_release.outputs.upload_url }}
+
 
   pack:
     if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
-    name: Pack Resources and Upload Artifacts
-    needs: build # 显然，需要存在缓存/已经构造，才能打包。
+    name: Pack Resources and Upload Artifacts/Releases
+    needs: [ build-packer, initialize-release ] # 显然，需要存在打包程序，才能打包。
     strategy:
       matrix:
-        # 支持版本列表。将对这里的每个版本判断，按需打包。
+        # 版本列表。将对这里的每个版本判断，按需打包。
         # 如需添加新版本，在这里添加即可。
-        version: ["1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric"]
+        version: [ "1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric" ]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 20
-          ref: main
+          fetch-depth: 20 # 显然，需要有提交历史才能比较提交。20这个数是任意的。
       
       # 由于Github的限制，这里需要重新拉取打包程序。
       - name: Restore Packer
@@ -77,7 +111,7 @@ jobs:
         id: check-changes
         with:
           # 判断位置：该版本文件、该版本配置、代码
-          paths: | 
+          paths: > 
             projects/${{ matrix.version }}
             config/packer/${{ matrix.version }}.json
             src/**
@@ -85,27 +119,41 @@ jobs:
       - name: Run Packer for ${{ matrix.version }}
         run: ./Packer --version="${{ matrix.version }}"
         # 运行逻辑：内容有更改 或 手动运行
-        if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
-      # 上传内容：每个版本一个压缩包，包含了资源包和md5校验文件
+      # Artifact 上传内容：每个版本一个压缩包，包含了资源包和md5校验文件
       - name: Upload Artifact for ${{ matrix.version }}
         uses: actions/upload-artifact@v3.0.0
         with:
           name: Minecraft-Mod-Language-Package-${{ matrix.version }}
           path: |
             Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
-            ${{matrix.version}}.md5
+            ${{ matrix.version }}.md5
+        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+
+      # Upload release asset: https://github.com/actions/upload-release-asset
+      - name: Update release asset for ${{ matrix.version }}
+        id: upload-release-asset
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.initialize-release.outputs.upload-url }}
+          asset_path: Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
+          asset_name: Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
+          asset_content_type: application/zip
     
 
   upload:
     if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
     name: Upload Resource Packs to Remote Server
-    needs: pack # 显然，需要打包完成后才可以上传给分发服务器
+    needs: [ pack, build-uploader ] # 显然，需要打包完成，并且存在上传程序，才可以上传给分发服务器
     runs-on: windows-latest
     steps:
-      # 由于Github的限制，这里需要重新拉取打包程序。
-      - name: Restore Packer
+
+      # 由于Github的限制，这里需要重新拉取上传程序。
+      - name: Restore Uploader
         id: cache-restore
         uses: actions/cache/restore@v3
         with:
