@@ -93,9 +93,9 @@ namespace Packer.Extensions
             {
                 //Log.Information("{0}", reference.Keys);
                 Log.Information("对文件 {0} 应用 {1} 处的 patch。", patch.Key, patch.Value);
-                var target = reference[patch.Key];
+                reference.Remove(patch.Key, out var target);
                 var patchText = string.Join('\n', File.ReadAllLines(patch.Value)); // 不要问我为什么D-M-P默认换行是LF
-                target.ApplyPatch(patchText);
+                reference.Add(patch.Key, target.ApplyPatch(patchText));
             }
             return reference.Values;
         }
@@ -111,7 +111,8 @@ namespace Packer.Extensions
                                        .Select(file =>
                 {   // 这里开始真正的检索。被跳过的文本用 null 代替
                     var prefixLength = assetDirectory.FullName.Length;
-                    var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置，用反斜杠分割
+                    var relativePath = file.FullName[(prefixLength + 1)..]
+                                       .Replace('\\', '/'); // 在asset-domain下的位置，规范为用正斜杠分割
 
                     // 处理被跳过的文本。处理顺序：policy -> [bypass](font, textures) -> !zh_cn
                     // 顺序乱了会导致字体文件被丢弃，因为没有带zh_cn
