@@ -58,6 +58,12 @@ namespace Packer
             return mapping.Values;
         }
 
+        /// <summary>
+        /// 基于原位置的文件key，用incoming的词条进行替换。未被替换的保持原文。
+        /// </summary>
+        /// <param name="baseFile">原位置的基准文件</param>
+        /// <param name="incoming">更新文件</param>
+        /// <returns></returns>
         public static IEnumerable<TranslatedFile> PortFiles(IEnumerable<TranslatedFile> baseFile, IEnumerable<TranslatedFile> incoming)
         {
             var mapping = new Dictionary<string, TranslatedFile>(); // asset-domain下的目标位置 -> 文件
