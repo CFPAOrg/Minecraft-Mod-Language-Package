@@ -33,7 +33,7 @@ namespace Packer
             }
 
             // Packer输出的文件名，可以随时更改
-            string packName = $".\\Minecraft-Mod-Language-Package-{config.Version}.zip";
+            string packName = $"./Minecraft-Mod-Language-Package-{config.Version}.zip";
 
             Log.Information("开始对版本 {0} 的打包", config.Version);
 
@@ -49,7 +49,7 @@ namespace Packer
             archive.Dispose(); // 关闭压缩文档，不关闭流
 
             // 临时操作
-            File.WriteAllText($".\\{config.Version}.md5", stream.ComputeMD5());
+            File.WriteAllText($"./{config.Version}.md5", stream.ComputeMD5());
             stream.Dispose();
         }
     }

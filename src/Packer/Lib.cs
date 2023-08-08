@@ -1,9 +1,11 @@
 ﻿using Packer.Extensions;
 using Packer.Models;
 using Serilog;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Packer
 {
@@ -17,6 +19,8 @@ namespace Packer
         /// <returns></returns>
         public static IEnumerable<Asset> RetrieveContent(Config config, out Dictionary<string, string> unprocessed)
         {
+            // 警告：下面的代码中，有部分变量的名称并不规范！远期可能会调整这一部分。
+
             // 注：仓库的文件结构如下：（仅考虑主要翻译文件）
             // projects/<version>/assets/<mod-name>/<asset-domain>/<namespace>/path/to/the/file
             // 其中，<version> 与 config.Version 一致
@@ -66,6 +70,12 @@ namespace Packer
                         continue;
                     }
                     Log.Information("正在处理 {0}（asset-domain：{1}）", name, domain);
+
+                    // 强制中止打包，防止异常文件流出
+                    if(!Regex.IsMatch(domain, @"^[a-z0-9_\-.]+$", RegexOptions.Singleline))
+                        throw new ArgumentOutOfRangeException(paramName: nameof(domain),
+                                                              actualValue: domain,
+                                                              message: "非法的命名空间名称。强制中止");
 
                     if (!existingDomains.ContainsKey(domain))
                     {

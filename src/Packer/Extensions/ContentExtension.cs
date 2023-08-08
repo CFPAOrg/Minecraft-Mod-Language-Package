@@ -77,7 +77,7 @@ namespace Packer.Extensions
         {
             foreach (var @namespace in config.BypassedNamespace)
             {
-                if (location.StartsWith(@namespace + "\\")) return true;
+                if (location.StartsWith(@namespace + "/")) return true;
             }
             return false;
         }
