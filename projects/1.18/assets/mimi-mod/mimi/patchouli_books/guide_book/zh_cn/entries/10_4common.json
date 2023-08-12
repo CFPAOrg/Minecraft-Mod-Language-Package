@@ -1,0 +1,37 @@
+{
+    "name": "通用配置文件",
+    "icon": "minecraft:player_head",
+    "category": "mimi:10settings",
+    "pages": [
+        {
+            "type": "text",
+            "text": "MIMI还有一份包含了数种额外设置的通用配置文件，可以同时应用于客户端和服务端。$(br2)和其他模组一样，MIMI的配置文件可以在我的世界游戏实例的$(#0046ff)config$()文件夹中找到，并且可以用任何文本编辑器或IDE修改。"
+        },
+        {
+            "type": "text",
+            "title": "乐器缓存大小",
+            "text": "$(l)参数名:$() serverMusicCacheSize$(br)$(l)类型:$() 整数$(br)$(l)默认值:$() 100$(br2)此参数存储了服务器从软盘中缓存到硬盘的MIDI文件数量上限。$(br2)缓存软盘的MIDI文件可以显著提升性能但是也需要一定的硬盘空间(但一般不会很多，MIDI文件很小)。"
+        },
+        {
+            "type": "text",
+            "title": "允许网络MIDI文件",
+            "text": "$(l)参数名:$() allowWebMidi$(br)$(l)类型:$() 布尔值$(br)$(l)默认值:$() true$(br2)此参数决定了服务器是否要允许播放软盘中指向网站的MIDI文件链接。$(br2)禁用此项代表不允许从所有网站进行下载，不论是否在允许的域名列表中。"
+        },
+        {
+            "type": "text",
+            "title": "允许的MIDI下载域名",
+            "text": "$(l)参数名:$() allowedMusicHosts$(br)$(l)类型:$() 域名列表$(br)$(l)默认值:$() 空白$(br2)此参数存储了一份用逗号隔开的网站域名列表(样例：$(o)google.com,example.com$())，软盘只可以播放这些网站的MIDI文件。列表为空白代表允许所有网站。$(br2)文件将会从链接处下载到配置的本地缓存目录。"
+        },
+        {
+            "type": "text",
+            "title": "允许网络设置指令",
+            "text": "$(l)参数名:$() allowWebCommands$(br)$(l)类型:$() 布尔值$(br)$(l)默认值:$() true$(br2)此参数决定了服务器是否允许有'op'权限的玩家通过游戏内指令修改上述网络MIDI文件设置。"
+        },
+        {
+            "type": "text",
+            "title": "允许乐曲相关指令",
+            "text": "$(l)参数名:$() allowServerCommands$(br)$(l)类型:$() 布尔值$(br)$(l)默认值:$() true$(br2)此参数决定了服务器是否允许有'op'权限的玩家通过游戏内指令修改服务器提供的MIDI文件列表。"
+        }
+    ],
+    "sortnum": 4
+}
