@@ -1,0 +1,31 @@
+{
+    "name": "Web MIDI Files",
+    "icon": "mimi:floppydisk",
+    "category": "mimi:8server",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "MIMI allows players to craft Floppy Disk items that point to a remove MIDI File either on the Web or on the Server. When a Floppy Disk with a Web URL is inserted into a Transmitter or a Broadcaster the Server downloads the MIDI File from the Web, saves it on disk, and starts playing it."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Depending on the players you expect to have on your server there may be some risk to letting the Server access URLs that they provide. While MIMI does some basic URL validation it is not extensive.$(br2)MIMI does, however, provide Server Operators with two ways to reduce this risk."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Allowed Web Hosts",
+            "text": "MIMI allows you to specify a list of web hosts that are allowed to be downloaded from.$(br2)If a user creates a Floppy Disk with a Web URL that points to a host that is not on the list of allowed hosts they will receive an error message when they try to use the disk.$(br2)The list of allowed hosts can be modified in the 'mimi-common' config file or using $(l:9_1web)commands$(). An empty list allows all sites."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "",
+            "text": "The commands to modify the list of allowed web hosts may be used by anyone with 'op' privileges.$(br2)For extra security, these commands can be disabled in the 'mimi-common' config file meaning the list of hosts can only be modified via the config file."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Disable Web MIDI",
+            "text": "If you would prefer to not allow any downloading of Web MIDI files by the server you can disable all Web MIDI using a $(l:9_2web)command$() or via the 'mimi-common' config file.$(br2)For extra security, this command can be disabled from the 'mimi-common' config file meaning the enabling/disabling of Web MIDI can only be controlled from the config file."
+        }
+    ],
+    "sortnum": 1
+}

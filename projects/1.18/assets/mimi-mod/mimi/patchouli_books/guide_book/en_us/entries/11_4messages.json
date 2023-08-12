@@ -1,0 +1,32 @@
+{
+    "name": "Messages",
+    "icon": "minecraft:paper",
+    "category": "mimi:11midi",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Communication over MIDI happens via discrete messages that generally include a single command or status.$(br2)While most messages are intended to apply to only a single channel some will apply to all of them."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Note On",
+            "text": "These messages apply to a single channel and turn the specified note on.$(br2)A Note On message includes the note to turn on and the velocity to use (how hard the note was played).$(br2)When a synthesizer receives a Note On message it will generally keep that note turned on until it receives a corresponding Note off message."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Note Off",
+            "text": "These messages apply to a single channel and turn the specified note off."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Program Change",
+            "text": "These messages apply to a single channel and inform the synthesizer that any following note data should be played using the specified program.$(br2)Not all synthesizers, such as the instruments in this mod, will handle program change messages since they may only support a single program."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "All Sounds Off",
+            "text": "These messages apply to all channels and instruct the synthesizer to immediately stop all sounds it is producing.$(br2)A similar message, All Notes Off, applies to only a single channel."
+        }
+    ],
+    "sortnum": 4
+}

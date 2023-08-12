@@ -1,0 +1,37 @@
+{
+    "name": "Common Config File",
+    "icon": "minecraft:player_head",
+    "category": "mimi:10settings",
+    "pages": [
+        {
+            "type": "text",
+            "text": "MIMI also includes a common configuration file with several additional settings that apply to both the client and server.$(br2)Like other mods, the configuration file for MIMI can be found in your Minecraft instance $(#0046ff)config$() folder and can be modified with any text editor or IDE."
+        },
+        {
+            "type": "text",
+            "title": "Music Cache Size",
+            "text": "$(l)Param:$() serverMusicCacheSize$(br)$(l)Type:$() Integer$(br)$(l)Default:$() 100$(br2)This parameter stores the number of MIDI files that the server should cache on disk from Floppy Disks.$(br2)Caching Floppy Disk midi files significantly increases performance but also requires some disk space (likely not a ton though, MIDI files are small)."
+        },
+        {
+            "type": "text",
+            "title": "Allow Web MIDI",
+            "text": "$(l)Param:$() allowWebMidi$(br)$(l)Type:$() Boolean$(br)$(l)Default:$() true$(br2)This parameter stores whether or not the server should allow playing MIDI files from Floppy Disks that point to web sites.$(br2)Disabling this means all websites are disallowed regardless of the allowed hosts value."
+        },
+        {
+            "type": "text",
+            "title": "Allowed MIDI Hosts",
+            "text": "$(l)Param:$() allowedMusicHosts$(br)$(l)Type:$() Host List$(br)$(l)Default:$() Blank$(br2)This parameter stores a comma-separated list of websites hosts (Ex: $(o)google.com,example.com$()) that Floppy Disks can play MIDI files from. A blank list allows all sites.$(br2)Files are downloaded to the server from the URL and cached in the cache config directory."
+        },
+        {
+            "type": "text",
+            "title": "Allow Web Commands",
+            "text": "$(l)Param:$() allowWebCommands$(br)$(l)Type:$() Boolean$(br)$(l)Default:$() true$(br2)This parameter stores whether or not the server should allow the above web MIDI settings to be modified via in-game commands by players with 'op' privileges."
+        },
+        {
+            "type": "text",
+            "title": "Allow Music Commands",
+            "text": "$(l)Param:$() allowServerCommands$(br)$(l)Type:$() Boolean$(br)$(l)Default:$() true$(br2)This parameter stores whether or not the server should allow the list of server-provided MIDI Files to be modified via in-game commands by players with 'op' privileges."
+        }
+    ],
+    "sortnum": 4
+}
