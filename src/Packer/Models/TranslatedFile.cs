@@ -52,24 +52,27 @@ namespace Packer.Models
     }
 
     /// <summary>
-    /// 语言文本的抽象<br></br>
-    /// 这是基本类
+    /// 语言文本的抽象。这是基本类<br/>
+    /// 基本上是immutable的
     /// </summary>
     public class TranslatedFile
     {
         /// <summary>
         /// asset-domain下的位置
         /// </summary>
-        public string RelativePath { get; set; }
+        public string RelativePath { get; init; }
+
         /// <summary>
         /// 该文件的文本，用<i>字符串</i>表示<br></br>
         /// 因此，不能存储非文本文件！
         /// </summary>
-        public string StringifiedContent { get; private set; }
+        public string StringifiedContent { get; }
+
         /// <summary>
         /// 文件类型
         /// </summary>
-        public FileCategory Category { get; set; }
+        public FileCategory Category { get; }
+
         /// <summary>
         /// 从文件流构造内容
         /// </summary>
@@ -79,6 +82,7 @@ namespace Packer.Models
             StringifiedContent = reader.ReadToEnd().Preprocess(category, config);
             this.Category = category;
         }
+
         /// <summary>
         /// 从文本构造内容
         /// </summary>
@@ -87,31 +91,29 @@ namespace Packer.Models
             this.Category = category;
             StringifiedContent = content;
         }
+
         /// <summary>
         /// 伪合并文件
         /// </summary>
-        /// <param name="file"></param>
-        /// <returns></returns>
         virtual public TranslatedFile Combine(TranslatedFile file)
         {
             Log.Information("文件不支持合并。取消合并");
             return this;
         }
+
         /// <summary>
         /// 伪适配文件
         /// </summary>
-        /// <param name="file"></param>
-        /// <returns></returns>
         virtual public TranslatedFile Port(TranslatedFile file)
         {
             Log.Information("文件不支持适配。直接覆盖");
             return file;
         }
+
         /// <summary>
         /// 对该文件的内容进行Google Diff-Match-Patch算法
         /// </summary>
-        /// <param name="patch"></param>
-        public void ApplyPatch(string patch)
+        public TranslatedFile ApplyPatch(string patch)
         {
             // 对应的Patch可以自行生成，或者也可以做一个小工具，虽然不在这里
             // 应用Patch时，需要先根据Patch文本生成Patch列表，再应用Patch
@@ -119,44 +121,57 @@ namespace Packer.Models
             // patch_apply 返回object[] [0]=string [1]=bool[]
             var dmp = new diff_match_patch();
             var patchList = dmp.patch_fromText(patch);
-            StringifiedContent = (string)dmp.patch_apply(patchList, StringifiedContent)[0];
+            return new TranslatedFile(Category, 
+                                     (string)dmp.patch_apply(patchList, StringifiedContent)[0]);
         }
     }
 
     /// <summary>
-    /// 可以按照/lang/文件夹下解析的文件。这是衍生类
+    /// 可以按照/lang/文件夹下解析的文件。这是衍生类<br/>
+    /// 基本上是immutable的
     /// </summary>
-    class LangFile : TranslatedFile
+    public class LangFile : TranslatedFile
     {
-        bool deserialized = false; // 非必要不解析，免得残废的lang解析炸掉
-        public Dictionary<string, string> deserializedContent;
+        private bool deserialized = false; // 非必要不解析，免得残废的lang解析炸掉
+        private Dictionary<string, string> _deserializedContent;
 
-        // 继承构造函数
+        /// <summary>
+        /// 按照基础语言文件的格式解析而成的词条列表。<br/>
+        /// 在访问时才会解析。
+        /// </summary>
+        public Dictionary<string, string> DeserializedContent
+        {
+            get
+            {
+                if (!deserialized)
+                {
+                    deserialized = true;
+                    _deserializedContent = StringifiedContent.DeserializeAsset(Category);
+                }
+                return _deserializedContent;
+            }
+        }
+
+        /// <summary>
+        /// 从文件流构造内容
+        /// </summary>
         public LangFile(Stream stream, FileCategory category, Config config)
             : base(stream, category, config)
         {
-            deserializedContent = null;
+            _deserializedContent = null;
         }
-        // 从kv对顺便构造字符串内容备用
+        /// <summary>
+        /// 从映射表构造内容
+        /// </summary>
         public LangFile(FileCategory category, Dictionary<string, string> content)
             : base(category, content.SerializeAsset(category))
         {
-            deserializedContent = content;
-        }
-
-        public void Deserialize()
-        {
-            if (!deserialized)
-            {
-                deserialized = true;
-                deserializedContent = StringifiedContent.DeserializeAsset(Category);
-            }
+            _deserializedContent = content;
+            deserialized = true;
         }
         /// <summary>
         /// 真合并文件
         /// </summary>
-        /// <param name="file"></param>
-        /// <returns></returns>
         public override LangFile Combine(TranslatedFile file)
         {
             Log.Information("合并文件：{0}", this.RelativePath);
@@ -168,10 +183,8 @@ namespace Packer.Models
                 return this;
             }
 
-            this.Deserialize();
-            castedFile.Deserialize();
-            var resultMap = new Dictionary<string, string>(deserializedContent);
-            foreach (var pair in castedFile.deserializedContent)
+            var resultMap = new Dictionary<string, string>(DeserializedContent);
+            foreach (var pair in castedFile.DeserializedContent)
             {
                 if (!resultMap.TryAdd(pair.Key, pair.Value))
                 {
@@ -186,6 +199,9 @@ namespace Packer.Models
             };
         }
 
+        /// <summary>
+        /// 真适配文件
+        /// </summary>
         public override TranslatedFile Port(TranslatedFile file)
         {
             var castedFile = (LangFile)file;
@@ -194,12 +210,11 @@ namespace Packer.Models
                 Log.Information("检测到不支持合并的文件。取消合并");
                 return file;
             }
-            this.Deserialize();
-            castedFile.Deserialize();
-            var resultMap = deserializedContent;
+
+            var resultMap = DeserializedContent;
             foreach(var key in resultMap.Keys)
             {
-                if(castedFile.deserializedContent.TryGetValue(key, out var value))
+                if(castedFile.DeserializedContent.TryGetValue(key, out var value))
                 {
                     Log.Information("正在替换适配项：<{0}> {1} => {2}", key, resultMap[key], value);
                     resultMap[key] = value;
