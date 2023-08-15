@@ -28,7 +28,7 @@ navigation:
   </BoxAnnotation>
 
 <BoxAnnotation color="#dddddd" min="2 0.35 0.35" max="2.3 0.65 0.65">
-        石英纤维：仅在能量供给来自另一网络时必须。
+        石英纤维：仅在能量供给来自另一网络时必需。
   </BoxAnnotation>
 
 <DiamondAnnotation pos="3 0.5 0.5" color="#00ff00">

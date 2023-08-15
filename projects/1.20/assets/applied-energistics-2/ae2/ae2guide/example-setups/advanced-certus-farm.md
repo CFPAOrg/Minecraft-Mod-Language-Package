@@ -14,7 +14,7 @@ navigation:
 
 这个农场相较[简单赛特斯石英农场](simple-certus-farm.md)来说复杂许多，原因在于它实际上是3个独立设施堆起来的。
 
-尽管可以在系统中存一大堆母岩在每隔一段时间手动更换一遍，但更推荐搭建[充能器自动化](charger-automation.md)和[投入水中自动化](throw-in-water-automation.md)设施以将其自动化。
+尽管可以在系统中存一大堆母岩，再每隔一段时间手动更换一遍，但更推荐搭建[充能器自动化](charger-automation.md)和[投入水中自动化](throw-in-water-automation.md)设施以将其自动化。
 
 **这是个有遮挡关系的复杂建筑，可以旋转视角从各向观察**
 
