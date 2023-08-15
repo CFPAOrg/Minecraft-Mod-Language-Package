@@ -66,7 +66,7 @@ navigation:
 
 ## 频道寻路
 
-在使用<ItemLink id="controller" />时，频道的寻路分为3步。第一步，沿经过相邻机器的最短路径抵达最近的[普通线缆](../items-blocks-machines/cables.md)（玻璃、包层、智能）。第二步，沿经过该普通线缆的最短路径抵达最近的[致密线缆](../items-blocks-machines/cables.md)（致密、致密智能）。第三步，沿经过该致密线缆的最短路径抵达<ItemLink id="controller" />。如果最短路径已被完全占用，某些[设备](devices.md)可能无法正常获取频道，可用染色线缆、线缆锚、通道等确保频道的寻路符合预期。
+在使用<ItemLink id="controller" />时，频道的寻路分为3步。第一步，沿经过相邻机器的最短路径抵达最近的[普通线缆](../items-blocks-machines/cables.md)（玻璃、包层、智能）。第二步，沿经过该普通线缆的最短路径抵达最近的[致密线缆](../items-blocks-machines/cables.md)（致密、致密包层）。第三步，沿经过该致密线缆的最短路径抵达<ItemLink id="controller" />。如果最短路径已被完全占用，某些[设备](devices.md)可能无法正常获取频道，可用染色线缆、线缆锚、P2P通道等确保频道的寻路符合预期。
 
 例如，在下述示例中某些驱动器因线缆容量不足而无法获取频道，频道会尝试沿最短路径行进，从而导致某些线缆过载而其他线缆留空。
 
