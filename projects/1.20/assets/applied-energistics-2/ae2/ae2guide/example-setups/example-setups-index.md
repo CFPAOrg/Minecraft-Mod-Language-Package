@@ -18,6 +18,6 @@ navigation:
 * [基于标准发信器的自动维持物品量](level-emitter-autostocking.md)
 * [处理器自动化](processor-automation.md)
 * [专用本地存储](specialized-local-storage.md)
-* [投入水中自动化](throw-in-water-automation.md)
+* [投水自动化](throw-in-water-automation.md)
 * [简单赛特斯石英农场](simple-certus-farm.md)
 * [进阶赛特斯石英农场](advanced-certus-farm.md)

@@ -1,11 +1,11 @@
 ---
 navigation:
   parent: example-setups/example-setups-index.md
-  title: 投入水中自动化
+  title: 投水自动化
   icon: fluix_crystal
 ---
 
-# 自动化投入水中配方
+# 自动化投水配方
 
 某些配方可能要求将物品投入水中（不过同种设施也可用于处理其他物品投入某处的要求）。可用<ItemLink id="formation_plane" />、<ItemLink id="annihilation_plane" />，以及辅助基础设施（也即2个经调整的[管道子网络](pipe-subnet.md)）自动化这类配方。
 
