@@ -42,7 +42,7 @@ Forge Energy与Techreborn Energy的转换比为：
   <BlockImage id="creative_energy_cell" scale="4" />
 </Row>
 
-由于一些显而易见的原因，网络无法在单游戏刻内消耗或接收超过其能量容量的能量。如果一个网络只能存储800AE，则其各[设备](../ae2-mechanics/devices.md)无法使用超过800AE的能量（假设能量已满），且能源接收器也无法接收超过800AE（假设能量为空）。
+由于一些显而易见的原因，网络无法在单游戏刻内消耗或接收超过其能量容量的能量。如果一个网络只能存储800AE，则在每游戏刻内，其各[设备](../ae2-mechanics/devices.md)无法使用超过800AE的能量（即便能量已满），能源接收器也无法接收超过800AE的能量（即便能量为空）。
 
 这也是为什么会出现一些许多奇怪行为。例如有人搭建了一个只有能源接收器、驱动器、终端，和某些设备的小型网络，然后往里放进一整个物品栏的圆石。在单个游戏刻内同时放入所有圆石所需要的能量超过了网络能量容量，因此只能存入一部分圆石，网络也会耗尽能量并重启。
 
@@ -50,9 +50,9 @@ Forge Energy与Techreborn Energy的转换比为：
 
 网络自带800AE能量缓存。
 
-<ItemLink id="controller" />有少量内部能量存储容量，8000AE。
+<ItemLink id="controller" />有少量能量缓存：8000AE。
 
-<ItemLink id="energy_cell" />可存储200kAE，一个就足以应对大多数状况，能轻松处理普通网络的能量尖峰。
+<ItemLink id="energy_cell" />可存储200kAE，这能轻松应对普通网络的能量尖峰；通常，每个网络中放一个就够了。
 
 <ItemLink id="dense_energy_cell" />可存储1.6MAE，适用于脱离能量供应运行网络的情况和处理大型[空间存储](spatial-io.md)的巨量瞬时能量消耗。
 
