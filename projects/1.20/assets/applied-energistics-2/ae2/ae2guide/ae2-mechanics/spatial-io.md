@@ -11,7 +11,7 @@ navigation:
   <ImportStructure src="../assets/assemblies/spatial_storage_1x1x1.snbt" />
 
   <BoxAnnotation color="#33dd33" min="1 1 1" max="2 2 2">
-        会被移动的体积
+        会被移动的区域
   </BoxAnnotation>
 
   <IsometricCamera yaw="195" pitch="30" />
@@ -80,9 +80,9 @@ navigation:
 
 ## 元件维度
 
-[空间元件](../items-blocks-machines/spatial_cells.md)在使用后会与某固定的XYZ设置（如3x4x2）和封闭空间维度内某部分空间绑定。**在使用空间元件后无法将其重置，重新格式化，或是重设大小。**如果需要更改所定义空间大小，应新制作元件。
+[空间元件](../items-blocks-machines/spatial_cells.md)在使用后会与某固定的尺寸设置（如3x4x2）和封闭空间维度内某部分空间绑定。**在使用空间元件后无法将其重置，重新格式化，或是重设大小。**如果需要更改所定义空间大小，应新制作元件。
 
-这些大小和元件名称中指明的大小不同，16³空间元件意义是能存储*最大*16x16x16的空间。
+这些大小和元件名称中指明的大小不同，16³空间元件指的是能存储*最大*16x16x16的空间。
 
 需注意此空间是方向敏感且不可旋转的。尽管2x2x3空间和3x2x2空间大小相等，两者仍视作不相同。
 

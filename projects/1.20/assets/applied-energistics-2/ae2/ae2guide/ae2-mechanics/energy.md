@@ -7,7 +7,7 @@ navigation:
 
 # 能量
 
-网络需要能量才能运作。网络中有一个能量库，[设备](../ae2-mechanics/devices.md)能直接从中获取能量，<ItemLink id="vibration_chamber" />、<ItemLink id="energy_acceptor" />（和<ItemLink id="controller" />）则能向其中输入能量。手持<ItemLink id="network_tool" />右击网络任意一次或右击网络的控制器即可查看能量统计。这种以网络为范围的存储和分布意味着能量传输速度没有上限，设备可以消耗任意多的能量，能源接收器能以近乎无限的速度接收能量，唯一的限制便是能量存储的容量。
+网络需要能量才能运作。网络中有一个能量库，[设备](../ae2-mechanics/devices.md)能直接从中获取能量，<ItemLink id="vibration_chamber" />、<ItemLink id="energy_acceptor" />（和<ItemLink id="controller" />）则能向其中输入能量。手持<ItemLink id="network_tool" />右击网络任意一处或右击网络的控制器即可查看能量统计。这种以网络为范围的存储和分布意味着能量传输速度没有上限，设备可以消耗任意多的能量，能源接收器能以近乎无限的速度接收能量，唯一的限制便是能量存储的容量。
 
 ## 接收能量
 
