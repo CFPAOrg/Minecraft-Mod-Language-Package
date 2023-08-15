@@ -1,7 +1,7 @@
 ---
 navigation:
   parent: example-setups/example-setups-index.md
-  title: 接口自动库存
+  title: 基于接口的自动维持物品量
   icon: interface
 ---
 

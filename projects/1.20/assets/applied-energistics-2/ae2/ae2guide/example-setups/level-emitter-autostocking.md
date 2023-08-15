@@ -1,7 +1,7 @@
 ---
 navigation:
   parent: example-setups/example-setups-index.md
-  title: 标准发信器自动库存
+  title: 基于标准发信器的自动维持物品量
   icon: level_emitter
 ---
 

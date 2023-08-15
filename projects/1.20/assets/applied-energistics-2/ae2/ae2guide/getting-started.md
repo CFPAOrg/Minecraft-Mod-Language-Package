@@ -23,7 +23,7 @@ navigation:
 
 挖下所有找到的赛特斯石英簇和赛特斯石英块。也可以采集赛特斯石英母岩，但在没有精准采集时会降一级。
 
-不要破坏任何无暇的赛特斯石英母岩，在有精准采集的情况下它们也会降级为有暇的赛特斯石英母岩，并且不可能将其修复回去。
+不要破坏任何无瑕的赛特斯石英母岩，在有精准采集的情况下它们也会降级为有瑕的赛特斯石英母岩，并且不可能将其修复回去。
 
 并且也要挖下中间的神秘方块，以获得所有4种压印模板。
 
@@ -35,7 +35,7 @@ navigation:
 
 赛特斯石英芽会从[赛特斯石英母岩](items-blocks-machines/budding_certus.md)中生长出来，与紫水晶类似。如果破坏未完全生长的石英芽，则会掉落一个<ItemLink id="certus_quartz_dust" />，不受时运影响。如果破坏长成的石英簇，则会掉落四个<ItemLink id="certus_quartz_crystal" />，且会受时运影响而增加掉落量。
 
-共有4种等级的赛特斯石英母岩：无暇、有暇、开裂、破损。
+共有4种等级的赛特斯石英母岩：无瑕、有瑕、开裂、破损。
 
 <GameScene zoom="4" background="transparent">
 <ImportStructure src="assets/assemblies/budding_blocks.snbt" />
@@ -46,7 +46,7 @@ navigation:
 
 <RecipeFor id="damaged_budding_quartz" />
 
-无暇的赛特斯石英母岩不会降级，因而能无限产生赛特斯石英。但是它们无法合成，也无法被镐完好地挖下搬运，就算有精准采集也不行。（不过它们*可以*被[空间存储](ae2-mechanics/spatial-io.md)移动。）
+无瑕的赛特斯石英母岩不会降级，因而能无限产生赛特斯石英。但是它们无法合成，也无法被镐完好地挖下搬运，就算有精准采集也不行。（不过它们*可以*被[空间存储](ae2-mechanics/spatial-io.md)移动。）
 
 赛特斯石英母岩自身的生长非常缓慢。幸运的是，在母岩旁放置<ItemLink id="growth_accelerator" />能大幅加速这一过程。你的第一要务便是制造一些此方块。
 
