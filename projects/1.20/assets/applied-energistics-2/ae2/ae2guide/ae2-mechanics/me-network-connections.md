@@ -9,11 +9,11 @@ navigation:
 
 ## “网络”是什么意思？
 
-“网络”是一组可像[线缆](../items-blocks-machines/cables.md)一样传输[频道](../ae2-mechanics/channels.md)的连在一起的[设备](../ae2-mechanics/devices.md)或方块形态机器和[设备](../ae2-mechanics/devices.md)。（<ItemLink id="charger" />、<ItemLink id="interface" />、<ItemLink id="drive" />，等等。）单个线缆技术上也算是一个网络。
+“网络”是一组可像[线缆](../items-blocks-machines/cables.md)一样传输[频道](../ae2-mechanics/channels.md)的连在一起的[设备](../ae2-mechanics/devices.md)或方块形态机器和[设备](../ae2-mechanics/devices.md)。（<ItemLink id="charger" />、<ItemLink id="interface" />、<ItemLink id="drive" />，等等。）单个线缆理论上也算是一个网络。
 
 可通过<ItemLink id="network_tool" />轻松检测网络中连接的事物。它会显示网络中的每个组件，如果看到不应该出现或者没看到本应该出现的东西，那就是碰上问题了。
 
-例如，如下是2个单独的网络。
+例如，如下是2个独立的网络。
 
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../assets/assemblies/2_networks_1.snbt" />
@@ -29,7 +29,7 @@ navigation:
   <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
 
-如下也是2个单独的网络，因为<ItemLink id="quartz_fiber" />只传输[能量](../ae2-mechanics/energy.md)而不提供网络连接。
+如下也是2个独立的网络，因为<ItemLink id="quartz_fiber" />只传输[能量](../ae2-mechanics/energy.md)而不提供网络连接。
 
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../assets/assemblies/2_networks_2.snbt" />
