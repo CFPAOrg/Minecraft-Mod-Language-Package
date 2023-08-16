@@ -75,7 +75,7 @@ navigation:
 合成CPU的构成如下：
 
 *   [合成存储器](../items-blocks-machines/crafting_cpu_multiblock.md)，覆盖所有标准元件大小（1k、4k、16k、64k、256k）。它们会将与合成相关的材料和中间材料存于自身，因此处理所需材料更多的合成任务需要更大的或更多个合成存储器。
-*   <ItemLink id="crafting_accelerator" />，它们能让系统从样板供应器发送更多材料批次。这使得例如与6个分子装配室相邻的样板供应器能同时将材料送至（也即使用）全部6个装配室，而非只能送至1个。
+*   <ItemLink id="crafting_accelerator" />，它们能让系统从单个样板供应器发送更多批材料。例如，这将会使样板供应器同时将材料送至相邻的六个装配室，而非一次一个。
 *   <ItemLink id="crafting_monitor" />，它们会显示CPU当前正在处理的任务。可用<ItemLink id="color_applicator" />染色。
 *   <ItemLink id="crafting_unit" />，它们仅用于填上空隙以使得CPU的形状为长方形棱柱。
 
@@ -124,7 +124,7 @@ navigation:
 样板供应器有多种模式：
 
 *   **阻挡模式**能在机器中已有材料时阻止供应器输出新批次。
-*   **锁定合成**能在多种红石信号状况下锁定供应器，或是在前一合成产物输入该供应器前锁定之。
+*   **锁定合成**能在多种红石信号状况下锁定供应器，也可在前一批材料的合成产物未返回该供应器前将其锁定。
 *   供应器可在<ItemLink id="pattern_access_terminal" />上显示或隐藏。
 
 ## 优先级

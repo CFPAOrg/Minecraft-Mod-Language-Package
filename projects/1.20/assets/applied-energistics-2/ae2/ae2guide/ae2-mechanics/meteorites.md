@@ -17,6 +17,6 @@ navigation:
 
 ## 寻找陨石
 
-且通常会在地形上留下巨大的坑洞，所以你可能已经找到几个了。如果还没有遇到过，<ItemLink id="meteorite_compass" />会指向最近的神秘方块。
+陨石通常会在地形上留下巨大的坑洞，所以你可能已经找到几个了。如果还没有遇到过，<ItemLink id="meteorite_compass" />会指向最近的神秘方块。
 
 ![陨石撞击坑](../assets/assemblies/meteorite-crater.png)

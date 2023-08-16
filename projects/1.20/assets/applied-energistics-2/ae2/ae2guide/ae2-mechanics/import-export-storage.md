@@ -30,7 +30,7 @@ AE2中的一个重要概念便是网络存储，也即网络内容存储的地�
   </BoxAnnotation>
 
   <BoxAnnotation color="#dddddd" min="7 0 1" max="8 1 2">
-        接口会将其内部未设置存储的槽位中的物品，以及超出槽位库存量的物品输入网络存储，可通过它们将事物输入网络
+        接口会将其内部未设置存储的槽位中的物品，以及超出槽位设定存储量的物品输入网络存储，可通过它们将事物输入网络
   </BoxAnnotation>
 
   <BoxAnnotation color="#dddddd" min="6 0 1" max="7 1 2">
