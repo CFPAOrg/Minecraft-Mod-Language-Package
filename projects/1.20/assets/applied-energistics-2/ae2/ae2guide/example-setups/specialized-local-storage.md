@@ -7,7 +7,7 @@ navigation:
 
 # 专用本地存储
 
-将[接口的特殊行为](../items-blocks-machines/interface.md#special-interactions)加以运用，就可使[子网络](../ae2-mechanics/subnetworks.md)不可访问主网络存储，而其存储内容又在主网络中可见，且只会占用最多1个[频道](../ae2-mechanics/channels.md)。
+将[接口的特殊行为](../items-blocks-machines/interface.md#special-interactions)加以运用，就能让[子网络](../ae2-mechanics/subnetworks.md)不可访问主网络存储，而其存储内容又在主网络中可见，且只会占用最多1个[频道](../ae2-mechanics/channels.md)。
 
 适用于某些农场的本地存储，可避免主网络存储物品过载。
 
