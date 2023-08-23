@@ -77,7 +77,7 @@ namespace Packer.Extensions
         {
             foreach (var @namespace in config.BypassedNamespace)
             {
-                if (location.StartsWith(@namespace + "\\")) return true;
+                if (location.StartsWith(@namespace + "/")) return true;
             }
             return false;
         }
@@ -88,9 +88,9 @@ namespace Packer.Extensions
         /// <param name="location">文件所在的位置</param>
         /// <param name="config">所使用的配置</param>
         /// <returns></returns>
-        public static bool IsSkippedLang(this string location, Config config)
+        public static bool IsTargetLang(this string location, Config config)
         {
-            foreach (var lang in config.SkippedLanguages)
+            foreach (var lang in config.TargetLanguages)
             {
                 if (location.Contains(lang, StringComparison.OrdinalIgnoreCase)) return true;
             }
