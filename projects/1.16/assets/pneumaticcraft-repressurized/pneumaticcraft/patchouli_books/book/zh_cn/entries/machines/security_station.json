@@ -6,36 +6,36 @@
   "pages": [
     {
       "type": "text",
-      "text": "如果需要保护一片区域免受侵扰，可以使用$(thing)安全站/$。$(p)该装置防止未受信的玩家在保护区域内对方块进行任何交互行为。这意味着玩家不能打开任何容器或方块界面，并无法放置或破坏任何方块。"
+      "text": "如果需要保护一片区域免受侵扰，可以使用$(thing)安全站/$。$(p)该装置可以防止不受信任的玩家在保护区域内对方块进行的任何交互行为。也就是说他们不能打开任何容器或方块的 GUI，并且无法放置或破坏任何方块。"
     },
     {
       "type": "spotlight",
       "item": "pneumaticcraft:security_station",
-      "text": "听起来不错，但要设立$(thing)安全站/$还需要额外的操作以保证其安全度。因为，事实是，$(thing)安全站/$可以被$(l:machines/security_station#hacking)入侵/$。这一系统很大程度上来源于$(l:https://www.youtube.com/watch?v=nQ0rPLlU8v4)杀出重围：人类革命的入侵系统/$。"
+      "text": "这听起来很不错，不过要设立一个$(thing)安全站/$还需要额外的操作以保证其安全性。因为实际上$(thing)安全站/$可以被$(l:machines/security_station#hacking)入侵/$。安全站的入侵系统是深受$(l:https://www.youtube.com/watch?v=nQ0rPLlU8v4)杀出重围：人类革命的入侵系统/$启发而产生的。"
     },
     {
       "type": "text",
       "title": "设置安全站",
-      "text": "要设立$(thing)安全站/$，需要在网络格点中放置$(l:components/network_components)网络组件/$以组建$(thing)网络/$。在每个网络中需要有一个$(l:components/network_components#diagnostic)诊断子程序/$、一个$(l:components/network_components#io_port)网络交互接口/$和一个$(l:components/network_components#registry)网络注册表/$。$(p)上述三组件必须相互连接，而连接可以通过$(l:components/network_components#node)网络节点/$实现。"
+      "text": "要设立$(thing)安全站/$，需要在网络格点中放置$(l:components/network_components)网络组件/$来形成$(thing)网络/$。每个网络形成时都必须有一个$(l:components/network_components#diagnostic)诊断子程序/$、一个$(l:components/network_components#io_port)网络交互接口/$和一个$(l:components/network_components#registry)网络注册表/$。$(p)上述三个特殊组件必须相互连接，它们之间也可以通过$(l:components/network_components#node)网络节点/$来连接。"
     },
     {
       "type": "text",
       "title": "入侵规则",
-      "text": "$(l:machines/security_station#hacking)入侵者/$从$(thing)网络交互接口/$开始入侵，并需要控制$(thing)诊断子程序/$或$(thing)网络注册表/$。$(p)$(thing)诊断子程序/$将追踪入侵者，直到其出发的$(thing)网络交互接口/$。"
+      "text": "$(l:machines/security_station#hacking)入侵者/$从$(thing)网络交互接口/$开始入侵，目标是控制$(thing)诊断子程序/$或$(thing)网络注册表/$。$(p)$(thing)诊断子程序/$的目的是追踪入侵者，它会一路往回追踪直到黑客入侵的那个$(thing)网络交互接口/$。"
     },
     {
       "type": "text",
-      "text": "堆叠数大于一的组件提升$(italic)节点等级/$，换言之，$(l:machines/security_station#hacking)入侵者/$（以及$(l:components/network_components#diagnostic)诊断子程序/$）需要更长的时间才能控制该节点。然而，考虑到$(thing)诊断子程序/$的追踪速度大于$(thing)入侵者/$，这一点对入侵者的阻碍更大。"
+      "text": "在同一格堆叠更多$(thing)网络节点/$组件可以提升$(italic)节点等级/$，换言之，$(l:machines/security_station#hacking)入侵者/$（以及$(l:components/network_components#diagnostic)诊断子程序/$）需要更长的时间才能控制该节点。不过由于$(thing)诊断子程序/$的追踪速度比$(thing)入侵者/$快，这一点对入侵者的阻碍更大。"
     },
     {
       "type": "text",
       "title": "入侵工具",
-      "text": "入侵者应当试图获取一些有用的工具；这些都无法合成，必须通过地牢箱子或村民交易获取：$(li)$(l:components/nuke_virus)核弹病毒/$可以立刻控制一个节点$(li)$(l:components/stop_worm)停！蠕虫/$可以暂时停止诊断子程序的追踪过程"
+      "text": "入侵者应尽可能多获取这两种实用的入侵工具；它们都无法合成，必须通过地牢箱子或村民交易获得：$(li)$(l:components/nuke_virus)核弹病毒/$可以立刻控制一个节点。$(li)$(l:components/stop_worm)停！蠕虫/$可以暂时停止诊断子程序的追踪。"
     },
     {
       "type": "text",
       "title": "升级",
-      "text": "$(thing)安全站/$接受一些升级：$(li)$(l:base_concepts/upgrades#entity_tracker)实体追踪升级/$将提升$(l:machines/security_station#hacking)入侵者/$的检测概率；提升的效果将会递减，最大可能值为99%。$(li)$(l:base_concepts/upgrades#range)范围升级/$将安全站的保护范围提升1格，最大为16格。"
+      "text": "$(thing)安全站/$可以安装的升级：$(li)$(l:base_concepts/upgrades#entity_tracker)实体追踪升级/$将提升$(l:machines/security_station#hacking)入侵者/$被诊断子程序检测到的概率；每一个实体追踪升级带来的概率收益会随升级数量增加而递减，最大防护下，入侵者每次入侵节点的检测概率为99%。$(li)$(l:base_concepts/upgrades#range)范围升级/$会将安全站的保护范围提升1格，最大为半径16格的正方体区域（也就是安全站为中心33x33x33的区域）。"
     },
     {
       "type": "text",
@@ -56,7 +56,7 @@
       "type": "text",
       "title": "入侵安全站",
       "anchor": "hacking",
-      "text": "要打开不属于本人的$(thing)安全站/$，需要安装有$(l:base_concepts/upgrades#security)安全升级/$（至少一个，可能需要很多个）的$(l:armor/pneumatic_helmet)气动头盔/$。如此操作后，将打开对页所示的界面。要了解如何入侵，可观看$(l:https://www.youtube.com/watch?v=Lgmpslbrrwo)该视频（很久远，但仍然相关）/$。$(p)要控制一个节点，$(thing)左击/$该节点。要巩固一个已被控制的节点，$(thing)右击/$该节点；诊断子程序需要更长的时间才能控制被巩固的节点。"
+      "text": "要打开不属于本人的$(thing)安全站/$，需要安装有$(l:base_concepts/upgrades#security)安全升级/$（至少一个，可能需要很多个）的$(l:armor/pneumatic_helmet)气动头盔/$。如此操作后，将打开对页所示的 GUI。要了解如何入侵，可观看$(l:https://www.youtube.com/watch?v=Lgmpslbrrwo)该视频（很久远，但仍然相关）/$。$(p)要控制一个节点，$(thing)左击/$该节点。要巩固一个已被控制的节点，$(thing)右击/$该节点；诊断子程序需要更长的时间才能控制被巩固的节点。"
     },
     {
       "type": "image",
@@ -67,7 +67,7 @@
     {
       "type": "text",
       "title": "提示",
-      "text": "$(li)保持$(thing)安全站/$被封闭且保护良好。$(li)可以用多个$(thing)安全站/$保护一片区域；入侵者需要入侵所有安全站。$(li)可以设立主动防御，例如写有战斗程序的$(l:tools/drone)无人机/$，或者$(l:machines/sentry_turret)哨戒炮/$。$(li)被入侵的$(thing)安全站/$可以发出$(#f00)红石信号/$，从而可以触发额外手段（或许在下方埋藏TNT？）。"
+      "text": "$(li)确保把$(thing)安全站/$周围封上并保护好。$(li)你可以用多个$(thing)安全站/$保护一片区域；入侵者需要入侵所有安全站。$(li)可以设立主动防御，例如写有战斗程序的$(l:tools/drone)无人机/$，或者$(l:machines/sentry_turret)哨戒炮/$。$(li)被入侵的$(thing)安全站/$可以发出$(#f00)红石信号/$来触发额外手段（或许在下方埋藏TNT？）。"
     },
     {
       "type": "crafting",

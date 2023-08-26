@@ -7,11 +7,11 @@
   "pages": [
     {
       "type": "text",
-      "text": "$(item)精炼厂/$使用$(l:base_concepts/heat)热量/$将$(l:base_concepts/oil)石油/$精炼为各种燃料。其在100℃下即可开始工作。温度越高，精炼速度越快。能生产的燃料如下表所示，由轻到重排序：$(li)$(thing)液化石油气/$$(li)$(thing)汽油/$$(li)$(thing)煤油/$$(li)$(thing)柴油/$"
+      "text": "$(item)精炼厂/$使用$(l:base_concepts/heat)热量/$将$(l:base_concepts/oil)石油/$精炼为各种燃料。其在100℃下开始工作，温度越高，精炼速度越快。能生产的燃料如下表所示，由轻到重排序：$(li)$(thing)液化石油气/$$(li)$(thing)汽油/$$(li)$(thing)煤油/$$(li)$(thing)柴油/$"
     },
     {
       "type": "text",
-      "text": "$(item)精炼厂/$是一个多方块结构。最下方为$(item)精炼厂控制器/$，并在上方或侧边堆叠2-4个$(item)精炼厂输出端/$。$(p)结构大小不同，产出也不同；若输入10mB石油，产出如下：$(p)$(bold)2个输出端/$$(li)$(thing)液化石油气/$（2mB）$(li)$(thing)柴油/$（4mB）$(br)$(bold)3个输出端/$$(li)$(thing)液化石油气/$（2mB）$(li)$(thing)煤油/$（3mB）$(li)$(thing)柴油/$（2mB）"
+      "text": "$(item)精炼厂/$是一个多方块结构。最下方为$(item)精炼厂控制器/$，并在正上方或侧面邻接竖直放置的2-4个$(item)精炼厂输出端/$。$(p)结构大小不同，产出也不同；输入10mB石油时，产出如下：$(p)$(bold)2个输出端/$$(li)$(thing)液化石油气/$（2mB）$(li)$(thing)柴油/$（4mB）$(br)$(bold)3个输出端/$$(li)$(thing)液化石油气/$（2mB）$(li)$(thing)煤油/$（3mB）$(li)$(thing)柴油/$（2mB）"
     },
     {
       "type": "text",
@@ -19,27 +19,27 @@
     },
     {
       "type": "text",
-      "text": "所有产出的流体可以作为$(l:compressors/liquid_compressor)流体压缩机/$的燃料（其中轻燃料更好）。$(p)但是，还有两个很重要的用途：$(li)$(thing)液化石油气/$用于合成液态$(l:components/plastic)塑料/$$(li)$(thing)柴油/$用于合成$(l:components/lubricant)润滑油/$，在$(l:base_concepts/upgrades#speed)速度升级/$中用到。$(p)上述两个合成在$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中进行。"
+      "text": "所有产出的流体都可以作为$(l:compressors/liquid_compressor)流体压缩机/$的燃料（其中轻燃料更好）。$(p)但是，还有两个很重要的用途：$(li)$(thing)液化石油气/$用于合成液态$(l:components/plastic)塑料/$$(li)$(thing)柴油/$用于合成$(l:components/lubricant)润滑油/$，在$(l:base_concepts/upgrades#speed)速度升级/$中会用到它。$(p)上述两个合成在$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中进行。"
     },
     {
       "type": "text",
       "title": "比较器支持",
-      "text": "$(item)精炼厂/$可以被$(item)比较器/$检测：当$(item)精炼厂/$可以工作时比较器输出信号15，否则输出信号0。当有$(thing)石油/$可供精炼$(italic)且/$有空间输出产物，精炼厂被认为可以工作。$(p)例如，可以使用该功能开关提供热量的$(l:machines/vortex_tube)涡流管/$，以节省空气。"
+      "text": "$(item)精炼厂/$可以被$(item)比较器/$检测：当$(item)精炼厂/$工作时比较器输出信号15，否则输出信号0。当有$(thing)石油/$可供精炼$(italic)且/$有空间输出产物，精炼厂就会工作。$(p)例如，可以使用该功能开关提供热量的$(l:machines/vortex_tube)涡流管/$，以节省空气。"
     },
     {
       "type": "text",
       "title": "构建提示",
-      "text": "由于$(item)精炼厂/$是一个有很多面都暴露在空气中的多方块结构，如果没有做好隔热其将很快地散失$(l:base_concepts/heat)热量/$。因此，建议覆盖所有未被使用的面以最大化效率。注：隔热可以使用任何不导热的方块，包括碰撞箱不完整的方块，如$(item)台阶/$和$(item)活板门/$；但建议使用$(l:machines/thermal_lagging)隔热板/$。"
+      "text": "由于$(item)精炼厂/$是一个有很多面都暴露在空气中的多方块结构，如果没有做好隔热将会迅速散失$(l:base_concepts/heat)热量/$。因此，建议覆盖所有未被使用的面以最大化效率。注：隔热可以使用任何不导热的方块，包括碰撞箱不完整的方块，如$(item)台阶/$和$(item)活板门/$；但建议使用$(l:machines/thermal_lagging)隔热板/$。"
     },
     {
       "type": "text",
-      "text": "可以使用$(l:machines/vortex_tube)涡流管/$来加热$(item)精炼厂/$，或者放置热的流体（熔岩等）或方块（岩浆块等）于与精炼厂方块相邻的位置。注：这样的流体或方块会被使用（其热量被吸收尽），所以你或许想要试图自动化这样的热量来源的生产与放置。"
+      "text": "可以使用$(l:machines/vortex_tube)涡流管/$来加热$(item)精炼厂/$，或于精炼厂方块相邻位置放置高温流体（熔岩等）或方块（岩浆块等）。注：这样放置的流体或方块是会用尽的（热量被耗尽时），因此你肯定希望找到一种办法来自动化热源的生产与放置。"
     },
     {
       "type": "link",
       "flag": "mod:crafttweaker",
       "title": "CraftTweaker",
-      "text": "$(thing)精炼厂/$中的合成配方支持被$(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$修改：合成配方可以被加入或移除，见下面链接以获得更多信息。",
+      "text": "$(thing)精炼厂/$中的合成配方支持被$(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$修改：支持添加或移除合成配方，见下方链接以获得更多信息。",
       "url": "https://crafttweaker.readthedocs.io/en/latest/#Mods/PneumaticCraft_Repressurized/Refinery/",
       "link_text": "CraftTweaker文档"
     },

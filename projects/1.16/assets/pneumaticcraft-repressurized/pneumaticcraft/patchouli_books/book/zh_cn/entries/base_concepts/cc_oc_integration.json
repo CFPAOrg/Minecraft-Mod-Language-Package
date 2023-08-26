@@ -6,57 +6,57 @@
   "pages": [
     {
       "type": "text",
-      "text": "若安装了$(thing)电脑/$模组或者$(thing)开放式电脑/$模组，可以使用这些模组与$(pncr)的机器以及$(l:machines/drone_interface)无人机/$进行交互。$(p)下面列出的所有机器都可以以 CC/OC 外设的形式被交互。"
+      "text": "若安装了$(thing)电脑/$模组或者$(thing)开放式电脑/$模组，可以使用它们与$(#228)气动工艺：再加压$()的机器以及$(l:machines/drone_interface)无人机/$进行交互。$(p)下面列出的所有机器都可以以 CC/OC 外设的形式被交互。"
     },
     {
       "type": "text",
       "title": "ComputerCraft",
-      "text": "在 Lua 中，可以运行 $(thing)m = peripheral.wrap(<面>)/$ 来调用外设，其中 $(thing)<面>/$ 代表外设被连接在哪一面上，可以为 top（顶面）, bottom（底面）, right（右面）, left（左面）, back（前面）, front（后面）。此后可以通过 $(thing)m.<函数名>/$ 调用下面提及的所有函数。$(p)下午所有以 <面> 作为参数的地方中，up，down，north，south，east，west 为合法参数。",
+      "text": "在 Lua 中，可以运行 $(thing)m = peripheral.wrap(<面>)/$ 来调用外设，其中 $(thing)<面>/$ 代表外设被连接在哪一面上，可以为 top（顶面）, bottom（底面）, right（右面）, left（左面）, back（前面）, front（后面）。此后可以通过 $(thing)m.<函数名>/$ 调用下面提及的所有函数。$(p)所有以 <面> 作为参数的地方，使用up，down，north，south，east，west 作为合法参数。",
       "flag": "mod:computercraft"
     },
     {
       "type": "text",
       "title": "Open Computers",
-      "text": "需要使用$(item)适配器/$把电脑与$(pncr)机器相连接；其将会被识别为 OC 中的组件，在 OC Lua 环境中运行 $(thing)=components.list()/$ 时将被列出。此后下列提及的所有函数可被调用，例如：$(thing)p = components.air_compressor.getPressure()/$ 将获取所连接的$(item)空气压缩机/$的当前压力。",
+      "text": "需要使用$(item)适配器/$把电脑与$(#228)气动工艺：再加压$()机器相连接；其将会被识别为 OC 中的组件，在 OC Lua 环境中运行 $(thing)=components.list()/$ 时将被列出。此后下列提及的所有函数可被调用，例如：$(thing)p = components.air_compressor.getPressure()/$ 将获取所连接的$(item)空气压缩机/$的当前压力。",
       "flag": "mod:opencomputers"
     },
     {
       "type": "text",
       "title": "一般方法",
-      "text": "下列方法对于$(pncr)中$(italic)所有/$机器都适用：$(li)$(#800)getPressure(), getPressure(<面>)/$：获取该方块的压力。<面>参数是可选的，只在获取$(l:machines/vacuum_pump)真空泵/$的压力时用到，因为其有与朝向相关的压力值。$(li)$(#800)getDangerPressure()/$：获取机器的危险压力。$(li)$(#800)getCriticalPressure()/$：获取机器的临界压力。"
+      "text": "下列方法对于$(#228)气动工艺：再加压$()中$(italic)所有/$机器都适用：$(li)$(#800)getPressure(), getPressure(<面>)/$：获取该方块的压力。<面>参数是可选的，只在获取$(l:machines/vacuum_pump)真空泵/$的压力时用到，因为其有与朝向相关的压力值。$(li)$(#800)getDangerPressure()/$：获取机器的危险压力。$(li)$(#800)getCriticalPressure()/$：获取机器的极限压力。"
     },
     {
       "type": "text",
       "title": "热相关方法",
-      "text": "下列方法对于$(pncr)中$(italic)所有/$支持$(l:base_concepts/heat)热量/$的机器都适用：$(li)$(#800)getTemperature(), getTemperature(<面>)/$：获取该方块的温度。<面>参数是可选的，只在获取$(l:machines/vortex_tube)涡流管/$的温度时用到，因为其有与朝向相关的温度值。"
+      "text": "下列方法对于$(#228)气动工艺：再加压$()中$(italic)所有/$支持$(l:base_concepts/heat)热量/$的机器都适用：$(li)$(#800)getTemperature(), getTemperature(<面>)/$：获取该方块的温度。<面>参数是可选的，只在获取$(l:machines/vortex_tube)涡流管/$的温度时用到，因为其有与朝向相关的温度值。"
     },
     {
       "type": "spotlight",
       "anchor": "air_cannon",
       "item": "pneumaticcraft:air_cannon",
-      "text": "$(li)$(#800)setExternalControl(<true/false>)/$：传参为 true 时，将会禁用使用通常的方式旋转（插入定位工具，更改范围升级的数量……）。$(li)$(#800)setTargetLocation(<x>,<y>,<z>)/$：使空气加农炮指向传入的坐标，而非在定位工具中存储的坐标。"
+      "text": "$(li)$(#800)setExternalControl(<true/false>)/$：传参为 true 时，将会禁止通常的方式旋转（插入定位工具，更改范围升级的数量……）。$(li)$(#800)setTargetLocation(<x>,<y>,<z>)/$：使空气加农炮指向传入的坐标，而非在定位工具中存储的坐标。"
     },
     {
       "type": "text",
       "title": "空气炮（续表）",
-      "text": "$(li)$(#800)setRotationAngle(<角度>)/$：使空气加农炮偏转角旋转为指定的角度。$(li)$(#800)setHeightAngle(<角度>)/$: 使空气加农炮将仰角角旋转为指定的角度。$(li)$(#800)isDoneRotating()/$：当加农炮完成旋转后，返回 true。$(li)$(#800)getMinWorkingPressure()/$：返回加农炮发射所需要的最小压力（机器界面中黄色与绿色的分界线）。"
+      "text": "$(li)$(#800)setRotationAngle(<角度>)/$：使空气加农炮偏转角旋转为指定的角度。$(li)$(#800)setHeightAngle(<角度>)/$: 使空气加农炮将仰角角旋转为指定的角度。$(li)$(#800)isDoneRotating()/$：当加农炮完成旋转后，返回 true。$(li)$(#800)getMinWorkingPressure()/$：返回加农炮发射所需要的最小压力（机器 GUI 中黄色与绿色的分界线）。"
     },
     {
       "type": "text",
       "title": "空气炮（续表）",
-      "text": "$(li)$(#800)fire()/$：当有足够的压力发射并且放置有物品时，发射。成功时返回 true。"
+      "text": "$(li)$(#800)fire()/$：当有足够的压力并且放置有物品时，发射。成功时返回 true。"
     },
     {
       "type": "spotlight",
       "anchor": "elevator",
       "item": "pneumaticcraft:elevator_base",
       "title": "电梯",
-      "text": "$(li)$(#800)setExternalControl(<true/false>)/$：传参为 true 时，将会把电梯的$(#f00)红石模式/$设置为“电梯呼叫器”模式，此时同样可以被电脑控制。不需要在调用 $(#800)setTargetHeight()/$ 前调用该方法；该方法会自动将电梯调整为电梯呼叫器模式。"
+      "text": "$(li)$(#800)setExternalControl(<true/false>)/$：传参为 true 时，将会把电梯的$(#f00)红石模式/$设置为“电梯呼叫器”模式，此时同样可以被电脑控制。此方法不需要在调用$(#800)setTargetHeight()/$前调用；因为它会自动将电梯调整为电梯呼叫器模式。"
     },
     {
       "type": "text",
       "title": "电梯（续表）",
-      "text": "$(li)$(#800)getMinWorkingPressure()/$：返回使电梯上升的最小压力（机器界面中内黄色与绿色的分界线）。电梯下降过程不需要压力。$(li)$(#800)setTargetHeight(<高度>)/$：把电梯的目标高度设为传入的高度（单位为米/格，浮点数）。$(li)$(#800)getTargetHeight()/$：获取电梯的目标高度（单位为米/格，浮点数）。$(li)$(#800)getCurrentHeight()/$：获取电梯的当前高度（单位为米/格，浮点数）。"
+      "text": "$(li)$(#800)getMinWorkingPressure()/$：返回使电梯上升的最小压力（机器 GUI 中黄色与绿色的分界线）。电梯下降过程不需要压力。$(li)$(#800)setTargetHeight(<高度>)/$：把电梯的目标高度设为传入的高度（单位为米/格，浮点数）。$(li)$(#800)getTargetHeight()/$：获取电梯的目标高度（单位为米/格，浮点数）。$(li)$(#800)getCurrentHeight()/$：获取电梯的当前高度（单位为米/格，浮点数）。"
     },
     {
       "type": "text",
@@ -92,7 +92,7 @@
     {
       "type": "text",
       "title": "万能传感器（续表）",
-      "text": "$(li)$(#800)getMinWorkingPressure()/$：返回万能传感器工作需要的最小压力（机器界面中黄色与绿色的分界线）。$(li)$(#800)setGPSToolCoordinate(<槽位索引>,<x>,<y>,<z>)/$:把<槽位索引>（从 1 开始）处对应的定位工具存储的坐标设为提供的坐标。对于需要一个坐标的传感器这很有用。"
+      "text": "$(li)$(#800)getMinWorkingPressure()/$：返回万能传感器工作需要的最小压力（机器 GUI 中黄色与绿色的分界线）。$(li)$(#800)setGPSToolCoordinate(<槽位索引>,<x>,<y>,<z>)/$:把<槽位索引>（从 1 开始）处对应的定位工具存储的坐标设为提供的坐标。对于需要一个坐标的传感器这很有用。"
     },
     {
       "type": "text",
