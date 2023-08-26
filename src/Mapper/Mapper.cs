@@ -44,7 +44,7 @@ namespace Mapper
         {
             Environment.CurrentDirectory = "C:\\Users\\cyl18\\Documents\\GitHub\\Minecraft-Mod-Language-Package-CFPA";
             var s = new JsonSerializerOptions(){ WriteIndented = true, IncludeFields = true};
-            File.WriteAllText("C:\\1121212.json", JsonSerializer.Serialize(Run(), s));
+            File.WriteAllText("C:\\mapper.json", JsonSerializer.Serialize(Run(), s));
         }
     }
 }
