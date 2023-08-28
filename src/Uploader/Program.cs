@@ -96,7 +96,7 @@ namespace Uploader
 
             // 将一段文本的首字母大写，其余不动
             string Capitalize(string text) => string.Join("",
-                                                          text[0..0].ToUpper(),
+                                                          text[0..1].ToUpper(),
                                                           text[1..]);
         }
 

@@ -13,6 +13,7 @@
 ### 策略文件的格式
 
 packer-policy.json
+
 - 根标签
   - `type` string -> 策略的类型。可为以下选项之一：
     - `noaction` 默认选项。不进行特殊处理，直接按照此处的文件结构打包。如果没有对文件同步或版本对照的特殊要求，使用该类型。如：[示例文件](./projects/1.19/assets/0-example-nop/nop/packer-policy.json)
@@ -25,4 +26,4 @@ packer-policy.json
     - `patch` 引用另一位置的文件结构，但在其中的部分文件上额外应用自定义的修改。修改使用[Google Diff-Match-Patch算法](https://github.com/google/diff-match-patch)生成；尽管原则上可以放在任意位置、采用任意后缀名，建议将修改文件放在被修改文件相应的位置，采用`.patch`后缀，以保持统一性。如：[示例文件](./projects/1.19/assets/0-example-patch/patch/packer-policy.json)
       - `source` string -> 复制的源地址。需要从本仓库的根目录开始计算，使用`./`前缀。
       - `patches` object -> 修改文件，以及对应的修改目标。
-        - `修改目标的相对路径` string -> 修改文件的源地址。需要从本仓库的根目录开始计算，使用`./`前缀；`修改目标的相对路径`需要为在复制源地址的`<asset-domain>/`下方的相对位置，必须使用`\\`作为分隔符，如`lang\\zh_cn.json`。
+        - `修改目标的相对路径` string -> 修改文件的源地址。需要从本仓库的根目录开始计算，使用`./`前缀；`修改目标的相对路径`需要为在复制源地址的`<asset-domain>/`下方的相对位置，必须使用`/`作为分隔符，如`lang/zh_cn.json`。
