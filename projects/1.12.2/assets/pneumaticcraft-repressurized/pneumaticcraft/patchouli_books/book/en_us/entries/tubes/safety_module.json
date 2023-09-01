@@ -1,0 +1,26 @@
+{
+  "name": "Safety Module",
+  "icon": "pneumaticcraft:safety_tube_module",
+  "category": "tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This tube module is used to limit the $(l:base_concepts/pressure)pressure/$ in a tube to a certain value, preventing $(thing)explosions/$; any excess pressure will be dispersed into the atmosphere, which means $(thing)energy loss/$. Therefore, this module is best used in conjunction with the $(l:tubes/pressure_gauge_module)Pressure Gauge Module/$, which can emit redstone to turn compressors off."
+    },
+    {
+      "type": "text",
+      "text": "To set the threshold pressure $(formula)Pt/$ at which the module operates, apply a $(#f00)redstone signal/$ (to the side the module faces) of strength $(formula)S/$:$(p)$(formula)  S = 15 - (2 x Pt)/$$(p)E.g. to limit the pressure to 4.5 bar, apply a signal of strength 6 (15 - 2 x 4.5)."
+    },
+    {
+      "type": "text",
+      "title": "Advanced PCB",
+      "text": "When you apply an $(l:components/advanced_pcb)Advanced PCB/$ to the Safety Module, the module gains a GUI (right-click) providing far more control over the threshold level. You can set a precise threshold in the GUI, or with the $(bold)Advanced Config/$ checkbox, configure interpolated threshold levels based on the signal. This functions very much like the $(l:tubes/pressure_gauge_module#img)Pressure Gauge GUI/$, but in reverse."
+    },
+    {
+      "type": "crafting",
+      "text": "Creating the Safety Module",
+      "recipe": "pneumaticcraft:safety_tube_module"
+    }
+  ]
+}

@@ -1,0 +1,263 @@
+{
+  "name": "Drone Interface",
+  "icon": "pneumaticcraft:drone_interface",
+  "category": "machines",
+  "flag": "|mod:computercraft,mod:opencomputers",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Drone Interface is a $(thing)ComputerCraft/OpenComputers peripheral/$ that's used to communicate with $(l:tools/drone)Drones/$. To do so, program a $(item)Drone/$ with a $(l:programming/computercraft)ComputerCraft puzzle piece/$. When the Drone executes the ComputerCraft piece, it'll try to connect to an $(ttcolor)$(t:A Drone Interface can only connect to one Drone at a time)available/$ $(item)Drone Interface/$ located within the selected area."
+    },
+    {
+      "text": "$(#800)abortAction()/$$(p)Stops the current running action.",
+      "type": "text",
+      "title": "abortAction()"
+    },
+    {
+      "title": "addArea()",
+      "text": "$(#800)addArea(<x1>,<y1>,<z1>,<x2>,<y2>,<z2>,<areaType>)/$$(p)Adds an area to the current stored area of the Drone. When using the latter method, x1/y1/z1 represent the first point (which would be the first GPS Tool normally), and x2/y2/z2 represent the second point.",
+      "type": "text"
+    },
+    {
+      "text": "$(#800)addBlacklistItemFilter(<item/block name>, <damage/metadata>, <useMetadata>, <useNBT>, <useOreDictionary>, <useModSimilarity>)/$$(p)Like the addWhitelistItemFilter(...), but to blacklist items.",
+      "type": "text",
+      "title": "addBlacklistItemFilter()"
+    },
+    {
+      "text": "$(#800)addBlacklistLiquidFilter(<liquid name>)/$$(p)Like the addWhitelistLiquidFilter(...), but to blacklist liquids.",
+      "type": "text",
+      "title": "addBlacklistLiquidFilter()"
+    },
+    {
+      "title": "addBlacklistText()",
+      "type": "text",
+      "text": "$(#800)addBlacklistText(<text>)/$$(p)Adds a text to the blacklisted texts. Used to specify a filter for the Entity Attack action for example."
+    },
+    {
+      "type": "text",
+      "text": "$(#800)addWhitelistItemFilter(<item/block name>, <metadata>, <useMeta>, <useNBT>, <useOreDict>, <useModSimilarity>)/$$(p)Acts as an $(l:programming/item_filter)Item Filter/$ widget on the right of another widget. The item/block name is in Minecraft format, e.g. \"pneumaticcraft:pressure_tube\". The 'useXXX' are all booleans that determine what filters will be used (as in the Item Filter widget GUI).",
+      "title": "addWhitelistItemFilter()"
+    },
+    {
+      "title": "addWhitelistLiquidFilter()",
+      "text": "$(#800)addWhitelistLiquidFilter(<liquid name>)/$$(p)Acts as you've put a $l(:programming/liquid_filter)Liquid Filter/$ piece on the right of a piece. You can either give it the 'registry name', or the localized name.",
+      "type": "text"
+    },
+    {
+      "text": "$(#800)addWhitelistText(<text>)/$$(p)Adds a text to the whitelisted texts. Used to specify a filter for the Entity Attack action for example.",
+      "type": "text",
+      "title": "addWhitelistText()"
+    },
+    {
+      "title": "clearArea()",
+      "type": "text",
+      "text": "$(#800)clearArea()/$$(p)Clears the current stored area."
+    },
+    {
+      "title": "clearBlacklistItemFilter()",
+      "type": "text",
+      "text": "$(#800)clearBlacklistItemFilter()/$$(p)Clears all the blacklisted item filters stored."
+    },
+    {
+      "title": "clearBlacklistLiquidFilter()",
+      "text": "$(#800)clearBlacklistLiquidFilter()/$$(p)Clears all the blacklisted liquid filters stored.",
+      "type": "text"
+    },
+    {
+      "text": "$(#800)clearBlacklistText()/$$(p)Clears the stored blacklisted texts.",
+      "type": "text",
+      "title": "clearBlacklistText()"
+    },
+    {
+      "title": "clearWhitelistItemFilter()",
+      "text": "$(#800)clearWhitelistItemFilter()/$$(p)Clears all the whitelisted item filters stored.",
+      "type": "text"
+    },
+    {
+      "type": "text",
+      "text": "$(#800)clearWhitelistLiquidFilter()/$$(p)Clears all the whitelisted liquid filters stored.",
+      "title": "clearWhitelistLiquidFilter()"
+    },
+    {
+      "title": "clearWhitelistText()",
+      "text": "$(#800)clearWhitelistText()/$$(p)Clears the stored whitelisted texts.",
+      "type": "text"
+    },
+    {
+      "title": "evaluateCondition()",
+      "text": "$(#800)evaluateCondition()/$$(p)Returns true/false. Used in conditions only. Will return true/false depending on whether or not the condition is satisfied. Drone Conditions can be checked right after setting 'setAction()'. Note that you need to wait until 'isActionDone' if you're dealing with a non Drone Condition.",
+      "type": "text"
+    },
+    {
+      "type": "text",
+      "text": "$(#800)exitPiece()/$$(p)Stops the ComputerCraft piece in the Drone, and allows the Drone's program to proceed to the next puzzle piece.",
+      "title": "exitPiece()"
+    },
+    {
+      "text": "$(#800)forgetTarget()/$$(p)When the Drone was targeting an Entity (in the Entity Attack program), this will stop attacking that target.",
+      "type": "text",
+      "title": "forgetTarget()"
+    },
+    {
+      "text": "$(#800)getAction()/$$(p)Returns a string that represents the last action set by 'setAction'. Will return nil when no action is set. Can be used to make sure to only call 'isActionDone()' when this method does not return nil.",
+      "type": "text",
+      "title": "getAction()"
+    },
+    {
+      "title": "getAllActions()",
+      "type": "text",
+      "text": "$(#800)getAllActions()/$$(p)Returns a table of all the current selectable actions (like 'dig' or 'place')."
+    },
+    {
+      "title": "getAreaTypes()",
+      "text": "$(#800)getAreaTypes()/$$(p)Returns a table of all the possible area types (filled, frame, sphere...)",
+      "type": "text"
+    },
+    {
+      "title": "getDronePosition()",
+      "text": "$(#800)getDronePosition()/$$(p)Returns a table of 3 double values containing the x,y and z position respectively of the Drone.",
+      "type": "text"
+    },
+    {
+      "text": "$(#800)getDronePressure()/$$(p)Returns the pressure of the connected Drone.",
+      "type": "text",
+      "title": "getDronePressure()"
+    },
+    {
+      "title": "getUpgrades()",
+      "type": "text",
+      "text": "$(#800)getUpgrades(<upgrade>)/$$(p)Will get the number of inserted upgrades of the given type. FIXME: currently takes a fairly meaningless number; this method will change to take a string upgrade name"
+    },
+    {
+      "text": "$(#800)getVariable(<variable name>)/$$(p)Returns the value of the variable from this Drone (x, y and z). It is possible to get global (#) and special variables ($) as well.",
+      "type": "text",
+      "title": "getVariable()"
+    },
+    {
+      "type": "text",
+      "text": "$(#800)hideArea()/$$(p)Will stop showing the area stored in the Drone.",
+      "title": "hideArea()"
+    },
+    {
+      "title": "isActionDone()",
+      "text": "$(#800)isActionDone()/$$(p)Returns true if the current action is done (goto has arrived at the target location, inventory import can't import anymore, dig has dug every possible block, ..).",
+      "type": "text"
+    },
+    {
+      "text": "$(#800)isConnectedToDrone()/$$(p)Returns true if a Drone has connected with this Drone Interface (when the Drone's program has arrived at the ComputerCraft piece and made a connection).",
+      "type": "text",
+      "title": "isConnectedToDrone()"
+    },
+    {
+      "title": "removeArea()",
+      "text": "$(#800)removeArea(<x1>,<y1>,<z1>,<x2>,<y2>,<z2>,<areaType>)/$$(p)Removes an area from the current stored area (like blacklisting).",
+      "type": "text"
+    },
+    {
+      "text": "$(#800)setAction(<action>)/$$(p)String that represents the action. This should be one of the actions returned by getAllActions().",
+      "type": "text",
+      "title": "setAction()"
+    },
+    {
+      "title": "setBlockOrder()",
+      "text": "$(#800)setBlockOrder(<\"closest\"/\"highToLow\"/\"lowToHigh\">)/$$(p)Sets the place/dig order of the Drone.",
+      "type": "text"
+    },
+    {
+      "text": "$(#800)setCount(<amount>)/$$(p)This configures the maximum amount of imported/exported/dropped items, and also is the amount that's checked when doing a condition check.",
+      "type": "text",
+      "title": "setCount()"
+    },
+    {
+      "title": "setCraftingGrid()",
+      "type": "text",
+      "text": "$(#800)setCraftingGrid(<item/block name>, <item/block name>, ...(9x))/$$(p)Sets up the crafting grid so when the Crafting instruction is called, this recipe will be used. You need to specify all 9 items making up the recipe. For empty spaces supply nil. The naming format is the same as for supplying item filters."
+    },
+    {
+      "text": "$(#800)setDropStraight(<true/false>)/$$(p)When the \"dropItem\" action would be set, this determines whether or not the item will be dropped with a random velocity, or straight down.",
+      "type": "text",
+      "title": "setDropStraight()"
+    },
+    {
+      "title": "setEmittingRedstone()",
+      "text": "$(#800)setEmittingRedstone(<strength>)/$$(p)Sets the strength the redstone will be emitting when the \"emitRedstone\" action would be set.",
+      "type": "text"
+    },
+    {
+      "type": "text",
+      "text": "$(#800)setIsAndFunction(<true/false>)/$$(p)Used in conditions only. When true, all checked blocks need to satisfy the condition requirements (>=10 etcetera).",
+      "title": "setIsAndFunction()"
+    },
+    {
+      "title": "setMaxActions()",
+      "text": "$(#800)setMaxActions(<amount>)/$$(p)This configures the maximum amount of actions performed on blocks before the command is considered 'done'. This applies to the Place, Dig an Right-Click block program. Be sure to also call setUseMaxActions(true) to enable usage of this.",
+      "type": "text"
+    },
+    {
+      "type": "text",
+      "text": "$(#800)setOperator(<\">=\" / \"=\">)/$$(p)Used in conditions only. Says whether or not the condition is checking for an equal amount (=) or equal and higher than amount (>=). The amount can be set using setCount().",
+      "title": "setOperator()"
+    },
+    {
+      "title": "setPlaceFluidBlocks()",
+      "type": "text",
+      "text": "$(#800)setPlaceFluidBlocks(<true/false>)/$$(p)Only used in the Liquid Export command, when set to true the Drone will be allowed to place down fluid blocks."
+    },
+    {
+      "title": "setRenameString()",
+      "text": "$(#800)setRenameString(<name>)/$$(p)Sets the name the Drone will be named to when the \"rename\" action would be set.",
+      "type": "text"
+    },
+    {
+      "type": "text",
+      "text": "$(#800)setRequiresTool(<true/false>)/$$(p)This configures whether or not the Drone should use a tool when executing the Dig or Harvest piece.",
+      "title": "setRequiresTool()"
+    },
+    {
+      "title": "setSide()",
+      "text": "$(#800)setSide(<side>, <accessible>)/$$(p)Sets the specific side to be accessible or not. Used in the Inventory Im- and Export actions to set which side of the inventory the Drone can access. It is also used for the Place action to determine how to place the block.",
+      "type": "text"
+    },
+    {
+      "title": "setSides()",
+      "text": "$(#800)setSides(<down>, <up>, <north>, <south>, <east>, <west>)/$$(p)Same as above, now in one function to set all sides at once (6x boolean).",
+      "type": "text"
+    },
+    {
+      "type": "text",
+      "text": "$(#800)setSignText(<line1>, <line2>, ..., <lineN>)/$$(p)Sets the text that's going to be set to Signs using the Edit Sign command.",
+      "title": "setSignText()"
+    },
+    {
+      "title": "setSneaking()",
+      "text": "$(#800)setSneaking(<true/false>)/$$(p)Only used in the right click command, this will set whether or not the fake player is sneaking while right clicking.",
+      "type": "text"
+    },
+    {
+      "type": "text",
+      "text": "$(#800)setUseCount(<true/false>)/$$(p)This says whether or not the Drone has a maximum of imported/exported/dropped pieces. If true, also use setCount().",
+      "title": "setUseCount()"
+    },
+    {
+      "title": "setUseMaxActions()",
+      "type": "text",
+      "text": "$(#800)setUseMaxActions(<true/false>)/$$(p)This says whether or not the Drone has a maximum actions performed on a block at a time before the command is considered 'done'. Applies to the Place, Dig and Right-Click block program. If true, also use setMaxActions()."
+    },
+    {
+      "text": "$(#800)setVariable(<variable name>, <x>, <y>, <z>)/$$(p)Sets a $(l:programming/coordinate_operator)variable/$ for this Drone. When passing 'true', the coordinate will be set to (1,0,0). Passing 'false' will set it to (0,0,0). It is possible to set global variables (#) as well.",
+      "type": "text",
+      "title": "setVariable()"
+    },
+    {
+      "text": "$(#800)showArea()/$$(p)Will show the current stored area using the area renderer you are used to.",
+      "type": "text",
+      "title": "showArea()"
+    },
+    {
+      "type": "crafting",
+      "text": "Creating a Drone Interface",
+      "recipe": "pneumaticcraft:drone_interface"
+    }
+  ]
+}
