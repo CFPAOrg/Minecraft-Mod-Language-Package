@@ -13,7 +13,17 @@ namespace Packer.Extensions
     /// </summary>
     public static class DirectoryExtension
     {
+        public static IEnumerable<IResourceFileProvider> EnumerateProviders
+            (this DirectoryInfo namespaceDirectory,
+            Config config)
+        // 其实这个我还没想好要不要叫Enumerate，毕竟可能不一定能做成Linq的样子
+        {
+            var policyFile = namespaceDirectory.GetFiles("packer-policy.json").FirstOrDefault();
 
+            var policy = Utils.RetrieveStrategy(policyFile);
+
+            throw null;
+        }
 
         /// <summary>
         /// 从[namespace]生成所需的Asset对象，采用本目录下放置的配置文件
