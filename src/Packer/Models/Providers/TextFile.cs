@@ -1,0 +1,78 @@
+﻿using Packer.Extensions;
+using Serilog;
+using System.IO;
+using System.IO.Compression;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace Packer.Models.Providers
+{
+    /// <summary>
+    /// 文本文件的提供器，支持内容替换，但不支持文件合并
+    /// </summary>
+    /// <remarks>
+    /// 对于普通的文本文件，使用该类
+    /// </remarks>
+    public class TextFile : IResourceFileProvider
+    {
+        /// <summary>
+        /// 提供器所携带的文本内容
+        /// </summary>
+        public string Content { get; }
+        /// <summary>
+        /// 目标地址
+        /// </summary>
+        public string Destination { get; }
+
+        /// <summary>
+        /// 从给定的<see cref="Stream"/>构造提供器。
+        /// </summary>
+        /// <param name="stream">读取源</param>
+        /// <param name="destination">目标地址</param>
+        public TextFile(Stream stream, string destination)
+        {
+            Destination = destination;
+            using var reader = new StreamReader(stream, Encoding.UTF8);
+            Content = reader.ReadToEnd();
+        }
+
+        /// <summary>
+        /// 从给定的文本内容构造提供器。
+        /// </summary>
+        /// <param name="content">来源文本</param>
+        /// <param name="destination">目标地址</param>
+        public TextFile(string content, string destination) 
+        { 
+            Content = content;
+            Destination = destination;
+        }
+
+
+        public IResourceFileProvider ReplaceContent(string searchPattern, string replacement)
+            => new TextFile(Regex.Replace(Content,
+                                  searchPattern,
+                                  replacement),
+                            Content);
+        /// <inheritdoc/>
+        public IResourceFileProvider ReplaceDestination(string searchPattern, string replacement)
+            => new TextFile(Content,
+                            Regex.Replace(Destination,
+                                          searchPattern,
+                                          replacement));
+        /// <inheritdoc/>
+        public async Task WriteToArchive(ZipArchive archive)
+        {
+            var destination = Destination.NormalizePath();
+            Log.Information("正在添加 {0}", destination);
+
+            archive.ValidateEntryDistinctness(destination);
+
+            using var writer = new StreamWriter(
+                archive.CreateEntry(destination)
+                       .Open(),
+                Encoding.UTF8);
+            await writer.WriteAsync(Content);
+        }
+    }
+}

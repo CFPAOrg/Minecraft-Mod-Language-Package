@@ -7,7 +7,7 @@ namespace Packer
     /// 配置文件
     /// <i>主要</i>从<c>config/packer.json</c>加载
     /// </summary>
-    public class Config
+    public struct Config
     {
         /// <summary>
         /// 打包的目标版本
@@ -55,5 +55,7 @@ namespace Packer
         /// </summary>
         [JsonPropertyName("replacementMap")]
         public Dictionary<string, string> CharatcerReplacement { get; set; }
+
+        public Dictionary<string, string> DestinationReplacement { get; set; }
     }
 }

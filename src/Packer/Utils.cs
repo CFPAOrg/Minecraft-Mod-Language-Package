@@ -26,13 +26,22 @@ namespace Packer
             return JsonSerializer.Deserialize<Config>(reader);
         }
 
-        public static PackerStrategy RetrieveStrategy(FileInfo file)
-            => file is null
-               ? new PackerStrategy { Type = PackerStrategyType.NoAction } // 默认类型
-               : JsonSerializer.Deserialize<PackerStrategy>(file.OpenText().ReadToEnd(), new JsonSerializerOptions
-               {
-                   Converters = { new JsonStringEnumConverter() }
-               });
+        public static PackerStrategy RetrieveStrategy(FileInfo? file)
+        {
+            if (file is null)
+            {
+                return new PackerStrategy { Type = PackerStrategyType.NoAction };
+            }
+            else
+            {
+                var result = JsonSerializer.Deserialize<PackerStrategy>(
+                    file.OpenText().ReadToEnd(),
+                    new JsonSerializerOptions
+                       {
+                           Converters = { new JsonStringEnumConverter() }
+                       });
+            }
+        }
 
         /// <summary>
         /// 将两个带有<c>TranslatedFile</c>的列表合并，对冲突项按照target优先进行合并。
