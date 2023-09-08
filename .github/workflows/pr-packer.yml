@@ -1,163 +1,89 @@
-# This is a basic workflow to help you get started with Actions
-
 name: PR Packer
 
-# Controls when the workflow will run
 on:
   workflow_dispatch: 
   pull_request:
     branches: [ main ]
     paths: 
-      - 'config/packer.json'
-      - 'config/fontmap.txt'
+      - 'src/**'
+      - 'config/packer/**'
       - 'projects/**'
 
 
 
 jobs:
   build:
+    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    name: Build / Cache Packer
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+
+      # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
+      # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
+      - name: Cache Packer
+        id: cache-packer
+        uses: actions/cache@v3
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('source/Pakcer/**') }}
+          path: Packer.exe
+
+      # 构造程序
+      - name: Build Packer if not cached
+        if: steps.cache-packer.outputs.cache_hit != 'true'
+        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
+
+
+  pack:
+    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    name: Pack Resources and Upload Artifacts
+    needs: build # 显然，需要存在缓存/已经构造，才能打包。
+    strategy:
+      matrix:
+        # 支持版本列表。将对这里的每个版本判断，按需打包。
+        # 如需添加新版本，在这里添加即可。
+        version: ["1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric"]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 20
-
-      - name: Check changed path on 1.12
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-1122
+          ref: main
+      
+      # 由于Github的限制，这里需要重新拉取打包程序。
+      - name: Restore Packer
+        id: cache-restore
+        uses: actions/cache/restore@v3
         with:
-          paths: projects/1.12.2
+          key: ${{ runner.os }}-${{ hashFiles('source/Pakcer/**') }}
+          path: Packer.exe
+          fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
 
-      - name: Check changed path on 1.16
+      - name: Check changed path on ${{ matrix.version }}
         uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-116
+        id: check-changes
         with:
-          paths: projects/1.16
+          # 判断位置：该版本文件、该版本配置、代码
+          paths: | 
+            projects/${{ matrix.version }}
+            config/packer/${{ matrix.version }}.json
+            src/**
 
-      - name: Check changed path on 1.16 fabric
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-116-fabric
-        with:
-          paths: projects/1.16-fabric
-          
-      - name: Check changed path on 1.18
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-118
-        with:
-          paths: projects/1.18
-
-      - name: Check changed path on 1.18 fabric
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-118-fabric
-        with:
-          paths: projects/1.18-fabric
-
-      - name: Check changed path on 1.19
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-119
-        with:
-          paths: projects/1.19
-
-      # - name: Check changed path on 1.19 fabric
-      #   uses: MarceloPrado/has-changed-path@v1.0
-      #   id: changed-119-fabric
-      #   with:
-      #     paths: projects/1.19-fabric
-          
-      - name: Build Packer
-        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
-
-      - name: Run Packer for 1.12.2
-        run: ./Packer --version="1.12.2"
-        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Packer for 1.16
-        run: ./Packer --version="1.16"
-        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Run Packer for 1.16-fabric
-        run: ./Packer --version="1.16-fabric"
-        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Run Packer for 1.18
-        run: ./Packer --version="1.18"
-        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Run Packer for 1.18-fabric
-        run: ./Packer --version="1.18-fabric"
-        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Run Packer for 1.19
-        run: ./Packer --version="1.19"
-        if: steps.changed-119.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      # - name: Run Packer for 1.19-fabric
-      #   run: ./Packer --version="1.19-fabric"
-      #   if: steps.changed-119-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Create timestamp
-        id: create_timestamp
-        run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
-        shell: bash
+      - name: Run Packer for ${{ matrix.version }}
+        run: ./Packer --version="${{ matrix.version }}"
+        # 运行逻辑：内容有更改 或 手动运行
+        if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
      # 额 要两分半才能传完 然而 GitHub actions 直接传的话 会压成 zip 内套 zip 就这样了吧 --cy
       - name: Unzip Files
-        run:  |
-          unzip -q Minecraft-Mod-Language-Package-1.19.zip -d Minecraft-Mod-Language-Package-1.19 || echo 0
-          unzip -q Minecraft-Mod-Language-Package-1.16.zip -d Minecraft-Mod-Language-Package-1.16 || echo 0
-          unzip -q Minecraft-Mod-Language-Package-1.18.zip -d Minecraft-Mod-Language-Package-1.18 || echo 0
-          unzip -q Minecraft-Mod-Language-Package-1.16-fabric.zip -d Minecraft-Mod-Language-Package-1.16-fabric || echo 0
-          unzip -q Minecraft-Mod-Language-Package-1.18-fabric.zip -d Minecraft-Mod-Language-Package-1.18-fabric || echo 0
-          unzip -q Minecraft-Mod-Language-Package-1.12.2.zip -d Minecraft-Mod-Language-Package-1.12.2 || echo 0
-        # unzip -q Minecraft-Mod-Language-Package-1.19-fabric.zip -d Minecraft-Mod-Language-Package-1.19-fabric || echo 0
+        run: unzip -q Minecraft-Mod-Language-Package-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
         shell: bash
           
-      - name: Upload Artifact 1.12.2
+      - name: Upload Artifact for ${{ matrix.version }}
         uses: actions/upload-artifact@v3.0.0
         with:
-          name: Minecraft-Mod-Language-Package-1.12.2
-          path: Minecraft-Mod-Language-Package-1.12.2/*
-        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Upload Artifact 1.16
-        uses: actions/upload-artifact@v3.0.0
-        with:
-          name: Minecraft-Mod-Language-Package-1.16
-          path: Minecraft-Mod-Language-Package-1.16/*
-        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Upload Artifact 1.16 fabric
-        uses: actions/upload-artifact@v3.0.0
-        with:
-          name: Minecraft-Mod-Language-Package-1.16-fabric
-          path: Minecraft-Mod-Language-Package-1.16-fabric/*
-        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Upload Artifact 1.18
-        uses: actions/upload-artifact@v3.0.0
-        with:
-          name: Minecraft-Mod-Language-Package-1.18
-          path: Minecraft-Mod-Language-Package-1.18/*
-        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Upload Artifact 1.18 fabric
-        uses: actions/upload-artifact@v3.0.0
-        with:
-          name: Minecraft-Mod-Language-Package-1.18-fabric
-          path: Minecraft-Mod-Language-Package-1.18-fabric/*
-        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-
-      - name: Upload Artifact 1.19
-        uses: actions/upload-artifact@v3.0.0
-        with:
-          name: Minecraft-Mod-Language-Package-1.19
-          path: Minecraft-Mod-Language-Package-1.19/*
-        if: steps.changed-119.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      # - name: Upload Artifact 1.19 fabric
-      #   uses: actions/upload-artifact@v3.0.0
-      #   with:
-      #     name: Minecraft-Mod-Language-Package-1.19-fabric
-      #     path: Minecraft-Mod-Language-Package-1.19-fabric/*
-      #   if: steps.changed-119-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
+          name: Minecraft-Mod-Language-Package-${{ matrix.version }}
+          path: Minecraft-Mod-Language-Package-${{ matrix.version }}/*
+        if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
