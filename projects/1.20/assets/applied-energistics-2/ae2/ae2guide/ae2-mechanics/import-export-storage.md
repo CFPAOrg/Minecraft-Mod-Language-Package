@@ -16,7 +16,7 @@ AE2中的一个重要概念便是网络存储，也即网络内容存储的地�
 *   <ItemLink id="export_bus" />将事物从网络存储输出
 *   <ItemLink id="interface" />可向网络存储输入或从网络存储输出
 *   [终端](../items-blocks-machines/terminals.md)在向其中放入、拿取，或填充合成方格时输入或输出物品
-*   <ItemLink id="storage_bus" />并不会对网络存储输入或输出，而是会对所连接的容器执行这些操作以将其用作网络存储（也即是其他设备从*这些总线*输入或输出）
+*   <ItemLink id="storage_bus" />并不会对网络存储输入或输出，而是会对所连接的容器执行这些操作，相当于将这些容器视作网络存储（也即是其他设备从*这些总线*输入或输出）
 
 <GameScene zoom="4" interactive={true}>
   <ImportStructure src="../assets/assemblies/import_export_storage.snbt" />

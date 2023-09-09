@@ -16,7 +16,7 @@ item_ids:
 
 控制器是[ME网络](../ae2-mechanics/me-network-connections.md)的寻路中心。若没有控制器，则网络是“自组织”网络，且最多只能包含8台占用频道的[设备](../ae2-mechanics/devices.md)。
 
-不允许在同一个[ME网络](../ae2-mechanics/me-network-connections.md)中存在2个控制器。
+不允许在同一个[ME网络](../ae2-mechanics/me-network-connections.md)中存在多组控制器。
 
 控制器每面提供32个[频道](../ae2-mechanics/channels.md)。
 

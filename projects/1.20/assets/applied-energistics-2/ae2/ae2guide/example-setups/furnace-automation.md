@@ -7,7 +7,7 @@ navigation:
 
 # 熔炉自动化
 
-自动化<ItemLink id="minecraft:furnace" />相较自动化[charger](../example-setups/charger-automation.md)之类更为简单的机器来说略显复杂。熔炉需从两个不同面输入，并需从第三个面输出。需烧炼的物品必须从顶面输入，燃料必须从侧面输入，产物必须从底面输出。
+自动化<ItemLink id="minecraft:furnace" />相较自动化[充能器](../example-setups/charger-automation.md)之类更为简单的机器来说略显复杂。熔炉需从两个不同面输入，并需从第三个面输出。需烧炼的物品必须从顶面输入，燃料必须从侧面输入，产物必须从底面输出。
 
 这可通过在顶面放置<ItemLink id="pattern_provider" />，在侧面放置<ItemLink id="export_bus" />以不断输入燃料，在底面放置<ItemLink id="import_bus" />以返回产物至网络解决。然而，这么做需要占用3个[频道](../ae2-mechanics/channels.md)。
 

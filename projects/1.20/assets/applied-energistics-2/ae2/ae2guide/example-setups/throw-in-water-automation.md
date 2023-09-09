@@ -55,7 +55,7 @@ navigation:
 
     ![福鲁伊克斯样板](../assets/diagrams/fluix_pattern.png)
 
-  * 对应<ItemLink id="flawed_budding_quartz" />，直接用<ItemLink id="quartz_block" />制造更佳，如此可避免某配方的输入是另一配方的输出所致的存储总线过滤失效：
+  * 对于<ItemLink id="flawed_budding_quartz" />，直接用<ItemLink id="quartz_block" />制造更佳，否则输入输出的物品可能重叠，不利于配置过滤：
 
     ![有瑕母岩样板](../assets/diagrams/flawed_budding_pattern.png)
 
