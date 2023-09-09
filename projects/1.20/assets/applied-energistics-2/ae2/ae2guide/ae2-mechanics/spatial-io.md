@@ -58,11 +58,27 @@ navigation:
 - 外接长方体至少为3x3x3（也即定义1x1x1的区域）
 - 所有空间塔需在外接长方体内部
 - 所有空间塔需处于统一网络
+- 所有空间塔需至少2格长
 
 例如，如果要定义3x3x3的区域，则根据规则2，所有空间塔应放在需定义区域周围5x5x5的长方体壳层内。这是唯一要求——只要满足此要求，可以任意放置空间塔。
 
 <GameScene zoom="4" interactive={true}>
 <ImportStructure src="../assets/assemblies/spatial_storage_3x3x3_pylon_demonstration.snbt" />
+
+<BoxAnnotation color="#33dd33" min="1 1 1" max="4 4 4">
+        会被移动的区域
+  </BoxAnnotation>
+
+<BoxAnnotation color="#3333ff" min="5 5 0" max="0 0 5">
+  </BoxAnnotation>
+
+<IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+更合理的设施见下：
+
+<GameScene zoom="4" interactive={true}>
+<ImportStructure src="../assets/assemblies/better_spatial_storage_3x3x3.snbt" />
 
 <BoxAnnotation color="#33dd33" min="1 1 1" max="4 4 4">
         会被移动的区域

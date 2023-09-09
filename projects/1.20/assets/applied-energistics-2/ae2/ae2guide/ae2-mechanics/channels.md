@@ -119,25 +119,111 @@ navigation:
 
 自组织网络中的每台设备会占用整个网络中的1个频道，和<ItemLink id="controller" />沿最短路径分配频道的行为非常不同。
 
-## 频道模式
-
-Minecraft 1.18版本的AE2 10.0.0引入了改变AE2频道行为的新选项。在配置文件通用部分有新选项（`channels`）可供控制，管理员也可使用游戏内命令直接在游戏中更改模式。更改命令为`/ae2 channelmode <模式>`，显示当前模式命令为`/ae2 channelmode`。如果是在游戏中进行的模式更改，则所有网络都会重置并立即改用新模式。
-
-这重新引入了Minecraft 1.12中的选项，并加以改进；对于想要游戏体验稍微轻松些，但又不希望完全移除频道机制的玩家而言，这算是更好的选择。
-
-配置文件和命令中可用模式列表如下。
-
-| 设置       | 描述                                                                                                                                                                                                                                        |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `default`  | 此指南描述的线缆与自组织网络标准频道容量                                                                                                                            |
-| `x2`       | 所有频道容量变为双倍（普通线缆16个，致密线缆64个，自组织网络16个）                                                                                                                          |
-| `x3`       | 所有频道容量变为三倍（普通线缆24个，致密线缆96个，自组织网络24个）                                                                                                                          |
-| `x4`       | 所有频道容量变为四倍（普通线缆32个，致密线缆128个，自组织网络32个）                                                                                                                          |
-| `infinite` | 移除所有频道限制。控制器仍能*大幅*减少能量消耗。此时，智能线缆只有完全关闭（不传输频道）和完全打开（传输若干频道）这两个状态。|
-
 ## 设计
 
 正如前文[频道寻路](channels.md#channel-routing)中所提，推荐将网络设计为树形结构：从控制器处引出致密线缆，致密线缆处引出普通线缆，在普通线缆上最多连接8台[设备](../ae2-mechanics/devices.md)。
+
+如下是一个反面示例：
+
+沿频道路径来看，
+
+1. 自控制器出发后，首先遇到的驱动器和普通线缆表现相同，因此将频道上限锁在了8个。
+不过此处没有使用智能线缆，无法查看具体使用了多少频道。剩余8个频道。
+2. 驱动器占用1个频道。
+剩余7个频道。
+3. 终端占用2个频道。
+剩余5个频道。
+4. 右侧的接口占用1个频道。
+剩余4个频道。
+5. 样板供应器占用1个频道。
+剩余3个频道。
+6. 右侧的输入总线占用1个频道。
+剩余2个频道。
+7. 用于供应装配室的样板供应器组只能拿到2个频道，其余2个则缺少频道。
+
+总体看来，问题主要出在锁死频道数上限和未考虑频道分配方式上。
+
+<GameScene zoom="4" interactive={true}>
+  <ImportStructure src="../assets/assemblies/bad_network_structure.snbt" />
+
+<LineAnnotation color="#33ff33" from="6.5 .5 1.5" to="6 .5 1.5" alwaysOnTop={true} thickness="0.4">
+  32个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="6 .5 1.5" to="5.5 .5 1.5" alwaysOnTop={true} thickness="0.2">
+  8个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="5.5 .5 1.5" to="5.5 1.5 1.5" alwaysOnTop={true} thickness="0.1">
+  2个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="5.5 .5 1.5" to="5.5 .3 1.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="5.5 1.5 1.5" to="5.5 2.5 1.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="5.5 2.5 1.5" to="5.5 2.5 1.1" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="5.5 .5 1.5" to="4.5 .5 1.5" alwaysOnTop={true} thickness="0.158">
+  5个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="4.5 .5 1.5" to="4.5 .3 1.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="4.5 .5 1.5" to="4.5 1.5 1.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="4.5 .5 1.5" to="3.5 .5 1.5" alwaysOnTop={true} thickness="0.122">
+  3个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="3.5 .5 1.5" to="3.5 2.5 1.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="3.5 2.5 1.5" to="3.7 2.5 1.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="3.5 .5 1.5" to="1.5 .5 1.5" alwaysOnTop={true} thickness="0.1">
+  2个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="1.5 0.5 1.5" to="1.5 0.3 1.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="1.5 0.5 1.5" to="0.5 0.5 1.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#33ff33" from="0.5 0.5 1.5" to="0.5 0.5 0.5" alwaysOnTop={true} thickness="0.071">
+  1个频道
+</LineAnnotation>
+
+<LineAnnotation color="#ff3333" from="0.5 1.5 1.5" to="0.5 1.3 1.5" alwaysOnTop={true} thickness="0.071">
+  无频道
+</LineAnnotation>
+
+<LineAnnotation color="#ff3333" from="1.5 1.5 0.5" to="1.5 1.3 0.5" alwaysOnTop={true} thickness="0.071">
+  无频道
+</LineAnnotation>
+
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+---
+
+再给出一个正面示例：
 
 <GameScene zoom="2.5" interactive={true}>
   <ImportStructure src="../assets/assemblies/treelike_network_structure.snbt" />
@@ -157,3 +243,19 @@ Minecraft 1.18版本的AE2 10.0.0引入了改变AE2频道行为的新选项。�
 
   <IsometricCamera yaw="315" pitch="30" />
 </GameScene>
+
+## 频道模式
+
+Minecraft 1.18版本的AE2 10.0.0引入了改变AE2频道行为的新选项。在配置文件通用部分有新选项（`channels`）可供控制，管理员也可使用游戏内命令直接在游戏中更改模式。更改命令为`/ae2 channelmode <模式>`，显示当前模式命令为`/ae2 channelmode`。如果是在游戏中进行的模式更改，则所有网络都会重置并立即改用新模式。
+
+这重新引入了Minecraft 1.12中的选项，并加以改进；对于想要游戏体验稍微轻松些，但又不希望完全移除频道机制的玩家而言，这算是更好的选择。
+
+配置文件和命令中可用模式列表如下。
+
+| 设置       | 描述                                                                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------- |
+| `default`  | 此指南描述的线缆与自组织网络标准频道容量                                                                           |
+| `x2`       | 所有频道容量变为双倍（普通线缆16个，致密线缆64个，自组织网络16个）                                                    |
+| `x3`       | 所有频道容量变为三倍（普通线缆24个，致密线缆96个，自组织网络24个）                                                    |
+| `x4`       | 所有频道容量变为四倍（普通线缆32个，致密线缆128个，自组织网络32个）                                                   |
+| `infinite` | 移除所有频道限制。控制器仍能*大幅*减少能量消耗。此时，智能线缆只有完全关闭（不传输频道）和完全打开（传输若干频道）这两个状态。|

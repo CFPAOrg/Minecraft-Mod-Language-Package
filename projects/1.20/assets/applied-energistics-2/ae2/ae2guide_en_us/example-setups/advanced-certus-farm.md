@@ -8,18 +8,12 @@ navigation:
 
 # Advanced Certus Farm
 
-Unfortunately, the [simple certus farm](simple-certus-farm.md) requires a <ItemLink id="flawless_budding_quartz" /> to work fully
-automatically. This requires either [Spatial IO](../ae2-mechanics/spatial-io.md) or building the farm at the [meteorite](../ae2-mechanics/meteorites.md).
+This is basically just the [Semi-Auto Certus Farm](semiauto-certus-farm.md), except it has been fully integrated into your
+ME system.
 
-However, AE2 can place and break blocks, and make [autocrafting](../ae2-mechanics/autocrafting.md) requests, so it might just
-be possible to make your farm *replace the budding certus for you*.
-
-This farm is a fair bit more complex than the [simple certus farm](simple-certus-farm.md), because it is actually
-3 separate setups crammmed together.
-
-Although you could have a big stockpile of budding blocks in your system and manually refresh them every once in a while,
-constructing [Charger Automation](charger-automation.md) and [Throwing-In-Water Automation](throw-in-water-automation.md)
-to do it automatically is recommended.
+Instead of having a big stockpile of budding blocks and manually refreshing them every once in a while,
+this setup uses [Charger Automation](charger-automation.md) and [Throwing-In-Water Automation](throw-in-water-automation.md)
+to do it automatically.
 
 **THIS IS A COMPLEX BUILD WITH STUFF HIDDEN BEHIND OTHER STUFF, PAN AROUND TO VIEW IT FROM ALL ANGLES**
 

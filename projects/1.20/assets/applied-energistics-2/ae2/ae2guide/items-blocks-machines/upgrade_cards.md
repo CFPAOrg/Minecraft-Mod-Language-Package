@@ -137,11 +137,11 @@ item_ids:
 
 ## 合成卡
 
-<ItemImage id="inverter_card" scale="2" />
+<ItemImage id="crafting_card" scale="2" />
 
 合成卡给予设备向[自动合成](../ae2-mechanics/autocrafting.md)系统发送相关物品合成请求的能力。
 
-<RecipeFor id="inverter_card" />
+<RecipeFor id="crafting_card" />
 
 ## 均分卡
 

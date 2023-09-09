@@ -41,3 +41,7 @@ item_ids:
 ## 配方
 
 <RecipeFor id="molecular_assembler" />
+
+## 注释
+
+Optifine会破坏“弹出至相邻容器”功能，导致大多数需要装配室的合成设施无法工作。

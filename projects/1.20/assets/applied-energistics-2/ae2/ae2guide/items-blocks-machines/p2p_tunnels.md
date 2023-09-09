@@ -80,6 +80,10 @@ P2P通道的最常见用途便是通过ME P2P通道以高效传输[频道](../ae
   <IsometricCamera yaw="225" pitch="30" />
 </GameScene>
 
+另一示例（与[量子桥](quantum_bridge.md)共同运用）可见下方用画图画出来的粗略图案：
+
+![P2P和量子桥](../assets/diagrams/p2p_quantum_network.png)
+
 ## 嵌套
 
 但是，这一系统无法在单根线缆中传输无限频道。ME P2P通道的频道无法穿过其他ME P2P通道，也因此无法嵌套它们。注意位于外层红色线缆上的ME P2P通道处于离线状态。这一性质仅适用于ME P2P通道，其他种类的P2P通道则可穿过ME P2P通道，如此连接的红石P2P通道能正常工作。

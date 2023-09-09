@@ -15,7 +15,7 @@ item_ids:
 
 ![已搭建完成的量子网桥](../assets/diagrams/quantum_bridge_demonstration.png)
 
-量子网桥能将网络无限延伸，甚至能跨维度连接。它们能传输共32个频道（无论线缆连接方式如何），可视作无线的[致密线缆](cables.md#dense-cable)。
+量子网桥能将[网络](../ae2-mechanics/me-network-connections.md)无限延伸，甚至能跨维度连接。它们能传输共32个频道（无论线缆连接方式如何），可视作无线的[致密线缆](cables.md#dense-cable)。
 
 <GameScene zoom="4" background="transparent">
   <ImportStructure src="../assets/assemblies/quantum_bridge_internal_structure_1.snbt" />

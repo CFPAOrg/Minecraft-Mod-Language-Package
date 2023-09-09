@@ -8,13 +8,9 @@ navigation:
 
 # 进阶赛特斯石英农场
 
-不幸的是，[简单赛特斯石英农场](simple-certus-farm.md)需要<ItemLink id="flawless_budding_quartz" />才能完全自动化。而这又需要[空间IO](../ae2-mechanics/spatial-io.md)或是直接在[陨石](../ae2-mechanics/meteorites.md)处搭建农场。
+此设施和[半自动赛特斯石英农场](semiauto-certus-farm.md)差别不多，唯一区别则在于此设施可完全整合入ME系统中。
 
-不过，AE2能够放置和破坏方块，也能发起[自动合成](../ae2-mechanics/autocrafting.md)请求，所以它也许有那么一些可能能让农场*帮你替换赛特斯石英母岩*。
-
-这个农场相较[简单赛特斯石英农场](simple-certus-farm.md)来说复杂许多，原因在于它实际上是3个独立设施堆起来的。
-
-尽管可以在系统中存一大堆母岩，再每隔一段时间手动更换一遍，但更推荐搭建[充能器自动化](charger-automation.md)和[投水自动化](throw-in-water-automation.md)设施以将其自动化。
+此设施不需要大量缓存或手动替换母岩，它利用了[充能器自动化](charger-automation.md)和[投水自动化](throw-in-water-automation.md)以自动完成上述任务。
 
 **这是个有遮挡关系的复杂建筑，可以旋转视角从各向观察**
 
@@ -122,7 +118,7 @@ navigation:
 
 赛特斯石英块破坏器的功能是在母岩枯竭而变为<ItemLink id="quartz_block" />时将其破坏。此设施和石英簇破坏器原理类似。
 
-1. <ItemLink id="annihilation_plane" />尝试破坏其前方的是我，但由于子网络中存储位置仅有过滤<ItemLink id="quartz_block" />的<ItemLink id="formation_plane" />，其只会破坏<ItemLink id="quartz_block" />。此面板需附有精准采集，避免破坏母岩的行为本身导致的过早降级。
+1. <ItemLink id="annihilation_plane" />尝试破坏其前方的事物，但由于子网络中存储位置仅有过滤<ItemLink id="quartz_block" />的<ItemLink id="formation_plane" />，其只会破坏<ItemLink id="quartz_block" />。此面板需附有精准采集，避免破坏母岩的行为本身导致的降级。
 2. <ItemLink id="storage_bus" />将赛特斯石英块存入<ItemLink id="interface" />，交由[投水自动化](throw-in-water-automation.md)设施用其制成新的<ItemLink id="flawed_budding_quartz" />。
 
 ### 母岩放置器：

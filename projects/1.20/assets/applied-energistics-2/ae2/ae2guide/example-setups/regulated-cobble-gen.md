@@ -15,7 +15,7 @@ navigation:
 
 可以设计一个由<ItemLink id="annihilation_plane" />和<ItemLink id="storage_bus" />组成的独立[子网络](../ae2-mechanics/subnetworks.md)以将物品输入主网络的<ItemLink id="interface" />。触发总线则与<ItemLink id="quartz_fiber" />连接或断开，以此提供或切断能量供给。
 
-<GameScene zoom="6" interactive={true}>
+<GameScene zoom="4" interactive={true}>
   <ImportStructure src="../assets/assemblies/regulated_cobble_gen.snbt" />
 
 <BoxAnnotation color="#dddddd" min="3 2 2" max="7 2.3 3">

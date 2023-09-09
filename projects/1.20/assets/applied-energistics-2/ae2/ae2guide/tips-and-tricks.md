@@ -8,6 +8,7 @@ navigation:
 
 一大堆小推荐
 
+* 移除Optifine
 * 可以旋转或缩放带有缩放和显隐注释图标的指南示例图
 * 保持网络的树状结构，避免构造环状结构
 * 方块形态[设备](ae2-mechanics/devices.md)一区域最多8个，除非你对[频道](ae2-mechanics/channels.md)在网络中的分布了解很深

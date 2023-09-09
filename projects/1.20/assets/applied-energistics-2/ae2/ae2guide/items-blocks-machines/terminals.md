@@ -26,6 +26,23 @@ item_ids:
 
 它们是[线缆子部件](../ae2-mechanics/cable-subparts.md)。
 
+## 终端的放置
+
+终端通常是最先放置的[子部件](../ae2-mechanics/cable-subparts.md)，因此出现放置问题或反着放置等都是正常现象。应当做和不应当做的事见下方示例：
+
+<GameScene zoom="6" background="transparent">
+  <ImportStructure src="../assets/assemblies/terminal_placement.snbt" />
+  <IsometricCamera yaw="195" pitch="30" />
+
+  <LineAnnotation color="#ff3333" from="2.5 .5 .5" to="4.5 2.5 .5" alwaysOnTop={true} thickness="0.05"/>
+  <LineAnnotation color="#ff3333" from="2.5 2.5 .5" to="4.5 .5 .5" alwaysOnTop={true} thickness="0.05"/>
+
+  <LineAnnotation color="#33ff33" from="-.5 2.5 .5" to="1 .5 .5" alwaysOnTop={true} thickness="0.05"/>
+  <LineAnnotation color="#33ff33" from="1 .5 .5" to="1.5 1 .5" alwaysOnTop={true} thickness="0.05"/>
+</GameScene>
+
+终端和能源接收器都还在，但终端的方向正确且网络连接正确，整体的空间占用也更优。
+
 <a name="terminal-ui"></a>
 
 # 终端
@@ -37,7 +54,7 @@ item_ids:
 
 基础终端，使你能访问[网络存储](../ae2-mechanics/import-export-storage.md)的内容，也可向[自动合成](../ae2-mechanics/autocrafting.md)设施发送请求。
 
-### 界面
+## 界面
 
 基础终端的UI分为若干部分。
 
@@ -61,7 +78,7 @@ item_ids:
 
 中间部分的右上角（锤子图标）会显示[自动合成](../ae2-mechanics/autocrafting.md)状态UI，允许查看自动合成的进度和各个[合成CPU](crafting_cpu_multiblock.md)的当前任务。
 
-### 配方
+## 配方
 
 <RecipeFor id="terminal" />
 
@@ -78,13 +95,13 @@ item_ids:
 
 应当**尽快**将普通终端升级为合成终端。
 
-### 界面
+## 界面
 
 合成终端的UI与普通终端的相同，并在中间加入了合成方格。
 
 新增了2个按钮，可将合成方格内物品清空至网络存储或物品栏。
 
-### 配方
+## 配方
 
 <RecipeFor id="crafting_terminal" />
 
@@ -101,7 +118,7 @@ item_ids:
 
 应当在拥有合成终端后再配一个样板编码终端。
 
-### 界面
+## 界面
 
 样板编码终端的UI与普通终端的相同，并在中间加入了[样板](patterns.md)编码界面。
 
@@ -133,7 +150,7 @@ item_ids:
 
 *   锻造台和切石机模式的UI和实际的锻造台与切石机类似。
 
-### 配方
+## 配方
 
 <RecipeFor id="pattern_encoding_terminal" />
 
@@ -148,7 +165,7 @@ item_ids:
 
 样板管理终端可以解决此类问题：在一整个紧凑的<ItemLink id="pattern_provider" />和<ItemLink id="molecular_assembler" />阵列中无法直接向供应器放入样板。此外，也可解决不想跑到基地其他位置放[样板](patterns.md)的懒惰问题。样板管理终端允许访问网络中的所有样板供应器。
 
-### 界面
+## 界面
 
 样板管理终端的UI和其他终端不同。
 
@@ -156,6 +173,6 @@ item_ids:
 
 根据样板供应器连接的方块以及名称（铁砧或<ItemLink id="name_press" />赋予）将其分类。
 
-### 配方
+## 配方
 
 <RecipeFor id="pattern_access_terminal" />
