@@ -42,7 +42,8 @@ namespace Packer.Extensions
                 { PackerStrategyType.NoAction, FromImmediateDirectory },
                 { PackerStrategyType.PlainClone, FromIndirectDirectory },
                 { PackerStrategyType.CloneMissing, FromMixedDirectory },
-                { PackerStrategyType.Patch, FromPatches}
+                { PackerStrategyType.BackPort, FromBackPort },
+                { PackerStrategyType.Patch, FromPatches }
             };
             return functionTable[policy.Type](assetPath, config, ref bypassed, policy.Parameters);
         }
@@ -65,6 +66,13 @@ namespace Packer.Extensions
                                                               ref Dictionary<string, string> unprocessed,
                                                               Dictionary<string, JsonElement> parameters)
             => Utils.MergeFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
+                                 FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
+
+        static IEnumerable<TranslatedFile> FromBackPort(DirectoryInfo assetDirectory,
+                                                              Config config,
+                                                              ref Dictionary<string, string> unprocessed,
+                                                              Dictionary<string, JsonElement> parameters)
+            => Utils.PortFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
                                 FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
 
         static IEnumerable<TranslatedFile> FromIndirectDirectory(DirectoryInfo assetDirectory,
@@ -83,11 +91,11 @@ namespace Packer.Extensions
             var patchList = JsonSerializer.Deserialize<Dictionary<string, string>>(parameters["patches"]);
             foreach (var patch in patchList)
             {
-                Log.Information("{0}", reference.Keys);
+                //Log.Information("{0}", reference.Keys);
                 Log.Information("对文件 {0} 应用 {1} 处的 patch。", patch.Key, patch.Value);
-                var target = reference[patch.Key];
+                reference.Remove(patch.Key, out var target);
                 var patchText = string.Join('\n', File.ReadAllLines(patch.Value)); // 不要问我为什么D-M-P默认换行是LF
-                target.ApplyPatch(patchText);
+                reference.Add(patch.Key, target.ApplyPatch(patchText));
             }
             return reference.Values;
         }
@@ -103,13 +111,11 @@ namespace Packer.Extensions
                                        .Select(file =>
                 {   // 这里开始真正的检索。被跳过的文本用 null 代替
                     var prefixLength = assetDirectory.FullName.Length;
-                    var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置
+                    var relativePath = file.FullName[(prefixLength + 1)..]
+                                       .Replace('\\', '/'); // 在asset-domain下的位置，规范为用正斜杠分割
 
-                    // 跳过英文文件
-                    if (relativePath.IsSkippedLang(config))
-                    {
-                        return null;
-                    }
+                    // 处理被跳过的文本。处理顺序：policy -> [bypass](font, textures) -> !zh_cn
+                    // 顺序乱了会导致字体文件被丢弃，因为没有带zh_cn
 
                     // 跳过检索策略文件
                     if (relativePath == "packer-policy.json")
@@ -120,21 +126,30 @@ namespace Packer.Extensions
                     // 选出不经过处理路径的文件
                     if (relativePath.NeedBypass(config))
                     {
-                        Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('\\')[0]);
-                        bypassed.Add(file.FullName,
-                                     Path.Combine("assets",
+                        var target = Path.Combine("assets",
                                                   assetDirectory.Name,
-                                                  relativePath));
+                                                  relativePath);
+                        Log.Information("跳过了标记为直接加入的命名空间：{0} -> {1}",
+                                        relativePath.Split('/')[0],
+                                        target);
+                        bypassed.Add(file.FullName, target);
+                        return null;
+                    }
+
+                    // 跳过非中文文件
+                    if (!relativePath.IsTargetLang(config))
+                    {
                         return null;
                     }
 
                     // 处理正常的语言文件
+                    // TODO：Json5支持
                     var parsingCategory = file.Extension switch
                     {
                         ".json" => FileCategory.JsonAlike,
                         _ => FileCategory.LangAlike
                     };
-                    if (relativePath.StartsWith("lang\\"))
+                    if (relativePath.StartsWith("lang/"))
                     {
                         return new LangFile(file.OpenRead(),
                                             parsingCategory | FileCategory.LanguageFile,

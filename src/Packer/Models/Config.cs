@@ -16,12 +16,11 @@ namespace Packer
         public string Version { get; set; }
 
         /// <summary>
-        /// 打包的<c>非</c>目标语言<br></br>
-        /// 为了尽量减少功能变动（避免以后秃头），尽量保持原方式<br></br>
+        /// 打包的目标语言<br></br>
         /// 为<c>1.20</c>准备，因为据说语言文件名要改
         /// </summary>
-        [JsonPropertyName("unTargetLang")]
-        public string[] SkippedLanguages { get; set; }
+        [JsonPropertyName("targetLanguage")]
+        public string[] TargetLanguages { get; set; }
 
         /// <summary>
         /// 打包过程的基础文件（如在assets/以外的文件，或不宜通过打包流程的）

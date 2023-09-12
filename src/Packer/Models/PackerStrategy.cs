@@ -28,6 +28,12 @@ namespace Packer.Models
         /// </summary>
         CloneMissing,
         /// <summary>
+        /// 使用此处的文件结构，仅对此处存在的条目从源地址更新<br></br>
+        /// 附加参数：<br></br>
+        /// "source": string 复制源地址
+        /// </summary>
+        BackPort,
+        /// <summary>
         /// 从某处复制文件，然后应用由Google Diff-Match-Patch算法生成的修改项<br></br>
         /// 附加参数：<br></br>
         /// "source": string 复制源地址<br></br>
