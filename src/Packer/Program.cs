@@ -30,38 +30,32 @@ namespace Packer
 
             Log.Information("开始对版本 {0} 的打包", config.Version);
 
-            var rawQuery = Lib.RetrieveContent(config, targetModIdentifiers);
             var query = // 这就是查询表达式吗（
                 from modDirectory in new DirectoryInfo($"./projects/{config.Version}/assets")
                                                    .EnumerateDirectories()
                 let modIdentifier = modDirectory.Name
-                // 模组筛选，按模组标识符
-                where targetModIdentifiers is null // 未提供列表，全部打包 
-                    || targetModIdentifiers.Contains(modIdentifier) // 有列表，仅打包列表中的项
-                where !config.ModBlackList.Contains(modIdentifier) // 没有被明确排除
+                where targetModIdentifiers is null                              // 未提供列表，全部打包 
+                    || targetModIdentifiers.Contains(modIdentifier)             // 有列表，仅打包列表中的项
+                where !config.ModBlackList.Contains(modIdentifier)              // 没有被明确排除
                 from namespaceDirectory in modDirectory.EnumerateDirectories()
                 let namespaceName = namespaceDirectory.Name
-                where !config.DomainBlackList.Contains(modIdentifier) // 没有被明确排除
-                // 检查命名空间格式，拒绝错误格式
-                // 但是写成表达式以后，没法现场丢异常了...
-                where !Regex.IsMatch(namespaceName,
-                                     @"^[a-z0-9_\-.]+$",
-                                     RegexOptions.Singleline)
+                where !config.DomainBlackList.Contains(namespaceName)           // 没有被明确排除
+                where namespaceName.ValidateNamespace()                         // 不是非法名称
                 from provider in namespaceDirectory.EnumerateProviders(config)
-                group provider by namespaceName into namespaceGroup// 合并文件；我猜没写错
-                select namespaceGroup
-                    .Aggregate(seed: null as IResourceFileProvider, // 好家伙 类型推断系统推断不出TAggregate
-                               (accumlate, next) // 为什么这个参数叫func不叫accumlator或者aggregator...
-                                   => next.Append(accumlate, overrideExisting: false)) into provider
-                // 替换内容中的特殊字符
-                select config.CharatcerReplacement
+                group provider by provider.Destination into destinationGroup
+                select destinationGroup
+                    .Aggregate(seed: null as IResourceFileProvider,             // 合并文件
+                               (accumlate, next)
+                                   => next.ApplyTo(
+                                       accumlate,
+                                       overrideExisting: false)) into provider
+                select config.CharatcerReplacement                              // 内容的字符替换
                              .Aggregate(seed: provider,
                                         (accumlate, replacement)
                                             => accumlate.ReplaceContent(
                                                 replacement.Key,
                                                 replacement.Value)) into provider
-                // 替换目标路径中的对象
-                select config.DestinationReplacement
+                select config.DestinationReplacement                            // 全局路径替换：预留
                              .Aggregate(seed: provider,
                                         (accumlate, replacement)
                                             => accumlate.ReplaceContent(
@@ -73,6 +67,7 @@ namespace Packer
 
             string packName = $"./Minecraft-Mod-Language-Package-{config.Version}.zip";
             await using var stream = File.Create(packName);
+
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
             {
                 archive.Initialize(config);
@@ -83,6 +78,7 @@ namespace Packer
                             config.Version,
                             query.Count());
             var md5 = stream.ComputeMD5();
+
             Log.Information("打包文件的 MD5 值：{0}", md5);
             File.WriteAllText($"./{config.Version}.md5", md5);
         }

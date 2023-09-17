@@ -1,11 +1,7 @@
 ﻿using Packer.Extensions;
 using Serilog;
-using System;
-using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -44,7 +40,10 @@ namespace Packer.Models.Providers
         /// <inheritdoc/>
         public IResourceFileProvider ReplaceDestination(string searchPattern, string replacement)
             => new RawFile(SourceFile,
-                           Regex.Replace(Destination, searchPattern, replacement));
+                           Regex.Replace(Destination,
+                                         searchPattern,
+                                         replacement,
+                                         RegexOptions.Singleline));
 
         /// <inheritdoc/>
         public async Task WriteToArchive(ZipArchive archive)

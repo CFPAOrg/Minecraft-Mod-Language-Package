@@ -28,13 +28,14 @@ namespace Packer.Models.Providers
         /// <summary>
         /// 从给定的<see cref="Stream"/>构造提供器。
         /// </summary>
-        /// <param name="stream">读取源</param>
+        /// <param name="file">读取源</param>
         /// <param name="destination">目标地址</param>
-        public TextFile(Stream stream, string destination)
+        public static TextFile Create(FileInfo file, string destination)
         {
-            Destination = destination;
+            using var stream = file.OpenRead();
             using var reader = new StreamReader(stream, Encoding.UTF8);
-            Content = reader.ReadToEnd();
+            var content = reader.ReadToEnd();
+            return new TextFile(content, destination);
         }
 
         /// <summary>
@@ -52,14 +53,16 @@ namespace Packer.Models.Providers
         public IResourceFileProvider ReplaceContent(string searchPattern, string replacement)
             => new TextFile(Regex.Replace(Content,
                                   searchPattern,
-                                  replacement),
+                                  replacement,
+                                  RegexOptions.Singleline),
                             Content);
         /// <inheritdoc/>
         public IResourceFileProvider ReplaceDestination(string searchPattern, string replacement)
             => new TextFile(Content,
                             Regex.Replace(Destination,
                                           searchPattern,
-                                          replacement));
+                                          replacement,
+                                          RegexOptions.Singleline));
         /// <inheritdoc/>
         public async Task WriteToArchive(ZipArchive archive)
         {
