@@ -12,8 +12,21 @@ namespace Packer.Extensions
     /// <summary>
     /// 对字符串的一些拓展方法
     /// </summary>
-    public static class ContentExtension
+    public static partial class ContentExtension
     {
+        [GeneratedRegex(@"^[a-z0-9_.-]+$", RegexOptions.Singleline)]
+        private static partial Regex ValidNamespaceRegex();
+
+        public static bool ValidateNamespace(this string namespaceName)
+        {
+            // 强行丢异常...行吧
+            if (!ValidNamespaceRegex().IsMatch(namespaceName))
+                throw new ArgumentOutOfRangeException(nameof(namespaceName), namespaceName, "Invalid namespace name.");
+            return true;
+        }
+
+
+
         /// <summary>
         /// 将文件的目标路径正规化，以免各种加载出错
         /// </summary>
@@ -21,7 +34,6 @@ namespace Packer.Extensions
         /// <returns></returns>
         public static string NormalizePath(this string path)
             => path.Replace('\\', '/') // 修正正反斜杠导致的压缩文件读取问题
-                 //.ToLower()          // 确保大小写  *  由于语言类型需要大小写而禁用该条
                    ;
 
         /// <summary>
@@ -37,37 +49,37 @@ namespace Packer.Extensions
             return Path.Join(_.ToArray());
         }
 
-        /// <summary>
-        /// 文本预处理<br></br>
-        /// 目前仅有特殊符号更换，但还是预留了空间
-        /// </summary>
-        /// <param name="content">待处理的文本</param>
-        /// <param name="category">文本种类，用于判断是否转义</param>
-        /// <param name="config">所使用的配置</param>
-        /// <returns></returns>
-        public static string Preprocess(this string content, FileCategory category, Config config)
-        {
-            // 特殊符号替换
-            foreach (var mapping in config.CharatcerReplacement)
-            {
-                var escaped = JavaScriptEncoder.Default.Encode(mapping.Value);
-                if (content.Contains(mapping.Key))
-                {
-                    Log.Information("正在进行特殊符号替换：{0} -> {1}", mapping.Key, escaped);
-                }
+        ///// <summary>
+        ///// 文本预处理<br></br>
+        ///// 目前仅有特殊符号更换，但还是预留了空间
+        ///// </summary>
+        ///// <param name="content">待处理的文本</param>
+        ///// <param name="category">文本种类，用于判断是否转义</param>
+        ///// <param name="config">所使用的配置</param>
+        ///// <returns></returns>
+        //public static string Preprocess(this string content, FileCategory category, Config config)
+        //{
+        //    // 特殊符号替换
+        //    foreach (var mapping in config.CharatcerReplacement)
+        //    {
+        //        var escaped = JavaScriptEncoder.Default.Encode(mapping.Value);
+        //        if (content.Contains(mapping.Key))
+        //        {
+        //            Log.Information("正在进行特殊符号替换：{0} -> {1}", mapping.Key, escaped);
+        //        }
                 
-                if ((category & FileCategory.JsonAlike) == FileCategory.JsonAlike)
-                { // 替换为 unicode 转义码
-                    content = content.Replace(mapping.Key, escaped);
-                }
-                else
-                { // 替换为 unicode 字符
-                    content = content.Replace(mapping.Key, mapping.Value);
-                }
+        //        if ((category & FileCategory.JsonAlike) == FileCategory.JsonAlike)
+        //        { // 替换为 unicode 转义码
+        //            content = content.Replace(mapping.Key, escaped);
+        //        }
+        //        else
+        //        { // 替换为 unicode 字符
+        //            content = content.Replace(mapping.Key, mapping.Value);
+        //        }
 
-            }
-            return content;
-        }
+        //    }
+        //    return content;
+        //}
 
         /// <summary>
         /// 判断文件是否需要跳过预处理<br></br>
@@ -76,14 +88,8 @@ namespace Packer.Extensions
         /// <param name="location">文件所在的位置</param>
         /// <param name="config">所使用的配置</param>
         /// <returns></returns>
-        public static bool NeedBypass(this string location, Config config)
-        {
-            foreach (var @namespace in config.BypassedNamespace)
-            {
-                if (location.StartsWith(@namespace + "/")) return true;
-            }
-            return false;
-        }
+        public static bool IsForceIncluded(this string location, Config config)
+            => config.ForceInclusionDomain.Any(_ => location.StartsWith(_ + '/'));
 
         /// <summary>
         /// 判断文件是否属于应跳过的语言
@@ -91,14 +97,8 @@ namespace Packer.Extensions
         /// <param name="location">文件所在的位置</param>
         /// <param name="config">所使用的配置</param>
         /// <returns></returns>
-        public static bool IsTargetLang(this string location, Config config)
-        {
-            foreach (var lang in config.TargetLanguages)
-            {
-                if (location.Contains(lang, StringComparison.OrdinalIgnoreCase)) return true;
-            }
-            return false;
-        }
+        public static bool IsInTargetLanguage(this string location, Config config)
+            => config.TargetLanguages.Any(_ => location.Contains(_, StringComparison.OrdinalIgnoreCase));
 
         // 临时方法
         /// <summary>

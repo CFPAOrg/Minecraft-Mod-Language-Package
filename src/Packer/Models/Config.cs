@@ -48,7 +48,7 @@ namespace Packer
         /// 按照<c>namespace</c>识别
         /// </summary>
         [JsonPropertyName("noProcessNamespace")]
-        public List<string> BypassedNamespace { get; set; }
+        public List<string> ForceInclusionDomain { get; set; }
 
         /// <summary>
         /// 字符替换表，版本限定
@@ -56,6 +56,8 @@ namespace Packer
         [JsonPropertyName("replacementMap")]
         public Dictionary<string, string> CharatcerReplacement { get; set; }
 
+
+        [JsonPropertyName("destinitionReplacement")]
         public Dictionary<string, string> DestinationReplacement { get; set; }
     }
 }

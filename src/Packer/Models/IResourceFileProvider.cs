@@ -22,9 +22,9 @@ namespace Packer.Models
         /// <param name="incoming">需要添加的新<see cref="IResourceFileProvider"/></param>
         /// <param name="overrideExisting">冲突解决方案。若为<see langword="false"/>，保留本文件的内容；否则，保留新文件的内容</param>
         /// <returns>合并得到的新<see cref="IResourceFileProvider"/></returns>
-        public IResourceFileProvider Append(IResourceFileProvider? incoming, bool overrideExisting = false)
+        public IResourceFileProvider ApplyTo(IResourceFileProvider? incoming, bool overrideExisting = false)
             // 默认实现
-            => overrideExisting 
+            => !overrideExisting 
                 ? (incoming ?? this) // 如果来源是null，无论冲突配置如何，都不应返回null
                 : this;
 
@@ -44,16 +44,19 @@ namespace Packer.Models
         /// <param name="searchPattern">替换的匹配模式，使用<see cref="Regex"/></param>
         /// <param name="replacement">替换文本</param>
         /// <returns>替换得到的新<see cref="IResourceFileProvider"/></returns>
-        public IResourceFileProvider ReplaceDestination(string searchPattern, string replacement)
-            // 默认实现
-            => this;
+        public IResourceFileProvider ReplaceDestination(string searchPattern, string replacement);
 
         /// <summary>
         /// 将该提供器的内容写入到资源包的正确位置
         /// </summary>
         /// <param name="archive"></param>
-        /// <returns></returns>
         /// <exception cref="InvalidOperationException">资源包中已有同名文件</exception>
         public Task WriteToArchive(ZipArchive archive);
+
+        /// <summary>
+        /// 获取该提供器的目标位置
+        /// </summary>
+        /// <returns>目标在资源包中的相对位置，从根目录算起</returns>
+        public string Destination { get; }
     }
 }
