@@ -48,7 +48,7 @@ Forge Energy与Techreborn Energy的转换比为：
 
 **可以加入能源元件以解决上述问题。**
 
-网络自带800AE能量缓存。
+网络中每个线缆、设备，以及部件均自带25AE的能量缓存。
 
 <ItemLink id="controller" />有少量能量缓存：8000AE。
 
