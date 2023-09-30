@@ -20,13 +20,11 @@ namespace Packer.Models.Providers
         /// </summary>
         public FileInfo SourceFile { get; }
 
-        /// <summary>
-        /// 目标地址
-        /// </summary>
+        /// <inheritdoc/>
         public string Destination { get; }
 
         /// <summary>
-        /// 从给定的文件引用构造提供器
+        /// 从给定的<see cref="FileInfo" />构造提供器
         /// </summary>
         /// <param name="sourceFile">源文件的引用</param>
         /// <param name="destination">目标地址</param>
