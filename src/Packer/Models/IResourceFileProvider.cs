@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO.Compression;
-using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
@@ -54,9 +52,8 @@ namespace Packer.Models
         public Task WriteToArchive(ZipArchive archive);
 
         /// <summary>
-        /// 获取该提供器的目标位置
+        /// 目标在资源包中的相对位置，从根目录算起
         /// </summary>
-        /// <returns>目标在资源包中的相对位置，从根目录算起</returns>
         public string Destination { get; }
     }
 }

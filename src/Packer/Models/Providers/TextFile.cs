@@ -19,14 +19,13 @@ namespace Packer.Models.Providers
         /// <summary>
         /// 提供器所携带的文本内容
         /// </summary>
-        public string Content { get; }
-        /// <summary>
-        /// 目标地址
-        /// </summary>
-        public string Destination { get; }
+        public virtual string Content { get; }
+        
+        /// <inheritdoc/>
+        public virtual string Destination { get; }
 
         /// <summary>
-        /// 从给定的<see cref="Stream"/>构造提供器。
+        /// 从给定的<see cref="FileInfo"/>构造提供器
         /// </summary>
         /// <param name="file">读取源</param>
         /// <param name="destination">目标地址</param>
@@ -39,7 +38,7 @@ namespace Packer.Models.Providers
         }
 
         /// <summary>
-        /// 从给定的文本内容构造提供器。
+        /// 从给定的文本内容构造提供器
         /// </summary>
         /// <param name="content">来源文本</param>
         /// <param name="destination">目标地址</param>
@@ -49,22 +48,22 @@ namespace Packer.Models.Providers
             Destination = destination;
         }
 
-
-        public IResourceFileProvider ReplaceContent(string searchPattern, string replacement)
+        /// <inheritdoc/>
+        public virtual IResourceFileProvider ReplaceContent(string searchPattern, string replacement)
             => new TextFile(Regex.Replace(Content,
                                   searchPattern,
                                   replacement,
                                   RegexOptions.Singleline),
                             Content);
         /// <inheritdoc/>
-        public IResourceFileProvider ReplaceDestination(string searchPattern, string replacement)
+        public virtual IResourceFileProvider ReplaceDestination(string searchPattern, string replacement)
             => new TextFile(Content,
                             Regex.Replace(Destination,
                                           searchPattern,
                                           replacement,
                                           RegexOptions.Singleline));
         /// <inheritdoc/>
-        public async Task WriteToArchive(ZipArchive archive)
+        public virtual async Task WriteToArchive(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
             Log.Information("正在添加 {0}", destination);

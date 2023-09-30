@@ -1,63 +1,110 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json.Serialization;
 
 namespace Packer
 {
     /// <summary>
-    /// 配置文件
-    /// <i>主要</i>从<c>config/packer.json</c>加载
+    /// 配置项
     /// </summary>
     public struct Config
     {
         /// <summary>
+        /// 基础配置，版本唯一
+        /// </summary>
+        public BaseConfig Base { get; set; }
+        /// <summary>
+        /// 浮动配置，可与命名空间下的文件合并
+        /// </summary>
+        public FloatingConfig Floating { get; set; }
+
+        /// <summary>
+        /// 从命名空间下的局域配置加载内容。
+        /// </summary>
+        public Config Modify(FloatingConfig? floatingConfig)
+        {
+            // 好家伙 这玩意还是个Nullable<T>
+            if (!floatingConfig.HasValue) return this;
+            return new()
+            {
+                Base = Base,
+                Floating = Floating.Merge(floatingConfig.Value)
+            };
+        }
+    }
+
+    /// <summary>
+    /// 基础配置，版本唯一
+    /// </summary>
+    public struct BaseConfig
+    {
+        /// <summary>
         /// 打包的目标版本
         /// </summary>
-        [JsonPropertyName("targetVersion")]
         public string Version { get; set; }
 
         /// <summary>
-        /// 打包的目标语言<br></br>
+        /// 打包的目标语言
         /// </summary>
-        [JsonPropertyName("targetLanguage")]
         public string[] TargetLanguages { get; set; }
 
         /// <summary>
-        /// 打包过程的基础文件（如在assets/以外的文件，或不宜通过打包流程的）
+        /// 不进行打包的mod（按<c>[curseforge-]name</c>）
         /// </summary>
-        [JsonPropertyName("additionalContent")]
-        public List<string> FilesToInitialize { get; set; }
+        public IEnumerable<string> ExclusionMods { get; set; }
 
         /// <summary>
-        /// 不进行打包的mod（按<c>[curseforge-]name</c>处理）<br></br>
-        /// 有可能作为基础文件
+        /// 不进行打包的<c>namespace</c>
         /// </summary>
-        [JsonPropertyName("modNameBlackList")]
-        public List<string> ModBlackList { get; set; }
+        public IEnumerable<string> ExclusionNamespaces { get; set; }
+    }
+
+    /// <summary>
+    /// 浮动配置，可与命名空间下的文件合并
+    /// </summary>
+    public struct FloatingConfig
+    {
+        /// <summary>
+        /// 强制包含的domain
+        /// </summary>
+        public IEnumerable<string> InclusionDomains { get; set; }
+        /// <summary>
+        /// 强制排除的domain
+        /// </summary>
+        public IEnumerable<string> ExclusionDomains { get; set; }
+        /// <summary>
+        /// 强制包含的路径
+        /// </summary>
+        public IEnumerable<string> ExclusionPaths { get; set; }
+        /// <summary>
+        /// 强制排除的路径
+        /// </summary>
+        public IEnumerable<string> InclusionPaths { get; set; }
 
         /// <summary>
-        /// 不进行打包的<c>asset-domain</c><br></br>
-        /// 有可能作为基础文件
+        /// 文本字符替换表
         /// </summary>
-        [JsonPropertyName("domainBlackList")]
-        public List<string> DomainBlackList { get; set; }
-
-        /// <summary>
-        /// <i>（这不是基础文件！）</i><br></br>
-        /// 进入打包流程，但不按照语言文件格式化（也就不回避重复文件）<br></br>
-        /// 图片文件必须经过此流程！<br></br>
-        /// 按照<c>namespace</c>识别
-        /// </summary>
-        [JsonPropertyName("noProcessNamespace")]
-        public List<string> ForceInclusionDomain { get; set; }
-
-        /// <summary>
-        /// 字符替换表，版本限定
-        /// </summary>
-        [JsonPropertyName("replacementMap")]
         public Dictionary<string, string> CharatcerReplacement { get; set; }
-
-
-        [JsonPropertyName("destinitionReplacement")]
+        /// <summary>
+        /// 内容替换表
+        /// </summary>
         public Dictionary<string, string> DestinationReplacement { get; set; }
+
+        /// <summary>
+        /// 从另一对象合并配置
+        /// </summary>
+        public FloatingConfig Merge(FloatingConfig other) => new()
+        {
+            ExclusionPaths = ExclusionPaths.Concat(other.ExclusionPaths).Distinct(),
+            ExclusionDomains = ExclusionDomains.Concat(other.ExclusionDomains).Distinct(),
+            InclusionDomains = InclusionDomains.Concat(other.InclusionDomains).Distinct(),
+            InclusionPaths = InclusionPaths.Concat(other.InclusionPaths).Distinct(),
+            CharatcerReplacement = CharatcerReplacement.Concat(other.CharatcerReplacement).DistinctBy(_ => _.Key)
+                                                       .ToDictionary(_ => _.Key, _ => _.Value),
+            DestinationReplacement = DestinationReplacement.Concat(other.DestinationReplacement).DistinctBy(_ => _.Key)
+                                                           .ToDictionary(_ => _.Key, _ => _.Value)
+        };
+
+
     }
 }
