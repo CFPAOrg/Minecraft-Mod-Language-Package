@@ -49,7 +49,7 @@ namespace Packer.Models.Providers
             using var writer = new StreamWriter(
                 archive.CreateEntry(destination)
                        .Open(),
-                Encoding.UTF8);
+                new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
             await writer.WriteAsync(content);
         }
     }

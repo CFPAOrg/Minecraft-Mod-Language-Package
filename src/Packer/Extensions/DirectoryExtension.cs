@@ -1,5 +1,6 @@
 ﻿using Packer.Models;
 using Packer.Models.Providers;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -71,20 +72,20 @@ namespace Packer.Extensions
         {
             var floatingConfig = Utils.RetrieveLocalConfig(namespaceDirectory);
             var localConfig = config.Modify(floatingConfig);
-
+            
             return from candidate in namespaceDirectory.EnumerateFiles("*", SearchOption.AllDirectories)
                    let relativePath = Path.GetRelativePath(namespaceDirectory.FullName,
                                                            candidate.FullName)
                                           .NormalizePath()
-                   let destination = Path.Combine(namespaceDirectory.Name,
-                                                  relativePath)
+                   let fullPath = Path.GetRelativePath(".", candidate.FullName)
+                   let destination = Path.Combine(
+                       "assets", namespaceDirectory.Name, relativePath)
                                          .NormalizePath()
-                   let domain = relativePath.Split('/')[0]
                    where !relativePath.IsPathForceExcluded(localConfig)             // [1] 排除路径   -- packer-policy等
                    where (relativePath.IsPathForceIncluded(localConfig)             // [2] 包含路径   [单列]
                        || relativePath.IsDomainForceIncluded(localConfig)           // [3] 包含domain -- font/ textures/
                        || (destination.IsInTargetLanguage(localConfig)              // [4] 语言标记   -- 含zh_cn的
-                           && relativePath.IsDomainForceExcluded(localConfig)))     // [5] 排除domain [暂无]
+                           && !relativePath.IsDomainForceExcluded(localConfig)))    // [5] 排除domain [暂无]
                    let provider = CreateProviderFromFile(candidate, destination, localConfig)
                    select (provider, DoesOverride(parameters));
         }
@@ -99,7 +100,7 @@ namespace Packer.Extensions
 
             return from candidate in redirectDirectory.EnumerateRawProviders(config)
                    let provider = candidate.provider
-                                           .ReplaceDestination(@"^(?<=^assets/)[^/]*(?=/)",
+                                           .ReplaceDestination(@"(?<=^assets/)[^/]*(?=/)",
                                                                namespaceName)
                    select (provider, DoesOverride(parameters));
         }
@@ -109,7 +110,7 @@ namespace Packer.Extensions
                                                             ParameterType? parameters)
         {
             var compositionPath = parameters!["source"].GetString();
-            var type = parameters["type"].GetString();
+            var type = parameters["destType"].GetString();
             var compositionFile = new FileInfo(compositionPath!);
             IResourceFileProvider provider = type switch // 类型推断不出要用接口
             {
@@ -124,19 +125,20 @@ namespace Packer.Extensions
         internal static IResourceFileProvider CreateProviderFromFile(FileInfo file, string destination, Config config)
         {
             var extension = file.Extension;
-            return file.Directory!.Name == "lang"
-                ? extension switch
+            if (file.Directory!.Name == "lang")
+            {
+                switch(extension)
                 {
-                    ".json" => JsonMappingHelper.CreateFromFile(file, destination),
-                    ".lang" => JsonMappingHelper.CreateFromFile(file, destination),
-                    _ => throw new InvalidOperationException($"Invalid Type of Language File at {file.FullName}.")
-                }
-                : extension switch
-                {
-                    // 已知的文本文件类型
-                    ".txt" or ".json" or ".md" => TextFile.Create(file, destination),
-                    _ => new RawFile(file, destination)
+                    case ".json": return JsonMappingHelper.CreateFromFile(file, destination);
+                    case ".lang": return LangMappingHelper.CreateFromFile(file, destination);
                 };
+            }
+            return extension switch
+            {
+                // 已知的文本文件类型
+                ".txt" or ".json" or ".md" => TextFile.Create(file, destination),
+                _ => new RawFile(file, destination)
+            };
         }
 
         internal static bool DoesOverride(ParameterType? parameters)
