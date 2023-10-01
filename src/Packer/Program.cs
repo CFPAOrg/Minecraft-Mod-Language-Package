@@ -25,14 +25,14 @@ namespace Packer
 
             var config = await Utils.RetrieveConfig(configTemplate: "./config/packer/{0}.json",
                                                     version: version);
-
             Log.Information("开始对版本 {0} 的打包", config.Base.Version);
 
             var query = // 这就是查询表达式吗（
                 from modDirectory in new DirectoryInfo($"./projects/{config.Base.Version}/assets")
                                          .EnumerateDirectories()
                 let modIdentifier = modDirectory.Name
-                where targetModIdentifiers is null                                  // 未提供列表，全部打包 
+                where targetModIdentifiers is null                                  
+                    || targetModIdentifiers.Count() == 0                            // 未提供列表，全部打包
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
                 where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
                 from namespaceDirectory in modDirectory.EnumerateDirectories()
@@ -47,7 +47,7 @@ namespace Packer
                                    => next.ApplyTo(
                                        accumulate,
                                        overrideExisting: false)) into provider
-                select config.Floating.CharatcerReplacement                         // 内容的字符替换
+                select config.Floating.CharacterReplacement                         // 内容的字符替换
                              .Aggregate(seed: provider,
                                         (accumulate, replacement)
                                             => accumulate.ReplaceContent(
@@ -56,10 +56,9 @@ namespace Packer
                 select config.Floating.DestinationReplacement                       // 全局路径替换：预留
                              .Aggregate(seed: provider,
                                         (accumulate, replacement)
-                                            => accumulate.ReplaceContent(
+                                            => accumulate.ReplaceDestination(
                                                 replacement.Key,
                                                 replacement.Value));
-
 
             var initialsQuery = from file in new DirectoryInfo($"./projects/{config.Base.Version}")
                                                  .EnumerateFiles()
@@ -76,8 +75,9 @@ namespace Packer
                                    select provider.WriteToArchive(archive));
             }
 
-            Log.Information("对版本 {0} 的打包结束。共写入了 {1} 个文件",
+            Log.Information("对版本 {0} 的打包结束。共写入了 {1} + {2} 个文件",
                             config.Base.Version,
+                            initialsQuery.Count(),
                             query.Count());
             var md5 = stream.ComputeMD5();
 

@@ -144,14 +144,15 @@ namespace Packer.Models.Providers
         /// <inheritdoc/>
         public IResourceFileProvider ApplyTo(IResourceFileProvider? incoming, bool overrideExisting = false)
         {
-            if (incoming is not TermMappingProvider<TValue>)
+            if (incoming is null) return this;
+            if (incoming is not TermMappingProvider<TValue> inProvider)
                 throw new ArgumentException($"Argument not an instance of {typeof(TermMappingProvider<TValue>)}.",
                                             nameof(incoming));
-            var inProvider = incoming as TermMappingProvider<TValue>;
+            //var inProvider = incoming as TermMappingProvider<TValue>;
 
-            if (inProvider is null) throw new ArgumentNullException(nameof(incoming));
+            //if (inProvider is null) throw new ArgumentNullException(nameof(incoming));
 
-            var (baseMap, inMap) = !overrideExisting
+            var (baseMap, inMap) = overrideExisting
                 ? (Map, inProvider.Map)
                 : (inProvider.Map, Map); // 交换顺序
 
@@ -189,7 +190,7 @@ namespace Packer.Models.Providers
             using var writer = new StreamWriter(
                 archive.CreateEntry(destination)
                        .Open(),
-                Encoding.UTF8);
+                new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
             await writer.WriteAsync(Map.ProvideStringContent());
         }
     }

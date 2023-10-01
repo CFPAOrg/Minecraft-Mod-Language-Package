@@ -50,7 +50,7 @@ namespace Packer
             var content = await File.ReadAllBytesAsync(configPath);
             return JsonSerializer.Deserialize<Config>(
                 content,
-                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })!;
         }
 
         /// <summary>
@@ -74,6 +74,7 @@ namespace Packer
                 reader.ReadToEnd(),
                 new JsonSerializerOptions
                 {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
                     Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase) }
                 });
             if (result is null)

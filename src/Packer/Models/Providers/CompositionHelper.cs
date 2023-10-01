@@ -63,7 +63,8 @@ namespace Packer.Models.Providers
         internal static IEnumerable<KeyValuePair<IEnumerable<TOuter>, IEnumerable<TInner>>>
             CrossMap<TOuter, TInner>(this IEnumerable<IEnumerable<KeyValuePair<TOuter, TInner>>> origin)
             => origin.Aggregate(
-                seed: Enumerable.Empty<KeyValuePair<IEnumerable<TOuter>, IEnumerable<TInner>>>(),
+                seed: new[] { KeyValuePair.Create(Enumerable.Empty<TOuter>(), Enumerable.Empty<TInner>()) }
+                    as IEnumerable<KeyValuePair<IEnumerable<TOuter>, IEnumerable<TInner>>>, // 这都需要手写...
                 (accumulate, next) => from incomingPair in next
                                       join existingGroup in accumulate on true equals true
                                       select KeyValuePair.Create(

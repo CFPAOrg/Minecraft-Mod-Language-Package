@@ -54,7 +54,7 @@ namespace Packer.Models.Providers
                                   searchPattern,
                                   replacement,
                                   RegexOptions.Singleline),
-                            Content);
+                            Destination);
         /// <inheritdoc/>
         public virtual IResourceFileProvider ReplaceDestination(string searchPattern, string replacement)
             => new TextFile(Content,
@@ -73,7 +73,7 @@ namespace Packer.Models.Providers
             using var writer = new StreamWriter(
                 archive.CreateEntry(destination)
                        .Open(),
-                Encoding.UTF8);
+                new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
             await writer.WriteAsync(Content);
         }
     }
