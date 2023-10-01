@@ -4,18 +4,18 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
-using System.Text.Encodings.Web;
+using System.Linq;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using System.Text.Json.Nodes;
-using System.Linq;
 
 namespace Packer.Models.Providers
 {
-    using LangMappingProvider = TermMappingProvider<string>;
     using JsonMappingProvider = TermMappingProvider<JsonNode>;
+    using LangMappingProvider = TermMappingProvider<string>;
 
     #region termDictionary
     /// <summary>
@@ -126,7 +126,7 @@ namespace Packer.Models.Providers
         /// 语言文件所表示的映射表
         /// </summary>
         public ITermDictionary<TValue> Map { get; }
-        
+
         /// <inheritdoc/>
         public string Destination { get; }
 
@@ -212,62 +212,80 @@ namespace Packer.Models.Providers
             using var stream = file.OpenRead();
             using var reader = new StreamReader(stream, Encoding.UTF8);
             var content = reader.ReadToEnd();
-            return new (new LangDictionaryWrapper(DeserializeFromLang(content)), destination);
+            return new(new LangDictionaryWrapper(DeserializeFromLang(content)), destination);
         }
 
-        // RAW
-        // TODO：仔细检查一遍
-        // TODO：PARSE-ESCAPE
         internal static Dictionary<string, string> DeserializeFromLang(string content)
         {
-            // 甚至不是自动机...所以不敢多用，否则会炸
-
-            // 下面的 Verbose 仅供调试，不会在 log 里出现
-            // .lang的格式真的乱...
-            Log.Verbose("开始反序列化 .lang 文件");
-            // #PARSE_ESCAPE就算了吧
             var result = new Dictionary<string, string>();
             var isInComment = false; // 处理多行注释
-            new List<string>(content.Split(Environment.NewLine,
-                                           StringSplitOptions.RemoveEmptyEntries))
-                .ForEach(line =>
+            var isParseEscape = false;
+            var isLineContinuation = false;
+            var pendingKey = "";
+            var pendingValue = "";
+
+            foreach (var line in content.AsSpan().EnumerateLines())
+            {
+                if (isLineContinuation) // 行尾转义符，用于换行
                 {
-                    var isSingleLineComment = false;
-                    new List<string> { "//", "#" }
-                        .ForEach(_ => { isSingleLineComment |= line.StartsWith(_); });
-                    if (isSingleLineComment)
+                    if (line.EndsWith("\\"))
                     {
-                        Log.Verbose("跳过了单行注释：{0}", line);
+                        pendingValue += line[..^1].ToString();
                     }
-                    else if (isInComment) // 多行注释内
+                    else
                     {
-                        Log.Verbose("{0}", line);
-                        if (line.Trim()
-                                .EndsWith("*/"))
-                        {
-                            isInComment = false;  // 跳出注释
-                        }
+                        pendingValue += ("\\n" + line.ToString());
+                        result.TryAdd(pendingKey, pendingValue);
+                        isLineContinuation = false;
                     }
-                    else if (line.StartsWith("/*")) // 开始多行注释
-                    {
-                        Log.Verbose("跳过了多行注释：{0}", line);
-                    }
-                    else // 真正的条目
-                    {
-                        Log.Verbose("添加对应映射：{0}", line);
-                        var spiltPosition = line.IndexOf('=');
-                        try
-                        {
-                            result.Add(line[..spiltPosition], line[(spiltPosition + 1)..]);
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Warning(e.ToString());
-                        }
-                    }
+                    continue;
                 }
-            );
-            Log.Verbose("反序列化完成");
+
+                if (!isParseEscape && line.Equals("#PARSE_ESCAPES", StringComparison.Ordinal))
+                {
+                    isParseEscape = true;
+                    continue;
+                }
+
+                if (isInComment)
+                {  // 多行注释内
+                    if (line.Trim()
+                            .EndsWith("*/"))
+                        isInComment = false;  // 跳出注释
+                    continue;
+                }
+
+                if (line.StartsWith("//") | line.StartsWith("#") | line.StartsWith("<"))
+                    continue;
+
+                if (line.StartsWith("/*"))
+                {  // 开始多行注释
+                    isInComment = true;
+                    continue;
+                }
+                
+                if (line.IsEmpty || line.IsWhiteSpace()) // 空行需去
+                    continue;
+
+                // 基础条目
+                var splitPosition = line.IndexOf('=');
+
+                var key = line[..splitPosition];
+                var value = splitPosition + 1 < line.Length
+                    ? line[(splitPosition + 1)..]
+                    : "";
+                if (isParseEscape && value.EndsWith("\\"))
+                {
+                    isLineContinuation = true;
+                    pendingKey = key.ToString();
+                    pendingValue = value[..^1].ToString();
+                }
+                else
+                {
+                    result.TryAdd(key.ToString(), value.ToString());
+                }
+            }
+
             return result;
         }
     }
@@ -285,7 +303,12 @@ namespace Packer.Models.Providers
         public static JsonMappingProvider CreateFromFile(FileInfo file, string destination)
         {
             using var stream = file.OpenRead();
-            return new(new JsonDictionaryWrapper(JsonNode.Parse(stream)!.AsObject()!), destination);
+            return new(
+                new JsonDictionaryWrapper(
+                    JsonSerializer.Deserialize<Dictionary<string, JsonNode>>(
+                        stream,
+                        new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip })!),
+                destination);
         }
     }
     #endregion
