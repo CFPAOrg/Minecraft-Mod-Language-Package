@@ -117,6 +117,7 @@ jobs:
             src/**
 
       - name: Run Packer for ${{ matrix.version }}
+        # 分发包中应当包含全部内容
         run: ./Packer --version="${{ matrix.version }}"
         # 运行逻辑：内容有更改 或 手动运行
         if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'

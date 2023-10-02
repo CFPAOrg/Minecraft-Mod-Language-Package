@@ -19,7 +19,7 @@ namespace Packer.Helpers
             Log.Information("对版本 {0} 加载更改模组", version);
             using var repo = new Repository(".");
             var headTree = repo.Head.Tip.Tree;
-            var baseTree = repo.Branches["main"].Tip.Tree;
+            var baseTree = repo.Branches["refs/remotes/origin/master"].Tip.Tree;
             var changedFiles = repo.Diff.Compare<TreeChanges>(baseTree, headTree);
             var query = from change in changedFiles
                         from path in new List<string> { change.Path, change.OldPath }
