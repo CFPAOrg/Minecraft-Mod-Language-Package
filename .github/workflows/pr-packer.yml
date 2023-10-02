@@ -17,7 +17,11 @@ jobs:
     name: Build / Cache Packer
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+        with: 
+          fetch-depth: 1
+          sparse-checkout: src
+
 
       # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
       # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
@@ -25,13 +29,15 @@ jobs:
         id: cache-packer
         uses: actions/cache@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('src/Pakcer/**') }}
-          path: Packer.exe
+          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
+          path: |
+            Packer.exe
+            git2-*.dll
           lookup-only: true
 
       # 构造程序
       - name: Build Packer if not cached
-        if: steps.cache-packer.outputs.cache_hit != 'true'
+        if: steps.cache-packer.outputs.cache-hit != 'true'
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
 
@@ -48,15 +54,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 20 # 显然，需要有提交历史才能比较提交。20这个数是任意的。
+          fetch-depth: 2 
+      - run: git fetch --depth=1 origin main
       
       # 由于Github的限制，这里需要重新拉取打包程序。
       - name: Restore Packer
         id: cache-restore
         uses: actions/cache/restore@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('src/Pakcer/**') }}
-          path: Packer.exe
+          key: ${{ runner.os }}-${{ hashFiles('src/Packer/**') }}
+          path: |
+            Packer.exe
+            git2-*.dll
           fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
 
       - name: Check changed path on ${{ matrix.version }}
@@ -65,16 +74,26 @@ jobs:
         with:
           # 判断位置：该版本文件、该版本配置、代码
           paths: > 
-            projects/${{ matrix.version }}
+            projects/${{ matrix.version }}/**
+            config/packer/${{ matrix.version }}.json
+            src/**
+
+      - name: Check critical path on ${{ matrix.version }}
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: check-critical-changes
+        with:
+          # 判断位置：该版本配置、代码
+          paths: > 
             config/packer/${{ matrix.version }}.json
             src/**
 
       - name: Run Packer for ${{ matrix.version }}
-        run: ./Packer --version="${{ matrix.version }}"
+        # 部分包原则：Packer和配置均没有改动
+        run: ./Packer --version="${{ matrix.version }}" --increment=${{ !steps.check-critical-changes.outputs.changed }}
         # 运行逻辑：内容有更改 或 手动运行
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
-     # 额 要两分半才能传完 然而 GitHub actions 直接传的话 会压成 zip 内套 zip 就这样了吧 --cy
+      # 额 要两分半才能传完 然而 GitHub actions 直接传的话 会压成 zip 内套 zip 就这样了吧 --cy
       - name: Unzip Files
         run: unzip -q Minecraft-Mod-Language-Package-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
         shell: bash

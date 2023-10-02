@@ -1,8 +1,10 @@
 ﻿using Packer.Extensions;
+using Packer.Helpers;
 using Packer.Models;
 using Packer.Models.Providers;
 using Serilog;
 using System;
+using System.Collections;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -13,7 +15,7 @@ namespace Packer
     class Program
     {
         // System.CommandLine.DragonFruit支持
-        public static async Task Main(string version, string[]? targets)
+        public static async Task Main(string version, bool increment = false)
         {
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()
@@ -21,18 +23,18 @@ namespace Packer
              .MinimumLevel.Information() // 以便 debug 时修改这一等级
              .CreateLogger();
 
-            var targetModIdentifiers = targets?.ToList();
-
-            var config = await Utils.RetrieveConfig(configTemplate: "./config/packer/{0}.json",
+            var config = await ConfigHelpers.RetrieveConfig(configTemplate: "./config/packer/{0}.json",
                                                     version: version);
             Log.Information("开始对版本 {0} 的打包", config.Base.Version);
+
+            var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version)
+                : Enumerable.Empty<string>();
 
             var query = // 这就是查询表达式吗（
                 from modDirectory in new DirectoryInfo($"./projects/{config.Base.Version}/assets")
                                          .EnumerateDirectories()
                 let modIdentifier = modDirectory.Name
-                where targetModIdentifiers is null                                  
-                    || targetModIdentifiers.Count() == 0                            // 未提供列表，全部打包
+                where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
                 where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
                 from namespaceDirectory in modDirectory.EnumerateDirectories()

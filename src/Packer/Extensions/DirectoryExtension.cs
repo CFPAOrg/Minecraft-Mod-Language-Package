@@ -1,4 +1,5 @@
-﻿using Packer.Models;
+﻿using Packer.Helpers;
+using Packer.Models;
 using Packer.Models.Providers;
 using Serilog;
 using System;
@@ -60,7 +61,7 @@ namespace Packer.Extensions
         /// 遍历未经合并的文件，用于递归调用
         /// </summary>
         internal static EvaluatorReturnType EnumerateRawProviders(this DirectoryInfo namespaceDirectory, Config config)
-            => from policy in Utils.RetrieveStrategy(namespaceDirectory)
+            => from policy in ConfigHelpers.RetrieveStrategy(namespaceDirectory)
                from enumeratedPair in functionTable[policy.Type].Invoke(
                    namespaceDirectory, config, policy.Parameters)
                select enumeratedPair;
@@ -70,7 +71,7 @@ namespace Packer.Extensions
                                                                  Config config,
                                                                  ParameterType? parameters)
         {
-            var floatingConfig = Utils.RetrieveLocalConfig(namespaceDirectory);
+            var floatingConfig = ConfigHelpers.RetrieveLocalConfig(namespaceDirectory);
             var localConfig = config.Modify(floatingConfig);
             
             return from candidate in namespaceDirectory.EnumerateFiles("*", SearchOption.AllDirectories)
