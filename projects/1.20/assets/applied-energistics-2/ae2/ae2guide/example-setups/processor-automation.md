@@ -15,6 +15,8 @@ navigation:
 
 如下则是仅使用AE2的实现细节，其中使用了[“管道”子网络](pipe-subnet.md)。
 
+需注意，此设施使用了<ItemLink id="pattern_provider" />，也即需与你的[自动合成](../ae2-mechanics/autocrafting.md)设施配合使用。如需独立自动化处理器，则应将样板供应器换为木桶，并将材料直接放入上方的木桶中。
+
 此设计也能在之前的AE2版本中使用，因为就算<ItemLink id="inscriber" />对面敏感，管道子网络仍能对正确的面输入或输出。
 
 <GameScene zoom="4" interactive={true}>

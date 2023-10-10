@@ -7,6 +7,8 @@ navigation:
 
 # 充能器自动化
 
+需注意，此设施使用了<ItemLink id="pattern_provider" />，也即需与你的[自动合成](../ae2-mechanics/autocrafting.md)设施配合使用。如需独立自动化<ItemLink id="charger" />，则应使用漏斗，箱子等。
+
 自动化<ItemLink id="charger" />相对简单。<ItemLink id="pattern_provider" />将材料送入充能器，再由[管道子网络](pipe-subnet.md)或其他物品管道将产物送回供应器即可。
 
 <GameScene zoom="6" interactive={true}>

@@ -7,6 +7,8 @@ navigation:
 
 # 自动化投水配方
 
+需注意，此设施使用了<ItemLink id="pattern_provider" />，也即需与你的[自动合成](../ae2-mechanics/autocrafting.md)设施配合使用。
+
 某些配方可能要求将物品投入水中（不过同种设施也可用于处理其他物品投入某处的要求）。可用<ItemLink id="formation_plane" />、<ItemLink id="annihilation_plane" />，以及辅助基础设施（也即2个经调整的[管道子网络](pipe-subnet.md)）自动化这类配方。
 
 此设施应与[充能器自动化](charger-automation.md)配合使用以生产<ItemLink id="charged_certus_quartz_crystal" />。

@@ -6,6 +6,15 @@ navigation:
 
 # What is Applied Energistics 2?
 
+# How To Use This Guide
+
+* Access the sidebar on the left to find a table of contents
+* Many pages have interactive scenes. If a scene has ![Plus](assets/diagrams/plus.png)
+and ![Minus](assets/diagrams/minus.png) (zoom) buttons next to it, you can rotate and move the camera.
+Left click and drag to rotate, right click and drag to translate.
+
+# What is Applied Energistics 2?
+
 Applied Energistics 2 adds components and mechanics to provide logistics and storage solutions. You can replace your
 massive room full of chests with a compact ME Network, but that's just the beginning of things.
 Applied Energistics is meant to work with and allow automation of other mods in a modpack. You can set up your system to,

@@ -111,14 +111,14 @@ navigation:
 
 石英簇破坏器子网络和[简单赛特斯石英农场](simple-certus-farm.md)中的子网络功能非常类似。
 
-1. <ItemLink id="annihilation_plane" />尝试破坏其前方的事物，但由于子网络中存储位置仅有过滤<ItemLink id="certus_quartz_crystal" />的<ItemLink id="formation_plane" />，其只会破坏<ItemLink id="quartz_cluster" />。
+1. <ItemLink id="annihilation_plane" />尝试破坏其前方的事物，但由于子网络中存储位置仅有过滤<ItemLink id="certus_quartz_crystal" />的<ItemLink id="storage_bus" />，其只会破坏<ItemLink id="quartz_cluster" />。
 2. <ItemLink id="storage_bus" />将赛特斯石英水晶存入木桶。
 
 ### 赛特斯石英块破坏器：
 
 赛特斯石英块破坏器的功能是在母岩枯竭而变为<ItemLink id="quartz_block" />时将其破坏。此设施和石英簇破坏器原理类似。
 
-1. <ItemLink id="annihilation_plane" />尝试破坏其前方的事物，但由于子网络中存储位置仅有过滤<ItemLink id="quartz_block" />的<ItemLink id="formation_plane" />，其只会破坏<ItemLink id="quartz_block" />。此面板需附有精准采集，避免破坏母岩的行为本身导致的降级。
+1. <ItemLink id="annihilation_plane" />尝试破坏其前方的事物，但由于子网络中存储位置仅有过滤<ItemLink id="quartz_block" />的<ItemLink id="storage_bus" />，其只会破坏<ItemLink id="quartz_block" />。此面板需附有精准采集，避免破坏母岩的行为本身导致的降级。
 2. <ItemLink id="storage_bus" />将赛特斯石英块存入<ItemLink id="interface" />，交由[投水自动化](throw-in-water-automation.md)设施用其制成新的<ItemLink id="flawed_budding_quartz" />。
 
 ### 母岩放置器：

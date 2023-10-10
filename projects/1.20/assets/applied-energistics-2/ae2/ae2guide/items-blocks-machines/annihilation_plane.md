@@ -22,6 +22,8 @@ item_ids:
 
 破坏面板是[线缆子部件](../ae2-mechanics/cable-subparts.md)。
 
+**记得在你认领的区块内允许放置假玩家**
+
 ## 过滤
 
 破坏面板只会在掉落物或物品能存入网络时破坏方块或捡起物品。也即*需要限制其网络中可存储物品的种类*才能过滤破坏面板，通常会将其放在[子网络](../ae2-mechanics/subnetworks.md)中。使用<ItemLink id="storage_bus" />或设置[分区](cell_workbench.md)的[元件](../items-blocks-machines/storage_cells.md)可达成这一点。

@@ -11,6 +11,14 @@ navigation:
 
 “网络”是一组可像[线缆](../items-blocks-machines/cables.md)一样传输[频道](../ae2-mechanics/channels.md)的连在一起的[设备](../ae2-mechanics/devices.md)或方块形态机器和[设备](../ae2-mechanics/devices.md)。（<ItemLink id="charger" />、<ItemLink id="interface" />、<ItemLink id="drive" />，等等。）单个线缆理论上也算是一个网络。
 
+## 设备位置简述
+
+对于有特殊网络功能的[设备](../ae2-mechanics/devices.md)（例如向[网络存储](../ae2-mechanics/import-export-storage.md)输入输出的<ItemLink id="interface" />，读取网络存储信息的<ItemLink id="level_emitter" />，作为网络存储的<ItemLink id="drive" />等。）来说，设备本身的物理位置不重要。
+
+再提一遍，**设备的物理位置不重要**。重要之处在于设备连上了网络（以及连上了哪个网络）。
+
+## 网络连接
+
 可通过<ItemLink id="network_tool" />轻松检测网络中连接的事物。它会显示网络中的每个组件，如果看到不应该出现或者没看到本应该出现的东西，那就是碰上问题了。
 
 例如，如下是2个独立的网络。

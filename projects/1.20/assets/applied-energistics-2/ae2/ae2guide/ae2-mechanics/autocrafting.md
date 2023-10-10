@@ -18,7 +18,12 @@ navigation:
 
 这个话题相当复杂，所以做好准备然后就出发吧。
 
-自动合成设施由3部分组成：发送合成请求的事物、合成CPU，以及<ItemLink id="pattern_provider" />。
+自动合成设施由3部分组成：
+- 发送合成请求的事物
+- 合成CPU
+- <ItemLink id="pattern_provider" />。
+
+具体过程如下：
 
 1.  某物发出一份合成请求。可以是你在终端中点击某些可自动合成的事物，也可以是装有合成卡的输出总线或接口请求其设定输出或存储的物品。
 
@@ -70,14 +75,14 @@ navigation:
   <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
 
-合成CPU管理合成请求与合成任务。它们会在执行多步骤合成任务时将中间产物存于自身，并影响合成任务的大小上限，某种程度上也会影响这些任务的完成速度。它们是多方块结构，且必须是长方体。
+合成CPU管理合成请求与合成任务。它们会在执行多步骤合成任务时将中间产物存于自身，并影响合成任务的大小上限，某种程度上也会影响这些任务的完成速度。它们是多方块结构，必须是长方体，且必须包含至少1个合成存储器。
 
 合成CPU的构成如下：
 
-*   [合成存储器](../items-blocks-machines/crafting_cpu_multiblock.md)，覆盖所有标准元件大小（1k、4k、16k、64k、256k）。它们会将与合成相关的材料和中间材料存于自身，因此处理所需材料更多的合成任务需要更大的或更多个合成存储器。
-*   <ItemLink id="crafting_accelerator" />，它们能让系统从单个样板供应器发送更多批材料。例如，这将会使样板供应器同时将材料送至相邻的六个装配室，而非一次一个。
-*   <ItemLink id="crafting_monitor" />，它们会显示CPU当前正在处理的任务。可用<ItemLink id="color_applicator" />染色。
-*   <ItemLink id="crafting_unit" />，它们仅用于填上空隙以使得CPU的形状为长方体。
+*   （必需）[合成存储器](../items-blocks-machines/crafting_cpu_multiblock.md)，支持所有标准元件大小（1k、4k、16k、64k、256k）。它们会将与合成相关的材料和中间材料存于自身，因此处理所需材料更多的合成任务需要更大的或更多个合成存储器。
+*   （可选）<ItemLink id="crafting_accelerator" />，它们能让系统从单个样板供应器发送更多批材料。例如，这将会使样板供应器同时将材料送至相邻的六个装配室，而非一次一个。
+*   （可选）<ItemLink id="crafting_monitor" />，它们会显示CPU当前正在处理的任务。可用<ItemLink id="color_applicator" />染色。
+*   （可选）<ItemLink id="crafting_unit" />，它们仅用于填上空隙以使得CPU的形状为长方体。
 
 每个合成CPU能处理1个合成请求或任务，因此如果需要同时合成运算处理器和256个平滑石头，就需要有2个CPU多方块结构。
 

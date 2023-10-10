@@ -42,15 +42,17 @@ item_ids:
 
 *   合成CPU可设置为仅接受玩家请求，仅接受自动化系统请求（如装有<ItemLink id="crafting_card" />的<ItemLink id="export_bus" />），或两者均接受。
 
-## 组件
+## 建造
 
 合成CPU是多方块结构，且必须为没有空隙的实心长方形棱柱。它们由如下若干组件组成：
+
+每个CPU必须包含至少1个合成存储器（可用的最小CPU实际上就是单个1k合成存储器）。
 
 # 合成单元
 
 <BlockImage id="crafting_unit" scale="4" />
 
-合成单元仅用于填充CPU内空隙，以保证CPU的形状是实心长方形棱柱。没有其他组件时可用此填补。它们也是其他组件的合成材料。
+（可选）合成单元仅用于填充CPU内空隙，以保证CPU的形状是实心长方形棱柱。没有其他组件时可用此填补。它们也是其他组件的合成材料。
 
 <RecipeFor id="crafting_unit" />
 
@@ -68,7 +70,7 @@ item_ids:
   <BlockImage id="256k_crafting_storage" scale="4" />
 </Row>
 
-合成存储器覆盖所有标准元件大小（1k、4k、16k、64k、256k）。它们会将与合成相关的材料和中间材料存于自身，因此处理所需材料更多的合成任务需要更大的或更多个合成存储器。
+（必需）合成存储器支持所有标准元件大小（1k、4k、16k、64k、256k）。它们会将与合成相关的材料和中间材料存于自身，因此处理所需材料更多的合成任务需要更大的或更多个合成存储器。
 
 <Column>
   <Row>
@@ -90,7 +92,7 @@ item_ids:
 
 <BlockImage id="crafting_accelerator" scale="4" />
 
-并行处理单元能让系统从<ItemLink id="pattern_provider" />更为频繁地发送材料批次，以使系统跟上处理速度较快的机器。例如，被<ItemLink id="molecular_assembler" />包围的样板供应器送出材料的速度快于单个装配室的加工速度时，其会将材料批次在各装配室间分配。
+（可选）并行处理单元能让系统从<ItemLink id="pattern_provider" />更为频繁地发送材料批次，以使系统跟上处理速度较快的机器。例如，被<ItemLink id="molecular_assembler" />包围的样板供应器送出材料的速度快于单个装配室的加工速度时，其会将材料批次在各装配室间分配。
 
 <RecipeFor id="crafting_accelerator" />
 
@@ -98,6 +100,6 @@ item_ids:
 
 <BlockImage id="crafting_monitor" scale="4" />
 
-合成监控器会显示CPU当前正在处理的任务。其屏幕可用<ItemLink id="color_applicator" />染色。
+（可选）合成监控器会显示CPU当前正在处理的任务。其屏幕可用<ItemLink id="color_applicator" />染色。
 
 <RecipeFor id="crafting_monitor" />

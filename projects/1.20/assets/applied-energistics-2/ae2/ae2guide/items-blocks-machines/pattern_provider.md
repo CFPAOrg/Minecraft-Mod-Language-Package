@@ -27,7 +27,15 @@ item_ids:
 
 此外，供应器会同时输出整份材料，不会输出半份。这一特性是很有用的。
 
-样板供应器和接口有一特殊交互效果——[子网络](../ae2-mechanics/subnetworks.md)：如果接口未经修改（请求槽内无内容），则供应器会跳过接口，直接输出到该子网络的[存储模块](../ae2-mechanics/import-export-storage.md)，而非输出到接口的存储槽；更重要的是，只要对应的存储模块没有足够的空间，下一批物品就不会输出。
+样板供应器和接口有一特殊交互效果——[子网络](../ae2-mechanics/subnetworks.md)：如果接口未经修改（请求槽内无内容），则供应器会跳过接口，直接输出到该子网络的[存储模块](../ae2-mechanics/import-export-storage.md)，而非输出到接口的存储槽；更重要的是，只要对应的机器没有足够的空间，下一批物品就不会输出。阻挡模式下此功能才可正常运作，供应器会监测机器中的材料槽，而非接口中的槽位。
+
+例如，下方设施会将需烧炼的事物和燃料直接送入熔炉对应的槽位中。可利用此特性向机器的多个面或多个机器供应样板。
+
+<GameScene zoom="6" background="transparent">
+  <ImportStructure src="../assets/assemblies/furnace_automation.snbt" />
+
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
 
 允许存在多个拥有相同样板的样板供应器，它们会并行工作。
 
@@ -56,6 +64,50 @@ item_ids:
 ## 优先级
 
 可点击GUI右上角扳手以设置优先级。在多个[样板](../items-blocks-machines/patterns.md)对应同一物品时，在高优先级供应器中的样板会先于低优先级供应器中样板使用，除非网络无法供给高优先级样板所需材料。
+
+## 常见误解
+
+人们似乎总是会这么想，我不理解为什么，不过希望这一节能帮上忙。（也许人们只是理解错了，认为只有<ItemLink id="export_bus" />才能将物品输出网络，而没意识到样板供应器也能输出。）
+
+如下设置不会如期望运作。正如[线缆](cables.md)中所提，线缆不是物品管道，它们没有内部容器，供应器无法向线缆输出。
+
+<GameScene zoom="8" background="transparent">
+  <ImportStructure src="../assets/assemblies/provider_misconception_1.snbt" />
+
+  <BoxAnnotation color="#dddddd" min="1 0 3" max="2 1 4">
+        不是高炉
+  </BoxAnnotation>
+
+  <IsometricCamera yaw="95" pitch="5" />
+</GameScene>
+
+因为供应器没有输出的目的地，它不会运作。此处供应器仅作为将<ItemLink id="export_bus" />连接至网络的线缆存在。
+
+供应器同样不会告诉<ItemLink id="export_bus" />要输出什么，输出总线只会输出其过滤槽中的事物。
+
+我们实际搭建的设施如下：
+
+<GameScene zoom="8" background="transparent">
+  <ImportStructure src="../assets/assemblies/provider_misconception_2.snbt" />
+
+  <BoxAnnotation color="#dddddd" min="1 0 3" max="2 1 4">
+        不是高炉
+  </BoxAnnotation>
+
+  <IsometricCamera yaw="95" pitch="5" />
+</GameScene>
+
+你可能想搭建的是这个，此处的样板供应器能将样板所需的材料输出至相邻机器：
+
+<GameScene zoom="8" background="transparent">
+  <ImportStructure src="../assets/assemblies/provider_misconception_3.snbt" />
+
+  <BoxAnnotation color="#dddddd" min="1 0 3" max="2 1 4">
+        不是高炉
+  </BoxAnnotation>
+
+  <IsometricCamera yaw="95" pitch="5" />
+</GameScene>
 
 ## 配方
 

@@ -9,7 +9,7 @@ navigation:
 
 <ItemLink id="annihilation_plane" />接受所有镐魔咒，包括时运，因此其常见用途之一便是给几个面板附上时运，并让<ItemLink id="formation_plane" />和<ItemLink id="annihilation_plane" />迅速放置和破坏矿石。
 
-注意<ItemLink id="import_bus" />的运行速度会“缓慢增加”：此设施在启动时较慢，并会在几秒后达到最大速度。
+注意<ItemLink id="import_bus" />的运行速度会“缓慢增加”，此设施在启动时较慢，并会在几秒后达到最大速度。
 
 <GameScene zoom="6" interactive={true}>
   <ImportStructure src="../assets/assemblies/ore_fortuner.snbt" />

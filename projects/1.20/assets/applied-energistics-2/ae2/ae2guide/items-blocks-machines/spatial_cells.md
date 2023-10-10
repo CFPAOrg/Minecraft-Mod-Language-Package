@@ -58,8 +58,7 @@ item_ids:
 
 # 空间组件
 
-空间组件 are the core of 空间存储元件. Each tier increases the dimensions of the volume that can be
-stored by factor of 8.
+空间组件是空间存储元件的核心。每级组件容量的边长是前一级组件的8倍。
 
   <Row>
     <RecipeFor id="spatial_cell_component_2" />
