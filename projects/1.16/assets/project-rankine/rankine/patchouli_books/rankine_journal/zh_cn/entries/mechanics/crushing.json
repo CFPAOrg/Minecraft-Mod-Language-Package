@@ -1,0 +1,57 @@
+{
+  "name": "粉碎",
+  "icon": "rankine:wooden_hammer",
+  "category": "mechanics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "粉碎是将方块和物品破碎为更小组分的过程。通常通过新工具$(l:tools/hammers)锤$()实现粉碎。锤击粉碎的过程和普通的挖掘不同。"
+    },
+    {
+      "type": "text",
+      "text": "粉碎世界中的方块需要在正确时间挥锤。伤害决定条（十字准星下方的剑形横条）为满时，即可挥锤粉碎方块。在该条填满前挥锤则什么都不会发生。这意味着攻击速度更快的锤能以更快速度粉碎方块。"
+    },
+    {
+      "type": "text",
+      "text": "粉碎方块时主要需考虑的是工具的粉碎/挖掘等级。与镐类似，锤也无法破坏所需挖掘等级高于自身等级的方块。不过，锤的挖掘等级也会影响掉落物的随机次数。在粉碎方块的掉落物方面，JEI 是最好的信息来源。"
+    },
+    {
+      "type": "text",
+      "text": "每个方块最多有 6 种可能的产物，每种产物都与某个挖掘等级对应。也即以挖掘等级为 3 的工具粉碎方块时，有可能掉落粉碎等级 3、2、1、0 对应的产物。具体掉落何种产物则为随机决定。"
+    },
+    {
+      "type": "text",
+      "text": "每种产物都有 2 种概率。先天概率代表挖掘等级大于等于粉碎等级时掉落产物的概率。附加概率则会在挖掘等级与粉碎等级相等时额外加算。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "rankine:piston_crusher",
+      "text": "就目前而言，粉碎的自动化需借助两种机器。"
+    },
+    {
+    "type": "text",
+    "anchor": "piston_crusher",
+    "text": "粉碎物料是获取精炼所需资源的最好方式。将物料放入输入槽并为机器供能即可。活塞式粉碎机相当于自动工作的铁锤，粉碎等级为 3（殷钢）。"
+    },
+    {
+      "type": "text",
+      "text": "这也意味着活塞式粉碎机最多只能从 1 个方块中产出 3 个产物。活塞式粉碎机能破坏粉碎等级大于 3 的方块，但只会产出小于等于 3 的粉碎等级才可产出的产物。"
+    },
+    {
+      "type": "spotlight",
+      "item": "rankine:gyratory_crusher",
+      "link_recipe": true,
+      "text": "与活塞式粉碎机类似，将物料放入中间槽位并确保安上了粉碎工具且装有电池。粉碎工具的粉碎等级决定了机器的粉碎等级。"
+    },
+    {
+      "type": "crafting",
+      "header": "粉碎工具",
+      "item1": "rankine:crushing_head_h0",
+      "item2": "rankine:crushing_head_h1",
+      "item3": "rankine:crushing_head_h2",
+      "item4": "rankine:crushing_head_h3",
+      "item5": "rankine:crushing_head_h4",
+      "item6": "rankine:crushing_head_h5"
+    }
+  ]
+}
