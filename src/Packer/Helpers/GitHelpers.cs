@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using LibGit2Sharp;
+using Serilog;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using LibGit2Sharp;
-using Serilog;
 
 namespace Packer.Helpers
 {
@@ -36,6 +36,6 @@ namespace Packer.Helpers
         internal static string ExtractModIdentifier(this string location, string version)
             => Path.GetRelativePath($"projects/{version}/assets", location)
                    .Split(Path.DirectorySeparatorChar)[0];
-        
+
     }
 }

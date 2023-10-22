@@ -23,7 +23,7 @@ namespace Packer
         /// <summary>
         /// 从命名空间下的局域配置加载内容。
         /// </summary>
-        public Config Modify(FloatingConfig? floatingConfig)
+        public Config Modify(FloatingConfig floatingConfig)
         {
             if (floatingConfig is null) return this;
             return new()

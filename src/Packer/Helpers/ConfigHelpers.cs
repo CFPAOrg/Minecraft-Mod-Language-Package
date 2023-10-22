@@ -57,7 +57,7 @@ namespace Packer.Helpers
         /// <param name="directory">命名空间目录</param>
         /// <returns>若文件存在，返回对应的内容；否则，返回<c>Direct</c></returns>
         /// <exception cref="InvalidDataException">策略文件非法</exception>
-        public static List<PackerPolicy> RetrieveStrategy(DirectoryInfo directory)
+        public static List<PackerPolicy> RetrievePolicy(DirectoryInfo directory)
         {
             var file = directory.GetFiles("packer-policy.json").FirstOrDefault();
 

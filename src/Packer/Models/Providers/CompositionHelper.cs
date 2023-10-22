@@ -6,8 +6,8 @@ using System.Text.Json.Nodes;
 
 namespace Packer.Models.Providers
 {
-    using LangMappingProvider = TermMappingProvider<string>;
     using JsonMappingProvider = TermMappingProvider<JsonNode>;
+    using LangMappingProvider = TermMappingProvider<string>;
 
     public static partial class LangMappingHelper
     {

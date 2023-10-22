@@ -20,7 +20,11 @@ namespace Packer.Models
         /// <summary>
         /// 从组合文件创建指定语言文件。
         /// </summary>
-        Composition
+        Composition,
+        /// <summary>
+        /// 加载单个文件。
+        /// </summary>
+        Singleton
     }
 
     /// <summary>

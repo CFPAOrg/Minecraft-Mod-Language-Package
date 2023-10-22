@@ -1,7 +1,6 @@
 ﻿using Packer.Helpers;
 using Packer.Models;
 using Packer.Models.Providers;
-using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,7 +9,7 @@ using System.Text.Json;
 
 namespace Packer.Extensions
 {
-    using EvaluatorReturnType = IEnumerable<(IResourceFileProvider provider, bool overrides)>;
+    using EvaluatorReturnType = IEnumerable<(IResourceFileProvider provider, ApplyOptions options)>;
     using ParameterType = Dictionary<string, JsonElement>;
 
 
@@ -34,11 +33,12 @@ namespace Packer.Extensions
         /// <summary>
         /// 从<see cref="PackerPolicyType"/>到加载方法<see cref="ProviderEvaluator"/>的查询表
         /// </summary>
-        internal static Dictionary<PackerPolicyType, ProviderEvaluator> functionTable = new()
+        internal static Dictionary<PackerPolicyType, ProviderEvaluator> evaluatorPolicyMap = new()
         {
             { PackerPolicyType.Direct, FromCurrentDirectory },      // 现场生成
             { PackerPolicyType.Indirect, FromSpecifiedDirectory },  // 给定目录
-            { PackerPolicyType.Composition, FromComposition }       // 组合生成
+            { PackerPolicyType.Composition, FromComposition },      // 组合生成
+            { PackerPolicyType.Singleton, FromSingleton },          // 单项文件
         };
 
         /// <summary>
@@ -55,14 +55,14 @@ namespace Packer.Extensions
                select providerGroup.Aggregate(
                    seed: null as IResourceFileProvider,
                    (accumulate, next)
-                       => next.provider.ApplyTo(accumulate, next.overrides));
+                       => next.provider.ApplyTo(accumulate, next.options));
 
         /// <summary>
         /// 遍历未经合并的文件，用于递归调用
         /// </summary>
         internal static EvaluatorReturnType EnumerateRawProviders(this DirectoryInfo namespaceDirectory, Config config)
-            => from policy in ConfigHelpers.RetrieveStrategy(namespaceDirectory)
-               from enumeratedPair in functionTable[policy.Type].Invoke(
+            => from policy in ConfigHelpers.RetrievePolicy(namespaceDirectory)
+               from enumeratedPair in evaluatorPolicyMap[policy.Type].Invoke(
                    namespaceDirectory, config, policy.Parameters)
                select enumeratedPair;
 
@@ -73,14 +73,13 @@ namespace Packer.Extensions
         {
             var floatingConfig = ConfigHelpers.RetrieveLocalConfig(namespaceDirectory);
             var localConfig = config.Modify(floatingConfig);
-            
+
             return from candidate in namespaceDirectory.EnumerateFiles("*", SearchOption.AllDirectories)
                    let relativePath = Path.GetRelativePath(namespaceDirectory.FullName,
                                                            candidate.FullName)
                                           .NormalizePath()
                    let fullPath = Path.GetRelativePath(".", candidate.FullName)
-                   let destination = Path.Combine(
-                       "assets", namespaceDirectory.Name, relativePath)
+                   let destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
                                          .NormalizePath()
                    where !relativePath.IsPathForceExcluded(localConfig)             // [1] 排除路径   -- packer-policy等
                    where (relativePath.IsPathForceIncluded(localConfig)             // [2] 包含路径   [单列]
@@ -88,7 +87,7 @@ namespace Packer.Extensions
                        || (destination.IsInTargetLanguage(localConfig)              // [4] 语言标记   -- 含zh_cn的
                            && !relativePath.IsDomainForceExcluded(localConfig)))    // [5] 排除domain [暂无]
                    let provider = CreateProviderFromFile(candidate, destination, localConfig)
-                   select (provider, DoesOverride(parameters));
+                   select (provider, GetOptions(parameters));
         }
 
         internal static EvaluatorReturnType FromSpecifiedDirectory(DirectoryInfo namespaceDirectory,
@@ -103,7 +102,7 @@ namespace Packer.Extensions
                    let provider = candidate.provider
                                            .ReplaceDestination(@"(?<=^assets/)[^/]*(?=/)",
                                                                namespaceName)
-                   select (provider, DoesOverride(parameters));
+                   select (provider, GetOptions(parameters));
         }
 
         internal static EvaluatorReturnType FromComposition(DirectoryInfo namespaceDirectory,
@@ -119,7 +118,20 @@ namespace Packer.Extensions
                 "json" => JsonMappingHelper.CreateFromComposition(compositionFile),
                 _ => throw new InvalidOperationException($"Unexpected Type parameter at {namespaceDirectory.FullName}.")
             };
-            yield return (provider, DoesOverride(parameters));
+            yield return (provider, GetOptions(parameters));
+        }
+
+        internal static EvaluatorReturnType FromSingleton(DirectoryInfo namespaceDirectory,
+                                                          Config config,
+                                                          ParameterType? parameters)
+        {
+            var singletonPath = parameters!["source"].GetString()!;
+            var relativePath = parameters!["relativePath"].GetString()!;
+            var destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
+                                  .NormalizePath();
+            var file = new FileInfo(singletonPath!);
+            var provider = CreateProviderFromFile(file, destination, config);
+            yield return (provider, GetOptions(parameters));
         }
 
 
@@ -128,7 +140,7 @@ namespace Packer.Extensions
             var extension = file.Extension;
             if (file.Directory!.Name == "lang")
             {
-                switch(extension)
+                switch (extension)
                 {
                     case ".json": return JsonMappingHelper.CreateFromFile(file, destination);
                     case ".lang": return LangMappingHelper.CreateFromFile(file, destination);
@@ -142,11 +154,16 @@ namespace Packer.Extensions
             };
         }
 
-        internal static bool DoesOverride(ParameterType? parameters)
+        internal static ApplyOptions GetOptions(ParameterType? parameters)
         {
-            if (parameters is null) return false;
-            var hasKey = parameters.TryGetValue("overrides", out var element);
-            return hasKey ? element.GetBoolean() : false;
+            if (parameters is null) return default;
+            return new(GetBoolOrDefalut("modifyOnly"), GetBoolOrDefalut("append"));
+
+            bool GetBoolOrDefalut(string key)
+            {
+                if (!parameters.ContainsKey(key)) return false;
+                return parameters[key].GetBoolean();
+            }
         }
     }
 }

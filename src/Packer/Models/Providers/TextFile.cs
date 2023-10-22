@@ -1,5 +1,6 @@
 ﻿using Packer.Extensions;
 using Serilog;
+using System;
 using System.IO;
 using System.IO.Compression;
 using System.Text;
@@ -20,7 +21,7 @@ namespace Packer.Models.Providers
         /// 提供器所携带的文本内容
         /// </summary>
         public virtual string Content { get; }
-        
+
         /// <inheritdoc/>
         public virtual string Destination { get; }
 
@@ -42,10 +43,25 @@ namespace Packer.Models.Providers
         /// </summary>
         /// <param name="content">来源文本</param>
         /// <param name="destination">目标地址</param>
-        public TextFile(string content, string destination) 
-        { 
+        public TextFile(string content, string destination)
+        {
             Content = content;
             Destination = destination;
+        }
+
+        /// <inheritdoc/>
+        public virtual IResourceFileProvider ApplyTo(IResourceFileProvider? baseProvider, ApplyOptions options)
+        {
+            if (baseProvider is null) return this;
+
+            if (!options.Append) return baseProvider;
+
+            if (baseProvider is not TextFile baseTextFile)
+                throw new ArgumentException($"Argument not an instance of {typeof(TextFile)}.",
+                                            nameof(baseProvider));
+            var baseText = baseTextFile.Content;
+            var appendedText = string.Concat(baseText, Environment.NewLine, Content);
+            return new TextFile(appendedText, Destination);
         }
 
         /// <inheritdoc/>

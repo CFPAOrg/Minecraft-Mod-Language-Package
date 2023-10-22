@@ -4,7 +4,6 @@ using Packer.Models;
 using Packer.Models.Providers;
 using Serilog;
 using System;
-using System.Collections;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -47,8 +46,7 @@ namespace Packer
                     .Aggregate(seed: null as IResourceFileProvider,                 // 合并文件
                                (accumulate, next)
                                    => next.ApplyTo(
-                                       accumulate,
-                                       overrideExisting: false)) into provider
+                                       accumulate)) into provider
                 select config.Floating.CharacterReplacement                         // 内容的字符替换
                              .Aggregate(seed: provider,
                                         (accumulate, replacement)

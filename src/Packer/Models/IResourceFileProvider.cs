@@ -17,14 +17,12 @@ namespace Packer.Models
         /// <summary>
         /// 在本提供器的基础上，尝试添加新提供器中的内容
         /// </summary>
-        /// <param name="incoming">需要添加的新<see cref="IResourceFileProvider"/></param>
-        /// <param name="overrideExisting">冲突解决方案。若为<see langword="false"/>，保留本文件的内容；否则，保留新文件的内容</param>
+        /// <param name="baseProvider">需要添加的新<see cref="IResourceFileProvider"/></param>
+        /// <param name="options">冲突解决选项</param>
         /// <returns>合并得到的新<see cref="IResourceFileProvider"/></returns>
-        public IResourceFileProvider ApplyTo(IResourceFileProvider? incoming, bool overrideExisting = false)
-            // 默认实现
-            => !overrideExisting 
-                ? (incoming ?? this) // 如果来源是null，无论冲突配置如何，都不应返回null
-                : this;
+        public IResourceFileProvider ApplyTo(IResourceFileProvider? baseProvider, ApplyOptions options = default)
+            // 默认实现；如果来源是null，无论冲突配置如何，都不应返回null
+            => baseProvider ?? this;
 
         /// <summary>
         /// 在该提供器的内容中执行替换
@@ -55,5 +53,28 @@ namespace Packer.Models
         /// 目标在资源包中的相对位置，从根目录算起
         /// </summary>
         public string Destination { get; }
+    }
+
+    /// <summary>
+    /// 在合并供应器时，使用的选项。理论上可以拓展，只要加默认值。
+    /// </summary>
+    public readonly struct ApplyOptions
+    {
+#pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
+        public ApplyOptions(bool modifyOnly, bool append)
+        {
+            ModifyOnly = modifyOnly;
+            Append = append;
+        }
+#pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
+
+        /// <summary>
+        /// 对于<see cref="Providers.TermMappingProvider{TValue}"/>，是否包含选入的新键。
+        /// </summary>
+        public bool ModifyOnly { get; } = false;
+        /// <summary>
+        /// 对于<see cref="Providers.TextFile"/>，是否将文本相连。
+        /// </summary>
+        public bool Append { get; } = false;
     }
 }

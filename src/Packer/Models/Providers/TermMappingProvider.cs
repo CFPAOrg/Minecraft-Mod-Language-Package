@@ -75,7 +75,8 @@ namespace Packer.Models.Providers
         public string ProvideStringContent()
             => JsonSerializer.Serialize(this, new JsonSerializerOptions()
             {
-                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+                Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                WriteIndented = true
             });
 
         public ITermDictionary<JsonNode> ReplaceContent(string searchPattern, string replacement)
@@ -142,26 +143,35 @@ namespace Packer.Models.Providers
         }
 
         /// <inheritdoc/>
-        public IResourceFileProvider ApplyTo(IResourceFileProvider? incoming, bool overrideExisting = false)
+        public IResourceFileProvider ApplyTo(IResourceFileProvider? baseProvider, ApplyOptions options)
         {
-            if (incoming is null) return this;
-            if (incoming is not TermMappingProvider<TValue> inProvider)
+            if (baseProvider is null) return this;
+
+            if (baseProvider is not TermMappingProvider<TValue> baseMapping)
                 throw new ArgumentException($"Argument not an instance of {typeof(TermMappingProvider<TValue>)}.",
-                                            nameof(incoming));
-            //var inProvider = incoming as TermMappingProvider<TValue>;
+                                            nameof(baseProvider));
 
-            //if (inProvider is null) throw new ArgumentNullException(nameof(incoming));
 
-            var (baseMap, inMap) = overrideExisting
-                ? (Map, inProvider.Map)
-                : (inProvider.Map, Map); // 交换顺序
+            var baseMap = baseMapping.Map;
 
-            foreach (var pair in inMap)
+            if (options.ModifyOnly)
             {
-                baseMap.TryAdd(pair.Key, pair.Value);
+                foreach (var pair in Map)
+                {
+                    if (baseMap.ContainsKey(pair.Key))
+                        baseMap[pair.Key] = pair.Value;
+                }
+                return new TermMappingProvider<TValue>(baseMap, Destination);
+            }
+            else
+            {
+                foreach (var pair in Map)
+                {
+                    baseMap.TryAdd(pair.Key, pair.Value);
+                }
+                return new TermMappingProvider<TValue>(baseMap, Destination);
             }
 
-            return new TermMappingProvider<TValue>(baseMap, Destination);
         }
 
         /// <inheritdoc/>
@@ -263,7 +273,7 @@ namespace Packer.Models.Providers
                     isInComment = true;
                     continue;
                 }
-                
+
                 if (line.IsEmpty || line.IsWhiteSpace()) // 空行需去
                     continue;
 
