@@ -62,7 +62,7 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('src/Packer/**') }}
+          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
             Packer.exe
             git2-*.dll

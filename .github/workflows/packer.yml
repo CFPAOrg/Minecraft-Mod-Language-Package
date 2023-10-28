@@ -110,7 +110,7 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('source/Packer/**') }}
+          key: ${{ runner.os }}-Packer-${{ hashFiles('source/Packer/**') }}
           path: |
             Packer.exe
             git2-*.dll
@@ -168,7 +168,7 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v3
         with:
-          key: ${{ runner.os }}-${{ hashFiles('source/Uploader/**') }}
+          key: ${{ runner.os }}-Uploader-${{ hashFiles('source/Uploader/**') }}
           path: Uploader.exe
           fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
       
