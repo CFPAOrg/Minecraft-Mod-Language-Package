@@ -1,6 +1,7 @@
 ﻿using Packer.Helpers;
 using Packer.Models;
 using Packer.Models.Providers;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -98,6 +99,8 @@ namespace Packer.Extensions
             var namespaceName = namespaceDirectory.Name;
             var redirectDirectory = new DirectoryInfo(redirect!);
 
+            Log.Debug("[Policy:Indirect]目标：{0}，源：{1}", namespaceName, redirect);
+
             return from candidate in redirectDirectory.EnumerateRawProviders(config)
                    let provider = candidate.provider
                                            .ReplaceDestination(@"(?<=^assets/)[^/]*(?=/)",
@@ -112,6 +115,9 @@ namespace Packer.Extensions
             var compositionPath = parameters!["source"].GetString();
             var type = parameters["destType"].GetString();
             var compositionFile = new FileInfo(compositionPath!);
+
+            Log.Debug("[Policy:Composition]目标：{0}，源：{1}", namespaceDirectory.Name, compositionPath);
+
             IResourceFileProvider provider = type switch // 类型推断不出要用接口
             {
                 "lang" => LangMappingHelper.CreateFromComposition(compositionFile),
@@ -129,8 +135,12 @@ namespace Packer.Extensions
             var relativePath = parameters!["relativePath"].GetString()!;
             var destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
                                   .NormalizePath();
+
+            Log.Debug("[Policy:Singleton]目标：{0}，源：{1}", destination, singletonPath);
+
             var file = new FileInfo(singletonPath!);
             var provider = CreateProviderFromFile(file, destination, config);
+
             yield return (provider, GetOptions(parameters));
         }
 

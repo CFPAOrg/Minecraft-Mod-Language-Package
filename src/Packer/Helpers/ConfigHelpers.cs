@@ -1,4 +1,5 @@
-﻿using Packer.Models;
+﻿using Packer.Extensions;
+using Packer.Models;
 using Serilog;
 using System.Collections.Generic;
 using System.IO;
@@ -26,9 +27,11 @@ namespace Packer.Helpers
 
             if (configFile is null) return null;
 
+            configFile.FullName.LogToDebug("读取文件：{0}");
+            
             using var reader = configFile.OpenText();
             return JsonSerializer.Deserialize<FloatingConfig>(
-                reader.ReadToEnd(),
+                reader.ReadToEnd().LogToDebug(),
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
         }
 
@@ -55,7 +58,7 @@ namespace Packer.Helpers
         /// 从给定的命名空间获取策略内容
         /// </summary>
         /// <param name="directory">命名空间目录</param>
-        /// <returns>若文件存在，返回对应的内容；否则，返回<c>Direct</c></returns>
+        /// <returns>若文件存在，返回对应的内容；否则，返回<c>[Direct]</c></returns>
         /// <exception cref="InvalidDataException">策略文件非法</exception>
         public static List<PackerPolicy> RetrievePolicy(DirectoryInfo directory)
         {
@@ -67,9 +70,11 @@ namespace Packer.Helpers
                     new PackerPolicy { Type = PackerPolicyType.Direct }
                 };
 
+            file.FullName.LogToDebug("读取文件：{0}");
+
             using var reader = file.OpenText();
             var result = JsonSerializer.Deserialize<List<PackerPolicy>>(
-                reader.ReadToEnd(),
+                reader.ReadToEnd().LogToDebug(),
                 new JsonSerializerOptions
                 {
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,

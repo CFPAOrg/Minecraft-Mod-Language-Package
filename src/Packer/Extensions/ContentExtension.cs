@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -81,6 +82,22 @@ namespace Packer.Extensions
         public static bool IsPathForceIncluded(this string location, Config config)
             => config.Floating.InclusionPaths.Contains(location);
 
+        /// <summary>
+        /// 将字符串输出到调试日志，然后返回该字符串
+        /// </summary>
+        public static string LogToDebug(this string message, string template)
+        {
+            Log.Debug(template, message);
+            return message;
+        }
+        /// <summary>
+        /// 将字符串输出到调试日志，然后返回该字符串
+        /// </summary>
+        public static string LogToDebug(this string message)
+        {
+            Log.Debug(message);
+            return message;
+        }
 
         // 临时方法
         /// <summary>
