@@ -58,6 +58,7 @@
 
 - [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Wiktionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page)
 - [词源在线](https://www.etymonline.com/cn)
+- [汉典](https://www.zdic.net/)
 
 ### MC 相关翻译资源
 
@@ -69,8 +70,10 @@
 ### 其他
 
 - [术语在线](https://www.termonline.cn/index) - 全国科学技术名词审定委员会审定的术语。
+- [国家标准全文公开系统](https://openstd.samr.gov.cn/bzgk/gb/index) - 由国家市场监督管理总局发布的行业内各类标准。
 - [CNKI 翻译助手](https://dict.cnki.net/index) - 学科词典聚合和机器翻译。
-- [中国自然标本馆](http://www.cfh.ac.cn/)丨[iNaturalist](https://www.inaturalist.org/)丨[iPlant 植物智](http://www.iplant.cn/)丨[EOL 生命大百科](https://eol.org/zh-CN) - 物种译名查询。
+- [中国自然标本馆](http://www.cfh.ac.cn/)丨[iNaturalist](https://www.inaturalist.org/)丨[iPlant 植物智](http://www.iplant.cn/)丨[EOL 生命大百科](https://eol.org/zh-CN)丨[中国动物主题数据库](http://zoology.especies.cn/) - 物种译名查询。
+- [国家岩矿化石标本资源共享平台](http://www.nimrf.net.cn/) - 岩石译名查询。
 - [深言达意](https://www.shenyandayi.com/) - 据意查词，反向词典。
 
 <!-- **你们是怎么做到流水线式的翻译的？**
