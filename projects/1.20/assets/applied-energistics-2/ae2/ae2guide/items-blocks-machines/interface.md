@@ -28,7 +28,7 @@ item_ids:
 
 接口和其他AE2[设备](../ae2-mechanics/devices.md)间有若干种特殊交互功能：
 
-连接有<ItemLink id="storage_bus" />未经修改的接口会将其所处网络的[网络存储](../ae2-mechanics/import-export-storage.md)向存储总线所处网络展示，此时接口网络就好像一整个接有存储总线的大箱子。在接口的过滤槽中设置物品会禁用此特性。
+连接有<ItemLink id="storage_bus" />的未经修改的接口会将其所处网络的[网络存储](../ae2-mechanics/import-export-storage.md)向存储总线所处网络展示，此时接口网络就好像一整个接有存储总线的大箱子。在接口的过滤槽中设置物品会禁用此特性。
 
 <GameScene zoom="6" interactive={true}>
   <ImportStructure src="../assets/assemblies/interface_storage.snbt" />

@@ -53,7 +53,7 @@ navigation:
 ## 配置与样板
 
 * <ItemLink id="pattern_provider" />（1）处于默认配置，装有相关<ItemLink id="processing_pattern" />。
-  * 对于<ItemLink id="fluix_crystal" />，JEI/REI的默认配方能正常工作：
+  * 对于<ItemLink id="fluix_crystal" />，JEI/REI的默认配方就可以了：
 
     ![福鲁伊克斯样板](../assets/diagrams/fluix_pattern.png)
 
