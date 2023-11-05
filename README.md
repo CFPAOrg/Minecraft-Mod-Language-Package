@@ -74,6 +74,7 @@
 - [CNKI 翻译助手](https://dict.cnki.net/index) - 学科词典聚合和机器翻译。
 - [中国自然标本馆](http://www.cfh.ac.cn/)丨[iNaturalist](https://www.inaturalist.org/)丨[iPlant 植物智](http://www.iplant.cn/)丨[EOL 生命大百科](https://eol.org/zh-CN)丨[中国动物主题数据库](http://zoology.especies.cn/) - 物种译名查询。
 - [国家岩矿化石标本资源共享平台](http://www.nimrf.net.cn/) - 岩石译名查询。
+- [中国国家数字图书馆](https://www.nlc.cn/web/index.shtml) - 国家图书馆馆藏数字化资源的检索及在线阅读服务
 - [深言达意](https://www.shenyandayi.com/) - 据意查词，反向词典。
 
 <!-- **你们是怎么做到流水线式的翻译的？**
