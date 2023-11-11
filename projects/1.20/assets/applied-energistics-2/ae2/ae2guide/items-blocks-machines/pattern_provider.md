@@ -34,7 +34,51 @@ item_ids:
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../assets/assemblies/furnace_automation.snbt" />
 
+<BoxAnnotation color="#dddddd" min="1 0 0" max="2 1 1">
+        （1）样板供应器：以赛特斯石英扳手改为方向型，装有相应样板。
+
+        ![铁样板](../assets/diagrams/furnace_pattern_small.png)
+  </BoxAnnotation>
+
+<BoxAnnotation color="#dddddd" min="1 1 0" max="2 1.3 1">
+        （2）接口：默认配置。
+  </BoxAnnotation>
+
+<BoxAnnotation color="#dddddd" min="1 1 0" max="1.3 2 1">
+        （3）存储总线#1：过滤煤炭。
+        <ItemImage id="minecraft:coal" scale="2" />
+  </BoxAnnotation>
+
+<BoxAnnotation color="#dddddd" min="0 2 0" max="1 2.3 1">
+        （4）存储总线#2：以反相卡黑名单煤炭。
+        <Row><ItemImage id="minecraft:coal" scale="2" /><ItemImage id="inverter_card" scale="2" /></Row>
+  </BoxAnnotation>
+
+<DiamondAnnotation pos="4 0.5 0.5" color="#00ff00">
+        至主网络
+    </DiamondAnnotation>
+
   <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+如下是为多台机器提供材料的通用设施示例
+
+<GameScene zoom="6" background="transparent">
+<ImportStructure src="../assets/assemblies/provider_interface_storage.snbt" />
+
+<BoxAnnotation color="#dddddd" min="2.7 0 1" max="3 1 2">
+        接口（必须为面板型，不能为方块型）
+  </BoxAnnotation>
+
+<BoxAnnotation color="#dddddd" min="1 0 0" max="1.3 1 4">
+        存储总线
+  </BoxAnnotation>
+
+<BoxAnnotation color="#dddddd" min="0 0 0" max="1 1 4">
+        样板供应目的地
+  </BoxAnnotation>
+
+<IsometricCamera yaw="185" pitch="30" />
 </GameScene>
 
 允许存在多个拥有相同样板的样板供应器，它们会并行工作。

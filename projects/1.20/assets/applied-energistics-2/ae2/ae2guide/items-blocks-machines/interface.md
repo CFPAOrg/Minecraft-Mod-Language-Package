@@ -24,6 +24,48 @@ item_ids:
 
 接口还有一个实用特性，大多数流体储罐只能存储1种流体，而接口能存储最多9种，物品也是一样。它们实际上就是带有若干额外功能的箱子/多流体储罐，且可断开网络连接以禁用额外功能。因此，在某些需要存储少量多种事物的特定场合下，它们十分有用。
 
+## 接口内部的工作原理
+
+正如前文所提，接口本质上就是箱子和储罐，再附上一些超级酷炫的<ItemLink id="import_bus" />和<ItemLink id="export_bus" />以及<ItemLink id="level_emitter" />。
+
+<GameScene zoom="3" interactive={true}>
+  <ImportStructure src="../assets/assemblies/interface_internals.snbt" />
+
+  <BoxAnnotation color="#dddddd" min="1.3 0.3 1.3" max="9.7 1 1.7">
+        一系列标准发信器，用于维持设定的物品数量
+        <GameScene zoom="4" background="transparent">
+        <ImportStructure src="../assets/blocks/level_emitter.snbt" />
+        </GameScene>
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#dddddd" min="1.3 4 1.3" max="9.7 4.7 1.7">
+        一系列标准发信器，用于维持设定的物品数量
+        <GameScene zoom="4" background="transparent">
+        <ImportStructure src="../assets/blocks/level_emitter.snbt" />
+        </GameScene>
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#dddddd" min="1.3 1.3 1.3" max="9.7 2 1.7">
+        一系列超级酷炫的输入总线，每游戏刻能传输1组事物
+        <GameScene zoom="4" background="transparent">
+        <ImportStructure src="../assets/blocks/import_bus.snbt" />
+        </GameScene>
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#dddddd" min="1.3 3 1.3" max="9.7 3.7 1.7">
+        一系列超级酷炫的输出总线，每游戏刻能传输1组事物
+        <GameScene zoom="4" background="transparent">
+        <ImportStructure src="../assets/blocks/export_bus.snbt" />
+        </GameScene>
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#dddddd" min="1 2 1" max="10 3 2">
+        9个独立的内部槽位
+  </BoxAnnotation>
+
+  <IsometricCamera yaw="195" pitch="15" />
+</GameScene>
+
 ## 特殊交互
 
 接口和其他AE2[设备](../ae2-mechanics/devices.md)间有若干种特殊交互功能：
@@ -38,8 +80,21 @@ item_ids:
 样板供应器和接口有一特殊交互效果——[子网络](../ae2-mechanics/subnetworks.md)：如果接口未经修改（请求槽内无内容），则供应器会跳过接口，直接输出到该子网络的[存储模块](../ae2-mechanics/import-export-storage.md)，而非输出到接口的存储槽；更重要的是，只要对应的存储模块没有足够的空间，下一批物品就不会输出。
 
 <GameScene zoom="6" background="transparent">
-<ImportStructure src="../assets/assemblies/furnace_automation.snbt" />
-<IsometricCamera yaw="195" pitch="30" />
+<ImportStructure src="../assets/assemblies/provider_interface_storage.snbt" />
+
+<BoxAnnotation color="#dddddd" min="2.7 0 1" max="3 1 2">
+        接口（必须为面板型，不能为方块型）
+  </BoxAnnotation>
+
+<BoxAnnotation color="#dddddd" min="1 0 0" max="1.3 1 4">
+        存储总线
+  </BoxAnnotation>
+
+<BoxAnnotation color="#dddddd" min="0 0 0" max="1 1 4">
+        样板供应目的地（多台机器，或单台机器的多个面）
+  </BoxAnnotation>
+
+<IsometricCamera yaw="185" pitch="30" />
 </GameScene>
 
 ## 变种
@@ -55,6 +110,8 @@ item_ids:
 ## 设置
 
 接口上排槽位设定需要存储于自身的物品。可直接放入或从JEI/REI中拖拽放入，有物品的槽位上方会出现扳手图标，可用其设置数量。
+
+用流体容器（如铁桶或流体储罐）右击即可将流体设为过滤，而非铁桶和储罐物品。
 
 ## 升级
 
