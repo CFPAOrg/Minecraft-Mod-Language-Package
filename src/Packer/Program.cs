@@ -29,17 +29,19 @@ namespace Packer
             var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version)
                 : Enumerable.Empty<string>();
 
-            var query = // 这就是查询表达式吗（
+            var query = // 在这里加日志似乎开销太大了。暂时注释掉
                 from modDirectory in new DirectoryInfo($"./projects/{config.Base.Version}/assets")
                                          .EnumerateDirectories()
                 let modIdentifier = modDirectory.Name
+                                                //.LogToDebug("[Enumerable]当前模组：{0}")
                 where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
                 where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
                 from namespaceDirectory in modDirectory.EnumerateDirectories()
                 let namespaceName = namespaceDirectory.Name
                 where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
-                where namespaceName.ValidateNamespace()                             // 不是非法名称
+                where namespaceName/*.LogToDebug("[Enumerable]当前命名空间：{0}")*/
+                                   .ValidateNamespace()                             // 不是非法名称
                 from provider in namespaceDirectory.EnumerateProviders(config)
                 group provider by provider.Destination into destinationGroup
                 select destinationGroup
@@ -73,9 +75,8 @@ namespace Packer
             {
                 await Task.WhenAll(from provider in query.Concat(initialsQuery)
                                    select provider.WriteToArchive(archive));
-
-                
             }
+
             Log.Information("对版本 {0} 的打包结束。", version);
 
             var md5 = stream.ComputeMD5();

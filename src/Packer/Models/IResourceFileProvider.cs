@@ -60,6 +60,7 @@ namespace Packer.Models
     /// </summary>
     public readonly struct ApplyOptions
     {
+        // CS8983  具有字段初始值设定项的“结构”必须包含显式声明的构造函数。
 #pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
         public ApplyOptions(bool modifyOnly, bool append)
         {

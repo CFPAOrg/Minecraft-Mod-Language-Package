@@ -193,7 +193,7 @@ namespace Packer.Models.Providers
         public async Task WriteToArchive(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
-            Log.Information("正在添加 {0}", destination);
+            Log.Debug("[TermMappingProvider`1]写入路径 {0}", destination);
 
             archive.ValidateEntryDistinctness(destination);
 
@@ -240,11 +240,11 @@ namespace Packer.Models.Providers
                 {
                     if (line.EndsWith("\\"))
                     {
-                        pendingValue += line[..^1].ToString();
+                        pendingValue += line.TrimStart()[..^1].ToString();
                     }
                     else
                     {
-                        pendingValue += ("\\n" + line.ToString());
+                        pendingValue += line.TrimStart().ToString();
                         result.TryAdd(pendingKey, pendingValue);
                         isLineContinuation = false;
                     }

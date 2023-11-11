@@ -47,7 +47,7 @@ namespace Packer.Models.Providers
         public async Task WriteToArchive(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
-            Log.Information("正在添加 {0}", destination);
+            Log.Debug("[RawFile]写入路径 {0}", destination);
 
             archive.ValidateEntryDistinctness(destination);
 

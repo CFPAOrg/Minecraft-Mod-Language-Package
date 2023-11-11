@@ -40,7 +40,7 @@ namespace Packer.Models.Providers
         public override async Task WriteToArchive(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
-            Log.Information("正在添加 {0}", destination);
+            Log.Debug("[McMetaProvider]写入路径 {0}", destination);
 
             var content = string.Format(Content, DateTime.UtcNow.AddHours(8) /* UTC +8:00 */);
 

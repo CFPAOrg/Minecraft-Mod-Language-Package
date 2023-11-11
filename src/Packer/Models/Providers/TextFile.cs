@@ -82,7 +82,7 @@ namespace Packer.Models.Providers
         public virtual async Task WriteToArchive(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
-            Log.Information("正在添加 {0}", destination);
+            Log.Debug("[TextFile]写入路径 {0}", destination);
 
             archive.ValidateEntryDistinctness(destination);
 
