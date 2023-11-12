@@ -59,7 +59,7 @@
 - [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Wiktionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page)
 - [词源在线](https://www.etymonline.com/cn)
 - [汉典](https://www.zdic.net/)
-
+- [新华字典](https://www.cp.com.cn/book/506a1433-6.html)丨[现代汉语词典](https://www.cp.com.cn/book/6afc8cd8-c.html)
 ### MC 相关翻译资源
 
 - [Minecraft Wiki:译名标准化](https://zh.minecraft.wiki/w/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96)丨[译名历史](https://zh.minecraft.wiki/w/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇中英对照及变更记录。
