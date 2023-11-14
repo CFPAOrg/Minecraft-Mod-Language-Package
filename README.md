@@ -58,10 +58,11 @@
 
 - [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Wiktionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page)
 - [词源在线](https://www.etymonline.com/cn)
-
+- [汉典](https://www.zdic.net/)
+- [新华字典](https://www.cp.com.cn/book/506a1433-6.html)丨[现代汉语词典](https://www.cp.com.cn/book/6afc8cd8-c.html)
 ### MC 相关翻译资源
 
-- [Minecraft Wiki:译名标准化](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96)丨[译名历史](https://minecraft.fandom.com/zh/wiki/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇中英对照及变更记录。
+- [Minecraft Wiki:译名标准化](https://zh.minecraft.wiki/w/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96)丨[译名历史](https://zh.minecraft.wiki/w/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇中英对照及变更记录。
 - [Minecraft 模组翻译参考词典](https://dict.mcmod.cn/) - 以英文检索本仓库中的翻译条目。
 - [MCBBS 的翻译讨论](https://www.mcbbs.net/forum.php?mod=forumdisplay&fid=1015&page=1&filter=typeid&typeid=2250) - 原版翻译讨论、投票、公告。
 - [MC百科社群的翻译讨论](https://bbs.mcmod.cn/forum.php?mod=forumdisplay&fid=31&filter=typeid&typeid=116) - 模组翻译讨论，零散汉化发布。
@@ -69,8 +70,11 @@
 ### 其他
 
 - [术语在线](https://www.termonline.cn/index) - 全国科学技术名词审定委员会审定的术语。
+- [国家标准全文公开系统](https://openstd.samr.gov.cn/bzgk/gb/index) - 由国家市场监督管理总局发布的行业内各类标准。
 - [CNKI 翻译助手](https://dict.cnki.net/index) - 学科词典聚合和机器翻译。
-- [中国自然标本馆](http://www.cfh.ac.cn/)丨[iNaturalist](https://www.inaturalist.org/)丨[iPlant 植物智](http://www.iplant.cn/)丨[EOL 生命大百科](https://eol.org/zh-CN) - 物种译名查询。
+- [中国自然标本馆](http://www.cfh.ac.cn/)丨[iNaturalist](https://www.inaturalist.org/)丨[iPlant 植物智](http://www.iplant.cn/)丨[EOL 生命大百科](https://eol.org/zh-CN)丨[中国动物主题数据库](http://zoology.especies.cn/) - 物种译名查询。
+- [国家岩矿化石标本资源共享平台](http://www.nimrf.net.cn/) - 岩石译名查询。
+- [中国国家数字图书馆](https://www.nlc.cn/web/index.shtml) - 国家图书馆馆藏数字化资源的检索及在线阅读服务
 - [深言达意](https://www.shenyandayi.com/) - 据意查词，反向词典。
 
 <!-- **你们是怎么做到流水线式的翻译的？**
