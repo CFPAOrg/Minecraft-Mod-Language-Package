@@ -31,9 +31,9 @@ planet.kepler1649c=开普勒1649 C
 galaxy.wormhole=§e虫洞
 
 # Messages
-information.dev.exoplanets:beta.1=§c通过继续，你同意如下条款：
-information.dev.exoplanets:beta.2=§c你不能分发此开发版本，
-information.dev.exoplanets:beta.3=§c除非得到开发者的事先许可§r
+information.dev.exoplanets:beta.1=§c继续意味着你同意如下条款：
+information.dev.exoplanets:beta.2=§c除非得到开发者的事先许可，
+information.dev.exoplanets:beta.3=§c你不得分发此开发版本§r
 
 information.exoplanets:beta.1=§b星系：系外行星尚处于早期测试版本！§r
 information.exoplanets:beta.2=这意味着模组中可能有一些东西不能按预期工作，
@@ -48,13 +48,13 @@ exoplanets.gui.failed=尝试打开Discord邀请链接时出现问题
 # VERSIONING
 exoplanets.versions.notify=嘿，伙计！嘿，伙计，嘿！星际：系外行星更新！
 exoplanets.versions.outdated0=§6****************************************
-exoplanets.versions.outdated1=§6*§a加载中......v§c%s
-exoplanets.versions.outdated2=§6*§a最新更新v§9%s
-exoplanets.versions.updateMessage=["Click To... [",{"text":"下载","color":"green","hoverEvent":{"action":"show_text","value":{"text":"单击此按钮可自动下载最新版本","color":"green"}},"clickEvent":{"action":"run_command","value":"/download-latest-exoplanets %version%"}},"]"]
-exoplanets.versions.startingDownload=[{"text":"正在开始下载......请不要卸下硬盘。喜欢玩 ","color":"aqua"},{"text":"星际：系外行星？","color":"green"}]
-exoplanets.versions.startingDownload2=[{"text":"考虑在","color":"aqua"},{"text":"Patreon","color":"gold","hoverEvent":{"action":"show_text","value":{"text":"点击此处进入ROMVoid95的Patreon","color":"light_purple"}},"clickEvent":{"action":"open_url","value":"http://www.patreon.com/romvoid95"}},{"text":"上支持[","color":"aqua"},{"text":"ROMVoid95","color":"light_purple"},{"text":"！","color":"aqua"}]
+exoplanets.versions.outdated1=§6*§a加载中……v§c%s
+exoplanets.versions.outdated2=§6*§a最新更新……v§9%s
+exoplanets.versions.updateMessage=["点击以[",{"text":"下载","color":"green","hoverEvent":{"action":"show_text","value":{"text":"点击此按钮可自动下载最新版本","color":"green"}},"clickEvent":{"action":"run_command","value":"/download-latest-exoplanets %version%"}},"]"]
+exoplanets.versions.startingDownload=[{"text":"正在开始下载……请不要卸下硬盘。","color":"aqua"},{"text":"星际：系外行星","color":"green"},{"text":"还玩得开心吗？","color":"aqua"}]
+exoplanets.versions.startingDownload2=[{"text":"请考虑在","color":"aqua"},{"text":"Patreon","color":"gold","hoverEvent":{"action":"show_text","value":{"text":"点击此处进入ROMVoid95的Patreon","color":"light_purple"}},"clickEvent":{"action":"open_url","value":"http://www.patreon.com/romvoid95"}},{"text":"上支持[","color":"aqua"},{"text":"ROMVoid95","color":"light_purple"},{"text":"！","color":"aqua"}]
 exoplanets.versions.doneDownloading=已完成下载。请删除旧的星际：系外行星JAR文件，再重新加载游戏来更新。
-exoplanets.versions.downloadedAlready=您已经下载最新版本。关闭游戏，在mods文件夹中删除旧版本，再启动游戏来更新！
+exoplanets.versions.downloadedAlready=你已经下载最新版本。关闭游戏，在mods文件夹中删除旧版本，再启动游戏来更新！
 exoplanets.versions.downloadingAlready=更新文件已经在下载了，请给点时间，好吗？
 
 
@@ -63,7 +63,7 @@ exoplanets.configgui.title=星际：系外行星设置
 exoplanets.configgui.category.core=核心设置
 exoplanets.configgui.category.dimensionids=星际：系外行星维度ID
 exoplanets.configgui.category.sysgeneral=太阳系设置
-exoplanets.configgui.category.systier=太阳系系统等级要求
+exoplanets.configgui.category.systier=太阳系等级要求
 exoplanets.configgui.category.sysmap=太阳系地图位置
 
 exoplanets.configgui.yzceti_tier=鲸鱼座YZ等级
@@ -98,12 +98,12 @@ exoplanets.configgui.enableDebug=主世界矿石
 exoplanets.configgui.enableRealism=写实模式
 exoplanets.configgui.guiBeta=测试版警告
 
-## tile.exoplanets..name=星际：系外行星
+## tile.exoplanets..name=
 
 ## CREATIVE TAB ##
-itemGroup.decoration=§6星际：系外行星装饰品§r
-itemGroup.terrain=§a星际：系外行星地形§r
-itemGroup.items=§e星际：系外行星物品§r
+itemGroup.decoration=§6星际：系外行星|装饰品§r
+itemGroup.terrain=§a星际：系外行星|地形§r
+itemGroup.items=§e星际：系外行星|物品§r
 
 ## BLOCKS ##
 tile.exoplanets.com_relay.name=通信继电器
@@ -114,64 +114,69 @@ tile.exoplanets.control.name=电子面板
 tile.exoplanets.datamonitor.name=数据监视器
 tile.exoplanets.deco0.name=格栅
 tile.exoplanets.deco1.name=条纹格栅
-tile.exoplanets.satellite_antenna.name=卫星天线
-tile.exoplanets.stand_console.name=立式控制台
 tile.exoplanets.metaldecoration.name=地板格栅
 
-tile.exoplanets.yzb_loose_sediment.name=(§e鲸鱼座YZ B§r) 松散沉积物
-tile.exoplanets.yzb_dark_loose_sediment.name=(§e鲸鱼座YZ B§r) 松散沉积物 2
-tile.exoplanets.yzb_gravel.name=(§e鲸鱼座YZ B§r) 沙砾
-tile.exoplanets.yzb_igneous.name=(§e鲸鱼座YZ B§r) 火成岩
-tile.exoplanets.yzb_metamorphic.name=(§e鲸鱼座YZ B§r) 变质岩
-tile.exoplanets.yzb_sedimentary_rock.name=(§e鲸鱼座YZ B§r) 沉积岩
+tile.exoplanets.yzb_loose_sediment.name=§e鲸鱼座YZ B§r松散沉积物
+tile.exoplanets.yzb_dark_loose_sediment.name=§e鲸鱼座YZ B§r松散沉积物
+tile.exoplanets.yzb_gravel.name=§e鲸鱼座YZ B§r沙砾
+tile.exoplanets.yzb_igneous.name=§e鲸鱼座YZ B§r火成岩
+tile.exoplanets.yzb_metamorphic.name=§e鲸鱼座YZ B§r变质岩
+tile.exoplanets.yzb_sedimentary_rock.name=§e鲸鱼座YZ B§r沉积岩
 
-tile.exoplanets.yzc_loose_sediment.name=(§6鲸鱼座YZ C§r) 松散沉积物
-tile.exoplanets.yzc_dark_loose_sediment.name=(§6鲸鱼座YZ C§r) 松散沉积物 2
-tile.exoplanets.yzc_gravel.name=(§6鲸鱼座YZ C§r) 沙砾
-tile.exoplanets.yzc_igneous.name=(§6鲸鱼座YZ C§r) 火成岩
-tile.exoplanets.yzc_metamorphic.name=(§6鲸鱼座YZ C§r) 变质岩
-tile.exoplanets.yzc_sedimentary_rock.name=(§6鲸鱼座YZ C§r) 沉积岩
+tile.exoplanets.yzc_loose_sediment.name=§6鲸鱼座YZ C§r松散沉积物
+tile.exoplanets.yzc_dark_loose_sediment.name=§6鲸鱼座YZ C§r松散沉积物
+tile.exoplanets.yzc_gravel.name=§6鲸鱼座YZ C§r沙砾
+tile.exoplanets.yzc_igneous.name=§6鲸鱼座YZ C§r火成岩
+tile.exoplanets.yzc_metamorphic.name=§6鲸鱼座YZ C§r变质岩
+tile.exoplanets.yzc_sedimentary_rock.name=§6鲸鱼座YZ C§r沉积岩
 
-tile.exoplanets.yzd_loose_sediment.name=(§b鲸鱼座YZ D§r) 松散沉积物
-tile.exoplanets.yzd_dark_loose_sediment.name=(§b鲸鱼座YZ D§r) 松散沉积物 2
-tile.exoplanets.yzd_gravel.name=(§b鲸鱼座YZ D§r) 沙砾
-tile.exoplanets.yzd_igneous.name=(§b鲸鱼座YZ D§r) 火成岩
-tile.exoplanets.yzd_metamorphic.name=(§b鲸鱼座YZ D§r) 变质岩
-tile.exoplanets.yzd_sedimentary_rock.name=(§b鲸鱼座YZ D§r) 沉积岩
+tile.exoplanets.yzd_loose_sediment.name=§b鲸鱼座YZ D§r松散沉积物
+tile.exoplanets.yzd_dark_loose_sediment.name=§b鲸鱼座YZ D§r松散沉积物
+tile.exoplanets.yzd_gravel.name=§b鲸鱼座YZ D§r沙砾
+tile.exoplanets.yzd_igneous.name=§b鲸鱼座YZ D§r火成岩
+tile.exoplanets.yzd_metamorphic.name=§b鲸鱼座YZ D§r变质岩
+tile.exoplanets.yzd_sedimentary_rock.name=§b鲸鱼座YZ D§r沉积岩
+tile.exoplanets.yzd_mnt1.name=b鲸鱼座YZ D§r山石
+tile.exoplanets.yzd_mnt2.name=b鲸鱼座YZ D§r山石
+tile.exoplanets.yzd_stone.name=b鲸鱼座YZ D§r石头
 
-tile.exoplanets.trap1c_top.name=(§9特拉比斯特-1 C§r) 表层岩石
-tile.exoplanets.trap1e_cobblestone.name=(§a特拉比斯特-1 1E§r)
-tile.exoplanets.trap1e_dirt.name=(§a特拉比斯特-1 E§r) 泥土
-tile.exoplanets.trap1e_grass.name=(§a特拉比斯特-1 E§r) 奇怪的草
-tile.exoplanets.trap1e_stone.name=(§a特拉比斯特-1 E§r) 行星石
-tile.exoplanets.trap1c_dirt.name=(§9特拉比斯特-1 C§r) 泥土
-tile.exoplanets.trap1c_dirt_1.name=(§9特拉比斯特-1 C§r) 泥土
+tile.exoplanets.trap1c_top.name=§9特拉比斯特-1 C§r表层岩石
+tile.exoplanets.trap1c_dirt.name=§9特拉比斯特-1 C§r泥土
+tile.exoplanets.trap1c_dirt_1.name=§9特拉比斯特-1 C§r泥土
 
-tile.exoplanets.trap1_dark_hot.name=§c火山冷却块
+tile.exoplanets.trap1e_cobblestone.name=§a特拉比斯特-1 E§r圆石
+tile.exoplanets.trap1e_dirt.name=§a特拉比斯特-1 E§r泥土
+tile.exoplanets.trap1e_grass.name=§a特拉比斯特-1 E§r奇怪的草
+tile.exoplanets.trap1e_stone.name=§a特拉比斯特-1 E§r行星石头
+
+tile.exoplanets.trap1d_oceanfloor.name=§d特拉比斯特-1 D§r海底
+tile.exoplanets.trap1d_stone1.name=§d特拉比斯特-1 D§r石头
+tile.exoplanets.trap1d_stone2.name=§d特拉比斯特-1 D§r石头
+tile.exoplanets.trap1d_softstone.name=§d特拉比斯特-1 D§r软质石头
+tile.exoplanets.compressed_diamond.name=§d特拉比斯特-1 D§r压缩钻石
+tile.exoplanets.trap1d_wetgrass.name=§d特拉比斯特-1 D§r草
+tile.exoplanets.trap1d_wetdirt.name=§d特拉比斯特-1 D§r泥土
+
+tile.exoplanets.trap1_dark_hot.name=§c火山冷却岩
 tile.exoplanets.trap1_bright_solid_hot.name=§c火山熔岩块
 tile.exoplanets.trap1_solid_hot.name=§c火山灰表面
 
-tile.exoplanets.hydraulic_bottom.name=液压底托
-tile.exoplanets.hydraulic_middle.name=液压中梁
-tile.exoplanets.hydraulic_top.name=液压顶托
+tile.exoplanets.wolfb_cobblestone.name=§e沃夫1061b§r行星圆石
+tile.exoplanets.wolfb_stone.name=§e沃夫1061b§r行星石头
+
+tile.exoplanets.wolfc_cobblestone.name=§d沃夫1061c§r行星圆石
+tile.exoplanets.wolfc_stone.name=§d沃夫1061c§r行星石头
+
+tile.exoplanets.log_a.name=原木§a类型A
+tile.exoplanets.log_a_dark1.name=深色原木§a类型A
+tile.exoplanets.log_a_dark2.name=较深原木§a类型A
+tile.exoplanets.log_a_rough.name=粗糙原木§a类型A
+tile.exoplanets.log_b.name=原木§a类型B
+tile.exoplanets.log_b_other.name=深色原木§a类型B
+tile.exoplanets.log_b_rough.name=粗糙原木§a类型B
 
 tile.exoplanets.metal_diagonal.name=倾斜水平块
-tile.exoplanets.roof_stairs.name=斜屋顶
-
-tile.exoplanets.lever1.name=拉杆门控制器
-tile.exoplanets.lever2.name=按钮门控制器
-tile.exoplanets.lever3.name=远程门控制器
-
-tile.exoplanets.alarm_light.name=警报灯
-tile.exoplanets.alarm_light_lit.name=警报灯
-tile.exoplanets.wall_lamp.name=壁灯
-tile.exoplanets.wall_lamp_lit.name=壁灯
-tile.exoplanets.metal_lamp.name=金属块灯
-tile.exoplanets.metal_lamp_lit.name=金属灯座
-tile.exoplanets.cellar_lamp.name=地窖灯
-tile.exoplanets.cellar_lamp_lit.name=地窖灯
-tile.exoplanets.inset_lamp.name=嵌入式灯
-tile.exoplanets.inset_lamp_lit.name=嵌入式灯
+tile.exoplanets.roof_stairs.name=倾斜屋顶
 
 tile.exoplanets.alloyblock0.name=青铜块
 tile.exoplanets.alloyblock1.name=黄铜块
@@ -203,7 +208,7 @@ tile.exoplanets.metalblock9.name=锌块
 tile.exoplanets.alloyrefinery.name=合金精炼厂
 tile.exoplanets.metalfurnace.name=金属熔炉
 
-## ITEMS ## 2219-Aluminum Block
+## ITEMS ##
 item.exoplanets.alloydust0.name=青铜合金粉
 item.exoplanets.alloydust1.name=黄铜合金粉
 item.exoplanets.alloydust2.name=合金钢粉
@@ -261,7 +266,7 @@ item.exoplanets.gearzinc.name=锌齿轮
 item.exoplanets.sheetbronze.name=青铜合金板
 item.exoplanets.sheetbrass.name=黄铜合金板
 item.exoplanets.sheetsteel.name=合金钢板
-item.exoplanets.sheeta2219.name=2219-铝合金板
+item.exoplanets.sheeta2219.name=2219铝合金板
 
 item.exoplanets.gearbronze.name=青铜合金齿轮
 item.exoplanets.gearbrass.name=黄铜合金齿轮
@@ -270,13 +275,7 @@ item.exoplanets.geara2219.name=2219铝合金齿轮
 
 item.exoplanets.twopersonrocket.name=EXO1行星火箭
 
-
-## FLUIDS ##
-fluid.exoplanets.mantle.name=熔融地幔
-exoplanets.mantle=熔融地幔
-
 # JEI
-
 jei.exoplanets.recipe.alloy_refinery=合金精炼厂
-jei.exoplanets.desc.metal_furnace=需要更多燃料且矿石熔炼的速度减慢，但在原本矿物锭的基础上还会产生一些矿物粉。
-jei.exoplanets.desc.alloy_refinery=正在烧制
+jei.exoplanets.desc.metal_furnace=需要更多燃料且矿石烧炼的速度减慢，但在原本矿物锭的基础上会额外产出一些矿物粉。
+jei.exoplanets.desc.alloy_refinery=WIP
