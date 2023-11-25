@@ -108,7 +108,8 @@ jobs:
       # 由于Github的限制，这里需要重新拉取打包程序。
       - name: Restore Packer
         id: cache-restore
-        uses: actions/cache/restore@v3
+        # https://github.com/actions/cache/issues/1265#issuecomment-1819612829 `fail-on-cache-miss` for restore action not failing the workflow
+        uses: actions/cache/restore@v3.3.1
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('source/Packer/**') }}
           path: |
