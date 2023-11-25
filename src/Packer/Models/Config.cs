@@ -17,7 +17,6 @@ namespace Packer
 
         /// <summary>
         /// 打包的目标语言<br></br>
-        /// 为<c>1.20</c>准备，因为据说语言文件名要改
         /// </summary>
         [JsonPropertyName("targetLanguage")]
         public string[] TargetLanguages { get; set; }
@@ -52,8 +51,9 @@ namespace Packer
         public List<string> BypassedNamespace { get; set; }
 
         /// <summary>
-        /// 字符替换表，从外源加载
+        /// 字符替换表，版本限定
         /// </summary>
-        public Dictionary<string, string> CharatcerReplacement { get; set; } // 该项似乎无法通过 json 初始化
+        [JsonPropertyName("replacementMap")]
+        public Dictionary<string, string> CharatcerReplacement { get; set; }
     }
 }
