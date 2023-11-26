@@ -23,21 +23,14 @@ namespace Packer
                 throw new ArgumentNullException(nameof(version));
             }
 
-            var config = await Utils.RetrieveConfig(configPath: "./config/packer.json",
-                                                    mappingPath: "./config/fontmap.txt",
+            var config = await Utils.RetrieveConfig(configTemplate: "./config/packer/{0}.json",
                                                     version: version);
-
-            if (config is null)
-            {
-                throw new ArgumentException("无效的版本参数", nameof(version));
-            }
 
             // Packer输出的文件名，可以随时更改
             string packName = $"./Minecraft-Mod-Language-Package-{config.Version}.zip";
 
             Log.Information("开始对版本 {0} 的打包", config.Version);
 
-            Utils.CreateTimeStamp(config.Version);
             await using var stream = File.Create(packName);
             var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true);
             archive.Initialize(config);

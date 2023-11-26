@@ -1,5 +1,6 @@
 ﻿using Packer.Models;
 using Serilog;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -79,7 +80,7 @@ namespace Packer.Extensions
                                                                  Config config,
                                                                  ref Dictionary<string, string> unprocessed,
                                                                  Dictionary<string, JsonElement> parameters)
-            => FromImmediateDirectory(new DirectoryInfo(parameters["source"].GetString()), config, ref unprocessed, parameters);
+            => AggregateAssetFiles(new DirectoryInfo(parameters["source"].GetString()), config, ref unprocessed);
 
         static IEnumerable<TranslatedFile> FromPatches(DirectoryInfo assetDirectory,
                                                        Config config,
@@ -91,7 +92,6 @@ namespace Packer.Extensions
             var patchList = JsonSerializer.Deserialize<Dictionary<string, string>>(parameters["patches"]);
             foreach (var patch in patchList)
             {
-                //Log.Information("{0}", reference.Keys);
                 Log.Information("对文件 {0} 应用 {1} 处的 patch。", patch.Key, patch.Value);
                 reference.Remove(patch.Key, out var target);
                 var patchText = string.Join('\n', File.ReadAllLines(patch.Value)); // 不要问我为什么D-M-P默认换行是LF
@@ -132,7 +132,18 @@ namespace Packer.Extensions
                         Log.Information("跳过了标记为直接加入的命名空间：{0} -> {1}",
                                         relativePath.Split('/')[0],
                                         target);
+
+                        if (bypassed.ContainsValue(target)){
+                            Log.Warning("在未处理文件中检测到重复项。丢弃将要加入的新项");
+                            return null;
+                        }
                         bypassed.Add(file.FullName, target);
+                        return null;
+                    }
+
+                    // 跳过非中文文件
+                    if (!relativePath.IsTargetLang(config))
+                    {
                         return null;
                     }
 

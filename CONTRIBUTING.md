@@ -192,7 +192,7 @@ projects 文件夹下只标出的大版本号，其中的模组翻译文件应�
 
 ### Packer
 
-路径：[./config/packer.json](./config/packer.json)
+路径：`./config/packer/[version].json`（如1.12的文件在[1.12.2.json](./config/packer/1.12.2.json)）
 
 该文件内放置了**所有**正在维护的版本的打包配置。
 不要随意*删去*内容，除非你知道它为什么弃用。
@@ -204,6 +204,9 @@ projects 文件夹下只标出的大版本号，其中的模组翻译文件应�
 
 - 增加新翻译版本
   - 需要将所有项填写一遍，同时需要更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及 [CFPABot](https://github.com/Cyl18/CFPABot) 等相关服务。没有规划最好不要乱动。
+- 更改字符替换表
+  - 修改`replacementMap`，格式与已有文本一致。Unicode*基础多语种平面（BMP）*以外的字符需要使用**UTF-16代理对**输入，否则可能无法识别。
+  - 同时可能需要修改字体文件。
 - 处理非文本文件
   1. 如果该文件所在的文件夹与`lang`文件夹同级，且对**任何模组都**不会有文本文件（如font\），将该文件夹加入对应版本的`noProcessNamespace`中。
   2. 否则，将该模组的`CurseForge 项目名称`或`命名空间`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`，并将**所有**受影响的文件的相对位置加入`additionalContents`。

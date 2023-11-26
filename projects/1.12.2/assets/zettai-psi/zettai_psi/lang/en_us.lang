@@ -1,0 +1,186 @@
+# -- Additions
+stat.psi_cast=Casted Spells(Psi)
+
+# -- POTION EFFECTS
+potion.zettai_psi:magic_shielding=Magic Shielding
+potion.zettai_psi:magic_shielding.desc=Will block some attempts to teleport, and will decrease damage taken from Magic
+
+potion.zettai_psi:heating=Heating
+potion.zettai_psi:heating.desc=Will heat up slowly over time, if effect be not removed
+
+potion.zettai_psi:freezing=Freezing
+potion.zettai_psi:freezing.desc=Will freeze slowly over time, if effect be not removed
+
+potion.zettai_psi:slowfall=Slowfalling
+potion.zettai_psi:slowfall.desc=You'll slowly fall down
+
+# -- SELECTORS
+psi.spellpiece.selectorWandMode=Selector: Casting Mode
+psi.spellpiece.selectorWandMode.desc=Returns current Casting Mode
+
+psi.spellpiece.selectorVectorUp=Selector: Vector Up
+psi.spellpiece.selectorVectorUp.desc=Constructs Vector with Y = 1.0
+
+psi.spellpiece.selectorVectorDown=Selector: Vector Down
+psi.spellpiece.selectorVectorDown.desc=Constructs Vector with Y = -1.0
+
+psi.spellpiece.selectorNearbyMagic=Selector: Nearby Magic
+psi.spellpiece.selectorNearbyMagic.desc=Searches for Magic entities in given Radius
+
+psi.spellpiece.selectorNearbyUndeads=Selector: Nearby Undeads
+psi.spellpiece.selectorNearbyUndeads.desc=Searches for Undeads in given Radius
+
+# -- OPERATORS
+psi.spellpiece.operatorLimit=Operator: Limit
+psi.spellpiece.operatorLimit.desc=If given number is greater then limit - returns limit, else it returns number
+
+psi.spellpiece.operatorRangeLimit=Operator: Ranged Limit
+psi.spellpiece.operatorRangeLimit.desc=If given number is greater/lesser then +/-lim - returns +/-lim, else it returns number
+
+psi.spellpiece.operatorRangeRandom=Operator: Ranged Random
+psi.spellpiece.operatorRangeRandom.desc=Returns random number in given range inclusive
+
+psi.spellpiece.operatorVectorLimit=Operator: Vector Limit
+psi.spellpiece.operatorVectorLimit.desc=If Vector values are greater then limit, or value is lesser then -limit, then it sets this value to the limit/-limit
+
+psi.spellpiece.operatorBoolean=Operator: Boolean
+psi.spellpiece.operatorBoolean.desc=Converts given number into Boolean number
+
+psi.spellpiece.operatorInvertBoolean=Operator: Invert Boolean
+psi.spellpiece.operatorInvertBoolean.desc=If number is less then 0 - it returns 1, if it's bigger then 0, then it returns 1
+
+psi.spellpiece.operatorFindPotion=Operator: Find Effect
+psi.spellpiece.operatorFindPotion.desc=Scans entity to find is given/any Effect applied, and if yes - returns 1, else returns 0
+
+# -- TRICKS
+psi.spellpiece.trickApplyPotion=Trick: Apply Effect
+psi.spellpiece.trickApplyPotion.desc=Applies effect to given entity, but cost is doubled, and effect power is unstable, and can't be greater then 2
+
+psi.spellpiece.trickPlaySound=Trick: Conjure Sound
+psi.spellpiece.trickPlaySound.desc=Plays sound by asking it from World Core at the given position, but it's hard to translate the answer
+
+psi.spellpiece.trickEqual=Trick: Equality
+psi.spellpiece.trickEqual.desc=Checks is Value equals Boolean value, and if yes - stops cast!
+
+psi.spellpiece.trickNotEqual=Trick: Reverse Equality
+psi.spellpiece.trickNotEqual.desc=Checks is Value equals Boolean value, and if not - stops cast!
+
+psi.spellpiece.trickRangedEqual=Trick: Ranged Equality
+psi.spellpiece.trickRangedEqual.desc=Checks is Number equals Boolean value withing Range of values, and if yes - stops cast! (if Number not defined - it equals Min)
+
+psi.spellpiece.trickRangedNotEqual=Trick: Ranged Reverse Equality
+psi.spellpiece.trickRangedNotEqual.desc=Checks is Number equals Boolean value withing Range of values, and if not - stops cast! (if Number not defined - it equals Min)
+
+psi.spellpiece.trickMark=Trick: Mark
+psi.spellpiece.trickMark.desc=Marks given entity for given time(in seconds)
+
+psi.spellpiece.trickMassMark=Trick: Mass Mark
+psi.spellpiece.trickMassMark.desc=Marks given entities for given time(in seconds)
+
+psi.spellpiece.trickDetection=Trick: Detection
+psi.spellpiece.trickDetection.desc=Dissolves Invisibility of given entity if possible
+
+psi.spellpiece.trickMassDetection=Trick: Mass Detection
+psi.spellpiece.trickMassDetection.desc=Dissolves Invisibility if Entities are using it
+
+psi.spellpiece.trickMagicAttack=Trick: Magic Attack
+psi.spellpiece.trickMagicAttack.desc=Attacks entity with pure concentration of Psi energy
+
+psi.spellpiece.trickJumpEntity=Trick: Undead Jump Control
+psi.spellpiece.trickJumpEntity.desc=Will try to control Undead to make him Jump
+
+psi.spellpiece.trickMoveEntity=Trick: Undead Motion Control
+psi.spellpiece.trickMoveEntity.desc=Will try to control Undead motions
+
+psi.spellpiece.trickChooseEntity=Trick: Undead Target
+psi.spellpiece.trickChooseEntity.desc=Sets Undead target
+
+psi.spellpiece.trickCancelEntity=Trick: Cancel Undead Target
+psi.spellpiece.trickCancelEntity.desc=Cancels Undead Target, and if Target is given - cancels it only if Target == Undead Target
+
+psi.spellpiece.trickSwitchWandMode=Trick: Switch Mode
+psi.spellpiece.trickSwitchWandMode.desc=Switches Casting mode by adding +1 to it, up to max value, if Boolean is 1(by default is)
+
+psi.spellpiece.trickSatiety=Trick: Satiety
+psi.spellpiece.trickSatiety.desc=Satiates target body if possible, but with also adding debuff
+
+psi.spellpiece.trickShortTeleport=Trick: Short Teleport
+psi.spellpiece.trickShortTeleport.desc=Blinks target to following position
+
+psi.spellpiece.trickSummonZombie=Trick: Summon Zombie
+psi.spellpiece.trickSummonZombie.desc=Conjures Zombie out of Flesh in target slot
+
+psi.spellpiece.trickSummonSkeleton=Trick: Summon Skeleton
+psi.spellpiece.trickSummonSkeleton.desc=Conjures Skeleton out of Bone in target slot
+
+psi.spellpiece.trickHeal=Trick: Heal
+psi.spellpiece.trickHeal.desc=Heals target for set value of HP
+
+psi.spellpiece.trickStopLoopcast=Trick: Stop Loopcast
+psi.spellpiece.trickStopLoopcast.desc=Stops loopcast if value within range of 0 and 1, or, it's within range of value given(from -value to value)
+
+psi.spellpiece.trickTeleport=Trick: Teleport
+psi.spellpiece.trickTeleport.desc=Teleports entity to given position
+
+psi.spellpiece.trickMagicShielding=Trick: Magic Shielding
+psi.spellpiece.trickMagicShielding.desc=Applies magic shield on the body of target, that can defend from Magic Damage, and from Teleportation
+
+psi.spellpiece.trickNegateFall=Trick: Negate Fall
+psi.spellpiece.trickNegateFall.desc=Negates fall damage with Wind Disc under target, but only when applied
+
+psi.spellpiece.trickSlowfalling=Trick: Slowfalling
+psi.spellpiece.trickSlowfalling.desc=Slows down falling depending on Power given
+
+psi.spellpiece.trickConjureParticles=Trick: Conjure Particles
+psi.spellpiece.trickConjureParticles.desc=Conjures particles at the given position
+
+psi.spellpiece.trickPoison=Trick: Poison
+psi.spellpiece.trickPoison.desc=Poisons target while also attacking it
+
+psi.spellpiece.trickFreeze=Trick: Freeze
+psi.spellpiece.trickFreeze.desc=Freezes target and surrounding it entities
+
+psi.spellpiece.trickHeating=Trick: Heating
+psi.spellpiece.trickHeating.desc=Heat up target
+
+psi.spellpiece.trickLogComment=Trick: Log Comment
+psi.spellpiece.trickLogComment.desc=Sends information from the trick comment you've made to your, or your target brain
+
+psi.spellpiece.trickBreakArmor=Trick: Break Magical Armor
+psi.spellpiece.trickBreakArmor.desc=Causes magical armor to break, so Magic Shielding will be broken with Chance: 10% + (Power * 2)
+
+# COMPILER ERRORS
+zettai_psi.spellerror.negative_int=A Number Parameter that supposed to be not negative is negative
+
+# RUNTIME ERRORS
+zettai_psi.spellerror.potion_not_found=ERROR: Effect magical path is not exist
+zettai_psi.spellerror.sound_not_found=ERROR: Can't find this sound in Core
+zettai_psi.spellerror.color_limit=ERROR: Color can't be created!
+zettai_psi.spellerror.no_comment=ERROR: No Comment in the Trick!
+
+# SPELL PARAMETER NAMES
+zettai_psi.spellparam.potion=Path
+zettai_psi.spellparam.limit=Limit
+zettai_psi.spellparam.bool=Boolean
+zettai_psi.spellparam.pitch=Pitch
+zettai_psi.spellparam.volume=Volume
+zettai_psi.spellparam.sound=Id
+zettai_psi.spellparam.undead=Undead
+zettai_psi.spellparam.health=Health
+zettai_psi.spellparam.stop_loop=Stop Loop
+zettai_psi.spellparam.direction=Direction
+zettai_psi.spellparam.range=Range
+zettai_psi.spellparam.color=Color
+
+# PIECE GROUPS
+psi.piecegroup.alchemy_code=Alchemy Code
+psi.piecegroup.alchemy_code.desc=By manually controlling Magical Path of effect applied, we can affect entity with almost everything possible!<br><br>But, Magical Path can't be negative.. it can't handle different values, and after some point it's values end.<br><br>Effects produced by this method can't have power higher then 2, they just don't degrade else!
+
+psi.piecegroup.undead=Undead's Manipulation
+psi.piecegroup.undead.desc=By affecting Undead's with Psi, we can manipulate them.<br><br>Use Undead Motion Control to move one of them to where you want.<br><br>Also can use Rotten Flesh to conjure Zombie out of it, but it's still just Zombie, not your Minion.<br><br>Using the Selector: Nearby Undeads you can find all the undeads in Area fast enough.
+
+psi.piecegroup.elemental_arts_two=Elemental Arts 2
+psi.piecegroup.elemental_arts_two.desc=You can use Elemental energy created by Psi consolidation differently.<br><br>You can try this out with Trick: Magic Attack, which damages Entities with Magic, but, modifiers applied to that:<br> 1) Target health. <br>2)Is target Undead?<br>3)Do entity seen you?<br><br>Others elemental attacks also have different effects and small things, that you can discover only by experiments!
+
+psi.piecegroup.teleportation=Teleportation
+psi.piecegroup.teleportation.desc=True and hard Art - Teleportation... By creating magical shield using Psi, and converting space around target, we can get exact Teleportation to where we want to.. And with that we not limited by our own View like with Blinking
