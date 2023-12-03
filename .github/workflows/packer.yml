@@ -95,6 +95,7 @@ jobs:
     name: Pack Resources and Upload Artifacts/Releases
     needs: [ build-packer, initialize-release ] # 显然，需要存在打包程序，才能打包。
     strategy:
+      fail-fast: false # 把正常的文件先打包了，避免一处错误阻塞整个仓库。
       matrix:
         # 版本列表。将对这里的每个版本判断，按需打包。
         # 如需添加新版本，在这里添加即可。

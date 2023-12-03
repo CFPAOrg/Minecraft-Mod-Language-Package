@@ -46,6 +46,7 @@ jobs:
     name: Pack Resources and Upload Artifacts
     needs: build # 显然，需要存在缓存/已经构造，才能打包。
     strategy:
+      fail-fast: false # 某版本失败其实不影响其他版本。
       matrix:
         # 支持版本列表。将对这里的每个版本判断，按需打包。
         # 如需添加新版本，在这里添加即可。

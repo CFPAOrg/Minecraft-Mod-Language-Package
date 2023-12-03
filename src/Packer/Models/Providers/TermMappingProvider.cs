@@ -236,7 +236,7 @@ namespace Packer.Models.Providers
 
             foreach (var line in content.AsSpan().EnumerateLines())
             {
-                if (isLineContinuation) // 行尾转义符，用于换行
+                if (isLineContinuation) // 行尾转义符，用于换行；在PARSE_ESCAPE下使用
                 {
                     if (line.EndsWith("\\"))
                     {
@@ -251,6 +251,7 @@ namespace Packer.Models.Providers
                     continue;
                 }
 
+                // PARSE_ESCAPES支持
                 if (!isParseEscape && line.Equals("#PARSE_ESCAPES", StringComparison.Ordinal))
                 {
                     isParseEscape = true;
@@ -265,7 +266,7 @@ namespace Packer.Models.Providers
                     continue;
                 }
 
-                if (line.StartsWith("//") | line.StartsWith("#") | line.StartsWith("<"))
+                if (line.StartsWith("//") || line.StartsWith("#") || line.StartsWith("<"))
                     continue;
 
                 if (line.StartsWith("/*"))
@@ -275,6 +276,11 @@ namespace Packer.Models.Providers
                 }
 
                 if (line.IsEmpty || line.IsWhiteSpace()) // 空行需去
+                    continue;
+
+                // 1.12/assets/chinjufumod
+                // https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/3875#issuecomment-1826453830
+                if (line.Equals("{", StringComparison.Ordinal) || line.Equals("}", StringComparison.Ordinal))
                     continue;
 
                 // 基础条目
