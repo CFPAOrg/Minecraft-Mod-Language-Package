@@ -91,7 +91,7 @@ jobs:
 
       - name: Run Packer for ${{ matrix.version }}
         # 部分包原则：Packer和配置均没有改动
-        run: ./Packer --version="${{ matrix.version }}" --increment=${{ !steps.check-critical-changes.outputs.changed }}
+        run: ./Packer --version="${{ matrix.version }}" --increment=${{ steps.check-critical-changes.outputs.changed == 'false' }}
         # 运行逻辑：内容有更改 或 手动运行
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
 
