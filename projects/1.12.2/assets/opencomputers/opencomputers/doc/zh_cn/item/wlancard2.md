@@ -1,1 +1,0 @@
-#REDIRECT wlanCard1.md
