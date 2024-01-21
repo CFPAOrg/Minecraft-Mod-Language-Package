@@ -9,7 +9,9 @@ navigation:
 
 有人可能会问：“如何在库存中维持一定数量的物品，并在缺少时自动补足？”
 
-解决方案之一便是使用<ItemLink id="export_bus" />、<ItemLink id="level_emitter" />，以及<ItemLink id="crafting_card" />来自动向网络的[自动合成](../ae2-mechanics/autocrafting.md)系统发送请求。这种设施更适用于维持大量单种物品。
+解决方案之一便是使用<ItemLink id="export_bus" />、<ItemLink id="level_emitter" />，以及<ItemLink id="crafting_card" />以自动向网络的[自动合成](../ae2-mechanics/autocrafting.md)系统发送请求。这种设施更适用于维持大量单种物品。
+
+也可以令网络持续合成，省略标准发信器和红石卡即可。
 
 <GameScene zoom="6" interactive={true}>
   <ImportStructure src="../assets/assemblies/level_emitter_autostocking.snbt" />

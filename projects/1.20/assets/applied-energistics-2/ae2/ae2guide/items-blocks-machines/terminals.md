@@ -45,6 +45,10 @@ item_ids:
 
 <a name="terminal-ui"></a>
 
+# 终端搜索
+
+搜索框接受正则表达式，因此可以输入“gtceu:.*ore”以搜索所有Gregtech的矿石。正则表达式的学习则留给读者作为练习。
+
 # 终端
 
 <GameScene zoom="6" background="transparent">

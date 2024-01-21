@@ -61,7 +61,7 @@ navigation:
 
 ## 福鲁伊克斯简述
 
-另一种所需材料是福鲁伊克斯，你应该已经在制造晶体催生器的过程中见过它了。将充能赛特斯石英水晶、红石、下界石英投入水中就能制成福鲁伊克斯。这一流程的自动化则“留给读者作为习题”。
+另一种所需材料是福鲁伊克斯，你应该已经在制造晶体催生器的过程中见过它了。将充能赛特斯石英水晶、红石、下界石英投入水中就能制成福鲁伊克斯。这一流程的自动化则“[留给读者作为习题](example-setups/processor-automation.md)”。
 
 <ItemLink id="charger" />则是生产<ItemLink id="charged_certus_quartz_crystal" />的必备之物。若还未制造还请尽快。
 
@@ -99,7 +99,7 @@ navigation:
 
 <ItemLink id="chest" />会在放入元件后立刻显示其存储内容，可向其中放入或从中取出物品，和<ItemLink id="minecraft:chest" />类似。两者的区别在于，物品实际存储于存储元件，而非<ItemLink id="chest" />本身。
 
-<ItemLink id="chest" />不失为引入ME概念的好方式，但真正运用还需要搭建一个[ME网络](ae2-mechanics/me-network-connections.md)。
+<ItemLink id="chest" />的用途相对不稳定且有局限，真正使用AE2还需要搭建一个[ME网络](ae2-mechanics/me-network-connections.md)。
 
 ## 你的第一个ME系统
 

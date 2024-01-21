@@ -2,7 +2,7 @@
 navigation:
   parent: example-setups/example-setups-index.md
   title: 处理器自动化
-  icon: inscriber
+  icon: logic_processor
 ---
 
 # 自动化生产处理器
@@ -18,6 +18,12 @@ navigation:
 需注意，此设施使用了<ItemLink id="pattern_provider" />，也即需与你的[自动合成](../ae2-mechanics/autocrafting.md)设施配合使用。如需独立自动化处理器，则应将样板供应器换为木桶，并将材料直接放入上方的木桶中。
 
 此设计也能在之前的AE2版本中使用，因为就算<ItemLink id="inscriber" />对面敏感，管道子网络仍能对正确的面输入或输出。
+
+## 样板编码的教训
+
+通常情况下，所需的[样板](../items-blocks-machines/patterns.md)和**JEI中所见的**，或是按下+按钮时输出的配方**对不上**。在本节的情况中，JEI会输出2个样板，其一是制造电路板，其二是最终的组装步骤，且第一个样板会包含一个[压印模板](../items-blocks-machines/presses.md)。很明显不是我们需要的，它不符合设施的功能。我们需要的是1个样板，输入原材料然后输出压印好的处理器。而压印模板已经在压印器中，样板不应当包含它。
+
+---
 
 <GameScene zoom="4" interactive={true}>
   <ImportStructure src="../assets/assemblies/processor_automation.snbt" />
@@ -137,6 +143,7 @@ navigation:
 ## 配置
 
 * <ItemLink id="pattern_provider" />（1）处于默认配置，装有相应<ItemLink id="processing_pattern" />。
+  注意此类样板需直接从原材料加工为完整的处理器，且**不应**包含[压印模板](../items-blocks-machines/presses.md)。
 
   ![逻辑样板](../assets/diagrams/logic_pattern.png)
   ![计算样板](../assets/diagrams/calculation_pattern.png)

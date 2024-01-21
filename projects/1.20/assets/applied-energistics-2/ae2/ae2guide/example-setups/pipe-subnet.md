@@ -143,7 +143,7 @@ navigation:
   </BoxAnnotation>
 
 <BoxAnnotation color="#dddddd" min="0 1 2" max="1 1.3 3">
-        存储总线
+        接口
   </BoxAnnotation>
 
 <IsometricCamera yaw="195" pitch="30" />

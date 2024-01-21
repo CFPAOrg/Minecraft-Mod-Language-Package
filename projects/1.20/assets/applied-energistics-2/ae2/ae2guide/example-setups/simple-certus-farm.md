@@ -25,7 +25,7 @@ navigation:
   </BoxAnnotation>
 
   <BoxAnnotation color="#dddddd" min="3 1 .7" max="2 2 1">
-        （3）存储总线#2：过滤赛特斯石英水晶。优先度高于主网络存储。
+        （3）存储总线#2：过滤赛特斯石英水晶。优先级高于主网络存储。
         <ItemImage id="certus_quartz_crystal" scale="2" />
   </BoxAnnotation>
 
@@ -40,7 +40,7 @@ navigation:
 
 * 第一个<ItemLink id="annihilation_plane" />（1）没有GUI且无法配置，但可附有时运。
 * 第一个<ItemLink id="storage_bus" />（2）设置为过滤<ItemLink id="certus_quartz_crystal" />。
-* 第二个<ItemLink id="storage_bus" />（3）设置为过滤<ItemLink id="certus_quartz_crystal" />，且[优先度](../ae2-mechanics/import-export-storage.md#storage-priority)高于主网络存储。
+* 第二个<ItemLink id="storage_bus" />（3）设置为过滤<ItemLink id="certus_quartz_crystal" />，且[优先级](../ae2-mechanics/import-export-storage.md#storage-priority)高于主网络存储。
 
 ## 工作原理
 

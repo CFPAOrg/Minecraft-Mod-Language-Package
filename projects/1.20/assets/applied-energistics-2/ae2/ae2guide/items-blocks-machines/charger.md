@@ -22,7 +22,7 @@ item_ids:
 
 在顶面或底面放置<ItemLink id="crank" />并右击手摇即可手工充能物品。
 
-它也是AE2村民的工作站。
+它也是[福鲁伊克斯研究员](fluix_researcher.md)的工作站点。
 
 ## 简单自动化
 

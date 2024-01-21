@@ -40,6 +40,12 @@ navigation:
 
 5.  如果该合成过程是请求内另一合成过程的前置，则产物会存入该CPU并供后续使用。
 
+## 递归配方
+
+<ItemImage id="minecraft:netherite_upgrade_smithing_template" scale="4" />
+
+自动合成算法*无法*处理的事情之一是递归配方。例如，将红石投入Botania魔力池所致的，类似“1x 红石粉 = 2x 红石粉”的复制配方。又例如原版的锻造模板。不过，确实[有方法处理这些配方](../example-setups/recursive-crafting-setup.md)。
+
 # 样板
 
 <ItemImage id="crafting_pattern" scale="4" />
@@ -80,7 +86,7 @@ navigation:
 合成CPU的构成如下：
 
 *   （必需）[合成存储器](../items-blocks-machines/crafting_cpu_multiblock.md)，支持所有标准元件大小（1k、4k、16k、64k、256k）。它们会将与合成相关的材料和中间材料存于自身，因此处理所需材料更多的合成任务需要更大的或更多个合成存储器。
-*   （可选）<ItemLink id="crafting_accelerator" />，它们能让系统从单个样板供应器发送更多批材料。例如，这将会使样板供应器同时将材料送至相邻的六个装配室，而非一次一个。
+*   （可选）<ItemLink id="crafting_accelerator" />，它们能让系统从单个样板供应器更迅速地发送材料批次。例如，这将会使样板供应器同时将材料送至相邻的六个装配室，而非一次一个。
 *   （可选）<ItemLink id="crafting_monitor" />，它们会显示CPU当前正在处理的任务。可用<ItemLink id="color_applicator" />染色。
 *   （可选）<ItemLink id="crafting_unit" />，它们仅用于填上空隙以使得CPU的形状为长方体。
 

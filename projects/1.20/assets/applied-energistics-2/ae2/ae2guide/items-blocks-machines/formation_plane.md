@@ -18,9 +18,21 @@ item_ids:
 
 成型面板能放置方块和投出物品。它会在[设备](../ae2-mechanics/devices.md)（如<ItemLink id="import_bus" />何<ItemLink id="interface" />）将物品存入[网络存储](../ae2-mechanics/import-export-storage.md)时放置或投出它们，与仅存入的<ItemLink id="storage_bus" />工作方式类似。
 
-<GameScene zoom="6" interactive={true}>
+<GameScene zoom="8" interactive={true}>
   <ImportStructure src="../assets/assemblies/formation_plane_demonstration.snbt" />
   <IsometricCamera yaw="255" pitch="30" />
+</GameScene>
+
+注意，这些设备在[管道子网络](../example-setups/pipe-subnet.md)中类似输入总线 -> 存储总线和接口 -> 存储总线。
+
+<GameScene zoom="6" interactive={true}>
+  <ImportStructure src="../assets/assemblies/import_storage_pipe.snbt" />
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+<GameScene zoom="6" interactive={true}>
+  <ImportStructure src="../assets/assemblies/interface_storage_pipe.snbt" />
+  <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
 
 在[管道子网络](../example-setups/pipe-subnet.md)等设施中，此[设备](../ae2-mechanics/devices.md)的行为方式类似存储总线；如果需要放置方块或投出物品而非传输的话，也能替代存储总线。
