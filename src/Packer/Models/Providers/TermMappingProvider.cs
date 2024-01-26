@@ -286,6 +286,9 @@ namespace Packer.Models.Providers
                 // 基础条目
                 var splitPosition = line.IndexOf('=');
 
+                // https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/3272/files#r1461545452
+                if (splitPosition == -1) continue;
+
                 var key = line[..splitPosition];
                 var value = splitPosition + 1 < line.Length
                     ? line[(splitPosition + 1)..]
