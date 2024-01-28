@@ -6,4 +6,4 @@
 
 你可以手持此卡并潜行使用，来将它与你绑定或解绑，绑定后`runCommand`函数会使用你的权限等级，不使用OC模组默认的权限等级。
 
-调试卡也可以像[连接卡](linkedCard.md)一样接收信息，接收后会触发`debug_message`事件。你可以通过调用其他调式卡的`sendDebugMessage`方法，或者执行Minecraft命令`/oc_sendDebugMessage`（或`/oc_sdbg`）发送此类信息。
+调试卡也可以像[连接卡](linkedCard.md)一样接收报文，接收后会触发`debug_message`事件。你可以通过调用其他调式卡的`sendDebugMessage`方法，或者执行Minecraft命令`/oc_sendDebugMessage`（或`/oc_sdbg`）发送此类报文。
