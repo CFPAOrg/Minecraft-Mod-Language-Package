@@ -36,12 +36,12 @@ navigation:
   </BoxAnnotation>
 
 <BoxAnnotation color="#dddddd" min="4.05 1.05 0.8" max="4.95 1.95 1">
-        （4）成型面板：以反相卡黑名单铁桶。
+        （4）成型面板：以反相卡为铁桶设置黑名单。
         <Row><ItemImage id="minecraft:bucket" scale="2" /><ItemImage id="inverter_card" scale="2" /></Row>
   </BoxAnnotation>
 
 <BoxAnnotation color="#dddddd" min="3.2 2 1.2" max="3.8 2.2 1.8">
-        （5）输入总线：以反相卡黑名单铁桶。
+        （5）输入总线：以反相卡为铁桶设置黑名单。
         <Row><ItemImage id="minecraft:bucket" scale="2" /><ItemImage id="inverter_card" scale="2" /></Row>
   </BoxAnnotation>
 
@@ -65,9 +65,9 @@ navigation:
 
 * <ItemLink id="interface" />（2）处于默认配置。
 * 第一个<ItemLink id="storage_bus" />（3）处于默认配置。
-* <ItemLink id="formation_plane" />（4）以反相卡黑名单铁桶。
+* <ItemLink id="formation_plane" />（4）以反相卡为铁桶设置黑名单。
   <Row><ItemImage id="minecraft:bucket" scale="2" /><ItemImage id="inverter_card" scale="2" /></Row>
-* <ItemLink id="import_bus" />（5）以反相卡黑名单铁桶。
+* <ItemLink id="import_bus" />（5）以反相卡为铁桶设置黑名单。
   <Row><ItemImage id="minecraft:bucket" scale="2" /><ItemImage id="inverter_card" scale="2" /></Row>
 * 第二个<ItemLink id="storage_bus" />（6）处于默认配置。
 

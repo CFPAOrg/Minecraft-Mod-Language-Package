@@ -10,7 +10,7 @@ navigation:
 
 不幸的是，[简单赛特斯石英农场](simple-certus-farm.md)需要<ItemLink id="flawless_budding_quartz" />才能完全自动化。而这又需要[空间IO](../ae2-mechanics/spatial-io.md)或是直接在[陨石](../ae2-mechanics/meteorites.md)处搭建农场。
 
-不过，AE2能够放置和破坏方块，所以它也许有那么一些可能能让农场*帮你替换赛特斯石英母岩*。（你仍需要周期性往输入木桶中放<ItemLink id="flawed_budding_quartz" />，并从枯竭母岩木桶中取出<ItemLink id="quartz_block" />）
+不过，AE2能够放置和破坏方块，所以它也许有那么一些可能能让农场*帮你替换赛特斯石英母岩*。（你仍需要周期性往输入木桶中放<ItemLink id="flawed_budding_quartz" />，并从枯竭母岩木桶中取出<ItemLink id="quartz_block" />。）
 
 此设施的完全自动化参见[进阶赛特斯石英农场](advanced-certus-farm.md)。
 

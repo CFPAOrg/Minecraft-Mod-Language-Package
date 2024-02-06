@@ -9,9 +9,9 @@ navigation:
 
 如[自动合成](../ae2-mechanics/autocrafting.md)中所说，自动合成规划算法无法处理首要输出同时是输入的配方。例如，它无法处理复制<ItemLink id="minecraft:netherite_upgrade_smithing_template" />的配方。
 
-解决方案之一便是使用<ItemLink id="level_emitter" />伪装成[样板](../items-blocks-machines/patterns.md)的能力。
+解决方案之一便是将<ItemLink id="level_emitter" />用作[样板](../items-blocks-machines/patterns.md)。
 
-然后用标准发信器启动一个持续合成的小设施即可。本节我们主要聚焦于复制<ItemLink id="minecraft:netherite_upgrade_smithing_template" />的设施。
+此后，便可以运用该标准发信器，启动一个持续合成的小设施即可。本节我们主要以复制<ItemLink id="minecraft:netherite_upgrade_smithing_template" />的设施为例。
 
 <RecipeFor id="minecraft:netherite_upgrade_smithing_template" />
 

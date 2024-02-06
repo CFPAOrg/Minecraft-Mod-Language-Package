@@ -23,11 +23,11 @@ navigation:
     <BoxAnnotation color="#dddddd" min="3.9 0 9.9" max="5.1 3 12.1" thickness="0.05">
         一些机器，附带一个管道子网络以将产物送入供应器。
     <BoxAnnotation color="#33dd33" min="13 10 12" max="14 11 14" thickness="0.05">
-        你其实不需要那么大的控制器，你在其他人基地里看到的那些庞大的环状和立方体状的设计，主要还是为了好看。
+        你其实不需要那么大的控制器；你在其他人基地里看到的那些庞大的环状和立方体状的设计，主要还是为了好看。
     </BoxAnnotation>
 
     <BoxAnnotation color="#dddddd" min="-0.1 0 8.9" max="1.1 3 13.1" thickness="0.05">
-      一些终端和实用设施。（大概只用合成终端比较合适，而不是普通终端_和_合成终端一起用）
+      一些终端和实用设施。（大概只用合成终端比较合适，而不是普通终端_和_合成终端一起用。）
     <BoxAnnotation color="#33dd33" min="13 12 13" max="14 13 14" thickness="0.05">
         能量单元是好网络的标配，它能提升每游戏刻的能量输入，还能减少能量波动的影响。
     </BoxAnnotation>

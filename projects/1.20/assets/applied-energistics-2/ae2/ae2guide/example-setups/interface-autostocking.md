@@ -39,5 +39,5 @@ navigation:
 
 ## 工作原理
 
-1. 若<ItemLink id="interface" />无法从[网络存储](../ae2-mechanics/import-export-storage.md)中获得足量所配置的物品，（且其装有<ItemLink id="crafting_card" />），则其会向网络的[自动合成](../ae2-mechanics/autocrafting.md)系统发送合成该物品的请求。
+1. 若<ItemLink id="interface" />无法从[网络存储](../ae2-mechanics/import-export-storage.md)中获得足量所配置的物品（且其装有<ItemLink id="crafting_card" />），则其会向网络的[自动合成](../ae2-mechanics/autocrafting.md)系统发送合成该物品的请求。
 2. <ItemLink id="storage_bus" />允许网络访问接口的内容物。
