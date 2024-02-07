@@ -21,7 +21,7 @@ navigation:
 自动合成设施由3部分组成：
 - 发送合成请求的事物
 - 合成CPU
-- <ItemLink id="pattern_provider" />。
+- <ItemLink id="pattern_provider" />
 
 具体过程如下：
 
@@ -85,10 +85,10 @@ navigation:
 
 合成CPU的构成如下：
 
-*   （必需）[合成存储器](../items-blocks-machines/crafting_cpu_multiblock.md)，支持所有标准元件大小（1k、4k、16k、64k、256k）。它们会将与合成相关的材料和中间材料存于自身，因此处理所需材料更多的合成任务需要更大的或更多个合成存储器。
-*   （可选）<ItemLink id="crafting_accelerator" />，它们能让系统从单个样板供应器更迅速地发送材料批次。例如，这将会使样板供应器同时将材料送至相邻的六个装配室，而非一次一个。
-*   （可选）<ItemLink id="crafting_monitor" />，它们会显示CPU当前正在处理的任务。可用<ItemLink id="color_applicator" />染色。
-*   （可选）<ItemLink id="crafting_unit" />，它们仅用于填上空隙以使得CPU的形状为长方体。
+*   （必需）[合成存储器](../items-blocks-machines/crafting_cpu_multiblock.md)，支持所有标准元件大小（1k、4k、16k、64k、256k）；它们会将与合成相关的材料和中间材料存于自身，因此处理所需材料更多的合成任务需要更大的或更多个合成存储器
+*   （可选）<ItemLink id="crafting_accelerator" />，它们能让系统从单个样板供应器更迅速地发送材料批次；例如，这将会使样板供应器同时将材料送至相邻的六个装配室，而非一次一个
+*   （可选）<ItemLink id="crafting_monitor" />，它们会显示CPU当前正在处理的任务；可用<ItemLink id="color_applicator" />染色
+*   （可选）<ItemLink id="crafting_unit" />，它们仅用于填上空隙以使得CPU的形状为长方体
 
 每个合成CPU能处理1个合成请求或任务，因此如果需要同时合成运算处理器和256个平滑石头，就需要有2个CPU多方块结构。
 
@@ -134,9 +134,9 @@ navigation:
 
 样板供应器有多种模式：
 
-*   **阻挡模式**能在机器中已有材料时阻止供应器输出新批次。
-*   **锁定合成**能在多种红石信号状况下锁定供应器，也可在前一批材料的合成产物未返回该供应器前将其锁定。
-*   供应器可在<ItemLink id="pattern_access_terminal" />上显示或隐藏。
+*   **阻挡模式**能在机器中已有材料时阻止供应器输出新批次
+*   **锁定合成**能在多种红石信号状况下锁定供应器，也可在前一批材料的合成产物未返回该供应器前将其锁定
+*   供应器可在<ItemLink id="pattern_access_terminal" />上显示或隐藏
 
 ## 优先级
 

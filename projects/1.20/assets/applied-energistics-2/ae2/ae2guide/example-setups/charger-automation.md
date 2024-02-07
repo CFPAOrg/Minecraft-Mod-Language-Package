@@ -37,7 +37,7 @@ navigation:
 
 ## 配置
 
-* The <ItemLink id="pattern_provider" />（1）处于默认配置并装有相应<ItemLink id="processing_pattern" />。其也同时为<ItemLink id="charger" />提供[能量](../ae2-mechanics/energy.md)，类似[线缆](../items-blocks-machines/cables.md)。
+* <ItemLink id="pattern_provider" />（1）处于默认配置并装有相应<ItemLink id="processing_pattern" />。其也同时为<ItemLink id="charger" />提供[能量](../ae2-mechanics/energy.md)，类似[线缆](../items-blocks-machines/cables.md)。
   
     ![充能器样板](../assets/diagrams/charger_pattern.png)
 

@@ -28,8 +28,8 @@ item_ids:
 
 谐振仓支持如下[升级](upgrade_cards.md)：
 
-*   每张<ItemLink id="energy_card" />会将谐振仓的效率+50%，最大+150%，也即基础效率的250%。
-*   每张<ItemLink id="speed_card" />会将谐振仓的燃烧速率+50%，最大+150%，也即基础能量输出的250%。
+*   每张<ItemLink id="energy_card" />会将谐振仓的效率+50%，最大+150%，也即基础效率的250%
+*   每张<ItemLink id="speed_card" />会将谐振仓的燃烧速率+50%，最大+150%，也即基础能量输出的250%
 
 ## 配置
 

@@ -10,7 +10,7 @@ navigation:
 
 AE2中的一个重要概念便是网络存储，也即网络内容存储的地方，通常会是[存储元件](../items-blocks-machines/storage_cells.md)或连接于<ItemLink id="storage_bus" />的容器。大部分AE2[设备](../ae2-mechanics/devices.md)都会与之以某种方式交互。
 
-例如，
+例如：
 
 *   <ItemLink id="import_bus" />将事物向网络存储输入
 *   <ItemLink id="export_bus" />将事物从网络存储输出

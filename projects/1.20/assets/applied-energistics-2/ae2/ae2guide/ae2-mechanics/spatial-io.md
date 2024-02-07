@@ -36,9 +36,9 @@ navigation:
 
 <ItemLink id="spatial_io_port" />控制空间IO的运作。它能显示多方块设施的数据，也是放置[空间元件](../items-blocks-machines/spatial_cells.md)的地方。
 
-其能显示
+其能显示：
 - 网络中已存储的[能量](energy.md)和能量容量上限
-- 执行操作所需的能量。可能会很大且会瞬时消耗，需确保有足够的[能源元件](../items-blocks-machines/energy_cells.md)
+- 执行操作所需的能量；可能会很大且会瞬时消耗，需确保有足够的[能源元件](../items-blocks-machines/energy_cells.md)
 - 空间塔阵列的效率
 - 所定义区域的尺寸
 
