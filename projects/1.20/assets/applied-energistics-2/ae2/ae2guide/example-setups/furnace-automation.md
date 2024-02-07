@@ -34,7 +34,7 @@ navigation:
   </BoxAnnotation>
 
 <BoxAnnotation color="#dddddd" min="0 2 0" max="1 2.3 1">
-        （4）存储总线#2：以反相卡为煤炭黑名单。
+        （4）存储总线#2：通过反相卡设置为排除煤炭。
         <Row><ItemImage id="minecraft:coal" scale="2" /><ItemImage id="inverter_card" scale="2" /></Row>
   </BoxAnnotation>
 
@@ -53,7 +53,7 @@ navigation:
 
 * <ItemLink id="interface" />（2）处于默认配置。
 * 第一个<ItemLink id="storage_bus" />（3）设置为过滤煤炭或其他燃料。
-* 第二个<ItemLink id="storage_bus" />（4）以<ItemLink id="inverter_card" />为所用燃料设置黑名单。
+* 第二个<ItemLink id="storage_bus" />（4）以<ItemLink id="inverter_card" />通过反相卡设置为排除所用燃料。
 
 ## 工作原理
 

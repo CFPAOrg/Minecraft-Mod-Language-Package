@@ -50,7 +50,7 @@ item_ids:
   </BoxAnnotation>
 
 <BoxAnnotation color="#dddddd" min="0 2 0" max="1 2.3 1">
-        （4）存储总线#2：以反相卡为煤炭黑名单。
+        （4）存储总线#2：通过反相卡设置为排除煤炭。
         <Row><ItemImage id="minecraft:coal" scale="2" /><ItemImage id="inverter_card" scale="2" /></Row>
   </BoxAnnotation>
 
