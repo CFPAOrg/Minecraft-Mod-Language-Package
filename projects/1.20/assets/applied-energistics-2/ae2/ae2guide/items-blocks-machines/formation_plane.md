@@ -16,7 +16,7 @@ item_ids:
   <ImportStructure src="../assets/blocks/formation_plane.snbt" />
 </GameScene>
 
-成型面板能放置方块和投出物品。它会在[设备](../ae2-mechanics/devices.md)（如<ItemLink id="import_bus" />何<ItemLink id="interface" />）将物品存入[网络存储](../ae2-mechanics/import-export-storage.md)时放置或投出它们，与仅存入的<ItemLink id="storage_bus" />工作方式类似。
+成型面板能放置方块和投出物品。它会在[设备](../ae2-mechanics/devices.md)（如<ItemLink id="import_bus" />和<ItemLink id="interface" />）将物品存入[网络存储](../ae2-mechanics/import-export-storage.md)时放置或投出它们，与仅存入的<ItemLink id="storage_bus" />工作方式类似。
 
 <GameScene zoom="8" interactive={true}>
   <ImportStructure src="../assets/assemblies/formation_plane_demonstration.snbt" />

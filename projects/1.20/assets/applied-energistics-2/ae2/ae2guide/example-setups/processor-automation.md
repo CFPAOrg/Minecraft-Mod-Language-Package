@@ -9,7 +9,7 @@ navigation:
 
 自动化[处理器](../items-blocks-machines/processors.md)有多种方式，如下是其一。
 
-此通用设计也可用任意种类的物流管道或导管或管道或其他不同称呼的到同类事物完成，仅要求这些管道能设置过滤。
+此通用设计也可用任意种类的物流管道、导管、管道或其他不同称呼的同类事物完成，仅要求这些管道能设置过滤。
 
 ![流程图](../assets/diagrams/processor_flow_diagram.png)
 
