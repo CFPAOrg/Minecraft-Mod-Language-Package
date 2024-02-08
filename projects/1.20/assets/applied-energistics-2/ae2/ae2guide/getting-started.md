@@ -19,7 +19,7 @@ navigation:
 应用能源2开始于寻找[陨石](ae2-mechanics/meteorites.md)。陨石比较常见，且通常会在地形上留下巨大的坑洞，所以你可能已经在旅程中撞见过了。
 如果还没有遇到过，可以合成一个<ItemLink id="meteorite_compass" />，它会指向最近的<ItemLink id="mysterious_cube" />。
 
-发现陨石后便要向其中心挖掘。在那里能找到赛特斯石英簇、赛特斯石英芽、各种类型的[赛特斯石英母岩](items-blocks-machines/budding_certus.md)，以及一个神秘方块
+发现陨石后便要向其中心挖掘。在那里能找到赛特斯石英簇、赛特斯石英芽、各种类型的[赛特斯石英母岩](items-blocks-machines/budding_certus.md)，以及一个神秘方块。
 
 挖下所有找到的赛特斯石英簇和赛特斯石英块。也可以采集赛特斯石英母岩，但在没有精准采集时会降一级。
 
