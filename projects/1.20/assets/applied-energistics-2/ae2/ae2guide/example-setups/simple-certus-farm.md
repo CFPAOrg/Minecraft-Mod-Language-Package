@@ -46,4 +46,4 @@ navigation:
 
 1. <ItemLink id="annihilation_plane" />尝试破坏其前方的事物，但由于子网络中存储位置仅有过滤<ItemLink id="certus_quartz_crystal" />的<ItemLink id="storage_bus" />，其只会破坏<ItemLink id="quartz_cluster" />。
 2. 第一个<ItemLink id="storage_bus" />将赛特斯石英水晶存入木桶。
-3. 第二个<ItemLink id="storage_bus" />使得主网络能够访问木桶中赛特斯石英水晶。其[优先级](../ae2-mechanics/import-export-storage.md#storage-priority)较高，因此赛特斯石英水晶会有些存入木桶而非主网络存储。
+3. 第二个<ItemLink id="storage_bus" />使得主网络能够访问木桶中赛特斯石英水晶。其[优先级](../ae2-mechanics/import-export-storage.md#storage-priority)较高，因此赛特斯石英水晶会优先存入木桶而非主网络存储。
