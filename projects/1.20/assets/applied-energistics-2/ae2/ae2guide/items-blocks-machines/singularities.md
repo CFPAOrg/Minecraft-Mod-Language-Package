@@ -23,7 +23,7 @@ item_ids:
 
 <ItemImage id="quantum_entangled_singularity" scale="4" />
 
-在两个[量子网桥](quantum_bridge.md)间建立连接的必需品，制造时必然成对产出。在需连接的量子网桥中<ItemLink id="quantum_link" />放入一对量子缠绕态奇点之一即可
+在两个[量子网桥](quantum_bridge.md)间建立连接的必需品，制造时必然成对产出。在需连接的量子网桥中<ItemLink id="quantum_link" />放入一对量子缠绕态奇点之一即可。
 
 在<ItemLink id="minecraft:ender_pearl" />或<ItemLink id="ender_dust" />和<ItemLink id="singularity" />间触发反应即可合成量子缠绕态奇点。任何爆炸力都应能触发反应。
 
