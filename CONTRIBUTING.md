@@ -60,14 +60,18 @@ Minecraft-Mod-Language-Package
 
 **CurseForge 项目名称**：以匠魂为例，它的 CurseForge 页面地址是 `https://www.curseforge.com/minecraft/mc-mods/tinkers-construct`，则 `CurseForge 项目名称` 为 `tinkers-construct`。因为它是唯一的，被用来追溯模组来源。
 
-**命名空间（Namespace）**：以匠魂为例，用压缩软件打开模组文件（JAR 格式），它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://minecraft.fandom.com/zh/wiki/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
+**命名空间（Namespace）**：以匠魂为例，用压缩软件打开模组文件（JAR 格式），它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID?variant=zh-cn#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
 
-仓库中“命名空间”文件夹下的目录结构与[资源包](https://minecraft.fandom.com/zh/wiki/%E8%B5%84%E6%BA%90%E5%8C%85)的相应结构相同，其他可用资源包加载的本地化文件亦可接收。
+仓库中“命名空间”文件夹下的目录结构与[资源包](https://zh.minecraft.wiki/w/%E8%B5%84%E6%BA%90%E5%8C%85)的相应结构相同，其他可用资源包加载的本地化文件亦可接收。
 
-projects 文件夹下只标出的大版本号，其中的模组翻译文件应满足以下优先级：
+projects 文件夹下只标出模组所属的大版本号，其中的模组翻译文件应满足以下优先级：
 
-1. 模组活跃更新的 MC 版本优先。若所有小版本都活跃更新，则
-2. MC 版本高者优先。
+1. 模组活跃更新的 Minecraft 版本优先。若所有小版本都活跃更新，则
+2. Minecraft 版本高者优先。
+
+* 例：Minecraft 版本 1.19.2 与 1.19.4 均属同一大版本号 1.19 下的子版本。  
+若某一模组在两个版本上的开发均活跃，由于 1.19.4 的版本号更高，因此优先考虑该模组在 1.19.4 下的译名标准化情况与适配情况。  
+这一优先级不会影响到模组在其他大版本下（如 1.18、1.12 等）的分支。
 
 ## 翻译用语共识
 
@@ -192,7 +196,7 @@ projects 文件夹下只标出的大版本号，其中的模组翻译文件应�
 
 ### Packer
 
-路径：[./config/packer.json](./config/packer.json)
+路径：`./config/packer/[version].json`（如1.12的文件在[1.12.2.json](./config/packer/1.12.2.json)）
 
 该文件内放置了**所有**正在维护的版本的打包配置。
 不要随意*删去*内容，除非你知道它为什么弃用。
@@ -204,6 +208,9 @@ projects 文件夹下只标出的大版本号，其中的模组翻译文件应�
 
 - 增加新翻译版本
   - 需要将所有项填写一遍，同时需要更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及 [CFPABot](https://github.com/Cyl18/CFPABot) 等相关服务。没有规划最好不要乱动。
+- 更改字符替换表
+  - 修改`replacementMap`，格式与已有文本一致。Unicode*基础多语种平面（BMP）*以外的字符需要使用**UTF-16代理对**输入，否则可能无法识别。
+  - 同时可能需要修改字体文件。
 - 处理非文本文件
   1. 如果该文件所在的文件夹与`lang`文件夹同级，且对**任何模组都**不会有文本文件（如font\），将该文件夹加入对应版本的`noProcessNamespace`中。
   2. 否则，将该模组的`CurseForge 项目名称`或`命名空间`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`，并将**所有**受影响的文件的相对位置加入`additionalContents`。
