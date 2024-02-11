@@ -84,8 +84,8 @@ namespace Packer.Models.Providers
             var result = new Dictionary<string, JsonNode>();
             foreach (var (key, value) in this)
             {
-                if (value.GetType() == typeof(JsonValue)
-                    && value.AsValue().TryGetValue<string>(out var stringValue))
+                if (value is JsonValue jsonValue
+                    && jsonValue.TryGetValue<string>(out var stringValue))
                 {
                     var replaced = Regex.Replace(stringValue,
                                                  searchPattern,
