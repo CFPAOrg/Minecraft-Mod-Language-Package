@@ -1,8 +1,9 @@
-# 计算电子学手册
+# Computronics Manual
 
-此索引列出了计算电子学模组提供的所有TIS-3D模块。
+This index lists all of the documented TIS-3D modules in Computronics.
 
-## 模块
-* [变色模块](colorful_module.md)
-* [磁带机模块](tape_reader_module.md)
-* [自毁模块](self_destructing_module.md)
+## Modules
+* [Colorful Module](colorful_module.md)
+* [Tape Reader Module](tape_reader_module.md)
+* [Self-Destructing Module](self_destructing_module.md)
+* 
