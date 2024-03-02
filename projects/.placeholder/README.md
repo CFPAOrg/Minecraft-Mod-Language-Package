@@ -1,2 +1,2 @@
-Placeholder JSON files for weblate base component 
+        Placeholder JSON files for weblate base component 
 
