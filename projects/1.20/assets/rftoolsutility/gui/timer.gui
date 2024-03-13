@@ -1,0 +1,22 @@
+window {
+    size(168,48)
+
+    bind('delay','delay')
+    bind('pauses','pauses')
+
+    panel('','vertical') {
+        bgthickness(2)
+        panel('','horizontal') {
+            label('','延迟：')
+            integerfield('delay') {
+                channel('delay')
+                tooltips('以Tick为单位设置延迟','(20 tick为1s)')
+            }
+        }
+        togglebutton('pauses','输入红石信号时暂停') {
+            channel('pauses')
+            desired(-1,16)
+            check(true)
+        }
+    }
+}
