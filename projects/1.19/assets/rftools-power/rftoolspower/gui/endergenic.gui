@@ -1,0 +1,46 @@
+window {
+    size(190,110)
+    panel('','vertical') {
+        bgthickness(2)
+        energybar('energybar') {
+            desired(-1,12)
+            bgthickness(1)
+            horizontal(true)
+        }
+        label('','过去5秒内平均值：') {
+            horizalign('ALIGN_LEFT')
+        }
+        panel('','horizontal') {
+            label('','产能：') {
+                desired(70,-1)
+            }
+            textfield('lastrft') {
+                desired(90,14)
+            }
+        }
+        panel('','horizontal') {
+            label('','丢失：') {
+                desired(70,-1)
+            }
+            textfield('lastlost') {
+                desired(90,14)
+            }
+        }
+        panel('','horizontal') {
+            label('','已发射：') {
+                desired(70,-1)
+            }
+            textfield('lastlaunched') {
+                desired(90,14)
+            }
+        }
+        panel('','horizontal') {
+            label('','循环次数：') {
+                desired(70,-1)
+            }
+            textfield('lastopp') {
+                desired(90,14)
+            }
+        }
+    }
+}
