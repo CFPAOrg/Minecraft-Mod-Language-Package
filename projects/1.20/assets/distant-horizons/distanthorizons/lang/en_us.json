@@ -268,7 +268,7 @@
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.overdrawPrevention":
     "Overdraw Prevention",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.overdrawPrevention.@tooltip":
-    "Determines how far from the camera Distant Horizons will start rendering. \nMeasured as a percentage of the vanilla render distance.\n\nHigher values will prevent LODs from rendering behind vanilla blocks at a higher distance,\nbut may cause holes to appear in the LODs. \nHoles are most likely to appear when flying through unloaded terrain. \n\nIncreasing the vanilla render distance increases the effectiveness of this setting.",
+    "Enabling this will prevent some overdraw issues,\nbut may cause nearby LODs to render incorrectly, especially when near fancy leaves or non-full blocks.\nLess noticeable with a longer vanilla render distance.",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.seamlessOverdraw":
     "(Experimental) Seamless Overdraw",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.seamlessOverdraw.@tooltip":
@@ -301,15 +301,7 @@
     "LOD Shading",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.lodShading.@tooltip":
     "Defines how LODs should be shaded. \nCan be used to improve shader compatibility.",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableFrustumCulling":
-    "Disable Frustum Culling",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableFrustumCulling.@tooltip":
-    "If false LODs outside the player's camera \naren't drawn, increasing GPU performance. \n\nIf true all LODs are drawn, even those behind \nthe player's camera, decreasing GPU performance. \n\nDisable this if you see LODs disappearing at the corners of your vision.",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableShadowPassFrustumCulling":
-    "Disable Shadow Pass Frustum Culling",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableShadowPassFrustumCulling.@tooltip":
-    "Identical to the other frustum culling option except that it is \nonly used when a shader mod is present using the DH API \nand the shadow pass is being rendered. \n\nDisable this if shadows render incorrectly.",
-    
+  
   
   "distanthorizons.config.client.advanced.worldGenerator":
     "World Generator",
@@ -436,15 +428,6 @@
     "Allow Unsafe UI Values",
   "distanthorizons.config.client.advanced.debugging.allowUnsafeValues.@tooltip":
     "If enabled, very limited config input validation will be performed. \n\nWarning: enabling this can cause instability or crashing, use at your own risk. \nNote: this option isn't saved between sessions.",
-  
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugEnable":
-    "Enable Column Builder Limiting",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugDetailLevel":
-    "Column Builder Limit - Detail Level",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugXPos":
-    "Column Builder Limit - X Pos",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugZPos":
-    "Column Builder Limit - Z Pos",
   
     
   "distanthorizons.config.client.advanced.buffers":
@@ -802,8 +785,6 @@
     "Show detail",
   "distanthorizons.config.enum.EDebugRendering.SHOW_GENMODE":
     "Show generation mode",
-  "distanthorizons.config.enum.EDebugRendering.SHOW_BLOCK_MATERIAL":
-    "Show Material",
   "distanthorizons.config.enum.EDebugRendering.SHOW_OVERLAPPING_QUADS":
     "Show overlapping quads",
   "distanthorizons.config.enum.EDebugRendering.SHOW_RENDER_SOURCE_FLAG":

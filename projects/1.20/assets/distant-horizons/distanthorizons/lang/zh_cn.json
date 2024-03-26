@@ -268,7 +268,7 @@
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.overdrawPrevention":
     "过度绘制防护",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.overdrawPrevention.@tooltip":
-    "确定Distant Horizons开始渲染处对于镜头的距离。\n用原版渲染距离的百分比来衡量。\n\n较高的值将防止LOD在较远的距离渲染在原版方块后面，\n但可能导致LOD中出现空洞。\n当飞行穿过未加载的地形时，最可能出现空洞。\n\n增加原版渲染距离可以提高该设置的效果。",
+    "启用该项会防止一些过度绘制问题，\n但会造成附近的LOD渲染不正确，尤其是在靠近高品质的树叶或者不完整方块时。\n原版渲染距离较长时不太明显。",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.seamlessOverdraw":
     "（实验性）无缝过度绘制",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.seamlessOverdraw.@tooltip":
@@ -301,15 +301,7 @@
     "LOD着色",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.lodShading.@tooltip":
     "定义LOD应该被如何着色。\n可以用来提高光影的兼容性。",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableFrustumCulling":
-    "禁用视锥体剔除",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableFrustumCulling.@tooltip":
-    "若为False，玩家的镜头外不会\n绘制LOD，这会增加GPU性能。\n\n若为True，所有LOD都会被绘制，甚至在玩家镜头\n后面的那些也不例外，这会降低GPU性能。\n\n如果你看到LOD在视野的角落消失，禁用该选项。",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableShadowPassFrustumCulling":
-    "禁用阴影通道视锥体剔除",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableShadowPassFrustumCulling.@tooltip":
-    "除了在光影模组当前使用DH API\n并且阴影通道正在渲染时才会使用外，\n该选项与其他视锥体剔除选项相同。\n\n如果阴影渲染不正确，禁用该选项。",
-    
+  
   
   "distanthorizons.config.client.advanced.worldGenerator":
     "世界生成器",
@@ -436,15 +428,6 @@
     "允许不安全的UI值",
   "distanthorizons.config.client.advanced.debugging.allowUnsafeValues.@tooltip":
     "若启用，将执行非常有限的配置输入验证。\n\n警告：启用该项可能导致不稳定或崩溃，使用风险自负。\n注：该选项不会在会话间保存。",
-  
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugEnable":
-    "启用柱形构建限制",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugDetailLevel":
-    "柱形构建限制 - 细节层次",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugXPos":
-    "柱形构建限制 - X轴位置",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugZPos":
-    "柱形构建限制 - Z轴位置",
   
     
   "distanthorizons.config.client.advanced.buffers":
@@ -802,8 +785,6 @@
     "显示细节",
   "distanthorizons.config.enum.EDebugRendering.SHOW_GENMODE":
     "显示生成模式",
-  "distanthorizons.config.enum.EDebugRendering.SHOW_BLOCK_MATERIAL":
-    "显示材质",
   "distanthorizons.config.enum.EDebugRendering.SHOW_OVERLAPPING_QUADS":
     "显示重叠部分的四边形",
   "distanthorizons.config.enum.EDebugRendering.SHOW_RENDER_SOURCE_FLAG":
