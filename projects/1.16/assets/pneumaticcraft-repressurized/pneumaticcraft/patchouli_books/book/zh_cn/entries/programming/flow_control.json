@@ -1,0 +1,25 @@
+{
+  "name": "程序流控制",
+  "icon": "pneumaticcraft:textures/progwidgets/jump_piece.png",
+  "category": "programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "当$(l:tools/drone)无人机/$被放置时，其立刻开始执行所存储的程序。程序执行流按如下进行：$(li)程序$(italic)永远/$在$(l:programming/start)开始/$拼图开始执行，而这是唯一的。$(li)程序流一般$(italic)向下/$执行；转向被连接在当前拼图下方的拼图。"
+    },
+    {
+      "type": "text",
+      "text": "$(li)一个拼图执行其操作直到其$(italic)结束/$：对于“结束”的定义因拼图而异，在各个拼图的界面分别解释。$(li)当目前拼图的下方没有任何拼图时，程序执行流转回到$(l:programming/start)开始/$拼图。$(p)这便是基础知识。尽管如此，还是有一些特殊情况，在下文列出……"
+    },
+    {
+      "type": "text",
+      "title": "程序流控制拼图",
+      "text": "$(li)$(l:programming/label)标签/$拼图作为程序可以跳转至的一个点。$(li)$(l:programming/jump)跳转/$拼图执行立即的，无条件约束的，到匹配的$(thing)标签/$的跳转。$(li)$(l:programming/conditions)条件/$拼图执行基于一定条件的跳转。$(li)高级的$(l:programming/for_each_item)对于每个物品/$和$(l:programming/for_each_coordinate)对于每个坐标/$反复跳转到给定$(thing)标签/$，对于输入列表中的每个值。"
+    },
+    {
+      "type": "text",
+      "text": "还有几个特殊的拼图可以影响程序流：$(li)$(l:programming/standby)待机/$拼图将无人机“休眠”，直至另一个拼图需要无人机进行操作。$(li)$(l:programming/suicide)自毁/$拼图将$(item)无人机/$以物品形式掉落，立即终止程序执行。"
+    }
+  ]
+}

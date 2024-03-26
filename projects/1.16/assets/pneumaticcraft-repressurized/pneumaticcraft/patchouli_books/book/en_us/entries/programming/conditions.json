@@ -1,0 +1,74 @@
+{
+  "name": "Conditions",
+  "icon": "minecraft:comparator",
+  "category": "programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Conditions/$ are a collection of widgets that allow you to check something, and jump to another part of your program if the check succeeds.$(p)Every $(thing)Condition/$ widget takes a $(l:programming/text)Text/$ widget parameter (which is always the bottom-most parameter) configured with a $(thing)label name/$."
+    },
+    {
+      "type": "text",
+      "text": "When a condition evaluates $(thing)true/$, $(l:programming/flow_control)program execution/$ will jump to a $(l:programming/label)Label/$ widget with the same name as that $(thing)Text/$ parameter on its $(italic)right-hand/$ side. When the condition is $(thing)false/$, it will jump to a $(thing)Label/$ with the same name as the $(thing)Text/$ parameter on its $(italic)left-hand side/$.$(p)When the $(thing)Condition/$ widget can't find a valid $(thing)Text/$ parameter, it will just proceed to the next widget (connected $(italic)below/$)."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/condition_widget.png"
+      ],
+      "border": "true",
+      "text": "$(italic)A Redstone Condition widget which kills the drone if the signal >= 10/$"
+    },
+    {
+      "type": "text",
+      "text": "Most $(thing)Condition/$ widgets can be $(thing)right-clicked/$ to open a configuration GUI. The GUI will usually contain '='/'>=' options, and a textfield where you can enter a number.$(p)With this you can set up conditions (like item counts in a chest) to be e.g. exactly 10 ('=' mode and textfield 10), more than 20 ('>=' mode and textfield '21'), or less than 12 ('>=' mode and textfield '12', but checking for the condition to be $(thing)false/$)."
+    },
+    {
+      "type": "text",
+      "title": "Measuring",
+      "text": "All $(thing)Condition/$ widget GUI's (except $(l:programming/condition_item_filter)Condition: Item Filter/$) have a $(thing)Measure/$ textfield, where you can enter the name of a $(l:programming/variables)variable/$. If a variable name is supplied here, any measurement made by the drone will be stored in the X field of the variable.$(p)This can then be later used like any other variable, e.g. you could measure the level of a fluid tank, and write it on a sign."
+    },
+    {
+      "type": "text",
+      "title": "Measuring (cont.)",
+      "text": "If a measuring variable name is supplied, then it's no longer an error to have no branching Text widgets on the Condition widget (normally at least one branch is required). This means that the Condition widget can be used purely to measure a quantity; execution will just proceed downwards as normal.$(p)Note: pressure measurement conditions store the measured pressure in millibars (e.g. 5.5 bars would be 5500)."
+    },
+    {
+      "type": "text",
+      "title": "Condition Types",
+      "text": "Conditions can be divided into two categories: $(thing)Basic Conditions/$ and $(thing)Drone Conditions/$.$(p)Basic Conditions are used to check for things in the world, e.g. does a $(item)Chest/$ have a certain number of items, or does a block exist somewhere?$(p)$(thing)Drone Conditions/$ specifically target the $(l:tools/drone)Drone/$, e.g. does the Drone have a certain item, or have a certain pressure?"
+    },
+    {
+      "type": "text",
+      "text": "All block-based $(thing)Basic Conditions/$ have an $(thing)Any/All/$ block option. This is used when you're checking multiple blocks at a time.$(li)In $(thing)Any/$ mode, only $(italic)one/$ of the blocks in the selected $(l:programming/area)area/$ needs to match for the condition to be $(thing)true/$.$(li)In $(thing)All/$ mode, $(italic)all/$ blocks must match for the condition to be $(thing)true/$."
+    },
+    {
+      "type": "relations",
+      "title": "Basic Conditions",
+      "entries": [
+        "programming/condition_block",
+        "programming/condition_coordinate",
+        "programming/condition_entity",
+        "programming/condition_item_filter",
+        "programming/condition_item_inventory",
+        "programming/condition_liquid_inventory",
+        "programming/condition_pressure",
+        "programming/condition_redstone",
+        "programming/condition_rf"
+      ]
+    },
+    {
+      "type": "relations",
+      "title": "Drone Conditions",
+      "entries": [
+        "programming/drone_condition_item",
+        "programming/drone_condition_liquid",
+        "programming/drone_condition_entity",
+        "programming/drone_condition_pressure",
+        "programming/drone_condition_rf"
+      ]
+    }
+  ]
+}
+

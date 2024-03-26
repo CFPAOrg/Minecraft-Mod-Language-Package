@@ -1,0 +1,53 @@
+
+{
+  "name": "Refinery",
+  "icon": "pneumaticcraft:refinery",
+  "category": "manufacturing",
+  "advancement": "pneumaticcraft:oil_bucket",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The $(item)Refinery/$ is a multiblock machine which uses $(l:base_concepts/heat)heat/$ to refine $(l:base_concepts/oil)Oil/$ into various fuels. It starts to work at 100°C. The higher the temperature applied, the faster it refines. The fuels that can be produced are, sorted from lightest to heaviest:$(li)$(thing)LPG (Liquefied Petroleum Gas)/$$(li)$(thing)Gasoline/$$(li)$(thing)Kerosene/$$(li)$(thing)Diesel/$"
+    },
+    {
+      "type": "text",
+      "text": "The $(thing)Refinery/$ is a multiblock structure: place down a $(item)Refinery Controller/$, then stack 2-4 $(item)Refinery Outputs/$ on top of or beside the Controller. $(p)Different multiblock sizes give different yields; given 10mB of oil as input:$(p)$(bold)2 Outputs/$$(li)$(thing)LPG/$ (2mB)$(li)$(thing)Diesel/$ (4mB)$(br)$(bold)3 Outputs/$$(li)$(thing)LPG/$ (2mB)$(li)$(thing)Kerosene/$ (3mB)$(li)$(thing)Diesel/$ (2mB)"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)4 Outputs/$$(li)$(thing)LPG/$ (2mB)$(li)$(thing)Gasoline/$ (3mB)$(li)$(thing)Kerosene/$ (3mB)$(li)$(thing)Diesel/$ (2mB)$(p)The lightest fuel will always end up in the top $(item)Refinery Output/$, the heaviest in the bottom.  If you add more $(item)Refinery Outputs/$ to an existing stack, the multiblock will do its best to automatically rearrange any existing output liquids into their correct block, to keep the system running."
+    },
+    {
+      "type": "text",
+      "text": "All produced liquids can be used as fuel in a $(l:compressors/liquid_compressor)Liquid Compressor/$ (with lighter fuels being of better quality).$(p)However, there are two other very important uses:$(li)$(thing)LPG/$ is used to make liquid $(l:components/plastic)Plastic/$$(li)$(thing)Diesel/$ is used to make $(l:components/lubricant)Lubricant/$ for $(l:base_concepts/upgrades#speed)Speed Upgrades/$.$(p)A $(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$ is used for both of these processes."
+    },
+    {
+      "type": "text",
+      "title": "Comparator Support",
+      "text": "The $(item)Refinery/$ will work with a $(item)Comparator/$: an attached Comparator will output a signal strength of 15 when the $(item)Refinery/$ has work, and 0 if not. It has work when there's $(thing)Oil/$ to refine $(italic)and/$ space in the output tanks for the refined products.$(p)This can be used to automate switching off the air supply to a $(l:machines/vortex_tube)Vortex Tube/$, for example, to save air."
+    },
+    {
+      "type": "text",
+      "title": "Setup Tips",
+      "text": "Since the $(item)Refinery/$ is a multiblock with many faces exposed to the air, it can lose $(l:base_concepts/heat)Heat/$ quite rapidly if not well insulated. Therefore, it's strongly recommended to cover all unused faces of the multiblock to maximize efficiency. Note that any non-heat-conducting blocks can be used, including semi-solid blocks like $(item)slabs/$ or $(item)trapdoors/$, but $(l:machines/thermal_lagging)Thermal Lagging/$ is especially recommended."
+    },
+    {
+      "type": "text",
+      "text": "You can use a $(l:machines/vortex_tube)Vortex Tube/$ to heat the $(item)Refinery/$, or place hot fluids (Lava...) or blocks (Magma...) next to any $(item)Refinery/$ blocks.  Note that such fluids and blocks will get used up (their heat gets drained), so you may wish to find a way to automate the production and placement of those resources."
+    },
+    {
+      "type": "link",
+      "flag": "mod:crafttweaker",
+      "title": "CraftTweaker",
+      "text": "The $(item)Refinery/$ has $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$ support: recipes can be added and removed. Follow the link below for more information.",
+      "url": "https://docs.blamejared.com/1.16/en/mods/PneumaticCraft-Repressurized/Refinery",
+      "link_text": "CraftTweaker Docs"
+    },
+    {
+      "type": "crafting",
+      "text": "Creating the Refinery",
+      "recipe": "pneumaticcraft:refinery",
+      "recipe2": "pneumaticcraft:refinery_output"
+    }
+  ]
+}

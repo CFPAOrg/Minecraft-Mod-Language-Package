@@ -1,0 +1,57 @@
+{
+  "name": "Basic Drone Tutorial #1",
+  "icon": "minecraft:knowledge_book",
+  "category": "programming",
+  "priority": "true",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "In this tutorial, we'll set up a simple program to make a $(l:tools/drone)Drone/$ dig out an area. Before you start, you'll need:"
+    },
+    {
+      "type": "text",
+      "text": "$(li)A $(l:programming/programmer)Programmer/$ (of course)$(li)(If you're not in Creative Mode) A $(item)Chest/$ adjacent to the Programmer containing at least six $(l:programming/puzzle_pieces)Puzzle Pieces/$ $(li)A $(item)Chest/$ or any other inventory, containing a $(item)Shovel/$ of any type$(li)A basic $(l:tools/gps_tool)GPS Tool/$ $(li)$(l:tools/gps_area_tool)GPS Area Tool/$"
+    },
+    {
+      "type": "text",
+      "text": "Open the $(l:programming/programmer)Programmer/$ GUI. On the right, you'll see a $(thing)tray/$ of $(ttcolor)$(t:The virtual representations of Puzzle Pieces in the GUI are referred to as Programming Widgets)Programming Widgets/$. There are multiple pages of these; you can either cycle through with the arrow buttons below the tray, or expand the tray by pressing $(thing)Space/$ or $(thing)Tab/$.$(p)When expanded, a textfield appears above the tray where you can enter a $(thing)filter/$ to search for widgets. Type 'start' there now: you'll see only one widget not $(7)grayed/$ out."
+    },
+    {
+      "type": "text",
+      "text": "Now drag that $(l:programming/start)Start/$ widget onto the main programming area. It will appear with a $(4)red border/$, indicating a problem: mouse over to see what.$(p)Right, there's no widget connected underneath - we will remedy that now by creating our program.$(p)Find an $(l:programming/inventory_import)Import From Inventory/$ widget and drag it to right below the $(thing)Start/$ widget."
+    },
+    {
+      "type": "text",
+      "text": "If you place it close enough, it will 'snap' to the bottom of the $(thing)Start/$ widget. Notice how the connectors fit, like a jigsaw puzzle; hence the name $(thing)Puzzle Piece/$.$(p)Next, drag an $(l:programming/area)Area/$ widget and connect it to the right ($(ttcolor)$(t:Widgets on the right of other widgets act as a whitelist; widgets on the left act as a blacklist)not left/$) of the $(thing)Import/$ widget, and an $(l:programming/item_filter)Item Filter/$ widget, also to the right of the $(thing)Import/$ widget. Again, make sure they 'snap' together."
+    },
+    {
+      "type": "text",
+      "text": "You'll notice the $(thing)Area/$ widget also starts with a $(4)red border/$, because it doesn't have an area defined yet. Take your $(item)GPS Tool/$, and $(thing)sneak+right-click/$ on the $(item)chest/$ containing the $(item)shovel/$ you placed before. You'll see it highlights the location.$(p)Now, in the Programmer GUI, $(thing)left-click/$ the $(thing)Area/$ widget with the $(item)GPS Tool/$ on your cursor: you'll see the location copied onto the $(thing)Area/$ widget!"
+    },
+    {
+      "type": "text",
+      "text": "Now for the $(thing)Item Filter/$: $(thing)right-click/$ it to open an options GUI. Click the $(bold)Search Item.../$ button, and type 'shovel' into the result search window. Choose the shovel type that you put in the chest earlier, and press $(thing)Escape/$ to close the search box.$(p)Back in the $(thing)Item Filter/$ window, ensure 'Item Durability' is $(italic)unchecked/$, so it will also match partially used shovels. Press $(thing)Escape/$ again: back to the main GUI."
+    },
+    {
+      "type": "text",
+      "text": "At this point, we've told the Drone to pick up a shovel from the chest; now to make it dig!$(p)Drag a $(l:programming/dig)Dig/$ widget and snap it to the bottom of the $(thing)Import/$ widget.$(p)Drag another $(thing)Area/$ widget and snap it to the right of the $(thing)Dig/$ widget."
+    },
+    {
+      "type": "text",
+      "text": "Let's define the area to be dug: take your $(thing)GPS Area Tool/$ and $(thing)right-click/$ a block to form one corner of the area. $(thing)Left-click/$ a block at the opposite corner. Since the drone will be using a shovel, try to stick to dirt/sand.$(p)Ensure the highlighted area is a $(thing)solid box/$ - it should be by default, but you can $(thing)left/right-click/$ the tool in the air to open a configuration GUI where the shape can be defined."
+    },
+    {
+      "type": "text",
+      "text": "Back in the Programmer GUI, take the $(thing)GPS Area Tool/$ and $(thing)left-click/$ it on the $(thing)Area/$ widget attached to the $(thing)Dig/$ widget. As before, you'll see its settings copied onto the Area widget.$(p)At this point, there should be no red highlights indicating any errors: congratulations, you have a valid program!"
+    },
+    {
+      "type": "text",
+      "text": "Finally, take a $(l:tools/drone)Drone/$, and ensure it's been pressurized in a $(l:machines/charging_station)Charging Station/$. Put the Drone item in the slot in the top right of the Programmer GUI and click the $(thing)⟶ (export)/$ button (you can name the Drone if you want, in the textfield to the left).$(p)You'll get some audible feedback, and your Drone is programmed!"
+    },
+    {
+      "type": "text",
+      "text": "All that remains now is to deploy your Drone: $(thing)right-click/$ in the world somewhere near your chest, and watch it go to work!"
+    }
+  ]
+}

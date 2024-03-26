@@ -1,0 +1,27 @@
+{
+  "name": "气动发电机",
+  "icon": "pneumaticcraft:pneumatic_generator",
+  "category": "machines",
+  "flag": "pneumaticcraft:pneumaticGeneratorEnabled",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "气动发电机将$(l:base_concepts/pressure)压缩空气/$转化为$(thing)工业2 的 EU/$。这是一个二级机器，也就是说其最低工作压力为 15 bar。默认情况下转化效率为 40%，但这可以$(ttcolor)$(t:见 'I:pneumaticGeneratorEfficiency')在配置文件中更改/$。$(p)未安装$(l:base_concepts/upgrades#speed)速度升级/$时输出功率为 32EU/t；安装一个升级时为 128EU/t；二个时则为 512EU/t。"
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:pneumatic_generator",
+      "text": "空气耗量（mL/t）等于：$(p)$(formula)  输出功率 / E * 400/$$(p)其中 $(formula)E/$ 代表百分数形式的效率值。例：在默认效率 40%，输出功率 32EU/t的情况下，空气耗率 = $(formula)32 / 40 * 400 = 320 mL/t/$."
+    },
+    {
+      "type": "text",
+      "text": "影响其转换效率的一个重要因素为发电机的$(l:base_concepts/heat)温度/$。发电机必须被$(l:base_concepts/heat)冷却/$，介于其效率会随温度的升高而降低，直至没有有效的 EU 产出。"
+    },
+    {
+      "type": "crafting",
+      "text": "气动发电机的合成表",
+      "recipe": "pneumaticcraft:pneumatic_generator"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "攻击实体",
+  "icon": "pneumaticcraft:textures/progwidgets/attack_piece.png",
+  "category": "widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(l:tools/drone)无人机/$将会攻击指定$(l:programming/area)区域/$内的每个生物。$(p)注意：所连接的$(l:programming/area)区域/$拼图的区域类型必须为$(thing)盒型/$，因为只支持使用该种类型。然而，可以采用组合白名单/黑名单的方式指定其余形状的区域。"
+    },
+    {
+      "type": "text",
+      "title": "过滤实体",
+      "text": "可以通过作为$(l:base_concepts/entity_filter)实体过滤器/$的$(l:programming/text)文本/$过滤要被攻击的实体。例如，要使$(item)无人机/$攻击所有玩家，在$(thing)攻击实体/$拼图的$(italic)右/$侧连接写有$(#600)@player/$的$(thing)文本/$拼图。$(p)要使无人机不攻击自己，在$(italic)左/$侧连接写有自己的玩家名的$(thing)文本/$拼图。"
+    },
+    {
+      "type": "text",
+      "title": "近战攻击",
+      "text": "$(l:tools/drone)无人机/$将会装备并使用物品栏中任何的近战武器进行攻击。如果$(item)无人机/$的物品栏里有多个武器，其将会选择伤害值最大的那一个。$(p)可以使用$(l:programming/inventory_import)从容器提取物品/$为$(item)无人机/$提供武器。强烈建议这么做：$(item)无人机/$未携带武器的近战攻击很弱。"
+    },
+    {
+      "type": "text",
+      "title": "范围攻击",
+      "text": "对$(l:tools/drone)无人机/$安装$(l:base_concepts/upgrades#entity_tracker)实体追踪器/$升级后，$(item)无人机/$将会附带一个$(l:tools/minigun)转管机枪/$。对其提供$(l:tools/minigun_ammo)机枪弹药/$（通过$(l:programming/inventory_import)从容器提取物品/$将其输入无人机）后，$(item)无人机/$将使用该机枪执行攻击。$(p)默认范围是 16 格，可以通过加装最多 16 个$(l:base_concept/updates#range_update)范围升级/$来增加，最大 32 格。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/attack_piece.png"
+      ],
+      "text": "$(italic)我一定会回来的/$"
+    }
+  ]
+}

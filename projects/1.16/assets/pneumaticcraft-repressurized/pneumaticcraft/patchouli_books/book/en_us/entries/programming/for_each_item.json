@@ -1,0 +1,24 @@
+{
+  "name": "For Each Item Widget",
+  "icon": "pneumaticcraft:textures/progwidgets/for_each_item.png",
+  "category": "widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This advanced widget will execute a subroutine for every connected $(l:programming/item_filter)Item Filter/$. For each filter, it will set the specified variable to that filter, and jump to the $(l:programming/label)Label/$ which matches the connected $(l:programming/text)Text/$ widget. When that routine is done executing (when it reaches the end of a program where it would usually jump back to $(l:programming/start)Start/$), it will come back to this widget and do the same for the next $(thing)Item Filter/$."
+    },
+    {
+      "type": "text",
+      "title": "Breaking",
+      "text": "You can break out of the loop by setting the item variable used by the $(thing)For Each Item/$ to an empty filter (use the $(l:programming/item_assign)Item Assign/$ widget to do this). Next time, when the program jumps back to the $(thing)For Each Item/$, it will notice this and cancel further traversal of filters."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/for_each_item.png"
+      ],
+      "text": "$(italic)For Each Item Widget/$"
+    }
+  ]
+}

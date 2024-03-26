@@ -1,0 +1,26 @@
+{
+  "name": "UV Light Box",
+  "icon": "pneumaticcraft:uv_light_box",
+  "category": "manufacturing",
+  "advancement": "pneumaticcraft:pcb_blueprint",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The $(item)UV Light Box/$ is a machine in which you can expose $(l:components/pcb)PCB's/$ to UV light, at certain places (which is determined by the $(l:components/pcb_blueprint)Blueprint/$ laying on top of the PCB).$(p)The exposure process takes a maximum of 10 minutes; less if you add $(l:base_concepts/upgrades#speed)Speed Upgrades/$ to the machine."
+    },
+    {
+      "type": "text",
+      "text": "After the full 10 minutes, you'll have a 100% chance that the $(item)PCB/$ will be successfully etched in $(l:manufacturing/etching_acid)Etching Acid/$. You can however expose the PCB for a shorter time, which will result in a lower chance of the PCB successfully being etched.$(p)Note that exposure progress is faster when the total progress is lower, and slower toward the end."
+    },
+    {
+      "type": "text",
+      "title": "Threshold Automation",
+      "text": "You can manually adjust the completion threshold via the GUI slider, but it's also possible to set this via a redstone signal; set the redstone mode to $(thing)Interpolate Threshold/$. In this mode, the threshold is fixed to 25% + 5% per signal level (although a signal of 0 disables the machine, so 30%-100% in effect).$(p)This may be handy if you want to set the threshold of many lightboxes at once."
+    },
+    {
+      "type": "crafting",
+      "text": "Creating the UV Light Box",
+      "recipe": "pneumaticcraft:uv_light_box"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "Dig Widget",
+  "icon": "pneumaticcraft:textures/progwidgets/dig_piece.png",
+  "category": "widget_interact",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The $(l:tools/drone)Drone/$ will dig/mine the blocks within the specified $(l:programming/area)Area/$. Items that are dropped from the blocks will not be picked up by the $(item)Drone/$. The order in which the blocks will be dug is similar to the $(l:programming/place)Place/$ widget. Also in common with the $(thing)Place/$ widget, you can control if the area should be dug layer by layer (top to bottom or bottom to top)."
+    },
+    {
+      "type": "text",
+      "title": "Using Tools",
+      "text": "You can make the $(item)Drone/$ $(l:programming/inventory_import)import/$ a pickaxe/shovel/etc. to make it use that tool. When the $(item)Drone/$ carries around multiple tools, the most suitable tool is automatically used for the block being dug.$(p)You can prevent the Drone from trying to dig without a tool (which is really slow) by checking the $(thing)Requires digging tool/$ checkbox."
+    },
+    {
+      "type": "text",
+      "title": "Limiting the Dig Count",
+      "text": "The amount of dig actions can be limited to a specified number by checking the $(thing)Limit block interactions/$ checkbox in the GUI, and setting a limit. E.g. if set to 1, the $(item)Drone/$ will only dig one block (regardless of how many blocks are in the area), before moving to the next widget in the program. This can be used to only dig a few blocks and then check the durability of a tool, to repair it before it breaks."
+    },
+    {
+      "type": "text",
+      "title": "Filtering Blocks",
+      "text": "Lastly you can specify which blocks may be mined by using an $(l:programming/item_filter)Item Filter/$.$(p)When used with blocks like crops, filter by the item that you would get when you break the crop (so $(item)Seeds/$ for a $(item)Wheat/$ crop). The exception would be blocks that $(italic)never/$ drop an item (even with Silk Touch), for which there is specific $(thing)Match by block/$ option in the filter setup GUI."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/dig_piece.png"
+      ],
+      "text": "$(italic)Hi ho/$"
+    }
+  ]
+}

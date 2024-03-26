@@ -1,0 +1,107 @@
+{
+  "name": "Computer Integration",
+  "icon": "pneumaticcraft:textures/patchouli/computer.png",
+  "category": "base_concepts",
+  "flag": "|mod:computercraft,mod:opencomputers",
+  "pages": [
+    {
+      "type": "text",
+      "text": "When $(thing)ComputerCraft/$ or $(thing)Open Computers/$ is installed, you'll be able to interact with almost every $(pncr) machine, and $(l:machines/drone_interface)Drones/$.$(p)Any of the machines listed here can be interacted with as CC/OC peripherals."
+    },
+    {
+      "type": "text",
+      "title": "ComputerCraft",
+      "text": "In Lua, you can run $(thing)m = peripheral.wrap(<side>)/$, where $(thing)<side>/$ is the side of the computer the peripheral is connected to (top, bottom, left, right, back, front). Then you can use any of the following functions with $(thing)m.<functionName>/$.$(p)Anywhere in the following functions where a '<side>' appears as one of the arguments, 'up', 'down', 'north', 'south', 'east', 'west' are valid.",
+      "flag": "mod:computercraft"
+    },
+    {
+      "type": "text",
+      "title": "Open Computers",
+      "text": "You will need to use an $(item)Adapter/$ to connect your computer to $(pnc) machines; they will then appear as OC components, which show up if you run $(thing)=components.list()/$ in an OC Lua environment. Then any of the following functions can be used, e.g. $(thing)p = components.air_compressor.getPressure()/$ will retrieve the current pressure of an attached $(item)Air Compressor/$.",
+      "flag": "mod:opencomputers"
+    },
+    {
+      "type": "text",
+      "title": "Common Methods",
+      "text": "The following methods are common to $(italic)all/$ $(pncr) machines:$(li)$(#800)getPressure(), getPressure(<side>)/$: gets the machine's pressure. <side> is optional, only useful for the $(l:machines/vacuum_pump)Vacuum Pump/$, which has side-specific pressures.$(li)$(#800)getDangerPressure()/$: get the pressure at which the machine is at risk of explosion$(li)$(#800)getCriticalPressure()/$: get the hard maximum pressure at which the machine will certainly explode"
+    },
+    {
+      "type": "text",
+      "title": "Heat-Related Methods",
+      "text": "The following methods are common to $(italic)all/$ $(pncr) machines which support the concept of $(l:base_concepts/heat)Heat/$:$(li)$(#800)getTemperature(), getTemperature(<side>)/$: gets the machine's temperature. <side> is optional, only useful for the $(l:machines/vortex_tube)Vortex Tube/$, which has different temperatures depending on the side."
+    },
+    {
+      "type": "spotlight",
+      "anchor": "air_cannon",
+      "item": "pneumaticcraft:air_cannon",
+      "text": "$(li)$(#800)setExternalControl(<true/false>)/$: When true, this will prevent the cannon being rotated with normal methods (GPS Tool insertion, change in Range Upgrades..)$(li)$(#800)setTargetLocation(<x>,<y>,<z>)/$: Point the cannon at the given target location instead of that stored in a GPS Tool."
+    },
+    {
+      "type": "text",
+      "title": "Air Cannon (cont.)",
+      "text": "$(li)$(#800)setRotationAngle(<angle>)/$: Rotate the cannon yaw to the angle specified.$(li)$(#800)setHeightAngle(<angle>)/$: Rotate the cannon pitch to the angle specified.$(li)$(#800)isDoneRotating()/$: Returns true when the cannon is done turning.$(li)$(#800)getMinWorkingPressure()/$: Returns the minimal pressure needed to fire the cannon (the yellow to green threshold in the GUI)."
+    },
+    {
+      "type": "text",
+      "title": "Air Cannon (cont.)",
+      "text": "$(li)$(#800)fire()/$: Fires the cannon, provided that there's enough pressure, and when there are items inserted. Returns true if successful."
+    },
+    {
+      "type": "spotlight",
+      "anchor": "elevator",
+      "item": "pneumaticcraft:elevator_base",
+      "title": "Elevator",
+      "text": "$(li)$(#800)setExternalControl(<true/false>)/$: When true, set the Elevator's $(#f00)redstone mode/$ to 'Elevator Caller' mode, which is also applicable for computer control. You don't have to set it prior to calling $(#800)setTargetHeight()/$; that method will change the Elevator to external control automatically."
+    },
+    {
+      "type": "text",
+      "title": "Elevator (cont.)",
+      "text": "$(li)$(#800)getMinWorkingPressure()/$: Get the minimal pressure needed to extend the Elevator. Making the Elevator descend is free.$(li)$(#800)setTargetHeight(<height>)/$: Sets the Elevator's target height to the height parsed (in meters/blocks, floating point).$(li)$(#800)getTargetHeight()/$: Get the Elevator's target height (in meters/blocks, floating point).$(li)$(#800)getCurrentHeight()/$: Get the Elevator's current height (in meters/blocks, floating point)."
+    },
+    {
+      "type": "text",
+      "title": "Elevator (cont.)",
+      "text": "$(li)$(#800)getVelocity()/$: Gets the elevator's current velocity, in blocks per tick (where there are 20 ticks in a second). Negative values indicate that the elevator is descending."
+    },
+    {
+      "type": "spotlight",
+      "anchor": "universal_sensor",
+      "item": "pneumaticcraft:universal_sensor",
+      "text": "$(li)$(#800)getSensorNames()/$: Returns a table of all known sensor names.$(li)$(#800)getSensor()/$: Returns the name of the currently-selected sensor."
+    },
+    {
+      "type": "text",
+      "title": "Universal Sensor (cont.)",
+      "text": "$(li)$(#800)setSensor(<sensorName>), setSensor(<index>), setSensor()/$: Sets the current selected sensor. <sensorName> is one of the names returned by $(#800)getSensorNames()/$. <index> is an index on the returned table from $(#800)getSensorNames()/$. When using the no-arg $(#800)setSensor()/$, no sensor will be selected (the machine goes idle and uses no air). Returns true if the sensor is possible with the currently inserted upgrades. "
+    },
+    {
+      "type": "text",
+      "title": "Universal Sensor (cont.)",
+      "text": "$(li)$(#800)setTextField(<text>)/$: Some sensors use a text field to specify additional options (e.g. the 'Entities in range' sensor accepts an $(l:base_concepts/entity_filter)entity filter string/$). You can specify the desired text in here.$(li)$(#800)getTextField()/$: Returns the text currently stored in the $(thing)Universal Sensor/$."
+    },
+    {
+      "type": "text",
+      "title": "Universal Sensor (cont.)",
+      "text": "$(li)$(#800)isSensorEventBased()/$: There are two categories of sensors: event-based, and polling sensors. Event based sensors wait for something to happen (player attacks, item pickups). Polling sensors check the state of the sensor periodically (entities in range, world time, rain sensor). This function returns true if the current selected sensor is event-based."
+    },
+    {
+      "type": "text",
+      "title": "Universal Sensor (cont.)",
+      "text": "$(li)$(#800)getSensorValue()/$: If the current sensor is a polling sensor, return the (non-inverted) redstone signal it would output. Note that setting the sensor and immediately getting the output is unreliable, as many polling sensors poll infrequently for performance reasons. Thus, this method causes a pull-event to be triggered; get the output in response to that. If no polling sensor is selected, an exception will be thrown."
+    },
+    {
+      "type": "text",
+      "title": "Universal Sensor (cont.)",
+      "text": "$(li)$(#800)getMinWorkingPressure()/$: Returns the minimal pressure needed to make the Universal Sensor work (the yellow to green threshold in the GUI).$(li)$(#800)setGPSToolCoordinate(<slotIndex>,<x>,<y>,<z>)/$: Sets the location stored in the GPS Tool located in the given slot (starting with 1) to the provided location. This is useful for sensors that use a location."
+    },
+    {
+      "type": "text",
+      "title": "Universal Sensor (cont.)",
+      "text": "For event based sensors (e.g. the player right click sensor), getting the sensor value is event-based. You get the event by doing a $(#800)<arguments> = os.pullEvent(\"universalSensor\")/$. Usually the arguments consist of <eventName, redstoneStrength>. The player right click sensor is an exception, as <eventName, redstoneStrength, interactedX, interactedY, interactedZ> is returned. This allows for some interesting uses..."
+    }
+  ]
+}
+
+
+
+

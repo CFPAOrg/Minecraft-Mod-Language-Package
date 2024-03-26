@@ -1,0 +1,40 @@
+{
+  "name": "Programmable Controller",
+  "icon": "pneumaticcraft:programmable_controller",
+  "category": "programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "A Programmable Controller can do very similar things to what $(l:tools/drone)Drones/$ can do. A program can be written in a $(l:programming/programmer)Programmer/$, and saved to either a $(item)Drone/$ or $(l:components/network_components#network_api)Network API/$. Either of these items can then be placed in the $(item)Programmable Controller/$. Provided that there is enough $(l:base_concepts/pressure)pressure/$, the $(item)Programmable Controller/$ will execute the program just as it would when programmed onto a $(item)Drone/$. "
+    },
+    {
+      "type": "text",
+      "text": "There are a few differences, though:$(li)A $(item)Programmable Controller/$ uses a miniature version of a $(item)Drone/$ - a $(thing)minidrone/$. It's not a real entity, so no pathfinding is involved, and the $(thing)minidrone/$ can move through walls. This has the benefit of being more friendly to the server and more reliable in general.$(li)When executing a program, the $(item)Programmable Controller/$ will use air at a rate of 10mL/tick (whereas Drones only use 1mL/tick)."
+    },
+    {
+      "type": "text",
+      "text": "$(li)The $(item)Programmable Controller/$ cannot execute the following widgets: Computer Piece, Entity Attack, Drone Condition: Entity, Entity Export, Entity Import, Teleport, Standby, Suicide.$(p)The $(item)Programmable Controller/$ is generally best suited to larger applications, such as excavating big areas or building large structures."
+    },
+    {
+      "type": "text",
+      "title": "Interfacing Items/Fluids",
+      "text": "Any items or fluids that the $(thing)minidrone/$ collects can be interfaced via the sides of the $(item)Programmable Controller/$ block.$(p)By default, the 'drone' has a single inventory slot, and a 16000mB tank. The inventory size can be increased by adding $(l:base_concepts/upgrades#inventory)Inventory Upgrades/$ (max 35), which also increases the tank size by 1000mB per upgrade."
+    },
+    {
+      "type": "text",
+      "title": "Interfacing (cont.)",
+      "text": "By default, the top & side faces of the $(item)Programmable Controller/$ can be used to interface with items, and the bottom face can be used to insert or remove programmable items, but this can be adjusted if desired via the $(bold)Side Configuration/$ GUI tab.$(p)All faces of the $(item)Programmable Controller/$ can always be used to interface fluids."
+    },
+    {
+      "type": "text",
+      "title": "Charging Items",
+      "text": "The Programmable Controller is capable of $(thing)charging/$ the minidrone's held item, i.e. the item in slot 0 of the drone's inventory. This includes both pressurizable items such as the $(l:tools/jackhammer)Jackhammer/$, and items using $(thing)Forge Energy/$. Air and/or FE from the Programmable Controller's own buffers is used to do this. Charging is disabled by default; enable it via the controller's GUI ($(thing)Held Item Charging/$ side tab)."
+    },
+    {
+      "type": "crafting",
+      "text": "Creating a Programmable Controller",
+      "recipe": "pneumaticcraft:programmable_controller"
+    }
+  ]
+}

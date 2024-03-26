@@ -1,0 +1,55 @@
+{
+  "name": "Logistics Frames",
+  "icon": "pneumaticcraft:logistics_frame_passive_provider",
+  "category": "logistics",
+  "advancement": "pneumaticcraft:root",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Logistics Frames/$ are attachable gadgets which are placed onto inventories or tanks to mark them as part of a $(thing)Logistics System/$.$(p)Placed frames can be configured by $(thing)right-clicking/$ with a $(l:tools/logistics_configurator)Logistics Configurator/$, and removed by $(thing)sneak+right-clicking/$ with the Configurator. Frames can also be configured in-hand by right-clicking the item form."
+    },
+    {
+      "type": "text",
+      "text": "The following frame properties can be configured:$(li)All Frames support $(thing)filtering/$ to control what items/fluids they will provide or accept. See also $(l:tools/tag_filter)Tag Filters/$.$(li)The $(thing)Filter/$ side tab lets you configure whether filters match by $(thing)item NBT/$ or $(thing)mod ID/$, and also whether the filter should be applied as a whitelist (default) or blacklist."
+    },
+    {
+      "type": "text",
+      "text": "$(li)For $(l:logistics/frames#requester)Requester Frames/$, the $(thing)Minimum Order Size/$ tab allows you to configure the minimum amount of items or fluid that will be moved at a time; useful to prevent drones making constant trips with tiny payloads.$(li)Finally, all frames can be configured to be $(thing)invisible/$ to players unless they are holding a Logistics item (frame or configurator). Note: invisible frames pass any player left-clicks on to the block beneath."
+    },
+    {
+      "type": "crafting",
+      "anchor": "active_provider",
+      "title": "Active Provider Frame",
+      "recipe": "pneumaticcraft:logistics_frame_active_provider",
+      "text": "The $(item)Active Provider Frame/$ provides items/fluids to $(l:logistics/frames#requester)Requester Frames/$, $(l:logistics/frames#storage)Storage Frames/$ and $(l:logistics/frames#default_storage)Default Storage Frames/$."
+    },
+    {
+      "type": "crafting",
+      "anchor": "passive_provider",
+      "title": "Passive Provider Frame",
+      "recipe": "pneumaticcraft:logistics_frame_passive_provider",
+      "text": "The $(item)Passive Provider Frame/$ provides items/fluids to $(l:logistics/frames#requester)Requester Frames/$ only."
+    },
+    {
+      "type": "crafting",
+      "anchor": "storage",
+      "title": "Storage Frame",
+      "recipe": "pneumaticcraft:logistics_frame_storage",
+      "text": "$(item)Storage Frames/$ can receive items/fluids from $(l:logistics/frames#active_provider)Active Provider Frames/$ and supply items to $(l:logistics/frames#requester)Requester Frames/$."
+    },
+    {
+      "type": "crafting",
+      "anchor": "default_storage",
+      "title": "Default Storage Frame",
+      "recipe": "pneumaticcraft:logistics_frame_default_storage",
+      "text": "$(item)Default Storage Frames/$ can receive items/fluids from $(l:logistics/frames#active_provider)Active Provider Frames/$ and supply resources to $(l:logistics/frames#requester)Requester Frames/$ and $(l:logistics/frames#storage)Storage Frames/$. They have a lower priority than Storage Frames, which will be always be used first if possible."
+    },
+    {
+      "type": "crafting",
+      "anchor": "requester",
+      "title": "Requester Frame",
+      "recipe": "pneumaticcraft:logistics_frame_requester",
+      "text": "$(item)Requester Frames/$ can request items/fluids from any other framed inventory. For these frames, use the configuration GUI to tell the frame how much of each item or fluid to try to keep $(thing)stocked/$."
+    }
+  ]
+}

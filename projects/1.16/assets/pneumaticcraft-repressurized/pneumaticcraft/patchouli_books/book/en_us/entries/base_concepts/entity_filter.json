@@ -1,0 +1,50 @@
+{
+  "name": "Entity Filters",
+  "icon": "minecraft:player_head",
+  "category": "base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)Entity Filters/$ are used in several places in $(pncr), where there is a need to specify which $(thing)Entities/$ a machine or tool should affect in some way.$(p)In most places where a filter can be entered, pop-up help can be shown by pressing & holding the $(thing)F1/$ key."
+    },
+    {
+      "type": "text",
+      "text": "To specify specific entities, whether they are of the same type ('Creepers') or have the same name (a player called 'MineMaarten'), just use the entity name.$(p)When you want to specify a certain entity $(italic)type/$ (e.g., animals, aggressive mobs, players in general), put a '@' in front. A full list of examples, including accepted $(thing)@ Specifiers/$, follows."
+    },
+    {
+      "type": "text",
+      "title": "Examples",
+      "text": "$(li)$(#800)@player/$ matches all players$(li)$(#800)@mob/$ matches all aggressive creatures$(li)$(#800)@animal/$ matches all passive creatures (animals)$(li)$(#800)@animal(age = adult)/$ matches all adult animals$(li)$(#800)@animal(age = baby)/$ matches all baby animals$(li)$(#800)@animal(breedable = yes)/$ matches all animals that can breed right now$(li)$(#800)sheep(shearable = yes)/$ matches all sheep which can be sheared"
+    },
+    {
+      "type": "text",
+      "title": "Examples (cont.)",
+      "text": "$(li)$(#800)sheep(shearable = yes,color = black)/$ matches all black sheep which can be sheared$(li)$(#800)wolf(color = blue)/$ matches all wolves/dogs with a blue collar. $(li)$(#800)cat(color = white)/$ matches all cats with a white collar.$(li)$(#800)@minecart/$ matches Minecarts$(li)$(#800)@boat/$ matches Boats$(li)$(#800)@living/$ matches all living entities$(li)$(#800)@item/$ matches item entities$(li)$(#800)@orb/$ matches experience orbs"
+    },
+    {
+      "type": "text",
+      "title": "Examples (cont.)",
+      "text": "$(li)$(#800)@drone/$ matches $(l:tools/drone)Drones/$$(li)$(#800)Creeper/$ matches creepers$(li)$(#800)MineMaarten/$ matches an entity named 'MineMaarten'$(li)$(#800)c*/$ matches any entity starting with the letter 'c' (like Creepers, or Cows). $(li)$(#800)*pig*/$ matches any entity that includes 'pig' in the name (like a Pig or Zombie Pigman)."
+    },
+    {
+      "type": "text",
+      "text": "All matches are case-insensitive, e.g. both $(#800)zombie/$ and $(#800)Zombie/$ will match zombies.$(p)You can specify a $(thing)sequence/$ of filters with the ';' (semicolon) separator - this is a $(italic)match any/$ function:$(li)$(#800)creeper;zombie/$ matches both Creepers $(italic)and/$ Zombies."
+    },
+    {
+      "type": "text",
+      "text": "You can prefix a filter with '!' to negate the filter:$(li)$(#800)!@player/$ matches anything that is $(italic)not/$ a player$(li)$(#800)!Creeper;Zombie/$ matches anything that is neither a Creeper $(italic)nor/$ a Zombie$(li)$(#800)Creeper;!Zombie/$ is $(f00)invalid/$: '!' can only go right at the start of a filter/$$(p)$(bold)Note:/$ for $(l:tools/drone)Drone/$ entity filters using the $(l:programming/text)Text/$ programming widget, '!' is not supported; connect the Text widget on the left, as normal."
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "tools/micromissiles",
+        "tubes/air_grate_module",
+        "armor/pneumatic_helmet",
+        "machines/sentry_turret",
+        "machines/universal_sensor",
+        "programming/text"
+      ],
+      "text": "$(italic)Machines & tools which use entity filtering/$"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "Flow Control",
+  "icon": "pneumaticcraft:textures/progwidgets/jump_piece.png",
+  "category": "programming",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "When a $(l:tools/drone)Drone/$ is deployed, it immediately starts to execute its stored program. Execution flow occurs as follows:$(li)The program $(italic)always/$ begins at the $(l:programming/start)Start/$ widget, of which there can be only one.$(li)Flow normally proceeds $(italic)downward/$; to the widget connected to the bottom of the current widget."
+    },
+    {
+      "type": "text",
+      "text": "$(li)A widget executes its given operation until it decides it's $(italic)done/$ - the definition of 'done' varies from widget to widget, and is described in the pages for each individual widget.$(li)When there's no widget connected to the bottom of the current widget, execution returns to the $(l:programming/start)Start/$ widget.$(p)That's the basics. There are few special cases, however, described next..."
+    },
+    {
+      "type": "text",
+      "title": "Flow Control Widgets",
+      "text": "$(li)The $(l:programming/label)Label/$ widget acts a point in the program to be jumped to.$(li)The $(l:programming/jump)Jump/$ widget triggers an immediate, unconditional, jump to a matching $(thing)Label/$ widget.$(li)$(l:programming/conditions)Condition/$ widgets can trigger a jump, based on the condition they're testing.$(li)The advanced $(l:programming/for_each_item)For Each Item/$ and $(l:programming/for_each_coordinate)For Each Coordinate/$ widgets repeatedly jump to a $(thing)Label/$, for their list of inputs."
+    },
+    {
+      "type": "text",
+      "text": "A couple more special widgets exist, which affect flow control:$(li)The $(l:programming/standby)Standby/$ widget, which puts the drone to 'sleep' until another widget actually has something to do.$(li)The $(l:programming/suicide)Suicide/$ widget, which drops the $(thing)Drone/$ as an item, immediately terminating execution."
+    }
+  ]
+}

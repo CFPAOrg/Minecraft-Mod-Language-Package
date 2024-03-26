@@ -1,0 +1,56 @@
+{
+  "name": "塑料",
+  "icon": "pneumaticcraft:plastic_bucket",
+  "category": "components",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)塑料/$在$(#228)气动工艺：再加压$()中是很重要的合成材料。$(p)$(item)液态塑料/$由$(l:manufacturing/refinery)液化石油气/$和$(item)煤炭/$（或者$(l:renewables/biodiesel)生物柴油/$和$(item)木炭/$）在$(l:manufacturing/thermopneumatic_processing_plant)热气动加工机/$中合成。"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/plastic_from_lpg"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/plastic_from_biodiesel"
+    },
+    {
+      "type": "spotlight",
+      "title": "塑料片",
+      "item": "pneumaticcraft:plastic",
+      "flag": "pneumaticcraft:inWorldPlasticSolidification",
+      "text": "只要放置到世界中，$(item)熔融塑料/$就会固化；在大约半秒内就会固化成$(item)塑料片/$。用$(l:machines/omnidirectional_hopper)全方位漏斗/$和安装了$(l:base_concepts/upgrades#dispenser)发射器升级/$的$(l:machines/liquid_hopper)流体漏斗/$很容易自动化这一过程。"
+    },
+    {
+      "type": "spotlight",
+      "title": "塑料片",
+      "item": "pneumaticcraft:plastic",
+      "flag": "!pneumaticcraft:inWorldPlasticSolidification",
+      "text": "可以通过以下方式获取$(item)塑料片/$：在安装有$(l:semiblocks/heat_frame)导热框架/$的物品容器中放入装有$(item)熔融塑料/$的桶或$(l:machines/tanks)储罐/$，然后降温；最好达到-80℃以下（越低越好）。该过程将会消耗桶或储罐中的$(item)熔融塑料/$以产出塑料片。每消耗1000mB熔融塑料，固定产出一个$(item)塑料片/$，但有概率产出额外的$(item)塑料片/$。"
+    },
+    {
+      "type": "text",
+      "title": "提升产率",
+      "flag": "pneumaticcraft:inWorldPlasticSolidification",
+      "text": "还有另一种获取$(item)塑料片/$的方式：在安装有$(l:semiblocks/heat_frame)导热框架/$的物品容器中放入装有$(item)熔融塑料/$的桶或$(l:machines/tanks)储罐/$，然后降温；最好达到-80℃以下（越低越好）。该过程将会消耗桶或储罐中的$(item)熔融塑料/$以产出塑料片。每消耗1000mB熔融塑料，固定产出一个$(item)塑料片/$，但有概率产出额外的$(item)塑料片/$。"
+    },
+    {
+      "type": "text",
+      "title": "对于储罐的注解",
+      "text": "尽管$(#228)气动工艺：再加压$()中的流体储罐具有物品槽位，并且可以装上$(thing)导热框架/$，但这么做并不能固化储罐中的熔融塑料。必须将储罐放在装有导热框架的物品容器中（如箱子）才可以固化塑料。"
+    },
+    {
+      "type": "spotlight",
+      "title": "塑料砖块™",
+      "item": "pneumaticcraft:plastic_brick_red",
+      "text": "这些塑料砖块由$(item)塑料片/$和染料合成，可以用于建筑。只不过，不要光脚在其上行走；这么干会让你痛不欲生！$(p)$(italic)与另一个领先品牌兼容。/$"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:plastic_brick_red",
+      "text": "其余颜色的合成表也差不多"
+    }
+  ]
+}

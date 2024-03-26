@@ -1,0 +1,36 @@
+{
+  "name": "Air Grate Module",
+  "icon": "pneumaticcraft:air_grate_module",
+  "category": "tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This module is used to attract/repel entities to/from the module. With positive $(l:base_concepts/pressure)pressure/$, the tube will blow entities away and with $(thing)negative/$ pressure it will suck entities towards it. Negative pressure is achieved with a $(l:machines/vacuum_pump)Vacuum Pump/$. When item entities are close enough, they will automatically be inserted into any adjacent inventory, respecting sided inventories (like Furnaces)."
+    },
+    {
+      "type": "text",
+      "text": "The module's range can be expressed with these formulae:$(p)With positive pressure:$(p)  $(#272)Range = 4 x pressure (bar)/$$(p)With negative pressure:$(p)  $(#272)Range = -16 x pressure (bar)/$$(p)E.g. at 2 bar it repels at 4x2=8 blocks. At -0.5 bar, it attracts at -16x-0.5=8 blocks."
+    },
+    {
+      "type": "text",
+      "text": "The Air Grate will only affect entities in a cubic area, in the direction it's facing. The module must also have line of sight to an entity.$(p)You can right-click the module to make it show the affected range for a few seconds."
+    },
+    {
+      "type": "text",
+      "title": "Heat Sink Cooling",
+      "anchor": "active_cooling",
+      "text": "An Air Grate Module can also be used to actively cool $(l:machines/heat_sink)Heat Sinks/$. The range in which Heat Sinks is cooled is a 3x3x3 cube in front of the Air Grate. This range is visualized when the module is placed down.$(p)The Air Grate will only cool Heat Sinks when it has a range of 3 blocks or more (so, 0.75 bar)."
+    },
+    {
+      "type": "text",
+      "title": "Advanced PCB",
+      "text": "When you apply an $(l:tubes/advanced_pcb)Advanced PCB/$, you gain control over which entities are affected by the module.$(p)You could set it up, for example, so that only a certain player gets affected, or only Creepers, or only items. This can be done by right clicking the upgraded module to open a GUI allowing an $(l:base_concepts/entity_filter)entity filter/$ to be defined."
+    },
+    {
+      "type": "crafting",
+      "text": "Creating the Air Grate Module",
+      "recipe": "pneumaticcraft:air_grate_module"
+    }
+  ]
+}
