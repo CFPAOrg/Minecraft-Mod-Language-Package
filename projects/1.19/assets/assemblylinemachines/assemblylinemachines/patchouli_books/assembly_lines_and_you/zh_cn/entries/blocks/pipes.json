@@ -1,0 +1,70 @@
+{
+	"name": "管道",
+	"category": "assemblylinemachines:blocks",
+	"icon": "assemblylinemachines:energy_pipe",
+	"pages":[
+		{
+			"type": "text",
+			"text": "一旦你能够制作管道，它将是一种到处运输能量、液体以及物品的好办法。$(p)用管道SHIFT并右键你想连接的两个方块，即可将它们连接起来。然后你可以右击连接处配置它们。"
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping":{
+					"g": "assemblylinemachines:gearbox[facing=south,active=true]",
+					"c": "assemblylinemachines:crankmill",
+					"0": "assemblylinemachines:energy_pipe[south=pipe,north=connector]",
+					"x": "assemblylinemachines:energy_pipe[south=connector,north=pipe]",
+					"p": "assemblylinemachines:electric_purifier[facing=west]"
+				},
+				"pattern":[
+					["gc0xp"]
+				]
+			},
+			"name": "管道演示",
+			"enable_visualize": false,
+			"text": "$(7)$(o)这是一个关于基础管道网络的简单演示。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/item_pipe",
+			"text": "$(2)基础管道$()十分简单。它们的GUI中只有：$(li)一个$(9)输入$()按钮。$(li)一个$(c)输出$()按钮。$(br)两个选项都可以自由切换，所以一个方块可以同时输入$(l)并且$()输出材料。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/fluid_pipe",
+			"recipe2": "assemblylinemachines:crafting/pipes/energy_pipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/adv_item_pipe",
+			"text": "$(2)高级管道$()增加了：$(li)传输控制。$(li)过滤槽。$(li)$(l:items/upgrades)3个升级槽。$(/l)"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/adv_fluid_pipe",
+			"recipe2": "assemblylinemachines:crafting/pipes/adv_energy_pipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/ultimate_item_pipe",
+			"text": "$(2)终极管道$()是最高级的管道。它们对比高级管道并没有增加额外的特性，但速度大大提高。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/ultimate_fluid_pipe",
+			"recipe2": "assemblylinemachines:crafting/pipes/ultimate_energy_pipe"
+		},
+		{
+			"type": "text",
+			"title": "全能管道",
+			"text": "最后，这些是$(2)全能管道$()。$(p)这些独特管道的特殊之处在于它们可以在同一管道中同时传输物品、能量以及液体。$(p)所有管道都有三组可配置的输入/输出按钮，用以配置每个频道。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/advanced_omnipipe",
+			"recipe2": "assemblylinemachines:crafting/pipes/ultimate_omnipipe"
+		}
+	]
+	
+}
