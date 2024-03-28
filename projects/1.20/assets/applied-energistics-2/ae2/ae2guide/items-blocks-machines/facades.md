@@ -3,6 +3,7 @@ navigation:
   parent: items-blocks-machines/items-blocks-machines-index.md
   title: 伪装板
   icon: facade
+  icon_nbt: '{item: "minecraft:stone"}'
   position: 110
 categories:
 - network infrastructure
@@ -32,6 +33,12 @@ item_ids:
   <ImportStructure src="../assets/assemblies/facades_3.snbt" />
   <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
+
+## 隐藏伪装板
+
+手持[网络工具](network_tool.md)时伪装板会自动隐藏。
+
+此时可以直接与隐藏的伪装板后方的方块交互，无需取下伪装板。
 
 ## 配方
 
