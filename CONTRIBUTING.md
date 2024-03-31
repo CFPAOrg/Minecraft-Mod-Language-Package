@@ -52,9 +52,6 @@ Minecraft-Mod-Language-Package
   │     └─1UNKNOWN ----------------- // 存放不在 CurseForge 和 Modrinth 上发布的模组
   │         └─(命名空间)
   │           └─lang
-  │
-  │
-  │
   └─src --------------- // 各种自动化工具的源码
     ├─Formatter ------- // 格式化工具，曾用于统一翻译文件格式
     ├─Language.Core 
@@ -67,7 +64,7 @@ Minecraft-Mod-Language-Package
 
 **命名空间（Namespace）**：以匠魂为例，用压缩软件打开模组文件（JAR 格式），它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID?variant=zh-cn#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
 
-**Modrinth 项目名称**：以 Modrinth 独占模组 Clean F3 为例，它的 Modrinth 页面地址是 `https://modrinth.com/mod/clean-f3`，则在 `mod/` 后的内容 `clean-f3` 为 `}Modrinth 项目名称}` 的**主体**部分，而为了与 Curseforge 上发布的模组作以区分，所有仅在 Modrinth 上发布的模组，在其之前需要添加 `modrinth-` 作为区分。综上，它的 `{Modrinth 项目名称}` 为 `modrinth-clean-f3`。
+**Modrinth 项目名称**：以 Modrinth 独占模组 Clean F3 为例，它的 Modrinth 页面地址是 `https://modrinth.com/mod/clean-f3`，则在 `mod/` 后的内容 `clean-f3` 为 `{Modrinth 项目名称}` 的**主体**部分，而为了与 Curseforge 上发布的模组作以区分，所有仅在 Modrinth 上发布的模组，在其之前需要添加 `modrinth-` 作为区分。综上，它的 `{Modrinth 项目名称}` 为 `modrinth-clean-f3`。
 
 仓库中“命名空间”文件夹下的目录结构与[资源包](https://zh.minecraft.wiki/w/%E8%B5%84%E6%BA%90%E5%8C%85)的相应结构相同，其他可用资源包加载的本地化文件亦可接收。
 
