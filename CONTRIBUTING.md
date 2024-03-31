@@ -38,7 +38,7 @@ Minecraft-Mod-Language-Package
   │     │   └─lang ----------------- // 语言文件文件夹
   │     │     ├─en_us.json --------- // English (United States) 语言文件
   │     │     └─zh_cn.json --------- // 中文 (简体) 语言文件
-  │     ├─(Modrinth 项目名称)----- // 见下
+  │     ├─(Modrinth 项目名称)------- // 见下
   │     │ └─(命名空间) ------------- // 见下
   │     │   └─lang ----------------- // 语言文件文件夹
   │     │     ├─en_us.json --------- // English (United States) 语言文件
