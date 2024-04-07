@@ -45,7 +45,7 @@ item_ids:
 ## 元件种类
 
 *   <ItemLink id="energy_cell" />可存储200kAE，这能轻松应对普通网络的能量尖峰；通常，每个网络中放一个就够了。
-*   <ItemLink id="dense_energy_cell" />可存储1.6MAE，适用于脱离能量供应运行网络的情况和处理大型[空间存储](spatial-io.md)的巨量瞬时能量消耗。
+*   <ItemLink id="dense_energy_cell" />可存储1.6MAE，适用于脱离能量供应运行网络的情况和处理大型[空间存储](../ae2-mechanics/spatial-io.md)的巨量瞬时能量消耗。
 *   <ItemLink id="creative_energy_cell" />是用于测试的创造模式物品，能提供无！限！能！量！
 
 ## 配方
