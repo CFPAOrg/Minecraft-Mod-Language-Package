@@ -17,6 +17,7 @@
       - [审查人](#审查人)
       - [PR 作者](#pr-作者)
     - [搁置规则](#搁置规则)
+    - [公示规则](#公示规则)
     - [提示](#提示)
   - [代码贡献指南](#代码贡献指南)
   - [配置更改指南](#配置更改指南)
@@ -153,7 +154,7 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 ### 搁置规则
 
-搁置规则的目的是解决由于 PR 作者迟迟不出面响应审查要求而导致的 PR 积压问题。
+搁置规则是解决由于 PR 作者迟迟不出面响应审查要求而导致的 PR 积压问题。
 
 1. 若 PR 中存在未作者未响应的审查超过 7 天，审查人有权提及（@）PR 作者，提醒其相应审查意见，然后加上“即将被搁置”标签。
 2. 若“即将被搁置”标签存在超过 7 天，PR 作者将被视为无法回应。此时
@@ -163,10 +164,20 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 因搁置而关闭的 PR，PR 作者若想继续更新，可重新打开（Reopen）PR。
 
+### 公示规则
+
+公示规则是为了传播 PR 中某个（些）模组译名或词条的重大更改而设立的。
+
+1. 该规则适用于与官方翻译或社区流传度较广的翻译存在**重大差异**，且存在译名或词条更改的 PR。
+2. 纯文档或代码贡献 PR **不应**进入公示流程（存在停止支持或重新支持某模组翻译的除外）（例：[#4327](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/4327)，[#4215](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/4215)）
+3. 若 PR 在**审查通过后**符合上述规则，则视为该 PR 进入公示流程，同时加上“需要公示”标签，并择日通过如 Bilibili、QQ、MC 百科论坛等平台发布公示，至发布之日 14 天止视为公示流程结束。此时清除标签并加上“即将合并”标签，转入合并流程。
+  - 公示时，应当附带：PR 链接、原文、更改内容、更改缘由等，选择性附带图片。
+  <!--- 若在公示流程中，中文社区对该翻译或词条更改认为不妥，则应当听从社区的**合理**建议或回滚原文。TODO：确定该情况下的具体做法--> 
+
 ### 提示
 
 - 如果上传的文件中包含**非文本文件**（如`.ttf`，`.jpg`等），**有可能需要修改 [Packer 配置](config/packer.json)**，否则它们会被打包器排除，不会进入用户使用的资源包。
-  - 如果这些文件放置在`font`或`textures`中，一般不用修改配置；默认已经对这两处进行了特殊处理。
+  - 如果这些文件放置在 `font` 或 `textures` 中，一般不用修改配置；默认已经对这两处进行了特殊处理。
 - 不同版本的同一模组可通过[自定义文件检索策略](./Packer-Index-Doc.md)同步翻译。
 
 ## 代码贡献指南
@@ -200,7 +211,7 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 ### Packer
 
-路径：`./config/packer/[version].json`（如1.12的文件在[1.12.2.json](./config/packer/1.12.2.json)）
+路径：`./config/packer/[version].json`（如 1.12 的文件在 [1.12.2.json](./config/packer/1.12.2.json)）
 
 该文件内放置了**所有**正在维护的版本的打包配置。
 不要随意*删去*内容，除非你知道它为什么弃用。
@@ -211,18 +222,18 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 主要的更改场景：
 
 - 增加新翻译版本
-  - 需要将所有项填写一遍，同时需要更新`.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及 [CFPABot](https://github.com/Cyl18/CFPABot) 等相关服务。没有规划最好不要乱动。
+  - 需要将所有项填写一遍，同时需要更新 `.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及 [CFPABot](https://github.com/Cyl18/CFPABot) 等相关服务。没有规划最好不要乱动。
 - 更改字符替换表
-  - 修改`replacementMap`，格式与已有文本一致。Unicode*基础多语种平面（BMP）*以外的字符需要使用**UTF-16代理对**输入，否则可能无法识别。
+  - 修改`replacementMap`，格式与已有文本一致。Unicode *基础多语种平面（BMP）*以外的字符需要使用 **UTF-16 代理对**输入，否则可能无法识别。
   - 同时可能需要修改字体文件。
 - 处理非文本文件
-  1. 如果该文件所在的文件夹与`lang`文件夹同级，且对**任何模组都**不会有文本文件（如font\），将该文件夹加入对应版本的`noProcessNamespace`中。
-  2. 否则，将该模组的`CurseForge 项目名称`或`命名空间`中的一个（具体选哪一个看具体情况）加入`modNameBlackList`或`domainBlackList`，并将**所有**受影响的文件的相对位置加入`additionalContents`。
+  1. 如果该文件所在的文件夹与 `lang` 文件夹同级，且对**任何模组都**不会有文本文件（如 font\），将该文件夹加入对应版本的 `noProcessNamespace`中。
+  2. 否则，将该模组的 `CurseForge 项目名称`或`命名空间`中的一个（具体选哪一个看具体情况）加入 `modNameBlackList`或 `domainBlackList`，并将**所有**受影响的文件的相对位置加入 `additionalContents`。
 - 添加非标准位置（在`assets/`以外）的文件 
-  - 直接加入`additionalContents`
+  - 直接加入 `additionalContents`
 - 停止对某模组的支持
-  - 把该模组的`CurseForge 项目名称`或`命名空间`中的加入相应的`modNameBlackList`或`domainBlackList`（二者取其一）。
+  - 把该模组的 `CurseForge 项目名称`或`命名空间`中的加入相应的 `modNameBlackList` 或 `domainBlackList`（二者取其一）。
 
 ## 联系我们
 
-若有不明白的地方，可[前往 QQ 群](https://jq.qq.com/?_wv=1027&k=5geO1T21)（630943368，**较为活跃**）或 [Discord](https://discord.com/invite/SGve5Fn) 提问。
+若有不明白的地方，可[前往 QQ 群](https://jq.qq.com/?_wv=1027&k=5geO1T21)（630943368，**较为活跃**）
