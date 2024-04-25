@@ -1,4 +1,4 @@
-# 天使升级
+# 天使方块升级
 
 ![哈利路亚！](oredict:oc:angelUpgrade)
 
