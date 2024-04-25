@@ -4,7 +4,7 @@
 
 *本方块已废弃，将会在未来版本被移除* 请将其合成为[中继器](relay.md)以避免丢失。
 
-交换机可以让不同子网络间发送网络报文，而不会将组件暴露给其他网络中的[电脑](../general/computer.md)。通常而言，最好保证组件只对本地设备可见，这样可以避免[电脑](../general/computer.md)连接错误的[屏幕](screen1.md)，还能避免组件数溢出（导致[电脑](../general/computer.md)崩溃并拒绝启动）。
+交换机可以让不同子网络间发送网络报文，而不会将组件暴露给其他网络中的[电脑](../general/computer.md)。通常而言，最好保证组件只对本地设备可见，这样可以避免[电脑](../general/computer.md)连接错误的[显示屏](screen1.md)，还能避免组件数溢出（导致[电脑](../general/computer.md)崩溃并拒绝启动）。
 
 此方块还有一个无线版本，称为[无线接入点](accessPoint.md)，它还能以无线形式中继报文。无线报文可以被其他[无线接入点](accessPoint.md)或带有[无线网卡](../item/wlanCard1.md)的[电脑](../general/computer.md)接收并中继。
 
