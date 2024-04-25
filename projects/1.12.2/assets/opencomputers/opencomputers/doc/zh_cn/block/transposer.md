@@ -6,4 +6,4 @@
 
 **请注意此方块内部无物品存储空间**
 
-除了移动物品，它还能像装有[物品栏控制器升级](../item/inventoryControllerUpgrade.md)或[储罐控制器升级](../item/tankControllerUpgrade.md)的[适配器](adapter.md)一样，检查邻近物品容器或流体储罐的内容。
+除了移动物品，它还能像装有[物品栏交互升级](../item/inventoryControllerUpgrade.md)或[储罐交互升级](../item/tankControllerUpgrade.md)的[适配器](adapter.md)一样，检查邻近物品容器或流体储罐的内容。
