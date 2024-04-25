@@ -25,20 +25,20 @@
 * [适配器](adapter.md)
 * [地质分析仪](geolyzer.md)
 * [运动传感器](motionSensor.md)
-* [红石I/O方块](redstone.md)
+* [红石I/O端口](redstone.md)
 * [转运器](transposer.md)
 * [路径点](waypoint.md)
 
 ## 组装 / 打印
 * [3D打印件](print.md)
 * [3D打印机](printer.md)
-* [组装机](assembler.md)
+* [电子装配机](assembler.md)
 * [变色材料块](chameliumBlock.md)
-* [拆解机](disassembler.md)
+* [分解机](disassembler.md)
 
 ## 组网
 * [线缆](cable.md)
-* [网络拆分器](netSplitter.md)
+* [网络分断器](netSplitter.md)
 * [中继器](relay.md)
 
 ## 电源管理
