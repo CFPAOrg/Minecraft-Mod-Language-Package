@@ -8,7 +8,7 @@
 * [分析器](analyzer.md)
 * [手册](manual.md)
 * [远程终端](terminal.md)
-* [纹理获取器](texturePicker.md)
+* [材质获取器](texturePicker.md)
 * [螺丝刀扳手](wrench.md)
 
 ## 设备
@@ -31,16 +31,16 @@
 * [世界传感器卡](worldSensorCard.md)
 
 ### 升级
-* [天使升级](angelUpgrade.md)
+* [天使方块升级](angelUpgrade.md)
 * [电池升级](batteryUpgrade1.md)
-* [扩展卡容器](cardContainer1.md)
+* [扩展卡插槽](cardContainer1.md)
 * [区块加载升级](chunkloaderUpgrade.md)
 * [合成升级](craftingUpgrade.md)
 * [数据库升级](databaseUpgrade1.md)
 * [经验升级](experienceUpgrade.md)
 * [发电机升级](generatorUpgrade.md)
 * [悬浮升级](hoverUpgrade1.md)
-* [物品栏控制器升级](inventoryControllerUpgrade.md)
+* [物品栏交互升级](inventoryControllerUpgrade.md)
 * [物品栏升级](inventoryUpgrade.md)
 * [拴绳升级](leashUpgrade.md)
 * [MFU](mfu.md)
@@ -49,14 +49,14 @@
 * [告示牌升级](signUpgrade.md)
 * [太阳能发电机升级](solarGeneratorUpgrade.md)
 * [粘性活塞升级](stickypistonupgrade.md)
-* [储罐控制器升级](tankControllerUpgrade.md)
+* [储罐交互升级](tankControllerUpgrade.md)
 * [储罐升级](tankUpgrade.md)
 * [牵引光束升级](tractorBeamUpgrade.md)
 * [交易升级](tradingUpgrade.md)
-* [升级容器](upgradeContainer1.md)
+* [升级插槽](upgradeContainer1.md)
 
 ### 机架设备
-* [机架软驱](diskDriveMountable.md)
+* [机架式软驱](diskDriveMountable.md)
 * [服务器](server1.md)
 * [终端服务器](terminalServer.md)
 
@@ -67,11 +67,11 @@
 * [EEPROM](eeprom.md)
 * [软盘](floppy.md)
 * [硬盘驱动器](hdd1.md)
-* [内存条（RAM）](ram1.md)
+* [内存条](ram1.md)
 
 ## 合成材料
 * [腐蚀液](acid.md)
-* [算术运算单元](alu.md)
+* [算术逻辑单元](alu.md)
 * [方向键](arrowKeys.md)
 * [按钮组](buttonGroup.md)
 * [扩展卡基板](card.md)
