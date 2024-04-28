@@ -47,9 +47,9 @@
 	"epicfight.gui.configuration.autoswitching": "自动切换物品",
 	"epicfight.gui.to_battle_mode": "进入战斗模式",
 	"epicfight.gui.to_mining_mode": "进入挖掘模式",
-	"epicfight.gui.warn_already_registered": "%s警告: 此物品已在另一边注册！",
-	"epicfight.gui.tooltip_battle": "自动注册所有具有史诗战斗属性的物品。",
-	"epicfight.gui.tooltip_mining": "自动注册所有未包含在战斗模式中的物品。",
+	"epicfight.gui.warn_already_registered": "%s\n警告: 此物品已在另一边注册！",
+	"epicfight.gui.tooltip_battle": "所有具有史诗战斗属性的物品自动被注册。",
+	"epicfight.gui.tooltip_mining": "所有未包含在战斗模式中的物品自动被注册。",
 	"epicfight.gui.delete_all": "删除全部",
 	"epicfight.gui.auto_add": "自动添加",
 	"epicfight.gui.attribute": "史诗战斗属性：",
@@ -96,6 +96,10 @@
 	"gamerule.globalStun": "启用全局眩晕",
 	"gamerule.canSwitchCombat": "启用切换战斗/挖掘模式",
 
+	"gui.epicfight.configurations": "史诗战斗配置",
+	"gui.epicfight.graphic_options": "史诗战斗图像",
+	"gui.epicfight.control_options": "史诗战斗控制",
+	
 	"gui.epicfight.skill_edit": "技能",
 	"gui.epicfight.filter_animation.on": "滤镜动画：开",
 	"gui.epicfight.filter_animation.off": "滤镜动画：关",
@@ -116,8 +120,8 @@
 	"gui.epicfight.camera_auto_switch.off": "自动切换视角：关",
 	"gui.epicfight.auto_preparation.on": "自动备战：开",
 	"gui.epicfight.auto_preparation.off": "自动备战：关",
-	"gui.epicfight.off_blood_effects.on": "血液效果：开",
-	"gui.epicfight.off_blood_effects.off": "血液效果：关",
+	"gui.epicfight.blood_effects.on": "血液效果：开",
+	"gui.epicfight.blood_effects.off": "血液效果：关",
 	"gui.epicfight.no_mining_in_combat.on": "战斗中禁止挖掘：开",
 	"gui.epicfight.no_mining_in_combat.off": "战斗中禁止挖掘：关",
 	"gui.epicfight.auto_switching_items": "自动切换物品",
@@ -129,7 +133,7 @@
 	"gui.epicfight.aim_helper.tooltip": "在使用弓或弩瞄准时渲染瞄准辅助线，与极佳图形设置和一些着色器不兼容",
 	"gui.epicfight.camera_auto_switch.tooltip": "切换挖掘/战斗模式时自动切换到第一/第三人称",
 	"gui.epicfight.auto_preparation.tooltip": "当玩家受到伤害时自动切换到战斗模式",
-	"gui.epicfight.off_blood_effects.tooltip": "打开/关闭血液效果",
+	"gui.epicfight.blood_effects.tooltip": "打开/关闭血液效果",
 	"gui.epicfight.no_mining_in_combat.tooltip": "在战斗模式下启用/停用挖掘能力",
 	"gui.epicfight.auto_switching_items.tooltip": "编辑自动切换战斗/采矿模式的物品列表",
 	"gui.epicfight.export_custom_armor.tooltip": "以资源包格式导出自定义盔甲模型",
@@ -143,7 +147,20 @@
 	"gui.epicfight.select_slot_tooltip": "选择应用技能的槽位。",
 	
 	"gui.epicfight.save": "保存",
-
+	"gui.epicfight.export": "导出",
+	
+	"gui.epicfight.button.graphics": "图像",
+	"gui.epicfight.button.controls": "控制",
+	"gui.epicfight.button.datapack_edit": "数据包编辑",
+	
+	"gui.epicfight.tab.datapack.weapon_type": "武器类型",
+	"gui.epicfight.tab.datapack.item_capability": "物品功能",
+	"gui.epicfight.tab.datapack.mob_patch": "生物补丁",
+	
+	"gui.epicfight.select": "%s注册列表",
+	"gui.epicfight.styles": "风格",
+	
+	"item.epicfight.bokken": "木刀",
 	"item.epicfight.uchigatana": "打刀",
 	"item.epicfight.stray_hat": "流浪者帽子",
 	"item.epicfight.stray_robe": "流浪者长袍",
@@ -268,5 +285,20 @@
 	"skill.epicfight.identity.category": "属性技能",
 	"skill.epicfight.mover.category": "行动技能",
 
+	"epicfight.tip.weight": "重量会缩短击晕时间，增加技能的耐力消耗并减慢攻击速度，尤其是快速物品。",
+	"epicfight.tip.stun_armor": "击晕抗性可使击晕间隔变长，提升整体抗性和防御力。",
+	"epicfight.tip.knockback": "击退魔咒能延长冲击造成的击晕的持续时间。",
+	"epicfight.tip.two_hand_weapon": "副手无法使用双手武器，因此只能选择单手武器或双持武器。",
+	"epicfight.tip.skill_books": "可在地牢书籍中找到技能，或从敌对生物身上零星掉落，分为闪避，行动，防守和被动。",
+	"epicfight.tip.sweeping_edge": "横扫之刃魔咒会根据其等级提升特殊攻击伤害：1级提升50%，2级提升67%，3级提升75%。",
+	"epicfight.tip.sharpness": "锋利魔咒能增大每次攻击造成的伤害。",
+	"epicfight.tip.impact": "冲击会增加被击中目标的总击晕时间。",
+	"epicfight.tip.blocking": "格挡一次攻击后，你会被击晕一小段时间。",
+	"epicfight.tip.parrying": "想要学习招架技能，你必须先获得防守技能。",
+	"epicfight.tip.death_harvest": "根据武器伤害和击败的敌人，死亡收割允许你重新给武器进阶技能充能。",
+	"epicfight.tip.demolition_leap": "要想获得毁坏跳跃，你必须击败末影龙。",
+	"epicfight.tip.temples": "打刀类似于技能书，在沙漠神殿和丛林神庙中可找到。这些稀有武器无法被合成。",
+	"epicfight.tip.combat_mode": "默认按‘R’即可在挖掘和战斗模式中切换。",
+	
 	"beta_warning": "当前版本的史诗战斗为内部测试版！包含一些可能无法正常运行或致使游戏停止的实验功能。如果您不想使用此模组，请您从您的模组列表中删除它。"
 }
