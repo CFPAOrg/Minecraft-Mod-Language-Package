@@ -1,0 +1,76 @@
+
+{
+  "name": "Assembly System",
+  "icon": "pneumaticcraft:assembly_controller",
+  "category": "manufacturing",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "To be able to craft higher tier materials, you'll need an $(thing)Assembly System/$; a collection of $(thing)Assembly Machines/$. These machines communicate with each other when they're horizontally adjacent. Only one machine of each type can exist (with the exception of the $(item)Assembly IO Unit/$, see below). The assembly line runs on $(l:base_concepts/pressure)compressed air/$, but you only need to suuply air to the Assembly Controller to power the whole system."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:assembly_controller",
+      "text": "The brain of the $(thing)Assembly System/$. It accepts $(l:manufacturing/assembly_programs)programs/$ which tell the $(item)Controller/$ how to control the other $(thing)Assembly Machines/$.$(p)The Controller's display shows diagnostics information about the its status. Open the GUI to see what's happening."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:assembly_io_unit_import",
+      "text": "The $(item)IO Unit/$ is the connection between inventories and the $(item)Assembly Platform/$. This robot arm can reach diagonally.$(p)The IO Unit can either export finished items, or import items to be used in crafting. Any inventory can be used: vanilla $(item)chests/$ or modded inventory blocks."
+    },
+    {
+      "type": "text",
+      "title": "Assembly IO Unit (cont.)",
+      "text": "An $(thing)Assembly System/$ must include $(italic)two/$ $(item)IO Units/$; one import unit, and one export unit: $(6)orange/$ means it's an export unit, $(9)blue/$ means it's an import unit. For an $(item)IO Unit/$ to work it needs to be able to reach an $(item)Assembly Platform/$, as well as an inventory to extract or store items (depending on its mode)."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:assembly_platform",
+      "text": "The $(item)Assembly Platform/$ is a worktable for the other $(thing)Assembly Machines/$. It is used to hold items in place when drilling/lasering.$(p)The $(item)Assembly Platform/$ is best positioned centrally, as all other machines need to access it."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:assembly_drill",
+      "text": "The $(item)Assembly Drill/$ is one of the $(thing)Assembly Machines/$ which do the actual work. Its diamond drillhead is able to drill through the toughest materials.$(p)The $(item)Assembly Drill/$ can $(italic)not/$ reach diagonally, so it must be located directly adjacent to an $(thing)Assembly Platform/$."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:assembly_laser",
+      "text": "The $(item)Assembly Laser/$ is able to cut through materials, used to slice an item up, or to cut off edges.$(p)Like the $(item)Assembly Drill/$, this machine can $(italic)not/$ reach diagonally."
+    },
+    {
+      "type": "text",
+      "title": "Using",
+      "text": "To craft items with the $(thing)Assembly System/$, put an $(l:manufacturing/assembly_programs)Assembly Program/$ in the $(item)Assembly Controller/$, and put the required items in the input inventory.$(p)Any items which match a recipe known to the controller and inserted program will be automatically processed."
+    },
+    {
+      "type": "link",
+      "flag": "mod:crafttweaker",
+      "title": "CraftTweaker",
+      "text": "The $(thing)Assembly System/$ has $(l:https://minecraft.curseforge.com/projects/crafttweaker)CraftTweaker/$ support: recipes can be added and removed. Follow the link below for more information.",
+      "url": "https://docs.blamejared.com/1.16/en/mods/PneumaticCraft-Repressurized/AssemblySystem",
+      "link_text": "CraftTweaker Docs"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:assembly_controller",
+      "recipe2": "pneumaticcraft:assembly_platform"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:assembly_io_unit_import",
+      "recipe2": "pneumaticcraft:assembly_io_unit_export"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:assembly_io_unit_import_from_export",
+      "recipe2": "pneumaticcraft:assembly_io_unit_export_from_import"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:assembly_drill",
+      "recipe2": "pneumaticcraft:assembly_laser"
+    }
+  ]
+}

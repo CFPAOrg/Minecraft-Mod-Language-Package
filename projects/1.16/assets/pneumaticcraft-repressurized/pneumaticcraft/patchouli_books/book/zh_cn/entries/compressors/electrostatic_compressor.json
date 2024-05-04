@@ -1,0 +1,43 @@
+{
+  "name": "静电压缩机",
+  "icon": "pneumaticcraft:electrostatic_compressor",
+  "category": "compressors",
+  "advancement": "pneumaticcraft:advanced_pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)静电压缩机/$是一台$(l:base_concepts/pressure_tiers)二级/$空气$(l:base_concepts/pressure)压缩机/$，使用$(thing)闪电/$作为压缩空气的能源。$(p)其被闪电击中时将立刻产生200000mL的空气。看起来很多，但你见过几次高压苦力怕？你得让它被雷劈中。"
+    },
+    {
+      "type": "text",
+      "text": "要增加被雷击的概率，可以为机器连接$(item)铁栅栏/$，充当引导闪电的导体。$(p)建议搭建一个铁栅栏$(thing)网格/$：其范围是横向5格（直线距离），向上或向下各5格；每个铁栅栏必须通过其余铁栅栏与$(item)静电压缩机/$相连接。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/electrostatic_compressor.png"
+      ]
+    },
+    {
+      "type": "text",
+      "text": "注：在左页的图片中，只有中间的压缩机具有足够大的网格以达到最大效率；外围的压缩机被击中的几率更小（尽管整体而言，这还是比只有中间的压缩机概率更大）。"
+    },
+    {
+      "type": "text",
+      "text": "若同一$(thing)网格/$中有多个$(item)静电压缩机/$，闪电生成的空气将在所有压缩机之间等量分配。$(p)要避免压缩机被击中时因压力过高爆炸，可以向机器底面连接$(item)铁栅栏/$。这样，多余能量可以通过该种方式释放到外界而非进入机器。"
+    },
+    {
+      "type": "text",
+      "text": "这一释放行为仅在机器达到危险压力而非更早时发生。每个在机器$(italic)正/$下方（同一y轴）的$(item)铁栅栏/$将会释放10000mL的多余空气。$(p)因此，若同一$(thing)网格/$上有 10 个压缩机，每台机器下方$(ttcolor)$(t:每台机器产生200000/10=20000mL空气； 10000x2=20000mL空气被释放)只需要2个铁栅栏/$。（也可以安装$(l:base_concepts/upgrades#security)安全升级/$，但这更为昂贵且低效。）"
+    },
+    {
+      "type": "text",
+      "text": "要提高被击中的概率，也可以在机器正$(italic)上/$方放置最多10个$(item)铁栅栏/$，构成一个$(thing)避雷针/$。每个铁栅栏将会略微提升被击中的几率。$(p)$(bold)注：/$与旧版的$(#228)气动工艺：再加压$()不同，自然生成的闪电$(italic)不会/$使压缩机生成空气（否则，其余模组添加的生成闪电的手段将会破坏平衡性）。相反，压缩机有小概率生成“伪”闪电。这一概率在晴天$(italic)极/$小，在$(thing)雨天/$稍有提高，在$(thing)雷雨天/$则是大大提高。"
+    },
+    {
+      "type": "crafting",
+      "text": "$(item)静电压缩机/$的合成表",
+      "recipe": "pneumaticcraft:electrostatic_compressor"
+    }
+  ]
+}

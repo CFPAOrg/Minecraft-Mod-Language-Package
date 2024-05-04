@@ -1,0 +1,84 @@
+{
+  "name": "Programmer",
+  "icon": "pneumaticcraft:programmer",
+  "category": "programming",
+  "advancement": "pneumaticcraft:printed_circuit_board",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The $(item)Programmer/$ is a machine used to program $(l:tools/drone)Drones/$, using a visual programming system where $(l:programming/puzzle_pieces)Puzzle Pieces/$ are assembled in a programming GUI. The $(thing)Programmer/$ does not require $(l:base_concepts/pressure)pressure/$ to operate.The rest of the $(thing)Programming/$ category has much more information about how to write Drone programs."
+    },
+    {
+      "type": "crafting",
+      "text": "Creating a Programmer",
+      "recipe": "pneumaticcraft:programmer"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/programmer_gui.png"
+      ],
+      "text": "$(italic)Programmer GUI: see following pages for information on each section/$"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)1. Main Programming Area/$$(p)This area is where your actual actual program is built. Widgets are dragged here from the $(thing)widget tray (area 2)/$ and 'snapped' together to form programs.$(p)You can zoom in and out of the programming area with the mouse wheel, or with the scrollbar on the right-hand side."
+    },
+    {
+      "type": "text",
+      "text": "$(bold)2. Widget Tray/$$(p)This area holds the widgets you will use to build your program. It holds more widgets than are shown; you can cycle through pages with the arrow buttons under the tray, or expand the tray to show all widgets with $(thing)Space/$ or $(thing)Tab/$.$(p)When expanded, the tray will also show a textfield above where you can enter a filter string to search for widgets."
+    },
+    {
+      "type": "text",
+      "text": "$(bold)3. Drone Slot/$$(p)Place the $(l:tools/drone)Drone/$ (or $(l:components/network_components)Network Storage/API/$) to be programmed here. When ready to program the Drone, press the $(thing)⟶/$ button to write the program. You can use the textfield to the left to name the Drone, if you wish. You will hear audible feedback if successful.$(p)You can also use the $(thing)⟵/$ button to import a program from a Drone (or Network Storage/API)."
+    },
+    {
+      "type": "text",
+      "text": "$(bold)4. Difficulty Selection/$$(p)These radio buttons control which of the programming widgets are available in the tray. They also enable/disable some advanced features, such as $(l:programming/coordinate_operator)variables/$.$(p)$(bold)5. Player Inventory/$$(p)Your own inventory; if you have any $(l:tools/gps_tool)GPS Tools/$ or $(l:tools/gps_area_tool)GPS Area Tools/$, you can click them on $(l:programming/area)Area/$ or $(l:programming/coordinate)Coordinate/$ widgets to transfer their settings to the widget."
+    },
+    {
+      "type": "text",
+      "text": "$(bold)6. Navigation & Display Options/$$(p)You can use these buttons to:$(li)Navigate to the $(l:programming/start)Start/$ widget of your program$(li)Navigate to the last widget you placed$(li)Toggle display of extra info on each widget$(li)Toggle display of connection lines between $(l:programming/jump)Jump/$ and $(l:programming/label)Label/$ widgets"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)7. Misc Buttons/$$(p)The buttons along the left-hand edge of the GUI allow (in order):$(li)$(thing)Undo/$ of up to the last 20 actions$(li)$(thing)Redo/$ of the previous undo$(li)$(thing)Import or Export/$ your program as a JSON file to $(l:https://pastebin.com)pastebin.com/$ (Pastebin login optional)$(li)$(thing)Delete/$ your entire program (can be undone)$(li)$(thing)Convert/$ your program to $(thing)Relative/$ co-ordinates (see $(l:programming/programmer#convert_relative)this page/$ for more information)"
+    },
+    {
+      "type": "text",
+      "anchor": "ids",
+      "title": "Progwidget IDs",
+      "text": "If you toggle on extended tooltip information with $(thing)F3+H/$, you will notice that the tooltip for each programming widget also includes the internal widget ID at the end. This is primarily of benefit if you intend to do any drone programming with the $(l:machines/drone_interface)Drone Interface/$ - the $(thing)setAction()/$ Lua method in the Drone Interface takes these IDs (the $(thing)pneumaticcraft:/$ prefix is optional) as a parameter."
+    },
+    {
+      "type": "text",
+      "title": "Sharing Programs",
+      "text": "If you want to share your programs with other players, you have a couple of options:$(li)You can use the $(thing)Pastebin/$ button to export your program to $(l:https://pastebin.com)pastebin.com/$$(li)The $(thing)Pastebin/$ GUI also allows writing the program to the clipboard for copying & pasting$(li)You can save your program to a $(l:tools/drone)Drone/$ or $(l:components/network_components)Network Storage/Network API/$ and give the item to another player on your server."
+    },
+    {
+      "type": "text",
+      "anchor": "convert_relative",
+      "title": "Convert to Relative",
+      "text": "Say you've designed a program that runs an automated farm and you want to share this. People on a different world will have their farm at different coordinates, so they would have to change every single $(l:programming/area)Area/$ widget; what a pain.$(p)The $(thing)Convert to Relative/$ button makes this easier; it also provides tooltips indicating what you need to do to convert your program."
+    },
+    {
+      "type": "text",
+      "anchor": "convert_relative",
+      "title": "Convert to Relative (cont.)",
+      "text": "You will need to add one fixed $(l:programming/coordinate_operator)Coordinate Operator/$ widget, along with a $(l:programming/coordinate)Coordinate/$ widget containing a $(thing)base position/$ (e.g. the position of an input chest). It then converts any absolute positions (area or coordinate) used in your program to coordinates relative to that base position.$(p)Now, users of your program will only have to adjust a single coordinate to use your program!"
+    },
+    {
+      "type": "text",
+      "flag": "mod:jei",
+      "anchor": "jei",
+      "title": "JEI Integration",
+      "text": "If JEI is installed, you will notice a '+' (Move Items) button if you open the JEI recipe display while the Programmer GUI is open. Clicking it will add $(l:programming/item_filter)Item Filter/$ widgets for each input item in the recipe. If you have a $(l:programming/crafting)Crafting/$ widget in the programming area with no Item Filters attached, Item Filters will be added to the Crafting Widget to quickly & easily set up a recipe. Otherwise, they will be added in a row at the top left of the programming area."
+    },
+    {
+      "type": "text",
+      "flag": "mod:jei",
+      "title": "JEI Integration (cont)",
+      "text": "By default, only one Item Filter is added for each unique item type (e.g. for a $(item)Stone Slab/$ recipe, only one $(item)Stone/$ filter will be created, not three). Remember that widgets can be copied by middle-clicking and dragging. If you want to add an Item Filter for every item in the recipe, including duplicates, hold Shift when clicking the '+' button in JEI."
+    }
+  ]
+}

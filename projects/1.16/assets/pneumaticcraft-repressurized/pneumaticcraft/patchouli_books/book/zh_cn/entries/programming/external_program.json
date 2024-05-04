@@ -1,0 +1,23 @@
+{
+  "name": "外部程序",
+  "icon": "pneumaticcraft:textures/progwidgets/external_program_piece.png",
+  "category": "widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "该拼图将会寻找给定$(l:programming/area)区域/$中的每一个容器。对于每个容器，其将遍历每一个槽位。找到$(l:tools/drone)无人机/$或$(l:components/network_components#network_api)网络 API/$ 时，将会运行其所存储的程序。$(p)这一程序执行完毕后，$(item)无人机/$将会继续遍历下一个槽位/容器。"
+    },
+    {
+      "type": "text",
+      "text": "该拼图可以用来调试$(item)无人机/$程序，因为$(l:programming/programmer)编程器/$同样算作容器。只需要向无人机写入指向$(thing)外部程序/$拼图，并将其指向一个（只）含有某$(item)编程器的$(thing)区域/$，然后将无人机放置。$(p)此后，向编程器内放置$(item)无人机/$或$(item)网络 API/$，并进行编程。点击$(item)编程器/$中的$(thing)⟶（导出）/$按钮时，已部署的$(item)无人机/$将会立刻执行该程序。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/external_program_piece.png"
+      ],
+      "text": "$(italic)递归调用/$"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "name": "对于每个坐标",
+  "icon": "pneumaticcraft:textures/progwidgets/for_each_coordinate.png",
+  "category": "widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "这个高级拼图将会对给定$(l:programming/area)区域/$内的每一个坐标进行遍历。对于每个坐标，将会把$(ttcolor)$(t:右击拼图以调出配置界面指定这一变量)指定变量/$设置为这一坐标，并跳转到给定的$(l:programming/label)标签/$处，这一标签的标签名与连接在本拼图上的$(l:programming/text)文本/$相匹配。当跳转后的进程结束执行时（到达了执行的尽头，一般将要跳转回$(l:programming/start)开始/$处时），程序流将返回该拼图，并对下一坐标重复该操作。"
+    },
+    {
+      "type": "text",
+      "title": "跳出循环",
+      "text": "可以通过将$(thing)对于每个坐标/$使用的坐标变量设为 (0,0,0) 的方式跳出循环。控制流跳转回$(thing)对于每个坐标/$时将注意到这一更改并取消后继遍历。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/for_each_coordinate.png"
+      ],
+      "text": "$(italic)对于每个坐标/$"
+    }
+  ]
+}

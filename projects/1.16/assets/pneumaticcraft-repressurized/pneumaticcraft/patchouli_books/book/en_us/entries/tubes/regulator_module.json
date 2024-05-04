@@ -1,0 +1,30 @@
+{
+  "name": "Regulator Module",
+  "icon": "pneumaticcraft:regulator_tube_module",
+  "category": "tubes",
+  "advancement": "pneumaticcraft:pressure_tube",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Regulator Tube Module is an $(l:tubes/tube_modules#inline)inline/$ module used to limit the $(l:base_concepts/pressure)pressure/$ allowed through the tube. By default, the module will regulate the pressure to 4.9 bar (for both basic and advanced tubes) with no redstone signal, reducing toward 0 as the signal rises toward 15. This means a lever right beside a regulator closes it, preventing any air flow through it."
+    },
+    {
+      "type": "text",
+      "text": "When the narrow side of the regulator reaches this pressure, no more air will be allowed through the tube. This principal can be used as a $(thing)transformer/$: on the input (wide) side is high-pressure air, but the Regulator Tube limits the pressure on the output to the threshold pressure.$(p)This allows a lower tier tube network to be safely supplied by a higher-tier network."
+    },
+    {
+      "type": "text",
+      "text": "Interestingly, the $(thing)Regulator Module/$ allows unrestricted flow of air in the opposite direction (from the narrow side to the wide side) regardless of the redstone signal; this means a regulator with a full redstone signal can be used as a one-way valve.$(p)Note that the $(thing)Regulator/$ does $(italic)not/$ actively reduce pressure on its narrow side; it only prevents air flow if the pressure would rise above the threshold."
+    },
+    {
+      "type": "text",
+      "title": "Advanced PCB",
+      "text": "When you apply an $(l:tubes/advanced_pcb)Advanced PCB/$ to the Regulator Module, the module gains a GUI providing far more control over the threshold level. You can set a precise threshold in the GUI, or with the $(bold)Advanced Config/$ checkbox, configure interpolated threshold levels based on the redstone signal. This functions exactly like the $(l:tubes/safety_module)Safety Module/$."
+    },
+    {
+      "type": "crafting",
+      "text": "Creating the Regulator Module",
+      "recipe": "pneumaticcraft:regulator_tube_module"
+    }
+  ]
+}

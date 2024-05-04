@@ -1,0 +1,24 @@
+{
+  "name": "对于每个物品",
+  "icon": "pneumaticcraft:textures/progwidgets/for_each_item.png",
+  "category": "widget_flow",
+  "advancement": "pneumaticcraft:programmer",
+  "pages": [
+    {
+      "type": "text",
+      "text": "这个高级拼图将会对每一连接的$(l:programming/item_filter)物品过滤器/$执行子例程。对于每个物品，将会把$(ttcolor)$(t:右击拼图以调出配置界面指定这一变量)指定变量/$设置为这一物品，并跳转到标签名匹配所连接的$(l:programming/text)文本/$的$(l:programming/label)标签/$处。当跳转后的进程结束执行时（到达了执行的尽头，一般将要跳转回$(l:programming/start)开始/$处时），程序流将返回该拼图，并对下一$(thing)物品过滤器/$重复该操作。"
+    },
+    {
+      "type": "text",
+      "title": "跳出循环",
+      "text": "可以通过将$(thing)对于每个物品/$使用的物品变量设为空（使用$(l:programming/item_assign)物品赋值/$做到这一点）的方式跳出循环。控制流跳转回$(thing)对于每个物品/$时将注意到这一更改并取消后继遍历。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/progwidgets/for_each_item.png"
+      ],
+      "text": "$(italic)对于每个物品/$"
+    }
+  ]
+}

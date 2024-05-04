@@ -1,0 +1,47 @@
+{
+  "name": "印刷电路板",
+  "icon": "pneumaticcraft:printed_circuit_board",
+  "category": "components",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)印刷电路板/$是很多高级机器和工具的重要部分。制作$(item)印刷电路板/$需要好几步。$(p)首先，在$(l:manufacturing/pressure_chamber)压力室/$中制作$(item)空印刷电路板/$，合成表参见对页。此后，有两条制作路线，详细信息见后。"
+    },
+    {
+      "type": "pneumaticcraft:pressure_chamber",
+      "recipe": "pneumaticcraft:pressure_chamber/empty_pcb"
+    },
+    {
+      "type": "text",
+      "title": "法一",
+      "text": "该方法是初期唯一可用的方法，并且比较慢，除非配合自动化和加热装置：采用化学途径蚀刻出$(item)印刷电路板/$；先将电路板放入$(l:manufacturing/uv_light_box)紫外线灯箱/$照射，然后在$(l:manufacturing/etching_tank)蚀刻器/$中将其蚀刻为$(item)未组装的印刷电路板/$。"
+    },
+    {
+      "type": "blasting",
+      "title": "回收失效的印刷电路板",
+      "recipe": "pneumaticcraft:empty_pcb_from_failed_pcb",
+      "text": "如果$(item)空印刷电路板/$并没有在$(l:manufacturing/uv_light_box)紫外线灯箱/$中完全照射，刻蚀过程有可能失败；可以在$(item)高炉/$中回收$(item)失效的印刷电路板/$"
+    },
+    {
+      "type": "spotlight",
+      "title": "法二",
+      "item": "pneumaticcraft:assembly_controller",
+      "text": "在搭建出$(l:manufacturing/assembly_system)装配系统/$后，可以在装配系统放入$(item)装配程序：激光/$将$(item)空印刷电路板/$直接转化为$(item)未组装的印刷电路板/$。不需要将其在$(item)紫外线灯箱/$中照射或在$(item)蚀刻器/$中蚀刻。"
+    },
+    {
+      "type": "text",
+      "title": "法二（续）",
+      "text": "$(p)对于生产$(item)未组装的印刷电路板/$而言，法二（装配台）较为简单，速度也较快。但在高度自动化与热量系统的加持下，法一（$(thing)紫外线灯箱+蚀刻器/$）的生产速度可以远大于法二；对于大量生产电路板而言尤为如此。"
+    },
+    {
+      "type": "pneumaticcraft:assembly_system",
+      "recipe": "pneumaticcraft:assembly/unassembled_pcb"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:printed_circuit_board",
+      "text": "最后，向电路板安装$(l:components/capacitor)电容/$和$(l:components/transistor)晶体管/$，从而组装出完整的$(item)印刷电路板/$！"
+    }
+  ]
+}

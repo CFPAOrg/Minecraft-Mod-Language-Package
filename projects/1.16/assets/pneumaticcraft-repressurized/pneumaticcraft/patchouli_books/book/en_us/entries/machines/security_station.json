@@ -1,0 +1,78 @@
+{
+  "name": "Security Station",
+  "icon": "pneumaticcraft:security_station",
+  "category": "machines",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "If you want to protect an area from hostile players, you can use the $(thing)Security Station/$.$(p)This device prevents all player interaction by untrusted players on any blocks within its range. This means that no inventories or GUIs can be opened, and no blocks can be placed or broken."
+    },
+    {
+      "type": "spotlight",
+      "item": "pneumaticcraft:security_station",
+      "text": "This sounds great, but to set up a $(thing)Security Station/$ you need to do some things to ensure its security. Because the thing is, $(thing)Security Stations/$ can be $(l:machines/security_station#hacking)hacked/$. The hacking system of the Security Station is heavily inspired by $(l:https://www.youtube.com/watch?v=nQ0rPLlU8v4)Deus Ex: Revolution's hacking system/$."
+    },
+    {
+      "type": "text",
+      "title": "Setup",
+      "text": "To set up a $(thing)Security Station/$, you must place $(l:components/network_components)Network Components/$ in the network grid to form a $(thing)network/$. In every network there must be one $(l:components/network_components#diagnostic)Diagnostic Subroutine/$, one $(l:components/network_components#io_port)Network IO Port/$, and one $(l:components/network_components#registry)Network Registry/$.$(p)These three special nodes must all be connected with each other, which is done with $(l:components/network_components#node)Network Nodes/$."
+    },
+    {
+      "type": "text",
+      "title": "Rules",
+      "text": "The $(l:machines/security_station#hacking)hacker/$ starts at the $(thing)Network IO Port/$, and has the goal of capturing either the $(thing)Diagnostic Subroutine/$ or the $(thing)Network Registry/$.$(p)The $(thing)Diagnostic Subroutine/$ has the goal of tracing back to the hacker's entry point at the $(thing)Network IO Port/$."
+    },
+    {
+      "type": "text",
+      "text": "Placing $(thing)Network Node/$ components in larger stacks increases the $(italic)node rating/$, meaning it takes longer for both the $(thing)hacker/$ and the $(thing)Diagnostic/$ to capture them. But note that since the $(thing)Diagnostic/$ can trace faster than the $(thing)hacker/$ can, this is more of a disadvantage to the hacker than it is to the Diagnostic."
+    },
+    {
+      "type": "text",
+      "title": "Hacker Tools",
+      "text": "There are a couple of useful items that hackers should try to obtain; neither are craftable and must be found in-world (villager trades or dungeon loot):$(li)The $(l:components/nuke_virus)Nuke Virus/$, which can be used to insta-capture one node$(li)The $(l:components/stop_worm)STOP! Worm/$, which can temporarily freeze a Diagnostic's trace progress."
+    },
+    {
+      "type": "text",
+      "title": "Upgrades",
+      "text": "The $(thing)Security Station/$ takes a few upgrades:$(li)$(l:base_concepts/upgrades#entity_tracker)Entity Trackers/$ increase the chance for the $(l:machines/security_station#hacking)hacker/$ to be detected; there are diminishing returns, and the maximum protection is 99% per node hack attempt.$(li)$(l:base_concepts/upgrades#range)Range Upgrades/$ increase the protected range of the station by 1 per upgrade, to a maximum of 16 blocks in every direction (for a max protected area of 33x33x33 blocks)."
+    },
+    {
+      "type": "text",
+      "title": "Upgrades (cont.)",
+      "text": "$(li)$(l:base_concepts/upgrades#security)Security Upgrades/$ increase the number of $(thing)Security Upgrades/$ that hackers need in their $(l:armor/pneumatic_helmet)Pneumatic Helmet/$ to start hacking. Note that hackers won't be told how many Security Upgrades they need, and the Security Station will deal a small amount of non-resistible damage to any player who tries to hack, but can't due to lack of Security Upgrades."
+    },
+    {
+      "type": "text",
+      "title": "Allowing Friends",
+      "text": "You can add friendly players to your $(thing)Security Station/$ to allow them to interact within the protected area; use the $(bold)Shared Users/$ side tab to enter player names.$(p)You can remove no-longer-trusted players here too; just click the player's name to remove it."
+    },
+    {
+      "type": "text",
+      "title": "Getting Hacked",
+      "text": "When someone hacks your $(thing)Security Station/$, you can see that in the $(bold)Problems/$ and $(bold)Status/$ tabs, where it also shows $(italic)who/$ has hacked your system. These players (and only these players) can now interact with blocks within the area. To restore security, you'll have to $(italic)reboot/$ the $(thing)Security Station/$ via the $(bold)Reboot/$ button in the GUI. The reboot process takes 60 seconds, during which time the area isn't secured at all."
+    },
+    {
+      "type": "text",
+      "title": "Hacking",
+      "anchor": "hacking",
+      "text": "To hack a $(thing)Security Station/$ that isn't yours, you need a $(l:armor/pneumatic_helmet)Pneumatic Helmet/$ with at least one (and probably many) $(l:base_concepts/upgrades#security)Security Upgrades/$ installed. When you do this, a GUI similar to the one opposite appears. Watch $(l:https://www.youtube.com/watch?v=Lgmpslbrrwo)this video (very old but still relevant)/$ for a guide on how to hack.$(p)To capture a node, $(thing)left-click/$ it. To fortify a captured node, $(thing)right-click/$ it; fortified nodes take slightly longer for the Diagnostic to capture."
+    },
+    {
+      "type": "image",
+      "images": [
+        "pneumaticcraft:textures/patchouli/hacking.png"
+      ]
+    },
+    {
+      "type": "text",
+      "title": "Tips",
+      "text": "$(li)Keep your $(thing)Security Station/$ well-concealed and well-protected.$(li)You can protect an area with multiple $(thing)Security Stations/$; all of them must be hacked.$(li)Consider active defences, such as $(l:tools/drone)Drones/$ with combat programs, or $(l:machines/sentry_turret)Sentry Turrets/$$(li)A hacked $(thing)Security Station/$ can be made to emit a $(#f00)redstone signal/$, which could trigger additional measures (TNT under the station, perhaps?)"
+    },
+    {
+      "type": "crafting",
+      "text": "Creating a Security Station",
+      "recipe": "pneumaticcraft:security_station"
+    }
+  ]
+}

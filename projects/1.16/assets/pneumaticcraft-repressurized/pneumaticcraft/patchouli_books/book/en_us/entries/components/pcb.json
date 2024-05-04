@@ -1,0 +1,47 @@
+{
+  "name": "Printed Circuit Boards",
+  "icon": "pneumaticcraft:printed_circuit_board",
+  "category": "components",
+  "advancement": "pneumaticcraft:plastic",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Printed Circuit Boards/$ (PCB's) are important components used in many higher tier machines and tools. Making a $(item)PCB/$ requires a few steps.$(p)First of all, make an $(item)Empty PCB/$ in the $(l:manufacturing/pressure_chamber)Pressure Chamber/$ as shown opposite. There are then two methods to proceed (see overleaf)."
+    },
+    {
+      "type": "pneumaticcraft:pressure_chamber",
+      "recipe": "pneumaticcraft:pressure_chamber/empty_pcb"
+    },
+    {
+      "type": "text",
+      "title": "Method #1",
+      "text": "This method is the only one available initially, and is somewhat slow without extra automation and heating infrastructure: you can develop a $(item)PCB/$ chemically by putting it in a $(l:manufacturing/uv_light_box)UV Light Box/$ and then putting the exposed $(item)Empty PCB/$ in an $(l:manufacturing/etching_tank)Etching Tank/$ to turn it into an $(item)Unassembled PCB/$."
+    },
+    {
+      "type": "smelting",
+      "title": "Recycling Failed PCB's",
+      "recipe": "pneumaticcraft:empty_pcb",
+      "text": "The etching process has a chance of failure if the $(item)Empty PCB/$ was not 100% exposed in the $(l:manufacturing/uv_light_box)UV Light Box/$; you can recycle $(item)Failed PCB's/$ in a $(item)Blast Furnace/$."
+    },
+    {
+      "type": "spotlight",
+      "title": "Method #2",
+      "item": "pneumaticcraft:assembly_controller",
+      "text": "Once you can make an $(l:manufacturing/assembly_system)Assembly System/$, you can use that to turn $(item)Empty PCB's/$ directly into $(item)Unassembled PCB's/$ with an $(item)Assembly Program: Laser/$. There's no need to expose it in a $(item)UV Light Box/$ or use an $(item)Etching Tank/$ in this case."
+    },
+    {
+      "type": "text",
+      "title": "Method #2 (cont)",
+      "text": "$(p)The Assembly System is a very convenient and reasonably quick option for producing $(item)Unassembled PCB's/$; however with sufficient automation and heating infrastructure, the $(thing)UV Light Box/Etching Tank/$ combo can be much quicker, especially if you need to mass-produce PCB's."
+    },
+    {
+      "type": "pneumaticcraft:assembly_system",
+      "recipe": "pneumaticcraft:assembly/unassembled_pcb"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:printed_circuit_board",
+      "text": "Finally, you can add some $(l:components/capacitor)Capacitors/$ and $(l:components/transistor)Transistors/$ to assemble the finished $(item)Printed Circuit Board/$!"
+    }
+  ]
+}

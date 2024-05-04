@@ -1,0 +1,56 @@
+{
+  "name": "Plastic",
+  "icon": "pneumaticcraft:plastic_bucket",
+  "category": "components",
+  "advancement": "pneumaticcraft:tp_plant",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(item)Plastic/$ is an important crafting component in $(pncr).$(p)$(item)Molten Plastic/$ is made from $(l:manufacturing/refinery)LPG/$ and $(item)Coal/$, or $(l:renewables/biodiesel)Biodiesel/$ and $(item)Charcoal/$ in the $(l:manufacturing/thermopneumatic_processing_plant)Thermopneumatic Processing Plant/$."
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/plastic_from_lpg"
+    },
+    {
+      "type": "pneumaticcraft:thermo_plant",
+      "recipe": "pneumaticcraft:thermo_plant/plastic_from_biodiesel"
+    },
+    {
+      "type": "spotlight",
+      "title": "Plastic Sheet",
+      "item": "pneumaticcraft:plastic",
+      "flag": "pneumaticcraft:inWorldPlasticSolidification",
+      "text": "$(item)Molten Plastic/$ can be solidified simply by pouring it into the world; it will turn into a $(item)Plastic Sheet/$ within half a second or so. This is very easily automated with a $(l:machines/liquid_hopper)Liquid Hopper/$ with a $(l:base_concepts/upgrades#dispenser)Dispenser Upgrade/$, and an $(l:machines/omnidirectional_hopper)Omnidirectional Hopper/$."
+    },
+    {
+      "type": "spotlight",
+      "title": "Plastic Sheet",
+      "item": "pneumaticcraft:plastic",
+      "flag": "!pneumaticcraft:inWorldPlasticSolidification",
+      "text": "$(item)Plastic Sheets/$ are produced by placing a bucket or $(l:machines/tanks)tank/$ of $(item)Molten Plastic/$ into an inventory with a $(l:semiblocks/heat_frame)Heat Frame/$ attached, and chilling the Heat Frame, ideally to below -80C (the colder the better). $(item)Molten Plastic/$ will be consumed from the bucket or tank, and you will have a chance for a second $(item)Plastic Sheet/$ for each 1000mB of Molten Plastic consumed."
+    },
+    {
+      "type": "text",
+      "title": "Improving Yields",
+      "flag": "pneumaticcraft:inWorldPlasticSolidification",
+      "text": "An alternative way to solidify $(item)Plastic Sheets/$ is to place a bucket or $(l:machines/tanks)tank/$ of $(item)Molten Plastic/$ into an inventory with a $(l:semiblocks/heat_frame)Heat Frame/$ attached, and chill the Heat Frame, ideally to below -80C (the colder the better). $(item)Molten Plastic/$ will be consumed from the bucket or tank, and you will have a chance for a second $(item)Plastic Sheet/$ for each 1000mB of Molten Plastic consumed."
+    },
+    {
+      "type": "text",
+      "title": "A Note on Tanks",
+      "text": "Although $(pncr) Fluid Tanks have inventory slots, and allow $(thing)Heat Frames/$ to be placed on them, simply attaching a Heat Frame to a tank full of Molten Plastic won't work; the fluid tank must be in item form in an inventory (chest, etc.) with a Heat Frame attached."
+    },
+    {
+      "type": "spotlight",
+      "title": "Plastic Construction Brick™",
+      "item": "pneumaticcraft:plastic_brick_red",
+      "text": "These bricks are formed with $(item)Plastic Sheets/$ and any dye, and are suitable for building with. Don't walk on these with bare feet, because it hurts an unreasonable amount!$(p)$(italic)Compatible with other leading brands of construction brick./$"
+    },
+    {
+      "type": "crafting",
+      "recipe": "pneumaticcraft:plastic_brick_red",
+      "text": "You can guess the recipes for the other colours"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "实体过滤",
+  "icon": "minecraft:player_head",
+  "category": "base_concepts",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)实体过滤/$在$(#228)气动工艺：再加压$()中常常被使用，用以指定机器或工具应对哪些$(thing)实体/$进行操作。$(p)在大多数可供输入实体过滤的位置，可以长按$(thing)F1/$显示悬浮帮助。"
+    },
+    {
+      "type": "text",
+      "text": "要指定特定实体，无论其属于同一种类（如爬行者）或具有同一名称（如名为MineMaarten的玩家），只需输入实体名称。$(p)要指定某种实体$(italic)类型/$（如被动型生物、攻击型生物、任意玩家），在类型名前添加字符$(thing)@/$。下列是完整的过滤语法列表，包括所有合法的$(thing)@标识符/$。"
+    },
+    {
+      "type": "text",
+      "title": "例",
+      "text": "$(li)$(#800)@player/$ 匹配所有玩家$(li)$(#800)@mob/$ 匹配所有攻击性生物$(li)$(#800)@animal/$ 匹配所有被动型生物（动物）$(li)$(#800)@animal(age=adult)/$ 匹配所有成年动物$(li)$(#800)@animal(age=baby)/$ 匹配所有幼年动物$(li)$(#800)@animal(breedable=yes)/$ 匹配所有可被立刻喂食的动物$(li)$(#800)sheep(shearable=yes)/$ 匹配所有可被剪羊毛的羊"
+    },
+    {
+      "type": "text",
+      "title": "例（续表)",
+      "text": "$(li)$(#800)sheep(shearable=yes,color=black)/$ 匹配所有可被剪羊毛的黑羊$(li)$(#800)wolf(color=blue)/$ 匹配所有项圈为蓝色的狗/狼$(li)$(#800)cat(color=white)/$ 匹配所有项圈为白色的猫$(li)$(#800)@minecart/$ 匹配矿车$(li)$(#800)@boat/$ 匹配船$(li)$(#800)@living/$ 匹配所有生物$(li)$(#800)@item/$ 匹配物品实体$(li)$(#800)@orb/$ 匹配经验球"
+    },
+    {
+      "type": "text",
+      "title": "例（续表)",
+      "text": "$(li)$(#800)@drone/$ 匹配$(l:tools/drone)无人机/$$(li)$(#800)苦力怕/$ 匹配苦力怕$(li)$(#800)MineMaarten/$ 匹配名为'MineMaarten'的实体$(li)$(#800)僵*/$ 匹配所有（本地化）名称以“僵”开头的实体（如僵尸和僵尸村民）$(li)$(#800)*猪*/$ 匹配所有（本地化）名称含有“猪”的实体（如猪和僵尸猪灵）"
+    },
+    {
+      "type": "text",
+      "text": "所有匹配都忽略大小写。$(p)可以使用 $(thing);/$（半角分号）作为分割符输入匹配$(thing)序列/$——这里的匹配为$(italic)匹配任意项/$：$(li)$(#800)苦力怕;僵尸/$ 将匹配苦力怕$(italic)或者/$僵尸。$(p)可以在过滤前添加字符“!”以将过滤反转：$(li)$(#800)!@player/$ 匹配任何$(italic)非/$玩家的实体$(li)$(#800)!苦力怕;僵尸/$ 匹配任何$(italic)既/$非苦力怕$(italic)又/$非僵尸的实体$(li)$(#800)苦力怕;!僵尸/$ 是$(f00)无效过滤/$: “!” 仅可出现在过滤的开头。/$"
+    },
+    {
+      "type": "text",
+      "text": "$(bold)注：/$对于$(l:tools/drone)无人机/$中使用$(l:programming/text)文本/$拼图标记的实体过滤器，不支持 “!” 标记；像其余过滤一样，在左侧连接文本以表示否定。"
+    },
+    {
+      "type": "relations",
+      "entries": [
+        "tools/micromissiles",
+        "tubes/air_grate_module",
+        "armor/pneumatic_helmet",
+        "machines/sentry_turret",
+        "machines/universal_sensor",
+        "programming/text"
+      ],
+      "text": "$(italic)使用实体过滤的机器和工具/$"
+    }
+  ]
+}
