@@ -224,7 +224,7 @@
 [
     {
         "type": "singleton",
-        "source": "projects/[version]/assets/[mod-identifier]/[namespace]/[file-path]"
+        "source": "projects/[version]/assets/[mod-identifier]/[namespace]/[file-path]",
         "relativePath": "[file-path]"
     },
     {
