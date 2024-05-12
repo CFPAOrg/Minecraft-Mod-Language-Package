@@ -53,6 +53,9 @@ potion.effect.gravity=Potion of §bImmense Gravity
 lingering_potion.effect.gravity=Lingering Potion of §bImmense Gravity
 tipped_arrow.effect.gravity=Arrow of §bImmense Gravity
 
+attribute.name.srpcotesia.minimumDamage=Minimum Damage
+attribute.name.srpcotesia.percentDamage=Minimum Damage Conversion Rate
+
 itemGroup.srpcotesia=Cotesia Glomerata
 
 commands.srpcotesia.negative=Value must be above 0.
@@ -68,7 +71,7 @@ commands.srpcotesia.ante.usage=/ante <set|add|subtract> <ticks> or /ante query
 commands.srpcotesia.atimer.usage=/atimer <set|add|subtract> <ticks> or /atimer query
 commands.srpcotesia.adapt.usage=/adapt <parasite> <source>
 commands.srpcotesia.dendritus.usage=/dendritus
-commands.srpcotesia.srpcwell.usage=/srpcwell <get|clear> <dimension id, optional> or /srpcwell <add|remove> <x> <z> <dimension id, optional>
+commands.srpcotesia.srpcwell.usage=/srpcwell <get|clear|fix> <dimension id, optional> or /srpcwell <add|remove> <x> <z> <dimension id, optional>
 
 commands.srpcotesia.srpcwell.empty=There are currently no active Wells.
 
@@ -78,9 +81,11 @@ commands.srpcotesia.srpcwell.clear.dim=Removed all Wells in %s (DIM ID %d)
 commands.srpcotesia.srpcwell.add=Well successfully added at x=%d, z=%d, in %s (DIM ID %d)
 commands.srpcotesia.srpcwell.remove=Well successfully removed at x=%d, z=%d, in %s (DIM ID %d)
 commands.srpcotesia.srpcwell.remove.none=There is no Well there.
+commands.srpcotesia.srpcwell.nofix=All Wells appear to be valid, or there aren't any.
 
-commands.srpcotesia.dendritus.active=Active Dendritus at x=%d, y=%d, z=%d, with %d block range
-commands.srpcotesia.dendritus.inactive=Inactive Dendritus at x=%d, y=%d, z=%d, with %d block range
+commands.srpcotesia.dendritus.active=Active Stage %s Dendritus at x=%d, y=%d, z=%d, with %d block range
+commands.srpcotesia.dendritus.inactive=Inactive Stage %s Dendritus at x=%d, y=%d, z=%d, with %d block range
+commands.srpcotesia.dendritus.noneactive=There are no active Dendriti.
 
 commands.srpcotesia.atimer.disabled=The Armageddon timer is disabled.
 commands.srpcotesia.atimer.query=%d ticks remain.
@@ -121,6 +126,7 @@ entity.srpcotesia.factory.name=Factory
 
 item.srpcotesia.factory.name=Factory
 tooltip.srpcotesia.factory.unbound=Unbound
+tooltip.srpcotesia.factory.nonparasite=§fThis spells trouble.
 overlay.srpcotesia.factory.bindto=Press %s to bind to %s
 tooltip.srpcotesia.factory.discard=%s to discard
 overlay.srpcotesia.getdrops=Press %s to make drops
@@ -140,6 +146,7 @@ overlay.srpcotesia.killC.boundless=%d pts (It's beautiful)
 overlay.srpcotesia.killC.upgradeImminent=Are you ready?
 overlay.srpcotesia.killC.upgradePhase=Phase too low
 overlay.srpcotesia.trade=Press %s to trade
+overlay.srpcotesia.copybind=Press %s to copy
 
 overlay.srpcotesia.dispatcher.retrieve=Press %s to retrieve stored parasites
 overlay.srpcotesia.factory.dissolve=Press %s to dissolve parasite
@@ -179,6 +186,17 @@ brew.srpcotesia.explosion.desc=Explodes on direct hits. Does not destroy blocks.
 brew.srpcotesia.turn.name=Turn
 brew.srpcotesia.turn.desc=Assimilates a Sane mob if it is weakened enough. May produce a Feral mob if the phase permits.
 
+item.srpcotesia.macabre_pearl.name=§bMacabre Pearl
+tooltip.srpcotesia.macabre_pearl.fake=§fA pearl as murky as your future.
+tooltip.srpcotesia.macabre_pearl1=§fCan be used to convince parasites to follow you much more readily.
+tooltip.srpcotesia.macabre_pearl2=§fUsing the item on the parasite will toggle this behavior.
+tooltip.srpcotesia.macabre_pearl3=§fOnly works on parasites you were involved in creating.
+tooltip.srpcotesia.macabre_pearl4=§4THE MORE, THE MERRIER.
+
+item.srpcotesia.factory_drop.name=§eFactory Innards
+tooltip.srpcotesia.factory_drop1=§fA gelatinous mass of flesh harvested from a §eFactory§f. It's already falling apart.
+tooltip.srpcotesia.factory_drop2=§4MALLEABILITY TO THIS DEGREE COMES WITH A PRICE, ALTHOUGH WE CANNOT DENY ITS UTILITY.
+tooltip.srpcotesia.factory_drop3=§4IT WOULD BE WISE TO COVER YOUR TRACKS. GET RID OF THIS.
 
 item.srpcotesia.mortifying_tentacle.name=§2Mortifying Tentacle
 tooltip.srpcotesia.mortifying_tentacle=§fA smaller variant of a tentacle present on a §2Preeminent§f parasite body.
@@ -244,7 +262,7 @@ tooltip.srpcotesia.scalpel2=§fHarvests stray parts from a §eFactory§f §cmore
 item.srpcotesia.well_divining_rod.name=§6Well Divining Rod
 tooltip.srpcotesia.well_divining_rod1=§fEmits a spark in the direction of the nearest §6Well§f.
 tooltip.srpcotesia.well_divining_rod2=§fIf it is in a different dimension, it will mention the dimension's name instead.
-tooltip.srpcotesia.well_divining_rod3=§6Not worth your time.
+tooltip.srpcotesia.well_divining_rod3=§6> Count your days.
 
 
 message.srpcotesia.nowell=There are currently no active §6Wells§f.
@@ -258,11 +276,14 @@ message.srpcotesia.well.created=A §6Well§f has formed.
 message.srpcotesia.well.created.multiple=Several §6Wells§f have formed.
 message.srpcotesia.well.destroyed=A §6Well§f has been destroyed in %s!
 message.srpcotesia.well.damaged=§6Well§f now has %d health remaining.
-
+message.srpcotesia.well.fix=A §6Well§f was moved to x=0, z=0 due to being in an invalid location.
+message.srpcotesia.well.fixdim=A §6Well§f was moved to %s due to being in an invalid dimension.
+message.srpcotesia.well.fixclear=§6Wells§f cannot form in any dimension. As a result, they have been cleared.
+message.srpcotesia.well.fixprevent=§6Wells§f cannot form in any dimension.
 
 tile.srpcotesia.well_sealer.name=§6Well Sealer
 tooltip.srpcotesia.well_sealer1=§fDeals %d damage to nearby §6Wells§f.
-tooltip.srpcotesia.well_sealer2=§6Not worth your time.
+tooltip.srpcotesia.well_sealer2=§6> Count your days.
 
 
 
@@ -270,10 +291,14 @@ tile.srpcotesia.gloom_torch.name=§eGloom Torch
 tooltip.srpcotesia.gloom_torch=§4AN IMPROVEMENT.
 
 tile.srpcotesia.dread_lamp.name=§eDread Lamp
-tooltip.srpcotesia.dread_lamp=§cNot as tough as §eChitin§c, emits light.
+tooltip.srpcotesia.dread_lamp=§fNot as tough as §eChitin§f, emits light.
+
+tile.srpcotesia.cartilage.name=§eCartilage
+tooltip.srpcotesia.cartilage1=§fA dark, spongey building block, fashioned from §4Biome§f blocks.
+tooltip.srpcotesia.cartilage2=§fDoes not spread the §4Biome§f.
 
 tile.srpcotesia.chitin.name=§eChitin
-tooltip.srpcotesia.chitin=§cA very dense and strong block, akin to §7Obsidian.
+tooltip.srpcotesia.chitin=§fA very dense and strong block, akin to §7Obsidian.
 
 tooltip.srpcotesia.parasitelightsource1=§fAllows parasites to spawn nearby.
 tooltip.srpcotesia.parasitelightsource2=§fMakes bordering light sources acceptable.
@@ -296,7 +321,7 @@ tooltip.srpcotesia.craftingtable1=§cOld habits die hard.
 
 tile.srpcotesia.dendritus.name=§bDendritus
 tooltip.srpcotesia.dendritus1=§fA tough, undulating mass of neural tissue with a dense core of end matter.
-tooltip.srpcotesia.dendritus2=§fAugments a §cDispatcher§f to apply §1Phasing§f to parasites in range.
+tooltip.srpcotesia.dendritus2=§fAugments a §cDispatcher§f to apply §1Phasing§f to parasites in range, §aremoving the need to break blocks§f.
 tooltip.srpcotesia.dendritus3=§fMust be given to the Dispatcher via pressing %s.
 tooltip.srpcotesia.dendritus4=§fIf placed manually, it can be activated via pressing %s.
 
@@ -316,8 +341,8 @@ tooltip.srpcotesia.booster.flair3=§4...
 tooltip.srpcotesia.booster.flair4=§4ABSURD.
 
 item.srpcotesia.soulless_core.name=§eSoulless Core
-tooltip.srpcotesia.soulless_core1=§fA §eLiving Core§f sapped of lifeforce. Can be used to obtain other cores without killing parasites, provided those exist.
-tooltip.srpcotesia.soulless_core2=§fInteract with the required parasite while holding this.
+tooltip.srpcotesia.soulless_core1=§fA §eLiving Core§f sapped of lifeforce.
+tooltip.srpcotesia.soulless_core2=§fCan be used to obtain other core variants without killing parasites. Interact with the required parasite while holding this.
 tooltip.srpcotesia.soulless_core3=§4A MEANS TO AN END.
 
 item.srpcotesia.moldered_segments.name=§eMoldered Segments
@@ -330,12 +355,18 @@ tooltip.srpcotesia.moldered_segments3=§4A GIFT GIVEN TIME TO FESTER. WE WILL SE
 item.srpcotesia.trojan_note.name=Trustworthy Note
 tooltip.srpcotesia.trojan_note=URGENT
 
+item.srpcotesia.faustian_note.name=Faustian Note
+tooltip.srpcotesia.faustian_note.other=§cHumanity is overrated anyway.
+tooltip.srpcotesia.faustian_note1=§cDoes not depend on the current Evolution Phase.
+tooltip.srpcotesia.faustian_note2=§4ANOTHER ONE?
+
 message.srpcotesia.hasmaxbiomass=You cannot store any more biomass.
 
 message.srpcotesia.trade.tierfail=This needs a Tier %d Factory.
 message.srpcotesia.trade.more=%d biomass is needed.
 
 message.srpcotesia.nodrops=Nothing useful.
+message.srpcotesia.scalpelbreak=Breaking a scalpel over this is a terrible idea.
 
 message.srpcotesia.brew.cost=You need %d biomass to refill this.
 
@@ -363,7 +394,7 @@ message.srpcotesia.dissolve.preeeminent=SERIOUSLY?
 message.srpcotesia.advdisabled=PROCEED.
 message.srpcotesia.alreadyinfected=NO DOUBLE JEOPARDY.
 
-message.srpcotesia.notefailphase=They have advanced too far for this to matter.
+message.srpcotesia.notefailphase=It snaps shut. They must have found it redundant.
 message.srpcotesia.notefaildim=It won't budge. It seems weaker in this dimension.
 message.srpcotesia.notefailday=It won't budge. Maybe try again when its darker out?
 message.srpcotesia.notefailmoon=It won't budge. Perhaps the moon phase is wrong.
@@ -378,6 +409,7 @@ message.srpcotesia.getpoints=Currently at Phase %d, with %d total points.
 message.srpcotesia.getpointscooldown=Currently at Phase %d, with %d total points. We are cooled for %d seconds.
 message.srpcotesia.suffocate=This will suffocate if placed here.
 message.srpcotesia.nobelong=This one doesn't belong to you.
+message.srpcotesia.nosalvage=This one can't be salvaged.
 message.srpcotesia.cantupgrade=More biomass is needed to upgrade this. (Sneak to absorb it)
 message.srpcotesia.enchantblock=The enchantments are incompatible with this.
 message.srpcotesia.cantdissolve=This parasite cannot be dissolved.
@@ -386,6 +418,10 @@ message.srpcotesia.cantbind=The Factory cannot fathom this.
 message.srpcotesia.somethingwrong=Something is off about this parasite.
 message.srpcotesia.dispatcher.empty=This Dispatcher is empty.
 message.dendritus.inrange=There is already a Dendritus at %d, %d, %d
+
+message.srpcotesia.following=This parasite is now following you.
+message.srpcotesia.notfollowing=This parasite is no longer following you.
+message.srpcotesia.didntmake=You didn't make this one.
 
 message.srpcotesia.masticator.empty=You need Fetid Canisters to operate this.
 
