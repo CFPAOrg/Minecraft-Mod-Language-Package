@@ -30,4 +30,4 @@ item_ids:
 
 ## 配方
 
-<Recipe id="appliede:emc_module" />
+<RecipeFor id="appliede:emc_module" />

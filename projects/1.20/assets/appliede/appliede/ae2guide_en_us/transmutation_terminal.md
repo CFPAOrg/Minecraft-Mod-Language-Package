@@ -54,4 +54,4 @@ is recommended, and the button will encourage you to think twice before you deci
 
 ## Recipe
 
-<Recipe id="appliede:transmutation_terminal" />
+<RecipeFor id="appliede:transmutation_terminal" />

@@ -38,4 +38,4 @@ item_ids:
 
 ## 配方
 
-<Recipe id="appliede:transmutation_terminal" />
+<RecipeFor id="appliede:transmutation_terminal" />

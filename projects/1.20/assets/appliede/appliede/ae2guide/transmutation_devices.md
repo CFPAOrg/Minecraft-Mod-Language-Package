@@ -31,11 +31,11 @@ item_ids:
 
 然而，若是所有物品都必须预先习得才可在ME网络中转化成EMC，由此而来的重复劳动很快就会变得索然无味。为解决这一问题，可向<ItemLink id="appliede:emc_interface" />或<ItemLink id="appliede:emc_import_bus" />装入<ItemLink id="appliede:learning_card" />；此后它们便会在送入存在EMC值的物品时自动习得物品。
 
-不过有一点需要注意，这些物品只会被相应设备的所有者（也即放下端口或输入总线的玩家）习得。
+不过有一点需要注意，这些物品只会被相应设备的所有者（接口、输入总线、或将物品送入接口的网络设备的放置者）习得。
 
 ## 配方
 
-<Recipe id="appliede:emc_interface" />
-<Recipe id="appliede:emc_export_bus" />
-<Recipe id="appliede:emc_import_bus" />
-<Recipe id="appliede:learning_card" />
+<RecipeFor id="appliede:emc_interface" />
+<RecipeFor id="appliede:emc_export_bus" />
+<RecipeFor id="appliede:emc_import_bus" />
+<RecipeFor id="appliede:learning_card" />

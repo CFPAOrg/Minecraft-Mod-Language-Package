@@ -43,4 +43,4 @@ more, maybe less depending on any configuration.
 
 ## Recipe
 
-<Recipe id="appliede:emc_module" />
+<RecipeFor id="appliede:emc_module" />
