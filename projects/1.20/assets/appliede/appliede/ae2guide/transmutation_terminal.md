@@ -19,9 +19,9 @@ item_ids:
 
 到目前为止，我们已经了解了ME网络如何通过自动合成设施和AppliedE的各种[转化设备](transmutation_devices.md)将EMC转化为物品。但有一个问题仍未解决：玩家自己怎么在ME系统中直接操控EMC呢？
 
-这个问题的答案是**ME转化终端**：一台拥有ProjectE<ItemLink id="projecte:transmutation_table" />大多数功能的，集成至相连的ME网络中的终端。
+这个问题的答案是**ME转化终端**：一台拥有ProjectE<ItemLink id="projecte:transmutation_table" />大多数功能的，集成至相连ME网络中的终端。
 
-首先，*你*可以在此终端内直接使用网络中的EMC转化出已习得的物品，而不需在常规的物品存储容器中预先放有它们。你也可以在此终端内清空和装载卡莱恩能量之星，以及其他能够存储EMC的物品。
+首先，*你*可以在此终端内直接使用网络中的EMC转化出已习得的物品，而不需在常规的物品存储容器中预先放有它们。你也可以在此终端内清空和装载卡莱恩能量之星等能够存储EMC的物品。
 
 ![可转化的物品](diagrams/transmutable_item.png)
 ![卡莱恩能量之星装载](diagrams/klein_star_filling.png)
