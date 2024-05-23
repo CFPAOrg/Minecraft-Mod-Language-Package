@@ -30,38 +30,38 @@
                     tooltips('设置建造模式')
                     choices {
                         choice('Copy') {
-                            tooltips('将先前确定的长方体区域复制','消耗建造机上方容器里的对应原料')
+                            tooltips('将记录的空间复制至此','其上方或下方需放置含材料的箱子')
                         }
                         choice('Move') {
-                            tooltips('将先前确定的长方体区域的方块和实体“剪切”到对应位置')
+                            tooltips('将记录的空间移动至此')
                         }
                         choice('Swap') {
-                            tooltips('将对应位置的方块或实体互相进行替换')
+                            tooltips('将记录的空间与此交换')
                         }
                         choice('Back') {
-                            tooltips('把方块替换到先前长方体区域内的对应位置')
+                            tooltips('将此移动至记录的空间')
                         }
                         choice('Collect') {
-                            tooltips('破坏长方体区域内的掉落物','并收集到附加的容器里')
+                            tooltips('收集记录的空间中掉落物','物品会传输到上方或下方的箱子中')
                         }
                     }
                 }
             imagechoicelabel('silent') {
                 channel('silent')
                 hint(4,18,17,17)
-                tooltips('消除放置/破坏方块的声音')
+                tooltips('移动方块时','消除放置/破坏方块的声音')
                 border(true)
                 image('rftoolsbase:textures/gui/guielements.png')
                 dim(176,48,256,256)
                 choices {
                     choice('off') {
                         uv(176,48)
-                        tooltips('放置/破坏方块将发出声音')
+                        tooltips('移动方块将发出声音')
                         image('rftoolsbase:textures/gui/guielements.png')
                     }
                     choice('on') {
                         uv(160,48)
-                        tooltips('放置/破坏方块不会发出声音')
+                        tooltips('移动方块不会发出声音')
                         image('rftoolsbase:textures/gui/guielements.png')
                     }
                 }
@@ -69,7 +69,7 @@
             imagechoicelabel('support') {
                 channel('support')
                 hint(22,18,17,17)
-                tooltips('将转移的方块以支撑块显示')
+                tooltips('移动时显示支持的方块','适用于流体、砂砾……')
                 border(true)
                 image('rftoolsbase:textures/gui/guielements.png')
                 dim(112,48,256,256)
@@ -174,7 +174,7 @@
                 channel('rotate')
                 hint(4,4,36,14)
                 enableon('validcard')
-                tooltips('建造旋转角')
+                tooltips('设定水平旋转角')
                 choices {
                     choice('0')
                     choice('90')
@@ -185,7 +185,7 @@
             imagechoicelabel('anchor0') {
                 channel('anchor')
                 hint(4,37,17,17)
-                tooltips('建造机方块对齐位置','','')
+                tooltips('设定建造机工作基点','','')
                 border(true)
                 image('rftoolsbase:textures/gui/guielements.png')
                 dim(96,64,256,256)
@@ -205,7 +205,7 @@
             imagechoicelabel('anchor1') {
                 channel('anchor')
                 hint(23,37,17,17)
-                tooltips('建造机方块对齐位置','','')
+                tooltips('设定建造机工作基点','','')
                 border(true)
                 image('rftoolsbase:textures/gui/guielements.png')
                 dim(144,64,256,256)
@@ -225,7 +225,7 @@
             imagechoicelabel('anchor2') {
                 channel('anchor')
                 hint(4,18,17,17)
-                tooltips('建造机方块对齐位置','','')
+                tooltips('设定建造机工作基点','','')
                 border(true)
                 image('rftoolsbase:textures/gui/guielements.png')
                 dim(176,64,256,256)
@@ -245,7 +245,7 @@
             imagechoicelabel('anchor3') {
                 channel('anchor')
                 hint(23,18,17,17)
-                tooltips('建造机方块对齐位置','','')
+                tooltips('设定建造机工作基点','','')
                 border(true)
                 image('rftoolsbase:textures/gui/guielements.png')
                 dim(208,64,256,256)
@@ -266,12 +266,12 @@
         button('','?') {
             channel('cardgui')
             hint(83,12,13,12)
-            tooltips('打开卡片GUI界面')
+            tooltips('打开卡片GUI')
         }
         button('level','Y: stop') {
             channel('restart')
             hint(81,31,45,13)
-            tooltips('建造机当前状态码','按下以重启建造机')
+            tooltips('建造机当前工作高度','按下以重启')
         }
         imagechoicelabel('redstone') {
             hint(106,46,16,16)
