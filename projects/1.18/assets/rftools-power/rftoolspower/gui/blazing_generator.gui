@@ -1,0 +1,50 @@
+window {
+    size(180,152)
+    event('redstone','mcjtylib.setRsMode')
+    panel('','positional') {
+        bg1('rftoolspower:textures/gui/blazing_generator.png')
+        energybar('energybar') {
+            hint(165,7,8,38)
+            showtext(false)
+        }
+        label('gen0') {
+            hint(30,7,50,18)
+            horizalign('ALIGN_LEFT')
+        }
+        label('gen1') {
+            hint(102,7,50,18)
+            horizalign('ALIGN_LEFT')
+        }
+        label('gen2') {
+            hint(30,43,50,18)
+            horizalign('ALIGN_LEFT')
+        }
+        label('gen3') {
+            hint(102,43,50,18)
+            horizalign('ALIGN_LEFT')
+        }
+        imagechoicelabel('redstone') {
+            channel('redstone')
+            hint(155,44,16,16)
+            image('rftoolsbase:textures/gui/guielements.png')
+            dim(32,0,256,256)
+            choices {
+                choice('Ignored') {
+                    uv(0,0)
+                    tooltips('红石模式','忽略')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('Off') {
+                    uv(16,0)
+                    tooltips('红石模式','低信号')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('On') {
+                    uv(32,0)
+                    tooltips('红石模式','高信号')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+            }
+        }
+    }
+}

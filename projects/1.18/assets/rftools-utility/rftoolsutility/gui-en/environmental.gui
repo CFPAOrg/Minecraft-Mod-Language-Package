@@ -1,0 +1,130 @@
+container {
+    slot('input') {
+        pos(7,8)
+        dim(1,7)
+    }
+    playerslots(27,142)
+}
+window {
+    size(194,224)
+
+    event('redstone','env.setRsMode')
+    bind('radius','radius')
+
+    panel('','positional') {
+        bg1('rftoolsutility:textures/gui/environmentalcontroller.png')
+        panel('','vertical') {
+            hint(28,6,161,37)
+            bgthickness(-2)
+            bgfilled1(-7631989)
+            panel('','horizontal') {
+                desired(-1,16)
+                label('','Radius:')
+                slider {
+                    horizontal(true)
+                    minimumknob(12)
+                    scrollable('radius')
+                }
+                scrollablelabel('radius','57') {
+                    channel('radius')
+                    desired(24,-1)
+                    realmin(5)
+                }
+            }
+            panel('','horizontal') {
+                desired(-1,17)
+                label('','Height:')
+                integerfield('miny') {
+                    channel('miny')
+                }
+                integerfield('maxy') {
+                    channel('maxy')
+                }
+            }
+            spacing(0)
+        }
+        panel('','horizontal') {
+            hint(25,42,167,78)
+            widgetlist('players') {
+                bgthickness(-1)
+                bgfilled1(-7631989)
+            }
+            slider {
+                scrollable('players')
+                desired(11,-1)
+            }
+            spacing(1)
+            horizmargin(3)
+        }
+        panel('','horizontal') {
+            hint(26,120,162,16)
+            choicelabel('mode') {
+                channel('mode')
+                desired(40,15)
+                choices {
+                    choice('BL') {
+                        tooltips('Players in the list above will not get the effects')
+                    }
+                    choice('WL') {
+                        tooltips('Players in the list above will get the effects')
+                    }
+                    choice('Mobs') {
+                        tooltips('Affect hostile and passive mobs','(needs more power)')
+                    }
+                    choice('Host') {
+                        tooltips('Affect hostile mobs','(needs more power)')
+                    }
+                    choice('Pass') {
+                        tooltips('Affect passive mobs','(needs more power)')
+                    }
+                    choice('All') {
+                        tooltips('Affect all mobs and players','(needs more power)')
+                    }
+                }
+            }
+            button('add','+') {
+                channel('add')
+                enableon('name')
+                desired(-1,15)
+                tooltips('Add a player to the list')
+            }
+            button('del','-') {
+                channel('del')
+                enableon('selected')
+                desired(-1,15)
+                tooltips('Remove selected player from the list')
+            }
+            textfield('name')
+            imagechoicelabel('redstone') {
+                channel('redstone')
+                desired(16,16)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(16,0,256,256)
+                choices {
+                    choice('Ignored') {
+                        uv(0,0)
+                        tooltips('Redstone mode:','Ignored')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('Off') {
+                        uv(16,0)
+                        tooltips('Redstone mode:','Off to activate')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('On') {
+                        uv(32,0)
+                        tooltips('Redstone mode:','On to activate')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            spacing(1)
+            horizmargin(1)
+            vertmargin(0)
+        }
+        energybar('energybar') {
+            hint(8,141,10,76)
+            showtext(false)
+        }
+    }
+}
