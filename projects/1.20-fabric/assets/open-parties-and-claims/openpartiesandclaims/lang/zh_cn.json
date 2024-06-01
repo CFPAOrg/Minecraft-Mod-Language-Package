@@ -69,8 +69,8 @@
 	"gui.xaero_claims_admin_mode_disabled" : "管理员模式关闭！",
 	"gui.xaero_claims_server_mode_enabled" : "服务器领地管理模式开启！",
 	"gui.xaero_claims_server_mode_disabled" : "服务器领地管理模式关闭！",
-	"gui.xaero_claims_nonally_mode_enabled" : "自由人模式开启！你现在以中立身份观察/访问你的领地。",
-	"gui.xaero_claims_nonally_mode_disabled" : "自由人模式关闭！",
+	"gui.xaero_claims_nonally_mode_enabled" : "访客模式开启！你现在以访客身份观察/访问你的领地。",
+	"gui.xaero_claims_nonally_mode_disabled" : "访客模式关闭！",
 	"gui.xaero_claims_claimed" : "成功认领区块！",
 	"gui.xaero_claims_unclaimed" : "成功取消认领区块！",
 	"gui.xaero_claims_claimed_at" : "成功认领位于(%1$s, %2$s)的区块！",
@@ -655,10 +655,7 @@
     "gui.xaero_pac_config_friendly_protected_entities_list_type.tooltip" : "在“区块保护友好实体列表§7(friendlyChunkProtectedEntityList)§r”中定义的列表类型。ONLY - 仅包括列出的实体。ALL BUT - 包括所有，除了列出的实体。",
     "gui.xaero_pac_config_friendly_protected_entities" : "区块保护友好实体列表",
     "gui.xaero_pac_config_friendly_protected_entities.tooltip" : 
-"友好实体完全包括/排除在区块保护中，取决于“区块保护友好实体列表类型§7(friendlyChunkProtectedEntityListType)§r”中的列表类型。支持实体类型标签。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。
-例如：[\"*:villager\", \"minecraft:m(ule|ooshroom)\", \"#minecraft:axolotl_hunt_targets\"]。
-默认情况下，列表为空，类型为ALL_BUT，这意味着包括所有友好实体。",
+		"友好实体完全包括/排除在区块保护中，取决于“区块保护友好实体列表类型§7(friendlyChunkProtectedEntityListType)§r”中的列表类型。支持实体类型标签。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。\n例如：[\"*:villager\", \"minecraft:m(ule|ooshroom)\", \"#minecraft:axolotl_hunt_targets\"]。\n默认情况下，列表为空，类型为ALL_BUT，这意味着包括所有友好实体。",
     "gui.xaero_pac_config_hostile_protected_entities_list_type" : "区块保护敌对实体列表类型",
     "gui.xaero_pac_config_hostile_protected_entities_list_type.tooltip" : "在“区块保护敌对实体列表§7(hostileChunkProtectedEntityList)§r”中定义的列表类型。ONLY - 仅包括列出的实体。ALL BUT - 包括所有，除了列出的实体。",
     "gui.xaero_pac_config_hostile_protected_entities" : "区块保护敌对实体列表",
@@ -671,50 +668,21 @@
     "gui.xaero_pac_config_entity_claim_barrier_list.tooltip" : "不再是一个有效的选项。请将您仍在此处的内容转移到“强制实体领地屏障列表§7(forcedEntityClaimBarrierList)§r”或“实体领地屏障可选组§7(entityClaimBarrierOptionalGroups)§r”中，\n但请记住，这些选项的工作方式不同，请阅读它们的注释。\n该选项将在模组的正式版中完全删除。",
     "gui.xaero_pac_config_block_protection_forced_exception" : "强制方块保护例外列表",
     "gui.xaero_pac_config_block_protection_forced_exception.tooltip" : 
-"要从区块保护中排除的部分方块。支持方块标签。
-只需要在列表中有一个方块/标签ID，例如\"minecraft:lever\"允许整个服务器中的方块交互，如果手中的物品没有阻止它。
-前缀“hand$”与没有前缀相同，但在受保护的区块中强制要求空手。前缀“break$”允许破坏方块。
-前缀“anything$”与没有前缀相同，但允许与手中的任何物品进行交互。请确保对方块使用此种例外时，没有物品做任何坏事。
-多次添加相同的方块/标签以使用多个前缀。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或 §7(OR)§r”。
-例如：[\"minecraft:lever\", \"minecraft:*_button\", \"break$minecraft:*_button\", \"break$minecraft:(*_|)sand\"]。",
+		"要从区块保护中排除的部分方块。支持方块标签。\n只需要在列表中有一个方块/标签ID，例如\"minecraft:lever\"允许整个服务器中的方块交互，如果手中的物品没有阻止它。\n前缀“hand$”与没有前缀相同，但在受保护的区块中强制要求空手。前缀“break$”允许破坏方块。\n前缀“anything$”与没有前缀相同，但允许与手中的任何物品进行交互。请确保对方块使用此种例外时，没有物品做任何坏事。\n多次添加相同的方块/标签以使用多个前缀。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或 §7(OR)§r”。\n例如：[\"minecraft:lever\", \"minecraft:*_button\", \"break$minecraft:*_button\", \"break$minecraft:(*_|)sand\"]。",
     "gui.xaero_pac_config_block_protection_exception_groups" : "方块保护可选例外组",
     "gui.xaero_pac_config_block_protection_exception_groups.tooltip" : 
-"自定义的方块组，玩家/领地配置应该能够为其设置保护例外。每个组可以由多个方块和方块标签组成。
-没有前缀的组为与该组的方块进行右键交互创建了一个玩家配置选项。方块组的格式为<组ID>{<由“,”分隔的方块/标签/通配符>}。
-组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-DIRT35{minecraft:dirt, minecraft:grass_block, minecraft:(oak|spruce)_*}\"。
-一个组的前缀可以是“hand$”，以创建一个带有强制空手要求的右击交互选项，或者“break$”用于允许破坏组里的方块。
-此外，前缀“anything$”创建了一个选项，用于与手中持有的任何物品进行右键交互，而不仅仅是允许的物品。请确保对方块使用此种例外时，没有物品做任何坏事。
-为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。
-添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
+		"自定义的方块组，玩家/领地配置应该能够为其设置保护例外。每个组可以由多个方块和方块标签组成。\n没有前缀的组为与该组的方块进行右键交互创建了一个玩家配置选项。方块组的格式为<组ID>{<由“,”分隔的方块/标签/通配符>}。\n组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-DIRT35{minecraft:dirt, minecraft:grass_block, minecraft:(oak|spruce)_*}\"。\n一个组的前缀可以是“hand$”，以创建一个带有强制空手要求的右击交互选项，或者“break$”用于允许破坏组里的方块。\n此外，前缀“anything$”创建了一个选项，用于与手中持有的任何物品进行右键交互，而不仅仅是允许的物品。请确保对方块使用此种例外时，没有物品做任何坏事。\n为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。\n添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
     "gui.xaero_pac_config_entity_protection_forced_exception" : "强制实体保护例外列表",
     "gui.xaero_pac_config_entity_protection_forced_exception.tooltip" : 
-"要从区块保护中排除的部分实体。支持实体标签。
-只需要在列表中有一个实体/标签ID，例如\"minecraft:horse\"允许整个服务器中的实体交互，如果手中的物品没有阻止它。
-前缀“hand$”与没有前缀相同，但在受保护的区块中强制要求空手。前缀“break$”允许杀死实体。
-前缀“anything$”与没有前缀相同，但允许与手中的任何物品进行交互。请确保对实体使用此种例外时，没有物品做任何坏事。
-多次添加相同的实体/标签以使用多个前缀。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或 §7(OR)§r”。
-例如：[\"minecraft:villager\", \"break$minecraft:villager\", \"break$minecraft:(trader_|)llama\"]。",
+		"要从区块保护中排除的部分实体。支持实体标签。\n只需要在列表中有一个实体/标签ID，例如\"minecraft:horse\"允许整个服务器中的实体交互，如果手中的物品没有阻止它。\n前缀“hand$”与没有前缀相同，但在受保护的区块中强制要求空手。前缀“break$”允许杀死实体。\n前缀“anything$”与没有前缀相同，但允许与手中的任何物品进行交互。请确保对实体使用此种例外时，没有物品做任何坏事。\n多次添加相同的实体/标签以使用多个前缀。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或 §7(OR)§r”。\n例如：[\"minecraft:villager\", \"break$minecraft:villager\", \"break$minecraft:(trader_|)llama\"]。",
     "gui.xaero_pac_config_entity_protection_exception_groups" : "实体保护可选例外组",
     "gui.xaero_pac_config_entity_protection_exception_groups.tooltip" : 
-"自定义的实体组，玩家/领地配置应该能够为其设置保护例外。每个组可以包含多个实体和实体标签。
-没有前缀的组为与该组的实体进行右键交互创建了一个玩家配置选项。实体组的格式为<组ID>{<实体/标签/通配符（用逗号分隔）>}。
-组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{minecraft:pig, minecraft:c(ow|at), #minecraft:beehive_inhabitors}\"。
-一个组的前缀可以是“hand$”，以创建一个带有强制空手要求的右击交互选项，或者“break$”用于允许破坏组里的实体。
-此外，前缀“anything$”创建了一个选项，用于与手中持有的任何物品进行右键交互，而不仅仅是允许的物品。请确保对实体使用此种例外时，没有物品做任何坏事。
-为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。
-添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
+		"自定义的实体组，玩家/领地配置应该能够为其设置保护例外。每个组可以包含多个实体和实体标签。\n没有前缀的组为与该组的实体进行右键交互创建了一个玩家配置选项。实体组的格式为<组ID>{<实体/标签/通配符（用逗号分隔）>}。\n组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{minecraft:pig, minecraft:c(ow|at), #minecraft:beehive_inhabitors}\"。\n一个组的前缀可以是“hand$”，以创建一个带有强制空手要求的右击交互选项，或者“break$”用于允许破坏组里的实体。\n此外，前缀“anything$”创建了一个选项，用于与手中持有的任何物品进行右键交互，而不仅仅是允许的物品。请确保对实体使用此种例外时，没有物品做任何坏事。\n为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。\n添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
     "gui.xaero_pac_config_entity_forced_claim_barrier_list" : "强制实体领地屏障列表",
     "gui.xaero_pac_config_entity_forced_claim_barrier_list.tooltip" : "被阻止进入领地的实体。支持实体种类标签。只需在列表中有一个实体/标签ID，例如\"minecraft:falling_block\"阻止实体进入领地。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。例如：\"minecraft:zombie(_villager|)\"。",
     "gui.xaero_pac_config_entity_claim_barrier_groups" : "实体领地屏障可选组",
     "gui.xaero_pac_config_entity_claim_barrier_groups.tooltip" : 
-"自定义的实体组，玩家/领地配置应该能够为其启用屏障。每个组可以包含多个实体和实体标签。
-每个组创建一个玩家配置选项来控制实体屏障。实体组的格式为<组ID>{<实体/标签/通配符（用逗号分隔）>}。
-组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{#minecraft:raiders, minecraft:zombie(_villager|)}\"。
-为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。
-添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
+		"自定义的实体组，玩家/领地配置应该能够为其启用屏障。每个组可以包含多个实体和实体标签。\n每个组创建一个玩家配置选项来控制实体屏障。实体组的格式为<组ID>{<实体/标签/通配符（用逗号分隔）>}。\n组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{#minecraft:raiders, minecraft:zombie(_villager|)}\"。\n为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。\n添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
     "gui.xaero_pac_config_entities_allowed_to_grief" : "允许实体破坏",
     "gui.xaero_pac_config_entities_allowed_to_grief.tooltip" : "可以绕过所有方块保护的实体。支持实体种类标签。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。\n例如：[\"minecraft:(v|p)illager\", \"minecraft:*illager\", \"#minecraft:raiders\"]",
     "gui.xaero_pac_config_entities_allowed_to_grief_entities" : "实体允许破坏实体",
@@ -723,89 +691,36 @@
     "gui.xaero_pac_config_entities_allowed_to_grief_items.tooltip" : "可以绕过所有掉落物保护的实体。支持实体种类标签\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。\n例如：[\"minecraft:(v|p)illager\", \"minecraft:*illager\", \"#minecraft:raiders\"]",
     "gui.xaero_pac_config_non_block_griefers" : "非方块破坏类生物",
     "gui.xaero_pac_config_non_block_griefers.tooltip" : 
-"（Forge专有选项）能够破坏实体/物品但不会破坏方块的生物。在覆盖原版“生物破坏§7(mob griefing)§r”游戏规则值时使用此列表。
-默认情况下，该模组假定任何“生物破坏”游戏规则检查都是为了方块保护。
-这意味着，如果怪物试图破坏的是实体或物品，那么“保护方块不受怪物破坏”选项可能会起到保护作用。
-将生物添加到这个列表中，就可以在“生物破坏”游戏规则检查期间取消对该怪物的方块保护检查。
-支持实体类型标签。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。
-例如：[\"minecraft:(v|p)illager\", \"minecraft:*illager\", \"#minecraft:raiders\"]",
+		"（Forge专有选项）能够破坏实体/物品但不会破坏方块的生物。在覆盖原版“生物破坏§7(mob griefing)§r”游戏规则值时使用此列表。\n默认情况下，该模组假定任何“生物破坏”游戏规则检查都是为了方块保护。\n这意味着，如果怪物试图破坏的是实体或物品，那么“保护方块不受怪物破坏”选项可能会起到保护作用。\n将生物添加到这个列表中，就可以在“生物破坏”游戏规则检查期间取消对该怪物的方块保护检查。\n支持实体类型标签。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。\n例如：[\"minecraft:(v|p)illager\", \"minecraft:*illager\", \"#minecraft:raiders\"]",
     "gui.xaero_pac_config_entity_griefers" : "实体破坏类生物",
     "gui.xaero_pac_config_entity_griefers.tooltip" : 
-"(Forge专有选项) 能够以除攻击外的其他方式破坏实体的生物，例如，唤魔者可以改变羊的颜色。在覆盖原版“生物破坏§7(mob griefing)§r”游戏规则值时使用此列表。
-默认情况下，该模组假定任何“生物破坏”游戏规则检查仅用于保护方块。如果想在执行规则检查时同时检查实体保护选项，请将该生物添加到此列表中。
-如果你想同时取消默认的方块保护检查，请查看“非方块破坏类生物§7(nonBlockGriefingMobs)§r”选项。
-支持实体类型标签。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。
-例如：[\"minecraft:(v|p)illager\", \"minecraft:*illager\", \"#minecraft:raiders\"]",
+		"(Forge专有选项) 能够以除攻击外的其他方式破坏实体的生物，例如，唤魔者可以改变羊的颜色。在覆盖原版“生物破坏§7(mob griefing)§r”游戏规则值时使用此列表。\n默认情况下，该模组假定任何“生物破坏”游戏规则检查仅用于保护方块。如果想在执行规则检查时同时检查实体保护选项，请将该生物添加到此列表中。\n如果你想同时取消默认的方块保护检查，请查看“非方块破坏类生物§7(nonBlockGriefingMobs)§r”选项。\n支持实体类型标签。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。\n例如：[\"minecraft:(v|p)illager\", \"minecraft:*illager\", \"#minecraft:raiders\"]",
     "gui.xaero_pac_config_gropped_item_griefers" : "掉落物破坏类生物",
     "gui.xaero_pac_config_gropped_item_griefers.tooltip" : 
-"(Forge专有选项) 能够破坏掉落物的生物。在覆盖原版“生物破坏§7(mob griefing)§r”游戏规则值时使用此列表。
-默认情况下，该模组假定任何“生物破坏”游戏规则检查仅用于保护方块。如果想在执行规则检查时同时检查物品拾取保护选项，请将该生物添加到此列表中。
-该模组通常会自动检测大多数生物拾取物品的行为，但如果该模组尚未检测到特定生物的行为，此选项则可能有帮助。
-如果你想同时取消默认的方块保护检查，请查看“非方块破坏类生物§7(nonBlockGriefingMobs)§r”选项。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。
-例如：[\"minecraft:(v|p)illager\", \"minecraft:*illager\", \"#minecraft:raiders\"]",
+		"(Forge专有选项) 能够破坏掉落物的生物。在覆盖原版“生物破坏§7(mob griefing)§r”游戏规则值时使用此列表。\n默认情况下，该模组假定任何“生物破坏”游戏规则检查仅用于保护方块。如果想在执行规则检查时同时检查物品拾取保护选项，请将该生物添加到此列表中。\n该模组通常会自动检测大多数生物拾取物品的行为，但如果该模组尚未检测到特定生物的行为，此选项则可能有帮助。\n如果你想同时取消默认的方块保护检查，请查看“非方块破坏类生物§7(nonBlockGriefingMobs)§r”选项。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。\n例如：[\"minecraft:(v|p)illager\", \"minecraft:*illager\", \"#minecraft:raiders\"]",
     "gui.xaero_pac_config_block_access_entity_groups" : "方块访问实体组",
     "gui.xaero_pac_config_block_access_entity_groups.tooltip" : 
-"自定义的实体组，玩家/领地配置应该能够为其设置方块访问例外（例如：允许羊吃草或末影人拿方块）。每个组可以包含多个实体和实体标签。
-实体组的格式为：<组ID>{<实体/标签/通配符（用逗号分隔）>}。
-组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{minecraft:pig, minecraft:c(ow|at), #minecraft:beehive_inhabitors}\"。
-为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。
-添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
+		"自定义的实体组，玩家/领地配置应该能够为其设置方块访问例外（例如：允许羊吃草或末影人拿方块）。每个组可以包含多个实体和实体标签。\n实体组的格式为：<组ID>{<实体/标签/通配符（用逗号分隔）>}。\n组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{minecraft:pig, minecraft:c(ow|at), #minecraft:beehive_inhabitors}\"。\n为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。\n添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
     "gui.xaero_pac_config_entity_access_entity_groups" : "实体访问实体组",
     "gui.xaero_pac_config_entity_access_entity_groups.tooltip" : 
-"自定义的实体组，玩家/领地配置应该能够为其设置实体访问例外（例如：允许僵尸杀死生物）。
-这些组应该包含访问其他实体的实体，而不应该包含被访问的实体。请查看“实体保护可选例外组§7(entityProtectionOptionalExceptionGroups)§r”选项以获取更多信息。
-每个组可以包含多个实体和实体标签。实体组的格式为：<组ID>{<实体/标签/通配符（用逗号分隔）>}。
-组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{minecraft:pig, minecraft:c(ow|at), #minecraft:beehive_inhabitors}\"。
-为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。
-添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
+		"自定义的实体组，玩家/领地配置应该能够为其设置实体访问例外（例如：允许僵尸杀死生物）。\n这些组应该包含访问其他实体的实体，而不应该包含被访问的实体。请查看“实体保护可选例外组§7(entityProtectionOptionalExceptionGroups)§r”选项以获取更多信息。\n每个组可以包含多个实体和实体标签。实体组的格式为：<组ID>{<实体/标签/通配符（用逗号分隔）>}。\n组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{minecraft:pig, minecraft:c(ow|at), #minecraft:beehive_inhabitors}\"。\n为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。\n添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
     "gui.xaero_pac_config_dropped_item_access_entity_groups" : "掉落物访问实体组",
     "gui.xaero_pac_config_dropped_item_access_entity_groups.tooltip" : 
-"自定义的实体组，玩家/领地配置应该能够为其设置掉落物访问例外（例如：允许猪灵捡起金）。
-这些组应该包含试图拾取物品的实体，而不是包含特定物品。
-每个组可以包含多个实体和实体标签。实体组的格式为：<组ID>{<实体/标签/通配符（用逗号分隔）>}。
-组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{minecraft:pig, minecraft:c(ow|at), #minecraft:beehive_inhabitors}\"。
-为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。
-添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
+		"自定义的实体组，玩家/领地配置应该能够为其设置掉落物访问例外（例如：允许猪灵捡起金）。\n这些组应该包含试图拾取物品的实体，而不是包含特定物品。\n每个组可以包含多个实体和实体标签。实体组的格式为：<组ID>{<实体/标签/通配符（用逗号分隔）>}。\n组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-GUYS98{minecraft:pig, minecraft:c(ow|at), #minecraft:beehive_inhabitors}\"。\n为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。\n添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
     "gui.xaero_pac_config_static_fake_players" : "静态假玩家",
     "gui.xaero_pac_config_static_fake_players.tooltip" : 
-"一份假玩家（UUID或名称）列表，如果他们尝试访问与假玩家的原始方块所在区块兼容的建筑保护区块（例如：拥有相同所有者和区块保护选项值的领地），则不应受到领地保护影响。
-这对于绑定到特定放置方块（起源方块）位置的假玩家非常有用。此外，该模组支持将假玩家放置在原始方块旁边的方块，即使这意味着进入另一个区块，例如在Integrated Tunnels模组的情况下，或者起源方块与目标方块接触。 \
-模组将尝试在目标方块和假玩家旁边的所有位置作为假玩家起源方块的可能位置。 \
-如果目标方块或假玩家接触到具有不兼容建筑保护的领地，该模组将始终保护该目标方块。请避免在此类领地边缘进行建造。 \
-然而，某些假玩家的起源方块可能与假玩家或目标方块相距甚远，例如在Create模组中，或者可能根本就没有起源方块， \
-例如可以四处移动的NPC。在这种情况下，需要使用此类假玩家的模组需要明确的支持才能实现。尽管它们有时也可能 \
-默认支持，如果假玩家使用实际玩家的UUID。Create模组有明确的支持（在Fabric上需要扩展），您不需要向该列表中添加任何内容。 \
-请确保始终测试领地边缘是否不受来自您向该列表中添加的假玩家的外部交互的影响。
-想知道如何获取特定假玩家的UUID或用户名？您可以查看使用它们的模组的源代码，或者礼貌地询问模组作者。 \
-例如：[\"41C82C87-7AfB-4024-BB57-13D2C99CAE77\", \"FakePlayerName\"]",
+		"一份假玩家（UUID或名称）列表，如果他们尝试访问与假玩家的原始方块所在区块兼容的建筑保护区块（例如：拥有相同所有者和区块保护选项值的领地），则不应受到领地保护影响。\n这对于绑定到特定放置方块（起源方块）位置的假玩家非常有用。此外，该模组支持将假玩家放置在原始方块旁边的方块，即使这意味着进入另一个区块，例如在Integrated Tunnels模组的情况下，或者起源方块与目标方块接触。\n模组将尝试在目标方块和假玩家旁边的所有位置作为假玩家起源方块的可能位置。\n如果目标方块或假玩家接触到具有不兼容建筑保护的领地，该模组将始终保护该目标方块。请避免在此类领地边缘进行建造。\n然而，某些假玩家的起源方块可能与假玩家或目标方块相距甚远，例如在Create模组中，或者可能根本就没有起源方块，\n例如可以四处移动的NPC。在这种情况下，需要使用此类假玩家的模组需要明确的支持才能实现。尽管它们有时也可能\n默认支持，如果假玩家使用实际玩家的UUID。Create模组有明确的支持（在Fabric上需要扩展），您不需要向该列表中添加任何内容。\n请确保始终测试领地边缘是否不受来自您向该列表中添加的假玩家的外部交互的影响。\n想知道如何获取特定假玩家的UUID或用户名？您可以查看使用它们的模组的源代码，或者礼貌地询问模组作者。\n例如：[\"41C82C87-7AfB-4024-BB57-13D2C99CAE77\", \"FakePlayerName\"]",
     "gui.xaero_pac_config_static_fake_player_class_exceptions" : "静态假玩家类例外",
     "gui.xaero_pac_config_static_fake_player_class_exceptions.tooltip" : 
-"一份包含假玩家Java类的列表，这些假玩家应该被排除在给予受“静态假玩家§7(staticFakePlayers)§r”选项 \
-或内置假玩家支持，如Create模组的机械手，的假玩家的领地保护例外之外。
-这个选项是为类似于ComputerCraft中的乌龟之类的假玩家设计的，它们会获取放置它们的玩家的UUID。 \
-当乌龟从“静态假玩家§7(staticFakePlayers)§r”或机械手那里获取假玩家的UUID时，它就会获得与假玩家或机械手相同的权限，而它本身既不是静止的也不是机械手。
-在这里添加新的类不应该破坏对使用拥有者UUID的假玩家的支持。这只是剥夺了他们不该拥有的权限。
-例如：[\"dan200.computercraft.shared.turtle.core.TurtlePlayer\"]",
+		"一份包含假玩家Java类的列表，这些假玩家应该被排除在给予受“静态假玩家§7(staticFakePlayers)§r”选项 \n或内置假玩家支持，如Create模组的机械手，的假玩家的领地保护例外之外。\n这个选项是为类似于ComputerCraft中的乌龟之类的假玩家设计的，它们会获取放置它们的玩家的UUID。\n当乌龟从“静态假玩家§7(staticFakePlayers)§r”或机械手那里获取假玩家的UUID时，它就会获得与假玩家或机械手相同的权限，而它本身既不是静止的也不是机械手。\n在这里添加新的类不应该破坏对使用拥有者UUID的假玩家的支持。这只是剥夺了他们不该拥有的权限。\n例如：[\"dan200.computercraft.shared.turtle.core.TurtlePlayer\"]",
     "gui.xaero_pac_config_banned_item_list" : "附加禁止物品列表",
     "gui.xaero_pac_config_banned_item_list.tooltip" : 
-"默认情况下，在受保护的区域内允许使用某些物品，例如剑、镐、弓、盾牌、三叉戟、喷溅药水等，以便玩家保护自己或与某些方块/实体交互。
-要为特定物品取消此类例外，请将其添加到此列表中。此列表适用于对空气和对方块/实体中使用物品。支持物品标签。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。
-例如：[\"minecraft:trident\", \"minecraft:shield\", \"minecraft:(oak|spruce)_boat\", \"#minecraft:boats\"]",
+		"默认情况下，在受保护的区域内允许使用某些物品，例如剑、镐、弓、盾牌、三叉戟、喷溅药水等，以便玩家保护自己或与某些方块/实体交互。\n要为特定物品取消此类例外，请将其添加到此列表中。此列表适用于对空气和对方块/实体中使用物品。支持物品标签。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。\n例如：[\"minecraft:trident\", \"minecraft:shield\", \"minecraft:(oak|spruce)_boat\", \"#minecraft:boats\"]",
     "gui.xaero_pac_config_item_protection_exception" : "物品使用保护例外列表",
     "gui.xaero_pac_config_item_protection_exception.tooltip" : "默认情况下，在受保护的区块中，大多数物品的右键使用功能被禁用。要为特定物品做出例外，请将它添加到此列表中。此选项的优先级高于“附加禁止物品列表§7(additionalBannedItemsList)§r“。\n此列表适用于对空气和对方块/实体中使用物品。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r。\n例如：[\"minecraft:fishing_rod\", \"minecraft:ender_pearl\", \"minecraft:(red|green)_bed\", \"#minecraft:beds\"]",
     "gui.xaero_pac_config_item_protection_exception_groups" : "物品使用保护可选例外组",
     "gui.xaero_pac_config_item_protection_exception_groups.tooltip" : 
-"自定义的物品组，玩家/领地配置应该能够为其设置保护例外。每个组可以包含多个物品和物品标签。
-每个组创建一个玩家配置选项来控制右键使用组内物品。物品组的格式为<组ID>{<物品/标签/通配符（用逗号分隔）>}。
-组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-stuff98{minecraft:(writable|written)_book, minecraft:*_book, #minecraft:compasses}\"。
-为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。
-添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。
-支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
+		"自定义的物品组，玩家/领地配置应该能够为其设置保护例外。每个组可以包含多个物品和物品标签。\n每个组创建一个玩家配置选项来控制右键使用组内物品。物品组的格式为<组ID>{<物品/标签/通配符（用逗号分隔）>}。\n组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-stuff98{minecraft:(writable|written)_book, minecraft:*_book, #minecraft:compasses}\"。\n为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。\n添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
     "gui.xaero_pac_config_completely_disabled_item_interactions" : "完全禁用物品交互",
     "gui.xaero_pac_config_completely_disabled_item_interactions.tooltip" : "服务器上完全禁止右键使用的物品，无论是否在领地内。此列表适用于对空气和对方块/实体中使用物品。支持物品标签。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。\n例如：[\"minecraft:trident\", \"minecraft:shield\", \"minecraft:(oak|spruce)_boat\", \"#minecraft:boats\"]",
     "gui.xaero_pac_config_completely_disabled_block_interactions" : "完全禁用方块交互",
@@ -816,17 +731,11 @@
     "gui.xaero_pac_config_completely_disable_frost_walking.tooltip" : "是否完全在服务区上禁用冰霜行者。如果常规的冰霜行者保护不起作用，可以使用这个，因为游戏中没有相关规则。",
     "gui.xaero_pac_config_reduced_boat_collisions" : "减少船只实体碰撞",
     "gui.xaero_pac_config_reduced_boat_collisions.tooltip" : 
-"是否忽略大多数检测到的船只实体碰撞。
-默认情况下，船只会检测与它们接触的每一个实体的碰撞，并在每个游戏刻中处理这些碰撞，这可能会导致大量的计算。
-如果我们还要混合添加必要的领地保护检查，那么这可能会使服务器的运行速度变得非常慢。
-这个选项使极大多数与船只的碰撞被随机忽略，这有助于提高性能，但不大影响游戏玩法。",
+		"是否忽略大多数检测到的船只实体碰撞。\n默认情况下，船只会检测与它们接触的每一个实体的碰撞，并在每个游戏刻中处理这些碰撞，这可能会导致大量的计算。\n如果我们还要混合添加必要的领地保护检查，那么这可能会使服务器的运行速度变得非常慢。\n这个选项使极大多数与船只的碰撞被随机忽略，这有助于提高性能，但不大影响游戏玩法。",
     
     "gui.xaero_pac_config_player_configurable_player_options" : "玩家可配置的玩家配置选项",
     "gui.xaero_pac_config_player_configurable_player_options.tooltip" : "单个玩家可以重新配置的玩家配置选项列表。如果某个选项不在任何可配置选项列表中，那么将在整个服务器上使用默认玩家配置文件中的值。检查默认玩家配置文件.toml以获取选项名称。",
     "gui.xaero_pac_config_op_configurable_player_options" : "管理员可配置的玩家配置选项",
     "gui.xaero_pac_config_op_configurable_player_options.tooltip" : 
-"玩家配置中可供管理员为玩家重新配置的额外选项列表。
-这是指应该根据每个玩家的情况进行配置，而不是由玩家自己配置的选项。
-如果某个选项不在任何可配置选项列表中，则在服务器上使用默认玩家配置中的值。
-检查默认玩家配置文件.toml以获取选项名称。"
+		"玩家配置中可供管理员为玩家重新配置的额外选项列表。\n这是指应该根据每个玩家的情况进行配置，而不是由玩家自己配置的选项。\n如果某个选项不在任何可配置选项列表中，则在服务器上使用默认玩家配置中的值。\n检查默认玩家配置文件.toml以获取选项名称。"
 }
