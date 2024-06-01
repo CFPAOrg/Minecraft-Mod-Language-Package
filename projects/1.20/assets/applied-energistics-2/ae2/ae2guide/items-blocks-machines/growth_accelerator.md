@@ -29,7 +29,7 @@ item_ids:
 
 在顶面或底面放置<ItemLink id="crank" />并右击手摇即可手工供能。
 
-顶面和地面可通过粉红色的福鲁伊克斯珠分辨。
+顶面和底面可通过粉红色的福鲁伊克斯珠分辨。
 
 <GameScene zoom="6" background="transparent">
 <ImportStructure src="../assets/assemblies/accelerator_connections.snbt" />
