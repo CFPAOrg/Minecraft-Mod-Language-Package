@@ -107,13 +107,13 @@
   "distanthorizons.config.client.advanced.graphics.quality.transparency":
     "透明度",
   "distanthorizons.config.client.advanced.graphics.quality.blocksToIgnore":
-    "被忽略的方块",
+    "忽略方块",
   "distanthorizons.config.client.advanced.graphics.quality.blocksToIgnore.@tooltip":
     "定义生成LOD时要忽略的方块类型。",
   "distanthorizons.config.client.advanced.graphics.quality.tintWithAvoidedBlocks":
-    "用避开的方块着色",
+    "用渲染透明方块着色",
   "distanthorizons.config.client.advanced.graphics.quality.tintWithAvoidedBlocks.@tooltip":
-    "§4注：这会使雪、地毯和活板门看起来非常糟糕§r\n被避开的方块下面的方块是否应该获得被避开方块的颜色？\n§6True：§r草地上的一朵红花会把它下面的草地染成红色\n§6False：§r被跳过的方块不会改变其下方表面的颜色",
+    "§4注：这会使雪、地毯和活板门看起来非常糟糕§r\n渲染透明方块下面的方块是否应该获得该渲染透明方块的颜色？\n§6True：§r草地上的一朵红花会把它下面的草地染成红色\n§6False：§r渲染透明方块不会改变其下方表面的颜色",
   "distanthorizons.config.client.advanced.graphics.quality.lodBiomeBlending":
     "生物群系过渡",
   "distanthorizons.config.client.advanced.graphics.quality.lodBiomeBlending.@tooltip":
@@ -150,17 +150,17 @@
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogEnd.@tooltip":
     "远处的雾应该在哪里结束？\n\n  “0.0”：雾从玩家的位置结束。\n  “1.0”：雾终止的圆正好位于LOD渲染距离的正方形内。\n“1.414”：LOD渲染距离的正方形正好位于雾终止的圆内。\n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogMin":
-    "远距雾最薄值",
+    "远距雾最稀值",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogMin.@tooltip":
-    "最小雾厚度是多少？\n\n  “0.0”：完全没有雾。\n  “1.0”：最浓的雾颜色。\n",
+    "最小雾浓度是多少？\n\n  “0.0”：完全没有雾。\n  “1.0”：最浓的雾颜色。\n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogMax":
-    "远距雾最厚值",
+    "远距雾最浓值",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogMax.@tooltip":
-    "最大雾厚度是多少？\n\n  “0.0”：完全没有雾。\n  “1.0”：最浓的雾颜色。\n",
+    "最大雾浓度是多少？\n\n  “0.0”：完全没有雾。\n  “1.0”：最浓的雾颜色。\n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogFalloff":
     "远距雾衰减",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogFalloff.@tooltip":
-    "雾厚度应该如何计算？\n\n线性：基于距离的线性（将忽略“密度”）\n指数：1/(e^(距离*密度)) \n指数平方：1/(e^((距离*密度)^2) \n",
+    "雾浓度应该如何计算？\n\n线性：基于距离的线性（将忽略“密度”）\n指数：1/(e^(距离*密度)) \n指数平方：1/(e^((距离*密度)^2) \n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogDensity":
     "远距雾密度",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.farFogDensity.@tooltip":
@@ -206,7 +206,7 @@
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogMixMode":
     "高度雾混合模式",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogMixMode.@tooltip":
-    "高度应该如何使用正常函数影响雾厚度？\n\n基础：没有特殊的高度雾效果。雾基于镜头距离计算 \n忽略高度：完全忽略高度。雾基于横向距离计算 \n相加法：高度雾 + 远距雾 \n取最大值：max(高度雾, 远距雾) \n相乘法：高度雾 * 远距雾 \n逆乘法：1 - (1-高度雾) * (1-远距雾) \n限制加法：远距雾 + max(远距雾, 高度雾) \n乘加法：远距雾 + 远距雾 * 高度雾 \n逆乘加法：远距雾 + 1 - (1-高度雾) * (1-远距雾) \n取平均值：远距雾*0.5 + 高度雾*0.5 \n\n注意，对于“基础”模式和“忽略高度”模式，高度雾的雾设置无效。\n",
+    "高度应该如何使用正常函数影响雾浓度？\n\n基础：没有特殊的高度雾效果。雾基于镜头距离计算 \n忽略高度：完全忽略高度。雾基于横向距离计算 \n相加法：高度雾 + 远距雾 \n取最大值：max(高度雾, 远距雾) \n相乘法：高度雾 * 远距雾 \n逆乘法：1 - (1-高度雾) * (1-远距雾) \n限制加法：远距雾 + max(远距雾, 高度雾) \n乘加法：远距雾 + 远距雾 * 高度雾 \n逆乘加法：远距雾 + 1 - (1-高度雾) * (1-远距雾) \n取平均值：远距雾*0.5 + 高度雾*0.5 \n\n注意，对于“基础”模式和“忽略高度”模式，高度雾的雾设置无效。\n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogMode":
     "高度雾模式",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogMode.@tooltip":
@@ -224,17 +224,17 @@
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogEnd.@tooltip":
     "高度雾的终止处应该偏移多远？\n\n  “0.0”：雾以无偏移结束。\n  “1.0”：雾以世界总高度的偏移结束。（包括深度）\n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogMin":
-    "高度雾最薄值",
+    "高度雾最稀值",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogMin.@tooltip":
-    "最小雾厚度是多少？\n\n  “0.0”：完全没有雾。\n  “1.0”：最浓的雾颜色。\n",
+    "最小雾浓度是多少？\n\n  “0.0”：完全没有雾。\n  “1.0”：最浓的雾颜色。\n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogMax":
-    "高度雾最厚值",
+    "高度雾最浓值",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogMax.@tooltip":
-    "最大雾厚度是多少？\n\n  “0.0”：完全没有雾。\n  “1.0”：最浓的雾颜色。\n",
+    "最大雾浓度是多少？\n\n  “0.0”：完全没有雾。\n  “1.0”：最浓的雾颜色。\n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogFalloff":
     "高度雾衰减",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogFalloff.@tooltip":
-    "高度雾厚度应如何计算？\n\n线性：基于高度的线性（将忽略“密度”）\n指数：1/(e^(高度*密度)) \n指数平方：1/(e^((高度*密度)^2) \n",
+    "高度雾浓度应如何计算？\n\n线性：基于高度的线性（将忽略“密度”）\n指数：1/(e^(高度*密度)) \n指数平方：1/(e^((高度*密度)^2) \n",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogDensity":
     "高度雾密度",
   "distanthorizons.config.client.advanced.graphics.fog.advancedFog.heightFog.heightFogDensity.@tooltip":
@@ -334,7 +334,7 @@
   "distanthorizons.config.client.advanced.lodBuilding.minTimeBetweenChunkUpdatesInSeconds":
     "区块更新间的最小时间（秒）",
   "distanthorizons.config.client.advanced.lodBuilding.minTimeBetweenChunkUpdatesInSeconds.@tooltip":
-    "确定LOD区块更新间的必须间隔的时间。\n更新会发生\n\n增加此值将减少CPU负载，但可能导致\nLOD延后得更频繁或时间更长。",
+    "确定LOD区块更新间必须经过多长时间才能\n发生另一次更新。\n\n增加此值将减少CPU负载，但可能导致\nLOD延后得更频繁或时间更长。",
   "distanthorizons.config.client.advanced.lodBuilding.onlyUseDhLightingEngine":
     "仅使用DH光照引擎",
   "distanthorizons.config.client.advanced.lodBuilding.onlyUseDhLightingEngine.@tooltip":
