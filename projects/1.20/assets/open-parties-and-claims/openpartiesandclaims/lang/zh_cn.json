@@ -666,9 +666,9 @@
     "gui.xaero_pac_config_entity_protection_exception.tooltip" : "此选项不再有效。请将你仍留存于此的内容转移到“强制实体保护例外列表§7(forcedEntityProtectionExceptionList)§r”或“实体保护可选例外组§7(entityProtectionOptionalExceptionGroups)§r”中，\n但请记住，这些选项的工作方式不同，请阅读它们的注释。\n该选项将在模组的正式版中完全删除。",
     "gui.xaero_pac_config_entity_claim_barrier_list" : "实体领地屏障列表",
     "gui.xaero_pac_config_entity_claim_barrier_list.tooltip" : "此选项不再有效。请将你仍留存于此的内容转移到“强制实体领地屏障列表§7(forcedEntityClaimBarrierList)§r”或“实体领地屏障可选组§7(entityClaimBarrierOptionalGroups)§r”中，\n但请记住，这些选项的工作方式不同，请阅读它们的注释。\n该选项将在模组的正式版中完全删除。",
-    "gui.xaero_pac_config_block_protection_forced_exception" : "强制方块保护例外列表",
+    "gui.xaero_pac_config_block_protection_forced_exception" : "方块保护强制例外列表",
     "gui.xaero_pac_config_block_protection_forced_exception.tooltip" : 
-		"要从区块保护中排除的部分方块。支持方块标签。\n只需要在列表中有一个方块/标签ID，例如\"minecraft:lever\"允许整个服务器中的方块交互，如果手中的物品没有阻止它。\n前缀“hand$”与没有前缀相同，但在受保护的区块中强制要求空手。前缀“break$”允许破坏方块。\n前缀“anything$”与没有前缀相同，但允许与手中的任何物品进行交互。请确保对方块使用此种例外时，没有物品做任何坏事。\n多次添加相同的方块/标签以使用多个前缀。支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或 §7(OR)§r”。\n例如：[\"minecraft:lever\", \"minecraft:*_button\", \"break$minecraft:*_button\", \"break$minecraft:(*_|)sand\"]。",
+		"要从区块保护中部分排除的方块。支持方块标签。\n列表中没有前缀的方块/标签ID（例如\"minecraft:lever\"）会在整个服务器中允许与此方块的交互，前提是手中的物品不会阻碍交互。\n前缀“hand$”与没有前缀相同，但要求空手。前缀“break$”允许破坏此方块。\n前缀“anything$”与没有前缀相同，但允许与手中的任何物品进行交互。请确保：对享有此种例外的方块使用任何物品，都不会造成不良后果。\n可以多次添加相同的方块/标签以使用多个前缀。支持使用特殊字符“*”、“(”、“)”和“|”进行模式匹配，其中“*”匹配任意内容，“( )”用于表达式的分组，而“|”表示“或 §7(OR)§r”。\n例如：[\"minecraft:lever\", \"minecraft:*_button\", \"break$minecraft:*_button\", \"break$minecraft:(*_|)sand\"]。",
     "gui.xaero_pac_config_block_protection_exception_groups" : "方块保护可选例外组",
     "gui.xaero_pac_config_block_protection_exception_groups.tooltip" : 
 		"自定义的方块组，玩家/领地配置应该能够为其设置保护例外。每个组可以由多个方块和方块标签组成。\n没有前缀的组为与该组的方块进行右键交互创建了一个玩家配置选项。方块组的格式为<组ID>{<由“,”分隔的方块/标签/通配符>}。\n组ID应由最多32个字符组成，这些字符包括字母A-Z、数字0-9、“-”和“_”，例如\"ePiC-DIRT35{minecraft:dirt, minecraft:grass_block, minecraft:(oak|spruce)_*}\"。\n一个组的前缀可以是“hand$”，以创建一个带有强制空手要求的右击交互选项，或者“break$”用于允许破坏组里的方块。\n此外，前缀“anything$”创建了一个选项，用于与手中持有的任何物品进行右键交互，而不仅仅是允许的物品。请确保对方块使用此种例外时，没有物品做任何坏事。\n为组创建的玩家配置选项，像常规选项一样，必须添加到“玩家可配置的玩家配置选项§7(playerConfigurablePlayerConfigOptions)§r”列表中，以便玩家可以访问它们。\n添加选项的确切路径可以在启动服务器后的默认玩家配置文件中找到。\n支持带有特殊字符“*”、“(”、“)”和“|”的样式，其中“*”匹配任意内容，“( )”用于分组，而“|”表示“或§7(OR)§r”。",
