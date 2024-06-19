@@ -26,7 +26,7 @@ navigation:
 
 <RecipeFor id="damaged_budding_quartz" />
 
-无瑕的赛特斯石英母岩不会降级，因而能无限产生赛特斯石英。但是它们无法合成也无法被镐完好地挖下搬运，就算有精准采集也不行。（不过它们*可以*被[空间存储](../ae2-mechanics/spatial-io.md)移动。）
+无瑕的赛特斯石英母岩不会降级，因而能无限产生赛特斯石英。但是它们无法合成，也无法被镐完好地挖下搬运，就算有精准采集也不行。（不过它们*可以*被[空间存储](../ae2-mechanics/spatial-io.md)移动。）
 
 赛特斯石英母岩自身的生长非常缓慢。幸运的是，在母岩旁放置<ItemLink id="growth_accelerator" />能大幅加速这一过程。你的第一要务便是制造一些此方块。
 
@@ -34,6 +34,12 @@ navigation:
   <ImportStructure src="../assets/assemblies/budding_certus_2.snbt" />
   <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
+
+这种复杂的交互方式也意味着：母岩每被晶体催生器覆盖一面，其晶芽的总生长效率就会相应减少一部分，并最终抵消催生器带来的效率提升。实际检验数据如下：
+
+![不同面配置的每分钟物品产量](../assets/diagrams/certus_farm_speed_chart_1.png)
+
+![常用面配置](../assets/diagrams/certus_farm_speed_chart_2.png)
 
 假如没有足够石英制造<ItemLink id="energy_acceptor" />或是<ItemLink id="vibration_chamber" />，可以制造一个<ItemLink id="crank" />并安到催生器上。
 
