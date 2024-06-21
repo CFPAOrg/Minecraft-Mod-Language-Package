@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 封装带
+    title: ME封装带
     icon: expatternprovider:me_packing_tape
 categories:
 - extended items
@@ -10,7 +10,7 @@ item_ids:
 - expatternprovider:package
 ---
 
-# ME 封装带
+# ME封装带
 
 ME封装带可以将世界中的ME设备封装为一个物品。
 <Row>
@@ -41,4 +41,4 @@ ME封装带可以将世界中的ME设备封装为一个物品。
 
 ## 拆封
 
-只要用鼠标右键对地面单击“封装设备”，然后封装设备将会从封装包里放出。
+只需要手持“封装设备”鼠标右键对地面单击，然后封装设备将会从封装包里放出。

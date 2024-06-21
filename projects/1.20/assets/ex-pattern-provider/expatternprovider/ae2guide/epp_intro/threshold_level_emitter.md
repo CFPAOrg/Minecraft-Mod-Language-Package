@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 阈值发信器
+    title: ME阈值发信器
     icon: expatternprovider:threshold_level_emitter
 categories:
 - extended devices
@@ -9,13 +9,13 @@ item_ids:
 - expatternprovider:threshold_level_emitter
 ---
 
-# ME 阈值发信器
+# ME阈值发信器
 
 <GameScene zoom="8" background="transparent">
   <ImportStructure src="../structure/cable_threshold_level_emitter.snbt"></ImportStructure>
 </GameScene>
 
-它的工作原理类似于RS锁存器。当网络中的物品数量少于下限阈值时，关闭红石信号，当数量大于上限阈值时输出红石信号。
+当网络中物品的数量高于上限阈值时会一直输出红石信号，直到数量低于下限阈值时才会关闭红石信号。
 
 例如，将下限阈值设为100，上限阈值设为150。
 
@@ -23,6 +23,6 @@ item_ids:
 
 当物品的数量增加到150个以上时，发信器会发出红石信号。
 
-当数量下降且小于150时，发信器仍发出信号。
+当数量下降到100-150之间时，发信器仍发出信号。
 
-最后数量少于100，发信器停止输出信号。
+直到数量低于100时，发信器停止输出信号。

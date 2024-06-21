@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 精确输出总线
+    title: ME精确输出总线
     icon: expatternprovider:precise_export_bus
 categories:
 - extended devices
@@ -9,7 +9,7 @@ item_ids:
 - expatternprovider:precise_export_bus
 ---
 
-# ME 精确输出总线
+# ME精确输出总线
 
 <GameScene zoom="8" background="transparent">
   <ImportStructure src="../structure/cable_precise_export_bus.snbt"></ImportStructure>

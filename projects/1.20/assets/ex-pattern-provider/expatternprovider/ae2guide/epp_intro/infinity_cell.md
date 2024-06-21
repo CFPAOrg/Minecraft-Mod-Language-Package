@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 无限单元
+    title: ME无限元件
     icon: expatternprovider:infinity_cell
 categories:
 - extended items
@@ -9,7 +9,7 @@ item_ids:
 - expatternprovider:infinity_cell
 ---
 
-# ME 无限单元
+# ME无限元件
 
 一个简易的无限水源和圆石源，不过是元件形式的。
 

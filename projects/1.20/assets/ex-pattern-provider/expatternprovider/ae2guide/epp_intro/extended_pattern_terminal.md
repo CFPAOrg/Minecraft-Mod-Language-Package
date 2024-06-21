@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 扩展样板管理终端
+    title: ME扩展样板管理终端
     icon: expatternprovider:ex_pattern_access_part
 categories:
 - extended devices
@@ -10,9 +10,9 @@ item_ids:
 - expatternprovider:wireless_ex_pat
 ---
 
-# ME 扩展样板管理终端
+# ME扩展样板管理终端
 
-与<ItemLink id="ae2:pattern_access_terminal" />相比，ME扩展样板管理终端提供了3个额外的选项。
+与普通<ItemLink id="ae2:pattern_access_terminal" />相比，ME扩展样板管理终端提供了3个额外的功能。
 
 <Row gap="20">
 <GameScene zoom="6" background="transparent">
@@ -22,9 +22,9 @@ item_ids:
 <ItemImage id="expatternprovider:wireless_ex_pat" scale="4"></ItemImage>
 </Row>
 
-## 更好的模式搜索模式
+## 更好的搜索模式
 
-你可以搜索某个存在于输入/输出中的物品。
+你可以搜索某个存在于输入/输出中的物品的名称。
 
 ![EPA1](../pic/epa_gui1.png)
 
@@ -36,7 +36,7 @@ item_ids:
 
 ## 在世界中高亮显示供应器的位置
 
-在搭建大型合成结构时，发现哪个样板供应器被卡住是很烦人的。扩展样板管理终端可以在世界上突出显示相应的样板供应器，你将更容易地找到它。
+在搭建大型合成结构时，发现哪个样板供应器被卡住是很烦人的；扩展样板管理终端可以在世界上突出显示相应的样板供应器，你将更容易地找到它。
 
 ![EPA3](../pic/epa_gui3.png)
 

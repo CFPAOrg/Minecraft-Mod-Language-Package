@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 无线连接器
+    title: ME无线连接器
     icon: expatternprovider:wireless_connect
 categories:
 - extended devices
@@ -10,7 +10,7 @@ item_ids:
 - expatternprovider:wireless_tool
 ---
 
-# ME 无线连接器
+# ME无线连接器
 
 <Row gap="20">
 <BlockImage id="expatternprovider:wireless_connect" scale="6"></BlockImage>
@@ -53,6 +53,6 @@ ME无线连接器可以像<ItemLink id="ae2:quantum_link" />一样连接两个�
 ## 能源消耗
 
 当它们相距较远时，ME无线连接器将会消耗更多的能源。
-它的成本与距离的关系不是线性的，因此如果它们相距太远，能源需求可能会非常高。
+它的能源消耗与距离的关系不是线性的，因此如果它们相距太远，能源需求可能会非常高。
 
-你可以使用<ItemLink id="ae2:energy_card" />来节省电力，每张能源卡可以减少10%的能源成本。
+你可以使用<ItemLink id="ae2:energy_card" />来节省电力，每张能源卡可以减少10%的能源消耗。

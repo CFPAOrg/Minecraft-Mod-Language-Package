@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 扩展接口
+    title: ME扩展接口
     icon: expatternprovider:ex_interface
 categories:
 - extended devices
@@ -10,7 +10,7 @@ item_ids:
 - expatternprovider:ex_interface_part
 ---
 
-# ME 扩展接口
+# ME扩展接口
 
 <Row gap="20">
 <BlockImage id="expatternprovider:ex_interface" scale="8"></BlockImage>
@@ -21,8 +21,6 @@ item_ids:
 
 ME扩展接口是一个具有更多配置槽位的<ItemLink id="ae2:interface" />。
 
-*Am I actually need this?*
-
-*我真的需要这个吗？*
+*”我真的需要这个吗？“*
 
 ![EIGui](../pic/ei_gui.png)

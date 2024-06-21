@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 阈值输出总线
+    title: ME阈值输出总线
     icon: expatternprovider:threshold_export_bus
 categories:
 - extended devices
@@ -9,7 +9,7 @@ item_ids:
 - expatternprovider:threshold_export_bus
 ---
 
-# ME 阈值输出总线
+# ME阈值输出总线
 
 <GameScene zoom="8" background="transparent">
   <ImportStructure src="../structure/cable_threshold_export_bus.snbt"></ImportStructure>
@@ -17,7 +17,7 @@ item_ids:
 
 当存储在ME网络中的物品数量高于/低于阈值时，ME阈值输出总线才会运行。
 
-## 例子
+## 示例
 
 ![GUI](../pic/thr_bus_gui1.png)
 

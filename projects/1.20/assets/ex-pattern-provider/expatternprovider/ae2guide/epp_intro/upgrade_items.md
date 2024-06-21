@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME 设备升级组件
+    title: ME设备升级组件
     icon: expatternprovider:pattern_provider_upgrade
 categories:
 - extended items
@@ -13,9 +13,9 @@ item_ids:
 - expatternprovider:drive_upgrade
 ---
 
-# ME 设备扩展升级
+# ME设备升级组件
 
-这些升级允许您用扩展的ME设备替换普通的ME设备，而不必破坏它们。
+这些升级允许你用扩展的ME设备替换普通的ME设备，而不必破坏它们。
 
 <Row>
 <ItemImage id="expatternprovider:pattern_provider_upgrade" scale="4"></ItemImage>
@@ -26,7 +26,7 @@ item_ids:
 </Row>
 
 潜行+鼠标右键点击普通ME设备，它们将被替换为它们的扩展版本。
-设备内的配置和物品将会保留。
+设备内的设置和物品将会保留。
 
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../structure/upgrade_show_1.snbt"></ImportStructure>
