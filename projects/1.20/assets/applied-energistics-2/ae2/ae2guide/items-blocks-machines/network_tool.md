@@ -29,6 +29,12 @@ item_ids:
 
 此窗口在搭建[子网络](../ae2-mechanics/subnetworks.md)时很有用，可用于判断两段线缆是否处于同一网络。
 
+## 隐藏伪装板
+
+手持网络工具时[伪装板](facades.md)会自动隐藏。
+
+此时可以直接与隐藏的伪装板后方的方块交互，无需取下伪装板。
+
 ## 配方
 
 <RecipeFor id="network_tool" />
