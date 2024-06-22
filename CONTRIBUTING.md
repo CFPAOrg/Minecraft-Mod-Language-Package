@@ -175,9 +175,9 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 ### 提示
 
-- 如果上传的文件中包含**非文本文件**（如`.ttf`，`.jpg`等），**有可能需要修改 [Packer 配置](config/packer.json)**，否则它们会被打包器排除，不会进入用户使用的资源包。
+- 如果上传的文件中包含**非文本文件**（如`.ttf`，`.jpg`等），**有可能需要修改 [Packer 配置](config/packer)**，否则它们会被打包器排除，不会进入用户使用的资源包。
   - 如果这些文件放置在 `font` 或 `textures` 中，一般不用修改配置；默认已经对这两处进行了特殊处理。
-- 不同版本的同一模组可通过[自定义文件检索策略](./Packer-Index-Doc.md)同步翻译。
+- 不同版本的同一模组可通过[自定义文件检索策略](./Packer-Doc.md)同步翻译。
 
 ## 代码贡献指南
 
@@ -223,15 +223,12 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 - 增加新翻译版本
   - 需要将所有项填写一遍，同时需要更新 `.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及 [CFPABot](https://github.com/Cyl18/CFPABot) 等相关服务。没有规划最好不要乱动。
 - 更改字符替换表
-  - 修改`replacementMap`，格式与已有文本一致。Unicode *基础多语种平面（BMP）*以外的字符需要使用 **UTF-16 代理对**输入，否则可能无法识别。
+  - 修改`characterReplacement`，格式与已有文本一致。对于**基础多语种平面（BMP）**以外的字符，最好用 **UTF-16 代理对**书写
   - 同时可能需要修改字体文件。
 - 处理非文本文件
-  1. 如果该文件所在的文件夹与 `lang` 文件夹同级，且对**任何模组都**不会有文本文件（如 font\），将该文件夹加入对应版本的 `noProcessNamespace`中。
-  2. 否则，将该模组的 `CurseForge 项目名称`或`命名空间`中的一个（具体选哪一个看具体情况）加入 `modNameBlackList`或 `domainBlackList`，并将**所有**受影响的文件的相对位置加入 `additionalContents`。
-- 添加非标准位置（在`assets/`以外）的文件 
-  - 直接加入 `additionalContents`
+  - 参考 [Packer-Doc](Packer-Doc.md) 对其的描述。
 - 停止对某模组的支持
-  - 把该模组的 `CurseForge 项目名称`或`命名空间`中的加入相应的 `modNameBlackList` 或 `domainBlackList`（二者取其一）。
+  - 把该模组的 `CurseForge 项目名称`或`命名空间`中的加入相应的 `exclusionMods` 或 `exclusionDomains`（二者取其一）。
 
 ## 联系我们
 
