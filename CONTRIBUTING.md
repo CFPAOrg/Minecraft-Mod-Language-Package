@@ -71,8 +71,8 @@ Minecraft-Mod-Language-Package
 
 projects 文件夹下只标出模组所属的大版本号，其中的模组翻译文件应满足以下优先级：
 
-1. 模组活跃更新的 Minecraft 版本优先。若所有小版本都活跃更新，则
-2. Minecraft 版本高者优先。
+1. 模组活跃更新的 Minecraft 版本优先。
+2. 若所有小版本都活跃更新，则Minecraft 版本高者优先。
 
 * 例：Minecraft 版本 1.19.2 与 1.19.4 均属同一大版本号 1.19 下的子版本。  
 若某一模组在两个版本上的开发均活跃，由于 1.19.4 的版本号更高，因此优先考虑该模组在 1.19.4 下的译名标准化情况与适配情况。  
@@ -80,22 +80,22 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 ## 翻译用语共识
 
-1. “材料+质/制+中心词”的翻译，如“铁质涡轮”“铁制涡轮”，二者皆合理。只需单模组内统一。
-2. 关于“木制品名称”的翻译，可参考 <https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/2715#discussion_r1056901664> 中的解决方法。
+1. “材料 + 质/制 + 中心词”的翻译，如“铁质涡轮”或“铁制涡轮”，二者皆合理。只需单模组内统一。
+2. 关于“木制品名称”的翻译，可参考[此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/2715#discussion_r1056901664>)的解决方法。
 
 ## 翻译贡献方针
 
-以下内容只针对对 [projects](./projects) 文件夹下的贡献。
+以下内容只针对 [projects](./projects) 文件夹下的贡献。
 
 ### 总则
 
 - 翻译**必须**符合 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)的规定。
-- **拒绝**接收机器翻译（含生成式AI）、生硬翻译。
+- **拒绝**接收机器翻译（含生成式 AI）、生硬翻译。
 - 翻译**必须**在审查后才能进入仓库。
 
 ### Pull Request 相关规定
 
-可查看[视频教程](https://www.bilibili.com/video/BV1Ph4y1R7M8/)（已过时）或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。
+可查看[视频教程](https://www.bilibili.com/video/BV1yqgge9EVK/)或[文字教程](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/wiki/%E4%BD%BF%E7%94%A8-GitHub-%E6%8F%90%E4%BA%A4%E7%BF%BB%E8%AF%91)来学习。注意，视频或文字教程都只介绍了 Pull Request 的使用方法，贡献方针仍需阅读。同时，我们默认翻译贡献者已拥有一定的 Github 基础知识。
 
 视频或文字教程中与翻译贡献方针不同的地方，以本方针为准。
 
@@ -139,9 +139,9 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 #### 审查人
 
 - 任何人都能利用 GitHub 提供的[相关功能](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request)来审查 PR 中翻译。所有参与审查的用户即为审查人。
-- [CFPA团队](https://github.com/CFPAOrg)的成员（Member）和[仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人。
+- [CFPA团队](https://github.com/CFPAOrg) 的成员（Member）和[仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人。
 - 至少一位具有官方身份的审查人对 PR 给出批准（Approval）审查后，PR 才能合并。
-- 审查人在给出批准审查后**应**给 PR 加上“即将合并”标签，此后需等待大于 24 小时，若等待期间没有新动态则可以合并 PR。
+- 审查人在给出批准审查后**应**给 PR 加上“即将合并”标签，此后需至少等待 24 小时，若等待期间没有新动态则可以合并 PR。
   - “动态”包括但不限于 PR 作者发送提交（Commit）、审查人提出意见。
 
 #### PR 作者
@@ -158,21 +158,20 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 1. 若 PR 中存在未作者未响应的审查超过 7 天，审查人有权提及（@）PR 作者，提醒其相应审查意见，然后加上“即将被搁置”标签。
 2. 若“即将被搁置”标签存在超过 7 天，PR 作者将被视为无法回应。此时
-   2.1 若存在要求 PR 作者参与的审查意见，PR 将被加上“即将拒收”标签。1 天后 PR 将被关闭。
-   2.2 若审查意见都无需 PR 作者参与，PR 将被加上“即将拒收”标签。1 天缓冲期内官方审查人**可以**直接采纳审查意见，并终止计时，转入合并流程。
+   - 2.1 若存在要求 PR 作者参与的审查意见，PR 将被加上“即将拒收”标签。1 天后 PR 将被关闭。
+   - 2.2 若审查意见都无需 PR 作者参与，PR 将被加上“即将拒收”标签。1 天缓冲期内官方审查人**可以**直接采纳审查意见，并终止计时，转入合并流程。
 3. 在 1、2 所述过程中，若 PR 作者做出了回应，标签将被清除，计时重新从 1 开始。
 
 因搁置而关闭的 PR，PR 作者若想继续更新，可重新打开（Reopen）PR。
 
 ### 公示规则
 
-公示规则是为了传播 PR 中某个（些）模组译名或词条的重大更改而设立的。
+公示规则是为了传播 PR 中某个（些）模组译名或词条的重大更改而设立的，包括但不限于：远古译名的更改，。
 
 1. 该规则适用于与官方翻译或社区流传度较广的翻译存在**重大差异**，且存在译名或词条更改的 PR。
 2. 纯文档或代码贡献 PR **不应**进入公示流程（存在停止支持或重新支持某模组翻译的除外）（例：[#4327](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/4327)，[#4215](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/4215)）
 3. 若 PR 在**审查通过后**符合上述规则，则视为该 PR 进入公示流程，同时加上“需要公示”标签，并择日通过如 Bilibili、QQ、MC 百科论坛等平台发布公示，至发布之日 14 天止视为公示流程结束。此时清除标签并加上“即将合并”标签，转入合并流程。
-  - 公示时，应当附带：PR 链接、原文、更改内容、更改缘由等，选择性附带图片。
-  <!--- 若在公示流程中，中文社区对该翻译或词条更改认为不妥，则应当听从社区的**合理**建议或回滚原文。TODO：确定该情况下的具体做法--> 
+   - 公示时，应当附带：PR 链接、原文、 更 改内容、更改缘由等，选择性附带图片。
 
 ### 提示
 
@@ -236,4 +235,4 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 ## 联系我们
 
-若有不明白的地方，可[前往 QQ 群](https://jq.qq.com/?_wv=1027&k=5geO1T21)（630943368，**较为活跃**）
+若有不明白的地方，可[前往 QQ 群](https://jq.qq.com/?_wv=1027&k=5geO1T21)（630943368）
