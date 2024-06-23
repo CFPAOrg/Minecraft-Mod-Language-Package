@@ -37,7 +37,7 @@
 	"text.chatpatches.desc.time": "是否显示所有消息前面的时间戳？",
 	"text.chatpatches.desc.timeDate": "将格式化为时间戳的文本。在 帮助->日期和时间格式的信息 选项获得更多详情",
 	"text.chatpatches.desc.timeFormat": "创建时间戳的字符串，其中的‘&’是格式代码修饰符和装饰文本。‘$’是前面此选项的格式化时间戳的占位符。",
-	"text.chatpatches.desc.timeColor": "填充颜色以用于结果中可能为空白的时间戳部分。要与其他格式修饰符一起使用此选项，请在装饰文本选项中使用‘&r’。",
+	"text.chatpatches.desc.timeColor": "填充颜色以用于结果中可能为空白的时间戳部分。要与其他格式化代码一起使用此选项，请在装饰文本选项中使用‘&r’。",
 
 	"text.chatpatches.hover": "悬停开关",
 	"text.chatpatches.hoverDate": "悬停文本",
@@ -46,7 +46,7 @@
 	"text.chatpatches.desc.hover": "当你悬停在聊天中的时间戳文本上时，是否显示一个更详细的时间描述？",
 	"text.chatpatches.desc.hoverDate": "将格式化为较长日期/时间字符串的文本。在 帮助->日期和时间格式的信息 选项获得更多详情",
 	"text.chatpatches.desc.hoverFormat": "创建详细悬停描述的字符串，其中的‘&’是格式代码修饰符和装饰文本。需要一个‘$’作为前面此选项的格式化时间戳的占位符。",
-	"text.chatpatches.desc.hoverColor": "填充颜色以用于结果中可能为空白白色的悬停文本。要与其他格式修饰符一起使用此选项，请在装饰文本选项中使用‘&r’。",
+	"text.chatpatches.desc.hoverColor": "在悬停文本中，填充的颜色默认是白色。若要使用格式化代码，请在装饰文本选项中添加‘&r’。",
 
 	"text.chatpatches.counter": "消息计数器开关",
 	"text.chatpatches.counterFormat": "消息计数器文本",
@@ -56,7 +56,7 @@
 	"text.chatpatches.counterCompactDistance": "消息检查距离",
 	"text.chatpatches.desc.counter": "是否在消息后显示消息计数器以指示已发送多个重复消息？注意：要使CompactChat选项起作用，必须启用此选项。",
 	"text.chatpatches.desc.counterFormat": "将添加到消息末尾以指示已发送多个重复消息的文本。需要一个‘$’作为重复次数的占位符，并支持‘&’+格式代码修饰符。如果启用了CompactChat方法，则仍然适用该选项。",
-	"text.chatpatches.desc.counterColor": "填充颜色以用于结果中可能为空白白色的重复计数器。要与其他格式修饰符一起使用此选项，请在装饰文本选项中使用‘&r’。如果启用了CompactChat方法，则仍然适用该选项。",
+	"text.chatpatches.desc.counterColor": "填充颜色以用于结果中可能为空白白色的重复计数器。要与其他格式化代码一起使用此选项，请在装饰文本选项中使用‘&r’。如果启用了CompactChat方法，则仍然适用该选项。",
 	"text.chatpatches.desc.counterCheckStyle": "在计算重复项时，消息计数器是否检查格式化代码？比如说，当该选项启用时，“§e§labc§r”和“abc”将不会被视为重复的。如果启用了CompactChat方法，则仍然适用该选项。",
 	"text.chatpatches.desc.counterCompact": "是否将消息计数器的行为设置为CompactChat模组的行为？",
 	"text.chatpatches.desc.counterCompactDistance": "在此距离（包括）内将尝试压缩消息。将此设置为“-1”将尝试整个消息列表，“0”将根据聊天和 GUI 缩放尝试使用最大数量的可见消息。例如，将此设置为“7”将尝试将接收到的下一条消息压缩到已存在的最后7条消息之一中。",
@@ -66,7 +66,7 @@
 	"text.chatpatches.boundaryColor": "边界颜色",
 	"text.chatpatches.desc.boundary": "在聊天、离开一个世界/服务器后，再次加入另一个世界/服务器时是否显示边界线？",
 	"text.chatpatches.desc.boundaryFormat": "格式化并用于边界线的文本。支持‘&’+格式代码修饰符，‘\\n’表示换行，使用‘$’作为世界名称的占位符。",
-	"text.chatpatches.desc.boundaryColor": "边界线中填充的颜色，替代原本的白色部分。要与其他格式修饰符一起使用此颜色，请在装饰文本选项中使用‘&r’。",
+	"text.chatpatches.desc.boundaryColor": "边界线中填充的颜色，替代原本的白色部分。要与其他格式化代码一起使用此颜色，请在装饰文本选项中使用‘&r’。",
 
 	"text.chatpatches.chatlog": "切换聊天日志",
 	"text.chatpatches.chatlogSaveInterval": "保存间隔（分钟）",
@@ -117,7 +117,7 @@
 	"text.chatpatches.search.regex": "正则表达式",
 	"text.chatpatches.search.desc": "§b左键单击§r切换搜索栏，或§d右键单击§r切换设置菜单。\n\n§a绿色§r表示搜索匹配，§e黄色§r表示没有匹配，§c红色§r表示搜索无效。",
 	"text.chatpatches.search.desc.caseSensitive": "搜索查询是否仅匹配具有相同大小写的文本？\n\n“abc”可以与自身、“Abc”和“ABC”匹配；区分大小写仅会匹配“abc”。\n§l§o注意：§r这也适用于正则表达式搜索。",
-	"text.chatpatches.search.desc.modifiers": "搜索查询是否允许根据格式修饰符匹配文本？\n\n“abc”可以与“abc”和“§e§labc§r”匹配；具有修饰符时，它将只匹配“abc”而不匹配“§e§labc§r”。\n注意：十六进制颜色 §ocan§r 在格式为“&#§cRR§aGG§9BB§r”的情况下进行匹配，然而§n这还处于测试阶段§f。",
+	"text.chatpatches.search.desc.modifiers": "搜索查询是否允许根据格式化代码匹配文本？\n\n“abc”可以与“abc”和“§e§labc§r”匹配；具有修饰符时，它将只匹配“abc”而不匹配“§e§labc§r”。\n注意：十六进制颜色 §ocan§r 在格式为“&#§cRR§aGG§9BB§r”的情况下进行匹配，然而§n这还处于测试阶段§f。",
 	"text.chatpatches.search.desc.regex": "搜索查询是否作为§2正则表达式§r使用？\n\n要了解如何使用正则表达式，请参阅配置文件中的帮助部分。\n§l§o注意：§rJava 正则表达式§n需要完全匹配§f，所以请记得在前面加上“^.*”，并在末尾加上“.*$”。",
 
 	"text.chatpatches.copy.copied": "已复制消息组件：“%s”！",
