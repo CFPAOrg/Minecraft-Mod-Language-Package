@@ -56,7 +56,7 @@ jobs:
   release:
     name: Release
     # 显然，需要存在缓存/已经构造，才能打包。
-    needs: [ build-packer, initialize-release ]
+    needs: [ build, initialize-release ]
     strategy:
       # 某版本失败其实不影响其他版本。
       fail-fast: false
