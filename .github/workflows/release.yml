@@ -1,0 +1,106 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build / Cache Packer
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          sparse-checkout: src
+      
+      # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
+      # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
+      - name: Cache Packer
+        id: cache-packer
+        uses: actions/cache@v4
+        with:
+          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
+          path: |
+            Packer.exe
+            git2-*.dll
+          lookup-only: true
+      
+      # 构造程序
+      - name: Build Packer if not cached
+        if: steps.cache-packer.outputs.cache-hit != 'true'
+        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
+
+  initialize-release:
+    name: Initialize Release
+    runs-on: windows-latest
+    steps:
+      - name: Create timestamp
+        id: create_timestamp
+        run: echo "::set-output name=timestamp::$(date '+%Y-%m-%d %H:%M:%s')"
+        shell: bash
+
+        # Create the release: https://github.com/actions/create-release
+      - name: Create release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.create_timestamp.outputs.timestamp }}
+          release_name: 资源包-${{ steps.create_timestamp.outputs.timestamp }}
+          draft: false
+          prerelease: false
+    outputs:
+      upload-url: ${{ steps.create_release.outputs.upload_url }}
+
+  release:
+    name: Release
+    # 显然，需要存在缓存/已经构造，才能打包。
+    needs: [ build-packer, initialize-release ]
+    strategy:
+      # 某版本失败其实不影响其他版本。
+      fail-fast: false
+      matrix:
+        # 支持版本列表。将对这里的每个版本判断，按需打包。
+        # 如需添加新版本，在这里添加即可。
+        version: [ "1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric" ]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      # 由于Github的限制，这里需要重新拉取打包程序。
+      - name: Restore Packer
+        id: cache-restore
+        # https://github.com/actions/cache/issues/1265#issuecomment-1819612829 `fail-on-cache-miss` for restore action not failing the workflow
+        uses: actions/cache/restore@v3.3.1
+        with:
+          key: ${{ runner.os }}-Packer-${{ hashFiles('source/Packer/**') }}
+          path: |
+            Packer.exe
+            git2-*.dll
+          fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
+      
+      - name: Check critical path on ${{ matrix.version }}
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: check-critical-changes
+        with:
+          # 判断位置：该版本配置、代码
+          paths: >
+            config/packer/${{ matrix.version }}.json
+            src/**
+
+      - name: Run Packer for ${{ matrix.version }}
+        # 部分包原则：Packer和配置均没有改动
+        run: ./Packer --version="${{ matrix.version }}" --increment=${{ steps.check-critical-changes.outputs.changed == 'false' }}
+      
+      # 额 要两分半才能传完 然而 GitHub actions 直接传的话 会压成 zip 内套 zip 就这样了吧 --cy
+      - name: Unzip Files
+        run: unzip -q Minecraft-Mod-Language-Package-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
+        shell: bash
+
+      - name: Upload Artifact for ${{ matrix.version }}
+        uses: actions/upload-artifact@v3.0.0
+        with:
+          name: Minecraft-Mod-Language-Package-${{ matrix.version }}
+          path: Minecraft-Mod-Language-Package-${{ matrix.version }}/*
