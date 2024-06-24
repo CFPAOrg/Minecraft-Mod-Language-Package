@@ -36,13 +36,13 @@ jobs:
     steps:
       - name: Create timestamp
         id: create_timestamp
-        run: echo "::set-output name=timestamp::$(date '+%Y-%m-%d %H:%M:%s')"
+        run: echo timestamp=$(date '+%Y-%m-%dT%H:%M') >> $GITHUB_OUTPUT
         shell: bash
 
         # Create the release: https://github.com/actions/create-release
       - name: Create release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
