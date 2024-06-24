@@ -1,0 +1,33 @@
+window {
+    size(180,152)
+
+    action('create','create')
+    bind('vehicleName', 'vehicleName')
+    bind('rotate', 'rotate')
+
+    panel('','positional') {
+        bg1('rftoolsbuilder:textures/gui/vehicle_builder.png')
+
+        button('create','创建') {
+            channel('create')
+            hint(10,25,45,14)
+            tooltips('创建载具')
+        }
+        textfield('vehicleName') {
+            channel('vehicleName')
+            hint(10,45,120,14)
+            tooltips('自定义载具名称')
+        }
+        choicelabel('rotate') {
+            channel('rotate')
+            hint(90,25,36,14)
+            tooltips('设置水平旋转角')
+            choices {
+                choice('0')
+                choice('90')
+                choice('180')
+                choice('270')
+            }
+        }
+    }
+}

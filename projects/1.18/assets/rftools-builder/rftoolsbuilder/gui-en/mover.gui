@@ -1,0 +1,58 @@
+window {
+    size(180,152)
+
+    bind('name', 'name')
+    bind('connections', 'connections')
+    bind('down', 'down')
+    bind('up', 'up')
+    bind('north', 'north')
+    bind('south', 'south')
+    bind('west', 'west')
+    bind('east', 'east')
+
+    panel('','positional') {
+        bg1('rftoolsbuilder:textures/gui/mover.png')
+
+        label('', 'Connections:') {
+            hint(10,10,70,14)
+            horizalign('ALIGN_LEFT')
+        }
+         label('connections', '') {
+             hint(80,10,35,14)
+             horizalign('ALIGN_LEFT')
+         }
+
+        label('', 'Name:') {
+            hint(10,25,35,14)
+            horizalign('ALIGN_LEFT')
+        }
+        textfield('name') {
+            hint(40,25,60,14)
+            tooltips('Set the name of this mover')
+        }
+
+        panel('','horizontal') {
+            hint(2,40,160,20)
+            spacing(1)
+            label('', 'Excluded:')
+            togglebutton('down','D') {
+                tooltips('Enable/disable down direction')
+            }
+            togglebutton('up','U') {
+                tooltips('Enable/disable up direction')
+            }
+            togglebutton('north','N') {
+                tooltips('Enable/disable north direction')
+            }
+            togglebutton('south','S') {
+                tooltips('Enable/disable south direction')
+            }
+            togglebutton('west','W') {
+                tooltips('Enable/disable west direction')
+            }
+            togglebutton('east','E') {
+                tooltips('Enable/disable east direction')
+            }
+        }
+    }
+}
