@@ -12,6 +12,8 @@ navigation:
 
 此设施不需要大量缓存或手动替换母岩，它利用了[充能器自动化](charger-automation.md)和[投水自动化](throw-in-water-automation.md)以自动完成上述任务。
 
+生长速度估计值见[赛特斯石英的生长](../ae2-mechanics/certus-growth.md)。
+
 **这是个有遮挡关系的复杂建筑，可以旋转视角从各向观察**
 
 <GameScene zoom="6" interactive={true}>
