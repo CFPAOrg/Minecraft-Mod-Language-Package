@@ -28,11 +28,11 @@ potion.effect.scrying=§a探知§f药水
 lingering_potion.effect.scrying=滞留型§a探知§f药水
 tipped_arrow.effect.scrying=§a探知§f之箭
 
-effect.phasing=§1相位变换
-splash_potion.effect.phasing=喷溅型§1相位变换§f药水
-potion.effect.phasing=§1相位变换§f药水
-lingering_potion.effect.phasing=滞留型§1相位变换§f药水
-tipped_arrow.effect.phasing=§1相位变换§f之箭
+effect.phasing=§1相移
+splash_potion.effect.phasing=喷溅型§1相移§f药水
+potion.effect.phasing=§1相移§f药水
+lingering_potion.effect.phasing=滞留型§1相移§f药水
+tipped_arrow.effect.phasing=§1相移§f之箭
 
 effect.embolism=§4栓塞
 splash_potion.effect.embolism=喷溅型§4浊刺§f药水
@@ -53,33 +53,43 @@ potion.effect.gravity=§b高重力§f药水
 lingering_potion.effect.gravity=滞留型§b高重力§f药水
 tipped_arrow.effect.gravity=§b高重力§f之箭
 
-attribute.name.srpcotesia.minimumDamage=最低伤害
-attribute.name.srpcotesia.percentDamage=最低伤害转换率
+attribute.name.srpcotesia.meleeMinimumDamage=最低近战伤害
+attribute.name.srpcotesia.meleePercentDamage=最低近战伤害转换率
+attribute.name.srpcotesia.projectileMinimumDamage=最低远程伤害
+attribute.name.srpcotesia.projectilePercentDamage=最低远程伤害转换率
 
 itemGroup.srpcotesia=SRP：寄生蜂
 
 commands.srpcotesia.negative=值必须大于0。
 
 commands.srpcotesia.syntaxerror=语法无效
-commands.srpcotesia.tellStrange.usage=/tellstrange <player> <message>
-commands.srpcotesia.toggleparasite.usage=/toggleparasite
-commands.srpcotesia.setbiomass.usage=/setbiomass <number>
-commands.srpcotesia.setbloom.usage=/setbloom <number>
-commands.srpcotesia.togglespam.usage=/togglespam
-commands.srpcotesia.setKillC.usage=/setkills <number>
+
+commands.srpcotesia.srpmobcounts.usage=/srpmobcounts 或 /srpmobcounts <number> /srpmobcounts all
+commands.srpcotesia.tellStrange.usage=/tellstrange <player(s)> <message>
+commands.srpcotesia.toggleparasite.usage=/toggleparasite 或 /toggleparasite <player(s)>
+commands.srpcotesia.setbiomass.usage=/setbiomass <number> 或 /setbiomass <player(s)> <number>
+commands.srpcotesia.setbloom.usage=/setbiomass <number> 或 /setbiomass <player(s)> <number>
+commands.srpcotesia.togglenote.usage=/togglenote 或 /togglenote <player(s)>
+commands.srpcotesia.setKillC.usage=/setbiomass <number> 或 /setbiomass <player(s)> <number>
 commands.srpcotesia.ante.usage=/ante <set|add|subtract> <ticks> 或 /ante query
 commands.srpcotesia.atimer.usage=/atimer <set|add|subtract> <ticks> 或 /atimer query
-commands.srpcotesia.adapt.usage=/adapt <parasite> <source>
+commands.srpcotesia.adapt.usage=/adapt <parasite(s)> <source>
 commands.srpcotesia.dendritus.usage=/dendritus
 commands.srpcotesia.srpcwell.usage=/srpcwell <get|clear|fix> <dimension id, optional> 或 /srpcwell <add|remove> <x> <z> <dimension id, optional>
 
 commands.srpcotesia.srpcwell.empty=当前没有活动的井口。
 
-commands.srpcotesia.srpcwell.get=已在%s（DIM ID %d）激活一个x=%d ，z=%d 生命值 %d 的井口。
+command.srpcotesia.srpmobcounts.top=========== 寄生体计数  ==========
+command.srpcotesia.srpmobcounts.info=这里有 %d 种不同的寄生实体。共计发现寄生体总数为 %d 。
+command.srpcotesia.srpmobcounts.displaying=显示 %d 最为频繁：
+command.srpcotesia.srpmobcounts.class=%s：%d
+command.srpcotesia.srpmobcounts.name=%s（%s）：%d
+
+commands.srpcotesia.srpcwell.get=已在%s（维度 ID %d）激活一个x=%d ，z=%d 生命值 %d 的井口。
 commands.srpcotesia.srpcwell.clear=已移除所有井口。
-commands.srpcotesia.srpcwell.clear.dim=已移除%s的所有井口。（DIM ID %d）
-commands.srpcotesia.srpcwell.add=井口已成功添加至x=%d，z=%d，%s（DIM ID %d）
-commands.srpcotesia.srpcwell.remove=已成功移除x=%d，z=%d，%s（DIM ID %d）的井口。
+commands.srpcotesia.srpcwell.clear.dim=已移除%s的所有井口。（维度 ID %d）
+commands.srpcotesia.srpcwell.add=井口已成功添加至x=%d，z=%d，%s（维度 ID %d）
+commands.srpcotesia.srpcwell.remove=已成功移除x=%d，z=%d，%s（维度 ID %d）的井口。
 commands.srpcotesia.srpcwell.remove.none=这里没有井口。
 commands.srpcotesia.srpcwell.nofix=所有井口都已生效，或根本没有井口。
 
@@ -97,22 +107,23 @@ death.attack.out_of_time=%1$s耗尽了时间。
 death.attack.gave_up=%1$s抛弃了他的躯壳。
 death.attack.gravity_crushing=%1$s已然扁得不能再扁。
 
-commands.srpcotesia.adapt.cant=%1$s无法适应伤害。
+commands.srpcotesia.adapt.adapted=强制 %d 个实体适应“%s”
+commands.srpcotesia.adapt.cant=发现 %d 个无法适应的实体
 
+commands.srpcotesia.setbloom.positive=值必须为正数！
+commands.srpcotesia.setKillC.between=值必须在0到 %d 之间！
 
 commands.srpcotesia.toggleparasite.success=已成功将寄生体状态设置为 %s。
-commands.srpcotesia.setbiomass.success=成功设置生物质为 %d。
+commands.srpcotesia.setbiomass.success=已成功将生物质设置为 %d。
 commands.srpcotesia.setbloom.success=已成功将进化阶段设置为 %d。
-commands.srpcotesia.togglespam.true=已启用邮件过滤器。
-commands.srpcotesia.togglespam.false=已禁用邮件过滤器。
+commands.srpcotesia.togglenote.success=已成功将可靠的信函获取状态由 %s 切换至 %s。
 commands.srpcotesia.setKillC.success=成功将击杀计数设置为 %d。
 commands.srpcotesia.ante.success=成功将适应因子设置为 %d。
 commands.srpcotesia.atimer.success=已成功将末日计时设置为 %d。
 
-
-key.srpcotesia.togglehide=隐藏/取消隐藏
+key.srpcotesia.togglehide=伪装/取消伪装
 key.srpcotesia.throwlatch=发射寄染索
-key.srpcotesia.createfactory=生成寄生巢穴
+key.srpcotesia.createfactory=创建寄生巢穴
 key.srpcotesia.mallmenu=打开适应页面
 key.srpcotesia.orb=释放寄染泡
 key.srpcotesia.leap=掠袭
@@ -134,7 +145,7 @@ overlay.srpcotesia.handful=需要空手
 overlay.srpcotesia.pickup=%s拾起
 overlay.srpcotesia.insert=%s添加生物质
 overlay.srpcotesia.takeout=%s取出生物质
-overlay.srpcotesia.nocolony=缺少种群
+overlay.srpcotesia.nocolony=缺少聚生地
 overlay.srpcotesia.seconds=%d 秒
 overlay.srpcotesia.factoryblocked=无法生成
 overlay.srpcotesia.biomass=%d/%d 生物质
@@ -148,7 +159,7 @@ overlay.srpcotesia.killC.upgradePhase=演化阶段过低
 overlay.srpcotesia.trade=按下%s交易
 overlay.srpcotesia.copybind=按下%s拷贝
    
-overlay.srpcotesia.dispatcher.retrieve=按下%s取回存放的寄生体
+overlay.srpcotesia.dispatcher.retrieve=按下%s取回存储的寄生体
 
 overlay.srpcotesia.factory.dissolve=按下%s溶解寄生体
 
@@ -156,22 +167,22 @@ overlay.srpcotesia.factory.dissolve=按下%s溶解寄生体
 item.srpcotesia.brew_sac.name=酿造囊
 tooltip.srpcotesia.brew_sac.judgemental=它不属于你。
 tooltip.srpcotesia.brew_sac.ammo=%d/%d 投掷次数
-tooltip.srpcotesia.brew_sac.empty=空空如也。用药水活化器改造它！
+tooltip.srpcotesia.brew_sac.empty=空空如也。用渗透活化器改造它！
 tooltip.srpcotesia.brew_sac.cost=需要 %d 生物质重装
 tooltip.srpcotesia.brew_sac.refill=长按右键重装
 tooltip.srpcotesia.brew_sac.intensity=强化%s
 tooltip.srpcotesia.brew_sac.damage=%d 基础伤害
 tooltip.srpcotesia.brew_sac.stacking=堆叠中
 tooltip.srpcotesia.reagent.via=§f当放入§b渗透活化器§f时:
-tooltip.srpcotesia.reagent.adds=§f增加药水效果：%s
+tooltip.srpcotesia.reagent.adds=§f添加药水效果：%s
 tooltip.srpcotesia.reagent.damage=§f将药水基础伤害更改为 %f
 tooltip.srpcotesia.reagent.intensifier=§f增加酿造系数
 
 tooltip.srpcotesia.pointmulti.global=全局进化点数增益 +%s%%
 tooltip.srpcotesia.pointmulti.singular=进化点数增益 +%s%%
-tooltip.srpcotesia.pointmultidrain=每秒消耗%d经验
+tooltip.srpcotesia.pointmultidrain=每秒消耗 %d 经验
 
-brew.srpcotesia.potion.name=添加%s
+brew.srpcotesia.potion.name=施加%s
 brew.srpcotesia.emptyPotion.name=药水不足
 brew.srpcotesia.parasitepotion.desc=向寄生体添加此效果。
 brew.srpcotesia.enemypotion.desc=向非寄生体添加此效果。
@@ -185,6 +196,20 @@ brew.srpcotesia.explosion.name=爆炸
 brew.srpcotesia.explosion.desc=命中后产生不破坏地形的爆炸。
 brew.srpcotesia.turn.name=转化
 brew.srpcotesia.turn.desc=在生物足够虚弱时同化该生物。如果演化阶段允许的话，会产生狂化种。
+
+item.srpcotesia.scorned_pearl.name=§c蔑视珍珠
+tooltip.srpcotesia.scorned_pearl.parasite1=§c极其令人反感。
+tooltip.srpcotesia.scorned_pearl.parasite2=§4傻福气似乎总能找上他们。把它毁掉吧。
+tooltip.srpcotesia.scorned_pearl.parasite3=§4比起尚且没那么懦弱的货色，你的血肉才是制作它的上好材料。
+tooltip.srpcotesia.scorned_pearl1=§f如果你在一个饵堆的中央方块用副手使用它，将大幅提升饵堆减少的演化点数。
+tooltip.srpcotesia.scorned_pearl2=§f你必须在完全黑暗的环境下使用物品。
+tooltip.srpcotesia.scorned_pearl3=§f对半径十个区块内的所有寄生体造成极大伤害。
+tooltip.srpcotesia.scorned_pearl4=§f它似乎不太稳定。
+
+message.srpcotesia.scorned_pearl.dark=你必须在完全黑暗的环境下。
+message.srpcotesia.scorned_pearl.cooldown=它在冷却时间中无法生效。
+message.srpcotesia.scorned_pearl.toolow=这有些过头了。
+
 
 item.srpcotesia.macabre_pearl.name=§b血肉珍珠
 tooltip.srpcotesia.macabre_pearl.fake=§f一枚珍珠，其晦暗一如你的将来。
@@ -209,13 +234,13 @@ tooltip.srpcotesia.putrid_unit2=§f用于创造§b树突体§f，或许。
 tooltip.srpcotesia.item.alive=它在动
 tooltip.srpcotesia.item.factoryinput=§e寄生巢穴§f可以利用这个物品。
 tooltip.srpcotesia.item.fearitem=§4你并不喜欢它。
-tooltip.srpcotesia.item.disruptor=§f干扰§1相位变换§f
-tooltip.srpcotesia.item.notdisruptor=§f不干扰§1相位变换§f
+tooltip.srpcotesia.item.disruptor=§f干扰§1相移§f
+tooltip.srpcotesia.item.notdisruptor=§f不干扰§1相移§f
 
 tooltip.srpcotesia.factory.deterrent=受到鼓舞
 tooltip.srpcotesia.factory.bound=绑定%s
 tooltip.srpcotesia.factory.tier=等级：%d
-tooltip.srpcotesia.factory.created=§c可按%s键制造
+tooltip.srpcotesia.factory.created=§c可按%s键创造
 tooltip.srpcotesia.factory.shift=按住 LSHIFT 查看更多信息
 tooltip.srpcotesia.factory.desc1=寄生巢穴是其他寄生体身上产下的功能性寄生体。
 tooltip.srpcotesia.factory.desc2=§4它们在被创建时会复制你的等级，或者它们绑定的任何寄生体的等级。
@@ -227,7 +252,7 @@ tooltip.srpcotesia.factory.desc7=生物质可通过空手攻击或交互来移�
 tooltip.srpcotesia.factory.desc8=已绑定的寄生巢穴会吸收较低级别的寄生体，可以用剑或者手术刀制造备件。
 tooltip.srpcotesia.factory.desc9=§c如果附近有复数寄生巢穴绑定了同级别的寄生体，即可制造更多备件。
 tooltip.srpcotesia.factory.desc10=未绑定的寄生巢穴将向附近的较低级别巢穴分发生物质，并进化某些寄生体。
-tooltip.srpcotesia.factory.desc11=与巢穴交易某些物品将产生进化点数和经验，这取决于物品的价值。时钟（带血或不带血）可用于检查演化阶段。
+tooltip.srpcotesia.factory.desc11=与巢穴交易某些物品将产生进化点数和经验，这取决于物品的价值。时钟（带血或不带血皆可）可用于检查演化阶段。
 tooltip.srpcotesia.factory.desc12=如果这个巢穴受到鼓舞，它将被动地产生绑定的寄生体来攻击附近的敌人。
 tooltip.srpcotesia.factory.desc13=可以在主配置的客户端设置中禁用此教程。
 
@@ -237,6 +262,7 @@ tooltip.srpcotesia.masticator2=§f需要§a腥臭“滤毒罐”§f运作。
 tooltip.srpcotesia.masticator3=§4一件由你的记忆和我们自己的记忆共同缔造的艺术品。
 tooltip.srpcotesia.masticator4=§4正如你的直觉所述，最初的设计是有缺陷的。火在此百无一用。
 tooltip.srpcotesia.masticator.notempty=§a里面还剩一点汁液
+tooltip.srpcotesia.masticator.notparasite=§f一只类似§a召唤柱§f的手持式畸变体。
 
 item.srpcotesia.fetid_canister.name=§a腥臭“滤毒罐”
 tooltip.srpcotesia.fetid_canister1=§f由寄生体各部分组成的致密茧状物，因新的目的结合在一起。
@@ -251,15 +277,15 @@ tooltip.srpcotesia.dirty_needle3=§4真是粗暴。
 
 item.srpcotesia.tool_pickaxe.name=§e活体镐斧
 item.srpcotesia.tool_pickaxe_sentient.name=§6觉知镐斧
-tooltip.srpcotesia.tool_pickaxe=§f重塑寄生体的各身体部位后，最终得到了这把武器。生命之火正在其内闪耀。 
-tooltip.srpcotesia.tool_pickaxe_sentient=§f活体镐斧已经完成了其隐秘的进化。如今，它已经有了自己的§f意识§b。
+tooltip.srpcotesia.tool_pickaxe=§f重塑寄生体的各身体部位，最终得到了这把武器。其核心内命火灼灼，光华闪耀。
+tooltip.srpcotesia.tool_pickaxe_sentient=§f悄无声息之间，活体镐斧§b灵智已开§f，完成了进化。
 tooltip.srpcotesia.tool_pickaxe1=§f§c不论是破甲还是采掘都相当趁手。尤其易于挖掘被寄生的方块。
 
 #tooltip.srpcotesia.tool_pickaxe3=§f可以用§c硬化骨手柄§f在§e寄生巢穴§f合成。
 
 item.srpcotesia.scalpel.name=§e活体手术刀
 tooltip.srpcotesia.scalpel1=§f经由精心制作，它似乎很满足。
-tooltip.srpcotesia.scalpel2=§f收割§e寄生巢穴§f的部件会比普通的剑更有效，§7但并不适合作为武器使用。
+tooltip.srpcotesia.scalpel2=§f获取§e寄生巢穴§f的部件会比普通的剑更有效，§7但并不适合作为武器使用。
 #tooltip.srpcotesia.scalpel3=§f可以用群系或被§a召唤柱§f感染后的§7寄染泥土§f在§e寄生巢穴§f制作
 
 item.srpcotesia.well_divining_rod.name=§6井口指示杖
@@ -270,14 +296,14 @@ tooltip.srpcotesia.well_divining_rod3=§6> 算算你的天数。
 
 message.srpcotesia.nowell=当前没有活动的§6井口§f。
 message.srpcotesia.nowellrange=附近没有§6井口§f。
-message.srpcotesia.welldim=在%s有一处§6井口§f。
+message.srpcotesia.welldim=在 %s 有一处§6井口§f。
 message.srpcotesia.wellhere=这里有一处§6井口§f，可以对它使用§6封井器§f。
 message.srpcotesia.welldisabled=§6井口§f已不可用。
 
 
 message.srpcotesia.well.created=一个§6井口§f已经形成。
 message.srpcotesia.well.created.multiple=数个§6井口§f已经形成。
-message.srpcotesia.well.destroyed=一个位于%s的§6井口§f已被摧毁！
+message.srpcotesia.well.destroyed=一个位于 %s 的§6井口§f已被摧毁！
 message.srpcotesia.well.damaged=§6井口§f现在还有 %d 生命值。
 message.srpcotesia.well.fix=由于处于无效位置，一个§6井口§f已移至 x=0，z=0 位置。
 message.srpcotesia.well.fixdim=由于处于无效维度，一个§6井口§f已移至 %s。
@@ -288,13 +314,29 @@ tile.srpcotesia.well_sealer.name=§6封井器
 tooltip.srpcotesia.well_sealer1=§f对附近的§6井口§f造成 %d 伤害。
 tooltip.srpcotesia.well_sealer2=§6> 算算你的天数。
 
+item.srpcotesia.vagrant_divining_rod.name=§c漫游者指示杖
+tooltip.srpcotesia.vagrant_divining_rod1=§f向最近的§c漫游者§f的方向喷出烟雾。
+tooltip.srpcotesia.vagrant_divining_rod2=§f当§c漫游者§f在别的维度时无法使用。
+tooltip.srpcotesia.vagrant_divining_rod3=§c这似乎不大公平。
+tooltip.srpcotesia.vagrant_divining_rod4=§4立刻把它销毁。
 
+message.srpcotesia.item.disabled=§f该物品已被禁用。
+message.srpcotesia.novagrants=这个维度没有活动中的§c漫游者§f。
+message.srpcotesia.trackedvagrant=你感到无所不在的恐惧……
 
 tile.srpcotesia.gloom_torch.name=§e幽暗火把
 tooltip.srpcotesia.gloom_torch=§4不错的改进。
 
+
+tile.srpcotesia.beckonh.name=§a召唤柱先兆体
+tooltip.srpcotesia.beckonh=§f可以用来创造一根召唤柱。互动以给予生物质。 
+
+message.srpcotesia.nearbyvenkrol=附近已经有一根召唤柱了。
+message.srpcotesia.notready=你还没有准备好。还不行。
+message.srpcotesia.nonexus=我们还不能制造这些东西。
+
 tile.srpcotesia.dread_lamp.name=§e恐惧灯笼
-tooltip.srpcotesia.dread_lamp=§f不像§e甲壳质§4那么坚韧，可以照明。
+tooltip.srpcotesia.dread_lamp=§f不像§e甲壳质§f那么坚韧，可以照明。
 
 tile.srpcotesia.cartilage.name=§e软骨组织
 tooltip.srpcotesia.cartilage1=§f深色的海绵状建筑方块，由§4群系§f方块制得。
@@ -304,17 +346,17 @@ tile.srpcotesia.chitin.name=§e甲壳质
 tooltip.srpcotesia.chitin=§f一种非常致密坚固的方块，类似§7黑曜石。
 
 tooltip.srpcotesia.parasitelightsource1=§f允许寄生体生成在附近。
-tooltip.srpcotesia.parasitelightsource2=§f使边界光源可被接受。
+tooltip.srpcotesia.parasitelightsource2=§f使相邻光源成为可接受的光源。
 
 
 tile.srpcotesia.reclamation_table.name=§b回收台
-tooltip.srpcotesia.reclamation_table.enemy=§f带着不自然的寒意的方块，散发出令人焦虑的氛围。
-tooltip.srpcotesia.reclamation_table1=§f将许多§c与寄生体相关§f的物品送回 §8§kThe Source§f 吧。你会得到§a经验值§f作为回报。
-tooltip.srpcotesia.reclamation_table2=§f与方块交互，将放在上面的掉落物送出。
+tooltip.srpcotesia.reclamation_table.enemy=§f带着不自然寒意的方块，散发出令人焦虑的氛围。
+tooltip.srpcotesia.reclamation_table1=§f用以将诸多§c与寄生体相关§f的物品送回 §8§kThe Source§f。你会获得§a经验值§f作为回报。
+tooltip.srpcotesia.reclamation_table2=§f与这一方块交互，将掉落于其上方的物品送出。
 tooltip.srpcotesia.reclamation_table3=§4我们会给它们一个新归处。
 
-message.srpcotesia.reclamation_table.empty=将一个物品放在顶部。
-message.srpcotesia.reclamation_table.toomany=物品过多了。最多堆叠16个。
+message.srpcotesia.reclamation_table.empty=将一个物品丢在顶部。
+message.srpcotesia.reclamation_table.toomany=物品过多了。最多堆叠16组物品。
 message.srpcotesia.reclamation_table.fail=我们无法利用这个物品。
 #message.srpcotesia.reclamation_table.failmany=我们无法利用这些物品。
 
@@ -324,9 +366,9 @@ tooltip.srpcotesia.craftingtable1=§4本性难移。
 
 tile.srpcotesia.dendritus.name=§b树突体
 tooltip.srpcotesia.dendritus1=§f一种坚韧的、起伏的神经组织块，在末端有着致密的物质核心。
-tooltip.srpcotesia.dendritus2=§f增强一个§c调度柱§f以将§1相位变换§f效果给予范围内的寄生体，§a使它们不必破坏方块§f。
-tooltip.srpcotesia.dendritus3=§f必须按%s将之提供给调度柱。
-tooltip.srpcotesia.dendritus4=§f如果手动放置，则可以通过按%s激活。
+tooltip.srpcotesia.dendritus2=§f增强一个§c调度柱§f以将§1相移§f效果给予范围内的寄生体，§a使它们不必破坏方块§f。
+tooltip.srpcotesia.dendritus3=§f必须按%s将它提供给调度柱。
+tooltip.srpcotesia.dendritus4=§f如果手动放置，则可以按%s激活它。
 
 
 tile.srpcotesia.osmosis.name=§b渗透活化器
@@ -359,19 +401,19 @@ item.srpcotesia.trojan_note.name=可靠的信函
 tooltip.srpcotesia.trojan_note=加急
 
 item.srpcotesia.faustian_note.name=浮士德式的信函
-tooltip.srpcotesia.faustian_note.other=§c总而言之，人性被高估了。
+tooltip.srpcotesia.faustian_note.other=§f我想知道，会不会？
 tooltip.srpcotesia.faustian_note1=§c不再受当前演化阶段制约。
 tooltip.srpcotesia.faustian_note2=§4又一个？
 
 message.srpcotesia.hasmaxbiomass=你无法持有更多生物质了。
 
 message.srpcotesia.trade.tierfail=需要 %d 级寄生巢穴。
-message.srpcotesia.trade.more=还需要 %d 生物质。
+message.srpcotesia.trade.more=需要 %d 生物质。
 
 message.srpcotesia.nodrops=没什么可用的。
 message.srpcotesia.scalpelbreak=为此折断手术刀实在是个糟糕的主意。
 
-message.srpcotesia.brew.cost=你还需要 %d 生物质来补充它。
+message.srpcotesia.brew.cost=你还需要 %d 生物质重装它。
 
 message.srpcotesia.darwin=%s荣获达尔文奖。
 
@@ -397,7 +439,7 @@ message.srpcotesia.dissolve.preeeminent=你认真的？
 message.srpcotesia.advdisabled=继续。
 message.srpcotesia.alreadyinfected=一事不二罚。
 
-message.srpcotesia.notefailphase=它“啪”地一声关上了。它们一定是觉得这有些多余了。
+message.srpcotesia.notefailphase=它“啪”地一下关上了。它们一定是觉得这有些多余了。
 message.srpcotesia.notefaildim=它纹丝不动。在这个维度上它似乎变弱了。
 message.srpcotesia.notefailday=它纹丝不动。也许可以天黑后再试试？
 message.srpcotesia.notefailmoon=它纹丝不动。也许月相不对。
@@ -442,11 +484,13 @@ gui.srpcotesia.trojan_note.deny=§4关闭
 gui.srpcotesia.mallmenu.pb0=阶段
 gui.srpcotesia.mallmenu.pb1=增幅器
 gui.srpcotesia.mallmenu.adapt=适应性（%d/%d）
+gui.srpcotesia.mallmenu.armoradapt=护甲适应性（%d/%d）
+
 gui.srpcotesia.mallmenu.notyet=需求 %d
 gui.srpcotesia.mallmenu.cantadapt=无法适应
 gui.srpcotesia.mallmenu.adaptdisabled=适应性（N/A）
 gui.srpcotesia.mallmenu.regen=恢复中……（%d 秒）
-gui.srpcotesia.mallmenu.requestcolony=种群适应性需求
+gui.srpcotesia.mallmenu.requestcolony=聚生地适应性需求
 
 
 gui.jei.category.srpcotesia.factory.biomass=§4需要 %d 生物质
@@ -458,14 +502,23 @@ gui.jei.category.srpcotesia.osmosis=§b渗透酿造
 gui.jei.category.srpcotesia.reclamation=§b回收
 gui.jei.category.srpcotesia.reclamation.xp=§4+%d XP
 
+enchantment.srpcotesia.rarefaction=§2稀释
+enchantment.srpcotesia.rarefaction.desc=§f令瘴气均质枪消耗腥臭滤毒罐的几率下降。
+
 enchantment.srpcotesia.fluidity=流动性
 enchantment.srpcotesia.fluidity.desc=§f减少巢穴产生寄生体所需的时间。
+
+enchantment.srpcotesia.dense_tissue=§b致密组织
+enchantment.srpcotesia.dense_tissue.desc=§f令这个巢穴生成的寄生体拥有更高的血量上限。
 
 enchantment.srpcotesia.cunning=§e狡诈
 enchantment.srpcotesia.cunning.desc=§f增加该巢穴产生寄生体所能造成的最低伤害。
 
-enchantment.srpcotesia.throwing=投掷
-enchantment.srpcotesia.throwing.desc=§f使曲击柱向敌人投掷附近的寄生体。
+enchantment.srpcotesia.throwing=增强：投掷
+enchantment.srpcotesia.throwing.desc=§f适用于曲击柱巢穴。使曲击柱向敌人投掷附近的寄生体。
+
+enchantment.srpcotesia.acid_bath=增强：§a酸浴
+enchantment.srpcotesia.acid_bath.desc=§f适用于幽鬼体巢穴。大幅增加幽鬼体所生成酸液泡的威力与大小。
 
 enchantment.srpcotesia.virulent=§a病毒性
 enchantment.srpcotesia.virulent.desc=§f使某些寄生体在接触时施加§a病毒§f。
@@ -486,7 +539,7 @@ overlay.srpcotesia.sneak=潜行+%s
 
 message.srpcotesia.cannothide=你现在无法改变形态。
 message.srpcotesia.cannothide.latch=你需要先收回§c寄染索§f。
-message.srpcotesia.latchorb=§c寄染索§f与§c寄染泡§f键位发生了冲突。
+message.srpcotesia.latchorb=§c寄染索§f与§c寄染泡§f的键位发生了冲突。
 message.srpcotesia.orb.active=你已经有一个已激活的§c寄染泡§f了。
 message.srpcotesia.orb.disabled=玩家的§c寄染泡§f已被禁用。
 message.srpcotesia.latch.disabled=§c寄染索§f已被禁用。
@@ -499,12 +552,12 @@ message.srpcotesia.orb.notenough=你需要 %d 生物质释放§c寄染泡§f。
 message.srpcotesia.latch.cantstore=你无法存储该寄生体。
 message.srpcotesia.latch.cantstoreyet=你还没有足够的力量存储寄生体。
 
-message.srpcotesia.reclamation.notenough=你还需要 %d 生物质送出物品。
+message.srpcotesia.reclamation.notenough=你需要 %d 生物质送出物品。
 
 message.srpcotesia.factory.insufficient=你需要 %d 生物质创建巢穴（已有生物质：%d）
-message.srpcotesia.notifyColony=将%s送去最近的种群。
+message.srpcotesia.notifyColony=将%s送去最近的聚生地。
 
-message.srpcotesia.gui.nocolony=我们在这里没有种群。
+message.srpcotesia.gui.nocolony=我们在这里没有聚生地。
 message.srpcotesia.gui.alreadyhaveres=你已知晓这一威胁。
 message.srpcotesia.gui.notrecorded=我们尚未记录到具体的威胁。
 
@@ -512,3 +565,19 @@ message.srpcotesia.gui.outofslots=你记录的威胁过多了。
 
 message.srpcotesia.canspawn=你感觉到了虚弱的敌人的存在。
 message.srpcotesia.cantspawn=你觉察到虚弱的敌人在退却。
+
+message.srpcotesia.factoryenchanted=这个巢穴更希望保留自己的魔咒。
+
+item.srpcotesia.guide_book.name=§e超生物学认知手册
+tooltip.srpcotesia.guide_book.subtext=有关于寄生体与其能力的文献资料。
+tooltip.srpcotesia.guide_book.author=Richard Henzine博士 著
+tooltip.srpcotesia.guide_book.modified=这本书缺了许多页，而剩下的部分似乎都由一只§c漫游者§r撰写。
+tooltip.srpcotesia.guide_book.flavor1=§c除了与我相关的那一部分，它大部分书页都被撕掉了。
+tooltip.srpcotesia.guide_book.flavor2=§4这本书非常不对劲。它提到了一些我们根本不记得的事件。
+
+tooltip.srpcotesia.guide_book.disabled=安装帕秋莉手册来使用这个物品吧！
+
+//guide_book json key
+gui.srpcotesia.guide_book.name=§e超生物学认知手册
+gui.srpcotesia.guide_book.landingtext=关于寄生体及其能力分类的百科全书，有备而无患。$(br2)$(c)如果一本书90%的页面都被撕了下来，那么它肯定没那么好用了。这本书就是如此，看起来更像一个活页夹，而非正儿八经的书。$(br)当然，这不影响我往上面添加自己的内容。
+gui.srpcotesia.guide_book.subtitle=第八版

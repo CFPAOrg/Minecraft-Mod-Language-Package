@@ -53,27 +53,37 @@ potion.effect.gravity=Potion of §bImmense Gravity
 lingering_potion.effect.gravity=Lingering Potion of §bImmense Gravity
 tipped_arrow.effect.gravity=Arrow of §bImmense Gravity
 
-attribute.name.srpcotesia.minimumDamage=Minimum Damage
-attribute.name.srpcotesia.percentDamage=Minimum Damage Conversion Rate
+attribute.name.srpcotesia.meleeMinimumDamage=Melee Minimum Damage
+attribute.name.srpcotesia.meleePercentDamage=Melee Minimum Damage Conversion Rate
+attribute.name.srpcotesia.projectileMinimumDamage=Ranged Minimum Damage
+attribute.name.srpcotesia.projectilePercentDamage=Ranged Minimum Damage Conversion Rate
 
 itemGroup.srpcotesia=Cotesia Glomerata
 
 commands.srpcotesia.negative=Value must be above 0.
 
 commands.srpcotesia.syntaxerror=Invalid syntax
-commands.srpcotesia.tellStrange.usage=/tellstrange <player> <message>
-commands.srpcotesia.toggleparasite.usage=/toggleparasite
-commands.srpcotesia.setbiomass.usage=/setbiomass <number>
-commands.srpcotesia.setbloom.usage=/setbloom <number>
-commands.srpcotesia.togglespam.usage=/togglespam
-commands.srpcotesia.setKillC.usage=/setkills <number>
+
+commands.srpcotesia.srpmobcounts.usage=/srpmobcounts or /srpmobcounts <number> /srpmobcounts all
+commands.srpcotesia.tellStrange.usage=/tellstrange <player(s)> <message>
+commands.srpcotesia.toggleparasite.usage=/toggleparasite or /toggleparasite <player(s)>
+commands.srpcotesia.setbiomass.usage=/setbiomass <number> or /setbiomass <player(s)> <number>
+commands.srpcotesia.setbloom.usage=/setbiomass <number> or /setbiomass <player(s)> <number>
+commands.srpcotesia.togglenote.usage=/togglenote or /togglenote <player(s)>
+commands.srpcotesia.setKillC.usage=/setbiomass <number> or /setbiomass <player(s)> <number>
 commands.srpcotesia.ante.usage=/ante <set|add|subtract> <ticks> or /ante query
 commands.srpcotesia.atimer.usage=/atimer <set|add|subtract> <ticks> or /atimer query
-commands.srpcotesia.adapt.usage=/adapt <parasite> <source>
+commands.srpcotesia.adapt.usage=/adapt <parasite(s)> <source>
 commands.srpcotesia.dendritus.usage=/dendritus
 commands.srpcotesia.srpcwell.usage=/srpcwell <get|clear|fix> <dimension id, optional> or /srpcwell <add|remove> <x> <z> <dimension id, optional>
 
 commands.srpcotesia.srpcwell.empty=There are currently no active Wells.
+
+command.srpcotesia.srpmobcounts.top=========== Parasite Mob Counts  ==========
+command.srpcotesia.srpmobcounts.info=There are %d different parasite entities. %d total parasites were found.
+command.srpcotesia.srpmobcounts.displaying=Displaying %d most frequent:
+command.srpcotesia.srpmobcounts.class=%s: %d
+command.srpcotesia.srpmobcounts.name=%s (%s): %d
 
 commands.srpcotesia.srpcwell.get=Active Well at x=%d, z=%d, with %d health in %s (DIM ID %d)
 commands.srpcotesia.srpcwell.clear=Removed all Wells.
@@ -97,18 +107,19 @@ death.attack.out_of_time=%1$s ran out of time.
 death.attack.gave_up=%1$s abandoned their body.
 death.attack.gravity_crushing=%1$s was flattened beyond measure.
 
-commands.srpcotesia.adapt.cant=%1$s cannot adapt to damage.
+commands.srpcotesia.adapt.adapted=Forced %d entities to adapt to '%s'
+commands.srpcotesia.adapt.cant=Found %d entities which could not adapt
 
+commands.srpcotesia.setbloom.positive=Value must be positive!
+commands.srpcotesia.setKillC.between=Value must be between 0 and %d!
 
-commands.srpcotesia.toggleparasite.success=Successfully set parasite status to %s.
-commands.srpcotesia.setbiomass.success=Successfully set biomass to %d.
-commands.srpcotesia.setbloom.success=Successfully set bloom to %d.
-commands.srpcotesia.togglespam.true=Spam filter enabled.
-commands.srpcotesia.togglespam.false=Spam filter disabled.
-commands.srpcotesia.setKillC.success=Successfully set kills contributed to %d.
+commands.srpcotesia.toggleparasite.success=Successfully set parasite status for %s to %s.
+commands.srpcotesia.setbiomass.success=Successfully set biomass for %s to %d.
+commands.srpcotesia.setbloom.success=Successfully set bloom tier for %s to %d.
+commands.srpcotesia.togglenote.success=Successfully set received Trustworthy Note status for %s to %s.
+commands.srpcotesia.setKillC.success=Successfully set kills contributed for %s to %d.
 commands.srpcotesia.ante.success=Successfully set Ante to %d.
 commands.srpcotesia.atimer.success=Successfully set Armageddon timer to %d.
-
 
 key.srpcotesia.togglehide=Hide/Unhide
 key.srpcotesia.throwlatch=Throw Latch
@@ -186,6 +197,20 @@ brew.srpcotesia.explosion.desc=Explodes on direct hits. Does not destroy blocks.
 brew.srpcotesia.turn.name=Turn
 brew.srpcotesia.turn.desc=Assimilates a Sane mob if it is weakened enough. May produce a Feral mob if the phase permits.
 
+item.srpcotesia.scorned_pearl.name=§cScorned Pearl
+tooltip.srpcotesia.scorned_pearl.parasite1=§cAbsolutely revolting.
+tooltip.srpcotesia.scorned_pearl.parasite2=§4DUMB LUCK ALWAYS SEEMS TO FIND THEM REGARDLESS. GET RID OF THIS.
+tooltip.srpcotesia.scorned_pearl.parasite3=§4BETTER FOR IT TO BE MADE OF YOUR FLESH, RATHER THAN SOMETHING LESS COWARDLY.
+tooltip.srpcotesia.scorned_pearl1=§fSubstantially increases the amount of points removed by a Carcass if used on the central Lure in the offhand.
+tooltip.srpcotesia.scorned_pearl2=§fYou must be in complete darkness in order to use this item.
+tooltip.srpcotesia.scorned_pearl3=§fSeverely damages any parasites in a 10 chunk radius.
+tooltip.srpcotesia.scorned_pearl4=§fIt seems unstable.
+
+message.srpcotesia.scorned_pearl.dark=You need to be in complete darkness.
+message.srpcotesia.scorned_pearl.cooldown=This won't work during a cooldown.
+message.srpcotesia.scorned_pearl.toolow=This is just overkill.
+
+
 item.srpcotesia.macabre_pearl.name=§bMacabre Pearl
 tooltip.srpcotesia.macabre_pearl.fake=§fA pearl as murky as your future.
 tooltip.srpcotesia.macabre_pearl1=§fCan be used to convince parasites to follow you much more readily.
@@ -237,6 +262,7 @@ tooltip.srpcotesia.masticator2=§fRequires §aFetid "Canisters"§f to function.
 tooltip.srpcotesia.masticator3=§4A WORK OF ART, SHAPED FROM YOUR MEMORIES AND ONE OF OUR OWN.
 tooltip.srpcotesia.masticator4=§4THE ORIGINAL DESIGN WAS FLAWED, AS YOU INTUITED. FIRE HAS NO PLACE HERE.
 tooltip.srpcotesia.masticator.notempty=§aThere's still a bit of juice left
+tooltip.srpcotesia.masticator.notparasite=§fA handheld monstrosity resembling a §aBeckon§f.
 
 item.srpcotesia.fetid_canister.name=§aFetid "Canister"
 tooltip.srpcotesia.fetid_canister1=§fA dense cocoon of various parasite parts, united by renewed purpose.
@@ -288,10 +314,26 @@ tile.srpcotesia.well_sealer.name=§6Well Sealer
 tooltip.srpcotesia.well_sealer1=§fDeals %d damage to nearby §6Wells§f.
 tooltip.srpcotesia.well_sealer2=§6> Count your days.
 
+item.srpcotesia.vagrant_divining_rod.name=§cVagrant Divining Rod
+tooltip.srpcotesia.vagrant_divining_rod1=§fEmits mist in the direction of the nearest §cVagrant§f.
+tooltip.srpcotesia.vagrant_divining_rod2=§fDoes not work if the §cVagrant§f is in another dimension.
+tooltip.srpcotesia.vagrant_divining_rod3=§cThat doesn't seem very fair.
+tooltip.srpcotesia.vagrant_divining_rod4=§4DESTROY THIS IMMEDIATELY.
 
+message.srpcotesia.item.disabled=§fThis item has been disabled.
+message.srpcotesia.novagrants=There are no active §cVagrants§f in this dimension.
+message.srpcotesia.trackedvagrant=You feel a pervasive sense of dread...
 
 tile.srpcotesia.gloom_torch.name=§eGloom Torch
 tooltip.srpcotesia.gloom_torch=§4AN IMPROVEMENT.
+
+
+tile.srpcotesia.beckonh.name=§aBeckon Harbringer
+tooltip.srpcotesia.beckonh=§fCan be used to create a Beckon. Interact to give it biomass.
+
+message.srpcotesia.nearbyvenkrol=THERE IS ALREADY ONE NEARBY.
+message.srpcotesia.notready=YOU ARE NOT READY. NOT YET.
+message.srpcotesia.nonexus=WE CANNOT MAKE THOSE YET.
 
 tile.srpcotesia.dread_lamp.name=§eDread Lamp
 tooltip.srpcotesia.dread_lamp=§fNot as tough as §eChitin§f, emits light.
@@ -313,7 +355,7 @@ tooltip.srpcotesia.reclamation_table1=§fSends many §cparasite-related§f items
 tooltip.srpcotesia.reclamation_table2=§fInteract with the block to send any dropped items on top of it.
 tooltip.srpcotesia.reclamation_table3=§4WE WILL GIVE THEM A NEW HOME.
 
-message.srpcotesia.reclamation_table.empty=PLACE AN ITEM ON TOP.
+message.srpcotesia.reclamation_table.empty=DROP AN ITEM ON TOP.
 message.srpcotesia.reclamation_table.toomany=TOO MANY ITEMS. 16 STACKS MAXIMUM.
 message.srpcotesia.reclamation_table.fail=WE CAN'T USE THIS ITEM.
 #message.srpcotesia.reclamation_table.failmany=WE CAN'T USE THESE ITEMS.
@@ -359,7 +401,7 @@ item.srpcotesia.trojan_note.name=Trustworthy Note
 tooltip.srpcotesia.trojan_note=URGENT
 
 item.srpcotesia.faustian_note.name=Faustian Note
-tooltip.srpcotesia.faustian_note.other=§cHumanity is overrated anyway.
+tooltip.srpcotesia.faustian_note.other=§fI wonder if?
 tooltip.srpcotesia.faustian_note1=§cDoes not depend on the current Evolution Phase.
 tooltip.srpcotesia.faustian_note2=§4ANOTHER ONE?
 
@@ -442,6 +484,8 @@ gui.srpcotesia.trojan_note.deny=§4Close it
 gui.srpcotesia.mallmenu.pb0=Phase
 gui.srpcotesia.mallmenu.pb1=Booster
 gui.srpcotesia.mallmenu.adapt=Adaptations (%d/%d)
+gui.srpcotesia.mallmenu.armoradapt=Armor Adaptations (%d/%d)
+
 gui.srpcotesia.mallmenu.notyet=Advance to %d
 gui.srpcotesia.mallmenu.cantadapt=Cannot adapt
 gui.srpcotesia.mallmenu.adaptdisabled=Adaptations (N/A)
@@ -458,14 +502,23 @@ gui.jei.category.srpcotesia.osmosis=§bOsmosis Brewing
 gui.jei.category.srpcotesia.reclamation=§bReclamation
 gui.jei.category.srpcotesia.reclamation.xp=§4+%d XP
 
+enchantment.srpcotesia.rarefaction=§2Rarefaction
+enchantment.srpcotesia.rarefaction.desc=§fReduces the chance The Masticator has to consume a Fetid Canister.
+
 enchantment.srpcotesia.fluidity=Fluidity
 enchantment.srpcotesia.fluidity.desc=§fReduces the time it takes for a Factory to spawn parasites.
+
+enchantment.srpcotesia.dense_tissue=§bDense Tissue
+enchantment.srpcotesia.dense_tissue.desc=§fCauses parasites spawned by a Factory to have more max HP.
 
 enchantment.srpcotesia.cunning=§eCunning
 enchantment.srpcotesia.cunning.desc=§fIncreases Minimum Damage dealt by spawned parasites.
 
-enchantment.srpcotesia.throwing=Throwing
-enchantment.srpcotesia.throwing.desc=§fCauses the Kyphosis to throw nearby parasites at enemies.
+enchantment.srpcotesia.throwing=Augment: Throwing
+enchantment.srpcotesia.throwing.desc=§fApplied to Kyphosis Factories. Causes the Kyphosis to throw nearby parasites at enemies.
+
+enchantment.srpcotesia.acid_bath=Augment: §aAcid Bath
+enchantment.srpcotesia.acid_bath.desc=§fApplied to Wraith Factories. Massively increases the size and strength of Nades spawned by the Wraith.
 
 enchantment.srpcotesia.virulent=§aVirulent
 enchantment.srpcotesia.virulent.desc=§fCauses certain parasites to apply §aViral§f on contact.
@@ -512,3 +565,18 @@ message.srpcotesia.gui.outofslots=YOU KNOW TOO MANY THREATS.
 
 message.srpcotesia.canspawn=You feel the presence of weakened enemies.
 message.srpcotesia.cantspawn=You sense weakened foes receding.
+
+message.srpcotesia.factoryenchanted=This one would prefer to keep its enchantments.
+
+item.srpcotesia.guide_book.name=§eHyperbiology and You
+tooltip.srpcotesia.guide_book.subtext=Documentation on the parasites and their capabilities.
+tooltip.srpcotesia.guide_book.author=By Dr. Richard Henzine
+tooltip.srpcotesia.guide_book.modified=The book is missing many pages, and it appears what remains has been written on by a §cVagrant.
+tooltip.srpcotesia.guide_book.flavor1=§cThe majority of the pages have been torn out, excluding the ones that are about me.
+tooltip.srpcotesia.guide_book.flavor2=§4SOMETHING IS VERY WRONG WITH THIS BOOK. IT REFERENCES EVENTS WE DO NOT RECALL.
+tooltip.srpcotesia.guide_book.disabled=Install Patchouli to use this item!
+
+//guide_book json key
+gui.srpcotesia.guide_book.name=§eHyperbiology and You
+gui.srpcotesia.guide_book.landingtext=A preparationary encyclopedia of sorts on the parasites and their capabilities.$(br2)$(c)A book is substantially less helpful if you tear 90% of the pages out. This thing looks more like a binder than a book.$(br)Not that it'll stop me from adding my own, of course.
+gui.srpcotesia.guide_book.subtitle=Vol. 8
