@@ -1,0 +1,138 @@
+{
+	"name": "Crank Age",
+	"category": "assemblylinemachines:walkthrough",
+	"icon": "assemblylinemachines:pure_gold_gear",
+	"pages":[
+		{
+			"type": "text",
+			"text": "Great job progressing! You have made Steel and now you will be able to take advantage of mechanical engineering. Start your beginnings by making a $(item)Crank Shaft, $()followed by a $(item)Crank."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/crank_shaft",
+			"recipe2": "assemblylinemachines:crafting/crank"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/kinetic_grinder",
+			"text": "Next up, using your Grindstone and some materials, you will be able to make the $(item)Kinetic Grinder.$()$(br)This is your first machine. On the right is an example."
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping":{
+					"c": "assemblylinemachines:crank",
+					"0": "assemblylinemachines:kinetic_grinder[facing=west]",
+					"f": "minecraft:chest[facing=west]"
+				},
+				
+				"pattern":[
+					["c0f"]
+				]
+			},
+			"name": "Kinetic Grinder",
+			"enable_visualize": false,
+			"text": "$(7)$(o)The Chest needs to be placed to the right of the machine, while the Crank can be placed on any of the other sides."
+			
+		},
+		{
+			"type": "text",
+			"text": "Place a material in the machine, along with a blade, click and hold on the Crank, and the recipe will process; after a bit of time, the output will be placed in the Chest!$(br)Now, you can harness the power of your new machine. Grind a Steel Block and you will receive $(item)Steel Rods!$()$(p)$(c)If the machine is not processing, and the Crank is operated, there is a slim chance the Crank will snap and break into pieces!"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/wooden_fluid_tank",
+			"text": "$(item)Wooden Boards$() can be obtained by Grinding Wooden Planks."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/steel_fluid_tank",
+			"recipe2": "assemblylinemachines:crafting/kinetic_fluid_mixer"
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping": {
+					"c": "assemblylinemachines:crank",
+					"0": "assemblylinemachines:kinetic_fluid_mixer[facing=west]",
+					"f": "minecraft:chest[facing=west]",
+					"t": "assemblylinemachines:steel_fluid_tank"
+				},
+				"pattern":[
+					["c0f"],[" t "]
+				]
+			},
+			"name": "Kinetic Fluid Mixer",
+			"enable_visualize": false,
+			"text": "$(7)$(o)Just like the last machine, but a Wooden or Steel tank needs to be under the Kinetic Fluid Mixer."
+		},
+		{
+			"type": "text",
+			"text": "Just like the Kinetic Grinder, two items will be loaded into the machine, same as for the Fluid Bath, fluid will be added to the Tank below. Crank, and the result will be placed in the Chest!$(p)The first recipe you need to use this machine for is $(item)Empowered Coal.$() Mix $(thing)Ground Coal$() and $(thing)Redstone Dust$() in the Kinetic Fluid Mixer with Lava..$(br)$(6)TIP: You can make all recipes you could make in the Fluid Bath in the Kinetic Fluid Mixer."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/tools/steel/steel_hammer",
+			"title": "Hammer",
+			"text": "Next up, we will need to craft a $(item)Hammer, $()used to craft $(item)Plates, $()finally, used to craft $(item)Gears.$(p)$(9)You can also craft the the Hammer out of Titanium right now!"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/plates/pure_iron",
+			"recipe2": "assemblylinemachines:crafting/gears/pure_iron"
+		},
+		{
+			"type": "text",
+			"text": "The Plates and Gears recipe is the same for all metals. the results for currently accessible metals as follows:$(li)Copper: 5 Plates/Ingot, 1.25 Gear/Plate$(li)Iron: 3 Plates/Ingot, 1 Gear/Plate$(li)Gold: 2 Plates/Ingot, 0.25 Gear/Plate$(li)Titanium: 5 Plates/Ingot, 0.5 Gear/Plate$(br)$()$(6)Therefore, the Copper recipe is the most efficient!$(br)$(3)Remember, these Plates need to be made with Pure Ingots!"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/gearbox",
+			"recipe2": "assemblylinemachines:crafting/simple_crank_charger"
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping":{
+					"g": "assemblylinemachines:gearbox[facing=south,active=true]",
+					"0": "assemblylinemachines:simple_crank_charger",
+					"c": "minecraft:chest[facing=west]"
+				},
+				"pattern":[
+					[" c "], ["g0 "]
+				]
+			},
+			"name": "Simple Crank Charger",
+			"enable_visualize": false,
+			"text": "$(7)$(o)This will allow us to make our next machine: the Simple Crank Charger! Chest must be on top and Gearbox on any side."
+		},
+		{
+			"type": "text",
+			"text": "You can use the $(item)Gearbox$() the same as the Cranks: Positioning them facing a Simple Machine. Add fuel, and the Gearbox will crank for you. $(p)The $(item)Simple Crank Charger$() is unique as it requires the Gearbox and cannot be operated with a Crank.$(br)$(c)The Gearbox requires Empowered Coal for fuel. $(2)Want to change that? Put in an $(l:items/upgrades#gearboxcompatability)Upgrade$(/l) to use any burable fuel."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/tools/crank/crank_pickaxe",
+			"title": "Crank-Powered Tools",
+			"text": "This is the recipe for the $(item)Crank-Powered Pickaxe.$()$(p) You can also make Crank-Powered Shovels, Hammers, Axes, Hoes, and Swords."
+		},
+		{
+			"type": "text",
+			"text": "These tools do not have much physical durability, but placing them in the Chest on the Simple Crank Charger while powered will add 'Cranks'. Using the tool will use these first before physical durability.$(p)You can use these rocks to harvest a Nether rock, $(item)Black Granite.$() this rare rock is unique in that it can only be harvested by a charged Crank Pickaxe."
+		},
+		{
+			"type": "image",
+			"images":[
+				"assemblylinemachines:textures/gui/patchouli/blackgranite_example.png"
+			],
+			"border": true,
+			"text": "$(2)This block only has this restriction when it's natural, so it can be used to build!"
+		},
+		{
+			"type": "text",
+			"text": "Now that you have collected Black Granite, you are able to begin progression into the $(l:age3)Electrical Age,$() and begin your work towards your Assembly Line."
+		}
+	],
+	"sortnum": 2,
+	"read_by_default": true
+}
