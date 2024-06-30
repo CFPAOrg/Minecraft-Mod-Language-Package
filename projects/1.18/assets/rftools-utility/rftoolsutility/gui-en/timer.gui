@@ -1,0 +1,22 @@
+window {
+    size(168,48)
+
+    bind('delay','delay')
+    bind('pauses','pauses')
+
+    panel('','vertical') {
+        bgthickness(2)
+        panel('','horizontal') {
+            label('','Delay:')
+            integerfield('delay') {
+                channel('delay')
+                tooltips('Set the delay in ticks','(20 ticks is one second)')
+            }
+        }
+        togglebutton('pauses','Pause while redstone active') {
+            channel('pauses')
+            desired(-1,16)
+            check(true)
+        }
+    }
+}

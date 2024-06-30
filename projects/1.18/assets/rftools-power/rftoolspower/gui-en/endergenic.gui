@@ -1,0 +1,46 @@
+window {
+    size(190,110)
+    panel('','vertical') {
+        bgthickness(2)
+        energybar('energybar') {
+            desired(-1,12)
+            bgthickness(1)
+            horizontal(true)
+        }
+        label('','Averages over last 5 seconds:') {
+            horizalign('ALIGN_LEFT')
+        }
+        panel('','horizontal') {
+            label('','Gain:') {
+                desired(70,-1)
+            }
+            textfield('lastrft') {
+                desired(90,14)
+            }
+        }
+        panel('','horizontal') {
+            label('','Lost:') {
+                desired(70,-1)
+            }
+            textfield('lastlost') {
+                desired(90,14)
+            }
+        }
+        panel('','horizontal') {
+            label('','Launched:') {
+                desired(70,-1)
+            }
+            textfield('lastlaunched') {
+                desired(90,14)
+            }
+        }
+        panel('','horizontal') {
+            label('','Chances:') {
+                desired(70,-1)
+            }
+            textfield('lastopp') {
+                desired(90,14)
+            }
+        }
+    }
+}

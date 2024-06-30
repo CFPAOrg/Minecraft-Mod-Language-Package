@@ -1,0 +1,89 @@
+window {
+    size(256,236)
+    sidesize(80,0)
+    panel('','positional') {
+        bg1('xnet:textures/gui/sidegui.png')
+        bg2('xnet:textures/gui/controller.png')
+        bgoffset(80)
+        panel('','horizontal') {
+            hint(41,18,124,24)
+            togglebutton('channel1','1') {
+                channel('channel1')
+                desired(14,-1)
+                tooltips('编辑频道1')
+            }
+            togglebutton('channel2','2') {
+                channel('channel2')
+                desired(14,-1)
+                tooltips('编辑频道2')
+            }
+            togglebutton('channel3','3') {
+                channel('channel3')
+                desired(14,-1)
+                tooltips('编辑频道3')
+            }
+            togglebutton('channel4','4') {
+                channel('channel4')
+                desired(14,-1)
+                tooltips('编辑频道4')
+            }
+            togglebutton('channel5','5') {
+                channel('channel5')
+                desired(14,-1)
+                tooltips('编辑频道5')
+            }
+            togglebutton('channel6','6') {
+                channel('channel6')
+                desired(14,-1)
+                tooltips('编辑频道6')
+            }
+            togglebutton('channel7','7') {
+                channel('channel7')
+                desired(14,-1)
+                tooltips('编辑频道7')
+            }
+            togglebutton('channel8','8') {
+                channel('channel8')
+                desired(14,-1)
+                tooltips('编辑频道8')
+            }
+            spacing(0)
+            horizmargin(0)
+        }
+        panel('','horizontal') {
+            hint(2,36,169,198)
+            widgetlist('connectors') {
+                channel('connectors')
+                bgthickness(-1)
+                bgfilled1(-7631989)
+                propagate(true)
+            }
+            slider {
+                desired(10,-1)
+                scrollable('connectors')
+            }
+            spacing(1)
+            horizmargin(3)
+        }
+        panel('channeleditpanel','positional') {
+            hint(170,4,163,38)
+            bgthickness(-1)
+            bgfilled1(-7631989)
+        }
+        panel('connectoreditpanel','positional') {
+            hint(170,45,163,108)
+            bgthickness(-1)
+            bgfilled1(-7631989)
+        }
+        textfield('searchbar') {
+            channel('searchbar')
+            hint(5,4,89,14)
+        }
+        energybar('energybar') {
+            channel('energybar')
+            hint(5,24,35,11)
+            horizontal(true)
+            showtext(false)
+        }
+    }
+}

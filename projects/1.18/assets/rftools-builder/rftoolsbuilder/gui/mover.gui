@@ -1,0 +1,58 @@
+window {
+    size(180,152)
+
+    bind('name', 'name')
+    bind('connections', 'connections')
+    bind('down', 'down')
+    bind('up', 'up')
+    bind('north', 'north')
+    bind('south', 'south')
+    bind('west', 'west')
+    bind('east', 'east')
+
+    panel('','positional') {
+        bg1('rftoolsbuilder:textures/gui/mover.png')
+
+        label('', '链接：') {
+            hint(10,10,70,14)
+            horizalign('ALIGN_LEFT')
+        }
+         label('connections', '') {
+             hint(80,10,35,14)
+             horizalign('ALIGN_LEFT')
+         }
+
+        label('', '名称：') {
+            hint(10,25,35,14)
+            horizalign('ALIGN_LEFT')
+        }
+        textfield('name') {
+            hint(40,25,60,14)
+            tooltips('自定义传运器名称')
+        }
+
+        panel('','horizontal') {
+            hint(2,40,160,20)
+            spacing(1)
+            label('', '排除')
+            togglebutton('down','下') {
+                tooltips('下方')
+            }
+            togglebutton('up','上') {
+                tooltips('上方')
+            }
+            togglebutton('north','北') {
+                tooltips('北方')
+            }
+            togglebutton('south','南') {
+                tooltips('南方')
+            }
+            togglebutton('west','西') {
+                tooltips('西方')
+            }
+            togglebutton('east','东') {
+                tooltips('东方')
+            }
+        }
+    }
+}

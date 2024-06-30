@@ -1,0 +1,79 @@
+window {
+    size(180,152)
+    event('redstone','mcjtylib.setRsMode')
+    panel('','positional') {
+        bg1('rftoolspower:textures/gui/blazing_agitator.png')
+        energybar('energybar') {
+            hint(10,7,8,38)
+            showtext(false)
+        }
+        togglebutton('lock00','') {
+            hint(83,29,10,10)
+            channel('lock00')
+            tooltips('锁定槽位1,1')
+        }
+        togglebutton('lock10','') {
+            hint(94,29,10,10)
+            channel('lock10')
+            tooltips('锁定槽位2,1')
+        }
+        togglebutton('lock20','') {
+            hint(105,29,10,10)
+            channel('lock20')
+            tooltips('锁定槽位3,1')
+        }
+        togglebutton('lock01','') {
+            hint(83,40,10,10)
+            channel('lock01')
+            tooltips('锁定槽位1,2')
+        }
+        togglebutton('lock11','') {
+            hint(94,40,10,10)
+            channel('lock11')
+            tooltips('锁定槽位2,2')
+        }
+        togglebutton('lock21','') {
+            hint(105,40,10,10)
+            channel('lock21')
+            tooltips('锁定槽位3,2')
+        }
+        togglebutton('lock02','') {
+            hint(83,51,10,10)
+            channel('lock02')
+            tooltips('锁定槽位1,3')
+        }
+        togglebutton('lock12','') {
+            hint(94,51,10,10)
+            channel('lock12')
+            tooltips('锁定槽位2,3')
+        }
+        togglebutton('lock22','') {
+            hint(105,51,10,10)
+            channel('lock22')
+            tooltips('锁定槽位3,3')
+        }
+        imagechoicelabel('redstone') {
+            channel('redstone')
+            hint(6,44,16,16)
+            image('rftoolsbase:textures/gui/guielements.png')
+            dim(32,0,256,256)
+            choices {
+                choice('Ignored') {
+                    uv(0,0)
+                    tooltips('红石模式','忽略')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('Off') {
+                    uv(16,0)
+                    tooltips('红石模式','低信号')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('On') {
+                    uv(32,0)
+                    tooltips('红石模式','高信号')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+            }
+        }
+    }
+}
