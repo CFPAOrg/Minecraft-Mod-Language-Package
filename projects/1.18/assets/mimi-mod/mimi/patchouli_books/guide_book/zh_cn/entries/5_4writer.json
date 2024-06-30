@@ -1,0 +1,36 @@
+{
+    "name": "写盘机",
+    "icon": "mimi:diskwriter",
+    "category": "mimi:5files",
+    "pages": [
+        {
+            "type": "patchouli:spotlight",
+            "title": "写盘机",
+            "item": "mimi:diskwriter",
+            "text": "写盘机是用来向空白软盘写入数据的方块。$(br2)要使用写盘机，首先你需要制作一台并将它放置于世界中。然后右键单击它以打开写盘机的GUI。"
+        },
+        {
+            "type": "patchouli:crafting",
+            "title": "合成配方",
+            "recipe": "mimi:diskwriter"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "写盘机GUI",
+            "text": "写盘机GUI左侧的槽位中可以放入最多一整组，也就是64张空白软盘，然后将文本框中的内容作为标题和URL写入。$(br2)标题框必须包含至少一个非空白字符，并且最多长64个字符。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "URL可以是网站链接或服务器链接。两种情况下链接最长都为256字符，并且必须符合下述规则。如果文本框为红色，意味着链接无效。$(br)$(li)$(l)网站$() - 网站链接必须是有效的直接指向某个MIDI文件的完整URL(例如：'https://example.com/download/mytestmidi')。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(li)$(l)服务器$() - 服务器有一个设置项，可以设定默认MIDI文件，所有玩家都可以将软盘指向这些文件(详见服务器管理员章节)。$(br2)服务器链接需要使用\"server://<曲目名>\"的格式(例如'server://example_song')。要获取服务器中可用的曲目列表，你可以执行'$(c:/mimi server list)/mimi server list$()'指令。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "当你在两个文本框中都输入了有效数据以后，你可以单击“写入”按钮来将数据写入到左侧槽位的所有空白软盘中。"
+        }
+    ],
+    "sortnum": 4
+}
