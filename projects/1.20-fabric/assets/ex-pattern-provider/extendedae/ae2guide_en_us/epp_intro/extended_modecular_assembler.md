@@ -2,17 +2,17 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: Extended Molecular Assembler
-    icon: expatternprovider:ex_molecular_assembler
+    icon: extendedae:ex_molecular_assembler
 categories:
 - extended devices
 item_ids:
-- expatternprovider:ex_molecular_assembler
+- extendedae:ex_molecular_assembler
 ---
 
 # Extended Molecular Assembler
 
 <Row gap="20">
-<BlockImage id="expatternprovider:ex_molecular_assembler" scale="8"></BlockImage>
+<BlockImage id="extendedae:ex_molecular_assembler" scale="8"></BlockImage>
 </Row>
 
 Extended Molecular Assembler is an advanced <ItemLink id="ae2:molecular_assembler" />.

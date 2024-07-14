@@ -2,18 +2,18 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: Pattern Modifier
-    icon: expatternprovider:pattern_modifier
+    icon: extendedae:pattern_modifier
 categories:
 - extended items
 item_ids:
-- expatternprovider:pattern_modifier
+- extendedae:pattern_modifier
 ---
 
 # Pattern Modifier
 
 Pattern Modifier is a tool for bulk pattern modification.
 
-<ItemImage id="expatternprovider:pattern_modifier" scale="4"></ItemImage>
+<ItemImage id="extendedae:pattern_modifier" scale="4"></ItemImage>
 
 Right click it to open its GUI.
 
@@ -42,7 +42,7 @@ cobblestones as input, because 3÷2 is 1.5.
 
 ## Replace Mode
 
-Replace pattern's certain input and output ingredient with the other item.
+Replace processing pattern's certain input and output ingredient with the other item.
 
 ![PM3](../pic/pm4.png)
 

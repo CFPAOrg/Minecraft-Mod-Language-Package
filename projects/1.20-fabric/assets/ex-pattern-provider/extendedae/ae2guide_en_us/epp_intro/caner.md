@@ -2,16 +2,16 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Caner
-    icon: expatternprovider:caner
+    icon: extendedae:caner
 categories:
 - extended devices
 item_ids:
-- expatternprovider:caner
+- extendedae:caner
 ---
 
 # ME Caner
 
-<BlockImage id="expatternprovider:caner" scale="8"></BlockImage>
+<BlockImage id="extendedae:caner" scale="8"></BlockImage>
 
 ME Caner is a machine that "canning" stuffs, including fluids, Mekanism gas, Botania mana and even Energy!
 

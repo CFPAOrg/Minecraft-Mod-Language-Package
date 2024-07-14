@@ -2,19 +2,19 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Wireless Connector
-    icon: expatternprovider:wireless_connect
+    icon: extendedae:wireless_connect
 categories:
 - extended devices
 item_ids:
-- expatternprovider:wireless_connect
-- expatternprovider:wireless_tool
+- extendedae:wireless_connect
+- extendedae:wireless_tool
 ---
 
 # ME Wireless Connector
 
 <Row gap="20">
-<BlockImage id="expatternprovider:wireless_connect" scale="6"></BlockImage>
-<ItemImage id="expatternprovider:wireless_tool" scale="6"></ItemImage>
+<BlockImage id="extendedae:wireless_connect" scale="6"></BlockImage>
+<ItemImage id="extendedae:wireless_tool" scale="6"></ItemImage>
 </Row>
 
 ME Wireless Connector can link two networks like <ItemLink id="ae2:quantum_link" /> but with limited distances and can't 
@@ -51,6 +51,7 @@ So you can set up your wireless connectors like this:
 <GameScene zoom="3" background="transparent" interactive={true}>
   <ImportStructure src="../structure/wireless_connector_setup.snbt"></ImportStructure>
 </GameScene>
+
 
 ## Power Usage
 

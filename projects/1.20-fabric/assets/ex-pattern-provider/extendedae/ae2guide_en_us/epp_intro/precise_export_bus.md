@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Precise Export Bus
-    icon: expatternprovider:precise_export_bus
+    icon: extendedae:precise_export_bus
 categories:
 - extended devices
 item_ids:
-- expatternprovider:precise_export_bus
+- extendedae:precise_export_bus
 ---
 
 # ME Precise Export Bus

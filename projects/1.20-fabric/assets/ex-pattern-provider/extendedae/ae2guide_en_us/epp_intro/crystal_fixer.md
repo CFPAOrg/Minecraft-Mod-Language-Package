@@ -1,17 +1,17 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Crystal Fixer
-    icon: expatternprovider:crystal_fixer
+    title: ME Crystal Growth Chamber
+    icon: extendedae:crystal_fixer
 categories:
 - extended devices
 item_ids:
-- expatternprovider:crystal_fixer
+- extendedae:crystal_fixer
 ---
 
 # ME Crystal Fixer
 
-<BlockImage id="expatternprovider:crystal_fixer" scale="8"></BlockImage>
+<BlockImage id="extendedae:crystal_fixer" scale="8"></BlockImage>
 
 ME Crystal Fixer can repair budding certus block and turn it to the upgraded one.
 

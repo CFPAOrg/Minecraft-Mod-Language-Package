@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Tag Export Bus
-    icon: expatternprovider:tag_export_bus
+    icon: extendedae:tag_export_bus
 categories:
 - extended devices
 item_ids:
-- expatternprovider:tag_export_bus
+- extendedae:tag_export_bus
 ---
 
 # ME Tag Export Bus
@@ -17,5 +17,5 @@ item_ids:
 
 ME Tag Export Bus is a <ItemLink id="ae2:export_bus" /> that that can be filtered by item or fluid tags.
 
-Its filter rule is same as <ItemLink id="expatternprovider:tag_storage_bus" />.
+Its filter rule is same as <ItemLink id="extendedae:tag_storage_bus" />.
 

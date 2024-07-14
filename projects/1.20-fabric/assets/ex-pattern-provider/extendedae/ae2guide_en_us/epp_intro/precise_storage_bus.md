@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Precise Storage Bus
-    icon: expatternprovider:precise_storage_bus
+    icon: extendedae:precise_storage_bus
 categories:
 - extended devices
 item_ids:
-- expatternprovider:precise_storage_bus
+- extendedae:precise_storage_bus
 ---
 
 # ME Precise Storage Bus

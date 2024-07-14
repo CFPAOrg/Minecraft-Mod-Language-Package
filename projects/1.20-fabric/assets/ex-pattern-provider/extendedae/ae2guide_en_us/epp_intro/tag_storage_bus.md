@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Tag Storage Bus
-    icon: expatternprovider:tag_storage_bus
+    icon: extendedae:tag_storage_bus
 categories:
 - extended devices
 item_ids:
-- expatternprovider:tag_storage_bus
+- extendedae:tag_storage_bus
 ---
 
 # ME Tag Storage Bus
@@ -21,9 +21,9 @@ Here are some examples:
 
 - Only accept raw ore
 
-forge:raw_materials/*
+c:raw_materials
 
 - Accept all ingots and gems
 
-forge:ingots/* | forge:gems/*
+c:ingots/* | c:gems/*
 

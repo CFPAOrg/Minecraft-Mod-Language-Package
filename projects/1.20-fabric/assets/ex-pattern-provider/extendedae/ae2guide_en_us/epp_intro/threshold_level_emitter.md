@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Threshold Level Emitter
-    icon: expatternprovider:threshold_level_emitter
+    icon: extendedae:threshold_level_emitter
 categories:
 - extended devices
 item_ids:
-- expatternprovider:threshold_level_emitter
+- extendedae:threshold_level_emitter
 ---
 
 # ME Threshold Level Emitter

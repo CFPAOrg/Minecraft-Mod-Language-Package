@@ -2,12 +2,12 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Extended Export/Import Bus
-    icon: expatternprovider:ex_import_bus_part
+    icon: extendedae:ex_import_bus_part
 categories:
 - extended devices
 item_ids:
-- expatternprovider:ex_import_bus_part
-- expatternprovider:ex_export_bus_part
+- extendedae:ex_import_bus_part
+- extendedae:ex_export_bus_part
 ---
 
 # ME Extended Import/Export Bus

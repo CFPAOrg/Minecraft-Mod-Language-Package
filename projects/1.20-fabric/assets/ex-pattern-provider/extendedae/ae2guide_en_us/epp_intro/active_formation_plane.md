@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Active Formation Plane
-    icon: expatternprovider:active_formation_plane
+    icon: extendedae:active_formation_plane
 categories:
 - extended devices
 item_ids:
-- expatternprovider:active_formation_plane
+- extendedae:active_formation_plane
 ---
 
 # ME Active Formation Plane

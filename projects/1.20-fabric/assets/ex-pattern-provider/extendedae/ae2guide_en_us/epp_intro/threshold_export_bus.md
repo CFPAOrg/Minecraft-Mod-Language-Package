@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Threshold Export Bus
-    icon: expatternprovider:threshold_export_bus
+    icon: extendedae:threshold_export_bus
 categories:
 - extended devices
 item_ids:
-- expatternprovider:threshold_export_bus
+- extendedae:threshold_export_bus
 ---
 
 # ME Threshold Export Bus

@@ -2,17 +2,17 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: Extended Inscriber
-    icon: expatternprovider:ex_inscriber
+    icon: extendedae:ex_inscriber
 categories:
 - extended devices
 item_ids:
-- expatternprovider:ex_inscriber
+- extendedae:ex_inscriber
 ---
 
 # Extended Inscriber
 
 <Row gap="20">
-<BlockImage id="expatternprovider:ex_inscriber" scale="8"></BlockImage>
+<BlockImage id="extendedae:ex_inscriber" scale="8"></BlockImage>
 </Row>
 
 Extended Inscriber is an advanced <ItemLink id="ae2:inscriber" />.

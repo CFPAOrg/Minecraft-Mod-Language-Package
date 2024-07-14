@@ -2,12 +2,12 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME Extended Pattern Access Terminal
-    icon: expatternprovider:ex_pattern_access_part
+    icon: extendedae:ex_pattern_access_part
 categories:
 - extended devices
 item_ids:
-- expatternprovider:ex_pattern_access_part
-- expatternprovider:wireless_ex_pat
+- extendedae:ex_pattern_access_part
+- extendedae:wireless_ex_pat
 ---
 
 # ME Extended Pattern Access Terminal
@@ -19,7 +19,7 @@ ME Extended Pattern Access Terminal provides 3 extra additional features compare
 <ImportStructure src="../structure/cable_ex_pattern_terminal.snbt"></ImportStructure>
 <IsometricCamera yaw="180"></IsometricCamera>
 </GameScene>
-<ItemImage id="expatternprovider:wireless_ex_pat" scale="4"></ItemImage>
+<ItemImage id="extendedae:wireless_ex_pat" scale="4"></ItemImage>
 </Row>
 
 ## Better Pattern Search
