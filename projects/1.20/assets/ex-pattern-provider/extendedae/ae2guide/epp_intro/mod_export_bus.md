@@ -15,8 +15,4 @@ item_ids:
   <ImportStructure src="../structure/cable_mod_export_bus.snbt"></ImportStructure>
 </GameScene>
 
-ME模组输出总线的性质与<ItemLink id="ae2:export_bus" />相同，但你可以通过Mod名称进行过滤。
-
-如果需要过滤多个Mod，可以使用逗号分隔多个Mod名称。
-
-![PIC](../pic/mod_bus_name2.png)
+ME模组输出总线的性质与<ItemLink id="ae2:export_bus" />相同，但你可以用模组名或模组id进行过滤。

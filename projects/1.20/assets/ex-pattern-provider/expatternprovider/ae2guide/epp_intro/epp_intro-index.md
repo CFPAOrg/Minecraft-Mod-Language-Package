@@ -6,7 +6,7 @@ navigation:
 
 # 扩展你的AE配置!
 
-AE2扩展为现代AE带回了一些 1.7.10/1.12.2 时期的功能
+AE2扩展为现代AE带回了一些1.7.10/1.12.2时期的功能
 
 [前往GitHub！](https://github.com/GlodBlock/ExtendedAE) 
 

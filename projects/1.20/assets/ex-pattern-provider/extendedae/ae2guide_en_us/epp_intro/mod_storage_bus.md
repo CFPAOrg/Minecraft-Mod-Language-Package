@@ -16,7 +16,3 @@ item_ids:
 </GameScene>
 
 ME Mod Storage Bus is a <ItemLink id="ae2:storage_bus" /> that can be filtered by mod name or mod id.
-
-Use comma to separate multiple mod ids in case you want to filter multiple mods.
-
-![PIC](../pic/mod_bus_name.png)

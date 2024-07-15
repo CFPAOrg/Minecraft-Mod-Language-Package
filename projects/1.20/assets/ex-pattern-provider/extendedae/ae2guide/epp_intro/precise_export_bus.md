@@ -15,7 +15,7 @@ item_ids:
   <ImportStructure src="../structure/cable_precise_export_bus.snbt"></ImportStructure>
 </GameScene>
 
-ME精确输出总线会输出指定数量的物品/液体。只有当容器可以完整地接受一份的输出并且网络中存在完整的一份物品时，它才会输出。
+ME精确输出总线会输出指定量的物品/液体。只有当容器可以完整地接受一份的输出并且网络中存在完整的一份物品时，它才会输出。
 
 ## 示例
 
