@@ -15,6 +15,6 @@ item_ids:
   <ImportStructure src="../structure/cable_precise_storage_bus.snbt"></ImportStructure>
 </GameScene>
 
-ME精确存储总线的性质与<ItemLink id="ae2:storage_bus" />相同，但你可以通过设置物品数量来精确输入，当容器内的物品超过设置的值，将会停止输入。
+ME精确存储总线的性质与<ItemLink id="ae2:storage_bus" />相同，但你可以通过设置物品数量来精确输入，当容器内的物品达到设置的值，将会停止输入。
 
 ![GUI](../pic/pre_storage_bus.png)
