@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME模组输出总线
-    icon: extendedae:mod_export_bus
+    icon: expatternprovider:mod_export_bus
 categories:
 - extended devices
 item_ids:
-- extendedae:mod_export_bus
+- expatternprovider:mod_export_bus
 ---
 
 # ME模组输出总线

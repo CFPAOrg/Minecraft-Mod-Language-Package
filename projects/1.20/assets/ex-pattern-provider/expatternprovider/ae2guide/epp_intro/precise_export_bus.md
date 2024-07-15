@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME精确输出总线
-    icon: extendedae:precise_export_bus
+    icon: expatternprovider:precise_export_bus
 categories:
 - extended devices
 item_ids:
-- extendedae:precise_export_bus
+- expatternprovider:precise_export_bus
 ---
 
 # ME精确输出总线

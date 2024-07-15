@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME阈值发信器
-    icon: extendedae:threshold_level_emitter
+    icon: expatternprovider:threshold_level_emitter
 categories:
 - extended devices
 item_ids:
-- extendedae:threshold_level_emitter
+- expatternprovider:threshold_level_emitter
 ---
 
 # ME阈值发信器

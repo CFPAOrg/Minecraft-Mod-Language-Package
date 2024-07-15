@@ -2,12 +2,12 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME扩展输入/输出总线
-    icon: extendedae:ex_import_bus_part
+    icon: expatternprovider:ex_import_bus_part
 categories:
 - extended devices
 item_ids:
-- extendedae:ex_import_bus_part
-- extendedae:ex_export_bus_part
+- expatternprovider:ex_import_bus_part
+- expatternprovider:ex_export_bus_part
 ---
 
 # ME扩展输入/输出总线

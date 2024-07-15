@@ -2,16 +2,16 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME水晶修复器
-    icon: extendedae:crystal_fixer
+    icon: expatternprovider:crystal_fixer
 categories:
 - extended devices
 item_ids:
-- extendedae:crystal_fixer
+- expatternprovider:crystal_fixer
 ---
 
 # ME水晶修复器
 
-<BlockImage id="extendedae:crystal_fixer" scale="8"></BlockImage>
+<BlockImage id="expatternprovider:crystal_fixer" scale="8"></BlockImage>
 
 ME水晶修复器可以修复各个损坏程度不一的赛特斯石英母岩（甚至包括赛特斯石英块），每次修复都会使母岩完整度提升一级。
 

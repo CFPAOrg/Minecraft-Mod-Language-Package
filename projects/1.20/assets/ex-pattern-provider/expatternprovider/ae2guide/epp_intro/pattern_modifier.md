@@ -2,18 +2,18 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: 样板修改器
-    icon: extendedae:pattern_modifier
+    icon: expatternprovider:pattern_modifier
 categories:
 - extended items
 item_ids:
-- extendedae:pattern_modifier
+- expatternprovider:pattern_modifier
 ---
 
 # 样板修改器
 
 样板修改器是一个用于批量修改样板的工具。
 
-<ItemImage id="extendedae:pattern_modifier" scale="4"></ItemImage>
+<ItemImage id="expatternprovider:pattern_modifier" scale="4"></ItemImage>
 
 右键单击它以打开它的GUI。
 

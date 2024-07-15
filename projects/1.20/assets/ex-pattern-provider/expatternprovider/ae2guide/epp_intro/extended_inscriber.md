@@ -2,17 +2,17 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: 扩展压印器
-    icon: extendedae:ex_inscriber
+    icon: expatternprovider:ex_inscriber
 categories:
 - extended devices
 item_ids:
-- extendedae:ex_inscriber
+- expatternprovider:ex_inscriber
 ---
 
 # 扩展压印器
 
 <Row gap="20">
-<BlockImage id="extendedae:ex_inscriber" scale="8"></BlockImage>
+<BlockImage id="expatternprovider:ex_inscriber" scale="8"></BlockImage>
 </Row>
 
 扩展压印器是一种更高级的<ItemLink id="ae2:inscriber" />。

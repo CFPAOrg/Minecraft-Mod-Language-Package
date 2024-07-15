@@ -2,12 +2,12 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME扩展样板管理终端
-    icon: extendedae:ex_pattern_access_part
+    icon: expatternprovider:ex_pattern_access_part
 categories:
 - extended devices
 item_ids:
-- extendedae:ex_pattern_access_part
-- extendedae:wireless_ex_pat
+- expatternprovider:ex_pattern_access_part
+- expatternprovider:wireless_ex_pat
 ---
 
 # ME扩展样板管理终端
@@ -19,7 +19,7 @@ item_ids:
 <ImportStructure src="../structure/cable_ex_pattern_terminal.snbt"></ImportStructure>
 <IsometricCamera yaw="180"></IsometricCamera>
 </GameScene>
-<ItemImage id="extendedae:wireless_ex_pat" scale="4"></ItemImage>
+<ItemImage id="expatternprovider:wireless_ex_pat" scale="4"></ItemImage>
 </Row>
 
 ## 更好的搜索模式

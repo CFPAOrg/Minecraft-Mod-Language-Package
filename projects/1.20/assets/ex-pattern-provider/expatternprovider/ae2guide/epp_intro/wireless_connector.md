@@ -2,19 +2,19 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME无线连接器
-    icon: extendedae:wireless_connect
+    icon: expatternprovider:wireless_connect
 categories:
 - extended devices
 item_ids:
-- extendedae:wireless_connect
-- extendedae:wireless_tool
+- expatternprovider:wireless_connect
+- expatternprovider:wireless_tool
 ---
 
 # ME无线连接器
 
 <Row gap="20">
-<BlockImage id="extendedae:wireless_connect" scale="6"></BlockImage>
-<ItemImage id="extendedae:wireless_tool" scale="6"></ItemImage>
+<BlockImage id="expatternprovider:wireless_connect" scale="6"></BlockImage>
+<ItemImage id="expatternprovider:wireless_tool" scale="6"></ItemImage>
 </Row>
 
 ME无线连接器可以像<ItemLink id="ae2:quantum_link" />一样连接两个网络，但距离有限，且不能跨维度。

@@ -2,16 +2,16 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME装罐机
-    icon: extendedae:caner
+    icon: expatternprovider:caner
 categories:
 - extended devices
 item_ids:
-- extendedae:caner
+- expatternprovider:caner
 ---
 
 # ME装罐机
 
-<BlockImage id="extendedae:caner" scale="8"></BlockImage>
+<BlockImage id="expatternprovider:caner" scale="8"></BlockImage>
 
 ME装罐机是一个“灌装”东西的机器，包括液体、Mekanism气体、能量甚至植物魔法的魔力！ 第一个槽放置需要被填充的物品，第二个槽放置用来容纳它的容器；排空模式则反之。它需要能源来运行，每次操作花费80AE。
 

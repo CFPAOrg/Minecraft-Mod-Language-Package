@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME标签存储总线
-    icon: extendedae:tag_storage_bus
+    icon: expatternprovider:tag_storage_bus
 categories:
 - extended devices
 item_ids:
-- extendedae:tag_storage_bus
+- expatternprovider:tag_storage_bus
 ---
 
 # ME标签存储总线

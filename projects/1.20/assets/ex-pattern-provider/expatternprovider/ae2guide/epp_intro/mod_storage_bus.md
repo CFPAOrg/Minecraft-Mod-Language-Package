@@ -2,11 +2,11 @@
 navigation:
     parent: epp_intro/epp_intro-index.md
     title: ME模组存储总线
-    icon: extendedae:mod_storage_bus
+    icon: expatternprovider:mod_storage_bus
 categories:
 - extended devices
 item_ids:
-- extendedae:mod_storage_bus
+- expatternprovider:mod_storage_bus
 ---
 
 # ME模组存储总线
