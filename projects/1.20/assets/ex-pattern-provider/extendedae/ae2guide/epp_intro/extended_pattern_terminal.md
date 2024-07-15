@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Extended Pattern Access Terminal
+    title: ME扩展样板管理终端
     icon: extendedae:ex_pattern_access_part
 categories:
 - extended devices
@@ -10,9 +10,9 @@ item_ids:
 - extendedae:wireless_ex_pat
 ---
 
-# ME Extended Pattern Access Terminal
+# ME扩展样板管理终端
 
-ME Extended Pattern Access Terminal provides 3 extra additional features compared with <ItemLink id="ae2:pattern_access_terminal" />.
+与普通<ItemLink id="ae2:pattern_access_terminal" />相比，ME扩展样板管理终端提供了3个额外的功能。
 
 <Row gap="20">
 <GameScene zoom="6" background="transparent">
@@ -22,23 +22,21 @@ ME Extended Pattern Access Terminal provides 3 extra additional features compare
 <ItemImage id="extendedae:wireless_ex_pat" scale="4"></ItemImage>
 </Row>
 
-## Better Pattern Search
+## 更好的搜索模式
 
-You can search pattern by input/output ingredients' name.
+你可以搜索某个存在于输入/输出中的物品的名称。
 
 ![EPA1](../pic/epa_gui1.png)
 
-## Pattern Highlight
+## 高亮显示
 
-Sometimes it is still hard to find the desired pattern because patterns are always displayed as a group. Now the Extended
-Pattern Access Terminal can highlight the matched pattern in GUI.
+还是很难找到想要的样板吗？现在扩展样板管理终端可以在GUI中突出显示匹配的样板了！
 
 ![EPA2](../pic/epa_gui2.png)
 
-## Pattern Provider In-World Highlight
+## 在世界中高亮显示供应器的位置
 
-It's annoying to find out which Pattern Provider is stuck when doing large crafting jobs. Extended Pattern Access Terminal
-can highlight the Pattern Provider in world, so you can locate it easily.
+在搭建大型合成结构时，发现哪个样板供应器被卡住是很烦人的；扩展样板管理终端可以在世界上突出显示相应的样板供应器，你将更容易地找到它。
 
 ![EPA3](../pic/epa_gui3.png)
 

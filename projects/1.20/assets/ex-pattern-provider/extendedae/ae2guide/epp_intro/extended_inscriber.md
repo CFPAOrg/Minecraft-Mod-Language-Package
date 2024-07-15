@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: Extended Inscriber
+    title: 扩展压印器
     icon: extendedae:ex_inscriber
 categories:
 - extended devices
@@ -9,16 +9,16 @@ item_ids:
 - extendedae:ex_inscriber
 ---
 
-# Extended Inscriber
+# 扩展压印器
 
 <Row gap="20">
 <BlockImage id="extendedae:ex_inscriber" scale="8"></BlockImage>
 </Row>
 
-Extended Inscriber is an advanced <ItemLink id="ae2:inscriber" />.
+扩展压印器是一种更高级的<ItemLink id="ae2:inscriber" />。
 
-It can run 4 inscribing jobs at the same time.
+它可以同时运行4个压印任务。
 
-There is button that allows you to change the max stack size of its inventory like the normal one.
+有一个按钮可以让你像正常压印器那样改变最大堆叠数量。
 
-It is suggested to set stack size to 1 when using it with <ItemLink id="ae2:pattern_provider" /> to avoid possible issues.
+建议在与<ItemLink id="ae2:pattern_provider" />一起使用时将堆叠数量设置为1，以避免某些可能出现的问题。

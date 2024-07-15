@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Ingredient Buffer
+    title: ME原料缓存器
     icon: extendedae:ingredient_buffer
 categories:
 - extended devices
@@ -9,8 +9,8 @@ item_ids:
 - extendedae:ingredient_buffer
 ---
 
-# ME Ingredient Buffer
+# ME原料缓存器
 
 <BlockImage id="extendedae:ingredient_buffer" scale="8"></BlockImage>
 
-A storage block that can hold 36 types of anything, ranging from items to fluids.
+一个容器，最多可以存储36种任何类型的东西，包括但不限于物品和液体。

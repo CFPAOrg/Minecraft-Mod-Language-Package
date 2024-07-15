@@ -1,23 +1,17 @@
 ---
 navigation:
-    title: Extended AE Introduction
+    title: AE2扩展
     position: 60
 ---
 
-# Extended Your AE setup!
+# 扩展你的AE配置!
 
-Extended AE brings some 1.7.10/1.12.2 AE features back for modern AE.
+AE2扩展为现代AE带回了一些 1.7.10/1.12.2 时期的功能
 
-[Extended AE GitHub](https://github.com/GlodBlock/ExtendedAE) 
+[前往GitHub！](https://github.com/GlodBlock/ExtendedAE) 
 
-## Entro Crystal System
-<CategoryIndex category="entro system"></CategoryIndex>
-
-## Extended Foundation
-<CategoryIndex category="extended foundation"></CategoryIndex>
-
-## Extended Devices
+## 扩展设备
 <CategoryIndex category="extended devices"></CategoryIndex>
 
-## Extended Items
+## 扩展物品
 <CategoryIndex category="extended items"></CategoryIndex>

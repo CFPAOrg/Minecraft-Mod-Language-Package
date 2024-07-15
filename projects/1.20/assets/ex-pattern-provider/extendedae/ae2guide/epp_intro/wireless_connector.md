@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Wireless Connector
+    title: ME无线连接器
     icon: extendedae:wireless_connect
 categories:
 - extended devices
@@ -10,52 +10,49 @@ item_ids:
 - extendedae:wireless_tool
 ---
 
-# ME Wireless Connector
+# ME无线连接器
 
 <Row gap="20">
 <BlockImage id="extendedae:wireless_connect" scale="6"></BlockImage>
 <ItemImage id="extendedae:wireless_tool" scale="6"></ItemImage>
 </Row>
 
-ME Wireless Connector can link two networks like <ItemLink id="ae2:quantum_link" /> but with limited distances and can't 
-cross dimensions.
+ME无线连接器可以像<ItemLink id="ae2:quantum_link" />一样连接两个网络，但距离有限，且不能跨维度。
 
-## Link the Wireless Connectors
+## 连接无线连接器
 
-Click the two Wireless Connectors that you want to link with the ME Wireless Setup Kit, then you can link them together.
+使用ME无线连接工具分别右键单击两个无线接口，然后就可以将它们连接在一起了。
 
-Sneak + Click to clear ME Wireless Setup Kit's current setting.
+潜行+点击清除ME无线连接工具的当前设置。
 
-ME Wireless Connector will change its texture when a link is successfully established.
+成功建立链接后，无线连接器的外观会发生变化。
 
-Unlinked ME Wireless Connectors
+未连接的ME无线连接器：
 
 <GameScene zoom="5" background="transparent">
   <ImportStructure src="../structure/wireless_connector_off.snbt"></ImportStructure>
 </GameScene>
 
-Linked ME Wireless Connectors
+成功连接的ME无线连接器：
 
 <GameScene zoom="5" background="transparent">
   <ImportStructure src="../structure/wireless_connector_on.snbt"></ImportStructure>
 </GameScene>
 
-## Color
+## 颜色
 
-Wireless Connectors can be colored like cables and only connect the cable/connectors with the same color.
+无线连接器可以像电缆一样着色，并且只能连接颜色相同的电缆/无线连接器。
+你需要一个<ItemLink id="ae2:color_applicator" />给连接器上色。
 
-You need a <ItemLink id="ae2:color_applicator" /> to color the connector.
-
-So you can set up your wireless connectors like this:
+因此，可以像这样设置无线连接器:
 
 <GameScene zoom="3" background="transparent" interactive={true}>
   <ImportStructure src="../structure/wireless_connector_setup.snbt"></ImportStructure>
 </GameScene>
 
-## Power Usage
+## 能源消耗
 
-ME Wireless Connector costs more energy when they are farther apart. Its cost-distance curve isn't linear so the power 
-cost can get very high if when they are too far apart.
+当它们相距较远时，ME无线连接器将会消耗更多的能源。
+它的能源消耗与距离的关系不是线性的，因此如果它们相距太远，能源需求可能会非常高。
 
-You can use <ItemLink id="ae2:energy_card" /> to save power, every card can reduce 10% energy cost.
-
+你可以使用<ItemLink id="ae2:energy_card" />来节省电力，每张能源卡可以减少10%的能源消耗。

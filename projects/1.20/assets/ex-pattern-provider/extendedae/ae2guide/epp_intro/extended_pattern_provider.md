@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Extended Pattern Provider
+    title: ME扩展样板供应器
     icon: extendedae:ex_pattern_provider
 categories:
 - extended devices
@@ -10,7 +10,7 @@ item_ids:
 - extendedae:ex_pattern_provider_part
 ---
 
-# ME Extended Pattern Provider
+# ME扩展样板供应器
 
 <Row gap="20">
 <BlockImage id="extendedae:ex_pattern_provider" scale="8"></BlockImage>
@@ -20,9 +20,8 @@ item_ids:
 </GameScene>
 </Row>
 
-ME Extended Pattern Provider is a <ItemLink id="ae2:pattern_provider" /> with a larger 
-pattern inventory.
+ME扩展样板供应器是具有更多配置槽位的<ItemLink id="ae2:pattern_provider" />。
 
-*Who need subnet when you can put all patterns in one block.*
+*”当你可以将所有样板都放在一个供应器中时，谁还需要子网。“*
 
 ![EPPGui](../pic/epp_gui.png)

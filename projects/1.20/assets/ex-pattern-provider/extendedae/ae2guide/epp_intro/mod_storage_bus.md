@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Mod Storage Bus
+    title: ME模组存储总线
     icon: extendedae:mod_storage_bus
 categories:
 - extended devices
@@ -9,14 +9,15 @@ item_ids:
 - extendedae:mod_storage_bus
 ---
 
-# ME Mod Storage Bus
+# ME模组存储总线
 
 <GameScene zoom="8" background="transparent">
   <ImportStructure src="../structure/cable_mod_storage_bus.snbt"></ImportStructure>
 </GameScene>
 
-ME Mod Storage Bus is a <ItemLink id="ae2:storage_bus" /> that can be filtered by mod name or mod id.
+ME模组存储总线的性质与<ItemLink id="ae2:storage_bus" />相同，但你可以通过Mod名称进行过滤。
 
-Use comma to separate multiple mod ids in case you want to filter multiple mods.
+如果需要过滤多个Mod，可以使用逗号分隔多个Mod名称。
 
 ![PIC](../pic/mod_bus_name.png)
+

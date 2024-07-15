@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Device Upgrades
+    title: ME设备升级组件
     icon: extendedae:pattern_provider_upgrade
 categories:
 - extended items
@@ -13,9 +13,9 @@ item_ids:
 - extendedae:drive_upgrade
 ---
 
-# ME Device Upgrades
+# ME设备升级组件
 
-These upgrades allow you to replace normal ME devices with their extended version without breaking them.
+这些升级允许你用扩展的ME设备替换普通的ME设备，而不必破坏它们。
 
 <Row>
 <ItemImage id="extendedae:pattern_provider_upgrade" scale="4"></ItemImage>
@@ -25,27 +25,27 @@ These upgrades allow you to replace normal ME devices with their extended versio
 <ItemImage id="extendedae:drive_upgrade" scale="4"></ItemImage>
 </Row>
 
-Sneak + Right Mouse Click on these devices, they will be turned into their extended version. All device settings and inventory
-will be kept.
+潜行+鼠标右键点击普通ME设备，它们将被替换为它们的扩展版本。
+设备内的设置和物品将会保留。
 
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../structure/upgrade_show_1.snbt"></ImportStructure>
   <BoxAnnotation color="#ffffff" min="1 0 0" max="4 1 1">
-        The normal Pattern Providers. You can upgrade them with Pattern Provider Upgrade.
+        正常模式的样板供应器，你可以使用样板供应器升级来升级它们。
         <ItemImage id="extendedae:pattern_provider_upgrade" scale="2"></ItemImage>
   </BoxAnnotation>
 </GameScene>
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../structure/upgrade_show_2.snbt"></ImportStructure>
   <BoxAnnotation color="#ffffff" min="1 0 0" max="4 1 1">
-        The Extended Pattern Providers keep all settings and pattern inventory from origin Pattern Providers
+        扩展样板供应器将保留原始样板供应器的所有设置和样板。
   </BoxAnnotation>
 </GameScene>
 
-## Upgrade List
+## 升级列表
 
-|                                      Upgrade                                      |                           Normal Device                            |                                  Extended Device                                  |
-|:---------------------------------------------------------------------------------:|:------------------------------------------------------------------:|:---------------------------------------------------------------------------------:|
+|                                       升级组件                                        |                                普通设备                                |                                       扩展设备                                        |
+| :-------------------------------------------------------------------------------: | :----------------------------------------------------------------: | :-------------------------------------------------------------------------------: |
 | <ItemImage id="extendedae:pattern_provider_upgrade" scale="3"></ItemImage> |    <ItemImage id="ae2:pattern_provider" scale="3"></ItemImage>     |   <ItemImage id="extendedae:ex_pattern_provider" scale="3"></ItemImage>    |
 | <ItemImage id="extendedae:pattern_provider_upgrade" scale="3"></ItemImage> | <ItemImage id="ae2:cable_pattern_provider" scale="3"></ItemImage>  | <ItemImage id="extendedae:ex_pattern_provider_part" scale="3"></ItemImage> |
 |    <ItemImage id="extendedae:interface_upgrade" scale="3"></ItemImage>     |        <ItemImage id="ae2:interface" scale="3"></ItemImage>        |       <ItemImage id="extendedae:ex_interface" scale="3"></ItemImage>       |

@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Extended Interface
+    title: ME扩展接口
     icon: extendedae:ex_interface
 categories:
 - extended devices
@@ -10,7 +10,7 @@ item_ids:
 - extendedae:ex_interface_part
 ---
 
-# ME Extended Interface
+# ME扩展接口
 
 <Row gap="20">
 <BlockImage id="extendedae:ex_interface" scale="8"></BlockImage>
@@ -19,8 +19,8 @@ item_ids:
 </GameScene>
 </Row>
 
-ME Extended Interface is a <ItemLink id="ae2:interface" /> with a larger config inventory.
+ME扩展接口是一个具有更多配置槽位的<ItemLink id="ae2:interface" />。
 
-*Am I actually need this?*
+*”我真的需要这个吗？“*
 
 ![EIGui](../pic/ei_gui.png)

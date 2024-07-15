@@ -1,21 +1,20 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Active Formation Plane
-    icon: extendedae:active_formation_plane
+    title: ME主动成型面板
+    icon: expatternprovider:active_formation_plane
 categories:
 - extended devices
 item_ids:
 - extendedae:active_formation_plane
 ---
 
-# ME Active Formation Plane
+# ME主动成型面板
 
 <GameScene zoom="8" background="transparent">
   <ImportStructure src="../structure/cable_active_formation_plane.snbt"></ImportStructure>
 </GameScene>
 
-ME Active Formation Plane is a <ItemLink id="ae2:formation_plane" /> that can place block or drop items actively.
+ME主动成型面板是<ItemLink id="ae2:formation_plane" />的升级版，它会主动放置出方块或输出掉落物。
 
-You don't need to set up a subnet for it. It works like an <ItemLink id="ae2:export_bus" /> but place block instead of
-outputting it to a chest.
+你不需要为它设置子网。它的工作原理类似于<ItemLink id="ae2:export_bus" />，但它是放置方块而不是输出到容器。

@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Threshold Level Emitter
+    title: ME阈值发信器
     icon: extendedae:threshold_level_emitter
 categories:
 - extended devices
@@ -9,21 +9,20 @@ item_ids:
 - extendedae:threshold_level_emitter
 ---
 
-# ME Threshold Level Emitter
+# ME阈值发信器
 
 <GameScene zoom="8" background="transparent">
   <ImportStructure src="../structure/cable_threshold_level_emitter.snbt"></ImportStructure>
 </GameScene>
 
-It works like Reset-Set Latch. It turns off redstone signal when the quantity of an item in network is less than
-the lower threshold and turn on when the quantity is greater than the upper threshold.
+当网络中物品的数量高于上限阈值时会一直输出红石信号，直到数量低于下限阈值时才会关闭红石信号。
 
-For example, given lower threshold is set 100 and upper threshold is set 150.
+例如，将下限阈值设为100，上限阈值设为150。
 
-At first the network is empty, so the emitter won't be active.
+起初网络是空的，所以发信器不会被激活。
 
-As the quantity of the item growing up and over 150, the emitter will send redstone signal.
+当物品的数量增加到150个以上时，发信器会发出红石信号。
 
-When the quantity declining and less than 150, the emitter still sends signal.
+当数量下降到100-150之间时，发信器仍发出信号。
 
-At last the quantity is less than 100, the emitter will be turned off.
+直到数量低于100时，发信器停止输出信号。

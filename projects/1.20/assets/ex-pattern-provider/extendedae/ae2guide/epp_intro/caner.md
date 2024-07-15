@@ -1,7 +1,7 @@
 ---
 navigation:
     parent: epp_intro/epp_intro-index.md
-    title: ME Caner
+    title: ME装罐机
     icon: extendedae:caner
 categories:
 - extended devices
@@ -9,50 +9,47 @@ item_ids:
 - extendedae:caner
 ---
 
-# ME Caner
+# ME装罐机
 
 <BlockImage id="extendedae:caner" scale="8"></BlockImage>
 
-ME Caner is a machine that "canning" stuffs, including fluids, Mekanism gas, Botania mana and even Energy!
-
-The first slot is for what to fill, and the second slot is for what to be filled.
-
-It needs energy to run and every operation costs 80 AE.
+ME装罐机是一个“灌装”东西的机器，包括液体、Mekanism气体、能量甚至植物魔法的魔力！ 第一个槽放置需要被填充的物品，第二个槽放置用来容纳它的容器；排空模式则反之。它需要能源来运行，每次操作花费80AE。
 
 ![GUI](../pic/caner_gui.png)
 
-It only fills fluids by default, you need to install corresponding addon to make it fill other stuffs.
+默认情况下，它只填充液体，你需要安装相应的Mod，使其能填充其它东西。
 
-### Support addons:
+### 支持的Mod:
 - Applied Flux
-- Applied Mekanistics
-- Applied Botanics Addon
+- 应用能源：通用机械附属
+- 应用能源：植物魔法附属
 
-## Autocrafting with ME Caner
+## 连接ME装罐机
 
-Only the top and bottom side can accept energy and connect to network.
+只有顶部和底部可以输入能量并连接到网络。
 
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../structure/caner_example.snbt"></ImportStructure>
 </GameScene>
 
-A simple setup for ME Caner. ME Caner will auto eject the filled item when it accepts the ingredients from <ItemLink id="ae2:pattern_provider" />.
+对于ME装罐机有一个简便的处理方法：ME装罐机将自动弹出到由<ItemLink id="ae2:pattern_provider" />输入的物品。
 
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../structure/caner_auto.snbt"></ImportStructure>
 </GameScene>
 
-The pattern must only contain the stuff to fill and the container to be filled. Here are some examples:
+该模式的样板必须只包含要填充的材料和要填充的容器。
+以下是一些例子:
 
-Fill water bucket:
+装满水桶：
 
 ![P1](../pic/fill_water.png)
 
-Empower Energy Tablet (Need Applied Flux installed):
+充满能量板（需要”应用能源：通用机械附属“）：
 
 ![P1](../pic/fill_energy.png)
 
 
-## Uncaning
+## 排空模式
 
-ME Caner also can drain stuffs from container in Empty mode. You need to switch the inputs and outputs in pattern.
+你也可以在排空模式下从容器中排出物品。只需要点击模式切换按钮切换输入和输出模式。
