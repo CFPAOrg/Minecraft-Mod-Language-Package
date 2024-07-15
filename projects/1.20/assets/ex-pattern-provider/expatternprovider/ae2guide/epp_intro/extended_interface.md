@@ -21,6 +21,6 @@ item_ids:
 
 ME扩展接口是一个具有更多配置槽位的<ItemLink id="ae2:interface" />。
 
-*”我真的需要这个吗？“*
+*“我真的需要这个吗？”*
 
 ![EIGui](../pic/ei_gui.png)

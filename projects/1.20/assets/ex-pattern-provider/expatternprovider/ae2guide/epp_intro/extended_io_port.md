@@ -15,6 +15,6 @@ item_ids:
 <BlockImage id="expatternprovider:ex_io_port" p:powered="true" scale="8"></BlockImage>
 </Row>
 
-ME扩展IO端口的传输速度比普通<ItemLink id="ae2:io_port" />快8倍。
+ME扩展IO端口比普通<ItemLink id="ae2:io_port" />的传输速度快8倍。
 
 与普通的相比，它也有更多的升级插槽。

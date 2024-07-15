@@ -25,7 +25,7 @@ item_ids:
 <ItemImage id="expatternprovider:drive_upgrade" scale="4"></ItemImage>
 </Row>
 
-潜行+鼠标右键点击普通ME设备，它们将被替换为它们的扩展版本。
+对普通ME设备潜行右击，会将其替换为相应的扩展版本。
 设备内的设置和物品将会保留。
 
 <GameScene zoom="6" background="transparent">
@@ -44,8 +44,8 @@ item_ids:
 
 ## 升级列表
 
-|                                       升级组件                                        |                                普通设备                                |                                       扩展设备                                        |
-| :-------------------------------------------------------------------------------: | :----------------------------------------------------------------: | :-------------------------------------------------------------------------------: |
+|                                      升级组件                                      |                              普通设备                              |                                      扩展设备                                      |
+|:---------------------------------------------------------------------------------:|:------------------------------------------------------------------:|:---------------------------------------------------------------------------------:|
 | <ItemImage id="expatternprovider:pattern_provider_upgrade" scale="3"></ItemImage> |    <ItemImage id="ae2:pattern_provider" scale="3"></ItemImage>     |   <ItemImage id="expatternprovider:ex_pattern_provider" scale="3"></ItemImage>    |
 | <ItemImage id="expatternprovider:pattern_provider_upgrade" scale="3"></ItemImage> | <ItemImage id="ae2:cable_pattern_provider" scale="3"></ItemImage>  | <ItemImage id="expatternprovider:ex_pattern_provider_part" scale="3"></ItemImage> |
 |    <ItemImage id="expatternprovider:interface_upgrade" scale="3"></ItemImage>     |        <ItemImage id="ae2:interface" scale="3"></ItemImage>        |       <ItemImage id="expatternprovider:ex_interface" scale="3"></ItemImage>       |

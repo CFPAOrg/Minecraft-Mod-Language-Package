@@ -1,6 +1,6 @@
 ---
 navigation:
-    title: AE2扩展
+    title: AE2扩展介绍
     position: 60
 ---
 

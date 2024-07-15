@@ -17,4 +17,4 @@ item_ids:
 <ItemImage id="expatternprovider:infinity_cell" scale="4"></ItemImage>
 </Row>
 
-它们存储的有21亿的物品/液体！并且你可以从中无限地提取圆石/水，或者无限地存入圆石/水。
+它们存储有21亿的物品/流体！并且你可以从中无限地提取圆石/水，或者无限地存入圆石/水。
