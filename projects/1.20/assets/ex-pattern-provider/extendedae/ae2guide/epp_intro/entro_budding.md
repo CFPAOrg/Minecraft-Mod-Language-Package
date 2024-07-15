@@ -30,4 +30,4 @@ progressing of Budding Entroized Fluix is unavoidable, and finally it will be tu
 Theoretically, you can get ~10 <ItemLink id="extendedae:entro_crystal" />s from a Fully Entroized Fluix without fortune enchantment.
 
 Budding Entroized Fluix will always drop **one** <ItemLink id="extendedae:entro_dust" /> when broken, regardless what state it's in.
-Entro bud will drop <ItemLink id="extendedae:entro_shard" /> when it isn't fully grown.
+Entro bud won't drop **anything** when it isn't fully grown.
