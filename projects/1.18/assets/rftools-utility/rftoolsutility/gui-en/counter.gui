@@ -1,0 +1,22 @@
+window {
+    size(200,30)
+
+    bind('counter','counter')
+    bind('current','current')
+
+    panel('','vertical') {
+        bgthickness(2)
+        panel('','horizontal') {
+            label('','Counter:')
+            integerfield('counter') {
+                channel('counter')
+                tooltips('Set the counter in pulses')
+            }
+            label('','Current:')
+            integerfield('current') {
+                channel('current')
+                tooltips('Set the current value','(fires when it reaches counter)')
+            }
+        }
+    }
+}
