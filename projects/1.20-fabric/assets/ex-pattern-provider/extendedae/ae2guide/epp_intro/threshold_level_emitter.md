@@ -15,7 +15,7 @@ item_ids:
   <ImportStructure src="../structure/cable_threshold_level_emitter.snbt"></ImportStructure>
 </GameScene>
 
-它的工作模式类似于锁存器。当网络中物品的数量高于上限阈值时会一直输出红石信号，直到数量低于下限阈值时才会关闭红石信号。
+它的工作模式类似于RS锁存器。当网络中物品的数量高于上限阈值时会一直输出红石信号，直到数量低于下限阈值时才会重新停止输出。
 
 例如，将下限阈值设为100，上限阈值设为150。
 

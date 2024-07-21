@@ -19,5 +19,5 @@ item_ids:
 
 它可以同时运行8个合成任务（你需要确保你的ME网络中存在<ItemLink id="ae2:crafting_accelerator" />），并且比普通的快两倍。
 
-然而，它只支持来自<ItemLink id="ae2:pattern_provider" />的合成请求，所以不能直接放一个样板进去。
+然而，它只支持来自<ItemLink id="ae2:pattern_provider" />的合成请求，所以不能直接向其中放入样板。
 

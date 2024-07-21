@@ -15,7 +15,7 @@ item_ids:
   <ImportStructure src="../structure/cable_tag_storage_bus.snbt"></ImportStructure>
 </GameScene>
 
-ME标签存储总线的性质与<ItemLink id="ae2:storage_bus" />相同，但你可以通过物品/流体的标签进行过滤，并且支持一些基本的运算符。
+ME标签存储总线的性质与<ItemLink id="ae2:storage_bus" />相同，但你可以通过物品/流体的标签进行过滤。它也支持一些基本的逻辑运算符。
 
 下面是一些例子：
 

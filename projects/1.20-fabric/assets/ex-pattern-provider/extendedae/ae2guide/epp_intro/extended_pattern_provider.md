@@ -22,6 +22,6 @@ item_ids:
 
 ME扩展样板供应器是具有更多样板槽位的<ItemLink id="ae2:pattern_provider" />。
 
-*”当你可以将所有样板都放在一个供应器中时，谁还需要子网。“*
+*“当你可以将所有样板都放在一个供应器中时，谁还需要子网。”*
 
 ![EPPGui](../pic/epp_gui.png)
