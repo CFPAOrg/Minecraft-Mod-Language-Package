@@ -108,7 +108,7 @@
     **若 `type` 的值为 `indirect`：** 引用给定的命名空间。对于这些文件，其*目标地址*中的*命名空间*将会自动替换为本策略所在的命名空间。（[示例](projects/1.20/assets/minecraft/minecraft/packer-policy.json)的第二条）
     - `source` string<br>引用命名空间所在文件夹的**完整地址**。
       
-    **若 `type` 的值为 `composition`：** 从给定的*组合文件*，直接生成语言文件（或部分）。这些组合文件可能不会被自动排除；可以考虑使用*局域配置*处理。<!--示例：macaws-->
+    **若 `type` 的值为 `composition`：** 从给定的*组合文件*，直接生成语言文件（或部分）。这些组合文件可能不会被自动排除；可以考虑使用*局域配置*处理。（[示例](projects/1.16/assets/macaws-bridges/mcwbridges/packer-policy.json)的第二条；[组合文件示例](projects/1.16/assets/macaws-bridges/mcwbridges/lang/zh_cn-composition.json)）
     - `source` string<br>引用组合文件的**完整地址**。
     - `destType` string<br>需要生成的语言文件的类型。可以为`json`或`lang`。
     
