@@ -13,4 +13,4 @@ item_ids:
 
 <BlockImage id="extendedae:ingredient_buffer" scale="8"></BlockImage>
 
-一个容器，最多可以存储36种任何类型的东西，包括但不限于物品和液体。
+一个容器，最多可以存储36种任何类型的东西，包括但不限于物品和流体。
