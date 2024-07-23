@@ -19,7 +19,7 @@ ME标签存储总线的性质与<ItemLink id="ae2:storage_bus" />相同，但你
 
 下面是一些例子：
 
-- 只接受原矿
+- 只接受粗矿
 
 使用Forge加载器时：forge:raw_materials/*
 
