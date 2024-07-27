@@ -1,0 +1,108 @@
+container {
+    slot('ghost') {
+        pos(154,24)
+    }
+    playerslots(10,70)
+}
+
+window {
+    size(180,152)
+
+    bind('type', 'type')
+    bind('area', 'area')
+    bind('group', 'group')
+    bind('number', 'number')
+
+    panel('','positional') {
+        bg1('rftoolsutility:textures/gui/sensor.png')
+        label('','Type:') {
+            hint(10,3,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        choicelabel('area') {
+            channel('area')
+            hint(60,19,80,14)
+            choices {
+                choice('Area 1') {
+                    tooltips('1 block in front of sensor')
+                }
+                choice('Area 3') {
+                    tooltips('3 blocks in front of sensor')
+                }
+                choice('Area 5') {
+                    tooltips('5 blocks in front of sensor')
+                }
+                choice('Area 3x3') {
+                    tooltips('3x3 blocks in front of sensor')
+                }
+                choice('Area 5x5') {
+                    tooltips('5x5 blocks in front of sensor')
+                }
+                choice('Area 7x7') {
+                    tooltips('7x7 blocks in front of sensor')
+                }
+            }
+        }
+        label('','Area:') {
+            hint(10,19,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        choicelabel('type') {
+            channel('type')
+            hint(60,3,80,14)
+            choices {
+                choice('Block') {
+                    tooltips('Detect if a certain type','of block is present')
+                }
+                choice('Fluid') {
+                    tooltips('Detect if a certain type','of fluid is present')
+                }
+                choice('Growth') {
+                    tooltips('Detect the growth percentage','of a crop')
+                }
+                choice('Entities') {
+                    tooltips('Count the amount of entities')
+                }
+                choice('Players') {
+                    tooltips('Count the amount of players')
+                }
+                choice('Hostile') {
+                    tooltips('Count the amount of hostile mobs')
+                }
+                choice('Passive') {
+                    tooltips('Count the amount of passive mobs')
+                }
+                choice('Items') {
+                    tooltips('Count the amount of items')
+                }
+            }
+        }
+        label('','Group:') {
+            hint(10,35,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        choicelabel('group') {
+            channel('group')
+            hint(60,35,80,14)
+            enableon('group')
+            choices {
+                choice('One') {
+                    tooltips('At least one detected','to match the sensor')
+                }
+                choice('All') {
+                    tooltips('All blocks in area','must match the sensor')
+                }
+            }
+        }
+        label('','Number:') {
+            hint(10,51,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        integerfield('number') {
+            channel('number')
+            hint(60,51,80,14)
+            enableon('number')
+            tooltips('Set a number specific to the type of sensor')
+        }
+    }
+}
