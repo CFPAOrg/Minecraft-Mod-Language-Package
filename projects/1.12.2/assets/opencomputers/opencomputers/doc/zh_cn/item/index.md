@@ -24,7 +24,7 @@
 * [调试卡](debugCard.md) (aka AMI)
 * [显卡](graphicsCard1.md)
 * [因特网卡](internetCard.md)
-* [连接卡](linkedCard.md)
+* [直连卡](linkedCard.md)
 * [网卡](lanCard.md)
 * [红石卡](redstoneCard1.md)
 * [无线网卡](wlanCard1.md)
@@ -33,7 +33,7 @@
 ### 升级
 * [天使方块升级](angelUpgrade.md)
 * [电池升级](batteryUpgrade1.md)
-* [扩展卡插槽](cardContainer1.md)
+* [扩展卡容器](cardContainer1.md)
 * [区块加载升级](chunkloaderUpgrade.md)
 * [合成升级](craftingUpgrade.md)
 * [数据库升级](databaseUpgrade1.md)
@@ -53,7 +53,7 @@
 * [储罐升级](tankUpgrade.md)
 * [牵引光束升级](tractorBeamUpgrade.md)
 * [交易升级](tradingUpgrade.md)
-* [升级插槽](upgradeContainer1.md)
+* [升级容器](upgradeContainer1.md)
 
 ### 机架设备
 * [机架式软驱](diskDriveMountable.md)

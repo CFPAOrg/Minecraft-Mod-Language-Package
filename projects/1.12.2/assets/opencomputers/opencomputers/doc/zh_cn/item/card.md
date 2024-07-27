@@ -2,4 +2,4 @@
 
 ![不可读取。](oredict:oc:materialCard)
 
-用于合成OC模组中扩展卡组件（例如[显卡](graphicsCard1.md)、[网卡](lanCard.md)）的通用合成材料。
+用OC模组中扩展卡组件（例如[显卡](graphicsCard1.md)、[网卡](lanCard.md)）的通用合成材料。
