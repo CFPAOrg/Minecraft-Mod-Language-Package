@@ -22,13 +22,13 @@
 	"debugify.env.client.desc": "只适用于客户端的修复。",
 	"debugify.env.server": "主要",
 	"debugify.env.server.desc": "适用于客户端和服务器与它们之间的共同代码的修复。",
-	"debugify.no_yacl.title": "未安装 YetAnotherConfigLib！",
-	"debugify.no_yacl.description": "要使用 GUI 配置 Debugify，你必须安装%s，这是此功能的前置。你也可以在储存于“%s”的JSON文件中修改配置。",
+	"debugify.no_yacl.title": "未安装YetAnotherConfigLib！",
+	"debugify.no_yacl.description": "要使用GUI配置Debugify，你必须安装%s，这是此功能的前置。你也可以在储存于“%s”的JSON文件中修改配置。",
 
 	"debugify.mc_237493.header": "遥测已由 Debugify 关闭",
-	"debugify.mc_237493.line": "你在遥测选项上选择了“%s”，因此 Debugify 正在阻止与 Mojang 的遥测服务的所有连接。这是由 Debugify 提供的MC-237493修复。",
-	"debugify.mc_237493.tooltip.off": "“%s”完全禁用了与 Mojang 遥测服务的任何连接。（Debugify MC-237493）",
-	"debugify.mc_237493.tooltip.minimal": "“%s”只包括 Mojang 认为需要的信息。",
+	"debugify.mc_237493.line": "你在遥测选项上选择了“%s”，因此Debugify正在阻止与Mojang的遥测服务的所有连接。这是由 Debugify 提供的MC-237493修复。",
+	"debugify.mc_237493.tooltip.off": "“%s”完全禁用了与Mojang遥测服务的任何连接。（Debugify MC-237493）",
+	"debugify.mc_237493.tooltip.minimal": "“%s”只包括Mojang认为需要的信息。",
 	"debugify.mc_237493.tooltip.all": "“%s”包括所有的最少和可选遥测。",
 
 	"debugify.fix_explanation.mc-55347": "断开连接后清除屏幕标题。",
@@ -48,7 +48,7 @@
 	"debugify.fix_explanation.mc-197260": "覆盖传递给盔甲架渲染器的光照等级，最大值为：盔甲架下方的方块、盔甲架底部、盔甲架顶部和盔甲架上方的方块。",
 	"debugify.fix_explanation.mc-237493": "在遥测菜单中添加一个选项以完全禁用遥测。通过将所有传出的遥测事件覆盖为未发送的空遥测事件，可以禁用遥测。",
 
-	"debugify.fix_explanation.mc-2025": "由于浮点数不准确，有时实体的判定箱会比期望的稍小。然后，如果在实体相互挤压之前发生这种情况，它们将穿进墙里。然后，当在方块负载上重新计算AABB时，它们将被确定为墙内，然后被推到墙内。此修复程序只需将“AABB”标记写入具有双精度大小的判定箱实体NBT数据，然后将其重新加载。",
+	"debugify.fix_explanation.mc-2025": "由于浮点数精度问题，有时实体的碰撞框大小会比预期稍小。如果实体被推到一起之前这种情况发生了，碰撞框可能会与墙壁交叉。在区块加载时重新计算轴对齐包围盒（AABB）时，因为这些实体会被确定为在墙内，所以会被推动。这个修复程序先向实体的NBT数据中写入一个双精度碰撞框大小的‘AABB’标签，再被加载回来使用。",
 	"debugify.fix_effect.mc-2025": "这个修复意味着第一次加载Debugify将不会解决问题，直到方块被保存并与Debugify一起加载。",
 	"debugify.fix_explanation.mc-7569": "在每个系统消息的末尾换行。",
 	"debugify.fix_explanation.mc-30391": "增加了对鸡、烈焰人和凋灵掉落伤害的边缘情况检查，避免产生粒子。",
