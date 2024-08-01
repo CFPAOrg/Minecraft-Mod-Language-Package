@@ -1,0 +1,299 @@
+    window {
+        size(180,152)
+
+        action('restart','restart')
+
+        bind('redstone','rsmode')
+        bind('silent','silent')
+        bind('entities','entities')
+        bind('wait','wait')
+        bind('loop','loop')
+        bind('hilight','hilight')
+        bind('support','support')
+        bind('mode', 'mode')
+        bind('rotate', 'rotate')
+
+        panel('','positional') {
+            bg1('rftoolsbuilder:textures/gui/builder.png')
+            energybar('energybar') {
+                hint(10,6,8,59)
+                showtext(false)
+            }
+            panel('','positional') {
+                hint(19,6,61,59)
+                bgthickness(-2)
+                bgfilled1(-7631989)
+                choicelabel('mode') {
+                    channel('mode')
+                    hint(9,4,42,14)
+                    enableon('validcard')
+                    tooltips('设置建造模式')
+                    choices {
+                        choice('Copy') {
+                            tooltips('将记录的空间复制至此','其上方或下方需放置含材料的箱子')
+                        }
+                        choice('Move') {
+                            tooltips('将记录的空间移动至此')
+                        }
+                        choice('Swap') {
+                            tooltips('将记录的空间与此交换')
+                        }
+                        choice('Back') {
+                            tooltips('将此移动至记录的空间')
+                        }
+                        choice('Collect') {
+                            tooltips('收集记录的空间中掉落物','物品会传输到上方或下方的箱子中')
+                        }
+                    }
+                }
+            imagechoicelabel('silent') {
+                channel('silent')
+                hint(4,18,17,17)
+                tooltips('移动方块时','消除放置/破坏方块的声音')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(176,48,256,256)
+                choices {
+                    choice('off') {
+                        uv(176,48)
+                        tooltips('移动方块将发出声音')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(160,48)
+                        tooltips('移动方块不会发出声音')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            imagechoicelabel('support') {
+                channel('support')
+                hint(22,18,17,17)
+                tooltips('移动时显示支持的方块','适用于流体、砂砾……')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(112,48,256,256)
+                choices {
+                    choice('off') {
+                        uv(112,48)
+                        tooltips('关闭预览模式')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(96,48)
+                        tooltips('开启预览模式')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            imagechoicelabel('entities') {
+                channel('entities')
+                hint(4,37,17,17)
+                tooltips('移动实体')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(144,48,256,256)
+                choices {
+                    choice('off') {
+                        uv(144,48)
+                        tooltips('不移动实体')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(128,48)
+                        tooltips('移动实体')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            imagechoicelabel('loop') {
+                channel('loop')
+                hint(22,37,17,17)
+                tooltips('循环模式')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(208,48,256,256)
+                choices {
+                    choice('off') {
+                        uv(208,48)
+                        tooltips('运行一次后即停止')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(192,48)
+                        tooltips('接收到红石信号持续运行')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            imagechoicelabel('wait') {
+                hint(40,18,17,17)
+                tooltips('等待模式')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(96,80,256,256)
+                choices {
+                    choice('off') {
+                        uv(112,80)
+                        tooltips('跳过无法操作区域',)
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(96,80)
+                        tooltips('遇到不可操作位置时进行等待',)
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            imagechoicelabel('hilight') {
+                channel('hilight')
+                hint(40,37,17,17)
+                tooltips('高亮显示')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(144,80,256,256)
+                choices {
+                    choice('off') {
+                        uv(144,80)
+                        tooltips('无特殊显示')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(128,80)
+                        tooltips('高亮建造机工作位置',)
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+        }
+        panel('','positional') {
+            hint(128,6,44,59)
+            bgthickness(-2)
+            bgfilled1(-7631989)
+            choicelabel('rotate') {
+                channel('rotate')
+                hint(4,4,36,14)
+                enableon('validcard')
+                tooltips('设定水平旋转角')
+                choices {
+                    choice('0')
+                    choice('90')
+                    choice('180')
+                    choice('270')
+                }
+            }
+            imagechoicelabel('anchor0') {
+                channel('anchor')
+                hint(4,37,17,17)
+                tooltips('设定建造机工作基点','','')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(96,64,256,256)
+                choices {
+                    choice('off') {
+                        uv(112,64)
+                        tooltips('西南角')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(96,64)
+                        tooltips('西南角')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            imagechoicelabel('anchor1') {
+                channel('anchor')
+                hint(23,37,17,17)
+                tooltips('设定建造机工作基点','','')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(144,64,256,256)
+                choices {
+                    choice('off') {
+                        uv(144,64)
+                        tooltips('东南角')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(128,64)
+                        tooltips('东南角')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            imagechoicelabel('anchor2') {
+                channel('anchor')
+                hint(4,18,17,17)
+                tooltips('设定建造机工作基点','','')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(176,64,256,256)
+                choices {
+                    choice('off') {
+                        uv(176,64)
+                        tooltips('西北角')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(160,64)
+                        tooltips('西北角')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            imagechoicelabel('anchor3') {
+                channel('anchor')
+                hint(23,18,17,17)
+                tooltips('设定建造机工作基点','','')
+                border(true)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(208,64,256,256)
+                choices {
+                    choice('off') {
+                        uv(208,64)
+                        tooltips('东北角')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('on') {
+                        uv(192,64)
+                        tooltips('东北角')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+        }
+        button('','?') {
+            channel('cardgui')
+            hint(83,12,13,12)
+            tooltips('打开卡片GUI')
+        }
+        button('level','Y: stop') {
+            channel('restart')
+            hint(81,31,45,13)
+            tooltips('建造机当前工作高度','按下以重启')
+        }
+        imagechoicelabel('redstone') {
+            hint(106,46,16,16)
+            image('rftoolsbase:textures/gui/guielements.png')
+            dim(32,0,256,256)
+            choices {
+                choice('Ignored') {
+                    uv(0,0)
+                    tooltips('红石模式：','忽略')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('Off') {
+                    uv(16,0)
+                    tooltips('红石模式：','低信号')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('On') {
+                    uv(32,0)
+                    tooltips('红石模式：','高信号')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+            }
+        }
+    }
+}
