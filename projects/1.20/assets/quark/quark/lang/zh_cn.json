@@ -170,6 +170,9 @@
 	"quark.camera.reset": "重置设置（需按住潜行键）",
 	"quark.camera.greetings": "来自%s的问候！",
 
+	"death.attack.quark.pickarang": "%1$s被%2$s折返的皮卡镖偷袭了",  // TODO: 还需要继续推敲
+	"death.attack.quark.pickarang.item": "%1$s惊讶于%2$s的%3$s会折返",  // TODO: 还需要继续推敲
+
 	"quark.jei.makes_copy": "制作副本",
 	"quark.jei.any_enchanted": "任何已附魔物品",
 	"quark.jei.influence": "矩阵附魔影响",
@@ -2666,8 +2669,8 @@
 
 	"quark.config.world.fallen_logs.name": "倒下的原木",
 	"quark.config.world.fallen_logs.desc": "不常见的水平原木，会与叶子一起生成，启用空心原木时会使用空心原木。",
-	"quark.config.world.fallen_logs.use_hollow_logs.name": "使用空心原木",
-	"quark.config.world.fallen_logs.use_hollow_logs.desc": "需要一并启用空心原木模块。",
+	"quark.config.world.fallen_logs.hollow_chance.name": "空心几率",
+	"quark.config.world.fallen_logs.hollow_chance.desc": "生成的原木中，空心原木的百分比。需要启用空心原木模块。",
 	"quark.config.world.fallen_logs.rarity.name": "稀有度",
 	"quark.config.world.fallen_logs.on_water_chance.name": "水上几率",
 	"quark.config.world.fallen_logs.on_water_chance.desc": "原木在水面上生成的几率。",
@@ -3196,6 +3199,10 @@
 	"quark.config.experimental.game_nerfs.disable_tripwire_hook_dupe.desc": "使绊线钩无法被复制。",
 	"quark.config.experimental.game_nerfs.disable_wool_drops.name": "禁用羊毛掉落",
 	"quark.config.experimental.game_nerfs.disable_wool_drops.desc": "杀死羊后不再掉落羊毛。",
+	"quark.config.experimental.game_nerfs.village_spawn_nerf.name": "村庄出生点削弱",
+	"quark.config.experimental.game_nerfs.village_spawn_nerf.desc": "使村庄在出生点附近更少生成。",
+	"quark.config.experimental.game_nerfs.village_spawn_nerf_distance.name": "村庄出生点削弱距离",
+	"quark.config.experimental.game_nerfs.village_spawn_nerf_distance.desc": "村庄正常生成所需的距离。削弱效果从世界出生点开始到此距离间线性变化。",
 	"quark.config.experimental.game_nerfs.elytra_allowed_dimensions.name": "允许使用鞘翅的维度",
 	"quark.config.experimental.game_nerfs.enable_dimension_locked_elytra.name": "鞘翅锁定维度",
 	"quark.config.experimental.game_nerfs.enable_dimension_locked_elytra.desc": "强制鞘翅只能在特定维度中使用。",
@@ -3282,7 +3289,7 @@
 	"quark.config.oddities.crate.max_items.name": "物品数量上限",
 
 	"quark.config.oddities.magnets.name": "磁铁",
-	"quark.config.oddities.magnets.desc": "磁铁是一种新的技术方块，可以移动金属方块与磁性实体（包括身着磁性盔甲的实体）。前述金属方块的默认定义：制作材料包含铁/铜/重力沙子的方块。充能后，磁铁的正面（红色）会像活塞一样推动方块，而背面会将方块拉向它。\n当多个磁铁对同一个方块施加力时，力最大的磁铁生效。磁铁施加于方块的力=它接收到的红石信号等级-它到方块的距离。\n以下方块具有自定义行为，在移动时会执行特殊操作：\n(1) 漏斗移动时，会掉落一件内容物。如果这件物品是种子，它会在前方（与移动方向垂直）或下面一格种植该种子。\n(2) 切石机移动时，会破坏它上面的任何方块。但这种方式无法破坏硬度很高的方块，例如黑曜石。\n(3) 炼药锅移动时，内容物也会随之移动。（这不是真正的自定义行为，因为任何凹形方块都会这样做，但这一点很值得注意）",
+	"quark.config.oddities.magnets.desc": "磁铁是一种新的技术方块，可以移动金属方块与磁性实体（包括身着磁性盔甲的实体）。前述金属方块的默认定义：制作材料包含铁/铜/重力沙子的方块。充能后，磁铁的正面（红色）会像活塞一样推动方块，而背面会将方块拉向它。\n当多个磁铁对同一个方块或实体施加力时，力最大的磁铁生效。磁铁施加于方块的力=它接收到的红石信号等级-它到方块的距离。施加于实体的力则遵循平方反比定律。\n以下方块具有自定义行为，在移动时会执行特殊操作：\n(1) 漏斗移动时，会掉落一件内容物。如果这件物品是种子，它会在前方（与移动方向垂直）或下面一格种植该种子。\n(2) 切石机移动时，会破坏它上面的任何方块。但这种方式无法破坏硬度很高的方块，例如黑曜石。\n(3) 炼药锅移动时，内容物也会随之移动。（这不是真正的自定义行为，因为任何凹形方块都会这样做，但这一点很值得注意）",
 	"quark.config.oddities.magnets.magnetic_derivation_list.name": "磁性根源物品列表",
 	"quark.config.oddities.magnets.magnetic_derivation_list.desc": "此列表中的物品作为材料时会传递磁性性质，这样，由它们制成的任何方块都可以磁化。",
 	"quark.config.oddities.magnets.magnetic_whitelist.name": "磁性白名单",
@@ -3291,6 +3298,8 @@
 	"quark.config.oddities.magnets.magnetic_blacklist.desc": "无视合成配方，强制消除磁性的方块/物品ID列表。",
 	"quark.config.oddities.magnets.use_pre_end_recipe.name": "使用末地前配方",
 	"quark.config.oddities.magnets.use_pre_end_recipe.desc": "将配方中的紫颂果替换为铜锭。",
+	"quark.config.oddities.magnets.use_piston_logic.name": "使用活塞逻辑",
+	"quark.config.oddities.magnets.use_piston_logic.desc": "设为true后，磁铁将不会移动活塞无法移动的方块。要进一步控制，请禁用此项。举个例子：禁用后，铁杆可以破坏黑曜石。",
 	"quark.config.oddities.magnets.affect_entities.name": "影响实体",
 	"quark.config.oddities.magnets.affect_entities.desc": "允许磁铁排斥/牵引「affected_by_magnets」标签（使用数据包来编辑它）中的实体。关闭后可以减缓卡顿。",
 	"quark.config.oddities.magnets.affects_armor.name": "影响盔甲",
