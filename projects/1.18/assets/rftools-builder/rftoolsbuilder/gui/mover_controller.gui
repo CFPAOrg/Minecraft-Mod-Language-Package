@@ -1,0 +1,82 @@
+window {
+    size(256,236)
+    bind('x','x')
+    bind('y','y')
+    bind('z','z')
+
+    panel('','positional') {
+        bg1('rftoolsbuilder:textures/gui/mover_controller.png')
+        energybar('energybar') {
+            hint(10,10,45,10)
+            showtext(false)
+            horizontal(true)
+        }
+
+        button('scan','扫描') {
+            channel('scan')
+            hint(60,10,60,14)
+            tooltips('扫描传运器方块')
+        }
+
+        button('move','转运') {
+            channel('move')
+            hint(130,10,60,14)
+            tooltips('转移选中载具至所选节点')
+        }
+
+        panel('','horizontal') {
+            hint(5,24,120,182)
+            widgetlist('nodes') {
+                channel('nodes')
+                bgthickness(-1)
+                bgfilled1(-7631989)
+                rowheight(16)
+                propagate(true)
+            }
+            slider {
+                desired(10,-1)
+                scrollable('nodes')
+            }
+            spacing(1)
+            horizmargin(3)
+        }
+
+        panel('','horizontal') {
+            hint(130,24,120,182)
+            widgetlist('vehicles') {
+                channel('vehicles')
+                bgthickness(-1)
+                bgfilled1(-7631989)
+                rowheight(16)
+                propagate(true)
+            }
+            slider {
+                desired(10,-1)
+                scrollable('vehicles')
+            }
+            spacing(1)
+            horizmargin(3)
+        }
+
+        panel('','horizontal') {
+            hint(5,210,250,20)
+            label('', 'Offset')
+            integerfield('x') {
+                channel('x')
+                minimum(-20)
+                maximum(20)
+            }
+            integerfield('y') {
+                channel('y')
+                minimum(-20)
+                maximum(20)
+            }
+            integerfield('z') {
+                channel('z')
+                minimum(-20)
+                maximum(20)
+            }
+        }
+
+    }
+}
