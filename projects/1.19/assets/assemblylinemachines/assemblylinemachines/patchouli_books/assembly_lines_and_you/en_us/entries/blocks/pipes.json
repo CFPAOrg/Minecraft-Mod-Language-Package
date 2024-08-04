@@ -1,0 +1,70 @@
+{
+	"name": "Pipes",
+	"category": "assemblylinemachines:blocks",
+	"icon": "assemblylinemachines:energy_pipe",
+	"pages":[
+		{
+			"type": "text",
+			"text": "Pipes, once you can make them, is a great way to transport power, liquid, and items around.$(p)Start by SHIFT-RIGHT CLICKING against two blocks you want to link, and connecting them with Pipes between them. Then, you can RIGHT-CLICK the connectors to configure them."
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping":{
+					"g": "assemblylinemachines:gearbox[facing=south,active=true]",
+					"c": "assemblylinemachines:crankmill",
+					"0": "assemblylinemachines:energy_pipe[south=pipe,north=connector]",
+					"x": "assemblylinemachines:energy_pipe[south=connector,north=pipe]",
+					"p": "assemblylinemachines:electric_purifier[facing=west]"
+				},
+				"pattern":[
+					["gc0xp"]
+				]
+			},
+			"name": "Pipe Demo",
+			"enable_visualize": false,
+			"text": "$(7)$(o)This is a simple demonstration of a basic Pipe Network."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/item_pipe",
+			"text": "The $(2)Basic Pipes$() are very simple. Their GUIs only have:$(li)An $(9)input$() button.$(li)An $(c)output$() button.$(br)Both can be toggled, so a block can input AND output materials."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/fluid_pipe",
+			"recipe2": "assemblylinemachines:crafting/pipes/energy_pipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/adv_item_pipe",
+			"text": "The $(2)Advanced Pipes$() gain:$(li)Transfer controls.$(li)Filter slots.$(li)$(l:items/upgrades)3 Upgrade slots.$(/l)"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/adv_fluid_pipe",
+			"recipe2": "assemblylinemachines:crafting/pipes/adv_energy_pipe"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/ultimate_item_pipe",
+			"text": "The $(2)Ultimate Pipes$() are the most advanced Pipes available. They do not gain features from Advanced Pipes, but the speed is greatly increased."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/ultimate_fluid_pipe",
+			"recipe2": "assemblylinemachines:crafting/pipes/ultimate_energy_pipe"
+		},
+		{
+			"type": "text",
+			"title": "Omnipipes",
+			"text": "Finally, there are the $(2)Omnipipes.$()$(p)These unique pipes are special in that they transport items, energy, and liquids all within the same pipe.$(p)All pipes have three configurable I/O buttons for each channel."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/pipes/advanced_omnipipe",
+			"recipe2": "assemblylinemachines:crafting/pipes/ultimate_omnipipe"
+		}
+	]
+	
+}

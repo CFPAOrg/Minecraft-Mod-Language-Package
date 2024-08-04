@@ -1,0 +1,113 @@
+{
+	"name": "熵反应堆",
+	"category": "assemblylinemachines:blocks",
+	"icon": "assemblylinemachines:entropy_reactor_core",
+	"pages":[
+		{
+			"type": "text",
+			"text": "熵反应堆是你游戏后期的发电方式，若使用得当，这个结构可以产生非常巨大的能量。$(p)继续阅读以了解如何建造它。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/entropy_reactor_block",
+			"recipe2": "assemblylinemachines:crafting/entropy_reactor_core"
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping":{
+					"a": "assemblylinemachines:entropy_reactor_block",
+					"0": "assemblylinemachines:entropy_reactor_core"
+				},
+				"pattern":[
+					["aaa", "aaa", "aaa"], ["aaa", "a0a", "aaa"], ["aaa", "aaa", "aaa"]
+				]
+			},
+			"name": "熵反应堆",
+			"text": "$(7)$(o)这是它的建造方式,需要26个熵反应堆方块和一个放在中间的熵反应堆核心。"
+		},
+		{
+			"type": "text",
+			"text": "搭建完成后，SHIFT并右键任意一面的中心方块使结构成立。$(p)这个结构外部有四个重要的方块：$(li)$(3)屏幕$()，在结构的前方，你可以在此访问机器。$(li)$(4)能量端口$()，在屏幕的左侧，允许输出能量$(li)$(9)物品端口$()，在屏幕的右侧以及后面，允许输入燃料以及输出废料。"
+		},
+		{
+			"type": "text",
+			"text": "熵反应堆的基本功能是燃烧由$(l:blocks/liquids#condensed_void)浓缩虚空$()产生的$(5)腐化碎片$()。$(p)反应堆待机时可以通过任意物品端口输入碎片。当碎片输入后，反应堆会进入持续15秒的暖机时间，之后会燃烧内部所有碎片并产生巨大的能量爆发。$(p)更多的碎片会增加产能效率, 但若是想增加能量爆发的持续时间，你需要增加你的$(6)多样化评级（Variety Rating）$()。$(p)这是每一次产能周期中的百分比参数，会根据你制作碎片的物品种数而增加。"
+		},
+		{
+			"type": "text",
+			"text": "例如，使用20个相同物品制作的腐化碎片将产生6000FE/t的能量爆发，但是由于多样化评级极低，能量爆发只会持续1秒钟，总共生成120KFE。$(p)相比之下，在一次产能周期中加入20个完全不同的物品转化的碎片也会产生6000FE/t的能量爆发，但却会持续10秒之久，总共产生1.1MFE。$(p)$(d)总而言之，少而独特的物品输入是优于多而相同的物品输入的。"
+		},
+		{
+			"type": "text",
+			"text": "当然，避免低效的产能并非维持高$(6)多样化评级$()的唯一原因。$(br)长期维持较低的$(6)多样化评级$()将使你的堆芯充满$(c)熵（Entropy）$()，这是一种危险的化合物，含量越高越容易产生负面影响。$(br)$(c)如果堆芯完全饱和，反应堆将会爆炸。$()$(p)通过提高$(6)多样化评级$()，熵含量会再次变低。"
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:semi_dense_neutron_matter",
+			"title": "半致密中子物质",
+			"link_recipe": true,
+			"text": "与能量一同诞生的还有$(2)废料$()。产生的废料类型与$(6)多样化评级有关$()，更高的评级会产生更优质的废料。$(p)品质最低的废料是$(3)半致密中子物质$()。每当不满足其他废料的生成条件时，就会产生该物质。"
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:quark_matter",
+			"link_recipe": true,
+			"text": "$(9)夸克物质$()是熵反应堆产生的中等品质的废料。这种物质在$(6)多样化评级$()大于20%时产生。"
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:strange_matter",
+			"link_recipe": true,
+			"text": "$(2)奇异物质$()是熵反应堆产生的最稀有的废料。只有在$(6)多样化评级$()大于80%时才会产生。$(p)除了能作为通用的反应堆废料参与合成外，它在部分配方里是不可替代的。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/upgrades/entropy_reactor_upgrade_capacity",
+			"title": "容量升级",
+			"text": "$(2)容量升级$()会增加内部$(d)腐化碎片$()的容量,允许在每个产能周期中装填超过20个腐化碎片。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/upgrades/entropy_reactor_upgrade_cycle_delayer",
+			"title": "周期延时器",
+			"text": "$(2)周期延时器升级$()增加了反应堆启动时的暖机时间，允许你有更多的时间装载$(d)腐化碎片$()。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/upgrades/entropy_reactor_upgrade_variety",
+			"title": "多样化升级",
+			"text": "$(2)多样化升级$()提供了更高的$(6)多样化评级$()上限，甚至允许评级超过100%$(p)$(c)警告：它同样会降低多样化评级的下限。"
+		},
+		{
+			"type": "entity",
+			"entity": "assemblylinemachines:corrupt_shell",
+			"anchor": "corruptshell",
+			"scale": 0.85
+		},
+		{
+			"type": "text",
+			"text": "$(d)腐化躯壳$()是一种高$(c)熵$()堆芯的副产物，为了降低$(c)熵$()含量，堆芯会在反应堆周围生成这些生物。$(p)这种生物速度极快，非常强大，能在很远的地方发现并锁定你。不管怎样, $(thing)他们的掉落物以后也许会派上用场。"
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:galactic_flesh",
+			"link_recipe": true,
+			"text": "这是$(item)银河肉块$()，这个物品掉落自$(d)腐化躯壳$()，$(p)吃下它会恢复一些饥饿值并提供一个完全随机的药水效果。"
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:reality_crystal",
+			"link_recipe": true,
+			"text": "这是$(item)现实水晶$()，一种$(d)腐化躯壳$()掉落的极其罕见的掉落物。 $(thing)抢夺$()附魔会增加获得它的概率。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/upgrades/entropy_reactor_upgrade_entropic_harnesser",
+			"title": "熵约束器升级",
+			"anchor": "entropicharnesser",
+			"text": "$(2)熵约束器升级$()会使反应堆只产生$(c)熵$()而非FE，并且只会产生$(d)世界腐化（World Corruption）$()而非其他负面影响。"
+		}
+		
+	]
+}
