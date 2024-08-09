@@ -56,7 +56,7 @@
 
 ### 词典
 
-- [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Wiktionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page)
+- [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Wiktionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page)（访问可能受阻）
 - [词源在线](https://www.etymonline.com/cn)
 - [汉典](https://www.zdic.net/)
 - [新华字典](https://www.cp.com.cn/book/506a1433-6.html)丨[现代汉语词典](https://www.cp.com.cn/book/6afc8cd8-c.html)
