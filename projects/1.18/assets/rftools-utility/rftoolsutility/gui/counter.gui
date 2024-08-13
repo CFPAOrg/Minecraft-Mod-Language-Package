@@ -1,0 +1,22 @@
+window {
+    size(200,30)
+
+    bind('counter','counter')
+    bind('current','current')
+
+    panel('','vertical') {
+        bgthickness(2)
+        panel('','horizontal') {
+            label('','阈值：')
+            integerfield('counter') {
+                channel('counter')
+                tooltips('设置红石脉冲计数阈值')
+            }
+            label('','当前：')
+            integerfield('current') {
+                channel('current')
+                tooltips('当前已接受脉冲数','（达到阈值后发出红石信号）')
+            }
+        }
+    }
+}

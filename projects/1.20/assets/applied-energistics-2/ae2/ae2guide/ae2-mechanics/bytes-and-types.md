@@ -2,7 +2,7 @@
 navigation:
   parent: ae2-mechanics/ae2-mechanics-index.md
   title: 字节与类型
-  icon: creative_item_cell
+  icon: creative_storage_cell
 ---
 
 # 字节与类型

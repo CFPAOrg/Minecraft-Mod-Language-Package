@@ -60,6 +60,12 @@ item_ids:
 
 若存储元件为空，则可手持Shift右击以将存储组件从元件外壳中取出。
 
+<Row>
+    <Recipe id="upgrade/item_storage_cell_1k_to_4k" />
+
+    在合成网格中将存储元件与更高级的存储组件合成，即可将其升级为更高级的存储元件。元件内的事物会保留，同时会返还较低级的存储组件。
+</Row>
+
 ## 存储容量与类型数变化关系
 
 [每类型预先占用量](../ae2-mechanics/bytes-and-types.md)设计为：存有1个类型的元件的容量是存满63个元件的容量的两倍。
@@ -219,12 +225,10 @@ item_ids:
   </Row>
 </Column>
 
-# 创造物品元件与创作流体元件
+# 创造存储元件
 
 <Row>
-  <ItemImage id="creative_item_cell" scale="2" />
-
-  <ItemImage id="creative_fluid_cell" scale="2" />
+  <ItemImage id="creative_storage_cell" scale="2" />
 </Row>
 
-创造物品元件与创作流体元件**并不能提供无限存储空间**。它们是所[分区](cell_workbench.md)物品或流体的无限供应源和销毁池。
+创造元件**并不能提供无限存储空间**。它们是所[分区](cell_workbench.md)物品或流体的无限供应源和销毁池。
