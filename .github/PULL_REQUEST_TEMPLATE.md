@@ -1,10 +1,11 @@
 <!--
-要勾选下面的复选框，可以将文本[ ]改为[x]，注意别误删前后的空格。
-务必认真阅读并完成此检查单。如有其他需说明的事项请写在检查单之前。
-若对检查单有疑惑，请查看Issues列表的 #2539 “检查单”使用说明 & 错误“检查单”使用情况报告
--->
+提交PR前请认真阅读下列文件：
+贡献方针：https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md
 
-- [ ] 我已**仔细**阅读贡献指南 [CONTRIBUTING](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md)；
-- [ ] 我已确认英文原文（如 en_us.json）存在且完整，内容与中文对应；
-- [ ] 我已阅读并同意按 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh) 协议发布我的作品；
-- [ ] 刷新 PR 的标签/状态，有需要再点击；
+你好！如果你是第一次提交 PR，请阅读下面的话：
+请务必做好下面两件事情，一定一定不要提交了就不管了哦（这样会被拒收的哦）：
+- 签署 CLA（贡献者许可协议；在 https://cla-assistant.io/CFPAOrg/Minecraft-Mod-Language-Package 签署）
+- 等待审核者审核，并根据审核者的提示（邮件会发送）修改你提交的文件（修改方法可以参考 https://cfpa.cyan.cafe/Azusa/img/tip1.png ）
+如果你访问 GitHub 较慢或根本无法访问，可以前往 https://cfpa.cyan.cafe/Azusa/GitHubInCNHelper 查看一些辅助访问的手段。
+再次非常感谢你的提交。
+-->
