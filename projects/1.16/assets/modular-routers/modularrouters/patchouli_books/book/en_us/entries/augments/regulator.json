@@ -1,0 +1,27 @@
+{
+  "name": "Regulator Augment",
+  "category": "augments",
+  "icon": "modularrouters:regulator_augment",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This augment allows for precise control over how many items may be sent to or pulled from an inventory, or the router's buffer.$(p)When a module has a Regulator Augment, you will see an extra numeric textfield in its GUI where you can configure a limit. This limit is interpreted differently depending on the particular module:"
+    },
+    {
+      "type": "text",
+      "text": "$(li)For the Sender $(l:modules/sender_1)Mk1/$ / $(l:modules/sender_2)Mk2/$ / $(l:modules/sender_3)Mk3/$ Modules and $(l:modules/player)Player Module/$ (in insert mode), the modules will only send an item to the inventory if there are fewer than the configured number of that item already in the inventory.$(li)For the Puller $(l:modules/puller_1)Mk1/$ / $(l:modules/puller_2)Mk2/$ and $(l:modules/player)Player Module/$ (in extract mode), the modules will only pull an item from the inventory if there are more than the configured number of that item in the inventory."
+    },
+    {
+      "type": "text",
+      "text": "$(li)For the $(l:modules/dropper)Dropper/$, $(l:modules/flinger)Flinger/$, $(l:modules/placer)Placer/$ & $(l:modules/void)Void/$ Modules, the modules will only run if there are more than the configured number of that item in the router's buffer.$(li)For the $(l:modules/breaker)Breaker/$ & $(l:modules/vacuum)Vacuum/$ Modules, the modules will only run if there are fewer than the configured number of that item in the router's buffer."
+    },
+    {
+      "type": "text",
+      "text": "$(li)For the Fluid $(l:modules/fluid)Mk1/$ / $(l:modules/fluid_2)Mk2/$ modules, the limit can be a percentage of the target tank's capacity or an absolute amount in mB (selectable in the GUI) rather than a number of items. When pulling fluid, the module will only run if there is $(italic)more/$ fluid in the target than the configured amount; when pushing fluid, it will only run if there is $(italic)less/$ fluid than the configured amount."
+    },
+    {
+      "type": "crafting",
+      "recipe": "modularrouters:regulator_augment"
+    }
+  ]
+}
