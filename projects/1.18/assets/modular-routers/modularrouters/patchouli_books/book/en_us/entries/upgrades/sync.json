@@ -1,0 +1,27 @@
+{
+  "name": "Sync Upgrade",
+  "category": "upgrades",
+  "icon": "modularrouters:sync_upgrade",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This upgrade is used to guarantee that two or more routers run at the same time. The Sync Upgrade has a tuning value of 0 .. 19 (i.e. 1 less than the base router tick rate of 20). This tuning value can be set by $(thing)right-clicking/$ the Sync Upgrade to open its GUI, or quickly set to a random value by $(thing)sneak-right-clicking/$ the upgrade."
+    },
+    {
+      "type": "text",
+      "text": "Any routers with this upgrade installed, with same the tuning value, and with the same number of $(l:upgrades/speed)Speed Upgrades/$ installed, will always run on the same tick. The actual tuning value doesn't matter; only that the value is consistent across the routers you want to synchronise.$(p)This is particularly useful if you have a group of routers with $(l:modules/extruder_1)Extruder Modules/$ installed, and want to ensure all modules extend/retract at exactly the same time."
+    },
+    {
+      "type": "text",
+      "text": "Advanced notes #1: the Sync Upgrade's tuning value actually specifies precisely when the router will run relative to its tick rate. E.g. routers tick every 20 server ticks by default; a Sync Upgrade with a tuning upgrade of 15 ensures the router $(italic)always/$ runs 15 ticks after that, and that applies to $(italic)all/$ routers with a 15-tuned Sync Upgrade. And a 16-tuned Sync Upgrade always runs 1 tick after a 15-tuned Sync Upgrade, at least for routers with the same number of $(l:upgrades/speed)Speed Upgrades/$ installed..."
+    },
+    {
+      "type": "text",
+      "text": "Advanced notes #2: Because $(l:upgrades/speed)Speed Upgrades/$ make routers tick more frequently, they affect how Sync Upgrades work. A router with 9 Speed Upgrades ticks every 2 server ticks (instead of every 20). For Sync Upgrades in such a router, it only matters whether the tuning value is even or odd; 2 (or 4/6/8...) ticks later is effectively the same as 0 ticks later! General case: the tuning value is calculated modulo the router's actual tick rate after Speed Upgrades are accounted for."
+    },
+    {
+      "type": "crafting",
+      "recipe": "modularrouters:sync_upgrade"
+    }
+  ]
+}
