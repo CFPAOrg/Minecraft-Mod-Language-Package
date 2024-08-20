@@ -1,0 +1,113 @@
+window {
+    size(256,238)
+
+    event('remember','crafter.remember')
+    event('forget','crafter.forget')
+    event('redstone','mcjtylib.setRsMode')
+    event('apply','crafter.apply')
+    bind('speed','speedMode')
+    bind('internal','craftMode')
+    bind('keep','keepOne')
+
+    panel('','positional') {
+        bg1('rftoolsutility:textures/gui/crafter.png')
+        energybar('energybar') {
+            hint(12,141,10,76)
+            showtext(false)
+        }
+        choicelabel('keep') {
+            channel('keep')
+            hint(148,7,41,14)
+            choices {
+                choice('All') {
+                    tooltips('All items in input slots are consumed','?a(press Apply after changing)')
+                }
+                choice('Keep') {
+                    tooltips('Keep one item in every inventory slot','?a(press Apply after changing)')
+                }
+            }
+        }
+        choicelabel('internal') {
+            channel('internal')
+            hint(148,24,41,14)
+            tooltips(''Int' will put result of','crafting operation in','inventory instead of','output buffer')
+            choices {
+                choice('Ext') {
+                    tooltips('Result of crafting operation','will go to output buffer','?a(press Apply after changing)')
+                }
+                choice('Int') {
+                    tooltips('Result of crafting operation','will stay in input buffer','?a(press Apply after changing)')
+                }
+                choice('ExtC') {
+                    tooltips('Result of crafting operation','will go to output buffer','but remaining items (like','buckets) will stay in input','?a(press Apply after changing)')
+                }
+            }
+        }
+        widgetlist('recipes') {
+            channel('select')
+            hint(10,7,126,84)
+            bgthickness(-1)
+            bgfilled1(-7631989)
+        }
+        slider {
+            hint(137,7,10,84)
+            scrollable('recipes')
+        }
+        button('apply','Apply') {
+            channel('apply')
+            hint(212,65,34,16)
+            tooltips('Press to apply the','recipe to the crafter')
+        }
+        imagechoicelabel('redstone') {
+            channel('redstone')
+            hint(31,186,16,16)
+            image('rftoolsbase:textures/gui/guielements.png')
+            dim(0,0,256,256)
+            choices {
+                choice('Ignored') {
+                    uv(0,0)
+                    tooltips('Redstone mode:','Ignored')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('Off') {
+                    uv(16,0)
+                    tooltips('Redstone mode:','Off to activate')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('On') {
+                    uv(32,0)
+                    tooltips('Redstone mode:','On to activate')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+            }
+        }
+        imagechoicelabel('speed') {
+            channel('speed')
+            hint(49,186,16,16)
+            image('rftoolsbase:textures/gui/guielements.png')
+            dim(48,0,256,256)
+            choices {
+                choice('Slow') {
+                    uv(48,0)
+                    tooltips('Speed mode:','Slow')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('Fast') {
+                    uv(64,0)
+                    tooltips('Speed mode:','Fast')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+            }
+        }
+        button('','R') {
+            channel('remember')
+            hint(148,74,18,16)
+            tooltips('Remember the current items','in the internal and','external buffers')
+        }
+        button('','F') {
+            channel('forget')
+            hint(168,74,18,16)
+            tooltips('Forget the remembered layout')
+        }
+    }
+}
