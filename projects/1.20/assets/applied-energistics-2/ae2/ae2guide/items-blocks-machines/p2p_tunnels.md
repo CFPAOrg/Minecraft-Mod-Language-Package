@@ -47,6 +47,13 @@ P2P通道是在网络中传输物品、流体、红石信号、能量、光、[�
   <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
 
+以及传输频道的ME P2P通道。
+
+<GameScene zoom="4" background="transparent">
+  <ImportStructure src="../assets/assemblies/p2p_channels.snbt" />
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
 ## P2P通道的类型与调谐
 
 <GameScene zoom="6" background="transparent">
@@ -75,6 +82,10 @@ P2P通道的最常见用途便是通过ME P2P通道以高效传输[频道](../ae
 
   <BoxAnnotation color="#dddddd" min="1.3 1.3 6.3" max="2 2.7 6.7">
         石英纤维会在主网络和P2P子网络间传输能量。
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#dddddd" min="4.1 0 5.7" max="5 2.3 6.4">
+        可以直接让P2P通道传输面紧贴控制器，或者用线缆连接两者。
   </BoxAnnotation>
 
   <IsometricCamera yaw="225" pitch="30" />

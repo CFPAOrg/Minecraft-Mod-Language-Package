@@ -1,0 +1,108 @@
+container {
+    slot('ghost') {
+        pos(154,24)
+    }
+    playerslots(10,70)
+}
+
+window {
+    size(180,152)
+
+    bind('type', 'type')
+    bind('area', 'area')
+    bind('group', 'group')
+    bind('number', 'number')
+
+    panel('','positional') {
+        bg1('rftoolsutility:textures/gui/sensor.png')
+        label('','类型：') {
+            hint(10,3,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        choicelabel('area') {
+            channel('area')
+            hint(60,19,80,14)
+            choices {
+                choice('Area 1') {
+                    tooltips('传感器前1格区域内')
+                }
+                choice('Area 3') {
+                    tooltips('传感器前3格区域内')
+                }
+                choice('Area 5') {
+                    tooltips('传感器前5格区域内')
+                }
+                choice('Area 3x3') {
+                    tooltips('传感器前3x3区域内')
+                }
+                choice('Area 5x5') {
+                    tooltips('传感器前5x5区域内')
+                }
+                choice('Area 7x7') {
+                    tooltips('传感器前7x7区域内')
+                }
+            }
+        }
+        label('','范围：') {
+            hint(10,19,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        choicelabel('type') {
+            channel('type')
+            hint(60,3,80,14)
+            choices {
+                choice('Block') {
+                    tooltips('检测特定方块','的放置')
+                }
+                choice('Fluid') {
+                    tooltips('检测特定流体','的放置')
+                }
+                choice('Growth') {
+                    tooltips('检测作物','的生长值')
+                }
+                choice('Entities') {
+                    tooltips('统计实体数量')
+                }
+                choice('Players') {
+                    tooltips('统计玩家数量')
+                }
+                choice('Hostile') {
+                    tooltips('统计敌对生物的数量')
+                }
+                choice('Passive') {
+                    tooltips('统计中对生物的数量')
+                }
+                choice('Items') {
+                    tooltips('统计物品的数量')
+                }
+            }
+        }
+        label('','阈值：') {
+            hint(10,35,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        choicelabel('group') {
+            channel('group')
+            hint(60,35,80,14)
+            enableon('group')
+            choices {
+                choice('One') {
+                    tooltips('检测到一个','即发出红石信号')
+                }
+                choice('All') {
+                    tooltips('所有皆检测到','才发出红石信号')
+                }
+            }
+        }
+        label('','数量：') {
+            hint(10,51,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        integerfield('number') {
+            channel('number')
+            hint(60,51,80,14)
+            enableon('number')
+            tooltips('设定方块/流体/生物数量或作物生长值')
+        }
+    }
+}
