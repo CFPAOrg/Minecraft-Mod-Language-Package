@@ -1,4 +1,4 @@
-# item.diamondGearItem.name
+<chapter name="item.diamondGearItem.name"/>
 <lore>
 在你深入的采矿挖掘中，你发现了最稀有但也是最坚固的材料：钻石。
 由于其强度，钻石齿轮能够完成最苛刻的任务，而不会损坏或磨损。
