@@ -4,6 +4,6 @@
 由于其强度，钻石齿轮能够完成最苛刻的任务，而不会损坏或磨损。
 </lore>
 <no_lore>
-钻石齿轮作为最终级别的齿轮，拥有最坚固的质地。它用于最复杂的机器。
+钻石齿轮作为最终级别的齿轮拥有最佳的性能，它被用于最复杂的机器。
 </no_lore>
 <recipes_usages stack="buildcraftcore:gear_diamond"/>
