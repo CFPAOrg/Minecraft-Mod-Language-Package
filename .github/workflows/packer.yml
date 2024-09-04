@@ -136,7 +136,7 @@ jobs:
 
       # Artifact 上传内容：每个版本一个压缩包，包含了资源包和md5校验文件
       - name: Upload Artifact for ${{ matrix.version }}
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: Minecraft-Mod-Language-Package-${{ matrix.version }}
           path: |
@@ -175,7 +175,7 @@ jobs:
       
       # 还原artifact（资源包）
       - name: Restore Artifacts
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4
         with:
           path: artifacts/
 
