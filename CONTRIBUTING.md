@@ -32,7 +32,7 @@ Minecraft-Mod-Language-Package
   ├─config ---------------- // 配置文件
   │ └─packer -------------- // 打包器配置文件
   ├─projects -------------- // 翻译文件
-  │ └─(Minecraft 版本) ---- // 不带 fabric 字样的是用于 Forge 的
+  │ └─(Minecraft 版本) ---- // 不带 fabric 字样的是用于 Forge 和 NeoForge 模组的
   │   └─assets
   │     ├─(CurseForge 项目名称) ---- // 见下
   │     │ └─(命名空间) ------------- // 见下
