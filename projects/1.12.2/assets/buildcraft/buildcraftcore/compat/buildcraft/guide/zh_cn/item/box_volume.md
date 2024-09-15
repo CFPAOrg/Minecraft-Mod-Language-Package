@@ -1,13 +1,10 @@
 <lore>
 未使用的条目
-地标有时会很棘手：改变大小需要大量破坏和重新放置。体积标记提供了一个更简单的解决方案：箱体的每个角落都可以轻松移动。
 </lore>
 <no_lore>
-体积标记简化了创建地标的过程，无需打破和放置方块来改变它们的大小。
+Placeholder
 </no_lore>
 <chapter name="信息"/>
-体积标记是一个激光箱，通过记号连接器进行控制。
+Placeholder
 <recipes_usages stack="buildcraftcore:volume_box"/>
-使用记号连接器右击要移动的角落，移动到你指向的位置，即可调整体积箱的大小。
-再次使用记号连接器右击即可停止调整。
-你也可以使用记号连接器 Shift+右击以完全移除体积标记。
+Placeholder
