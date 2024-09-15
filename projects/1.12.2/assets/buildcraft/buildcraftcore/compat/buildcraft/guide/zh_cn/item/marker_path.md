@@ -1,17 +1,17 @@
 <chapter name="tile.pathMarkerBlock.name"/>
-路径标对于<bold>一些东西</bold>和连接建筑者补件路径非常有用，哎呀，那个拼错了，哈哈，我想这只是输自动填充的锅而已。
+路径标对于<bold>一些东西</bold>和连接建筑者补件路径非常有用，哎呀，那个拼错了。我觉得只有填充机会用到它。
 <chapter name="其他"/>
 其他<bold>细节<underline>包括</underline>粗体<italic>文本</italic></bold>：
 
-只是<blue>以</blue>防<bold>万</bold><green>一<red><italic>你没<underline>看</red>懂</italic></underline>...</green>
+只是<blue>以</blue>防<bold>万</bold><green>一<red><italic>你没<underline>看</red>懂</italic></underline>……</green>
 
 <recipes_usages stack="buildcraftcore:marker_path"/>
 <chapter name="信息"/>
 <lore>
-一些毫无意义的信息，完全不是为了测试下一页逻辑而填充了很长的文字。
+一些毫无意义的信息，不单是为了测试下一页逻辑而填充的很长的文字。
 </lore>
 <no_lore>
-除非关闭描述，否则这不应该出现在游戏中。
+除非 lore 被关闭，否则这不应该出现在游戏中。
 </no_lore>
 <image src="buildcraftcore:textures/items/marker_path.png" width="64" height="64"/>
 <image src="buildcraftlib:textures/items/guide_book.png" width="64" height="64"/>
