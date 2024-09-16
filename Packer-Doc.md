@@ -33,27 +33,58 @@
 **全局**配置文件 `config/packer/<version>.json` 的格式如下：
 
 - 根标签 object
-  - `base` object<br>打包流程中的*不变配置*，不能被文件结构中的**局域配置文件**改写。包含的内容都是**不低于**命名空间层级的，因为局域配置文件就是放在命名空间一级中的。
-    - `version` string<br>该配置文件指向的版本，以 `projects/` 中的文件夹名称为准。原则上*应当*与文件名中的 [version] 一致。
-    - `targetLanguages` list<br>打包的目标语言，即最终在资源包中存在的语言。
-      - string<br>目标语言，即该版本使用的语言标识符。<br>以在 `lang` 下的语言文件的文件名，以及其他文件的路径中，标明语言的部分为准。目前而言，使用的是 `zh_cn`，尽管有消息称将要改用 `zho_Hans-CN`。
-    - `exclusionMods` list<br>被打包器排除的模组文件夹。<br>如果因为某些原因需要移除某个模组的翻译（如移交官方/其他团体等），但意图保留原有翻译，可能需要这一项。
-      - string<br>排除的模组。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[mod-identifier]** | **(CurseForge 项目名称)**为准。-->
-    - `exclusionNamespaces` list<br>被打包器排除的 **[namespace]** | **(命名空间)**。<br>暂时闲置，以待后续需求。
-      - string<br>排除的命名空间。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[namespace]** | **(命名空间)**为准。-->
-  - `floating` object<br>打包流程中的*可变配置*，可能被文件结构中的**局域配置文件**改写。包含的内容都是**低于**命名空间层级的，因为局域配置文件就是放在命名空间一级中的。
-    - `inclusionDomains` list<br>强制包含的 **[domain]**。<br>一般而言，用于通常不会包含**语言标识符**的 `domain`。<br>一般而言会包含 `font` 与 `textures`，因为这两处往往不带语言标识符，且字体修复已经需要用到这两个domain；其他内容多半会出现在*局域配置*中。
-      - string<br>强制包含的domain名称。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[domain]** 为准。-->
-    - `exclusionDomains` list<br>强制排除的 **[domain]**。<br>暂时闲置，或可用于排除一些策略相关的零散文件。
-      - string<br>强制排除的domain名称。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[domain]** 为准。-->
-    - `exclusionPaths` list<br>强制排除的 **[相对地址]**。
-      - string<br>强制排除的文件的**相对地址**。<br>一般而言，在主配置中只会放置通用的忽略对象，例如 `packer-policy.json` 和 `local-config.json`；其余条目最好放在*局域配置*中。
-    - `inclusionPaths` list<br>强制包含的 **[相对地址]**。<br>暂时闲置，可以用于添加零散的无语言标记文件。
-      - string<br>强制包含的文件的**相对地址**。
-    - `characterReplacement` object<br>打包时采用的字符替换表。用于将部分字符替换至特殊位点，也可单纯用于简化输入。目前而言，包含了字体修复的有关内容。
-      - `<查询语句>` string<br>用以替换**正则表达式**`<查询语句>`匹配对象的内容，可以是一个或多个字符，甚至可以在这里用**正则替换语句**。<br>主要用于*字体修复包*所需的**符号替换**，此时，查询语句通常是字面量，替换内容一般而言总是以四位 *Unicode 转义码*填写；对于**基础多语种平面（BMP）**以外的字符，最好用 **UTF-16 代理对**书写。
-    - `destinationReplacement` object<br>打包时采用的目标地址替换。<br>可以用于移动文件，但暂时闲置；使用**检索策略**中的`singleton`也可以实现地址替换，但需要在每个模组下配置。
-      - `<查询语句>` string<br>用以替换**正则表达式**`<查询语句>`匹配对象的内容，可以是一个或多个字符，甚至可以在这里用**正则替换语句**。
+  - `base` object  
+  打包流程中的*不变配置*，不能被文件结构中的**局域配置文件**改写。包含的内容都是**不低于**命名空间层级的，因为局域配置文件就是放在命名空间一级中的。
+    - `version` string  
+    该配置文件指向的版本，以 `projects/` 中的文件夹名称为准。原则上*应当*与文件名中的 [version] 一致。
+    - `targetLanguages` list  
+    打包的目标语言，即最终在资源包中存在的语言。
+      - string  
+      目标语言，即该版本使用的语言标识符。  
+      以在 `lang` 下的语言文件的文件名，以及其他文件的路径中，标明语言的部分为准。目前而言，使用的是 `zh_cn`，尽管有消息称将要改用 `zho_Hans-CN`。
+    - `exclusionMods` list  
+    被打包器排除的模组文件夹。  
+    如果因为某些原因需要移除某个模组的翻译（如移交官方/其他团体等），但意图保留原有翻译，可能需要这一项。
+      - string  
+      排除的模组。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[mod-identifier]** | **(CurseForge 项目名称)**为准。-->
+    - `exclusionNamespaces` list  
+    被打包器排除的 **[namespace]** | **(命名空间)**。  
+    暂时闲置，以待后续需求。
+      - string  
+      排除的命名空间。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[namespace]** | **(命名空间)**为准。-->
+  - `floating` object  
+  打包流程中的*可变配置*，可能被文件结构中的**局域配置文件**改写。包含的内容都是**低于**命名空间层级的，因为局域配置文件就是放在命名空间一级中的。
+    - `inclusionDomains` list  
+    强制包含的 **[domain]**。  
+    一般而言，用于通常不会包含**语言标识符**的 `domain`。  
+    一般而言会包含 `font` 与 `textures`，因为这两处往往不带语言标识符，且字体修复已经需要用到这两个domain；其他内容多半会出现在*局域配置*中。
+      - string  
+      强制包含的domain名称。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[domain]** 为准。-->
+    - `exclusionDomains` list  
+    强制排除的 **[domain]**。  
+    暂时闲置，或可用于排除一些策略相关的零散文件。
+      - string  
+      强制排除的domain名称。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[domain]** 为准。-->
+    - `exclusionPaths` list  
+    强制排除的 **[相对地址]**。
+      - string  
+      强制排除的文件的**相对地址**。  
+      一般而言，在主配置中只会放置通用的忽略对象，例如 `packer-policy.json` 和 `local-config.json`；其余条目最好放在*局域配置*中。
+    - `inclusionPaths` list  
+    强制包含的 **[相对地址]**。  
+    暂时闲置，可以用于添加零散的无语言标记文件。
+      - string  
+      强制包含的文件的**相对地址**。
+    - `characterReplacement` object  
+    打包时采用的字符替换表。用于将部分字符替换至特殊位点，也可单纯用于简化输入。目前而言，包含了字体修复的有关内容。
+      - `<查询语句>` string  
+      用以替换**正则表达式**`<查询语句>`匹配对象的内容，可以是一个或多个字符，甚至可以在这里用**正则替换语句**。  
+      主要用于*字体修复包*所需的**符号替换**，此时，查询语句通常是字面量，替换内容一般而言总是以四位 *Unicode 转义码*填写；对于**基础多语种平面（BMP）**以外的字符，最好用 **UTF-16 代理对**书写。
+    - `destinationReplacement` object  
+    打包时采用的目标地址替换。  
+    可以用于移动文件，但暂时闲置；使用**检索策略**中的`singleton`也可以实现地址替换，但需要在每个模组下配置。
+      - `<查询语句>` string  
+      用以替换**正则表达式**`<查询语句>`匹配对象的内容，可以是一个或多个字符，甚至可以在这里用**正则替换语句**。
 
 #### 局域配置文件
 
@@ -63,7 +94,8 @@
 
 介于在配置文件中出现了多种包含/排除文件的配置项，有必要说明以下这些项生效的顺序：
 
-1. `exclusionMods` 和 `exclusionNamespaces` 在进入命名空间前即会排除相应的文件夹——甚至不会加载其中的 `local-config.json`。<br>当然，如果是通过*检索策略*访问的，则这一项不会生效。
+1. `exclusionMods` 和 `exclusionNamespaces` 在进入命名空间前即会排除相应的文件夹——甚至不会加载其中的 `local-config.json`。  
+当然，如果是通过*检索策略*访问的，则这一项不会生效。
 2. 在剩下的命名空间中，检索文件。下面的配置项可能会被当地的*局域配置*修改，除了 `targetLanguages` 以外。
 3. 在所有检索到的文件中，排除掉 `exclusionPaths` 指定的文件，即便是通过*检索策略*访问的。
 4. 在剩下的文件中，直接包含 `inclusionPaths` 和 `inclusionDomains` 指定的文件。
@@ -101,24 +133,38 @@
 对于每个**命名空间文件夹**，策略文件为 `projects/<version>/assets/<mod-name>/<asset-domain>/packer-policy.json`。
 若找不到该文件，默认策略内容为 `[{"type": "direct"}]`，也就是**原位**加载，没有特殊配置。
 
-- 根标签 list<br>打包器需要执行的策略，**从前往后执行**。如果有冲突内容，默认以**前者**优先——当然这是可以配置的。
-  - object<br>单项策略。部分参数可变。
-    - `modifyOnly` bool<br>默认为 `false`。<br>对于**语言文件**，若本项为 `true`，对于已有的键，若在该步中提供了新的值，则将会用新值替换旧值；**不会**包含本步中新出现的键。<br>对于其他文件，本项无效。
-    - `append` bool<br>默认为 `false`。<br>对于**文本文件**，将会在已有的文本内容之后**换行**，然后连接本步的内容。<br>对于其他文件，本项无效。
-    - `type` string<br>策略的类型。
+- 根标签 list  
+打包器需要执行的策略，**从前往后执行**。如果有冲突内容，默认以**前者**优先——当然这是可以配置的。
+  - object  
+  单项策略。部分参数可变。
+    - `modifyOnly` bool  
+    默认为 `false`。  
+    对于**语言文件**，若本项为 `true`，对于已有的键，若在该步中提供了新的值，则将会用新值替换旧值；**不会**包含本步中新出现的键。  
+    对于其他文件，本项无效。
+    - `append` bool  
+    默认为 `false`。  
+    对于**文本文件**，将会在已有的文本内容之后**换行**，然后连接本步的内容。  
+    对于其他文件，本项无效。
+    - `type` strin  
+    策略的类型。
 
     **若 `type` 的值为 `direct`：** 不进行特殊处理，直接按照此处的文件结构打包。
 
     **若 `type` 的值为 `indirect`：** 引用给定的命名空间。对于这些文件，其*目标地址*中的*命名空间*将会自动替换为本策略所在的命名空间。（[示例](projects/1.20/assets/minecraft/minecraft/packer-policy.json)的第二条）
-    - `source` string<br>引用命名空间所在文件夹的**完整地址**。
+    - `source` string  
+    引用命名空间所在文件夹的**完整地址**。
 
     **若 `type` 的值为 `composition`：** 从给定的*组合文件*，直接生成语言文件（或部分）。这些组合文件可能不会被自动排除；可以考虑使用*局域配置*处理。（[示例](projects/1.16/assets/macaws-bridges/mcwbridges/packer-policy.json)的第二条；[组合文件示例](projects/1.16/assets/macaws-bridges/mcwbridges/lang/zh_cn-composition.json)）
-    - `source` string<br>引用组合文件的**完整地址**。
-    - `destType` string<br>需要生成的语言文件的类型。可以为`json`或`lang`。
+    - `source` string  
+    引用组合文件的**完整地址**。
+    - `destType` string  
+    需要生成的语言文件的类型。可以为`json`或`lang`。
 
     **若 `type` 的值为 `singleton`：** 引用给定的单个文件。理论上该操作可以选取任何位置的文件，只要目标位置填写正确；不过，一般建议放在*合理的位置*。（[示例](projects/1.19/assets/isometric-renders/isometric-renders/packer-policy.json)的第一条）
-    - `source` string<br>引用文件所在的**完整地址**。
-    - `relativePath`<br>文件需要被放置的**相对地址**。考虑到连续引用，这里不宜使用**目标地址**。
+    - `source` string  
+    引用文件所在的**完整地址**。
+    - `relativePath`  
+    文件需要被放置的**相对地址**。考虑到连续引用，这里不宜使用**目标地址**。
 
 #### [组合文件].json
 
@@ -127,7 +173,8 @@
   - `target` string  
   生成的语言文件的**目标地址**。
   - `entries` list  
-  需要生成的组合项。这些项将会分别执行组合以后，连接起来。<br>**如果存在键冲突，打包器会在此崩溃！** 有计划在后期更改这一行为；目前而言，可以使用多个组合文件绕过这个限制。
+  需要生成的组合项。这些项将会分别执行组合以后，连接起来。
+  **如果存在键冲突，打包器会在此崩溃！** 有计划在后期更改这一行为；目前而言，可以使用多个组合文件绕过这个限制。
     - object  
     单项策略。
       - `templates` object  
@@ -177,10 +224,10 @@
 
 > 该项**需要**预先进行讨论，指定合适的版本支持计划！
 
-- 制定版本支持计划。<br>
+- 制定版本支持计划。  
   这条一般是由管理层指定的。**有时**，支持计划会在 *Issues* 界面中展示——1.19 与 1.20 的支持计划即这么做了。
 - 判定是否需要工具链更新。
-  - 无需更新：<br>
+  - 无需更新：  
     - 创建 `config/packer/[version].json`，并按照本文的指导填写，或参照相近版本的配置文件。
     - 在 `.github/workflows/pr-packer.json` 与 `.github/workflows/packer.json` 中，一处形如 `version: [ "1.12.2", ... ]` 的列表中（如[此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/c1d6b114fba63e86b5df682ec01fc30b818ee5e0/.github/workflows/packer.yml#L102)），加入需增添的版本。
     - 创建 `projects/[version]`，并按照其他版本的格式填写 `pack.png`，`pack.mcmeta`，`LICENSE`，`README.txt` 等内容。
