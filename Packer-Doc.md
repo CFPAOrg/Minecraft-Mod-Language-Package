@@ -364,3 +364,47 @@
 通常不应将这种配置写入全局配置。
 
 ### 常用组合文件参数
+
+原版 16 色
+
+```json
+{
+    "black": "黑色",
+    "blue": "蓝色",
+    "brown": "棕色",
+    "cyan": "青色",
+    "gray": "灰色",
+    "green": "绿色",
+    "light_blue": "淡蓝色",
+    "light_gray": "淡灰色",
+    "lime": "黄绿色",
+    "magenta": "品红色",
+    "orange": "橙色",
+    "pink": "粉红色",
+    "purple": "紫色",
+    "red": "红色",
+    "white": "白色",
+    "yellow": "黄色"
+}
+```
+
+机械动力岩石
+
+```json
+{
+    "andesite": "安山岩",
+    "asurine": "皓蓝石",
+    "calcite": "方解石",
+    "crimsite": "绯红岩",
+    "deepslate": "深板岩",
+    "diorite": "闪长岩",
+    "dripstone": "滴水石",
+    "granite": "花岗岩",
+    "limestone": "石灰岩",
+    "ochrum": "赭金砂",
+    "scorchia": "焦黑熔渣",
+    "scoria": "熔渣",
+    "tuff": "凝灰岩",
+    "veridium": "辉绿岩"
+}
+```
