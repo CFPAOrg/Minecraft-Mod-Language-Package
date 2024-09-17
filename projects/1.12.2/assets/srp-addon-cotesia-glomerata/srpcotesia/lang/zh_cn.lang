@@ -112,8 +112,8 @@ commands.srpcotesia.srpcbounty.list.none=这里没有活动中的悬赏。
 commands.srpcotesia.srpcbounty.clear=清除所有活动中的悬赏。方块本身可能仍然存在，但已失去效用。
 
 commands.srpcotesia.srpcbounty.add.inrange=位置与现有的位于 x=%d，y=%d，z=%d 的悬赏过于接近。
-commands.srpcotesia.srpcbounty.add.incorrectdim=悬赏无法被放置于这个维度。（%d）。
-commands.srpcotesia.srpcbounty.add.notloaded=如果已存在不可替换的方块，或者根本无法在此处放置方块，则悬赏无法放置于未加载的区块。
+commands.srpcotesia.srpcbounty.add.incorrectdim=悬赏无法被放置于这个维度（%d）。
+commands.srpcotesia.srpcbounty.add.notloaded=悬赏无法放置于该未加载区块：此处已存在不可替换的方块，或者完全无法在此放置方块。
 commands.srpcotesia.srpcbounty.add.success=一个悬赏已成功放置于 x=%d，y=%d，z=%d。
 
 commands.srpcotesia.srpcbounty.remove=位于 x=%d，y=%d，z=%d 的悬赏已成功移除。该方块已失效。
@@ -148,7 +148,7 @@ commands.srpcotesia.srpcwell.clear.dim=已移除%s的所有井口。（维度 ID
 commands.srpcotesia.srpcwell.add=井口已成功添加至x=%d，z=%d，%s（维度 ID %d）
 commands.srpcotesia.srpcwell.incorrectdim=无法在那一维度安置井口。
 commands.srpcotesia.srpcwell.toomany=各个维度存在的井口过多了。
-commands.srpcotesia.srpcwell.toomanydim=%s存在的井口过多了。（维度 ID %d）
+commands.srpcotesia.srpcwell.toomanydim=%s存在的井口过多了（维度 ID %d）
 commands.srpcotesia.srpcwell.remove=已成功移除x=%d，z=%d，%s（维度 ID %d）的井口。
 commands.srpcotesia.srpcwell.remove.none=这里没有井口。
 commands.srpcotesia.srpcwell.nofix=所有井口都已生效，或根本没有井口。
@@ -181,7 +181,7 @@ commands.srpcotesia.adapt.cant=发现 %d 个无法适应的实体
 commands.srpcotesia.setbloom.positive=值必须为正数！
 commands.srpcotesia.setKillC.between=值必须在 0 到 %d 之间！
 
-commands.srpcotesia.toggleparasite.success=已成功将寄生体状态设置给 %s。
+commands.srpcotesia.toggleparasite.success=已成功将 %s 的寄生体状态设置为 %s。
 commands.srpcotesia.setbiomass.success=已成功将该生物质状态设置给 %d。
 commands.srpcotesia.setbloom.success=已成功将该进化阶段设置给 %d。
 commands.srpcotesia.togglenote.success=已成功将 %s 可靠的信函获取状态切换至 %s。
@@ -204,7 +204,7 @@ entity.srpcotesia.latch.name=寄染索
 entity.srpcotesia.factory.name=寄生巢穴
 entity.srpcotesia.mote.name=微尘
 
-tooltip.srpcotesia.item.parasitedrop=可用任意一种剑右键已放置的 %s §7寄生巢穴获取。
+tooltip.srpcotesia.item.parasitedrop=可用任意一种剑右击已放置的%s§7寄生巢穴获取。
 
 item.srpcotesia.factory.name=寄生巢穴
 tooltip.srpcotesia.factory.unbound=未绑定
@@ -273,13 +273,13 @@ brew.srpcotesia.turn.desc=在生物足够虚弱时同化该生物。如果演化
 brew.srpcotesia.repeat.name=重复
 brew.srpcotesia.repeat.desc=再次施加前述的效果。
 brew.srpcotesia.rally.name=集结
-brew.srpcotesia.rally.desc=将远处的某只寄生体传送至酿造囊的命中位置。
+brew.srpcotesia.rally.desc=将远处的某只寄生体传送至酿造囊的受击位置。
 
 item.srpcotesia.itemenhance.name=§6强化之杖
 tooltip.srpcotesia.itemenhance=指向某个生物（或将之对某个生物使用），以§6强化§r生物
 message.srpcotesia.enhancedmobsdisabled=§6强化生物§f目前已被禁用。
 
-message.srpcotesia.itemenhance.succeed=§6生物已强化。
+message.srpcotesia.itemenhance.succeed=§6生物强化成功。 
 message.srpcotesia.itemenhance.repeat=§6该生物已被强化。
 message.srpcotesia.itemenhance.fail=§6该生物无法被强化，或该生物无法在此强化。
 message.srpcotesia.itemenhance.parasite=§6这根本不可能办到。
@@ -303,12 +303,12 @@ tooltip.srpcotesia.remnant.unbound=§f在实体上使用它便可制作该实体
 tooltip.srpcotesia.remnant1=§d遗骸§f会由遭寄生体击杀的§6强化生物§f掉落，不过，§c漫游者§f必须直接参与这一过程。
 tooltip.srpcotesia.remnant.notyet=§6强化生物§f尚未强大到掉落遗骸。
 tooltip.srpcotesia.remnant2=§f被动生物不会掉落该物品。
-tooltip.srpcotesia.remnant3=§f5 个不同的遗骸可用于制作§b蚀刻机§f上的§6芯片节段§f。
+tooltip.srpcotesia.remnant3=§f5 个不同的遗骸可用于在§b蚀刻机§f中制作§6芯片节段§f。
 
 item.srpcotesia.chip_fragment.name=§6芯片节段
 tooltip.srpcotesia.chip_fragment=§f一块小小的电路板。它小巧玲珑，可以安全地手持。
 tooltip.srpcotesia.chip_fragment1=§6某些更重要之物§f的一小部分。
-tooltip.srpcotesia.chip_fragment2=§f使用 5 个不同§d遗骸§f制作，用在§b蚀刻机§f上。
+tooltip.srpcotesia.chip_fragment2=§f在§b蚀刻机§f中使用 5 个不同的§d遗骸§f制作。
 tooltip.srpcotesia.chip_fragment3=§4用你的知觉来揭露它。其他同胞对此一无所知，尽管这并非因为它们的无能。
 
 item.srpcotesia.callous_chip.name=§6厚实芯片
@@ -340,7 +340,7 @@ tooltip.srpcotesia.macabre_pearl3=§f只对你曾参与创造的寄生体有效�
 tooltip.srpcotesia.macabre_pearl4=§4总得有什么罩着你。你最后总会做些傻事。
 
 item.srpcotesia.itemdismiss.name=§a溶解之杖
-tooltip.srpcotesia.itemdismiss1=指向某个寄生体（或将之对某个寄生体使用），将之§a清除
+tooltip.srpcotesia.itemdismiss1=指向某个寄生体（或对其使用），将之§a清除
 tooltip.srpcotesia.itemdismiss.fake=不过，你必须处于创造模式才能将它强制溶解。
 tooltip.srpcotesia.itemdismiss2=§4仅有你我。
 
@@ -398,13 +398,13 @@ tooltip.srpcotesia.masticator3=§4一件由你的记忆和我们自己的记忆�
 tooltip.srpcotesia.masticator4=§4正如你的直觉所述，最初的设计是有缺陷的。火在此百无一用。
 
 item.srpcotesia.consecrator.name=§4祭献瘴气枪
-tooltip.srpcotesia.consecrator1=§f喷出恐怖的瘴气。瘴气可侵袭方块，且演化 %d 阶时，如果在§4节点§f范围内将制造群系，并增加§a进化点数§f。
+tooltip.srpcotesia.consecrator1=§f喷出恐怖的瘴气。如果在§4节点§f范围内，且处于演化 %d 阶时，瘴气可在侵袭方块的同时制造出群系，并增加§a进化点数§f。
 tooltip.srpcotesia.consecrator2=§f需要§a腥臭“滤毒罐”§f运作。
 tooltip.srpcotesia.consecrator3=§4从海到海，骨肉相连。
 tooltip.srpcotesia.consecrator4=§4令大地歌唱。
 tooltip.srpcotesia.masticator.notempty=§a里面还剩一点汁液
 tooltip.srpcotesia.masticator.notparasite=§f一只类似§a召唤柱§f的手持式畸变体。
-tooltip.srpcotesia.consecrator.notparasite=§f一只类似§aIV 阶召唤柱§f的手持式畸变体。
+tooltip.srpcotesia.consecrator.notparasite=§f一只类似 §aIV 阶召唤柱§f的手持式畸变体。
 
 item.srpcotesia.fetid_canister.name=§a腥臭“滤毒罐”
 tooltip.srpcotesia.fetid_canister1=§f由寄生体各部分组成的致密茧状物，因新的目的结合在一起。
@@ -436,8 +436,8 @@ tooltip.srpcotesia.well_divining_rod2=§f如果它在一个不同的维度，则
 tooltip.srpcotesia.well_divining_rod3=§6> 算算你的天数。
 
 item.srpcotesia.well_magnet.name=§6井口磁铁
-tooltip.srpcotesia.well_magnet1=§f将该维度在 %s 格范围内最近的§6井口§f传送至使用者。
-tooltip.srpcotesia.well_magnet2=§6> 某处有个熔岩池等着你呢。帮我们个忙。
+tooltip.srpcotesia.well_magnet1=§f将该维度最近的§6井口§f传送至使用者 %s 格范围内。
+tooltip.srpcotesia.well_magnet2=§6> 某处有个岩浆池等着你呢。帮我们个忙。
 tooltip.srpcotesia.well_magnet3=§c我想我把它惹毛了
 message.srpcotesia.well_magnet.waste=将仅有 %d 格距离的§6井口§f传送来也太浪费了。
 message.srpcotesia.well_magnet.moved=一个§6井口§f已被移动。
@@ -483,7 +483,7 @@ tooltip.srpcotesia.dispatchern2=§f寄生体在杀敌数量足够时，便有概
 tooltip.srpcotesia.dispatchern3=§f也可以通过§c胞窝累聚体§f制造。
 
 tooltip.srpcotesia.evclock1=§f显示当前全局累计的演化点数，也包括当前的演化阶段。
-tooltip.srpcotesia.evclock2=§f如果目前处于演化阶段冷却时间，也会读出当前的演化冷却时间。
+tooltip.srpcotesia.evclock2=§f如果目前处于演化阶段冷却时间，也会显示当前的演化冷却时间。
 
 
 
@@ -548,10 +548,10 @@ message.srpcotesia.bounty.notify=§f一个§6悬赏§f已进行通报。
 
 tile.srpcotesia.osmosis.name=§b渗透活化器
 tooltip.srpcotesia.osmosis1=§f根据放入的§9反应物§f对§9酿造囊§f进行改造。用酿造囊或§9反应物§f右键点击放入。
-tooltip.srpcotesia.osmosis2=§f工具提示栏内会显示被活化后§9反应物§f的效果。
+tooltip.srpcotesia.osmosis2=§f提示框内会显示被活化后§9反应物§f的效果。  
 
 tile.srpcotesia.lithograph.name=§b蚀刻机
-tooltip.srpcotesia.lithograph1=§f从§d遗骸§f提取数据用于生产§6芯片节段§f。拿着§d遗骸§f鼠标左击将之放入。
+tooltip.srpcotesia.lithograph1=§f从§d遗骸§f提取数据用于生产§6芯片节段§f。手持不同的§d遗骸§f右键点击放入。
 tooltip.srpcotesia.lithograph2=§f当它包含了 5 份§d遗骸§f，它将开始数据提取。
 
 tile.srpcotesia.lithograph.conflict=这一遗骸已被储存。
@@ -584,14 +584,14 @@ tooltip.srpcotesia.nidus_accumulator3=§f目前的击杀计数：%d
 tooltip.srpcotesia.nidus_accumulator4=§4创造
 
 item.srpcotesia.pristine_matter.name=§a原生物质
-tooltip.srpcotesia.pristine_matter=§f从§aIII/IV 阶召唤柱§f上收集到的一小团发光的肉。用于合成。
+tooltip.srpcotesia.pristine_matter=§f从 §aIII/IV 阶召唤柱§f上收集到的一小团发光的肉。用于合成。
 
 item.srpcotesia.pact.name=§a契约
 tooltip.srpcotesia.pact=§f一份来历不明的寄染卷轴。
-tooltip.srpcotesia.pact1=§f可用于在一个已加载的区块内§4遣散所有目前活动中的寄生体§f，不包括§a连结种§f。在全局演化阶段冷却时无法生效。也无法对维持某些生成结构的寄生体生效。
-tooltip.srpcotesia.pact2=§f如果对除§e寄生巢穴§f以外的§a连结种§f使用，它也会遣散所有这一阶段或者低于该阶段的§a连结种§f。
-tooltip.srpcotesia.pact3=§f如果对你所创造的寄生体使用，不会被刷新消失的寄生体也会被遣散。这同样不包括§e寄生巢穴§f，并与前者同时发生。
-tooltip.srpcotesia.pact4=§f一个§a循迹腺体§f会按照你所遣散的最高级别的寄生体生成（扎根于地面或由你创造的东西除外）。潜行可以避免这种情况发生，物品也不会被消耗。
+tooltip.srpcotesia.pact1=§f可用于在已加载的区块内§4遣散除§a连结种§4以外所有正在活动中的寄生体§f。在全局演化阶段冷却时该物品无法生效。且该物品也无法对正在维持某些结构的寄生体生效。
+tooltip.srpcotesia.pact2=§f如果对除§e寄生巢穴§f以外的§a连结种§f使用该物品，它也会遣散所有这一阶段或者低于该阶段的§a连结种§f。
+tooltip.srpcotesia.pact3=§f如果对你所创造的寄生体使用该物品，不会自然消失的寄生体也会被遣散。这同样不包括§e寄生巢穴§f，而前述的遣散机制同样会生效。
+tooltip.srpcotesia.pact4=§f此后，一份§a循迹腺体§f将会生成，它会记录下你所遣散的最高级别的寄生体（扎根于地面或由你创造的寄生体除外）。潜行可以避免此事发生，过程中物品也不会被消耗。
 tooltip.srpcotesia.pact5=§4证明这一概念的合理性是项艰巨的任务。
 
 message.srpcotesia.pact.empty=这里没有任何寄生体可供遣散。
