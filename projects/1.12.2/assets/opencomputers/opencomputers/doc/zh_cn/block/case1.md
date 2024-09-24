@@ -1,6 +1,6 @@
 # 机箱
 
-![“箱”当可靠](oredict:oc:case1)
+![“箱”当可靠。](oredict:oc:case1)
 
 电脑机箱有三个不同等级，等级限制了它们所能安装的组件。此外还有一个仅供创造模式使用的等级。电脑机箱还可以放置到[装配机](assembler.md)中组装[机器人](robot.md)。
 
@@ -33,5 +33,5 @@ T4（创造模式）机箱可安装：
 - 3x T3扩展卡（如[显卡](../item/graphicsCard1.md)、[网卡](../item/lanCard.md)等）
 - 1x T3[CPU](../item/cpu3.md)
 - 2x T3[内存条](../item/ram5.md)
-- 2xT3[硬盘](../item/hdd3.md)
+- 2x T3[硬盘](../item/hdd3.md)
 - 1x [软盘](../item/floppy.md)

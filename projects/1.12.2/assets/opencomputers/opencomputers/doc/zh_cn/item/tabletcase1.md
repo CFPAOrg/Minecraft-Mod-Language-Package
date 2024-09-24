@@ -27,7 +27,7 @@ T2平板电脑外壳可安装以下组件：
 - 1x [EEPROM](eeprom.md)
 - 2x T2升级
 - 1x T3升级
-- 1x T2[升级插槽](upgradeContainer2.md)或[扩展卡插槽](cardContainer2.md)
+- 1x T2[升级容器](upgradeContainer2.md)或[扩展卡容器](cardContainer2.md)
 
 T3（创造模式）平板电脑外壳可安装以下组件：
 - 1x T3[CPU](cpu3.md)
@@ -36,4 +36,4 @@ T3（创造模式）平板电脑外壳可安装以下组件：
 - 3x T3扩展卡
 - 1x [EEPROM](eeprom.md)
 - 9x T3升级
-- 1x T3[升级插槽](upgradeContainer3.md)或[扩展卡插槽](cardContainer3.md)
+- 1x T3[升级容器](upgradeContainer3.md)或[扩展卡容器](cardContainer3.md)
