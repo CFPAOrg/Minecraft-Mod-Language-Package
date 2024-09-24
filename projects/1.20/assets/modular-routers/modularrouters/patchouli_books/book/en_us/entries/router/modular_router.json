@@ -1,0 +1,53 @@
+{
+  "name": "Modular Router",
+  "icon": "modularrouters:modular_router",
+  "category": "modularrouters:router",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The $(thing)Modular Router/$ is the core of the routing system. It is responsible for executing all the modules plugged into it; moving items, blocks and fluids around in various ways."
+    },
+    {
+      "type": "image",
+      "images": [
+        "modularrouters:textures/patchouli/router_gui.png"
+      ],
+      "text": "$(italic)An Modular Router GUI with several modules and upgrades installed",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "1. The Buffer",
+      "text": "The $(thing)Modular Router/$ has a one-slot buffer, able to hold up to stack of items. This buffer is exposed as a normal inventory, so it can be interacted with via $(item)Hoppers/$ and other mod piping systems.$(p)In addition, a $(item)Comparator/$ placed against the router will measure the slot's fullness as expected."
+    },
+    {
+      "type": "text",
+      "title": "2. Module Slots",
+      "text": "The $(thing)Modular Router/$ has nine slots for $(l:intro/modules)modules/$. Each time the router runs (between 1 and 10 times per second depending on Speed Upgrades), it will $(thing)execute/$ each module in turn, from left to right.$(p)You can configure installed modules without removing them from the router by pressing $(4)$(bold)[$(k:modularrouters.configure)]/$ while hovering over it, or $(thing)Middle-Clicking/$ the module in the GUI."
+    },
+    {
+      "type": "text",
+      "title": "3. Upgrade Slots",
+      "text": "The $(thing)Modular Router/$ has five slots for $(l:intro/upgrades)upgrades/$. Upgrades enhance the router's functionality in various ways; for example, each inserted $(l:upgrades/speed)Speed Upgrade/$ makes the router tick a little faster, while each $(l:upgrades/stack)Stack Upgrade/$ allows it to handle more items in each operation."
+    },
+    {
+      "type": "text",
+      "title": "4. Redstone Control",
+      "text": "The $(thing)Modular Router/$ has some flexibility over how it responds to redstone input, controlled by the top-right button:$(li)Default: always run, regardless of redstone signal$(li)Only run when there is $(italic)no/$ redstone signal$(li)Only run when there $(italic)is/$ a redstone signal$(li)Never run$(li)Run $(italic)once/$ when a redstone pulse is received (any signal higher than previously)."
+    },
+    {
+      "type": "text",
+      "title": "5. Eco Mode",
+      "text": "In the spirit of being environmentally-friendly, the router has an option to automatically slow down if it's been idle for a while.$(p)When Eco Mode is enabled, if the router has done no work in the last $(ttcolor)$(t:Adjustable in mod config - 'ecoTimeout')5 seconds/$ then it will slow down and only tick once every $(ttcolor)$(t:Adjustable in mod config - 'lowPowerTickRate')5 seconds/$ (regardless of $(l:upgrades/speed)Speed Upgrades/$). However, as soon as it does any work, it will return to normal tick speed."
+    },
+    {
+      "type": "text",
+      "title": "Eco Mode (cont)",
+      "text": "This is primarily intended for busy servers, to save on CPU cycles, but it's potentially nice-to-have for any router that only runs rarely and where rapid item transfer isn't that important (e.g. a sheep farm where you might have a $(l:modules/vacuum)Vacuum Module/$ gathering sheared wool periodically)."
+    },
+    {
+      "type": "crafting",
+      "recipe": "modularrouters:modular_router"
+    }
+  ]
+}
