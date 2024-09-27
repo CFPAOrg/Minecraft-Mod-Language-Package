@@ -1,6 +1,6 @@
 # 变色材料
 
-![以防你好奇，它的名字来源于变色龙。](oredict:oc:chamelium)
+![为了满足你的好奇心，它的名字来源于变色龙。](oredict:oc:chamelium)
 
 变色材料是一种可塑材料，可用于在[3D打印机](../block/printer.md)中打印[3D打印件](../block/print.md)。它本身没什么特性，可用于建造简单、平整且单色的建筑。
 
