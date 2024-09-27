@@ -28,7 +28,7 @@
 
 注意其中的**configured（配置过的）**。合成 [EEPROM](../item/eeprom.md)很简单，但配置它通常需要[电脑](computer.md)，这就现在而言略有困难，因此我们要用合成配方来合成一个配置过的"Lua BIOS" [EEPROM](../item/eeprom.md)。基础配方是一个[EEPROM](../item/eeprom.md)加上一本[手册](../item/manual.md)。把配置过的[EEPROM](../item/eeprom.md)放进你的[电脑](computer.md)，然后——
 
-不行。还是啥也没有。但我们知道要干什么：玩家可以使用[调试器](../item/analyzer.md)，太高效了！现在我们得到了一条不一样的报错信息：  
+不行。还是啥也没有。但我们知道要干什么：玩家可以使用[分析器](../item/analyzer.md)，太高效了！现在我们得到了一条不一样的报错信息：  
 `no bootable medium found; file not found`
 （未找到引导媒介；未找到文件）
 
