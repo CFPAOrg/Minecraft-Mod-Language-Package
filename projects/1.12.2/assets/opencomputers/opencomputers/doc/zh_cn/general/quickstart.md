@@ -16,7 +16,7 @@
 
 这个时候再尝试启动，它会告诉你电脑需要安装[CPU](../item/cpu1.md)。CPU分不同等级，你会注意到等级这一概念在OC模组中普遍存在。对[CPU](../item/cpu1.md)而言，等级越高，同时连接的组件就越多，执行速度也越快。所以请挑一个等级，然后把它装进你的[电脑机箱](../block/case1.md)里。
 
-接下来会要求你安装一些[内存条（RAM）](../item/ram1.md)。你会发现报警音发生了变化：变成了长-短。[内存条（RAM）](../item/ram1.md)等级越高，能提供给你[computer](computer.md)上所运行程序的内存就越大。要运行[OpenOS](openOS.md)，即本教程的目标，你需要至少两根1级[内存条（RAM）](../item/ram1.md)。
+接下来会要求你安装一些[内存条（RAM）](../item/ram1.md)。你会发现报警音发生了变化：变成了长-短。[内存条（RAM）](../item/ram1.md)等级越高，能提供给你[电脑](computer.md)上所运行程序的内存就越大。要运行[OpenOS](openOS.md)，即本教程的目标，你需要至少两根1级[内存条（RAM）](../item/ram1.md)。
 
 我们已经取得很大进展了。现在你的[电脑机箱](../block/case1.md)看上去应该类似这样：  
 ![部分完工的电脑。](opencomputers:doc/img/configuration_case2.png)  
