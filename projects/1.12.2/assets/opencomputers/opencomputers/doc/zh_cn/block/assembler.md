@@ -6,7 +6,7 @@
 
 要在电子装配机中构建设备，首先需要放入设备的基础部件。对[机器人](robot.md)而言，基础部件是任意等级的[机箱](case1.md)；对[平板电脑](../item/tablet.md)而言则是[平板外壳](../item/tabletCase1.md)。对OC模组提供的任何物品栏而言，部件都应被放入特定槽位中；将鼠标在槽位上悬停就会将你物品栏中可放入此槽位的物品高亮显示。如果你启用了NEI，并且将OC模组的物品筛选了出来，那么槽位兼容的物品也会在NEI中高亮显示。接下来请放入你希望装进设备的部件。请特别注意，你还需要给设备准备操作系统或后续安装操作系统的方式（例如，对机器人而言你可以安装[软盘驱动器](diskDrive.md)以供其读写[软盘](../item/floppy.md)）。对大多数设备而言，设备上的[EEPROM](../item/eeprom.md)后续都可更换，方式是将设备与另一个[EEPROM](../item/eeprom.md)一起合成，设备之前安装的[EEPROM](../item/eeprom.md)会退还到你的物品栏中。
 
-还需注意，要为[机器人](robot.md)机器人安装[显示屏](screen1.md)的话，需要放入[T1显示屏](screen1.md)。要向[显示屏](screen1.md)输入内容还需安装[键盘](keyboard.md)。对[平板电脑](../item/tablet.md)而言，[显示屏](screen1.md)已经预装在[平板外壳](../item/tabletCase1.md)上了，但如果你想向[平板电脑](../item/tabletCase1.md)输入内容的话仍需安装[键盘](keyboard.md)。
+还需注意，要为[机器人](robot.md)安装[显示屏](screen1.md)的话，需要放入[T1显示屏](screen1.md)。要向[显示屏](screen1.md)输入内容还需安装[键盘](keyboard.md)。对[平板电脑](../item/tablet.md)而言，[显示屏](screen1.md)已经预装在[平板外壳](../item/tabletCase1.md)上了，但如果你想向[平板电脑](../item/tabletCase1.md)输入内容的话仍需安装[键盘](keyboard.md)。
 
 各部件就位后，按下开始按钮，然后等待设备组装完成并充好电即可。记住，设备一旦组装完成就**无法**修改了，如果你忘装或错装部件，只能用[分解机](disassembler.md)将设备拆解掉，但过程中有小概率损坏部件。
 
