@@ -26,7 +26,7 @@
 
 ## 概要
 
-如上文所述，OC模组的电脑有可持续的特性，意思是运行中的[电脑](general/computer.md)在其所在区块停止加载后会保存运行状态。也就是说，当玩家离开[电脑](general/computer.md)所在区块，或退出游戏后，[电脑](general/computer.md)会记忆自己的最后运行状态，并在玩家再次靠近[电脑](general/computer.md)时从保存的那一刻继续运行。除[平板电脑](item/tablet.md)以外的所有设备均可持续。  
+如上文所述，OC模组的电脑有持久化的特性，意思是运行中的[电脑](general/computer.md)在其所在区块停止加载后会保存运行状态。也就是说，当玩家离开[电脑](general/computer.md)所在区块或退出游戏后，[电脑](general/computer.md)会记忆自己的最后运行状态，并在玩家再次靠近[电脑](general/computer.md)时从保存的那一刻继续运行。除[平板电脑](item/tablet.md)以外的所有设备均可持续。  
 
 所有设备均是模块化的，可用多种组件来组装，正如现实中的[电脑](general/computer.md)一样。善于思考的玩家能够将设备调配成自己心中想要的样子。只要你想，你还可以把配置不满意的设备[分解](block/disassembler.md)并重新构建。对[电脑](general/computer.md)和[服务器](item/server1.md)而言可以打开GUI热插拔更换组件。
 
