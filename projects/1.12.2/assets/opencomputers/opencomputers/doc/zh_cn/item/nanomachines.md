@@ -16,7 +16,7 @@
 
 - `setResponsePort(port:number)` - 设设定纳米机器发送响应信息所用的端口，对带有响应信息的命令生效。
 - `getPowerState()` - 获取纳米机器当前能量值以及能量上限。
-- `getHealth()` - 获取玩家的健康值。
+- `getHealth()` - 获取玩家的生命值。
 - `getHunger()` - 返回当前玩家的饥饿值。
 - `getAge()` - 获取玩家的年龄，单位为秒。
 - `getName()` - 获取玩家的显示名称。
