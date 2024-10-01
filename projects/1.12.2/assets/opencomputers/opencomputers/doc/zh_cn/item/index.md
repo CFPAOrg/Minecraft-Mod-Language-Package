@@ -8,7 +8,7 @@
 * [分析器](analyzer.md)
 * [手册](manual.md)
 * [远程终端](terminal.md)
-* [材质获取器](texturePicker.md)
+* [纹理获取器](texturePicker.md)
 * [螺丝刀扳手](wrench.md)
 
 ## 设备
