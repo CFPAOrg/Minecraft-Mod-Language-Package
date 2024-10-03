@@ -1,6 +1,6 @@
 # 开放式电脑手册
 
-开放式电脑（OpenComputers，下简称OC）是一个向Minecraft添加了可持续的、模块化的、可高度定制的[电脑](general/computer.md)、[服务器](item/server1.md)、[机器人](block/robot.md)和[无人机](item/drone.md)的Mod。所有设备均可通过Lua 5.2编程，用户可根据需求构建复杂度不同的电脑系统。
+开放式电脑（OpenComputers，下简称OC）是一个向Minecraft添加了可持久化的、模块化的、可高度定制的[电脑](general/computer.md)、[服务器](item/server1.md)、[机器人](block/robot.md)和[无人机](item/drone.md)的Mod。所有设备均可通过Lua 5.2编程，用户可根据需求构建复杂度不同的电脑系统。
 
 你可以通过[手册说明](item/manual.md)来学习这本手册的使用方法（绿色文本为链接，可点击）。
 
