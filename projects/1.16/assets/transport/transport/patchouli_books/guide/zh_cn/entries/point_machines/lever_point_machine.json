@@ -1,0 +1,31 @@
+{
+  "name": "拉杆转辙机",
+  "icon": "minecraft:lever",
+  "category": "point_machines",
+  "pages": [
+    {
+      "type": "text",
+      "text": "拉杆转辙机由一个面向转辙铁轨放置的拉杆组成。如果拉杆指向转辙铁轨，转辙铁轨就会变道。"
+    },
+    {
+      "type": "multiblock",
+      "name": "拉杆转辙机",
+      "multiblock": {
+        "mapping": {
+          "R": "minecraft:rail[shape=east_west]",
+          "D": "minecraft:rail",
+          "0": "transport:switch_rail[straight_shape=east_west,diverge_shape=south_west,diverge=true]",
+          "L": "minecraft:lever[face=floor,facing=south,powered=true]"
+        },
+        "pattern": [
+          [
+            " R ",
+            "L0D",
+            " R "
+          ]
+        ],
+        "enable_visualize": false
+      }
+    }
+  ]
+}

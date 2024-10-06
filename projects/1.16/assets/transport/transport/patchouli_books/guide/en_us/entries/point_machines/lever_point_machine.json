@@ -1,0 +1,31 @@
+{
+  "name": "Lever Point Machine",
+  "icon": "minecraft:lever",
+  "category": "point_machines",
+  "pages": [
+    {
+      "type": "text",
+      "text": "The Lever Point Machine is a lever placed while facing towards the switch. The switch will divert if the lever is pointed towards it."
+    },
+    {
+      "type": "multiblock",
+      "name": "Lever Point Machine",
+      "multiblock": {
+        "mapping": {
+          "R": "minecraft:rail[shape=east_west]",
+          "D": "minecraft:rail",
+          "0": "transport:switch_rail[straight_shape=east_west,diverge_shape=south_west,diverge=true]",
+          "L": "minecraft:lever[face=floor,facing=south,powered=true]"
+        },
+        "pattern": [
+          [
+            " R ",
+            "L0D",
+            " R "
+          ]
+        ],
+        "enable_visualize": false
+      }
+    }
+  ]
+}
