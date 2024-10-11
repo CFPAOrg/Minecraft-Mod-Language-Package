@@ -20,7 +20,7 @@ item_ids:
 
 存储总线会将其所连接的容器视为[网络存储](../ae2-mechanics/import-export-storage.md)。它使得网络能查看该容器的内容物，并可对该容器输入输出以满足[设备](../ae2-mechanics/devices.md)的输入输出需求。
 
-鉴于AE2的[设备](../ae2-mechanics/devices.md)功能交互产生涌现机制的哲学，存储总线*并不*只具有*存储*功能。如果将[子网络](../ae2-mechanics/subnetworks.md)的*唯一*存储位置设置为若干存储总线，就可将这些总线视为物品传输的起点或终点。（见[“管道”子网络](../example-setups/pipe-subnet.md)。）
+鉴于AE2的[设备](../ae2-mechanics/devices.md)功能交互产生<a title="译注：涌现（Emergence），指多个个体间的相互作用遵循简单的规则，而它们所组成的系统拥有了个体不具备的特性，这种特性仅存在于系统的层面。">涌现</a>机制的哲学，存储总线*并不*只具有*存储*功能。如果将[子网络](../ae2-mechanics/subnetworks.md)的*唯一*存储位置设置为若干存储总线，就可将这些总线视为物品传输的起点或终点。（见[“管道”子网络](../example-setups/pipe-subnet.md)。）
 
 注意事项：抽屉这类经过优化的大容器性能表现不错，但巨型箱子等拥有大量槽位的、*未*经优化的大容器和存储总线放在一起时，性能会受到严重影响。
 
