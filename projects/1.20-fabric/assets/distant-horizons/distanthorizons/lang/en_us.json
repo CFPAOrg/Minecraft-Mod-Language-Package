@@ -89,7 +89,7 @@
   "distanthorizons.config.client.advanced.graphics.quality.maxHorizontalResolution.@tooltip":
     "The maximum detail LODs are rendered at.\n\n§6Fastest:§r Chunk\n§6Fanciest:§r Block",
   "distanthorizons.config.client.advanced.graphics.quality.lodChunkRenderDistanceRadius":
-    "LOD Render Distance Radius",
+    "LOD Chunk Render Distance Radius",
   "distanthorizons.config.client.advanced.graphics.quality.lodChunkRenderDistanceRadius.@tooltip":
     "Distant Horizons' render distance, measured in chunks. \n\nNote: this is a best effort number. \nThe render distance may be above or below this number \ndepending on your other graphic settings.",
   "distanthorizons.config.client.advanced.graphics.quality.verticalQuality":
@@ -114,6 +114,15 @@
     "Tint With Avoided Blocks",
   "distanthorizons.config.client.advanced.graphics.quality.tintWithAvoidedBlocks.@tooltip":
     "§4Note: makes snow, carpet, and trapdoors look really bad§r\nShould the blocks underneath avoided blocks gain the color of the avoided block?\n§6True:§r a red flower on grass will tint the grass below it red\n§6False:§r skipped blocks will not change color of surface below them",
+  "distanthorizons.config.client.advanced.graphics.quality.vanillaFadeMode":
+    "Vanilla Fade Mode",
+  "distanthorizons.config.client.advanced.graphics.quality.vanillaFadeMode.@tooltip":
+    "How should vanilla Minecraft fade into Distant Horizons LODs? \n\nNONE: Fastest, there will be a pronounced border between DH and MC rendering. \nSINGLE_PASS: Fades after MC's transparent pass, opaque blocks underwater won't be faded. \nDOUBLE_PASS: Slowest, fades after both MC's opaque and transparent passes, provides the smoothest transition.",
+  "distanthorizons.config.client.advanced.graphics.quality.ditherDhFade":
+    "Fade Nearby DH LODs",
+  "distanthorizons.config.client.advanced.graphics.quality.ditherDhFade.@tooltip":
+    "If true LODs will fade away as you get closer to them. \nIf false LODs will cut off abruptly at a set distance from the camera. \nThis setting is affected by the vanilla overdraw prevention config.",
+    
   "distanthorizons.config.client.advanced.graphics.quality.lodBiomeBlending":
     "Biome Blending",
   "distanthorizons.config.client.advanced.graphics.quality.lodBiomeBlending.@tooltip":
@@ -308,7 +317,32 @@
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.grassSideRendering":
     "Grass Side Rendering",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.grassSideRendering.@tooltip":
-    "How should the sides and bottom of grass block LODs render?",
+    "How should the sides and bottom of grass block LODs render?",  
+  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableBeaconDistanceCulling":
+    "Disable Beacon Distance Culling",
+  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableBeaconDistanceCulling.@tooltip":
+    "If true all beacons near the camera won't be drawn to prevent vanilla overdraw. \nIf false all beacons will be rendered.",
+
+
+  "distanthorizons.config.client.advanced.graphics.genericRendering":
+    "Generic Rendering",
+
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableRendering":
+    "Enable Rendering",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableRendering.@tooltip":
+    "If true non terrain objects will be rendered in DH's terrain. \nThis includes beacon beams and clouds.",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableBeaconRendering":
+    "Enable Beacon Rendering",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableBeaconRendering.@tooltip":
+    "If true LOD beacon beams will be rendered.",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableCloudRendering":
+    "Enable Cloud Rendering",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableCloudRendering.@tooltip":
+    "If true LOD clouds will be rendered.",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableInstancedRendering":
+    "Enable Instanced Rendering",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableInstancedRendering.@tooltip":
+    "Can be disabled to use much slower but more compatible direct rendering. \nDisabling this can be used to fix some crashes on Mac.",
     
   
   "distanthorizons.config.client.advanced.worldGenerator":
@@ -341,13 +375,20 @@
 
   "distanthorizons.config.client.advanced.lodBuilding.minTimeBetweenChunkUpdatesInSeconds":
     "Minimum Time Between Chunk Updates In Seconds",
-    
   "distanthorizons.config.client.advanced.lodBuilding.minTimeBetweenChunkUpdatesInSeconds.@tooltip":
     "Determines how long must pass between LOD chunk updates before another. \nupdate can occur\n\nIncreasing this value will reduce CPU load but may may cause \nLODs to become outdated more frequently or for longer.",
+  "distanthorizons.config.client.advanced.lodBuilding.disableUnchangedChunkCheck":
+    "Disable Unchanged Chunk Check",
+  "distanthorizons.config.client.advanced.lodBuilding.disableUnchangedChunkCheck.@tooltip":
+    "Disabling this check may fix issues where LODs aren't updated after\nblocks have been changed.\n",
   "distanthorizons.config.client.advanced.lodBuilding.onlyUseDhLightingEngine":
     "Only Use DH Lighting Engine",
   "distanthorizons.config.client.advanced.lodBuilding.onlyUseDhLightingEngine.@tooltip":
     "If false LODs will be lit by Minecraft's lighting engine when possible \nand fall back to the DH lighting engine only when necessary. \n\nIf true LODs will only be lit using Distant Horizons' lighting engine. \n\nGenerally it is best to leave this disabled and should only be enabled \nif there are lighting issues or for debugging.",
+  "distanthorizons.config.client.advanced.lodBuilding.pullLightingForPregeneratedChunks":
+    "Pull Lighting For Pre-generated Chunks",
+  "distanthorizons.config.client.advanced.lodBuilding.pullLightingForPregeneratedChunks.@tooltip":
+    "If true LOD generation for pre-existing chunks will attempt to pull the lighting data \nsaved in Minecraft's Region files. \nIf false DH will pull in chunks without lighting and re-light them. \n\nSetting this to true will result in faster LOD generation \nfor already generated worlds, but is broken by most lighting mods. \n\nSet this to false if LODs are black.",
   "distanthorizons.config.client.advanced.lodBuilding.dataCompression":
     "Data Compression",
   "distanthorizons.config.client.advanced.lodBuilding.dataCompression.@tooltip":
@@ -358,41 +399,36 @@
     "How should block data be compressed when creating LOD data? \nThis setting will only affect new or updated LOD data, \nany data already generated when this setting is changed will be \nunaffected until it is modified or re-loaded. \n\nMost Accurate: Merge Same Blocks \nHighest Compression: Visually Equal",
   "distanthorizons.config.client.advanced.lodBuilding.showMigrationChatWarning":
     "Log Migration In Chat",
-    
+  "distanthorizons.config.client.advanced.lodBuilding.ignoredRenderBlockCsv":
+    "Ignored Block CSV",
+  "distanthorizons.config.client.advanced.lodBuilding.ignoredRenderBlockCsv.@tooltip":
+    "A comma separated list of block resource locations that won't be rendered by DH. \nNote: air is always included in this list.",
+  "distanthorizons.config.client.advanced.lodBuilding.ignoredRenderCaveBlockCsv":
+    "Ignored Cave Block CSV",
+  "distanthorizons.config.client.advanced.lodBuilding.ignoredRenderCaveBlockCsv.@tooltip":
+    "A comma separated list of block resource locations that shouldn't be rendered \nif they are in a 0 sky light underground area. \nNote: air is always included in this list.",
     
   "distanthorizons.config.client.advanced.multiplayer":
     "Multiplayer",
     
   "distanthorizons.config.client.advanced.multiplayer.serverNetworking": "Server Networking",
   "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generalSectionNote": " \u25cf  General",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableServerNetworking": "Enable Server Networking",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableServerNetworking.@tooltip": "§6Attention:§r this feature is not fully implemented. \n\nIf true Distant Horizons will attempt to communicate with the connected \nserver in order to load LODs outside your vanilla render distance. \n\nNote: This requires DH to be installed on the server in order to function.",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.maxThreadPoolTasks": "Max Thread Pool Tasks",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.maxThreadPoolTasks.@tooltip": "Pauses the generation if amount of thread pool tasks is too high. \nDecrease this value if LODs don't show up for too long.\nIncrease this value if thread pool tasks often get drained completely.\nSetting this value to 0 will allow thread pool tasks to build up indefinitely.",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.levelKeyPrefix": "Level Key Prefix",
   "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationSectionNote": " \u25cf  Generation",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationRequestRCLimit": "Gen Task Rate/Concurrency Limit",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationRequestRCLimit.@tooltip": "Limits the amount of generation requests sent by client and processed by server.",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationRequestBeginDelay": "Generation Request Begin Delay",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationRequestBeginDelay.@tooltip": "Adds a delay in seconds before sending LOD requests, when generation is enabled. \nIncrease this value if initial generation starts too far away.",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.genTaskPriorityDistanceRatio": "Gen Task Priority Distance Max Ratio",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.genTaskPriorityDistanceRatio.@tooltip": "Controls the max ratio between distances of nearest unloaded sections of each priority. \nFor example, a value of 2 means that the nearest lower priority section will be allowed to stay \nunloaded only if it's at most 2x closer than one of a higher priority.",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.genTaskPriorityRequestRateLimit": "Gen Task Priority Check Rate Limit",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.genTaskPriorityRequestRateLimit.@tooltip": "Limits the amount of LOD sections that the client can request states for, per second.",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.realTimeUpdatesSectionNote": " \u25cf  Real Time Updates",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableRealTimeUpdates": "Enable Real Time Updates",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableRealTimeUpdates.@tooltip": "Enables real time updates from server.",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.loginDataSyncSectionNote": " \u25cf  Login Data Sync",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableLoginDataSync": "Synchronize LODs on Login",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableLoginDataSync.@tooltip": "Enables updating of saved LODs after login.",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.loginDataSyncRCLimit": "Login Sync Rate/Concurrency Limit",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.loginDataSyncRCLimit.@tooltip": "Limits the amount of sent/processed LOD *update* requests concurrently, per player.",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.immersivePortalsSectionNote": " \u25cf  Immersive Portals",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generateMultipleDimensions": "Generate Multiple Dimensions",
-  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generateMultipleDimensions.@tooltip": "Controls whether the players should be allowed to generate in multiple dimensions at once. \n\nFor server owners: \nAll dimensions share the same thread pool. This means that empty dimensions (i.e. without players in them) \nmay slow down the generation of non-empty ones.",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationRequestRateLimit": "Rate Limit for Generation Requests",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationRequestRateLimit.@tooltip": "How many LOD generation requests per second should a client send? \nAlso limits the amount of player's requests allowed to stay in the server's queue.",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.realTimeUpdatesSectionNote": " \u25cf  Real-time Updates",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableRealTimeUpdates": "Enable Real-time Updates",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableRealTimeUpdates.@tooltip": "If true, the client will receive real-time LOD updates for chunks outside the client's render distance.",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.syncOnLoginSectionNote": " \u25cf  Synchronization on Login",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.synchronizeOnLogin": "Synchronize LODs on Login",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.synchronizeOnLogin.@tooltip": "If true, clients will receive updated LODs on join if any changes occurred since last join.",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.syncOnLoginRateLimit": "Rate Limit for Sync on Login",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.syncOnLoginRateLimit.@tooltip": "How many LOD sync requests per second should a client send? \nAlso limits the amount of player's requests allowed to stay in the server's queue.",
   "distanthorizons.config.client.advanced.multiplayer.serverFolderNameMode":
     "Server Folder Mode",
   "distanthorizons.config.client.advanced.multiplayer.serverFolderNameMode.@tooltip":
-    "Determines the folder format for local multiplayer data.\n\n§6Name Only:§r\nUses the server browser name. Ex: \"Minecraft Server\"\n§6Name IP:§r\n\"Minecraft Server, IP 192.168.1.40\"\n§6Name, IP, Port:§r\n\"Minecraft Server, IP 192.168.1.40:25565\"\n§6Name, IP, Port, MC Version:§r\n\"Minecraft Server, IP 192.168.1.40:25565, GameVersion 1.18.1\"\n\n§c§lCaution:§r changing while connected to a multiplayer server may cause glitches.",
+    "Determines the folder format for local multiplayer data.\n\n§6Name Only:§r\nUses the server browser name. Ex: \"Minecraft Server\"\n§6IP Only:§r\n\"192.168.1.40\"\n§6Name IP:§r\n\"Minecraft Server, IP 192.168.1.40\"\n§6Name, IP, Port:§r\n\"Minecraft Server, IP 192.168.1.40:25565\"\n§6Name, IP, Port, MC Version:§r\n\"Minecraft Server, IP 192.168.1.40:25565, GameVersion 1.18.1\"\n\n§c§lCaution:§r changing while connected to a multiplayer server may cause glitches.",
   "distanthorizons.config.client.advanced.multiplayer.multiverseSimilarityRequiredPercent":
     "Multiverse Required Similarity %",
   "distanthorizons.config.client.advanced.multiplayer.multiverseSimilarityRequiredPercent.@tooltip":
@@ -474,20 +510,30 @@
   "distanthorizons.config.client.advanced.debugging.showOverlappingQuadErrors":
     "Show overlapping quad errors",
   "distanthorizons.config.client.advanced.debugging.showOverlappingQuadErrors.@tooltip":
-    "f true overlapping quads will be rendered as bright red for easy identification. \nIf false the quads will be rendered normally.",
+    "If true overlapping quads will be rendered as bright red for easy identification. \nIf false the quads will be rendered normally.",
+  "distanthorizons.config.client.advanced.debugging.logBufferGarbageCollection":
+    "Log Buffer Garbage Collection",
+  "distanthorizons.config.client.advanced.debugging.logBufferGarbageCollection.@tooltip":
+    "If true OpenGL Buffer garbage collection will be logged \nthis also includes the number of live buffers. ",
   "distanthorizons.config.client.advanced.debugging.allowUnsafeValues":
     "Allow Unsafe UI Values",
   "distanthorizons.config.client.advanced.debugging.allowUnsafeValues.@tooltip":
     "If enabled, very limited config input validation will be performed. \n\nWarning: enabling this can cause instability or crashing, use at your own risk. \nNote: this option isn't saved between sessions.",
   
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugEnable":
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugEnable":
     "Enable Column Builder Limiting",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugDetailLevel":
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugDetailLevel":
     "Column Builder Limit - Detail Level",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugXPos":
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugXPos":
     "Column Builder Limit - X Pos",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugZPos":
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugZPos":
     "Column Builder Limit - Z Pos",
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugXRow":
+    "Column Builder Limit - X Row",
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugZRow":
+    "Column Builder Limit - Z Row",
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugColumnIndex":
+    "Column Builder Limit - Col Index",
   
     
   "distanthorizons.config.client.advanced.buffers":
@@ -547,6 +593,10 @@
     "Network Events",
   "distanthorizons.config.client.advanced.logging.showLowMemoryWarningOnStartup":
     "Show Low Memory Warning",
+  "distanthorizons.config.client.advanced.logging.showReplayWarningOnStartup":
+    "Show Replay Warning",
+  "distanthorizons.config.client.advanced.logging.showModCompatibilityWarningsOnStartup":
+    "Show Mod Compatibility Warnings",
     
     
     
@@ -683,6 +733,13 @@
     "Half a chunk",
   "distanthorizons.config.enum.EDhApiMaxHorizontalResolution.CHUNK":
     "Chunk",
+    
+  "distanthorizons.config.enum.EDhApiMcRenderingFadeMode.NONE":
+    "None",
+  "distanthorizons.config.enum.EDhApiMcRenderingFadeMode.SINGLE_PASS":
+    "Single Pass",
+  "distanthorizons.config.enum.EDhApiMcRenderingFadeMode.DOUBLE_PASS":
+    "Double Pass",
     
   "distanthorizons.config.enum.EDhApiVerticalQuality.HEIGHT_MAP":
     "1. Height Map",

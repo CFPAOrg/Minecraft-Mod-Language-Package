@@ -118,8 +118,17 @@
     "生物群落过渡",
   "distanthorizons.config.client.advanced.graphics.quality.lodBiomeBlending.@tooltip":
     "这与LOD区域的原版生物群落过渡设置相同。 \n\n请注意，除“0”以外的任何内容都会极大地影响 LOD 构建时间\n并增加三角形数量。如果设置得过高，用于区块生成速度\n的性能消耗会非常大。\n\n“0”等于“1x1”的原版生物群落过渡， \n“1”等于“3x3”的原版生物群落过渡， \n“2”等于“5x5”的原版生物群落过渡...... \n",
+  "distanthorizons.config.client.advanced.graphics.quality.ditherDhFade":
+    "附近LOD消失选项",
+  "distanthorizons.config.client.advanced.graphics.quality.ditherDhFade.@tooltip":
+    "如果为是。LOD 会随着您靠近它们而消失。\n如果为否，则 LOD 将在距离镜头设定的距离处中断。此设置受原版防过度绘制配置的影响。",
+    
+  "distanthorizons.config.client.advanced.graphics.quality.lodBiomeBlending":
+    "生物群系混合",
+  "distanthorizons.config.client.advanced.graphics.quality.lodBiomeBlending.@tooltip":
+    "这与 LOD 区域的原版生物群系混合的设置相同。\n\n请注意，除 '0' 之外的任何值都会极大地影响 Lod 构建时间\n并增加三角形计数。如果设置得太高，\n区块生成速度的开支也会相当大。\n\n'0' 等于原版生物群系混合 '1x1'，\n'1' 等于原版生物群系混合 '3x3'，\n'2' 等于原版生物群系混合 '5x5'...\n",
   
-  
+
   "distanthorizons.config.client.advanced.graphics.fog":
     "迷雾",
 
@@ -269,10 +278,6 @@
     "过度绘制预防",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.overdrawPrevention.@tooltip":
     "确定遥远的地平线将开始渲染的距离镜头多远。 \n以原版渲染距离的百分比来衡量。\n\n较高的值将阻止 LOD 在更远的距离渲染在原版块后面，\n但可能会导致 LOD 中出现孔洞。 \n飞越空载地形时最有可能出现孔洞。 \n\n增加原版渲染距离可提高此设置的有效性。",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.seamlessOverdraw":
-    "(实验性) 无缝绘制",
-  "distanthorizons.config.client.advanced.graphics.advancedGraphics.seamlessOverdraw.@tooltip":
-    "将尝试匹配的实验选项 \n遥远的地平线和原版的近/远剪裁平面， \n减少过度绘制。 \n\n注意: 仅适用于 Fabric。",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.brightnessMultiplier":
     "亮度倍率",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.brightnessMultiplier.@tooltip":
@@ -313,7 +318,33 @@
     "草方块侧面渲染",
   "distanthorizons.config.client.advanced.graphics.advancedGraphics.grassSideRendering.@tooltip":
     "草方块的侧面和底部应该如何渲染LOD？",
-  
+  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableBeaconDistanceCulling":
+    "禁用信标距离剔除",
+  "distanthorizons.config.client.advanced.graphics.advancedGraphics.disableBeaconDistanceCulling.@tooltip":
+    "如果为是，则不会渲染镜头附近的所有信标，以防止原版过度绘制。如果为否，则将呈现所有信标光束。",
+
+
+  "distanthorizons.config.client.advanced.graphics.genericRendering":
+    "通用渲染",
+
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableRendering":
+    "开启渲染",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableRendering.@tooltip":
+    "如果为是，则非 terrain 对象将在 DH 的 terrain 中渲染。\n这包括信标光束和云。",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableBeaconRendering":
+    "开启信标渲染",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableBeaconRendering.@tooltip":
+    "如果开启，信标光束会被渲染.",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableCloudRendering":
+    "开启云渲染",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableCloudRendering.@tooltip":
+    "如果开启，云会被渲染.",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableInstancedRendering":
+    "启用实例化渲染",
+  "distanthorizons.config.client.advanced.graphics.genericRendering.enableInstancedRendering.@tooltip":
+    "可以禁用，以使用速度慢得多但兼容性更强的直接渲染方式。\n禁用此功能可用于修复 MacOS 上的某些崩溃问题。",
+
+
   "distanthorizons.config.client.advanced.worldGenerator":
     "世界生成器",
     
@@ -350,6 +381,10 @@
     "仅使用DH照明引擎",
   "distanthorizons.config.client.advanced.lodBuilding.onlyUseDhLightingEngine.@tooltip":
     "如果关闭，则原版的照明引擎会尽可能照亮LOD 区块，则 \n并仅在必要时回退到DH的照明引擎。 \n\n如果开启，LOD 将仅使用遥远的地平线的照明引擎。 \n\n通常，最好将其禁用，并且只能启用 \n如果存在照明问题或用于调试时可以启用。",
+  "distanthorizons.config.client.advanced.lodBuilding.pullLightingForPregeneratedChunks":
+    "为预生成的数据块拉取光照",
+  "distanthorizons.config.client.advanced.lodBuilding.pullLightingForPregeneratedChunks.@tooltip":
+    "如果为是，则为预先存在的区块生成 LOD 时将尝试提取保存在 Minecraft 存档区域文件中的照明数据\n。如果为否，DH 会在没有照明的情况下加载区块并重新照明它们。\n\n将此项设置为是将导致 LOD 生成速度更快\n对于已生成的区域，但大多数照明 Mod 会破坏这种情况。\n\n如果 LOD 为黑色，则将其设为否",
   "distanthorizons.config.client.advanced.lodBuilding.dataCompression":
     "数据压缩",
   "distanthorizons.config.client.advanced.lodBuilding.dataCompression.@tooltip":
@@ -360,10 +395,36 @@
     "创建LOD数据时，应该如何压缩数据？ \n此设置仅影响新的或更新的 LOD 数据，\n更改此设置时已生成的任何数据都将是 \n在修改或重新加载之前不受影响。\n\n最准确：合并相同的块\n最高压缩率：视觉相等",
   "distanthorizons.config.client.advanced.lodBuilding.showMigrationChatWarning":
     "从聊天中记录迁移",
-    
+  "distanthorizons.config.client.advanced.lodBuilding.ignoredRenderBlockCsv":
+    "忽略的块CSV列表",
+  "distanthorizons.config.client.advanced.lodBuilding.ignoredRenderBlockCsv.@tooltip":
+    "DH 不会呈现的方块资源位置列表，以逗号分隔。注意：空气始终包含在此列表中。",
+  "distanthorizons.config.client.advanced.lodBuilding.ignoredRenderCaveBlockCsv":
+    "忽略的洞穴块CSV列表",
+  "distanthorizons.config.client.advanced.lodBuilding.ignoredRenderCaveBlockCsv.@tooltip":
+    "方块资源位置列表，以逗号分隔，如果它们位于光照为 0 的地下区域，则不应渲染这些位置。注意：空气始终包含在此列表中。",
+
+
+
+
+
   "distanthorizons.config.client.advanced.multiplayer":
     "多人游戏",
-    
+
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking": "服务器网络",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generalSectionNote": " \u25cf  全局",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.levelKeyPrefix": "级别密钥前缀",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationSectionNote": " \u25cf  生成",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationRequestRateLimit": "生成请求的速率限制",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.generationRequestRateLimit.@tooltip": "客户端每秒应发送多少个 LOD 生成请求？\n也限制了允许保留在服务器队列中的玩家请求数量。",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.realTimeUpdatesSectionNote": " \u25cf  实时更新",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableRealTimeUpdates": "开启实时更新",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.enableRealTimeUpdates.@tooltip": "如果为是，则客户端将接收客户端渲染距离之外的区块的实时 LOD 更新",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.syncOnLoginSectionNote": " \u25cf  登录时同步",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.synchronizeOnLogin": "登录时同步LOD",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.synchronizeOnLogin.@tooltip": "如果为是，如果自上次加入服务器以来，服务器区块发生了任何更改，\n则客户端将在加入时收到更新的 LOD 数据文件。",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.syncOnLoginRateLimit": "登录时同步速率限制",
+  "distanthorizons.config.client.advanced.multiplayer.serverNetworking.syncOnLoginRateLimit.@tooltip": "客户端每秒应发送多少个 LOD 生成请求？\n也限制了允许保留在服务器队列中的玩家请求数量",
   "distanthorizons.config.client.advanced.multiplayer.serverFolderNameMode":
     "服务器文件夹模式",
   "distanthorizons.config.client.advanced.multiplayer.serverFolderNameMode.@tooltip":
@@ -376,11 +437,6 @@
     "网络服务器多世界支持",
   "distanthorizons.config.client.advanced.multiplayer.enableMultiverseNetworking.@tooltip":
     "如果为开启，遥远的地平线将尝试连接 \n服务器，以改善对多世界的支持。",
-  "distanthorizons.config.client.advanced.multiplayer.enableServerNetworking":
-  "§4未实现，仅供开发§r - 服务器支持",
-  "distanthorizons.config.client.advanced.multiplayer.enableServerNetworking.@tooltip":
-  "§6注意:§r 这仅适用于开发人员，尚未实现。 \n\n如果开启，遥远的地平线将尝试连接 \n服务器，以便在原版渲染距离之外加载 LOD。 \n\n注意: 这需要在服务器上安装遥远的地平线模组才会生效。",
-  
   
   
   "distanthorizons.config.client.advanced.multiThreading":
@@ -406,12 +462,13 @@
     "构建顶点缓冲区时 \n(发送到 GPU 绘制 LOD)时使用的线程数。 \n只能介于1到CPU 的处理器最大线程数量之间。",
   "distanthorizons.config.client.advanced.multiThreading.runTimeRatioForFileHandlerThreads":
     "文件处理程序线程的运行时百分比",
+
   "distanthorizons.config.client.advanced.multiThreading.numberOfUpdatePropagatorThreads":
     "更新传播器线程数",
-  "distanthorizons.config.client.advanced.multiThreading.runTimeRatioForUpdatePropagatorThreads":
-    "更新传播器线程的运行时的百分比",
   "distanthorizons.config.client.advanced.multiThreading.numberOfUpdatePropagatorThreads.@tooltip":
     "应用 LOD 更新时应使用多少个线程？ \nLOD 更新是对高细节 LOD 进行下采样的操作 \n到一个较低的细节。 \n\n此配置可以拥有更多的线程数\n分配的和低得多的运行时间比率 vs 其他线程池 \n因为任何特定线程可能运行的时间都相对较短。",
+  "distanthorizons.config.client.advanced.multiThreading.runTimeRatioForUpdatePropagatorThreads":
+    "更新传播器线程的运行时的百分比",
 
   "distanthorizons.config.client.advanced.multiThreading.numberOfLodBuilderThreads":
     "LOD构建线程数",
@@ -450,26 +507,33 @@
     "启用白色世界",
   "distanthorizons.config.client.advanced.debugging.enableWhiteWorld.@tooltip":
     "如果启用，则顶点颜色不会传递。\n对于调试光影着色器很有用。",
-
   "distanthorizons.config.client.advanced.debugging.showOverlappingQuadErrors":
     "显示重叠四边形的错误",
   "distanthorizons.config.client.advanced.debugging.showOverlappingQuadErrors.@tooltip":
     "如果启用，重叠的四边形将呈现为亮红色，以便于识别。\n如果关闭，则四边形将正常呈现。",
-
+  "distanthorizons.config.client.advanced.debugging.logBufferGarbageCollection":
+    "日志缓冲区垃圾回收",
+  "distanthorizons.config.client.advanced.debugging.logBufferGarbageCollection.@tooltip":
+    "如果为是，则将记录 OpenGL 缓冲区垃圾回收\n这还包括实时缓冲区的数量。",
   "distanthorizons.config.client.advanced.debugging.allowUnsafeValues":
     "允许不安全的 UI 值",
   "distanthorizons.config.client.advanced.debugging.allowUnsafeValues.@tooltip":
     "如果启用，将执行非常有限的配置输入验证。 \n\n警告: 启用此功能可能会导致不稳定或崩溃，使用风险后果自负。 \n注意: 此选项不会在会话之间保存。",
   
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugEnable":
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugEnable":
     "启用列生成器限制",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugDetailLevel":
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugDetailLevel":
     "列生成器限制 - 详细级别",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugXPos":
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugXPos":
     "列生成器限制 - X 位置",
-    "distanthorizons.config.client.advanced.debugging.columnBuilderDebugZPos":
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugZPos":
     "列生成器限制 - Z 位置",
-  
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugXRow":
+    "列生成器限制 - X 行",
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugZRow":
+    "列生成器限制 - Z 行",
+  "distanthorizons.config.client.advanced.debugging.columnBuilderDebugColumnIndex":
+    "列生成器限制 - 列索引",
     
   "distanthorizons.config.client.advanced.buffers":
     "缓冲区",
@@ -528,7 +592,10 @@
     "网络事件",
   "distanthorizons.config.client.advanced.logging.showLowMemoryWarningOnStartup":
     "显示内存不足警告",
-    
+  "distanthorizons.config.client.advanced.logging.showReplayWarningOnStartup":
+    "显示Replay模组警告",
+  "distanthorizons.config.client.advanced.logging.showModCompatibilityWarningsOnStartup":
+    "显示模组兼容性警告",  
     
     
   "distanthorizons.config.client.advanced.debugging.exampleConfigScreen":
@@ -577,16 +644,13 @@
     "显示世界生成队列",
   "distanthorizons.config.client.advanced.debugging.debugWireframe.showRenderSectionStatus":
     "显示渲染部分状态",
-  "distanthorizons.config.client.advanced.debugging.debugWireframe.showFullDataFileStatus":
-    "显示完整数据文件状态",
-  "distanthorizons.config.client.advanced.debugging.debugWireframe.showFullDataFileSampling":
-    "显示完整数据文件采样",
-  "distanthorizons.config.client.advanced.debugging.debugWireframe.showRenderDataFileStatus":
-    "显示渲染数据文件状态",
   "distanthorizons.config.client.advanced.debugging.debugWireframe.showQuadTreeRenderStatus":
     "显示四叉树渲染状态",
   "distanthorizons.config.client.advanced.debugging.debugWireframe.showFullDataUpdateStatus":
     "显示完整数据更新状态",
+
+
+
 
   "distanthorizons.config.client.advanced.debugging.openGl":
     "OpenGL相关",
@@ -660,16 +724,23 @@
     "CPU全核加载",
     
   "distanthorizons.config.enum.EDhApiMaxHorizontalResolution.BLOCK":
-    "1个区块",
+    "1个方块",
   "distanthorizons.config.enum.EDhApiMaxHorizontalResolution.TWO_BLOCKS":
-    "2个区块",
+    "2个方块",
   "distanthorizons.config.enum.EDhApiMaxHorizontalResolution.FOUR_BLOCKS":
-    "4个区块",
+    "4个方块",
   "distanthorizons.config.enum.EDhApiMaxHorizontalResolution.HALF_CHUNK":
     "1/2个区块",
   "distanthorizons.config.enum.EDhApiMaxHorizontalResolution.CHUNK":
     "1个区块",
-    
+
+  "distanthorizons.config.enum.EDhApiMcRenderingFadeMode.NONE":
+    "无",
+  "distanthorizons.config.enum.EDhApiMcRenderingFadeMode.SINGLE_PASS":
+    "单线程",
+  "distanthorizons.config.enum.EDhApiMcRenderingFadeMode.DOUBLE_PASS":
+    "双线程",  
+
   "distanthorizons.config.enum.EDhApiVerticalQuality.HEIGHT_MAP":
     "高度映射",
   "distanthorizons.config.enum.EDhApiVerticalQuality.LOW":
@@ -690,8 +761,8 @@
     "高",
   "distanthorizons.config.enum.EDhApiHorizontalQuality.EXTREME":
     "极致",
-  "distanthorizons.config.enum.EDhApiHorizontalQuality.UNLIMITED":
-    "无限制",
+  "distanthorizons.config.enum.EDhApiVerticalQuality.PIXEL_ART":
+    "像素艺术",
     
   "distanthorizons.config.enum.EDhApiTransparency.DISABLED":
     "禁用",
@@ -780,7 +851,19 @@
     "特点",
   "distanthorizons.config.enum.EDhApiDistantGeneratorMode.FULL":
     "完整",
+      
+  "distanthorizons.config.enum.EDhApiDataCompressionMode.UNCOMPRESSED":
+    "解压",
+  "distanthorizons.config.enum.EDhApiDataCompressionMode.LZ4":
+    "快速/大 - LZ4",
+  "distanthorizons.config.enum.EDhApiDataCompressionMode.LZMA2":
+    "慢速/小 - LZMA2",
     
+  "distanthorizons.config.enum.EDhApiWorldCompressionMode.MERGE_SAME_BLOCKS":
+    "1. 合并相同方块",
+  "distanthorizons.config.enum.EDhApiWorldCompressionMode.VISUALLY_EQUAL":
+    "2. 视觉相等",
+      
   "distanthorizons.config.enum.EDhApiLightGenerationMode.DISTANT_HORIZONS":
     "遥远的地平线",
   "distanthorizons.config.enum.EDhApiLightGenerationMode.MINECRAFT":
@@ -810,7 +893,9 @@
     "严格",
     
   "distanthorizons.config.enum.EDhApiServerFolderNameMode.NAME_ONLY":
-    "仅供参考",
+    "仅限名称",
+  "distanthorizons.config.enum.EDhApiServerFolderNameMode.IP_ONLY":
+    "仅限IP",  
   "distanthorizons.config.enum.EDhApiServerFolderNameMode.NAME_IP":
     "名称和IP",
   "distanthorizons.config.enum.EDhApiServerFolderNameMode.NAME_IP_PORT":
@@ -909,5 +994,14 @@
   "distanthorizons.config.enum.EDhApiUpdateBranch.STABLE":
     "稳定版",
   "distanthorizons.config.enum.EDhApiUpdateBranch.NIGHTLY":
-    "每日构建测试版"
+    "每日构建测试版",
+  "distanthorizons.config.enum.EDhApiUpdateBranch.AUTO":
+    "自动",
+  "distanthorizons.config.enum.EDhApiGrassSideRendering.AS_GRASS":
+    "作为草",
+  "distanthorizons.config.enum.EDhApiGrassSideRendering.FADE_TO_DIRT":
+    "淡入泥土",
+  "distanthorizons.config.enum.EDhApiGrassSideRendering.AS_DIRT":
+    "作为泥土"
+
 }
