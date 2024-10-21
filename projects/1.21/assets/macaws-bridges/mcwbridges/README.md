@@ -6,7 +6,7 @@ flowchart LR
     1.18.2 -->|indirect| 1.18.2-fabric;
     1.16.5 -->|indirect| 1.16.5-fabric;
     1.21.1 -->|indirect| 1.20.1 & 1.19.2/1.19.2-fabric & 1.18.2 & 1.16.5
-    click 1.21.1 "/projects/1.21/assets/macaws-bridges/mcwbridges"
+    click 1.21.1 "./projects/1.21/assets/macaws-bridges/mcwbridges"
     click 1.20.1 "/projects/1.20/assets/macaws-bridges/mcwbridges"
     click 1.18.2 "/projects/1.18/assets/macaws-bridges/mcwbridges"
     click 1.16.5 "/projects/1.16/assets/macaws-bridges/mcwbridges"
