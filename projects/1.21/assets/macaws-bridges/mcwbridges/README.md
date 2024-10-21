@@ -16,3 +16,15 @@ flowchart LR
     click 1.18.2-fabric "https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/tree/main-macaws/projects/1.18-fabric/assets/macaws-bridges/mcwbridges"
     click 1.16.5-fabric "https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/tree/main-macaws/projects/1.16-fabric/assets/macaws-bridges/mcwbridges"
 ```
+
+```
+1.21.1
+├──[indirect] 1.21.1-fabric
+├──[indirect] 1.20.1
+│              └──[indirect] 1.20.1-fabric
+├──[indirect] 1.19.2/1.19.2-fabric
+├──[indirect] 1.18.2
+│              └──[indirect] 1.18.2-fabric
+└──[indirect] 1.16.5
+               └──[indirect] 1.16.5-fabric
+```
