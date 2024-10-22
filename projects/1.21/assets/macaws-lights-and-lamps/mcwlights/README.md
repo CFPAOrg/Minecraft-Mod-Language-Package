@@ -9,7 +9,7 @@ flowchart LR
     1.16.5 -->|indirect| 1.16.5-fabric
     1.21.1 -->|indirect| 1.20.1 & 1.19.2/1.19.2-fabric & 1.18.2 & 1.16.5
     1.21.1-fabric -->|singleton| 1.20.1-fabric & 1.19.2/1.19.2-fabric & 1.18.2-fabric
-    linkStyle 8,9,10 stroke:crimson,color:crimson;
+    linkStyle 8,9,10 stroke:crimson,color:crimson
 ```
 
 ```
