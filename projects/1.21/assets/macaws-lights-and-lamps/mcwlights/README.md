@@ -14,14 +14,14 @@ flowchart LR
 
 ```
 1.21.1
-├── 1.21.1-fabric (singleton)
-├── 1.20.1
-│    └── 1.20.1-fabric (singleton)
-├── 1.19.2/1.19.2-fabric (singleton)
-├── 1.18.2
-│    └── 1.18.2-fabric (singleton)
-└── 1.16.5
-     └── 1.16.5-fabric
+ ├── 1.21.1-fabric (singleton)
+ ├── 1.20.1
+ │    └── 1.20.1-fabric (singleton)
+ ├── 1.19.2/1.19.2-fabric (singleton)
+ ├── 1.18.2
+ │    └── 1.18.2-fabric (singleton)
+ └── 1.16.5
+      └── 1.16.5-fabric
 ```
 
 ### 链接区域
