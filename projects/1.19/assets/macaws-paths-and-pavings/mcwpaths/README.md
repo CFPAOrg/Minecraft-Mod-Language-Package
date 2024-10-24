@@ -1,2 +1,1 @@
-此版本（1.19）的Macaw's Paths and Pavings在语言文件上与1.18、1.16完全一致，故取用上述版本的组合文件进行打包。
-此版本（1.19）的`Bricks`译名进行了更改（`砖`->`红砖`），故使用新组合文件进行覆盖。
+[见主文档](/projects/1.21/assets/macaws-paths-and-pavings/mcwpaths)

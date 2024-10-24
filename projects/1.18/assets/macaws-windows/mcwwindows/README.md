@@ -1,1 +1,1 @@
-此版本（1.18）的Macaw's Windows在语言文件上与1.21的相比仅有少键，故取用上述版本的组合文件进行打包。
+[见主文档](/projects/1.21/assets/macaws-windows/mcwwindows)

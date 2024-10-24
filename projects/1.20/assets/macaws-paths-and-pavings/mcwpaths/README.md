@@ -1,1 +1,1 @@
-此版本（1.20）的Macaw's Paths and Pavings在语言文件上与1.19、1.18、1.16完全一致，故取用上述版本的组合文件进行打包。
+[见主文档](/projects/1.21/assets/macaws-paths-and-pavings/mcwpaths)
