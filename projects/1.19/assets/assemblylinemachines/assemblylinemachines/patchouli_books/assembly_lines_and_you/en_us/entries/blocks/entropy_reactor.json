@@ -1,0 +1,117 @@
+{
+	"name": "Entropy Reactor",
+	"category": "assemblylinemachines:blocks",
+	"icon": "assemblylinemachines:entropy_reactor_core",
+	"pages":[
+		{
+			"type": "text",
+			"text": "The Entropy Reactor is your late-game power generation. This block, when used correctly, can produce very large amounts of energy.$(p)Keep reading to learn how to set it up."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/entropy_reactor_block",
+			"recipe2": "assemblylinemachines:crafting/entropy_reactor_core"
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping":{
+					"a": "assemblylinemachines:entropy_reactor_block",
+					"0": "assemblylinemachines:entropy_reactor_core"
+				},
+				"pattern":[
+					["aaa", "aaa", "aaa"], ["aaa", "a0a", "aaa"], ["aaa", "aaa", "aaa"]
+				]
+			},
+			"name": "Entropy Reactor",
+			"text": "$(7)$(o)This is the setup, 26 Entropy Reactor Blocks and a Core in the middle."
+		},
+		{
+			"type": "text",
+			"text": "When complete, SHIFT-RIGHT CLICK the center block on any side to finish the construction.$(p)This block has four important blocks around the outside:$(li)$(3)Screen, $()on the front, where you can access the machine.$(li)$(4)Power Port, $()left side of the Screen, allows removal of power.$(li)$(9)Item Port, $()right and back side of the Screen, allows insertion of fuel and removal of waste."
+		},
+		{
+			"type": "text",
+			"text": "The Entropy Reactor's basic function is to burn $(5)Corrupted Shards,$() produced from $(l:blocks/liquids#condensed_void)Condensed Void.$()$(p)When idle, the Reactor will accept Shards through any Item Port. As soon as a Shard is put in, the Reactor will heat up for fifteen seconds, before combusting all Shards contained and providing a large burst of power."
+		},
+		{
+			"type": "text",
+			"text": "More Shards will increase the FE/t, but to increase the length of time the power burst lasts for, you need to increase your $(6)Variety Rating.$()$(p)This is a percentage for every generation cycle that will be increased based on the variety of the original items the Shards are composed of."
+		},
+		{
+			"type": "text",
+			"text": "For example, adding 20 of the identical corrupted item will generate 6,000FE/t, but only for one second, as the Variety is extremely low, totalling 120KFE generated.$(p)By contrast, adding 20 completely unique items in one cycle will generate 6,000FE/t, but for a whopping 10 seconds, totalling almost 1.1MFE.$(p)$(d)In summary, less unique items is better than more of the same item."
+		},
+		{
+			"type": "text",
+			"text": "Of course, low power output is not the only reason to keep $(6)Variety$() high.$(br)Constantly low $(6)Variety$() will saturate your Core with $(c)Entropy, $()a dangerous compound that will cause more and more adverse effects the higher the saturation gets.$(br)$(c)If you let the core saturate completely, the Reactor will explode.$()$(p)Entropy can be lowered again by keeping $(6)Variety$() high."
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:semi_dense_neutron_matter",
+			"title": "SD. Neutron Matter",
+			"link_recipe": true,
+			"text": "With energy, the Entropy Reactor produces $(2)Waste.$() The type produced depends on the $(6)Variety,$() with higher ratings making higher-quality Waste.$(p)The lowest-quality waste is $(3)Semi-Dense Neutron Matter.$() This generates whenever the condition for another Waste is not met."
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:quark_matter",
+			"link_recipe": true,
+			"text": "The $(9)Quark Matter$() is the medium-rarity Waste produced by the Entropy Reactor. This is produced whenever the $(6)Variety Rating$() is greater than 20%."
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:strange_matter",
+			"link_recipe": true,
+			"text": "The $(2)Strange Matter$() is the rarest Waste produced by the Entropy Reactor. This is produced whenever the $(6)Variety Rating$() is greater than 80%.$(p)This item is required for some recipes, unlike the other two Wastes, in which the product is interchangeable."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/upgrades/entropy_reactor_upgrade_capacity",
+			"title": "Capacity Upgrade",
+			"text": "The $(2)Capacity Upgrade$() increases the internal $(d)Corrupted Shard$() storage, allowing more than 20 Shards to be loaded in per-operation."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/upgrades/entropy_reactor_upgrade_cycle_delayer",
+			"title": "Cycle Delayer",
+			"text": "The $(2)Cycle Delayer Upgrade$() increases the length of time from start-of-loading to when the reactor powers up, allowing more time for $(d)Corrupted Shards$() to be loaded."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/upgrades/entropy_reactor_upgrade_variety",
+			"title": "Variety Upgrade",
+			"text": "The $(2)Variety Upgrade$() gives higher max $(6)Variety Rating,$() even allowing ratings over 100%.$(p)$(c)WARNING: This also lowers the minimum Variety Rating."
+		},
+		{
+			"type": "entity",
+			"entity": "assemblylinemachines:corrupt_shell",
+			"anchor": "corruptshell",
+			"scale": 0.85
+		},
+		{
+			"type": "text",
+			"text": "The $(d)Corrupt Shell$() is one by-product of a Core with high $(c)Entropy.$() In exchange for lowering the $(c)Entropy$() value, the Core will spawn these mobs around the reactor. $(p)This mob is blazing fast, very strong, and can locate you and seek you out from very far away. However, $(thing)perhaps their drops will come in handy later on."
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:galactic_flesh",
+			"link_recipe": true,
+			"text": "This is $(item)Galactic Flesh.$() This item is a common drop from the $(d)Corrupt Shell.$()$(p)Eating this will restore some hunger and provide you with a completely random potion effect."
+		},
+		{
+			"type": "spotlight",
+			"item": "assemblylinemachines:reality_crystal",
+			"link_recipe": true,
+			"text": "This is a $(item)Reality Crystal,$() an exceedingly rare drop from the $(d)Corrupt Shell.$() $(thing)Looting$() enchantments increase the chance to get this."
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/upgrades/entropy_reactor_upgrade_entropic_harnesser",
+			"title": "E. Harnesser Upgrade",
+			"anchor": "entropicharnesser",
+			"text": "The $(2)Entropic Harnesser Upgrade$() changes the reactor to produce only $(c)Entropy$() instead of FE, and will only perform $(d)World Corruption$() instead of the other negative effects."
+		}
+		
+	]
+}
