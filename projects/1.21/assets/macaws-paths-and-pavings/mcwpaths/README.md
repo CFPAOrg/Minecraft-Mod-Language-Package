@@ -4,11 +4,12 @@
 flowchart LR
     1.21.1 -->|indirect| 1.21.1-fabric
     1.20.1 -->|indirect| 1.20.1-fabric
-    1.21.1 -->|indirect| 1.19.2/1.19.2-fabric -->|indirect| 1.18.2 -->|indirect| 1.18.2-fabric
-    1.19.2/1.19.2-fabric -->|composition| 1.18.2
-    1.18.2 -->|indirect| 1.16.5 -->|indirect| 1.16.5-fabric
+    1.21.1 -->|indirect| 1.19.2/1.19.2-fabric & 1.18.2
+    1.18.2 -->|indirect| 1.18.2-fabric & 1.16.5
+    1.18.2 -->|composition| 1.18.2-fabric & 1.16.5
+    1.16.5 -->|indirect| 1.16.5-fabric
     1.21.1 -->|indirect| 1.20.1
-    linkStyle 5 color:royalblue,stroke:royalblue
+    linkStyle 6,7 color:royalblue,stroke:royalblue
 ```
 
 ```
@@ -16,9 +17,9 @@ flowchart LR
  ├── 1.21.1-fabric
  ├── 1.20.1
  │    └── 1.20.1-fabric
- └── 1.19.2/1.19.2-fabric (composition)
-      ├── 1.18.2
-      │    └── 1.18.2-fabric
+ ├── 1.19.2/1.19.2-fabric
+ └── 1.18.2 (composition)
+      ├── 1.18.2-fabric
       └── 1.16.5
            └── 1.16.5-fabric
 ```
