@@ -7,7 +7,7 @@ flowchart LR
 
 ```
 1.21.1-fabric (singleton)(composition)
- └─ 1.20.1-fabric (singleton)(composition)
+ └── 1.20.1-fabric (singleton)(composition)
 ```
 
 ### 传送区域
