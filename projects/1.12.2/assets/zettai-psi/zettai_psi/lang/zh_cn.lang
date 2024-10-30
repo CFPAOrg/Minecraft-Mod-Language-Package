@@ -1,0 +1,186 @@
+# -- Additions
+stat.psi_cast=Psi 施法次数
+
+# -- POTION EFFECTS
+potion.zettai_psi:magic_shielding=魔力护盾
+potion.zettai_psi:magic_shielding.desc=阻止某些试图传送的行为，并减少受到的魔法伤害
+
+potion.zettai_psi:heating=加热
+potion.zettai_psi:heating.desc=如果药水效果不消除，会随着时间的推移慢慢加热
+
+potion.zettai_psi:freezing=冻结
+potion.zettai_psi:freezing.desc=如果药水效果不消除，会随着时间的推移慢慢冻结
+
+potion.zettai_psi:slowfall=缓降
+potion.zettai_psi:slowfall.desc=你会慢慢坠落
+
+# -- SELECTORS
+psi.spellpiece.selectorWandMode=选择符：术式模式
+psi.spellpiece.selectorWandMode.desc=返回当前的术式模式
+
+psi.spellpiece.selectorVectorUp=选择符：上方向矢量
+psi.spellpiece.selectorVectorUp.desc=构建 Y = 1.0 的矢量
+
+psi.spellpiece.selectorVectorDown=选择符：下方向矢量
+psi.spellpiece.selectorVectorDown.desc=构建 Y = -1.0 的矢量
+
+psi.spellpiece.selectorNearbyMagic=选择符：附近魔法
+psi.spellpiece.selectorNearbyMagic.desc=搜索给定半径内的魔法实体
+
+psi.spellpiece.selectorNearbyUndeads=选择符：附近亡灵
+psi.spellpiece.selectorNearbyUndeads.desc=搜索给定半径内的亡灵生物
+
+# -- OPERATORS
+psi.spellpiece.operatorLimit=运算符：上截断
+psi.spellpiece.operatorLimit.desc=如果传入的数字大于限制值，则返回限制值，否则返回该数
+
+psi.spellpiece.operatorRangeLimit=运算符：范围限制
+psi.spellpiece.operatorRangeLimit.desc=如果给定的数字大于正限制值或小于负限制值，则返回正/负限制值，否则返回该数
+
+psi.spellpiece.operatorRangeRandom=运算符：范围随机
+psi.spellpiece.operatorRangeRandom.desc=返回给定范围内的随机数
+
+psi.spellpiece.operatorVectorLimit=运算符：矢量限制
+psi.spellpiece.operatorVectorLimit.desc=如果矢量的模大于正限制值或小于负限制值，则将其模设置为正/负限制值
+
+psi.spellpiece.operatorBoolean=运算符：布尔值
+psi.spellpiece.operatorBoolean.desc=将给定的数字转换为布尔值（数字大于 0 时返回 1，否则返回 0）
+
+psi.spellpiece.operatorInvertBoolean=运算符：反布尔值
+psi.spellpiece.operatorInvertBoolean.desc=数字为 0 时返回 1，否则返回 0
+
+psi.spellpiece.operatorFindPotion=运算符：寻找效果
+psi.spellpiece.operatorFindPotion.desc=扫描实体，如果其有状态效果则返回 1，否则返回 0
+
+# -- TRICKS
+psi.spellpiece.trickApplyPotion=启动式：应用效果
+psi.spellpiece.trickApplyPotion.desc=对给定的实体施加效果，但成本加倍，效果的强度不稳定，且不能大于 2
+
+psi.spellpiece.trickPlaySound=启动式：召唤声音
+psi.spellpiece.trickPlaySound.desc=通过在给定的坐标向世界核心询问来播放声音，但很难翻译出答案
+
+psi.spellpiece.trickEqual=启动式：相等
+psi.spellpiece.trickEqual.desc=检查值是否等于布尔值，如果是则停止施法！
+
+psi.spellpiece.trickNotEqual=启动式：不等
+psi.spellpiece.trickNotEqual.desc=检查值是否等于布尔值，如果不是则停止施法！
+
+psi.spellpiece.trickRangedEqual=启动式：范围相等
+psi.spellpiece.trickRangedEqual.desc=检查数是否在布尔值的数值范围内，如果是则停止施法！（如果数没有被定义则等于最小值）
+
+psi.spellpiece.trickRangedNotEqual=启动式：逆向范围相等
+psi.spellpiece.trickRangedNotEqual.desc=检查数是否在布尔值的数值范围内，如果不是则停止施法！（如果数没有被定义则等于最小值）
+
+psi.spellpiece.trickMark=启动式：标记
+psi.spellpiece.trickMark.desc=在给定的时间内标记给定的实体（以秒为单位）
+
+psi.spellpiece.trickMassMark=启动式：群体标记
+psi.spellpiece.trickMassMark.desc=在给定的时间内标记给定的多个实体（以秒为单位）
+
+psi.spellpiece.trickDetection=启动式：探测
+psi.spellpiece.trickDetection.desc=如果可能的话，解除指定实体的隐身状态
+
+psi.spellpiece.trickMassDetection=启动式：群体探测
+psi.spellpiece.trickMassDetection.desc=如果可能的话，解除指定多个实体的隐身状态
+
+psi.spellpiece.trickMagicAttack=启动式：魔法攻击
+psi.spellpiece.trickMagicAttack.desc=用纯粹的 Psi 能量攻击实体
+
+psi.spellpiece.trickJumpEntity=启动式：亡灵跳跃控制
+psi.spellpiece.trickJumpEntity.desc=将尝试控制亡灵生物，使其跳起来
+
+psi.spellpiece.trickMoveEntity=启动式：亡灵运动控制
+psi.spellpiece.trickMoveEntity.desc=将尝试控制亡灵生物的运动
+
+psi.spellpiece.trickChooseEntity=启动式：目标亡灵
+psi.spellpiece.trickChooseEntity.desc=选定目标亡灵生物
+
+psi.spellpiece.trickCancelEntity=启动式：取消目标亡灵
+psi.spellpiece.trickCancelEntity.desc=如果给出了目标，取消亡灵生物，只有在目标等于亡灵生物的情况下才会取消它
+
+psi.spellpiece.trickSwitchWandMode=启动式：切换模式
+psi.spellpiece.trickSwitchWandMode.desc=如果布尔值为 1（默认为 1），则通过添加 +1 来切换施法模式，最多可达到最大值
+
+psi.spellpiece.trickSatiety=启动式：饱食
+psi.spellpiece.trickSatiety.desc=如果可能的话，给予目标一定饥饿值，但同时也会给予负面效果
+
+psi.spellpiece.trickShortTeleport=启动式：短程传送
+psi.spellpiece.trickShortTeleport.desc=闪现目标到如下坐标
+
+psi.spellpiece.trickSummonZombie=启动式：生成僵尸
+psi.spellpiece.trickSummonZombie.desc=从目标槽的腐肉中召唤出僵尸
+
+psi.spellpiece.trickSummonSkeleton=启动式：生成骷髅
+psi.spellpiece.trickSummonSkeleton.desc=从目标槽中的骨头中召唤出骷髅
+
+psi.spellpiece.trickHeal=启动式：治愈
+psi.spellpiece.trickHeal.desc=以给定的生命值治疗目标
+
+psi.spellpiece.trickStopLoopcast=启动式：停止循环
+psi.spellpiece.trickStopLoopcast.desc=如果数值在 0 和 1 的范围内，或者在给定值的范围内（负值与正值之间），则停止循环
+
+psi.spellpiece.trickTeleport=启动式：传送
+psi.spellpiece.trickTeleport.desc=将实体传送到指定坐标
+
+psi.spellpiece.trickMagicShielding=启动式：魔力护盾
+psi.spellpiece.trickMagicShielding.desc=在目标身上施加魔力护盾，可以抵御魔法伤害，也可以抵御瞬移
+
+psi.spellpiece.trickNegateFall=启动式：取消坠落
+psi.spellpiece.trickNegateFall.desc=以旋风盘取消目标的坠落伤害，但只在应用时生效
+
+psi.spellpiece.trickSlowfalling=启动式：缓降
+psi.spellpiece.trickSlowfalling.desc=根据给定的强度，减缓下降的速度
+
+psi.spellpiece.trickConjureParticles=启动式：构筑粒子
+psi.spellpiece.trickConjureParticles.desc=在给定的坐标构筑粒子
+
+psi.spellpiece.trickPoison=启动式：毒药
+psi.spellpiece.trickPoison.desc=在攻击目标的同时施毒
+
+psi.spellpiece.trickFreeze=启动式：冻结
+psi.spellpiece.trickFreeze.desc=冻结目标和其周围的实体
+
+psi.spellpiece.trickHeating=启动式：加热
+psi.spellpiece.trickHeating.desc=加热目标
+
+psi.spellpiece.trickLogComment=启动式：记录评论
+psi.spellpiece.trickLogComment.desc=将你所做术式评论的信息发送给你的或你目标的大脑
+
+psi.spellpiece.trickBreakArmor=启动式：打破魔法盔甲
+psi.spellpiece.trickBreakArmor.desc=使魔法盔甲破裂，因此魔法护盾有几率将被打破，几率：10%+（强度 * 2）
+
+# COMPILER ERRORS
+zettai_psi.spellerror.negative_int=一个不应该是负数的数字参数为负数
+
+# RUNTIME ERRORS
+zettai_psi.spellerror.potion_not_found=错误：效果的魔力路径不存在
+zettai_psi.spellerror.sound_not_found=错误：在核心中找不到这个声音
+zettai_psi.spellerror.color_limit=错误：颜色无法创建！
+zettai_psi.spellerror.no_comment=错误：术式中没有评论！
+
+# SPELL PARAMETER NAMES
+zettai_psi.spellparam.potion=路径
+zettai_psi.spellparam.limit=限制
+zettai_psi.spellparam.bool=布尔值
+zettai_psi.spellparam.pitch=音高
+zettai_psi.spellparam.volume=音量
+zettai_psi.spellparam.sound=Id
+zettai_psi.spellparam.undead=亡灵生物
+zettai_psi.spellparam.health=生命值
+zettai_psi.spellparam.stop_loop=停止循环
+zettai_psi.spellparam.direction=方向
+zettai_psi.spellparam.range=范围
+zettai_psi.spellparam.color=颜色
+
+# PIECE GROUPS
+psi.piecegroup.alchemy_code=炼金编码
+psi.piecegroup.alchemy_code.desc=手动控制效果的魔力路径，就几乎能用任何事物影响实体！<br><br>但是，魔力路径不能是负的，它不能处理多个值，而且这种值的个数有限。<br><br>用这种方法产生的效果的强度不能高于 2，它们只是不减损而已！
+
+psi.piecegroup.undead=亡灵的操纵术
+psi.piecegroup.undead.desc=用Psi影响亡灵生物就可以操纵它们。<br><br>使用亡灵运动控制将它们中的一个移动到你想要的地方。<br><br>也可以使用腐肉将僵尸变出来，但它仍然只是僵尸，不是你的奴仆。<br><br>使用选择符：附近亡灵就可以快速找到区域内的所有亡灵。
+
+psi.piecegroup.elemental_arts_two=元素艺术 2
+psi.piecegroup.elemental_arts_two.desc=你可以以不同的方式使用 Psi 整合产生的元素能量<br><br>可以用启动式：魔法攻击来试试，它会用魔法伤害实体。但是其效果会受若干事物影响：<br>1）目标生命值。<br>2）目标是否是亡灵？<br>3）实体是否看到你？<br><br>其他元素攻击的效果有所不同，并且有只能通过实验发现的细微差别！
+
+psi.piecegroup.teleportation=传送
+psi.piecegroup.teleportation.desc=纯正又困难的魔法艺术——传送……使用 Psi 创造魔力护盾，并转换目标周围的空间，我们可以准确地传送到我们想去的地方。由此就不会像闪现那样被自己的视野所限制了。
