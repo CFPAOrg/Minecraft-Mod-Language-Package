@@ -13,4 +13,5 @@
 
 ### 加载结构参考
 
+- `direct`<br>覆盖`default.json`。自1.20.5，该文件发生了更改。
 - `indirect`@`projects/1.20/assets/minecraft/minecraft`<br>复用[1.20处的字体修正包](../../../../1.20/assets/minecraft/minecraft/README.md)。
