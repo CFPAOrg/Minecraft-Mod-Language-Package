@@ -1,0 +1,21 @@
+window {
+    size(168,44)
+
+    action('reset','reset')
+    bind('analog','analog')
+
+    panel('','vertical') {
+        bgthickness(2)
+        togglebutton('analog','模拟模式') {
+            channel('analog')
+            desired(160,16)
+            tooltips('输出与输入相同','强度的红石信号','而不是0或是15')
+            check(true)
+        }
+        button('reset','重置') {
+            channel('reset')
+            desired(160,16)
+            tooltips('重置频道')
+        }
+    }
+}
