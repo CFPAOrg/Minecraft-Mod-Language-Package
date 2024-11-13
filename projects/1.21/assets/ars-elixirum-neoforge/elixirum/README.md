@@ -15,4 +15,4 @@ flowchart LR
 
 - [1.21.1-neoforge](/projects/1.21/assets/ars-elixirum-neoforge/elixirum)
 - [1.21.1-forge](/projects/1.21/assets/ars-elixirum-forge/elixirum)
-- [1.21.1-fabric](/projects/1.21-fabric/assets/ars-elixirum-fabric/elixirum)
+- [1.21.1-fabric](/projects/1.21-fabric/assets/ars-elixirum/elixirum)
