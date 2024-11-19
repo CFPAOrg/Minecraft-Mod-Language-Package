@@ -7,10 +7,6 @@
   - **省略号**现在可以*模拟*等距点——虽说不是完美等距，但看起来差不多。
   - 单个**破折号**在显示时可以*连起来*了。
 
----
-
-从1.20到1.21，字体支持情况没有太大的更改。由于字体描述文件结构已经解耦合，1.20的所有文件都可以无差别地应用过来。
-
 ### 加载结构参考
 
-- `indirect`@`projects/1.20/assets/minecraft/minecraft`<br>复用[1.20处的字体修正包](../../../../1.20/assets/minecraft/minecraft/README.md)。
+- `indirect`@`projects/1.21/assets/minecraft/minecraft`<br>复用[1.21处的字体修正包](../../../../1.21/assets/minecraft/minecraft/README.md)。
