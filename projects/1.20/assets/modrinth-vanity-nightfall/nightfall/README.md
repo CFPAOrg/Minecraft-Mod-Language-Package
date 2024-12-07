@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/1.20/assets/vanity-elementals/elemental)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/vanity-elementals/elemental)
+- [1.20.1](/projects/1.20/assets/modrinth-vanity-nightfall/nightfall)
+- [1.20.1-fabric](/projects/1.20-fabric/assets/modrinth-vanity-nightfall/nightfall)
