@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/1.20/assets/vanity-cauldron/doom)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/vanity-cauldron/doom)
+- [1.20.1](/projects/1.20/assets/vanity-crucible/doom)
+- [1.20.1-fabric](/projects/1.20-fabric/assets/vanity-crucible/doom)
