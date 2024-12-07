@@ -11,4 +11,4 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2-fabric](/projects/1.18-fabric/assets/vanity-shedds-mystical-toolsets-pack/sheddmersopal)
+- [1.18.2-fabric](/projects/1.18-fabric/assets/vanity-dungeons-pack/vanity_dungeons_pack)
