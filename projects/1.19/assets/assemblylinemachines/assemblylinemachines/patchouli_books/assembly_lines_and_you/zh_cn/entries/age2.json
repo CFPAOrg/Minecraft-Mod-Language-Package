@@ -1,0 +1,138 @@
+{
+	"name": "曲柄时代",
+	"category": "assemblylinemachines:walkthrough",
+	"icon": "assemblylinemachines:pure_gold_gear",
+	"pages":[
+		{
+			"type": "text",
+			"text": "工作进展的很顺利！你拥有了钢锭，现在你能够利用机械工程来获得便利。通过制作$(item)曲柄轴$()然后是$(item)曲柄$()来开始你的早期曲柄时代。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/crank_shaft",
+			"recipe2": "assemblylinemachines:crafting/crank"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/kinetic_grinder",
+			"text": "接下来，使用你的磨石还有一些材料，你能够制作$(item)动力磨粉机$()。$(br)这是你的第一个机器。右边是使用它的一个例子。"
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping":{
+					"c": "assemblylinemachines:crank",
+					"0": "assemblylinemachines:kinetic_grinder[facing=west]",
+					"f": "minecraft:chest[facing=west]"
+				},
+				
+				"pattern":[
+					["c0f"]
+				]
+			},
+			"name": "动力磨粉机",
+			"enable_visualize": false,
+			"text": "$(7)$(o)箱子必须放在机器的右边，而曲柄可以放在任意面。"
+			
+		},
+		{
+			"type": "text",
+			"text": "将一份材料连同刀片一同放入机器，按住曲柄，配方就会开始处理；过一段时间后，产物将被放置在箱子中！$(br)现在，你可以使用你的新机器的功能了。粉碎一个钢块，你将得到$(item)钢棒$()！$(p)$(c)如果在机器待机时使用曲柄，将会有微小的概率将曲柄折断成碎片！"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/wooden_fluid_tank",
+			"text": "$(item)木片$()可以通过粉碎木板获得。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/steel_fluid_tank",
+			"recipe2": "assemblylinemachines:crafting/kinetic_fluid_mixer"
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping": {
+					"c": "assemblylinemachines:crank",
+					"0": "assemblylinemachines:kinetic_fluid_mixer[facing=west]",
+					"f": "minecraft:chest[facing=west]",
+					"t": "assemblylinemachines:steel_fluid_tank"
+				},
+				"pattern":[
+					["c0f"],[" t "]
+				]
+			},
+			"name": "动力搅拌机",
+			"enable_visualize": false,
+			"text": "$(7)$(o)就像上一个机器那样，与之不同的是动力搅拌机下方需要一个木制或钢制的储罐。"
+		},
+		{
+			"type": "text",
+			"text": "就像液缸一样，将两个物品放入机器，将流体放入下方的储罐中。加以曲柄，产物将被放置在箱子中！$(p)你需要用这台机器进行的第一个配方是$(item)充能煤炭$()。将$(thing)煤粉$()与$(thing)红石粉$()在动力搅拌机中与熔岩混合..$(br)$(6)提示：你可以在动力搅拌机中执行液缸的所有配方。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/tools/steel/steel_hammer",
+			"title": "锤子",
+			"text": "接下来，我们需要制作一个$(item)锤子$()用来制作$(item)板$()，最后用它来制作$(item)齿轮$()。$(p)$(9)此时你也可以用钛来制作锤子！"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/plates/pure_iron",
+			"recipe2": "assemblylinemachines:crafting/gears/pure_iron"
+		},
+		{
+			"type": "text",
+			"text": "对于所有金属而言，齿轮与板的配方都是一样的。目前可获得的金属的产出如下：$(li)铜：5 板/锭，1.25 齿轮/板$(li)铁：3 板/锭，1 齿轮/板$(li)金：2 板/锭，0.25 齿轮/板$(li)钛：5 板/锭，0.5 齿轮/板$(br)$()$(6)因此，铜的配方是最高效的！$(br)$(3)记住，制作这些板需要用到纯金属锭！$(7)$(p)译者注：此处描述可能并不准确，但原文确是如此。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/gearbox",
+			"recipe2": "assemblylinemachines:crafting/simple_crank_charger"
+		},
+		{
+			"type": "multiblock",
+			"multiblock":{
+				"mapping":{
+					"g": "assemblylinemachines:gearbox[facing=south,active=true]",
+					"0": "assemblylinemachines:simple_crank_charger",
+					"c": "minecraft:chest[facing=west]"
+				},
+				"pattern":[
+					[" c "], ["g0 "]
+				]
+			},
+			"name": "简易曲柄充能器",
+			"enable_visualize": false,
+			"text": "$(7)$(o)这将允许我们制作下一个机器：简易曲柄充能器！箱子必须放在顶部而齿轮箱可以放在任意一侧。"
+		},
+		{
+			"type": "text",
+			"text": "你可以像使用曲柄一样，将它对准一个简易机器来使用$(item)齿轮箱$()。加入燃料，齿轮箱就会自己转动。$(p)$(item)简易曲柄充能器$()是较为独特的，他只接受齿轮箱而不接受曲柄。$(br)$(c)齿轮箱需要用充能煤炭来运行。$(2)想要改变它吗？插入一个$(l:items/upgrades#gearboxcompatability)升级$(/l)使它可以使用任何燃料。"
+		},
+		{
+			"type": "crafting",
+			"recipe": "assemblylinemachines:crafting/tools/crank/crank_pickaxe",
+			"title": "曲柄动力工具",
+			"text": "这是$(item)曲柄动力镐$()的配方。$(p)此外你还可以制作曲柄动力锹，锤，斧，锄以及剑。"
+		},
+		{
+			"type": "text",
+			"text": "这些工具本身并没有很高耐久，但是将他们放入简易曲柄充能器中将为他们加入“曲柄”的能量。使用工具时会优先消耗这些，再消耗本身的耐久。$(p)此外你可以使用它去收集一种下界的岩石，$(item)黑色花岗岩$()。这种稀有岩石的独特之处在于它只能使用带有能量的曲柄动力镐收集。"
+		},
+		{
+			"type": "image",
+			"images":[
+				"assemblylinemachines:textures/gui/patchouli/blackgranite_example.png"
+			],
+			"border": true,
+			"text": "$(2)这种方块只有自然生成的才会有这种限制，所以你可以将它用于建筑。"
+		},
+		{
+			"type": "text",
+			"text": "现在你获得了黑色花岗岩，你可以开始朝着$(l:age3)电气时代$()发展并开始为了你自己的装配线而努力。"
+		}
+	],
+	"sortnum": 2,
+	"read_by_default": true
+}
