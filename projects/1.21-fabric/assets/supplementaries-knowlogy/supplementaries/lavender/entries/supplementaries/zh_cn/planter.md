@@ -31,4 +31,4 @@
 ;;;;;
 
 &title(模组兼容)
-有兼容Farmer's Delight（农夫乐事）沃土的变种。
+有兼容农夫乐事（Farmer's Delight）沃土的变种。
