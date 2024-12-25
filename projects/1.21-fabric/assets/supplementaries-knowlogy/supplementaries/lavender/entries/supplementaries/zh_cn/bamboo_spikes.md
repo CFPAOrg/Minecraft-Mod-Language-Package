@@ -13,7 +13,7 @@
 ```
 
 &tag-spotlight(supplementaries:bamboo_spikes)
-**竹刺**是能减缓并伤害身处其中生物的陷阱方块。
+**竹刺**是能令身处其中的生物行动减缓，并对其造成伤害的陷阱方块。
 
 <block;supplementaries:bamboo_spikes>
 
