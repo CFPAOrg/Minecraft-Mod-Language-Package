@@ -14,7 +14,7 @@
 ```
 
 &spotlight(supplementaries:stone_lamp)
-**石灯**[灯](^supplementaries:lamps)的[石头](^minecraft:stone)变种。
+**石灯**是[灯](^supplementaries:lamps)的[石头](^minecraft:stone)变种。
 
 ;;;;;
 
