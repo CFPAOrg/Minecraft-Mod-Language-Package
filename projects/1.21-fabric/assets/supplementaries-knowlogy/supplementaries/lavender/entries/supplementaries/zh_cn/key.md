@@ -17,7 +17,7 @@
 **钥匙**是用来给[保险箱](^supplementaries:safe)、[下界合金门](^supplementaries:netherite_door)、[下界合金活板门](^supplementaries:netherite_trapdoor)、[锁方块](^supplementaries:lock_block)上锁的工具。
 
 
-开锁时无需手持正确的钥匙，将钥匙放在物品栏或饰品栏中即可。
+开锁时无需手持正确的钥匙；将钥匙放在物品栏或饰品栏中即可。
 
 ;;;;;
 
