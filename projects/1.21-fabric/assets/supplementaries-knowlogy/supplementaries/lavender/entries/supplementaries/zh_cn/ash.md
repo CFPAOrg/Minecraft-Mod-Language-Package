@@ -13,7 +13,7 @@
 ```
 
 &spotlight(supplementaries:ash)
-**灰烬**是在方块被火烧毁是有概率出现的方块。
+**灰烬**是在方块被火烧毁时有概率出现的方块。
 
 <block;supplementaries:ash>
 
