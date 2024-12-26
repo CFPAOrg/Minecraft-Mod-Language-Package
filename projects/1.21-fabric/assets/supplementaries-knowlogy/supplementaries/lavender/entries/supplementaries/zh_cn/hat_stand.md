@@ -13,7 +13,7 @@
 ```
 
 &spotlight(supplementaries:hat_stand)
-**帽架**，与盔甲架类似但只能摆放头部装备。
+**帽架**与盔甲架类似，但只能摆放头部装备。
 
 
 空手对其<keybind;key.sneak>+<keybind;key.use>可摇晃帽架。

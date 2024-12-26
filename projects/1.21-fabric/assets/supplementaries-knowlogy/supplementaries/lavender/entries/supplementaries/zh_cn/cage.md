@@ -31,7 +31,7 @@
 手持内有生物的笼子按下<keybind;key.use>可以放出生物。
 
 
-若需放置方块，则应按下<keybind;key.sneak>+<keybind;key.use>。
+若需放置笼子，则应按下<keybind;key.sneak>+<keybind;key.use>。
 
 ;;;;;
 
