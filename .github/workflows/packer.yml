@@ -99,7 +99,7 @@ jobs:
       matrix:
         # 版本列表。将对这里的每个版本判断，按需打包。
         # 如需添加新版本，在这里添加即可。
-        version: [ "1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric" ]
+        version: [ "1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric" ]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -136,7 +136,7 @@ jobs:
 
       # Artifact 上传内容：每个版本一个压缩包，包含了资源包和md5校验文件
       - name: Upload Artifact for ${{ matrix.version }}
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: Minecraft-Mod-Language-Package-${{ matrix.version }}
           path: |
@@ -175,7 +175,7 @@ jobs:
       
       # 还原artifact（资源包）
       - name: Restore Artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: artifacts/
 

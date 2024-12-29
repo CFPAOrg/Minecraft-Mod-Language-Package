@@ -1,0 +1,21 @@
+window {
+    size(168,44)
+
+    action('reset','reset')
+    bind('analog','analog')
+
+    panel('','vertical') {
+        bgthickness(2)
+        togglebutton('analog','Analog mode') {
+            channel('analog')
+            desired(160,16)
+            tooltips('Output the same power','level as the input, instead','of always 15 or 0')
+            check(true)
+        }
+        button('reset','Reset Channel') {
+            channel('reset')
+            desired(160,16)
+            tooltips('Reset the channel')
+        }
+    }
+}

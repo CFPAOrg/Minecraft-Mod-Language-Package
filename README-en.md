@@ -42,10 +42,10 @@ Download the resourcepack of your game version in Release page and simply apply 
 - `phi` for setting up the Weblate server and integration with Google Translate.
 - `Summpot` and `Nullpinter` for a better version of the C# web scraper.
 - `PeakXing` for making the logo.
-- `雪尼`, `FledgeXu`, `asdflj` and others who give suggestions and ideas.
+- `Snownee`, `FledgeXu`, `asdflj` and others who give suggestions and ideas.
 - Pioneers of this project: `Aemande123`, `DYColdWind`, `Snownee`, `yuanjie000`, `forestbat`, `3TUSK`, `SihenZhang`, `MoXiaoFreak`, `gloomy_banana`, `yuanjie000`, `exia00125`, `luckyu19` for early localizations (in no particular order).
 - `R_liu`  for the localization of SlashBalde.
-- `3TUSK` for [fixing the display of full-width punctuation](./project/assets/minecraft/readme.md). This is originally involved in the pack.
+- `3TUSK` for fixing the display of full-width punctuation. This is originally involved in the pack.
 - `LucunJi` for the internationalization of this readme file.
 - Finally, give thanks to every single player who engages in providing and spreading localizations.
 See all the contributors in the [Contributors](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/graphs/contributors) page.
