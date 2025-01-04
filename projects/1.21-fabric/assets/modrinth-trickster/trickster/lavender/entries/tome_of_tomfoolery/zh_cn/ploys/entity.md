@@ -1,0 +1,69 @@
+```json
+{
+  "title": "实体交互",
+  "icon": "minecraft:sheep_spawn_egg",
+  "category": "trickster:ploys"
+}
+```
+
+与操纵实体有关的各种戏法。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:add_velocity,title=驱动之技巧|>
+
+entity, vector -> entity
+
+<|cost-rule@trickster:templates|formula=3 kG + 向量长度^3 * 2 kG|>
+
+将所给向量视为速度，并施予所给实体。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:polymorph,title=变身之技巧|>
+
+entity, entity ->
+
+<|cost-rule@trickster:templates|formula=8000 kG|>
+
+将第一个实体变身为第二个实体，仅会变换外形。只对玩家有效。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:dispel_polymorph,title=解除变身之技巧|>
+
+entity -> entity
+
+<|cost-rule@trickster:templates|formula=1000 kG|>
+
+解除所给实体上的变身效果。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:store_entity,title=收容之技巧|>
+
+entity ->
+
+<|cost-rule@trickster:templates|formula=2000 kG + 距离 ^ (距离 / 5) kG|>
+
+将所给实体存储到施法者的副手物品中。该物品必须能存储实体，且实体不可为玩家。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:release_entity,title=释脱之技巧|>
+
+vector -> entity | void
+
+<|cost-rule@trickster:templates|formula=2000 kG + 距离 ^ (距离 / 5) kG|>
+
+将存储在施法者副手物品中的实体释放到给定位置，并返回该实体。若无实体，返回void。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:set_scale,title=居形之技巧|>
+
+entity, number -> entity
+
+<|cost-rule@trickster:templates|formula=abs(当前尺寸 - 新尺寸)^2 * 100 kG + 新尺寸 * 50 kG|>
+
+变动所给实体的尺寸。目标尺寸不可小于原大的0.0625，也不可大于原大的8倍。

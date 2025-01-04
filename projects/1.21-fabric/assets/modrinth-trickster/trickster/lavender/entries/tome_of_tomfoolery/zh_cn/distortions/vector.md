@@ -1,0 +1,101 @@
+```json
+{
+  "title": "向量操作",
+  "icon": "minecraft:arrow",
+  "category": "trickster:distortions"
+}
+```
+
+许多向量数学运算都可由基础的[算数](^trickster:distortions/arithmetic)图案实现，但某些运算需要更专精的图案。本节图案正在此列。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:extract_x,title=甲元之曲真|>
+
+vector -> number
+
+---
+
+返回所给向量的X分量。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:extract_y,title=乙元之曲真|>
+
+vector -> number
+
+---
+
+返回所给向量的Y分量。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:extract_z,title=丙元之曲真|>
+
+vector -> number
+
+---
+
+返回所给向量的Z分量。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:merge_vector,title=吸收之曲真|>
+
+number, number, number |
+
+number[] -> vector
+
+---
+
+将三个输入数合并为向量。可通过列表传入数。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:length,title=辐长之曲真|>
+
+vector -> number
+
+---
+
+返回所给向量的长度。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:dot_product,title=合向之曲真|>
+
+vector, vector -> number
+
+---
+
+返回所给向量的点积。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:cross_product,title=垂直之曲真|>
+
+vector, vector -> vector
+
+---
+
+返回所给向量的叉积。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:normalize,title=正规之曲真|>
+
+vector -> vector
+
+---
+
+将所给向量归一化至长度为一。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:align_vector,title=合向正规之曲真|>
+
+vector -> vector
+
+---
+
+将所给向量归一化至长度为一，并将其方向变为最近的轴向。
