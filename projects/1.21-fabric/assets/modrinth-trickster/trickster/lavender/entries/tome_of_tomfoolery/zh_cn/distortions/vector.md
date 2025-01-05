@@ -52,7 +52,7 @@ number[] -> vector
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:length,title=辐长之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:length,title=模长之曲真|>
 
 vector -> number
 
@@ -82,7 +82,7 @@ vector, vector -> vector
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:normalize,title=正规之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:normalize,title=归一之曲真|>
 
 vector -> vector
 
@@ -92,7 +92,7 @@ vector -> vector
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:align_vector,title=合向正规之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:align_vector,title=合向归一之曲真|>
 
 vector -> vector
 
