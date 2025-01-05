@@ -30,7 +30,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:caster_reflection,title=精思之错觉|>
+<|glyph@trickster:templates|trick-id=trickster:caster_reflection,title=自审之错觉|>
 
 -> entity
 

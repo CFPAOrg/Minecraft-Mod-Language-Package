@@ -73,7 +73,7 @@
 
 再到本书[戏法](^trickster:tricks)分类中找出这些图案，就能完全证明这一点。按从小到大顺序看，所绘制的法术可分为：
 
-- [精思之错觉](^trickster:delusions_ingresses/caster_tricks#4)
+- [自审之错觉](^trickster:delusions_ingresses/caster_tricks#4)
 - [弓箭手之辑流](^trickster:delusions_ingresses/raycast#2)
 - 以及[摧毁之技巧](^trickster:ploys/block#2)
 
