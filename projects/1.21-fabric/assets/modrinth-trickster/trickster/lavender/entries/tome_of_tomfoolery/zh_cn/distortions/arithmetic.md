@@ -23,7 +23,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:subtract,title=逃亡之谋略|>
+<|glyph@trickster:templates|trick-id=trickster:subtract,title=遗弃之谋略|>
 
 (number | vec)... | (number | vec)[] -> (number | vec)
 
