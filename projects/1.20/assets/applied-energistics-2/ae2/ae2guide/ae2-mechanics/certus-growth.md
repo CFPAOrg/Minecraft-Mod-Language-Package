@@ -15,7 +15,7 @@ navigation:
 
 赛特斯石英芽会从[赛特斯石英母岩](../items-blocks-machines/budding_certus.md)中生长出来，与紫水晶类似。如果破坏未完全生长的石英芽，则会掉落一个<ItemLink id="certus_quartz_dust" />，不受时运影响。如果破坏长成的石英簇，则会掉落四个<ItemLink id="certus_quartz_crystal" />，且会受时运影响而增加掉落量。
 
-共有4种等级的赛特斯石英母岩：无瑕、有瑕、开裂、破损。
+共有4种等级的赛特斯石英母岩：无瑕、有瑕、开裂、破损。可在[陨石](../ae2-mechanics/meteorites.md)里找到它们。
 
 <GameScene zoom="4" background="transparent">
   <ImportStructure src="../assets/assemblies/budding_blocks.snbt" />
@@ -26,7 +26,7 @@ navigation:
 
 <RecipeFor id="damaged_budding_quartz" />
 
-无瑕的赛特斯石英母岩不会降级，因而能无限产生赛特斯石英。但是它们无法合成也无法被镐完好地挖下搬运，就算有精准采集也不行。（不过它们*可以*被[空间存储](../ae2-mechanics/spatial-io.md)移动。）
+无瑕的赛特斯石英母岩不会降级，因而能无限产生赛特斯石英。但是它们无法合成，也无法被镐完好地挖下搬运，就算有精准采集也不行。（不过它们*可以*被[空间存储](../ae2-mechanics/spatial-io.md)移动。）
 
 赛特斯石英母岩自身的生长非常缓慢。幸运的是，在母岩旁放置<ItemLink id="growth_accelerator" />能大幅加速这一过程。你的第一要务便是制造一些此方块。
 
@@ -34,6 +34,12 @@ navigation:
   <ImportStructure src="../assets/assemblies/budding_certus_2.snbt" />
   <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
+
+然而，每个面上，催生晶体和采集晶体是互斥的。因而，晶体催生器每覆盖母岩一面，可供晶芽生长的位置就会减少，并最终抵消催生器提升的效率。实际检验数据如下：
+
+![不同面配置的每分钟物品产量](../assets/diagrams/certus_farm_speed_chart_1.png)
+
+![常用面配置](../assets/diagrams/certus_farm_speed_chart_2.png)
 
 假如没有足够石英制造<ItemLink id="energy_acceptor" />或是<ItemLink id="vibration_chamber" />，可以制造一个<ItemLink id="crank" />并安到催生器上。
 
