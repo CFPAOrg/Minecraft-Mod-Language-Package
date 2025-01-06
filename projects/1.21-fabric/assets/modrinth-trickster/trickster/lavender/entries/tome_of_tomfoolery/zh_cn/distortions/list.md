@@ -13,7 +13,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_size,title=计量之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:list_size,title=计量之曲变|>
 
 any[] -> number
 
@@ -53,7 +53,7 @@ any[], number, any... -> any[]
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_get,title=提取之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:list_get,title=提取之曲变|>
 
 any[], number -> any
 
@@ -63,7 +63,7 @@ any[], number -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_index_of,title=定目之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:list_index_of,title=定目之曲变|>
 
 any[], any -> number | void
 

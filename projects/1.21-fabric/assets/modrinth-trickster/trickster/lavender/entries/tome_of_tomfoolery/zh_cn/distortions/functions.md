@@ -30,7 +30,7 @@ spell, any... -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:execute_same_scope,title=静默之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:execute_same_scope,title=静默之曲变|>
 
 spell -> any
 
@@ -54,7 +54,7 @@ spell, any... -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:fold,title=折叠之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:fold,title=折叠之曲变|>
 
 spell, collection, any -> any
 
@@ -100,7 +100,7 @@ spell, any... -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:supplier,title=供给之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:supplier,title=供给之曲变|>
 
 any -> spell
 

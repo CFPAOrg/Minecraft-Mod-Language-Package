@@ -10,7 +10,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:extract_x,title=甲元之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:extract_x,title=甲元之曲变|>
 
 vector -> number
 
@@ -20,7 +20,7 @@ vector -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:extract_y,title=乙元之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:extract_y,title=乙元之曲变|>
 
 vector -> number
 
@@ -30,7 +30,7 @@ vector -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:extract_z,title=丙元之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:extract_z,title=丙元之曲变|>
 
 vector -> number
 
@@ -40,7 +40,7 @@ vector -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:merge_vector,title=吸收之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:merge_vector,title=吸收之曲变|>
 
 number, number, number |
 
@@ -52,7 +52,7 @@ number[] -> vector
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:length,title=模长之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:length,title=模长之曲变|>
 
 vector -> number
 
@@ -62,7 +62,7 @@ vector -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:dot_product,title=合向之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:dot_product,title=合向之曲变|>
 
 vector, vector -> number
 
@@ -72,7 +72,7 @@ vector, vector -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:cross_product,title=垂直之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:cross_product,title=垂直之曲变|>
 
 vector, vector -> vector
 
@@ -82,7 +82,7 @@ vector, vector -> vector
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:normalize,title=归一之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:normalize,title=归一之曲变|>
 
 vector -> vector
 
@@ -92,7 +92,7 @@ vector -> vector
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:align_vector,title=合向归一之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:align_vector,title=合向归一之曲变|>
 
 vector -> vector
 

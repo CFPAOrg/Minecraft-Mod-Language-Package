@@ -13,7 +13,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:if_else,title=决策之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:if_else,title=决策之曲变|>
 
 boolean, any, any -> any
 
@@ -73,7 +73,7 @@ boolean... -> boolean
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:lesser_than,title=较小之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:lesser_than,title=较小之曲变|>
 
 number, number -> boolean
 
@@ -83,7 +83,7 @@ number, number -> boolean
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:greater_than,title=较大之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:greater_than,title=较大之曲变|>
 
 number, number -> boolean
 

@@ -53,7 +53,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:modulo,title=整体之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:modulo,title=整体之曲变|>
 
 number, number -> number
 
@@ -83,7 +83,7 @@ number... | number[] -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:ceil,title=壮丽之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:ceil,title=壮丽之曲变|>
 
 number -> number
 
@@ -93,7 +93,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:floor,title=谦卑之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:floor,title=谦卑之曲变|>
 
 number -> number
 
@@ -103,7 +103,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:round,title=客观之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:round,title=客观之曲变|>
 
 number -> number
 
@@ -113,7 +113,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:sqrt,title=削损之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:sqrt,title=削损之曲变|>
 
 number -> number
 
@@ -123,7 +123,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:invert,title=取反之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:invert,title=取反之曲变|>
 
 number -> number | vec -> vec
 
@@ -133,7 +133,7 @@ number -> number | vec -> vec
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:sin,title=甲型几何之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:sin,title=甲型几何之曲变|>
 
 number -> number
 
@@ -143,7 +143,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:cos,title=乙型几何之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:cos,title=乙型几何之曲变|>
 
 number -> number
 
@@ -153,7 +153,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:tan,title=丙型几何之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:tan,title=丙型几何之曲变|>
 
 number -> number
 
@@ -163,7 +163,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arcsin,title=甲型反几何之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:arcsin,title=甲型反几何之曲变|>
 
 number -> number
 
@@ -173,7 +173,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arccos,title=乙型反几何之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:arccos,title=乙型反几何之曲变|>
 
 number -> number
 
@@ -183,7 +183,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arctan,title=丙型反几何之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:arctan,title=丙型反几何之曲变|>
 
 number -> number
 
@@ -193,7 +193,7 @@ number -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arctan2,title=笛卡尔角之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:arctan2,title=笛卡尔角之曲变|>
 
 number, number -> number
 

@@ -1,16 +1,16 @@
 ```json
 {
-  "title": "杂项曲真术",
+  "title": "杂项曲变术",
   "icon": "minecraft:iron_nugget",
   "category": "trickster:distortions"
 }
 ```
 
-没法分进其他章节的若干杂项曲真术。
+没法分进其他章节的若干杂项曲变术。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:type_fragment,title=参量之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:type_fragment,title=参量之曲变|>
 
 any -> type
 
@@ -20,7 +20,7 @@ any -> type
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:hash_values,title=衰朽之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:hash_values,title=衰朽之曲变|>
 
 [any]... -> number
 
@@ -30,7 +30,7 @@ any -> type
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:escape_pattern,title=释义之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:escape_pattern,title=释义之曲变|>
 
 pattern -> pattern_literal
 

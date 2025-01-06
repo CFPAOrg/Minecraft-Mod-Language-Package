@@ -21,7 +21,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:map_get,title=领航员之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:map_get,title=领航员之曲变|>
 
 {any: any}, any -> any
 

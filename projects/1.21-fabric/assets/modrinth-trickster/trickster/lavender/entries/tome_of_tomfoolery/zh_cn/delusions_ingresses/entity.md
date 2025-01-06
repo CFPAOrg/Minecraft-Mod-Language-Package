@@ -130,7 +130,7 @@ entity -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_scale,title=居形之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:get_scale,title=居形之曲变|>
 
 entity -> number
 

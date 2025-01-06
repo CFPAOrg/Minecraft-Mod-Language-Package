@@ -18,7 +18,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:locate_glyph,title=定址之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:locate_glyph,title=定址之曲变|>
 
 spell, any -> number[] | void
 
@@ -28,7 +28,7 @@ spell, any -> number[] | void
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:locate_glyphs,title=发现之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:locate_glyphs,title=发现之曲变|>
 
 spell, any -> number[][]
 
@@ -38,7 +38,7 @@ spell, any -> number[][]
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:retrieve_glyph,title=检索之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:retrieve_glyph,title=检索之曲变|>
 
 spell, number[] -> any
 
@@ -48,7 +48,7 @@ spell, number[] -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:set_glyph,title=替换之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:set_glyph,title=替换之曲变|>
 
 spell, number[], any -> spell
 
@@ -58,7 +58,7 @@ spell, number[], any -> spell
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_subparts,title=扎束之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:get_subparts,title=扎束之曲变|>
 
 spell -> spell[]
 
@@ -68,7 +68,7 @@ spell -> spell[]
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:retrieve_subtree,title=伐树之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:retrieve_subtree,title=伐树之曲变|>
 
 spell, number[] -> spell | void
 
@@ -78,7 +78,7 @@ spell, number[] -> spell | void
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:set_subtree,title=嫁接之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:set_subtree,title=嫁接之曲变|>
 
 spell, number[], spell -> spell
 
@@ -88,7 +88,7 @@ spell, number[], spell -> spell
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:add_subtree,title=分枝之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:add_subtree,title=分枝之曲变|>
 
 spell, number[], spell -> spell
 
@@ -98,7 +98,7 @@ spell, number[], spell -> spell
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:remove_subtree,title=剪枝之曲真|>
+<|glyph@trickster:templates|trick-id=trickster:remove_subtree,title=剪枝之曲变|>
 
 spell, number[] -> spell | void
 
