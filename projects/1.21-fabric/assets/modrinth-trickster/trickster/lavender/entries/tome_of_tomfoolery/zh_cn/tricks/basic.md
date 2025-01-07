@@ -10,7 +10,7 @@
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=笔记：抄入的片段|>只要某一物品可存储在玩家物品栏中，那就可以抄入法术片段。若抄入的是方块，防止后其上法术片段即会消失。
+<|page-title@lavender:book_components|title=笔记：抄入的片段|>只要某一物品可存储在玩家物品栏中，那就可以抄入法术片段。若抄入的是方块，放置后其上法术片段即会消失。
 
 
 某些物品抄入法术后会具有额外的交互功能，如[魔杖](^trickster:items/wand)会在右击时施放法术片段。
