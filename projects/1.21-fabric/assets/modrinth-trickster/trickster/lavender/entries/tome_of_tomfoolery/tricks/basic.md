@@ -33,22 +33,32 @@ If not, returns void.
 
 <|glyph@trickster:templates|trick-id=trickster:write_spell,title=Notulist's Ploy|>
 
-[any] -> any
+any, [slot] -> any
 
 ---
 
-Inscribes a fragment onto the item held in the caster's other hand.
+Inscribes a fragment onto the item in the given slot or in the caster's offhand.
 Returns its input, after ephemeral decay.
 
 ;;;;;
 
 <|glyph@trickster:templates|trick-id=trickster:write_closed_spell,title=Proprietary Notulist's Ploy|>
 
-[any] -> any
+any, [slot] -> any
 
 ---
 
 Same as Notulist's Ploy, but the fragment cannot be read by conventional means.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:clear_spell,title=Alethophobe's Ploy|>
+
+[slot] -> 
+
+---
+
+Clears any fragment inscribed onto the item in the given slot or in the caster's offhand.
 
 ;;;;;
 

@@ -29,21 +29,31 @@
 
 <|glyph@trickster:templates|trick-id=trickster:write_spell,title=记事员之技巧|>
 
-[any] -> any
+any, [slot] -> any
 
 ---
 
-将法术片段抄入施法者另一只手中的物品。在片刻之后返回其输入值。
+将法术片段抄入施法者另一只手中或所给槽位中的物品。在片刻之后返回其输入值。
 
 ;;;;;
 
 <|glyph@trickster:templates|trick-id=trickster:write_closed_spell,title=禁文记事员之技巧|>
 
-[any] -> any
+any, [slot] -> any
 
 ---
 
 与记事员之技巧相同，但抄入的片段无法以常规方式读出。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:clear_spell,title=畏真者之技巧|>
+
+[slot] -> 
+
+---
+
+清除施法者另一只手中或所给槽位中物品上的法术片段。
 
 ;;;;;
 

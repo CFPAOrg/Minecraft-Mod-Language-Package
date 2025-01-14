@@ -10,7 +10,7 @@ Various tricks related to manipulating entities.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:add_velocity,title=Impulse Ploy|>
+<|glyph@trickster:templates|trick-id=trickster:add_velocity,title=Kinetic Ploy|>
 
 entity, vector -> entity
 
@@ -20,13 +20,23 @@ Applies the given vector as velocity to the given entity.
 
 ;;;;;
 
+<|glyph@trickster:templates|trick-id=trickster:change_weight,title=Ploy of Featherweight|>
+
+entity, number -> entity
+
+<|cost-rule@trickster:templates|formula=60kG|>
+
+Given a number between zero and one, multiplies the given entity's effective gravity by that number for one second, provided it is alive.
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:polymorph,title=Polymorph Ploy|>
 
 entity, entity ->
 
 <|cost-rule@trickster:templates|formula=8000kG|>
 
-Polymorphs the first entity to appear to be the second in every way. Only works with players.
+Polymorphs the first entity to appear to be the second in every way. **Currently only works with players.**
 
 ;;;;;
 

@@ -14,7 +14,7 @@ Raycasts which target blocks may optionally be made to hit fluids if their last 
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast,title=Archer's Ingress|>
+<|glyph@trickster:templates|trick-id=trickster:raycast,title=Pinpoint Ingress|>
 
 entity, [boolean] -> vector |
 
@@ -26,7 +26,7 @@ Returns the block that is hit.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast_side,title=Architect's Ingress|>
+<|glyph@trickster:templates|trick-id=trickster:raycast_side,title=Bearing Ingress|>
 
 entity, [boolean] -> vector |
 
@@ -38,7 +38,7 @@ Returns a vector representing the side of the block that is hit.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast_entity,title=Scout's Ingress|>
+<|glyph@trickster:templates|trick-id=trickster:raycast_entity,title=Mark Ingress|>
 
 entity -> entity |
 

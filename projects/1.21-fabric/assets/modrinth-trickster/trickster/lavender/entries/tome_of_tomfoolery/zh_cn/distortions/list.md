@@ -33,6 +33,26 @@ any[], any... -> any[]
 
 ;;;;;
 
+<|glyph@trickster:templates|trick-id=trickster:list_take_range,title=孤立之曲真|>
+
+any[], number, [number] -> any[]
+
+---
+
+取出列表中索引由第一个数起始、在第二个数之前结束的元素，组成子列表并返回。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:list_reverse,title=计数之曲真|>
+
+any[] -> any[]
+
+---
+
+倒置所给列表。
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:list_add_range,title=集合之谋略|>
 
 any[], any[]... -> any[]

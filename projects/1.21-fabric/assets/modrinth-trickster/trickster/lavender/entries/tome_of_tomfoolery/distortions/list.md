@@ -43,6 +43,26 @@ Creates a new list containing the elements of all given lists.
 
 ;;;;;
 
+<|glyph@trickster:templates|trick-id=trickster:list_take_range,title=Isolation Distortion|>
+
+any[], number, [number] -> any[]
+
+---
+
+Returns a list containing the elements of the given list with indexes starting at the first number and ending before the second.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:list_reverse,title=Counter Distortion|>
+
+any[] -> any[]
+
+---
+
+Returns the given list, reversed.
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:list_insert,title=Inflation Stratagem|>
 
 any[], number, any... -> any[]

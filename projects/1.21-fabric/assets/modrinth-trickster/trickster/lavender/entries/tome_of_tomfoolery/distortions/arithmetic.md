@@ -67,6 +67,16 @@ Returns the remainder of dividing the first number by the second number.
 
 ;;;;;
 
+<|glyph@trickster:templates|trick-id=trickster:power,title=Distortion of Supremacy|>
+
+number, number -> number
+
+---
+
+Returns the first number raised to the power of the second.
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:max,title=Noble Stratagem|>
 
 number... | number[] -> number
@@ -134,6 +144,16 @@ number -> number | vec -> vec
 ---
 
 Inverts the given number or vector.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:abs,title=Absolutist's Distortion|>
+
+number -> number
+
+---
+
+If the given number is negative, returns its positive equivalent. Otherwise, does nothing.
 
 ;;;;;
 

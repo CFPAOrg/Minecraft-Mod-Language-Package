@@ -81,3 +81,33 @@ slot... -> number
 ---
 
 返回给定槽位中能容纳的最大魔力的量。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:get_count_in_slot,title=丰裕之辑流|>
+
+slot -> number
+
+---
+
+返回给定槽位中物品的数量。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:block_from_item,title=放置之曲变|>
+
+item -> block | void
+
+---
+
+返回所给物品类型放置后的方块的类型。若所给物品无法放置为方块，返回void。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:item_from_block,title=拾取之曲变|>
+
+block -> item | void
+
+---
+
+返回放置所给方块类型所需的物品的类型。若所给方块没有对应物品，返回void。

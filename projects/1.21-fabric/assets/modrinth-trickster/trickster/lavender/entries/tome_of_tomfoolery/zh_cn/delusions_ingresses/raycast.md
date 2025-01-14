@@ -13,7 +13,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast,title=弓箭手之辑流|>
+<|glyph@trickster:templates|trick-id=trickster:raycast,title=着点之辑流|>
 
 entity, [boolean] -> vector |
 
@@ -25,7 +25,7 @@ vector, vector, [boolean] -> vector
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast_side,title=建筑师之辑流|>
+<|glyph@trickster:templates|trick-id=trickster:raycast_side,title=承座之辑流|>
 
 entity, [boolean] -> vector |
 
@@ -37,7 +37,7 @@ vector, vector, [boolean] -> vector
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast_entity,title=侦查员之辑流|>
+<|glyph@trickster:templates|trick-id=trickster:raycast_entity,title=标记之辑流|>
 
 entity -> entity |
 

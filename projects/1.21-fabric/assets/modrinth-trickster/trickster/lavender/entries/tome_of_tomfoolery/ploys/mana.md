@@ -26,7 +26,7 @@ number, slot... -> number
 
 ---
 
-Pushes the caster's mana into the items at the given slots, up to the given number, and returns the amount moved.
+Pushes mana into the given slots, up to the given number per slot, and returns the amount moved.
 
 ;;;;;
 
@@ -36,4 +36,4 @@ number, slot... -> number
 
 ---
 
-Pulls mana from the given slots into the caster, up to the given number, and returns the amount moved.
+Pulls mana from the given slots, up to the given number per slot, and returns the amount moved.

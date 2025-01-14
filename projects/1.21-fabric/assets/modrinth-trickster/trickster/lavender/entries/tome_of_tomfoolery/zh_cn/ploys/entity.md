@@ -10,7 +10,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:add_velocity,title=驱动之技巧|>
+<|glyph@trickster:templates|trick-id=trickster:add_velocity,title=动能之技巧|>
 
 entity, vector -> entity
 
@@ -20,13 +20,23 @@ entity, vector -> entity
 
 ;;;;;
 
+<|glyph@trickster:templates|trick-id=trickster:change_weight,title=轻羽之技巧|>
+
+entity, number -> entity
+
+<|cost-rule@trickster:templates|formula=60 kG|>
+
+给定0到1之间的数，若实体为生物实体，则以所给数乘以其受到的重力，持续1秒。
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:polymorph,title=变身之技巧|>
 
 entity, entity ->
 
 <|cost-rule@trickster:templates|formula=8000 kG|>
 
-将第一个实体变身为第二个实体，仅会变换外形。只对玩家有效。
+将第一个实体变身为第二个实体，仅会变换外形。**目前只对玩家有效。**
 
 ;;;;;
 

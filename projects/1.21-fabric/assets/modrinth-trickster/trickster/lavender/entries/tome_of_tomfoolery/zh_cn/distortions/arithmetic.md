@@ -63,6 +63,16 @@ number, number -> number
 
 ;;;;;
 
+<|glyph@trickster:templates|trick-id=trickster:power,title=至尊之曲变|>
+
+number, number -> number
+
+---
+
+返回底数为第一个数，指数为第二个数的幂。
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:max,title=高贵之谋略|>
 
 number... | number[] -> number
@@ -130,6 +140,16 @@ number -> number | vec -> vec
 ---
 
 取反所给数或向量。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:abs,title=绝对主义者之曲变|>
+
+number -> number
+
+---
+
+若所给数为负，返回其相反数。否则直接传出。
 
 ;;;;;
 
