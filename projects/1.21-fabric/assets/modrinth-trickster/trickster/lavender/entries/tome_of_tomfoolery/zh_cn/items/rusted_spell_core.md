@@ -1,6 +1,6 @@
 ```json
 {
-  "title": "生锈的法术核心",
+  "title": "生锈法术核心",
   "icon": "trickster:rusted_spell_core",
   "category": "trickster:items",
   "required_advancements": [

@@ -1,6 +1,6 @@
 ```json
 {
-  "title": "不祥的法术核心",
+  "title": "不祥法术核心",
   "icon": "trickster:ominous_spell_core",
   "category": "trickster:items",
   "required_advancements": [
