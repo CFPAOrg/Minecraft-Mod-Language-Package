@@ -26,7 +26,7 @@ entity, number -> entity
 
 <|cost-rule@trickster:templates|formula=60 kG|>
 
-给定0到1之间的数，若实体为生物实体，则以所给数乘以其受到的重力，持续1秒。
+给定0到1之间的数，若实体为生物实体，则让其所受重力变为原重力与所给数的积，持续1秒。
 
 ;;;;;
 
