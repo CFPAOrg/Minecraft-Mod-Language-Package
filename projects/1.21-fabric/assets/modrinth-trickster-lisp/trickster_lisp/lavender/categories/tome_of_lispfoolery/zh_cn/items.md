@@ -1,9 +1,9 @@
 ```json
 {
-  "title": "Items",
+  "title": "物品",
   "icon": "trickster_lisp:transpiler",
   "ordinal": 0
 }
 ```
 
-Items you'll need to transpile spells.
+转译法术所需的物品。

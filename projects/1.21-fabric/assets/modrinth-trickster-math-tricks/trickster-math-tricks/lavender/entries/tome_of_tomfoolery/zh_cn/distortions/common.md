@@ -1,12 +1,12 @@
 ```json
 {
-  "title": "常用戏法",
+  "title": "通用戏法",
   "icon": "minecraft:repeater",
   "category": "trickster-math-tricks:math-tricks"
 }
 ```
 
-本节的戏法与戏法师已有的戏法功能可能较为相似，但支持的类型相较更多。
+本节的戏法在功能上可能与戏法师已有的戏法较为相似，但它们支持的类型更多。
 
 ;;;;;
 
@@ -70,7 +70,7 @@ quaternion | vector -> number
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:squared_magnitude,title=平方模长之曲变|>
+<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:squared_magnitude,title=模方之曲变|>
 
 quaternion | vector -> number
 

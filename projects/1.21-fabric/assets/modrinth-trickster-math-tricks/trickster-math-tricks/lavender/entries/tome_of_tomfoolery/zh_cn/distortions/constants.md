@@ -10,7 +10,7 @@
 
 ;;;;;
 
-<|pattern@trickster:templates|pattern=6\,0\,2\,8\,5,title=Circumferential之修订|>
+<|pattern@trickster:templates|pattern=6\,0\,2\,8\,5,title=圆周之修订|>
 
 {gray}（抄绘图案）{}
 
@@ -20,7 +20,7 @@
 
 ;;;;;
 
-<|pattern@trickster:templates|pattern=3\,4\,8\,7\,6\,3,title=Circumferential之修订|>
+<|pattern@trickster:templates|pattern=3\,4\,8\,7\,6\,3,title=四元数之修订|>
 
 {gray}（抄绘图案）{}
 
