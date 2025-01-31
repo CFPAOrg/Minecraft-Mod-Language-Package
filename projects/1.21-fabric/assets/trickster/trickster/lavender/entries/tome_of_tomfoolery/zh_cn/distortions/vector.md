@@ -1,8 +1,19 @@
 ```json
 {
-  "title": "向量操作",
+  "title": "向量",
   "icon": "minecraft:arrow",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "甲元之曲变",
+    "乙元之曲变",
+    "丙元之曲变",
+    "吸收之曲变",
+    "模长之曲变",
+    "合向之曲变",
+    "垂直之曲变",
+    "归一之曲变",
+    "合向归一之曲变"
+  ]
 }
 ```
 
@@ -42,9 +53,7 @@ vector -> number
 
 <|glyph@trickster:templates|trick-id=trickster:merge_vector,title=吸收之曲变|>
 
-number, number, number |
-
-number[] -> vector
+number, number, number -> vector
 
 ---
 

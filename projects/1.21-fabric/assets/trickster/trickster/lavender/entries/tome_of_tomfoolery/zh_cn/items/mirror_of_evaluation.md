@@ -2,7 +2,8 @@
 {
   "title": "执行手镜",
   "icon": "trickster:mirror_of_evaluation",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 35
 }
 ```
 

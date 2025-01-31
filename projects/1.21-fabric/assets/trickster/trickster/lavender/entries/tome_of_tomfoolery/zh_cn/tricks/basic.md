@@ -2,7 +2,17 @@
 {
   "title": "基础戏法",
   "icon": "minecraft:bricks",
-  "category": "trickster:tricks"
+  "category": "trickster:tricks",
+  "additional_search_terms": [
+    "记事员之错觉",
+    "记事员之技巧",
+    "禁文记事员之技巧",
+    "畏真者之技巧",
+    "展示之谋略",
+    "乌鸦灵思之错觉",
+    "乌鸦灵思之技巧",
+    "消耗之技巧"
+  ]
 }
 ```
 

@@ -2,7 +2,8 @@
 {
   "title": "宏戒指",
   "icon": "trickster:macro_ring",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 50
 }
 ```
 

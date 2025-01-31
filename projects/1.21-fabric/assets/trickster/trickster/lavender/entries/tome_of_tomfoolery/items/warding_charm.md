@@ -2,7 +2,8 @@
 {
   "title": "Warding Charm",
   "icon": "trickster:warding_charm",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 60
 }
 ```
 

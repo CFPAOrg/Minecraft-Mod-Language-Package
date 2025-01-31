@@ -2,7 +2,17 @@
 {
   "title": "Basic Tricks",
   "icon": "minecraft:bricks",
-  "category": "trickster:tricks"
+  "category": "trickster:tricks",
+  "additional_search_terms": [
+    "Notulist's Delusion",
+    "Notulist's Ploy",
+    "Proprietary Notulist's Ploy",
+    "Alethophobe's Ploy",
+    "Showcase Stratagem",
+    "Crow Mind Delusion",
+    "Crow Mind Ploy",
+    "Cost Ploy"
+  ]
 }
 ```
 

@@ -2,7 +2,10 @@
 {
   "title": "Particles",
   "icon": "minecraft:firework_rocket",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "Flourish Ploy"
+  ]
 }
 ```
 

@@ -2,7 +2,8 @@
 {
   "title": "Spell Construct",
   "icon": "trickster:spell_construct",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 90
 }
 ```
 

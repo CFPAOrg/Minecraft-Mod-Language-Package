@@ -3,6 +3,12 @@
   "title": "Transmogrification",
   "icon": "transmog:void_fragment",
   "category": "trickster:tricks",
+  "additional_search_terms": [
+    "Ploy of Transmogrification",
+    "Ploy of Subterfuge",
+    "Ploy of Origin",
+    "Ingress of Transmogrification"
+  ],
   "fabric:load_conditions": {
     "condition": "fabric:any_mods_loaded",
     "values": [

@@ -2,7 +2,30 @@
 {
   "title": "Arithmetic",
   "icon": "minecraft:copper_bulb",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "Annexation Stratagem",
+    "Desertion Stratagem",
+    "Domination Stratagem",
+    "Submission Stratagem",
+    "Distortion of Wholes",
+    "Distortion of Supremacy",
+    "Noble Stratagem",
+    "Insignificance Stratagem",
+    "Distortion of Grandeur",
+    "Distortion of Humility",
+    "Distortion of Objectivity",
+    "Distortion of Decline",
+    "Negation Distortion",
+    "Absolutist's Distortion",
+    "Primary Distortion of Geometry",
+    "Secondary Distortion of Geometry",
+    "Tertiary Distortion of Geometry",
+    "Primary Inverse Distortion of Geometry",
+    "Secondary Inverse Distortion of Geometry",
+    "Tertiary Inverse Distortion of Geometry",
+    "Cartesian Angle Distortion"
+  ]
 }
 ```
 

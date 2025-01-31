@@ -2,7 +2,24 @@
 {
   "title": "实体查询",
   "icon": "minecraft:cow_spawn_egg",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "动机验证之辑流",
+    "位置之辑流",
+    "视角之辑流",
+    "朝向之辑流",
+    "运动之辑流",
+    "身材之辑流",
+    "换立之辑流",
+    "炉灶之辑流",
+    "远足之辑流",
+    "盾护之辑流",
+    "活力之辑流",
+    "体健之辑流",
+    "垒墙之辑流",
+    "居形之曲变",
+    "观察者之辑流"
+  ]
 }
 ```
 
@@ -77,6 +94,16 @@ entity -> boolean
 ---
 
 给定实体，检查其是否在潜行。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:burning_reflection,title=炉灶之辑流|>
+
+entity -> boolean
+
+---
+
+给定实体，检查其是否着火。
 
 ;;;;;
 

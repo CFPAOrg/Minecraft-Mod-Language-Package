@@ -2,7 +2,17 @@
 {
   "title": "Arguments",
   "icon": "minecraft:map",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "Primary Delusion",
+    "Secondary Delusion",
+    "Tertiary Delusion",
+    "Quaternary Delusion",
+    "Quinary Delusion",
+    "Senary Delusion",
+    "Septenary Delusion",
+    "Octonary Delusion"
+  ]
 }
 ```
 

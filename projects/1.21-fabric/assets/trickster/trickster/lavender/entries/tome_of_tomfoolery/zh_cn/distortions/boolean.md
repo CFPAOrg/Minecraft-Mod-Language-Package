@@ -2,7 +2,17 @@
 {
   "title": "布尔逻辑",
   "icon": "minecraft:comparator",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "决策之曲变",
+    "对抵之谋略",
+    "失抵之谋略",
+    "无例外之谋略",
+    "通常态之谋略",
+    "缺失态之谋略",
+    "较小之曲变",
+    "较大之曲变"
+  ]
 }
 ```
 
@@ -15,7 +25,7 @@
 
 <|glyph@trickster:templates|trick-id=trickster:if_else,title=决策之曲变|>
 
-boolean, any, any -> any
+(any, any)..., any -> any
 
 ---
 

@@ -2,7 +2,18 @@
 {
   "title": "法术操纵",
   "icon": "minecraft:oak_sapling",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "定址之曲变",
+    "发现之曲变",
+    "检索之曲变",
+    "替换之曲变",
+    "扎束之曲变",
+    "伐树之曲变",
+    "嫁接之曲变",
+    "分枝之曲变",
+    "剪枝之曲变"
+  ]
 }
 ```
 

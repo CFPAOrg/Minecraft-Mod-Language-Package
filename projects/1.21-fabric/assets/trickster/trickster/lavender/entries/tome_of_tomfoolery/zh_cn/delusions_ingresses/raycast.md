@@ -2,7 +2,12 @@
 {
   "title": "射线追踪",
   "icon": "minecraft:spectral_arrow",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "着点之辑流",
+    "承座之辑流",
+    "标记之辑流"
+  ]
 }
 ```
 

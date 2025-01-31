@@ -2,7 +2,17 @@
 {
   "title": "参数",
   "icon": "minecraft:map",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "甲参之错觉",
+    "乙参之错觉",
+    "丙参之错觉",
+    "丁参之错觉",
+    "戊参之错觉",
+    "己参之错觉",
+    "庚参之错觉",
+    "辛参之错觉"
+  ]
 }
 ```
 

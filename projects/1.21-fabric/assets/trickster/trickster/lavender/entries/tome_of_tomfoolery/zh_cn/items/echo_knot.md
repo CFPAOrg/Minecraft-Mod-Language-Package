@@ -6,7 +6,8 @@
   "required_advancements": [
     "trickster:echo_knot"
   ],
-  "secret": true
+  "secret": true,
+  "ordinal": 20
 }
 ```
 

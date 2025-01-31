@@ -2,7 +2,11 @@
 {
   "title": "可重用性",
   "icon": "trickster:top_hat",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "协助之谋略",
+    "颅骨之谋略"
+  ]
 }
 ```
 

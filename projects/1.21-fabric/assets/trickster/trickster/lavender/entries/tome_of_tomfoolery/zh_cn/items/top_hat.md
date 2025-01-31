@@ -2,7 +2,8 @@
 {
   "title": "帽子",
   "icon": "trickster:top_hat",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 40
 }
 ```
 

@@ -2,7 +2,12 @@
 {
   "title": "杂项曲变术",
   "icon": "minecraft:iron_nugget",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "参量之曲变",
+    "衰朽之曲变",
+    "释义之曲变"
+  ]
 }
 ```
 

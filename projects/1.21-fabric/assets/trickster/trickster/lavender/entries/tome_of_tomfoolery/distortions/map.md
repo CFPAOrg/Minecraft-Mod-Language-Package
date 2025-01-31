@@ -1,8 +1,14 @@
 ```json
 {
-  "title": "Map Manipulation",
+  "title": "Maps",
   "icon": "minecraft:filled_map",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "Charting Stratagem",
+    "Navigator's Distortion",
+    "Admiral's Stratagem",
+    "Stratagem of Annulment"
+  ]
 }
 ```
 

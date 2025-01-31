@@ -2,7 +2,18 @@
 {
   "title": "Casting Context",
   "icon": "trickster:wand",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "Positioning Delusion",
+    "Directional Delusion",
+    "Reflection Delusion",
+    "Dimensional Delusion",
+    "Authority Delusion",
+    "Crowning Delusion",
+    "Delusion of Order",
+    "Framed Delusion",
+    "Macro Delusion"
+  ]
 }
 ```
 

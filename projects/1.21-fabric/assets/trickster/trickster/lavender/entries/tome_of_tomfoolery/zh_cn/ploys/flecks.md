@@ -2,7 +2,11 @@
 {
   "title": "视形",
   "icon": "minecraft:ghast_tear",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "营销员之技巧",
+    "艺术家之技巧"
+  ]
 }
 ```
 

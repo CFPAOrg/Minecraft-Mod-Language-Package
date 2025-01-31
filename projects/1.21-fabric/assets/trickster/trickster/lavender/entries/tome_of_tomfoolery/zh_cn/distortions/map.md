@@ -1,8 +1,14 @@
 ```json
 {
-  "title": "映射操纵",
+  "title": "映射",
   "icon": "minecraft:filled_map",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "编表之谋略",
+    "领航员之曲变",
+    "海军将领之谋略",
+    "废止之谋略"
+  ]
 }
 ```
 

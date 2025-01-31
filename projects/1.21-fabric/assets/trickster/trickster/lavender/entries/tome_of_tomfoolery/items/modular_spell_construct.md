@@ -2,7 +2,8 @@
 {
   "title": "Modular Spell Construct",
   "icon": "trickster:modular_spell_construct",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 100
 }
 ```
 

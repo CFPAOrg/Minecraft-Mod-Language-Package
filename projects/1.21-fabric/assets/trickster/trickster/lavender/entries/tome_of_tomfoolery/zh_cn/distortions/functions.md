@@ -2,7 +2,17 @@
 {
   "title": "法术片段",
   "icon": "minecraft:paper",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "宏伟之谋略",
+    "静默之曲变",
+    "器具之谋略",
+    "折叠之曲变",
+    "谨慎之谋略",
+    "奇点之谋略",
+    "供给之曲变",
+    "闭包之谋略"
+  ]
 }
 ```
 

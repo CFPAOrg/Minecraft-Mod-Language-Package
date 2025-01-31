@@ -2,7 +2,17 @@
 {
   "title": "Inventory Information",
   "icon": "minecraft:bundle",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "Fence's Ingress",
+    "Juggling Delusion",
+    "Catch Delusion",
+    "Intrusive Ingress",
+    "Cranium Delusion",
+    "Ingress of Authority",
+    "Crowning Ingress",
+    "Ingress of Plenitude"
+  ]
 }
 ```
 
@@ -95,22 +105,3 @@ slot -> number
 Returns the amount of items stored in the given slot.
 
 ;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:block_from_item,title=Placement Distortion|>
-
-item -> block | void
-
----
-
-Returns the block type the given item type can be placed as, or void if the item is not a block.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:item_from_block,title=Pickup Distortion|>
-
-block -> item | void
-
----
-
-Returns the item type that can be used to place the given block type, 
-or void if the block doesn't have a corresponding item.

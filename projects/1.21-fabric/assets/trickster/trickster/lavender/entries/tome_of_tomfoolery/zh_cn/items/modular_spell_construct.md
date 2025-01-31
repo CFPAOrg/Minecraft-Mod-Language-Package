@@ -2,7 +2,8 @@
 {
   "title": "模块式法术组构台",
   "icon": "trickster:modular_spell_construct",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 100
 }
 ```
 

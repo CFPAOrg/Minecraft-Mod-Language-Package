@@ -26,6 +26,13 @@ trickster:
       .: Import this example spell?
       description: This will §loverwrite§r the Scroll and Quill in your other hand with the chosen example spell.
 
+  gandalf:
+    stored: "Stored: %s"
+  merlin:
+    idling: "Idle"
+    draining: "Draining: %.2f"
+    filling: "Charging: %.2f"
+
   item_group: Trickster
 
   scroll_hat: 'Selected slot: %d'
@@ -59,6 +66,8 @@ trickster:
     all: Stratagem Bar None
     any: Stratagem In General
     none: Stratagem In Absence
+    greater_than: Greater Distortion
+    lesser_than: Lesser Distortion
 
     extract_x: Primary Distortion
     extract_y: Secondary Distortion
@@ -93,6 +102,7 @@ trickster:
     height_reflection: Stature Ingress
     sneaking_reflection: Alternative Ingress
     sprinting_reflection: Trekking Ingress
+    burning_reflection: Hearth's Ingress
     blocking_reflection: Guard Ingress
     raycast: Pinpoint Ingress
     raycast_side: Bearing Ingress
@@ -107,6 +117,7 @@ trickster:
     get_velocity: Movement Ingress
     add_velocity: Kinetic Ploy
     change_weight: Ploy of Featherweight
+    displace: Ploy of the Usurper
     store_entity: Containment Ploy
     release_entity: Extrication Ploy
 
@@ -150,6 +161,7 @@ trickster:
     list_remove: Expulsion Stratagem
     list_remove_element: Eviction Stratagem
     list_size: Tally Distortion
+    create_number_range: Interlude Distortion
 
     locate_glyph: Pinpoint Distortion
     locate_glyphs: Discovering Distortion
@@ -229,29 +241,53 @@ trickster:
     message_send: Dispatch Ploy
     message_listen: Ploy of Receipt
 
-  fragment.trickster:
-    type: Type
-    number: Number
-    boolean: Boolean
-    vector: Vector
-    list: List
-    map: Map
-    void: Void
-    pattern: Pattern
-    pattern_literal: Pattern Literal
-    spell_part: Spell
-    entity: Entity
-    slot: Slot
-    zalgo: §kZalgo
-    item_type: Item
-    block_type: Block
-    entity_type: Entity Type
-    integer_list: List of Integers
+  fragment:
+    trickster:
+      type: Type
+      number: Number
+      boolean: Boolean
+      vector: Vector
+      list: List
+      map: Map
+      void: Void
+      pattern: Pattern
+      pattern_literal: Pattern Literal
+      spell_part: Spell
+      entity: Entity
+      slot: Slot
+      zalgo: §kZalgo
+      item_type: Item
+      block_type: Block
+      entity_type: Entity Type
+      string: String
+    class:
+      Fragment: Any
+      AddableFragment: Addable
+      DivisibleFragment: Divisible
+      FoldableFragment: Foldable
+      MultiplicableFragment: Multiplicable
+      RoundableFragment: Roundable
+      SubtractableFragment: Subtractable
+      TypeFragment: Type
+      NumberFragment: Number
+      BooleanFragment: Boolean
+      VectorFragment: Vector
+      ListFragment: List
+      MapFragment: Map
+      VoidFragment: Void
+      PatternGlyph: Pattern
+      Pattern: Pattern Literal
+      SpellPart: Spell
+      EntityFragment: Entity
+      SlotFragment: Slot
+      ZalgoFragment: §kZalgo
+      ItemTypeFragment: Item
+      BlockTypeFragment: Block
+      EntityTypeFragment: Entity Type
 
   blunder:
-    incorrect_fragment: Incorrect argument at index %d. Expected %s, got %s
-    missing_fragment: Missing at index %d, expected %s
     overweight_fragment: Result fragment is overweight, result is %s
+    missing_fragment: Missing at index %d, expected %s
 
 item.trickster:
   tome_of_tomfoolery: Tome of Tomfoolery
@@ -300,12 +336,14 @@ item.trickster:
   fez: Fez
   wand: Wand
   macro_ring: Macro Ring
+  amethyst_whorl: Amethyst Whorl
 
   amethyst_knot: Amethyst Knot
   emerald_knot: Emerald Knot
   diamond_knot: Diamond Knot
   echo_knot: Echo Knot
   cracked_echo_knot: Cracked Echo Knot
+  astral_knot: Astral Knot
   command_knot: Command Knot
 
   spell_core: Spell Core
@@ -318,6 +356,7 @@ block.trickster:
   modular_spell_construct: Modular Spell Construct
   light: Light
   scroll_shelf: Scroll Shelf
+  charging_array: Charging Array
 
 effect.trickster:
   mana_boost: Mana Hyperflux

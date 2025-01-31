@@ -2,7 +2,8 @@
 {
   "title": "Scroll Shelves",
   "icon": "trickster:scroll_shelf",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 70
 }
 ```
 

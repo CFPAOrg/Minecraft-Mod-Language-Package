@@ -2,7 +2,12 @@
 {
   "title": "黑夜中的幽光",
   "icon": "trickster:echo_knot",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "望月者之技巧",
+    "善流之技巧",
+    "恶流之技巧"
+  ]
 }
 ```
 
@@ -22,18 +27,18 @@
 
 <|glyph@trickster:templates|trick-id=trickster:push_mana,title=善流之技巧|>
 
-number, slot... -> number
+number, slot... | slot[] -> number
 
 ---
 
-向给定槽位的物品输送魔力，每个槽位最多传输给定数的量，并返回实际传输的量。
+向给定槽位的物品输送魔力，每个槽位最多传输的量有上限，并返回实际传输的量。
 
 ;;;;;
 
 <|glyph@trickster:templates|trick-id=trickster:pull_mana,title=恶流之技巧|>
 
-number, slot... -> number
+number, slot... | slot[] -> number
 
 ---
 
-从给定槽位的物品抽取魔力，每个槽位最多传输给定数的量，并返回实际传输的量。
+从给定槽位的物品抽取魔力，每个槽位最多传输的量有上限，并返回实际传输的量。

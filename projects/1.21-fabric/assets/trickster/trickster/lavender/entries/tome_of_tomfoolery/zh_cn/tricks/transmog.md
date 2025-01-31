@@ -3,6 +3,12 @@
   "title": "幻化",
   "icon": "transmog:void_fragment",
   "category": "trickster:tricks",
+  "additional_search_terms": [
+    "幻化之技巧",
+    "诡谋之技巧",
+    "原形之技巧",
+    "幻化之辑流"
+  ],
   "fabric:load_conditions": {
     "condition": "fabric:any_mods_loaded",
     "values": [

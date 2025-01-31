@@ -2,7 +2,17 @@
 {
   "title": "物品栏信息",
   "icon": "minecraft:bundle",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "销赃人之辑流",
+    "杂耍之错觉",
+    "抛接之错觉",
+    "侵入之辑流",
+    "颅骨之错觉",
+    "权威之辑流",
+    "加冕之辑流",
+    "丰裕之辑流"
+  ]
 }
 ```
 
@@ -91,23 +101,3 @@ slot -> number
 ---
 
 返回给定槽位中物品的数量。
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:block_from_item,title=放置之曲变|>
-
-item -> block | void
-
----
-
-返回所给物品类型放置后的方块的类型。若所给物品无法放置为方块，返回void。
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:item_from_block,title=拾取之曲变|>
-
-block -> item | void
-
----
-
-返回放置所给方块类型所需的物品的类型。若所给方块没有对应物品，返回void。

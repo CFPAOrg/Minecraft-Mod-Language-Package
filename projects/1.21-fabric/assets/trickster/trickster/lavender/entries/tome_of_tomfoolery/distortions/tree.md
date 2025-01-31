@@ -2,7 +2,18 @@
 {
   "title": "Spell Manipulation",
   "icon": "minecraft:oak_sapling",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "Pinpoint Distortion",
+    "Discovering Distortion",
+    "Retrieval Distortion",
+    "Replacement Distortion",
+    "Bundle Distortion",
+    "Felling Distortion",
+    "Grafting Distortion",
+    "Branching Distortion",
+    "Pruning Distortion"
+  ]
 }
 ```
 

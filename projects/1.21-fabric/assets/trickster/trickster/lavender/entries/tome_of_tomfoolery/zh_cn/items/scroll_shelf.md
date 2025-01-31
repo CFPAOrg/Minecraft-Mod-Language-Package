@@ -2,7 +2,8 @@
 {
   "title": "卷轴架",
   "icon": "trickster:scroll_shelf",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 70
 }
 ```
 

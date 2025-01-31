@@ -2,7 +2,11 @@
 {
   "title": "Reusability",
   "icon": "trickster:top_hat",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "Assistance Stratagem",
+    "Cranium Stratagem"
+  ]
 }
 ```
 

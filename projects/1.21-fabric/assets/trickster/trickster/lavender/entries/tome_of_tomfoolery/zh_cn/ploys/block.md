@@ -2,11 +2,23 @@
 {
   "title": "方块交互",
   "icon": "minecraft:string",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "摧毁之技巧",
+    "造物之技巧",
+    "交换之技巧",
+    "赋权之技巧",
+    "撤权之技巧",
+    "损蚀之技巧",
+    "花卉之技巧",
+    "盈水之技巧",
+    "光辉之技巧",
+    "谐振之技巧"
+  ]
 }
 ```
 
-本节中的图案会直接在世界中的方块上运作。
+本节中的图案会直接操作世界中的方块。
 
 ;;;;;
 

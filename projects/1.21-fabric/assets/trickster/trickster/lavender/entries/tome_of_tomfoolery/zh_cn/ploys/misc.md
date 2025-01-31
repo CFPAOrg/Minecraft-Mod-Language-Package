@@ -2,7 +2,14 @@
 {
   "title": "杂项技巧术",
   "icon": "minecraft:iron_ingot",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "挂起之技巧",
+    "天钉之技巧",
+    "清晰之技巧",
+    "混淆之技巧",
+    "行刑者之技巧"
+  ]
 }
 ```
 

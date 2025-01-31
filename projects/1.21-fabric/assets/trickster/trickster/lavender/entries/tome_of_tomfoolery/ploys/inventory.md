@@ -2,7 +2,12 @@
 {
   "title": "Inventory Manipulation",
   "icon": "minecraft:chest",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "Ploy of Offering",
+    "Swindler's Ploy",
+    "Cranial Shift Ploy"
+  ]
 }
 ```
 

@@ -2,7 +2,8 @@
 {
   "title": "晶结",
   "icon": "trickster:emerald_knot",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 10
 }
 ```
 
@@ -10,6 +11,13 @@
 
 
 某些宝石制成晶结后会有特殊的性质。如紫水晶在制成晶结之时就已拥有魔力，但无法以已知方式再次填充；其他的宝石都不具有此性质。
+
+;;;;;
+
+将晶结暴露在夜空下即可令其自然充能。新月和满月前后的充能速度最快，距两者时间相等的夜晚则完全无法充能。
+
+
+将晶结丢在地上、放在露天的[充能阵列](^trickster:items/charging_array)或[法术组构台](^trickster:items/spell_construct)中，均视作暴露在夜空下。丢出的可充能晶结不会被清除。
 
 ;;;;;
 

@@ -2,7 +2,8 @@
 {
   "title": "魔杖",
   "icon": "trickster:wand",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 30
 }
 ```
 

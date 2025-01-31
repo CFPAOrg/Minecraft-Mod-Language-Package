@@ -2,7 +2,14 @@
 {
   "title": "Block Querying",
   "icon": "minecraft:white_wool",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "Ingress of Validation",
+    "Ingress of Hardness",
+    "Ingress of Suitability",
+    "Ingress of Logic",
+    "Ingress of Resonance"
+  ]
 }
 ```
 

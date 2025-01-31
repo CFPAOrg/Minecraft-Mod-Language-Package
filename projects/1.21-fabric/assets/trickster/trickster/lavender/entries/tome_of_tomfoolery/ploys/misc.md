@@ -2,7 +2,14 @@
 {
   "title": "Misc Ploys",
   "icon": "minecraft:iron_ingot",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "Ploy of Suspension",
+    "Ploy of Celestial Pin",
+    "Ploy of Clarity",
+    "Ploy of Obfuscation",
+    "Executioner's Ploy"
+  ]
 }
 ```
 

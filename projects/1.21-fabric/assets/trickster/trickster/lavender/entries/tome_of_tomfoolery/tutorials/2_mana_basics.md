@@ -39,15 +39,13 @@ or when in a pinch.
 ;;;;;
 
 <|item-spotlight@lavender:book_components|item=trickster:emerald_knot|>Most Knots, though, can be refilled by simply exposing them to the night sky.
+Either by throwing them on the ground, or placing them inside a [Charging Array](^trickster:items/charging_array).
+Rechargeable Knots thrown on the ground will not despawn.
 They will charge most quickly at or near full or new moons, but not at all on some days in between.
-
-
-Knots also keep track of their current draw rate in their tooltip,
-which can be very useful for long-running spells.
 
 ;;;;;
 
-Draw rate, or any change in Mana, is measured in Merlins, or M.
+Knots also keep track of their current draw rate in their tooltip, measured in Merlins, or M.
 Merlins are defined as Gandalfs per Tick, 
 Ticks being the smallest unit of meaningful time, at 1/20th of a second.
 

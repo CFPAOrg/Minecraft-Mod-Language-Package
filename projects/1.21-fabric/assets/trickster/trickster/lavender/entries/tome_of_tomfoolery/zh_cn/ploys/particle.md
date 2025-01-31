@@ -2,7 +2,10 @@
 {
   "title": "粒子",
   "icon": "minecraft:firework_rocket",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "繁盛之技巧"
+  ]
 }
 ```
 

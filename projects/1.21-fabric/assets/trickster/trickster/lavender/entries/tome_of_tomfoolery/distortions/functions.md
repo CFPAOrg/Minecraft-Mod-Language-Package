@@ -2,7 +2,17 @@
 {
   "title": "Spell Fragments",
   "icon": "minecraft:paper",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "Grand Stratagem",
+    "Quiet Distortion",
+    "Utensil Stratagem",
+    "Folding Distortion",
+    "Cautious Stratagem",
+    "Stratagem of Singularity",
+    "Supply Distortion",
+    "Closure Stratagem"
+  ]
 }
 ```
 

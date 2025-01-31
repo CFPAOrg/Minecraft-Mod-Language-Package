@@ -6,7 +6,8 @@
   "required_advancements": [
     "trickster:ominous_spell_core"
   ],
-  "secret": true
+  "secret": true,
+  "ordinal": 130
 }
 ```
 

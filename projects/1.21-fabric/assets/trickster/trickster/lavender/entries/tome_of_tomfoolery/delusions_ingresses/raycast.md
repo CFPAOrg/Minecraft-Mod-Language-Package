@@ -2,7 +2,12 @@
 {
   "title": "Raycasting",
   "icon": "minecraft:spectral_arrow",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "Pinpoint Ingress",
+    "Bearing Ingress",
+    "Mark Ingress"
+  ]
 }
 ```
 

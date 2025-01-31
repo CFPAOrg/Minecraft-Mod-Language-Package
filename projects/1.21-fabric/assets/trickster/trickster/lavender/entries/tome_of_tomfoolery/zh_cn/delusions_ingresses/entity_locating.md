@@ -2,7 +2,11 @@
 {
   "title": "实体定位",
   "icon": "minecraft:chicken_spawn_egg",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "怀抱之辑流",
+    "同命之辑流"
+  ]
 }
 ```
 

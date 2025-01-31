@@ -2,7 +2,8 @@
 {
   "title": "Macro Ring",
   "icon": "trickster:macro_ring",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 50
 }
 ```
 

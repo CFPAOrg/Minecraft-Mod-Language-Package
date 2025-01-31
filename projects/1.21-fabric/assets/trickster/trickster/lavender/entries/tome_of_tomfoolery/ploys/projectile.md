@@ -2,7 +2,13 @@
 {
   "title": "Projectiles",
   "icon": "minecraft:fire_charge",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "Ballista's Ploy",
+    "Pyromancer's Ploy",
+    "Dragon's Ploy",
+    "Demolitionist's Ploy"
+  ]
 }
 ```
 

@@ -2,7 +2,14 @@
 {
   "title": "方块查询",
   "icon": "minecraft:white_wool",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "校验之辑流",
+    "硬度之辑流",
+    "适用之辑流",
+    "逻辑之辑流",
+    "谐振之辑流"
+  ]
 }
 ```
 

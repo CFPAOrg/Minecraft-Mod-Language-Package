@@ -2,7 +2,17 @@
 {
   "title": "实体交互",
   "icon": "minecraft:sheep_spawn_egg",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "动能之技巧",
+    "轻羽之技巧",
+    "篡夺者之技巧",
+    "变身之技巧",
+    "解除变身之技巧",
+    "收容之技巧",
+    "释脱之技巧",
+    "居形之技巧"
+  ]
 }
 ```
 
@@ -24,9 +34,19 @@ entity, vector -> entity
 
 entity, number -> entity
 
-<|cost-rule@trickster:templates|formula=60 kG|>
+<|cost-rule@trickster:templates|formula=60 kG * (1 - 倍数)|>
 
 给定0到1之间的数，若实体为生物实体，则让其所受重力变为原重力与所给数的积，持续1秒。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:displace,title=篡夺者之技巧|>
+
+entity, vector -> entity
+
+<|cost-rule@trickster:templates|formula=20 kG + 1.35^长度|>
+
+在两秒后按照所给向量令给定实体位移。
 
 ;;;;;
 

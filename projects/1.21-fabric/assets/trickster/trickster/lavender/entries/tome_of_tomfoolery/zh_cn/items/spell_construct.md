@@ -2,7 +2,8 @@
 {
   "title": "法术组构台",
   "icon": "trickster:spell_construct",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 90
 }
 ```
 

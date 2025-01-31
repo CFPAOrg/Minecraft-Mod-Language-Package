@@ -30,14 +30,11 @@
 
 ;;;;;
 
-<|item-spotlight@lavender:book_components|item=trickster:emerald_knot|>不过，大多数晶结只需简单暴露在夜空下，就可补充魔力。新月和满月前后的充能速度最快，两者间的某些夜晚则完全无法充能。
-
-
-晶结也会在其提示文本中记录当前消耗速率，很适合长期运行的法术。
+<|item-spotlight@lavender:book_components|item=trickster:emerald_knot|>不过，大多数晶结只需简单暴露在夜空下，就可补充魔力。将晶结丢在地上、放在露天的[充能阵列](^trickster:items/charging_array)或[法术组构台](^trickster:items/spell_construct)中均可。丢出的可充能晶结不会被清除。新月和满月前后的充能速度最快，两者间的某些夜晚则完全无法充能。
 
 ;;;;;
 
-消耗速率，或者魔力的变化率，使用梅林（Merlin）作为单位，简称为“梅”，符号为“M”。此单位的定义为甘道夫每刻；其中，刻是有意义时间的最小单位，相当于1/20秒。
+晶结也会在其提示文本中记录当前消耗速率，使用梅林（Merlin）作为单位，简称为“梅”，符号为“M”。此单位的定义为甘道夫每刻；其中，刻是有意义时间的最小单位，相当于1/20秒。
 
 
 比如，50梅的法术每秒即消耗1千甘。

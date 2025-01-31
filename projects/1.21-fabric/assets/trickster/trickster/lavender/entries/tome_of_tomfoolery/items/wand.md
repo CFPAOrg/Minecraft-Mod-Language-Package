@@ -2,7 +2,8 @@
 {
   "title": "Wand",
   "icon": "trickster:wand",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 30
 }
 ```
 

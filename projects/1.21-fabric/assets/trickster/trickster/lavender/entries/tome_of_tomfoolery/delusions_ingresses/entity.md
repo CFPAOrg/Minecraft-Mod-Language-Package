@@ -2,7 +2,24 @@
 {
   "title": "Entity Querying",
   "icon": "minecraft:cow_spawn_egg",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "Motive Verification Ingress",
+    "Locational Ingress",
+    "Perspective Ingress",
+    "Directional Ingress",
+    "Movement Ingress",
+    "Stature Ingress",
+    "Alternative Ingress",
+    "Hearth's Ingress",
+    "Trekking Ingress",
+    "Guard Ingress",
+    "Vigor Ingress",
+    "Fettle Ingress",
+    "Bulwark Ingress",
+    "Distortion of Occupation",
+    "Observer's Ingress"
+  ]
 }
 ```
 
@@ -80,6 +97,16 @@ Given an entity, returns whether the entity is crouching.
 
 ;;;;;
 
+<|glyph@trickster:templates|trick-id=trickster:burning_reflection,title=Hearth's Ingress|>
+
+entity -> boolean
+
+---
+
+Given an entity, returns whether the entity is on fire.
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:sprinting_reflection,title=Trekking Ingress|>
 
 entity -> boolean
@@ -130,7 +157,7 @@ Given an entity, returns its total armor value.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_scale,title=Distortion of Ingress|>
+<|glyph@trickster:templates|trick-id=trickster:get_scale,title=Distortion of Occupation|>
 
 entity -> number
 

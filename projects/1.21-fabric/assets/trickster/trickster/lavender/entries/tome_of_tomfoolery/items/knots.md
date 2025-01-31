@@ -2,7 +2,8 @@
 {
   "title": "Knots",
   "icon": "trickster:emerald_knot",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 10
 }
 ```
 
@@ -13,6 +14,17 @@ amount of [Mana](^trickster:concepts/mana) based on the rarity of the gem they'r
 Some gems have unique properties when made into a Knot, such as Amethyst,
 which, unlike other gems, already contains Mana when converted,
 but cannot be recharged naturally.
+
+;;;;;
+
+Naturally recharging a Knot is done by exposing it to the night sky.
+It will charge most quickly at or near a full or new moon, but not at all when exactly in between.
+
+
+To count as being exposed, a Knot must either be thrown on the ground or placed in a 
+[Charging Array](^trickster:items/charging_array) or [Spell Construct](^trickster:items/spell_construct) 
+with a clear view of the sky.
+Rechargeable Knots thrown on the ground will not despawn.
 
 ;;;;;
 

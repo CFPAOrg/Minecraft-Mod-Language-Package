@@ -2,7 +2,12 @@
 {
   "title": "物品栏操纵",
   "icon": "minecraft:chest",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "祭献之技巧",
+    "骗徒之技巧",
+    "颅骨挪移之技巧"
+  ]
 }
 ```
 

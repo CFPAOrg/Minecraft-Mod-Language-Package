@@ -2,7 +2,18 @@
 {
   "title": "施法上下文",
   "icon": "trickster:wand",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "定位之错觉",
+    "朝向之错觉",
+    "自审之错觉",
+    "维度之错觉",
+    "权威之错觉",
+    "加冕之错觉",
+    "序数之错觉",
+    "框选之错觉",
+    "宏之错觉"
+  ]
 }
 ```
 

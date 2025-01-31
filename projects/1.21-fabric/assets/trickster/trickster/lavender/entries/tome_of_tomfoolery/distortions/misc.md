@@ -2,7 +2,12 @@
 {
   "title": "Misc Distortions",
   "icon": "minecraft:iron_nugget",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "Argumentative Distortion",
+    "Decaying Distortion",
+    "Interpretation Distortion"
+  ]
 }
 ```
 

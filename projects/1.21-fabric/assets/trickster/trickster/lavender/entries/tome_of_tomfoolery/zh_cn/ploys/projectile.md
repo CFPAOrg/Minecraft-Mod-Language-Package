@@ -2,7 +2,13 @@
 {
   "title": "弹射物",
   "icon": "minecraft:fire_charge",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "弩炮之技巧",
+    "火焰术师之技巧",
+    "巨龙之技巧",
+    "爆破师之技巧"
+  ]
 }
 ```
 

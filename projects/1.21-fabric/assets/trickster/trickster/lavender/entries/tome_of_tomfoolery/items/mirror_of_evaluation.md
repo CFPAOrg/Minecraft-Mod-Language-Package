@@ -2,7 +2,8 @@
 {
   "title": "Mirror of Evaluation",
   "icon": "trickster:mirror_of_evaluation",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 35
 }
 ```
 

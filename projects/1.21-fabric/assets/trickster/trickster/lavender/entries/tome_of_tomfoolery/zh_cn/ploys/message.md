@@ -2,7 +2,11 @@
 {
   "title": "法术间交流",
   "icon": "minecraft:feather",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "派遣之技巧",
+    "收据之技巧"
+  ]
 }
 ```
 
@@ -22,8 +26,8 @@ any, [number] -> any
 
 <|glyph@trickster:templates|trick-id=trickster:message_listen,title=收据之技巧|>
 
--> any[]
+number -> any[]
 
 ---
 
-在收到消息的后一刻返回所有消息。若未收到消息，会等待至收到消息再返回。
+在收到消息的后一刻返回所有消息。必须指定超时时间，在此时间后无论收到消息与否均返回。

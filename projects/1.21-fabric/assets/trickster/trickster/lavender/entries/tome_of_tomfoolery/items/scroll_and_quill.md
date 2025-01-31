@@ -2,7 +2,8 @@
 {
   "title": "Scroll and Quill",
   "icon": "trickster:scroll_and_quill",
-  "category": "trickster:items"
+  "category": "trickster:items",
+  "ordinal": 37
 }
 ```
 

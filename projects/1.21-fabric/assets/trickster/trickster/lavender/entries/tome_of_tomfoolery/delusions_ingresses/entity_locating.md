@@ -2,7 +2,11 @@
 {
   "title": "Entity Targeting",
   "icon": "minecraft:chicken_spawn_egg",
-  "category": "trickster:delusions_ingresses"
+  "category": "trickster:delusions_ingresses",
+  "additional_search_terms": [
+    "Embracing Ingress",
+    "Ingress of Shared Fate"
+  ]
 }
 ```
 

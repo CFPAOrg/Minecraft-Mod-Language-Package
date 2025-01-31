@@ -1,8 +1,21 @@
 ```json
 {
-  "title": "列表操纵",
+  "title": "列表",
   "icon": "minecraft:string",
-  "category": "trickster:distortions"
+  "category": "trickster:distortions",
+  "additional_search_terms": [
+    "计量之曲变",
+    "扩展之谋略",
+    "集合之谋略",
+    "孤立之曲变",
+    "计数之曲变",
+    "膨胀之谋略",
+    "提取之曲变",
+    "定目之曲变",
+    "驱散之谋略",
+    "放逐之谋略",
+    "间奏之曲变"
+  ]
 }
 ```
 
@@ -33,6 +46,16 @@ any[], any... -> any[]
 
 ;;;;;
 
+<|glyph@trickster:templates|trick-id=trickster:list_add_range,title=集合之谋略|>
+
+any[], any[]... -> any[]
+
+---
+
+创建一个新列表，其中包含所有给定列表中的元素。
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:list_take_range,title=孤立之曲真|>
 
 any[], number, [number] -> any[]
@@ -50,16 +73,6 @@ any[] -> any[]
 ---
 
 倒置所给列表。
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:list_add_range,title=集合之谋略|>
-
-any[], any[]... -> any[]
-
----
-
-创建一个新列表，其中包含所有给定列表中的元素。
 
 ;;;;;
 
@@ -110,3 +123,13 @@ any[], any... -> any[]
 ---
 
 检查给定列表中元素是否与所给参数一致，若一致则移除。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:create_number_range,title=间奏之曲变|>
+
+number, number -> number[]
+
+---
+
+返回一个列表，其中包含自第一个数起、在第二个数前结束的所有整数。

@@ -2,7 +2,19 @@
 {
   "title": "Block Interaction",
   "icon": "minecraft:string",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "Ploy of Destruction",
+    "Ploy of Creation",
+    "Ploy of Exchange",
+    "Ploy of Investiture",
+    "Ploy of Divestiture",
+    "Ploy of Attrition",
+    "Floral Ploy",
+    "Aquatic Ploy",
+    "Illumination Ploy",
+    "Resonance Ploy"
+  ]
 }
 ```
 

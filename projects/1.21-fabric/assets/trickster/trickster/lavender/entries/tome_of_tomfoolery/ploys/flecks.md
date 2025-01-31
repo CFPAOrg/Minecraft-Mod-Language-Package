@@ -2,7 +2,11 @@
 {
   "title": "Flecks",
   "icon": "minecraft:ghast_tear",
-  "category": "trickster:ploys"
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "Marketer's Ploy",
+    "Artist's Ploy"
+  ]
 }
 ```
 
