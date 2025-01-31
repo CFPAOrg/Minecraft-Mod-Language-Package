@@ -8,6 +8,7 @@ on:
       - 'src/**'
       - 'config/packer/**'
       - 'projects/**'
+      - '.github/workflows/pr-packer.yml'
 
 
 
@@ -102,7 +103,7 @@ jobs:
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
           
       - name: Upload Artifact for ${{ matrix.version }}
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: Minecraft-Mod-Language-Package-${{ matrix.version }}
           path: Minecraft-Mod-Language-Package-${{ matrix.version }}/*
