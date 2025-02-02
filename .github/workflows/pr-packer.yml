@@ -28,7 +28,7 @@ jobs:
       # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
       - name: Cache Packer
         id: cache-packer
-        uses: actions/cache@v4
+        uses: actions/cache@v3
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
@@ -54,7 +54,7 @@ jobs:
         version: ["1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric"]
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 2 
       - run: git fetch --depth=1 origin main
