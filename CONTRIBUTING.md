@@ -74,8 +74,8 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 1. 模组活跃更新的 Minecraft 版本优先。
 2. 若所有小版本都活跃更新，则 Minecraft 版本高者优先。
 
+- 例：Minecraft 版本 1.19.2 与 1.19.4 均属同一大版本号 1.19 下的子版本。  
 
-* 例：Minecraft 版本 1.19.2 与 1.19.4 均属同一大版本号 1.19 下的子版本。  
 若某一模组在两个版本上的开发均活跃，由于 1.19.4 的版本号更高，因此优先考虑该模组在 1.19.4 下的译名标准化情况与适配情况。  
 这一优先级不会影响到模组在其他大版本下（如 1.18、1.12 等）的分支。
 
@@ -83,7 +83,6 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 1. “材料 + 质/制 + 中心词”的翻译，如“铁质涡轮”或“铁制涡轮”，二者皆合理。只需单模组内统一。
 2. 关于“木制品名称”的翻译，可参考 [#4525](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/4525) 的解决方法。
-
 
 ## 翻译贡献方针
 
@@ -93,9 +92,10 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 - 翻译**必须**符合 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)的规定。
 - **拒绝**接收机器翻译（含生成式 AI）、生硬翻译。
+  - 提交的机器翻译需事先经过人工审查，且满足[审查规则](#审查规则)要求的品质。
   - 若直接提交此类翻译，该 PR 将被打上“生硬翻译”标签。
   - 若作者不及时进行有效修改，PR 可能会依照本仓库的[搁置规则](#搁置规则)处理。
-- 翻译**必须**在审校后才能进入仓库。
+- 翻译**必须**在审查后才能进入仓库。
 
 ### Pull Request 相关规定
 
@@ -136,15 +136,16 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 #### 审查规则
 
-- 审查的基本依据**是**[翻译贡献方针](#翻译贡献方针)。
-- 审查流程**必须**满足本文档[翻译审查](#翻译审查)内容所述。
-- 审查过程中各方**应**遵守[礼仪](https://zh.wikipedia.org/wiki/Wikipedia:%E7%A4%BC%E4%BB%AA)（[备用](https://share.weiyun.com/LRvx1omf)）。
+- 翻译审查的基本依据**是**[翻译贡献方针](#翻译贡献方针)。
+- 翻译审查的目的是使译文满足 `GBT 19682-2005 翻译服务译文质量要求` 和 `ZYF 001-2016 本地化翻译质量和排版质量评估规范` 文件的要求
+- 翻译审查的流程**必须**满足本文档[翻译审查](#翻译审查)内容所述。
+- 翻译审查过程中各方**应**遵守[礼仪](https://zh.wikipedia.org/wiki/Wikipedia:%E7%A4%BC%E4%BB%AA)（[备用](https://share.weiyun.com/LRvx1omf)）。
 
 #### 审查人
 
 - 任何人都能利用 GitHub 提供的[相关功能](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request)来审查 PR 中翻译。所有参与审查的用户即为审查人。
-- [CFPA团队](https://github.com/CFPAOrg) 的成员（Member）和[仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人。
-- 至少一位具有官方身份的审查人对 PR 给出批准（Approval）审查后，PR 才能合并。
+- [CFPA团队](https://github.com/CFPAOrg) 的成员（Member）和[本仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人。
+- 至少一位具有官方身份的审查人对 PR 给出批准（Approval）意见后，PR 才能合并。
 - 审查人在给出批准审查后**应**给 PR 加上“即将合并”标签，此后需至少等待 24 小时，若等待期间没有新动态则可以合并 PR。
   - “动态”包括但不限于 PR 作者发送提交（Commit）、审查人提出意见。
 
@@ -154,7 +155,7 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
   - 在接受审查人的建议后，PR 作者**应**解决（Revolve）相应的对话（Conversation）。
   - 若拒绝审查人的建议，或和审查人的观点相左，PR 作者**不应**急于解决（Revolve）对话（Conversation）
 - PR 作者**应**及时做出回应，否则 PR 可能会按[搁置规则](#搁置规则)关闭。
-- PR 作者如遇到 Git/GitHub 操作上的困难，**应**先询问后操作，避免造成混乱。
+- PR 作者如遇到 Git/GitHub 操作上的困难，请先询问后操作，避免造成混乱。
 
 ### 搁置规则
 
