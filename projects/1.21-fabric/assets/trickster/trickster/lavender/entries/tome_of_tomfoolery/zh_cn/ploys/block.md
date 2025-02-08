@@ -1,0 +1,133 @@
+```json
+{
+  "title": "方块交互",
+  "icon": "minecraft:string",
+  "category": "trickster:ploys",
+  "additional_search_terms": [
+    "摧毁之技巧",
+    "造物之技巧",
+    "交换之技巧",
+    "赋权之技巧",
+    "撤权之技巧",
+    "损蚀之技巧",
+    "花卉之技巧",
+    "盈水之技巧",
+    "光辉之技巧",
+    "谐振之技巧"
+  ]
+}
+```
+
+本节中的图案会直接操作世界中的方块。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:break_block,title=摧毁之技巧|>
+
+vector -> vector
+
+<|cost-rule@trickster:templates|formula=max(硬度 * 1 kG\, 8 kG)|>
+
+破坏给定位置处的方块。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:place_block,title=造物之技巧|>
+
+vector, slot |
+
+vector, block -> vector
+
+<|cost-rule@trickster:templates|formula=max(距离 * 1 kG\, 8 kG)|>
+
+将所给方块放置在所给位置处。会消耗物品。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:swap_block,title=交换之技巧|>
+
+vector, vector ->
+
+<|cost-rule@trickster:templates|formula=60 kG + 距离 * 1 kG|>
+
+交换世界中两个位置处的方块。两处均不允许为空气。
+
+;;;;;
+
+<|page-title@lavender:book_components|title=笔记：加热与冷却|>向方块灌入大量魔力可加热方块，从中抽出大量魔力可冷却。
+
+
+某些方块经受此类极端温度变化后会变为有用的事物，不过如此操作会对其周围方块产生附带效果。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:heat,title=赋权之技巧|>
+
+vector -> vector
+
+<|cost-rule@trickster:templates|formula=80 kG|>
+
+立即猛烈加热所给方块。
+
+
+可借此高效加热熔炉。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:cool,title=撤权之技巧|>
+
+vector -> vector
+
+<|cost-rule@trickster:templates|formula=80 kG|>
+
+立即让所给方块大幅冷却。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:erode,title=损蚀之技巧|>
+
+vector, vector -> vector
+
+<|cost-rule@trickster:templates|formula=80 kG|>
+
+使用第二个位置处的水锈蚀第一个位置处的方块。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:conjure_flower,title=花卉之技巧|>
+
+vector -> vector
+
+<|cost-rule@trickster:templates|formula=5 kG|>
+
+在所给位置处随机构筑一朵花。下方方块的顶面需为土壤。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:conjure_water,title=盈水之技巧|>
+
+vector -> vector
+
+<|cost-rule@trickster:templates|formula=15 kG|>
+
+在所给位置处构筑出一潭水。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:conjure_light,title=光辉之技巧|>
+
+vector -> vector
+
+<|cost-rule@trickster:templates|formula=20 kG|>
+
+在所给位置处构筑出一个永久性光源。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:power_resonator,title=谐振之技巧|>
+
+vector, number -> boolean
+
+<|cost-rule@trickster:templates|formula=距离 / 2 kG|>
+
+令所给位置处[法术谐振器](^trickster:items/spell_resonator)产生所给强度的信号，强度需在0到15之间。
