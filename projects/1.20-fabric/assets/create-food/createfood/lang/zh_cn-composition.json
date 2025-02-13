@@ -237,20 +237,26 @@
 
         {
             "templates": {
-                "block.createfood.{0}{1}{2}_pie_crust": "{1}{2}馅饼酥皮{0}"
+                "block.createfood.raw_{0}pie_crust": "{0}馅饼酥皮生坯"
             },
             "parameters": [
                 {
-                    "raw_": "生坯",
+                    "chocolate_graham_cracker_": "巧克力全麦粉饼干",
+                    "graham_cracker_": "全麦粉饼干",
                     "": ""
-                },
+                }
+            ]
+        },
+        {
+            "templates": {
+                "item.createfood.{0}_pie_crust": "{0}馅饼酥皮",
+                "item.createfood.mini_{0}_pie_crust": "迷你{0}馅饼酥皮",
+                "item.createfood.raw_mini_{0}_pie_crust": "迷你{0}馅饼酥皮生坯"
+            },
+            "parameters": [
                 {
-                    "mini_": "迷你",
-                    "": ""
-                },
-                {
-                    "chocolate_graham_cracker": "巧克力全麦粉饼干",
-                    "graham_cracker": "全麦粉饼干"
+                    "graham_cracker": "全麦粉饼干",
+                    "chocolate_graham_cracker": "巧克力全麦粉饼干"
                 }
             ]
         },
@@ -468,7 +474,7 @@
                 {
                     "black_": "黑色",
                     "blue_": "蓝色",
-                    "brow_": "棕色",
+                    "brown_": "棕色",
                     "cyan_": "青色",
                     "gray_": "灰色",
                     "green_": "绿色",
@@ -607,6 +613,7 @@
                     "MelonCreamFrosting": "西瓜奶油糖霜",
                     "MelonIceCream": "西瓜冰淇淋",
                     "MelonJam": "西瓜酱",
+                    "MelonJuice": "西瓜汁",
                     "MelonMilkshake": "西瓜奶昔",
                     "Milkshake": "奶昔",
                     "Molasses": "糖蜜",
@@ -800,13 +807,15 @@
             },
             "parameters": [
                 {
+                    "Cake": "蛋糕",
                     "ChocolatePastryBar": "巧克力酥皮条",
                     "ChocolatePastry": "巧克力油酥糕点",
                     "ChocolateSweetRoll": "巧克力甜面包卷",
                     "CinnamonSweetRoll": "肉桂甜面包卷",
                     "PastryBar": "酥皮条",
                     "Pastry": "油酥糕点",
-                    "SweetRoll": "甜面包卷"
+                    "SweetRoll": "甜面包卷",
+                    "UbeCake": "香芋蛋糕"
                 }
             ]
         },
@@ -816,8 +825,6 @@
             },
             "parameters": [
                 {
-                    "cheesecake": "芝士蛋糕",
-                    "pie_crust": "馅饼酥皮",
                     "cupcake": "纸杯蛋糕",
                     "calzone": "披萨饺子",
                     "muffin": "松糕",
@@ -836,7 +843,6 @@
                     "Cheesecake": "芝士蛋糕",
                     "Cupcake": "纸杯蛋糕",
                     "Calzone": "披萨饺子",
-                    "Muffin": "松糕",
                     "Cookie": "曲奇",
                     "SausagePatty": "香肠肉饼",
                     "Snickerdoodle": "肉桂曲奇"
@@ -1149,7 +1155,7 @@
                     "apple_": "苹果",
                     "berry_": "甜浆果",
                     "chocolate_": "巧克力",
-                    "chorus_fruit_:": "紫颂果",
+                    "chorus_fruit_": "紫颂果",
                     "glow_berry_": "发光浆果",
                     "": "",
                     "melon_": "西瓜"
@@ -1166,7 +1172,7 @@
                     "Apple": "苹果",
                     "Berry": "甜浆果",
                     "Chocolate": "巧克力",
-                    "ChorusFruit:": "紫颂果",
+                    "ChorusFruit": "紫颂果",
                     "GlowBerry": "发光浆果",
                     "": "",
                     "Melon": "西瓜"
@@ -1186,7 +1192,7 @@
                     "caramel_chip_": "焦糖碎片",
                     "chocolate_chip_": "巧克力碎片",
                     "chocolate_": "巧克力",
-                    "chorus_fruit_:": "紫颂果",
+                    "chorus_fruit_": "紫颂果",
                     "dark_chocolate_chip_": "黑巧克力碎片",
                     "glow_berry_": "发光浆果",
                     "": "",
@@ -1208,7 +1214,7 @@
                     "CaramelChip": "焦糖碎片",
                     "ChocolateChip": "巧克力碎片",
                     "Chocolate": "巧克力",
-                    "ChorusFruit:": "紫颂果",
+                    "ChorusFruit": "紫颂果",
                     "DarkChocolateChip": "黑巧克力碎片",
                     "GlowBerry": "发光浆果",
                     "": "",
@@ -1338,7 +1344,7 @@
                     "CaramelChip": "焦糖碎片",
                     "ChocolateChip": "巧克力碎片",
                     "Chocolate": "巧克力",
-                    "ChorusFruit:": "紫颂果",
+                    "ChorusFruit": "紫颂果",
                     "GlowBerry": "发光浆果",
                     "": "",
                     "Melon": "西瓜",
@@ -1456,8 +1462,8 @@
                     "_lettuce_tomato": "（生菜、番茄）",
                     "_onion": "（洋葱）",
                     "_onion_bacon": "（洋葱、培根）",
-                    "_onion_lettuce": "（洋葱、生菜）",
-                    "_onion_lettuce_tomato": "（洋葱、生菜、番茄）"
+                    "_onion_bacon_lettuce": "（洋葱、培根、生菜）",
+                    "_onion_lettuce": "（洋葱、生菜）"
                 }
             ]
         },
@@ -1469,7 +1475,7 @@
             },
             "parameters": [
                 {
-                    "_onion_bacon_lettuce": "（洋葱、培根、生菜）"
+                    "_onion_lettuce_tomato": "（洋葱、生菜、番茄）"
                 }
             ]
         },
@@ -1750,8 +1756,7 @@
                     "pumpernickel": "黑麦",
                     "salt": "盐",
                     "sugar": "糖",
-                    "ube_sugar": "香芋糖",
-                    "pizza": "披萨"
+                    "ube_sugar": "香芋糖"
                 }
             ]
         },
@@ -1763,11 +1768,11 @@
                 {
                     "Butter": "黄油",
                     "ChocolateSugar": "巧克力糖",
+                    "Pizza": "披萨",
                     "Pumpernickel": "黑麦",
                     "Salt": "盐",
                     "Sugar": "糖",
-                    "UbeSugar": "香芋糖",
-                    "Pizza": "披萨"
+                    "UbeSugar": "香芋糖"
                 }
             ]
         },
@@ -1820,6 +1825,7 @@
             },
             "parameters": [
                 {
+                    "": "",
                     "ButterscotchChip": "奶油硬糖碎片",
                     "CaramelChip": "焦糖碎片",
                     "ChocolateChip": "巧克力碎片",
@@ -2086,7 +2092,7 @@
             "parameters": [
                 {
                     "CaramelGlazed": "焦糖包层",
-                    "sDarkChocolateGlazed": "黑巧克力包层",
+                    "DarkChocolateGlazed": "黑巧克力包层",
                     "Honeyed": "蜜渍",
                     "WhiteChocolateGlazed": "白巧克力包层"
                 }
