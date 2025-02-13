@@ -13,7 +13,7 @@ THORD的栈操作相较NEEPASM更为简练。
 
 ```
 # Push the numbers 1, 2, 3 and 4 to the stack,
-# Add them all together and print测试
+# Add them all together and print
 1 2 3 4 + + + .
 ```
 
