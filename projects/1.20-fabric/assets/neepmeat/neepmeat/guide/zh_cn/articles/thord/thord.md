@@ -13,7 +13,7 @@ THORD的栈操作相较NEEPASM更为简练。
 
 ```
 # Push the numbers 1, 2, 3 and 4 to the stack,
-# Add them all together and print
+# Add them all together and print测试
 1 2 3 4 + + + .
 ```
 
@@ -34,7 +34,7 @@ say
 
 词是THORD的函数，其中包含可重用的操作序列。
 
-词的定义以“:”起始，后方跟随词名。词的定义以“;”结束。
+词的定义以`:`起始，后方跟随词名。词的定义以`;`结束。
 
 ```
 # Adds one to the previous stack entry and prints it.
@@ -46,7 +46,7 @@ say
 
 # 内联NEEPASM
 
-THORD程序接受内联NEEPASM操作。内联的操作必须位于行首，也可加上“.”前缀。
+THORD程序接受内联NEEPASM操作。内联的操作必须位于行首，也可加上`.`前缀。
 
 ```
 label l
@@ -56,7 +56,7 @@ label l
 jmp l # also valid
 ```
 
-内联NEEPASM操作参数的读取方法与THORD词不同：遇到行尾或“;”才会结束参数解析。
+内联NEEPASM操作参数的读取方法与THORD词不同：遇到行尾或`;`才会结束参数解析。
 
 ```
 # Inline NEEPASM
