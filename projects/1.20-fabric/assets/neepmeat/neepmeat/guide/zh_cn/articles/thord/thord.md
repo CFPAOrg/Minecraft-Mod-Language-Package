@@ -7,7 +7,7 @@ id: thord
 
 THORD的栈操作相较NEEPASM更为简练。
 
-若需将数压栈，直接以文本打出即可。THORD会忽略换行和表达式分隔符，因此同一行内可压入多个数。
+若需将数压栈，直接以文本打出即可。THORD不会区分换行和表达式分隔符，因此同一行内可压入多个数。
 
 来看下面的程序：
 
@@ -42,7 +42,7 @@ say
 # Adds one to the previous stack entry and prints it. [1]
 : aword 1 + . ;
 
-# Invoke the word [1]
+# Invoke the word [2]
 1 aword
 ```
 [1] 将栈顶元素加1并打印
