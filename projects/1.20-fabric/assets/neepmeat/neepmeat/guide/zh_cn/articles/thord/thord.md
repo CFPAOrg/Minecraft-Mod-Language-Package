@@ -1,7 +1,7 @@
 ---
 id: thord
 ---
-# Thord
+# THORD
 
 # 栈
 
