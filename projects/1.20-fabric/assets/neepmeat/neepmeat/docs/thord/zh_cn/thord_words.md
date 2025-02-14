@@ -108,9 +108,10 @@ endif
 
 ```
 begin
-    say "loop forever"
+    say "loop forever" # [1]
 1 until
 ```
+[1] "死循环"
 
 ## UNTIL ( n1 -- )（立即词）
 
@@ -166,7 +167,7 @@ begin
 
 求栈顶元素的相反数。
 
-## INVERT (n1 -- 结果 )
+## INVERT ( n1 -- 结果 )
 
 将栈顶元素各位取反。
 
