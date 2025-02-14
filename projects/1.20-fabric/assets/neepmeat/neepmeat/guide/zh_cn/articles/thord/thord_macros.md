@@ -29,9 +29,10 @@ macro1 4
     %arg2
 %;
 
-# Any text can be passed as an argument. 
+# Any text can be passed as an argument.  [1]
 macro1 "something to say", 123 .
 ```
+[1] 任何文本都可作为参数
 
 ## 扩展
 
@@ -55,7 +56,7 @@ macro1
 
 ## 复杂示例
 
-此示例会保证各个目标方块中均有多于8个物品。
+此示例会保证所有目标方块均各有多于8个物品。
 
 ```
 %: check side 

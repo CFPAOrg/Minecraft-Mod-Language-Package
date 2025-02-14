@@ -12,11 +12,12 @@ THORD中的条件操作较NEEPASM更具通用性。
 if结构必须以`ENDIF`或`THEN`结束。
 
 ```
--1 # -1 is true
+-1 # -1 is true [1]
 if
     say "yes"
 endif
 ```
+[1] -1为true
 
 `ELSE`可用来构建条件为false时执行的分支。
 
@@ -37,9 +38,10 @@ begin-until结构类似于C系语言中的while循环：它会在条件为true�
 ```
 begin
     say "loop"
-# -1 means true
+# -1 means true [1]
 -1 until
 ```
+[1] -1为true
 
 ## DO-LOOP（for循环）
 
@@ -53,12 +55,14 @@ do-loop结构近似于C系语言的for循环：它会执行代码段特定次数
 
 ```
 10 0 do i . loop
-# prints 1 2 3 4 5 6 7 8 9
+# prints 0 1 2 3 4 5 6 7 8 9 [1]
 ```
+[1] 打印“0 1 2 3 4 5 6 7 8 9”
 
 `LOOP`处也可换用`+LOOP`，此时循环索引的递增步长为栈顶元素。
 
 ```
 10 0 do i . 2 +loop
-# prints 0 2 4 6 8
+# prints 0 2 4 6 8 [1]
 ```
+[1] 打印“0 2 4 6 8”

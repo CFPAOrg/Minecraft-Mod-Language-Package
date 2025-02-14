@@ -15,31 +15,40 @@ PLC可直接读写NEEP总线的组件，但无法被写入。PLC NEEP总线接�
 
 ```
 begin
-    # Target is a NEEPBus interface
+    # Target is a NEEPBus interface [1]
     ihandler @(-19 -60 5 U) handler
     iwait
 -1 until
 
 : handler
   idisable
-  say "NEEPBus changed"
+  say "NEEPBus changed" # [2]
   
-  # Retrieve the current value of the input port.
-  # (this goes onto the stack)
+  # Retrieve the current value of the input port. [3]
+  # (this goes onto the stack) [4]
   extfetch @(-19 -60 5 U); 
   
-  dup . # Say the result
+  dup . # Say the result [5]
   
-  # Store the result in memory
+  # Store the result in memory [6]
   store
   
-  # Duplicate the pointer
+  # Duplicate the pointer [7]
   dup
   
-  # Send the memory entry to the interface
+  # Send the memory entry to the interface [8]
   extstore @(-19 -60 5 U)
   
-  # Free the memory
+  # Free the memory [9]
   free
 ;
 ```
+[1] 目标是PLC NEEP总线接口
+[2] "NEEP总线有变动"
+[3] 获取输入端口的当前值
+[4] （会压入栈中）
+[5] 打印结果
+[6] 将结果存入内存
+[7] 复制指针
+[8] 将内存项发送至接口
+[9] 释放内存

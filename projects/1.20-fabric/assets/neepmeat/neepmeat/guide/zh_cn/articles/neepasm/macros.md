@@ -9,20 +9,23 @@ id: macros
 
 ```
 %macro a_macro
-    say "This is a macro"
+    say "This is a macro" # [1]
 %end
-a_macro  # Expand the macro
+a_macro  # Expand the macro [2]
 ```
+[1] "这是一个宏"
+[2] 扩展宏
 
-参数可由宏名后以空格分隔的列表定义。宏内部可在参量名前加“%”前缀引用其值：
+参数可由宏名后以空格分隔的列表定义。宏内部可在参量名前加`%`前缀引用其值：
 
 ```
 %macro a_macro message something_else
-    say "The message: %message"  # Replace %message
+    say "The message: %message"  # Replace %message [1]
     say "%something_else"
 %end
 a_macro Hello there, Something else
 ```
+[1] 替换%message
 
 如上所示，扩展宏时提供的参数需用逗号`,`分隔。如此便可在参量中加入空格。任何文本都可用作宏参数，包括别名。
 

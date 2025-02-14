@@ -433,7 +433,8 @@
       {"type": "text", "text": "\n通常来说，程序是依次执行的指令列表。\n指令的参数种类繁多，例如：\n\n- 字符串：\"一个字符串\"\n- 整数：123、0x7B、0b1111011\n- 世界目标：@(<x>, <y>, <z>, <direction>)。"},
       {"type": "text", "text": "\n世界目标代表世界中的一个方块，可用于规定指令从何处取出或向何处存入流体和物品。"},
       {"type": "text", "text": "\n“#”字符同行后方的所有东西均视作注释：\n"},
-      {"type": "code", "text": "say \"Hello\"  # A comment"},
+      {"type": "code", "text": "say \"Hello\"  # A comment [1]"},
+      {"type": "text", "text": "\n[1] 注释"},
       {"type": "text", "text": "\n流程控制可由标签跳转实现：\n"},
       {"type": "code", "text": "a_label:"},
       {"type": "code", "text": "say \"Hello\""},
@@ -448,38 +449,43 @@
     {"id": "stack", "contents": [
       {"type": "text", "text": "栈\n", "bold": true},
       {"type": "text", "text": "PLC有一存储整数用栈。PUSH和POP指令可分别向栈顶压入或从栈顶弹出。\n比较和算术指令会直接从栈取出参数：\n"},
-      {"type": "code", "text": "push 1  # Place 1 on the stack"},
+      {"type": "code", "text": "push 1  # Place 1 on the stack [1]"},
       {"type": "code", "text": "push 2"},
-      {"type": "code", "text": "add     # Add the last two entries"},
-      {"type": "code", "text": "inc     # Increment the last stack entry"},
+      {"type": "code", "text": "add     # Add the last two entries [2]"},
+      {"type": "code", "text": "inc     # Increment the last stack entry [3]"},
       {"type": "code", "text": "push 4"},
-      {"type": "code", "text": "eq      # Test equality for 4 and 4"},
-      {"type": "code", "text": "say     # Say the result"}
+      {"type": "code", "text": "eq      # Test equality for 4 and 4 [4]"},
+      {"type": "code", "text": "say     # Say the result [5]"},
+      {"type": "code", "text": "\n[1] 将1压入栈\n[2] 求栈顶两元素的和\n[3] 令栈顶元素递增\n[4] 检查4与4是否相等\n[5] 打印结果"}
     ]},
     {"id": "labels", "contents": [
       {"type": "text", "text": "标签与分支\n", "bold": true},
       {"type": "text", "text": "标签是程序中的永久性标记，可使用跳转指令（JMP、BIF、BIT）跳转至所标记的位置。\n例如，下方程序会进入死循环：\n"},
-      {"type": "code", "text": "a_label:  # Define a label"},
+      {"type": "code", "text": "a_label:  # Define a label [1]"},
       {"type": "code", "text": "say \"loop\""},
       {"type": "code", "text": "jmp a_label"},
+      {"type": "text", "text": "\n[1] 定义标签"},
       {"type": "text", "text": "\n标签可以复用。在分支指令后方加上“f”和“b”可令其向前或向后搜索标签：\n"},
       {"type": "code", "text": "a_label:"},
-      {"type": "code", "text": "jmp a_label f  # Jump forwards"},
-      {"type": "code", "text": "say \"Skip this instruction\""},
+      {"type": "code", "text": "jmp a_label f  # Jump forwards [1]"},
+      {"type": "code", "text": "say \"Skip this instruction\" # [2]"},
       {"type": "code", "text": "a_label:"},
-      {"type": "code", "text": "say \"Yay\""}
+      {"type": "code", "text": "say \"Yay\""},
+      {"type": "text", "text": "\n[1] 向前跳转\n[2] \"跳过此指令\""}
     ]},
     {"id": "functions", "contents": [
       {"type": "text", "text": "函数与别名\n", "bold": true},
       {"type": "text", "text": "函数封装了可能需执行多次的指令段。"},
       {"type": "text", "text": "\n函数由%func和%end伪指令包起指令段声明：\n"},
       {"type": "code", "text": "%func a_function"},
-      {"type": "code", "text": "say \"Inside the function\""},
+      {"type": "code", "text": "say \"Inside the function\" # [1]"},
       {"type": "code", "text": "%end"},
-      {"type": "code", "text": "a_function  # Call the function"},
+      {"type": "code", "text": "a_function  # Call the function [2]"},
+      {"type": "text", "text": "\n[1] \"函数内部\"\n[2] 调用函数"},
       {"type": "text", "text": "\n别名可为某些世界目标分配名称。别名通过前缀“$”调用：\n"},
       {"type": "code", "text": "%alias redstone_input = @(12 32 12 NORTH)"},
-      {"type": "code", "text": "rwait $redstone_input  # Wait for redstone"}
+      {"type": "code", "text": "rwait $redstone_input  # Wait for redstone [1]"},
+      {"type": "text", "text": "\n[1] 等待红石"}
     ]},
 
     {"id": "implants", "contents": [
