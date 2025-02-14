@@ -25,7 +25,7 @@ a_macro  # Expand the macro [2]
 %end
 a_macro Hello there, Something else
 ```
- [1] 替换%message
+ [1] 替换`%message`
 
 如上所示，扩展宏时提供的参数需用逗号`,`分隔。如此便可在参量中加入空格。任何文本都可用作宏参数，包括别名。
 
