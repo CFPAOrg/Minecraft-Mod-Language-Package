@@ -86,4 +86,4 @@ until
 [2] THORD的while循环
 [3] THORD词可像NEEPASM标签一样引用
 [4] 压入-1（true）以无限循环
-[5] 定义词“request”
+[5] 定义词`request`

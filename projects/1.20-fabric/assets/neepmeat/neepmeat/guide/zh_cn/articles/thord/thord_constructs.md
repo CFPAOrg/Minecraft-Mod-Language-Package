@@ -5,7 +5,7 @@ id: thord_constructs
 
 ## IF-ELSE-THEN
 
-THORD中的条件操作较NEEPASM更具通用性。
+THORD中的条件操作较NEEPASM来说更加集成简练。
 
 `IF`会弹出栈顶元素。若为true（非0），则继续执行；否则便会跳转到后方`ELSE`或`ENDIF`第一次出现的位置。
 
@@ -45,7 +45,7 @@ begin
 
 ## DO-LOOP（for循环）
 
-do-loop结构近似于C系语言的for循环：它会执行代码段特定次数。
+do-loop结构近似于C系语言的for循环：它会执行代码段若干次。
 
 `DO`需要两个参数：循环的次数、循环索引的初值。这两者会存储在控制栈中，而非数据栈。
 
