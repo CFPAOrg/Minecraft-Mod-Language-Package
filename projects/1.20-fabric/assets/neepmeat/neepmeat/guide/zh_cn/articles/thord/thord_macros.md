@@ -32,7 +32,7 @@ macro1 4
 # Any text can be passed as an argument.  [1]
 macro1 "something to say", 123 .
 ```
-[1] 任何文本都可作为参数
+ [1] 任何文本都可作为参数
 
 ## 扩展
 

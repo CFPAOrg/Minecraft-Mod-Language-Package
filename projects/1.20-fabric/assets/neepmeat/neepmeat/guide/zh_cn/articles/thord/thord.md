@@ -16,8 +16,8 @@ THORD的栈操作相较NEEPASM更为简练。
 # Add them all together and print [2]
 1 2 3 4 + + + .
 ```
-[1] 将数1、2、3、4压入栈顶，
-[2] 求总和并打印
+ [1] 将数1、2、3、4压入栈顶，
+ [2] 求总和并打印
 
 NEEPASM中同样功能的程序长成这样：
 
@@ -45,8 +45,8 @@ say
 # Invoke the word [2]
 1 aword
 ```
-[1] 将栈顶元素加1并打印
-[2] 调用词
+ [1] 将栈顶元素加1并打印
+ [2] 调用词
 
 # 内联NEEPASM
 
@@ -59,8 +59,8 @@ label l
 
 jmp l # also valid [2]
 ```
-[1] 有效
-[2] 同样有效
+ [1] 有效
+ [2] 同样有效
 
 内联NEEPASM操作参数的读取方法与THORD词不同：遇到行尾或`;`才会结束参数解析。
 
@@ -82,8 +82,8 @@ until
   .
 ;
 ```
-[1] 内联NEEPASM
-[2] THORD的while循环
-[3] THORD词可像NEEPASM标签一样引用
-[4] 压入-1（true）以无限循环
-[5] 定义词`request`
+ [1] 内联NEEPASM
+ [2] THORD的while循环
+ [3] THORD词可像NEEPASM标签一样引用
+ [4] 压入-1（true）以无限循环
+ [5] 定义词`request`
