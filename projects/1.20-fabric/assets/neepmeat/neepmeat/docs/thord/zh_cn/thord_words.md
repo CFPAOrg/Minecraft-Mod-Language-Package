@@ -111,7 +111,7 @@ begin
     say "loop forever" # [1]
 1 until
 ```
-[1] "死循环"
+ [1] "死循环"
 
 ## UNTIL ( n1 -- )（立即词）
 
