@@ -6,7 +6,6 @@
 
 - [贡献方针](#贡献方针)
   - [仓库结构](#仓库结构)
-  - [翻译用语共识](#翻译用语共识)
   - [翻译贡献方针](#翻译贡献方针)
     - [总则](#总则)
     - [Pull Request 相关规定](#pull-request-相关规定)
@@ -78,11 +77,6 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
   若某一模组在两个版本上的开发均活跃，由于 1.19.4 的版本号更高，因此优先考虑该模组在 1.19.4 下的译名标准化情况与适配情况。  
   这一优先级不会影响到模组在其他大版本下（如 1.18、1.12 等）的分支。
 
-## 翻译用语共识
-
-1. “材料 + 质/制 + 中心词”的翻译，如“铁质涡轮”或“铁制涡轮”，二者皆合理。只需单模组内统一。
-2. 关于“木制品名称”的翻译，可参考 [#4525](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/issues/4525) 的解决方法。
-
 ## 翻译贡献方针
 
 以下内容只针对 [projects](./projects) 文件夹下的贡献。
@@ -91,7 +85,7 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 - 翻译**必须**符合 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)的规定。
 - **拒绝**接收机器翻译（含生成式 AI）、生硬翻译。
-  - 提交的机器翻译需事先经过人工审查，且满足[审查规则](#审查规则)要求的品质。
+  - 提交的机器翻译需事先经过人工审查，且满足上述指南的规定。可参考[`GB/T 19682-2005 翻译服务译文质量要求`](https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=4F2D9ACF302B1EAE813590EF8DB2A101) 和 [`ZYF 001-2016 本地化翻译质量和排版质量评估规范`](https://plaintalks.com/uploads/short-url/pWGGqRcUcO1pgrfm2iIlBjFS8zX.pdf) 文件的要求。
   - 若直接提交此类翻译，该 PR 将被打上“生硬翻译”标签。
   - 若作者不及时进行有效修改，PR 可能会依照本仓库的[搁置规则](#搁置规则)处理。
 - 翻译**必须**在审查后才能进入仓库。
@@ -136,7 +130,6 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 #### 审查规则
 
 - 翻译审查的基本依据**是**[翻译贡献方针](#翻译贡献方针)。
-- 翻译审查的目的是使译文满足 [`GB/T 19682-2005 翻译服务译文质量要求`](https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=4F2D9ACF302B1EAE813590EF8DB2A101) 和 [`ZYF 001-2016 本地化翻译质量和排版质量评估规范`](https://plaintalks.com/uploads/short-url/pWGGqRcUcO1pgrfm2iIlBjFS8zX.pdf) 文件的要求
 - 翻译审查的流程**必须**满足本文档[翻译审查](#翻译审查)内容所述。
 - 翻译审查过程中各方**应**遵守[礼仪](https://zh.wikipedia.org/wiki/Wikipedia:%E7%A4%BC%E4%BB%AA)（[备用](https://share.weiyun.com/LRvx1omf)）。
 
