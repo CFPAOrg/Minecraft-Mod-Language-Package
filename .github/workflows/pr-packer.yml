@@ -28,7 +28,7 @@ jobs:
       # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
       - name: Cache Packer
         id: cache-packer
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
@@ -62,8 +62,7 @@ jobs:
       # 由于Github的限制，这里需要重新拉取打包程序。
       - name: Restore Packer
         id: cache-restore
-        # https://github.com/actions/cache/issues/1265#issuecomment-1819612829 `fail-on-cache-miss` for restore action not failing the workflow
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v4
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
