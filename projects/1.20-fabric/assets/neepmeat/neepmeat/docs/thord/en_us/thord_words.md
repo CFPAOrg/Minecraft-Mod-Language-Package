@@ -1,3 +1,4 @@
+\cat{utility}
 # Utility
 
 ## . ( n1 -- )
@@ -8,6 +9,7 @@ Prints the top stack entry.
 
 Places the current value of the program counter (the address of the currently executed instruction) on the top of the stack.
 
+\cat{stack}
 # Stack
 
 ## DUP ( n1 -- n1 n1 )
@@ -52,6 +54,7 @@ Removes the last two stack entries.
 
 ## BLANK ( -- )
 
+\cat{return_stack}
 # Return Stack
 
 ## >R ( n1 -- ) (R: -- n1 )
@@ -74,6 +77,7 @@ Moves the top two return stack entries to the top of the data stack.
 
 Copies the top return stack entry to the data stack.
 
+\cat{flow_control}
 # Flow Control
 
 Emits the END instruction, which stops execution. Useful as a placeholder for backpatching. Equivalent to NEEPASM `END`.
@@ -144,6 +148,7 @@ Adds the top stack entry to loop index and branches to the start of the loop if 
 
 Copies the loop index to the data stack. Identical to `R@` in this implementation.
 
+\cat{arithmetic}
 # Arithmetic
 
 ## + ( n1 n2 -- result )
@@ -170,6 +175,7 @@ Inverts the sign of the top stack entry.
 
 Inverts all bits of the top stack entry.
 
+\cat{comparison}
 # Comparison
 
 ## = ( n1 n2 -- result )
@@ -192,6 +198,7 @@ Tests if n1 is less than or equal to n2. Equivalent to NEEPASM `LTEQ`.
 
 Tests if n1 is greater than or equal to n2. Equivalent to NEEPASM `GTEQ`.
 
+\cat{compiler_words}
 # Compiler Words
 
 ## CPHEAD ( -- head )

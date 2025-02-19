@@ -1,3 +1,4 @@
+\cat{utility}
 # 实用
 
 ## . ( n1 -- )
@@ -8,6 +9,7 @@
 
 将程序计数器（当前所执行指令的地址）的当前值压入栈顶。
 
+\cat{stack}
 # 栈
 
 ## DUP ( n1 -- n1 n1 )
@@ -52,6 +54,7 @@
 
 ## BLANK ( -- )
 
+\cat{return_stack}
 # 返回栈
 
 ## >R ( n1 -- ) (R: -- n1 )
@@ -74,6 +77,7 @@
 
 将返回栈栈顶元素复制到数据栈栈顶。
 
+\cat{flow_control}
 # 流程控制
 
 发出用于终止执行的END指令。适合用作占位和回填。与NEEPASM的`END`等价。
@@ -145,6 +149,7 @@ begin
 
 将循环索引复制到数据栈。此实现中与`R@`功能一致。
 
+\cat{arithmetic}
 # 算术
 
 ## + ( n1 n2 -- 结果 )
@@ -171,6 +176,7 @@ begin
 
 将栈顶元素各位取反。
 
+\cat{comparison}
 # 比较
 
 ## = ( n1 n2 -- 结果 )
@@ -193,6 +199,7 @@ begin
 
 检查n1是否大于等于n2。与NEEPASM的`GTEQ`等价。
 
+\cat{compiler_words}
 # 编译器词
 
 ## CPHEAD ( -- 头部 )
