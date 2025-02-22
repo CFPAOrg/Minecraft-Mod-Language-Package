@@ -1,0 +1,37 @@
+{
+  "name": "Network Settings",
+  "icon": "laserio:textures/gui/buttons/settings.png",
+  "sortnum": 1,
+  "category": "laserio:mechanics",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The network settings screen is available from any $(l:laserio:laser_node)Laser Node$(/l) screen. In this settings screen, you may change the color of the network. This color will affect:$(li)Laser Node Block (in world)$(li)Laser Connector Block (in world)$(li)Color of lasers between blocks. "
+    },
+    {
+      "type": "patchouli:image",
+      "title": "Colored Nodes",
+      "images": [
+        "laserio:textures/book/entries/settings1.png"
+      ],
+      "border": true,
+      "text": "Different Colored networks"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The color of the lasers between the node and inventories (Like chests or tanks) will not be affected.$(br2)Making a change to a node on a network will automatically propagate to all other nodes across the same network. In this way, you can have different colored networks around your world!$(br2)This is purely cosmetic and has no practical effect on functionality."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When adding a node or network to another network, the following rules apply:$(br2)If one of the nodes/networks has a color setting, and the other is default, the default will always be overridden.$(br2)Otherwise the highlighted block will send its settings to the on you click on the connect it. For example, if you shift-click a green node and then click on a blue node, the blue node will turn green. "
+    },
+    {
+      "type": "patchouli:text",
+      "text": "There are two settings for Alpha, Alpha and Wrench Alpha.$(br2)Alpha only affects the laser going between any two blocks and determines the transparency of that laser. If set to 0, you will not see the lasers between nodes/connectors at all.$(br2)Wrench Alpha will ADD this setting to the alpha when the player is holding the wrench."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "For example, if you set alpha to 0 and wrench alpha to 80, you'll only see the lasers when holding a wrench!$(br2)If you set the alpha to 80 and the wrench alpha to 200, you'll see the lasers more brightly while holding the wrench. Theres no harm in going above 255 when adding the two numbers, it will automatically limit itself to 255."
+    }
+  ]
+}
