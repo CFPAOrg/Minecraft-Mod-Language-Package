@@ -9,7 +9,7 @@ navigation:
 
 ## “网络”是什么意思？
 
-“网络”是一组可像[线缆](../items-blocks-machines/cables.md)一样传输[频道](channels.md)的连在一起的[设备](devices.md)或方块形态机器和[设备](devices.md)。（<ItemLink id="charger" />、<ItemLink id="interface" />、<ItemLink id="drive" />等。）单个线缆理论上也算是一个网络。
+“网络”是有频道连接的一组[设备](devices.md)（<ItemLink id="charger" />、<ItemLink id="interface" />、<ItemLink id="drive" />等）。这些设备之间通过[线缆](../items-blocks-machines/cables.md)或方块形态的机器和[设备](devices.md)传输[频道](channels.md)。单个线缆理论上也算是一个网络。
 
 ## 设备位置简述
 
