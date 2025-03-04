@@ -14,7 +14,7 @@ item_ids:
 
 <BlockImage id="growth_accelerator" p:powered="true" scale="8"/>
 
-相邻放置于母岩时，晶体催生器会大幅加快赛特斯石英和紫水晶的[生长](../ae2-mechanics/certus-growth.md)。
+与母岩相邻放置时，晶体催生器会大幅加快赛特斯石英和紫水晶的[生长](../ae2-mechanics/certus-growth.md)。
 
 奇怪的是，它*也能*加速各种植物的生长。
 
