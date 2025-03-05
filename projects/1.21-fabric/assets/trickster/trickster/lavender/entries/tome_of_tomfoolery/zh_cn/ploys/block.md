@@ -7,6 +7,7 @@
     "摧毁之技巧",
     "造物之技巧",
     "交换之技巧",
+    "轻羽之技巧",
     "赋权之技巧",
     "撤权之技巧",
     "损蚀之技巧",
@@ -51,6 +52,16 @@ vector, vector ->
 <|cost-rule@trickster:templates|formula=60 kG + 距离 * 1 kG|>
 
 交换世界中两个位置处的方块。两处均不允许为空气。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:change_weight,title=轻羽之技巧|>
+
+vector, number -> vector
+
+<|cost-rule@trickster:templates|formula=60 kG * (1 - 倍数)|>
+
+给定0到1之间的数，让所给位置处方块所受重力变为原重力与所给数的积，令其向上飘浮。
 
 ;;;;;
 
