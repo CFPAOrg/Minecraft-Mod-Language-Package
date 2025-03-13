@@ -18,7 +18,7 @@
 
 any, [number] -> any
 
-<|cost-rule@trickster:templates|formula=max(0 kG\, 范围 - 16 kG)|>
+<|cost-rule@trickster:templates|formula=max(0kG\, 范围 - 16kG)|>
 
 将传入的片段发送到16格内的所有法术。可给定范围参数扩展范围，此时需消耗魔力。
 
