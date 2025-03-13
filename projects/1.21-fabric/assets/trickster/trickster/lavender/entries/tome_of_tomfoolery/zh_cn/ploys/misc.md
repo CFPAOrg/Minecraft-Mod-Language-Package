@@ -31,7 +31,7 @@
 
 vector -> vector
 
-<|cost-rule@trickster:templates|formula=4 kG|>
+<|cost-rule@trickster:templates|formula=4kG|>
 
 将包含所给位置的区块完全加载4秒。
 

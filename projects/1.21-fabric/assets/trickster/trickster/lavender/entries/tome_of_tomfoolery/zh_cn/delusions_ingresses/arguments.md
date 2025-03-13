@@ -4,6 +4,7 @@
   "icon": "minecraft:map",
   "category": "trickster:delusions_ingresses",
   "additional_search_terms": [
+    "囤积者之错觉",
     "甲参之错觉",
     "乙参之错觉",
     "丙参之错觉",
@@ -19,10 +20,17 @@
 法术片段可以作为参数传入[法术片段](^trickster:distortions/functions)。
 
 
-此类参数可在法术片段中直接通过特定图案获取。
+此类参数可在法术片段中直接通过特定图案获取，也可将所有参数组为列表获取。
 
+;;;;;
 
-法术片段中最多可获取八个片段。
+<|glyph@trickster:templates|trick-id=trickster:get_all_arguments,title=囤积者之错觉|>
+
+-> any[]
+
+---
+
+将所有参数组为列表返回。
 
 ;;;;;
 

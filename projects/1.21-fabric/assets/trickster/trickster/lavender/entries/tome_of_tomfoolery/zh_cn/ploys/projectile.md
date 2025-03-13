@@ -20,7 +20,7 @@
 
 vector, [slot] -> entity
 
-<|cost-rule@trickster:templates|formula=20 kG + 距离 ^ (距离 / 3) kG|>
+<|cost-rule@trickster:templates|formula=20kG + 距离 ^ (距离 / 3kG)|>
 
 在给定位置召唤一根箭，并返回其实体。需要消耗箭。
 
@@ -30,7 +30,7 @@ vector, [slot] -> entity
 
 vector, [slot] -> entity
 
-<|cost-rule@trickster:templates|formula=20 kG + 距离 ^ (距离 / 3) kG|>
+<|cost-rule@trickster:templates|formula=20kG + 距离 ^ (距离 / 3kG)|>
 
 在给定位置召唤一个火球，并返回其实体。需要消耗火焰弹。
 
@@ -40,7 +40,7 @@ vector, [slot] -> entity
 
 vector, [slot], [slot] -> entity
 
-<|cost-rule@trickster:templates|formula=20 kG + 距离 ^ (距离 / 3) kG|>
+<|cost-rule@trickster:templates|formula=20kG + 距离 ^ (距离 / 3kG)|>
 
 在给定位置召唤一个末影龙火球，并返回其实体。需要消耗龙息和火焰弹。
 
@@ -50,6 +50,6 @@ vector, [slot], [slot] -> entity
 
 vector, [slot] -> entity
 
-<|cost-rule@trickster:templates|formula=20 kG + 距离 ^ (距离 / 3) kG|>
+<|cost-rule@trickster:templates|formula=20kG + 距离 ^ (距离 / 3kG)|>
 
 在给定位置召唤一个激活的TNT，并返回其实体。需要消耗TNT。

@@ -7,6 +7,7 @@
     "摧毁之技巧",
     "造物之技巧",
     "交换之技巧",
+    "轻羽之技巧",
     "赋权之技巧",
     "撤权之技巧",
     "损蚀之技巧",
@@ -26,7 +27,7 @@
 
 vector -> vector
 
-<|cost-rule@trickster:templates|formula=max(硬度 * 1 kG\, 8 kG)|>
+<|cost-rule@trickster:templates|formula=max(硬度 * 1kG\, 8kG)|>
 
 破坏给定位置处的方块。
 
@@ -38,7 +39,7 @@ vector, slot |
 
 vector, block -> vector
 
-<|cost-rule@trickster:templates|formula=max(距离 * 1 kG\, 8 kG)|>
+<|cost-rule@trickster:templates|formula=max(距离 * 1kG\, 8kG)|>
 
 将所给方块放置在所给位置处。会消耗物品。
 
@@ -48,9 +49,19 @@ vector, block -> vector
 
 vector, vector ->
 
-<|cost-rule@trickster:templates|formula=60 kG + 距离 * 1 kG|>
+<|cost-rule@trickster:templates|formula=60kG + 距离 * 1kG|>
 
 交换世界中两个位置处的方块。两处均不允许为空气。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:change_weight,title=轻羽之技巧|>
+
+vector, number -> vector
+
+<|cost-rule@trickster:templates|formula=60kG * (1 - 倍数)|>
+
+给定0到1之间的数，让所给位置处方块所受重力变为原重力与所给数的积，令其向上飘浮。
 
 ;;;;;
 
@@ -65,7 +76,7 @@ vector, vector ->
 
 vector -> vector
 
-<|cost-rule@trickster:templates|formula=80 kG|>
+<|cost-rule@trickster:templates|formula=80kG|>
 
 立即猛烈加热所给方块。
 
@@ -78,7 +89,7 @@ vector -> vector
 
 vector -> vector
 
-<|cost-rule@trickster:templates|formula=80 kG|>
+<|cost-rule@trickster:templates|formula=80kG|>
 
 立即让所给方块大幅冷却。
 
@@ -88,7 +99,7 @@ vector -> vector
 
 vector, vector -> vector
 
-<|cost-rule@trickster:templates|formula=80 kG|>
+<|cost-rule@trickster:templates|formula=80kG|>
 
 使用第二个位置处的水锈蚀第一个位置处的方块。
 
@@ -98,7 +109,7 @@ vector, vector -> vector
 
 vector -> vector
 
-<|cost-rule@trickster:templates|formula=5 kG|>
+<|cost-rule@trickster:templates|formula=5kG|>
 
 在所给位置处随机构筑一朵花。下方方块的顶面需为土壤。
 
@@ -108,7 +119,7 @@ vector -> vector
 
 vector -> vector
 
-<|cost-rule@trickster:templates|formula=15 kG|>
+<|cost-rule@trickster:templates|formula=15kG|>
 
 在所给位置处构筑出一潭水。
 
@@ -118,7 +129,7 @@ vector -> vector
 
 vector -> vector
 
-<|cost-rule@trickster:templates|formula=20 kG|>
+<|cost-rule@trickster:templates|formula=20kG|>
 
 在所给位置处构筑出一个永久性光源。
 
@@ -128,6 +139,6 @@ vector -> vector
 
 vector, number -> boolean
 
-<|cost-rule@trickster:templates|formula=距离 / 2 kG|>
+<|cost-rule@trickster:templates|formula=距离 / 2kG|>
 
 令所给位置处[法术谐振器](^trickster:items/spell_resonator)产生所给强度的信号，强度需在0到15之间。
