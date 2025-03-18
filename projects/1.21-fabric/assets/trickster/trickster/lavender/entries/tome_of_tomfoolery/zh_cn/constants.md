@@ -9,7 +9,7 @@
 
 ;;;;;
 
-<|pattern@trickster:templates|pattern=1\,4\,7,title=基础之错觉|>
+<|pattern@trickster:templates|pattern=1\,4\,7,title=基础之修订|>
 
 {gray}（抄绘图案）{}
 
@@ -19,7 +19,7 @@
 
 ;;;;;
 
-<|pattern@trickster:templates|pattern=6\,3\,0\,2\,5\,8,title=目录之错觉|>
+<|pattern@trickster:templates|pattern=6\,3\,0\,2\,5\,8,title=目录之修订|>
 
 {gray}（抄绘图案）{}
 
@@ -29,7 +29,7 @@
 
 ;;;;;
 
-<|pattern@trickster:templates|pattern=2\,5\,8\,6\,3\,0,title=图册之错觉|>
+<|pattern@trickster:templates|pattern=2\,5\,8\,6\,3\,0,title=图册之修订|>
 
 {gray}（抄绘图案）{}
 
