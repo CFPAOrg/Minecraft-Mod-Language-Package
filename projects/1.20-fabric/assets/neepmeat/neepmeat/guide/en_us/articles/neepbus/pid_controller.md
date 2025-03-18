@@ -45,7 +45,9 @@ It is possible for the integrator to accumulate a very large error if the setpoi
 
 *kd* is the gain of the differential term, which is the change in error over time.
 
-It is common to keep *kd* zero to form a PI controller.
+Increasing *kd* provides more resistance to changes in the input value, effectively damping the system.
+
+It can be used to reduce oscillation, or to reduce the rate at which the system can change.
 
 ## Block Diagram
 
