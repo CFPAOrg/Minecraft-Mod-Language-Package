@@ -29,7 +29,7 @@
 
 slot, item -> boolean
 
-<|cost-rule@trickster:templates|formula=20 kG|>
+<|cost-rule@trickster:templates|formula=20kG|>
 
 将给定槽位中的物品幻化为给定物品。若幻化成功，返回true。
 
@@ -39,7 +39,7 @@ slot, item -> boolean
 
 slot -> boolean
 
-<|cost-rule@trickster:templates|formula=30 kG|>
+<|cost-rule@trickster:templates|formula=30kG|>
 
 将给定槽位中的物品幻化为虚无。若幻化成功，返回true。
 
@@ -49,7 +49,7 @@ slot -> boolean
 
 slot -> boolean
 
-<|cost-rule@trickster:templates|formula=10 kG|>
+<|cost-rule@trickster:templates|formula=10kG|>
 
 去除给定槽位中物品的幻化。若去除成功，返回true。
 
