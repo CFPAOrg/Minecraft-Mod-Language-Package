@@ -29,7 +29,7 @@ Replaces the glyph with an empty list.
 
 ;;;;;
 
-<|pattern@trickster:templates|pattern=2\,5\,8\,6\,3\,0,title=Atlas Delusion|>
+<|pattern@trickster:templates|pattern=2\,5\,8\,6\,3\,0,title=Atlas Revision|>
 
 {gray}(Scribing pattern){}
 
