@@ -59,7 +59,7 @@ number, number, number -> vector
 
 ---
 
-Merges three input numbers into a vector. Inputs may be provided by a list.
+Merges three input numbers into a vector.
 
 ;;;;;
 
