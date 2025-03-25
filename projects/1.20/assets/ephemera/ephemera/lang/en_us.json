@@ -57,9 +57,18 @@
   "hexcasting.action.ephemera:collisionprobe": "Clearance Purification",
   "hexcasting.action.book.ephemera:collisionprobe": "Clearance Prfn.",
   "hexcasting.action.ephemera:getiotasize": "Flock's Purification",
-  "hexcasting.action.ephemera:getstacksizedeep": "Flock's Reflection II",
   "hexcasting.action.book.ephemera:getiotasize": "Flock's Prfn.",
+  "hexcasting.action.ephemera:getstacksizedeep": "Flock's Reflection II",
   "hexcasting.action.book.ephemera:getstacksizedeep": "Flock's Rfln. II",
+  "hexcasting.action.ephemera:no": "No",
+  "hexcasting.action.ephemera:getproperties": "State Purification",
+  "hexcasting.action.ephemera:getpropertyvalue": "State Distillation",
+  "hexcasting.action.ephemera:ridewisp": "Ride Wisp",
+  "hexcasting.action.ephemera:dismount": "Dismount",
+  "hexcasting.action.ephemera:getrider": "Equestrian Purification",
+  "hexcasting.action.book.ephemera:getrider": "Equestrian Prfn.",
+  "hexcasting.action.ephemera:getmount": "Equestrian Purification II",
+  "hexcasting.action.book.ephemera:getmount": "Equestrian Prfn. II",
 
   "hexcasting.mishap.location_ephemera:inputrelaytprange": "Target entity is too far from target node at %s.",
   "hexcasting.mishap.location_ephemera:outputrelaytprange": "Could not find connected node within range of %s.",
@@ -71,6 +80,7 @@
   "ephemera.mishap.toolongiota": "an iota that displays as less than 256 characters",
   "hexcasting.mishap.ephemera:blacklist": "This effect has been blacklisted via tag.",
   "hexcasting.mishap.ephemera:instant": "How did you even get that iota?",
+  "hexcasting.mishap.ephemera:no": "no",
 
   "item.ephemeral.media_armor.tooltip.1": "Bestows %s %s upon the wearer.",
 
@@ -95,6 +105,14 @@
   "ephemera.page.miscpatterns.6": "Accepts a vector, and returns whether that vector is within (or just on the edge of) the block in that space. Seems to involve the boxes I see in my mind's eye.",
   "ephemera.page.miscpatterns.7": "Returns the total size of all iotas on my stack, including the contents of lists and similar. If this number ever reaches 1024, my stack shall come crashing down into garbage.",
   "ephemera.page.miscpatterns.8": "Accepts any iota, and returns its total size.",
+  "ephemera.page.miscpatterns.9": "Accepts a vector, and returns a list of strings corresponding to values contained in the state of the block at the corresponding position.",
+  "ephemera.page.miscpatterns.10": "Accepts a vector and a string, and uses the string as a key to retrieve the value it corresponds to in the target block's state, or null if there is no corresponding value.",
+  "ephemera.page.miscpatterns.11": "Accepts one of my wisps (or a wandering wisp), and places me atop it, similar to sitting in a minecart. I must be within the wisp's ambit, or four blocks for wandering wisps. Costs one amethyst shard.",
+  "ephemera.page.miscpatterns.12": "I should take care not to accelerate too quickly when riding a wisp, as unlike with Impulse, the acceleration is not applied evenly across my body, and can thus cause significant harm. The threshold for how quickly I can accelerate safely seems to be about 98 m/s over one second.$(br)I should take care when mounting fast wisps, as the instantaneous velocity involved can contribute to this damage if I am too far from my final seated position.",
+  "ephemera.page.miscpatterns.13": "Takes me off of whatever entity I may be riding when cast. Costs 1/100 of a dust.",
+  "ephemera.page.miscpatterns.14": "Accepts an entity, and returns a list of entities seated atop it.",
+  "ephemera.page.miscpatterns.15": "Accepts an entity, and returns the entity it is seated atop.",
+
   "ephemera.page.particleburst.1": "Accepts two vectors and two numbers, and uses them to define a burst of particles. Costs a negligible amount of media.",
   "ephemera.page.particleburst.2": "The first vector determines the burst's origin position, and the second vector determines its direction and speed. The first number determines the scale of random numbers added to each position component, and the second does the same for the direction vector.",
   "ephemera.page.invisibility.1": "Functions just like the normal $(l:patterns/great_spells/zeniths)Zeniths$(/l), applying Invisibility. Costs one amethyst dust per three seconds.",
@@ -109,7 +127,7 @@
   "ephemera.page.status_iotas.9": "Accepts a living entity, and returns how much damage it can Absorb before its health is affected.",
   "ephemera.page.status_iotas.10": "Accepts an entity and a status effect type, and removes that status effect from the entity. Cost is based on the effect's innate harmfulness, its potency, and its remaining duration.",
   "ephemera.page.status_iotas.11": "Costs more if attempting to remove a positive effect from an entity other than myself.$(br2)All of the patterns which deal with a specific status effect on an entity have the side effect that if the entity does not currently have the specified effect, the pattern will fail and inflict nausea upon me.",
-  "ephemera.page.magearmor.1": "I've discovered a rather interesting spell, capable of producing a defensive media barrier that can match and even exceed the protective abilities of many kinds of conventional armor. It can even apply a wide array of $(l:ephemera:patterns/spells/status_iotas)persistent effects$(/l) to the wearer, allowing for incredible versatility.",
+  "ephemera.page.magearmor.1": "I've discovered a rather interesting spell, capable of producing a defensive media barrier that can match and even exceed the protective abilities of many kinds of conventional armor. It can even apply a wide array of $(l:patterns/spells/status_iotas)persistent effects$(/l) to the wearer, allowing for incredible versatility.",
   "ephemera.page.magearmor.2": "Accepts a player to grant the armor to, the durability of the armor, the protection value of the armor (max 10), a status effect to apply, and that effect's level. The latter two can be replaced with any non-status iota to ignore them.",
   "ephemera.page.magearmor.3": "Of course, this barrier is by no means indestructible, and its durability decays steadily in addition to any damage it takes from hits. The base rate of this decay can be described as one \"point\" per second, plus additional points equal to the squared strength of any effect imbued into it. Additionally, it will disappear instantly if removed from the wearer, so there is no way to repair it, short of recasting the spell to overwrite its current state.",
   "ephemera.page.magearmor.4": "The media cost for this spell is a bit complicated: A base of one amethyst dust per 60 durability, multiplied by the armor's protection value raised to the power of 1.5, times the level+1 of any status effect. Thus, producing no-status strength 10 armor with one minute's worth of durability costs ~31.5 dust. Adding Regeneration 2 increases that media cost to ~94.5 dust, and causes it to only last 36 seconds.",
@@ -151,5 +169,7 @@
   "text.ephemera.revealIntroduction": "Transmission from %s: ",
   "text.ephemera.nosender": "unknown",
 
-  "enchantment.ephemera.shame": "Curse of Shame"
+  "enchantment.ephemera.shame": "Curse of Shame",
+
+  "death.attack.ephemera:acceleration": "%s was subjected to lethal acceleration."
 }
