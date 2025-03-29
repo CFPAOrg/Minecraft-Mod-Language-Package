@@ -16,3 +16,6 @@ Appflux allows you to manage your power system with AE.
 
 ## Flux Accessor
 <CategoryIndex category="flux accessor"></CategoryIndex>
+
+## Tricks
+<CategoryIndex category="flux tricks"></CategoryIndex>

@@ -16,3 +16,6 @@ navigation:
 
 ## 通量访问点
 <CategoryIndex category="flux accessor"></CategoryIndex>
+
+## 技巧
+<CategoryIndex category="flux tricks"></CategoryIndex>
