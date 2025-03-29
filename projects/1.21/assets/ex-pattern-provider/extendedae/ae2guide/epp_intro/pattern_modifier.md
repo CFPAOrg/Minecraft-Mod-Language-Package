@@ -58,6 +58,12 @@ Click the Replace button to perform the replacement.
 
 ![PM6](../pic/pm7.png)
 
+## Property Mode
+
+Modify crafting pattern's Substitutions and Fluid Substitutions mode.
+
+![PM8](../pic/pm8.png)
+
 ## Clone Mode
 
 You make copy any give pattern in this mode.
