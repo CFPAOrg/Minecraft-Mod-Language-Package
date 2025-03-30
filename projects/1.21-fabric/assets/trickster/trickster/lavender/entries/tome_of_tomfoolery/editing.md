@@ -98,7 +98,7 @@ When Growth is drawn in the blue circle, it adds it as an inner circle to the ne
 
 ---
 
-Removes the circle it is drawn in. Will Replace it with the original circle's first subcircle if available.
+Removes the circle it is drawn in. Will replace it with the original circle's first subcircle if available.
 
 ;;;;;
 
