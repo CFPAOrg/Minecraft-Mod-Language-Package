@@ -2,6 +2,7 @@
 	"hexcasting.mishap.overevaluate:assert": "Assertion failed: %s.",
 	"hexcasting.mishap.overevaluate:needs_skippable": "Expected to be run inside of a skippable context.",
 	"hexcasting.mishap.overevaluate:needs_thoth": "Expected to be run inside of Thoth's Gambit.",
+	"hexcasting.mishap.overevaluate:apep": "Expected an iota at the top of the Apep pseudo-stack.",
 	"hexcasting.mishap.overevaluate:themis": "Expected a number at the top of the Themis pseudo-stack.",
 
 	"overevaluate.page.extra_stack.title": "Extra Stack Manipulation",
@@ -35,6 +36,9 @@
 	"overevaluate.page.soroban_reset.summary": "Resets the soroban to 0.",
 
 	"overevaluate.page.metas.title": "Advanced Metaevaluation",
+	"hexcasting.action.overevaluate:apep": "Apep's Gambit",
+	"overevaluate.page.apep.0": "Scans across the first list using the _Hex in the second list.",
+	"overevaluate.page.apep.1": "The first cast applies the _Hex on first and second iota. The top iota left after the cast (mishaps if none exist) is memorized. The next cast applies the _Hex on the last memorized iota and the third iota. Again, the top is memorized, and the process repeats with the fourth, fifth, sixth, etc... iota until the end of the first list. Finally, pushes all memorized iota to the stack in a list.$(br2)$(o)Euler did music too, you know$()",
 	"hexcasting.action.overevaluate:athena": "Athena's Gambit",
 	"overevaluate.page.athena.0": "Like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit$() but mishaps simply stop the execution and continue the _Hex without incurring the effects of the mishap. Pushes whether it mishapped.",
 	"hexcasting.action.overevaluate:athena_print": "Athena's Revelation",
@@ -43,8 +47,8 @@
 	"overevaluate.page.tutu.0": "Does nothing.",
 	"overevaluate.page.tutu.1": "This pattern seems useless but is helpful in conjunction with Charon's Gambit or Janus' Gambit as the \"other branch\". Executing it does not consume an operation, consume media, produce particles, or have any other impact on the world.$(br2)$(o)The only winning move is not to play.$()",
 	"hexcasting.action.overevaluate:janus": "Janus' Gambit",
-	"overevaluate.page.janus.0": "Instantly terminates the _Hex regardless of current circumstances, breaking even through $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's$() and $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit$() unlike $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit$().",
-	"overevaluate.page.janus.1": "It's useful to end a _Hex early once it has reached some desired state, without the difficulty of using $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit$() because $(l:metaevals#overevaluate:janus)$(action)Janus'$() can bypass the \"containment\" of $(l:patterns/meta#hexcasting:eval)$(action)Hermes'$() and $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's$().$(br2)$(o)It is always important to know when something has reached its end.$()",
+	"overevaluate.page.janus.0": "Instantly terminates the _Hex regardless of current circumstances.",
+	"overevaluate.page.janus.1": "It's useful to end a _Hex early once it has reached some desired state because it can bypass the \"containment\" of $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit$() and $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit$() unlike $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit$().$(br2)$(o)It is always important to know when something has reached its end.$()",
 	"hexcasting.action.overevaluate:maat": "Ma'at's Gambit",
 	"overevaluate.page.maat.0": "Takes a boolean and any iota. If the boolean is false, mishaps and prints the iota.",
 	"overevaluate.page.maat.1": "This pattern is useful in order to break out of _Hexes if certain programmed conditions are not met.$(br2)$(o)Order in the court.$()",

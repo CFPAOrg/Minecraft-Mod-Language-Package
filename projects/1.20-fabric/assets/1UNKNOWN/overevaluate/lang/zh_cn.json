@@ -2,6 +2,7 @@
 	"hexcasting.mishap.overevaluate:assert": "断言失败：%s。",
 	"hexcasting.mishap.overevaluate:needs_skippable": "本应在可跳过的上下文内运行。",
 	"hexcasting.mishap.overevaluate:needs_thoth": "本应在托特之策略内运行。",
+	"hexcasting.mishap.overevaluate:apep": "阿佩普之策略的伪栈栈顶本应存在一个iota。",
 	"hexcasting.mishap.overevaluate:themis": "忒弥斯之策略的伪栈栈顶本应存在一个数。",
 
 	"overevaluate.page.extra_stack.title": "栈操作附加",
@@ -35,6 +36,9 @@
 	"overevaluate.page.soroban_reset.summary": "将珠算计数器重置为 0。",
 
 	"overevaluate.page.metas.title": "高阶元运行",
+	"hexcasting.action.overevaluate:apep": "阿佩普之策略",
+	"overevaluate.page.apep.0": "用第二列表指定的$(hex)咒术$()扫描第一列表。",
+	"overevaluate.page.apep.1": "第一次施放会将$(hex)咒术$()作用于第一和第二个 iota，并暂存施放后留在栈顶的 iota（如招致事故则无）。下一次施放作用于上一个暂存的 iota 和第三个 iota，同样暂存栈顶元素。此过程会依次序运行下去，直至穷尽第一列表。最后，将所有暂存的 iota 组为列表返回。$(br2)$(o)欧拉也玩过音乐。$()",
 	"hexcasting.action.overevaluate:athena": "雅典娜之策略",
 	"overevaluate.page.athena.0": "运行方式类似$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略$()，但会在遇到事故时继续施放$(hex)咒术$()，而不会带来事故本来的后果。返回其是否招致了事故。",
 	"hexcasting.action.overevaluate:athena_print": "雅典娜之揭示",
@@ -43,8 +47,8 @@
 	"overevaluate.page.tutu.0": "什么都不会做。",
 	"overevaluate.page.tutu.1": "此图案看上去可能没什么用，但它很适合作为卡戎之策略和雅努斯之策略的“另一分支”。运行此图案不会消耗执行深度和媒质，不会产生粒子，也不会对世界产生任何影响。$(br2)$(o)唯一的取胜之道就是不要参与。$()",
 	"hexcasting.action.overevaluate:janus": "雅努斯之策略",
-	"overevaluate.page.janus.0": "立即终止当前$(hex)咒术$()，无视所有限制。不同于$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略$()，它甚至能跳出$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略$()和$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略$()。",
-	"overevaluate.page.janus.1": "此策略适合在$(hex)咒术$()抵达期望状态时提前结束它，而不需考虑$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略$()的种种局限；$(l:patterns/metaevals#overevaluate:janus)$(action)雅努斯之策略$()不受$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略$()和$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略$()影响。$(br2)$(o)It is always important to know when something has reached its end.$()",
+	"overevaluate.page.janus.0": "立即终止当前$(hex)咒术$()，无视所有限制。",
+	"overevaluate.page.janus.1": "此策略适合在$(hex)咒术$()抵达期望状态时提前结束它，而不需考虑$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略$()、$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略$()、$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略$()的种种局限。$(br2)$(o)咒术之将亡，其媒质也善。$()",
 	"hexcasting.action.overevaluate:maat": "玛阿特之策略",
 	"overevaluate.page.maat.0": "接受一个布尔值和任意 iota。若布尔值为 False，则产生事故并打印 iota。",
 	"overevaluate.page.maat.1": "此图案很适合在某些条件未满足时跳出$(hex)咒术$()。$(br2)$(o)法庭内保持肃静。$()",
