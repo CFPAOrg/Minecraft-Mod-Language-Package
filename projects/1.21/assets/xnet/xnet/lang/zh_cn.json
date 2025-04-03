@@ -69,7 +69,7 @@
   
   "message.xnet.antenna_base.header": "天线基座只能放置在无线路由器上方",
   "message.xnet.antenna_dish.header": "在天线基座上放置天线盘可以将无线路由的范围扩展至相当远的距离。",
-  "message.xnet.antenna_dish.info": "能源消耗：",
+  "message.xnet.antenna_dish.info": "能耗：",
   
   "message.xnet.redstone_proxy.header": "充当红石系统的代理方块，可以与XNet连接。",
   "message.xnet.redstone_proxy.gold": "此方块不会进行方块更新！",
@@ -90,13 +90,13 @@
   "xnet.filter.label": "过滤",
   "xnet.ext.ending": "输出",
   "xnet.ins.ending": "输入",
-  "xnet.energy.rate.tooltip.formatted": "最大能量%s速率|（最大为%d每Tick）",
+  "xnet.energy.rate.tooltip.formatted": "最大能量%s速率|（最大为%d/tick）",
   "xnet.low.format": "小于指定数量",
   "xnet.high.format": "大于指定数量",
-  "xnet.energy.minmax.tooltip.formatted": "停止%s若能量%s",
+  "xnet.energy.minmax.tooltip.formatted": "禁用%s|若能量%s",
   
-  "xnet.fluid.rate.tooltip.formatted": "流体%s速率|（最大%d mb）",
-  "xnet.fluid.minmax.tooltip.formatted": "停止%s若流体量%s",
+  "xnet.fluid.rate.tooltip.formatted": "流体%s速率|（最大%d mB）",
+  "xnet.fluid.minmax.tooltip.formatted": "禁用%s|若流体量%s",
   
   
   "xnet.item.ext.count.tooltip": "每次操作输出的|物品数量",
@@ -120,6 +120,9 @@
   "xnet.logic.sensor.operator.tooltip": "运算符",
   "xnet.logic.sensor.amount.tooltip": "运算数值",
   "xnet.logic.sensor.out.color.tooltip": "信号颜色",
+  "xnet.logic.impulseMode.label": "脉冲模式：",
+  "xnet.logic.impulseMode.tooltip": "若启用，连接器会输出短红石脉冲|而不是输出持续信号",
+  "xnet.logic.impulseDuration.tooltip": "脉冲长度（tick）",
   "xnet.rs.mode.ignored.tooltip": "红石模式：\n忽略",
   "xnet.rs.mode.off.tooltip": "红石模式：\n低信号",
   "xnet.rs.mode.on.tooltip": "红石模式：\n高信号",
@@ -173,8 +176,6 @@
   
   "xnet.enum.logic.logicfilter.direct.tooltip": "存在输入时的输出值",
   "xnet.enum.logic.logicfilter.inverted.tooltip": "使输入信号反相|0 -> 特定值|1-15 -> 0",
-  "xnet.enum.logic.logicfilter.off.tooltip": "直接输出输入值",
-  "xnet.enum.logic.logicfilter.not.tooltip": "对输入信号进行|逻辑运算非",
   "xnet.enum.logic.logicfilter.or.tooltip": "对输入信号进行|逻辑运算或",
   "xnet.enum.logic.logicfilter.and.tooltip": "对输入信号进行|逻辑运算与",
   "xnet.enum.logic.logicfilter.nor.tooltip": "对输入信号进行|逻辑运算或非",
@@ -183,7 +184,8 @@
   "xnet.enum.logic.logicfilter.xnor.tooltip": "对输入信号进行|逻辑运算同或",
   "xnet.enum.logic.logicfilter.latch.tooltip": "每次接收|输入信号后|切换输出信号",
   "xnet.enum.logic.logicfilter.counter.tooltip": "在接受到特定|数量的输入信号|后输出信号",
-  "xnet.enum.logic.logicfilter.timer.tooltip": "在特定的游戏刻|后输出信号|正常20Tick/s",
+  "xnet.enum.logic.logicfilter.timer.tooltip": "在特定的游戏刻|后输出信号|正常情况下20 tick = 1 s",
+  "xnet.enum.logic.logicfilter.static.tooltip": "总是输出特定值",
   
   "xnet.enum.logic.logicmode.sensor": "监测",
   "xnet.enum.logic.logicmode.sensor.tooltip": "扫描连接方块|并输出红石信号",
@@ -195,7 +197,7 @@
   "xnet.enum.logic.sensormode.item": "物品",
   "xnet.enum.logic.sensormode.item.tooltip": "扫描连接容器|内的物品数量|右侧槽位标记|扫描物品",
   "xnet.enum.logic.sensormode.fluid": "流体",
-  "xnet.enum.logic.sensormode.fluid.tooltip": "扫描连接方块|内的流体数量（mb）",
+  "xnet.enum.logic.sensormode.fluid.tooltip": "扫描连接方块|内的流体数量（mB）",
   "xnet.enum.logic.sensormode.energy": "能量",
   "xnet.enum.logic.sensormode.energy.tooltip": "扫描连接方块|内的能量含量",
   "xnet.enum.logic.sensormode.rs": "红石",
@@ -205,7 +207,7 @@
   "xnet.message.channel.copied": "频道已复制",
   "xnet.message.confirm.remove.channel.formatted": "确定移除频道%d？",
   "xnet.error.nothing.selected": "无选中项！",
-  "xnet.error.copy": "拷贝剪贴板时出错",
+  "xnet.error.copy": "复制到剪贴板时出错",
   "xnet.error.read.copy": "读取剪贴板时出错！",
   "xnet.error.large.copy": "剪贴板数据过大！",
   "xnet.uns.ch.formatted": "不受支持的频道类型：%s！",
