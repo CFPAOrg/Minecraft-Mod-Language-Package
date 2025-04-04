@@ -23,7 +23,7 @@ AE2的<ItemLink id="ae2:wireless_terminal" />***无法***装入<ItemLink id="ae2
 
 ## 界面
 
-<ItemLink id="ae2wtlib:wireless_universal_terminal" />在终端界面中添加了一个按钮，左击会循环切换至下一个[无线终端](wireless_terminals.md)，右击则循环至上一个。
+<ItemLink id="ae2wtlib:wireless_universal_terminal" />在终端界面中添加了一个按钮，左击会循环切换至下一个[无线终端](wireless_terminals.md)，右击则切换至上一个。
 
 ## 升级
 
