@@ -1,7 +1,7 @@
 ---
 navigation:
   parent: items-blocks-machines/items-blocks-machines-index.md
-  title: 晶振发电器
+  title: 水晶谐振发生器
   icon: crystal_resonance_generator
   position: 110
 categories:
@@ -10,7 +10,7 @@ item_ids:
 - ae2:crystal_resonance_generator
 ---
 
-# 晶振发电器
+# 水晶谐振发生器
 
 <BlockImage id="crystal_resonance_generator" scale="8" />
 

@@ -15,7 +15,7 @@ item_ids:
 
 <BlockImage id="sky_stone_block" scale="8" />
 
-[陨石](../ae2-mechanics/meteorites.md)的构成材料，用于合成<ItemLink id="sky_stone_tank" />、<ItemLink id="not_so_mysterious_cube" />、<ItemLink id="cell_component_256k" />，以及最重要的，<ItemLink id="controller" />的配方。
+[陨石](../ae2-mechanics/meteorites.md)的构成材料，用于合成<ItemLink id="sky_stone_tank" />、<ItemLink id="not_so_mysterious_cube" />、<ItemLink id="cell_component_256k" />，以及最重要的，<ItemLink id="controller" />。
 
 ## 配方
 

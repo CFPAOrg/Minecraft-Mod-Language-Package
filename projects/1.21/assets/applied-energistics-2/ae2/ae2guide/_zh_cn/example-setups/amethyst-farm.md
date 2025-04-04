@@ -13,7 +13,7 @@ navigation:
 
 <ItemLink id="minecraft:amethyst_cluster" />需由<ItemLink id="formation_plane" />再次放置并由不带精准采集的<ItemLink id="annihilation_plane" />再次破坏即可得到<ItemLink id="minecraft:amethyst_shard" />。
 
-注意因为紫水晶簇有方向性，成型面板的对侧应当有一个完整方块面。
+注意，因为紫水晶簇有方向性，成型面板的对侧应当有一个完整方块面。
 
 <GameScene zoom="6" interactive={true}>
   <ImportStructure src="../assets/assemblies/amethyst_farm.snbt" />

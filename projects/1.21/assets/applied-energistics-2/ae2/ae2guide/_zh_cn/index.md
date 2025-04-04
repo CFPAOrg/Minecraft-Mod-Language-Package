@@ -11,7 +11,7 @@ navigation:
 # 如何使用此指南
 
 * 左侧为侧边栏，其中有所有条目的目录。
-* 许多页面都有交互示例图。若示例图旁边有![加号](assets/diagrams/plus.png)和![减号](assets/diagrams/minus.png)（缩放）按钮，即可选择和移动视角。按住左键拖拽以旋转，按住右键拖拽以平移。
+* 许多页面都有交互示例图。若示例图旁边有![加号](assets/diagrams/plus.png)和![减号](assets/diagrams/minus.png)（缩放）按钮，即可旋转和移动视角。按住左键拖拽以旋转，按住右键拖拽以平移。
 
 # 应用能源2是什么？
 

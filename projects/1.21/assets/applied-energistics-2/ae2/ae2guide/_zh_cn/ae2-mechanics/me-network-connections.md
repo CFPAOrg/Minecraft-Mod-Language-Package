@@ -13,7 +13,7 @@ navigation:
 
 ## 设备位置简述
 
-对于有特殊网络功能的[设备](devices.md)（例如向[网络存储](import-export-storage.md)输入输出的<ItemLink id="interface" />，读取网络存储信息的<ItemLink id="level_emitter" />，作为网络存储的<ItemLink id="drive" />等。）来说，设备本身的物理位置不重要。
+对于有特殊网络功能的[设备](devices.md)（例如向[网络存储](import-export-storage.md)输入输出的<ItemLink id="interface" />，读取网络存储信息的<ItemLink id="level_emitter" />，作为网络存储的<ItemLink id="drive" />等）来说，设备本身的物理位置不重要。
 
 再提一遍，**设备的物理位置不重要**。重要之处在于设备连上了网络（以及连上了哪个网络）。
 
@@ -160,14 +160,14 @@ navigation:
   <ImportStructure src="../assets/assemblies/pattern_provider_directional_connection.snbt" />
 
   <BoxAnnotation color="#ee3333" min="1 .3 .3" max="1.3 .7 .7">
-        注意线缆并未连接
+        需注意线缆并未连接
   </BoxAnnotation>
 
   <IsometricCamera yaw="255" pitch="30" />
 </GameScene>
 </Row>
 
-其他不提供方向型网络连接的大多是[子部件](cable-subparts.md)[设备](devices.md)，例如<ItemLink id="import_bus" />、<ItemLink id="storage_bus" />，和<ItemLink id="cable_interface" />。
+其他不提供方向型网络连接的大多是[子部件](cable-subparts.md)[设备](devices.md)，例如<ItemLink id="import_bus" />、<ItemLink id="storage_bus" />、<ItemLink id="cable_interface" />。
 
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../assets/assemblies/subpart_no_connection.snbt" />

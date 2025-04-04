@@ -143,7 +143,7 @@ navigation:
 ## 配置
 
 * <ItemLink id="pattern_provider" />（1）处于默认配置，装有相应<ItemLink id="processing_pattern" />。
-  注意此类样板需直接从原材料加工为完整的处理器，且**不应**包含[压印模板](../items-blocks-machines/presses.md)。
+  注意，此类样板需直接从原材料加工为完整的处理器，且**不应**包含[压印模板](../items-blocks-machines/presses.md)。
 
   ![逻辑样板](../assets/diagrams/logic_pattern.png)
   ![计算样板](../assets/diagrams/calculation_pattern.png)
