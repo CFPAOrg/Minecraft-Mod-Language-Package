@@ -18,17 +18,17 @@ item_ids:
   <ItemImage id="ae2importexportcard:import_card" scale="2" />
 </Row>
 
-输入卡和输出卡可用于从物品栏中输入和向其输出物品。
+输入卡和输出卡可通过玩家物品栏输入/输出物品。
 
 ## 输入卡
 
 <ItemImage id="ae2importexportcard:import_card" scale="2" />
 
-输入卡会将你物品栏特定槽位中的事物存入ME系统。
+输入卡会将你物品栏特定槽位中的物品存入ME系统。
 
 ![输入卡](diagrams/import_card.png)
 
-点击槽位可进行标记。经标记槽位中的任意物品都会输入ME系统。将物品拖放到界面上方以进行过滤。
+点击槽位可进行标记。标记槽位中的任意物品都会输入ME系统。将物品拖放到界面上方以进行过滤。
 
 ### 升级
 
@@ -45,7 +45,7 @@ item_ids:
 
 <ItemImage id="ae2importexportcard:export_card" scale="2" />
 
-输出卡的运作方式与输入卡完全一致，只不过是会从ME网络中抽取物品放入物品栏。
+输出卡的运作方式与输入卡完全一致，只不过是会从ME网络中抽取物品放入玩家物品栏。
 
 ![输出卡](diagrams/export_card.png)
 
