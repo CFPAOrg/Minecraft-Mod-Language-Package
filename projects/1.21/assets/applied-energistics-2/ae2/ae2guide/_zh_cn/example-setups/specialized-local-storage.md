@@ -28,7 +28,7 @@ navigation:
   </BoxAnnotation>
 
 <BoxAnnotation color="#dddddd" min="2 0 0" max="2.3 1 1">
-        （4）终端#2：默认配置。
+        （4）接口#2：默认配置。
   </BoxAnnotation>
 
 <BoxAnnotation color="#dddddd" min="1.7 0 0" max="2 1 1">
@@ -58,4 +58,4 @@ navigation:
 * 子网络上的<ItemLink id="interface" />会向主网络上的<ItemLink id="storage_bus" />展示<ItemLink id="drive" />的内容物。也即存储总线可直接向该驱动器中的元件输入输出。
 * 存储总线的[优先级](../ae2-mechanics/import-export-storage.md#存储优先级)较高，由此物品会优先放入子网络而非主网络。
 * 重要的是，假如子网络的元件被填满了，多出的物品不会溢出至主网络。如果农场会因堵塞而失效，可装入<ItemLink id="void_card" />以删除多余物品。
-* 如果农场产出多种物品，<ItemLink id="equal_distribution_card" />可避免产物之一填满所有元件而其余产物无法存储的情况。
+* 如果农场产出多种物品，<ItemLink id="equal_distribution_card" />可避免出现产物之一填满所有元件而其余产物无法存储的情况。

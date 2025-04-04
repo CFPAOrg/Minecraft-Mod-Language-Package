@@ -14,12 +14,11 @@ item_ids:
 
 <ItemImage id="network_tool" scale="4" />
 
-网络工具是修改版本的[扳手](wrench.md)，它能显示网络诊断信息，也能存储[升级卡](upgrade_cards.md)。它仍保留了扳手拆卸[子部件](../ae2-mechanics/cable-subparts.md)等事物的能力，但无法再旋转方块。
+网络工具是[扳手](wrench.md)的改版，它能显示网络诊断信息，也能存储[升级卡](upgrade_cards.md)。它仍保留了扳手拆卸[子部件](../ae2-mechanics/cable-subparts.md)等事物的能力，但无法再旋转方块。
 
 网络工具有9个[升级卡](upgrade_cards.md)存储槽位，当其在物品栏内时，这些升级卡可直接在任意AE2设备UI中访问。
 
-与右击<ItemLink id="controller" />类似，手持网络工具右击网络任意一处会显示诊断信息窗口。
-此窗口会显示：
+与右击<ItemLink id="controller" />类似，手持网络工具右击网络任意一处会显示诊断信息窗口。此窗口会显示：
 
 *   网络中频道占用数
 *   全局切换网络能量单位（AE、E/FE）
