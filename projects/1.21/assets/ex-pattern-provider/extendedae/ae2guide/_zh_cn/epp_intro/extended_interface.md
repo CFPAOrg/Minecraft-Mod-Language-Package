@@ -19,7 +19,7 @@ item_ids:
 </GameScene>
 </Row>
 
-ME扩展接口是配置槽数更多的<ItemLink id="ae2:interface" />.
+ME扩展接口是配置槽数更多的<ItemLink id="ae2:interface" />。
 
 *我真的需要这个吗？*
 

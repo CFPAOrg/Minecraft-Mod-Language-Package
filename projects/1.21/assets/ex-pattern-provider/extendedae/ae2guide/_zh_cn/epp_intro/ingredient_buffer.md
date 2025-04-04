@@ -13,4 +13,4 @@ item_ids:
 
 <BlockImage id="extendedae:ingredient_buffer" scale="8"></BlockImage>
 
-存储方块，能存下36种物品、流体等任意事物。
+存储用方块，能存下36种物品、流体等任意事物。
