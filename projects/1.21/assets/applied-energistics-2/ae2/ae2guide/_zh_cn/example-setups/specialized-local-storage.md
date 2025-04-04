@@ -58,4 +58,4 @@ navigation:
 * 子网络上的<ItemLink id="interface" />会向主网络上的<ItemLink id="storage_bus" />展示<ItemLink id="drive" />的内容物。也即存储总线可直接向该驱动器中的元件输入输出。
 * 存储总线的[优先级](../ae2-mechanics/import-export-storage.md#存储优先级)较高，由此物品会优先放入子网络而非主网络。
 * 重要的是，假如子网络的元件被填满了，多出的物品不会溢出至主网络。如果农场会因堵塞而失效，可装入<ItemLink id="void_card" />以删除多余物品。
-* 如果农场产出多种物品，<ItemLink id="equal_distribution_card" />可避免因其中一种产物填满所有元件而堵塞其余产物的情况出现。
+* 如果农场产出多种物品，<ItemLink id="equal_distribution_card" />可避免因其中一种产物填满所有元件导致其余产物被堵塞的情况出现。
