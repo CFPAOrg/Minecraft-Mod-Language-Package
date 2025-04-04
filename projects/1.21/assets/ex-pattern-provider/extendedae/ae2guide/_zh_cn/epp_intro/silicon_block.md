@@ -15,4 +15,4 @@ item_ids:
 <BlockImage id="extendedae:silicon_block" scale="8"></BlockImage>
 </Row>
 
-<ItemLink id="ae2:silicon" />的储物方块。
+用于存储<ItemLink id="ae2:silicon" />的方块。

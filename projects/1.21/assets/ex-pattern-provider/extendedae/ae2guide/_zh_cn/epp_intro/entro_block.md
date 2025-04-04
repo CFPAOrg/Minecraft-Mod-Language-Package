@@ -15,4 +15,4 @@ item_ids:
 <BlockImage id="extendedae:entro_block" scale="8"></BlockImage>
 </Row>
 
-<ItemLink id="extendedae:entro_crystal" />的储物方块。
+用于存储<ItemLink id="extendedae:entro_crystal" />的方块。
