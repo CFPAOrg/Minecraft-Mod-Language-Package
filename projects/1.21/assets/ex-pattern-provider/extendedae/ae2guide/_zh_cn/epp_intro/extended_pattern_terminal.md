@@ -12,7 +12,7 @@ item_ids:
 
 # ME扩展样板管理终端
 
-相比<ItemLink id="ae2:pattern_access_terminal" />而言，ME扩展样板管理终端新增了3种额外供能。
+相比<ItemLink id="ae2:pattern_access_terminal" />而言，ME扩展样板管理终端新增了3种额外功能。
 
 <Row gap="20">
 <GameScene zoom="6" background="transparent">
