@@ -229,7 +229,7 @@ navigation:
   <ImportStructure src="../assets/assemblies/treelike_network_structure.snbt" />
 
     <BoxAnnotation color="#dddddd" min="6.9 0 4.9" max="9.1 4 7.1" thickness="0.05">
-      注意样板供应器为8个一组。
+      需注意样板供应器为8个一组。
     </BoxAnnotation>
 
     <BoxAnnotation color="#dddddd" min="5 4 4" max="8 5 5" thickness="0.05">
