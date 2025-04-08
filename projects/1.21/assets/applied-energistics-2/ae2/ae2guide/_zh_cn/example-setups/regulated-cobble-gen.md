@@ -61,6 +61,6 @@ navigation:
 
 1. 造石机产生圆石。
 2. <ItemLink id="annihilation_plane" />破坏圆石。
-3. T<ItemLink id="storage_bus" />将圆石存入<ItemLink id="interface" />，并传输回主网络。
+3. <ItemLink id="storage_bus" />将圆石存入<ItemLink id="interface" />，并传输回主网络。
 4. 当主网络中圆石的数量大于设定数量时，<ItemLink id="level_emitter" />停止发出红石信号，并关闭<ItemLink id="toggle_bus" />。
 5. 子网络的能量供给被切断，从而关闭了破坏面板。

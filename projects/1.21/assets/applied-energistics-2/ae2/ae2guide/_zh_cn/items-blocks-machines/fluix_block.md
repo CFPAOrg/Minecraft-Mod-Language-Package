@@ -14,7 +14,7 @@ item_ids:
 
 <BlockImage id="fluix_block" scale="8" />
 
-<ItemLink id="fluix_crystal" />的存储方块。也用在部分机器的配方中。
+用于存储<ItemLink id="fluix_crystal" />的方块。也用在部分机器的配方中。
 
 ## 配方
 

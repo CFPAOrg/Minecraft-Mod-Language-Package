@@ -14,7 +14,7 @@ item_ids:
 
 <BlockImage id="quartz_block" scale="8" />
 
-<ItemLink id="certus_quartz_crystal" />的存储方块。可用于制造[赛特斯石英母岩](budding_certus.md)和[赛特斯石英装饰方块](decorative_certus.md)。
+用于存储<ItemLink id="certus_quartz_crystal" />的方块。可用于制造[赛特斯石英母岩](budding_certus.md)和[赛特斯石英装饰方块](decorative_certus.md)。
 
 ## 配方
 

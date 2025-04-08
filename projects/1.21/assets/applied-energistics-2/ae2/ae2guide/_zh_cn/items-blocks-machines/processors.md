@@ -27,7 +27,7 @@ item_ids:
   <ItemImage id="engineering_processor" scale="4" />
 </Row>
 
-处理器是AE2[设备](../ae2-mechanics/devices.md)和机器的基础合成材料之一。它们也是你遇到的第一个大型自动化挑战。共有三种处理器，分别由金、<ItemLink id="certus_quartz_crystal" />、钻石制成。可在<ItemLink id="inscriber" />中以[压印模板](presses.md)和通过一多步合成过程制造（通常通过一系列压印器和带有过滤的管道实现）。
+处理器是AE2[设备](../ae2-mechanics/devices.md)和机器的基础合成材料之一。它们也是你遇到的第一个大型自动化挑战。共有三种处理器，分别由金、<ItemLink id="certus_quartz_crystal" />、钻石制成。可在<ItemLink id="inscriber" />中以[压印模板](presses.md)通过多步合成过程制造（通常由一系列压印器和带有过滤的管道实现）。
 
 ## 生产步骤
 
