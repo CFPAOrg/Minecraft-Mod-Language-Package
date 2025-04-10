@@ -178,5 +178,10 @@ jobs:
         with:
           path: artifacts/
 
+      # feat: UTC 20:00~21:00 取消上传（避开远程服务器的4:00-4:10）
+      - name: Fail at inappropriate time
+        run: if [ `date -u +%H` -eq 20 ]; then exit -1; fi
+        shell: bash
+
       - name: Run Uploader
         run: .\Uploader --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"
