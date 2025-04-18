@@ -1,0 +1,73 @@
+{
+  "name": "Mellarium",
+  "icon": "complicated_bees:mellarium",
+  "category": "complicated_bees:machines",
+  "advancement": "complicated_bees:recipes/misc/mellarium_panel",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "Now that you have a little bit more beexperience under your belt, you should look into a better way to house bees.$(br2)The Mellarium is an industrially-sized apiary, capable of housing special modules that can kick your production into high gear."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The Mellarium provides a baseline 1.25x multiplier to productivity which can be increased through modules.$(br2)It is also important to note that $(l)non-base mellarium blocks can not be placed in the top layer$() of the Mellarium."
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          ["BBB","BBB","BBB"],
+          ["###","###","###"],
+          ["###","#0#","###"]
+        ],
+        "mapping": {
+          "B": "complicated_bees:mellarium_base",
+          "#": "#complicated_bees:multiblock/mellarium",
+          "0": "#complicated_bees:multiblock/mellarium"
+        }
+      },
+      "text": "Try not to build these across chunk borders, or right next to each other."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:mellarium_panel",
+      "recipe2": "complicated_bees:mellarium_base"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:mellarium_frame_housing_1",
+      "title": "Frame Housings",
+      "text": "Frame Housings can hold frames based on their tier - the basic can hold one, the regular two, and the large three. These frames will stack multiplicatively."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:mellarium_frame_housing_2",
+      "recipe2": "complicated_bees:mellarium_frame_housing_3",
+      "title": "Frame Housings"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:mellarium_mutator",
+      "title": "Mutator",
+      "text": "Consumes one catalyst every time a queen dies to increase the chance of it producing mutated offspring - check your recipe browser for possible catalysts."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:mellarium_temp_unit",
+      "title": "Temperature Unit",
+      "text": "Every bee lifecycle tick, has a chance to consume specific items to increase or decrease the temperature of the Mellarium - check your recipe browser for possible fuels."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:mellarium_hydroregulator",
+      "title": "Hydroregulator",
+      "text": "Every bee lifecycle tick, has a chance to consume specific items to increase or decrease the humidity of the Mellarium, with a chance of producing a leftover - check your recipe browser."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:mellarium_rain_shield",
+      "title": "Rain Shield",
+      "text": "Using the power of a heart of the sea, protects bees from inclement weather."
+    }
+  ]
+}
