@@ -24,7 +24,7 @@
 
 entity, vector -> entity
 
-<|cost-rule@trickster:templates|formula=3 kG + 向量长度^3 * 2 kG|>
+<|cost-rule@trickster:templates|formula=3kG + 向量长度^3 * 2kG|>
 
 将所给向量视为速度，并施予所给实体。
 
@@ -34,7 +34,7 @@ entity, vector -> entity
 
 entity, number -> entity
 
-<|cost-rule@trickster:templates|formula=60 kG * (1 - 倍数)|>
+<|cost-rule@trickster:templates|formula=60kG * (1 - 倍数)|>
 
 给定0到1之间的数，若实体为生物实体，则让其所受重力变为原重力与所给数的积，持续1秒。
 
@@ -44,7 +44,7 @@ entity, number -> entity
 
 entity, vector -> entity
 
-<|cost-rule@trickster:templates|formula=20 kG + 1.35^长度|>
+<|cost-rule@trickster:templates|formula=20kG + 1.35^长度|>
 
 在两秒后按照所给向量令给定实体位移。
 
@@ -54,7 +54,7 @@ entity, vector -> entity
 
 entity, entity ->
 
-<|cost-rule@trickster:templates|formula=8000 kG|>
+<|cost-rule@trickster:templates|formula=8000kG|>
 
 将第一个实体变身为第二个实体，仅会变换外形。**目前只对玩家有效。**
 
@@ -64,7 +64,7 @@ entity, entity ->
 
 entity -> entity
 
-<|cost-rule@trickster:templates|formula=1000 kG|>
+<|cost-rule@trickster:templates|formula=1000kG|>
 
 解除所给实体上的变身效果。
 
@@ -74,7 +74,7 @@ entity -> entity
 
 entity ->
 
-<|cost-rule@trickster:templates|formula=2000 kG + 距离 ^ (距离 / 5) kG|>
+<|cost-rule@trickster:templates|formula=2000kG + 距离 ^ (距离 / 5kG)|>
 
 将所给实体存储到施法者的副手物品中。该物品必须能存储实体，且实体不可为玩家。
 
@@ -84,7 +84,7 @@ entity ->
 
 vector -> entity | void
 
-<|cost-rule@trickster:templates|formula=2000 kG + 距离 ^ (距离 / 5) kG|>
+<|cost-rule@trickster:templates|formula=2000kG + 距离 ^ (距离 / 5kG)|>
 
 将存储在施法者副手物品中的实体释放到给定位置，并返回该实体。若无实体，返回void。
 
@@ -94,6 +94,6 @@ vector -> entity | void
 
 entity, number -> entity
 
-<|cost-rule@trickster:templates|formula=abs(当前尺寸 - 新尺寸)^2 * 100 kG + 新尺寸 * 50 kG|>
+<|cost-rule@trickster:templates|formula=abs(当前尺寸 - 新尺寸)^2 * 100kG + 新尺寸 * 50kG|>
 
 变动所给实体的尺寸。目标尺寸不可小于原大的0.0625，也不可大于原大的8倍。

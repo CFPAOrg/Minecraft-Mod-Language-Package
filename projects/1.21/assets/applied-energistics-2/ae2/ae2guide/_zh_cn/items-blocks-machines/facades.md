@@ -1,0 +1,48 @@
+---
+navigation:
+  parent: items-blocks-machines/items-blocks-machines-index.md
+  title: 伪装板
+  icon: facade
+  icon_components:
+    "ae2:facade_item": "minecraft:stone"
+  position: 110
+categories:
+- network infrastructure
+item_ids:
+- ae2:facade
+---
+
+# 伪装板
+
+伪装板能让基地看起来更整洁。它们能遮挡各种形制的线缆，且可由多种方块制成。
+
+<GameScene zoom="6" background="transparent">
+  <ImportStructure src="../assets/assemblies/facades_1.snbt" />
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+它们能够遮挡线缆的每一面，但[子部件](../ae2-mechanics/cable-subparts.md)和线缆连接不会被遮断。
+
+<GameScene zoom="6"  interactive={true}>
+  <ImportStructure src="../assets/assemblies/facades_2.snbt" />
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+灵活使用伪装板。从提升基地观感，到制造各面纹理不同的方块，如此种种都能做到。
+
+<GameScene zoom="4" interactive={true}>
+  <ImportStructure src="../assets/assemblies/facades_3.snbt" />
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+## 隐藏伪装板
+
+手持[网络工具](network_tool.md)时伪装板会自动隐藏。
+
+此时可以直接与隐藏的伪装板后方的方块交互，无需取下伪装板。
+
+## 配方
+
+将带有想要伪装成的纹理的方块放在4个<ItemLink id="cable_anchor" />中间即可。
+
+![伪装板配方](../assets/diagrams/facade_recipe.png)

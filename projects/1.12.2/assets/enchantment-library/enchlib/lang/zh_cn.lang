@@ -1,0 +1,31 @@
+# Config
+enchlib.config.general=魔咒图书馆设置
+enchlib.config.general.tooltip=魔咒图书馆的设置
+
+# Default sided configs
+enchlib.config.client_settings=客户端设置
+enchlib.config.client_settings.tooltip=改变客户端行为的设置。\n这些设置作用于客户端，仅影响本机玩家自己。
+enchlib.config.server_settings=服务端设置
+enchlib.config.server_settings.tooltip=改变游戏玩法的设置。\n这些设置作用于服务端，对所有玩家生效。\n仅在单人模式中可通过GUI修改，专用服务器则需要直接编辑配置文件
+
+# Client config
+enchlib.config.client_settings.modified_conway_wechsler=改进的康威-韦克斯勒计数法
+enchlib.config.client_settings.modified_conway_wechsler.tooltip=将魔咒点数的显示格式更改为改进的康威-韦克斯勒格式。\n这种格式更加直观，但存在无效情况（N=103 和 N=300 拥有相同的名字）
+
+# Server config
+enchlib.config.server_settings.allow_enchant_merging=允许魔咒合并
+enchlib.config.server_settings.allow_enchant_merging.tooltip=使用魔咒图书馆提取时，允许将不同种类的魔咒合并到一本附魔书上
+enchlib.config.server_settings.allow_enchant_splitting=允许魔咒分离
+enchlib.config.server_settings.allow_enchant_splitting.tooltip=输入附魔书到魔咒图书馆时，允许将附魔书携带的多种魔咒分离
+enchlib.config.server_settings.enable_ae2uel_hash_fix_mixin=启用 AE2UEL 哈希修复 Mixin
+enchlib.config.server_settings.enable_ae2uel_hash_fix_mixin.tooltip=尝试通过使用 Mixin 修改原版的 NBT hashCode 函数，从而修复 AE2UEL v0.56.6 导致的 ItemStack 缓存哈希冲突问题。\n除非知道自己在做什么，否则不要禁用此功能。若没有此修复，AE2UEL 会认为保护 I = 火焰保护 II，或耐久 III = 效率 V，因为它们的哈希值相同。
+enchlib.config.server_settings.enchanted_book_stack_size=附魔书堆叠上限
+enchlib.config.server_settings.enchanted_book_stack_size.tooltip=附魔书的最大堆叠数量。设置为 0 则不覆盖原值。\n超过 64 的值不会生效。
+enchlib.config.server_settings.ench_level_translation=魔咒等级翻译
+enchlib.config.server_settings.ench_level_translation.tooltip=覆盖魔咒等级的翻译，以完全支持罗马数字（最高 3999）或使用简单数字。设置为 VANILLA 可恢复原版行为/允许其他模组覆盖。
+
+# Blocks
+tile.enchlib.enchantment_library.name=魔咒图书馆
+
+# Gui info
+info.enchlib.gui.enchantment_count=%s魔咒
