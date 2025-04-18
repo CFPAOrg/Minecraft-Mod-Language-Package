@@ -1,0 +1,37 @@
+{
+    "name": "网络MIDI文件",
+    "icon": "mimi:floppydisk",
+    "category": "mimi:9commands",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "这些指令让你能够查看与修改控制来自软盘的MIDI文件回放设置。"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "状态",
+            "text": "$(l)/mimi web status$()$(br2)此指令可以被$(l)全体用户$()使用，将会告诉你服务器是否允许播放网络MIDI文件。$(br2)样例：$(c:/mimi web status)/mimi web status"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "列表",
+            "text": "$(l)/mimi web list <page?>$()$(br2)此指令可以被$(l)全体用户$()使用，将会列出服务器允许下载MIDI文件的网站列表(列表为空代表允许所有网站)。$(br)$(li)$(l)page$() - 要查看的页码，如果不指定页码则显示第一页。$(br2)样例：$(c:/mimi web list 1)/mimi web list 1$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "添加",
+            "text": "$(l)/mimi web add <host>$()$(br2)此指令$(l)仅管理员$()可以使用，将会把提供的网站加入到服务器允许下载MIDI文件的网站列表中。$(br)$(li)$(l)host$() - 要加入列表中的域名。不应包含协议(如：https://)或任何路径(如：/page).$(br2)样例：$(c:/mimi web add example.com)/mimi web add example.com$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "移除",
+            "text": "$(l)/mimi web remove <number>$()$(br2)此指令$(l)仅管理员$()可以使用，将会把提供的网站从服务器允许下载MIDI文件的网站列表中移除。$(br)$(li)$(l)number$() - 要移除的网站域名编号(来自$(c:/mimi web list)/mimi web list$())。$(br2)样例：$(c:/mimi web remove 1)/mimi web remove 1$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "设置",
+            "text": "$(l)/mimi web set <true/false>$()$(br2)此指令$(l)仅管理员$()可以使用，根据提供的参数将会启用/禁用此服务器中的所有网络MIDI文件播放。$(br2)此指令$(o)不会$()修改允许的网站列表。$(br2)样例：$(c:/mimi web set true)/mimi web set true$()"
+        }
+    ],
+    "sortnum": 1
+}
