@@ -12,6 +12,8 @@ navigation:
 
 此农场可在<ItemLink id="flawless_budding_quartz" />上全自动运行，使用有瑕、开裂、破碎的赛特斯石英母岩则需要手动更换母岩。或者可用[半自动赛特斯石英农场](semiauto-certus-farm.md)和[进阶赛特斯石英农场](advanced-certus-farm.md)中所提方法自动化。
 
+生长速度估计值见[赛特斯石英的生长](../ae2-mechanics/certus-growth.md)。
+
 <GameScene zoom="6" interactive={true}>
   <ImportStructure src="../assets/assemblies/simple_certus_farm.snbt" />
 
