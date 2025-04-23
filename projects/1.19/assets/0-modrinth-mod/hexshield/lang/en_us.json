@@ -1,0 +1,17 @@
+{
+    "hexcasting.spell.hexshield:spectralarrow": "Spectral Weapon Projection",
+    "hexcasting.spell.hexshield:heartwhisper": "Heart Whisper",
+    "hexcasting.spell.hexshield:multiple_modify_in_place": "Surgeon's Exaltation II",
+
+    "hexshield.entry.spectralarrow": "Spectral Weapon Projection",
+    "hexshield.page.spectralarrow.0": "The powerful spell which allows you to summon an spectral arrow with a given position and motion vec. You also need to specify if arrow should cause critical damage<br><br>Using cost relates in |motion|^3 and critical<br><br>This spell might cost so much...",
+    "hexshield.page.spectralarrow.1": "Spell casting cost example:<br><br>|mot| = 1, critical = false<br> -> 0.06<br>|mot| = 1, critical = true<br> -> 0.12<br>|mot| = 10, critical = false<br> -> 10.05<br>|mot| = 20.05, critical = false<br> -> 80.05<br><br>|mot| = N, critical = false<br> -> 0.05 + 0.01*N^3<br>|mot| = N, critical = true<br> -> 0.1 + 0.02*N^3",
+
+    "hexshield.entry.heartwhisper": "Heart Whisper",
+    "hexshield.page.heartwhisper.0": "Show your love to your friend (or your enemy, idk) with this spell! Using on someone releases heart particles around target<br><br>Costs nothing because love is not for sale",
+
+    "hexshield.entry.extended_lists": "Advanced List Manipulation",
+    "hexshield.page.multiple_modify_in_place.0": "Remove the top iota or list of the stack and the number at the top, then set the nth element of the list at the top of the stack to that iota or list content (where n is the number you removed). Does nothing if the number is out of bounds.",
+    "hexshield.page.multiple_modify_in_place.1": "Differs from $(l:patterns/lists#hexcasting:modify_in_place)$(action)Surgeon's Exaltation/$ in that if you passed list as third argument then Surgeon's Exaltation II unwraps it instead of placing a whole list in given place",
+    "hexshield.page.multiple_modify_in_place.2": "Example:<br><br>$(l:patterns/lists#hexcasting:modify_in_place)$(action)Surgeon's Exaltation/$:<br>[ a b c ]<br>1<br>[ d e f ]<br> -> [ a [ d e f ] c ]<br><br>$(action)Surgeon's Exaltation II/$:<br>[ a b c ]<br>1<br>[ d e f ]<br> -> [ a d e f c ]"
+}

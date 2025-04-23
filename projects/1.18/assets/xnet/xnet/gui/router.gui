@@ -1,0 +1,50 @@
+window {
+    size(256,236)
+    sidesize(80,0)
+    panel('','positional') {
+        bg1('xnet:textures/gui/sidegui.png')
+        bg2('xnet:textures/gui/router.png')
+        bgoffset(80)
+        panel('','horizontal') {
+            hint(2,28,167,208)
+            widgetlist('localchannels') {
+                channel('localchannels')
+                bgthickness(-1)
+                bgfilled1(-7631989)
+                rowheight(40)
+                propagate(true)
+            }
+            slider {
+                desired(10,-1)
+                scrollable('localchannels')
+            }
+            spacing(1)
+            horizmargin(3)
+        }
+        panel('','horizontal') {
+            hint(169,28,167,208)
+            widgetlist('remotechannels') {
+                channel('remotechannels')
+                bgthickness(-1)
+                bgfilled1(-7631989)
+                rowheight(40)
+            }
+            slider {
+                desired(10,-1)
+                scrollable('remotechannels')
+            }
+            spacing(1)
+            horizmargin(3)
+        }
+        label('','本地频道') {
+            hint(6,8,166,13)
+            color(-14531414)
+            horizalign('ALIGN_LEFT')
+        }
+        label('','远程频道') {
+            hint(172,8,164,13)
+            color(-14531414)
+            horizalign('ALIGN_LEFT')
+        }
+    }
+}

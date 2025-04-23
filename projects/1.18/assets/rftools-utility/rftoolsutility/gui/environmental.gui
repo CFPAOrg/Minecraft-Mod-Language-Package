@@ -1,0 +1,130 @@
+container {
+    slot('input') {
+        pos(7,8)
+        dim(1,7)
+    }
+    playerslots(27,142)
+}
+window {
+    size(194,224)
+
+    event('redstone','env.setRsMode')
+    bind('radius','radius')
+
+    panel('','positional') {
+        bg1('rftoolsutility:textures/gui/environmentalcontroller.png')
+        panel('','vertical') {
+            hint(28,6,161,37)
+            bgthickness(-2)
+            bgfilled1(-7631989)
+            panel('','horizontal') {
+                desired(-1,16)
+                label('','半径：')
+                slider {
+                    horizontal(true)
+                    minimumknob(12)
+                    scrollable('radius')
+                }
+                scrollablelabel('radius','57') {
+                    channel('radius')
+                    desired(24,-1)
+                    realmin(5)
+                }
+            }
+            panel('','horizontal') {
+                desired(-1,17)
+                label('','高度：')
+                integerfield('miny') {
+                    channel('miny')
+                }
+                integerfield('maxy') {
+                    channel('maxy')
+                }
+            }
+            spacing(0)
+        }
+        panel('','horizontal') {
+            hint(25,42,167,78)
+            widgetlist('players') {
+                bgthickness(-1)
+                bgfilled1(-7631989)
+            }
+            slider {
+                scrollable('players')
+                desired(11,-1)
+            }
+            spacing(1)
+            horizmargin(3)
+        }
+        panel('','horizontal') {
+            hint(26,120,162,16)
+            choicelabel('mode') {
+                channel('mode')
+                desired(40,15)
+                choices {
+                    choice('BL') {
+                        tooltips('列表中的玩家不会受到影响')
+                    }
+                    choice('WL') {
+                        tooltips('列表中的玩家将会受到影响')
+                    }
+                    choice('Mobs') {
+                        tooltips('影响中立与敌对生物','（需要更多能量）')
+                    }
+                    choice('Host') {
+                        tooltips('影响敌对生物','（需要更多能量）')
+                    }
+                    choice('Pass') {
+                        tooltips('影响中立生物','（需要更多能量）')
+                    }
+                    choice('All') {
+                        tooltips('影响所有玩家与生物','（需要更多能量）')
+                    }
+                }
+            }
+            button('add','+') {
+                channel('add')
+                enableon('name')
+                desired(-1,15)
+                tooltips('添加玩家至列表')
+            }
+            button('del','-') {
+                channel('del')
+                enableon('selected')
+                desired(-1,15)
+                tooltips('移除所选玩家')
+            }
+            textfield('name')
+            imagechoicelabel('redstone') {
+                channel('redstone')
+                desired(16,16)
+                image('rftoolsbase:textures/gui/guielements.png')
+                dim(16,0,256,256)
+                choices {
+                    choice('Ignored') {
+                        uv(0,0)
+                        tooltips('红石模式：','忽略')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('Off') {
+                        uv(16,0)
+                        tooltips('红石模式：','低信号')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                    choice('On') {
+                        uv(32,0)
+                        tooltips('红石模式：','高信号')
+                        image('rftoolsbase:textures/gui/guielements.png')
+                    }
+                }
+            }
+            spacing(1)
+            horizmargin(1)
+            vertmargin(0)
+        }
+        energybar('energybar') {
+            hint(8,141,10,76)
+            showtext(false)
+        }
+    }
+}
