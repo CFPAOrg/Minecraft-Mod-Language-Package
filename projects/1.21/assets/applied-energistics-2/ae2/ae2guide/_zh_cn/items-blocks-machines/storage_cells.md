@@ -157,7 +157,7 @@ item_ids:
   </Row>
 </Column>
 
-## 便携物体元件
+## 便携物品元件
 
 它们是口袋版（或者背包版）的<ItemLink id="chest" />。可在<ItemLink id="charger" />中为其充能。
 
