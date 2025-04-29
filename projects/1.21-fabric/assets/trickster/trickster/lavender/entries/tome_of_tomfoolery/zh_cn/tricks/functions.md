@@ -1,17 +1,17 @@
 ```json
 {
-  "title": "法术片段",
+  "title": "法术转离",
   "icon": "minecraft:paper",
-  "category": "trickster:distortions",
+  "category": "trickster:tricks",
   "additional_search_terms": [
-    "宏伟之谋略",
-    "静默之曲变",
-    "器具之谋略",
-    "折叠之曲变",
-    "谨慎之谋略",
-    "奇点之谋略",
-    "供给之曲变",
-    "闭包之谋略"
+    "挂起之转离",
+    "宏伟之转离",
+    "静默之转离",
+    "器具之转离",
+    "折叠之转离",
+    "谨慎之转离",
+    "奇点之转离",
+    "行刑者之转离"
   ]
 }
 ```
@@ -30,7 +30,17 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:execute,title=宏伟之谋略|>
+<|glyph@trickster:templates|trick-id=trickster:delay_execution,title=挂起之技巧|>
+
+[number] -> number
+
+---
+
+将当前法术的执行延迟所给数刻，未指定则延迟一刻。返回延迟量。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:execute,title=宏伟之转离|>
 
 spell, any... -> any
 
@@ -40,7 +50,7 @@ spell, any... -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:execute_same_scope,title=静默之曲变|>
+<|glyph@trickster:templates|trick-id=trickster:execute_same_scope,title=静默之转离|>
 
 spell -> any
 
@@ -50,7 +60,7 @@ spell -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:fork,title=器具之谋略|>
+<|glyph@trickster:templates|trick-id=trickster:fork,title=器具之转离|>
 
 spell, any... -> number
 
@@ -64,7 +74,7 @@ spell, any... -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:fold,title=折叠之曲变|>
+<|glyph@trickster:templates|trick-id=trickster:fold,title=折叠之转离|>
 
 spell, collection, any -> any
 
@@ -90,7 +100,7 @@ any, any, any, collection
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:try_catch,title=谨慎之谋略|>
+<|glyph@trickster:templates|trick-id=trickster:try_catch,title=谨慎之转离|>
 
 spell, spell, any... -> any
 
@@ -100,7 +110,7 @@ spell, spell, any... -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:atomic,title=奇点之谋略|>
+<|glyph@trickster:templates|trick-id=trickster:atomic,title=奇点之转离|>
 
 spell, any... -> any
 
@@ -110,23 +120,13 @@ spell, any... -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:supplier,title=供给之曲变|>
+<|glyph@trickster:templates|trick-id=trickster:kill_thread,title=行刑者之技巧|>
 
-any -> spell
-
----
-
-创建一个新法术片段，其执行结果即是所给参数。
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:closure,title=闭包之谋略|>
-
-spell, {any: any} -> spell
+[number] -> boolean
 
 ---
 
-将所给法术中与所给映射键对应的符记换成其映射的值。
+终止所给法术槽中的法术，若未指定法术槽则终止当前法术。根据成功与否返回布尔值。
 
 ;;;;;
 

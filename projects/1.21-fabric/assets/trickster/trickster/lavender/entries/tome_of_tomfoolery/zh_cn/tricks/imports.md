@@ -2,10 +2,10 @@
 {
   "title": "可重用性",
   "icon": "trickster:top_hat",
-  "category": "trickster:delusions_ingresses",
+  "category": "trickster:tricks",
   "additional_search_terms": [
-    "协助之谋略",
-    "颅骨之谋略"
+    "协助之转离",
+    "颅骨之转离"
   ]
 }
 ```
@@ -17,7 +17,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:import,title=协助之谋略|>
+<|glyph@trickster:templates|trick-id=trickster:import,title=协助之转离|>
 
 item, any... -> any
 
@@ -27,7 +27,7 @@ item, any... -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:import_hat,title=颅骨之谋略|>
+<|glyph@trickster:templates|trick-id=trickster:import_hat,title=颅骨之转离|>
 
 number, any... -> any
 

@@ -1,17 +1,17 @@
 ```json
 {
-  "title": "Spell Fragments",
+  "title": "Spell Deviations",
   "icon": "minecraft:paper",
-  "category": "trickster:distortions",
+  "category": "trickster:tricks",
   "additional_search_terms": [
-    "Grand Stratagem",
-    "Quiet Distortion",
-    "Utensil Stratagem",
-    "Folding Distortion",
-    "Cautious Stratagem",
-    "Stratagem of Singularity",
-    "Supply Distortion",
-    "Closure Stratagem"
+    "Deviation of Suspension",
+    "Grand Deviation",
+    "Quiet Deviation",
+    "Utensil Deviation",
+    "Folding Deviation",
+    "Cautious Deviation",
+    "Deviation of Singularity",
+    "Executioner's Deviation"
   ]
 }
 ```
@@ -34,7 +34,18 @@ using recursion to create what is essentially a loop.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:execute,title=Grand Stratagem|>
+<|glyph@trickster:templates|trick-id=trickster:delay_execution,title=Deviation of Suspension|>
+
+[number] -> number
+
+---
+
+Delays the execution of the current spell by the given number of ticks, or until the next tick. 
+Returns the delay.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:execute,title=Grand Deviation|>
 
 spell, any... -> any
 
@@ -45,7 +56,7 @@ providing it with all other passed in fragments as arguments.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:execute_same_scope,title=Quiet Distortion|>
+<|glyph@trickster:templates|trick-id=trickster:execute_same_scope,title=Quiet Deviation|>
 
 spell -> any
 
@@ -55,7 +66,7 @@ Executes the given spell with the current spell's arguments.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:fork,title=Utensil Stratagem|>
+<|glyph@trickster:templates|trick-id=trickster:fork,title=Utensil Deviation|>
 
 spell, any... -> number
 
@@ -71,7 +82,7 @@ Maps are also collections, though their keys may be any value and aren't automat
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:fold,title=Folding Distortion|>
+<|glyph@trickster:templates|trick-id=trickster:fold,title=Folding Deviation|>
 
 spell, collection, any -> any
 
@@ -98,7 +109,7 @@ The result of each execution is passed as the first argument to the next, where 
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:try_catch,title=Cautious Stratagem|>
+<|glyph@trickster:templates|trick-id=trickster:try_catch,title=Cautious Deviation|>
 
 spell, spell, any... -> any
 
@@ -108,7 +119,7 @@ Attempts to execute the first spell. If it blunders, the second spell is run and
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:atomic,title=Stratagem of Singularity|>
+<|glyph@trickster:templates|trick-id=trickster:atomic,title=Deviation of Singularity|>
 
 spell, any... -> any
 
@@ -118,23 +129,13 @@ Executes the given spell in a single tick, blundering if it's not possible due t
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:supplier,title=Supply Distortion|>
+<|glyph@trickster:templates|trick-id=trickster:kill_thread,title=Executioner's Deviation|>
 
-any -> spell
-
----
-
-Creates a new spell fragment which returns the previously provided fragment when executed.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:closure,title=Closure Stratagem|>
-
-spell, {any: any} -> spell
+[number] -> boolean
 
 ---
 
-Replaces the keys of the map that are in the given spell with the value they map to.
+Ends the spell running in the given spell slot or the current slot if not provided. Returns whether it succeeded.
 
 ;;;;;
 

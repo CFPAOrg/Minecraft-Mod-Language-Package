@@ -83,11 +83,11 @@
 
 <|glyph@trickster:templates|trick-id=trickster:current_thread,title=序数之错觉|>
 
--> number
+-> number | void
 
 ---
 
-返回运行此法术的槽位；若不支持槽位，返回-1。
+返回运行此法术的法术槽；若不支持法术槽，返回void。
 
 ;;;;;
 

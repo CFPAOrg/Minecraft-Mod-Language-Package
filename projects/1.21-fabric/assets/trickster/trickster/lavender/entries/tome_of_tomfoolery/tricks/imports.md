@@ -2,10 +2,10 @@
 {
   "title": "Reusability",
   "icon": "trickster:top_hat",
-  "category": "trickster:delusions_ingresses",
+  "category": "trickster:tricks",
   "additional_search_terms": [
-    "Assistance Stratagem",
-    "Cranium Stratagem"
+    "Assistance Deviation",
+    "Cranium Deviation"
   ]
 }
 ```
@@ -19,7 +19,7 @@ or have other side effects.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:import,title=Assistance Stratagem|>
+<|glyph@trickster:templates|trick-id=trickster:import,title=Assistance Deviation|>
 
 item, any... -> any
 
@@ -30,7 +30,7 @@ The first item found with an inscribed spell will be cast with the provided argu
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:import_hat,title=Cranium Stratagem|>
+<|glyph@trickster:templates|trick-id=trickster:import_hat,title=Cranium Deviation|>
 
 number, any... -> any
 
