@@ -37,7 +37,7 @@ item_ids:
   <BlockImage id="256m_crafting_storage" scale="4" />
 </Row>
 
-与存储元件一样，MEGA还提供了可供合成CPU使用的高等级存储方案。不过，这些方案需要专用版本的<ItemLink id="ae2:crafting_unit" />，以协调它们强大的能力。它们能凭借更大的存储空间轻松处理极大的合成任务，漆黑的外观更是*酷到爆炸*。
+与存储元件一样，MEGA还添加了可供合成CPU使用的高等级存储方案。不过，为协调它们强大的能力，这些方案需要专用版本的<ItemLink id="ae2:crafting_unit" />。此类设备极大的存储空间可让其轻松处理极大的合成任务，它们漆黑的外观更是*酷到爆炸*。
 
 <RecipeFor id="mega_crafting_unit" />
 <RecipeFor id="1m_crafting_storage" />
@@ -46,12 +46,12 @@ item_ids:
 <RecipeFor id="64m_crafting_storage" />
 <RecipeFor id="256m_crafting_storage" />
 
-作为附赠，MEGA提供了MEGA版本的<ItemLink id="ae2:crafting_accelerator" />。每个并行处理单元带来的新并行线程不只一个，而是足足*四*个。
+作为附赠，MEGA添加了MEGA版本的<ItemLink id="ae2:crafting_accelerator" />。每个并行处理单元带来的新并行线程不只一个，而是足足*四*个。
 
 <BlockImage id="mega_crafting_accelerator" scale="4" />
 <RecipeFor id="mega_crafting_accelerator" />
 
-而也是为了补齐全套，MEGA同样提供了MEGA版本的<ItemLink id="ae2:crafting_monitor" />。它的功能和标准的监控器没有区别，不过它确实可以作为先前所提元件的补充，能保证外观风格一致——整个CPU多方块都是时髦的漆黑。
+而也是为了补齐全套，MEGA同样添加了MEGA版本的<ItemLink id="ae2:crafting_monitor" />。它的功能和标准的监控器没有区别，不过它确实可以作为先前所提设备的补充，能保证外观风格一致——整个CPU多方块都是时髦的漆黑。
 
 <BlockImage id="mega_crafting_monitor" scale="4" />
 <RecipeFor id="mega_crafting_monitor" />
@@ -65,7 +65,7 @@ item_ids:
   </GameScene>
 </Row>
 
-**MEGA样板供应器**可协同<ItemLink id="ae2:pattern_provider" />运作；同时，为顺应提供大容量好用AE2设备的潮流，它的样板容量是标准供应器的两倍，也即可存储并处理18个样板。然而，它也因此进行了取舍——它只接受[**处理样板**](ae2:items-blocks-machines/patterns.md)，也就是说，它不太能和<ItemLink id="ae2:molecular_assembler" />一起运作。
+**MEGA样板供应器**可协同<ItemLink id="ae2:pattern_provider" />运作；同时，为顺应提供大容量好用AE2设备的潮流，它的样板容量是标准供应器的两倍，也即可存储并处理18个样板。然而，它也因此进行了功能上的取舍——它只接受[**处理样板**](ae2:items-blocks-machines/patterns.md)。也就是说，它不太能和<ItemLink id="ae2:molecular_assembler" />一起运作。
 
 <Row>
   <RecipeFor id="mega_pattern_provider" />
