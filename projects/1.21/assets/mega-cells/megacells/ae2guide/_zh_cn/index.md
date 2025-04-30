@@ -25,7 +25,7 @@ item_ids:
   <ItemImage id="accumulation_processor" scale="4" />
 </Row>
 
-存储手段的新高峰自然需要新材料。在MEGA基础设施的搭建过程中，最重要的资源就是大量<ItemLink id="ae2:sky_stone_block" />：它们用于和铁、<ItemLink id="ae2:charged_certus_quartz_crystal" />一起制成**陨钢**。水无法胜任此类金属加工，因此制造前需先使用更热的流体熔化它们。
+存储手段的新高峰自然需要新材料。在MEGA基础设施的搭建过程中，最重要的资源就是大量<ItemLink id="ae2:sky_stone_block" />：它可同铁、<ItemLink id="ae2:charged_certus_quartz_crystal" />一起制成**陨钢**。水不足以加工此类金属，因此制造前需先使用更热的流体熔化它们。
 
 <Row>
   <Recipe id="transform/sky_steel_ingot" />
