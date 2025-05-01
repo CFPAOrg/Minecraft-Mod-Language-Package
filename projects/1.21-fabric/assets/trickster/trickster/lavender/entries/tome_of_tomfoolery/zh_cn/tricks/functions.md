@@ -30,7 +30,7 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:delay_execution,title=挂起之技巧|>
+<|glyph@trickster:templates|trick-id=trickster:delay_execution,title=挂起之转离|>
 
 [number] -> number
 
@@ -120,7 +120,7 @@ spell, any... -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:kill_thread,title=行刑者之技巧|>
+<|glyph@trickster:templates|trick-id=trickster:kill_thread,title=行刑者之转离|>
 
 [number] -> boolean
 
