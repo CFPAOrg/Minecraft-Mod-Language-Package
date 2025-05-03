@@ -29,7 +29,7 @@ item_ids:
   <RecipeFor id="radioactive_chemical_cell" />
 </Row>
 
-放射性元件和<ItemLink id="megacells:bulk_item_cell" />较为相似：它只能存储给定的单种放射性化学品，运作前也必须先分区。但两者的相似之处就只有这么多：放射性元件的存储量有限，最多为*256[字节](ae2:ae2-mechanics/bytes-and-types.md)*。不过，这也相当于*2048桶*，或4个放射性废料桶的化学品，实际却只需占用一个元件的空间。
+放射性元件和<ItemLink id="megacells:bulk_item_cell" />较为相似：它只能存储给定的单种放射性化学品，运作前也必须先分区。但两者的相似之处就只有这么多：放射性元件的存储量有限，最多为*256[字节](ae2:ae2-mechanics/bytes-and-types.md)*。不过就算这样，它的容量也相当于*2048桶*，或4个放射性废料桶，实际却只需占用一个元件的空间。
 
 ![装有钋的放射性元件](assets/diagrams/radioactive_cell.png)
 
