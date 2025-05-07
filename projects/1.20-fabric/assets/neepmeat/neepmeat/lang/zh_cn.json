@@ -47,6 +47,7 @@
   "block.neepmeat.blue_polished_metal_wall": "蓝色磨制金属墙",
 
   "block.neepmeat.rusty_metal": "锈蚀金属",
+  "block.neepmeat.rusty_metal_light": "锈蚀金属灯",
   "block.neepmeat.rusty_metal_slab": "锈蚀金属台阶",
   "block.neepmeat.rusty_metal_stairs": "锈蚀金属楼梯",
   "block.neepmeat.rusty_metal_wall": "锈蚀金属墙",
@@ -236,7 +237,7 @@
   "block.neepmeat.smooth_tile_white": "白色平滑石瓦",
 
   "block.neepmeat.fluid_pipe": "流体管道",
-  "block.neepmeat.fluid_pipe.desc": "§7放置在管道或其他方块旁边以进行连接。\n§e按住潜行键放置可不进行连接。§7\n§e空手或手持组织手术器交互可连接或断开连接。§7\n管道只会与同种颜色的管道相连。§e潜行滚动滚轮以循环切换颜色。§7",
+  "block.neepmeat.fluid_pipe.desc": "§7放置在管道或其他方块旁边以进行连接。\n§e按住潜行键放置可不进行连接。§7\n§e空手或手持组织手术器交互可连接或断开连接。§7\n管道只会与同种颜色的管道相连。\n§e潜行滚动滚轮以循环切换颜色。§7",
   "block.neepmeat.encased_fluid_pipe": "包层流体管道",
   "block.neepmeat.encased_fluid_pipe.lore_0": "以方块右击后，其模型和外形都将变为与之相同。",
   "block.neepmeat.fluid_pipe_white": "白色流体管道",
@@ -321,6 +322,8 @@
   "block.neepmeat.delay": "单位延迟器",
   "block.neepmeat.delay.lore_0": "将输入端口收到的信号延迟1刻再写至输出端口。",
   "tooltip.neepmeat.delay.delay": "信号延迟",
+  "block.neepmeat.arithmetic": "算术运算器（未实装）",
+  "block.neepmeat.lore_0": "对§e输入1§7（§eInput 1§7）和§e输入2§7（§eInput 2§7）执行算术运算，并从§e结果§7（§eResult§7）处输出结果。",
   "block.neepmeat.movement_control": "运动控制器",
   "block.neepmeat.movement_control.lore_0": "将玩家的移动输入转换为NEEP总线信号。\n§e交互以激活。\n潜行交互以配置。",
   "block.neepmeat.integrator": "积分器",
@@ -437,6 +440,7 @@
   "block.neepmeat.television_static": "雪花屏电视",
   "block.neepmeat.large_fan": "大型风扇",
   "block.neepmeat.large_fan.lore_0": "3x3装饰性方块。",
+  "block.neepmeat.ceiling_light": "吸顶灯",
 
   "block.neepmeat.big_lever": "大型拉杆",
 
@@ -519,6 +523,7 @@
   "block.neepmeat.robotic_arm.lore_0": "PLC操作机构，功率足够时能高速运作。",
   "block.neepmeat.implanter": "植入器",
   "block.neepmeat.implanter.lore_0": "Lore 0",
+  "block.neepmeat.implanter.no_implant": "无植入物",
   "block.neepmeat.implanter.no_target": "无实体",
   "block.neepmeat.implanter.off_target": "目标偏离",
   "block.neepmeat.implanter.implant_ready": "植入物准备就绪",
@@ -529,7 +534,7 @@
   "block.neepmeat.item_request_receiver": "物品请求监听器",
 
   "block.neepmeat.upgrade_manager": "植入物管理器",
-  "block.neepmeat.upgrade_manager.lore_0": "移除或调整物品和实体的植入物。",
+  "block.neepmeat.upgrade_manager.lore_0": "移除或调整物品和实体的植入物。必须面朝手术站放置。",
 
   "block.neepmeat.small_compressor": "小型压缩机",
   "block.neepmeat.small_compressor.lore_0": "燃烧燃料以压缩空气。驱动16x16x16范围内的凿岩钻。",
@@ -692,7 +697,7 @@
   "block.neepmeat.cronencake": "呻吟蛋糕",
   "block.neepmeat.cronencake.lore_0": "别管那些尖叫。这蛋糕大概没有意识。",
 
-  "item.neepmeat.biomass": "混杂的生物固态物",
+  "item.neepmeat.biomass": "生物固态物糊",
 
   "item.neepmeat.meat_steel_chestplate": "肉钢胸甲",
   "item.neepmeat.meat_steel_legs": "肉钢护腿",
@@ -863,8 +868,8 @@
   "instruction.neepmeat.rfrom.desc": "§6( -- n1 ) ( R: n1 -- )§f\n将返回栈栈顶元素转移到数据栈。",
   "instruction.neepmeat.rfetch.desc": "§6( -- n1 ) ( R: n1 -- n1 )§f\n将返回栈栈顶元素复制到数据栈。",
   "instruction.neepmeat.free.desc": "释放栈顶地址指向的内存空间。",
-  "instruction.neepmeat.store.desc": "将栈顶元素存入PLC的内存。\n将新分配的内存地址压入栈。",
-  "instruction.neepmeat.fetch.desc": "尝试取出栈顶内存地址处的值。\n将取到的值压入栈。\n不会释放内存。",
+  "instruction.neepmeat.store.desc": "§6( n1 地址 -- )§f\n将栈顶元素n1存入PLC内存中所给地址参数处。",
+  "instruction.neepmeat.fetch.desc": "§6( 地址 -- n1 )§f\n尝试取出栈顶内存地址处的值。\n将取到的值压入栈。\n不会释放内存。",
   "instruction.neepmeat.extstore.desc": "将栈顶地址指向的内存项发送至目标方块。\n不会释放内存。\n §6ARG1§f：具有存储栈的方块（世界目标）",
   "instruction.neepmeat.extfetch.desc": "将目标方块存储栈的栈顶项转移到PLC的内存。\n将新分配的内存地址压入栈。\n后续无需使用值时务必用FREE释放内存。\n §6ARG1§f：具有存储栈的方块（世界目标）",
   "instruction.neepmeat.delay.desc": "等待所给数刻。",

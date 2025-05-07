@@ -57,12 +57,6 @@
       {"type": "text", "text": "The Heart Machine consumes Ethereal Fuel through its lower block and injects energy into a vascular network through its upper block. Its greater efficiency allows it to liberate 50% more energy from the Ethereal Fuel than a basic motor would."}
     ]},
 
-    {"id": "mixer", "contents": [
-      {"type": "text", "text": "Mixer\n", "bold": true},
-      {"type": "text", "text": "The Mixer is a two block tall machine that combines fluids and items. It requires a source of rotation to function."},
-      {"type": "text", "text": "\nUsage\n", "bold": true},
-      {"type": "text", "text": "Fluid inputs are taken from any tank that is adjacent to the mixer's lower block. Item inputs must be inserted directly into the machine through hoppers or pipes. Once a valid combination of items and fluids is present, the mixing will begin. The rate of this process is determined by the speed of the connected motor."}
-    ]},
     {"id": "motor", "contents": [
       {"type": "text", "text": "Motor\n", "bold": true},
       {"type": "text", "text": "Arcane artifice, a blessing of the Integrator, allows a motor to convert the subtle efficacies of Ethereal Fuel into mechanical work."},
@@ -144,18 +138,6 @@
       {"type": "text", "text": "This product of the Gland Potato has many exotic properties and is well suited for mineral extraction."},
       {"type": "text", "text": "\nProduction\n", "bold": true},
       {"type": "text", "text": "Blending a gland potato in 333mb of water with a mixer will produce 333mb of Eldritch Enzymes."}
-    ]
-    },
-    {"id": "trommel", "contents": [
-      {"type": "text", "text": "Trommel\n", "bold": true},
-      {"type": "text", "text": "This trommel lifts impurities from fats and meats as others might remove rocks from water. Mundane contaminants remain within the rotating mesh while the desired products drain away.\n"},
-      {"type": "text", "text": "Dirty Ore Fat can be processed in the Trommel for an approximate 150% yield compared to directly pressing dirty fat."},
-      {"type": "text", "text": "Tissue fluid produced via the disassembly of substrate organisms with a Large Mincer or Death Blades can be separated into Refined Meat with an extra chance of Assorted Biological Solids."},
-      {"type": "text", "text": "\nUsage\n", "bold": true},
-      {"type": "text", "text": "Fluid is taken from any container placed top of the nearest block and outputs leave through the bottom of the far end."},
-      {"type": "image", "width": 299, "height": 178, "path": "neepmeat:guide/images/trommel.png"},
-      {"type": "text", "text": "A running motor must be connected for this machine to function."},
-      {"type": "image", "width": 322, "height": 237, "path": "neepmeat:guide/images/trommel_image.png"}
     ]
     },
     {"id": "crucible", "contents": [
@@ -401,31 +383,11 @@
       {"type": "text", "text": "Eggs can be moved in standard ways, such as with water streams and pistons. They can also be picked up as items by hitting them. Immersion in blood will trigger eggs to hatch.\n"}
     ]},
 
-    {"id": "plc", "contents": [
-      {"type": "text", "text": "Programmable Logic Controller\n", "bold": true},
-      {"type": "text", "text": "The PLC is a computer specialised for industrial automation. It can run user-defined programs or run instructions one by one in an interactive mode. Its clock speed is a lightning fast 20Hz."},
-      {"type": "text", "text": "\nRight-clicking on the PLC gives control over its robot."},
-      {"type": "text", "text": "\nUser Interface\n", "bold": true},
-      {"type": "text", "text": "When inside the robot, movement is accomplished using the normal keys. Middle click-dragging rotates the camera."},
-      {"type": "text", "text": "\nThe PLC has two modes: interactive mode and edit mode. The current mode can be switched using the button on the top right of the screen."},
-      {"type": "text", "text": "\nTo execute an instruction in Interactive Mode, select the desired operation from the bottom right panel. Then, click blocks in the world to add them as arguments. When sufficient arguments are provided, an instruction emitted and executed."},
-      {"type": "text", "text": "\nIn Edit Mode, the program is written in the left panel in NEEPASM. More instructions are available in this mode. These are outlined in the bottom right pane."},
-      {"type": "text", "text": "The buttons at the top right of the screen allow programs to be compiled, started and stopped."}
-    ]},
     {"id": "plc_instructions", "contents": [
       {"type": "text", "text": "PLC Instructions\n", "bold": true},
       {"type": "text", "text": "\nInstructions consist of an operation and a series of arguments. These arguments are positions in the world."},
       {"type": "text", "text": "\nInstructions can have a variable number of arguments. Some, such as END and RESTART have zero arguments."},
       {"type": "text", "text": "\nCertain arguments have to meet specific criteria, such as being item or fluid inventories. For example, COMBINE takes one item storage and one item workbench. If an invalid block is selected, the argument will be rejected."}
-    ]},
-    {"id": "plc_workbenches", "contents": [
-      {"type": "text", "text": "PLC Workbenches\n", "bold": true},
-      {"type": "text", "text": "Workbenches allow items and entities to be modified on by a PLC robot."},
-      {"type": "text", "text": "\nExamples:"},
-      {"type": "text", "text": "- Display Platform (item)"},
-      {"type": "text", "text": "- Pedestal (item)"},
-      {"type": "text", "text": "- Surgery Platform (entity)"},
-      {"type": "text", "text": "\nNot all instructions require workbenches. Some operate on normal item or fluid inventories."}
     ]},
     {"id": "neepasm", "contents": [
       {"type": "text", "text": "NEEPASM\n", "bold": true},
@@ -480,23 +442,6 @@
       {"type": "text", "text": "\nAliases can be used to assign names to certain world targets. Aliases are recalled by prefixing their name with '$':\n"},
       {"type": "code", "text": "%alias redstone_input = @(12 32 12 NORTH)"},
       {"type": "code", "text": "rwait $redstone_input  # Wait for redstone"}
-    ]},
-
-    {"id": "implants", "contents": [
-      {"type": "text", "text": "Implants\n", "bold": true},
-      {"type": "text", "text": "Implants provide new abilities to organisms, elevating them beyond the fickle whims of nature."},
-      {"type": "text", "text": "\nExamples:\n"},
-      {"type": "text", "text": "- Extra Knees"},
-      {"type": "text", "text": "- Pineal Eye"},
-      {"type": "text", "text": "- Divine Chrysalis", "strikethrough": true},
-      {"type": "text", "text": "- Lung Extensions"},
-      {"type": "text", "text": "- Extra Mouth"},
-      {"type": "text", "text": "\nImplants are applied to entities using the IMPLANT instruction. The entity must be standing on a Surgery Platform."}
-    ]},
-    {"id": "implant_manager", "contents": [
-      {"type": "text", "text": "Implant Manager\n", "bold": true},
-      {"type": "text", "text": "The Implant Manager allows previously installed implants to be removed."},
-      {"type": "text", "text": "The machine does not require power, but it must face a PLC workbench containing the target item or entity. To remove an implant from an entity, the Implant Manager must be facing a Surgery Platform on which the entity is standing."}
     ]},
 
     {"id": "airtruck", "contents": [
