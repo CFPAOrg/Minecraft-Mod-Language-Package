@@ -10,7 +10,7 @@ navigation:
 
 此设施和[半自动赛特斯石英农场](semiauto-certus-farm.md)差别不多，唯一区别则在于此设施可完全整合入ME系统中。
 
-此设施不需要大量缓存或手动替换母岩，它利用了[充能器自动化](charger-automation.md)和[投水自动化](throw-in-water-automation.md)以自动完成上述任务。
+此设施不需要大量缓存，也无需手动替换母岩，它利用了[充能器自动化](charger-automation.md)和[投水自动化](throw-in-water-automation.md)以自动完成上述任务。
 
 生长速度估计值见[赛特斯石英的生长](../ae2-mechanics/certus-growth.md)。
 

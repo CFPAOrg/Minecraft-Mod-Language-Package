@@ -16,7 +16,7 @@ item_ids:
 
 给网络供给[能量](../ae2-mechanics/energy.md)的基础方法是<ItemLink id="energy_acceptor" />，谐振仓则能直接生成少量到中量的AE。
 
-默认状况下（无[升级](upgrade_cards.md)且处于默认配置），它会产出40AE/t。
+默认状况下（无[升级](upgrade_cards.md)且处于默认配置），它会产出40 AE/t。
 
 网络的[能量](../ae2-mechanics/energy.md)存满时，谐振仓会减缓工作速度以减少燃料消耗，但它不会完全停止工作。
 

@@ -70,13 +70,13 @@ item_ids:
 
 [每类型预先占用量](../ae2-mechanics/bytes-and-types.md)设计为：存有1个类型的元件的容量是存满63个元件的容量的两倍。
 
-| 元件                                     |                       使用1个类型时总容量 |                        使用63个类型时总容量 |
-| ---------------------------------------- | ----------------------------------------: | ------------------------------------------: |
-| <ItemLink id="item_storage_cell_1k" />   |                                     8,128 |                                       4,160 |
-| <ItemLink id="item_storage_cell_4k" />   |                                    32,512 |                                      16,640 |
-| <ItemLink id="item_storage_cell_16k" />  |                                   130,048 |                                      66,560 |
-| <ItemLink id="item_storage_cell_64k" />  |                                   520,192 |                                     266,240 |
-| <ItemLink id="item_storage_cell_256k" /> |                                 2,080,768 |                                   1,064,960 |
+| 元件                                     | 使用1个类型时总容量 | 使用63个类型时总容量 |
+| ---------------------------------------- | ------------------: | -------------------: |
+| <ItemLink id="item_storage_cell_1k" />   |               8,128 |                4,160 |
+| <ItemLink id="item_storage_cell_4k" />   |              32,512 |               16,640 |
+| <ItemLink id="item_storage_cell_16k" />  |             130,048 |               66,560 |
+| <ItemLink id="item_storage_cell_64k" />  |             520,192 |              266,240 |
+| <ItemLink id="item_storage_cell_256k" /> |           2,080,768 |            1,064,960 |
 
 
 ## 分区
@@ -157,7 +157,7 @@ item_ids:
   </Row>
 </Column>
 
-## 便携物体元件
+## 便携物品元件
 
 它们是口袋版（或者背包版）的<ItemLink id="chest" />。可在<ItemLink id="charger" />中为其充能。
 
