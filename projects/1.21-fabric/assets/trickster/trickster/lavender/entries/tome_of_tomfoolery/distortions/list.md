@@ -22,7 +22,7 @@
 Within spells, it is possible to create lists of an arbitrary amount of fragments merged into a single value.
 
 
-Lists are zero indexed.
+Lists are zero indexed. To acquire an empty list constant, see the relevant [revision](^trickster:constants#3).
 
 ;;;;;
 

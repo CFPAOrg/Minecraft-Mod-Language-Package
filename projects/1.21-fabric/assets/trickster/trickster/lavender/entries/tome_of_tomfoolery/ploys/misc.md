@@ -4,27 +4,14 @@
   "icon": "minecraft:iron_ingot",
   "category": "trickster:ploys",
   "additional_search_terms": [
-    "Ploy of Suspension",
     "Ploy of Celestial Pin",
     "Ploy of Clarity",
-    "Ploy of Obfuscation",
-    "Executioner's Ploy"
+    "Ploy of Obfuscation"
   ]
 }
 ```
 
 A few miscellaneous ploys that don't fit into any other category.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:delay_execution,title=Ploy of Suspension|>
-
-[number] -> number
-
----
-
-Delays the execution of the current spell by the given number of ticks, or until the next tick. 
-Returns the delay.
 
 ;;;;;
 
@@ -71,13 +58,3 @@ number -> number
 ---
 
 Immediately clears a bar from the caster's screen identified by the given number.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:kill_thread,title=Executioner's Ploy|>
-
-[number] -> boolean
-
----
-
-Terminates the spell running at the given spell slot, or the current spell if no slot is provided. Returns a boolean based on success.

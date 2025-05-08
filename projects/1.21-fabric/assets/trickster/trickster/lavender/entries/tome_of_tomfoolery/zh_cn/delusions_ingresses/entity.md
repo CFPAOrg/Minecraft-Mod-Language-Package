@@ -17,7 +17,7 @@
     "活力之辑流",
     "体健之辑流",
     "垒墙之辑流",
-    "居形之曲变",
+    "居形之辑流",
     "观察者之辑流"
   ]
 }
@@ -157,7 +157,7 @@ entity -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_scale,title=居形之曲变|>
+<|glyph@trickster:templates|trick-id=trickster:get_scale,title=居形之辑流|>
 
 entity -> number
 

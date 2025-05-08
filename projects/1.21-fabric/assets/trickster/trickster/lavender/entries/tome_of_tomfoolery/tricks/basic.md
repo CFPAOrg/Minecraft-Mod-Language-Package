@@ -8,10 +8,9 @@
     "Notulist's Ploy",
     "Proprietary Notulist's Ploy",
     "Alethophobe's Ploy",
-    "Showcase Stratagem",
+    "Showcase Ploy",
     "Crow Mind Delusion",
-    "Crow Mind Ploy",
-    "Cost Ploy"
+    "Crow Mind Ploy"
   ]
 }
 ```
@@ -72,7 +71,7 @@ Clears any fragment inscribed onto the item in the given slot or in the caster's
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:reveal,title=Showcase Stratagem|>
+<|glyph@trickster:templates|trick-id=trickster:reveal,title=Showcase Ploy|>
 
 any... -> any
 
@@ -110,20 +109,3 @@ any -> any
 Stores the supplied value in the caster's Crow Mind, overwriting any value that might already be present.
 
 ;;;;;
-
-<|page-title@lavender:book_components|title=Note: Casting Cost|>After receiving multiple complaints at Tomfoolery Inc. HQ about the balance of this mod,
-we've decided to properly implement material spell casting costs.
-
-
-However, player freedom and choice is also very important to us.
-As such, this system operates on an opt-in basis.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:cost,title=Cost Ploy|>
-
-->
-
----
-
-Consumes one amethyst shard from the caster's inventory. Will blunder if none are available.

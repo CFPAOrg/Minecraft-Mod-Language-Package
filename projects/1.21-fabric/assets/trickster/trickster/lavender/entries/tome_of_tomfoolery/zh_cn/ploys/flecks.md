@@ -43,11 +43,11 @@
 
 <|glyph@trickster:templates|trick-id=trickster:draw_spell,title=营销员之技巧|>
 
-number, vector, vector, spell, [entity[] | entity] -> number
+number, vector, vector, spell, [number], [entity[] | entity] -> number
 
 ---
 
-在所给位置以所给朝向显示所给法术。
+在所给位置以所给朝向显示所给法术，缩放参数可选。
 
 ;;;;;
 

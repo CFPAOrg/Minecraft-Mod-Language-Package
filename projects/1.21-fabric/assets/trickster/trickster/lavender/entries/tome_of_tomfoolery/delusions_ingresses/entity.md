@@ -17,7 +17,7 @@
     "Vigor Ingress",
     "Fettle Ingress",
     "Bulwark Ingress",
-    "Distortion of Occupation",
+    "Ingress of Occupation",
     "Observer's Ingress"
   ]
 }
@@ -157,7 +157,7 @@ Given an entity, returns its total armor value.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_scale,title=Distortion of Occupation|>
+<|glyph@trickster:templates|trick-id=trickster:get_scale,title=Ingress of Occupation|>
 
 entity -> number
 
