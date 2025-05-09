@@ -112,7 +112,7 @@ from smallest to largest.
 ![Bulk cell with compression enabled](assets/diagrams/bulk_cell_compressed_1.png)
 
 ![Compression-enabled bulk cell contents](assets/diagrams/bulk_cell_compressed_2.png)
-![Compression-enabled bulk cell contents (+ AllTheCompressed)](assets/diagrams/bulk_cell_compressed_2.png)
+![Compression-enabled bulk cell contents (+ AllTheCompressed)](assets/diagrams/bulk_cell_compressed_3.png)
 
 In order for this mechanic to work, a Bulk Cell internally only keeps track of its actual "quantity" as the amount of
 the smallest possible "unit" item that the resource can be crafted down into — typically either a metal nugget, a gem
@@ -138,10 +138,10 @@ right-clicking cycles backwards towards higher and higher compressed variants.
 When Compression is enabled on a cell, the "filter mismatch" behaviour becomes a bit more lenient: the cell effectively
 "remembers" what chain it needs to work with based on the item it has already been made to store, and if its filter is
 accidentally removed somehow, it can be replaced with any of the associated variants rather than the specific variant
-previously used as a filter. Furthermore, for the purposes of error correction in the event that some variant smaller
-than the item configured onto the cell is added, removed or replaced, the current "unit factor" — i.e. how many "units"
-will fit in total into one instance of the configured "variant" item — is also stored and tracked, updating accordingly
-when the overall chain for these variants sees such a change.
+previously used as a filter. Furthermore, for the purposes of error correction, in the event that any crafting recipes
+for some variant smaller than the item configured onto the cell are added, removed or replaced, the current "unit
+factor" — i.e. how many "units" will fit in total into one instance of the configured "variant" item — is also stored
+and tracked, updating accordingly when the overall chain for these variants sees such a change.
 
 As a last resort, if in some worst-case scenario a bulk cell is totally bricked regardless of the filter (re-)applied to
 it and enters the aforementioned "recovery" mode, any smaller trace variants will be able to be recovered alongside the
