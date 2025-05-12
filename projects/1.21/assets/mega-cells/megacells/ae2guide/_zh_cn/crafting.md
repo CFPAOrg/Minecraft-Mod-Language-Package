@@ -37,7 +37,7 @@ item_ids:
   <BlockImage id="256m_crafting_storage" scale="4" />
 </Row>
 
-与存储元件一样，MEGA还添加了可供合成CPU使用的高等级存储方案。不过，为协调它们强大的能力，这些方案需要专用版本的<ItemLink id="ae2:crafting_unit" />。此类设备极大的存储空间可让其轻松处理极大的合成任务，它们漆黑的外观更是*酷到爆炸*。
+与存储元件一样，MEGA还添加了可供合成CPU使用的高等级存储方案。不过，为协调它们强大的能力，这些方案需要专用版本的<ItemLink id="ae2:crafting_unit" />。此类设备极大的存储空间足够轻松处理极大的合成任务，它们漆黑的外观更是*酷到爆炸*。
 
 <RecipeFor id="mega_crafting_unit" />
 <RecipeFor id="1m_crafting_storage" />

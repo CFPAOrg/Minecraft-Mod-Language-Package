@@ -118,7 +118,7 @@ item_ids:
   <Recipe id="cells/standard/item_storage_cell_1m_with_housing" />
 </Row>
 
-流体和其他各种事物都有专门的元件外壳。而实践表明，陨石的性能足够强大，它与其他材料合金所得的材料可以用来制造这些外壳；譬如，制造流体元件外壳所需的**陨青铜**即是由铜合金而来。即使是本指南未能涵盖的事物，MEGA也有可能支持，且有专门为其设计的元件和元件外壳。
+流体和其他各种事物都有专门的元件外壳。而实践表明，陨石的性能足够强大，它与其他材料合金所得的材料可以用来制造这些外壳；譬如，制造流体元件外壳所需的**陨青铜**即是与铜合金而来。即使是本指南未能涵盖的事物，MEGA也有可能支持，且有专门为其设计的元件和元件外壳。
 
 <Row>
   <ItemImage id="sky_bronze_ingot" scale="4" />
@@ -137,7 +137,7 @@ item_ids:
 
 ## MEGA[便携元件](ae2:items-blocks-machines/storage_cells.md#便携物品元件)
 
-MEGA的所有元件均有对应的便携版本，和AE2自身一样，不过这些元件的大容量需要的能量相对较多。因此，合成这些元件时用到的是<ItemLink id="ae2:dense_energy_cell" />，而非常规的<ItemLink id="ae2:energy_cell" />。
+MEGA的所有元件均有对应的便携版本，和AE2自身一样；不过这些元件的大容量需要的能量相对较多。因此，合成这些元件时用到的是<ItemLink id="ae2:dense_energy_cell" />，而非常规的<ItemLink id="ae2:energy_cell" />。
 
 虽然此类便携元件同样支持适用于常规ME便携元件的所有[升级](ae2:items-blocks-machines/upgrade_cards.md)，但就它们较大的能量容量和消耗量而言，常规的<ItemLink id="ae2:energy_card" />*不太*足够。相应的功能则只有<ItemLink id="megacells:greater_energy_card" />能实现。
 
