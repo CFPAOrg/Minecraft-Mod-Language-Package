@@ -48,6 +48,7 @@
 
   "block.neepmeat.rusty_metal": "锈蚀金属",
   "block.neepmeat.rusty_metal_light": "锈蚀金属灯",
+  "block.neepmeat.rusty_metal_light.lore_0": "潜行交互以打开和关闭。",
   "block.neepmeat.rusty_metal_slab": "锈蚀金属台阶",
   "block.neepmeat.rusty_metal_stairs": "锈蚀金属楼梯",
   "block.neepmeat.rusty_metal_wall": "锈蚀金属墙",
@@ -441,6 +442,7 @@
   "block.neepmeat.large_fan": "大型风扇",
   "block.neepmeat.large_fan.lore_0": "3x3装饰性方块。",
   "block.neepmeat.ceiling_light": "吸顶灯",
+  "block.neepmeat.ceiling_light.lore_0": "潜行交互以打开和关闭。",
 
   "block.neepmeat.big_lever": "大型拉杆",
 
@@ -511,6 +513,7 @@
   "block.neepmeat.pylon": "启智尖塔",
 
   "block.neepmeat.synthesiser": "精卵合成机",
+  "block.neepmeat.synthesiser.lore_0": "供应肉浆以复制生物。\n§e对其使用需复制的生物的精盐以放入。\n可被红石禁用。",
 
   "block.neepmeat.fluid_rationer": "流体配给器",
   "block.neepmeat.fluid_rationer.lore_0": "从面向的储罐取出特定量流体，再主动输出到相连的管道网络。\n能够从装满的炼药锅中抽出整桶流体。",
@@ -784,7 +787,7 @@
   "item.neepmeat.essential_saltes.lore_0": "用于精卵合成机以复制生物体。",
   "item.neepmeat.essential_saltes.meat": "所需肉浆：%s",
   "item.neepmeat.mob_egg": "生物卵：%s",
-  "item.neepmeat.mob_egg.lore_0": "必须浸泡在血液中才会孵化。",
+  "item.neepmeat.mob_egg.lore_0": "浸泡在血液中，或由PLC注入血液才会孵化。",
 
   "item.neepmeat.compound_injector": "化合物注射器",
   "item.neepmeat.compound_injector_lore_0": "使用时回复4颗心。",
@@ -826,6 +829,12 @@
   "item.neepmeat.lung_extensions": "肺延长",
   "implant.neepmeat.lung_extensions": "肺延长",
   "implant.neepmeat.lung_extensions.desc_0": "喊得更久！呼吸更猛！显摆你的大肺吧！",
+  "item.neepmeat.claws": "手刀",
+  "implant.neepmeat.claws": "手刀",
+  "implant.neepmeat.claws.desc_0": "空手时攻击伤害+4。",
+  "item.neepmeat.cat_ears": "猫耳",
+  "implant.neepmeat.cat_ears": "猫耳",
+  "implant.neepmeat.cat_ears.desc_0": "喵~",
   "item.neepmeat.spider_legs": "六足虫",
   "implant.neepmeat.spider_legs": "六足虫",
   "implant.neepmeat.spider_legs.desc_0": "增加速度，让完整方块上的移动更丝滑。",
@@ -833,6 +842,7 @@
   "hexapod_skin.neepmeat.th_0": "跨性别袜",
   "hexapod_skin.neepmeat.th_1": "原创节目袜",
   "hexapod_skin.neepmeat.black_boots": "黑靴子",
+  "implant.neepmeat.explosive": "中枢神经系统控爆爆炸物",
 
   "item.neepmeat.shield": "护盾附加",
   "implant.neepmeat.shield": "护盾附加",
@@ -912,7 +922,7 @@
   "instruction.neepmeat.neepbus_read.desc": "读取相连NEEP总线网络中所给地址处设备的值。\n §6ARG1§f：目标地址（字符串）",
   "instruction.neepmeat.route.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会从给定§6管道§f和§6输入方向§f运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将操作成功与否压入栈。\n §6ARG1§f：输入管道（世界目标）\n §6ARG2§f：输出管道（世界目标）\n §6ARG3§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.request.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会通过管道网络运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将请求成功与否压入栈。\n §6ARG1§f：输出管道（世界目标）\n §6ARG2§f：物品ID（字符串，通配符为“*”）",
-  "instruction.neepmeat.count.desc": "统计所给世界目标处物品的数量，并压入栈。若指定物品ID，则只会统计该类型的物品。\n §6ARG1§f：存储空间（世界目标）\n §6ARG2§f：物品ID（字符串，可选）",
+  "instruction.neepmeat.count.desc": "统计所给世界目标处物品或流体的数量，并压入栈。\n具体统计何种类型的资源由可选的第二参数指定。\n若指定ID，则只会统计匹配该ID的物品或流体。“*”代表任意字符串（如“*:water”和“minecraft:*”）。\n §6ARG1§f：存储空间（世界目标）§6\n §6ARG2§f：需统计的类型（ITEM或FLUID，可选）\n §6ARG3§f：物品ID或流体ID（字符串，可选）",
 
   "category.neepmeat.instruction.arithmetic": "算术",
   "category.neepmeat.instruction.comparison": "比较",

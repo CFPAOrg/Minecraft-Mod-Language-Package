@@ -9,10 +9,13 @@ Implants provide new abilities to organisms, elevating them beyond the fickle wh
 ## Examples:
 
 - Extra Knees
-- Pineal Eye
-~~- Divine Chrysalis~~
-- Lung Extensions
 - Extra Mouth
+~~- Divine Chrysalis~~
+- Hand Glaives
+- Lung Extensions
+- Pineal Eye
+- TNT (CNS-Wired Explosives)
+- Cat Ears
 
 ## Usage
 

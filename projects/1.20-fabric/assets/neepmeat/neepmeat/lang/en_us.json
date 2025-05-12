@@ -48,6 +48,7 @@
 
   "block.neepmeat.rusty_metal": "Rusty Metal",
   "block.neepmeat.rusty_metal_light": "Rusty Metal Light",
+  "block.neepmeat.rusty_metal_light.lore_0": "Sneak-use to toggle.",
   "block.neepmeat.rusty_metal_slab": "Rusty Metal Slab",
   "block.neepmeat.rusty_metal_stairs": "Rusty Metal Stairs",
   "block.neepmeat.rusty_metal_wall": "Rusty Metal Wall",
@@ -441,6 +442,7 @@
   "block.neepmeat.large_fan": "Large Fan",
   "block.neepmeat.large_fan.lore_0": "3x3 Decoration block.",
   "block.neepmeat.ceiling_light": "Ceiling Light",
+  "block.neepmeat.ceiling_light.lore_0": "Sneak-use to toggle.",
 
   "block.neepmeat.big_lever": "Big Lever",
 
@@ -511,6 +513,7 @@
   "block.neepmeat.pylon": "Pylon",
 
   "block.neepmeat.synthesiser": "Oviparous Synthesiser",
+  "block.neepmeat.synthesiser.lore_0": "Replicates mobs when supplied with meat.\n§eUse with the desired mob's Essential Saltes to insert them.\nCan be disabled with redstone.",
 
   "block.neepmeat.fluid_rationer": "Fluid Rationer",
   "block.neepmeat.fluid_rationer.lore_0": "Ejects discrete fluid amounts from the facing storage into a pipe network.\nCan also extract buckets of fluid from full cauldrons.",
@@ -784,7 +787,7 @@
   "item.neepmeat.essential_saltes.lore_0": "Use in a Synthesiser to replicate an organism.",
   "item.neepmeat.essential_saltes.meat": "Biomass required: %s",
   "item.neepmeat.mob_egg": "Mob Egg: %s",
-  "item.neepmeat.mob_egg.lore_0": "Must be immersed in blood in order to hatch.",
+  "item.neepmeat.mob_egg.lore_0": "Hatches when immersed in blood or injected with blood by a PLC.",
 
   "item.neepmeat.compound_injector": "Compound Injector",
   "item.neepmeat.compound_injector_lore_0": "Heals 4 hearts when used.",
@@ -826,6 +829,12 @@
   "item.neepmeat.lung_extensions": "Lung Extensions",
   "implant.neepmeat.lung_extensions": "Lung Extensions",
   "implant.neepmeat.lung_extensions.desc_0": "Scream LONGER. Breathe HARDER. Brag about EXTENDED LUNGS.",
+  "item.neepmeat.claws": "Hand Glaives",
+  "implant.neepmeat.claws": "Hand Glaives",
+  "implant.neepmeat.claws.desc_0": "Gives +4 attack damage when holding nothing.",
+  "item.neepmeat.cat_ears": "Cat Ears",
+  "implant.neepmeat.cat_ears": "Cat Ears",
+  "implant.neepmeat.cat_ears.desc_0": "Nyaaa",
   "item.neepmeat.spider_legs": "Hexapod",
   "implant.neepmeat.spider_legs": "Hexapod",
   "implant.neepmeat.spider_legs.desc_0": "Increases speed and gives smoother traversal over full blocks.",
@@ -833,6 +842,7 @@
   "hexapod_skin.neepmeat.th_0": "Trans Socks",
   "hexapod_skin.neepmeat.th_1": "Original Programming Socks",
   "hexapod_skin.neepmeat.black_boots": "Black boots",
+  "implant.neepmeat.explosive": "CNS-Wired Explosives",
 
   "item.neepmeat.shield": "Shield Attachment",
   "implant.neepmeat.shield": "Shield Attachment",
@@ -912,7 +922,7 @@
   "instruction.neepmeat.neepbus_read.desc": "Reads the value of a device with the specified address in a connected NEEPBus network.\n §6ARG1§f: target address (string)",
   "instruction.neepmeat.route.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed from a given §6pipe§f and §6input direction§f to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the operation is pushed to the stack.\n §6ARG1§f: input pipe (world target)\n §6ARG2§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.request.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed through a pipe network to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the request is pushed to the stack.\n §6ARG1§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
-  "instruction.neepmeat.count.desc": "Counts the items at the given world target and pushes the result to the stack. If an item ID is provided, only items of that type will be counted.\n §6ARG1§f: inventory (world target)\n §6ARG2§f: item ID (string, optional)",
+  "instruction.neepmeat.count.desc": "Counts the items or fluid at the given world target and pushes the result to the stack.\nThe type of resource to count is optionally specified in the second argument.\nIf an ID is provided, only items/fluids of that that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: inventory (world target)§6\n §6ARG2§f: type to count (ITEM or FLUID, optional)\n §6ARG3§f: item or fluid ID (string, optional)",
 
   "category.neepmeat.instruction.arithmetic": "Arithmetic",
   "category.neepmeat.instruction.comparison": "Comparison",
