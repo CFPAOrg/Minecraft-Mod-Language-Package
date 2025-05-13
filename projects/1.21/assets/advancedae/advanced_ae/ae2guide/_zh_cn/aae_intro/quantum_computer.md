@@ -43,13 +43,13 @@ item_ids:
 
 <BlockImage id="advanced_ae:data_entangler" scale="4"></BlockImage>
 
-数据纠缠器是一种特殊方块，会影响多方块结构中所有的存储方块。它可让数据存储于多个维度，相当于让存储空间变成了原来的4倍。每个量子计算机多方块结构中只能存在一个此方块。
+数据纠缠器是一种特殊方块，会影响多方块结构中的所有存储方块。它可让数据存储于多个维度，相当于让存储空间变成了原来的4倍。每个量子计算机多方块结构中只能存在一个此方块。
 
 ## 量子计算机加速器
 
 <BlockImage id="advanced_ae:quantum_accelerator" scale="4"></BlockImage>
 
-量子计算机加速再为量子计算机多方块增加8个并行处理线程。需注意，量子计算机执行的所有样板共享所有并行线程，最好多准备些这种方块。
+量子计算机加速器可为量子计算机多方块增加8个并行处理线程。需注意，量子计算机执行的所有样板共享所有并行线程，最好多准备些这种方块。
 
 ## 量子计算机多线程处理器
 
@@ -73,8 +73,8 @@ item_ids:
 - 最大尺寸为7x7x7（外部尺寸）
 - 结构内部不允许存在空腔，可用<ItemLink id="advanced_ae:quantum_unit" />填补，但这么做不会增强计算机的性能
 - 有且仅有一个<ItemLink id="advanced_ae:quantum_core" />
-- 至少一个<ItemLink id="advanced_ae:data_entangler" />
-- 至少一个<ItemLink id="advanced_ae:quantum_multi_threader" />
+- 至多一个<ItemLink id="advanced_ae:data_entangler" />
+- 至多一个<ItemLink id="advanced_ae:quantum_multi_threader" />
 - 最外层的方块必须均为<ItemLink id="advanced_ae:quantum_structure" />
 - 内部的方块不允许为<ItemLink id="advanced_ae:quantum_structure" />
 

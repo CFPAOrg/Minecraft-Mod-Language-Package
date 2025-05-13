@@ -50,7 +50,7 @@ item_ids:
 * <ItemLink id="advanced_ae:quantum_leggings" />
 * <ItemLink id="advanced_ae:quantum_boots" />
 
-你可曾想过把AE系统穿在身上？很好，现在就让你的幻想成真。量子装甲是高科技的神秘盔甲，能与AE2系统相连，让你随时随地访问网络！默认情况下，它由能量驱动，防御能力可与下界合金盔甲媲美。它可用能量缓存制造能量盾，足以吸收大量伤害。量子靴子还能抵消摔落伤害，而胸甲则可免去飞行时的挖掘速度惩罚。不过，它的真正力量还需升级来解锁！
+你可曾想过把AE系统穿在身上？很好，现在就让你的幻想成真。量子装甲是高科技的神奇盔甲，能与AE2系统相连，让你随时随地访问网络！默认情况下，它由能量驱动，防御能力可与下界合金盔甲媲美。它可用能量缓存制造能量盾，足以吸收大量伤害。量子靴子还能抵消摔落伤害，而胸甲则可免去飞行时的挖掘速度惩罚。不过，它的真正力量还需升级来解锁！
 
 <br/>
 
@@ -74,7 +74,7 @@ item_ids:
 
 <ItemImage id="advanced_ae:quantum_upgrade_base" scale="2"></ItemImage>
 
-<ItemLink id="advanced_ae:quantum_upgrade_base" />仅凭自己没有太大用处，但它是合成所有升级卡的原材料。
+<ItemLink id="advanced_ae:quantum_upgrade_base" />自身没有太大用处，但它是合成所有升级卡的原材料。
 
 <br/>
 
@@ -90,11 +90,11 @@ item_ids:
 
 <ItemImage id="advanced_ae:auto_stock_card" scale="2"></ItemImage>
 
-<ItemLink id="advanced_ae:auto_stock_card" />同样需要部件与AE2网络建立连接且处于访问点范围之内。它能将玩家物品栏中的少数几种物品维持在一定的数量。这些配置槽不只能存下一组物品，如果真有需求，可以让它维持多于一组的物品。
+<ItemLink id="advanced_ae:auto_stock_card" />同样需要所在盔甲与AE2网络建立连接，且处于访问点范围之内。它能将玩家物品栏中的少数几种物品维持在一定的数量。这些配置槽不只能存下一组物品，如果真有需求，可以让它维持多于一组的物品。
 
 <br/>
 
-## 速度卡
+## 各类速度卡
 
 <Row gap="10">
 <ItemImage id="advanced_ae:walk_speed_card" scale="2"></ItemImage>
@@ -106,7 +106,7 @@ item_ids:
 * <ItemLink id="advanced_ae:sprint_speed_card" />
 * <ItemLink id="advanced_ae:swim_speed_card" />
 
-这些升级卡能提升穿戴者的移动速度，具体多快均可配置，也可修改潜行和飞行时的移动能力。需注意，如果还有其他加快速度的效果，可将这些升级改为减慢速度，方便控制。
+这些升级卡能提升穿戴者的移动速度，具体多快均可配置，也会修改潜行和飞行时的移动能力。需注意，如果已经有了其他加快速度的效果，可将这些升级改为减慢速度，方便控制。
 
 <br/>
 
@@ -120,11 +120,11 @@ item_ids:
 * <ItemLink id="advanced_ae:jump_height_card" />
 * <ItemLink id="advanced_ae:step_assist_card" />
 
-这些升级会影响垂直方向的移动能力，可借此跳得更高或是步伐更高。
+这些升级会影响垂直方向的移动能力，可借此跳得更高或是提高步伐高度。
 
 <br/>
 
-## 飞行卡
+## 各类飞行卡
 
 <Row gap="10">
 <ItemImage id="advanced_ae:flight_card" scale="2"></ItemImage>
@@ -149,7 +149,7 @@ item_ids:
 
 <br/>
 
-## 便携式元件工作台
+## 便携式元件工作台卡
 
 <ItemImage id="advanced_ae:portable_workbench_card" scale="2"></ItemImage>
 
@@ -161,11 +161,11 @@ item_ids:
 
 <ItemImage id="advanced_ae:pick_craft_card" scale="2"></ItemImage>
 
-<ItemLink id="advanced_ae:pick_craft_card" />为盔甲加入了一个新键位，按下即可让ME网络开始尝试合成玩家所看的方块。需与AE2网络相连且身处访问点范围内。符合条件时会弹出界面，要求输入合成数量，后续步骤与普通的自动合成请求完全一致。
+<ItemLink id="advanced_ae:pick_craft_card" />为盔甲加入了一个新键位，按下即可让ME网络开始尝试合成玩家所看的方块。盔甲需与AE2网络相连且身处访问点范围内。符合条件时会弹出界面，要求输入合成数量，后续步骤与普通的自动合成请求完全一致。
 
 <br/>
 
-## 实用卡
+## 各类实用卡
 
 <Row gap="10">
 <ItemImage id="advanced_ae:night_vision_card" scale="2"></ItemImage>
@@ -183,7 +183,7 @@ item_ids:
 
 <br/>
 
-## 防御卡
+## 各类防御功能卡
 
 <Row gap="10">
 <ItemImage id="advanced_ae:hp_buffer_card" scale="2"></ItemImage>
@@ -195,11 +195,11 @@ item_ids:
 * <ItemLink id="advanced_ae:regeneration_card" />
 * <ItemLink id="advanced_ae:evasion_card" />
 
-这些升级能提供多种防御性能。生命值提升卡可提升生命值上限，再生卡可增加生命值恢复的速度。闪避卡则有概率完全免疫任意来源的伤害。
+这些升级能提升多种防御能力。生命值提升卡可提升生命值上限，再生卡可增加生命值恢复的速度。闪避卡则有概率完全免疫任意来源的伤害。
 
 <br/>
 
-## 进攻卡
+## 各类进攻功能卡
 
 <Row gap="10">
 <ItemImage id="advanced_ae:strength_card" scale="2"></ItemImage>
@@ -213,7 +213,7 @@ item_ids:
 
 <br/>
 
-## 数值属性卡
+## 各类数值属性卡
 
 <Row gap="10">
 <ItemImage id="advanced_ae:luck_card" scale="2"></ItemImage>

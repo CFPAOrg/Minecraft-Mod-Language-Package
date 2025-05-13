@@ -18,7 +18,7 @@ item_ids:
 
 <ItemImage id="advanced_ae:adv_pattern_provider_upgrade" scale="3"></ItemImage>
 
-此升级需用于AE的普通样板供应器和ExtendedAE的扩展样板供应器，可将它们升级为高级版本，同时保留先前的槽位数量。也即，这种升级操作不用破费完全升级需耗去的材料。
+此升级需用于AE的普通样板供应器和AE2扩展（ExtendedAE）的扩展样板供应器，可将它们升级为高级版本，同时保留先前的槽位数量。也即，这种升级操作不用破费完全升级本应耗去的材料。
 
 ## 高级样板供应器容量升级
 
