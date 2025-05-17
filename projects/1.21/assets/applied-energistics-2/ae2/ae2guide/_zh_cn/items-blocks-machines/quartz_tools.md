@@ -45,7 +45,7 @@ item_ids:
   <ItemImage id="nether_quartz_sword" scale="4" />
 </Row>
 
-石英工具与铁工具完全一致，两者的攻击伤害、耐久度、挖掘速度等均完全一致。有下界石英和[赛特斯石英](fluix_crystal.md)的变种。
+石英工具与铁工具完全一致：两者的攻击伤害、耐久度、挖掘速度等均完全一致。有下界石英和[赛特斯石英](fluix_crystal.md)的变种。
 
 ## 配方
 
