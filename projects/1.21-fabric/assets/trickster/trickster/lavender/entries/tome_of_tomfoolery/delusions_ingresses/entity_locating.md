@@ -10,23 +10,23 @@
 }
 ```
 
-Tricks to help find and target entities in the world.
+Tricks to help find and target entities in the world. May be optionally restricted by entity types.
 
 ;;;;;
 
 <|glyph@trickster:templates|trick-id=trickster:block_find_entity,title=Embracing Ingress|>
 
-vector, [entity_type] -> entity
+vector, entity_type... | entity_type[] -> entity
 
 ---
 
-Finds an entity at a specific block position, optionally restricted by entity type.
+Finds an entity at a specific block position.
 
 ;;;;;
 
 <|glyph@trickster:templates|trick-id=trickster:range_find_entity,title=Ingress of Shared Fate|>
 
-vector, number, [entity_type] -> entity[]
+vector, number, entity_type... | entity_type[] -> entity[]
 
 ---
 

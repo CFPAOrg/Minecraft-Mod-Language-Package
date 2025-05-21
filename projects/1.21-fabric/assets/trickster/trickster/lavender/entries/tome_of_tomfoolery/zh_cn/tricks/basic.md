@@ -4,7 +4,7 @@
   "icon": "minecraft:bricks",
   "category": "trickster:tricks",
   "additional_search_terms": [
-    "记事员之错觉",
+    "记事员之辑流",
     "记事员之技巧",
     "禁文记事员之技巧",
     "畏真者之技巧",
@@ -26,13 +26,13 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:read_spell,title=记事员之错觉|>
+<|glyph@trickster:templates|trick-id=trickster:read_spell,title=记事员之辑流|>
 
--> any
+[slot] -> any
 
 ---
 
-若施法者另一只手中物品抄有法术片段，则返回该片段；否则返回void。
+从给定槽位或施法者副手中的物品读出法术片段；若无片段则返回void。
 
 ;;;;;
 

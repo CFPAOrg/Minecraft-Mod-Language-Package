@@ -18,7 +18,9 @@
     "Fettle Ingress",
     "Bulwark Ingress",
     "Ingress of Occupation",
-    "Observer's Ingress"
+    "Observer's Ingress",
+    "Ingress of Appetite",
+    "Ingress of Fulfilment"
   ]
 }
 ```
@@ -174,3 +176,23 @@ Returns the scale of the given entity.
 ---
 
 Returns the identifiers of all the flecks the caster or the given player can see.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:get_player_food,title=Ingress of Appetite|>
+
+entity -> number
+
+---
+
+Given a player, returns their current food level.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:get_player_saturation,title=Ingress of Fulfilment|>
+
+entity -> number
+
+---
+
+Given a player, returns their current saturation.
