@@ -4,7 +4,7 @@
   "icon": "minecraft:bricks",
   "category": "trickster:tricks",
   "additional_search_terms": [
-    "Notulist's Delusion",
+    "Notulist's Ingress",
     "Notulist's Ploy",
     "Proprietary Notulist's Ploy",
     "Alethophobe's Ploy",
@@ -29,14 +29,14 @@ Some items may have additional interactions when inscribed with fragments,
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:read_spell,title=Notulist's Delusion|>
+<|glyph@trickster:templates|trick-id=trickster:read_spell,title=Notulist's Ingress|>
 
--> any
+[slot] -> any
 
 ---
 
-If the item in the caster's other hand contains an inscribed fragment, returns the fragment.
-If not, returns void.
+Reads the fragment from the item in the given slot or in the caster's offhand.
+Returns void if there is none.
 
 ;;;;;
 
