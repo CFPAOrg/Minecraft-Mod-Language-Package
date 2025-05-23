@@ -20,7 +20,7 @@ item_ids:
 </GameScene>
 </Row>
 
-能源接收器会将其他科技模组的常见能量系统转换为AE2内部使用的[能量](../ae2-mechanics/energy.md)，AE。虽然<ItemLink id="controller" />也能做到这一点，但控制器的面非常珍贵，一般还是推荐使用能源接收器。
+能源接收器会将其他科技模组的常见能量系统转换为AE2内部使用的[能量](../ae2-mechanics/energy.md)——AE。虽然<ItemLink id="controller" />也能做到这一点，但控制器的面非常珍贵，一般还是推荐使用能源接收器。
 
 Forge Energy与Techreborn Energy的转换比为
 
@@ -31,7 +31,7 @@ Forge Energy与Techreborn Energy的转换比为
 
 ## 变种
 
-能源接收器有2种变种：普通、面板/[子部件](../ae2-mechanics/cable-subparts.md)，便于设计紧凑设施。
+能源接收器有2种变种——普通、面板/[子部件](../ae2-mechanics/cable-subparts.md)，便于设计紧凑设施。
 
 能源接收器的普通和面板形态可在合成方格中转换。
 
