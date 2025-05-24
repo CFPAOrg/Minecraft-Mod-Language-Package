@@ -2,18 +2,16 @@
 navigation:
   parent: crazyae2addons_index.md
   title: 电路样板供应器
-  icon: crazyae2addons:circuited_pattern_provider
+  icon: ae2:pattern_provider
 categories:
   - Crafting and Patterns
-item_ids:
-  - crazyae2addons:circuited_pattern_provider
 ---
 
 # 电路样板供应器
 
-<BlockImage id="crazyae2addons:circuited_pattern_provider" scale="4"></BlockImage>
-
 # 只会在安装有格雷科技（GregTech）时出现。
+
+# **此方块本身已被删除，它的功能现可用任意一种样板供应器实现！**
 
 电路样板供应器是AE2样板供应器的平替。它有一项额外功能：在其中使用带有`circuit`标签（由疯狂样板修改工具设置）时，样板供应器会在合成之前，将该编号的编程电路载入所有与之相连的格雷科技机器。
 
