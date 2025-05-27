@@ -19,7 +19,7 @@ item_ids:
   <ItemImage id="annihilation_core" scale="4" />
 </Row>
 
-这些是AE2输入输出[设备](../ae2-mechanics/devices.md)的基础组件。其中的<ItemLink id="fluix_crystal" />和[逻辑处理器](processors.md)使其能赋予设备输入输出物品、方块，流体等的能力。（没有实际功能，只是中间合成材料。）
+这些是AE2输入输出[设备](../ae2-mechanics/devices.md)的基础组件。其中的<ItemLink id="fluix_crystal" />和[逻辑处理器](processors.md)使其能赋予设备输入输出物品、方块、流体等的能力。（没有实际功能，只是中间合成材料。）
 
 ## 配方
 
