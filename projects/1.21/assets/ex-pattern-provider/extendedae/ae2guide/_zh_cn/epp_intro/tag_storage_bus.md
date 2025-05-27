@@ -21,12 +21,8 @@ ME标签存储总线的性质与<ItemLink id="ae2:storage_bus" />相同，但可
 
 - 只接受粗矿
 
-使用Forge加载器时：forge:raw_materials/*
-
-使用Fabric加载器时：c:raw_materials
+c:raw_materials
 
 - 接受所有铸锭和宝石
 
-使用Forge加载器时：forge:ingots/* | forge:gems/*
-
-使用Fabric加载器时：c:ingots/* | c:gems/*
+c:ingots/* | c:gems/*
