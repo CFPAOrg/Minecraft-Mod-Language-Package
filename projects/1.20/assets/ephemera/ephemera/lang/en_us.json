@@ -69,6 +69,9 @@
   "hexcasting.action.book.ephemera:getrider": "Equestrian Prfn.",
   "hexcasting.action.ephemera:getmount": "Equestrian Purification II",
   "hexcasting.action.book.ephemera:getmount": "Equestrian Prfn. II",
+  "hexcasting.action.ephemera:cancelflight": "Terminate Flight",
+  "hexcasting.action.ephemera:getflight/type": "Aviator's Purification II",
+  "hexcasting.action.ephemera:getflight/remaining": "Aviator's Purification III",
 
   "hexcasting.mishap.location_ephemera:inputrelaytprange": "Target entity is too far from target node at %s.",
   "hexcasting.mishap.location_ephemera:outputrelaytprange": "Could not find connected node within range of %s.",
@@ -93,10 +96,12 @@
   "ephemera.entry.hashing": "Iota Hashing",
   "ephemera.entry.specialslates": "Modified Slates",
   "ephemera.entry.metathoth": "Accumulator Manipulation",
+  "ephemera.entry.flight": "Additional Flight Patterns",
 
   "ephemera.page.paintconjured.1": "Accepts a vector and an itemtype representing a pigment. Costs a negligible amount of media if targeting my own block, or 1 Amethyst Dust if not.",
   "ephemera.page.paintconjured.2": "Sets the colors of the conjured block corresponding to the vector to the colorset represented by the passed pigment, or mine if passed a NULL iota.$(br2)Not guaranteed to work with unconventional forms of conjured matter. ",
   "ephemera.page.paintconjured.3": "Feels strangely celebratory, as if something similar was once used in grand festivals where teams would splatter their colors all over their opponents' territory in a bid for ideological dominance.",
+
   "ephemera.page.miscpatterns.1": "I've found a couple patterns designed to interact with item frames. Nothing fancy, but they're nice utility for things like controlling my spell circles.$(br2)Additionally, it seems Sorter's Purification works on them just fine, so my attempts to find a dedicated frame-item pattern were pointless.",
   "ephemera.page.miscpatterns.2": "Accepts an item frame entity, and returns its rotation, from 0 to 7.",
   "ephemera.page.miscpatterns.3": "Accepts an item frame entity and an integer from 0 to 7, and sets its rotation to the number. Costs a negligible amount of media.",
@@ -113,9 +118,16 @@
   "ephemera.page.miscpatterns.14": "Accepts an entity, and returns a list of entities seated atop it.",
   "ephemera.page.miscpatterns.15": "Accepts an entity, and returns the entity it is seated atop.",
 
+  "ephemera.page.flight.1": "I've often found the preexisting suite of flight-related patterns to be a bit lackluster. They work perfectly well if all you want to do is cast the spell and go, but they are not well-suited to doing anything more complex. These patterns should help with that.",
+  "ephemera.page.flight.2": "Cancels my current flight ability, at a cost of one tenth of an Amethyst Dust. Casting a new flight spell in the same instant allows me to continue flying, potentially with different parameters.",
+  "ephemera.page.flight.3": "Returns true if the target is under the effects of Anchorite's Flight, false if Wayfarer's Flight, null if neither.",
+  "ephemera.page.flight.4": "Returns how close the target is to the end of their flight spell, represented as either their distance to the boundary or how many seconds remain.",
+
   "ephemera.page.particleburst.1": "Accepts two vectors and two numbers, and uses them to define a burst of particles. Costs a negligible amount of media.",
   "ephemera.page.particleburst.2": "The first vector determines the burst's origin position, and the second vector determines its direction and speed. The first number determines the scale of random numbers added to each position component, and the second does the same for the direction vector.",
+
   "ephemera.page.invisibility.1": "Functions just like the normal $(l:patterns/great_spells/zeniths)Zeniths$(/l), applying Invisibility. Costs one amethyst dust per three seconds.",
+
   "ephemera.page.status_iotas.1": "These patterns work with a type of iota that represents lingering effects on a creature, which can allow me to asses the state of a creature more thoroughly than with only Nurse's Purification.$(br)While my research suggests that status iotas representing instantaneous effects are possible, they would be very difficult to obtain, and I cannot think of any use case for them at the moment.",
   "ephemera.page.status_iotas.2": "Accepts a living entity, and returns a list of status iotas representing all effects on the target.",
   "ephemera.page.status_iotas.3": "Accepts a status effect type, and returns a number based on whether the effect is likely to be helpful, harmful, or neutral to a creature.",
@@ -127,11 +139,13 @@
   "ephemera.page.status_iotas.9": "Accepts a living entity, and returns how much damage it can Absorb before its health is affected.",
   "ephemera.page.status_iotas.10": "Accepts an entity and a status effect type, and removes that status effect from the entity. Cost is based on the effect's innate harmfulness, its potency, and its remaining duration.",
   "ephemera.page.status_iotas.11": "Costs more if attempting to remove a positive effect from an entity other than myself.$(br2)All of the patterns which deal with a specific status effect on an entity have the side effect that if the entity does not currently have the specified effect, the pattern will fail and inflict nausea upon me.",
+
   "ephemera.page.magearmor.1": "I've discovered a rather interesting spell, capable of producing a defensive media barrier that can match and even exceed the protective abilities of many kinds of conventional armor. It can even apply a wide array of $(l:patterns/spells/status_iotas)persistent effects$(/l) to the wearer, allowing for incredible versatility.",
   "ephemera.page.magearmor.2": "Accepts a player to grant the armor to, the durability of the armor, the protection value of the armor (max 10), a status effect to apply, and that effect's level. The latter two can be replaced with any non-status iota to ignore them.",
   "ephemera.page.magearmor.3": "Of course, this barrier is by no means indestructible, and its durability decays steadily in addition to any damage it takes from hits. The base rate of this decay can be described as one \"point\" per second, plus additional points equal to the squared strength of any effect imbued into it. Additionally, it will disappear instantly if removed from the wearer, so there is no way to repair it, short of recasting the spell to overwrite its current state.",
   "ephemera.page.magearmor.4": "The media cost for this spell is a bit complicated: A base of one amethyst dust per 60 durability, multiplied by the armor's protection value raised to the power of 1.5, times the level+1 of any status effect. Thus, producing no-status strength 10 armor with one minute's worth of durability costs ~31.5 dust. Adding Regeneration 2 increases that media cost to ~94.5 dust, and causes it to only last 36 seconds.",
   "ephemera.page.magearmor.5": "This explanation assumes I am wearing no other armor, in practice the cost can be reduced to as little as 25%% of that formula's output if all but one of my armor slots is already occupied by more conventional armor.",
+
   "ephemera.page.network.1": "I've devised a suite of patterns (plus a couple of blocks) to make links a bit more useful for things other than data transmission and media sharing.$(br2)Note that the patterns which fetch information about the network make no promises regarding whether returned linkables are within ambit.",
   "ephemera.page.network.2": "Scans the link network connected to the input linkable up to a recursion depth equal to the input number (max 32), and returns a list of all connected linkables. Costs a negligible amount of media.",
   "ephemera.page.network.3": "Accepts an entity to teleport, a linkable to use for access to its network, and a destination. If the entity is within 8 blocks of the linkable, and there is a network node within 4 blocks of the destination, the entity will be teleported. Cost varies based on what entity is teleported.",

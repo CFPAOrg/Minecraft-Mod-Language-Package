@@ -69,6 +69,9 @@
   "hexcasting.action.book.ephemera:getrider": "马术师之纯化",
   "hexcasting.action.ephemera:getmount": "马术师之纯化，第二型",
   "hexcasting.action.book.ephemera:getmount": "马术师之纯化，第二型",
+  "hexcasting.action.ephemera:cancelflight": "终止飞行",
+  "hexcasting.action.ephemera:getflight/type": "飞行员之纯化，第二型",
+  "hexcasting.action.ephemera:getflight/remaining": "飞行员之纯化，第三型",
 
   "hexcasting.mishap.location_ephemera:inputrelaytprange": "目标实体距%s处的目标节点过远。",
   "hexcasting.mishap.location_ephemera:outputrelaytprange": "无法在范围%s内找到已连接的节点。",
@@ -93,10 +96,12 @@
   "ephemera.entry.hashing": "Iota 哈希",
   "ephemera.entry.specialslates": "变种石板",
   "ephemera.entry.metathoth": "累积栈操作",
+  "ephemera.entry.flight": "额外飞行图案",
 
   "ephemera.page.paintconjured.1": "接受一个向量与代表染色剂的物品类型。如果目标为我自己的方块，消耗极少量媒质；否则消耗 1 个紫水晶粉。",
   "ephemera.page.paintconjured.2": "将所给位置处构筑方块的颜色设置为所给染色剂的颜色；如果传入的是 Null，则将其设置为我意识的颜色。$(br2)不保证对非传统的构筑物质有效。",
   "ephemera.page.paintconjured.3": "这种效果有着奇怪的庆典感，就好像它曾用于某个盛大的节庆活动，与会队伍会把自己队的颜色泼洒到对手的领地上，类似于意识层面上的占领。",
+
   "ephemera.page.miscpatterns.1": "我发现了一些专为物品展示框交互设计的图案。它们不是什么高端法术，但确实是控制法术环之类事物的实用手段。$(br2)此外，分拣员之纯化对它们同样有效，因此试图寻找物品展示框专用的物品图案没有意义。",
   "ephemera.page.miscpatterns.2": "接受一个物品展示框实体，并返回其中物品的朝向，值必然在 0 到 7 之间。",
   "ephemera.page.miscpatterns.3": "接受一个物品展示框实体与一个 0 到 7 的整数，并将物品朝向设置为该数。消耗极少量媒质。",
@@ -113,9 +118,16 @@
   "ephemera.page.miscpatterns.14": "接受一个实体，返回在该实体上方落座的实体列表。",
   "ephemera.page.miscpatterns.15": "接受一个实体，返回其所骑乘的实体。",
 
+  "ephemera.page.flight.1": "已有的飞行相关图案总是有些平淡。如果只是想施法然后飞，那已有的图案已经足够，但它们没法处理更复杂的需求。本节图案应该帮得上忙。",
+  "ephemera.page.flight.2": "去除当前的飞行能力，消耗 1/10 个紫水晶粉。在同一刻施放新的飞行法术可继续飞行，可借此更改参数。",
+  "ephemera.page.flight.3": "如果目标处于隐士之飞行影响下，返回 True；如果处于旅者之飞行影响下，返回 False；两者都不适用返回 Null。",
+  "ephemera.page.flight.4": "返回目标距其飞行法术结束的量度，返回值的意义可变。可以是距飞行界限的距离，也可以是剩余的飞行秒数。",
+
   "ephemera.page.particleburst.1": "接受两个向量和两个数，并由其触发一束粒子。消耗极少量媒质。",
   "ephemera.page.particleburst.2": "第一个向量决定了粒子束的起始位置，第二个向量则决定其方向和速度。第一个数决定各位置向量分量附加多大的随机数，第二个数则以同种方式决定方向向量的随机性。",
-  "ephemera.page.invisibility.1": "和其他$(l:patterns/great_spells/zeniths)天顶法术$(/l)功能一致，给予隐形，每 3 秒持续时间消耗 1 个紫水晶粉。",
+
+  "ephemera.page.invisibility.1": "和其他$(l:patterns/great_spells/zeniths)天顶法术$(/l)功能类似，给予隐形，每 3 秒持续时间消耗 1 个紫水晶粉。",
+
   "ephemera.page.status_iotas.1": "这些图案主要操作代表生物身上长时效果的 iota，我可以用这些图案评估生物的状态，比只用护士之纯化更加深入彻底。$(br)虽然我的研究表明，代表瞬时效果的状态 iota 有存在的可能，但它们非常难以获取，而且我目前没想到它们有什么用途。",
   "ephemera.page.status_iotas.2": "接受一个生物，并返回目标当前所有效果组成的列表 iota。",
   "ephemera.page.status_iotas.3": "接受一个状态效果，并根据该效果对生物产生正面、负面，或中性影响返回一个数。",
@@ -127,11 +139,13 @@
   "ephemera.page.status_iotas.9": "接受一个活体实体，并返回其在生命值受影响前能吸收的伤害量。",
   "ephemera.page.status_iotas.10": "接受一个实体和一个状态效果，并移除该实体身上的所给状态效果。消耗由效果自身的伤害性、强度、剩余持续时间决定。",
   "ephemera.page.status_iotas.11": "若是要移除非自身实体身上的正面效果，则消耗会增加。$(br2)所有需要检测实体身上有无所给状态效果的图案都有副作用。如果该实体当前没有这种效果，则图案会失效，并给予我反胃。",
+
   "ephemera.page.magearmor.1": "我发现了一种比较有趣的法术，它能够产生防御性的媒质屏障，防护力媲美甚至超过许多种传统盔甲。此类屏障甚至还能给予穿戴者许多$(l:patterns/spells/status_iotas)持久效果$(/l)，堪称泛用。",
   "ephemera.page.magearmor.2": "接受作为盔甲接收方的玩家，盔甲的耐久度，盔甲的护甲值（最多为 10），施加的状态效果，状态效果的等级。最后两个参数可用其他类型的 iota 代替，此时这两个参数会被忽略。",
   "ephemera.page.magearmor.3": "当然，这种屏障并非无法破坏。除去受击致损外，其耐久度还会持续减少。这种减少效应的基础速率看作每秒 1 “点”，则还需附加上其中效果等级平方个“点”。此外，穿戴者脱下后它们会立刻消失。换言之，除非重新施法覆写其状态，否则没有方法修复它们。",
   "ephemera.page.magearmor.4": "此法术的媒质消耗比较复杂：每 60 点耐久度基础消耗 1 个紫水晶粉，乘以护甲值的 1.5 次幂，再乘以任意状态效果的等级 + 1。因此，不提供状态效果、护甲值为 10、耐久度够支持 1 分钟的盔甲需消耗大约 31.5 个紫水晶粉。再令其给予生命恢复 II，消耗就来到了大约 94.5 个紫水晶粉，并且在消失前也只能坚持 36 秒。",
   "ephemera.page.magearmor.5": "这一计算结果的前提是我没有穿戴其他盔甲，实际操作中消耗可以缩减到最低 25%%，出现在所有盔甲槽位中只有 1 格空出的情况中。",
+
   "ephemera.page.network.1": "我设计了一系列图案和若干方块，旨在赋予链接更多用途，除去已有数据传输和媒质共享之外。$(br2)需要注意，对于从网络中获取信息的图案，其返回的可链接事物不一定处在影响范围之内。",
   "ephemera.page.network.2": "递归扫描与输入端可链接事物相连的链接网络，最大深度为所给数（最高为 32），并返回所有可链接事物组成的列表。消耗极少量媒质。",
   "ephemera.page.network.3": "接受需传送的实体，用于访问网络的可链接事物，以及目的地。如果实体位于所给可链接事物 8 格之内，且距目的地 4 格之内存在网络节点，则实体会被传送。消耗量由被传送实体的类型决定。",
