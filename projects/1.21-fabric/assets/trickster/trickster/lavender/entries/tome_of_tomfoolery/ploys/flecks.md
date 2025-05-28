@@ -5,7 +5,8 @@
   "category": "trickster:ploys",
   "additional_search_terms": [
     "Marketer's Ploy",
-    "Artist's Ploy"
+    "Artist's Ploy",
+    "Orwell's Ploy"
   ]
 }
 ```
@@ -61,3 +62,13 @@ number, vector, vector, [entity[] | entity] -> number
 ---
 
 Draws a line between the given positions.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:delete_fleck,title=Orwell's Ploy|>
+
+number, [entity[] | entity] -> number
+
+---
+
+Removes any fleck with the given id.
