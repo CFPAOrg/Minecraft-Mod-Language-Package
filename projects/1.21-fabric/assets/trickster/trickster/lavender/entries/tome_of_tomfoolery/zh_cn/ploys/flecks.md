@@ -5,7 +5,8 @@
   "category": "trickster:ploys",
   "additional_search_terms": [
     "营销员之技巧",
-    "艺术家之技巧"
+    "艺术家之技巧",
+    "奥威尔之技巧"
   ]
 }
 ```
@@ -58,3 +59,13 @@ number, vector, vector, [entity[] | entity] -> number
 ---
 
 在所给位置间绘制线段。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:delete_fleck,title=奥威尔之技巧|>
+
+number, [entity[] | entity] -> number
+
+---
+
+移除所给ID对应的视形。
