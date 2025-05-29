@@ -60,7 +60,7 @@ W W W W W
 ## How to Use
 
 1. **Build the Multiblock Structure**
-   - Use the block layout shown above. Make sure to build around a spawner.
+   - Use the block layout shown above. Make sure to build around a spawner. For the multiblock to assemble, place any corner of the build last.
 
 2. **Power the Controller**
    - Connect it to an active ME network.
