@@ -2,19 +2,21 @@
 navigation:
   parent: crazyae2addons_index.md
   title: 生物农场
-  icon: crazyae2addons:mob_farm_wall
+  icon: crazyae2addons:mob_farm_controller
 categories:
   - Mob Storage
 item_ids:
    - crazyae2addons:mob_farm_wall
    - crazyae2addons:mob_farm_input
    - crazyae2addons:mob_farm_collector
-   - crazyae2addons:mob_farm_damage_module
+   - crazyae2addons:mob_farm_damage
+   - crazyae2addons:mob_farm_controller
 ---
 
 <Row>
+    <BlockImage id="crazyae2addons:mob_farm_controller" scale="4"></BlockImage>
     <BlockImage id="crazyae2addons:mob_farm_wall" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_damage_module" scale="4"></BlockImage>
+    <BlockImage id="crazyae2addons:mob_farm_damage" scale="4"></BlockImage>
     <BlockImage id="crazyae2addons:mob_farm_input" scale="4"></BlockImage>
     <BlockImage id="crazyae2addons:mob_farm_collector" scale="4"></BlockImage>
 </Row>
@@ -27,13 +29,14 @@ item_ids:
 - **L – 生物农场收集器**
 - **I – 生物农场输入器**
 - **D – 生物农场伤害模块或生物农场墙壁**（机器的速度取决于伤害模块的数目）
+- **C - 生物农场控制器**
 
 #### 第1层：
 W W W W W <br/>
 W W W W W <br/>
 W W W W W <br/>
 W W W W W <br/>
-W W W W W 
+W W C W W 
 
 #### 第2层：
 W W W W W <br/>
@@ -101,6 +104,6 @@ W W W W W
 ## 重要注意事项
 
 - **需要正确搭建多方块结构**：生物农场结构缺损即停工。
-- **只会处理生物**：必须先使用生物破坏面板或[刷怪笼控制器](spawner_controller.md)捕捉生物。
+- **只会处理生物**：必须先使用生物破坏面板或[刷怪笼提取器](spawner_extractor.md)捕捉生物。
 - **不会真正生成生物**：没有卡顿，万事大吉。
 - **支持抢夺**：轻松增多掉落物。

@@ -2,19 +2,21 @@
 navigation:
   parent: crazyae2addons_index.md
   title: Mob Farm
-  icon: crazyae2addons:mob_farm_wall
+  icon: crazyae2addons:mob_farm_controller
 categories:
   - Mob Storage
 item_ids:
    - crazyae2addons:mob_farm_wall
    - crazyae2addons:mob_farm_input
    - crazyae2addons:mob_farm_collector
-   - crazyae2addons:mob_farm_damage_module
+   - crazyae2addons:mob_farm_damage
+   - crazyae2addons:mob_farm_controller
 ---
 
 <Row>
+    <BlockImage id="crazyae2addons:mob_farm_controller" scale="4"></BlockImage>
     <BlockImage id="crazyae2addons:mob_farm_wall" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_damage_module" scale="4"></BlockImage>
+    <BlockImage id="crazyae2addons:mob_farm_damage" scale="4"></BlockImage>
     <BlockImage id="crazyae2addons:mob_farm_input" scale="4"></BlockImage>
     <BlockImage id="crazyae2addons:mob_farm_collector" scale="4"></BlockImage>
 </Row>
@@ -27,13 +29,14 @@ The Mob Farm Controller is the heart of an automatic, multi-block mob farming sy
 - **L – Mob Farm Collector Block**
 - **I – Mob Farm Input Block**
 - **D – Mob Farm Damage Module Block or Mob Farm Wall Block** (machine speed depends on the amount of the damage blocks used)
-
+- **C - Mob Farm Controller Block**
+- 
 #### Layer 1:
 W W W W W <br/>
 W W W W W <br/>
 W W W W W <br/>
 W W W W W <br/>
-W W W W W 
+W W C W W 
 
 #### Layer 2:
 W W W W W <br/>
@@ -73,7 +76,7 @@ W W W W W
 ## How to Use
 
 1. **Build the Multiblock Structure**
-    - Arrange blocks in a 5x5x5 cube in a pattern described above.
+    - Arrange blocks in a 5x5x6 cube in a pattern described above.
 
 2. **Power the Controller**
     - Connect the Mob Farm Controller to an active ME network.
@@ -101,6 +104,6 @@ W W W W W
 ## Important Notes
 
 - **Requires correct multiblock structure**: If broken, the farm will stop.
-- **Only processes mobs**: You must first catch mobs using a Mob Annihilation Plane or a [Spawner Controller](spawner_controller.md).
+- **Only processes mobs**: You must first catch mobs using a Mob Annihilation Plane or a [Spawner Extractor](spawner_extractor.md).
 - **No real mobs spawned**: No lag, no danger.
 - **Looting Supported**: Enhance your drops easily.

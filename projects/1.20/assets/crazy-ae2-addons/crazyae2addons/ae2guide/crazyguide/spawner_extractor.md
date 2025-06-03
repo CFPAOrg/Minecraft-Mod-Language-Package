@@ -1,31 +1,36 @@
 ---
 navigation:
   parent: crazyae2addons_index.md
-  title: Spawner Controller
-  icon: crazyae2addons:spawner_controller_wall
+  title: Spawner Extractor
+  icon: crazyae2addons:spawner_extractor_controller
 categories:
   - Mob Storage
 item_ids:
-   - crazyae2addons:spawner_controller_wall
+   - crazyae2addons:spawner_extractor_wall
+   - crazyae2addons:spawner_extractor_controller
 ---
 
-<BlockImage id="crazyae2addons:spawner_controller_wall" scale="4"></BlockImage>
+<Row>
+   <BlockImage id="crazyae2addons:spawner_extractor_controller" scale="4"></BlockImage>
+   <BlockImage id="crazyae2addons:spawner_extractor_wall" scale="4"></BlockImage>
+</Row>
 
-# Spawner Controller
+# Spawner Extractor
 
-The Spawner Controller is a multiblock system that simulates mob spawning from real Spawner blocks and inserts mobs directly into your ME network. This lets you capture mobs automatically without lag or real entity spawns.
+The Spawner Extractor is a multiblock system that simulates mob spawning from real Spawner blocks and inserts mobs directly into your ME network. This lets you capture mobs automatically without lag or real entity spawns.
 
-- **W** – Spawner Controller Wall Block
+- **W** – Spawner Extractor Wall Block
+- **C** - Spawner Extractor Controller Block
 - **G** – Vibrant Quartz Glass
-- **A** – Air 
 - **S** – Minecraft Spawner Block
+- **A** – Air 
 
 #### Layer 1:
 W W W W W <br/>
 W W W W W <br/>
 W W W W W <br/>
 W W W W W <br/>
-W W W W W 
+W W C W W 
 
 #### Layer 2:
 W G G G W <br/>
