@@ -1,0 +1,32 @@
+{
+  "name": "模式",
+  "sortnum": 1,
+  "category": "laserio:mechanics",
+  "icon": "laserio:textures/gui/buttons/modestocker.png",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "物流卡的模式决定该卡如何运行。后几页会介绍已有的几种模式。$(br2)各物流卡（物品/流体/能量）均有后述三种模式。后续示例均使用物品卡。$(br2)红石卡的模式与其余物流卡不同。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "laserio:card_item{channel:0b,exact:0b,inv:{Items:[],Size:2},itemextractamt:1b,itemextractspeed:20,mode:0b,priority:0s,regulate:0b,roundRobin:0,sneaky:-1b}",
+      "text": "输入模式物流卡是提取卡所取出物品、流体、能量的输出口。$(br2)存储卡则会尝试从输入卡取出物品、流体和能量。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "laserio:card_item{channel:0b,exact:0b,inv:{Items:[],Size:2},itemextractamt:1b,itemextractspeed:20,mode:1b,priority:0s,regulate:0b,roundRobin:0,sneaky:-1b}",
+      "text": "提取模式物流卡会尝试从其毗邻方块中取出物品、流体和能量。在此例中，物品会从毗邻的箱子中被取出，并传输至某张输入卡。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "laserio:card_item{channel:0b,exact:0b,inv:{Items:[],Size:2},itemextractamt:1b,itemextractspeed:20,mode:2b,priority:0s,regulate:0b,roundRobin:0,sneaky:-1b}",
+      "text": "存储模式物流卡会尝试搜寻其过滤器槽内设定的物品和流体，并从同网络中的其他输入卡处取出这些事物。$(br2)存储卡的运行需要白名单过滤器。"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "laserio:card_item{channel:0b,exact:0b,inv:{Items:[],Size:2},itemextractamt:1b,itemextractspeed:20,mode:3b,priority:0s,regulate:0b,roundRobin:0,sneaky:-1b}",
+      "text": "传感模式物流卡不会移动事物，而是会检查毗邻存储空间。若其中内容匹配过滤器，则在设定的红石频道上发出红石信号。$(br2)传感卡的运行需要过滤器。"
+    }
+  ]
+}
