@@ -16,7 +16,7 @@ flowchart LR
  │    └── 1.20.1-fabric
  ├── 1.19.2/1.19.2-fabric
  ├── 1.18.2
- │    └── 1.18.2-fabric
+ │    └── 1.18.2-fabric (singleton)
  └── 1.16.5
 ```
 
