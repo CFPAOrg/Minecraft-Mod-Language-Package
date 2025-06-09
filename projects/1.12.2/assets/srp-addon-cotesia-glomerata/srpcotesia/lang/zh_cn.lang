@@ -91,16 +91,36 @@ commands.srpcotesia.syntaxerror=语法无效
 
 commands.srpcotesia.srpmobcounts.usage=/srpmobcounts 或 /srpmobcounts <number> /srpmobcounts all
 commands.srpcotesia.tellStrange.usage=/tellstrange <player(s)> <message>
-commands.srpcotesia.toggleparasite.usage=/toggleparasite 或 /toggleparasite <player(s)>
-commands.srpcotesia.setbiomass.usage=/setbiomass <number> 或 /setbiomass <player(s)> <number>
-commands.srpcotesia.setbloom.usage=/setbiomass <number> 或 /setbiomass <player(s)> <number>
+commands.srpcotesia.toggleparasite.usage=/toggleparasite 或 /toggleparasite <player(s)> <shouldConceal, optional>
+commands.srpcotesia.biomass.usage=/biomass <player(s), optional> <set|add|subtract> <value>
+
+commands.srpcotesia.biomass.success=%s现在已持有 %d 生物质。
+commands.srpcotesia.biomass.max=%s的生物质持有量已达到最大值。
+commands.srpcotesia.biomass.clamped=由于其生物质持有数最大值限制，%s 无法持有这么多的生物质……
+
+commands.srpcotesia.parasitekills.usage=/parasitekills <player(s), optional> <set|add|subtract> <value>
+commands.srpcotesia.parasitekills.success=%s现在已有 %d 击杀计数。
+
+commands.srpcotesia.setbloom.usage=/setbloom <number> 或 /setbloom <player(s)> <number>
 commands.srpcotesia.togglenote.usage=/togglenote 或 /togglenote <player(s)>
-commands.srpcotesia.setKillC.usage=/setbiomass <number> 或 /setbiomass <player(s)> <number>
+commands.srpcotesia.setKillC.usage=/setkills <number> 或 /setkills <player(s)> <number>
 commands.srpcotesia.ante.usage=/ante <set|add|subtract|setminimum> <value> 或 /ante <query|recalibrate>
 commands.srpcotesia.atimer.usage=/atimer <set|add|subtract> <ticks> 或 /atimer query
 commands.srpcotesia.adapt.usage=/adapt <parasite(s)> <source>
 commands.srpcotesia.assimilateplayer.usage=/assimilateplayer <player(s)> 或 /assimilateplayer
-commands.srpcotesia.dendritus.usage=/dendritus
+commands.srpcotesia.dendritus.usage=/dendritus <list|clear> 或 /dendritus <add|remove> <x> <y> <z> <stage, optional>
+
+commands.srpcotesia.dendritus.armageddon=它在放置下来的的那一刻便消失了。
+commands.srpcotesia.dendritus.clear=所有活动的树突体已被清除。方块或许仍会被遗留，但已经失效。
+
+commands.srpcotesia.dendritus.add.inrange=位置与现有的位于 x=%d, y=%d, z=%d 的树突体过于接近。
+commands.srpcotesia.dendritus.add.notloaded=树突体无法放置于该未加载区块：此处存在不可替换的方块，或者此处完全无法放置方块。
+commands.srpcotesia.dendritus.add.success=一个阶段 %d 的树突体已成功放置于 x=%d, y=%d, z=%d。
+commands.srpcotesia.dendritus.add.modify=树突体位于 x=%d, y=%d, z=%d，处于 %d 阶段。
+
+commands.srpcotesia.dendritus.remove=位于 x=%d, y=%d, z=%d 的树突体已成功移除。该方块已失效。
+
+commands.srpcotesia.dendritus.remove.none=这里没有树突体。
 
 commands.srpcotesia.assimilateplayer.alreadyparasite=%s已经是寄生体了。
 commands.srpcotesia.assimilateplayer.possessing=%s已经夺舍了一个生物。
@@ -142,12 +162,12 @@ commands.srpcotesia.srpcbounty.listtargets.player=玩家名：%s
 
 commands.srpcotesia.srpcbounty.cleartargets=清除已知漫游者名录。
 
-commands.srpcotesia.srpcbounty.addtarget=成功将 %s 作为已知漫游者添加。
+commands.srpcotesia.srpcbounty.addtarget=成功将%s作为已知漫游者添加。
 commands.srpcotesia.srpcbounty.addtarget.fail=%s 已被标识为漫游者。
 commands.srpcotesia.srpcbounty.addtarget.totalfail=不存在符合标准的漫游者。
 
-commands.srpcotesia.srpcbounty.removetarget=成功将 %s 从已知漫游者名录中移除。
-commands.srpcotesia.srpcbounty.removetarget.fail=%s 并未标识为漫游者。
+commands.srpcotesia.srpcbounty.removetarget=成功将%s从已知漫游者名录中移除。
+commands.srpcotesia.srpcbounty.removetarget.fail=%s并未被标识为漫游者。
 commands.srpcotesia.srpcbounty.removetarget.totalfail=不存在符合标准的漫游者。
 
 
@@ -383,6 +403,12 @@ tooltip.srpcotesia.bloodstained_saddle2=§f这一物品会被消耗，不过，�
 tooltip.srpcotesia.bloodstained_saddle3=§f只适用于你曾参与创造的寄生体。
 
 message.srpcotesia.cantsaddle=这只寄生体无法被置鞍。
+
+item.srpcotesia.ghastly_bandage.name=§c阴森绷带
+tooltip.srpcotesia.ghastly_bandage1=§f一块发暗，有着怪异斑块的缝合外皮。它正在渗血。
+tooltip.srpcotesia.ghastly_bandage2=§f恢复寄生体 %s 生命值。使用时消耗。
+
+message.srpcotesia.bandagefail=它们已被完全治愈。
 
 item.srpcotesia.macabre_pearl.name=§b血肉珍珠
 tooltip.srpcotesia.macabre_pearl.fake=§f一枚珍珠，其晦暗一如你的将来。
