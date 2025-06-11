@@ -83,12 +83,12 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 ### 总则
 
-- 翻译**必须**符合 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)的规定。
+- 翻译**必须**符合 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/) 的规定。
 - **拒绝**接收机器翻译（含生成式 AI）、生硬翻译。
-  - 提交的机器翻译需事先经过人工审查，且满足上述指南的规定。可参考[`GB/T 19682-2005 翻译服务译文质量要求`](https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=4F2D9ACF302B1EAE813590EF8DB2A101) 和 [`ZYF 001-2016 本地化翻译质量和排版质量评估规范`](https://plaintalks.com/uploads/short-url/pWGGqRcUcO1pgrfm2iIlBjFS8zX.pdf) 文件的要求。
+  - 提交的机器翻译需事先经过人工审查，且满足上述指南的规定。
   - 若直接提交此类翻译，该 PR 将被打上“生硬翻译”标签。
-  - 若作者不及时进行有效修改，PR 可能会依照本仓库的[搁置规则](#搁置规则)处理。
-- 翻译**必须**在审查后才能进入仓库。
+  - 若提交者未及时进行有效修改，可依照本仓库的[搁置规则](#搁置规则)处理。
+- 提交的翻译**必须**在审查后才能进入仓库。
 
 ### Pull Request 相关规定
 
@@ -136,10 +136,11 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 #### 审查人
 
 - 任何人都能利用 GitHub 提供的[相关功能](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request)来审查 PR 中翻译。所有参与审查的用户即为审查人。
-- [CFPA团队](https://github.com/CFPAOrg) 的成员（Member）和[本仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人。
-- 至少一位具有官方身份的审查人对 PR 给出批准（Approval）意见后，PR 才能合并。
-- 审查人在给出批准审查后**应**给 PR 加上“即将合并”标签，此后需至少等待 24 小时，若等待期间没有新动态则可以合并 PR。
+- [CFPA团队](https://github.com/CFPAOrg) 的成员（Member）和[本仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人，统称为管理员。
+- 至少一位管理员对 PR 给出批准（Approval）意见后，PR 才能合并。
+- 管理员在给出批准意见后**应**给 PR 加上“即将合并”标签，此后需至少等待 24 小时，若等待期间没有新动态则可以合并 PR。
   - “动态”包括但不限于 PR 作者发送提交（Commit）、审查人提出意见。
+- 管理员有处置包含敏感内容 PR 的权力，处置包括但不限于：要求使用中立表述、删减、关闭 PR、Block User。
 
 #### PR 作者
 
