@@ -11,6 +11,12 @@ by introducing advanced automation, data processing, and network control blocks.
 Crazy AE2 Addons builds upon vanilla AE2 mechanics, requiring _almost_ all its
 blocks to be part of an ME network to operate. It adds a suite of utilities.
 
+---
+
+# Need help with the mod? Join my [Discord](https://discord.com/invite/mWy8AVRtwz) server
+
+---
+
 # [Data Variables Tutorial](crazyguide/data_variables.md)
 
 ---
@@ -18,6 +24,8 @@ blocks to be part of an ME network to operate. It adds a suite of utilities.
 # AE2 with chanced recipes? see [Impulsed Pattern Provider](crazyguide/impulsed_pattern_provider.md)
 
 ---
+
+# Features
 
 ## Crafting and Patterns
 

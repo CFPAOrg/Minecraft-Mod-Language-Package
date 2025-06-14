@@ -12,9 +12,15 @@ Crazy AE2 Addons以多种方式拓展了应用能源2（Applied Energistics 2）
 
 ---
 
+# 需要帮助？加入我的[Discord](https://discord.com/invite/mWy8AVRtwz)服务器吧
+
+---
+
 # 想让AE2处理概率产出的配方？参见[脉冲样板供应器](crazyguide/impulsed_pattern_provider.md)
 
 ---
+
+# 特性
 
 ## 合成与样板
 
