@@ -1,0 +1,31 @@
+# Config
+enchlib.config.general=Enchantment Library Config
+enchlib.config.general.tooltip=Settings for Enchantment Library
+
+# Default sided configs
+enchlib.config.client_settings=Client Settings
+enchlib.config.client_settings.tooltip=Settings that change the client-side behavior.\nThese settings are client-side and will only affect you.
+enchlib.config.server_settings=Server Settings
+enchlib.config.server_settings.tooltip=Settings that change gameplay.\nThese settings are server-side and will be applied to all players.\nCan only be changed in the GUI in SinglePlayer, edit the config file directly to change these settings on dedicated servers
+
+# Client config
+enchlib.config.client_settings.modified_conway_wechsler=Modified Conway-Wechsler
+enchlib.config.client_settings.modified_conway_wechsler.tooltip=Changes the enchantment points display to the modified Conway-Wechsler format.\nThis format is more intuitive, but invalid (N=103 and N=300 have same name)
+
+# Server config
+enchlib.config.server_settings.allow_enchant_merging=Allow Enchant Merging
+enchlib.config.server_settings.allow_enchant_merging.tooltip=Allow merging different enchantments onto an enchanted book using the enchantment library when extracting
+enchlib.config.server_settings.allow_enchant_splitting=Allow Enchant Splitting
+enchlib.config.server_settings.allow_enchant_splitting.tooltip=Allow splitting enchanted books with multiple enchantments when inserting into the enchantment library
+enchlib.config.server_settings.enable_ae2uel_hash_fix_mixin=Enable AE2UEL Hash Fix Mixin
+enchlib.config.server_settings.enable_ae2uel_hash_fix_mixin.tooltip=Attempts to fix the ItemStack cache hash collision issues introduced in AE2UEL v0.56.6 by changing the vanilla NBT hashCode functions using a mixin.\nDo not disable this unless you know what you're doing. Without this, AE2UEL will think that Protection I = Fire Protection II or Unbreaking III = Efficiency V for example, because they have matching hashes.
+enchlib.config.server_settings.enchanted_book_stack_size=Enchanted Book Stack Size
+enchlib.config.server_settings.enchanted_book_stack_size.tooltip=The maximum stack size for enchanted books. Set to 0 to not overwrite it at all.\nValues over 64 will not really work.
+enchlib.config.server_settings.ench_level_translation=Enchantment Level Translation
+enchlib.config.server_settings.ench_level_translation.tooltip=Overwrites the enchantment level translation to fully support roman numerals (up to 3999) or use simple numbers. Set to VANILLA to get vanilla behaviour / allow other mods to overwrite it.
+
+# Blocks
+tile.enchlib.enchantment_library.name=Enchantment Library
+
+# Gui info
+info.enchlib.gui.enchantment_count=%s Enchantments
