@@ -129,7 +129,8 @@
                     "berry": "甜浆果",
                     "chorus_fruit": "紫颂果",
                     "glow_berry": "发光浆果",
-                    "chocolate": "巧克力"
+                    "chocolate": "巧克力",
+                    "pumpkin": "南瓜"
                 }
             ]
         },
@@ -170,7 +171,8 @@
                     "Berry": "甜浆果",
                     "Chocolate": "巧克力",
                     "ChorusFruit": "紫颂果",
-                    "GlowBerry": "发光浆果"
+                    "GlowBerry": "发光浆果",
+                    "Pumpkin": "南瓜"
                 }
             ]
         },
@@ -428,9 +430,11 @@
             ]
         },
 
+
         {
             "templates": {
-                "item.createfood.{0}_cupcake": "{0}纸杯蛋糕"
+                "item.createfood.{0}_cupcake": "{0}纸杯蛋糕",
+                "item.createfood.{0}_chocolate_cupcake": "{0}巧克力纸杯蛋糕"
             },
             "parameters": [
                 {
@@ -447,7 +451,8 @@
         },
         {
             "templates": {
-                "text.autoconfig.createfood.option.is{0}CupcakeEnabled": "启用{0}纸杯蛋糕"
+                "text.autoconfig.createfood.option.is{0}CupcakeEnabled": "启用{0}纸杯蛋糕",
+                "text.autoconfig.createfood.option.is{0}ChocolateCupcakeEnabled": "启用{0}巧克力纸杯蛋糕"
             },
             "parameters": [
                 {
@@ -462,6 +467,7 @@
                 }
             ]
         },
+
 
         {
             "templates": {
@@ -560,6 +566,8 @@
                     "melon_milkshake": "西瓜奶昔",
                     "milkshake": "奶昔",
                     "molasses": "糖蜜",
+                    "pumpkin_puree": "南瓜泥",
+                    "pumpkin_pie_filling": "南瓜派馅料",
                     "slime": "黏液",
                     "sour_cream": "酸奶油",
                     "squid_ink": "鱿鱼墨汁",
@@ -617,6 +625,8 @@
                     "MelonMilkshake": "西瓜奶昔",
                     "Milkshake": "奶昔",
                     "Molasses": "糖蜜",
+                    "PumpkinPuree": "南瓜泥",
+                    "PumpkinPieFilling": "南瓜派馅料",
                     "Slime": "黏液",
                     "SourCream": "酸奶油",
                     "SquidInk": "鱿鱼墨汁",
@@ -646,9 +656,11 @@
             ]
         },
 
+
         {
             "templates": {
-                "block.createfood.{0}waffle": "{0}华夫饼"
+                "block.createfood.{0}waffle": "{0}华夫饼",
+                "item.createfood.{0}chocolate_milkshake_bottle": "{0}巧克力奶昔"
             },
             "parameters": [
                 {
@@ -659,6 +671,23 @@
                     "dark_chocolate_chip_": "黑巧克力碎片",
                     "toffee_chip_": "太妃糖碎片",
                     "white_chocolate_chip_": "白巧克力碎片"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.is{0}WaffleBlockEnabled": "启用{0}华夫饼",
+                "text.autoconfig.createfood.option.is{0}ChocolateMilkshakeBottleEnabled": "启用{0}巧克力奶昔"
+            },
+            "parameters": [
+                {
+                    "ButterscotchChip": "奶油硬糖碎片",
+                    "CaramelChip": "焦糖碎片",
+                    "ChocolateChip": "巧克力碎片",
+                    "": "",
+                    "DarkChocolateChip": "黑巧克力碎片",
+                    "ToffeeChip": "太妃糖碎片",
+                    "WhiteChocolateChip": "白巧克力碎片"
                 }
             ]
         },
@@ -688,22 +717,6 @@
         },
         {
             "templates": {
-                "text.autoconfig.createfood.option.is{0}WaffleBlockEnabled": "启用{0}华夫饼"
-            },
-            "parameters": [
-                {
-                    "ButterscotchChip": "奶油硬糖碎片",
-                    "CaramelChip": "焦糖碎片",
-                    "ChocolateChip": "巧克力碎片",
-                    "": "",
-                    "DarkChocolateChip": "黑巧克力碎片",
-                    "ToffeeChip": "太妃糖碎片",
-                    "WhiteChocolateChip": "白巧克力碎片"
-                }
-            ]
-        },
-        {
-            "templates": {
                 "text.autoconfig.createfood.option.is{0}MiniWaffleEnabled": "启用{0}迷你华夫饼"
             },
             "parameters": [
@@ -719,7 +732,38 @@
                 }
             ]
         },
+
+
+        {
+            "templates": {
+                "item.createfood.frosted_mini_waffle{0}": "糖霜迷你华夫饼{0}",
+                "item.createfood.frosted_chocolate_sweet_roll{0}": "糖霜巧克力甜面包卷{0}",
+                "item.createfood.frosted_sweet_roll{0}": "糖霜甜面包卷{0}"
+            },
+            "parameters": [
+                {
+                    "_chorus_fruit": "（紫颂果）",
+                    "_sweet_berry": "（甜浆果）",
+                    "_glow_berry": "（发光浆果）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isFrostedMiniWaffle{0}Enabled": "启用糖霜迷你华夫饼{0}",
+                "text.autoconfig.createfood.option.isFrostedChocolateSweetRoll{0}Enabled": "启用糖霜巧克力甜面包卷{0}",
+                "text.autoconfig.createfood.option.isFrostedSweetRoll{0Enabled": "启用糖霜甜面包卷{0}"
+            },
+            "parameters":[
+                {
+                    "ChorusFruit": "（紫颂果）",
+                    "SweetBerry": "（甜浆果）",
+                    "GlowBerry": "（发光浆果）"
+                }
+            ]
+        },
         
+
         {
             "templates": {
                 "block.createfood.{0}_base": "{0}坯"
@@ -738,6 +782,7 @@
             "parameters": [
                 {
                     "chocolate_donut": "巧克力甜甜圈",
+                    "chocolate_cupcake": "巧克力纸杯蛋糕",
                     "chocolate_pastry_bar": "巧克力酥皮条",
                     "chocolate_pastry": "巧克力油酥糕点",
                     "chocolate_sweet_roll": "巧克力甜面包卷",
@@ -759,6 +804,7 @@
                 {
                     "cake": "蛋糕",
                     "ube_cake": "香芋蛋糕",
+                    "chocolate_cupcake": "巧克力纸杯蛋糕",
                     "chocolate_pastry_bar": "巧克力酥皮条",
                     "chocolate_pastry": "巧克力油酥糕点",
                     "chocolate_sweet_roll": "巧克力甜面包卷",
@@ -781,6 +827,7 @@
                     "BerryCreamPastry": "甜浆果奶油馅油酥糕点",
                     "Cake": "蛋糕",
                     "UbeCake": "香芋蛋糕",
+                    "ChocolateCupcake": "巧克力纸杯蛋糕",
                     "ChocolateDonut": "巧克力甜甜圈",
                     "ChocolatePastryBar": "巧克力酥皮条",
                     "ChocolatePastry": "巧克力油酥糕点",
@@ -807,6 +854,7 @@
             "parameters": [
                 {
                     "Cake": "蛋糕",
+                    "ChocolateCupcake": "巧克力纸杯蛋糕",
                     "ChocolatePastryBar": "巧克力酥皮条",
                     "ChocolatePastry": "巧克力油酥糕点",
                     "ChocolateSweetRoll": "巧克力甜面包卷",
@@ -829,7 +877,10 @@
                     "muffin": "松糕",
                     "cookie": "曲奇",
                     "sausage_patty": "香肠肉饼",
-                    "snickerdoodle": "肉桂曲奇"
+                    "snickerdoodle": "肉桂曲奇",
+                    "fishcake": "煎鱼饼",
+                    "macaroni": "通心粉",
+                    "gyro_meat_block": "希腊旋转烤肉块"
                 }
             ]
         },
@@ -844,7 +895,10 @@
                     "Calzone": "披萨饺子",
                     "Cookie": "曲奇",
                     "SausagePatty": "香肠肉饼",
-                    "Snickerdoodle": "肉桂曲奇"
+                    "Snickerdoodle": "肉桂曲奇",
+                    "Fishcake": "煎鱼饼",
+                    "Macaroni": "通心粉",
+                    "GyroMeatBlock": "希腊旋转烤肉块"
                 }
             ]
         },
@@ -1236,21 +1290,18 @@
                     "cheese_biscuit": "芝士饼干",
                     "cheese": "芝士",
                     "chorus_fruit_jam": "紫颂果酱",
-                    "endermite_meatball": "末影螨肉丸",
                     "fried_egg_hash_brown": "煎蛋薯饼",
                     "glow_berry_jam": "发光浆果酱",
                     "grilled_cheese": "烤芝士",
                     "hot_cheese_biscuit": "热芝士饼干",
                     "hot_sausage_biscuit": "热香肠饼干",
                     "ice_cream": "冰淇淋",
-                    "meatball": "牛肉丸",
                     "melon_jam": "西瓜酱",
                     "mutton": "羊肉",
                     "peanut_butter_apple_jam": "花生酱苹果酱",
                     "peanut_butter_chorus_fruit_jam": "花生酱紫颂果酱",
                     "peanut_butter_melon_jam": "花生酱西瓜酱",
-                    "sausage_biscuit": "香肠饼干",
-                    "strider_meatball": "炽足兽肉丸"
+                    "sausage_biscuit": "香肠饼干"
                 }
             ]
         },
@@ -1277,21 +1328,18 @@
                     "CheeseBiscuit": "芝士饼干",
                     "Cheese": "芝士",
                     "ChorusFruitJam": "紫颂果酱",
-                    "EndermiteMeatball": "末影螨肉丸",
                     "FriedEggAndHashBrown": "煎蛋薯饼",
                     "GlowBerryJam": "发光浆果酱",
                     "GrilledCheese": "烤芝士",
                     "HotCheeseBiscuit": "热芝士饼干",
                     "HotSausageBiscuit": "热香肠饼干",
                     "IceCream": "冰淇淋",
-                    "Meatball": "牛肉丸",
                     "MelonJam": "西瓜酱",
                     "Mutton": "羊肉",
                     "PeanutButterAppleJam": "花生酱苹果酱",
                     "PeanutButterChorusFruitJam": "花生酱紫颂果酱",
                     "PeanutButterMelonJam": "花生酱西瓜酱",
-                    "SausageBiscuit": "香肠饼干",
-                    "StriderMeatball": "炽足兽肉丸"
+                    "SausageBiscuit": "香肠饼干"
                 }
             ]
         },
@@ -1318,12 +1366,13 @@
                     "butterscotch_chip_": "奶油硬糖碎片",
                     "caramel_chip_": "焦糖碎片",
                     "chocolate_chip_": "巧克力碎片",
-                    "chocolate_": "巧克力",
                     "chorus_fruit_": "紫颂果",
+                    "dark_chocolate_chip_": "黑巧克力碎片",
                     "glow_berry_": "发光浆果",
                     "melon_": "西瓜",
                     "": "",
-                    "toffee_chip_": "太妃糖碎片"
+                    "toffee_chip_": "太妃糖碎片",
+                    "white_chocolate_chip_": "白巧克力碎片"
                 }
             ]
         },
@@ -1338,12 +1387,13 @@
                     "ButterscotchChip": "奶油硬糖碎片",
                     "CaramelChip": "焦糖碎片",
                     "ChocolateChip": "巧克力碎片",
-                    "Chocolate": "巧克力",
                     "ChorusFruit": "紫颂果",
+                    "DarkChocolateChip": "黑巧克力碎片",
                     "GlowBerry": "发光浆果",
                     "": "",
                     "Melon": "西瓜",
-                    "ToffeeChip": "太妃糖碎片"
+                    "ToffeeChip": "太妃糖碎片",
+                    "WhiteChocolateChip": "白巧克力碎片"
                 }
             ]
         },
@@ -1387,8 +1437,11 @@
             "parameters": [
                 {
                     "beetroot": "甜菜根",
+                    "brown_mushroom": "棕色蘑菇",
                     "carrot": "胡萝卜",
+                    "onion": "洋葱",
                     "potato": "马铃薯",
+                    "red_mushroom": "红色蘑菇",
                     "tomato": "番茄"
                 }
             ]
@@ -1400,8 +1453,11 @@
             "parameters": [
                 {
                     "Beetroot": "甜菜根",
+                    "BrownMushroom": "棕色蘑菇",
                     "Carrot": "胡萝卜",
+                    "Onion": "洋葱",
                     "Potato": "马铃薯",
+                    "RedMushroom": "红色蘑菇",
                     "Tomato": "番茄"
                 }
             ]
@@ -1440,6 +1496,7 @@
             ]
         },
 
+
         {
             "templates": {
                 "item.createfood.beef_bun{0}": "牛肉圆面包{0}",
@@ -1457,7 +1514,19 @@
                     "_onion": "（洋葱）",
                     "_onion_bacon": "（洋葱、培根）",
                     "_onion_bacon_lettuce": "（洋葱、培根、生菜）",
-                    "_onion_lettuce": "（洋葱、生菜）"
+                    "_onion_lettuce": "（洋葱、生菜）",
+                    "_tomato": "（番茄）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "item.createfood.beef_bun{0}": "牛肉圆面包{0}",
+                "item.createfood.eggplant_bun_cheese_tomato": "茄子圆面包{0}"
+            },
+            "parameters": [
+                {
+                    "_cheese_tomato": "（芝士、番茄）"
                 }
             ]
         },
@@ -1521,7 +1590,19 @@
                     "Onion": "（洋葱）",
                     "OnionBacon": "（洋葱、培根）",
                     "OnionBaconLettuce": "（洋葱、培根、生菜）",
-                    "OnionLettuce": "（洋葱、生菜）"
+                    "OnionLettuce": "（洋葱、生菜）",
+                    "Tomato": "（番茄）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isBeefBun{0}Enabled": "启用牛肉圆面包{0}",
+                "text.autoconfig.createfood.option.isEggplantBun{0}Enabled": "启用茄子圆面包{0}"
+            },
+            "parameters": [
+                {
+                    "CheeseTomato": "（芝士、番茄）"
                 }
             ]
         },
@@ -1579,7 +1660,20 @@
                     "": "",
                     "_bacon_lettuce": "（培根、生菜）",
                     "_lettuce": "（生菜）",
-                    "_lettuce_tomato": "（生菜、番茄）"
+                    "_lettuce_tomato": "（生菜、番茄）",
+                    "_bacon": "（培根）",
+                    "_tomato": "（番茄）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "item.createfood.chicken_bun{0}": "鸡肉圆面包{0}"
+            },
+            "parameters": [
+                {
+                    "_cheese_bacon": "（芝士、培根）",
+                    "_cheese_tomato": "（芝士、番茄）"
                 }
             ]
         },
@@ -1605,7 +1699,8 @@
                 {
                     "": "",
                     "_lettuce": "（生菜）",
-                    "_lettuce_tomato": "（生菜、番茄）"
+                    "_lettuce_tomato": "（生菜、番茄）",
+                    "_tomato": "（番茄）"
                 }
             ]
         },
@@ -1628,7 +1723,8 @@
             "parameters": [
                 {
                     "": "",
-                    "_lettuce": "（生菜）"
+                    "_lettuce": "（生菜）",
+                    "_tomato": "（番茄）"
                 }
             ]
         },
@@ -1656,7 +1752,20 @@
                     "": "",
                     "BaconLettuce": "（培根、生菜）",
                     "Lettuce": "（生菜）",
-                    "LettuceTomato": "（生菜、番茄）"
+                    "LettuceTomato": "（生菜、番茄）",
+                    "Bacon": "（培根）",
+                    "Tomato": "（番茄）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isChickenBunCheese{0}Enabled": "启用鸡肉圆面包{0}"
+            },
+            "parameters": [
+                {
+                    "CheeseBacon": "（芝士、培根）",
+                    "CheeseTomato": "（芝士、番茄）"
                 }
             ]
         },
@@ -1683,7 +1792,8 @@
                 {
                     "": "",
                     "Lettuce": "（生菜）",
-                    "LettuceTomato": "（生菜、番茄）"
+                    "LettuceTomato": "（生菜、番茄）",
+                    "Tomato": "（番茄）"
                 }
             ]
         },
@@ -1740,12 +1850,14 @@
             ]
         },
 
+
         {
             "templates": {
                 "item.createfood.bread{0}": "面包{0}"
             },
             "parameters": [
                 {
+                    "_carrot": "（胡萝卜）",
                     "_fried_egg": "（煎蛋）",
                     "_lettuce": "（生菜）",
                     "_lettuce_carrot": "（生菜、胡萝卜）"
@@ -1758,12 +1870,14 @@
             },
             "parameters": [
                 {
+                    "Carrot": "胡萝卜",
                     "FriedEgg": "（煎蛋）",
                     "Lettuce": "（生菜）",
                     "LettuceCarrot": "（生菜、胡萝卜）"
                 }
             ]
         },
+
 
         {
             "templates": {
@@ -1788,7 +1902,8 @@
                     "_melon_jam": "（西瓜酱）",
                     "_mutton": "（羊肉）",
                     "_mutton_beetroot": "（羊肉、甜菜根）",
-                    "_peanut_butter": "（花生酱）"
+                    "_peanut_butter": "（花生酱）",
+                    "_tomato": "（番茄）"
                 }
             ]
         },
@@ -1815,7 +1930,8 @@
                     "MelonJam": "（西瓜酱）",
                     "Mutton": "（羊肉）",
                     "MuttonBeetroot": "（羊肉、甜菜根）",
-                    "PeanutButter": "（花生酱）"
+                    "PeanutButter": "（花生酱）",
+                    "Tomato": "番茄"
                 }
             ]
         },
@@ -1828,6 +1944,7 @@
                 {
                     "butter": "黄油",
                     "chocolate_sugar": "巧克力糖",
+                    "pita": "口袋饼",
                     "pumpernickel": "黑麦",
                     "salt": "盐",
                     "sugar": "糖",
@@ -1843,6 +1960,7 @@
                 {
                     "Butter": "黄油",
                     "ChocolateSugar": "巧克力糖",
+                    "Pita": "口袋饼",
                     "Pizza": "披萨",
                     "Pumpernickel": "黑麦",
                     "Salt": "盐",
@@ -1858,8 +1976,10 @@
             "parameters": [
                 {
                     "butter": "黄油",
+                    "chocolate_sugar": "巧克力糖",
                     "salt": "盐",
-                    "sugar": "糖"
+                    "sugar": "糖",
+                    "wheat": "小麦"
                 }
             ]
         },
@@ -1870,8 +1990,10 @@
             "parameters": [
                 {
                     "Butter": "黄油",
+                    "ChocolateSugar": "巧克力糖",
                     "Salt": "盐",
-                    "Sugar": "糖"
+                    "Sugar": "糖",
+                    "Wheat": "小麦"
                 }
             ]
         },
@@ -2289,7 +2411,13 @@
                     "_ice_cream": "（冰淇淋）",
                     "_neapolitan_scoop_1": "（那不勒斯冰淇淋，第1勺）",
                     "_neapolitan_scoop_2": "（那不勒斯冰淇淋，第2勺）",
-                    "_neapolitan_scoop_3": "（那不勒斯冰淇淋，第3勺）"
+                    "_neapolitan_scoop_3": "（那不勒斯冰淇淋，第3勺）",
+                    "_chocolate_ice_cream": "（巧克力冰淇淋）",
+                    "_apple_ice_cream": "（苹果冰淇淋）",
+                    "_melon_ice_cream": "（西瓜冰淇淋）",
+                    "_chorus_fruit_ice_cream": "（紫颂果冰淇凌）",
+                    "_glow_berry_ice_cream": "（发光浆果冰淇淋）",
+                    "_berry_ice_cream": "（甜浆果冰淇淋）"
                 }
             ]
         },
@@ -2304,7 +2432,13 @@
                     "IceCream": "（冰淇淋）",
                     "NeapolitanScoop1": "（那不勒斯冰淇淋，第1勺）",
                     "NeapolitanScoop2": "（那不勒斯冰淇淋，第2勺）",
-                    "NeapolitanScoop3": "（那不勒斯冰淇淋，第3勺）"
+                    "NeapolitanScoop3": "（那不勒斯冰淇淋，第3勺）",
+                    "ChocolateIceCream": "（巧克力冰淇淋）",
+                    "AppleIceCream": "（苹果冰淇淋）",
+                    "MelonIceCream": "（西瓜冰淇淋）",
+                    "ChorusFruitIceCream": "（紫颂果冰淇凌）",
+                    "GlowBerryIceCream": "（发光浆果冰淇淋）",
+                    "BerryIceCream": "（甜浆果冰淇淋）"
                 }
             ]
         },
@@ -2336,6 +2470,41 @@
                 }
             ]
         },
+
+
+        {
+            "templates": {
+                "item.createfood.{0}ice_cream_sandwich": "{0}冰淇凌三明治"
+            },
+            "parameters": [
+                {
+                    "": "",
+                    "chocolate_": "巧克力",
+                    "apple_": "苹果",
+                    "melon_": "西瓜",
+                    "chorus_fruit_": "紫颂果",
+                    "glow_berry_": "发光浆果",
+                    "berry_": "甜浆果"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.is{0}IceCreamSandwichEnabled": "启用{0}冰淇凌三明治"
+            },
+            "parameters": [
+                {
+                    "": "",
+                    "Chocolate": "巧克力",
+                    "Apple": "苹果",
+                    "Melon": "西瓜",
+                    "ChorusFruit": "紫颂果",
+                    "GlowBerry": "发光浆果",
+                    "Berry": "甜浆果"
+                }
+            ]
+        },
+
 
         {
             "templates": {
@@ -2413,6 +2582,7 @@
         {
             "templates": {
                 "item.createfood.{0}meatball": "{0}肉丸",
+                "item.createfood.{0}meatball_sandwich": "{0}肉丸三明治",
                 "item.createfood.{0}meatball_stick_1": "{0}肉丸串",
                 "item.createfood.{0}meatball_stick_2": "{0}肉丸串",
                 "item.createfood.{0}meatball_stick_3": "{0}肉丸串",
@@ -2423,6 +2593,8 @@
                 {
                     "endermite_": "末影螨",
                     "": "牛",
+                    "pork_": "猪",
+                    "rabbit_": "兔",
                     "strider_": "炽足兽"
                 }
             ]
@@ -2430,6 +2602,7 @@
         {
             "templates": {
                 "text.autoconfig.createfood.option.is{0}MeatballEnabled": "启用{0}肉丸",
+                "text.autoconfig.createfood.option.is{0}MeatballSandwichEnabled": "启用{0}肉丸三明治",
                 "text.autoconfig.createfood.option.is{0}MeatballStickEnabled": "启用{0}肉丸串",
                 "text.autoconfig.createfood.option.isRaw{0}MeatballEnabled": "启用{0}肉丸生坯",
                 "text.autoconfig.createfood.option.isSmall{0}MeatballsEnabled": "启用小{0}肉丸"
@@ -2438,10 +2611,13 @@
                 {
                     "Endermite": "末影螨",
                     "": "牛",
+                    "Pork": "猪",
+                    "Rabbit": "兔",
                     "Strider": "炽足兽"
                 }
             ]
         },
+
 
         {
             "templates": {
@@ -2450,7 +2626,10 @@
             "parameters": [
                 {
                     "beef": "牛肉",
-                    "endermite": "末影螨肉"
+                    "endermite": "末影螨肉",
+                    "pork": "猪肉",
+                    "mutton": "羊肉",
+                    "rabbit": "兔肉"
                 }
             ]
         },
@@ -2461,10 +2640,14 @@
             "parameters": [
                 {
                     "Beef": "牛肉",
-                    "Endermite": "末影螨肉"
+                    "Endermite": "末影螨肉",
+                    "Pork": "猪肉",
+                    "Mutton": "羊肉",
+                    "Rabbit": "兔肉"
                 }
             ]
         },
+
 
         {
             "templates": {
@@ -2516,6 +2699,7 @@
             ]
         },
 
+
         {
             "templates": {
                 "item.createfood.pasta_plate_{0}": "{0}意面"
@@ -2523,12 +2707,21 @@
             "parameters": [
                 {
                     "butter": "黄油",
+                    "cheese": "芝士",
+                    "cheese_tomato_sauce": "芝士番茄酱",
+                    "chicken_cut": "鸡肉",
+                    "chicken_cut_tomato_sauce": "鸡肉番茄酱",
                     "eggplant": "茄子",
                     "endermite_meatballs": "末影螨肉丸",
                     "endermite_meatballs_tomato_sauce": "末影螨肉丸番茄酱",
                     "fish": "鱼肉",
+                    "fish_tomato_sauce": "鱼肉番茄酱",
                     "meatballs": "牛肉丸",
                     "mutton_chop": "羊排",
+                    "pork_meatballs": "猪肉丸",
+                    "pork_meatballs_tomato_sauce": "猪肉丸番茄酱",
+                    "rabbit_meatballs": "兔肉丸",
+                    "rabbit_meatballs_tomato_sauce": "兔肉丸番茄酱",
                     "slime": "黏液",
                     "slimeballs": "黏液球",
                     "squid_ink": "鱿鱼墨汁",
@@ -2545,12 +2738,21 @@
             "parameters": [
                 {
                     "Butter": "黄油",
+                    "Cheese": "芝士",
+                    "CheeseTomatoSauce": "芝士番茄酱",
+                    "ChickenCut": "鸡肉",
+                    "ChickenCutTomatoSauce": "鸡肉番茄酱",
                     "Eggplant": "茄子",
                     "EndermiteMeatballs": "末影螨肉丸",
                     "EndermiteMeatballsTomatoSauce": "末影螨肉丸番茄酱",
                     "Fish": "鱼肉",
+                    "FishTomatoSauce": "鱼肉番茄酱",
                     "Meatballs": "牛肉丸",
                     "MuttonChop": "羊排",
+                    "PorkMeatballs": "猪肉丸",
+                    "PorkMeatballsTomatoSauce": "猪肉丸番茄酱",
+                    "RabbitMeatballs": "兔肉丸",
+                    "RabbitMeatballsTomatoSauce": "兔肉丸番茄酱",
                     "Slime": "黏液",
                     "Slimeballs": "黏液球",
                     "SquidInk": "鱿鱼墨汁",
@@ -2561,12 +2763,15 @@
             ]
         },
 
+
         {
             "templates": {
                 "item.createfood.shredded_{0}": "切碎的{0}"
             },
             "parameters": [
                 {
+                    "beetroot": "甜菜根",
+                    "carrot": "胡萝卜",
                     "potato": "马铃薯"
                 }
             ]
@@ -2587,6 +2792,8 @@
             },
             "parameters": [
                 {
+                    "Beetroot": "甜菜根",
+                    "Carrot": "胡萝卜",
                     "Potato": "马铃薯"
                 }
             ]
@@ -2598,6 +2805,274 @@
             "parameters": [
                 {
                     "Chicken": "鸡肉"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.baked_potato{0}": "烤马铃薯{0}"
+            },
+            "parameters": [
+                {
+                    "_butter_mushroom": "（黄油、蘑菇）",
+                    "_butter_fried_egg": "（黄油、煎蛋）",
+                    "_butter_fish": "（黄油、鱼）",
+                    "_butter_cheese": "（黄油、芝士）",
+                    "_butter": "黄油"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isBakedPotato{0}Enabled": "启用烤马铃薯{0}"
+            },
+            "parameters": [
+                {
+                    "ButteMushroom": "（黄油、蘑菇）",
+                    "ButterFriedEgg": "（黄油、煎蛋）",
+                    "ButterFish": "（黄油、鱼）",
+                    "ButterCheese": "（黄油、芝士）",
+                    "Butter": "黄油"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.{0}_crumbs": "{0}屑"
+            },
+            "parameters": [
+                {
+                    "cookie": "曲奇碎",
+                    "bread": "面包"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.is{0}CrumbsEnabled": "启用{0}屑"
+            },
+            "parameters": [
+                {
+                    "Cookie": "曲奇碎",
+                    "Bread": "面包"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.boiled_egg{0}": "煮鸡蛋{0}"
+            },
+            "parameters": [
+                {
+                    "": "",
+                    "_peeled": "（已剥壳）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isBoiledEgg{0}Enabled": "启用煮鸡蛋{0}"
+            },
+            "parameters": [
+                {
+                    "": "",
+                    "Peeled": "（已剥壳）"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.sausage_biscuit_sandwich{0}": "香肠饼干三明治{0}",
+                "item.createfood.sausage_biscuit{0}": "香肠饼干{0}"
+            },
+            "parameters": [
+                {
+                    "_cheese_fried_egg_bacon": "（芝士、煎蛋、培根）",
+                    "_cheese_fried_egg": "（芝士、煎蛋）",
+                    "_cheese_bacon": "（芝士、培根）",
+                    "_fried_egg_bacon": "（煎蛋、培根）",
+                    "_fried_egg": "（煎蛋）",
+                    "_bacon": "（培根）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isSausageBiscuitSandwich{0}Enabled": "启用香肠饼干三明治{0}",
+                "text.autoconfig.createfood.option.isSausageBiscuit{0}Enabled": "启用香肠饼干{0}"
+            },
+            "parameters": [
+                {
+                    "CheeseFriedEggBacon": "（芝士、煎蛋、培根）",
+                    "CheeseFriedEgg": "（芝士、煎蛋）",
+                    "CheeseBacon": "（芝士、培根）",
+                    "FriedEggBacon": "（煎蛋、培根）",
+                    "FriedEgg": "（煎蛋）",
+                    "Bacon": "（培根）"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.mutton_wrap{0}": "羊肉卷饼{0}"
+            },
+            "parameters": [
+                {
+                    "_onion_tomato": "（洋葱、番茄）",
+                    "_lettuce_tomato": "（生菜、番茄）",
+                    "_onion_lettuce_tomato": "（洋葱、生菜、番茄）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isMuttonWrap{0}Enabled": "启用羊肉卷饼{0}"
+            },
+            "parameters": [
+                {
+                    "OnionTomato": "（洋葱、番茄）",
+                    "LettuceTomato": "（生菜、番茄）",
+                    "OnionLettuceTomato": "（洋葱、生菜、番茄）"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.macaroni{0}": "{0}通心粉"
+            },
+            "parameters": [
+                {
+                    "": "",
+                    "_bowl": "碗装",
+                    "_bowl_cheese": "芝士",
+                    "_bowl_cheese_bacon": "芝士培根",
+                    "_bowl_cheese_sausage": "芝士香肠",
+                    "_bowl_bacon": "培根",
+                    "_bowl_sausage": "香肠"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isMacaroni{0}Enabled": "启用{0}通心粉"
+            },
+            "parameters": [
+                {
+                    "": "",
+                    "Bowl": "碗装",
+                    "BowlCheese": "芝士",
+                    "BowlCheeseBacon": "芝士培根",
+                    "BowlCheeseSausage": "芝士香肠",
+                    "BowlBacon": "培根",
+                    "BowlSausage": "香肠"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.mixed_salad{0}": "混合沙拉{0}"
+            },
+            "parameters": [
+                {
+                    "_beetroot_carrot": "（甜菜根、胡萝卜）"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isMixedSalad{0}Enabled": "启用混合沙拉{0}"
+            },
+            "parameters": [
+                {
+                    "BeetrootCarrot": "（甜菜根、胡萝卜）"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.{0}_bits": "{0}末"
+            },
+            "parameters": [
+                {
+                    "bacon": "培根",
+                    "sausage": "香肠"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.is{0}BitsEnabled": "启用{0}末"
+            },
+            "parameters": [
+                {
+                    "Bacon": "培根",
+                    "Sausage": "香肠"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.{0}_cuts": "{0}肉丁",
+                "item.createfood.{0}_jerky": "{0}肉干",
+                "item.createfood.cooked_{0}_cuts": "熟{0}肉丁"
+            },
+            "parameters": [
+                {
+                    "rabbit": "兔"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.is{0}CutsEnabled": "启用{0}肉丁",
+                "text.autoconfig.createfood.option.is{0}JerkyEnabled": "启用{0}肉干",
+                "text.autoconfig.createfood.option.isCooked{0}CutsEnabled": "启用熟{0}肉丁"
+            },
+            "parameters": [
+                {
+                    "Rabbit": "兔"
+                }
+            ]
+        },
+
+
+        {
+            "templates": {
+                "item.createfood.diced_{0}": "{0}丁"
+            },
+            "parameters": [
+                {
+                    "tomato": "番茄",
+                    "onion": "洋葱"
+                }
+            ]
+        },
+        {
+            "templates": {
+                "text.autoconfig.createfood.option.isDiced{0}Enabled": "启用{0}丁"
+            },
+            "parameters": [
+                {
+                    "Tomato": "番茄",
+                    "Onion": "洋葱"
                 }
             ]
         }
