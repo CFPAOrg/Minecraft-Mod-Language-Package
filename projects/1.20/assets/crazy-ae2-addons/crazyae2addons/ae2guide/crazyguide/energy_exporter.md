@@ -21,7 +21,7 @@ It extracts power from your network and provides it outward.
 2. **Open the GUI**: Right-click the part to open its settings screen.
 3. **Install upgrades**:
     - **Speed Cards**: Increase the rate of FE transfer exponentially.
-    - Staring from 1FE/t (no upgrades) up to 16MFE/t (4 upgrades).
+    - Staring from 1FE/t (no upgrades) up to about max int FE/t (6 upgrades).
 4. **GregTech support**:
     - Insert a battery into the slot if you want to switch to GregTech EU mode.
     - The voltage used depends on the inserted battery tier (e.g., LV, MV, HV, etc.).
