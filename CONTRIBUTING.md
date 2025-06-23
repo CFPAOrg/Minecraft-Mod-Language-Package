@@ -29,29 +29,30 @@
 Minecraft-Mod-Language-Package
   ├─.github --------------- // GitHub 相关配置文件
   ├─config ---------------- // 配置文件
-  │ └─packer -------------- // 打包器配置文件
+  │  └─packer ------------- // 打包器配置文件
+  ├─docs ------------------ // 各类文档
   ├─projects -------------- // 翻译文件
-  │ └─(Minecraft 版本) ---- // 不带 fabric 字样的是用于 Forge 和 NeoForge 模组的
-  │   └─assets
-  │     ├─(CurseForge 项目名称) ---- // 见下
-  │     │ └─(命名空间) ------------- // 见下
-  │     │   └─lang ----------------- // 语言文件文件夹
-  │     │     ├─en_us.json --------- // English (United States) 语言文件
-  │     │     └─zh_cn.json --------- // 中文 (简体) 语言文件
-  │     ├─(Modrinth 项目名称)------- // 见下
-  │     │ └─(命名空间) ------------- // 见下
-  │     │   └─lang ----------------- // 语言文件文件夹
-  │     │     ├─en_us.json --------- // English (United States) 语言文件
-  │     │     └─zh_cn.json --------- // 中文 (简体) 语言文件
-  │     ├─minecraft
-  │     │ └─minecraft -------------- // Minecraft 原版使用的命名空间
-  │     │   ├─font
-  │     │   │ └─glyph_sizes.bin ---- // 全角标点修复文件
-  │     │   └─textures
-  │     │     └─font --------------- // 全角标点修复文件
-  │     └─1UNKNOWN ----------------- // 存放不在 CurseForge 和 Modrinth 上发布的模组
-  │         └─(命名空间)
-  │           └─lang
+  │  └─(Minecraft 版本) --- // 不带 fabric 字样的是用于 Forge 和 NeoForge 模组的
+  │    └─assets
+  │      ├─(CurseForge 项目名称) ---- // 见下
+  │      │ └─(命名空间) ------------- // 见下
+  │      │   └─lang ----------------- // 语言文件文件夹
+  │      │     ├─en_us.json --------- // English (United States) 语言文件
+  │      │     └─zh_cn.json --------- // 中文 (简体) 语言文件
+  │      ├─(Modrinth 项目名称)------- // 见下
+  │      │ └─(命名空间) ------------- // 见下
+  │      │   └─lang ----------------- // 语言文件文件夹
+  │      │     ├─en_us.json --------- // English (United States) 语言文件
+  │      │     └─zh_cn.json --------- // 中文 (简体) 语言文件
+  │      ├─minecraft
+  │      │ └─minecraft -------------- // Minecraft 原版使用的命名空间
+  │      │   ├─font
+  │      │   │ └─glyph_sizes.bin ---- // 全角标点修复文件
+  │      │   └─textures
+  │      │     └─font --------------- // 全角标点修复文件
+  │      └─1UNKNOWN ----------------- // 存放不在 CurseForge 和 Modrinth 上发布的模组
+  │        └─(命名空间)
+  │          └─lang
   └─src --------------- // 各种自动化工具的源码
     ├─Formatter ------- // 格式化工具，曾用于统一翻译文件格式
     ├─Language.Core 
@@ -62,7 +63,7 @@ Minecraft-Mod-Language-Package
 
 **CurseForge 项目名称**：以匠魂为例，它的 CurseForge 页面地址是 `https://www.curseforge.com/minecraft/mc-mods/tinkers-construct`，则 `CurseForge 项目名称` 为 `tinkers-construct`。因为它是唯一的，被用来追溯模组来源。
 
-**命名空间（Namespace）**：以匠魂为例，用压缩软件打开模组文件（JAR 格式），它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki](https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID?variant=zh-cn#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
+**命名空间（Namespace）**：以匠魂为例，用压缩软件打开模组文件（JAR 格式），它的 en_us.json 的路径为 `assets/tconstruct/lang/en_us.json`，则 `{命名空间}` 为 `assets/` 和 `/lang` 之间的内容，即 `tconstruct`。一个模组可能有多个命名空间。命名空间介绍见 [Minecraft Wiki：命名空间](https://zh.minecraft.wiki/w/%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4ID?variant=zh-cn#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4)。
 
 **Modrinth 项目名称**：以 Modrinth 独占模组 Clean F3 为例，它的 Modrinth 页面地址是 `https://modrinth.com/mod/clean-f3`，则在 `mod/` 后的内容 `clean-f3` 为 `{Modrinth 项目名称}` 的**主体**部分，而为了与 Curseforge 上发布的模组作以区分，所有仅在 Modrinth 上发布的模组，在其之前需要添加 `modrinth-` 作为区分。综上，它的 `{Modrinth 项目名称}` 为 `modrinth-clean-f3`。
 
@@ -83,11 +84,11 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 ### 总则
 
-- 翻译**必须**符合 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/) 的规定。
-- **拒绝**接收机器翻译（含生成式 AI）、生硬翻译。
-  - 提交的机器翻译需事先经过人工审查，且满足上述指南的规定。
+- 翻译**必须**遵守 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)。
+- **拒绝**接收机器翻译（含生成式 AI）、生硬翻译（不符合中文表达习惯的）。
   - 若直接提交此类翻译，该 PR 将被打上“生硬翻译”标签。
-  - 若提交者未及时进行有效修改，可依照本仓库的[搁置规则](#搁置规则)处理。
+  - 若提交者未及时进行有效修改，依照本仓库的[搁置规则](#搁置规则)处理。
+  - 已经过译后编辑，且**满足指南要求**的翻译可以接收。
 - 提交的翻译**必须**在审查后才能进入仓库。
 
 ### Pull Request 相关规定
@@ -139,7 +140,7 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 - [CFPA团队](https://github.com/CFPAOrg) 的成员（Member）和[本仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人，统称为管理员。
 - 至少一位管理员对 PR 给出批准（Approval）意见后，PR 才能合并。
 - 管理员在给出批准意见后**应**给 PR 加上“即将合并”标签，此后需至少等待 24 小时，若等待期间没有新动态则可以合并 PR。
-  - “动态”包括但不限于 PR 作者发送提交（Commit）、审查人提出意见。
+  - “动态”包括但不限于 PR 作者提交（Commit）、审查人评论。
 - 管理员有判断和处置包含敏感内容 PR 的权力，处置包括但不限于：要求使用中立表述、删减、关闭 PR、限制提交。
 
 #### PR 作者
@@ -155,7 +156,7 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 搁置规则用于解决由于 PR 作者迟迟不出面响应审查要求而导致的 PR 积压问题。
 
 1. 若 PR 中存在未作者未响应的审查超过 7 天，审查人有权提及（@）PR 作者，提醒其相应审查意见，然后加上“即将被搁置”标签。
-2. 若“即将被搁置”标签存在超过 7 天，PR 作者将被视为无法回应。此时
+2. 若“即将被搁置”标签存在超过 7 天，PR 作者将被视为无法回应。此时：
    - 2.1 若存在要求 PR 作者参与的审查意见，PR 将被加上“即将拒收”标签。1 天后 PR 将被关闭。
    - 2.2 若审查意见都无需 PR 作者参与，PR 将被加上“即将拒收”标签。1 天缓冲期内官方审查人**可以**直接采纳审查意见，并终止计时，转入合并流程。
 3. 在 1、2 所述过程中，若 PR 作者做出了回应，标签将被清除，计时重新从 1 开始。
