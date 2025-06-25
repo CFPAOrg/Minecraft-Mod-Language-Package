@@ -1,0 +1,29 @@
+{
+  "name": "Iota 赋名",
+  "category": "hexcasting:patterns",
+  "icon": "ae2:name_press",
+  "pages": [
+    "这些图案似乎会直接为 iota 赋予名称。经此操作的 iota 在法术中的表现不会产生变化，但存于$(item)$(l:hexcasting:items/focus)核心/$或施放$(thing)$(l:hexcasting:patterns/basics#hexcasting:print)揭示/$时会显示该名称。",
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:inscription",
+      "input": "any, string",
+      "output": "any",
+      "text": "将所给名字赋予所给 iota。传入 Null 即取消赋名。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:inscribe",
+      "input": "any",
+      "output": "string",
+      "text": "返回 iota 被赋予的名字。也许可以用来在运算中偷藏点字符串。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:substring",
+      "input": "any, string",
+      "output": "any|null",
+      "text": "按照所给标签在多个 iota 中搜索 iota。很适合拿来当映射。不知道给 iota 打标签时不用字符串会怎么样……"
+    }
+  ]
+}
