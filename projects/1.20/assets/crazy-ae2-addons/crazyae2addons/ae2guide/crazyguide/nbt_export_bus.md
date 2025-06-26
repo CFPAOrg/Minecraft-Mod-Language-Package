@@ -8,18 +8,46 @@ categories:
 item_ids:
   - crazyae2addons:nbt_export_bus
 ---
-# NBT Export Bus
+# NBT Storage Bus
 
-**To turn it off, save the filter when nothing is in the input box.**
+The NBT Storage Bus is an advanced version of the AE2 storage bus that lets you filter and control access to storage **based on NBT data**.
 
-The NBT Export Bus part lets you export items from your ME network based on their NBT data. You can enter any valid NBT tag string to filter which items will be sent out, and choose whether items must match every tag or just one of them. It also supports a wildcard: `ANY`, when you don't want to specify the exact tag, when just the existence of it is enough. Example: `{StoredEnchantments:ANY}`
+---
 
 ## How to Use
 
-1. **Attach the part**: Place the NBT Export Bus on any side of an ME cable.
-2. **Open settings**: Right-click the part with to open its configuration screen.
-3. **Set NBT filter**: In the text box, type your NBT filter string (for example, `{StoredEnchantments:[{lvl:5S,id:"minecraft:sharpness"}]}`). **The `S` in `lvl:5S` is also important!**
-4. **Choose match mode**: Use the "Match Any" checkbox to decide if the bus should export items matching *any* one of the tags (when checked) or *all* tags exactly (when unchecked).
-5. **Save**: Click Save. The bus will now pull matching items from your ME storage and deposit them into the connected inventory.
+1. **Place on a Storage Block**
+    - Attach the NBT Export Bus to a chest, drawer, or any block with item inventory.
 
-With the NBT Export Bus set to `{ANY:ANY}` and `Match Any` selected, you can easily export all items that have any NBT tag attached out of your ME system.  
+2. **Open Configuration GUI**
+    - Right-click the part to configure its filter and behavior.
+    - GUI allows you to:
+        - Set read/write permissions
+        - Toggle extract filters
+        - Configure NBT match expressions
+
+3. **Write NBT Filter**
+    - Use the text area to enter **NBT match expressions**.
+    - Examples:
+        - {Enchantments:[{id:"minecraft:sharpness"}]} - matches only items with Sharpness enchant.
+        - {display:{Name:My Sword}} - matches items with tag display value set to Name: My Sword
+        - {*:"value"} - matches if *any* NBT value is "value"
+        - {key:!"value"} - matches if the NBT named key value is not "value"
+    - Supports logical expressions like &&, ||, !, nand, etc.
+
+4. **Load NBT from Item** *(Optional)*
+    - Place an item in the fake slot and press the **Load** button.
+    - Automatically imports the item's NBT into the filter.
+
+---
+
+## Matching System
+
+NBT expressions use a custom parser that supports:
+
+- **Wildcard keys/values**: "*"
+- **AND/OR/NAND/XOR logic**
+- **Recursive key matching**
+- **Negation with !value**
+
+If an item matches the expression, it's exported.

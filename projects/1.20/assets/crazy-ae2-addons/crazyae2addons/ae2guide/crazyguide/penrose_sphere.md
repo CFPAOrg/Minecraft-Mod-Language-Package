@@ -25,39 +25,155 @@ The Penrose Sphere is a late-game multiblock power generator that filled with **
 
 ## Structure Overview
 
-The structure is a 7x7x3 multiblock. It includes Penrose Frames, Penrose Coils, and mandatory air gaps.
+The structure is a 7x7x3 multiblock. It includes Penrose Frames and Penrose Coils.
+Its more readable on the [Github Wiki](https://github.com/GilbertzRivi/CrazyAE2Addons/wiki/penrose_sphere)
 
 - **F** – Penrose Frame Block
-- **E** – Penrose Coil Block
+- **O** – Penrose Coil Block
 - **C** – Penrose Controller Block
-- **A** – Air 
 
 #### Layer 1:
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F C F F F
+F F F F F F F F F F F<br/>
+F A A A A A A A A A F<br/>
+F A A A A A A A A A F<br/>
+F A A A F O F A A A F<br/>
+F A A F F O F F A A F<br/>
+F A A O O O O O A A F<br/>
+F A A F F O F F A A F<br/>
+F A A A F O F A A A F<br/>
+F A A A A A A A A A F<br/>
+F A A A A A A A A A F<br/>
+F F F F F F F F F F F
 
 #### Layer 2:
-F E E E E E F<br/>
-E A A A A A E<br/>
-E A A A A A E<br/>
-E A A F A A E<br/>
-E A A A A A E<br/>
-E A A A A A E<br/>
-F E E E E E F
+F A A A A A A A A A F<br/>
+A A A A A A A A A A A<br/>
+A A A F F O F F A A A<br/>
+A A F F A A A F F A A<br/>
+A A F A A A A A F A A<br/>
+A A O A A A A A O A A<br/>
+A A F A A A A A F A A<br/>
+A A F F A A A F F A A<br/>
+A A A F F O F F A A A<br/>
+A A A A A A A A A A A<br/>
+F A A A A A A A A A F
 
 #### Layer 3:
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F
+F A A A A A A A A A F<br/>
+A A A F F O F F A A A<br/>
+A A F F A A A F F A A<br/>
+A F F A A A A A F F A<br/>
+A F A A A A A A A F A<br/>
+A O A A A A A A A O A<br/>
+A F A A A A A A A F A<br/>
+A F F A A A A A F F A<br/>
+A A F F A A A F F A A<br/>
+A A A F F O F F A A A<br/>
+F A A A A A A A A A F
+
+#### Layer 4:
+F A A A F O F A A A F<br/>
+A A F F F A F F F A A<br/>
+A F F A A A A A F F A<br/>
+A F A A A A A A A F A<br/>
+F F A A A A A A A F F<br/>
+O A A A A A A A A A O<br/>
+F F A A A A A A A F F<br/>
+A F A A A A A A A F A<br/>
+A F F A A A A A F F A<br/>
+A A F F F A F F F A A<br/>
+F A A A F O F A A A F
+
+#### Layer 5:
+F A A F F O F F A A F<br/>
+A A F F A A A F F A A<br/>
+A F A A A A A A A F A<br/>
+F F A A A A A A A F F<br/>
+F A A A A A A A A A F<br/>
+O A A A A A A A A A O<br/>
+F A A A A A A A A A F<br/>
+F F A A A A A A A F F<br/>
+A F A A A A A A A F A<br/>
+A A F F A A A F F A A<br/>
+F A A F F O F F A A F
+
+#### Layer 6:
+F A A O O O O O A A F<br/>
+A A O A A A A A O A A<br/>
+A O A A A A A A A O A<br/>
+O A A A A A A A A A O<br/>
+O A A A A A A A A A O<br/>
+O A A A A A A A A A O<br/>
+O A A A A A A A A A O<br/>
+O A A A A A A A A A O<br/>
+A O A A A A A A A O A<br/>
+A A O A A A A A O A A<br/>
+F A A O O C O O A A F
+
+#### Layer 7:
+F A A F F O F F A A F<br/>
+A A F F A A A F F A A<br/>
+A F A A A A A A A F A<br/>
+F F A A A A A A A F F<br/>
+F A A A A A A A A A F<br/>
+O A A A A A A A A A O<br/>
+F A A A A A A A A A F<br/>
+F F A A A A A A A F F<br/>
+A F A A A A A A A F A<br/>
+A A F F A A A F F A A<br/>
+F A A F F O F F A A F
+
+#### Layer 8:
+F A A A F O F A A A F<br/>
+A A F F F A F F F A A<br/>
+A F F A A A A A F F A<br/>
+A F A A A A A A A F A<br/>
+F F A A A A A A A F F<br/>
+O A A A A A A A A A O<br/>
+F F A A A A A A A F F<br/>
+A F A A A A A A A F A<br/>
+A F F A A A A A F F A<br/>
+A A F F F A F F F A A<br/>
+F A A A F O F A A A F
+
+#### Layer 9:
+F A A A A A A A A A F<br/>
+A A A F F O F F A A A<br/>
+A A F F A A A F F A A<br/>
+A F F A A A A A F F A<br/>
+A F A A A A A A A F A<br/>
+A O A A A A A A A O A<br/>
+A F A A A A A A A F A<br/>
+A F F A A A A A F F A<br/>
+A A F F A A A F F A A<br/>
+A A A F F O F F A A A<br/>
+F A A A A A A A A A F
+
+#### Layer 10:
+F A A A A A A A A A F<br/>
+A A A A A A A A A A A<br/>
+A A A F F O F F A A A<br/>
+A A F F A A A F F A A<br/>
+A A F A A A A A F A A<br/>
+A A O A A A A A O A A<br/>
+A A F A A A A A F A A<br/>
+A A F F A A A F F A A<br/>
+A A A F F O F F A A A<br/>
+A A A A A A A A A A A<br/>
+F A A A A A A A A A F
+
+#### Layer 11:
+F F F F F F F F F F F<br/>
+F A A A A A A A A A F<br/>
+F A A A A A A A A A F<br/>
+F A A A F O F A A A F<br/>
+F A A F F O F F A A F<br/>
+F A A O O O O O A A F<br/>
+F A A F F O F F A A F<br/>
+F A A A F O F A A A F<br/>
+F A A A A A A A A A F<br/>
+F A A A A A A A A A F<br/>
+F F F F F F F F F F F
 
 Once built, the frame blocks will visually indicate if the structure is complete.
 

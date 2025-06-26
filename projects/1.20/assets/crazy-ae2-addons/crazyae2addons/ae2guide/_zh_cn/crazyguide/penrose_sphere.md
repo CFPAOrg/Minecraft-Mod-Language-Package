@@ -25,39 +25,154 @@ item_ids:
 
 ## 结构示例
 
-此结构为7x3x7的多方块，包含彭罗斯框架、彭罗斯线圈，以及必要的空气间隙。
+此结构为7x3x7的多方块，包含彭罗斯框架和彭罗斯线圈。在[Github Wiki](https://github.com/GilbertzRivi/CrazyAE2Addons/wiki/penrose_sphere)可读性更好。
 
 - **F** – 彭罗斯框架
-- **E** – 彭罗斯线圈
+- **O** – 彭罗斯线圈
 - **C** – 彭罗斯控制器
-- **A** – 空气
 
 #### 第1层：
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F C F F F
+F F F F F F F F F F F<br/>
+F A A A A A A A A A F<br/>
+F A A A A A A A A A F<br/>
+F A A A F O F A A A F<br/>
+F A A F F O F F A A F<br/>
+F A A O O O O O A A F<br/>
+F A A F F O F F A A F<br/>
+F A A A F O F A A A F<br/>
+F A A A A A A A A A F<br/>
+F A A A A A A A A A F<br/>
+F F F F F F F F F F F
 
 #### 第2层：
-F E E E E E F<br/>
-E A A A A A E<br/>
-E A A A A A E<br/>
-E A A F A A E<br/>
-E A A A A A E<br/>
-E A A A A A E<br/>
-F E E E E E F
+F A A A A A A A A A F<br/>
+A A A A A A A A A A A<br/>
+A A A F F O F F A A A<br/>
+A A F F A A A F F A A<br/>
+A A F A A A A A F A A<br/>
+A A O A A A A A O A A<br/>
+A A F A A A A A F A A<br/>
+A A F F A A A F F A A<br/>
+A A A F F O F F A A A<br/>
+A A A A A A A A A A A<br/>
+F A A A A A A A A A F
 
 #### 第3层：
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F
+F A A A A A A A A A F<br/>
+A A A F F O F F A A A<br/>
+A A F F A A A F F A A<br/>
+A F F A A A A A F F A<br/>
+A F A A A A A A A F A<br/>
+A O A A A A A A A O A<br/>
+A F A A A A A A A F A<br/>
+A F F A A A A A F F A<br/>
+A A F F A A A F F A A<br/>
+A A A F F O F F A A A<br/>
+F A A A A A A A A A F
+
+#### 第4层：
+F A A A F O F A A A F<br/>
+A A F F F A F F F A A<br/>
+A F F A A A A A F F A<br/>
+A F A A A A A A A F A<br/>
+F F A A A A A A A F F<br/>
+O A A A A A A A A A O<br/>
+F F A A A A A A A F F<br/>
+A F A A A A A A A F A<br/>
+A F F A A A A A F F A<br/>
+A A F F F A F F F A A<br/>
+F A A A F O F A A A F
+
+#### 第5层：
+F A A F F O F F A A F<br/>
+A A F F A A A F F A A<br/>
+A F A A A A A A A F A<br/>
+F F A A A A A A A F F<br/>
+F A A A A A A A A A F<br/>
+O A A A A A A A A A O<br/>
+F A A A A A A A A A F<br/>
+F F A A A A A A A F F<br/>
+A F A A A A A A A F A<br/>
+A A F F A A A F F A A<br/>
+F A A F F O F F A A F
+
+#### 第6层：
+F A A O O O O O A A F<br/>
+A A O A A A A A O A A<br/>
+A O A A A A A A A O A<br/>
+O A A A A A A A A A O<br/>
+O A A A A A A A A A O<br/>
+O A A A A A A A A A O<br/>
+O A A A A A A A A A O<br/>
+O A A A A A A A A A O<br/>
+A O A A A A A A A O A<br/>
+A A O A A A A A O A A<br/>
+F A A O O C O O A A F
+
+#### 第7层：
+F A A F F O F F A A F<br/>
+A A F F A A A F F A A<br/>
+A F A A A A A A A F A<br/>
+F F A A A A A A A F F<br/>
+F A A A A A A A A A F<br/>
+O A A A A A A A A A O<br/>
+F A A A A A A A A A F<br/>
+F F A A A A A A A F F<br/>
+A F A A A A A A A F A<br/>
+A A F F A A A F F A A<br/>
+F A A F F O F F A A F
+
+#### 第8层：
+F A A A F O F A A A F<br/>
+A A F F F A F F F A A<br/>
+A F F A A A A A F F A<br/>
+A F A A A A A A A F A<br/>
+F F A A A A A A A F F<br/>
+O A A A A A A A A A O<br/>
+F F A A A A A A A F F<br/>
+A F A A A A A A A F A<br/>
+A F F A A A A A F F A<br/>
+A A F F F A F F F A A<br/>
+F A A A F O F A A A F
+
+#### 第9层：
+F A A A A A A A A A F<br/>
+A A A F F O F F A A A<br/>
+A A F F A A A F F A A<br/>
+A F F A A A A A F F A<br/>
+A F A A A A A A A F A<br/>
+A O A A A A A A A O A<br/>
+A F A A A A A A A F A<br/>
+A F F A A A A A F F A<br/>
+A A F F A A A F F A A<br/>
+A A A F F O F F A A A<br/>
+F A A A A A A A A A F
+
+#### 第10层：
+F A A A A A A A A A F<br/>
+A A A A A A A A A A A<br/>
+A A A F F O F F A A A<br/>
+A A F F A A A F F A A<br/>
+A A F A A A A A F A A<br/>
+A A O A A A A A O A A<br/>
+A A F A A A A A F A A<br/>
+A A F F A A A F F A A<br/>
+A A A F F O F F A A A<br/>
+A A A A A A A A A A A<br/>
+F A A A A A A A A A F
+
+#### 第11层：
+F F F F F F F F F F F<br/>
+F A A A A A A A A A F<br/>
+F A A A A A A A A A F<br/>
+F A A A F O F A A A F<br/>
+F A A F F O F F A A F<br/>
+F A A O O O O O A A F<br/>
+F A A F F O F F A A F<br/>
+F A A A F O F A A A F<br/>
+F A A A A A A A A A F<br/>
+F A A A A A A A A A F<br/>
+F F F F F F F F F F F
 
 搭建完成后，框架方块的外观会发生变化。
 
