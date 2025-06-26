@@ -13,12 +13,28 @@ item_ids:
 
 <BlockImage id="crazyae2addons:crazy_pattern_provider" scale="4"></BlockImage>
 
-The Crazy Pattern Provider is an upgraded version of the AE2 Pattern Provider with extended capacity and scrollable UI.
+The Crazy Pattern Provider is an extended version of AE2's Pattern Provider with dynamic expandability.
 
 ---
 
 ## Key Features
 
-- **81 Pattern Slots**
-   - Stores up to 81 encoded patterns, compared to the standard 9.
-   - Slots are scrollable via a custom scrollbar in the GUI.
+- **Expandable Pattern Capacity**
+  - Starts with 72 (8x9) pattern slots.
+  - Right-click with a Crazy Upgrade item to add +9 more slots.
+  - There is no limit, you can make a provider holding 9999 patterns.
+
+- **Scrollable GUI**
+    - Display shows current pattern capacity.
+---
+
+## How to Use
+
+1. **Place the Block**
+   - Acts like a standard AE2 Pattern Provider, connects to ME network.
+
+2. **Insert Encoded Patterns**
+
+3. **Upgrade Slot Count**
+   - Use a Crazy Upgrade item on the block to increase pattern capacity.
+   - UI updates automatically.
