@@ -1,0 +1,51 @@
+{
+  "name": "Iota Inscription",
+  "category": "hexcasting:patterns",
+  "icon": "ae2:name_press",
+  "advancement": "hexcasting:root",
+  "pages": [
+    "These patterns seem to manipulate a name directly etched into an iota. An iota engraved in this way acts no different in my spells, but they're marked in my $(item)$(l:hexcasting:items/focus)Foci/$ or when I cast $(thing)$(l:hexcasting:patterns/basics#hexcasting:print)Reveal/$.",
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:inscription",
+      "anchor": "hexmu:inscription",
+      "input": "any, string",
+      "output": "any",
+      "text": "Inscribes the passed iota with the given name, consuming a miniscule amount of _media. I can supply Null to strip the name."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:inscribe",
+      "anchor": "hexmu:inscribe",
+      "input": "any",
+      "output": "string",
+      "text": "Gives me the name inscribed on an iota, or Null if it has no name. This could be a rudimentary form of $(thing)reflection/$."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:substring",
+      "anchor": "hexmu:substring",
+      "input": "any, string",
+      "output": "any | null",
+      "text": "Searches through a list of iotas for one with a certain label. This could let me use a list as a form of $(thing)dictionary/$, mapping names to values."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "advancement": "hexcasting:enlightenment",
+      "op_id": "hexmu:annotation/get",
+      "anchor": "hexmu:annotation/get",
+      "input": "any, key, value",
+      "output": "any",
+      "text": "Annotates an iota with the given key-value pair. Though the value can be anything I want, the key must be unique for every pair — a duplicate key simply overwrites the older."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "advancement": "hexcasting:enlightenment",
+      "op_id": "hexmu:annotation/set",
+      "anchor": "hexmu:annotation/set",
+      "input": "any, key",
+      "output": "value",
+      "text": "Returns an annotation value from an iota. Hexes can't determine what annotations an iota contains, if any. Methods such as F3+H could reveal them to me, but I best not use them."
+    }
+  ]
+}

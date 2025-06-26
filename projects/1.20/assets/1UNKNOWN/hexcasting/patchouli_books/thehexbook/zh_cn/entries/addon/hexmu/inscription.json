@@ -1,0 +1,51 @@
+{
+  "name": "Iota 赋名",
+  "category": "hexcasting:patterns",
+  "icon": "ae2:name_press",
+  "advancement": "hexcasting:root",
+  "pages": [
+    "这些图案似乎会直接为 iota 赋予名称。经此操作的 iota 在法术中的表现不会产生变化，但存于$(item)$(l:hexcasting:items/focus)核心/$或施放$(thing)$(l:hexcasting:patterns/basics#hexcasting:print)揭示/$时会显示该名称。",
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:inscription",
+      "anchor": "hexmu:inscription",
+      "input": "any, string",
+      "output": "any",
+      "text": "将所给名字赋予所给 iota，消耗极少量$(media)媒质/$。传入 Null 即取消赋名。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:inscribe",
+      "anchor": "hexmu:inscribe",
+      "input": "any",
+      "output": "string",
+      "text": "返回 iota 被赋予的名字，若无名字则返回 Null。算是一种原始的$(thing)反射/$。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexmu:substring",
+      "anchor": "hexmu:substring",
+      "input": "any, string",
+      "output": "any | null",
+      "text": "按照所给标签在多个 iota 中搜索 iota。可以把列表用成$(thing)字典/$：将名字映射给值。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "advancement": "hexcasting:enlightenment",
+      "op_id": "hexmu:annotation/get",
+      "anchor": "hexmu:annotation/get",
+      "input": "any, key, value",
+      "output": "any",
+      "text": "以所给键值对注解 iota。值可以任选，但同批注解中键必须两两不同；如有重复，则新键值对覆盖旧键值对。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "advancement": "hexcasting:enlightenment",
+      "op_id": "hexmu:annotation/set",
+      "anchor": "hexmu:annotation/set",
+      "input": "any, key",
+      "output": "value",
+      "text": "返回 iota 中的注解值。咒术预先不知道 iota 包含哪些注解，以及是否包含注解。F3+H 之类的方法可以揭示注解，但最好还是不要用它们。"
+    }
+  ]
+}
