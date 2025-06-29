@@ -3,7 +3,7 @@ navigation:
   title: 创造凝胶
   icon: "justdynathings:creative_goo"
   parent: goo.md
-  position : 99
+  position: 99
 categories:
 - goo
 item_ids:
@@ -21,3 +21,5 @@ item_ids:
 <BlockImage id="justdynathings:creative_goo" scale="4.0" p:alive="true" />
 
 可由任意扳手激活或失活。
+
+<RecipeFor id="justdynathings:creative_goo" />

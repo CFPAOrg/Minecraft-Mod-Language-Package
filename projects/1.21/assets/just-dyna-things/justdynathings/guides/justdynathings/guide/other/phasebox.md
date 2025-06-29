@@ -17,4 +17,4 @@ Also it can be CTM when installed **ConnectedTexturesMod**
 
 <BlockImage id="justdynathings:phase_box" scale="4.0"/>
 
-<RecipeFor id="justdynathings:phase_box" />
+<Recipe id="justdynathings:phase_box" />

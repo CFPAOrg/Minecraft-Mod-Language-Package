@@ -23,4 +23,4 @@ FE rate : **11520**
 
 <BlockImage id="justdynathings:eclipse_alloy_solar_panel" scale="4.0"/>
 
-<RecipeFor id="justdynathings:eclipse_alloy_solar_panel" />
+<Recipe id="justdynathings:eclipse_alloy_solar_panel" />

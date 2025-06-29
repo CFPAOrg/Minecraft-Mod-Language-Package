@@ -29,4 +29,4 @@ A powerful machine that allow to convert blocks into other at the cost of a cata
   </BoxAnnotation>
 </GameScene>
 
-<RecipeFor id="justdynathings:reforger" />
+<Recipe id="justdynathings:reforger" />

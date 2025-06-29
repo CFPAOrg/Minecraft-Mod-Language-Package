@@ -2,7 +2,7 @@
 navigation:
   title: 再造器
   icon: "justdynathings:reforger"
-  position : 2
+  position: 2
   parent: justdynathings:other.md
 item_ids:
   - justdynathings:reforger
@@ -29,4 +29,4 @@ item_ids:
   </BoxAnnotation>
 </GameScene>
 
-<RecipeFor id="justdynathings:reforger" />
+<Recipe id="justdynathings:reforger" />

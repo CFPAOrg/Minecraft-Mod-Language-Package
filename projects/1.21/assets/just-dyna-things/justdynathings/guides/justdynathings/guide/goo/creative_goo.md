@@ -21,3 +21,5 @@ Tier level : **MAX**
 <BlockImage id="justdynathings:creative_goo" scale="4.0" p:alive="true" />
 
 Also it can be toggled using any wrenches
+
+<RecipeFor id="justdynathings:creative_goo" />

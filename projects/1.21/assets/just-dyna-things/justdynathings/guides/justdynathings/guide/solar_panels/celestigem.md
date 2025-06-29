@@ -22,4 +22,4 @@ FE rate : **3840**
 
 <BlockImage id="justdynathings:celestigem_solar_panel" scale="4.0"/>
 
-<RecipeFor id="justdynathings:celestigem_solar_panel" />
+<Recipe id="justdynathings:celestigem_solar_panel" />

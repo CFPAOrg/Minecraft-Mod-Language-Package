@@ -24,4 +24,4 @@ Nothing
 
 <BlockImage id="justdynathings:ferricore_solar_panel" scale="4.0"/>
 
-<RecipeFor id="justdynathings:ferricore_solar_panel" />
+<Recipe id="justdynathings:ferricore_solar_panel" />

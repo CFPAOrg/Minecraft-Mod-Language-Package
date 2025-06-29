@@ -22,4 +22,4 @@ An example of Goo Revitalizer powered below a BlazeBloom Goo revitalized
   <Block y="1" id="justdirethings:gooblock_tier2" p:alive="true"/>
 </GameScene>
 
-<RecipeFor id="justdynathings:revitalizer" />
+<Recipe id="justdynathings:revitalizer" />
