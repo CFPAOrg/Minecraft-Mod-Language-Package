@@ -2,7 +2,7 @@
 navigation:
   title: 烈焰金太阳能板
   icon: "justdynathings:blazegold_solar_panel"
-  position : 2
+  position: 2
   parent: justdynathings:solar_panels.md
 item_ids:
   - justdynathings:blazegold_solar_panel
@@ -10,7 +10,7 @@ item_ids:
 
 # 烈焰金太阳能板
 
-会生产Forge能量（Forge Energy）的太阳能板。
+会生产Forge能量（Forge Energy，FE）的太阳能板。
 
 FE生产速率：**960**
 
@@ -22,4 +22,4 @@ FE生产速率：**960**
 
 <BlockImage id="justdynathings:blazegold_solar_panel" scale="4.0"/>
 
-<RecipeFor id="justdynathings:blazegold_solar_panel" />
+<Recipe id="justdynathings:blazegold_solar_panel" />

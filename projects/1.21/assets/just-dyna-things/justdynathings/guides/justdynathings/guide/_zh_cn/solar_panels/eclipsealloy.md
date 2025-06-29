@@ -2,7 +2,7 @@
 navigation:
   title: 蚀空合金太阳能板
   icon: "justdynathings:eclipse_alloy_solar_panel"
-  position : 4
+  position: 4
   parent: justdynathings:solar_panels.md
 item_ids:
   - justdynathings:eclipse_alloy_solar_panel
@@ -10,7 +10,7 @@ item_ids:
 
 # 蚀空合金太阳能板
 
-会生产Forge能量（Forge Energy）的太阳能板。
+会生产Forge能量（Forge Energy，FE）的太阳能板。
 
 FE生产速率：**11520**
 
@@ -23,4 +23,4 @@ FE生产速率：**11520**
 
 <BlockImage id="justdynathings:eclipse_alloy_solar_panel" scale="4.0"/>
 
-<RecipeFor id="justdynathings:eclipse_alloy_solar_panel" />
+<Recipe id="justdynathings:eclipse_alloy_solar_panel" />

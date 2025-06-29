@@ -2,7 +2,7 @@
 navigation:
   title: 黑洞
   icon: "justdynathings:blackhole"
-  position : 5
+  position: 5
   parent: justdynathings:other.md
 item_ids:
   - justdynathings:blackhole
@@ -16,4 +16,4 @@ item_ids:
 
 <BlockImage id="justdynathings:blackhole" scale="4.0"/>
 
-<RecipeFor id="justdynathings:blackhole" />
+<Recipe id="justdynathings:blackhole" />

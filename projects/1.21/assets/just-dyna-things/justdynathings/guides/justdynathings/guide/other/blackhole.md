@@ -16,4 +16,4 @@ It can be turn off to allow to store abnormal amount of energy or fluids on a ch
 
 <BlockImage id="justdynathings:blackhole" scale="4.0"/>
 
-<RecipeFor id="justdynathings:blackhole" />
+<Recipe id="justdynathings:blackhole" />
