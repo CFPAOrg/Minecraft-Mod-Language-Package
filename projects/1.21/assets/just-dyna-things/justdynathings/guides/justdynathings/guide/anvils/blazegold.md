@@ -18,9 +18,9 @@ An anvil that repair items using a [high temperature fluid](https://github.com/D
 
 ## Default High Temperature Fluids
 
-| Item                                                                     | Registry ID                            | Efficiency (float) |
-| ------------------------------------------------------------------------ | -------------------------------------- | ------------------ |
-| <ItemImage id= "minecraft:lava_bucket"            scale="0.75" />        | minecraft:lava                         | 1.0x               |
-| <ItemImage id="justdirethings:refined_t2_fluid_bucket"  scale="0.75" />  | justdirethings:refined_t2_fluid_source | 2.5x               |
-| <ItemImage id= "justdirethings:refined_t3_fluid_bucket"  scale="0.75" /> | justdirethings:refined_t3_fluid_source | 5.5x               |
-| <ItemImage id= "justdirethings:refined_t4_fluid_bucket"  scale="0.75" /> | justdirethings:refined_t4_fluid_source | 7.5x               |
+| Item                                                                     | Registry ID                            | Efficiency |
+| ------------------------------------------------------------------------ | -------------------------------------- | ---------- |
+| <ItemImage id= "minecraft:lava_bucket"            scale="0.75" />        | minecraft:lava                         | 1.0x       |
+| <ItemImage id="justdirethings:refined_t2_fluid_bucket"  scale="0.75" />  | justdirethings:refined_t2_fluid_source | 2.5x       |
+| <ItemImage id= "justdirethings:refined_t3_fluid_bucket"  scale="0.75" /> | justdirethings:refined_t3_fluid_source | 5.5x       |
+| <ItemImage id= "justdirethings:refined_t4_fluid_bucket"  scale="0.75" /> | justdirethings:refined_t4_fluid_source | 7.5x       |

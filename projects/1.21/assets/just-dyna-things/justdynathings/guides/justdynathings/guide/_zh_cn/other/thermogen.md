@@ -18,27 +18,27 @@ item_ids:
 
 ## 默认热源
 
-| 物品                                                                   | 注册ID                      | 效率（浮点） |
-| ---------------------------------------------------------------------- | --------------------------- | ------------ |
-| <ItemImage id= "minecraft:campfire"  scale="0.75" />                   | minecraft:campfire          | 0.5x         |
-| <ItemImage id= "minecraft:flint_and_steel"   scale="0.75" />（火）     | minecraft:fire              | 0.5x         |
-| <ItemImage id="minecraft:magma_block"   scale="0.75" />                | minecraft:magma_block       | 0.75x        |
-| <ItemImage id="minecraft:soul_campfire"  scale="0.75" />               | minecraft:soul_campfire     | 0.75x        |
-| <ItemImage id="minecraft:flint_and_steel"    scale="0.75" />（灵魂火） | minecraft:soul_fire         | 0.75x        |
-| <ItemImage id= "minecraft:cauldron"   scale="0.75" />（熔岩）          | minecraft:lava_cauldron     | 0.99x        |
-| <ItemImage id= "minecraft:lava_bucket"         scale="0.75" />         | minecraft:lava              | 1.0x         |
-| <ItemImage id= "justdirethings:coalblock_t1"  scale="0.75" />          | justdirethings:coalblock_t1 | 2.5x         |
-| <ItemImage id="justdirethings:coalblock_t2"  scale="0.75" />           | justdirethings:coalblock_t2 | 5.5x         |
-| <ItemImage id="justdirethings:coalblock_t3"  scale="0.75" />           | justdirethings:coalblock_t3 | 7.5x         |
-| <ItemImage id="justdirethings:coalblock_t4"  scale="0.75" />           | justdirethings:coalblock_t4 | 10.5x        |
+| 物品                                                                   | 注册ID                      | 效率  |
+| ---------------------------------------------------------------------- | --------------------------- | ----- |
+| <ItemImage id= "minecraft:campfire"  scale="0.75" />                   | minecraft:campfire          | 0.5x  |
+| <ItemImage id= "minecraft:flint_and_steel"   scale="0.75" />（火）     | minecraft:fire              | 0.5x  |
+| <ItemImage id="minecraft:magma_block"   scale="0.75" />                | minecraft:magma_block       | 0.75x |
+| <ItemImage id="minecraft:soul_campfire"  scale="0.75" />               | minecraft:soul_campfire     | 0.75x |
+| <ItemImage id="minecraft:flint_and_steel"    scale="0.75" />（灵魂火） | minecraft:soul_fire         | 0.75x |
+| <ItemImage id= "minecraft:cauldron"   scale="0.75" />（熔岩）          | minecraft:lava_cauldron     | 0.99x |
+| <ItemImage id= "minecraft:lava_bucket"         scale="0.75" />         | minecraft:lava              | 1.0x  |
+| <ItemImage id= "justdirethings:coalblock_t1"  scale="0.75" />          | justdirethings:coalblock_t1 | 2.5x  |
+| <ItemImage id="justdirethings:coalblock_t2"  scale="0.75" />           | justdirethings:coalblock_t2 | 5.5x  |
+| <ItemImage id="justdirethings:coalblock_t3"  scale="0.75" />           | justdirethings:coalblock_t3 | 7.5x  |
+| <ItemImage id="justdirethings:coalblock_t4"  scale="0.75" />           | justdirethings:coalblock_t4 | 10.5x |
 
 ## 默认冷却剂
 
-| 物品                                                                      | 注册ID                                  | 效率（浮点） |
-| ------------------------------------------------------------------------- | --------------------------------------- | ------------ |
-| <ItemImage id= "minecraft:water_bucket"            scale="0.75" />        | minecraft:water                         | 1.0x         |
-| <ItemImage id= "justdirethings:polymorphic_fluid_bucket"  scale="0.75" /> | justdirethings:polymorphic_fluid_source | 2.5x         |
-| <ItemImage id= "justdirethings:time_fluid_bucket"    scale="0.75" />      | justdirethings:time_fluid_source        | 10.0x        |
+| 物品                                                                      | 注册ID                                  | 倍率  |
+| ------------------------------------------------------------------------- | --------------------------------------- | ----- |
+| <ItemImage id= "minecraft:water_bucket"            scale="0.75" />        | minecraft:water                         | 1.0x  |
+| <ItemImage id= "justdirethings:polymorphic_fluid_bucket"  scale="0.75" /> | justdirethings:polymorphic_fluid_source | 2.5x  |
+| <ItemImage id= "justdirethings:time_fluid_bucket"    scale="0.75" />      | justdirethings:time_fluid_source        | 10.0x |
 
 ## 详细原理
 
