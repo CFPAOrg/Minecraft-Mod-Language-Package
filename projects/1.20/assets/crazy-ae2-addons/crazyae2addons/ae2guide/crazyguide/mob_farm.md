@@ -13,65 +13,13 @@ item_ids:
    - crazyae2addons:mob_farm_controller
 ---
 
-<Row>
-    <BlockImage id="crazyae2addons:mob_farm_controller" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_wall" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_damage" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_input" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_collector" scale="4"></BlockImage>
-</Row>
+<GameScene zoom="2" interactive={true}>
+  <ImportStructure src="../assets/mob_farm.nbt" />
+</GameScene>
 
 # Mob Farm Controller
 
 The Mob Farm Controller is the heart of an automatic, multi-block mob farming system. It simulates killing mobs stored in your ME network and generates drops and experience shards, and stores them directly into the system, **excluding** any **NBT** or **unstackable** items.
-
-- **W – Mob Farm Wall Block**
-- **L – Mob Farm Collector Block**
-- **I – Mob Farm Input Block**
-- **D – Mob Farm Damage Module Block or Mob Farm Wall Block** (machine speed depends on the amount of the damage blocks used)
-- **C - Mob Farm Controller Block**
-- 
-#### Layer 1:
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W C W W 
-
-#### Layer 2:
-W W W W W <br/>
-W L L L W <br/>
-W L L L W <br/>
-W L L L W <br/>
-W W W W W 
-
-#### Layer 3:
-W W W W W <br/>
-W D D D W <br/>
-W D I D W <br/>
-W D D D W <br/>
-W W W W W
-
-#### Layer 4:
-W W W W W <br/>
-W D D D W <br/>
-W D I D W <br/>
-W D D D W <br/>
-W W W W W
-
-#### Layer 5:
-W W W W W <br/>
-W L L L W <br/>
-W L L L W <br/>
-W L L L W <br/>
-W W W W W
-
-#### Layer 6:
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W
 
 ## How to Use
 

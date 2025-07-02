@@ -5,6 +5,8 @@ navigation:
   icon: ae2:pattern_provider
 categories:
   - Crafting and Patterns
+item_ids:
+  - crazyae2addons:circuit_upgrade_card
 ---
 
 # 电路样板供应器
@@ -13,7 +15,7 @@ categories:
 
 # **此方块本身已被删除，它的功能现可用任意一种样板供应器实现！**
 
-电路样板供应器是AE2样板供应器的平替。它有一项额外功能：在其中使用带有`circuit`标签（由疯狂样板修改工具设置）时，样板供应器会在合成之前，将该编号的编程电路载入所有与之相连的格雷科技机器。
+电路样板供应器是AE2样板供应器的平替。它有一项额外功能：在其中使用带有“circuit”标签（由疯狂样板修改工具设置）时，样板供应器会在合成之前，将该编号的编程电路载入所有与之相连的格雷科技机器。
 
 - 可与接口接存储总线协同运作（存储总线必须带有电路升级卡）。
 - 可与Modern AE2 Additions的样板P2P通道协同运作。
