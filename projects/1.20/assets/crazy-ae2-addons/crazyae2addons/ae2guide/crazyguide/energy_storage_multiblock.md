@@ -8,6 +8,7 @@ categories:
 item_ids:
    - crazyae2addons:energy_storage_controller
    - crazyae2addons:energy_storage_frame
+   - crazyae2addons:energy_storage_port
    - crazyae2addons:energy_storage_1k
    - crazyae2addons:energy_storage_4k
    - crazyae2addons:energy_storage_16k
@@ -22,57 +23,16 @@ item_ids:
 
 # Energy Storage Controller
 
-<Row>
-   <BlockImage id="crazyae2addons:energy_storage_controller" scale="4"></BlockImage>
-   <BlockImage id="crazyae2addons:energy_storage_frame" scale="4"></BlockImage>
-   <BlockImage id="crazyae2addons:energy_storage_16k" scale="4"></BlockImage>
-   <BlockImage id="crazyae2addons:dense_energy_storage_64k" scale="4"></BlockImage>
-</Row>
+<GameScene zoom="1" interactive={true}>
+  <ImportStructure src="../assets/energy_storage.nbt" />
+</GameScene>
 
 ## The storage blocks are only used by the controller to project the energy onto something, but all power is stored inside. If you break the controller, you will loose all that stored bilions of AE power units forever!
 
 The Energy Storage is a multiblock power battery for your ME network. It provides massive AE storage by assembling a structure out of controller, storage, and frame blocks.
 
 Once active, it integrates as a proper AE2 power storage, supplying or accepting energy like any AE2-compatible battery.
-
----
-
-## How to Build
-
-Construct a 7x7x7 cube with specific block types:
-
-- **F** – Energy Storage Frame Block
-- **G** – Vibrant Quartz Glass
-- **O** – Energy Storage Blocks (from 1k up to 256k, or Dense variants)
-- **C** – Energy Storage Controller (only one)
-
-### Layer 1 (Bottom):
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F C F F F
-
-### Layers 2–6:
-Each layer follows this same layout:
-F G G G G G F<br/>
-G O O O O O G<br/>
-G O O O O O G<br/>
-G O O O O O G<br/>
-G O O O O O G<br/>
-G O O O O O G<br/>
-F G G G G G F
-
-### Layer 7 (Top):
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F<br/>
-F F F F F F F
+It also has 3 Energy Ports, you can use each of them to connect this multiblock directly to FE to both power it, or extract energy from it.
 
 ---
 

@@ -8,9 +8,9 @@ categories:
 item_ids:
   - crazyae2addons:nbt_export_bus
 ---
-# NBT Storage Bus
+# NBT Export Bus
 
-The NBT Storage Bus is an advanced version of the AE2 storage bus that lets you filter and control access to storage **based on NBT data**.
+The NBT Export Bus is an advanced version of the AE2 export bus that lets you filter and control access to storage **based on NBT data**.
 
 ---
 
