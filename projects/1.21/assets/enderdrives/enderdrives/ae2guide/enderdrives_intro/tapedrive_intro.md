@@ -1,7 +1,10 @@
 ---
 navigation:
+  parent: enderdrives_intro/enderdrives_intro-index.md
   title: Tape Disk Item Storage Cell
-icon: tape_disk
+  icon: enderdrives:tape_disk
+categories:
+  - tapedrives
 item_ids:
   - enderdrives:tape_disk
 ---
@@ -10,7 +13,7 @@ item_ids:
 
 Tape Drives are powerful AE2-compatible storage cells designed to handle **NBT-heavy items**, such as tools, armor, enchanted gear, or any uniquely tagged items that normally fill type space with traditional ME drives.
 
-Unlike typical AE2 drives, Tape Disks bytes used scale dynamically based on the actual **NBT size** of items stored — giving you fine-grained control over your system.  Tape Drives will tell AE2 that it is preferred for any item that would match its filter.  This can be overridden by having it in a lower priority ME Drive.
+Unlike typical AE2 drives, Tape Disks bytes used scale dynamically based on the actual **NBT size** of items stored — giving you fine-grained control over your system.  Tape Drives will **NOT** tell AE2 that it is preferred for any item that would match its filter, please use ME Drive priority.
 
 <Row gap="10">
   <Column>
@@ -41,7 +44,7 @@ Tape Disks are designed to **favor NBT-heavy items**, making them perfect for st
 ---
 
 
-## When to Use a Tape Drive
+## When to Use a Tape Disk
 
 Use a Tape Disk instead of a traditional drive when:
 
@@ -50,6 +53,12 @@ Use a Tape Disk instead of a traditional drive when:
 - You want to keep special items out of your normal ME drives.
 
 Tape Drives shine where normal drives struggle — taking up type limit space on your giant drives.
+
+---
+
+## IO Port Transfers
+
+A tape disk will auto-throttle itself doing transfers from or to it using an IO Port.  This is due to potentially handling NBT heavy items so it doesn't dump it all in one go and freeze up you game.
 
 ---
 
