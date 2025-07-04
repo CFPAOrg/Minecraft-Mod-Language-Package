@@ -41,4 +41,4 @@ Ferricore Clock with direction NORTH and UP disabled to prevent to power not wan
 
 
 
-<RecipeFor id="justdynathings:ferricore_clock" />
+<Recipe id="justdynathings:ferricore_clock" />

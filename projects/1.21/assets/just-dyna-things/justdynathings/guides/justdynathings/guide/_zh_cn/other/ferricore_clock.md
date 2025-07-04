@@ -2,7 +2,7 @@
 navigation:
   title: 核源铁时钟
   icon: "justdynathings:ferricore_clock"
-  position : 4
+  position: 4
   parent: justdynathings:other.md
 item_ids:
   - justdynathings:ferricore_clock
@@ -42,4 +42,4 @@ item_ids:
 
 
 
-<RecipeFor id="justdynathings:ferricore_clock" />
+<Recipe id="justdynathings:ferricore_clock" />
