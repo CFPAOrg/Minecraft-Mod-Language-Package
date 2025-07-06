@@ -19,6 +19,6 @@ Also when added a [coolant](https://github.com/DevDyna/JustDynaThings/blob/main/
 
 ## Default Coolants
 
-| Item                                                                 | Registry ID                      | Efficiency |
-| -------------------------------------------------------------------- | -------------------------------- | ---------- |
-| <ItemImage id= "justdirethings:time_fluid_bucket"    scale="0.75" /> | justdirethings:time_fluid_source | 10.0x      |
+| Item                                                                | Efficiency |
+| ------------------------------------------------------------------- | ---------- |
+| <ItemLink id= "justdirethings:time_fluid_bucket"    scale="0.75" /> | 10.0x      |

@@ -18,7 +18,7 @@ item_ids:
 
 ## 默认催化剂
 
-| 物品                                                             | 注册ID                         | 耐久度修复 |
-| ---------------------------------------------------------------- | ------------------------------ | ---------- |
-| <ItemImage id= "minecraft:iron_ingot"            scale="0.75" /> | minecraft:iron_ingot           | 64         |
-| <ItemImage id="justdirethings:ferricore_ingot"  scale="0.75" />  | justdirethings:ferricore_ingot | 128        |
+| 物品                                                            | 耐久度修复 |
+| --------------------------------------------------------------- | ---------- |
+| <ItemLink id= "minecraft:iron_ingot"            scale="0.75" /> | 64         |
+| <ItemLink id="justdirethings:ferricore_ingot"  scale="0.75" />  | 128        |

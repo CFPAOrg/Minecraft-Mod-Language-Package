@@ -18,6 +18,6 @@ item_ids:
 
 ## 默认冷却剂
 
-| 物品                                                                 | 注册ID                           | 效率  |
-| -------------------------------------------------------------------- | -------------------------------- | ----- |
-| <ItemImage id= "justdirethings:time_fluid_bucket"    scale="0.75" /> | justdirethings:time_fluid_source | 10.0x |
+| 物品                                                                 | 效率  |
+| -------------------------------------------------------------------- | ----- |
+| <ItemLink id= "justdirethings:time_fluid_bucket"    scale="0.75" />  | 10.0x |

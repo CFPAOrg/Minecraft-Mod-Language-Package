@@ -11,22 +11,19 @@ item_ids:
 # 再造器
 
 
-一台强大的机器，可消耗催化剂将方块变成新方块。
+一台强大的机器，可消耗*催化剂*将放置于*红色面*的输入方块变成*输出方块*。
 
 <BlockImage id="justdynathings:reforger" p:facing="up" p:active="true" scale="4.0"/>
 
-<GameScene zoom="4" interactive={true}>
-
-  <Block id="justdynathings:reforger" p:facing="north" p:active="true" />
-  <Block z="-1" id="minecraft:stone" />
-
-  <BoxAnnotation color="#000000" min="0.25 0.25 0.25" max="0.75 0.75 0.75">
-        内部需有催化剂，如<ItemImage id="minecraft:diamond" scale="0.75" />
-  </BoxAnnotation>
-
-  <BoxAnnotation color="#000000" min="0.25 0.25 -0.25" max="0.75 0.75 -0.75">
-        可变成任意有效矿石
-  </BoxAnnotation>
-</GameScene>
-
 <Recipe id="justdynathings:reforger" />
+
+## 默认配方
+
+| 催化剂                                     | 输入方块                                        | 输出方块                                        | 消耗概率 |
+| ------------------------------------------ | ----------------------------------------------- | ----------------------------------------------- | -------- |
+| <ItemLink id="minecraft:diamond"/>         | <ItemLink id="minecraft:stone"/>                | `c:ores_in_ground/stone`                        | 95%      |
+| <ItemLink id="justdirethings:celestigem"/> | <ItemLink id="minecraft:stone"/>                | `c:ores_in_ground/stone`                        | 50%      |
+| <ItemLink id="justdirethings:coal_t1"/>    | `c:storage_blocks/charcoal`                     | <ItemLink id="justdirethings:raw_coal_t1_ore"/> | 25%      |
+| <ItemLink id="justdirethings:coal_t2"/>    | <ItemLink id="justdirethings:raw_coal_t1_ore"/> | <ItemLink id="justdirethings:raw_coal_t2_ore"/> | 50%      |
+| <ItemLink id="justdirethings:coal_t3"/>    | <ItemLink id="justdirethings:raw_coal_t2_ore"/> | <ItemLink id="justdirethings:raw_coal_t3_ore"/> | 75%      |
+| <ItemLink id="justdirethings:coal_t4"/>    | <ItemLink id="justdirethings:raw_coal_t3_ore"/> | <ItemLink id="justdirethings:raw_coal_t4_ore"/> | 100%     |

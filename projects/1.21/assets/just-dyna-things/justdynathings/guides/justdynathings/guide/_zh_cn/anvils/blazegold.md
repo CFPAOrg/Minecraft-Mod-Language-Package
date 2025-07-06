@@ -18,9 +18,9 @@ item_ids:
 
 ## 默认高温流体
 
-| 物品                                                                     | 注册ID                                 | 效率 |
-| ------------------------------------------------------------------------ | -------------------------------------- | ---- |
-| <ItemImage id= "minecraft:lava_bucket"            scale="0.75" />        | minecraft:lava                         | 1.0x |
-| <ItemImage id="justdirethings:refined_t2_fluid_bucket"  scale="0.75" />  | justdirethings:refined_t2_fluid_source | 2.5x |
-| <ItemImage id= "justdirethings:refined_t3_fluid_bucket"  scale="0.75" /> | justdirethings:refined_t3_fluid_source | 5.5x |
-| <ItemImage id= "justdirethings:refined_t4_fluid_bucket"  scale="0.75" /> | justdirethings:refined_t4_fluid_source | 7.5x |
+| 物品                                                                    | 效率 |
+| ----------------------------------------------------------------------- | ---- |
+| <ItemLink id= "minecraft:lava_bucket"            scale="0.75" />        | 1.0x |
+| <ItemLink id="justdirethings:refined_t2_fluid_bucket"  scale="0.75" />  | 2.5x |
+| <ItemLink id= "justdirethings:refined_t3_fluid_bucket"  scale="0.75" /> | 5.5x |
+| <ItemLink id= "justdirethings:refined_t4_fluid_bucket"  scale="0.75" /> | 7.5x |
