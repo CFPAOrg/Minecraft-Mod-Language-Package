@@ -1,0 +1,19 @@
+{
+  "block.slate_work.storage_slate": "Storage Vessels",
+
+  "Patterns:":"",
+  "hexcasting.action.slate_work:get_storage": "Get Vessels",
+  "hexcasting.action.slate_work:check_item": "Check Item",
+  "hexcasting.action.slate_work:store_item": "Lay Item",
+  "hexcasting.action.slate_work:get_item": "Reawaken Item",
+
+  "Entries:": "",
+  "slate_work.entry.vessels": "Storage Vessels",
+  "slate_work.page.vessels.1": "As wonderful as $(thing)Vessels/$ are for storage, they have an... opaque method of interaction. The main way of interaction is with _Hexes; more specifically, using a _Hex to describe what I wish to retrieve. Importantly, these all $(l:casting/mishaps2)mishap when not casted in a Spell Circle/$. $(br2)$(br)$(o)“Riddles,” I said. $(br)“Always preferable to no answer at all,” he responded.",
+  "slate_work.page.vessels.2": "To elaborate more, $(thing)Vessels/$ respects Nature's silly rules regarding the \"Stack Limit\" by working around them. Rather than directly calling an item based on its name, I more-or-less supply a \"description;\" this is a _Hex that takes an $(l:patterns/scrying/item)Item Stack Iota/$, and needs to return a boolean. Also, all patterns to do with the retrieving of $(thing)Storage Vessels/$ take a copy of the Stack, and puts it onto the 'inner' stack (Much like $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$).",
+  "slate_work.page.vessels.get_storage": "This simply returns what $(thing)Vessels/$ the current $(l:greatwork/spellcircles)Spell Circle/$ has activated. I should likely use this to check if the $(l:greatwork/spellcircles)Spell Circle/$ has collected any $(thing)Vessels/$.",
+  "slate_work.page.vessels.store_item": "It is much easier to store an item into a $(thing)Vessel/$ than to pull it out. This pattern simply takes an Item Entity, and neatly sorts it into the activated $(thing)Storage Vessels/$.",
+  "slate_work.page.vessels.get_item": "This takes a _Hex and runs it on every $(l:patterns/scrying/item)Item Stack/$ stored. Once the _Hex is ran, it requires either a $(thing)False/$, or a $(thing)True/$, $(thing)Vector/$ (output of the items), and $(thing)Integer/$ (amount of items)",
+  "slate_work.page.vessels.get_item_cont": "Further explained, as stated in the 2nd page. This copies iotas from the stack, so if I had [Position, Count, Type] on the stack then ran a _Hex that got the Type of the $(l:patterns/scrying/item)Item Stack/$ being compared, and did an $(l:patterns/logic#hexcasting:equals)equals check/$. Then it would return only that Type, as item entities, at Position with a count of Count. $(br) It should also be stated this 'search' does not end early after finding a match.",
+  "slate_work.page.vessels.check_item": "Check Item functions much like Reawaken Item; however, it only requires a boolean on the 'inner stack'. If the boolean is ever true, the spell returns true."
+}
