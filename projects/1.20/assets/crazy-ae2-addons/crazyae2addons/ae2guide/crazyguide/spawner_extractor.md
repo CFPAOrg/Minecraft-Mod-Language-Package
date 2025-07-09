@@ -10,57 +10,13 @@ item_ids:
    - crazyae2addons:spawner_extractor_controller
 ---
 
-<Row>
-   <BlockImage id="crazyae2addons:spawner_extractor_controller" scale="4"></BlockImage>
-   <BlockImage id="crazyae2addons:spawner_extractor_wall" scale="4"></BlockImage>
-</Row>
-
 # Spawner Extractor
 
+<GameScene zoom="2" interactive={true}>
+  <ImportStructure src="../assets/spawner_extractor.nbt" />
+</GameScene>
+
 The Spawner Extractor is a multiblock system that simulates mob spawning from real Spawner blocks and inserts mobs directly into your ME network. This lets you capture mobs automatically without lag or real entity spawns.
-
-- **W** – Spawner Extractor Wall Block
-- **C** - Spawner Extractor Controller Block
-- **G** – Vibrant Quartz Glass
-- **S** – Minecraft Spawner Block
-- **A** – Air 
-
-#### Layer 1:
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W C W W 
-
-#### Layer 2:
-W G G G W <br/>
-G A A A G <br/>
-G A A A G <br/>
-G A A A G <br/>
-W G G G W
-
-#### Layer 3:
-W G G G W <br/>
-G A A A G <br/>
-G A S A G <br/>
-G A A A G <br/>
-W G G G W
-
-#### Layer 4:
-W G G G W <br/>
-G A A A G <br/>
-G A A A G <br/>
-G A A A G <br/>
-W G G G W
-
-#### Layer 5:
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W
-
-
 
 ## How to Use
 
