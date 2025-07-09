@@ -71,7 +71,7 @@ word1
 
 # POSTPONE
 
-The POSTPONE directive is used within immediate words. It indicates that the following sequence of words will be compiled and executed at runtime, rather than immediately during compilation.
+The `POSTPONE` directive is used within immediate words. It indicates that the following sequence of words will be compiled and executed at runtime, rather than immediately during compilation.
 
 POSTPONE will apply to everything between it and the next ';'.
 
@@ -85,4 +85,14 @@ This allows the creation of macros without the (minor) runtime overhead of a nor
 
 # Pushes 123 and prints it at runtime
 word2
+```
+
+# :NONAME
+
+`:NONAME` allows the creation of a word that is not referenced with by a name. Instead, its address is put on the stack. The word can be executed using `EXECUTE`.
+
+```
+:noname 123 . ;
+
+execute
 ```
