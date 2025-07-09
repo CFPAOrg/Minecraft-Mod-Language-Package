@@ -1,7 +1,10 @@
 ---
 navigation:
-  title: 末影驱动器
-icon: ender_storage_component_256k
+  parent: enderdrives_intro/enderdrives_intro-index.md
+  title: 末影物品存储元件
+  icon: enderdrives:ender_disk_1k
+categories:
+  - enderdrives
 item_ids:
   - enderdrives:ender_disk_1k
   - enderdrives:ender_disk_4k
