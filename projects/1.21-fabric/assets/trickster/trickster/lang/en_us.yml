@@ -7,8 +7,8 @@ trickster:
     written_scroll: Written Scroll
 
   text:
-    misc:
-      value_truncated: Value truncated
+    value_truncated: Value truncated
+    disconnect_with_caution: DISCONNECT WITH CAUTION
 
   widget:
     scroll_name: Scroll Name...
@@ -35,6 +35,12 @@ trickster:
     collar_link: "Link: %s"
     unlinked: Unlinked
 
+  subtitle:
+    draw: "Spell drawing"
+    complete: "Spell completed"
+    cast: "Spell cast"
+    collar_bell: "Collar bell rings"
+
   gandalf:
     stored: "Stored: %s"
   merlin:
@@ -44,7 +50,9 @@ trickster:
 
   item_group: Trickster
 
-  scroll_hat: 'Selected slot: %d'
+  scroll_hat: 
+    named: 'Selected slot: %d [%s]'
+    unnamed: 'Selected slot: %d'
   scroll_executable: Single-use (%f kiloGandalfs)
 
   unnamed_entity: Unnamed %s
@@ -368,6 +376,8 @@ item.trickster:
   spell_core: Spell Core
   rusted_spell_core: Rusted Spell Core
   ominous_spell_core: Ominous Spell Core
+  inactive_spawner_spell_core: Torment Spell Core Shell
+  spawner_spell_core: Torment Spell Core
 
 block.trickster:
   spell_resonator: Spell Resonator
@@ -376,6 +386,7 @@ block.trickster:
   light: Light
   scroll_shelf: Scroll Shelf
   charging_array: Charging Array
+  inert_spawner: Inert Spawner
 
 effect.trickster:
   mana_boost: Mana Hyperflux
@@ -386,10 +397,6 @@ tag.item.trickster:
   holdable_hat: Holdable Hats
   scrolls: Scrolls
   spell_cost: Spell Cost
-
-death.attack:
-  mana_overflux: "%1$s's magic show has met an untimely end."
-  mana_overflux.player: "%2$s brought an end to %1$s's magic show."
 
 key:
   categories:
@@ -409,6 +416,7 @@ text.config.trickster-config:
   option:
     dotEmphasis: Terminal dot emphasis
     dotEmphasisColor: Terminal dot color
+    subcircleDividerPinColor: Divider pin Color
     manaTransferEfficiency: Efficiency of the Conduit's Ploys
     whorlMaxMana: Whorl maximum mana in kG
     whorlRechargeRate: Whorl recharge rate in kG

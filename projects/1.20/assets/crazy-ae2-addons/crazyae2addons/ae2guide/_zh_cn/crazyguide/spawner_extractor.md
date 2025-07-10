@@ -10,57 +10,13 @@ item_ids:
    - crazyae2addons:spawner_extractor_controller
 ---
 
-<Row>
-   <BlockImage id="crazyae2addons:spawner_extractor_controller" scale="4"></BlockImage>
-   <BlockImage id="crazyae2addons:spawner_extractor_wall" scale="4"></BlockImage>
-</Row>
-
 # 刷怪笼提取器
 
+<GameScene zoom="2" interactive={true}>
+  <ImportStructure src="../assets/spawner_extractor.nbt" />
+</GameScene>
+
 刷怪笼提取器是一个多方块系统，用于模拟真正的刷怪笼刷出生物的过程，刷到的生物会被存入ME网络。如此就可在无实体生成的情况下自动化捕捉生物，还可避免卡顿。
-
-- **W** – 刷怪笼提取器墙壁
-- **C** – 刷怪笼提取控制器
-- **G** – 聚能石英玻璃
-- **S** – Minecraft刷怪笼
-- **A** – 空气
-
-#### 第1层：
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W C W W 
-
-#### 第2层：
-W G G G W <br/>
-G A A A G <br/>
-G A A A G <br/>
-G A A A G <br/>
-W G G G W
-
-#### 第3层：
-W G G G W <br/>
-G A A A G <br/>
-G A S A G <br/>
-G A A A G <br/>
-W G G G W
-
-#### 第4层：
-W G G G W <br/>
-G A A A G <br/>
-G A A A G <br/>
-G A A A G <br/>
-W G G G W
-
-#### 第5层：
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W
-
-
 
 ## 使用方法
 
