@@ -13,65 +13,13 @@ item_ids:
    - crazyae2addons:mob_farm_controller
 ---
 
-<Row>
-    <BlockImage id="crazyae2addons:mob_farm_controller" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_wall" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_damage" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_input" scale="4"></BlockImage>
-    <BlockImage id="crazyae2addons:mob_farm_collector" scale="4"></BlockImage>
-</Row>
+<GameScene zoom="2" interactive={true}>
+  <ImportStructure src="../assets/mob_farm.nbt" />
+</GameScene>
 
 # 生物农场控制器
 
 生物农场控制器是多方块自动生物农场系统的核心组件。它会模拟击杀ME网络中所存生物的过程，并生成掉落物和经验碎片，直接存入ME系统，同时**排除**携带**NBT**或**不可堆叠**的物品。
-
-- **W – 生物农场墙壁**
-- **L – 生物农场收集器**
-- **I – 生物农场输入器**
-- **D – 生物农场伤害模块或生物农场墙壁**（机器的速度取决于伤害模块的数目）
-- **C - 生物农场控制器**
-
-#### 第1层：
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W C W W 
-
-#### 第2层：
-W W W W W <br/>
-W L L L W <br/>
-W L L L W <br/>
-W L L L W <br/>
-W W W W W 
-
-#### 第3层：
-W W W W W <br/>
-W D D D W <br/>
-W D I D W <br/>
-W D D D W <br/>
-W W W W W
-
-#### 第4层：
-W W W W W <br/>
-W D D D W <br/>
-W D I D W <br/>
-W D D D W <br/>
-W W W W W
-
-#### 第5层：
-W W W W W <br/>
-W L L L W <br/>
-W L L L W <br/>
-W L L L W <br/>
-W W W W W
-
-#### 第6层：
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W <br/>
-W W W W W
 
 ## 使用方法
 
