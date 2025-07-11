@@ -1,1 +1,1 @@
-[见主文档](/projects/1.20/assets/cccbridge/cccbridge)
+[见主文档](/projects/1.21/assets/cccbridge/cccbridge)
