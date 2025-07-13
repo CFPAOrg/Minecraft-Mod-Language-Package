@@ -10,6 +10,8 @@ item_ids:
   - replication:matter_tank
   - replication:replication_terminal
   - replication:chip_storage
+  - replication:replicator_enclosure
+  - replication:replicator_motor
 ---
 
 # Replication
@@ -26,7 +28,9 @@ but you can't transform dirt to diamonds.
   ** to **other machines** that need it
 
 The **Identification Chamber** will scan items to know their matter values and store them into chips. Those **Chips**
-can be stored in the **Chip Storage** and will be available to the network.
+can be stored in the **Chip Storage** and will be available to the network. If you place a Chip Storage on top of the
+Identification Chamber, the patterns will be pushed to the Chip Storage directly without the need of having a chip
+inside the Identification Chamber.
 
 **Replicators** can be used in "Infinite Mode", where they will keep replicating a resource until it is full or has run
 out of matter, you can configure that mode in the GUI.
@@ -42,6 +46,16 @@ the Matter stored in tanks to replicate the item from scratch and send it back t
   <ImportStructure src="setup.snbt" />
   <IsometricCamera  yaw="30" pitch="30" />
 </GameScene>
+
+## Acceleration
+
+* Replicator Enclosure: You can add the enclosure to a Replicator by Sneak + Right-Clicking into the Replicator, and it
+  will provide a passive 20% acceleration but with 10% extra power consumption.
+* Replicator Motor: You can add the motor to a Replicator by Sneak + Right-Clicking into the Replicator. You will be
+  able to configure a speed multiplier for the Replicator where 100% is the default speed and 20% is as fast as it can
+  go. The faster it goes, the bigger of failure chance. When a print fails, the replicator will need to run again, but
+  it won't consume more matter to do it. To craft it you will need to craft the blueprint for it and then use it in the
+  Chip Storage, and then you will be able to replicate it.
 
 ## MatterOpedia
 
