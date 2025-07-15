@@ -1,25 +1,36 @@
 {
-  "block.slate_work.storage_slate": "存储器具",
+  "block.slate_work.storage_slate": "存储容具",
   "block.slate_work.ambit_extender": "范围扩展器",
   "block.slate_work.crafting_slate": "样板组装器",
+  "block.slate_work.speed_loci": "波速调节器",
 
   "Patterns:":"",
-  "hexcasting.action.slate_work:get_storage": "获取器具",
+  "hexcasting.action.slate_work:get_storage": "获取容具",
   "hexcasting.action.slate_work:check_item": "检查物品",
   "hexcasting.action.slate_work:store_item": "容纳物品",
   "hexcasting.action.slate_work:get_item": "唤回物品",
 
   "Entries:": "",
-  "slate_work.entry.vessels": "存储器具",
-  "slate_work.page.vessels.1": "$(thing)器具/$很适合用来存储，但它们的交互功能……不太方便。主要的交互方式是$(hex)咒术/$；更详细说来，是在$(hex)咒术/$中描述希望取得的物品。同时需要注意，这些法术$(l:casting/mishaps2)不在法术环中执行时会招致事故/$。$(br2)$(br)$(o)“谜题”，我说道。$(br)“最好就是不去解答”，他应道。",
-  "slate_work.page.vessels.2": "再详细地说，对于自然对“栈限制”的愚蠢规则，$(thing)器具/$选择以绕过它们的方式尊重它们。它不会直接根据名称请求物品，而是需要我提供一条“说明”——即一条接受$(l:patterns/scrying/item)物品组 iota/$ 并返回一个布尔值的$(hex)咒术/$。而且，所有涉及获取$(thing)存储器具/$信息的图案都会复制一份物品组置入“内部”栈（和$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$很相似）。",
-  "slate_work.page.vessels.get_storage": "返回当前$(l:greatwork/spellcircles)法术环/$激活的$(thing)器具/$。大概可以用来检查$(l:greatwork/spellcircles)法术环/$是否获取到了$(thing)器具/$。",
-  "slate_work.page.vessels.store_item": "向$(thing)器具/$存入物品比取出容易。此图案会接受一个物品实体，并将其存入激活的$(thing)存储器具/$。",
+  "slate_work.entry.vessels": "存储容具",
+  "slate_work.page.vessels.1": "$(thing)容具/$很适合用来存储，但它们的交互功能……不太方便。主要的交互方式是$(hex)咒术/$；更详细说来，是在$(hex)咒术/$中描述希望取得的物品。同时需要注意，这些法术$(l:casting/mishaps2)不在法术环中执行时会招致事故/$。$(br2)$(br)$(o)“谜题”，我说道。$(br)“最好就是不去解答”，他应道。",
+  "slate_work.page.vessels.2": "再详细地说，对于自然对“栈限制”的愚蠢规则，$(thing)容具/$选择以绕过它们的方式尊重它们。它不会直接根据名称请求物品，而是需要我提供一条“说明”——即一条接受$(l:patterns/scrying/item)物品组 iota/$ 并返回一个布尔值的$(hex)咒术/$。而且，所有涉及获取$(thing)存储容具/$信息的图案都会复制一份物品组置入“内部”栈（和$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$很相似）。",
+  "slate_work.page.vessels.get_storage": "返回当前$(l:greatwork/spellcircles)法术环/$激活的$(thing)容具/$。大概可以用来检查$(l:greatwork/spellcircles)法术环/$是否获取到了$(thing)容具/$。",
+  "slate_work.page.vessels.store_item": "向$(thing)容具/$存入物品比取出容易。此图案会接受一个物品实体，并将其存入激活的$(thing)存储容具/$。",
   "slate_work.page.vessels.get_item": "此图案接受一个$(hex)咒术/$，并对所存储的所有$(l:patterns/scrying/item)物品组/$运行。运行该$(hex)咒术/$后，图案需要一个 $(thing)False/$ 或 $(thing)True/$，一个$(thing)向量/$（物品输出位置），和一个$(thing)整数/$（物品数量）。",
   "slate_work.page.vessels.get_item_cont": "继续解释说明。和第二页中所说的一样，它会从栈中复制 iota。栈顶为 [位置, 数量, 类型]，此时法术会运行接受$(l:patterns/scrying/item)物品组/$类型的$(hex)咒术/$，该$(hex)咒术/$会用类型进行$(l:patterns/logic#hexcasting:equals)相等判断/$。这之后，图案会在所给位置处返还所给数量个该类型物品的物品实体。$(br)需要注意，这一“搜索”在找到匹配项后不会提前结束。",
   "slate_work.page.vessels.check_item": "检查物品的功能和唤回物品类似。但它只需要“内部栈”上有一个布尔值。如果该布尔值为 True，则法术返回 True。",
 
   "slate_work.entry.ambit_extenders": "范围扩展器",
   "slate_work.page.ambit_extender.ambit_extender": "范围扩展器能解$(l:greatwork/spellcircles)法术环/$$(thing)影响范围/$之忧。它会移除栈顶向量，并据此扩展影响范围（负向量会向负方向扩展法术环影响范围）。$(br2)$(br2)$(o)范围越大，消耗越大，呃……",
-  "slate_work.page.ambit_extender.ambit_extender_cont": "虽然它不及……$(l:https://forum.petra-k.at/viewtopic.php?t=136)其他/$扩展$(l:greatwork/spellcircles)法术环/$$(thing)影响范围/$的方法强大，但我确实觉得这种方法可以让自然对我的自由意志友善些。$(br2)这种方法并不便宜，$(media)媒质$()的耗量随改变距离的平方变化。如果传入 [0, 5, 0] 向量，它即会将$(l:greatwork/spellcircles)法术环/$的$(thing)影响范围/$向上扩展 5 格。相当于消耗 25 个紫水晶碎片来向上方多铺 5 块“石板”。"
+  "slate_work.page.ambit_extender.ambit_extender_cont": "虽然它不及……$(l:https://forum.petra-k.at/viewtopic.php?t=136)其他/$扩展$(l:greatwork/spellcircles)法术环/$$(thing)影响范围/$的方法强大，但我确实觉得这种方法可以让自然对我的自由意志友善些。$(br2)这种方法并不便宜，$(media)媒质/$的耗量随改变距离的平方变化。如果传入 [0, 5, 0] 向量，它即会将$(l:greatwork/spellcircles)法术环/$的$(thing)影响范围/$向上扩展 5 格。相当于消耗 25 个紫水晶碎片来向上方多铺 5 块“石板”。",
+
+  "slate_work.entry.wave_regulator": "波速调节器",
+  "slate_work.page.speed_loci.speed_loci": "自从我开始探索$(l:greatwork/spellcircles)卓伟之作/$的用途之时，就总有更精细控制这种新事物的需要。因此，我制造了$(thing)波速调节器/$。它会从栈中弹出一个数，并用其设置媒质波的“速度”。更准确地说，是媒质波在流入下一块石板前应等待多少个 1/20 秒。",
+  "slate_work.page.speed_loci.speed_loci_cont": "这一体系的确有其局限。例如，速度无法超出媒质波移速的上线，试图这么做不会产生任何效果。换言之，它只能将等待时间设为大于等于法术环的最短等待时间，或是重设为正常速度。后者需要$(thing)波速调节器/$弹出 0，从而将$(thing)媒质波/$的控制权交还给$(l:greatwork/spellcircles)法术环/$。",
+
+  "Mishaps:": "",
+  "hexcasting.mishap.circle.no_vessels_ran": "%s处未找到已激活的容具",
+  "hexcasting.mishap.circle.media_costs": "%s处需要的媒质超出了促动石当前的存储量",
+
+  "hexcasting.mishap.no_vessels_ran": "未找到已激活的容具"
 }

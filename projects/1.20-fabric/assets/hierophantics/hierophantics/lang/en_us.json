@@ -8,7 +8,7 @@
 	"advancements.hierophantics.waste_mind.title": "Atomized",
 	"advancements.hierophantics.waste_mind.description": "Waste a mind by activating an Imbuement Bed with no one in it",
 	"advancements.hierophantics.all_triggers.title": "Ready for Anything",
-	"advancements.hierophantics.all_triggers.description": "Have an embedded mind with each possible trigger",
+	"advancements.hierophantics.all_triggers.description": "Have an embedded mind with each possible trigger type",
 
 	"hierophantics.tooltip.mind_reference": "Embedded Mind \"%s\"",
 	"hierophantics.tooltip.trigger": "Trigger: When %s",
@@ -34,12 +34,17 @@
 	"hexcasting.mishap.invalid_value.class.mind_reference": "an embedded mind",
 	"hexcasting.mishap.invalid_value.class.trigger": "a trigger",
 
+	"hierophantics.mishap.minds_disabled.action.cast": "function",
+    "hierophantics.mishap.minds_disabled.action.read": "examine",
+	"hierophantics.mishap.minds_disabled.action.write": "modify",
+	"hierophantics.mishap.minds_disabled.action.free": "interact with",
+
 	"hexcasting.action.hierophantics:get_minds": "Hierophant's Reflection",
 	"hexcasting.action.hierophantics:reenable_minds": "Stabilize Minds",
+	"hexcasting.action.hierophantics:set_mind_hex": "Payload Gambit",
 	"hexcasting.action.hierophantics:get_mind_hex": "Payload Purification",
-	"hexcasting.action.hierophantics:set_mind_hex": "Payload Distillation",
+	"hexcasting.action.hierophantics:set_mind_trigger": "Trigger Gambit",
 	"hexcasting.action.hierophantics:get_mind_trigger": "Trigger Purification",
-	"hexcasting.action.hierophantics:set_mind_trigger": "Trigger Distillation",
 	"hexcasting.action.hierophantics:free_mind": "Free Mind",
 	"hexcasting.action.hierophantics:make_damage_trigger": "Trigger Reflection: Damage",
 	"hexcasting.action.hierophantics:make_damage_type_trigger": "Trigger Reflection: Damage Type",
@@ -87,7 +92,8 @@
 	"hierophantics.page.free_mind.summary": "Permanently removes an embedded mind from my own consciousness.$(br2)I wonder what happens to them, when they go?",
 
 	"hierophantics.page.triggers.title": "Hierophantic Triggers",
-	"hierophantics.page.triggers.0": "My $(l:greatwork/hierophantics)embedded minds$() are independent to a point, but they cannot truly think for themselves. Thus, in order to begin casting, they require a trigger of some kind. The patterns listed here are used to create these triggers, based on a variety of common occurances.",
+	"hierophantics.page.triggers.0": "My $(l:greatwork/hierophantics)embedded minds$() are independent to a point, but they cannot truly think for themselves. Thus, in order to begin casting, they require a trigger of some kind. The patterns listed here are used to create these triggers, based on a variety of common occurances. Once created, a trigger can be assigned to a mind using $(l:patterns/mind_handling#hierophantics:set_mind_trigger)Trigger Gambit$().",
+	"hierophantics.page.triggers.1": "Some triggers, when activated, may cast their hex with an iota relevant to the triggering event already on the stack, to allow for a more fine-grained response. The triggers that do this are listed below, along with the iota they provide:$(br)$(li)Damage: amount of damage$()$(li)DmgType: amount of damage$()$(li)Drop: dropped item entity$()$(li)Attack: attacked entity$()$(li)Break: position broken$()$(li)Teleport: offset vector$()",
 	"hierophantics.page.make_damage_trigger.summary": "Creates a trigger that activates whenever I take damage. To prevent a lethal chain-reaction, does not activate if the damage was caused by overcasting.",
 	"hierophantics.page.make_damage_type_trigger.summary": "Creates a trigger that activates whenever I take damage, but only if the damage was of a specific type. The trigger will be attunned to whatever type of damage I last received.",
 	"hierophantics.page.make_health_trigger.summary": "Creates a trigger that activates when my health drops below the specified value. A full, standard healthbar has a value of 20.",
