@@ -1,0 +1,59 @@
+{
+  "assigned_items": [
+    "enchanted:distillery"
+  ],
+  "icon": {
+    "count": 1,
+    "id": "enchanted:distillery"
+  },
+  "pages": [
+    {
+      "components": [
+        {
+          "header": "Distillation",
+          "template": "modopedia:page/headered_text",
+          "text": "The distillery allows witches to separate materials into their components by utilising differences in boiling and condensing points.\n\nProcessing consumes $(b)$(el:blocks/altar)altar power$(/el)$(/b), so the distillery must be placed accordingly."
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "type": "modopedia:header",
+          "text": "template.modopedia.crafting_recipe"
+        },
+        {
+          "type": "modopedia:separator",
+          "y": 10
+        },
+        {
+          "type": "modopedia:multiblock",
+          "height": 50,
+          "multiblock": {
+            "type": "modopedia:dense",
+            "key": {
+              "D": {
+                "type": "modopedia:simple",
+                "states": [
+                  "enchanted:distillery[lit=true]"
+                ]
+              }
+            },
+            "pattern": [
+              [
+                "D"
+              ]
+            ]
+          },
+          "y": 10
+        },
+        {
+          "recipe": "enchanted:distillery",
+          "template": "modopedia:recipe/crafting",
+          "y": 70
+        }
+      ]
+    }
+  ],
+  "title": "Distillation"
+}
