@@ -1,0 +1,118 @@
+{
+  caduceus: {
+    book: {
+      basics: {
+        caduceus_changes: {
+          "": "Caduceus Changes",
+          "1": "I have noticed some changes to the behavior of certain $(l:patterns/meta#hexcasting:eval/cc)meta-evaluation techniques/$ as of late.$(br2)\
+            Jump iotas are no longer entirely opaque to me - I can now see the $(l:patterns/jump_manipulation)components/$ that make them up, although I have not yet managed to isolate one.",
+          "2": "Additionally, it seems $(l:casting/mishaps)Too Many Iotas/$ mishaps have become more common when working with Jump iotas. I should take care not to delve too deep.",
+        },
+      },
+      casting: {
+        continuations: {
+          "": "A Primer On Jumps",
+          "1": "As with $(l:casting/vectors)vectors/$ for more mundane tasks, it seems I will need a deeper understanding of Jump iotas (also called continuations) if I am to make the most of my new discoveries. I have collected some \"light reading material\" on the topic.",
+          "2": {
+            text: "First, an encyclopedia entry on the concept of \"first-class continuations\", the abstract concept embodied by Jump iotas. It also discusses the \"call/cc\" operator, which is roughly equivalent to $(l:patterns/meta#hexcasting:eval/cc)$(action)Iris' Gambit/$.",
+            link_text: "Wikipedia",
+          },
+          "3": {
+            text: "Next, a blog post on \"delimited continuations\", with some concrete examples that may be feasible to rewrite as _Hexes for practice. I may find this useful if I am having trouble understanding $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$ and $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Arke's Gambit/$.",
+            link_text: "Blog Post",
+          },
+          "4": {
+            text: "Finally, if I can overlook a bit of fourth-wall breaking, this document gives an overview of the specific techniques employed by Nature to interpret my _Hexes.",
+            link_text: "How Casting Works",
+          },
+        },
+        caduceus_mishaps: {
+          "": "Caduceus Mishaps",
+          "1": "This section documents the mishaps that can occur when manipulating Jump iotas and using delimited jumps.",
+          no_prompt: {
+            title: "Uncontained Arke",
+            text: "I attempted to draw $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Arke's Gambit/$ without wrapping it in $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$.",
+          },
+        },
+      },
+      patterns: {
+        delimcc: {
+          "": "Delimited Jumps",
+          "eval/prompt": "Cast a pattern or list of patterns from the stack exactly like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$, except that anything outside of this cast will not be captured by an $(l:patterns/delimcc#caduceus:eval/control)$(action)Arke's Gambit/$ within it.",
+          "eval/control": {
+            "1": "Cast a pattern or list of patterns from the stack similarly to $(l:patterns/meta#hexcasting:eval/cc)$(action)Iris' Gambit/$. Must be drawn within $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$.",
+            "2": "All of the patterns that would have been drawn between the end of the pattern list and the end of the enclosing $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$ are $(italic)moved/$ into a Call iota, which is pushed to the stack instead of a Jump iota.$(br2)\
+              When the Call iota is executed, the captured patterns will be cast as if by $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$. If the Call iota is not executed, the rest of the patterns within the enclosing $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$ will be skipped.",
+          },
+        },
+        jump_manipulation: {
+          "": "Jump Manipulation",
+          "1": "Just like my _Hexes interact with the $(l:casting/stack)stack/$, Nature uses a stack of its own (made up of \"frames\") when casting my _Hexes. Jump iotas contain a snapshot of this stack at a particular moment in time, and I can use the patterns in this section to deconstruct and rearrange that snapshot.$(br)\
+            Unfortunately, despite their similarity to Jump iotas, it seems these patterns do $(italic)not/$ work on Call iotas.",
+          add: "Remove the Jump iota at the top of the stack, then add all its frames to the bottom of the Jump iota at the top of the stack.",
+          abs: "Remove the Jump iota at the top of the stack, then push the number of frames within it to the stack.",
+          splat: "Remove the Jump iota at the top of the stack, then, for each of its frames, push a new Jump iota containing only that frame to the stack.",
+          construct: "Remove the Jump iota at the top of the stack, then add its top frame to the top of the Jump iota at the top of the stack.",
+          deconstruct: "Remove the top frame from the Jump iota at the top of the stack, then push a new Jump iota containing only that frame to the stack.",
+          jump_tags: {
+            title: "Jump Tags",
+            text: "The $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$ is not the only place that I can store information within a _Hex. In fact, I am able to hide iotas within the very concept of evaluation. I call this technique $(thing)jump tags/$; some other texts refer to it as \"continuation marks\".$(br2)\
+              There is one notable limitation of $(thing)jump tags/$, however: they can only hold a single iota at a time. Unlike the $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$, even lists are too much."
+          },
+          "read/mark/local": "Copy the iota stored in the $(thing)jump tag/$ of the current evaluation and add it to the stack.",
+          "read/mark/iota": "Like $(l:patterns/jump_manipulation#caduceus:read/mark/local)$(action)Ewer's Reflection/$, but the iota is read out of the $(thing)jump tag/$ of the top frame in a Jump iota.",
+          "write/mark/local": {
+            "1": "Remove the top iota from the stack, and write it to the $(thing)jump tag/$ of the current evaluation.$(br)\
+              As with $(l:patterns/readwrite#hexcasting:write/entity)$(action)Chronicler's Gambit/$, I cannot write my own Name using this spell.",
+            "2": "I should be careful if using $(l:patterns/jump_manipulation#caduceus:read/mark/local)$(action)Ewer's Reflection/$ or $(l:patterns/jump_manipulation#caduceus:write/mark/local)$(action)Ewer's Gambit/$ at the very end of an invocation. The tag that it reads or writes may not be the one I expect.",
+          },
+        },
+      },
+    },
+
+    tooltip: {
+      continuation: {
+        "": "[Jump -> (%s)]",
+        delimited: "[Call -> (%s)]",
+
+        frame: {
+          mark: {
+            inline: "%s*",
+            hover: "Contains: %s",
+          },
+
+          "caduceus:": {
+            prompt: "Prompt",
+          },
+          "hexcasting:": {
+            evaluate: "Evaluate",
+            foreach: "ForEach",
+            end: "FinishEval",
+          },
+        },
+      },
+    },
+  },
+
+  hexcasting: {
+    action: {
+      "caduceus:": {
+        "eval/prompt": "Thetis' Gambit",
+        "eval/control": "Arke's Gambit",
+        "read/mark/local": "Ewer's Reflection",
+        "read/mark/iota": "Ewer's Purification",
+        "write/mark/local": "Ewer's Gambit",
+      },
+    },
+
+    mishap: {
+      no_prompt: "Did not first use Thetis' Gambit",
+      invalid_value: {
+        class: {
+          continuation: "a jump",
+          continuation_mark: "a valid jump tag",
+        },
+      },
+    },
+  },
+}
