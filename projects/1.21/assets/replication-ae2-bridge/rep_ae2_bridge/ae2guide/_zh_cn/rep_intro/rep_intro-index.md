@@ -11,5 +11,4 @@ navigation:
 
 ## 目录
 
-* [ME-Replication桥接器](repae2bridge.md)：连接两方体系的主要部件
-* [物质类型](matter_types.md)：了解Replication中的各类物质
+* [ME-Replication桥接器](repae2bridge.md)：连接两方体系的主要部件，同时有管理合成优先级的功能
