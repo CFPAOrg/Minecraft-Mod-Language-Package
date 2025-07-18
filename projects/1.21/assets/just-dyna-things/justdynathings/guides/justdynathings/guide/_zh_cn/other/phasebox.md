@@ -2,7 +2,7 @@
 navigation:
   title: 相变盒
   icon: "justdynathings:phase_box"
-  position : 1
+  position: 1
   parent: justdynathings:other.md
 item_ids:
   - justdynathings:phase_box
@@ -18,4 +18,4 @@ item_ids:
 
 <BlockImage id="justdynathings:phase_box" scale="4.0"/>
 
-<RecipeFor id="justdynathings:phase_box" />
+<Recipe id="justdynathings:phase_box" />
