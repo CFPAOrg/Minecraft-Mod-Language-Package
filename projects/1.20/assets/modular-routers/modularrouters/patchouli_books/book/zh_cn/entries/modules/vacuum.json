@@ -1,0 +1,19 @@
+{
+  "name": "真空模块",
+  "category": "modularrouters:modules",
+  "icon": "modularrouters:vacuum_module",
+  "pages": [
+    {
+      "type": "text",
+      "text": "该模块会在路由器周围 13x13x13 的立方区域内扫描掉落的物品（即每个方向 6 格远），如果可行，就将它们吸入路由器的缓存区中。$(p)通过$(l:augments/range_up)范围扩大拓展/$可以将最大范围增加到 25x25x25（每个方向 12 格），或通过$(l:augments/range_down)范围缩小拓展/$将范围减少到只有 3x3x3。"
+    },
+    {
+      "type": "text",
+      "text": "如果模块的$(l:intro/modules#direction)配置方向/$为$(bold)所有方向/$（默认状态下），扫描的区域将以路由器为中心。$(p)如果模块有配置过的方向，区域将会以该方向偏离 6 格，同时每安装一个范围扩大拓展就会再多一格，每安装一个范围缩小拓展就会再少一格。$(p)比如，方向为$(bold)上方/$时，模块将只会扫描其正上方的一块区域。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "modularrouters:vacuum_module"
+    }
+  ]
+}

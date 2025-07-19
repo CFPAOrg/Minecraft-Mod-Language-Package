@@ -1,0 +1,1 @@
+[见主文档](/projects/1.18/assets/vanity-katanas/vanity_katanas)

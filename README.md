@@ -24,7 +24,7 @@
 
 ## 如何使用
 
-注意：部分[帕秋莉手册](https://www.mcmod.cn/class/1388.html)翻译需安装[帕秋莉手册加载补丁](https://www.mcmod.cn/download/8906.html)才能完整应用到游戏中。
+注意：部分版本的[帕秋莉手册](https://www.mcmod.cn/class/1388.html)翻译需安装[帕秋莉手册加载补丁](https://www.mcmod.cn/download/8906.html)才能完整应用到游戏中。
 
 ### 选择一：安装模组（推荐）
 
@@ -56,15 +56,17 @@
 
 ### 词典
 
-- [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Wiktionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page)
+- [剑桥词典](https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD-%E6%B1%89%E8%AF%AD-%E7%AE%80%E4%BD%93/)丨[Wiktionary](https://en.wiktionary.org/wiki/Wiktionary:Main_Page)（访问可能受阻）
 - [词源在线](https://www.etymonline.com/cn)
 - [汉典](https://www.zdic.net/)
 - [新华字典](https://www.cp.com.cn/book/506a1433-6.html)丨[现代汉语词典](https://www.cp.com.cn/book/6afc8cd8-c.html)
+
 ### MC 相关翻译资源
 
 - [Minecraft Wiki:译名标准化](https://zh.minecraft.wiki/w/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96)丨[译名历史](https://zh.minecraft.wiki/w/Minecraft_Wiki:%E8%AF%91%E5%90%8D%E6%A0%87%E5%87%86%E5%8C%96/%E5%8E%86%E5%8F%B2) - 原版词汇中英对照及变更记录。
-- [Minecraft 模组翻译参考词典](https://dict.mcmod.cn/) - 以英文检索本仓库中的翻译条目。
-- [MCBBS 的翻译讨论](https://www.mcbbs.net/forum.php?mod=forumdisplay&fid=1015&page=1&filter=typeid&typeid=2250) - 原版翻译讨论、投票、公告。
+- [Minecraft 中文标准译名查询](https://mcst.teahouse.team/) - 搜索原版词条在 简中/港繁/台繁/文言 中的翻译。
+- [Minecraft 模组翻译参考词典](https://dict.vmct-cn.top/) - 以英文或中文检索本仓库中的翻译条目。
+- [MC百科 Minecraft 模组翻译参考词典](https://dict.mcmod.cn/) - 以英文检索本仓库中的翻译条目，数据更新较慢。
 - [MC百科社群的翻译讨论](https://bbs.mcmod.cn/forum.php?mod=forumdisplay&fid=31&filter=typeid&typeid=116) - 模组翻译讨论，零散汉化发布。
 
 ### 其他
