@@ -1,0 +1,148 @@
+# Packaging mechanism document
+
+**Jump: [Quick Reference](#Quick Reference)** <!--Should be correct-->
+
+## Notes
+
+- In the file address, the directory separator **always uses a forward slash (`/`)**!
+- Address related
+- In the following descriptions, the **full address** always refers to the address from the **root directory** of the repository, for example, for `CONTRIBUTING.md` in the root directory, it should be `CONTRIBUTING.md`; for `pack.png` in the 1.12 version resource pack, it should be `projects/1.12.2/pack.png`.
+- In the following descriptions, the **relative address** always refers to the address from the **folder of a specific namespace**, for example, for `projects/1.18/assets/minecraft/minecraft/font/default.json` in the repository, it should be `font/default.json`.
+- In the following instructions, **target address** always refers to **the place where the file should be placed in the **distributed resource pack**, for example, for the file mentioned in the previous item, it should be `assets/minecraft/font/default.json`.
+- File related
+- In the following instructions, **language file** always refers to a file that can be interpreted as a **mapping table** by the packager. This includes all **.lang` and `.json` files under **`lang/`**.
+- In the following instructions, **text file** always refers to a file that contains **text content** but is **not a language file**. This includes `.txt`, `.md`, `.json` files that are not language files.
+- In the following instructions, **non-text file** always refers to a file that **does not belong to the above two categories**, such as images or other binary files.
+- After this packager update, there is no need to specially handle **non-text files**: the packager will automatically identify the file type according to the file extension.
+
+<!-- The following content is extracted + modified from my fork of the unfinished wiki (which will not be completed in the short term). Some parts are removed in XML comment format, but I did not delete them completely because I plan to copy them back. --->
+
+## Configuration files
+
+Configuration files are divided into two categories:
+
+- **global** configuration files placed under `config/packer`, which are used as the basic configuration of the entire packaging process;
+
+- **local** configuration files placed under each namespace, which are used to provide special configuration items for specific namespaces (and modules).
+
+### File format
+
+Currently, all configuration files need to fill in all items - irrelevant items can be filled in with an empty set, but they cannot be left blank, let alone null. There are plans to optimize this behavior in the future.
+
+#### Global configuration files
+
+The format of the **global** configuration file `config/packer/<version>.json` is as follows:
+
+- root tag object
+- `base` object
+The *unchanged configuration* in the packaging process cannot be overwritten by the **local configuration files** in the file structure. The included content is **not lower** than the namespace level, because local configuration files are placed at the namespace level.
+- `version` string
+The version pointed to by this configuration file is based on the folder name in `projects/`. In principle, it *should* be consistent with the [version] in the file name.
+- `targetLanguages` list
+The target language of the package, that is, the language that will eventually exist in the resource pack.
+- string
+The target language, that is, the language identifier used by this version.
+Based on the file name of the language file under `lang`, and the part of the path of other files that indicates the language. Currently, `zh_cn` is used, although there are reports that `zho_Hans-CN` will be used instead.
+- `exclusionMods` list
+The module folder excluded by the packager.
+If you need to remove the translation of a module for some reason (such as handing it over to the official/other group, etc.), but intend to keep the original translation, this item may be needed.
+- string
+Excluded modules. <!--Based on **[mod-identifier]** | **(CurseForge project name)** defined in [S section](./S. - Structure guide for this repository). -->
+- `exclusionNamespaces` list
+**[namespace]** | **(namespace)** excluded by the packager.
+Temporarily unused for later use.
+- string
+Excluded namespaces. <!--Based on **[namespace]** | **(namespace)** defined in [S section](./S. - Structure guide for this repository). -->
+- `floating` object
+*Variable configuration* during the packaging process, may be overwritten by **local configuration files** in the file structure. Included content is **below** the namespace level, because local configuration files are placed at the namespace level.
+- `inclusionDomains` list
+**[domain]** that are mandatory to include.
+Generally, used for `domain`s that usually do not include **language identifiers**.
+Generally speaking, `font` and `textures` are included, because these two places often do not have language identifiers, and these two domains are already needed for font repair; other content will mostly appear in the *local configuration*.
+- string
+Domain name that is forced to be included. <!--Subject to **[domain]** defined in [S section](./S.-Structure guide of this repository). -->
+- `exclusionDomains` list
+**[domain]** that is forced to be excluded.
+Temporarily idle, or can be used to exclude some scattered files related to some policies.
+- string
+Domain name that is forced to be excluded. <!--Subject to **[domain]** defined in [S section](./S.-Structure guide of this repository). -->
+- `exclusionPaths` list
+**[relative address]** that is forced to be excluded.
+- string
+**Relative address** of the file that is forced to be excluded.
+Generally speaking, only common ignore objects are placed in the main configuration, such as `packer-policy.json` and `local-config.json`; the rest of the entries are best placed in the *local configuration*.
+- `inclusionPaths` list
+**[relative address]** of mandatory inclusion.
+Temporarily unused, can be used to add scattered non-language tag files.
+- string
+**Relative address** of mandatory included files.
+- `characterReplacement` object
+Character replacement table used when packing. Used to replace some characters to special locations, or simply to simplify input. Currently, it contains content related to font repair.
+- `<query statement>` string
+Used to replace the content of the regular expression **`<query statement>` matching object, which can be one or more characters, and even **regular replacement statements** can be used here.
+Mainly used for **symbol replacement** required by *font repair packages*. In this case, the query statement is usually a literal, and the replacement content is generally always filled in with four-digit *Unicode escape codes*; for characters other than **Basic Multilingual Plane (BMP)**, it is best to write them in **UTF-16 surrogate pairs**.
+- `destinationReplacement` object
+The destination address replacement used when packaging.
+Can be used to move files, but temporarily idle; address replacement can also be achieved using `singleton` in **retrieval strategy**, but it needs to be configured under each module.
+- `<query statement>` string
+Used to replace the content of the **regular expression** `<query statement>` matching object, which can be one or more characters, and you can even use **regular replacement statements** here.
+
+#### Local configuration file
+
+The format of the **local** configuration file `projects/<version>/assets/<mod-name>/<namespace>/local-config.json` is consistent with the content under the `floating` tag in the global configuration file (*variable configuration*).
+
+### File inclusion and exclusion order
+
+Since there are multiple configuration items for including/excluding files in the configuration file, it is necessary to explain the order in which the following items take effect:
+
+1. `exclusionMods` and `exclusionNamespaces` will exclude the corresponding folders before entering the namespace - even the `local-config.json` in it will not be loaded.
+Of course, if accessed through a *search strategy*, this item will not take effect.
+
+2. In the remaining namespaces, search for files. The following configuration items may be modified by the local *local configuration*, except `targetLanguages`.
+
+3. In all retrieved files, exclude the files specified by `exclusionPaths`, even if accessed through a *search strategy*.
+
+4. In the remaining files, directly include the files specified by `inclusionPaths` and `inclusionDomains`.
+
+5. In the remaining files, exclude the files specified by `exclusionDomains`.
+6. Among the remaining files, only the files specified by `targetLanguages` that contain the *Simplified Chinese language tag* anywhere in the path are included, and other files are not included.
+
+### Rewriting rules for local configuration files
+
+- If `local-config.json` is detected in a namespace, the packager will **add** the contents of the file to its *variable configuration* based on the global configuration, and use this modified configuration to perform **search work under** the namespace.
+
+- It is best not to duplicate the content in the global configuration. Although it works in theory, it may not be easy to determine which duplicate item to keep.
+- It should be noted that if you **reference other namespaces** through *search strategies*, the packager **will only** load the local configuration of the target namespace, and **will not** load the local configuration of the original space; however, the search work performed in situ is not affected.
+
+## Search strategies
+
+For each **namespace folder**, the packager can **use different search methods** in addition to searching files in situ. Currently, there are four possible retrieval methods:
+
+1. **In-place** retrieval of files.
+
+2. **Referencing** a given namespace.
+
+3. Generating language files (or parts) directly from a given **combined** file.
+
+4. Reference **single** file.
+
+> There are plans to add a **modify** strategy for *text files other than language files*, but this strategy has not yet been implemented, partly because it has not been used in the previous version of the packer.
+
+On its own, this may not be very useful (the previous version of the packer had more features); but one important point is that these loading strategies can be **chained** and **recursively**! So, with these strategies, many needs should be met.
+
+- **Chaining**: You can put **multiple strategies** in a single strategy file. The strategies will be executed from the first **first** first** - similar to the order of *Minecraft resource packs*. However, some special conflict resolution options are provided when files conflict.
+
+- **Recursion**: If you **reference** other namespace folders, the policy files there will also take effect**. This means that *continuous references* are possible - although the premise is that there is no **circular reference**.
+
+Some examples are placed under the virtual "version" of `projects/packer-example/`. Obviously, we **will not** distribute this version, but if conditions permit, you can build the packer locally and use this version for experiments.
+
+### Format of policy-related files
+
+#### packer-policy.json
+
+For each **namespace folder**, the policy file is `projects/<version>/assets/<mod-name>/<asset-domain>/packer-policy.json`.
+
+If the file is not found, the default policy content is `[{"type": "direct"}]`, which means **in-place** loading without special configuration.
+
+- Root tag list
+The policies that the packer needs to execute are executed **from the beginning to the end**. If there are conflicts, the default is
