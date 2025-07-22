@@ -17,7 +17,7 @@ namespace Uploader
                 .WriteTo.Console()
                 .CreateLogger();
 
-            using var scpClient = new ScpClient(host, port: 20002, name, password);
+            using var scpClient = new ScpClient(host, port: 22, name, password);
             scpClient.Connect(); // 与下载服务器建立连接
             
             // 确认连接状态
