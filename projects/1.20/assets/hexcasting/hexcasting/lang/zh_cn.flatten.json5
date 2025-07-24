@@ -101,8 +101,8 @@
       transgender: "跨性别染色剂",
     },
 
-    "uuid_colorizer": "灵魂闪光染色剂",
-    "default_colorizer": "空无染色剂",
+    uuid_colorizer: "灵魂闪光染色剂",
+    default_colorizer: "空无染色剂",
 
     creative_unlocker: {
       "": "媒质立方",
@@ -292,9 +292,9 @@
     title: "咒法学（Hexcasting）配置",
 
     category: {
-      common: "Common",
-      client: "Client",
-      server: "Server",
+      common: "通用",
+      client: "客户端",
+      server: "服务端",
     },
 
     option: {
@@ -361,9 +361,9 @@
           "": "破坏方块挖掘等级",
           "@Tooltip": "破坏方块法术的挖掘等级\n0 = 木，1 = 石，2 = 铁，3 = 钻石，4 = 下界合金",
         },
-        maxRecurseDepth: {
-          "": "递归最大深度",
-          "@Tooltip": "一个操作能执行其他操作的最大次数",
+        maxOpCount: {
+          "": "最大操作数",
+          "@Tooltip": "一刻（tick）内能执行的最大操作数，用于避免服务器卡顿",
         },
         maxSpellCircleLength: {
           "": "法术环最大长度",
@@ -417,7 +417,7 @@
     },
   },
 
-  "advancement.hexcasting:" : {
+  "advancement.hexcasting:": {
     root: {
       "": "咒法学研究",
       desc: "在地底深处找到并采集不断生长着的、凝聚的媒质",
@@ -487,7 +487,7 @@
   "death.attack.hexcasting": {
     overcast: {
       "": "%s的意识消散为了能量",
-      player: "在与%2$s战斗时，%1$s的意识消散为了能量"
+      player: "在与%2$s战斗时，%1$s的意识消散为了能量",
     },
   },
 
@@ -519,12 +519,12 @@
     "pattern.unknown": "未知图案资源 %s",
 
     debug: {
-      "media_withdrawn": "%s - 取出的媒质：%s",
+      media_withdrawn: "%s - 取出的媒质：%s",
       "media_withdrawn.with_dust": "%s - 取出的媒质：%s（计%s个紫水晶粉）",
-      "media_inserted": "%s - 存入的媒质：%s",
+      media_inserted: "%s - 存入的媒质：%s",
       "media_inserted.with_dust": "%s - 存入的媒质：%s（计%s个紫水晶粉）",
-      "all_media": "所有媒质",
-      "infinite_media": "无限",
+      all_media: "所有媒质",
+      infinite_media: "无限",
     },
 
     loot_hex: {
@@ -548,8 +548,8 @@
 
     // TODO: post-eigengrau make these less anticlimactic
     message: {
-      "cant_overcast": "这个咒术需求的媒质量比我有的还多……我应该再算几遍。",
-      "cant_great_spell": "奇怪，法术没起效……也许我还不够熟练？",
+      cant_overcast: "这个咒术需求的媒质量比我有的还多……我应该再算几遍。",
+      cant_great_spell: "奇怪，法术没起效……也许我还不够熟练？",
     },
 
     tooltip: {
@@ -583,7 +583,7 @@
       circle: {
         no_exit: "%s处的媒质流无法找到出口",
         many_exits: "%s处的媒质流的可选去路过多",
-        no_closure: "%s处的媒质流无法返回促动石"
+        no_closure: "%s处的媒质流无法返回促动石",
       },
 
       lens: {
@@ -617,11 +617,11 @@
       stored_hex: "咒术：",
 
       list_contents: "[%s]",
-      null_iota: "NULL",
+      null_iota: "Null",
       jump_iota: "[Jump]",
       pattern_iota: "HexPattern(%s)",
       boolean_true: "True",
-      boolean_false: "False"
+      boolean_false: "False",
     },
     // ^ tooltip
     spelldata: {
@@ -629,7 +629,7 @@
       anything: "任意",
       unknown: "损坏的iota",
       "entity.whoknows": "未知实体",
-      "akashic.nopos": "阿卡夏记录无法读取此处iota（这是个bug）",
+      "akashic.nopos": "阿卡夏记录无法获取到此处的iota（这是个漏洞）",
     },
 
     subtitles: {
@@ -643,12 +643,12 @@
           normal: "操作：嗡鸣",
           spell: "法术：施放",
           hermes: "赫尔墨斯之策略：鸣响",
-          thoth: "托特之策略：鸣响"
-        }
+          thoth: "托特之策略：鸣响",
+        },
       },
 
       ambiance: "咒术网格：嗡鸣",
-      "reset": "重置咒术",
+      "staff.reset": "重置咒术",
 
       abacus: {
         "": "算盘：咔哒",
@@ -958,7 +958,7 @@
       open_paren: "内省",
       close_paren: "反思",
       escape: "考察",
-      undo: "消解"
+      undo: "消解",
     },
 
     "iota.hexcasting:": {
@@ -978,7 +978,7 @@
       invalid_pattern: "该图案不对应任何操作",
       unescaped: "本应运行一个图案，而实际运行了%s",
 
-      not_enough_args: "本应接受大于等于%s个参数，而实际栈中元素数为%s",
+      not_enough_args: "本应接受大于等于%s个参数，而实际栈高度为%s",
       no_args: "本应接受大于等于%s个参数，而实际为空栈",
       too_many_close_parens: "在绘制反思前未先绘制内省",
 
@@ -1013,14 +1013,14 @@
 
       invalid_operator_args: {
         one: "在栈下标为%d处获取到意外iota：%s",
-        many: "在栈下标为%2$d到%3$d处获取到意外iota：%4$s",
+        many: "在栈下标为%2$d到%3$d处获取到%1$s个意外iota：%4$s",
       },
 
       no_akashic_record: "%s处无阿卡夏记录",
       disallowed: "已被服务器管理员禁用于施法",
       disallowed_circle: "已被服务器管理员禁用于法术环",
-      invalid_spell_datum_type: "尝试将某无效类型的值用作SpellDatum：%s（class %s）。这是模组中的bug。",
-      unknown: "抛出异常（%s）。这是模组中的bug。",
+      invalid_spell_datum_type: "尝试将某无效类型的值用作SpellDatum：%s（class %s）。这是模组中的漏洞。",
+      unknown: "抛出异常（%s）。这是模组中的漏洞。",
       stack_size: "超出了栈的大小上限",
       bad_caster: "试图运行的图案需要强大的意识才能承受",
 
@@ -1045,7 +1045,7 @@
 
           entity_or_vector: "一个实体或向量",
 
-          unknown: "（未知，这是个bug）",
+          unknown: "（未知，这是个漏洞）",
         },
 
         numvec: "一个数或向量",
@@ -1080,7 +1080,7 @@
         out_of_world: "%s不在此世界内",
         too_close_to_out: "%s离世界边界太近了",
         forbidden: "%s并未对你开放",
-        bad_dimension: "无法在此维度内传送",
+        bad_dimension: "无法在此维度内执行此操作",
       },
 
       bad_item: {
@@ -1101,7 +1101,7 @@
         bottle: "一个玻璃瓶",
         rechargable: "一个可重新充能的物品",
         colorizer: "一个染色剂",
-        variant: "一个有变种的物品"
+        variant: "一个有变种的物品",
       },
 
       bad_block: {
@@ -1119,7 +1119,7 @@
 
     circles: {
       no_exit: "%s处的媒质流无法找到出口",
-      many_exits: "%s处的媒质流的可选去路过多"
+      many_exits: "%s处的媒质流的可选去路过多",
     },
 
 
@@ -1135,7 +1135,7 @@
         "": "初入咒法",
         desc: "研究这种魔法的人士会用$(l:items/staff)$(item)法杖/$在空中绘制奇异的图案来施放他们口中的“$(hex)咒术/$”，\
           他们也会让$(l:items/hexcasting)$(item)强大的魔法物品/$替他们施法。\
-          我应该也可以这样做？",
+          我要如何复现呢？",
       },
       casting: {
         "": "咒法学",
@@ -1275,7 +1275,7 @@
         cardamom5: "卡达蒙的信，#5",
         experiment1: "“毡障”实例笔记",
         experiment2: "“毡障”测试日志",
-        inventory: "回收日志 #72"
+        inventory: "回收日志 #72",
       },
 
       interop: {
@@ -1285,7 +1285,7 @@
         // TODO: add something about Switchy once that PR gets merged
         // https://github.com/sisby-folk/switchy/pull/44
         // i can't WAIT for all the hilarious people on the github issues about this one
-      }
+      },
     },
     // ^ entries
 
@@ -1325,7 +1325,7 @@
 
       casting: {
         overview: {
-          "1": "我坚信正确的起步方向非常重要。因此，我编写了一个能在我所看的位置产生中小型爆炸的$(hex)咒术/$。相信研究其内部机理会相当有启迪性。"
+          "1": "我坚信正确的起步方向非常重要。因此，我编写了一个能在我所看的位置产生中小型爆炸的$(hex)咒术/$。相信研究其内部机理会相当有启迪性。",
         },
 
         grid: {
@@ -1334,7 +1334,7 @@
             之后点击并在点间拖拽，再释放就可绘制图案。$(br2)\
             在我提交图案的同时，其就会被运行（见下一章节）。",
           "2": "按下$(thing)$(k:escape)/$会保存并关闭网格，下一次使用法杖时，原有的图案和 iota 都会保留。$(br2)\
-            如果需要重设施法状态，在潜行时打开网格即可。"
+            如果需要重设施法状态，在潜行时打开网格即可。",
         },
         "patterns&actions": {
           "1": "$(thing)图案/$是沿$(media)媒质/$网格行进的路径。我相信图案的六次对称性就是这种技艺名称的由来。（译注：hex：六；咒术）$(br2)\
@@ -1354,7 +1354,7 @@
           "5": "尽管某些操作可轻松执行，但某些则需要一种凝结形态的$(media)媒质/$。\
             我相信这种浓缩的意识能量是对自然的某种论据，作为说服其应当依照我的请求做事的报偿。\
             大部分的法术都需要这种报偿，若干非法术操作也需要。$(br2)\
-            我已在各操作的介绍页记录了其消耗（若有）。"
+            我已在各操作的介绍页记录了其消耗（若有）。",
         },
         iotas: {
           "1": "自然的语言中的“名词”称作 $(thing)iota/$。\
@@ -1371,7 +1371,7 @@
             例如$(l:patterns/spells/basic#hexcasting:explode)$(action)爆炸/$。\
             此法术需要一个表示强度的数 iota，和一个表示位置的向量 iota。$(br2)\
             或者再看$(l:patterns/basic#hexcasting:get_pos)$(action)指南针之纯化/$。\
-            它会将一个实体 iota 转换为一个表示该实体位置的向量 iota。"
+            它会将一个实体 iota 转换为一个表示该实体位置的向量 iota。",
         }
       },
 
@@ -1940,7 +1940,7 @@
       },
 
       circle_patterns: {
-        "disclaimer": "这些图案只能在$(l:greatwork/spellcircles)$(item)法术环/$上运行。尝试用$(l:items/staff)$(item)法杖/$绘制它们会招致可怖的事故。",
+        disclaimer: "这些图案只能在$(l:greatwork/spellcircles)$(item)法术环/$上运行。尝试用$(l:items/staff)$(item)法杖/$绘制它们会招致可怖的事故。",
 
         "circle/impetus_pos": "返回该法术环的$(l:greatwork/impetus)$(item)促动石/$的位置。",
         "circle/impetus_dir": "以单位向量返回该法术环的$(l:greatwork/impetus)$(item)促动石/$的面朝方向。",
@@ -2000,7 +2000,7 @@
       },
 
       hexcasting_spell: {
-        "basics": "这三个法术都能制作$(l:items/hexcasting)$(thing)用于施放$(hex)咒术/$的物品/$。$(br)它们都要求我在另一只手上手持对应的基础物品，并且需提供两个参数：需运行的图案和一个用作储库的$(l:items/amethyst)$(item)紫水晶/$物品实体。$(br2)详情参见$(l:items/hexcasting)此条目/$。",
+        basics: "这三个法术都能制作$(l:items/hexcasting)$(thing)用于施放$(hex)咒术/$的物品/$。$(br)它们都要求我在另一只手上手持对应的基础物品，并且需提供两个参数：需运行的图案和一个用作储库的$(l:items/amethyst)$(item)紫水晶/$物品实体。$(br2)详情参见$(l:items/hexcasting)此条目/$。",
         "craft/cypher": "消耗大约 1 个$(l:items/amethyst)$(item)充能紫水晶/$。",
         "craft/trinket": "消耗大约 5 个$(l:items/amethyst)$(item)充能紫水晶/$。",
         "craft/artifact": "消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
@@ -2191,7 +2191,7 @@
         pehkui: {
           "1": "我发现了改变实体大小，和得知它们相较原本究竟变了多少的方法。",
           get: "获取实体的大小倍数，也即当前大小和原本大小的比值。对大多数实体而言，此值为 1。",
-          set: "设置实体的大小倍数，需传入一个与其原本大小的比值。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。"
+          set: "设置实体的大小倍数，需传入一个与其原本大小的比值。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。",
         },
       },
     },
