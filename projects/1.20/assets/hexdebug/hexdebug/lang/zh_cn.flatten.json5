@@ -1,0 +1,200 @@
+{
+  "item.hexdebug": {
+    debugger: "调试杖",
+    evaluator: "运行杖",
+  },
+
+  "block.hexdebug": {
+    splicing_table: "剪接台",
+    focus_holder: "核心装载器",
+  },
+
+  "itemGroup.hexdebug": "咒法调试",
+
+  text: {
+    hexdebug: {
+      connected: "调试客户端已连接！",
+      no_session: "调试会话未在运行。",
+      thwack: "哐当！",
+      // Next Iota: [{index}] {iota}
+      debugger_stopped: "下一个Iota：[%d] %s",
+
+      splicing_table: {
+        button: {
+          view_left: "向左移动视野",
+          view_right: "向右移动视野",
+          select_none: "取消选区",
+          select_all: "全选",
+          clear_grid: "清空网格",
+          nudge_left: "左移",
+          nudge_right: "右移",
+          duplicate: "重复",
+          delete: "删除",
+          undo: "撤销",
+          redo: "重做",
+          cut: "剪切",
+          copy: "复制",
+          paste: "粘贴（逐项）",
+          paste_splat: "粘贴（扁平化）",
+          export: "导出为.hexpattern文件",
+        },
+        tooltip: {
+          index: "索引下标：%d",
+          signature: "图案编码：%s",
+          length: "长度：%d",
+        },
+      },
+    },
+
+    "autoconfig.hexdebug": {
+      title: "咒法调试配置",
+      category: {
+        client: "Client",
+        server: "Server",
+      },
+      option: {
+        client: {
+          openDebugPort: {
+            "": "开放调试端口",
+            "@Tooltip": "是否开放端口。若设为false，调试杖会失去作用。",
+          },
+          debugPort: {
+            "": "调试端口",
+            "@Tooltip": "开放以连接至调试客户端（如VSCode）的端口号（1024-65535）。",
+          },
+          smartDebuggerSneakScroll: {
+            "": "调试杖智能潜行滚轮",
+            "@Tooltip": "若当前主手持有调试杖，且未在调试咒术，则优先处理副手中法术书一类物品的“潜行滚动滚轮”操作。",
+          },
+          debuggerDisplayMode: {
+            "": "调试杖显示模式",
+            "@Tooltip": "\
+              更改调试杖打印下一需运行iota的时机。\n\
+                DISABLED：不显示调试杖状态消息。\n\
+                NOT_CONNECTED：只在调试客户端未连接时显示调试杖状态消息。\n\
+                ENABLED：一直显示调试杖状态信息。（默认）",
+          },
+          showDebugClientLineNumber: {
+            "": "显示调试客户端行号",
+            "@Tooltip": "若设为true，显示调试客户端（如VSCode）的行号，通常以1起始；否则显示列表索引下标，以0起始。"
+          }
+        },
+        server: {
+          maxUndoStackSize: {
+            "": "撤销历史步数上限",
+            "@Tooltip": "剪接台撤销历史的长度上限。设为0可禁用上限。",
+          }
+        }
+      },
+    },
+  },
+
+  "hexcasting.action": {
+    "hexdebug:": {
+      "const/debugging": "调试杖之精思",
+      "next_eval_index": "调试位之精思", // TODO: this name kinda sucks tbh
+      "const/cognitohazard": "认知危害之精思",
+      "breakpoint/": {
+        before: "在前方添加断点",
+        after: "在后方添加断点"
+      },
+      "craft/debugger": "制作调试杖",
+    },
+    "book.hexdebug:": {
+      "next_eval_index": "调试位之精思",
+      "const/cognitohazard": "认知危害之精思"
+    },
+  },
+
+  hexdebug: {
+    tooltip: {
+      debugger: {
+        step_mode: {
+          "": "模式：%s",
+          continue: "继续",
+          over: "逐过程",
+          in: "单步调试",
+          out: "单步跳出",
+          restart: "重启",
+          stop: "停止"
+        },
+      },
+      focus_holder: {
+        item: "物品：%s",
+      },
+      cognitohazard_iota: "认知危害",
+    },
+
+    category: {
+      items: {
+        entry: {
+          debugging: {
+            "": "调试物品",
+            page: {
+              debugger: "部分文献中有些不太明确的描述，称古代人会使用一件奇怪的物品协助他们发现复杂$(hex)咒术/$中的问题。我应已成功复刻出了它，定名为$(item)调试杖/$。$(br2)\
+                它的工作方式与$(l:items/hexcasting)$(item)造物/$类似。不过，它还能从副手中的物品（比如$(l:items/focus)$(item)核心/$）里直接施放$(hex)咒术/$。$(br2)\
+                有些可惜的是，$(item)调试杖/$自身没有太大用处；而为发挥出它的所有潜能，需要先$(l:https://github.com/object-Object/HexDebug/wiki/Setting-up-VSCode-with-HexDebug)准备好/$某种$(l:https://marketplace.visualstudio.com/items?itemName=object-Object.hex-casting)外部工具/$才能正常运作。",
+              thwack: "$(italic)哐当！/$$(br2)\
+                潜行滚动滚轮还可切换$(item)调试杖/$的各种“步进模式”，操作与$(l:items/spellbook)$(item)法术书/$和$(l:items/abacus)$(item)算盘/$类似。",
+              evaluator: "我又新制造了一种法杖——$(l:items/debugging#evaluator)$(item)运行杖/$，用以补充$(l:items/debugging#debugger)$(item)调试杖/$的功能。$(br2)\
+                调试$(hex)咒术/$时，此法杖绘制的图案会运行于$(l:items/debugging#debugger)$(item)调试杖/$当前的栈和$(l:patterns/readwrite#hexcasting:local)$(thing)渡鸦之思/$。$(br2)\
+                清空咒术网格后，$(l:items/debugging#debugger)$(item)调试杖/$似乎会回到$(l:items/debugging#evaluator)$(item)运行杖/$绘制首个图案前的状态。当然，这种操作无法撤回已造成实际影响的法术。",
+              thwonk: "$(italic)哐啷！/$"
+            },
+          },
+          splicing_table: {
+            "": "剪接台",
+            page: {
+              "1": "我的$(hex)咒术/$日益复杂，修补我自己的失误也愈发耗时。$(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)消隐/$，$(l:patterns/lists#hexcasting:replace)$(action)外科医师之提整/$等图案对简单的替换来说已经足够，但我认为还可精益求精。$(br2)\
+                $(l:items/splicing_table)$(item)剪接台/$就是我对这些麻烦的回应：功能完备的工作站，专为查看和编辑$(hex)咒术/$准备。",
+              "2": "开始之前，需将$(l:items/focus)$(item)核心/$等包含列表 iota 的物品放入界面中央。界面会显示列表中的前 9 个 iota。显示栏两侧的箭头可更改显示的区域；也可按住 $(k:sneak) 以按页移动，或按照 $(k:sprint) 以直接移动到开头或结尾。$(br2)\
+                如果要和其他人分享$(hex)咒术/$，可以按下右侧的大按钮，将列表内容复制到我的“剪贴板”。",
+              "3": "点击 iota 及 iota 间的空位可选择它们。按住 $(k:sneak) 再次点击则可选择一系列 iota。$(br2)\
+                此外，还有按钮专为选择整个列表（$(thing)全选/$）和清空选择区域（$(thing)取消选区/$）。$(br2)\
+                选择 iota 能解锁$(l:items/splicing_table)$(item)剪接台/$的真正力量：编辑$(hex)咒术/$。",
+              "4": "只要$(l:items/splicing_table#cost)媒质充足/$，即可执行以下操作：\
+                $(li)$(thing)左移/$：将所选 iota 向左移动一格。\
+                $(li)$(thing)右移/$：将所选 iota 向右移动一格。\
+                $(li)$(thing)删除/$：从列表中移除所选 iota。\
+                $(li)$(thing)重复/$：创建所选 iota 的副本。\
+                $(li)$(thing)撤销/$：撤回最近一次操作。\
+                $(li)$(thing)重做/$：重做$(thing)撤销/$所撤回的操作。",
+              "5": "更高级的操作需要额外存储空间。可在左侧槽位中放入可存储 iota 的物品，以解锁以下操作：\
+                $(li)$(thing)复制/$：将所选 iota 作为列表写入辅助物品。\
+                $(li)$(thing)剪切/$：与$(thing)复制/$功能一致，不过原本选择的 iota 会被删除。\
+                $(li)$(thing)粘贴/$：使用辅助物品中的 iota 覆盖所选的 iota。如果用于覆盖的 iota 是列表，则会粘贴其中内容；按住 $(k:sneak) 可改为粘贴列表本身。",
+              "6": "最后，还可向左下角槽位放入$(l:items/staff)$(item)法杖/$，以显示微缩版的咒术网格。在该网格中绘制的图案会直接插入列表，覆盖选中的 iota。$(br2)\
+                右侧还有 6 个通用物品槽。这些槽位没有特殊功能，只是方便存放物品。",
+              cost: "可惜的是，这种强大的功能有其代价。修改物品的 iota 存储空间需要消耗$(media)媒质/$——每次操作消耗大约 1/10 个$(l:items/amethyst)$(item)紫水晶粉/$。$(br2)\
+                右下角的槽位可用于向$(l:items/splicing_table)$(item)剪接台/$补充$(media)媒质/$。单次最多可补充 10 个$(l:items/amethyst)$(item)紫水晶粉/$；多出的会被忽略，直至出现足够完全接收新$(media)媒质/$物品的缺口，才会进行消耗。",
+              recipe: "$(italic)看着她一个接一个接上铭印串，随着她的手指以快得几乎看不见的速度在托盘上舞动，小金属方块飞入飞出。/$",
+            },
+          },
+        },
+      },
+
+      patterns: {
+        entry: {
+          debugging: {
+            "": "调试",
+            page: {
+              "const/debugging": "若栈由$(l:items/debugging#debugger)$(item)调试杖/$或$(l:items/debugging#evaluator)$(item)运行杖/$执行，则返回 $(thing)True/$；否则返回 $(thing)False/$。",
+              "next_eval_index": "若栈由$(l:items/debugging#debugger)$(item)调试杖/$或$(l:items/debugging#evaluator)$(item)运行杖/$执行，则返回下一个待执行 iota 的索引下标；否则返回 $(l:casting/influences)$(thing)Null/$。",
+              "const/cognitohazard": {
+                "1": "向栈顶压入一个$(thing)认知危害/$。",
+                "2": "貌似部分$(l:items/debugging#evaluator)调试工具/$在某些$(l:patterns/meta#hexcasting:eval/cc)高等级技术/$中容易导致安全问题。而为解决这一问题，我设计了本图案。$(br2)\
+                  $(thing)认知危害/$ iota 正常运行时什么都不会发生。不过，如果它出现在$(l:items/debugging#debugger)$(item)调试杖/$执行的$(hex)咒术/$里，那该$(hex)咒术/$便会$(italic)立即/$终止——甚至要先于$(thing)认知危害/$的执行。",
+              },
+              "breakpoint/": {
+                before: "在运行此图案前，暂停$(l:items/debugging#debugger)$(item)调试杖/$。",
+                after: "在运行此图案后，也即在运行下一图案之前，暂停$(l:items/debugging#debugger)$(item)调试杖/$。",
+              },
+              "craft/debugger": "制作一支能施放$(hex)咒术/$的$(l:items/debugging#debugger)$(item)调试杖/$。这个图案和我之前用过的$(l:patterns/spells/hexcasting)某些图案/$有些相似。\
+                $(br2)消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
+            },
+          },
+        },
+      },
+    },
+  },
+}
