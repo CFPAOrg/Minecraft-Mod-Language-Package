@@ -11,5 +11,4 @@ Welcome to the Replication AE2 Bridge guide! This addon connects Applied Energis
 
 ## Contents
 
-* [ME-Replication Bridge](repae2bridge.md) - The main component that connects the two systems
-* [Matter Types](matter_types.md) - Learn about the different types of matter used in Replication 
+* [ME-Replication Bridge](repae2bridge.md) - The main component that connects the two systems and manages crafting priorities 
