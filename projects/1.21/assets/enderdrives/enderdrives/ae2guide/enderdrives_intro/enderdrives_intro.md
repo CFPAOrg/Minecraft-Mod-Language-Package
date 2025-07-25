@@ -1,7 +1,10 @@
 ---
 navigation:
-  title: EnderDrives
-icon: ender_storage_component_256k
+  parent: enderdrives_intro/enderdrives_intro-index.md
+  title: Ender Item Storage Cell
+  icon: enderdrives:ender_disk_1k
+categories:
+  - enderdrives
 item_ids:
   - enderdrives:ender_disk_1k
   - enderdrives:ender_disk_4k
