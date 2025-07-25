@@ -1,0 +1,71 @@
+{
+  "category": "productivemetalworks:intro",
+  "icon": "productivemetalworks:black_foundry_controller",
+  "name": "熔铸炉",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "欢迎游玩Productive Metalworks，其灵感来源于匠魂的冶炼炉。你能发现两者既有不同之处，也有相似之处。但是请注意，这个模组不含工具制造，只包含熔铸炉。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "为了搭建熔铸炉，首先需要烧炼耐火黏土得到耐火砖。接着制作黑色耐火砖块，将它染色后就能获得其他颜色的砖块。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "搭建熔铸炉需要的方块有：$(br)* 熔铸炉控制器$(br)* 熔铸炉储罐$(br) * 液体加热线圈$(br) * 熔铸炉排液孔$(br) * 耐火砖块或熔铸炉视窗$(br) * 铸件台&铸造盆"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "mapping": {
+          "A": "productivemetalworks:casting_table",
+          "B": "productivemetalworks:liquid_heating_coil[attached=true]",
+          "C": "productivemetalworks:black_foundry_controller[facing=east,attached=true]",
+          "D": "productivemetalworks:black_foundry_drain[facing=east]",
+          "P": "productivemetalworks:foundry_tap[facing=south]",
+          "Q": "productivemetalworks:foundry_tap[facing=east]",
+          "S": "productivemetalworks:casting_basin",
+          "T": "productivemetalworks:black_foundry_tank[facing=east]",
+          "W": "productivemetalworks:black_fire_bricks"
+        },
+        "pattern": [
+          [
+            " WWW ",
+            "W   W",
+            "W   W",
+            "W   W",
+            " WWW ",
+            "     "
+          ],
+          [
+            " WWW ",
+            "W   W",
+            "W 0 W",
+            "W   W",
+            " TCDP",
+            "   Q "
+          ],
+          [
+            "     ",
+            " BBB ",
+            " BBB ",
+            " BBB ",
+            "    A",
+            "   S "
+          ]
+        ]
+      },
+      "multiblock_id": "foundry",
+      "name": "3x3熔铸炉"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "最大的不同是熔铸炉底部需要放置液体加热线圈，它们能加热熔铸炉。熔铸炉多方块的角落不强制要求放置方块。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(br)熔铸炉默认以1.3x产率熔炼粗矿，熔炼速率由所用的燃料种类决定。"
+    }
+  ]
+}
