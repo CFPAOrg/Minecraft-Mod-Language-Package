@@ -31,12 +31,13 @@
   "slate_work.page.storage_loci.1": "$(thing)容具/$很适合用来存储，但它们的交互功能……不太方便。主要的交互方式是$(hex)咒术/$；更详细说来，是在$(hex)咒术/$中描述希望取得的物品。同时需要注意，这些法术$(l:casting/mishaps2)不在法术环中执行时会招致事故/$。$(br2)$(br)$(o)“谜题”，我说道。$(br)“最好就是不去解答”，他应道。",
   "slate_work.page.storage_loci.2": "再详细地说，对于自然对“栈限制”的愚蠢规则，$(thing)容具/$选择以绕过它们的方式尊重它们。它不会直接根据名称请求物品，而是需要我提供一条“说明”——即一条接受$(l:patterns/scrying/item)物品组 iota/$ 并返回一个布尔值的$(hex)咒术/$。而且，所有涉及获取$(thing)存储容具/$信息的图案都会复制一份物品组置入“内部”栈（和$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$很相似）。",
   "slate_work.page.storage_loci.get_storage": "返回当前$(l:greatwork/spellcircles)法术环/$激活的$(thing)容具/$。大概可以用来检查$(l:greatwork/spellcircles)法术环/$是否获取到了$(thing)容具/$。",
-  "slate_work.page.storage_loci.store_item": "向$(thing)容具/$存入物品比取出容易。此图案会接受一个物品实体，并将其存入激活的$(thing)存储容具/$。每有一个激活的$(thing)容具/$消耗 1/8 个$(l:items/amethyst)紫水晶粉/$。",
+  "slate_work.page.storage_loci.store_item": "向$(thing)容具/$存入物品比取出容易。此图案会接受一个物品实体，并将其轻巧地存入激活的$(thing)存储容具/$。每有一个激活的$(thing)容具/$消耗 1/8 个$(l:items/amethyst)紫水晶粉/$。",
   "slate_work.page.storage_loci.get_item": "此图案接受一个$(hex)咒术/$，并对所存储的所有$(l:patterns/scrying/item)物品组/$运行。运行该$(hex)咒术/$后，图案还需要栈中按顺序存在一个$(thing)整数/$，一个$(thing)向量/$和一个$(thing)布尔值/$。",
   "slate_work.page.storage_loci.get_item_cont": "继续解释说明。它会对$(thing)容具/$中存储的所有物品运行给定$(hex)咒术/$。该$(hex)咒术/$必须从栈顶至栈底依次返回 False（此时省略向量和数）或 True，一个向量，一个数。向量代表向世界输出物品的位置（需在影响范围内），数代表应取出的数量。$(br2)每有一个激活的$(thing)容具/$消耗 1/4 个$(l:items/amethyst)紫水晶粉/$。",
   "slate_work.page.storage_loci.check_item": "检查物品的功能和唤回物品类似。但它只需要$(hex)咒术/$返回一个布尔值。如果所有布尔值中有一个为 True，则法术结束并返回 True。",
   "slate_work.page.storage_loci.sort_items": "在某些情况下，$(thing)容具/$会变得杂乱无章，同种物品被分散到不同的$(thing)容具/$里去。这条好用的法术就可以整理它们，但它有代价：需消耗 5 个$(l:items/amethyst)充能紫水晶/$。",
-  "slate_work.page.storage_loci.set_craft": "为$(l:greatwork/crafting_loci)样板组装器/$设置合成配方。需接受包含 $(l:casting/influences)$(thing)Null/$、物品、物品变种的列表，然后将此列表应用于目标$(l:greatwork/crafting_loci)组装器/$。",
+  "slate_work.page.storage_loci.set_craft": "为$(l:greatwork/crafting_loci)样板组装器/$设置合成配方。接受包含 $(l:casting/influences)$(thing)Null/$、物品、物品变种的列表，并将此列表应用于目标$(l:greatwork/crafting_loci)组装器/$。",
+
   "slate_work.page.storage_loci.set_craft_cont": "需要注意，$(l:greatwork/crafting_loci)样板组装器/$会将所给列表“格式化”为从左至右再从上至下的配方。自然，$(l:casting/influences)$(thing)Null/$ 代表配方中的空位。最后提一句，法术会在列表长于 9 个元素时招致事故，少于或等于 9 个时则不会。$(br2)在$(l:greatwork/spellcircles)法术环/$外施放不会招致事故。消耗极少量$(media)媒质/$。",
   "slate_work.page.storage_loci.set_macro": "此图案会为目标位置处的$(l:greatwork/macro_loci)法术刻印器/$绑定一个图案和一个$(hex)咒术/$。$(br2)在$(l:greatwork/spellcircles)法术环/$外施放不会招致事故。消耗极少量$(media)媒质/$。",
 
@@ -54,8 +55,8 @@
 
   "slate_work.entry.speed_loci": "波速调节器",
   "slate_work.page.speed_loci.speed_loci": "自从我开始探索$(l:greatwork/spellcircles)卓伟之作/$的用途之时，就总有更精细控制这种新事物的需要。因此，我制造了$(thing)波速调节器/$。它会从栈中弹出一个数，并用其设置$(thing)媒质波/$的“速度”。更准确地说，是波在流入下一块石板前应等待多少个 1/20 秒。",
-  "slate_work.page.speed_loci.speed_loci_cont": "这一体系的确有其局限。例如，速度无法超出$(thing)媒质波/$移速的上线，试图这么做不会产生任何效果。换言之，它只能将等待时间设为大于等于$(l:greatwork/spellcircles)法术环/$的最短等待时间，或是重设为正常速度。后者需要$(thing)波速调节器/$弹出 0，从而将$(thing)媒质波/$的控制权交还给$(l:greatwork/spellcircles)法术环/$。",
-  "slate_work.page.speed_loci.crafting": "和我……$(o)受赐福/$的视野中看到的其他东西不一样，$(thing)波速调节器/$显得很奇怪。它需要的只是$(l:greatwork/quenching_allays)媒质的碎片/$，但其中须留有挣扎的痕迹……不管怎么说它必须仍在痛苦之中——和几块石板，方便嵌入$(l:greatwork/spellcircles)法术环/$。",
+  "slate_work.page.speed_loci.speed_loci_cont": "这一体系的确有其局限。例如，速度无法超出$(thing)媒质波/$移速的上限，试图这么做不会产生任何效果。换言之，它只能将等待时间设为大于等于$(l:greatwork/spellcircles)法术环/$的最短等待时间，或是重设为正常速度。后者需要$(thing)波速调节器/$弹出 0，从而将$(thing)媒质波/$的控制权交还给$(l:greatwork/spellcircles)法术环/$。",
+  "slate_work.page.speed_loci.crafting": "和我……$(o)受赐福/$的视野中看到的其他东西不一样，$(thing)波速调节器/$显得很奇怪。它需要的只是$(l:greatwork/quenching_allays)媒质的碎片/$，但其中须留有挣扎的痕迹……想必是极为痛苦的——和几块石板，方便嵌入$(l:greatwork/spellcircles)法术环/$。",
 
   "slate_work.entry.crafting_loci": "样板组装器",
   "slate_work.page.crafting_loci.crafting_loci": "我的双手在$(item)工作台/$上不断挥动，带来的只是$(o)疼痛/$和$(o)麻木/$……好在这些都过去了。$(thing)样板组装器/$就是止痛剂。$(br2)$(o)物品里埋着物品，合成到停不下来，看到停不下来，合成、自动化、更多物品。$(b)现在就要/$。",
