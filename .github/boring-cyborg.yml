@@ -15,20 +15,38 @@ labelPRBasedOnFilePath:
     1.19.x:
         - "projects/1.19/**"
       # - "projects/1.19-fabric/**"
+
+    1.20.x:
+        - "projects/1.20/**"
+        - "projects/1.20-fabric/**"
+
+    1.21.x:
+        - "projects/1.21/**"
+        - "projects/1.21-fabric/**"
     
     Forge:
         - "projects/1.12.2/**"
         - "projects/1.16/**"
         - "projects/1.18/**"
         - "projects/1.19/**"
+
+    (Neo)Forge:
+        - "projects/1.20/**"
+        - "projects/1.21/**"
     
     Fabric:
         - "projects/1.16-fabric/**"
         - "projects/1.18-fabric/**"
       # - "projects/1.19-fabric/**"
+        - "projects/1.20-fabric/**"
+        - "projects/1.21-fabric/**"
       
     Patchouli:
         - "projects/**/patchouli_books/**"
+
+    GuideME:
+        - "projects/**/guides/**"
+        - "projects/**/ae2guide/**"
 
     source:
         - "src/**"
@@ -73,9 +91,12 @@ labelerFlags:
 ##### Greetings ########################################################################################################
 # Comment to be posted to welcome users when they open their first PR
 firstPRWelcomeComment: |
-    你已成功发送你在 CFPA 仓库的第一个 Pull Request！请再次检查以下事项：
-    标题是否正确丨翻译文件的路径是否正确丨检查单是否勾选了前三项。
+    你好贡献者，欢迎贡献本项目。请阅读 CLA Assistant 给出的《贡献者许可协议》并决定是否签署，若不签署，我们将无法接收你的贡献。
+    你已成功发送你在 CFPA 仓库的第一个 Pull Request！请在几分钟之后观察 CFPA-Bot 给出的内容，看是否存在报错。
+    **请注意！** 如果存在错误，**不要**关闭 Pull Request，几乎所有可能出现的错误都能在不关闭 Pull Request 的情况下解决。如果频繁新建/关闭 Pull Request，你可能遭到封禁。
     确认无误后请耐心等待审阅，并在审阅人提出意见给出答复或修改内容。
+    若要提交多个模组，请新建一个基于 upstream/main 的分支，再向新分支提交其他模组的翻译，并发送 Pull Request。
+    如需快速联系，请[加 QQ 群](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=b1iBq79z3h1OtJpEl8gstrhlu_oYlyl6&authKey=LgDPZAJSg2uFKjiMylQkkef9tAfTja8W4rBd5KkN6aSsYKpWKFbSqrM9GY7AoHJ7&noverify=0&group_code=630943368)：630943368
 
 # Comment to be posted to congratulate user on their first merged PR
 firstPRMergeComment: >
@@ -84,29 +105,6 @@ firstPRMergeComment: >
 # Comment to be posted to on first time issues
 # firstIssueWelcomeComment: >
 #     感谢你来反馈问题。请在反馈前后检查是否有相同的问题。
-
-###### Title Validator #################################################################################################
-# Verifies if commit/PR titles match the regexp specified
-verifyTitles:
-    # Regular expression that should be matched by titles of commits or PR
-    titleRegexp: ^(\[[A-Z,]{1,}\]|[\u4e00-\u9fa5]*|)\s*[A-Za-z\s]+\s*[\u4e00-\u9fa5]*.*$
-    # If set to true, it will always check the PR title (as opposed to the individual commits).
-    alwaysUsePrTitle: true
-    # If set to true, it will only check the commit in case there is a single commit.
-    # In case of multiple commits it will check PR title.
-    # This reflects the standard behaviour of Github that for `Squash & Merge` GitHub
-    # uses the PR title rather than commit messages for the squashed commit ¯\_(ツ)_/¯
-    # For single-commit PRs it takes the squashed commit message from the commit as expected.
-    #
-    # If set to false it will check all commit messages. This is useful when you do not squash commits at merge.
-    validateEitherPrOrSingleCommitTitle: true
-    # The title the GitHub status should appear from.
-    statusTitle: "标题检测器"
-    # A custom message to be displayed when the title passes validation.
-    successMessage: "你的标题是正确的，感谢你的配合。"
-    # A custom message to be displayed when the title fails validation.
-    # Allows insertion of ${type} (commit/PR), ${title} (the title validated) and ${regex} (the titleRegexp above).
-    failureMessage: "错误的${type}标题：${title}。请检查是否符合“模组英文名+简要说明”的格式"
 
     ###### PR/Branch Up-To-Date Checker ####################################################################################
 # Check if the branch is up to date with master when certain files are modified

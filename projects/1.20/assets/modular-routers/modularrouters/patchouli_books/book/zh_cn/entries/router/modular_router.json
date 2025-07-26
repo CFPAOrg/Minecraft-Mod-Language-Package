@@ -1,0 +1,53 @@
+{
+  "name": "模块化路由器",
+  "icon": "modularrouters:modular_router",
+  "category": "modularrouters:router",
+  "pages": [
+    {
+      "type": "text",
+      "text": "$(thing)模块化路由器/$是本系统的核心。它负责执行所有插入其中的模块，以各种方式移动物品、方块和流体。"
+    },
+    {
+      "type": "image",
+      "images": [
+        "modularrouters:textures/patchouli/router_gui.png"
+      ],
+      "text": "$(italic)装有数个模块和升级的模块化路由器 GUI",
+      "border": true
+    },
+    {
+      "type": "text",
+      "title": "1. 缓存区",
+      "text": "$(thing)模块化路由器/$有一格栏位的缓存区，可以存放一组物品。该缓存区和正常物品栏一样开放，因此可以通过$(item)漏斗/$和其他模组的运输系统与其进行互动。$(p)此外，对着路由器放置的$(item)比较器/$将会测量栏位的空满程度。"
+    },
+    {
+      "type": "text",
+      "title": "2. 模块栏位",
+      "text": "$(thing)模块化路由器/$有九个栏位用于安装$(l:intro/modules)模块/$。每当路由器运行一次（每秒 1 至 10 次，取决于速度升级），它就会从左到右轮流$(thing)执行/$每个模块。$(p)你可以在GUI中将鼠标悬浮在模块上方按$(4)$(bold)[$(k:modularrouters.configure)]/$或$(thing)鼠标中键/$就能配置安装的模块，无需将它们移除。"
+    },
+    {
+      "type": "text",
+      "title": "3. 升级栏位",
+      "text": "$(thing)模块化路由器/$有五个栏位用于安装$(l:intro/upgrades)升级/$。升级会以多种方式增强路由器的功能；比如说，每个放入的$(l:upgrades/speed)速度升级/$都会时路由器刻来的更快，而每个$(l:upgrades/stack)堆叠升级/$都可使其每次操作处理更多物品。"
+    },
+    {
+      "type": "text",
+      "title": "4. 红石控制",
+      "text": "$(thing)模块化路由器/$在如何响应红石输入方面具有一定的灵活性，这是通过右上角的按钮控制的：$(li)默认：总是运行，忽视红石信号$(li)只在$(italic)无/$红石信号时运行$(li)只在$(italic)有/$红石信号时运行$(li)从不运行$(li)当接收红石脉冲（任何强度高于先前的信号）时运行$(italic)一次/$。"
+    },
+    {
+      "type": "text",
+      "title": "5. 低耗模式",
+      "text": "本着环境友好的精神，路由器有一个选项，可以让路由器待机一段时间后自动放慢速度。$(p)当低耗模式开启时，如果路由器在上$(ttcolor)$(t:在模组配置中可调⸺'ecoTimeout')5 秒钟/$都没有可做的事，它就会放慢速度，每$(ttcolor)$(t:在模组配置中可调⸺'lowPowerTickRate')5 秒/$只运行一次（无视$(l:upgrades/speed)速度升级/$）。然而，当它有可做的事时，就会回到正常的工作速度。"
+    },
+    {
+      "type": "text",
+      "title": "低耗模式（续）",
+      "text": "这主要是为了繁忙的服务器设计，用于节省 CPU 周期，但是，对于任何很少运行并且快速传输物品没有那么重要的路由器来说，这可能是一种很好的选择（比如一个有着$(l:modules/vacuum)真空模块/$定期收集羊毛的绵羊牧场）。"
+    },
+    {
+      "type": "crafting",
+      "recipe": "modularrouters:modular_router"
+    }
+  ]
+}

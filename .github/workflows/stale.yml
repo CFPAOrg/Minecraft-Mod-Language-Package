@@ -1,8 +1,8 @@
 name: Close inactive PRs
 on:
   schedule:
-    # 每天凌晨5点
-    - cron: "0 21 * * *"
+    # 北京时间 0,6,12,18 点
+    - cron: "0 2,8,14,20 * * *"
   workflow_dispatch:
 jobs:
   close-issues:
@@ -15,11 +15,10 @@ jobs:
         with:
           days-before-issue-stale: -1
           days-before-issue-close: -1
-          stale-pr-message: "提醒：审核者需要您的回复，7+7已进入第二阶段，该PR即将关闭。"
-          close-pr-message: "因审核者请求您更新该PR，且回复时间超过规定期限，该PR现暂时关闭。如您需再次提交可重新打开该PR，感谢您的贡献:heart:。"
+          stale-pr-message: "请注意回应审阅人的审阅意见，若 24 小时内不回应，该 PR 即将被关闭。相关规则见[贡献方针](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md#搁置规则)。"
+          close-pr-message: "因你的回应时间超过时限，该 PR 已因搁置而被关闭。如需再次提交可重新打开（Reopen）该 PR，感谢贡献:heart:。相关规则见[贡献方针](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/main/CONTRIBUTING.md#搁置规则)。"
           days-before-pr-stale: 7
-          days-before-pr-close: 7
-          any-of-pr-labels: "needs author action,changes required"
+          days-before-pr-close: 1
+          any-of-pr-labels: "即将被搁置"
           stale-pr-label: "即将拒收"
-          start-date: 2023-02-11
           repo-token: ${{ secrets.GITHUB_TOKEN }}
