@@ -1,0 +1,35 @@
+{
+  "name": "Energy Upgrade",
+  "category": "upgrades",
+  "icon": "modularrouters:energy_upgrade",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This upgrade gives the Router an internal energy buffer. Each upgrade increases the buffer size by 50,000 FE and the transfer rate by 1,000 FE per $(italic)router tick/$ (these figures are adjustable in mod config).$(p)There are several scenarios where an Energy Upgrade is useful, detailed in the following pages."
+    },
+    {
+      "type": "text",
+      "title": "1. Routing Energy",
+      "text": "The $(l:modules/energy_output)Energy Output/$ and $(l:modules/energy_distributor)Energy Distributor/$ modules are both capable of actively pushing energy from the router's buffer to adjacent or nearby blocks.$(p)With these modules, you can effectively build an energy cell with limited wireless energy transfer capabilities."
+    },
+    {
+      "type": "text",
+      "title": "2. Powering Modules",
+      "text": "By default, router modules do not cost any energy to run, with the exception of the $(l:modules/activator)Activator Module/$ in attack mode. $(p)However, energy usage is configurable and it's possible that energy costs may apply to other modules in the pack you're playing; all modules list energy usage numbers in their tooltip where it applies."
+    },
+    {
+      "type": "text",
+      "title": "3. Charging Items",
+      "text": "Any energy-holding item in the router's buffer can optionally have energy transferred from the router's internal buffer to the item, or vice versa.$(p)When an energy-holding item is in the item buffer, the router GUI will show a switchable button between the buffer and the energy bar to set the energy transfer direction."
+    },
+    {
+      "type": "text",
+      "title": "Transfer Rates",
+      "text": "It is important to note that stated transfer rates on tooltips are in FE per $(italic)router tick/$, which is not the same as FE/t. A Router's tick rate depends on its $(l:upgrades/speed)Speed Upgrades/$; with no Speed Upgrades, a router tick is every 20 server ticks. Therefore, the overall transfer rate may be lower than you might expect."
+    },
+    {
+      "type": "crafting",
+      "recipe": "modularrouters:energy_upgrade"
+    }
+  ]
+}

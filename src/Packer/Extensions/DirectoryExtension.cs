@@ -1,5 +1,8 @@
-﻿using Packer.Models;
+﻿using Packer.Helpers;
+using Packer.Models;
+using Packer.Models.Providers;
 using Serilog;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,161 +10,170 @@ using System.Text.Json;
 
 namespace Packer.Extensions
 {
+    using EvaluatorReturnType = IEnumerable<(IResourceFileProvider provider, ApplyOptions options)>;
+    using ParameterType = Dictionary<string, JsonElement>;
+
+
     /// <summary>
     /// 用于处理\[namespace]层级的不同加载策略的拓展方法，以及一些辅助方法
     /// </summary>
-    public static class DirectoryExtension
+    public static partial class DirectoryExtension
     {
-
-
-        /// <summary>
-        /// 从[namespace]生成所需的Asset对象，采用本目录下放置的配置文件
-        /// </summary>
-        /// <param name="assetPath">目标路径</param>
-        /// <param name="config">采用的配置</param>
-        /// <param name="bypassed">未经处理的文件</param>
-        /// <returns></returns>
-        public static IEnumerable<TranslatedFile> AggregateAssetFiles(this DirectoryInfo assetPath,
-                                                                      Config config,
-                                                                      ref Dictionary<string, string> bypassed)
-        {
-            // 读取局域配置文件；若为空，配置为“无操作”（直接处理文件）
-            var policy = Utils.RetrieveStrategy(assetPath.GetFiles("packer-policy.json").FirstOrDefault());
-
-            if (policy.Type != PackerStrategyType.NoAction)
-                Log.Information("对asset-domain {2} 采用非标准检索策略：{0} w/ {1}",
-                                policy.Type,
-                                policy.Parameters,
-                                assetPath.Name);
-
-            // Delegate是个好东西 要不然这参数不知道要多长
-            // 不过，什么时候能支持集合字面量......这样子就甚至不用写类型了
-            // 目前支持的打包策略
-            Dictionary<PackerStrategyType, Del> functionTable = new()
-            {
-                { PackerStrategyType.NoAction, FromImmediateDirectory },
-                { PackerStrategyType.PlainClone, FromIndirectDirectory },
-                { PackerStrategyType.CloneMissing, FromMixedDirectory },
-                { PackerStrategyType.BackPort, FromBackPort },
-                { PackerStrategyType.Patch, FromPatches }
-            };
-            return functionTable[policy.Type](assetPath, config, ref bypassed, policy.Parameters);
-        }
-
         /// <summary>
         /// 加载策略所使用的标准方法代理
         /// </summary>
-        /// <param name="assetDirectory">目标路径</param>
+        /// <param name="namespaceDirectory">加载的基准位置</param>
         /// <param name="config">采用的全局配置</param>
-        /// <param name="unprocessed">不经处理的文件</param>
         /// <param name="parameters">局部打包配置的附加参数</param>
-        /// <returns></returns>
-        public delegate IEnumerable<TranslatedFile> Del(DirectoryInfo assetDirectory,
-                                                        Config config,
-                                                        ref Dictionary<string, string> unprocessed,
-                                                        Dictionary<string, JsonElement> parameters);
+        /// <returns>一个<see cref="Tuple"/>，第一参数为提供器的目标</returns>
+        public delegate EvaluatorReturnType
+            ProviderEvaluator(DirectoryInfo namespaceDirectory,
+                              Config config,
+                              ParameterType? parameters);
 
-        static IEnumerable<TranslatedFile> FromMixedDirectory(DirectoryInfo assetDirectory,
-                                                              Config config,
-                                                              ref Dictionary<string, string> unprocessed,
-                                                              Dictionary<string, JsonElement> parameters)
-            => Utils.MergeFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
-                                FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
-
-        static IEnumerable<TranslatedFile> FromBackPort(DirectoryInfo assetDirectory,
-                                                              Config config,
-                                                              ref Dictionary<string, string> unprocessed,
-                                                              Dictionary<string, JsonElement> parameters)
-            => Utils.PortFiles(FromImmediateDirectory(assetDirectory, config, ref unprocessed, parameters),
-                                FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters));
-
-        static IEnumerable<TranslatedFile> FromIndirectDirectory(DirectoryInfo assetDirectory,
-                                                                 Config config,
-                                                                 ref Dictionary<string, string> unprocessed,
-                                                                 Dictionary<string, JsonElement> parameters)
-            => FromImmediateDirectory(new DirectoryInfo(parameters["source"].GetString()), config, ref unprocessed, parameters);
-
-        static IEnumerable<TranslatedFile> FromPatches(DirectoryInfo assetDirectory,
-                                                       Config config,
-                                                       ref Dictionary<string, string> unprocessed,
-                                                       Dictionary<string, JsonElement> parameters)
+        /// <summary>
+        /// 从<see cref="PackerPolicyType"/>到加载方法<see cref="ProviderEvaluator"/>的查询表
+        /// </summary>
+        internal static Dictionary<PackerPolicyType, ProviderEvaluator> evaluatorPolicyMap = new()
         {
-            var reference = FromIndirectDirectory(assetDirectory, config, ref unprocessed, parameters)
-                           .ToDictionary(_ => _.RelativePath);
-            var patchList = JsonSerializer.Deserialize<Dictionary<string, string>>(parameters["patches"]);
-            foreach (var patch in patchList)
-            {
-                //Log.Information("{0}", reference.Keys);
-                Log.Information("对文件 {0} 应用 {1} 处的 patch。", patch.Key, patch.Value);
-                var target = reference[patch.Key];
-                var patchText = string.Join('\n', File.ReadAllLines(patch.Value)); // 不要问我为什么D-M-P默认换行是LF
-                target.ApplyPatch(patchText);
-            }
-            return reference.Values;
+            { PackerPolicyType.Direct, FromCurrentDirectory },      // 现场生成
+            { PackerPolicyType.Indirect, FromSpecifiedDirectory },  // 给定目录
+            { PackerPolicyType.Composition, FromComposition },      // 组合生成
+            { PackerPolicyType.Singleton, FromSingleton },          // 单项文件
+        };
+
+        /// <summary>
+        /// 从给定的命名空间，基于当地的<c>packer-policy.json</c>
+        /// 与<c>packer-config-fixup.json</c>，遍历<see cref="IResourceFileProvider"/>
+        /// </summary>
+        /// <param name="namespaceDirectory">命名空间所在目录</param>
+        /// <param name="config">所使用的<i>全局</i>配置</param>
+        /// <returns></returns>
+        public static IEnumerable<IResourceFileProvider> EnumerateProviders
+            (this DirectoryInfo namespaceDirectory, Config config)
+            => from enumeratedPair in namespaceDirectory.EnumerateRawProviders(config)
+               group enumeratedPair by enumeratedPair.provider.Destination into providerGroup
+               select providerGroup.Aggregate(
+                   seed: null as IResourceFileProvider,
+                   (accumulate, next)
+                       => next.provider.ApplyTo(accumulate, next.options));
+
+        /// <summary>
+        /// 遍历未经合并的文件，用于递归调用
+        /// </summary>
+        internal static EvaluatorReturnType EnumerateRawProviders(this DirectoryInfo namespaceDirectory, Config config)
+            => from policy in ConfigHelpers.RetrievePolicy(namespaceDirectory)
+               from enumeratedPair in evaluatorPolicyMap[policy.Type].Invoke(
+                   namespaceDirectory, config, policy.Parameters)
+               select enumeratedPair;
+
+
+        internal static EvaluatorReturnType FromCurrentDirectory(DirectoryInfo namespaceDirectory,
+                                                                 Config config,
+                                                                 ParameterType? parameters)
+        {
+            var floatingConfig = ConfigHelpers.RetrieveLocalConfig(namespaceDirectory);
+            var localConfig = config.Modify(floatingConfig);
+
+            return from candidate in namespaceDirectory.EnumerateFiles("*", SearchOption.AllDirectories)
+                   let relativePath = Path.GetRelativePath(namespaceDirectory.FullName,
+                                                           candidate.FullName)
+                                          .NormalizePath()
+                   let fullPath = Path.GetRelativePath(".", candidate.FullName)
+                   let destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
+                                         .NormalizePath()
+                   where !relativePath.IsPathForceExcluded(localConfig)             // [1] 排除路径   -- packer-policy等
+                   where (relativePath.IsPathForceIncluded(localConfig)             // [2] 包含路径   [单列]
+                       || relativePath.IsDomainForceIncluded(localConfig)           // [3] 包含domain -- font/ textures/
+                       || (destination.IsInTargetLanguage(localConfig)              // [4] 语言标记   -- 含zh_cn的
+                           && !relativePath.IsDomainForceExcluded(localConfig)))    // [5] 排除domain [暂无]
+                   let provider = CreateProviderFromFile(candidate, destination, localConfig)
+                   select (provider, GetOptions(parameters));
         }
 
-        // 目前所有策略的终点方法
-        static IEnumerable<TranslatedFile> FromImmediateDirectory(DirectoryInfo assetDirectory,
-                                                                  Config config,
-                                                                  ref Dictionary<string, string> unprocessed,
-                                                                  Dictionary<string, JsonElement> parameters)
+        internal static EvaluatorReturnType FromSpecifiedDirectory(DirectoryInfo namespaceDirectory,
+                                                                   Config config,
+                                                                   ParameterType? parameters)
         {
-            var bypassed = unprocessed;
-            var result = assetDirectory.EnumerateFiles("*", SearchOption.AllDirectories) // <asset-domain>/ 的下级文件
-                                       .Select(file =>
-                {   // 这里开始真正的检索。被跳过的文本用 null 代替
-                    var prefixLength = assetDirectory.FullName.Length;
-                    var relativePath = file.FullName[(prefixLength + 1)..]; // 在asset-domain下的位置，用反斜杠分割
+            var redirect = parameters!["source"].GetString();
+            var namespaceName = namespaceDirectory.Name;
+            var redirectDirectory = new DirectoryInfo(redirect!);
 
-                    // 跳过非中文文件
-                    if (!relativePath.IsTargetLang(config))
-                    {
-                        return null;
-                    }
+            Log.Debug("[Policy:Indirect]目标：{0}，源：{1}", namespaceName, redirect);
 
-                    // 跳过检索策略文件
-                    if (relativePath == "packer-policy.json")
-                    {
-                        return null;
-                    }
+            return from candidate in redirectDirectory.EnumerateRawProviders(config)
+                   let provider = candidate.provider
+                                           .ReplaceDestination(@"(?<=^assets/)[^/]*(?=/)",
+                                                               namespaceName)
+                   select (provider, GetOptions(parameters));
+        }
 
-                    // 选出不经过处理路径的文件
-                    if (relativePath.NeedBypass(config))
-                    {
-                        Log.Information("跳过了标记为直接加入的命名空间：{0}", relativePath.Split('\\')[0]);
-                        bypassed.Add(file.FullName,
-                                     Path.Combine("assets",
-                                                  assetDirectory.Name,
-                                                  relativePath));
-                        return null;
-                    }
+        internal static EvaluatorReturnType FromComposition(DirectoryInfo namespaceDirectory,
+                                                            Config config,
+                                                            ParameterType? parameters)
+        {
+            var compositionPath = parameters!["source"].GetString();
+            var type = parameters["destType"].GetString();
+            var compositionFile = new FileInfo(compositionPath!);
 
-                    // 处理正常的语言文件
-                    var parsingCategory = file.Extension switch
-                    {
-                        ".json" => FileCategory.JsonAlike,
-                        _ => FileCategory.LangAlike
-                    };
-                    if (relativePath.StartsWith("lang\\"))
-                    {
-                        return new LangFile(file.OpenRead(),
-                                            parsingCategory | FileCategory.LanguageFile,
-                                            config)
-                        {
-                            RelativePath = relativePath
-                        };
-                    }
-                    else
-                    {
-                        return new TranslatedFile(file.OpenRead(),
-                                                  parsingCategory | FileCategory.OtherFiles,
-                                                  config)
-                        {
-                            RelativePath = relativePath
-                        };
-                    }
-                }).Where(_ => _ is not null); // 排除掉跳过的文件
-            return result;
+            Log.Debug("[Policy:Composition]目标：{0}，源：{1}", namespaceDirectory.Name, compositionPath);
+
+            IResourceFileProvider provider = type switch // 类型推断不出要用接口
+            {
+                "lang" => LangMappingHelper.CreateFromComposition(compositionFile),
+                "json" => JsonMappingHelper.CreateFromComposition(compositionFile),
+                _ => throw new InvalidOperationException($"Unexpected Type parameter at {namespaceDirectory.FullName}.")
+            };
+            yield return (provider, GetOptions(parameters));
+        }
+
+        internal static EvaluatorReturnType FromSingleton(DirectoryInfo namespaceDirectory,
+                                                          Config config,
+                                                          ParameterType? parameters)
+        {
+            var singletonPath = parameters!["source"].GetString()!;
+            var relativePath = parameters!["relativePath"].GetString()!;
+            var destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
+                                  .NormalizePath();
+
+            Log.Debug("[Policy:Singleton]目标：{0}，源：{1}", destination, singletonPath);
+
+            var file = new FileInfo(singletonPath!);
+            var provider = CreateProviderFromFile(file, destination, config);
+
+            yield return (provider, GetOptions(parameters));
+        }
+
+
+        internal static IResourceFileProvider CreateProviderFromFile(FileInfo file, string destination, Config config)
+        {
+            var extension = file.Extension;
+            if (file.Directory!.Name == "lang")
+            {
+                switch (extension)
+                {
+                    case ".json": return JsonMappingHelper.CreateFromFile(file, destination);
+                    case ".lang": return LangMappingHelper.CreateFromFile(file, destination);
+                };
+            }
+            return extension switch
+            {
+                // 已知的文本文件类型
+                ".txt" or ".json" or ".md" => TextFile.Create(file, destination),
+                _ => new RawFile(file, destination)
+            };
+        }
+
+        internal static ApplyOptions GetOptions(ParameterType? parameters)
+        {
+            if (parameters is null) return default;
+            return new(GetBoolOrDefalut("modifyOnly"), GetBoolOrDefalut("append"));
+
+            bool GetBoolOrDefalut(string key)
+            {
+                if (!parameters.ContainsKey(key)) return false;
+                return parameters[key].GetBoolean();
+            }
         }
     }
 }

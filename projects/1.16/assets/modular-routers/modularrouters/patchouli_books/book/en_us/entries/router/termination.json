@@ -1,0 +1,23 @@
+{
+  "name": "Termination",
+  "icon": "minecraft:barrier",
+  "category": "router",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This a slightly esoteric topic which in most cases you won't need to worry about. However, when you do need it, it'll be very useful!"
+    },
+    {
+      "type": "text",
+      "text": "Termination is configured on a per-module basis, by the 'T' button beneath the filter slots. By default, it's inactive; if you switch if on for a module, then $(italic)if/$ the module does any work this router tick, the router will stop there. No further modules (i.e. to the right of this module) will be executed this time round."
+    },
+    {
+      "type": "text",
+      "text": "Why would this be useful? Imagine a scenario where your router is being supplied with many items, e.g. from a quarry. You want to void $(item)Cobblestone/$, and send everything else to another inventory; so you would add a $(l:modules/void)Void Module/$ with a whitelist of Cobblestone, followed by a $(l:modules/sender_1)Sender Module/$ to send anything else onwards."
+    },
+    {
+      "type": "text",
+      "text": "When the router runs, say there's already a stack of Cobblestone in the buffer.  The Void Module will void a Cobblestone, and then the Sender module will send the remaining 63 Cobblestone on to your storage. This is probably not you want.$(p)However, if you switch on Termination on the Void Module, then when it runs, the router will stop for that tick; the Sender module won't run until the Void Module has nothing else to do."
+    }
+  ]
+}
