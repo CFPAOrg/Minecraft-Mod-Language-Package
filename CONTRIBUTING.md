@@ -30,7 +30,6 @@ Minecraft-Mod-Language-Package
   ├─.github --------------- // GitHub 相关配置文件
   ├─config ---------------- // 配置文件
   │  └─packer ------------- // 打包器配置文件
-  ├─docs ------------------ // 各类文档
   ├─projects -------------- // 翻译文件
   │  └─(Minecraft 版本) --- // 不带 fabric 字样的是用于 Forge 和 NeoForge 模组的
   │    └─assets
@@ -84,7 +83,7 @@ projects 文件夹下只标出模组所属的大版本号，其中的模组翻�
 
 ### 总则
 
-- 翻译**必须**遵守 [Minecraft 模组简体中文翻译规范与指南](https://cfpa.site/TransRules/)。
+- 翻译**必须**遵守 [Minecraft 模组简体中文翻译指南](https://cfpa.site/TransRules/)。
 - **拒绝**接收机器翻译（含生成式 AI）、生硬翻译（不符合中文表达习惯的）。
   - 若直接提交此类翻译，该 PR 将被打上“生硬翻译”标签。
   - 若提交者未及时进行有效修改，依照本仓库的[搁置规则](#搁置规则)处理。
