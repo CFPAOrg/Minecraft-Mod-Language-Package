@@ -12,12 +12,10 @@ item_ids:
 
 会生产Forge能量（Forge Energy，FE）的太阳能板。
 
-FE生产速率：**3840**
+最大FE生产速率：**3840**
 
 **条件：**
 - 露天
-
-**增益：**
 - 邻近的太阳能板会增加产能速率
 
 <BlockImage id="justdynathings:celestigem_solar_panel" scale="4.0"/>

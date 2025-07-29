@@ -12,13 +12,10 @@ item_ids:
 
 A solar panel that generate Forge Energy
 
-FE rate : **960**
+MAX FE rate : **960**
 
 **Conditions:**
 - Dimensions = Nether
-
-**Modifiers:**
-- Nothing
 
 <BlockImage id="justdynathings:blazegold_solar_panel" scale="4.0"/>
 

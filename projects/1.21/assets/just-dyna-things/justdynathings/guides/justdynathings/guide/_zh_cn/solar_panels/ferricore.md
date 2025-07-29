@@ -12,15 +12,12 @@ item_ids:
 
 会生产Forge能量（Forge Energy，FE）的太阳能板。
 
-FE生产速率：**240**
+最大FE生产速率：**240**
 
 **条件：**
 - 维度为主世界
 - 露天
 - 日间
-
-**增益：**
-- 无
 
 <BlockImage id="justdynathings:ferricore_solar_panel" scale="4.0"/>
 
