@@ -21,15 +21,14 @@ item_ids:
 		<GameScene zoom="1.48" padding="3" interactive={true}>
 			<ImportStructure src="../assets/structures/pulse_throttler.snbt" />
 			<BlockAnnotation x="2" y="0" z="0" color="#FFFFFF">
-				The pulse throttler is quite a bit more flexible than a standard pulse shortener, but its similar in 
-				concept.
+				脉冲节流器比普通的脉冲缩短器要灵活许多，但两者的概念是相似的。
 			</BlockAnnotation>
 			<IsometricCamera yaw="150" pitch="30" />
 		</GameScene>
 	</Column>
 </Row>
 
-> **注意：**Minecraft中的20刻对应现实中的1秒。
+> **注意：**&zwnj;Minecraft中的20刻对应现实中的1秒。
 
 脉冲节流器是一种逻辑元件，它能规定信号保持ON的时间。默认情况下，脉冲节流器会将所有信号缩短成持续1刻的脉冲。
 
