@@ -129,9 +129,9 @@ jobs:
           if [ ${#slug_array[@]} -eq 0 ]; then
             slug_suffix=""
           elif [ ${#slug_array[@]} -le 3 ]; then
-            slug_suffix="-$(IFS=-; echo "${slug_array[*]}")"
+            slug_suffix="-$(IFS=_; echo "${slug_array[*]}")"
           else
-            slug_suffix="-${slug_array[0]}-${slug_array[1]}-${slug_array[2]}-etc"
+            slug_suffix="-${slug_array[0]}_${slug_array[1]}_${slug_array[2]}_etc"
           fi
           
           echo "slug-suffix=$slug_suffix" >> $GITHUB_OUTPUT
@@ -141,6 +141,6 @@ jobs:
       - name: Upload Artifact for ${{ matrix.version }}
         uses: actions/upload-artifact@v4
         with:
-          name: Minecraft-Mod-Language-Package-${{ matrix.version }}-PR${{ github.event.pull_request.number || 'manual' }}${{ steps.extract-slugs.outputs.slug-suffix }}
+          name: Minecraft-Mod-Language-Package-${{ matrix.version }}-PR-${{ github.event.pull_request.number || 'manual' }}${{ steps.extract-slugs.outputs.slug-suffix }}
           path: Minecraft-Mod-Language-Package-${{ matrix.version }}/*
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
