@@ -101,9 +101,46 @@ jobs:
         shell: bash
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
           
+      - name: Extract slugs for ${{ matrix.version }}
+        id: extract-slugs
+        run: |
+          # Get changed files for this version
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # For manual dispatch, get all files in the version
+            changed_files=$(find projects/${{ matrix.version }}/assets -name "*.json" 2>/dev/null | head -20)
+          else
+            # For PR, get changed files compared to main branch
+            changed_files=$(git diff --name-only origin/main...HEAD | grep "^projects/${{ matrix.version }}/assets/.*\.json$" || echo "")
+          fi
+          
+          # Extract slugs from paths like projects/{version}/assets/{SLUG}/{MOD_DOMAIN}/lang/en_us.json
+          slugs=$(echo "$changed_files" | grep -E "^projects/${{ matrix.version }}/assets/[^/]+/[^/]+/lang/.*\.json$" | sed -E "s|^projects/${{ matrix.version }}/assets/([^/]+)/.*|\1|" | sort -u)
+          
+          # Convert to array and limit to 3
+          slug_array=()
+          while IFS= read -r slug; do
+            if [ -n "$slug" ]; then
+              slug_array+=("$slug")
+            fi
+          done <<< "$slugs"
+          
+          # Format slug suffix
+          slug_suffix=""
+          if [ ${#slug_array[@]} -eq 0 ]; then
+            slug_suffix=""
+          elif [ ${#slug_array[@]} -le 3 ]; then
+            slug_suffix="-$(IFS=-; echo "${slug_array[*]}")"
+          else
+            slug_suffix="-${slug_array[0]}-${slug_array[1]}-${slug_array[2]}-etc"
+          fi
+          
+          echo "slug-suffix=$slug_suffix" >> $GITHUB_OUTPUT
+        shell: bash
+        if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+
       - name: Upload Artifact for ${{ matrix.version }}
         uses: actions/upload-artifact@v4
         with:
-          name: Minecraft-Mod-Language-Package-${{ matrix.version }}-PR${{ github.event.pull_request.number || 'manual' }}
+          name: Minecraft-Mod-Language-Package-${{ matrix.version }}-PR${{ github.event.pull_request.number || 'manual' }}${{ steps.extract-slugs.outputs.slug-suffix }}
           path: Minecraft-Mod-Language-Package-${{ matrix.version }}/*
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
