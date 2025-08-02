@@ -1,6 +1,6 @@
 ---
 navigation:
-  parent: items-blocks-machines/items-blocks-machines-index.md
+  parent: ae2:items-blocks-machines/items-blocks-machines-index.md
   title: Semi-Vibrant Quartz Glass
   icon: mae2:cloud_chamber
 categories:
