@@ -14,7 +14,7 @@ item_ids:
 
 <ItemImage id="certus_quartz_crystal" scale="4" />
 
-*“赛特斯石英水晶具有能在其晶态基质中存储大量能量的独特性质”*
+*“赛特斯石英水晶具有一种独特性质——它的晶态基质中能存储大量能量”*
 
 AE2方块、[设备](../ae2-mechanics/devices.md)、物品的基础合成材料之一。由培养[赛特斯石英母岩](../ae2-mechanics/certus-growth.md)获得。
 

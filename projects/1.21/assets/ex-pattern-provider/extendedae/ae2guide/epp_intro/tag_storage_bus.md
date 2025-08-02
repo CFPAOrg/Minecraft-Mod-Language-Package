@@ -21,9 +21,9 @@ Here are some examples:
 
 - Only accept raw ore
 
-forge:raw_materials/*
+c:raw_materials/*
 
 - Accept all ingots and gems
 
-forge:ingots/* | forge:gems/*
+c:ingots/* | c:gems/*
 

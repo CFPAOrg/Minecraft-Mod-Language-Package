@@ -17,6 +17,8 @@ Maps allow for an association between one fragment and another,
 similarly to how a dictionary associates a word to a definition.
 
 
+To acquire an empty map constant, see the relevant [revision](^trickster:constants#4).
+
 ;;;;;
 
 <|glyph@trickster:templates|trick-id=trickster:map_insert,title=Charting Stratagem|>

@@ -7,8 +7,8 @@ trickster:
     written_scroll: Written Scroll
 
   text:
-    misc:
-      value_truncated: Value truncated
+    value_truncated: Value truncated
+    disconnect_with_caution: DISCONNECT WITH CAUTION
 
   widget:
     scroll_name: Scroll Name...
@@ -35,6 +35,12 @@ trickster:
     collar_link: "Link: %s"
     unlinked: Unlinked
 
+  subtitle:
+    draw: "Spell drawing"
+    complete: "Spell completed"
+    cast: "Spell cast"
+    collar_bell: "Collar bell rings"
+
   gandalf:
     stored: "Stored: %s"
   merlin:
@@ -44,7 +50,9 @@ trickster:
 
   item_group: Trickster
 
-  scroll_hat: 'Selected slot: %d'
+  scroll_hat: 
+    named: 'Selected slot: %d [%s]'
+    unnamed: 'Selected slot: %d'
   scroll_executable: Single-use (%f kiloGandalfs)
 
   unnamed_entity: Unnamed %s
@@ -91,12 +99,12 @@ trickster:
     length: Magnitude Distortion
 
     two: Foundational Delusion
-    read_spell: Notulist's Delusion
+    read_spell: Notulist's Ingress
     clear_spell: Alethophobe's Ploy
     write_spell: Notulist's Ploy
     write_closed_spell: Proprietary Notulist's Ploy
     read_macro_ring: Macro Delusion
-    reveal: Showcase Stratagem
+    reveal: Showcase Ploy
     read_crow_mind: Crow Mind Delusion
     write_crow_mind: Crow Mind Ploy
     cost: Cost Ploy
@@ -123,6 +131,8 @@ trickster:
     get_max_health: Vigor Ingress
     get_health: Fettle Ingress
     get_armour: Bulwark Ingress
+    get_player_food: Ingress of Appetite
+    get_player_saturation: Ingress of Fulfilment
     get_velocity: Movement Ingress
     add_velocity: Kinetic Ploy
     change_weight: Ploy of Featherweight
@@ -141,14 +151,16 @@ trickster:
     block_find_entity: Embracing Ingress
     range_find_entity: Ingress of Shared Fate
 
-    execute: Grand Stratagem
-    execute_same_scope: Quiet Distortion
-    fork: Utensil Stratagem
-    fold: Folding Distortion
-    try_catch: Cautious Stratagem
-    closure: Closure Stratagem
-    supplier: Supply Distortion
-    kill_thread: Executioner's Ploy
+    import: Assistance Deviation
+    import_hat: Cranium Deviation
+
+    execute: Grand Deviation
+    execute_same_scope: Quiet Deviation
+    fork: Utensil Deviation
+    fold: Folding Deviation
+    try_catch: Cautious Deviation
+    delay_execution: Deviation of Suspension
+    kill_thread: Executioner's Deviation
     current_thread: Delusion of Order
     load_argument_1: Primary Delusion
     load_argument_2: Secondary Delusion
@@ -172,6 +184,8 @@ trickster:
     list_size: Tally Distortion
     create_number_range: Interlude Distortion
 
+    closure: Closure Stratagem
+    supplier: Supply Distortion
     locate_glyph: Pinpoint Distortion
     locate_glyphs: Discovering Distortion
     retrieve_glyph: Retrieval Distortion
@@ -204,9 +218,8 @@ trickster:
     can_place_block: Ingress of Suitability
     check_resonator: Ingress of Resonance
     get_redstone_power: Ingress of Logic
+    light_level: Ingress of Luminance
 
-    import: Assistance Stratagem
-    import_hat: Cranium Stratagem
     check_hat: Cranium Delusion
     set_hat: Cranial Shift Ploy
     other_hand: Juggling Delusion
@@ -223,7 +236,6 @@ trickster:
 
     type_fragment: Argumentative Distortion
     hash_values: Decaying Distortion
-    delay_execution: Ploy of Suspension
     pin_chunk: Ploy of Celestial Pin
     get_dimension: Dimensional Delusion
     show_bar: Ploy of Clarity
@@ -234,8 +246,9 @@ trickster:
     draw_spell: Marketer's Ploy
     draw_line: Artist's Ploy
     get_flecks: Observer's Ingress
+    delete_fleck: Orwell's Ploy
 
-    get_scale: Distortion of Occupation
+    get_scale: Ingress of Occupation
     set_scale: Ploy of Occupation
 
     transmog: Ploy of Transmogrification
@@ -246,6 +259,8 @@ trickster:
     battery_creation: Ploy of the Moon Watcher
     push_mana: Benevolent Conduit's Ploy
     pull_mana: Malevolent Conduit's Ploy
+
+    drain_matter: Cultivator's Ploy
 
     message_send: Dispatch Ploy
     message_listen: Ploy of Receipt
@@ -350,6 +365,7 @@ item.trickster:
   leash: Archmage's Tether
 
   amethyst_knot: Amethyst Knot
+  quartz_knot: Quartz Knot
   emerald_knot: Emerald Knot
   diamond_knot: Diamond Knot
   echo_knot: Echo Knot
@@ -360,6 +376,8 @@ item.trickster:
   spell_core: Spell Core
   rusted_spell_core: Rusted Spell Core
   ominous_spell_core: Ominous Spell Core
+  inactive_spawner_spell_core: Torment Spell Core Shell
+  spawner_spell_core: Torment Spell Core
 
 block.trickster:
   spell_resonator: Spell Resonator
@@ -368,6 +386,7 @@ block.trickster:
   light: Light
   scroll_shelf: Scroll Shelf
   charging_array: Charging Array
+  inert_spawner: Inert Spawner
 
 effect.trickster:
   mana_boost: Mana Hyperflux
@@ -378,10 +397,6 @@ tag.item.trickster:
   holdable_hat: Holdable Hats
   scrolls: Scrolls
   spell_cost: Spell Cost
-
-death.attack:
-  mana_overflux: "%1$s's magic show has met an untimely end."
-  mana_overflux.player: "%2$s brought an end to %1$s's magic show."
 
 key:
   categories:
@@ -394,12 +409,21 @@ key:
 text.config.trickster-config:
   title: Trickster Config
   section:
+    accessibility: Accessibility
     client: Client
     server: Server
     aurora-client: Aurora's Personal Client Tweaks
   option:
+    dotEmphasis: Terminal dot emphasis
+    dotEmphasisColor: Terminal dot color
+    subcircleDividerPinColor: Divider pin Color
+    manaTransferEfficiency: Efficiency of the Conduit's Ploys
+    whorlMaxMana: Whorl maximum mana in kG
+    whorlRechargeRate: Whorl recharge rate in kG
     topHatInterceptScrolling: Offhand hat intercepts hotbar scrolling
     invertTopHatScrolling: Invert hat scrolling
+    allowScrollInSpellScreen: Allow scrolling to zoom while editing
+    keyZoomSpeed: Editor key zoom speed
     revealToHotbar: Write revealed values to action bar
     maxExecutionsPerSpellPerTick: Max operations per tick per spell
     allowSwapBedrock: Permit block swapping of bedrock
@@ -408,3 +432,4 @@ text.config.trickster-config:
     dragDrawing: Draw by dragging
     barsHorizontal: Show spell-created bars horizontally
     disableOffhandScrollOpening: Require scroll in main hand to edit
+    adjacentPixelCollisionOffset: Offset factor of adjacent pixels

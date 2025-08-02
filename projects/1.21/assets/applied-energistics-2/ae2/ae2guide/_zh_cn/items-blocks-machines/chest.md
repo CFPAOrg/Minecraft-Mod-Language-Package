@@ -39,7 +39,7 @@ ME箱子的设置与<ItemLink id="terminal" />和<ItemLink id="crafting_terminal
 
 ## 元件状态LED
 
-驱动器中的元件可通过其LED表明其状态：
+箱子中的元件可通过其LED表明其状态：
 
 | 颜色 | 状态                                                          |
 | :--- | :------------------------------------------------------------ |
@@ -47,7 +47,7 @@ ME箱子的设置与<ItemLink id="terminal" />和<ItemLink id="crafting_terminal
 | 蓝色 | 装有事物                                                      |
 | 橙色 | [类型](../ae2-mechanics/bytes-and-types.md)已满，不可新增类型 |
 | 红色 | [字节](../ae2-mechanics/bytes-and-types.md)已满，不可新增物品 |
-| 黑色 | 无能量或驱动器缺少[频道](../ae2-mechanics/channels.md)        |
+| 黑色 | 无能量或箱子缺少[频道](../ae2-mechanics/channels.md)          |
 
 ## 优先级
 

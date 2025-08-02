@@ -4,14 +4,13 @@
   "icon": "minecraft:bricks",
   "category": "trickster:tricks",
   "additional_search_terms": [
-    "记事员之错觉",
+    "记事员之辑流",
     "记事员之技巧",
     "禁文记事员之技巧",
     "畏真者之技巧",
-    "展示之谋略",
+    "展示之技巧",
     "乌鸦灵思之错觉",
-    "乌鸦灵思之技巧",
-    "消耗之技巧"
+    "乌鸦灵思之技巧"
   ]
 }
 ```
@@ -27,13 +26,13 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:read_spell,title=记事员之错觉|>
+<|glyph@trickster:templates|trick-id=trickster:read_spell,title=记事员之辑流|>
 
--> any
+[slot] -> any
 
 ---
 
-若施法者另一只手中物品抄有法术片段，则返回该片段；否则返回void。
+从给定槽位或施法者副手中的物品读出法术片段；若无片段则返回void。
 
 ;;;;;
 
@@ -67,7 +66,7 @@ any, [slot] -> any
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:reveal,title=展示之谋略|>
+<|glyph@trickster:templates|trick-id=trickster:reveal,title=展示之技巧|>
 
 any... -> any
 
@@ -101,20 +100,3 @@ any -> any
 ---
 
 将所给值存进施法者的乌鸦之思，并覆盖其中的值。
-
-;;;;;
-
-<|page-title@lavender:book_components|title=笔记：施法消耗|>在收到多封来自魔术把戏股份有限公司总部关于本模组平衡性的投诉信后，我们决定正式实装物质层面上的法术消耗。
-
-
-但是，玩家们的自由和选择权利也对我们至关重要。因此，本系统不作强制要求。
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:cost,title=消耗之技巧|>
-
-->
-
----
-
-消耗施法者物品栏中的一个紫水晶碎片。若无则产生失策。

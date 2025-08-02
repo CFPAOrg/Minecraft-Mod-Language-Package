@@ -11,9 +11,9 @@ navigation:
 
 需注意，此设施使用了<ItemLink id="pattern_provider" />，也即需与你的[自动合成](../ae2-mechanics/autocrafting.md)设施配合使用。
 
-生活总有不顺心时，有些时候你需要桶装的流体而非流体本身。有些时候会有一种机器帮你完成这些任务（比如Thermal Expansion里的流体转置机），但这种模组并不一定一直都有。好在原版也有一种稍微不那么方便的处理方式，那就是<ItemLink id="minecraft:dispenser" />。
+生活总有不顺心时，有些时候你需要桶装的流体而非流体本身。有些时候会有一种机器帮你完成这些任务，比如热力膨胀（Thermal Expansion）里的流体转置机；但这种模组并不一定一直都有。好在原版也有一种稍微不那么方便的处理方式，那就是<ItemLink id="minecraft:dispenser" />。
 
-**需注意，这一设施通常并非必要，[样板编码终端](../items-blocks-machines/terminals.md#样板管理终端)中的流体替换选项允许你在合成配方中使用流体本身，而非桶装流体。**
+**需注意，这一设施通常并非必要，[样板编码终端](../items-blocks-machines/terminals.md#样板编码终端)中的流体替换选项允许你在合成配方中使用流体本身，而非桶装流体。**
 
 <GameScene zoom="6" interactive={true}>
   <ImportStructure src="../assets/assemblies/bucket_filler.snbt" />
@@ -76,7 +76,7 @@ navigation:
 1. <ItemLink id="pattern_provider" />将材料送入<ItemLink id="interface" />。
    （作为优化，实际上其会直接向存储总线输出，这些存储总线类似于供应器自身的输出面。物品并不会真正进入接口。）
 2. 经过[管道子网络](pipe-subnet.md#向多处提供材料)中所述的设施，铁桶会抵达<ItemLink id="minecraft:dispenser" />，流体则使用成型面板放置。
-3. <ItemLink id="minecraft:comparator" />检测发射器中的铁桶，并由此同时激活发射器和锁定the <ItemLink id="pattern_provider" />。
+3. <ItemLink id="minecraft:comparator" />检测发射器中的铁桶，并由此同时激活发射器和锁定<ItemLink id="pattern_provider" />。
 4. 发射器用铁桶装起流体，此时发射器内为装有流体的桶。
 5. <ItemLink id="import_bus" />将发射器中的空桶抽出，通过<ItemLink id="storage_bus" />存入样板供应器，并返回至主网络。
 6. 比较器发现发射器已空，从而解锁供应器。

@@ -55,7 +55,7 @@ item_ids:
   <ItemImage id="red_paint_ball" scale="4" />
 </Row>
 
-染色球可用于<ItemLink id="color_applicator" />以为[线缆](cables.md)、羊毛、陶瓦、玻璃，混凝土等可染色方块染色。它们也可用于<ItemLink id="matter_cannon" />以射出一小滩染料。
+染色球可用于<ItemLink id="color_applicator" />，以给[线缆](cables.md)、羊毛、陶瓦、玻璃，混凝土等可染色方块染色。它们也可用于<ItemLink id="matter_cannon" />以射出一小滩染料。
 
 ## 配方
 

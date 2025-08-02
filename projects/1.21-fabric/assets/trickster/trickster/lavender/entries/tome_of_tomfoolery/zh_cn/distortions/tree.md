@@ -1,9 +1,11 @@
 ```json
 {
-  "title": "法术操纵",
+  "title": "法术",
   "icon": "minecraft:oak_sapling",
   "category": "trickster:distortions",
   "additional_search_terms": [
+    "供给之曲变",
+    "闭包之谋略",
     "定址之曲变",
     "发现之曲变",
     "检索之曲变",
@@ -18,6 +20,26 @@
 ```
 
 [抄绘图案](^trickster:editing)能在法术施放前更改法术，而本节中的图案能在法术施放*中*修改。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:supplier,title=供给之曲变|>
+
+any -> spell
+
+---
+
+创建一个新法术片段，其执行结果即是所给参数。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:closure,title=闭包之谋略|>
+
+spell, {any: any} -> spell
+
+---
+
+将所给法术中与所给映射键对应的符记换成其映射的值。
 
 ;;;;;
 

@@ -32,7 +32,7 @@ navigation:
 <ImportStructure src="assets/assemblies/budding_certus_1.snbt" />
 </GameScene>
 
-赛特斯石英芽会从[赛特斯石英母岩](items-blocks-machines/budding_certus.md)中生长出来，与紫水晶类似。如果破坏未完全生长的石英芽，则会掉落一个<ItemLink id="certus_quartz_dust" />，不受时运影响。如果破坏长成的石英簇，则会掉落四个<ItemLink id="certus_quartz_crystal" />，会受时运影响而增加掉落量。
+赛特斯石英芽会从[赛特斯石英母岩](items-blocks-machines/budding_certus.md)中生长出来，与紫水晶类似。如果破坏未完全生长的石英芽，则会掉落一个<ItemLink id="certus_quartz_dust" />，不受时运影响。如果破坏长成的石英簇，则会掉落四个<ItemLink id="certus_quartz_crystal" />，且会受时运影响而增加掉落量。
 
 共有4种等级的赛特斯石英母岩：无瑕、有瑕、开裂、损坏。
 

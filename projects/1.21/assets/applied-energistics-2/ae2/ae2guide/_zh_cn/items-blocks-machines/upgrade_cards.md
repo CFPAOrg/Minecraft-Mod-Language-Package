@@ -42,7 +42,7 @@ item_ids:
   <ItemImage id="energy_card" scale="2" />
 </Row>
 
-升级卡能改变AE2[设备](../ae2-mechanics/devices.md)和机械的行为，增加速度，加强过滤功能，启用红石控制，如此种种。
+升级卡能改变AE2[设备](../ae2-mechanics/devices.md)和机器的行为，增加速度，加强过滤功能，启用红石控制，如此种种。
 
 ## 升级卡组件
 

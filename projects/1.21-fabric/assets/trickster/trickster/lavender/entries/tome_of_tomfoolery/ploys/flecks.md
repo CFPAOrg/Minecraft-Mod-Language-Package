@@ -5,7 +5,8 @@
   "category": "trickster:ploys",
   "additional_search_terms": [
     "Marketer's Ploy",
-    "Artist's Ploy"
+    "Artist's Ploy",
+    "Orwell's Ploy"
   ]
 }
 ```
@@ -46,11 +47,11 @@ All flecks can also take an optional list of players, or a sole player, for whic
 
 <|glyph@trickster:templates|trick-id=trickster:draw_spell,title=Marketer's Ploy|>
 
-number, vector, vector, spell, [entity[] | entity] -> number
+number, vector, vector, spell, [number], [entity[] | entity] -> number
 
 ---
 
-At the given position, with the given facing, display the given spell.
+At the given position, with the given facing, display a spell, optionally scaled.
 
 ;;;;;
 
@@ -61,3 +62,13 @@ number, vector, vector, [entity[] | entity] -> number
 ---
 
 Draws a line between the given positions.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:delete_fleck,title=Orwell's Ploy|>
+
+number, [entity[] | entity] -> number
+
+---
+
+Removes any fleck with the given id.

@@ -15,6 +15,8 @@
 本节的图案用于操纵映射。映射能建立法术片段到法术片段的联系，类似于字典能将字和其释义联系起来。
 
 
+如需生成空映射常量，请参见相关的[修订术](^trickster:constants#4)。
+
 ;;;;;
 
 <|glyph@trickster:templates|trick-id=trickster:map_insert,title=编表之谋略|>

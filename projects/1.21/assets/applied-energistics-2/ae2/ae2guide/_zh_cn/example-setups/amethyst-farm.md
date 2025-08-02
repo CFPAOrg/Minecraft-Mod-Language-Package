@@ -11,7 +11,7 @@ navigation:
 
 绕过此问题的方法是将破坏面板附上精准采集。此情况下未长成的紫晶芽就*会*掉落物品（各阶段的紫晶芽本身）了，并可过滤处理。
 
-<ItemLink id="minecraft:amethyst_cluster" />需由<ItemLink id="formation_plane" />再次放置并由不带精准采集的<ItemLink id="annihilation_plane" />再次破坏即可得到<ItemLink id="minecraft:amethyst_shard" />。
+<ItemLink id="minecraft:amethyst_cluster" />需由<ItemLink id="formation_plane" />再次放置并由不带精准采集的<ItemLink id="annihilation_plane" />再次破坏，即可得到<ItemLink id="minecraft:amethyst_shard" />。
 
 注意，因为紫水晶簇有方向性，成型面板的对侧应当有一个完整方块面。
 

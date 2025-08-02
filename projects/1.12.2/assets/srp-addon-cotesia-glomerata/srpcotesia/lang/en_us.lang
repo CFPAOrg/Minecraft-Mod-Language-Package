@@ -91,16 +91,36 @@ commands.srpcotesia.syntaxerror=Invalid syntax
 
 commands.srpcotesia.srpmobcounts.usage=/srpmobcounts or /srpmobcounts <number> /srpmobcounts all
 commands.srpcotesia.tellStrange.usage=/tellstrange <player(s)> <message>
-commands.srpcotesia.toggleparasite.usage=/toggleparasite or /toggleparasite <player(s)>
-commands.srpcotesia.setbiomass.usage=/setbiomass <number> or /setbiomass <player(s)> <number>
-commands.srpcotesia.setbloom.usage=/setbiomass <number> or /setbiomass <player(s)> <number>
+commands.srpcotesia.toggleparasite.usage=/toggleparasite or /toggleparasite <player(s)> <shouldConceal, optional>
+commands.srpcotesia.biomass.usage=/biomass <player(s), optional> <set|add|subtract> <value>
+
+commands.srpcotesia.biomass.success=%s now has %d biomass.
+commands.srpcotesia.biomass.max=%s already has max biomass.
+commands.srpcotesia.biomass.clamped=%s cannot handle that much biomass, clamping to their max value...
+
+commands.srpcotesia.parasitekills.usage=/parasitekills <player(s), optional> <set|add|subtract> <value>
+commands.srpcotesia.parasitekills.success=%s now has %d kills.
+
+commands.srpcotesia.setbloom.usage=/setbloom <number> or /setbloom <player(s)> <number>
 commands.srpcotesia.togglenote.usage=/togglenote or /togglenote <player(s)>
-commands.srpcotesia.setKillC.usage=/setbiomass <number> or /setbiomass <player(s)> <number>
+commands.srpcotesia.setKillC.usage=/setkills <number> or /setkills <player(s)> <number>
 commands.srpcotesia.ante.usage=/ante <set|add|subtract|setminimum> <value> or /ante <query|recalibrate>
 commands.srpcotesia.atimer.usage=/atimer <set|add|subtract> <ticks> or /atimer query
 commands.srpcotesia.adapt.usage=/adapt <parasite(s)> <source>
 commands.srpcotesia.assimilateplayer.usage=/assimilateplayer <player(s)> or /assimilateplayer
-commands.srpcotesia.dendritus.usage=/dendritus
+commands.srpcotesia.dendritus.usage=/dendritus <list|clear> or /dendritus <add|remove> <x> <y> <z> <stage, optional>
+
+commands.srpcotesia.dendritus.armageddon=It vanished as soon as it was placed.
+commands.srpcotesia.dendritus.clear=Cleared all active Dendriti. The blocks themselves may still remain, but are inert.
+
+commands.srpcotesia.dendritus.add.inrange=Position is too close to existing Dendritus at x=%d, y=%d, z=%d.
+commands.srpcotesia.dendritus.add.notloaded=A Dendritus cannot be placed in unloaded chunks, if a non-replaceable block is already present, or if blocks cannot be placed there at all.
+commands.srpcotesia.dendritus.add.success=A Stage %d Dendritus was successfully placed at x=%d, y=%d, z=%d.
+commands.srpcotesia.dendritus.add.modify=The Dendritus at x=%d, y=%d, z=%d is now stage %d.
+
+commands.srpcotesia.dendritus.remove=A Dendritus was successfully removed at x=%d, y=%d, z=%d. The block has been rendered inert.
+
+commands.srpcotesia.dendritus.remove.none=There is no Dendritus there.
 
 commands.srpcotesia.assimilateplayer.alreadyparasite=%s is already a parasite.
 commands.srpcotesia.assimilateplayer.possessing=%s is possessing a mob.
@@ -384,6 +404,12 @@ tooltip.srpcotesia.bloodstained_saddle3=§fOnly works on parasites you were invo
 
 message.srpcotesia.cantsaddle=This parasite cannot be saddled.
 
+item.srpcotesia.ghastly_bandage.name=§cGhastly Bandage
+tooltip.srpcotesia.ghastly_bandage1=§fAn dark, grotesque patch of woven skin. It's bleeding.
+tooltip.srpcotesia.ghastly_bandage2=§fHeals a parasite for %s health. Consumed on use.
+
+message.srpcotesia.bandagefail=They are already fully healed.
+
 item.srpcotesia.macabre_pearl.name=§bMacabre Pearl
 tooltip.srpcotesia.macabre_pearl.fake=§fA pearl as murky as your future.
 tooltip.srpcotesia.macabre_pearl1=§fCan be used to convince parasites to follow you much more readily.
@@ -577,6 +603,23 @@ message.srpcotesia.trackedvagrant=You feel a pervasive sense of dread...
 tile.srpcotesia.gloom_torch.name=§eGloom Torch
 tooltip.srpcotesia.gloom_torch=§4AN IMPROVEMENT.
 
+tile.srpcotesia.hi_enchanting_table.name=§cHijacked Enchanting Table
+tooltip.srpcotesia.hi_enchanting_table1=§fSources §denchantments§f from the surrounding 3x3 §achunks§f. §cThese generally don't change.
+tooltip.srpcotesia.hi_enchanting_table2=§fCan enchant items that are already enchanted, at an increased cost.
+tooltip.srpcotesia.hi_enchanting_table3=§fRequires §9Lapis Lazuli§f to operate. Adding more increases the enchantment's level.
+tooltip.srpcotesia.hi_enchanting_table4=§fEnchantments are only shown when an item is in the slot. A §aBleeding Tome§f can be used to record them.
+tooltip.srpcotesia.hi_enchanting_table5=§fCreated by giving a §7Gnat§f an Enchanting Table.
+tooltip.srpcotesia.hi_enchanting_table6=§4NORTH IS UP.
+
+tooltip.srpcotesia.no_enchantment=No description found.
+
+item.srpcotesia.bleeding_tome.name=§aBleeding Tome
+tooltip.srpcotesia.bleeding_tome1=§fStores enchantments found by a §cHijacked Enchantment Table.
+tooltip.srpcotesia.bleeding_tome2=§fPlace in the table's designated slot to store them.
+tooltip.srpcotesia.bleeding_tome.none=§fNo Enchantment
+
+tile.srpcotesia.rotted_bookshelf.name=§cRotted Bookshelf
+tooltip.srpcotesia.rotted_bookshelf=§fA more potent, veiny Bookshelf carved out of §cConsumed Wood§f.
 
 tile.srpcotesia.blood_lotus.name=§cBlood Lotus
 tooltip.srpcotesia.blood_lotus1=§fA parasitic mockery of a flower. The scent is abnormally calming.
@@ -587,7 +630,7 @@ tooltip.srpcotesia.blood_lotus3=§fUsed to craft a §eGuandao§f.
 tile.srpcotesia.beckonh.name=§aBeckon Harbringer
 tooltip.srpcotesia.beckonh=§fCan be used to create a §aBeckon§f. Interact to give it biomass.
 
-tooltip.srpcotesia.dispatchern1=§fCan be used to create a §cDispatcher§f. Interact to give it biomass.
+tooltip.srpcotesia.dispatchern1=§fCan be used to create a §cDispatcher§f, or turned into §aEvolution Points§f if sneaking. Interact to give it biomass.
 tooltip.srpcotesia.dispatchern2=§fParasites have a chance to place this if they kill enough foes.
 tooltip.srpcotesia.dispatchern3=§fCan also be created using a §cNidus Accumulator§f.
 
@@ -789,8 +832,8 @@ tooltip.srpcotesia.dragonblood_coating1=§9 x%d Tag Damage against Dragons
 tooltip.srpcotesia.dragonblood_coating2_0=§9 Vagrant and Parasite attacks inherit properties of §bIced Dragon Blood Weaponry
 tooltip.srpcotesia.dragonblood_coating2_1=§9 Vagrant and Parasite attacks inherit properties of §5Shocked Dragon Blood Weaponry
 
-tooltip.srpcotesia.quartz_coating=§9 x%d Tag Damage in the Nether
-tooltip.srpcotesia.prismarine_coating=§9 x%d Tag Damage in Water or Rain
+tooltip.srpcotesia.quartz_coating=§9 %dx Tag Damage in the Nether
+tooltip.srpcotesia.prismarine_coating=§9 %dx Tag Damage in Water or Rain
 
 tooltip.srpcotesia.guandao_material=§eGuandao Blade Material
 
@@ -927,12 +970,15 @@ gui.srpcotesia.mallmenu.adaptdisabled=Adaptations (N/A)
 gui.srpcotesia.mallmenu.regen=Regenerating... (%d seconds)
 gui.srpcotesia.mallmenu.requestcolony=Request Colony Adaptations
 
+gui.srpcotesia.hi_enchanting_table.nolevels=<1
+gui.srpcotesia.hi_enchanting_table.biomass=%d biomass
 
 gui.jei.category.srpcotesia.factory.biomass=§4Requires %d biomass
 gui.jei.category.srpcotesia.factory.tierabove=Tier %d+
 gui.jei.category.srpcotesia.factory.pts=§4+%d Evolution Points
 gui.jei.category.srpcotesia.factory=§4Factory Trade
 gui.jei.category.srpcotesia.parasite_transmute=§cParasite Transmutation
+gui.jei.category.srpcotesia.parasite_transmute.info=Use on %s
 gui.jei.category.srpcotesia.lithography=§bLithography
 gui.jei.category.srpcotesia.lithography.warning1=Combinations shown here are examples, not required.
 gui.jei.category.srpcotesia.lithography.warning2=Order does not matter. Any unique set of 5 will suffice.
@@ -955,6 +1001,9 @@ enchantment.srpcotesia.flaying.desc=§fCauses parasites spawned by a Factory to 
 
 enchantment.srpcotesia.tachysensia=§8Tachysensia
 enchantment.srpcotesia.tachysensia.desc=§fCauses parasites spawned by a Factory to have more movement speed.
+
+enchantment.srpcotesia.bulwark=§bBulwark
+enchantment.srpcotesia.bulwark.desc=§fCauses parasites spawned by a Factory to have more armor and armor toughness.
 
 enchantment.srpcotesia.cunning=§eCunning
 enchantment.srpcotesia.cunning.desc=§fIncreases Minimum Damage dealt by spawned parasites.
