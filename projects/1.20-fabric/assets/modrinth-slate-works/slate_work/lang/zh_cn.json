@@ -16,6 +16,7 @@
   "hexcasting.action.slate_work:store_item": "容纳物品",
   "hexcasting.action.slate_work:get_item": "唤回物品",
   "hexcasting.action.slate_work:sort_items": "重整物品",
+  "hexcasting.action.slate_work:read_broadcast": "回顾广播",
 
   "hexcasting.action.slate_work:set_craft": "设置配方",
   "hexcasting.action.slate_work:set_macro": "绑定宏",
@@ -44,6 +45,7 @@
   "slate_work.page.storage_loci.set_craft": "为$(l:greatwork/crafting_loci)样板组装器/$设置合成配方。接受包含 $(l:casting/influences)$(thing)Null/$、物品、物品变种的列表，并将此列表应用于目标$(l:greatwork/crafting_loci)组装器/$。",
   "slate_work.page.storage_loci.set_craft_cont": "需要注意，$(l:greatwork/crafting_loci)样板组装器/$会将所给列表“格式化”为从左至右再从上至下的配方。自然，$(l:casting/influences)$(thing)Null/$ 代表配方中的空位。最后提一句，法术会在列表长于 9 个元素时招致事故，少于或等于 9 个时则不会。$(br2)在$(l:greatwork/spellcircles)法术环/$外施放不会招致事故。消耗极少量$(media)媒质/$。",
   "slate_work.page.storage_loci.set_macro": "此图案会为目标位置处的$(l:greatwork/macro_loci)法术刻印器/$绑定一个图案和一个 iota。$(br2)在$(l:greatwork/spellcircles)法术环/$外施放不会招致事故。消耗极少量$(media)媒质/$。",
+  "slate_work.page.storage_loci.read_broadcast": "尝试读取所给向量处的 $(l:greatwork/broadcaster_loci)Iota 之门/$。如果该处无 $(l:greatwork/broadcaster_loci)Iota 之门/$则返回垃圾。$(br)在$(l:greatwork/spellcircles)法术环/$外施放不会招致事故，无需消耗媒质$(media)媒质/$，也不受影响范围限制。",
 
   "slate_work.entry.storage_loci_block": "存储容具",
   "slate_work.page.storage_loci_block.storage_loci": "在忍那些到处都是木刺的笨重$(o)箱子/$到$(o)快忍不下去/$之后……我总算发现了完美的存储方法——$(thing)存储容具/$。$(br)虽然我已经抛弃了一部分意识垃圾，但还不足以直接操作$(thing)存储容具/$。不过，$(l:greatwork/spellcircles)法术环/$就是处理这种新存储方法的好工具。",
@@ -84,6 +86,12 @@
   "slate_work.page.sentinel_loci.sentinel_loci" : "这种意识的结合体，历经了扭曲、拖拽、破碎、修补。我$(o)听到/$了它们，但它并没发出声音，我$(o)听见/$的是它们的痛苦。多个剥脱的意识塞进一个方块，只是为我自己的方便……但是——石板基座上亮灭舞动的光辉，紫水晶的溢彩流光……$(o)它在呼唤我/$",
   "slate_work.page.sentinel_loci.extra": "我的意识在消散。我必须写完我的笔记。$(o)现在、马上/$。$(br2)如果我用$(l:items/lens)探知透镜/$观察$(thing)哨卫缓存器/$，它即会显示$(l:patterns/great_spells/greater_sentinel)伪哨卫/$当前的位置。而且，每激活一个$(thing)哨卫缓存器/$，其都会加入到已知$(thing)缓存器/$的列表，$(l:greatwork/spellcircles)法术环/$的影响范围则是所有伪哨卫的和。",
   "slate_work.page.sentinel_loci.crafting": "这种结合式嵌合体的制造需要一个$(l:greatwork/ambit_loci)范围扩展器/$，用于赋予修改影响范围的能力；还需一个任意种类的大师级$(thing)村民/$。如果所给的意识太弱，它会在已经饱和的意识受体方块前破碎消散。",
+
+  "slate_work.entry.broadcaster_loci": "Iota 之门",
+  "slate_work.page.broadcaster_loci.broadcaster_loci": "在仔细检查迷一般的神奇$(l:greatwork/akashiclib)阿卡夏图书馆/$后，我认为我应该可以把它们的 iota 存储功能搬到$(l:greatwork/spellcircles)法术环/$里，但大概不会非常完美。$(br2)$(o)“准备好了，这门就会开？”$(br)“不，不……不全是，只不过……”$(br)*叹气* *咔哒*",
+  "slate_work.page.broadcaster_loci.broadcaster_loci_cont": "$(thing)Iota 之门/$会给现实本身开一道“后门”，并向这个后门广播其中的 iota；也即，广播激活时$(l:greatwork/spellcircles)法术环/$栈顶的 iota。$(br2)$(thing)Iota 之门/$可从世界上任意一处读取（只要是在同一个维度），甚至连区块加载的神秘力量也拦不住它！读取所用的法术简介见$(l:patterns/spells/storage_loci#slate_work:read_broadcast)此/$。",
+  "slate_work.page.broadcaster_loci.extra": "需要格外注意的是，如果目标位置没有 $(thing)Iota 之门/$，那么法术就会返回垃圾。这应该就是从自然的背景噪声中抽出来的？$(br2)和前一点一样重要的是，$(thing)Iota 之门/$本身并不完美——它只能操作“简单”的 iota，而无法操纵列表（也包括代表玩家的 iota）。$(br)最后，如果我带着$(l:items/lens)探知透镜/$，看向它时就会显示其中的 iota。",
+  "slate_work.page.broadcaster_loci.crafting": "因为 $(thing)Iota 之门/$无视距离读取的奇怪特性，合成它需要相配数量的$(l:greatwork/quenching_allays)$(item)淬灵晶/$，以及一些$(l:greatwork/akashiclib)$(item)阿卡夏图书馆/$的组成部件。",
 
   "slate_work.entry.slate_work_pigments": "华丽染色剂",
   "slate_work.page.slate_work_pigments.slate_work_pigments": "我的$(l:items/staff)法杖/$蜕变了，我的$(l:items/pigments)染色剂/$也必将蜕变。它们不会带来什么荣耀，也不会招致可怖的事故；它们带来的祝福只存在于视觉。$(br2)而且，知晓这些染色剂的人，即会知晓我的$(o)觉醒/$。",
