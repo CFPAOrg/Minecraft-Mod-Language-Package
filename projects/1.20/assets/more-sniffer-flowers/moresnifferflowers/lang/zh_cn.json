@@ -212,6 +212,7 @@
 
 	"block.moresnifferflowers.torchflame": "火把焰",
 	"block.moresnifferflowers.torchflower_aflame": "火把花",
+	"block.moresnifferflowers.torchewflower": "火甘花",
 
 
 
@@ -219,8 +220,8 @@
 
 	"message.more_sniffer_flowers.dyespria_mode": "当前模式",
 
-	"tooltip.dyespria.usage": "选取染料右击物品可放入\n手持并右击合适的方块可染色\n潜行滚动滚轮可更改染色模式\n",
-	"tooltip.patternspria.usage": "使用方法类似染瓣兰\nShift+右击以复制pattern颜色\n接受：\n-方块图案\n-旗帜图案\n",
+	"tooltip.dyespria.usage": "选取染料右击物品可放入\n手持并右击合适的方块和图案可染色\n潜行滚动滚轮可更改染色模式\n",
+	"tooltip.patternspria.usage": "使用方法类似染瓣兰\nShift+右击以复制图案颜色\n接受：\n-方块图案\n-旗帜图案\n",
 	"tooltip.dyespria.empty": "空",
 	"tooltip.jar_of_bonmeel.usage": "可对以下3x3的成熟农作物使用：\n胡萝卜、马铃薯、小麦、甜菜根、下界疣",
 	"tooltip.amber_shard.usage": "可用作盔甲纹饰材料",
@@ -231,7 +232,7 @@
 	"tooltip.extracted_bottle.obtain": "使用提取之瓶获得",
 	"tooltip.wip": "WIP",
 	"tooltip.vivicus_antidote": "治愈芽灵和腐坏草方块",
-	"tooltip.dyescrapia": "能刮下已染色方块的染料",
+	"tooltip.dyescrapia": "能刮下染料和方块图案",
 	"tooltip.saltemone_seeds": "可种植在水中",
 
 	"advancements.more_sniffer_flowers.dyespria_plant": "多彩植物",
@@ -321,9 +322,14 @@
 	"effect.moresnifferflowers.salty": "咸视",
 	"effect.moresnifferflowers.combo_meal": "连携菜肴",
 	"effect.moresnifferflowers.pants_on_fire": "火燎口袋",
+	"effect.moresnifferflowers.hardened_mouth": "耐火坚口",
 	"effect.moresnifferflowers.bland": "平淡",
 	"effect.moresnifferflowers.well_balanced": "均衡",
 	"effect.moresnifferflowers.sticky": "黏糊",
+	"effect.moresnifferflowers.gluing_touch": "胶黏之触",
+	"effect.moresnifferflowers.glued": "胶黏",
+	"effect.moresnifferflowers.slippery": "滑溜",
+	"effect.moresnifferflowers.untouchable": "速即御",
 
 
 	"death.attack.moresnifferflowersveggies": "这段文本大概不会出现在游戏中，但如果真的看到了，你好啊😊😊👋👋",
@@ -353,16 +359,10 @@
 	"sound.moresnifferflowers.item.dyespria.paint": "染瓣兰：涂色",
 
 
+	"moresnifferflowers.configuration.section.moresnifferflowers.server.toml": "更多嗅探兽花卉（MSF）服务端配置",
 	"moresnifferflowers.configuration.title": "更多嗅探兽花卉",
-
-	"moresnifferflowers.configuration.section.moresnifferflowers.server.toml.title": "更多嗅探兽花卉（MSF）服务端配置",
-	"moresnifferflowers.configuration.section.moresnifferflowers.client.toml.title": "更多嗅探兽花卉（MSF）客户端配置",
-	"moresnifferflowers.configuration.section.moresnifferflowers.common.toml.title": "更多嗅探兽花卉（MSF）通用配置",
-	"moresnifferflowers.configuration.section.moresnifferflowers.server.toml": "服务端配置",
-	"moresnifferflowers.configuration.section.moresnifferflowers.client.toml": "客户端配置",
-	"moresnifferflowers.configuration.section.moresnifferflowers.common.toml": "通用配置",
-
 	"moresnifferflowers.configuration.corruption": "腐坏配置",
+	"moresnifferflowers.configuration.section.moresnifferflowers.server.toml.title": "更多嗅探兽花卉（MSF）服务端配置",
 	"moresnifferflowers.configuration.corruption.button": "编辑",
 	"moresnifferflowers.configuration.corruption.tooltip": "与腐坏方块有关的设置",
 	"moresnifferflowers.configuration.hardened_mouth_effect": "耐火坚口效果",
@@ -382,7 +382,6 @@
 	"moresnifferflowers.configuration.corrupted_tree_grow_through": "允许腐坏树破坏性行为",
 	"moresnifferflowers.configuration.corruption_spread_speed.tooltip": "腐坏草方块的蔓延速度倍率。\n1 = 默认，0 = 禁用",
 	"moresnifferflowers.configuration.corrupted_tree_grow_through.tooltip": "是否允许腐坏树无视方块生长和摧毁方块？\n默认为true",
-
 	"moresnifferflowers.configuration.corrupted_tree_bone_meal": "腐坏树骨粉",
 	"moresnifferflowers.configuration.corrupted_tree_bone_meal.tooltip": "腐坏树苗是否需要骨粉才能生长？\n默认为false",
 	"moresnifferflowers.configuration.corrupted_bobling_griefing": "允许腐坏芽灵破坏性行为",
@@ -390,17 +389,22 @@
 	"moresnifferflowers.configuration.corrupted_sludge_griefing": "允许腐坏秽浆破坏性行为",
 	"moresnifferflowers.configuration.corrupted_sludge_griefing.tooltip": "腐坏秽浆被破坏时是否会发射弹射物？\n默认为true",
 
+	"moresnifferflowers.configuration.saltemone_lingering": "允许咸银莲破坏性行为",
+	"moresnifferflowers.configuration.saltemone_lingering.tooltip": "咸银莲的泡泡是否会在无人打破它们时产生掉落物？\n默认为true",
+	"moresnifferflowers.configuration.throwables_cooldown": "可投掷物品冷却",
+	"moresnifferflowers.configuration.throwables_cooldown.tooltip": "所有可投掷物品的冷却。\n以刻为单位",
+
 	"moresnifferflowers.configuration.hardened_mouth_x": "耐火坚口X坐标",
 	"moresnifferflowers.configuration.hardened_mouth_x.tooltip": "左右移动耐火坚口效果额外槽位的位置",
 	"moresnifferflowers.configuration.hardened_mouth_y": "耐火坚口Y坐标",
 	"moresnifferflowers.configuration.hardened_mouth_y.tooltip": "上下移动耐火坚口效果额外槽位的位置",
 
 	"moresnifferflowers.configuration.block_pattern_render_distance": "方块图案渲染距离",
-	"moresnifferflowers.configuration.block_pattern_render_distance.tooltip": "以格为单位。若使用负值，则会从当前渲染距离中扣去一定距离",
-	"moresnifferflowers.configuration.block_pattern_offset": "方块图案偏移",
-	"moresnifferflowers.configuration.block_pattern_offset.tooltip": "方块图案到方块的距离，值过低会导致深度冲突，值过高会显得图案飘离了方块表面",
+	"moresnifferflowers.configuration.block_pattern_render_distance.tooltip": "以区块为单位。若使用负值，则会从当前渲染距离中扣去一定距离",
 	"moresnifferflowers.configuration.block_pattern_smooth_lighting": "方块图案平滑光照",
 	"moresnifferflowers.configuration.block_pattern_smooth_lighting.tooltip": "为方块图案启用平滑光照",
+	"moresnifferflowers.configuration.block_pattern_transparency": "方块图案透明度",
+	"moresnifferflowers.configuration.block_pattern_transparency.tooltip": "启用方块图案的透明度（效果只在使用资源包时显现）",
 
 	"moresnifferflowers.configuration.rebrew_length": "延时用物品",
 	"moresnifferflowers.configuration.rebrew_amplifier": "增效用物品",
@@ -412,5 +416,13 @@
 	"moresnifferflowers.configuration.rebrew_lingering.tooltip": "",
 
 
-	"effect.moresnifferflowers.extracted.description":"阻止目标使用提取之瓶取出其药水效果。"
+	"effect.moresnifferflowers.pants_on_fire.description":"烧坏受影响实体物品栏中的槽位。",
+	"effect.moresnifferflowers.hardened_mouth.description":"给予受影响实体2个额外槽位用于烹饪物品。",
+	"effect.moresnifferflowers.salty.description":"使得受影响实体随机进行攻击，同时将效果传播给周围的生物。",
+	"effect.moresnifferflowers.combo_meal.description":"连续多次完全蓄力的攻击可提升攻击速度。",
+	"effect.moresnifferflowers.bland.description":"食用食物带来的回复减少，会导致饥饿。",
+	"effect.moresnifferflowers.well_balanced.description":"小幅提升所有属性。",
+	"effect.moresnifferflowers.slippery.description":"疾跑时坠落和转向会导致受影响实体滑倒到地上。",
+	"effect.moresnifferflowers.untouchable.description":"缓慢积累速度，速度高则获得护甲值。",
+	"effect.moresnifferflowers.extracted.description":"阻止受影响实体使用提取之瓶取出药水效果。"
 }
