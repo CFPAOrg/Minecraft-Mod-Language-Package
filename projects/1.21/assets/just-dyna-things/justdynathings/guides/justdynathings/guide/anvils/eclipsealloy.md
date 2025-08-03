@@ -16,9 +16,3 @@ Also when added a [coolant](https://github.com/DevDyna/JustDynaThings/blob/main/
 <BlockImage id="justdynathings:eclipse_alloy_anvil" scale="4.0"/>
 
 <RecipeFor id="justdynathings:eclipse_alloy_anvil" />
-
-## Default Coolants
-
-| Item                                                                | Efficiency |
-| ------------------------------------------------------------------- | ---------- |
-| <ItemLink id= "justdirethings:time_fluid_bucket"    scale="0.75" /> | 10.0x      |

@@ -15,10 +15,3 @@ item_ids:
 <BlockImage id="justdynathings:ferricore_anvil" scale="4.0"/>
 
 <RecipeFor id="justdynathings:ferricore_anvil" />
-
-## 默认催化剂
-
-| 物品                                                            | 耐久度修复 |
-| --------------------------------------------------------------- | ---------- |
-| <ItemLink id= "minecraft:iron_ingot"            scale="0.75" /> | 64         |
-| <ItemLink id="justdirethings:ferricore_ingot"  scale="0.75" />  | 128        |

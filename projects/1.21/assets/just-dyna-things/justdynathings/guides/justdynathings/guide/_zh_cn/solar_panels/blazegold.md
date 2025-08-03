@@ -12,11 +12,14 @@ item_ids:
 
 会生产Forge能量（Forge Energy，FE）的太阳能板。
 
-最大FE生产速率：**960**
+默认最大FE生产速率：**960**
 
-**条件：**
+**默认条件：**
+
 - 维度为下界
 
 <BlockImage id="justdynathings:blazegold_solar_panel" scale="4.0"/>
 
 <Recipe id="justdynathings:blazegold_solar_panel" />
+
+*注意：所有东西都可以用配置修改，不要轻信！*

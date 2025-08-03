@@ -2,7 +2,7 @@
 navigation:
   title: Introduction
   icon: "minecraft:redstone"
-  position : 1
+  position: 1
 ---
 
 # Just Dyna Things

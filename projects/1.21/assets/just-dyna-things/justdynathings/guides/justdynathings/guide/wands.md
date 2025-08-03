@@ -2,7 +2,7 @@
 navigation:
   title: New Wands
   icon: "justdynathings:swapper_wand"
-  position : 5
+  position: 5
 ---
 
 # New Wands

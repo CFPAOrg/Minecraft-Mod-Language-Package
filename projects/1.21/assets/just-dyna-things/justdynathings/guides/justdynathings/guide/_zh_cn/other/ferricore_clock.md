@@ -40,6 +40,4 @@ item_ids:
 
 </GameScene>
 
-
-
 <Recipe id="justdynathings:ferricore_clock" />

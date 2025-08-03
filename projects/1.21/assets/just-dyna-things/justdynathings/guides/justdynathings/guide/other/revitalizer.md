@@ -2,7 +2,7 @@
 navigation:
   title: Revitalizer
   icon: "justdynathings:revitalizer"
-  position : 3
+  position: 3
   parent: justdynathings:other.md
 item_ids:
   - justdynathings:revitalizer
@@ -13,7 +13,6 @@ item_ids:
 It can revive any goo on top of it using Forge Energy
 
 <BlockImage id="justdynathings:revitalizer" scale="4.0" p:active="false" p:facing="down" p:goo_found="false"/>
-
 
 An example of Goo Revitalizer powered below a BlazeBloom Goo revitalized
 

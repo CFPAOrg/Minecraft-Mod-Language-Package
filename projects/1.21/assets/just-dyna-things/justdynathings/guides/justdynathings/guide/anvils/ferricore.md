@@ -15,10 +15,3 @@ An anvil that repair tools with some [catalysts](https://github.com/DevDyna/Just
 <BlockImage id="justdynathings:ferricore_anvil" scale="4.0"/>
 
 <RecipeFor id="justdynathings:ferricore_anvil" />
-
-## Default catalysts
-
-| Item                                                            | Durability Rate |
-| --------------------------------------------------------------- | --------------- |
-| <ItemLink id= "minecraft:iron_ingot"            scale="0.75" /> | 64              |
-| <ItemLink id="justdirethings:ferricore_ingot"  scale="0.75" />  | 128             |

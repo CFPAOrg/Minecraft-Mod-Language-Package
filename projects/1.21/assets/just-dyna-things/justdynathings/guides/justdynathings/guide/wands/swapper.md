@@ -2,7 +2,7 @@
 navigation:
   title: Swapper Wand
   icon: "justdynathings:swapper_wand"
-  position : 1
+  position: 1
   parent: justdynathings:wands.md
 item_ids:
   - justdynathings:swapper_wand
