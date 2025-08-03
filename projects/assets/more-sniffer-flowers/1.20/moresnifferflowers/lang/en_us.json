@@ -38,8 +38,8 @@
 	"item.moresnifferflowers.cropressed_beetroot": "Cropressed Beetroot",
 	"item.moresnifferflowers.cropressed_wheat": "Cropressed Wheat",
 	"item.moresnifferflowers.cropressed_nether_wart": "Cropressed Nether Wart",
-
 	"item.moresnifferflowers.cropressed_carrot": "Cropressed Carrot",
+
 	"item.moresnifferflowers.extraction_bottle": "Bottle o' Extraction",
 	"item.moresnifferflowers.extracted_bottle": "Extracted Potion",
 	"item.moresnifferflowers.extracted_bottle.effect.water": "Extracted Potion",
@@ -212,6 +212,7 @@
 
 	"block.moresnifferflowers.torchflame": "Torchflame",
 	"block.moresnifferflowers.torchflower_aflame": "Torchflower",
+	"block.moresnifferflowers.torchewflower": "Torchewflower",
 
 
 
@@ -219,7 +220,7 @@
 
 	"message.more_sniffer_flowers.dyespria_mode": "Current Mode",
 
-	"tooltip.dyespria.usage": "Hover+Right-click to insert dye \nRight-click compatible block to paint \nSneak+Scroll to change paint mode\n",
+	"tooltip.dyespria.usage": "Hover+Right-click to insert dye \nRight-click compatible block or pattern to paint \nSneak+Scroll to change paint mode\n",
 	"tooltip.patternspria.usage": "Controls like Dyespria \nShift+Right-click to copy pattern color \nAccepts: \n-Block Patterns \n-Banner Patterns \n",
 	"tooltip.dyespria.empty": "Empty",
 	"tooltip.jar_of_bonmeel.usage": "Can be applied to a fully grown 3x3 grid of the following crops: \nCarrot, Potato, Wheat, Beetroot and Nether Wart",
@@ -231,7 +232,7 @@
 	"tooltip.extracted_bottle.obtain": "Obtainable using Bottle o' Extraction",
 	"tooltip.wip": "WIP",
 	"tooltip.vivicus_antidote": "Cures Boblings and Corrupted Grass",
-	"tooltip.dyescrapia": "Scrapes the dye off of colored blocks",
+	"tooltip.dyescrapia": "Scrapes off dye and block patterns",
 	"tooltip.saltemone_seeds": "Plantable on water",
 
 	"advancements.more_sniffer_flowers.dyespria_plant": "Colorful plants",
@@ -321,9 +322,14 @@
 	"effect.moresnifferflowers.salty": "Salty",
 	"effect.moresnifferflowers.combo_meal": "Combo Meal",
 	"effect.moresnifferflowers.pants_on_fire": "Pants on Fire",
+	"effect.moresnifferflowers.hardened_mouth": "Hardened Mouth",
 	"effect.moresnifferflowers.bland": "Bland",
 	"effect.moresnifferflowers.well_balanced": "Well Balanced",
 	"effect.moresnifferflowers.sticky": "Sticky",
+	"effect.moresnifferflowers.gluing_touch": "Gluing Touch",
+	"effect.moresnifferflowers.glued": "Glued",
+	"effect.moresnifferflowers.slippery": "Slippery",
+	"effect.moresnifferflowers.untouchable": "Untouchable",
 
 
 	"death.attack.moresnifferflowersveggies": "Já si nemyslim že se tenhle text ukazuje ve hře ale jestli jo tak zdravim 😊😊👋👋",
@@ -353,16 +359,10 @@
 	"sound.moresnifferflowers.item.dyespria.paint": "Dyespria Paint",
 
 
+	"moresnifferflowers.configuration.section.moresnifferflowers.server.toml": "MSF Server Config",
 	"moresnifferflowers.configuration.title": "More Sniffer Flowers",
-
+	"moresnifferflowers.configuration.corruption": "Corruption Config",
 	"moresnifferflowers.configuration.section.moresnifferflowers.server.toml.title": "MSF Server Config",
-	"moresnifferflowers.configuration.section.moresnifferflowers.client.toml.title": "MSF Client Config",
-	"moresnifferflowers.configuration.section.moresnifferflowers.common.toml.title": "MSF Common Config",
-	"moresnifferflowers.configuration.section.moresnifferflowers.server.toml": "Server Config",
-	"moresnifferflowers.configuration.section.moresnifferflowers.client.toml": "Client Config",
-	"moresnifferflowers.configuration.section.moresnifferflowers.common.toml": "Common Config",
-
-	"moresnifferflowers.configuration.corruption": "Corruption",
 	"moresnifferflowers.configuration.corruption.button": "Edit",
 	"moresnifferflowers.configuration.corruption.tooltip": "Settings related to corrupted blocks",
 	"moresnifferflowers.configuration.hardened_mouth_effect": "Hardened Mouth Effect",
@@ -371,7 +371,7 @@
 	"moresnifferflowers.configuration.block_patterns": "Block Patterns",
 	"moresnifferflowers.configuration.block_patterns.button": "Edit",
 	"moresnifferflowers.configuration.block_patterns.tooltip": "Settings related to Block Patterns",
-	"moresnifferflowers.configuration.rebrewing": "Block Patterns",
+	"moresnifferflowers.configuration.rebrewing": "Rebrewing potions",
 	"moresnifferflowers.configuration.rebrewing.button": "Edit",
 	"moresnifferflowers.configuration.rebrewing.tooltip": "Settings related to the Rebrewing Recipe",
 
@@ -380,8 +380,19 @@
 
 	"moresnifferflowers.configuration.corruption_spread_speed": "Corruption Spread Speed",
 	"moresnifferflowers.configuration.corrupted_tree_grow_through": "Corrupted Tree Griefing",
-	"moresnifferflowers.configuration.corruption_spread_speed.tooltip": "Spread speed multiplier of corrupted grass blocks, 1 = Default, 0 = Disabled",
-	"moresnifferflowers.configuration.corrupted_tree_grow_through.tooltip": "Should the corrupted tree be able to grow through and destroy blocks? Default = true",
+	"moresnifferflowers.configuration.corruption_spread_speed.tooltip": "Spread speed multiplier of corrupted grass blocks, \n1 = Default, 0 = Disabled",
+	"moresnifferflowers.configuration.corrupted_tree_grow_through.tooltip": "Should the corrupted tree be able to grow through and destroy blocks? \nDefault = true",
+	"moresnifferflowers.configuration.corrupted_tree_bone_meal": "Corrupted Tree Bone Meal",
+	"moresnifferflowers.configuration.corrupted_tree_bone_meal.tooltip": "Should corrupted sapling require bone meal to grow at all? \nDefault = false",
+	"moresnifferflowers.configuration.corrupted_bobling_griefing": "Corrupted Bobling Griefing",
+	"moresnifferflowers.configuration.corrupted_bobling_griefing.tooltip": "Should boblings spawn projectiles when hit and replace blocks when planting? \nDefault = true",
+	"moresnifferflowers.configuration.corrupted_sludge_griefing": "Corrupted Sludge Griefing",
+	"moresnifferflowers.configuration.corrupted_sludge_griefing.tooltip": "Should sludges shoot projectiles when blocks get destroyed? \nDefault = true",
+
+	"moresnifferflowers.configuration.saltemone_lingering": "Saltemone Griefing",
+	"moresnifferflowers.configuration.saltemone_lingering.tooltip": "Should Saltemone Bubbles drop loot, even when nobody popped them? \nDefault = true",
+	"moresnifferflowers.configuration.throwables_cooldown": "Throwables Cooldown",
+	"moresnifferflowers.configuration.throwables_cooldown.tooltip": "Cooldown for all throwable items, which drop blocks. \nInput in ticks",
 
 	"moresnifferflowers.configuration.hardened_mouth_x": "Hardened Mouth X",
 	"moresnifferflowers.configuration.hardened_mouth_x.tooltip": "Move extra slots from the Hardened mouth effect left to right",
@@ -389,11 +400,11 @@
 	"moresnifferflowers.configuration.hardened_mouth_y.tooltip": "Move extra slots from the Hardened mouth effect up and down",
 
 	"moresnifferflowers.configuration.block_pattern_render_distance": "Block Pattern Render Distance",
-	"moresnifferflowers.configuration.block_pattern_render_distance.tooltip": "Input in blocks. Negative values use a division of your current render distance instead",
-	"moresnifferflowers.configuration.block_pattern_offset": "Block Pattern Offset",
-	"moresnifferflowers.configuration.block_pattern_offset.tooltip": "How far block patterns are from their block, low values Z-fight, high values look detached",
+	"moresnifferflowers.configuration.block_pattern_render_distance.tooltip": "Input in chunks. Negative values use a division of your current render distance instead",
 	"moresnifferflowers.configuration.block_pattern_smooth_lighting": "Block Pattern Smooth Lighting",
 	"moresnifferflowers.configuration.block_pattern_smooth_lighting.tooltip": "Enables smooth lighting for block patterns",
+	"moresnifferflowers.configuration.block_pattern_transparency": "Block Pattern Transparency",
+	"moresnifferflowers.configuration.block_pattern_transparency.tooltip": "Enables transparency for block patters (only noticeable with resource packs)",
 
 	"moresnifferflowers.configuration.rebrew_length": "Length Item",
 	"moresnifferflowers.configuration.rebrew_amplifier": "Amplifier Item",
@@ -405,9 +416,13 @@
 	"moresnifferflowers.configuration.rebrew_lingering.tooltip": "",
 
 
-
-
-
-
-	"effect.moresnifferflowers.extracted.description":"Prevents the target from extracting their current potion effects via the Bottle o' Extraction."
+	"effect.moresnifferflowers.pants_on_fire.description":"Burns away slots in the targets inventory",
+	"effect.moresnifferflowers.hardened_mouth.description":"Gives the player 2 extra slots capable of cooking items",
+	"effect.moresnifferflowers.salty.description":"Causes the user to randomly attack and spread this effect to mobs around",
+	"effect.moresnifferflowers.combo_meal.description":"Consecutive charged attacks increase attack speed",
+	"effect.moresnifferflowers.bland.description":"Eating food is less effective and causes hunger",
+	"effect.moresnifferflowers.well_balanced.description":"Minor boosts to all stats",
+	"effect.moresnifferflowers.slippery.description":"Falling and turning around while sprinting causes you to fall down",
+	"effect.moresnifferflowers.untouchable.description":"Slowly accumulate speed, higher speed gives armor",
+	"effect.moresnifferflowers.extracted.description":"Prevents extracting potion effects via the Bottle o' Extraction."
 }
