@@ -1,0 +1,63 @@
+container {
+    slot('ghost') {
+        pos(154,24)
+    }
+    playerslots(10,70)
+}
+
+window {
+    size(180,152)
+
+    event('tag','inv.setTag')
+    event('ore','inv.setOreDict')
+    bind('amount', 'amount')
+    bind('slot', 'slot')
+    bind('damage', 'damage')
+
+    panel('','positional') {
+        bg1('rftoolsutility:textures/gui/invchecker.png')
+        label('','槽位编号：') {
+            hint(10,3,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        integerfield('slot') {
+            channel('slot')
+            hint(60,3,80,14)
+            tooltips('设定槽位编号')
+        }
+        label('','数量：') {
+            hint(10,19,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        integerfield('amount') {
+            channel('amount')
+            hint(60,19,80,14)
+            tooltips('设置检测槽位内的物品数量')
+        }
+        label('','耐久：') {
+            hint(10,35,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        choicelabel('damage') {
+            channel('damage')
+            hint(60,35,80,14)
+            choices {
+                choice('Ignore') {
+                    tooltips('忽略物品耐久')
+                }
+                choice('Match') {
+                    tooltips('匹配物品耐久')
+                }
+            }
+        }
+        label('','标签：') {
+            hint(10,51,50,14)
+            horizalign('ALIGN_LEFT')
+        }
+        tagselector('tags') {
+            channel('tag')
+            hint(60,51,112,14)
+            type('item')
+        }
+    }
+}

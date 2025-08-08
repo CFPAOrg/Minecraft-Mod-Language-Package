@@ -84,8 +84,8 @@ namespace Packer.Models.Providers
             var result = new Dictionary<string, JsonNode>();
             foreach (var (key, value) in this)
             {
-                if (value.GetType() == typeof(JsonValue)
-                    && value.AsValue().TryGetValue<string>(out var stringValue))
+                if (value is JsonValue jsonValue
+                    && jsonValue.TryGetValue<string>(out var stringValue))
                 {
                     var replaced = Regex.Replace(stringValue,
                                                  searchPattern,
@@ -285,6 +285,9 @@ namespace Packer.Models.Providers
 
                 // 基础条目
                 var splitPosition = line.IndexOf('=');
+
+                // https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/3272/files#r1461545452
+                if (splitPosition == -1) continue;
 
                 var key = line[..splitPosition];
                 var value = splitPosition + 1 < line.Length
