@@ -1,0 +1,81 @@
+{
+  hexcasting: {
+    action: {
+      "hexstruction:": {
+        save_structure: "吞噬结构",
+        load_structure: "实现结构",
+        display_structure: "显示结构",
+        mirror_front_back: "镜像之纯化，Z型",
+        mirror_left_right: "镜像之纯化，X型",
+        mirror_vertical: "镜像之纯化，Y型",
+        rotate_clockwise: "旋形之纯化，顺时针型",
+        rotate_counterclockwise: "旋形之纯化，逆时针型",
+        rotate_clockwise_x: "旋形之纯化，X顺时针型",
+        rotate_counterclockwise_x: "旋形之纯化，X逆时针型",
+        rotate_clockwise_z: "旋形之纯化，Z顺时针型",
+        rotate_counterclockwise_z: "旋形之纯化，Z逆时针型",
+        bounding_box: "界限之纯化",
+        transformations: "变换之纯化"
+      },
+      book: {
+        "hexstruction:": {
+          mirror_front_back: "镜像之纯化，Z型",
+          mirror_left_right: "镜像之纯化，X型",
+          mirror_vertical: "镜像之纯化，Y型",
+          rotate_clockwise: "旋形之纯化，顺时针型",
+          rotate_counterclockwise: "旋形之纯化，逆时针型",
+          rotate_clockwise_x: "旋形之纯化，X顺时针型",
+          rotate_counterclockwise_x: "旋形之纯化，X逆时针型",
+          rotate_clockwise_z: "旋形之纯化，Z顺时针型",
+          rotate_counterclockwise_z: "旋形之纯化，Z逆时针型",
+          bounding_box: "界限之纯化",
+          transformations: "变换之纯化"
+        }
+      }
+    },
+  },
+  hexstruction: {
+    book: {
+      patterns: {
+        actions: {
+          structures: {
+            "": "结构 Iota",
+            "0": "我具有破坏和放置方块的能力；受此启发，我想到了一种拓展它们的方法。只需将世界的一部分拆解为简单的、对该区域的概念，就可将整片区域存入意识，形成结构 iota。我可操纵此类 iota，还可将其放回世界之中。可惜，自然似乎不允许我存储$(l:basics/geodes)$(item)紫水晶母岩/$之类的方块。",
+            "1": "自然追求物质的守恒；因此，同一个结构 iota 的复制产物都对应同一个结构。只要某次放置使用了其中之一，则其他所有指向同一结构的 iota 都不可再用于放置。将此类 iota 强制转换为布尔值，所得结果代表该 iota 还是否可用。从世界中“吞噬”结构时，似乎会将“原点”定在所给区域西北方靠下的角落。无论结构经过何种变换，“原点”都会保持在那个角落。",
+            mirror_front_back: "前后翻转结构，也即跨 Z 轴镜像。",
+            mirror_left_right: "左右翻转结构，也即跨 X 轴镜像。",
+            mirror_vertical: "上下翻转结构，也即跨 Y 轴镜像。",
+            rotate_clockwise: "将所存结构顺时针旋转 90 度。",
+            rotate_counterclockwise: "将所存结构逆时针旋转 90 度。",
+            rotate_clockwise_x: "将所存结构绕 X 轴顺时针旋转 90 度。",
+            rotate_counterclockwise_x: "将所存结构绕 X 轴逆时针旋转 90 度。",
+            rotate_clockwise_z: "将所存结构绕 Z 轴顺时针旋转 90 度。",
+            rotate_counterclockwise_z: "将所存结构绕 Z 轴逆时针旋转 90 度。",
+            bounding_box: "移除栈顶结构，返回其尺寸，格式为 [x, y, z]。",
+            transformations: "移除栈顶结构，返回其经历的变换，格式为 [镜像, 垂直镜像, X轴旋转, Y轴旋转, Z轴旋转]。",
+            "transformations.0": "这些元素使用以下值：$(br)镜像$(br)无 -> 0；前后翻转 -> 1；左右翻转 -> 2$(br)$(br)垂直镜像$(br)未镜像 -> 0；已镜像 -> 1$(br)$(br)旋转$(br)无旋转 -> 0；90 度顺时针 -> 1；180 度顺时针 -> 2；90 度逆时针 -> 3"
+          }
+        },
+        spells: {
+          "": "结构",
+          save_structure: "移除栈顶两个位置向量，并吞噬这两个位置作为角落所定义的区域，然后把产物存储为结构 iota。$(br)每吞噬一个方块消耗大约 1/8 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+          load_structure: "移除栈顶结构原点向量和一个结构，并尝试在该原点的位置处放置结构，同时清除其他存储位置中代表同一结构的 iota。如果结构的任意一个部分与其他方块重叠，即会招致事故。$(br)每放置一个方块消耗大约 1/8 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+          display_structure: {
+            "0": "移除栈顶的结构原点向量、一个结构和一个 0 到 72000 之间的数，第三参数代表持续时间。",
+            "1": "在给定位置显示结构的影像，持续时间以刻计。此操作不会清除其他同种 iota。$(br)每显示一个方块消耗大约 1/100 个$(l:items/amethyst)$(item)紫水晶粉/$。"
+          }
+        }
+      }
+    },
+    iota: {
+      structure: {
+        identifier: "结构 %s ",
+        display: "[镜像=%1$s, 垂直镜像=%2$s, 旋转={X:%3$s, Y:%4$s, Z:%5$s}]",
+        empty: "无结构",
+        mishap: {
+          empty: "一个已链接的结构"
+        }
+      }
+    }
+  }
+}
