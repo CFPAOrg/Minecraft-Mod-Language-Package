@@ -34,7 +34,7 @@ item_ids:
 
 时序器共有三种模式：弱、强、计数器（更多内容见此页面后续）。时序器有一个内部计数器，其取值范围为0到所设延时（默认为20）。选择的模式不同，该计数器的增减方式也不同。时序器内部计数器达到最大值时，输出为ON；否则输出为OFF。
 
-可将该计数器配置为达到最大值时即重置为0。如此，输出的ON信号便只会恰好保持1刻。
+可将该计数器配置为达到最大值时即复位为0。如此，输出的ON信号便只会恰好保持1刻。
 
 <MicrochipScene color="red" includeToolbar={true}>
 	<Logic name="input" x="0" y="0" type="io" hide={true} />
@@ -47,7 +47,7 @@ item_ids:
 	<RedstoneSignal direction="north" strength="15" />
 </MicrochipScene>
 
-此外，还可将时序器配置为拥有两个输入端口。第二个输入端口为ON时，内部计数器就将被重置为0。
+此外，还可将时序器配置为拥有两个输入端口。第二个输入端口为ON时，内部计数器就将被复位为0。
 
 <MicrochipScene color="red" includeToolbar={true}>
 	<Logic name="input1" x="0" y="12" type="io" data="{config:{direction:'east'}}" hide={true} />
@@ -72,7 +72,7 @@ item_ids:
 
 向计数器的第一个输入端口传递ON信号后，无论该信号持续多长时间，内部计数器都会持续递增，直至达到所配置的延时。如只需将某信号延后一段时间，可选择此模式。
 
-下方示例中，时序器的延时为100刻（5秒），且会在达到最大值时自动重置。输入信号的持续时间较短，但无论有无ON信号输入，时序器都会不断递增。
+下方示例中，时序器的延时为100刻（5秒），且会在达到最大值时自动复位。输入信号的持续时间较短，但无论有无ON信号输入，时序器都会不断递增。
 
 <MicrochipScene color="red" includeToolbar={true}>
 	<Logic name="input" x="0" y="0" type="io" hide={true} />
@@ -136,9 +136,9 @@ item_ids:
 
 ### 计数器模式
 
-只要时序器的第一个输入接收到ON信号，时序器即会不断递增。此模式下时序器的计数器值只会因自动重置选项或重置端口而下降。
+只要时序器的第一个输入接收到ON信号，时序器即会不断递增。此模式下时序器的计数器值只会因自动复位选项或复位端口而下降。
 
-下方示例中，时序器的延时为100刻（5秒），且会在达到最大值时自动重置。输入不断在ON和OFF间切换，但时序器不会在输入为OFF时递减。
+下方示例中，时序器的延时为100刻（5秒），且会在达到最大值时自动复位。输入不断在ON和OFF间切换，但时序器不会在输入为OFF时递减。
 
 <MicrochipScene color="red" includeToolbar={true}>
 	<Logic name="input" x="0" y="0" type="io" hide={true} />
@@ -152,7 +152,7 @@ item_ids:
 	<RedstoneSignal step="1" direction="north" strength="0" />
 </MicrochipScene>
 
-下方示例中，时序器的延时为5刻，且会在达到最大值时自动重置。输入信号经[脉冲节流器](pulse_throttler.md)缩短，以防止信号的持续时间超出1刻。如此，时序器便只会在接收到5个相互隔断的ON信号时输出ON。
+下方示例中，时序器的延时为5刻，且会在达到最大值时自动复位。输入信号经[脉冲节流器](pulse_throttler.md)缩短，以防止信号的持续时间超出1刻。如此，时序器便只会在接收到5个相互隔断的ON信号时输出ON。
 
 <MicrochipScene color="red" includeToolbar={true}>
 	<Logic name="input" x="0" y="0" type="io" hide={true} />
