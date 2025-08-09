@@ -2,7 +2,7 @@
 navigation:
   title: Solar Panels
   icon: "justdynathings:blazegold_solar_panel"
-  position : 4
+  position: 4
 ---
 
 # The Power of Sun
