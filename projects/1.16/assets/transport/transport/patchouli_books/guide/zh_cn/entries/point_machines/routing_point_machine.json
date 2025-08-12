@@ -1,0 +1,31 @@
+{
+  "name": "路线转辙机",
+  "icon": "minecraft:lectern",
+  "category": "point_machines",
+  "pages": [
+    {
+      "type": "text",
+      "text": "路线转辙机由一个面向转辙铁轨的讲台组成。讲台上的书可以写有路线指示。查看$(l:routing/basics)路线规划基础$()获得更多信息。"
+    },
+    {
+      "type": "multiblock",
+      "name": "路线转辙机",
+      "multiblock": {
+        "mapping": {
+          "R": "minecraft:rail[shape=east_west]",
+          "D": "minecraft:rail",
+          "0": "transport:switch_rail[straight_shape=east_west,diverge_shape=south_west,diverge=true]",
+          "L": "minecraft:lectern[facing=north,has_book=true]"
+        },
+        "pattern": [
+          [
+            " R ",
+            "L0D",
+            " R "
+          ]
+        ],
+        "enable_visualize": false
+      }
+    }
+  ]
+}
