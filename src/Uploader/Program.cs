@@ -17,7 +17,7 @@ namespace Uploader
                 .WriteTo.Console()
                 .CreateLogger();
 
-            using var scpClient = new ScpClient(host, port: 20002, name, password);
+            using var scpClient = new ScpClient(host, port: 22, name, password);
             scpClient.Connect(); // 与下载服务器建立连接
             
             // 确认连接状态
@@ -33,9 +33,9 @@ namespace Uploader
 
             
             // 获取可用的资源包，准备上传
-            var currentDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());
-            var packList = currentDirectory
-                           .EnumerateFiles("Minecraft-Mod-Language-Package-*.zip");
+            var artifactDirectory = new DirectoryInfo(Path.Join(Directory.GetCurrentDirectory(), "artifacts"));
+            var packList = artifactDirectory
+                           .EnumerateFiles("Minecraft-Mod-Language-Package-*.zip", SearchOption.AllDirectories);
             
             Log.Information("检测到的资源包数目：{0}", packList.Count());
 
@@ -70,8 +70,8 @@ namespace Uploader
                     });
 
             // 临时操作 在使用旧md5校验的程序弃用以后需要删除
-            var md5List = currentDirectory
-                          .EnumerateFiles("*.md5");
+            var md5List = artifactDirectory
+                          .EnumerateFiles("*.md5", SearchOption.AllDirectories);
             md5List.ToList()
                    .ForEach(_ =>
             {
