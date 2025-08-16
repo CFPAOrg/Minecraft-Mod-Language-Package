@@ -2,7 +2,7 @@
 navigation:
   title: 回响相能母岩
   icon: "justdynathings:echoing_budding_phasorite"
-  position : 5
+  position: 5
   parent: justdynathings:buddings.md
 item_ids:
   - justdynathings:echoing_budding_phasorite
@@ -15,6 +15,5 @@ item_ids:
 <BlockImage id="justdynathings:echoing_budding_phasorite" p:alive="false" scale="4.0"/>
 
 <BlockImage id="justdynathings:echoing_budding_phasorite" p:alive="true" scale="4.0"/>
-
 
 <RecipeFor id="justdynathings:echoing_budding_phasorite" />

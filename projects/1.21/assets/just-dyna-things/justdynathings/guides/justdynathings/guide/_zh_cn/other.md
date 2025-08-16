@@ -2,7 +2,7 @@
 navigation:
   title: 其他
   icon: "justdynathings:revitalizer"
-  position : 99
+  position: 99
 ---
 
 # 其他
