@@ -4,12 +4,14 @@ id: thord_variables
 
 # Variables
 
+Variables can be created with the `VARIABLE` word.
+
 Stating a variable's name puts its address on the stack. This can be taken as an argument by any word. 
 
-- `!` is used to assign the second stack entry to a variable on top of the stack.
-- `@` gets the value of the variable.
-- `?` prints the value of the variable.
-- `+!` adds the second stack entry to the variable.
+- ! is used to assign the second stack entry to a variable on top of the stack.
+- @ gets the value of the variable.
+- ? prints the value of the variable.
+- +! adds the second stack entry to the variable.
 
 Examples
 

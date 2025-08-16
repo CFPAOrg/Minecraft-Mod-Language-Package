@@ -3,12 +3,13 @@
   "itemGroup.neepmeat.ingredients": "NEEPMeat丨合成",
   "itemGroup.neepmeat.food": "NEEPMeat丨食物",
 
-  "message.neepmeat.shift_for_info": "§7按住§fSHIFT§7显示更多信息",
-  "message.neepmeat.requires_motor": "需要外接发动机",
-  "message.neepmeat.requires_vascular": "需要连接到脉管网络",
-  "message.neepmeat.plc_compatible": "有效PLC工作站",
-  "message.neepmeat.plc_interrupt": "会发出PLC中断",
-  "message.neepmeat.plc_actuator": "有效PLC操作机构",
+  "tooltip.neepmeat.shift_for_info": "§7按住§fSHIFT§7显示更多信息",
+  "tooltip.neepmeat.requires_motor": "需要外接发动机",
+  "tooltip.neepmeat.requires_vascular": "需要连接到脉管网络",
+  "tooltip.neepmeat.requires_ichor": "需要供应瞬变浆液",
+  "tooltip.neepmeat.plc_compatible": "有效PLC工作站",
+  "tooltip.neepmeat.plc_interrupt": "会发出PLC中断",
+  "tooltip.neepmeat.plc_actuator": "有效PLC操作机构",
   "text.neepmeat.plc.arguments": "参数：%s / %s",
   "text.neepmeat.plc.interactive_help": "在右侧面板中点击选择指令。\n\n点击世界中方块以将其位置加作参数。\n\n参数数量满足后，指令会立即执行。",
   "tooltip.neepmeat.plc.language": "当前编程语言：%s\n点击以切换语言。\nCtrl点击以打开文档。",
@@ -16,6 +17,7 @@
   "message.neepmeat.power": "功率：",
   "message.neepmeat.energy": "能量：",
   "message.neepmeat.power_unit": "eJ/t",
+  "message.neepmeat.power_flower.status": "方块总数：%s/%s，光合器官数：%s",
 
   "text.neepmeat.data.gieb_unit": "%sGeB",
   "text.neepmeat.data.eb_unit": "%seB",
@@ -23,6 +25,8 @@
   "message.neepmeat.insufficient_power": "功率不足",
   "message.neepmeat.insufficient_power_2": "%s < %s",
   "message.neepmeat.running": "运作中",
+
+  "message.neepmeat.metaboliser_segment.output": "工作段输出功率：%s",
 
   "message.neepmeat.integrator.data": "数据：%s / %s",
 
@@ -176,6 +180,9 @@
   "block.neepmeat.large_compressor": "大型压缩机",
   "block.neepmeat.large_compressor.lore_0": "压缩气体。",
   "block.neepmeat.stomach": "胃囊",
+  "block.neepmeat.stomach.lore_0": "也可以用作流体输入端口。",
+  "block.neepmeat.metaboliser_segment": "代谢机工作段",
+  "block.neepmeat.metaboliser_segment.lore_0": "代谢里边的东西。",
   "block.neepmeat.lucky_one": "幸运儿",
   "block.neepmeat.lucky_one.lore_0": "+100% 额外产物概率（最高+200%）。必须提供≥50eJ/t的脉管功率。",
   "block.neepmeat.extractor": "采集提取机",
@@ -296,7 +303,7 @@
   "block.neepmeat.dumper": "智能卸料器",
   "block.neepmeat.dumper.lore_0": "向正下方投出物品。",
 
-  "message.neepmeat.neepbus_part": "NEEP总线目标设备",
+  "tooltip.neepmeat.neepbus_part": "NEEP总线目标设备",
   "block.neepmeat.vertical_gauge": "纵条量表",
   "block.neepmeat.vertical_gauge.lore_0": "显示最后写入其地址处的值。\n潜行点击以配置端口和范围。",
   "block.neepmeat.slider": "滑动拉杆",
@@ -305,8 +312,9 @@
   "block.neepmeat.slanted_slider.lore_0": "范围可配置的交互组件。\n将其值传输给NEEP总线网络中给定地址的设备。\n潜行点击以配置端口。",
   "screen.neepmeat.slider.instructions": "使用W/S或鼠标滚轮以更改值。\n按住SHIFT以1/10速度更改值。\n按下ESC以退出。",
   "block.neepmeat.single_button": "单值按钮",
-  "block.neepmeat.single_button.lore_0": "交互时向所选地址写入其值。不可被读取。\n潜行交互以配置。",
-  "tooltip.neepmeat.button.value": "值",
+  "block.neepmeat.single_button.lore_0": "交互时向所选地址写入其值。不可被读取。\n若脉冲长度大于0，则按钮会在延时过后向地址写0。\n§e潜行交互以配置。§f",
+  "tooltip.neepmeat.button.high_value": "输出值",
+  "tooltip.neepmeat.button.delay_time": "脉冲长度",
   "block.neepmeat.data_cable": "数据线缆",
   "block.neepmeat.data_cable.lore_0": "将融变生物机连接至其他方块。\n能传输NEEP总线的信号。",
   "block.neepmeat.encased_data_cable": "包层数据线缆",
@@ -329,7 +337,7 @@
   "block.neepmeat.movement_control": "运动控制器",
   "block.neepmeat.movement_control.lore_0": "将玩家的移动输入转换为NEEP总线信号。\n§e交互以激活。\n潜行交互以配置。",
   "block.neepmeat.integrator": "积分器",
-  "block.neepmeat.integrator.lore_0": "将读取输入端口获得的值加至内部变量，再输出至输出端口。等价于采用前向欧拉法进行积分。",
+  "block.neepmeat.integrator.lore_0": "将读取输入端口获得的值加至内部变量，再输出至输出端口。等价于采用前向欧拉法进行积分。\n§e潜行点击以清除§f",
 
   "block.neepmeat.vascular_conduit": "脉管导管",
   "block.neepmeat.vascular_conduit.lore_0": "在机器间循环血液，为之供能。",
@@ -338,6 +346,8 @@
   "block.neepmeat.vsc": "脉管能源转换器",
   "block.neepmeat.vsc.lore_0": "从脉管网络中消耗一定量的功率，并向前面输出，具体量可配置。适合用来控制发动机的转速。\n§e默认需红石信号开启。潜行空手交互以切换。",
   "screen.neepmeat.vsc.text.power": "目标功率：",
+  "block.neepmeat.vascular_sensor": "脉管网络传感器",
+  "block.neepmeat.vascular_sensor.lore_0": "将相连脉管网络的属性输出至NEEP总线。",
 
   "screen.neepmeat.deployer.round_robin": "轮询调度",
   "screen.neepmeat.deployer.block": "交互方块",
@@ -412,17 +422,18 @@
   "block.neepmeat.item_gauge.lore_0": "根据容器的填满程度发出红石信号。",
 
   "block.neepmeat.converter": "流体充能器",
-  "block.neepmeat.transducer": "燃液换能器",
+  "block.neepmeat.transducer": "换能套管",
+  "block.neepmeat.transducer.lore_0": "划开肌肤，成为§kooooeoe§r循环系统的一部分。",
   "block.neepmeat.power_flower_seeds": "能量花种子",
   "block.neepmeat.power_flower_seeds.lore_0": "可种在泥土或草方块上。会生长成壮观的生物产能器。",
   "block.neepmeat.power_flower_growth": "能量花增生体",
-  "block.neepmeat.power_flower_growth.lore_0": "能量花结构的基础。\n上方与空气接触的增生体会特化为光合器官，其余增生体会增加代谢率。\n施加骨粉或肉时会扩散。\n可用精准采集取下。",
+  "block.neepmeat.power_flower_growth.lore_0": "能量花结构的基础。\n上方与空气接触的增生体会特化为光合器官，其余增生体会增加代谢率。\n施加骨粉或肉类时会扩散。\n可用精准采集取下。",
   "block.neepmeat.power_flower_fluid_port": "能量花流体口",
   "block.neepmeat.power_flower_fluid_port.lore_0": "能将水和液态食物吸入能量花。",
   "block.neepmeat.power_flower_controller": "能量花核心",
-  "block.neepmeat.power_flower_controller.lore_0": "能量花产出的缥缈燃液自此流出。\n需向能量花流体口送入水。\n可直接破坏取下。",
+  "block.neepmeat.power_flower_controller.lore_0": "能量花产出的瞬变浆液自此流出。\n需向能量花流体口送入水。\n可直接破坏取下。",
   "block.neepmeat.fluid_exciter": "心脏机",
-  "block.neepmeat.fluid_exciter.lore_0": "下方接受缥缈燃液时，上部即向脉管网络供能。效率是标准发动机的150%。",
+  "block.neepmeat.fluid_exciter.lore_0": "下方接受瞬变浆液时，上部即向脉管网络供能。效率是标准发动机的150%。",
 
   "block.neepmeat.verrucous_stone": "疣斑石",
   "block.neepmeat.verrucous_stone_port": "疣斑石口",
@@ -463,7 +474,7 @@
   "block.neepmeat.heater.lore_0": "加热面向的类熔炉方块。每额外提供60eJ/t，加工速度便提高1倍基础值。能令暴露于锈铜液的铜氧化。",
   "block.neepmeat.trommel": "亵渎滚筒筛",
   "block.neepmeat.integrator_egg": "融变机卵",
-  "block.neepmeat.integrator_egg.lore_0": "它在如心脏般微微搏动，似在表达它对血液的渴望。",
+  "block.neepmeat.integrator_egg.lore_0": "它在如心脏般微微搏动，似在表达对血液的渴望。",
   "block.neepmeat.advanced_integrator_egg": "高级融变机卵",
   "block.neepmeat.advanced_integrator": "高级融变生物机",
   "block.neepmeat.advanced_integrator_structure": "高级融变生物机结构",
@@ -476,7 +487,7 @@
   "block.neepmeat.breaker": "机动破坏器",
 
   "block.neepmeat.motor_unit": "发动机",
-  "block.neepmeat.motor_unit.lore_0": "能为机器方块供能。运作消耗缥缈燃液。\n最大输出功率：400eJ/t",
+  "block.neepmeat.motor_unit.lore_0": "能为机器方块供能。运作消耗瞬变浆液。\n最大输出功率：400eJ/t",
   "block.neepmeat.advanced_motor": "高级发动机",
   "block.neepmeat.advanced_motor.lore_0": "能为机器方块供能。由相连的脉管网络供能。\n最大输出功率：800eJ/t",
   "block.neepmeat.large_motor": "大型发动机",
@@ -708,7 +719,7 @@
   "item.neepmeat.meat_steel_boots": "肉钢靴子",
 
   "block.neepmeat.charnel_compactor": "积骸压缩桶",
-  "block.neepmeat.charnel_compactor.lore_0": "与融变生物机相连接时能将肉转化为融合液。",
+  "block.neepmeat.charnel_compactor.lore_0": "与融变生物机相连接时能将肉类转化为融合液。",
 
   "message.neepmeat.compactor.not_found": "未连接至融变生物机。",
   "message.neepmeat.compactor.immature": "所连接的融变生物机未完全成熟。",
@@ -721,7 +732,7 @@
   "block.neepmeat.contaminated_dirt": "染污碎石",
 
   "block.neepmeat.phage_ray": "吞噬射线炮",
-  "block.neepmeat.phage_ray.lore_0": "玩家控制瞄准时可发射死光光束，能迅速破坏方块。摧毁的方块不会产生掉落物。",
+  "block.neepmeat.phage_ray.lore_0": "玩家控制瞄准时可发射特种光束，可用其迅速破坏方块。摧毁的方块不会产生掉落物。",
 
   "message.neepmeat.synthesiser.template": "当前生物体模板：%s",
 
@@ -747,8 +758,8 @@
   "item.neepmeat.patina_treatment_bucket": "锈铜液桶",
   "block.neepmeat.patina_treatment": "锈铜液",
 
-  "item.neepmeat.ethereal_fuel_bucket": "缥缈燃液桶",
-  "block.neepmeat.ethereal_fuel": "缥缈燃液",
+  "item.neepmeat.ethereal_fuel_bucket": "瞬变浆液桶",
+  "block.neepmeat.ethereal_fuel": "瞬变浆液",
 
   "item.neepmeat.eldritch_enzymes_bucket": "怪异酶液桶",
   "block.neepmeat.eldritch_enzymes": "怪异酶液",
@@ -809,6 +820,7 @@
   "entity.neepmeat.glome": "高维球体",
   "entity.neepmeat.hound": "猎犬",
   "entity.neepmeat.bovine_horror": "怖牛",
+  "entity.neepmeat.skyworm": "播卵生物体",
 
   "entity.neepmeat.repeater": "播报员",
   "entity.neepmeat.machine_worm": "机器蠕虫",
@@ -849,7 +861,7 @@
   "implant.neepmeat.shield": "护盾附加",
   "implant.neepmeat.shield.desc_0": "使用此物品时抵消部分伤害。",
   "item.neepmeat.living_tool_implant": "工具生物体",
-  "implant.neepmeat.living_tool_implant.desc_0": "将任何物品改装成消耗缥缈燃液的生物体。耐久度可在灌装机中恢复。",
+  "implant.neepmeat.living_tool_implant.desc_0": "将任何物品改装成消耗瞬变浆液的生物体。耐久度可在灌装机中恢复。",
 
   "item.neepmeat.chrysalis": "神圣之蛹",
   "item.neepmeat.chrysalis.lore_0": "你有种感觉，给牛嵌装这个植入物会是个很好的主意。",
@@ -965,7 +977,7 @@
   "screen.neepmeat.limiter_valve.text.mb": "mB/t",
   "screen.neepmeat.limiter_valve.text.mb_info": "毫桶每刻（1B = 1000mB）",
   "screen.neepmeat.limiter_valve.text.ej_t": "eJ/t",
-  "screen.neepmeat.limiter_valve.text.ej_t_info": "奥秘焦耳每刻，以缥缈燃液为基准（1B = 162000eJ）",
+  "screen.neepmeat.limiter_valve.text.ej_t_info": "奥秘焦耳每刻，以瞬变浆液为基准（1B = 162000eJ）",
   "screen.neepmeat.power_limiter_valve": "高级限流阀",
   "screen.neepmeat.power_limiter_valve.lore_0": "可根据功率限流。",
 
@@ -1018,6 +1030,7 @@
   "component.neepmeat.tree_vacuum": "真空吸树机",
   "component.neepmeat.large_compressor": "大型压缩机",
   "component.neepmeat.stomach": "胃囊",
+  "component.neepmeat.metaboliser_segment": "代谢机工作段",
   "component.neepmeat.charnel_pump": "积骸泵",
   "component.neepmeat.extractor": "采集提取机",
   "component.neepmeat.hopper": "漏斗",
@@ -1027,6 +1040,7 @@
   "component.neepmeat.fluid_output": "流体输出端口",
   "component.neepmeat.lucky_one": "幸运儿",
 
+  "category.neepmeat.general.energy": "加工能耗：%d",
   "category.neepmeat.pressing": "压制",
   "category.neepmeat.grinding": "粉碎",
   "category.neepmeat.advanced_crushing": "高级粉碎",
@@ -1037,7 +1051,6 @@
   "category.neepmeat.ore_fat": "矿石脂肪处理",
   "category.neepmeat.compacting": "积骸压缩",
   "category.neepmeat.mixing": "混合",
-  "category.neepmeat.mixing.time": "时间：%ds（1000eJ/t）",
   "category.neepmeat.alloy_smelting": "合金冶炼",
   "category.neepmeat.alloy_smelting.time": "时间：%ds",
   "category.neepmeat.vivisection": "活体解剖",
@@ -1202,5 +1215,15 @@
   "screen.neepmeat.vsc.cut_off": "功率不足时不传输",
 
   "death.attack.neepmeat.crusher": "%1$s被绞成了嵌着肉块的番茄酱",
-  "death.attack.neepmeat.mincer": "%1$s被磨成了汤状的匀浆"
+  "death.attack.neepmeat.mincer": "%1$s被磨成了汤状的匀浆",
+
+  "process.neepmeat.disruptor": "扰乱机",
+  "process.neepmeat.trommel": "滚筒筛",
+  "process.neepmeat.metaboliser": "代谢机",
+  "process.neepmeat.crusher": "粉碎机",
+  "process.neepmeat.large_compressor": "大型压缩机",
+  "process.neepmeat.phage_ray": "吞噬射线炮",
+  "process.neepmeat.charnel_pump": "积骸泵",
+  "process.neepmeat.bioreactor": "生物反应机",
+  "process.neepmeat.tree_vacuum": "真空吸树机"
 }
