@@ -1,7 +1,7 @@
 ---
 navigation:
   parent: crazyae2addons_index.md
-  title: 熵演摇篮多方块
+  title: 熵演催变仪多方块
   icon: crazyae2addons:entropy_cradle_controller
 categories:
   - Crafting and Patterns
@@ -11,13 +11,13 @@ item_ids:
    - crazyae2addons:entropy_cradle
 ---
 
-# 熵演摇篮
+# 熵演催变仪
 
 <GameScene zoom="1" interactive={true}>
   <ImportStructure src="../assets/entropy_cradle.nbt" />
 </GameScene>
 
-**熵演摇篮**是容量极大的能量积累和转化多方块结构。它最多可存储**6亿FE**，完全充满后还可进行高级**方块转化**。
+**熵演催变仪**是一种大体积多方块结构，能积累能量和转化方块。它最多可存储**6亿FE**，完全充满后还可进行高级**方块转化**。
 
 ---
 
@@ -39,5 +39,5 @@ item_ids:
 
 - 需要应用能源2（AE2）能量，且需占用频道。
 - 只接受AE能量充能。
-- 可用配方请参见JEI。
+- 可用配方请参见JEI/EMI。
 - 可用建筑机自动化其配方。

@@ -40,5 +40,5 @@ It stores up to **600 million FE**, and performs powerful **block transmutations
 
 - Requires AE2 power and channels.
 - Can be charged only via AE energy.
-- You can find available recipes in JEI.
+- You can find available recipes in JEI/EMI.
 - You can fully automate crafting with it using the builder.
