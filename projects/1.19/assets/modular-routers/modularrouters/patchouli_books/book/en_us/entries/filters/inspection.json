@@ -1,0 +1,23 @@
+{
+  "name": "Inspection Filter",
+  "category": "filters",
+  "icon": "modularrouters:inspection_filter",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This filter allows for matching of items by various miscellaneous integer properties of the item. The current inspections supported are:$(li)For fluid container items (buckets, tanks...), the fluid level as a percentage.$(li)For energy container items (batteries, powered tools...), the energy level as a percentage."
+    },
+    {
+      "type": "text",
+      "text": "$(li)The highest enchantment level of enchantments on the item (can be used to filter out enchanted items, e.g. from a mob farm)$(li)The durability of items (tools, weapons) as a percentage of the max durability.$(li)For edible items, the food value as the number of half-shanks restored (e.g. steak has a value of 8)."
+    },
+    {
+      "type": "text",
+      "text": "For items which don't have the inspected property at all, the returned value will always be -1, e.g. a piece of $(item)Cobblestone/$ has a durability value of -1. This is distinct from a 0 return, since a tool with <1% durability remaining would return a value of 0.$(p)This filter can be useful to automatically pull out damaged or discharged items for repair/recharging, etc."
+    },
+    {
+      "type": "crafting",
+      "recipe": "modularrouters:inspection_filter"
+    }
+  ]
+}
