@@ -2,7 +2,7 @@
 navigation:
   title: Ferricore Clock
   icon: "justdynathings:ferricore_clock"
-  position : 4
+  position: 4
   parent: justdynathings:other.md
 item_ids:
   - justdynathings:ferricore_clock
@@ -11,7 +11,8 @@ item_ids:
 # A fully configurable redstone clocks
 
 # Ferricore Clock
-*aka Redstone Clock*
+
+_aka Redstone Clock_
 
 A block that can be programmed to power redstone components with any side configurable with a specific gametick
 
@@ -39,6 +40,4 @@ Ferricore Clock with direction NORTH and UP disabled to prevent to power not wan
 
 </GameScene>
 
-
-
-<RecipeFor id="justdynathings:ferricore_clock" />
+<Recipe id="justdynathings:ferricore_clock" />

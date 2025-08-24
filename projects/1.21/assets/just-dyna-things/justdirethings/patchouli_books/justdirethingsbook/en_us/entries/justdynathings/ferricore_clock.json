@@ -1,0 +1,51 @@
+{
+  "name": "Timering Circuits",
+  "sortnum": 8,
+  "category": "justdirethings:justdynathings",
+  "icon": "justdynathings:ferricore_clock",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "title": "Ferricore Clock",
+      "recipe": "justdynathings:ferricore_clock",
+      "text": "A block that can be programmed to power redstone components with any side configurable with a specific gametick"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ", 
+            " T ", 
+            "   "
+          ],
+          [
+            " E ", 
+            "SFN", 
+            " W "
+          ],
+          [
+            "   ", 
+            " L ", 
+            "   "
+          ],
+          [
+            "   ", 
+            " 0 ", 
+            "   "
+          ]
+        ],
+        "mapping": {
+          "T": "minecraft:redstone_torch[lit=true]",
+          "L": "minecraft:redstone_lamp[lit=true]",
+          "W": "minecraft:repeater[powered=true,locked=false,delay=1,facing=west]",
+          "N": "minecraft:repeater[powered=false,locked=false,delay=1,facing=north]",
+          "S": "minecraft:repeater[powered=false,locked=false,delay=1,facing=south]",
+          "E": "minecraft:repeater[powered=true,locked=false,delay=1,facing=east]",
+          "F": "justdynathings:ferricore_clock[active=true,north=false,south=false,east=true,west=true,up=false,down=true]"
+        }
+      },
+      "enable_visualize": false
+    }
+  ]
+}

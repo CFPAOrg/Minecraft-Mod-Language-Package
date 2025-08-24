@@ -2,7 +2,7 @@
 navigation:
   title: 更多砧
   icon: "justdynathings:eclipse_alloy_anvil"
-  position : 1
+  position: 1
 ---
 
 # 更多砧
