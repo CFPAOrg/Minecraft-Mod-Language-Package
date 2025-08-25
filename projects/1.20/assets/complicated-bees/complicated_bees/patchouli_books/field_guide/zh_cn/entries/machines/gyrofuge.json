@@ -1,0 +1,97 @@
+{
+  "name": "回旋离心机",
+  "icon": "complicated_bees:gyrofuge_base",
+  "category": "complicated_bees:machines",
+  "advancement": "complicated_bees:advanced_products",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l:complicated_bees:machines/mellarium)蜂房组$()每蜜蜂工作刻能产出成千上万的蜜脾，这就不是一台（好几台也不太行！）常规的离心机能处理的了，需要更强大的处理加工设备。$(br2)此时登场的是回旋离心机——过度生产之愁的多方块解决方案。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "回旋离心机（不带升级）的加工速度是离心机的一半，且自身带有 1.5 倍的产出概率加成。回旋离心机可用模块升级，与蜂房组类似。$(br2)需格外注意，回旋离心机的$(l)顶层不接受除基础方块外的回旋离心机方块$()。$(br2)回旋离心机空闲时也会消耗少量能量。"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          ["BBB","BBB","BBB"],
+          ["###","###","###"],
+          ["###","#0#","###"]
+        ],
+        "mapping": {
+          "B": "complicated_bees:gyrofuge_base",
+          "#": "#complicated_bees:multiblock/gyrofuge",
+          "0": "#complicated_bees:multiblock/gyrofuge"
+        }
+      },
+      "text": "不推荐跨区块边界放置，也不推荐两两相邻放置。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_base",
+      "text": "回旋离心机镶板可在锻造台中组合铁锭、蜂房组镶板、红石火把制造。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_energy_cell",
+      "title": "能量单元",
+      "text": "为让回旋离心机接受能量，需要为其至少安装一个这个。$(br2)输入和输出仓每 4 刻会尝试传输一次，传输量与回旋离心机容量相等。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_input_hatch",
+      "recipe2": "complicated_bees:gyrofuge_output_hatch",
+      "title": "输出与输入仓"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_basic_processing_unit",
+      "text": "加工单元能增加同一时刻能处理的物品数量。",
+      "title": "加工单元"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_processing_unit",
+      "recipe2": "complicated_bees:gyrofuge_advanced_processing_unit",
+      "title": "加工单元"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_basic_speed_unit",
+      "text": "速度单元能增加回旋离心机加工的速度。",
+      "title": "速度单元"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_speed_unit",
+      "recipe2": "complicated_bees:gyrofuge_advanced_speed_unit",
+      "title": "速度单元"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_basic_efficiency_unit",
+      "text": "效率单元能增加回旋离心机的能量效率。",
+      "title": "效率单元"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_efficiency_unit",
+      "recipe2": "complicated_bees:gyrofuge_advanced_efficiency_unit",
+      "title": "效率单元"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_basic_extraction_unit",
+      "text": "提取单元能增加回旋离心机加工的产出概率。",
+      "title": "提取单元"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "complicated_bees:gyrofuge_extraction_unit",
+      "recipe2": "complicated_bees:gyrofuge_advanced_extraction_unit",
+      "title": "提取单元"
+    }
+  ]
+}
