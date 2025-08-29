@@ -1,5 +1,4 @@
 \cat{utility}
-
 # Utility
 
 ## . ( n1 -- )
@@ -23,7 +22,11 @@ Starts definition of a new word. The word's name is given by the character seque
 
 ## :I
 
-Starts definition of a new immediate word. The word's name is given by the character sequence following :.
+Starts definition of a new immediate word. The word's name is given by the character sequence following :I.
+
+```
+:I aword 123 . ;
+```
 
 ## ; 
 
@@ -113,6 +116,8 @@ Copies the top return stack entry to the data stack.
 
 \cat{flow_control}
 # Flow Control
+
+## END ( -- )
 
 Emits the END instruction, which stops execution. Useful as a placeholder for backpatching. Equivalent to NEEPASM `END`.
 
