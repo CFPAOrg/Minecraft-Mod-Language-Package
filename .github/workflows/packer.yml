@@ -13,7 +13,7 @@ on:
 
 jobs:
   build-packer:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    if: github.repository == '502y/Minecraft-Mod-Language-Package'
     name: Build / Cache Packer
     runs-on: windows-latest
     steps:
@@ -40,7 +40,7 @@ jobs:
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
   # build-uploader:
-  #   if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+  #   if: github.repository == '502y/Minecraft-Mod-Language-Package'
   #   name: Build / Cache Uploader
   #   runs-on: windows-latest
   #   steps:
@@ -65,7 +65,7 @@ jobs:
   #       run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
   initialize-release:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    if: github.repository == '502y/Minecraft-Mod-Language-Package'
     name: Initialize Release
     runs-on: windows-latest
     steps:
@@ -88,11 +88,11 @@ jobs:
           prerelease: false
     outputs:
       upload-url: ${{ steps.create_release.outputs.upload_url }}
-      tag-name: ${{ steps.create_timestamp.outputs.timestamp }}
+      tag-name: Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
 
 
   pack:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    if: github.repository == '502y/Minecraft-Mod-Language-Package'
     name: Pack Resources and Upload Artifacts/Releases
     needs: [ build-packer, initialize-release ] # 显然，需要存在打包程序，才能打包。
     strategy:
@@ -224,7 +224,7 @@ jobs:
         continue-on-error: true
 
   update-index:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    if: github.repository == '502y/Minecraft-Mod-Language-Package'
     name: Update Version Index (Optional)
     needs: [pack, initialize-release]
     runs-on: ubuntu-latest
