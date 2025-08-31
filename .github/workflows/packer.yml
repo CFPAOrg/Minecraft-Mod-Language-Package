@@ -157,8 +157,8 @@ jobs:
         if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
       # Upload release asset: https://github.com/actions/upload-release-asset
-      - name: Update release asset for ${{ matrix.version }}
-        id: upload-release-asset
+      - name: Update release asset for ${{ matrix.version }} (ZIP)
+        id: upload-release-asset-zip
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
         uses: actions/upload-release-asset@v1
         env:
@@ -168,6 +168,19 @@ jobs:
           asset_path: Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
           asset_name: Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
           asset_content_type: application/zip
+
+      # 新增步骤：上传 MD5 文件
+      - name: Update release asset for ${{ matrix.version }} (MD5)
+        id: upload-release-asset-md5
+        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ needs.initialize-release.outputs.upload-url }}
+          asset_path: ${{ matrix.version }}.md5
+          asset_name: ${{ matrix.version }}.md5
+          asset_content_type: text/plain
 
       - name: Collect updated versions
         id: collect-updated
