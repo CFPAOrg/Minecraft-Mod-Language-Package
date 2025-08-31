@@ -16,7 +16,7 @@ item_ids:
 
 **默认条件：**
 
-- 邻近的太阳能板会增加产能速率
+- 邻近的太阳能板越多，产能速率越高
 - 处于高Y坐标或低Y坐标处可增加产能速率，中等Y坐标处则减少
 
 <BlockImage id="justdynathings:eclipse_alloy_solar_panel" scale="4.0"/>

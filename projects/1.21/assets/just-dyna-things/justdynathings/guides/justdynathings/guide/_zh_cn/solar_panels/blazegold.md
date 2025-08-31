@@ -16,7 +16,7 @@ item_ids:
 
 **默认条件：**
 
-- 维度为下界
+- 维度 = 下界
 
 <BlockImage id="justdynathings:blazegold_solar_panel" scale="4.0"/>
 

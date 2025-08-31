@@ -16,9 +16,9 @@ item_ids:
 
 **默认条件：**
 
-- 维度为主世界
-- 露天
-- 日间
+- 维度 = 主世界
+- 露天 = 是
+- 日间 = 是
 
 <BlockImage id="justdynathings:ferricore_solar_panel" scale="4.0"/>
 

@@ -16,8 +16,8 @@ item_ids:
 
 **默认条件：**
 
-- 露天
-- 邻近的太阳能板会增加产能速率
+- 露天 = 是
+- 邻近的太阳能板越多，产能速率越高
 
 <BlockImage id="justdynathings:celestigem_solar_panel" scale="4.0"/>
 
