@@ -4,21 +4,21 @@ on:
   workflow_dispatch:
   push:
     branches: [ main ]
-    paths: 
+    paths:
       - 'src/**'
       - 'config/packer/**'
       - 'projects/**'
 
 
-      
+
 jobs:
   build-packer:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    if: github.repository == '502y/Minecraft-Mod-Language-Package'
     name: Build / Cache Packer
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-        with: 
+        with:
           fetch-depth: 1
           sparse-checkout: src
 
@@ -40,12 +40,12 @@ jobs:
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
   # build-uploader:
-  #   if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+  #   if: github.repository == '502y/Minecraft-Mod-Language-Package'
   #   name: Build / Cache Uploader
   #   runs-on: windows-latest
   #   steps:
   #     - uses: actions/checkout@v4
-  #       with: 
+  #       with:
   #         fetch-depth: 1
   #         sparse-checkout: src
 
@@ -65,16 +65,16 @@ jobs:
   #       run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
   initialize-release:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    if: github.repository == '502y/Minecraft-Mod-Language-Package'
     name: Initialize Release
     runs-on: windows-latest
     steps:
 
       - name: Create timestamp
         id: create_timestamp
-        run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
+        run: echo "timestamp=Snapshot-$(date '+%Y%m%d%H%M%s')" >> $GITHUB_OUTPUT
         shell: bash
-      
+
         # Create the release: https://github.com/actions/create-release
       - name: Create release
         id: create_release
@@ -88,10 +88,11 @@ jobs:
           prerelease: false
     outputs:
       upload-url: ${{ steps.create_release.outputs.upload_url }}
+      tag-name: ${{ steps.create_timestamp.outputs.timestamp }}
 
 
   pack:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    if: github.repository == '502y/Minecraft-Mod-Language-Package'
     name: Pack Resources and Upload Artifacts/Releases
     needs: [ build-packer, initialize-release ] # 显然，需要存在打包程序，才能打包。
     strategy:
@@ -101,11 +102,23 @@ jobs:
         # 如需添加新版本，在这里添加即可。
         version: [ "1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric" ]
     runs-on: windows-latest
+    outputs:
+      # 为每个版本创建独立的输出变量
+      updated_versions_1_12_2: ${{ steps.collect-updated.outputs.version_1_12_2 }}
+      updated_versions_1_16: ${{ steps.collect-updated.outputs.version_1_16 }}
+      updated_versions_1_16_fabric: ${{ steps.collect-updated.outputs.version_1_16_fabric }}
+      updated_versions_1_18: ${{ steps.collect-updated.outputs.version_1_18 }}
+      updated_versions_1_18_fabric: ${{ steps.collect-updated.outputs.version_1_18_fabric }}
+      updated_versions_1_19: ${{ steps.collect-updated.outputs.version_1_19 }}
+      updated_versions_1_20: ${{ steps.collect-updated.outputs.version_1_20 }}
+      updated_versions_1_20_fabric: ${{ steps.collect-updated.outputs.version_1_20_fabric }}
+      updated_versions_1_21: ${{ steps.collect-updated.outputs.version_1_21 }}
+      updated_versions_1_21_fabric: ${{ steps.collect-updated.outputs.version_1_21_fabric }}
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 20 # 显然，需要有提交历史才能比较提交。20这个数是任意的。
-      
+
       # 由于Github的限制，这里需要重新拉取打包程序。
       - name: Restore Packer
         id: cache-restore
@@ -155,7 +168,132 @@ jobs:
           asset_path: Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
           asset_name: Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
           asset_content_type: application/zip
+
+      - name: Collect updated versions
+        id: collect-updated
+        run: |
+          if [ "${{ steps.check-changes.outputs.changed }}" == "true" ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            # 根据当前矩阵版本设置对应的输出变量
+            case "${{ matrix.version }}" in
+              "1.12.2")
+                echo "version_1_12_2=1.12.2" >> $GITHUB_OUTPUT
+                ;;
+              "1.16")
+                echo "version_1_16=1.16" >> $GITHUB_OUTPUT
+                ;;
+              "1.16-fabric")
+                echo "version_1_16_fabric=1.16-fabric" >> $GITHUB_OUTPUT
+                ;;
+              "1.18")
+                echo "version_1_18=1.18" >> $GITHUB_OUTPUT
+                ;;
+              "1.18-fabric")
+                echo "version_1_18_fabric=1.18-fabric" >> $GITHUB_OUTPUT
+                ;;
+              "1.19")
+                echo "version_1_19=1.19" >> $GITHUB_OUTPUT
+                ;;
+              "1.20")
+                echo "version_1_20=1.20" >> $GITHUB_OUTPUT
+                ;;
+              "1.20-fabric")
+                echo "version_1_20_fabric=1.20-fabric" >> $GITHUB_OUTPUT
+                ;;
+              "1.21")
+                echo "version_1_21=1.21" >> $GITHUB_OUTPUT
+                ;;
+              "1.21-fabric")
+                echo "version_1_21_fabric=1.21-fabric" >> $GITHUB_OUTPUT
+                ;;
+            esac
+          fi
+        shell: bash
+        continue-on-error: true
+
+  update-index:
+    if: github.repository == '502y/Minecraft-Mod-Language-Package'
+    name: Update Version Index (Optional)
+    needs: [pack, initialize-release]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download existing index.json if exists
+        run: |
+          if [ -f version-index.json ]; then
+            cp version-index.json version-index.json.bak
+          else
+            echo "{}" > version-index.json
+          fi
+
+      - name: Update index.json
+        env:
+          RELEASE_TAG: ${{ needs.initialize-release.outputs.tag-name }}
+          # 获取所有版本的更新状态，即使某些版本未触发也不会影响
+          UPDATED_VERSIONS_1_12_2: ${{ needs.pack.outputs.updated_versions_1_12_2 }}
+          UPDATED_VERSIONS_1_16: ${{ needs.pack.outputs.updated_versions_1_16 }}
+          UPDATED_VERSIONS_1_16_FABRIC: ${{ needs.pack.outputs.updated_versions_1_16_fabric }}
+          UPDATED_VERSIONS_1_18: ${{ needs.pack.outputs.updated_versions_1_18 }}
+          UPDATED_VERSIONS_1_18_FABRIC: ${{ needs.pack.outputs.updated_versions_1_18_fabric }}
+          UPDATED_VERSIONS_1_19: ${{ needs.pack.outputs.updated_versions_1_19 }}
+          UPDATED_VERSIONS_1_20: ${{ needs.pack.outputs.updated_versions_1_20 }}
+          UPDATED_VERSIONS_1_20_FABRIC: ${{ needs.pack.outputs.updated_versions_1_20_fabric }}
+          UPDATED_VERSIONS_1_21: ${{ needs.pack.outputs.updated_versions_1_21 }}
+          UPDATED_VERSIONS_1_21_FABRIC: ${{ needs.pack.outputs.updated_versions_1_21_fabric }}
+        run: |
+          python3 - <<EOF
+          import json
+          import os
+      
+          index_file = "version-index.json"
+          try:
+            with open(index_file, "r") as f:
+              index = json.load(f)
+          except FileNotFoundError:
+            index = {}
+              
+          # 收集所有版本的更新状态
+          updated_versions = []
+          version_vars = [
+            "UPDATED_VERSIONS_1_12_2",
+            "UPDATED_VERSIONS_1_16", 
+            "UPDATED_VERSIONS_1_16_FABRIC",
+            "UPDATED_VERSIONS_1_18",
+            "UPDATED_VERSIONS_1_18_FABRIC",
+            "UPDATED_VERSIONS_1_19",
+            "UPDATED_VERSIONS_1_20",
+            "UPDATED_VERSIONS_1_20_FABRIC",
+            "UPDATED_VERSIONS_1_21",
+            "UPDATED_VERSIONS_1_21_FABRIC"
+          ]
+          
+          # 只有实际更新的版本才会被添加到列表中
+          for var in version_vars:
+              version = os.environ.get(var, "")
+              if version:
+                  updated_versions.append(version)
+          
+          release_tag = os.environ.get("RELEASE_TAG", "")
+
+          # 为所有更新的版本更新索引
+          for v in updated_versions:
+            if v:
+              index[v] = release_tag
     
+          with open(index_file, "w") as f:
+            json.dump(index, f, indent=2)
+          EOF
+
+      - name: Commit and Push index.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add version-index.json
+          git commit -m "Update version index for $RELEASE_TAG" || echo "No changes to commit"
+          git push
 
   upload:
     if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
@@ -164,14 +302,14 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-        with: 
+        with:
           fetch-depth: 1
           sparse-checkout: src
 
       # 构造程序
       - name: Build Uploader
         run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
-      
+
       # 还原artifact（资源包）
       - name: Restore Artifacts
         uses: actions/download-artifact@v4
