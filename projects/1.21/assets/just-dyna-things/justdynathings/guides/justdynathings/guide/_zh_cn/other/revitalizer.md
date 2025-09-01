@@ -2,7 +2,7 @@
 navigation:
   title: 复苏器
   icon: "justdynathings:revitalizer"
-  position : 3
+  position: 3
   parent: justdynathings:other.md
 item_ids:
   - justdynathings:revitalizer
@@ -10,10 +10,9 @@ item_ids:
 
 # 复苏器
 
-能够消耗Forge能量（Forge Energy）来重新激活其上方凝胶。
+能够消耗Forge能量（Forge Energy，FE）来重新激活其上方的凝胶。
 
 <BlockImage id="justdynathings:revitalizer" scale="4.0" p:active="false" p:facing="down" p:goo_found="false"/>
-
 
 示例：复苏的烈焰蕾凝胶下方有一供能充足的复苏器
 
@@ -22,4 +21,4 @@ item_ids:
   <Block y="1" id="justdirethings:gooblock_tier2" p:alive="true"/>
 </GameScene>
 
-<RecipeFor id="justdynathings:revitalizer" />
+<Recipe id="justdynathings:revitalizer" />
