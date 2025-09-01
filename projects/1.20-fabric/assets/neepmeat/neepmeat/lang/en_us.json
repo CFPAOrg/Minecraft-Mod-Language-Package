@@ -560,7 +560,7 @@
   "block.neepmeat.duat_gravel": "Duat Gravel",
 
   "item.neepmeat.sacrificial_dagger": "Tissue Operator",
-  "item.neepmeat.sacrificial_dagger.lore_0": "Also acts as a wrench.",
+  "item.neepmeat.sacrificial_dagger.lore_0": "Also acts as a wrench.\nEntities produce blood when killed above a Drain.\nUse and hold to vivisect.",
   "item.neepmeat.animal_heart": "Rough Heart",
   "item.neepmeat.animal_heart.lore_0": "Crude; it lacks any logical design sensibilities.",
 
@@ -655,7 +655,7 @@
   "item.neepmeat.projector": "Guide Projector",
   "item.neepmeat.projector.lore_0": "A guide to all NEEPMeat content.",
   "item.neepmeat.projector.lore_1": "Press §fCTRL + L§7 to look up a hovered item while this guide is in your inventory.",
-  "screen.neepmeat.guide.search": "Type '/' to search",
+  "screen.neepmeat.guide.search": "Type '%s' to search",
 
   "item.neepmeat.pipette": "Pipette",
   "item.neepmeat.pipette.full": "Pipette: %s (%s mb)",
@@ -917,7 +917,7 @@
   "instruction.neepmeat.xnor.desc": "Pops the top two stack entries.\nComputes their bitwise §6XNOR§f.\nThe result is pushed to the stack.",
   "instruction.neepmeat.shr.desc": "Bit-shifts the top stack element §6right§f by the give number of bits.",
   "instruction.neepmeat.shl.desc": "Bit-shifts the top stack element §6left§f by the give number of bits.",
-  "instruction.neepmeat.jump.desc": "Jumps to the given label or by the given number of instructions. \nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
+  "instruction.neepmeat.jmp.desc": "Jumps to the given label or by the given number of instructions. \nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
   "instruction.neepmeat.bit.desc": "(Branch if true) Branches to the given label or number of instructions if the top stack element is §6greater than zero§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
   "instruction.neepmeat.bif.desc": "(Branch if false) Branches to the given label or number of instructions if the top stack element is §6zero or negative§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
   "instruction.neepmeat.say.desc": "Sends the given string to all players within 20 blocks.\nIf no string is provided, it will pop and print the last stack element.\nAdding §6d§f §6h§' or §6b§f to the end will format the stack entry as decimal, hexadecimal or binary respectively.",
@@ -925,7 +925,7 @@
   "instruction.neepmeat.robot.desc": "Selects the actuator at ARG1. All further instructions will use the actuator until a new one is selected.",
   "instruction.neepmeat.exec.desc": "Runs the following instruction ARG2 in the executor at block ARG1.",
   "instruction.neepmeat.combine.desc": "Removes an item from storage ARG1 and combines it with the item in workbench ARG2.",
-  "instruction.neepmeat.move.desc": "Tries to move a stack of items from storage ARG1 into storage ARG2.",
+  "instruction.neepmeat.move.desc": "Tries to the specified number of items from storage ARG1 into storage ARG2. If no amount is specified, 64 will be assumed. The success of the move is pushed to the stack.\n §6ARG1§f: Source storage (world target)\n §6ARG2§f: destination storage (world target)\n §6ARG3§f: amount (integer, optional)\n §6ARG4§f: item ID (string, * for wildcard, optional)",
   "instruction.neepmeat.implant.desc": "Removes an item from storage ARG1 and surgically implants it into entity ARG2.",
   "instruction.neepmeat.inject.desc": "Draws fluid from storage ARG1 and injects it into the item in workbench ARG2.",
   "instruction.neepmeat.wait_redstone.desc": "Waits for a signal strength above zero at the redstone interface ARG1.",
