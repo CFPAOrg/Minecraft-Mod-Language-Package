@@ -10,6 +10,9 @@
   "block.slate_work.sentinel_loci": "哨卫缓存器",
   "block.slate_work.broadcaster_loci": "Iota之门",
   "block.slate_work.save_loci": "状态恢复主机",
+  "block.slate_work.hotbar_loci": "口袋模拟器",
+  "block.slate_work.redstone_loci": "红石激发器",
+  "block.slate_work.accelerator_loci": "凝浆加速器",
 
   "block.slate_work.listening_impetus": "图书管理员促动石",
 
@@ -26,6 +29,9 @@
 
   "hexcasting.action.slate_work:set_sents": "安置伪哨卫",
   "hexcasting.action.slate_work:get_sents": "定位伪哨卫",
+
+  "hexcasting.action.slate_work:set_slot": "设置槽位",
+  "hexcasting.action.slate_work:get_items": "列出物品",
 
   "hexcasting.action.slate_work:wave_position": "波位之精思",
   "hexcasting.action.slate_work:wave_normal": "波向之精思",
@@ -60,6 +66,7 @@
   "slate_work.page.storage_loci_block.storage_loci_cont": "虽然一个$(thing)存储容具/$只能存储 16“类”物品（就和箱子只有 27 个槽位差不多），但它们却能无视标准堆叠上限，换言之，每个槽里都能存下近乎无限的物品！$(br2)而且，在$(l:greatwork/spellcircles)法术环/$的高密度$(thing)媒质波/$激活容具之后，$(l:greatwork/spellcircles)它/$就将能够读取和拿出$(thing)存储容具/$里的物品；激活的越多，能操作的就越多。我在$(l:patterns/spells/storage_loci)这里/$记录了进行这种操作所需的法术。",
   "slate_work.page.storage_loci_block.dropping": "需要格外注意的是，$(thing)存储容具/$遭到破坏时不会喷出其中的物品，而是会将物品小心打包进掉落的方块（和$(item)潜影盒/$很像）。$(br2)$(br2)$(o)“噢！是时候找点东西了！”$(br)[箱子：开启]$(br)[箱子：关闭]$(br)[箱子：开启]$(br)[箱子：关闭]$(br)[箱子：开启]$(br)[箱子：关闭]",
   "slate_work.page.storage_loci_block.lens": "佩戴$(l:items/lens)探知透镜/$去观察$(thing)存储容具/$的话，它会显示其内部的物品。这就好像是自然在取笑我，因为我无法把$(thing)存储容具/$里的物品直接拿出来……但还是得承认，看它一眼就知道里面存了什么确实很方便。",
+  "slate_work.page.storage_loci_block.hoppers": "制作$(thing)存储容具/$所用的村民似乎保留了他们使用箱子的能力！也就是说，$(thing)存储容具/$可以靠漏斗输入输出。现在看来，它们相当于输入种类几乎无限、但自身仅有 16 个槽位的缓存空间。",
   "slate_work.page.storage_loci_block.crafting": "$(thing)存储容具/$需要能够潜入深渊，还能根据少量提示取回物品的意识。$(thing)渔夫村民/$就很适合。",
 
   "slate_work.entry.ambit_loci": "范围扩展器",
@@ -104,12 +111,38 @@
   "slate_work.entry.save_loci": "状态恢复主机",
   "slate_work.page.save_loci.intro": "在仔细研究$(thing)$(l:patterns/meta#hexcasting:eval/cc)伊里斯之策略/$之后，我认识到它实际是将施法的状态保存为了 iota。又经过数小时的加工和失败实验，我成功复现了它的功能，且适用于法术环。$(br2)$(thing)状态恢复主机/$会完整存储$(l:greatwork/spellcircles)法术环/$的状态，包括大多数已发现的环核，以及栈、渡鸦之思、转义图案。",
   "slate_work.page.save_loci.save_loci": "它的功能，是将其存储的状态与当前运行状态“交换”。也即，$(l:greatwork/spellcircles)法术环/$激活它后，其会交换前述两者。此外，所存储的状态似乎不会保留“原始”$(l:greatwork/spellcircles)法术环/$的印记；换言之，若按特定方式排布$(l:greatwork/directrix)$(item)导向石/$，这一状态就可被多个$(l:greatwork/spellcircles)法术环/$使用。",
-  "slate_work.page.save_loci.scrying": "还有一点需要再提：戴上$(l:items/lens)探知透镜/$后去观察$(thing)状态恢复主机/$，即可查看其中的所有数据：$(li)栈、$(li)渡鸦之思、$(li)已执行的操作数、$(li)是否在转义状态、$(li)已转义的 iota、$(li)转义的总层数。$(br2)我能预见到，它会是调试法术环的绝佳工具，也会被开发出许多其他用途。",
+  "slate_work.page.save_loci.scrying": "还有一点需要再提：戴上$(l:items/lens)探知透镜/$后去观察$(thing)状态恢复主机/$，即可查看其中的所有数据：$(li)栈、$(li)渡鸦之思、$(li)已执行的操作数、$(li)是否在考察状态、$(li)已转义的 iota、$(li)转义的总层数。$(br2)我能预见到，它会是调试法术环的绝佳工具，也会被开发出许多其他用途。",
   "slate_work.page.save_loci.crafting": "$(o)哔哔。",
+
+  "slate_work.entry.hotbar_loci": "口袋模拟器",
+  "slate_work.page.hotbar_loci.intro": "我的劳心费神都是为扩大和展开我的影响领域，但要把物品从各种口袋和背包里搬来搬去实在是$(o)极其/$令人厌烦。即便$(hex)咒术/$能协助自动化搬运，我却依然还要亲自拿着物品……有必要再进一步。$(thing)悦灵/$就能持有物品，也许可以从这里出发？",
+  "slate_work.page.hotbar_loci.hotbar_loci": "$(thing)口袋模拟器/$解了我在物品栏管理上的愁！$(br)它使用$(thing)悦灵/$为核心，最多能持有 6“组”物品，让它们在$(thing)模拟器/$旁浮动。我可将其中 1 个物品组指定为$(l:patterns/spells/itempicking)手持物品/$，也即方块工程法术会优先从该组抽取。",
+  "slate_work.page.hotbar_loci.extra": "$(l:greatwork/spellcircles)法术环/$激活$(thing)模拟器/$后即会与之“绑定”——可以使用其中物品。$(br2)极令人开心的是，$(thing)口袋模拟器/$可以手动或借助$(l:patterns/hotbar_loci_patterns)法术/$交互。如果我用手与之交互，所有 6 个槽位都会呈现出来，且手持物品槽会发出$(l:greatwork/quenching_allays)淬灵晶/$颜色的光。",
+  "slate_work.page.hotbar_loci.crafting": "$(o)真是个好帮手啊。/$",
+
+  "slate_work.entry.accelerator_loci": "凝浆加速器",
+  "slate_work.page.accelerator_loci.intro": "在钻研古代遗存的图书馆时，我发现了某种“加速器”的蓝图，据称它能大幅加快$(l:greatwork/spellcircles)法术环/$。我花时间对失传的材料做了逆向工程，最终成功重制出了$(thing)凝浆加速器/$！",
+  "slate_work.page.accelerator_loci.accelerator_loci": "$(thing)凝浆加速器/$的具体工作原理，是消耗 2 个$(l:items/amethyst)紫水晶粉/$以将$(l:greatwork/spellcircles)法术环/$的速度加快 1 格石板每 1/20 秒，持续 13 格。但是，这 13 格里开头的几格要用去缓慢加速。有意思的是，它们的增益可以“叠加”，从而大大延长加速状态的持续时间。这同时也有负面效应：其消耗会以要加速的石板个数的平方增长。大范围铺开时要注意。",
+  "slate_work.page.accelerator_loci.crafting": "虽然我无法重制出“凝浆”这种失传材料，但把黏液和$(l:greatwork/quenching_allays)淬灵晶/$混合起来，产物似乎就会表现出足够相似的性质。$(br2)$(o)真是凝浆十足！",
+
+  "slate_work.entry.redstone_loci": "红石激发器",
+  "slate_work.page.redstone_loci.intro": "要搭建更加复杂的$(l:greatwork/spellcircles)法术环/$，就要更精细地控制石板的红石输出。$(br)比较器只会输出强度为 15 的平整红石信号，而且会在$(l:greatwork/spellcircles)法术环/$的运行过程中一直输出；起码算是能给简单的法术环用。",
+  "slate_work.page.redstone_loci.redstone_loci": "因此，我制造了$(thing)红石激发器/$。它会弹出栈顶 0 到 15（两端闭）的数，并将$(thing)激发器/$输出的信号强度设为该数。而且，只要$(thing)媒质波/$离开$(thing)激发器/$，它便不会再输出信号。$(br2)虽然并非本意，但它似乎和另一份古代的蓝图——和$(l:greatwork/accelerator_loci)加速器/$出自同一座图书馆的“波荡器”——趋同了。",
+  "slate_work.page.redstone_loci.crafting": "将$(item)红石粉/$和$(l:items/amethyst)紫水晶粉/$混合，再嵌入到石板里，应当就能达到我想要的红石信号传导性。",
+
+  "slate_work.entry.akashic_loci": "阿卡夏环核",
+  "slate_work.page.akashic_loci.intro": "$(l:greatwork/akashiclib)阿卡夏记录/$似乎是$(media)媒质/$和思维极为优良的导体。这种传导性优良到足够在$(l:greatwork/spellcircles)法术环/$中使用它。$(br2)$(br2)$(o)我所学甚多。我会将知识和我最引以为傲的创作一同分享。",
+  "slate_work.page.akashic_loci.akashic_loci": "每当$(l:greatwork/akashiclib)阿卡夏记录/$被$(l:greatwork/spellcircles)法术环/$的$(thing)媒质波/$激活时，它会要求提供一个图案 iota，或是任意 iota 再加一个图案 iota，而后弹出它们。$(br2)若传入单个图案 iota，则其会潜入记录，读取与该图案相关的 iota。$(br2)若传入任意 iota 再加一个图案 iota，则其会尝试将所给 iota 与所给图案关联起来。",
+  "slate_work.page.akashic_loci.extra": "这些功能和$(l:patterns/akashic_patterns)阿卡夏图案/$非常相似；但它们无需消耗$(media)媒质/$。换言之，用$(l:greatwork/spellcircles)法术环/$编写和查找$(l:greatwork/akashiclib)阿卡夏图书馆/$完全没有消耗。$(br2)重要提示：这一做法有一特性较为特殊——可借此清除书架。如果用此方法存储 Null iota，则其会清除与该图案关联的书架。",
 
   "slate_work.entry.slate_work_pigments": "华丽染色剂",
   "slate_work.page.slate_work_pigments.slate_work_pigments": "我的$(l:items/staff)法杖/$蜕变了，我的$(l:items/pigments)染色剂/$也必将蜕变。它们不会带来什么荣耀，也不会招致可怖的事故；它们带来的祝福只存在于视觉。$(br2)而且，知晓这些染色剂的人，即会知晓我的$(o)觉醒/$。",
-  "slate_work.page.slate_work_pigments.allay": "自我的……$(o)视野/$蜕变后，我发觉了悦灵的真实面貌——$(media)媒质/$碎片。也许这块$(media)媒质/$碎片可以转化成完美而华丽的染色剂？",
+  "slate_work.page.slate_work_pigments.allay": "自我的……$(o)视野/$蜕变后，我发觉了$(thing)悦灵/$的真实面貌——$(media)媒质/$碎片。也许这块$(media)媒质/$碎片可以转化成完美而华丽的染色剂？",
+
+  "slate_work.entry.hotbar_loci_patterns": "口袋模拟器图案",
+  "slate_work.page.hotbar_loci_patterns.intro": "$(l:greatwork/hotbar_loci)口袋模拟器/$很好用，后页的图案和法术能让它更好用。$(br2)若不在法术环中施放这些图案，$(l:casting/mishaps2)即会招致事故/$。而且，若其所处$(l:greatwork/spellcircles)法术环/$未与$(l:greatwork/hotbar_loci)口袋模拟器/$绑定，图案便失去效力。",
+  "slate_work.page.hotbar_loci_patterns.set_slot": "接受 0 到 5（两端闭）的数，并依此设置$(l:greatwork/hotbar_loci)口袋模拟器/$的手持槽位。无需消耗$(media)媒质/$。",
+  "slate_work.page.hotbar_loci_patterns.get_items": "将$(l:greatwork/hotbar_loci)口袋模拟器/$中的物品返回为$(l:patterns/scrying/item)物品组 iota/$。无需消耗$(media)媒质/$。",
 
   "slate_work.entry.slate_reflection": "石板精思操作",
   "slate_work.page.storage_loci.wave_position": "将$(thing)媒质波/$的当前位置压入栈顶。",
@@ -136,6 +169,10 @@
   "slate_work.page.whispering.bound": "最后，有两种方法解除$(item)传语之石/$的绑定。潜行使用$(thing)它/$可清除与$(thing)促动石/$的绑定。在$(thing)促动石/$被摧毁或搬走后再对$(thing)传语之石/$说话，它也会解除自身的绑定；它这一次仍会静默我的消息，但之后就不再会了。$(br2)很重要的是，$(thing)传语之石/$无法启动处于所谓“区块加载”范围之外的促动石。",
   "slate_work.page.whispering.crafting": "$(o)耳语与嗫嚅，喘息与恐惧，我能在这枚$(thing)石头/$$(o)里听见所有这些的微弱回音。那枚$(b)碎片/$$(o)之前到底经受过什么？",
 
+  "slate_work.entry.loci": "环核是什么？",
+  "slate_work.page.loci.intro": "在我$(l:greatwork/the_work)卓伟的醒觉/$之中，有一个词汇骤然出现在了我的脑海，祈求着我把它们带入现实——$(b)环核/$。$(br2)我整日整夜地扑在我的文献库里钻研，再加上$(l:greatwork/the_work)觉醒/$带来的知识，我终于解明了$(thing)环核/$这个词汇的意义。",
+  "slate_work.page.loci.explained": "总而言之，$(thing)环核/$是能以独特方式与$(l:greatwork/spellcircles)法术环/$交互的方块。$(l:items/slate)石板/$不是$(thing)环核/$，但可以把$(thing)环核/$看成$(l:items/slate)石板/$的“子集”。$(br2)$(o)环环相扣层层相嵌，无穷无尽的回路在迷宫样的深渊中弯折编织。一段舞蹈，无人能够理解。一首歌曲，声至宇宙，宇宙也回以呢喃。",
+
   "Mishaps:": "",
   "hexcasting.mishap.circle.no_storage_loci_ran": "%s处未找到已激活的容具",
   "hexcasting.mishap.circle.media_costs": "%s处需要的媒质超出了促动石当前的存储量",
@@ -149,6 +186,9 @@
   "hexcasting.mishap.needed_focus": "需要%s处存在核心，而实际没有",
   "hexcasting.mishap.no_storage_sentinel_ran": "未找到任何已激活的缓存器",
 
+  "hexcasting.mishap.circle.empty_stack": "%2$s处本应接受大于等于%1$s个参数，而实际为空栈",
+  "hexcasting.mishap.circle.invalid_value": "%3$s处本应在栈下标为%2$s处接受%1$s，而实际接受了%4$s",
+
   "Scrying Lenses:": "",
   "slate_work.scrying.macro.top": "图案：",
   "slate_work.scrying.macro.error": "无法显示iota",
@@ -156,10 +196,12 @@
   "slate_work.scrying.impetus.listening.unbound": "当前未设定呼名",
 
   "slate_work.scrying.save.translater_comment": "These next \"save\" translations are based on the `CastingImage` class",
-  "slate_work.scrying.save.escaping": "是否在转义状态：",
+  "slate_work.scrying.save.escaping": "是否在考察状态：",
   "slate_work.scrying.save.ops": "已执行的操作数：",
   "slate_work.scrying.save.paren": "转义的总层数：",
   "slate_work.scrying.save.escaped": "已转义的iota：",
   "slate_work.scrying.save.stack": "栈：",
-  "slate_work.scrying.save.ravenmind": "渡鸦之思："
+  "slate_work.scrying.save.ravenmind": "渡鸦之思：",
+
+  "slate_work.attributes.whispering": "传语之石：言语"
 }
