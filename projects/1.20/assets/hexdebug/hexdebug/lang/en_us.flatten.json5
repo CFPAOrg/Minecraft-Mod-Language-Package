@@ -1,0 +1,200 @@
+{
+  "item.hexdebug": {
+    debugger: "Debugger",
+    evaluator: "Evaluator",
+  },
+
+  "block.hexdebug": {
+    splicing_table: "Splicing Table",
+    focus_holder: "Focus Holder",
+  },
+
+  "itemGroup.hexdebug": "HexDebug",
+
+  text: {
+    hexdebug: {
+      connected: "Debug client connected!",
+      no_session: "Debug session is not running.",
+      thwack: "Thwack!",
+      // Next Iota: [{index}] {iota}
+      debugger_stopped: "Next Iota: [%d] %s",
+
+      splicing_table: {
+        button: {
+          view_left: "Move View Left",
+          view_right: "Move View Right",
+          select_none: "Select None",
+          select_all: "Select All",
+          clear_grid: "Clear Grid",
+          nudge_left: "Nudge Left",
+          nudge_right: "Nudge Right",
+          duplicate: "Duplicate",
+          delete: "Delete",
+          undo: "Undo",
+          redo: "Redo",
+          cut: "Cut",
+          copy: "Copy",
+          paste: "Paste (Verbatim)",
+          paste_splat: "Paste (Flattened)",
+          export: "Export as .hexpattern",
+        },
+        tooltip: {
+          index: "Index: %d",
+          signature: "Signature: %s",
+          length: "Length: %d",
+        },
+      },
+    },
+
+    "autoconfig.hexdebug": {
+      title: "HexDebug Config",
+      category: {
+        client: "Client",
+        server: "Server",
+      },
+      option: {
+        client: {
+          openDebugPort: {
+            "": "Open Debug Port",
+            "@Tooltip": "Whether or not a port should be opened. If false, the Debugger effectively becomes useless.",
+          },
+          debugPort: {
+            "": "Debug Port",
+            "@Tooltip": "Port number (1024-65535) to open for the debug client (eg. VSCode) to connect to.",
+          },
+          smartDebuggerSneakScroll: {
+            "": "Smart Debugger Sneak-Scroll",
+            "@Tooltip": "If a hex is not currently being debugged and a Debugger is in your main hand, prefer shift-scrolling whatever item is in your offhand (eg. a spellbook).",
+          },
+          debuggerDisplayMode: {
+            "": "Debugger Display Mode",
+            "@Tooltip": "\
+              Changes when the Debugger should print the next iota to be evaluated.\n\
+                DISABLED: Never show Debugger status messages.\n\
+                NOT_CONNECTED: Only show Debugger status messages if a debug client is not connected.\n\
+                ENABLED: Always show Debugger status messages. (default)",
+          },
+          showDebugClientLineNumber: {
+            "": "Show Debug Client Line Number",
+            "@Tooltip": "If true, show the line number (usually 1-indexed) from the debug client (eg. VSCode) in Debugger status messages; otherwise, show the list index (0-indexed)."
+          }
+        },
+        server: {
+          maxUndoStackSize: {
+            "": "Undo History Size Limit",
+            "@Tooltip": "Maximum allowed size of the Splicing Table's undo history. To disable the limit, set the value to 0.",
+          }
+        }
+      },
+    },
+  },
+
+  "hexcasting.action": {
+    "hexdebug:": {
+      "const/debugging": "Debugger's Reflection",
+      "next_eval_index": "Debug Locator's Reflection", // TODO: this name kinda sucks tbh
+      "const/cognitohazard": "Cognitohazard Reflection",
+      "breakpoint/": {
+        before: "Set Breakpoint Before",
+        after: "Set Breakpoint After"
+      },
+      "craft/debugger": "Craft Debugger",
+    },
+    "book.hexdebug:": {
+      "next_eval_index": "Debug Locator's Rfln.",
+      "const/cognitohazard": "Cognitohazard Rfln."
+    },
+  },
+
+  hexdebug: {
+    tooltip: {
+      debugger: {
+        step_mode: {
+          "": "Mode: %s",
+          continue: "Continue",
+          over: "Step Over",
+          in: "Step In",
+          out: "Step Out",
+          restart: "Restart",
+          stop: "Stop"
+        },
+      },
+      focus_holder: {
+        item: "Item: %s",
+      },
+      cognitohazard_iota: "Cognitohazard",
+    },
+
+    category: {
+      items: {
+        entry: {
+          debugging: {
+            "": "Debugging Items",
+            page: {
+              debugger: "I have read vague descriptions of a strange object used by the ancients to help discover issues in complex _Hexes. I believe I have managed to reproduce this item; I call it the $(l:items/debugging#debugger)$(item)Debugger/$.$(br2)\
+                It seems to work in a similar way to $(l:items/hexcasting)$(item)Artifacts/$. However, I can also use it to cast a _Hex right from an item (like a $(l:items/focus)$(item)Focus/$) in my off-hand.$(br2)\
+                Unfortunately, the $(l:items/debugging#debugger)$(item)Debugger/$ is not very useful on its own; to get the most out of it, I will need to $(l:https://github.com/object-Object/HexDebug/wiki/Setting-up-VSCode-with-HexDebug)set up/$ some sort of $(l:https://marketplace.visualstudio.com/items?itemName=object-Object.hex-casting)external tool/$.",
+              thwack: "$(italic)Thwack!/$$(br2)\
+                I can also switch between different \"step modes\" of the $(item)Debugger/$ by sneak-scrolling (like with a $(l:items/spellbook)$(item)Spellbook/$ or $(l:items/abacus)$(item)Abacus/$).",
+              evaluator: "Complementing the $(l:items/debugging#debugger)$(item)Debugger/$, I've also created a new type of staff: the $(l:items/debugging#evaluator)$(item)Evaluator/$.$(br2)\
+                While debugging a _Hex, patterns drawn with this staff will be cast using the current stack and $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$ of the $(l:items/debugging#debugger)$(item)Debugger/$.$(br2)\
+                Clearing the grid seems to reset the $(l:items/debugging#debugger)$(item)Debugger/$ to just before the first pattern was drawn with the $(l:items/debugging#evaluator)$(item)Evaluator/$. It will not, of course, undo any effects performed by spells on the world.",
+              thwonk: "$(italic)Thwonk!/$"
+            },
+          },
+          splicing_table: {
+            "": "Splicing Table",
+            page: {
+              "1": "As my _Hexes become more complex, I find myself spending more and more time fixing my own mistakes. Patterns such as $(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)Evanition/$ and $(l:patterns/lists#hexcasting:replace)$(action)Surgeon's Exaltation/$ can suffice for simple substitutions, but I think I can do better.$(br2)\
+                The $(l:items/splicing_table)$(item)Splicing Table/$ is my solution to these woes: a full-fledged workstation for viewing and editing _Hexes.",
+              "2": "To begin, I must place an item containing a list iota (eg. a $(l:items/focus)$(item)Focus/$) in the centre of the table. This reveals the first nine iotas in the list. The small arrows at the ends can be used to move my view of the list; I can also hold $(k:sneak) to move by a full page, or $(k:sprint) to move all the way to the start or end.$(br2)\
+                If I wish to share my _Hexes with others, I can use the large button on the right side to copy the contents of the list to my \"clipboard\".",
+              "3": "I can select iotas (or the space between them) by clicking on them. Holding $(k:sneak) and clicking again allows me to select a range of iotas.$(br2)\
+                Additionally, there are dedicated buttons to select the entire list ($(thing)Select All/$) and to clear my selection ($(thing)Select None/$).$(br2)\
+                Selecting iotas allows me to unlock the true power of the $(l:items/splicing_table)$(item)Splicing Table/$: editing _Hexes.",
+              "4": "With $(l:items/splicing_table#cost)sufficient media/$, I can perform the following actions:\
+                $(li)$(thing)Nudge Left/$: Move the selected iota(s) one space to the left.\
+                $(li)$(thing)Nudge Right/$: Move the selected iota(s) one space to the right.\
+                $(li)$(thing)Delete/$: Remove the selected iota(s) from the list.\
+                $(li)$(thing)Duplicate/$: Create a copy of the selected iota(s).\
+                $(li)$(thing)Undo/$: Revert the last action performed.\
+                $(li)$(thing)Redo/$: Re-perform actions previously reverted with $(thing)Undo/$.",
+              "5": "For more advanced operations, some extra storage is required. I can place an iota-holding item in the slot to the left to unlock the following actions:\
+                $(li)$(thing)Copy/$: Write the selected iota(s) to a new list in the secondary item.\
+                $(li)$(thing)Cut/$: Same as $(thing)Copy/$, but also delete the selected iota(s).\
+                $(li)$(thing)Paste/$: Replace the selected iota(s) with the iota in the secondary item. If the iota is a list, its contents are pasted instead; I can override this by holding $(k:sneak).",
+              "6": "Finally, I can insert a $(l:items/staff)$(item)Staff/$ into the lower left slot to reveal a miniature casting grid. Patterns drawn on this grid are inserted directly into the list, overwriting any selected iotas.$(br2)\
+                There are also six general-purpose inventory slots on the right side. These have no special functionality; they're just a convenient place to store a few extra items.",
+              cost: "Unfortunately, all of this incredible versatility comes at a cost. In order to modify the contents of items, _media is required - about a tenth of one $(l:items/amethyst)$(item)Amethyst Dust/$ per action performed.$(br2)\
+                I can supply _media to the $(l:items/splicing_table)$(item)Splicing Table/$ by putting it in the lower right slot. The table will consume up to ten $(l:items/amethyst)$(item)Amethyst Dust/$ at once; any surplus is ignored until it can be consumed without wasting _media.",
+              recipe: "$(italic)She plugged in strings one after the other, the tiny metal cubes flying in and out as her fingers danced over the tray with blinding speed./$",
+            },
+          },
+        },
+      },
+
+      patterns: {
+        entry: {
+          debugging: {
+            "": "Debugging",
+            page: {
+              "const/debugging": "Adds $(thing)True/$ to the top of the stack if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(thing)False/$ otherwise.",
+              "next_eval_index": "Adds the index of the next iota to be evaluated if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(l:casting/influences)$(thing)Null/$ otherwise.",
+              "const/cognitohazard": {
+                "1": "Adds a $(thing)Cognitohazard/$ to the top of the stack.",
+                "2": "It seems certain $(l:items/debugging#evaluator)debugging tools/$ may pose a security risk for some $(l:patterns/meta#hexcasting:eval/cc)high-level techniques/$. To help combat this, I have created this pattern.$(br2)\
+                  When a $(thing)Cognitohazard/$ iota is executed normally, nothing happens. However, if one is present in a _Hex executed by a $(l:items/debugging#debugger)$(item)Debugger/$, it will cause the _Hex to terminate $(italic)immediately/$ - even before the $(thing)Cognitohazard/$ is actually executed.",
+              },
+              "breakpoint/": {
+                before: "Pauses the $(l:items/debugging#debugger)$(item)Debugger/$ before executing this pattern.",
+                after: "Pauses the $(l:items/debugging#debugger)$(item)Debugger/$ after executing this pattern (ie. before executing the next pattern).",
+              },
+              "craft/debugger": "Creates a $(l:items/debugging#debugger)$(item)Debugger/$ that casts a _Hex, similar to $(l:patterns/spells/hexcasting)certain other patterns/$ I've used in the past.$(br2)\
+                Costs about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
+            },
+          },
+        },
+      },
+    },
+  },
+}
