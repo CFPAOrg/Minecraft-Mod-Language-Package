@@ -102,7 +102,7 @@ AE2的附属模组，可让你在[ME系统](ae2:getting-started.md#你的第一�
 
 ### 方块外观
 
-如果<ItemLink id="requester"/>中任意请求进入“空闲”和“空”之外的状态，则其外观会发生变化。
+如果<ItemLink id="requester"/>中任意请求进入“空闲”和“空”之外的状态，则请求器的外观会发生变化。
 
 <Row>
   <Column>
