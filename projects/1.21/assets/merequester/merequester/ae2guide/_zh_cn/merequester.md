@@ -106,11 +106,11 @@ AE2的附属模组，可让你在[ME系统](ae2:getting-started.md#你的第一�
 
 <Row>
   <Column>
-    不活跃
+    未启动请求
     <BlockImage id="requester" scale="3" p:active="false"/>
   </Column>
   <Column>
-    活跃
+    启动请求
     <BlockImage id="requester" scale="3" p:active="true"/>
   </Column>
 </Row>
