@@ -37,6 +37,9 @@
   "item.aetherworks.crossbow_frame_infused" : "灌注天华弩身",
   "item.aetherworks.crossbow_limbs_quartz" : "天华弩弓",
   "item.aetherworks.crossbow_limbs_magma" : "天华弩弓",
+  "item.aetherworks.shield_core_crude" : "粗制天华盾牌核心",
+  "item.aetherworks.shield_core" : "天华盾牌核心",
+  "item.aetherworks.shield_core_infused" : "灌注天华盾牌核心",
   "item.aetherworks.potion_gem" : "药液宝石",
   "item.aetherworks.geode_end" : "末地石晶球",
   "item.aetherworks.geode_nether" : "下界岩晶球",
@@ -50,6 +53,7 @@
   "item.aetherworks.tuning_cylinder" : "调谐柱件",
   "item.aetherworks.volant_calcifier" : "飞行禁锢器",
   "item.aetherworks.agrarian_liners" : "护土衬套",
+  "item.aetherworks.aetherial_plating" : "天华衬板",
   "item.aetherworks.aetheriometer" : "天华测量表",
   "item.aetherworks.lexicon" : "天华典藏",
 
@@ -68,6 +72,7 @@
   "item.aetherworks.crossbow_quartz" : "§c星辰降临之弩",
   "item.aetherworks.crossbow_magma" : "§c镜像破碎之弩",
   "item.aetherworks.aether_crown" : "§c天华冠冕",
+  "item.aetherworks.aether_shield" : "§c天华盾牌",
 
   "block.aetherworks.suevite" : "陨磺砾岩",
   "block.aetherworks.suevite_cobble" : "陨磺砾岩圆石",
@@ -100,6 +105,7 @@
   "block.aetherworks.prism_support" : "方镁矾支柱",
   "block.aetherworks.prism" : "折射棱镜",
   "block.aetherworks.aether_forge" : "天华锻座",
+  "block.aetherworks.aether_forge_edge" : "天华锻座",
   "block.aetherworks.forge_heater" : "天华锻座加热器",
   "block.aetherworks.forge_cooler" : "天华锻座冷却器",
   "block.aetherworks.forge_vent" : "天华锻座散热口",
@@ -164,6 +170,7 @@
   "embers.tooltip.augment.aetherworks.tuning_cylinder" : "天华调谐 %s",
   "embers.tooltip.augment.aetherworks.volant_calcifier" : "折翼 %s",
   "embers.tooltip.augment.aetherworks.agrarian_liners" : "护土",
+  "embers.tooltip.augment.aetherworks.aetherial_plating" : "天华加固 %s",
 
   "aetherworks.decimal_format.heat" : "0",
   "aetherworks.tooltip.heatdial.heat" : "热量：%s/%s",
@@ -171,8 +178,10 @@
   "enchantment.aetherworks.aetheric" : "天华",
 
   "subtitles.aetherworks.block.forge_groan" : "天华锻座：嘎吱作响",
+  "subtitles.aetherworks.item.aethershield.raise" : "天华盾牌：举起",
+  "subtitles.aetherworks.item.aethershield.lower" : "天华盾牌：放下",
 
-  "key.aetherworks.mode_change" : "循环工具模式",
+  "key.aetherworks.mode_change" : "循环切换工具模式",
 
   "aetherworks.jei.recipe.metal_forming" : "金属成型",
   "aetherworks.jei.recipe.metal_forming.temp_value" : "≥ %s°",
@@ -289,6 +298,9 @@
   "embers.research.page.aw.crown.title" : "欲戴其冠，必承其重",
   "embers.research.page.aw.crown.desc" : "天华冠冕是一件奇妙的装备，它能运用药液宝石的能力，以此给予所设定目标相应的效果。手持冠冕按下对应键位可更改目标选定模式。将冠冕与装有药液的药液宝石合成，可让其施加宝石中药水的效果。也可用其他宝石再次合成以交换，或单独合成以取下。",
   "embers.research.page.aw.crown_gem.desc" : "为向药液宝石添加效果，将空宝石与药水合成即可。若单瓶药水可给予多种效果，则所有效果都将保留至宝石；合成时只能使用一瓶药水。将药液宝石放入金属成型台后，还可获得一种特殊的药液宝石。",
+  "embers.research.page.aw.shield" : "天华盾牌",
+  "embers.research.page.aw.shield.title" : "坚毅护盾",
+  "embers.research.page.aw.shield.desc" : "远程攻击防御手段的集大成者——天华盾牌。它能在格挡时消耗少量余烬能量和耐久度制造出一面护盾，将所有飞向你的弹射物反射回它们出发的位置。不过，有部分弹射物无法被护盾挡住，例如余烬能量聚焦而成的射线束。",
 
   "embers.research.page.aw.alchemy_category" : "天华炼金",
   "embers.research.page.aw.aspectus" : "天华之元素象征",
@@ -303,17 +315,20 @@
 
   "embers.research.page.aw.tuning_cylinder" : "调谐柱件",
   "embers.research.page.aw.tuning_cylinder.title" : "调谐挖掘",
-  "embers.research.page.aw.tuning_cylinder.desc" : "你根据陨石的年代之久，推断天华必然在过往的岁月中沉积成矿，且这种天华必然有迹可循。调谐柱件可让挖掘工具变得对土壤中浸淫的天华敏感。挖掘方块时有可能挖出晶球，晶球的种类由生物群系和深度决定。晶球可在天华砧出敲开，里面的宝物便会显现。",
+  "embers.research.page.aw.tuning_cylinder.desc" : "你根据陨石年代久远这条线索，推断天华必然在过往的岁月中沉积成矿，且这种天华必然有迹可循。调谐柱件可让挖掘工具变得对土壤中浸淫的天华敏感。挖掘方块时有可能挖出晶球，晶球的种类由生物群系和深度决定。晶球可在天华砧出敲开，里面的宝物便会显现。",
   "embers.research.page.aw.volant_calcifier" : "飞行禁锢器",
   "embers.research.page.aw.volant_calcifier.title" : "龙魂撕裂",
   "embers.research.page.aw.volant_calcifier.desc" : "你已经受够了那些烦扰你的飞行生物，是时候把它们拉到地面，再给它们点颜色看看了！飞行禁锢器可让余烬能量弹射物给予被击中生物锚定效果，即，持续将它们向地面推。",
   "embers.research.page.aw.agrarian_liners" : "护土衬套",
   "embers.research.page.aw.agrarian_liners.title" : "反斗农场",
   "embers.research.page.aw.agrarian_liners.desc" : "无论你怎么小心，你还是免不了要踩坏庄稼，有些甚至还不是你的！是时候消除这一麻烦了。加装至靴子时，护土衬套会阻止穿戴者踩坏耕地。",
+  "embers.research.page.aw.aether_plate" : "天华衬板",
+  "embers.research.page.aw.aether_plate.title" : "和真正的板甲很接近了",
+  "embers.research.page.aw.aether_plate.desc" : "长时间接触大量天华有危害性，若要用天华制造盔甲，就应当规避这种性质。你能想到的最好的规避方法，是往已有的盔甲上嵌盔甲衬板，每级追加10%的总护甲值和盔甲韧性。",
 
   "embers.research.page.aw.moonsnare_jars" : "捕月能量容器",
   "embers.research.page.aw.moonsnare_jars.title" : "月光随身带",
-  "embers.research.page.aw.moonsnare_jars.desc" : "有些时候，你出门在外，而且忘记给地幔能量罐充能，余烬能量便有可能在某些……不好的时候耗尽了。你从对天华的研究上吸取了灵感，改装了一批地幔能量容器，让它们能捕获月光并存储为余烬能量，也即随时间自充能。然而，由于天华本身易碎脆弱，这些容器的容量稍有缩减。",
+  "embers.research.page.aw.moonsnare_jars.desc" : "有些时候，你出门在外，而且忘记给地幔能量罐充能，余烬能量便有可能在某些……不理想的时候耗尽了。你从对天华的研究上吸取了灵感，改装了一批地幔能量容器，让它们能捕获月光并存储为余烬能量，也即随时间自充能。然而，由于天华本身易碎脆弱，这些容器的容量稍有缩减。",
   "embers.research.page.aw.moonsnare_bulb" : "捕月能量灯泡",
   "embers.research.page.aw.moonsnare_bulb.title" : "埃雅仁迪尔之星",
   "embers.research.page.aw.moonsnare_bulb.desc" : "和它的地幔能量灯泡类似，捕月能量灯泡能够佩戴于任意饰品槽，且能吸收月光产生余烬能量。但是，这种灯泡的储量相当之小。你甚至都不清楚它是怎么在深暗的口袋里收集月光的……"
