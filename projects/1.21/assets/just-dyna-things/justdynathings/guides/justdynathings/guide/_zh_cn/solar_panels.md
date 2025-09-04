@@ -2,7 +2,7 @@
 navigation:
   title: 太阳能板
   icon: "justdynathings:blazegold_solar_panel"
-  position : 4
+  position: 4
 ---
 
 # 太阳的力量
