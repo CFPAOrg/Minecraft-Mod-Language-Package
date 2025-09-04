@@ -153,12 +153,19 @@ jobs:
             ${{ matrix.version }}.md5
         if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
-      - name: Transform matrix.version
+      - name: Set asset name
         run: |
-          $value = "${{ matrix.version }}"
-          $value = $value -replace '\.', '-'
-          $value = $value -replace 'fabric', 'Fabric'
-          echo "VERSION_TAG=$value" >> $env:GITHUB_ENV
+          $version_tag = "${{ matrix.version }}"
+          # 如果版本是 1-12-2，则文件名不带版本号后缀
+          if ($version_tag -eq '1-12-2') {
+            $asset_name = "Minecraft-Mod-Language-Modpack.zip"
+          } else {
+            # 否则，添加短横线和版本号
+            $formatted_version = $version_tag -replace '\.', '-'
+            $formatted_version = $formatted_version -replace 'fabric', 'Fabric'
+            $asset_name = "Minecraft-Mod-Language-Modpack-$formatted_version.zip"
+          }
+          echo "ASSET_NAME=$asset_name" >> $env:GITHUB_ENV
 
       # Upload release asset: https://github.com/actions/upload-release-asset
       - name: Update release asset for ${{ matrix.version }} (ZIP)
@@ -170,7 +177,7 @@ jobs:
         with:
           upload_url: ${{ needs.initialize-release.outputs.upload-url }}
           asset_path: Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
-          asset_name: Minecraft-Mod-Language-Modpack${{ env.VERSION_TAG == '1-12-2'  && '' || format('-%s', env.VERSION_TAG) }}.zip
+          asset_name: ${{ env.ASSET_NAME }}
           asset_content_type: application/zip
 
       # 新增步骤：上传 MD5 文件
