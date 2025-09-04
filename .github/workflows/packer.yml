@@ -155,10 +155,10 @@ jobs:
 
       - name: Transform matrix.version
         run: |
-          value="${{ matrix.version }}"
-          value="${value//./-}"
-          value="${value//-1-12-2/}"
-          echo "VERSION_TAG=$value" >> $GITHUB_ENV
+          $value = "${{ matrix.version }}"
+          $value = $value -replace '\.', '-'
+          $value = $value -replace '-1-12-2', ''
+          echo "VERSION_TAG=$value" >> $env:GITHUB_ENV
 
       # Upload release asset: https://github.com/actions/upload-release-asset
       - name: Update release asset for ${{ matrix.version }} (ZIP)
