@@ -316,7 +316,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add version-index.json
           git commit -m "Update version index for $RELEASE_TAG" || echo "No changes to commit"
-          git push
+          git push --set-upstream origin index
 
   upload:
     if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
