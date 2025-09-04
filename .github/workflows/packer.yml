@@ -312,6 +312,7 @@ jobs:
 
       - name: Commit and Push index.json to index branch
         run: |
+          git fetch origin index
           git checkout index
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
