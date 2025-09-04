@@ -13,7 +13,6 @@ on:
 
 jobs:
   build-packer:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
     name: Build / Cache Packer
     runs-on: windows-latest
     steps:
@@ -65,7 +64,6 @@ jobs:
   #       run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
   initialize-release:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
     name: Initialize Release
     runs-on: windows-latest
     steps:
@@ -92,7 +90,6 @@ jobs:
 
 
   pack:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
     name: Pack Resources and Upload Artifacts/Releases
     needs: [ build-packer, initialize-release ] # 显然，需要存在打包程序，才能打包。
     strategy:
@@ -150,11 +147,18 @@ jobs:
       - name: Upload Artifact for ${{ matrix.version }}
         uses: actions/upload-artifact@v4
         with:
-          name: Minecraft-Mod-Language-Package-${{ matrix.version }}
+          name: Minecraft-Mod-Language-Modpack-${{ matrix.version }}
           path: |
-            Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
+            Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
             ${{ matrix.version }}.md5
         if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+
+      - name: Transform matrix.version
+        run: |
+          value="${{ matrix.version }}"
+          value="${value//./-}"
+          value="${value//-1-12-2/}"
+          echo "VERSION_TAG=$value" >> $GITHUB_ENV
 
       # Upload release asset: https://github.com/actions/upload-release-asset
       - name: Update release asset for ${{ matrix.version }} (ZIP)
@@ -165,8 +169,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ needs.initialize-release.outputs.upload-url }}
-          asset_path: Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
-          asset_name: Minecraft-Mod-Language-Package-${{ matrix.version }}.zip
+          asset_path: Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
+          asset_name: Minecraft-Mod-Language-Modpack-${{ env.VERSION_TAG }}.zip
           asset_content_type: application/zip
 
       # 新增步骤：上传 MD5 文件
@@ -224,7 +228,6 @@ jobs:
         continue-on-error: true
 
   update-index:
-    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
     name: Update Version Index (Optional)
     needs: [pack, initialize-release]
     runs-on: ubuntu-latest
