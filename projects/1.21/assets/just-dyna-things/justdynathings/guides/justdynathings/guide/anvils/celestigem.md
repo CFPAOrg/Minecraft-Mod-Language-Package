@@ -2,7 +2,7 @@
 navigation:
   title: Celestigem Anvil
   icon: "justdynathings:celestigem_anvil"
-  position : 3
+  position: 3
   parent: justdynathings:anvils.md
 item_ids:
   - justdynathings:celestigem_anvil

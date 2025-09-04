@@ -2,7 +2,7 @@
 navigation:
   title: Ferricore Solar Panel
   icon: "justdynathings:ferricore_solar_panel"
-  position : 1
+  position: 1
   parent: justdynathings:solar_panels.md
 item_ids:
   - justdynathings:ferricore_solar_panel
@@ -12,16 +12,16 @@ item_ids:
 
 A solar panel that generate Forge Energy
 
-FE rate : **240**
+Default Max FE rate : **240**
 
-**Conditions:**
+**Default Conditions:**
+
 - Dimensions = Overworld
 - See sky = true
 - Day time = true
 
-**Modifiers:**
-Nothing
-
 <BlockImage id="justdynathings:ferricore_solar_panel" scale="4.0"/>
 
-<RecipeFor id="justdynathings:ferricore_solar_panel" />
+<Recipe id="justdynathings:ferricore_solar_panel" />
+
+_Note: Everything can be modified via configs so dont trust at all!_

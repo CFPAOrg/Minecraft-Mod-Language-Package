@@ -2,7 +2,7 @@
 navigation:
   title: 回响紫水晶母岩
   icon: "justdynathings:echoing_budding_amethyst"
-  position : 1
+  position: 1
   parent: justdynathings:buddings.md
 item_ids:
   - justdynathings:echoing_budding_amethyst
@@ -15,6 +15,5 @@ item_ids:
 <BlockImage id="justdynathings:echoing_budding_amethyst" p:alive="false" scale="4.0"/>
 
 <BlockImage id="justdynathings:echoing_budding_amethyst" p:alive="true" scale="4.0"/>
-
 
 <RecipeFor id="justdynathings:echoing_budding_amethyst" />

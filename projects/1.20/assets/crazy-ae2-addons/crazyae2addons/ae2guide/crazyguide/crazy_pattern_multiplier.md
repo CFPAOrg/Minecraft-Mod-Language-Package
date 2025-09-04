@@ -13,7 +13,11 @@ item_ids:
 
 <ItemImage id="crazyae2addons:crazy_pattern_multiplier" scale="4"></ItemImage>
 
-Crazy Pattern Multiplier is a handy item that lets you multiply the quantities in your AE2 processing patterns without rebuilding them by hand. You can scale inputs and outputs by any positive number.
+Crazy Pattern Multiplier is a handy item that lets you multiply the quantities
+in your AE2 processing patterns without rebuilding them by hand.
+You can scale inputs and outputs by any positive number.
+Supports setting a limit above which it won't multiply your patterns.
+Supports mass changing circuit numbers of all patterns inside it.
 
 Supports math expressions in the multiplier field (e.g., `2*(3+1)`).
 

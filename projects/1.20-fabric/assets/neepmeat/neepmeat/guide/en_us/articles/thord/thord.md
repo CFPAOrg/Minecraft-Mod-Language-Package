@@ -2,11 +2,13 @@
 id: thord
 ---
 
-# Thord
+# THORD
+
+THORD is a progamming language for the PLC at a slightly higher level than NEEPASM. It has a more concise syntax as well as constructs for loops and conditional statements.
 
 # Stack
 
-Unlike NEEPASM, the syntax for stack manipulation is much more concise.
+Unlike NEEPASM, the syntax for stack manipulation is much simpler.
 
 To push a number to the stack, it is simply stated. As Thord does not care about newlines or expression separators, multiple numbers can be pushed on the same line.
 
