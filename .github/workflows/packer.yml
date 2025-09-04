@@ -157,7 +157,7 @@ jobs:
         run: |
           $value = "${{ matrix.version }}"
           $value = $value -replace '\.', '-'
-          $value = $value -replace '-1-12-2', ''
+          $value = $value -replace 'fabric', 'Fabric'
           echo "VERSION_TAG=$value" >> $env:GITHUB_ENV
 
       # Upload release asset: https://github.com/actions/upload-release-asset
@@ -170,7 +170,7 @@ jobs:
         with:
           upload_url: ${{ needs.initialize-release.outputs.upload-url }}
           asset_path: Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
-          asset_name: Minecraft-Mod-Language-Modpack-${{ env.VERSION_TAG }}.zip
+          asset_name: Minecraft-Mod-Language-Modpack-{{ env.VERSION_TAG == '1-12-2' && '' || format('-%s', env.VERSION_TAG) }}.zip
           asset_content_type: application/zip
 
       # 新增步骤：上传 MD5 文件
