@@ -244,76 +244,45 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Download existing index.json if exists
+      - name: Set up index branch
         run: |
-          if [ -f version-index.json ]; then
-            cp version-index.json version-index.json.bak
-          else
+          git fetch origin index
+          git checkout index || git checkout -b index
+
+      - name: Download existing index.json
+        run: |
+          if [ ! -f version-index.json ]; then
             echo "{}" > version-index.json
           fi
 
       - name: Update index.json
         env:
           RELEASE_TAG: ${{ needs.initialize-release.outputs.tag-name }}
-          # 获取所有版本的更新状态，即使某些版本未触发也不会影响
-          UPDATED_VERSIONS_1_12_2: ${{ needs.pack.outputs.updated_versions_1_12_2 }}
-          UPDATED_VERSIONS_1_16: ${{ needs.pack.outputs.updated_versions_1_16 }}
-          UPDATED_VERSIONS_1_16_FABRIC: ${{ needs.pack.outputs.updated_versions_1_16_fabric }}
-          UPDATED_VERSIONS_1_18: ${{ needs.pack.outputs.updated_versions_1_18 }}
-          UPDATED_VERSIONS_1_18_FABRIC: ${{ needs.pack.outputs.updated_versions_1_18_fabric }}
-          UPDATED_VERSIONS_1_19: ${{ needs.pack.outputs.updated_versions_1_19 }}
-          UPDATED_VERSIONS_1_20: ${{ needs.pack.outputs.updated_versions_1_20 }}
-          UPDATED_VERSIONS_1_20_FABRIC: ${{ needs.pack.outputs.updated_versions_1_20_fabric }}
-          UPDATED_VERSIONS_1_21: ${{ needs.pack.outputs.updated_versions_1_21 }}
-          UPDATED_VERSIONS_1_21_FABRIC: ${{ needs.pack.outputs.updated_versions_1_21_fabric }}
+          PACK_OUTPUTS: ${{ toJSON(needs.pack.outputs) }}
         run: |
           python3 - <<EOF
           import json
           import os
-      
-          index_file = "version-index.json"
-          try:
-            with open(index_file, "r") as f:
-              index = json.load(f)
-          except FileNotFoundError:
-            index = {}
-              
-          # 收集所有版本的更新状态
-          updated_versions = []
-          version_vars = [
-            "UPDATED_VERSIONS_1_12_2",
-            "UPDATED_VERSIONS_1_16", 
-            "UPDATED_VERSIONS_1_16_FABRIC",
-            "UPDATED_VERSIONS_1_18",
-            "UPDATED_VERSIONS_1_18_FABRIC",
-            "UPDATED_VERSIONS_1_19",
-            "UPDATED_VERSIONS_1_20",
-            "UPDATED_VERSIONS_1_20_FABRIC",
-            "UPDATED_VERSIONS_1_21",
-            "UPDATED_VERSIONS_1_21_FABRIC"
-          ]
           
-          # 只有实际更新的版本才会被添加到列表中
-          for var in version_vars:
-              version = os.environ.get(var, "")
-              if version:
-                  updated_versions.append(version)
+          index_file = "version-index.json"
+          with open(index_file, "r") as f:
+            index = json.load(f)
           
           release_tag = os.environ.get("RELEASE_TAG", "")
-
-          # 为所有更新的版本更新索引
-          for v in updated_versions:
-            if v:
-              index[v] = release_tag
-    
+          pack_outputs = json.loads(os.environ.get("PACK_OUTPUTS", "{}"))
+          
+          # 遍历 pack Job 的所有输出
+          for key, version in pack_outputs.items():
+            # 只有当值不为空时，才更新索引
+            if version:
+              index[version] = release_tag
+          
           with open(index_file, "w") as f:
             json.dump(index, f, indent=2)
           EOF
 
-      - name: Commit and Push index.json to index branch
+      - name: Commit and Push index.json
         run: |
-          git fetch origin index
-          git checkout index
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add version-index.json
