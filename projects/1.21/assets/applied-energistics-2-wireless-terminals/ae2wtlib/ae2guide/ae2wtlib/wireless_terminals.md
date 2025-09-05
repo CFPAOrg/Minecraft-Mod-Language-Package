@@ -24,7 +24,9 @@ In addition to the <ItemLink id="ae2:energy_card" />, all AE2WTLib Wireless Term
 and combined into a <ItemLink id="ae2wtlib:wireless_universal_terminal" />.
 
 Like AE2's <ItemLink id="ae2:wireless_terminal" />, it can be accessed using a Keybind and be put in a curio slot
-(if any mod implementing the curio api is installed) 
+(if any mod implementing the curio api is installed.)
+
+Wireless Terminals can also be linked like a normal <ItemLink id="ae2:wireless_terminal" />, using a <ItemLink id="ae2:wireless_access_point" />
 
 ## Wireless Universal Terminal
 
