@@ -197,39 +197,9 @@ jobs:
         id: collect-updated
         run: |
           if [ "${{ steps.check-changes.outputs.changed }}" == "true" ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-            # 根据当前矩阵版本设置对应的输出变量
-            case "${{ matrix.version }}" in
-              "1.12.2")
-                echo "version_1_12_2=1.12.2" >> $GITHUB_OUTPUT
-                ;;
-              "1.16")
-                echo "version_1_16=1.16" >> $GITHUB_OUTPUT
-                ;;
-              "1.16-fabric")
-                echo "version_1_16_fabric=1.16-fabric" >> $GITHUB_OUTPUT
-                ;;
-              "1.18")
-                echo "version_1_18=1.18" >> $GITHUB_OUTPUT
-                ;;
-              "1.18-fabric")
-                echo "version_1_18_fabric=1.18-fabric" >> $GITHUB_OUTPUT
-                ;;
-              "1.19")
-                echo "version_1_19=1.19" >> $GITHUB_OUTPUT
-                ;;
-              "1.20")
-                echo "version_1_20=1.20" >> $GITHUB_OUTPUT
-                ;;
-              "1.20-fabric")
-                echo "version_1_20_fabric=1.20-fabric" >> $GITHUB_OUTPUT
-                ;;
-              "1.21")
-                echo "version_1_21=1.21" >> $GITHUB_OUTPUT
-                ;;
-              "1.21-fabric")
-                echo "version_1_21_fabric=1.21-fabric" >> $GITHUB_OUTPUT
-                ;;
-            esac
+            # Replace all periods and hyphens with underscores
+            output_key=$(echo "${{ matrix.version }}" | sed 's/[\.-]/_/g')
+            echo "version_$output_key=${{ matrix.version }}" >> $GITHUB_OUTPUT
           fi
         shell: bash
         continue-on-error: true
