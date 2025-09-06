@@ -86,8 +86,7 @@ namespace Uploader
         public static string RegulateFileName(this string fileName)
         {
             // 历史遗留问题：全部单词都要大小写
-            return CapitalizeGroup(fileName.Replace("Package", "Modpack") // 历史遗留问题：文件名
-                                          .Replace('.', '-') // 历史遗留问题：版本号需要输杠
+            return CapitalizeGroup(fileName.Replace('.', '-') // 历史遗留问题：版本号需要输杠
                                           .Replace("-1-12-2", "") // 历史遗留问题：1.12.2文件没有版本号
                                           .Split('-'));
 
