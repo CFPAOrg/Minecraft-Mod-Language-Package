@@ -17,7 +17,7 @@ item_ids:
 <ItemImage id="extendedae:wireless_tool" scale="6"></ItemImage>
 </Row>
 
-ME无线连接器能和<ItemLink id="ae2:quantum_link" />一样连接两个网络，但距离有限，也不可跨维度连接。
+ME无线连接器能和<ItemLink id="ae2:quantum_link" />一样连接两个网络，但距离有限，也不可跨维度连接。ME无线连接器仅支持一对一的连接，如需建立多对多连接，应使用<ItemLink id="extendedae:wireless_hub" />。
 
 ## 连接无线连接器
 
