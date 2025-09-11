@@ -32,10 +32,6 @@ Crazy AE2 Addons以多种方式拓展了应用能源2（Applied Energistics 2）
 
 <CategoryIndex category="Energy and Item Transfer"></CategoryIndex>
 
-## 数据变量
-
-<CategoryIndex category="Data Variables"></CategoryIndex>
-
 ## 生物存储
 
 <CategoryIndex category="Mob Storage"></CategoryIndex>
