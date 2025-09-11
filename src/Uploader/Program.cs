@@ -35,7 +35,7 @@ namespace Uploader
             // 获取可用的资源包，准备上传
             var artifactDirectory = new DirectoryInfo(Path.Join(Directory.GetCurrentDirectory(), "artifacts"));
             var packList = artifactDirectory
-                           .EnumerateFiles("Minecraft-Mod-Language-Package-*.zip", SearchOption.AllDirectories);
+                           .EnumerateFiles("Minecraft-Mod-Language-Modpack-*.zip", SearchOption.AllDirectories);
             
             Log.Information("检测到的资源包数目：{0}", packList.Count());
 
