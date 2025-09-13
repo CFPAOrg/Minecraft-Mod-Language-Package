@@ -97,7 +97,7 @@ jobs:
 
       # 额 要两分半才能传完 然而 GitHub actions 直接传的话 会压成 zip 内套 zip 就这样了吧 --cy
       - name: Unzip Files
-        run: unzip -q Minecraft-Mod-Language-Package-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
+        run: unzip -q Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
         shell: bash
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
           
