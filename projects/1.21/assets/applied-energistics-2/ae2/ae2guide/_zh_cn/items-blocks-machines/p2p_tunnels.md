@@ -97,7 +97,7 @@ P2P通道的最常见用途是通过ME P2P通道以高效传输[频道](../ae2-m
 
 ## 嵌套
 
-但是，这一系统无法在单根线缆中传输无限频道。ME P2P通道的频道无法穿过其他ME P2P通道，也因此无法嵌套它们。注意位于外层红色线缆上的ME P2P通道处于离线状态。这一性质仅适用于ME P2P通道，其他种类的P2P通道则可穿过ME P2P通道，如此连接的红石P2P通道能正常工作。
+但是，这一系统无法在单根线缆中传输无限频道。ME P2P通道的频道无法穿过其他ME P2P通道，也因此无法嵌套它们。注意位于外层红色线缆上的ME P2P通道处于离线状态。这一性质仅适用于ME P2P通道，其他种类的P2P通道则可穿过ME P2P通道；比如，此处连接的红石P2P通道能正常工作。
 
 <GameScene zoom="4" background="transparent">
   <ImportStructure src="../assets/assemblies/p2p_nesting.snbt" />

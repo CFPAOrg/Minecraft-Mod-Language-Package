@@ -42,7 +42,7 @@ Returns the type of item in the caster's other hand.
 
 <|page-title@lavender:book_components|title=Note: Slot References|>Item slots may be referenced by spells.
 Creating such a reference comes at no cost. However, using the reference in a way that moves the items within the slot, will incur a move cost.
-This cost is equivalent to 8kG + (distance * amount * 0.5kG). Slot references will always point to a block position, or use the *current caster at the time of move*.
+This cost is equivalent to (distance * amount * 0.5kG). Slot references will always point to a block position, or use the *current caster at the time of move*.
 
 ;;;;;
 

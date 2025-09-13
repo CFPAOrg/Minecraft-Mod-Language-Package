@@ -15,7 +15,7 @@ item_ids:
 
 <BlockImage id="quartz_glass" scale="8" />
 
-几乎完全通透的玻璃，由<ItemLink id="certus_quartz_dust" />制成。用于制造大多数AE2机械和物品。
+几乎完全通透的玻璃，由<ItemLink id="certus_quartz_dust" />制成。用于制造大多数AE2机器和物品。
 
 其变种聚能石英玻璃会发光。
 

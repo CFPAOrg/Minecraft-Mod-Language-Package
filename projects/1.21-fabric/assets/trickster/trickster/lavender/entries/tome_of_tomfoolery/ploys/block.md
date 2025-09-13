@@ -35,9 +35,9 @@ Breaks the block at the given position.
 
 <|glyph@trickster:templates|trick-id=trickster:place_block,title=Ploy of Creation|>
 
-vector, slot |
+vector, slot, [vector, vector] |
 
-vector, block -> vector
+vector, block, [vector, vector] -> vector
 
 <|cost-rule@trickster:templates|formula=max(distance * 1kG\, 8kG)|>
 
@@ -45,9 +45,18 @@ Places the given block at the given position. Will consume its respective item.
 
 ;;;;;
 
+This ploy optionally takes two additional arguments. 
+
+- The first defines the direction to place from.
+- The second defines what side of an adjacent block is interacted with when placing.
+
+Some blocks may change their facing or other properties based on these values.
+
+;;;;;
+
 <|glyph@trickster:templates|trick-id=trickster:change_weight,title=Ploy of Featherweight|>
 
-vector, number -> vector
+vector, number -> entity
 
 <|cost-rule@trickster:templates|formula=60kG * (1 - multiplier)|>
 

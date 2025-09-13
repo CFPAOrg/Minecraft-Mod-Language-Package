@@ -83,11 +83,11 @@ Returns the maximum amount of mana that *could be* available to the spell.
 
 <|glyph@trickster:templates|trick-id=trickster:current_thread,title=Delusion of Order|>
 
--> number
+-> number | void
 
 ---
 
-Returns the slot running this spell, or -1 if slots are not supported.
+Returns the spell slot running this spell, or void if spell slots are not supported.
 
 ;;;;;
 

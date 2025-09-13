@@ -17,8 +17,10 @@
     "活力之辑流",
     "体健之辑流",
     "垒墙之辑流",
-    "居形之曲变",
-    "观察者之辑流"
+    "居形之辑流",
+    "观察者之辑流",
+    "食欲之辑流",
+    "饱足之辑流"
   ]
 }
 ```
@@ -157,7 +159,7 @@ entity -> number
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_scale,title=居形之曲变|>
+<|glyph@trickster:templates|trick-id=trickster:get_scale,title=居形之辑流|>
 
 entity -> number
 
@@ -174,3 +176,23 @@ entity -> number
 ---
 
 返回施法者或给定玩家可见所有视形的标识符。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:get_player_food,title=食欲之辑流|>
+
+entity -> number
+
+---
+
+给定玩家，返回其当前饥饿值。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:get_player_saturation,title=饱足之辑流|>
+
+entity -> number
+
+---
+
+给定玩家，返回其当前饱和度。

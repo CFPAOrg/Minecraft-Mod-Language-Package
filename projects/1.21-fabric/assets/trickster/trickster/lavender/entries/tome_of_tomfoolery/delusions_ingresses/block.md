@@ -64,3 +64,15 @@ vector -> number
 ---
 
 Returns the power level of the [Spell Resonator](^trickster:items/spell_resonator) at the given position.
+
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:light_level,title=Ingress of Luminance|>
+
+vector, [boolean] -> number
+
+---
+
+Returns the light level at the given position. 
+A boolean can be specified to check only sky light (if true) or block light (if false).

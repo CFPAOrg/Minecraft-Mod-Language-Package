@@ -12,4 +12,4 @@ icon: fluix_glass_cable
   <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
 
-AE2中的某些[设备](devices.md)和组件可放置在线缆的同一格内。这对设计紧凑设施大有裨益。手持<ItemLink id="certus_quartz_wrench" />或<ItemLink id="network_tool" />潜行右击可破坏子部件（或线缆）而不影响同一格内其他事物。
+AE2中的某些[设备](devices.md)和组件可与线缆放置在同一格内——对设计紧凑设施大有裨益。手持<ItemLink id="certus_quartz_wrench" />或<ItemLink id="network_tool" />潜行右击可破坏子部件（或线缆）而不影响同一格内其他事物。

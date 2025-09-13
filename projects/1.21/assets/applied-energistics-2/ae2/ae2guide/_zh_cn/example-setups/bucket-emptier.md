@@ -11,7 +11,7 @@ navigation:
 
 需注意，此设施使用了<ItemLink id="pattern_provider" />，也即需与你的[自动合成](../ae2-mechanics/autocrafting.md)设施配合使用。
 
-生活总有不顺心时，有些时候你只需要流体本身，但又只能制造出桶装流体。有些时候会有一种机器帮你完成这些任务（比如Thermal Expansion里的流体转置机），但这种模组并不一定一直都有。好在原版也有一种稍微不那么方便的处理方式，那就是<ItemLink id="minecraft:dispenser" />。
+生活总有不顺心时，有些时候你只需要流体本身，但又只能制造出桶装流体。有些时候会有一种机器帮你完成这些任务，比如热力膨胀（Thermal Expansion）里的流体转置机；但这种模组并不一定一直都有。好在原版也有一种稍微不那么方便的处理方式，那就是<ItemLink id="minecraft:dispenser" />。
 
 <GameScene zoom="6" interactive={true}>
   <ImportStructure src="../assets/assemblies/bucket_emptier.snbt" />

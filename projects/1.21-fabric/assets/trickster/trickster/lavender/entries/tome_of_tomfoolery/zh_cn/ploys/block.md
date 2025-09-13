@@ -35,13 +35,32 @@ vector -> vector
 
 <|glyph@trickster:templates|trick-id=trickster:place_block,title=造物之技巧|>
 
-vector, slot |
+vector, slot, [vector, vector] |
 
-vector, block -> vector
+vector, block, [vector, vector] -> vector
 
 <|cost-rule@trickster:templates|formula=max(距离 * 1kG\, 8kG)|>
 
 将所给方块放置在所给位置处。会消耗物品。
+
+;;;;;
+
+此技巧术还会接受两个额外参数。
+
+- 第一个参数用于指定放置的方向。
+- 第二个参数用于指定放置时，应与相邻方块的哪一面进行交互。
+
+部分方块的朝向和其他属性可能会因这些参数而产生变化。
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:change_weight,title=轻羽之技巧|>
+
+vector, number -> entity
+
+<|cost-rule@trickster:templates|formula=60kG * (1 - 倍数)|>
+
+给定0到1之间的数，让所给位置处方块所受重力变为原重力与所给数的积，令其向上飘浮。
 
 ;;;;;
 
@@ -52,16 +71,6 @@ vector, vector ->
 <|cost-rule@trickster:templates|formula=60kG + 距离 * 1kG|>
 
 交换世界中两个位置处的方块。两处均不允许为空气。
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:change_weight,title=轻羽之技巧|>
-
-vector, number -> vector
-
-<|cost-rule@trickster:templates|formula=60kG * (1 - 倍数)|>
-
-给定0到1之间的数，让所给位置处方块所受重力变为原重力与所给数的积，令其向上飘浮。
 
 ;;;;;
 

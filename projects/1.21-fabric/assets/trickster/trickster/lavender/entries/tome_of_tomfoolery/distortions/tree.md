@@ -1,9 +1,11 @@
 ```json
 {
-  "title": "Spell Manipulation",
+  "title": "Spells",
   "icon": "minecraft:oak_sapling",
   "category": "trickster:distortions",
   "additional_search_terms": [
+    "Supply Distortion",
+    "Closure Stratagem",
     "Pinpoint Distortion",
     "Discovering Distortion",
     "Retrieval Distortion",
@@ -19,6 +21,26 @@
 
 Although [Scribing Patterns](^trickster:editing) allow for spells to be edited before they are cast, 
 the following patterns allow for a spell to modify other spells *during* the cast.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:supplier,title=Supply Distortion|>
+
+any -> spell
+
+---
+
+Creates a new spell fragment which returns the previously provided fragment when executed.
+
+;;;;;
+
+<|glyph@trickster:templates|trick-id=trickster:closure,title=Closure Stratagem|>
+
+spell, {any: any} -> spell
+
+---
+
+Replaces the keys of the map that are in the given spell with the value they map to.
 
 ;;;;;
 

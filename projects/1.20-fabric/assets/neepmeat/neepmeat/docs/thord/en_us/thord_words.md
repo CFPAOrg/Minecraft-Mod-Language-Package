@@ -9,6 +9,43 @@ Prints the top stack entry.
 
 Places the current value of the program counter (the address of the currently executed instruction) on the top of the stack.
 
+\cat{words}
+# Words
+
+## : 
+
+Starts definition of a new word. The word's name is given by the character sequence following :.
+
+```
+: aword 123 . ;
+```
+
+## :I
+
+Starts definition of a new immediate word. The word's name is given by the character sequence following :I.
+
+```
+:I aword 123 . ;
+```
+
+## ; 
+
+Terminates various constructs:
+
+- Word definitions
+- Immediate word definitions
+- Inline NEEPASM instructions
+
+## :NONAME
+
+Starts definition of a new anonymous word. When the definition ends, the address of the word is placed on the stack.
+
+```
+:noname 123 . ;
+
+execute
+```
+
 \cat{stack}
 # Stack
 
@@ -79,6 +116,8 @@ Copies the top return stack entry to the data stack.
 
 \cat{flow_control}
 # Flow Control
+
+## END ( -- )
 
 Emits the END instruction, which stops execution. Useful as a placeholder for backpatching. Equivalent to NEEPASM `END`.
 
@@ -197,6 +236,68 @@ Tests if n1 is less than or equal to n2. Equivalent to NEEPASM `LTEQ`.
 ## >= ( n1 n2 -- result )
 
 Tests if n1 is greater than or equal to n2. Equivalent to NEEPASM `GTEQ`.
+
+\cat{memory}
+# Memory
+
+## VARIABLE ( "name" -- )
+
+Allocates a new variable with the name that follows.
+
+Invoking the variable's name pushes its address to the stack.
+
+```
+variable v
+
+# Store 123
+123 v !
+
+v ? # result: 123
+```
+
+## ARRAY ( "name" size -- )
+
+Allocates an array of the following name and size.
+
+Note that size of the array follows the word, rather than preceding it. All elements are initialised to zero.
+
+```
+# Create an array of 6 elements
+array a 6
+
+# Set the third element to 123
+123 a 2 + !
+
+# Print the third element
+a 2 + ?
+```
+
+## ! ( n1 addr -- )
+
+Stores n1 at the given address.
+
+## @ ( addr -- n1 )
+
+Retrieves the data at the given address.
+
+## ? ( addr -- )
+
+Prints the data stored at the given address. Equivalent to @ .
+
+## ' ( "word" -- addr )
+
+Pushes the address of the following word to the stack.
+
+```
+: aword 1 + . ;
+
+# Print the word's address
+' aword .
+```
+
+## EXECUTE ( addr -- )
+
+Branches to the instruction at the given address. Equivalent to NEEPASM `CALL`.
 
 \cat{compiler_words}
 # Compiler Words

@@ -6,7 +6,6 @@
   "required_advancements": [
     "trickster:echo_knot"
   ],
-  "secret": true,
   "ordinal": 20
 }
 ```
@@ -16,3 +15,7 @@ With a capacity equivalent to twice that of a Diamond Knot and a natural recharg
 Echo Knots are already quite incredible. 
 But that's not what makes them truly unique. Each pair, born of the same Echo Shard, share the same store of mana. 
 Fill one, and its twin is filled as well, no matter where in the world it may be.
+
+;;;;;
+
+TODO: explain message behaviour

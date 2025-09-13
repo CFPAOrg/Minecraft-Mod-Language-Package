@@ -4,14 +4,13 @@
   "icon": "minecraft:bricks",
   "category": "trickster:tricks",
   "additional_search_terms": [
-    "Notulist's Delusion",
+    "Notulist's Ingress",
     "Notulist's Ploy",
     "Proprietary Notulist's Ploy",
     "Alethophobe's Ploy",
-    "Showcase Stratagem",
+    "Showcase Ploy",
     "Crow Mind Delusion",
-    "Crow Mind Ploy",
-    "Cost Ploy"
+    "Crow Mind Ploy"
   ]
 }
 ```
@@ -30,14 +29,14 @@ Some items may have additional interactions when inscribed with fragments,
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:read_spell,title=Notulist's Delusion|>
+<|glyph@trickster:templates|trick-id=trickster:read_spell,title=Notulist's Ingress|>
 
--> any
+[slot] -> any
 
 ---
 
-If the item in the caster's other hand contains an inscribed fragment, returns the fragment.
-If not, returns void.
+Reads the fragment from the item in the given slot or in the caster's offhand.
+Returns void if there is none.
 
 ;;;;;
 
@@ -72,7 +71,7 @@ Clears any fragment inscribed onto the item in the given slot or in the caster's
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:reveal,title=Showcase Stratagem|>
+<|glyph@trickster:templates|trick-id=trickster:reveal,title=Showcase Ploy|>
 
 any... -> any
 
@@ -110,20 +109,3 @@ any -> any
 Stores the supplied value in the caster's Crow Mind, overwriting any value that might already be present.
 
 ;;;;;
-
-<|page-title@lavender:book_components|title=Note: Casting Cost|>After receiving multiple complaints at Tomfoolery Inc. HQ about the balance of this mod,
-we've decided to properly implement material spell casting costs.
-
-
-However, player freedom and choice is also very important to us.
-As such, this system operates on an opt-in basis.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:cost,title=Cost Ploy|>
-
-->
-
----
-
-Consumes one amethyst shard from the caster's inventory. Will blunder if none are available.

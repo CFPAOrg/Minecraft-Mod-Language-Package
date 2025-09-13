@@ -23,7 +23,7 @@ navigation:
     </BoxAnnotation>
 
     <BoxAnnotation color="#33dd33" min="13 12 13" max="14 13 14" thickness="0.05">
-        能量单元是好网络的标配，它能提升每游戏刻的能量输入，还能减少能量波动的影响。
+        能源元件是好网络的标配，它能提升每游戏刻的能量输入，还能减少能量波动的影响。
     </BoxAnnotation>
 
     <BoxAnnotation color="#33dd33" min="2 1 10" max="4 4 13" thickness="0.05">
