@@ -47,7 +47,7 @@ navigation:
 
 ## 工厂连接器
 
-<ItemImage id="factory_ctr_base_pri" scale="0.5"/>工厂连接器用于将原料与工厂连接
+<ItemImage id="factory_ctr_base_pri" scale="0.5"/>工厂连接器用于连接原料与工厂
 
 <RecipeFor id="factory_connect" />
 
