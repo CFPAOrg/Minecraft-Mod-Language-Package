@@ -6,7 +6,8 @@
 
   "block.hexdebug": {
     splicing_table: "Splicing Table",
-    focus_holder: "Focus Holder",
+    enlightened_splicing_table: "Mindsplice Table",
+    focus_holder: "Focal Frame",
   },
 
   "itemGroup.hexdebug": "HexDebug",
@@ -22,7 +23,11 @@
       splicing_table: {
         button: {
           view_left: "Move View Left",
+          view_left_page: "Move View to Previous Page",
+          view_left_full: "Move View to Start",
           view_right: "Move View Right",
+          view_right_page: "Move View to Next Page",
+          view_right_full: "Move View to End",
           select_none: "Select None",
           select_all: "Select All",
           clear_grid: "Clear Grid",
@@ -37,6 +42,7 @@
           paste: "Paste (Verbatim)",
           paste_splat: "Paste (Flattened)",
           export: "Export as .hexpattern",
+          cast: "Activate Table",
         },
         tooltip: {
           index: "Index: %d",
@@ -77,32 +83,124 @@
           showDebugClientLineNumber: {
             "": "Show Debug Client Line Number",
             "@Tooltip": "If true, show the line number (usually 1-indexed) from the debug client (eg. VSCode) in Debugger status messages; otherwise, show the list index (0-indexed)."
+          },
+          invertSplicingTableScrollDirection: {
+            "": "Invert Splicing Table Scroll Direction",
+            "@Tooltip": "Whether scrolling up (as opposed to down) will increase the view index of the splicing table, and vice versa.",
           }
         },
         server: {
           maxUndoStackSize: {
             "": "Undo History Size Limit",
             "@Tooltip": "Maximum allowed size of the Splicing Table's undo history. To disable the limit, set the value to 0.",
-          }
-        }
+          },
+          splicingTableMediaCost: {
+            "": "Splicing Table Media Cost",
+            "@Tooltip": "How many points of media to consume when performing an action in a Splicing Table.",
+          },
+          splicingTableMaxMedia: {
+            "": "Splicing Table Max Media",
+            "@Tooltip": "How many points of media to consume when performing an action in a Splicing Table.",
+          },
+          splicingTableCastingCooldown: {
+            "": "Mindsplice Table Casting Cooldown",
+            "@Tooltip": "Cooldown in ticks for the Mindsplice Table's casting button.",
+          },
+          splicingTableAmbit: {
+            "": "Mindsplice Table Ambit",
+            "@Tooltip": "Ambit radius in blocks for the Mindsplice Table.",
+          },
+        },
       },
     },
   },
 
-  "hexcasting.action": {
-    "hexdebug:": {
-      "const/debugging": "Debugger's Reflection",
-      "next_eval_index": "Debug Locator's Reflection", // TODO: this name kinda sucks tbh
-      "const/cognitohazard": "Cognitohazard Reflection",
-      "breakpoint/": {
-        before: "Set Breakpoint Before",
-        after: "Set Breakpoint After"
+  hexcasting: {
+    action: {
+      "hexdebug:": {
+        "const/debugging": "Debugger's Reflection",
+        "next_eval_index": "Debug Locator's Reflection", // TODO: this name kinda sucks tbh
+        "const/cognitohazard": "Cognitohazard Reflection",
+        "breakpoint/": {
+          before: "Set Breakpoint Before",
+          after: "Set Breakpoint After"
+        },
+        "craft/debugger": "Craft Debugger",
+        "splicing/": {
+          "view_index/": {
+            read: "Sprocket's Purification",
+            write: "Sprocket's Gambit",
+          },
+          "selection/": {
+            read: "Splicer's Decomposition",
+            write: "Splicer's Gambit",
+          },
+          "list/": {
+            "spellbook_index/": {
+              read: "Projectionist's Purification",
+              write: "Projectionist's Gambit",
+              readable: "Shutter's Purification"
+            },
+          },
+          "clipboard/": {
+            read: "Compositor's Purification",
+            write: "Compositor's Gambit",
+            readable: "Producer's Purification",
+            writable: "Director's Purification",
+            "spellbook_index/": {
+              read: "Projectionist's Purification II",
+              write: "Projectionist's Gambit II",
+              readable: "Shutter's Purification II",
+            },
+          },
+          "enlightened/": {
+            "hex/": {
+              read: "Mindsplice Purification", // TODO: bad name
+              write: "Imbue Mindsplice Table",
+            },
+          },
+        },
       },
-      "craft/debugger": "Craft Debugger",
+      "book.hexdebug:": {
+        "next_eval_index": "Debug Locator's Rfln.",
+        "const/cognitohazard": "Cognitohazard Rfln.",
+        "splicing/": {
+          "list/": {
+            "spellbook_index/": {
+              read: "Projectionist's Prfn.",
+            },
+          },
+          "clipboard/": {
+            read: "Compositor's Prfn.",
+            "spellbook_index/": {
+              read: "Projectionist's Prfn. II",
+              readable: "Shutter's Prfn. II",
+            },
+          },
+        },
+      },
     },
-    "book.hexdebug:": {
-      "next_eval_index": "Debug Locator's Rfln.",
-      "const/cognitohazard": "Cognitohazard Rfln."
+
+    mishap: {
+      bad_block: {
+        splicing_table: {
+          "": "a Splicing Table",
+          enlightened: "a Mindsplice Table",
+          list: {
+            spellbook: "a Splicing Table with a non-empty spellbook in the main item slot",
+          },
+          clipboard: {
+            read: "a Splicing Table with a readable secondary item",
+            write: "a Splicing Table with a writable secondary item",
+            spellbook: "a Splicing Table with a non-empty spellbook in the secondary item slot",
+          },
+        },
+      },
+      invalid_value: {
+        int: {
+          positive_or_null: "a positive integer or null"
+        }
+      }
     },
   },
 
@@ -142,6 +240,16 @@
               thwonk: "$(italic)Thwonk!/$"
             },
           },
+          focus_holder: {
+            "": "Focal Frame",
+            page: {
+              "1": "$(l:items/focus)$(item)Foci/$ are useful for storing _Hexes and other iotas in my inventory, but I sometimes find myself in need of a way to store iotas in the world. Item frames are too fragile, and $(l:greatwork/akashiclib)other methods/$ are inefficient and... distasteful. A cleaner solution is necessary, and I've devised one in the form of the $(item)Focal Frame/$.",
+              "2": "A $(item)Focal Frame/$ by itself is useless; a $(l:items/focus)$(item)Focus/$ must first be inserted. I can do that through crafting, or by right-clicking a placed $(item)Focal Frame/$ with a $(l:items/focus)$(item)Focus/$. Right-clicking with an empty hand removes the $(l:items/focus)$(item)Focus/$ from the frame.$(br2)\
+                As an item, I can use a filled $(item)Focal Frame/$ anywhere I would normally use a $(l:items/focus)$(item)Focus/$, including patterns such as $(l:patterns/readwrite#hexcasting:read)$(action)Scribe's Reflection/$. When placed in the world, I can access it using patterns like $(l:patterns/readwrite_blocks#hexcasting:read/entity)$(action)Chronicler's Purification/$.",
+              recipe: "$(italic)Two thousand movies, four thousand albums, music and words and pictures like voices whispering from a sweet, sunny past./$",
+              "3": "In addition to these recipes, I can craft an empty $(item)Focal Frame/$ with a $(l:items/focus)$(item)Focus/$ to insert it; and I can craft a filled $(item)Focal Frame/$ by itself to remove the $(l:items/focus)$(item)Focus/$ from it, leaving the empty frame behind."
+            },
+          },
           splicing_table: {
             "": "Splicing Table",
             page: {
@@ -152,22 +260,42 @@
               "3": "I can select iotas (or the space between them) by clicking on them. Holding $(k:sneak) and clicking again allows me to select a range of iotas.$(br2)\
                 Additionally, there are dedicated buttons to select the entire list ($(thing)Select All/$) and to clear my selection ($(thing)Select None/$).$(br2)\
                 Selecting iotas allows me to unlock the true power of the $(l:items/splicing_table)$(item)Splicing Table/$: editing _Hexes.",
-              "4": "With $(l:items/splicing_table#cost)sufficient media/$, I can perform the following actions:\
+              actions: "With $(l:items/splicing_table#cost)sufficient media/$, I can perform the following actions:\
                 $(li)$(thing)Nudge Left/$: Move the selected iota(s) one space to the left.\
                 $(li)$(thing)Nudge Right/$: Move the selected iota(s) one space to the right.\
                 $(li)$(thing)Delete/$: Remove the selected iota(s) from the list.\
                 $(li)$(thing)Duplicate/$: Create a copy of the selected iota(s).\
                 $(li)$(thing)Undo/$: Revert the last action performed.\
                 $(li)$(thing)Redo/$: Re-perform actions previously reverted with $(thing)Undo/$.",
-              "5": "For more advanced operations, some extra storage is required. I can place an iota-holding item in the slot to the left to unlock the following actions:\
+              secondary: "For more advanced operations, some extra storage is required. I can place an iota-holding item in the slot to the left to unlock the following actions:\
                 $(li)$(thing)Copy/$: Write the selected iota(s) to a new list in the secondary item.\
                 $(li)$(thing)Cut/$: Same as $(thing)Copy/$, but also delete the selected iota(s).\
                 $(li)$(thing)Paste/$: Replace the selected iota(s) with the iota in the secondary item. If the iota is a list, its contents are pasted instead; I can override this by holding $(k:sneak).",
-              "6": "Finally, I can insert a $(l:items/staff)$(item)Staff/$ into the lower left slot to reveal a miniature casting grid. Patterns drawn on this grid are inserted directly into the list, overwriting any selected iotas.$(br2)\
+              staff: "Finally, I can insert a $(l:items/staff)$(item)Staff/$ into the lower left slot to reveal a miniature casting grid. Patterns drawn on this grid are inserted directly into the list, overwriting any selected iotas.$(br2)\
                 There are also six general-purpose inventory slots on the right side. These have no special functionality; they're just a convenient place to store a few extra items.",
               cost: "Unfortunately, all of this incredible versatility comes at a cost. In order to modify the contents of items, _media is required - about a tenth of one $(l:items/amethyst)$(item)Amethyst Dust/$ per action performed.$(br2)\
                 I can supply _media to the $(l:items/splicing_table)$(item)Splicing Table/$ by putting it in the lower right slot. The table will consume up to ten $(l:items/amethyst)$(item)Amethyst Dust/$ at once; any surplus is ignored until it can be consumed without wasting _media.",
+              patterns: "If this small cost is prohibitive, or if I wish to perform more complicated actions than those previously described, there is another option. I can use patterns such as $(l:patterns/readwrite_blocks#hexcasting:read/entity)$(action)Chronicler's Purification/$ to manipulate the contents of the item in the main slot, and I've devised some $(l:patterns/splicing_table)specialized patterns/$ to control other aspects of the splicing table.$(br2)\
+                Now, if only I could make the table think for itself...",
               recipe: "$(italic)She plugged in strings one after the other, the tiny metal cubes flying in and out as her fingers danced over the tray with blinding speed./$",
+            },
+          },
+        },
+      },
+
+      greatwork: {
+        entry: {
+          enlightened_splicing_table: {
+            "": "Mindsplice Table",
+            page: {
+              "1": "The $(l:items/splicing_table)$(item)Splicing Table/$ is fine. Adequate. But limited, oh so limited. I have $(italic)seen/$ what is possible now, and I must have it, no matter the cost.$(br2)\
+                I shall MAKE the table think for itself.",
+              "2": "A solution. Yes. Familiar -- almost $(italic)simple/$ in its infinite complexity. As with my $(l:greatwork/impetus)previous insights/$, I can specialize a mind -- sever it from the body, redirect, connect, rewire, $(italic)transform/$ -- for the task at hand. Like an $(l:greatwork/impetus)$(item)Impetus/$... but greater, more complicated, more and more and more and more and-- I MUST FOCUS.",
+              recipe: "Another $(l:greatwork/brainsweeping)$(thing)mindflaying/$ ritual. The task demanded of the mind is almost identical to that of a $(l:greatwork/impetus)$(item)Toolsmith Impetus/$, but more experience is required for this specialized, intricate work.",
+              "3": "The resulting $(thing)Mindsplice Table/$ is almost the same as before, but transmuted, $(italic)improved/$, in a single all-important way. With a mind to channel the patterns, the table can cast $(italic)any/$ _Hex almost effortlessly, triggered by nothing more than the press of a button.$(br)\
+                A small $(l:items/splicing_table#cost)infusion/$ of media is still required to initiate the process -- wasteful, but perhaps less so than my archaic, short-sighted designs of old. For spells, media is drawn from the same source.",
+              "4": "Of course, the flayed mind has limits. It must be $(italic)taught/$; even such a skilled mind cannot predict my needs without some guidance. Unlike an $(l:greatwork/impetus)$(item)Impetus/$, however, slates are not required -- the commands are instead $(l:patterns/enlightened_splicing_table)$(thing)imbued/$ directly into the mind, rewriting its neural pathways and leaving it no choice but to carry out my will.",
+              "5": "To facilitate even more complicated operations -- one $(thing)Mindsplice Table/$ controlling, $(italic)dominating/$, the next, and so on and so on and so on and so on and so on into eternity, if I have the patience and $(l:casting/mishaps)capacity/$ to use it -- the table's influence extends a small distance (four blocks, no more and no less) from the table. Small, yes, but perfectly adequate for most purposes. If more space is needed, my $(l:patterns/great_spells/greater_sentinel#hexcasting:sentinel/create/great)$(action)Greater Sentinel/$ can be used.",
             },
           },
         },
@@ -176,23 +304,71 @@
       patterns: {
         entry: {
           debugging: {
-            "": "Debugging",
+            "": "Debugging Patterns",
             page: {
-              "const/debugging": "Adds $(thing)True/$ to the top of the stack if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(thing)False/$ otherwise.",
-              "next_eval_index": "Adds the index of the next iota to be evaluated if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(l:casting/influences)$(thing)Null/$ otherwise.",
+              "const/debugging": "Add $(thing)True/$ to the top of the stack if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(thing)False/$ otherwise.",
+              "next_eval_index": "Add the index of the next iota to be evaluated if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(l:casting/influences)$(thing)Null/$ otherwise.",
               "const/cognitohazard": {
-                "1": "Adds a $(thing)Cognitohazard/$ to the top of the stack.",
+                "1": "Add a $(thing)Cognitohazard/$ to the top of the stack.",
                 "2": "It seems certain $(l:items/debugging#evaluator)debugging tools/$ may pose a security risk for some $(l:patterns/meta#hexcasting:eval/cc)high-level techniques/$. To help combat this, I have created this pattern.$(br2)\
                   When a $(thing)Cognitohazard/$ iota is executed normally, nothing happens. However, if one is present in a _Hex executed by a $(l:items/debugging#debugger)$(item)Debugger/$, it will cause the _Hex to terminate $(italic)immediately/$ - even before the $(thing)Cognitohazard/$ is actually executed.",
               },
               "breakpoint/": {
-                before: "Pauses the $(l:items/debugging#debugger)$(item)Debugger/$ before executing this pattern.",
-                after: "Pauses the $(l:items/debugging#debugger)$(item)Debugger/$ after executing this pattern (ie. before executing the next pattern).",
+                before: "Pause the $(l:items/debugging#debugger)$(item)Debugger/$ before executing this pattern.",
+                after: "Pause the $(l:items/debugging#debugger)$(item)Debugger/$ after executing this pattern (ie. before executing the next pattern).",
               },
-              "craft/debugger": "Creates a $(l:items/debugging#debugger)$(item)Debugger/$ that casts a _Hex, similar to $(l:patterns/spells/hexcasting)certain other patterns/$ I've used in the past.$(br2)\
+              "craft/debugger": "Create a $(l:items/debugging#debugger)$(item)Debugger/$ that casts a _Hex, similar to $(l:patterns/spells/hexcasting)certain other patterns/$ I've used in the past.$(br2)\
                 Costs about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
             },
           },
+
+          splicing_table: {
+            "": "Splicing Table Patterns",
+            page: {
+              "view_index/": {
+                read: "Remove a vector from the stack, then push the index of the leftmost iota currently visible in the $(l:items/splicing_table)$(item)Splicing Table/$ at that position.",
+                write: "Remove a vector and number from the stack, then move the view of the $(l:items/splicing_table)$(item)Splicing Table/$ at that position so that the given index is the leftmost one visible.",
+              },
+              "selection/": {
+                read: {
+                  "1": "Remove a vector from the stack, then push two values representing the current selection in the $(l:items/splicing_table)$(item)Splicing Table/$ at that position.",
+                  "2": "If a range of iotas is selected, two numbers are pushed, representing the start (inclusive) and end (exclusive) of the selected range. If the edge between two iotas is selected, the index of the iota to the right of the selected edge is pushed, followed by $(l:casting/influences)$(thing)Null/$. And if nothing is selected, $(l:casting/influences)$(thing)Null/$ is pushed twice.",
+                },
+                write: "Remove a vector and two values from the stack, then set the selection of the $(l:items/splicing_table)$(item)Splicing Table/$ at that position as previously described.",
+              },
+              "list/": {
+                "spellbook_index/": {
+                  read: "Remove a vector from the stack, then push the current page number (starting at 1) of the $(l:items/spellbook)$(item)Spellbook/$ in the main slot of the $(l:items/splicing_table)$(item)Splicing Table/$ at that position.",
+                  write: "Remove a vector and number from the stack, then flip the $(l:items/spellbook)$(item)Spellbook/$ in the main slot of the $(l:items/splicing_table)$(item)Splicing Table/$ at that position to the given page number.",
+                  readable: "Replace the vector at the top of the stack with $(thing)True/$ if there is a $(l:items/splicing_table)$(item)Splicing Table/$ at that position with a $(l:items/spellbook)$(item)Spellbook/$ in its main slot that contains at least one page, or $(thing)False/$ otherwise.",
+                },
+              },
+              "clipboard/": {
+                read: "Remove a vector from the stack, then copy the contents of the secondary item in the $(l:items/splicing_table)$(item)Splicing Table/$ at that position and push it to the stack.",
+                write: "Remove a vector and iota from the stack, then save the iota into the secondary item in the $(l:items/splicing_table)$(item)Splicing Table/$ at that position.$(br)\
+                  As with $(l:patterns/readwrite_blocks#hexcasting:write/entity)$(action)Chronicler's Gambit/$, I cannot write my own Name using this spell.",
+                readable: "Replace the vector at the top of the stack with $(thing)True/$ if there is a $(l:items/splicing_table)$(item)Splicing Table/$ at that position containing a secondary item that I could read, or $(thing)False/$ otherwise.",
+                writable: "Replace the vector at the top of the stack with $(thing)True/$ if there is a $(l:items/splicing_table)$(item)Splicing Table/$ at that position containing a secondary item that I could save an iota into, or $(thing)False/$ otherwise.",
+                "spellbook_index/": {
+                  read: "Like $(l:patterns/splicing_table#hexdebug:splicing/list/spellbook_index/read)$(action)Projectionist's Purification/$, but the page number of the $(l:items/spellbook)$(item)Spellbook/$ in the secondary slot is read instead of the main slot.",
+                  write: "Like $(l:patterns/splicing_table#hexdebug:splicing/list/spellbook_index/write)$(action)Projectionist's Gambit/$, but the page number of the $(l:items/spellbook)$(item)Spellbook/$ in the secondary slot is written instead of the main slot.",
+                  readable: "Like $(l:patterns/splicing_table#hexdebug:splicing/list/spellbook_index/readable)$(action)Shutter's Purification/$, but the $(l:items/spellbook)$(item)Spellbook/$ in the secondary slot is checked instead of the main slot.",
+                },
+              },
+            },
+          },
+
+          enlightened_splicing_table: {
+            "": "Mindsplice Table Patterns",
+            page: {
+              "hex/": {
+                read: "Remove a vector from the stack, then push the _Hex currently imbued to the $(l:greatwork/enlightened_splicing_table)$(item)Mindsplice Table/$ at that position, or $(l:casting/influences)$(thing)Null/$ if it has not yet been imbued.",
+                write: "Remove a vector and list of patterns from the stack, then imbue the list of patterns into the $(l:greatwork/enlightened_splicing_table)$(item)Mindsplice Table/$ at that position.$(br)\
+                  Costs about five $(l:items/amethyst)$(item)Charged Amethyst/$.",
+              },
+              circle: "In addition to these patterns, I can also cast $(l:patterns/circle#hexcasting:circle/impetus_pos)$(action)Waystone Reflection/$ and $(l:patterns/circle#hexcasting:circle/impetus_dir)$(action)Lodestone Reflection/$ from within a $(l:greatwork/enlightened_splicing_table)$(item)Mindsplice Table/$. However, trying to cast them through a $(l:items/staff)$(item)Staff/$, or trying to cast other $(l:greatwork/spellcircles)$(item)Spell Circle/$-only patterns through a $(l:greatwork/enlightened_splicing_table)$(item)Mindsplice Table/$, will still fail rather spectacularly.",
+            },
+          }
         },
       },
     },
