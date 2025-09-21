@@ -175,6 +175,7 @@
   "block.neepmeat.integration_port": "整合端口",
   "block.neepmeat.service_port": "伺服端口",
   "block.neepmeat.item_output_port": "物品输出端口",
+  "block.neepmeat.item_input_port": "物品输入端口",
   "block.neepmeat.fluid_input_port": "流体输入端口",
   "block.neepmeat.fluid_output_port": "流体输出端口",
   "block.neepmeat.crusher_segment": "粉碎机工作段",
@@ -194,6 +195,12 @@
   "block.neepmeat.lucky_one.lore_0": "+100% 额外产物概率（最高+200%）。必须提供≥50eJ/t的脉管功率。",
   "block.neepmeat.extractor": "采集提取机",
   "block.neepmeat.extractor.lore_0": "允许吞噬射线炮采集方块。掉落物会送入相连的物品输出端口。",
+  "block.neepmeat.distributor_point": "派送接收机",
+  "block.neepmeat.distributor_point.lore_0": "会经由派送生物体对其他位置收发物品和流体。",
+  "screen.neepmeat.distributor_point.address": "频道：",
+  "screen.neepmeat.distributor_point.max_cooldown": "冷却（刻）：",
+  "screen.neepmeat.distributor_point.auto_send": "自动发送：",
+  "screen.neepmeat.distributor_point.neepbus": "打开NEEP总线配置",
 
   "block.neepmeat.meat_steel_block": "肉钢块",
   "block.neepmeat.meat_steel_block_slab": "肉钢台阶",
@@ -355,6 +362,11 @@
   "block.neepmeat.vsc": "脉管能源转换器",
   "block.neepmeat.vsc.lore_0": "从脉管网络中消耗一定量的功率，并向前面输出，具体量可配置。适合用来控制发动机的转速。\n§e默认需红石信号开启。潜行空手交互以切换。",
   "screen.neepmeat.vsc.text.power": "目标功率：",
+  "screen.neepmeat.vascular.priority": "优先级",
+  "screen.neepmeat.vsc.text.mode": "模式",
+  "screen.neepmeat.vsc.normal.desc": "正常：从源网络中抽取给定量功率，并送入目标网络。",
+  "screen.neepmeat.vsc.balance.desc": "平衡：脉管能源转换器会尝试将目标网络中的可用功率保持在给定量。多余的功率会被送回源网络。",
+  "screen.neepmeat.vsc.cut_off": "功率不足时不传输",
   "block.neepmeat.vascular_sensor": "脉管网络传感器",
   "block.neepmeat.vascular_sensor.lore_0": "将相连脉管网络的属性输出至NEEP总线。",
 
@@ -838,7 +850,7 @@
   "entity.neepmeat.glome": "高维球体",
   "entity.neepmeat.hound": "猎犬",
   "entity.neepmeat.bovine_horror": "怖牛",
-  "entity.neepmeat.skyworm": "播卵生物体",
+  "entity.neepmeat.skyworm": "派送生物体",
 
   "entity.neepmeat.repeater": "播报员",
   "entity.neepmeat.machine_worm": "机器蠕虫",
@@ -912,7 +924,7 @@
   "instruction.neepmeat.store.desc": "§6( n1 地址 -- )§f\n将栈顶元素n1存入PLC内存中所给地址参数处。",
   "instruction.neepmeat.fetch.desc": "§6( 地址 -- n1 )§f\n尝试取出栈顶内存地址处的值。\n将取到的值压入栈。\n不会释放内存。",
   "instruction.neepmeat.extstore.desc": "将栈顶地址指向的内存项发送至目标方块。\n不会释放内存。\n §6ARG1§f：具有存储栈的方块（世界目标）",
-  "instruction.neepmeat.extfetch.desc": "将目标方块存储栈的栈顶项转移到PLC的内存。\n将新分配的内存地址压入栈。\n后续无需使用值时务必用FREE释放内存。\n §6ARG1§f：具有存储栈的方块（世界目标）",
+  "instruction.neepmeat.extfetch.desc": "将目标方块存储栈的栈顶项转移到PLC的内存。\n将新分配的内存地址压入栈。\n栈中不再引用后会自动释放内存。\n §6ARG1§f：具有存储栈的方块（世界目标）",
   "instruction.neepmeat.delay.desc": "等待所给数刻。",
   "instruction.neepmeat.eq.desc": "弹出并检查栈顶两元素是否相等。",
   "instruction.neepmeat.lt.desc": "弹出并检查栈顶往下第二元素是否小于栈顶元素。\n将结果压入栈。",
@@ -954,6 +966,8 @@
   "instruction.neepmeat.route.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会从给定§6管道§f和§6输入方向§f运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将操作成功与否压入栈。\n §6ARG1§f：输入管道（世界目标）\n §6ARG2§f：输出管道（世界目标）\n §6ARG3§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.request.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会通过管道网络运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将请求成功与否压入栈。\n §6ARG1§f：输出管道（世界目标）\n §6ARG2§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.count.desc": "统计所给世界目标处物品或流体的数量，并压入栈。\n具体统计何种类型的资源由可选的第二参数指定。\n若指定ID，则只会统计匹配该ID的物品或流体。“*”代表任意字符串（如“*:water”和“minecraft:*”）。\n §6ARG1§f：存储空间（世界目标）§6\n §6ARG2§f：需统计的类型（ITEM或FLUID，可选）\n §6ARG3§f：物品ID或流体ID（字符串，可选）",
+  "instruction.neepmeat.nbwrite.desc": "将栈顶元素沿数据线缆网络发送至所有匹配给定NEEP总线地址的端口。\n §6ARG1§f：NEEP总线地址（字符串）§6",
+  "instruction.neepmeat.nbread.desc": "沿数据线缆网络从匹配所给地址的端口处读取值，并压入栈。\n §6ARG1§f：NEEP总线地址（字符串）§6",
 
   "category.neepmeat.instruction.arithmetic": "算术",
   "category.neepmeat.instruction.comparison": "比较",
@@ -1015,8 +1029,8 @@
 
   "screen.neepmeat.living_machine.block_hold_shift": "机器结构件§7（按住§fSHIFT§7）",
   "screen.neepmeat.living_machine.block": "机器结构件",
-  "screen.neepmeat.living_machine.component_hold_shift": "机器功能组件§7（按住§fSHIFT§7）",
-  "screen.neepmeat.living_machine.component": "机器功能组件：%s",
+  "screen.neepmeat.living_machine.component_hold_shift": "功能组件§7（按住§fSHIFT§7）",
+  "screen.neepmeat.living_machine.component": "功能组件：%s",
 
   "screen.neepmeat.living_machine.fault_tolerance": "容错能力",
   "screen.neepmeat.living_machine.speed": "速度",
@@ -1051,6 +1065,7 @@
   "component.neepmeat.metaboliser_segment": "代谢机工作段",
   "component.neepmeat.charnel_pump": "积骸泵",
   "component.neepmeat.extractor": "采集提取机",
+  "component.neepmeat.distributor_point": "派送接收机",
   "component.neepmeat.hopper": "漏斗",
   "component.neepmeat.item_input": "物品输入端口",
   "component.neepmeat.item_output": "物品输出端口",
@@ -1218,9 +1233,10 @@
 
   "subtitles.neepmeat.wrench.click": "扳手：咔哒",
 
-  "subtitles.neepmeat.distributor.descend": "播卵生物体：下降",
-  "subtitles.neepmeat.distributor.ascend": "播卵生物体：升起",
-  "subtitles.neepmeat.distributor.spit": "播卵生物体：播卵",
+  "subtitles.neepmeat.distributor.descend": "派送生物体：下降",
+  "subtitles.neepmeat.distributor.ascend": "派送生物体：升起",
+  "subtitles.neepmeat.distributor.spit": "派送生物体：派送",
+  "subtitles.neepmeat.distributor.descend_short": "派送生物体：下降",
 
   "subtitles.neepmeat.pressure_washer.squirt": "高压清洗器：喷出流体",
 
@@ -1233,11 +1249,6 @@
   "category.neepmeat.thord.comparison": "比较",
   "category.neepmeat.thord.flow_control": "流程控制",
   "category.neepmeat.thord.misc": "杂项",
-  "screen.neepmeat.vascular.priority": "优先级",
-  "screen.neepmeat.vsc.text.mode": "模式",
-  "screen.neepmeat.vsc.normal.desc": "正常：从源网络中抽取给定量的功率，并送入目标网络。",
-  "screen.neepmeat.vsc.balance.desc": "平衡：脉管能源转换器会尝试将目标网络中的可用功率保持在给定量。多余的功率会被送回源网络。",
-  "screen.neepmeat.vsc.cut_off": "功率不足时不传输",
 
   "death.attack.neepmeat.crusher": "%1$s被绞成了嵌着肉块的番茄酱",
   "death.attack.neepmeat.mincer": "%1$s被磨成了汤状的匀浆",
@@ -1250,5 +1261,6 @@
   "process.neepmeat.phage_ray": "吞噬射线炮",
   "process.neepmeat.charnel_pump": "积骸泵",
   "process.neepmeat.bioreactor": "生物反应机",
-  "process.neepmeat.tree_vacuum": "真空吸树机"
+  "process.neepmeat.tree_vacuum": "真空吸树机",
+  "process.neepmeat.distributor_point": "派送接收机"
 }
