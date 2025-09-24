@@ -8,8 +8,6 @@ categories:
 item_ids:
   - crazyae2addons:data_processor
   - crazyae2addons:dataflow_pattern
-  - crazyae2addons:data_extractor
-  - crazyae2addons:player_data_extractor
 ---
 
 # Guide: How the Data Flow System Works
