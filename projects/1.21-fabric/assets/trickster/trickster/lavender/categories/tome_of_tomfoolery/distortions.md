@@ -7,7 +7,7 @@
 }
 ```
 
-Distortions tricks purely manipulate data. 
+Distortion tricks purely manipulate data. 
 When given the same set of inputs, these will always give the same output.
 
 

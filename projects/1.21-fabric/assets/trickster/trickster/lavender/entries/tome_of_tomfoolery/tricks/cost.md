@@ -22,10 +22,6 @@ As such, this system operates on an opt-in basis.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:cost,title=Cost Ploy|>
-
-->
-
----
+<|trick@trickster:templates|trick-id=trickster:cost|>
 
 Consumes one amethyst shard from the caster's inventory. Will blunder if none are available.
