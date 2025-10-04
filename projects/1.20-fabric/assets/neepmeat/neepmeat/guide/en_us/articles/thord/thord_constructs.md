@@ -54,7 +54,7 @@ The word `I` copies the loop index to the top of the stack.
 
 ```
 10 0 do i . loop
-# prints 1 2 3 4 5 6 7 8 9
+# prints 0 1 2 3 4 5 6 7 8 9
 ```
 
 `+LOOP` can be used instead of `LOOP`. It adds the last value on the stack to the loop index.

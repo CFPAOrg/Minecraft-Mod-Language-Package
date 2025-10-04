@@ -1,6 +1,6 @@
 ---
 navigation:
-  parent: items-blocks-machines/items-blocks-machines-index.md
+  parent: ae2:items-blocks-machines/items-blocks-machines-index.md
   title: 半聚能石英玻璃
   icon: mae2:cloud_chamber
 categories:

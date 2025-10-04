@@ -18,7 +18,8 @@ item_ids:
 </Row>
 
 ME Wireless Connector can link two networks like <ItemLink id="ae2:quantum_link" /> but with limited distances and can't 
-cross dimensions.
+cross dimensions. ME Wireless Connector only supports one-to-one connections, you need to use <ItemLink id="extendedae:wireless_hub" /> 
+if you want many-to-many connections.
 
 ## Link the Wireless Connectors
 

@@ -16,7 +16,7 @@ The Entity Ticker is a unique ME part that dramatically speeds up the block enti
 ## How to Use
 
 1. **Place the part**: Attach the Entity Ticker to an ME cable facing the machine or block entity you want to accelerate.
-2. **Open its GUI**: Right click the part to view energy usage and upgrade information.
+2. **Open its GUI**: Right-click the part to view energy usage and upgrade information.
 3. **Install upgrades**:
     - **Speed Cards**: Each Speed Card installed doubles the ticking speed of the target block.
     - The maximum number of Speed Cards is 8.

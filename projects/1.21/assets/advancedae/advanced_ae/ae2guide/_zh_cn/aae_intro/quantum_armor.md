@@ -179,7 +179,7 @@ item_ids:
 * <ItemLink id="advanced_ae:water_breathing_card" />
 * <ItemLink id="advanced_ae:magnet_card" />
 
-这些卡能提供多种实用功能，如免疫特定伤害和给予夜视。磁吸卡则有其配置界面，可供过滤需捡起何种物品以及吸引的范围。
+这些卡能提供多种实用功能，如免疫特定伤害和给予夜视。磁吸卡有配置界面，可供过滤需捡起何种物品以及吸引的范围。
 
 <br/>
 

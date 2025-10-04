@@ -13,10 +13,10 @@ If Restock is enabled, your <ItemLink id="ae2:wireless_crafting_terminal" /> wil
 
 You can enable it in the GUI, or using a Keybind.
 
-When enabled, it will try to keep the Stack you are using at half the stack size, so 32 for most items.
+When enabled, it will try to keep the Stack you are using at the max stack size, so 64 for most items.
 It will take any missing items from your ME System,
-or put excess items into your ME System.
-This means that if you place a few items, then break them again, the item likely won't overflow into a different slot,
+or put excess items into your ME System if you pick up more.
+This means that if you place a few items, then break them again, the item won't overflow into a different slot,
 even if you don't hava an active <ItemLink id="ae2wtlib:magnet_card" />.
 
 It will **NOT** restock stacks holding a single item before being used.

@@ -15,6 +15,7 @@ item_ids:
 <BlockImage id="crazyae2addons:crazy_pattern_provider" scale="4"></BlockImage>
 
 The Crazy Pattern Provider is an extended version of AE2's Pattern Provider with dynamic expandability.
+It holds all its settings and inventory when broken.
 
 ---
 
@@ -27,6 +28,8 @@ The Crazy Pattern Provider is an extended version of AE2's Pattern Provider with
 
 - **Scrollable GUI**
     - Display shows current pattern capacity.
+- **Hover text**
+    - Displays current capacity of the provider and how many patterns are already inside it.
 ---
 
 ## How to Use

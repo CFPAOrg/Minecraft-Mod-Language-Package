@@ -10,27 +10,16 @@ item_ids:
 
 # The Power of Earth
 
-Only Heated FE rate : **270 FE/t**
-Heated & Cooled FE rate : **1620 FE/t**
+A new generator that generate Forge Energy based on a heat source blocks and a fluid coolant
 
-A new generator that generate Forge Energy based on a heat source block and a fluid coolant (optional to provide a multiplier)
+<BlockImage id="justdynathings:thermo_generator" scale="4.0" p:facing="down" p:active="true"/>
 
-<BlockImage id="justdynathings:thermo_generator" scale="4.0" p:facing="down" p:thermo_cooled="false" p:thermo_heated="false"/>
+<Recipe id="justdynathings:thermo_generator" />
 
-<GameScene zoom="4" interactive={true}>
-  <Block id="minecraft:magma_block"/>
-  <Block y="1" id="justdynathings:thermo_generator" scale="4.0" p:facing="down" p:thermo_cooled="false" p:thermo_heated="true"/>
+## Looking inside
 
-  <Block y="-1" id="justdynathings:thermo_generator" scale="4.0" p:facing="up" p:thermo_cooled="false" p:thermo_heated="true"/>
+FE gen = 125 x CoolantEfficiency x HeatEfficiency
 
-  <Block x="1" id="justdynathings:thermo_generator" scale="4.0" p:facing="west" p:thermo_cooled="false" p:thermo_heated="true"/>
+MB cost = 125 / CoolantEfficiency
 
-  <Block x="-1" id="justdynathings:thermo_generator" scale="4.0" p:facing="east" p:thermo_cooled="false" p:thermo_heated="true"/>
-
-  <BoxAnnotation color="#00FF00" min="0.25 -0.75 0.25" max="0.75 -1 0.75">
-        Yes , you can place upsidedown and it work!
-  </BoxAnnotation>
-
-</GameScene>
-
-<RecipeFor id="justdynathings:thermo_generator" />
+_probably it will be simplified on future_

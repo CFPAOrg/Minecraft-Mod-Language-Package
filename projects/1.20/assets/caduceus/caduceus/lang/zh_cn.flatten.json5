@@ -1,0 +1,118 @@
+{
+  caduceus: {
+    book: {
+      basics: {
+        caduceus_changes: {
+          "": "Caduceus 中的改动",
+          "1": "我注意到某类$(l:patterns/meta#hexcasting:eval/cc)元运行技术/$的表现在近期发生了变化。$(br2)\
+            跳转 iota 不再无法深入检验了：我现在可以看见组成它们的$(l:patterns/jump_manipulation)许多组件/$，但还没法把各组件分离出来。",
+          "2": "而且，似乎使用跳转 iota 时 $(l:casting/mishaps)Iota 过多/$事故出现得更频繁了。我得小心不要研究得太过深入了。",
+        },
+      },
+      casting: {
+        continuations: {
+          "": "跳转入门",
+          "1": "如同普通的操作需对$(l:casting/vectors)向量/$有所见地，在将我的新发现运用到极致之前，也应当更深入地了解跳转 iota（又称“续体”/“continuation”）。我收集了些有关本主题的“轻松读物”。",
+          "2": {
+            text: "首先是一篇百科条目，主要介绍“第一类续体”的概念；这一概念由跳转 iota 实现。条目中还讨论了“以当前续体调用”/“call/cc”运算符，它和$(l:patterns/meta#hexcasting:eval/cc)$(action)伊里斯之策略/$大致等价。",
+            link_text: "维基百科",
+          },
+          "3": {
+            text: "然后是一篇博客，主要介绍“定界续体”/“delimited continuation”，还附带了详实的示例，可用$(hex)咒术/$重写以便练习。如果觉得理解$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$和$(l:patterns/delimcc#caduceus:eval/prompt)$(action)阿尔刻之策略/$有困难，可以读读这篇博客。",
+            link_text: "博客",
+          },
+          "4": {
+            text: "最后，如果不担心在某种程度上打破第四面墙，可以阅读这篇概览文档，以了解自然解读我$(hex)咒术/$的具体方式。",
+            link_text: "施法的原理",
+          },
+        },
+        caduceus_mishaps: {
+          "": "Caduceus 事故",
+          "1": "本节记录了操纵跳转 iota 和使用定界跳转时会出现的事故。",
+          no_prompt: {
+            title: "阿尔刻未受限",
+            text: "试图在$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$之外绘制$(l:patterns/delimcc#caduceus:eval/prompt)$(action)阿尔刻之策略/$。",
+          },
+        },
+      },
+      patterns: {
+        delimcc: {
+          "": "定界跳转",
+          "eval/prompt": "运行栈中的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$完全一致；区别在于，其内部的$(l:patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$无法获取其外部的 iota。",
+          "eval/control": {
+            "1": "运行栈中的图案或图案列表，与$(l:patterns/meta#hexcasting:eval/cc)$(action)伊里斯之策略/$类似。必须绘制于$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$内部。",
+            "2": "将在图案列表末尾和$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$闭合之间绘制的图案会$(italic)转移/$到调用 iota 中；压入栈中的也不会是跳转 iota，而是此调用 iota。$(br2)\
+              执行到调用 iota 时，其中捕获的图案会如同对其使用$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$一样施放。如果不去执行调用 iota，即会跳过$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$闭合前剩余的图案。",
+          },
+        },
+        jump_manipulation: {
+          "": "跳转操作",
+          "1": "就和我的$(hex)咒术/$能和$(l:casting/stack)栈/$交互一样，自然在处理我的$(hex)咒术/$时会使用自己的栈（由“帧”组成）。跳转 iota 中包含了该栈在某一时刻的快照，这些快照可由本节中的图案拆解和重构。$(br)\
+            可惜，虽然调用 iota 和跳转 iota 很相似，但这些图案$(italic)无法/$作用于前者。",
+          add: "移除栈顶跳转 iota，再将其中所有栈帧加到此时栈顶跳转 iota 的底部。",
+          abs: "移除栈顶跳转 iota，再返回其中栈帧数。",
+          splat: "移除栈顶跳转 iota，再为其中各栈帧返回一个仅包含该栈帧本身的跳转 iota。",
+          construct: "移除栈顶跳转 iota，再将其顶部帧加到此时栈顶跳转 iota 的顶部。",
+          deconstruct: "移除栈顶跳转 iota 的顶部帧，再返回一个仅包含该栈帧本身的跳转 iota。",
+          jump_tags: {
+            title: "跳转标签",
+            text: "$(l:patterns/readwrite#hexcasting:local)$(thing)渡鸦之思/$并不是$(hex)咒术/$中唯一用来存储信息的位置。其实，我可以直接把 iota 藏到运行这一概念中去。我把这种技术叫作$(thing)跳转标签/$，部分其他文献则称其“续体标记”。$(br2)\
+              不过，$(thing)跳转标签/$有一项局限：它们同一时刻只能持有单个 iota。和$(l:patterns/readwrite#hexcasting:local)$(thing)渡鸦之思/$不一样的是，它们就连列表都存不下。"
+          },
+          "read/mark/local": "复制当前运行所对应的$(thing)跳转标签/$中存储的 iota，并压入栈顶。",
+          "read/mark/iota": "和$(l:patterns/jump_manipulation#caduceus:read/mark/local)$(action)壶罐之精思/$类似，但会从跳转 iota 的顶部帧所对应的$(thing)跳转标签/$中读出。",
+          "write/mark/local": {
+            "1": "移除栈顶 iota，将其写入当前运行所对应的$(thing)跳转标签/$。$(br)\
+              和$(l:patterns/readwrite#hexcasting:write/entity)$(action)编年史家之策略/$一样，不可向其写入真名。",
+            "2": "在调用结尾使用$(l:patterns/jump_manipulation#caduceus:read/mark/local)$(action)壶罐之精思/$或$(l:patterns/jump_manipulation#caduceus:write/mark/local)$(action)壶罐之策略/$时应当小心。它们读取或写入的标签并不一定符合预期。",
+          },
+        },
+      },
+    },
+
+    tooltip: {
+      continuation: {
+        "": "[Jump -> (%s)]",
+        delimited: "[Call -> (%s)]",
+
+        frame: {
+          mark: {
+            inline: "%s*",
+            hover: "包含：%s",
+          },
+
+          "caduceus:": {
+            prompt: "Prompt",
+          },
+          "hexcasting:": {
+            evaluate: "Evaluate",
+            foreach: "ForEach",
+            end: "FinishEval",
+          },
+        },
+      },
+    },
+  },
+
+  hexcasting: {
+    action: {
+      "caduceus:": {
+        "eval/prompt": "忒提斯之策略",
+        "eval/control": "阿尔刻之策略",
+        "read/mark/local": "壶罐之精思",
+        "read/mark/iota": "壶罐之纯化",
+        "write/mark/local": "壶罐之策略",
+      },
+    },
+
+    mishap: {
+      no_prompt: "没有先使用忒提斯之策略",
+      invalid_value: {
+        class: {
+          continuation: "一个跳转",
+          continuation_mark: "一个有效的跳转标签",
+        },
+      },
+    },
+  },
+}
