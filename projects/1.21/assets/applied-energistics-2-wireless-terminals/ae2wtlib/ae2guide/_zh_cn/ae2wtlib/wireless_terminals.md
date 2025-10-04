@@ -24,6 +24,8 @@ item_ids:
 
 与AE2的<ItemLink id="ae2:wireless_terminal" />类似，本模组的终端可通过键位打开，也可放入饰品槽（如果有模组实现了Curios API的话）。
 
+无线终端也可像普通的<ItemLink id="ae2:wireless_terminal" />那样与<ItemLink id="ae2:wireless_access_point" />建立连接。
+
 ## 无线通用终端
 
 <ItemImage id="ae2wtlib:wireless_universal_terminal" scale="3" />

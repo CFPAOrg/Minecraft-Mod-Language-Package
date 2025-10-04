@@ -16,6 +16,13 @@ tile.modularmachineryaddons.blockbiomeproviderinput.name=生物群系仓
 tile.modularmachineryaddons.blockdimensionproviderinput.name=维度仓
 
 item.modularmachineryaddons.itemadvancedconstructtool.name=高级扳手
+item.modularmachineryaddons.itemadvancedmachineassembler.name=高级机械组装器
+item.modularmachineryaddons.itemadvancedmachinedisassembler.name=高级机械拆卸器
+item.modularmachineryaddons.itemradiationsponge.name=辐射海绵
+item.modularmachineryaddons.iteminactiveradiationsponge.name=未激活的辐射海绵
+tooltip.modularmachineryaddons.cheese.lie=奶酪是个§l谎言
+
+commands.mmcea.getcacheinfo.usage=/getScrubbedChunksCacheInfo
 
 # errors
 error.modularmachineryaddons.component.invalid.biome=没有找到生物群系仓
@@ -27,6 +34,13 @@ error.modularmachineryaddons.component.invalid.scrubber=没有找到洗涤仓
 error.modularmachineryaddons.component.invalid.radiation=没有找到辐射仓
 error.modularmachineryaddons.component.invalid.will=没有找到意志仓
 error.modularmachineryaddons.component.invalid.meteor=没有找到坠星仓
+error.assembler.not.found=玩家物品栏中没有找到高级机械组装器
+error.encryption.key.not.found=组装器必须通过安全终端连接到ME系统才可进行物品提取
+error.security.station.not.found=无法定位安全终端
+error.disassembler.nonempty.itemhandler=发现包含物品的方块。请清空其中物品后重试，或手动破坏它
+error.disassembler.nonempty.fluidhandler=发现包含流体的方块。请清空其中流体后重试，或手动破坏它
+message.assembly.missing.machine=无法识别机械。插入蓝图或转换控制器
+message.item.mode.changed=物品模式已更改为%s
 
 # requirement check fails
 error.modularmachineryaddons.requirement.missing.multichunk.input=未满足多区块输入需求
@@ -45,8 +59,49 @@ error.modularmachineryaddons.requirement.missing.meteor.missing=坠星仓无法�
 
 # items
 item.modularmachineryaddons.advancedconstructtool.tooltip=选择两个角落并点击机械控制器以提取整个多方块结构定义。选择第三个方块则会清除区域选择。
+tooltip.modularmachineryaddons.radiationsponge=清除使用者自身，以及当前所处区块内的所有辐射
+
+# blocks
+tooltip.modularmachineryaddons.scrubber=在配方切换或世界重启后的短暂时间窗口内仍可能会发生辐射泄漏。洗涤你的基地！
+
 
 # messages
+message.modularmachineryaddons.assembly.complete=多方块组装成功完成
+message.modularmachineryaddons.assembly.complete.error=多方块组装完成，但部分方块未被放置
+message.modularmachineryaddons.disassembly.complete=多方块拆卸成功完成
+message.modularmachineryaddons.disassembly.complete.error=多方块拆卸完成，但部分方块未被移除
+message.modularmachineryaddons.assembly.error=多方块组装中断
+message.modularmachineryaddons.disassembly.error=多方块拆卸中断
 message.modularmachineryaddons.advancedconstructtool.cleared=已清除工具选择
 message.modularmachineryaddons.advancedconstructtool.invalid.selection=请选择两个角落！
 message.modularmachineryaddons.advancedconstructtool.selection=已成功选择角落
+
+#assembly
+message.assembly.missing.item.knowledge=缺少对物品：%s的知识
+message.assembly.missing.emc=EMC不足，无法提取物品：%s（数量：%s）。当前EMC：%d 所需EMC：%d
+message.assembly.overflow.emc=无法将物品：%s（数量：%s）放入EMC网络。若将物品的EMC值（%d）添加到当前网络EMC（%d）中，将超过最大EMC上限！
+tooltip.builder.player_inventory=模式：仅玩家物品栏
+tooltip.builder.player_inventory_emc=模式：玩家物品栏+EMC
+tooltip.builder.player_inventory_me=模式：玩家物品栏+连接的ME网络
+tooltip.builder.all=模式：玩家物品栏+EMC+连接的ME网络
+tooltip.builder.change.modes=按住Shift并滚动滚轮，或者使用绑定按键以更改模式
+message.assembly.tip.success.missing.blocks=无法放置以下方块: %s
+message.disassembly.tip.success.missing.blocks=无法破坏以下方块: %s
+message.assembly.too.quickly=尝试执行操作过快！
+message.modularmachineryaddons.radiationsponge.success=已清除辐射: [%2$d：%1$s] [区块缓存：%3$d] [区块等级：%4$d]
+
+modularmachineryaddons.config.title=模块化机械拓展
+key.cycle=循环工具模式
+key.categories.mmcea=模块化机械拓展
+
+# JEI 提示信息
+jei.tooltip.modularmachineryaddons.flux=咒波
+jei.tooltip.modularmachineryaddons.vis=魔力
+jei.tooltip.modularmachineryaddons.radiation=辐射
+jei.tooltip.modularmachineryaddons.chunk_range=区块范围
+jei.tooltip.modularmachineryaddons.aspect=要素
+jei.tooltip.modularmachineryaddons.amount=数量
+jei.tooltip.modularmachineryaddons.dimension=维度
+jei.tooltip.modularmachineryaddons.biome=生物群系
+jei.tooltip.modularmachineryaddons.meteor_contents=陨石内容
+jei.tooltip.modularmachineryaddons.scrubber_special=无穷无尽！
