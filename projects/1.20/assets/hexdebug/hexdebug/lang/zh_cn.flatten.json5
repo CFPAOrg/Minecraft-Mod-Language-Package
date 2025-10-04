@@ -49,10 +49,14 @@
           paste_verbatim: "粘贴（逐项）",
           paste_splat: "粘贴（扁平化）",
           export: "导出为.hexpattern文件",
-          cast: "激活编辑台",
+          cast: {
+            "": "激活编辑台",
+            named: "激活%s",
+          },
         },
         tooltip: {
           index: "索引下标：%d",
+          depth: "深度：%d",
           signature: "图案编码：%s",
           length: "长度：%d",
         },
@@ -91,9 +95,21 @@
             "": "显示调试客户端行号",
             "@Tooltip": "若设为true，显示调试客户端（如VSCode）的行号，通常以1起始；否则显示列表索引下标，以0起始。"
           },
-          invertSplicingTableScrollDirection: {
-            "": "反转剪接台滚轮方向",
-            "@Tooltip": "是否在向上滚动滚轮（反之则向下）时增加剪接台的视野索引。自动为反向滚动绑定减小索引操作。",
+          splicingTable: {
+            "": "通用剪接台选项",
+            invertScrollDirection: {
+              "": "反转滚轮方向",
+              "@Tooltip": "是否在向上滚动滚轮（反之则向下）时增加剪接台的视野索引。自动为反向滚动绑定减小索引操作。",
+            },
+            enableRainbowBrackets: {
+              "": "启用彩色括号",
+              "@Tooltip": "若设为true，则将内省和反思的轮廓显示为彩色，以便辨别成对括号。",
+            },
+            rainbowBracketColors: "彩色括号颜色",
+            showNestedPatternNames: {
+              "": "显示嵌套图案名",
+              "@Tooltip": "若设为true，在内嵌列表中图案的提示文本中显示图案的名称，而不使用内置的行内图案显示。",
+            },
           },
           splicingTableKeybinds: {
             "": "剪接台按键绑定",
@@ -105,6 +121,10 @@
             overrideVanillaArrowKeys: {
               "": "覆盖原版方向键操作",
               "@Tooltip": "在剪接台GUI中覆盖可用方向键切换界面元素焦点的原版特性。此设置可增强默认按键绑定的可用性，但有辅助功能需求时可能需要禁用。",
+            },
+            sendHexicalTelepathy: {
+              "": "启用Hexical心灵感应",
+              "@Tooltip": "仅限Fabric。若安装有Hexical，则在剪接台GUI中启用所有心灵感应键位。注意：如果Hexical本身添加了在GUI中使用心灵感应的功能，禁用此选项不会连带禁用它们。",
             },
             enlightened: {
               "": "制念台",
@@ -209,14 +229,15 @@
         splicing_table: {
           "": "一个剪接台",
           enlightened: "一个制念台",
-          list: {
-            spellbook: "主物品槽中有非空法术书的剪接台",
-          },
           clipboard: {
             read: "放有可读副物品的剪接台",
             write: "放有可写副物品的剪接台",
             spellbook: "副物品槽中有非空法术书的剪接台",
           },
+        },
+        splicing_table_or_focus_holder: {
+          "": "一个剪接台或核心框架",
+          spellbook: "主物品槽中有非空法术书的剪接台或核心框架",
         },
       },
       invalid_value: {
@@ -266,11 +287,10 @@
           focus_holder: {
             "": "核心框架",
             page: {
-              "1": "$(l:items/focus)$(item)核心/$可用于在物品栏中存储$(hex)咒术/$和其他 iota，但总有些时候我会需要在世界中存储 iota。物品展示框太脆弱，$(l:greatwork/akashiclib)其他做法/$又太低效而且也……不道德。我需要更优雅的方法，最终成功借助$(item)核心框架/$实现了。",
-              "2": "$(item)核心框架/$自身没有用处，必须先向其放入一枚$(l:items/focus)$(item)核心/$。可以选择合成两者，也可用$(l:items/focus)$(item)核心/$右击放置出来的$(item)核心框架/$。空手右击可从框架中取出$(l:items/focus)$(item)核心/$。$(br2)\
-                物品形态下，装有核心的$(item)核心框架/$相当于一枚$(l:items/focus)$(item)核心/$，适用于核心的操作同样适用于框架，包括$(l:patterns/readwrite#hexcasting:read)$(action)书吏之精思/$等图案。放置后，可使用$(l:patterns/readwrite_blocks#hexcasting:read/entity)$(action)编年史家之纯化/$等图案访问。",
-              recipe: "$(italic)两千部电影，四千部专辑，音乐、词句、图片，都仿佛诉说着过去阳光明媚的甜蜜日子。/$",
-              "3": "在之前提到的配方之外，我还可以在合成$(item)核心框架/$时直接放入$(l:items/focus)$(item)核心/$。将装有核心的$(item)核心框架/$单独放入合成方格合成，也可以取出其中$(l:items/focus)$(item)核心/$，并留下空的框架。"
+              "1": "$(l:items/focus)$(item)核心/$可用于在物品栏中存储$(hex)咒术/$和其他 iota，但总有些时候我会需要在世界中存储 iota。$(item)物品展示框/$太脆弱，$(l:greatwork/akashiclib)其他做法/$又太低效而且也……不道德。我需要更优雅的方法，最终成功借助$(item)核心框架/$实现了。",
+              "2": "$(item)核心框架/$自身没有用处，必须先向其放入一个$(l:items/focus)$(item)能存储 iota 的物品/$。可以用物品右击$(item)核心框架/$，也可在物品栏中以类似$(item)收纳袋/$的形式与单个$(item)框架/$交互。空手右击可取出物品。$(br2)\
+                物品形态下，装有物品的$(item)核心框架/$可用到任意接受其中物品的$(l:patterns/readwrite#hexcasting:read)图案/$和$(l:items/splicing_table)方块/$中去。放置后，可使用$(l:patterns/readwrite_blocks#hexcasting:read/entity)$(action)编年史家之纯化/$等图案访问。",
+              "3": "$(italic)两千部电影，四千部专辑，音乐、词句、图片，都仿佛诉说着过去阳光明媚的甜蜜日子。/$",
             },
           },
           splicing_table: {
@@ -361,9 +381,9 @@
               },
               "list/": {
                 "spellbook_index/": {
-                  read: "移除栈顶向量，返回该处$(l:items/splicing_table)$(item)剪接台/$主槽位中$(l:items/spellbook)$(item)法术书/$当前的页码（以 1 起始）。",
-                  write: "移除栈顶向量和数，将该处$(l:items/splicing_table)$(item)剪接台/$主槽位中的$(l:items/spellbook)$(item)法术书/$翻到对应页。",
-                  readable: "若所给向量处有$(l:items/splicing_table)$(item)剪接台/$，且其主槽位中法术书至少有一页记有内容，则将该向量替换为 $(thing)True/$；否则返回 $(thing)False/$。",
+                  read: "移除栈顶向量，返回该处$(l:items/splicing_table)$(item)剪接台/$或$(l:items/focus_holder)$(item)核心框架/$主槽位中$(l:items/spellbook)$(item)法术书/$当前的页码（以 1 起始）。",
+                  write: "移除栈顶向量和数，将该处$(l:items/splicing_table)$(item)剪接台/$或$(l:items/focus_holder)$(item)核心框架/$主槽位中的$(l:items/spellbook)$(item)法术书/$翻到对应页。",
+                  readable: "若所给向量处有$(l:items/splicing_table)$(item)剪接台/$或$(l:items/focus_holder)$(item)核心框架/$，且其主槽位中法术书至少有一页记有内容，则将该向量替换为 $(thing)True/$；否则返回 $(thing)False/$。",
                 },
               },
               "clipboard/": {
