@@ -17,7 +17,7 @@ item_ids:
 <ItemImage id="advanced_ae:wireless_quantum_crafter_terminal" scale="4"></ItemImage>
 </Row>
 
-Quantum Crafter Terminals allows the player to manage their entire network of <ItemLink id="advanced_ae:quantum_crafter"/>s
+Quantum Crafter Terminals allow the player to manage their entire network of <ItemLink id="advanced_ae:quantum_crafter"/>s
 from one spot. The wireless version is useful to change settings on the go, just link it to your grid by inserting it into
 your wireless access point and you're good to go!
 

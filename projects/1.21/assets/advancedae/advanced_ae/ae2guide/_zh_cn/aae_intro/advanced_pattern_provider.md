@@ -26,6 +26,8 @@ ME高级样板供应器是<ItemLink id="ae2:pattern_provider" />的全新变种�
 
 *说你呢，通用机械（Mekanism）。*
 
-![AAEGui](../pic/app_gui.png)
-
 而为使用此特性，需先将经过编码的样板放入<ItemLink id="advanced_ae:adv_pattern_encoder" />处理为高级版本——<ItemLink id="advanced_ae:adv_processing_pattern" />，再将其插入此供应器。
+
+此样板供应器还有一个扩展版本，单个供应器即能容纳最多36个样板。
+
+![AAEGui](../pic/app_gui.png)
