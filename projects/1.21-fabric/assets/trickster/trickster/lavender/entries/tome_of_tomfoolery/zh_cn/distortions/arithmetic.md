@@ -10,6 +10,7 @@
     "屈从之谋略",
     "整体之曲变",
     "至尊之曲变",
+    "至劣之曲变",
     "高贵之谋略",
     "低位之谋略",
     "壮丽之曲变",
@@ -29,217 +30,158 @@
 }
 ```
 
-本节的图案主要涉及基础算术及简单数学操作。
+本节的图案主要涉及基础算术及数学操作。
 
 
-许多基础算术操作对数和向量都有效，但并非所有戏法都是这样。
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:add,title=吞并之谋略|>
-
-(number | vec)... | (number | vec)[] -> (number | vec)
-
----
-
-将多个数或向量加为单个值。数和向量的和是向量。
+部分基础戏法能接受多种类型的片段。它们的签名会采用特殊标记，如{#aa4444}可加{}或{#aa4444}可舍入{}。这些术语是后页全称的简写：
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:subtract,title=遗弃之谋略|>
+{#aa4444}可加{}、{#aa4444}可减{}可以是{#ddaa00}数{}、{#aa7711}向量{}、{#6644aa}图案{}。
 
-(number | vec)... | (number | vec)[] -> (number | vec)
 
----
-
-将多个数或向量减为单个值。数和向量的差是向量。
+{#aa4444}可乘{}、{#aa4444}可除{}、{#aa4444}可舍入{}则只能是{#ddaa00}数{}或{#aa7711}向量{}。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:multiply,title=统治之谋略|>
+能一次性接受多个参数的曲变术会逐参数执行其操作。例如：
 
-(number | vec)... | (number | vec)[] -> (number | vec)
+1, 2, 3 传入吞并之谋略 = 1 + 2 + 3 = 6
 
----
 
-将多个数或向量乘为单个值。数和向量的积是向量。
+以及
 
-;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:divide,title=屈从之谋略|>
-
-(number | vec)... | (number | vec)[] -> (number | vec)
-
----
-
-将多个数或向量除为单个值。数和向量的商是向量。
+1, 2, 3 传入屈从之谋略 = 1 / 2 / 3 = 0.1666...
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:modulo,title=整体之曲变|>
+<|trick@trickster:templates|trick-id=trickster:add|>
 
-number, number -> number
+求各片段的和。
 
----
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:subtract|>
+
+从首个片段中减去其他片段。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:multiply|>
+
+求各片段的积。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:divide|>
+
+从首个片段开始，依次求各片段对的商。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:modulo|>
 
 返回第一个数除以第二个数的余数。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:power,title=至尊之曲变|>
-
-number, number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:power|>
 
 返回底数为第一个数，指数为第二个数的幂。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:max,title=高贵之谋略|>
+<|trick@trickster:templates|trick-id=trickster:logarithm|>
 
-number... | number[] -> number
+给定两个数。在计算幂时，为让底数为第一个数的幂等于第二个数，指数应为多少，返回该值。
 
----
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:max|>
 
 返回所有输入值中的最大值。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:min,title=低位之谋略|>
-
-number... | number[] -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:min|>
 
 返回所有输入值中的最小值。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:ceil,title=壮丽之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:ceil|>
 
 将输入值向上取整。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:floor,title=谦卑之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:floor|>
 
 将输入值向下取整。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:round,title=客观之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:round|>
 
 将输入值四舍五入。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:sqrt,title=削损之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:sqrt|>
 
 返回输入值的平方根。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:invert,title=取反之曲变|>
-
-number -> number | vec -> vec
-
----
+<|trick@trickster:templates|trick-id=trickster:invert|>
 
 取反所给数或向量。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:abs,title=绝对主义者之曲变|>
+<|trick@trickster:templates|trick-id=trickster:abs|>
 
-number -> number
-
----
-
-若所给数为负，返回其相反数。否则直接传出。
+若所给数为负，返回其相反数。否则原样传出。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:sin,title=甲型几何之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:sin|>
 
 返回所给数的正弦。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:cos,title=乙型几何之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:cos|>
 
 返回所给数的余弦。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:tan,title=丙型几何之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:tan|>
 
 返回所给数的正切。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arcsin,title=甲型反几何之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:arcsin|>
 
 返回所给数的反正弦。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arccos,title=乙型反几何之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:arccos|>
 
 返回所给数的反余弦。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arctan,title=丙型反几何之曲变|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:arctan|>
 
 返回所给数的反正切。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arctan2,title=笛卡尔角之曲变|>
-
-number, number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:arctan2|>
 
 返回X轴正向与原点至点(y, x)射线的夹角。

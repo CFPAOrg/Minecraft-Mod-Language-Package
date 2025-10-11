@@ -11,44 +11,36 @@
 }
 ```
 
-Raycasting tricks take either an entity or a position and a direction, and will return what the entity is looking at, 
+Raycasting tricks take either an entity or a position and a direction, and will give what the entity is looking at, 
 or what the vectors are pointing to.
 
 
+When using vectors, the first vector is interpreted as the position to start from, 
+while the second is seen as a unit vector representing the look direction.
+
+;;;;;
+
 Raycasts which target blocks may optionally be made to hit fluids if their last argument is true.
 
-;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast,title=Pinpoint Ingress|>
-
-entity, [boolean] -> vector |
-
-vector, vector, [boolean] -> vector
-
----
-
-Returns the block that is hit.
+If a raycast misses and does not hit anything of relevance within 64 blocks, void will be given.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast_side,title=Bearing Ingress|>
+<|trick@trickster:templates|trick-id=trickster:raycast|>
 
-entity, [boolean] -> vector |
-
-vector, vector, [boolean] -> vector
-
----
-
-Returns a vector representing the side of the block that is hit.  
+Returns the position of the block that is hit.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:raycast_entity,title=Mark Ingress|>
-
-entity -> entity |
-
-vector, vector -> entity
-
----
+<|trick@trickster:templates|trick-id=trickster:raycast_entity|>
 
 Returns the entity that is hit.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:raycast_side|>
+
+;;;;;
+
+Returns a unit vector representing the side of the block that is hit.
