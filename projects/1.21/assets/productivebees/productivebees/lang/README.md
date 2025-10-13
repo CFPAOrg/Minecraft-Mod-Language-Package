@@ -4,7 +4,7 @@
 
 内容基本来自粗扫源码，肯定有缺漏和错误
 
-最后更新时间：2025.10.13 19:20 (UTC+8)
+最后更新时间：2025.10.13 21:00 (UTC+8)
 
 | 蜂种                                                                         | 产物                                                                                  | 注释                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -337,7 +337,7 @@
 | 钋蜜蜂<br/>Polonium Bee<br/>`polonium_bee`                                   | 钋（ChemLib）                                                                         | 未实装                                                                     |
 | 钾蜜蜂<br/>Potassium Bee<br/>`potassium_bee`                                 | 钾（ChemLib）                                                                         | 未实装                                                                     |
 | 镨蜜蜂<br/>Praseodymium Bee<br/>`praseodymium_bee`                           | 镨（ChemLib）                                                                         | 未实装                                                                     |
-| 钷蜜蜂<br/>Promethium Bee<br/>`promethium_bee`                               | 钷（ChemLib）                                                                         | 未实装                                                                     |
+| 钷元素蜜蜂<br/>Promethium Bee<br/>`promethium_bee`                           | 钷（ChemLib）                                                                         | 加`元素`作区分<br/>未实装                                                  |
 | 镤蜜蜂<br/>Protactinium Bee<br/>`protactinium_bee`                           | 镤（ChemLib）                                                                         | 未实装                                                                     |
 | 镭蜜蜂<br/>Radium Bee<br/>`radium_bee`                                       | 镭（ChemLib）                                                                         | 未实装                                                                     |
 | 氡蜜蜂<br/>Radon Bee<br/>`radon_bee`                                         | 氡（ChemLib）                                                                         | 未实装                                                                     |
