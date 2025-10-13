@@ -1,8 +1,8 @@
 跳过资源型蜜脾直接给出后续产物，粒、锭、块等同种资源的不同形态不作区分
-除非只产出蜜脾、蜂蜜、蜜蜡、花粉，否则产物内忽略这两者
+除非只产出蜜脾、蜂蜜、蜜蜡、花粉，否则产物内忽略它们
 模组特有资源进行标记，否则不给出模组名（其实就是`c`标签或者`minecraft`）
 
-最后更新时间：2025.10.13 19:00 (UTC+8)
+最后更新时间：2025.10.13 19:10 (UTC+8)
 
 | 蜂种                                                                         | 产物                                                                                  | 注释                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -198,7 +198,7 @@
 | 芦苇蜜蜂<br/>Reed Bee<br/>`reed_bee`                                         |                                                                                       | 独居蜜蜂<br/>*Exoneura robusta*                                            |
 | 强化荧石蜜蜂<br/>Refined Glowstone Bee<br/>`refined_glowstone_bee`           | 强化荧石（Mekanism）                                                                  |
 | 强化黑曜石蜜蜂<br/>Refined Obsidian Bee<br/>`refined_obsidian_bee`           | 强化黑曜石（Mekanism）                                                                |
-| 再生蜜蜂<br/>Regenerative Bee<br/>`regenerative_bee`                         |                                                                                       | 自带生命恢复，很能活                                                       |
+| 再生蜜蜂<br/>Regenerative Bee<br/>`regenerative_bee`                         |                                                                                       | 自带生命恢复，很能活<br/>没找到其他特性                                    |
 | 树脂蜜蜂<br/>Resin Bee<br/>`resin_bee`                                       |                                                                                       | 独居蜜蜂<br/>*Megachile mystaceana*                                        |
 | 谐振末影蜜蜂<br/>Resonant Ender Bee<br/>`resonant_ender_bee`                 | 谐振末影，流体                                                                        | 归在Thermal Series分类下                                                   |
 | 水晶石蜜蜂<br/>Rock Crystal Bee<br/>`rock_crystal_bee`                       | 石头 -> 水晶石矿石（Astral Sorcery）                                                  |
@@ -220,7 +220,7 @@
 | 魂金蜜蜂<br/>Soularium Bee<br/>`soularium_bee`                               | 魂金（Ender IO）                                                                      |
 | 灵魂锭蜜蜂<br/>Soulium Bee<br/>`soulium_bee`                                 | 灵魂粉（Mystical Agriculture）                                                        |
 | 魂钢蜜蜂<br/>Soulsteel Bee<br/>`soulsteel_bee`                               | 魂钢                                                                                  | 归在Tinker's Construct分类下                                               |
-| 灵魂熔岩蜜蜂<br/>Soul Lava Bee<br/>`soul_lava_bee`                           | 灵魂熔岩（Allthemodium）                                                              |
+| 灵魂熔岩蜜蜂<br/>Soul Lava Bee<br/>`soul_lava_bee`                           | 灵魂熔岩，流体（Allthemodium）                                                        |
 | 空间蜜蜂<br/>Spatial Bee<br/>`spacial_bee`                                   | 赛特斯石英水晶（AE2）<br/>赛特斯石英粉（AE2）                                         |
 | 光谱蜜蜂<br/>Spectrum Bee<br/>`spectrum_bee`                                 | 光谱                                                                                  | 归在Pokecube分类下                                                         |
 | 尖晶石蜜蜂<br/>Spinel Bee<br/>`spinel_bee`                                   | 尖晶石                                                                                |
