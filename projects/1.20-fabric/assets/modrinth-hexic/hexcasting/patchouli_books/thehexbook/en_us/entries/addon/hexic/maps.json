@@ -1,0 +1,65 @@
+{
+  "name": "Maps",
+  "category": "hexcasting:patterns",
+  "icon": "minecraft:filled_map",
+  "advancement": "hexcasting:root",
+  "pages": [
+    "Maps are an efficient structure holding pairings of some iota to some other iota. While this is perfectly possible using merely list operations, dedicated map iotas use some arcane substance called a '$(thing)Hash/$'. While this doesn't reduce the $(o)operations/$ required to access a map, it desperately reduces the load on Nature, nearing O(1) for most access.",
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexic:empty_map",
+      "anchor": "hexic:empty_map",
+      "input": "",
+      "output": "map<⊥, ⊥>",
+      "text": "Creates a new empty map for my usage."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:add",
+      "anchor": "hexcasting:add",
+      "input": "map<k, v>, map<k, v>",
+      "output": "map<k, v>",
+      "text": "Merges two maps together. Maps cannot have duplicate items: any entry in the latter map will override that in the first map."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:sub",
+      "anchor": "hexcasting:sub",
+      "input": "map<k, v>, map<t, *>",
+      "output": "map<k, v>",
+      "text": "Removes every entry in the first map that is found in the second map. The values in the second map are ignored."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:index",
+      "anchor": "hexcasting:index",
+      "input": "map<k, v>, k",
+      "output": "v?",
+      "text": "Disintegrates the map, returning only the value associated with the given key. O(1), unlike scanning a list."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:unappend",
+      "anchor": "hexcasting:unappend",
+      "input": "map<k, v>",
+      "output": "map<k, v>, (k, v)?",
+      "text": "Shaves off one element of a map. Which element gets shaved off is undefined and subject to Nature's whims. If used on an empty map, returns two nulls."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:replace",
+      "anchor": "hexcasting:replace",
+      "input": "map<k, v>, k, v",
+      "output": "map<k, v>",
+      "text": "Replaces the element associated with $(n)k/$ with $(n)v/$. If $(n)k/$ is not present in the map, the entry is created."
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:remove_from",
+      "anchor": "hexcasting:remove_from",
+      "input": "map<k, v>, k",
+      "output": "map<k, v>",
+      "text": "Throws out the map's association for the given key. If there is no matching association, the map is returned unchanged."
+    }
+  ]
+}
