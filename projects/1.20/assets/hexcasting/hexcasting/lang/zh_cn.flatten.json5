@@ -103,6 +103,7 @@
 
     uuid_colorizer: "灵魂闪光染色剂",
     default_colorizer: "空无染色剂",
+    ancient_colorizer: "远古染色剂",
 
     creative_unlocker: {
       "": "媒质立方",
@@ -380,6 +381,14 @@
         greaterTeleportSplatsItems: {
           "": "卓越传送散落物品",
           "@Tooltip": "使用卓越传送时，玩家物品栏中的物品是否会飞出"
+        },
+        doesTrueNameHaveAmbit: {
+          "": "真名是否受影响范围限制",
+          "@Tooltip": "真名（即对玩家的实体引用）是否可指向在正常影响范围之外的玩家",
+        },
+        tpDimDenylist: {
+          "": "传送维度黑名单",
+          "@Tooltip": "禁止传送的维度的资源位置",
         },
         villagersOffendedByMindMurder: {
           "": "村民会被意识剥除冒犯",
@@ -802,7 +811,7 @@
         arcsin: "反正弦之纯化",
         arccos: "反余弦之纯化",
         arctan: "反正切之纯化",
-        arctan2: "反正切之纯化，第二型",
+        arctan2: "反正切之馏化",
         random: "熵之精思",
         logarithm: "对数之馏化",
         coerce_axial: "轴向之纯化",
@@ -933,7 +942,7 @@
         arcsin: "反正弦之纯化",
         arccos: "反余弦之纯化",
         arctan: "反正切之纯化",
-        arctan2: "反正切之纯化，第二型",
+        arctan2: "反正切之馏化",
 
         "const/vec/": {
           x: "向量之精思，+X/-X型",
@@ -1037,10 +1046,10 @@
 
           entity: {
             "": "一个实体",
+            mob: "一个生物",
             item: "一个物品实体",
             player: "一个玩家",
-            villager: "一个村民",
-            living: "一个生物",
+            living: "一个生物实体",
           },
 
           entity_or_vector: "一个实体或向量",
@@ -1181,16 +1190,12 @@
           这也许只是某些消亡的老古董口中的胡言乱语，不过——它们只是简单的图案罢了。$(br2)\
           试试看又能出什么错呢？",
       },
-      creative_unlocker: {
-        "": "媒质立方",
-        desc: "我找到了一个近乎无限的媒质源——媒质立方。",
-      }
     },
     // ^ categories
 
     entry: {
       media: "媒质",
-      media_cube: "媒质立方",
+      creative_items: "仅创造物品",
       geodes: "晶洞",
       couldnt_cast: "挫折",
       start_to_see: "我看到了什么？",
@@ -1290,12 +1295,18 @@
     // ^ entries
 
     page: {
-      creative_unlocker: {
-        "1": "$(#74b3f2)媒质立方/$是近乎无尽的媒质源，能为所有$(hex)咒术/$无限提供$(media)媒质/$。它看上去也挺好吃的。食用后也许会揭示世界的更多秘密，亦有可能触碰到剧透内容……",
+      creative_items: {
+        "1": "我发明了些奇妙的物品，只能用极具$(italic)创造/$力的方式获得。",
+        creative_unlocker: "$(#74b3f2)媒质立方/$是近乎无尽的媒质源，能为所有$(hex)咒术/$无限提供$(media)媒质/$。它看上去也挺好吃的。食用后也许会揭示世界的更多秘密，亦有可能触碰到剧透内容……",
         "2": "而且，在铁砧中为$(#74b3f2)媒质立方/$重命名，似乎就能用来测试$(hex)咒术/$，以此加深理解。假使真有一天，我得到了创造的力量，在按照后页所说内容操作之前，最好还是先把它禁用掉。",
-        "3": "将$(#74b3f2)媒质立方/$重命名为“debug media”，聊天栏中即会出现所消耗媒质量的反馈信息。",
+        debug_media: {
+          // do not localize 'debug media' in the title or description, the item must be named exactly that
+          // TODO: we can remove the title if hexdoc-dev/hexdoc#85 is implemented, since the title in Patchouli already defaults to the item name
+          title: "debug media",
+          desc: "将$(#74b3f2)媒质立方/$重命名为“debug media”，聊天栏中即会出现所消耗媒质量的反馈信息。",
+        },
         // NOTE: The following feature documented is broken in the current implementation. It should be uncommented and the page in patchouli should be updated when the feature is fixed.
-        //"4": "将$(#74b3f2)媒质立方/$重命名为“debug patterns”，聊天栏中即会出现所运行图案的运行顺序。"
+        //debug_patterns: "将$(#74b3f2)媒质立方/$重命名为“debug patterns”，聊天栏中即会出现所运行图案的运行顺序。"
       },
       media: {
         "1": "$(media)媒质/$是一种独立于意识的思维能量。所有生物都会在思考时产生痕量的$(media)媒质/$，而在这一思考过程结束后，产生的媒质就会被释放至环境中。$(br2)所谓施放$(hex)咒术/$，就是操纵$(media)媒质/$以产生有效影响的过程。",
@@ -1563,7 +1574,8 @@
 
       ancient_cyphers: {
         "1": "在四处探险的过程中，我找到了一些$(l:items/hexcasting)$(item)杂件/$，似乎是古代的咒术师们制造后残存至今的。这些$(item)远古杂件/$的功能和我自己制作的基本一致：都不可再充能，其中$(media)媒质/$耗尽后也都会碎掉。两者间的不同点则在于：搜刮到的$(l:items/hexcasting)$(item)杂件/$的结构已经残破，我可以借此窥探其中的$(hex)咒术/$。",
-        "2": "这些物件大概很适合用来学新技巧——若要在授业解惑方面将古代的大师们排第二，就没人能称第一了。$(br2)此外，还可清除其中的$(hex)咒术/$换成我自己写的，如此就得到了能显示自身功能的施法物品。"
+        "2": "这些物件大概很适合用来学新技巧——若要在授业解惑方面将古代的大师们排第二，就没人能称第一了。$(br2)此外，还可清除其中的$(hex)咒术/$换成我自己写的，如此就得到了能显示自身功能的施法物品。",
+        "3": "这些古物用到的$(l:items/pigments)$(item)染色剂/$是独特的紫橙混色，和它们铜还有紫水晶构成的外在表现很搭。可用上方的配方再现这种染色剂。",
       },
 
       phials: {
@@ -1586,7 +1598,7 @@
         "colored.crafting.header": "色彩染色剂",
         "colored.crafting.desc": "五彩缤纷的染色剂。",
 
-        special: "最后还有两种特殊的染色剂。$(item)灵魂闪光染色剂/$的颜色为我所独有，而$(item)空无染色剂/$则会重置为初始状态的紫橙混色。$(br2)$(italic)以及许多还没被研究出来的内在颜色。/$",
+        special: "最后还有两种特殊的染色剂。$(item)灵魂闪光染色剂/$的颜色为我所独有，而$(item)空无染色剂/$则会重置为初始状态的紫水晶色。$(br2)$(italic)以及许多还没被研究出来的内在颜色。/$",
       },
 
       edified: {
