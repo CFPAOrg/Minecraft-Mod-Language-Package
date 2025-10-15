@@ -18,6 +18,8 @@
   "hexcasting.mishap.excessive_reproduction": "咒灵%s试图过度复制，每刻仅可召唤1个子咒灵",
   "hexcasting.mishap.illegal_interworld_iota": "试图将iota%s变为跨世界iota，此类型的iota无法加入永恒之书。",
 
+  "hexcasting.mishap.bad_block.phaseable": "一个可暂消的方块",
+
   "hexcasting.mishap.invalid_value.class.linkable": "一个可链接的事物",
   "hexcasting.mishap.invalid_value.class.wisp": "一个咒灵",
   "hexcasting.mishap.invalid_value.class.consumable_entity": "一个可被拆解的实体",
@@ -276,6 +278,7 @@
   "hexal.page.motes.mote/storage/contains": "若所给位置的物元枢纽中包含所给类型的物元，或包含可与所给物元合并的物元，则返回 True，否则返回 False。",
   "hexal.page.motes.mote/make": "将世界中的物品（物品实体、物品展示框）转换为物元。若传入物元，则会将所给物体与该物元合并。媒质化 1 份物品消耗 1/10 个$(l:items/amethyst)$(item)紫水晶粉/$。",
   "hexal.page.motes.mote/return": "将物元中所有物品返还到所给位置处。若传入数，则最多返还该数个物品。消耗 1/10 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+  "hexal.page.motes.mote/item/get": "接受物元，并返回代表该物元对应的记录中物品的$(l:casting/item_iotas)$(thing)物品组/$。",
   "hexal.page.motes.mote/count/get": "接受物元，并返回该物元对应的记录中物品的个数。",
   "hexal.page.motes.mote/combine": "将两个物元合并，也同时合并两者所指向的物元记录。指向第二条记录的物元会变为 Null，指向第一条的物元不会。如此就能在栈中放下远超我随身携带量的物品了！",
   "hexal.page.motes.mote/combinable": "若第一参数物元可与第二参数（物元、物品组、物品实体、物品展示框）中物品合并，返回 True，否则返回 False。",
@@ -388,6 +391,12 @@
   "text.autoconfig.hexal.option.server.itemSpells.maxRecordsInMediafiedStorage.@Tooltip[0]": "单个物元枢纽中最多能存储的物元记录条数。",
   "text.autoconfig.hexal.option.server.itemSpells.maxRecordsInMediafiedStorage.@Tooltip[1]": "取值范围为128到16384。",
 
+  "text.autoconfig.hexal.option.client.miscValues": "杂项值",
+  "text.autoconfig.hexal.option.client.miscValues.everbookSaveDelay": "修改永恒之书后，客户端在将改动存入磁盘前等待的时间，以刻计",
+
+  "text.autoconfig.hexal.option.server.miscValues": "杂项值",
+  "text.autoconfig.hexal.option.server.miscValues.everbookMaxSize": "服务端对永恒之书数据的大小上限限制，以字节计",
+
 
   "text.autoconfig.hexal.option.server.greatSpells": "卓越法术",
   "text.autoconfig.hexal.option.server.greatSpells.consumeWispOwnCost": "拆解自己的咒灵的媒质消耗",
@@ -406,5 +415,8 @@
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb": "“加速”随机刻的逆概率",
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[0]": "“加速”加速方块随机刻的逆概率。",
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[1]": "此数越大，越不可能加速随机刻；此数越小，越可能加速随机刻。",
-  "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[2]": "取值范围为600到2100。"
+  "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[2]": "取值范围为600到2100。",
+
+  "hexal.everbook.sizewarning": "你的永恒之书数据已超出服务端的%s字节上限。在以小于上限的永恒之书重新加入服务端前，永恒之书不可用。",
+  "hexal.everbook.unexpectederror": "在处理你的永恒之书数据时出现了意外错误，解决之前无法访问永恒之书。更多信息请联系你的服务端管理员。"
 }

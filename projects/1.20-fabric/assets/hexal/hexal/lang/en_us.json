@@ -18,6 +18,8 @@
   "hexcasting.mishap.excessive_reproduction": "Wisp %s tried to reproduce excessively; only 1 child per tick.",
   "hexcasting.mishap.illegal_interworld_iota": "Attempted to bring iota %s interworld, this type of iota cannot be added to the Everbook.",
 
+  "hexcasting.mishap.bad_block.phaseable": "a phaseable block",
+
   "hexcasting.mishap.invalid_value.class.linkable": "a linkable",
   "hexcasting.mishap.invalid_value.class.wisp": "a wisp",
   "hexcasting.mishap.invalid_value.class.consumable_entity": "a consumable entity",
@@ -276,6 +278,7 @@
   "hexal.page.motes.mote/storage/contains": "Returns true if the Mote Nexus at the given position contains a mote of the given type, or that would stack with the given mote, and false otherwise.",
   "hexal.page.motes.mote/make": "Convert an item in the world (either an item entity or an item frame) into a mote on your stack. If passed an existing mote instead adds the items from the entity to the mote. Mediafying an item costs a tenth of an $(l:items/amethyst)$(item)Amethyst Dust/$.",
   "hexal.page.motes.mote/return": "Returns all the items from a mote to the world at the location of your choosing. If passed a number returns at most that many items. Costs a tenth of an $(l:items/amethyst)$(item)Amethyst Dust/$.",
+  "hexal.page.motes.mote/item/get": "Accepts a mote and returns an $(l:casting/item_iotas)$(thing)Item Stack/$ representing the items in the record referenced by that mote.",
   "hexal.page.motes.mote/count/get": "Accepts a mote and returns the number of items in the record referenced by that mote.",
   "hexal.page.motes.mote/combine": "Combines two motes into one, merging the mote records they point to. Any pointers to the second mote will become null, any pointers to the first will remain. This can make motes holding many more items than I could carry in a stack naturally!",
   "hexal.page.motes.mote/combinable": "Returns true if the first mote can be combined with the items in the second argument (which can be a mote, item stack, item entity, or item frame), and false otherwise.",
@@ -388,6 +391,12 @@
   "text.autoconfig.hexal.option.server.itemSpells.maxRecordsInMediafiedStorage.@Tooltip[0]": "Maximum number of records that can be stored in a Mote Nexus.",
   "text.autoconfig.hexal.option.server.itemSpells.maxRecordsInMediafiedStorage.@Tooltip[1]": "Bounded from 128 to 16,384.",
 
+  "text.autoconfig.hexal.option.client.miscValues": "Miscellaneous Values",
+  "text.autoconfig.hexal.option.client.miscValues.everbookSaveDelay": "Ticks the client waits after an everbook modification until saving it to disk",
+
+  "text.autoconfig.hexal.option.server.miscValues": "Miscellaneous Values",
+  "text.autoconfig.hexal.option.server.miscValues.everbookMaxSize": "Maximum size in bytes that the server will allow everbook data to be",
+
 
   "text.autoconfig.hexal.option.server.greatSpells": "Great Spells",
   "text.autoconfig.hexal.option.server.greatSpells.consumeWispOwnCost": "Consume Own Wisp Cost",
@@ -406,5 +415,8 @@
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb": "Tick Inverse Probability of Random Ticking",
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[0]": "The inverse probability of tick randomly ticking a block.",
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[1]": "Higher numbers make random ticks less likely, lower numbers make them more likely.",
-  "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[2]": "Bound from 600 to 2100."
+  "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[2]": "Bound from 600 to 2100.",
+
+  "hexal.everbook.sizewarning": "Your everbook data was larger than the server's limit of %s bytes. You will not be able to use it until you rejoin with a small enough everbook.",
+  "hexal.everbook.unexpectederror": "An unexpected error occurred while attempting to process your everbook data, and you will not have access to it until the problem is resolved. Please contact your server administrator(s) for more information."
 }
