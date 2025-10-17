@@ -25,24 +25,24 @@ navigation:
 
 ## 集群升级 II
 
-击杀3个生物
+击杀4个生物
 
 <RecipeFor id="iron_mass_upgrade" />
 
 ## 集群升级 III
 
-击杀4个生物
+击杀6个生物
 
 <RecipeFor id="gold_mass_upgrade" />
 
 ## 集群升级 IV
 
-击杀5个生物
+击杀8个生物
 
 <RecipeFor id="diamond_mass_upgrade" />
 
 ## 集群升级 V
 
-击杀6个生物
+击杀10个生物
 
 <RecipeFor id="netherite_mass_upgrade" />

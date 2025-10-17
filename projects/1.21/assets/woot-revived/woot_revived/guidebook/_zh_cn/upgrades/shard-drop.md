@@ -33,7 +33,7 @@ navigation:
 
 ## 碎片掉落升级 I
 
-30%概率掉落<ItemImage id="iron_shard" scale="0.5"/>铁碎片。
+50%概率掉落<ItemImage id="iron_shard" scale="0.5"/>铁碎片。
 
 该升级需安装在等级至少为铜级的工厂来产出<ItemImage id="iron_shard" scale="0.5"/>铁碎片
 
@@ -41,9 +41,9 @@ navigation:
 
 ## 碎片掉落升级 II
 
-30%概率掉落<ItemImage id="iron_shard" scale="0.5"/>铁碎片。
+50%概率掉落<ItemImage id="iron_shard" scale="0.5"/>铁碎片。
 
-20%概率掉落<ItemImage id="gold_shard" scale="0.5"/>金碎片。
+30%概率掉落<ItemImage id="gold_shard" scale="0.5"/>金碎片。
 
 该升级需安装在等级至少为铁级的工厂来产出<ItemImage id="gold_shard" scale="0.5"/>金碎片
 
@@ -51,11 +51,11 @@ navigation:
 
 ## 碎片掉落升级 III
 
-30%概率掉落<ItemImage id="iron_shard" scale="0.5"/>铁碎片。
+50%概率掉落<ItemImage id="iron_shard" scale="0.5"/>铁碎片。
 
-20%概率掉落<ItemImage id="gold_shard" scale="0.5"/>金碎片。
+30%概率掉落<ItemImage id="gold_shard" scale="0.5"/>金碎片。
 
-10%概率掉落<ItemImage id="diamond_shard" scale="0.5"/>钻石碎片。
+15%概率掉落<ItemImage id="diamond_shard" scale="0.5"/>钻石碎片。
 
 该升级需安装在等级至少为金级的工厂来产出<ItemImage id="diamond_shard" scale="0.5"/>钻石碎片
 
@@ -63,11 +63,11 @@ navigation:
 
 ## 碎片掉落升级 IV
 
-30%概率掉落<ItemImage id="iron_shard" scale="0.5"/>铁碎片。
+50%概率掉落<ItemImage id="iron_shard" scale="0.5"/>铁碎片。
 
-20%概率掉落<ItemImage id="gold_shard" scale="0.5"/>金碎片。
+30%概率掉落<ItemImage id="gold_shard" scale="0.5"/>金碎片。
 
-10%概率掉落<ItemImage id="diamond_shard" scale="0.5"/>钻石碎片。
+15%概率掉落<ItemImage id="diamond_shard" scale="0.5"/>钻石碎片。
 
 5%概率掉落<ItemImage id="netherite_shard" scale="0.5"/>下界合金碎片。
 
