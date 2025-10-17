@@ -37,12 +37,12 @@ Reduce rate by 30%
 
 ## Rate IV Upgrade
 
-Reduce rate by 40%
+Reduce rate by 50%
 
 <RecipeFor id="diamond_rate_upgrade" />
 
 ## Rate V Upgrade
 
-Reduce rate by 50%
+Reduce rate by 75%
 
 <RecipeFor id="netherite_rate_upgrade" />

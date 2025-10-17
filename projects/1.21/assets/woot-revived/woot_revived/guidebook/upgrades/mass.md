@@ -25,24 +25,24 @@ Kill 2 mobs
 
 ## Mass II Upgrade
 
-Kill 3 mobs
+Kill 4 mobs
 
 <RecipeFor id="iron_mass_upgrade" />
 
 ## Mass III Upgrade
 
-Kill 4 mobs
+Kill 6 mobs
 
 <RecipeFor id="gold_mass_upgrade" />
 
 ## Mass IV Upgrade
 
-Kill 5 mobs
+Kill 8 mobs
 
 <RecipeFor id="diamond_mass_upgrade" />
 
 ## Mass V Upgrade
 
-Kill 6 mobs
+Kill 10 mobs
 
 <RecipeFor id="netherite_mass_upgrade" />
