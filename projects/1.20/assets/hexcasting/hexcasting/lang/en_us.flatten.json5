@@ -103,6 +103,7 @@
     
     uuid_colorizer: "Soulglimmer Pigment",
     default_colorizer: "Vacant Pigment",
+    ancient_colorizer: "Ancient Pigment",
     
     creative_unlocker: {
       "": "The Media Cube",
@@ -380,6 +381,14 @@
         greaterTeleportSplatsItems: {
           "": "Greater Teleport Splats Items",
           "@Tooltip": "Whether items should fly out of the player's inventory when using Greater Teleport"
+        },
+        doesTrueNameHaveAmbit: {
+          "": "Does True Name Have Ambit",
+          "@Tooltip": "Whether True Names (ie entity references to a player) should allow targeting the referenced player even outside of normal ambit",
+        },
+        tpDimDenylist: {
+          "": "Teleport Dimension Deny List",
+          "@Tooltip": "Resource locations of dimensions where teleportation is not allowed",
         },
         villagersOffendedByMindMurder: {
           "": "Villagers Offended By Mind Murder",
@@ -802,7 +811,7 @@
         arcsin: "Inverse Sine Purification",
         arccos: "Inverse Cosine Purification",
         arctan: "Inverse Tangent Purification",
-        arctan2: "Inverse Tangent Purification II",
+        arctan2: "Inverse Tangent Distillation",
         random: "Entropy Reflection",
         logarithm: "Logarithmic Distillation",
         coerce_axial: "Axial Purification",
@@ -933,7 +942,7 @@
         arcsin: "Inverse Sine Prfn.",
         arccos: "Inverse Cosine Prfn.",
         arctan: "Inverse Tangent Prfn.",
-        arctan2: "Inverse Tan. Prfn. II",
+        arctan2: "Inverse Tangent Dstl.",
         
         "const/vec/": {
           x: "Vector Rfln. +X/-X",
@@ -1037,9 +1046,9 @@
           
           entity: {
             "": "an entity",
+            mob: "a mob",
             item: "an item entity",
             player: "a player",
-            villager: "a villager",
             living: "a living entity",
           },
           
@@ -1181,16 +1190,12 @@
           It's probably just the ramblings of extinct traditionalists, though -- a pattern's a pattern.$(br2)\
           What could possibly go wrong?",
       },
-      creative_unlocker: {
-        "": "The Media Cube",
-        desc: "I have found a source of near limitless power, The Media Cube.",
-      }
     },
     // ^ categories
     
     entry: {
       media: "Media",
-      media_cube: "The Media Cube",
+      creative_items: "Creative-Only Items",
       geodes: "Geodes",
       couldnt_cast: "A Frustration",
       start_to_see: "WHAT DID I SEE",
@@ -1290,12 +1295,18 @@
     // ^ entries
     
     page: {
-      creative_unlocker: {
-        "1": "The $(#74b3f2)Media Cube/$ is a near-limitless source of power, acting as an infinite source of _media for whatever _Hexes I wish to cast. It also looks quite tasty. Eating it might perhaps reveal more about the world, possibly delving into spoiler territory...",
+      creative_items: {
+        "1": "I have invented some fanciful items that can only be acquired through $(italic)creative/$ means.",
+        creative_unlocker: "The $(#74b3f2)Media Cube/$ is a near-limitless source of power, acting as an infinite source of _media for whatever _Hexes I wish to cast. It also looks quite tasty. Eating it might perhaps reveal more about the world, possibly delving into spoiler territory...",
         "2": "Additionally, it seems that by renaming a $(#74b3f2)Media Cube/$ at an Anvil, I should be able to utilize it to test and understand more about my _Hexes. If I have somehow acquired Creative power over the world, I might wish to turn that off before attempting any of the following.",
-        "3": "By renaming the $(#74b3f2)Media Cube/$ to 'debug media', I will be given feedback in the chat window about the amount of media consumed.",
+        debug_media: {
+          // do not localize 'debug media' in the title or description, the item must be named exactly that
+          // TODO: we can remove the title if hexdoc-dev/hexdoc#85 is implemented, since the title in Patchouli already defaults to the item name
+          title: "debug media",
+          desc: "By renaming the $(#74b3f2)Media Cube/$ to 'debug media', I will be given feedback in the chat window about the amount of media consumed.",
+        },
         // NOTE: The following feature documented is broken in the current implementation. It should be uncommented and the page in patchouli should be updated when the feature is fixed.
-        //"4": "By renaming the $(#74b3f2)Media Cube/$ to 'debug patterns', I will be given feedback in the chat window about the order patterns are ran."
+        //debug_patterns: "By renaming the $(#74b3f2)Media Cube/$ to 'debug patterns', I will be given feedback in the chat window about the order patterns are ran."
       },
       media: {
         "1": "_Media is a form of mental energy external to a mind. All living creatures generate trace amounts of _media when thinking about anything; after the thought is finished, the media is released into the environment.$(br2)The art of casting _Hexes is all about manipulating _media to do your bidding.",
@@ -1563,7 +1574,8 @@
 
       ancient_cyphers: {
         "1": "While adventuring, I've come across what appear to be $(l:items/hexcasting)$(item)Cyphers/$ created by the Hexcasters of the ancient past. These $(item)Ancient Cyphers/$ work just like the ones I can craft: they can't be recharged, and will break when their reserve of _Media runs out. However, unlike my own $(l:items/hexcasting)$(item)Cyphers/$, their decayed structure allows me to glimpse the _Hex stored within.",
-        "2": "These may be useful for learning new techniques - who better to teach me than ancient masters of the art?$(br2)Alternatively, I could erase the contents of one and store my own _Hex inside, creating a casting item that clearly displays its own function."
+        "2": "These may be useful for learning new techniques - who better to teach me than ancient masters of the art?$(br2)Alternatively, I could erase the contents of one and store my own _Hex inside, creating a casting item that clearly displays its own function.",
+        "3": "The $(l:items/pigments)$(item)Pigment/$ baked into these relics is a unique blend of purple and orange, matching their copper-and-amethyst appearance. I can replicate it using the above recipe.",
       },
       
       phials: {
@@ -1586,7 +1598,7 @@
         "colored.crafting.header": "Chromatic Pigments",
         "colored.crafting.desc": "Pigments in all the colors of the rainbow.",
         
-        special: "And finally, a pair of special pigments. $(item)Soulglimmer Pigment/$ shines with colors wholly unique to me, and $(item)Vacant Pigment/$ restores my original purplish-orange spread.$(br2)$(italic)And all the colors I am inside have not been invented yet./$",
+        special: "And finally, a pair of special pigments. $(item)Soulglimmer Pigment/$ shines with colors wholly unique to me, and $(item)Vacant Pigment/$ restores my original amethyst hue.$(br2)$(italic)And all the colors I am inside have not been invented yet./$",
       },
       
       edified: {
