@@ -61,7 +61,6 @@ item_ids:
 
 <Row gap="20">
 <BlockImage id="advanced_ae:quantum_structure" scale="4"></BlockImage>
-<BlockImage id="advanced_ae:quantum_structure" p:formed="true" scale="4"></BlockImage>
 <BlockImage id="advanced_ae:quantum_structure" p:formed="true" p:powered="true" scale="4"></BlockImage>
 </Row>
 
