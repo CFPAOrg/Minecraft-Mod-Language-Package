@@ -1,7 +1,9 @@
 {
   "item.hexdebug": {
     debugger: "调试杖",
+    quenched_debugger: "淬灵调试杖",
     evaluator: "运行杖",
+    quenched_evaluator: "淬灵运行杖",
   },
 
   "block.hexdebug": {
@@ -15,7 +17,8 @@
   text: {
     hexdebug: {
       connected: "调试客户端已连接！",
-      no_session: "调试会话未在运行。",
+      no_session: "线程%d的调试会话未在运行。",
+      not_paused: "线程%d的调试会话未被暂停。",
       thwack: "哐当！",
       // Next Iota: [{index}] {iota}
       debugger_stopped: "下一个Iota：[%d] %s",
@@ -162,13 +165,13 @@
     action: {
       "hexdebug:": {
         "const/debugging": "调试杖之精思",
-        "next_eval_index": "调试位之精思", // TODO: this name kinda sucks tbh
         "const/cognitohazard": "认知危害之精思",
         "breakpoint/": {
           before: "在前方添加断点",
           after: "在后方添加断点"
         },
         "craft/debugger": "制作调试杖",
+        "craft/quenched_debugger": "制作淬灵调试杖",
         "splicing/": {
           "view_index/": {
             read: "齿孔胶片之纯化",
@@ -205,7 +208,6 @@
         },
       },
       "book.hexdebug:": {
-        "next_eval_index": "调试位之精思",
         "const/cognitohazard": "认知危害之精思",
         "splicing/": {
           "list/": {
@@ -250,15 +252,15 @@
 
   hexdebug: {
     tooltip: {
+      thread_id: "线程：%d",
       debugger: {
         step_mode: {
-          "": "模式：%s",
-          continue: "继续",
-          over: "逐过程",
-          in: "单步调试",
-          out: "单步跳出",
-          restart: "重启",
-          stop: "停止"
+          continue: "模式：继续",
+          over:     "模式：逐过程",
+          in:       "模式：单步调试",
+          out:      "模式：单步跳出",
+          restart:  "模式：重启",
+          stop:     "模式：停止"
         },
       },
       focus_holder: {
@@ -341,6 +343,14 @@
               "5": "而为实现更复杂的操作——要是有耐心和$(l:casting/mishaps)气量/$的话，让$(thing)制念台/$控制、$(italic)统领/$、另一个制念台、周而复始、周而复始周而复始周而复始周而复始直到无穷——制念台能小范围延展其影响力（恰好 4 格）。确实不算大，但足够绝大多数情况用了。若是需要更大的范围，可以用我的$(l:patterns/great_spells/greater_sentinel#hexcasting:sentinel/create/great)$(action)卓越哨卫/$。",
             },
           },
+
+          quenching_debuggers: {
+            "": "调试杖的淬灵",
+            page: {
+              "1": "我的意识已然神化，但我的$(l:items/debugging)工具/$还极为$(italic)低效/$，在卓伟之作的宏大之下愈发脆弱。我需要——不，我$(bold)应得/$——更多。$(br2)\
+                悦灵的碎片是改进的绝佳介质。淬灵晶会改变外形、四处跳动，经它们改进的工具也可以——滚动滚轮时按住$(k:sneak)和$(k:sprint)，即可切换当前调试的$(hex)咒术/$槽。"
+            },
+          },
         },
       },
 
@@ -350,7 +360,6 @@
             "": "调试图案",
             page: {
               "const/debugging": "若栈由$(l:items/debugging#debugger)$(item)调试杖/$或$(l:items/debugging#evaluator)$(item)运行杖/$执行，则返回 $(thing)True/$；否则返回 $(thing)False/$。",
-              "next_eval_index": "若栈由$(l:items/debugging#debugger)$(item)调试杖/$或$(l:items/debugging#evaluator)$(item)运行杖/$执行，则返回下一个待执行 iota 的索引下标；否则返回 $(l:casting/influences)$(thing)Null/$。",
               "const/cognitohazard": {
                 "1": "向栈顶压入一个$(thing)认知危害/$。",
                 "2": "貌似部分$(l:items/debugging#evaluator)调试工具/$在某些$(l:patterns/meta#hexcasting:eval/cc)高等级技术/$中容易导致安全问题。而为解决这一问题，我设计了本图案。$(br2)\
@@ -360,8 +369,10 @@
                 before: "在运行此图案前，暂停$(l:items/debugging#debugger)$(item)调试杖/$。",
                 after: "在运行此图案后，也即在运行下一图案之前，暂停$(l:items/debugging#debugger)$(item)调试杖/$。",
               },
-              "craft/debugger": "制作一支能施放$(hex)咒术/$的$(l:items/debugging#debugger)$(item)调试杖/$。这个图案和我之前用过的$(l:patterns/spells/hexcasting)某些图案/$有些相似。\
-                $(br2)消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
+              "craft/debugger": "制作一支能施放$(hex)咒术/$的$(l:items/debugging#debugger)$(item)调试杖/$。这个图案和我之前用过的$(l:patterns/spells/hexcasting)某些图案/$有些相似。$(br2)\
+                消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
+              "craft/quenched_debugger": "制作一支能施放$(hex)咒术/$的$(l:greatwork/quenching_debuggers)$(item)淬灵调试杖/$。这个图案和我之前用过的$(l:patterns/spells/hexcasting)某些图案/$有些相似。$(br2)\
+                消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
             },
           },
 

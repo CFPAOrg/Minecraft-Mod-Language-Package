@@ -1,7 +1,9 @@
 {
   "item.hexdebug": {
     debugger: "Debugger",
+    quenched_debugger: "Quenched Debugger",
     evaluator: "Evaluator",
+    quenched_evaluator: "Quenched Evaluator",
   },
 
   "block.hexdebug": {
@@ -15,7 +17,8 @@
   text: {
     hexdebug: {
       connected: "Debug client connected!",
-      no_session: "Debug session is not running.",
+      no_session: "Debug session is not running for thread %d.",
+      not_paused: "Debug session is not paused for thread %d.",
       thwack: "Thwack!",
       // Next Iota: [{index}] {iota}
       debugger_stopped: "Next Iota: [%d] %s",
@@ -49,10 +52,14 @@
           paste_verbatim: "Paste (Verbatim)",
           paste_splat: "Paste (Flattened)",
           export: "Export as .hexpattern",
-          cast: "Activate Table",
+          cast: {
+            "": "Activate Mindsplice Table",
+            named: "Activate %s",
+          },
         },
         tooltip: {
           index: "Index: %d",
+          depth: "Depth: %d",
           signature: "Signature: %s",
           length: "Length: %d",
         },
@@ -91,9 +98,21 @@
             "": "Show Debug Client Line Number",
             "@Tooltip": "If true, show the line number (usually 1-indexed) from the debug client (eg. VSCode) in Debugger status messages; otherwise, show the list index (0-indexed)."
           },
-          invertSplicingTableScrollDirection: {
-            "": "Invert Splicing Table Scroll Direction",
-            "@Tooltip": "Whether scrolling up (as opposed to down) will increase the view index of the splicing table, and vice versa.",
+          splicingTable: {
+            "": "General Splicing Table Options",
+            invertScrollDirection: {
+              "": "Invert Scroll Direction",
+              "@Tooltip": "Whether scrolling up (as opposed to down) will increase the view index of the Splicing Table, and vice versa.",
+            },
+            enableRainbowBrackets: {
+              "": "Enable Rainbow Brackets",
+              "@Tooltip": "If true, tint the outline of Introspection and Retrospection with rainbow colors to help identify matching brackets.",
+            },
+            rainbowBracketColors: "Rainbow Bracket Colors",
+            showNestedPatternNames: {
+              "": "Show Nested Pattern Names",
+              "@Tooltip": "If true, for patterns inside of embedded lists, show pattern names in the tooltip instead of the built-in inline pattern display.",
+            },
           },
           splicingTableKeybinds: {
             "": "Splicing Table Keybinds",
@@ -105,6 +124,10 @@
             overrideVanillaArrowKeys: {
               "": "Override Vanilla Arrow Key Navigation",
               "@Tooltip": "In the Splicing Table GUI, override the vanilla feature that allows the arrow keys to be used to focus on UI elements. This setting improves usability with the default keybinds, but you may want to disable it if you rely on this feature for accessibility purposes.",
+            },
+            sendHexicalTelepathy: {
+              "": "Enable Hexical Telepathy",
+              "@Tooltip": "Fabric-only. If Hexical is installed, enable all telepathy keys in the Splicing Table GUI. Note: If Hexical adds its own support for using telepathy in GUIs, disabling this feature will not disable that.",
             },
             enlightened: {
               "": "Mindsplice Table",
@@ -142,13 +165,13 @@
     action: {
       "hexdebug:": {
         "const/debugging": "Debugger's Reflection",
-        "next_eval_index": "Debug Locator's Reflection", // TODO: this name kinda sucks tbh
         "const/cognitohazard": "Cognitohazard Reflection",
         "breakpoint/": {
           before: "Set Breakpoint Before",
           after: "Set Breakpoint After"
         },
         "craft/debugger": "Craft Debugger",
+        "craft/quenched_debugger": "Craft Quenched Debugger",
         "splicing/": {
           "view_index/": {
             read: "Sprocket's Purification",
@@ -185,7 +208,6 @@
         },
       },
       "book.hexdebug:": {
-        "next_eval_index": "Debug Locator's Rfln.",
         "const/cognitohazard": "Cognitohazard Rfln.",
         "splicing/": {
           "list/": {
@@ -209,14 +231,15 @@
         splicing_table: {
           "": "a Splicing Table",
           enlightened: "a Mindsplice Table",
-          list: {
-            spellbook: "a Splicing Table with a non-empty spellbook in the main item slot",
-          },
           clipboard: {
             read: "a Splicing Table with a readable secondary item",
             write: "a Splicing Table with a writable secondary item",
             spellbook: "a Splicing Table with a non-empty spellbook in the secondary item slot",
           },
+        },
+        splicing_table_or_focus_holder: {
+          "": "a Splicing Table or Focal Frame",
+          spellbook: "a Splicing Table or Focal Frame with a non-empty spellbook in the main item slot",
         },
       },
       invalid_value: {
@@ -229,15 +252,15 @@
 
   hexdebug: {
     tooltip: {
+      thread_id: "Thread: %d",
       debugger: {
         step_mode: {
-          "": "Mode: %s",
-          continue: "Continue",
-          over: "Step Over",
-          in: "Step In",
-          out: "Step Out",
-          restart: "Restart",
-          stop: "Stop"
+          continue: "Mode: Continue",
+          over:     "Mode: Step Over",
+          in:       "Mode: Step In",
+          out:      "Mode: Step Out",
+          restart:  "Mode: Restart",
+          stop:     "Mode: Stop"
         },
       },
       focus_holder: {
@@ -266,11 +289,10 @@
           focus_holder: {
             "": "Focal Frame",
             page: {
-              "1": "$(l:items/focus)$(item)Foci/$ are useful for storing _Hexes and other iotas in my inventory, but I sometimes find myself in need of a way to store iotas in the world. Item frames are too fragile, and $(l:greatwork/akashiclib)other methods/$ are inefficient and... distasteful. A cleaner solution is necessary, and I've devised one in the form of the $(item)Focal Frame/$.",
-              "2": "A $(item)Focal Frame/$ by itself is useless; a $(l:items/focus)$(item)Focus/$ must first be inserted. I can do that through crafting, or by right-clicking a placed $(item)Focal Frame/$ with a $(l:items/focus)$(item)Focus/$. Right-clicking with an empty hand removes the $(l:items/focus)$(item)Focus/$ from the frame.$(br2)\
-                As an item, I can use a filled $(item)Focal Frame/$ anywhere I would normally use a $(l:items/focus)$(item)Focus/$, including patterns such as $(l:patterns/readwrite#hexcasting:read)$(action)Scribe's Reflection/$. When placed in the world, I can access it using patterns like $(l:patterns/readwrite_blocks#hexcasting:read/entity)$(action)Chronicler's Purification/$.",
-              recipe: "$(italic)Two thousand movies, four thousand albums, music and words and pictures like voices whispering from a sweet, sunny past./$",
-              "3": "In addition to these recipes, I can craft an empty $(item)Focal Frame/$ with a $(l:items/focus)$(item)Focus/$ to insert it; and I can craft a filled $(item)Focal Frame/$ by itself to remove the $(l:items/focus)$(item)Focus/$ from it, leaving the empty frame behind."
+              "1": "$(l:items/focus)$(item)Foci/$ are useful for storing _Hexes and other iotas in my inventory, but I sometimes find myself in need of a way to store iotas in the world. $(item)Item Frames/$ are too fragile, and $(l:greatwork/akashiclib)other methods/$ are inefficient and... distasteful. A cleaner solution is necessary, and I've devised one in the form of the $(item)Focal Frame/$.",
+              "2": "A $(item)Focal Frame/$ by itself is useless. An $(l:items/focus)iota-holding item/$ must first be inserted by right-clicking a placed $(item)Frame/$ with the item, or by using a single $(item)Frame/$ in my inventory in a manner akin to a $(item)Bundle/$. Right-clicking with an empty hand extracts the item.$(br2)\
+                As an item, I can use a filled $(item)Focal Frame/$ with any $(l:patterns/readwrite#hexcasting:read)patterns/$ or $(l:items/splicing_table)blocks/$ that would accept the contained item. When placed in the world, I can access it using patterns like $(l:patterns/readwrite_blocks#hexcasting:read/entity)$(action)Chronicler's Purification/$.",
+              "3": "$(italic)Two thousand movies, four thousand albums, music and words and pictures like voices whispering from a sweet, sunny past./$",
             },
           },
           splicing_table: {
@@ -321,6 +343,14 @@
               "5": "To facilitate even more complicated operations -- one $(thing)Mindsplice Table/$ controlling, $(italic)dominating/$, the next, and so on and so on and so on and so on and so on into eternity, if I have the patience and $(l:casting/mishaps)capacity/$ to use it -- the table's influence extends a small distance (four blocks, no more and no less) from the table. Small, yes, but perfectly adequate for most purposes. If more space is needed, my $(l:patterns/great_spells/greater_sentinel#hexcasting:sentinel/create/great)$(action)Greater Sentinel/$ can be used.",
             },
           },
+
+          quenching_debuggers: {
+            "": "Quenching Debuggers",
+            page: {
+              "1": "My mind has been apotheosized, but my $(l:items/debugging)tools/$ are still so $(italic)limited/$, bursting at the seams with the enormity of the Work. I need -- no, DESERVE -- more.$(br2)\
+                The shards of an Allay make an excellent medium for the task. As they twist and jump around, so too can these tools -- holding $(k:sneak) and $(k:sprint) while scrolling will switch between slots for _Hexes to debug."
+            },
+          },
         },
       },
 
@@ -330,7 +360,6 @@
             "": "Debugging Patterns",
             page: {
               "const/debugging": "Add $(thing)True/$ to the top of the stack if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(thing)False/$ otherwise.",
-              "next_eval_index": "Add the index of the next iota to be evaluated if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(l:casting/influences)$(thing)Null/$ otherwise.",
               "const/cognitohazard": {
                 "1": "Add a $(thing)Cognitohazard/$ to the top of the stack.",
                 "2": "It seems certain $(l:items/debugging#evaluator)debugging tools/$ may pose a security risk for some $(l:patterns/meta#hexcasting:eval/cc)high-level techniques/$. To help combat this, I have created this pattern.$(br2)\
@@ -341,6 +370,8 @@
                 after: "Pause the $(l:items/debugging#debugger)$(item)Debugger/$ after executing this pattern (ie. before executing the next pattern).",
               },
               "craft/debugger": "Create a $(l:items/debugging#debugger)$(item)Debugger/$ that casts a _Hex, similar to $(l:patterns/spells/hexcasting)certain other patterns/$ I've used in the past.$(br2)\
+                Costs about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
+              "craft/quenched_debugger": "Create a $(l:greatwork/quenching_debuggers)$(item)Quenched Debugger/$ that casts a _Hex, similar to $(l:patterns/spells/hexcasting)certain other patterns/$ I've used in the past.$(br2)\
                 Costs about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
             },
           },
@@ -361,9 +392,9 @@
               },
               "list/": {
                 "spellbook_index/": {
-                  read: "Remove a vector from the stack, then push the current page number (starting at 1) of the $(l:items/spellbook)$(item)Spellbook/$ in the main slot of the $(l:items/splicing_table)$(item)Splicing Table/$ at that position.",
-                  write: "Remove a vector and number from the stack, then flip the $(l:items/spellbook)$(item)Spellbook/$ in the main slot of the $(l:items/splicing_table)$(item)Splicing Table/$ at that position to the given page number.",
-                  readable: "Replace the vector at the top of the stack with $(thing)True/$ if there is a $(l:items/splicing_table)$(item)Splicing Table/$ at that position with a $(l:items/spellbook)$(item)Spellbook/$ in its main slot that contains at least one page, or $(thing)False/$ otherwise.",
+                  read: "Remove a vector from the stack, then push the current page number (starting at 1) of the $(l:items/spellbook)$(item)Spellbook/$ in the main slot of the $(l:items/splicing_table)$(item)Splicing Table/$ or $(l:items/focus_holder)$(item)Focal Frame/$ at that position.",
+                  write: "Remove a vector and number from the stack, then flip the $(l:items/spellbook)$(item)Spellbook/$ in the main slot of the $(l:items/splicing_table)$(item)Splicing Table/$ or $(l:items/focus_holder)$(item)Focal Frame/$ at that position to the given page number.",
+                  readable: "Replace the vector at the top of the stack with $(thing)True/$ if there is a $(l:items/splicing_table)$(item)Splicing Table/$ or $(l:items/focus_holder)$(item)Focal Frame/$ at that position with a $(l:items/spellbook)$(item)Spellbook/$ in its main slot that contains at least one page, or $(thing)False/$ otherwise.",
                 },
               },
               "clipboard/": {

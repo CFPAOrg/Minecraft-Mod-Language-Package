@@ -1,7 +1,9 @@
 {
   "item.hexdebug": {
     debugger: "Debugger",
+    quenched_debugger: "Quenched Debugger",
     evaluator: "Evaluator",
+    quenched_evaluator: "Quenched Evaluator",
   },
 
   "block.hexdebug": {
@@ -15,7 +17,8 @@
   text: {
     hexdebug: {
       connected: "Debug client connected!",
-      no_session: "Debug session is not running.",
+      no_session: "Debug session is not running for thread %d.",
+      not_paused: "Debug session is not paused for thread %d.",
       thwack: "Thwack!",
       // Next Iota: [{index}] {iota}
       debugger_stopped: "Next Iota: [%d] %s",
@@ -162,13 +165,13 @@
     action: {
       "hexdebug:": {
         "const/debugging": "Debugger's Reflection",
-        "next_eval_index": "Debug Locator's Reflection", // TODO: this name kinda sucks tbh
         "const/cognitohazard": "Cognitohazard Reflection",
         "breakpoint/": {
           before: "Set Breakpoint Before",
           after: "Set Breakpoint After"
         },
         "craft/debugger": "Craft Debugger",
+        "craft/quenched_debugger": "Craft Quenched Debugger",
         "splicing/": {
           "view_index/": {
             read: "Sprocket's Purification",
@@ -205,7 +208,6 @@
         },
       },
       "book.hexdebug:": {
-        "next_eval_index": "Debug Locator's Rfln.",
         "const/cognitohazard": "Cognitohazard Rfln.",
         "splicing/": {
           "list/": {
@@ -250,15 +252,15 @@
 
   hexdebug: {
     tooltip: {
+      thread_id: "Thread: %d",
       debugger: {
         step_mode: {
-          "": "Mode: %s",
-          continue: "Continue",
-          over: "Step Over",
-          in: "Step In",
-          out: "Step Out",
-          restart: "Restart",
-          stop: "Stop"
+          continue: "Mode: Continue",
+          over:     "Mode: Step Over",
+          in:       "Mode: Step In",
+          out:      "Mode: Step Out",
+          restart:  "Mode: Restart",
+          stop:     "Mode: Stop"
         },
       },
       focus_holder: {
@@ -341,6 +343,14 @@
               "5": "To facilitate even more complicated operations -- one $(thing)Mindsplice Table/$ controlling, $(italic)dominating/$, the next, and so on and so on and so on and so on and so on into eternity, if I have the patience and $(l:casting/mishaps)capacity/$ to use it -- the table's influence extends a small distance (four blocks, no more and no less) from the table. Small, yes, but perfectly adequate for most purposes. If more space is needed, my $(l:patterns/great_spells/greater_sentinel#hexcasting:sentinel/create/great)$(action)Greater Sentinel/$ can be used.",
             },
           },
+
+          quenching_debuggers: {
+            "": "Quenching Debuggers",
+            page: {
+              "1": "My mind has been apotheosized, but my $(l:items/debugging)tools/$ are still so $(italic)limited/$, bursting at the seams with the enormity of the Work. I need -- no, DESERVE -- more.$(br2)\
+                The shards of an Allay make an excellent medium for the task. As they twist and jump around, so too can these tools -- holding $(k:sneak) and $(k:sprint) while scrolling will switch between slots for _Hexes to debug."
+            },
+          },
         },
       },
 
@@ -350,7 +360,6 @@
             "": "Debugging Patterns",
             page: {
               "const/debugging": "Add $(thing)True/$ to the top of the stack if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(thing)False/$ otherwise.",
-              "next_eval_index": "Add the index of the next iota to be evaluated if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(l:casting/influences)$(thing)Null/$ otherwise.",
               "const/cognitohazard": {
                 "1": "Add a $(thing)Cognitohazard/$ to the top of the stack.",
                 "2": "It seems certain $(l:items/debugging#evaluator)debugging tools/$ may pose a security risk for some $(l:patterns/meta#hexcasting:eval/cc)high-level techniques/$. To help combat this, I have created this pattern.$(br2)\
@@ -361,6 +370,8 @@
                 after: "Pause the $(l:items/debugging#debugger)$(item)Debugger/$ after executing this pattern (ie. before executing the next pattern).",
               },
               "craft/debugger": "Create a $(l:items/debugging#debugger)$(item)Debugger/$ that casts a _Hex, similar to $(l:patterns/spells/hexcasting)certain other patterns/$ I've used in the past.$(br2)\
+                Costs about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
+              "craft/quenched_debugger": "Create a $(l:greatwork/quenching_debuggers)$(item)Quenched Debugger/$ that casts a _Hex, similar to $(l:patterns/spells/hexcasting)certain other patterns/$ I've used in the past.$(br2)\
                 Costs about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
             },
           },
