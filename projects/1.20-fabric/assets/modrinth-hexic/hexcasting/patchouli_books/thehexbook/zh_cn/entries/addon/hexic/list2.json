@@ -1,0 +1,49 @@
+{
+    "name": "高阶列表",
+    "category": "hexcasting:patterns",
+    "icon": "minecraft:birch_sign",
+    "advancement": "hexcasting:root",
+    "pages": [
+        "这些图案似乎对应着我常对列表执行的操作。虽然说它们的功能可以用普通的$(l:patterns/lists)列表操作/$实现，但一般会更加麻烦。可能是自然为了理解我做的事而创造了它们……还是我自己发明了它们？",
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:rotate",
+            "anchor": "hexic:rotate",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "向左旋转列表：参数为 1 时，首个列表元素会移动到末尾。负数参数会向右旋转列表。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:take",
+            "anchor": "hexic:take/count",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "选出所给列表开头的若干元素。负数参数则选出末尾的若干元素。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:drop",
+            "anchor": "hexic:drop/count",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "删去列表开头的若干元素；它是$(l:addon/hexic/lists2#hexic:take/count)$(action)维持之馏化/$的对偶。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:take",
+            "anchor": "hexic:take/list",
+            "input": "[a], [int]",
+            "output": "[a]",
+            "text": "从列表中选出所给下标对应的元素。和$(l:patterns/lists#hexcasting:index)$(action)选择之馏化/$不同的是，此图案无法重排或复制 iota。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:drop",
+            "anchor": "hexic:drop/list",
+            "input": "[a], [int]",
+            "output": "[a]",
+            "text": "删去列表中所给下标的元素。其他 iota 的顺序不变。"
+        }
+    ]
+}
