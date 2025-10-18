@@ -6,7 +6,7 @@
   "required_advancements": [
     "trickster:spawner_spell_core"
   ],
-  "ordinal": 150
+  "ordinal": 141
 }
 ```
 

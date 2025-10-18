@@ -10,12 +10,12 @@
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=战士之怒|>抄入工具和近战武器后，战士之怒会在其对实体造成伤害时执行法术。所攻击的实体传入为第一参数。
+<|page-title@lavender:book_components|title=战士之怒|>抄入工具和近战武器后，战士之怒会在其对实体造成伤害时执行法术。所攻击的实体作为第一参数传入。
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=勘探工之喜|>在破坏方块之前，抄入手持工具的勘探工之喜即会开始执行法术。所破坏方块的位置传入为第一参数。
+<|page-title@lavender:book_components|title=勘探工之喜|>在破坏方块之前，抄入手持工具的勘探工之喜即会开始执行法术。所破坏方块的位置作为第一参数传入。
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=表演家之赦|>在摔落到方块上的前一瞬，表演家之赦即会触发足部装备中抄有的法术。穿戴者摔落过的距离传入为第一参数。倘若落到水中接受了缓冲，表演家便不会前来赦免痛苦。
+<|page-title@lavender:book_components|title=表演家之赦|>在摔落到方块上的前一瞬，表演家之赦即会触发足部装备中抄有的法术。穿戴者摔落过的距离作为第一参数传入。倘若落到水中接受了缓冲，表演家便不会前来赦免痛苦。

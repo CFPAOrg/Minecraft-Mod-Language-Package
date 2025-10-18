@@ -17,94 +17,80 @@
 }
 ```
 
-This entry contains delusion tricks that retrieve context about the casting entity or block.
+*"More often than not, casting a spell will start from the Self."*
+
+
+*"Whether it be a human caster, a construct, or something else entirely,*
+*the Self is how we perceive the world, and as such, it is the lens through which we view our magic."*
+
+
+-- An excerpt from a lecture by Prof. Citrine.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:reflection,title=Positioning Delusion|>
-
--> vector
-
----
+<|trick@trickster:templates|trick-id=trickster:reflection|>
 
 Returns the location the spell is being cast from.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:facing_reflection,title=Directional Delusion|>
+<|trick@trickster:templates|trick-id=trickster:facing_reflection|>
 
--> vector
-
----
-
-Returns the direction the casting block or entity is facing as a unit vector, if available.
+Returns the direction the caster is facing as a unit vector.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:caster_reflection,title=Reflection Delusion|>
+<|trick@trickster:templates|trick-id=trickster:caster_reflection|>
 
--> entity
-
----
-
-Returns the entity casting the spell.
+Returns the entity casting the spell, if available.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_dimension,title=Dimensional Delusion|>
-
--> dimension
-
----
-
-Returns the dimension which the caster is in.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:mana_reflection,title=Authority Delusion|>
-
--> number
-
----
+<|trick@trickster:templates|trick-id=trickster:mana_reflection|>
 
 Returns the amount of mana directly available to the spell.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:max_mana_reflection,title=Crowning Delusion|>
+This delusion counts the amount of mana in all mana-carrying items the caster is holding or wearing, 
+including [Knots](^trickster:items/knots) and [Whorls](^trickster:items/amethyst_whorl).
 
--> number
 
----
-
-Returns the maximum amount of mana that *could be* available to the spell.
+When cast from a [Spell Construct](^trickster:items/spell_construct), only the mana in the Construct's one Knot slot is counted.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:current_thread,title=Delusion of Order|>
+<|trick@trickster:templates|trick-id=trickster:max_mana_reflection|>
 
--> number | void
-
----
-
-Returns the spell slot running this spell, or void if spell slots are not supported.
+Returns the maximum amount of mana that the caster of the spell can store. Works similarly to the previous delusion.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:hotbar_reflection,title=Framed Delusion|>
+<|trick@trickster:templates|trick-id=trickster:current_thread|>
 
--> number
+Returns the spell slot running this spell, or void if this spell is not running in a spell slot.
 
----
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:read_macro_ring|>
+
+Returns a map containing the combined maps of all rings worn, with any entries that aren't valid macros filtered out.
+
+;;;;;
+
+The result of this trick is equal to the map used when evaluating macros.
+
+
+See the entry on [Macros](^trickster:concepts/macro) for more details.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:hotbar_reflection|>
 
 Returns the selected hotbar slot of the caster, if available.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:read_macro_ring,title=Macro Delusion|>
+<|trick@trickster:templates|trick-id=trickster:get_dimension|>
 
--> {pattern: spell}
-
----
-
-Retrieves a map containing the combined maps of all rings worn.
+Returns the dimension where this spell is being cast.
