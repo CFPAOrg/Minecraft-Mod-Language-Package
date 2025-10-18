@@ -35,10 +35,6 @@ blocks to be part of an ME network to operate. It adds a suite of utilities.
 
 <CategoryIndex category="Energy and Item Transfer"></CategoryIndex>
 
-## Data Variables
-
-<CategoryIndex category="Data Variables"></CategoryIndex>
-
 ## Mob Storage
 
 <CategoryIndex category="Mob Storage"></CategoryIndex>
