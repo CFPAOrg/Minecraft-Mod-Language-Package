@@ -1,0 +1,49 @@
+{
+    "name": "Advanced Lists",
+    "category": "hexcasting:patterns",
+    "icon": "minecraft:birch_sign",
+    "advancement": "hexcasting:root",
+    "pages": [
+        "These patterns seem to represent common operations I perform on lists. Though these are perfectly possible to do with normal $(l:patterns/lists)List Manipulation/$, it often requires more effort. Perhaps Nature willed them into existence to better understand what I'm doing... or perhaps they are my own invention?",
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:rotate",
+            "anchor": "hexic:rotate",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "Rotates the array leftward: an argument of 1 moves the first item of the list to the end. Negative numbers allow rotating the list rightward."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:take",
+            "anchor": "hexic:take/count",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "Selects the first few elements from the input list. If the number is negative, selects the last few elements instead."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:drop",
+            "anchor": "hexic:drop/count",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "Drops the first few elements from the input list; the dual to $(l:addon/hexic/lists2#hexic:take/count)$(action)Retention Distillation/$."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:take",
+            "anchor": "hexic:take/list",
+            "input": "[a], [int]",
+            "output": "[a]",
+            "text": "Selects from the list only elements corresponding to the given indices. Unlike $(l:patterns/lists#hexcasting:index)$(action)Selection Distillation/$, this cannot reorder or duplicate iotas."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:drop",
+            "anchor": "hexic:drop/list",
+            "input": "[a], [int]",
+            "output": "[a]",
+            "text": "Drops from the list iotas at the given indices. All other iotas are kept in the same order as the input."
+        }
+    ]
+}
