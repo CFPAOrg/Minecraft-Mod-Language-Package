@@ -64,7 +64,7 @@
       channels: {
         "": "FSB 频道",
         "A1": "这些文本摘抄自某份文件边沿处潦草写下的内容……不太记得是什么了。好奇怪。",
-        "A2": "$(li)$(l:hexcasting:patterns/figura#mediatransport:send_fsb)提交 Iota$(/l) - transport_received/$$(li)$(l:hexcasting:patterns/figura#mediatransport:send_other)提交 Iota，第二型$(/l) - transport_external_recieved/$$(li)$(l:hexcasting:patterns/figura#mediatransport:recv_fsb)接受 Iota$(/l) - transport_send",
+        "A2": "$(li)$(l:hexcasting:patterns/figura#mediatransport:send_fsb)提交 Iota$(/l) - transport_received/$$(li)$(l:hexcasting:patterns/figura#mediatransport:send_other)提交 Iota，第二型$(/l) - transport_external_received/$$(li)$(l:hexcasting:patterns/figura#mediatransport:recv_fsb)接受 Iota$(/l) - transport_send",
         "og": "与自然对歌的正确方法",
         "B1": "……啊，我想起来了！",
         doc: {
@@ -123,7 +123,8 @@
         },
         list: {
           "": "<code>08</code>：列表",
-          "description": "列表是咒法学中的主要结构化工具，且其表示与图案类似：首先是4字节的{symdef:list_len}，后方跟随任意类型的iota表示。"
+          "description": "列表是咒法学中的主要结构化工具，且其表示与图案类似：首先是4字节的{symdef:list_len}，后方跟随任意类型的iota表示。",
+          "warning": "形象具有一次性创造一整个iota结构的能力，自然似乎在这方面有些力不从心，没法很好地满足需求（……至少默认是这样）；你有可能会接收到垃圾"
         },
         moreiotas: "MoreIotas类型",
         string: {
@@ -269,7 +270,7 @@
       },
       tooltips: {
         size: "占用空间：%s",
-        size_ref: "(%s)字节", // as in "(size) bytes"
+        size_ref: "(%s) 字节", // as in "(size) bytes"
       },
       admin: {
         // These entries are only rendered in hexdoc, so we don't have to worry
