@@ -33,7 +33,7 @@ It's because the <ItemImage id="copper_shard" scale="0.5"/> Copper Shard need to
 
 ## Shard Drop I Upgrade
 
-Drop <ItemImage id="iron_shard" scale="0.5"/> Iron Shard with a 30% drop chance.
+Drop <ItemImage id="iron_shard" scale="0.5"/> Iron Shard with a 50% drop chance.
 
 The upgrade need to be applied at least on Copper Factory for the <ItemImage id="iron_shard" scale="0.5"/> Iron Shard to drop
 
@@ -41,9 +41,9 @@ The upgrade need to be applied at least on Copper Factory for the <ItemImage id=
 
 ## Shard Drop II Upgrade
 
-Drop <ItemImage id="iron_shard" scale="0.5"/> Iron Shard with a 30% drop chance.
+Drop <ItemImage id="iron_shard" scale="0.5"/> Iron Shard with a 50% drop chance.
 
-Drop <ItemImage id="gold_shard" scale="0.5"/> Gold Shard with a 20% drop chance.
+Drop <ItemImage id="gold_shard" scale="0.5"/> Gold Shard with a 30% drop chance.
 
 The upgrade need to be applied at least on Iron Factory for the <ItemImage id="gold_shard" scale="0.5"/> Gold Shard to drop
 
@@ -51,11 +51,11 @@ The upgrade need to be applied at least on Iron Factory for the <ItemImage id="g
 
 ## Shard Drop III Upgrade
 
-Drop <ItemImage id="iron_shard" scale="0.5"/> Iron Shard with a 30% drop chance.
+Drop <ItemImage id="iron_shard" scale="0.5"/> Iron Shard with a 50% drop chance.
 
-Drop <ItemImage id="gold_shard" scale="0.5"/> Gold Shard with a 20% drop chance.
+Drop <ItemImage id="gold_shard" scale="0.5"/> Gold Shard with a 30% drop chance.
 
-Drop <ItemImage id="diamond_shard" scale="0.5"/> Diamond Shard with a 10% drop chance.
+Drop <ItemImage id="diamond_shard" scale="0.5"/> Diamond Shard with a 15% drop chance.
 
 The upgrade need to be applied at least on Gold Factory for the <ItemImage id="diamond_shard" scale="0.5"/> Diamond Shard to drop
 
@@ -63,11 +63,11 @@ The upgrade need to be applied at least on Gold Factory for the <ItemImage id="d
 
 ## Shard Drop IV Upgrade
 
-Drop <ItemImage id="iron_shard" scale="0.5"/> Iron Shard with a 30% drop chance.
+Drop <ItemImage id="iron_shard" scale="0.5"/> Iron Shard with a 50% drop chance.
 
-Drop <ItemImage id="gold_shard" scale="0.5"/> Gold Shard with a 20% drop chance.
+Drop <ItemImage id="gold_shard" scale="0.5"/> Gold Shard with a 30% drop chance.
 
-Drop <ItemImage id="diamond_shard" scale="0.5"/> Diamond Shard with a 10% drop chance.
+Drop <ItemImage id="diamond_shard" scale="0.5"/> Diamond Shard with a 15% drop chance.
 
 Drop <ItemImage id="netherite_shard" scale="0.5"/> Netherite Shard with a 5% drop chance.
 

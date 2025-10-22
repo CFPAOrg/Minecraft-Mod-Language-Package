@@ -30,9 +30,9 @@ The <ItemImage id="layout" scale="0.5"/> [Layout](../machines-blocks/layout.md#n
 
 
 For this one you will need
-12 <ItemImage id="netherite_pylon" scale="0.5"/> Diamond Pylon,
-24 <ItemImage id="netherite_plinth" scale="0.5"/> Diamond Plinth,
-1 <ItemImage id="netherite_cell" scale="0.5"/> Diamond Vitality Cell
+12 <ItemImage id="netherite_pylon" scale="0.5"/> Netherite Pylon,
+24 <ItemImage id="netherite_plinth" scale="0.5"/> Netherite Plinth,
+1 <ItemImage id="netherite_cell" scale="0.5"/> Netherite Vitality Cell
 
 <Row>
   <RecipeFor id="netherite_pylon" />
