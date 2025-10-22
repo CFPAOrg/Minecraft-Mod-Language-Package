@@ -4,8 +4,8 @@
   "icon": "minecraft:white_dye",
   "category": "trickster:tricks",
   "additional_search_terms": [
-    "光亮之技巧",
-    "光耀之技巧",
+    "辐光之技巧",
+    "耀光之技巧",
     "画家之技巧",
     "吸管之辑流",
     "设计师之曲变"
