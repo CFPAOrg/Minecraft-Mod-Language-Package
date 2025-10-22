@@ -2,7 +2,7 @@
 navigation:
   title: 拾取手杖
   icon: "justdynathings:picker_wand"
-  position: 1
+  position: 2
   parent: justdynathings:wands.md
 item_ids:
   - justdynathings:picker_wand
