@@ -10,24 +10,22 @@
 }
 ```
 
-用于查找和定位世界中实体的戏法。可传入实体类型加以限制。
+这些戏法可以用于寻找和定位世界中的实体，且两者都可限定到只针对特定的实体类型。为进行限定，可以传入一系列单独的实体类型，也可传入一个列表。
+
+
+戏法无法观测到目标位置时可能什么都不会返回。
+
+
+务必注意，实体片段可能会[衰退](^trickster:concepts/fragment_decay)。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:block_find_entity,title=怀抱之辑流|>
+<|trick@trickster:templates|trick-id=trickster:block_find_entity|>
 
-vector, entity_type... | entity_type[] -> entity
-
----
-
-查找给定位置处的实体。
+查找并返回给定位置处的实体。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:range_find_entity,title=同命之辑流|>
+<|trick@trickster:templates|trick-id=trickster:range_find_entity|>
 
-vector, number, entity_type... | entity_type[] -> entity[]
-
----
-
-查找距所给位置处给定范围内的所有实体。
+查找并返回距所给位置处给定范围内所有实体组成的列表。

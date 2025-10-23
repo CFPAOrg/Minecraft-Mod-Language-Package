@@ -15,8 +15,11 @@
 }
 ```
 
-Here listed are the most basic but useful general purpose tricks.
-Any aspiring magician is recommended to learn these.
+*"The foundations are arguably the most important part of any skillset. 
+There is no shame in revisiting them every now and then."*
+
+
+-- An excerpt from a lecture by Prof. Olivine.
 
 ;;;;;
 
@@ -29,53 +32,33 @@ Some items may have additional interactions when inscribed with fragments,
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:read_spell,title=Notulist's Ingress|>
+<|trick@trickster:templates|trick-id=trickster:read_spell|>
 
-[slot] -> any
-
----
-
-Reads the fragment from the item in the given slot or in the caster's offhand.
-Returns void if there is none.
+Reads the fragment from the item in the given slot, or in the caster's offhand if no slot is given.
+Returns void if no fragment is inscribed.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:write_spell,title=Notulist's Ploy|>
+<|trick@trickster:templates|trick-id=trickster:write_spell|>
 
-any, [slot] -> any
-
----
-
-Inscribes a fragment onto the item in the given slot or in the caster's offhand.
-Returns its input, after ephemeral decay.
+Inscribes a fragment onto the item in the given slot, or in the caster's offhand if no slot is given.
+Returns its input, after [decay](^trickster:concepts/fragment_decay).
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:write_closed_spell,title=Proprietary Notulist's Ploy|>
-
-any, [slot] -> any
-
----
+<|trick@trickster:templates|trick-id=trickster:write_closed_spell|>
 
 Same as Notulist's Ploy, but the fragment cannot be read by conventional means.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:clear_spell,title=Alethophobe's Ploy|>
+<|trick@trickster:templates|trick-id=trickster:clear_spell|>
 
-[slot] -> 
-
----
-
-Clears any fragment inscribed onto the item in the given slot or in the caster's offhand.
+Clears any inscribed fragment from the item in the given slot, or in the caster's offhand if no slot is given.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:reveal,title=Showcase Ploy|>
-
-any... -> any
-
----
+<|trick@trickster:templates|trick-id=trickster:reveal|>
 
 Shows all given values as a chat message to the caster and returns the first.
 
@@ -90,22 +73,12 @@ marking locations, and selecting targets.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:read_crow_mind,title=Crow Mind Delusion|>
-
--> any
-
----
+<|trick@trickster:templates|trick-id=trickster:read_crow_mind|>
 
 Returns the value currently stored in the caster's crow mind.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:write_crow_mind,title=Crow Mind Ploy|>
-
-any -> any
-
----
+<|trick@trickster:templates|trick-id=trickster:write_crow_mind|>
 
 Stores the supplied value in the caster's Crow Mind, overwriting any value that might already be present.
-
-;;;;;

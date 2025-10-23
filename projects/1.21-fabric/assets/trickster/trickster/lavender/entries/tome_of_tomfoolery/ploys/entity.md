@@ -16,86 +16,84 @@
 }
 ```
 
-Various tricks related to manipulating entities.
+*"You've read up on the Manton Effect before, I expect? It's a weird one."*
+
+
+*"No one is quite sure why these limitations exist as they are, or if we just haven't found the right methods yet.
+Regardless, one must keep them in mind at all times."*
+
+
+-- An excerpt from a lecture by Prof. Olivine.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:add_velocity,title=Kinetic Ploy|>
-
-entity, vector -> entity
-
-<|cost-rule@trickster:templates|formula=3kG + length^3 * 2kG|>
-
-Applies the given vector as velocity to the given entity.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:change_weight,title=Ploy of Featherweight|>
-
-entity, number -> entity
-
-<|cost-rule@trickster:templates|formula=60kG * (1 - multiplier)|>
+<|ploy@trickster:templates|trick-id=trickster:change_weight,cost=10G + 30G * (1 - multiplier)|>
 
 Given a number between zero and one, multiplies the given entity's effective gravity by that number for one second, provided it is alive.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:displace,title=Ploy of the Usurper|>
+<|ploy@trickster:templates|trick-id=trickster:add_velocity,cost=3G + length^3 * 2G|>
 
-entity, vector -> entity
-
-<|cost-rule@trickster:templates|formula=20kG + 1.35^length|>
-
-Displaces the given entity by the given vector after two seconds.
+Applies the given vector as velocity to the given entity.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:polymorph,title=Polymorph Ploy|>
+Cost scaling on Kinetic Ploy is *very* aggressive.
+Additional casts of the ploy within the same 1/20th of a second will incur 
+the cost *as if* it was cast with **the added length of both casts** in one go.
 
-entity, entity ->
 
-<|cost-rule@trickster:templates|formula=8000kG|>
-
-Polymorphs the first entity to appear to be the second in every way. **Currently only works with players.**
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:dispel_polymorph,title=Dispel Polymorph Ploy|>
-
-entity -> entity
-
-<|cost-rule@trickster:templates|formula=1000kG|>
-
-Dispels any polymorph on the given entity.
+Because of the cubic scaling of cost on this ploy, this is very likely to be undesirable.
+Consider using [Deviation of Suspension](^trickster:tricks/functions#3) 
+to delay the next cast before stacking it where possible.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:store_entity,title=Containment Ploy|>
-
-entity ->
-
-<|cost-rule@trickster:templates|formula=2000kG + distance ^ (distance / 5kG)|>
-
-Stores the given entity in the caster's offhand item. 
-The item must support entity storage, and the entity must not be a player.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:release_entity,title=Extrication Ploy|>
-
-vector -> entity | void
-
-<|cost-rule@trickster:templates|formula=2000kG + distance ^ (distance / 5kG)|>
-
-Releases the entity stored in the caster's offhand item to the given position, returning it. 
-Returns void if there is no entity.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:set_scale,title=Ploy of Occupation|>
-
-entity, number -> entity
-
-<|cost-rule@trickster:templates|formula=abs(currentScale - newScale)^2 * 100kG + newScale * 50kG|>
+<|ploy@trickster:templates|trick-id=trickster:set_scale,cost=abs(currentScale - newScale)^2 * 100G + newScale * 50G|>
 
 Changes the scale of the given entity. Entities cannot be scaled below 0.0625 or above 8 times their usual size.
+
+;;;;;
+
+Entities scaled in this way will slowly revert back to their original scale over time, 
+unless the ploy is recast periodically.
+
+;;;;;
+
+<|ploy@trickster:templates|trick-id=trickster:displace,cost=20G + 1.35G^length|>
+
+Displaces the given entity by the given vector after two seconds. 
+This ploy has the same aggressive and stacking cost scaling as Kinetic Ploy.
+
+;;;;;
+
+<|ploy@trickster:templates|trick-id=trickster:polymorph,cost=8000G|>
+
+Changes the first entity's appearance to match the second.
+Both entities must be players.
+
+;;;;;
+
+<|ploy@trickster:templates|trick-id=trickster:dispel_polymorph,cost=1000G|>
+
+Dispels any polymorph applied to the given entity.
+
+;;;;;
+
+<|ploy@trickster:templates|trick-id=trickster:store_entity,cost=2000G + 1G * distance ^ (distance / 5)|>
+
+Stores the given entity in the caster's [Hat](^trickster:items/top_hat). 
+The hat must be held in the caster's offhand, and the entity must not be a player.
+
+;;;;;
+
+Some entities cannot be stored into a hat, usually because they are too large.
+Trying to store such entities will result in a blunder.
+
+;;;;;
+
+<|ploy@trickster:templates|trick-id=trickster:release_entity,cost=2000G + 1G * distance ^ (distance / 5)|>
+
+Releases the entity stored in the caster's [Hat](^trickster:items/top_hat) to the given position, returning a reference to it.
+Returns void if there is no entity to release.

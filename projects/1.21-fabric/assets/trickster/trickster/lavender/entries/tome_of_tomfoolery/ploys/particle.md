@@ -13,10 +13,6 @@ Various ploys for displaying particles in the world.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:highlight,title=Flourish Ploy|>
+<|trick@trickster:templates|trick-id=trickster:highlight|>
 
-vector... | vector[] -> vector
-
----
-
-Highlights the given blocks and returns the first input unmodified.
+Highlights the given blocks for a second and returns the first input unmodified.
