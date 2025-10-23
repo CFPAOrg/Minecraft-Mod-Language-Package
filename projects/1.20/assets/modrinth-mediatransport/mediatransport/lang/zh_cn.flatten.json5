@@ -18,7 +18,7 @@
           recv_fsb: "从$(thing)接收队列/$中获取下一个 iota，队列为空会招致$(l:hexcasting:interop/figura/mishaps)事故$(/l)。",
           check_queue: "获取队列中 iota 的个数。",
           check_rate_limit: "查询剩余的“发送能量”点数。",
-          send_server_info_a: "请求自然发送我当前所用形象的首选项。消耗 1 点“发送能量”。详情参见$(l:https://penguinencounter.github.io/mediatransport/v/latest/main/en_us/mediatransport_virtual/protocol)在线协议文档$(/l)。",
+          send_server_info_a: "请求自然发送对我当前所用形象的首选项。消耗 1 点“发送能量”。详情参见$(l:https://penguinencounter.github.io/mediatransport/v/latest/main/en_us/mediatransport_virtual/protocol)在线协议文档$(/l)。",
           send_server_info_b: "请求自然发送我当前所用形象的首选项。消耗 1 点“发送能量”。详情参见$(l:hexcasting:mediatransport_virtual/protocol)协议文档$(/l)。",
         },
       },
@@ -30,10 +30,10 @@
             "2": "这些匠师与$(thing)形象/$交流时用的方法较为原始，但随后不久自然似乎就专门为此新创了图案。自然扭曲了 iota 的形态，以提高传递的效率和吞吐量，大概算是某种标准惯例吧。倘若凭肉眼观察扭曲后的 iota，看见的只会是方框和各种乱码。",
             "3": "创作$(thing)形象/$的匠师们貌似没有遇到读不懂的问题，而且也找到了解码方法。后方是他们留下的笔记，谨供参照。不过说真的，我真不太懂到底发生了什么。",
             "A": "我们发现（创造？）了些新法术。它们能令形象和咒术直接交流；不会再因为滥发信息被踢了，好耶！$(br2)我们中对数据了解较多的人成功解码了格式。整个协议均与字节对齐，且在数据传递中用到了 $(#8bf)Buffer/$。（换句话说，用完记得关闭！）",
-            "B": "从我们的观察出发，可用发现每个 iota 均以单个字节的$(#8bf)类型/type/$ 起始，而后跟随 0 字节或若干字节的$(#8bf)数据/data/$。所有多字节格式均采用大端序。（也是 Buffer 读取方法默认采用的。）$(br2)",
+            "B": "从我们的观察出发，可以发现每个 iota 均以单个字节的$(#8bf)类型/type/$ 起始，而后跟随 0 字节或若干字节的$(#8bf)数据/data/$。所有多字节格式均采用大端序。（也是 Buffer 读取方法默认采用的。）$(br2)",
             "C1": "可惜的是，这本笔记有不少局限，实在不够方便，没法在这里写明格式细节。也许可以在$(l:https://penguinencounter.github.io/mediatransport/v/latest/main/en_us/mediatransport_virtual/protocol)更灵活的载体$(/l)上试试看？",
             "C2": "格式的全部细节见此：$(l:hexcasting:mediatransport_virtual/protocol)Iota 传递协议$(/l)。",
-            "D": "不过，自然并不会高高兴兴地让你大批量传递 MiB 级别的数据；为避免此类滥用，传递时需考虑到“发送能量”。在正常情况下其能迅速恢复，且所有与传递相关的操作都会消耗发送能量。",
+            "D": "不过，自然并不乐意大批量传递 MiB 级别的数据；为避免此类滥用，传递时需考虑到“发送能量”。在正常情况下其能迅速恢复，而所有与传递相关的操作都会消耗发送能量。",
             "E": "而当“发送能量”耗尽时，试图提交更多 iota 会招致事故。为避免其耗尽，可使用$(l:hexcasting:patterns/figura#mediatransport:check_rate_limit)配额之精思$(/l)加以调控。"
           },
           mishaps: {
@@ -41,16 +41,16 @@
             "1": "形象传递所用的语言相当深奥，若使用不当，可能会产生多种错误。",
             // first italic part is the same as first part of the mishap text
             init_fail: "$(italic)Figura 服务器未初始化……/$$(br2)服务端配置错误，或所处宇宙为“集成服务端”时出现。产生灰色火花，并使我生出一种失望感。",
-            bad_type: "$(italic)无法发送……因为该 iota 类型无法发送/$$(br2)自然不接受发送该类型 iota 的请求。产生黑色火花。$(br2)$(italic)想让某种 iota 获得传递支持？请到 $(l:https://github.com/penguinencounter/mediatransport/issues)GitHub$(/l) 处询问！/$",
+            bad_type: "$(italic)无法发送……因为该 iota 类型无法发送/$$(br2)自然不接受发送该类型 iota 的请求。产生黑色火花。$(br2)$(italic)想支持传递某种 iota？请到 $(l:https://github.com/penguinencounter/mediatransport/issues)GitHub$(/l) 处询问！/$",
             corrupted: "$(italic)无法发送……因为信息损坏或格式错误/$$(br2)某些东西发生了严重的损坏。产生黑色火花，也许也应该知会相关的 GitHub 问题跟踪器。",
             matrix_too_large: "$(italic)无法发送……因为矩阵过大$(br)无法发送……因为矩阵行数过多$(br)无法发送……因为矩阵列数过多/$$(br2)试图发送的矩阵元素过多，或行数/列数超出了 255。产生黑色火花。",
             iota_too_large: "$(italic)无法发送：传递所用空间最少为……/$$(br2)所发送 iota 占用的空间比允许的最大值还要大。产生黑色火花。$(br2)$(italic)注意：服务器管理员可在配置中更改上限。/$",
             iota_too_large_inter: "$(italic)无法发送至其他玩家：传递所用空间最少为……/$$(br2)向其他玩家的形象发送 iota 时，其占用的空间比允许的最大值还要大。产生黑色火花。$(br2)$(italic)注意：服务器管理员可在配置中更改上限。/$",
             radio_silence: "试图接受 iota，而实际无 iota 可供接受（也即队列为空）。产生白色火花，并令我耳中回响起$(k)受折磨之意识/$的尖啸。",
             rate_limit_exceeded: "“发送能量”耗尽。也许使用提交 Iota 时要再凝练些？产生橙色火花，并产生某物破碎的声音。",
-            "2": "似乎这里的大部分错误都只在自然的领域内$(italic)发送/$（大概“提交”更确切）数据时出现……因为这些错误不会导致崩溃，而是会产出自然最喜爱的非错误：垃圾！$(br)不过这也让我们很难确定发送失败的原因。我们在此汇总了一份检查表：",
+            "2": "似乎这里的大部分错误都只在从自然的领域$(italic)发送/$（或者说“提交”）数据时出现。自然对接受错误数据似乎更宽容……因为这不会导致崩溃，而是会产出它最喜爱的非错误：垃圾！$(br)不过这也让我们很难确定发送失败的原因。我们在此汇总了一份检查表：",
             "3": "- 自然未对该数据的类型（也即首字节）提供表示方法$(br)- 传递末尾缺失数据$(br)- 数据过大（此类别的空间占用上限可能和另一种过大导致的错误不同……）$(br)- 上一条的变种，受同样的矩阵长宽限制约束（尽管只要行数或列数过多，数据必定会过大）",
-            "4": "还需注意，传递列表时可能只会有一部分出错。这可能导致解码器对错字节，以至于将类型错误解读为数据，反过来也有可能。祝好运！"
+            "4": "还需注意，列表可能会部分传递失败。这可能导致解码器“出轨”，以至于将类型错误解读为数据，反过来也有可能。祝好运！"
           }
         }
       },
