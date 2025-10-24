@@ -44,6 +44,22 @@
             "input": "[a], [int]",
             "output": "[a]",
             "text": "Drops from the list iotas at the given indices. All other iotas are kept in the same order as the input."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:where",
+            "anchor": "hexic:where/bool",
+            "input": "[bool]",
+            "output": "[int]",
+            "text": "Creates a list of the indices for which True is present. For example, [True, False, True] becomes [0, 2]. I can also mix bools and ints in the input list."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:where",
+            "anchor": "hexic:where/num",
+            "input": "[num]",
+            "output": "[int]",
+            "text": "Adds each index to the list based on the value. For example, [1, 2, 3] becomes [0, 1, 1, 2, 2, 2]. Zero or negative numbers do not appear at all."
         }
     ]
 }

@@ -44,6 +44,22 @@
             "input": "[a], [int]",
             "output": "[a]",
             "text": "删去列表中所给下标的元素。其他 iota 的顺序不变。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:where",
+            "anchor": "hexic:where/bool",
+            "input": "[bool]",
+            "output": "[int]",
+            "text": "将输入中 True 所处位置的下标组为列表返回。例如，[True, False, True] 会变为 [0, 2]。输入列表中允许混用布尔值和整数。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:where",
+            "anchor": "hexic:where/num",
+            "input": "[num]",
+            "output": "[int]",
+            "text": "根据数值将各下标组为列表返回。例如，[1, 2, 3] 会变为 [0, 1, 1, 2, 2, 2]。0 和负数处的下标不会在返回值中出现。"
         }
     ]
 }
