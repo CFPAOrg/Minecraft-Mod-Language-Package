@@ -37,12 +37,12 @@ navigation:
 
 ## 速率升级 IV
 
-所需时间减少40%
+所需时间减少50%
 
 <RecipeFor id="diamond_rate_upgrade" />
 
 ## 速率升级 V
 
-所需时间减少50%
+所需时间减少75%
 
 <RecipeFor id="netherite_rate_upgrade" />

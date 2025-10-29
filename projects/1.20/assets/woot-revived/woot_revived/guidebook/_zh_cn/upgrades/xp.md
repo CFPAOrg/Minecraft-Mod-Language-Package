@@ -21,30 +21,30 @@ navigation:
 
 ## 经验升级 I
 
-掉落100%经验
+掉落50%经验
 
 <RecipeFor id="copper_xp_upgrade" />
 
 ## 经验升级 II
 
-掉落125%经验
+掉落75%经验
 
 <RecipeFor id="iron_xp_upgrade" />
 
 ## 经验升级 III
 
-掉落150%经验
+掉落100%经验
 
 <RecipeFor id="gold_xp_upgrade" />
 
 ## 经验升级 IV
 
-掉落175%经验
+掉落125%经验
 
 <RecipeFor id="diamond_xp_upgrade" />
 
 ## 经验升级 V
 
-掉落200%经验
+掉落150%经验
 
 <RecipeFor id="netherite_xp_upgrade" />
