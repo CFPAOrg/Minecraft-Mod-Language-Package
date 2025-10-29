@@ -1,0 +1,61 @@
+{
+  "name": "蜂箱组结构",
+  "icon": "minecraft:honeycomb_block",
+  "category": "mystianapiary:multiblock",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "概览",
+      "text": "Mystian Apiary 蜂箱组是 3x3x3 的多方块结构，拓展了 Productive Bees 蜂箱的功能。先建起一个牢固的框架，再在中央放置一个以蜜脾为基底的核心，最后在四边放置模块：输入、采蜜、输出、升级。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "核心",
+      "text": "可使用带有 mystianapiary:apiary_core 标签的物品作为蜂箱组核心。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "框架",
+      "text": "可使用带有 mystianapiary:apiary_frame 标签的方块搭建框架。"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "模块",
+      "text": "各模块的详细信息见此：$(l:mystianapiary:modules#input)输入$()、$(l:mystianapiary:modules#flower)采蜜$()、$(l:mystianapiary:modules#output)输出$()、$(l:mystianapiary:modules#upgrade)升级$()。"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "name": "蜂箱组多方块",
+      "visualize": true,
+      "multiblock": {
+        "pattern": [
+          [
+            "LLL",
+            "LLL",
+            "LLL"
+          ],
+          [
+            "LIL",
+            "FCU",
+            "LOL"
+          ],
+          [
+            "LLL",
+            "LLL",
+            "L0L"
+          ]
+        ],
+        "mapping": {
+          "L": "#mystianapiary:apiary_frame",
+          "0": "#mystianapiary:apiary_frame",
+          "C": "#mystianapiary:apiary_core",
+          "I": "mystianapiary:input_block",
+          "F": "mystianapiary:upgrade_block",
+          "O": "mystianapiary:flower_block",
+          "U": "mystianapiary:output_block"
+        },
+        "symmetrical": false
+      }
+    }
+  ]
+}
