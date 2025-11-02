@@ -173,12 +173,14 @@ item_ids:
 <ItemImage id="advanced_ae:lava_immunity_card" scale="2"></ItemImage>
 <ItemImage id="advanced_ae:water_breathing_card" scale="2"></ItemImage>
 <ItemImage id="advanced_ae:magnet_card" scale="2"></ItemImage>
+<ItemImage id="advanced_ae:camo_card" scale="2"></ItemImage>
 </Row>
 
 * <ItemLink id="advanced_ae:night_vision_card" />
 * <ItemLink id="advanced_ae:lava_immunity_card" />
 * <ItemLink id="advanced_ae:water_breathing_card" />
 * <ItemLink id="advanced_ae:magnet_card" />
+* <ItemLink id="advanced_ae:camo_card" />
 
 这些卡能提供多种实用功能，如免疫特定伤害和给予夜视。磁吸卡有配置界面，可供过滤需捡起何种物品以及吸引的范围。
 

@@ -201,12 +201,14 @@ normal auto-craft request would.
 <ItemImage id="advanced_ae:lava_immunity_card" scale="2"></ItemImage>
 <ItemImage id="advanced_ae:water_breathing_card" scale="2"></ItemImage>
 <ItemImage id="advanced_ae:magnet_card" scale="2"></ItemImage>
+<ItemImage id="advanced_ae:camo_card" scale="2"></ItemImage>
 </Row>
 
 * <ItemLink id="advanced_ae:night_vision_card" />
 * <ItemLink id="advanced_ae:lava_immunity_card" />
 * <ItemLink id="advanced_ae:water_breathing_card" />
 * <ItemLink id="advanced_ae:magnet_card" />
+* <ItemLink id="advanced_ae:camo_card" />
 
 These cards provide several utilities for the set wearer, bringing immunity to some sorts of damage and granting night
 vision. The magnet card, in particular, has a configuration screen where you can set filters for what to pick up or not
