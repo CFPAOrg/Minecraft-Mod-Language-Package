@@ -71,7 +71,6 @@ multiplying their co-processing power by 4. Only one of these can be placed in e
 
 <Row gap="20">
 <BlockImage id="advanced_ae:quantum_structure" scale="4"></BlockImage>
-<BlockImage id="advanced_ae:quantum_structure" p:formed="true" scale="4"></BlockImage>
 <BlockImage id="advanced_ae:quantum_structure" p:formed="true" p:powered="true" scale="4"></BlockImage>
 </Row>
 
@@ -92,7 +91,7 @@ for no additional benefits;
 
 ## Server Configs
 
-Several values can be tweak by server configs. Such as:
+Several values can be tweaked by server configs. Such as:
 - Maximum multiblock size;
 - Co-processors in each Quantum Accelerator;
 - Maximum amount of Quantum Multi-Threaders;

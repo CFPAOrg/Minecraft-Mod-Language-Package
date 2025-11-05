@@ -13,4 +13,4 @@ flowchart LR
 ### 链接区域
 
 - [1.20.1](/projects/1.20/assets/hexcasting/hexcasting)
-- [1.20.1](/projects/1.20/assets/hexcasting/hexcasting)
+- [1.20.1-fabric](/projects/1.20-fabric/assets/hexcasting/hexcasting)
