@@ -18,7 +18,7 @@ It can contain only one itemstack at time
 
 To insert on it items you need to right click with it
 
-It doensn't have a GUI but can be automated using hoppers or something like that
+It doesn't have a GUI but can be automated using hoppers or something like that
 
 <ItemImage id="synergy:quern" scale="4.0"/>
 

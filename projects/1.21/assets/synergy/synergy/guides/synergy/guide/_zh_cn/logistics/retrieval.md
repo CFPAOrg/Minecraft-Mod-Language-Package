@@ -9,6 +9,7 @@ categories:
 item_ids:
   - synergy:item_retrieval_node
   - synergy:energy_retrieval_node
+  - synergy:fluid_retrieval_node
 ---
 
 # 抽取节点

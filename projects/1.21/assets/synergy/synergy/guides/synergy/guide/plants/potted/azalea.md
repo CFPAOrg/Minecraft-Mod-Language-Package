@@ -36,4 +36,4 @@ Can be obtained using an <ItemLink id="synergy:azalea_seeds" /> to an empty flow
 | <Color color="#00ff00">True</Color>               | <Color color="#00ff00">True</Color>          | <Color color="#ff0000">False</Color>      | <Color color="#ffff00">NaN</Color>         | <Color color="#ffff00">NaN</Color>            |
 |                    |               |            |             |                |
 
-<Recipe id="synergy:azalea_seeds" />
+<Recipe id="synergy:item_use/azalea_from_flower_pot" />

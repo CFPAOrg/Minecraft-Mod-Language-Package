@@ -9,6 +9,7 @@ categories:
 item_ids:
   - synergy:item_transfer_node
   - synergy:energy_transfer_node
+  - synergy:fluid_transfer_node
 ---
 
 # Transfer Nodes

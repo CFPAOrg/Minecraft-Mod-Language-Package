@@ -8,6 +8,7 @@ categories:
   - logistics
 item_ids:
   - synergy:item_provider_node
+  - synergy:fluid_provider_node
 ---
 
 # Provider Nodes

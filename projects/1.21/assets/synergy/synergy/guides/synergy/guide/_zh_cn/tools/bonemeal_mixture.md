@@ -25,5 +25,3 @@ item_ids:
 <ItemImage id="synergy:glowstone_mixture" scale="4.0"/>
 
 <RecipeFor id="synergy:bone_meal_mixture" />
-<!-- <RecipeFor id="synergy:amethyst_mixture" /> -->
-<!-- <RecipeFor id="synergy:glowstone_mixture" /> -->
