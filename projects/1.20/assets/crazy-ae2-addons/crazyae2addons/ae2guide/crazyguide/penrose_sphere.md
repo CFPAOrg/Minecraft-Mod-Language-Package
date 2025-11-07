@@ -66,3 +66,4 @@ The Penrose Sphere is a late-game multiblock power generator that filled with **
 - Energy is being actively exported from any Penrose Port block.
 - Compatible with any FE-based system.
 - Can charge your ME network as well as anything that accepts FE.
+

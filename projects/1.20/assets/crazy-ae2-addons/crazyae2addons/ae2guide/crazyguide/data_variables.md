@@ -10,105 +10,66 @@ item_ids:
   - crazyae2addons:dataflow_pattern
 ---
 
-# Guide: How the Data Flow System Works
+# Data Variables (Lua Triggers)
 
-The **Data Flow System** in CrazyAE2Addons lets you connect special "nodes" together to create small logic programs inside your ME network.
-Think of it like Redstone, but for data: values travel between nodes, get converted, and trigger actions such as setting variables or emitting redstone.
-
-This guide explains how it works in practice.
+Data Variables let you react to changes in your AE2 network variables using small Lua scripts stored in an item. When the watched variable changes, your script is executed instantly, letting you update other variables or control named redstone emitters.
 
 ---
+## Prerequisites
+- **ME Data Controller Block** – stores all variables in the network.
+- **Data Processor** – runs your Lua script when the watched variable changes.
 
-## Starting the Flow
-
-Every graph begins with an **Entrypoint Node**.
-This node provides the first value (usually a string) that starts the whole chain.
-
-From there, the value flows into other nodes you connect.
+> Variables are **strings**.
 
 ---
-
-## How Nodes Work
-
-Each node has:
-
-* **Inputs** – slots where it waits for values.
-* **Outputs** – paths that send values forward.
-
-A node will not run until **all of its required inputs** are filled.
-Once ready, it processes the data and pushes results out.
+## Quick Start
+1. **Choose the trigger**: In the **Data Processor** UI, set the **Watched variable** to the exact name of the variable you want to subscribe to (case-sensitive).
+2. **Provide a Lua script**: Put the scripted item (Lua Pattern) into the processor.
+3. **Implement the handler**: Your script **must** define:
+   - `onVariable(name, value)` – called every time the watched variable’s value changes. If this function is missing, nothing will happen.
 
 ---
+## Lua API (available in scripts)
+- `setVar(name, value)` – Set or update the integer variable `name` in the network’s database.
+- `setEmitter(name, state)` – Turn a named redstone emitter **on**/**off**.
+- `toggleEmitter(name)` – Flip the current state of a named redstone emitter.
 
-## Connecting Nodes
-
-When a node outputs a value, it can send it to other nodes.
-There are two ways this happens:
-
-1. **Automatic matching**
-
-    * The runner looks at the next node’s inputs.
-    * If one is empty and its type matches (or can be converted), the value goes there.
-
-2. **Explicit routing**
-
-    * You can force a value to go into a specific input using the `^` symbol.
-    * Example:
-    - outputName^inputName
-    - means *“send this value into the input called `inputName`”*.
-
-This is useful if a node has multiple inputs and you want full control.
+**Notes**
+- `name` is an arbitrary string label you choose (e.g., `"smelter"`, `"gate_A"`).
+- Changing variables in your script can **cascade**: any other Data Processors watching those variables will also fire their own `onVariable`.
+- Avoid writing back to the **same** variable you are watching unless you know what you’re doing—this can create loops.
 
 ---
+## Examples
 
-## Type Conversion
+### 1) Threshold control: drive an emitter when value > 10
+![Script1](../img/script1.png)
 
-Not every node speaks the same "language".
-To fix that, the system automatically converts values when possible:
+### 2) Toggle on any change (edge-agnostic)
+![Script2](../img/script2.png)
 
-* String ↔ Int
-* Int ↔ Bool
-* Bool ↔ String
+### 3) Mirror & transform: derive a new variable
+![Script3](../img/script3.png)
 
-For example:
-
-* If a node outputs `"42"` (string) but the next one expects an `int`, the system will try to convert it into the number `42`.
-* If conversion fails (like `"apple"` to int), the value is dropped.
-
----
-
-## Example Flow
-
-Let’s say you want to read a variable and use it to control redstone:
-
-1. **EntrypointNode**: provides `"1"` as a string.
-2. **ReadVariableNode**: looks up the variable, outputs a number.
-3. **SetRedstoneEmitterNode**: takes the number, converts it into a boolean (`>0 = ON`), and powers connected emitters.
-
-Result: when the variable is non-zero, your emitter turns on.
+### 4) Boolean gate: treat integers as booleans
+![Script4](../img/script4.png)
 
 ---
-
-## Important Things to Know
-
-* **Each node runs once per cycle.**
-  When it’s executed, it will not run again until the whole flow restarts.
-
-* **Explicit routing beats automatic matching.**
-  If you use `^inputName`, the system ignores all other possible matches.
-
-* **Failed conversions stop the value.**
-  Nothing breaks, but the value will not reach the next node.
+## Behavior & Tips
+- **Trigger timing**: `onVariable` is invoked immediately when the watched variable gets new value (including first assignment).
+- **Naming**: Keep emitter and variable names consistent and descriptive (e.g., `reactor_enable`, `ore_count`).
+- **Chaining**: Build logic pipelines by setting variables that other processors watch.
+- **Safety**: Throttle or guard conditions to prevent rapid flapping (e.g., only toggle when crossing thresholds).
 
 ---
-
-## Quick Tips
-
-* Use **explicit routes** (`^input`) when in doubt – it avoids confusion.
-* If your flow stops working, check if the value type is what you expect. The system might be dropping it if conversion fails.
-* Keep chains small and test step by step to avoid debugging issues.
-* Use the variable terminal or display monitor to see what is happening
+## Troubleshooting
+- **Nothing happens** → Ensure your script **defines** `onVariable(name, value)`, the **watched name** matches exactly, and the **ME Data Controller** is installed and powered.
+- **Unexpected loops** → You may be writing to the same variable you’re watching, or triggering a cycle through chained processors.
+- **Emitters don’t react** → Check the emitter `name` you are addressing and verify the corresponding redstone device is connected and named identically.
 
 ---
-
-With these rules in mind you can build small logic circuits inside your ME network – from simple redstone toggles to advanced variable-driven automation.
+## API Reference (cheat sheet)
+- `onVariable(name, value)` – **Required** entrypoint. Triggered on any new value of the watched variable.
+- `setVar(name, value)` – Write integer variable to the network.
+- `setEmitter(name, state)` – Set named redstone emitter to ON/OFF.
+- `toggleEmitter(name)` – Invert named redstone emitter state.
