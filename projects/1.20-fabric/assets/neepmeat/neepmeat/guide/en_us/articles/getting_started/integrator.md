@@ -4,7 +4,7 @@ id: integrator
 
 # Integrator Organism
 
-An Integrator is a biomechanical information processing system intended to ease the production of machines. Designed to withstand high quantities of inhuman knowledge, Integrators can confer this information to certain substances, ascending them to Enlightened forms.
+An Integrator is a biohybrid information processing system intended to ease the production of machines. Designed to withstand high quantities of inhuman knowledge, Integrators can confer this information to certain substances, ascending them to Enlightened forms.
 
 ## Acquisition
 
