@@ -16,12 +16,17 @@
 
   text: {
     hexdebug: {
-      connected: "调试客户端已连接！",
-      no_session: "线程%d的调试会话未在运行。",
-      not_paused: "线程%d的调试会话未被暂停。",
+      debugging: {
+        connected: "调试客户端已连接！",
+        no_session: "线程%d的调试会话未在运行。",
+        not_paused: "线程%d的调试会话未被暂停。",
+        // Next Iota: [{index}] {iota}
+        debugger_stopped: "下一个Iota：[%d] %s",
+        illegal_thread: "物品不知怎的失效了……是我还要再提升自己的技术吗？",
+        out_of_range: "调试员已离开连接范围。",
+      },
+
       thwack: "哐当！",
-      // Next Iota: [{index}] {iota}
-      debugger_stopped: "下一个Iota：[%d] %s",
 
       splicing_table: {
         button: {
@@ -252,7 +257,10 @@
 
   hexdebug: {
     tooltip: {
-      thread_id: "线程：%d",
+      thread: {
+        inactive: "线程 %d",
+        active: "线程 %s（%s）",
+      },
       debugger: {
         step_mode: {
           continue: "模式：继续",
