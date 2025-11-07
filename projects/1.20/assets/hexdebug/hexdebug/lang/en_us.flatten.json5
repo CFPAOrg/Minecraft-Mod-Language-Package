@@ -16,12 +16,17 @@
 
   text: {
     hexdebug: {
-      connected: "Debug client connected!",
-      no_session: "Debug session is not running for thread %d.",
-      not_paused: "Debug session is not paused for thread %d.",
+      debugging: {
+        connected: "Debug client connected!",
+        no_session: "Debug session is not running for thread %d.",
+        not_paused: "Debug session is not paused for thread %d.",
+        // Next Iota: [{index}] {iota}
+        debugger_stopped: "Next Iota: [%d] %s",
+        illegal_thread: "The item failed, somehow... am I not skilled enough?",
+        out_of_range: "Debuggee is out of range.",
+      },
+
       thwack: "Thwack!",
-      // Next Iota: [{index}] {iota}
-      debugger_stopped: "Next Iota: [%d] %s",
 
       splicing_table: {
         button: {
@@ -252,7 +257,10 @@
 
   hexdebug: {
     tooltip: {
-      thread_id: "Thread: %d",
+      thread: {
+        inactive: "Thread %s",
+        active: "Thread %s (%s)",
+      },
       debugger: {
         step_mode: {
           continue: "Mode: Continue",
