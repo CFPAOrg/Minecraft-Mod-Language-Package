@@ -31,4 +31,4 @@ navigation:
 
 - <ItemLink id="justdynathings:echoing_budding_certus"/>（应用能源2，Applied Energistics 2）
 - <ItemLink id="justdynathings:echoing_budding_entro"/> （AE2扩展，Extended AE）
-- <ItemLink id="justdynathings:echoing_budding_phasorite"/>（相能网络，Phasorite Networks）
+- ~~回响相能母岩（相能网络，Phasorite Networks）~~ 暂时禁用
