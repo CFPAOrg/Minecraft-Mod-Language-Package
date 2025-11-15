@@ -1,0 +1,81 @@
+{
+  "name": "反应烧瓶",
+  "icon": "reactive:reaction_flask",
+  "category": "reactive:results",
+  "advancement": "reactive:flask_research",
+  "turnin": "reactive:throw_flask",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(o)啊，你好。我想给你看些东西。我还蛮为它自豪的。$(p)如你所知，$(l:objects_of_study/gold_thread)金丝线$(/l)能将坩埚内的反应转变成某种飘浮状态的$(item)反应云$(0)，这种云能在一段较短的时间维持自身存在。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(o)而如果将能量之瓶中的能量混合起来，再在烧瓶内放上些金丝线，就可不借助坩埚复现出反应。$(p)当然，我们不能让能量直接开始反应，所以就需要用$(l:objects_of_study/inert_crystal)惰性晶体$(/l)封住烧瓶瓶口。"
+    },
+    {
+      "type": "reactive:fake_crafting",
+      "input1_1": "",
+      "input1_2": "reactive:inert_crystal",
+      "input1_3": "",
+      "input2_1": "tag:reactive:power_bottles",
+      "input2_2": "tag:reactive:power_bottles",
+      "input2_3": "tag:reactive:power_bottles",
+      "input3_1": "",
+      "input3_2": "reactive:gold_thread",
+      "input3_3": "",
+      "output": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:false, powers:{}}]",
+      "text": "$(o)配方见此。任意的能量之瓶组合均可。$(p)当然，所选的能量之瓶在混合后，应当能发生所需要的$(l:reactions)反应$(/l)。"
+    },
+    {
+      "type": "reactive:fake_crafting",
+      "input1_1": "",
+      "input1_2": "reactive:inert_crystal",
+      "input1_3": "",
+      "input2_1": "tag:reactive:power_bottles",
+      "input2_2": "tag:reactive:power_bottles",
+      "input2_3": "",
+      "input3_1": "",
+      "input3_2": "reactive:gold_thread",
+      "input3_3": "",
+      "output": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:false, powers:{}}]",
+      "text": "$(o)换成只用两个也可以，种类相同也无妨。"
+    },
+    {
+      "type": "reactive:fake_crafting",
+      "input1_1": "",
+      "input1_2": "reactive:inert_crystal",
+      "input1_3": "",
+      "input2_1": "",
+      "input2_2": "tag:reactive:power_bottles",
+      "input2_3": "",
+      "input3_1": "",
+      "input3_2": "reactive:gold_thread",
+      "input3_3": "",
+      "output": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:false, powers:{}}]",
+      "text": "$(o)甚至只用一个都可以。不过，只需要单种能量的反应确实没有多少……"
+    },
+    {
+      "type": "reactive:fake_crafting",
+      "input1_1": "",
+      "input1_2": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:false, powers:{}}]",
+      "input1_3": "",
+      "input2_1": "",
+      "input2_2": "reactive:volt_cell",
+      "input2_3": "",
+      "input3_1": "",
+      "input3_2": "",
+      "input3_3": "",
+      "output": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:true, powers:{}}]",
+      "text": "$(o)将烧瓶与$(item)电激单元$(0)合成可进行“电激”，所得反应云即可复现需要$(thing)电激$(0)激发的反应。$(p)不会消耗电激单元。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(o)注意：$(p)在坩埚中产生反应需要什么激发物，反应云就需要什么激发物。换言之，如果有个反应需要$(item)金徽记$(0)，但反应云附近没有金徽记，$(4)那就不会发生反应$(0)。$(p)而且，反应云的存在时间是有限的，在那之后它即会消散。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(o)我曾观察到，多个距离较近的反应云似乎会相互靠拢，直至它们“融合”在一起。发生这种情况时，各反应云的能量也会叠加。所得反应云的存在时间继承自初始存在时间最长的反应云。"
+    }
+  ]
+}
