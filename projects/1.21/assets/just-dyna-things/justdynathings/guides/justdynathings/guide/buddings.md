@@ -31,4 +31,4 @@ All Mod Support:
 
 - <ItemLink id="justdynathings:echoing_budding_certus"/> (Applied Energistics 2)
 - <ItemLink id="justdynathings:echoing_budding_entro"/> (Extended AE)
-- <ItemLink id="justdynathings:echoing_budding_phasorite"/> (Phasorite Networks)
+- ~~Echoing Budding Phasorite (Phasorite Networks)~~ Temporarily Disabled
