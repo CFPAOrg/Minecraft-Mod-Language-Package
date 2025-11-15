@@ -11,7 +11,7 @@ item_ids:
 
 # Energy Exporter
 
-The Energy Exporter is a part that allows your ME network to send Forge Energy (FE)
+The Energy Exporter is a part that allows your ME network to send Forge Energy (FE) 
 or GregTech Energy (EU) into adjacent machines or storage blocks. 
 It extracts power from your network and provides it outward.
 
@@ -30,7 +30,7 @@ It extracts power from your network and provides it outward.
     - The screen shows current transfer rate.
     - In GregTech mode, it additionally shows configured voltage and amperage.
 
-The Energy Exporter automatically adapts to whether it is providing FE or EU,
+The Energy Exporter automatically adapts to whether it is providing FE or EU, 
 based on the inserted battery and the target machine's capabilities. 
 It handles power conversion rates and protects your network from overdrawing, 
 turning of when the power left in your network falls bellow 33%.
