@@ -56,7 +56,7 @@ quaternion | vector -> quaternion | vector
 
 ---
 
-将所给法术片段归一化至长度为一。
+将所给法术片段归一化至长度为1。
 
 ;;;;;
 

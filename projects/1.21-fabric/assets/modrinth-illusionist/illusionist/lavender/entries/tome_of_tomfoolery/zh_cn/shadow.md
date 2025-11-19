@@ -10,20 +10,12 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=illusionist:disguise_block,title=虚影之技巧|>
-
-vector, block -> boolean
-
-<|cost-rule@trickster:templates|formula=20kG|>
+<|ploy@trickster:templates|trick-id=illusionist:disguise_block,cost=20kG|>
 
 在给定位置处施加所给方块的虚影，同时检查并返回虚影创建成功与否。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=illusionist:dispel_block_disguise,title=揭影之技巧|>
-
-vector -> boolean
-
-<|cost-rule@trickster:templates|formula=10kG|>
+<|ploy@trickster:templates|trick-id=illusionist:dispel_block_disguise,cost=10kG|>
 
 祛除所给位置处的虚影，同时检查并返回该处原本是否存在虚影。
