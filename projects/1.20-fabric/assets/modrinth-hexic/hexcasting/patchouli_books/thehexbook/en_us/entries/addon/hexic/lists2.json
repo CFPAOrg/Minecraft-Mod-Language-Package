@@ -11,7 +11,7 @@
             "anchor": "hexic:rotate",
             "input": "[a], int",
             "output": "[a]",
-            "text": "Rotates the array leftward: an argument of 1 moves the first item of the list to the end. Negative numbers allow rotating the list rightward."
+            "text": "Rotates the list leftward: an argument of 1 moves the first item of the list to the end. Negative numbers allow rotating the list rightward."
         },
         {
             "type": "hexcasting:pattern",
@@ -60,6 +60,14 @@
             "input": "[num]",
             "output": "[int]",
             "text": "Adds each index to the list based on the value. For example, [1, 2, 3] becomes [0, 1, 1, 2, 2, 2]. Zero or negative numbers do not appear at all."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:extract",
+            "anchor": "hexic:extract",
+            "input": "[a], int",
+            "output": "[a], [a], a",
+            "text": "Extracts an iota from the given list, and breaks the list apart around it. Returns all items before the iota, all items after the iota, and finally the iota itself."
         }
     ]
 }
