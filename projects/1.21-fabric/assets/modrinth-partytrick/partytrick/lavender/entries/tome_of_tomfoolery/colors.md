@@ -1,6 +1,6 @@
 ```json
 {
-  "title": "Colors ",
+  "title": "Colors",
   "icon": "minecraft:white_dye",
   "category": "trickster:tricks",
   "additional_search_terms": [
