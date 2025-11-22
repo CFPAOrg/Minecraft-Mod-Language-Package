@@ -20,6 +20,8 @@ Right-clicking on the receiver opens a GUI with configuration options:
 
 For transport to occur, only the sender chunks need to be loaded.
 
+Note that fluids will be destroyed if the receiver has no Fluid Output Port.
+
 # NEEPBus Support
 
 NEEPBus can be used to set a receiver's channel or trigger it to send.
