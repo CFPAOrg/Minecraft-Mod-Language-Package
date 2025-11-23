@@ -268,7 +268,7 @@
 
   "tag.hexcasting": {
     staves: "咒术法杖",
-    edified_logs: "启迪原木",
+    edified_logs: "启迪木",
     edified_planks: "启迪木板",
     phial_base: "空试剂瓶",
   },
@@ -971,20 +971,49 @@
     },
 
     "iota.hexcasting:": {
-      "null": "Null",
-      double: "数",
-      boolean: "布尔值",
-      entity: "实体",
-      list: "列表",
-      pattern: "图案",
-      garbage: "垃圾",
-      vec3: "向量",
+      "null": {
+        "": "Null",
+        desc: "一个空值",
+      },
+      double: {
+        "": "数",
+        desc: "一个数",
+      },
+      boolean: {
+        "": "布尔值",
+        desc: "一个布尔值",
+      },
+      entity: {
+        "": "实体",
+        desc: "一个实体",
+      },
+      list: {
+        "": "列表",
+        desc: "一个列表",
+      },
+      pattern: {
+        "": "图案",
+        desc: "一个图案",
+      },
+      garbage: {
+        "": "垃圾",
+        desc: "垃圾",
+      },
+      vec3: {
+        "": "向量",
+        desc: "一个向量",
+      },
+      continution: {
+        "": "续体",
+        desc: "一个跳转iota",
+      },
     },
 
     mishap: {
       "": "%s：%s",
 
-      invalid_pattern: "该图案不对应任何操作",
+      invalid_pattern: "图案%s不对应任何操作",
+      invalid_pattern_generic: "该图案不对应任何操作",
       unescaped: "本应运行一个图案，而实际运行了%s",
 
       not_enough_args: "本应接受大于等于%s个参数，而实际栈高度为%s",
@@ -1034,15 +1063,17 @@
       bad_caster: "试图运行的图案需要强大的意识才能承受",
 
       invalid_value: {
-        "": "本应在栈下标为%2$s处接受%1$s，而实际接受了%3$s",
+        "": "本应在栈下标为%2$s处接受%1$s，而实际接受了%3$s：%4$s",
 
         class: {
           double: "一个数",
           boolean: "一个布尔值",
           vector: "一个向量",
           list: "一个列表",
-          widget: "一个虚指",
           pattern: "一个图案",
+          continuation: "一个跳转iota",
+          garbage: "垃圾",
+          "null": "Null",
 
           entity: {
             "": "一个实体",
@@ -1827,7 +1858,7 @@
         "fisherman/copy": "与$(l:patterns/stackmanip#hexcasting:fisherman)$(action)渔夫之策略/$类似，但会复制 iota 而非将其提出。",
 
         mask: {
-          "1": "一组无限个根据凹槽和横线的顺序来保留或移除栈中元素的操作。",
+          "1": "一组无限个根据凹槽和横线的顺序来移除或保留栈中元素的操作。",
           "2": "假如从左到右绘制书吏之策略，此操作操控的 iota 个数由其横向长度决定。从靠近栈底的位置开始往栈顶计入，一条横线代表保留该处元素，一个凹槽代表移除该处元素。$(br2)如果栈从靠近栈底处起形如 $(italic)0, 1, 2/$ ，绘制左页例图一，则栈变为 $(italic)1/$；例图二会将栈变为 $(italic)0/$；例图三会将栈变为 $(italic)0, 2/$（栈底方向的 0 不受影响）。",
         },
 
@@ -1891,8 +1922,8 @@
         reverse: "倒置栈顶列表。",
         index_of: "移除栈顶元素，并将栈顶列表变为该元素在其中第一次出现的位置（从 0 开始）。若没有出现过则返回 -1。",
         remove_from: "移除栈顶的数，而后移除栈顶列表中下标为该数（就是被移除的那个数）的元素。",
-        replace: "移除栈顶元素和栈顶的数，而后将栈顶列表中下标为该数（就是被移除的那个数）变为该元素。若该数越界则不进行操作。",
-        last_n_list: "移除$(italic)所给数/$个元素，将这些元素加入列表并将该列表压入栈顶。",
+        replace: "移除栈顶元素和栈顶的数，而后将栈顶列表中下标为该数（就是被移除的那个数）的位置变为原栈顶元素。数越界则不进行操作。",
+        last_n_list: "移除$(italic)所给数/$个元素，将这些元素加入列表，并将所得列表压入栈顶。",
         splat: "移除栈顶列表，而后将其中元素全部压入栈顶。",
         construct: "移除栈顶元素，将其加到栈顶列表的开头。",
         deconstruct: "移除栈顶列表中的第一个元素，并将该元素压入栈顶。",
@@ -2017,10 +2048,10 @@
         "craft/trinket": "消耗大约 5 个$(l:items/amethyst)$(item)充能紫水晶/$。",
         "craft/artifact": "消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
 
-        "recharge.1": "给另一只手中能装$(media)媒质/$的物品重新充能。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。",
+        "recharge.1": "给另一只手中能装$(media)媒质/$的物品重新充能。每个物品消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。",
         "recharge.2": "此法术的施放方式和制作施法物品所用法术的类似。提供一个$(l:items/amethyst)$(item)紫水晶/$物品实体，就能给另一只手中物品的$(media)媒质/$储库重新充能。$(br2)此法术$(italic)不能/$充入超过储库大小的媒质。",
 
-        "erase.1": "清除另一只手中写有$(hex)咒术/$的物品。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+        "erase.1": "清除另一只手中写有$(hex)咒术/$或存有 iota 的物品。每个物品消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
         "erase.2": "此法术也会清除物品内存储的$(media)媒质/$，将其释放给自然并将物品恢复到其初始状态。如此就能回收利用容易出错的$(l:items/hexcasting)$(item)缀品/$了。$(br2)此法术也能清除$(l:items/focus)$(item)核心/$和$(l:items/spellbook)$(item)法术书/$书页内容，同时去除其上密封。",
       },
 
