@@ -969,22 +969,51 @@
       escape: "Consideration",
       undo: "Evanition",
     },
-    
+
     "iota.hexcasting:": {
-      "null": "Null",
-      double: "Number",
-      boolean: "Boolean",
-      entity: "Entity",
-      list: "List",
-      pattern: "Pattern",
-      garbage: "Garbage",
-      vec3: "Vector",
+      null: {
+        "": "Null",
+        desc: "a null value",
+      },
+      double: {
+        "": "Number",
+        desc: "a number",
+      },
+      boolean: {
+        "": "Boolean",
+        desc: "a boolean",
+      },
+      entity: {
+        "": "Entity",
+        desc: "an entity",
+      },
+      list: {
+        "": "List",
+        desc: "a list",
+      },
+      pattern: {
+        "": "Pattern",
+        desc: "a pattern",
+      },
+      garbage: {
+        "": "Garbage",
+        desc: "garbage",
+      },
+      vec3: {
+        "": "Vector",
+        desc: "a vector",
+      },
+      continution: {
+        "": "Continuation",
+        desc: "a jump iota",
+      },
     },
     
     mishap: {
       "": "%s: %s",
       
-      invalid_pattern: "That pattern isn't associated with any action",
+      invalid_pattern: "The pattern %s isn't associated with any action",
+      invalid_pattern_generic: "That pattern isn't associated with any action",
       unescaped: "Expected to evaluate a pattern, but evaluated %s instead",
       
       not_enough_args: "expected %s or more arguments but the stack was only %s tall",
@@ -1034,15 +1063,17 @@
       bad_caster: "Tried to execute a pattern that requires a greater mind",
       
       invalid_value: {
-        "": "expected %s at index %s of the stack, but got %s",
+        "": "expected %s at index %s of the stack, but got %s: %s",
         
         class: {
           double: "a number",
           boolean: "a boolean",
           vector: "a vector",
           list: "a list",
-          widget: "an influence",
           pattern: "a pattern",
+          continuation: "a jump iota",
+          garbage: "garbage",
+          null: "null",
           
           entity: {
             "": "an entity",
@@ -1747,7 +1778,7 @@
         "mul.2": "As such:$(li)With two numbers, combines them into their product.$(li)With a number and a vector, removes the number from the stack and multiplies each component of the vector by that number.$(li)With two vectors, combines them into their $(l:https://www.mathsisfun.com/algebra/vectors-dot-product.html)dot product/$.",
         
         "div.1": "Perform division or the cross product.",
-        "div.2": "As such:$(li)With two numbers, combines them into their quotient.$(li)With a number and a vector, removes the number and divides it by each element of the vector.$(li)With two vectors, combines them into their $(l:https://www.mathsisfun.com/algebra/vectors-cross-product.html)cross product/$.$(br2)In the first and second cases, the top of the stack or its components comprise the dividend, and the second-from-the-top or its components are the divisor.$(p)WARNING: Never divide by zero!",
+        "div.2": "As such:$(li)With two numbers, combines them into their quotient.$(li)With a number and a vector, removes the number and divides each element of the vector by it.$(li)With two vectors, combines them into their $(l:https://www.mathsisfun.com/algebra/vectors-cross-product.html)cross product/$.$(br2)In the first and second cases, the second-from-the-top of the stack is divided by the top of the stack.$(p)WARNING: Never divide by zero!",
         
         "abs.1": "Compute the absolute value or length.",
         "abs.2": "Replaces a number with its absolute value, or a vector with its length.",
@@ -2017,10 +2048,10 @@
         "craft/trinket": "Costs about five $(l:items/amethyst)$(item)Charged Amethysts/$.",
         "craft/artifact": "Costs about ten $(l:items/amethyst)$(item)Charged Amethysts/$.",
         
-        "recharge.1": "Recharge a _media-containing item in my other hand. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.",
+        "recharge.1": "Recharge a _media-containing item in my other hand. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$ per item.",
         "recharge.2": "This spell is cast in a similar method to the crafting spells; an entity representing a dropped stack of $(l:items/amethyst)$(item)Amethyst/$ is provided, and recharges the _media battery of the item in my other hand.$(br2)This spell $(italic)cannot/$ recharge the item farther than its original battery size.",
         
-        "erase.1": "Clear a _Hex-containing item in my other hand. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
+        "erase.1": "Clears _Hex-containing or iota-containing items in my other hand. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$ per item.",
         "erase.2": "The spell will also void all the _media stored inside the item, releasing it back to Nature and returning the item to a perfectly clean slate. This way, I can re-use $(l:items/hexcasting)$(item)Trinkets/$ I have put an erroneous spell into, for example.$(br2)This also works to clear a $(l:items/focus)$(item)Focus/$ or $(l:items/spellbook)$(item)Spellbook/$ page, unsealing them in the process.",
       },
       
