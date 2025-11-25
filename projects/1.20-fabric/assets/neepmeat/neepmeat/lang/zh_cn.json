@@ -10,6 +10,7 @@
   "tooltip.neepmeat.plc_compatible": "有效PLC工作站",
   "tooltip.neepmeat.plc_interrupt": "会发出PLC中断",
   "tooltip.neepmeat.plc_actuator": "有效PLC操作机构",
+  "tooltip.neepmeat.retains_inventory": "破坏时会保留内容物。",
   "text.neepmeat.plc.arguments": "参数：%s / %s",
   "text.neepmeat.plc.interactive_help": "在右侧面板中点击选择指令。\n\n点击世界中方块以将其位置加作参数。\n\n参数数量满足后，指令会立即执行。",
   "tooltip.neepmeat.plc.language": "当前编程语言：%s\n点击以切换语言。\nCtrl点击以打开文档。",
@@ -203,6 +204,8 @@
   "screen.neepmeat.distributor_point.auto_send": "自动发送：",
   "screen.neepmeat.distributor_point.neepbus": "打开NEEP总线配置",
   "screen.neepmeat.open_guide_entry": "打开指南条目",
+  "block.neepmeat.ball_mill": "球磨机",
+  "component.neepmeat.ball_mill": "球磨机",
 
   "block.neepmeat.meat_steel_block": "肉钢块",
   "block.neepmeat.meat_steel_block_slab": "肉钢台阶",
@@ -450,6 +453,7 @@
   "block.neepmeat.fluid_interface.lore_0": "用于转接所面对的方块。",
 
   "block.neepmeat.reservoir": "集水槽",
+  "block.neepmeat.reservoir.lore_0": "能迅速收集水。",
 
   "block.neepmeat.fluid_gauge": "流体存量计",
   "block.neepmeat.fluid_gauge.lore_0": "根据储罐的填满程度发出红石信号。",
@@ -620,6 +624,9 @@
   "item.neepmeat.open_eye": "睁开的眼睛",
 
   "item.neepmeat.copper_coil": "铜线圈",
+
+  "item.neepmeat.asbestos_dust": "石棉粉",
+  "item.neepmeat.asbestos_fabric": "石棉布料",
 
   "item.neepmeat.brain_rough": "粗劣大脑",
   "item.neepmeat.brain_rough.lore_0": "再也无法拥有思想，但仍有用武之地。",
@@ -810,6 +817,7 @@
   "block.neepmeat.sludge": "机器污泥",
 
   "item.neepmeat.ore_dust": "%s粉",
+  "item.neepmeat.crushed_ore": "粉碎%s",
   "block.neepmeat.clean_ore_fat": "洁净%s脂肪",
   "block.neepmeat.ore_fat": "污浊%s脂肪",
   "ore_fat.neepmeat.iron_ingot.dirty": "污浊富铁脂肪",
@@ -967,8 +975,8 @@
   "instruction.neepmeat.shr.desc": "将栈顶元素按位§6右移§f所给数位。",
   "instruction.neepmeat.shl.desc": "将栈顶元素按位§6左移§f所给数位。",
   "instruction.neepmeat.jmp.desc": "跳转至所给标签或所给指令序数处。\n若标签后跟有§6f§f或§6b§f，则分别跳转至下一或上一同名标签。",
-  "instruction.neepmeat.bit.desc": "若栈顶元素§6大于零§f，则分支跳转至所给标签或所给指令序数处。\n若标签后跟有§6f§f或§6b§f，则分别跳转至下一或上一同名标签。",
-  "instruction.neepmeat.bif.desc": "若栈顶元素§6等于零或为负§f，则分支跳转至所给标签或所给指令序数处。\n若标签后跟有§6f§f或§6b§f，则分别跳转至下一或上一同名标签。",
+  "instruction.neepmeat.bit.desc": "若栈顶元素§6非零§f，则分支跳转至所给标签或所给指令序数处。\n若标签后跟有§6f§f或§6b§f，则分别跳转至下一或上一同名标签。",
+  "instruction.neepmeat.bif.desc": "若栈顶元素§6为零§f，则分支跳转至所给标签或所给指令序数处。\n若标签后跟有§6f§f或§6b§f，则分别跳转至下一或上一同名标签。",
   "instruction.neepmeat.say.desc": "将所给字符串发送给20格内的所有玩家。\n若未指定字符串，则弹出并打印栈顶元素。\n在末尾加上§6d§f、§6h§f、§6b§f会分别将栈顶元素格式化为十进制、十六进制、二进制。",
   "instruction.neepmeat.remove.desc": "移除工作站ARG1中的最末制造步骤。",
   "instruction.neepmeat.robot.desc": "选择ARG1处的操作机构。后续所有指令均以之为操作机构，直至再次指定。",
@@ -985,7 +993,7 @@
   "instruction.neepmeat.route.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会从给定§6管道§f和§6输入方向§f运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将操作成功与否压入栈。\n §6ARG1§f：输入管道（世界目标）\n §6ARG2§f：输出管道（世界目标）\n §6ARG3§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.request.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会通过管道网络运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将请求成功与否压入栈。\n §6ARG1§f：输出管道（世界目标）\n §6ARG2§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.count.desc": "统计所给世界目标处物品或流体的数量，并压入栈。\n具体统计何种类型的资源由可选的第二参数指定。\n若指定ID，则只会统计匹配该ID的物品或流体。“*”代表任意字符串（如“*:water”和“minecraft:*”）。\n §6ARG1§f：存储空间（世界目标）§6\n §6ARG2§f：需统计的类型（ITEM或FLUID，可选）\n §6ARG3§f：物品ID或流体ID（字符串，可选）",
-  "instruction.neepmeat.nbwrite.desc": "将栈顶元素沿数据线缆网络发送至所有匹配给定NEEP总线地址的端口。\n §6ARG1§f：NEEP总线地址（字符串）§6",
+  "instruction.neepmeat.nbwrite.desc": "将栈顶元素沿数据线缆网络发送至所有匹配给定NEEP总线地址的端口。\nIf the element is a memory address, the data at the address will be fetched and sent, rather than the address itself.\n §6ARG1§f：NEEP总线地址（字符串）§6",
   "instruction.neepmeat.nbread.desc": "沿数据线缆网络从匹配所给地址的端口处读取值，并压入栈。\n §6ARG1§f：NEEP总线地址（字符串）§6",
 
   "category.neepmeat.instruction.arithmetic": "算术",
@@ -1075,7 +1083,8 @@
   "component.neepmeat.crusher_segment": "粉碎机工作段",
   "component.neepmeat.large_trommel": "大型滚筒筛",
   "component.neepmeat.motor_port": "发动机端口",
-  "component.neepmeat.integration_port": "整合端口",
+  "component.neepmeat.integration_port": "融合端口",
+  "block.neepmeat.integration_port.lore_0": "可在此注入融合液以修复机器。\n§e仅会在机器下线时打开§f",
   "component.neepmeat.service_port": "伺服端口",
   "component.neepmeat.phage_ray": "吞噬射线炮",
   "component.neepmeat.tree_vacuum": "真空吸树机",
@@ -1115,6 +1124,7 @@
   "category.neepmeat.trommel": "滚筒筛",
   "category.neepmeat.heating": "加热",
   "category.neepmeat.bioreactor": "生物反应",
+  "category.neepmeat.ball_mill": "球磨机",
 
   "tag.c.raw_fish": "生鱼",
   "tag.c.concrete": "混凝土",
@@ -1282,5 +1292,6 @@
   "process.neepmeat.bioreactor": "生物反应机",
   "process.neepmeat.tree_vacuum": "真空吸树机",
   "process.neepmeat.distributor_point": "派送接收机",
-  "process.neepmeat.pressurised_digester": "噬岩消化机"
+  "process.neepmeat.pressurised_digester": "噬岩消化机",
+  "process.neepmeat.ball_mill": "球磨机"
 }

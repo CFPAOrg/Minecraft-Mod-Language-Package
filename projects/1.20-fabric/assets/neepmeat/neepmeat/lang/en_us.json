@@ -10,6 +10,7 @@
   "tooltip.neepmeat.plc_compatible": "PLC Workbench",
   "tooltip.neepmeat.plc_interrupt": "Emits PLC interrupts",
   "tooltip.neepmeat.plc_actuator": "PLC Actuator",
+  "tooltip.neepmeat.retains_inventory": "Retains inventory when broken.",
   "text.neepmeat.plc.arguments": "Argument: %s / %s",
   "text.neepmeat.plc.interactive_help": "Click an instruction in the right panel to select it.\n\nClick a block in a the world to add its position as an argument.\n\nOnce the required number of arguments are filled, the instruction will be executed immediately.",
   "tooltip.neepmeat.plc.language": "Current programming language: %s\nClick to switch language.\nCTRL-click to open documentation.",
@@ -203,6 +204,8 @@
   "screen.neepmeat.distributor_point.auto_send": "Auto send:",
   "screen.neepmeat.distributor_point.neepbus": "Open NEEPBus Config",
   "screen.neepmeat.open_guide_entry": "Open guide entry",
+  "block.neepmeat.ball_mill": "Ball Mill",
+  "component.neepmeat.ball_mill": "Ball Mill",
 
   "block.neepmeat.meat_steel_block": "Meat Steel Block",
   "block.neepmeat.meat_steel_block_slab": "Meat Steel Slab",
@@ -450,6 +453,7 @@
   "block.neepmeat.fluid_interface.lore_0": "Acts as a proxy for the block it faces.",
 
   "block.neepmeat.reservoir": "Reservoir",
+  "block.neepmeat.reservoir.lore_0": "Rapidly collects water.",
 
   "block.neepmeat.fluid_gauge": "Fluid Gauge",
   "block.neepmeat.fluid_gauge.lore_0": "Emits redstone based on a tank's fill percentage.",
@@ -620,6 +624,9 @@
   "item.neepmeat.open_eye": "Opened Eye",
 
   "item.neepmeat.copper_coil": "Copper Coil",
+
+  "item.neepmeat.asbestos_dust": "Asbestos Dust",
+  "item.neepmeat.asbestos_fabric": "Asbestos Fabric",
 
   "item.neepmeat.brain_rough": "Rough Brain",
   "item.neepmeat.brain_rough.lore_0": "It will never see thoughts again, but it may still be of use.",
@@ -810,6 +817,7 @@
   "block.neepmeat.sludge": "Machine Sludge",
 
   "item.neepmeat.ore_dust": "%s Dust",
+  "item.neepmeat.crushed_ore": "Crushed %s",
   "block.neepmeat.clean_ore_fat": "Clean %s Fat",
   "block.neepmeat.ore_fat": "Dirty %s Fat",
   "ore_fat.neepmeat.iron_ingot.dirty": "Dirty Iron-Rich Fat",
@@ -967,8 +975,8 @@
   "instruction.neepmeat.shr.desc": "Bit-shifts the top stack element §6right§f by the give number of bits.",
   "instruction.neepmeat.shl.desc": "Bit-shifts the top stack element §6left§f by the give number of bits.",
   "instruction.neepmeat.jmp.desc": "Jumps to the given label or by the given number of instructions. \nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
-  "instruction.neepmeat.bit.desc": "(Branch if true) Branches to the given label or number of instructions if the top stack element is §6greater than zero§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
-  "instruction.neepmeat.bif.desc": "(Branch if false) Branches to the given label or number of instructions if the top stack element is §6zero or negative§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
+  "instruction.neepmeat.bit.desc": "(Branch if true) Branches to the given label or number of instructions if the top stack element is §6not 0§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
+  "instruction.neepmeat.bif.desc": "(Branch if false) Branches to the given label or number of instructions if the top stack element is §60§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
   "instruction.neepmeat.say.desc": "Sends the given string to all players within 20 blocks.\nIf no string is provided, it will pop and print the last stack element.\nAdding §6d§f §6h§' or §6b§f to the end will format the stack entry as decimal, hexadecimal or binary respectively.",
   "instruction.neepmeat.remove.desc": "Removes the last manufacture step from the item in workbench ARG1.",
   "instruction.neepmeat.robot.desc": "Selects the actuator at ARG1. All further instructions will use the actuator until a new one is selected.",
@@ -985,7 +993,7 @@
   "instruction.neepmeat.route.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed from a given §6pipe§f and §6input direction§f to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the operation is pushed to the stack.\n §6ARG1§f: input pipe (world target)\n §6ARG2§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.request.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed through a pipe network to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the request is pushed to the stack.\n §6ARG1§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.count.desc": "Counts the items or fluid at the given world target and pushes the result to the stack.\nThe type of resource to count is optionally specified in the second argument.\nIf an ID is provided, only items/fluids of that that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: inventory (world target)§6\n §6ARG2§f: type to count (ITEM or FLUID, optional)\n §6ARG3§f: item or fluid ID (string, optional)",
-  "instruction.neepmeat.nbwrite.desc": "Sends the top stack element over a data cable network to all ports matching the given NEEPBus address.\n §6ARG1§f: NEEPBus address (string)§6",
+  "instruction.neepmeat.nbwrite.desc": "Sends the top stack element over a data cable network to all ports matching the given NEEPBus address.\nIf the element is a memory address, the data at the address will be fetched and sent, rather than the address itself.\n §6ARG1§f: NEEPBus address (string)§6",
   "instruction.neepmeat.nbread.desc": "Reads the value of a port matching the given address over a data cable network. The result is put on the stack.\n §6ARG1§f: NEEPBus address (string)§6",
 
   "category.neepmeat.instruction.arithmetic": "Arithmetic",
@@ -1076,6 +1084,7 @@
   "component.neepmeat.large_trommel": "Large Trommel",
   "component.neepmeat.motor_port": "Motor Port",
   "component.neepmeat.integration_port": "Integration Port",
+  "block.neepmeat.integration_port.lore_0": "Allows injection of Integration Fluid to repair a machine.\n§eOpens only when the machine is offline§f",
   "component.neepmeat.service_port": "Service Port",
   "component.neepmeat.phage_ray": "Phage Ray",
   "component.neepmeat.tree_vacuum": "Tree Vacuum",
@@ -1115,6 +1124,7 @@
   "category.neepmeat.trommel": "Trommel",
   "category.neepmeat.heating": "Heating",
   "category.neepmeat.bioreactor": "Bioreactor",
+  "category.neepmeat.ball_mill": "Ball Mill",
 
   "tag.c.raw_fish": "Raw Fish",
   "tag.c.concrete": "Concrete",
@@ -1282,5 +1292,6 @@
   "process.neepmeat.bioreactor": "Bioreactor",
   "process.neepmeat.tree_vacuum": "Tree Vacuum",
   "process.neepmeat.distributor_point": "Distributor Receiver",
-  "process.neepmeat.pressurised_digester": "Geophagic Digester"
+  "process.neepmeat.pressurised_digester": "Geophagic Digester",
+  "process.neepmeat.ball_mill": "Ball Mill"
 }
