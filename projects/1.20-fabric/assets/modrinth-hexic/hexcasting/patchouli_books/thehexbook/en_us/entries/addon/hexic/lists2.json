@@ -63,11 +63,35 @@
         },
         {
             "type": "hexcasting:pattern",
+            "op_id": "hexcasting:mul",
+            "anchor": "hexcasting:mul",
+            "input": "[a], [b]",
+            "output": "[[a, b]]",
+            "text": "Calculates the outer product of two lists. The resulting list has an entry for every possible pairing between the input lists."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexcasting:mul",
+            "anchor": "hexcasting:mul",
+            "input": "[a], [b]",
+            "output": "[[a, b]]",
+            "text": "Calculates the inner product of two lists. If the two lists were arranged side-by-side, the resulting list has one entry for every row (unpaired elements are skipped)."
+        },
+        {
+            "type": "hexcasting:pattern",
             "op_id": "hexic:extract",
             "anchor": "hexic:extract",
             "input": "[a], int",
             "output": "[a], [a], a",
             "text": "Extracts an iota from the given list, and breaks the list apart around it. Returns all items before the iota, all items after the iota, and finally the iota itself."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:grep",
+            "anchor": "hexic:grep",
+            "input": "[a], [a → bool]",
+            "output": "[a]",
+            "text": "Discards iotas from the given list unless they satisfy the given predicate. Using $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ discards the current and all remaining iotas."
         }
     ]
 }

@@ -63,11 +63,35 @@
         },
         {
             "type": "hexcasting:pattern",
+            "op_id": "hexcasting:mul",
+            "anchor": "hexcasting:mul",
+            "input": "[a], [b]",
+            "output": "[[a, b]]",
+            "text": "计算两列表的外积。即在两输入列表各取一个元素，将所有可能的值对组为列表返回。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexcasting:mul",
+            "anchor": "hexcasting:mul",
+            "input": "[a], [b]",
+            "output": "[[a, b]]",
+            "text": "计算两列表的内积。即纵向排布两列表的元素，而后相邻排列两列表，将每行的元素对组为列表返回（跳过未配对的元素）。"
+        },
+        {
+            "type": "hexcasting:pattern",
             "op_id": "hexic:extract",
             "anchor": "hexic:extract",
             "input": "[a], int",
             "output": "[a], [a], a",
-            "text": "从所给列表中取出 iota，并在该位置分割列表。返回指定 iota 左侧的所有元素，其右侧的所有元素，最后返回该 iota。"
+            "text": "从所给列表中取出 iota，并在该位置分割列表。返回指定 iota 左侧的所有元素，而后返回其右侧的所有元素，最后返回该 iota。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:grep",
+            "anchor": "hexic:grep",
+            "input": "[a], [a → bool]",
+            "output": "[a]",
+            "text": "从所给列表中移除不满足所给谓词的 iota。使用$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$会清除当前 iota 和后续所有 iota。"
         }
     ]
 }
