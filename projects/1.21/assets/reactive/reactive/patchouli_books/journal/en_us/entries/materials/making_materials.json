@@ -1,0 +1,43 @@
+{
+  "name": "Creating Materials",
+  "icon": "reactive:salt_block",
+  "category": "reactive:materials",
+  "advancement": "reactive:get_salt",
+  "turnin": "reactive:get_material",
+  "priority": true,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(mat)Welcome! I'll be your guide to the wonderful world of $(item)Salt Casted Materials$(mat).$(p)First, a little theory. As you know, $(l:intro/salt)Apprentice Salts$(/l) are capable of binding to many different kinds of Power, transforming when they do. If a single pile of Salt can do that, what about a whole block...?"
+    },
+    {
+      "type": "reactive:material_craft",
+      "base": "reactive:salt_block",
+      "output_material": "reactive:example_salt",
+      "text": "$(mat)Simply throw a Salt Block into the Crucible with sufficient Power, and voila! A new material, never seen before!$(p)For this example, I used pure Mind, but any combination of Powers should work, even less common ones."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(mat)Of course, infusing large amounts of Power into the Salt changes more than its appearance. Each $(item)Material$(mat) possesses some $(item)Properties$(mat) that affect how it behaves as a block. $(p)Some are simple -- break speed, light emission -- and some are... less conventional. I've documented each Property in this Journal."
+    },
+    {
+      "type": "reactive:material_craft",
+      "base": "minecraft:white_wool",
+      "output_material": "reactive:example_wool",
+      "text": "$(mat)If you'd like to make a Material without any fancy properties, try $(item)White Wool$(mat) as a base! Wool absorbs the color from the provided Powers without taking on any unnatural effects."
+    },
+    {
+      "type": "reactive:material_craft",
+      "base": "reactive:salt_block#64",
+      "output_material": "reactive:example_salt",
+      "text": "$(mat)Also! You can throw $(item)a stack of Salt Blocks in at once$()$(mat) to create more then one Material Block -- the resulting Material is the same as if you'd just added one."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(o)Well, you heard her! Go ahead: make yourself a Material and I'll show you more...$(p)If you'd like some advice, I would recommend starting with $(4)large amounts of single powers$(0) to get a feeling for what each one does."
+    }
+  ],
+  "extra_recipe_mappings": {
+    "reactive:material": 0
+  }
+}
