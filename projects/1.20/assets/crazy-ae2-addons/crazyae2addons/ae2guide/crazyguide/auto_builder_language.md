@@ -47,13 +47,11 @@ Macros are reusable blocks of code, defined using square brackets:
 
 Example:
 
-\[stairs\](P(0)D) \[floor\](3{P(1)E})
+\[stairs\](P(0)D) \[floor\](3{P(1)R})
 
 In your main program, use them like:
 
 \[floor\]\[stairs\]
-
-Macro expansion is limited to **50 recursive levels** to prevent infinite loops.
 
 ### Program Code
 
@@ -65,14 +63,18 @@ This is where your logic goes. It can use raw instructions, loops, macros, and b
 
 ### Movement
 
-| Code | Meaning        |
-|------|----------------|
-| N    | Move North     |
-| S    | Move South     |
-| E    | Move East      |
-| W    | Move West      |
-| U    | Move Up        |
-| D    | Move Down      |
+| Code | Meaning          |
+|------|------------------|
+| U    | Move Up          |
+| D    | Move Down        |
+| F    | Move Forward     |
+| B    | Move Backward    |
+| L    | Move Left        |
+| R    | Move Right       |
+| H    | Return Home      |
+| X    | Clear (break)    |
+
+All directions are **relative to the AutoBuilder’s current facing orientation**, not world cardinal directions.
 
 Each move shifts the builder cursor by **1 block** in that direction.
 
@@ -106,17 +108,17 @@ Repeats the contents of the curly braces **3 times**.
 
 Example:
 
-4{P(1)E}
+4{P(1)R}
 
-Places block "1" and moves east, 4 times.
+Places block "1" and moves right, 4 times.
 
 Loops can be nested.
 
 Example:
 
-2{3{P(1)W}U}
+2{3{P(1)F}U}
 
-Repeat: 3x place + move west, then move up. Do this sequence 2 times.
+Repeat: 3x place + move forward, then move up. Do this sequence 2 times.
 
 ---
 
@@ -134,9 +136,9 @@ Place block 0, wait 2 seconds, place block 1.
 
 ---
 
-### Return to Start
+### Return Home
 
-R
+H
 
 Returns the builder to its starting position.
 
@@ -152,7 +154,7 @@ Macros can include other macros, loops, etc.
 
 Example:
 
-\[stairStep\](P(0)U E)
+\[stairStep\](P(0)U F)
 
 ---
 
@@ -160,11 +162,11 @@ Example:
 
 ### 1. Simple 3-block line of stone
 
-0(minecraft:stone) | P(0)E P(0)E P(0)
+0(minecraft:stone) | P(0)F P(0)F P(0)F
 
 Same using a loop:
 
-0(minecraft:stone) | 3{P(0)E}
+0(minecraft:stone) | 3{P(0)F}
 
 ---
 
@@ -178,25 +180,25 @@ Break block, wait 1 second, place oak planks.
 
 ### 3. Build staircase
 
-0(minecraft:oak_planks) | 5{P(0)U E}
+0(minecraft:oak_planks) | 5{P(0)U F}
 
-Builds 5 steps upward and eastward.
+Builds 5 steps upward and forward.
 
 ---
 
 ### 4. Return to base
 
-0(minecraft:stone) | 4{P(0)E} R
+0(minecraft:stone) | 4{P(0)F} H
 
-Build a path 4 blocks east, then return to start.
+Build a path 4 blocks to the front, then return to start.
 
 ---
 
 ### 5. Using Macros
 
-0(minecraft:stone),1(minecraft:dirt) | \[line\](3{P(0)E}) \[top\](U \[line\]) | \[line\]\[top\]\[line\]
+0(minecraft:stone),1(minecraft:dirt) | \[line\](3{P(0)F}) \[top\](U \[line\]) | \[line\]\[top\]\[line\]
 
-- Defines a "line" of stone (3 blocks east).
+- Defines a "line" of stone (3 blocks to the front).
 - Defines "top" as 1 layer higher with the same line.
 
 ---
@@ -205,6 +207,6 @@ Build a path 4 blocks east, then return to start.
 
 The language is strict:
 
-- P(n) with missing ID in block map → error.
-- Unbalanced brackets ({}, (), []) → error.
-- Infinite macro recursion → error after 50 expansions.
+- P(n) with missing ID in block map -> error.
+- Unbalanced brackets ({}, (), []) -> error.
+- Infinite macro recursion -> error.
