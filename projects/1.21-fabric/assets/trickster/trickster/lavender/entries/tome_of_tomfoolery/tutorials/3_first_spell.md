@@ -92,7 +92,7 @@ If you were to look up these patterns in the [Tricks](^trickster:tricks) section
 you'd see this assessment is correct. From smallest to largest circle, this spell is made up of:
 
 - [Reflection Delusion](^trickster:delusions_ingresses/caster_tricks#4)
-- [Archer's Ingress](^trickster:delusions_ingresses/raycast#2)
+- [Pinpoint Ingress](^trickster:delusions_ingresses/raycast#3)
 - and [Ploy of Destruction](^trickster:ploys/block#2)
 
 Take a look at the inputs and outputs listed for these tricks, and try to understand how this spell combines them!
@@ -103,7 +103,7 @@ Take a look at the inputs and outputs listed for these tricks, and try to unders
 
 
 Well, we took advantage of the mirror's tendency to cast anything it touches.
-The patterns we drew in the mirror are [Notulist's Delusion](^trickster:tricks/basic#3) and [Grand Stratagem](^trickster:distortions/functions#3).
+The patterns we drew in the mirror are [Notulist's Ingress](^trickster:tricks/basic#3) and [Grand Deviation](^trickster:tricks/functions#4).
 The former returns any spell held in the caster's offhand as data, while the latter takes a spell as data and casts it.
 
 

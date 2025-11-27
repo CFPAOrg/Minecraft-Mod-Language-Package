@@ -20,7 +20,7 @@
 
 <|revision@trickster:templates|pattern=0\,4\,8\,5,title=内环之修订|>
 
-向现有的圆添加一个内圆。内圆的功效与符记类似，激活条件也相同。参见[法术片段](^trickster:distortions/functions)。
+向现有的圆添加一个内圆。内圆的功效与符记类似，激活条件也相同。参见[法术转离](^trickster:tricks/functions)。
 
 ;;;;;
 
@@ -37,7 +37,7 @@
 
 ;;;;;
 
-*确实有*相接的子圆时，内圆会直接像被[宏伟之谋略](^trickster:distortions/functions#3)调用那样执行，并使用与外圆相接的子圆的输出作为参数。
+*确实有*相接的子圆时，内圆会直接像被[宏伟之转离](^trickster:tricks/functions#4)调用那样执行，并使用与外圆相接的子圆的输出作为参数。
 
 
 需要在多处使用一个值的时候，此性质很实用，因为内圆和法术片段是将片段移回叶节点的唯一方式。

@@ -10,14 +10,14 @@
 戏法师的帽子是一件相当精巧的物什。戴在头上后，按下<keybind;key.trickster.take_hat>键即可将帽子迅速取到副手中。
 
 
-副手持有帽子时可以右击打开，其中能容纳27张卷轴。持有帽子时按住Shift滚动滚轮，可以切换选中哪张卷轴。
+主手持有帽子时可以右击打开，其中能容纳27张卷轴。持有帽子时按住Shift滚动滚轮，可以切换选中哪张卷轴。
 
 ;;;;;
 
-若是一条正在执行的法术试图通过[记事员之错觉](^trickster:tricks/basic#3)访问另一只手中的法术，则它会转而读取所持帽子中选定的卷轴。
+若是一条正在执行的法术试图通过[记事员之辑流](^trickster:tricks/basic#3)访问另一只手中的法术，则它会转而读取所持帽子中选定的卷轴。
 
 
-还可以通过[颅骨之谋略](^trickster:delusions_ingresses/imports#3)访问帽中任意槽位的法术，或是通过[颅骨之错觉](^trickster:delusions_ingresses/inventory#7)读出所选槽位中的法术。
+还可以通过[颅骨之转离](^trickster:tricks/imports#3)访问帽中任意槽位的法术，或是通过[颅骨之错觉](^trickster:delusions_ingresses/inventory#10)读出所选槽位中的法术。
 
 ;;;;;
 

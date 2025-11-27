@@ -13,7 +13,8 @@
     "Crowning Ingress",
     "Ingress of Plenitude",
     "Collector's Ingress",
-    "Ingress of Extent"
+    "Ingress of Extent",
+    "Investigative Ingress"
   ]
 }
 ```
@@ -22,7 +23,7 @@ These are tricks that pull information from an inventory.
 This can either be the caster's own, or an external block or entity.
 
 
-It is not possible to interact with the inventories of players that are not the caster.
+It is not possible to interact with the slots of players that are not the caster.
 
 ;;;;;
 
@@ -95,3 +96,9 @@ Returns the maximum amount of mana which may be stored in total in the given slo
 <|trick@trickster:templates|trick-id=trickster:get_count_in_slot|>
 
 Returns the amount of items stored in the given slot.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_equipment|>
+
+Returns a list of the given entity's currently worn equipment as item types. Comes in the order: mainhand, offhand, boots, leggings, chestplate, helmet

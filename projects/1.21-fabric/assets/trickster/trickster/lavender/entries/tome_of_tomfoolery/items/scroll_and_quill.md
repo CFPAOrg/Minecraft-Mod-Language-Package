@@ -17,7 +17,7 @@ Scrolls can be stored in a [Hat](^trickster:items/top_hat) for easy access and s
 
 ;;;;;
 
-The written spell can be read from the scroll by means of [Notulist's Delusion](^trickster:tricks/basic#3).
+The written spell can be read from the scroll by means of [Notulist's Ingress](^trickster:tricks/basic#3).
 It is also possible to write to a scroll programmatically using [Notulist's Ploy](^trickster:tricks/basic#4)
 
 <recipe;trickster:scroll_and_quill>

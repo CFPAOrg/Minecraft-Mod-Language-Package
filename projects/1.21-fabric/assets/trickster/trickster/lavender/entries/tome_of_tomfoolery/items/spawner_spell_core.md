@@ -10,6 +10,9 @@
 }
 ```
 
-A variant of the [Spell Core](^trickster:items/spell_core) powered by a spawner. 
-They execute their inscribed spell at one and a half times the rate of player spells. 
-However, if no player is within 16 blocks, they will pause completely.
+*"Look guys! We built the Torment Nexus from the hit sci-fi novel 'Do Not Build The Torment Nexus'!"*
+
+
+A variant of the [Spell Core](^trickster:items/spell_core) powered by the essence of a spawner. 
+It executes its inscribed spell at one and a half times the rate of player spells. 
+However, if no player is within 16 blocks, it will pause completely.

@@ -59,6 +59,12 @@
 
 ;;;;;
 
+<|trick@trickster:templates|trick-id=trickster:reveal_action_bar|>
+
+将所有参数展示到施法者的快捷栏上方，返回第一参数。未提供输入则清空。
+
+;;;;;
+
 <|page-title@lavender:book_components|title=笔记：乌鸦之思|>乌鸦之思（不应与其他黑鸟之思混淆）能让法术存入或取回一个法术片段，且该片段会在不同次施法间**保留**。
 
 
