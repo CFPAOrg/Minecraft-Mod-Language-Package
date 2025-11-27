@@ -3,7 +3,7 @@
   "title": "法术谐振器",
   "icon": "trickster:spell_resonator",
   "category": "trickster:items",
-  "ordinal": 140
+  "ordinal": 150
 }
 ```
 
