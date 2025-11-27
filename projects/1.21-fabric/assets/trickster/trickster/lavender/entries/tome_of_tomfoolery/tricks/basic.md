@@ -64,6 +64,12 @@ Shows all given values as a chat message to the caster and returns the first.
 
 ;;;;;
 
+<|trick@trickster:templates|trick-id=trickster:reveal_action_bar|>
+
+Shows all given values above the caster's hotbar and returns the first. Clears the message when no inputs are provided.
+
+;;;;;
+
 <|page-title@lavender:book_components|title=Note: The Crow Mind|>The Crow Mind, not to be confused with other black bird related minds, 
 lets spells store and retrieve any one fragment, **persistently**, between casts.
 

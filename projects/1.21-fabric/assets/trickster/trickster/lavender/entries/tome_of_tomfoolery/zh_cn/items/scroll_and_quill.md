@@ -17,7 +17,7 @@
 
 ;;;;;
 
-卷轴上写有的法术可通过[记事员之错觉](^trickster:tricks/basic#3)读出。也可以用[记事员之技巧](^trickster:tricks/basic#4)程序化写入卷轴。
+卷轴上写有的法术可通过[记事员之辑流](^trickster:tricks/basic#3)读出。也可以用[记事员之技巧](^trickster:tricks/basic#4)程序化写入卷轴。
 
 <recipe;trickster:scroll_and_quill>
 

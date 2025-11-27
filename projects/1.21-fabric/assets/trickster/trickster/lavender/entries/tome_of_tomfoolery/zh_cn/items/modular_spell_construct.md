@@ -7,7 +7,7 @@
 }
 ```
 
-模块式法术组构台和简单的[法术组构台](^trickster:items/spell_construct)不同：它不会执行抄入的法术，而是可以在四角的槽位插入最多四枚[法术核心](^trickster:items/spell_core)。各个法术核心会并发执行，执行所需的魔力来自组构台中央的[晶结](^trickster:items/knots)，并且所有法术核心共享[乌鸦之思](^trickster:tricks/basic#7)。
+模块式法术组构台和简单的[法术组构台](^trickster:items/spell_construct)不同：它不会执行抄入的法术，而是可以在四角的槽位插入最多四枚[法术核心](^trickster:items/spell_core)。各个法术核心会并发执行，执行所需的魔力来自组构台中央的[晶结](^trickster:items/knots)，并且所有法术核心共享[乌鸦之思](^trickster:tricks/basic#9)。
 
 ;;;;;
 

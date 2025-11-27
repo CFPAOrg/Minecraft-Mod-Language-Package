@@ -74,7 +74,7 @@
 再到本书[戏法](^trickster:tricks)分类中找出这些图案，就能完全证明这一点。按从小到大顺序看，所绘制的法术分别是：
 
 - [自审之错觉](^trickster:delusions_ingresses/caster_tricks#4)
-- [弓箭手之辑流](^trickster:delusions_ingresses/raycast#2)
+- [着点之辑流](^trickster:delusions_ingresses/raycast#3)
 - 以及[摧毁之技巧](^trickster:ploys/block#2)
 
 记下这些戏法的输入和输出，再看看这则法术是怎么组织它们的吧！
@@ -84,7 +84,7 @@
 **好的，但我们又要如何施放它呢？**
 
 
-很好，我们会用到手镜“施放一切所触之物”的倾向。在手镜里绘制的图案分别是[记事员之错觉](^trickster:tricks/basic#3)和[宏伟之谋略](^trickster:distortions/functions#3)。前者会返回施法者副手物品内的法术，后者则会接受法术并施放。
+很好，我们会用到手镜“施放一切所触之物”的倾向。在手镜里绘制的图案分别是[记事员之辑流](^trickster:tricks/basic#3)和[宏伟之转离](^trickster:tricks/functions#4)。前者会返回施法者副手物品内的法术，后者则会接受法术并施放。
 
 
 对头，法术可以施放其他法术。

@@ -22,7 +22,7 @@ When Extensive Revision is drawn in the blue circle, the green circle will be cr
 
 Adds a new inner circle to an existing circle.
 Inner circles act like glyphs, and can be activated as such.
-See [Spell Fragments](^trickster:distortions/functions).
+See [Spell Deviations](^trickster:tricks/functions).
 
 ;;;;;
 
@@ -43,7 +43,7 @@ This can be used for meta-programming, recursion, and permanent storage of dynam
 ;;;;;
 
 When the circle *does* have connected subcircles, 
-it executes the inner circle directly as if it was called by a [Grand Stratagem](^trickster:distortions/functions#3),
+it executes the inner circle directly as if it was called by a [Grand Deviation](^trickster:tricks/functions#4),
 using the results from the subcircles connected to the outer circle as parameters.
 
 
