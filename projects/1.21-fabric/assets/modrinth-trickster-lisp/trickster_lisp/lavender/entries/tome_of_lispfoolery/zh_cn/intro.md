@@ -15,7 +15,7 @@
 
 ;;;;;
 
-本模组在戏法师法术片段与LISP间建立的对应关系详见[参考文档](^trickster_lisp:transpiling/lang_ref)。
+本模组在戏法师法术片段与LISP间建立的对应关系可查阅[参考文档](^trickster_lisp:transpiling/lang_ref)。
 
 
-也可以编写[宏](^trickster_lisp:transpiling/macros)以简化代码。
+可编写[宏](^trickster_lisp:transpiling/macros)以简化代码。

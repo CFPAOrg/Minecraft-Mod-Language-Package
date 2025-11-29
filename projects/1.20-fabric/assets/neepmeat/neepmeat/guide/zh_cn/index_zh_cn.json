@@ -50,17 +50,20 @@
       {"type": "page", "id": "metaboliser", "icon": "neepmeat:metaboliser_segment", "text": "代谢机"},
       {"type": "page", "id": "tree_vacuum", "icon": "neepmeat:tree_vacuum", "text": "真空吸树机", "lookup": "neepmeat:tree_vacuum"},
       {"type": "page", "id": "charnel_pump", "icon": "neepmeat:charnel_pump", "text": "积骸泵", "lookup": "neepmeat:charnel_pump"},
-      {"type": "page", "id": "large_compressor", "icon": "neepmeat:large_compressor", "text": "大型压缩机", "lookup": "neepmeat:large_compressor"}
+      {"type": "page", "id": "large_compressor", "icon": "neepmeat:large_compressor", "text": "大型压缩机", "lookup": "neepmeat:large_compressor"},
+      {"type": "page", "id": "distributor_receiver", "icon": "neepmeat:distributor_point", "text": "派送接收机"}
     ]},
     {"type": "menu", "id": "plc", "icon": "neepmeat:plc", "text": "PLC与制造加工", "entries": [
       {"type": "page", "id": "plc", "icon": "neepmeat:plc", "text": "PLC", "lookup": ["neepmeat:plc", "neepmeat:executor"]},
       {"type": "menu", "id": "thord_menu", "icon": "neepmeat:plc", "text": "THORD语言", "entries": [
         {"type": "page", "id": "thord_words", "icon": "neepmeat:plc", "text": "THORD词参考文档"},
+        {"type": "page", "id": "thord_stack", "icon": "neepmeat:plc", "text": "栈操作"},
         {"type": "page", "id": "thord", "icon": "neepmeat:plc", "text": "THORD"},
         {"type": "page", "id": "word_definition", "icon": "neepmeat:plc", "text": "词的定义"},
         {"type": "page", "id": "thord_constructs", "icon": "neepmeat:plc", "text": "流程控制结构"},
         {"type": "page", "id": "thord_variables", "icon": "neepmeat:plc", "text": "变量"},
         {"type": "page", "id": "thord_booleans", "icon": "neepmeat:plc", "text": "布尔值"},
+        {"type": "page", "id": "thord_strings", "icon": "neepmeat:plc", "text": "字符串"},
         {"type": "page", "id": "thord_macros", "icon": "neepmeat:plc", "text": "THORD宏"},
         {"type": "page", "id": "thord_examples", "icon": "neepmeat:plc", "text": "THORD代码示例"}
       ]},
@@ -77,13 +80,15 @@
       {"type": "page", "id": "plc_workbenches", "icon": "neepmeat:surgery_platform", "text": "PLC工作站"},
       {"type": "page", "id": "implanter", "icon": "neepmeat:implanter", "text": "植入器", "lookup": ["neepmeat:implanter"]},
       {"type": "page", "id": "actuators", "icon": "neepmeat:robotic_arm", "text": "操作机构"},
-      {"type": "page", "id": "implants", "icon": "neepmeat:pineal_eye", "text": "植入物", "lookup": ["neepmeat:upgrade_manager", "neepmeat:pineal_eye", "neepmeat:extra_mouth", "neepmeat:extra_knees", "neepmeat:lung_extensions"]}
+      {"type": "page", "id": "implants", "icon": "neepmeat:pineal_eye", "text": "植入物", "lookup": ["neepmeat:upgrade_manager", "neepmeat:pineal_eye", "neepmeat:extra_mouth", "neepmeat:extra_knees", "neepmeat:lung_extensions"]},
+      {"type": "page", "id": "tool_organism", "icon": "neepmeat:living_tool_implant", "text": "工具生物体"}
     ]},
     {"type": "menu", "id": "neepbus", "icon": "neepmeat:data_cable", "text": "NEEP总线", "entries": [
       {"type": "page", "id": "neepbus", "icon": "neepmeat:data_cable", "text": "NEEP总线", "lookup": ["neepmeat:data_cable"] },
       {"type": "page", "id": "networking_tool", "icon": "neepmeat:networking_tool", "text": "网络工具", "lookup": ["neepmeat:networking_tool"] },
       {"type": "page", "id": "pid_controller", "icon": "neepmeat:pid_controller", "text": "PID控制器", "lookup": ["neepmeat:pid_controller"] },
-      {"type": "page", "id": "plc_neepbus_interface", "icon": "neepmeat:plc_neepbus_interface", "text": "PLC NEEP总线接口", "lookup": ["neepmeat:plc_neepbus_interface"] }
+      {"type": "page", "id": "plc_neepbus_interface", "icon": "neepmeat:plc_neepbus_interface", "text": "PLC NEEP总线接口", "lookup": ["neepmeat:plc_neepbus_interface"] },
+      {"type": "page", "id": "automatic_mouth", "icon": "neepmeat:mouth", "text": "自动口舌"}
     ]},
     {"type": "menu", "id": "ore_processing", "icon": "neepmeat:motor_unit", "text": "矿石的处理", "entries": [
       {"type": "page", "id": "eldritch_enzymes", "icon": "neepmeat:eldritch_enzymes_bucket", "text": "怪异酶液", "lookup": "neepmeat:eldritch_enzymes_bucket"},
@@ -118,8 +123,9 @@
       {"type": "page", "id": "synthesiser", "icon": "neepmeat:synthesiser", "text": "精卵合成机", "lookup": "neepmeat:synthesiser"},
       {"type": "page", "id": "airtruck", "icon": "meatweapons:airtruck", "text": "空中货车", "lookup": "meatweapons:airtruck"}
     ]},
-    {"type": "menu", "id": "weapons", "icon": "meatweapons:assault_drill", "text": "武器", "entries": [
-      {"type": "page", "id": "assault_drill", "icon": "meatweapons:assault_drill", "text": "突击钻", "lookup": "meatweapons:assault_drill"}
+    {"type": "menu", "id": "tools", "icon": "neepmeat:pressure_washer", "text": "工具", "entries": [
+      {"type": "page", "id": "assault_drill", "icon": "meatweapons:assault_drill", "text": "突击钻", "lookup": "meatweapons:assault_drill"},
+      {"type": "page", "id": "pressure_washer", "icon": "neepmeat:pressure_washer", "text": "高压清洗器"}
     ]}
   ]}
 }

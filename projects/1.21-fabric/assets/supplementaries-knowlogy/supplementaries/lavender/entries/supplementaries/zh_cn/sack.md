@@ -14,7 +14,7 @@
 ```
 
 &spotlight(supplementaries:sack)
-**麻布袋**有9个槽位，可以充当游戏早期的潜影箱。
+**麻布袋**有9个槽位，可以充当游戏早期的潜影盒。
 
 <block;supplementaries:sack>
 
