@@ -30,7 +30,7 @@ item_ids:
 
 > **注意：**&zwnj;Minecraft中的20刻对应现实中的1秒。
 
-时序器是一种逻辑元件，用于精确延时信号。
+时序器是一种逻辑元件，用于精确对信号进行延时。
 
 时序器共有三种模式：弱、强、计数器（更多内容见此页面后续）。时序器有一个内部计数器，其取值范围为0到所设延时（默认为20）。选择的模式不同，该计数器的增减方式也不同。时序器内部计数器达到最大值时，输出为ON；否则输出为OFF。
 
@@ -116,7 +116,7 @@ item_ids:
 	<RedstoneSignal step="7" direction="north" strength="0" />
 </MicrochipScene>
 
-此示例的ON信号只够时序器递增至半程。这之后，输入信号会变为OFF，时序器会在此时间段内回到初始状态。正因此，此示例中的时序器永远无法达到最大值，输出一直为OFF。
+此示例的ON信号只够时序器递增至半程。这之后，输入信号会变为OFF，时序器递减到初始状态。正因此，此示例中的时序器永远无法达到最大值，输出一直为OFF。
 
 <MicrochipScene color="red" includeToolbar={true}>
 	<Logic name="input" x="0" y="0" type="io" hide={true} />
