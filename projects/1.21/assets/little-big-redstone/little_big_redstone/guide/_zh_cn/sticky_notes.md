@@ -91,7 +91,7 @@ item_ids:
 
 ### 阅读和编辑
 
-对便签按下&zwnj;**<KeyBind id="key.use" />**&zwnj;可查看其上文本。打开便签后，可以点击“编辑”按钮来编辑文本；也可直接对便签按下&zwnj;**<KeyBind id="key.sneak" />**&zwnj;和&zwnj;**<KeyBind id="key.use" />**&zwnj;打开编辑菜单。便签在被破坏和放置时会保留其文本内容和颜色。
+对便签按下&zwnj;**<KeyBind id="key.use" />**&zwnj;可查看其上文本。打开便签后，可以点击“编辑”按钮来编辑文本，也可直接对便签按下&zwnj;**<KeyBind id="key.sneak" />**&zwnj;和&zwnj;**<KeyBind id="key.use" />**&zwnj;打开编辑菜单。便签在被破坏和放置时会保留其文本内容和颜色。
 
 放置在世界中的便签只会在其上写有文本时显示文本线纹理。
 

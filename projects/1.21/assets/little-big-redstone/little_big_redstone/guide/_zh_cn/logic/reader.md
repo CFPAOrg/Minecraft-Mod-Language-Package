@@ -29,7 +29,7 @@ item_ids:
 				<GameScene zoom="2" padding="0">
 					<Block id="minecraft:chest" />
 					<BlockAnnotation>
-						箱子至少填充了50%
+						箱子的填充程度不低于50%
 					</BlockAnnotation>
 					<Block id="red_microchip" x="-1" />
 					<Block id="minecraft:redstone_lamp" x="-2" p:lit="true" />
