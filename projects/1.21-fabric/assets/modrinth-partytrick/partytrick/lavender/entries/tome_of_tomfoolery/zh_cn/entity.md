@@ -26,7 +26,7 @@
 
 <|ploy@trickster:templates|trick-id=partytrick:dismount_entity,cost=距离^2 * 1G|>
 
-使得给定实体离开其坐骑。
+使得给定实体离开其坐骑。部分实体会在离座时保留动量。
 
 ;;;;;
 
