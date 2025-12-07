@@ -3,6 +3,7 @@
 **跳转：[快速参考](#快速参考)** <!--应该没写错-->
 
 ## 注意事项
+
 - 文件地址中，目录分隔符**一律使用正斜杠（`/`）**！
 - 地址相关
   - 下述说明中，**完整地址**永远指从**仓库根目录**算起的地址，例如对根目录下的 `CONTRIBUTING.md`，应为 `CONTRIBUTING.md`；对1.12版本资源包的 `pack.png`，应为 `projects/1.12.2/pack.png`。
@@ -19,6 +20,7 @@
 ## 配置文件
 
 配置文件分为两类：
+
 - 放置在 `config/packer` 下的**全局**配置文件，用作整个打包流程的基础配置；
 - 放置在各命名空间下的**局域**配置文件，用于对特定命名空间（以及模组）提供特殊的配置项。
 
@@ -31,27 +33,58 @@
 **全局**配置文件 `config/packer/<version>.json` 的格式如下：
 
 - 根标签 object
-  - `base` object<br>打包流程中的*不变配置*，不能被文件结构中的**局域配置文件**改写。包含的内容都是**不低于**命名空间层级的，因为局域配置文件就是放在命名空间一级中的。
-    - `version` string<br>该配置文件指向的版本，以 `projects/` 中的文件夹名称为准。原则上*应当*与文件名中的 [version] 一致。
-    - `targetLanguages` list<br>打包的目标语言，即最终在资源包中存在的语言。
-      - string<br>目标语言，即该版本使用的语言标识符。<br>以在 `lang` 下的语言文件的文件名，以及其他文件的路径中，标明语言的部分为准。目前而言，使用的是 `zh_cn`，尽管有消息称将要改用 `zho_Hans-CN`。
-    - `exclusionMods` list<br>被打包器排除的模组文件夹。<br>如果因为某些原因需要移除某个模组的翻译（如移交官方/其他团体等），但意图保留原有翻译，可能需要这一项。
-      - string<br>排除的模组。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[mod-identifier]** | **(CurseForge 项目名称)**为准。-->
-    - `exclusionNamespaces` list<br>被打包器排除的 **[namespace]** | **(命名空间)**。<br>暂时闲置，以待后续需求。
-      - string<br>排除的命名空间。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[namespace]** | **(命名空间)**为准。-->
-  - `floating` object<br>打包流程中的*可变配置*，可能被文件结构中的**局域配置文件**改写。包含的内容都是**低于**命名空间层级的，因为局域配置文件就是放在命名空间一级中的。
-    - `inclusionDomains` list<br>强制包含的 **[domain]**。<br>一般而言，用于通常不会包含**语言标识符**的 `domain`。<br>一般而言会包含 `font` 与 `textures`，因为这两处往往不带语言标识符，且字体修复已经需要用到这两个domain；其他内容多半会出现在*局域配置*中。
-      - string<br>强制包含的domain名称。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[domain]** 为准。-->
-    - `exclusionDomains` list<br>强制排除的 **[domain]**。<br>暂时闲置，或可用于排除一些策略相关的零散文件。
-      - string<br>强制排除的domain名称。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[domain]** 为准。-->
-    - `exclusionPaths` list<br>强制排除的 **[相对地址]**。
-      - string<br>强制排除的文件的**相对地址**。<br>一般而言，在主配置中只会放置通用的忽略对象，例如 `packer-policy.json` 和 `local-config.json`；其余条目最好放在*局域配置*中。
-    - `inclusionPaths` list<br>强制包含的 **[相对地址]**。<br>暂时闲置，可以用于添加零散的无语言标记文件。
-      - string<br>强制包含的文件的**相对地址**。
-    - `characterReplacement` object<br>打包时采用的字符替换表。用于将部分字符替换至特殊位点，也可单纯用于简化输入。目前而言，包含了字体修复的有关内容。
-      - `<查询语句>` string<br>用以替换**正则表达式**`<查询语句>`匹配对象的内容，可以是一个或多个字符，甚至可以在这里用**正则替换语句**。<br>主要用于*字体修复包*所需的**符号替换**，此时，查询语句通常是字面量，替换内容一般而言总是以四位 *Unicode 转义码*填写；对于**基础多语种平面（BMP）**以外的字符，最好用 **UTF-16 代理对**书写。
-    - `destinationReplacement` object<br>打包时采用的目标地址替换。<br>可以用于移动文件，但暂时闲置；使用**检索策略**中的`singleton`也可以实现地址替换，但需要在每个模组下配置。
-      - `<查询语句>` string<br>用以替换**正则表达式**`<查询语句>`匹配对象的内容，可以是一个或多个字符，甚至可以在这里用**正则替换语句**。
+  - `base` object  
+  打包流程中的*不变配置*，不能被文件结构中的**局域配置文件**改写。包含的内容都是**不低于**命名空间层级的，因为局域配置文件就是放在命名空间一级中的。
+    - `version` string  
+    该配置文件指向的版本，以 `projects/` 中的文件夹名称为准。原则上*应当*与文件名中的 [version] 一致。
+    - `targetLanguages` list  
+    打包的目标语言，即最终在资源包中存在的语言。
+      - string  
+      目标语言，即该版本使用的语言标识符。  
+      以在 `lang` 下的语言文件的文件名，以及其他文件的路径中，标明语言的部分为准。目前而言，使用的是 `zh_cn`，尽管有消息称将要改用 `zho_Hans-CN`。
+    - `exclusionMods` list  
+    被打包器排除的模组文件夹。  
+    如果因为某些原因需要移除某个模组的翻译（如移交官方/其他团体等），但意图保留原有翻译，可能需要这一项。
+      - string  
+      排除的模组。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[mod-identifier]** | **(CurseForge 项目名称)**为准。-->
+    - `exclusionNamespaces` list  
+    被打包器排除的 **[namespace]** | **(命名空间)**。  
+    暂时闲置，以待后续需求。
+      - string  
+      排除的命名空间。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[namespace]** | **(命名空间)**为准。-->
+  - `floating` object  
+  打包流程中的*可变配置*，可能被文件结构中的**局域配置文件**改写。包含的内容都是**低于**命名空间层级的，因为局域配置文件就是放在命名空间一级中的。
+    - `inclusionDomains` list  
+    强制包含的 **[domain]**。  
+    一般而言，用于通常不会包含**语言标识符**的 `domain`。  
+    一般而言会包含 `font` 与 `textures`，因为这两处往往不带语言标识符，且字体修复已经需要用到这两个domain；其他内容多半会出现在*局域配置*中。
+      - string  
+      强制包含的domain名称。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[domain]** 为准。-->
+    - `exclusionDomains` list  
+    强制排除的 **[domain]**。  
+    暂时闲置，或可用于排除一些策略相关的零散文件。
+      - string  
+      强制排除的domain名称。<!--以[S部分](./S.-本仓库的结构向导)中定义的 **[domain]** 为准。-->
+    - `exclusionPaths` list  
+    强制排除的 **[相对地址]**。
+      - string  
+      强制排除的文件的**相对地址**。  
+      一般而言，在主配置中只会放置通用的忽略对象，例如 `packer-policy.json` 和 `local-config.json`；其余条目最好放在*局域配置*中。
+    - `inclusionPaths` list  
+    强制包含的 **[相对地址]**。  
+    暂时闲置，可以用于添加零散的无语言标记文件。
+      - string  
+      强制包含的文件的**相对地址**。
+    - `characterReplacement` object  
+    打包时采用的字符替换表。用于将部分字符替换至特殊位点，也可单纯用于简化输入。目前而言，包含了字体修复的有关内容。
+      - `<查询语句>` string  
+      用以替换**正则表达式**`<查询语句>`匹配对象的内容，可以是一个或多个字符，甚至可以在这里用**正则替换语句**。  
+      主要用于*字体修复包*所需的**符号替换**，此时，查询语句通常是字面量，替换内容一般而言总是以四位 *Unicode 转义码*填写；对于**基础多语种平面（BMP）**以外的字符，最好用 **UTF-16 代理对**书写。
+    - `destinationReplacement` object  
+    打包时采用的目标地址替换。  
+    可以用于移动文件，但暂时闲置；使用**检索策略**中的`singleton`也可以实现地址替换，但需要在每个模组下配置。
+      - `<查询语句>` string  
+      用以替换**正则表达式**`<查询语句>`匹配对象的内容，可以是一个或多个字符，甚至可以在这里用**正则替换语句**。
 
 #### 局域配置文件
 
@@ -60,7 +93,9 @@
 ### 文件容斥顺序
 
 介于在配置文件中出现了多种包含/排除文件的配置项，有必要说明以下这些项生效的顺序：
-1. `exclusionMods` 和 `exclusionNamespaces` 在进入命名空间前即会排除相应的文件夹——甚至不会加载其中的 `local-config.json`。<br>当然，如果是通过*检索策略*访问的，则这一项不会生效。
+
+1. `exclusionMods` 和 `exclusionNamespaces` 在进入命名空间前即会排除相应的文件夹——甚至不会加载其中的 `local-config.json`。  
+当然，如果是通过*检索策略*访问的，则这一项不会生效。
 2. 在剩下的命名空间中，检索文件。下面的配置项可能会被当地的*局域配置*修改，除了 `targetLanguages` 以外。
 3. 在所有检索到的文件中，排除掉 `exclusionPaths` 指定的文件，即便是通过*检索策略*访问的。
 4. 在剩下的文件中，直接包含 `inclusionPaths` 和 `inclusionDomains` 指定的文件。
@@ -76,6 +111,7 @@
 ## 检索策略
 
 对于每个**命名空间文件夹**，打包器除了可以原位检索文件以外，还可以**使用不同的检索方式**。目前，可用的检索方式有四种：
+
 1. **原位**检索文件。
 2. **引用**给定的命名空间。
 3. 从给定的**组合**文件，直接生成语言文件（或部分）。
@@ -97,43 +133,68 @@
 对于每个**命名空间文件夹**，策略文件为 `projects/<version>/assets/<mod-name>/<asset-domain>/packer-policy.json`。
 若找不到该文件，默认策略内容为 `[{"type": "direct"}]`，也就是**原位**加载，没有特殊配置。
 
-- 根标签 list<br>打包器需要执行的策略，**从前往后执行**。如果有冲突内容，默认以**前者**优先——当然这是可以配置的。
-  - object<br>单项策略。部分参数可变。
-    - `modifyOnly` bool<br>默认为 `false`。<br>对于**语言文件**，若本项为 `true`，对于已有的键，若在该步中提供了新的值，则将会用新值替换旧值；**不会**包含本步中新出现的键。<br>对于其他文件，本项无效。
-    - `append` bool<br>默认为 `false`。<br>对于**文本文件**，将会在已有的文本内容之后**换行**，然后连接本步的内容。<br>对于其他文件，本项无效。
-    - `type` string<br>策略的类型。
-    
+- 根标签 list  
+打包器需要执行的策略，**从前往后执行**。如果有冲突内容，默认以**前者**优先——当然这是可以配置的。
+  - object  
+  单项策略。部分参数可变。
+    - `modifyOnly` bool  
+    默认为 `false`。  
+    对于**语言文件**，若本项为 `true`，对于已有的键，若在该步中提供了新的值，则将会用新值替换旧值；**不会**包含本步中新出现的键。  
+    对于其他文件，本项无效。
+    - `append` bool  
+    默认为 `false`。  
+    对于**文本文件**，将会在已有的文本内容之后**换行**，然后连接本步的内容。  
+    对于其他文件，本项无效。
+    - `type` strin  
+    策略的类型。
+
     **若 `type` 的值为 `direct`：** 不进行特殊处理，直接按照此处的文件结构打包。
-    
+
     **若 `type` 的值为 `indirect`：** 引用给定的命名空间。对于这些文件，其*目标地址*中的*命名空间*将会自动替换为本策略所在的命名空间。（[示例](projects/1.20/assets/minecraft/minecraft/packer-policy.json)的第二条）
-    - `source` string<br>引用命名空间所在文件夹的**完整地址**。
-      
+    - `source` string  
+    引用命名空间所在文件夹的**完整地址**。
+
     **若 `type` 的值为 `composition`：** 从给定的*组合文件*，直接生成语言文件（或部分）。这些组合文件可能不会被自动排除；可以考虑使用*局域配置*处理。（[示例](projects/1.16/assets/macaws-bridges/mcwbridges/packer-policy.json)的第二条；[组合文件示例](projects/1.16/assets/macaws-bridges/mcwbridges/lang/zh_cn-composition.json)）
-    - `source` string<br>引用组合文件的**完整地址**。
-    - `destType` string<br>需要生成的语言文件的类型。可以为`json`或`lang`。
-    
+    - `source` string  
+    引用组合文件的**完整地址**。
+    - `destType` string  
+    需要生成的语言文件的类型。可以为`json`或`lang`。
+
     **若 `type` 的值为 `singleton`：** 引用给定的单个文件。理论上该操作可以选取任何位置的文件，只要目标位置填写正确；不过，一般建议放在*合理的位置*。（[示例](projects/1.19/assets/isometric-renders/isometric-renders/packer-policy.json)的第一条）
-    - `source` string<br>引用文件所在的**完整地址**。
-    - `relativePath`<br>文件需要被放置的**相对地址**。考虑到连续引用，这里不宜使用**目标地址**。      
+    - `source` string  
+    引用文件所在的**完整地址**。
+    - `relativePath`  
+    文件需要被放置的**相对地址**。考虑到连续引用，这里不宜使用**目标地址**。
 
 #### [组合文件].json
 
 <!--示例：macaws-->
 - 根标签 object
-  - `target` string<br>生成的语言文件的**目标地址**。
-  * `entries` list<br>需要生成的组合项。这些项将会分别执行组合以后，连接起来。<br>**如果存在键冲突，打包器会在此崩溃！** 有计划在后期更改这一行为；目前而言，可以使用多个组合文件绕过这个限制。
-    * object<br>单项策略。
-      * `templates` object<br>组合所用的模板。所有内容采用**C#格式化模式**填写。<br>粗略地说，其中的格式符有形式 `{0}, {1}, {2},...`，字面量花括号需要用 `{{` 和 `}}` 转义；完整的定义可见 *[.net文档/Composite Formatting](https://learn.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting)*。
-        - `<键模板>` string<br>`<键模板>`对应的值模板。
-      * `parameters` list<br>组合所用的参数表。参数按照模板中的**索引**顺序排列。不支持嵌套，必须用字面量。
-        * object<br>每个索引位置上可用的参数。
-          - `<键参数>` string<br>`<键参数>`对应的值参数。
+  - `target` string  
+  生成的语言文件的**目标地址**。
+  - `entries` list  
+  需要生成的组合项。这些项将会分别执行组合以后，连接起来。
+  **如果存在键冲突，打包器会在此崩溃！** 有计划在后期更改这一行为；目前而言，可以使用多个组合文件绕过这个限制。
+    - object  
+    单项策略。
+      - `templates` object  
+      组合所用的模板。所有内容采用**C#格式化模式**填写。  
+      粗略地说，其中的格式符有形式 `{0}, {1}, {2},...`，字面量花括号需要用 `{{` 和 `}}` 转义；完整的定义可见 *[.net文档/Composite Formatting](https://learn.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting)*。
+        - `<键模板>` string  
+        `<键模板>`对应的值模板。
+      - `parameters` list  
+      组合所用的参数表。参数按照模板中的**索引**顺序排列。不支持嵌套，必须用字面量。
+        - object  
+        每个索引位置上可用的参数。
+          - `<键参数>` string  
+          `<键参数>`对应的值参数。
 
 ### 组合文件
 
 组合文件用来生成“组合型”的**语言文件/语言文件片段**，也就是那些有大量重复文本、有明显的格式的语言文件片段。
 
 组合文件的工作原理如下：
+
 - 获取 `entries` 中的全部条目，每个条目代表一种组合模式。
 - 每个条目中，由 `templates` 中的所有条目充当模板，`parameters` 中的所有条目充当参数，生成若干组合后的条目。
   - 在 `parameter` 中，有时会出现多于一组参数；这种情况下，每组参数都会自由组合。
@@ -163,10 +224,10 @@
 
 > 该项**需要**预先进行讨论，指定合适的版本支持计划！
 
-- 制定版本支持计划。<br>
+- 制定版本支持计划。  
   这条一般是由管理层指定的。**有时**，支持计划会在 *Issues* 界面中展示——1.19 与 1.20 的支持计划即这么做了。
 - 判定是否需要工具链更新。
-  - 无需更新：<br>
+  - 无需更新：  
     - 创建 `config/packer/[version].json`，并按照本文的指导填写，或参照相近版本的配置文件。
     - 在 `.github/workflows/pr-packer.json` 与 `.github/workflows/packer.json` 中，一处形如 `version: [ "1.12.2", ... ]` 的列表中（如[此处](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/blob/c1d6b114fba63e86b5df682ec01fc30b818ee5e0/.github/workflows/packer.yml#L102)），加入需增添的版本。
     - 创建 `projects/[version]`，并按照其他版本的格式填写 `pack.png`，`pack.mcmeta`，`LICENSE`，`README.txt` 等内容。
@@ -186,6 +247,7 @@
 
 - 确定可用的文件来源。
 - 在目标模组的**命名空间**文件夹下，创建 `packer-policy.json`，填写如下内容，其中 `source` 字段按照前一步找到的来源填写。（[示例](projects/1.18-fabric/assets/iron-furnaces/ironfurnaces/packer-policy.json)）
+
 ```json
 [
     {
@@ -194,6 +256,7 @@
     }
 ]
 ```
+
 - 尽管理论上不会加载，但仍应删除已有的 `lang/zh_cn.json`，以免误会。`lang/en_us.json` 无需移除。
 - （可选）创建**注解文件**。
 
@@ -201,11 +264,11 @@
 
 这适用于语言文件大部一致，小部有改动的情况。
 
-
 - 确定可用的文件来源，以及需要做出的修改。多余的字段无需删去（也暂时无法删去；如有需要，会考虑增加此功能）；缺少或不同的字段则需要修改。
 - **方案一**：适用于有多个文件需要修改的情况。（[示例](projects/1.20/assets/minecraft/minecraft/packer-policy.json)）
   - 在 `lang/zh_cn.json`（或其他需更改的文件）中，保留与来源文本不一致，需要修改的文本，其余内容删去。
   - 在目标模组的**命名空间**文件夹下，创建 `packer-policy.json`，填写如下内容，其中 `source` 字段按照前一步找到的来源填写。
+
 ```json
 [
     {
@@ -216,10 +279,12 @@
         "source": "projects/[version]/assets/[mod-identifier]/[namespace]"
     }
 ]
-``` 
+```
+
 - **方案二**：（[示例](projects/1.19/assets/isometric-renders/isometric-renders/packer-policy.json)）
   - 以合适名称创造新文件（“修改文件”），仅包含与来源文本不一致，需要修改的文本，其余内容删去。
   - 在目标模组的**命名空间**文件夹下，创建 `packer-policy.json`，填写如下内容，其中两个 `source` 字段依次填写修改文件、来源命名空间的**完整地址**，`destination` 字段填写目标文件的**相对地址**。
+
 ```json
 [
     {
@@ -233,11 +298,13 @@
     }
 ]
 ```
+
 - （可选）创建**注解文件**。
 
 #### 选取单文件
 
 若来源有多个文件，但只需要其中某个文件，可以将上述方案中，`indirect` 策略替换为以下文本：
+
 ```json
 {
     "type": "singleton",
@@ -245,6 +312,7 @@
     "relativePath": "[domain]/[file-path]"
 }
 ```
+
 其中 `source` 为**完整地址**，`relativePath` 为在最终资源包中，需要放置的**相对地址**。
 
 ### 添加无语言标识的文件
@@ -257,6 +325,7 @@
 
 - 确定该模组需要加入的 **domain**。
 - 在目标模组的**命名空间**文件夹下，创建 `local-config.json`，填写如下内容：（[示例](projects/1.20/assets/applied-energistics-2/ae2/local-config.json)）
+
 ```json
 {
     "inclusionDomains": [],
@@ -267,6 +336,7 @@
     "destinationReplacement": {}
 }
 ```
+
 - 在上述文件中，`inclusionDomains` 处，按照 `Json` 格式填写所需的 **domain**。
 
 此外，若可以确定该**domain**在该版本普遍需要添加，可以转而在全局配置 `config/packer/[version].json` 中进行相应修改。
@@ -277,6 +347,7 @@
 
 - 确定该模组需要加入的文件。
 - 在目标模组的**命名空间**文件夹下，创建 `local-config.json`，填写如下内容：
+
 ```json
 {
     "inclusionDomains": [],
@@ -287,6 +358,53 @@
     "destinationReplacement": {}
 }
 ```
+
 - 在上述文件中，`inclusionPaths` 处，按照 `Json` 格式填写所需文件的**相对路径**。
 
 通常不应将这种配置写入全局配置。
+
+### 常用组合文件参数
+
+原版 16 色
+
+```json
+{
+    "black": "黑色",
+    "blue": "蓝色",
+    "brown": "棕色",
+    "cyan": "青色",
+    "gray": "灰色",
+    "green": "绿色",
+    "light_blue": "淡蓝色",
+    "light_gray": "淡灰色",
+    "lime": "黄绿色",
+    "magenta": "品红色",
+    "orange": "橙色",
+    "pink": "粉红色",
+    "purple": "紫色",
+    "red": "红色",
+    "white": "白色",
+    "yellow": "黄色"
+}
+```
+
+机械动力岩石
+
+```json
+{
+    "andesite": "安山岩",
+    "asurine": "皓蓝石",
+    "calcite": "方解石",
+    "crimsite": "绯红岩",
+    "deepslate": "深板岩",
+    "diorite": "闪长岩",
+    "dripstone": "滴水石",
+    "granite": "花岗岩",
+    "limestone": "石灰岩",
+    "ochrum": "赭金砂",
+    "scorchia": "焦黑熔渣",
+    "scoria": "熔渣",
+    "tuff": "凝灰岩",
+    "veridium": "辉绿岩"
+}
+```

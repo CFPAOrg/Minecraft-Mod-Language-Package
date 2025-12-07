@@ -2,11 +2,11 @@
 
 itemGroup.dimensional_doors_creative_tab=Dimensional Doors Items
 
-tile.gold_door.name=Gold Door
+tile.gold_door.name=Golden Door
 tile.quartz_door.name=Quartz Door
 
 tile.iron_dimensional_door.name=Iron Dimensional Door
-tile.gold_dimensional_door.name=Gold Dimensional Door
+tile.gold_dimensional_door.name=Golden Dimensional Door
 tile.quartz_dimensional_door.name=Quartz Dimensional Door
 tile.unstable_dimensional_door.name=Unstable Dimensional Door
 tile.oak_dimensional_door.name=Oak Dimensional Door
@@ -53,11 +53,13 @@ tile.eternal_fabric.name=Eternal Fabric
 tile.unravelled_fabric.name=Unraveled Fabric
 tile.rift.name=Rift Scar
 
-item.gold_door.name=Gold Door
+tile.marking_plate.name=Marking Plate
+
+item.gold_door.name=Golden Door
 item.quartz_door.name=Quartz Door
 
 item.iron_dimensional_door.name=Iron Dimensional Door
-item.gold_dimensional_door.name=Gold Dimensional Door
+item.gold_dimensional_door.name=Golden Dimensional Door
 item.quartz_dimensional_door.name=Quartz Dimensional Door
 item.unstable_dimensional_door.name=Unstable Dimensional Door
 item.oak_dimensional_door.name=Wood Dimensional Door
@@ -78,7 +80,7 @@ item.rift_stabilizer.info=Use on a rift's core to stop its growth.
 item.rift_stabilizer.stabilized=The rift has been stabilized and will stop growing
 item.rift_stabilizer.already_stabilized=This rift is already stable
 item.rift_blade.name=Rift Blade
-item.rift_blade.rift_miss=You can only use this item on a rift's core
+item.rift_blade.rift_miss=You can only use the blade on a rift's core or an entity
 
 item.world_thread.name=World Thread
 item.stable_fabric.name=Stable Fabric
@@ -91,21 +93,21 @@ item.woven_world_thread_chestplate.name=Woven World Thread Chestplate
 item.rift_key.bound.info=Bound
 item.rift_key.unbound.info=Unbound
 
-item.iron_dimensional_door.info=Place on the block under a rift \nto activate that rift or place \nanywhere else to create a \npocket dimension.
-item.gold_dimensional_door.info=Similar to a Dimensional Door \nbut keeps a pocket dimension \nloaded if placed on the inside.
+item.iron_dimensional_door.info=Place on the block under a rift to activate that rift or place anywhere else to create a pocket dimension.
+item.gold_dimensional_door.info=Similar to a Dimensional Door but keeps a pocket dimension loaded if placed on the inside.
 item.quartz_dimensional_door.info=Creates a pathway to your personal pocket.
-item.rift_blade.info=Opens temporary doors on rifts \nand has a teleport attack.
-item.rift_remover.info=Use near exposed rift \nto remove it and \nany nearby rifts.
+item.rift_blade.info=Opens temporary doors on rifts and has a teleport attack.
+item.rift_remover.info=Use near exposed rift to remove it and any nearby rifts.
 item.rift_signature.bound.info=Leads to (%d, %d, %d) at dimension #%d
-item.rift_signature.unbound.info=First click stores a location; \nsecond click creates a pair of \nrifts linking the two locations.
+item.rift_signature.unbound.info=First click stores a location; second click creates a pair of rifts linking the two locations.
 item.stabilized_rift_signature.bound.info=Leads to (%d, %d, %d) at dimension #%d
-item.stabilized_rift_signature.unbound.info=First click stores a location, \nother clicks create rifts linking \nthe first and last locations together.
+item.stabilized_rift_signature.unbound.info=First click stores a location, other clicks create rifts linking the first and last locations together.
 item.unstable_dimensional_door.info=Caution: Leads to random destination
-item.oak_dimensional_door.info=Place on the block under a rift \nto create a portal, or place anywhere \nin a pocket dimension to exit.
+item.oak_dimensional_door.info=Place on the block under a rift to create a portal, or place anywhere in a pocket dimension to exit.
 
 item.record.creepy.desc=Creepy - The sound of Limbo
 
-entity.dimdoors.monolith.name=Monolith
+entity.mob_monolith.name=Monolith
 
 commands.dimteleport.usage=/dimteleport <dimension> <x> <y> <z> [yaw] [pitch]
 commands.fabricconvert.usage=/fabricconvert
@@ -145,14 +147,18 @@ dimdoors.general.teleportOffset=Teleport Offset
 dimdoors.general.teleportOffset.tooltip=Distance in blocks to teleport the player in front of the dimensional door.
 
 
-dimdoors.rifts.riftCloseSpeed=Rift Close Speed
-dimdoors.rifts.riftCloseSpeed.tooltip=The speed at which rifts close when using the rift remover, in units of rift size per tick.
 dimdoors.rifts.riftBoundingBoxInCreative=Rift Bounding Box in Creative
 dimdoors.rifts.riftBoundingBoxInCreative.tooltip=When true, shows the bounding boxes of floating rifts when the player is in creative.
+dimdoors.rifts.riftCloseSpeed=Rift Close Speed
+dimdoors.rifts.riftCloseSpeed.tooltip=The speed at which rifts close when using the rift remover, in units of rift size per tick.
 dimdoors.rifts.enableRiftDecay=Enable Rift Decay
 dimdoors.rifts.enableRiftDecay.tooltip=When true, floating rifts will eat nearby placed blocks, dropping world string
 dimdoors.rifts.blockRiftDecayBlackList=Block Decay Blacklist
 dimdoors.rifts.blockRiftDecayBlackList.tooltip=A list of blocks that will be blacklisted from rift decay
+dimdoors.rifts.enableDecayDrops=Enable Rift Decay Drops
+dimdoors.rifts.enableDecayDrops.tooltip=When true, blocks destroyed by rift decay will drop world thread.
+dimdoors.rifts.decayDropChance=Decay Drop Chance
+dimdoors.rifts.decayDropChance.tooltip=When decay drops are enabled, this is the chance that world thread will be dropped
 dimdoors.rifts.maxRiftSize=Maximum Rift Size
 dimdoors.rifts.maxRiftSize.tooltip=The maximum size a wild rift can achieve. Set to -1 to ignore. Note that rifts grow logarithmically
 dimdoors.rifts.enableWildRifts=Enable
@@ -184,8 +190,6 @@ dimdoors.world.clusterDimBlacklist=Cluster Dimension Blacklist
 dimdoors.world.clusterDimBlacklist.tooltip=Dimension Blacklist for the generation of Rift Scar clusters. Add a dimension ID here to prevent generation in certain dimensions.
 dimdoors.world.gatewayDimBlacklist=Gateway Dimension Blacklist
 dimdoors.world.gatewayDimBlacklist.tooltip=Dimension Blacklist for the generation of Dimensional Portal gateways. Add a dimension ID here to prevent generation in certain dimensions.
-dimdoors.world.enableDecayDrops=Enable Rift Decay Drops
-dimdoors.world.enableDecayDrops.tooltip=When true, blocks destroyed by rift decay will drop world thread.
 
 dimdoors.dungeons=Dungeon Settings
 dimdoors.dungeons.tooltip=Settings that affect the generation of pocket dungeons
