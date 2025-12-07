@@ -26,6 +26,12 @@
 	"hexcasting.action.overevaluate:dup_many": "Dioscuri Gambit II",
 	"overevaluate.page.dup_many.summary": "Takes a number and duplicates that many elements of the stack while preserving order.",
 
+	"overevaluate.page.extra_list.title": "Extra List Manipulation",
+	"hexcasting.action.overevaluate:rotate_list": "Cycling Distillation",
+	"overevaluate.page.rotate_list.summary": "Moves the first element to the end of the list that many times; negative numbers do the opposite.",
+	"hexcasting.action.overevaluate:snap_list": "Extirpating Gambit",
+	"overevaluate.page.snap_list.summary": "Cuts a list into three parts: what came before the given index, the iota at the given index, and what comes after that iota.",
+
 	"overevaluate.page.jumble.title": "Jumble Iota",
 	"overevaluate.page.jumble.0": "Jumble iotas are a highly versatile and expressive method of stack manipulation; a single jumble iota can copy, remove, and reorder the stack while being highly readable and instantly understandable.$(br2)When a _Hex tries to process a jumble iota, a number of iotas from the stack indicated by the first number in the jumble iota are popped.",
 	"overevaluate.page.jumble.1": "These popped iotas are stored on a temporary list called the reference list. Then, the list of positive integers indicated by the jumble iota are read one by one, indexing into the reference list and pushing the iota to the stack.$(br2)The jumble iota $(thing)$(o)2 [1 0]$() will pop two iotas off the stack. Then, it will push the iota at index 1 of the reference list, followed by the iota at index 0. In practice, it is identical to $(l:patterns/stackmanip#hexcasting:swap)$(action)Jester's Gambit$().",
@@ -68,7 +74,7 @@
 	"overevaluate.page.nephthys.summary": "Pops a pattern or pattern list and dives down an amount corresponding to the tail length to cast the pattern list. Useful for surgery-like operations.",
 	"overevaluate.page.nephthys.description": "It's extremely versatile and I can mend almost any error in my stack using $(l:patterns/stackmanip#hexcasting:mask)$(action)Bookkeeper's Gambit$(), pushing iota after a dive, and transforming surfaced iota. It was named after a goddess of mourning and rivers, lending to how it buries/dives down into the stack.$(br2)$(o)... the unknowns of time travel... is akin to descending blindly into the depths of the freezing water and reappearing as an acorn.$()",
 	"hexcasting.action.overevaluate:atalanta": "Atalanta's Gambit",
-	"overevaluate.page.atalanta.summary": "Should only be run inside $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's$() or $(l:metaevals#overevaluate:sisyphus)$(action)Sisyphus' Gambit$(). Acts similarly to $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit$() except does not end the iterator, only skips the rest of the current iteration.",
+	"overevaluate.page.atalanta.summary": "Should only be run inside $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's$() or $(l:metaevals#overevaluate:sisyphus)$(action)Sisyphus' Gambit$(). If boolean is false, skips the rest of the current iteration and jumps to the next iteration.",
 	"overevaluate.page.atalanta.description": "This pattern can be useful to implement \"guard clauses\" for multiconditional loops. For example, after getting a list of entities, I may want to only target entities based on some large list of conditions. Rather than a mess of deeply nested conditionals, I can simply $(o)continue$() to the next iteration if any of the conditions fail, skipping the action.$(br2)$(o)You shall not pass!$()",
 	"hexcasting.action.overevaluate:castor": "Castor's Gambit",
 	"overevaluate.page.castor.summary": "Should only be run within a $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's$(). Details on the next page. Beware of triggering the Delve Too Deep mishap.",
