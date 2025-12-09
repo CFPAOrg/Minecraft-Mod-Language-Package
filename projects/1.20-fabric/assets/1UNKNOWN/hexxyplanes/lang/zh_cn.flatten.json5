@@ -1,0 +1,123 @@
+{
+  hexxyplanes: {
+    book: {
+      patterns: {
+        spells: {
+          "hexplane": {
+            "": "咒法位面",
+            get_plane: "返回代表我咒法位面的 iota。",
+            enter_plane: {
+              "1": "将目标送入所给咒法位面。若目标未在咒法位面内部，消耗 2 个\
+              充能紫水晶；否则消耗 5 个紫水晶粉。",
+
+              "2": "进入位面时，出生点处的两个方块会被破坏，效果与玩家破坏类似，\
+              且脆弱的方块$(l)不会掉落/$。出生点的方块与墙壁的构成方块一致，\
+              但会略带紫色。"
+            
+            },
+            plane_pos: "获取位面出生点的位置向量。",
+            plane_banish: {
+              "1": "强令目标退出咒法位面。若对除我之外的事物使用，消耗 5 个紫水晶\
+              碎片；否则无需消耗媒质。不在位面内施放会招致事故。",
+
+              "2": "若目标为玩家，将其送至其咒法位面退出点。若是任意其他实体，\
+              则送至我咒法位面的退出点。可用$(l:patterns/spells/hexplane#hexxyplanes:plane_exit)\
+              $(action)位面之标记/$设置退出点。"
+
+            },
+            plane_exit: {
+              "1": "将目标位置设为我咒法位面的退出点。此后，对自己使用\
+              $(l:patterns/spells/hexplane#hexxyplanes:plane_banish)$(action)位面之驱逐/$\
+              时会被传送至该处。",
+              "2": "对非玩家实体使用$(l:patterns/spells/hexplane#hexxyplanes:plane_banish)\
+              $(action)位面之驱逐/$时也会将它们送至该处。不在位面内施放会招致事故。"
+            
+            }
+          }
+        }
+      },
+      info: {
+        "hexplane": {
+          "": "咒法位面",
+          "text": {
+            "1": "自从我跨越屏障，瞥见思维的领域以来，我一直在想……要是我再施加些\
+            力量，还能到达哪些地方。我真的施加了力量，由此看到了一片新现实，那里有着\
+            层层叠叠的立方体；立方体内部是纯粹的白色，仿佛在等着人入住。我设计出了\
+            几个图案，以便强行进入这些位面。而在穿过屏障之后，我到达的就是先前所提\
+            立方体的内部。",
+            
+            
+            "2": "我感觉到我的媒质逐渐扩散，填满了整个空间。但奇怪的是，它们拒绝穿过\
+            四周的墙壁。尽管我可以认为这整片空间都是属于我的，它却似乎不怎么接受塑形；\
+            我试图敲击这些墙壁，结果总是我被传回现实。（也许再小心些就能避免了？）\
+            我进入位面时所处的方块较为特别——它的颜色与周围不同。大概可以拿来定位吧。"
+          
+          
+          
+          }
+        }
+      }
+    },
+    tooltip: {
+      "hexplane": "咒法位面"
+    },
+    error: {
+      bad_respawn: "你的重生点位于咒法位面内部。正在传送至世界出生点……"
+    }
+  },
+
+  hexcasting: {
+    action: {
+      "hexxyplanes:": {
+        get_plane: "位面之精思",
+        enter_plane: "位面之侵入",
+        plane_pos: "位面之纯化",
+        plane_banish: "位面之驱逐",
+        plane_exit: "位面之标记"
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+      },
+    },
+    mishap: {
+      not_in_hexplane: "此图案必须在咒法位面之内绘制。",
+      invalid_value: {
+        class: {
+          plane: "一个咒法位面"
+        }
+      }
+    }
+  },
+
+  text: {
+    hexxyplanes: {
+    },
+
+    "autoconfig.hexxyplanes": {
+      title: "咒法位面配置",
+
+      category: {
+        client: "客户端",
+        server: "服务端",
+      },
+
+      option: {
+        client: {
+          dummyClientConfigOption: {
+            "": "Dummy Client Config Option",
+            "@Tooltip": "This is an example of a client-side config option that accepts a boolean.",
+          },
+        },
+
+        server: {
+          dummyServerConfigOption: {
+            "": "Dummy Server Config Option",
+            "@Tooltip": "This is an example of a server-side config option that accepts an integer.",
+          },
+        },
+      },
+    },
+  },
+}
