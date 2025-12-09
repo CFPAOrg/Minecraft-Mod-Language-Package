@@ -11,6 +11,7 @@ item_ids:
 - extendedae:io_bus_upgrade
 - extendedae:pattern_terminal_upgrade
 - extendedae:drive_upgrade
+- extendedae:wireless_connector_upgrade
 ---
 
 # ME设备升级组件
@@ -23,6 +24,7 @@ item_ids:
 <ItemImage id="extendedae:io_bus_upgrade" scale="4"></ItemImage>
 <ItemImage id="extendedae:pattern_terminal_upgrade" scale="4"></ItemImage>
 <ItemImage id="extendedae:drive_upgrade" scale="4"></ItemImage>
+<ItemImage id="extendedae:wireless_connector_upgrade" scale="4"></ItemImage>
 </Row>
 
 持上述升级潜行右击设备，即可将它们升级为对应的扩展设备。设备的设置和其中物品会保留。
@@ -43,13 +45,14 @@ item_ids:
 
 ## 升级列表
 
-|                                  升级组件                                  |                              普通设备                              |                                  扩展设备                                  |
-| :------------------------------------------------------------------------: | :----------------------------------------------------------------: | :------------------------------------------------------------------------: |
-| <ItemImage id="extendedae:pattern_provider_upgrade" scale="3"></ItemImage> |    <ItemImage id="ae2:pattern_provider" scale="3"></ItemImage>     |   <ItemImage id="extendedae:ex_pattern_provider" scale="3"></ItemImage>    |
-| <ItemImage id="extendedae:pattern_provider_upgrade" scale="3"></ItemImage> | <ItemImage id="ae2:cable_pattern_provider" scale="3"></ItemImage>  | <ItemImage id="extendedae:ex_pattern_provider_part" scale="3"></ItemImage> |
-|    <ItemImage id="extendedae:interface_upgrade" scale="3"></ItemImage>     |        <ItemImage id="ae2:interface" scale="3"></ItemImage>        |       <ItemImage id="extendedae:ex_interface" scale="3"></ItemImage>       |
-|    <ItemImage id="extendedae:interface_upgrade" scale="3"></ItemImage>     |     <ItemImage id="ae2:cable_interface" scale="3"></ItemImage>     |    <ItemImage id="extendedae:ex_interface_part" scale="3"></ItemImage>     |
-|      <ItemImage id="extendedae:io_bus_upgrade" scale="3"></ItemImage>      |       <ItemImage id="ae2:import_bus" scale="3"></ItemImage>        |    <ItemImage id="extendedae:ex_import_bus_part" scale="3"></ItemImage>    |
-|      <ItemImage id="extendedae:io_bus_upgrade" scale="3"></ItemImage>      |       <ItemImage id="ae2:export_bus" scale="3"></ItemImage>        |    <ItemImage id="extendedae:ex_export_bus_part" scale="3"></ItemImage>    |
-| <ItemImage id="extendedae:pattern_terminal_upgrade" scale="3"></ItemImage> | <ItemImage id="ae2:pattern_access_terminal" scale="3"></ItemImage> |  <ItemImage id="extendedae:ex_pattern_access_part" scale="3"></ItemImage>  |
-|      <ItemImage id="extendedae:drive_upgrade" scale="3"></ItemImage>       |          <ItemImage id="ae2:drive" scale="3"></ItemImage>          |         <ItemImage id="extendedae:ex_drive" scale="3"></ItemImage>         |
+|                                   升级组件                                   |                              普通设备                              |                                  扩展设备                                  |
+| :--------------------------------------------------------------------------: | :----------------------------------------------------------------: | :------------------------------------------------------------------------: |
+|  <ItemImage id="extendedae:pattern_provider_upgrade" scale="3"></ItemImage>  |    <ItemImage id="ae2:pattern_provider" scale="3"></ItemImage>     |   <ItemImage id="extendedae:ex_pattern_provider" scale="3"></ItemImage>    |
+|  <ItemImage id="extendedae:pattern_provider_upgrade" scale="3"></ItemImage>  | <ItemImage id="ae2:cable_pattern_provider" scale="3"></ItemImage>  | <ItemImage id="extendedae:ex_pattern_provider_part" scale="3"></ItemImage> |
+|     <ItemImage id="extendedae:interface_upgrade" scale="3"></ItemImage>      |        <ItemImage id="ae2:interface" scale="3"></ItemImage>        |       <ItemImage id="extendedae:ex_interface" scale="3"></ItemImage>       |
+|     <ItemImage id="extendedae:interface_upgrade" scale="3"></ItemImage>      |     <ItemImage id="ae2:cable_interface" scale="3"></ItemImage>     |    <ItemImage id="extendedae:ex_interface_part" scale="3"></ItemImage>     |
+|       <ItemImage id="extendedae:io_bus_upgrade" scale="3"></ItemImage>       |       <ItemImage id="ae2:import_bus" scale="3"></ItemImage>        |    <ItemImage id="extendedae:ex_import_bus_part" scale="3"></ItemImage>    |
+|       <ItemImage id="extendedae:io_bus_upgrade" scale="3"></ItemImage>       |       <ItemImage id="ae2:export_bus" scale="3"></ItemImage>        |    <ItemImage id="extendedae:ex_export_bus_part" scale="3"></ItemImage>    |
+|  <ItemImage id="extendedae:pattern_terminal_upgrade" scale="3"></ItemImage>  | <ItemImage id="ae2:pattern_access_terminal" scale="3"></ItemImage> |  <ItemImage id="extendedae:ex_pattern_access_part" scale="3"></ItemImage>  |
+|       <ItemImage id="extendedae:drive_upgrade" scale="3"></ItemImage>        |          <ItemImage id="ae2:drive" scale="3"></ItemImage>          |         <ItemImage id="extendedae:ex_drive" scale="3"></ItemImage>         |
+| <ItemImage id="extendedae:wireless_connector_upgrade" scale="3"></ItemImage> | <ItemImage id="extendedae:wireless_connect" scale="3"></ItemImage> |       <ItemImage id="extendedae:wireless_hub" scale="3"></ItemImage>       |
