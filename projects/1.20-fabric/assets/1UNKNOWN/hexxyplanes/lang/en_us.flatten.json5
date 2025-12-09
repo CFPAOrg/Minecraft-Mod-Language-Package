@@ -1,0 +1,123 @@
+{
+  hexxyplanes: {
+    book: {
+      patterns: {
+        spells: {
+          "hexplane": {
+            "": "Hexplanes",
+            get_plane: "Retrieves an iota representing my hexplane.",
+            enter_plane: {
+              "1": "Sends the target to the provided hexplane. Costs 2 \
+              charged amethyst if the target is not already in a hexplane, \
+              and 5 dust otherwise.",
+              "2": "Upon entering a plane, the two blocks on the spawn point are \
+              broken, as if by a player, and any fragile blocks $(l)are not \
+              dropped./$ The spawn point is signified by a purple tinted version \
+              of the blocks that make up the walls."
+            },
+            plane_pos: "Gets the spawn position within this plane as a vector.",
+            plane_banish: {
+              "1": "Forces the target out of the hexplane, costing 5 shards \
+              if used on something other than myself, and being free otherwise. \
+              Mishaps if not currently in a hexplane.",
+              "2": "If the target is a player, they are sent to their hexplane exit. \
+              If the target is any other entity, they are sent to my hexplane exit. \
+              The exit can be set using $(l:patterns/spells/hexplane#hexxyplanes:plane_exit)\
+              $(action)Planar Marking/$."
+            },
+            plane_exit: {
+              "1": "Marks the target location as my exit for the hexplane, \
+              causing me to be sent there upon using $(l:patterns/spells/hexplane\
+              #hexxyplanes:plane_banish)$(action)Planar Expulsion/$ on myself.",
+              "2": "Non-player entities will be sent here when using \
+              $(l:patterns/spells/hexplane#hexxyplanes:plane_banish)$(action)Planar \
+              Expulsion/$. Mishaps if the exit is within a hexplane."
+            }
+          }
+        }
+      },
+      info: {
+        "hexplane": {
+          "": "Hexplanes",
+          "text": {
+            "1": "Since pushing past the barrier and seeing a realm of thought, \
+            I wondered what else may be accessible by simply... applying some \
+            more pressure. After doing so I saw a reality of cubes upon cubes \
+            upon cubes, containers of pure white waiting for someone to inhabit \
+            them. I managed to devise some patterns to force my way into this \
+            plane, and upon following through I found myself inside one of these \
+            cubes.",
+            "2": "I felt my media expand to fill the space, but it curiously \
+            refused to go any further than the walls that surround me. I feel as \
+            though I can safely assume that this area is entirely my own, although \
+            it doesn't seem to take kindly to remodeling, as punching the walls \
+            resulted in me being shunted back to reality (maybe being more careful \
+            would prevent this next time?). The block at the position I enter this \
+            plane at is oddly discoloured, convenient for keeping my heading I suppose."
+          }
+        }
+      }
+    },
+    tooltip: {
+      "hexplane": "Hexplane"
+    },
+    error: {
+      bad_respawn: "Your respawn point is within the hexplane. Sending to world spawn..."
+    }
+  },
+
+  hexcasting: {
+    action: {
+      "hexxyplanes:": {
+        get_plane: "Planar Reflection",
+        enter_plane: "Planar Intrusion",
+        plane_pos: "Planar Purification",
+        plane_banish: "Planar Expulsion",
+        plane_exit: "Planar Marking"
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+      },
+    },
+    mishap: {
+      not_in_hexplane: "Must be in a hexplane to cast this pattern.",
+      invalid_value: {
+        class: {
+          plane: "a Hexplane"
+        }
+      }
+    }
+  },
+
+  text: {
+    hexxyplanes: {
+    },
+
+    "autoconfig.hexxyplanes": {
+      title: "Hexxyplanes Config",
+
+      category: {
+        client: "Client",
+        server: "Server",
+      },
+
+      option: {
+        client: {
+          dummyClientConfigOption: {
+            "": "Dummy Client Config Option",
+            "@Tooltip": "This is an example of a client-side config option that accepts a boolean.",
+          },
+        },
+
+        server: {
+          dummyServerConfigOption: {
+            "": "Dummy Server Config Option",
+            "@Tooltip": "This is an example of a server-side config option that accepts an integer.",
+          },
+        },
+      },
+    },
+  },
+}
