@@ -46,13 +46,13 @@ A few known Knot types are:
 
 - __Amethyst__\
 Creation cost: none
-Capacity: 128 kG
+Capacity: 128 G
 - __Emerald__\
-Creation cost: 512 kG 
-Capacity: 1024 kG
+Creation cost: 512 G
+Capacity: 1024 G
 - __Diamond__\
-Creation cost: 8192 kG
-Capacity: 16384 kG
+Creation cost: 8192 G
+Capacity: 16384 G
 
 ;;;;;
 

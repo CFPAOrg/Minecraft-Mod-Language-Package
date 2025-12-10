@@ -6,7 +6,7 @@
   "required_advancements": [
     "trickster:trigger/nether_star"
   ],
-  "ordinal": 24
+  "ordinal": 21
 }
 ```
 

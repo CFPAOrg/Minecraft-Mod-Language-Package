@@ -6,7 +6,7 @@
   "required_advancements": [
     "trickster:echo_knot"
   ],
-  "ordinal": 20
+  "ordinal": 18
 }
 ```
 
@@ -18,4 +18,8 @@ Fill one, and its twin is filled as well, no matter where in the world it may be
 
 ;;;;;
 
-TODO: explain message behaviour
+Furthermore, with the use of the [Dispatch Ploy](^trickster:ploys/message#2),
+messages can be sent directly into Echo Knots.
+Fragments sent in this way can be received from anywhere, 
+just by listening to the Knot's twin using the [Ploy of Receipt](^trickster:ploys/message#3),
+making for an excellent method of long-distance, private communication.
