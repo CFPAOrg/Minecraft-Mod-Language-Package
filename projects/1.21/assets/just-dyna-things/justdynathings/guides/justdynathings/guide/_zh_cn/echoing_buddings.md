@@ -42,7 +42,7 @@ item_ids:
 
 # 生成母岩相关资源的新方法
 
-这些母岩需要**时间流体**（100mB/次）和**能量**（100FE/次）来长出晶簇。
+这些母岩需要**时间流体**（100mB/次操作）和**能量**（100FE/次操作）来长出晶簇。
 
 <GameScene zoom="2" interactive={true}>
   <Block id="justdynathings:echoing_budding_time" p:alive="true"/>
