@@ -1,0 +1,36 @@
+window {
+    size(180,152)
+
+    event('redstone','mcjtylib.setRsMode')
+
+    panel('','positional') {
+        bg1('rftoolspower:textures/gui/coalgenerator.png')
+        energybar('energybar') {
+            hint(10,7,8,54)
+            showtext(false)
+        }
+        imagechoicelabel('redstone') {
+            channel('redstone')
+            hint(154,46,16,16)
+            image('rftoolsbase:textures/gui/guielements.png')
+            dim(32,0,256,256)
+            choices {
+                choice('Ignored') {
+                    uv(0,0)
+                    tooltips('红石模式','忽略')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('Off') {
+                    uv(16,0)
+                    tooltips('红石模式','低信号')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+                choice('On') {
+                    uv(32,0)
+                    tooltips('红石模式','高信号')
+                    image('rftoolsbase:textures/gui/guielements.png')
+                }
+            }
+        }
+    }
+}

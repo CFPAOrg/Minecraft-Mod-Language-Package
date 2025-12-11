@@ -3,100 +3,77 @@ name: Packer
 on:
   workflow_dispatch:
   push:
-    branches: [main]
-    paths: 
-      - 'config/packer.json'
-      - 'config/fontmap.txt'
+    branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'config/packer/**'
       - 'projects/**'
 
+
+
 jobs:
-  build:
+  build-packer:
+    name: Build / Cache Packer
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 20
-          ref: main
+          fetch-depth: 1
+          sparse-checkout: src
 
-      - name: Check changed path on 1.12
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-1122
+      # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
+      # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
+      - name: Cache Packer
+        id: cache-packer
+        uses: actions/cache@v4
         with:
-          paths: projects/1.12.2
+          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
+          path: |
+            Packer.exe
+            git2-*.dll
+          lookup-only: true
 
-      - name: Check changed path on 1.16
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-116
-        with:
-          paths: projects/1.16
-
-      - name: Check changed path on 1.16 fabric
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-116-fabric
-        with:
-          paths: projects/1.16-fabric
-          
-      - name: Check changed path on 1.18
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-118
-        with:
-          paths: projects/1.18
-
-      - name: Check changed path on 1.18 fabric
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-118-fabric
-        with:
-          paths: projects/1.18-fabric
-
-      - name: Check changed path on 1.19
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: changed-119
-        with:
-          paths: projects/1.19
-
-      # - name: Check changed path on 1.19 fabric
-      #   uses: MarceloPrado/has-changed-path@v1.0
-      #   id: changed-119-fabric
-      #   with:
-      #     paths: projects/1.19-fabric
-          
-      - name: Build Packer
+      # 构造程序
+      - name: Build Packer if not cached
+        if: steps.cache-packer.outputs.cache-hit != 'true'
         run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
-      - name: Run Packer for 1.12.2
-        run: ./Packer --version="1.12.2"
-        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+  # build-uploader:
+  #   if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+  #   name: Build / Cache Uploader
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 1
+  #         sparse-checkout: src
 
-      - name: Run Packer for 1.16
-        run: ./Packer --version="1.16"
-        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Run Packer for 1.16-fabric
-        run: ./Packer --version="1.16-fabric"
-        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Run Packer for 1.18
-        run: ./Packer --version="1.18"
-        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      - name: Run Packer for 1.18-fabric
-        run: ./Packer --version="1.18-fabric"
-        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+  #     # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
+  #     # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
+  #     - name: Cache Uploader
+  #       id: cache-uploader
+  #       uses: actions/cache@v4
+  #       with:
+  #         key: ${{ runner.os }}-Uploader-${{ hashFiles('src/Uploader/**') }}
+  #         path: Uploader.exe
+  #         lookup-only: true
 
-      - name: Run Packer for 1.19
-        run: ./Packer --version="1.19"
-        if: steps.changed-119.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        
-      # - name: Run Packer for 1.19-fabric
-      #   run: ./Packer --version="1.19-fabric"
-      #   if: steps.changed-119-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
+  #     # 构造程序
+  #     - name: Build Uploader if not cached
+  #       if: steps.cache-uploader.outputs.cache-hit != 'true'
+  #       run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+
+  initialize-release:
+    name: Initialize Release
+    runs-on: windows-latest
+    steps:
 
       - name: Create timestamp
         id: create_timestamp
-        run: echo "::set-output name=timestamp::$(date '+%Y%m%d%H%M%s')"
+        run: echo "timestamp=$(date '+%Y%m%d%H%M%s')" >> $GITHUB_OUTPUT
         shell: bash
 
-      # Create the release: https://github.com/actions/create-release
+        # Create the release: https://github.com/actions/create-release
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
@@ -107,95 +84,228 @@ jobs:
           release_name: 汉化资源包-Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
           draft: false
           prerelease: false
+    outputs:
+      upload-url: ${{ steps.create_release.outputs.upload_url }}
+      tag-name: Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
 
-      # Upload release asset: https://github.com/actions/upload-release-asset
-      - name: Update release asset for 1.12
-        id: upload-release-asset1
-        if: steps.changed-1122.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        uses: actions/upload-release-asset@v1
+
+  pack:
+    name: Pack Resources and Upload Artifacts/Releases
+    needs: [ build-packer, initialize-release ] # 显然，需要存在打包程序，才能打包。
+    strategy:
+      fail-fast: false # 把正常的文件先打包了，避免一处错误阻塞整个仓库。
+      matrix:
+        # 版本列表。将对这里的每个版本判断，按需打包。
+        # 如需添加新版本，在这里添加即可。
+        version: [ "1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric" ]
+    runs-on: windows-latest
+    outputs:
+      # 为每个版本创建独立的输出变量
+      updated_versions_1_12_2: ${{ steps.collect-updated.outputs.version_1_12_2 }}
+      updated_versions_1_16: ${{ steps.collect-updated.outputs.version_1_16 }}
+      updated_versions_1_16_fabric: ${{ steps.collect-updated.outputs.version_1_16_fabric }}
+      updated_versions_1_18: ${{ steps.collect-updated.outputs.version_1_18 }}
+      updated_versions_1_18_fabric: ${{ steps.collect-updated.outputs.version_1_18_fabric }}
+      updated_versions_1_19: ${{ steps.collect-updated.outputs.version_1_19 }}
+      updated_versions_1_20: ${{ steps.collect-updated.outputs.version_1_20 }}
+      updated_versions_1_20_fabric: ${{ steps.collect-updated.outputs.version_1_20_fabric }}
+      updated_versions_1_21: ${{ steps.collect-updated.outputs.version_1_21 }}
+      updated_versions_1_21_fabric: ${{ steps.collect-updated.outputs.version_1_21_fabric }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 20 # 显然，需要有提交历史才能比较提交。20这个数是任意的。
+
+      # 由于Github的限制，这里需要重新拉取打包程序。
+      - name: Restore Packer
+        id: cache-restore
+        uses: actions/cache/restore@v4
+        with:
+          key: ${{ runner.os }}-Packer-${{ hashFiles('source/Packer/**') }}
+          path: |
+            Packer.exe
+            git2-*.dll
+          fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
+
+      - name: Check changed path on ${{ matrix.version }}
+        uses: MarceloPrado/has-changed-path@v1.0
+        id: check-changes
+        with:
+          # 判断位置：该版本文件、该版本配置、代码
+          paths: > 
+            projects/${{ matrix.version }}
+            config/packer/${{ matrix.version }}.json
+            src/**
+
+      - name: Run Packer for ${{ matrix.version }}
+        # 分发包中应当包含全部内容
+        run: ./Packer --version="${{ matrix.version }}"
+        # 运行逻辑：内容有更改 或 手动运行
+        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+
+      # Artifact 上传内容：每个版本一个压缩包，包含了资源包和md5校验文件
+      - name: Upload Artifact for ${{ matrix.version }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: Minecraft-Mod-Language-Modpack-${{ matrix.version }}
+          path: |
+            Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
+            ${{ matrix.version }}.md5
+        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+
+      - name: Collect updated versions
+        id: collect-updated
+        run: |
+          if [ "${{ steps.check-changes.outputs.changed }}" == "true" ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            # Replace all periods and hyphens with underscores
+            # 将.转换为_，适配变量名
+            output_key=$(echo "${{ matrix.version }}" | sed 's/[\.-]/_/g')
+            echo "version_$output_key=${{ matrix.version }}" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+        continue-on-error: true
+
+  upload-release-assets:
+    name: Upload Release Assets
+    needs: [ pack, initialize-release ]
+    runs-on: windows-latest
+    steps:
+      - name: Download all Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+
+      - name: Upload Release Assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Minecraft-Mod-Language-Package-1.12.2.zip
-          asset_name: Minecraft-Mod-Language-Package-1.12.2.zip
-          asset_content_type: application/zip
+        run: |
+          # Get the upload URL from the previous job
+          $upload_url = "${{ needs.initialize-release.outputs.upload-url }}"
+          
+          # Clean up the URL by removing the template part {?name,label}
+          $clean_upload_url = $upload_url.Split('{')[0]
+          
+          # Iterate through downloaded artifact directories
+          Get-ChildItem -Path "artifacts" -Directory | ForEach-Object {
+              $artifact_dir_name = $_.Name
+              $version_tag = ($artifact_dir_name -split '-Modpack-')[1]
+          
+              # Generate the correct asset names
+              if ($version_tag -eq '1.12.2') {
+                $zip_asset_name = "Minecraft-Mod-Language-Modpack.zip"
+              } else {
+                $formatted_version = $version_tag -replace '\.', '-'
+                $formatted_version = $formatted_version -replace 'fabric', 'Fabric'
+                $zip_asset_name = "Minecraft-Mod-Language-Modpack-$formatted_version.zip"
+              }
+          
+              # Build file paths using sub-expression operator
+              $zip_path = "$(Join-Path -Path $_.FullName -ChildPath ($artifact_dir_name + '.zip'))"
+              $md5_path = "$(Join-Path -Path $_.FullName -ChildPath ($version_tag + '.md5'))"
+          
+              # Build the full URL using the format operator -f
+              $zip_upload_url = "{0}?name={1}" -f $clean_upload_url, $zip_asset_name
+              $md5_upload_url = "{0}?name={1}" -f $clean_upload_url, ($version_tag + ".md5")
+          
+              # Upload ZIP file
+              echo "Uploading ZIP: $zip_path as $zip_asset_name"
+              curl.exe -X POST `
+                -H "Authorization: token $env:GITHUB_TOKEN" `
+                -H "Content-Type: application/zip" `
+                --data-binary "@$zip_path"  `
+                $zip_upload_url
+          
+              # Upload MD5 file
+              echo "Uploading MD5: $md5_path as $version_tag.md5"
+              $md5_content = Get-Content -Path "$md5_path"
+              curl.exe -X POST `
+                -H "Authorization: token $env:GITHUB_TOKEN" `
+                -H "Content-Type: text/plain" `
+                --data-raw "$md5_content" `
+                $md5_upload_url
+          }
+        shell: pwsh
 
-      - name: Update release asset for 1.16
-        id: upload-release-asset2
-        if: steps.changed-116.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        uses: actions/upload-release-asset@v1
+  update-index:
+    name: Update Version Index (Optional)
+    needs: [pack, initialize-release]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up index branch
+        run: |
+          git fetch origin index
+          git checkout index || git checkout -b index
+
+      - name: Download existing index.json
+        run: |
+          if [ ! -f version-index.json ]; then
+            echo "{}" > version-index.json
+          fi
+
+      - name: Update index.json
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_TAG: ${{ needs.initialize-release.outputs.tag-name }}
+          PACK_OUTPUTS: ${{ toJSON(needs.pack.outputs) }}
+        run: |
+          python3 - <<EOF
+          import json
+          import os
+          
+          index_file = "version-index.json"
+          with open(index_file, "r") as f:
+            index = json.load(f)
+          
+          release_tag = os.environ.get("RELEASE_TAG", "")
+          pack_outputs = json.loads(os.environ.get("PACK_OUTPUTS", "{}"))
+          
+          # 遍历 pack Job 的所有输出
+          for key, version in pack_outputs.items():
+            # 只有当值不为空时，才更新索引
+            if version:
+              index[version] = release_tag
+          
+          with open(index_file, "w") as f:
+            json.dump(index, f, indent=2)
+          EOF
+
+      - name: Commit and Push index.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add version-index.json
+          git commit -m "Update version index for $RELEASE_TAG" || echo "No changes to commit"
+          git push
+
+  upload:
+    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    name: Upload Resource Packs to Remote Server
+    needs: [ pack ] # 显然，需要打包完成，并且存在上传程序，才可以上传给分发服务器
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Minecraft-Mod-Language-Package-1.16.zip
-          asset_name: Minecraft-Mod-Language-Package-1.16.zip
-          asset_content_type: application/zip
+          fetch-depth: 1
+          sparse-checkout: src
 
-        
-      - name: Update release asset for 1.16-fabric
-        id: upload-release-asset3
-        if: steps.changed-116-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Minecraft-Mod-Language-Package-1.16-fabric.zip
-          asset_name: Minecraft-Mod-Language-Package-1.16-fabric.zip
-          asset_content_type: application/zip
-
-      - name: Update release asset for 1.18
-        id: upload-release-asset4
-        if: steps.changed-118.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Minecraft-Mod-Language-Package-1.18.zip
-          asset_name: Minecraft-Mod-Language-Package-1.18.zip
-          asset_content_type: application/zip
-
-      - name: Update release asset for 1.18-fabric
-        id: upload-release-asset5
-        if: steps.changed-118-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Minecraft-Mod-Language-Package-1.18-fabric.zip
-          asset_name: Minecraft-Mod-Language-Package-1.18-fabric.zip
-          asset_content_type: application/zip
-
-      - name: Update release asset for 1.19
-        id: upload-release-asset6
-        if: steps.changed-119.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: Minecraft-Mod-Language-Package-1.19.zip
-          asset_name: Minecraft-Mod-Language-Package-1.19.zip
-          asset_content_type: application/zip
-
-      # - name: Update release asset for 1.18-fabric
-      #   id: upload-release-asset7
-      #   if: steps.changed-119-fabric.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
-      #   uses: actions/upload-release-asset@v1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-      #     asset_path: Minecraft-Mod-Language-Package-1.19-fabric.zip
-      #     asset_name: Minecraft-Mod-Language-Package-1.19-fabric.zip
-      #     asset_content_type: application/zip
-
+      # 构造程序
       - name: Build Uploader
         run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+
+      # 还原artifact（资源包）
+      - name: Restore Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+
+      # feat: UTC 20:00~21:00 取消上传（避开远程服务器的4:00-4:10）
+      - name: Fail at inappropriate time
+        run: if [ `date -u +%H` -eq 20 ]; then exit -1; fi
+        shell: bash
 
       - name: Run Uploader
         run: .\Uploader --host="${{ secrets.SSH_IP }}" --name="${{ secrets.SSH_USER }}" --password="${{ secrets.SSH_PWD }}"

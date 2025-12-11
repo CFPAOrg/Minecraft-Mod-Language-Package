@@ -17,7 +17,7 @@ namespace Uploader
                 .WriteTo.Console()
                 .CreateLogger();
 
-            using var scpClient = new ScpClient(host, port: 20002, name, password);
+            using var scpClient = new ScpClient(host, port: 22, name, password);
             scpClient.Connect(); // 与下载服务器建立连接
             
             // 确认连接状态
@@ -31,10 +31,11 @@ namespace Uploader
                 return -1;
             }
 
+            
             // 获取可用的资源包，准备上传
-            var currentDirectory = new DirectoryInfo(Directory.GetCurrentDirectory());
-            var packList = currentDirectory
-                           .EnumerateFiles("Minecraft-Mod-Language-Package-*.zip");
+            var artifactDirectory = new DirectoryInfo(Path.Join(Directory.GetCurrentDirectory(), "artifacts"));
+            var packList = artifactDirectory
+                           .EnumerateFiles("Minecraft-Mod-Language-Modpack-*.zip", SearchOption.AllDirectories);
             
             Log.Information("检测到的资源包数目：{0}", packList.Count());
 
@@ -51,9 +52,7 @@ namespace Uploader
 
                         var fileExtensionName = _.Extension; // 带点名称，应当为 ".zip"
                         var fileName = _.Name[0..^fileExtensionName.Length]
-                                        .Replace("Package", "Modpack")
-                                        .Replace('.', '-') // 历史遗留问题，版本号需要输杠
-                                        .Replace("-1-12-2",""); // 历史遗留问题，1.12.2文件没有版本号
+                                        .RegulateFileName(); // 无后缀的文件名，应当已修正
 
                         // 选择性地加上该文件的md5值，以便生成patch
                         var tweakedName = fileName + "-" + md5;
@@ -71,8 +70,8 @@ namespace Uploader
                     });
 
             // 临时操作 在使用旧md5校验的程序弃用以后需要删除
-            var md5List = currentDirectory
-                          .EnumerateFiles("*.md5");
+            var md5List = artifactDirectory
+                          .EnumerateFiles("*.md5", SearchOption.AllDirectories);
             md5List.ToList()
                    .ForEach(_ =>
             {
@@ -82,6 +81,22 @@ namespace Uploader
 
             Log.Information("资源包传递完毕");
             return 0;
+        }
+
+        public static string RegulateFileName(this string fileName)
+        {
+            // 历史遗留问题：全部单词都要大小写
+            return CapitalizeGroup(fileName.Replace('.', '-') // 历史遗留问题：版本号需要输杠
+                                          .Replace("-1-12-2", "") // 历史遗留问题：1.12.2文件没有版本号
+                                          .Split('-'));
+
+            // 将一组字符串的各项大小写，用'-'连接
+            string CapitalizeGroup(string[] texts) => string.Join('-', texts.Select(_ => Capitalize(_)));
+
+            // 将一段文本的首字母大写，其余不动
+            string Capitalize(string text) => string.Join("",
+                                                          text[0..1].ToUpper(),
+                                                          text[1..]);
         }
 
         /// <summary>
