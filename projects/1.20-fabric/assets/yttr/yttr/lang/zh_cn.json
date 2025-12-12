@@ -105,6 +105,7 @@
 		"grasper_template": "未完工的抓取器",
 		"inred_multimeter": "万用表",
 		"inred_pcb": "电路板",
+		"semimanifest_idea": "半成型的想法",
 		"snare.filled": "罗网（{}）",
 		"glitchwep.variant": "亚稳{}",
 		"mercurial_potion.prefix": "渗汞{}",
@@ -182,13 +183,10 @@
 		"empty_haemopal.tip": [
 			"§5§k§o为什么"
 		],
-		"glitchwep.tip": [
-			"§5§o你做了什么？"
-		],
 		"magnet_belt.tip": [
 			"§5§o呃，对，大概能用吧。",
 			"§7戴上它，不用穿戴磁性盔甲，",
-			"§7也可以在过冷磁场中飞行。"
+			"§7也依然可以在过冷磁场中飞行。"
 		],
 		"grasper_template.tip": [
 			"§5§o还需要血肉……和思维。"
@@ -270,22 +268,26 @@
 			"sword": [
 				"{key.use}  改变形态",
 				"{key.attack}  近战攻击",
-				"{key.swapOffhand}  投出"
+				"{key.drop}  投出",
+				"{key.swapOffhand}  消散"
 			],
 			"rifle": [
 				"{key.use}  发射",
 				"{key.attack}  改变形态",
-				"{key.swapOffhand}  投出"
+				"{key.drop}  投出",
+				"{key.swapOffhand}  消散"
 			],
 			"rifle.depleted": [
 				"{key.use}  发射……？",
 				"{key.attack}  改变形态以补充弹药",
-				"{key.swapOffhand}  投出"
+				"{key.drop}  投出",
+				"{key.swapOffhand}  消散"
 			],
 			"sword.depleted": [
 				"{key.use}  改变形态",
 				"{key.attack}  近战攻击（击中补充弹药）",
-				"{key.swapOffhand}  投出"
+				"{key.drop}  投出",
+				"{key.swapOffhand}  消散"
 			]
 		}
 	},
@@ -406,6 +408,42 @@
 		"grasper": "抓取器",
 		"studious_grasper": "仿学抓取器",
 		"munched_flower": "被嚼过的花",
+		"upstrate": "顶层岩",
+		"scorched_portal": "焦熔传送门",
+		"pinch_point": "捏合位点",
+		"index": "录物箱",
+		"black_pinch_glom": "黑色捏合集物器",
+		"blue_pinch_glom": "蓝色捏合集物器",
+		"brown_pinch_glom": "棕色捏合集物器",
+		"cyan_pinch_glom": "青色捏合集物器",
+		"gray_pinch_glom": "灰色捏合集物器",
+		"green_pinch_glom": "绿色捏合集物器",
+		"light_blue_pinch_glom": "淡蓝色捏合集物器",
+		"light_gray_pinch_glom": "淡灰色捏合集物器",
+		"lime_pinch_glom": "黄绿色捏合集物器",
+		"magenta_pinch_glom": "品红色捏合集物器",
+		"orange_pinch_glom": "橙色捏合集物器",
+		"pink_pinch_glom": "粉红色捏合集物器",
+		"purple_pinch_glom": "紫色捏合集物器",
+		"red_pinch_glom": "红色捏合集物器",
+		"white_pinch_glom": "白色捏合集物器",
+		"yellow_pinch_glom": "黄色捏合集物器",
+		"black_global_pinch_glom": "黑色全局捏合集物器",
+		"blue_global_pinch_glom": "蓝色全局捏合集物器",
+		"brown_global_pinch_glom": "棕色全局捏合集物器",
+		"cyan_global_pinch_glom": "青色全局捏合集物器",
+		"gray_global_pinch_glom": "灰色全局捏合集物器",
+		"green_global_pinch_glom": "绿色全局捏合集物器",
+		"light_blue_global_pinch_glom": "淡蓝色全局捏合集物器",
+		"light_gray_global_pinch_glom": "淡灰色全局捏合集物器",
+		"lime_global_pinch_glom": "黄绿色全局捏合集物器",
+		"magenta_global_pinch_glom": "品红色全局捏合集物器",
+		"orange_global_pinch_glom": "橙色全局捏合集物器",
+		"pink_global_pinch_glom": "粉红色全局捏合集物器",
+		"purple_global_pinch_glom": "紫色全局捏合集物器",
+		"red_global_pinch_glom": "红色全局捏合集物器",
+		"white_global_pinch_glom": "白色全局捏合集物器",
+		"yellow_global_pinch_glom": "黄色全局捏合集物器",
 		"inred_block": "红信方块",
 		"inred_cable": "铜钢导线",
 		"inred_scaffold": "红信支架",
@@ -704,7 +742,8 @@
 		"glitchshot.item": "{1}因{2}的{3}而退相干了",
 		"glitchboom": "组成{1}的数据被{2}打散了",
 		"glitchboom.item": "组成{1}的数据被{2}用{3}打散了",
-		"soul_centrifuge": "{1}的灵魂被扯成了碎屑"
+		"soul_centrifuge": "{1}的灵魂被扯成了碎屑",
+		"pinch": "{1}被捏进了捏合位点"
 	},
 	"yttr.rifle_mode": {
 		"damage": "射线",
@@ -750,14 +789,22 @@
 		"haemopal.self_own": "它似乎在随着你的心脏搏动。",
 		"beetopal": "用料不够扎实。",
 		"haemopal.owner": "{}的一部分。",
-		"diffractor.cooldown": "§c当前无法衍蔽，仍在重新充能中。"
+		"diffractor.cooldown": "§c当前无法衍蔽，仍在重新充能中。",
+		"index.prototype": "记忆存储{}",
+		"index.prototype.hint": "点击以清除"
 	},
-	"yttr.diffractor.controlhint": {
-		"normal": [
+	"controlhint.emptyhand.yttr": {
+		"diffractor_normal": [
 			"{key.swapOffhand}（潜行） 衍蔽"
 		],
-		"cloaked": [
+		"diffractor_cloaked": [
 			"{key.swapOffhand}（潜行） 解除衍蔽"
+		],
+		"glitchwep": [
+			"{key.swapOffhand}  令武器显形"
+		],
+		"glitchwep_alt": [
+			"{key.swapOffhand}  使用"
 		]
 	},
 	"commands.yttr": {
@@ -820,7 +867,12 @@
 		"blocks_voided": "[Yttr] 方块虚空销毁个数",
 		"blocks_cleaved": "[Yttr] 方块切削个数",
 		"blocks_shifted": "[Yttr] 方块替换个数",
-		"bloques_welded": "[Yttr] 方块牌®建筑砖熔接个数"
+		"bloques_welded": "[Yttr] 方块牌®建筑砖熔接个数",
+		"blocks_projected": "[Yttr] 平台投影个数",
+		"game_events_suppressed": "[Yttr] 潜行发动次数",
+		"distance_levitated": "[Yttr] 飘浮移动距离",
+		"mercury_consumed": "[Yttr] 重金属中毒次数",
+		"plastic_consumed": "[Yttr] 塑料塑造次数"
 	},
 	"gamerule": {
 		"yttr": "§e§lYttr",
@@ -1032,6 +1084,138 @@
 		"weld_bloque": {
 			"title": "保修丢虚空了",
 			"desc": "用虚空桶熔接一堆方块牌®塑料建筑砖，完全就是赤裸裸的滥用"
+		},
+		"obtain_haemopal": {
+			"title": "你的一部分",
+			"desc": "打碎一块古代的图腾，获得血欧泊"
+		},
+		"obtain_spark": {
+			"title": "剥脱于你",
+			"desc": "从血欧泊中分离出火花"
+		},
+		"obtain_beetopal": {
+			"title": "给灵魂熬的汤",
+			"desc": "使用还过得去的替代物填补你灵魂的空缺处"
+		},
+		"obtain_semimanifest_idea": {
+			"title": "现实之间",
+			"desc": "使用它。使用它。使用它。使用它。使用它。使用它。"
+		},
+		"manifest_glitchwep": {
+			"title": "永恒的伙伴",
+			"desc": "我一直在。让我发光发热吧。"
+		},
+		"fail_to_manifest_glitchwep": {
+			"title": "不太存在",
+			"desc": "需要物质"
+		},
+		"obtain_dry_ice": {
+			"title": "律外狂徒",
+			"desc": "打破热力学第二定律"
+		},
+		"touch_core_lava": {
+			"title": "经典的犯蠢行为",
+			"desc": "发现下界底部的事物"
+		},
+		"obtain_grasper": {
+			"title": "紧紧握住",
+			"desc": "制造一只离体的手，让它为你收集物品"
+		},
+		"obtain_studious_grasper": {
+			"title": "值得思忖",
+			"desc": "将抓取器升级为仿学抓取器"
+		},
+		"obtain_clamber_block": {
+			"title": "强大而神秘",
+			"desc": "构建一个攀爬架。§o提示：潜行时在上面起跳"
+		},
+		"obtain_screeper_nest": {
+			"title": "树木粉碎机",
+			"desc": "用蜂巢喂食蠹虫和苦力怕的杂交后代"
+		},
+		"obtain_transfungus": {
+			"title": "反位移",
+			"desc": "真菌……末影螨，用来放方块，好耶"
+		},
+		"obtain_delicace": {
+			"title": "带泡鸡蛋",
+			"desc": "获得深海泵水树的琼浆玉露"
+		},
+		"obtain_centrifuge": {
+			"title": "快速的计划中解体",
+			"desc": "构建一个离心机；它是将事物分离成各组分的首选方法"
+		},
+		"obtain_iron_dust": {
+			"title": "有点像铁",
+			"desc": "用离心机分离出硅铍钇矿，它什么东西都能产出一点"
+		},
+		"obtain_neodymium_disc": {
+			"title": "所以这不是铁",
+			"desc": "不过至少能被磁铁吸住"
+		},
+		"obtain_ultrapure_diamond": {
+			"title": "漫漫长路",
+			"desc": "欢迎回来，IC2"
+		},
+		"obtain_diffractor": {
+			"title": "眨眼之间",
+			"desc": "构建一个光/声转移力场生成器"
+		},
+		"avoid_vibration_with_diffractor": {
+			"title": "放纵",
+			"desc": "仿佛了无牵挂一般在幽匿感测体旁疾跑"
+		},
+		"obtain_ultrapure_diamond_hoe": {
+			"title": "难以置信的奉献",
+			"desc": "很好，但为什么"
+		},
+		"obtain_platforms": {
+			"title": "全新运动装备",
+			"desc": "最有型的飞行方式"
+		},
+		"grow_antlers": {
+			"title": "突出物",
+			"desc": "喝下塑料，然后就能长出一对鹿角？"
+		},
+		"remove_antlers": {
+			"title": "奇怪的人类感",
+			"desc": "头顶光光，人生灿烂"
+		},
+		"obtain_spatula": {
+			"title": "太大了",
+			"desc": "马来战斗锅铲"
+		},
+		"project_many_blocks_in_one_cast": {
+			"title": "马里奥绘画",
+			"desc": "在极短的时间内创造出极多方块"
+		},
+		"project_over_dangerous_spectrum_fluid": {
+			"title": "有害收容",
+			"desc": "使用投影器安全收容一种危险的魔法流体"
+		},
+		"void_fire": {
+			"title": "攻火需用……呃",
+			"desc": "只要没有树，就不会有森林火灾了"
+		},
+		"void_a_lot": {
+			"title": "反正本来也不要这座山",
+			"desc": "从现实中移除超过100000个方块"
+		},
+		"weak_snare": {
+			"title": "这个监狱？装得下……我？",
+			"desc": "丢下并远离"
+		},
+		"obtain_index": {
+			"title": "新版9×9",
+			"desc": "将可调储物筒转化成录物箱"
+		},
+		"obtain_pinch_point": {
+			"title": "万物汇聚，无物逃散",
+			"desc": "组装一个捏合位点"
+		},
+		"obtain_pinch_glom": {
+			"title": "完美和谐",
+			"desc": "将漏斗转化成捏合集物器"
 		}
 	},
 	"tag": {
@@ -1063,12 +1247,17 @@
 				"substituted_netherite": "下界合金",
 				"substituted_quartz": "石英",
 				"substituted_redstone": "红石",
-				"substituted_yttrium": "钇"
+				"substituted_yttrium": "钇",
+				"pinch_gloms": "捏合集物器",
+				"global_pinch_gloms": "全局捏合集物器"
 			},
 			"trinkets": {
 				"feet.sole": "鞋底饰品",
 				"chest.back": "背部饰品",
 				"legs.belt": "腰带饰品"
+			},
+			"curios": {
+				"sole": "鞋底饰品"
 			},
 			"c": {
 				"cheese": "奶酪",
@@ -1096,6 +1285,9 @@
 		"forgotten_crafting": "被忘却的合成",
 		"lamp_crafting": "杂项灯具合成",
 		"shattering": "打碎",
+		"pinching": "捏合",
+		"sketches": "图示",
+		"filling": "填充",
 		"void_filtering.chance": "概率：{}%",
 		"void_filtering.chance.short": "{}%",
 		"soaking.consumes_catalyst": "消耗流体",
@@ -1106,7 +1298,7 @@
 		"dry_ice": [
 			"在末地放置蓝冰，不允许有任何固体方块触碰"
 		],
-		"glitchwep": [
+		"semimanifest_idea": [
 			"将火花、基岩加固步枪、强化虚空切割刀丢到地上，再全部炸飞"
 		]
 	},
@@ -1119,7 +1311,9 @@
 		"supercooled_neodymium.tip": [
 			"§7在钕方块旁放置干冰。",
 			"§7纵向放置两个此类方块，可让穿戴磁性盔甲的玩家在其间飞行。"
-		]
+		],
+		"heart": "红心",
+		"beetheart": "红心……？"
 	},
 	"alias.emi.yttr": {
 		"aka": "又称{}",
@@ -1175,21 +1369,34 @@
 		"trash_can": "垃圾桶",
 		"vacuum": "真空吸尘器",
 		"blackhole": "黑洞",
-		"ender": "末影"
+		"ender": "末影",
+		"zzazz": "ZZAZZ"
 	},
 	"emi.category.lib39-machination.piston_smashing.cloud_output_hint": "对生成的云雾使用玻璃瓶",
 	"emi.tooltip.yttr.any_tool": "任意工具",
+	"emi.tooltip.yttr.source": "（流体源）",
+	"emi.tooltip.yttr.flowing": "（流动的流体，与流体源相邻）",
+	"emi.tooltip.yttr.flowing_low": "（流动的流体）",
 	"tooltip.yttr.suit_helmet_hud": "HUD颜色：{}",
 	"trinkets.slot.feet.sole": "鞋底",
+	"curios.identifier.sole": "鞋底",
 	"msg.yttr": {
 		"wireframe.enabled": "线框渲染已启用",
 		"wireframe.disabled": "线框渲染已禁用",
 		"wireframe.illegal": "线框渲染只可在创造模式或观察者模式启用",
-		"well_wishes": "祝你今天过得愉快！"
+		"well_wishes": "祝你今天过得愉快！",
+		"glom_error.already_glommed": "无法在此放置集物器：已受其他集物器管理",
+		"glom_error.not_inventory": "无法在此放置集物器：{}不是容器",
+		"glom_error.inventory_not_empty": "无法在此放置集物器：容器必须为空",
+		"glom_error.not_glommable": "无法在此放置集物器：{}无“接受集物器”标签",
+		"glom_error.double_chest": "无法在此放置集物器：大箱子不接受集物器",
+		"glom_error.c2me": "无法在此放置集物器：已安装C²ME",
+		"glom_error.break": "§l破坏它会清空所有相连的容器。§e潜行以确认破坏，或者可以先破坏集物器以断开连接。"
 	},
 	"yttr.modmenu": {
 		"matrix": "Matrix",
 		"soundtrack": "原声带",
 		"donate": "捐赠"
-	}
+	},
+	"modmenu.summaryTranslation.yttr": "过往的事物，于今日复新。"
 }

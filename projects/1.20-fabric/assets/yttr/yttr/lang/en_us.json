@@ -105,6 +105,7 @@
 		"grasper_template": "Incomplete Grasper",
 		"inred_multimeter": "Multimeter",
 		"inred_pcb": "Circuit Board",
+		"semimanifest_idea": "Semimanifest Idea",
 		"snare.filled": "Snare ({})",
 		"glitchwep.variant": "Metastable {}",
 		"mercurial_potion.prefix": "Mercurial {}",
@@ -181,9 +182,6 @@
 		],
 		"empty_haemopal.tip": [
 			"§5§k§ohow could you"
-		],
-		"glitchwep.tip": [
-			"§5§oWhat did you do?"
 		],
 		"magnet_belt.tip": [
 			"§5§oUh, yeah. I guess that works.",
@@ -270,22 +268,26 @@
 			"sword": [
 				"{key.use}  Change Form",
 				"{key.attack}  Melee",
-				"{key.swapOffhand}  Throw"
+				"{key.drop}  Throw",
+				"{key.swapOffhand}  Dispel"
 			],
 			"rifle": [
 				"{key.use}  Fire",
 				"{key.attack}  Change Form",
-				"{key.swapOffhand}  Throw"
+				"{key.drop}  Throw",
+				"{key.swapOffhand}  Dispel"
 			],
 			"rifle.depleted": [
 				"{key.use}  Fire...?",
 				"{key.attack}  Change Form to Replenish Ammo",
-				"{key.swapOffhand}  Throw"
+				"{key.drop}  Throw",
+				"{key.swapOffhand}  Dispel"
 			],
 			"sword.depleted": [
 				"{key.use}  Change Form",
 				"{key.attack}  Melee (Hits Replenish Ammo)",
-				"{key.swapOffhand}  Throw"
+				"{key.drop}  Throw",
+				"{key.swapOffhand}  Dispel"
 			]
 		}
 	},
@@ -406,6 +408,42 @@
 		"grasper": "Grasper",
 		"studious_grasper": "Studious Grasper",
 		"munched_flower": "Munched Flower",
+		"upstrate": "Upstrate",
+		"scorched_portal": "Scorched Portal",
+		"pinch_point": "Pinch Point",
+		"index": "Index",
+		"black_pinch_glom": "Black Pinch Glom",
+		"blue_pinch_glom": "Blue Pinch Glom",
+		"brown_pinch_glom": "Brown Pinch Glom",
+		"cyan_pinch_glom": "Cyan Pinch Glom",
+		"gray_pinch_glom": "Gray Pinch Glom",
+		"green_pinch_glom": "Green Pinch Glom",
+		"light_blue_pinch_glom": "Light Blue Pinch Glom",
+		"light_gray_pinch_glom": "Light Gray Pinch Glom",
+		"lime_pinch_glom": "Lime Pinch Glom",
+		"magenta_pinch_glom": "Magenta Pinch Glom",
+		"orange_pinch_glom": "Orange Pinch Glom",
+		"pink_pinch_glom": "Pink Pinch Glom",
+		"purple_pinch_glom": "Purple Pinch Glom",
+		"red_pinch_glom": "Red Pinch Glom",
+		"white_pinch_glom": "White Pinch Glom",
+		"yellow_pinch_glom": "Yellow Pinch Glom",
+		"black_global_pinch_glom": "Global Black Pinch Glom",
+		"blue_global_pinch_glom": "Global Blue Pinch Glom",
+		"brown_global_pinch_glom": "Global Brown Pinch Glom",
+		"cyan_global_pinch_glom": "Global Cyan Pinch Glom",
+		"gray_global_pinch_glom": "Global Gray Pinch Glom",
+		"green_global_pinch_glom": "Global Green Pinch Glom",
+		"light_blue_global_pinch_glom": "Global Light Blue Pinch Glom",
+		"light_gray_global_pinch_glom": "Global Light Gray Pinch Glom",
+		"lime_global_pinch_glom": "Global Lime Pinch Glom",
+		"magenta_global_pinch_glom": "Global Magenta Pinch Glom",
+		"orange_global_pinch_glom": "Global Orange Pinch Glom",
+		"pink_global_pinch_glom": "Global Pink Pinch Glom",
+		"purple_global_pinch_glom": "Global Purple Pinch Glom",
+		"red_global_pinch_glom": "Global Red Pinch Glom",
+		"white_global_pinch_glom": "Global White Pinch Glom",
+		"yellow_global_pinch_glom": "Global Yellow Pinch Glom",
 		"inred_block": "InfraRedstone Block",
 		"inred_cable": "Cuprosteel Wire",
 		"inred_scaffold": "InfraRedstone Scaffold",
@@ -704,7 +742,8 @@
 		"glitchshot.item": "{1} was made decoherent by {2} using {3}",
 		"glitchboom": "{1} was reduced to nybbles by {2}",
 		"glitchboom.item": "{1} was reduced to nybbles by {2} using {3}",
-		"soul_centrifuge": "{1} had their soul torn to ribbons"
+		"soul_centrifuge": "{1} had their soul torn to ribbons",
+		"pinch": "{1} got caught in a pinch point"
 	},
 	"yttr.rifle_mode": {
 		"damage": "Beam",
@@ -750,14 +789,22 @@
 		"haemopal.self_own": "It seems to beat with you.",
 		"beetopal": "Not very hearty.",
 		"haemopal.owner": "A piece of {}.",
-		"diffractor.cooldown": "§cCan't cloak, still recharging."
+		"diffractor.cooldown": "§cCan't cloak, still recharging.",
+		"index.prototype": "Remembers {}",
+		"index.prototype.hint": "Click to clear"
 	},
-	"yttr.diffractor.controlhint": {
-		"normal": [
+	"controlhint.emptyhand.yttr": {
+		"diffractor_normal": [
 			"{key.swapOffhand} (Sneak)  Cloak"
 		],
-		"cloaked": [
+		"diffractor_cloaked": [
 			"{key.swapOffhand} (Sneak)  Uncloak"
+		],
+		"glitchwep": [
+			"{key.swapOffhand}  Manifest Weapon"
+		],
+		"glitchwep_alt": [
+			"{key.swapOffhand}  Use It"
 		]
 	},
 	"commands.yttr": {
@@ -820,7 +867,12 @@
 		"blocks_voided": "[Yttr] Blocks Voided",
 		"blocks_cleaved": "[Yttr] Blocks Cleaved",
 		"blocks_shifted": "[Yttr] Blocks Shifted",
-		"bloques_welded": "[Yttr] Bloques® Welded"
+		"bloques_welded": "[Yttr] Bloques® Welded",
+		"blocks_projected": "[Yttr] Platforms Projected",
+		"game_events_suppressed": "[Yttr] Sneakiness",
+		"distance_levitated": "[Yttr] Distance Levitated",
+		"mercury_consumed": "[Yttr] Heavy Metal Poisoning",
+		"plastic_consumed": "[Yttr] Plasticity"
 	},
 	"gamerule": {
 		"yttr": "§e§lYttr",
@@ -1032,6 +1084,138 @@
 		"weld_bloque": {
 			"title": "Warranty Void",
 			"desc": "Use a bucket of Void to weld a collection of Bloque® Plastic Construction Building Bricks, a blatant abuse of the product"
+		},
+		"obtain_haemopal": {
+			"title": "Part of You",
+			"desc": "Smash an ancient totem and acquire a Haemopal"
+		},
+		"obtain_spark": {
+			"title": "Apart from You",
+			"desc": "Separate the Spark from a Haemopal"
+		},
+		"obtain_beetopal": {
+			"title": "Soup for the Soul",
+			"desc": "Refill the hollowed out part of your soul with an acceptable substitute"
+		},
+		"obtain_semimanifest_idea": {
+			"title": "Between Realities",
+			"desc": "Use it. Use it. Use it. Use it. Use it. Use it."
+		},
+		"manifest_glitchwep": {
+			"title": "Constant Companion",
+			"desc": "Always here. Just let me shine through."
+		},
+		"fail_to_manifest_glitchwep": {
+			"title": "Not Quite There",
+			"desc": "Matter required"
+		},
+		"obtain_dry_ice": {
+			"title": "Outlaw",
+			"desc": "Violate the second law of thermodynamics"
+		},
+		"touch_core_lava": {
+			"title": "Classic Blunder",
+			"desc": "Discover what's at the bottom of the Nether"
+		},
+		"obtain_grasper": {
+			"title": "Firmly Grasp It",
+			"desc": "Create a disembodied hand to collect items for you"
+		},
+		"obtain_studious_grasper": {
+			"title": "Worth Considering",
+			"desc": "Upgrade a Grasper into a Studious Grasper"
+		},
+		"obtain_clamber_block": {
+			"title": "Ineffable and Abstruse",
+			"desc": "Construct a Clamber Block. §oHint: Jump on it while sneaking"
+		},
+		"obtain_screeper_nest": {
+			"title": "Tree Cruncher",
+			"desc": "Use a Bee Nest to feed Silverfish-Creeper hybrids"
+		},
+		"obtain_transfungus": {
+			"title": "Undisplacement",
+			"desc": "Fungal... endermites. To place blocks. Yeah"
+		},
+		"obtain_delicace": {
+			"title": "To Decear For",
+			"desc": "Obtain the delicaceness of deep-sea squeeze trees"
+		},
+		"obtain_centrifuge": {
+			"title": "Rapid Scheduled Disassembly",
+			"desc": "Construct a Centrifuge, the premiere way to separate things into their components"
+		},
+		"obtain_iron_dust": {
+			"title": "It's Kinda Iron",
+			"desc": "Separate Gadolinite using a Centrifuge, giving you a bit of everything"
+		},
+		"obtain_neodymium_disc": {
+			"title": "So Not Iron",
+			"desc": "It'd stick to it, at least"
+		},
+		"obtain_ultrapure_diamond": {
+			"title": "The Long Way Round",
+			"desc": "Welcome back IC2"
+		},
+		"obtain_diffractor": {
+			"title": "In A Blink",
+			"desc": "Construct a light/sound displacement field generator"
+		},
+		"avoid_vibration_with_diffractor": {
+			"title": "Reckless Abandon",
+			"desc": "Sprint next to a Sculk Sensor without a care in the world"
+		},
+		"obtain_ultrapure_diamond_hoe": {
+			"title": "Unbelievable Dedication",
+			"desc": "Okay but why"
+		},
+		"obtain_platforms": {
+			"title": "New Kicks",
+			"desc": "The most stylish way to fly"
+		},
+		"grow_antlers": {
+			"title": "Extrusion",
+			"desc": "Drink plastic to grow a set of antlers?"
+		},
+		"remove_antlers": {
+			"title": "Strangely Human Feeling",
+			"desc": "A bare head is a fair head"
+		},
+		"obtain_spatula": {
+			"title": "Too Big",
+			"desc": "It's a Malaysian Battle Spatula"
+		},
+		"project_many_blocks_in_one_cast": {
+			"title": "Mario Paint",
+			"desc": "Create entirely too many blocks in entirely too short a time"
+		},
+		"project_over_dangerous_spectrum_fluid": {
+			"title": "Hazardous Containment",
+			"desc": "Safely enclose a dangerous magic fluid using the Projector"
+		},
+		"void_fire": {
+			"title": "Fighting Fire With... Uh",
+			"desc": "Trees can't burn down if there are no trees"
+		},
+		"void_a_lot": {
+			"title": "Didn't Need That Mountain Anyway",
+			"desc": "Remove over 100,000 blocks from this reality"
+		},
+		"weak_snare": {
+			"title": "THIS PRISON? TO HOLD... ME?",
+			"desc": "Drop & Run"
+		},
+		"obtain_index": {
+			"title": "A New Kind of 9×9",
+			"desc": "Distort an SSD into the Index"
+		},
+		"obtain_pinch_point": {
+			"title": "Everything Here, Nothing Anywhere",
+			"desc": "Assemble a Pinch Point"
+		},
+		"obtain_pinch_glom": {
+			"title": "In Perfect Harmony",
+			"desc": "Distort a Hopper into a Pinch Glom"
 		}
 	},
 	"tag": {
@@ -1063,12 +1247,17 @@
 				"substituted_netherite": "Netherite",
 				"substituted_quartz": "Quartz",
 				"substituted_redstone": "Redstone",
-				"substituted_yttrium": "Yttrium"
+				"substituted_yttrium": "Yttrium",
+				"pinch_gloms": "Pinch Glom",
+				"global_pinch_gloms": "Global Pinch Glom"
 			},
 			"trinkets": {
 				"feet.sole": "Sole Trinkets",
 				"chest.back": "Back Trinkets",
 				"legs.belt": "Belt Trinkets"
+			},
+			"curios": {
+				"sole": "Sole Curios"
 			},
 			"c": {
 				"cheese": "Cheeses",
@@ -1096,6 +1285,9 @@
 		"forgotten_crafting": "Forgotten Crafting",
 		"lamp_crafting": "Misc. Lamp Crafting",
 		"shattering": "Shattering",
+		"pinching": "Pinching",
+		"sketches": "Sketches",
+		"filling": "Filling",
 		"void_filtering.chance": "Chance: {}%",
 		"void_filtering.chance.short": "{}%",
 		"soaking.consumes_catalyst": "Consumes fluid",
@@ -1106,7 +1298,7 @@
 		"dry_ice": [
 			"Leave Blue Ice in The End with no solid blocks touching it"
 		],
-		"glitchwep": [
+		"semimanifest_idea": [
 			"Throw a Spark, Bedrock-Reinforced Rifle, and Reinforced Void Cleaver on the floor, then blow it up"
 		]
 	},
@@ -1119,7 +1311,9 @@
 		"supercooled_neodymium.tip": [
 			"§7Place Dry Ice next to Neodymium.",
 			"§7Placing two in the same column allows players with magnetic armor to fly between them."
-		]
+		],
+		"heart": "Heart",
+		"beetheart": "Heart ...?"
 	},
 	"alias.emi.yttr": {
 		"aka": "aka {}",
@@ -1175,21 +1369,34 @@
 		"trash_can": "Trash Can",
 		"vacuum": "Vacuum",
 		"blackhole": "Black Hole",
-		"ender": "Ender"
+		"ender": "Ender",
+		"zzazz": "ZZAZZ"
 	},
 	"emi.category.lib39-machination.piston_smashing.cloud_output_hint": "Use a Glass Bottle on the resulting cloud",
 	"emi.tooltip.yttr.any_tool": "Any Tool",
+	"emi.tooltip.yttr.source": "(Source Block)",
+	"emi.tooltip.yttr.flowing": "(Flowing, Adjacent to Source)",
+	"emi.tooltip.yttr.flowing_low": "(Flowing)",
 	"tooltip.yttr.suit_helmet_hud": "HUD Color: {}",
 	"trinkets.slot.feet.sole": "Sole",
+	"curios.identifier.sole": "Sole",
 	"msg.yttr": {
 		"wireframe.enabled": "Wireframe rendering enabled",
 		"wireframe.disabled": "Wireframe rendering disabled",
 		"wireframe.illegal": "Wireframe can only be enabled in Creative or Spectator",
-		"well_wishes": "Have a nice day!"
+		"well_wishes": "Have a nice day!",
+		"glom_error.already_glommed": "Can't put a Glom here: Already under the effect of another Glom",
+		"glom_error.not_inventory": "Can't put a Glom here: {} is not an inventory",
+		"glom_error.inventory_not_empty": "Can't put a Glom here: The inventory must be empty",
+		"glom_error.not_glommable": "Can't put a Glom here: {} is not tagged as glommable",
+		"glom_error.double_chest": "Can't put a Glom here: Double chests may not be glommed",
+		"glom_error.c2me": "Can't put a Glom here: C²ME is installed",
+		"glom_error.break": "§lBreaking this will empty every linked inventory. §eSneak to confirm you want this, or break the glom first to unlink it."
 	},
 	"yttr.modmenu": {
 		"matrix": "Matrix",
 		"soundtrack": "Soundtrack",
 		"donate": "Donate"
-	}
+	},
+	"modmenu.summaryTranslation.yttr": "What has gone before, where you'll go from here."
 }
