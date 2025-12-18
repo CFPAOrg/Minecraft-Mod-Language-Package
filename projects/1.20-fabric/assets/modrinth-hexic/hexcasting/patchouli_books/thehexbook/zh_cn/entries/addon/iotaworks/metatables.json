@@ -6,11 +6,11 @@
   "pages": [
     "我找到了制造新种类 iota 的方法——由我对自然行径的憎恶催生。这个图案会在 iota 外部编织一层$(media)媒质/$“鞘”，以让我自定义新 iota 的多个属性。虽然这么做会让我的咒术更昂贵，但也不应轻视这种力量——我无法想象，其他人靠这些“修补”iota 能干出什么恶事。",
     "构造修补 iota 时，必须提供 4 个来源 iota：$(br)$(li)自定义数据（userdata），真正传递给重载$(hex)咒术/$的 iota。$(li)所谓“展示”iota，我视角下 iota 的样子。$(li)Iota 的颜色，形式为 RGB 向量，分量值域为 0 到 1。$(li)指向$(thing)重载映射/$的指针。",
-    "此处提到的“重载映射”只是一个普通的$(l:addon/hexic/maps)$(thing)映射/$ iota（图案至$(hex)咒术/$的映射，后者替代前者执行），但需整体存储在$(l:properties)$(thing)质性/$内。我推测自然进行封装是为了省空间，因为我可能会在多个修补 iota 中用到同一个重载映射。这同时也方便我更新所有实例——用一条$(l:properties#hexcellular:set_property)$(action)薛定谔之策略/$就可以了，不需要逐一找出更新。",
+    "此处提到的“重载映射”只是一个普通的$(l:addon/phlib/maps)$(thing)映射/$ iota（图案至$(hex)咒术/$的映射，后者替代前者执行），但需整体存储在$(l:properties)$(thing)质性/$内。我推测自然进行封装是为了省空间，因为我可能会在多个修补 iota 中用到同一个重载映射。这同时也方便我更新所有实例——用一条$(l:properties#hexcellular:set_property)$(action)薛定谔之策略/$就可以了，不需要逐一找出更新。",
     {
       "type": "hexcasting:pattern",
-      "anchor": "hexic:metatable",
-      "op_id": "hexic:metatable",
+      "anchor": "iotaworks:metatable",
+      "op_id": "iotaworks:metatable",
       "input": "iota, iota, vec, property",
       "output": "patchwork",
       "text": "$(br)使用自定义数据（userdata，内部存储的 iota）、展示 iota（实际看见的 iota）、颜色、重载映射创建一个修补 iota。"
@@ -28,7 +28,7 @@
     {
       "type": "patchouli:text",
       "flag": "mod:hexdoc",
-      "text": "这些$(thing)重载映射/$和我之前见过的一种技巧很像：在基础层面上重新定义图案。那些月之邪教徒（没位置解释）用到的$(l:https://www.lua.org/pil/13.html)元表/$——关联两张表来重新定义运算符——也跟它很类似。每当唤起我这边的“元方法”时，即会将自定义数据压栈。修补 iota 的其他信息则都遗失了；如果要返回同种 iota，就需要从头再构建一遍。也许可以用个“构造”宏？"
+      "text": "这些$(thing)重载映射/$和我之前听过的一种技巧很像：在基础层面上重新定义图案。那些月之邪教徒（没位置解释）用到的$(l:https://www.lua.org/pil/13.html)元表/$——关联两张表来重新定义运算符——也跟它很类似。每当唤起我这边的“元方法”时，即会将自定义数据压栈。修补 iota 的其他信息则都遗失了；如果要返回同种 iota，就需要从头再构建一遍。也许可以用个“构造”宏？"
     },
     {
       "type": "patchouli:text",
