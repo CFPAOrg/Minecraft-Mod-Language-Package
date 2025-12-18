@@ -6,11 +6,11 @@
   "pages": [
     "I've discovered a way to create a new type of iota — an abhorrence against Nature of my own doing. This pattern weaves a 'sheath' of _media out of some iota, letting me customize several attributes of the new iota. Though this can make my spells more expressive, this ability is not to be taken lightly — I cannot imagine the mischief others would do with these 'patchwork' iotas.",
     "To assemble a patchwork iota, I must provide four source iotas:$(br)$(li)The 'userdata' iota, passed to my overload _Hexes.$(li)The 'display' iota, visible to my eyes.$(li)A color for the iota, as an RGB vector in the 0-1 range.$(li)A pointer to an $(thing)overload map./$",
-    "Such an 'overload map' is merely a regular $(l:addon/hexic/maps)$(thing)Map/$ iota (mapping patterns to the _Hexes they should be replaced with), but stored within a $(l:properties)$(thing)Property/$. I assume that Nature's reason for boxing like this is to save space: it's likely I'll have many patched iotas all using the same overloads. This also gives me the convenience of updating every instance with merely $(l:properties#hexcellular:set_property)$(action)Schrödinger's Gambit/$, rather than finding and updating them all by hand.",
+    "Such an 'overload map' is merely a regular $(l:addon/phlib/maps)$(thing)Map/$ iota (mapping patterns to the _Hexes they should be replaced with), but stored within a $(l:properties)$(thing)Property/$. I assume that Nature's reason for boxing like this is to save space: it's likely I'll have many patched iotas all using the same overloads. This also gives me the convenience of updating every instance with merely $(l:properties#hexcellular:set_property)$(action)Schrödinger's Gambit/$, rather than finding and updating them all by hand.",
     {
       "type": "hexcasting:pattern",
-      "anchor": "hexic:metatable",
-      "op_id": "hexic:metatable",
+      "anchor": "iotaworks:metatable",
+      "op_id": "iotaworks:metatable",
       "input": "iota, iota, vec, property",
       "output": "patchwork",
       "text": "$(br)Constructs a Patchwork iota from the userdata (iota stored inside), display iota (visible to my eyes), color, and an overload map."
@@ -28,7 +28,7 @@
     {
       "type": "patchouli:text",
       "flag": "mod:hexdoc",
-      "text": "These $(thing)overload maps/$ resemble a technique I've seen before — the concept of redefining patterns on a fundamental level resembles the moon cultists' (little time to explain) $(l:https://www.lua.org/pil/13.html)metatables/$, which allow associating a table with another table to redefine its operations. When my 'metamethods' are invoked, the userdata iota is pushed to the top of the stack. All other information about the patchwork disintegrates: I'll need to recreate it from scratch (maybe I should use a 'constructor' macro?) if I want to return a new iota of the same type."
+      "text": "These $(thing)overload maps/$ resemble a technique I've heard of before — the concept of redefining patterns on a fundamental level resembles the moon cultists' (little time to explain) $(l:https://www.lua.org/pil/13.html)metatables/$, which allow associating a table with another table to redefine its operations. When my 'metamethods' are invoked, the userdata iota is pushed to the top of the stack. All other information about the patchwork disintegrates: I'll need to recreate it from scratch (maybe I should use a 'constructor' macro?) if I want to return a new iota of the same type."
     },
     {
       "type": "patchouli:text",
