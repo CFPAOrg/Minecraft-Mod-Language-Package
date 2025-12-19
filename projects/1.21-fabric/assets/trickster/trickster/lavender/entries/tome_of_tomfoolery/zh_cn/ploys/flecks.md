@@ -44,13 +44,25 @@
 
 <|trick@trickster:templates|trick-id=trickster:draw_spell|>
 
-在所给位置以所给朝向显示所给法术，缩放参数可选。
+在所给位置以所给朝向显示所给法术。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:draw_line|>
 
 在所给位置间绘制线段。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:scale_fleck|>
+
+缩放已存在的视形。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:roll_fleck|>
+
+绕视形的朝向旋转视形。只对使用[营销员之技巧](^trickster:ploys/flecks#2)绘制的视形有效。
 
 ;;;;;
 
