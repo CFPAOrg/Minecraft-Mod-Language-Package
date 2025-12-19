@@ -47,13 +47,26 @@ All flecks can also take an optional list of players, or a sole player, for whic
 
 <|trick@trickster:templates|trick-id=trickster:draw_spell|>
 
-At the given position, with the given facing, display a spell, optionally scaled.
+At the given position, with the given facing, display a spell.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:draw_line|>
 
 Draws a line between the given positions.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:scale_fleck|>
+
+Scales an existing fleck.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:roll_fleck|>
+
+Changes the rotation of the fleck about its facing direction.
+Only has an effect on flecks drawn with [Marketer's Ploy](^trickster:ploys/flecks#2).
 
 ;;;;;
 
