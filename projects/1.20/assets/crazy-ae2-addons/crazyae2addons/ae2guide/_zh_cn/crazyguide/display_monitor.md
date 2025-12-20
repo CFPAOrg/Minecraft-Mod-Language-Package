@@ -44,9 +44,9 @@ item_ids:
 2. 右击打开显示菜单。
 3. 在文本框内输入显示信息。示例：
 
-系统在线
-\* &i^minecraft:iron_ingot库存：&s^minecraft:iron_ingot
-\*  &i^minecraft:iron_ingot/s：&d^minecraft:iron_ingot%1s@1m
+系统在线  
+\* &i^minecraft:iron_ingot库存：&s^minecraft:iron_ingot  
+\*  &i^minecraft:iron_ingot/s：&d^minecraft:iron_ingot%1s@1m  
 
 4. 应用/保存。监视器会在有能量供应时显示文本。
 

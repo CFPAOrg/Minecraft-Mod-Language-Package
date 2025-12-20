@@ -13,7 +13,7 @@ item_ids:
 
 <BlockImage id="crazyae2addons:ejector" scale="4"></BlockImage>
 
-弹出器是一类自动化方块，可向其前方的方块输出物品、流体或其他资源，仅需使用红石脉冲触发。
+弹出器是一种自动化方块，可向其前方的方块输出物品、流体或其他资源，仅需使用红石脉冲触发。
 
 ## [视频教程](https://youtu.be/gdV7Ga7g2Pk&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
 
