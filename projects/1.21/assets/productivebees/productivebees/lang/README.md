@@ -4,7 +4,7 @@
 
 内容基本来自粗扫源码，肯定有缺漏和错误
 
-最后更新时间：2025.10.13 21:00 (UTC+8)
+最后更新时间：2025.12.22 1:50 (UTC+8)
 
 | 蜂种                                                                         | 产物                                                                                  | 注释                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -181,7 +181,7 @@
 | 粉红黏液蜜蜂<br/>Pink Slimy Bee<br/>`pink_slimy_bee`                         | 粉红黏液                                                                              | 归在Industrial Foregoing分类下                                             |
 | 塑料蜜蜂<br/>Plastic Bee<br/>`plastic_bee`                                   | 塑料<br/>乳胶，流体                                                                   |
 | 铂蜜蜂<br/>Platinum Bee<br/>`platinum_bee`                                   | 粗铂<br/>铂粉                                                                         |
-| 海晶蜜蜂<br/>Prismarine Bee<br/>`prismarine_bee`                             | 海晶碎片<br/>海晶沙砾<br/>鹦鹉螺壳                                                    |
+| 海晶蜜蜂<br/>Prismarine Bee<br/>`prismarine_bee`                             | 海晶碎片<br/>海晶砂粒<br/>鹦鹉螺壳                                                    |
 | 活化蜜蜂<br/>ProsperiBee<br/>`prosperity_bee`                                | 活化水晶碎片（Mystical Agriculture）                                                  |
 | 初级精华蜜蜂<br/>Prudentium Bee<br/>`prudentium_bee`                         | 初级精华（Mystical Agriculture）                                                      |
 | 脉冲合金蜜蜂<br/>Pulsating Alloy Bee<br/>`pulsating_alloy_bee`               | 脉冲合金（Ender IO）                                                                  |
