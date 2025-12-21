@@ -1,11 +1,22 @@
 {
   hexxyplanes: {
     book: {
+      interop: {
+        oneironaut: {
+          "": "航梦",
+          patterns: {
+            spells: {
+              exit_deconstruct: "返回我咒法位面的出口维度和坐标。"
+            }
+          }
+        }
+      },
       patterns: {
         spells: {
-          "hexplane": {
+          hexplane: {
             "": "咒法位面",
             get_plane: "返回代表我咒法位面的 iota。",
+            exit_reveal: "向我展示我咒法位面的出口。",
             enter_plane: {
               "1": "将目标送入所给咒法位面。若目标未在咒法位面内部，消耗 2 个\
               充能紫水晶；否则消耗 5 个紫水晶粉。",
@@ -26,9 +37,10 @@
 
             },
             plane_exit: {
-              "1": "将目标位置设为我咒法位面的退出点。此后，对自己使用\
-              $(l:patterns/spells/hexplane#hexxyplanes:plane_banish)$(action)位面之驱逐/$\
-              时会被传送至该处。",
+              "1": "将目标位置设为我咒法位面的退出点，传入 Null 则将出口设为我的出生点。\
+              此后，对自己使用$(l:patterns/spells/hexplane#hexxyplanes:plane_banish)$(action)位面之驱逐/$\
+              时即会被传送至该处。",
+
               "2": "对非玩家实体使用$(l:patterns/spells/hexplane#hexxyplanes:plane_banish)\
               $(action)位面之驱逐/$时也会将它们送至该处。不在位面内施放会招致事故。"
             
@@ -73,7 +85,9 @@
         enter_plane: "位面之侵入",
         plane_pos: "位面之纯化",
         plane_banish: "位面之驱逐",
-        plane_exit: "位面之标记"
+        plane_exit: "位面之标记",
+        exit_reveal: "揭示标记",
+        exit_deconstruct: "标记者之策略"
       },
 
       // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
@@ -86,7 +100,8 @@
       invalid_value: {
         class: {
           plane: "一个咒法位面"
-        }
+        },
+        vecnull: "一个向量或Null"
       }
     }
   },
