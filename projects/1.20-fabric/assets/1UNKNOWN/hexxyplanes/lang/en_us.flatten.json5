@@ -1,11 +1,22 @@
 {
   hexxyplanes: {
     book: {
+      interop: {
+        oneironaut: {
+          "": "Oneironaut",
+          patterns: {
+            spells: {
+              exit_deconstruct: "Puts the dimension and the coordinates of my hexplane exit onto the stack."
+            }
+          }
+        }
+      },
       patterns: {
         spells: {
-          "hexplane": {
+          hexplane: {
             "": "Hexplanes",
             get_plane: "Retrieves an iota representing my hexplane.",
+            exit_reveal: "Displays my hexplane exit to me.",
             enter_plane: {
               "1": "Sends the target to the provided hexplane. Costs 2 \
               charged amethyst if the target is not already in a hexplane, \
@@ -27,6 +38,7 @@
             },
             plane_exit: {
               "1": "Marks the target location as my exit for the hexplane, \
+              or resets it to be my spawn location if passed null, \
               causing me to be sent there upon using $(l:patterns/spells/hexplane\
               #hexxyplanes:plane_banish)$(action)Planar Expulsion/$ on myself.",
               "2": "Non-player entities will be sent here when using \
@@ -73,7 +85,9 @@
         enter_plane: "Planar Intrusion",
         plane_pos: "Planar Purification",
         plane_banish: "Planar Expulsion",
-        plane_exit: "Planar Marking"
+        plane_exit: "Planar Marking",
+        exit_reveal: "Reveal Mark",
+        exit_deconstruct: "Marker's Gambit"
       },
 
       // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
@@ -86,7 +100,8 @@
       invalid_value: {
         class: {
           plane: "a Hexplane"
-        }
+        },
+        vecnull: "a vector or null"
       }
     }
   },
