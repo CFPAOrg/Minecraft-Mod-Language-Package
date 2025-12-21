@@ -1,9 +1,12 @@
 ---
 id: mining_tools
+lookup: neepmeat:drill_chassis, neepmeat:iron_rotary_drill_head, neepmeat:meat_steel_rotary_drill_head, neepmeat:diamond_rotary_drill)head, neepmeat:rock_drill_head
 ---
 # 挖掘工具
 
 NEEPMeat的工具与矿石处理系统与原版Minecraft有所不同。两者的主要区别在于，前者的矿石处理流水线直接使用矿石方块，而非粗矿。
+
+使用配备旋转式钻头的钻具底盘挖掘铁矿石、金矿石等矿石会掉落矿石方块。
 
 ## 钻具底盘
 

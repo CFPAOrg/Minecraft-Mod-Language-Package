@@ -7,6 +7,8 @@ lookup: neepmeat:distributor_point
 
 The Distributor Receiver summons Distributor Organisms to transport items and fluids to other receivers on the same channel. Transport can occur to unloaded chunks and across dimensions.
 
+It is part of the living machine system.
+
 # Usage
 
 Only one Distributor Receiver can be part of a machine. The receiver can be configured to send resources, receive them, or both. Send mode requires an item input to be part of the machine, and receive mode requires an item output.
