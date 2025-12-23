@@ -2,22 +2,21 @@
 id: ball_mill
 lookup: neepmeat:ball_mill
 ---
+# 球磨机
 
-# Ball Mill
+球磨机可在其旋转式滚筒中借助肉钢球将物品粉碎为细密的粉末。
 
-The Ball Mill uses a rotating drum filled with meat steel balls to pulverize items into a fine dust.
+球磨机是活体机器系统的一部分。
 
-It is part of the living machine system.
+# 使用方法
 
-# Usage
+同一活体机器中最多可存在4个球磨机滚筒工作段，且必须将其中央方块连接至机器主体。
 
-Up to four Ball Mill drum sections can be part of a machine. When They must be connected to the machine's structure via the central block.
+向机器供能后所有滚筒段会一起旋转。
 
-All drum sections will spin together when the machine is powered.
+## 矿石处理
 
-## Ore Processing
-
-Processing crushed ores with the Ball Mill increases the average yield by 20%. Ore dusts can be smelted or processed further by dissolving them in Eldritch Enzymes.
+使用球磨机处理粉碎矿石可令平均产量增加20%。矿石粉可烧炼，也可将其溶解于怪异酶液以进一步处理。
 
 \image[width=227,height=128,scale=0.5]{neepmeat:guide/images/ball_mill.png}
-Above: A ball mill being powered by a Large Motor. A NEEPBus slider is being used to control the speed via the VSC.
+上图：由大型发动机驱动的球磨机。使用NEEP总线滑动拉杆和脉管能源转换器控制速度。
