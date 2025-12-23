@@ -5,7 +5,7 @@ death.attack.Vacuum=%1$s因为失压而死
 death.attack.Vacuum.player=%1$s因为失压而死
 death.attack.OxygenToxicity=%1$s因氧气中毒而死
 death.attack.OxygenToxicity.player=%1$s因氧气中毒而死
-death.attack.LowOxygen=%1$s 因缺氧而死
+death.attack.LowOxygen=%1$s因缺氧而死
 death.attack.LowOxygen.player=%1$s因缺氧而死
 death.attack.Heat=%1$s因过热而死
 death.attack.Heat.player=%1$s因过热而死
@@ -32,6 +32,7 @@ tile.Crystallizer.name=结晶器
 tile.blastBrick.name=隔热砖
 tile.blastFurnaceController.name=隔热高炉控制器
 tile.fuelStation.name=加油站
+tile.databusbig.name=高级数据总线
 tile.loader.0.name=数据总线
 tile.loader.1.name=卫星仓
 tile.loader.2.name=火箭卸载器
@@ -40,7 +41,7 @@ tile.loader.4.name=火箭流体卸载器
 tile.loader.5.name=火箭流体装载器
 tile.loader.6.name=导航计算机访问仓
 tile.observatory.name=瞭望台
-tile.satelliteBuilder.name=卫星建造机
+tile.satelliteBuilder.name=卫星组装机
 tile.rocket.name=单组元推进剂火箭发动机
 tile.bipropellantrocket.name=双组元推进剂火箭发动机
 tile.nuclearrocket.name=核热火箭发动机
@@ -65,7 +66,7 @@ tile.hotDryturf.name=氧化铁沙
 tile.concrete.name=混凝土
 tile.lathe.name=车床
 tile.rollingMachine.name=卷板机
-tile.planetSelector.name=行星选择器
+tile.planetSelector.name=星球选择器
 tile.blockHandPress.name=小型压板器
 tile.placeHolder.name=机器
 tile.stationAssembler.name=空间站组装机
@@ -118,7 +119,7 @@ tile.altitudeController.name=海拔控制器
 tile.railgun.name=轨道炮
 tile.advRocket.name=高级单组元推进剂火箭发动机
 tile.advbipropellantRocket.name=高级双组元推进剂火箭发动机
-tile.planetHoloSelector.name=全息行星选择器
+tile.planetHoloSelector.name=全息星球选择器
 tile.lens.name=透镜
 tile.forceField.name=力场
 tile.forceFieldProjector.name=力场投射器
@@ -139,6 +140,7 @@ tile.landingfloat.name=着陆浮筒
 tile.solararray.name=太阳能阵列控制器
 tile.solararraypanel.name=阵列太阳能板
 tile.serviceStation.name=服务站
+tile.orbitalRegistry.name=轨道注册站
 
 item.lens.0.name=基础透镜
 item.wafer.0.name=硅晶圆
@@ -160,11 +162,11 @@ item.satellitePrimaryFunction.0.name=光学传感器
 item.satellitePrimaryFunction.1.name=成分传感器
 item.satellitePrimaryFunction.2.name=质量检测器
 item.satellitePrimaryFunction.3.name=微波传输器
-item.satellitePrimaryFunction.4.name=矿物映射器
+item.satellitePrimaryFunction.4.name=矿物测绘器
 item.satellitePrimaryFunction.5.name=生物群系变换器
 item.satellitePrimaryFunction.6.name=天气控制器
 item.satelliteIdChip.name=卫星ID芯片
-item.planetIdChip.name=行星ID芯片
+item.planetIdChip.name=星球ID芯片
 item.asteroidChip.name=小行星芯片
 item.miscpart.0.name=用户界面
 item.miscpart.1.name=碳砖
@@ -192,6 +194,13 @@ item.basicLaserGun.name=基础激光枪
 item.beaconFinder.name=信标定位器
 item.thermite.name=铝热剂
 item.hovercraft.name=气垫船
+item.satellite.opticaltelescope=光学望远镜
+item.satellite.composition=成分扫描器
+item.satellite.massscanner=质量扫描器
+item.satellite.solar=太阳能
+item.satellite.oremapper=矿物测绘器
+item.satellite.biomechanger=生物群系变换器
+item.satellite.weather=天气卫星
 
 
 item.jetPack.name=飞行背包
@@ -210,13 +219,16 @@ material.TitaniumIridium.name=钛铱合金
 
 enchantment.spaceBreathing=气密密封
 
-data.undefined.name=一些随机数据
+data.undefined.name=未定义
 data.distance.name=距离
 data.humidity.name=湿度
 data.temperature.name=温度
 data.composition.name=成分
 data.atmospheredensity.name=大气密度
 data.mass.name=质量
+data.label.type=类型：
+data.label.data=数据
+
 
 fluid.oxygen=氧气
 fluid.hydrogen=氢气
@@ -229,11 +241,14 @@ mission.gascollection.name=气体采集
 
 error.rocket.notEnoughMissionFuel=燃料不足！
 error.rocket.tooHeavy=火箭过重，无法发射（推力不足）。
-error.rocket.cannotGetThere=无法从当前位置抵达所选目的地。
+error.rocket.cannotGetThere=无法抵达所选目的地。（你在尝试登陆气态巨行星？）
 error.rocket.destinationNotExist=所选空间站不存在。
-error.rocket.notSameSystem=星际航行需要核动力火箭和有效的路径。
 error.rocket.partsWornOut=关键部件损坏，发射中止。
 error.rocket.aborted=发射中止。
+error.rocket.gatedArtifactMissing=缺失工件。（玩家物品栏中）
+error.rocket.gatedArtifactMissingWithItem=缺失所需工件：%sx %s（玩家物品栏中）
+error.rocket.outsideStarSystem=星际航行需要星际飞船。
+error.rocket.outsidePlanetarySystem=行星航行需要核动力火箭。
 
 advancement.holographic=全息
 advancement.holographic.desc=合成一个全息投影器
@@ -245,7 +260,7 @@ advancement.electrifying=电激！
 advancement.electrifying.desc=合成一个电解器
 advancement.spinDoctor=舆论导向专家
 advancement.spinDoctor.desc=合成一个机床
-advancement.rollin=Rollin'
+advancement.rollin=卷起来！
 advancement.rollin.desc=合成一个卷板机
 advancement.crystalline=结晶
 advancement.crystalline.desc=合成一个结晶器
@@ -265,7 +280,7 @@ advancement.flightOfThePhoenix=凤凰劫
 advancement.flightOfThePhoenix.desc=建造并起飞第一艘具备跃迁能力的飞船
 advancement.beerOnTheSun=太阳上的成人饮料
 advancement.beerOnTheSun.desc=你需要更多的TNT才能进入轨道
-advancement.suitedUp=穿上制服
+advancement.suitedUp=穿戴整齐
 advancement.suitedUp.desc=穿好全套太空服
 
 
@@ -291,13 +306,31 @@ msg.observetory.text.composition=成分
 msg.observetory.text.processdiscovery=扫描进度
 msg.observetory.text.observabledistance=可观测距离：
 msg.observetory.text.missionTime=任务时间：
+msg.observetory.text.time=时间：
 msg.observetory.req.open=瞭望台必须满足开放条件（夜晚、天气晴朗、可观测天空）或位于空间站中！
-msg.observetory.print.already=此小行星已存在对应芯片！
+msg.observetory.print.already=你已为此小行星写入了一个芯片！
+
+# Atmosphere detector GUI labels
+msg.atmosphere.air=正常空气
+msg.atmosphere.pressurizedair=加压空气
+msg.atmosphere.lowo2=低氧
+msg.atmosphere.vacuum=真空
+msg.atmosphere.highpressure=高压
+msg.atmosphere.superhighpressure=超高压
+msg.atmosphere.veryhot=高温
+msg.atmosphere.superheated=过热
+msg.atmosphere.noo2=无氧
+msg.atmosphere.highpressurenoo2=高压无氧
+msg.atmosphere.superhighpressurenoo2=超高压无氧
+msg.atmosphere.veryhotnoo2=高温无氧
+msg.atmosphere.superheatednooxygen=过热无氧
+
+
 msg.tooltip.data=数据
 msg.tooltip.asteroidselection=小行星选择
 msg.label.name=名称
 msg.label.clear=清除
-msg.label.add=添加新行星
+msg.label.add=新增
 msg.label.rename=重命名
 msg.label.delete=删除
 msg.label.noneSelected=未选择目的地
@@ -311,8 +344,8 @@ msg.spaceElevator.tetherWouldBreakError=空间站必须保持垂直静止状态�
 msg.spaceElevator.linkCannotChangeError=电梯系绳在已链接状态下不可变更位置！
 msg.spaceElevator.newDstAdded=电梯系绳已链接！
 msg.spaceElevator.ascentReady=准备开始上升
-msg.spaceElevator.warning.anchored0=当前电梯系绳已
-msg.spaceElevator.warning.anchored1=成功锚定空间站！
+msg.spaceElevator.warning.anchored0=当前电梯系绳
+msg.spaceElevator.warning.anchored1=已成功锚定空间站！
 msg.spaceElevator.warning.unanchored=当前电梯尚未连接系绳
 msg.spaceElevator.turnedOff=电梯已关闭
 msg.fuelingStation.link=已将加油站写入链接器，位置：
@@ -331,12 +364,11 @@ msg.monitoringStation.mission.plannedAmountPrefix=数量：
 msg.monitoringStation.mission.plannedAmountPending=数量：（待定）
 msg.monitoringStation.mission.asteroidType=小行星类型：（显示在芯片/任务上）
 msg.monitoringStation.link=已将监控站写入链接器，位置：
-msg.monitoringStation.progress=ETA:
-msg.monitoringStation.progress=进度：
+msg.monitoringStation.progress=剩余时间：
 msg.monitoringStation.prelaunch=启动中……
 msg.monitoringStation.launching=发射中！
 msg.monitoringStation.orbit=已进入轨道！
-msg.monitoringStation.deorbiting=已返回轨道！
+msg.monitoringStation.deorbiting=已从轨道返回！
 msg.monitoringStation.landed=已着陆
 msg.monitoringStation.aborted=已中止！
 msg.monitoringStation.returningToDock=返回停靠点
@@ -345,23 +377,30 @@ msg.monitoringStation.noLinkedRocket=未链接任何火箭！
 msg.guidanceComputerHatch.loadingState=装载状态：
 msg.guidanceComputerHatch.ejectonlanding=着陆时自动弹出
 msg.guidanceComputerHatch.ejectonsatlanding=允许弹出卫星芯片
-msg.guidanceComputerHatch.ejectonplanetlanding=允许弹出行星芯片
+msg.guidanceComputerHatch.ejectonplanetlanding=允许弹出星球芯片
 msg.guidanceComputerHatch.ejectonstationlanding=允许弹出空间站芯片
 msg.guidanceComputerHatch.link=已将流体装载器写入链接器，位置：
 msg.fluidLoader.loadingState=装载状态：
 msg.fluidLoader.allowLoading=允许装载：
-msg.fluidLoader.allowredstoneinput=允许红石输入
-msg.fluidLoader.allowredstoneoutput=允许红石输出
-msg.fluidLoader.none=无
+msg.fluidLoader.allowredstoneinput=红石输入（红色）
+msg.fluidLoader.allowredstoneoutput=红石输出（蓝色）
+msg.fluidLoader.none=已禁用（绿色）
 msg.fluidLoader.link=已将流体装载器写入链接器，位置：
 msg.rocketLoader.loadingState=装载状态：
 msg.rocketLoader.allowLoading=允许装载：
-msg.rocketLoader.allowredstoneinput=允许红石输入
-msg.rocketLoader.allowredstoneoutput=允许红石输出
-msg.rocketLoader.none=无
+msg.rocketLoader.none=已禁用（绿色）
+msg.rocketLoader.allowredstoneoutput=红石输出（蓝色）
+msg.rocketLoader.allowredstoneinput=红石输入（红色）
 msg.rocketLoader.link=已将火箭装载器写入链接器，位置：
-msg.microwaverec.notgenerating=产能 0 FE/t
+advancedrocketry.sideselector.direction.bottom=底部
+advancedrocketry.sideselector.direction.top=顶部
+advancedrocketry.sideselector.direction.north=北部
+advancedrocketry.sideselector.direction.south=南部
+advancedrocketry.sideselector.direction.west=西部
+advancedrocketry.sideselector.direction.east=东部
+msg.microwaverec.notgenerating=产能 0 RF/t
 msg.microwaverec.generating=产能
+msg.abdp.research=研究
 msg.abdp.compositionresearch=成分研究
 msg.abdp.distanceresearch=距离研究
 msg.abdp.massresearch=质量研究
@@ -373,24 +412,41 @@ msg.terraformer.outofgas=已中止：气体耗尽
 msg.terraformer.notrunning=未运行
 msg.terraformer.status=状态
 msg.terraformer.pressure=气压
-msg.biomescanner.gas=呀哈哈哈，是气体，不是么？
+msg.terraformingterminal.terraforming=正在改造星球……
+msg.terraformingterminal.powergen=能量产出：
+msg.terraformingterminal.blockspertick=每刻处理方块：
+msg.terraformingterminal.needredstone.line1=提供红石信号
+msg.terraformingterminal.needredstone.line2=启动改造流程
+msg.terraformingterminal.insertchip.line1=在此处放入生物群系
+msg.terraformingterminal.insertchip.line2=变换器遥控终端来让
+msg.terraformingterminal.insertchip.line3=卫星改造整颗星球
+msg.biomescanner.gas=哈，是气体环境，对吧？
 msg.biomescanner.star=要是我的传感器有遮阳板就好了
 msg.gravitycontroller.radius=半径：
 msg.gravitycontroller.targetgrav=目标重力：
-msg.gravitycontroller.none=复位
-msg.gravitycontroller.activeset=激活：设置
-msg.gravitycontroller.activeadd=激活：添加
+msg.gravitycontroller.none=无作用力
+msg.gravitycontroller.activeadd=添加作用力（合并各方向）
+msg.gravitycontroller.activeset=添加作用力（合并各方向）+升力
 msg.gravitycontroller.targetdir.1=目标->
 msg.gravitycontroller.targetdir.2=方向
 msg.railgun.transfermin=最小传输尺寸
 msg.spacelaser.reset=重置
+msg.spacelaser.notarget1=未找到目标！
+msg.spacelaser.notarget2=降落并勘察该区域！
+msg.spacelaser.voidmining.line1=正在开采
+msg.spacelaser.voidmining.line2=下方星球的内部物质
+msg.spacelaser.voidcobble=销毁圆石
+msg.spacelaser.voidcobble.on=销毁圆石：开
+msg.spacelaser.voidcobble.off=销毁圆石：关
 msg.satctrlcenter.toofar=距离过远
 msg.satctrlcenter.nolink=无链接……
 msg.satctrlcenter.info=信息：
 msg.satctrlcenter.destroysat=摧毁卫星
 msg.satctrlcenter.connect=下载
+msg.satctrlcenter.data=数据：
+msg.satctrlcenter.power=能量产出：
 msg.satctrlcenter.autodl_hint=无线收发器自动下载（提取）
-msg.satbuilder.writesecondchip=写入副芯片
+msg.satbuilder.writesecondchip=写入第二芯片
 msg.dockingport.target=目标ID
 msg.dockingport.me=本端ID
 msg.planetholo.size=全息图尺寸:
@@ -402,12 +458,13 @@ msg.stationgravctrl.tgtalt=目标重力：
 msg.stationgravctrl.alt=人造重力：
 msg.stationorientctrl.alt=角速度：
 msg.stationorientctrl.tgtalt=目标角速度：
+msg.station.anchored=§c已锚定！
 msg.warpmon.tab.warp=跃迁选择
 msg.warpmon.tab.data=数据
-msg.warpmon.tab.tracking=行星追踪
-msg.warpmon.selectplanet=选择行星
+msg.warpmon.tab.tracking=星球追踪
+msg.warpmon.selectplanet=选择星球
 msg.warpmon.corestatus=核心状态:
-msg.warpmon.anchored=空间站已锚定！
+msg.warpmon.anchored=已锚定！
 msg.warpmon.nowhere=无可用目的地
 msg.warpmon.missingart=缺少工件
 msg.warpmon.ready=就绪！
@@ -416,8 +473,9 @@ msg.warpmon.warp=跃迁！
 msg.warpmon.fuelcost=燃料消耗：
 msg.warpmon.fuel=燃料：
 msg.warpmon.dest=目的地：
+msg.warpmon.orbit=轨道环绕：
 msg.warpmon.na=N/A
-msg.warpmon.search=搜索行星
+msg.warpmon.search=搜索星球
 msg.warpmon.chip=从芯片载入程序
 msg.warpmon.datareq=需各类数据各100
 msg.warpmon.artifact=工件
@@ -446,7 +504,7 @@ msg.rocketbuilder.scan=扫描
 msg.rocketbuild.combinedthrust=燃料类型不能混合使用！
 msg.rocketbuilder.alreadyassembled=火箭已组装完成
 msg.rocketbuilder.nointake=缺少气体收集器！
-msg.rocketbuilder.notank=Missing Fluidtank!
+msg.rocketbuilder.notank=缺少流体储罐！
 msg.solar.collectingEnergy=收集能量:
 msg.solar.cannotcollectEnergy=无法收集能量
 msg.asteroidChip.asteroid=小行星
@@ -461,10 +519,11 @@ msg.itemorescanner.nosat=卫星尚未发射
 msg.itemorescanner.maxzoom=最大缩放：
 msg.itemorescanner.filter=可过滤矿石：
 msg.itemorescanner.value=值：
-msg.itemplanetidchip.planetname=行星名称：
+msg.itemplanetidchip.planetname=星球名称：
 msg.itemplanetidchip.stationid=空间站ID：
 msg.itemplanetidchip.artifacts=工件：
 msg.vent.trace=氧气追踪
+
 msg.serviceStation.destroyProbNA=破坏概率：N/A
 msg.serviceStation.destroyProb=破坏概率
 msg.serviceStation.serviceProgress=服务进度
@@ -483,6 +542,7 @@ msg.itemsatellite.microwavestatus=收集能量
 msg.itemsatellite.data=数据存储：
 msg.itemsatellite.nodata=无数据存储！
 msg.itemsatellite.empty=空框架
+msg.itemsatellite.datagen=数据产出：%s/s
 msg.itemsatellite.weight=框架重量：
 msg.itemsatellite.noweight=重量计算错误
 msg.itemsatellite.unassembled=未组装（预览）
@@ -491,8 +551,8 @@ msg.itemsatellite.unassembled=未组装（预览）
 msg.brokenstage.text=摧毁阶段
 
 msg.itemsatchip.id=ID：
-msg.itemsatchip.planet=行星：
-msg.itemsatchip.planetunk=行星: 未知
+msg.itemsatchip.planet=星球：
+msg.itemsatchip.planetunk=星球: 未知
 msg.itemsatchip.sat=卫星：
 msg.itemsatchip.satlost=卫星：失去联系
 msg.sealdetector.sealed=应该能保持良好密封。
@@ -515,11 +575,25 @@ msg.entity.rocket.seldst=选择目的地
 msg.entity.rocket.clear=清除
 msg.entity.rocket.rcs=RCS模式
 msg.entity.rocket.none=未选择
+msg.entity.rocket.openGuiHint=按%s键打开火箭GUI
 msg.wirelessTransciever.extract=提取
 msg.wirelessTransciever.insert=插入
-msg.wirelessTransciever.type=类型：
+msg.wirelessTransciever.type=类型：%s
 msg.wirelessTransciever.network=网络：
 msg.wirelessTransciever.network.unlinked=未链接
+
+msg.advancedrocketry.planetselector.up=<< 上一级
+msg.advancedrocketry.planetselector.select=选择
+msg.advancedrocketry.planetselector.planet.list=星球列表
+msg.advancedrocketry.planetselector.atm.tooltip=%b -> %a个地球大气压
+msg.advancedrocketry.planetselector.mass.tooltip=%b -> %a个地球质量
+msg.advancedrocketry.planetselector.distance.tooltip=%b -> %a相对距离单位
+msg.advancedrocketry.planetselector.star.tooltip.name=名称：%s
+msg.advancedrocketry.planetselector.star.tooltip.number.of.planets=行星数量：%d
+msg.advancedrocketry.planetselector.planet.tooltip.name=%s
+msg.advancedrocketry.planetselector.planet.tooltip.moons.count=天然卫星：%d
+
+
 
 msg.powerunit.rfpertick=RF/t
 msg.linker.error.firstMachine=这台机器必须第一个被链接！
@@ -545,11 +619,75 @@ msg.chat.nostation1=你在空间站醒来，隐约觉得上次那场深空漫步
 msg.chat.nostation2=也许你应该在再次越过明确合理且绝对的界限之前先思考一下，而不是在事情出错后自认为是个好主意且不是你的错
 msg.chat.nostation3=你必须在空间站上才能进入此维度，但目前尚未建造任何空间站！
 
-commands.weather.always_not_clear=这颗行星从未晴朗过……
+# Orbital Registry
+msg.orbitalregistry.tab.satellites=卫星：
+msg.orbitalregistry.tab.stations=空间站：
+msg.orbitalregistry.text.details=详细信息：
+msg.orbitalregistry.text.satellites=卫星
+msg.orbitalregistry.text.stations=空间站
+msg.orbitalregistry.text.nosel=选择一个对象
+msg.orbitalregistry.text.notfound=未找到
+msg.orbitalregistry.text.sat.datagen=数据产出：
+msg.orbitalregistry.scan.tooltip=更新此列表
+msg.orbitalregistry.writechip.ok=点击编程芯片！
+msg.orbitalregistry.writechip.no=无法为此对象编程
+msg.orbitalregistry.writechip=编程芯片
+
+
+# List entry
+msg.orbitalregistry.text.listentry=ID
+
+# StationDetails
+msg.orbitalregistry.text.type.starshiplist=§6星际飞船
+msg.orbitalregistry.text.type.starship=星际飞船
+msg.orbitalregistry.text.type.station=空间站
+msg.orbitalregistry.text.id=ID：
+msg.orbitalregistry.text.type=类型：
+msg.orbitalregistry.text.dimid=维度：
+msg.orbitalregistry.text.dimid.none=无
+msg.orbitalregistry.text.orbit=轨道环绕：
+msg.orbitalregistry.text.orbit.unlaunched=未入轨！
+msg.orbitalregistry.text.freepads=空闲着陆台：
+msg.orbitalregistry.text.anchored=已锚定：
+msg.orbitalregistry.text.anchored.yes=是
+msg.orbitalregistry.text.anchored.no=否
+msg.orbitalregistry.text.system=星系：
+msg.orbitalregistry.text.system.none=无
+msg.orbitalregistry.text.system.unknown=未知
+
+# SatelliteDetails power fields
+msg.orbitalregistry.text.sat.pwrgen=能量产出：
+msg.orbitalregistry.text.sat.pwrstore=能量存储：
+msg.orbitalregistry.text.sat.maxdata=最大数据量：
+
+# Orbital Registry – satellite type names
+msg.orbitalregistry.sat.name.optical=望远镜
+msg.orbitalregistry.sat.name.density=密度
+msg.orbitalregistry.sat.name.composition=成分
+msg.orbitalregistry.sat.name.mass=质量
+msg.orbitalregistry.sat.name.solarEnergy=太阳能
+msg.orbitalregistry.sat.name.oreScanner=矿物扫描仪
+msg.orbitalregistry.sat.name.biomeChanger=生物群系变换器
+msg.orbitalregistry.sat.name.weatherController=天气
+
+msg.orbitalregistry.writechip.hint.insert=放入芯片进行写入
+msg.orbitalregistry.writechip.hint.select=从列表中选择一个条目
+msg.orbitalregistry.writechip.hint.output=需先清空输出槽位
+msg.orbitalregistry.writechip.hint.sat.or.stationchip=放入空间站芯片
+msg.orbitalregistry.writechip.hint.sat.or.idchip=放入卫星ID芯片或控制器
+msg.orbitalregistry.writechip.hint.sat.badcontroller=该卫星不接受此芯片，请使用对应的控制器！
+msg.orbitalregistry.writechip.hint.sat.orescanner.only=矿石扫描仪仅能链接至矿石勘探卫星
+msg.orbitalregistry.writechip.hint.station.unlaunched=该空间站尚未进入轨道
+
+
+
+commands.weather.always_not_clear=这颗星球从未晴朗过……
 commands.weather.cannot_rain=此处无法降雨
 commands.weather.cannot_thunder=此处无法降下雷暴
 
 # Jeistuff
+jei.machinerecipe.power=能量：
+jei.machinerecipe.time=时间：
 jei.sb.satellitepreview=已做好入轨准备！
 jei.sb.copy.source=来源
 jei.sb.copy.output=新副本
@@ -583,42 +721,45 @@ tooltip.advancedrocketry.oxidizerfueltank.alt.1=§f双组元推进剂火箭需�
 
 # Nuclear Fuel Tank
 tooltip.advancedrocketry.nuclearfueltank=§c火箭的组成部分
+tooltip.advancedrocketry.nuclearfueltank.1=§6可进行行星航行！
 tooltip.advancedrocketry.nuclearfueltank.shift.1=§f可容纳：§b%s
 tooltip.advancedrocketry.nuclearfueltank.alt.1=§f需要§b核热堆芯§f和§b核热发动机
 
 # Monopropellant Engine
 tooltip.advancedrocketry.monopropmotor=§c火箭的组成部分
-tooltip.advancedrocketry.monopropmotor.shift.1=使用§b单组元推进剂燃料§7
+tooltip.advancedrocketry.monopropmotor.shift.1=§f使用§b单组元推进剂燃料
 tooltip.advancedrocketry.monopropmotor.alt.1=查看加油站的JEI页面
 
 # Nuclear Core
 tooltip.advancedrocketry.nuclearcore=§c火箭的组成部分
+tooltip.advancedrocketry.nuclearcore.1=§6可进行行星航行！
 tooltip.advancedrocketry.nuclearcore.shift.1=必须直接放置在核热发动机
 tooltip.advancedrocketry.nuclearcore.shift.2=或其他核热堆芯正上方。
 tooltip.advancedrocketry.nuclearcore.alt.1=垂直放置规则不适用于
 tooltip.advancedrocketry.nuclearcore.alt.2=无人载具（气体任务火箭）
 
 # Nuclear rocketengine
-tooltip.advancedrocketry.nuclearmotor=§c火箭的组成部分 §6可进行星际航行！
-tooltip.advancedrocketry.nuclearmotor.shift.1=使用§b工质§7
+tooltip.advancedrocketry.nuclearmotor=§c火箭的组成部分
+tooltip.advancedrocketry.nuclearmotor.1=§6可进行行星航行！
+tooltip.advancedrocketry.nuclearmotor.shift.1=§f使用§b工质
 tooltip.advancedrocketry.nuclearmotor.shift.2=正上方需存在核热堆芯。
 tooltip.advancedrocketry.nuclearmotor.alt.1=查看加油站的JEI页面
 
 # Bipropellant Engine
 tooltip.advancedrocketry.bipropmotor=§c火箭的组成部分
-tooltip.advancedrocketry.bipropmotor.shift.1=使用§b双组元推进剂燃料§7和§b氧化剂§7
+tooltip.advancedrocketry.bipropmotor.shift.1=§f使用§b双组元推进剂燃料§7和§b氧化剂
 tooltip.advancedrocketry.bipropmotor.alt.1=查看加油站的JEI页面
 
 # Drill
 tooltip.advancedrocketry.drill=§c火箭的组成部分
-tooltip.advancedrocketry.drill.shift.1=缩短§6采矿任务§7的所需时间
+tooltip.advancedrocketry.drill.shift.1=缩短§6采矿任务§f的所需时间
 tooltip.advancedrocketry.drill.shift.2=§b效果可叠加
 tooltip.advancedrocketry.drill.alt.1=此火箭需通过火箭组装机搭建
 tooltip.advancedrocketry.drill.alt.2=需要一个已编程的小行星芯片
 
 # Gas Intake
 tooltip.advancedrocketry.intake=§c火箭的组成部分
-tooltip.advancedrocketry.intake.shift.1=缩短§6气体任务§7的所需时间
+tooltip.advancedrocketry.intake.shift.1=缩短§6气体任务§f的所需时间
 tooltip.advancedrocketry.intake.shift.2=§b效果可叠加
 tooltip.advancedrocketry.intake.alt.1=此火箭需通过无人载具组装机搭建
 tooltip.advancedrocketry.intake.alt.2=从绕气态巨行星运行的空间站发射
@@ -631,7 +772,7 @@ tooltip.advancedrocketry.seat.shift.1=为火箭增加一个乘客位
 tooltip.advancedrocketry.guidancecomputer=§c火箭的组成部分
 tooltip.advancedrocketry.guidancecomputer.shift.1=放入§c芯片§7或已编程的§c链接器§7
 tooltip.advancedrocketry.guidancecomputer.alt.1=部署卫星或空间站至轨道时
-tooltip.advancedrocketry.guidancecomputer.alt.2=记得设定火箭的目标行星
+tooltip.advancedrocketry.guidancecomputer.alt.2=记得设定火箭的目标星球
 
 # Service Monitor
 tooltip.advancedrocketry.servicemonitor=§c火箭的组成部分
@@ -663,9 +804,9 @@ tooltip.advancedrocketry.structuretower.alt.1=无人载具组装机的主要方�
 tooltip.advancedrocketry.structuretower.alt.2=查看维基了解更多信息。
 
 # Terraformer
-tooltip.advancedrocketry.terraformer=改变整颗行星的地形环境！
+tooltip.advancedrocketry.terraformer=改变整颗星球的地形环境！
 tooltip.advancedrocketry.terraformer.shift.1=§f需与§c生物群系变换器卫星§f搭配使用
-tooltip.advancedrocketry.terraformer.shift.2=§f卫星必须环绕对应行星运行
+tooltip.advancedrocketry.terraformer.shift.2=§f卫星必须环绕对应星球运行
 tooltip.advancedrocketry.terraformer.alt.1=§f放入§c生物群系变换器遥控终端
 tooltip.advancedrocketry.terraformer.alt.2=§f由卫星提供能源
 
@@ -673,13 +814,13 @@ tooltip.advancedrocketry.terraformer.alt.2=§f由卫星提供能源
 tooltip.advancedrocketry.monitoringstation=§c基础设备
 tooltip.advancedrocketry.monitoringstation.shift.1=通过红石信号发射！
 tooltip.advancedrocketry.monitoringstation.shift.2=§f需连接至§4火箭组装机/停靠台§f或§4火箭本体
-tooltip.advancedrocketry.monitoringstation.alt.1=§b到达轨道后任务即会激活！
+tooltip.advancedrocketry.monitoringstation.alt.1=§b任务将在进入轨道后激活！
 
 # Satellite Terminal
-tooltip.advancedrocketry.satellitemonitor=用于与卫星通信
-tooltip.advancedrocketry.satellitemonitor.shift.1=放入卫星芯片
-tooltip.advancedrocketry.satellitemonitor.shift.2=下载数据
-tooltip.advancedrocketry.satellitemonitor.alt.1=§f通过无线收发器或数据单元传输并自动下载数据
+tooltip.advancedrocketry.satellitecontrolcenter=用于与卫星通信
+tooltip.advancedrocketry.satellitecontrolcenter.shift.1=放入卫星芯片
+tooltip.advancedrocketry.satellitecontrolcenter.shift.2=下载数据
+tooltip.advancedrocketry.satellitecontrolcenter.alt.1=§f通过无线收发器或数据单元传输并自动下载数据
 
 # Satellite Builder
 tooltip.advancedrocketry.satellitebuilder=用于组装卫星
@@ -688,18 +829,28 @@ tooltip.advancedrocketry.satellitebuilder.shift.2=§b必须放置在能量输入
 tooltip.advancedrocketry.satellitebuilder.alt.1=放入框架、芯片/遥控终端
 tooltip.advancedrocketry.satellitebuilder.alt.2=核心组件+其他组件
 
+# Orbital Registry
+tooltip.advancedrocketry.orbitalregistry=追踪太空中的人造物体
+tooltip.advancedrocketry.orbitalregistry.shift.1=§f可写入新芯片！
+tooltip.advancedrocketry.orbitalregistry.alt.1=§f在§4卫星终端§f中使用芯片以销毁卫星
 
 ### Infrastructure
 ## BlockARHatch
 
+# TileDataBusBig
+tooltip.advancedrocketry.databusbig.header=§c总线与单元
+tooltip.advancedrocketry.databusbig.shift.1=§b只能保存一种类型的数据
+tooltip.advancedrocketry.databusbig.alt.1=§b破坏时保留数据，可作为物品或方块使用
+
 # TileDataBus
-tooltip.advancedrocketry.hatch.databus=容量：§62000§7数据
+tooltip.advancedrocketry.hatch.databus=容量：§62000§7 数据
 tooltip.advancedrocketry.hatch.databus.shift.1=§b只能保存一种类型的数据
+tooltip.advancedrocketry.hatch.databus.alt.1=§f破坏时清空数据
 
 # TileSatelliteHatch
 tooltip.advancedrocketry.hatch.satellite=§c火箭的组成部分
 tooltip.advancedrocketry.hatch.satellite.shift.1=用于将有效载荷送入轨道
-tooltip.advancedrocketry.hatch.satellite.shift.2=记得设定轨道的目标行星！
+tooltip.advancedrocketry.hatch.satellite.shift.2=记得设定轨道的目标星球！
 tooltip.advancedrocketry.hatch.satellite.alt.1=§f可在§4空间站组装机§f中用于封装和存储空间站
 
 # TileRocketUnloader
@@ -745,11 +896,13 @@ tooltip.advancedrocketry.fuelingstation.alt.2=§f在此降落的火箭将自动�
 tooltip.advancedrocketry.servicestation=§c基础设备
 tooltip.advancedrocketry.servicestation.shift.1=修复火箭
 tooltip.advancedrocketry.servicestation.shift.2=§o（未完成）
-tooltip.advancedrocketry.fuelingstation.alt.1=§f需连接至§4火箭组装机/停靠台§f或§4火箭本体
 
 ## // Infrastructure
 
 # Pressurized Fluid Tank
+tooltip.advancedrocketry.fluidtank.empty=空
+tooltip.advancedrocketry.fluidtank.fluid=流体：
+tooltip.advancedrocketry.fluidtank.level=液位：
 tooltip.advancedrocketry.fluidtank.shift.1=§c与上下的储罐连接构成大型储罐
 
 # Wireless Transciever
@@ -792,15 +945,15 @@ tooltip.advancedrocketry.pipeseal.alt.2=实体可通过此类开口穿行
 
 # Planet Selector (full-screen)
 tooltip.advancedrocketry.planetselector=浏览星体
-tooltip.advancedrocketry.planetselector.shift.1=开启全屏行星UI。
+tooltip.advancedrocketry.planetselector.shift.1=开启全屏星球UI。
 tooltip.advancedrocketry.planetselector.shift.2=浏览星系、行星与天然卫星
 tooltip.advancedrocketry.planetselector.alt.1=可远程设置跃迁控制器的
-tooltip.advancedrocketry.planetselector.alt.2=行星目的地
+tooltip.advancedrocketry.planetselector.alt.2=目标星球
 
 # Holographic Planet Selector
 tooltip.advancedrocketry.planetholoselector=全息星体显示器
 tooltip.advancedrocketry.planetholoselector.shift.1=在世界中生成全息投影
-tooltip.advancedrocketry.planetholoselector.alt.1=“功能与行星选择器相同
+tooltip.advancedrocketry.planetholoselector.alt.1=“功能与星球选择器相同
 tooltip.advancedrocketry.planetholoselector.alt.2=但采用3D全息投影显示”
 
 # Orientation Controller
@@ -811,8 +964,7 @@ tooltip.advancedrocketry.orientationctrl.alt.1=§b仅影响视觉效果§7
 # Gravity Controller
 tooltip.advancedrocketry.gravityctrl=§c空间站控制器
 tooltip.advancedrocketry.gravityctrl.shift.1=人造重力！
-tooltip.advancedrocketry.gravityctrl.alt.1=§b仅影响视觉效果§7
-tooltip.advancedrocketry.gravityctrl.alt.2=红石控制
+tooltip.advancedrocketry.gravityctrl.alt.1=红石控制
 
 # Altitude Controller
 tooltip.advancedrocketry.altitudectrl=§c空间站控制器
@@ -842,7 +994,7 @@ tooltip.advancedrocketry.smallairlock.alt.2=建造一个合适的气闸
 # Warp Controller
 tooltip.advancedrocketry.warpcontroller=将空间站转变为§6星际飞船
 tooltip.advancedrocketry.warpcontroller.shift.1=在空间站上放置§4跃迁控制器§7和§4跃迁核心
-tooltip.advancedrocketry.warpcontroller.shift.2=在行星和太阳系之间进行跃迁旅行
+tooltip.advancedrocketry.warpcontroller.shift.2=在行星和恒星系之间进行跃迁旅行
 tooltip.advancedrocketry.warpcontroller.alt.1=界面中会显示位置、目的地和跃迁燃料
 tooltip.advancedrocketry.warpcontroller.alt.2=（你已经做到了！去看看Wiki吧伙计）
 
@@ -856,7 +1008,7 @@ tooltip.advancedrocketry.sealdetector=检测方块是否具有气密性
 tooltip.advancedrocketry.sealdetector.shift.1=§f右击方块使用
 
 # Lens
-tooltip.advancedrocketry.lens=§c瞭望台的组成部分
+tooltip.advancedrocketry.lens=§c多方块的组成部分
 tooltip.advancedrocketry.lens.shift.1=§b使用全息投影器！
 
 ## SPACE SUIT + COMPONENTS
@@ -896,7 +1048,7 @@ tooltip.advancedrocketry.itemupgrade.0=§5太空服组件
 tooltip.advancedrocketry.itemupgrade.0.shift.1=§f启用飞行背包的悬停模式
 tooltip.advancedrocketry.itemupgrade.0.shift.2=§d槽位：头盔§7
 tooltip.advancedrocketry.itemupgrade.0.alt.1=需要在胸甲中安装飞行背包。
-tooltip.advancedrocketry.itemupgrade.0.alt.2=无额外叠加效果。
+tooltip.advancedrocketry.itemupgrade.0.alt.2=§f潜行+开关飞行背包键来激活
 
 # 1 = Flight Speed Control Upgrade
 tooltip.advancedrocketry.itemupgrade.1=§5太空服组件
@@ -920,7 +1072,7 @@ tooltip.advancedrocketry.itemupgrade.3.alt.1=无额外叠加效果。
 
 # 4 = Antifog Visor Upgrade
 tooltip.advancedrocketry.itemupgrade.4=§5太空服组件
-tooltip.advancedrocketry.itemupgrade.4.shift.1=§f看透高气压行星上的迷雾
+tooltip.advancedrocketry.itemupgrade.4.shift.1=§f看透高气压星球上的迷雾
 tooltip.advancedrocketry.itemupgrade.4.shift.2=§d槽位：头盔§7
 tooltip.advancedrocketry.itemupgrade.4.alt.1=无额外叠加效果。
 
@@ -957,9 +1109,9 @@ tooltip.advancedrocketry.satfunc.microwave.alt.1=组装时
 tooltip.advancedrocketry.satfunc.microwave.alt.2=与卫星芯片结合
 
 tooltip.advancedrocketry.satfunc.oremapping=§5卫星核心组件
-tooltip.advancedrocketry.satfunc.oremapping.shift.1=§b扫描行星上的矿物§7
+tooltip.advancedrocketry.satfunc.oremapping.shift.1=§b扫描星球上的矿物§7
 tooltip.advancedrocketry.satfunc.oremapping.alt.1=组装时
-tooltip.advancedrocketry.satfunc.oremapping.alt.2=与卫星芯片结合
+tooltip.advancedrocketry.satfunc.oremapping.alt.2=与矿物扫描仪结合
 
 tooltip.advancedrocketry.satfunc.biomechanger=§5卫星核心组件
 tooltip.advancedrocketry.satfunc.biomechanger.shift.1=§b调节生物群系§7
@@ -974,6 +1126,10 @@ tooltip.advancedrocketry.satfunc.weather.alt.1=组装时与天气遥控终端结
 tooltip.advancedrocketry.weathercontrollerremote=§bShift-右击打开界面
 tooltip.advancedrocketry.weathercontrollerremote.shift.1=§f手持此物品右击来使用
 tooltip.advancedrocketry.weathercontrollerremote.alt.1=组装时与天气控制器结合
+tooltip.advancedrocketry.weathercontrollerremote.mode.rain=§e模式：降雨——使用水填充地形中的小洼地
+tooltip.advancedrocketry.weathercontrollerremote.mode.dry=§e模式：干旱——蒸发半径16格内的所有水源
+tooltip.advancedrocketry.weathercontrollerremote.mode.flood=§e模式：洪水——用水淹没半径16格的区域
+
 
 # Biome Changer Remote
 tooltip.advancedrocketry.biomechangerremote=§bShift-右击打开界面
@@ -1006,6 +1162,9 @@ tooltip.libvulpes.battery.1.shift.1=增加能量存储
 tooltip.libvulpes.battery.1.shift.2=§f容量：§c40.000 §fRF§7
 
 # Data Unit
+tooltip.advancedrocketry.itemdata.header=§5卫星组件
+tooltip.advancedrocketry.itemdata.type=§f类型：
+tooltip.advancedrocketry.itemdata.data=§f数据存储量：
 tooltip.advancedrocketry.itemdataunit.shift.1=§f令卫星数据存储量增加1000
 tooltip.advancedrocketry.itemdataunit.alt.1=§f也可在物品栏中作为数据存储器使用
 
@@ -1014,13 +1173,17 @@ tooltip.advancedrocketry.itemdataunit.alt.1=§f也可在物品栏中作为数据
 tooltip.advancedrocketry.asteroidchip.shift.1=§b用于采矿任务§7
 tooltip.advancedrocketry.asteroidchip.shift.2=§f在§c瞭望台§f中编程
 tooltip.advancedrocketry.asteroidchip.alt.1=§4将已编程的芯片放入导航计算机§7
+tooltip.advancedrocketry.asteroidchip.alt.2=§f任务完成后会返还芯片
 
 # Station Chip
 tooltip.advancedrocketry.stationchip=§b记得做好备份！
-tooltip.advancedrocketry.stationchip.shift.1=§f在空间站组装器中编程
+tooltip.advancedrocketry.stationchip.shift.1=§f在空间站组装机中编程
+tooltip.advancedrocketry.stationchip.shift.2=§c在卫星组装机中复制
 tooltip.advancedrocketry.stationchip.alt.1=§4将已编程的芯片放入导航计算机§7
+tooltip.advancedrocketry.stationchip.namelabel=名称：
 
 # Planet Chip
+tooltip.advancedrocketry.planetidchip=§b可重复编程！
 tooltip.advancedrocketry.planetidchip.shift.1=§f将芯片放入§4导航计算机§7
 tooltip.advancedrocketry.planetidchip.shift.2=§f在火箭界面中设置目的地进行编程。
 tooltip.advancedrocketry.planetidchip.alt.1=§4发射前请仔细检查是否已完成编程！
@@ -1028,7 +1191,9 @@ tooltip.advancedrocketry.planetidchip.alt.1=§4发射前请仔细检查是否已
 # Satellite Chip
 tooltip.advancedrocketry.satidchip=§b记得做好备份！
 tooltip.advancedrocketry.satidchip.shift.1=§f储存卫星的ID。
-tooltip.advancedrocketry.satidchip.alt.1=§4在卫星终端中使用以进行链接，或在微波接收器多方块结构（输入仓）中使用。§8（行星：放入终端时解析信息）
+tooltip.advancedrocketry.satidchip.shift.2=§c在卫星组装机中复制
+tooltip.advancedrocketry.satidchip.alt.1=§4在卫星终端中使用以进行链接，或在微波接收器多方块结构（输入仓）中使用。
+tooltip.advancedrocketry.satidchip.alt.2=§8（星球：放入终端时解析信息）
 
 # Elevator Chip
 tooltip.advancedrocketry.elevatorchip=太空电梯芯片
@@ -1106,12 +1271,24 @@ tooltip.advancedrocketry.precisionlaseretcher.shift.1=§b使用全息投影器�
 tooltip.advancedrocketry.observatory=分析天体
 tooltip.advancedrocketry.observatory.shift.1=§f用于§6采矿任务
 tooltip.advancedrocketry.observatory.shift.2=§b使用全息投影器！
-tooltip.advancedrocketry.observatory.alt.1=§f放入§c卫星芯片
+tooltip.advancedrocketry.observatory.alt.1=§f放入§c小行星芯片
 tooltip.advancedrocketry.observatory.alt.2=§f需要§6距离数据§f才能运作（仅在夜间工作）
+
+# LibVulpes Hatches and Coal Generator
+tooltip.advancedrocketry.libvulpes.hatch=§c多方块结构的组成部分
+tooltip.advancedrocketry.libvulpes.hatch.shift.1=§b使用全息投影器！
+tooltip.advancedrocketry.libvulpes.forgepoweroutput=§c多方块结构的组成部分
+tooltip.advancedrocketry.libvulpes.forgepoweroutput.shift.1=§b使用全息投影器！
+tooltip.advancedrocketry.libvulpes.forgepowerinput=§c多方块结构的组成部分
+tooltip.advancedrocketry.libvulpes.forgepowerinput.shift.1=§b使用全息投影器！
+tooltip.advancedrocketry.libvulpes.creativepowerbattery=§d无限能源
+tooltip.advancedrocketry.libvulpes.creativepowerbattery.shift.1=§c多方块结构的组成部分
+tooltip.advancedrocketry.libvulpes.creativepowerbattery.shift.2=§b使用全息投影器！
+tooltip.advancedrocketry.libvulpes.coalgenerator=§c燃烧固体燃料
 
 
 # Planet Analyser
-tooltip.advancedrocketry.planetanalyser=处理行星扫描数据
+tooltip.advancedrocketry.planetanalyser=处理数据并写入小行星芯片
 tooltip.advancedrocketry.planetanalyser.shift.1=§b使用全息投影器！
 
 # Centrifuge
@@ -1128,7 +1305,7 @@ tooltip.advancedrocketry.beacon=远程信标
 tooltip.advancedrocketry.beacon.shift.1=§b使用全息投影器！
 
 # Biome Scanner
-tooltip.advancedrocketry.biomescan=扫描行星的生物群系
+tooltip.advancedrocketry.biomescan=扫描星球的生物群系
 tooltip.advancedrocketry.biomescan.shift.1=§b使用全息投影器！
 
 # Railgun
@@ -1139,11 +1316,13 @@ tooltip.advancedrocketry.railgun.alt.1=“轨道炮的威力不足以在行星�
 # Space Elevator Controller
 tooltip.advancedrocketry.spaceelevatorctrl=用于控制太空电梯
 tooltip.advancedrocketry.spaceelevatorctrl.shift.1=§b使用全息投影器！
-
+tooltip.advancedrocketry.spaceelevatorctrl.shift.2=§f锚定太空站
+tooltip.advancedrocketry.spaceelevatorctrl.alt.1=§f星球端需要上方有空气，空间站端需要下方有空气
+tooltip.advancedrocketry.spaceelevatorctrl.alt.2=§c使用链接器
 # Atmosphere Terraformer
-tooltip.advancedrocketry.atmosterraformer=改变整颗行星上的大气压
+tooltip.advancedrocketry.atmosterraformer=改变整颗星球的大气压
 tooltip.advancedrocketry.atmosterraformer.shift.1=§b使用全息投影器！
-tooltip.advancedrocketry.atmosterraformer.alt.1=通过连接的§c生物群系变换器遥控终端§f增加和减少大气压。
+tooltip.advancedrocketry.atmosterraformer.alt.1=§f通过连接的§c生物群系变换器遥控终端§f增加和减少大气压。
 
 # Area Gravity Controller
 tooltip.advancedrocketry.gravitymachine=操纵重力
@@ -1153,10 +1332,11 @@ tooltip.advancedrocketry.gravitymachine.shift.2=§b使用全息投影器！
 # Orbital Last Drill
 tooltip.advancedrocketry.spacelaser=§c空间站多方块
 tooltip.advancedrocketry.spacelaser.shift.1=§b使用全息投影器！
+tooltip.advancedrocketry.spacelaser.alt.1=§f需要红石信号来运行
 
 # Force Field Projector
 tooltip.advancedrocketry.forcefieldprojector=最远可投射32格距离！
-tooltip.advancedrocketry.forcefieldprojector.shift.1=使用红石信号激活
+tooltip.advancedrocketry.forcefieldprojector.shift.1=§f使用红石信号激活
 
 # Vacuum Laser
 tooltip.advancedrocketry.vacuumlaser=§c多方块结构的组成部分
@@ -1178,6 +1358,11 @@ tooltip.advancedrocketry.qcrucible=§c多方块结构的组成部分
 tooltip.advancedrocketry.qcrucible.shift.1=§b使用全息投影器！
 tooltip.advancedrocketry.sawblade=§c多方块结构的组成部分
 tooltip.advancedrocketry.sawblade.shift.1=§b使用全息投影器！
+tooltip.libvulpes.structuremachine=§c多方块结构的组成部分
+tooltip.libvulpes.structuremachine.shift.1=§b使用全息投影器！
+tooltip.libvulpes.advstructuremachine=§c多方块结构的组成部分
+tooltip.libvulpes.advstructuremachine.shift.1=§b使用全息投影器！
+
 
 ## Assemblers
 # Rocket Assembler
@@ -1193,7 +1378,7 @@ tooltip.advancedrocketry.stationassembler.alt.1=§f将此方块放置在比发�
 
 # Packet Station
 tooltip.advancedrocketry.packedstructure=放入§c卫星仓§7以送入轨道！
-tooltip.advancedrocketry.packedstructure.shift.1=§e记得告诉火箭应该将有效载荷部署到哪个行星的轨道！
+tooltip.advancedrocketry.packedstructure.shift.1=§e发射前记得要设置火箭的目标星球！
 
 # Deployable Rocket Assembler
 tooltip.advancedrocketry.deployablerocketassembler=§c在空间站中搭建火箭
@@ -1210,11 +1395,11 @@ tooltip.advancedrocketry.thermite=以产生高温而闻名！
 
 # Thermite Torch
 tooltip.advancedrocketry.thermitetorch=即便没有氧气也可燃烧
-tooltip.advancedrocketry.thermitetorch.shift.1=§f适用于大气环境稀薄或缺失的情况
+tooltip.advancedrocketry.thermitetorch.shift.1=§f适用于大气稀薄或真空环境
 
 # Jackhammer
 tooltip.advancedrocketry.jackhammer=§c极速挖掘工具
-tooltip.advancedrocketry.jackhammer.1=这东西估计能比你活得还久（只要勤换螺栓的话）
+tooltip.advancedrocketry.jackhammer.1=这东西估计能比你活得还久（当然，得记得换螺栓）
 tooltip.advancedrocketry.jackhammer.shift.1=§f使用§6钛棒§f修复
 tooltip.advancedrocketry.jackhammer.alt.1=§f挖掘等级：§b钻石
 
