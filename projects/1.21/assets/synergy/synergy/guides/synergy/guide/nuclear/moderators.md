@@ -14,5 +14,6 @@ item_ids:
 
 # Moderators
 
-Part of Quantum Reactors 
+Part of Quantum Reactors
+
 Used to increase the efficiency of fuel cells production
