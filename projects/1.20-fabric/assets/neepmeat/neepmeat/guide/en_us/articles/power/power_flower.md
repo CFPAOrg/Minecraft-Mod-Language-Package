@@ -9,7 +9,7 @@ The Power Flower is an organism that can synthesise Transient Ichor from sunligh
 
 ## Usage
 
-Power Flower Seeds can be placed on any dirt-like block and will eventually mature into a larger growth. When a growth block has air above it and one or more growth blocks below it, it will specialise into a photosynthetic organ and produce 20eJ/t constantly. Otherwise, it will increase the rate at which foods are digested and metabolised.
+Power Flower Seeds can be placed on any dirt-like block and will eventually mature into a larger growth. When a growth block has air above it and one or more growth blocks below it, it will specialise into a photosynthetic organ and produce 10eJ/t constantly. Otherwise, it will increase the rate at which foods are digested and metabolised.
 
 Water inserted through a Power Flower Fluid Port is necessary for photosynthesis.
 
@@ -19,4 +19,4 @@ Each non-photosynthetic organ (full block) will consume 1d of food per tick. Con
 
 - Meat: 3eJ/t per droplet consumed
 - Animal Feed: 4eJ/t per droplet consumed
-- Food: (1 + hunger) eJ/t per droplet consumed
+- Food: (1 + ceil(hunger)) eJ/t per droplet consumed
