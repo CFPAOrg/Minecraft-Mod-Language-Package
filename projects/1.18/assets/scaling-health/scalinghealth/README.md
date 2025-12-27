@@ -1,0 +1,1 @@
+本命名空间下的内容不加载，见[1.20README](/projects/1.20/assets/scaling-health/scalinghealth/README.md)。

@@ -8,6 +8,7 @@ on:
       - 'src/**'
       - 'config/packer/**'
       - 'projects/**'
+      - '.github/workflows/pr-packer.yml'
 
 
 
@@ -27,7 +28,7 @@ jobs:
       # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
       - name: Cache Packer
         id: cache-packer
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
@@ -50,7 +51,7 @@ jobs:
       matrix:
         # 支持版本列表。将对这里的每个版本判断，按需打包。
         # 如需添加新版本，在这里添加即可。
-        version: ["1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric"]
+        version: ["1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric"]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -61,8 +62,7 @@ jobs:
       # 由于Github的限制，这里需要重新拉取打包程序。
       - name: Restore Packer
         id: cache-restore
-        # https://github.com/actions/cache/issues/1265#issuecomment-1819612829 `fail-on-cache-miss` for restore action not failing the workflow
-        uses: actions/cache/restore@v3.3.1
+        uses: actions/cache/restore@v4
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
@@ -97,12 +97,12 @@ jobs:
 
       # 额 要两分半才能传完 然而 GitHub actions 直接传的话 会压成 zip 内套 zip 就这样了吧 --cy
       - name: Unzip Files
-        run: unzip -q Minecraft-Mod-Language-Package-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
+        run: unzip -q Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
         shell: bash
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
           
       - name: Upload Artifact for ${{ matrix.version }}
-        uses: actions/upload-artifact@v3.0.0
+        uses: actions/upload-artifact@v4
         with:
           name: Minecraft-Mod-Language-Package-${{ matrix.version }}
           path: Minecraft-Mod-Language-Package-${{ matrix.version }}/*

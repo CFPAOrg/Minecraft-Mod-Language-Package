@@ -68,7 +68,7 @@ namespace Packer
                                     ? McMetaProvider.Create(file, file.Name) // 类型推断不出要用接口
                                     : new RawFile(file, file.Name) as IResourceFileProvider;
 
-            string packName = $"./Minecraft-Mod-Language-Package-{config.Base.Version}.zip";
+            string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";
             await using var stream = File.Create(packName);
 
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))

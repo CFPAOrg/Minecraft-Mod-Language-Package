@@ -16,6 +16,8 @@ navigation:
 
 这个农场相较[简单赛特斯石英农场](simple-certus-farm.md)来说复杂许多，原因在于它实际上是3个独立设施堆起来的。
 
+生长速度估计值见[赛特斯石英的生长](../ae2-mechanics/certus-growth.md)。
+
 **这是个有遮挡关系的复杂建筑，可以旋转视角从各向观察**
 
 <GameScene zoom="6" interactive={true}>

@@ -153,6 +153,23 @@ item_ids:
   <IsometricCamera yaw="95" pitch="5" />
 </GameScene>
 
+## 与分子装配室配合使用
+
+<ItemLink id="molecular_assembler" />和其他机器本质上完全一致。它们都有接受物品的内部槽位，都可以对这些槽位中物品进行操作，也都可以向相邻的容器弹出产物。因此，分子装配室和供应器的配合也应与其他机器一致，不过装配室还有一条特性：
+
+分子装配室可以从其中的<ItemLink id="crafting_pattern" />、<ItemLink id="smithing_table_pattern" />和<ItemLink id="stonecutting_pattern" />直接获取配方。这在装配线设计中非常有用，但每一种合成配方都需要专用的装配室就太麻烦了。
+
+因此，样板供应器具有配合分子装配室的特殊功能，它们会在输出原材料的同时送出样板的数据。只需在供应器旁放置装配室，就可直接处理各种类型的合成样板、锻造台样板，以及切石机样板了。
+
+真就是这么简单，往供应器里塞样板就行了：
+
+<GameScene zoom="4" background="transparent">
+  <ImportStructure src="../assets/assemblies/assembler_tower.snbt" />
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+*需要注意此设施包含8个供应器，也是单个装配室、供应器、非致密线缆可传递的频道数上限。*
+
 ## 配方
 
 <RecipeFor id="pattern_provider" />

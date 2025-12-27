@@ -21,9 +21,11 @@ navigation:
   <BlockImage id="controller" p:state="online" scale="4" />
 
   <BlockImage id="vibration_chamber" p:active="true" scale="4" />
+
+  <BlockImage id="crystal_resonance_generator" scale="4" />
 </Row>
 
-AE2内部并不使用Forge Energy（Forge端）或是TechReborn Energy（Fabric端），而是将它们转换为自带的单位，AE。这种转换是单向的。能量转换可经由<ItemLink id="energy_acceptor" />和<ItemLink id="controller" />进行，不过控制器各面用于提供[频道](../ae2-mechanics/channels.md)更佳。也可用<ItemLink id="vibration_chamber" />生产能量，但是AE2还是与有更强产能能力的科技模组协同工作效果更好。
+AE2内部并不使用Forge Energy（Forge端）或是TechReborn Energy（Fabric端），而是将它们转换为自带的单位，AE。这种转换是单向的。能量转换可经由<ItemLink id="energy_acceptor" />和<ItemLink id="controller" />进行，不过控制器各面用于提供[频道](../ae2-mechanics/channels.md)更佳。也可用<ItemLink id="vibration_chamber" />和<ItemLink id="crystal_resonance_generator" />生产能量，但是AE2还是与有更强产能能力的科技模组协同工作效果更好。
 
 这表明在铺设基地能源基础设施时，更推荐将AE2网络看做一整个多方块结构。
 

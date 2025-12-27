@@ -26,11 +26,11 @@ navigation:
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../assets/assemblies/2_networks_1.snbt" />
 
-  <BoxAnnotation color="#915dcd" min="0 0 0" max="1 2 2">
+  <BoxAnnotation color="#5CA7CD" min="0 0 0" max="1 2 2">
         网络1
   </BoxAnnotation>
 
-<BoxAnnotation color="#915dcd" min="2 0 0" max="3 2 2">
+<BoxAnnotation color="#5CA7CD" min="2 0 0" max="3 2 2">
         网络2
   </BoxAnnotation>
 
@@ -77,6 +77,54 @@ navigation:
   <IsometricCamera yaw="195" pitch="30" />
 </GameScene>
 
+## 子网络中的连接
+
+[子网络](../ae2-mechanics/subnetworks.md)通过控制网络连接（主要是**禁止**连接）来限制[设备](../ae2-mechanics/devices.md)对其他设备的访问权。
+
+子网络本质上就是一个独立的网络。
+
+以[自动时运矿石机](../example-setups/ore-fortuner.md)为例。此设施内有3个独立网络，且均用于完成特定任务。
+
+<GameScene zoom="6" interactive={true}>
+  <ImportStructure src="../assets/assemblies/ore_fortuner.snbt" />
+
+  <BoxAnnotation color="#915dcd" min="0 0 2" max="3 1 3">
+        网络1，相当于一个管道子网络，限制了输入总线的访问范围，使其只能通过成型面板“存储”矿石方块。
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#5CA7CD" min="0 0 0" max="3 1 1">
+        网络2，相当于另一个管道子网络，限制了破坏面板的访问范围，使其只会将时运所得的矿石小块存入木桶，而非存入子网络。这也说明它不会占用主网络中的频道。
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#82CD5C" min="2 0 1" max="4 1 2">
+        网络3，包含所有存储和物品的主网络。此处仅作能源，并且*未*与前两个子网络相连接。
+  </BoxAnnotation>
+
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
+## P2P通道中的连接
+
+有一种[P2P通道](../items-blocks-machines/p2p_tunnels.md)传递的不是物品、流体、红石信号，而是[频道](channels.md)，有些人也因此不能理解它们。P2P通道所处于的网络和其所传递的网络之间没有任何联系。当然这两个网络*可以*是同一个，但一般不会这么做。
+
+<GameScene zoom="6" background="transparent">
+  <ImportStructure src="../assets/assemblies/p2p_channels_network_connection.snbt" />
+
+  <BoxAnnotation color="#915dcd" min="0 0 0" max="1.98 2 1">
+        网络1，所传递的网络（通常是主网络）
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#5CA7CD" min="2.02 0 0" max="3.98 1 1">
+        网络2，P2P通道所处的网络（通常*不*是主网络）
+  </BoxAnnotation>
+
+  <BoxAnnotation color="#915dcd" min="4.02 0 0" max="6 1 1">
+        网络1，所传递的网络（通常是主网络）
+  </BoxAnnotation>
+
+  <IsometricCamera yaw="195" pitch="30" />
+</GameScene>
+
 ## 相对不直观的连接
 
 这种情况下只有1个网络，因为方块形态的<ItemLink id="pattern_provider" />和线缆功能类似，<ItemLink id="inscriber" />也是一样。正因此，网络连接能跨供应器和压印器传输。
@@ -97,11 +145,11 @@ navigation:
 <GameScene zoom="6" background="transparent">
   <ImportStructure src="../assets/assemblies/pattern_provider_network_connection_2.snbt" />
 
-  <BoxAnnotation color="#915dcd" min="0 0 0" max="2 2 2">
+  <BoxAnnotation color="#915dcd" min="0 0 0" max="1.98 2 2">
         网络1
   </BoxAnnotation>
 
-  <BoxAnnotation color="#915dcd" min="2 0 0" max="4 2 2">
+  <BoxAnnotation color="#5CA7CD" min="2.02 0 0" max="4 2 2">
         网络2
   </BoxAnnotation>
 
