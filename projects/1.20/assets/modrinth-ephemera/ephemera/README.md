@@ -15,5 +15,5 @@ flowchart LR
 ### 链接区域
 
 - [1.19.2](/projects/1.19/assets/ephemera/ephemera)
-- [1.20.1](/projects/1.20/assets/ephemera/ephemera)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/ephemera/ephemera)
+- [1.20.1](/projects/1.20/assets/modrinth-ephemera/ephemera)
+- [1.20.1-fabric](/projects/1.20-fabric/assets/modrinth-ephemera/ephemera)
