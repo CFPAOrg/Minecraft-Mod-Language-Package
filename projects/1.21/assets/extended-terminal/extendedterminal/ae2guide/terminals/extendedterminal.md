@@ -17,9 +17,6 @@ item_ids:
 
 <ItemLink id="extendedterminal:et_terminal" /> is all in one terminal that include Crafting, Smithing, Stonecutter and Anvil.
 
-## CAUTION!!
-<ItemLink id="minecraft:anvil"/> does <Color id="red"> **NOT YET SUPPORT JEI/EMI TRANSFER**</Color> and may be  **<Color id="red">incompatible</Color>** with some Anvil related mods
-
 ## Recipe
 <RecipeFor id="extendedterminal:et_terminal" />
 

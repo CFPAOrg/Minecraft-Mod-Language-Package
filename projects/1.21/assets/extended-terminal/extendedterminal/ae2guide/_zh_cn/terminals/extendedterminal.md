@@ -17,9 +17,6 @@ item_ids:
 
 <ItemLink id="extendedterminal:et_terminal" />是融合成、锻造、切石机、铁砧为一体的多合一终端。
 
-## 警告！！
-<ItemLink id="minecraft:anvil"/><Color id="red">**暂不支持JEI/EMI配方填充**</Color>，且可能<Color id="red">**不兼容**</Color>部分与铁砧相关的模组。
-
 ## 配方
 <RecipeFor id="extendedterminal:et_terminal" />
 

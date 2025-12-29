@@ -14,7 +14,7 @@ item_ids:
 
 <et:condition load="AvaritiaNeo">
 <Row>
-<ItemImage id="neo_extendedterminal:extreme_terminal" scale={3}/>
+<ItemImage id="extendedterminal:neo_extreme_terminal" scale={3}/>
 <ItemImage id="avaritia:extreme_crafting_table" scale={3}/>
 </Row>
 <ItemLink id="avaritia:extreme_crafting_table" /> is terminal version of <ItemLink id="avaritia:extreme_crafting_table"/>.
