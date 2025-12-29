@@ -1,0 +1,76 @@
+{
+  "hyperhexcast.book.patterns": {
+      maths: {
+        "": "Other Math Operations",
+        range: "Returns a list of nonnegative integers below the input. Mishaps if the input is less than 0.",
+      },
+      spells: {
+        mounts: {
+          "": "Mount Spells",
+          mount: "Make an entity ride another entity. Costs about 2 $(l:items/amethyst)$(item)Amethyst Dust/$ if the top of the stack is a non-player entity, 1 if it is you, and about a crystal's worth if is it another player.",
+          text1: "It seems that there are cases (e.g. where the second stack item is a player) where media is still consumed, but no action is taken or mishap released? This is very curious, but doesn't seem like behaviour I should rely on...",
+          dismount: "Make an entity stop riding the entity they are riding. Costs about 1 $(l:items/amethyst)$(item)Amethyst Dust/$, or a negligible amount when cast on yourself (but why would you).",
+        },
+      },
+      great_spells: {
+      },
+      mounts: {
+        "": "Mount Patterns",
+        getmt: "Returns the entity that a given entity is riding. Null if the entity isn't riding anything.",
+        getpsgr: "Returns a list of entities that are riding a given entity.",
+        isdrvr: "Returns whether or not the given entity is considered the \"Driver\" of its vehicle. Null if the entity isn't riding a vehicle.",
+      },
+  },
+
+  hexcasting: {
+    action: {
+      "hyperhexcast:": {
+        range: "Inclining Purification",
+        getmt: "Rider's Purification",
+        getpsgr: "Jockey's Purification",
+        isdrvr: "Driver's Purification",
+        mount: "Mount Entity",
+        dismount: "Dismount Entity",
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+      },
+
+      mishap: {
+        entities_too_far: "%s is too far from %s"
+      }
+    },
+  },
+
+  text: {
+    hyperhexcast: {
+    },
+
+    "autoconfig.hyperhexcast": {
+      title: "Hyper's Hexcast addon Config",
+
+      category: {
+        client: "Client",
+        server: "Server",
+      },
+
+      option: {
+        client: {
+          dummyClientConfigOption: {
+            "": "Dummy Client Config Option",
+            "@Tooltip": "This is an example of a client-side config option that accepts a boolean.",
+          },
+        },
+
+        server: {
+          dummyServerConfigOption: {
+            "": "Dummy Server Config Option",
+            "@Tooltip": "This is an example of a server-side config option that accepts an integer.",
+          },
+        },
+      },
+    },
+  },
+}
