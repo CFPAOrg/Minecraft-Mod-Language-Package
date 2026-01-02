@@ -17,7 +17,7 @@ namespace Uploader
                 .WriteTo.Console()
                 .CreateLogger();
 
-            using var scpClient = new ScpClient(host, port: 20002, name, password);
+            using var scpClient = new ScpClient(host, port: 22, name, password);
             scpClient.Connect(); // 与下载服务器建立连接
             
             // 确认连接状态
@@ -35,7 +35,7 @@ namespace Uploader
             // 获取可用的资源包，准备上传
             var artifactDirectory = new DirectoryInfo(Path.Join(Directory.GetCurrentDirectory(), "artifacts"));
             var packList = artifactDirectory
-                           .EnumerateFiles("Minecraft-Mod-Language-Package-*.zip", SearchOption.AllDirectories);
+                           .EnumerateFiles("Minecraft-Mod-Language-Modpack-*.zip", SearchOption.AllDirectories);
             
             Log.Information("检测到的资源包数目：{0}", packList.Count());
 
@@ -86,8 +86,7 @@ namespace Uploader
         public static string RegulateFileName(this string fileName)
         {
             // 历史遗留问题：全部单词都要大小写
-            return CapitalizeGroup(fileName.Replace("Package", "Modpack") // 历史遗留问题：文件名
-                                          .Replace('.', '-') // 历史遗留问题：版本号需要输杠
+            return CapitalizeGroup(fileName.Replace('.', '-') // 历史遗留问题：版本号需要输杠
                                           .Replace("-1-12-2", "") // 历史遗留问题：1.12.2文件没有版本号
                                           .Split('-'));
 
