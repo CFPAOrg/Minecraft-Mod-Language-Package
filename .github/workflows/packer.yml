@@ -163,6 +163,17 @@ jobs:
       updated_versions_1_20_fabric: ${{ steps.collect-updated.outputs.version_1_20_fabric }}
       updated_versions_1_21: ${{ steps.collect-updated.outputs.version_1_21 }}
       updated_versions_1_21_fabric: ${{ steps.collect-updated.outputs.version_1_21_fabric }}
+      # Build times for each version
+      build_time_1_12_2: ${{ steps.collect-updated.outputs.build_time_1_12_2 }}
+      build_time_1_16: ${{ steps.collect-updated.outputs.build_time_1_16 }}
+      build_time_1_16_fabric: ${{ steps.collect-updated.outputs.build_time_1_16_fabric }}
+      build_time_1_18: ${{ steps.collect-updated.outputs.build_time_1_18 }}
+      build_time_1_18_fabric: ${{ steps.collect-updated.outputs.build_time_1_18_fabric }}
+      build_time_1_19: ${{ steps.collect-updated.outputs.build_time_1_19 }}
+      build_time_1_20: ${{ steps.collect-updated.outputs.build_time_1_20 }}
+      build_time_1_20_fabric: ${{ steps.collect-updated.outputs.build_time_1_20_fabric }}
+      build_time_1_21: ${{ steps.collect-updated.outputs.build_time_1_21 }}
+      build_time_1_21_fabric: ${{ steps.collect-updated.outputs.build_time_1_21_fabric }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -205,7 +216,7 @@ jobs:
             ${{ matrix.version }}.md5
         if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
-      - name: Collect updated versions
+      - name: Collect updated versions and build time
         id: collect-updated
         run: |
           if [ "${{ steps.check-changes.outputs.changed }}" == "true" ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
@@ -213,6 +224,10 @@ jobs:
             # 将.转换为_，适配变量名
             output_key=$(echo "${{ matrix.version }}" | sed 's/[\.-]/_/g')
             echo "version_$output_key=${{ matrix.version }}" >> $GITHUB_OUTPUT
+            
+            # Record build time for this version
+            build_time=$(date '+%Y-%m-%d %H:%M:%S')
+            echo "build_time_$output_key=$build_time" >> $GITHUB_OUTPUT
           fi
         shell: bash
         continue-on-error: true
@@ -277,6 +292,97 @@ jobs:
                 $md5_upload_url
           }
         shell: pwsh
+
+  update-release-description:
+    name: Update Release Description with Build Times
+    needs: [ pack, initialize-release, upload-release-assets ]
+    if: needs.initialize-release.outputs.tag-name == 'autobuild'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update release description with build times
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Parse pack outputs to get build times
+            const packOutputs = JSON.parse(`${{ toJSON(needs.pack.outputs) }}`);
+            const buildTimes = [];
+            
+            // Collect all build times
+            const versions = ["1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric"];
+            
+            for (const version of versions) {
+              // Convert version to output key format (e.g., 1.12.2 → build_time_1_12_2)
+              const key = `build_time_${version.replace(/[\.-]/g, '_')}`;
+              if (packOutputs[key]) {
+                buildTimes.push({
+                  version: version,
+                  time: packOutputs[key]
+                });
+              }
+            }
+            
+            // Get existing release to preserve build times of unchanged versions
+            const existingRelease = await github.rest.repos.getRelease({ 
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: ${{ needs.initialize-release.outputs.release-id }}
+            });
+            
+            // Parse existing build times from release body
+            const existingBuildTimes = new Map();
+            const existingBody = existingRelease.data.body;
+            if (existingBody) {
+              const buildTimeSection = existingBody.match(/### 各个版本打包时间\n\n([\s\S]*?)\n\n###/);
+              if (buildTimeSection && buildTimeSection[1]) {
+                const timeLines = buildTimeSection[1].split('\n').filter(line => line.trim());
+                timeLines.forEach(line => {
+                  const match = line.match(/^-\s*(.+?):\s*(.+?)\s*UTC$/);
+                  if (match) {
+                    existingBuildTimes.set(match[1], match[2]);
+                  }
+                });
+              }
+            }
+            
+            // Merge existing times with new build times
+            const allBuildTimes = new Map(existingBuildTimes);
+            buildTimes.forEach(item => {
+              allBuildTimes.set(item.version, item.time);
+            });
+            
+            // Generate release description
+            let description = "## 汉化资源包-AutoBuild\n\n";
+            description += "### 各个版本打包时间\n\n";
+            
+            if (allBuildTimes.size > 0) {
+              // Sort versions for consistent display
+              const sortedVersions = Array.from(allBuildTimes.keys()).sort((a, b) => {
+                // Custom sort to handle version strings properly
+                const parseVersion = (v) => {
+                  const parts = v.replace('-fabric', '').split('.').map(Number);
+                  return parts[0] * 10000 + parts[1] * 100 + (parts[2] || 0) + (v.includes('fabric') ? 0.5 : 0);
+                };
+                return parseVersion(a) - parseVersion(b);
+              });
+              
+              sortedVersions.forEach(version => {
+                description += `- ${version}: ${allBuildTimes.get(version)} UTC\n`;
+              });
+            } else {
+              description += "本次构建未更新任何版本。\n";
+            }
+            
+            // Update the release
+            await github.rest.repos.updateRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: ${{ needs.initialize-release.outputs.release-id }},
+              body: description
+            });
+            
+            console.log('Updated release description with build times');
+            console.log('Build times:', buildTimes);
 
   pre-upload-cleanup:
     name: Clean Assets Before Upload
