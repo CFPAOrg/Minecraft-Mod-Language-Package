@@ -39,7 +39,7 @@ jobs:
       # 构造程序
       - name: Build Packer if not cached
         if: steps.cache-packer.outputs.cache-hit != 'true'
-        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
+        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64
 
 
   pack:
