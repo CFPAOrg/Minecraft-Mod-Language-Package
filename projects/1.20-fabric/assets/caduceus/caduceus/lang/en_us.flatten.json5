@@ -39,11 +39,13 @@
         delimcc: {
           "": "Delimited Jumps",
           "eval/prompt": "Cast a pattern or list of patterns from the stack exactly like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$, except that anything outside of this cast will not be captured by an $(l:patterns/delimcc#caduceus:eval/control)$(action)Arke's Gambit/$ within it.",
+          "eval/prompt_at": "Like $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$, but also sets the $(l:patterns/jump_manipulation#jump_tags)$(thing)jump tag/$ of the cast to the given iota. If the iota is $(l:casting/influences)$(thing)Null/$, this is equivalent to $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$.",
           "eval/control": {
             "1": "Cast a pattern or list of patterns from the stack similarly to $(l:patterns/meta#hexcasting:eval/cc)$(action)Iris' Gambit/$. Must be drawn within $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$.",
             "2": "All of the patterns that would have been drawn between the end of the pattern list and the end of the enclosing $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$ are $(italic)moved/$ into a Call iota, which is pushed to the stack instead of a Jump iota.$(br2)\
               When the Call iota is executed, the captured patterns will be cast as if by $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$. If the Call iota is not executed, the rest of the patterns within the enclosing $(l:patterns/delimcc#caduceus:eval/prompt)$(action)Thetis' Gambit/$ will be skipped.",
           },
+          "eval/control_at": "Like $(l:patterns/delimcc#caduceus:eval/control)$(action)Arke's Gambit/$, but only patterns within an enclosing $(l:patterns/delimcc#caduceus:eval/prompt_at)$(action)Thetis' Gambit II/$ with a $(l:patterns/jump_manipulation#jump_tags)$(thing)jump tag/$ matching the given iota are captured. If the iota is $(l:casting/influences)$(thing)Null/$, this is equivalent to $(l:patterns/delimcc#caduceus:eval/control)$(action)Arke's Gambit/$.",
         },
         jump_manipulation: {
           "": "Jump Manipulation",
@@ -98,7 +100,9 @@
     action: {
       "caduceus:": {
         "eval/prompt": "Thetis' Gambit",
+        "eval/prompt_at": "Thetis' Gambit II",
         "eval/control": "Arke's Gambit",
+        "eval/control_at": "Arke's Gambit II",
         "read/mark/local": "Ewer's Reflection",
         "read/mark/iota": "Ewer's Purification",
         "write/mark/local": "Ewer's Gambit",
