@@ -73,6 +73,20 @@ jobs:
         run: echo "timestamp=$(date '+%Y%m%d%H%M%s')" >> $GITHUB_OUTPUT
         shell: bash
 
+      - name: Determine release type and tag
+        id: determine_release
+        run: |
+          if [ "${{ github.event_name }}" == "schedule" ] || [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "tag_name=autobuild" >> $GITHUB_OUTPUT
+            echo "release_name=汉化资源包-AutoBuild" >> $GITHUB_OUTPUT
+            echo "prerelease=true" >> $GITHUB_OUTPUT
+          else
+            echo "tag_name=Snapshot-${{ steps.create_timestamp.outputs.timestamp }}" >> $GITHUB_OUTPUT
+            echo "release_name=汉化资源包-Snapshot-${{ steps.create_timestamp.outputs.timestamp }}" >> $GITHUB_OUTPUT
+            echo "prerelease=false" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
+
         # Create the release: https://github.com/actions/create-release
       - name: Create release
         id: create_release
@@ -80,13 +94,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
-          release_name: 汉化资源包-Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
+          tag_name: ${{ steps.determine_release.outputs.tag_name }}
+          release_name: ${{ steps.determine_release.outputs.release_name }}
           draft: false
-          prerelease: false
+          prerelease: ${{ steps.determine_release.outputs.prerelease }}
     outputs:
       upload-url: ${{ steps.create_release.outputs.upload_url }}
-      tag-name: Snapshot-${{ steps.create_timestamp.outputs.timestamp }}
+      tag-name: ${{ steps.determine_release.outputs.tag_name }}
 
 
   pack:
@@ -225,6 +239,74 @@ jobs:
                 $md5_upload_url
           }
         shell: pwsh
+
+  clean-old-assets:
+    name: Clean Old Release Assets
+    needs: [upload-release-assets]
+    if: needs.initialize-release.outputs.tag-name == 'autobuild'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clean old assets from autobuild release
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            // Get the autobuild release
+            const release = await github.rest.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag: 'autobuild'
+            });
+            
+            // Get all assets
+            const assets = await github.rest.repos.listReleaseAssets({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.data.id,
+              per_page: 100
+            });
+            
+            console.log(`Found ${assets.data.length} assets in autobuild release`);
+            
+            // Group assets by version
+            const assetsByVersion = {};
+            assets.data.forEach(asset => {
+              // Extract version from asset name
+              let version = 'unknown';
+              if (asset.name.includes('-1.12.2.')) version = '1.12.2';
+              else if (asset.name.includes('-1.16.')) version = '1.16';
+              else if (asset.name.includes('-1.16-fabric.')) version = '1.16-fabric';
+              else if (asset.name.includes('-1.18.')) version = '1.18';
+              else if (asset.name.includes('-1.18-fabric.')) version = '1.18-fabric';
+              else if (asset.name.includes('-1.19.')) version = '1.19';
+              else if (asset.name.includes('-1.20.')) version = '1.20';
+              else if (asset.name.includes('-1.20-fabric.')) version = '1.20-fabric';
+              else if (asset.name.includes('-1.21.')) version = '1.21';
+              else if (asset.name.includes('-1.21-fabric.')) version = '1.21-fabric';
+              
+              if (!assetsByVersion[version]) {
+                assetsByVersion[version] = [];
+              }
+              assetsByVersion[version].push(asset);
+            });
+            
+            // For each version, keep the latest asset and delete older ones
+            for (const [version, versionAssets] of Object.entries(assetsByVersion)) {
+              if (versionAssets.length <= 2) continue; // Keep both zip and md5 for the latest version
+              
+              // Sort assets by created_at (newest first)
+              versionAssets.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+              
+              // Delete all assets except the first two (zip and md5)
+              for (let i = 2; i < versionAssets.length; i++) {
+                console.log(`Deleting old asset: ${versionAssets[i].name}`);
+                await github.rest.repos.deleteReleaseAsset({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  asset_id: versionAssets[i].id
+                });
+              }
+            }
 
   update-index:
     name: Update Version Index (Optional)
