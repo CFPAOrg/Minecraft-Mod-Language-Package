@@ -121,7 +121,7 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          key: ${{ runner.os }}-Packer-${{ hashFiles('source/Packer/**') }}
+          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
             Packer.exe
             git2-*.dll
@@ -287,11 +287,15 @@ jobs:
     needs: [ pack, build-uploader ] # 显然，需要打包完成，并且存在上传程序，才可以上传给分发服务器
     runs-on: windows-latest
     steps:
+      - uses: actions/checkout@v4 # 计算 cache key 需要
+        with:
+          fetch-depth: 1
+          sparse-checkout: src
       - name: Restore Uploader
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Uploader/**') }}
+          key: ${{ runner.os }}-Uploader-${{ hashFiles('src/Uploader/**') }}
           path: |
             Uploader.exe
           fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
