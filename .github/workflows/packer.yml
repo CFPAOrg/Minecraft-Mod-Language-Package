@@ -87,9 +87,34 @@ jobs:
           fi
         shell: bash
 
-        # Create the release: https://github.com/actions/create-release
+      - name: Check if release exists
+        id: check_release
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            try {
+              const release = await github.rest.repos.getReleaseByTag({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                tag: '${{ steps.determine_release.outputs.tag_name }}'
+              });
+              console.log('Release exists:', release.data.id);
+              return {
+                exists: true,
+                id: release.data.id,
+                upload_url: release.data.upload_url
+              };
+            } catch (error) {
+              console.log('Release does not exist:', error.message);
+              return {
+                exists: false
+              };
+            }
+
       - name: Create release
         id: create_release
+        if: steps.check_release.outputs.result == 'null' || fromJSON(steps.check_release.outputs.result).exists == false
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -98,9 +123,22 @@ jobs:
           release_name: ${{ steps.determine_release.outputs.release_name }}
           draft: false
           prerelease: ${{ steps.determine_release.outputs.prerelease }}
+
+      - name: Update release information
+        id: update_release_info
+        run: |
+          if [ "${{ fromJSON(steps.check_release.outputs.result).exists }}" == "true" ]; then
+            echo "upload-url=${{ fromJSON(steps.check_release.outputs.result).upload_url }}" >> $GITHUB_OUTPUT
+            echo "release-id=${{ fromJSON(steps.check_release.outputs.result).id }}" >> $GITHUB_OUTPUT
+          else
+            echo "upload-url=${{ steps.create_release.outputs.upload_url }}" >> $GITHUB_OUTPUT
+            echo "release-id=${{ steps.create_release.outputs.id }}" >> $GITHUB_OUTPUT
+          fi
+        shell: bash
     outputs:
-      upload-url: ${{ steps.create_release.outputs.upload_url }}
+      upload-url: ${{ steps.update_release_info.outputs.upload-url }}
       tag-name: ${{ steps.determine_release.outputs.tag_name }}
+      release-id: ${{ steps.update_release_info.outputs.release-id }}
 
 
   pack:
