@@ -418,8 +418,12 @@ jobs:
             
             for (const [key, value] of Object.entries(packOutputs)) {
               if (value && key.startsWith('updated_versions_')) {
-                // Convert from updated_versions_1_12_2 to 1.12.2
-                const version = key.replace('updated_versions_', '').replace(/_/g, '.');
+                // Convert from updated_versions_1_16_fabric to 1.16-fabric
+                // First remove prefix, then convert underscores that were dots back to dots
+                // but preserve underscores that were originally hyphens
+                const versionPart = key.replace('updated_versions_', '');
+                // First convert _fabric to -fabric, then convert remaining _ to .
+                const version = versionPart.replace(/_fabric/g, '-fabric').replace(/_/g, '.');
                 updatedVersions.push(version);
               }
             }
@@ -435,23 +439,23 @@ jobs:
                 assetVersion = '1.12.2'; // Special case for main zip
               } else if (asset.name.includes('-1-12-2')) {
                 assetVersion = '1.12.2';
-              } else if (asset.name.includes('-1-16-') && !asset.name.includes('-1-16-fabric.')) {
+              } else if (asset.name.includes('-1-16-') && !asset.name.includes('-1-16-fabric') && !asset.name.includes('-1-16-Fabric')) {
                 assetVersion = '1.16';
-              } else if (asset.name.includes('-1-16-fabric.')) {
+              } else if (asset.name.includes('-1-16-fabric') || asset.name.includes('-1-16-Fabric')) {
                 assetVersion = '1.16-fabric';
-              } else if (asset.name.includes('-1-18-') && !asset.name.includes('-1-18-fabric.')) {
+              } else if (asset.name.includes('-1-18-') && !asset.name.includes('-1-18-fabric') && !asset.name.includes('-1-18-Fabric')) {
                 assetVersion = '1.18';
-              } else if (asset.name.includes('-1-18-fabric.')) {
+              } else if (asset.name.includes('-1-18-fabric') || asset.name.includes('-1-18-Fabric')) {
                 assetVersion = '1.18-fabric';
               } else if (asset.name.includes('-1-19-')) {
                 assetVersion = '1.19';
-              } else if (asset.name.includes('-1-20-') && !asset.name.includes('-1-20-fabric.')) {
+              } else if (asset.name.includes('-1-20-') && !asset.name.includes('-1-20-fabric') && !asset.name.includes('-1-20-Fabric')) {
                 assetVersion = '1.20';
-              } else if (asset.name.includes('-1-20-fabric.')) {
+              } else if (asset.name.includes('-1-20-fabric') || asset.name.includes('-1-20-Fabric')) {
                 assetVersion = '1.20-fabric';
-              } else if (asset.name.includes('-1-21-') && !asset.name.includes('-1-21-fabric.')) {
+              } else if (asset.name.includes('-1-21-') && !asset.name.includes('-1-21-fabric') && !asset.name.includes('-1-21-Fabric')) {
                 assetVersion = '1.21';
-              } else if (asset.name.includes('-1-21-fabric.')) {
+              } else if (asset.name.includes('-1-21-fabric') || asset.name.includes('-1-21-Fabric')) {
                 assetVersion = '1.21-fabric';
               } else if (asset.name.endsWith('.md5')) {
                 // Handle md5 files directly
