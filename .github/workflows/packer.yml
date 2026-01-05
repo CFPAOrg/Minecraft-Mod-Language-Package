@@ -61,7 +61,7 @@ jobs:
   #     # 构造程序
   #     - name: Build Uploader if not cached
   #       if: steps.cache-uploader.outputs.cache-hit != 'true'
-  #       run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+  #       run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
   initialize-release:
     name: Initialize Release
@@ -365,8 +365,10 @@ jobs:
               let assetVersion = 'unknown';
               
               // 从资产名称中确定版本号（使用正则表达式使代码更简洁）
-              if (asset.name === 'Minecraft-Modpack.zip') {
+              if (asset.name === 'Minecraft-Mod-Language-Modpack.zip') {
                 assetVersion = '1.12.2'; // 主zip文件的特殊处理
+              } else if (asset.name === 'Minecraft-Mod-Language-Modpack.zip.md5') {
+                assetVersion = '1.12.2'; // 主zip文件的md5文件特殊处理
               } else if (asset.name.endsWith('.md5')) {
                 // 直接处理md5文件，去掉扩展名即可得到版本
                 assetVersion = asset.name.replace('.md5', '');
