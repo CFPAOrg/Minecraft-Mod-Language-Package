@@ -135,7 +135,7 @@ jobs:
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
-          key: ${{ runner.os }}-Packer-${{ hashFiles('source/Packer/**') }}
+          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
             Packer.exe
             git2-*.dll
@@ -181,7 +181,7 @@ jobs:
 
   upload-release-assets:
     name: Upload Release Assets
-    needs: [ pack, initialize-release ]
+    needs: [ pack, initialize-release, pre-upload-cleanup ]
     runs-on: windows-latest
     steps:
       - name: Download all Artifacts
@@ -240,13 +240,13 @@ jobs:
           }
         shell: pwsh
 
-  clean-old-assets:
-    name: Clean Old Release Assets
-    needs: [upload-release-assets]
+  pre-upload-cleanup:
+    name: Clean Assets Before Upload
+    needs: [pack, initialize-release]
     if: needs.initialize-release.outputs.tag-name == 'autobuild'
     runs-on: ubuntu-latest
     steps:
-      - name: Clean old assets from autobuild release
+      - name: Clean only updated version assets from autobuild release
         uses: actions/github-script@v6
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -268,42 +268,59 @@ jobs:
             
             console.log(`Found ${assets.data.length} assets in autobuild release`);
             
-            // Group assets by version
-            const assetsByVersion = {};
-            assets.data.forEach(asset => {
-              // Extract version from asset name
-              let version = 'unknown';
-              if (asset.name.includes('-1.12.2.')) version = '1.12.2';
-              else if (asset.name.includes('-1.16.')) version = '1.16';
-              else if (asset.name.includes('-1.16-fabric.')) version = '1.16-fabric';
-              else if (asset.name.includes('-1.18.')) version = '1.18';
-              else if (asset.name.includes('-1.18-fabric.')) version = '1.18-fabric';
-              else if (asset.name.includes('-1.19.')) version = '1.19';
-              else if (asset.name.includes('-1.20.')) version = '1.20';
-              else if (asset.name.includes('-1.20-fabric.')) version = '1.20-fabric';
-              else if (asset.name.includes('-1.21.')) version = '1.21';
-              else if (asset.name.includes('-1.21-fabric.')) version = '1.21-fabric';
-              
-              if (!assetsByVersion[version]) {
-                assetsByVersion[version] = [];
-              }
-              assetsByVersion[version].push(asset);
-            });
+            // Parse pack outputs to get updated versions
+            const packOutputs = JSON.parse(`${{ toJSON(needs.pack.outputs) }}`);
+            const updatedVersions = [];
             
-            // For each version, keep the latest asset and delete older ones
-            for (const [version, versionAssets] of Object.entries(assetsByVersion)) {
-              if (versionAssets.length <= 2) continue; // Keep both zip and md5 for the latest version
+            for (const [key, value] of Object.entries(packOutputs)) {
+              if (value && key.startsWith('updated_versions_')) {
+                // Convert from updated_versions_1_12_2 to 1.12.2
+                const version = key.replace('updated_versions_', '').replace(/_/g, '.');
+                updatedVersions.push(version);
+              }
+            }
+            
+            console.log(`Updated versions in this run: ${updatedVersions.join(', ')}`);
+            
+            // Delete only assets for updated versions
+            for (const asset of assets.data) {
+              let assetVersion = 'unknown';
               
-              // Sort assets by created_at (newest first)
-              versionAssets.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+              // Determine version from asset name
+              if (asset.name === 'Minecraft-Modpack.zip') {
+                assetVersion = '1.12.2'; // Special case for main zip
+              } else if (asset.name.includes('-1-12-2')) {
+                assetVersion = '1.12.2';
+              } else if (asset.name.includes('-1-16-') && !asset.name.includes('-1-16-fabric.')) {
+                assetVersion = '1.16';
+              } else if (asset.name.includes('-1-16-fabric.')) {
+                assetVersion = '1.16-fabric';
+              } else if (asset.name.includes('-1-18-') && !asset.name.includes('-1-18-fabric.')) {
+                assetVersion = '1.18';
+              } else if (asset.name.includes('-1-18-fabric.')) {
+                assetVersion = '1.18-fabric';
+              } else if (asset.name.includes('-1-19-')) {
+                assetVersion = '1.19';
+              } else if (asset.name.includes('-1-20-') && !asset.name.includes('-1-20-fabric.')) {
+                assetVersion = '1.20';
+              } else if (asset.name.includes('-1-20-fabric.')) {
+                assetVersion = '1.20-fabric';
+              } else if (asset.name.includes('-1-21-') && !asset.name.includes('-1-21-fabric.')) {
+                assetVersion = '1.21';
+              } else if (asset.name.includes('-1-21-fabric.')) {
+                assetVersion = '1.21-fabric';
+              } else if (asset.name.endsWith('.md5')) {
+                // Handle md5 files directly
+                assetVersion = asset.name.replace('.md5', '');
+              }
               
-              // Delete all assets except the first two (zip and md5)
-              for (let i = 2; i < versionAssets.length; i++) {
-                console.log(`Deleting old asset: ${versionAssets[i].name}`);
+              // Check if this asset's version was updated in this run
+              if (updatedVersions.includes(assetVersion)) {
+                console.log(`Deleting old asset for updated version ${assetVersion}: ${asset.name}`);
                 await github.rest.repos.deleteReleaseAsset({
                   owner: context.repo.owner,
                   repo: context.repo.repo,
-                  asset_id: versionAssets[i].id
+                  asset_id: asset.id
                 });
               }
             }
@@ -376,7 +393,7 @@ jobs:
 
       # 构造程序
       - name: Build Uploader
-        run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
+        run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
 
       # 还原artifact（资源包）
       - name: Restore Artifacts
