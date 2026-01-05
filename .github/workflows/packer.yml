@@ -295,14 +295,6 @@ jobs:
           path: |
             Uploader.exe
           fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          sparse-checkout: src
-
-      # 构造程序
-      - name: Build Uploader
-        run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64 -p:PublishSingeFile=true
 
       # 还原artifact（资源包）
       - name: Restore Artifacts
