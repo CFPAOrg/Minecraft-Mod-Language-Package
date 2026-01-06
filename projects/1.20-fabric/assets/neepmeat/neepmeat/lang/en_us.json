@@ -1011,7 +1011,7 @@
   "instruction.neepmeat.route.desc": "Uses a Pipe Driver (currently selected actuator) to request the item with the given name. \nThe item is routed from a given §6pipe§f and §6input direction§f to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the operation is pushed to the stack.\n §6ARG1§f: input pipe (world target)\n §6ARG2§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.request.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed through a pipe network to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the request is pushed to the stack.\n §6ARG1§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.count.desc": "Counts the items or fluid at the given world target and pushes the result to the stack.\nThe type of resource to count is optionally specified in the second argument.\nIf an ID is provided, only items/fluids that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: inventory (world target)§6\n §6ARG2§f: type to count (ITEM or FLUID, optional)\n §6ARG3§f: item or fluid ID (string, optional)",
-  "instruction.neepmeat.stock.desc": "Uses a Pipe Driver (currently selected actuator) to count counts all matching items in accessible inventories (connected to Storage Drivers). The result is pushed to the stack.\nIf an ID is provided, only items that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: item or fluid ID (string, optional)",
+  "instruction.neepmeat.stock.desc": "Uses a Pipe Driver (currently selected actuator) to count counts all matching items in accessible inventories (connected to Storage Drivers). The result is pushed to the stack.\nIf an ID is provided, only items that match it will be counted. IDs can use * to represent any combination of characters (minecraft:* or :stone).\n §6ARG1§f: item ID (string, optional)",
   "instruction.neepmeat.nbwrite.desc": "Sends the top stack element over a data cable network to all ports matching the given NEEPBus address.\nIf the element is a memory address, the data at the address will be fetched and sent, rather than the address itself.\n §6ARG1§f: NEEPBus address (string)§6",
   "instruction.neepmeat.nbread.desc": "Reads the value of a port matching the given address over a data cable network. The result is put on the stack.\n §6ARG1§f: NEEPBus address (string)§6",
 
@@ -1095,6 +1095,7 @@
   "screen.neepmeat.living_machine.components": "Functional components",
   "screen.neepmeat.living_machine.process": "Current process",
   "screen.neepmeat.living_machine.no_process": "None",
+  "screen.neepmeat.living_machine.problems": "Problems",
 
   "screen.neepmeat.living_machine.requirements": "Requirements:",
   "process.neepmeat.crushing.requirements": "   ",

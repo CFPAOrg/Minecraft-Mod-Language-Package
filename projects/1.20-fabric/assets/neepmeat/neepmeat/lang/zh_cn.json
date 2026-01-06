@@ -1011,7 +1011,7 @@
   "instruction.neepmeat.route.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会从给定§6管道§f和§6输入方向§f运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将操作成功与否压入栈。\n §6ARG1§f：输入管道（世界目标）\n §6ARG2§f：输出管道（世界目标）\n §6ARG3§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.request.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会通过管道网络运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将请求成功与否压入栈。\n §6ARG1§f：输出管道（世界目标）\n §6ARG2§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.count.desc": "统计所给世界目标处物品或流体的数量，并压入栈。\n具体统计何种类型的资源由可选的第二参数指定。\n若指定ID，则只会统计匹配该ID的物品或流体。“*”代表任意字符组合（如“*:water”和“minecraft:*”）。\n §6ARG1§f：存储空间（世界目标）§6\n §6ARG2§f：需统计的类型（ITEM或FLUID，可选）\n §6ARG3§f：物品ID或流体ID（字符串，可选）",
-  "instruction.neepmeat.stock.desc": "使用管道驱动器（需为当前操作机构）统计可访问容器（即与存储驱动器相连）中所有匹配物品的数量。将结果压栈。\n若指定ID，则只会统计匹配该ID的物品。“*”代表任意字符组合（如“*:water”和“minecraft:*”）。\n §6ARG1§f：物品ID或流体ID（字符串，可选）",
+  "instruction.neepmeat.stock.desc": "使用管道驱动器（需为当前操作机构）统计可访问容器（即与存储驱动器相连）中所有匹配物品的数量。将结果压栈。\n若指定ID，则只会统计匹配该ID的物品。“*”代表任意字符组合（如“minecraft:*”和“:stone”）。\n §6ARG1§f：物品ID（字符串，可选）",
   "instruction.neepmeat.nbwrite.desc": "将栈顶元素沿数据线缆网络发送至所有匹配给定NEEP总线地址的端口。\n若该元素为内存地址，则会取出该位置的数据并发送，而不会仅发送地址本身。\n §6ARG1§f：NEEP总线地址（字符串）§6",
   "instruction.neepmeat.nbread.desc": "沿数据线缆网络从匹配所给地址的端口处读取值，并压入栈。\n §6ARG1§f：NEEP总线地址（字符串）§6",
 
@@ -1095,6 +1095,7 @@
   "screen.neepmeat.living_machine.components": "功能组件",
   "screen.neepmeat.living_machine.process": "当前工序",
   "screen.neepmeat.living_machine.no_process": "无",
+  "screen.neepmeat.living_machine.problems": "问题",
 
   "screen.neepmeat.living_machine.requirements": "必要组件：",
   "process.neepmeat.crushing.requirements": "   ",

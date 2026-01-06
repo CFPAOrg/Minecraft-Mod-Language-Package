@@ -6,7 +6,9 @@ lookup: neepmeat:living_tool_implant
 
 工具生物体会为工具提供自我修复功能。
 
-可使用PLC的COMBINE操作将其嵌装至工具。
+可使用PLC的COMBINE操作将其嵌装至任意具有耐久度的物品。
+
+它刻替代钻具底盘中的气动发动机，可令其在周围没有压缩机的情况下运作。
 
 # 补充消耗品
 
