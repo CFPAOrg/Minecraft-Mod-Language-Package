@@ -51,13 +51,9 @@ namespace Uploader
 
             Console.WriteLine("待上传的文件数目：{0}", files.Count());
 
-            IEnumerable<Task> tasks =
-                [
-                UploadToServer(host, name, password, files),
-                UploadSnapshotAssets(client, files),
-                UpdateAutobuildAssets(client, files)
-                ];
-            await Task.WhenAll(tasks);
+            await UploadToServer(host, name, password, files);
+            await UploadSnapshotAssets(client, files);
+            await UpdateAutobuildAssets(client, files);
         }
 
         async static Task UploadToServer(string host, string username, string password, IEnumerable<(string name, FileInfo file)> files)
