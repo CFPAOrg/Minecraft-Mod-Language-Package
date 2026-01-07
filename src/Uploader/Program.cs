@@ -82,7 +82,7 @@ namespace Uploader
 
         async static Task UploadSnapshotAssets(GitHubClient client, IEnumerable<(string name, FileInfo file)> files)
         {
-            var timestamp = DateTime.UtcNow.AddHours(8).ToString("yyyyMMddHHmmss");
+            var timestamp = DateTime.UtcNow.ToString("yyyyMMddHHmmss");
             Log.Information("<Snapshot> 时间戳：{0}", timestamp);
             var newRelease = new NewRelease($"Snapshot-{timestamp}")
             {
