@@ -128,7 +128,8 @@ namespace Uploader
                 ### 最后更新时间
 
                 - {timestamp}
-                """
+                """,
+                MakeLatest = MakeLatestQualifier.True
             };
             await client.Repository.Release.Edit(repoId, release.Id, desc);
             Log.Information("<Autobuild> 更新 Release 简介：时间 {0}", timestamp);
