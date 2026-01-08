@@ -39,11 +39,13 @@
         delimcc: {
           "": "定界跳转",
           "eval/prompt": "运行栈中的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$完全一致；区别在于，其内部的$(l:patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$无法获取其外部的 iota。",
+          "eval/prompt_at": "与$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$类似，但它会将当前运行的$(l:patterns/jump_manipulation#jump_tags)$(thing)跳转标签/$设置至所给 iota。若该 iota 为 $(l:casting/influences)$(thing)Null/$，则其效果与$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$等价。",
           "eval/control": {
             "1": "运行栈中的图案或图案列表，与$(l:patterns/meta#hexcasting:eval/cc)$(action)伊里斯之策略/$类似。必须绘制于$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$内部。",
             "2": "将在图案列表末尾和$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$闭合之间绘制的图案会$(italic)转移/$到调用 iota 中；压入栈中的也不会是跳转 iota，而是此调用 iota。$(br2)\
               执行到调用 iota 时，其中捕获的图案会如同对其使用$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$一样施放。如果不去执行调用 iota，即会跳过$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$闭合前剩余的图案。",
           },
+          "eval/control_at": "与$(l:patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$类似，但它只会转移到闭合的$(l:patterns/delimcc#caduceus:eval/prompt_at)$(action)忒提斯之策略，第二型/$，且其携带的$(l:patterns/jump_manipulation#jump_tags)$(thing)跳转标签/$应匹配所给 iota。若该 iota 为 $(l:casting/influences)$(thing)Null/$，则其效果与$(l:patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$等价。",
         },
         jump_manipulation: {
           "": "跳转操作",
@@ -57,7 +59,7 @@
           jump_tags: {
             title: "跳转标签",
             text: "$(l:patterns/readwrite#hexcasting:local)$(thing)渡鸦之思/$并不是$(hex)咒术/$中唯一用来存储信息的位置。其实，我可以直接把 iota 藏到运行这一概念中去。我把这种技术叫作$(thing)跳转标签/$，部分其他文献则称其“续体标记”。$(br2)\
-              不过，$(thing)跳转标签/$有一项局限：它们同一时刻只能持有单个 iota。和$(l:patterns/readwrite#hexcasting:local)$(thing)渡鸦之思/$不一样的是，它们就连列表都存不下。"
+              不过，$(thing)跳转标签/$有一项局限：它们同一时刻只能持有单个 iota。和$(l:patterns/readwrite#hexcasting:local)$(thing)渡鸦之思/$不一样的是，它们连列表都存不下。"
           },
           "read/mark/local": "复制当前运行所对应的$(thing)跳转标签/$中存储的 iota，并压入栈顶。",
           "read/mark/iota": "和$(l:patterns/jump_manipulation#caduceus:read/mark/local)$(action)壶罐之精思/$类似，但会从跳转 iota 的顶部帧所对应的$(thing)跳转标签/$中读出。",
@@ -98,7 +100,9 @@
     action: {
       "caduceus:": {
         "eval/prompt": "忒提斯之策略",
+        "eval/prompt_at": "忒提斯之策略，第二型",
         "eval/control": "阿尔刻之策略",
+        "eval/control_at": "阿尔刻之策略，第二型",
         "read/mark/local": "壶罐之精思",
         "read/mark/iota": "壶罐之纯化",
         "write/mark/local": "壶罐之策略",

@@ -1,6 +1,14 @@
-key.categories.bogosorter=物品栏Bogo排序整理
-key.sort_config=打开排序配置
-key.sort=排序物品栏
+bogosort.key.categories=物品栏Bogo排序整理
+bogosort.key.sort_config=打开排序配置
+bogosort.key.sort=排序物品栏
+bogosort.key.lock_slot=在GUI中锁定玩家槽位
+
+bogosort.key.move_all=移动所有
+bogosort.key.move_all_same=移动所有相似项
+bogosort.key.move_single=移动单个
+bogosort.key.move_single_empty=移动单个至空槽位
+bogosort.key.throw_all_same=丢出所有相似项
+bogosort.key.throw_all=丢出所有
 
 bogosort.gui.title=排序配置
 bogosort.gui.tab.general.name=常规
@@ -10,8 +18,9 @@ bogosort.gui.tab.nbt_sort_rules.name=NBT排序规则
 bogosort.gui.available_sort_rules=可用的排序规则
 bogosort.gui.configured_sort_rules=已配置的排序规则
 bogosort.gui.enable_refill=启用快捷栏自动替换
-bogosort.gui.refill_comment=检测到夸克。若禁用该选项，夸克的自动替换仍可能在起效。可在夸克的“Management” -> “Automatic Tool Restock”配置中更改。
-bogosort.gui.refill_threshold=自动替换耐久阈值
+bogosort.gui.refill_comment=检测到夸克模组。若禁用该选项，夸克的自动替换功能仍可能在起效。可在夸克的"Management" -> "Automatic Tool Restock"配置中更改。
+bogosort.gui.refill_threshold=自动替换耐久度阈值
+bogosort.gui.refill_threshold.tooltip=手持工具的耐久度低于或等于此值时，将被自动替换为物品栏中找到的相似工具。设置为0可禁用此功能。
 bogosort.gui.ascending=升序
 bogosort.gui.descending=降序
 bogosort.gui.hotbar_scrolling=启用快捷栏纵列滚动
@@ -19,6 +28,21 @@ bogosort.gui.hotbar_scrolling.tooltip=按住ALT键滚动选取物品栏对应列
 bogosort.gui.enabled=启用
 bogosort.gui.button.enabled=在GUI中启用排序和设置按钮
 bogosort.gui.button.color=排序按钮的背景颜色
+bogosort.gui.hotbar_sorting.enabled=启用对玩家快捷栏槽位的排序
+bogosort.gui.slot_lock.title=槽位锁定
+bogosort.gui.slot_lock.desc=可以对玩家槽位进行锁定，以防止玩家与之进行任何交互操作（包括排序）。可以通过在任意GUI中，将鼠标悬停在槽位上并按%s（可配置）来锁定槽位。
+bogosort.gui.slot_lock.icon_scale=图标缩放
+bogosort.gui.slot_lock.icon_color=图标颜色
+bogosort.gui.slot_lock.icon_align=图标对齐
+bogosort.gui.slot_lock.icon_preview=预览
+bogosort.gui.slot_lock.reset_style=重置样式
+bogosort.gui.slot_lock.unlock_all=解锁所有槽位
+bogosort.gui.slot_lock.only_block_sort=仅阻止排序
+bogosort.gui.slot_lock.only_block_sort.desc=若启用该选项，玩家与锁定槽位的交互操作不会被阻止，但排序功能仍会忽略锁定的槽位。
+bogosort.gui.corner.tl=左上角
+bogosort.gui.corner.tr=右上角
+bogosort.gui.corner.bl=左下角
+bogosort.gui.corner.br=右下角
 
 bogosort.command.config_relaod.success=重新加载排序配置
 
@@ -66,10 +90,10 @@ bogosort.sortrules.nbt.potion.name=药水
 bogosort.sortrules.nbt.enchantment.name=魔咒
 bogosort.sortrules.nbt.enchantment_book.name=附魔书
 bogosort.sortrules.nbt.gt_circ_config.name=格雷科技可编程电路
-bogosort.sortrules.nbt.gt_item_damage.name=格雷科技工具耐久
+bogosort.sortrules.nbt.gt_item_damage.name=格雷科技工具损坏值
 
 bogosort.sortrules.nbt.potion.description=根据效果和等级对药水排序
 bogosort.sortrules.nbt.enchantment.description=根据效果和等级对附魔物品排序
 bogosort.sortrules.nbt.enchantment_book.description=根据效果和等级对附魔书排序
 bogosort.sortrules.nbt.gt_circ_config.description=根据配置对格雷科技的编程电路排序
-bogosort.sortrules.nbt.gt_item_damage.description=根据耐久对格雷科技的工具排序
+bogosort.sortrules.nbt.gt_item_damage.description=根据损坏值对格雷科技的工具排序
