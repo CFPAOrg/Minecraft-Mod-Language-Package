@@ -1,0 +1,155 @@
+---
+navigation:
+  title: Laser Rotor
+  icon: "synergy:laser_rotor"
+  parent: lasers.md
+  position: 5
+categories:
+  - lasers
+item_ids:
+  - synergy:laser_rotor
+---
+
+# Laser Rotor
+
+Generate FE when powered from the same laser machine at all of the sides
+
+If another laser machine touch one of the side , it will reset
+
+Right click can rotate the block
+
+<RecipeFor id="synergy:laser_rotor" />
+
+### Example of setup to generate manually FE using a Laser Rotor
+
+<GameScene zoom="2" interactive={true}>
+
+<Block x="1" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
+<Block x="2" y="-1" z="1" id="minecraft:white_terracotta"/>
+<Block x="3" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
+<Block x="4" y="-1" z="1" id="minecraft:white_terracotta"/>
+<Block x="5" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
+<Block x="6" y="-1" z="1" id="minecraft:white_terracotta"/>
+<Block x="7" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
+<Block x="8" y="-1" z="1" id="minecraft:white_terracotta"/>
+<Block x="9" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
+
+<Block x="1" y="-1" z="2" id="minecraft:white_terracotta"/>
+<Block x="2" y="-1" z="2" id="minecraft:light_gray_terracotta"/>
+<Block x="3" y="-1" z="2" id="minecraft:white_terracotta"/>
+<Block x="4" y="-1" z="2" id="minecraft:light_gray_terracotta"/>
+<Block x="5" y="-1" z="2" id="minecraft:white_terracotta"/>
+<Block x="6" y="-1" z="2" id="minecraft:light_gray_terracotta"/>
+<Block x="7" y="-1" z="2" id="minecraft:white_terracotta"/>
+<Block x="8" y="-1" z="2" id="minecraft:light_gray_terracotta"/>
+<Block x="9" y="-1" z="2" id="minecraft:white_terracotta"/>
+
+<Block x="1" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
+<Block x="2" y="-1" z="3" id="minecraft:white_terracotta"/>
+<Block x="3" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
+<Block x="4" y="-1" z="3" id="minecraft:white_terracotta"/>
+<Block x="5" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
+<Block x="6" y="-1" z="3" id="minecraft:white_terracotta"/>
+<Block x="7" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
+<Block x="8" y="-1" z="3" id="minecraft:white_terracotta"/>
+<Block x="9" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
+
+<Block x="1" y="-1" z="4" id="minecraft:white_terracotta"/>
+<Block x="2" y="-1" z="4" id="minecraft:light_gray_terracotta"/>
+<Block x="3" y="-1" z="4" id="minecraft:white_terracotta"/>
+<Block x="4" y="-1" z="4" id="minecraft:light_gray_terracotta"/>
+<Block x="5" y="-1" z="4" id="minecraft:white_terracotta"/>
+<Block x="6" y="-1" z="4" id="minecraft:light_gray_terracotta"/>
+<Block x="7" y="-1" z="4" id="minecraft:white_terracotta"/>
+<Block x="8" y="-1" z="4" id="minecraft:light_gray_terracotta"/>
+<Block x="9" y="-1" z="4" id="minecraft:white_terracotta"/>
+
+<Block x="1" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
+<Block x="2" y="-1" z="5" id="minecraft:white_terracotta"/>
+<Block x="3" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
+<Block x="4" y="-1" z="5" id="minecraft:white_terracotta"/>
+<Block x="5" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
+<Block x="6" y="-1" z="5" id="minecraft:white_terracotta"/>
+<Block x="7" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
+<Block x="8" y="-1" z="5" id="minecraft:white_terracotta"/>
+<Block x="9" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
+
+<Block x="1" y="-1" z="6" id="minecraft:white_terracotta"/>
+<Block x="2" y="-1" z="6" id="minecraft:light_gray_terracotta"/>
+<Block x="3" y="-1" z="6" id="minecraft:white_terracotta"/>
+<Block x="4" y="-1" z="6" id="minecraft:light_gray_terracotta"/>
+<Block x="5" y="-1" z="6" id="minecraft:white_terracotta"/>
+<Block x="6" y="-1" z="6" id="minecraft:light_gray_terracotta"/>
+<Block x="7" y="-1" z="6" id="minecraft:white_terracotta"/>
+<Block x="8" y="-1" z="6" id="minecraft:light_gray_terracotta"/>
+<Block x="9" y="-1" z="6" id="minecraft:white_terracotta"/>
+
+<Block x="1" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
+<Block x="2" y="-1" z="7" id="minecraft:white_terracotta"/>
+<Block x="3" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
+<Block x="4" y="-1" z="7" id="minecraft:white_terracotta"/>
+<Block x="5" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
+<Block x="6" y="-1" z="7" id="minecraft:white_terracotta"/>
+<Block x="7" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
+<Block x="8" y="-1" z="7" id="minecraft:white_terracotta"/>
+<Block x="9" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
+
+<Block x="1" y="-1" z="8" id="minecraft:white_terracotta"/>
+<Block x="2" y="-1" z="8" id="minecraft:light_gray_terracotta"/>
+<Block x="3" y="-1" z="8" id="minecraft:white_terracotta"/>
+<Block x="4" y="-1" z="8" id="minecraft:light_gray_terracotta"/>
+<Block x="5" y="-1" z="8" id="minecraft:white_terracotta"/>
+<Block x="6" y="-1" z="8" id="minecraft:light_gray_terracotta"/>
+<Block x="7" y="-1" z="8" id="minecraft:white_terracotta"/>
+<Block x="8" y="-1" z="8" id="minecraft:light_gray_terracotta"/>
+<Block x="9" y="-1" z="8" id="minecraft:white_terracotta"/>
+
+<Block x="1" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
+<Block x="2" y="-1" z="9" id="minecraft:white_terracotta"/>
+<Block x="3" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
+<Block x="4" y="-1" z="9" id="minecraft:white_terracotta"/>
+<Block x="5" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
+<Block x="6" y="-1" z="9" id="minecraft:white_terracotta"/>
+<Block x="7" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
+<Block x="8" y="-1" z="9" id="minecraft:white_terracotta"/>
+<Block x="9" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
+
+<Block x="5" z="5" id="synergy:laser_rotor" p:enabled="false"/>
+
+<Block x="7" z="5" id="synergy:laser_mirror" p:inverted="false"/>
+
+<BoxAnnotation color="#0095ff" min="7.25 0 5.25" max="7.75 0.5 5.75">
+       When rotated it will change the path touching another side of the Laser Rotor
+  </BoxAnnotation>
+
+<Block x="5" z="7" id="synergy:laser_mirror" p:inverted="true"/>
+
+<BoxAnnotation color="#0095ff" min="5.25 0 7.25" max="5.75 0.5 7.75">
+       When rotated it will change the path touching another side of the Laser Rotor
+  </BoxAnnotation>
+
+<Block x="3" z="5" id="synergy:laser_mirror" p:inverted="false"/>
+
+<BoxAnnotation color="#0095ff" min="3.25 0 5.25" max="3.75 0.5 5.75">
+       When rotated it will change the path touching another side of the Laser Rotor
+  </BoxAnnotation>
+
+<Block x="8" z="5" id="synergy:laser_mirror" p:inverted="false"/>
+<Block x="8" z="7" id="synergy:laser_mirror" p:inverted="true"/>
+
+<Block x="5" z="8" id="synergy:laser_mirror" p:inverted="true"/>
+<Block x="3" z="8" id="synergy:laser_mirror" p:inverted="false"/>
+
+<Block x="5" z="3" id="synergy:laser_mirror" p:inverted="false"/>
+
+<Block x="2" z="3" id="synergy:laser_mirror" p:inverted="true"/>
+<Block x="2" z="5" id="synergy:laser_mirror" p:inverted="false"/>
+
+
+<Block x="7" z="1" id="synergy:solar_panel" p:north="false" p:south="false" p:east="false" p:west="false" p:enabled="true"/>
+
+  <Block x="7" z="2" id="synergy:laser_machine_gun" p:facing="south" p:enabled="true"/>
+
+  <Block x="8" z="2" id="minecraft:lever" p:face="floor" p:powered="true"/>
+
+</GameScene>

@@ -1,7 +1,7 @@
 ---
 navigation:
   title: Synergy
-  icon: "minecraft:redstone"
+  icon: "synergy:copper_coil"
   position: 1
 ---
 
