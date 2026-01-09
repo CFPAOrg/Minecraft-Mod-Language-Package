@@ -17,20 +17,12 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:import,title=协助之转离|>
+<|trick@trickster:templates|trick-id=trickster:import|>
 
-item, any... -> any
-
----
-
-寻找施法者物品栏中的所给物品，并施放第一个抄有法术的目标物品中的法术，使用输入值作为执行参数。
+寻找施法者物品栏中所给类型的物品，并施放第一个抄有法术的目标物品中的法术，使用输入值作为参数。
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:import_hat,title=颅骨之转离|>
+<|trick@trickster:templates|trick-id=trickster:import_hat|>
 
-number, any... -> any
-
----
-
-获取施法者[高顶礼帽](^trickster:items/top_hat)中给定槽位处的法术，使用输入值作为执行参数施放，并返回执行结果。
+获取施法者[帽子](^trickster:items/top_hat)中给定槽位处的法术，使用输入值作为参数施放，并返回执行结果。
