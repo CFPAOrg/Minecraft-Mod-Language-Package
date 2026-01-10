@@ -115,7 +115,7 @@ namespace Uploader
             var release = await client.Repository.Release.Get(repoId, "autobuild");
             Log.Information("<Autobuild> 获取 autobuild Release");
 
-            var timestamp = DateTime.UtcNow.ToString("yyyy-MM-dd HH:mm:ss");
+            var timestamp = DateTime.UtcNow.AddHours(8).ToString("yyyy-MM-dd HH:mm:ss");
             var desc = new ReleaseUpdate()
             {
                 Body = $"""
@@ -123,7 +123,7 @@ namespace Uploader
 
                 ### 最后更新时间
 
-                - {timestamp}
+                - {timestamp} UTC+8
                 """,
                 MakeLatest = MakeLatestQualifier.True
             };
