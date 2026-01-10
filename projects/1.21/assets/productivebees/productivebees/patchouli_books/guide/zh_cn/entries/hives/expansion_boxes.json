@@ -1,0 +1,71 @@
+{
+    "name": "扩容盒",
+    "icon": "productivebees:expansion_box_oak",
+    "category": "productivebees:hives",
+    "sortnum": 3,
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "扩容盒可以连接到高级蜂箱上，将蜂箱的蜜蜂容量从 3 个增加到 5 个。扩容盒可以放置在高级蜂箱的顶部或旁边。每个高级蜂箱只能有一个扩容盒。"
+        },
+        {
+            "type": "patchouli:crafting",
+            "recipe": "productivebees:boxes/expansion_box_oak"
+        },
+        {
+            "type": "multiblock",
+            "name": "垂直方向扩展",
+            "multiblock": {
+                "mapping": {
+                    "H": "productivebees:advanced_oak_beehive[expanded=up]",
+                    "E": "productivebees:expansion_box_oak[expanded=up]"
+                },
+                "pattern": [
+                    [
+                        "E"
+                    ],
+                    [
+                        "H"
+                    ],
+                    [
+                        "0"
+                    ]
+                ],
+                "symmetrical": true,
+                "offset": [
+                    0,
+                    1,
+                    0
+                ]
+            },
+            "enable_visualize": false
+        },
+        {
+            "type": "multiblock",
+            "name": "水平方向扩展",
+            "multiblock": {
+                "mapping": {
+                    "H": "productivebees:advanced_oak_beehive[expanded=left]",
+                    "E": "productivebees:expansion_box_oak[expanded=left]"
+                },
+                "pattern": [
+                    [
+                        "H",
+                        "E"
+                    ],
+                    [
+                        "0",
+                        " "
+                    ]
+                ],
+                "symmetrical": true,
+                "offset": [
+                    0,
+                    1,
+                    0
+                ]
+            },
+            "enable_visualize": false
+        }
+    ]
+}
