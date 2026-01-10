@@ -17,6 +17,7 @@
   "item.ars_zero.spellcasting_circlet.desc": "A circlet that channels spells from your head slot with Begin, Tick, and End phases.",
 
   "item.ars_zero.archwood_rod": "Archwood Rod",
+  "item.ars_zero.multiphase_orb": "Phased Orb",
 
   "block.ars_zero.arcane_voxel_spawner": "Arcane Voxel Spawner",
   "block.ars_zero.fire_voxel_spawner": "Fire Voxel Spawner",
@@ -25,7 +26,13 @@
   "block.ars_zero.stone_voxel_spawner": "Stone Voxel Spawner",
   "block.ars_zero.ice_voxel_spawner": "Ice Voxel Spawner",
   "block.ars_zero.lightning_voxel_spawner": "Lightning Voxel Spawner",
+  "block.ars_zero.blight_voxel_spawner": "Blight Voxel Spawner",
+  "block.ars_zero.blight_fluid": "Blight Fluid",
+  "block.ars_zero.blight_cauldron": "Blight Cauldron",
+  "block.ars_zero.frozen_blight": "Frozen Blight",
   "block.ars_zero.multiphase_spell_turret": "Multiphase Spell Turret",
+
+  "item.ars_zero.blight_fluid_bucket": "Blight Fluid Bucket",
 
   "entity.ars_zero.arcane_voxel_entity": "Arcane Voxel",
   "entity.ars_zero.water_voxel_entity": "Water Voxel",
@@ -34,7 +41,9 @@
   "entity.ars_zero.wind_voxel_entity": "Wind Voxel",
   "entity.ars_zero.ice_voxel_entity": "Ice Voxel",
   "entity.ars_zero.lightning_voxel_entity": "Lightning Voxel",
+  "entity.ars_zero.blight_voxel_entity": "Blight Voxel",
   "entity.ars_zero.block_group": "Block Group",
+  "entity.ars_zero.water_convergence_controller": "Water Convergence",
 
   "gui.ars_zero.staff_title": "Creative Spell Staff",
   "gui.ars_zero.phase.begin": "Begin",
@@ -45,8 +54,6 @@
   "ars_affinity.gui.affinities": "Affinities",
 
   "key.category.ars_zero.general": "Ars Zero",
-  "key.ars_zero.curio_cast": "Channel Circlet",
-  "key.ars_zero.curio_radial": "Circlet Spell Radial",
 
   "itemGroup.ars_zero": "Ars Zero",
 
@@ -61,6 +68,8 @@
   "ars_zero.glyph_desc.conjure_voxel_effect": "Conjures a small block-like entity",
   "ars_zero.glyph_name.effect_windshear": "Wind Shear",
   "ars_zero.glyph_desc.effect_windshear": "Conjures a wind voxel when used with Conjure Voxel",
+  "ars_zero.glyph_name.effect_envenom": "Envenom",
+  "ars_zero.glyph_desc.effect_envenom": "Conjures a blight voxel when used with Conjure Voxel",
 
   "ars_zero.glyph_name.select_effect": "Select",
   "ars_zero.glyph_desc.select_effect": "Selects a target entity or block without performing any action.",
@@ -88,6 +97,14 @@
   "ars_nouveau.augment_desc.anchor_effect_glyph_amplify": "Increases the distance from the player",
   "ars_nouveau.augment_desc.anchor_effect_glyph_dampen": "Decreases the distance from the player",
 
+  "item.ars_zero.sustain_effect": "Sustain",
+  "ars_zero.glyph_name.sustain_effect": "Sustain",
+  "ars_zero.glyph_desc.sustain_effect": "Extends the lifespan of a target",
+  "ars_zero.glyph_name.glyph_sustain_effect": "Sustain",
+  "ars_zero.glyph_desc.glyph_sustain_effect": "Extends the lifespan of a target",
+  "ars_nouveau.glyph_name.sustain_effect": "Sustain",
+  "ars_nouveau.augment_desc.sustain_effect_glyph_extend_time": "Adds an additional tick per level",
+
   "ars_nouveau.augment_desc.zero_gravity_effect_glyph_extend_time": "Extends the gravity suppression duration",
   "ars_nouveau.augment_desc.zero_gravity_effect_glyph_duration_down": "Reduces the gravity suppression duration",
   "ars_zero.effect_augment_desc.conjure_voxel_effect_glyph_conjure_water": "Composite Effect: Conjure Water Voxel",
@@ -96,6 +113,7 @@
   "ars_zero.effect_augment_desc.conjure_voxel_effect_glyph_conjure_terrain": "Composite Effect: Conjure Stone Voxel",
   "ars_zero.effect_augment_desc.conjure_voxel_effect_glyph_cold_snap": "Composite Effect: Conjure Ice Voxel",
   "ars_zero.effect_augment_desc.conjure_voxel_effect_glyph_discharge": "Composite Effect: Conjure Lightning Voxel",
+  "ars_zero.effect_augment_desc.conjure_voxel_effect_glyph_envenom": "Composite Effect: Conjure Blight Voxel",
 
   "ars_zero.glyph_name.temporal_context_form": "Temporal Context",
   "ars_zero.glyph_desc.temporal_context_form": "A cast method that provides access to the context of the previous spell phase (Staff only)",
@@ -115,6 +133,11 @@
   "ars_zero.glyph_name.push_effect": "Push",
   "ars_zero.glyph_desc.push_effect": "Pushes the target in the direction you're looking.",
 
+  "ars_zero.glyph_name.discard_effect": "Discard",
+  "ars_zero.glyph_desc.discard_effect": "Discards non-living entities.",
+  "ars_zero.glyph_name.glyph_discard_effect": "Discard",
+  "ars_zero.glyph_desc.glyph_discard_effect": "Discards non-living entities. Useful for removing Arcane Voxels.",
+
   "ars_zero.glyph_name.enlarge_effect": "Enlarge",
   "ars_zero.glyph_desc.enlarge_effect": "Increases the size of the target entity [NB: only works on Voxels so far]",
 
@@ -125,6 +148,14 @@
   "ars_zero.glyph_desc.glyph_zero_gravity_effect": "Temporarily removes gravity from the target, bringing it back when the spell expires.",
   "effect.ars_zero.zero_gravity": "Gravity-ridden",
   "effect.ars_zero.zero_gravity.description": "Temporarily removes gravity from the entity",
+
+  "ars_zero.glyph_name.effect_convergence": "Convergence",
+  "ars_zero.glyph_desc.effect_convergence": "Concentrates a large amount of mana into a single point. ",
+  "ars_zero.glyph_name.glyph_effect_convergence": "Convergence",
+  "ars_zero.glyph_desc.glyph_effect_convergence": "Creates a powerful convergence point that can be augmented with other effects.",
+  "ars_nouveau.glyph_name.effect_convergence": "Convergence",
+  "ars_zero.effect_augment_desc.effect_convergence_glyph_explosion": "Megasplosion: Creates an enormous explosion that charges over time. Fire Power affects charge rate, explosion radius and ignition (at 8+ turns into Extinguishing Soulfire Explosion). AOE determines radius. Amplify increases damage (to blocks/entities). Dampen decreases damage and radius.",
+  "ars_zero.effect_augment_desc.effect_convergence_glyph_conjure_water": "Sacred Conjure Water: Fills a large area with water from bottom to top. Water Power affects placement speed. AOE determines radius. Drains mana per block placed.",
 
   "ars_nouveau.spell.validation.adding.phase_restriction": "%s is not usable in this phase.",
   "ars_nouveau.spell.validation.exists.phase_restriction": "%s is not usable in this phase."
