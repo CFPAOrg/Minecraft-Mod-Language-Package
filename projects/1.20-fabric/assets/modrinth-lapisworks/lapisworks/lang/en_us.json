@@ -94,6 +94,7 @@
     "block.lapisworks.media_condenser_unit": "Media Condensing Unit",
     "block.lapisworks.uncrafted_condenser": "Empty Unit",
     "block.lapisworks.amel_constructs.enchbrewer": "Enchanted Brewery",
+    "block.lapisworks.chalk": "Amethyst Chalk",
 
     "advancements.lapisworks.gotlapis.name": "Lapisworks Research",
     "advancements.lapisworks.gotlapis.description": "A deep blue, precious mineral. Just as they wrote..",
@@ -120,8 +121,12 @@
     "render.lapisworks.scryinglens.holder.offhand": "Off-hand",
     "render.lapisworks.scryinglens.holder.items": "%dx %s",
     "render.lapisworks.scryinglens.mediacondenser": "%d%% filled. (%d/%d dust)",
+    "render.lapisworks.scryinglens.simp.listening": "Listening for pattern: %s",
+    "render.lapisworks.scryinglens.simp.not_listening": "Not listening for any patterns.",
+    "render.lapisworks.scryinglens.chalk.no_patterns": "No pattern present.",
 
 
+    "gui.lapisworks.chalk_with_pattern.name": "Amethyst Chalk",
     "gui.lapisworks.enchbrewer.name": "Enchanted Brewery",
 
     "tag.item.lapisworks.amel": "Amethyst Lazuli",
@@ -225,10 +230,13 @@
     "hexcasting.action.book.lapisworks:phiangle": "Phiangle",
     "hexcasting.action.lapisworks:dephiangle": "Dephiangle",
     "hexcasting.action.book.lapisworks:dephiangle": "Dephiangle",
-    "hexcasting.action.lapisworks:get_condenser_media": "Condensed Media Purification",
-    "hexcasting.action.book.lapisworks:get_condenser_media": "Condensed Media Prfn.",
+    "hexcasting.action.lapisworks:get_condenser_mdia": "Condensed Media Purification",
+    "hexcasting.action.book.lapisworks:get_condenser_mdia": "Condensed Media Prfn.",
     "hexcasting.action.lapisworks:get_linkable_links": "Phianglement Purification",
     "hexcasting.action.book.lapisworks:get_linkable_links": "Phianglement Prfn.",
+
+    "hexcasting.action.lapisworks:hadamard": "Hadamard Distillation",
+    "hexcasting.action.book.lapisworks:hadamard": "Hadamard Distillation",
 
     "hexcasting.action.lapisworks:create_enchsent0": "Summon Enchanted Sentinel",
     "hexcasting.action.lapisworks:create_enchsent1": "Summon Enchanted Sentinel",
@@ -266,14 +274,20 @@
     "hexcasting.mishap.bad_item.lapis_lazuli": "Lapis Lazuli",
     "hexcasting.mishap.bad_item.amel": "Amethyst Lazuli",
 
+    "mishaps.lapisworks.ritual.invalid_chalk": "Expected a ritual component at %s, but found %s. (This is a bug in the mod.)",
+    "mishaps.lapisworks.ritual.cast_outside_ritual": "Expected this pattern to be cast in an Amethyst Ritual.",
+    "mishaps.lapisworks.ritual.cast_outside_one_time_ritual": "Expected this pattern to be cast in a one-time Amethyst Ritual.",
+
     "mishaps.lapisworks.not_enough_items": "At least %dx %s required, but only %dx %s was found on the user.",
     "mishaps.lapisworks.already_enchanted": "Cannot enchant %s with %s, as it is already enchanted with the maximum level of %s it can have right now (%d).",
     "mishaps.lapisworks.some_hand.no_item": "Expected %s in the %s, but found nothing.",
+
     "mishaps.lapisworks.some_hand.bad_item": "Expected %s in the %s, but found (%s) %dx %s",
     "hands.lapisworks.main": "main-hand",
     "hands.lapisworks.off": "off-hand",
     "hands.lapisworks.3": "third-hand",
     "hands.lapisworks.4": "fourth-hand",
+
     "mishaps.lapisworks.some_hand.bad_item.generic": "an incorrect item",
     "mishaps.lapisworks.bad_block.full_mind": "FULL Simple Mind Container",
     "mishaps.lapisworks.imbue_artmind.need_imbueable": "a block that can accept a simple mind right now",
@@ -283,6 +297,7 @@
     "mishaps.lapisworks.equipped.not": "Expected %s to be equipped, but found nothing.",
     "mishaps.lapisworks.equipped.bad": "Found %s equipped, but it was not a/an %s",
 
+    "mishaps.lapisworks.descs.phial": "a Phial",
     "mishaps.lapisworks.descs.entityorblockposiota": "an entity or vector iota",
     "mishaps.lapisworks.descs.imbueable": "any item imbueable with Amethyst Lazuli (e.g. a staff)",
     "mishaps.lapisworks.descs.smind_infuseable": "any block infuseable with a Simple Mind (e.g. an Amethyst Block)",
@@ -302,7 +317,6 @@
     "mishaps.lapisworks.descs.unlinked_linkable": "a Linkable Media Block/phiangleable not linked to %d, %d, %d",
     "mishaps.lapisworks.descs.nottoomanylinks_linkable": "a Linkable Media Block/phiangleable without too many links",
 
-    "notif.lapisworks.you_used_the_enchant_bug": "You used the Enchant X pattern bug before 1.5.6. Media cost is 0, attribute reset to the limit.",
     "notif.lapisworks.wizard_diaries.all_gotten": "It seems I have rediscovered all the surviving ancient tomes.",
     "notif.lapisworks.wizard_diaries.unreadable_diary": "Blank. Perhaps this has the same encryption as every other Lapisworker text? I suppose I'll unlock it in time, then.",
     "notif.lapisworks.dowser.not_enough_media": "Failure. It couldn't find enough media (%d dust, precisely) for fuel.",
@@ -329,6 +343,7 @@
     "pages.lapisworks.lapisworks_patterns.moar_health.detailed": "The limit to this is 2x the entity's maximum health. Curiously, the enchanted skin also protects against Nature taking it's due meaning it becomes impossible for Nature to take a piece of the entity's mind. Interestingly enough, old texts suggest that beyond a certain level of power mages would lose sanity, and this is how certain powerful mages were able to keep their sanity. In any case my maximum healthiness is about 20 half-hearts.",
     "pages.lapisworks.lapisworks_patterns.moar_attack.summary": "Pass in an entity and a number of half-hearts, and it enchants their fists to increase their damage per hit. One $(item)Amel$() and five $(item)Amethyst Shards$() per half-heart. Limit is 4x the norm so just 4 for me.",
     "pages.lapisworks.lapisworks_patterns.moar_speed.summary": "Enchants the given entity's feet to increase their movement speed. Costs 1x $(item)Amel$() and 5x $(item)Amethyst Shards$(). Limit is 3x the norm. The norm for me is about 1.",
+    "pages.lapisworks.lapisworks_patterns.moar_speed.tip": "This speed is unwieldy for myself, so enchanting the feet of a horse would be optimal.",
     "pages.lapisworks.lapisworks_patterns.gib_reach.summary": "Enchants the given $(o)player's$() arms, increasing their reach by 3 blocks and the range from which they can attack by 1 block. Costs 16 $(item)Amel$() and one $(item)Amethyst Shard$() in media. There is no customizability here.",
     "pages.lapisworks.lapisworks_patterns.gib_reach.detailed": "A sidenote: it seems this spell does not extend one's arms, but rather grants the arms each a ghost-like extension which only comes out when required. Fascinating. Somewhat strangely, these two attribute enhancements given (reach and attack range respectively) count as separate for the purposes of $(thing)Enhancement Prfn.$()",
     "pages.lapisworks.lapisworks_patterns.check_attr.summary": "Gives me the amount the given entity has been enhanced in the given area (specified by number). The patterns before were sorted so 0 gives max health, 1 gives attack damage and so on. Negligible media cost.",
@@ -336,20 +351,20 @@
     "pages.lapisworks.lapisworks_great.title": "Enchantments",
     "pages.lapisworks.lapisworks_great.aahhhhelp": "i have seen i have seen go back give me back my sanity must not lose self have no time must document before",
     "pages.lapisworks.lapisworks_great.explanation": "my eyes hurt so much it hurts to read it hurts to see it hurts to exist the pages the patterns the radiance in the corners of my vision gathered together and blinded me must write down. All of these patterns cost 32 $(item)Amel$() if not stated otherwise. They do not carry over bad dreams like this this is a bad dream right it's gonna end soon what if it's not a dream and it ends soon i'm going to die",
-    "pages.lapisworks.lapisworks_great.checkenchant.summary": "Gives the level of the specified enchantment enchantment enchantment enchantment why do they always shine purple $(l)MUST WRITE DOWN$() on the given entity for little cost and no $(item)Amel$().",
-    "pages.lapisworks.lapisworks_great.fireyfists.summary": "It costs 10 $(item)Charged Amethyst$() and it's like $(thing)Fire Aspect$() for fists that's so funny teehee heeheeheeHAHAHAHA $(l)NO NO STOP.$() One level. ID = 0.",
-    "pages.lapisworks.lapisworks_great.lightningbending.summary": "The heavens bend to my will with each of my strikes. 20 $(item)Charged Amethyst$() and a stack of $(item)Amel$() per level. Three levels. ID = 1.",
+    "pages.lapisworks.lapisworks_great.checkenchant.summary": "Gives the level of the specified (with ID) enchantment on the given entity for little cost and no $(item)Amel$().",
+    "pages.lapisworks.lapisworks_great.fireyfists.summary": "Like $(thing)Fire Aspect$() but for my hands. Costs 10 $(item)Charged Amethyst$() 48 $(item)Amel$(). Has one level. ID = 0.",
+    "pages.lapisworks.lapisworks_great.lightningbending.summary": "20 $(item)Charged Amethyst$() and a stack of $(item)Amel$() per level to bend the heavens to my will with my strikes. Three levels. ID = 1.",
     "pages.lapisworks.lapisworks_great.lightningbending.detailed": "please i'm so scared every tiny movement feels like i i i i feel like i'm about to $(l)NO NO CANNOT END HERE$(). At level one, the lightning channeling effect only works during thunderstorms. At level two, it works during rain as well. At level three, even clear skies will not stop me.",
-    "pages.lapisworks.lapisworks_great.falldmgres.summary": "This cushions up to 10 blocks of fall damage per level and costs 5 $(item)Charged Amethyst$() and 20 $(item)Amel$() per level. Three levels. ID = 2.",
-    "pages.lapisworks.lapisworks_great.longbreath.summary": "what is the point of inflating my lungs any more my lungs already feel like $(o)stop please.$() Achieve the $(thing)Respiration$() enchantment but twice as strong. Two levels. 1 charged, 10 $(item)Amel$(). ID = 3.",
-    "pages.lapisworks.lapisworks_great.fireresist.summary": "Wield the energy of an entire stack of $(item)Amel$() and 10 $(item)Charged Amethyst$() to make me hell-borne. One level. ID = 4. im more afraid of the light than fire",
+    "pages.lapisworks.lapisworks_great.falldmgres.summary": "Cushions up to 10 blocks of fall damage per level, costing 5 $(item)Charged Amethyst$() and 20 $(item)Amel$() per level. Three levels. ID = 2.",
+    "pages.lapisworks.lapisworks_great.longbreath.summary": "Enchant my lungs themselves and achieve the $(thing)Respiration$() enchantment but twice as strong. Two levels. 1 $(item)Charged Amethyst$(), 10 $(item)Amel$(). ID = 3.",
+    "pages.lapisworks.lapisworks_great.fireresist.summary": "Wield the energy of an entire stack of $(item)Amel$() and 10 $(item)Charged Amethyst$() to make me hell-borne and impervious to all heat. One level. ID = 4.",
     "pages.lapisworks.lapisworks_great.imgonnagoliedownnow": "the light that shines in the corners of my eyesight is so so so so so so so bright how do i make it stop please make it stop help me$(br2)am i going to die here? no no no no i can't die here i don't wanna die i'm scared i don't wanna die$(br2)im gonna go lie down now",
 
     "pages.lapisworks.lapisworks_misc.title": "Enchanted Patterns",
-    "pages.lapisworks.lapisworks_misc.intro": "These ancient texts recount an old and wise wizard, extremely knowledgeable of all sorcery, yet spiteful of all creatures living, dead, undead or unborn. It is told they were poor in sources of media and many came after them, but they always managed to survive. This wizard left behind a treasure trove of knowledge on their demise (collected by curious adventurers) including $(thing)Enchanted Patterns.$()$(br)$(o)Will I ever be capable of this feat?$()",
-    "pages.lapisworks.lapisworks_misc.intro2": "Frustratingly enough, the wizard attempted to burn most of them and was extremely successful, leaving only a few that were recovered by the heroes that defeated them. Among these few are enhanced forms of $(l:patterns/spells/blockworks#hexcasting:conjure_block)Conjure Block$(), $(l:patterns/consts#hexcasting:const/vec/0)some Vector patterns$(), $(l:patterns/basics#hexcasting:raycast)Archer's Distillation$(), among some others.",
+    "pages.lapisworks.lapisworks_misc.intro": "These ancient texts recount an old and wise wizard, extremely knowledgeable of all sorcery, yet spiteful of all that crossed their path. It is told they were poor in sources of media and many came after them, but they always managed to survive. This wizard left behind a treasure trove of knowledge on their demise (collected by curious adventurers) including $(thing)Enchanted Patterns.$()$(br)$(o)Will I ever be capable of this feat?$()",
+    "pages.lapisworks.lapisworks_misc.intro2": "Frustratingly enough, the wizard attempted to burn most of them and was extremely successful, leaving only a few that were recovered by the heroes that defeated them. Among these few are enhanced forms of $(l:patterns/spells/blockworks#hexcasting:conjure_block)Conjure Block$(), $(l:patterns/consts#hexcasting:const/vec/0)some Vector patterns$(), $(l:patterns/basics#hexcasting:raycast)Archer's Distillation$(), among some others. I should also note that $(thing)Enchanted Patterns$() aren't always \"better\" than the original, instead sometimes they extend their functionality or specialize it.",
     "pages.lapisworks.lapisworks_misc.conjure_color.summary": "Pass in a vector within Ambit and a dye color, to conjure a fragile but solid, colored block. This costs two amethyst dust and the number states which dye I want to dye the colored block. More explanation on the next page.",
-    "pages.lapisworks.lapisworks_misc.conjure_color.detail": "The number states the index (starting from 0) of the dye I wish to use if they were all sorted alphabetically. All mappings:$(br)0 - Black      1 - Blue      $(br)2 - Brown      3 - Cyan      $(br)4 - Gray       5 - Green     $(br)6 - Light Blue 7 - Light Gray$(br)8 - Lime       9 - Magenta   $(br)10 - Orange    11 - Pink     $(br)12 - Purple    13 - Red      $(br)14 - White     15 - Yellow$(br)Additionally the block glows with the $(o)dye$() of my pigment's color and purple if no such dye exists.",
+    "pages.lapisworks.lapisworks_misc.conjure_color.detail": "The number states the index (starting from 0) of the dye I wish to use if they were all sorted alphabetically. All mappings:$(br)0 - $(#050508)Black$()      1 - $(#1714FF)Blue$()      $(br)2 - $(#794521)Brown$()      3 - $(#4A9DBF)Cyan$()      $(br)4 - $(#545454)Gray$()       5 - $(#496A18)Green$()     $(br)6 - $(#8DB7F1)Light Blue$() 7 - $(#B8B8BF)Light Gray$()$(br)8 - $(#81D11C)Lime$()       9 - $(#C968C3)Magenta$()   $(br)10 - $(#D88929)Orange$()    11 - $(#F4B2D3)Pink$()     $(br)12 - $(#532C94)Purple$()    13 - $(#FF1919)Red$()      $(br)14 - White     15 - $(#E4E429)Yellow$()$(br)Additionally the block glows with the $(o)dye$() of my pigment's color and purple if no such dye exists.",
     "pages.lapisworks.lapisworks_misc.spherical_dstl.summary": "Evaluates (exactly like Thoth's Gambit) the given pattern list over a hollow sphere with the given radius (non-decimal, at least 1, at most 64) around the given position.",
     "pages.lapisworks.lapisworks_misc.cubic_exalt.summary": "Evaluates (exactly like Thoth's Gambit) the given pattern list over a (hollow if given True) cube-ish area from the given points A to B.",
     "pages.lapisworks.lapisworks_misc.empty_prfn.summary": "Answers the question, \"is there only air there?\" for negligible media cost. Vector must be in my ambit.",
@@ -357,7 +372,7 @@
     "pages.lapisworks.lapisworks_misc.visible_dstl.summary": "Negligible cost. Pushes whether or not the specified entity (within ambit) is able to see the specified block (also within ambit).",
     "pages.lapisworks.lapisworks_misc.equiv_block.summary": "Returns whether the two blocks are equivalent/roughly equal (the same kind of block), so wheat seeds equals a full wheat crop. Both blocks must be within my ambit.",
     "pages.lapisworks.lapisworks_misc.equal_block.summary": "Returns whether the two blocks are $(o)exactly$() equal, so wheat seeds do NOT equal a full wheat crop. Blocks must be within my ambit.",
-    "pages.lapisworks.lapisworks_misc.rwpatternsheadsup": "It seems Nature searches for items for patterns like $(l:patterns/readwrite#hexcasting:read)$(thing)Scribe's Reflection$() by finding the first valid item in my hands, starting from my off-hand. This can be a problem when (e.g.) I have a Focus in both hands. The next four patterns are for reading, writing or checking any specific hand of mine (specified in order of importance, so 0 for main, 1 for off-hand). This is a good point to note that $(thing)Enchanted Patterns$() aren't always \"better\" than the original. $(o)I wonder, if I had three arms, would these support the third as well?$()",
+    "pages.lapisworks.lapisworks_misc.rwpatternsheadsup": "It seems Nature searches for items for patterns like $(l:patterns/readwrite#hexcasting:read)$(thing)Scribe's Reflection$() by finding the first valid item in my hands from my other hand. This can be a problem when e.g. I have a Focus in both hands. The next four patterns are for reading, writing or checking any specific hand of mine (specified in order of importance. so 0 for main, 1 for off-hand). $(br)$(o)I wonder, if I had three arms, would these support the third as well?$()",
     "pages.lapisworks.lapisworks_misc.read_spechand.summary": "Specific hand version of $(l:patterns/readwrite#hexcasting:read)$(thing)Scribe's Reflection$(). Pushes the Iota stored in the Iota holder in the specified hand to the stack.",
     "pages.lapisworks.lapisworks_misc.readable_spechand.summary": "Specific hand version of $(l:patterns/readwrite#hexcasting:readable)$(thing)Auditor's Reflection$(). Pushes whether the item in the specified hand can be read from or not.",
     "pages.lapisworks.lapisworks_misc.write_spechand.summary": "Specific hand version of $(l:patterns/readwrite#hexcasting:write)$(thing)Scribe's Gambit$(). Writes the given Iota to the Iota holder in the specified hand.",
@@ -365,6 +380,7 @@
     "pages.lapisworks.lapisworks_misc.the_cooler_halt.summary": "$(l:patterns/meta#hexcasting:halt)$(thing)Charon's Gambit$(), if it could break through more than one layer. This pattern is useful in cases where $(l:patterns/meta#hexcasting:halt)$(thing)Charon's Gambit$() is insufficient, however I wish not to delve into the complicated beast that is $(l:patterns/meta#hexcasting:eval/cc)$(thing)Iris' Gambit$().",
     "pages.lapisworks.lapisworks_misc.for_n_in_range.summary": "$(o)A oney and a twoey and a you-know-what-to-doey!$()$(br2)Executes the given pattern list over a list of in(or de)crementing numbers, ranging from the first argument (inclusive) to the second (exclusive) as if $(thing)Thoth's Gambit$() were used.",
     "pages.lapisworks.lapisworks_misc.execute_many_times.summary": "$(o)Do you know the definition of insanity?$()$(br2)Executes the given pattern list the specified number of times. The stack on start behaves like it does for $(thing)Thoth's Gambit$().",
+    "pages.lapisworks.lapisworks_misc.hadamard.summary": "Based off the Hadamard Product, this pattern multiplies the respective elements of two vectors.",
 
     "pages.lapisworks.lapisworks_mishaps.title": "Lapisworks Mishaps",
     "pages.lapisworks.lapisworks_mishaps.summary": "With a new branch of Hex Casting comes new mishaps. I've documented them here.",
@@ -377,7 +393,7 @@
 
 
     "categories.lapisworks.lapisworks.imbuement": "Imbuement",
-    "categories.lapisworks.lapisworks.imbuement.desc": "While I'd expect Lapisworks would just provide easier ways to $(o)enchant$() my tools like I can do at an $(item)Anvil$() or an $(item)Enchantment Table$(), the $(#00c)Lapisworkers$() of the past have discovered that it can do much more than that. Apparently some of the materials of this world have differing interactions with media. Let's see..",
+    "categories.lapisworks.lapisworks.imbuement.desc": "Apparently some of the materials of this world have differing interactions with media, including $(item)Amel$(). Let's see..",
 
     "pages.lapisworks.imbuement_spell.title": "Imbue Amel",
     "pages.lapisworks.imbuement_spell.summary": "The spell the ancient \"$(#00c)Lapisworkers$()\" would use very often. Imbue the item in my other hand (or main if nothing imbueable is in the other hand) with the specified amount of Amel, with no waste like the Enchant X spells. Costs 2x the amount of $(item)Amel$() being infused, in dust.",
@@ -414,8 +430,8 @@
     "pages.lapisworks.imbuement_artmind.whatwhyhow": "When I first read of the mind and that it produces trace amounts of media, I wondered, \"is it possible to create a mind..?\" Now after my experience with $(item)Amel$() imbuement, I think it is. In my experience a heap of media does not on its own start thinking, which can be explained by the fact media is merely the energy of thought. The energy must, however, be moved and used to think.",
     "pages.lapisworks.imbuement_artmind.whatwhyhow2": "If I were to make a machine that tugs at and copies the flow of media in other organisms, such a machine would surely, with time, gain a mind. For this purpose I believe villagers are most efficient as they are not outright nearly braindead but also not truly sapient. The resultant mind will probably be concious, sapient and will bear emotions (be sentient).",
     "pages.lapisworks.imbuement_artmind.recipe.text": "The $(item)Amel$() will let the machine eat bits and pieces of villager minds, taking \"snapshots\" of the flow of media within. A $(item)Diamond$() should focus it enough to mimic the precision of natural minds. The $(item)Charged Amethyst$() will hold the mind.",
-    "pages.lapisworks.imbuement_artmind.howtouse": "This contraption can tug at the minds of three random waking villagers at most 5 blocks away at once, filling in 20 minutes from just one. A waking villager is exhausted after 4 minutes (and heals in the same amount of time when not near this machine). Sleeping villagers, if selected first (and only when selected first), aren't able to be consumed from again for 20 minutes but fill 15%% of the mind container.",
-    "pages.lapisworks.imbuement_artmind.thought_sieve.detailed": "These Great Spells elude me so. There must be a better way than delving into old ruins to rediscover them. If the old ones discovered them on their own, so can I! To that end, I have found a way to directly ask Nature for the stroke order, however it only returns a torrent of information that must be sieved through by someone, or something.. Expendable. The spell eats over a quarter of the mind regardless of success or not. I can't imagine this experience not being excruciatingly painful.$(br)$(o)Should this bother me?$()",
+    "pages.lapisworks.imbuement_artmind.howtouse": "This contraption can tug at the minds of three random waking villagers at most 5 blocks away at once, filling in 20 minutes from just one. A waking villager is exhausted after 4 minutes (and heals in the same amount of time when not near this machine). Sleeping villagers, if selected, aren't able to be consumed from again for 20 minutes but fill 15%% of the mind container instantly.",
+    "pages.lapisworks.imbuement_artmind.thought_sieve.detailed": "These Great Spells elude me so. There must be a better way than delving into old ruins to rediscover them. If the old ones discovered them on their own, so can I! To that end, I have found a way to directly ask Nature for the stroke order, however it only returns a torrent of information that must be sieved through by someone, or something.. Expendable. The spell eats over a quarter of the mind regardless of success. I can't imagine this experience not being painful.$(br)$(o)Should this bother me?$()",
     "pages.lapisworks.imbuement_artmind.thought_sieve.summary": "Sieves the torrent of information using the (full) artificial mind at the given position. 3/5 chance of replacing the pattern in my other hand with one of the correct stroke order.",
     "pages.lapisworks.imbuement_artmind.check_mind.summary": "Pushes the percentage filled of the mind container at the given position to the stack.",
     "pages.lapisworks.imbuement_artmind.absorb_mind.summary": "Absorbs the entirety of the mind within the container into the rechargeable item in my other hand. If there is any extra, it is discarded. A full container yields one $(item)Charged Amethyst$().",
@@ -432,7 +448,7 @@
 
     "pages.lapisworks.imbuement.jar.title": "Amel Storage",
     "pages.lapisworks.imbuement.jar.intro": "My new tools are fun to play around with, and the $(item)Amel$() being able to be drawn from the hotbar is also convenient. However.. I find that some things in this field require a rather inconvenient amount of $(item)Amel$() to carry. For example: the partially-infused staves, while they grant me a larger hex grid, need constant repairing with $(item)Amel$(). Another example is the Enchant X patterns, which require a bunch of $(item)Amel$() as well. They make my pockets ever fuller. I cannot make much space for other things as my hands and my hotbar are unfortunately full. Indeed, I must acquire a solution.",
-    "pages.lapisworks.imbuement.jar.jar": "And a solution I have acquired. By infusing just 5 pieces of $(item)Amel$() into an ordinary glass bottle, I can turn it into an $(item)Amel Jar$() which can store 4 stacks of $(item)Amel$(). This Jar can be worn on my belt (to prioritize it as the first source to draw $(item)Amel$() from), or held in my hand. I can press $(thing)$(k:use)$() with $(item)Amel$() in the other hand to deposit it, and if I sneak while doing it I can withdraw up to a stack of $(item)Amel$() at a time into the other hand.",
+    "pages.lapisworks.imbuement.jar.jar": "And a solution I have acquired. By infusing just 5 pieces of $(item)Amel$() into an ordinary glass bottle, I can turn it into an $(item)Amel Jar$() which can store 4 stacks of $(item)Amel$(). This Jar can be worn on my belt (to prioritize it as the first source to draw $(item)Amel$() from), or held in my hand. I can $(thing)$(k:use)$() with $(item)Amel$() in the other hand to deposit it, and if I sneak while doing it I can withdraw up to a stack of $(item)Amel$() at a time into the other hand.",
     "pages.lapisworks.imbuement.jar.recipe.title": "Enchantment Container",
     "pages.lapisworks.imbuement.jar.recipe.text": "Works the same way but stores 16 stacks and cannot be put on my belt due to it's unwieldiness. It can, however, be left in my hotbar and will still function.",
 
@@ -450,13 +466,13 @@
     "pages.lapisworks.imbuement.condenser.text": "I find my mediums of storing media rather.. Untidy and insufficient. Any media not in $(l:patterns/great_spells/make_battery)$(item)Phials$() must be stored in chests, in items that have varying media value. These items cannot be transported easily either, so I cannot have more than one base of operations lest I set up something complicated and convoluted. To combat these issues, $(l)I$(), one chosen, have invented the $(#00c)Media Condensing Unit$(). I can use $(l:patterns/great_spells/make_battery)$(thing)Craft Phial$() on it's base to construct it.",
     "pages.lapisworks.imbuement.condenser.recipe.desc": "$(o)A thin layer of slates covering the battery, with a media attracting substance and a dust-provided interface for interaction on top.$()",
     "pages.lapisworks.imbuement.condenser.deposit.summary": "Deposits into the given unit the amount of media specified, in dust. Costs the media specified, plus a tax of 10%% of it. Overflow is discarded!",
-    "pages.lapisworks.imbuement.condenser.withdraw.summary": "Withdraws, from the given unit, into the $(item)Phial$() in my other hand, the amount specified in dust. Costs 10%% of the media specified. Overflow into the $(item)Phial$() is discarded!",
+    "pages.lapisworks.imbuement.condenser.withdraw.summary": "Withdraws, from the given unit, into the $(l:patterns/great_spells/make_battery)$(item)Phial$() in my other hand, the amount specified in dust. Costs 10%% of the media specified. Overflow into the $(l:patterns/great_spells/make_battery)$(item)Phial$() is discarded!",
     "pages.lapisworks.imbuement.condenser.phianglement.title": "Phianglement",
     "pages.lapisworks.imbuement.condenser.phianglement.text": "$(#00c)Phianglement$() is a term for links between $(thing)phiangleable blocks$(). Two \"$(#00c)phiangled$()\" blocks bear a link so that when one is deposited into, the overflow collects in the other, and when one is withdrawn from, missing media is fulfilled by the other. A chain or even an interconnected network of units can be set up, however the amount of links for a single condenser can be no more than five. Links cost nothing to maintain once set up.",
     "pages.lapisworks.imbuement.condenser.phiangle.summary": "$(#00c)Phiangles$() two $(thing)phiangleables$(). Costs a flat three $(item)Charged Amethyst$(), and a scalable one $(item)Amel$() per 32 blocks of distance, with a minimum of one.",
     "pages.lapisworks.imbuement.condenser.dephiangle.summary": "$(#00c)Dephiangles$() two $(thing)phiangleables$(), erasing the link between them. Costs three $(item)Charged Amethyst$(). I can cast this when I wish not to break the block, due to having other links for example.",
     "pages.lapisworks.imbuement.condenser.btw": "To my delight, it seems that the $(#00c)Phianglement$() granted to me by $(l)Them$() seems to function with $(l:greatwork/impetus)$(item)Impeti$() as well! However, they can only have one $(#00c)Phianglement$() at any time, and they behave as leeches; they can only withdraw from the network to fulfill their own costs and nothing more, meaning they cannot be deposited into, nor withdrawn from. The advantage here is that my $(l:greatwork/impetus)$(item)Impeti$() can finally have a centralized media storage!",
-    "pages.lapisworks.imbuement.condenser.get_condenser_media.summary": "Returns the media stored (in units of $(item)Amethyst Dust$()) in the $(item)Media Condensing Unit$() at the specified position (within ambit). Free.",
+    "pages.lapisworks.imbuement.condenser.get_condenser_mdia.summary": "Returns the media stored (in units of $(item)Amethyst Dust$()) in the $(item)Media Condensing Unit$() at the specified position (within ambit). Free.",
     "pages.lapisworks.imbuement.condenser.get_linkable_links.summary": "Returns the positions the $(thing)phiangleable$() at the specified position (within ambit) is phiangled to. Free.",
 
     "pages.lapisworks.imbuement.geode_dowser.title": "Geode Dowser",
@@ -464,7 +480,24 @@
     "pages.lapisworks.imbuement.geode_dowser.text2": "It then spawns a burst of particles pointing to it, with the color indicating the distance. Blue means it's within 16 blocks, light blue means it's within 32, purple is 48, pink is 64, orange is 80, red is 96 and any more makes the particles black.",
 
     "pages.lapisworks.imbuement.enchbrewer.title": "Enchanted Brewery",
-    "pages.lapisworks.imbuement.enchbrewer.text": "Enchanting a $(item)Brewing Stand$() with ten pieces of $(item)Amel$() makes an $(item)Enchanted Brewery$(). It consumes 25%% more $(item)Blaze Dust$() than the $(item)Brewing Stand$() and requires one $(item)Amethyst Dust$() per brew, however, it brews potions twice as fast. In the future, due to how strongly the ingredients are shoved into potions, I may unlock more brewing possibilities with this than a regular $(item)Brewing Stand$().",
+    "pages.lapisworks.imbuement.enchbrewer.text": "Enchanting a $(item)Brewing Stand$() with ten pieces of $(item)Amel$() makes an $(item)Enchanted Brewery$(). It consumes 25%% more $(item)Blaze Dust$() than the $(item)Brewing Stand$() and requires one $(item)Amethyst Dust$() per brew in exchange for brewing potions twice as fast. In the future, due to how strongly the ingredients are shoved into potions, I may unlock more brewing possibilities with this than a regular $(item)Brewing Stand$().",
+    "pages.lapisworks.imbuement.enchbrewer.tease": "$(o)Perhaps I'll finally find out whether or not the Alchemists of the past were fools or if they really were chasing something very possible. What a sweet little thought.$()",
+
+
+    "categories.lapisworks.lapisworks.imbuement.rituals.title": "Amethyst Rituals",
+    "categories.lapisworks.lapisworks.imbuement.rituals.desc": "Alternative casting methods that do not require me... This could prove to be quite useful.",
+
+    "pages.lapisworks.imbuement.rituals.chalk.title": "Chalk",
+    "pages.lapisworks.imbuement.rituals.chalk.intro": "Those grand constructs lost to time that the $(l:items/slate)$(item)Slates$() were used in are said to be able to cast by themselves. I for one cannot fathom how such things would function-- it's components are simply rock! If not gain direct access, I may be able to $(o)imitate$() it. Simply putting the flow of media through patterns is enough, right? Then all I need to do is conduct media. The form I've decided for this is $(thing)Chalk$().",
+    "pages.lapisworks.imbuement.rituals.chalk.recipe.text": "$(o)Placed once it is a simple conductor, placed twice it gains space for up to five patterns. I'll dub these chalk constructs.. $(thing)Amethyst Rituals$()$(o).$()",
+    "pages.lapisworks.imbuement.rituals.chalk.general": "There are some general properties of $(thing)Amethyst Rituals$(). Firstly they cast as me and have precisely half my ambit even have half the ambit I have around any $(l:patterns/great_spells/greater_sentinel)$(thing)Greater Sentinel$() I may have.",
+
+    "pages.lapisworks.imbuement.rituals.onetime.title": "One-time Rituals",
+    "pages.lapisworks.imbuement.rituals.onetime.howto": "If I $(thing)$(k:use)$() some $(item)Amethyst Chalk$() with some source of media in the other hand, it kickstarts a $(thing)One-time Ritual$() which immediately absorbs all the media from that source. $(thing)One-time Rituals$() are single-use and very fast, as they destroy all chalk they traverse over while moving at twenty chalk segments per second. By default, $(thing)One-time Rituals$() cast as me, however I may sever the connection to myself with the following patterns.$(br2)$(o)Casting these patterns outside of a $(thing)One-time Ritual$() $(o)will fail rather spectacularly.$()",
+    "pages.lapisworks.imbuement.rituals.onetime.stop_be_me.text": "The current $(thing)One-time Ritual$() will no longer cast as it's starter. Free.",
+    "pages.lapisworks.imbuement.rituals.onetime.be_me.text": "The current $(thing)One-time Ritual$() will cast as it's starter. Free.",
+    "pages.lapisworks.imbuement.rituals.onetime.are_u_me.text": "Pushes whether or not the current $(thing)One-time Ritual$() is casting as it's starter. Free.",
+
 
     "categories.lapisworks.lapisworks.great": "The Wizard's Spells",
     "categories.lapisworks.lapisworks.great.desc": "Some intellectuals and/or adventurers saved the old wizard's diaries. I've begun to divine some of the wizard's knowledge from these ancient tomes.",
@@ -531,8 +564,8 @@
     "pages.lapisworks.interop.lapixical.get200bruh.text": "After that, I felt as if something was missing. \"There are features I'm missing, aren't there?\" was what I thought. The scrolls I read after that confirmed my gut feeling. In the days of old when $(thing)Hex Casters$() were abundant, there was a certain $(l:https://github.com/ChloeTax/hexxy4/tree/main/mods)\"hexxy4\"$(), a library of all $(thing)\"addons\"$(), which contains a $(thing)\"2.0.0\"$() of the absolutely $(thing)Hexical$() changes that have been happening in my world recently (I suppose it was just Nature or some other mechanism reawakening, then?). However, the scrolls warn that this version is still a work-in-progress and may have small errors from it's making despite their best attempts.",
     "pages.lapisworks.interop.lapixical.holder.title": "Handed Prison",
     "pages.lapisworks.interop.lapixical.holder.text": "The $(item)Pedestal$() does not have any shortcomings, yet as with all things, it is not perfect. It can ony act as my off-hand, yet there are $(l:lapisworks_patterns)many examples$() of patterns that work with a specific hand. $(thing)Amel Infusion$() has focused those to their specific-handed versions, thus I see no reason why it wouldn't work with the Pedestal. 15 Amel should do.",
-    "pages.lapisworks.interop.lapixical.condenser_interactions.title": "Condenser Interactions",
-    "pages.lapisworks.interop.lapixical.condenser_interactions.text": "Three patterns I've been given as assistants for my work on $(l:imbuement/condenser)$(#00c)Media Condensing Units$() work on not only $(l:items/media_jar)$(item)Media Jars$(), but also $(l:interop/lapixical/cradle_n_shit)$(item)Item Cradles$() as well! These patterns are: $(l:imbuement/condenser#lapisworks:get_condenser_media)$(thing)Condensed Media Purification$(), $(l:imbuement/condenser#lapisworks:deposit)$(thing)Deposit Media$(), and $(l:imbuement/condenser#lapisworks:withdraw)$(thing)Withdraw Media$(). The only catches are that both cannot sustain any $(#00c)phianglements$(), and the $(l:interop/lapixical/cradle_n_shit)$(item)Item Cradles$() must contain a $(item)Phial$() to function in this manner.",
+    "pages.lapisworks.interop.lapixical.condenser_interactions.title": "Media Interactions",
+    "pages.lapisworks.interop.lapixical.condenser_interactions.text": "Three patterns I've been given as assistants for my work on $(l:imbuement/condenser)$(#00c)Media Condensing Units$() work on not only $(l:items/media_jar)$(item)Media Jars$(), but also $(l:interop/lapixical/cradle_n_shit)$(item)Item Cradles$() as well! These patterns are: $(l:imbuement/condenser#lapisworks:get_condenser_mdia)$(thing)Condensed Media Purification$(), $(l:imbuement/condenser#lapisworks:deposit)$(thing)Deposit Media$(), and $(l:imbuement/condenser#lapisworks:withdraw)$(thing)Withdraw Media$(). The only catches are that both cannot sustain any $(#00c)phianglements$(), and the $(l:interop/lapixical/cradle_n_shit)$(item)Item Cradles$() must contain a $(l:patterns/great_spells/make_battery)$(item)Phial$() to function in this manner.",
 
     "categories.lapisworks.lapisworks.interop.lapisal.title": "Lapse",
     "categories.lapisworks.lapisworks.interop.lapisal.desc": "I wonder, would something as intangible as a $(thing)wisp$() be capable of being enchanted?",
@@ -544,7 +577,7 @@
     "pages.lapisworks.interop.lapisal.makewisp.text": "I've noticed $(l:great/flay_artmind)Imbue Mind$() can shape the Simple Mind into many things before imbuing it somewhere. If I can truly shape the Simple Mind into anything, does that mean imbuing a Simple Mind into the air will spawn one of the wisps that usually emanate from $(thing)slipways$()?$(br2)$(o)Perhaps I can take advantage of this to get more media out of the Simple Minds.$()",
     "pages.lapisworks.interop.lapisal.openslipway.title": "To Rip Open a Slipway",
     "pages.lapisworks.interop.lapisal.openslipway.clueless": "The $(thing)Slipways$(). They must lead $(o)somewhere$(). wisps do not manifest from thin air. Yet no matter what I do, the slipways won't let me through. But I $(#05e)WI$(#e07)LL$() find a way beyond them. If the $(thing)slipways$() will continue to deny me access, $(#05e)I will rip the$(#e07)m open myself,$() By getting Simple Minds to do my bidding. I will write further when the tools at my disposal allow me to progress further in this matter.",
-    "pages.lapisworks.interop.lapisal.openslipway.clueless_still": "$(l:great/flay_artmind)Imbue Mind$() can do it. I $(#05e)KN$(#e07)OW$() so. By instructing the Simple Mind to open the $(thing)Slipway$() and enchanting it with the power of 48 $(item)Amel$(), the Simple Mind exerts an unimaginable amount of force upon the $(thing)slipway$(), tearing the very fabric of space open! The world will marvel at my feat! Now, all that is left is to realize it by attempting to imbue a Simple Mind into a $(thing)slipway$().",
+    "pages.lapisworks.interop.lapisal.openslipway.clueless_still": "$(l:great/flay_artmind)Imbue Mind$() can do it. I $(#05e)KN$(#e07)OW$() so. By instructing the Simple Mind to open the $(thing)Slipway$() and enchanting it with the power of 48 $(item)Amel$(), the Simple Mind exerts an unimaginable amount of force upon the $(thing)slipway$(), tearing the very fabric of space open! The world will marvel at my feat! Now, all that is left is to realize it by attempting to imbue a Simple Mind into a $(thing)slipway$(). I must note that this will take a $(o)lot$() of space.",
     "pages.lapisworks.interop.lapisal.openslipway.cluedin": "$(#05e)SHATT$(#e07)ERED.$() The $(thing)slipway$() was forced open with the greatest amount of force I can muster, and the fabric of space made a deafening sound as it was torn apart. I felt a powerful gust of media that pushed away all living beings except for allays. Marvelous. However.. As I tried to enter the hole in space, I found I could not travel through it. $(#05e)DAMN IT, DAMN IT, DAMN IT, LET$(#e07) ME THROUGH I DESERVE ENTRY!--$() Calm down. Calm down. I cannot risk losing myself now. I am too valuable.",
     "pages.lapisworks.interop.lapisal.openslipway.cluedin_compromise": "There must be another way then, one I will discover soon. In any case, the $(thing)Rift$() still has other properties. For one, the media expelled from it is so vast in magnitude, it pushes away all non-allay living entities. It also makes many, many more wisps than a regular $(thing)slipway$(), which I may find useful as a source of media."
 }
