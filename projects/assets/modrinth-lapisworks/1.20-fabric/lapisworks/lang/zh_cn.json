@@ -94,6 +94,7 @@
     "block.lapisworks.media_condenser_unit": "媒质凝聚单元",
     "block.lapisworks.uncrafted_condenser": "空单元",
     "block.lapisworks.amel_constructs.enchbrewer": "附魔酿造站",
+    "block.lapisworks.chalk": "紫水晶粉笔",
 
     "advancements.lapisworks.gotlapis.name": "青金工程研究",
     "advancements.lapisworks.gotlapis.description": "珍贵的深蓝色矿物。如其所称。",
@@ -120,8 +121,12 @@
     "render.lapisworks.scryinglens.holder.offhand": "副手",
     "render.lapisworks.scryinglens.holder.items": "%dx %s",
     "render.lapisworks.scryinglens.mediacondenser": "已填充%d%%（%d/%d 紫水晶粉）",
+    "render.lapisworks.scryinglens.simp.listening": "正在监听的图案：%s",
+    "render.lapisworks.scryinglens.simp.not_listening": "未在监听图案。",
+    "render.lapisworks.scryinglens.chalk.no_patterns": "无图案。",
 
 
+    "gui.lapisworks.chalk_with_pattern.name": "紫水晶粉笔",
     "gui.lapisworks.enchbrewer.name": "附魔酿造站",
 
     "tag.item.lapisworks.amel": "紫晶青金石",
@@ -225,10 +230,13 @@
     "hexcasting.action.book.lapisworks:phiangle": "容质纠缠",
     "hexcasting.action.lapisworks:dephiangle": "解容质纠缠",
     "hexcasting.action.book.lapisworks:dephiangle": "解容质纠缠",
-    "hexcasting.action.lapisworks:get_condenser_media": "凝聚媒质之纯化",
-    "hexcasting.action.book.lapisworks:get_condenser_media": "凝聚媒质之纯化",
+    "hexcasting.action.lapisworks:get_condenser_mdia": "凝聚媒质之纯化",
+    "hexcasting.action.book.lapisworks:get_condenser_mdia": "凝聚媒质之纯化",
     "hexcasting.action.lapisworks:get_linkable_links": "容质纠缠之纯化",
     "hexcasting.action.book.lapisworks:get_linkable_links": "容质纠缠之纯化",
+
+    "hexcasting.action.lapisworks:hadamard": "阿达玛之馏化",
+    "hexcasting.action.book.lapisworks:hadamard": "阿达玛之馏化",
 
     "hexcasting.action.lapisworks:create_enchsent0": "召唤附魔哨卫",
     "hexcasting.action.lapisworks:create_enchsent1": "召唤附魔哨卫",
@@ -266,14 +274,20 @@
     "hexcasting.mishap.bad_item.lapis_lazuli": "青金石",
     "hexcasting.mishap.bad_item.amel": "紫晶青金石",
 
+    "mishaps.lapisworks.ritual.invalid_chalk": "%s处本应存在一个仪式构件，但实际为%s。（这是模组中的漏洞。）",
+    "mishaps.lapisworks.ritual.cast_outside_ritual": "此图案本应在紫水晶仪式中施放。",
+    "mishaps.lapisworks.ritual.cast_outside_one_time_ritual": "此图案本应在一次性紫水晶仪式中施放。",
+
     "mishaps.lapisworks.not_enough_items": "至少需要%d个%s，而使用者实际只持有%d个%s。",
     "mishaps.lapisworks.already_enchanted": "无法为%2$s附上%1$s，因为它已经达到了%3$s当前的等级上限（%4$d）。",
     "mishaps.lapisworks.some_hand.no_item": "本应在%2$s中持有%1$s，而实际没有物品。",
-    "mishaps.lapisworks.some_hand.bad_item": "本应在%2$s中持有%1$s，而实际有（%3$s）%4$d个%5$S",
+
+    "mishaps.lapisworks.some_hand.bad_item": "本应在%2$s中持有%1$s，而实际有（%3$s）%4$d个%5$s",
     "hands.lapisworks.main": "主手",
     "hands.lapisworks.off": "副手",
     "hands.lapisworks.3": "第三只手",
     "hands.lapisworks.4": "第四只手",
+
     "mishaps.lapisworks.some_hand.bad_item.generic": "不正确的物品",
     "mishaps.lapisworks.bad_block.full_mind": "填满的简单意识容器",
     "mishaps.lapisworks.imbue_artmind.need_imbueable": "当前能接受简单意识的方块",
@@ -283,6 +297,7 @@
     "mishaps.lapisworks.equipped.not": "本应装备有%s，而实际没有。",
     "mishaps.lapisworks.equipped.bad": "已装备%s，但它不是%s。",
 
+    "mishaps.lapisworks.descs.phial": "一个试剂瓶",
     "mishaps.lapisworks.descs.entityorblockposiota": "一个实体或向量",
     "mishaps.lapisworks.descs.imbueable": "任意可灌注紫晶青金石的物品（如法杖）",
     "mishaps.lapisworks.descs.smind_infuseable": "任意可融合简单意识的方块（如紫水晶块）",
@@ -290,7 +305,7 @@
     "mishaps.lapisworks.descs.readable": "一个可读的iota存储物品（如核心和结念绳）",
     "mishaps.lapisworks.descs.writeable": "一个可写的iota存储物品（如核心）",
     "mishaps.lapisworks.descs.noniotaholder": "无法存储iota的物品",
-    "mishaps.lapisworks.descs.readonly": "一个只读iota存储物品",
+    "mishaps.lapisworks.descs.readonly": "一个只读的iota存储物品",
     "mishaps.lapisworks.descs.scrolls": "一个卷轴",
     "mishaps.lapisworks.descs.scroll_with_pat": "一个画有图案iota的卷轴",
     "mishaps.lapisworks.descs.scroll_with_gs": "一个画有图案的卷轴，该图案需形同卓越法术但笔顺不必与之相同",
@@ -302,7 +317,6 @@
     "mishaps.lapisworks.descs.unlinked_linkable": "未连接至%d, %d, %d的可连接的媒质方块/可容质纠缠对象",
     "mishaps.lapisworks.descs.nottoomanylinks_linkable": "有空闲连接槽的可连接的媒质方块/可容质纠缠对象",
 
-    "notif.lapisworks.you_used_the_enchant_bug": "你曾在1.5.6版本前用过魔咒图案。媒质消耗已改为0，各属性已重设至默认。",
     "notif.lapisworks.wizard_diaries.all_gotten": "我应当已经找到了所有遗存至今的古代宝典。",
     "notif.lapisworks.wizard_diaries.unreadable_diary": "一片空白。也许这则条目有和其他青金工程文献一样的加密？将来应该可以解开。",
     "notif.lapisworks.dowser.not_enough_media": "运行失败。它找不到足量的媒质（合%d个紫水晶粉），无法满足运行所需。",
@@ -329,6 +343,7 @@
     "pages.lapisworks.lapisworks_patterns.moar_health.detailed": "此效果的上限是达到实体最大生命值的 2 倍。神奇的是，此种附魔也能防御自然对代价的攫取，以至于自然无法取走意识，哪怕是只取一部分。有意思之处在于，古代文献称能力水平超出某个阈值的法师都会失去理智，而这就是某些强大法师保全其理智的方法。不论如何，我的最大生命值大约是 20 个半颗心。",
     "pages.lapisworks.lapisworks_patterns.moar_attack.summary": "传入一个实体和一个代表半颗心数量的数，并为所给实体的双拳附魔，以此提升其每次造成的伤害。每提升 1 个半颗心消耗 1 个$(item)紫金石$()和 5 个$(item)紫水晶碎片$()。上限为平常的 4 倍，对我来说就是 4。",
     "pages.lapisworks.lapisworks_patterns.moar_speed.summary": "为所给实体的双足附魔，以此提升其移动速度。消耗 1 倍$(item)紫金石$()和 5 倍$(item)紫水晶碎片$()。上限为平常的 3 倍。对我来说大约是 1。",
+    "pages.lapisworks.lapisworks_patterns.moar_speed.tip": "对我自己来说，这个速度有点太快了，给马的四蹄附魔应该是最优选择。",
     "pages.lapisworks.lapisworks_patterns.gib_reach.summary": "为所给$(o)玩家$()的双臂附魔，令其交互范围增加 3 格，攻击范围增加 1 格。消耗 16 个$(item)紫金石$()和相当于 1 个$(item)紫水晶碎片$()的媒质。没有可改动的地方。",
     "pages.lapisworks.lapisworks_patterns.gib_reach.detailed": "附注：这条法术似乎不会直接延长双臂，而是会赋予双臂以形同幽灵的延伸臂，且只会在需要的时候显现。奇妙。有些奇怪的时，这两个属性（交互和攻击范围）的增益对$(thing)增强之纯化$()来说是不同的。",
     "pages.lapisworks.lapisworks_patterns.check_attr.summary": "返回所给实体在给定范畴（由数指定）内所获增强的量。前页的图案已经过排序，0 对应最大生命值，1 对应攻击伤害，以此类推。消耗极少量媒质。",
@@ -336,20 +351,20 @@
     "pages.lapisworks.lapisworks_great.title": "魔咒",
     "pages.lapisworks.lapisworks_great.aahhhhelp": "我已见我已见把我的理智还回来我不能失去自我没有时间必须记录以免",
     "pages.lapisworks.lapisworks_great.explanation": "我的眼睛好痛阅读是痛苦看见是痛苦存在是痛苦这些书页这些图案我视野边缘的光辉汇聚令我失明必须写下来。所有这些图案都消耗 32 个$(item)紫金石$()，除非专门指明。它们不会保留到噩梦结束就像这个这是个噩梦对吗它马上就结束了要是梦怎么办马上就要结束了我要死了",
-    "pages.lapisworks.lapisworks_great.checkenchant.summary": "返回所给魔咒的等级等级等级等级它们为什么都是紫色$(l)必须写下来$()对指定实体执行，极少量消耗，不需要$(item)紫金石$()。",
-    "pages.lapisworks.lapisworks_great.fireyfists.summary": "消耗 10 给$(item)充能紫水晶$()，给拳头的$(thing)火焰附加$()，好好笑哈哈哈哈哈哈哈哈$(l)不不停下$()。仅 1 级，ID 为 0。",
-    "pages.lapisworks.lapisworks_great.lightningbending.summary": "天穹随着我的攻击而动。每级 20 个$(item)充能紫水晶$()和一组$(item)紫金石$()。共 3 级。ID 为 1。",
+    "pages.lapisworks.lapisworks_great.checkenchant.summary": "返回指定实体所具给定 ID 对应魔咒的等级，极少量消耗，不需要$(item)紫金石$()。",
+    "pages.lapisworks.lapisworks_great.fireyfists.summary": "给拳头的$(thing)火焰附加$()。消耗 10 个$(item)充能紫水晶$()和 48 个$(item)紫金石$()。仅 1 级，ID 为 0。",
+    "pages.lapisworks.lapisworks_great.lightningbending.summary": "每级 20 个$(item)充能紫水晶$()和一组$(item)紫金石$()，以让天穹随着我的攻击而动。共 3 级。ID 为 1。",
     "pages.lapisworks.lapisworks_great.lightningbending.detailed": "求求你我好害怕每次挪动都感觉我我我我感觉我要$(o)不不不能在这里停下$()。1 级时，只会在雷暴时导雷。2 级时，在降雨时也可以。3 级时，晴天也阻止不了我。",
     "pages.lapisworks.lapisworks_great.falldmgres.summary": "缓冲摔落，每级追加抵消 10 格坠落距离。每级消耗 5 个$(item)充能紫水晶$()和 20 个$(item)紫金石$()。共 3 级，ID 为 2。",
-    "pages.lapisworks.lapisworks_great.longbreath.summary": "把肺撑大有什么意义我的肺已经$(o)求你了停下。$()效力是$(thing)水下呼吸$()魔咒的两倍。共 2 级，1 个$(item)充能紫水晶$()，10 个$(item)紫金石$()。ID 为 3。",
-    "pages.lapisworks.lapisworks_great.fireresist.summary": "汇集一整组$(item)紫金石$()和 10 个$(item)充能紫水晶$()的力量，以让我变得犹如诞生自下界。仅 1 级，ID 为 4。比起火来，我更害怕光。",
+    "pages.lapisworks.lapisworks_great.longbreath.summary": "为我的肺附魔，达成类似$(thing)水下呼吸$()的效果，但效力是其两倍。共 2 级，1 个$(item)充能紫水晶$()，10 个$(item)紫金石$()。ID 为 3。",
+    "pages.lapisworks.lapisworks_great.fireresist.summary": "汇集一整组$(item)紫金石$()和 10 个$(item)充能紫水晶$()的力量，以让我变得犹如诞生自下界，并使我免受所有灼热之苦。仅 1 级，ID 为 4。",
     "pages.lapisworks.lapisworks_great.imgonnagoliedownnow": "我眼角的光闪烁非常非常非常非常非常亮我该怎么熄灭它停下停下求你了停下帮帮我$(br2)我要死了吗？不不不不我不能死在这我不想死我好害怕我不想死$(br2)我要躺下了",
 
     "pages.lapisworks.lapisworks_misc.title": "附魔图案",
-    "pages.lapisworks.lapisworks_misc.intro": "这些古代文本记述了一名博学的老巫师，他在巫术的各个方面都造诣极深，但他对生者、死者、亡灵，乃至尚未形成的存在都抱有仇恨。传言称，他没有充足的媒质来源，还有很多人追杀他，他却依然成功保全了自身。他为后人留下了一座知识的宝库（由许多好奇的冒险家汇总），这其中就由$(thing)紫金灌注图案$()。$(br)$(o)我能成功复现吗？$()",
-    "pages.lapisworks.lapisworks_misc.intro2": "而让人沮丧的是，这名巫师曾试图烧光他的知识记录。他几乎成功了，击倒他的英雄们没能抢救出多少，少数留存下来的有$(l:patterns/spells/blockworks#hexcasting:conjure_block)构筑方块$()、$(l:patterns/consts#hexcasting:const/vec/0)部分向量图案$()、$(l:patterns/basics#hexcasting:raycast)弓箭手之馏化$()和其他几种图案的附魔版本。",
+    "pages.lapisworks.lapisworks_misc.intro": "这些古代文本记述了一名博学的老巫师，他在巫术的各个方面都造诣极深，但他对一切都抱有仇恨。传言称，他没有充足的媒质来源，还有很多人追杀他，他却依然成功保全了自身。他为后人留下了一座知识的宝库（由许多好奇的冒险家汇总），这其中就有$(thing)紫金灌注图案$()。$(br)$(o)我能成功复现吗？$()",
+    "pages.lapisworks.lapisworks_misc.intro2": "而让人沮丧的是，这名巫师曾试图烧光他的知识记录。他几乎成功了，击倒他的英雄们没能抢救出多少。少数留存下来的有$(l:patterns/spells/blockworks#hexcasting:conjure_block)构筑方块$()、$(l:patterns/consts#hexcasting:const/vec/0)某些向量图案$()、$(l:patterns/basics#hexcasting:raycast)弓箭手之馏化$()和其他几种图案的附魔版本。我要在此说明，$(thing)附魔图案$()并不总是比原本的图案“更好”，有些情况下只是拓展了功能，或只是进行了特化。",
     "pages.lapisworks.lapisworks_misc.conjure_color.summary": "传入影响范围内的向量和一个染料颜色，以此构筑出脆弱的固体带色方块。消耗 2 个紫水晶粉，同时需指定染料对应的数。更多解释见后页。",
-    "pages.lapisworks.lapisworks_misc.conjure_color.detail": "所给数代表染料的索引（0 起始），按字母顺序排列。对应关系是：$(br)0 - 黑色    1 - 蓝色    $(br)2 - 棕色    3 - 青色    $(br)4 - 灰色    5 - 绿色    $(br)6 - 淡蓝色  7 - 淡灰色  $(br)8 - 黄绿色  9 - 品红色  $(br)10 - 橙色   11 - 粉红色 $(br)12 - 紫色   13 - 红色   $(br)14 - 白色   15 - 黄色   $(br)如果不存在与数相应的染料，那么方块会发出混合紫色和我染色剂的$(o)颜色$()的光。",
+    "pages.lapisworks.lapisworks_misc.conjure_color.detail": "所给数代表染料的索引（0 起始），按字母顺序排列。对应关系是：$(br)0 - $(#050508)黑色$()    1 - $(#1714FF)蓝色$()    $(br)2 - $(#794521)棕色$()    3 - $(#4A9DBF)青色$()    $(br)4 - $(#545454)灰色$()    5 - $(#496A18)绿色$()    $(br)6 - $(#8DB7F1)淡蓝色$()  7 - $(#B8B8BF)淡灰色$()  $(br)8 - $(#81D11C)黄绿色$()  9 - $(#C968C3)品红色$()  $(br)10 - $(#D88929)橙色$()   11 - $(#F4B2D3)粉红色$() $(br)12 - $(#532C94)紫色$()   13 - $(#FF1919)红色$()   $(br)14 - 白色   15 - $(#E4E429)黄色$()   $(br)如果不存在与数相应的染料，那么方块会发出混合紫色和我染色剂的$(o)颜色$()的光。",
     "pages.lapisworks.lapisworks_misc.spherical_dstl.summary": "假设存在以给定位置为中心、半径为所给数（限 1 到 64）的球，返回组成该空心球壳的所有方块的坐标列表。消耗极少量媒质。",
     "pages.lapisworks.lapisworks_misc.cubic_exalt.summary": "假设存在从点 A 至点 B 的空心（传入 True）或实心（传入 False）长方体，返回组成该长方体所有方块的坐标列表。消耗极少量媒质。",
     "pages.lapisworks.lapisworks_misc.empty_prfn.summary": "回答下述问题：“该处是否只有空气？”，消耗极少量媒质。向量需在我影响范围内。",
@@ -357,7 +372,7 @@
     "pages.lapisworks.lapisworks_misc.visible_dstl.summary": "消耗极少量媒质。检验指定实体（在影响范围内）能否看见指定方块（也需在影响范围内）。",
     "pages.lapisworks.lapisworks_misc.equiv_block.summary": "检验两个方块是否等价或大致等价（同种方块），如小麦幼苗和成熟的小麦植株是相同的。两方块都需在我影响范围内。",
     "pages.lapisworks.lapisworks_misc.equal_block.summary": "检验两个方块是否$(o)完全$()等价，此处小麦幼苗和成熟的小麦植株不等价。两方块都需在我影响范围内。",
-    "pages.lapisworks.lapisworks_misc.rwpatternsheadsup": "在为$(l:patterns/readwrite#hexcasting:read)$(thing)书吏之精思$()搜寻物品时，自然似乎会从我的副手开始依次寻找，直到找到可用的物品。某些时候这种特性可能会引发问题，比如两只手都拿着核心的情况下。后面记载的四个图案用于读写和检查指定手（由重要性序号指定，0 代表主手，1 代表副手）中的物品。在此要再次说明，$(thing)附魔图案$()并不都比原本的图案“好”。$(o)我在想，它会不会支持第三只手呢？$()",
+    "pages.lapisworks.lapisworks_misc.rwpatternsheadsup": "在为$(l:patterns/readwrite#hexcasting:read)$(thing)书吏之精思$()搜寻物品时，自然似乎会从我的另一只手开始依次寻找，直到找到可用的物品。某些时候这种特性可能会引发问题，比如两只手都拿着核心的情况下。后面记载的四个图案用于读写和检查指定手（由重要性序号指定，0 代表主手，1 代表副手）中的物品。$(br)$(o)我在想，它会支持第三只手吗？$()",
     "pages.lapisworks.lapisworks_misc.read_spechand.summary": "$(l:patterns/readwrite#hexcasting:read)$(thing)书吏之精思$()的指定手版本。返回指定手中 iota 存储物品内的 iota。",
     "pages.lapisworks.lapisworks_misc.readable_spechand.summary": "$(l:patterns/readwrite#hexcasting:readable)$(thing)审计员之精思$()的指定手版本。检验指定手中的物品能否被读取。",
     "pages.lapisworks.lapisworks_misc.write_spechand.summary": "$(l:patterns/readwrite#hexcasting:write)$(thing)书吏之策略$()的指定手版本。将所给 iota 写入指定手中的 iota 存储物品。",
@@ -365,6 +380,7 @@
     "pages.lapisworks.lapisworks_misc.the_cooler_halt.summary": "$(l:patterns/meta#hexcasting:halt)$(thing)卡戎之策略$()，可以穿透多层的版本。此图案能在$(l:patterns/meta#hexcasting:halt)$(thing)卡戎之策略$()不足以处理时派上用场，不过，我还是更希望不要接触$(l:patterns/meta#hexcasting:eval/cc)$(thing)伊里斯之策略$()这头繁复的怪物。",
     "pages.lapisworks.lapisworks_misc.for_n_in_range.summary": "$(o)快来快来数一数，二四六七八。$()$(br2)对依次递增/减的数列表执行所给图案列表，与使用$(thing)托特之策略$()类似。数列表从第一参数（闭）递增/减到第二参数（开）。",
     "pages.lapisworks.lapisworks_misc.execute_many_times.summary": "$(o)你知道，疯狂的定义是什么吗？$()$(br2)执行所给图案列表所给数次。起始栈与$(thing)托特之策略$()类似。",
+    "pages.lapisworks.lapisworks_misc.hadamard.summary": "此图案由阿达玛积发展而来，会将两向量的对应元素逐项相乘。",
 
     "pages.lapisworks.lapisworks_mishaps.title": "青金工程事故",
     "pages.lapisworks.lapisworks_mishaps.summary": "咒法学的新分支也带来了新事故。我在此记录了它们。",
@@ -377,7 +393,7 @@
 
 
     "categories.lapisworks.lapisworks.imbuement": "灌注",
-    "categories.lapisworks.lapisworks.imbuement.desc": "虽然我原本认为青金工程会有给工具$(o)附魔$()——我在$(item)铁砧$()跟$(item)附魔台$()处进行的操作——的简单方法，但过去的$(#00c)青金工程师$()发现它的极限远不止于此。显然，世界上有部分材料和媒质的交互模式与众不同。再看看吧……",
+    "categories.lapisworks.lapisworks.imbuement.desc": "显然，世界上有部分材料和媒质的交互模式与众不同，与$(item)紫金石$()也是一样。继续研究吧……",
 
     "pages.lapisworks.imbuement_spell.title": "灌注紫金石",
     "pages.lapisworks.imbuement_spell.summary": "古代的“$(#00c)青金工程师$()”常用的法术。将指定数量的紫金石灌注入另一只手（另一只手无可灌注的物品则检查主手）中的物品。它不会像魔咒法术那样浪费。需消耗 2 倍于灌注量（以紫水晶碎片计）的$(item)紫金石$()。",
@@ -414,7 +430,7 @@
     "pages.lapisworks.imbuement_artmind.whatwhyhow": "我第一次读到意识能产生痕量媒质的时候，就有了这个念头：“有没有可能可以制造一个意识呢……？”在经过$(item)紫金石$()灌注的实验后，我认为确实可以。就我的经验而言，单独存在的媒质团不会自发开始思考，这应当是因为媒质仅是思维的能量。而能量必须要加以运动和使用才能让其开始思考。",
     "pages.lapisworks.imbuement_artmind.whatwhyhow2": "如果制造一台能拉动媒质和复刻其他生物体媒质流的机器，那么假以时日，这种机器必然会产生意识。为此，我认为村民应当是最高效的，他们起码没到脑死亡的地步，但也不能说具有真正的智能。使用他们产出的意识也许会有自我感知力，会有智能，会有情感（有自我意识）。",
     "pages.lapisworks.imbuement_artmind.recipe.text": "$(item)紫金石$()可让机器蚕食村民的意识，为其中媒质的流动拍摄“快照”。$(item)钻石$()的聚焦能力应当足以模拟自然形成意识的精度。$(item)充能紫水晶$()则用于承载意识。",
-    "pages.lapisworks.imbuement_artmind.howtouse": "这件装置可从最远 5 格内随机 3 个未入睡的村民处抽取意识，只有 1 个村民时需 20 分钟填满。未入睡的村民会在 4 分钟后进入疲乏状态，让其远离此机器同等时间即可复原。若已选中的村民入睡（当然，只有先选中才会出现这种状况），在 20 分钟内即不可再从其身上抽取，但会立即填充意识容器的 15%%。",
+    "pages.lapisworks.imbuement_artmind.howtouse": "这件装置可从最远 5 格内随机 3 个未入睡的村民处抽取意识，只有 1 个村民时需 20 分钟填满。未入睡的村民会在 4 分钟后进入疲乏状态，让其远离此机器同等时间即可复原。若已选中的村民入睡，在 20 分钟内即不可再从其身上抽取，但会立即填充意识容器的 15%%。",
     "pages.lapisworks.imbuement_artmind.thought_sieve.detailed": "这些卓越法术让我头脑发疼。要获取它们，肯定不只有探索废墟这一条路。如果古代的咒术师独立发现了它们，那么我也能！为此，我找到了直接向自然询问笔顺的方法，但它只会返回一整团信息流，在筛滤之前无法解读。筛滤需要人来，或者需要某物来……要经得起随便消耗的东西来。此法术无论成功与否都会消耗 1/4 的意识。这种消耗必然极其痛苦。$(br)$(o)但这关我事吗？$()",
     "pages.lapisworks.imbuement_artmind.thought_sieve.summary": "使用所给位置处（完整的）人工意识来筛滤信息流团。有 3/5 的概率会将我另一只手中的图案变为笔顺正确的版本。",
     "pages.lapisworks.imbuement_artmind.check_mind.summary": "返回所给位置处意识容器的填充百分比。",
@@ -450,13 +466,13 @@
     "pages.lapisworks.imbuement.condenser.text": "我的媒质存储手段实在是……杂乱且低效。不用$(l:patterns/great_spells/make_battery)$(item)试剂瓶$()存储的媒质只能用箱子存储，且每种物品的媒质含量不一。这些物品也不好搬运，若是不采用单一形态，就难免会引入复杂性。为对抗这些问题，$(l)我$()，天选之人，发明了$(#00c)媒质凝聚单元$()。对基底使用$(l:patterns/great_spells/make_battery)$(thing)制作试剂瓶$()即可制造。",
     "pages.lapisworks.imbuement.condenser.recipe.desc": "$(o)储库上方盖有薄薄的石板，顶面上还有能吸引媒质的物质，以及紫水晶粉形成的交互接口。$()",
     "pages.lapisworks.imbuement.condenser.deposit.summary": "向单元注入指定量的媒质，以紫水晶粉计。除去消耗指定量外，还会额外消耗 10%%。超出其容量的会被销毁！",
-    "pages.lapisworks.imbuement.condenser.withdraw.summary": "抽出单元中的媒质，将其存入我另一只手中的$(item)试剂瓶$()，媒质量以紫水晶粉计。消耗所指定媒质量的 10%%。超出$(item)试剂瓶$()容量的会被销毁！",
+    "pages.lapisworks.imbuement.condenser.withdraw.summary": "抽出单元中的媒质，将其存入我另一只手中的$(l:patterns/great_spells/make_battery)$(item)试剂瓶$()，媒质量以紫水晶粉计。消耗所指定媒质量的 10%%。超出$(l:patterns/great_spells/make_battery)$(item)试剂瓶$()容量的会被销毁！",
     "pages.lapisworks.imbuement.condenser.phianglement.title": "容质纠缠",
     "pages.lapisworks.imbuement.condenser.phianglement.text": "$(#00c)容质纠缠$()这一术语指的是$(thing)可容质纠缠方块$()间的连接。两个“$(#00c)容质纠缠$()”方块间具有某种联系：向其中一方存入媒质时，超出其容量的部分会进入另一方；从一方抽取时，缺失的媒质由另一方补足。可以链式连接多个单元，也可构建相互交错的网络，不过单个单元最多只能保有 5 个连接。连接建立后不会常态消耗媒质。",
     "pages.lapisworks.imbuement.condenser.phiangle.summary": "在两个$(thing)可容质纠缠$()对象间建立$(#00c)容质纠缠$()。消耗 3 个$(item)充能紫水晶$()，每间距 32 格追加 1 个$(item)紫金石$()，最少也需消耗 1 个紫金石。",
     "pages.lapisworks.imbuement.condenser.dephiangle.summary": "解开两个$(thing)可容质纠缠$()对象间的$(#00c)容质纠缠$()，消去两者间的联系。消耗 3 个$(item)充能紫水晶$()。如果不想因破坏方块而产生断开其他连接等副作用，就可以使用此操作。",
     "pages.lapisworks.imbuement.condenser.btw": "好在，$(l)它们$()带来的$(#00c)容质纠缠$()似乎也可作用于$(l:greatwork/impetus)$(item)促动石$()！但是，促动石同一时刻只能保有 1 条$(#00c)容质纠缠$()，而且它们只进不出：它们只会从网络中抽取媒质，以满足自身所需，除此之外就没有其他行为了。也就是说，它们不接受存入或取出。这里的好处在于，$(l:greatwork/impetus)$(item)促动石$()终于有集中化的媒质存储手段了！",
-    "pages.lapisworks.imbuement.condenser.get_condenser_media.summary": "返回影响范围内所给位置处$(item)媒质凝聚单元$()存有的媒质量，以$(item)紫水晶粉$()计。无需消耗媒质。",
+    "pages.lapisworks.imbuement.condenser.get_condenser_mdia.summary": "返回影响范围内所给位置处$(item)媒质凝聚单元$()存有的媒质量，以$(item)紫水晶粉$()计。无需消耗媒质。",
     "pages.lapisworks.imbuement.condenser.get_linkable_links.summary": "返回影响范围内所给位置处$(thing)可容质纠缠$()对象各连接另一端的位置。无需消耗媒质。",
 
     "pages.lapisworks.imbuement.geode_dowser.title": "晶洞占卜杖",
@@ -464,7 +480,24 @@
     "pages.lapisworks.imbuement.geode_dowser.text2": "而后，占卜杖会生成一簇指向该母岩的粒子，颜色代表距离。蓝色代表 16 格内，淡蓝色 32 格，紫色 48 格，粉红色 64 格，橙色 80 格，红色 96 格。更远的距离全部呈黑色。",
 
     "pages.lapisworks.imbuement.enchbrewer.title": "附魔酿造站",
-    "pages.lapisworks.imbuement.enchbrewer.text": "使用 10 个$(item)紫金石$()为$(item)酿造台$()附魔，就得到了$(item)附魔酿造站$()。它消耗的$(item)烈焰粉$()比$(item)酿造台$()多 25%%，且每次酿造都会消耗 1 个$(item)紫水晶粉$()，不过，它的酿造速度是附魔前的两倍。鉴于此方法下的原材料在药水中融合程度极深，将来我也许能用它打开酿造的新天地，远超$(item)酿造台$()之所能。",
+    "pages.lapisworks.imbuement.enchbrewer.text": "使用 10 个$(item)紫金石$()为$(item)酿造台$()附魔，就得到了$(item)附魔酿造站$()。它消耗的$(item)烈焰粉$()比$(item)酿造台$()多 25%%，且每次酿造都会消耗 1 个$(item)紫水晶粉$()，以达成两倍的酿造速度。鉴于此方法下的原材料在药水中融合程度极深，将来我也许能用它打开酿造的新天地，远超$(item)酿造台$()之所能。",
+    "pages.lapisworks.imbuement.enchbrewer.tease": "$(o)也许我最终能确定过去的炼金术师到底是一群傻瓜，还是真的在追求某种很有前景的事物。挺好玩。$()",
+
+
+    "categories.lapisworks.lapisworks.imbuement.rituals.title": "紫水晶仪式",
+    "categories.lapisworks.lapisworks.imbuement.rituals.desc": "另一种施法手段，不需要我亲自上……肯定会很有用的。",
+
+    "pages.lapisworks.imbuement.rituals.chalk.title": "粉笔",
+    "pages.lapisworks.imbuement.rituals.chalk.intro": "有言称，这些用到$(l:items/slate)$(item)石板$()的遗落卓伟构造能自行施法。但我本人无法想象此类事物究竟如何运作——它们只是几块石头！但即便无法直接造出，也许也依然可以$(o)仿造$()。让媒质流过图案就应该可以了。那么我要做的就是引导媒质。我为此效用设计的形态是一支$(thing)粉笔$()。",
+    "pages.lapisworks.imbuement.rituals.chalk.recipe.text": "$(o)放置一次，则只是普通的传导件；放置两次，则可在其中置入最多五个图案。我叫它粉笔构造……$(thing)紫水晶仪式$()$(o)。$()",
+    "pages.lapisworks.imbuement.rituals.chalk.general": "以下是$(thing)紫水晶仪式$()的某些通用性质。它们会以我的身份施法；它们的影响范围是我的一半，甚至也包括我$(l:patterns/great_spells/greater_sentinel)$(thing)卓越哨卫$()影响范围的一半。",
+
+    "pages.lapisworks.imbuement.rituals.onetime.title": "一次性仪式",
+    "pages.lapisworks.imbuement.rituals.onetime.howto": "在另一只手中持有媒质源时对$(item)紫水晶粉笔$()痕按下$(thing)$(k:use)$()，即会触发$(thing)一次性仪式$()，并立即消耗该媒质源中的所有媒质。$(thing)一次性仪式$()只能使用一次，且施放速度极快；媒质流行进过程中会摧毁粉笔痕，行进速度则是每秒二十段粉笔痕。默认情况下，$(thing)一次性仪式$()会以我的身份施法，不过也可以借助后页图案切断我与仪式间的联系。$(br2)$(o)在$(thing)一次性仪式$()$(o)之外使用它们会招致可怖的事故。$()",
+    "pages.lapisworks.imbuement.rituals.onetime.stop_be_me.text": "当前$(thing)一次性仪式$()不会再以触发者的身份施法。无需消耗媒质。",
+    "pages.lapisworks.imbuement.rituals.onetime.be_me.text": "当前$(thing)一次性仪式$()会以触发者的身份施法。无需消耗媒质。",
+    "pages.lapisworks.imbuement.rituals.onetime.are_u_me.text": "检验当前$(thing)一次性仪式$()是否在以触发者的身份施法。无需消耗媒质。",
+
 
     "categories.lapisworks.lapisworks.great": "巫师的法术",
     "categories.lapisworks.lapisworks.great.desc": "一些知识分子和冒险家抢救出了老巫师的几篇记事。我已着手从这些古代宝典中解读巫师的知识。",
@@ -531,8 +564,8 @@
     "pages.lapisworks.interop.lapixical.get200bruh.text": "我总感觉我缺了什么。我总在想“我肯定漏了些特性”。我读到的卷轴证实了我的直觉。在过去，在还有许多$(thing)咒术师$()的时代里，有这么一个$(l:https://github.com/ChloeTax/hexxy4/tree/main/mods)“hexxy4”$()。它是所有$(thing)“附属”$()的图书馆，也自然有我近期发现的、那些$(thing)咒法风味（Hexical）$()变动的$(thing)“2.0.0”$()（大概只是自然或者别的什么机制复苏了？）。不管怎么说，卷轴里警告道该版本还未完成，可能出现各种小错误，也还远非其最优状态。",
     "pages.lapisworks.interop.lapixical.holder.title": "定手支座",
     "pages.lapisworks.interop.lapixical.holder.text": "$(item)支座$()没什么缺点，但和万事万物一样，它也不是完美的。它只能模拟我的副手，但$(l:lapisworks_patterns)有不少$()图案规定了要用到哪只手。$(thing)紫金石灌注$()成功将图案变成了指定手版本，那么支座应该也可以。15 个紫金石应该够了。",
-    "pages.lapisworks.interop.lapixical.condenser_interactions.title": "凝聚单元交互",
-    "pages.lapisworks.interop.lapixical.condenser_interactions.text": "研究$(l:imbuement/condenser)$(#00c)媒质凝聚单元$()时协助我的三个图案不只对$(l:items/media_jar)$(item)媒质罐$()有效，而且对$(l:interop/lapixical/cradle_n_shit)$(item)物品箍$()也有效！这些图案分别是$(l:imbuement/condenser#lapisworks:get_condenser_media)$(thing)凝聚媒质之纯化$()、$(l:imbuement/condenser#lapisworks:deposit)$(thing)存入媒质$()、$(l:imbuement/condenser#lapisworks:withdraw)$(thing)取回媒质$()。唯一的麻烦在于，后两者都不接受$(#00c)容质纠缠$()。要让$(l:interop/lapixical/cradle_n_shit)$(item)物品箍$()具有此功能，其中必须放有$(item)试剂瓶$()。",
+    "pages.lapisworks.interop.lapixical.condenser_interactions.title": "媒质单元交互",
+    "pages.lapisworks.interop.lapixical.condenser_interactions.text": "研究$(l:imbuement/condenser)$(#00c)媒质凝聚单元$()时协助我的三个图案不只对$(l:items/media_jar)$(item)媒质罐$()有效，而且对$(l:interop/lapixical/cradle_n_shit)$(item)物品箍$()也有效！这些图案分别是$(l:imbuement/condenser#lapisworks:get_condenser_mdia)$(thing)凝聚媒质之纯化$()、$(l:imbuement/condenser#lapisworks:deposit)$(thing)存入媒质$()、$(l:imbuement/condenser#lapisworks:withdraw)$(thing)取回媒质$()。唯一的麻烦在于，后两者都不接受$(#00c)容质纠缠$()。要让$(l:interop/lapixical/cradle_n_shit)$(item)物品箍$()具有此功能，其中必须放有$(l:patterns/great_spells/make_battery)$(item)试剂瓶$()。",
 
     "categories.lapisworks.lapisworks.interop.lapisal.title": "青金拓展",
     "categories.lapisworks.lapisworks.interop.lapisal.desc": "我在想，和$(thing)咒灵$()一样无法触及的物品能被附魔吗？",
@@ -544,7 +577,7 @@
     "pages.lapisworks.interop.lapisal.makewisp.text": "我注意到，$(l:great/flay_artmind)灌注意识$()可以在灌注简单意识之前，首先将其塑形成多种事物。如果我可以真正意义上把简单意识变成任何事物，那么，把简单意识灌注到空气中，应该就可以生成通常会从$(thing)质道$()里出现的那种咒灵？$(br2)$(o)也许可以借此从简单意识里取出更多媒质。$()",
     "pages.lapisworks.interop.lapisal.openslipway.title": "撕开质道",
     "pages.lapisworks.interop.lapisal.openslipway.clueless": "那些$(thing)质道$()。它们一定能联通到$(o)某些地方$()。咒灵不会凭空出现。不管我怎么尝试都无法穿过质道。我$(#05e)必$(#e07)将$()找到穿过的方法。$()让简单意识遵循我的意志，应当就能做到。当我手头的工具给我带来进展之时，我会在此进一步记录。",
-    "pages.lapisworks.interop.lapisal.openslipway.clueless_still": "$(l:great/flay_artmind)灌注意识$()能行。我就$(#05e)知$(#e07)道$()。指示简单意识去打开$(thing)质道$()，给予其 48 个$(item)紫金石$()的力量，它就能对$(thing)质道$()施加难以想象的力，将空间的结构撕开！世界将拜倒在我的脚下！现在，剩下的就只有付诸实践，将简单意识灌注到$(thing)质道$()去了。",
+    "pages.lapisworks.interop.lapisal.openslipway.clueless_still": "$(l:great/flay_artmind)灌注意识$()能行。正如我$(#05e)所$(#e07)料$()。指示简单意识去打开$(thing)质道$()，给予其 48 个$(item)紫金石$()的力量，它就能对$(thing)质道$()施加难以想象的力，将空间的结构撕开！世界将拜倒在我的脚下！现在，剩下的就只有付诸实践，将简单意识灌注到$(thing)质道$()去了。我必须说明，此操作会占据$(o)大量$()空间。",
     "pages.lapisworks.interop.lapisal.openslipway.cluedin": "$(#05e)撕裂$(#e07)成功了。$()$(thing)质道$()被摧枯拉朽的庞大力量强行打开，随着一阵足以致聋的声音，空间的结构亦被撕开。我感受到了强大的媒质流从中涌出。它推开了周围的所有活物，除了悦灵。奇观。不过……我貌似无法穿过这个空间的破洞。$(#05e)该死，该死，该死，让$(#e07)我过去，我该过去！——$()冷静。冷静。我现在还不能受影响。我的价值实在太高。",
     "pages.lapisworks.interop.lapisal.openslipway.cluedin_compromise": "肯定还有其他道路，我将来必能找到。但不管怎么说，这道$(thing)裂痕$()还有其他性质。例如，它会溢出极大量的媒质，以至于能推走悦灵之外的所有活体。它产生的咒灵数量也远超普通的$(thing)质道$()，也许可以用作媒质的来源。"
 }
