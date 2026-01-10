@@ -16,6 +16,8 @@ item_ids:
 
 The Redstone Terminal is a control panel for managing all Redstone Emitters in your ME network. It lets you search, view, and toggle emitters by name with a clean GUI.
 
+## [Video Tutorial](https://youtu.be/PJgyymdOtNE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## How to Use

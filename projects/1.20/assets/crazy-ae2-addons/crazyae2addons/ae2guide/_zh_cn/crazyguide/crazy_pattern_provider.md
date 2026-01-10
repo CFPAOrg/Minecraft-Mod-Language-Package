@@ -16,6 +16,8 @@ item_ids:
 
 疯狂样板供应器是应用能源2（AE2）样板供应器的扩展版本，具有动态的可扩展性。破坏时会保留所有设置和内容物。
 
+## [视频教程](https://youtu.be/54WvhbR3GfY&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## 重要特性

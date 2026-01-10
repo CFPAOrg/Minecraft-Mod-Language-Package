@@ -18,6 +18,8 @@ item_ids:
 
 刷怪笼提取器是一个多方块系统，可通过真实存在的刷怪笼方块，模拟生物生成并将其直接存入ME网络。此法无需实际生成实体即可自动捕获生物，有效避免卡顿。
 
+## [视频教程](https://youtu.be/MUKyq0IDi3M&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## 使用方法
 
 1. **搭建多方块结构**
