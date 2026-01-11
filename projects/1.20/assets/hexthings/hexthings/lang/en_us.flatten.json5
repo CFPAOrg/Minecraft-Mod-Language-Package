@@ -6,8 +6,6 @@
           "": "Utilities",
           noop: "Does nothing, but the tail can be any shape. Useful as \
           a placeholder to be replaced later",
-          insert: "Similar to $(l:patterns/lists#hexcasting:replace)$(action)Surgeon's Exaltation/$, but replaces the \
-          element of the first list instead with the $(o)contents/$ of the second list, rather than with the list itself.",
           unquote: "This pattern can be used to place raw iota directly into an \
           Introspection-Restrospection pair. After drawing this pattern, all \
           subsequent patterns are \"unescaped\", allowing them to be executed as \
@@ -43,7 +41,7 @@
           dict_ents: "Pushes a list of the key-value pairs in this Dictionary, each being \
           a 2 element list."
         },
-        uiua: {
+        lists: {
           "": "Advanced List Operators",
           uiua_take: "Keeps elements of the list based on the second argument. If it's a \
           number and positive, it keeps the first $(o)n/$ elements of the list, if \
@@ -58,7 +56,15 @@
           $(l:patterns/logic#hexcasting:bool_coerce)considered true by Nature/$.",
           div: "Pushes a list containing pairs of values corresponding to the values at that \
           index in each list.",
-          mul: "Pushes a list containing every combination of elements between the two lists."
+          mul: "Pushes a list containing every combination of elements between the two lists.",
+          insert: "Similar to $(l:patterns/lists#hexcasting:replace)$(action)Surgeon's Exaltation/$, but replaces the \
+          element of the first list instead with the $(o)contents/$ of the second list, rather than with the list itself.",
+          make_range: {
+            "1": "Creates a list from num #1 to num #2, with a step size of num #3 (or 1 if passed null). For example, \
+            A stack of [1, 2, 0.5] would result in a list of [1, 1.5].",
+            "2": "This pattern will mishap if the step size is 0, or if the resulting list would be larger than Nature \
+            allows."
+          }
         }
       },
       info: {
@@ -104,7 +110,8 @@
         uiua_take: "Retention Distillation",
         uiua_drop: "Rejection Distillation",
         uiua_rotate: "Ferris Distillation",
-        uiua_where: "Deduction Purification"
+        uiua_where: "Deduction Purification",
+        make_range: "Ranger's Exaltation"
       },
 
       // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
@@ -122,9 +129,15 @@
     mishap: {
       "invalid_unquote": "Did not first cast Introjection.",
       "invalid_key_type": "An iota of type %s is not allowed as a key.",
+      "malformed_range": {
+        "zero": "Cannot have a step size of 0",
+        "size": "List of size %s would exceed max size of current stack"
+      },
       invalid_value: {
         class: {
-          int_list: "a list of numbers"
+          int_list: "a list of numbers",
+          numnull: "a number or Null",
+          map: "a dictionary"
         }
       }
     }
