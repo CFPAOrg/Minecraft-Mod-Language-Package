@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/1.20/assets/modrinth-hexsky/hexsky)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/modrinth-hexsky/hexsky)
+- [1.20.1](/projects/1.20/assets/modrinth-hexxyskies/hexsky)
+- [1.20.1-fabric](/projects/1.20-fabric/assets/modrinth-hexxyskies/hexsky)
