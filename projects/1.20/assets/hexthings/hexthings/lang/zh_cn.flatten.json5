@@ -6,12 +6,10 @@
           "": "实用",
           noop: "什么都不会做，但图案尾部可为任意形状。适合用作替换占位符。",
 
-          insert: "与$(l:patterns/lists#hexcasting:replace)$(action)外科医师之提整/$\
-          类似，但会使用第二列表中的各元素替换第一列表中的元素，而非以列表整体进行替换。",
-
           unquote: "此图案可用于直接将原始 iota 置入内省-反思对。绘制此图案后，所有\
           后续的图案会被“取消转义”，运行时会按原有功能执行。此效应的作用范围停止于\
-          $(l:patterns/hexutils#hexthings:requote)$(action)反掷/$。",
+          $(l:patterns/hexutils#hexthings:requote)$(action)回掷/$。",
+
 
           requote: "在$(l:patterns/hexutils#hexthings:unquote)$(action)内投/$后\
           绘制时，其会将栈上的所有 iota 置入转义的列表，并将栈恢复到原先的状态。",
@@ -43,7 +41,7 @@
           dict_ents: "返回字典中的键值对，各键值对均为长度为 2 的列表。"
 
         },
-        uiua: {
+        lists: {
           "": "高阶列表操作",
           uiua_take: "根据第二参数保留列表元素。若参数为正数，则保留列表中的\
           开头 $(o)n/$ 个元素；若为负，则保留末尾 $(o)n/$ 个。若第二参数为列表，\
@@ -54,11 +52,19 @@
 
           uiua_rotate: "按所给量移动列表元素，“超出”列表的元素会从另一端返回。",
 
-          uiua_where: "挑选列表中$(l:patterns/logic#hexcasting:bool_coerce)自然认作 True/$\
+          uiua_where: "挑选列表中$(l:patterns/logic#hexcasting:bool_coerce)自然认作 True/$ \
           的元素，以列表形式返回它们的下标。",
           div: "取出各列表中同下标的元素对，将各元素对组为列表返回。",
 
-          mul: "从两列表中各取一个元素，将所有可能的取值组合组为列表返回。"
+          mul: "从两列表中各取一个元素，将所有可能的取值组合组为列表返回。",
+          insert: "与$(l:patterns/lists#hexcasting:replace)$(action)外科医师之提整/$类似，\
+          但会将第二列表的$(o)内容/$插入第一列表，而不是替换为列表本身。",
+          make_range: {
+            "1": "创建介于 1 号 num 到 2 号 num 间的列表，步长为 3 号 num（传入 Null 则为 1）。\
+            例如，形如 [1, 2, 0.5] 的栈会给出列表 [1, 1.5]。",
+            "2": "此图案会在步长为 0 时招致事故，所得列表大于自然的容许限度也会招致事故。"
+
+          }
         }
       },
       info: {
@@ -95,7 +101,7 @@
         noop: "耐心",
         insert: "扁平之提整",
         unquote: "内投",
-        requote: "反掷",
+        requote: "回掷",
         isgreatersent: "碎片之精思",
         empty_dict: "僵局之精思",
         dict_keys: "访问器之纯化",
@@ -104,7 +110,8 @@
         uiua_take: "维持之馏化",
         uiua_drop: "拒斥之馏化",
         uiua_rotate: "摩天轮之馏化",
-        uiua_where: "演绎之纯化"
+        uiua_where: "演绎之纯化",
+        make_range: "范限之提整"
       },
 
       // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
@@ -122,9 +129,15 @@
     mishap: {
       "invalid_unquote": "未先绘制内投。",
       "invalid_key_type": "%s类型的iota不可用作键。",
+      "malformed_range": {
+        "zero": "步长不可为0",
+        "size": "大小为%s的列表会超出当前栈的最大大小"
+      },
       invalid_value: {
         class: {
-          int_list: "一个数列表"
+          int_list: "一个数列表",
+          numnull: "一个数或Null",
+          map: "一个字典"
         }
       }
     }
