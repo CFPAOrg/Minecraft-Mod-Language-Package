@@ -315,9 +315,14 @@
   "block.neepmeat.encased_item_pipe.lore_0": "以方块右击后，其模型和外形都将变为与之相同。",
   "block.neepmeat.merge_item_pipe": "合并物品管道",
   "block.neepmeat.pipe_driver": "管道驱动器",
-  "block.neepmeat.pipe_driver.lore_0": "能在相连物品管道中进行高级物品路由。每个管道网络只能存在一台驱动器。",
+  "block.neepmeat.pipe_driver.lore_0": "能在相连物品管道中进行高级物品路由。\n§e每个管道网络只能存在一台驱动器。",
   "block.neepmeat.item_requester": "手动请求器",
-  "block.neepmeat.item_requester.lore_0": "列出相连管道网络中所有可用物品。被请求的物品会路由至该管道。管道网络中需有管道驱动器。",
+  "block.neepmeat.item_requester.lore_0": "列出相连管道网络中所有可用物品。被请求的物品会路由至该管道。管道网络中须有管道驱动器。",
+  "block.neepmeat.requester": "请求器",
+  "block.neepmeat.requester.lore_0": "请求匹配过滤器的物品。可用红石或NEEP总线触发。\n管道网络中须有管道驱动器。",
+  "screen.neepmeat.requester.request_type": "请求类型",
+  "screen.neepmeat.item_requester.cancel": "取消",
+  "screen.neepmeat.item_requester.from": "发送自%s, %s, %s",
   "block.neepmeat.storage_bus": "存储驱动器",
   "screen.neepmeat.pipe_priority.input_priority": "输入优先级",
   "screen.neepmeat.pipe_priority.output_priority": "输出优先级",
@@ -392,6 +397,7 @@
 
   "block.neepmeat.power_emitter": "创造供能器",
   "block.neepmeat.power_emitter.lore_0": "向脉管网络提供100eJ/t。",
+  "screen.neepmeat.power_emitter.output_power.tooltip": "每刻提供的能量（eJ/t）",
 
   "block.neepmeat.pump": "红石泵",
   "block.neepmeat.pump.lore_0": "将流体快速泵入管道。\n§e默认需红石信号开启。潜行空手交互以切换。",
@@ -543,6 +549,7 @@
 
   "block.neepmeat.fabricator": "组装器",
   "block.neepmeat.fabricator.lore_0": "从相邻容器取出原材料以合成物品。\n从前面取出物品即会启动下一轮合成。\n若以发电机供能，则会持续合成并主动输出物品。\n不允许存在配方循环和链接。",
+  "screen.neepmeat.fabricator.use_external.tooltip": "会从与机器下部相邻的物品容器取用。",
 
   "block.neepmeat.workstation": "留存工作台",
   "block.neepmeat.workstation.lore_0": "合成方格内可以存放物品。",
@@ -677,7 +684,7 @@
   "block.neepmeat.statue": "神秘雕像",
 
   "block.neepmeat.flame_jet": "火焰喷口",
-  "block.neepmeat.flame_jet.lore_0": "会喷出火舌。收到红石信号时激活。\n朝向上方时，能向换能套管输出260eJ/t。\n§e潜行点击以开关。",
+  "block.neepmeat.flame_jet.lore_0": "可用熔岩驱动让其喷出火舌。收到红石信号时激活。\n朝向上方时，能向换能套管输出500eJ/t。\n§e潜行点击以开关。",
 
   "block.neepmeat.disruptor_needle": "扰乱机探针",
   "component.neepmeat.disruptor_needle": "扰乱机探针",
@@ -1006,14 +1013,16 @@
   "instruction.neepmeat.rwait.desc": "等待至ARG1处红石接口信号强度大于零。\n §6ARG1§f：红石接口（世界目标）",
   "instruction.neepmeat.remit.desc": "在ARG1处发出强度为ARG2的红石信号。若未指定信号强度，则从栈中读取。\n §6ARG1§f：红石接口（世界目标）\n §6ARG2§f：信号强度（整型值，可选）",
   "instruction.neepmeat.rread.desc": "读取ARG1处的红石信号强度，并压入栈。\n §6ARG1§f：红石接口（世界目标）",
+  "instruction.neepmeat.rrising.desc": "等候红石接口ARG1处的上升沿（信号强度从0变为非0）。\n §6ARG1§f：红石接口（世界目标）",
+  "instruction.neepmeat.rising_edge.desc": "§6( n1 -- n2 )§f\n弹出栈顶值，检查自上一次发送此指令以来，该值是否从0变为正值。\n最优使用方法是在循环中用于检查红石接口或NEEP总线地址。\n若有上升沿，返回-1（true）；若无，返回0（false）。",
   "instruction.neepmeat.neepbus_write.desc": "将栈顶元素发送给NEEP总线网络中所给地址处的所有设备。\n §6ARG1§f：目标地址（字符串）",
   "instruction.neepmeat.neepbus_read.desc": "读取相连NEEP总线网络中所给地址处设备的值。\n §6ARG1§f：目标地址（字符串）",
   "instruction.neepmeat.route.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会从给定§6管道§f和§6输入方向§f运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将操作成功与否压入栈。\n §6ARG1§f：输入管道（世界目标）\n §6ARG2§f：输出管道（世界目标）\n §6ARG3§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.request.desc": "使用管道驱动器（需为当前操作机构）请求所给名称的物品。\n该物品会通过管道网络运输至给定§6管道§f和§6输出方向§f。运输数量读取自栈，并将请求成功与否压入栈。\n §6ARG1§f：输出管道（世界目标）\n §6ARG2§f：物品ID（字符串，通配符为“*”）",
   "instruction.neepmeat.count.desc": "统计所给世界目标处物品或流体的数量，并压入栈。\n具体统计何种类型的资源由可选的第二参数指定。\n若指定ID，则只会统计匹配该ID的物品或流体。“*”代表任意字符组合（如“*:water”和“minecraft:*”）。\n §6ARG1§f：存储空间（世界目标）§6\n §6ARG2§f：需统计的类型（ITEM或FLUID，可选）\n §6ARG3§f：物品ID或流体ID（字符串，可选）",
   "instruction.neepmeat.stock.desc": "使用管道驱动器（需为当前操作机构）统计可访问容器（即与存储驱动器相连）中所有匹配物品的数量。将结果压栈。\n若指定ID，则只会统计匹配该ID的物品。“*”代表任意字符组合（如“minecraft:*”和“:stone”）。\n §6ARG1§f：物品ID（字符串，可选）",
-  "instruction.neepmeat.nbwrite.desc": "将栈顶元素沿数据线缆网络发送至所有匹配给定NEEP总线地址的端口。\n若该元素为内存地址，则会取出该位置的数据并发送，而不会仅发送地址本身。\n §6ARG1§f：NEEP总线地址（字符串）§6",
-  "instruction.neepmeat.nbread.desc": "沿数据线缆网络从匹配所给地址的端口处读取值，并压入栈。\n §6ARG1§f：NEEP总线地址（字符串）§6",
+  "instruction.neepmeat.nbwrite.desc": "§6( s1 n1 -- n2 )§f\n将栈顶元素沿数据线缆网络发送至所有匹配给定NEEP总线地址的端口。\n若该元素为内存地址，则会取出该位置的数据并发送，而不会仅发送地址本身。\nNEEP总线地址及数据均从栈中读取\n §6\"地址\" \"数据\" .NBWRITE",
+  "instruction.neepmeat.nbread.desc": "§6( s1 -- n1 )§f\n沿数据线缆网络从匹配所给地址的端口处读取值，并压入栈。地址从栈中读取。\n §6\"要读取的地址\" .NBREAD §f",
 
   "category.neepmeat.instruction.arithmetic": "算术",
   "category.neepmeat.instruction.comparison": "比较",
@@ -1044,6 +1053,7 @@
   "screen.neepmeat.fluid_rationer.text.ingot": "锭",
   "screen.neepmeat.fluid_rationer.text.bucket": "桶",
   "screen.neepmeat.fluid_rationer.text.amount": "流量（滴）",
+  "screen.neepmeat.fluid_rationer.amount.tooltip": "每周期传输的流体量，以滴计。\n会在输出缓冲清空时从输入容器内取出所设量。",
 
   "screen.neepmeat.separator.text.remainder": "需剩余的动物数量",
 

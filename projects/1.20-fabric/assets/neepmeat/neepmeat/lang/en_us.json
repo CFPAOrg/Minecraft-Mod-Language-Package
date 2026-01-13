@@ -315,9 +315,14 @@
   "block.neepmeat.encased_item_pipe.lore_0": "Takes on the model and shape of the block it is right-clicked with.",
   "block.neepmeat.merge_item_pipe": "Merge Item Pipe",
   "block.neepmeat.pipe_driver": "Pipe Driver",
-  "block.neepmeat.pipe_driver.lore_0": "Permits advanced item routing in connected item pipes. One Driver is allowed per network.",
+  "block.neepmeat.pipe_driver.lore_0": "Permits advanced item routing in connected item pipes.\n§eOne Driver is allowed per network.§f\n§eEmits redstone when waiting for deferred requests§f",
   "block.neepmeat.item_requester": "Manual Requester",
   "block.neepmeat.item_requester.lore_0": "Lists all available items in a connected item pipe network. Requested items will be routed towards this pipe. A Pipe Driver must be part of the network.",
+  "block.neepmeat.requester": "Requester",
+  "block.neepmeat.requester.lore_0": "Requests items matching a filter. Triggered with redstone or NEEPBus.\nA Pipe Driver must be part of the network.",
+  "screen.neepmeat.requester.request_type": "Request type",
+  "screen.neepmeat.item_requester.cancel": "Cancel",
+  "screen.neepmeat.item_requester.from": "From %s, %s, %s",
   "block.neepmeat.storage_bus": "Storage Driver",
   "screen.neepmeat.pipe_priority.input_priority": "Input Priority",
   "screen.neepmeat.pipe_priority.output_priority": "Output Priority",
@@ -392,6 +397,7 @@
 
   "block.neepmeat.power_emitter": "Creative Power Emitter",
   "block.neepmeat.power_emitter.lore_0": "Emits 100eJ/t into a vascular network.",
+  "screen.neepmeat.power_emitter.output_power.tooltip": "Energy to emit per tick (eJ/t)",
 
   "block.neepmeat.pump": "Redstone Pump",
   "block.neepmeat.pump.lore_0": "Pumps fluid quickly through pipes.\n§eEnabled by redstone by default. Use with an empty hand while sneaking to toggle.",
@@ -543,6 +549,7 @@
 
   "block.neepmeat.fabricator": "Fabricator",
   "block.neepmeat.fabricator.lore_0": "Crafts items using ingredients from adjacent inventories.\nCrafting can be triggered by extracting the result item from the front.\nIf powered by a motor, it will continuously craft and eject items.\nLoops and chains are not allowed.",
+  "screen.neepmeat.fabricator.use_external.tooltip": "Use item storages adjacent to the bottom block.",
 
   "block.neepmeat.workstation": "Persistent Crafting Table",
   "block.neepmeat.workstation.lore_0": "Keeps items in the grid.",
@@ -677,7 +684,7 @@
   "block.neepmeat.statue": "Mysterious Statue",
 
   "block.neepmeat.flame_jet": "Flame Jet",
-  "block.neepmeat.flame_jet.lore_0": "Shoots a jet of fire. Enabled with redstone.\nPowers Transductive Cannulas at 260eJ/t when facing upwards. \n§eSneak-click to toggle.",
+  "block.neepmeat.flame_jet.lore_0": "Shoots a jet of fire when powered by lava. Enabled with redstone.\nPowers Transductive Cannulas at 500eJ/t when facing upwards. \n§eSneak-click to toggle.",
 
   "block.neepmeat.disruptor_needle": "Disruptor Needle",
   "component.neepmeat.disruptor_needle": "Disruptor Needle",
@@ -1006,14 +1013,16 @@
   "instruction.neepmeat.rwait.desc": "Waits for a signal strength above zero at the redstone interface ARG1.\n §6ARG1§f: redstone interface (world target)",
   "instruction.neepmeat.remit.desc": "Emits a redstone signal at ARG1 of strength ARG2. If no strength is specified, it will be read from the stack.\n §6ARG1§f: redstone interface (world target)\n §6ARG2§f: signal strength (integer, optional)",
   "instruction.neepmeat.rread.desc": "Reads the redstone signal strength at ARG1 and pushes it to the stack.\n §6ARG1§f: redstone interface (world target)",
+  "instruction.neepmeat.rrising.desc": "Waits for a rising edge (when the signal strength goes from 0 to not 0) at the redstone interface ARG1.\n §6ARG1§f: redstone interface (world target)",
+  "instruction.neepmeat.rising_edge.desc": "§6( n1 -- n2 )§f\nTakes the top value of the stack and checks if it has risen from 0 to a positive value since this instruction was last invoked.\nBest used in a loop to check a redstone interface or NEEPBus address.\nReturns -1 (true) if a rising edge and 0 (false) if not.",
   "instruction.neepmeat.neepbus_write.desc": "Sends the top stack entry to all devices with the specified address in a connected NEEPBus network.\n §6ARG1§f: target address (string)",
   "instruction.neepmeat.neepbus_read.desc": "Reads the value of a device with the specified address in a connected NEEPBus network.\n §6ARG1§f: target address (string)",
   "instruction.neepmeat.route.desc": "Uses a Pipe Driver (currently selected actuator) to request the item with the given name. \nThe item is routed from a given §6pipe§f and §6input direction§f to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the operation is pushed to the stack.\n §6ARG1§f: input pipe (world target)\n §6ARG2§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.request.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed through a pipe network to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the request is pushed to the stack.\n §6ARG1§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.count.desc": "Counts the items or fluid at the given world target and pushes the result to the stack.\nThe type of resource to count is optionally specified in the second argument.\nIf an ID is provided, only items/fluids that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: inventory (world target)§6\n §6ARG2§f: type to count (ITEM or FLUID, optional)\n §6ARG3§f: item or fluid ID (string, optional)",
   "instruction.neepmeat.stock.desc": "Uses a Pipe Driver (currently selected actuator) to count counts all matching items in accessible inventories (connected to Storage Drivers). The result is pushed to the stack.\nIf an ID is provided, only items that match it will be counted. IDs can use * to represent any combination of characters (minecraft:* or :stone).\n §6ARG1§f: item ID (string, optional)",
-  "instruction.neepmeat.nbwrite.desc": "Sends the top stack element over a data cable network to all ports matching the given NEEPBus address.\nIf the element is a memory address, the data at the address will be fetched and sent, rather than the address itself.\n §6ARG1§f: NEEPBus address (string)§6",
-  "instruction.neepmeat.nbread.desc": "Reads the value of a port matching the given address over a data cable network. The result is put on the stack.\n §6ARG1§f: NEEPBus address (string)§6",
+  "instruction.neepmeat.nbwrite.desc": "§6( s1 n1 -- n2 )§f\nSends the top stack element over a data cable network to all ports matching the given NEEPBus address.\nIf the element is a memory address, the data at the address will be fetched and sent, rather than the address itself.\nThe NEEPBus address and data will be read from the stack\n §6\"the address\" \"the data\" .NBWRITE",
+  "instruction.neepmeat.nbread.desc": "§6( s1 -- n1 )§f\nReads the value of a port matching the given address over a data cable network. The address is read from the stack. The result is put on the stack.\n §6\"address_to_read\" .NBREAD §f",
 
   "category.neepmeat.instruction.arithmetic": "Arithmetic",
   "category.neepmeat.instruction.comparison": "Comparison",
@@ -1044,6 +1053,7 @@
   "screen.neepmeat.fluid_rationer.text.ingot": "Ingot",
   "screen.neepmeat.fluid_rationer.text.bucket": "Bucket",
   "screen.neepmeat.fluid_rationer.text.amount": "Amount (droplets)",
+  "screen.neepmeat.fluid_rationer.amount.tooltip": "Amount of fluid to transfer each cycle in droplets.\nThis quantity is extracted from the input storage when the output buffer has been emptied.",
 
   "screen.neepmeat.separator.text.remainder": "Number of animals to remain.",
 
