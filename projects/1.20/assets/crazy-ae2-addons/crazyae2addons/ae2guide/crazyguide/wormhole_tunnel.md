@@ -13,7 +13,9 @@ item_ids:
 
 The Wormhole P2P Tunnel is an advanced variant of AE2's P2P system that allows two-way communication, redstone propagation, and automatic capability routing across multiple linked tunnels.
 
-Unlike regular P2P tunnels, Wormhole tunnels can form **bi-directional connections**, support **redstone transmission**, and **combine capabilities** when interacting with multiple outputs.
+Unlike regular P2P tunnels, Wormhole tunnels can form **bi-directional connections**, and **combine capabilities** when interacting with multiple outputs.
+
+## [Video Tutorial](https://youtu.be/pQ8V4aX6gh4&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
 
 ---
 
@@ -36,5 +38,5 @@ Unlike regular P2P tunnels, Wormhole tunnels can form **bi-directional connectio
 
 The possibilities are endless but here are some setups I did while testing.
 - Storage bus through a tunnel: you can place a storage bus on the input side, and any item/fluid storage on the other sides, and the storage bus will see and be able to interact with them.
-- Nested p2p tunnels: you can connect two parts of me network with this tunnel, and you can use p2p tunnels within those tunneled channels.
+- Nested p2p tunnels: If you enable this in config, you can connect two parts of me network with this tunnel, and you can use p2p tunnels within those tunneled channels.
 - Mek's heat transfer: and any other pipes from mek work through this tunnel.

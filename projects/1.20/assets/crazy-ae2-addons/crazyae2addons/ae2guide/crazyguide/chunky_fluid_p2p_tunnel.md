@@ -13,6 +13,8 @@ item_ids:
 
 The Chunky Fluid P2P Tunnel part lets you send fluids in fixed-size chunks. It waits until it has collected enough fluid to meet the configured chunk size (in millibuckets), then moves exactly that amount to the connected output, cycling through them to keep distribution balanced.
 
+## [Video Tutorial](https://youtu.be/fcd3xHpsXnE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Attach the part**: Place the Chunky Fluid P2P Tunnel on any side of an ME cable or Fluid Interface that is connected to a tank or fluid machine.
