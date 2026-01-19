@@ -159,17 +159,21 @@ begin
 
 Marks the end of a begin-until construct. Consumes the last stack entry and branches back to the previous `BEGIN` if it is true.
 
-## FOR ( n1 n2 -- ) (immediate)
+## DO ( n1 n2 -- ) (immediate)
 
 Begins a do-loop construct. Terminated by `LOOP` or `+LOOP`.
 
 Checks n1 and n2 for equality and branches to the end of the loop if this is the case. Otherwise, the values are moved to the return stack and the loop begins.
 
-The following code section will repeat until loop index reaches n1, starting at n2.
+The following code section will repeat until loop index reaches 10, starting at 0.
 
 ```
 10 0 do i . loop
 ```
+
+## FOR ( n1 n2 -- ) (immediate)
+
+Same as `DO`
 
 ## LOOP ( -- ) (immediate)
 
