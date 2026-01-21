@@ -24,7 +24,7 @@
 
 ;;;;;
 
-<|spell-preview-unloadable@trickster:templates|spell=YwyT9+ZnAAIW9/lWJxhgAMSx/4DEcUCWceCAcgC7HdBfPgAAAA==|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpPAYgYGFkBpIgzMDIKIBQkleam5RaxIAATAx4Vdp/IFalA9FmOnAgqQQASzjP+tUAAAA=|>
 
 参见上图法术。其子圆中带有施法顺序的序号，从0起到3结束。
 

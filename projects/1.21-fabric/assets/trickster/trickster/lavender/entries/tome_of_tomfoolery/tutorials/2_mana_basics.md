@@ -71,6 +71,6 @@ Create a few of these before continuing!
 
 ;;;;;
 
-<|spell-preview-unloadable@trickster:templates|spell=YwqT9+b/wDGjlQEAks2CzAoAAAA=|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvA8cM1oZAKSkMy4tAAAA|>
 
 {gray}(Drag to pan and scroll to zoom){}
