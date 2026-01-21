@@ -7,6 +7,7 @@ categories:
   - Crafting and Patterns
 item_ids:
   - crazyae2addons:crazy_pattern_provider
+  - crazyae2addons:crazy_pattern_provider_part
   - crazyae2addons:crazy_upgrade
 ---
 
