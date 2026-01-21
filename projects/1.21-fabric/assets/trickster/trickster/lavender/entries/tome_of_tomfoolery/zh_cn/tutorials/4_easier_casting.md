@@ -29,7 +29,7 @@
 ;;;;;
 
 首先手持抄有法术的物品，并绘制较小的图案；再换成手持想要抄入的物品，并绘制较大的图案。
-<|spell-preview-unloadable@trickster:templates|spell=YwyT9+bf6MPEwAhiMLo0tTIAAH43+GkTAAAA|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvI0+TAyMjMwMDAwgDGRiKmF0aWoFSjExAAD/qivoVAAAAA==|>
 
 ;;;;;
 
@@ -43,6 +43,6 @@
 
 ;;;;;
 
-<|spell-preview@trickster:templates|spell=YwyT9+ZnYDjAwwhiMDI4dDKBRVwOMIBFOEIYGBhADCEUEQDelYOZNwAAAA==|>
+<|spell-preview@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpPAaGAzyMjPwMDAzMQMzAyIiphJHBoROfvJDLAQZ88hwhIBkGJjiBUyUDqSYxMQAA0uzvpegAAAA=|>
 
 抄写完毕后可以施放一下，看看它到底有什么功能。然后再找出各个戏法的资料，看看它是*怎么*做到的！

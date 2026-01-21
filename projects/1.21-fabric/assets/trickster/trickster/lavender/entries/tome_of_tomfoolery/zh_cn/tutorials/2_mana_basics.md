@@ -52,6 +52,6 @@
 
 ;;;;;
 
-<|spell-preview-unloadable@trickster:templates|spell=YwqT9+b/wDGjlQEAks2CzAoAAAA=|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvA8cM1oZAKSkMy4tAAAA|>
 
 {gray}（拖动可平移，滚动滚轮可缩放）{}

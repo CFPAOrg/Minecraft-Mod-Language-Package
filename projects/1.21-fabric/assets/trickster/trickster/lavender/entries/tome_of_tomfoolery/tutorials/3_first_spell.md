@@ -34,7 +34,7 @@ With that out of the way, try to recreate the following spell in your scroll:
 
 ;;;;;
 
-<|spell-preview-unloadable@trickster:templates|spell=YwyT9+YP6GBjZQQxGFwOMIAZHCEMDAwA8vUGkRwAAAA=|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvIAONlZGRjYGBgZmIGZgZMRUwuBygAGfPEcISIaBCUIAAFAX+BF5AAAA|>
 
 {gray}(Drag to pan and scroll to zoom){}
 
@@ -42,7 +42,7 @@ With that out of the way, try to recreate the following spell in your scroll:
 
 Once that's done, hold the scroll in your offhand, and draw the following spell in your mirror:
 
-<|spell-preview-unloadable@trickster:templates|spell=YwyT9+bf6MPEyghiMLo0tTIAADybrxgTAAAA|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvI0+TKyMjMwMDAwgzMDIiKmE0aWpFSjFxAAAWHSAFlQAAAA=|>
 
 ;;;;;
 

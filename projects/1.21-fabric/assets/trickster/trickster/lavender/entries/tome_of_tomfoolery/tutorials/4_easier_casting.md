@@ -39,7 +39,7 @@ You can use a spell like the following in a mirror to read and inscribe a spell.
 
 First draw the small pattern while holding your spell, 
 then swap to the item you want to inscribe, and draw the other pattern.
-<|spell-preview-unloadable@trickster:templates|spell=YwyT9+bf6MPEwAhiMLo0tTIAAH43+GkTAAAA|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvI0+TAyMjMwMDAwgDGRiKmF0aWoFSjExAAD/qivoVAAAAA==|>
 
 ;;;;;
 
@@ -56,7 +56,7 @@ Combining all this, try inscribing the following spell onto a Wand:
 
 ;;;;;
 
-<|spell-preview@trickster:templates|spell=YwyT9+ZnYDjAwwhiMDI4dDKBRVwOMIBFOEIYGBhADCEUEQDelYOZNwAAAA==|>
+<|spell-preview@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpPAaGAzyMjPwMDAzMQMzAyIiphJHBoROfvJDLAQZ88hwhIBkGJjiBUyUDqSYxMQAA0uzvpegAAAA=|>
 
 Once you have it inscribed, try it out to see what it does.
 After that, try looking up the tricks to see *how*!
