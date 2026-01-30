@@ -15,7 +15,7 @@ item_ids:
 
 <ItemImage id="extendedterminal:et_terminal" scale={3}/>
 
-<ItemLink id="extendedterminal:et_terminal" />是融合成、锻造、切石机、铁砧为一体的多合一终端。
+<ItemLink id="extendedterminal:et_terminal" />是集合成、锻造、切石机、铁砧为一体的多合一终端。
 
 ## 配方
 <RecipeFor id="extendedterminal:et_terminal" />
