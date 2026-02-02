@@ -10,7 +10,7 @@ Prints the top stack entry.
 Places the current value of the program counter (the address of the currently executed instruction) on the top of the stack.
 
 \cat{words}
-# Words
+# Defining Words
 
 ## : 
 
@@ -240,6 +240,26 @@ Tests if n1 is less than or equal to n2. Equivalent to NEEPASM `LTEQ`.
 ## >= ( n1 n2 -- result )
 
 Tests if n1 is greater than or equal to n2. Equivalent to NEEPASM `GTEQ`.
+
+\cat{conversions}
+# Type Conversions
+
+## \>STR ( x1 -- s1 )
+
+Converts the top stack item to a string.
+
+```
+123 >STR 
+```
+
+## \>INT (x1 -- n1 )
+
+Converts the top stack item to an integer. Will cause an error if the conversion will not work.
+
+```
+"123" >INT # OK
+"hello" >INT # Error
+```
 
 \cat{memory}
 # Memory
