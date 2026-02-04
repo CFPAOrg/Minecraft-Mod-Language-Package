@@ -10,6 +10,7 @@
     "Submission Stratagem",
     "Distortion of Wholes",
     "Distortion of Supremacy",
+    "Distortion of Inferiority",
     "Noble Stratagem",
     "Insignificance Stratagem",
     "Distortion of Grandeur",
@@ -29,221 +30,163 @@
 }
 ```
 
-The following patterns regard basic arithmetic and simple mathematical operations.
+The following patterns regard basic arithmetic and mathematical operations.
 
 
-Many base arithmetical operations, though not all, will work on both single numbers and vectors.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:add,title=Annexation Stratagem|>
-
-(number | vec)... | (number | vec)[] -> (number | vec)
-
----
-
-Adds many numbers or vectors into a single value. 
-A number and a vector will combine into a vector.
+Some of the base arithmetic tricks accept a combination of types of fragment. 
+These will have their signatures labelled with, for example, {#aa4444}Addable{} or {#aa4444}Roundable{}.
+These terms are shorthands for a combination of options:
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:subtract,title=Desertion Stratagem|>
+{#aa4444}Addable{} and {#aa4444}Subtractable{} are either {#ddaa00}Numbers{}, {#aa7711}Vectors{}, or {#6644aa}Patterns{}.
 
-(number | vec)... | (number | vec)[] -> (number | vec)
 
----
-
-Subtracts many numbers or vectors into a single value.
-A number and a vector will combine into a vector.
+{#aa4444}Multiplicable{}, {#aa4444}Divisible{}, and {#aa4444}Roundable{}
+are only {#ddaa00}Numbers{} or {#aa7711}Vectors{}.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:multiply,title=Domination Stratagem|>
+Distortions here that take many arguments at once will apply their operation cumulatively.
+For example:
 
-(number | vec)... | (number | vec)[] -> (number | vec)
 
----
+1, 2, 3 into Annexation Stratagem = 1 + 2 + 3 = 6
 
-Multiplies many numbers or vectors into a single value.
-A number and a vector will combine into a vector.
 
-;;;;;
+or
 
-<|glyph@trickster:templates|trick-id=trickster:divide,title=Submission Stratagem|>
 
-(number | vec)... | (number | vec)[] -> (number | vec)
-
----
-
-Divides many numbers or vectors into a single value.
-A number and a vector will combine into a vector.
+1, 2, 3 into Submission Stratagem = 1 / 2 / 3 = 0.1666...
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:modulo,title=Distortion of Wholes|>
+<|trick@trickster:templates|trick-id=trickster:add|>
 
-number, number -> number
+Adds fragments together.
 
----
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:subtract|>
+
+Subtracts multiple fragments from the first fragment.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:multiply|>
+
+Multiplies a bunch of fragments.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:divide|>
+
+Divides fragments sequentially, starting from the first.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:modulo|>
 
 Returns the remainder of dividing the first number by the second number.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:power,title=Distortion of Supremacy|>
-
-number, number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:power|>
 
 Returns the first number raised to the power of the second.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:max,title=Noble Stratagem|>
+<|trick@trickster:templates|trick-id=trickster:logarithm|>
 
-number... | number[] -> number
-
----
-
-Returns the highest of many input values.
+Given two numbers, returns the power that the first number must be raised by to equal the second.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:min,title=Insignificance Stratagem|>
+<|trick@trickster:templates|trick-id=trickster:max|>
 
-number... | number[] -> number
-
----
-
-Returns the lowest of many input values.
+Returns the highest of its input values.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:ceil,title=Distortion of Grandeur|>
+<|trick@trickster:templates|trick-id=trickster:min|>
 
-number -> number
+Returns the lowest of its input values.
 
----
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:ceil|>
 
 Returns the value of the input rounded up.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:floor,title=Distortion of Humility|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:floor|>
 
 Returns the value of the input rounded down.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:round,title=Distortion of Objectivity|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:round|>
 
 Returns the rounded value of the input.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:sqrt,title=Distortion of Decline|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:sqrt|>
 
 Returns the square root of the input.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:invert,title=Negation Distortion|>
-
-number -> number | vec -> vec
-
----
+<|trick@trickster:templates|trick-id=trickster:invert|>
 
 Inverts the given number or vector.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:abs,title=Absolutist's Distortion|>
+<|trick@trickster:templates|trick-id=trickster:abs|>
 
-number -> number
-
----
-
-If the given number is negative, returns its positive equivalent. Otherwise, does nothing.
+If the given number is negative, returns its positive equivalent. Otherwise, returns the number as-is.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:sin,title=Primary Distortion of Geometry|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:sin|>
 
 Returns the sine of the given number.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:cos,title=Secondary Distortion of Geometry|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:cos|>
 
 Returns the cosine of the given number.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:tan,title=Tertiary Distortion of Geometry|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:tan|>
 
 Returns the tangent of the given number.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arcsin,title=Primary Inverse Distortion of Geometry|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:arcsin|>
 
 Returns the arcsine of the given number.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arccos,title=Secondary Inverse Distortion of Geometry|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:arccos|>
 
 Returns the arccosine of the given number.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arctan,title=Tertiary Inverse Distortion of Geometry|>
-
-number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:arctan|>
 
 Returns the arctangent of the given number.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:arctan2,title=Cartesian Angle Distortion|>
-
-number, number -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:arctan2|>
 
 Returns the angle measure between positive X axis and the ray from the origin to the point (y, x).

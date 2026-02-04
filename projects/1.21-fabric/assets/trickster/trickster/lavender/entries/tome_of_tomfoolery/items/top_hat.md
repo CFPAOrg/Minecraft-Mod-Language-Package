@@ -12,17 +12,17 @@ After equipping it on their head, a caster can press the <keybind;key.trickster.
 button to take the hat into their offhand quickly.
 
 
-When a hat is held in your offhand, you can right-click to open it, and insert up to 27 scrolls.
+When a hat is held in your mainhand, you can right-click to open it, and insert up to 27 scrolls.
 These scrolls can then be selected by shift-scrolling while holding the hat.
 
 ;;;;;
 
-Now, when a running spell tries to access the spell in your other hand via [Notulist's Delusion](^trickster:tricks/basic#3),
+Now, when a running spell tries to access the spell in your other hand via [Notulist's Ingress](^trickster:tricks/basic#3),
 it will read the spell from the selected scroll in the held hat instead.
 
 
-You can also access the spell in any slot of your hat directly using [Cranium Stratagem](^trickster:delusions_ingresses/imports#3),
-or read the selected slot using [Cranium Delusion](^trickster:delusions_ingresses/inventory#7).
+You can also access the spell in any slot of your hat directly using [Cranium Deviation](^trickster:tricks/imports#3),
+or read the selected slot using [Cranium Delusion](^trickster:delusions_ingresses/inventory#10).
 
 ;;;;;
 

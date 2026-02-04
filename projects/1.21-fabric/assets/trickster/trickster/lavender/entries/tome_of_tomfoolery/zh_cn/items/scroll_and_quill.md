@@ -13,17 +13,17 @@
 手持右击会打开[法术抄绘](^trickster:editing)界面，可在其中直接修改卷轴上的法术。
 
 
-卷轴可以存放在[高顶礼帽](^trickster:items/top_hat)中，方便获取，还能保证其安全。
+卷轴可以存放在[帽子](^trickster:items/top_hat)中，方便获取，还能保证其安全。
 
 ;;;;;
 
-卷轴上写有的法术可通过[记事员之错觉](^trickster:tricks/basic#3)读出。也可以用[记事员之技巧](^trickster:tricks/basic#4)程序化写入卷轴。
+卷轴上写有的法术可通过[记事员之辑流](^trickster:tricks/basic#3)读出。也可以用[记事员之技巧](^trickster:tricks/basic#4)程序化写入卷轴。
 
 <recipe;trickster:scroll_and_quill>
 
 ;;;;;
 
-在工作台中合成卷轴和任意染料可以为其染色：
+在工作台中将卷轴和任意染料合成可以为卷轴染色：
 
 <|item-tag@trickster:templates|tag-id=trickster:dyed_scroll_and_quill|>
 
@@ -31,7 +31,7 @@
 
 ;;;;;
 
-不过，署过名的卷轴中可以注入一到八瓶法术墨水。法术墨水是一种特殊的制剂，能给卷轴注入仅限单次使用的魔力。
+不过，署过名的卷轴中可以注入1到8瓶法术墨水。法术墨水是一种特殊的制剂，能给卷轴注入仅限单次使用的魔力。
 
 
 融有魔力的卷轴可以直接施放，不会对施法者造成危害，但这么做会损毁卷轴。

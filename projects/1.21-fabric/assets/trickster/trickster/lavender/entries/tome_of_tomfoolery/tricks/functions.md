@@ -11,7 +11,9 @@
     "Folding Deviation",
     "Cautious Deviation",
     "Deviation of Singularity",
-    "Executioner's Deviation"
+    "Executioner's Deviation",
+    "Ingress of Origin",
+    "Turtle's Ingress"
   ]
 }
 ```
@@ -20,75 +22,85 @@ Just as values can be created, passed around, and used by spells, so can parts o
 
 
 When nesting one circle as a glyph inside another, 
-but not immediately providing any subcircles to the upper circle, 
-the upper circle will return the inner circle as a fragment.
+but not immediately providing any subcircles to the outer circle, 
+the outer circle will return the entire inner circle with all its subcircles and glyphs as a fragment.
 
 ;;;;;
 
-This fragment can then be used in a number of ways, including being written to an item using [Notulist's Ploy](^trickster:tricks/basic#4), 
-and being cast later or even multiple times within the same spell.
+This fragment can be used in a number of ways, including being written to an item using [Notulist's Ploy](^trickster:tricks/basic#4), 
+and being cast later or reused multiple times within the same spell.
 
 
-It is also very possible to pass a spell fragment inside of itself, and execute it again there, 
-using recursion to create what is essentially a loop.
+It is also very possible to pass a spell fragment inside of itself, and cast it again there, 
+using recursion to create repeating behaviour.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:delay_execution,title=Deviation of Suspension|>
-
-[number] -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:delay_execution|>
 
 Delays the execution of the current spell by the given number of ticks, or until the next tick. 
 Returns the delay.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:execute,title=Grand Deviation|>
+<|trick@trickster:templates|trick-id=trickster:execute|>
 
-spell, any... -> any
-
----
-
-A powerful trick indeed, it executes the passed in spell fragment, 
-providing it with all other passed in fragments as arguments.
+Casts the given spell fragment, 
+providing it with all additional given fragments as arguments, in order of their appearance.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:execute_same_scope,title=Quiet Deviation|>
+<|trick@trickster:templates|trick-id=trickster:execute_same_scope|>
 
-spell -> any
-
----
-
-Executes the given spell with the current spell's arguments.
+Casts the given spell with the current spell's arguments.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:fork,title=Utensil Deviation|>
+<|trick@trickster:templates|trick-id=trickster:try_catch|>
 
-spell, any... -> number
-
----
-
-Dispatches the given spell to a free spell slot. The used spell slot is returned, or a negative if it failed.
+Attempts to execute the first spell. If it blunders, the second spell is run and the blunder is silenced. Excess values are arguments to both.
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=Note: Collections|>Collections are fragments which contain other fragments and may be accessed using a specific key. 
-Lists are collections where the key is a whole number between zero and the size of the list, exclusive. 
-Maps are also collections, though their keys may be any value and aren't automatically determined by order of insertion.
+<|trick@trickster:templates|trick-id=trickster:atomic|>
+
+Executes the given spell in a single tick, blundering if this cannot be guaranteed due to spell size or illegal operations.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:fold,title=Folding Deviation|>
+If there are not enough circle evaluations available in the tick that this trick is used, 
+there will be a one tick delay before the entirety of the given spell is run at once.
 
-spell, collection, any -> any
 
----
+Illegal operations include the following:
+- [Deviation of Suspension](^trickster:tricks/functions#3).
+- [Ploy of Receipt](^trickster:ploys/message#3).
+- Any Deviation which evaluates a sub-spell.
+- Implicit sub-spell evaluation.
 
-For each entry in the collection, execute the given spell, with the given fragment as the first result.
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:fork|>
+
+Dispatches the given spell to another spell slot.
+
+;;;;;
+
+If the caster doesn't support spell slots, this trick will blunder. 
+If there are no free spell slots, this trick will return void. 
+Otherwise, the index of the spell slot which was dispatched to is returned.
+
+;;;;;
+
+<|page-title@lavender:book_components|title=Note: Foldables|>{#aa4444}Foldables{} are fragments which contain other fragments and may be accessed using a specific key. 
+Lists are {#aa4444}Foldables{} where the key is a whole number between zero and the size of the list, exclusive. 
+Maps are also {#aa4444}Foldables{}, though their keys may be any value and aren't automatically determined by order of insertion.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:fold|>
+
+For each entry in the {#aa4444}Foldable{}, execute the given spell, with the given fragment as the first result.
 
 ;;;;;
 
@@ -96,46 +108,20 @@ Each iteration receives four arguments:
 
 ---
 
-any, any, any, collection
+{#aa4444}Any{}, {#aa4444}Any{}, {#aa4444}Any{}, {#aa4444}Foldable{}
 
 ---
 
-Where the first argument is the result of the last iteration, the second is the current value, the third is its key, 
-and the fourth is the given collection.
+These represent the following values, in order:
+
+- The result of the last iteration.
+- The current value.
+- The key of the current value.
+- The full {#aa4444}Foldable{}.
 
 ;;;;;
 
-The result of each execution is passed as the first argument to the next, where the last's result is the return of this trick.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:try_catch,title=Cautious Deviation|>
-
-spell, spell, any... -> any
-
----
-
-Attempts to execute the first spell. If it blunders, the second spell is run and the blunder is silenced. Excess values are arguments to both.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:atomic,title=Deviation of Singularity|>
-
-spell, any... -> any
-
----
-
-Executes the given spell in a single tick, blundering if it's not possible due to spell size or illegal operations.
-
-;;;;;
-
-<|glyph@trickster:templates|trick-id=trickster:kill_thread,title=Executioner's Deviation|>
-
-[number] -> boolean
-
----
-
-Ends the spell running in the given spell slot or the current slot if not provided. Returns whether it succeeded.
+The result of each execution is passed as the first argument to the next, where the last's result is the return value of this trick overall.
 
 ;;;;;
 
@@ -143,3 +129,21 @@ Ends the spell running in the given spell slot or the current slot if not provid
 
 
 See the chapter on [arguments](^trickster:delusions_ingresses/arguments) for more information.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:kill_thread|>
+
+Ends the spell running in the given spell slot or the current slot if none is provided. Returns whether it succeeded.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:thread_root|>
+
+Fetches the original spell that spawned the given spell slot, or the current slot if none is provided.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:spell_state|>
+
+Returns the number of circles that were executed in the last tick in a given spell slot, or the current slot if none is provided.
