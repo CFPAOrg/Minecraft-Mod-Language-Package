@@ -12,6 +12,8 @@ item_ids:
 
 生物破坏面板是一类特殊的线缆子部件，能够捕捉生物，并将其直接存入ME网络。它会瞬间移除站在它前方的生物，然后送入ME存储系统。
 
+## [视频教程](https://youtu.be/MUKyq0IDi3M&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## 使用方法
 
 1. **放置生物破坏面板**

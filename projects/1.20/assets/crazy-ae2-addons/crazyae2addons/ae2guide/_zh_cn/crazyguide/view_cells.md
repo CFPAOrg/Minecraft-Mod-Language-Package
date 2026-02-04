@@ -19,6 +19,8 @@ item_ids:
 * 过滤设置保存在元件物品中，可在终端间移动且不丢失设置。
 * 放入终端后，仅会显示匹配过滤的物品。
 
+## [视频教程](https://youtu.be/bConD7dV_p0&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## NBT显示元件
 
 * 将物品的**NBT数据**与过滤表达式匹配，以此来进行过滤。

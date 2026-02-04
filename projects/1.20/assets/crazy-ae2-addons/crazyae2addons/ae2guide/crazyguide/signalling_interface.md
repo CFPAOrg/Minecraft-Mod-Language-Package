@@ -17,6 +17,8 @@ The best companion of the [Impulsed Pattern Provider](impulsed_pattern_provider.
 
 The Signalling Interface is a smart block that emits a redstone pulse whenever selected items change in quantity. It’s perfect for creating automatic alerts, gating systems, or triggering other redstone-based machines when materials arrive or leave your storage.
 
+## [Video Tutorial](https://youtu.be/KsIfz0FszIM&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Place the block**: Attach the Signalling Interface to any ME cable.

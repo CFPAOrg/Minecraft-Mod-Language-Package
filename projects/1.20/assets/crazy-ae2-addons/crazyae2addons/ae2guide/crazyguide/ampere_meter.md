@@ -17,6 +17,8 @@ Ampere Meter is a simple block that shows how much energy flows from one side to
 
 On the screen you’ll see an arrow button in the center. Clicking that arrow swaps which side of the block is treated as the energy input and which side is the output. You can experiment by flipping the arrow and watching how the numbers change. The main number you’ll see is an average rate calculated over a few ticks, shown in a short format like `10k FE/t` for Forge Energy or `4A (LuV)` when measuring GregTech's energy. It also works like a diode, blocking any current flowing in the opposite direction.
 
+Bellow you can set the thresholds in between the block will give a comparator redstone output.
+
 ## Compatibility
 
 - Works with any Forge Energy machine.

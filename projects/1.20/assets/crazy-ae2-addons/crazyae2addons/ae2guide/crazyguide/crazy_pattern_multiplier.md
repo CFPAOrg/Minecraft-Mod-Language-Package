@@ -13,6 +13,8 @@ item_ids:
 
 <ItemImage id="crazyae2addons:crazy_pattern_multiplier" scale="4"></ItemImage>
 
+## [Video Tutorial](https://youtu.be/__CiwpU4bbg&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 Crazy Pattern Multiplier is a handy item that lets you multiply the quantities
 in your AE2 processing patterns without rebuilding them by hand.
 You can scale inputs and outputs by any positive number.

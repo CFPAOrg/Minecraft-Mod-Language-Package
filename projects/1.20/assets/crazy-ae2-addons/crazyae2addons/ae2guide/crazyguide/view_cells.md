@@ -19,6 +19,8 @@ The **NBT View Cell** and **Tag View Cell** are special types of view cells you 
 * The filter is saved on the cell’s item, so you can move it between terminals and keep your settings.
 * When placed in a terminal, only items matching the filter will appear.
 
+## [Video Tutorial](https://youtu.be/bConD7dV_p0&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## NBT View Cell
 
 * Filters items by matching their **NBT data** against the filter expression.
