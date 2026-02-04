@@ -48,7 +48,7 @@
   "entity.ars_zero.geometry_terrain_controller": "Earth Golem",
   "entity.ars_zero.geometry_controller": "Arcane Golem",
   "entity.ars_zero.arcane_circle": "Arcane Circle",
-  "entity.ars_zero.effect_beam": "Effect Beam",
+  "entity.ars_zero.effect_beam": "Beam",
 
   "gui.ars_zero.staff_title": "Creative Spell Staff",
   "gui.ars_zero.phase.begin": "Begin",
@@ -106,7 +106,7 @@
 
   "ars_nouveau.augment_desc.effect_beam_glyph_extend_time": "Increases the beam duration",
   "ars_nouveau.augment_desc.effect_beam_glyph_amplify": "Increases damage",
-  "ars_nouveau.augment_desc.effect_beam_glyph_sensitive": "Prevents the beam from dealing damage",
+  "ars_nouveau.augment_desc.effect_beam_glyph_sensitive": "Makes the beam pass through entities",
   "ars_nouveau.augment_desc.effect_beam_glyph_split": "Splits the beam into multiples",
   "ars_nouveau.augment_desc.effect_beam_glyph_dampen": "Stops the beam from hurting entities",
   "ars_nouveau.augment_desc.effect_beam_glyph_aoe": "Increases the radius of the circle when using Split",
@@ -136,7 +136,7 @@
   "ars_zero.effect_augment_desc.conjure_voxel_effect_glyph_conjure_blight": "Composite Effect: Conjure Blight Voxel",
 
   "ars_zero.glyph_name.temporal_context_form": "Temporal Context",
-  "ars_zero.glyph_desc.temporal_context_form": "A cast method that provides access to the context of the previous spell phase (Staff only)",
+  "ars_zero.glyph_desc.temporal_context_form": "A cast method that provides access to the context of the previous spell phase",
 
   "ars_zero.glyph_name.near_form": "Near",
   "ars_zero.glyph_desc.near_form": "Casts the spell at a short distance in front of your gaze",
@@ -225,5 +225,25 @@
   "ars_zero.gui.casting_style.outlines": "Outlines",
   "ars_zero.gui.casting_style.symbol": "Symbol",
   "ars_zero.gui.casting_style.symbol.none": "None",
-  "ars_zero.gui.casting_style.symbol.auto": "Auto (from spell)"
+  "ars_zero.gui.casting_style.symbol.auto": "Auto (from spell)",
+  "ars_zero.section.ars_zero": "Ars Zero",
+  "ars_zero.page.overview": "Ars Zero Overview",
+  "ars_zero.page1.overview": "Ars Zero extends Ars Nouveau with multiphase spellcasting, allowing devices such as Spell Staves and Spellcasting Circlets to chain multiple spells in sequence.",
+  "ars_zero.page2.overview": "",
+  "ars_zero.page.spell_phases": "Spell Phases",
+  "ars_zero.page1.spell_phases": "A phase is a description of a lifecycle of an incantation with multiple spells. Where spells hold multiple glyphs, devices that are multi-phased hold multiple spells, though these are always fired in sequences; begin, tick and end.\n\nOnce a device - such as a Spell Staff - begins being used, it fires the begin phase, once. Every subsequent tick, the \"tick\" phase executes the spell it holds. Upon stopping, finally the end phase's spell is performed.\n\nAdditionally, it is possible to configure the delay the tick phase has by scrolling the icon on the tick row.",
+  "ars_zero.page.phase_targeting": "Phase Targeting",
+  "ars_zero.page1.phase_targeting": "Because spells work completely in isolation, you must use the special form \"Temporal Context\" in order to do something with the previous phase's target.\n\nFor example, you can conjure a voxel in \"begin\", and have Temporal Context in your \"tick\" with Anchor, then Temporal Context with Push in your \"end\" phase.\n\nThis will allow you to create, aim and fire a projectile in the direction you're aiming.",
+  "ars_zero.page.examples": "Examples",
+  "ars_zero.examples.gravity_gun": "Gravity Gun",
+  "ars_zero.examples.gravity_gun.quote": "\"You can call it Zero Point Energy Field Manipulator, if you really want to.\"",
+  "ars_zero.examples.tier2_teleportation": "Tier 2 Teleportation",
+  "ars_zero.examples.tier2_teleportation.quote": "\"Why walk, when you can conjure a ball of mana and swap places with it?\"",
+  "ars_zero.examples.ekusupuroshon": "Ekusupuroshon",
+  "ars_zero.examples.ekusupuroshon.quote": "\"Darkness blacker than black, and darker than dark\"",
+  "ars_zero.examples.mage_march": "Mage's March",
+  "ars_zero.examples.mage_march.quote": "\"Never touch the ground again—or at least not until the blocks expire.\"",
+  "ars_zero.tooltip.begin_phase": "Begin phase",
+  "ars_zero.tooltip.tick_phase": "Tick phase",
+  "ars_zero.tooltip.end_phase": "End phase"
 }
