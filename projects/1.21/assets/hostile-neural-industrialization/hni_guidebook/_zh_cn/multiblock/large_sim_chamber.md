@@ -24,7 +24,7 @@ item_ids:
 
 §4§l- §r§c每次序列消耗§l8§r§c个预测矩阵
 
-本质上，这意味着它每次序列能提取更多预测产物。建议使用§d§l超级§r或更高等级的数据模型，否则就算消耗大量能量和预测矩阵，收获却甚微。
+本质上，这意味着它每次序列能提取更多预测产物。建议使用§d§l超级§r或更高等级的数据模型，否则就算消耗大量能量和预测矩阵，收获也依然甚微。
 
 
 <Recipe id="hostile_neural_industrialization:machine/large_simulation_chamber" />
