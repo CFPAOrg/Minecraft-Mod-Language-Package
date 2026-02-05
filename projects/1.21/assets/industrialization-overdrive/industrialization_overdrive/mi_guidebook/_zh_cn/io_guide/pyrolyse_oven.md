@@ -21,7 +21,7 @@ TODO: uncomment this when it doesn't crash.
 
 <Recipe id="industrialization_overdrive:machines/pyrolyse_oven/craft" />
 
-热解炉是[**热解炉**](../steam_age/coke_oven.md)的升级版，它使用电力而非蒸汽驱动。
+热解炉是[**焦炉**](../steam_age/coke_oven.md)的升级版，它使用电力而非蒸汽驱动。
 
 它能够处理与焦炉相同的配方，但同时还可以进行超频，从而大幅提升运行速度。
 
