@@ -3,7 +3,7 @@ navigation:
   title: "非门"
   icon: "not_gate"
   parent: little_big_redstone:logic.md
-  position: 11
+  position: 13
 categories:
   - logic
 item_ids:

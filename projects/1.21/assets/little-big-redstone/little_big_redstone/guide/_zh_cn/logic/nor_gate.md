@@ -3,7 +3,7 @@ navigation:
   title: "或非门"
   icon: "nor_gate"
   parent: little_big_redstone:logic.md
-  position: 15
+  position: 17
 categories:
   - logic
 item_ids:
