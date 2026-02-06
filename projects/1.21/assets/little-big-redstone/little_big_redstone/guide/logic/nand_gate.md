@@ -3,7 +3,7 @@ navigation:
   title: "NAND Gate"
   icon: "nand_gate"
   parent: little_big_redstone:logic.md
-  position: 13
+  position: 15
 categories:
   - logic
 item_ids:
