@@ -13,7 +13,7 @@ categories:
 
 ## 节点
 
-使用特殊操作通过管道传输事物的功能方块。
+通过管道传输事物的功能方块，具有独特的功能。
 
 <CategoryIndex category="pipes"></CategoryIndex>
 

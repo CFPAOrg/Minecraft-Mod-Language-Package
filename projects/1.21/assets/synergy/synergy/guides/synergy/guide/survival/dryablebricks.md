@@ -2,10 +2,10 @@
 navigation:
   title: Dryable Bricks
   icon: "minecraft:brick"
-  parent: magic.md
-  position: 3
+  parent: survival.md
+  position: 2
 categories:
-  - magic
+  - survival
 item_ids:
   - minecraft:brick
   - minecraft:clay_ball
@@ -15,7 +15,7 @@ item_ids:
 
 # Dryable Bricks
 
-A new mechanic to smelt bricks
+A new mechanic to process bricks
 
 <GameScene zoom="2" interactive={true}>
   <Block x="0" z="0" id="synergy:clay_brick_block" p:facing="north" p:wet="false" p:dried="false" p:stage="0"/>

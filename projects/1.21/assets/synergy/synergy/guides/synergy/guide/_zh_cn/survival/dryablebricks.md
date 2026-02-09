@@ -2,10 +2,10 @@
 navigation:
   title: 可干燥的砖
   icon: "minecraft:brick"
-  parent: magic.md
-  position: 3
+  parent: survival.md
+  position: 2
 categories:
-  - magic
+  - survival
 item_ids:
   - minecraft:brick
   - minecraft:clay_ball
@@ -15,7 +15,7 @@ item_ids:
 
 # 可干燥的砖
 
-烧炼砖的新机制。
+制造砖的新机制。
 
 <GameScene zoom="2" interactive={true}>
   <Block x="0" z="0" id="synergy:clay_brick_block" p:facing="north" p:wet="false" p:dried="false" p:stage="0"/>
