@@ -47,11 +47,11 @@ item_ids:
   </BoxAnnotation>
 
   <BoxAnnotation color="#FF0000" min="0.39 1.39 0.39" max="0.61 1.61 0.61">
-        目的
+        目的点
   </BoxAnnotation>
 
   <BoxAnnotation color="#0099FF" min="4.39 1.39 0.39" max="4.61 1.61 0.61">
-        提取
+        提取点
   </BoxAnnotation>
 
   <BoxAnnotation color="#FFFF00" min="0.78 1.39 0.39" max="4.22 1.61 0.61">

@@ -24,7 +24,7 @@ item_ids:
 
 - 击中激光发射器会产生爆炸。
 
-- 实体和固体方块面会阻断激光。
+- 固体方块面和实体会阻断激光。
 
 <GameScene zoom="4" interactive={true}>
 

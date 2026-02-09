@@ -12,7 +12,7 @@ item_ids:
 
 # 循环中继器
 
-全新的红石元件，激活时可按照设定的延时重复产生信号。
+全新的红石元件，激活时可按照所设延时重复产生信号。
 
 <ItemImage id="synergy:recursive_repeater" scale="4.0"/>
 

@@ -22,7 +22,7 @@ item_ids:
     <Entity x="2" y="0" z="0" id="minecraft:item" data="{Item:{count: 1, id: 'synergy:fluid_upgrade'}}" />
 </GameScene>
 
-一系列用于增强工业机器属性的物品。
+一系列用于增强工业机器性能的物品。
 
 修改相应物品组件即可自定义升级提供的属性，此操作可在世界中完成。
 
