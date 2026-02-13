@@ -13,6 +13,7 @@
   "block.slate_work.hotbar_loci": "口袋模拟器",
   "block.slate_work.redstone_loci": "红石激发器",
   "block.slate_work.accelerator_loci": "凝浆加速器",
+  "block.slate_work.fake_player_loci": "塑和行梦仪",
 
   "block.slate_work.listening_impetus": "图书管理员促动石",
 
@@ -43,6 +44,7 @@
   "item.slate_work.whispering_stone": "传语之石",
   "item.slate_work.whispering_stone.cords": "位置：",
   "item.slate_work.whispering_stone.string": "呼名：",
+
   "item.slate_work.whispering_stone.no_cords": "当前未绑定位置",
 
 
@@ -115,10 +117,10 @@
   "slate_work.page.save_loci.crafting": "$(o)哔哔。",
 
   "slate_work.entry.hotbar_loci": "口袋模拟器",
-  "slate_work.page.hotbar_loci.intro": "我的劳心费神都是为扩大和展开我的影响领域，但要把物品从各种口袋和背包里搬来搬去实在是$(o)极其/$令人厌烦。即便$(hex)咒术/$能协助自动化搬运，我却依然还要亲自拿着物品……有必要再进一步。$(thing)悦灵/$就能持有物品，也许可以从这里出发？",
+  "slate_work.page.hotbar_loci.intro": "为了展开我的影响领域，无论要花多大的力气我都愿意；但要在各种口袋和背包里把物品搬来搬去——实在是$(o)极其/$烦人。即便$(hex)咒术/$能协助自动化搬运，我却依然还要亲自拿着物品……有必要再进一步。$(thing)悦灵/$就能持有物品，也许可以从这里出发？",
   "slate_work.page.hotbar_loci.hotbar_loci": "$(thing)口袋模拟器/$解了我在物品栏管理上的愁！$(br)它使用$(thing)悦灵/$为核心，最多能持有 6“组”物品，让它们在$(thing)模拟器/$旁浮动。我可将其中 1 个物品组指定为$(l:patterns/spells/itempicking)手持物品/$，也即方块工程法术会优先从该组抽取。",
-  "slate_work.page.hotbar_loci.extra": "$(l:greatwork/spellcircles)法术环/$激活$(thing)模拟器/$后即会与之“绑定”——可以使用其中物品。$(br2)极好的是，$(thing)口袋模拟器/$可以手动或借助$(l:patterns/hotbar_loci_patterns)法术/$交互。如果我用手与之交互，所有 6 个槽位都会呈现出来，且手持物品槽会发出$(l:greatwork/quenching_allays)淬灵晶/$颜色的光。",
-  "slate_work.page.hotbar_loci.storage_loci": "更好的是，$(thing)口袋模拟器/$和普通的$(l:patterns/spells/itempicking)物品挑选行为/$间似乎存在相似支持。换言之，$(thing)口袋模拟器/$可以充当“选择器”。来请求方块的$(l:patterns/spells/blockworks)方块法术/$会前去$(l:greatwork/storage_loci_block)存储容具/$处获取，而不会使用$(thing)口袋模拟器/$中的物品。",
+  "slate_work.page.hotbar_loci.extra": "$(l:greatwork/spellcircles)法术环/$激活$(thing)模拟器/$后即会与之“绑定”——可以使用其中物品。$(br2)极好的是，$(thing)口袋模拟器/$可以手动交互，也可通过$(l:patterns/hotbar_loci_patterns)法术/$交互。如果我用手与之交互，所有 6 个槽位都会呈现出来，且手持物品槽会发出$(l:greatwork/quenching_allays)淬灵晶/$颜色的光。",
+  "slate_work.page.hotbar_loci.storage_loci": "更好的是，$(thing)口袋模拟器/$和普通的$(l:patterns/spells/itempicking)物品挑选行为/$间似乎存在相似之处。换言之，$(thing)口袋模拟器/$可以充当“选择器”。来请求方块的$(l:patterns/spells/blockworks)方块法术/$会前去$(l:greatwork/storage_loci_block)存储容具/$处获取，而不会使用$(thing)口袋模拟器/$中的物品。$(br2)需要注意，手持槽中的物品也算作普通的手持物品。因此$(l:greatwork/spellcircles)法术环/$可借此读取$(l:items/focus)核心/$（及其他存储 iota 的物品），也可借此从媒质之瓶中抽取$(media)媒质/$。",
   "slate_work.page.hotbar_loci.crafting": "$(o)真是个好帮手啊。/$",
 
   "slate_work.entry.accelerator_loci": "凝浆加速器",
@@ -128,13 +130,21 @@
 
   "slate_work.entry.redstone_loci": "红石激发器",
   "slate_work.page.redstone_loci.intro": "要搭建更加复杂的$(l:greatwork/spellcircles)法术环/$，就要更精细地控制石板的红石输出。$(br)比较器只会输出强度为 15 的平整红石信号，而且会在$(l:greatwork/spellcircles)法术环/$的运行过程中一直输出；只能说，起码可以给简单的法术环用。",
-  "slate_work.page.redstone_loci.redstone_loci": "因此，我制造了$(thing)红石激发器/$。它会弹出栈顶 0 到 15（两端闭）的数，并将$(thing)激发器/$输出的信号强度设为该数。而且，只要$(thing)媒质波/$离开$(thing)激发器/$，它便不会再输出信号。$(br2)虽然并非本意，但我似乎从另一份古代的蓝图——和$(l:greatwork/accelerator_loci)加速器/$出自同一座图书馆的“波荡器”——里取了一部分灵感。",
+  "slate_work.page.redstone_loci.redstone_loci": "因此，我制造了$(thing)红石激发器/$。它会弹出栈顶 0 到 15（两端闭）的数，并将$(thing)激发器/$输出的信号强度设为该数。而且，只要$(thing)媒质波/$离开$(thing)激发器/$，它便不会再输出信号。$(br2)虽然并非本意，但我大概是从另一份古代的蓝图——和$(l:greatwork/accelerator_loci)加速器/$出自同一座图书馆的“波荡器”——里取了一部分灵感。",
   "slate_work.page.redstone_loci.crafting": "将$(item)红石粉/$和$(l:items/amethyst)紫水晶粉/$混合，再嵌入到石板里，应当就能达到我想要的红石信号传导性。",
 
   "slate_work.entry.akashic_loci": "阿卡夏环核",
   "slate_work.page.akashic_loci.intro": "$(l:greatwork/akashiclib)阿卡夏记录/$似乎是$(media)媒质/$和思维极为优良的导体。这种传导性优良到足够在$(l:greatwork/spellcircles)法术环/$中使用它。$(br2)$(br2)$(o)我所学甚多。我会将知识和我最引以为傲的创作一同分享。",
   "slate_work.page.akashic_loci.akashic_loci": "每当$(l:greatwork/akashiclib)阿卡夏记录/$被$(l:greatwork/spellcircles)法术环/$的$(thing)媒质波/$激活时，它会要求提供一个图案 iota，或是任意 iota 再加一个图案 iota，而后弹出它们。$(br2)若传入单个图案 iota，则其会潜入记录，读取与该图案相关的 iota。$(br2)若传入任意 iota 再加一个图案 iota，则其会尝试将所给 iota 与所给图案关联起来。",
   "slate_work.page.akashic_loci.extra": "这些功能和$(l:patterns/akashic_patterns)阿卡夏图案/$非常相似；但它们无需消耗$(media)媒质/$。换言之，用$(l:greatwork/spellcircles)法术环/$编写和查找$(l:greatwork/akashiclib)阿卡夏图书馆/$完全没有消耗。$(br2)重要提示：这一做法有一特性较为特殊——可借此清除书架。如果用此方法存储 Null，则其会清除与该图案关联的书架。",
+
+  "slate_work.entry.fake_player_loci": "塑和行梦仪",
+  "slate_work.page.fake_player_loci.intro": "我已经在$(l:greatwork/spellcircles)法术环/$的$(l:greatwork/storage_loci_block)仓储/$、$(l:greatwork/crafting_loci)合成/$、$(l:greatwork/hotbar_loci)实用/$功能中取得了长足发展，但它其实一直都欠缺了一项我具有的能力。一项我具有但不自觉的能力。使用物品的能力。$(br2)如今，它也有了这项能力，用到的就是$(thing)塑和行梦仪/$。",
+  "slate_work.page.fake_player_loci.fake_player_loci": "在长时间研究之后，我发现了些奇特的现象：物品需要人才能使用。也就是说，给木棍上安个机械手再捅到方块里是没用的（虽然看上去挺好笑）。因此，解决方案必然只能从$(thing)悦灵/$和它们神奇的性质中来……",
+  "slate_work.page.fake_player_loci.fake_player_loci_cont": "借助$(l:greatwork/quenching_allays)$(item)淬灵晶/$的变形能力，我可以从碎片里短暂提出具备人形的存在，然后让它去使用物品。这种仿品的行为和我非常相似，特别是在对实体、方块，以及其自身使用物品时。此外，它还有 10 格的交互范围。",
+  "slate_work.page.fake_player_loci.extra": "不过，也正因为这些存在难以捉摸，给它们指定持握和使用的物品时就必须使用特殊方法。它们的“快捷栏”需取自$(l:greatwork/hotbar_loci)口袋模拟器/$。$(br2)它们的主物品取自$(l:greatwork/hotbar_loci)口袋模拟器/$的手持槽位。它们没有物品栏，只有$(l:greatwork/hotbar_loci)口袋模拟器/$提供的快捷栏。",
+  "slate_work.page.fake_player_loci.lens": "最后，这些存在的视线方向可指定为方块的朝向，也可选择为其指定一个轴向$(thing)向量/$。潜行对方块按下使用键时，它会在方块朝向和所给$(thing)向量/$间切换。$(br2)佩戴$(l:items/lens)探知透镜/$后，可以查看它用的是否是所给$(thing)向量/$。",
+  "slate_work.page.fake_player_loci.crafting": "$(o)玻尔兹曼大脑？没听说过。/$",
 
   "slate_work.entry.slate_work_pigments": "华丽染色剂",
   "slate_work.page.slate_work_pigments.slate_work_pigments": "我的$(l:items/staff)法杖/$蜕变了，我的$(l:items/pigments)染色剂/$也必将蜕变。它们不会带来什么荣耀，也不会招致可怖的事故；它们带来的祝福只存在于视觉。$(br2)而且，知晓这些染色剂的人，即会知晓我的$(o)觉醒/$。",
@@ -180,6 +190,7 @@
   "hexcasting.mishap.circle.readable": "%s处需要核心中存有列表，而实际没有",
   "hexcasting.mishap.circle.simpler_iota": "%s处需要一个更简单的iota",
   "hexcasting.mishap.invalid_value.simpler_iota": "一个更简单的iota",
+  "hexcasting.mishap.invalid_value.axis_vector_sw": "一个单位向量",
 
   "hexcasting.mishap.no_storage_loci_ran": "未找到已激活的容具",
   "hexcasting.mishap.list_length": "需要包含%s个元素的列表，而实际包含了%s个",
@@ -195,6 +206,8 @@
   "slate_work.scrying.macro.error": "无法显示iota",
   "slate_work.scrying.impetus.listening.bound": "绑定的呼名为：",
   "slate_work.scrying.impetus.listening.unbound": "当前未设定呼名",
+  "slate_work.scrying.fake_player": "使用所给向量：",
+  "slate_work.scrying.fake_player.true": "True",
 
   "slate_work.scrying.save.translater_comment": "These next \"save\" translations are based on the `CastingImage` class",
   "slate_work.scrying.save.escaping": "是否在考察状态：",
