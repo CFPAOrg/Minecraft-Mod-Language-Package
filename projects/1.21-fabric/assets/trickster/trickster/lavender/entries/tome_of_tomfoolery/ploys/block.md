@@ -120,7 +120,7 @@ Conjures a bucket's worth of water at the given position.
 
 <|ploy@trickster:templates|trick-id=trickster:conjure_light,cost=20G|>
 
-Conjures a permanent light source at the given position.
+Conjures a permanent light source at the given position with an optional light level between 0 and 15, defaulting to 15
 
 ;;;;;
 
