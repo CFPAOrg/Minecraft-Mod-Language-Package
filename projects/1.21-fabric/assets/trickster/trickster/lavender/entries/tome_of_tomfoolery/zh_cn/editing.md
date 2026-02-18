@@ -2,7 +2,7 @@
 {
   "title": "法术抄绘",
   "icon": "trickster:scroll_and_quill",
-  "ordinal": 1
+  "ordinal": 10
 }
 ```
 

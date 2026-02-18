@@ -3,6 +3,7 @@
   "title": "Spell Deviations",
   "icon": "minecraft:paper",
   "category": "trickster:tricks",
+  "ordinal": 10,
   "additional_search_terms": [
     "Deviation of Suspension",
     "Grand Deviation",

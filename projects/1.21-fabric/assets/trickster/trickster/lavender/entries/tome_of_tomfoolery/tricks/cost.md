@@ -3,6 +3,7 @@
   "title": "Casting Cost",
   "icon": "minecraft:amethyst_shard",
   "category": "trickster:tricks",
+  "ordinal": 30,
   "required_advancements": [
     "trickster:cost_ploy"
   ],

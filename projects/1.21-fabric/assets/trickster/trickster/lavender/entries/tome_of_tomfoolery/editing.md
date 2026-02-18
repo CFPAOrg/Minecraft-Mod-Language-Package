@@ -2,7 +2,7 @@
 {
   "title": "Spell-Scribing",
   "icon": "trickster:scroll_and_quill",
-  "ordinal": 1
+  "ordinal": 10
 }
 ```
 
@@ -44,7 +44,7 @@ This can be used for meta-programming, recursion, and permanent storage of dynam
 
 When the circle *does* have connected subcircles, 
 it executes the inner circle directly as if it was called by a [Grand Deviation](^trickster:tricks/functions#4),
-using the results from the subcircles connected to the outer circle as parameters.
+using the results from the subcircles connected to the outer circle as arguments.
 
 
 This can be very useful when needing to use one value in multiple places, 

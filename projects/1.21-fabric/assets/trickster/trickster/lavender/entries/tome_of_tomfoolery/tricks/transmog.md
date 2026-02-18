@@ -3,6 +3,7 @@
   "title": "Transmogrification",
   "icon": "transmog:void_fragment",
   "category": "trickster:tricks",
+  "ordinal": 100,
   "additional_search_terms": [
     "Ploy of Transmogrification",
     "Ploy of Subterfuge",

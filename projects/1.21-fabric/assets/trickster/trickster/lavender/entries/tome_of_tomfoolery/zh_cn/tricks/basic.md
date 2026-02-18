@@ -3,6 +3,7 @@
   "title": "基础戏法",
   "icon": "minecraft:bricks",
   "category": "trickster:tricks",
+  "ordinal": 0,
   "additional_search_terms": [
     "记事员之辑流",
     "记事员之技巧",

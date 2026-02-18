@@ -3,6 +3,7 @@
   "title": "Reusability",
   "icon": "trickster:top_hat",
   "category": "trickster:tricks",
+  "ordinal": 20,
   "additional_search_terms": [
     "Assistance Deviation",
     "Cranium Deviation"
