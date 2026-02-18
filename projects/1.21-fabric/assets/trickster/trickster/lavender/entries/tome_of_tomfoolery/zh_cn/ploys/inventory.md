@@ -14,6 +14,9 @@
 
 本节的技巧术能与物品栏的槽位及其他特性交互。
 
+
+创建槽位引用无需消耗魔力。不过，若在使用此类引用时移动了槽位内的物品，则需消耗(距离 * 数量 * 0.5G)的魔力。
+
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:drop_stack_from_slot|>

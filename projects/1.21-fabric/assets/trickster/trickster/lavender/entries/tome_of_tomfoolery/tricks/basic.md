@@ -3,6 +3,7 @@
   "title": "Basic Tricks",
   "icon": "minecraft:bricks",
   "category": "trickster:tricks",
+  "ordinal": 0,
   "additional_search_terms": [
     "Notulist's Ingress",
     "Notulist's Ploy",

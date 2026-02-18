@@ -3,6 +3,7 @@
   "title": "可重用性",
   "icon": "trickster:top_hat",
   "category": "trickster:tricks",
+  "ordinal": 20,
   "additional_search_terms": [
     "协助之转离",
     "颅骨之转离"

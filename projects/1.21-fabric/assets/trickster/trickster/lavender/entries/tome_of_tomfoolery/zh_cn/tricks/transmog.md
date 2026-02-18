@@ -3,6 +3,7 @@
   "title": "幻化",
   "icon": "transmog:void_fragment",
   "category": "trickster:tricks",
+  "ordinal": 100,
   "additional_search_terms": [
     "幻化之技巧",
     "诡谋之技巧",

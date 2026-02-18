@@ -1,7 +1,8 @@
 ```json
 {
   "title": "常量",
-  "icon": "minecraft:bedrock"
+  "icon": "minecraft:bedrock",
+  "ordinal": 20
 }
 ```
 

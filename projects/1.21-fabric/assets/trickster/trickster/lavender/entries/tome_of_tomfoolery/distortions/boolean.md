@@ -4,7 +4,7 @@
   "icon": "minecraft:comparator",
   "category": "trickster:distortions",
   "additional_search_terms": [
-    "Decision Distortion",
+    "Decision Stratagem",
     "Parity Stratagem",
     "Disparity Stratagem",
     "Stratagem Bar None",
@@ -39,7 +39,7 @@ This trick allows spells to use different fragments or even branch their behavio
 
 ;;;;;
 
-Decision Distortion takes one or multiple pairs of booleans and values.
+Decision Stratagem takes one or multiple pairs of booleans and values.
 The value after the first boolean that is true will be returned.
 If all booleans are false, a fallback value that *must* be specified at the end is returned instead.
 
@@ -55,7 +55,7 @@ as the boolean forms a pair with **1**, and evaluates to **true**.
 Alternatively:
 
 
-Giving Decision Distortion the arguments of **false, 1, false, 2, 3** is also valid, 
+Giving Decision Stratagem the arguments of **false, 1, false, 2, 3** is also valid, 
 and will see it return the fallback value, which is **3**.
 
 

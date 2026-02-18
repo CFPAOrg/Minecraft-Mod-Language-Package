@@ -14,6 +14,9 @@
 
 Listed here are ploys that interact with inventory slots or other inventory features.
 
+
+Creating a slot reference comes at no cost. However, using the reference in a way that moves the items inside the slot will always have a cost of (distance * amount * 0.5G).
+
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:drop_stack_from_slot|>
