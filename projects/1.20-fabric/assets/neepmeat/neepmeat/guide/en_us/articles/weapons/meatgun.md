@@ -13,9 +13,7 @@ Creating a Meatgun starts by taking a base module and installing other moules us
 
 # Keybinds
 
-Meatguns have two triggers: Primary and Secondary. These can be rebound in settings. Unlike normal key binds, these can be bound to the same keys as Use and Attack and still function normally.
-
-If one of the trigger keybinds is bound to the Use key, the currently held Meatgun will override the Use action. Pressing R will trigger the normal Use action.
+Meatguns have two triggers: Primary and Secondary, which correspond to the Use and Attack keys respectively.
 
 Holding sneak allows aiming down sights. This only works when the Meatgun is held in the main hand.
 

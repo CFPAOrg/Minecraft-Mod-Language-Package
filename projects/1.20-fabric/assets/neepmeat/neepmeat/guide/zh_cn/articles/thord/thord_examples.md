@@ -3,6 +3,12 @@ id: thord_examples
 ---
 # 通用
 
+## 持续合成
+
+在红石接口有信号时持续不断合成管道驱动器。
+
+\image[width=791,height=445,scale=0.96]{neepmeat:guide/images/pipe_driver_manufacture.png}
+
 ## 变量
 
 ```
