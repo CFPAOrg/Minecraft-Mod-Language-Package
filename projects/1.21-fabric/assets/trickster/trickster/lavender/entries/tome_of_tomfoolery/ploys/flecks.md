@@ -45,30 +45,31 @@ All flecks can also take an optional list of players, or a sole player, for whic
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:draw_spell,title=Marketer's Ploy|>
+<|trick@trickster:templates|trick-id=trickster:draw_spell|>
 
-number, vector, vector, spell, [number], [entity[] | entity] -> number
-
----
-
-At the given position, with the given facing, display a spell, optionally scaled.
+At the given position, with the given facing, display a spell.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:draw_line,title=Artist's Ploy|>
-
-number, vector, vector, [entity[] | entity] -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:draw_line|>
 
 Draws a line between the given positions.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:delete_fleck,title=Orwell's Ploy|>
+<|trick@trickster:templates|trick-id=trickster:scale_fleck|>
 
-number, [entity[] | entity] -> number
+Scales an existing fleck.
 
----
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:roll_fleck|>
+
+Changes the rotation of the fleck about its facing direction.
+Only has an effect on flecks drawn with [Marketer's Ploy](^trickster:ploys/flecks#2).
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:delete_fleck|>
 
 Removes any fleck with the given id.

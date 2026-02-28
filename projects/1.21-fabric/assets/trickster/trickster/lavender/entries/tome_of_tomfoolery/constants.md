@@ -1,7 +1,8 @@
 ```json
 {
   "title": "Constants",
-  "icon": "minecraft:bedrock"
+  "icon": "minecraft:bedrock",
+  "ordinal": 20
 }
 ```
 

@@ -3,7 +3,7 @@
   "title": "Spell Resonator",
   "icon": "trickster:spell_resonator",
   "category": "trickster:items",
-  "ordinal": 140
+  "ordinal": 150
 }
 ```
 

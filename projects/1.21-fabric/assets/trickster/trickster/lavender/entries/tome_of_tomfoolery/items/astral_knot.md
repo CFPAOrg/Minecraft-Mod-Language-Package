@@ -6,7 +6,7 @@
   "required_advancements": [
     "trickster:astral_knot"
   ],
-  "ordinal": 26
+  "ordinal": 22
 }
 ```
 

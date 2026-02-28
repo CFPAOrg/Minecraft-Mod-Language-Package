@@ -21,7 +21,7 @@ wands execute any spell inscribed onto them when right-clicked.
 
 
 What's inscribing you may ask? Actually, you've already partially interacted with it.
-[Notulist's Delusion](^trickster:tricks/basic#3), used in chapter two, is used to read an inscribed spell from an item.
+[Notulist's Ingress](^trickster:tricks/basic#3), used in chapter two, is used to read an inscribed spell from an item.
 This works on Scrolls because a spell written on them technically counts as being inscribed.
 
 ;;;;;
@@ -31,7 +31,6 @@ though only Scrolls and Mirrors let you directly edit them.
 
 
 Writing a spell to an item can be done by using [Notulist's Ploy](^trickster:tricks/basic#4).
-Similarly to [Grand Stratagem](^trickster:distortions/functions#3), it only takes one input, and provides no output.
 
 
 You can use a spell like the following in a mirror to read and inscribe a spell.
@@ -40,7 +39,7 @@ You can use a spell like the following in a mirror to read and inscribe a spell.
 
 First draw the small pattern while holding your spell, 
 then swap to the item you want to inscribe, and draw the other pattern.
-<|spell-preview-unloadable@trickster:templates|spell=YwyT9+bf6MPEwAhiMLo0tTIAAH43+GkTAAAA|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvI0+TAyMjMwMDAwgDGRiKmF0aWoFSjExAAD/qivoVAAAAA==|>
 
 ;;;;;
 
@@ -57,7 +56,7 @@ Combining all this, try inscribing the following spell onto a Wand:
 
 ;;;;;
 
-<|spell-preview@trickster:templates|spell=YwyT9+ZnYDjAwwhiMDI4dDKBRVwOMIBFOEIYGBhADCEUEQDelYOZNwAAAA==|>
+<|spell-preview@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpPAaGAzyMjPwMDAzMQMzAyIiphJHBoROfvJDLAQZ88hwhIBkGJjiBUyUDqSYxMQAA0uzvpegAAAA=|>
 
 Once you have it inscribed, try it out to see what it does.
 After that, try looking up the tricks to see *how*!

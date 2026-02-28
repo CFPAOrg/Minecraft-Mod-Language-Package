@@ -13,10 +13,6 @@
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:highlight,title=繁盛之技巧|>
+<|trick@trickster:templates|trick-id=trickster:highlight|>
 
-vector... | vector[] -> vector
-
----
-
-高亮给定的方块，返回第一个输入。
+令给定的方块高亮1秒，直接返回第一个输入。

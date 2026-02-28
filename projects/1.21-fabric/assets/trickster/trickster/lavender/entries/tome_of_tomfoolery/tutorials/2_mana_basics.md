@@ -16,9 +16,6 @@ Amounts of Mana can be measured in Gandalfs, or G, named after a certain famous 
 ;;;;;
 
 One Gandalf is defined as the amount of magical energy required to light a candle.
-As such, many spell costs will be measured in kiloGandalfs, or kG, 
-since one Gandalf by itself is a very small amount.
-
 
 
 Mana can be persistently stored in Knots, like the one below:
@@ -74,6 +71,6 @@ Create a few of these before continuing!
 
 ;;;;;
 
-<|spell-preview-unloadable@trickster:templates|spell=YwqT9+b/wDGjlQEAks2CzAoAAAA=|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvA8cM1oZAKSkMy4tAAAA|>
 
 {gray}(Drag to pan and scroll to zoom){}
