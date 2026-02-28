@@ -1,0 +1,76 @@
+{
+  "hyperhexcast.book.patterns": {
+      maths: {
+        "": "其他数学操作",
+        range: "返回小于所给数的所有非负整数组成的列表。所给数小于 0 会招致事故。",
+      },
+      spells: {
+        mounts: {
+          "": "落座法术",
+          mount: "使得一个实体骑乘另一个实体。若栈顶是非玩家实体，消耗大约 2 个$(l:items/amethyst)$(item)紫水晶粉/$；若是我自己，消耗 1 个；若是其他玩家，消耗大约 1 个紫水晶碎片。",
+          text1: "好像有些情况下（如栈顶往下第二元素为玩家）会消耗媒质，但不会产生效果，也不会招致事故？着实奇怪，但我不应该靠这个设计咒术……",
+          dismount: "使得实体停止骑乘其坐骑。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$，对自己施放则仅消耗极少量媒质（但为什么要这么做）。",
+        },
+      },
+      great_spells: {
+      },
+      mounts: {
+        "": "落座图案",
+        getmt: "返回所给实体的坐骑。若该实体未在骑乘，则返回 Null。",
+        getpsgr: "返回所给实体的乘客实体列表。",
+        isdrvr: "检验所给实体是否是其载具的“司机”。若该实体未搭乘载具，则返回 Null。",
+      },
+  },
+
+  hexcasting: {
+    action: {
+      "hyperhexcast:": {
+        range: "上坡之纯化",
+        getmt: "骑手之纯化",
+        getpsgr: "骑士之纯化",
+        isdrvr: "司机之纯化",
+        mount: "落座实体",
+        dismount: "卸下实体",
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+      },
+
+      mishap: {
+        entities_too_far: "%s离%s太远了"
+      }
+    },
+  },
+
+  text: {
+    hyperhexcast: {
+    },
+
+    "autoconfig.hyperhexcast": {
+      title: "Hyper的咒法附属配置",
+
+      category: {
+        client: "客户端",
+        server: "服务端",
+      },
+
+      option: {
+        client: {
+          dummyClientConfigOption: {
+            "": "Dummy Client Config Option",
+            "@Tooltip": "This is an example of a client-side config option that accepts a boolean.",
+          },
+        },
+
+        server: {
+          dummyServerConfigOption: {
+            "": "Dummy Server Config Option",
+            "@Tooltip": "This is an example of a server-side config option that accepts an integer.",
+          },
+        },
+      },
+    },
+  },
+}
