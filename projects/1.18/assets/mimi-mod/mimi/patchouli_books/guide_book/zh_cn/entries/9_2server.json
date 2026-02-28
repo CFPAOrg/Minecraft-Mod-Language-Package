@@ -1,0 +1,32 @@
+{
+    "name": "服务器音乐",
+    "icon": "mimi:transmitter",
+    "category": "mimi:9commands",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "这些指令让你能够查看与修改软盘所使用的由服务器提供的MIDI文件。"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "列表",
+            "text": "$(l)/mimi web list <page?>$()$(br2)此指令可以被$(l)全体用户$()使用，将会列出服务器允许下载MIDI文件的网站列表(列表为空代表允许所有网站)。$(br)$(li)$(l)page$() - 要查看的页码，如果不指定页码则显示第一页。$(br2)样例：$(c:/mimi web list 1)/mimi web list 1$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Add",
+            "text": "$(l)/mimi server add <url> <name>$()$(br2)此指令$(l)仅管理员$()可以使用，将会把来自指定URL的MIDI文件以指定名称加入服务器中。$(br)$(li)$(l)url$() - 文件的链接。$(li)$(l)name$() - 在服务器中此文件应当使用的名称。$(br2)样例：$(c:/mimi server add \"https://bitmidi.com/uploads/79829.mid\" rick_roll)/mimi server add \"https://bitmidi.com/uploads/79829.mid\" rick_roll$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "移除",
+            "text": "$(l)/mimi server remove <name>$()$(br2)此指令$(l)仅管理员$()可以使用，将会把指定名称的MIDI曲目文件从服务器中移除。$(br)$(li)$(l)name$() - 要从服务器中移除的MIDI曲目名称。$(br2)样例：$(c:/mimi server remove rick_roll)/mimi server remove rick_roll$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "重新加载",
+            "text": "$(l)/mimi server reload$()$(br2)此指令$(l)仅管理员$()可以使用，将会重新加载服务器本地硬盘提供的MIDI文件完整列表。当你直接从服务器的文件夹中添加或者移除文件时这条指令很有用。$(br2)样例：$(c:/mimi server reload)/mimi server reload$()"
+        }
+    ],
+    "sortnum": 2
+}

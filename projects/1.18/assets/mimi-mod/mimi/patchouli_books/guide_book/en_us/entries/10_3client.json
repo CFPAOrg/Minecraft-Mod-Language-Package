@@ -1,0 +1,53 @@
+{
+    "name": "Client Config File",
+    "icon": "minecraft:book",
+    "category": "mimi:10settings",
+    "pages": [
+        {
+            "type": "text",
+            "text": "In addition to the in-game configuration for the selected MIDI device and keybinds MIMI also includes a configuration file with several additional settings.$(br2)Like other mods, the configuration file for MIMI can be found in your Minecraft instance $(#0046ff)config$() folder and can be modified with any text editor or IDE."
+        },
+        {
+            "type": "text",
+            "title": "MIDI Playlist Folder",
+            "text": "$(l)Param:$() playlistFolderPath$(br)$(l)Type:$() Folder Path$(br)$(l)Default:$() unset$(br2)This parameter stores the default MIDI Playlist Folder to load into the Transmitter GUI when the game starts. This can be set using the in-game controls on the Transmitter GUI or set directly in the config file."
+        },
+        {
+            "type": "text",
+            "title": "Keyboard Layout",
+            "text": "$(l)Param:$() instrumentKeyboardLayout$(br)$(l)Type:$() Layout Name$(br)$(l)Default:$() MIMI$(br2)This parameter stores the keyboard layout to use for the Instrument GUI. The value can be set using the in-game controls on the Instrument GUI or via the config file.$(br2)Valid Values: MIMI, VPiano"
+        },
+
+        {
+            "type": "text",
+            "title": "Default MIDI Device",
+            "text": "$(l)Param:$() defaultMidiInputDevice$(br)$(l)Type:$() Integer$(br)$(l)Default:$() -1$(br2)This parameter holds the device ID that should be used ny MIMI for MIDI Device Input. If a value is set MIMI will attempt to use that device when Minecraft launches. The value can be set using the in-game MIDI Device screen.$(br2)To have no default device set this to -1."
+        },
+        {
+            "type": "text",
+            "title": "Synth Jitter Correction",
+            "text": "$(l)Param:$() synthJitterCorrection$(br)$(l)Type:$() Boolean$(br)$(l)Default:$() true$(br2)This parameter sets whether the MIMI MIDI synthesizer should correct for jitter. Enabling jitter correction improves note timing accuracy in exchange for slightly increased latency.$(br2)It is recommended to keep this enabled unless you experience severe latency."
+        },
+        {
+            "type": "text",
+            "title": "Synth Baseline Latency",
+            "text": "$(l)Param:$() synthBaselineLatency$(br)$(l)Type:$() Integer$(br)$(l)Default:$() 250ms$(br2)This parameter sets the baseline latency of the MIMI MIDI synthesizer (in milliseconds). Smaller values will decrease the time it takes from a note to be played until you actually hear it, however this also shrinks the audio buffer size which can result in stuttering or complete silence in some cases."
+        },
+        {
+            "type": "text",
+            "title": "Synth Bitrate",
+            "text": "$(l)Param:$() synthBitRate$(br)$(l)Type:$() Integer$(br)$(l)Default:$() 16$(br2)This parameter sets the bitrate for the MIMI MIDI synthesizer (essentially how much data to generate per second of audio). Lower values might decrease audio stutter or latency but will also decrease audio quality."
+        },
+        {
+            "type": "text",
+            "title": "Synth Sample Rate",
+            "text": "$(l)Param:$() synthSampleRate$(br)$(l)Type:$() Integer$(br)$(l)Default:$() 44100$(br2)This parameter sets the sample rate for the MIMI MIDI synthesizer (essentially how many audio samples to capture per second). Lower values might decrease audio stutter or latency but will also decrease audio quality."
+        },
+        {
+            "type": "text",
+            "title": "Synth Soundfont",
+            "text": "$(l)Param:$() soundfontPath$(br)$(l)Type:$() File Path$(br)$(l)Default:$() unset$(br2)This parameter sets the full path on your system to a $(l:11_6soundfont)Soundfont$(/l) file that should be used by the MIMI MIDI synthesizer. If a soundfont is set it will be loaded and used for any $(l:11_2programs)GM MIDI program IDs$(/l) that it contains, while the built-in Soundfont will serve as a fallback."
+        }
+    ],
+    "sortnum": 3
+}
