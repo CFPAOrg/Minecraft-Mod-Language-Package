@@ -1,0 +1,89 @@
+{
+  "hexcasting.spell.hexecuteif:eval_if": "赫尔墨斯之审慎",
+  "hexcasting.spell.hexecuteif:halt_if": "卡戎之谨慎",
+  "hexcasting.spell.book.hexecuteif:eval_if": "赫尔墨斯之审慎",
+  "hexcasting.spell.book.hexecuteif:halt_if": "卡戎之谨慎",
+  "hexecuteif.entry.meta": "HexecuteIf 元运行",
+  "hexecuteif.page.meta.eval_if.1": "此法术会评估当前法术环境，当且仅当施法者设置的条件达成时才会执行。",
+  "hexecuteif.page.meta.eval_if.2": "此$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$改版可以根据条件选择执行复杂法术与否，以此确保它们只在安全或合适的情况下施放。",
+  "hexecuteif.page.meta.halt_if.1": "与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似，此法术会阻止后续法术的执行，但仅在给定条件为真时阻止。",
+  "hexecuteif.page.meta.halt_if.2": "它像是某种安全保障措施，在特定情况下会阻止施放有危险性或不必要的法术。",
+
+
+
+
+  "hexcasting.spell.hexecuteif:can_break_block": "可破坏方块",
+  "hexcasting.spell.hexecuteif:can_place_block": "可放置方块",
+  "hexcasting.spell.book.hexecuteif:can_break_block": "可破坏方块",
+  "hexcasting.spell.book.hexecuteif:can_place_block": "可放置方块",
+  "hexecuteif.entry.blocks": "HexecuteIf 方块操作",
+  "hexecuteif.page.blocks.can_break_block": "接受方块的位置向量，检验其是否可被破坏。",
+  "hexecuteif.page.blocks.can_place_block": "接受位置向量和是否检查液体，并检验能否在所给位置放置方块。",
+
+
+
+
+  "hexcasting.spell.hexecuteif:inv_slot_count": "容器大小",
+  "hexcasting.spell.book.hexecuteif:inv_slot_count": "容器大小",
+
+  "hexcasting.spell.hexecuteif:inv_occupied_slots": "被占用槽位",
+  "hexcasting.spell.book.hexecuteif:inv_occupied_slots": "被占用槽位",
+
+  "hexcasting.spell.hexecuteif:inv_slot_item_count": "槽位中物品数",
+  "hexcasting.spell.book.hexecuteif:inv_slot_item_count": "槽位中物品数",
+
+  "hexcasting.spell.hexecuteif:inv_drop_item": "丢出物品",
+  "hexcasting.spell.book.hexecuteif:inv_drop_item": "丢出物品",
+
+  "hexcasting.spell.hexecuteif:inv_transfer_item": "转移物品",
+  "hexcasting.spell.book.hexecuteif:inv_transfer_item": "转移物品",
+
+  "hexecuteif.entry.inventory": "HexecuteIf 物品栏与容器",
+  "hexecuteif.page.inventory.inv_slot_count": "此操作接受一个具有物品栏或容器的事物，返回该物品栏或容器中槽位的总数。可以用来确定物品栏和容器的容量上限。",
+  "hexecuteif.page.inventory.inv_occupied_slots": "此操作接受一个具有物品栏或容器的事物，返回当前被占用的槽位列表。列表中的每个元素代表那些至少装有一个物品的槽位。",
+  "hexecuteif.page.inventory.inv_slot_item_count": "此操作接受一个具有物品栏或容器的事物和一个槽位索引，返回所给槽位中物品的数量。需注意，某些槽位必然含有物品，且无法空置。",
+  "hexecuteif.page.inventory.inv_drop_item.1": "此操作接受一个具有物品栏或容器的事物、一个槽位索引，以及一个数。",
+  "hexecuteif.page.inventory.inv_drop_item.2": "它会从给定物品栏或容器给定槽位中移走所给数个物品。槽位本身必须含有物品，以确保操作不会试图从空槽位中移走物品。",
+  "hexecuteif.page.inventory.inv_transfer_item.1": "$(br)此操作接受一个具有物品栏或容器的事物、一个槽位索引作为来源，一个具有物品栏和容器的事物、一个槽位索引作为目标，以及一个数。",
+  "hexecuteif.page.inventory.inv_transfer_item.2": "它会从来源槽位中转移所给数个物品到目标槽位。来源槽位必须不为空，且目标槽位必须为空。此外，需移动的物品数应至少为 1，且不能多于来源槽位中的物品数。",
+
+
+
+
+  "hexcasting.mishap.can_not_access_to_container_inventory": "你无法通过此法术访问任意容器",
+  "hexcasting.mishap.can_not_access_to_player_inventory": "你无法通过此法术访问任意玩家",
+
+  "hexcasting.mishap.can_not_modify_container_inventory": "你无法通过此法术修改任意容器的内容物",
+  "hexcasting.mishap.can_not_modify_player_inventory": "你无法通过此法术修改任意玩家的物品栏",
+
+  "hexcasting.mishap.invalid_value.slot.empty": "一个空槽位索引",
+  "hexcasting.mishap.invalid_value.slot.not_empty": "一个非空槽位索引",
+  "hexcasting.mishap.invalid_value.inventory_holder": "一个容器方块或玩家",
+
+  "hexecuteif.mishap.excepted_block.block_entity": "一个方块实体",
+  "hexecuteif.mishap.excepted_block.container": "一个容器",
+
+  "text.autoconfig.hexecuteif.title": "HexecuteIf配置",
+
+  "text.autoconfig.hexecuteif.category.common": "Common",
+  "text.autoconfig.hexecuteif.category.client": "Client",
+  "text.autoconfig.hexecuteif.category.server": "Server",
+
+  "text.autoconfig.hexecuteif.option.common.multiplyContainerAccess": "容器媒质倍数",
+  "text.autoconfig.hexecuteif.option.common.multiplyContainerAccess.@Tooltip": "需访问容器内容物的法术所消耗的媒质量的倍数",
+
+  "text.autoconfig.hexecuteif.option.common.multiplyPlayerAccess": "玩家媒质倍数",
+  "text.autoconfig.hexecuteif.option.common.multiplyPlayerAccess.@Tooltip": "需访问玩家物品栏的法术所消耗的媒质量的倍数",
+
+  "text.autoconfig.hexecuteif.option.common.canAccessContainer": "允许访问容器",
+  "text.autoconfig.hexecuteif.option.common.canAccessContainer.@Tooltip": "是否允许需访问容器法术的与容器交互",
+
+  "text.autoconfig.hexecuteif.option.common.canAccessPlayer": "允许访问玩家",
+  "text.autoconfig.hexecuteif.option.common.canAccessPlayer.@Tooltip": "是否允许需访问容器的法术与玩家交互",
+
+  "text.autoconfig.hexecuteif.option.common.canModifyContainer": "允许修改容器",
+  "text.autoconfig.hexecuteif.option.common.canModifyContainer.@Tooltip": "是否允许需修改容器内物品的法术与容器交互",
+
+  "text.autoconfig.hexecuteif.option.common.canModifyPlayer": "允许修改玩家",
+  "text.autoconfig.hexecuteif.option.common.canModifyPlayer.@Tooltip": "是否允许需修改容器内物品的法术与玩家交互"
+}
