@@ -6,10 +6,11 @@
   "tooltip.neepmeat.shift_for_info": "§7Hold §fSHIFT§7 for more info",
   "tooltip.neepmeat.requires_motor": "Requires an external motor",
   "tooltip.neepmeat.requires_vascular": "Requires a vascular network",
-  "tooltip.neepmeat.requires_ichor": "Requires a Transient Ichor",
+  "tooltip.neepmeat.requires_ichor": "Requires Transient Ichor",
   "tooltip.neepmeat.plc_compatible": "PLC Workbench",
   "tooltip.neepmeat.plc_interrupt": "Emits PLC interrupts",
   "tooltip.neepmeat.plc_actuator": "PLC Actuator",
+  "tooltip.neepmeat.retains_inventory": "Retains inventory when broken.",
   "text.neepmeat.plc.arguments": "Argument: %s / %s",
   "text.neepmeat.plc.interactive_help": "Click an instruction in the right panel to select it.\n\nClick a block in a the world to add its position as an argument.\n\nOnce the required number of arguments are filled, the instruction will be executed immediately.",
   "tooltip.neepmeat.plc.language": "Current programming language: %s\nClick to switch language.\nCTRL-click to open documentation.",
@@ -18,9 +19,10 @@
   "message.neepmeat.energy": "Energy: ",
   "message.neepmeat.power_unit": "eJ/t",
   "message.neepmeat.power_flower.status": "Total blocks: %s/%s, Photosynthetic Organs: %s",
+  "message.neepmeat.power_flower.multiple_controllers": "Invalid structure - multiple controllers present",
 
-  "text.neepmeat.data.gieb_unit": "%sGeB",
-  "text.neepmeat.data.eb_unit": "%seB",
+  "text.neepmeat.data.gieb_unit": "%sGieB",
+  "text.neepmeat.data.eb_unit": "%sMieB",
 
   "message.neepmeat.insufficient_power": "Insufficient power",
   "message.neepmeat.insufficient_power_2": "%s < %s",
@@ -171,6 +173,7 @@
   "block.neepmeat.open_meat_steel_machine_block_2": "Open Meat Steel Machine Column",
   "block.neepmeat.open_skin_machine_block": "Open Skin Machine Block",
   "block.neepmeat.open_blood_bubble_machine_block": "Open Blood Bubble Machine Block",
+  "item.neepmeat.port.scrollable": "§eSneak+scroll in hotbar to cycle.",
   "block.neepmeat.motor_port": "Motor Port",
   "block.neepmeat.integration_port": "Integration Port",
   "block.neepmeat.service_port": "Service Port",
@@ -192,7 +195,7 @@
   "block.neepmeat.metaboliser_segment": "Metaboliser Segment",
   "block.neepmeat.metaboliser_segment.lore_0": "Metabolises things innit",
   "block.neepmeat.lucky_one": "Lucky One",
-  "block.neepmeat.lucky_one.lore_0": "+100% chance of extra outputs (max +200%). Must be receiving ≥50eJ/t of vascular power.",
+  "block.neepmeat.lucky_one.lore_0": "+10% chance of extra outputs (max +20%). Must be receiving ≥50eJ/t of vascular power.\nApplies to Advanced Crushing.",
   "block.neepmeat.extractor": "Harvest Extractor",
   "block.neepmeat.extractor.lore_0": "Allows a Phage Ray to harvest blocks. Drops are deposited in a connected item output.",
   "block.neepmeat.distributor_point": "Distributor Receiver",
@@ -202,6 +205,9 @@
   "screen.neepmeat.distributor_point.auto_send": "Auto send:",
   "screen.neepmeat.distributor_point.neepbus": "Open NEEPBus Config",
   "screen.neepmeat.open_guide_entry": "Open guide entry",
+  "block.neepmeat.ball_mill": "Ball Mill Drum",
+  "block.neepmeat.ball_mill.lore_0": "Crushes items into dust. Up to four allowed per machine.",
+  "component.neepmeat.ball_mill": "Ball Mill",
 
   "block.neepmeat.meat_steel_block": "Meat Steel Block",
   "block.neepmeat.meat_steel_block_slab": "Meat Steel Slab",
@@ -309,10 +315,16 @@
   "block.neepmeat.encased_item_pipe": "Encased Item Pipe",
   "block.neepmeat.encased_item_pipe.lore_0": "Takes on the model and shape of the block it is right-clicked with.",
   "block.neepmeat.merge_item_pipe": "Merge Item Pipe",
+  "block.neepmeat.merge_item_pipe.lore_0": "Redirects any incoming item to its output direction.\nRouted items ignore this.",
   "block.neepmeat.pipe_driver": "Pipe Driver",
-  "block.neepmeat.pipe_driver.lore_0": "Permits advanced item routing in connected item pipes. One Driver is allowed per network.",
+  "block.neepmeat.pipe_driver.lore_0": "Permits advanced item routing in connected item pipes.\n§eOne Driver is allowed per network.§f\n§eEmits redstone when waiting for deferred requests§f",
   "block.neepmeat.item_requester": "Manual Requester",
   "block.neepmeat.item_requester.lore_0": "Lists all available items in a connected item pipe network. Requested items will be routed towards this pipe. A Pipe Driver must be part of the network.",
+  "block.neepmeat.requester": "Requester",
+  "block.neepmeat.requester.lore_0": "Requests items matching a filter. Triggered with redstone or NEEPBus.\nA Pipe Driver must be part of the network.",
+  "screen.neepmeat.requester.request_type": "Request type",
+  "screen.neepmeat.item_requester.cancel": "Cancel",
+  "screen.neepmeat.item_requester.from": "From %s, %s, %s",
   "block.neepmeat.storage_bus": "Storage Driver",
   "screen.neepmeat.pipe_priority.input_priority": "Input Priority",
   "screen.neepmeat.pipe_priority.output_priority": "Output Priority",
@@ -387,6 +399,7 @@
 
   "block.neepmeat.power_emitter": "Creative Power Emitter",
   "block.neepmeat.power_emitter.lore_0": "Emits 100eJ/t into a vascular network.",
+  "screen.neepmeat.power_emitter.output_power.tooltip": "Energy to emit per tick (eJ/t)",
 
   "block.neepmeat.pump": "Redstone Pump",
   "block.neepmeat.pump.lore_0": "Pumps fluid quickly through pipes.\n§eEnabled by redstone by default. Use with an empty hand while sneaking to toggle.",
@@ -448,6 +461,9 @@
   "block.neepmeat.fluid_interface": "Fluid Interface",
   "block.neepmeat.fluid_interface.lore_0": "Acts as a proxy for the block it faces.",
 
+  "block.neepmeat.reservoir": "Reservoir",
+  "block.neepmeat.reservoir.lore_0": "Rapidly collects water.",
+
   "block.neepmeat.fluid_gauge": "Fluid Gauge",
   "block.neepmeat.fluid_gauge.lore_0": "Emits redstone based on a tank's fill percentage.",
   "block.neepmeat.item_gauge": "Item Gauge",
@@ -459,7 +475,7 @@
   "block.neepmeat.power_flower_seeds": "Power Flower Seeds",
   "block.neepmeat.power_flower_seeds.lore_0": "Can be placed on dirt or grass. Grows into a majestic organic generator.",
   "block.neepmeat.power_flower_growth": "Power Flower Growth",
-  "block.neepmeat.power_flower_growth.lore_0": "Forms the structure of a Power Flower organism. \nSpecialises into a photosynthetic organ when the upper face is exposed to the air, otherwise, it increases digestion rate.\nSpreads when given bone meal or flesh. \nCan be harvested with silk-touch.",
+  "block.neepmeat.power_flower_growth.lore_0": "Forms the structure of a Power Flower organism. \nSpecialises into a photosynthetic organ when the upper face is exposed to the air, otherwise, it increases respiration rate.\nSpreads when given bone meal or flesh. \nCan be harvested with silk-touch.",
   "block.neepmeat.power_flower_fluid_port": "Power Flower Fluid Port",
   "block.neepmeat.power_flower_fluid_port.lore_0": "Sucks water or liquid food into a Power Flower.",
   "block.neepmeat.power_flower_controller": "Power Flower Controller",
@@ -534,7 +550,8 @@
   "block.neepmeat.assembler.lore_0": "Replicates a pattern of items in the inventory below. Place above Persistent Crafting Table for auto-crafting.",
 
   "block.neepmeat.fabricator": "Fabricator",
-  "block.neepmeat.fabricator.lore_0": "Crafts items using ingredients from adjacent inventories.\nCrafting can be triggered by extracting the result item from the front.\nIf powered by a motor, it will continuously craft and eject items.\nLoops and chains are not allowed.",
+  "block.neepmeat.fabricator.lore_0": "Crafts items using ingredients from adjacent inventories.\nCrafting can be triggered by extracting the result item from the front.\nIf powered by a motor, it will continuously craft and eject items.\nLoops and chains are not allowed.\n§fAutomatically requests missing ingredients through pipes connected to sides other than the front.",
+  "screen.neepmeat.fabricator.use_external.tooltip": "Use item storages adjacent to the bottom block.",
 
   "block.neepmeat.workstation": "Persistent Crafting Table",
   "block.neepmeat.workstation.lore_0": "Keeps items in the grid.",
@@ -544,7 +561,7 @@
   "block.neepmeat.death_blades": "Death Blades",
   "block.neepmeat.death_blades.lore_0": "Macerates mobs, producing Tissue Slurry in drains below.",
 
-  "block.neepmeat.mincer": "Mincer",
+  "block.neepmeat.mincer": "Large Mincer",
   "block.neepmeat.item_mincer": "Item Mincer",
   "block.neepmeat.item_mincer.lore_0": "Crushes food items into Liquid Food. \nThe hunger and saturation values of the food item are reflected in the quality of the Food. \nFoods of different qualities can be mixed in NEEPMeat tanks.",
   "block.neepmeat.homogeniser": "Homogeniser",
@@ -570,7 +587,7 @@
   "block.neepmeat.robotic_arm": "PLC Robotic Arm",
   "block.neepmeat.robotic_arm.lore_0": "A PLC actuator that can operate at high speed when given enough power.",
   "block.neepmeat.implanter": "Implanter",
-  "block.neepmeat.implanter.lore_0": "Installs implants into entities. Can be operated manually or via a PLC with the ROBOT instruction.",
+  "block.neepmeat.implanter.lore_0": "Installs implants into entities. Can be controlled manually or via a PLC with the ROBOT instruction.\n§eSome implants cannot be installed manually and require PLC control.",
   "block.neepmeat.implanter.no_implant": "NO IMPLANT",
   "block.neepmeat.implanter.no_target": "NO ENTITY",
   "block.neepmeat.implanter.off_target": "OFF TARGET",
@@ -579,7 +596,8 @@
   "block.neepmeat.executor.lore_0": "Executes instructions sent by an external PLC using the 'exec' instruction. Uses the actuator it faces.\n§eUse with an empty hand while sneaking to reset the instruction queue.",
   "block.neepmeat.plc_neepbus_interface": "PLC NEEPBus Interface",
   "block.neepmeat.plc_neepbus_interface.lore_0": "Emits an interrupt when its port is written to.\nWrites the given value when it receives a memory entry.",
-  "block.neepmeat.item_request_receiver": "Item Request Listener",
+  "block.neepmeat.item_request_listener": "Item Request Listener",
+  "block.neepmeat.item_request_listener.lore_0": "???",
 
   "block.neepmeat.upgrade_manager": "Implant Manager",
   "block.neepmeat.upgrade_manager.lore_0": "Removes and tweaks item or entity implants. Must be placed facing a Surgery Platform.",
@@ -593,7 +611,7 @@
   "block.neepmeat.duat_gravel": "Duat Gravel",
 
   "item.neepmeat.sacrificial_dagger": "Tissue Operator",
-  "item.neepmeat.sacrificial_dagger.lore_0": "Also acts as a wrench.\nEntities produce blood when killed above a Drain.\nUse and hold to vivisect.",
+  "item.neepmeat.sacrificial_dagger.lore_0": "Also acts as a wrench.\nEntities produce blood when killed above a Drain.\n§eUse and hold to vivisect.",
   "item.neepmeat.animal_heart": "Rough Heart",
   "item.neepmeat.animal_heart.lore_0": "Crude; it lacks any logical design sensibilities.",
 
@@ -611,12 +629,16 @@
 
   "item.neepmeat.internal_components": "Biomechanical Components",
   "item.neepmeat.contractile_actuator": "Contractile Actuator",
+  "item.neepmeat.crushed_ender_pearl": "Crushed Ender Pearl",
 
   "item.neepmeat.bioelectric_organ": "Bioelectric Organ",
 
   "item.neepmeat.open_eye": "Opened Eye",
 
   "item.neepmeat.copper_coil": "Copper Coil",
+
+  "item.neepmeat.asbestos_dust": "Asbestos Dust",
+  "item.neepmeat.asbestos_fabric": "Asbestos Fabric",
 
   "item.neepmeat.brain_rough": "Rough Brain",
   "item.neepmeat.brain_rough.lore_0": "It will never see thoughts again, but it may still be of use.",
@@ -665,6 +687,7 @@
   "block.neepmeat.statue": "Mysterious Statue",
 
   "block.neepmeat.flame_jet": "Flame Jet",
+  "block.neepmeat.flame_jet.lore_0": "Shoots a jet of fire when powered by lava. Enabled with redstone.\nPowers Transductive Cannulas at 500eJ/t when facing upwards. \n§eSneak-click to toggle.",
 
   "block.neepmeat.disruptor_needle": "Disruptor Needle",
   "component.neepmeat.disruptor_needle": "Disruptor Needle",
@@ -711,15 +734,15 @@
   "item.neepmeat.whisper_brass_ingot": "Whispering Brass Ingot",
 
   "item.neepmeat.meat_steel_ingot": "Meat Steel Ingot",
-  "item.neepmeat.meat_steel_ingot.lore_0": "Forged from iron and flesh.",
   "item.neepmeat.meat_steel_component": "Meat Steel Component",
+  "item.neepmeat.meat_steel_ball": "Meat Steel Ball",
 
   "item.neepmeat.meat_steel_pickaxe": "Meat Steel Pickaxe",
   "item.neepmeat.meat_steel_axe": "Meat Steel Axe",
   "item.neepmeat.meat_steel_shovel": "Meat Steel Shovel",
   "item.neepmeat.meat_steel_hoe": "Meat Steel Hoe",
-  "item.neepmeat.rock_drill": "Rock Drill",
-  "item.neepmeat.rock_drill.lore_0": "Instantly breaks stone and similar blocks when within 16 blocks of a running Small Compressor.",
+  "item.neepmeat.drill_chassis": "Drill Chassis",
+  "item.neepmeat.drill_chassis.lore_0": "A large base module that can support various different drill heads. Compatible with other Meatgun modules.",
   "item.neepmeat.mop": "Mop",
   "item.neepmeat.mop.lore_0": "Mops up certain fluids such as Machine Sludge.",
   "item.neepmeat.pressure_washer": "Pressure Washer",
@@ -773,7 +796,7 @@
   "block.neepmeat.phage_ray": "Phage Ray",
   "block.neepmeat.phage_ray.lore_0": "Fires a beam that rapidly breaks blocks when ridden and aimed by a player. Blocks do not drop loot when broken.",
 
-  "message.neepmeat.synthesiser.template": "Current template organism: %s",
+  "message.neepmeat.synthesiser.template": "Current template: %s",
 
   "block.neepmeat.work_fluid": "Integration Fluid",
   "item.neepmeat.work_fluid_bucket": "Integration Fluid Bucket",
@@ -806,6 +829,14 @@
   "item.neepmeat.sludge_bucket": "Machine Sludge Bucket",
   "block.neepmeat.sludge": "Machine Sludge",
 
+  "item.neepmeat.fat_bucket": "Liquid Fat Bucket",
+  "block.neepmeat.fat": "Liquid Fat",
+
+  "item.neepmeat.liquid_clay_bucket": "Clay Suspension Bucket",
+  "block.neepmeat.liquid_clay": "Clay Suspension",
+
+  "item.neepmeat.ore_dust": "%s Dust",
+  "item.neepmeat.crushed_ore": "Crushed %s",
   "block.neepmeat.clean_ore_fat": "Clean %s Fat",
   "block.neepmeat.ore_fat": "Dirty %s Fat",
   "ore_fat.neepmeat.iron_ingot.dirty": "Dirty Iron-Rich Fat",
@@ -859,6 +890,10 @@
   "item.neepmeat.farming_scutter.lore_0": "Harvests and replants crops. Must be placed on farmland. Harvested items will be inserted into block that is highlighted when placing.\n§eSneak-use to pick up.§f",
   "entity.neepmeat.farming_scutter": "Farming Scutter",
 
+  "item.neepmeat.compressor_scutter": "Compressor Scutter",
+  "item.neepmeat.compressor_scutter.lore_0": "Powers tools that run on compressed air for nearby players. Follows the player who placed it.\n§eSneak-use to pick up.§f",
+  "entity.neepmeat.compressor_scutter": "Compressor Scutter",
+
   "entity.neepmeat.glome": "Glome",
   "entity.neepmeat.hound": "Hound",
   "entity.neepmeat.bovine_horror": "The Bovine Horror",
@@ -871,13 +906,14 @@
   "message.neepmeat.item_implant.title": "Item Implant",
   "message.neepmeat.implant.install": "Implant installed: %s",
 
+  "implant.neepmeat.empty": "None",
+
   "item.neepmeat.pineal_eye": "Pineal Eye",
   "implant.neepmeat.pineal_eye": "Pineal Eye",
   "implant.neepmeat.pineal_eye.desc_0": "Permanently reveals the unseen.",
-
   "item.neepmeat.extra_mouth": "Extra Mouth",
   "implant.neepmeat.extra_mouth": "Extra Mouth",
-  "implant.neepmeat.extra_mouth.desc_0": "Automatically consumes food from one's inventory. Tries not to waste food, but prioritises high saturation when two or more hearts are lost.",
+  "implant.neepmeat.extra_mouth.desc_0": "Automatically consumes food from one's inventory. Tries not to waste food, but prioritises high saturation when two or more hearts are lost.\nConfigure filters with an Implant Manager.",
   "item.neepmeat.extra_knees": "Powered Knees",
   "implant.neepmeat.extra_knee": "Powered Knees",
   "implant.neepmeat.extra_knees.desc_0": "Increases step height to one block.",
@@ -898,15 +934,25 @@
   "hexapod_skin.neepmeat.th_1": "Original Programming Socks",
   "hexapod_skin.neepmeat.black_boots": "Black boots",
   "implant.neepmeat.explosive": "CNS-Wired Explosives",
+  "item.neepmeat.pipe_climber": "Pipe Climber",
+  "implant.neepmeat.pipe_climber": "Pipe Climber",
+  "implant.neepmeat.pipe_climber.desc_0": "Allows the user to climb pipes like ladders.",
 
   "item.neepmeat.shield": "Shield Attachment",
   "implant.neepmeat.shield": "Shield Attachment",
   "implant.neepmeat.shield.desc_0": "Shields some damage when the item is in use.",
   "item.neepmeat.living_tool_implant": "Tool Organism",
-  "implant.neepmeat.living_tool_implant.desc_0": "Converts any tool or armour item into an organism that runs on Transient Ichor. Durability can be replenished in a Bottler.",
+  "implant.neepmeat.living_tool": "Tool Organism",
+  "implant.neepmeat.living_tool_implant.desc_0": "Converts any tool or armour item into an organism that runs on liquid food. Durability can be replenished in a Bottler.",
+  "item.neepmeat.pneumatic_motor": "Pneumatic Motor",
+  "implant.neepmeat.pneumatic_motor": "Pneumatic Motor",
+  "implant.neepmeat.pneumatic_motor.desc_0": "Applicable to the Drill Chassis. Powers mining heads using nearby compressors.",
+  "item.neepmeat.drill_complexity_upgrade": "Drill Complexity Upgrade",
+  "implant.neepmeat.complexity_upgrade_1": "Drill Complexity Upgrade",
+  "implant.neepmeat.complexity_upgrade_1.desc_0": "Applicable to the Drill Chassis. Increases maximum module complexity to 20.",
 
   "item.neepmeat.chrysalis": "Divine Chrysalis",
-  "item.neepmeat.chrysalis.lore_0": "Something tells you that surgically implanting this into a cow would be a really good idea.",
+  "item.neepmeat.chrysalis.lore_0": "Something tells you that surgically implanting this into a cow with a PLC would be a really good idea.",
 
   "step.neepmeat.combine": "COMBINE",
   "step.neepmeat.implant": "IMPLANT",
@@ -960,8 +1006,8 @@
   "instruction.neepmeat.shr.desc": "Bit-shifts the top stack element §6right§f by the give number of bits.",
   "instruction.neepmeat.shl.desc": "Bit-shifts the top stack element §6left§f by the give number of bits.",
   "instruction.neepmeat.jmp.desc": "Jumps to the given label or by the given number of instructions. \nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
-  "instruction.neepmeat.bit.desc": "(Branch if true) Branches to the given label or number of instructions if the top stack element is §6greater than zero§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
-  "instruction.neepmeat.bif.desc": "(Branch if false) Branches to the given label or number of instructions if the top stack element is §6zero or negative§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
+  "instruction.neepmeat.bit.desc": "(Branch if true) Branches to the given label or number of instructions if the top stack element is §6not 0§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
+  "instruction.neepmeat.bif.desc": "(Branch if false) Branches to the given label or number of instructions if the top stack element is §60§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
   "instruction.neepmeat.say.desc": "Sends the given string to all players within 20 blocks.\nIf no string is provided, it will pop and print the last stack element.\nAdding §6d§f §6h§' or §6b§f to the end will format the stack entry as decimal, hexadecimal or binary respectively.",
   "instruction.neepmeat.remove.desc": "Removes the last manufacture step from the item in workbench ARG1.",
   "instruction.neepmeat.robot.desc": "Selects the actuator at ARG1. All further instructions will use the actuator until a new one is selected.",
@@ -970,16 +1016,19 @@
   "instruction.neepmeat.move.desc": "Tries to the specified number of items from storage ARG1 into storage ARG2. If no amount is specified, 64 will be assumed. The success of the move is pushed to the stack.\n §6ARG1§f: Source storage (world target)\n §6ARG2§f: destination storage (world target)\n §6ARG3§f: amount (integer, optional)\n §6ARG4§f: item ID (string, * for wildcard, optional)",
   "instruction.neepmeat.implant.desc": "Removes an item from storage ARG1 and surgically implants it into entity ARG2.",
   "instruction.neepmeat.inject.desc": "Draws fluid from storage ARG1 and injects it into the item in workbench ARG2.",
-  "instruction.neepmeat.wait_redstone.desc": "Waits for a signal strength above zero at the redstone interface ARG1.",
-  "instruction.neepmeat.emit_redstone.desc": "Emits a redstone signal at ARG1 of strength ARG2. If no strength is specified, it will be read from the stack.\n §6ARG1§f: redstone interface (world target)\n §6ARG2§f: signal strength (integer, optional)",
-  "instruction.neepmeat.read_redstone.desc": "Reads the redstone signal strength at ARG1 and pushes it to the stack.\n §6ARG1§f: redstone interface (world target)",
+  "instruction.neepmeat.rwait.desc": "Waits for a signal strength above zero at the redstone interface ARG1.\n §6ARG1§f: redstone interface (world target)",
+  "instruction.neepmeat.remit.desc": "Emits a redstone signal at ARG1 of strength ARG2. If no strength is specified, it will be read from the stack.\n §6ARG1§f: redstone interface (world target)\n §6ARG2§f: signal strength (integer, optional)",
+  "instruction.neepmeat.rread.desc": "Reads the redstone signal strength at ARG1 and pushes it to the stack.\n §6ARG1§f: redstone interface (world target)",
+  "instruction.neepmeat.rrising.desc": "Waits for a rising edge (when the signal strength goes from 0 to not 0) at the redstone interface ARG1.\n §6ARG1§f: redstone interface (world target)",
+  "instruction.neepmeat.rising_edge.desc": "§6( n1 -- n2 )§f\nTakes the top value of the stack and checks if it has risen from 0 to a positive value since this instruction was last invoked.\nBest used in a loop to check a redstone interface or NEEPBus address.\nReturns -1 (true) if a rising edge and 0 (false) if not.",
   "instruction.neepmeat.neepbus_write.desc": "Sends the top stack entry to all devices with the specified address in a connected NEEPBus network.\n §6ARG1§f: target address (string)",
   "instruction.neepmeat.neepbus_read.desc": "Reads the value of a device with the specified address in a connected NEEPBus network.\n §6ARG1§f: target address (string)",
-  "instruction.neepmeat.route.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed from a given §6pipe§f and §6input direction§f to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the operation is pushed to the stack.\n §6ARG1§f: input pipe (world target)\n §6ARG2§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
+  "instruction.neepmeat.route.desc": "Uses a Pipe Driver (currently selected actuator) to request the item with the given name. \nThe item is routed from a given §6pipe§f and §6input direction§f to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the operation is pushed to the stack.\n §6ARG1§f: input pipe (world target)\n §6ARG2§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.request.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed through a pipe network to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the request is pushed to the stack.\n §6ARG1§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
-  "instruction.neepmeat.count.desc": "Counts the items or fluid at the given world target and pushes the result to the stack.\nThe type of resource to count is optionally specified in the second argument.\nIf an ID is provided, only items/fluids of that that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: inventory (world target)§6\n §6ARG2§f: type to count (ITEM or FLUID, optional)\n §6ARG3§f: item or fluid ID (string, optional)",
-  "instruction.neepmeat.nbwrite.desc": "Sends the top stack element over a data cable network to all ports matching the given NEEPBus address.\n §6ARG1§f: NEEPBus address (string)§6",
-  "instruction.neepmeat.nbread.desc": "Reads the value of a port matching the given address over a data cable network. The result is put on the stack.\n §6ARG1§f: NEEPBus address (string)§6",
+  "instruction.neepmeat.count.desc": "Counts the items or fluid at the given world target and pushes the result to the stack.\nThe type of resource to count is optionally specified in the second argument.\nIf an ID is provided, only items/fluids that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: inventory (world target)§6\n §6ARG2§f: type to count (ITEM or FLUID, optional)\n §6ARG3§f: item or fluid ID (string, optional)",
+  "instruction.neepmeat.stock.desc": "Uses a Pipe Driver (currently selected actuator) to count counts all matching items in accessible inventories (connected to Storage Drivers). The result is pushed to the stack.\nIf an ID is provided, only items that match it will be counted. IDs can use * to represent any combination of characters (minecraft:* or :stone).\n §6ARG1§f: item ID (string, optional)",
+  "instruction.neepmeat.nbwrite.desc": "§6( s1 n1 -- n2 )§f\nSends the top stack element over a data cable network to all ports matching the given NEEPBus address.\nIf the element is a memory address, the data at the address will be fetched and sent, rather than the address itself.\nThe NEEPBus address and data will be read from the stack\n §6\"the address\" \"the data\" .NBWRITE",
+  "instruction.neepmeat.nbread.desc": "§6( s1 -- n1 )§f\nReads the value of a port matching the given address over a data cable network. The address is read from the stack. The result is put on the stack.\n §6\"address_to_read\" .NBREAD §f",
 
   "category.neepmeat.instruction.arithmetic": "Arithmetic",
   "category.neepmeat.instruction.comparison": "Comparison",
@@ -1010,6 +1059,7 @@
   "screen.neepmeat.fluid_rationer.text.ingot": "Ingot",
   "screen.neepmeat.fluid_rationer.text.bucket": "Bucket",
   "screen.neepmeat.fluid_rationer.text.amount": "Amount (droplets)",
+  "screen.neepmeat.fluid_rationer.amount.tooltip": "Amount of fluid to transfer each cycle in droplets.\nThis quantity is extracted from the input storage when the output buffer has been emptied.",
 
   "screen.neepmeat.separator.text.remainder": "Number of animals to remain.",
 
@@ -1061,6 +1111,7 @@
   "screen.neepmeat.living_machine.components": "Functional components",
   "screen.neepmeat.living_machine.process": "Current process",
   "screen.neepmeat.living_machine.no_process": "None",
+  "screen.neepmeat.living_machine.problems": "Problems",
 
   "screen.neepmeat.living_machine.requirements": "Requirements:",
   "process.neepmeat.crushing.requirements": "   ",
@@ -1069,6 +1120,7 @@
   "component.neepmeat.large_trommel": "Large Trommel",
   "component.neepmeat.motor_port": "Motor Port",
   "component.neepmeat.integration_port": "Integration Port",
+  "block.neepmeat.integration_port.lore_0": "Allows injection of Integration Fluid to repair a machine.\n§eOpens only when the machine is offline§f",
   "component.neepmeat.service_port": "Service Port",
   "component.neepmeat.phage_ray": "Phage Ray",
   "component.neepmeat.tree_vacuum": "Tree Vacuum",
@@ -1108,6 +1160,8 @@
   "category.neepmeat.trommel": "Trommel",
   "category.neepmeat.heating": "Heating",
   "category.neepmeat.bioreactor": "Bioreactor",
+  "category.neepmeat.ball_mill": "Ball Mill",
+  "category.neepmeat.rendering": "Rendering",
 
   "tag.c.raw_fish": "Raw Fish",
   "tag.c.concrete": "Concrete",
@@ -1262,8 +1316,10 @@
   "category.neepmeat.thord.flow_control": "Flow Control",
   "category.neepmeat.thord.misc": "Misc",
 
-  "death.attack.neepmeat.crusher": "%1$s was ground into chunky marinara.",
-  "death.attack.neepmeat.mincer": "%1$s was reduced to a soup-like homogenate.",
+  "death.attack.neepmeat.crusher": "%1$s was ground into chunky marinara",
+  "death.attack.neepmeat.mincer": "%1$s was reduced to a soup-like homogenate",
+  "death.attack.neepmeat.blood_bullets": "%1$s lost too much blood",
+  "death.attack.neepmeat.blood_bullets.player": "%1$s lost too much blood fighting %2$s",
 
   "process.neepmeat.disruptor": "Disruptor",
   "process.neepmeat.trommel": "Trommel",
@@ -1274,5 +1330,19 @@
   "process.neepmeat.charnel_pump": "Charnel Pump",
   "process.neepmeat.bioreactor": "Bioreactor",
   "process.neepmeat.tree_vacuum": "Tree Vacuum",
-  "process.neepmeat.distributor_point": "Distributor Receiver"
+  "process.neepmeat.distributor_point": "Distributor Receiver",
+  "process.neepmeat.pressurised_digester": "Geophagic Digester",
+  "process.neepmeat.ball_mill": "Ball Mill",
+
+  "meatgun_module.neepmeat.base_rock_drill": "Drill Chassis",
+  "meatgun_module.neepmeat.rock_drill_head": "Reciprocating Head",
+  "meatgun_module.neepmeat.rock_drill_head.desc": "Instantly breaks stone and similar blocks.\nMust be within 25 blocks of a Small Compressor, or have a Tool Organism installed.\nConsumes 2 METAB units per block broken from a Tool Organism.",
+  "meatgun_module.neepmeat.iron_rotary_drill_head": "Iron Rotary Head",
+  "meatgun_module.neepmeat.iron_rotary_drill_head.desc": "Breaks blocks like a pickaxe.\nDrops full blocks instead of raw ores.",
+  "meatgun_module.neepmeat.meat_steel_rotary_drill_head": "Meat Steel Rotary Head",
+  "meatgun_module.neepmeat.meat_steel_rotary_drill_head.desc": "Breaks blocks like a pickaxe.\nDrops full blocks instead of raw ores.",
+  "meatgun_module.neepmeat.diamond_rotary_drill_head": "Diamond-Tipped Rotary Head",
+  "meatgun_module.neepmeat.diamond_rotary_drill_head.desc": "Breaks blocks like a pickaxe.\nDrops full blocks instead of raw ores.",
+
+  "screen.neepmeat.implant_manager.open": "Configure core implants"
 }

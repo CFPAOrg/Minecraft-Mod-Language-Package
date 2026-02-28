@@ -10,6 +10,8 @@ It can be controlled manually or automatically by a PLC.
 
 Under manual control, no extra infrastructure is required. With a PLC, the target entity must be standing on a Surgery Platform.
 
+**Some implants cannot be installed manually, and require PLC control.**
+
 ## Manual Control
 
 Using the main block gives direct control over the Implanter. The head can be repositioned with the normal movement keys. 

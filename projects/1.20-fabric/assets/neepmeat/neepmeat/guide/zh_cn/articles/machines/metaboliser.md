@@ -16,7 +16,7 @@ lookup: neepmeat:metaboliser_segment,
 
 - 肉浆：40eJ / d
 - 动物饲料：60eJ / d
-- 液态食物：(1 + 9 * 饥饿值) / d
+- 液态食物：(1 + 9 * 饥饿值) eJ / d
 
 ## 示例
 

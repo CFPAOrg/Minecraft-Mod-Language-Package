@@ -17,7 +17,7 @@ Output power depends on the number of segments and the energy density of the inp
 
 - Meat: 40eJ / d
 - Animal Feed: 60eJ / d
-- Food: (1 + 9 * hunger) / d
+- Food: (1 + 9 * hunger) eJ / d
 
 ## Example
 
