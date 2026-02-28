@@ -1,0 +1,58 @@
+{
+  "name": "蒸发塔",
+  "icon": "rankine:evaporation_tower",
+  "category": "materials",
+  "pages": [
+	{
+      "type": "text",
+      "text": "从水中去除重物质的方法。搭建完成后，蒸发塔会缓慢常态产出多种资源（仅能在输出口空时工作，需使用漏斗！）。产出资源的种类由蒸馏塔的位置决定。默认情况下，水会在如下位置蒸发：$(li)海洋 $(li)沙漠 $(li)河流和沼泽 $(li)洞穴 $(li)其他地方"
+    },
+    {
+      "type": "crafting",
+      "recipe": "rankine:evaporation_tower",
+      "text": ""
+    },
+    {
+      "type": "multiblock",
+      "multiblock_id": "multiblock",
+      "multiblock": {
+        "pattern": [
+          [ "  SSS  "," SBBBS ","SBBBBBS", "SBBWBBS","SBBBBBS"," SBBBS ", "  SSS  " ],
+          [ "       ","  MMM  "," MMMMM ", " MM0MM "," MMMMM ","  MMM  ", "       " ]
+        ],
+        "mapping": {
+          "M": "minecraft:magma_block",
+          "W": "minecraft:water",
+          "B": "minecraft:bubble_column",
+          "0": "rankine:evaporation_tower",
+          "S": "#forge:sheetmetal"
+        },
+        "symmetrical": true
+      }
+    },
+    {
+      "type": "text",
+      "text": "搭建提示：$(li)蒸馏塔内部需装满水。$(li)塔壁可由任意 #forge:sheetmetals 搭建。$(li)增加金属板层数或液体层数可增加加工速度。加工速度为 3200（见配置） / 层数（上限可配置，默认 15），单位为刻每层。"
+    },
+    {
+      "type": "text",
+      "title": "蒸发锅炉",
+      "text": "较小的蒸发塔，能将液体蒸干为某种材料。结构见下页。流体需倒入蒸发塔上方。"
+    },
+    {
+      "type": "multiblock",
+      "multiblock_id": "multiblock",
+      "multiblock": {
+        "pattern": [
+          [ " S ", "S S"," S " ],
+          [ " S ", "S0S"," S " ]
+        ],
+        "mapping": {
+          "0": "rankine:evaporation_tower",
+          "S": "#forge:sheetmetal"
+        },
+        "symmetrical": true
+      }
+    }
+  ]
+}
