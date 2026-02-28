@@ -16,6 +16,8 @@ item_ids:
 
 红石终端是管理ME网络中所有红石发信器的控制面板。可在其简明的界面中按名称搜索、查看、开关红石发信器。
 
+## [视频教程](https://youtu.be/PJgyymdOtNE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## 使用方法

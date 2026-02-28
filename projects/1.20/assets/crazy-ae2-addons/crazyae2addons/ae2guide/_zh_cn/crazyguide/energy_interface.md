@@ -13,6 +13,8 @@ item_ids:
 
 **能量接口**是能将ME网络所存AE能量暴露为Forge能量（Forge Energy，FE）的被动线缆子部件。
 
+## [视频教程](https://youtu.be/UVD8DtrjLb8&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## 工作原理

@@ -12,6 +12,8 @@ item_ids:
 
 The NBT Export Bus is an advanced version of the AE2 export bus that lets you filter and control access to storage **based on NBT data**.
 
+## [Video Tutorial](https://youtu.be/ehDNQiDHNPE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## How to Use

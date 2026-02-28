@@ -13,6 +13,8 @@ item_ids:
 
 The Redstone Emitter is an ME part that acts like a digital redstone output. You can turn it ON or OFF via the Redstone Terminal.
 
+## [Video Tutorial](https://youtu.be/PJgyymdOtNE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## How to Use

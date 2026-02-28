@@ -21,10 +21,12 @@ Instead of typing numbers manually, this item lets you quickly multiply or repla
 
 ## How to Use
 
+## [Video Tutorial](https://youtu.be/__CiwpU4bbg&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ### 1. Open the GUI
 - Right-click the item in hand.
 - You’ll see a screen with:
-    - A **text field** where you enter a number or math expression (e.g., `100`, `2*64`, `1k`).
+    - A **text field** where you enter a number or math expression (e.g., 100, 2*64, 1k).
     - A **checkbox** to toggle between "Multiply" and "Set" mode.
     - A confirm button to save.
 

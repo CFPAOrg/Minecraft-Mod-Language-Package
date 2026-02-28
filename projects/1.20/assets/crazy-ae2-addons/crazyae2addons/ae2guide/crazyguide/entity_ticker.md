@@ -13,6 +13,8 @@ item_ids:
 
 The Entity Ticker is a unique ME part that dramatically speeds up the block entity you attach it to. It ticks the neighboring machine multiple times per game tick, making processes like smelting, machine operations, or other block entity updates much faster.
 
+## [Video Tutorial](https://youtu.be/4SuLOlJujO8&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Place the part**: Attach the Entity Ticker to an ME cable facing the machine or block entity you want to accelerate.

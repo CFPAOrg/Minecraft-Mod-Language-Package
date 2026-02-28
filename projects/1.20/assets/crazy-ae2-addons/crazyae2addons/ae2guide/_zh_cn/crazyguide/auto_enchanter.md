@@ -17,6 +17,8 @@ item_ids:
 
 ## 使用方法
 
+## [视频教程](https://youtu.be/Zu213pe7Jeo&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 1. **放置自动附魔器**
    - 此设备必须放置在附魔台下方2格处。
    - 和原版一样，在附魔台周围放置书架，以提高附魔等级。

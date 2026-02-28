@@ -21,6 +21,8 @@ item_ids:
 
 The Mob Farm Controller is the heart of an automatic, multi-block mob farming system. It simulates killing mobs stored in your ME network and generates drops and experience shards, and stores them directly into the system, **excluding** any **NBT** or **unstackable** items.
 
+## [Video Tutorial](https://youtu.be/MUKyq0IDi3M&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Build the Multiblock Structure**

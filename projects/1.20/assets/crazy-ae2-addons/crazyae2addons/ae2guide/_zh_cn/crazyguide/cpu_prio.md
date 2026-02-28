@@ -15,6 +15,8 @@ item_ids:
 
 某些情况下，这种挑选方式会产生预期之外的结果；尤其是需要CPU优先完成自身任务时，或是需防止CPU中物品被其他合成任务“夺取”时。
 
+## [视频教程](https://youtu.be/N7GTS2fAxjc&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## 为什么需要优先级？

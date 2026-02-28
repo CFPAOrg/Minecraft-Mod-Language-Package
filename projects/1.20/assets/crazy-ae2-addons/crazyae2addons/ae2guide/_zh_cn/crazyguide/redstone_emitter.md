@@ -13,6 +13,8 @@ item_ids:
 
 红石发信器是一种线缆子部件，行为与红石数字输出类似。可在红石终端内设置开关。
 
+## [视频教程](https://youtu.be/PJgyymdOtNE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## 使用方法

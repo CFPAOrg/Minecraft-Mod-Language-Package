@@ -18,6 +18,8 @@ item_ids:
 
 The Spawner Extractor is a multiblock system that simulates mob spawning from real Spawner blocks and inserts mobs directly into your ME network. This lets you capture mobs automatically without lag or real entity spawns.
 
+## [Video Tutorial](https://youtu.be/MUKyq0IDi3M&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Build the Multiblock Structure**

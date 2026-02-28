@@ -12,6 +12,8 @@ item_ids:
 
 The Mob Export Bus is a special ME part that allows you to release stored mobs back into the world from your ME Storage. It works just like a regular Export Bus, but specifically for mobs.
 
+## [Video Tutorial](https://youtu.be/MUKyq0IDi3M&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Place the Mob Export Bus**

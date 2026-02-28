@@ -15,6 +15,8 @@ Normally in **Applied Energistics 2**, when you have multiple **Crafting CPUs** 
 
 This can sometimes lead to unwanted behavior, especially if you want one CPU to always finish its task first or to make sure that certain crafting jobs do not "steal" items from another CPU.
 
+## [Video Tutorial](https://youtu.be/N7GTS2fAxjc&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## Why Priorities?

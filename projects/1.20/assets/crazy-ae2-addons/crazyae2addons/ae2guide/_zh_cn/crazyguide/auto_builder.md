@@ -11,7 +11,9 @@ item_ids:
 
 # 自动建筑机
 
-# [如何编程](auto_builder_language.md)
+## [视频教程](https://youtu.be/Cvj5r-ilMYU&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
+## [如何编程](auto_builder_language.md)
 
 <BlockImage id="crazyae2addons:auto_builder" scale="4"></BlockImage>
 

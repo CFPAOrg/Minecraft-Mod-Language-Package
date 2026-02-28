@@ -15,7 +15,9 @@ item_ids:
 
 <BlockImage id="crazyae2addons:impulsed_pattern_provider" scale="4"></BlockImage>
 
-脉冲样板供应器是经过特化的合成设备，当被红石信号触发时，会发送上一次使用的样板。
+脉冲样板供应器是经过特化的合成设备。当被红石信号触发时，它会发送上一次使用的样板。
+
+## [视频教程](https://youtu.be/KsIfz0FszIM&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
 
 ## 使用方法
 

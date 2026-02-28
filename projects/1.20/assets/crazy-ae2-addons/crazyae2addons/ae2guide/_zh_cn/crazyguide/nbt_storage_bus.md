@@ -12,6 +12,8 @@ item_ids:
 
 NBT存储总线是应用能源2（AE2）存储总线的高级版本，能**根据NBT数据**进行过滤和控制对存储空间的访问权限。
 
+## [视频教程](https://youtu.be/ehDNQiDHNPE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## 使用方法

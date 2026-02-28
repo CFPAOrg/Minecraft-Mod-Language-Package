@@ -19,6 +19,9 @@ You can choose to ignore NBT data, so patterns that normally require specific en
 
 You can also encode a specific circuit ID onto a pattern for use with Circuited Pattern Provider + GregTech's machines.
 
+## [Ignore NBT video](https://youtu.be/FSIh5NOEOzg&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+## [Other Features](https://youtu.be/__CiwpU4bbg&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 Hold the Crazy Pattern Modifier in your hand and right-click to open its interface. 

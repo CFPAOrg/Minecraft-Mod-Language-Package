@@ -12,6 +12,8 @@ item_ids:
 
 The Mob Formation Plane is a special ME part that places mobs directly into the world. It works like a traditional Formation Plane, but specifically for spawning captured mobs. Its something like export only storage bus but for mobs.
 
+## [Video Tutorial](https://youtu.be/MUKyq0IDi3M&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Place the Plane**

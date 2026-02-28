@@ -11,7 +11,9 @@ item_ids:
 
 # AutoBuilder
 
-# [How to program it](auto_builder_language.md)
+## [Video Tutorial](https://youtu.be/Cvj5r-ilMYU&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
+## [How to program it](auto_builder_language.md)
 
 <BlockImage id="crazyae2addons:auto_builder" scale="4"></BlockImage>
 

@@ -12,6 +12,8 @@ item_ids:
 
 The Mob Annihilation Plane is a special ME part that captures and stores mobs directly into your ME network. It instantly removes a mob standing in front of it and stores it inside your ME Storage system.
 
+## [Video Tutorial](https://youtu.be/MUKyq0IDi3M&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Place the Mob Annihilation Plane**

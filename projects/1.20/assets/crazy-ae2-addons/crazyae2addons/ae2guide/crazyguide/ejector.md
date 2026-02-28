@@ -16,6 +16,8 @@ item_ids:
 The Ejector is an automation block that lets you push items, 
 fluids, or other resources directly into the block in front of it - all triggered by a redstone pulse.
 
+## [Video Tutorial](https://youtu.be/gdV7Ga7g2Pk&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## How to Use

@@ -15,6 +15,8 @@ The Energy Exporter is a part that allows your ME network to send Forge Energy (
 or GregTech Energy (EU) into adjacent machines or storage blocks. 
 It extracts power from your network and provides it outward.
 
+## [Video Tutorial](https://youtu.be/UVD8DtrjLb8&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Place the part**: Attach the Energy Exporter to an ME cable facing a block that accepts energy.

@@ -15,6 +15,8 @@ item_ids:
 
 这些通道是标准P2P通道的变种，能够主动工作。无需向其输入物品、流体或能量，这类通道会自动从所连接的方块中**抽取**内容，并将其送至输出端。
 
+## [视频教程](https://youtu.be/fcd3xHpsXnE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## 可用类型

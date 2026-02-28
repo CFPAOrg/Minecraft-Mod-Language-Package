@@ -7,6 +7,7 @@ categories:
   - Crafting and Patterns
 item_ids:
   - crazyae2addons:crazy_pattern_provider
+  - crazyae2addons:crazy_pattern_provider_part
   - crazyae2addons:crazy_upgrade
 ---
 
@@ -16,6 +17,8 @@ item_ids:
 
 The Crazy Pattern Provider is an extended version of AE2's Pattern Provider with dynamic expandability.
 It holds all its settings and inventory when broken.
+
+## [Video Tutorial](https://youtu.be/54WvhbR3GfY&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
 
 ---
 

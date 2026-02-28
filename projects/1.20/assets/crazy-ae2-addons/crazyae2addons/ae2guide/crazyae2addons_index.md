@@ -13,28 +13,23 @@ blocks to be part of an ME network to operate. It adds a suite of utilities.
 
 ---
 
-# Need help with the mod? Join my [Discord](https://discord.com/invite/mWy8AVRtwz) server
-
+## Need help with the mod? Join my [Discord](https://discord.com/invite/mWy8AVRtwz) server
+### or watch a video tutorial series on [YouTube](https://www.youtube.com/playlist?list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
 ---
+## Features
 
-# AE2 with chanced recipes? see [Impulsed Pattern Provider](crazyguide/impulsed_pattern_provider.md)
-
----
-
-# Features
-
-## Crafting and Patterns
+### Crafting and Patterns
 
 <CategoryIndex category="Crafting and Patterns"></CategoryIndex>
 
-## Monitoring and Automation
+### Monitoring and Automation
 
 <CategoryIndex category="Monitoring and Automation"></CategoryIndex>
 
-## Energy and Item Transfer
+### Energy and Item Transfer
 
 <CategoryIndex category="Energy and Item Transfer"></CategoryIndex>
 
-## Mob Storage
+### Mob Storage
 
 <CategoryIndex category="Mob Storage"></CategoryIndex>

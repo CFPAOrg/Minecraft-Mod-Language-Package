@@ -20,6 +20,8 @@ item_ids:
 The **Entropy Cradle** is a massive energy accumulator and transmutation multiblock.  
 It stores up to **600 million FE**, and performs powerful **block transmutations** when fully charged.
 
+## [Video Tutorial](https://youtu.be/b_EVNTQ73i0&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## How It Works

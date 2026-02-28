@@ -17,6 +17,8 @@ item_ids:
 
 The Impulsed Pattern Provider is a specialized crafting block that sends the last used pattern when triggered by a redstone signal.
 
+## [Video Tutorial](https://youtu.be/KsIfz0FszIM&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## How to Use
 
 1. **Place the block**: Attach the Impulsed Pattern Provider to your ME network like a normal Pattern Provider.

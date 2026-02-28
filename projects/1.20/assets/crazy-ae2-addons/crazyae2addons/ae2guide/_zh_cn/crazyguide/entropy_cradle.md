@@ -1,7 +1,7 @@
 ---
 navigation:
   parent: crazyae2addons_index.md
-  title: 熵演催变仪多方块
+  title: 熵变催变仪多方块
   icon: crazyae2addons:entropy_cradle_controller
 categories:
   - Crafting and Patterns
@@ -18,6 +18,8 @@ item_ids:
 </GameScene>
 
 **熵变催变仪**是一种大体积多方块结构，能积累能量和转化方块。它最多可存储**6亿FE**，完全充满后还可进行高级**方块转化**。
+
+## [视频教程](https://youtu.be/b_EVNTQ73i0&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
 
 ---
 
