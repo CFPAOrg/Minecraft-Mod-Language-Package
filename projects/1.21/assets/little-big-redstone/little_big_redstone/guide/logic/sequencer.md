@@ -3,7 +3,7 @@ navigation:
   title: "Sequencer"
   icon: "sequencer"
   parent: little_big_redstone:logic.md
-  position: 18
+  position: 19
 categories:
   - logic
 item_ids:

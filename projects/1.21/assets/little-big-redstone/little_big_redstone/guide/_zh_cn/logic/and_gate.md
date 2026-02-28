@@ -3,7 +3,7 @@ navigation:
   title: "与门"
   icon: "and_gate"
   parent: little_big_redstone:logic.md
-  position: 12
+  position: 14
 categories:
   - logic
 item_ids:

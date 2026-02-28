@@ -3,7 +3,7 @@ navigation:
   title: "读取器"
   icon: "reader"
   parent: little_big_redstone:logic.md
-  position: 17
+  position: 11
 categories:
   - logic
 item_ids:
