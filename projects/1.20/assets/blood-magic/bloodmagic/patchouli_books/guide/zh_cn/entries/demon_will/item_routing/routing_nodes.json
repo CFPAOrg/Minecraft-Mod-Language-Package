@@ -1,0 +1,86 @@
+{
+  "name": "路由节点",
+  "icon": "bloodmagic:masterroutingnode",
+  "category": "bloodmagic:demon_will/item_routing",
+  "priority": "true",
+  "pages":[
+    {
+      "type": "patchouli:text",
+      "text": "凡人需以手运载，然血术士和为之？更何况我们掌握着$(raw)恶魔意志$()！当然，有更好的方式处理这些。$(br2)你已经提出了$(thing)路由节点$()系统-通过魔法在空中传输、分拣与过滤物品。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(thing)路由网络$()含有3个主要部件：$(item)输入节点$()、$(item)输出节点$()和$(item)主控路由节点$()。$(br2)每个网络仅需1个$(item)主控路由节点$()，其余节点必须能通过直接或间接连接到主控节点。$(br2)输入/输出节点可分别从相邻容器中提取/输送物品。"
+    },
+    {
+      "type": "bloodmagic:crafting_soulforge",
+      "heading": "主控路由节点",
+      "recipe": "bloodmagic:soulforge/master_routing_node",
+      "text": "主控路由节点视为网络中的“大脑”来指挥路由，未来将支持升级。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "仅有$(item)主控路由节点$()尚不足以构建网络，需要配合：$(br2)$(item)输入节点$()把容器内的物品提取到网络，$(item)输出节点$()从网络输出物品到容器，$(item)路由节点$()扩展网络覆盖范围。输入和输出节点在其他方面是相同的，除非另有说明，否则我们重点关注输入节点。"
+    },
+    {
+      "type": "bloodmagic:crafting_soulforge",
+      "heading": "路由节点",
+      "recipe": "bloodmagic:soulforge/routing_node",
+      "text": "它本身没有什么作用，但是它能将$(thing)路由网络$()扩展到某个连接16格外。"
+    },
+    {
+      "type": "bloodmagic:2x_crafting_soulforge",
+      "a.heading": "输入节点",
+      "a.recipe": "bloodmagic:soulforge/input_routing_node",
+      "b.heading": "输出节点",
+      "b.recipe": "bloodmagic:soulforge/output_routing_node"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "放置输入/输出节点将自动连接$(thing)所有的相邻容器$()，但仍需在对应插槽安装$(item)过滤器$()才能运行。举例：$(item)熔炉$()顶部安装设定为$(item)铁矿石$()的$(l:bloodmagic:demon_will/item_routing/standard_item_filter)标准物品过滤器$()，侧面安装煤炭过滤器，底部输入节点安装铁锭过滤器。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/routing/node_demo.png"
+      ],
+      "border": true,
+      "text": "实装的输出节点。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/routing/node_gui_right.png"
+      ],
+      "border": true,
+      "text": "设置好节点后，让我们打开GUI。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "在右边，我们有方位按钮-$(bold)D$()下，$(bold)U$()上，$(bold)N$()北$(bold)S$()南$(bold)W$()西和$(bold)E$()东。带方块图标的按钮表示该方向连接容器。界面默认朝向容器连接方向开启（无连接时朝下）。按钮布局以玩家为基准。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/routing/node_gui_left.png"
+      ],
+      "border": true
+    },
+    {
+      "type": "patchouli:text",
+      "text": "在左侧，你将看到一个空间，我们所插入的筛选器的优先级（数字越大越优先）。$(br2)节点每侧可以有一个筛选器，因此我们将选择需要侧，并将筛选器放入其中。（有关筛选器的更多消息，请参阅筛选器章节）。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "设置好输出和输入节点，在$(l:bloodmagic:demon_will/item_routing/node_router)节点连接器$()的帮助下，和$(item)主控路由节点$()，并且均有物品过滤器插入到正确的侧面，就可以了。物品将根据优先级和过滤器的规则进行路由传输。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/routing/network_demo.png"
+      ],
+      "border": true,
+      "text": "节点不必须直连$(item)主控路由节点$()，只需连接路径中含有主控路由节点。"
+    }
+  ]
+}
