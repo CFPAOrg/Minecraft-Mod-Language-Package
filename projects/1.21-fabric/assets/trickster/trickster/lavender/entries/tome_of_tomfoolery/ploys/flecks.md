@@ -73,3 +73,9 @@ Only has an effect on flecks drawn with [Marketer's Ploy](^trickster:ploys/fleck
 <|trick@trickster:templates|trick-id=trickster:delete_fleck|>
 
 Removes any fleck with the given id.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:paint|>
+
+Paints the fleck with the given color. Only works on line flecks.

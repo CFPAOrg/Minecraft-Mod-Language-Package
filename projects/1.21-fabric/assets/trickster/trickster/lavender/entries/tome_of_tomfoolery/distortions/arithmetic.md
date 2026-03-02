@@ -45,6 +45,10 @@ These terms are shorthands for a combination of options:
 {#aa4444}Multiplicable{}, {#aa4444}Divisible{}, and {#aa4444}Roundable{}
 are only {#ddaa00}Numbers{} or {#aa7711}Vectors{}.
 
+
+Arithmetical operations can also be performed on {#ff0055}Colors{}. 
+They are {#aa4444}Addable{}, {#aa4444}Multiplicable{}, {#aa4444}Roundable{}, and {#aa4444}Averageable{}
+
 ;;;;;
 
 Distortions here that take many arguments at once will apply their operation cumulatively.
