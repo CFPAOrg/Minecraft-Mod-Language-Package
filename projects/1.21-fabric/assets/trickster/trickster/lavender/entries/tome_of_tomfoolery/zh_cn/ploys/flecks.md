@@ -69,3 +69,9 @@
 <|trick@trickster:templates|trick-id=trickster:delete_fleck|>
 
 移除所给ID对应的视形。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:paint|>
+
+将视形涂为所给颜色。只对线段视形有效。

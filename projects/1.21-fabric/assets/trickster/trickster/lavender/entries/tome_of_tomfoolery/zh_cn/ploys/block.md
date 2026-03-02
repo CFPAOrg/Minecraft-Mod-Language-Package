@@ -14,6 +14,7 @@
     "花卉之技巧",
     "盈水之技巧",
     "光辉之技巧",
+    "染色之技巧",
     "谐振之技巧"
   ]
 }
@@ -117,6 +118,12 @@
 <|ploy@trickster:templates|trick-id=trickster:conjure_light,cost=20G|>
 
 在所给位置处构筑出一个永久性光源，可以选择为光源强度指定0到15的数，默认为15。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:paint|>
+
+将所给颜色灌注入对应位置处的方块。通常来说只对魔法类目标有效。
 
 ;;;;;
 

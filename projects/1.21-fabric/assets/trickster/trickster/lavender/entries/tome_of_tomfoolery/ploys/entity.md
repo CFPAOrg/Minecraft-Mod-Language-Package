@@ -70,7 +70,7 @@ This ploy has the same aggressive and stacking cost scaling as Kinetic Ploy.
 
 <|ploy@trickster:templates|trick-id=trickster:polymorph,cost=8000G|>
 
-Changes the first entity's appearance to match the second.
+Changes the first entity's appearance to match the second, returning the first.
 Both entities must be players.
 
 ;;;;;

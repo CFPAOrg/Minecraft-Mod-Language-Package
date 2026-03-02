@@ -63,7 +63,7 @@
 
 <|ploy@trickster:templates|trick-id=trickster:polymorph,cost=8000G|>
 
-将第一个实体的外形变为第二个实体。两个实体必须都是玩家。
+将第一个实体的外形变为第二个实体，并返回第一个实体。两个实体必须都是玩家。
 
 ;;;;;
 
