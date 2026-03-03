@@ -1,6 +1,7 @@
 ---
 id: thord_variables
 ---
+
 # 变量
 
 变量可使用`VARIABLE`词创建。

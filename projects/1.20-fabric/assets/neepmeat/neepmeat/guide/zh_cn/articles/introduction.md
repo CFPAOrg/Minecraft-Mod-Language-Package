@@ -3,8 +3,8 @@ id: intro
 ---
 
 \image[width=60,height=25,scale=0.6]{neepmeat:textures/gui/tablet/neep.png}
-\centering{东北电气石化
-North-East Electric and Petrochemical}
+\centering{东北电气石化}
+\centering{North-East Electric and Petrochemical}
 
 \centering{**NEEP工业套具**}
 

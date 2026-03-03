@@ -2,6 +2,7 @@
 id: grinder
 lookup: neepmeat:grinder
 ---
+
 # 粉碎机
 
 粉碎机能将血肉和岩石打碎成渣，由此显露出其中潜藏的宝藏。

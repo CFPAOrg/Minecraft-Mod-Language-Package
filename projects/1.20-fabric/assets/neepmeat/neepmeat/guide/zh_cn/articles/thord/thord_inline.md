@@ -1,6 +1,7 @@
 ---
 id: thord_inline
 ---
+
 # 内联NEEPASM
 
 THORD的基础词并未包含所有PLC能执行的操作，因此THORD也可以执行NEEPASM的指令。

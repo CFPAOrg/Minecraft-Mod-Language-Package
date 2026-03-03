@@ -2,9 +2,10 @@
 id: death_blades
 lookup: neepmeat:death_blades
 ---
+
 # 处死用扇刃
 
-<!-- 论及将生物体绞成碎肉，没什么方式比它还血腥高效的了。 -->
+
 
 ## 使用方法
 

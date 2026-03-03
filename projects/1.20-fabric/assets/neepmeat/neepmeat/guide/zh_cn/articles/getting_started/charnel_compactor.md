@@ -2,6 +2,7 @@
 id: charnel_compactor
 lookup: neepmeat:charnel_compactor
 ---
+
 # 积骸压缩桶
 
 积骸压缩桶能将生肉加工为融合液。由多种组织融汇而成的融合液堪称圣礼；在融变生物机的祝福之下，死去的器官又可再次获得些许生命力，并用到各种全新机械的发明中去。

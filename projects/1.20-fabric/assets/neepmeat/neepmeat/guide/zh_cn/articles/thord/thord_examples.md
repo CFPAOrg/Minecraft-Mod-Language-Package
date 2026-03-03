@@ -1,6 +1,7 @@
 ---
 id: thord_examples
 ---
+
 # 通用
 
 ## 持续合成

@@ -2,6 +2,7 @@
 id: power_flower
 lookup: neepmeat:power_flower_seeds, neepmeat:power_flower_growth, neepmeat:power_flower_controller, neepmeat:power_flower_fluid_port
 ---
+
 # 能量花
 
 能量花能借由阳光和液态食物合成瞬变浆液。

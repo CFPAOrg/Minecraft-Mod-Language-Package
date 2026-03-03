@@ -2,6 +2,7 @@
 id: meatgun
 lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol
 ---
+
 # 肉质武器
 
 *该怎么称呼与肉相关，或大部分就是由肉构成的武器呢？*

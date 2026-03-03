@@ -2,6 +2,7 @@
 id: ball_mill
 lookup: neepmeat:ball_mill
 ---
+
 # 球磨机
 
 球磨机可在其旋转式滚筒中借助肉钢球将物品粉碎为细密的粉末。

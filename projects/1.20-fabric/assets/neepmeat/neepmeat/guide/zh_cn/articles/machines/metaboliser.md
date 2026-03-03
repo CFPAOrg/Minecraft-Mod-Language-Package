@@ -2,6 +2,7 @@
 id: metaboliser
 lookup: neepmeat:metaboliser_segment, 
 ---
+
 # 代谢机
 
 代谢机可消耗液态食物来产出能量。

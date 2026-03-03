@@ -2,6 +2,7 @@
 id: heater
 lookup: neepmeat:heater
 ---
+
 # 加热器
 
 加热器会加热其面向的类熔炉方块，以便不消耗燃料烧炼物品。

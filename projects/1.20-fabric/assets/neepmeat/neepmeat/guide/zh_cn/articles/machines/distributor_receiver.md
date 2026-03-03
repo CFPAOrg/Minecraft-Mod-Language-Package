@@ -2,6 +2,7 @@
 id: distributor_receiver
 lookup: neepmeat:distributor_point
 ---
+
 # 派送接收机
 
 派送接收机会召唤派送生物体向同频道的其他接收机运输物品和流体。可以向未加载的区块运输，也可跨维度运输。

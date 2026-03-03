@@ -2,9 +2,10 @@
 id: verrucous_rocks
 lookup: neepmeat:verrucous_stone, neepmeat:verrucous_stone_port
 ---
+
 # 疣斑石
 
-随着环境中启智微型活体的浓度不断上升，岩石常有可能因此获得生物特性，生长成疣状的结构。
+随着环境中启智微型活体的浓度不断上升，岩石常有可能获得生物特性，生长成疣状的结构。
 
 # 使用方法
 

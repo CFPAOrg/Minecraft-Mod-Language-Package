@@ -1,6 +1,7 @@
 ---
 id: thord
 ---
+
 # THORD
 
 THORD是适用于PLC的编程语言，相对于NEEPASM来说较接近高级语言。THORD的语法更为简练，且具有循环和条件语句等结构。

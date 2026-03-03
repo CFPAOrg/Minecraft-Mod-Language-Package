@@ -2,6 +2,7 @@
 id: rendering_basin
 lookup: neepmeat:crucible
 ---
+
 # 熬脂盆
 
 腺体马铃薯中经过启智的酶类能够精炼特定矿物的肉质本性，将其化作一层缥缈的脂肪。因此，熬脂即是矿物提取的高效手段。

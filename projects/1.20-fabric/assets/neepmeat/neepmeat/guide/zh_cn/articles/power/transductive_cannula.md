@@ -3,6 +3,7 @@ id: transductive_cannula
 lookup: neepmeat:transducer
 icon: neepmeat:transducer
 ---
+
 # 换能套管
 
 换能套管利用热源加热底物，以此产出瞬变浆液。

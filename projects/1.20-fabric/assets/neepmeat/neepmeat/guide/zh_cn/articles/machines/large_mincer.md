@@ -2,6 +2,7 @@
 id: large_mincer
 lookup: neepmeat:mincer
 ---
+
 # 绞碎机
 
 绞碎机能将生物体转化成组织浆液，且其外形小巧、设计紧凑。
