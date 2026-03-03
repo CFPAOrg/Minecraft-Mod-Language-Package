@@ -5,7 +5,7 @@ lookup: neepmeat:charnel_compactor
 
 # Charnel Compactor
 
-The Charnel Compactor produces Body Compound from raw meat. This coming together of diverse tissues is a sacrament. With the Integrator's blessing, dead things can be half-imbued with life and can go on to create all manner of new machines.
+The Charnel Compactor produces Integration Fluid from raw meat. This coming together of diverse tissues is a sacrament. With the Integrator's blessing, dead things can be half-imbued with life and can go on to create all manner of new machines.
 
 ## Usage
 

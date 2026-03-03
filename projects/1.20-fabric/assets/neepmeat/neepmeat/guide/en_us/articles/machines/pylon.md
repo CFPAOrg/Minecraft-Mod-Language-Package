@@ -5,7 +5,7 @@ lookup: neepmeat:pylon
 
 # Pylon
 
-When at operating speed, the Pylon's emanations stimulate the pineal glands of nearby vertebrates. This permits limited glimpses of the unseen. For unknown reasons, this process can also grant unseen forms substance in the waking world.
+When at operating speed, the Pylon's emanations stimulate the pineal glands of nearby vertebrates. This permits limited glimpses of the unseen. For unknown reasons, this process can also grant unseen forms substance in the world.
 
 ## Usage
 

@@ -15,7 +15,7 @@ Creating a Meatgun starts by taking a base module and installing other moules us
 
 Meatguns have two triggers: Primary and Secondary, which correspond to the Use and Attack keys respectively.
 
-Holding sneak allows aiming down sights. This only works when the Meatgun is held in the main hand.
+Aiming down sights increases shot precision by 50%. This is done by sneak and works when the Meatgun is held in the main hand.
 
 ## Dual Wielding
 

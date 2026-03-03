@@ -5,7 +5,7 @@ lookup: neepmeat:drill_chassis, neepmeat:iron_rotary_drill_head, neepmeat:meat_s
 
 # Mining Tools
 
-NEEPMeat tools and ore processing are different to Vanilla Minecraft, the main difference being that the ore processing pipeline uses ore blocks, rather than raw ores.
+NEEPMeat tools and ore processing are different to Vanilla Minecraft, the main difference being that the ore processing pipeline uses ore blocks rather than raw ores.
 
 Mining ores such as iron and gold with a Drill Chassis equipped with a rotary head will drop the ore block.
 
