@@ -1,0 +1,73 @@
+{
+  focalworks: {
+    spellbook_not_empty: "一本法术书",
+    book: {
+      patterns: {
+        spells: {
+          rigging_foci: {
+            "": "核心的藏咒",
+            explainer0: "在研究的过程中，我发现了所谓$(#9474ed)藏咒$()的技艺。“$(#9474ed)藏过咒$()”的核心（当然其他 iota 存储物品都可以）会在被读写时施放咒术。读时会在读出 iota 后施法（栈以读出的 iota 起始），写时则会在写入前施法（栈以要写入的 iota 起始）。神奇的是，写触发还有以布尔值起始栈的选项，对应是否要把值写入目标。",
+            explainer1: "最后，似乎还有$(#edb874)解明$()此类 iota 存储物品的方式，但需要在藏咒之前就先解明。试图解明已藏咒的物品会导致我的视觉消失 10 秒。经过解明的物品会在提示框中显示藏入读写的咒术。",
+            explainer1_title: "核心的解明",
+            rig_read: "接受一个物品实体和一个咒术，将咒术藏入该物品的读操作。",
+            rig_write: "接受一个物品实体和一个咒术，将咒术藏入该物品的写操作。",
+            crack_rig: "接受一个物品实体，进行解明。"
+          },
+          misc_page: {
+            "": "核心工程杂项",
+            explainer0: "我还发现了几个图案，但它们不太能归入之前的类别。为了在记录它们的同时解决分类问题，方便起见，我把它们全放到了这里。",
+            flip_spellbook: "此图案接受一个法术书物品实体和一个数，并将法术书翻至对应页。",
+            read_spellbook_page: "此图案接受一个法术书物品实体，并返回其当前页的页码。"
+          },
+          ioticblocks: {
+            "": "IoticBlocks 核心工程",
+            explainer0: "近来，我愈发认为，哪怕只是从列表里取出一个 iota，也实在是要占用太多栈空间了。$(l:patterns/readwrite_blocks)读取/写入方块$(/l)章节给出了解决方法，但我找到的标准藏咒方法仍会对整个列表进行操作，相当于没有解决。为此，我制造了些经过优化的图案。",
+            rig_write_index: "将所给咒术藏入$(l:patterns/readwrite_blocks#ioticblocks:write/index)速记员之策略$(/l)的写入。",
+            rig_read_index: "将所给咒术藏入$(l:patterns/readwrite_blocks#ioticblocks:read/index)速记员之馏化$(/l)的读取。"
+          }
+        }
+      }
+    },
+    riggedread: {
+      onitem: "读取藏咒：%s"
+    },
+    riggedwrite: {
+      onitem: "写入藏咒：%s"
+    },
+    riggedwriteindex: {
+      onitem: "索引写入藏咒：%s"
+    },
+    riggedreadindex: {
+      onitem: "索引读取藏咒：%s"
+    },
+    rig_read: "读取藏咒",
+    rig_write: "写入藏咒",
+    crack_rig: "解明核心",
+    flip_spellbook: "法术书翻页",
+    rig_write_index: "索引读取藏咒",
+    rig_read_index: "索引写入藏咒"
+  },
+  hexcasting: {
+    "action.focalworks:": {
+      read_spellbook_page: "读取法术书页号",
+      rig_read: "读取藏咒",
+      rig_write: "写入藏咒",
+      crack_rig: "解明核心",
+      flip_spellbook: "法术书翻页",
+      rig_write_index: "索引读取藏咒",
+      rig_read_index: "索引写入藏咒"
+    },
+    "mishap": {
+      already_rigged: {
+        crack: {
+          "": "试图解明的物品已经过藏咒。",
+          "item": "物品%s已经过藏咒。"
+        },
+        rigging: {
+          "": "试图藏咒的物品已经过藏咒。",
+          "item": "物品%s已经过藏咒。"
+        }
+      }
+    }
+  }
+}
