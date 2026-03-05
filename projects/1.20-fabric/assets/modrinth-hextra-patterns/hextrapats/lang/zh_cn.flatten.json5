@@ -1,0 +1,134 @@
+{
+  "pages.hextrapats":{
+    "hextrapats_consts.title": "咒法新增：常量",
+    "hextrapats_logic.title": "咒法新增：逻辑",
+    "hextrapats_retained_comparison.title": "保留式比较",
+    "hextrapats_vec_literals.title": "向量常量",
+    "hextrapats_math.title": "咒法新增：数学",
+  },
+  hextrapats: {
+    page: {
+      consts: {
+        one: "左图即逆时针图案会压入 (1, 1, 1)；右图即顺时针图案会压入 (-1, -1, -1)。"
+      },
+      logic: {
+        greater: "若第一个向量的长度长于第二个的，返回 True；否则返回 False。",
+        less: "若第一个向量的长度短于第二个的，返回 True；否则返回 False。",
+        greater_eq: "若第一个向量的长度长于或等于第二个的，返回 True；否则返回 False。",
+        less_eq: "若第一个向量的长度短于或等于第二个的，返回 True；否则返回 False。",
+        len_eq: "若两向量的长度相等（允许较小误差），返回 True；否则返回 False。",
+        len_neq: "若两向量的长度不相等（不计较小误差），返回 True；否则返回 False。",
+        in_range: "若第一个数在第二个和第三个之间，返回 True；否则返回 False。若第一个参数是向量，则比较其长度。",
+        "in_range.ops": "第四个数似乎描述了检验的方式。$(li)0：min < val < max$(li)1：min <= val < max$(li)2：min < val <= max$(li)3：min <= val <= max",
+        out_range: "若第一个数不在第二个和第三个之间，返回 True；否则返回 False。若第一个参数是向量，则比较其长度。",
+        "out_range.ops": "第四个数似乎描述了检验的方式。$(li)0：val < min 或 max < val$(li)1：val <= min 或 max < val$(li)2：val < min 或 max <= val$(li)3：val <= min 或 max <= val"
+      },
+      retained_comparison: {
+        intro: "总有些时候，我会想要在比较两个 iota 之后还继续对它们执行操作，但这就需要每次都先运行$(l:patterns/stackmanip#hexcasting:2dup)$(action)狄俄斯库里之策略/$，确实有些麻烦。",
+        detail: "通过实验，我发现：在比较图案前加上一个顺时针的三角形，就可以保留两个输入参数了。",
+        greater: "比较之策略：至大",
+        less: "比较之策略：至小",
+        greater_eq: "比较之策略：至大第二型",
+        less_eq: "比较之策略：至小第二型",
+        equals: "比较之策略：相等",
+        not_equals: "比较之策略：不等",
+        len_eq: "比较之策略：长度相等",
+        len_neq: "比较之策略：长度不等"
+      },
+      vec_literals: {
+        intro: "返回数的图案有种神奇的性质：把向量之精思的尾部加到$(l:patterns/numbers)$(action)数之精思/$的开头，就能返回一个向量。",
+        x: "向左急转的头部会返回 $(l:patterns/consts#hexcasting:const/vec/x)$(action)X 轴/$上的向量。",
+        y: "直线形状的头部会返回 $(l:patterns/consts#hexcasting:const/vec/y)$(action)Y 轴/$上的向量。",
+        z: "向右急转的头部会返回 $(l:patterns/consts#hexcasting:const/vec/z)$(action)Z 轴/$上的向量。",
+        "1": "向左微偏的头部会返回$(l:patterns/hextrapats_consts#hextrapats:haha_ha_one)$(action)所有 3 个分量都相等/$的向量。",
+        detail: "首先，绘制前页八种图案中的一种，默认数值为 0。然后，每一画的$(italic)方向/$会以对应方式修改该数值。$(li)前方：加 1$(li)左前方：加 5$(li)右前方：加 10$(li)左后方：乘 2$(li)右后方：除以 2$(br)顺时针绘制，也即各页右图，会在绘制完成后取相反数（如左图逆时针绘制则不取）。$(p)绘制完成后会返回对应向量。",
+
+        example: {
+          "x10.header": "例图一",
+          "x10": "该图案会返回 (10, 0, 0)。",
+          "y7.header": "例图二",
+          "y7": "该图案会返回 (0, 7, 0)：5 + 1 + 1。",
+          "z-32.header": "例图三",
+          "z-32": "该图案会返回 (0, 0, -32)：(1 + 5 + 10) * 2 的相反数。",
+          "a4.5.header": "例图四",
+          "a4.5": "该图案会返回 (4.5, 4.5, 4.5)：5 / 2 + 1 + 1。"
+        }
+      },
+      math: {
+        deg_to_rad: "将角度变为弧度。相当于乘以 $(l:patterns/consts#hexcasting:const/double/pi)$(action)π/$ 再除以 180。",
+        rad_to_deg: "将弧度变为角度。相当于乘以 180 再除以 $(l:patterns/consts#hexcasting:const/double/pi)$(action)π/$。",
+        normalize: "将向量的长度变为 1。",
+        rot_about_x: "绕 X 轴将所给向量旋转所给弧度。",
+        rot_about_y: "绕 Y 轴将所给向量旋转所给弧度。",
+        rot_about_z: "绕 Z 轴将所给向量旋转所给弧度。",
+        cons_about_x: "将弧度角变为单位向量。该向量的 X 分量为 0。0 弧度对应 +Z，π/4 弧度对应 +Y。",
+        cons_about_y: "将弧度角变为单位向量。该向量的 Y 分量为 0。0 弧度对应 +Z，π/4 弧度对应 -X。某些文献提到过某种叫 $(thing)F3/$ 的东西，但我还不知道它的意义。",
+        cons_about_z: "将弧度角变为单位向量。该向量的 Z 分量为 0。0 弧度对应 -X，π/4 弧度对应 +Y。",
+        scientific_exp: "求所给数与 10^n 相乘的积。其中 n 为尾部的长度。尾部向下代表乘以 10^-n。"
+      }
+    }
+  },
+  hexcasting: {
+    action: {
+      "hextrapats:": {
+        haha_ha_one: "向量之精思，+1型",
+        eno_ah_ahah: "向量之精思，-1型",
+
+        len_eq: "长度相等之馏化",
+        len_neq: "长度不等之馏化",
+
+        in_range: "范围之提整",
+        out_range: "范围之提整，第二型",
+
+        scaled_vec_x: "向量之精思，X第二型",
+        scaled_vec_y: "向量之精思，Y第二型",
+        scaled_vec_z: "向量之精思，Z第二型",
+        scaled_vec_all: "向量之精思，1第二型",
+
+        deg_to_rad: "弧度之纯化",
+        rad_to_deg: "角度之纯化",
+        normalize: "归一之纯化",
+        rot_about_x: "俯仰之馏化",
+        rot_about_y: "偏航之馏化",
+        rot_about_z: "滚转之馏化",
+        cons_about_x: "俯仰之纯化",
+        cons_about_y: "偏航之纯化",
+        cons_about_z: "滚转之纯化",
+
+        retained_comparison: "比较之策略",
+
+        scientific_exp: "科学计数之纯化"
+      },
+
+      "book.hextrapats:": {
+        haha_ha_one:  "向量之精思，+1/-1型",
+
+        len_eq: "长度相等之馏化",
+        len_neq: "长度不等之馏化",
+
+        scaled_vec_x: "向量之精思，+X/-X第二型",
+        scaled_vec_y: "向量之精思，+Y/-Y第二型",
+        scaled_vec_z: "向量之精思，+Z/-Z第二型",
+        scaled_vec_all: "向量之精思，+1/-1第二型",
+      }
+    },
+    "special.hextrapats:": {
+      scaled_vec_x: "向量之精思：(%s, 0, 0)",
+      scaled_vec_y: "向量之精思：(0, %s, 0)",
+      scaled_vec_z: "向量之精思：(0, 0, %s)",
+      scaled_vec_all: "向量之精思：(%s, %s, %s)",
+      retained_comparison: {
+        name: "比较之策略：%s",
+        "op.hexcasting:": {
+          greater: "至大",
+          less: "至小",
+          greater_eq: "至大第二型",
+          less_eq: "至小第二型",
+          equals: "相等",
+          not_equals: "不等"
+        }
+      },
+      scientific_exp: "科学计数之纯化：10^%s"
+    }
+  }
+}
