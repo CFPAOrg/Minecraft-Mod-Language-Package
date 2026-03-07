@@ -8,7 +8,7 @@
 ```
 
 A Spell Construct is a relatively simple device that, 
-when inscribed with a spell and placed into the world, will persistently cast said spell.
+when inscribed with a spell and placed into the world, will persistently cast said spell at the same speed as a player.
 
 
 Constructs are most useful for [long-running](^trickster:concepts/multi_tick) 

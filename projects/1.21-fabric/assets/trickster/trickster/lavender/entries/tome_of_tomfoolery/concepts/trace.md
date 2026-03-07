@@ -11,14 +11,20 @@ signifying *where* in the spell the failure occurred. Stack traces are colon-sep
 
 - # (pound/hashtag) 
 - \> (chevron/angle bracket)
+- & (ampersand symbol)
 - any number
 
 ;;;;;
 
 The numbers are input indexes, 
-while both the chevrons and hashtags indicate a change of context into a different spell fragment.
-The former indicates a fragment provided by the current spell, 
-while the latter means the fragment came from elsewhere.
+while the chevrons, hashtags, and ampersands all indicate a change of context into a different spell fragment.
+
+
+Chevrons indicate a fragment provided by the current spell, 
+while hashtags mean the fragment came from elsewhere.
+
+
+Ampersands on the other hand represent a successful infinite recursion of any kind.
 
 ;;;;;
 
