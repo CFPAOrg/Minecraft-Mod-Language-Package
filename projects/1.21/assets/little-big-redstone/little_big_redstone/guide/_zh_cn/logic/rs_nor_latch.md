@@ -3,7 +3,7 @@ navigation:
   title: "RS或非锁存器"
   icon: "rs_nor_latch"
   parent: little_big_redstone:logic.md
-  position: 23
+  position: 24
 categories:
   - logic
 item_ids:

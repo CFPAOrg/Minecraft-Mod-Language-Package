@@ -3,7 +3,7 @@ navigation:
   title: "脉冲节流器"
   icon: "pulse_throttler"
   parent: little_big_redstone:logic.md
-  position: 19
+  position: 20
 categories:
   - logic
 item_ids:
