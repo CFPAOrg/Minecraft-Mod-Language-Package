@@ -13,6 +13,8 @@ item_ids:
 
 能源输出器是一类线缆子部件，能让ME网络向其面对的机器和存储方块输出Forge能量（FE）或格雷科技能量（EU）。它会自动抽取网络中的能量向外部输出。
 
+## [视频教程](https://youtu.be/UVD8DtrjLb8&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## 使用方法
 
 1. **放置子部件**：将能源输出器放置在ME线缆上，面朝接受能量的方块。

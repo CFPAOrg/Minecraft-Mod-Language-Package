@@ -46,3 +46,4 @@ This block accumulates energy over time from inserted singularities and requires
 
 - Compatible with item handlers on all sides.
 - Exporters or pipes can automate singularity insertion.
+
