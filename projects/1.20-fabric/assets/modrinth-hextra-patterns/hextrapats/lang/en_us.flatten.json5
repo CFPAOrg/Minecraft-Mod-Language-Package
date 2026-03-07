@@ -1,0 +1,134 @@
+{
+  "pages.hextrapats":{
+    "hextrapats_consts.title": "Hextra Constants",
+    "hextrapats_logic.title": "Hextra Logic",
+    "hextrapats_retained_comparison.title": "Retaining Comparisons",
+    "hextrapats_vec_literals.title": "Vector Literals",
+    "hextrapats_math.title": "Hextra Math",
+  },
+  hextrapats: {
+    page: {
+      consts: {
+        one: "The left-hand counter-clockwise pattern adds (1, 1, 1) to the stack; the right-hand clockwise pattern adds (-1, -1, -1)."
+      },
+      logic: {
+        greater: "If the first vector is longer than the second, return True. Otherwise, return False.",
+        less: "If the first vector is shorter than the second, return True. Otherwise, return False.",
+        greater_eq: "If the first vector is longer or the same length as the second, return True. Otherwise, return False.",
+        less_eq: "If the first vector is shorter or the same length as the second, return True. Otherwise, return False.",
+        len_eq: "If the two vectors are the same length (within small tolerance), return True. Otherwise, return False.",
+        len_neq: "If the two vectors are not the same length (outside small tolerance), return True. Otherwise, return False.",
+        in_range: "If the first number is between the second and third, return True. Otherwise, return False. If the first value is a vector, compare its length instead.",
+        "in_range.ops": "The fourth number seems to describe how to check if the value is in the range.$(li)0: min < val < max$(li)1: min <= val < max$(li)2: min < val <= max$(li)3: min <= val <= max",
+        out_range: "If the first number is not between the second and third, return True. Otherwise, return False. If the first value is a vector, compare its length instead.",
+        "out_range.ops": "The fourth number seems to describe how to check if the value is outside the range.$(li)0: val < min or max < val$(li)1: val <= min or max < val$(li)2: val < min or max <= val$(li)3: val <= min or max <= val"
+      },
+      retained_comparison: {
+        intro: "Sometimes, I want operate on two iotas after comparing them, but it gets rather annoying to have to execute $(l:patterns/stackmanip#hexcasting:2dup)$(action)Dioscuri Gambit/$ every time I do.",
+        detail: "With some experimentation, I have found that prepending a comparison with a clockwise triangle will cause the two inputs to not be consumed.",
+        greater: "Comp. Gambit: Maximus",
+        less: "Comp. Gambit: Minimus",
+        greater_eq: "Comp. Gambit: Maximus II",
+        less_eq: "Comp. Gambit: Minimus II",
+        equals: "Comp. Gambit: Equality",
+        not_equals: "Comp. Gambit: Inequality",
+        len_eq: "Comp. Gambit: Len. Eq.",
+        len_neq: "Comp. Gambit: Len. Ineq."
+      },
+      vec_literals: {
+        intro: "Interestingly, attaching the tail of any Vector Reflection to the start of $(l:patterns/numbers)$(action)Number Reflection/$ makes it return a vector.",
+        x: "A head that sharply bends to the left will output a vector along the $(l:patterns/consts#hexcasting:const/vec/x)$(action)X axis/$.",
+        y: "A head that doesn't bend will output a vector along the $(l:patterns/consts#hexcasting:const/vec/y)$(action)Y axis/$.",
+        z: "A head that sharply bends to the right will output a vector along the $(l:patterns/consts#hexcasting:const/vec/z)$(action)Z axis/$.",
+        "1": "A head that slightly bends to the left will output a vector where $(l:patterns/hextrapats_consts#hextrapats:haha_ha_one)$(action)all 3 components are the same/$.",
+        detail: "First, I draw one of the eight shapes shown on the prior pages. Next, the $(italic)angles/$ following will modify a running count starting at 0.$(li)Forward: Add 1$(li)Left: Add 5$(li)Right: Add 10$(li)Sharp Left: Multiply by 2$(li)Sharp Right: Divide by 2.$(br)The clockwise version of the pattern, on the right of the other page, will negate the value at the very end. (The left-hand counter-clockwise version keeps the number positive).$(p)Once I finish drawing, a vector's pushed to the top of the stack.",
+
+        example: {
+          "x10.header": "Example 1",
+          "x10": "This pattern pushes (10, 0, 0).",
+          "y7.header": "Example 2",
+          "y7": "This pattern pushes (0, 7, 0): 5 + 1 + 1.",
+          "z-32.header": "Example 3",
+          "z-32": "This pattern pushes (0, 0, -32): negate 1 + 5 + 10 * 2.",
+          "a4.5.header": "Example 4",
+          "a4.5": "This pattern pushes (4.5, 4.5, 4.5): 5 / 2 + 1 + 1."
+        }
+      },
+      math: {
+        deg_to_rad: "Converts an angle in degrees to an angle in radians. Essentially multiplies by $(l:patterns/consts#hexcasting:const/double/pi)$(action)pi/$ then divides by 180.",
+        rad_to_deg: "Converts an angle in radians to an angle in degrees. Essentially multiplies by 180 then divides by $(l:patterns/consts#hexcasting:const/double/pi)$(action)pi/$.",
+        normalize: "Sets the length of the vector to one.",
+        rot_about_x: "Rotates the vector by the given angle in radians around the X axis.",
+        rot_about_y: "Rotates the vector by the given angle in radians around the Y axis.",
+        rot_about_z: "Rotates the vector by the given angle in radians around the Z axis.",
+        cons_about_x: "Converts an angle in radians to a unit vector where X=0. +Z at 0 radians and +Y at pi/4 radians.",
+        cons_about_y: "Converts an angle in radians to a unit vector where Y=0. +Z at 0 radians and -X at pi/4 radians. I've seen some texts related to this pattern mentioning something called $(thing)F3/$, but I couldn't figure out what that means.",
+        cons_about_z: "Converts an angle in radians to a unit vector where Z=0. -X at 0 radians and +Y at pi/4 radians.",
+        scientific_exp: "Multiplies the number by 10^n or 10^-n, where n is the length of the tail, depending on whether the start is similar to $(l:patterns/math#hexcasting:mul)$(action)Multiplicative Distillation/$ or $(l:patterns/math#hexcasting:div)$(action)Division Distillation/$."
+      }
+    }
+  },
+  hexcasting: {
+    action: {
+      "hextrapats:": {
+        haha_ha_one: "Vector Reflection +1",
+        eno_ah_ahah: "Vector Reflection -1",
+
+        len_eq: "Length Equality Distillation",
+        len_neq: "Length Inequality Distillation",
+
+        in_range: "Range Exaltation",
+        out_range: "Range Exaltation II",
+
+        scaled_vec_x: "Vector Reflection X II",
+        scaled_vec_y: "Vector Reflection Y II",
+        scaled_vec_z: "Vector Reflection Z II",
+        scaled_vec_all: "Vector Reflection 1 II",
+
+        deg_to_rad: "Radian Purification",
+        rad_to_deg: "Degree Purification",
+        normalize: "Norm Purification",
+        rot_about_x: "Pitch Distillation",
+        rot_about_y: "Yaw Distillation",
+        rot_about_z: "Roll Distillation",
+        cons_about_x: "Pitch Purification",
+        cons_about_y: "Yaw Purification",
+        cons_about_z: "Roll Purification",
+
+        retained_comparison: "Comparison Gambit",
+
+        scientific_exp: "Scientific Purification"
+      },
+
+      "book.hextrapats:": {
+        haha_ha_one:  "Vector Rfln. +1/-1",
+
+        len_eq: "Length Equality Dstl.",
+        len_neq: "Length Inequality Dstl.",
+
+        scaled_vec_x: "Vector Rfln. +X/-X II",
+        scaled_vec_y: "Vector Rfln. +Y/-Y II",
+        scaled_vec_z: "Vector Rfln. +Z/-Z II",
+        scaled_vec_all: "Vector Rfln. +1/-1 II",
+      }
+    },
+    "special.hextrapats:": {
+      scaled_vec_x: "Vector Reflection: (%s, 0, 0)",
+      scaled_vec_y: "Vector Reflection: (0, %s, 0)",
+      scaled_vec_z: "Vector Reflection: (0, 0, %s)",
+      scaled_vec_all: "Vector Reflection: (%s, %s, %s)",
+      retained_comparison: {
+        name: "Comparison Gambit: %s",
+        "op.hexcasting:": {
+          greater: "Maximus",
+          less: "Minimus",
+          greater_eq: "Maximus II",
+          less_eq: "Minimus II",
+          equals: "Equality",
+          not_equals: "Inequality"
+        }
+      },
+      scientific_exp: "Scientific Purification: 10^%s"
+    }
+  }
+}
