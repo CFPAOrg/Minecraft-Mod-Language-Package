@@ -2,9 +2,10 @@
   "pages.hextrapats":{
     "hextrapats_consts.title": "Hextra Constants",
     "hextrapats_logic.title": "Hextra Logic",
-    "hextrapats_retained_comparison.title": "Retaining Comparisons",
+    "hextrapats_nocon.title": "Non-consuming Logic",
     "hextrapats_vec_literals.title": "Vector Literals",
     "hextrapats_math.title": "Hextra Math",
+    "hextrapats_lists.title": "Hextra Lists",
   },
   hextrapats: {
     page: {
@@ -23,17 +24,10 @@
         out_range: "If the first number is not between the second and third, return True. Otherwise, return False. If the first value is a vector, compare its length instead.",
         "out_range.ops": "The fourth number seems to describe how to check if the value is outside the range.$(li)0: val < min or max < val$(li)1: val <= min or max < val$(li)2: val < min or max <= val$(li)3: val <= min or max <= val"
       },
-      retained_comparison: {
+      nocon: {
         intro: "Sometimes, I want operate on two iotas after comparing them, but it gets rather annoying to have to execute $(l:patterns/stackmanip#hexcasting:2dup)$(action)Dioscuri Gambit/$ every time I do.",
+        name: "Comparison Gambit",
         detail: "With some experimentation, I have found that prepending a comparison with a clockwise triangle will cause the two inputs to not be consumed.",
-        greater: "Comp. Gambit: Maximus",
-        less: "Comp. Gambit: Minimus",
-        greater_eq: "Comp. Gambit: Maximus II",
-        less_eq: "Comp. Gambit: Minimus II",
-        equals: "Comp. Gambit: Equality",
-        not_equals: "Comp. Gambit: Inequality",
-        len_eq: "Comp. Gambit: Len. Eq.",
-        len_neq: "Comp. Gambit: Len. Ineq."
       },
       vec_literals: {
         intro: "Interestingly, attaching the tail of any Vector Reflection to the start of $(l:patterns/numbers)$(action)Number Reflection/$ makes it return a vector.",
@@ -65,6 +59,10 @@
         cons_about_y: "Converts an angle in radians to a unit vector where Y=0. +Z at 0 radians and -X at pi/4 radians. I've seen some texts related to this pattern mentioning something called $(thing)F3/$, but I couldn't figure out what that means.",
         cons_about_z: "Converts an angle in radians to a unit vector where Z=0. -X at 0 radians and +Y at pi/4 radians.",
         scientific_exp: "Multiplies the number by 10^n or 10^-n, where n is the length of the tail, depending on whether the start is similar to $(l:patterns/math#hexcasting:mul)$(action)Multiplicative Distillation/$ or $(l:patterns/math#hexcasting:div)$(action)Division Distillation/$."
+      },
+      lists: {
+        split: "Splits a list at the given index. [a, b, c, d, e], 2 will return [a, b], [c, d, e].",
+        swindle: "Reorders the elements of a list the same way $(l:patterns/stackmanip#hexcasting:swizzle)$(action)Swindler's Gambit/$ reorders the stack. Inputting a negative code will reorder the elements at the start instead of the end."
       }
     }
   },
@@ -95,9 +93,21 @@
         cons_about_y: "Yaw Purification",
         cons_about_z: "Roll Purification",
 
-        retained_comparison: "Comparison Gambit",
+        "nocon/": {
+          greater: "Comparison Gambit: Maximus",
+          less: "Comparison Gambit: Minimus",
+          greater_eq: "Comparison Gambit: Maximus II",
+          less_eq: "Comparison Gambit: Minimus II",
+          eq: "Comparison Gambit: Equality",
+          neq: "Comparison Gambit: Inequality",
+          len_eq: "Comparison Gambit: Length Equality",
+          len_neq: "Comparison Gambit: Length Inequality",
+        },
 
-        scientific_exp: "Scientific Purification"
+        scientific_exp: "Scientific Purification",
+
+        split_list: "Separation Gambit",
+        swindle_list: "Swindler's Distillation"
       },
 
       "book.hextrapats:": {
@@ -110,6 +120,17 @@
         scaled_vec_y: "Vector Rfln. +Y/-Y II",
         scaled_vec_z: "Vector Rfln. +Z/-Z II",
         scaled_vec_all: "Vector Rfln. +1/-1 II",
+
+        "nocon/": {
+          greater: "Comp. Gambit: Maximus",
+          less: "Comp. Gambit: Minimus",
+          greater_eq: "Comp. Gambit: Maximus II",
+          less_eq: "Comp. Gambit: Minimus II",
+          eq: "Comp. Gambit: Equality",
+          neq: "Comp. Gambit: Inequality",
+          len_eq: "Comp. Gambit: Len. Eq.",
+          len_neq: "Comp. Gambit: Len. Ineq."
+        }
       }
     },
     "special.hextrapats:": {
@@ -117,17 +138,6 @@
       scaled_vec_y: "Vector Reflection: (0, %s, 0)",
       scaled_vec_z: "Vector Reflection: (0, 0, %s)",
       scaled_vec_all: "Vector Reflection: (%s, %s, %s)",
-      retained_comparison: {
-        name: "Comparison Gambit: %s",
-        "op.hexcasting:": {
-          greater: "Maximus",
-          less: "Minimus",
-          greater_eq: "Maximus II",
-          less_eq: "Minimus II",
-          equals: "Equality",
-          not_equals: "Inequality"
-        }
-      },
       scientific_exp: "Scientific Purification: 10^%s"
     }
   }
