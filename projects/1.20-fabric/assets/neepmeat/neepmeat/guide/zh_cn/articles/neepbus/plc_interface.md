@@ -1,6 +1,7 @@
 ---
 id: plc_neepbus_interface
 ---
+
 # PLC NEEP总线接口
 
 PLC可直接读写NEEP总线的组件，但无法被写入。PLC NEEP总线接口会发出中断请求，PLC可据此在写事件出现时立即回应。

@@ -1,6 +1,7 @@
 ---
 id: word_definition
 ---
+
 # THORD词的定义
 
 THORD中的词相当于其他语言的函数。大多数字符序列均是有效的词名。

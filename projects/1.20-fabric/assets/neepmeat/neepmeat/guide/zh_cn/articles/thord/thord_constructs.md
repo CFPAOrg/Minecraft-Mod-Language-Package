@@ -1,6 +1,7 @@
 ---
 id: thord_constructs
 ---
+
 # 程序结构
 
 ## IF-ELSE-THEN

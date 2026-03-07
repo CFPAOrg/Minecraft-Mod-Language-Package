@@ -1,6 +1,7 @@
 ---
 id: plc_workbenches
 ---
+
 # PLC工作站
 
 工作站中的物品和实体可由PLC操作机构操纵。
