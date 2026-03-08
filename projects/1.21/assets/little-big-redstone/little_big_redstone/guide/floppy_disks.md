@@ -66,9 +66,10 @@ By pressing **<KeyBind id="key.sneak" />** + **<KeyBind id="key.use" />** on a m
 it will store the microchip's program into the floppy disk.
 
 Once a program has been stored in the floppy disk, you can press **<KeyBind id="key.use" />** on a microchip to install
-it, given that you have the logic components and redstone bits necessary. Items in [Logic Arrays](logic_arrays.md)
-count as items in your inventory for the sake of installing programs. The items required to install the program will
-display above the hotbar when looking at a microchip with a floppy disk in hand.
+it, given that you have the logic components and redstone bits necessary. This can also be done when holding a floppy
+disk in your off hand while placing a microchip. Items in [Logic Arrays](logic_arrays.md) count as items in your
+inventory for the sake of installing programs. The items required to install the program will display above the hotbar
+when looking at a microchip with a floppy disk in hand.
 
 Programs can be saved and loaded to and from your local computer too! Open the menu for this by pressing
 **<KeyBind id="key.use" />** while holding a floppy disk (and not looking at a microchip). The "Save" button will save
