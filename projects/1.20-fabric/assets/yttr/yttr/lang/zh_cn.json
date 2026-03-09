@@ -2,18 +2,31 @@
 	"lib39:enable_enhanced_lang": true,
 	"itemGroup.yttr": {
 		"parent": "Yttr",
-		"resources": "丨资源（Resources）",
-		"filtering": "丨过滤（Filtering）",
-		"devices": "丨设备（Devices）",
-		"mechanisms": "丨机件（Mechanisms）",
-		"equipment": "丨装备（Equipment）",
-		"snare": "丨稳定的罗网（Full Snares）",
-		"lamp": "丨灯具与激光（Lamps & Lazors）",
-		"decoration": "丨装饰（Decoration）",
-		"potion": "丨药水（Potions）",
-		"ruined": "丨废土（Wasteland）",
-		"inred": "丨电路（Circuitry）",
-		"misc": "丨杂项（Miscellaneous）"
+		"parent._explanation": "Root creative tab, also used as a prefix in the full tab title.",
+		"resources": "资源",
+		"resources._explanation": "Consumable resources, usually found in the world - also some intermediate crafting items.",
+		"filtering": "过滤",
+		"filtering._explanation": "Things to do with the unfinished Void Filtering mechanic.",
+		"devices": "设备",
+		"devices._explanation": "Blocks the player interacts with directly, generally with a GUI of their own.",
+		"mechanisms": "机件",
+		"mechanisms._explanation": "Components that don't do anything on their own, and are parts of larger builds usually involving redstone.",
+		"equipment": "装备",
+		"equipment._explanation": "Armor, tools, and trinkets. Things the player uses directly.",
+		"snare": "稳定的罗网",
+		"snare._explanation": "Snares pre-filled with every type of mob in the game.",
+		"lamp": "灯具与激光",
+		"lamp._explanation": "All the variants of lamps and lazor emitters.",
+		"decoration": "装饰",
+		"decoration._explanation": "Decorative blocks and spawn eggs for decorative entities.",
+		"potion": "药水",
+		"potion._explanation": "Yttr's Plastic and Mercurial potion variants.",
+		"ruined": "废土",
+		"ruined._explanation": "Blocks that spawn in the Wasteland. Includes every Ruined block.",
+		"inred": "电路",
+		"inred._explanation": "Cuprosteel circuitry bits and pieces.",
+		"misc": "杂项",
+		"misc._explanation": "Anything that doesn't fit in the other categories."
 	},
 	"item.yttr": {
 		"rifle": "钇金步枪",
@@ -67,12 +80,12 @@
 		"brookite_hoe": "板钛矿锄",
 		"drop_of_continuity": "续变滴露",
 		"lootbox_of_continuity": "续变滴露",
-		"disc_of_continuity": "续变盘碟",
 		"music_disc_papillons": "音乐唱片",
 		"music_disc_void": "§8音乐唱片",
 		"music_disc_desert_heat": "音乐唱片",
 		"music_disc_torus": "音乐唱片",
 		"music_disc_memorandum": "音乐唱片",
+		"music_disc_enceladus": "音乐唱片",
 		"levitation_splash_potion": "喷溅型飘浮药水",
 		"rubble": "§7碎石",
 		"shifter": "续变替换器",
@@ -92,13 +105,16 @@
 		"delrene_scrap": "琼烯塑料碎片",
 		"crease": "褶皱",
 		"haemopal": "血欧泊",
+		"haemopal._explanation": "Haemo- + Opal. An opal made of blood, metaphorically.",
 		"beetopal": "血欧泊……？",
 		"empty_haemopal": "§k空虚的灵魂",
 		"spark": "火花",
+		"spark._explanation": "As in the 'spark of life'.",
 		"platforms": "续变厚鞋底",
 		"diffractor": "续变衍射器",
 		"glitchwep": "亚稳§k武器",
 		"nooch": "营养末地石粉",
+		"nooch._explanation": "Slang term for nutritional yeast, a vegan cheese substitute. Referring to 'the moon is made of cheese' - the End is made of Nooch.",
 		"magnet_belt": "磁力腰带",
 		"deer_spawn_egg": "鹿刷怪蛋",
 		"antler_potion": "琼烯药水",
@@ -110,8 +126,9 @@
 		"mercurial_potion.prefix": "渗汞{}",
 		"antler_potion.prefix": "渗塑料{}",
 		"ultrapure_tool.prefix": "超纯{}",
-		"glitchwep_explanation": "[THIS STRING DOES NOT NEED TRANSLATED, IT IS A NOTE *FOR* TRANSLATORS] This syntax sucks, but the way the animation works needs to be aware of the different parts of the string. Square brackets delineate a group that is subject to animation, and they are prefixed with either a or b to specify which color they use. English assigns color A to the word Metastable, and the color B to the Rifle/Sword/etc word. For animating *part* of the string, such as grammatical gender suffixes, multiple groups with the same color can be specified. When the animation is playing, two groups at the same index that have not changed will not be animated. Every line must have the same number of groups. Text outside of groups will never be animated and uses the default color, which is useful for spaces or punctuation. Also, you can have as many or as few variants here as you like - the line count does not need to match English. The interpolation palette is a variety of characters with differing lengths, used to provide an effect sort of like the MAGIC format code but with more control.",
+		"glitchwep.interpolation_palette._explanation": "A variety of characters with differing lengths, randomly chosen from to smoothly interpolate the length of the string between weapon forms. Sort of like the MAGIC formatting code, but with more control.",
 		"glitchwep.interpolation_palette": "亚军农冲刀利削剑加动匕发小弯弹手枪步泵炮燧短稳脉长霰首 ./|[]()",
+		"glitchwep.gun._explanation": "This syntax sucks, but the way the animation works needs to be aware of the different parts of the string. Square brackets delineate a group that is subject to animation, and they are prefixed with either a or b to specify which color they use. English assigns color A to the word Metastable, and the color B to the Rifle/Sword/etc word. For animating *part* of the string, such as grammatical gender suffixes, multiple groups with the same color can be specified. When the animation is playing, two groups at the same index that have not changed will not be animated. Every line must have the same number of groups. Text outside of groups will never be animated and uses the default color, which is useful for spaces or punctuation. Also, you can have as many or as few variants here as you like - the line count does not need to match English.",
 		"glitchwep.gun": [
 			"a[亚稳]b[枪]",
 			"a[亚稳]b[步枪]",
@@ -123,6 +140,7 @@
 			"a[亚稳]b[霰弹枪]",
 			"a[亚稳]b[加农炮]"
 		],
+		"glitchwep.sword._explanation": "This syntax sucks, but the way the animation works needs to be aware of the different parts of the string. Square brackets delineate a group that is subject to animation, and they are prefixed with either a or b to specify which color they use. English assigns color A to the word Metastable, and the color B to the Rifle/Sword/etc word. For animating *part* of the string, such as grammatical gender suffixes, multiple groups with the same color can be specified. When the animation is playing, two groups at the same index that have not changed will not be animated. Every line must have the same number of groups. Text outside of groups will never be animated and uses the default color, which is useful for spaces or punctuation. Also, you can have as many or as few variants here as you like - the line count does not need to match English.",
 		"glitchwep.sword": [
 			"a[亚稳]b[剑]",
 			"a[亚稳]b[刀]",
@@ -160,6 +178,7 @@
 		"spectral_axe.tip": [
 			"§5§o它真的存在吗？"
 		],
+		"spectral_axe.tip._explanation": "The Spectral Axe is not truly 'real' and is invisible to other players.",
 		"cleaver.tip": [
 			"§7能切开方块！产生的切面相当平滑。"
 		],
@@ -173,6 +192,7 @@
 			"",
 			"§7能让骷髅分类机匹配NBT。"
 		],
+		"goggles.tip._explanation": "Incorrect expansion of what F3 stands for. It references the fact you can see advanced tooltips with F3+H.",
 		"shifter.tip": [
 			"§7用副手中的东西替换方块。"
 		],
@@ -200,7 +220,8 @@
 		"music_disc_void.desc": "§0Aureate - void",
 		"music_disc_desert_heat.desc": "Aureate - desert heat",
 		"music_disc_torus.desc": "Aureate - torus",
-		"music_disc_memorandum.desc": "unascribed - memorandum",
+		"music_disc_memorandum.desc": "exa - memorandum",
+		"music_disc_enceladus.desc": "Bluelily - Enceladus",
 		"neodymium_disc.desc": "???",
 		"ammo_can.prefixed": "{}步枪弹筒",
 		"ammo_can.shots": "{1}/{2} 弹",
@@ -298,6 +319,7 @@
 	},
 	"block.yttr": {
 		"gadolinite": "硅铍钇矿矿石",
+		"gadolinite._explanation": "Real-world ore that is a mixture of various lanthanides with iron and beryllium.",
 		"yttrium_block": "钇块",
 		"power_meter": "能量计",
 		"void": "虚空",
@@ -310,18 +332,26 @@
 		"ruined_bedrock": "被粉碎的基岩",
 		"glassy_void": "玻化虚空",
 		"squeeze_log": "深海泵水木茎",
+		"squeeze_log._explanation": "Reference to a 2017 Google Translate bug with repetitions of 'egu' when translating from Japanese to English. 'Delicaceness of deep-sea squeeze trees'",
 		"stripped_squeeze_log": "去皮深海泵水木茎",
+		"stripped_squeeze_log._explanation": "Reference to a 2017 Google Translate bug with repetitions of 'egu' when translating from Japanese to English. 'Delicaceness of deep-sea squeeze trees'",
 		"squeeze_leaves": "深海泵水树叶",
+		"squeeze_leaves._explanation": "Reference to a 2017 Google Translate bug with repetitions of 'egu' when translating from Japanese to English. 'Delicaceness of deep-sea squeeze trees'",
 		"squeeze_sapling": "深海泵水树苗",
+		"squeeze_sapling._explanation": "Reference to a 2017 Google Translate bug with repetitions of 'egu' when translating from Japanese to English. 'Delicaceness of deep-sea squeeze trees'",
 		"squeezed_leaves": "被挤压的深海泵水树叶",
+		"squeezed_leaves._explanation": "Not usually seen. Technical internal block while Squeeze Leaves are playing their squeeze animation after clicking.",
 		"delicace": "琼浆玉露",
+		"delicace._explanation": "Reference to a 2017 Google Translate bug with repetitions of 'egu' when translating from Japanese to English. 'Delicaceness of deep-sea squeeze trees'",
 		"yttrium_plating": "钇金属板",
 		"glassy_void_pane": "玻化虚空板",
 		"heavy_yttrium_plate": "重质钇测重压力板",
 		"light_yttrium_plate": "轻质钇测重压力板",
 		"centrifuge": "离心机",
 		"dopper": "双漏斗",
+		"dopper._explanation": "As in Dual Hopper.",
 		"flopper": "侧漏斗",
+		"flopper._explanation": "As in Flipped Hopper, and reference to the Minecraft 2.0 April Fools where Droppers were replaced with Floppers.",
 		"diving_plate": "潜虚站",
 		"suit_station": "潜虚套装站",
 		"table": "桌子",
@@ -449,9 +479,8 @@
 		"red_global_pinch_glom": "红色全局捏合集物器",
 		"white_global_pinch_glom": "白色全局捏合集物器",
 		"yellow_global_pinch_glom": "黄色全局捏合集物器",
-		"inred_block": "红信方块",
 		"inred_cable": "铜钢导线",
-		"inred_scaffold": "红信支架",
+		"inred_cable._explanation": "Cupro- (as in copper) + Steel (as in iron).",
 		"inred_and_gate": "与门",
 		"inred_not_gate": "非门",
 		"inred_xor_gate": "异或门",
@@ -460,12 +489,12 @@
 		"inred_transistor": "晶体管",
 		"inred_encoder": "编码器",
 		"inred_oscillator": "振荡器",
-		"inred_demo_cycler": "手动循环器",
 		"lamp": "灯",
 		"fixture": "固定灯",
 		"cage_lamp": "笼灯",
 		"panel": "灯板",
 		"lazor_emitter": "激光发射器",
+		"lazor_emitter._explanation": "All occurences of 'laser' in Yttr are intentionally mispelled as 'lazor' due to a very old inside-joke originating in the personal 1.7 mod these first appeared in.",
 		"black_void_glass": "黑色染虚玻璃",
 		"gray_void_glass": "暗色染虚玻璃",
 		"silver_void_glass": "浅色染虚玻璃",
@@ -574,6 +603,7 @@
 			"§5§o基本上就是个无限的熵汇。",
 			"§5§o不要跟麦克斯韦说。"
 		],
+		"dry_ice.tip._explanation": "Reference to Maxwell's Demon, a thought experiment relating to an infinite entropy sink.",
 		"grasper.tip": [
 			"§7拾取附近物品，并将它们",
 			"§7放入自身下方的容器。"
@@ -591,6 +621,12 @@
 			"§5§o伤害概不负责。"
 		],
 		"bogged_note_block.tip": [
+			"§7会等待半个红石刻再发出声音。"
+		],
+		"bogged_high_note_block.tip": [
+			"§7会等待半个红石刻再发出声音。"
+		],
+		"bogged_low_note_block.tip": [
 			"§7会等待半个红石刻再发出声音。"
 		],
 		"ruined_container.tip": [
@@ -827,12 +863,21 @@
 		"bleeding": "出血",
 		"potion_sickness": "药水拮抗",
 		"macroplastics": "塑料碎粒",
-		"antlers": "鹿角"
+		"antlers": "鹿角",
+		"pallor": "苍白皮肤"
+	},
+	"item.minecraft": {
+		"lingering_potion.effect.yttr.pallor": "滞留型苍白皮肤药水",
+		"potion.effect.yttr.pallor": "苍白皮肤药水",
+		"splash_potion.effect.yttr.pallor": "喷溅型苍白皮肤药水",
+		"tipped_arrow.effect.yttr.pallor": "苍白皮肤之箭"
 	},
 	"enchantment.yttr": {
 		"disjunction": "断析",
+		"disjunction._explanation": "Same name as RedPower2's equivalent enchantment.",
 		"disjunction.desc": "增加对末影生物的伤害。",
 		"vorpal": "重斩",
+		"vorpal._explanation": "Reference to RedPower2, which is in turn a reference to a partially-English nonsense poem, The Jabberwocky. Has become a somewhat common term in games referring to a sword that is extremely sharp and/or is capable of beheading.",
 		"vorpal.desc": "小概率在击中时造成大量伤害。",
 		"springing": "簧跃",
 		"springing.desc": "增加跳跃高度。",
@@ -895,8 +940,11 @@
 		"uncloak": "玩家：解除衍蔽",
 		"cloak_expire": "衍蔽：即将解除",
 		"glitchwep_transform": "武器：变形",
+		"glitchwep_summon": "亚稳武器：显形",
+		"glitchwep_dispel": "亚稳武器：消散",
 		"glitchrifle_fire": "亚稳枪：发射",
 		"glitchsword_hit": "亚稳剑：劈砍",
+		"glitchrifle_fire_dud": "亚稳枪：咔哒",
 		"boxe_open": "盒牌®盒：开启",
 		"boxe_close": "盒牌®盒：关闭"
 	},
@@ -928,7 +976,8 @@
 		"glitchboom": "组成{1}的数据被{2}打散了",
 		"glitchboom.item": "组成{1}的数据被{2}用{3}打散了",
 		"soul_centrifuge": "{1}的灵魂被扯成了碎屑",
-		"pinch": "{1}被捏进了捏合位点"
+		"pinch": "{1}被捏进了捏合位点",
+		"pallor": "{1}被晒死了"
 	},
 	"yttr.rifle_mode": {
 		"damage": "射线",
@@ -967,8 +1016,10 @@
 		"inred.multimeter.block": "方块发出的信号为0b11_1111 (63)",
 		"void_bucket.destroyable": "右击以§c销毁{1}个{2}",
 		"void_bucket.destroyable.flair": "它将会永久消失！（真的很久！）",
+		"void_bucket.destroyable.flair._explanation": "Quoting vanilla's server/world deletion warnings.",
 		"void_bucket.bundle": "右击以§c销毁§r收纳袋中所有物品",
 		"void_bucket.bundle.flair": "它们将会永久消失！（真的很久！）",
+		"void_bucket.bundle.flair._explanation": "Quoting vanilla's server/world deletion warnings.",
 		"too_weak.soul": "你的灵魂过于孱弱，无法破坏此方块",
 		"too_weak.body": "你的身体过于孱弱，无法破坏此方块",
 		"haemopal.self_own": "它似乎在随着你的心脏搏动。",
@@ -1072,347 +1123,437 @@
 	"advancements.yttr": {
 		"root": {
 			"title": "Yttr  ",
-			"desc": "虚空科技与各类好物"
+			"desc": "虚空科技与各类好物",
+			"title._explanation": "Root advancement, required by Minecraft. Spaces are to prevent overly aggressive word-wrap on the description."
 		},
 		"obtain_xl_iron_ingot": {
 			"title": "这不是铁吗",
-			"desc": "烧炼硅铍钇矿以获得大块铁锭"
+			"desc": "烧炼硅铍钇矿以获得大块铁锭",
+			"title._explanation": "Reference to the vanilla Isn't It Iron Pick advancement."
 		},
 		"break_root_of_continuity": {
 			"title": "混乱",
-			"desc": "破坏一个续变之根，然后马上找掩体"
+			"desc": "破坏一个续变之根，然后马上找掩体",
+			"title._explanation": "Breaking a Root of Continuity causes all endermen in a large range to become hostile toward the breaker."
 		},
 		"burn_drop_of_continuity": {
 			"title": "免费的东西",
-			"desc": "烧蚀一个续变滴露，以获得一件随机礼物"
+			"desc": "烧蚀一个续变滴露，以获得一件随机礼物",
+			"title._explanation": "Drops of Continuity are originally a reference to Aether II Continuum Orbs, which gave you a random item."
 		},
 		"use_shifter": {
 			"title": "以此换彼",
-			"desc": "使用续变替换器"
+			"desc": "使用续变替换器",
+			"title._explanation": "English set phrase."
 		},
 		"use_shifter_a_lot": {
 			"title": "马力全开",
-			"desc": "使用续变替换器替换10000个方块"
+			"desc": "使用续变替换器替换10000个方块",
+			"title._explanation": "In reference to shifting a car through gears."
 		},
 		"use_projector": {
 			"title": "彩虹路",
-			"desc": "使用续变投影器"
+			"desc": "使用续变投影器",
+			"title._explanation": "In reference to Mario Kart."
 		},
 		"use_projector_for_fall": {
 			"title": "摔落缓冲+",
-			"desc": "使用续变投影器抵消一次长距离摔落"
+			"desc": "使用续变投影器抵消一次长距离摔落",
+			"title._explanation": "Referring to vanilla's Feather Falling enchantment."
 		},
 		"immortalize_platform": {
 			"title": "我想还是留着吧",
-			"desc": "永久化一个续变平台"
+			"desc": "永久化一个续变平台",
+			"title._explanation": "May be an English set phrase?"
 		},
 		"obtain_rifle": {
 			"title": "重要的事情说三遍",
-			"desc": "获得居位其三的钇金步枪"
+			"desc": "获得居位其三的钇金步枪",
+			"title._explanation": "Yttr is the third of a series of mods of ours that add a rifle made of Yttrium. The second iteration was called the Lanthanide Rifle, however."
 		},
 		"break_bedrock": {
 			"title": "也没那么硬",
-			"desc": "破坏基岩"
+			"desc": "破坏基岩",
+			"title._explanation": "English set phrase."
 		},
 		"open_geyser": {
 			"title": "底下的东西",
-			"desc": "在基岩层中破开一个洞，打开一处虚空涌泉"
+			"desc": "在基岩层中破开一个洞，打开一处虚空涌泉",
+			"title._explanation": "Not intentionally a reference to anything. Shares its name with a 2007 Runescape quest and a 2020 movie."
 		},
 		"name_geyser": {
 			"title": "起地名2",
-			"desc": "在虚空涌泉附近放置命过名的潜虚站，以为涌泉命名"
+			"desc": "在虚空涌泉附近放置命过名的潜虚站，以为涌泉命名",
+			"title._explanation": "Lanthanoid, Yttr's 1.7 predecessor, had two achievements called 'Name A Place...' and '...Save A Life'. Yttr does not remove the ability to see coordinates, so the latter wouldn't fit, but the former still does."
 		},
 		"use_rifle_scope": {
 			"title": "隧道视觉",
-			"desc": "持有钇金步枪时透过其瞄准镜射击"
+			"desc": "持有钇金步枪时透过其瞄准镜射击",
+			"title._explanation": "English idiom."
 		},
 		"shoot_something_far_away": {
 			"title": "瞄准零距离",
-			"desc": "打开钇金步枪的瞄准镜，击中至少100格远的事物"
+			"desc": "打开钇金步枪的瞄准镜，击中至少100格远的事物",
+			"title._explanation": "English set phrase, and nod to the removed Sniper Duel vanilla achievement."
 		},
 		"obtain_upgraded_rifle": {
 			"title": "这个是我的",
-			"desc": "给钇金步枪升级"
+			"desc": "给钇金步枪升级",
+			"title._explanation": "English military set phrase. 'This is my rifle. There are many like it, but this one is mine.'"
 		},
 		"wear_full_diving_suit": {
 			"title": "锡罐",
-			"desc": "穿戴整套潜虚套装"
+			"desc": "穿戴整套潜虚套装",
+			"title._explanation": "Reference to David Bowie - Space Oddity."
 		},
 		"enter_wasteland": {
 			"title": "时间之齿",
-			"desc": "找到废土"
+			"desc": "找到废土",
+			"title._explanation": "Reference to an old abandoned tool for processing Minecraft worlds to make them look decayed, named Teeth of Time."
 		},
 		"break_ruined": {
 			"title": "熟悉得出奇",
-			"desc": "破坏一个毁坏的方块"
+			"desc": "破坏一个毁坏的方块",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"enter_scorched_summit": {
 			"title": "等等，还没完呢",
-			"desc": "找到焦熔顶峰"
+			"desc": "找到焦熔顶峰",
+			"title._explanation": "English set phrase from infomercials."
 		},
 		"levitation_in_scorched": {
 			"title": "把我从这里弄下去",
-			"desc": "在焦熔顶峰找到一个飘浮的发射器"
+			"desc": "在焦熔顶峰找到一个飘浮的发射器",
+			"title._explanation": "English set phrase."
 		},
 		"cleave_block": {
 			"title": "禁忌的形状",
-			"desc": "使用虚空切割刀修整方块的外形"
+			"desc": "使用虚空切割刀修整方块的外形",
+			"title._explanation": "Sloped blocks are not a permissible shape in vanilla, so they are 'forbidden'."
 		},
 		"cleave_many_blocks": {
 			"title": "禁忌的建筑者",
-			"desc": "切削1000个方块"
+			"desc": "切削1000个方块",
+			"title._explanation": "Sloped blocks are not a permissible shape in vanilla, so they are 'forbidden'."
 		},
 		"obtain_bogged_note_block": {
 			"title": "延迟半拍",
-			"desc": "获得一个黏附音符盒"
+			"desc": "获得一个黏附音符盒",
+			"title._explanation": "In reference to the fact they are delayed by half a redstone tick. English set phrase."
 		},
 		"obtain_special_note_block": {
 			"title": "音调挪移",
-			"desc": "获得低音或高音音符盒"
+			"desc": "获得低音或高音音符盒",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"obtain_lamp": {
 			"title": "红石的力量",
-			"desc": "获得任意灯具"
+			"desc": "获得任意灯具",
+			"title._explanation": "In reference to RedPower, the b1.7.3 - 1.4.7 mod that first added lamps like these."
 		},
 		"snare_block_entity": {
 			"title": "转移",
-			"desc": "用罗网拾取容器方块"
+			"desc": "用罗网拾取容器方块",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"snare_living_entity": {
 			"title": "纠缠",
-			"desc": "用罗网拾取活物"
+			"desc": "用罗网拾取活物",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"obtain_aware_hopper": {
-			"title": "切切拼拼",
-			"desc": "一阵头脑发热后，你将僵尸和末影人拼成了一台知能漏斗"
+			"title": "头颅装配",
+			"desc": "一阵头脑发热后，你将僵尸和末影人拼成了一台知能漏斗",
+			"title._explanation": "Reference to EnderIO's Slice'N'Splice machine."
 		},
 		"obtain_skeletal_sorter": {
 			"title": "左右分类",
-			"desc": "将骷髅转化成骷髅分类机"
+			"desc": "将骷髅转化成骷髅分类机",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"use_effector": {
 			"title": "打孔",
-			"desc": "使用虚空效应器穿过固体方块"
+			"desc": "使用虚空效应器穿过固体方块",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"kill_with_effector": {
 			"title": "掘一死战锦标赛",
-			"desc": "使用虚空效应器击杀某物"
+			"desc": "使用虚空效应器击杀某物",
+			"title._explanation": "Literal, no additional meaning. Spleef is a (formerly?) common Minecraft competitive game, where you try to mine blocks underneath others to make them fall and lose."
 		},
 		"obtain_chute": {
 			"title": "向下深入",
-			"desc": "获得一个溜槽"
+			"desc": "获得一个溜槽",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"obtain_levitation_chamber": {
 			"title": "向上飘浮",
-			"desc": "获得上浮室"
+			"desc": "获得上浮室",
+			"title._explanation": "Literal, no additional meaning. Opposite of the Chute advancement."
 		},
 		"obtain_squeeze_stem": {
 			"title": "海底的树",
-			"desc": "找到并摧毁深海泵水树"
+			"desc": "找到并摧毁深海泵水树",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"squeeze_leaves": {
 			"title": "开闸放水",
-			"desc": "挤压深海泵水树叶以填满周围区域"
+			"desc": "挤压深海泵水树叶以填满周围区域",
+			"title._explanation": "Reference to BuildCraft's Flood Gate."
 		},
 		"dive": {
 			"title": "循环通路",
-			"desc": "潜入基岩下方"
+			"desc": "潜入基岩下方",
+			"title._explanation": "Reference to a Petriform song title."
 		},
 		"obtain_yttrium_ingot": {
 			"title": "这不是铁",
-			"desc": "用高炉烧炼硅铍钇矿以获得钇锭"
+			"desc": "用高炉烧炼硅铍钇矿以获得钇锭",
+			"title._explanation": "Another reference to vanilla's Isn't It Iron Pick advancement."
 		},
 		"obtain_brookite_tool": {
 			"title": "这不是铁镐",
-			"desc": "制造任意板钛矿工具"
+			"desc": "制造任意板钛矿工具",
+			"title._explanation": "Another reference to vanilla's Isn't It Iron Pick advancement."
 		},
 		"obtain_snare": {
 			"title": "为野外狩猎量身打造",
-			"desc": "制造一个罗网"
+			"desc": "制造一个罗网",
+			"title._explanation": "Referring to MineFactory's Safari Net, which is in turn a reference to Safari Balls from Pokemon."
 		},
 		"obtain_glowing_gas": {
 			"title": "别闻这个",
-			"desc": "用钇块挤压菌光体以获取菌光气"
+			"desc": "用钇块挤压菌光体以获取菌光气",
+			"title._explanation": "Catchphrase from Will It Blend, a viral YouTube advertisement series for blenders around 2007."
 		},
 		"activate_cuprosteel_plate": {
 			"title": "电动力学",
-			"desc": "穿戴导电靴子站在铜钢导电板上以激发"
+			"desc": "穿戴导电靴子站在铜钢导电板上以激发",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"dive_far": {
 			"title": "天涯若比邻",
-			"desc": "通过潜虚旅行超过5千米"
+			"desc": "通过潜虚旅行超过5千米",
+			"title._explanation": "Reference to an Auvic song."
 		},
 		"discover_geyser": {
 			"title": "这是什么？",
-			"desc": "在潜虚时找到一处虚空涌泉"
+			"desc": "在潜虚时找到一处虚空涌泉",
+			"title._explanation": "Fragment of an English furry culture set phrase. Sorry."
 		},
 		"vorpal_hit": {
 			"title": "公平而平衡",
-			"desc": "触发重斩魔咒"
+			"desc": "触发重斩魔咒",
+			"title._explanation": "Reference to a Team Fortress 2 community refrain about random critical hits - 'random crits are fair and balanced'."
 		},
 		"hit_with_full_suit": {
 			"title": "不可移动的物体",
-			"desc": "穿戴整套潜虚套装时受到攻击"
+			"desc": "穿戴整套潜虚套装时受到攻击",
+			"title._explanation": "English set phrase related to the irresistible force paradox."
 		},
 		"break_armor_with_cleaver": {
 			"title": "不可阻挡的力量",
-			"desc": "用强化虚空切割刀破坏敌人的盔甲"
+			"desc": "用强化虚空切割刀破坏敌人的盔甲",
+			"title._explanation": "English set phrase related to the irresistible force paradox."
 		},
 		"find_terminus_house": {
 			"title": "豪华公寓",
-			"desc": "进入焦熔终境的吊悬房子"
+			"desc": "进入焦熔终境的吊悬房子",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"obtain_bloque": {
 			"title": "法律上独立",
-			"desc": "将琼烯塑料加工成一堆方块牌®塑料建筑砖！"
+			"desc": "将琼烯塑料加工成一堆方块牌®塑料建筑砖！",
+			"title._explanation": "Referring to the fact Bloque bricks are legally distinct from Legos. A cheap knockoff."
 		},
 		"weld_bloque": {
 			"title": "保修丢虚空了",
-			"desc": "用虚空桶熔接一堆方块牌®塑料建筑砖，完全就是赤裸裸的滥用"
+			"desc": "用虚空桶熔接一堆方块牌®塑料建筑砖，完全就是赤裸裸的滥用",
+			"title._explanation": "Voiding a warranty is an English legal term, and also acts as a pun on Void fluid here."
 		},
 		"obtain_haemopal": {
 			"title": "你的一部分",
-			"desc": "打碎一块古代的图腾，获得血欧泊"
+			"desc": "打碎一块古代的图腾，获得血欧泊",
+			"title._explanation": "Reference to Celeste by Extremely OK Games."
 		},
 		"obtain_spark": {
 			"title": "剥脱于你",
-			"desc": "从血欧泊中分离出火花"
+			"desc": "从血欧泊中分离出火花",
+			"title._explanation": "Corruption of the prior advancement."
 		},
 		"obtain_beetopal": {
 			"title": "给灵魂熬的汤",
-			"desc": "使用还过得去的替代物填补你灵魂的空缺处"
+			"desc": "使用还过得去的替代物填补你灵魂的空缺处",
+			"title._explanation": "English set phrase, used as a double-entendre here with literally filling a Hollow Soul with soup."
 		},
 		"obtain_semimanifest_idea": {
 			"title": "现实之间",
-			"desc": "使用它。使用它。使用它。使用它。使用它。使用它。"
+			"desc": "使用它。使用它。使用它。使用它。使用它。使用它。",
+			"title._explanation": "Literal, no additional meaning. Repeating 'Use it' over and over is a recurring theme in the Semimanifest Idea."
 		},
 		"manifest_glitchwep": {
 			"title": "永恒的伙伴",
-			"desc": "我一直在。让我发光发热吧。"
+			"desc": "我一直在。让我发光发热吧。",
+			"title._explanation": "Reference to a Jamie Paige song about one's 'constant companion' - plural system member/headmate/etc."
 		},
 		"fail_to_manifest_glitchwep": {
 			"title": "不太存在",
-			"desc": "需要物质"
+			"desc": "需要物质",
+			"title._explanation": "Jamie Paige song title."
 		},
 		"obtain_dry_ice": {
 			"title": "律外狂徒",
-			"desc": "打破热力学第二定律"
+			"desc": "打破热力学第二定律",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"touch_core_lava": {
 			"title": "经典的犯蠢行为",
-			"desc": "发现下界底部的事物"
+			"desc": "发现下界底部的事物",
+			"title._explanation": "Referring to Minecraft Classic, which has a similar lava trap at the bottom of the world."
 		},
 		"obtain_grasper": {
 			"title": "紧紧握住",
-			"desc": "制造一只离体的手，让它为你收集物品"
+			"desc": "制造一只离体的手，让它为你收集物品",
+			"title._explanation": "Quote from Spongebob."
 		},
 		"obtain_studious_grasper": {
 			"title": "值得思忖",
-			"desc": "将抓取器升级为仿学抓取器"
+			"desc": "将抓取器升级为仿学抓取器",
+			"title._explanation": "Referring to the fact Studious Graspers put consideration into items they put away."
 		},
 		"obtain_clamber_block": {
 			"title": "强大而神秘",
-			"desc": "构建一个攀爬架。§o提示：潜行时在上面起跳"
+			"desc": "构建一个攀爬架。§o提示：潜行时在上面起跳",
+			"title._explanation": "Reference to Ineffable Glass from Extra Utilities and the Abstruse Platform from Botania."
 		},
 		"obtain_screeper_nest": {
 			"title": "树木粉碎机",
-			"desc": "用蜂巢喂食蠹虫和苦力怕的杂交后代"
+			"desc": "用蜂巢喂食蠹虫和苦力怕的杂交后代",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"obtain_transfungus": {
 			"title": "反位移",
-			"desc": "真菌……末影螨，用来放方块，好耶"
+			"desc": "真菌……末影螨，用来放方块，好耶",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"obtain_delicace": {
 			"title": "带泡鸡蛋",
-			"desc": "获得深海泵水树的琼浆玉露"
+			"desc": "获得深海泵水树的琼浆玉露",
+			"title._explanation": "As with everything related to Squeeze Trees and Delicace, a reference to a 2017 Google Translate bug. https://www.youtube.com/watch?v=3-rfBsWmo0M"
 		},
 		"obtain_centrifuge": {
 			"title": "快速的计划中解体",
-			"desc": "构建一个离心机；它是将事物分离成各组分的首选方法"
+			"desc": "构建一个离心机；它是将事物分离成各组分的首选方法",
+			"title._explanation": "Inversion of an English set phrase referring to something breaking, often violently. 'Rapid Unscheduled Disassembly'."
 		},
 		"obtain_iron_dust": {
 			"title": "有点像铁",
-			"desc": "用离心机分离出硅铍钇矿，它什么东西都能产出一点"
+			"desc": "用离心机分离出硅铍钇矿，它什么东西都能产出一点",
+			"title._explanation": "Yet another reference to the vanilla Isn't It Iron Pick advancement."
 		},
 		"obtain_neodymium_disc": {
 			"title": "所以这不是铁",
-			"desc": "不过至少能被磁铁吸住"
+			"desc": "不过至少能被磁铁吸住",
+			"title._explanation": "Yet another reference to the vanilla Isn't It Iron Pick advancement."
 		},
 		"obtain_ultrapure_diamond": {
 			"title": "漫漫长路",
-			"desc": "欢迎回来，IC2"
+			"title._explanation": "Not intentionally a reference to anything.",
+			"desc": "欢迎回来，IC2",
+			"desc._explanation": "Refers to IC2's Industrial Diamond processing tree."
 		},
 		"obtain_diffractor": {
 			"title": "眨眼之间",
-			"desc": "构建一个光/声位移力场生成器"
+			"desc": "构建一个光/声位移力场生成器",
+			"title._explanation": "Corruption of an English set phrase - in the blink of an eye."
 		},
 		"avoid_vibration_with_diffractor": {
 			"title": "放纵",
-			"desc": "仿佛了无牵挂一般在幽匿感测体旁疾跑"
+			"desc": "仿佛了无牵挂一般在幽匿感测体旁疾跑",
+			"title._explanation": "English set phrase."
 		},
 		"obtain_ultrapure_diamond_hoe": {
 			"title": "难以置信的奉献",
-			"desc": "很好，但为什么啊"
+			"desc": "很好，但为什么啊",
+			"title._explanation": "Reference to the vanilla Serious Dedication advancement."
 		},
 		"obtain_platforms": {
 			"title": "全新运动装备",
-			"desc": "最有型的飞行方式"
+			"desc": "最有型的飞行方式",
+			"title._explanation": "Reference to a BDG video."
 		},
 		"grow_antlers": {
 			"title": "突出物",
-			"desc": "喝下塑料，然后就能长出一对鹿角？"
+			"desc": "喝下塑料，然后就能长出一对鹿角？",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"remove_antlers": {
 			"title": "奇怪的人类感",
-			"desc": "头顶光光，人生灿烂"
+			"title._explanation": "Reference to a Moe Shop x Jamie Paige song.",
+			"desc": "头顶光光，人生灿烂",
+			"description._explanation": "Reference to Nuclear Throne."
 		},
 		"obtain_spatula": {
 			"title": "太大了",
-			"desc": "马来战斗锅铲"
+			"title._explanation": "Reference to 'My spoon is too big' from Rejected, which was an internet meme for a bit.",
+			"desc": "马来战斗锅铲",
+			"desc._explanation": "Reference to Questionable Content, which is what the item itself is ultimately a reference to."
 		},
 		"project_many_blocks_in_one_cast": {
 			"title": "马里奥绘画",
-			"desc": "在极短的时间内创造出极多方块"
+			"desc": "在极短的时间内创造出极多方块",
+			"title._explanation": "Reference to the Mario Paint game."
 		},
 		"project_over_dangerous_spectrum_fluid": {
 			"title": "有害收容",
-			"desc": "使用投影器安全收容一种危险的魔法流体"
+			"desc": "使用投影器安全收容一种危险的魔法流体",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"void_fire": {
 			"title": "攻火需用……呃",
-			"desc": "只要没有树，就不会有森林火灾了"
+			"desc": "只要没有树，就不会有森林火灾了",
+			"title._explanation": "Corruption of an English set phrase - fighting fire with fire."
 		},
 		"void_a_lot": {
 			"title": "反正本来也不要这座山",
-			"desc": "从现实中移除超过100000个方块"
+			"desc": "从现实中移除超过100000个方块",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"weak_snare": {
 			"title": "这个监狱？锁不住我！",
-			"desc": "丢下并远离"
+			"title._explanation": "Reference to Ultrakill, description is a reference to inscriptions on dangerous radiation sources.",
+			"desc": "丢下并远离",
+			"desc._explanation": "Reference to inscriptions on dangerous radiation sources."
 		},
 		"obtain_index": {
 			"title": "新版9×9",
-			"desc": "将可调储物筒转化成录物箱"
+			"desc": "将可调储物筒转化成录物箱",
+			"title._explanation": "Reference to YouTuber Direwolf20's tendency to build and promote 9x9 shelters."
 		},
 		"obtain_pinch_point": {
 			"title": "万物汇聚，无物逃散",
-			"desc": "组装一个捏合位点"
+			"desc": "组装一个捏合位点",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"obtain_pinch_glom": {
 			"title": "完美和谐",
-			"desc": "将漏斗转化成捏合集物器"
+			"desc": "将漏斗转化成捏合集物器",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"witness_rock_paper_scissors": {
 			"title": "最好的朋友",
-			"desc": "🪨📃✂"
+			"desc": "🪨📃✂",
+			"title._explanation": "Literal, no additional meaning."
 		},
 		"witness_hat_trick": {
 			"title": "帽子戏法",
-			"desc": "唯手熟尔"
+			"desc": "唯手熟尔",
+			"title._explanation": "English phrase originating in sports."
 		},
 		"witness_morphic_idle": {
 			"title": "马里奥乖乖",
-			"desc": "我开发来摸摸马里奥的机器"
+			"desc": "我开发来摸摸马里奥的机器",
+			"title._explanation": "Reference to a Holly Hollowtones Super Mario 64 stream."
 		}
 	},
 	"tag": {
@@ -1447,6 +1588,7 @@
 				"substituted_yttrium": "钇",
 				"pinch_gloms": "捏合集物器",
 				"global_pinch_gloms": "全局捏合集物器",
+				"all_pinch_gloms": "任意捏合集物器",
 				"boxen": "盒牌®盒"
 			},
 			"trinkets": {
@@ -1492,14 +1634,6 @@
 		"continuity_gifts.chance": "{}%",
 		"continuity_gifts.chance.tooltip": "获得其中特定一种物品的概率"
 	},
-	"yttr.info": {
-		"dry_ice": [
-			"在末地放置蓝冰，同时避免固体方块触碰到它"
-		],
-		"semimanifest_idea": [
-			"将火花、基岩加固步枪、强化虚空切割刀丢到地上，再全部炸飞"
-		]
-	},
 	"yttr.emi_model.yttr": {
 		"void_cauldron": "装有虚空的炼药锅",
 		"void_cauldron.tip": [
@@ -1514,61 +1648,95 @@
 		"beetheart": "红心……？"
 	},
 	"alias.emi.yttr": {
+		"_explanation": "Most of these aliases have a goal of players looking up common terms or items from other mods being shown Yttr's equivalent.",
 		"aka": "又称{}",
 		"cloaking": "斗篷",
 		"invisibility": "隐形",
 		"flight": "飞行",
 		"bifrost": "彩虹桥法杖",
+		"bifrost._explanation": "As in Botania's item.",
 		"angel": "天使方块",
+		"angel._explanation": "As in Extra Utilities' block.",
 		"equaltrade": "更替法杖",
+		"equaltrade._explanation": "As in Thaumcraft's item.",
 		"shiftingcrust": "移壳杆",
+		"shiftingcrust._explanation": "As in Botania's item.",
 		"continuum": "嬗变宝珠",
+		"continuum._explanation": "As in Aether II's item.",
 		"paxel": "镐尖斧",
 		"multitool": "多功能工具",
 		"laser": "激光",
+		"laser._explanation": "To make Lazor Emitters show up even when spelling 'laser' correctly.",
 		"lazer": "镭射",
+		"lazer._explanation": "To make Lazor Emitters show up even when spelling 'laser' nearly correctly.",
 		"blaster": "脉冲枪",
 		"autoworkbench": "自动合成台",
+		"autoworkbench._explanation": "As in BuildCraft's block.",
 		"autocrafter": "自动合成器",
 		"portablehole": "便携式洞穴",
+		"portablehole._explanation": "As in Thaumcraft's item and wand focus.",
 		"safarinet": "大师球",
+		"safarinet._explanation": "As in MineFactory's item.",
 		"dolly": "手推车",
+		"dolly._explanation": "As in JABBA's item.",
 		"packingtape": "封装带",
+		"packingtape._explanation": "As in Storage Drawers' item.",
 		"cardboardbox": "纸箱",
+		"cardboardbox._explanation": "As in Mekanism's item.",
 		"morb": "生物球",
+		"morb._explanation": "As in Thermal Expansion's item.",
 		"obsidplate": "黑曜石压力板",
 		"playerplate": "玩家压力板",
 		"floodlight": "泛光灯",
 		"wrathlamp": "魔法灯",
+		"wrathlamp._explanation": "As in Factorization's block.",
 		"carpenter": "木匠方块",
+		"carpenter._explanation": "As in the mod Carpenters' Blocks.",
 		"slope": "斜坡",
 		"wedge": "楔形斜坡",
 		"vslab": "竖直台阶",
 		"barrel": "储物桶",
+		"barrel._explanation": "Alias for finding Ruined blocks by their original names. As in Factorization's block.",
 		"quarry": "采石场",
+		"quarry._explanation": "Alias for finding Ruined blocks by their original names. As in BuildCraft's block.",
 		"rengine": "红石引擎",
+		"rengine._explanation": "Alias for finding Ruined blocks by their original names. As in BuildCraft's block.",
 		"icentrifuge": "工业离心机",
+		"icentrifuge._explanation": "Alias for finding Ruined blocks by their original names. As in GregTech's block.",
 		"relay": "自动弹射器",
+		"relay._explanation": "Alias for finding Ruined blocks by their original names. As in RedPower2's block.",
 		"arb": "林场",
+		"arb._explanation": "Alias for finding Ruined blocks by their original names. As in Forestry's block.",
 		"pipe": "金质管道",
+		"pipe._explanation": "Alias for finding Ruined blocks by their original names. As in BuildCraft's block.",
 		"tube": "气动管",
+		"tube._explanation": "Alias for finding Ruined blocks by their original names. As in RedPower2's block.",
 		"cokeoven": "焦炉",
+		"cokeoven._explanation": "Alias for finding Ruined blocks by their original names. As in RailCraft's block.",
 		"blastfurnace": "高炉",
+		"blastfurnace._explanation": "Alias for finding Ruined blocks by their original names. As in RailCraft's block.",
 		"abstruse": "奥秘平台",
+		"abstruse._explanation": "As in Botania's block.",
 		"gambling": "赌博",
 		"sword": "剑",
 		"gun": "枪",
 		"grenade": "手雷",
 		"thaumostatic": "奥法腰带",
+		"thaumostatic._explanation": "As in Thaumcraft's item.",
 		"tiara": "不朽头颅",
+		"tiara._explanation": "As in Botania's item.",
 		"tiara2": "不朽之头颅",
+		"tiara2._explanation": "As in Botania's item.",
 		"incinerator": "焚化炉",
 		"nullifier": "焚毁炉",
 		"trash_can": "垃圾桶",
 		"vacuum": "真空吸尘器",
+		"vacuum._explanation": "As in OpenBlocks' Vacuum Hopper and Thermal Expansion's Vacuumulator.",
 		"blackhole": "黑洞",
+		"blackhole._explanation": "As in multiple mods' Black Hole Chest.",
 		"ender": "末影",
-		"zzazz": "ZZAZZ"
+		"zzazz": "ZZAZZ",
+		"zzazz._explanation": "As in the Pokemon Generation 1 glitch. Common nickname for the Metastable Weapon."
 	},
 	"emi.category.lib39-machination.piston_smashing.cloud_output_hint": "对生成的云雾使用玻璃瓶",
 	"emi.tooltip.yttr.any_tool": "任意工具",
@@ -1593,8 +1761,13 @@
 	},
 	"yttr.modmenu": {
 		"matrix": "Matrix",
+		"matrix._explanation": "As in the chat protocol.",
 		"soundtrack": "原声带",
 		"donate": "捐赠"
 	},
-	"modmenu.summaryTranslation.yttr": "过往的事物，于今日复新。"
+	"modmenu.nameTranslation.yttr_wrapper": "Yttr Wrapper",
+	"modmenu.descriptionTranslation.yttr_wrapper": "为改善压缩而给Yttr Jar-in-Jar额外设计的封装器。不用太过在意。",
+	"modmenu.descriptionTranslation.yttr": "关于虚空的模组，讲述了过往的事物，亦令其于今日复新。\n\n原版增强与内容模组的联动，也是对旧版模组的一封情书。\n\n§a主要作者：§r\n  - Una\n  - Kat\n  - Kryn\n\n§b主要贡献者：§r\n  - LemmaEOF（红信相关，1.18） (InfraRedstone, 1.18移植）\n  - Falkreon（红信相关）\n  - jaskarth（1.20移植，优化，世界生成相关）\n  - unilock（1.20移植，信雅互联支持）\n按文件记录的完整人员鸣谢名单参见CREDITS.md。\n\n§d特别感谢：§r\n  - DaFuqs\n  - Azzyypaaras\n  - Eloraam\n  - BBoldt\n  - Sisby folk\n  - Aesen\n  - Aureate\n  - Emi\n\n§e谨献给：§r\n  - Amelia 'SynthRose'\n  - Azzyypaaras",
+	"modmenu.summaryTranslation.yttr": "过往的事物，于今日复新。",
+	"modmenu.summaryTranslation.yttr._explanation": "Shortened version of the mod's description to fit within ModMenu's short description in the left panel."
 }
