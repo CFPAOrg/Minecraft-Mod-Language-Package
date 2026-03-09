@@ -23,12 +23,12 @@
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=partytrick:change_color,cost=40G * 数量|>
+<|ploy@trickster:templates|trick-id=partytrick:change_dye_color,cost=40G * 数量|>
 
 改变所给方块、槽位、实体的颜色。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=partytrick:get_color|>
+<|trick@trickster:templates|trick-id=partytrick:get_dye_color|>
 
 若可行，返回一个颜色。

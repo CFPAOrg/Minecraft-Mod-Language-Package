@@ -23,12 +23,12 @@ Makes an entity glow for 5 seconds. When no color is provided, the glow vanishes
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=partytrick:change_color,cost=40G * amount|>
+<|ploy@trickster:templates|trick-id=partytrick:change_dye_color,cost=40G * amount|>
 
 Changes the color of the given block, slot or entity.
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=partytrick:get_color|>
+<|trick@trickster:templates|trick-id=partytrick:get_dye_color|>
 
 Returns a color if available.
