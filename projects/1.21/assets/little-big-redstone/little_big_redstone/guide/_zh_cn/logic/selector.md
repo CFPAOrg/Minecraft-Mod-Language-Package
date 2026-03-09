@@ -3,7 +3,7 @@ navigation:
   title: "选择器"
   icon: "selector"
   parent: little_big_redstone:logic.md
-  position: 20
+  position: 21
 categories:
   - logic
 item_ids:
