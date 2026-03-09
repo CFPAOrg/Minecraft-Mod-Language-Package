@@ -239,16 +239,20 @@ trickster:
     get_mana_in_slot: Ingress of Authority
     get_count_in_slot: Ingress of Plenitude
     get_max_mana_in_slot: Crowning Ingress
-    get_inventory_slot: Intrusive Ingress
-    get_inventory_slots: Collector's Ingress
+    get_slot: Intrusive Ingress
+    get_item_container: Stockpile Ingress
+    get_fluid_container: Basin Ingress
+    get_slots: Collector's Ingress
     get_inventory_size: Ingress of Extent
     drop_stack_from_slot: Ploy of Offering
     swap_slot: Swindler's Ploy
-    move_stack: Organizer's Ploy
+    move_resource: Organizer's Ploy
     block_from_item: Placement Distortion
     item_from_block: Pickup Distortion
     get_max_count: Distortion of Breadth
     get_equipment: Investigative Ingress
+    list_resources: Ingress of Inventory
+    count_resources: Ingress of Stockkeeping
 
     type_fragment: Argumentative Distortion
     hash_values: Decaying Distortion
@@ -303,6 +307,7 @@ trickster:
       spell_part: Spell
       entity: Entity
       slot: Slot
+      container: Container
       zalgo: §kZalgo
       item_type: Item
       block_type: Block
@@ -334,11 +339,20 @@ trickster:
       ItemTypeFragment: Item
       BlockTypeFragment: Block
       EntityTypeFragment: EntityType
+      StorageFragment: Storage
+      ResourceVariantFragment: ResourceType
 
   blunder:
     overweight_fragment: Resulting fragment is overweight (%2$s/%3$s), result is %1$s
     expected_overweight_fragment: Result fragment is overweight (%d/%d)
     missing_fragment: Missing at index %d, expected %s
+
+  storage:
+    caster: caster
+    block: '%d, %d, %d'
+    entity: '%s'
+    slot: slot %d at %s
+    merged: '%d storages'
 
 item.trickster:
   tome_of_tomfoolery: Tome of Tomfoolery

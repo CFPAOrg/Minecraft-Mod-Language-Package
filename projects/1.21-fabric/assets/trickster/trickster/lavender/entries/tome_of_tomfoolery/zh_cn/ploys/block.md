@@ -32,9 +32,10 @@
 
 <|ploy@trickster:templates|trick-id=trickster:place_block,cost=max(距离 * 1G\, 8G)|>
 
+;;;;;
+
 将所给方块放置在所给位置处。会消耗物品。
 
-;;;;;
 
 放置时使用何种方块由槽位引用或方块类型片段决定。
 
