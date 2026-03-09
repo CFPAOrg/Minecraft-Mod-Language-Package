@@ -5,7 +5,7 @@ lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol
 
 # 肉质武器
 
-*该怎么称呼与肉相关，或大部分就是由肉构成的武器呢？*
+*主要是肉制作的，还处处跟肉沾边的武器该叫啥呢？*
 
 肉质武器是模块化工具与武器系统。
 
@@ -37,7 +37,7 @@ lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol
 
 ## 粗制肉枪
 
-由回收来的废肉制成。它和手枪基座类似，但它的复杂度只有后者的一半。自带一个手枪模块，不需要去改装台处改装。粗制肉枪还自带一个弹药构装器，可使用喂食的食物常态产出弹药。
+由回收来的废肉制成。它和手枪基座类似，但它的复杂度只有后者的一半。自带一个手枪模块，不需要去改装台处改装。粗制肉枪还自带一个弹药构装器，使其可以从摄取的食物被动产出弹药。
 
 ## 手枪基座
 
@@ -45,7 +45,7 @@ lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol
 
 ## 手杖
 
-*巫师的法杖像个把。*
+*法杖是巫师的小兄弟。*
 
 与戟、震击法杖等近战模块相性最佳。
 
