@@ -32,9 +32,10 @@ Breaks the block at the given position.
 
 <|ploy@trickster:templates|trick-id=trickster:place_block,cost=max(distance * 1G\, 8G)|>
 
+;;;;;
+
 Places a block at the given position.
 
-;;;;;
 
 The block to place is determined based on a slot reference or block type fragment.
 

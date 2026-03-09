@@ -5,14 +5,20 @@
   "category": "trickster:ploys",
   "additional_search_terms": [
     "Ploy of Offering",
-    "Swindler's Ploy",
     "Organizer's Ploy",
+    "Swindler's Ploy",
     "Cranial Shift Ploy"
   ]
 }
 ```
 
-Listed here are ploys that interact with inventory slots or other inventory features.
+*"Note that inventory ploys are heavily restricted in almost all jurisdictions."*
+
+
+*"Not because they're very dangerous mind you, it's just that humans collectively have a strange obsession with this thing they call 'personal property.'"*
+
+
+-- An excerpt from a lecture by Prof. Dr. Gerune.
 
 
 Creating a slot reference comes at no cost. However, using the reference in a way that moves the items inside the slot will always have a cost of (distance * amount * 0.5G).
@@ -25,15 +31,19 @@ Drops items from the given slot at a position, returning their entity. Optionall
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:swap_slot|>
+<|trick@trickster:templates|trick-id=trickster:move_resource|>
 
-Swaps the item stacks within the given slots.
+Moves resources from one storage into another.
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:move_stack|>
+A number can be provided to limit the amount transferred, and a resource type or list of such can be provided as a filter.
 
-Moves items from one slot into another, optionally limiting the amount. Can merge and split stacks.
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:swap_slot|>
+
+Swaps the resources within the given slots.
 
 ;;;;;
 

@@ -7,13 +7,15 @@
     "Fence's Ingress",
     "Juggling Delusion",
     "Catch Delusion",
+    "Stockpile Ingress",
+    "Basin Ingress",
     "Intrusive Ingress",
+    "Collector's Ingress",
+    "Ingress of Inventory",
     "Cranium Delusion",
     "Ingress of Authority",
     "Crowning Ingress",
     "Ingress of Plenitude",
-    "Collector's Ingress",
-    "Ingress of Extent",
     "Investigative Ingress"
   ]
 }
@@ -21,9 +23,6 @@
 
 These are tricks that pull information from an inventory.
 This can either be the caster's own, or an external block or entity.
-
-
-It is not possible to interact with the slots of players that are not the caster.
 
 ;;;;;
 
@@ -39,10 +38,17 @@ Returns the type of item in the caster's offhand.
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=Note: Slot References|>Item slots may be referenced by spells.
-Creating such a reference comes at no cost. However, using the reference in a way that moves the items within the slot, will incur a move cost.
-This cost is equivalent to (distance * amount * 0.5G). 
+<|page-title@lavender:book_components|title=Note: Slot References|>Resource slots may be referenced by spells.
+Creating such a reference comes at no cost. However, using the reference in a way that moves the resources within the slot, will incur a move cost.
+This cost is equivalent to (distance * amount * 0.5G).
+
+;;;;;
+
 Slot references either use the position of the caster at the time of move, or the position of their target when calculating cost.
+
+
+Many entities, like dropped items, minecarts, and donkeys can be interacted with as containers. 
+This is not the case for players that are not the caster.
 
 ;;;;;
 
@@ -52,26 +58,51 @@ Returns a slot reference of the caster's offhand.
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:get_inventory_slot|>
-
-Constructs and returns a slot from an index and an inventory source, using the caster if no source is given.
+<|trick@trickster:templates|trick-id=trickster:get_item_container|>
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:get_inventory_slots|>
-
-Returns a list of slots from an inventory source.
+Returns a reference to the item container of the passed value, or of the caster.
 
 ;;;;;
 
-If no source is given, the caster's inventory is used. 
-An item or list of items may be passed as a filter to get only relevant slots from the inventory source.
+<|trick@trickster:templates|trick-id=trickster:get_fluid_container|>
+
+Returns a reference to the fluid container of the passed value.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_slot|>
+
+Constructs and returns a slot from a container and the given index. Blunders if the container has no slotted representation.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_slots|>
+
+Returns a list of slots from a container. Blunders if the container has no slotted representation.
+
+;;;;;
+
+A resource type or list of them may be passed as a filter to get only relevant slots from the container.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:list_resources|>
+
+Returns a list of resource types in the container.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:count_resources|>
+
+Returns the amount of the given resource type in the container.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:get_inventory_size|>
 
-Returns the number of slots in an inventory source, using the caster if no source is given.
+Returns the number of slots in a container.
 
 ;;;;;
 

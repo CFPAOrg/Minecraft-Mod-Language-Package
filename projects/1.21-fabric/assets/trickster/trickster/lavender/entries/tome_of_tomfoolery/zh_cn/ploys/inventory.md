@@ -5,14 +5,20 @@
   "category": "trickster:ploys",
   "additional_search_terms": [
     "祭献之技巧",
-    "骗徒之技巧",
     "组织者之技巧",
+    "骗徒之技巧",
     "颅骨挪移之技巧"
   ]
 }
 ```
 
-本节的技巧术能与物品栏的槽位及其他特性交互。
+*“需要着重说明，在现今所有法律体系中，对物品栏戏法作了严格的限制的占绝大多数。*
+
+
+*“倒不是因为它们非常危险，而是因为人类有种奇怪的集体执念——他们管这个叫‘个人财产’。”*
+
+
+——摘自格鲁内教授的讲座
 
 
 创建槽位引用无需消耗魔力。不过，若在使用此类引用时移动了槽位内的物品，则需消耗(距离 * 数量 * 0.5G)的魔力。
@@ -25,15 +31,19 @@
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:swap_slot|>
+<|trick@trickster:templates|trick-id=trickster:move_resource|>
 
-交换给定槽位的物品组。
+在仓储空间之间移动资源。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:move_stack|>
+可给定数以设定移动上限，也可指定资源类型或其列表以进行过滤。
 
-将所给槽位中的物品移动到另一个槽位，移动数量上限参数可选。可以合并和拆分物品组。
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:swap_slot|>
+
+交换给定槽位内的资源。
 
 ;;;;;
 
