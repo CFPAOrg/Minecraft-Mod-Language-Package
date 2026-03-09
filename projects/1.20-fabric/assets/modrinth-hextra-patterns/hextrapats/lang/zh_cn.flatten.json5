@@ -52,16 +52,24 @@
         deg_to_rad: "将角度变为弧度。相当于乘以 $(l:patterns/consts#hexcasting:const/double/pi)$(action)π/$ 再除以 180。",
         rad_to_deg: "将弧度变为角度。相当于乘以 180 再除以 $(l:patterns/consts#hexcasting:const/double/pi)$(action)π/$。",
         normalize: "将向量的长度变为 1。",
+        invert: "求所给数/向量与 -1 相乘的积。",
+        rand_zero: "返回 0（包含）到所给数（不包含）之间的随机数。",
+        rand_range: "返回从第一个数（包含）到第二个数（不包含）之间的随机数。",
+        rand_vec: "返回朝向随机方向的单位向量。",
         rot_about_x: "绕 X 轴将所给向量旋转所给弧度。",
         rot_about_y: "绕 Y 轴将所给向量旋转所给弧度。",
         rot_about_z: "绕 Z 轴将所给向量旋转所给弧度。",
         cons_about_x: "将弧度角变为单位向量。该向量的 X 分量为 0。0 弧度对应 +Z，π/4 弧度对应 +Y。",
         cons_about_y: "将弧度角变为单位向量。该向量的 Y 分量为 0。0 弧度对应 +Z，π/4 弧度对应 -X。我曾读到过某些文献提到某种叫 $(thing)F3/$ 的东西，但我还找不出它的意义。",
         cons_about_z: "将弧度角变为单位向量。该向量的 Z 分量为 0。0 弧度对应 -X，π/4 弧度对应 +Y。",
-        scientific_exp: "求所给数与 10^n 或 10^-n 相乘的积。其中 n 为尾部的长度，指数有无负号取决于图案开头更近似于$(l:patterns/math#hexcasting:mul)$(action)乘法之馏化/$还是$(l:patterns/math#hexcasting:div)$(action)除法之馏化/$。"
+        scientific_exp: "求所给数/向量与 10^n 或 10^-n 相乘的积。其中 n 为尾部的长度，指数有无负号取决于图案开头更近似于$(l:patterns/math#hexcasting:mul)$(action)乘法之馏化/$还是$(l:patterns/math#hexcasting:div)$(action)除法之馏化/$。"
       },
       lists: {
         split: "在所给下标处分割列表。[a, b, c, d, e], 2 会返回 [a, b], [c, d, e]。",
+        "del_element/": {
+          first: "移除栈顶 iota，而后移除列表中该 iota 第一次出现的实例。若列表中存在该 iota，返回 True；否则返回 False。",
+          all: "移除栈顶 iota，而后移除列表中该 iota 的$(italic)全部/$实例。返回该 iota 在列表中出现的次数。"
+        },
         swindle: "重排列表的元素，方式与$(l:patterns/stackmanip#hexcasting:swizzle)$(action)骗徒之策略/$重排栈的一致。给定负值会从开头起进行重排，而非从末尾起。"
       }
     }
@@ -86,12 +94,17 @@
         deg_to_rad: "弧度之纯化",
         rad_to_deg: "角度之纯化",
         normalize: "归一之纯化",
+        invert: "反向之纯化",
+        rand_zero: "熵之纯化",
+        rand_range: "熵之馏化",
+        rand_vec: "混沌之精思",
         rot_about_x: "俯仰之馏化",
         rot_about_y: "偏航之馏化",
         rot_about_z: "滚转之馏化",
         cons_about_x: "俯仰之纯化",
         cons_about_y: "偏航之纯化",
         cons_about_z: "滚转之纯化",
+        scientific_exp: "科学计数之纯化",
 
         "nocon/": {
           greater: "比较之策略：至大",
@@ -104,9 +117,11 @@
           len_neq: "比较之策略：长度不等",
         },
 
-        scientific_exp: "科学计数之纯化",
-
         split_list: "分割之策略",
+        "del_element/": {
+          first: "消除之策略",
+          all: "消除之策略，第二型"
+        },
         swindle_list: "骗徒之馏化"
       },
 
