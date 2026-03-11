@@ -2,6 +2,7 @@
 id: pressure_washer
 lookup: neepmeat:pressure_washer
 ---
+
 # 高压清洗器
 
 根据使用的流体种类，高压清洗器可以改变或移除特定方块。

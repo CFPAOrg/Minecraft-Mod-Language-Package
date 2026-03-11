@@ -2,6 +2,7 @@
 id: metaboliser
 lookup: neepmeat:metaboliser_segment, 
 ---
+
 # 代谢机
 
 代谢机可消耗液态食物来产出能量。
@@ -16,7 +17,7 @@ lookup: neepmeat:metaboliser_segment,
 
 - 肉浆：40eJ / d
 - 动物饲料：60eJ / d
-- 液态食物：(1 + 9 * 饥饿值) / d
+- 液态食物：(1 + 9 * 饥饿值) eJ / d
 
 ## 示例
 

@@ -1,6 +1,7 @@
 ---
 id: thord_booleans
 ---
+
 # 布尔值
 
 THORD没有布尔值类型，不过所有非0值均视为true。

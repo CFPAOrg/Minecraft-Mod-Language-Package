@@ -46,36 +46,3 @@ A word definition starts with ':' followed by the word's name. The definition is
 # Invoke the word
 1 aword
 ```
-
-# Inline NEEPASM
-
-Inline NEEPASM operations can be included in a Thord program. The inline operation must be the first thing on that line, or be prefixed with a '.'.
-
-```
-label l
-
-.jmp l ; # valid
-
-jmp l # also valid
-```
-
-Unlike Thord words, the operation's arguments are parsed until the line ends or a ';' is encountered.
-
-```
-# Inline NEEPASM
-robot @(-10 -60 11 U)
-
-# Thord while loop
-begin
-  # Thord words can be referenced like NEEPASM labels.
-  ihandler @(-12 -60 14 U) request
-  iwait
--1 # Push -1 (true) to loop endlessly 
-until 
-
-# Define the word 'request'
-: request
-  route @(-12 -60 12 W) @(-10 -60 13 E) "*:stone"  
-  .
-;
-```

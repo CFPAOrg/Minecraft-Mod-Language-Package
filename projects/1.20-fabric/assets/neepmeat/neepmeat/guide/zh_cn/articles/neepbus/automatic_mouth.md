@@ -2,6 +2,7 @@
 id: automatic_mouth
 lookup: neepmeat:mouth
 ---
+
 # 自动口舌
 
 自动口舌会念出给定的消息，可由红石或NEEP总线触发。

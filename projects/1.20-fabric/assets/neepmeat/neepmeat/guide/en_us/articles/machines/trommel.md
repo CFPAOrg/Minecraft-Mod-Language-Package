@@ -10,6 +10,12 @@ Dirty Ore Fat can be processed in the Trommel for an approximate 150% yield comp
 
 Tissue fluid produced via the disassembly of substrate organisms with a Large Mincer or Death Blades can be separated into Refined Meat with an extra chance of Assorted Biological Solids.
 
+# Specifications
+
+\columns{\graph{neepmeat:small_trommel}}{Min power: 20eJ/t
+Max power: 500eJ/t
+}
+
 # Usage
 
 Fluid is taken from any container placed top of the nearest block and outputs leave through the bottom of the far end.

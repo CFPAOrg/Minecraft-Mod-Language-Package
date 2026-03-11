@@ -4,6 +4,12 @@ id: thord_examples
 
 # General
 
+## Continuous Manufacture
+
+Continuously crafts Pipe Drivers while a redstone interface is powered.
+
+\image[width=791,height=445,scale=0.96]{neepmeat:guide/images/pipe_driver_manufacture.png}
+
 ## Variables
 
 ```
