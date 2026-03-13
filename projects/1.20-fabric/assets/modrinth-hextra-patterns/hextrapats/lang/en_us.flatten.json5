@@ -5,6 +5,7 @@
     "hextrapats_nocon.title": "Non-consuming Logic",
     "hextrapats_vec_literals.title": "Vector Literals",
     "hextrapats_math.title": "Hextra Math",
+    "hextrapats_vec_math.title": "Hextra Vector Math",
     "hextrapats_lists.title": "Hextra Lists",
   },
   hextrapats: {
@@ -51,26 +52,42 @@
       math: {
         deg_to_rad: "Converts an angle in degrees to an angle in radians. Essentially multiplies by $(l:patterns/consts#hexcasting:const/double/pi)$(action)pi/$ then divides by 180.",
         rad_to_deg: "Converts an angle in radians to an angle in degrees. Essentially multiplies by 180 then divides by $(l:patterns/consts#hexcasting:const/double/pi)$(action)pi/$.",
-        normalize: "Sets the length of the vector to one.",
         invert: "Multiplies the number/vector by -1.",
+        increment: "Adds 1.",
+        decrement: "Subtracts by 1.",
         rand_zero: "Returns a random number between 0 (inclusive) and the number (exclusive).",
         rand_range: "Returns a random number between the first number (inclusive) and the second (exclusive).",
+        scientific_exp: "Multiplies the input by 10^n or 10^-n, where n is the length of the tail, depending on whether the start is similar to $(l:patterns/math#hexcasting:mul)$(action)Mult. Dstl./$ or $(l:patterns/math#hexcasting:div)$(action)Div. Dstl./$. The top 3 patterns are x10^1, x10^2, and x10^3. The bottom 3 are x10^-1, x10^-2, and x10^-3.",
+        linear_approach: "Makes the first value approach the second at a rate of the third value. Will not overshoot.",
+        angle_dist: "Returns the shortest angular distance between two angles in radians.",
+        angle_approach: "Makes the first angle approach the second at a rate of the third value. Will not overshoot. Picks whichever direction is shorter. All angles in radians."
+      },
+      vec_math: {
+        normalize: "Sets the length of the vector to one.",
+        increment: "Increases length by 1. Does nothing if the vector is (0, 0, 0).",
+        decrement: "Decreases length by 1. Does nothing if the vector is (0, 0, 0).",
         rand_vec: "Returns a unit vector facing a random direction.",
+        vec_dist: "Returns the distance between two vectors.",
+        vec_approach: "Moves the first vector towards the second a rate of the third value. Will not overshoot.",
+        vec_angle_dist: "Returns the shortest angular distance on a sphere between two vectors in radians",
+        vec_rotate_towards: "Turns the first vector towards the second vector by num radians.",
+        from_polar: "Creates a unit vector from two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(thing)F3/$ turn up.",
+        to_polar: "Converts a vector's direction into two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(thing)F3/$ turn up.",
         rot_about_x: "Rotates the vector by the given angle in radians around the X axis.",
         rot_about_y: "Rotates the vector by the given angle in radians around the Y axis.",
         rot_about_z: "Rotates the vector by the given angle in radians around the Z axis.",
         cons_about_x: "Converts an angle in radians to a unit vector where X=0. +Z at 0 radians and +Y at pi/4 radians.",
         cons_about_y: "Converts an angle in radians to a unit vector where Y=0. +Z at 0 radians and -X at pi/4 radians. I've seen some texts related to this pattern mentioning something called $(thing)F3/$, but I couldn't figure out what that means.",
         cons_about_z: "Converts an angle in radians to a unit vector where Z=0. -X at 0 radians and +Y at pi/4 radians.",
-        scientific_exp: "Multiplies the number/vector by 10^n or 10^-n, where n is the length of the tail, depending on whether the start is similar to $(l:patterns/math#hexcasting:mul)$(action)Multiplicative Distillation/$ or $(l:patterns/math#hexcasting:div)$(action)Division Distillation/$."
       },
       lists: {
         split: "Splits a list at the given index. [a, b, c, d, e], 2 will return [a, b], [c, d, e].",
         "del_element/": {
           first: "Remove the iota at the top of the stack, then remove the first instance of it from the list. If that iota was in the list, return True. Otherwise, return False.",
-          all: "Remove the iota at the top of the stack, then remove $(italic)all/$ instances of it from the list. Returns the number of occurrences of that iota."
+          all: "Remove the iota at the top of the stack, then remove $(italic)all/$ instances of it from the list. Returns the number of removed occurrences."
         },
-        swindle: "Reorders the elements of a list the same way $(l:patterns/stackmanip#hexcasting:swizzle)$(action)Swindler's Gambit/$ reorders the stack. Inputting a negative code will reorder the elements at the start instead of the end."
+        swindle: "Reorders the elements of a list the same way $(l:patterns/stackmanip#hexcasting:swizzle)$(action)Swindler's Gambit/$ reorders the stack. Inputting a negative code will reorder the elements at the start instead of the end.",
+        scronglwfijspoivjqwofklcrvewb: "Shuffles the order of elements in the list."
       }
     }
   },
@@ -93,18 +110,30 @@
 
         deg_to_rad: "Radian Purification",
         rad_to_deg: "Degree Purification",
-        normalize: "Norm Purification",
-        invert: "Reversal Purification",
+        invert: "Reflection Purification",
+        increment: "Incrementation Purification",
+        decrement: "Decrementation Purification",
         rand_zero: "Entropy Purification",
         rand_range: "Entropy Distillation",
+        scientific_exp: "Scientific Purification",
+        linear_approach: "Approach Exaltation",
+        angle_dist: "Theta Distillation",
+        angle_approach: "Turning Exaltation",
+        vec_angle_dist: "Theta Distillation II",
+        vec_rotate_towards: "Turning Exaltation II",
+
+        normalize: "Norm Purification",
         rand_vec: "Chaos Reflection",
+        vec_dist: "Distance Distillation",
+        vec_approach: "Approach Exaltation II",
+        from_polar: "Polar Distillation",
+        to_polar: "Polar Decomposition",
         rot_about_x: "Pitch Distillation",
         rot_about_y: "Yaw Distillation",
         rot_about_z: "Roll Distillation",
         cons_about_x: "Pitch Purification",
         cons_about_y: "Yaw Purification",
         cons_about_z: "Roll Purification",
-        scientific_exp: "Scientific Purification",
 
         "nocon/": {
           greater: "Comparison Gambit: Maximus",
@@ -122,7 +151,8 @@
           first: "Elimination Gambit",
           all: "Elimination Gambit II"
         },
-        swindle_list: "Swindler's Distillation"
+        swindle_list: "Swindler's Distillation",
+        scronglwfijspoivjqwofklcrvewb: "Shuffling Purification"
       },
 
       "book.hextrapats:": {
@@ -135,6 +165,9 @@
         scaled_vec_y: "Vector Rfln. +Y/-Y II",
         scaled_vec_z: "Vector Rfln. +Z/-Z II",
         scaled_vec_all: "Vector Rfln. +1/-1 II",
+
+        increment: "Incrementation Purif.",
+        decrement: "Decrementation Purif.",
 
         "nocon/": {
           greater: "Comp. Gambit: Maximus",

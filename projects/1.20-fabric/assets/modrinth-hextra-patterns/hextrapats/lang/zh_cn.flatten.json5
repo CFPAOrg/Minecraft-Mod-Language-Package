@@ -5,6 +5,7 @@
     "hextrapats_nocon.title": "保留式比较",
     "hextrapats_vec_literals.title": "向量常量",
     "hextrapats_math.title": "咒法新增：数学",
+    "hextrapats_vec_math.title": "咒法新增：向量数学",
     "hextrapats_lists.title": "咒法新增：列表",
   },
   hextrapats: {
@@ -31,9 +32,9 @@
       },
       vec_literals: {
         intro: "返回数的图案有种神奇的性质：把向量之精思的尾部加到$(l:patterns/numbers)$(action)数之精思/$的开头，就能返回一个向量。",
-        x: "向左急转的头部会返回 $(l:patterns/consts#hexcasting:const/vec/x)$(action)X 轴/$上的向量。",
+        x: "指向左后方的头部会返回 $(l:patterns/consts#hexcasting:const/vec/x)$(action)X 轴/$上的向量。",
         y: "直线形状的头部会返回 $(l:patterns/consts#hexcasting:const/vec/y)$(action)Y 轴/$上的向量。",
-        z: "向右急转的头部会返回 $(l:patterns/consts#hexcasting:const/vec/z)$(action)Z 轴/$上的向量。",
+        z: "指向右后方的头部会返回 $(l:patterns/consts#hexcasting:const/vec/z)$(action)Z 轴/$上的向量。",
         "1": "向左微偏的头部会返回$(l:patterns/hextrapats_consts#hextrapats:haha_ha_one)$(action)所有 3 个分量都相等/$的向量。",
         detail: "首先，绘制前页八种图案中的一种，默认数值为 0。然后，每一画的$(italic)方向/$会以对应方式修改该数值。$(li)前方：加 1$(li)左前方：加 5$(li)右前方：加 10$(li)左后方：乘 2$(li)右后方：除以 2$(br)顺时针绘制，也即各页右图，会在绘制完成后取相反数（如左图逆时针绘制则不取）。$(p)绘制完成后会返回对应向量。",
 
@@ -51,26 +52,42 @@
       math: {
         deg_to_rad: "将角度变为弧度。相当于乘以 $(l:patterns/consts#hexcasting:const/double/pi)$(action)π/$ 再除以 180。",
         rad_to_deg: "将弧度变为角度。相当于乘以 180 再除以 $(l:patterns/consts#hexcasting:const/double/pi)$(action)π/$。",
-        normalize: "将向量的长度变为 1。",
         invert: "求所给数/向量与 -1 相乘的积。",
+        increment: "递增 1。",
+        decrement: "递减 1。",
         rand_zero: "返回 0（包含）到所给数（不包含）之间的随机数。",
         rand_range: "返回从第一个数（包含）到第二个数（不包含）之间的随机数。",
+        scientific_exp: "求所给数/向量与 10^n 或 10^-n 相乘的积。其中 n 为尾部的长度，指数有无负号取决于图案开头更近似于$(l:patterns/math#hexcasting:mul)$(action)乘法之馏化/$还是$(l:patterns/math#hexcasting:div)$(action)除法之馏化/$。上方三图分别为 x10^1、x10^2、x10^3。下方三图分别为 x10^-1、x10^-2、x10^-3。",
+        linear_approach: "以第三个数为步长，让第一个数向第二个数靠近，不会过冲。",
+        angle_dist: "返回两角间最短的角度差，以弧度计。",
+        angle_approach: "以第三个值为步长，让第一个角向第二个角靠近，不会过冲。会选择最短路径。所有角均以弧度计。"
+      },
+      vec_math: {
+        normalize: "将向量的长度变为 1。",
+        increment: "令长度增加 1。对 (0, 0, 0) 无效。",
+        decrement: "令强度减少 1。对 (0, 0, 0) 无效。",
         rand_vec: "返回朝向随机方向的单位向量。",
+        vec_dist: "返回两向量间的距离。",
+        vec_approach: "以第三个值为步长，让第一个向量向第二个向量靠近，不会过冲。",
+        vec_angle_dist: "返回两向量间最短的角度差，以弧度计。",
+        vec_rotate_towards: "将第一个向量向第二个向量旋转 num 弧度。",
+        from_polar: "以俯仰和偏航两个极坐标角生成单位向量，均以弧度计。+Y 对应上方。偏航角为 0 对应 +Z，为 π/2 对应 -X。相关文献又提到了所谓的 $(thing)F3/$。",
+        to_polar: "将向量的方向转换为俯仰和偏航两个极坐标角，均以弧度计。+Y 对应上方。偏航角为 0 对应 +Z，为 π/2 对应 -X。相关文献又提到了所谓的 $(thing)F3/$。",
         rot_about_x: "绕 X 轴将所给向量旋转所给弧度。",
         rot_about_y: "绕 Y 轴将所给向量旋转所给弧度。",
         rot_about_z: "绕 Z 轴将所给向量旋转所给弧度。",
         cons_about_x: "将弧度角变为单位向量。该向量的 X 分量为 0。0 弧度对应 +Z，π/4 弧度对应 +Y。",
         cons_about_y: "将弧度角变为单位向量。该向量的 Y 分量为 0。0 弧度对应 +Z，π/4 弧度对应 -X。我曾读到过某些文献提到某种叫 $(thing)F3/$ 的东西，但我还找不出它的意义。",
         cons_about_z: "将弧度角变为单位向量。该向量的 Z 分量为 0。0 弧度对应 -X，π/4 弧度对应 +Y。",
-        scientific_exp: "求所给数/向量与 10^n 或 10^-n 相乘的积。其中 n 为尾部的长度，指数有无负号取决于图案开头更近似于$(l:patterns/math#hexcasting:mul)$(action)乘法之馏化/$还是$(l:patterns/math#hexcasting:div)$(action)除法之馏化/$。"
       },
       lists: {
         split: "在所给下标处分割列表。[a, b, c, d, e], 2 会返回 [a, b], [c, d, e]。",
         "del_element/": {
           first: "移除栈顶 iota，而后移除列表中该 iota 第一次出现的实例。若列表中存在该 iota，返回 True；否则返回 False。",
-          all: "移除栈顶 iota，而后移除列表中该 iota 的$(italic)全部/$实例。返回该 iota 在列表中出现的次数。"
+          all: "移除栈顶 iota，而后移除列表中该 iota 的$(italic)全部/$实例。返回从列表中移除的元素数量。"
         },
-        swindle: "重排列表的元素，方式与$(l:patterns/stackmanip#hexcasting:swizzle)$(action)骗徒之策略/$重排栈的一致。给定负值会从开头起进行重排，而非从末尾起。"
+        swindle: "重排列表的元素，方式与$(l:patterns/stackmanip#hexcasting:swizzle)$(action)骗徒之策略/$重排栈的一致。给定负值会从开头起进行重排，而非从末尾起。",
+        scronglwfijspoivjqwofklcrvewb: "打乱列表各元素。"
       }
     }
   },
@@ -93,18 +110,30 @@
 
         deg_to_rad: "弧度之纯化",
         rad_to_deg: "角度之纯化",
-        normalize: "归一之纯化",
-        invert: "反向之纯化",
+        invert: "反照之纯化",
+        increment: "递增之纯化",
+        decrement: "递减之纯化",
         rand_zero: "熵之纯化",
         rand_range: "熵之馏化",
+        scientific_exp: "科学计数之纯化",
+        linear_approach: "趋近之提整",
+        angle_dist: "西塔之馏化",
+        angle_approach: "转向之提整",
+        vec_angle_dist: "西塔之馏化，第二型",
+        vec_rotate_towards: "转向之提整，第二型",
+
+        normalize: "归一之纯化",
         rand_vec: "混沌之精思",
+        vec_dist: "距离之馏化",
+        vec_approach: "趋近之提整，第二型",
+        from_polar: "极坐标之馏化",
+        to_polar: "极坐标之分解",
         rot_about_x: "俯仰之馏化",
         rot_about_y: "偏航之馏化",
         rot_about_z: "滚转之馏化",
         cons_about_x: "俯仰之纯化",
         cons_about_y: "偏航之纯化",
         cons_about_z: "滚转之纯化",
-        scientific_exp: "科学计数之纯化",
 
         "nocon/": {
           greater: "比较之策略：至大",
@@ -122,7 +151,8 @@
           first: "消除之策略",
           all: "消除之策略，第二型"
         },
-        swindle_list: "骗徒之馏化"
+        swindle_list: "骗徒之馏化",
+        scronglwfijspoivjqwofklcrvewb: "打乱之纯化"
       },
 
       "book.hextrapats:": {
@@ -135,6 +165,9 @@
         scaled_vec_y: "向量之精思，+Y/-Y第二型",
         scaled_vec_z: "向量之精思，+Z/-Z第二型",
         scaled_vec_all: "向量之精思，+1/-1第二型",
+
+        increment: "递增之纯化",
+        decrement: "递减之纯化",
 
         "nocon/": {
           greater: "比较之策略：至大",
