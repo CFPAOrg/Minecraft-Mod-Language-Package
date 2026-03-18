@@ -75,7 +75,7 @@
 
 <|ploy@trickster:templates|trick-id=trickster:store_entity,cost=2000G + 1G * 距离 ^ (距离 / 5)|>
 
-将所给实体存储到施法者的[帽子](^trickster:items/top_hat)中。帽子必须处于副手位置，且实体不得为玩家。
+将所给实体存储到施法者的[帽子](^trickster:items/writing_casting/top_hat)中。帽子必须处于副手位置，且实体不得为玩家。
 
 ;;;;;
 
@@ -85,4 +85,4 @@
 
 <|ploy@trickster:templates|trick-id=trickster:release_entity,cost=2000G + 1G * 距离 ^ (距离 / 5)|>
 
-将存储在施法者[帽子](^trickster:items/top_hat)中的实体释放到给定位置，并返回该实体的引用。若无实体，返回void。
+将存储在施法者[帽子](^trickster:items/writing_casting/top_hat)中的实体释放到给定位置，并返回该实体的引用。若无实体，返回void。

@@ -108,7 +108,7 @@ Returns the number of slots in a container.
 
 <|trick@trickster:templates|trick-id=trickster:check_hat|>
 
-Returns the selected slot in the caster's [Hat](^trickster:items/top_hat).
+Returns the selected slot in the caster's [Hat](^trickster:items/writing_casting/top_hat).
 
 ;;;;;
 

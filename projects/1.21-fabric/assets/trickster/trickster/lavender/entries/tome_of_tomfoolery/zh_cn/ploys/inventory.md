@@ -49,4 +49,4 @@
 
 <|trick@trickster:templates|trick-id=trickster:set_hat|>
 
-将施法者[帽子](^trickster:items/top_hat)的所选槽位设为该数，根据成功与否返回布尔值。
+将施法者[帽子](^trickster:items/writing_casting/top_hat)的所选槽位设为该数，根据成功与否返回布尔值。

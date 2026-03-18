@@ -2,7 +2,7 @@
 {
   "title": "技巧术",
   "icon": "trickster:wand",
-  "ordinal": 3,
+  "ordinal": 20,
   "parent": "trickster:tricks"
 }
 ```

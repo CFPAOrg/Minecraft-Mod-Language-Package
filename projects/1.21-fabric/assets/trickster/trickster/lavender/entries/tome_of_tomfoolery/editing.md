@@ -158,7 +158,7 @@ Reads a spell from the user's offhand and places it as a glyph in the center of 
 <|revision@trickster:templates|pattern=4\,3\,0\,4\,5\,2\,4\,1,title=Grand Revision|>
 
 Replaces the glyph of the circle it is drawn in with the result of executing the user's offhand spell. 
-Requires possession of a [Mirror](^trickster:items/mirror_of_evaluation).
+Requires possession of a [Mirror](^trickster:items/writing_casting/mirror_of_evaluation).
 
 ;;;;;
 

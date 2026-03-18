@@ -26,7 +26,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:battery_creation|>
 
-使用玻璃及所给槽位中的宝石或水晶制造[晶结](^trickster:items/knots)。若未提供槽位参数，则使用紫水晶。
+使用玻璃及所给槽位中的宝石或水晶制造[晶结](^trickster:items/mana/knots)。若未提供槽位参数，则使用紫水晶。
 
 ;;;;;
 

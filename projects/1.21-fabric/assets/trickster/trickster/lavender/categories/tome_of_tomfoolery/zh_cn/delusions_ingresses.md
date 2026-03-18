@@ -2,7 +2,7 @@
 {
   "title": "错觉术与辑流术",
   "icon": "trickster:mirror_of_evaluation",
-  "ordinal": 1,
+  "ordinal": 0,
   "parent": "trickster:tricks"
 }
 ```

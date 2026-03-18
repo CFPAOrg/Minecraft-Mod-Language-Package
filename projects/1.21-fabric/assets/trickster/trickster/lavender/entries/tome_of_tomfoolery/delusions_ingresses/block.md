@@ -47,7 +47,7 @@ Returns the redstone power level inputted into the given block position.
 
 <|trick@trickster:templates|trick-id=trickster:check_resonator|>
 
-Returns the power level of the [Spell Resonator](^trickster:items/spell_resonator) at the given position.
+Returns the power level of the [Spell Resonator](^trickster:items/infrastructure/spell_resonator) at the given position.
 Blunders if no resonator is present.
 
 ;;;;;

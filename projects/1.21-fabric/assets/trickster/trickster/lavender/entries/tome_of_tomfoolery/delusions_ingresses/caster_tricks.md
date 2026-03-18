@@ -53,10 +53,10 @@ Returns the amount of mana directly available to the spell.
 ;;;;;
 
 This delusion counts the amount of mana in all mana-carrying items the caster is holding or wearing, 
-including [Knots](^trickster:items/knots) and [Whorls](^trickster:items/amethyst_whorl).
+including [Knots](^trickster:items/mana/knots) and [Whorls](^trickster:items/mana/amethyst_whorl).
 
 
-When cast from a [Spell Construct](^trickster:items/spell_construct), only the mana in the Construct's one Knot slot is counted.
+When cast from a [Spell Construct](^trickster:items/infrastructure/spell_construct), only the mana in the Construct's one Knot slot is counted.
 
 ;;;;;
 

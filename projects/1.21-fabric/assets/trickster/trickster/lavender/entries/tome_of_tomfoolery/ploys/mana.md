@@ -26,7 +26,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:battery_creation|>
 
-Creates a [Knot](^trickster:items/knots) using the crystal in the given slot and a Glass Block. Uses amethyst if no first slot is provided.
+Creates a [Knot](^trickster:items/mana/knots) using the crystal in the given slot and a Glass Block. Uses amethyst if no first slot is provided.
 
 ;;;;;
 

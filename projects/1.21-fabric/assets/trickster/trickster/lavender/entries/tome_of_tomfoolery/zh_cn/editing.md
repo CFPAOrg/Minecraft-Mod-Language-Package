@@ -148,7 +148,7 @@
 
 <|revision@trickster:templates|pattern=4\,3\,0\,4\,5\,2\,4\,1,title=宏伟之修订|>
 
-将绘制处圆的符记换为施法者副手物品中法术施放的结果。需持有[手镜](^trickster:items/mirror_of_evaluation)。
+将绘制处圆的符记换为施法者副手物品中法术施放的结果。需持有[手镜](^trickster:items/writing_casting/mirror_of_evaluation)。
 
 ;;;;;
 
