@@ -7,7 +7,7 @@
 }
 ```
 
-Now that you've got a [Scroll](^trickster:items/scroll_and_quill) you can right-click it to open the spell-scribing interface.
+Now that you've got a [Scroll](^trickster:items/writing_casting/scroll_and_quill) you can right-click it to open the spell-scribing interface.
 Spells consist of a tree-like structure of intersecting circles, and each circle contains a center glyph to denote its function.
 
 ;;;;;

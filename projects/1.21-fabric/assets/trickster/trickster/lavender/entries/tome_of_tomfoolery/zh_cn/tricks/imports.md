@@ -26,4 +26,4 @@
 
 <|trick@trickster:templates|trick-id=trickster:import_hat|>
 
-获取施法者[帽子](^trickster:items/top_hat)中给定槽位处的法术，使用输入值作为参数施放，并返回执行结果。
+获取施法者[帽子](^trickster:items/writing_casting/top_hat)中给定槽位处的法术，使用输入值作为参数施放，并返回执行结果。

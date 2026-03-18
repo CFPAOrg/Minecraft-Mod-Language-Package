@@ -7,7 +7,7 @@
 }
 ```
 
-准备好一张[卷轴](^trickster:items/scroll_and_quill)之后，手持右击就可打开法术编写界面。法术是一系列圆相交而成的树状结构，每个圆中都有符记用以说明其功能。
+准备好一张[卷轴](^trickster:items/writing_casting/scroll_and_quill)之后，手持右击就可打开法术编写界面。法术是一系列圆相交而成的树状结构，每个圆中都有符记用以说明其功能。
 
 ;;;;;
 

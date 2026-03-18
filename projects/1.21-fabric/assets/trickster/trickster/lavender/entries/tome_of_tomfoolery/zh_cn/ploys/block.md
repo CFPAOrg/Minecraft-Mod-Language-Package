@@ -130,4 +130,4 @@
 
 <|ploy@trickster:templates|trick-id=trickster:power_resonator,cost=4G|>
 
-令所给位置处[法术谐振器](^trickster:items/spell_resonator)产生所给强度的信号，强度需在0到15之间。
+令所给位置处[法术谐振器](^trickster:items/infrastructure/spell_resonator)产生所给强度的信号，强度需在0到15之间。

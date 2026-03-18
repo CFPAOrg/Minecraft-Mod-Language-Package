@@ -47,7 +47,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:check_resonator|>
 
-返回所给位置处[法术谐振器](^trickster:items/spell_resonator)的信号强度。该处没有谐振器会导致失策。
+返回所给位置处[法术谐振器](^trickster:items/infrastructure/spell_resonator)的信号强度。该处没有谐振器会导致失策。
 
 ;;;;;
 

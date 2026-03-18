@@ -103,7 +103,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:check_hat|>
 
-返回施法者[帽子](^trickster:items/top_hat)的所选槽位。
+返回施法者[帽子](^trickster:items/writing_casting/top_hat)的所选槽位。
 
 ;;;;;
 

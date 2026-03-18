@@ -29,7 +29,7 @@
 
 ;;;;;
 
-<|item-spotlight@lavender:book_components|item=trickster:emerald_knot|>不过，大多数晶结只需简单暴露在夜空下，就可补充魔力。将晶结丢在地上和放在露天的[充能阵列](^trickster:items/charging_array)中均可。丢出的可充能晶结不会被清除。新月和满月前后的充能速度最快，两者间的某些夜晚则完全无法充能。
+<|item-spotlight@lavender:book_components|item=trickster:emerald_knot|>不过，大多数晶结只需简单暴露在夜空下，就可补充魔力。将晶结丢在地上和放在露天的[充能阵列](^trickster:items/mana/charging_array)中均可。丢出的可充能晶结不会被清除。新月和满月前后的充能速度最快，两者间的某些夜晚则完全无法充能。
 
 ;;;;;
 
@@ -48,7 +48,7 @@
 其他晶结还需施法者指明宝石所处的槽位，并将其传入为第一参数，这部分内容留给后续章节详细说明。
 
 
-现在要做的，就是按后页步骤在[执行手镜](^trickster:items/mirror_of_evaluation)中绘制[望月者之技巧](^trickster:ploys/mana#2)以制作紫水晶晶结。继续之前多做几个吧！
+现在要做的，就是按后页步骤在[执行手镜](^trickster:items/writing_casting/mirror_of_evaluation)中绘制[望月者之技巧](^trickster:ploys/mana#2)以制作紫水晶晶结。继续之前多做几个吧！
 
 ;;;;;
 

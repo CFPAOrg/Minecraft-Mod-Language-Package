@@ -51,10 +51,10 @@
 
 ;;;;;
 
-这则错觉术会统计施法者持有和佩戴的所有魔力存储物品，如[晶结](^trickster:items/knots)和[螺坠](^trickster:items/amethyst_whorl)。
+这则错觉术会统计施法者持有和佩戴的所有魔力存储物品，如[晶结](^trickster:items/mana/knots)和[螺坠](^trickster:items/mana/amethyst_whorl)。
 
 
-若由[法术组构台](^trickster:items/spell_construct)施放，则只统计组构台中的晶结。
+若由[法术组构台](^trickster:items/infrastructure/spell_construct)施放，则只统计组构台中的晶结。
 
 ;;;;;
 

@@ -15,7 +15,7 @@ That really isn't a lot!
 
 ;;;;;
 
-This is where [Wands](^trickster:items/wand) come in.
+This is where [Wands](^trickster:items/writing_casting/wand) come in.
 As briefly mentioned in the first chapter, 
 wands execute any spell inscribed onto them when right-clicked.
 

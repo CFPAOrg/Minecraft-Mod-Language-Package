@@ -36,7 +36,7 @@ or when in a pinch.
 ;;;;;
 
 <|item-spotlight@lavender:book_components|item=trickster:emerald_knot|>Most Knots, though, can be refilled by simply exposing them to the night sky.
-Either by throwing them on the ground, or placing them inside a [Charging Array](^trickster:items/charging_array).
+Either by throwing them on the ground, or placing them inside a [Charging Array](^trickster:items/mana/charging_array).
 Rechargeable Knots thrown on the ground will not despawn.
 They will charge most quickly at or near full or new moons, but not at all on some days in between.
 
@@ -65,7 +65,7 @@ the appropriate gem as a first argument, but this will be covered later.
 
 
 For now, drawing the [Ploy of the Moon Watcher](^trickster:ploys/mana#2) 
-in your [Mirror of Evaluation](^trickster:items/mirror_of_evaluation) 
+in your [Mirror of Evaluation](^trickster:items/writing_casting/mirror_of_evaluation) 
 as follows will allow you to create Amethyst Knots with ease.
 Create a few of these before continuing!
 

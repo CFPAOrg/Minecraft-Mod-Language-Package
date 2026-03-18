@@ -2,7 +2,7 @@
 {
   "title": "Tricks",
   "icon": "trickster:written_scroll",
-  "ordinal": 1
+  "ordinal": 20
 }
 ```
 

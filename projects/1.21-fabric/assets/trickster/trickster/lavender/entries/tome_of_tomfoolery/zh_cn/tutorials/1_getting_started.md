@@ -10,7 +10,7 @@
 在开始编写法术之前，你需要先准备一些魔法工具用作辅助。
 
 
-即便要保持极度的精简，也应准备好一面[执行手镜](^trickster:items/mirror_of_evaluation)以及一份[卷轴与笔](^trickster:items/scroll_and_quill)。这些物品是戏法师工具基础中的基础。
+即便要保持极度的精简，也应准备好一面[执行手镜](^trickster:items/writing_casting/mirror_of_evaluation)以及一份[卷轴与笔](^trickster:items/writing_casting/scroll_and_quill)。这些物品是戏法师工具基础中的基础。
 
 ;;;;;
 
@@ -39,5 +39,5 @@
 
 在上述两种必需品外，可能还会需要其他几件物品：
 
-- [魔杖](^trickster:items/wand)。其中可抄入任意法术，且能直接施法，详细见后续说明。
-- [帽子](^trickster:items/top_hat)。它能存储多份卷轴，也可当作高级法术的某种存储器。
+- [魔杖](^trickster:items/writing_casting/wand)。其中可抄入任意法术，且能直接施法，详细见后续说明。
+- [帽子](^trickster:items/writing_casting/top_hat)。它能存储多份卷轴，也可当作高级法术的某种存储器。

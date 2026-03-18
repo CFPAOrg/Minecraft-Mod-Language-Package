@@ -27,4 +27,4 @@ For example, a spell drawing 50 milliMerlins would consume 1 Gandalf per second.
 ;;;;;
 
 Mana can be persistently stored and acquired via Knots.
-See [this entry](^trickster:items/knots) for more information on those.
+See [this entry](^trickster:items/mana/knots) for more information on those.

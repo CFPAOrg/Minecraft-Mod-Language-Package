@@ -2,7 +2,7 @@
 {
   "title": "曲变术与谋略术",
   "icon": "trickster:scroll_and_quill",
-  "ordinal": 2,
+  "ordinal": 10,
   "parent": "trickster:tricks"
 }
 ```
