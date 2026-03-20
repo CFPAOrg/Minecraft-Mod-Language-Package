@@ -12,7 +12,7 @@ item_ids:
 
 # Inverted Repeater
 
-A new redstone component that allow when powered to invert the input signal (analog)
+A new redstone component that allow when powered to invert the input signal (hexadecimal)
 
 <ItemImage id="synergy:inverted_repeater" scale="4.0"/>
 

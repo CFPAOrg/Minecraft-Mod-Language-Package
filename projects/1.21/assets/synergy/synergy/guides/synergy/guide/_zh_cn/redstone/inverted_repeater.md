@@ -12,7 +12,7 @@ item_ids:
 
 # 反相中继器
 
-全新的红石元件，激活时可反转输入的（模拟）信号。
+全新的红石元件，激活时可反转输入的信号（十六进制）。
 
 <ItemImage id="synergy:inverted_repeater" scale="4.0"/>
 

@@ -10,8 +10,10 @@ item_ids:
   - synergy:compressor
   - synergy:electric_furnace
   - synergy:electric_melter
+  - synergy:extractor
   - synergy:casting_factory
   - synergy:alloy_smelter
+  - synergy:rock_crusher
 ---
 
 # 工业机器
@@ -21,6 +23,12 @@ item_ids:
 所有机器都接受升级，也都可用各类管道自动化。它们能大大简化部分资源的制造过程。
 
 <GameScene zoom="2" interactive={true}>
+  <Block x="-4" y="0" z="0" id="synergy:rock_crusher" p:enabled="false" p:facing="north"/>
+  <Block x="-4" y="1" z="0" id="synergy:rock_crusher" p:enabled="true" p:facing="north"/>
+ 
+  <Block x="-3" y="0" z="0" id="synergy:extractor" p:enabled="false" p:facing="north"/>
+  <Block x="-3" y="1" z="0" id="synergy:extractor" p:enabled="true" p:facing="north"/>
+ 
   <Block x="-2" y="0" z="0" id="synergy:macerator" p:enabled="false" p:facing="north"/>
   <Block x="-2" y="1" z="0" id="synergy:macerator" p:enabled="true" p:facing="north"/>
 

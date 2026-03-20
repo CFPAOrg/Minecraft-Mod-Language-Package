@@ -1,7 +1,7 @@
 ---
 navigation:
   title: Machine Upgrades
-  icon: "synergy:upgrade_speed"
+  icon: "synergy:speed_upgrade"
   parent: industrial_machines.md
   position: 2
 categories:
