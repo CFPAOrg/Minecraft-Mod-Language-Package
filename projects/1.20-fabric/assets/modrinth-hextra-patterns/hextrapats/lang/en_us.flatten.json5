@@ -7,7 +7,8 @@
     "hextrapats_math.title": "Hextra Math",
     "hextrapats_vec_math.title": "Hextra Vector Math",
     "hextrapats_lists.title": "Hextra Lists",
-    "hextrapats_sets.title": "Hash Set Manipulation"
+    "hextrapats_sets.title": "Hash Set Manipulation",
+    "hextrapats_meta.title": "Hextra Meta-Evaluation"
   },
   hextrapats: {
     page: {
@@ -98,7 +99,9 @@
       },
       sets: {
         intro: "A hash set contains elements in an unordered fashion, and cannot contain duplicates. Excellent for keeping track of whether or not something exists.<br>Due to a magical process known as '$(thing)hashing/$', access is reduced to nearly O(1), relaxing the burden on Nature.",
-        empty_set: "Push an empty set to the top of the stack.",
+        empty_num_set: "Push an empty set that can hold numbers to the top of the stack.",
+        empty_vec_set: "Push an empty set that can hold vectors to the top of the stack.",
+        empty_entity_set: "Push an empty set that can hold entities to the top of the stack.",
         insert: {
           name: "Insertion Distillation",
           "": "Remove the top of the stack, then add it to the set at the top of the stack."
@@ -122,6 +125,10 @@
         abs: "Remove the set at the top of the stack, then push the number of elements in the set to the stack.",
         list_to_set: "Converts the list at the top of the stack to a set.",
         set_to_list: "Converts the set at the top of the stack to a list. The order is up to Nature's whims."
+      },
+      meta: {
+        true_halt: "Forcibly halts a $(thing)Hex/$ like $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ if the iota at the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(action)considered True by Nature/$.",
+        false_halt: "Forcibly halts a $(thing)Hex/$ like $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ if the iota at the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(action)considered False by Nature/$."
       }
     }
   },
@@ -191,7 +198,10 @@
         set_insert_ret: "Insertion Gambit",
         set_remove_ret: "Removal Gambit",
         list_to_set: "Disordering Purification",
-        set_to_list: "Ordering Purification"
+        set_to_list: "Ordering Purification",
+
+        true_halt: "Acheron's Gambit",
+        false_halt: "Styx's Gambit"
       },
 
       "book.hextrapats:": {
@@ -228,15 +238,15 @@
       scientific_exp: "Scientific Purification: 10^%s"
     },
     "iota.hextrapats:": {
-      set: {
-        "": "Set",
-        desc: "a set"
+      num_set: {
+        "": "Set (Nums)",
+        desc: "a number set"
       }
     },
     mishap: {
       invalid_value: {
         class: {
-          set: "a set"
+          num_set: "a set"
         },
         "hextrapats:": {
           opposite_vecs: "vector not facing opposite to the start direction (%s)",

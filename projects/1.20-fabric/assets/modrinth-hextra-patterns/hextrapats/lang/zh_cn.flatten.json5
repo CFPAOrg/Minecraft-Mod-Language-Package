@@ -7,7 +7,8 @@
     "hextrapats_math.title": "咒法新增：数学",
     "hextrapats_vec_math.title": "咒法新增：向量数学",
     "hextrapats_lists.title": "咒法新增：列表",
-    "hextrapats_sets.title": "哈希集合操作"
+    "hextrapats_sets.title": "哈希集合操作",
+    "hextrapats_meta.title": "咒法新增：元运行"
   },
   hextrapats: {
     page: {
@@ -98,7 +99,9 @@
       },
       sets: {
         intro: "哈希集合的各元素无顺序且不重复，很适合用于记录某物存在与否。<br>由于所谓的“$(thing)哈希/$”之魔法过程，访问其中元素的操作接近于 O(1)，能减轻自然的负担。",
-        empty_set: "压入一个空集合。",
+        empty_num_set: "压入一个可包含数的空集合。",
+        empty_vec_set: "压入一个可包含向量的空集合。",
+        empty_entity_set: "压入一个可包含实体的空集合。",
         insert: {
           name: "入集合之馏化",
           "": "移除栈顶元素，将其插入栈顶集合。"
@@ -122,6 +125,10 @@
         abs: "移除栈顶集合，返回其中元素数。",
         list_to_set: "将栈顶的列表转换为集合。",
         set_to_list: "将栈顶的集合转换为列表。顺序随自然心情而定。"
+      },
+      meta: {
+        true_halt: "若$(l:patterns/logic#hexcasting:bool_coerce)$(action)自然会将栈顶 iota 视作 True/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
+        false_halt: "若$(l:patterns/logic#hexcasting:bool_coerce)$(action)自然会将栈顶 iota 视作 False/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。"
       }
     }
   },
@@ -191,7 +198,10 @@
         set_insert_ret: "入集合之策略",
         set_remove_ret: "出集合之策略",
         list_to_set: "解顺序之纯化",
-        set_to_list: "赋顺序之纯化"
+        set_to_list: "赋顺序之纯化",
+
+        true_halt: "阿刻戎之策略",
+        false_halt: "斯堤克斯之策略"
       },
 
       "book.hextrapats:": {
@@ -228,15 +238,15 @@
       scientific_exp: "科学计数之纯化：10^%s"
     },
     "iota.hextrapats:": {
-      set: {
-        "": "集合",
-        desc: "一个集合"
+      num_set: {
+        "": "数集合",
+        desc: "一个数集合"
       }
     },
     mishap: {
       invalid_value: {
         class: {
-          set: "一个集合"
+          num_set: "一个集合"
         },
         "hextrapats:": {
           opposite_vecs: "不与起始方向（%s）正好反向的向量",
