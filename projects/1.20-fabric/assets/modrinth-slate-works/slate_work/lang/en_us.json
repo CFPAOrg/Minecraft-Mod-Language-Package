@@ -17,6 +17,11 @@
 
   "block.slate_work.listening_impetus": "Librarian Impetus",
 
+  "block.slate_work.slate_plated_edified_planks": "Slate Plated Edified Planks",
+  "block.slate_work.amethyst_embedded_slate": "Amethyst Embedded Slate",
+  "block.slate_work.copper_plated_slate": "Copper Plated Slate",
+  "block.slate_work.replicated_allay": "Replicated Allay",
+
   "Patterns:": "",
   "hexcasting.action.slate_work:get_storage": "Get Vessels",
   "hexcasting.action.slate_work:check_item": "Check Item",
@@ -26,6 +31,9 @@
   "hexcasting.action.slate_work:read_broadcast": "Review Broadcast",
 
   "hexcasting.action.slate_work:set_craft": "Set Recipe",
+  "hexcasting.action.slate_work:set_craft_count": "Set Craft Count",
+  "hexcasting.action.slate_work:get_craft_count": "Get Craft Count",
+
   "hexcasting.action.slate_work:set_macro": "Bind Macro",
 
   "hexcasting.action.slate_work:set_sents": "Apply Pseudosentinels",
@@ -58,8 +66,6 @@
   "slate_work.page.storage_loci.get_item_cont": "Further explained: this runs the given _Hex on every stored Item in the $(thing)Vessels/$. The _Hex must return (top to bottom) either a False (omits the Vector, and Number) or True, Vector, and Number. The Vector corresponds to where to output the items into the world (respecting ambit), and Number relates to how many of that type of item to retrieve. $(br2)Costs a 1/4th of a $(l:items/amethyst)dust/$ per activated $(thing)Vessel/$.",
   "slate_work.page.storage_loci.check_item": "Check Item functions much like Reawaken Item; however, it only requires a Boolean from the inputted _Hex. If the Boolean is ever True, the spell ends, and returns True.",
   "slate_work.page.storage_loci.sort_items": "In some rare scenarios, $(thing)Vessels/$ can get jumbled up and have items of the same type spread across different  $(thing)Vessels/$. This is a neat spell to resort them at a cost. That cost being 5 $(l:items/amethyst)Charged Amethyst/$.",
-  "slate_work.page.storage_loci.set_craft": "Sets the crafting recipe of a $(l:greatwork/crafting_loci)Patterned Assembler/$. Takes a list of $(l:casting/influences)$(thing)Nulls/$, items, or item variants, and applies it to the targeted $(l:greatwork/crafting_loci)Assembler/$.",
-  "slate_work.page.storage_loci.set_craft_cont": "To note: the given list gets \"formatted\" as left to right, top to bottom in the $(l:greatwork/crafting_loci)Patterned Assembler/$. As well, the $(l:casting/influences)$(thing)Nulls/$ represent blank spots in recipes. Finally, the Spell will mishap if the given list is longer than 9 items (but passes with less than or equal to 9 items). $(br2)Does not mishap if cast outside of a $(l:greatwork/spellcircles)Spell Circle/$. Costs a negligible amount of _media.",
   "slate_work.page.storage_loci.set_macro": "This binds both a pattern and an iota to a $(l:greatwork/macro_loci)Spell Imprinter/$, which is at the targeted vector. $(br2)Does not mishap if casted outside of a $(l:greatwork/spellcircles)Spell Circle/$. Costs a negligible amount of _media.",
   "slate_work.page.storage_loci.read_broadcast": "Attempts to read an $(l:greatwork/broadcaster_loci)Iotic Door/$ at the given vector. If there is not a $(l:greatwork/broadcaster_loci)Door/$, returns garbage. $(br)Does not mishap if casted outside of a $(l:greatwork/spellcircles)Spell Circle/$, free, and does not require ambit.",
 
@@ -83,7 +89,8 @@
 
   "slate_work.entry.crafting_loci": "Patterned Assemblers",
   "slate_work.page.crafting_loci.crafting_loci": "Oh how my hands $(o)Ache/$ and $(o)Buzz/$ from countless hours of slaving over a $(item)Crafting Table/$... luckily these days are over. The $(thing)Patterned Assembler/$ solves these pains and problems. $(br2)$(o)Items ever deeper in items, I cant stop crafting, I cant stop looking; more items must be crafted and automated. $(b)NOW/$.",
-  "slate_work.page.crafting_loci.crafting_loci_cont": "Precisely what the $(thing)Patterned Assembler/$ does is it attempts to craft whatever item is set within, pulling from activated $(l:greatwork/storage_loci_block)Storage Vessels/$, and placing the resulting item(s) back into the $(thing)Vessels/$. This is triggered when the $(thing)Assembler/$ is activated with a $(l:greatwork/spellcircles)Spell Circle/$. The recipe can be set by hand, or via a $(l:patterns/spells/storage_loci#slate_work:set_craft)Spell/$. If it can craft the inscribed item, it returns a True to the stack and crafts the item, else it does not craft the item (not enough ingredients, no recipe, etc) and returns a False.",
+  "slate_work.page.crafting_loci.crafting_loci_cont": "Precisely what the $(thing)Patterned Assembler/$ does is it attempts to craft whatever item is set within, pulling from activated $(l:greatwork/storage_loci_block)Storage Vessels/$, and placing the resulting item(s) back into the $(thing)Vessels/$. This is triggered when the $(thing)Assembler/$ is activated with a $(l:greatwork/spellcircles)Spell Circle/$. The recipe can be set by hand, or via a $(l:patterns/spells/crafting_loci#slate_work:set_craft)Spell/$. If it can craft the inscribed item, it returns a True to the stack and crafts the item, else it does not craft the item (not enough ingredients, no recipe, etc) and returns a False.",
+  "slate_work.page.crafting_loci.bulk": "While the $(thing)Patterned Assembler/$ can be quite quick, it can still take an agonizingly long time to finish large crafting orders. Thus, this is why I have created $(l:patterns/spells/crafting_loci#slate_work:set_craft_count)patterns/$ for \"bulk operations.\" This lets the $(thing)Patterned Assembler/$ try to craft more than one craft per activation; but, if the $(thing)Patterned Assembler/$ can't craft all the items at once, it will push a False onto the stack, and crafting nothing.",
   "slate_work.page.crafting_loci.crafting": "The $(thing)Patterned Assembler/$ requires the mind of a villager well adapted to paging through tomes and texts; it seems like the $(thing)Librarian/$ is perfect for this.",
 
   "slate_work.entry.macro_loci": "Spell Imprinter",
@@ -143,7 +150,8 @@
   "slate_work.page.fake_player_loci.fake_player_loci": "After much research I have found something quite peculiar, items always require a person to use them. Which means I can not just slap a hand onto a rod and thrust it into blocks (though it would be humorous). Instead, I must look towards the $(thing)Allays/$ and their ever fascinating properties...",
   "slate_work.page.fake_player_loci.fake_player_loci_cont": "Using $(l:greatwork/quenching_allays)$(item)Quenched Allay's/$ shifting abilities, I can extract a being that resembles a person out of the shards for just a moment, and force them to use the item. This figment of a being acts much like my self when I attempt to use an item on an entity, block, or by its self. Additionally, it seems like it has a reach of 10 blocks.",
   "slate_work.page.fake_player_loci.extra": "However, due to the ethereal nature of these beings, special accommodations must be made for what items they hold and use. Thus, the \"Hotbar\" of these beings must be from a $(l:greatwork/hotbar_loci)Pocket Simulator/$. $(br2)The main item of these beings will be the selected slot of the $(l:greatwork/hotbar_loci)Pocket Simulator/$; as well, they do not have an inventory, only the hotbar the $(l:greatwork/hotbar_loci)Pocket Simulator/$ provides.",
-  "slate_work.page.fake_player_loci.lens": "Finally, the look direction of the being is based on either the facing of the block, or an optional axis-aligned $(thing)Vector/$. When I crouch and use the block, it toggles between taking the facing of the block, or the $(thing)Vector/$. $(br2)If I where to equip a $(l:items/lens)Scrying Lens/$, I may see if the block will take the $(thing)Vector/$ or not.",
+  "slate_work.page.fake_player_loci.punch": "Interestingly the $(thing)Synthetic Dreamer/$ can also be used to attack others. If I were to lightly press on the $(thing)Synthetic Dreamer/$ it will make a small chime, and instead of using its item, it will attempt to punch with the held item. However, this can not break blocks since the ephemeral being that is conjured is too weak to break blocks. Finally, if there is no entity found, the $(thing)Synthetic Dreamer/$ will instead do nothing.",
+  "slate_work.page.fake_player_loci.lens": "As for where it attempts to do it's action: the look direction of the ephemeral being is based on either the facing of the block, or an optional axis-aligned $(thing)Vector/$. When I crouch and use the block, it toggles between taking the facing of the block, or the $(thing)Vector/$. $(br2)If I where to equip a $(l:items/lens)Scrying Lens/$, I may see if the block will take the $(thing)Vector/$ or not; as well as if the $(thing)Synthetic Dreamer/$ will punch or not.",
   "slate_work.page.fake_player_loci.crafting": "$(o)Boltzmann Brains? Never heard of them./$",
 
   "slate_work.entry.slate_work_pigments": "Fanciful Pigments",
@@ -157,7 +165,7 @@
 
   "slate_work.entry.slate_reflection": "Slate Reflections",
   "slate_work.page.storage_loci.wave_position": "Adds the current position of the $(thing)Media Wave/$ to the top of the stack.",
-  "slate_work.page.storage_loci.wave_normal": "Adds the current facing of the $(thing)Media Wave/$ to the top of the stack. If the current block does not have a facing, it returns a vector of [0,0,0].",
+  "slate_work.assertPosInRangepage.storage_loci.wave_normal": "Adds the current facing of the $(thing)Media Wave/$ to the top of the stack. If the current block does not have a facing, it returns a vector of [0,0,0].",
   "slate_work.page.storage_loci.wave_speed": "Adds the current speed of the $(thing)Media Wave/$ to the top of the stack. This is measured in how many 20ths of a second the $(thing)Media Wave/$ waits until going to the next $(l:items/slate)Slate.",
   "slate_work.page.storage_loci.media_reflection": "Adds the current amount of _Media in the $(thing)Impetus/$ to the stack, in units of $(l:items/amethyst)dust/$.",
 
@@ -167,6 +175,13 @@
   "slate_work.page.sentinel_loci_patterns.set_sents": "This takes a list of vectors, and attempts to move the Pseudosentinels to the positions.",
   "slate_work.page.sentinel_loci_patterns.set_sents_cont": "Helpfully, the list of vectors from $(thing)Locate Pseudosentinels/$ will always match the order of $(thing)Apply Pseudosentinels/$, meaning I need not worry about the ordering. $(br2)This will mishap if the given list is larger than the current awoken $(l:greatwork/sentinel_loci)Cache/$ amount. Costs 1 $(l:items/amethyst)dust/$ to command the Pseudosentinel, and due to fatigue, an extra 1/8th of a $(l:items/amethyst)dust/$ (stacking) for each Pseudosentinel that was already moved in the same instance.",
   "slate_work.page.sentinel_loci_patterns.get_sents": "This retrieves the current positions of all Pseudosentinels in the order they were awoken. Free to cast.",
+
+  "slate_work.entry.patterns_crafting_loci": "Patterned Assembler Patterns",
+  "slate_work.page.patterns_crafting_loci.intro": "While the $(l:greatwork/crafting_loci)Patterned Assembler/$ is quite accessible without a $(thing)staff/$, it does become extreme powerful with $(thing)spells/$. I have listed all the spells that interact with the $(l:greatwork/crafting_loci)Patterned Assembler/$ here.$(br2)$(o)AE2? Never heard of it.",
+  "slate_work.page.patterns_crafting_loci.set_craft": "Sets the crafting recipe of a $(l:greatwork/crafting_loci)Patterned Assembler/$. Takes a list of $(l:casting/influences)$(thing)Nulls/$, items, or item variants, and applies it to the targeted $(l:greatwork/crafting_loci)Assembler/$.",
+  "slate_work.page.patterns_crafting_loci.set_craft_cont": "To note: the given list gets \"formatted\" as left to right, top to bottom in the $(l:greatwork/crafting_loci)Patterned Assembler/$. As well, the $(l:casting/influences)$(thing)Nulls/$ represent blank spots in recipes. Finally, the Spell will mishap if the given list is longer than 9 items (but passes with less than or equal to 9 items). $(br2)Does not mishap if cast outside of a $(l:greatwork/spellcircles)Spell Circle/$. Costs a negligible amount of _media.",
+  "slate_work.page.patterns_crafting_loci.set_craft_count": "This sets how many times the $(l:greatwork/crafting_loci)Patterned Assembler/$ will craft a recipe.",
+  "slate_work.page.patterns_crafting_loci.get_craft_count": "This gets how many times the $(l:greatwork/crafting_loci)Patterned Assembler/$ will craft a recipe.",
 
   "slate_work.entry.impeti": "Slate Work Impeti",
   "slate_work.page.impeti.intro": "As I dive deeper and deeper into my $(thing)Awakening/$, I have discovered new $(l:greatwork/impetus)Impeti/$ locked away within my self. Why did Nature bury and hide these designs and blueprints? Perhaps, it assumed that I could not handle them? Even after my $(thing)Awakening/$? Or perchance, it was because they could not exist when I $(thing)Awoke/$? $(br2)Whatever it may be, I can now utilize them.",
@@ -183,6 +198,10 @@
   "slate_work.entry.loci": "Loci?",
   "slate_work.page.loci.intro": "During my $(l:greatwork/the_work)grand awakening/$, there was a term that pounded within my head. Begging to be made and released. $(b)Locus/$. $(br2)After countless days of research within my libraries, and the knowledge I had gained during my $(l:greatwork/the_work)awakening/$, I have discovered the meaning of $(thing)Locus/$ and $(thing)Loci/$.",
   "slate_work.page.loci.explained": "Summerized, $(thing)loci/$ is the plural form of $(thing)locus/$, and a $(thing)locus/$ is a block that interacts with a $(l:greatwork/spellcircles)Spell Circle/$ in a unique way. $(l:items/slate)Slates/$, however, do not count as $(thing)loci/$. But, I may see $(thing)loci/$ as a \"subset\" of $(l:items/slate)Slates/$.$(br2)$(o)Inlaid with each-other, endless pathways bending and wefting through a labyrinthine depths. A dance that which no single mind can comprehend. A song that sings to the universe; and the universe whispers back.",
+
+  "slate_work.entry.deco_blocks": "Slate Works Deco Blocks",
+  "slate_work.page.deco_blocks.intro": "As my $(thing)enlightenment/$ concluded, I was struck by inspiration for new blocks to build with. Since, if my mind has expanded, my build pallet might as well join along with it.$(br2)Though I do wish to state: unfortunately, very few of these are useful in a practical sense, just an expanded pallet.",
+  "slate_work.page.deco_blocks.replicated_allay.flay": "In my frantic scribbling, I had found that this, $(thing)Replicated Allay/$, was written down. It seems too be a super-condensed form of $(l:greatwork/quenching_allays)Allay/$, but I am unable to draw media from it. However, much like the $(l:greatwork/quenching_allays)Allays/$, it can be duplicated.",
 
   "Mishaps:": "",
   "hexcasting.mishap.circle.no_storage_loci_ran": "At %s did not find any activated Vessels",
@@ -208,6 +227,7 @@
   "slate_work.scrying.impetus.listening.bound": "The bound moniker is:",
   "slate_work.scrying.impetus.listening.unbound": "Not currently monikered",
   "slate_work.scrying.fake_player": "Optional Vector: ",
+  "slate_work.scrying.fake_player.2": "Will Attack: ",
   "slate_work.scrying.fake_player.true": "True",
 
   "slate_work.scrying.save.translater_comment": "These next \"save\" translations are based on the `CastingImage` class",
