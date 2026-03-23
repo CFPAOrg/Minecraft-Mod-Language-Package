@@ -4,6 +4,10 @@
   "icon": "partytrick:pepernoot",
   "category": "trickster:concepts",
   "additional_search_terms": [
+    "建筑者之激情",
+    "贪食者之饥",
+    "弓箭手之专注",
+    "渔夫之暴",
     "圣尼古拉斯之技巧",
     "胡椒小饼"
   ]
@@ -15,6 +19,14 @@
 ;;;;;
 
 <|page-title@lavender:book_components|title=建筑者之激情|>在放置方块后，建筑者之激情会施放方块上抄有的法术。所放置方块的位置作为第一参数传入。法术组构台不会触发此效果。
+
+;;;;;
+
+<|page-title@lavender:book_components|title=弓箭手之专注|>在弹射物击中时，弓箭手之专注会施放弹射物物品上抄有的法术。被击中的实体或位置作为第一参数传入。
+
+;;;;;
+
+<|page-title@lavender:book_components|title=渔夫之暴|>在钓鱼竿收起时，渔夫之暴会施放钓鱼竿上抄有的法术。被钓起的实体或浮标的位置作为第一参数传入。
 
 ;;;;;
 

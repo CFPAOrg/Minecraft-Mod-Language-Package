@@ -10,7 +10,10 @@
 }
 ```
 
-Due to mana’s capricious and ambiguous nature, and the proximity of some of one’s tools’ to it, the physical forms of such have adapted a similar likeness. Devised here is a ploy to alter such a guise, given a slot and that it can be altered in the first place. And yet all this to say: *‘fashuuuuuuuun’*
+*"Due to mana’s capricious and ambiguous nature, and the proximity of some of one’s tools’ to it, the physical forms of such have adapted a similar likeness. Devised here is a ploy to alter such a guise."*
+
+
+-- An excerpt from a lecture by Prof. Isabeau
 
 
 
@@ -20,4 +23,8 @@ Added by Party Trick.
 
 <|ploy@trickster:templates|trick-id=partytrick:set_custom_model_data,cost=1G|>
 
-If a number is provided the item will be shaped more delicately, changing what the arcane-minded call ‘Custom Model Data’. If it's 0 it will reset to its default instead
+Changes the appearance of the item in the given slot or offhand slot if not provided.
+
+;;;;;
+
+When a number is provided the item will be shaped more delicately, changing what the arcane-minded call ‘Custom Model Data’. If it's 0, it will reset to its default instead.
