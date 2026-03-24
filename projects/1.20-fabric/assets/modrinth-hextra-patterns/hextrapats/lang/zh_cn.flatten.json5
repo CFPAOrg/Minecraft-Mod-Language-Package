@@ -28,9 +28,9 @@
         "out_range.ops": "第四个数似乎描述了检验的方式。$(li)0：val < min 或 max < val$(li)1：val <= min 或 max < val$(li)2：val < min 或 max <= val$(li)3：val <= min 或 max <= val"
       },
       nocon: {
-        intro: "总有些时候，我会想要在比较两个 iota 之后还继续对它们执行操作，但这就需要每次都先运行$(l:patterns/stackmanip#hexcasting:2dup)$(action)狄俄斯库里之策略/$，确实有些麻烦。",
-        name: "比较之策略",
-        detail: "通过实验，我发现：在比较图案前加上一个顺时针的三角形，就可以保留两个输入参数了。",
+        intro: "总有些时候，我会想要在对两个 iota 进行逻辑操作之后，还继续对它们执行其他操作。但这就需要每次都先复制，确实有些麻烦。而且复制也会给自然带去负担，复制大型 iota 时尤为如此，比如说列表等大到$(l:casting/mishaps)$(thing)栈上限成为问题/$的那些。",
+        name: "留项之策略",
+        detail: "通过实验，我发现：在部分逻辑操作图案前加上一个顺时针的三角形，就可以保留两个输入参数了。",
       },
       vec_literals: {
         intro: "返回数的图案有种神奇的性质：把向量之精思的尾部加到$(l:patterns/numbers)$(action)数之精思/$的开头，就能返回一个向量。",
@@ -99,36 +99,41 @@
       },
       sets: {
         intro: "哈希集合的各元素无顺序且不重复，很适合用于记录某物存在与否。<br>由于所谓的“$(thing)哈希/$”之魔法过程，访问其中元素的操作接近于 O(1)，能减轻自然的负担。",
+        tolerance: "不过，这种“$(thing)哈希/$”似乎会给自然带去另一种负担，虽然轻微，但确实存在。数和向量在插入集合时会丢失精度，舍入至 4 位小数。这应当是与$(l:patterns/logic#hexcasting:equals)$(thing)自然理解$(action)相等/$的方式有关。",
         empty_num_set: "压入一个可包含数的空集合。",
+        last_n_num_set: "移除栈顶 $(italic)num/$ 个数，将其插入此时栈顶的数集合。",
         empty_vec_set: "压入一个可包含向量的空集合。",
+        last_n_vec_set: "移除栈顶 $(italic)num/$ 个向量，将其插入此时栈顶的向量集合。",
         empty_entity_set: "压入一个可包含实体的空集合。",
+        last_n_entity_set: "移除栈顶 $(italic)num/$ 个实体，将其插入此时栈顶的实体集合。",
         insert: {
           name: "入集合之馏化",
-          "": "移除栈顶元素，将其插入栈顶集合。"
+          "": "移除栈顶元素，将其插入栈顶集合。该 iota 的类型必须符合集合类型。"
         },
-        insert_ret: "移除栈顶元素，将其插入此时栈顶的集合。若元素已在集合中，返回 True；否则返回 False。",
+        insert_ret: "移除栈顶元素，将其插入此时栈顶的集合。若元素已在集合中，返回 True；否则返回 False。该 iota 的类型必须符合集合类型。",
         remove: {
           name: "出集合之馏化",
-          "": "移除栈顶元素，并从此时栈顶的集合中移除该元素。"
+          "": "移除栈顶元素，并从此时栈顶的集合中移除该元素。该 iota 的类型必须符合集合类型。"
         },
-        remove_ret: "移除栈顶元素，并从此时栈顶的集合中移除该元素。若元素曾在集合中，返回 True；否则返回 False。",
-        last_n_set: "移除 $(italic)num/$ 个元素，而后将它们插入此时栈顶的集合。",
-        splat_set: "移除栈顶集合，将其各元素压栈。顺序随自然心情决定。",
+        remove_ret: "移除栈顶元素，并从此时栈顶的集合中移除该元素。若元素曾在集合中，返回 True；否则返回 False。该 iota 的类型必须符合集合类型。",
         find: {
           name: "定位器之策略",
-          "": "移除栈顶元素，若此时栈顶的集合包含该元素，返回 True；否则返回 False。"
+          "": "移除栈顶元素，若此时栈顶的集合包含该元素，返回 True；否则返回 False。该 iota 的类型必须符合集合类型。"
         },
-        add: "移除栈顶集合，再将其中所有元素插入此时栈顶的集合。",
-        sub: "移除栈顶集合，再从此时栈顶的集合中移除被移除集合的各元素。",
-        and: "取两集合的交集。新集合将只包含两集合共有的元素。",
-        xor: "取两集合的互斥元素。新集合将只包含仅出现于其中一个集合的元素。",
+        add: "移除栈顶集合，再将其中所有元素插入此时栈顶的集合。两集合类型必须匹配。",
+        sub: "移除栈顶集合，再从此时栈顶的集合中移除被移除集合的各元素。两集合类型必须匹配。",
+        and: "取两集合的交集。新集合将只包含两集合共有的元素。两集合类型必须匹配。",
+        xor: "取两集合的互斥元素。新集合将只包含仅出现于其中一个集合的元素。两集合类型必须匹配。",
         abs: "移除栈顶集合，返回其中元素数。",
-        list_to_set: "将栈顶的列表转换为集合。",
-        set_to_list: "将栈顶的集合转换为列表。顺序随自然心情而定。"
+        set_to_list: "将栈顶的集合转换为列表。顺序随自然心情而定。",
+        splat_set: "移除栈顶集合，而后将其中元素全部压入栈顶。顺序随自然心情而定。",
       },
       meta: {
-        true_halt: "若$(l:patterns/logic#hexcasting:bool_coerce)$(action)自然会将栈顶 iota 视作 True/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
-        false_halt: "若$(l:patterns/logic#hexcasting:bool_coerce)$(action)自然会将栈顶 iota 视作 False/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。"
+        true_halt: "若自然会将栈顶 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)True/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
+        false_halt: "若自然会将栈顶 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)False/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
+        true_eval: "若自然会将栈顶往下第二 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)True/$，则施放栈顶的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$类似。",
+        false_eval: "若自然会将栈顶往下第二 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)False/$，则施放栈顶的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$类似。",
+        index_for_each: "与$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$类似，但被遍历列表的各独立栈会额外将所选元素的下标压入栈顶。"
       }
     }
   },
@@ -174,14 +179,15 @@
         cons_about_z: "滚转之纯化",
 
         "nocon/": {
-          greater: "比较之策略：至大",
-          less: "比较之策略：至小",
-          greater_eq: "比较之策略：至大第二型",
-          less_eq: "比较之策略：至小第二型",
-          eq: "比较之策略：相等",
-          neq: "比较之策略：不等",
-          len_eq: "比较之策略：长度相等",
-          len_neq: "比较之策略：长度不等",
+          bool_coerce: "留项之策略：占卜师",
+          greater: "留项之策略：至大",
+          less: "留项之策略：至小",
+          greater_eq: "留项之策略：至大第二型",
+          less_eq: "留项之策略：至小第二型",
+          eq: "留项之策略：相等",
+          neq: "留项之策略：不等",
+          len_eq: "留项之策略：长度相等",
+          len_neq: "留项之策略：长度不等",
         },
 
         split_list: "分割之策略",
@@ -192,8 +198,12 @@
         swindle_list: "骗徒之馏化",
         scronglwfijspoivjqwofklcrvewb: "打乱之纯化",
 
-        empty_set: "空无之精思：集合",
-        last_n_set: "桶之策略",
+        empty_num_set: "空无之精思：数集合",
+        empty_vec_set: "空无之精思：向量集合",
+        empty_entity_set: "空无之精思：实体集合",
+        last_n_num_set: "桶之策略：数",
+        last_n_vec_set: "桶之策略：向量",
+        last_n_entity_set: "桶之策略：实体",
         splat_set: "泼洒之拆解",
         set_insert_ret: "入集合之策略",
         set_remove_ret: "出集合之策略",
@@ -201,7 +211,10 @@
         set_to_list: "赋顺序之纯化",
 
         true_halt: "阿刻戎之策略",
-        false_halt: "斯堤克斯之策略"
+        false_halt: "斯堤克斯之策略",
+        true_eval: "赫利俄斯之策略",
+        false_eval: "塞勒涅之策略",
+        index_for_each: "杰胡提之策略"
       },
 
       "book.hextrapats:": {
@@ -219,15 +232,23 @@
         decrement: "递减之纯化",
 
         "nocon/": {
-          greater: "比较之策略：至大",
-          less: "比较之策略：至小",
-          greater_eq: "比较之策略：至大第二型",
-          less_eq: "比较之策略：至小第二型",
-          eq: "比较之策略：相等",
-          neq: "比较之策略：不等",
-          len_eq: "比较之策略：长度相等",
-          len_neq: "比较之策略：长度不等"
-        }
+          bool_coerce: "留项之策略：占卜师",
+          greater: "留项之策略：至大",
+          less: "留项之策略：至小",
+          greater_eq: "留项之策略：至大第二型",
+          less_eq: "留项之策略：至小第二型",
+          eq: "留项之策略：相等",
+          neq: "留项之策略：不等",
+          len_eq: "留项之策略：长度相等",
+          len_neq: "留项之策略：长度不等"
+        },
+
+        empty_num_set: "空无之精思：数集合",
+        empty_vec_set: "空无之精思：向量集合",
+        empty_entity_set: "空无之精思：实体集合",
+        last_n_num_set: "桶之策略：数",
+        last_n_vec_set: "桶之策略：向量",
+        last_n_entity_set: "桶之策略：实体"
       }
     },
     "special.hextrapats:": {
@@ -241,12 +262,23 @@
       num_set: {
         "": "数集合",
         desc: "一个数集合"
+      },
+      vec_set: {
+        "": "向量集合",
+        desc: "一个向量集合"
+      },
+      entity_set: {
+        "": "实体集合",
+        desc: "一个实体集合"
       }
     },
     mishap: {
       invalid_value: {
         class: {
-          num_set: "一个集合"
+          any_set: "任意集合",
+          num_set: "一个数集合",
+          vec_set: "一个向量集合",
+          entity_set: "一个实体集合"
         },
         "hextrapats:": {
           opposite_vecs: "不与起始方向（%s）正好反向的向量",
