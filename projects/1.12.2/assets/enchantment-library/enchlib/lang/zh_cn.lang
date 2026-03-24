@@ -6,9 +6,15 @@ enchlib.config.general.tooltip=魔咒图书馆的设置
 enchlib.config.client_settings=客户端设置
 enchlib.config.client_settings.tooltip=改变客户端行为的设置。\n这些设置作用于客户端，仅影响本机玩家自己。
 enchlib.config.server_settings=服务端设置
-enchlib.config.server_settings.tooltip=改变游戏玩法的设置。\n这些设置作用于服务端，对所有玩家生效。\n仅在单人模式中可通过GUI修改，专用服务器则需要直接编辑配置文件
+enchlib.config.server_settings.tooltip=改变游戏玩法的设置。\n这些设置作用于服务端，对所有玩家生效。\n仅在单人模式中可通过 GUI 修改，专用服务器则需要直接编辑配置文件
 
 # Client config
+enchlib.config.client_settings.ench_level_translation_enabled=启用魔咒等级翻译
+enchlib.config.client_settings.ench_level_translation_enabled.tooltip=关闭此项将完全禁用魔咒等级翻译。仅当魔咒等级翻译的 Mixin 与其他模组发生冲突时，才应将此项设为 false。
+enchlib.config.client_settings.ench_level_translation=魔咒等级翻译
+enchlib.config.client_settings.ench_level_translation.tooltip=覆盖魔咒等级的翻译，以完全支持罗马数字（最高 3999）或使用简单数字。设置为 VANILLA 可恢复原版行为/允许其他模组覆盖。
+enchlib.config.client_settings.show_tips=显示提示
+enchlib.config.client_settings.show_tips.tooltip=在GUI的各类提示框中显示魔咒图书馆的使用说明
 enchlib.config.client_settings.modified_conway_wechsler=改进的康威-韦克斯勒计数法
 enchlib.config.client_settings.modified_conway_wechsler.tooltip=将魔咒点数的显示格式更改为改进的康威-韦克斯勒格式。\n这种格式更加直观，但存在无效情况（N=103 和 N=300 拥有相同的名字）
 
@@ -21,11 +27,15 @@ enchlib.config.server_settings.enable_ae2uel_hash_fix_mixin=启用 AE2UEL 哈希
 enchlib.config.server_settings.enable_ae2uel_hash_fix_mixin.tooltip=尝试通过使用 Mixin 修改原版的 NBT hashCode 函数，从而修复 AE2UEL v0.56.6 导致的 ItemStack 缓存哈希冲突问题。\n除非知道自己在做什么，否则不要禁用此功能。若没有此修复，AE2UEL 会认为保护 I = 火焰保护 II，或耐久 III = 效率 V，因为它们的哈希值相同。
 enchlib.config.server_settings.enchanted_book_stack_size=附魔书堆叠上限
 enchlib.config.server_settings.enchanted_book_stack_size.tooltip=附魔书的最大堆叠数量。设置为 0 则不覆盖原值。\n超过 64 的值不会生效。
-enchlib.config.server_settings.ench_level_translation=魔咒等级翻译
-enchlib.config.server_settings.ench_level_translation.tooltip=覆盖魔咒等级的翻译，以完全支持罗马数字（最高 3999）或使用简单数字。设置为 VANILLA 可恢复原版行为/允许其他模组覆盖。
+enchlib.config.server_settings.optimize_item_handler=优化物品处理器
+enchlib.config.server_settings.optimize_item_handler.tooltip=对魔咒图书馆的通用物品处理器操作进行优化。对非本模组的物品处理器无性能影响，但对本模组相关处理器提升显著。Mixin 本身应该与所有内容兼容。
 
 # Blocks
 tile.enchlib.enchantment_library.name=魔咒图书馆
 
 # Gui info
-info.enchlib.gui.enchantment_count=%s魔咒
+info.enchlib.gui.enchantment_diff=点击应用：
+info.enchlib.gui.scroll_tip=滚动滚轮调整魔咒等级
+info.enchlib.gui.merge_tip=用附魔书悬停以合并
+info.enchlib.gui.no_entries=将你的附魔书放置于此
+info.enchlib.gui.no_filter_matches=未找到符合筛选条件的附魔书

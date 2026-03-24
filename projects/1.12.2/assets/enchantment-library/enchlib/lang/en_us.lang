@@ -9,6 +9,12 @@ enchlib.config.server_settings=Server Settings
 enchlib.config.server_settings.tooltip=Settings that change gameplay.\nThese settings are server-side and will be applied to all players.\nCan only be changed in the GUI in SinglePlayer, edit the config file directly to change these settings on dedicated servers
 
 # Client config
+enchlib.config.client_settings.ench_level_translation_enabled=Enchantment Level Translation Enabled
+enchlib.config.client_settings.ench_level_translation_enabled.tooltip=Disabling this completely disables enchantment level translation. Only set this to false when the enchantment level translation mixin causes problems with other mods.
+enchlib.config.client_settings.ench_level_translation=Enchantment Level Translation
+enchlib.config.client_settings.ench_level_translation.tooltip=Overwrites the enchantment level translation to fully support roman numerals (up to 3999) or use simple numbers. Set to VANILLA to get vanilla behaviour / allow other mods to overwrite it.
+enchlib.config.client_settings.show_tips=Show Tips
+enchlib.config.client_settings.show_tips.tooltip=Shows tips on how to use the enchantment library in various tooltips in the GUI
 enchlib.config.client_settings.modified_conway_wechsler=Modified Conway-Wechsler
 enchlib.config.client_settings.modified_conway_wechsler.tooltip=Changes the enchantment points display to the modified Conway-Wechsler format.\nThis format is more intuitive, but invalid (N=103 and N=300 have same name)
 
@@ -21,11 +27,15 @@ enchlib.config.server_settings.enable_ae2uel_hash_fix_mixin=Enable AE2UEL Hash F
 enchlib.config.server_settings.enable_ae2uel_hash_fix_mixin.tooltip=Attempts to fix the ItemStack cache hash collision issues introduced in AE2UEL v0.56.6 by changing the vanilla NBT hashCode functions using a mixin.\nDo not disable this unless you know what you're doing. Without this, AE2UEL will think that Protection I = Fire Protection II or Unbreaking III = Efficiency V for example, because they have matching hashes.
 enchlib.config.server_settings.enchanted_book_stack_size=Enchanted Book Stack Size
 enchlib.config.server_settings.enchanted_book_stack_size.tooltip=The maximum stack size for enchanted books. Set to 0 to not overwrite it at all.\nValues over 64 will not really work.
-enchlib.config.server_settings.ench_level_translation=Enchantment Level Translation
-enchlib.config.server_settings.ench_level_translation.tooltip=Overwrites the enchantment level translation to fully support roman numerals (up to 3999) or use simple numbers. Set to VANILLA to get vanilla behaviour / allow other mods to overwrite it.
+enchlib.config.server_settings.optimize_item_handler=Optimize Item Handler
+enchlib.config.server_settings.optimize_item_handler.tooltip=Optimizes common item handler operations for the enchlib. This should have no impact on performance for non-enchlib item handlers, but a pretty big impact for enchlib. The mixins themselves should be compatible with everything.
 
 # Blocks
 tile.enchlib.enchantment_library.name=Enchantment Library
 
 # Gui info
-info.enchlib.gui.enchantment_count=%s Enchantments
+info.enchlib.gui.enchantment_diff=Click to apply:
+info.enchlib.gui.scroll_tip=Scroll to change enchantment level
+info.enchlib.gui.merge_tip=Hover with an enchanted book to combine
+info.enchlib.gui.no_entries=Put your enchanted\nbooks here
+info.enchlib.gui.no_filter_matches=No enchanted book\nmatching filter found
