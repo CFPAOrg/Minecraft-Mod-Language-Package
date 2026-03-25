@@ -92,7 +92,7 @@ jobs:
           fail-on-cache-miss: true # 应由前序保证
 
       # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
-      - run: mv ./build .
+      - run: mv ./build/* .
         shell: bash
 
       - name: Check changed path on ${{ matrix.version }}
@@ -145,7 +145,7 @@ jobs:
           fail-on-cache-miss: true # 应由前序保证
 
       # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
-      - run: mv ./build .
+      - run: mv ./build/* .
         shell: bash
 
       # 还原artifact（资源包）
