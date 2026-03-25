@@ -32,14 +32,15 @@ jobs:
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
-            Packer.exe
-            git2-*.dll
+            build/Packer.exe
+            build/git2-*.dll
           lookup-only: true
 
       # 构造程序
       - name: Build Packer if not cached
         if: steps.cache-packer.outputs.cache-hit != 'true'
-        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64
+        # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+        run: dotnet publish .\src\Packer\Packer.csproj -o ./build -r win-x64
 
 
   pack:
@@ -66,16 +67,21 @@ jobs:
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
-            Packer.exe
-            git2-*.dll
+            build/Packer.exe
+            build/git2-*.dll
           fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
+      
+      # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+      - run: mv ./build/* .
+        shell: bash
 
       - name: Check changed path on ${{ matrix.version }}
         uses: MarceloPrado/has-changed-path@v1.0
         id: check-changes
         with:
-          # 判断位置：该版本文件、该版本配置、代码
+          # 判断位置：action配置、该版本文件、该版本配置、代码
           paths: > 
+            .github/workflows/pr-packer.yml
             projects/${{ matrix.version }}/**
             config/packer/${{ matrix.version }}.json
             src/**
@@ -84,8 +90,9 @@ jobs:
         uses: MarceloPrado/has-changed-path@v1.0
         id: check-critical-changes
         with:
-          # 判断位置：该版本配置、代码
+          # 判断位置：action配置、该版本配置、代码
           paths: > 
+            .github/workflows/pr-packer.yml
             config/packer/${{ matrix.version }}.json
             src/**
 
