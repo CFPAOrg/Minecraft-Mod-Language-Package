@@ -72,7 +72,7 @@ jobs:
           fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
       
       # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
-      - run: mv ./build .
+      - run: mv ./build/* .
         shell: bash
 
       - name: Check changed path on ${{ matrix.version }}
