@@ -8,6 +8,7 @@ on:
       - 'src/**'
       - 'config/packer/**'
       - 'projects/**'
+      - '.github/workflows/packer.yml'
 
 
 jobs:
@@ -28,14 +29,15 @@ jobs:
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
-            Packer.exe
-            git2-*.dll
+            build/Packer.exe
+            build/git2-*.dll
           lookup-only: true
 
       # 构造程序
       - name: Build Packer if not cached
         if: steps.cache-packer.outputs.cache-hit != 'true'
-        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64
+        # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+        run: dotnet publish .\src\Packer\Packer.csproj -o ./build -r win-x64
 
   build-uploader:
     if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
@@ -54,13 +56,14 @@ jobs:
         uses: actions/cache@v4
         with:
           key: ${{ runner.os }}-Uploader-${{ hashFiles('src/Uploader/**') }}
-          path: Uploader.exe
+          path: build/Uploader.exe
           lookup-only: true
 
       # 构造程序
       - name: Build Uploader if not cached
         if: steps.cache-uploader.outputs.cache-hit != 'true'
-        run: dotnet publish .\src\Uploader\Uploader.csproj -o ./ -r win-x64
+        # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+        run: dotnet publish .\src\Uploader\Uploader.csproj -o ./build -r win-x64
 
   pack:
     name: Pack Resources and Upload Artifacts/Releases
@@ -84,9 +87,13 @@ jobs:
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
-            Packer.exe
-            git2-*.dll
+            build/Packer.exe
+            build/git2-*.dll
           fail-on-cache-miss: true # 应由前序保证
+
+      # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+      - run: mv ./build .
+        shell: bash
 
       - name: Check changed path on ${{ matrix.version }}
         uses: MarceloPrado/has-changed-path@v1.0
@@ -94,6 +101,7 @@ jobs:
         with:
           # 判断位置：该版本文件、该版本配置、代码
           paths: > 
+            .github/workflows/packer.yml
             projects/${{ matrix.version }}
             config/packer/${{ matrix.version }}.json
             src/**
@@ -133,8 +141,12 @@ jobs:
         with:
           key: ${{ runner.os }}-Uploader-${{ hashFiles('src/Uploader/**') }}
           path: |
-            Uploader.exe
+            build/Uploader.exe
           fail-on-cache-miss: true # 应由前序保证
+
+      # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+      - run: mv ./build .
+        shell: bash
 
       # 还原artifact（资源包）
       - name: Restore Artifacts
