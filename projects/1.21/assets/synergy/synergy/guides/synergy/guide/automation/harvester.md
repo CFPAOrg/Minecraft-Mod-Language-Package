@@ -37,95 +37,7 @@ Note: It can harvest trees but dont replant the saplings!
 
 <GameScene zoom="2" interactive={true}>
 
-<Block x="1" y="0" z="1" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="0" z="1" id="minecraft:white_terracotta"/>
-<Block x="3" y="0" z="1" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="0" z="1" id="minecraft:white_terracotta"/>
-<Block x="5" y="0" z="1" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="0" z="1" id="minecraft:white_terracotta"/>
-<Block x="7" y="0" z="1" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="0" z="1" id="minecraft:white_terracotta"/>
-<Block x="9" y="0" z="1" id="minecraft:light_gray_terracotta"/>
-
-<Block x="1" y="0" z="2" id="minecraft:white_terracotta"/>
-<Block x="2" y="0" z="2" id="minecraft:light_gray_terracotta"/>
-<Block x="3" y="0" z="2" id="minecraft:white_terracotta"/>
-<Block x="4" y="0" z="2" id="minecraft:light_gray_terracotta"/>
-<Block x="5" y="0" z="2" id="minecraft:white_terracotta"/>
-<Block x="6" y="0" z="2" id="minecraft:light_gray_terracotta"/>
-<Block x="7" y="0" z="2" id="minecraft:white_terracotta"/>
-<Block x="8" y="0" z="2" id="minecraft:light_gray_terracotta"/>
-<Block x="9" y="0" z="2" id="minecraft:white_terracotta"/>
-
-<Block x="1" y="0" z="3" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="0" z="3" id="minecraft:white_terracotta"/>
-<Block x="3" y="0" z="3" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="0" z="3" id="minecraft:white_terracotta"/>
-<Block x="5" y="0" z="3" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="0" z="3" id="minecraft:white_terracotta"/>
-<Block x="7" y="0" z="3" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="0" z="3" id="minecraft:white_terracotta"/>
-<Block x="9" y="0" z="3" id="minecraft:light_gray_terracotta"/>
-
-<Block x="1" y="0" z="4" id="minecraft:white_terracotta"/>
-<Block x="2" y="0" z="4" id="minecraft:light_gray_terracotta"/>
-<Block x="3" y="0" z="4" id="minecraft:white_terracotta"/>
-<Block x="4" y="0" z="4" id="minecraft:light_gray_terracotta"/>
-<Block x="5" y="0" z="4" id="minecraft:white_terracotta"/>
-<Block x="6" y="0" z="4" id="minecraft:light_gray_terracotta"/>
-<Block x="7" y="0" z="4" id="minecraft:white_terracotta"/>
-<Block x="8" y="0" z="4" id="minecraft:light_gray_terracotta"/>
-<Block x="9" y="0" z="4" id="minecraft:white_terracotta"/>
-
-<Block x="1" y="0" z="5" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="0" z="5" id="minecraft:white_terracotta"/>
-<Block x="3" y="0" z="5" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="0" z="5" id="minecraft:white_terracotta"/>
-<Block x="5" y="0" z="5" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="0" z="5" id="minecraft:white_terracotta"/>
-<Block x="7" y="0" z="5" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="0" z="5" id="minecraft:white_terracotta"/>
-<Block x="9" y="0" z="5" id="minecraft:light_gray_terracotta"/>
-
-<Block x="1" y="0" z="6" id="minecraft:white_terracotta"/>
-<Block x="2" y="0" z="6" id="minecraft:light_gray_terracotta"/>
-<Block x="3" y="0" z="6" id="minecraft:white_terracotta"/>
-<Block x="4" y="0" z="6" id="minecraft:light_gray_terracotta"/>
-<Block x="5" y="0" z="6" id="minecraft:white_terracotta"/>
-<Block x="6" y="0" z="6" id="minecraft:light_gray_terracotta"/>
-<Block x="7" y="0" z="6" id="minecraft:white_terracotta"/>
-<Block x="8" y="0" z="6" id="minecraft:light_gray_terracotta"/>
-<Block x="9" y="0" z="6" id="minecraft:white_terracotta"/>
-
-<Block x="1" y="0" z="7" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="0" z="7" id="minecraft:white_terracotta"/>
-<Block x="3" y="0" z="7" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="0" z="7" id="minecraft:white_terracotta"/>
-<Block x="5" y="0" z="7" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="0" z="7" id="minecraft:white_terracotta"/>
-<Block x="7" y="0" z="7" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="0" z="7" id="minecraft:white_terracotta"/>
-<Block x="9" y="0" z="7" id="minecraft:light_gray_terracotta"/>
-
-<Block x="1" y="0" z="8" id="minecraft:white_terracotta"/>
-<Block x="2" y="0" z="8" id="minecraft:light_gray_terracotta"/>
-<Block x="3" y="0" z="8" id="minecraft:white_terracotta"/>
-<Block x="4" y="0" z="8" id="minecraft:light_gray_terracotta"/>
-<Block x="5" y="0" z="8" id="minecraft:white_terracotta"/>
-<Block x="6" y="0" z="8" id="minecraft:light_gray_terracotta"/>
-<Block x="7" y="0" z="8" id="minecraft:white_terracotta"/>
-<Block x="8" y="0" z="8" id="minecraft:light_gray_terracotta"/>
-<Block x="9" y="0" z="8" id="minecraft:white_terracotta"/>
-
-<Block x="1" y="0" z="9" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="0" z="9" id="minecraft:white_terracotta"/>
-<Block x="3" y="0" z="9" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="0" z="9" id="minecraft:white_terracotta"/>
-<Block x="5" y="0" z="9" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="0" z="9" id="minecraft:white_terracotta"/>
-<Block x="7" y="0" z="9" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="0" z="9" id="minecraft:white_terracotta"/>
-<Block x="9" y="0" z="9" id="minecraft:light_gray_terracotta"/>
+  <ImportStructure src="../templates/base.nbt" pos="1 0 1"/>
 
   <Block x="5" y="1" z="10" id="synergy:harvester" p:facing="north" p:enabled="true"/>
 
@@ -169,4 +81,4 @@ Note: It can harvest trees but dont replant the saplings!
 
 <RecipeFor id="synergy:harvester" />
 
-_Also Harvester include an entire custom API to allow other mods to add support without need to use mixing_
+_Also Harvester include an entire custom API to allow other mods to add support without need to use mixin_

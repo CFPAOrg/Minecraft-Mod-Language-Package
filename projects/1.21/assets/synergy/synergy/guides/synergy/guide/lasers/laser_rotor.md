@@ -23,96 +23,7 @@ Right click can rotate the block
 ### Example of setup to generate manually FE using a Laser Rotor
 
 <GameScene zoom="2" interactive={true}>
-
-<Block x="1" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="-1" z="1" id="minecraft:white_terracotta"/>
-<Block x="3" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="-1" z="1" id="minecraft:white_terracotta"/>
-<Block x="5" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="-1" z="1" id="minecraft:white_terracotta"/>
-<Block x="7" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="-1" z="1" id="minecraft:white_terracotta"/>
-<Block x="9" y="-1" z="1" id="minecraft:light_gray_terracotta"/>
-
-<Block x="1" y="-1" z="2" id="minecraft:white_terracotta"/>
-<Block x="2" y="-1" z="2" id="minecraft:light_gray_terracotta"/>
-<Block x="3" y="-1" z="2" id="minecraft:white_terracotta"/>
-<Block x="4" y="-1" z="2" id="minecraft:light_gray_terracotta"/>
-<Block x="5" y="-1" z="2" id="minecraft:white_terracotta"/>
-<Block x="6" y="-1" z="2" id="minecraft:light_gray_terracotta"/>
-<Block x="7" y="-1" z="2" id="minecraft:white_terracotta"/>
-<Block x="8" y="-1" z="2" id="minecraft:light_gray_terracotta"/>
-<Block x="9" y="-1" z="2" id="minecraft:white_terracotta"/>
-
-<Block x="1" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="-1" z="3" id="minecraft:white_terracotta"/>
-<Block x="3" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="-1" z="3" id="minecraft:white_terracotta"/>
-<Block x="5" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="-1" z="3" id="minecraft:white_terracotta"/>
-<Block x="7" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="-1" z="3" id="minecraft:white_terracotta"/>
-<Block x="9" y="-1" z="3" id="minecraft:light_gray_terracotta"/>
-
-<Block x="1" y="-1" z="4" id="minecraft:white_terracotta"/>
-<Block x="2" y="-1" z="4" id="minecraft:light_gray_terracotta"/>
-<Block x="3" y="-1" z="4" id="minecraft:white_terracotta"/>
-<Block x="4" y="-1" z="4" id="minecraft:light_gray_terracotta"/>
-<Block x="5" y="-1" z="4" id="minecraft:white_terracotta"/>
-<Block x="6" y="-1" z="4" id="minecraft:light_gray_terracotta"/>
-<Block x="7" y="-1" z="4" id="minecraft:white_terracotta"/>
-<Block x="8" y="-1" z="4" id="minecraft:light_gray_terracotta"/>
-<Block x="9" y="-1" z="4" id="minecraft:white_terracotta"/>
-
-<Block x="1" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="-1" z="5" id="minecraft:white_terracotta"/>
-<Block x="3" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="-1" z="5" id="minecraft:white_terracotta"/>
-<Block x="5" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="-1" z="5" id="minecraft:white_terracotta"/>
-<Block x="7" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="-1" z="5" id="minecraft:white_terracotta"/>
-<Block x="9" y="-1" z="5" id="minecraft:light_gray_terracotta"/>
-
-<Block x="1" y="-1" z="6" id="minecraft:white_terracotta"/>
-<Block x="2" y="-1" z="6" id="minecraft:light_gray_terracotta"/>
-<Block x="3" y="-1" z="6" id="minecraft:white_terracotta"/>
-<Block x="4" y="-1" z="6" id="minecraft:light_gray_terracotta"/>
-<Block x="5" y="-1" z="6" id="minecraft:white_terracotta"/>
-<Block x="6" y="-1" z="6" id="minecraft:light_gray_terracotta"/>
-<Block x="7" y="-1" z="6" id="minecraft:white_terracotta"/>
-<Block x="8" y="-1" z="6" id="minecraft:light_gray_terracotta"/>
-<Block x="9" y="-1" z="6" id="minecraft:white_terracotta"/>
-
-<Block x="1" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="-1" z="7" id="minecraft:white_terracotta"/>
-<Block x="3" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="-1" z="7" id="minecraft:white_terracotta"/>
-<Block x="5" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="-1" z="7" id="minecraft:white_terracotta"/>
-<Block x="7" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="-1" z="7" id="minecraft:white_terracotta"/>
-<Block x="9" y="-1" z="7" id="minecraft:light_gray_terracotta"/>
-
-<Block x="1" y="-1" z="8" id="minecraft:white_terracotta"/>
-<Block x="2" y="-1" z="8" id="minecraft:light_gray_terracotta"/>
-<Block x="3" y="-1" z="8" id="minecraft:white_terracotta"/>
-<Block x="4" y="-1" z="8" id="minecraft:light_gray_terracotta"/>
-<Block x="5" y="-1" z="8" id="minecraft:white_terracotta"/>
-<Block x="6" y="-1" z="8" id="minecraft:light_gray_terracotta"/>
-<Block x="7" y="-1" z="8" id="minecraft:white_terracotta"/>
-<Block x="8" y="-1" z="8" id="minecraft:light_gray_terracotta"/>
-<Block x="9" y="-1" z="8" id="minecraft:white_terracotta"/>
-
-<Block x="1" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
-<Block x="2" y="-1" z="9" id="minecraft:white_terracotta"/>
-<Block x="3" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
-<Block x="4" y="-1" z="9" id="minecraft:white_terracotta"/>
-<Block x="5" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
-<Block x="6" y="-1" z="9" id="minecraft:white_terracotta"/>
-<Block x="7" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
-<Block x="8" y="-1" z="9" id="minecraft:white_terracotta"/>
-<Block x="9" y="-1" z="9" id="minecraft:light_gray_terracotta"/>
+<ImportStructure src="../templates/base.nbt" pos="1 -1 1"/>
 
 <Block x="5" z="5" id="synergy:laser_rotor" p:enabled="false"/>
 
@@ -144,7 +55,6 @@ Right click can rotate the block
 
 <Block x="2" z="3" id="synergy:laser_mirror" p:inverted="true"/>
 <Block x="2" z="5" id="synergy:laser_mirror" p:inverted="false"/>
-
 
 <Block x="7" z="1" id="synergy:solar_panel" p:north="false" p:south="false" p:east="false" p:west="false" p:enabled="true"/>
 

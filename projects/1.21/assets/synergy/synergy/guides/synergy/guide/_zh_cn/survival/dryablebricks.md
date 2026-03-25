@@ -37,5 +37,5 @@ item_ids:
 干燥操作需在干燥的生物群系中进行。
 
 
-<Recipe id="synergy:dryable_bricks/packed_mud_brick" />
-<Recipe id="synergy:dryable_bricks/brick" />
+<Recipe id="synergy:dryable_brick/packed_mud_brick" />
+<Recipe id="synergy:dryable_brick/brick" />

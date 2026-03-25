@@ -37,5 +37,5 @@ Require to see the sky to dry but if start to rain it require a cover!
 Require a dry biome to dry
 
 
-<Recipe id="synergy:dryable_bricks/packed_mud_brick" />
-<Recipe id="synergy:dryable_bricks/brick" />
+<Recipe id="synergy:dryable_brick/packed_mud_brick" />
+<Recipe id="synergy:dryable_brick/brick" />
