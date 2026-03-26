@@ -51,7 +51,10 @@ Adds an amount of ticks to the given animals breeding age. Cost stacks the same 
 ;;;;;
 
 <|page-title@lavender:book_components|title=Note: Armor Stands|>By infusing armor stands with mana their properties can be changed. 
-Properties are indexed in the order seen on the next page. With vectors representing Euler angles, rotation being in degrees, and scale being much more limited than [Ploy of Occupation](^trickster:ploys/entity#5).
+Properties are indexed in the order seen on the next page, with vectors representing Euler angles, rotation being in degrees, and scale being more limited than [Ploy of Occupation](^trickster:ploys/entity#5).
+
+
+An item frame's rotation, invisibility, and protection can also be effected, with rotation being from 0 to 7. 
 
 ;;;;;
 
