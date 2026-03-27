@@ -1,0 +1,290 @@
+{
+  "pages.hextrapats":{
+    "hextrapats_consts.title": "咒法新增：常量",
+    "hextrapats_logic.title": "咒法新增：逻辑",
+    "hextrapats_nocon.title": "保留式比较",
+    "hextrapats_vec_literals.title": "向量常量",
+    "hextrapats_math.title": "咒法新增：数学",
+    "hextrapats_vec_math.title": "咒法新增：向量数学",
+    "hextrapats_lists.title": "咒法新增：列表",
+    "hextrapats_sets.title": "哈希集合操作",
+    "hextrapats_meta.title": "咒法新增：元运行"
+  },
+  hextrapats: {
+    page: {
+      consts: {
+        one: "左图即逆时针图案会压入 (1, 1, 1)；右图即顺时针图案会压入 (-1, -1, -1)。"
+      },
+      logic: {
+        greater: "若第一个向量的长度长于第二个的，返回 True；否则返回 False。",
+        less: "若第一个向量的长度短于第二个的，返回 True；否则返回 False。",
+        greater_eq: "若第一个向量的长度长于或等于第二个的，返回 True；否则返回 False。",
+        less_eq: "若第一个向量的长度短于或等于第二个的，返回 True；否则返回 False。",
+        len_eq: "若两向量的长度相等（允许较小误差），返回 True；否则返回 False。",
+        len_neq: "若两向量的长度不相等（不计较小误差），返回 True；否则返回 False。",
+        in_range: "若第一个数在第二个和第三个之间，返回 True；否则返回 False。若第一个参数是向量，则比较其长度。",
+        "in_range.ops": "第四个数似乎描述了检验的方式。$(li)0：min < val < max$(li)1：min <= val < max$(li)2：min < val <= max$(li)3：min <= val <= max",
+        out_range: "若第一个数不在第二个和第三个之间，返回 True；否则返回 False。若第一个参数是向量，则比较其长度。",
+        "out_range.ops": "第四个数似乎描述了检验的方式。$(li)0：val < min 或 max < val$(li)1：val <= min 或 max < val$(li)2：val < min 或 max <= val$(li)3：val <= min 或 max <= val"
+      },
+      nocon: {
+        intro: "总有些时候，我会想要在对两个 iota 进行逻辑操作之后，还继续对它们执行其他操作。但这就需要每次都先复制，确实有些麻烦。而且复制也会给自然带去负担，复制大型 iota 时尤为如此，比如说列表等大到$(l:casting/mishaps)$(thing)栈上限成为问题/$的那些。",
+        name: "留项之策略",
+        detail: "通过实验，我发现：在部分逻辑操作图案前加上一个顺时针的三角形，就可以保留两个输入参数了。",
+      },
+      vec_literals: {
+        intro: "返回数的图案有种神奇的性质：把向量之精思的尾部加到$(l:patterns/numbers)$(action)数之精思/$的开头，就能返回一个向量。",
+        x: "指向左后方的头部会返回 $(l:patterns/consts#hexcasting:const/vec/x)$(action)X 轴/$上的向量。",
+        y: "直线形状的头部会返回 $(l:patterns/consts#hexcasting:const/vec/y)$(action)Y 轴/$上的向量。",
+        z: "指向右后方的头部会返回 $(l:patterns/consts#hexcasting:const/vec/z)$(action)Z 轴/$上的向量。",
+        "1": "向左微偏的头部会返回$(l:patterns/hextrapats_consts#hextrapats:haha_ha_one)$(action)所有 3 个分量都相等/$的向量。",
+        detail: "首先，绘制前页八种图案中的一种，默认数值为 0。然后，每一画的$(italic)方向/$会以对应方式修改该数值。$(li)前方：加 1$(li)左前方：加 5$(li)右前方：加 10$(li)左后方：乘 2$(li)右后方：除以 2$(br)顺时针绘制，也即各页右图，会在绘制完成后取相反数（如左图逆时针绘制则不取）。$(p)绘制完成后会返回对应向量。",
+
+        example: {
+          "x10.header": "例图一",
+          "x10": "该图案会返回 (10, 0, 0)。",
+          "y7.header": "例图二",
+          "y7": "该图案会返回 (0, 7, 0)：5 + 1 + 1。",
+          "z-32.header": "例图三",
+          "z-32": "该图案会返回 (0, 0, -32)：(1 + 5 + 10) * 2 的相反数。",
+          "a4.5.header": "例图四",
+          "a4.5": "该图案会返回 (4.5, 4.5, 4.5)：5 / 2 + 1 + 1。"
+        }
+      },
+      math: {
+        deg_to_rad: "将角度变为弧度。相当于乘以 $(l:patterns/consts#hexcasting:const/double/pi)$(action)π/$ 再除以 180。",
+        rad_to_deg: "将弧度变为角度。相当于乘以 180 再除以 $(l:patterns/consts#hexcasting:const/double/pi)$(action)π/$。",
+        invert: "求所给数/向量与 -1 相乘的积。",
+        increment: "递增 1。",
+        decrement: "递减 1。",
+        rand_zero: "返回 0（包含）到所给数（不包含）之间的随机数。",
+        rand_range: "返回从第一个数（包含）到第二个数（不包含）之间的随机数。",
+        scientific_exp: "求所给数/向量与 10^n 或 10^-n 相乘的积。其中 n 为尾部的长度，指数有无负号取决于图案开头更近似于$(l:patterns/math#hexcasting:mul)$(action)乘法之馏化/$还是$(l:patterns/math#hexcasting:div)$(action)除法之馏化/$。上方三图分别为 x10^1、x10^2、x10^3。下方三图分别为 x10^-1、x10^-2、x10^-3。",
+        approach: "以第三个数为步长，让第一个数向第二个数靠近，不会过冲。",
+        angle_dist: "返回两角间最短的角度差，以弧度计。",
+        angle_approach: {
+          "": "以第三个值为步长，让第一个角转向第二个角。会选择最短路径。所有角均以弧度计。",
+          examples: "（为方便阅读，示例中使用角度单位。）$(p)例如：$(li)90, 135, 10 → 100（起点为 90，向 135 旋转 10 度）$(li)10, 270, 30 → 340（起点为 10，向 270 旋转 35 度）$(li)300, 90, 90 → 30（起点为 300，向 90 旋转 90 度）$(li)20, 60, 180 → 60（起点为 20，向 60 旋转 180 度，并停在 60 处）"
+        }
+      },
+      vec_math: {
+        normalize: "将向量的长度变为 1。",
+        increment: "令长度增加 1。对 (0, 0, 0) 无效。",
+        decrement: "令强度减少 1。对 (0, 0, 0) 无效。",
+        rand_vec: "返回朝向随机方向的单位向量。",
+        vec_dist: "返回两向量间的距离。",
+        approach: "以第三个距离为步长，让第一个向量向第二个向量靠近，不会过冲。",
+        angle_dist: "返回两向量间最短的角度差，以弧度计。",
+        angle_approach: {
+          "": "将第一个向量向第二个向量旋转给定弧度。若两向量方向正好相反，则会招致事故。",
+          examples: "例如：$(li)(1, 0, 0), (0, 1, 0), π/4$(br)   → (0.71, 0.71, 0)$(li)(2, 0, 0), (0, 5, 0), π/4$(br)   → (1.41, 1.41, 0)$(li)(1, 1, 1), (0, 5, 5), π/6$(br)   → (0.16, 1.22, 1.22)",
+        },
+        from_polar: "以俯仰和偏航两个极坐标角生成单位向量，均以弧度计。+Y 对应上方。偏航角为 0 对应 +Z，为 π/2 对应 -X。相关文献又提到了所谓的 $(thing)F3/$。",
+        to_polar: "将向量的方向转换为俯仰和偏航两个极坐标角，均以弧度计。+Y 对应上方。偏航角为 0 对应 +Z，为 π/2 对应 -X。相关文献又提到了所谓的 $(thing)F3/$。",
+        rot_about_x: "绕 X 轴将所给向量旋转所给弧度。",
+        rot_about_y: "绕 Y 轴将所给向量旋转所给弧度。",
+        rot_about_z: "绕 Z 轴将所给向量旋转所给弧度。",
+        cons_about_x: "将弧度角变为单位向量。该向量的 X 分量为 0。0 弧度对应 +Z，π/4 弧度对应 +Y。",
+        cons_about_y: "将弧度角变为单位向量。该向量的 Y 分量为 0。0 弧度对应 +Z，π/4 弧度对应 -X。我曾读到过某些文献提到某种叫 $(thing)F3/$ 的东西，但我还找不出它的意义。",
+        cons_about_z: "将弧度角变为单位向量。该向量的 Z 分量为 0。0 弧度对应 -X，π/4 弧度对应 +Y。",
+      },
+      lists: {
+        split: "在所给下标处分割列表。[a, b, c, d, e], 2 会返回 [a, b], [c, d, e]。",
+        "del_element/": {
+          first: "移除栈顶 iota，而后移除列表中该 iota 第一次出现的实例。若列表中存在该 iota，返回 True；否则返回 False。",
+          all: "移除栈顶 iota，而后移除列表中该 iota 的$(italic)全部/$实例。返回从列表中移除的元素数量。"
+        },
+        swindle: "重排列表的元素，方式与$(l:patterns/stackmanip#hexcasting:swizzle)$(action)骗徒之策略/$重排栈的一致。给定负值会从开头起进行重排，而非从末尾起。",
+        scronglwfijspoivjqwofklcrvewb: "打乱列表各元素。"
+      },
+      sets: {
+        intro: "哈希集合的各元素无顺序且不重复，很适合用于记录某物存在与否。<br>由于所谓的“$(thing)哈希/$”之魔法过程，访问其中元素的操作接近于 O(1)，能减轻自然的负担。",
+        tolerance: "不过，这种“$(thing)哈希/$”似乎会给自然带去另一种负担，虽然轻微，但确实存在。数和向量在插入集合时会丢失精度，舍入至 4 位小数。这应当是与$(l:patterns/logic#hexcasting:equals)$(thing)自然理解$(action)相等/$的方式有关。",
+        empty_num_set: "压入一个可包含数的空集合。",
+        last_n_num_set: "移除栈顶 $(italic)num/$ 个数，将其插入此时栈顶的数集合。",
+        empty_vec_set: "压入一个可包含向量的空集合。",
+        last_n_vec_set: "移除栈顶 $(italic)num/$ 个向量，将其插入此时栈顶的向量集合。",
+        empty_entity_set: "压入一个可包含实体的空集合。",
+        last_n_entity_set: "移除栈顶 $(italic)num/$ 个实体，将其插入此时栈顶的实体集合。",
+        insert: {
+          name: "入集合之馏化",
+          "": "移除栈顶元素，将其插入栈顶集合。该 iota 的类型必须符合集合类型。"
+        },
+        insert_ret: "移除栈顶元素，将其插入此时栈顶的集合。若元素已在集合中，返回 True；否则返回 False。该 iota 的类型必须符合集合类型。",
+        remove: {
+          name: "出集合之馏化",
+          "": "移除栈顶元素，并从此时栈顶的集合中移除该元素。该 iota 的类型必须符合集合类型。"
+        },
+        remove_ret: "移除栈顶元素，并从此时栈顶的集合中移除该元素。若元素曾在集合中，返回 True；否则返回 False。该 iota 的类型必须符合集合类型。",
+        find: {
+          name: "定位器之策略",
+          "": "移除栈顶元素，若此时栈顶的集合包含该元素，返回 True；否则返回 False。该 iota 的类型必须符合集合类型。"
+        },
+        add: "移除栈顶集合，再将其中所有元素插入此时栈顶的集合。两集合类型必须匹配。",
+        sub: "移除栈顶集合，再从此时栈顶的集合中移除被移除集合的各元素。两集合类型必须匹配。",
+        and: "取两集合的交集。新集合将只包含两集合共有的元素。两集合类型必须匹配。",
+        xor: "取两集合的互斥元素。新集合将只包含仅出现于其中一个集合的元素。两集合类型必须匹配。",
+        abs: "移除栈顶集合，返回其中元素数。",
+        set_to_list: "将栈顶的集合转换为列表。顺序随自然心情而定。",
+        splat_set: "移除栈顶集合，而后将其中元素全部压入栈顶。顺序随自然心情而定。",
+      },
+      meta: {
+        true_halt: "若自然会将栈顶 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)True/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
+        false_halt: "若自然会将栈顶 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)False/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
+        true_eval: "若自然会将栈顶往下第二 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)True/$，则施放栈顶的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$类似。",
+        false_eval: "若自然会将栈顶往下第二 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)False/$，则施放栈顶的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$类似。",
+        index_for_each: "与$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$类似，但被遍历列表的各独立栈会额外将所选元素的下标压入栈顶。"
+      }
+    }
+  },
+  hexcasting: {
+    action: {
+      "hextrapats:": {
+        haha_ha_one: "向量之精思，+1型",
+        eno_ah_ahah: "向量之精思，-1型",
+
+        len_eq: "长度相等之馏化",
+        len_neq: "长度不等之馏化",
+
+        in_range: "范围之提整",
+        out_range: "范围之提整，第二型",
+
+        scaled_vec_x: "向量之精思，X第二型",
+        scaled_vec_y: "向量之精思，Y第二型",
+        scaled_vec_z: "向量之精思，Z第二型",
+        scaled_vec_all: "向量之精思，1第二型",
+
+        deg_to_rad: "弧度之纯化",
+        rad_to_deg: "角度之纯化",
+        invert: "反照之纯化",
+        increment: "递增之纯化",
+        decrement: "递减之纯化",
+        rand_zero: "熵之纯化",
+        rand_range: "熵之馏化",
+        scientific_exp: "科学计数之纯化",
+        approach: "趋近之提整",
+        angle_dist: "西塔之馏化",
+        angle_approach: "转向之提整",
+
+        normalize: "归一之纯化",
+        rand_vec: "混沌之精思",
+        vec_dist: "距离之馏化",
+        from_polar: "极坐标之馏化",
+        to_polar: "极坐标之分解",
+        rot_about_x: "俯仰之馏化",
+        rot_about_y: "偏航之馏化",
+        rot_about_z: "滚转之馏化",
+        cons_about_x: "俯仰之纯化",
+        cons_about_y: "偏航之纯化",
+        cons_about_z: "滚转之纯化",
+
+        "nocon/": {
+          bool_coerce: "留项之策略：占卜师",
+          greater: "留项之策略：至大",
+          less: "留项之策略：至小",
+          greater_eq: "留项之策略：至大第二型",
+          less_eq: "留项之策略：至小第二型",
+          eq: "留项之策略：相等",
+          neq: "留项之策略：不等",
+          len_eq: "留项之策略：长度相等",
+          len_neq: "留项之策略：长度不等",
+        },
+
+        split_list: "分割之策略",
+        "del_element/": {
+          first: "消除之策略",
+          all: "消除之策略，第二型"
+        },
+        swindle_list: "骗徒之馏化",
+        scronglwfijspoivjqwofklcrvewb: "打乱之纯化",
+
+        empty_num_set: "空无之精思：数集合",
+        empty_vec_set: "空无之精思：向量集合",
+        empty_entity_set: "空无之精思：实体集合",
+        last_n_num_set: "桶之策略：数",
+        last_n_vec_set: "桶之策略：向量",
+        last_n_entity_set: "桶之策略：实体",
+        splat_set: "泼洒之拆解",
+        set_insert_ret: "入集合之策略",
+        set_remove_ret: "出集合之策略",
+        list_to_set: "解顺序之纯化",
+        set_to_list: "赋顺序之纯化",
+
+        true_halt: "阿刻戎之策略",
+        false_halt: "斯堤克斯之策略",
+        true_eval: "赫利俄斯之策略",
+        false_eval: "塞勒涅之策略",
+        index_for_each: "杰胡提之策略"
+      },
+
+      "book.hextrapats:": {
+        haha_ha_one:  "向量之精思，+1/-1型",
+
+        len_eq: "长度相等之馏化",
+        len_neq: "长度不等之馏化",
+
+        scaled_vec_x: "向量之精思，+X/-X第二型",
+        scaled_vec_y: "向量之精思，+Y/-Y第二型",
+        scaled_vec_z: "向量之精思，+Z/-Z第二型",
+        scaled_vec_all: "向量之精思，+1/-1第二型",
+
+        increment: "递增之纯化",
+        decrement: "递减之纯化",
+
+        "nocon/": {
+          bool_coerce: "留项之策略：占卜师",
+          greater: "留项之策略：至大",
+          less: "留项之策略：至小",
+          greater_eq: "留项之策略：至大第二型",
+          less_eq: "留项之策略：至小第二型",
+          eq: "留项之策略：相等",
+          neq: "留项之策略：不等",
+          len_eq: "留项之策略：长度相等",
+          len_neq: "留项之策略：长度不等"
+        },
+
+        empty_num_set: "空无之精思：数集合",
+        empty_vec_set: "空无之精思：向量集合",
+        empty_entity_set: "空无之精思：实体集合",
+        last_n_num_set: "桶之策略：数",
+        last_n_vec_set: "桶之策略：向量",
+        last_n_entity_set: "桶之策略：实体"
+      }
+    },
+    "special.hextrapats:": {
+      scaled_vec_x: "向量之精思：(%s, 0, 0)",
+      scaled_vec_y: "向量之精思：(0, %s, 0)",
+      scaled_vec_z: "向量之精思：(0, 0, %s)",
+      scaled_vec_all: "向量之精思：(%s, %s, %s)",
+      scientific_exp: "科学计数之纯化：10^%s"
+    },
+    "iota.hextrapats:": {
+      num_set: {
+        "": "数集合",
+        desc: "一个数集合"
+      },
+      vec_set: {
+        "": "向量集合",
+        desc: "一个向量集合"
+      },
+      entity_set: {
+        "": "实体集合",
+        desc: "一个实体集合"
+      }
+    },
+    mishap: {
+      invalid_value: {
+        class: {
+          any_set: "任意集合",
+          num_set: "一个数集合",
+          vec_set: "一个向量集合",
+          entity_set: "一个实体集合"
+        },
+        "hextrapats:": {
+          opposite_vecs: "不与起始方向（%s）正好反向的向量",
+          too_short_to_swindle: "长度至少为%s的列表"
+        }
+      }
+    }
+  }
+}

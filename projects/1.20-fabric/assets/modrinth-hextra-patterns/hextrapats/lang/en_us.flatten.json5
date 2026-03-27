@@ -1,0 +1,290 @@
+{
+  "pages.hextrapats":{
+    "hextrapats_consts.title": "Hextra Constants",
+    "hextrapats_logic.title": "Hextra Logic",
+    "hextrapats_nocon.title": "Non-consuming Logic",
+    "hextrapats_vec_literals.title": "Vector Literals",
+    "hextrapats_math.title": "Hextra Math",
+    "hextrapats_vec_math.title": "Hextra Vector Math",
+    "hextrapats_lists.title": "Hextra Lists",
+    "hextrapats_sets.title": "Hash Set Manipulation",
+    "hextrapats_meta.title": "Hextra Meta-Evaluation"
+  },
+  hextrapats: {
+    page: {
+      consts: {
+        one: "The left-hand counter-clockwise pattern adds (1, 1, 1) to the stack; the right-hand clockwise pattern adds (-1, -1, -1)."
+      },
+      logic: {
+        greater: "If the first vector is longer than the second, return True. Otherwise, return False.",
+        less: "If the first vector is shorter than the second, return True. Otherwise, return False.",
+        greater_eq: "If the first vector is longer or the same length as the second, return True. Otherwise, return False.",
+        less_eq: "If the first vector is shorter or the same length as the second, return True. Otherwise, return False.",
+        len_eq: "If the two vectors are the same length (within small tolerance), return True. Otherwise, return False.",
+        len_neq: "If the two vectors are not the same length (outside small tolerance), return True. Otherwise, return False.",
+        in_range: "If the first number is between the second and third, return True. Otherwise, return False. If the first value is a vector, compare its length instead.",
+        "in_range.ops": "The fourth number seems to describe how to check if the value is in the range.$(li)0: min < val < max$(li)1: min <= val < max$(li)2: min < val <= max$(li)3: min <= val <= max",
+        out_range: "If the first number is not between the second and third, return True. Otherwise, return False. If the first value is a vector, compare its length instead.",
+        "out_range.ops": "The fourth number seems to describe how to check if the value is outside the range.$(li)0: val < min or max < val$(li)1: val <= min or max < val$(li)2: val < min or max <= val$(li)3: val <= min or max <= val"
+      },
+      nocon: {
+        intro: "Sometimes, I want operate on iotas after using them for logic operations, but it gets rather annoying to have to copy them every time I do. All this copying also places a heavy burden on Nature, especially with large iotas like lists where $(l:casting/mishaps)$(thing)stack size can be a concern/$.",
+        name: "Retention Gambit",
+        detail: "With some experimentation, I have found that prepending certain logic operations with a clockwise triangle will cause the inputs to not be consumed.",
+      },
+      vec_literals: {
+        intro: "Interestingly, attaching the tail of any Vector Reflection to the start of $(l:patterns/numbers)$(action)Number Reflection/$ makes it return a vector.",
+        x: "A head that sharply bends to the left will output a vector along the $(l:patterns/consts#hexcasting:const/vec/x)$(action)X axis/$.",
+        y: "A head that doesn't bend will output a vector along the $(l:patterns/consts#hexcasting:const/vec/y)$(action)Y axis/$.",
+        z: "A head that sharply bends to the right will output a vector along the $(l:patterns/consts#hexcasting:const/vec/z)$(action)Z axis/$.",
+        "1": "A head that slightly bends to the left will output a vector where $(l:patterns/hextrapats_consts#hextrapats:haha_ha_one)$(action)all 3 components are the same/$.",
+        detail: "First, I draw one of the eight shapes shown on the prior pages. Next, the $(italic)angles/$ following will modify a running count starting at 0.$(li)Forward: Add 1$(li)Left: Add 5$(li)Right: Add 10$(li)Sharp Left: Multiply by 2$(li)Sharp Right: Divide by 2.$(br)The clockwise version of the pattern, on the right of the other pages, will negate the value at the very end. (The left-hand counter-clockwise version keeps the number positive).$(p)Once I finish drawing, a vector's pushed to the top of the stack.",
+
+        example: {
+          "x10.header": "Example 1",
+          "x10": "This pattern pushes (10, 0, 0).",
+          "y7.header": "Example 2",
+          "y7": "This pattern pushes (0, 7, 0): 5 + 1 + 1.",
+          "z-32.header": "Example 3",
+          "z-32": "This pattern pushes (0, 0, -32): negate 1 + 5 + 10 * 2.",
+          "a4.5.header": "Example 4",
+          "a4.5": "This pattern pushes (4.5, 4.5, 4.5): 5 / 2 + 1 + 1."
+        }
+      },
+      math: {
+        deg_to_rad: "Converts an angle in degrees to an angle in radians. Essentially multiplies by $(l:patterns/consts#hexcasting:const/double/pi)$(action)pi/$ then divides by 180.",
+        rad_to_deg: "Converts an angle in radians to an angle in degrees. Essentially multiplies by 180 then divides by $(l:patterns/consts#hexcasting:const/double/pi)$(action)pi/$.",
+        invert: "Multiplies the number/vector by -1.",
+        increment: "Adds 1.",
+        decrement: "Subtracts by 1.",
+        rand_zero: "Returns a random number between 0 (inclusive) and the number (exclusive).",
+        rand_range: "Returns a random number between the first number (inclusive) and the second (exclusive).",
+        scientific_exp: "Multiplies the input by 10^n or 10^-n, where n is the length of the tail, depending on whether the start is similar to $(l:patterns/math#hexcasting:mul)$(action)Mult. Dstl./$ or $(l:patterns/math#hexcasting:div)$(action)Div. Dstl./$. The top 3 patterns are x10^1, x10^2, and x10^3. The bottom 3 are x10^-1, x10^-2, and x10^-3.",
+        approach: "Moves the first value closer to the second by the given amount. Will not overshoot.",
+        angle_dist: "Returns the shortest angular distance between two angles in radians.",
+        angle_approach: {
+          "": "Turns the first angle towards the second by the given number of radians, picking whichever direction is shorter.",
+          examples: "(To make it easier to read, these examples are written in degrees instead of radians.)$(p)For example:$(li)90, 135, 10 \u2192 100 (start at 90, turn 10 degrees towards 135)$(li)10, 270, 30 \u2192 340 (start at 10, turn 30 degrees towards 270)$(li)300, 90, 90 \u2192 30 (start at 300, turn 90 degrees towards 90)$(li)20, 60, 180 \u2192 60 (start at 20, turn 180 degrees towards 60, stop at 60)",
+        }
+      },
+      vec_math: {
+        normalize: "Sets the length of the vector to one.",
+        increment: "Increases length by 1. Does nothing if the vector is (0, 0, 0).",
+        decrement: "Decreases length by 1. Does nothing if the vector is (0, 0, 0).",
+        rand_vec: "Returns a unit vector facing a random direction.",
+        vec_dist: "Returns the distance between two vectors.",
+        approach: "Moves the first vector towards the second by a given distance. Will not overshoot.",
+        angle_dist: "Returns the shortest angular distance on a sphere between two vectors in radians",
+        angle_approach: {
+          "": "Rotates the first vector towards the direction of the second vector by the given number of radians. Mishaps if the two directions are directly opposite to each other.",
+          examples: "For example:$(li)(1, 0, 0), (0, 1, 0), pi/4$(br)   \u2192 (0.71, 0.71, 0)$(li)(2, 0, 0), (0, 5, 0), pi/4$(br)   \u2192 (1.41, 1.41, 0)$(li)(1, 1, 1), (0, 5, 5), pi/6$(br)   \u2192 (0.16, 1.22, 1.22)"
+        },
+        from_polar: "Creates a unit vector from two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(thing)F3/$ turn up.",
+        to_polar: "Converts a vector's direction into two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(thing)F3/$ turn up.",
+        rot_about_x: "Rotates the vector by the given angle in radians around the X axis.",
+        rot_about_y: "Rotates the vector by the given angle in radians around the Y axis.",
+        rot_about_z: "Rotates the vector by the given angle in radians around the Z axis.",
+        cons_about_x: "Converts an angle in radians to a unit vector where X=0. +Z at 0 radians and +Y at pi/4 radians.",
+        cons_about_y: "Converts an angle in radians to a unit vector where Y=0. +Z at 0 radians and -X at pi/4 radians. I've seen some texts related to this pattern mentioning something called $(thing)F3/$, but I couldn't figure out what that means.",
+        cons_about_z: "Converts an angle in radians to a unit vector where Z=0. -X at 0 radians and +Y at pi/4 radians.",
+      },
+      lists: {
+        split: "Splits a list at the given index. [a, b, c, d, e], 2 will return [a, b], [c, d, e].",
+        "del_element/": {
+          first: "Remove the iota at the top of the stack, then remove the first instance of it from the list. If that iota was in the list, return True. Otherwise, return False.",
+          all: "Remove the iota at the top of the stack, then remove $(italic)all/$ instances of it from the list. Returns the number of removed occurrences."
+        },
+        swindle: "Reorders the elements of a list the same way $(l:patterns/stackmanip#hexcasting:swizzle)$(action)Swindler's Gambit/$ reorders the stack. Inputting a negative code will reorder the elements at the start instead of the end.",
+        scronglwfijspoivjqwofklcrvewb: "Shuffles the order of elements in the list."
+      },
+      sets: {
+        intro: "A hash set contains elements in an unordered fashion, and cannot contain duplicates. Excellent for keeping track of whether or not something exists.<br>Due to a magical process known as '$(thing)hashing/$', access is reduced to nearly O(1), relaxing the burden on Nature.",
+        tolerance: "However, '$(thing)hashing/$' seems to have a different, albeit minor, burden on Nature. Numbers and vectors lose precision in the process of getting inserted into a set, becoming rounded to 4 decimals. This seems to be related to $(l:patterns/logic#hexcasting:equals)$(thing)how Nature considers $(action)equality/$.",
+        empty_num_set: "Push an empty set that can hold numbers to the top of the stack.",
+        last_n_num_set: "Remove $(italic)num/$ numbers from the top of the stack, then add them to a number set at the top of the stack.",
+        empty_vec_set: "Push an empty set that can hold vectors to the top of the stack.",
+        last_n_vec_set: "Remove $(italic)num/$ vectors from the top of the stack, then add them to a vec set at the top of the stack.",
+        empty_entity_set: "Push an empty set that can hold entities to the top of the stack.",
+        last_n_entity_set: "Remove $(italic)num/$ entities from the top of the stack, then add them to an entity set at the top of the stack.",
+        insert: {
+          name: "Insertion Distillation",
+          "": "Remove the iota at the top of the stack, then add it to the set. The iota's type must match the set's type."
+        },
+        insert_ret: "Remove the iota at the top of the stack, then add it to the set. Return True if it wasn't already in the set, otherwise return False. The iota's type must match the set's type.",
+        remove: {
+          name: "Removal Distillation",
+          "": "Remove the iota from top of the stack, then remove it set. The iota's type must match the set's type."
+        },
+        remove_ret: "Remove the iota from top of the stack, then remove it set. Return True if it was previously in the set, otherwise return False. The iota's type must match the set's type.",
+        find: {
+          name: "Locator's Gambit",
+          "": "Remove the iota top of the stack, then return True if the set contains that iota, otherwise return False. The iota's type must match the set's type."
+        },
+        add: "Remove the set at the top of the stack, then add all its elements to the set at the top of the stack. The two sets must be of matching type.",
+        sub: "Remove the set at the top of the stack, then remove all its elements from the set at the top of the stack. The two sets must be of matching type.",
+        and: "Takes the intersection of two sets. The new set will only contain elements that were present in both of the previous sets. The two sets must be of matching type.",
+        xor: "Takes the exclusive disjunction of two sets. The new set will only contain elements that were present in only one of the two sets. The two sets must be of matching type.",
+        abs: "Remove the set at the top of the stack, then push the number of elements in the set to the stack.",
+        set_to_list: "Converts the set at the top of the stack to a list. The order is up to Nature's whims.",
+        splat_set: "Remove the set at the top of the stack, then push its contents to the stack. The order is up to Nature's whims.",
+      },
+      meta: {
+        true_halt: "Forcibly halts a $(thing)Hex/$ like $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ if the iota at the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(thing)considered $(action)True $(thing)by Nature/$.",
+        false_halt: "Forcibly halts a $(thing)Hex/$ like $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ if the iota at the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(thing)considered $(action)False $(thing)by Nature/$.",
+        true_eval: "Casts a pattern or list of patterns like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$ if the next iota from the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(thing)considered $(action)True $(thing)by Nature/$.",
+        false_eval: "Casts a pattern or list of patterns like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$ if the next iota from the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(thing)considered $(action)False $(thing)by Nature/$.",
+        index_for_each: "Casts like $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$, however the new stack for each element additionally has the index of that element added to the top."
+      }
+    }
+  },
+  hexcasting: {
+    action: {
+      "hextrapats:": {
+        haha_ha_one: "Vector Reflection +1",
+        eno_ah_ahah: "Vector Reflection -1",
+
+        len_eq: "Length Equality Distillation",
+        len_neq: "Length Inequality Distillation",
+
+        in_range: "Range Exaltation",
+        out_range: "Range Exaltation II",
+
+        scaled_vec_x: "Vector Reflection X II",
+        scaled_vec_y: "Vector Reflection Y II",
+        scaled_vec_z: "Vector Reflection Z II",
+        scaled_vec_all: "Vector Reflection 1 II",
+
+        deg_to_rad: "Radian Purification",
+        rad_to_deg: "Degree Purification",
+        invert: "Reflection Purification",
+        increment: "Incrementation Purification",
+        decrement: "Decrementation Purification",
+        rand_zero: "Entropy Purification",
+        rand_range: "Entropy Distillation",
+        scientific_exp: "Scientific Purification",
+        approach: "Approach Exaltation",
+        angle_dist: "Theta Distillation",
+        angle_approach: "Turning Exaltation",
+
+        normalize: "Norm Purification",
+        rand_vec: "Chaos Reflection",
+        vec_dist: "Distance Distillation",
+        from_polar: "Polar Distillation",
+        to_polar: "Polar Decomposition",
+        rot_about_x: "Pitch Distillation",
+        rot_about_y: "Yaw Distillation",
+        rot_about_z: "Roll Distillation",
+        cons_about_x: "Pitch Purification",
+        cons_about_y: "Yaw Purification",
+        cons_about_z: "Roll Purification",
+
+        "nocon/": {
+          bool_coerce: "Retention Gambit: Augur's",
+          greater: "Retention Gambit: Maximus",
+          less: "Retention Gambit: Minimus",
+          greater_eq: "Retention Gambit: Maximus II",
+          less_eq: "Retention Gambit: Minimus II",
+          eq: "Retention Gambit: Equality",
+          neq: "Retention Gambit: Inequality",
+          len_eq: "Retention Gambit: Length Equality",
+          len_neq: "Retention Gambit: Length Inequality",
+        },
+
+        split_list: "Separation Gambit",
+        "del_element/": {
+          first: "Elimination Gambit",
+          all: "Elimination Gambit II"
+        },
+        swindle_list: "Swindler's Distillation",
+        scronglwfijspoivjqwofklcrvewb: "Shuffling Purification",
+
+        empty_num_set: "Vacant Reflection: Number Set",
+        empty_vec_set: "Vacant Reflection: Vector Set",
+        empty_entity_set: "Vacant Reflection: Entity Set",
+        last_n_num_set: "Bucketing Gambit: Numbers",
+        last_n_vec_set: "Bucketing Gambit: Vectors",
+        last_n_entity_set: "Bucketing Gambit: Entities",
+        splat_set: "Spilling Disintegration",
+        set_insert_ret: "Insertion Gambit",
+        set_remove_ret: "Removal Gambit",
+        list_to_set: "Disordering Purification",
+        set_to_list: "Ordering Purification",
+
+        true_halt: "Acheron's Gambit",
+        false_halt: "Styx's Gambit",
+        true_eval: "Helios' Gambit",
+        false_eval: "Selene's Gambit",
+        index_for_each: "Djehuty's Gambit"
+      },
+
+      "book.hextrapats:": {
+        haha_ha_one:  "Vector Rfln. +1/-1",
+
+        len_eq: "Length Equality Dstl.",
+        len_neq: "Length Inequality Dstl.",
+
+        scaled_vec_x: "Vector Rfln. +X/-X II",
+        scaled_vec_y: "Vector Rfln. +Y/-Y II",
+        scaled_vec_z: "Vector Rfln. +Z/-Z II",
+        scaled_vec_all: "Vector Rfln. +1/-1 II",
+
+        increment: "Incrementation Purif.",
+        decrement: "Decrementation Purif.",
+
+        "nocon/": {
+          bool_coerce: "Ret. Gambit: Augur's",
+          greater: "Ret. Gambit: Maximus",
+          less: "Ret. Gambit: Minimus",
+          greater_eq: "Comp. Gambit: Maximus II",
+          less_eq: "Ret. Gambit: Minimus II",
+          eq: "Ret. Gambit: Equality",
+          neq: "Ret. Gambit: Inequality",
+          len_eq: "Ret. Gambit: Len. Eq.",
+          len_neq: "Ret. Gambit: Len. Ineq."
+        },
+
+        empty_num_set: "Vacant Refl.: Num. Set",
+        empty_vec_set: "Vacant Refl.: Vec. Set",
+        empty_entity_set: "Vacant Refl.: Ent. Set",
+        last_n_num_set: "Bucketing Gamb.: Nums",
+        last_n_vec_set: "Bucketing Gamb.: Vecs",
+        last_n_entity_set: "Bucketing Gamb.: Ents"
+      }
+    },
+    "special.hextrapats:": {
+      scaled_vec_x: "Vector Reflection: (%s, 0, 0)",
+      scaled_vec_y: "Vector Reflection: (0, %s, 0)",
+      scaled_vec_z: "Vector Reflection: (0, 0, %s)",
+      scaled_vec_all: "Vector Reflection: (%s, %s, %s)",
+      scientific_exp: "Scientific Purification: 10^%s"
+    },
+    "iota.hextrapats:": {
+      num_set: {
+        "": "Set (Nums)",
+        desc: "a number set"
+      },
+      vec_set: {
+        "": "Set (Vectors)",
+        desc: "a vector set"
+      },
+      entity_set: {
+        "": "Set (Entities)",
+        desc: "an entity set"
+      }
+    },
+    mishap: {
+      invalid_value: {
+        class: {
+          any_set: "any set",
+          num_set: "a number set",
+          vec_set: "a vector set",
+          entity_set: "an entity set"
+        },
+        "hextrapats:": {
+          opposite_vecs: "vector not facing opposite to the start direction (%s)",
+          too_short_to_swindle: "a list of at least length %s"
+        }
+      }
+    }
+  }
+}
