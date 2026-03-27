@@ -17,6 +17,7 @@
   "hexcasting.mishap.storage_unloaded": "绑定的物元枢纽未被加载",
   "hexcasting.mishap.excessive_reproduction": "咒灵%s试图过度复制，每刻仅可召唤1个子咒灵",
   "hexcasting.mishap.illegal_interworld_iota": "试图将iota%s变为跨世界iota，此类型的iota无法加入永恒之书。",
+  "hexcasting.mishap.entity_gate_with_no_entity" : "%s锚定了已卸载或不存在的实体。",
 
   "hexcasting.mishap.bad_block.phaseable": "一个可暂消的方块",
 
@@ -41,7 +42,6 @@
   "hexcasting.mishap.invalid_value.cant_combine_motes": "两个可合并的物元",
   "hexcasting.mishap.invalid_value.mote_not_size_one": "一个不包含NBT数据或大小为1的物元",
   "hexcasting.mishap.invalid_value.gate.offset": "不超过%f格的偏移量",
-
 
   "hexcasting.iota.hexal:gate": "门径",
   "hexcasting.iota.hexal:gate.desc": "一个门径",
@@ -251,9 +251,9 @@
   "hexal.page.tick.tick.1": "施放此法术要消耗 1/10 个$(l:items/amethyst)$(item)紫水晶粉/$，在整个咒术内，每对同一方块加速一次，额外消耗 1/1000 个$(l:items/amethyst)$(item)紫水晶粉/$。",
 
   "hexal.entry.gates": "门径",
-  "hexal.page.gates.0": "门径是我有关空间远距连接和瞬间移动的长时间研究的最新成果。与我之前的试验不同的是，它能$(o)极为高效地$()完成传送任务。我已学会构造三种不同的门径，所有三种都需要巨量的媒质才能烧入现实，但后续的操作则相较之下极为便宜。",
+  "hexal.page.gates.0": "门径是我在空间远距连接和瞬间移动中长时间研究的最新成果。与我之前的试验不同的是，它能$(o)极为高效地$()完成传送任务。我已学会构造三种不同的门径，所有三种都需要巨量的媒质才能烧入现实，但后续的操作则相较之下极为便宜。",
   "hexal.page.gates.1": "位置锚定门径与世界上某一位置绑定，会将所有穿过它们的事物送至该位置。实体锚定门径则与世界上某一实体绑定，会将所有穿过它们的事物送至该实体处（可附带一个偏移向量，需在烧入门径时提供）。",
-  "hexal.page.gates.2": "未锚定门径没有与任何事物绑定，可用于将实体送至任意位置。但其效率也会相应降低，只能将实体送至我所能影响的范围内的位置。门径烧入成功后，我的栈上便会出现一个代表其的 iota。我能以此 iota 标记实体，如此当我关闭门径时，所有被标记的实体就会被传送至门径终点。需注意关闭门径不会将其消耗，获得门径 iota 后便能永久使用。",
+  "hexal.page.gates.2": "未锚定门径没有与任何事物绑定，可用于将实体送至任意位置。但其效率也会相应降低，只能将实体送至我所能影响的范围内的位置。门径烧入成功后，我的栈上便会出现一个代表其的 iota。我能以此 iota 标记实体；如此，当我关闭门径时，所有被标记的实体就会被传送至门径终点。需注意关闭门径时不会消耗门径 iota，获得门径 iota 后便能永久使用。",
   "hexal.page.gates.gate/make": "压入一个新的门径。所有此 iota 的复制品都指向同一个门径。消耗 32 个$(l:items/amethyst)$(item)充能紫水晶/$。若传入 Null，则构造未锚定门径；若传入一个向量，则构造位置锚定门径；若传入一个向量和一个实体，则构造实体锚定门径。",
   "hexal.page.gates.gate/mark": "移除栈顶实体与门径，并标记该实体，被标记的实体会在对应门径关闭时被传送。消耗 1/20 个$(l:items/amethyst)$(item)紫水晶粉/$。",
   "hexal.page.gates.gate/unmark": "移除栈顶门径与实体，并取消该实体的标记。若其已被$(l:patterns/great_spells/gates#hexal:gate/mark)$(action)开启门径/$标记，下一次门径关闭时其将不会被传送。",
@@ -327,9 +327,9 @@
 
   "_comment": "Config Entries",
   "text.autoconfig.hexal.title": "咒法拓展（Hexal）配置",
-  "text.autoconfig.hexal.category.common": "Common",
-  "text.autoconfig.hexal.category.client": "Client",
-  "text.autoconfig.hexal.category.server": "Server",
+  "text.autoconfig.hexal.category.common": "通用",
+  "text.autoconfig.hexal.category.client": "客户端",
+  "text.autoconfig.hexal.category.server": "服务端",
 
   "text.autoconfig.hexal.option.server.terrainGeneration": "世界生成",
   "text.autoconfig.hexal.option.server.generateSlipwayGeodes": "是否生成质道晶洞？",
