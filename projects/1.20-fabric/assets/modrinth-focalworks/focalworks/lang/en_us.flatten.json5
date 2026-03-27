@@ -1,0 +1,76 @@
+{
+  focalworks: {
+    spellbook_not_empty: "a spellbook",
+    book: {
+      patterns: {
+        spells: {
+          rigging_foci: {
+            "": "Rigging Foci",
+            explainer0: "In my studies, I have discovered the art of $(#9474ed)Rigging$(). \"$(#9474ed)Rigged$()\" foci (or any iota holder, for that matter) cast a hex upon reads or writes. Reads cast after reading the iota (with it starting on the stack), and writes start before a write, starting with the iota-to-write on the stack. Curiously, writes also have the option to leave a boolean on the stack, indicating whether the write should go through.",
+            explainer0_title: "Rigging Foci",
+            explainer1: "Finally, there also seems to be a way to $(#edb874)Crack$() these iota holders, which must be done before any rigging has been done. Attempting to crack a rigged item will cloud my vision for ten seconds. Cracked items display their rigged reads/writes on their tooltip.",
+            explainer1_title: "Cracking Foci",
+            rig_read: "Takes in an item entity and a hex, and rigs the item's read to that hex.",
+            rig_write: "Takes in an item entity and a hex, and rigs the item's write to that hex.",
+            crack_rig: "Takes in an item entity and cracks the focus."
+          },
+          misc_page: {
+            "": "Miscellaneous Focalworking",
+            explainer0: "I have discovered a few patterns, but they do not seem to fit into any of my previous categories. To solve this problem whilst keeping them documented, I have placed them here for my convenience.",
+            explainer0_title: "Miscellaneous Focalworking",
+            flip_spellbook: "This pattern takes in a spellbook item entity and a num, and flips the spellbook to that page.",
+            read_spellbook_page: "This pattern takes in a spellbook item entity and returns the currently selected page."
+          },
+          ioticblocks: {
+            "": "Ioticblocks Focalworking",
+            explainer0_title: "Ioticblocks Focalworking",
+            explainer0: "Recently, I've been dissatisfied with the way my hexes take up much of the stack space just to read one iota from a list. $(l:patterns/readwrite_blocks)Reading/Writing Blocks$(/l) fixes this, but it seems my standard rigged writes don't work on them. To fix this, I have come up with some specialised patterns to override them.",
+            rig_write_index: "Rigs the write from $(l:patterns/readwrite_blocks#ioticblocks:write/index)Tachygrapher's Gambit$(/l) with the given hex.",
+            rig_read_index: "Rigs the read from $(l:patterns/readwrite_blocks#ioticblocks:read/index)Tachygrapher's Distillation$(/l) with the given hex."
+          }
+        }
+      }
+    },
+    riggedread: {
+      onitem: "Rigged Read: %s"
+    },
+    riggedwrite: {
+      onitem: "Rigged Write: %s"
+    },
+    riggedwriteindex: {
+      onitem: "Rigged Write Index: %s"
+    },
+    riggedreadindex: {
+      onitem: "Rigged Read Index: %s"
+    },
+    rig_read: "Rig Read",
+    rig_write: "Rig Write",
+    crack_rig: "Crack Focus",
+    flip_spellbook: "Flip Spellbook",
+    rig_write_index: "Rig Write Index",
+    rig_read_index: "Rig Read Index"
+  },
+  hexcasting: {
+    "action.focalworks:": {
+      read_spellbook_page: "Read Spellbook Page",
+      rig_read: "Rig Read",
+      rig_write: "Rig Write",
+      crack_rig: "Crack Focus",
+      flip_spellbook: "Flip Spellbook",
+      rig_write_index: "Rig Write Index",
+      rig_read_index: "Rig Read Index"
+    },
+    "mishap": {
+      already_rigged: {
+        crack: {
+          "": "The item you attempted to crack is rigged.",
+          "item": "The item %s is rigged."
+        },
+        rigging: {
+          "": "The item you attempted to rig is already rigged.",
+          "item": "The item %s is already rigged."
+        }
+      }
+    }
+  }
+}
