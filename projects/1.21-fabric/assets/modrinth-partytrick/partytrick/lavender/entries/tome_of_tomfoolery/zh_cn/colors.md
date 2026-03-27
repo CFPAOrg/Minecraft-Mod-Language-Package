@@ -1,48 +1,53 @@
 ```json
 {
-  "title": "颜色",
+  "title": "多彩派对戏法",
   "icon": "minecraft:white_dye",
   "category": "trickster:tricks",
   "additional_search_terms": [
-    "光耀之技巧",
-    "光艳之技巧",
+    "突显之技巧",
     "画家之技巧",
+    "清教徒之技巧",
     "吸管之辑流",
-    "设计师之曲变"
+    "着染之技巧",
+    "着染之辑流"
   ]
 }
 ```
 
-颜色有两种表示方法，可以是染料物品，也可以是各分量在0到255之间、分别代表红、绿、蓝的向量。
-
-由派对戏法（Party Trick）添加。
+由派对戏法（Party Trick）新添加的额外颜色戏法。
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=partytrick:change_color,cost=40G * 数量|>
+<|ploy@trickster:templates|trick-id=partytrick:remove_dye_color,cost=40G * 数量|>
 
-改变所给方块、槽位、实体的颜色。
+参数前面与[损蚀之技巧](^trickster:ploys/block#13)类似：接受一个目标和一处水源。移除目标的颜色。
+
+;;;;;
+
+<|ploy@trickster:templates|trick-id=partytrick:set_dye_color,cost=40G * 所用染料量|>
+
+将给定目标的颜色改为给定槽位内染料的颜色，会消耗染料。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=partytrick:get_dye_color|>
+
+若可行，根据目标颜色返回一个染料。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=partytrick:set_color|>
+
+将所给可染色物品染为所给颜色。未指定颜色则移除颜色。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=partytrick:get_color|>
 
-若可行，返回一个颜色。
+返回所给可染色物品的确切颜色，无色则返回null。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=partytrick:dye_to_vector|>
+<|ploy@trickster:templates|trick-id=partytrick:glow,cost=1G * 距离^3|>
 
-返回所给染料对应的RGB向量。
-
-;;;;;
-
-<|ploy@trickster:templates|trick-id=partytrick:conjure_colored_light,cost=20G|>
-
-在所给位置处构筑出一个永久性光源。可以选择提供一个颜色向量。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=partytrick:light_particle|>
-
-在所给位置处构筑出一个光源粒子。可以选择提供速度和颜色向量。
+让实体发光5秒。未指定颜色则消除发光。可以选择指定能看见发光的实体列表。
