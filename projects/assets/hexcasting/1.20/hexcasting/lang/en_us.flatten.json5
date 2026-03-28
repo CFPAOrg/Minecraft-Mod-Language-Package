@@ -1028,6 +1028,7 @@
       eval_too_much: "Evaluated too many patterns",
       no_item: "needs %s but got nothing",
       "no_item.offhand": "needs %s in the other hand but got nothing",
+      "no_item.hotbar": "needs %s somewhere in the hotbar but got nothing",
       bad_entity: "needs %s but got %s",
       bad_brainsweep: "The %s rejected the being's mind",
       already_brainswept: "The mind has already been used",
@@ -1130,6 +1131,7 @@
       bad_item: {
         "": "needs %s but got %dx %s",
         offhand: "needs %s in the other hand but got %dx %s",
+        hotbar: "needs %s somewhere in the hotbar but got %dx %s",
         
         iota: {
           "": "a place to store iotas",
@@ -1146,6 +1148,7 @@
         rechargable: "a rechargable item",
         colorizer: "a pigment",
         variant: "an item with variants",
+        placeable: "a placeable item",
       },
       
       bad_block: {
@@ -1706,7 +1709,7 @@
       
       akashiclib: {
         "1": "I KNOW SO MUCH it is ONLY RIGHT to have a place to store it all. Information can be stored in books but it is oh so so so so $(italic)slow/$ to write by hand and read by eye. I demand BETTER. And so I shall MAKE better.$(br2)... I am getting worse ... do not know if I have time to write everything bursting through my head before expiring.",
-        "2": "The library. Here. My plans.$(br2)Like how patterns are associated with actions, I can associate my own patterns with iotas in any way I choose. An $(l:greatwork/akashiclib)$(item)Akashic Record/$ controls the library, and each $(l:greatwork/akashiclib)$(item)Akashic Bookshelf/$ stores one pattern mapped to one iota. These must all be directly connected together, touching, within 32 blocks. An $(l:greatwork/akashiclib)$(item)Akashic Ligature/$ doesn't do anything but count as a connecting block, to extend the size of my library.",
+        "2": "The library. Here. My plans.$(br2)Like how patterns are associated with actions, I can associate my own patterns with iotas in any way I choose. An $(l:greatwork/akashiclib)$(item)Akashic Record/$ controls the library, and each $(l:greatwork/akashiclib)$(item)Akashic Bookshelf/$ stores one pattern mapped to one iota. These must all be directly connected together, touching, within 128 blocks. An $(l:greatwork/akashiclib)$(item)Akashic Ligature/$ doesn't do anything but count as a connecting block, to extend the size of my library.",
         akashic_record: "Allocating and assigning patterns is simple but oh so boring. I have better things to do. I will need a mind well-used to its work for the extraction to stay sound.",
         "3": "Then to operate the library is simple, the patterns are routed through the librarian and it looks them up and returns the iota to you. Two actions do the work. $(l:patterns/akashic_patterns)Notes here/$.$(br2)Using an empty $(l:items/scroll)$(item)scroll/$ on a bookshelf copies the pattern there onto the $(l:items/scroll)$(item)scroll/$. Sneaking and using an empty hand clears the datum in the shelf.",
       },
@@ -1788,7 +1791,7 @@
         "abs.2": "Replaces a number with its absolute value, or a vector with its length.",
         
         "pow.1": "Perform exponentiation or vector projection.",
-        "pow.2": "With two numbers, combines them by raising the first to the power of the second.$(li)With a number and a vector, removes the number and raises each component of the vector to the number's power.$(li)With two vectors, combines them into the $(l:https://en.wikipedia.org/wiki/Vector_projection)vector projection/$ of the top of the stack onto the second-from-the-top.$(br2)In the first and second cases, the first argument or its components are the base, and the second argument or its components are the exponent.",
+        "pow.2": "With two numbers, combines them by raising the first to the power of the second.$(li)With a number and a vector, removes the number and raises each component of the vector to the number's power.$(li)With two vectors, combines them into the $(l:https://en.wikipedia.org/wiki/Vector_projection)vector projection/$ of the second-from-the-top onto the top of the stack.$(br2)In the first and second cases, the first argument or its components are the base, and the second argument or its components are the exponent.",
         
         floor: "\"Floors\" a number, cutting off the fractional component and leaving an integer value. If passed a vector, instead floors each of its components.",
         ceil: "\"Ceilings\" a number, raising it to the next integer value if it has a fractional component. If passed a vector, instead ceils each of its components.",
@@ -1972,9 +1975,9 @@
       
       meta: {
         "eval.1": "Remove a pattern or list of patterns from the stack, then cast them as if I had drawn them myself with my $(l:items/staff)$(item)Staff/$ (until a $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ is encountered). If an iota is escaped with $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ or $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)its ilk/$, it will be pushed to the stack. Otherwise, non-patterns will fail.",
-        "eval.2": "This can be $(italic)very/$ powerful in tandem with $(l:items/focus)$(item)Foci/$.$(br2)It also makes the bureaucracy of Nature a \"Turing-complete\" system, according to one esoteric scroll I found.$(br2)However, it seems there's a limit to how many times a _Hex can cast itself-- Nature doesn't look kindly on runaway spells!$(br2)In addition, with the energies of the patterns occurring without me to guide them, any mishap will cause the remaining actions to become too unstable and immediately unravel.",
+        "eval.2": "This can be very powerful in tandem with $(l:items/focus)$(item)Foci/$, and according to one esoteric scroll I found it also makes the bureaucracy of Nature a \"Turing-complete\" system.$(br2)However, it seems there's a limit to how many times a _Hex can cast itself-- Nature doesn't look kindly on runaway spells!$(br2)In addition, with the energies of the patterns occurring without me to guide them, any mishap will cause the remaining actions to immediately unravel.",
         
-        "for_each.1": "Remove a list of patterns and a list from the stack, then cast the given pattern over each element of the second list.",
+        "for_each.1": "Remove a list of patterns and a list from the stack, then cast the given pattern-list over each element of the second list.",
         "for_each.2": "More specifically, for each element in the second list, it will:$(li)Create a new stack, with everything on the current stack plus that element$(li)Draw all the patterns in the first list$(li)Save all the iotas remaining on the stack to a list$(br)Then, after all is said and done, pushes the list of saved iotas onto the main stack.$(br2)No wonder all the practitioners of this art go mad.",
         
         "halt.1": "This pattern forcibly halts a _Hex. This is mostly useless on its own, as I could simply just stop writing patterns, or put down my staff.",
@@ -2071,7 +2074,7 @@
       
       colorize: "I must be holding a $(l:items/pigments)$(item)Pigment/$ in my other hand to cast this spell. When I do, it will consume the dye and permanently change my mind's coloration (at least, until I cast the spell again). Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
       
-      cycle_variant: "Certain items I create seem oddly receptive to the influence of _media. By holding a $(l:items/hexcasting)$(item)Cypher/$, $(l:items/hexcasting)$(item)Trinket/$, $(l:items/hexcasting)$(item)Artifact/$, $(l:items/focus)$(item)Focus/$, or $(l:items/spellbook)$(item)Spellbook/$ in my other hand, I can use this spell to change the appearance of the item. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
+      cycle_variant: "Certain items I create seem oddly receptive to the influence of _media. By holding a $(l:items/hexcasting)$(item)Cypher/$, $(l:items/hexcasting)$(item)Trinket/$, $(l:items/hexcasting)$(item)Artifact/$, $(l:items/focus)$(item)Focus/$, or $(l:items/spellbook)$(item)Spellbook/$ in my other hand, I can use this spell to change the appearance of the item. Costs a negligible amount of _media.",
       
       flights: {
         "1": "Although it seems that true, limitless flight is out of my grasp, I have nonetheless found some methods of holding one in the sky, each with their respective drawbacks.$(br2)All forms produce a shimmer of excess _media; as the spell gets closer to ending, the sparks are shot through with more red and black.",
@@ -2105,8 +2108,8 @@
       },
       
       "teleport/great": {
-        "1": "Far more powerful than $(l:patterns/spells/basic#hexcasting:blink)$(action)Blink/$, this spell lets me teleport nearly anywhere in the entire world! There does seem to be a limit, but it is $(italic)much/$ greater than the normal radius of influence I am used to.",
-        "2": "The entity will be teleported by the given vector. Curiously, this vector seems to be an offset, not an absolute position in the world; for example, if I use $(l:patterns/consts#hexcasting:const/vec/x)$(action)Vector Reflection +X/$, the entity will end up precisely one block east of its original position. No matter the distance, it always seems to cost about ten $(l:items/amethyst)$(item)Charged Amethyst/$.$(br2)The transference is not perfect, and it seems when teleporting something as complex as a player, their inventory doesn't $(italic)quite/$ stay attached, and tends to splatter everywhere at the destination. In addition, the target will be forcibly removed from anything inanimate they are riding or sitting on ... but I've read scraps that suggest animals can come along for the ride, so to speak.",
+        "1": "Far more powerful than $(l:patterns/spells/basic#hexcasting:blink)$(action)Blink/$, this spell lets me teleport an entity to anywhere in the entire world! No matter the distance, it always seems to cost about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
+        "2": "The provided vector is an offset, not an absolute position in the world; for example, if I use (1, 0, 0), the entity will end up precisely one block east of its original position.$(br2)Unfortunately, it seems that when teleporting myself, I'm unable to maintain a perfect focus. This can cause some of my items to splatter out of my inventory on arrival.$(br2)I should also note that the target will be forcibly removed from anything inanimate they are riding ... but I've read scraps that suggest animals can come along for the ride, so to speak.",
       },
       
       zeniths: {
