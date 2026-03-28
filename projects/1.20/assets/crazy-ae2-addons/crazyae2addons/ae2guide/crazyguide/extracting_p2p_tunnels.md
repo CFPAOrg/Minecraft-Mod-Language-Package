@@ -17,6 +17,8 @@ These are variants of standard AE2 P2P tunnels that are actively working, instea
 items, fluids, or energy to be inserted into the tunnel, they automatically **pull** 
 from the block they are attached to and push into the linked outputs.
 
+## [Video Tutorial](https://youtu.be/fcd3xHpsXnE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## Available Types

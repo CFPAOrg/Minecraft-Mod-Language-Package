@@ -17,6 +17,8 @@ The Auto Enchanter is a standalone enchanting machine that automatically enchant
 
 ## How to Use
 
+## [Video Tutorial](https://youtu.be/Zu213pe7Jeo&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 1. **Place the Auto Enchanter**
    - It must be placed under an Enchanting Table block (two blocks above).
    - Surround the table with bookshelves like in vanilla to improve enchantment power.

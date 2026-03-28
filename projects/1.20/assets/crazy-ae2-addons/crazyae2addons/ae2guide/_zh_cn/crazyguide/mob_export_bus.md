@@ -12,6 +12,8 @@ item_ids:
 
 生物输出总线是一类特殊的线缆子部件，能将ME存储系统中的生物释放出来。它的表现和常规的输出总线一致，只不过它是专为生物设计的。
 
+## [视频教程](https://youtu.be/MUKyq0IDi3M&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ## 使用方法
 
 1. **放置生物输出总线**

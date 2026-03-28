@@ -13,6 +13,8 @@ item_ids:
 
 The **Energy Interface** is a passive cable part that exposes your ME network’s stored AE energy as a Forge Energy.
 
+## [Video Tutorial](https://youtu.be/UVD8DtrjLb8&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+
 ---
 
 ## How It Works
