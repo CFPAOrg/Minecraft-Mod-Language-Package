@@ -131,6 +131,7 @@
   "hexcasting.action.hexal:gate/mark/num/get": "标径之纯化",
   "hexcasting.action.hexal:gate/mark/get": "标径之馏化",
   "hexcasting.action.hexal:gate/close": "关闭门径",
+  "hexcasting.action.hexal:gate/closeable": "守门人之纯化",
 
   "hexcasting.action.hexal:mote/storage/bind": "绑定储库",
   "hexcasting.action.hexal:mote/storage/bind/temp": "绑定储库，临时型",
@@ -165,6 +166,8 @@
   "hexcasting.action.book.hexal:get_entity/wisp": "实体之纯化：咒灵",
   "hexcasting.action.book.hexal:zone_entity/wisp": "区域之馏化：咒灵",
   "hexcasting.action.book.hexal:zone_entity/not_wisp": "区域之馏化：非咒灵",
+
+  "hexcasting.action.book.hexal:gate/closeable": "守门人之纯化",
 
   "hexcasting.action.book.hexal:mote/storage/bind/temp": "绑定储库，临时型",
 
@@ -251,7 +254,7 @@
   "hexal.page.tick.tick.1": "施放此法术要消耗 1/10 个$(l:items/amethyst)$(item)紫水晶粉/$，在整个咒术内，每对同一方块加速一次，额外消耗 1/1000 个$(l:items/amethyst)$(item)紫水晶粉/$。",
 
   "hexal.entry.gates": "门径",
-  "hexal.page.gates.0": "门径是我在空间远距连接和瞬间移动中长时间研究的最新成果。与我之前的试验不同的是，它能$(o)极为高效地$()完成传送任务。我已学会构造三种不同的门径，所有三种都需要巨量的媒质才能烧入现实，但后续的操作则相较之下极为便宜。",
+  "hexal.page.gates.0": "门径是我在空间远距连接和瞬间移动中长时间研究的最新成果。与我之前的试验不同的是，它能$(o)极为高效地$()完成传送任务。我已学会构造三种不同的门径，所有三种都需要巨量的媒质才能烧入现实，而后续的操作相较之下则极为便宜。",
   "hexal.page.gates.1": "位置锚定门径与世界上某一位置绑定，会将所有穿过它们的事物送至该位置。实体锚定门径则与世界上某一实体绑定，会将所有穿过它们的事物送至该实体处（可附带一个偏移向量，需在烧入门径时提供）。",
   "hexal.page.gates.2": "未锚定门径没有与任何事物绑定，可用于将实体送至任意位置。但其效率也会相应降低，只能将实体送至我所能影响的范围内的位置。门径烧入成功后，我的栈上便会出现一个代表其的 iota。我能以此 iota 标记实体；如此，当我关闭门径时，所有被标记的实体就会被传送至门径终点。需注意关闭门径时不会消耗门径 iota，获得门径 iota 后便能永久使用。",
   "hexal.page.gates.gate/make": "压入一个新的门径。所有此 iota 的复制品都指向同一个门径。消耗 32 个$(l:items/amethyst)$(item)充能紫水晶/$。若传入 Null，则构造未锚定门径；若传入一个向量，则构造位置锚定门径；若传入一个向量和一个实体，则构造实体锚定门径。",
@@ -260,6 +263,7 @@
   "hexal.page.gates.gate/mark/num/get": "移除栈顶门径，返回被该门径标记的实体的数量。",
   "hexal.page.gates.gate/mark/get": "移除栈顶门径和实体，判断该实体是否被该门径标记。",
   "hexal.page.gates.gate/close": "移除栈顶锚定门径，或未锚定门径与位置向量。将所有被所给门径标记的实体传送至其锚定位置或所给位置。消耗 1/2 个$(l:items/amethyst)$(item)紫水晶碎片/$。若为未锚定门径，则每个实体每传送 1 格额外消耗 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+  "hexal.page.gates.gate/closeable": "移除门径 iota，返回改门径有无有效目的地。目的地在世界之外，或是实体锚定门径的对应实体被卸载或不再存在，则目的地失效。",
 
   "hexal.entry.motes": "物元",
   "hexal.page.motes.explanation.0": "此条目主要记述如何将物品本身拉进媒质，使其可被引用，可被计数，并将秩序带给它们也带给我也带给我的意识也带给——。压入栈中的媒质化物品 iota（称为“物元”）都代表着物元枢纽中的某个物元记录。这是因为假如没有东西承载物品中的思维模式，物品本身就会消亡——就像我的意识的剥脱——",
