@@ -2,7 +2,7 @@
 {
   "title": "Items",
   "icon": "trickster:macro_ring",
-  "ordinal": 0
+  "ordinal": 10
 }
 ```
 

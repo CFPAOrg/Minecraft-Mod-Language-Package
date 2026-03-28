@@ -14,7 +14,7 @@ These maps, when inscribed into any ring and worn in a ring slot, will be checke
 
 ;;;;;
 
-A simple [Macro Ring](^trickster:items/ring) can be used for this purpose if no other rings are available.
+A simple [Macro Ring](^trickster:items/writing_casting/ring) can be used for this purpose if no other rings are available.
 
 
 If a macro for a drawn pattern is found, the associated spell will be cast and given one argument:

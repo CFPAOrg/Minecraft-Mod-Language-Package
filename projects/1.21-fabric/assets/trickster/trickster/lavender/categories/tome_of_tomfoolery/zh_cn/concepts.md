@@ -2,7 +2,7 @@
 {
   "title": "概念",
   "icon": "trickster:top_hat",
-  "ordinal": -1
+  "ordinal": 0
 }
 ```
 

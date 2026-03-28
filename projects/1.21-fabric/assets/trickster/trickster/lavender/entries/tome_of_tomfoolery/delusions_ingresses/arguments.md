@@ -17,97 +17,61 @@
 }
 ```
 
-Fragments can be passed into executed [spell fragments](^trickster:distortions/functions) as arguments.
+Fragments can be passed into most [Deviations](^trickster:tricks/functions) as arguments.
 
 
-These fragments can be retrieved within the executed spell either directly or as a list of all arguments.
+These fragments can then be retrieved within the cast spell, either directly or as a list of all arguments.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_all_arguments,title=Hoarder's Delusion|>
-
--> any[]
-
----
+<|trick@trickster:templates|trick-id=trickster:get_all_arguments|>
 
 Returns all arguments as a list.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:load_argument_1,title=Primary Delusion|>
+<|trick@trickster:templates|trick-id=trickster:load_argument_1|>
 
--> any
-
----
-
-Returns the first argument passed, if available.
+Returns the first argument passed. Blunders if it is unavailable.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:load_argument_2,title=Secondary Delusion|>
+<|trick@trickster:templates|trick-id=trickster:load_argument_2|>
 
--> any
-
----
-
-Returns the second argument passed, if available.
+Returns the second argument passed. Blunders if it is unavailable.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:load_argument_3,title=Tertiary Delusion|>
+<|trick@trickster:templates|trick-id=trickster:load_argument_3|>
 
--> any
-
----
-
-Returns the third argument passed, if available.
+Returns the third argument passed. Blunders if it is unavailable.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:load_argument_4,title=Quaternary Delusion|>
+<|trick@trickster:templates|trick-id=trickster:load_argument_4|>
 
--> any
-
----
-
-Returns the fourth argument passed, if available.
+Returns the fourth argument passed. Blunders if it is unavailable.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:load_argument_5,title=Quinary Delusion|>
+<|trick@trickster:templates|trick-id=trickster:load_argument_5|>
 
--> any
-
----
-
-Returns the fifth argument passed, if available.
+Returns the fifth argument passed. Blunders if it is unavailable.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:load_argument_6,title=Senary Delusion|>
+<|trick@trickster:templates|trick-id=trickster:load_argument_6|>
 
--> any
-
----
-
-Returns the sixth argument passed, if available.
+Returns the sixth argument passed. Blunders if it is unavailable.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:load_argument_7,title=Septenary Delusion|>
+<|trick@trickster:templates|trick-id=trickster:load_argument_7|>
 
--> any
-
----
-
-Returns the seventh argument passed, if available.
+Returns the seventh argument passed. Blunders if it is unavailable.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:load_argument_8,title=Octonary Delusion|>
+<|trick@trickster:templates|trick-id=trickster:load_argument_8|>
 
--> any
-
----
-
-Returns the eighth argument passed, if available.
+Returns the eighth argument passed. Blunders if it is unavailable.
