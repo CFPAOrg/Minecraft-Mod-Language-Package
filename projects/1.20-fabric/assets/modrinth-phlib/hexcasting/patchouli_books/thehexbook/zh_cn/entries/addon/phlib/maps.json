@@ -15,6 +15,54 @@
     },
     {
       "type": "hexcasting:pattern",
+      "op_id": "hexcasting:replace",
+      "anchor": "hexcasting:replace",
+      "input": "map<k, v>, k, v",
+      "output": "map<k, v>",
+      "text": "将键 $(n)k/$ 所对应项的值换为 $(n)v/$。若映射内没有 $(n)k/$ 键，则新建项并插入末尾。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:remove_from",
+      "anchor": "hexcasting:remove_from",
+      "input": "map<k, v>, k",
+      "output": "map<k, v>",
+      "text": "从映射中删去所给键对应的项。若未找到相应项，则原样返回映射。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:index",
+      "anchor": "hexcasting:index",
+      "input": "map<k, v>, k",
+      "output": "v?",
+      "text": "拆解映射，返回与所给键相关的值。和扫描列表不一样，此操作的复杂度是 O(1)。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:splat",
+      "anchor": "hexcasting:splat",
+      "input": "map<k, v>",
+      "output": "k, v, k, v...",
+      "text": "拆散映射，按插入顺序返回键值对。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:unappend",
+      "anchor": "hexcasting:unappend",
+      "input": "map<k,v>",
+      "output": "map<k,v>, (k,v | nulls)",
+      "text": "从映射中取出最后添加的项。对空映射使用时返回两个 Null。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexcasting:deconstruct",
+      "anchor": "hexcasting:deconstruct",
+      "input": "map<k,v>",
+      "output": "map<k,v>, (k,v | nulls)",
+      "text": "从映射中取出最先添加的项。对空映射使用时返回两个 Null。"
+    },
+    {
+      "type": "hexcasting:pattern",
       "op_id": "hexcasting:add",
       "anchor": "hexcasting:add",
       "input": "map<k, v>, map<k, v>",
@@ -28,38 +76,6 @@
       "input": "map<k, v>, map<t, *>",
       "output": "map<k, v>",
       "text": "从第一个映射中移除第二个映射的项。比对时忽略第二个映射中项的值。"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "hexcasting:index",
-      "anchor": "hexcasting:index",
-      "input": "map<k, v>, k",
-      "output": "v?",
-      "text": "拆解映射，返回与所给键相关的值。和扫描列表不一样，此操作的复杂度是 O(1)。"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "hexcasting:unappend",
-      "anchor": "hexcasting:unappend",
-      "input": "map<k, v>",
-      "output": "map<k, v>, (k, v)?",
-      "text": "从映射中取出一个项。删去哪个项没有定论，完全由自然随意决定。对空映射使用时返回两个 Null。"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "hexcasting:replace",
-      "anchor": "hexcasting:replace",
-      "input": "map<k, v>, k, v",
-      "output": "map<k, v>",
-      "text": "将键为 $(n)k/$ 的项的值换为 $(n)v/$。若映射内没有 $(n)k/$ 键，则新建项。"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "hexcasting:remove_from",
-      "anchor": "hexcasting:remove_from",
-      "input": "map<k, v>, k",
-      "output": "map<k, v>",
-      "text": "从映射中删去所给键对应的项。若未找到相应项，则原样返回映射。"
     }
   ]
 }
