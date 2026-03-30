@@ -6,12 +6,12 @@ id: mixer
 
 The Mixer is a two block tall machine that combines fluids and items. It requires a source of rotation to function.
 
-# Specifications
+## Specifications
 
 \columns{\graph{neepmeat:mixer}}{Min power: 40eJ/t
 Max power: 800eJ/t}
 
-## Usage
+# Usage
 
 Fluid inputs are taken from any tanks that are adjacent to the mixer's lower block. Item inputs must be inserted directly into the machine through hoppers or pipes. 
 

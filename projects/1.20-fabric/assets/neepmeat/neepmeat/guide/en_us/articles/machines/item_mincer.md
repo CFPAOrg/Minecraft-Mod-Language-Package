@@ -7,7 +7,7 @@ lookup: neepmeat:item_mincer
 
 The Item Mincer squeezes food items into a Food slurry. The quality of the resulting Food is determined by the quality of the inserted food.
 
-# Specifications
+## Specifications
 
 \columns{\graph{neepmeat:item_mincer}}{Min power: 40eJ/t
 Max power: 800ej/t}

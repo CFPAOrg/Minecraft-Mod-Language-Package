@@ -310,13 +310,15 @@ Prints the data stored at the given address. Equivalent to @ .
 
 ## ' ( "word" -- addr )
 
-Pushes the address of the following word to the stack.
+Looks up the given word (provided in a string) and pushes its address to the stack.
+
+Equivalent to NEEPASM `DYLOC`
 
 ```
 : aword 1 + . ;
 
 # Print the word's address
-' aword .
+"aword" ' .
 ```
 
 ## EXECUTE ( addr -- )

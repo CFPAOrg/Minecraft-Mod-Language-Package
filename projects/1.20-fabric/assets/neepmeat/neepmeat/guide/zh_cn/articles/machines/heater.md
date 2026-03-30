@@ -7,7 +7,7 @@ lookup: neepmeat:heater
 
 加热器会加热其面向的类熔炉方块，使其能够不消耗燃料烧炼物品。
 
-# 规格说明
+## 规格说明
 
 \columns{\graph{neepmeat:heater}}{\graph{neepmeat:heater_fluid_heating}}
 
