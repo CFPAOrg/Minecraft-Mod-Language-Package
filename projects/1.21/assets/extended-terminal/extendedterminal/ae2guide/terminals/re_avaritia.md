@@ -15,7 +15,7 @@ item_ids:
 
 # Re:Avaritia Crafting Terminal
 
-<et:condition load="ReAvaritia">
+<et:condition load="Re-Avaritia">
 
 
 <GameScene zoom={4} interactive={true}>

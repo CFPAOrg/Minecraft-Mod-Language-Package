@@ -13,7 +13,7 @@ item_ids:
   - ultimate_terminal
 ---
 # 拓展合成终端
-<et:condition load="ExtendedCrafting">
+<et:condition load="extendedcrafting">
     <Column alignItems="center" fullwidth={true}>
         <GameScene zoom={4} interactive={true}>
             <ImportStructure src="../structures/extendedcrafting.snbt" />

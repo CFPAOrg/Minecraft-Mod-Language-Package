@@ -15,7 +15,7 @@ item_ids:
 
 # 无尽贪婪：重生合成终端
 
-<et:condition load="ReAvaritia">
+<et:condition load="Re-Avaritia">
 
 
 <GameScene zoom={4} interactive={true}>
