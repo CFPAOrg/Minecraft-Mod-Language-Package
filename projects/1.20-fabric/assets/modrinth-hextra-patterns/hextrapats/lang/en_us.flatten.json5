@@ -101,11 +101,8 @@
         intro: "A hash set contains elements in an unordered fashion, and cannot contain duplicates. Excellent for keeping track of whether or not something exists.<br>Due to a magical process known as '$(thing)hashing/$', access is reduced to nearly O(1), relaxing the burden on Nature.",
         tolerance: "However, '$(thing)hashing/$' seems to have a different, albeit minor, burden on Nature. Numbers and vectors lose precision in the process of getting inserted into a set, becoming rounded to 4 decimals. This seems to be related to $(l:patterns/logic#hexcasting:equals)$(thing)how Nature considers $(action)equality/$.",
         empty_num_set: "Push an empty set that can hold numbers to the top of the stack.",
-        last_n_num_set: "Remove $(italic)num/$ numbers from the top of the stack, then add them to a number set at the top of the stack.",
         empty_vec_set: "Push an empty set that can hold vectors to the top of the stack.",
-        last_n_vec_set: "Remove $(italic)num/$ vectors from the top of the stack, then add them to a vec set at the top of the stack.",
         empty_entity_set: "Push an empty set that can hold entities to the top of the stack.",
-        last_n_entity_set: "Remove $(italic)num/$ entities from the top of the stack, then add them to an entity set at the top of the stack.",
         insert: {
           name: "Insertion Distillation",
           "": "Remove the iota at the top of the stack, then add it to the set. The iota's type must match the set's type."
@@ -126,6 +123,8 @@
         xor: "Takes the exclusive disjunction of two sets. The new set will only contain elements that were present in only one of the two sets. The two sets must be of matching type.",
         abs: "Remove the set at the top of the stack, then push the number of elements in the set to the stack.",
         set_to_list: "Converts the set at the top of the stack to a list. The order is up to Nature's whims.",
+        list_to_set: "Converts the list at the top of the stack to a set. The list must be non-empty and entirely numbers, vectors, or entities.",
+        last_n_set: "Remove $(italic)num/$ iota from the top of the stack, then add them to a set at the top of the stack. Must be either all numbers, all vectors, or all entities.",
         splat_set: "Remove the set at the top of the stack, then push its contents to the stack. The order is up to Nature's whims.",
       },
       meta: {
@@ -133,7 +132,9 @@
         false_halt: "Forcibly halts a $(thing)Hex/$ like $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ if the iota at the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(thing)considered $(action)False $(thing)by Nature/$.",
         true_eval: "Casts a pattern or list of patterns like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$ if the next iota from the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(thing)considered $(action)True $(thing)by Nature/$.",
         false_eval: "Casts a pattern or list of patterns like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$ if the next iota from the top of the stack is $(l:patterns/logic#hexcasting:bool_coerce)$(thing)considered $(action)False $(thing)by Nature/$.",
-        index_for_each: "Casts like $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$, however the new stack for each element additionally has the index of that element added to the top."
+        index_for_each: "Casts like $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$, however the new stack for each element additionally has the index of that element added to the top.",
+        main_for_each: "Casts like $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$, however each sub-execution operates on the main stack instead of copies of the stack.",
+        main_index_for_each: "Casts like $(l:patterns/hextrapats_meta#hextrapats:index_for_each)$(action)Djehuty's Gambit/$, however each sub-execution operates on the main stack instead of copies of the stack."
       }
     }
   },
@@ -201,9 +202,7 @@
         empty_num_set: "Vacant Reflection: Number Set",
         empty_vec_set: "Vacant Reflection: Vector Set",
         empty_entity_set: "Vacant Reflection: Entity Set",
-        last_n_num_set: "Bucketing Gambit: Numbers",
-        last_n_vec_set: "Bucketing Gambit: Vectors",
-        last_n_entity_set: "Bucketing Gambit: Entities",
+        last_n_set: "Bucketing Gambit",
         splat_set: "Spilling Disintegration",
         set_insert_ret: "Insertion Gambit",
         set_remove_ret: "Removal Gambit",
@@ -214,7 +213,9 @@
         false_halt: "Styx's Gambit",
         true_eval: "Helios' Gambit",
         false_eval: "Selene's Gambit",
-        index_for_each: "Djehuty's Gambit"
+        index_for_each: "Djehuty's Gambit",
+        main_for_each: "Anubis' Gambit",
+        main_index_for_each: "Ra's Gambit"
       },
 
       "book.hextrapats:": {
@@ -245,10 +246,7 @@
 
         empty_num_set: "Vacant Refl.: Num. Set",
         empty_vec_set: "Vacant Refl.: Vec. Set",
-        empty_entity_set: "Vacant Refl.: Ent. Set",
-        last_n_num_set: "Bucketing Gamb.: Nums",
-        last_n_vec_set: "Bucketing Gamb.: Vecs",
-        last_n_entity_set: "Bucketing Gamb.: Ents"
+        empty_entity_set: "Vacant Refl.: Ent. Set"
       }
     },
     "special.hextrapats:": {
@@ -282,7 +280,9 @@
         },
         "hextrapats:": {
           opposite_vecs: "vector not facing opposite to the start direction (%s)",
-          too_short_to_swindle: "a list of at least length %s"
+          too_short_to_swindle: "a list of at least length %s",
+          set_item: "a number, vector, or entity",
+          set_list: "a non-empty list of entirely numbers, vectors, or entities"
         }
       }
     }

@@ -101,11 +101,8 @@
         intro: "哈希集合的各元素无顺序且不重复，很适合用于记录某物存在与否。<br>由于所谓的“$(thing)哈希/$”之魔法过程，访问其中元素的操作接近于 O(1)，能减轻自然的负担。",
         tolerance: "不过，这种“$(thing)哈希/$”似乎会给自然带去另一种负担，虽然轻微，但确实存在。数和向量在插入集合时会丢失精度，舍入至 4 位小数。这应当是与$(l:patterns/logic#hexcasting:equals)$(thing)自然理解$(action)相等/$的方式有关。",
         empty_num_set: "压入一个可包含数的空集合。",
-        last_n_num_set: "移除栈顶 $(italic)num/$ 个数，将其插入此时栈顶的数集合。",
         empty_vec_set: "压入一个可包含向量的空集合。",
-        last_n_vec_set: "移除栈顶 $(italic)num/$ 个向量，将其插入此时栈顶的向量集合。",
         empty_entity_set: "压入一个可包含实体的空集合。",
-        last_n_entity_set: "移除栈顶 $(italic)num/$ 个实体，将其插入此时栈顶的实体集合。",
         insert: {
           name: "入集合之馏化",
           "": "移除栈顶元素，将其插入栈顶集合。该 iota 的类型必须符合集合类型。"
@@ -126,14 +123,18 @@
         xor: "取两集合的互斥元素。新集合将只包含仅出现于其中一个集合的元素。两集合类型必须匹配。",
         abs: "移除栈顶集合，返回其中元素数。",
         set_to_list: "将栈顶的集合转换为列表。顺序随自然心情而定。",
+        list_to_set: "将栈顶的列表转换为集合。列表必须完全由数、向量、实体三者中的一者组成。",
+        last_n_set: "从栈顶移除 $(italic)num/$ 个 iota，而后将它们加入此时栈顶的集合。被移除 iota 必须全部为数，或全部为向量，或全部为实体。",
         splat_set: "移除栈顶集合，而后将其中元素全部压入栈顶。顺序随自然心情而定。",
       },
       meta: {
-        true_halt: "若自然会将栈顶 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)True/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
-        false_halt: "若自然会将栈顶 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)False/$，则强制停止$(thing)Hex/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
+        true_halt: "若自然会将栈顶 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)True/$，则强制停止$(thing)咒术/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
+        false_halt: "若自然会将栈顶 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)False/$，则强制停止$(thing)咒术/$的施放，与$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$类似。",
         true_eval: "若自然会将栈顶往下第二 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)True/$，则施放栈顶的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$类似。",
         false_eval: "若自然会将栈顶往下第二 iota $(l:patterns/logic#hexcasting:bool_coerce)$(thing)视作 $(action)False/$，则施放栈顶的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$类似。",
-        index_for_each: "与$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$类似，但被遍历列表的各独立栈会额外将所选元素的下标压入栈顶。"
+        index_for_each: "与$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$类似，但被遍历列表的各独立栈会额外将所选元素的下标压入栈顶。",
+        main_for_each: "与$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$类似，但会直接在主栈中进行遍历，而非各项复制新栈。",
+        main_index_for_each: "与$(l:patterns/hextrapats_meta#hextrapats:index_for_each)$(action)杰胡提之策略/$类似，但会直接在主栈中进行遍历，而非各项复制新栈。"
       }
     }
   },
@@ -201,9 +202,7 @@
         empty_num_set: "空无之精思：数集合",
         empty_vec_set: "空无之精思：向量集合",
         empty_entity_set: "空无之精思：实体集合",
-        last_n_num_set: "桶之策略：数",
-        last_n_vec_set: "桶之策略：向量",
-        last_n_entity_set: "桶之策略：实体",
+        last_n_set: "桶之策略",
         splat_set: "泼洒之拆解",
         set_insert_ret: "入集合之策略",
         set_remove_ret: "出集合之策略",
@@ -214,7 +213,9 @@
         false_halt: "斯堤克斯之策略",
         true_eval: "赫利俄斯之策略",
         false_eval: "塞勒涅之策略",
-        index_for_each: "杰胡提之策略"
+        index_for_each: "杰胡提之策略",
+        main_for_each: "阿努比斯之策略",
+        main_index_for_each: "拉之策略"
       },
 
       "book.hextrapats:": {
@@ -245,10 +246,7 @@
 
         empty_num_set: "空无之精思：数集合",
         empty_vec_set: "空无之精思：向量集合",
-        empty_entity_set: "空无之精思：实体集合",
-        last_n_num_set: "桶之策略：数",
-        last_n_vec_set: "桶之策略：向量",
-        last_n_entity_set: "桶之策略：实体"
+        empty_entity_set: "空无之精思：实体集合"
       }
     },
     "special.hextrapats:": {
@@ -282,7 +280,9 @@
         },
         "hextrapats:": {
           opposite_vecs: "不与起始方向（%s）正好反向的向量",
-          too_short_to_swindle: "长度至少为%s的列表"
+          too_short_to_swindle: "长度至少为%s的列表",
+          set_item: "一个数、向量，或实体",
+          set_list: "完全由数、向量、实体三者之一组成的非空列表"
         }
       }
     }
