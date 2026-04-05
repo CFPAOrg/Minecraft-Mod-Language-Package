@@ -7,7 +7,7 @@ lookup: neepmeat:heater
 
 The Heater warms any furnace-like block that it faces, allowing it to smelt items without fuel.
 
-# Specifications
+## Specifications
 
 \columns{\graph{neepmeat:heater}}{\graph{neepmeat:heater_fluid_heating}}
 

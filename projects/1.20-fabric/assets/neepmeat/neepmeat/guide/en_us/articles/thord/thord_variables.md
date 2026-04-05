@@ -61,20 +61,20 @@ Arrays and noname words can do many interesting things. The following program st
 # Create an array of three elements
 array a 3
 
-# Count represents the current element of the array to fill
+# Count represents the current element of the array
 variable count
 
 # Create a noname word
 :noname 
-  .say "Look at me" ; 
+  "Look at me!" . ; 
 ; 
 
-# Stored it using a word we defined
+# Store it using a word we defined
 sto
 
 # More compact syntax for the same thing
-:noname .say "I'm a word" ; ; sto
-:noname .say "Boiled in oil" ; ; sto
+:noname "I'm a word" . ; sto
+:noname "Boiled in oil" . ; sto
 
 # Values of i: 0 1 2
 3 0 for 
@@ -82,13 +82,13 @@ sto
   i at execute
 loop 
 
-# Stores top stack entry in the array and increments count.
+# Stores top stack entry in 'a', increments count.
 : sto ( addr -- )
   count @ a + ! 
   1 count +!
 ;
 
-# Retrieves the element at idx
+# Retrieves the element in 'a' at idx
 : at ( idx -- addr ) 
   a + @ 
 ;

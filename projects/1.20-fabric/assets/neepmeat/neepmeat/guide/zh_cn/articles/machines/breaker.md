@@ -7,7 +7,7 @@ lookup: neepmeat:breaker
 
 使用发动机驱动的简单方块。
 
-# 规格说明
+## 规格说明
 
 \columns{\graph{neepmeat:breaker}}{最小功率：10eJ/t}
 

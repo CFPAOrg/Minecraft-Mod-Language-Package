@@ -7,7 +7,7 @@ lookup: neepmeat:item_mincer
 
 物品绞碎机能将物品状态的食物绞成食物浆液。所得食物浆液的品质由所放入食物的品质决定。
 
-# 规格说明
+## 规格说明
 
 \columns{\graph{neepmeat:item_mincer}}{最小功率：40eJ/t
 最大功率：800eJ/t}

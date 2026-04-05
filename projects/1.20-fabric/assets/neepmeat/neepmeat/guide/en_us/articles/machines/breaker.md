@@ -7,7 +7,7 @@ lookup: neepmeat:breaker
 
 This is a simple block breaker powered by a motor. 
 
-# Specifications
+## Specifications
 
 \columns{\graph{neepmeat:breaker}}{Min power: 10eJ/t}
 

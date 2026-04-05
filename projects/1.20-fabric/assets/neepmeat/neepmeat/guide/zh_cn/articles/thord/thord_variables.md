@@ -71,20 +71,20 @@ a 1 +
 # Create an array of three elements [1]
 array a 3
 
-# Count represents the current element of the array to fill [2]
+# Count represents the current element of the array [2]
 variable count
 
 # Create a noname word [3]
 :noname 
-  .say "Look at me" ; 
+  "Look at me!" . ; 
 ; 
 
-# Stored it using a word we defined [4]
+# Store it using a word we defined [4]
 sto
 
 # More compact syntax for the same thing [5]
-:noname .say "I'm a word" ; ; sto
-:noname .say "Boiled in oil" ; ; sto
+:noname "I'm a word" . ; sto
+:noname "Boiled in oil" . ; sto
 
 # Values of i: 0 1 2 [6]
 3 0 for 
@@ -92,13 +92,13 @@ sto
   i at execute
 loop 
 
-# Stores top stack entry in the array and increments count. [8]
+# Stores top stack entry in 'a', increments count. [8]
 : sto ( addr -- )
   count @ a + ! 
   1 count +!
 ;
 
-# Retrieves the element at idx [9]
+# Retrieves the element in 'a' at idx [9]
 : at ( idx -- addr ) 
   a + @ 
 ;
@@ -107,8 +107,8 @@ loop
  [2] `count`代表当前应操作数组的哪个元素
  [3] 创建一个匿名词
  [4] 用自定义的词进行存储
- [5] 功能相同，而语法更紧凑的写法
+ [5] 功能相同，但语法更紧凑的写法
  [6] `i`的值分别为：0、1、2
  [7] 获取`i`处的值
- [8] 将栈顶元素存入数组，并递增`count`
- [9] 读取索引为`idx`的元素
+ [8] 将栈顶元素存入`a`，并递增`count`
+ [9] 读取`a`中索引为`idx`的元素
