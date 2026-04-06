@@ -1,0 +1,109 @@
+{
+  "assigned_items": [
+    "enchanted:witch_oven",
+    "enchanted:fume_funnel",
+    "enchanted:fume_funnel_filtered",
+    "enchanted:fume_filter"
+  ],
+  "icon": {
+    "count": 1,
+    "id": "enchanted:witch_oven"
+  },
+  "pages": [
+    {
+      "components": [
+        {
+          "header": "熏气收集",
+          "template": "modopedia:page/headered_text",
+          "text": "巫师烤炉是一台经过改装的熔炉，能在燃烧材料时收集副产品和熏气。\n\n和熔炉不一样的是，它无法处理矿石。在中央的槽位放入一个$(b)$(el:items/clay_jar)黏土罐$(/el)$(/b)，即可收集熏气。"
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "type": "modopedia:header",
+          "text": "template.modopedia.crafting_recipe"
+        },
+        {
+          "type": "modopedia:separator",
+          "y": 10
+        },
+        {
+          "type": "modopedia:multiblock",
+          "height": 50,
+          "multiblock": {
+            "type": "modopedia:dense",
+            "key": {
+              "W": {
+                "type": "modopedia:simple",
+                "states": [
+                  "enchanted:witch_oven[lit=true]"
+                ]
+              }
+            },
+            "pattern": [
+              [
+                "W"
+              ]
+            ]
+          },
+          "y": 10
+        },
+        {
+          "recipe": "enchanted:witch_oven",
+          "template": "modopedia:recipe/crafting",
+          "y": 70
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "header": "熏气漏斗",
+          "template": "modopedia:page/headered_text",
+          "text": "在巫师烤炉左右两侧放置熏气漏斗可以大幅增加产率。"
+        },
+        {
+          "recipe": "enchanted:fume_funnel",
+          "template": "modopedia:recipe/crafting",
+          "y": 68
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "multiblock_id": "enchanted:witch_oven",
+          "offset_y": -10.0,
+          "template": "modopedia:page/multiblock",
+          "text": "可以在巫师烤炉上方放置第三个熏气漏斗作为装饰用烟囱。"
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "header": "熏气过滤器",
+          "template": "modopedia:page/headered_text",
+          "text": "可向熏气漏斗装载熏气过滤器以进一步增加产率。装入两份过滤器后必定产出。"
+        },
+        {
+          "recipe": "enchanted:fume_filter",
+          "template": "modopedia:recipe/crafting",
+          "y": 70
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "block": "enchanted:fume_funnel_filtered[lit=true]",
+          "template": "modopedia:page/block",
+          "text": "$(b)获取方式：$(/b)\n对熏气漏斗使用熏气过滤器"
+        }
+      ]
+    }
+  ],
+  "title": "熏气收集"
+}

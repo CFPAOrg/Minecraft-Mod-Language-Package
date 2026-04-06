@@ -30,7 +30,9 @@ advancements.cm_story.weapon.get_bootskai.title=水上走行
 advancements.cm_story.weapon.get_bootskai.description=改良したブーツを入手
 advancements.cm_story.weapon.get_firstaid.title=死亡からお護りします！
 advancements.cm_story.weapon.get_firstaid.description=応急処置キットを入手
-
+advancements.cm_story.weapon.get_submarine.title=海底の旅
+advancements.cm_story.weapon.get_submarine.description=潜水艦タイプの防具を入手
+	
 advancements.cm_story.teatime.get_cookingtool.title=調理器具を作る
 advancements.cm_story.teatime.get_cookingtool.description=調理器具を入手
 advancements.cm_story.teatime.get_singledish.title=私は料理人
@@ -158,6 +160,15 @@ config.chestnutsfall=オークの枯れ葉からクリが落ちる
 config.chestnutsfall.tooltip=[true]でオークの枯れ葉からクリが落ちる
 config.lowsound=艦載機でより処理の少ない音を使う
 config.lowsound.tooltip=[true]で艦載機においてより処理の少ない音を使う
+
+config.helmet_texture=ChinjufuModヘルメットのテクスチャ
+config.helmet_texture.tooltip=全部=0, 衣服無し=1, 衣服のみ=2
+config.chestplate_texture=ChinjufuModチェストプレートのテクスチャ
+config.chestplate_texture.tooltip=全部=0, 衣服無し=1, 衣服のみ=2
+config.leggings_texture=ChinjufuModレギンスのテクスチャ
+config.leggings_texture.tooltip=全部=0, 衣服無し=1, 衣服のみ=2
+config.boots_texture=ChinjufuModブーツのテクスチャ
+config.boots_texture.tooltip=全部=0, 衣服無し=1, 衣服のみ=2
 
 
 
@@ -320,7 +331,13 @@ item.item_ryujou_chestplate.name=龍驤タイプ_チェストプレート
 item.item_ryujou_leggings.name=龍驤タイプ_レギンス
 item.item_ryujou_boots.name=龍驤タイプ_ブーツ
 item.item_ryujou_bootskai.name=龍驤タイプ_ブーツ改
-	
+
+item.item_zuihou_helmet.name=瑞鳳タイプ_ヘルメット
+item.item_zuihou_chestplate.name=瑞鳳タイプ_チェストプレート
+item.item_zuihou_leggings.name=瑞鳳タイプ_レギンス
+item.item_zuihou_boots.name=瑞鳳タイプ_ブーツ
+item.item_zuihou_bootskai.name=瑞鳳タイプ_ブーツ改
+
 item.item_akagi_helmet.name=赤城タイプ_ヘルメット
 item.item_akagi_chestplate.name=赤城タイプ_チェストプレート
 item.item_akagi_leggings.name=赤城タイプ_レギンス
@@ -350,21 +367,64 @@ item.item_nagato_chestplate.name=長門タイプ_チェストプレート
 item.item_nagato_leggings.name=長門タイプ_レギンス
 item.item_nagato_boots.name=長門タイプ_ブーツ
 item.item_nagato_bootskai.name=長門タイプ_ブーツ改
-		
-tips.item_destroyer.name=小口径主砲・魚雷・錨の攻撃力が上がる
-tips.item_cruiser.name=中口径主砲・魚雷の攻撃力が上がる
-tips.item_battleship.name=大口径主砲の攻撃力が上がる
-tips.item_carrier.name=艦載機の攻撃力が上がる
-tips.item_suijou_boots.name=水上走行
 
-		
+item.item_i168_helmet.name=伊168タイプ_ヘルメット
+item.item_i168_chestplate.name=伊168タイプ_チェストプレート
+item.item_i168_leggings.name=伊168タイプ_レギンス
+item.item_i168_boots.name=伊168タイプ_ブーツ
+
+item.item_i13_helmet.name=伊13タイプ_ヘルメット
+item.item_i13_chestplate.name=伊13タイプ_チェストプレート
+item.item_i13_leggings.name=伊13タイプ_レギンス
+item.item_i13_boots.name=伊13タイプ_ブーツ
+	
+item.item_ro500_helmet.name=呂500タイプ_ヘルメット
+item.item_ro500_chestplate.name=呂500タイプ_チェストプレート
+item.item_ro500_leggings.name=呂500タイプ_レギンス
+item.item_ro500_boots.name=呂500タイプ_ブーツ
+
+tips.item_suijou_boots.name=水上走行
+tips.item_destroyer.name=艦種 : 駆逐艦
+tips.item_cruiser.name=艦種 : 巡洋艦
+tips.item_battleship.name=艦種 : 戦艦
+tips.item_carrier.name=艦種 : 空母
+tips.item_sabumarine.name=艦種 : 潜水艦
+tips.item_destroyer2.name=4セット効果 : 小口径主砲・魚雷・錨の攻撃力が上がる
+tips.item_cruiser2.name=4セット効果 : 中口径主砲・魚雷の攻撃力が上がる
+tips.item_battleship2.name=4セット効果 : 大口径主砲の攻撃力が上がる
+tips.item_carrier2.name=4セット効果 : 艦載機の攻撃力が上がる
+tips.item_sabumarine2.name=4セット効果 : 魚雷の攻撃力が上がる。水中呼吸
+
+count.amount.20=残量 : 20
+count.amount.19=残量 : 19
+count.amount.18=残量 : 18
+count.amount.17=残量 : 17
+count.amount.16=残量 : 16
+count.amount.15=残量 : 15
+count.amount.14=残量 : 14
+count.amount.13=残量 : 13
+count.amount.12=残量 : 12
+count.amount.11=残量 : 11
+count.amount.10=残量 : 10
+count.amount.9=残量 : 9
+count.amount.8=残量 : 8
+count.amount.7=残量 : 7
+count.amount.6=残量 : 6
+count.amount.5=残量 : 5
+count.amount.4=残量 : 4
+count.amount.3=残量 : 3
+count.amount.2=残量 : 2
+count.amount.1=残量 : 1
+count.amount.0=残量 : 無し
+	
+
 #LetterTray
 item.block_lowdesk.name=座卓
 item.block_lowdesk_acacia.name=座卓(アカシア)
 item.block_lowdesk_birch.name=座卓(シラカバ)
 item.block_lowdesk_darkoak.name=座卓(ダークオーク)
 item.block_lowdesk_jungle.name=座卓(ジャングル)
-item.block_lowdesk_spruce.name=座卓(マツ)
+item.block_lowdesk_spruce.name=座卓(トウヒ)
 item.block_lowdesk_ichoh.name=座卓(イチョウ)
 item.block_lowdesk_kaede.name=座卓(カエデ)
 item.block_lowdesk_sakura.name=座卓(サクラ)
@@ -382,7 +442,7 @@ item.block_unitdesk_acacia.name=ユニット机(アカシア)
 item.block_unitdesk_birch.name=ユニット机(シラカバ)
 item.block_unitdesk_darkoak.name=ユニット机(ダークオーク)
 item.block_unitdesk_jungle.name=ユニット机(ジャングル)
-item.block_unitdesk_spruce.name=ユニット机(マツ)
+item.block_unitdesk_spruce.name=ユニット机(トウヒ)
 item.block_unitdesk_ichoh.name=ユニット机(イチョウ)
 item.block_unitdesk_kaede.name=ユニット机(カエデ)
 item.block_unitdesk_sakura.name=ユニット机(サクラ)
@@ -392,14 +452,14 @@ item.block_dressingtable_a.name=ドレッサー(アカシア)
 item.block_dressingtable_b.name=ドレッサー(シラカバ)
 item.block_dressingtable_d.name=ドレッサー(ダークオーク)
 item.block_dressingtable_j.name=ドレッサー(ジャングル)
-item.block_dressingtable_s.name=ドレッサー(マツ)
+item.block_dressingtable_s.name=ドレッサー(トウヒ)
 
 item.block_diningchair.name=食卓椅子
 item.block_diningchair_a.name=食卓椅子(アカシア)
 item.block_diningchair_b.name=食卓椅子(シラカバ)
 item.block_diningchair_d.name=食卓椅子(ダークオーク)
 item.block_diningchair_j.name=食卓椅子(ジャングル)
-item.block_diningchair_s.name=食卓椅子(マツ)
+item.block_diningchair_s.name=食卓椅子(トウヒ)
 
 item.block_cafechair_black.name=カフェチェア(黒)
 item.block_cafechair_blue.name=カフェチェア(青)
@@ -446,28 +506,28 @@ item.block_schoolchair_a.name=学校の椅子(アカシア)
 item.block_schoolchair_b.name=学校の椅子(シラカバ)
 item.block_schoolchair_d.name=学校の椅子(ダークオーク)
 item.block_schoolchair_j.name=学校の椅子(ジャングル)
-item.block_schoolchair_s.name=学校の椅子(マツ)
+item.block_schoolchair_s.name=学校の椅子(トウヒ)
 
 item.block_schooldesk.name=学校の机
 item.block_schooldesk_a.name=学校の机(アカシア)
 item.block_schooldesk_b.name=学校の机(シラカバ)
 item.block_schooldesk_d.name=学校の机(ダークオーク)
 item.block_schooldesk_j.name=学校の机(ジャングル)
-item.block_schooldesk_s.name=学校の机(マツ)
+item.block_schooldesk_s.name=学校の机(トウヒ)
 
 item.block_teacherdesk.name=教卓
 item.block_teacherdesk_a.name=教卓(アカシア)
 item.block_teacherdesk_b.name=教卓(シラカバ)
 item.block_teacherdesk_d.name=教卓(ダークオーク)
 item.block_teacherdesk_j.name=教卓(ジャングル)
-item.block_teacherdesk_s.name=教卓(マツ)
+item.block_teacherdesk_s.name=教卓(トウヒ)
 
 item.block_window.name=窓
 item.block_window_acacia.name=窓(アカシア)
 item.block_window_birch.name=窓(シラカバ)
 item.block_window_darkoak.name=窓(ダークオーク)
 item.block_window_jungle.name=窓(ジャングル)
-item.block_window_spruce.name=窓(マツ)
+item.block_window_spruce.name=窓(トウヒ)
 item.block_window_ichoh.name=窓(イチョウ)
 item.block_window_kaede.name=窓(カエデ)
 item.block_window_sakura.name=窓(サクラ)
@@ -479,7 +539,7 @@ item.block_windowb_acacia.name=両開き窓(アカシア)
 item.block_windowb_birch.name=両開き窓(シラカバ)
 item.block_windowb_darkoak.name=両開き窓(ダークオーク)
 item.block_windowb_jungle.name=両開き窓(ジャングル)
-item.block_windowb_spruce.name=両開き窓(マツ)
+item.block_windowb_spruce.name=両開き窓(トウヒ)
 item.block_windowb_ichoh.name=両開き窓(イチョウ)
 item.block_windowb_kaede.name=両開き窓(カエデ)
 item.block_windowb_sakura.name=両開き窓(サクラ)
@@ -490,7 +550,7 @@ item.block_windowtall_acacia.name=長窓(アカシア)
 item.block_windowtall_birch.name=長窓(シラカバ)
 item.block_windowtall_darkoak.name=長窓(ダークオーク)
 item.block_windowtall_jungle.name=長窓(ジャングル)
-item.block_windowtall_spruce.name=長窓(マツ)
+item.block_windowtall_spruce.name=長窓(トウヒ)
 item.block_windowtall_ichoh.name=長窓(イチョウ)
 item.block_windowtall_kaede.name=長窓(カエデ)
 item.block_windowtall_sakura.name=長窓(サクラ)
@@ -500,7 +560,7 @@ item.block_windowtallbot_acacia.name=上げ下げ窓(アカシア)
 item.block_windowtallbot_birch.name=上げ下げ窓(シラカバ)
 item.block_windowtallbot_darkoak.name=上げ下げ窓(ダークオーク)
 item.block_windowtallbot_jungle.name=上げ下げ窓(ジャングル)
-item.block_windowtallbot_spruce.name=上げ下げ窓(マツ)
+item.block_windowtallbot_spruce.name=上げ下げ窓(トウヒ)
 item.block_windowtallbot_ichoh.name=上げ下げ窓(イチョウ)
 item.block_windowtallbot_kaede.name=上げ下げ窓(カエデ)
 item.block_windowtallbot_sakura.name=上げ下げ窓(サクラ)
@@ -538,7 +598,7 @@ item.block_cafetable_acacia.name=カフェテーブル(アカシア)
 item.block_cafetable_birch.name=カフェテーブル(シラカバ)
 item.block_cafetable_darkoak.name=カフェテーブル(ダークオーク)
 item.block_cafetable_jungle.name=カフェテーブル(ジャングル)
-item.block_cafetable_spruce.name=カフェテーブル(マツ)
+item.block_cafetable_spruce.name=カフェテーブル(トウヒ)
 item.block_cafetable_ichoh.name=カフェテーブル(イチョウ)
 item.block_cafetable_kaede.name=カフェテーブル(カエデ)
 item.block_cafetable_sakura.name=カフェテーブル(サクラ)
@@ -548,7 +608,7 @@ item.block_logchair_acacia.name=丸太椅子(アカシア)
 item.block_logchair_birch.name=丸太椅子(シラカバ)
 item.block_logchair_darkoak.name=丸太椅子(ダークオーク)
 item.block_logchair_jungle.name=丸太椅子(ジャングル)
-item.block_logchair_spruce.name=丸太椅子(マツ)
+item.block_logchair_spruce.name=丸太椅子(トウヒ)
 item.block_logchair_ichoh.name=丸太椅子(イチョウ)
 item.block_logchair_kaede.name=丸太椅子(カエデ)
 item.block_logchair_sakura.name=丸太椅子(サクラ)
@@ -610,7 +670,7 @@ item.block_chabudai_acacia.name=ちゃぶ台(アカシア)
 item.block_chabudai_birch.name=ちゃぶ台(シラカバ)
 item.block_chabudai_darkoak.name=ちゃぶ台(ダークオーク)
 item.block_chabudai_jungle.name=ちゃぶ台(ジャングル)
-item.block_chabudai_spruce.name=ちゃぶ台(マツ)
+item.block_chabudai_spruce.name=ちゃぶ台(トウヒ)
 item.block_chabudai_ichoh.name=ちゃぶ台(イチョウ)
 item.block_chabudai_kaede.name=ちゃぶ台(カエデ)
 item.block_chabudai_sakura.name=ちゃぶ台(サクラ)
@@ -621,7 +681,7 @@ item.block_kotatsu_acacia.name=こたつ(アカシア)
 item.block_kotatsu_birch.name=こたつ(シラカバ)
 item.block_kotatsu_darkoak.name=こたつ(ダークオーク)
 item.block_kotatsu_jungle.name=こたつ(ジャングル)
-item.block_kotatsu_spruce.name=こたつ(マツ)
+item.block_kotatsu_spruce.name=こたつ(トウヒ)
 item.block_kotatsu_ichoh.name=こたつ(イチョウ)
 item.block_kotatsu_kaede.name=こたつ(カエデ)
 item.block_kotatsu_sakura.name=こたつ(サクラ)
@@ -638,7 +698,7 @@ tile.block_pillar_bir_c.name=柱(シラカバ)
 tile.block_pillar_doak_c.name=柱(ダークオーク)
 tile.block_pillar_jun_c.name=柱(ジャングル)
 tile.block_pillar_oak_c.name=柱(オーク)
-tile.block_pillar_spru_c.name=柱(マツ)
+tile.block_pillar_spru_c.name=柱(トウヒ)
 
 tile.block_rockstairs_and.name=安山岩の階段ブロック
 tile.block_rockstairs_dio.name=閃緑岩の階段ブロック
@@ -648,21 +708,21 @@ tile.block_rand_slabhalf.name=安山岩のハーフブロック
 tile.block_rdio_slabhalf.name=閃緑岩のハーフブロック
 tile.block_rgra_slabhalf.name=花崗岩のハーフブロック
 
-item.block_brick_and_c.name=安山岩レンガ
-item.block_brick_dio_c.name=閃緑岩レンガ
-item.block_brick_gra_c.name=花崗岩レンガ
+tile.block_brick_and_c.name=安山岩レンガ
+tile.block_brick_dio_c.name=閃緑岩レンガ
+tile.block_brick_gra_c.name=花崗岩レンガ
 
-item.block_brick_and_ch_c.name=模様入り安山岩レンガ
-item.block_brick_dio_ch_c.name=模様入り閃緑岩レンガ
-item.block_brick_gra_ch_c.name=模様入り花崗岩レンガ
+tile.block_brick_and_ch_c.name=模様入り安山岩レンガ
+tile.block_brick_dio_ch_c.name=模様入り閃緑岩レンガ
+tile.block_brick_gra_ch_c.name=模様入り花崗岩レンガ
 
-item.block_brick_and_cr_c.name=ひび入り安山岩レンガ
-item.block_brick_dio_cr_c.name=ひび入り閃緑岩レンガ
-item.block_brick_gra_cr_c.name=ひび入り花崗岩レンガ
+tile.block_brick_and_cr_c.name=ひび入り安山岩レンガ
+tile.block_brick_dio_cr_c.name=ひび入り閃緑岩レンガ
+tile.block_brick_gra_cr_c.name=ひび入り花崗岩レンガ
 
-item.block_brick_and_mos_c.name=苔安山岩レンガ
-item.block_brick_dio_mos_c.name=苔閃緑岩レンガ
-item.block_brick_gra_mos_c.name=苔花崗岩レンガ
+tile.block_brick_and_mos_c.name=苔安山岩レンガ
+tile.block_brick_dio_mos_c.name=苔閃緑岩レンガ
+tile.block_brick_gra_mos_c.name=苔花崗岩レンガ
 
 tile.block_brickstairs_and_c.name=安山岩レンガ階段
 tile.block_brickstairs_dio_c.name=閃緑岩レンガ階段
@@ -682,14 +742,14 @@ tile.block_wp_log_bir.name=パネル(シラカバ原木)
 tile.block_wp_log_doak.name=パネル(ダークオーク原木)
 tile.block_wp_log_jun.name=パネル(ジャングル原木)
 tile.block_wp_log_oak.name=パネル(オーク原木)
-tile.block_wp_log_spru.name=パネル(マツ原木)
+tile.block_wp_log_spru.name=パネル(トウヒ原木)
 
 tile.block_wp_plank_aca.name=パネル(アカシア木材)
 tile.block_wp_plank_bir.name=パネル(シラカバ木材)
 tile.block_wp_plank_doak.name=パネル(ダークオーク木材)
 tile.block_wp_plank_jun.name=パネル(ジャングル木材)
 tile.block_wp_plank_oak.name=パネル(オーク木材)
-tile.block_wp_plank_spru.name=パネル(マツ木材)
+tile.block_wp_plank_spru.name=パネル(トウヒ木材)
 
 tile.block_wp_stone.name=パネル(焼き石)
 tile.block_wp_stone_m.name=パネル(丸石)
@@ -826,7 +886,7 @@ item.block_shoujih_acacia.name=障子窓(アカシア)
 item.block_shoujih_birch.name=障子窓(シラカバ)
 item.block_shoujih_darkoak.name=障子窓(ダークオーク)
 item.block_shoujih_jungle.name=障子窓(ジャングル)
-item.block_shoujih_spruce.name=障子窓(マツ)
+item.block_shoujih_spruce.name=障子窓(トウヒ)
 
 #Ranma
 item.block_ranma_aca.name=欄間(アカシア)
@@ -834,7 +894,7 @@ item.block_ranma_bir.name=欄間(シラカバ)
 item.block_ranma_doak.name=欄間(ダークオーク)
 item.block_ranma_jun.name=欄間(ジャングル)
 item.block_ranma_oak.name=欄間
-item.block_ranma_spru.name=欄間(マツ)
+item.block_ranma_spru.name=欄間(トウヒ)
 tips.block_ranma.name=天井と鴨居との間に設けられる開口部材
 
 item.block_ranmab_aca.name=欄間 甲(アカシア)
@@ -842,28 +902,28 @@ item.block_ranmab_bir.name=欄間 甲(シラカバ)
 item.block_ranmab_doak.name=欄間 甲(ダークオーク)
 item.block_ranmab_jun.name=欄間 甲(ジャングル)
 item.block_ranmab_oak.name=欄間 甲
-item.block_ranmab_spru.name=欄間 甲(マツ)
+item.block_ranmab_spru.name=欄間 甲(トウヒ)
 
 item.block_ranmac_aca.name=欄間 乙(アカシア)
 item.block_ranmac_bir.name=欄間 乙(シラカバ)
 item.block_ranmac_doak.name=欄間 乙(ダークオーク)
 item.block_ranmac_jun.name=欄間 乙(ジャングル)
 item.block_ranmac_oak.name=欄間 乙
-item.block_ranmac_spru.name=欄間 乙(マツ)
+item.block_ranmac_spru.name=欄間 乙(トウヒ)
 
 item.block_kanki_aca.name=換気口(アカシア)
 item.block_kanki_bir.name=換気口(シラカバ)
 item.block_kanki_doak.name=換気口(ダークオーク)
 item.block_kanki_jun.name=換気口(ジャングル)
 item.block_kanki_oak.name=換気口
-item.block_kanki_spru.name=換気口(マツ)
+item.block_kanki_spru.name=換気口(トウヒ)
 
 item.block_koushi_oak.name=縦格子
 item.block_koushi_aca.name=縦格子(アカシア)
 item.block_koushi_bir.name=縦格子(シラカバ)
 item.block_koushi_doak.name=縦格子(ダークオーク)
 item.block_koushi_jun.name=縦格子(ジャングル)
-item.block_koushi_spru.name=縦格子(マツ)
+item.block_koushi_spru.name=縦格子(トウヒ)
 
 #Tatami
 tile.block_tatamih.name=畳(縁無し)
@@ -1140,10 +1200,10 @@ tips.block_noren.name=日除けや目隠しに使われる布
 tile.block_sudare_1.name=簾
 tips.block_sudare.name=スニーク右クリックで開閉する
 
-item.block_ishitourou_stone.name=低石灯籠
-item.block_ishitourou_and.name=低石灯籠(安山岩)
-item.block_ishitourou_dio.name=低石灯籠(閃緑岩)
-item.block_ishitourou_gra.name=低石灯籠(花崗岩)
+item.block_ishitourou_stone.name=低い石灯籠
+item.block_ishitourou_and.name=低い石灯籠(安山岩)
+item.block_ishitourou_dio.name=低い石灯籠(閃緑岩)
+item.block_ishitourou_gra.name=低い石灯籠(花崗岩)
 tips.block_ishitourou.name=火打石と打ち金で点灯。右クリックで消灯
 
 item.block_longtourou_stone.name=石灯籠
@@ -1162,14 +1222,14 @@ item.block_longbirch_bot.name=生け垣(シラカバ)
 item.block_longdarkoak_bot.name=生け垣(ダークオーク)
 item.block_longjungle_bot.name=生け垣(ジャングル)
 item.block_longoak_bot.name=生け垣(オーク)
-item.block_longspruce_bot.name=生け垣(マツ)
+item.block_longspruce_bot.name=生け垣(トウヒ)
 
-item.block_low_acacia.name=生け垣低(アカシア)
-item.block_low_birch.name=生け垣低(シラカバ)
-item.block_low_darkoak.name=生け垣低(ダークオーク)
-item.block_low_jungle.name=生け垣低(ジャングル)
-item.block_low_oak.name=生け垣低(オーク)
-item.block_low_spruce.name=生け垣低(マツ)
+item.block_low_acacia.name=低い生け垣(アカシア)
+item.block_low_birch.name=低い生け垣(シラカバ)
+item.block_low_darkoak.name=低い生け垣(ダークオーク)
+item.block_low_jungle.name=低い生け垣(ジャングル)
+item.block_low_oak.name=低い生け垣(オーク)
+item.block_low_spruce.name=低い生け垣(トウヒ)
 
 item.block_teatable.name=ティーテーブル
 
@@ -1313,7 +1373,7 @@ tips.block_simpledish.name=右クリックで使用し、スニーク状態で�
 
 item.block_kettle_full.name=水入りやかん
 
-item.block_food_karanabe.name=土鍋(空)
+item.block_food_karanabe.name=土鍋
 tips.block_food_karanabe.name=作業台で食材を入れて加熱する
 
 item.block_food_nabeshio_n.name=海水入り鍋
@@ -1327,14 +1387,14 @@ item.block_food_nabe_1.name=調理済み鶏鍋
 tips.block_food_nabe_1.name=呑水で取り分ける
 
 item.block_food_tonsui_1.name=鶏鍋入り呑水
-item.block_food_nabegohan_n.name=米鍋(生)
-item.block_food_nabegohan_1.name=炊いたご飯鍋
+item.block_food_nabegohan_n.name=米入り鍋
+item.block_food_nabegohan_1.name=炊いたご飯入り鍋
 tips.block_food_nabegohan_1.name=茶碗や皿、どんぶり、ボウルで取り分ける
 	
-item.block_food_gohan_1.name=ご飯茶碗
+item.block_food_gohan_1.name=ご飯入り茶碗
 item.block_food_rice_1.name=ライス
-item.block_food_nabemiso_n.name=味噌鍋(生)
-item.block_food_nabemiso_1.name=調理済み味噌鍋
+item.block_food_nabemiso_n.name=味噌汁鍋(生)
+item.block_food_nabemiso_1.name=調理済み味噌汁鍋
 tips.block_food_nabemiso_1.name=漆器で取り分ける
 
 item.block_food_misosp_1.name=味噌汁
@@ -1411,7 +1471,7 @@ tips.item_sakekasu.name=甘酒の材料や、肥料(骨粉)の材料にする
 item.item_koubo.name=りんご酵母
 tips.item_koubo.name=物を発酵させるときに使う
 
-item.item_mushigome.name=蒸し米
+item.item_mushigome.name=ご飯入りボウル
 
 item.item_komekouji.name=米麹
 tips.item_komekouji.name=酒や味噌を作るときに使う
@@ -1428,7 +1488,7 @@ item.item_food_toufu.name=豆腐
 
 item.item_ine.name=稲
 item.item_kome.name=米
-item.item_saya.name=さや
+item.item_saya.name=大豆のさや
 item.item_soy.name=大豆
 item.item_flour.name=小麦粉
 item.item_butter.name=バター
@@ -1575,7 +1635,7 @@ item.block_tansu_acacia.name=箪笥(アカシア)
 item.block_tansu_birch.name=箪笥(シラカバ)
 item.block_tansu_doak.name=箪笥(ダークオーク)
 item.block_tansu_jungle.name=箪笥(ジャングル)
-item.block_tansu_spruce.name=箪笥(マツ)
+item.block_tansu_spruce.name=箪笥(トウヒ)
 item.block_tansu_sakura.name=箪笥(サクラ)
 item.block_tansu_kaede.name=箪笥(カエデ)
 item.block_tansu_ichoh.name=箪笥(イチョウ)
@@ -1614,10 +1674,10 @@ item.block_longichoh_bot.name=生け垣(イチョウ)
 item.block_longkaede_bot.name=生け垣(カエデ)
 item.block_longsakura_bot.name=生け垣(サクラ)
 item.block_longoakkare_bot.name=生け垣(枯れ葉)
-item.block_low_ichoh.name=生け垣低(イチョウ)
-item.block_low_kaede.name=生け垣低(カエデ)
-item.block_low_sakura.name=生け垣低(サクラ)
-item.block_low_oakkare.name=生け垣低(枯れ葉)
+item.block_low_ichoh.name=低い生け垣(イチョウ)
+item.block_low_kaede.name=低い生け垣(カエデ)
+item.block_low_sakura.name=低い生け垣(サクラ)
+item.block_low_oakkare.name=低い生け垣(枯れ葉)
 
 item.block_diningchair_ich.name=食卓椅子(イチョウ)
 item.block_diningchair_kae.name=食卓椅子(カエデ)
@@ -1881,7 +1941,7 @@ item.block_bench_aca.name=ベンチ(アカシア)
 item.block_bench_bir.name=ベンチ(シラカバ)
 item.block_bench_doak.name=ベンチ(ダークオーク)
 item.block_bench_jun.name=ベンチ(ジャングル)
-item.block_bench_spru.name=ベンチ(マツ)
+item.block_bench_spru.name=ベンチ(トウヒ)
 item.block_bench_saku.name=ベンチ(サクラ)
 item.block_bench_kae.name=ベンチ(カエデ)
 item.block_bench_ich.name=ベンチ(イチョウ)
@@ -1891,7 +1951,7 @@ item.block_bonsai_acacia.name=盆栽(アカシア)
 item.block_bonsai_birch.name=盆栽(シラカバ)
 item.block_bonsai_darkoak.name=盆栽(ダークオーク)
 item.block_bonsai_jungle.name=盆栽(ジャングル)
-item.block_bonsai_spruce.name=盆栽(マツ)
+item.block_bonsai_spruce.name=盆栽(トウヒ)
 item.block_bonsai_sakura.name=盆栽(サクラ)
 item.block_bonsai_kaede.name=盆栽(カエデ)
 item.block_bonsai_ichoh.name=盆栽(イチョウ)
@@ -1903,7 +1963,7 @@ item.block_kanyouacacia_bot.name=観葉植物(アカシア)
 item.block_kanyoubirch_bot.name=観葉植物(シラカバ)
 item.block_kanyoudarkoak_bot.name=観葉植物(ダークオーク)
 item.block_kanyoujungle_bot.name=観葉植物(ジャングル)
-item.block_kanyouspruce_bot.name=観葉植物(マツ)
+item.block_kanyouspruce_bot.name=観葉植物(トウヒ)
 item.block_kanyousakura_bot.name=観葉植物(サクラ)
 item.block_kanyoukaede_bot.name=観葉植物(カエデ)
 item.block_kanyouichoh_bot.name=観葉植物(イチョウ)
@@ -1918,8 +1978,8 @@ item.block_door_kaede.name=カエデのドア
 
 item.block_gate_iron.name=鉄の門
 item.block_gate_irongrill.name=鉄格子の門
-item.block_gate_spruce_b.name=マツの門
-item.block_gate_spruce.name=マツの門_甲
+item.block_gate_spruce_b.name=トウヒの門
+item.block_gate_spruce.name=トウヒの門_甲
 tips.block_gate.name=スニーク状態で設置すると反転。レッドストーン動力で開閉する
 
 tile.block_taru_cocoa_f.name=カカオ樽
@@ -1932,7 +1992,7 @@ item.item_cocoa_roast.name=焙煎したカカオ
 tips.item_cocoa_roast.name=クラフトするとカカオマスになる
 
 item.item_cocoa_mass.name=カカオマス
-tips.item_cocoa_mass.name=砂糖と牛乳を加えると成形前チョコレートになる
+tips.item_cocoa_mass.name=砂糖とミルクを加えると成形前チョコレートになる
 
 item.item_choco_raw.name=ボウルに入ったチョコレート
 tips.item_choco_raw.name=クラフトするとチョコレートになる
@@ -1961,7 +2021,7 @@ item.block_shouji_acacia.name=障子(アカシア)
 item.block_shouji_birch.name=障子(シラカバ)
 item.block_shouji_darkoak.name=障子(ダークオーク)
 item.block_shouji_jungle.name=障子(ジャングル)
-item.block_shouji_spruce.name=障子(マツ)
+item.block_shouji_spruce.name=障子(トウヒ)
 tips.block_shouji.name=スニーク状態で設置すると反転。右クリックで開閉する
 
 item.block_shoujib.name=障子 甲
@@ -1969,21 +2029,21 @@ item.block_shoujib_acacia.name=障子 甲(アカシア)
 item.block_shoujib_birch.name=障子 甲(シラカバ)
 item.block_shoujib_darkoak.name=障子 甲(ダークオーク)
 item.block_shoujib_jungle.name=障子 甲(ジャングル)
-item.block_shoujib_spruce.name=障子 甲(マツ)
+item.block_shoujib_spruce.name=障子 甲(トウヒ)
 
 item.block_garasudo.name=ガラス戸
 item.block_garasudo_acacia.name=ガラス戸(アカシア)
 item.block_garasudo_birch.name=ガラス戸(シラカバ)
 item.block_garasudo_darkoak.name=ガラス戸(ダークオーク)
 item.block_garasudo_jungle.name=ガラス戸(ジャングル)
-item.block_garasudo_spruce.name=ガラス戸(マツ)
+item.block_garasudo_spruce.name=ガラス戸(トウヒ)
 
 item.block_garasudob.name=ガラス戸 甲
 item.block_garasudob_acacia.name=ガラス戸 甲(アカシア)
 item.block_garasudob_birch.name=ガラス戸 甲(シラカバ)
 item.block_garasudob_darkoak.name=ガラス戸 甲(ダークオーク)
 item.block_garasudob_jungle.name=ガラス戸 甲(ジャングル)
-item.block_garasudob_spruce.name=ガラス戸 甲(マツ)
+item.block_garasudob_spruce.name=ガラス戸 甲(トウヒ)
 tips.block_garasudo.name=スニーク状態で設置すると反転。右クリックで開閉する
 
 item.block_fusuma.name=襖
@@ -2175,7 +2235,7 @@ item.block_koushib_aca.name=横格子(アカシア)
 item.block_koushib_bir.name=横格子(シラカバ)
 item.block_koushib_doak.name=横格子(ダークオーク)
 item.block_koushib_jun.name=横格子(ジャングル)
-item.block_koushib_spru.name=横格子(マツ)
+item.block_koushib_spru.name=横格子(トウヒ)
 item.block_koushib_ich.name=横格子(イチョウ)
 item.block_koushib_kae.name=横格子(カエデ)
 item.block_koushib_saku.name=横格子(サクラ)
@@ -2218,7 +2278,7 @@ item.block_shoujihalf_acacia.name=ハーフ障子(アカシア)
 item.block_shoujihalf_birch.name=ハーフ障子(シラカバ)
 item.block_shoujihalf_darkoak.name=ハーフ障子(ダークオーク)
 item.block_shoujihalf_jungle.name=ハーフ障子(ジャングル)
-item.block_shoujihalf_spruce.name=ハーフ障子(マツ)
+item.block_shoujihalf_spruce.name=ハーフ障子(トウヒ)
 item.block_shoujihalf_ichoh.name=ハーフ障子(イチョウ)
 item.block_shoujihalf_kaede.name=ハーフ障子(カエデ)
 item.block_shoujihalf_sakura.name=ハーフ障子(サクラ)
@@ -2229,7 +2289,7 @@ item.block_garasudohalf_acacia.name=ハーフガラス戸(アカシア)
 item.block_garasudohalf_birch.name=ハーフガラス戸(シラカバ)
 item.block_garasudohalf_darkoak.name=ハーフガラス戸(ダークオーク)
 item.block_garasudohalf_jungle.name=ハーフガラス戸(ジャングル)
-item.block_garasudohalf_spruce.name=ハーフガラス戸(マツ)
+item.block_garasudohalf_spruce.name=ハーフガラス戸(トウヒ)
 item.block_garasudohalf_ichoh.name=ハーフガラス戸(イチョウ)
 item.block_garasudohalf_kaede.name=ハーフガラス戸(カエデ)
 item.block_garasudohalf_sakura.name=ハーフガラス戸(サクラ)
@@ -2317,11 +2377,11 @@ tile.block_bamboo_y_trapdoor.name=竹のトラップドア(日焼け)
 tile.block_bamboo_k_trapdoor.name=竹のトラップドア(燻し)
 
 item.block_mizuoke.name=水桶
-tips.block_mizuoke.name=水と牛乳を汲める木製バケツ
+tips.block_mizuoke.name=水とミルクを汲める木製バケツ
 item.block_mizuoke_full.name=水入り水桶
 tips.block_mizuoke_full.name=砂ブロックに塩田を作れる木製の水入りバケツ
-item.item_mizuoke_milk.name=牛乳入り水桶
-tips.item_mizuoke_milk.name=木製の牛乳入りバケツ
+item.item_mizuoke_milk.name=ミルク入り水桶
+tips.item_mizuoke_milk.name=木製のミルク入りバケツ
 
 tile.block_enden.name=塩田
 tips.block_enden.name=太陽光で塩を作る
@@ -2338,7 +2398,7 @@ item.block_kamoi_acacia.name=柱ハーフ(アカシア)
 item.block_kamoi_birch.name=柱ハーフ(シラカバ)
 item.block_kamoi_darkoak.name=柱ハーフ(ダークオーク)
 item.block_kamoi_jungle.name=柱ハーフ(ジャングル)
-item.block_kamoi_spruce.name=柱ハーフ(マツ)
+item.block_kamoi_spruce.name=柱ハーフ(トウヒ)
 item.block_kamoi_sakura.name=柱ハーフ(サクラ)
 item.block_kamoi_kaede.name=柱ハーフ(カエデ)
 item.block_kamoi_ichoh.name=柱ハーフ(イチョウ)
@@ -2544,23 +2604,23 @@ item.item_food_chestnutchoco.name=チョコレート(クリ)
 tile.block_boxh_takenoko.name=タケノコの箱
 tile.block_boxh_chestnut.name=クリの袋
 
-item.block_food_nabegohantake_n.name=タケノコご飯鍋(生)
-item.block_food_nabegohantake_1.name=炊いたタケノコご飯鍋
-item.block_food_gohantake_1.name=タケノコご飯茶碗
+item.block_food_nabegohantake_n.name=タケノコと米入り鍋
+item.block_food_nabegohantake_1.name=炊いたタケノコご飯入り鍋
+item.block_food_gohantake_1.name=タケノコご飯入り茶碗
 item.block_food_tgyteitake_1.name=玉子焼き定食(タケノコご飯)
 item.block_food_yakizakanateitake_1.name=焼き魚定食(タケノコご飯)
 item.block_food_yakijyaketeitake_1.name=焼き鮭定食(タケノコご飯)
 tips.block_food_nabegohantake_1.name=茶碗、ボウルで取り分ける
 	
-item.block_food_nabegohankuri_n.name=クリご飯鍋(生)
-item.block_food_nabegohankuri_1.name=炊いたクリご飯鍋
-item.block_food_gohankuri_1.name=クリご飯茶碗
+item.block_food_nabegohankuri_n.name=クリと米入り鍋
+item.block_food_nabegohankuri_1.name=炊いたクリご飯入り鍋
+item.block_food_gohankuri_1.name=クリご飯入り茶碗
 item.block_food_tgyteikuri_1.name=玉子焼き定食(クリご飯)
 item.block_food_yakizakanateikuri_1.name=焼き魚定食(クリご飯)
 item.block_food_yakijyaketeikuri_1.name=焼き鮭定食(クリご飯)
 	
-item.item_mushigome_take.name=蒸し米(タケノコご飯)
-item.item_mushigome_kuri.name=蒸し米(クリご飯)
+item.item_mushigome_take.name=タケノコご飯入りボウル
+item.item_mushigome_kuri.name=クリご飯入りボウル
 item.item_food_onigiritakenoko.name=おにぎり(タケノコご飯)
 item.item_food_onigirikuri.name=おにぎり(クリご飯)
 	
@@ -2633,7 +2693,7 @@ item.block_curtainlarge_green.name=ラージカーテン(緑)
 item.block_curtainlarge_red.name=ラージカーテン(赤)
 item.block_curtainlarge_black.name=ラージカーテン(黒)
 chinjufumod.subtitle.curtain.name=カーテン
-
+	
 item.item_ammunition_kijyuu.name=弾薬(機銃)
 tips.item_ammunition_kijyuu.name=機銃にのみ使える
 item.item_cartridge_kijyuu.name=空薬莢(機銃)
@@ -2642,7 +2702,7 @@ tips.item_3rensou_kijyuu.name=弾薬(機銃)を発射して、生物を攻撃す
 tips.item_3rensou_kijyuu2.name=右クリック長押しで連射する
 tips.item_3rensou_kijyuu3.name=Basic:1.0D, PlayerLV≧19:1.5D, LV≧25:2.0D
 chinjufumod.subtitle.am_hit.name=着弾
-chinjufumod.subtitle.set_gun.name=連装砲を構える
+chinjufumod.subtitle.set_gun.name=砲を構える
 chinjufumod.subtitle.empty_ammo.name=弾切れ
 		
 item.item_kit_firstaid.name=応急処置キット
@@ -2697,7 +2757,7 @@ item.block_food_curryset_c1.name=チキンカレーセット
 item.block_food_curryset_t1.name=トマトカレーセット
 	
 item.block_itabei.name=板塀
-item.block_itabei_spruce.name=板塀(マツ)
+item.block_itabei_spruce.name=板塀(トウヒ)
 item.block_itabei_birch.name=板塀(シラカバ)
 item.block_itabei_jungle.name=板塀(ジャングル)
 item.block_itabei_acacia.name=板塀(アカシア)
@@ -2706,7 +2766,7 @@ item.block_itabei_sakura.name=板塀(サクラ)
 item.block_itabei_kaede.name=板塀(カエデ)
 item.block_itabei_ichoh.name=板塀(イチョウ)
 item.block_kido.name=木戸
-item.block_kido_spruce.name=木戸(マツ)
+item.block_kido_spruce.name=木戸(トウヒ)
 item.block_kido_birch.name=木戸(シラカバ)
 item.block_kido_jungle.name=木戸(ジャングル)
 item.block_kido_acacia.name=木戸(アカシア)
@@ -2714,7 +2774,7 @@ item.block_kido_darkoak.name=木戸(ダークオーク)
 item.block_kido_sakura.name=木戸(サクラ)
 item.block_kido_kaede.name=木戸(カエデ)
 item.block_kido_ichoh.name=木戸(イチョウ)
-
+	
 item.block_food_frypan_n_osauce.name=お好み焼きソース(生)
 item.block_food_frypan_b_osauce.name=調理済みお好み焼きソース
 tips.block_food_frypan_osauce.name=調理後ににガラス瓶で回収
@@ -2747,7 +2807,7 @@ item.item_food_pizzat.name=一切れのピザ(チキン)
 #6.4.1
 item.item_seeds_greenonion.name=ネギの種
 item.item_food_greenonion.name=ネギ
-item.block_boxh_greenonion.name=ネギの箱
+tile.block_boxh_greenonion.name=ネギの箱
 
 item.item_kansui.name=かん水
 item.item_food_ramen_n.name=中華麺(生)
@@ -2782,4 +2842,20 @@ item.block_food_teppan_n_yakisoba.name=生のソース焼きそば
 item.block_food_teppan_n_yakisobashio.name=生の塩焼きそば
 item.block_food_yakisoba_1.name=ソース焼きそば
 item.block_food_yakisobashio_1.name=塩焼きそば
+	
+tile.block_kit_reizou.name=冷蔵庫
+chinjufumod.subtitle.reizou_open.name=開く
+chinjufumod.subtitle.reizou_close.name=閉める
+item.item_kineyoko.name=杵
+tile.block_usutsuki.name=木臼
+tips.block_usutsuki.name=餅つきの道具
+item.item_mochi.name=餅
+item.item_food_mochinori.name=磯辺餅
+tips.item_food_mochinori.name=
+item.item_food_mochikinako.name=きな粉餅
+tips.item_food_mochikinako.name=
+	
+tile.block_report_box.name=戦果報告ボックス
+tips.block_report_box.name=戦果に対して工廠指示書を発行する
+chinjufumod.subtitle.basalt_deltas_click2.name=通信ノイズ
 }

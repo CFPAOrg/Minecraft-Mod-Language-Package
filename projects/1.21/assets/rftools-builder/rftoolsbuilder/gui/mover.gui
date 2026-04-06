@@ -1,0 +1,58 @@
+window {
+    size(180,152)
+
+    binddata('name', 'name', 'rftoolsbuilder:mover_data')
+    bind('connections', 'connections')
+    binddata('down', 'down', 'rftoolsbuilder:mover_data')
+    binddata('up', 'up', 'rftoolsbuilder:mover_data')
+    binddata('north', 'north', 'rftoolsbuilder:mover_data')
+    binddata('south', 'south', 'rftoolsbuilder:mover_data')
+    binddata('west', 'west', 'rftoolsbuilder:mover_data')
+    binddata('east', 'east', 'rftoolsbuilder:mover_data')
+
+    panel('','positional') {
+        bg1('rftoolsbuilder:textures/gui/mover.png')
+
+        label('', 'Connections:') {
+            hint(10,10,70,14)
+            horizalign('ALIGN_LEFT')
+        }
+         label('connections', '') {
+             hint(80,10,35,14)
+             horizalign('ALIGN_LEFT')
+         }
+
+        label('', 'Name:') {
+            hint(10,25,35,14)
+            horizalign('ALIGN_LEFT')
+        }
+        textfield('name') {
+            hint(40,25,60,14)
+            tooltips('Set the name of this mover')
+        }
+
+        panel('','horizontal') {
+            hint(2,40,160,20)
+            spacing(1)
+            label('', 'Excluded:')
+            togglebutton('down','D') {
+                tooltips('Enable/disable down direction')
+            }
+            togglebutton('up','U') {
+                tooltips('Enable/disable up direction')
+            }
+            togglebutton('north','N') {
+                tooltips('Enable/disable north direction')
+            }
+            togglebutton('south','S') {
+                tooltips('Enable/disable south direction')
+            }
+            togglebutton('west','W') {
+                tooltips('Enable/disable west direction')
+            }
+            togglebutton('east','E') {
+                tooltips('Enable/disable east direction')
+            }
+        }
+    }
+}
