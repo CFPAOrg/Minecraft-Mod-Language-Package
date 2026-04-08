@@ -67,7 +67,7 @@ tile.concrete.name=Concrete
 tile.lathe.name=Lathe
 tile.rollingMachine.name=Rolling Machine
 tile.planetSelector.name=Planet Selector
-tile.blockHandPress.name=Small Plate Presser
+tile.platepress.name=Small Plate Press
 tile.placeHolder.name=Machine
 tile.stationAssembler.name=Space Station Assembler
 tile.electrolyser.name=Electrolyser
@@ -97,8 +97,6 @@ tile.wulfentite.name=Orange Crystal Block
 tile.amethyst.name=Violet Crystal Block
 tile.gravityControl.name=Station Gravity Controller
 tile.drill.name=Drill
-tile.dataPipe.name=Data Cable(Deprecated)
-tile.liquidPipe.name=Liquid Pipe(Deprecated)
 tile.rfOutput.name=Redstone Flux Output Plug
 tile.microwaveReciever.name=Microwave Receiver
 tile.solarPanel.name=Solar Panel
@@ -111,7 +109,6 @@ tile.pressurizedTank.name=Pressurized Tank
 tile.gasIntake.name=Gas Intake
 tile.atmosphereTerraformer.name=Atmosphere Terraformer
 tile.circleLight.name=Station Light
-tile.energyPipe.name=Energy Pipe(Deprecated)
 tile.solarGenerator.name=Solar Generator
 tile.stationMarker.name=Station Docking Port
 tile.qcrucible.name=Quartz Crucible
@@ -129,7 +126,7 @@ tile.pipeSeal.name=Pipe Seal
 tile.spaceElevatorController.name=Space Elevator
 tile.beacon.name=Beacon
 tile.thermiteTorch.name=Thermite Torch
-tile.wirelessTransciever.name=Wireless Transceiver
+tile.wirelessTransceiver.name=Wireless Transceiver
 tile.blackholegenerator.name=Black Hole Generator
 tile.pump.name=Fluid Pump
 tile.centrifuge.name=Centrifuge
@@ -283,8 +280,7 @@ advancement.beerOnTheSun.desc=You'll need more TNT to get to orbit
 advancement.suitedUp=Suited Up
 advancement.suitedUp.desc=Wear a full spacesuit
 
-
-
+# Controls - options
 key.controls.advancedrocketry=Advanced Rocketry
 key.openRocketUI=Open Rocket GUI
 key.toggleJetpack=Toggle Jetpack
@@ -296,7 +292,87 @@ key.turnRocketDown=Move Vehicle Down
 
 enchantment.advancedrocketry.spacebreathing.desc=Allows the piece of armor to form an airtight seal
 
-machine.tooltip.smallplatepress=Requires obsidian two blocks below to function
+# Commands
+commands.advancedrocketry.invalid=%s %s does not exist!
+
+commands.advancedrocketry.dev.usage=/advancedrocketry dev help - (developer use only) lists subcommands.
+commands.advancedrocketry.dev.dumpbiomes.usage=dumpBiomes - Dumps biome info to BiomeDump.txt
+commands.advancedrocketry.dev.dumpbiomes.success=The file 'BiomeDump.txt' has been written to the instance directory
+commands.advancedrocketry.dev.runtests.usage=runTests - Runs rocket tests for debug only!
+
+commands.advancedrocketry.filldata.usage=/advancedrocketry fillData <data type> <fill amount> (alias: fd)
+commands.advancedrocketry.filldata.invalid=Not a valid datatype, try one of the following:
+commands.advancedrocketry.filldata.success=Data filled!
+commands.advancedrocketry.filldata.wrongtype=Type does not match stored type, data unchanged
+
+commands.advancedrocketry.goto.usage=/advancedrocketry goto help - lists subcommands.
+commands.advancedrocketry.goto.dimension.usage=goto dimension <dimId> (alias: d, dim) - teleports the player to the supplied dimension
+commands.advancedrocketry.goto.station.usage=goto station <stationId> (alias: s) - teleports the player to the supplied station
+
+commands.advancedrocketry.planet.usage=/advancedrocketry planet help - lists subcommands.
+commands.advancedrocketry.planet.reset.usage=planet reset [dimId]
+commands.advancedrocketry.planet.list.usage=planet list
+commands.advancedrocketry.planet.list.dimensions=Dimensions:
+commands.advancedrocketry.planet.list.entry=DIM%d: %s
+commands.advancedrocketry.planet.delete.usage=planet delete <dimId>
+commands.advancedrocketry.planet.delete.success=Dim %d deleted!
+commands.advancedrocketry.planet.delete.invalid=World still has players:
+commands.advancedrocketry.planet.generate.usage=planet generate <starId:planetId> [moon] [gas] <name> <atmosphere randomness> <distance randomness> <gravity randomness> [atmosphere base] [distance base] [gravity base]
+commands.advancedrocketry.planet.generate.invalid=Dimension: %s failed to generate!
+commands.advancedrocketry.planet.generate.success=Dimension: %s generated!
+commands.advancedrocketry.planet.set.usage=planet set [dimId] <property name> <property value(s)>
+commands.advancedrocketry.planet.set.success=Successfully set dimension %d's property %s to %s
+commands.advancedrocketry.planet.set.invalid=Property lookup failed, please check logs
+commands.advancedrocketry.planet.set.mismatch=Cannot set property %s of type %s to value(s) %s
+commands.advancedrocketry.planet.set.wronglength=Array property is of length %d, but %d values were passed
+commands.advancedrocketry.planet.get.usage=planet get [dimId] <property name> <property value(s)>
+commands.advancedrocketry.planet.get.success=%s=%s
+
+commands.advancedrocketry.star.usage=/advancedrocketry star help - lists subcommands.
+commands.advancedrocketry.star.action.temp.get=Temp: %d
+commands.advancedrocketry.star.action.temp.set=Temp set to %d
+commands.advancedrocketry.star.action.planets.get=Planets orbiting the star:
+commands.advancedrocketry.star.action.planets.get.entry=ID: %d : %s
+commands.advancedrocketry.star.action.pos.get=Position: %d, %d
+commands.advancedrocketry.star.action.pos.set=Position set to %d, %d
+commands.advancedrocketry.star.list.usage=star list
+commands.advancedrocketry.star.list.entry=Star ID: %d   Name: %s  Num Planets: %d
+commands.advancedrocketry.star.get.usage=star get <temp:planets:pos> <star id>
+commands.advancedrocketry.star.set.usage=star set <temp:pos> <star id>
+commands.advancedrocketry.star.set.temp.usage=star set temp <star id> <temperature>
+commands.advancedrocketry.star.set.pos.usage=star set pos <star id> <x> <z>
+commands.advancedrocketry.star.generate.usage=star generate <name> <temp> <x> <z>
+commands.advancedrocketry.star.generate.success=Star added!
+commands.advancedrocketry.star.generate.invalid=Why can't I hold all these stars! (either you have an insane number of stars or something really broke!)
+
+commands.advancedrocketry.station.usage=/advancedrocketry station help - lists subcommands.
+commands.advancedrocketry.station.create.usage=create <orbitDimId> [playerName] [tp] - Creates a new station orbiting <orbitDimId> and generates a 3x3 cobble platform. If [playerName] is provided, the player will be given a corresponding station id chip. If [tp] is specified, they will also be teleported to the station.
+commands.advancedrocketry.station.create.invalid=No AR DimensionProperties for dimId %s
+commands.advancedrocketry.station.create.tip=Tip: /advancedrocketry planet list
+commands.advancedrocketry.station.create.success=Created station ID %d orbiting dim %d (space @ %d, %d, %d)
+commands.advancedrocketry.station.give.usage=give <stationId> [playerName] - Gives you (or the player [playerName]) a space station with ID <stationID>
+
+commands.advancedrocketry.fetch.usage=/advancedrocketry fetch <playerName> - Teleports the player <playerName> from any dimension to you
+
+commands.advancedrocketry.reloadrecipes.usage=/advancedrocketry reloadRecipes - Reloads recipes from the XML files in the config folder
+commands.advancedrocketry.reloadrecipes.error1=Serious error has occurred! Possible recipe corruption
+commands.advancedrocketry.reloadrecipes.error2=Please check logs!
+commands.advancedrocketry.reloadrecipes.error3=You may be able to rectify this error by repairing the XML and/or restarting the game
+
+commands.advancedrocketry.setgravity.usage=/advancedrocketry setGravity <multiplier> [playerName] - sets your gravity (or the player [playerName]) to <multiplier> where 1 is Earth's, 0 is planet's default
+
+commands.advancedrocketry.addtorch.usage=/advancedrocketry addTorch - Adds held block to the list of objects that drop when there's no atmosphere
+commands.advancedrocketry.addtorch.invalid=Held block cannot be added to torch list
+commands.advancedrocketry.addtorch.exists=%s is already in the torch list
+commands.advancedrocketry.addtorch.success=%s added to the torch list
+
+commands.advancedrocketry.addsealant.usage=/advancedrocketry addSealant - Adds held block to the list of blocks that be used as airtight seal
+commands.advancedrocketry.addsealant.invalid=Held block cannot be added to sealed block list
+commands.advancedrocketry.addsealant.exists=%s is already in the sealed block list
+commands.advancedrocketry.addsealant.success=%s added to the sealed block list
+
+commands.advancedrocketry.weather.usage=/advancedrocketry weather <clear|rain|thunder> [duration in seconds]
+commands.advancedrocketry.weather.invalid=Current dimension (%s) is not an Advanced Rocketry planet!
 
 msg.crystalliser.gravityTooHigh=Gravity is not low enough!
 msg.observetory.scan.tooltip=Scans for new asteroids, consumes 100 distance data
@@ -421,7 +497,7 @@ msg.terraformingterminal.insertchip.line1=Place a Biome Changer Remote
 msg.terraformingterminal.insertchip.line2=here to make the Satellite
 msg.terraformingterminal.insertchip.line3=terraform the entire planet
 msg.biomescanner.gas=nyehhh, Gassy, ain't it?
-msg.biomescanner.star=If only my sensors had sunshades
+msg.biomescanner.star=If i only had sunshades...
 msg.gravitycontroller.radius=Radius: 
 msg.gravitycontroller.targetgrav=Target Gravity:
 msg.gravitycontroller.none=No Force
@@ -576,11 +652,16 @@ msg.entity.rocket.clear=Clear
 msg.entity.rocket.rcs=RCS Mode
 msg.entity.rocket.none=None Selected
 msg.entity.rocket.openGuiHint=Press %s to open Rocket GUI
-msg.wirelessTransciever.extract=extract
-msg.wirelessTransciever.insert=insert
-msg.wirelessTransciever.type=Type: %s
-msg.wirelessTransciever.network=Network: 
-msg.wirelessTransciever.network.unlinked=Unlinked
+msg.wirelessTransceiver.extract=extract
+msg.wirelessTransceiver.insert=insert
+msg.wirelessTransceiver.type=Type: %s
+msg.wirelessTransceiver.network=Network:
+msg.wirelessTransceiver.network.unlinked=Unlinked
+msg.wirelessTransceiver.priority=Priority
+msg.wirelessTransceiver.priority.tooltip.1=Higher priority fills/empties first.
+msg.wirelessTransceiver.priority.tooltip.2=Same priority shares evenly.
+msg.wirelessTransceiver.priority.tooltip.3=Default: 0
+
 
 msg.advancedrocketry.planetselector.up=<< Up
 msg.advancedrocketry.planetselector.select=Select
@@ -599,6 +680,7 @@ msg.powerunit.rfpertick=RF/t
 msg.linker.error.firstMachine=This must be the first machine to link!
 msg.linker.program=Coordinates programmed into Linker
 msg.linker.success=Linked Sucessfully
+msg.linker.sameblock=You can't link a wireless transceiver to itself.
 msg.notenoughpower=Not Enough Power!
 msg.empty=Empty
 msg.yes=yes
@@ -609,7 +691,7 @@ msg.unprogrammed=Unprogrammed
 msg.programfail=Programming Failed
 msg.modules=Modules:
 msg.na=N/A
-msg.entityDeployedRocket.notGasGiant=No Gas Here
+msg.entityDeployedRocket.notGasGiant=No Gas
 msg.noOxygen=Warning: Atmosphere lacks oxygen!
 msg.tooHot=Warning: Atmosphere too hot!
 msg.tooDense=Warning: Atmosphere pressure too high!
@@ -693,6 +775,12 @@ jei.sb.copy.source=Source
 jei.sb.copy.output=New Copy
 jei.sb.assemblyhint=Atleast one solar panel
 jei.sb.copychiphint=Make backups!
+jei.ar.asteroids=Asteroids
+
+jei.advancedrocketry.gasgiants.title=Gas Missions
+jei.advancedrocketry.gasgiants.orbiting=Orbiting %s
+jei.advancedrocketry.gasgiants.harvestcap=Harvest cap: %s mB/mission
+jei.advancedrocketry.gasgiants.harvestcap.infinite=Harvest cap: Infinite
 
 jei.ar.fuel.role.monopropellant=Monopropellant Fuel
 jei.ar.fuel.role.biprop_fuel=Bipropellant Fuel
@@ -700,6 +788,43 @@ jei.ar.fuel.role.oxidizer=Oxidizer
 jei.ar.fuel.role.working_fluid=Working Fluid
 jei.ar.stationAssembler.newStationChipHint=§cThis Points to the new Station!
 
+# TOP-integration
+
+msg.top.advancedrocketry.guidance.noComputer=No Guidance Computer
+msg.top.advancedrocketry.guidance.noDestination=No Destination
+msg.top.advancedrocketry.guidance.unprogrammed=Unprogrammed
+msg.top.advancedrocketry.guidance.station=Station
+msg.top.advancedrocketry.guidance.orbit=Orbit
+msg.top.advancedrocketry.guidance.space=Space
+msg.top.advancedrocketry.guidance.pad=/ Pad
+msg.top.advancedrocketry.guidance.destination=Destination:
+
+msg.top.advancedrocketry.fuel.label=Fuel
+msg.top.advancedrocketry.fuel.oxidizer=Oxidizer
+msg.top.advancedrocketry.fuel.workingFluid=Working Fluid
+msg.top.advancedrocketry.fuel.unknownFluid=Unknown fluid
+msg.top.advancedrocketry.fuel.noFuel=Empty
+
+msg.top.advancedrocketry.rocket.monopropellant=Monopropellant Rocket
+msg.top.advancedrocketry.rocket.bipropellant=Bipropellant Rocket
+msg.top.advancedrocketry.rocket.nuclear=Nuclear Rocket
+msg.top.advancedrocketry.harvest.gas=Gas
+msg.top.advancedrocketry.modname=Advanced Rocketry
+
+msg.top.advancedrocketry.data.label=Data
+msg.top.advancedrocketry.data.type=Type
+msg.top.advancedrocketry.data.locked=Locked
+msg.top.advancedrocketry.data.network=Network ID
+
+msg.top.advancedrocketry.data.mode=Mode
+msg.top.advancedrocketry.data.mode.insert=Insert
+msg.top.advancedrocketry.data.mode.extract=Extract
+msg.top.advancedrocketry.data.link.linked=Linked
+msg.top.advancedrocketry.data.link.unlinked=Unlinked
+
+#########################
+##### TOOLTIP STUFF #####
+#########################
 # Generic hint
 tooltip.advancedrocketry.hold_shift=Hold §eShift§7 for details
 tooltip.advancedrocketry.hold_alt=Hold §eAlt§7 for advanced tips
@@ -905,7 +1030,7 @@ tooltip.advancedrocketry.fluidtank.fluid=Fluid:
 tooltip.advancedrocketry.fluidtank.level=Level: 
 tooltip.advancedrocketry.fluidtank.shift.1=§cConnects to tanks above or below to make a bigger tank
 
-# Wireless Transciever
+# Wireless Transceiver
 tooltip.advancedrocketry.transceiver=Transfers §6Data
 tooltip.advancedrocketry.transceiver.shift.1=§fUse §cLinker§f to create Networks
 tooltip.advancedrocketry.transceiver.shift.2=§fSupports multiple Tranceivers
@@ -1001,7 +1126,7 @@ tooltip.advancedrocketry.warpcontroller.alt.2=(You made it this far! check wiki 
 # CarbonScrubberCartridge
 tooltip.advancedrocketry.scrubbercart=Used in CO₂ Scrubber
 tooltip.advancedrocketry.scrubbercart.shift.1=Purifies air at the cost of durability.
-tooltip.advancedrocketry.atmanalyzer.alt.1=Should last more than 24h
+tooltip.advancedrocketry.scrubbercart.alt.1=Should last more than 24h
 
 # Seal Detector
 tooltip.advancedrocketry.sealdetector=Detects if a block is airtight
@@ -1305,9 +1430,9 @@ tooltip.advancedrocketry.beacon=Long-range signal beacon
 tooltip.advancedrocketry.beacon.shift.1=§bUse Holo-Projector!
 
 # Biome Scanner
-tooltip.advancedrocketry.biomescan=Scans planetary biomes
+tooltip.advancedrocketry.biomescan=Scans planetary biomes below
 tooltip.advancedrocketry.biomescan.shift.1=§bUse Holo-Projector!
-
+tooltip.advancedrocketry.biomescan.alt.1=§cNeeds air below!
 # Railgun
 tooltip.advancedrocketry.railgun=Shoots Items into space
 tooltip.advancedrocketry.railgun.shift.1=§bUse Holo-Projector!
@@ -1335,7 +1460,7 @@ tooltip.advancedrocketry.spacelaser.shift.1=§bUse Holo-Projector!
 tooltip.advancedrocketry.spacelaser.alt.1=§fRequires Redstone to run
 
 # Force Field Projector
-tooltip.advancedrocketry.forcefieldprojector=Projeccts up to 32 blocks away!
+tooltip.advancedrocketry.forcefieldprojector=Projects up to 32 blocks away!
 tooltip.advancedrocketry.forcefieldprojector.shift.1=§fActivate with Redstone
 
 # Vacuum Laser
@@ -1389,6 +1514,7 @@ tooltip.advancedrocketry.deployablerocketassembler.alt.2=Check wiki if unsure!
 
 # Hovercraft
 tooltip.advancedrocketry.hovercraft=Long lasting dilithium Power source. It'll probably outlive you.
+tooltip.advancedrocketry.hovercraft.alt.1=§fCheck steering in controls
 
 # Thermite
 tooltip.advancedrocketry.thermite=Known for generating intense heat!
@@ -1408,6 +1534,10 @@ tooltip.advancedrocketry.lasergun=§cRanged Mining Tool
 tooltip.advancedrocketry.lasergun.shift.1=§dInfinite uses
 tooltip.advancedrocketry.lasergun.alt.1=§fHarvestlevel: §bDiamond
 tooltip.advancedrocketry.lasergun.alt.2=§fRange: §b50 blocks
+
+tooltip.advancedrocketry.platepress=§cManual grinding and pressing
+tooltip.advancedrocketry.platepress.shift.1=§fRequires obsidian two blocks below to function
+tooltip.advancedrocketry.platepress.alt.1=§fActivate with redstone
 
 ## Crafting items
 tooltip.advancedrocketry.sawbladeiron=§3Crafting Item
