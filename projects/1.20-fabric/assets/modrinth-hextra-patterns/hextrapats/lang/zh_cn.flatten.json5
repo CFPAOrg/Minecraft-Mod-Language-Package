@@ -100,9 +100,11 @@
       sets: {
         intro: "哈希集合的各元素无顺序且不重复，很适合用于记录某物存在与否。<br>由于所谓的“$(thing)哈希/$”之魔法过程，访问其中元素的操作接近于 O(1)，能减轻自然的负担。",
         tolerance: "不过，这种“$(thing)哈希/$”似乎会给自然带去另一种负担，虽然轻微，但确实存在。数和向量在插入集合时会丢失精度，舍入至 4 位小数。这应当是与$(l:patterns/logic#hexcasting:equals)$(thing)自然理解$(action)相等/$的方式有关。",
-        empty_num_set: "压入一个可包含数的空集合。",
-        empty_vec_set: "压入一个可包含向量的空集合。",
-        empty_entity_set: "压入一个可包含实体的空集合。",
+        "empty_set/": {
+          num: "压入一个可包含数的空集合。",
+          vec: "压入一个可包含向量的空集合。",
+          entity: "压入一个可包含实体的空集合。"
+        },
         insert: {
           name: "入集合之馏化",
           "": "移除栈顶元素，将其插入栈顶集合。该 iota 的类型必须符合集合类型。"
@@ -150,10 +152,10 @@
         in_range: "范围之提整",
         out_range: "范围之提整，第二型",
 
-        scaled_vec_x: "向量之精思，X第二型",
-        scaled_vec_y: "向量之精思，Y第二型",
-        scaled_vec_z: "向量之精思，Z第二型",
-        scaled_vec_all: "向量之精思，1第二型",
+        vec_x: "向量之精思，X第二型",
+        vec_y: "向量之精思，Y第二型",
+        vec_z: "向量之精思，Z第二型",
+        vec_1: "向量之精思，1第二型",
 
         deg_to_rad: "弧度之纯化",
         rad_to_deg: "角度之纯化",
@@ -199,9 +201,11 @@
         swindle_list: "骗徒之馏化",
         scronglwfijspoivjqwofklcrvewb: "打乱之纯化",
 
-        empty_num_set: "空无之精思：数集合",
-        empty_vec_set: "空无之精思：向量集合",
-        empty_entity_set: "空无之精思：实体集合",
+        "empty_set/": {
+          num: "空无之精思：数集合",
+          vec: "空无之精思：向量集合",
+          entity: "空无之精思：实体集合"
+        },
         last_n_set: "桶之策略",
         splat_set: "泼洒之拆解",
         set_insert_ret: "入集合之策略",
@@ -224,10 +228,10 @@
         len_eq: "长度相等之馏化",
         len_neq: "长度不等之馏化",
 
-        scaled_vec_x: "向量之精思，+X/-X第二型",
-        scaled_vec_y: "向量之精思，+Y/-Y第二型",
-        scaled_vec_z: "向量之精思，+Z/-Z第二型",
-        scaled_vec_all: "向量之精思，+1/-1第二型",
+        vec_x: "向量之精思，X第二型",
+        vec_y: "向量之精思，Y第二型",
+        vec_z: "向量之精思，Z第二型",
+        vec_1: "向量之精思，1第二型",
 
         increment: "递增之纯化",
         decrement: "递减之纯化",
@@ -244,16 +248,18 @@
           len_neq: "留项之策略：长度不等"
         },
 
-        empty_num_set: "空无之精思：数集合",
-        empty_vec_set: "空无之精思：向量集合",
-        empty_entity_set: "空无之精思：实体集合"
+        "empty_set/": {
+          num: "空无之精思：数集合",
+          vec: "空无之精思：向量集合",
+          entity: "空无之精思：实体集合"
+        },
       }
     },
     "special.hextrapats:": {
-      scaled_vec_x: "向量之精思：(%s, 0, 0)",
-      scaled_vec_y: "向量之精思：(0, %s, 0)",
-      scaled_vec_z: "向量之精思：(0, 0, %s)",
-      scaled_vec_all: "向量之精思：(%s, %s, %s)",
+      vec_x: "向量之精思：(%s, 0, 0)",
+      vec_y: "向量之精思：(0, %s, 0)",
+      vec_z: "向量之精思：(0, 0, %s)",
+      vec_1: "向量之精思：(%s, %s, %s)",
       scientific_exp: "科学计数之纯化：10^%s"
     },
     "iota.hextrapats:": {
@@ -279,7 +285,7 @@
           entity_set: "一个实体集合"
         },
         "hextrapats:": {
-          opposite_vecs: "不与起始方向（%s）正好反向的向量",
+          opposite_vecs: "不与起始方向%s正好反向的向量",
           too_short_to_swindle: "长度至少为%s的列表",
           set_item: "一个数、向量，或实体",
           set_list: "完全由数、向量、实体三者之一组成的非空列表"
