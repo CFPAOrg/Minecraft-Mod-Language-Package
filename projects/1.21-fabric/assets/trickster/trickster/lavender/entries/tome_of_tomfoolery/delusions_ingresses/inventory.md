@@ -7,101 +7,129 @@
     "Fence's Ingress",
     "Juggling Delusion",
     "Catch Delusion",
+    "Stockpile Ingress",
+    "Basin Ingress",
     "Intrusive Ingress",
+    "Collector's Ingress",
+    "Ingress of Inventory",
     "Cranium Delusion",
     "Ingress of Authority",
     "Crowning Ingress",
-    "Ingress of Plenitude"
+    "Ingress of Plenitude",
+    "Investigative Ingress"
   ]
 }
 ```
 
-Tricks that pull information from the caster's inventory.
+These are tricks that pull information from an inventory.
+This can either be the caster's own, or an external block or entity.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_item_in_slot,title=Fence's Ingress|>
-
-slot -> item
-
----
+<|trick@trickster:templates|trick-id=trickster:get_item_in_slot|>
 
 Returns the type of item that the given slot contains.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:other_hand,title=Juggling Delusion|>
+<|trick@trickster:templates|trick-id=trickster:other_hand|>
 
--> item
-
----
-
-Returns the type of item in the caster's other hand.
+Returns the type of item in the caster's offhand.
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=Note: Slot References|>Item slots may be referenced by spells.
-Creating such a reference comes at no cost. However, using the reference in a way that moves the items within the slot, will incur a move cost.
-This cost is equivalent to (distance * amount * 0.5kG). Slot references will always point to a block position, or use the *current caster at the time of move*.
+<|page-title@lavender:book_components|title=Note: Slot References|>Resource slots may be referenced by spells.
+Creating such a reference comes at no cost. However, using the reference in a way that moves the resources within the slot, will incur a move cost.
+This cost is equivalent to (distance * amount * 0.5G).
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:other_hand_slot,title=Catch Delusion|>
+Slot references either use the position of the caster at the time of move, or the position of their target when calculating cost.
 
--> slot
 
----
-
-Returns a slot reference of the caster's other hand.
+Many entities, like dropped items, minecarts, and donkeys can be interacted with as containers. 
+This is not the case for players that are not the caster.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_inventory_slot,title=Intrusive Ingress|>
+<|trick@trickster:templates|trick-id=trickster:other_hand_slot|>
 
-number, [vector | entity] -> slot
-
----
-
-Constructs a slot from an index and an inventory source, using the caster by default.
+Returns a slot reference of the caster's offhand.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:check_hat,title=Cranium Delusion|>
-
--> number | void
-
----
-
-Returns the selected slot in the caster's [Top Hat](^trickster:items/top_hat).
+<|trick@trickster:templates|trick-id=trickster:get_item_container|>
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_mana_in_slot,title=Ingress of Authority|>
+Returns a reference to the item container of the passed value, or of the caster.
 
-slot... -> number
+;;;;;
 
----
+<|trick@trickster:templates|trick-id=trickster:get_fluid_container|>
+
+Returns a reference to the fluid container of the passed value.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_slot|>
+
+Constructs and returns a slot from a container and the given index. Blunders if the container has no slotted representation.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_slots|>
+
+Returns a list of slots from a container. Blunders if the container has no slotted representation.
+
+;;;;;
+
+A resource type or list of them may be passed as a filter to get only relevant slots from the container.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:list_resources|>
+
+Returns a list of resource types in the container.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:count_resources|>
+
+Returns the amount of the given resource type in the container.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_inventory_size|>
+
+Returns the number of slots in a container.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:check_hat|>
+
+Returns the selected slot in the caster's [Hat](^trickster:items/writing_casting/top_hat).
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_mana_in_slot|>
 
 Returns the amount of mana in the given slots.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_max_mana_in_slot,title=Crowning Ingress|>
+<|trick@trickster:templates|trick-id=trickster:get_max_mana_in_slot|>
 
-slot... -> number
-
----
-
-Returns the maximum amount of mana which may be stored in the given slots.
+Returns the maximum amount of mana which may be stored in total in the given slots.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:get_count_in_slot,title=Ingress of Plenitude|>
-
-slot -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:get_count_in_slot|>
 
 Returns the amount of items stored in the given slot.
 
 ;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_equipment|>
+
+Returns a list of the given entity's currently worn equipment as item types. Comes in the order: mainhand, offhand, boots, leggings, chestplate, helmet

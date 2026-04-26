@@ -2,7 +2,7 @@
 {
   "title": "Concepts",
   "icon": "trickster:top_hat",
-  "ordinal": -1
+  "ordinal": 0
 }
 ```
 

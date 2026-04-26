@@ -32,7 +32,7 @@ check out [the entry explaining them in more detail](^trickster:concepts/signatu
 
 ;;;;;
 
-<|spell-preview-unloadable@trickster:templates|spell=YwyT9+ZnAAIW9/lWJxhgAMSx/4DEcUCWceCAcgC7HdBfPgAAAA==|>
+<|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpPAYgYGFkBpIgzMDIKIBQkleam5RaxIAATAx4Vdp/IFalA9FmOnAgqQQASzjP+tUAAAA=|>
 
 Take a look at the spell above.
 Its subcircles are labelled with the order they're cast, from 0 to 3.

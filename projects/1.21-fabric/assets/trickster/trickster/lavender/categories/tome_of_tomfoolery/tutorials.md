@@ -2,7 +2,7 @@
 {
   "title": "Tutorials",
   "icon": "minecraft:filled_map",
-  "ordinal": 2
+  "ordinal": 30
 }
 ```
 

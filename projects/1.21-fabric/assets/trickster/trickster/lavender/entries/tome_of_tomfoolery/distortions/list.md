@@ -4,6 +4,7 @@
   "icon": "minecraft:string",
   "category": "trickster:distortions",
   "additional_search_terms": [
+    "Catalogue Delusion",
     "Tally Distortion",
     "Expansion Stratagem",
     "Collection Stratagem",
@@ -22,114 +23,76 @@
 Within spells, it is possible to create lists of an arbitrary amount of fragments merged into a single value.
 
 
-Lists are zero indexed. To acquire an empty list constant, see the relevant [revision](^trickster:constants#3).
+Lists are zero indexed.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_size,title=Tally Distortion|>
+<|trick@trickster:templates|trick-id=trickster:list_create|>
 
-any[] -> number
+Creates a new empty list.
 
----
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:list_size|>
 
 Returns the amount of elements in the given list.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_add,title=Expansion Stratagem|>
-
-any[], any... -> any[]
-
----
+<|trick@trickster:templates|trick-id=trickster:list_add|>
 
 Appends one or many elements to the end of the given list.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_add_range,title=Collection Stratagem|>
-
-any[], any[]... -> any[]
-
----
+<|trick@trickster:templates|trick-id=trickster:list_add_range|>
 
 Creates a new list containing the elements of all given lists.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_take_range,title=Isolation Distortion|>
-
-any[], number, [number] -> any[]
-
----
+<|trick@trickster:templates|trick-id=trickster:list_take_range|>
 
 Returns a list containing the elements of the given list with indexes starting at the first number and ending before the second.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_reverse,title=Counter Distortion|>
-
-any[] -> any[]
-
----
+<|trick@trickster:templates|trick-id=trickster:list_reverse|>
 
 Returns the given list, reversed.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_insert,title=Inflation Stratagem|>
-
-any[], number, any... -> any[]
-
----
+<|trick@trickster:templates|trick-id=trickster:list_insert|>
 
 Inserts one or many elements at a specific position in the given list.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_get,title=Extraction Distortion|>
-
-any[], number -> any
-
----
+<|trick@trickster:templates|trick-id=trickster:list_get|>
 
 Finds and returns an element from the given list based on index.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_index_of,title=Locating Distortion|>
-
-any[], any -> number | void
-
----
+<|trick@trickster:templates|trick-id=trickster:list_index_of|>
 
 Finds and returns the index of a specific element in the given list, or void if the element is not in the list.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_remove,title=Expulsion Stratagem|>
-
-any[], number... -> any[]
-
----
+<|trick@trickster:templates|trick-id=trickster:list_remove|>
 
 Removes one or many elements from the given list by their index. Indexes do not move around mid-removal.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:list_remove_element,title=Eviction Stratagem|>
-
-any[], any... -> any[]
-
----
+<|trick@trickster:templates|trick-id=trickster:list_remove_element|>
 
 Removes one or many elements from the given list by checking their equality with the set of given fragments.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:create_number_range,title=Interlude Distortion|>
-
-number, number -> number[]
-
----
+<|trick@trickster:templates|trick-id=trickster:create_number_range|>
 
 Returns a list containing the range of integer numbers starting at the first given number and ending before the second.

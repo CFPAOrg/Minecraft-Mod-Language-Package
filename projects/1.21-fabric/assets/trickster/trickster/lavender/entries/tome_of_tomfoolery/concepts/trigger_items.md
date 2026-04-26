@@ -6,7 +6,7 @@
 }
 ```
 
-While the [Wand](^trickster:items/wand) is the most common, and most versatile, way of quickly casting spells, it is not the only one available. 
+While the [Wand](^trickster:items/writing_casting/wand) is the most common, and most versatile, way of quickly casting spells, it is not the only one available. 
 Other items may cast their inscribed spell upon certain criteria being met. These items and their criteria are described here. 
 
 ;;;;;

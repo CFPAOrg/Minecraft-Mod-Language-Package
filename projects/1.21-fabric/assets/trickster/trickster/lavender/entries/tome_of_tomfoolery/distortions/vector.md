@@ -23,90 +23,54 @@ This chapter provides some of these.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:extract_x,title=Primary Distortion|>
-
-vector -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:extract_x|>
 
 Returns the X component of the given vector.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:extract_y,title=Secondary Distortion|>
-
-vector -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:extract_y|>
 
 Returns the Y component of the given vector.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:extract_z,title=Tertiary Distortion|>
-
-vector -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:extract_z|>
 
 Returns the Z component of the given vector.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:merge_vector,title=Absorption Distortion|>
-
-number, number, number -> vector
-
----
+<|trick@trickster:templates|trick-id=trickster:merge_vector|>
 
 Merges three input numbers into a vector.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:length,title=Magnitude Distortion|>
-
-vector -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:length|>
 
 Returns the length of the given vector.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:dot_product,title=Alignment Distortion|>
-
-vector, vector -> number
-
----
+<|trick@trickster:templates|trick-id=trickster:dot_product|>
 
 Returns the dot product of the given vectors.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:cross_product,title=Perpendicular Distortion|>
-
-vector, vector -> vector
-
----
+<|trick@trickster:templates|trick-id=trickster:cross_product|>
 
 Returns the cross product of the given vectors.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:normalize,title=Regularity Distortion|>
-
-vector -> vector
-
----
+<|trick@trickster:templates|trick-id=trickster:normalize|>
 
 Normalizes the given vector to a length of one.
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster:align_vector,title=Aligned Regularity Distortion|>
-
-vector -> vector
-
----
+<|trick@trickster:templates|trick-id=trickster:align_vector|>
 
 Normalizes the given vector to a length of one and aligns it to the nearest cardinal axis.
