@@ -33,11 +33,11 @@ namespace Packer.Helpers
 
         internal static bool IsInTargetVersion(this string location, string version)
         {
-            // Pattern: projects/assets/.../.../<version>
+            // Pattern: projects/assets/.../<version>
             var normalizedPath = location.NormalizePath();
             var splitted = normalizedPath.Split('/');
-            if (splitted.Length < 5) return false;
-            return splitted[0] == "projects" && splitted[1] == "assets" && splitted[4] == version;
+            if (splitted.Length < 4) return false;
+            return splitted[0] == "projects" && splitted[1] == "assets" && splitted[3] == version;
         }
 
         internal static string ExtractModIdentifier(this string location, string version)

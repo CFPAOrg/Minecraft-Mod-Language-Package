@@ -36,14 +36,14 @@ namespace Packer
                 let modIdentifier = modDirectory.Name
                 where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
+                // .../<version>
+                let versionedDirectory = modDirectory.GetDirectories(config.Base.Version).FirstOrDefault(defaultValue: null)
+                where versionedDirectory is not null
                 // .../<namespace>-CFPA-<author>
-                from namespaceDirectory in modDirectory.EnumerateDirectories()
+                from namespaceDirectory in versionedDirectory.EnumerateDirectories()
                 let namespaceName = namespaceDirectory.Name
                 where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
                 where namespaceName.ValidateNamespace()                             // 不是非法名称
-                // .../<version>
-                let versionedDirectory = namespaceDirectory.GetDirectories(config.Base.Version).FirstOrDefault(defaultValue: null)
-                where versionedDirectory is not null
                 // .../*
                 from provider in versionedDirectory.EnumerateProviders(config)
                 group provider by provider.Destination into destinationGroup

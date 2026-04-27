@@ -80,7 +80,7 @@ namespace Packer.Extensions
                                                            candidate.FullName)
                                           .NormalizePath()
                    let fullPath = Path.GetRelativePath(".", candidate.FullName)
-                   let destination = Path.Combine("assets", namespaceDirectory.Parent!.Name, relativePath)
+                   let destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
                                          .NormalizePath()
                    where !relativePath.IsPathForceExcluded(localConfig)             // [1] 排除路径   -- packer-policy等
                    where (relativePath.IsPathForceIncluded(localConfig)             // [2] 包含路径   [单列]
@@ -133,7 +133,7 @@ namespace Packer.Extensions
         {
             var singletonPath = parameters!["source"].GetString()!;
             var relativePath = parameters!["relativePath"].GetString()!;
-            var destination = Path.Combine("assets", namespaceDirectory.Parent!.Name, relativePath)
+            var destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
                                   .NormalizePath();
 
             Log.Debug("[Policy:Singleton]目标：{0}，源：{1}", destination, singletonPath);
