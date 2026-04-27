@@ -1,1 +1,1 @@
-引用自1.21 [见主文档](/projects/assets/create-deco/createdeco/1.21)
+引用自1.21 [见主文档](/projects/assets/create-deco/1.21/createdeco)

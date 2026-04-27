@@ -26,11 +26,11 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-bridges/mcwbridges/1.16)
-- [1.18.2](/projects/assets/macaws-bridges/mcwbridges/1.18)
-- [1.19.2](/projects/assets/macaws-bridges/mcwbridges/1.19)
-- [1.20.1](/projects/assets/macaws-bridges/mcwbridges/1.20)
-- [1.21.1](/projects/assets/macaws-bridges/mcwbridges/1.21)
-- [1.18.2-fabric](/projects/assets/macaws-bridges/mcwbridges/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/macaws-bridges/mcwbridges/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/macaws-bridges/mcwbridges/1.21-fabric)
+- [1.16.5](/projects/assets/macaws-bridges/1.16/mcwbridges)
+- [1.18.2](/projects/assets/macaws-bridges/1.18/mcwbridges)
+- [1.19.2](/projects/assets/macaws-bridges/1.19/mcwbridges)
+- [1.20.1](/projects/assets/macaws-bridges/1.20/mcwbridges)
+- [1.21.1](/projects/assets/macaws-bridges/1.21/mcwbridges)
+- [1.18.2-fabric](/projects/assets/macaws-bridges/1.18-fabric/mcwbridges)
+- [1.20.1-fabric](/projects/assets/macaws-bridges/1.20-fabric/mcwbridges)
+- [1.21.1-fabric](/projects/assets/macaws-bridges/1.21-fabric/mcwbridges)

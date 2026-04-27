@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/assets/modrinth-hexxyattributes/hexxyattributes/1.20)
-- [1.20.1-fabric](/projects/assets/modrinth-hexxyattributes/hexxyattributes/1.20-fabric)
+- [1.20.1](/projects/assets/modrinth-hexxyattributes/1.20/hexxyattributes)
+- [1.20.1-fabric](/projects/assets/modrinth-hexxyattributes/1.20-fabric/hexxyattributes)

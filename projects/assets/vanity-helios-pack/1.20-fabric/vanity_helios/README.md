@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-helios-pack/vanity_helios/1.20)
+[见主文档](/projects/assets/vanity-helios-pack/1.20/vanity_helios)

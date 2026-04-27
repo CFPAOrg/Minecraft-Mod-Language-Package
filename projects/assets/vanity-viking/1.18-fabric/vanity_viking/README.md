@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-viking-pack/vanity_viking/1.20)
+[见主文档](/projects/assets/vanity-viking-pack/1.20/vanity_viking)

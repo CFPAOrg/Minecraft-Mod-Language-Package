@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/assets/chili-bullet-weapons/chilibulletweapons/1.20)
-- [1.20.1-fabric](/projects/assets/chili-bullet-weapons/chilibulletweapons/1.20-fabric)
+- [1.20.1](/projects/assets/chili-bullet-weapons/1.20/chilibulletweapons)
+- [1.20.1-fabric](/projects/assets/chili-bullet-weapons/1.20-fabric/chilibulletweapons)

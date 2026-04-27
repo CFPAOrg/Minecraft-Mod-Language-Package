@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-elementals/elemental/1.20)
+[见主文档](/projects/assets/vanity-elementals/1.20/elemental)

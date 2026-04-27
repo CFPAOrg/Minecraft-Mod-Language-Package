@@ -12,5 +12,5 @@ flowchart LR
 
 ### 传送区域
 
-- [1.20.1-fabric](/projects/assets/excessive-building/excessive_building/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/excessive-building/excessive_building/1.21-fabric)
+- [1.20.1-fabric](/projects/assets/excessive-building/1.20-fabric/excessive_building)
+- [1.21.1-fabric](/projects/assets/excessive-building/1.21-fabric/excessive_building)

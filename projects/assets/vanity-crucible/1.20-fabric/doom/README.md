@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-crucible/doom/1.20)
+[见主文档](/projects/assets/vanity-crucible/1.20/doom)

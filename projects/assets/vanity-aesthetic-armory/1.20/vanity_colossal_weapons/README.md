@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-colossal-weapons/vanity_colossal_weapons/1.21)
+[见主文档](/projects/assets/vanity-colossal-weapons/1.21/vanity_colossal_weapons)

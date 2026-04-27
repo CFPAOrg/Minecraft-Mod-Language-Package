@@ -14,6 +14,6 @@ flowchart LR
 
 ### 传送区域
 
-- [1.19.2](/projects/assets/chisel-chipped-integration/chisel_chipped_integration/1.19)
-- [1.20.1](/projects/assets/chisel-chipped-integration/chisel_chipped_integration/1.20)
-- [1.21.1](/projects/assets/chisel-chipped-integration/chisel_chipped_integration/1.21)
+- [1.19.2](/projects/assets/chisel-chipped-integration/1.19/chisel_chipped_integration)
+- [1.20.1](/projects/assets/chisel-chipped-integration/1.20/chisel_chipped_integration)
+- [1.21.1](/projects/assets/chisel-chipped-integration/1.21/chisel_chipped_integration)

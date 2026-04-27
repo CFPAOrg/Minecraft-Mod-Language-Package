@@ -19,9 +19,9 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-fences-oh-the-biomes-youll-go/mcwfencesbyg/1.16)
-- [1.18.2](/projects/assets/macaws-fences-oh-the-biomes-youll-go/mcwfencesbyg/1.18)
-- [1.19.2](/projects/assets/macaws-fences-oh-the-biomes-youll-go/mcwfencesbyg/1.19)
-- [1.20.1](/projects/assets/macaws-fences-oh-the-biomes-youll-go/mcwfencesbyg/1.20)
-- [1.19.2-fabric](/projects/assets/macaws-fences-oh-the-biomes-youll-go/z_mcwfencesbyg/1.19)
-- [1.20.1-fabric](/projects/assets/macaws-fences-oh-the-biomes-youll-go/z_mcwfencesbyg/1.20-fabric)
+- [1.16.5](/projects/assets/macaws-fences-oh-the-biomes-youll-go/1.16/mcwfencesbyg)
+- [1.18.2](/projects/assets/macaws-fences-oh-the-biomes-youll-go/1.18/mcwfencesbyg)
+- [1.19.2](/projects/assets/macaws-fences-oh-the-biomes-youll-go/1.19/mcwfencesbyg)
+- [1.20.1](/projects/assets/macaws-fences-oh-the-biomes-youll-go/1.20/mcwfencesbyg)
+- [1.19.2-fabric](/projects/assets/macaws-fences-oh-the-biomes-youll-go/1.19/z_mcwfencesbyg)
+- [1.20.1-fabric](/projects/assets/macaws-fences-oh-the-biomes-youll-go/1.20-fabric/z_mcwfencesbyg)

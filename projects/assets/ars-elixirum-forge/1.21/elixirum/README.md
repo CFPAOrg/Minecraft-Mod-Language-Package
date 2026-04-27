@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/ars-elixirum-neoforge/elixirum/1.21)
+[见主文档](/projects/assets/ars-elixirum-neoforge/1.21/elixirum)

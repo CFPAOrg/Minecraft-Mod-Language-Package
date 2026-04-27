@@ -18,9 +18,9 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/mcwfurnituresbyg/1.16)
-- [1.18.2](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/mcwfurnituresbyg/1.18)
-- [1.19.2](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/mcwfurnituresbyg/1.19)
-- [1.20.1](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/mcwfurnituresbyg/1.20)
-- [1.19.2-fabric](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/mcwfurnituresbyg/1.19)
-- [1.20.1-fabric](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/mcwfurnituresbyg/1.20-fabric)
+- [1.16.5](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/1.16/mcwfurnituresbyg)
+- [1.18.2](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/1.18/mcwfurnituresbyg)
+- [1.19.2](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/1.19/mcwfurnituresbyg)
+- [1.20.1](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/1.20/mcwfurnituresbyg)
+- [1.19.2-fabric](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/1.19/mcwfurnituresbyg)
+- [1.20.1-fabric](/projects/assets/macaws-furnitures-oh-the-biomes-youll-go/1.20-fabric/mcwfurnituresbyg)

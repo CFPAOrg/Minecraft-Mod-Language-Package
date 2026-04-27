@@ -11,4 +11,4 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2-fabric](/projects/assets/vanity-dungeons-pack/vanity_dungeons_pack/1.18-fabric)
+- [1.18.2-fabric](/projects/assets/vanity-dungeons-pack/1.18-fabric/vanity_dungeons_pack)

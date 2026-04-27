@@ -20,10 +20,10 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/macawsbridgesbyg/1.16)
-- [1.18.2](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/macawsbridgesbyg/1.18)
-- [1.19.2](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/macawsbridgesbyg/1.19)
-- [1.20.1](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/macawsbridgesbyg/1.20)
-- [1.18.2-fabric](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/macawsbridgesbyg/1.18-fabric)
-- [1.19.2-fabric](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/macawsbridgesbyg/1.19)
-- [1.20.1-fabric](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/macawsbridgesbyg/1.20-fabric)
+- [1.16.5](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/1.16/macawsbridgesbyg)
+- [1.18.2](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/1.18/macawsbridgesbyg)
+- [1.19.2](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/1.19/macawsbridgesbyg)
+- [1.20.1](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/1.20/macawsbridgesbyg)
+- [1.18.2-fabric](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/1.18-fabric/macawsbridgesbyg)
+- [1.19.2-fabric](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/1.19/macawsbridgesbyg)
+- [1.20.1-fabric](/projects/assets/macaws-bridges-oh-the-biomes-youll-go/1.20-fabric/macawsbridgesbyg)

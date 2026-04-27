@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/yoyos/yoyos/1.21)
+[见主文档](/projects/assets/yoyos/1.21/yoyos)

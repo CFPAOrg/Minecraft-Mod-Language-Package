@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-fences-and-walls/mcwfences/1.21)
+[见主文档](/projects/assets/macaws-fences-and-walls/1.21/mcwfences)

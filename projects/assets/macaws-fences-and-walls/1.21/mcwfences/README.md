@@ -22,11 +22,11 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-fences-and-walls/mcwfences/1.16)
-- [1.18.2](/projects/assets/macaws-fences-and-walls/mcwfences/1.18)
-- [1.19.2](/projects/assets/macaws-fences-and-walls/mcwfences/1.19)
-- [1.20.1](/projects/assets/macaws-fences-and-walls/mcwfences/1.20)
-- [1.21.1](/projects/assets/macaws-fences-and-walls/mcwfences/1.21)
-- [1.18.2-fabric](/projects/assets/macaws-fences-and-walls/mcwfences/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/macaws-fences-and-walls/mcwfences/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/macaws-fences-and-walls/mcwfences/1.21-fabric)
+- [1.16.5](/projects/assets/macaws-fences-and-walls/1.16/mcwfences)
+- [1.18.2](/projects/assets/macaws-fences-and-walls/1.18/mcwfences)
+- [1.19.2](/projects/assets/macaws-fences-and-walls/1.19/mcwfences)
+- [1.20.1](/projects/assets/macaws-fences-and-walls/1.20/mcwfences)
+- [1.21.1](/projects/assets/macaws-fences-and-walls/1.21/mcwfences)
+- [1.18.2-fabric](/projects/assets/macaws-fences-and-walls/1.18-fabric/mcwfences)
+- [1.20.1-fabric](/projects/assets/macaws-fences-and-walls/1.20-fabric/mcwfences)
+- [1.21.1-fabric](/projects/assets/macaws-fences-and-walls/1.21-fabric/mcwfences)

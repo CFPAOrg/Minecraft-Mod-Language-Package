@@ -18,9 +18,9 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2](/projects/assets/vanity-ancient-tool-variants/ancient_tools/1.18)
-- [1.20.1](/projects/assets/vanity-ancient-tool-variants/ancient_tools/1.20)
-- [1.21.1](/projects/assets/vanity-ancient-tool-variants/ancient_tools/1.21)
-- [1.18.2-fabric](/projects/assets/vanity-ancient-tool-variants/ancient_tools/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/vanity-ancient-tool-variants/ancient_tools/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/vanity-ancient-tool-variants/ancient_tools/1.21-fabric)
+- [1.18.2](/projects/assets/vanity-ancient-tool-variants/1.18/ancient_tools)
+- [1.20.1](/projects/assets/vanity-ancient-tool-variants/1.20/ancient_tools)
+- [1.21.1](/projects/assets/vanity-ancient-tool-variants/1.21/ancient_tools)
+- [1.18.2-fabric](/projects/assets/vanity-ancient-tool-variants/1.18-fabric/ancient_tools)
+- [1.20.1-fabric](/projects/assets/vanity-ancient-tool-variants/1.20-fabric/ancient_tools)
+- [1.21.1-fabric](/projects/assets/vanity-ancient-tool-variants/1.21-fabric/ancient_tools)

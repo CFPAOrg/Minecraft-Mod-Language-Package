@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.21.1](/projects/assets/modopedia/modopedia/1.21)
-- [1.21.1-fabric](/projects/assets/modopedia/modopedia/1.21-fabric)
+- [1.21.1](/projects/assets/modopedia/1.21/modopedia)
+- [1.21.1-fabric](/projects/assets/modopedia/1.21-fabric/modopedia)

@@ -22,11 +22,11 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-holidays/mcwholidays/1.16)
-- [1.18.2](/projects/assets/macaws-holidays/mcwholidays/1.18)
-- [1.19.2](/projects/assets/macaws-holidays/mcwholidays/1.19)
-- [1.20.1](/projects/assets/macaws-holidays/mcwholidays/1.20)
-- [1.21.1](/projects/assets/macaws-holidays/mcwholidays/1.21)
-- [1.18.2-fabric](/projects/assets/macaws-holidays/mcwholidays/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/macaws-holidays/mcwholidays/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/macaws-holidays/mcwholidays/1.21-fabric)
+- [1.16.5](/projects/assets/macaws-holidays/1.16/mcwholidays)
+- [1.18.2](/projects/assets/macaws-holidays/1.18/mcwholidays)
+- [1.19.2](/projects/assets/macaws-holidays/1.19/mcwholidays)
+- [1.20.1](/projects/assets/macaws-holidays/1.20/mcwholidays)
+- [1.21.1](/projects/assets/macaws-holidays/1.21/mcwholidays)
+- [1.18.2-fabric](/projects/assets/macaws-holidays/1.18-fabric/mcwholidays)
+- [1.20.1-fabric](/projects/assets/macaws-holidays/1.20-fabric/mcwholidays)
+- [1.21.1-fabric](/projects/assets/macaws-holidays/1.21-fabric/mcwholidays)

@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-spectral-pack/vanity_spectral/1.20)
+[见主文档](/projects/assets/vanity-spectral-pack/1.20/vanity_spectral)

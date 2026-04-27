@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/chipped/chipped/1.21)
+[见主文档](/projects/assets/chipped/1.21/chipped)

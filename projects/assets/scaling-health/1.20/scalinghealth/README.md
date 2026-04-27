@@ -7,7 +7,7 @@ flowchart LR
     1.19 -->|indirect| 1.16
 ```
 
-以 [1.19](/projects/assets/scaling-health/scalinghealth/1.19) 为基准。
+以 [1.19](/projects/assets/scaling-health/1.19/scalinghealth) 为基准。
 
 1.20 修改了 `command.scalinghealth.playerName` 的占位符 `%s` 数量，以 direct 形式修复。
 
@@ -21,7 +21,7 @@ flowchart LR
 
 # 链接区域
 
-[1.19](/projects/assets/scaling-health/scalinghealth/1.19)  
-[1.18](/projects/assets/scaling-health/scalinghealth/1.18)  
-[1.16](/projects/assets/scaling-health/scalinghealth/1.16)
+[1.19](/projects/assets/scaling-health/1.19/scalinghealth)  
+[1.18](/projects/assets/scaling-health/1.18/scalinghealth)  
+[1.16](/projects/assets/scaling-health/1.16/scalinghealth)
  

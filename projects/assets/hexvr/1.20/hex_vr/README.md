@@ -14,6 +14,6 @@ flowchart LR
 
 ### 链接区域
 
-- [1.19.2](/projects/assets/hexvr/hex_vr/1.19)
-- [1.20.1](/projects/assets/hexvr/hex_vr/1.20)
-- [1.20.1-fabric](/projects/assets/hexvr/hex_vr/1.20-fabric)
+- [1.19.2](/projects/assets/hexvr/1.19/hex_vr)
+- [1.20.1](/projects/assets/hexvr/1.20/hex_vr)
+- [1.20.1-fabric](/projects/assets/hexvr/1.20-fabric/hex_vr)

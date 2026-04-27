@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-battle-axes/vanity_battle_axes/1.18)
+[见主文档](/projects/assets/vanity-battle-axes/1.18/vanity_battle_axes)

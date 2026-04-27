@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-bridges-abnormals/mcwbridgesabnormals/1.20)
+[见主文档](/projects/assets/macaws-bridges-abnormals/1.20/mcwbridgesabnormals)

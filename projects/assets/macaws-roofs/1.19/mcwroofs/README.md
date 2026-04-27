@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-roofs/mcwroofs/1.21)
+[见主文档](/projects/assets/macaws-roofs/1.21/mcwroofs)

@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-spartan-pack/vanity_spartan/1.20)
+[见主文档](/projects/assets/vanity-spartan-pack/1.20/vanity_spartan)

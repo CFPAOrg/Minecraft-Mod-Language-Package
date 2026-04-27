@@ -7,7 +7,7 @@
 - 文件地址中，目录分隔符**一律使用正斜杠（`/`）**！
 - 地址相关
   - 下述说明中，**完整地址**永远指从**仓库根目录**算起的地址，例如对根目录下的 `CONTRIBUTING.md`，应为 `CONTRIBUTING.md`；对1.12版本资源包的 `pack.png`，应为 `projects/1.12.2/pack.png`。
-  - 下述说明中，**相对地址**永远指从**特定命名空间的文件夹**算起的地址，例如对仓库中的 `projects/assets/minecraft/minecraft/1.18/font/default.json`，应为 `font/default.json`。
+  - 下述说明中，**相对地址**永远指从**特定命名空间的文件夹**算起的地址，例如对仓库中的 `projects/assets/minecraft/1.18/minecraft/font/default.json`，应为 `font/default.json`。
   - 下述说明中，**目标地址**永远指**分发的资源包中**，该文件应当被放置的位置，例如对上一条中提及的文件，应为 `assets/minecraft/font/default.json`。
 - 文件相关
   - 下述说明中，**语言文件**永远指可以被打包器解读为**映射表**的文件。这包括了所有 **`lang/` 下的 `.lang` 和 `.json` 文件**。
@@ -88,7 +88,7 @@
 
 #### 局域配置文件
 
-**局域**配置文件 `projects/assets/<mod-name>/<namespace>/<version>/local-config.json` 的格式与全局配置文件中，`floating` 标签下的内容（*可变配置*）一致。
+**局域**配置文件 `projects/assets/<mod-name>/<version>/<namespace>/local-config.json` 的格式与全局配置文件中，`floating` 标签下的内容（*可变配置*）一致。
 
 ### 文件容斥顺序
 
@@ -130,7 +130,7 @@
 
 #### packer-policy.json
 
-对于每个**命名空间文件夹**，策略文件为 `projects/assets/<mod-name>/<asset-domain>/<version>/packer-policy.json`。
+对于每个**命名空间文件夹**，策略文件为 `projects/assets/<mod-name>/<version>/<asset-domain>/packer-policy.json`。
 若找不到该文件，默认策略内容为 `[{"type": "direct"}]`，也就是**原位**加载，没有特殊配置。
 
 - 根标签 list  
@@ -150,17 +150,17 @@
 
     **若 `type` 的值为 `direct`：** 不进行特殊处理，直接按照此处的文件结构打包。
 
-    **若 `type` 的值为 `indirect`：** 引用给定的命名空间。对于这些文件，其*目标地址*中的*命名空间*将会自动替换为本策略所在的命名空间。（[示例](projects/assets/minecraft/minecraft/1.20/packer-policy.json)的第二条）
+    **若 `type` 的值为 `indirect`：** 引用给定的命名空间。对于这些文件，其*目标地址*中的*命名空间*将会自动替换为本策略所在的命名空间。（[示例](projects/assets/minecraft/1.20/minecraft/packer-policy.json)的第二条）
     - `source` string  
     引用命名空间所在文件夹的**完整地址**。
 
-    **若 `type` 的值为 `composition`：** 从给定的*组合文件*，直接生成语言文件（或部分）。这些组合文件可能不会被自动排除；可以考虑使用*局域配置*处理。（[示例](projects/assets/macaws-bridges/mcwbridges/1.16/packer-policy.json)的第二条；[组合文件示例](projects/assets/macaws-bridges/mcwbridges/1.16/lang/zh_cn-composition.json)）
+    **若 `type` 的值为 `composition`：** 从给定的*组合文件*，直接生成语言文件（或部分）。这些组合文件可能不会被自动排除；可以考虑使用*局域配置*处理。（[示例](projects/assets/macaws-bridges/1.16/mcwbridges/packer-policy.json)的第二条；[组合文件示例](projects/assets/macaws-bridges/1.16/mcwbridges/lang/zh_cn-composition.json)）
     - `source` string  
     引用组合文件的**完整地址**。
     - `destType` string  
     需要生成的语言文件的类型。可以为`json`或`lang`。
 
-    **若 `type` 的值为 `singleton`：** 引用给定的单个文件。理论上该操作可以选取任何位置的文件，只要目标位置填写正确；不过，一般建议放在*合理的位置*。（[示例](projects/assets/isometric-renders/isometric-renders/1.19/packer-policy.json)的第一条）
+    **若 `type` 的值为 `singleton`：** 引用给定的单个文件。理论上该操作可以选取任何位置的文件，只要目标位置填写正确；不过，一般建议放在*合理的位置*。（[示例](projects/assets/isometric-renders/1.19/isometric-renders/packer-policy.json)的第一条）
     - `source` string  
     引用文件所在的**完整地址**。
     - `relativePath`  
@@ -211,7 +211,7 @@
 
 原则上注解文件可以采用任何形式，但建议写到*命名空间目录下的 `README.md` 文件*中——打包的全局配置默认会排除这一文件。同样的，注解文件的形式也没有特殊限定，但尽量统一为佳。
 
-一些注解文件的例子为[这个](projects/assets/minecraft/minecraft/1.16/README.md)、[这个](projects/assets/minecraft/minecraft/1.18/README.md)和[这个](projects/assets/macaws-furniture/mcwfurnitures/1.18/README.md)。
+一些注解文件的例子为[这个](projects/assets/minecraft/1.16/minecraft/README.md)、[这个](projects/assets/minecraft/1.18/minecraft/README.md)和[这个](projects/assets/macaws-furniture/1.18/mcwfurnitures/README.md)。
 
 > 原则上，这些注解甚至可以自动生成。
 
@@ -245,13 +245,13 @@
 这适用于语言文件完全一致的情况，如不同平台的同一模组。
 
 - 确定可用的文件来源。
-- 在目标模组的**命名空间**文件夹下，创建 `packer-policy.json`，填写如下内容，其中 `source` 字段按照前一步找到的来源填写。（[示例](projects/assets/iron-furnaces/ironfurnaces/1.18-fabric/packer-policy.json)）
+- 在目标模组的**命名空间**文件夹下，创建 `packer-policy.json`，填写如下内容，其中 `source` 字段按照前一步找到的来源填写。（[示例](projects/assets/iron-furnaces/1.18-fabric/ironfurnaces/packer-policy.json)）
 
 ```json
 [
     {
         "type": "indirect",
-        "source": "projects/assets/[mod-identifier]/[namespace]/[version]"
+        "source": "projects/assets/[mod-identifier]/[version]/[namespace]"
     }
 ]
 ```
@@ -264,7 +264,7 @@
 这适用于语言文件大部一致，小部有改动的情况。
 
 - 确定可用的文件来源，以及需要做出的修改。多余的字段无需删去（也暂时无法删去；如有需要，会考虑增加此功能）；缺少或不同的字段则需要修改。
-- **方案一**：适用于有多个文件需要修改的情况。（[示例](projects/assets/minecraft/minecraft/1.20/packer-policy.json)）
+- **方案一**：适用于有多个文件需要修改的情况。（[示例](projects/assets/minecraft/1.20/minecraft/packer-policy.json)）
   - 在 `lang/zh_cn.json`（或其他需更改的文件）中，保留与来源文本不一致，需要修改的文本，其余内容删去。
   - 在目标模组的**命名空间**文件夹下，创建 `packer-policy.json`，填写如下内容，其中 `source` 字段按照前一步找到的来源填写。
 
@@ -275,12 +275,12 @@
     },
     {
         "type": "indirect",
-        "source": "projects/assets/[mod-identifier]/[namespace]/[version]"
+        "source": "projects/assets/[mod-identifier]/[version]/[namespace]"
     }
 ]
 ```
 
-- **方案二**：（[示例](projects/assets/isometric-renders/isometric-renders/1.19/packer-policy.json)）
+- **方案二**：（[示例](projects/assets/isometric-renders/1.19/isometric-renders/packer-policy.json)）
   - 以合适名称创造新文件（“修改文件”），仅包含与来源文本不一致，需要修改的文本，其余内容删去。
   - 在目标模组的**命名空间**文件夹下，创建 `packer-policy.json`，填写如下内容，其中两个 `source` 字段依次填写修改文件、来源命名空间的**完整地址**，`destination` 字段填写目标文件的**相对地址**。
 
@@ -288,12 +288,12 @@
 [
     {
         "type": "singleton",
-        "source": "projects/assets/[mod-identifier]/[namespace]/[version]/[file-path]",
+        "source": "projects/assets/[mod-identifier]/[version]/[namespace]/[file-path]",
         "relativePath": "[file-path]"
     },
     {
         "type": "indirect",
-        "source": "projects/assets/[mod-identifier]/[namespace]/[version]"
+        "source": "projects/assets/[mod-identifier]/[version]/[namespace]"
     }
 ]
 ```
@@ -307,7 +307,7 @@
 ```json
 {
     "type": "singleton",
-    "source": "projects/assets/[mod-identifier]/[namespace]/[version]/[file-path]",
+    "source": "projects/assets/[mod-identifier]/[version]/[namespace]/[file-path]",
     "relativePath": "[domain]/[file-path]"
 }
 ```
@@ -323,7 +323,7 @@
 这适用于集中在一个或几个 **domain** 下的文件。
 
 - 确定该模组需要加入的 **domain**。
-- 在目标模组的**命名空间**文件夹下，创建 `local-config.json`，填写如下内容：（[示例](projects/assets/applied-energistics-2/ae2/1.20/local-config.json)）
+- 在目标模组的**命名空间**文件夹下，创建 `local-config.json`，填写如下内容：（[示例](projects/assets/applied-energistics-2/1.20/ae2/local-config.json)）
 
 ```json
 {

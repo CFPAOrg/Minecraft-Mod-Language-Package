@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-magma-pack/vanity_magma/1.20)
+[见主文档](/projects/assets/vanity-magma-pack/1.20/vanity_magma)

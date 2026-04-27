@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/assets/modrinth-mediatransport/mediatransport/1.20)
-- [1.20.1-fabric](/projects/assets/modrinth-mediatransport/mediatransport/1.20-fabric)
+- [1.20.1](/projects/assets/modrinth-mediatransport/1.20/mediatransport)
+- [1.20.1-fabric](/projects/assets/modrinth-mediatransport/1.20-fabric/mediatransport)

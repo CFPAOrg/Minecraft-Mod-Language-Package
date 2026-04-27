@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.21.1](/projects/assets/modrinth-operation-starcleave/operation_starcleave/1.21)
-- [1.21.1-fabric](/projects/assets/modrinth-operation-starcleave/operation_starcleave/1.21-fabric)
+- [1.21.1](/projects/assets/modrinth-operation-starcleave/1.21/operation_starcleave)
+- [1.21.1-fabric](/projects/assets/modrinth-operation-starcleave/1.21-fabric/operation_starcleave)

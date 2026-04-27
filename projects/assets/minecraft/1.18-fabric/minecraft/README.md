@@ -9,4 +9,4 @@
 
 ### 局部配置参考
 
-- `indirect`@`projects/assets/minecraft/minecraft`<br>直接引用了[1.18处的字体修正包](../1.18/README.md)。
+- `indirect`@`projects/assets/minecraft/1.18/minecraft`<br>直接引用了[1.18处的字体修正包](../../1.18/minecraft/README.md)。

@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-ornate-weaponry/ornate_weaponry/1.21)
+[见主文档](/projects/assets/vanity-ornate-weaponry/1.21/ornate_weaponry)

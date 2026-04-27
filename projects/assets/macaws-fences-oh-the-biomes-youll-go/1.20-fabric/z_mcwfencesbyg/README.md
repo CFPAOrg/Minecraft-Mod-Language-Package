@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-fences-oh-the-biomes-youll-go/mcwfencesbyg/1.20)
+[见主文档](/projects/assets/macaws-fences-oh-the-biomes-youll-go/1.20/mcwfencesbyg)

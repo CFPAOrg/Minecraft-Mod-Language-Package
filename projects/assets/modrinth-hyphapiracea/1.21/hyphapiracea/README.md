@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.21.1](/projects/assets/modrinth-hyphapiracea/hyphapiracea/1.21)
-- [1.21.1-fabric](/projects/assets/modrinth-hyphapiracea/hyphapiracea/1.21-fabric)
+- [1.21.1](/projects/assets/modrinth-hyphapiracea/1.21/hyphapiracea)
+- [1.21.1-fabric](/projects/assets/modrinth-hyphapiracea/1.21-fabric/hyphapiracea)

@@ -18,13 +18,13 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2](/projects/assets/vanity-colossal-weapons/vanity_colossal_weapons/1.18)
-- [1.20.1](/projects/assets/vanity-colossal-weapons/vanity_colossal_weapons/1.20)
-- [1.21.1](/projects/assets/vanity-colossal-weapons/vanity_colossal_weapons/1.21)
-- [1.18.2-fabric](/projects/assets/vanity-colossal-weapons/vanity_colossal_weapons/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/vanity-colossal-weapons/vanity_colossal_weapons/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/vanity-colossal-weapons/vanity_colossal_weapons/1.21-fabric)
-- [1.20.1-aesthetic](/projects/assets/vanity-aesthetic-armory/vanity_colossal_weapons/1.20)
-- [1.21.1-aesthetic](/projects/assets/vanity-aesthetic-armory/vanity_colossal_weapons/1.21)
-- [1.20.1-fabric-aesthetic](/projects/assets/vanity-aesthetic-armory/vanity_colossal_weapons/1.20-fabric)
-- [1.21.1-fabric-aesthetic](/projects/assets/vanity-aesthetic-armory/vanity_colossal_weapons/1.21-fabric)
+- [1.18.2](/projects/assets/vanity-colossal-weapons/1.18/vanity_colossal_weapons)
+- [1.20.1](/projects/assets/vanity-colossal-weapons/1.20/vanity_colossal_weapons)
+- [1.21.1](/projects/assets/vanity-colossal-weapons/1.21/vanity_colossal_weapons)
+- [1.18.2-fabric](/projects/assets/vanity-colossal-weapons/1.18-fabric/vanity_colossal_weapons)
+- [1.20.1-fabric](/projects/assets/vanity-colossal-weapons/1.20-fabric/vanity_colossal_weapons)
+- [1.21.1-fabric](/projects/assets/vanity-colossal-weapons/1.21-fabric/vanity_colossal_weapons)
+- [1.20.1-aesthetic](/projects/assets/vanity-aesthetic-armory/1.20/vanity_colossal_weapons)
+- [1.21.1-aesthetic](/projects/assets/vanity-aesthetic-armory/1.21/vanity_colossal_weapons)
+- [1.20.1-fabric-aesthetic](/projects/assets/vanity-aesthetic-armory/1.20-fabric/vanity_colossal_weapons)
+- [1.21.1-fabric-aesthetic](/projects/assets/vanity-aesthetic-armory/1.21-fabric/vanity_colossal_weapons)

@@ -20,10 +20,10 @@ flowchart LR
 
 ### 传送区域
 
-- [1.16.5](/projects/assets/chipped/chipped/1.16)
-- [1.18.2](/projects/assets/chipped/chipped/1.18)
-- [1.19.2](/projects/assets/chipped/chipped/1.19)
-- [1.20.1](/projects/assets/chipped/chipped/1.20)
-- [1.21.1](/projects/assets/chipped/chipped/1.21)
-- [1.20.1-fabric](/projects/assets/chipped/chipped/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/chipped/chipped/1.21-fabric)
+- [1.16.5](/projects/assets/chipped/1.16/chipped)
+- [1.18.2](/projects/assets/chipped/1.18/chipped)
+- [1.19.2](/projects/assets/chipped/1.19/chipped)
+- [1.20.1](/projects/assets/chipped/1.20/chipped)
+- [1.21.1](/projects/assets/chipped/1.21/chipped)
+- [1.20.1-fabric](/projects/assets/chipped/1.20-fabric/chipped)
+- [1.21.1-fabric](/projects/assets/chipped/1.21-fabric/chipped)

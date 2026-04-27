@@ -1,1 +1,1 @@
-见[1.20README](/projects/assets/scaling-health/scalinghealth/1.20/README.md)。
+见[1.20README](/projects/assets/scaling-health/1.20/scalinghealth/README.md)。

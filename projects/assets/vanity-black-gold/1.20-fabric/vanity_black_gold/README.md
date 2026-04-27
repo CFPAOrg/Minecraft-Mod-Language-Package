@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-black-gold/vanity_black_gold/1.20)
+[见主文档](/projects/assets/vanity-black-gold/1.20/vanity_black_gold)

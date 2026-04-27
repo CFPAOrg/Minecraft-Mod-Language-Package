@@ -24,11 +24,11 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-lights-and-lamps/mcwlights/1.16)
-- [1.18.2](/projects/assets/macaws-lights-and-lamps/mcwlights/1.18)
-- [1.19.2](/projects/assets/macaws-lights-and-lamps/mcwlights/1.19)
-- [1.20.1](/projects/assets/macaws-lights-and-lamps/mcwlights/1.20)
-- [1.21.1](/projects/assets/macaws-lights-and-lamps/mcwlights/1.21)
-- [1.18.2-fabric](/projects/assets/macaws-lights-and-lamps/mcwlights/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/macaws-lights-and-lamps/mcwlights/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/macaws-lights-and-lamps/mcwlights/1.21-fabric)
+- [1.16.5](/projects/assets/macaws-lights-and-lamps/1.16/mcwlights)
+- [1.18.2](/projects/assets/macaws-lights-and-lamps/1.18/mcwlights)
+- [1.19.2](/projects/assets/macaws-lights-and-lamps/1.19/mcwlights)
+- [1.20.1](/projects/assets/macaws-lights-and-lamps/1.20/mcwlights)
+- [1.21.1](/projects/assets/macaws-lights-and-lamps/1.21/mcwlights)
+- [1.18.2-fabric](/projects/assets/macaws-lights-and-lamps/1.18-fabric/mcwlights)
+- [1.20.1-fabric](/projects/assets/macaws-lights-and-lamps/1.20-fabric/mcwlights)
+- [1.21.1-fabric](/projects/assets/macaws-lights-and-lamps/1.21-fabric/mcwlights)

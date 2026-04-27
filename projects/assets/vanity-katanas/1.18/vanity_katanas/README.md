@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2](/projects/assets/vanity-katanas/vanity_katanas/1.18)
-- [1.18.2-fabric](/projects/assets/vanity-katanas/vanity_katanas/1.18-fabric)
+- [1.18.2](/projects/assets/vanity-katanas/1.18/vanity_katanas)
+- [1.18.2-fabric](/projects/assets/vanity-katanas/1.18-fabric/vanity_katanas)

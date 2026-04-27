@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-trapdoors/mcwtrpdoors/1.21)
+[见主文档](/projects/assets/macaws-trapdoors/1.21/mcwtrpdoors)

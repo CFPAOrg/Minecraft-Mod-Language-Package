@@ -18,9 +18,9 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2](/projects/assets/vanity/vanity/1.18)
-- [1.20.1](/projects/assets/vanity/vanity/1.20)
-- [1.21.1](/projects/assets/vanity/vanity/1.21)
-- [1.18.2-fabric](/projects/assets/vanity/vanity/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/vanity/vanity/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/vanity/vanity/1.21-fabric)
+- [1.18.2](/projects/assets/vanity/1.18/vanity)
+- [1.20.1](/projects/assets/vanity/1.20/vanity)
+- [1.21.1](/projects/assets/vanity/1.21/vanity)
+- [1.18.2-fabric](/projects/assets/vanity/1.18-fabric/vanity)
+- [1.20.1-fabric](/projects/assets/vanity/1.20-fabric/vanity)
+- [1.21.1-fabric](/projects/assets/vanity/1.21-fabric/vanity)

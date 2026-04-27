@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/assets/1UNKNOWN/hexcasted/1.20)
-- [1.20.1-fabric](/projects/assets/1UNKNOWN/hexcasted/1.20-fabric)
+- [1.20.1](/projects/assets/1UNKNOWN/1.20/hexcasted)
+- [1.20.1-fabric](/projects/assets/1UNKNOWN/1.20-fabric/hexcasted)

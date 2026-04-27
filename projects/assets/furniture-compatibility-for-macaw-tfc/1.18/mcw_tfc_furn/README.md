@@ -11,4 +11,4 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2](/projects/assets/furniture-compatibility-for-macaw-tfc/mcw_tfc_furn/1.18)
+- [1.18.2](/projects/assets/furniture-compatibility-for-macaw-tfc/1.18/mcw_tfc_furn)

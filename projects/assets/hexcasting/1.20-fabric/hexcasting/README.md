@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/hexcasting/hexcasting/1.20)
+[见主文档](/projects/assets/hexcasting/1.20/hexcasting)

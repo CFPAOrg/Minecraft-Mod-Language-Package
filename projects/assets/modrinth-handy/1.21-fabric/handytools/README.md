@@ -11,4 +11,4 @@ flowchart LR
 
 ### 链接区域
 
-- [1.21.1-fabric](/projects/assets/modrinth-handy/handytools/1.21-fabric)
+- [1.21.1-fabric](/projects/assets/modrinth-handy/1.21-fabric/handytools)

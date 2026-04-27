@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/hexweb/hexweb/1.20)
+[见主文档](/projects/assets/hexweb/1.20/hexweb)

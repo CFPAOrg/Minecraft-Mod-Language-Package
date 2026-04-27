@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-windows/mcwwindows/1.21)
+[见主文档](/projects/assets/macaws-windows/1.21/mcwwindows)

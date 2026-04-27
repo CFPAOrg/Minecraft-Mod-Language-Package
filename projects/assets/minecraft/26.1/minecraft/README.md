@@ -13,4 +13,4 @@
 
 ### 加载结构参考
 
-- `indirect`@`projects/assets/minecraft/minecraft`<br>复用[1.21处的字体修正包](../1.20/README.md)。
+- `indirect`@`projects/assets/minecraft/1.20/minecraft`<br>复用[1.20处的字体修正包](../../1.20/minecraft/README.md)。

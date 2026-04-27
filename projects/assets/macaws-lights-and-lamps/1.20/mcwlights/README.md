@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-lights-and-lamps/mcwlights/1.21)
+[见主文档](/projects/assets/macaws-lights-and-lamps/1.21/mcwlights)

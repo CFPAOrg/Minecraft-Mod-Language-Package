@@ -45,7 +45,7 @@ namespace Packer
                 where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
                 where namespaceName.ValidateNamespace()                             // 不是非法名称
                 // .../*
-                from provider in versionedDirectory.EnumerateProviders(config)
+                from provider in namespaceDirectory.EnumerateProviders(config)
                 group provider by provider.Destination into destinationGroup
                 select destinationGroup
                     .Aggregate(seed: null as IResourceFileProvider,                 // 合并文件

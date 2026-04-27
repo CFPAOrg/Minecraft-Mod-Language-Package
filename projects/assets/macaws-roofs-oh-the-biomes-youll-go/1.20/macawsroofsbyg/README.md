@@ -24,10 +24,10 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/macawsroofsbyg/1.16)
-- [1.18.2](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/macawsroofsbyg/1.18)
-- [1.19.2](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/macawsroofsbyg/1.19)
-- [1.20.1](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/macawsroofsbyg/1.20)
-- [1.18.2-fabric](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/macawsroofsbyg/1.18-fabric)
-- [1.19.2-fabric](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/z_mcwroofsbyg/1.19)
-- [1.20.1-fabric](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/z_mcwroofsbyg/1.20-fabric)
+- [1.16.5](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/1.16/macawsroofsbyg)
+- [1.18.2](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/1.18/macawsroofsbyg)
+- [1.19.2](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/1.19/macawsroofsbyg)
+- [1.20.1](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/1.20/macawsroofsbyg)
+- [1.18.2-fabric](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/1.18-fabric/macawsroofsbyg)
+- [1.19.2-fabric](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/1.19/z_mcwroofsbyg)
+- [1.20.1-fabric](/projects/assets/macaws-roofs-oh-the-biomes-youll-go/1.20-fabric/z_mcwroofsbyg)

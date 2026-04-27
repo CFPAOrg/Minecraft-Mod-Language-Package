@@ -15,7 +15,7 @@ flowchart LR
 
 ### 传送区域
 
-- [1.20.1](/projects/assets/all-the-wood-weve-got/woodwevegot/1.20)
-- [1.21.1](/projects/assets/all-the-wood-weve-got/woodwevegot/1.21)
-- [1.20.1-fabric](/projects/assets/all-the-wood-weve-got/woodwevegot/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/all-the-wood-weve-got/woodwevegot/1.21-fabric)
+- [1.20.1](/projects/assets/all-the-wood-weve-got/1.20/woodwevegot)
+- [1.21.1](/projects/assets/all-the-wood-weve-got/1.21/woodwevegot)
+- [1.20.1-fabric](/projects/assets/all-the-wood-weve-got/1.20-fabric/woodwevegot)
+- [1.21.1-fabric](/projects/assets/all-the-wood-weve-got/1.21-fabric/woodwevegot)

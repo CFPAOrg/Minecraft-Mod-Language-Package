@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.21.1](/projects/assets/enchanted-witchcraft/enchanted/1.21)
-- [1.21.1-fabric](/projects/assets/enchanted-witchcraft/enchanted/1.21-fabric)
+- [1.21.1](/projects/assets/enchanted-witchcraft/1.21/enchanted)
+- [1.21.1-fabric](/projects/assets/enchanted-witchcraft/1.21-fabric/enchanted)

@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-metallurgical/vanity_metallurgical/1.18)
+[见主文档](/projects/assets/vanity-metallurgical/1.18/vanity_metallurgical)

@@ -11,4 +11,4 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1-fabric](/projects/assets/vanity-just-swords/vanity-just-swords/1.20-fabric)
+- [1.20.1-fabric](/projects/assets/vanity-just-swords/1.20-fabric/vanity-just-swords)

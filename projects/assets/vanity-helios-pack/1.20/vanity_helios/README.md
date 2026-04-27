@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/assets/vanity-helios-pack/vanity_helios/1.20)
-- [1.20.1-fabric](/projects/assets/vanity-helios-pack/vanity_helios/1.20-fabric)
+- [1.20.1](/projects/assets/vanity-helios-pack/1.20/vanity_helios)
+- [1.20.1-fabric](/projects/assets/vanity-helios-pack/1.20-fabric/vanity_helios)

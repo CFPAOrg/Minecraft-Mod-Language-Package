@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-stairs/mcwstairs/1.21)
+[见主文档](/projects/assets/macaws-stairs/1.21/mcwstairs)

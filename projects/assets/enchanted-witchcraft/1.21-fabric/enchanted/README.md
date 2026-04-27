@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/enchanted-witchcraft/enchanted/1.21)
+[见主文档](/projects/assets/enchanted-witchcraft/1.21/enchanted)

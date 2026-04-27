@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/modrinth-operation-starcleave/operation_starcleave/1.21)
+[见主文档](/projects/assets/modrinth-operation-starcleave/1.21/operation_starcleave)

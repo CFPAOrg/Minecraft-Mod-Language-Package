@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/modrinth-vanity-mace/vanity_mace/1.20)
+[见主文档](/projects/assets/modrinth-vanity-mace/1.20/vanity_mace)

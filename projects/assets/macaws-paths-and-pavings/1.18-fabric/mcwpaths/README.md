@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-paths-and-pavings/mcwpaths/1.21)
+[见主文档](/projects/assets/macaws-paths-and-pavings/1.21/mcwpaths)

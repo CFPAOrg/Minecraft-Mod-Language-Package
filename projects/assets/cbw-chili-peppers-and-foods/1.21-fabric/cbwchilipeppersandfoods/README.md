@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/cbw-chili-peppers-and-foods/cbwchilipeppersandfoods/1.21)
+[见主文档](/projects/assets/cbw-chili-peppers-and-foods/1.21/cbwchilipeppersandfoods)

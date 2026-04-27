@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-steel-pack/vanity_steel/1.20)
+[见主文档](/projects/assets/vanity-steel-pack/1.20/vanity_steel)

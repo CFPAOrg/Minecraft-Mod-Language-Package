@@ -13,6 +13,6 @@ flowchart LR
 
 ### 传送区域
 
-- [1.21.1-neoforge](/projects/assets/ars-elixirum-neoforge/elixirum/1.21)
-- [1.21.1-forge](/projects/assets/ars-elixirum-forge/elixirum/1.21)
-- [1.21.1-fabric](/projects/assets/ars-elixirum/elixirum/1.21-fabric)
+- [1.21.1-neoforge](/projects/assets/ars-elixirum-neoforge/1.21/elixirum)
+- [1.21.1-forge](/projects/assets/ars-elixirum-forge/1.21/elixirum)
+- [1.21.1-fabric](/projects/assets/ars-elixirum/1.21-fabric/elixirum)

@@ -11,4 +11,4 @@ flowchart LR
 
 ### 链接区域
 
-- [1.16.5](/projects/assets/macaws-quark/mcwquark/1.16)
+- [1.16.5](/projects/assets/macaws-quark/1.16/mcwquark)

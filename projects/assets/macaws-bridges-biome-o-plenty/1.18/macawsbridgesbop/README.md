@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-bridges-biome-o-plenty/macawsbridgesbop/1.21)
+[见主文档](/projects/assets/macaws-bridges-biome-o-plenty/1.21/macawsbridgesbop)

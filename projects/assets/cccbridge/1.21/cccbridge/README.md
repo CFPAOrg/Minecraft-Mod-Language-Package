@@ -18,9 +18,9 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2](/projects/assets/cccbridge/cccbridge/1.18)
-- [1.20.1](/projects/assets/cccbridge/cccbridge/1.20)
-- [1.21.1](/projects/assets/cccbridge/cccbridge/1.21)
-- [1.18.2-fabric](/projects/assets/cccbridge/cccbridge/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/cccbridge/cccbridge/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/cccbridge/cccbridge/1.21-fabric)
+- [1.18.2](/projects/assets/cccbridge/1.18/cccbridge)
+- [1.20.1](/projects/assets/cccbridge/1.20/cccbridge)
+- [1.21.1](/projects/assets/cccbridge/1.21/cccbridge)
+- [1.18.2-fabric](/projects/assets/cccbridge/1.18-fabric/cccbridge)
+- [1.20.1-fabric](/projects/assets/cccbridge/1.20-fabric/cccbridge)
+- [1.21.1-fabric](/projects/assets/cccbridge/1.21-fabric/cccbridge)

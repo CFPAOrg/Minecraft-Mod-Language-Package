@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/vanity-charcutier/vanity_charcutier/1.18)
+[见主文档](/projects/assets/vanity-charcutier/1.18/vanity_charcutier)

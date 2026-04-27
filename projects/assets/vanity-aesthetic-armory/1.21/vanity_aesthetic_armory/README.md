@@ -15,7 +15,7 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/assets/vanity-aesthetic-armory/vanity_aesthetic_armory/1.20)
-- [1.21.1](/projects/assets/vanity-aesthetic-armory/vanity_aesthetic_armory/1.21)
-- [1.20.1-fabric](/projects/assets/vanity-aesthetic-armory/vanity_aesthetic_armory/1.20-fabric)
-- [1.21.1-fabric](/projects/assets/vanity-aesthetic-armory/vanity_aesthetic_armory/1.21-fabric)
+- [1.20.1](/projects/assets/vanity-aesthetic-armory/1.20/vanity_aesthetic_armory)
+- [1.21.1](/projects/assets/vanity-aesthetic-armory/1.21/vanity_aesthetic_armory)
+- [1.20.1-fabric](/projects/assets/vanity-aesthetic-armory/1.20-fabric/vanity_aesthetic_armory)
+- [1.21.1-fabric](/projects/assets/vanity-aesthetic-armory/1.21-fabric/vanity_aesthetic_armory)

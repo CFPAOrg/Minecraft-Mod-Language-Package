@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/modopedia/modopedia/1.21)
+[见主文档](/projects/assets/modopedia/1.21/modopedia)

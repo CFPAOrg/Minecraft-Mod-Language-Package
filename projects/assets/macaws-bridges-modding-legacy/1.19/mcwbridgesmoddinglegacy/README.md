@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/macaws-bridges-modding-legacy/mcwbridgesmoddinglegacy/1.20)
+[见主文档](/projects/assets/macaws-bridges-modding-legacy/1.20/mcwbridgesmoddinglegacy)

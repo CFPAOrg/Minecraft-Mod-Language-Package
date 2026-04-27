@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/aileron/aileron/1.21)
+[见主文档](/projects/assets/aileron/1.21/aileron)

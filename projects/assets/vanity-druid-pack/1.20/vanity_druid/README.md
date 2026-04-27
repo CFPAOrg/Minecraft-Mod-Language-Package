@@ -15,7 +15,7 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2](/projects/assets/vanity-druid-pack/vanity_druid/1.18)
-- [1.20.1](/projects/assets/vanity-druid-pack/vanity_druid/1.20)
-- [1.18.2-fabric](/projects/assets/vanity-druid-pack/vanity_druid/1.18-fabric)
-- [1.20.1-fabric](/projects/assets/vanity-druid-pack/vanity_druid/1.20-fabric)
+- [1.18.2](/projects/assets/vanity-druid-pack/1.18/vanity_druid)
+- [1.20.1](/projects/assets/vanity-druid-pack/1.20/vanity_druid)
+- [1.18.2-fabric](/projects/assets/vanity-druid-pack/1.18-fabric/vanity_druid)
+- [1.20.1-fabric](/projects/assets/vanity-druid-pack/1.20-fabric/vanity_druid)

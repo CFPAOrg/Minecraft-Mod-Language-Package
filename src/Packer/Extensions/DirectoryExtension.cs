@@ -96,7 +96,7 @@ namespace Packer.Extensions
                                                                    ParameterType? parameters)
         {
             var redirect = parameters!["source"].GetString();
-            var namespaceName = namespaceDirectory.Parent!.Name;
+            var namespaceName = namespaceDirectory.Name;
             var redirectDirectory = new DirectoryInfo(redirect!);
 
             Log.Debug("[Policy:Indirect]目标：{0}，源：{1}", namespaceName, redirect);

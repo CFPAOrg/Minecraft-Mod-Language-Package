@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/assets/yoyos/yoyos/1.20)
-- [1.21.1](/projects/assets/yoyos/yoyos/1.21)
+- [1.20.1](/projects/assets/yoyos/1.20/yoyos)
+- [1.21.1](/projects/assets/yoyos/1.21/yoyos)

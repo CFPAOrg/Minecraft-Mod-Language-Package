@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/assets/caduceus/caduceus/1.20)
-- [1.20.1-fabric](/projects/assets/caduceus/caduceus/1.20-fabric)
+- [1.20.1](/projects/assets/caduceus/1.20/caduceus)
+- [1.20.1-fabric](/projects/assets/caduceus/1.20-fabric/caduceus)

@@ -11,4 +11,4 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1-fabric](/projects/assets/modrinth-vanity-create/vanity_create/1.20-fabric)
+- [1.20.1-fabric](/projects/assets/modrinth-vanity-create/1.20-fabric/vanity_create)

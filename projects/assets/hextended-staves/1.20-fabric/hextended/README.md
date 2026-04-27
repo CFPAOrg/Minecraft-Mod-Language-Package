@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/hextended-staves/hextended/1.20)
+[见主文档](/projects/assets/hextended-staves/1.20/hextended)

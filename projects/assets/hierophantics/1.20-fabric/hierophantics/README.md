@@ -1,1 +1,1 @@
-[见主文档](/projects/assets/hierophantics/hierophantics/1.20)
+[见主文档](/projects/assets/hierophantics/1.20/hierophantics)
