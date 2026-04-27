@@ -14,6 +14,6 @@
 
 ### 加载结构参考
 
-- `direct`<br>1.18特定的字体描述文件；此文件在1.16->1.18的更新中有所改动。
-- `indirect`@`projects/assets/minecraft/minecraft`<br>引用[1.16处的字体修正包](../1.16/../../../1.16/assets/minecraft/minecraft/README.md)，以获取字体资源。
+- `direct`<br>1.20+的字体描述文件，已与Mojangles解耦合。
+- `indirect`@`projects/assets/minecraft/minecraft`<br>引用[1.16处的字体修正包](../1.16/README.md)，以获取字体资源。
   - **合并行为**：所有的字体描述文件都会被上一步完全覆盖。

@@ -7,6 +7,6 @@
   - **省略号**现在可以*模拟*等距点——虽说不是完美等距，但看起来差不多。
   - 单个**破折号**在显示时可以*连起来*了。
 
-### 局部配置参考
+### 加载结构参考
 
-- `indirect`@`projects/assets/minecraft/minecraft`<br>直接引用了[1.16处的字体修正包](../1.16/README.md)。
+- `indirect`@`projects/assets/minecraft/minecraft`<br>复用[26.1处的字体修正包](../26.1/README.md)。

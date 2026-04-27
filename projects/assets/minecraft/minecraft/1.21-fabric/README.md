@@ -9,4 +9,4 @@
 
 ### 加载结构参考
 
-- `indirect`@`projects/assets/minecraft/minecraft`<br>复用[1.21处的字体修正包](../1.21/../../../1.21/assets/minecraft/minecraft/README.md)。
+- `indirect`@`projects/assets/minecraft/minecraft`<br>复用[1.21处的字体修正包](../1.21/README.md)。
