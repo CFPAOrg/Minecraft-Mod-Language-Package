@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity-ancient-tool-variants/ancient_tools/1.21)

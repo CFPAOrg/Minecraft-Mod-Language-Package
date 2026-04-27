@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity-crucible/doom/1.20)

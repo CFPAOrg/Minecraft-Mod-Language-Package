@@ -1,1 +1,0 @@
-[见主文档](/projects/1.21/assets/vanity-aesthetic-armory/vanity_aesthetic_armory)

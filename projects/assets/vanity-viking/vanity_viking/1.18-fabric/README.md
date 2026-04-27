@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity-viking-pack/vanity_viking/1.20)

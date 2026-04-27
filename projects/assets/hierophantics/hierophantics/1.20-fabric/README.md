@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/hierophantics/hierophantics/1.20)

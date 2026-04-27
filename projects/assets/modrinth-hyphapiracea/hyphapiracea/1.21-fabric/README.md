@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/modrinth-hyphapiracea/hyphapiracea/1.21)

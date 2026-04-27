@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity-spartan-pack/vanity_spartan/1.20)

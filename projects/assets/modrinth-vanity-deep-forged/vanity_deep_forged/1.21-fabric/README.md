@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/modrinth-vanity-deep-forged/vanity_deep_forged/1.21)
