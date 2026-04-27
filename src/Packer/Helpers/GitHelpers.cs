@@ -1,4 +1,5 @@
 ﻿using LibGit2Sharp;
+using Packer.Extensions;
 using Serilog;
 using System.Collections.Generic;
 using System.IO;
@@ -31,11 +32,17 @@ namespace Packer.Helpers
         }
 
         internal static bool IsInTargetVersion(this string location, string version)
-            => location.StartsWith($"projects/{version}/assets");
+        {
+            // Pattern: projects/assets/.../.../<version>
+            var normalizedPath = location.NormalizePath();
+            var splitted = normalizedPath.Split('/');
+            if (splitted.Length < 5) return false;
+            return splitted[0] == "projects" && splitted[1] == "assets" && splitted[4] == version;
+        }
 
         internal static string ExtractModIdentifier(this string location, string version)
-            => Path.GetRelativePath($"projects/{version}/assets", location)
-                   .Split(Path.DirectorySeparatorChar)[0];
+            => location.NormalizePath()
+                       .Split(Path.DirectorySeparatorChar)[2];
 
     }
 }

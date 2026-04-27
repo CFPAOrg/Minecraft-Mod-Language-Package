@@ -63,7 +63,7 @@ namespace Packer.Extensions
         /// </summary>
         internal static EvaluatorReturnType EnumerateRawProviders(this DirectoryInfo namespaceDirectory, Config config)
             => from policy in ConfigHelpers.RetrievePolicy(namespaceDirectory)
-               from enumeratedPair in evaluatorPolicyMap[policy.Type].Invoke(
+               from enumeratedPair in evaluatorPolicyMap[policy.Type](
                    namespaceDirectory, config, policy.Parameters)
                select enumeratedPair;
 
@@ -80,7 +80,7 @@ namespace Packer.Extensions
                                                            candidate.FullName)
                                           .NormalizePath()
                    let fullPath = Path.GetRelativePath(".", candidate.FullName)
-                   let destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
+                   let destination = Path.Combine("assets", namespaceDirectory.Parent!.Name, relativePath)
                                          .NormalizePath()
                    where !relativePath.IsPathForceExcluded(localConfig)             // [1] 排除路径   -- packer-policy等
                    where (relativePath.IsPathForceIncluded(localConfig)             // [2] 包含路径   [单列]
@@ -96,7 +96,7 @@ namespace Packer.Extensions
                                                                    ParameterType? parameters)
         {
             var redirect = parameters!["source"].GetString();
-            var namespaceName = namespaceDirectory.Name;
+            var namespaceName = namespaceDirectory.Parent!.Name;
             var redirectDirectory = new DirectoryInfo(redirect!);
 
             Log.Debug("[Policy:Indirect]目标：{0}，源：{1}", namespaceName, redirect);
@@ -133,7 +133,7 @@ namespace Packer.Extensions
         {
             var singletonPath = parameters!["source"].GetString()!;
             var relativePath = parameters!["relativePath"].GetString()!;
-            var destination = Path.Combine("assets", namespaceDirectory.Name, relativePath)
+            var destination = Path.Combine("assets", namespaceDirectory.Parent!.Name, relativePath)
                                   .NormalizePath();
 
             Log.Debug("[Policy:Singleton]目标：{0}，源：{1}", destination, singletonPath);
