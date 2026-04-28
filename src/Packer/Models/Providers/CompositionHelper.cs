@@ -57,7 +57,8 @@ namespace Packer.Models.Providers
                         let formattedKey = string.Format(template.Key, parameter.Key.ToArray())
                         let formattedValue = string.Format(template.Value, parameter.Value.ToArray())
                         select (formattedKey, formattedValue);
-            return query.ToDictionary(_ => _.formattedKey, _ => _.formattedValue);
+            var distinct = query.DistinctBy(_ => _.formattedKey);
+            return distinct.ToDictionary(_ => _.formattedKey, _ => _.formattedValue);
         }
 
         internal static IEnumerable<KeyValuePair<IEnumerable<TOuter>, IEnumerable<TInner>>>

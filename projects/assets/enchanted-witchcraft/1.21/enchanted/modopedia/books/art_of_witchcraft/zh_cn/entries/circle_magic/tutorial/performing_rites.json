@@ -1,0 +1,74 @@
+{
+  "assigned_items": [],
+  "icon": {
+    "count": 1,
+    "id": "enchanted:circle_talisman"
+  },
+  "pages": [
+    {
+      "components": [
+        {
+          "header": "施展仪式",
+          "template": "modopedia:page/headered_text",
+          "text": "施展圆环魔法需要执行三个基本步骤：正确绘制粉笔圆环，将正确的焦点放入圆环，启动仪式。"
+        },
+        {
+          "images": [
+            "enchanted:textures/gui/modopedia/circle_magic.png"
+          ],
+          "template": "enchanted:framed_image",
+          "x": 10,
+          "y": 80
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "header": "核心符形",
+          "template": "modopedia:page/headered_text",
+          "text": "所有仪式的起点都是核心符形——使用$(b)$(el:items/golden_chalk)金黄粉笔$(/el)$(/b)绘制的符形。\n\n它是仪式的中心，是能量流动的通道，也用于激活和中止魔法。"
+        },
+        {
+          "type": "modopedia:multiblock",
+          "height": 50,
+          "multiblock": {
+            "type": "modopedia:dense",
+            "key": {
+              "G": {
+                "type": "modopedia:simple",
+                "states": [
+                  "enchanted:golden_chalk"
+                ]
+              }
+            },
+            "pattern": [
+              [
+                "G"
+              ]
+            ]
+          },
+          "y": 80
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "header": "符形与焦点",
+          "template": "modopedia:page/headered_text",
+          "text": "在绘制核心符形后，还需绘制粉笔圆环，所用的工具是$(b)$(el:items/ritual_chalk)仪式$(/el)$(/b)、$(b)$(el:items/nether_chalk)下界$(/el)$(/b)和$(b)$(el:items/otherwhere_chalk)他处$(/el)$(/b)粉笔。\n\n焦点，如物品和活体祭品等，应当安置于圆环内部。\n\n所有需求都达成之后，即可激活核心符形。"
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "rite": "enchanted:charging_stone",
+          "template": "enchanted:page/rite"
+        }
+      ]
+    }
+  ],
+  "title": "施展仪式"
+}

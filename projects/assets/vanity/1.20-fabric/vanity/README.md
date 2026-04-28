@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity/1.21/vanity)

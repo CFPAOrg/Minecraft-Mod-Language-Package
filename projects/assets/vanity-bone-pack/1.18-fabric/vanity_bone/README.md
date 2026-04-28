@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity-bone-pack/1.20/vanity_bone)
