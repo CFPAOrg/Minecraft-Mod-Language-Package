@@ -140,7 +140,7 @@ Minecraft-Mod-Language-Package
 #### 审查人
 
 - 任何人都能利用 GitHub 提供的[相关功能](https://docs.github.com/zh/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request)来审查 PR 中翻译。所有参与审查的用户即为审查人。
-- [CFPA团队](https://github.com/CFPAOrg) 的成员（Member）和[本仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人，统称为管理员。
+- [CFPA 团队](https://github.com/CFPAOrg) 的成员（Member）和[本仓库](https://github.com/CFPAOrg/Minecraft-Mod-Language-Package)的协作者（Collaborator）是具有团队官方性质的审查人，统称为管理员。
 - 至少一位管理员对 PR 给出批准（Approval）意见后，PR 才能合并。
 - 管理员在给出批准意见后**应**给 PR 加上“即将合并”标签，此后需至少等待 24 小时，若等待期间没有新动态则可以合并 PR。
   - “动态”包括但不限于 PR 作者提交（Commit）、审查人评论。
@@ -196,7 +196,7 @@ Minecraft-Mod-Language-Package
 
 <!--### config/spider/config.json
 
-> Spider目前暂时停用，以下事项仅作参考。
+> Spider 目前暂时停用，以下事项仅作参考。
 
 - `"version"`：游戏版本，**请勿修改**
 - `"spider_conf"`：爬虫相关设置
