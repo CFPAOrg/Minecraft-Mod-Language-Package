@@ -225,7 +225,7 @@ Minecraft-Mod-Language-Package
 - 增加新翻译版本
   - 需要将所有项填写一遍，同时需要更新 `.github/workflows/packer.yml`、`.github/workflows/pr-packer.yml`、`.github\boring-cyborg.yml`，以及 [CFPABot](https://github.com/Cyl18/CFPABot) 等相关服务。没有规划最好不要乱动。
 - 更改字符替换表
-  - 修改`characterReplacement`，格式与已有文本一致。对于**基础多语种平面（BMP）**以外的字符，最好用 **UTF-16 代理对**书写。
+  - 修改`characterReplacement`，格式与已有文本一致。对于 **基础多语种平面（BMP）** 以外的字符，最好用 **UTF-16 代理对**书写。
   - 同时可能需要修改字体文件。
 - 处理非文本文件
   - 参考 [Packer-Doc](Packer-Doc.md) 对其的描述。
