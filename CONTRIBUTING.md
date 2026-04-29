@@ -59,7 +59,7 @@ Minecraft-Mod-Language-Package
     └─Uploader -------- // 上传器，用于将资源包文件上传到文件分发服务器
 ```
 
-**项目名称（Project Slug）**：文件夹名称取自模组在发布平台上的 Slug（URL 中的唯一标识符）。
+**项目名称（Project Slug）**：文件夹名称取自模组在发布平台上的 Slug（URL 中的唯一标识符），仅用于 bot 爬取模组信息，不影响打包等策略。
 
 - **CurseForge 来源**：以匠魂为例，它的 CurseForge 页面地址是 `https://www.curseforge.com/minecraft/mc-mods/tinkers-construct`，则 Slug 为 `tinkers-construct`，直接用作文件夹名。
 - **Modrinth 来源**：以 Clean F3 为例，它的 Modrinth 页面地址是 `https://modrinth.com/mod/clean-f3`，则 Slug 为 `clean-f3`。为了与 CurseForge 上发布的模组作以区分，所有仅在 Modrinth 上发布的模组，需在其 Slug 前添加 `modrinth-` 前缀作为区分，即文件夹名为 `modrinth-clean-f3`。
