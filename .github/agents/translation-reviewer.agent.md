@@ -145,7 +145,15 @@ user-invocable: true
 }
 ```
 
-同时可生成 **`zh_cn_annotated.json`**（带 `// VERDICT` 的可读副本），但必须注明仅供参考，不作为游戏读取文件。
+同时生成 **`zh_cn_annotated.json`**（带 `// VERDICT` 的可读副本），注意：
+- 仅对 ❌ FAIL 和 🔶 REVIEW 条目添加注释，PASS 条目不加任何注释
+- 注释格式为 `// VERDICT: reason...` 或 `// → 建议: ...`
+- 必须注明仅供参考，不作为游戏读取文件
+
+### Phase 4.5: 清理中间文件
+
+审校完成后，删除以下中间文件：
+- `alignment.json`
 
 最后输出摘要：
 
