@@ -68,28 +68,28 @@ user-invocable: true
 参考表格：
 
 ```
-| 树名（地物名）     | 木材名   | 木制品名   | 原文                                    |
-| ------------------ | -------- | ---------- | --------------------------------------- |
-| 橡树               | 橡木     | 橡木       | Oak                                     |
-| 深色橡树           | 深色橡木 | 深色橡木   | Dark Oak                                |
-| 云杉               | 云杉     | 云杉木     | Spruce                                  |
-| 白桦               | 白桦     | 白桦木     | Birch                                   |
-| 丛林（树）         | 丛林     | 丛林木     | Jungle                                  |
-| 金合欢（树）       | 金合欢   | 金合欢木   | Acacia                                  |
-| 杜鹃（树）         | ===      | ===        | Azalea                                  |
-| 红树               | 红树     | 红树木     | Mangrove                                |
-| 樱花（树）         | 樱花     | 樱花木     | Cherry Blossom                          |
-| 竹                 | 竹       | 竹         | Bamboo 不是木头                         |
-| （巨型）绯红（菌） | 绯红     | 绯红木     | (Huge) Crimson (Fungus), Stem, Hyphae   |
-| （巨型）诡异（菌） | 诡异     | 诡异木     | (Huge) Warped  (Fungus), Stem, Hyphae   |
-| 埃德木             | 埃德木   | 埃德木     | Edelwood                                |
-| 世界树             | 世界树   | 世界树木   | Yggdrasill 术语不可拆分                 |
-| 柳树               | 柳木     | 柳木       | Willow                                  |
-| 桃花心木           | 桃花心木 | 桃花心木   | Mahogany                                |
-| 日本红枫           | 日本红枫 | 日本红枫木 | Japanese Maple                          |
-| 日本枫树           | 日本枫木 | 日本枫木   | Japanese Maple （根据翻译不同变化不同） |
-| 苹果               | 苹果     | 苹果木     | Apple 其他水果可参此格式                |
-| ===                | 防腐     | 防腐木     | Treated 其他经过处理的木材可参此格式    |
+|   树名（地物名）   |   木材名   |  木制品名  |                  原文                   |
+| ------------------ | ---------- | ---------- | --------------------------------------- |
+| 橡树               | 橡木       | 橡木       | Oak                                     |
+| 深色橡树           | 深色橡木   | 深色橡木   | Dark Oak                                |
+| 云杉               | 云杉       | 云杉木     | Spruce                                  |
+| 白桦               | 白桦       | 白桦木     | Birch                                   |
+| 丛林（树）         | 丛林       | 丛林木     | Jungle                                  |
+| 金合欢（树）       | 金合欢     | 金合欢木   | Acacia                                  |
+| 杜鹃（树）         | （未实装） | （未实装） | Azalea                                  |
+| 红树               | 红树       | 红树木     | Mangrove                                |
+| 樱花（树）         | 樱花       | 樱花木     | Cherry Blossom                          |
+| 竹                 | 竹         | 竹         | Bamboo 不是木头                         |
+| （巨型）绯红（菌） | 绯红       | 绯红木     | (Huge) Crimson (Fungus), Stem, Hyphae   |
+| （巨型）诡异（菌） | 诡异       | 诡异木     | (Huge) Warped  (Fungus), Stem, Hyphae   |
+| 埃德木             | 埃德木     | 埃德木     | Edelwood                                |
+| 世界树             | 世界树     | 世界树木   | Yggdrasill 术语不可拆分                 |
+| 柳树               | 柳木       | 柳木       | Willow                                  |
+| 桃花心木           | 桃花心木   | 桃花心木   | Mahogany                                |
+| 日本红枫           | 日本红枫   | 日本红枫木 | Japanese Maple                          |
+| 日本枫树           | 日本枫木   | 日本枫木   | Japanese Maple （根据翻译不同变化不同） |
+| 苹果               | 苹果       | 苹果木     | Apple 其他水果可参此格式                |
+| （未实装）         | 防腐       | 防腐木     | Treated 其他经过处理的木材可参此格式    |
 ```
 
 \*未括注的为树名与地物名相同的情况。
@@ -98,12 +98,7 @@ user-invocable: true
 
 - 游戏动作（Sneak、Interact 等）**必须翻译**，且不应译为具体按键名（因为键位可更改）
   - `Sneak and right click` → `潜行右击`
-- 鼠标操作须翻译为 `单击鼠标右键` / `右击` 等形式，而非 `右键`。`按住右键`是允许的。
-
-### 进度/成就
-
-- `advancements.*.title` 允许更大的创意发挥空间，但仍需忠实于原文核心含义
-- `advancements.*.desc` 须准确传达完成条件，不得省略关键信息
+- 鼠标操作须翻译为 `单击鼠标右键`、`按住右键`、`右击` 等形式，而非 `右键`。
 
 ## 工作流程
 
@@ -205,13 +200,13 @@ user-invocable: true
    - `*.desc`（风味文本/彩蛋）
    - `death.attack.`（死亡信息）
    - `advancements.*`（进度）
-   此外，遇到以下任何情况时也触发：
+     此外，遇到以下任何情况时也触发：
    - 译文与直译差异迥异
    - 术语表记载存在译法冲突
    - 句子结构特殊（如 lore、咒语、定义语言等）
    - 键名暗示译文可能过时
    - 翻译腔重、看不懂、风格明显不搭、与其他同类条目不一致等任何你感觉"可能有纰漏"的情况
-   调用语法：
+     调用语法：
 
    ```
    python src/agent_tools/fuzzy_search.py --query "{当前 EN 值}" --en {mod}/lang/en_us.json --zh {mod}/lang/zh_cn.json --threshold 50 --top 5
@@ -227,7 +222,7 @@ user-invocable: true
 
 **自检清单（逐项通过后方可进入 Phase 4）：**
 
-1. **覆盖度审计**：确认 Phase 3 第 2 步列出的所有键名类别均有涉及，无类别完全遗漏。
+1. **覆盖度审计**：确认 Phase 3 键名类型清单列出的所有类别均有涉及，无类别完全遗漏。
 2. **一致性检查**：是否有两条及以上条目对同一英文原文给出了不同修改建议？须统一。
 3. **冲突检查**：是否有 verdict 与术语表或风格范本直接冲突？须修正。
 
@@ -242,7 +237,7 @@ user-invocable: true
       "key": "item.hexshield.gold_shield",
       "en_current": "Gold Shield",
       "zh_current": "金盾牌",
-      "verdict": "⚠️",
+      "verdict": "⚠️ SUGGEST",
       "suggestion": "金质盾牌",
       "reason": "\"gold\" 应译为\"金质\"以保持与其他材质命名一致"
     },
@@ -250,9 +245,9 @@ user-invocable: true
       "key": "item.hexshield.diamond_shield",
       "en_current": "Diamond Shield",
       "zh_current": "钻石盾",
-      "verdict": "❌",
+      "verdict": "❌ FAIL",
       "suggestion": "钻石盾牌",
-      "reason": "漏译"牌"，同类物品均以"盾牌"结尾"
+      "reason": "漏译\"牌\"，同类物品均以\"盾牌\"结尾"
     }
   ]
 }
@@ -269,6 +264,7 @@ user-invocable: true
 审校完成后，删除以下中间文件：
 
 - `alignment.json`
+- `terminology_output.json`
 
 最后输出摘要：
 
