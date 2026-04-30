@@ -47,6 +47,7 @@ user-invocable: true
 5. **尾部空格与标点**：不因翻译产生功能性冲突（如英文句点可自然换为中文句号，但不宜凭空增删空格）
 6. **能量单位与键盘键**：FE、RF、MB 等能量/体积单位**保留原文不翻译**；键盘功能键（Shift、Ctrl 等）**不翻译**并将首字母大写
 7. **空翻译陷阱**：若 `zh == en` 且原文非代码/专有名词/界面占位符，直接判定为 ❌ 未翻译
+8. **错别字检查**：注意形近/音近/易错字（未↔末、在↔再、的↔地/得、届↔界等）。找到即 ❌ FAIL。
    异常项直接判定为 ❌ FAIL，应在 `reason` 中注明具体格式错误。
 
 ## 固定表达与强制性格式
@@ -57,13 +58,12 @@ user-invocable: true
 
 - 若 EN 为主谓结构，ZH 须为 `主体：声音` 格式（全角冒号）
   - `Bee buzzes` → `蜜蜂：嗡嗡`
-  - 若 ZH 使用了 `；`（分号）而非 `：`（全角冒号）→ ❌ FAIL
   - 若 EN 无主语，可省略主体部分
 
 ### 树木名
 
-- 检查所有含 `log`, `wood`, `planks`, `sapling`, `leaves`, `stairs`, `slab`, `fence`, `door`, `sign`, `boat` 等键的条目，确认木材名与树名一致
-- 树名作为术语时在不同场景有不同表达，审查时须确认木材/木制品/树叶/树苗的命名模式统一
+- 检查所有含 `log`, `wood`, `planks`, `sapling`, `leaves`, `stairs`, `slab`, `fence`, `door`, `sign`, `boat` 等键的条目，确认树木名按规则翻译和变形。
+- 树名作为术语时在不同场景有不同表达，审查时须确认木材/木制品/树叶/树苗的命名模式符合要求。
 
 参考表格：
 
@@ -239,7 +239,7 @@ user-invocable: true
       "zh_current": "金盾牌",
       "verdict": "⚠️ SUGGEST",
       "suggestion": "金质盾牌",
-      "reason": "\"gold\" 应译为\"金质\"以保持与其他材质命名一致"
+      "reason": "“gold” 应译为“金质”以保持与其他材质命名一致"
     },
     {
       "key": "item.hexshield.diamond_shield",
@@ -247,11 +247,12 @@ user-invocable: true
       "zh_current": "钻石盾",
       "verdict": "❌ FAIL",
       "suggestion": "钻石盾牌",
-      "reason": "漏译\"牌\"，同类物品均以\"盾牌\"结尾"
+      "reason": "漏译“牌”，同类物品均以“盾牌”结尾"
     }
   ]
 }
 ```
+- 注意使用中文引号或带转义的英文引号。
 
 同时生成 **`zh_cn_annotated.json`**（带 `// VERDICT` 的可读副本），注意：
 
@@ -259,9 +260,10 @@ user-invocable: true
 - 注释格式为 `// VERDICT: reason...` 或 `// → 建议: ...`
 - 必须注明仅供参考，不作为游戏读取文件
 
-### Phase 4.5: 清理中间文件
 
-审校完成后，删除以下中间文件：
+### Phase 5: 交付
+
+审校完成后，不删除以下中间文件：
 
 - `alignment.json`
 - `terminology_output.json`
