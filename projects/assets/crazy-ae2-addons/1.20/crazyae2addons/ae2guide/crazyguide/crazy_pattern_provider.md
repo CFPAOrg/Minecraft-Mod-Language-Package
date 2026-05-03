@@ -13,35 +13,40 @@ item_ids:
 
 # Crazy Pattern Provider
 
-<BlockImage id="crazyae2addons:crazy_pattern_provider" scale="4"></BlockImage>
+The **Crazy Pattern Provider** is an expandable Pattern Provider with more pattern slots than the normal AE2 provider.
 
-The Crazy Pattern Provider is an extended version of AE2's Pattern Provider with dynamic expandability.
-It holds all its settings and inventory when broken.
+It is available as both a block and a cable part.
 
-## [Video Tutorial](https://youtu.be/54WvhbR3GfY&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+Both variants behave as normal Pattern Providers, but can store many more encoded patterns.
+
+Any new Crazy Pattern Provider starts with 72 pattern slots.
 
 ---
 
-## Key Features
+## Expansion 
 
-- **Expandable Pattern Capacity**
-  - Starts with 72 (8x9) pattern slots.
-  - Right-click with a Crazy Upgrade item to add +9 more slots.
-  - There is no limit, you can make a provider holding 9999 patterns.
+Using a Crazy Upgrade on the provider adds one row of pattern slots.
 
-- **Scrollable GUI**
-    - Display shows current pattern capacity.
-- **Hover text**
-    - Displays current capacity of the provider and how many patterns are already inside it.
+Each added row gives 9 more slots.
+
+The maximum number of upgrades can be limited by the config (default is unlimited).
+
 ---
 
-## How to Use
+## Saved size and contents
 
-1. **Place the Block**
-   - Acts like a standard AE2 Pattern Provider, connects to ME network.
+The provider keeps both its stored patterns and its expansion level when moved correctly.
 
-2. **Insert Encoded Patterns**
+Dismantling the block or removing the part with a wrench saves the pattern inventory and added rows into the dropped item.
 
-3. **Upgrade Slot Count**
-   - Use a Crazy Upgrade item on the block to increase pattern capacity.
-   - UI updates automatically.
+Placing it again restores the same size and contents.
+
+This is so when you have a provider with for example 400 patterns inside, you can move it without flooding your world with pattern items.
+
+---
+
+## Tooltip information
+
+Tooltip shows information about the saved inventory. This includes the current slot count and how full the provider is.
+
+---
