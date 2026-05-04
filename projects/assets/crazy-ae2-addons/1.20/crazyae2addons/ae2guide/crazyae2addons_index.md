@@ -22,22 +22,6 @@ Join the [Discord server](https://discord.com/invite/mWy8AVRtwz)
 
 ## Feature Index
 
---- 
-
-### Portable Spatial Tools
-
-Portable tools for copying, moving, previewing, and placing structures directly
-in the world.
-
-- [Portable Spatial Storage](crazyguide/portable_spatial_devices.md)  
-  An item that cuts a rectangular block area from the world, stores it, and
-  places it elsewhere with support for rotations, transformations and ghost preview.
-
-- [Portable Spatial Cloner](crazyguide/portable_spatial_devices.md)  
-  A variant of Portable Spatial Storage that copies structures without removing
-  the original. It can show required materials and craft missing items from its
-  GUI.
-
 ---
 
 ### Monitoring, Displays and Alerts
