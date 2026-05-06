@@ -1,10 +1,9 @@
-using Renci.SshNet;
+﻿using Renci.SshNet;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Octokit;
 
@@ -130,13 +129,12 @@ namespace Uploader
             await client.Repository.Release.Edit(repoId, release.Id, desc);
             Log.Information("<Autobuild> 更新 Release 简介：时间 {0}", timestamp);
 
-            var assets = release.Assets;
-            var lookup = assets.Select(_ => (_.Name, _)).ToDictionary();
+            var lookup = release.Assets.ToDictionary(r => r.Name, r => r);
             foreach (var (name, file) in files)
             {
                 using var fileStream = file.OpenRead();
 
-                if (lookup.TryGetValue(name, out ReleaseAsset? asset)) 
+                if (lookup.TryGetValue(name, out ReleaseAsset? asset))
                 {
                     await client.Repository.Release.DeleteAsset(repoId, asset.Id);
                     Log.Information("<Autobuild> 删除旧文件：{0}", name);
@@ -153,7 +151,7 @@ namespace Uploader
                     timeout: null);
                 await client.Repository.Release.UploadAsset(release, newAsset);
                 Log.Information("<Autobuild> 上传文件：{0}", name);
-                
+
             }
         }
 
@@ -168,9 +166,9 @@ namespace Uploader
             string CapitalizeGroup(string[] texts) => string.Join('-', texts.Select(_ => Capitalize(_)));
 
             // 将一段文本的首字母大写，其余不动
-            string Capitalize(string text) => string.Join("",
+            string Capitalize(string text)=>string.Concat(
                                                           text[0..1].ToUpper(),
                                                           text[1..]);
+            }
         }
     }
-}
