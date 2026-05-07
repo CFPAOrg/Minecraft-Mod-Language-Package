@@ -36,6 +36,7 @@ namespace Packer
                 let modIdentifier = modDirectory.Name
                 where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
+                where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
                 // .../<version>
                 let versionedDirectory = modDirectory.GetDirectories(config.Base.Version).FirstOrDefault(defaultValue: null)
                 where versionedDirectory is not null
