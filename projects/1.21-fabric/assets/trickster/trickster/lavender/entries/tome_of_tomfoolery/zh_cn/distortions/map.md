@@ -5,6 +5,7 @@
   "category": "trickster:distortions",
   "additional_search_terms": [
     "制图师之错觉",
+    "计量之曲变",
     "编表之谋略",
     "领航员之曲变",
     "海军将领之谋略",
@@ -20,6 +21,12 @@
 <|trick@trickster:templates|trick-id=trickster:map_create|>
 
 新建一个空映射。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:list_size|>
+
+返回映射中键值对的个数。
 
 ;;;;;
 

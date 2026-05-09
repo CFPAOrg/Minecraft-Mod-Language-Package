@@ -6,7 +6,7 @@
 }
 ```
 
-<|revision@trickster:templates|pattern=0\,4\,8\,7,title=延枝之修订|>
+<|revision@trickster:templates|revision-id=trickster:add_subcircle|>
 
 向任意圆添加一个新子圆。
 
@@ -18,7 +18,7 @@
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=0\,4\,8\,5,title=内环之修订|>
+<|revision@trickster:templates|revision-id=trickster:add_inner_circle|>
 
 向现有的圆添加一个内圆。内圆的功效与符记类似，激活条件也相同。参见[法术转离](^trickster:tricks/functions)。
 
@@ -44,7 +44,7 @@
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=3\,0\,4\,8,title=分枝之修订|>
+<|revision@trickster:templates|revision-id=trickster:to_subcircle|>
 
 将绘制处的圆换成新圆，原有的圆变成新圆的子圆。
 
@@ -56,7 +56,7 @@
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=1\,0\,4\,8,title=生长之修订|>
+<|revision@trickster:templates|revision-id=trickster:to_inner_circle|>
 
 将绘制处的圆作为内圆嵌入其他圆。
 
@@ -68,7 +68,7 @@
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=0\,4\,8,title=嫁接之修订|>
+<|revision@trickster:templates|revision-id=trickster:remove_self|>
 
 移除绘制处的圆。若有子圆，则将其替换为其第一子圆。
 
@@ -80,7 +80,7 @@
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=0\,4\,8\,5\,2\,1\,0\,3\,6\,7\,8,title=剪枝之修订|>
+<|revision@trickster:templates|revision-id=trickster:remove_self_recursive|>
 
 移除绘制处的圆及其子圆。
 
@@ -92,7 +92,7 @@
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=1\,2\,4\,6,title=登升之修订|>
+<|revision@trickster:templates|revision-id=trickster:remove_outer|>
 
 扩展绘制处的圆，以替换其外圆。
 
@@ -104,7 +104,7 @@
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=6\,3\,0\,4\,8,title=奉献之修订|>
+<|revision@trickster:templates|revision-id=trickster:add_outer_subcircle|>
 
 为外圆添加一个子圆。
 
@@ -116,54 +116,48 @@
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=1\,2\,5,title=旋移之修订|>
+<|revision@trickster:templates|revision-id=trickster:rotate_cw|>
 
 顺时针循环移动绘制处圆的子圆，以让最后一个子圆变为第一子圆。
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=1\,0\,3,title=反向旋移之修订|>
+<|revision@trickster:templates|revision-id=trickster:rotate_ccw|>
 
 功效与旋移之修订相反，会逆时针循环移动子圆。
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=2\,4\,3,title=对换之修订|>
+<|revision@trickster:templates|revision-id=trickster:swap|>
 
 交换第一子圆和第二子圆。
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=4\,0\,1\,4\,2\,1,title=记事员之修订|>
+<|revision@trickster:templates|revision-id=trickster:splice|>
 
 从施法者副手物品中读出法术，用其替换绘制处的圆。
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=1\,2\,4\,1\,0\,4\,7,title=内环记事员之修订|>
+<|revision@trickster:templates|revision-id=trickster:splice_inner|>
 
 从施法者副手物品中读出法术，将其加作绘制处圆的符记。
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=4\,3\,0\,4\,5\,2\,4\,1,title=宏伟之修订|>
-
-将绘制处圆的符记换为施法者副手物品中法术施放的结果。需持有[手镜](^trickster:items/writing_casting/mirror_of_evaluation)。
-
-;;;;;
-
-<|revision@trickster:templates|pattern=1\,4\,7\,6\,4\,8\,7,title=剽窃者之修订|>
+<|revision@trickster:templates|revision-id=trickster:write|>
 
 将绘制处的圆复制入施法者的副手物品。
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=1\,8\,6\,1,title=释义之修订|>
+<|revision@trickster:templates|revision-id=trickster:quote_pattern|>
 
 将绘制处圆中已有的图案变为图案字面量。
 
 ;;;;;
 
-<|revision@trickster:templates|pattern=1\,0\,4\,8\,7\,6\,4\,2\,1\,4,title=地址之修订|>
+<|revision@trickster:templates|revision-id=trickster:write_path|>
 
 将绘制处圆的[地址](^trickster:distortions/tree#2)写入另一只手中的物品。

@@ -37,6 +37,12 @@
 
 ;;;;;
 
+<|ploy@trickster:templates|trick-id=trickster:summon_wind_charge,cost=20G + 1G * 距离 ^ (距离 / 3)|>
+
+在给定位置召唤一个风弹，并返回其实体。需要消耗风弹。
+
+;;;;;
+
 <|ploy@trickster:templates|trick-id=trickster:summon_tnt,cost=20G + 1G * 距离 ^ (距离 / 3)|>
 
 在给定位置召唤一个激活的TNT，并返回其实体。需要消耗TNT。
