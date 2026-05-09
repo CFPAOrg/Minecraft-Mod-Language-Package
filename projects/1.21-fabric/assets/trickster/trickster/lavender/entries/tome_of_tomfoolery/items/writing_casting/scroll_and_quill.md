@@ -33,17 +33,17 @@ This lets you give it a custom name for free, but it cannot be written to anymor
 
 ;;;;;
 
-However, signed scrolls can be charged with one to eight vials of spell ink, 
+However, signed scrolls can be charged with one to eight vials of Esoteric Mana, 
 a special concoction that imbues scrolls with a single-use pool of mana.
 
 
-Scrolls that have been imbued with mana can have their contained spell cast at no risk to the user, 
+Scrolls that have been imbued with mana can have their contained spell cast at no cost to the user, 
 however, doing so consumes the scroll. 
 
 ;;;;;
 
-Single-use scrolls have an internal buffer of mana with a capacity equivalent to the amount of spell ink used in their making, times 100.
+Single-use scrolls have an internal buffer of mana with a capacity equivalent to the amount of Esoteric Mana used in their making, times 100.
 
-<recipe;trickster:spell_ink>
+<recipe;trickster:esoteric_mana>
 
 Do Not Consume!

@@ -5,6 +5,7 @@
   "category": "trickster:distortions",
   "additional_search_terms": [
     "Cartographer's Delusion",
+    "Tally Distortion",
     "Charting Stratagem",
     "Navigator's Distortion",
     "Admiral's Stratagem",
@@ -22,6 +23,12 @@ similarly to how a dictionary associates a word with a definition.
 <|trick@trickster:templates|trick-id=trickster:map_create|>
 
 Creates a new empty map.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:list_size|>
+
+Returns the amount of entries in the given map.
 
 ;;;;;
 

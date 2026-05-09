@@ -42,6 +42,13 @@ Requires a bottle of dragon's breath and a fire charge.
 
 ;;;;;
 
+<|ploy@trickster:templates|trick-id=trickster:summon_wind_charge,cost=20G + 1G * distance ^ (distance / 3)|>
+
+Summons a wind charge at the given position, returning it.
+Requires a wind charge.
+
+;;;;;
+
 <|ploy@trickster:templates|trick-id=trickster:summon_tnt,cost=20G + 1G * distance ^ (distance / 3)|>
 
 Summons lit TNT at the given position, returning it.
