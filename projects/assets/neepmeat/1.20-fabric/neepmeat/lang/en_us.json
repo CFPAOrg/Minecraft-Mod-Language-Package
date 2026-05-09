@@ -601,6 +601,9 @@
   "block.neepmeat.redstone_interface": "PLC Redstone Interface",
   "block.neepmeat.robotic_arm": "PLC Robotic Arm",
   "block.neepmeat.robotic_arm.lore_0": "A PLC actuator that can operate at high speed when given enough power.",
+  "block.neepmeat.builder": "Builder",
+  "block.neepmeat.builder.lore_0": "A robot that can place and break blocks, controllable by a PLC.\nResources and harvested items are stored in the base station.",
+  "screen.neepmeat.builder.pattern.tooltip": "Pattern used to match blocks. If outlined in orange, the pattern is selected instead of a slot.\nUse the SELITEM instruction to set a pattern. Use the SELSLOT instruction to select a slot.",
   "block.neepmeat.implanter": "Implanter",
   "block.neepmeat.implanter.lore_0": "Installs implants into entities. Can be controlled manually or via a PLC with the ROBOT instruction.\n§eSome implants cannot be installed manually and require PLC control.",
   "block.neepmeat.implanter.no_implant": "NO IMPLANT",
@@ -686,7 +689,6 @@
   "item.neepmeat.whisper_wheat_seeds": "Whisper Wheat Seeds",
   "item.neepmeat.whisper_wheat": "Whisper Wheat",
   "item.neepmeat.whisper_flour": "Whisper Flour",
-  "item.neepmeat.whisper_flour.lore_0": "Its grains hold terrible secrets of the cosmos.",
 
   "block.neepmeat.flesh_potato": "Gland Potato",
   "item.neepmeat.flesh_potato": "Gland Potato",
@@ -982,6 +984,7 @@
   "item.neepmeat.drill_complexity_upgrade": "Drill Complexity Upgrade",
   "implant.neepmeat.complexity_upgrade_1": "Drill Complexity Upgrade",
   "implant.neepmeat.complexity_upgrade_1.desc_0": "Applicable to the Drill Chassis. Increases maximum module complexity to 20.",
+  "implant.neepmeat.drill_complexity_upgrade.desc_0": "Applicable to the Drill Chassis. Increases maximum module complexity to 20.",
 
   "item.neepmeat.chrysalis": "Divine Chrysalis",
   "item.neepmeat.chrysalis.lore_0": "Something tells you that surgically implanting this into a cow with a PLC would be a really good idea.",
@@ -1059,10 +1062,17 @@
   "instruction.neepmeat.neepbus_read.desc": "Reads the value of a device with the specified address in a connected NEEPBus network.\n §6ARG1§f: target address (string)",
   "instruction.neepmeat.route.desc": "Uses a Pipe Driver (currently selected actuator) to request the item with the given name. \nThe item is routed from a given §6pipe§f and §6input direction§f to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the operation is pushed to the stack.\n §6ARG1§f: input pipe (world target)\n §6ARG2§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
   "instruction.neepmeat.request.desc": "Uses a Pipe Driver (currently selected as the actuator) to request the item with the given name. \nThe item is routed through a pipe network to the specified §6pipe§f and §6output direction§f. The desired count is read from the stack and the success of the request is pushed to the stack.\n §6ARG1§f: output pipe (world target)\n §6ARG2§f item ID (string, * for wildcard)",
-  "instruction.neepmeat.count.desc": "Counts the items or fluid at the given world target and pushes the result to the stack.\nThe type of resource to count is optionally specified in the second argument.\nIf an ID is provided, only items/fluids that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: inventory (world target)§6\n §6ARG2§f: type to count (ITEM or FLUID, optional)\n §6ARG3§f: item or fluid ID (string, optional)",
+  "instruction.neepmeat.count.desc": "§6( -- count )§f\n§6( pattern -- count )§fCounts the items or fluid at the given world target and pushes the result to the stack.\nThe type of resource to count is optionally specified in the second argument.\nIf an ID is provided, only items/fluids that match it will be counted. IDs can use * to represent any combination of characters (*:water or minecraft:*).\n §6ARG1§f: inventory (world target)§6\n §6ARG2§f: type to count (ITEM or FLUID, optional)\n §6ARG3§f: item or fluid ID (string, optional)",
   "instruction.neepmeat.stock.desc": "Uses a Pipe Driver (currently selected actuator) to count counts all matching items in accessible inventories (connected to Storage Drivers). The result is pushed to the stack.\nIf an ID is provided, only items that match it will be counted. IDs can use * to represent any combination of characters (minecraft:* or :stone).\n §6ARG1§f: item ID (string, optional)",
-  "instruction.neepmeat.nbwrite.desc": "§6( s1 addr -- n2 )§f\nSends second to last stack element over a data cable network to all ports matching the given NEEPBus address.\nThe NEEPBus address and data will be read from the stack\n §6\"the data\" \"the address\" .NBWRITE",
+  "instruction.neepmeat.nbwrite.desc": "§6( string addr -- n2 )§f\nSends second to last stack element over a data cable network to all ports matching the given NEEPBus address.\nThe NEEPBus address and data will be read from the stack\n §6\"the data\" \"the address\" .NBWRITE",
   "instruction.neepmeat.nbread.desc": "§6( addr -- n1 )§f\nReads the value of a port matching the given address over a data cable network. The address is read from the stack. The result is put on the stack.\n §6\"address_to_read\" .NBREAD §f",
+
+  "instruction.neepmeat.bbreak.desc": "§6( pos -- success )§f\nRequires a Builder as the active actuator\nTries to break the block at the world target read from the stack. Returns whether the block was successfully broken. \nDropped items will go into the Builder's inventory.",
+  "instruction.neepmeat.bplace.desc": "§6( pos -- success )§f\nRequires a Builder as the active actuator\nTries to place the item in the Builder's selected slot at the world target read from the stack. Returns whether the block was successfully placed.",
+  "instruction.neepmeat.selslot.desc": "§6( slot -- )§f\nRequires a Builder as the active actuator.\nReads an integer from the stack and sets the builder's selected slot (the one that it will build with) to that value.",
+  "instruction.neepmeat.selitem.desc": "§6( -- )§f\n§6( pattern -- )§f\nRequires a Builder as the active actuator.\nTells the builder to select all items whose IDs match the given pattern, instead of a specific slot.\nIf _ is given instead of a string, the pattern will be read from the stack.\n §6ARG1§f: pattern (string, _ allowed)",
+  "instruction.neepmeat.findslot.desc": "§6( -- slot )§f\n§6( pattern -- slot )§f (if no pattern given)\nSearches for an item matching the given string in the inventory at the top world position on the stack.\nIf - is used instead of a string, a string will be read from the stack.\n §6ARG1§f: pattern (string, _ allowed)",
+  "instruction.neepmeat.area3.desc": "§6( addr pos1 pos2 -- )§f\nCalls the code at the given execution address (§6addr§f) for each block in a 3D cuboid defined by two corner positions (§6pos1§f and §6pos2§f).\nThe first parameter is the address of a word, which is assumed to consume a world target. The second and third arguments are the corner positions of the area.\nIf the Y coordinate of §6pos1§f is lower than that of §6pos2§f, the generated positions will progress downwards. If it is higher, the generated positions will progress upwards. \nThe code at the supplied address must §6consume a world target§f and §6leave nothing else on the stack§f. \nExample:\n§6:noname .bbreak ; drop ; @(0 2 0) @(10 2 10) area3§f\nFirst, a §6noname word§f is defined that breaks a block at the position on the top of the stack. AREA3 then §6calls§f the noname word for each position between the coordinates (0, 2, 0) and (10, 2, 10).",
 
   "category.neepmeat.instruction.arithmetic": "Arithmetic",
   "category.neepmeat.instruction.comparison": "Comparison",
@@ -1072,6 +1082,7 @@
   "category.neepmeat.instruction.redstone": "Redstone",
   "category.neepmeat.instruction.neepbus": "NEEPBus",
   "category.neepmeat.instruction.routing": "Routing",
+  "category.neepmeat.instruction.block": "Blocks",
   "category.neepmeat.instruction.misc": "Misc",
 
   "container.neepmeat.workstation": "Persistent Crafting Table",
