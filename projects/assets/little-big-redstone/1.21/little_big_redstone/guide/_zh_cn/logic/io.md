@@ -12,6 +12,11 @@ item_ids:
 
 # I/O端口
 
+<FloatingColumn width="100" align="right">
+	### 模拟
+	I/O端口所输出信号的值与输入信号的相等。
+</FloatingColumn>
+
 <RecipeFor id="io" />
 
 I/O端口是对电路传入和读取红石信号的途径。将I/O端口放入电路后，微芯片的对应面即会变为红石面，可借此输入输出红石信号。

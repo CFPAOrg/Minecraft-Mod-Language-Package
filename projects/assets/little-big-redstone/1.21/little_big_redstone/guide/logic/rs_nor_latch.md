@@ -3,7 +3,7 @@ navigation:
   title: "RS NOR Latch"
   icon: "rs_nor_latch"
   parent: little_big_redstone:logic.md
-  position: 24
+  position: 25
 categories:
   - logic
 item_ids:
@@ -13,6 +13,9 @@ item_ids:
 # RS NOR Latch
 
 <FloatingColumn width="100" align="right">
+	### Analog
+	RS NOR Latches yield an output signal value equal to the input signal value that set it to ON.
+
 	### Truth Table
 	<TruthTable inputs="2" outputs="1">
 		<TruthState input="0,0" output="0" />

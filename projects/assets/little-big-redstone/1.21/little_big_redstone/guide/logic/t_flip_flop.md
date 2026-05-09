@@ -3,7 +3,7 @@ navigation:
   title: "T Flip-Flop"
   icon: "t_flip_flop"
   parent: little_big_redstone:logic.md
-  position: 23
+  position: 24
 categories:
   - logic
 item_ids:
@@ -11,6 +11,11 @@ item_ids:
 ---
 
 # T Flip-Flop
+
+<FloatingColumn width="100" align="right">
+	### Analog
+	T Flip-Flops yield an output signal value equal to the input signal value that set it to ON.
+</FloatingColumn>
 
 <Row>
 	<Column>

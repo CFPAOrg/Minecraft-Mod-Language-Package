@@ -12,6 +12,12 @@ item_ids:
 
 # Selector
 
+<FloatingColumn width="100" align="right">
+	### Analog
+	Selectors yield an output signal value equal to the input signal value. In the case of using Counter mode, the
+	highest signal strength between the increment and decrement inputs is used for the output signal strength.
+</FloatingColumn>
+
 <RecipeFor id="selector" />
 
 The selector can have anywhere from 2 to 10 outputs, and only one of the outputs will be ON at any given time. There

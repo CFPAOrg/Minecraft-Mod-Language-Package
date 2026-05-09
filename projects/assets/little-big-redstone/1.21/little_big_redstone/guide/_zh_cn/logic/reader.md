@@ -12,6 +12,11 @@ item_ids:
 
 # 读取器
 
+<FloatingColumn width="100" align="right">
+	### 布尔
+	只会输出0（OFF）或1（ON）。
+</FloatingColumn>
+
 <RecipeFor id="reader" />
 
 读取器是一种逻辑元件。它不会接收来自电路内部的信号，而是会根据相邻容器方块的填充程度输出信号，读取的方向可配置。

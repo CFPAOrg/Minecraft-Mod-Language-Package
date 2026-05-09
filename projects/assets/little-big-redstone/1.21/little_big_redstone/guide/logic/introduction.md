@@ -14,8 +14,12 @@ navigation:
 
 Logic components, or what are also sometimes referred to as logic gates, are what drives your circuit. All logic 
 components will either have input or output ports. These ports are how you pass and modify signals to get the results
-that you want. Logic components behave purely on a boolean basis - meaning that signals may either have a value of
-off (0) or on (1).
+that you want. Logic components behave on an analog basis, similar to redstone dust - meaning that signals may be any
+value ranging from 0 (off) to 15. Values of 1 and above are considered on. Some logic components will simply pass the
+signal value through it. For example, passing an input value of 10 into a component will yield a value of 10 for the
+output, given that the output is on. There are exceptions to this behavior, and is denoted on the guide page for each
+respective logic component. As a general rule, logic gates (AND, OR, etc.) do not pass signal strength through to
+their output.
 
 <br />
 

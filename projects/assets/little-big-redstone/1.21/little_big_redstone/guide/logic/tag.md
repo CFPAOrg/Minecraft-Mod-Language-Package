@@ -12,6 +12,12 @@ item_ids:
 
 # Tag
 
+<FloatingColumn width="100" align="right">
+	### Analog
+	Tags yield an output signal value equal to the input signal value. In the case of multiple inputs (such as with a
+	threshold > 1), the highest signal value is used.
+</FloatingColumn>
+
 <RecipeFor id="tag" />
 
 Tags allow you to wirelessly send signals between circuits. Tags have two modes, sensor and emitter. Sensors are how

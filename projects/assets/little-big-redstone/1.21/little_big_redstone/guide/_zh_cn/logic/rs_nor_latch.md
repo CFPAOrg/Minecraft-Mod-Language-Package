@@ -3,7 +3,7 @@ navigation:
   title: "RS或非锁存器"
   icon: "rs_nor_latch"
   parent: little_big_redstone:logic.md
-  position: 24
+  position: 25
 categories:
   - logic
 item_ids:
@@ -13,6 +13,9 @@ item_ids:
 # RS或非锁存器
 
 <FloatingColumn width="100" align="right">
+	### 模拟
+	RS或非锁存器会取将其设为ON的输入信号的值用作输出。
+
 	### 真值表
 	<TruthTable inputs="2" outputs="1">
 		<TruthState input="0,0" output="0" />

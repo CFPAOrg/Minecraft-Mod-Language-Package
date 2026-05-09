@@ -3,7 +3,7 @@ navigation:
   title: "T触发器"
   icon: "t_flip_flop"
   parent: little_big_redstone:logic.md
-  position: 23
+  position: 24
 categories:
   - logic
 item_ids:
@@ -11,6 +11,11 @@ item_ids:
 ---
 
 # T触发器
+
+<FloatingColumn width="100" align="right">
+	### 模拟
+	T触发器会取将其设为ON的输入信号的值用作输出。
+</FloatingColumn>
 
 <Row>
 	<Column>

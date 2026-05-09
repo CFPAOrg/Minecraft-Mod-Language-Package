@@ -12,6 +12,11 @@ item_ids:
 
 # Reader
 
+<FloatingColumn width="100" align="right">
+	### Boolean
+	Readers will only ever yield an output value of 0 (OFF) or 1 (ON).
+</FloatingColumn>
+
 <RecipeFor id="reader" />
 
 The reader is a logic component that has no input inside of the circuit. Instead, the reader will output a signal based
@@ -47,7 +52,7 @@ Below is an example of a reader being used to light up a redstone lamp when the 
 				<Logic name="reader" x="0" y="0" type="reader" data="{config:{direction:'west'}}" />
 				<Logic name="output" x="32" y="0" type="io" data="{config:{direction:'east',input:false,signal_strength:15}}" />
 	
-				<Wire from="reader" fromPort="0" to="output" toPort="0" powered={true} />
+				<Wire from="reader" fromPort="0" to="output" toPort="0" powered="1" />
 			</MicrochipScene>
 		</Column>
 	</Row>
