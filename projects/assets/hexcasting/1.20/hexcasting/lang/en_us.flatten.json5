@@ -265,6 +265,15 @@
   "gui.hexcasting": {
     spellcasting: "Hex Grid",
   },
+
+  "category.hexcasting": {
+    "binds": "Hex Casting",
+  },
+
+  "key.hexcasting": {
+    "spellbook_prev": "Previous Spellbook Page",
+    "spellbook_next": "Next Spellbook Page",
+  },
   
   "tag.hexcasting": {
     staves: "Hex Staves",
@@ -335,13 +344,17 @@
           "": "Ctrl Toggles Off Stroke Order",
           "@Tooltip": "Whether the ctrl key will instead turn *off* the color gradient on patterns",
         },
+        disableInworldScrolling: {
+          "": "Disable In-World Scrolling",
+          "@Tooltip": "Disable scrolling input for spellbooks and abaci in the normal world, keeping keybinds and staff screen scrolling normal"
+        },
         invertSpellbookScrollDirection: {
           "": "Invert Spellbook Scroll Direction",
           "@Tooltip": "Whether scrolling up (as opposed to down) will increase the page index of the spellbook, and vice versa",
         },
         invertAbacusScrollDirection: {
           "": "Invert Abacus Scroll Direction",
-          "@Tooltip": "Whether scrolling up (as opposed to down) will increase the page index of the abacus, and vice versa",
+          "@Tooltip": "Whether scrolling up (as opposed to down) will increase the value of the abacus, and vice versa",
         },
         gridSnapThreshold: {
           "": "Grid Snap Threshold",
@@ -354,6 +367,14 @@
         alwaysShowListCommas: {
           "": "Always Show List Commas",
           "@Tooltip": "Whether all iota types should be comma-separated when displayed in lists (by default, pattern iotas do not use commas)",
+        },
+        advancedTooltipsShowsIotaNBT: {
+          "": "Advanced Tooltips Shows Iota NBT",
+          "@Tooltip": "Whether enabling advanced tooltips (F3+H) should display the full NBT of iotas stored in items like foci and spellbooks",
+        },
+        staticActiveSlates: {
+          "": "Static Active Slates",
+          "@Tooltip": "Whether patterns on active slates should be rendered without wobble (improves performance with lots of active slates)",
         },
       },
       
@@ -710,6 +731,7 @@
             pi: "Arc's Reflection",
             tau: "Circle's Reflection",
             "e": "Euler's Reflection",
+            phi: "Harmony Reflection",
           },
         },
         
@@ -1028,7 +1050,6 @@
       eval_too_much: "Evaluated too many patterns",
       no_item: "needs %s but got nothing",
       "no_item.offhand": "needs %s in the other hand but got nothing",
-      "no_item.hotbar": "needs %s somewhere in the hotbar but got nothing",
       bad_entity: "needs %s but got %s",
       bad_brainsweep: "The %s rejected the being's mind",
       already_brainswept: "The mind has already been used",
@@ -1131,7 +1152,7 @@
       bad_item: {
         "": "needs %s but got %dx %s",
         offhand: "needs %s in the other hand but got %dx %s",
-        hotbar: "needs %s somewhere in the hotbar but got %dx %s",
+        hotbar: "needs %s somewhere in the hotbar",
         
         iota: {
           "": "a place to store iotas",
@@ -1845,6 +1866,7 @@
           tau: "Adds τ, the radial representation of a complete circle, to the stack.",
           pi: "Adds π, the radial representation of half a circle, to the stack.",
           "e": "Adds $(italic)e/$, the base of natural logarithms, to the stack.",
+          phi: "Adds φ, the golden ratio, to the stack. This is the ratio between two values such that (A+B)/A = A/B.",
         },
       },
       
@@ -2109,7 +2131,7 @@
       
       "teleport/great": {
         "1": "Far more powerful than $(l:patterns/spells/basic#hexcasting:blink)$(action)Blink/$, this spell lets me teleport an entity to anywhere in the entire world! No matter the distance, it always seems to cost about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
-        "2": "The provided vector is an offset, not an absolute position in the world; for example, if I use (1, 0, 0), the entity will end up precisely one block east of its original position.$(br2)Unfortunately, it seems that when teleporting myself, I'm unable to maintain a perfect focus. This can cause some of my items to splatter out of my inventory on arrival.$(br2)I should also note that the target will be forcibly removed from anything inanimate they are riding ... but I've read scraps that suggest animals can come along for the ride, so to speak.",
+        "2": "The provided vector is an offset, not an absolute position in the world; for example, if I use (1, 0, 0), the entity will end up precisely one block east of its original position.$(br2)Unfortunately, it seems that when teleporting myself, I'm unable to remain perfectly focused. This can cause some of my items to splatter out of my inventory on arrival.$(br2)I should also note that the target will be forcibly removed from anything inanimate they are riding ... but I've read scraps that suggest animals can come along for the ride, so to speak.",
       },
       
       zeniths: {
