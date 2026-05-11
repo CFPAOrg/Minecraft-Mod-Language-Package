@@ -397,7 +397,11 @@
         },
         circleActionDenyList: {
           "": "法术环禁用操作列表",
-          "@Tooltip": "法术环中被禁用操作的资源位置；试图执行此类操作会导致事故",
+          "@Tooltip": "法术环中被禁用操作的资源位置；试图执行此类操作会导致事故。例如，“hexcasting:get_caster”会禁用意识之精思。",
+        },
+        costRescaleListRaw: {
+          "": "消耗倍数",
+          "@Tooltip": "资源位置与对应操作媒质消耗倍数的映射。例如，“hexcasting:add_motion 3”会让驱动的消耗变为3倍。",
         },
         greaterTeleportSplatsItems: {
           "": "卓越传送散落物品",
@@ -2103,10 +2107,10 @@
         "2": "当然，也有其他种类的飞行法术。例如，将$(l:patterns/spells/basic#hexcasting:add_motion)$(action)驱动/$和$(l:patterns/spells/nadirs#hexcasting:potion/levitation)$(action)蓝阳西沉/$结合使用的类飞行技术自古代起就多有运用。$(br2)我还听说过一种能给予滑翔能力的，可以穿在背上的薄透翼膜。研究表明，被称为“$(l:patterns/great_spells/altiora)$(action)翱翔/$”的卓越法术也许能模仿这种翼膜的功用。",
 
         "range.1": "受范围限制的飞行法术。",
-        "range.2": "第二参数代表水平方向上的半径（以米计），在此范围内，法术能保持稳定。走出该范围就会结束该法术，滞空的物体会直接坠向地面。但只要一直待在这个范围内，法术的效果便会无限持续。此法术还会额外产生微量$(media)媒质/$用以标记安全区域中心点。$(br2)每米安全范围消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+        "range.2": "第二参数代表水平方向上的半径（以米计），在此范围内，法术能保持稳定。走出该范围就会结束该法术，滞空的物体会直接坠向地面。但只要一直待在这个范围内，法术的效果便会无限持续。此法术还会额外产生微量$(media)媒质/$用以标记安全区域中心点。$(br2)每米安全范围消耗大约 2 个$(l:items/amethyst)$(item)紫水晶粉/$，即便范围半径小于 1 米也仍会消耗 2 个$(l:items/amethyst)$(item)紫水晶粉/$。",
 
         "time.1": "受时间限制的飞行法术。",
-        "time.2": "第二参数代表持续时间（以秒计），在此限制内，法术能保持稳定。持续时间超过限制就会结束该法术，滞空的物体会直接坠向地面。$(br2)此法术相对较昂贵，每秒持续时间消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。我觉得它极其适合长途旅行。",
+        "time.2": "第二参数代表持续时间（以秒计），在此限制内，法术能保持稳定。持续时间超过限制就会结束该法术，滞空的物体会直接坠向地面。$(br2)每秒持续时间消耗大约 2 个$(l:items/amethyst)$(item)紫水晶粉/$。我觉得它极其适合长途旅行。",
 
         // Putting this in this category instead of elsewhere -- see sentinel chapter also containing some reflections/nonspells
         "can_fly.1": "检查玩家是否处于$(l:patterns/spells/flight#hexcasting:flight/range)隐士之飞行/$或$(l:patterns/spells/flight#hexcasting:flight/time)旅者之飞行/$的影响之下。",
