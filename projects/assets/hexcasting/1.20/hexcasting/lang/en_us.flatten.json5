@@ -393,11 +393,15 @@
         },
         actionDenyList: {
           "": "Action Deny List",
-          "@Tooltip": "Resource locations of disallowed actions. Trying to cast one of these will result in a mishap. For example, hexcasting:get_caster will prevent Mind's Reflection",
+          "@Tooltip": "Resource locations of disallowed actions. Trying to cast one of these will result in a mishap. For example, hexcasting:get_caster will prevent Mind's Reflection.",
         },
         circleActionDenyList: {
           "": "Circle Action Deny List",
-          "@Tooltip": "Resource locations of disallowed actions within circles. Trying to cast one of these from a circle will result in a mishap.",
+          "@Tooltip": "Resource locations of disallowed actions within circles. Trying to cast one of these from a circle will result in a mishap. For example, hexcasting:get_caster will prevent Mind's Reflection.",
+        },
+        costRescaleListRaw: {
+          "": "Cost Scaling Factors",
+          "@Tooltip": "Maps resource locations to the scaling factor for that action's media cost. For example, hexcasting:add_motion 3 will make Impulse cost 3x as much.",
         },
         greaterTeleportSplatsItems: {
           "": "Greater Teleport Splats Items",
@@ -2103,10 +2107,10 @@
         "2": "Other forms of flight do exist, of course. For example, a combination of $(l:patterns/spells/basic#hexcasting:add_motion)$(action)Impulse/$ and $(l:patterns/spells/nadirs#hexcasting:potion/levitation)$(action)Blue Sun's Nadir/$ has been used since antiquity for a flight of sorts.$(br2)I've also heard tell of a thin membrane worn on the back that allows the ability to glide. From my research, I believe the Great spell $(l:patterns/great_spells/altiora)$(action)Altiora/$ may be used to mimic it.",
         
         "range.1": "A flight limited in its range.",
-        "range.2": "The second argument is a horizontal radius, in meters, in which the spell is stable. Moving outside of that radius will end the spell, dropping me out of the sky. As long as I stay inside the safe zone, however, the spell lasts indefinitely. An additional shimmer of _media marks the origin point of the safe zone. $(br2)Costs about 1 $(l:items/amethyst)$(item)Amethyst Dust/$ per meter of safety.",
+        "range.2": "The second argument is a horizontal radius, in meters, in which the spell is stable. Moving outside of that radius will end the spell, dropping me out of the sky. As long as I stay inside the safe zone, however, the spell lasts indefinitely. An additional shimmer of _media marks the origin point of the safe zone. $(br2)Costs about 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per meter of safety, though any radius less than 1 meter will still cost 2 $(l:items/amethyst)$(item)Amethyst Dust/$.",
         
         "time.1": "A flight limited in its duration.",
-        "time.2": "The second argument is an amount of time in seconds for which the spell is stable. After that time, the spell ends and I am dropped from the sky. $(br2)It is relatively expensive at about 1 $(l:items/amethyst)$(item)Amethyst Shard/$ per second of flight; I believe it is best suited for travel.",
+        "time.2": "The second argument is an amount of time in seconds for which the spell is stable. After that time, the spell ends and I am dropped from the sky. $(br2)Costs about 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per second of flight; I believe it is best suited for travel.",
         
         // Putting this in this category instead of elsewhere -- see sentinel chapter also containing some reflections/nonspells
         "can_fly.1": "Returns whether the given player is under the effects of $(l:patterns/spells/flight#hexcasting:flight/range)Anchorite's/$ or $(l:patterns/spells/flight#hexcasting:flight/time)Wayfarer's Flight/$.",
