@@ -1,1 +1,0 @@
-[见主文档](/projects/1.21/assets/vanity-colossal-weapons/vanity_colossal_weapons)

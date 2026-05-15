@@ -63,7 +63,7 @@ namespace Packer.Extensions
         /// </summary>
         internal static EvaluatorReturnType EnumerateRawProviders(this DirectoryInfo namespaceDirectory, Config config)
             => from policy in ConfigHelpers.RetrievePolicy(namespaceDirectory)
-               from enumeratedPair in evaluatorPolicyMap[policy.Type].Invoke(
+               from enumeratedPair in evaluatorPolicyMap[policy.Type](
                    namespaceDirectory, config, policy.Parameters)
                select enumeratedPair;
 

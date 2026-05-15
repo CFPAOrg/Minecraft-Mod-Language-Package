@@ -1,0 +1,34 @@
+### 总概
+
+```mermaid
+flowchart LR
+    1.21.1 -->|indirect| 1.21.1-fabric
+    1.20.1 -->|indirect| 1.20.1-fabric
+    1.19.2/1.19.2-fabric
+    1.18.2 -->|indirect| 1.18.2-fabric
+    1.21.1 -->|indirect| 1.20.1 & 1.19.2/1.19.2-fabric & 1.18.2 & 1.16.5
+    1.21.1-fabric -->|singleton| 1.20.1-fabric & 1.19.2/1.19.2-fabric & 1.18.2-fabric
+    linkStyle 7,8,9 stroke:crimson,color:crimson
+```
+
+```
+1.21.1
+ ├── 1.21.1-fabric (singleton)
+ ├── 1.20.1
+ │    └── 1.20.1-fabric (singleton)
+ ├── 1.19.2/1.19.2-fabric (singleton)
+ ├── 1.18.2
+ │    └── 1.18.2-fabric (singleton)
+ └── 1.16.5
+```
+
+### 链接区域
+
+- [1.16.5](/projects/assets/macaws-lights-and-lamps/1.16/mcwlights)
+- [1.18.2](/projects/assets/macaws-lights-and-lamps/1.18/mcwlights)
+- [1.19.2](/projects/assets/macaws-lights-and-lamps/1.19/mcwlights)
+- [1.20.1](/projects/assets/macaws-lights-and-lamps/1.20/mcwlights)
+- [1.21.1](/projects/assets/macaws-lights-and-lamps/1.21/mcwlights)
+- [1.18.2-fabric](/projects/assets/macaws-lights-and-lamps/1.18-fabric/mcwlights)
+- [1.20.1-fabric](/projects/assets/macaws-lights-and-lamps/1.20-fabric/mcwlights)
+- [1.21.1-fabric](/projects/assets/macaws-lights-and-lamps/1.21-fabric/mcwlights)
