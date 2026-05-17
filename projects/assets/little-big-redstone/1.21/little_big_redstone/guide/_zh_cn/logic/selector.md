@@ -15,6 +15,8 @@ item_ids:
 <FloatingColumn width="100" align="right">
 	### 模拟
 	选择器所输出信号的值与输入信号的相等。若选择器处于计数器模式，则取递增和递减信号中较大者的值用作输出。
+	
+	若未处于直通模式，输出信号的强度则会与序号相等（从1开始）。例如，第一个输出的强度为1，第二个为2，第三个为3，以此类推。
 </FloatingColumn>
 
 <RecipeFor id="selector" />

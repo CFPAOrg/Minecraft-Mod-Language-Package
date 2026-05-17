@@ -13,8 +13,8 @@ item_ids:
 # 与门
 
 <FloatingColumn width="100" align="right">
-	### 布尔
-	只会输出0（OFF）或1（ON）。
+	### 模拟
+	与门会取各输入中值最大者作为输出值。
 
 	### 真值表
 	<TruthTable inputs="2">

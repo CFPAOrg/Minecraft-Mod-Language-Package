@@ -18,8 +18,7 @@ that you want. Logic components behave on an analog basis, similar to redstone d
 value ranging from 0 (off) to 15. Values of 1 and above are considered on. Some logic components will simply pass the
 signal value through it. For example, passing an input value of 10 into a component will yield a value of 10 for the
 output, given that the output is on. There are exceptions to this behavior, and is denoted on the guide page for each
-respective logic component. As a general rule, logic gates (AND, OR, etc.) do not pass signal strength through to
-their output.
+respective logic component.
 
 <br />
 

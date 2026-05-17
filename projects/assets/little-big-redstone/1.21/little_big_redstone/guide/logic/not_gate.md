@@ -14,7 +14,7 @@ item_ids:
 
 <FloatingColumn width="100" align="right">
 	### Boolean
-	Gates will only ever yield an output value of 0 (OFF) or 1 (ON).
+	NOT Gates will only ever yield an output value of 0 (OFF) or 1 (ON).
 
 	### Truth Table
 	<TruthTable>

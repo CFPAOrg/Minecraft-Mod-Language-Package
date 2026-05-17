@@ -13,8 +13,8 @@ item_ids:
 # OR Gate
 
 <FloatingColumn width="100" align="right">
-	### Boolean
-	Gates will only ever yield an output value of 0 (OFF) or 1 (ON).
+	### Analog
+	OR Gates will yield an output signal equal to the greatest input signal.
 
 	### Truth Table
 	<TruthTable inputs="2" outputs="1">
