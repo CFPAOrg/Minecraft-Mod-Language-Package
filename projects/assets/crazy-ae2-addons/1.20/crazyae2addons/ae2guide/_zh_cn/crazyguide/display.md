@@ -138,12 +138,3 @@ Shift+右击可仅编辑所选的显示屏部件。
 | &i^item:minecraft:diamond 钻石  | &s^minecraft:diamond    |
 | &i^item:minecraft:iron_ingot 铁 | &s^minecraft:iron_ingot |
 | &i^fluid:minecraft:lava 熔岩    | &s^fluid:minecraft:lava |
-
----
-
-## 提示
-
-- 优先使用组件符构造器，不推荐手动打出。
-- 状态仪表大屏需启用合并模式。
-- 如只需编辑一块显示屏，应使用Shift+右键。
-- 实时值如显示0，需检查该显示屏是否有频道可用。

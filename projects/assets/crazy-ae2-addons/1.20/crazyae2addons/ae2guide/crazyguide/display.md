@@ -149,12 +149,3 @@ Copper/min: &d^minecraft:copper_ingot%1m@5m
 | &i^item:minecraft:diamond Diamond | &s^minecraft:diamond    |
 | &i^item:minecraft:iron_ingot Iron | &s^minecraft:iron_ingot |
 | &i^fluid:minecraft:lava Lava      | &s^fluid:minecraft:lava |
-
----
-
-## Tips
-
-- Use the token builder instead of typing long tokens by hand.
-- Use Merge Mode for large status screens.
-- Use Shift + right-click when you only want to edit one Display.
-- If live values show 0, check that the Display has a network channel.
