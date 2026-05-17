@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/1.20/modrinth-hexdentity/hexdentity)

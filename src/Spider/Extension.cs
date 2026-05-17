@@ -227,12 +227,12 @@
 //                        foreach (var domain in info.Domain) {
 //                            var fullName = zipArchiveEntry.FullName;
 //                            if (fullName.Contains($"assets/{domain}/lang/")) {
-//                                Directory.CreateDirectory($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/");
-//                                if (File.Exists($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}")) {
-//                                    File.Delete($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}");
+//                                Directory.CreateDirectory($"./projects/assets/{info.ProjectName}/{version}/{domain}/lang/");
+//                                if (File.Exists($"./projects/assets/{info.ProjectName}/{version}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}")) {
+//                                    File.Delete($"./projects/assets/{info.ProjectName}/{version}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}");
 //                                }
 //                                Log.Logger.Information($"解压：{zipArchiveEntry.FullName}");
-//                                zipArchiveEntry.ExtractToFile($"./projects/{version}/assets/{info.ProjectName}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}");
+//                                zipArchiveEntry.ExtractToFile($"./projects/assets/{info.ProjectName}/{version}/{domain}/lang/{zipArchiveEntry.Name.ToLower()}");
 //                            }
 //                        }
 //                    }

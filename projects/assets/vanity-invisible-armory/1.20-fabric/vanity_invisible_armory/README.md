@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity-invisible-armory/1.20/vanity_invisible_armory)
