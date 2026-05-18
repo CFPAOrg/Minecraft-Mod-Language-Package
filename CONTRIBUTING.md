@@ -52,10 +52,8 @@ Minecraft-Mod-Language-Package
   │  ├─packer-example ----- // Packer 配置示例，展示打包策略的用法
   │  └─templates ---------- // 资源包模板文件（pack.mcmeta、pack.png 等）
   └─src --------------- // 各种自动化工具的源码
-    ├─Formatter ------- // 格式化工具，曾用于统一翻译文件格式
     ├─Language.Core 
     ├─Packer ---------- // 打包器，用于自动生成资源包文件并发布 Release
-    ├─Spider ---------- // 爬虫，曾用于爬取热门模组的语言文件供翻译
     └─Uploader -------- // 上传器，用于将资源包文件上传到文件分发服务器
 ```
 
