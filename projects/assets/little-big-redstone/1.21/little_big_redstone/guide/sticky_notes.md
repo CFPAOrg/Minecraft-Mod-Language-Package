@@ -101,17 +101,50 @@ contents and colors when broken and placed.
 
 Text lines will only appear on the sticky notes in-world when text is written on them.
 
+Sticky notes can be sealed using Honeycomb, much like signs. A sealed sticky note can no longer be edited. This can be
+done either through crafting a sticky note with a Honeycomb, or by using **<KeyBind id="key.sneak" />** and
+**<KeyBind id="key.use" />** on a sticky note placed in world with a Honeycomb.
+
 ### Markdown
 
 The text written on a sticky note supports basic markdown functionality:
 
 \**italics*\*, \*\***bold**\*\*, \_\_<Underlined>underline</Underlined>\_\_, and \~\~~strikethrough~\~\~
 
+Logic component symbols can be typed into sticky notes using placeholder formatting. Simply write the ID of the logic
+component you want to display surrounded by the less than and greater than signs. For example: \<io\> \<not_gate\>
+\<and_gate\>
+
+Bullet point lists can also be made by starting a line with a hyphen (\-) or asterisk (\*) followed by a space. You may
+have as many spaces as you want at the start of the line to create indented line items. Additionally, you can put check
+boxes by putting \[ \] or \[x\] after the space after the bullet point symbol. For example:
+
+\- A normal line item.
+
+\- \[ \] An unchecked box item.
+
+\- \[x\] A checked box item.
+
 ### Coloring
 
-The text on sticky notes can be colored by pressing **<KeyBind id="key.use" />** with dye.
+The text on sticky notes can be colored by pressing **<KeyBind id="key.sneak" />** and **<KeyBind id="key.use" />**
+with dye.
 
 Similarly, you can use a water bucket or snowballs to clear the color from the logic component. Note that snowballs
 will be consumed, whereas water buckets will not.
 
 Text will appear colored both in-world and in the viewing/editing menu.
+
+### Item Display
+
+Items can be placed onto sticky notes using **<KeyBind id="key.use" />** in world. The item will display on the sticky
+note instead of text lines. The item will be tinted to match the color of the text for the sticky note, unless the text
+color is the default color for that color of note.
+
+### Note Board
+
+The note board is a menu where you can move where notes in-world will be shown on screen when looked at, as well as
+pinning notes you have made to your screen! Open the note board using the keybind "Open Note Board"
+(**<KeyBind id="key.little_big_redstone.open_note_board" />**). Sticky notes that are in your inventory can then be
+placed in the menu wherever you'd like. Pinned notes in the note board can also be edited using **Right Button**. Notes
+in the note board are saved per-world and per-player. Dying does not remove the notes out of the note board.
