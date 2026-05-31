@@ -4,6 +4,7 @@ using Packer.Models;
 using Packer.Models.Providers;
 using Serilog;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -29,19 +30,22 @@ namespace Packer
             var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version)
                 : Enumerable.Empty<string>();
 
-            var query = // 在这里加日志似乎开销太大了。暂时注释掉
-                from modDirectory in new DirectoryInfo($"./projects/{config.Base.Version}/assets")
-                                         .EnumerateDirectories()
+            var query =
+                // ./projects/assets/<projectSlug>...
+                from modDirectory in new DirectoryInfo("./projects/assets").EnumerateDirectories()
                 let modIdentifier = modDirectory.Name
-                                                //.LogToDebug("[Enumerable]当前模组：{0}")
                 where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
                 where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
-                from namespaceDirectory in modDirectory.EnumerateDirectories()
+                // .../<version>
+                let versionedDirectory = modDirectory.GetDirectories(config.Base.Version).FirstOrDefault(defaultValue: null)
+                where versionedDirectory is not null
+                // .../<namespace>-CFPA-<author>
+                from namespaceDirectory in versionedDirectory.EnumerateDirectories()
                 let namespaceName = namespaceDirectory.Name
                 where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
-                where namespaceName/*.LogToDebug("[Enumerable]当前命名空间：{0}")*/
-                                   .ValidateNamespace()                             // 不是非法名称
+                where namespaceName.ValidateNamespace()                             // 不是非法名称
+                // .../*
                 from provider in namespaceDirectory.EnumerateProviders(config)
                 group provider by provider.Destination into destinationGroup
                 select destinationGroup
@@ -62,18 +66,23 @@ namespace Packer
                                                 replacement.Key,
                                                 replacement.Value));
 
-            var initialsQuery = from file in new DirectoryInfo($"./projects/{config.Base.Version}")
-                                                 .EnumerateFiles()
-                                select (file.Name == "pack.mcmeta")
-                                    ? McMetaProvider.Create(file, file.Name) // 类型推断不出要用接口
-                                    : new RawFile(file, file.Name) as IResourceFileProvider;
+            IEnumerable<IResourceFileProvider> initialFiles = [
+                new RawFile(new FileInfo("./projects/templates/pack.png"), "pack.png"),
+                TextFile.Create(new FileInfo("./projects/templates/LICENSE"), "LICENSE"),
+                TextFile.CreateFromTemplate(new FileInfo(config.Base.ReadmeTemplate),
+                    "README.txt",
+                    config.Base.ReadmeParameters),
+                TextFile.CreateFromTemplate(new FileInfo(config.Base.McMetaTemplate),
+                    "pack.mcmeta",
+                    [DateTime.UtcNow.AddHours(8), .. config.Base.McMetaParameters])
+                ];
 
-            string packName = $"./Minecraft-Mod-Language-Package-{config.Base.Version}.zip";
+            string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";
             await using var stream = File.Create(packName);
 
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
             {
-                await Task.WhenAll(from provider in query.Concat(initialsQuery)
+                await Task.WhenAll(from provider in query.Concat(initialFiles)
                                    select provider.WriteToArchive(archive));
             }
 

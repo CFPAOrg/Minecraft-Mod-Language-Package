@@ -32,14 +32,15 @@ jobs:
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
-            Packer.exe
-            git2-*.dll
+            build/Packer.exe
+            build/git2-*.dll
           lookup-only: true
 
       # 构造程序
       - name: Build Packer if not cached
         if: steps.cache-packer.outputs.cache-hit != 'true'
-        run: dotnet publish .\src\Packer\Packer.csproj -o ./ -r win-x64 -p:PublishSingleFile=true
+        # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+        run: dotnet publish .\src\Packer\Packer.csproj -o ./build -r win-x64
 
 
   pack:
@@ -51,7 +52,7 @@ jobs:
       matrix:
         # 支持版本列表。将对这里的每个版本判断，按需打包。
         # 如需添加新版本，在这里添加即可。
-        version: ["1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric"]
+        version: ["1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric", "26.1", "26.1-fabric"]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
@@ -66,17 +67,23 @@ jobs:
         with:
           key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
           path: |
-            Packer.exe
-            git2-*.dll
+            build/Packer.exe
+            build/git2-*.dll
           fail-on-cache-miss: true # 前一步理应构造过的。如果不命中，肯定有问题，不如直接挂掉。
+      
+      # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+      - run: mv ./build/* .
+        shell: bash
 
       - name: Check changed path on ${{ matrix.version }}
         uses: MarceloPrado/has-changed-path@v1.0
         id: check-changes
         with:
-          # 判断位置：该版本文件、该版本配置、代码
+          # 判断位置：action配置、该版本文件、该版本配置、代码
           paths: > 
-            projects/${{ matrix.version }}/**
+            .github/workflows/pr-packer.yml
+            projects/assets/*/${{ matrix.version }}/**
+            projects/templates/**
             config/packer/${{ matrix.version }}.json
             src/**
 
@@ -84,8 +91,10 @@ jobs:
         uses: MarceloPrado/has-changed-path@v1.0
         id: check-critical-changes
         with:
-          # 判断位置：该版本配置、代码
+          # 判断位置：action配置、该版本配置、代码
           paths: > 
+            .github/workflows/pr-packer.yml
+            projects/templates/**
             config/packer/${{ matrix.version }}.json
             src/**
 
@@ -97,7 +106,7 @@ jobs:
 
       # 额 要两分半才能传完 然而 GitHub actions 直接传的话 会压成 zip 内套 zip 就这样了吧 --cy
       - name: Unzip Files
-        run: unzip -q Minecraft-Mod-Language-Package-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
+        run: unzip -q Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip -d Minecraft-Mod-Language-Package-${{ matrix.version }} || echo 0
         shell: bash
         if: steps.check-changes.outputs.changed == 'true' ||  github.event_name == 'workflow_dispatch'
           

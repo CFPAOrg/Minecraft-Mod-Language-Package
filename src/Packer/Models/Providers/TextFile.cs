@@ -39,6 +39,21 @@ namespace Packer.Models.Providers
         }
 
         /// <summary>
+        /// 从给定的<see cref="FileInfo"/>模板和参数构造提供器
+        /// </summary>
+        /// <param name="file">读取源</param>
+        /// <param name="destination">目标地址</param>
+        /// <param name="args">将提供给模板的参数</param>
+        public static TextFile CreateFromTemplate(FileInfo file, string destination, params object?[] args)
+        {
+            using var stream = file.OpenRead();
+            using var reader = new StreamReader(stream, Encoding.UTF8);
+            var template = reader.ReadToEnd();
+            var content = string.Format(template, args);
+            return new TextFile(content, destination);
+        }
+
+        /// <summary>
         /// 从给定的文本内容构造提供器
         /// </summary>
         /// <param name="content">来源文本</param>
