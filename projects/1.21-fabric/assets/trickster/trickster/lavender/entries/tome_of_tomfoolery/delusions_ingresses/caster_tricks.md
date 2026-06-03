@@ -7,7 +7,7 @@
     "Positioning Delusion",
     "Directional Delusion",
     "Reflection Delusion",
-    "Dimensional Delusion",
+    "Dimensional Ingress",
     "Authority Delusion",
     "Crowning Delusion",
     "Delusion of Order",
@@ -17,14 +17,14 @@
 }
 ```
 
-*"More often than not, casting a spell will start from the Self."*
+*"More often than not, casting a spell will start from the Self.*
 
 
-*"Whether it be a human caster, a construct, or something else entirely,*
+*Whether it be a human caster, a construct, or something else entirely,*
 *the Self is how we perceive the world, and as such, it is the lens through which we view our magic."*
 
 
--- An excerpt from a lecture by Prof. Citrine.
+— An excerpt from a lecture by Prof. Citrine
 
 ;;;;;
 

@@ -5,6 +5,8 @@
   "category": "trickster:ploys",
   "additional_search_terms": [
     "营销员之技巧",
+    "迅捷营销员之技巧",
+    "机警营销员之技巧",
     "艺术家之技巧",
     "奥威尔之技巧"
   ]
@@ -45,6 +47,18 @@
 <|trick@trickster:templates|trick-id=trickster:draw_spell|>
 
 在所给位置以所给朝向显示所给法术。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:entity_draw_spell|>
+
+显示法术，效果与营销员之技巧类似，但会依附至给定实体。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:entity_head_draw_spell|>
+
+显示法术，依附至实体的*头部*。
 
 ;;;;;
 

@@ -50,7 +50,7 @@ trickster:
 
   item_group: Trickster
 
-  scroll_hat: 
+  scroll_hat:
     named: 'Selected slot: %d [%s]'
     unnamed: 'Selected slot: %d'
   scroll_executable: Single-use (%f kiloGandalfs)
@@ -141,7 +141,9 @@ trickster:
     get_velocity: Movement Ingress
     add_velocity: Kinetic Ploy
     change_weight: Ploy of Featherweight
+    prepare_displace: Ploy of the Entitled
     displace: Ploy of the Usurper
+    get_displacements: Ingress of the Despot
     store_entity: Containment Ploy
     release_entity: Extrication Ploy
 
@@ -245,6 +247,7 @@ trickster:
     get_fluid_container: Basin Ingress
     get_slots: Collector's Ingress
     get_inventory_size: Ingress of Extent
+    filter_container: Ingress of Discrimination
     drop_stack_from_slot: Ploy of Offering
     swap_slot: Swindler's Ploy
     move_resource: Organizer's Ploy
@@ -258,7 +261,7 @@ trickster:
     type_fragment: Argumentative Distortion
     hash_values: Decaying Distortion
     pin_chunk: Ploy of Celestial Pin
-    get_dimension: Dimensional Delusion
+    get_dimension: Dimensional Ingress
     show_bar: Ploy of Clarity
     clear_bar: Ploy of Obfuscation
 
@@ -266,6 +269,8 @@ trickster:
     spell_particle: Radiance Ploy
 
     draw_spell: Marketer's Ploy
+    entity_draw_spell: Swift Marketer's Ploy
+    entity_head_draw_spell: Observant Marketer's Ploy
     draw_line: Artist's Ploy
     get_flecks: Observer's Ingress
     delete_fleck: Orwell's Ploy
@@ -335,6 +340,7 @@ trickster:
       entity_type: EntityType
       string: String
       dimension: Dimension
+      displace: Displacement
       color: Color
     class:
       Fragment: Any
@@ -376,6 +382,9 @@ trickster:
     slot: slot %d at %s
     merged: '%d storages'
 
+  displace:
+    reference: Displacement %s
+
 item.trickster:
   tome_of_tomfoolery: Tome of Tomfoolery
   mirror_of_evaluation: Mirror of Evaluation
@@ -397,6 +406,22 @@ item.trickster:
   scroll_and_quill_red: Red Scroll and Quill
   scroll_and_quill_white: White Scroll and Quill
   scroll_and_quill_yellow: Yellow Scroll and Quill
+  scroll_and_quill_maroon: Maroon Scroll and Quill
+  scroll_and_quill_rose: Rose Scroll and Quill
+  scroll_and_quill_coral: Coral Scroll and Quill
+  scroll_and_quill_ginger: Ginger Scroll and Quill
+  scroll_and_quill_tan: Tan Scroll and Quill
+  scroll_and_quill_beige: Beige Scroll and Quill
+  scroll_and_quill_amber: Amber Blue Scroll and Quill
+  scroll_and_quill_olive: Olive Gray Scroll and Quill
+  scroll_and_quill_forest: Forest Scroll and Quill
+  scroll_and_quill_verdant: Verdant Scroll and Quill
+  scroll_and_quill_teal: Teal Scroll and Quill
+  scroll_and_quill_mint: Mint Scroll and Quill
+  scroll_and_quill_aqua: Aqua Scroll and Quill
+  scroll_and_quill_slate: Slate Scroll and Quill
+  scroll_and_quill_navy: Navy Scroll and Quill
+  scroll_and_quill_indigo: Indigo Scroll and Quill
 
   written_scroll: Written Scroll
   written_scroll_black: Black Written Scroll
@@ -415,9 +440,25 @@ item.trickster:
   written_scroll_red: Red Written Scroll
   written_scroll_white: White Written Scroll
   written_scroll_yellow: Yellow Written Scroll
+  written_scroll_maroon: Maroon Written Scroll
+  written_scroll_rose: Rose Written Scroll
+  written_scroll_coral: Coral Written Scroll
+  written_scroll_ginger: Ginger Written Scroll
+  written_scroll_tan: Tan Written Scroll
+  written_scroll_beige: Beige Written Scroll
+  written_scroll_amber: Amber Blue Written Scroll
+  written_scroll_olive: Olive Gray Written Scroll
+  written_scroll_forest: Forest Written Scroll
+  written_scroll_verdant: Verdant Written Scroll
+  written_scroll_teal: Teal Written Scroll
+  written_scroll_mint: Mint Written Scroll
+  written_scroll_aqua: Aqua Written Scroll
+  written_scroll_slate: Slate Written Scroll
+  written_scroll_navy: Navy Written Scroll
+  written_scroll_indigo: Indigo Written Scroll
 
-  warding_charm: Warding Charm
   esoteric_mana: Esoteric Mana
+  luminous_bottle: Luminous Bottle
   top_hat: Top Hat
   witch_hat: Witch Hat
   fez: Fez
@@ -427,6 +468,8 @@ item.trickster:
   collar: Acolyte's Bindings
   leash: Archmage's Tether
   torment_on_a_chain: Torment on a Chain
+  monocle: Monocle
+  glasses: Glasses
 
   amethyst_knot: Amethyst Knot
   cracked_amethyst_knot: Cracked Amethyst Knot
@@ -498,6 +541,7 @@ key:
   trickster:
     take_hat: Take Hat
     modify_spell: Modify Spell (Creative only)
+    show_fragment_text: Reveal Fragments
 
 accessories.slot:
   collar: Collar
@@ -508,11 +552,21 @@ text.config.trickster-config:
     accessibility: Accessibility
     client: Client
     server: Server
+    circle-customization: Circle Customization
     aurora-client: Aurora's Personal Client Tweaks
   option:
     dotEmphasis: Terminal dot emphasis
     dotEmphasisColor: Terminal dot color
     subcircleDividerPinColor: Divider pin Color
+
+    patternSize: Pattern line thickness
+    dotSize: Pattern dot size
+    circleOpacity: Spell circle opacity
+    ponderOpacity: Unpondered circle opacity
+    patternOpacity: Pattern opacity
+    patternEdgeGap: Pattern line separation
+    outlinePatterns: Outline patterns
+
     manaTransferEfficiency: Efficiency of the Conduit's Ploys
     whorlMaxMana: Whorl maximum mana in G
     whorlRechargeRate: Whorl recharge rate in M
@@ -520,13 +574,13 @@ text.config.trickster-config:
     invertTopHatScrolling: Invert hat scrolling
     allowScrollInSpellScreen: Allow scrolling to zoom while editing
     keyZoomSpeed: Editor key zoom speed
-    revealToHotbar: Write revealed values to action bar
     maxExecutionsPerSpellPerTick: Max operations per tick per spell
-    allowSwapBedrock: Permit block swapping of bedrock
     maxBlockBreakingHardness: Max hardness for Ploy of Destruction
+    allowUnbreakableBlockSwap: Allow block swapping of unbreakable blocks
+    allowExtendedPistonSwap: Allow block swapping of extended pistons
 
     dragDrawing: Draw by dragging
-    animateLines: Animate pattern glyphs
+    animateLines: Animate patterns
     barsHorizontal: Show spell-created bars horizontally
     disableOffhandScrollOpening: Require scroll in main hand to edit
     adjacentPixelCollisionOffset: Offset factor of adjacent pixels

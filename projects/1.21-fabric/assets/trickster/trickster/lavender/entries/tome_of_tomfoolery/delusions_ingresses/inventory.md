@@ -5,13 +5,16 @@
   "category": "trickster:delusions_ingresses",
   "additional_search_terms": [
     "Fence's Ingress",
-    "Juggling Delusion",
     "Catch Delusion",
+    "Juggling Delusion",
     "Stockpile Ingress",
     "Basin Ingress",
     "Intrusive Ingress",
     "Collector's Ingress",
     "Ingress of Inventory",
+    "Ingress of Stockkeeping",
+    "Ingress of Extent",
+    "Ingress of Discrimination",
     "Cranium Delusion",
     "Ingress of Authority",
     "Crowning Ingress",
@@ -64,6 +67,9 @@ Returns a slot reference of the caster's offhand.
 
 Returns a reference to the item container of the passed value, or of the caster.
 
+
+If the container is a block, an additional vector can be provided to define the side from which to interact with it.
+
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:get_fluid_container|>
@@ -106,6 +112,12 @@ Returns the number of slots in a container.
 
 ;;;;;
 
+<|trick@trickster:templates|trick-id=trickster:filter_container|>
+
+Filters a container by the given resource types.
+
+;;;;;
+
 <|trick@trickster:templates|trick-id=trickster:check_hat|>
 
 Returns the selected slot in the caster's [Hat](^trickster:items/writing_casting/top_hat).
@@ -132,4 +144,4 @@ Returns the amount of items stored in the given slot.
 
 <|trick@trickster:templates|trick-id=trickster:get_equipment|>
 
-Returns a list of the given entity's currently worn equipment as item types. Comes in the order: mainhand, offhand, boots, leggings, chestplate, helmet
+Returns a list of the given entity's currently worn equipment as item types. Comes in the order: mainhand, offhand, boots, leggings, chestplate, helmet.

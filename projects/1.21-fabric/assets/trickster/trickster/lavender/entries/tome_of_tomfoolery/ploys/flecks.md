@@ -5,13 +5,15 @@
   "category": "trickster:ploys",
   "additional_search_terms": [
     "Marketer's Ploy",
+    "Swift Marketer's Ploy",
+    "Observant Marketer's Ploy",
     "Artist's Ploy",
     "Orwell's Ploy"
   ]
 }
 ```
 
-*In this world,*
+*"In this world,*
 
 *I wander.*
 
@@ -28,10 +30,10 @@
 
 *A beauty so fine,*
 
-*It cannot be held.*
+*It cannot be held."*
 
 
--- Oapheli
+— Oapheli
 
 ;;;;;
 
@@ -48,6 +50,18 @@ All flecks can also take an optional list of players, or a sole player, for whic
 <|trick@trickster:templates|trick-id=trickster:draw_spell|>
 
 At the given position, with the given facing, display a spell.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:entity_draw_spell|>
+
+Displays a spell similarly to Marketer's Ploy, but attached to an entity.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:entity_head_draw_spell|>
+
+Displays a spell, but attached to an entity's *head*.
 
 ;;;;;
 

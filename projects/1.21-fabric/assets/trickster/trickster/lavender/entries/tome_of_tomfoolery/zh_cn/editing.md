@@ -6,6 +6,24 @@
 }
 ```
 
+*“法术就是你的画布。它的尺寸没有上限，还能精细复杂得超乎想象，但也仅是一张画布。*
+
+
+*“正如绘画时只有对每一笔该落在何处都了如指掌才能高效，编写法术时若要做到高效，就应熟悉抄绘图案。*
+
+;;;;;
+
+*“那么接下来，我们开始介绍法术抄绘的基础知识。”*
+
+
+——摘自黄水晶教授的讲座
+
+---
+
+和其他图案不一样，抄绘图案在绘制完毕后会立即消失，同时修改法术本身的结构。它们不可用作[宏](^trickster:concepts/macro)。
+
+;;;;;
+
 <|revision@trickster:templates|revision-id=trickster:add_subcircle|>
 
 向任意圆添加一个新子圆。
@@ -102,23 +120,9 @@
 
 在蓝色圆中绘制登升之修订后，即会删除红色圆，并由蓝色圆替换。
 
-;;;;;
-
-<|revision@trickster:templates|revision-id=trickster:add_outer_subcircle|>
-
-为外圆添加一个子圆。
-
-;;;;;
-
-![](trickster:textures/gui/img/devotion_revision.png,fit)
-
-在蓝色圆中绘制奉献之修订后，即会创建绿色圆。
-
-;;;;;
-
 <|revision@trickster:templates|revision-id=trickster:rotate_cw|>
 
-顺时针循环移动绘制处圆的子圆，以让最后一个子圆变为第一子圆。
+顺时针循环移动绘制处圆的子圆，让最后一个子圆变为第一子圆。
 
 ;;;;;
 

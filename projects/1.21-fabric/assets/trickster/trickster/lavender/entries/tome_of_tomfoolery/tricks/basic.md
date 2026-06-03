@@ -20,7 +20,7 @@
 There is no shame in revisiting them every now and then."*
 
 
--- An excerpt from a lecture by Prof. Olivine.
+— An excerpt from a lecture by Prof. Olivine
 
 ;;;;;
 

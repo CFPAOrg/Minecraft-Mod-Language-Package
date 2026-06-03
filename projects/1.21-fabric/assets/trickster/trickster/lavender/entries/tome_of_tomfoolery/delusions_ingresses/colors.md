@@ -10,16 +10,16 @@
 }
 ```
 
-*"I kept a bullet in the chamber for a rainy day."*
+*"I kept a bullet in the chamber for a rainy day,*
 
 
-*"But what's the point in planning for it anyway?"*
+*But what's the point in planning for it anyway?*
 
 
-*"I've got too many colors for a shade of gray."*
+*I've got too many colors for a shade of gray,*
 
 
-*"And I can make it autumn every single day."*
+*And I can make it autumn every single day."*
 
 ;;;;;
 
