@@ -93,3 +93,9 @@ Next ploy sets it instead →
 <|ploy@trickster:templates|trick-id=partytrick:move_armor_stand,cost=distance^2 * 1G|>
 
 Moves the given armor stand or other decorative entities by the given vector. Trying to move anything that isn't a valid entity with this will result in a blunder.
+
+;;;;;
+
+<|ploy@trickster:templates|trick-id=partytrick:summon_spit,cost=20G + 1G * distance ^ (distance / 3)|>
+
+Extracts spit out of the given mob or caster when available. Distance is the distance between the spit source and given position.
