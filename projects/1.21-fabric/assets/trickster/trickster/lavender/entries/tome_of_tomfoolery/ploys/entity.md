@@ -16,14 +16,14 @@
 }
 ```
 
-*"You've read up on the Manton Effect before, I expect? It's a weird one."*
+*"You've read up on the Manton Effect before, I expect? It's a weird one.*
 
 
-*"No one is quite sure why these limitations exist as they are, or if we just haven't found the right methods yet.
+*No one is quite sure why these limitations exist as they are, or if we just haven't found the right methods yet.
 Regardless, one must keep them in mind at all times."*
 
 
--- An excerpt from a lecture by Prof. Olivine.
+— An excerpt from a lecture by Prof. Olivine
 
 ;;;;;
 
@@ -33,7 +33,7 @@ Given a number between zero and one, multiplies the given entity's effective gra
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=trickster:add_velocity,cost=3G + length^3 * 2G|>
+<|ploy@trickster:templates|trick-id=trickster:add_velocity,cost=3G + length^3 * 16G|>
 
 Applies the given vector as velocity to the given entity.
 
@@ -50,7 +50,7 @@ to delay the next cast before stacking it where possible.
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=trickster:set_scale,cost=abs(currentScale - newScale)^2 * 100G + newScale * 50G|>
+<|ploy@trickster:templates|trick-id=trickster:set_scale,cost=abs(currentScale - newScale)^2 * 25G + newScale * 25G|>
 
 Changes the scale of the given entity. Entities cannot be scaled below 0.0625 or above 8 times their usual size.
 
@@ -58,13 +58,6 @@ Changes the scale of the given entity. Entities cannot be scaled below 0.0625 or
 
 Entities scaled in this way will slowly revert back to their original scale over time, 
 unless the ploy is recast periodically.
-
-;;;;;
-
-<|ploy@trickster:templates|trick-id=trickster:displace,cost=20G + 1.35G^length|>
-
-Displaces the given entity by the given vector after two seconds. 
-This ploy has the same aggressive and stacking cost scaling as Kinetic Ploy.
 
 ;;;;;
 

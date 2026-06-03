@@ -12,13 +12,13 @@
 }
 ```
 
-*"Note that inventory ploys are heavily restricted in almost all jurisdictions."*
+*"Note that inventory ploys are heavily restricted in almost all jurisdictions.*
 
 
-*"Not because they're very dangerous mind you, it's just that humans collectively have a strange obsession with this thing they call 'personal property.'"*
+*Not because they're very dangerous mind you, it's just that humans collectively have a strange obsession with this thing they call 'personal property.'"*
 
 
--- An excerpt from a lecture by Prof. Dr. Gerune.
+— An excerpt from a lecture by Prof. Dr. Gerune
 
 
 Creating a slot reference comes at no cost. However, using the reference in a way that moves the items inside the slot will always have a cost of (distance * amount * 0.5G).

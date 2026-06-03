@@ -13,6 +13,7 @@
     "Distortion of Inferiority",
     "Noble Stratagem",
     "Insignificance Stratagem",
+    "Consensus Stratagem",
     "Distortion of Grandeur",
     "Distortion of Humility",
     "Distortion of Objectivity",
@@ -116,6 +117,12 @@ Returns the highest of its input values.
 <|trick@trickster:templates|trick-id=trickster:min|>
 
 Returns the lowest of its input values.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:avg|>
+
+Returns the average of its input values.
 
 ;;;;;
 

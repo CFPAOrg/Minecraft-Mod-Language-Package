@@ -13,6 +13,7 @@
     "至劣之曲变",
     "高贵之谋略",
     "低位之谋略",
+    "共识之谋略",
     "壮丽之曲变",
     "谦卑之曲变",
     "客观之曲变",
@@ -110,6 +111,12 @@
 <|trick@trickster:templates|trick-id=trickster:min|>
 
 返回所有输入值中的最小值。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:avg|>
+
+返回各输入值的平均值。
 
 ;;;;;
 

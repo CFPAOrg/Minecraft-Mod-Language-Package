@@ -29,3 +29,7 @@
 <|trick@trickster:templates|trick-id=trickster:range_find_entity|>
 
 查找并返回距所给位置处给定范围内所有实体组成的列表。
+
+;;;;;
+
+返回的列表从最近到最远排序，且会忽略大多数隐形实体。

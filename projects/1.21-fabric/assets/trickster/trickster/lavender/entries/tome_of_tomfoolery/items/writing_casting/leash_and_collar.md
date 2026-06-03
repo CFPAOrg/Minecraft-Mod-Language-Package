@@ -11,8 +11,7 @@
 }
 ```
 
-*The Bindings were offered, simply made of dyed leather, but the magic was known [...]*
--- Sanin
+*"The Bindings were offered, simply made of dyed leather, but the magic was known [...]"* — Sanin
 
 <recipe;trickster:collar>
 
@@ -31,5 +30,4 @@ The spell will take one of their spell slots, consume their mana, and be at thei
 However, it will receive as its second argument the entity which made use of the Tether.
 
 
-*[...] and he accepted it graciously, his freedom a small price for the teachings of his Archmage.*
--- Sanin
+*"[...] and he accepted it graciously, his freedom a small price for the teachings of his Archmage."* — Sanin

@@ -5,13 +5,16 @@
   "category": "trickster:delusions_ingresses",
   "additional_search_terms": [
     "销赃人之辑流",
-    "杂耍之错觉",
     "抛接之错觉",
+    "杂耍之错觉",
     "物仓之辑流",
     "液仓之辑流",
     "侵入之辑流",
     "收藏家之辑流",
     "物品栏之辑流",
+    "储货之辑流",
+    "容展之辑流",
+    "辨别之辑流",
     "颅骨之错觉",
     "权威之辑流",
     "加冕之辑流",
@@ -59,6 +62,9 @@
 
 返回所给值中物品容器的引用，或返回施法者的物品容器引用。
 
+
+若容器为方块，还可额外传入向量以选定交互面。
+
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:get_fluid_container|>
@@ -79,7 +85,7 @@
 
 ;;;;;
 
-可传入资源类型或其列表以进行过滤，使戏法只返回容器中的有关槽位。
+可传入资源类型或其列表以进行筛选，使戏法只返回容器中的有关槽位。
 
 ;;;;;
 
@@ -98,6 +104,12 @@
 <|trick@trickster:templates|trick-id=trickster:get_inventory_size|>
 
 返回容器的槽位数。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:filter_container|>
+
+根据给定资源类型筛选容器。
 
 ;;;;;
 

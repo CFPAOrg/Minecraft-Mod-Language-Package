@@ -7,17 +7,17 @@
 }
 ```
 
-*"It is common knowledge that the moon provides mana to the world, and all that lives upon it."*
+*"It is common knowledge that the moon provides mana to the world, and all that lives upon it.*
 
 
-*"Its silver glow freely blankets our lands, ready to fuel our spellcasting."*
+*Its silver glow freely blankets our lands, ready to fuel our spellcasting.*
 
 
-*"One might consider it strange then, that the most potent sources of mana be found where moonlight does not reach."*
+*One might consider it strange then, that the most potent sources of mana be found where moonlight does not reach."*
 
 ;;;;;
 
--- An excerpt from a lecture by Prof. Olivine.
+— An excerpt from a lecture by Prof. Olivine
 
 ---
 
