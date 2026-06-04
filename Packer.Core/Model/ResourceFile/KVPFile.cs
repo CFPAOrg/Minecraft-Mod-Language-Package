@@ -1,6 +1,6 @@
 ﻿namespace Packer.Core.Model.ResourceFile;
 
-public abstract class KVPFile : TextFile
+public abstract class KVPFile(string relativePath) : TextFile(relativePath)
 {
     public Dictionary<string, string> Entries { get; protected set; } = [];
 
@@ -10,11 +10,6 @@ public abstract class KVPFile : TextFile
     {
         Entries = entries; 
     }
-
-    protected KVPFile(string relativePath) :base(relativePath) 
-    {
-        RelativePath = relativePath;
-    } 
 
     public abstract KVPFile Merge(KVPFile other);
 }

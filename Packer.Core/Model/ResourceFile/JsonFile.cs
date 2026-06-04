@@ -1,14 +1,17 @@
 ﻿using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 
 namespace Packer.Core.Model.ResourceFile;
 
 public class JsonFile : KVPFile
 {
-    public JsonFile(Dictionary<string, string> entries, string relativePath) : base(entries, relativePath) { }
+    public JsonFile(Dictionary<string, string> entries, string relativePath)
+        : base(entries, relativePath) { }
 
-    protected JsonFile(string relativePath) : base(relativePath) { }
+    protected JsonFile(string relativePath)
+        : base(relativePath) { }
 
     public override KVPFile Merge(KVPFile other)
     {
@@ -19,8 +22,7 @@ public class JsonFile : KVPFile
             if (modifyOnly)
             {
                 foreach (var (key, value) in otherJson.Entries)
-                    if (merged.ContainsKey(key))
-                        merged[key] = value;
+                    if (merged.ContainsKey(key)) merged[key] = value;
             }
             else
             {
@@ -33,7 +35,21 @@ public class JsonFile : KVPFile
 
     public override Stream GetContentStream()
     {
-        var json = JsonSerializer.Serialize(Entries, new JsonSerializerOptions
+        var entries = Entries;
+        if (EffectiveConfig is not null)
+        {
+            entries = new Dictionary<string, string>(Entries.Count);
+            foreach (var (key, value) in Entries)
+            {
+                var replaced = value;
+                foreach (var (pattern, replacement) in EffectiveConfig.CharacterReplacement)
+                    replaced = Regex.Replace(replaced, pattern, replacement);
+                entries[key] = replaced;
+            }
+        }
+
+        var sorted = new SortedDictionary<string, string>(entries);
+        var json = JsonSerializer.Serialize(sorted, new JsonSerializerOptions
         {
             WriteIndented = true,
             Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping

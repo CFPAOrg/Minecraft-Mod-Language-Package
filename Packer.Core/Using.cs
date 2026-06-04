@@ -11,3 +11,7 @@ global using Packer.Core.Model.Abstract;
 global using Packer.Core.Model.Configuration;
 global using Packer.Core.Model.ModProvider;
 global using Packer.Core.Model.ResourceFile;
+global using Packer.Core;
+global using System.CommandLine;
+global using System.IO.Compression;
+global using System.Security.Cryptography;

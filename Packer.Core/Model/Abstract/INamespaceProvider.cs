@@ -59,4 +59,5 @@ public interface INamespaceResource
 
     /// <summary>打包策略集合，无则为 <see cref="PackerPolicy.Shared"/></summary>
     PackerPolicy PackerPolicies { get; }
+
 }

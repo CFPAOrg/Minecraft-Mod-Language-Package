@@ -17,6 +17,9 @@ namespace Packer
         // System.CommandLine.DragonFruit支持
         public static async Task Main(string version, bool increment = false)
         {
+#if DEBUG
+            Environment.CurrentDirectory = @"C:\Users\16229\source\OpenSourceLibrary\Minecraft-Mod-Language-Package";
+#endif
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()
              .WriteTo.Console()
@@ -77,7 +80,7 @@ namespace Packer
                     [DateTime.UtcNow.AddHours(8), .. config.Base.McMetaParameters])
                 ];
 
-            string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";
+            string packName = $"./test/packer/{config.Base.Version}.zip";
             await using var stream = File.Create(packName);
 
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
@@ -91,7 +94,7 @@ namespace Packer
             var md5 = stream.ComputeMD5();
 
             Log.Information("打包文件的 MD5 值：{0}", md5);
-            File.WriteAllText($"./{config.Base.Version}.md5", md5);
+            File.WriteAllText($"./test/packer/{config.Base.Version}.md5", md5);
         }
     }
 }
