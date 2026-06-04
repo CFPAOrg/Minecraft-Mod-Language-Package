@@ -17,7 +17,6 @@ namespace Packer
         // System.CommandLine.DragonFruit支持
         public static async Task Main(string version, bool increment = false)
         {
-
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()
              .WriteTo.Console()
@@ -35,9 +34,8 @@ namespace Packer
                 // ./projects/assets/<projectSlug>...
                 from modDirectory in new DirectoryInfo("./projects/assets").EnumerateDirectories()
                 let modIdentifier = modDirectory.Name
-                where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
+                where !targetModIdentifiers.Any()                            // 未提供列表，全部打包
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
-                where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
                 // .../<version>
                 let versionedDirectory = modDirectory.GetDirectories(config.Base.Version).FirstOrDefault(defaultValue: null)
                 where versionedDirectory is not null
@@ -45,7 +43,7 @@ namespace Packer
                 from namespaceDirectory in versionedDirectory.EnumerateDirectories()
                 let namespaceName = namespaceDirectory.Name
                 where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
-                where namespaceName.ValidateNamespace()                             // 不是非法名称
+                    && namespaceName.ValidateNamespace()                             // 不是非法名称
                 // .../*
                 from provider in namespaceDirectory.EnumerateProviders(config)
                 group provider by provider.Destination into destinationGroup
@@ -69,7 +67,7 @@ namespace Packer
 
             IEnumerable<IResourceFileProvider> initialFiles = [
                 new RawFile(new FileInfo("./projects/templates/pack.png"), "pack.png"),
-                TextFile.Create(new FileInfo("./projects/templates/LICENSE"), "LICENSE"),
+                TextFile.Create("./projects/templates/LICENSE", "LICENSE"),
                 TextFile.CreateFromTemplate(new FileInfo(config.Base.ReadmeTemplate),
                     "README.txt",
                     config.Base.ReadmeParameters),
@@ -78,13 +76,15 @@ namespace Packer
                     [DateTime.UtcNow.AddHours(8), .. config.Base.McMetaParameters])
                 ];
 
-            string packName = $"./test/packer/{config.Base.Version}.zip";
+            string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";
             await using var stream = File.Create(packName);
 
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
-            {
-                await Task.WhenAll(from provider in query.Concat(initialFiles)
-                                   select provider.WriteToArchive(archive));
+            { 
+                foreach (var item in query.Concat(initialFiles))
+                {
+                    await item.WriteToArchiveAsync(archive);
+                } 
             }
 
             Log.Information("对版本 {0} 的打包结束。", version);
@@ -92,7 +92,7 @@ namespace Packer
             var md5 = stream.ComputeMD5();
 
             Log.Information("打包文件的 MD5 值：{0}", md5);
-            File.WriteAllText($"./test/packer/{config.Base.Version}.md5", md5);
+            File.WriteAllText($"./{config.Base.Version}.md5", md5);
         }
     }
 }
