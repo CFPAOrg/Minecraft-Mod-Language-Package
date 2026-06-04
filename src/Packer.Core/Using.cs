@@ -1,0 +1,17 @@
+﻿//global using Packer.Core.Model.ModProvider; 
+global using System.Collections.Immutable;
+global using System.Text.Json;
+global using Packer.Core.Model;
+global using System.Text.Json.Serialization;
+global using System;
+global using Serilog;
+global using System.Collections;
+global using System.ComponentModel;
+global using Packer.Core.Model.Abstract;
+global using Packer.Core.Model.Configuration;
+global using Packer.Core.Model.ModProvider;
+global using Packer.Core.Model.ResourceFile;
+global using Packer.Core;
+global using System.CommandLine;
+global using System.IO.Compression;
+global using System.Security.Cryptography;

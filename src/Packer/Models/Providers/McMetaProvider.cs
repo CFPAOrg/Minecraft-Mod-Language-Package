@@ -37,7 +37,7 @@ namespace Packer.Models.Providers
         public override IResourceFileProvider ReplaceDestination(string searchPattern, string replacement)
             => this;
         /// <inheritdoc/>
-        public override async Task WriteToArchive(ZipArchive archive)
+        public override async Task WriteToArchiveAsync(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
             Log.Debug("[McMetaProvider]写入路径 {0}", destination);

@@ -34,9 +34,8 @@ namespace Packer
                 // ./projects/assets/<projectSlug>...
                 from modDirectory in new DirectoryInfo("./projects/assets").EnumerateDirectories()
                 let modIdentifier = modDirectory.Name
-                where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
+                where !targetModIdentifiers.Any()                            // 未提供列表，全部打包
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
-                where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
                 // .../<version>
                 let versionedDirectory = modDirectory.GetDirectories(config.Base.Version).FirstOrDefault(defaultValue: null)
                 where versionedDirectory is not null
@@ -44,7 +43,7 @@ namespace Packer
                 from namespaceDirectory in versionedDirectory.EnumerateDirectories()
                 let namespaceName = namespaceDirectory.Name
                 where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
-                where namespaceName.ValidateNamespace()                             // 不是非法名称
+                    && namespaceName.ValidateNamespace()                             // 不是非法名称
                 // .../*
                 from provider in namespaceDirectory.EnumerateProviders(config)
                 group provider by provider.Destination into destinationGroup
@@ -68,7 +67,7 @@ namespace Packer
 
             IEnumerable<IResourceFileProvider> initialFiles = [
                 new RawFile(new FileInfo("./projects/templates/pack.png"), "pack.png"),
-                TextFile.Create(new FileInfo("./projects/templates/LICENSE"), "LICENSE"),
+                TextFile.Create("./projects/templates/LICENSE", "LICENSE"),
                 TextFile.CreateFromTemplate(new FileInfo(config.Base.ReadmeTemplate),
                     "README.txt",
                     config.Base.ReadmeParameters),
@@ -81,9 +80,11 @@ namespace Packer
             await using var stream = File.Create(packName);
 
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
-            {
-                await Task.WhenAll(from provider in query.Concat(initialFiles)
-                                   select provider.WriteToArchive(archive));
+            { 
+                foreach (var item in query.Concat(initialFiles))
+                {
+                    await item.WriteToArchiveAsync(archive);
+                } 
             }
 
             Log.Information("对版本 {0} 的打包结束。", version);

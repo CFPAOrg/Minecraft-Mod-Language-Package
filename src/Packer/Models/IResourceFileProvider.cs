@@ -47,7 +47,7 @@ namespace Packer.Models
         /// </summary>
         /// <param name="archive"></param>
         /// <exception cref="InvalidOperationException">资源包中已有同名文件</exception>
-        public Task WriteToArchive(ZipArchive archive);
+        public Task WriteToArchiveAsync(ZipArchive archive);
 
         /// <summary>
         /// 目标在资源包中的相对位置，从根目录算起
