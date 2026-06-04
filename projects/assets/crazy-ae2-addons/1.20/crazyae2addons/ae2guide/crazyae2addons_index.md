@@ -36,6 +36,10 @@ Tools for visualizing ME network data, tracking stock levels, and showing alerts
   A wireless terminal that monitors up to 16 items (configurable) and displays colored HUD
   alerts when their stored amount goes below/above the configured threshold.
 
+- [Resource Tracking Terminal](crazyguide/resource_tracking_terminal.md)  
+  A terminal that shows which items are being consumed by the network and at what rate,
+  with a per-source breakdown and a block highlight button for locating interfaces.
+
 ---
 
 ### Emitters and Redstone Control

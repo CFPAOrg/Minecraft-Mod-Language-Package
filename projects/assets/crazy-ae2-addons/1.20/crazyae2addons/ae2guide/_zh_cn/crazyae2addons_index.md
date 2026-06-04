@@ -32,6 +32,9 @@ Crazy AE2 Addons以多种方式拓展了应用能源2（Applied Energistics 2）
 - [无线通知终端](crazyguide/notification_terminal.md)  
   最多能监测16种物品（可配置）的无线终端，可在对应物品库存量超出/跌过所配置阈值时发出HUD警报，警报颜色可调。
 
+- [资源追踪终端](crazyguide/resource_tracking_terminal.md)  
+  显示网络中当前正在消耗何种物品及其消耗速率的终端，能按去向分解显示详细信息，也配有能定位对应接口的高亮按钮。
+
 ---
 
 ### 发信器和红石控制
