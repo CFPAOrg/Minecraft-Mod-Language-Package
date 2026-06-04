@@ -17,9 +17,7 @@ namespace Packer
         // System.CommandLine.DragonFruit支持
         public static async Task Main(string version, bool increment = false)
         {
-#if DEBUG
-            Environment.CurrentDirectory = @"C:\Users\16229\source\OpenSourceLibrary\Minecraft-Mod-Language-Package";
-#endif
+
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()
              .WriteTo.Console()
