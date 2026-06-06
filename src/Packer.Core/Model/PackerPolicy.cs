@@ -22,15 +22,18 @@ public sealed class PackerPolicy : ICollection<PackerPolicyItem>
     public static PackerPolicy Load(string namespaceDirPath)
     {
         var policyFile = Path.Combine(namespaceDirPath, DefaultFileName);
-        if (!File.Exists(policyFile)) return Shared;
+        if (!File.Exists(policyFile))
+            return Shared;
         try
         {
             var json = File.ReadAllText(policyFile);
             Log.Debug("策略文件内容: {Json}", json);
             var policies = JsonSerializer.Deserialize<PackerPolicy>(
                 json, SourceGenerationContext.JsonOptions);
-            if (policies is null) { Log.Warning("策略反序列化结果为 null: {File}", policyFile); return Shared; }
-            if (policies._items.Count == 0) { Log.Warning("策略列表为空: {File}", policyFile); return Shared; }
+            if (policies is null)
+            { Log.Warning("策略反序列化结果为 null: {File}", policyFile); return Shared; }
+            if (policies._items.Count == 0)
+            { Log.Warning("策略列表为空: {File}", policyFile); return Shared; }
             Log.Debug("成功加载 {Count} 条策略: {File}", policies._items.Count, policyFile);
             return policies;
         }
@@ -71,7 +74,7 @@ public abstract record PackerPolicyItem
                 var json = File.ReadAllText(filePath);
                 var entries = new Dictionary<string, string>();
                 foreach (var prop in JsonDocument.Parse(json).RootElement.EnumerateObject())
-                    if (prop.Value.ValueKind == System.Text.Json.JsonValueKind.String)
+                    if (prop.Value.ValueKind == JsonValueKind.String)
                         entries[prop.Name] = prop.Value.GetString()!;
                 return new JsonFile(entries, relativePath)
                 {
@@ -81,14 +84,8 @@ public abstract record PackerPolicyItem
 
             case { parentDir: "lang", ext: ".lang" }:
                 var content = File.ReadAllText(filePath);
-                var entries2 = new Dictionary<string, string>();
-                foreach (var line in content.EnumerateLines())
-                {
-                    var eq = line.IndexOf('=');
-                    if (eq == -1) continue;
-                    entries2.TryAdd(line[..eq].Trim().ToString(), line[(eq + 1)..].Trim().ToString());
-                }
-                return new LangFile(entries2, relativePath)
+                entries = LangFile.DeserializeFromLang(content);
+                return new LangFile(entries, relativePath)
                 {
                     Namespace = ns,
                     PolicyItem = this
@@ -112,17 +109,20 @@ public record DirectPolicy : PackerPolicyItem
         foreach (var domainDir in Directory.EnumerateDirectories(namespaceResource.LocalPath))
         {
             var domainName = Path.GetFileName(domainDir);
-            if (config.ExclusionDomains.Contains(domainName)) continue;
+            if (config.ExclusionDomains.Contains(domainName))
+                continue;
             bool domainForceInclude = config.InclusionDomains.Contains(domainName);
 
             foreach (var file in Directory.EnumerateFiles(domainDir, "*", SearchOption.AllDirectories))
             {
                 var relativePath = Path.GetRelativePath(namespaceResource.LocalPath, file).Replace('\\', '/');
-                if (config.ExclusionPaths.Contains(relativePath)) continue;
+                if (config.ExclusionPaths.Contains(relativePath))
+                    continue;
                 if (!domainForceInclude)
                 {
                     bool inTargetLang = relativePath.Contains("zh_cn", StringComparison.OrdinalIgnoreCase);
-                    if (!config.InclusionPaths.Contains(relativePath) && !inTargetLang) continue;
+                    if (!config.InclusionPaths.Contains(relativePath) && !inTargetLang)
+                        continue;
                 }
                 yield return CreateProvider(file, relativePath, namespaceResource);
             }
@@ -136,7 +136,8 @@ public record IndirectPolicy(string Source) : PackerPolicyItem
         INamespaceResource namespaceResource, FloatingConfig config)
     {
         var targetDir = new DirectoryInfo(Source);
-        if (!targetDir.Exists) yield break;
+        if (!targetDir.Exists)
+            yield break;
         var targetNs = new AssetsNamespaceResource(
             targetDir.FullName, targetDir.Name, targetDir.Parent?.Name ?? "", namespaceResource.ModVersion);
         foreach (var policy in targetNs.PackerPolicies)

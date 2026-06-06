@@ -57,4 +57,77 @@ public class LangFile : KVPFile
         }
         return new MemoryStream(Encoding.UTF8.GetBytes(sb.ToString()));
     }
+    internal static Dictionary<string, string> DeserializeFromLang(string content)
+    {
+        var result = new Dictionary<string, string>();
+        var escapeMode = false;
+        var state = LangParseState.Normal;
+        string pendingKey = "";
+        StringBuilder pendingValue = new StringBuilder();
+
+
+        foreach (var line in content.EnumerateLines())
+        {
+            switch (state)
+            {
+                case LangParseState.LineContinuation when line.EndsWith("\\"):
+                    pendingValue.Append(line.TrimStart()[..^1]);
+                    continue;
+
+                case LangParseState.LineContinuation:
+                    pendingValue.Append(line.TrimStart());
+                    result.TryAdd(pendingKey, pendingValue.ToString());
+                    pendingValue.Clear();
+                    state = LangParseState.Normal;
+                    continue;
+
+                case LangParseState.MultiLineComment when line.Trim().EndsWith("*/"):
+                    state = LangParseState.Normal;
+                    continue;
+
+                case LangParseState.MultiLineComment:
+                    continue;
+            }
+
+            // ── Normal 状态 ──
+
+            switch (line)
+            {
+                case "#PARSE_ESCAPES":
+                    escapeMode = true;
+                    continue;
+                case ['/', '*', ..]:
+                    state = LangParseState.MultiLineComment;
+                    continue;
+                case ['#' or '<', ..] or ['/', '/', ..]:
+                    continue;
+            }
+
+
+
+            var eq = line.IndexOf('=');
+            if (eq == -1)
+            {
+                continue;
+            }
+
+            var key = line[..eq];
+            var value = eq + 1 < line.Length ? line[(eq + 1)..] : "";
+
+            if (escapeMode && value.EndsWith("\\"))
+            {
+                state = LangParseState.LineContinuation;
+                pendingKey = key.ToString();
+                pendingValue.Append(value[..^1]);
+            }
+            else
+            {
+                result.TryAdd(key.ToString(), value.ToString());
+            }
+        }
+
+        return result;
+    }
+
+    private enum LangParseState { Normal, MultiLineComment, LineContinuation }
 }

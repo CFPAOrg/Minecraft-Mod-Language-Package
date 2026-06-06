@@ -20,6 +20,4 @@ public record AssetsNamespaceResource(
     public FloatingConfig LocalConfig => field ??= FloatingConfig.Load(this);
 
     public PackerPolicy PackerPolicies => field ??= PackerPolicy.Load(this);
-
-    public IEnumerable<IResourceFileProvider> FileProviders => field ??= PackerPolicies.CreateProviders(this, LocalConfig);
 }
