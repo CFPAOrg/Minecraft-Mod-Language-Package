@@ -23,48 +23,18 @@ namespace Packer
              .MinimumLevel.Debug()
              .CreateLogger();
 
-            var config = await ConfigHelpers.RetrieveConfig(configTemplate: "./config/packer/{0}.json",
-                                                    version: version);
+            var config = ConfigHelpers.RetrieveConfig(configTemplate: "./config/packer/{0}.json",
+                                                      version: version);
             Log.Information("开始对版本 {0} 的打包", config.Base.Version);
 
             var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version)
                 : Enumerable.Empty<string>();
 
-            var query =
-                // ./projects/assets/<projectSlug>...
-                from modDirectory in new DirectoryInfo("./projects/assets").EnumerateDirectories()
-                let modIdentifier = modDirectory.Name
-                where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
-                    || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
-                where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
-                // .../<version>
-                let versionedDirectory = modDirectory.GetDirectories(config.Base.Version).FirstOrDefault(defaultValue: null)
-                where versionedDirectory is not null
-                // .../<namespace>-CFPA-<author>
-                from namespaceDirectory in versionedDirectory.EnumerateDirectories()
-                let namespaceName = namespaceDirectory.Name
-                where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
-                where namespaceName.ValidateNamespace()                             // 不是非法名称
-                // .../*
-                from provider in namespaceDirectory.EnumerateProviders(config)
-                group provider by provider.Destination into destinationGroup
-                select destinationGroup
-                    .Aggregate(seed: null as IResourceFileProvider,                 // 合并文件
-                               (accumulate, next)
-                                   => next.ApplyTo(
-                                       accumulate)) into provider
-                select config.Floating.CharacterReplacement                         // 内容的字符替换
-                             .Aggregate(seed: provider,
-                                        (accumulate, replacement)
-                                            => accumulate.ReplaceContent(
-                                                replacement.Key,
-                                                replacement.Value)) into provider
-                select config.Floating.DestinationReplacement                       // 全局路径替换：预留
-                             .Aggregate(seed: provider,
-                                        (accumulate, replacement)
-                                            => accumulate.ReplaceDestination(
-                                                replacement.Key,
-                                                replacement.Value));
+            var query = config.Base.FallbackVersions.Prepend(config.Base.Version)
+                .SelectMany(_ => EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, _).MergeDeep())
+                .MergeShallow()
+                .PostProcess(config);
+
 
             IEnumerable<IResourceFileProvider> initialFiles = [
                 new RawFile(new FileInfo("./projects/templates/pack.png"), "pack.png"),
@@ -82,8 +52,9 @@ namespace Packer
 
             using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
             {
-                await Task.WhenAll(from provider in query.Concat(initialFiles)
-                                   select provider.WriteToArchive(archive));
+                await archive.WriteDirect(initialFiles);
+                // await archive.WriteDirect(query);
+                await archive.WriteGrouped(query);
             }
 
             Log.Information("对版本 {0} 的打包结束。", version);
