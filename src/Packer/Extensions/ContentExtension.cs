@@ -107,7 +107,7 @@ namespace Packer.Extensions
         /// <returns></returns>
         public static string ComputeMD5(this Stream stream)
         {
-            stream.Position = 0; // 确保文件流的位置被重置
+            stream.Seek(0, SeekOrigin.Begin); // 确保文件流的位置被重置
             return Convert.ToHexString(MD5.Create().ComputeHash(stream));
         }
     }

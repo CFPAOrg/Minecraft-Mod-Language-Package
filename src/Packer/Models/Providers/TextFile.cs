@@ -39,16 +39,6 @@ namespace Packer.Models.Providers
         }
 
         /// <summary>
-        /// 从给定的<see cref="FileInfo"/>构造提供器
-        /// </summary>
-        /// <param name="path">读取源</param>
-        /// <param name="destination">目标地址</param>
-        public static TextFile Create(string path, string destination)
-        {
-            return new TextFile(File.ReadAllText(path), destination);
-        }
-
-        /// <summary>
         /// 从给定的<see cref="FileInfo"/>模板和参数构造提供器
         /// </summary>
         /// <param name="file">读取源</param>
@@ -77,11 +67,9 @@ namespace Packer.Models.Providers
         /// <inheritdoc/>
         public virtual IResourceFileProvider ApplyTo(IResourceFileProvider? baseProvider, ApplyOptions options)
         {
-            if (baseProvider is null)
-                return this;
+            if (baseProvider is null) return this;
 
-            if (!options.Append)
-                return baseProvider;
+            if (!options.Append) return baseProvider;
 
             if (baseProvider is not TextFile baseTextFile)
                 throw new ArgumentException($"Argument not an instance of {typeof(TextFile)}.",
@@ -106,7 +94,7 @@ namespace Packer.Models.Providers
                                           replacement,
                                           RegexOptions.Singleline));
         /// <inheritdoc/>
-        public virtual async Task WriteToArchiveAsync(ZipArchive archive)
+        public virtual async Task WriteToArchive(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
             Log.Debug("[TextFile]写入路径 {0}", destination);

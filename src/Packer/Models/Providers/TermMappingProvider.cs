@@ -84,13 +84,14 @@ namespace Packer.Models.Providers
             var result = new Dictionary<string, JsonNode>();
             foreach (var (key, value) in this)
             {
-                if (value.GetValueKind() == JsonValueKind.String)
+                if (value is JsonValue jsonValue
+                    && jsonValue.TryGetValue<string>(out var stringValue))
                 {
-                    var replaced = Regex.Replace(value.GetValue<string>(),
+                    var replaced = Regex.Replace(stringValue,
                                                  searchPattern,
                                                  replacement,
                                                  RegexOptions.Singleline);
-                    result.Add(key, JsonValue.Create(replaced)); // 我猜不会null罢
+                    result.Add(key, JsonValue.Create(replaced)!); // 我猜不会null罢
                     continue;
                 }
                 result.Add(key, value);
@@ -100,8 +101,12 @@ namespace Packer.Models.Providers
 
         public static ITermDictionary<JsonNode> Create(IDictionary<string, string> nominalMapping)
         {
-            var transformed = nominalMapping
-                .ToDictionary(p => p.Key, p => JsonValue.Create(p.Value) as JsonNode);
+            var query = from pair in nominalMapping
+                        let key = pair.Key
+                        let value = pair.Value
+                        let node = JsonValue.Create(value)!
+                        select (key, node);
+            var transformed = query.ToDictionary(_ => _.key, _ => _.node as JsonNode);
             return new JsonDictionaryWrapper(transformed);
         }
     }
@@ -140,8 +145,7 @@ namespace Packer.Models.Providers
         /// <inheritdoc/>
         public IResourceFileProvider ApplyTo(IResourceFileProvider? baseProvider, ApplyOptions options)
         {
-            if (baseProvider is null)
-                return this;
+            if (baseProvider is null) return this;
 
             if (baseProvider is not TermMappingProvider<TValue> baseMapping)
                 throw new ArgumentException($"Argument not an instance of {typeof(TermMappingProvider<TValue>)}.",
@@ -186,7 +190,7 @@ namespace Packer.Models.Providers
                               RegexOptions.Singleline));
 
         /// <inheritdoc/>
-        public async Task WriteToArchiveAsync(ZipArchive archive)
+        public async Task WriteToArchive(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
             Log.Debug("[TermMappingProvider`1]写入路径 {0}", destination);
@@ -283,8 +287,7 @@ namespace Packer.Models.Providers
                 var splitPosition = line.IndexOf('=');
 
                 // https://github.com/CFPAOrg/Minecraft-Mod-Language-Package/pull/3272/files#r1461545452
-                if (splitPosition == -1)
-                    continue;
+                if (splitPosition == -1) continue;
 
                 var key = line[..splitPosition];
                 var value = splitPosition + 1 < line.Length

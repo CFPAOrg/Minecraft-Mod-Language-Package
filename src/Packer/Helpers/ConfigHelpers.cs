@@ -25,13 +25,13 @@ namespace Packer.Helpers
         {
             var configFile = directory.GetFiles("local-config.json").FirstOrDefault();
 
-            if (configFile is null)
-                return null;
+            if (configFile is null) return null;
 
             configFile.FullName.LogToDebug("读取文件：{0}");
-
+            
+            using var reader = configFile.OpenText();
             return JsonSerializer.Deserialize<FloatingConfig>(
-                configFile.ReadAllText().LogToDebug(),
+                reader.ReadToEnd().LogToDebug(),
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
         }
 
@@ -48,11 +48,10 @@ namespace Packer.Helpers
 
             Log.Information("配置位置：{0}", configPath);
 
-            await using var content = File.OpenRead(configPath);
-
-            return (await JsonSerializer.DeserializeAsync<Config>(
+            var content = await File.ReadAllBytesAsync(configPath);
+            return JsonSerializer.Deserialize<Config>(
                 content,
-                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase }))!;
+                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })!;
         }
 
         /// <summary>
@@ -73,8 +72,9 @@ namespace Packer.Helpers
 
             file.FullName.LogToDebug("读取文件：{0}");
 
+            using var reader = file.OpenText();
             var result = JsonSerializer.Deserialize<List<PackerPolicy>>(
-                file.ReadAllText().LogToDebug(),
+                reader.ReadToEnd().LogToDebug(),
                 new JsonSerializerOptions
                 {
                     PropertyNamingPolicy = JsonNamingPolicy.CamelCase,

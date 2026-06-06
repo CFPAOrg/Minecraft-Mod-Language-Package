@@ -44,7 +44,7 @@ namespace Packer.Models.Providers
                                          RegexOptions.Singleline));
 
         /// <inheritdoc/>
-        public async Task WriteToArchiveAsync(ZipArchive archive)
+        public async Task WriteToArchive(ZipArchive archive)
         {
             var destination = Destination.NormalizePath();
             Log.Debug("[RawFile]写入路径 {0}", destination);

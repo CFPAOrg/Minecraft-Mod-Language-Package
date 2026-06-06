@@ -1,5 +1,4 @@
-﻿using Packer.Extensions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -17,9 +16,10 @@ namespace Packer.Models.Providers
         /// </summary>
         /// <param name="file">组合文件</param>
         public static LangMappingProvider CreateFromComposition(FileInfo file)
-        { 
+        {
+            using var reader = file.OpenText();
             var data = JsonSerializer.Deserialize<CompositionData>(
-                file.ReadAllText(),
+                reader.ReadToEnd(),
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
             return new LangMappingProvider(
                 new LangDictionaryWrapper(CompositionHelper.CreateRawDictionary(data)),
@@ -34,9 +34,10 @@ namespace Packer.Models.Providers
         /// </summary>
         /// <param name="file">组合文件</param>
         public static JsonMappingProvider CreateFromComposition(FileInfo file)
-        { 
+        {
+            using var reader = file.OpenText();
             var data = JsonSerializer.Deserialize<CompositionData>(
-                file.ReadAllText(),
+                reader.ReadToEnd(),
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
             return new JsonMappingProvider(
                 JsonDictionaryWrapper.Create(CompositionHelper.CreateRawDictionary(data)),
@@ -66,7 +67,7 @@ namespace Packer.Models.Providers
                 seed: new[] { KeyValuePair.Create(Enumerable.Empty<TOuter>(), Enumerable.Empty<TInner>()) }
                     as IEnumerable<KeyValuePair<IEnumerable<TOuter>, IEnumerable<TInner>>>, // 这都需要手写...
                 (accumulate, next) => from incomingPair in next
-                                      from existingGroup in accumulate
+                                      join existingGroup in accumulate on true equals true
                                       select KeyValuePair.Create(
                                           existingGroup.Key.Append(incomingPair.Key),
                                           existingGroup.Value.Append(incomingPair.Value)));

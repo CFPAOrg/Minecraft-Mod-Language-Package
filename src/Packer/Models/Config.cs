@@ -121,9 +121,9 @@ namespace Packer
             InclusionDomains = InclusionDomains.Concat(other.InclusionDomains).Distinct(),
             InclusionPaths = InclusionPaths.Concat(other.InclusionPaths).Distinct(),
             CharacterReplacement = CharacterReplacement.Concat(other.CharacterReplacement).DistinctBy(_ => _.Key)
-                                                       .ToDictionary(),
+                                                       .ToDictionary(_ => _.Key, _ => _.Value),
             DestinationReplacement = DestinationReplacement.Concat(other.DestinationReplacement).DistinctBy(_ => _.Key)
-                                                           .ToDictionary()
+                                                           .ToDictionary(_ => _.Key, _ => _.Value)
         };
 
 
