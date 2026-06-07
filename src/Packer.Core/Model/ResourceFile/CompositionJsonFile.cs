@@ -14,6 +14,13 @@ public class CompositionJsonFile : JsonFile
         }
     }
 
+    private CompositionJsonFile(string target, Dictionary<string, string> entries)
+        : base(Path.GetFileName(target) ?? target)
+    {
+        _target = target;
+        Entries = entries;
+    }
+
     public override string Destination => _target;
 
     public override KVPFile Merge(KVPFile other)
@@ -40,7 +47,7 @@ public class CompositionJsonFile : JsonFile
                 }
             }
         }
-        return new CompositionJsonFile(_target, []) { Entries = merged, PolicyItem = PolicyItem, Namespace = Namespace };
+        return new CompositionJsonFile(_target, merged) { PolicyItem = PolicyItem, Namespace = Namespace };
     }
 
 }

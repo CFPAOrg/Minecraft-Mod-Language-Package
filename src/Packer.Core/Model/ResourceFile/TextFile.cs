@@ -1,8 +1,4 @@
-﻿using Packer.Core.Model.Configuration;
-using System.Text;
-using System.Text.RegularExpressions;
-
-namespace Packer.Core.Model.ResourceFile;
+﻿namespace Packer.Core.Model.ResourceFile;
 
 public class TextFile : ResourceFileProvider
 {

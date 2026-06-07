@@ -1,9 +1,4 @@
-﻿using System.Text;
-using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.RegularExpressions;
-
-namespace Packer.Core.Model.ResourceFile;
+﻿namespace Packer.Core.Model.ResourceFile;
 
 /// <summary>
 /// JSON 格式语言文件提供器。写入时按键排序，保证输出确定性。
@@ -26,13 +21,13 @@ public class JsonFile : KVPFile
             bool modifyOnly = other.PolicyItem?.ModifyOnly ?? false;
             if (modifyOnly)
             {
-                foreach (var (k,v) in otherJson.Entries)
+                foreach (var (k, v) in otherJson.Entries)
                     if (merged.ContainsKey(k))
                         merged[k] = v;
             }
             else
             {
-                foreach (var (k,v) in otherJson.Entries)
+                foreach (var (k, v) in otherJson.Entries)
                     merged.TryAdd(k, v);
             }
         }

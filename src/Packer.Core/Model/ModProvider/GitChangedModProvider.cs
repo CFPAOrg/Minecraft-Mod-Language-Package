@@ -1,6 +1,4 @@
-﻿using LibGit2Sharp;
-
-namespace Packer.Core.Model.ModProvider;
+﻿namespace Packer.Core.Model.ModProvider;
 
 /// <summary>
 /// 基于 git diff 的增量命名空间提供器。

@@ -1,7 +1,4 @@
-﻿using System.Text;
-using System.Text.RegularExpressions;
-
-namespace Packer.Core.Model.ResourceFile;
+﻿namespace Packer.Core.Model.ResourceFile;
 
 /// <summary>
 /// .lang 格式语言文件提供器。写入时按键排序，保证输出确定性。
@@ -10,6 +7,9 @@ public class LangFile : KVPFile
 {
     public LangFile(Dictionary<string, string> entries, string relativePath)
         : base(entries, relativePath) { }
+
+    protected LangFile(string relativePath)
+       : base(relativePath) { }
 
     /// <summary>合并另一个 .lang 语言文件</summary>
     public override KVPFile Merge(KVPFile other)

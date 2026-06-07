@@ -1,13 +1,17 @@
-using Packer.Core.Model;
-using Packer.Core.Model.Abstract;
+﻿using Packer.Core.Model.Abstract;
 using Packer.Core.Model.Configuration;
 using Packer.Core.Model.ModProvider;
+using Packer.Core.Model.PackerPolicys;
 
 namespace Packer.Core.Tests.ProviderTests;
 
 /// <summary>测试 9/13：命名空间提供程序和命名空间资源</summary>
 public class NamespaceProviderTests
 {
+    static readonly FloatingConfig EmptyFloating = new([], [], [], [],
+        new Dictionary<string, string>(), new Dictionary<string, string>());
+    static readonly Config EmptyGlobal = new(
+        new BaseConfig("", ["zh_cn"], "", [], "", [], [], []), EmptyFloating);
     // ── 测试 13：错误参数的命名空间类 ──
 
     [Fact]
@@ -49,7 +53,7 @@ public class NamespaceProviderTests
         using var dir = new TempDir();
         var ns = new AssetsNamespaceResource(dir.Path, "ns", "mod", "1.21");
 
-        var providers = ns.PackerPolicies.CreateProviders(ns, FloatingConfig.Shared).ToList();
+        var providers = ns.PackerPolicies.CreateProviders(ns, EmptyGlobal).ToList();
         Assert.Empty(providers);
     }
 }

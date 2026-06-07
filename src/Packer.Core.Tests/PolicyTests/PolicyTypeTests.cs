@@ -1,5 +1,6 @@
 using Packer.Core.Model;
 using Packer.Core.Model.Configuration;
+using Packer.Core.Model.PackerPolicys;
 using Packer.Core.Model.ResourceFile;
 
 namespace Packer.Core.Tests.PolicyTests;
@@ -9,6 +10,9 @@ public class PolicyTypeTests
 {
     static readonly FloatingConfig EmptyConfig = new([], [], [], [],
         new Dictionary<string, string>(), new Dictionary<string, string>());
+
+    static readonly Config EmptyGlobal = new(
+        new BaseConfig("", ["zh_cn"], "", [], "", [], [], []), EmptyConfig);
 
     // ── 测试 4：默认打包策略（Direct）与浮动配置组合时过滤正确 ──
 
@@ -24,7 +28,7 @@ public class PolicyTypeTests
         var config = new FloatingConfig([], [], [], ["packer-policy.json", "local-config.json"],
             new Dictionary<string, string>(), new Dictionary<string, string>());
 
-        var providers = new DirectPolicy().CreateProviders(ns, config).ToList();
+        var providers = new DirectPolicy().CreateProviders(ns, EmptyGlobal, config).ToList();
         Assert.Contains(providers, p => p.Destination.Contains("zh_cn"));
         Assert.DoesNotContain(providers, p => p.Destination.Contains("en_us"));
     }
@@ -45,7 +49,7 @@ public class PolicyTypeTests
             System.IO.Path.Combine(dir.Path, "lang/comp.json"), "json"));
 
         var ns = new AssetsNamespaceResource(dir.Path, "ns", "mod", "1.21");
-        var providers = policyList.CreateProviders(ns, EmptyConfig).ToList();
+        var providers = policyList.CreateProviders(ns, EmptyGlobal).ToList();
 
         Assert.Equal(2, providers.Count);
         Assert.IsType<JsonFile>(providers[0]);
@@ -65,7 +69,7 @@ public class PolicyTypeTests
         var config = new FloatingConfig([], [], [], ["packer-policy.json", "local-config.json"],
             new Dictionary<string, string>(), new Dictionary<string, string>());
 
-        var providers = new DirectPolicy().CreateProviders(ns, config).ToList();
+        var providers = new DirectPolicy().CreateProviders(ns, EmptyGlobal, config).ToList();
 
         Assert.Contains(providers, p => p is JsonFile);
         Assert.Contains(providers, p => p is LangFile);
@@ -87,7 +91,7 @@ public class PolicyTypeTests
         var config = new FloatingConfig([], [], [], ["packer-policy.json", "local-config.json"],
             new Dictionary<string, string>(), new Dictionary<string, string>());
 
-        var providers = ns.PackerPolicies.CreateProviders(ns, config).ToList();
+        var providers = ns.PackerPolicies.CreateProviders(ns, EmptyGlobal).ToList();
 
         var dests = providers.Select(p => p.Destination).ToList();
         Assert.Contains(dests, d => d.Contains("srcns"));

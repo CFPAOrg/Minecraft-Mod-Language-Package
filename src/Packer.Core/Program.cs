@@ -41,8 +41,7 @@ var allProviders = nsProvider.GetModsByVersion(version)
     .SelectMany(g => g)
     .Where(ns => !config.Base.ExclusionMods.Contains(ns.ModName))
     .Where(ns => !config.Base.ExclusionNamespaces.Contains(ns.NamespaceName))
-    .SelectMany(ns => ns.PackerPolicies
-        .SelectMany(p => p.CreateProviders(ns, config.Floating.Merge(ns.LocalConfig))))
+    .SelectMany(ns => ns.PackerPolicies.CreateProviders(ns, config))
     .ToLookup(p => p.Destination);
 
 // -- 按 Destination 合并同名文件 ----------------------------------------------
@@ -62,18 +61,17 @@ var merged = allProviders.Select(group =>
     return group.First();
 }).ToList();
 
-// -- 设置字符替换配置 ---------------------------------------------------------
-foreach (var p in merged.OfType<TextFile>())
-    p.EffectiveConfig = config.Floating;
-
 // -- 初始文件（pack.png / LICENSE / README.txt / pack.mcmeta）--------------------
 var initialFiles = new List<IResourceFileProvider>
 {
     new RawFile("./projects/templates/pack.png", "pack.png"),
-    new TextFile(File.ReadAllText("./projects/templates/LICENSE"), "LICENSE"),
+    new TextFile(File.ReadAllText("./projects/templates/LICENSE"), "LICENSE") { EffectiveConfig = config.Floating },
     config.Base.LoadReadmeTemp(),
     config.Base.LoadMetaTemp()
 };
+
+foreach (var f in initialFiles.OfType<TextFile>())
+    f.EffectiveConfig ??= config.Floating;
 
 // -- 写入 ZIP -----------------------------------------------------------------
 var packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";

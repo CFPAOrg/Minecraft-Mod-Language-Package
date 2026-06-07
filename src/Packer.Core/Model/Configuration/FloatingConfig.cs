@@ -1,7 +1,4 @@
-﻿using Packer.Core.Model.Abstract;
-using System.Collections.Frozen;
-
-namespace Packer.Core.Model.Configuration;
+﻿namespace Packer.Core.Model.Configuration;
 
 /// <summary>
 /// 浮动配置，可与命名空间下的文件合并
@@ -60,7 +57,10 @@ public record FloatingConfig(
     /// <summary>
     /// 从命名空间资源加载局域配置。
     /// </summary>
-    public static FloatingConfig Load(INamespaceResource ns) => Load(ns.LocalPath);
+    public static FloatingConfig Load(INamespaceResource ns)
+    {
+        return Load(ns.LocalPath);
+    }
 
     /// <summary>
     /// 从另一对象合并配置

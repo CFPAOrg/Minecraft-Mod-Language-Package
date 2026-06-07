@@ -1,5 +1,5 @@
-using Packer.Core.Model;
-using Packer.Core.Model.Configuration;
+﻿using Packer.Core.Model.Configuration;
+using Packer.Core.Model.PackerPolicys;
 using Packer.Core.Model.ResourceFile;
 using System.Text.Json;
 
@@ -8,6 +8,11 @@ namespace Packer.Core.Tests.ConfigurationTests;
 /// <summary>测试 1/2/3：配置与策略的解析与组合行为</summary>
 public class DeserializationTests
 {
+    static readonly FloatingConfig EmptyConfig = new([], [], [], [],
+        new Dictionary<string, string>(), new Dictionary<string, string>());
+    static readonly Config EmptyGlobal = new(
+        new BaseConfig("", ["zh_cn"], "", [], "", [], [], []), EmptyConfig);
+
     static readonly JsonSerializerOptions Opts = new()
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -140,7 +145,7 @@ public class DeserializationTests
             DestinationReplacement: new Dictionary<string, string>());
 
         // DirectPolicy 默认共享
-        var providers = new DirectPolicy().CreateProviders(ns, config).ToList();
+        var providers = new DirectPolicy().CreateProviders(ns, EmptyGlobal, config).ToList();
 
         Assert.Contains(providers, p => p.Destination.EndsWith("font/extra.txt"));
         Assert.DoesNotContain(providers, p => p.Destination.EndsWith("sounds/ambient.ogg"));

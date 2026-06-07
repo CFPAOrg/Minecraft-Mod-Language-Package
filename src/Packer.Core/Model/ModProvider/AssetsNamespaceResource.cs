@@ -1,7 +1,4 @@
-﻿using Packer.Core.Model.Abstract;
-using Packer.Core.Model.Configuration;
-
-namespace Packer.Core.Model.ModProvider;
+﻿namespace Packer.Core.Model.ModProvider;
 
 /// <summary>
 /// 基于 <c>./projects/assets</c> 目录的命名空间资源。

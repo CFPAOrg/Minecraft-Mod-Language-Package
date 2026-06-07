@@ -1,7 +1,4 @@
-﻿using Packer.Core.Model.Abstract;
-using System.Collections;
-
-namespace Packer.Core.Model.ModProvider;
+﻿namespace Packer.Core.Model.ModProvider;
 
 /// <summary>
 /// 命名空间分组。实现 <see cref="IGrouping{TKey, TElement}"/>，
@@ -40,9 +37,14 @@ class NamespaceGroup(
     public int Count => NamespaceResource.Length;
 
     public IEnumerator<INamespaceResource> GetEnumerator()
-        => NamespaceResource.AsEnumerable().GetEnumerator();
+    {
+        return NamespaceResource.AsEnumerable().GetEnumerator();
+    }
 
-    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 }
 
 /// <summary>指定 <see cref="NamespaceGroup"/> 的 Key 使用哪个字段</summary>

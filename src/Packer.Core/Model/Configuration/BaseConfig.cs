@@ -1,7 +1,4 @@
-﻿using Packer.Core.Model.Abstract;
-using Packer.Core.Model.ResourceFile;
-
-namespace Packer.Core.Model.Configuration;
+﻿namespace Packer.Core.Model.Configuration;
 
 /// <summary>
 /// 基础配置，版本唯一

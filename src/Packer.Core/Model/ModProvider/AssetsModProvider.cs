@@ -1,6 +1,4 @@
-﻿using Packer.Core.Model.Abstract;
-
-namespace Packer.Core.Model.ModProvider;
+﻿namespace Packer.Core.Model.ModProvider;
 
 /// <summary>
 /// 基于 <c>./projects/assets/{modName}/{version}/{namespace}/</c> 目录结构的模组提供者。

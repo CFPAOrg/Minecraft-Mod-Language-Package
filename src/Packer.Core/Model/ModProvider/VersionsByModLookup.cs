@@ -1,7 +1,4 @@
-﻿using Packer.Core.Model.Abstract;
-using System.Collections;
-
-namespace Packer.Core.Model.ModProvider;
+﻿namespace Packer.Core.Model.ModProvider;
 
 /// <summary>
 /// 遍历 <c>./projects/assets/{modName}/*/</c> 目录，按版本分组。
@@ -9,7 +6,7 @@ namespace Packer.Core.Model.ModProvider;
 internal class VersionsByModLookup(string modName) : ILookup<string, INamespaceResource>
 {
     private const string _assetsRoot = "./projects/assets";
-     
+
     private Dictionary<string, NamespaceGroup> Dictionary
     {
         get
@@ -32,12 +29,15 @@ internal class VersionsByModLookup(string modName) : ILookup<string, INamespaceR
             }
             return field;
         }
-    } 
+    }
     public IEnumerable<INamespaceResource> this[string key] => Dictionary.GetValueOrDefault(key)!.AsEnumerable() ?? [];
 
     public int Count => Dictionary.Count;
 
-    public bool Contains(string key) => Dictionary.ContainsKey(key);
+    public bool Contains(string key)
+    {
+        return Dictionary.ContainsKey(key);
+    }
 
     public IEnumerator<IGrouping<string, INamespaceResource>> GetEnumerator()
     {
