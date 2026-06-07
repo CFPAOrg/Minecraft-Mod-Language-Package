@@ -73,7 +73,7 @@ public abstract record PackerPolicyItem
 
             case { parentDir: "lang" }:
             case { ext: ".txt" or ".json" or ".md" }:
-                return new TextFile(File.ReadAllText(filePath), relativePath) { Namespace = ns };
+                return new TextFile(File.ReadAllText(filePath), relativePath) { Namespace = ns, PolicyItem = this };
 
             default:
                 return new RawFile(filePath, relativePath) { Namespace = ns };

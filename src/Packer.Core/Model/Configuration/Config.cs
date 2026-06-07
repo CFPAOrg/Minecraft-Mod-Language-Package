@@ -10,7 +10,7 @@ public record Config(BaseConfig Base, FloatingConfig Floating)
     /// <summary>
     /// 从命名空间下的局域配置加载内容。
     /// </summary>
-    public Config Modify(FloatingConfig floatingConfig)
+    public Config Modify(FloatingConfig? floatingConfig)
     {
         return this with { Floating = Floating.Merge(floatingConfig) };
     }

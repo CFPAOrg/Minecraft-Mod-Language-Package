@@ -9,8 +9,6 @@ public abstract class KVPFile : TextFile
     /// <summary>键值对条目</summary>
     public Dictionary<string, string> Entries { get; protected set; } = [];
 
-    /// <summary>创建此 provider 的策略项，合并时读取 <c>ModifyOnly</c></summary>
-    public PackerPolicyItem? PolicyItem { get; set; }
     /// <param name="relativePath">在资源包中的相对路径</param>
     protected KVPFile(string relativePath) : base(relativePath)
     {

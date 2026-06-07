@@ -8,7 +8,7 @@
 /// <param name="InclusionPaths">强制包含的路径</param>
 /// <param name="ExclusionPaths">强制排除的路径</param>
 /// <param name="CharacterReplacement">文本字符替换表</param>
-/// <param name="DestinationReplacement">内容替换表</param>
+/// <param name="DestinationReplacement">目标地址替换表</param>
 public record FloatingConfig(
     IEnumerable<string> InclusionDomains,
     IEnumerable<string> ExclusionDomains,
@@ -65,15 +65,16 @@ public record FloatingConfig(
     /// <summary>
     /// 从另一对象合并配置
     /// </summary>
-    public FloatingConfig Merge(FloatingConfig other)
+    public FloatingConfig Merge(FloatingConfig? other)
     {
-        if (this == Shared)
-        {
-            return other;
-        }
+
         if ((other ??= Shared) == Shared)
         {
             return this;
+        }
+        if (this == Shared)
+        {
+            return other;
         }
 
         return new FloatingConfig(

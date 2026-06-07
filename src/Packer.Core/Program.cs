@@ -3,7 +3,7 @@
 // 入口：解析参数 → 加载配置 → 获取命名空间（全量/增量）
 //       → 按策略展开 Provider → 合并 → 替换 → 写 ZIP → MD5
 // ============================================================
- 
+
 // -- 参数解析 ------------------------------------------------------------------
 var versionOpt = new Option<string>("--version", "--v");
 var incrementOpt = new Option<bool>("--increment", "--i");
@@ -49,13 +49,15 @@ var allProviders = nsProvider.GetModsByVersion(version)
 // 其他类型冲突时保留第一个，打出警告
 var merged = allProviders.Select(group =>
 {
-    if (!group.Skip(1).Any()) return group.First();
-    if (group.All(p => p is KVPFile))
+    if (!group.Skip(1).Any())
+        return group.First();
+    if (group.All(p => p is TextFile))
     {
-        var r = group.Cast<KVPFile>().Aggregate((a, n) => a.Merge(n));
-        if (r is ResourceFileProvider rfp)
-            rfp.Namespace = group.Cast<KVPFile>().First().Namespace;
-        return r;
+        TextFile result = group.All(p => p is KVPFile)
+            ? group.Cast<KVPFile>().Aggregate((a, n) => a.Merge(n))
+            : group.Cast<TextFile>().Aggregate((a, n) => a.Merge(n));
+        result.Namespace = ((ResourceFileProvider)group.First()).Namespace;
+        return result;
     }
     Log.Warning("Destination 冲突但无法合并: {Dest}, 保留第一个", group.Key);
     return group.First();
@@ -76,12 +78,21 @@ foreach (var f in initialFiles.OfType<TextFile>())
 // -- 写入 ZIP -----------------------------------------------------------------
 var packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";
 await using var stream = File.Create(packName);
+var destReplacements = config.Floating.DestinationReplacement
+    .ToDictionary(kv => new Regex(kv.Key), kv => kv.Value);
+
 using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
 {
     foreach (var p in merged.Concat(initialFiles))
     {
+        var dest = p.Destination;
+        foreach (var (pattern, replacement) in destReplacements)
+        {
+            dest = pattern.Replace(dest, replacement);
+        }
+
         using var content = p.GetContentStream();
-        var entry = archive.CreateEntry(p.Destination);
+        var entry = archive.CreateEntry(dest);
         using var es = entry.Open();
         await content.CopyToAsync(es);
     }
