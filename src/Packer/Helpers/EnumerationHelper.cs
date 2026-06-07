@@ -9,7 +9,9 @@ namespace Packer.Helpers
 {
     internal static class EnumerationHelper
     {
-        public static IEnumerable<IResourceFileProvider> EnumerateUnmerged(IEnumerable<string> targetModIdentifiers, Config config, string version)
+        public static IEnumerable<IResourceFileProvider> EnumerateUnmerged(IEnumerable<string> targetModIdentifiers,
+                                                                           Config config,
+                                                                           IEnumerable<string> acceptableVersions)
         {
             return
                 // ./projects/assets/<projectSlug>...
@@ -19,7 +21,9 @@ namespace Packer.Helpers
                     || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
                 where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
                 // .../<version>
-                let versionedDirectory = modDirectory.GetDirectories(version).FirstOrDefault(defaultValue: null)
+                // 在此只选择可选版本中最新的一个，其他的不参与打包
+                let versionedDirectory = acceptableVersions.Select(version => modDirectory.GetDirectories(version).FirstOrDefault())
+                                                           .FirstOrDefault(_ => _ is not null)
                 where versionedDirectory is not null
                 // .../<namespace>-CFPA-<author>
                 from namespaceDirectory in versionedDirectory.EnumerateDirectories()

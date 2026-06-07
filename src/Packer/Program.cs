@@ -15,7 +15,7 @@ namespace Packer
     class Program
     {
         // System.CommandLine.DragonFruit支持
-        public static async Task Main(string version, bool increment = false)
+        public static async Task Main(string version, bool increment = false, bool grouped = false, bool flattened = false)
         {
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()
@@ -30,10 +30,11 @@ namespace Packer
             var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version)
                 : Enumerable.Empty<string>();
 
-            var query = config.Base.FallbackVersions.Prepend(config.Base.Version)
-                .SelectMany(_ => EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, _).MergeDeep())
-                .MergeShallow()
-                .PostProcess(config);
+            var query = 
+                EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, config.Base.FallbackVersions.Prepend(config.Base.Version))
+                .MergeDeep()
+                .PostProcess(config)
+                .ToArray(); // 好吧要打两种包导致的
 
 
             IEnumerable<IResourceFileProvider> initialFiles = [
@@ -47,22 +48,41 @@ namespace Packer
                     [DateTime.UtcNow.AddHours(8), .. config.Base.McMetaParameters])
                 ];
 
-            string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";
-            await using var stream = File.Create(packName);
-
-            using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
+            if (flattened)
             {
-                await archive.WriteDirect(initialFiles);
-                // await archive.WriteDirect(query);
-                await archive.WriteGrouped(query);
+                string packName = $"./Minecraft-Mod-Language-Modpack-{version}.zip";
+                Log.Information("直出资源包：{0}", packName);
+                await using var stream = File.Create(packName);
+
+                using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
+                {
+                    await archive.WriteDirect(initialFiles);
+                    await archive.WriteDirect(query);
+                }
+                var md5 = stream.ComputeMD5();
+
+                Log.Information("打包文件的 MD5 值：{0}", md5);
+                File.WriteAllText($"./{version}.md5", md5);
+            }
+
+            if (grouped)
+            {
+                string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}-namespaced.zip";
+                Log.Information("命名空间组合包：{0}", packName);
+                await using var stream = File.Create(packName);
+
+                using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
+                {
+                    await archive.WriteDirect(initialFiles);
+                    await archive.WriteGrouped(query);
+                }
+                //var md5 = stream.ComputeMD5();
+
+                //Log.Information("打包文件的 MD5 值：{0}", md5);
+                //File.WriteAllText($"./{config.Base.Version}.md5", md5);
             }
 
             Log.Information("对版本 {0} 的打包结束。", version);
-
-            var md5 = stream.ComputeMD5();
-
-            Log.Information("打包文件的 MD5 值：{0}", md5);
-            File.WriteAllText($"./{config.Base.Version}.md5", md5);
         }
     }
 }

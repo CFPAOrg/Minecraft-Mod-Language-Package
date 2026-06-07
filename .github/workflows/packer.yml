@@ -109,7 +109,7 @@ jobs:
 
       - name: Run Packer for ${{ matrix.version }}
         # 分发包中应当包含全部内容
-        run: ./Packer --version="${{ matrix.version }}"
+        run: ./Packer --version="${{ matrix.version }}" --grouped --flattened
         # 运行逻辑：内容有更改 或 手动运行
         if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
@@ -121,6 +121,15 @@ jobs:
           path: |
             Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
             ${{ matrix.version }}.md5
+        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+      
+      # feat：按命名空间打小包
+      - name: Upload Artifact for ${{ matrix.version }} grouped
+        uses: actions/upload-artifact@v4
+        with:
+          name: Minecraft-Mod-Language-Modpack-${{ matrix.version }}-grouped
+          path: |
+            Minecraft-Mod-Language-Modpack-${{ matrix.version }}-namespaced.zip
         if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
   upload:
@@ -154,6 +163,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts/
+      
+      # Pending: 把按命名空间传的包也传上去
 
       # feat: UTC 20:00~21:00 取消上传（避开远程服务器的4:00-4:10）
       - name: Fail at inappropriate time
