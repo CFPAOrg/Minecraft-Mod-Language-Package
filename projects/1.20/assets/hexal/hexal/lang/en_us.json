@@ -17,7 +17,9 @@
   "hexcasting.mishap.storage_unloaded": "Bound Mote Nexus is unloaded.",
   "hexcasting.mishap.excessive_reproduction": "Wisp %s tried to reproduce excessively; only 1 child per tick.",
   "hexcasting.mishap.illegal_interworld_iota": "Attempted to bring iota %s interworld, this type of iota cannot be added to the Everbook.",
-  "hexcasting.mishap.entity_gate_with_no_entity" : "%s is anchored to an entity that is unloaded or doesn't exist.",
+  "hexcasting.mishap.entity_gate_with_no_entity": "%s is anchored to an entity that is unloaded or doesn't exist.",
+  "hexcasting.mishap.bad_trade.not_enough_payment": "%s is not enough to pay for the selected trade.",
+  "hexcasting.mishap.bad_trade.out_of_stock": "The selected trade is out of stock.",
 
   "hexcasting.mishap.bad_block.phaseable": "a phaseable block",
 
@@ -40,7 +42,9 @@
   "hexcasting.mishap.invalid_value.crafting_recipe": "a valid crafting recipe",
   "hexcasting.mishap.invalid_value.mote_duplicated": "each mote to appear only once",
   "hexcasting.mishap.invalid_value.cant_combine_motes": "two motes that can be combined",
+  "hexcasting.mishap.invalid_value.mote_empty": "a non-empty mote",
   "hexcasting.mishap.invalid_value.mote_not_size_one": "a mote with no NBT data or of size one",
+  "hexcasting.mishap.invalid_value.villager_trade": "a list of motes matching a single trade offer",
   "hexcasting.mishap.invalid_value.gate.offset": "an offset of at most %f blocks",
 
   "hexcasting.iota.hexal:gate": "Gate",
@@ -262,7 +266,7 @@
   "hexal.page.gates.gate/unmark": "Consumes a gate iota and an entity. Unmarks that entity so that if it was marked with $(l:patterns/great_spells/gates#hexal:gate/mark)$(action) Gate's Opening/$ it will no longer be teleported the next time that gate is closed.",
   "hexal.page.gates.gate/mark/num/get": "Consumes a gate iota, returns how many entities are marked by that gate.",
   "hexal.page.gates.gate/mark/get": "Consumes a gate iota and an entity, returns whether that entity is marked by that gate.",
-  "hexal.page.gates.gate/close": "Consumes a non-drifing gate iota, or a drifting gate iota and a position. Transports all the entities marked with the passed gate to the stored or given position, as relevant. Costs half an $(l:items/amethyst)$(item)Amethyst Shard/$, plus an $(l:items/amethyst)$(item)Amethyst Dust/$ per metre transported per entity if the gate was drifting.",
+  "hexal.page.gates.gate/close": "Consumes a non-drifing gate iota, or a drifting gate iota and a position. Transports all the entities marked with the passed gate to the stored or given position. Costs half an $(l:items/amethyst)$(item)Amethyst Shard/$, plus one tenth of an $(l:items/amethyst)$(item)Amethyst Dust/$ per metre transported per entity if the gate was drifting.",
   "hexal.page.gates.gate/closeable": "Consumes a gate iota, returns whether that gate has a valid destination. The destination may be invalid if it's outside the world, or if the entity used to create an entity-anchored gate is unloaded or no longer exists.",
 
   "hexal.entry.motes": "Motes",
@@ -345,6 +349,9 @@
   "text.autoconfig.hexal.option.server.miscSpells.placeTypeCost": "Place Type Cost",
   "text.autoconfig.hexal.option.server.miscSpells.smeltCost": "Smelt Cost per Item",
 
+  "text.autoconfig.hexal.option.server.fabricOnlySpells": "Fabric-Only Spells",
+  "text.autoconfig.hexal.option.server.fabricOnlySpells.phaseBlockCostFactor": "Phase Block Cost Factor",
+
   "text.autoconfig.hexal.option.server.wispSpells": "Wisp Spells",
   "text.autoconfig.hexal.option.server.wispSpells.moveSpeedSetCost": "Move Speed Set Base Cost",
   "text.autoconfig.hexal.option.server.wispSpells.moveSpeedSetCost.@Tooltip[0]": "Cost to increase the movement speed of a wisp by 1.",
@@ -366,6 +373,9 @@
   "text.autoconfig.hexal.option.server.wispUpkeep.storingPlayerCostScaleFactor": "Storing Player Cost Scale Factor",
   "text.autoconfig.hexal.option.server.wispUpkeep.storingPlayerCostScaleFactor.@Tooltip[0]": "The multiplicative cost increase of wisps containing an iota of another player.",
   "text.autoconfig.hexal.option.server.wispUpkeep.storingPlayerCostScaleFactor.@Tooltip[1]": "Bounded from 1.0 to 200.0.",
+  "text.autoconfig.hexal.option.server.wispUpkeep.mediaFlowRateOverLink": "Media Flow Rate per Link",
+  "text.autoconfig.hexal.option.server.wispUpkeep.mediaFlowRateOverLink.@Tooltip[0]": "How fast media can flow along links.",
+  "text.autoconfig.hexal.option.server.wispUpkeep.mediaFlowRateOverLink.@Tooltip[1]": "Bounded from 0.0 to 0.1",
 
   "text.autoconfig.hexal.option.server.linkSpells": "Link Spells",
   "text.autoconfig.hexal.option.server.linkSpells.linkCost": "Link Cost",
@@ -376,6 +386,8 @@
   "text.autoconfig.hexal.option.server.gateSpells.makeGateCost": "Make Gate Cost",
   "text.autoconfig.hexal.option.server.gateSpells.markGateCost": "Mark Gate Cost",
   "text.autoconfig.hexal.option.server.gateSpells.closeGateCost": "Close Gate Cost",
+  "text.autoconfig.hexal.option.server.gateSpells.closeGateDistanceFactor": "Drifting Gate Cost Factor",
+  "text.autoconfig.hexal.option.server.gateSpells.maxGateOffset": "Maximum Entity-Anchored Gate Offset",
 
   "text.autoconfig.hexal.option.server.itemSpells": "Item Spells",
   "text.autoconfig.hexal.option.server.itemSpells.bindStorageCost": "Bind Storage Cost",
@@ -384,6 +396,7 @@
   "text.autoconfig.hexal.option.server.itemSpells.returnItemCost": "Return Item Cost",
   "text.autoconfig.hexal.option.server.itemSpells.craftItemCost": "Craft Item Cost",
   "text.autoconfig.hexal.option.server.itemSpells.tradeItemCost": "Trade Item Cost",
+  "text.autoconfig.hexal.option.server.itemSpells.useItemOnCost": "Use Item On Cost",
   "text.autoconfig.hexal.option.server.itemSpells.maxItemsReturned": "Maximum Items Returned",
   "text.autoconfig.hexal.option.server.itemSpells.maxItemsReturned.@Tooltip[0]": "Maximum number of items that can be returned by Return Item.",
   "text.autoconfig.hexal.option.server.itemSpells.maxItemsReturned.@Tooltip[1]": "Bounded from 640 to 64,000.",
@@ -416,6 +429,8 @@
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[0]": "The inverse probability of tick randomly ticking a block.",
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[1]": "Higher numbers make random ticks less likely, lower numbers make them more likely.",
   "text.autoconfig.hexal.option.server.greatSpells.tickRandomTickIProb.@Tooltip[2]": "Bound from 600 to 2100.",
+  "text.autoconfig.hexal.option.server.greatSpells.accelerateDenyList": "Accelerate Blacklist",
+  "text.autoconfig.hexal.option.server.greatSpells.accelerateDenyList.@Tooltip": "Resource locations of blocks that Accelerate should not work on.",
 
   "hexal.everbook.sizewarning": "Your everbook data was larger than the server's limit of %s bytes. You will not be able to use it until you rejoin with a small enough everbook.",
   "hexal.everbook.unexpectederror": "An unexpected error occurred while attempting to process your everbook data, and you will not have access to it until the problem is resolved. Please contact your server administrator(s) for more information.",
