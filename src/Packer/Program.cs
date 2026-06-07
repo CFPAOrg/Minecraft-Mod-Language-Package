@@ -30,11 +30,9 @@ namespace Packer
             var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version)
                 : Enumerable.Empty<string>();
 
-            var query = 
-                EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, config.Base.FallbackVersions.Prepend(config.Base.Version))
-                .MergeDeep()
-                .PostProcess(config)
-                .ToArray(); // 好吧要打两种包导致的
+            
+
+            
 
 
             IEnumerable<IResourceFileProvider> initialFiles = [
@@ -52,6 +50,11 @@ namespace Packer
             {
                 string packName = $"./Minecraft-Mod-Language-Modpack-{version}.zip";
                 Log.Information("直出资源包：{0}", packName);
+                var query =
+                    EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, [config.Base.Version])
+                    .MergeDeep()
+                    .PostProcess(config);
+
                 await using var stream = File.Create(packName);
 
                 using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
@@ -68,7 +71,12 @@ namespace Packer
             if (grouped)
             {
                 string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}-namespaced.zip";
-                Log.Information("命名空间组合包：{0}", packName);
+                Log.Information("组合包：{0}", packName);
+                var query =
+                    EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, config.Base.FallbackVersions.Prepend(config.Base.Version))
+                    .MergeDeep()
+                    .PostProcess(config);
+                
                 await using var stream = File.Create(packName);
 
                 using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
