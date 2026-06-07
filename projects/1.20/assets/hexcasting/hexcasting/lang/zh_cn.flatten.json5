@@ -399,8 +399,12 @@
           "": "法术环禁用操作列表",
           "@Tooltip": "法术环中被禁用操作的资源位置；试图执行此类操作会导致事故。例如，“hexcasting:get_caster”会禁用意识之精思。",
         },
+        globalCostScaling: {
+          "": "全局消耗倍数",
+          "@Tooltip": "除去#hexcasting:cannot_modify_cost标签下的操作，其余操作的媒质消耗均会乘以该数。若希望调整该标签下操作的消耗，请使用“操作消耗倍数”配置。",
+        },
         costRescaleListRaw: {
-          "": "消耗倍数",
+          "": "操作消耗倍数",
           "@Tooltip": "资源位置与对应操作媒质消耗倍数的映射。例如，“hexcasting:add_motion 3”会让驱动的消耗变为3倍。",
         },
         greaterTeleportSplatsItems: {
@@ -920,6 +924,11 @@
         "teleport/great": "卓越传送",
         brainsweep: "剥离意识",
 
+        escape: "考察",
+        open_paren: "内省",
+        close_paren: "反思",
+        undo: "消解",
+
         eval: "赫尔墨斯之策略",
         "eval/cc": "伊里斯之策略",
         for_each: "托特之策略",
@@ -991,13 +1000,6 @@
       mask: "簿记员之策略：%s",
     },
 
-    "rawhook.hexcasting:": {
-      open_paren: "内省",
-      close_paren: "反思",
-      escape: "考察",
-      undo: "消解",
-    },
-
     "iota.hexcasting:": {
       "null": {
         "": "Null",
@@ -1046,7 +1048,7 @@
 
       not_enough_args: "本应接受大于等于%s个参数，而实际栈高度为%s",
       no_args: "本应接受大于等于%s个参数，而实际为空栈",
-      too_many_close_parens: "在绘制反思前未先绘制内省",
+      needs_parens: "在绘制反思前未先绘制内省",
 
       wrong_dimension: "无法在%2$s中影响到%1$s",
       entity_too_far: "%s超出影响范围",
@@ -1513,8 +1515,8 @@
         "incorrect_block.title": "方块错误",
         incorrect_block: "该操作需在目标位置存在某种方块，而该位置实际存在的方块不合适。$(br2)产生亮绿色火花，并在对应位置产生一次爆炸。这种爆炸似乎不会伤害到我、世界或是任何其他事物。就是挺吓人的。",
 
-        "retrospection.title": "反思过急",
-        retrospection: "试图在绘制$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$前绘制$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$。$(br2)产生橙色火花，并压入一个$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$对应的图案。",
+        "needs_parens.title": "内省缺失",
+        needs_parens: "试图在绘制$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$前绘制$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$或$(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)消解/$。$(br2)产生橙色火花，并将我试图绘制的图案作为 iota 压栈。",
 
         "too_many_patterns.title": "陷入沉思",
         too_many_patterns: "试图在单个$(hex)咒术/$内运行过多图案，通常是因为不小心制造了死循环。$(br2)产生暗蓝色火花，并使我窒息。",
