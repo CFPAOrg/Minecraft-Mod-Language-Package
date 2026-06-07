@@ -265,6 +265,15 @@
   "gui.hexcasting": {
     spellcasting: "Hex Grid",
   },
+
+  "category.hexcasting": {
+    "binds": "Hex Casting",
+  },
+
+  "key.hexcasting": {
+    "spellbook_prev": "Previous Spellbook Page",
+    "spellbook_next": "Next Spellbook Page",
+  },
   
   "tag.hexcasting": {
     staves: "Hex Staves",
@@ -335,13 +344,17 @@
           "": "Ctrl Toggles Off Stroke Order",
           "@Tooltip": "Whether the ctrl key will instead turn *off* the color gradient on patterns",
         },
+        disableInworldScrolling: {
+          "": "Disable In-World Scrolling",
+          "@Tooltip": "Disable scrolling input for spellbooks and abaci in the normal world, keeping keybinds and staff screen scrolling normal"
+        },
         invertSpellbookScrollDirection: {
           "": "Invert Spellbook Scroll Direction",
           "@Tooltip": "Whether scrolling up (as opposed to down) will increase the page index of the spellbook, and vice versa",
         },
         invertAbacusScrollDirection: {
           "": "Invert Abacus Scroll Direction",
-          "@Tooltip": "Whether scrolling up (as opposed to down) will increase the page index of the abacus, and vice versa",
+          "@Tooltip": "Whether scrolling up (as opposed to down) will increase the value of the abacus, and vice versa",
         },
         gridSnapThreshold: {
           "": "Grid Snap Threshold",
@@ -354,6 +367,14 @@
         alwaysShowListCommas: {
           "": "Always Show List Commas",
           "@Tooltip": "Whether all iota types should be comma-separated when displayed in lists (by default, pattern iotas do not use commas)",
+        },
+        advancedTooltipsShowsIotaNBT: {
+          "": "Advanced Tooltips Shows Iota NBT",
+          "@Tooltip": "Whether enabling advanced tooltips (F3+H) should display the full NBT of iotas stored in items like foci and spellbooks",
+        },
+        staticActiveSlates: {
+          "": "Static Active Slates",
+          "@Tooltip": "Whether patterns on active slates should be rendered without wobble (improves performance with lots of active slates)",
         },
       },
       
@@ -372,11 +393,19 @@
         },
         actionDenyList: {
           "": "Action Deny List",
-          "@Tooltip": "Resource locations of disallowed actions. Trying to cast one of these will result in a mishap. For example, hexcasting:get_caster will prevent Mind's Reflection",
+          "@Tooltip": "Resource locations of disallowed actions. Trying to cast one of these will result in a mishap. For example, hexcasting:get_caster will prevent Mind's Reflection.",
         },
         circleActionDenyList: {
           "": "Circle Action Deny List",
-          "@Tooltip": "Resource locations of disallowed actions within circles. Trying to cast one of these from a circle will result in a mishap.",
+          "@Tooltip": "Resource locations of disallowed actions within circles. Trying to cast one of these from a circle will result in a mishap. For example, hexcasting:get_caster will prevent Mind's Reflection.",
+        },
+        globalCostScaling: {
+          "": "Global Cost Scaling Factor",
+          "@Tooltip": "All media costs, except for actions in the #hexcasting:cannot_modify_cost tag, will be multiplied by this value. If you want to modify the cost of an action in that tag, use the per-action cost scaling list.",
+        },
+        costRescaleListRaw: {
+          "": "Per-Action Cost Scaling Factors",
+          "@Tooltip": "Maps resource locations to the scaling factor for that specific action's media cost. For example, hexcasting:add_motion 3 will make Impulse cost 3x as much.",
         },
         greaterTeleportSplatsItems: {
           "": "Greater Teleport Splats Items",
@@ -582,7 +611,7 @@
         needs_purchase: "Purchase to show pattern",
         pattern_not_loaded: "Place in inventory to load pattern",
         "recalc_warning.line1": "The per-world pattern for %s has not been calculated yet!",
-        "recalc_warning.line2": "Please run /hexcasting recalcPatterns, then grab a new scroll.",
+        "recalc_warning.line2": "Please run /hexcasting recalcPatterns, then get a new scroll.",
       },
       
       abacus: {
@@ -710,6 +739,7 @@
             pi: "Arc's Reflection",
             tau: "Circle's Reflection",
             "e": "Euler's Reflection",
+            phi: "Harmony Reflection",
           },
         },
         
@@ -893,6 +923,11 @@
         create_lava: "Create Lava",
         "teleport/great": "Greater Teleport",
         brainsweep: "Flay Mind",
+
+        escape: "Consideration",
+        open_paren: "Introspection",
+        close_paren: "Retrospection",
+        undo: "Evanition",
         
         eval: "Hermes' Gambit",
         "eval/cc": "Iris' Gambit",
@@ -964,13 +999,6 @@
       number: "Numerical Reflection: %s",
       mask: "Bookkeeper's Gambit: %s",
     },
-    
-    "rawhook.hexcasting:": {
-      open_paren: "Introspection",
-      close_paren: "Retrospection",
-      escape: "Consideration",
-      undo: "Evanition",
-    },
 
     "iota.hexcasting:": {
       null: {
@@ -1020,7 +1048,7 @@
       
       not_enough_args: "expected %s or more arguments but the stack was only %s tall",
       no_args: "expected %s or more arguments but the stack was empty",
-      too_many_close_parens: "Did not first use Introspection",
+      needs_parens: "Did not first use Introspection",
       
       wrong_dimension: "cannot see %s from %s",
       entity_too_far: "%s is out of range",
@@ -1130,6 +1158,7 @@
       bad_item: {
         "": "needs %s but got %dx %s",
         offhand: "needs %s in the other hand but got %dx %s",
+        hotbar: "needs %s somewhere in the hotbar",
         
         iota: {
           "": "a place to store iotas",
@@ -1146,6 +1175,7 @@
         rechargable: "a rechargable item",
         colorizer: "a pigment",
         variant: "an item with variants",
+        placeable: "a placeable item",
       },
       
       bad_block: {
@@ -1485,9 +1515,9 @@
         "incorrect_block.title": "Incorrect Block",
         incorrect_block: "The action requires some sort of block at a target location, but the block supplied was not suitable.$(br2)Causes bright green sparks, and causes an ephemeral explosion at the given location. The explosion doesn't seem to harm me, the world, or anything else though; it's just startling.",
         
-        "retrospection.title": "Hasty Retrospection",
-        retrospection: "I attempted to draw $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ without first drawing $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$.$(br2)Causes orange sparks, and pushes the pattern for $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ to the stack as a pattern iota.",
-        
+        "needs_parens.title": "Absent Introspection",
+        needs_parens: "I attempted to draw $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ or $(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)Evanition/$ without first drawing $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$.$(br2)Causes orange sparks, and pushes the pattern I tried to draw to the stack as an iota.",
+
         "too_many_patterns.title": "Lost in Thought",
         too_many_patterns: "I attempted to evaluate too many patterns in one _Hex. Often, this happens because I've accidentally created an infinite loop.$(br2)Causes dark blue sparks, and chokes all the air out of me.",
         
@@ -1706,7 +1736,7 @@
       
       akashiclib: {
         "1": "I KNOW SO MUCH it is ONLY RIGHT to have a place to store it all. Information can be stored in books but it is oh so so so so $(italic)slow/$ to write by hand and read by eye. I demand BETTER. And so I shall MAKE better.$(br2)... I am getting worse ... do not know if I have time to write everything bursting through my head before expiring.",
-        "2": "The library. Here. My plans.$(br2)Like how patterns are associated with actions, I can associate my own patterns with iotas in any way I choose. An $(l:greatwork/akashiclib)$(item)Akashic Record/$ controls the library, and each $(l:greatwork/akashiclib)$(item)Akashic Bookshelf/$ stores one pattern mapped to one iota. These must all be directly connected together, touching, within 32 blocks. An $(l:greatwork/akashiclib)$(item)Akashic Ligature/$ doesn't do anything but count as a connecting block, to extend the size of my library.",
+        "2": "The library. Here. My plans.$(br2)Like how patterns are associated with actions, I can associate my own patterns with iotas in any way I choose. An $(l:greatwork/akashiclib)$(item)Akashic Record/$ controls the library, and each $(l:greatwork/akashiclib)$(item)Akashic Bookshelf/$ stores one pattern mapped to one iota. These must all be directly connected together, touching, within 128 blocks. An $(l:greatwork/akashiclib)$(item)Akashic Ligature/$ doesn't do anything but count as a connecting block, to extend the size of my library.",
         akashic_record: "Allocating and assigning patterns is simple but oh so boring. I have better things to do. I will need a mind well-used to its work for the extraction to stay sound.",
         "3": "Then to operate the library is simple, the patterns are routed through the librarian and it looks them up and returns the iota to you. Two actions do the work. $(l:patterns/akashic_patterns)Notes here/$.$(br2)Using an empty $(l:items/scroll)$(item)scroll/$ on a bookshelf copies the pattern there onto the $(l:items/scroll)$(item)scroll/$. Sneaking and using an empty hand clears the datum in the shelf.",
       },
@@ -1788,7 +1818,7 @@
         "abs.2": "Replaces a number with its absolute value, or a vector with its length.",
         
         "pow.1": "Perform exponentiation or vector projection.",
-        "pow.2": "With two numbers, combines them by raising the first to the power of the second.$(li)With a number and a vector, removes the number and raises each component of the vector to the number's power.$(li)With two vectors, combines them into the $(l:https://en.wikipedia.org/wiki/Vector_projection)vector projection/$ of the top of the stack onto the second-from-the-top.$(br2)In the first and second cases, the first argument or its components are the base, and the second argument or its components are the exponent.",
+        "pow.2": "With two numbers, combines them by raising the first to the power of the second.$(li)With a number and a vector, removes the number and raises each component of the vector to the number's power.$(li)With two vectors, combines them into the $(l:https://en.wikipedia.org/wiki/Vector_projection)vector projection/$ of the second-from-the-top onto the top of the stack.$(br2)In the first and second cases, the first argument or its components are the base, and the second argument or its components are the exponent.",
         
         floor: "\"Floors\" a number, cutting off the fractional component and leaving an integer value. If passed a vector, instead floors each of its components.",
         ceil: "\"Ceilings\" a number, raising it to the next integer value if it has a fractional component. If passed a vector, instead ceils each of its components.",
@@ -1842,6 +1872,7 @@
           tau: "Adds τ, the radial representation of a complete circle, to the stack.",
           pi: "Adds π, the radial representation of half a circle, to the stack.",
           "e": "Adds $(italic)e/$, the base of natural logarithms, to the stack.",
+          phi: "Adds φ, the golden ratio, to the stack. This is the ratio between two values such that (A+B)/A = A/B.",
         },
       },
       
@@ -1972,9 +2003,9 @@
       
       meta: {
         "eval.1": "Remove a pattern or list of patterns from the stack, then cast them as if I had drawn them myself with my $(l:items/staff)$(item)Staff/$ (until a $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ is encountered). If an iota is escaped with $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ or $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)its ilk/$, it will be pushed to the stack. Otherwise, non-patterns will fail.",
-        "eval.2": "This can be $(italic)very/$ powerful in tandem with $(l:items/focus)$(item)Foci/$.$(br2)It also makes the bureaucracy of Nature a \"Turing-complete\" system, according to one esoteric scroll I found.$(br2)However, it seems there's a limit to how many times a _Hex can cast itself-- Nature doesn't look kindly on runaway spells!$(br2)In addition, with the energies of the patterns occurring without me to guide them, any mishap will cause the remaining actions to become too unstable and immediately unravel.",
+        "eval.2": "This can be very powerful in tandem with $(l:items/focus)$(item)Foci/$, and according to one esoteric scroll I found it also makes the bureaucracy of Nature a \"Turing-complete\" system.$(br2)However, it seems there's a limit to how many times a _Hex can cast itself-- Nature doesn't look kindly on runaway spells!$(br2)In addition, with the energies of the patterns occurring without me to guide them, any mishap will cause the remaining actions to immediately unravel.",
         
-        "for_each.1": "Remove a list of patterns and a list from the stack, then cast the given pattern over each element of the second list.",
+        "for_each.1": "Remove a list of patterns and a list from the stack, then cast the given pattern-list over each element of the second list.",
         "for_each.2": "More specifically, for each element in the second list, it will:$(li)Create a new stack, with everything on the current stack plus that element$(li)Draw all the patterns in the first list$(li)Save all the iotas remaining on the stack to a list$(br)Then, after all is said and done, pushes the list of saved iotas onto the main stack.$(br2)No wonder all the practitioners of this art go mad.",
         
         "halt.1": "This pattern forcibly halts a _Hex. This is mostly useless on its own, as I could simply just stop writing patterns, or put down my staff.",
@@ -2071,17 +2102,17 @@
       
       colorize: "I must be holding a $(l:items/pigments)$(item)Pigment/$ in my other hand to cast this spell. When I do, it will consume the dye and permanently change my mind's coloration (at least, until I cast the spell again). Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
       
-      cycle_variant: "Certain items I create seem oddly receptive to the influence of _media. By holding a $(l:items/hexcasting)$(item)Cypher/$, $(l:items/hexcasting)$(item)Trinket/$, $(l:items/hexcasting)$(item)Artifact/$, $(l:items/focus)$(item)Focus/$, or $(l:items/spellbook)$(item)Spellbook/$ in my other hand, I can use this spell to change the appearance of the item. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
+      cycle_variant: "Certain items I create seem oddly receptive to the influence of _media. By holding a $(l:items/hexcasting)$(item)Cypher/$, $(l:items/hexcasting)$(item)Trinket/$, $(l:items/hexcasting)$(item)Artifact/$, $(l:items/focus)$(item)Focus/$, or $(l:items/spellbook)$(item)Spellbook/$ in my other hand, I can use this spell to change the appearance of the item. Costs a negligible amount of _media.",
       
       flights: {
         "1": "Although it seems that true, limitless flight is out of my grasp, I have nonetheless found some methods of holding one in the sky, each with their respective drawbacks.$(br2)All forms produce a shimmer of excess _media; as the spell gets closer to ending, the sparks are shot through with more red and black.",
         "2": "Other forms of flight do exist, of course. For example, a combination of $(l:patterns/spells/basic#hexcasting:add_motion)$(action)Impulse/$ and $(l:patterns/spells/nadirs#hexcasting:potion/levitation)$(action)Blue Sun's Nadir/$ has been used since antiquity for a flight of sorts.$(br2)I've also heard tell of a thin membrane worn on the back that allows the ability to glide. From my research, I believe the Great spell $(l:patterns/great_spells/altiora)$(action)Altiora/$ may be used to mimic it.",
         
         "range.1": "A flight limited in its range.",
-        "range.2": "The second argument is a horizontal radius, in meters, in which the spell is stable. Moving outside of that radius will end the spell, dropping me out of the sky. As long as I stay inside the safe zone, however, the spell lasts indefinitely. An additional shimmer of _media marks the origin point of the safe zone. $(br2)Costs about 1 $(l:items/amethyst)$(item)Amethyst Dust/$ per meter of safety.",
+        "range.2": "The second argument is a horizontal radius, in meters, in which the spell is stable. Moving outside of that radius will end the spell, dropping me out of the sky. As long as I stay inside the safe zone, however, the spell lasts indefinitely. An additional shimmer of _media marks the origin point of the safe zone. $(br2)Costs about 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per meter of safety, though any radius less than 1 meter will still cost 2 $(l:items/amethyst)$(item)Amethyst Dust/$.",
         
         "time.1": "A flight limited in its duration.",
-        "time.2": "The second argument is an amount of time in seconds for which the spell is stable. After that time, the spell ends and I am dropped from the sky. $(br2)It is relatively expensive at about 1 $(l:items/amethyst)$(item)Amethyst Shard/$ per second of flight; I believe it is best suited for travel.",
+        "time.2": "The second argument is an amount of time in seconds for which the spell is stable. After that time, the spell ends and I am dropped from the sky. $(br2)Costs about 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per second of flight; I believe it is best suited for travel.",
         
         // Putting this in this category instead of elsewhere -- see sentinel chapter also containing some reflections/nonspells
         "can_fly.1": "Returns whether the given player is under the effects of $(l:patterns/spells/flight#hexcasting:flight/range)Anchorite's/$ or $(l:patterns/spells/flight#hexcasting:flight/time)Wayfarer's Flight/$.",
@@ -2105,8 +2136,8 @@
       },
       
       "teleport/great": {
-        "1": "Far more powerful than $(l:patterns/spells/basic#hexcasting:blink)$(action)Blink/$, this spell lets me teleport nearly anywhere in the entire world! There does seem to be a limit, but it is $(italic)much/$ greater than the normal radius of influence I am used to.",
-        "2": "The entity will be teleported by the given vector. Curiously, this vector seems to be an offset, not an absolute position in the world; for example, if I use $(l:patterns/consts#hexcasting:const/vec/x)$(action)Vector Reflection +X/$, the entity will end up precisely one block east of its original position. No matter the distance, it always seems to cost about ten $(l:items/amethyst)$(item)Charged Amethyst/$.$(br2)The transference is not perfect, and it seems when teleporting something as complex as a player, their inventory doesn't $(italic)quite/$ stay attached, and tends to splatter everywhere at the destination. In addition, the target will be forcibly removed from anything inanimate they are riding or sitting on ... but I've read scraps that suggest animals can come along for the ride, so to speak.",
+        "1": "Far more powerful than $(l:patterns/spells/basic#hexcasting:blink)$(action)Blink/$, this spell lets me teleport an entity to anywhere in the entire world! No matter the distance, it always seems to cost about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
+        "2": "The provided vector is an offset, not an absolute position in the world; for example, if I use (1, 0, 0), the entity will end up precisely one block east of its original position.$(br2)Unfortunately, it seems that when teleporting myself, I'm unable to remain perfectly focused. This can cause some of my items to splatter out of my inventory on arrival.$(br2)I should also note that the target will be forcibly removed from anything inanimate they are riding ... but I've read scraps that suggest animals can come along for the ride, so to speak.",
       },
       
       zeniths: {
