@@ -1,0 +1,37 @@
+{
+    "name": "音乐缓存",
+    "icon": "minecraft:book",
+    "category": "mimi:9commands",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "这些指令让你能够查看与修改服务器的网络MIDI文件缓存状态。"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "大小",
+            "text": "$(l)/mimi cache size$()$(br2)此指令$(l)仅管理员$()可以使用，将会列出当前服务器设定的网络MIDI文件缓存大小上限(曲目数量)与使用率$(br2)样例：$(c:/mimi cache size)/mimi cache size$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "设定",
+            "text": "$(l)/mimi cache set <size>$()$(br2)此指令$(l)仅管理员$()可以使用，将会设定服务器的网络MIDI文件缓存大小上限(曲目数量)。将此数值设定为比当前使用的大小更少$(o)并不会$()自动删除多余缓存。$(br)$(li)$(l)size$() - 服务器缓存的曲目数上限。$(br2)样例：$(c:/mimi cache set 100)/mimi cache set 100$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "删除",
+            "text": "$(l)/mimi cache prune$()$(br2)此指令$(l)仅管理员$()可以使用，将会把当前服务器的MIDI文件缓存删减到比设定的缓存上限少一个文件。$(br2)样例：$(c:/mimi cache prune)/mimi cache prune$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "清空",
+            "text": "$(l)/mimi cache clear$()$(br2)此指令$(l)仅管理员$()可以使用，将会清空当前服务器的网络MIDI文件缓存。$(br2)样例：$(c:/mimi cache clear)/mimi cache clear$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "重新加载",
+            "text": "$(l)/mimi cache reload$()$(br2)此指令$(l)仅管理员$()可以使用，将会从硬盘中重新加载服务器MIDI文件缓存的列表。当你直接从服务器的文件夹中添加或者移除文件时这条指令很有用。$(br2)样例：$(c:/mimi cache reload)/mimi cache reload$()"
+        }
+    ],
+    "sortnum": 3
+}
