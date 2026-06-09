@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.IO.Compression;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -43,11 +44,11 @@ namespace Packer.Models
         public IResourceFileProvider ReplaceDestination(string searchPattern, string replacement);
 
         /// <summary>
-        /// 将该提供器的内容写入到资源包的正确位置
+        /// 将该提供器的内容写入给定的<see cref="Stream" />中
         /// </summary>
-        /// <param name="archive"></param>
+        /// <param name="stream"></param>
         /// <exception cref="InvalidOperationException">资源包中已有同名文件</exception>
-        public Task WriteToArchive(ZipArchive archive);
+        public Task WriteToStream(Stream stream);
 
         /// <summary>
         /// 目标在资源包中的相对位置，从根目录算起

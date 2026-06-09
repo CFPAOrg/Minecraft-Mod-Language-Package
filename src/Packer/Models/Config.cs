@@ -78,6 +78,11 @@ namespace Packer
         /// 不进行打包的<c>namespace</c>
         /// </summary>
         public IEnumerable<string> ExclusionNamespaces { get; set; }
+
+        /// <summary>
+        /// 回退版本，当该版本不存在相应语言文件时从这些版本获取文件
+        /// </summary>
+        public IEnumerable<string> FallbackVersions { get; set; }
     }
 
     /// <summary>

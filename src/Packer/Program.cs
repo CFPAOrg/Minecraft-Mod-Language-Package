@@ -15,7 +15,7 @@ namespace Packer
     class Program
     {
         // System.CommandLine.DragonFruit支持
-        public static async Task Main(string version, bool increment = false)
+        public static async Task Main(string version, bool increment = false, bool grouped = false, bool flattened = false)
         {
             Log.Logger = new LoggerConfiguration()
              .Enrich.FromLogContext()
@@ -23,48 +23,17 @@ namespace Packer
              .MinimumLevel.Debug()
              .CreateLogger();
 
-            var config = await ConfigHelpers.RetrieveConfig(configTemplate: "./config/packer/{0}.json",
-                                                    version: version);
+            var config = ConfigHelpers.RetrieveConfig(configTemplate: "./config/packer/{0}.json",
+                                                      version: version);
             Log.Information("开始对版本 {0} 的打包", config.Base.Version);
 
             var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version)
                 : Enumerable.Empty<string>();
 
-            var query =
-                // ./projects/assets/<projectSlug>...
-                from modDirectory in new DirectoryInfo("./projects/assets").EnumerateDirectories()
-                let modIdentifier = modDirectory.Name
-                where targetModIdentifiers.Count() == 0                             // 未提供列表，全部打包
-                    || targetModIdentifiers.Contains(modIdentifier)                 // 有列表，仅打包列表中的项
-                where !config.Base.ExclusionMods.Contains(modIdentifier)            // 没有被明确排除
-                // .../<version>
-                let versionedDirectory = modDirectory.GetDirectories(config.Base.Version).FirstOrDefault(defaultValue: null)
-                where versionedDirectory is not null
-                // .../<namespace>-CFPA-<author>
-                from namespaceDirectory in versionedDirectory.EnumerateDirectories()
-                let namespaceName = namespaceDirectory.Name
-                where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
-                where namespaceName.ValidateNamespace()                             // 不是非法名称
-                // .../*
-                from provider in namespaceDirectory.EnumerateProviders(config)
-                group provider by provider.Destination into destinationGroup
-                select destinationGroup
-                    .Aggregate(seed: null as IResourceFileProvider,                 // 合并文件
-                               (accumulate, next)
-                                   => next.ApplyTo(
-                                       accumulate)) into provider
-                select config.Floating.CharacterReplacement                         // 内容的字符替换
-                             .Aggregate(seed: provider,
-                                        (accumulate, replacement)
-                                            => accumulate.ReplaceContent(
-                                                replacement.Key,
-                                                replacement.Value)) into provider
-                select config.Floating.DestinationReplacement                       // 全局路径替换：预留
-                             .Aggregate(seed: provider,
-                                        (accumulate, replacement)
-                                            => accumulate.ReplaceDestination(
-                                                replacement.Key,
-                                                replacement.Value));
+            
+
+            
+
 
             IEnumerable<IResourceFileProvider> initialFiles = [
                 new RawFile(new FileInfo("./projects/templates/pack.png"), "pack.png"),
@@ -77,21 +46,51 @@ namespace Packer
                     [DateTime.UtcNow.AddHours(8), .. config.Base.McMetaParameters])
                 ];
 
-            string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";
-            await using var stream = File.Create(packName);
-
-            using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
+            if (flattened)
             {
-                await Task.WhenAll(from provider in query.Concat(initialFiles)
-                                   select provider.WriteToArchive(archive));
+                string packName = $"./Minecraft-Mod-Language-Modpack-{version}.zip";
+                Log.Information("直出资源包：{0}", packName);
+                var query =
+                    EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, [config.Base.Version])
+                    .MergeDeep()
+                    .PostProcess(config);
+
+                await using var stream = File.Create(packName);
+
+                using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
+                {
+                    await archive.WriteDirect(initialFiles);
+                    await archive.WriteDirect(query);
+                }
+                var md5 = stream.ComputeMD5();
+
+                Log.Information("打包文件的 MD5 值：{0}", md5);
+                File.WriteAllText($"./{version}.md5", md5);
+            }
+
+            if (grouped)
+            {
+                string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}-namespaced.zip";
+                Log.Information("组合包：{0}", packName);
+                var query =
+                    EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, config.Base.FallbackVersions.Prepend(config.Base.Version))
+                    .MergeDeep()
+                    .PostProcess(config);
+                
+                await using var stream = File.Create(packName);
+
+                using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
+                {
+                    await archive.WriteDirect(initialFiles);
+                    await archive.WriteGrouped(query);
+                }
+                //var md5 = stream.ComputeMD5();
+
+                //Log.Information("打包文件的 MD5 值：{0}", md5);
+                //File.WriteAllText($"./{config.Base.Version}.md5", md5);
             }
 
             Log.Information("对版本 {0} 的打包结束。", version);
-
-            var md5 = stream.ComputeMD5();
-
-            Log.Information("打包文件的 MD5 值：{0}", md5);
-            File.WriteAllText($"./{config.Base.Version}.md5", md5);
         }
     }
 }

@@ -20,6 +20,12 @@ namespace Packer.Extensions
         public static string NormalizePath(this string path)
             => path.Replace('\\', '/'); // 修正正反斜杠导致的压缩文件读取问题
 
+        public static string GetNamespace(this string path)
+        {
+            // assets/<namespace>/...
+            return path.Split('/')[1];
+        }
+
 
         [GeneratedRegex(@"^[a-z0-9_.-]+$", RegexOptions.Singleline)]
         internal static partial Regex ValidNamespaceRegex();
@@ -107,7 +113,7 @@ namespace Packer.Extensions
         /// <returns></returns>
         public static string ComputeMD5(this Stream stream)
         {
-            stream.Seek(0, SeekOrigin.Begin); // 确保文件流的位置被重置
+            stream.Seek(0, SeekOrigin.Begin);
             return Convert.ToHexString(MD5.Create().ComputeHash(stream));
         }
     }
