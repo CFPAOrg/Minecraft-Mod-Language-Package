@@ -14,3 +14,5 @@ This is a simple block breaker powered by a motor.
 # Usage
 
 Blocks are broken by the rapid and violent extension of the armature. When powered with a motor, the armature is gradually retracted. If a valid block is in front of the breaker, the armature will extend.
+
+Through unknown means the machine collects dropped items and ejects them from the back face.
