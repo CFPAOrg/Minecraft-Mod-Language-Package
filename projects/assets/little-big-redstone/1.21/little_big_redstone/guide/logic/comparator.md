@@ -23,7 +23,8 @@ item_ids:
 The comparator is a logic component that allows for comparing anywhere between 1 and 10 inputs' (B₁ - B₁₀) signal
 strength against some other signal strength (A). The mode option for the comparator determines if all or just one of
 the inputs must match the comparison for the output to be ON. When the output is ON, the output signal strength will
-equal the signal strength of input A.
+equal the signal strength of the output override setting. When the output override setting is set to pass, the output
+signal will be equal to input A.
 
 The comparator can be configured to have an input port for input A by setting the signal strength to pass.
 Alternatively, it can be configured to have a constant signal used for comparison, in this case it will not have an

@@ -147,4 +147,5 @@ The note board is a menu where you can move where notes in-world will be shown o
 pinning notes you have made to your screen! Open the note board using the keybind "Open Note Board"
 (**<KeyBind id="key.little_big_redstone.open_note_board" />**). Sticky notes that are in your inventory can then be
 placed in the menu wherever you'd like. Pinned notes in the note board can also be edited using **Right Button**. Notes
-in the note board are saved per-world and per-player. Dying does not remove the notes out of the note board.
+held in your cursor can be resized using the scroll wheel. Notes in the note board are saved per-world and per-player.
+Dying does not remove the notes out of the note board.
