@@ -822,6 +822,8 @@
         less_eq: "Minimus Distillation II",
         equals: "Equality Distillation",
         not_equals: "Inequality Distillation",
+        type_equals: "Similarity Distillation",
+        type_not_equals: "Dissimilarity Distillation",
         not: "Negation Purification",
         bool_coerce: "Augur's Purification",
         if: "Augur's Exaltation",
@@ -1554,7 +1556,7 @@
         "1": "I have discovered new and horrifying modes of failure. I must not succumb to them.",
         
         "bad_mindflay.title": "Inert Mindflay",
-        bad_mindflay: "Attempted to flay the mind of something that I have either already used, or of a character not suitable for the target block.$(br2)Causes dark green sparks, and kills the subject. If a villager sees that, I doubt they would look on it favorably.",
+        bad_mindflay: "Attempted to flay the mind of something that I have either already used, or of a character not suitable for the target block.$(br2)Causes dark green sparks. Subjects I have already used will be killed outright, while those that are simply unsuitable will be slightly damaged.",
         
         "no_circle.title": "Lack Spell Circle",
         no_circle: "Tried to cast an action requiring a spell circle without a spell circle.$(br2)Causes light blue sparks, and upends my inventory onto the ground.",
@@ -1731,7 +1733,7 @@
         
         empty_directrix: "Firstly, a design for the cradle ... although, perhaps \"substrate\" would be more accurate a word. Without a mind guiding it, the output direction is determined by microscopic fluctuations in the _media wave and surroundings, making it effectively random.",
         directrix_redstone: "A $(l:greatwork/directrix)$(item)Mason Directrix/$ switches output side based on a redstone signal. Without a signal, the exit is the _media-color side; with a signal, the exit is the redstone-color side.",
-        directrix_boolean: "A $(l:greatwork/directrix)$(item)Shepherd Directrix/$ switches output side based on a boolean on the stack. A $(thing)True/$ makes the wave exit from the back, a $(thing)False/$ from the front. Failing to provide a boolean at all will cause a mishap."
+        directrix_boolean: "A $(l:greatwork/directrix)$(item)Shepherd Directrix/$ switches output side based on a boolean popped from the stack. A $(thing)True/$ makes the wave exit from the back, a $(thing)False/$ from the front. Failing to provide a boolean at all will cause a mishap."
       },
       
       akashiclib: {
@@ -1914,6 +1916,8 @@
         if: "If the first argument is True, keeps the second and discards the third; otherwise discards the second and keeps the third.",
         equals: "If the first argument equals the second (within a small tolerance), return True. Otherwise, return False.",
         not_equals: "If the first argument does not equal the second (outside a small tolerance), return True. Otherwise, return False.",
+        type_equals: "If the type of the first argument matches the type of the second, return True. Otherwise, return False.",
+        type_not_equals: "If the type of the first argument does not match the type of the second, return True. Otherwise, return False.",
         greater: "If the first argument is greater than the second, return True. Otherwise, return False.",
         less: "If the first argument is less than the second, return True. Otherwise, return False.",
         greater_eq: "If the first argument is greater than or equal to the second, return True. Otherwise, return False.",
