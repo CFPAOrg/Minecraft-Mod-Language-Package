@@ -12,6 +12,12 @@ item_ids:
 
 # Pulse Throttler
 
+<FloatingColumn width="100" align="right">
+	### Analog
+	Pulse Throttlers yield an output signal value equal to the input signal value by default. If the signal strength
+	value is set, the output will always be that constant value.
+</FloatingColumn>
+
 <Row>
 	<Column>
 		<RecipeFor id="pulse_throttler" />
