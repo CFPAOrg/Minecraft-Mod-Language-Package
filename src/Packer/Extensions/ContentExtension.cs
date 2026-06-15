@@ -27,14 +27,15 @@ namespace Packer.Extensions
         }
 
 
-        [GeneratedRegex(@"^[a-z0-9_.-]+$", RegexOptions.Singleline)]
+        [GeneratedRegex(@"^[a-z0-9_.-]+(?:-CFPA-[A-Za-z0-9_.\- ]+)?$", RegexOptions.Singleline)]
         internal static partial Regex ValidNamespaceRegex();
 
         /// <summary>
         /// 检查命名空间名称是否合法
         /// </summary>
         /// <remarks>
-        /// 合法的命名空间名称只包括小写字母、数字、_、.、-
+        /// 合法的命名空间名称只包括小写字母、数字、_、.、-；
+        /// 也允许在合法命名空间后追加 -CFPA- 与作者名，作者名可包含大小写英文字母、数字、-、_、. 和空格。
         /// </remarks>
         /// <param name="namespaceName">待校验的命名空间名称</param>
         /// <returns>若合法，返回<see langword="true" /></returns>
