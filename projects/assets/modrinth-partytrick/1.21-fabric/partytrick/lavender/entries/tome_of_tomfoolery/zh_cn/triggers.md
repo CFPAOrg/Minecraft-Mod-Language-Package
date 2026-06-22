@@ -1,7 +1,7 @@
 ```json
 {
-  "title": "额外触发条件",
-  "icon": "partytrick:pepernoot",
+  "title": "反应触发物品扩展",
+  "icon": "minecraft:trident",
   "category": "trickster:concepts",
   "additional_search_terms": [
     "建筑者之激情",
@@ -30,10 +30,36 @@
 
 ;;;;;
 
+<|page-title@lavender:book_components|title=保护者之阻止|>在盾牌格挡攻击时，保护者之阻止会施放盾牌上抄有的法术。攻击者、弹射物、盾牌被禁用与否均作为参数传入。
+
+;;;;;
+
 <|page-title@lavender:book_components|title=贪食者之饥|>贪食者之饥会在食用食物和饮品时施放其中抄有的法术。
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=partytrick:pepernoten_creation,cost=10G|>
+<|ploy@trickster:templates|trick-id=partytrick:pepernoot_creation,cost=10G|>
 
-我怎么会在鞋子里找到这种奇怪的点心？一吃就吃得停不下来。所以我制作了一条法术，能用糖造出这种食物。
+*此戏法的具体效用未知。仅剩的几条记录用的是地精语，且都提到了一名圣人。他会送出让人吃了还想吃、推测是甜味的小吃。*
+
+;;;;;
+
+"*Sinterklaasje, bonne, bonne, bonne*
+
+*gooi wat in mijn lege, lege tonne*
+
+*gooi wat in mijn laarsje*
+
+*dank u, Sinterklaasje*
+
+
+*Sinterklaasje, bonne, bonne, bonne*
+
+*gooi wat in mijn lege, lege tonne*
+
+*gooi wat in de huizen*
+
+*we zullen grabbelen als muizen.*"
+
+
+——古老的低地地精歌曲
