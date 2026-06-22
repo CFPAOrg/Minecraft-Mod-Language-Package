@@ -14,6 +14,6 @@ flowchart LR
 
 ### 链接区域
 
-- [1.19.2](/projects/1.19/assets/hex-keys/hexkeys)
-- [1.20.1](/projects/1.20/assets/hex-keys/hexkeys)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/hex-keys/hexkeys)
+- [1.19.2](/projects/assets/hex-keys/1.19/hexkeys)
+- [1.20.1](/projects/assets/hex-keys/1.20/hexkeys)
+- [1.20.1-fabric](/projects/assets/hex-keys/1.20-fabric/hexkeys)
