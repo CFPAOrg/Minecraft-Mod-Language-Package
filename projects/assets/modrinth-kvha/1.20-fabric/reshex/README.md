@@ -1,1 +1,1 @@
-[见主页面](/projects/1.20/assets/modrinth-kvha/reshex)
+[见主页面](/projects/assets/modrinth-kvha/1.20/reshex)

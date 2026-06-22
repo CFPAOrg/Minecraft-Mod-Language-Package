@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/1.20/assets/modrinth-hypers-hexcast-addon/hyperhexcast)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/modrinth-hypers-hexcast-addon/hyperhexcast)
+- [1.20.1](/projects/assets/modrinth-hypers-hexcast-addon/1.20/hyperhexcast)
+- [1.20.1-fabric](/projects/assets/modrinth-hypers-hexcast-addon/1.20-fabric/hyperhexcast)

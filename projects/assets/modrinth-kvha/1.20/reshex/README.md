@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/1.20/assets/modrinth-kvha/reshex)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/modrinth-kvha/reshex)
+- [1.20.1](/projects/assets/modrinth-kvha/1.20/reshex)
+- [1.20.1-fabric](/projects/assets/modrinth-kvha/1.20-fabric/reshex)
