@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/1.20/assets/modrinth-hexxyplanes/hexxyplanes)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/modrinth-hexxyplanes/hexxyplanes)
+- [1.20.1](/projects/assets/modrinth-hexxyplanes/1.20/hexxyplanes)
+- [1.20.1-fabric](/projects/assets/modrinth-hexxyplanes/1.20-fabric/hexxyplanes)
