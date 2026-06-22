@@ -13,5 +13,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.19.2](/projects/1.19/assets/modrinth-hex-ways/hexways)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/modrinth-hex-ways-1.20/hexways)
+- [1.19.2](/projects/assets/modrinth-hex-ways/1.19/hexways)
+- [1.20.1-fabric](/projects/assets/modrinth-hex-ways-1.20/1.20-fabric/hexways)

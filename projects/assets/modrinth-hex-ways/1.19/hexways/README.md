@@ -1,1 +1,1 @@
-[见主文档](/projects/1.20-fabric/assets/modrinth-hex-ways-1.20/hexways)
+[见主文档](/projects/assets/modrinth-hex-ways-1.20/1.20-fabric/hexways)
