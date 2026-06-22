@@ -103,7 +103,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:set_subtree|>
 
-将后一法术接到前一法术中给定地址处，作为该处圆的子分支。
+将后方的所有法术接到给定地址处，变为该处圆的子分支。
 
 ;;;;;
 

@@ -7,7 +7,8 @@
     "Argumentative Distortion",
     "Decaying Distortion",
     "Interpretation Distortion",
-    "Distortion of Memory"
+    "Distortion of Memory",
+    "Cadmium Distortion"
   ]
 }
 ```
@@ -37,3 +38,9 @@ Converts a pattern into a literal representation of itself, to be used when cons
 <|trick@trickster:templates|trick-id=trickster:weight|>
 
 Returns a number from zero to one indicating how close the given fragment is to being overweight.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:color_distance|>
+
+Returns the difference between two colors as a number between 0 and 1.

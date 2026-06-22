@@ -15,4 +15,10 @@
 
 <|trick@trickster:templates|trick-id=trickster:drain_matter|>
 
-可吸收给定位置处的柔软植物生物质，将其变为魔力。
+吸收给定位置处柔软植物的生物质，将其变为魔力。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:suck_color|>
+
+吸收给定位置处有色方块的颜色，将其变为该颜色的魔力。

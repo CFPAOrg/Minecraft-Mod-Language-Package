@@ -111,7 +111,7 @@ Grafts the latter spell into the former, replacing the circle at the given addre
 
 <|trick@trickster:templates|trick-id=trickster:add_subtree|>
 
-Attaches the latter spell to the circle at the given address as a new branch.
+Attaches the latter spells to the circle at the given address as new branches.
 
 ;;;;;
 

@@ -7,7 +7,8 @@
     "参量之曲变",
     "衰退之曲变",
     "释义之曲变",
-    "存忆之曲变"
+    "存忆之曲变",
+    "镉彩之曲变"
   ]
 }
 ```
@@ -37,3 +38,9 @@
 <|trick@trickster:templates|trick-id=trickster:weight|>
 
 返回一个在0到1之间的数，代表所给片段距超重有多远。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:color_distance|>
+
+返回一个在0到1之间的数，代表所给两颜色的差异。

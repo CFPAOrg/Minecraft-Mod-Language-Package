@@ -16,9 +16,9 @@
     "Ingress of Extent",
     "Ingress of Discrimination",
     "Cranium Delusion",
-    "Ingress of Authority",
-    "Crowning Ingress",
     "Ingress of Plenitude",
+    "Ingress of Integrity",
+    "Ingress of Endurance",
     "Investigative Ingress"
   ]
 }
@@ -124,21 +124,21 @@ Returns the selected slot in the caster's [Hat](^trickster:items/writing_casting
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:get_mana_in_slot|>
-
-Returns the amount of mana in the given slots.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_max_mana_in_slot|>
-
-Returns the maximum amount of mana which may be stored in total in the given slots.
-
-;;;;;
-
 <|trick@trickster:templates|trick-id=trickster:get_count_in_slot|>
 
 Returns the amount of items stored in the given slot.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_durability|>
+
+Returns how much durability the item in the given slot has left as a number.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_max_damage|>
+
+Returns the maximum amount of damage the item in the given slot can sustain.
 
 ;;;;;
 

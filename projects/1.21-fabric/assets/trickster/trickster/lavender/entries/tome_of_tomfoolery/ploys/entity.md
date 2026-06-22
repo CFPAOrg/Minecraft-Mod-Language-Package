@@ -50,7 +50,7 @@ to delay the next cast before stacking it where possible.
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=trickster:set_scale,cost=abs(currentScale - newScale)^2 * 25G + newScale * 25G|>
+<|ploy@trickster:templates|trick-id=trickster:set_scale,cost=abs(currentScale - newScale)^2 * 100G + newScale * 50G|>
 
 Changes the scale of the given entity. Entities cannot be scaled below 0.0625 or above 8 times their usual size.
 

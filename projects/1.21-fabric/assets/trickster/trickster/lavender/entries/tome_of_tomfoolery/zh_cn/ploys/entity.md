@@ -45,7 +45,7 @@
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=trickster:set_scale,cost=abs(当前尺寸 - 新尺寸)^2 * 25G + 新尺寸 * 25G|>
+<|ploy@trickster:templates|trick-id=trickster:set_scale,cost=abs(当前尺寸 - 新尺寸)^2 * 100G + 新尺寸 * 50G|>
 
 变动所给实体的尺寸。目标尺寸不可小于原大的0.0625，也不可大于原大的8倍。
 

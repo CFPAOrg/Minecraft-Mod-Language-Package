@@ -6,7 +6,9 @@
   "additional_search_terms": [
     "Ploy of the Moon Watcher",
     "Benevolent Conduit's Ploy",
-    "Malevolent Conduit's Ploy"
+    "Malevolent Conduit's Ploy",
+    "Astrafel's Ploy",
+    "Terrafel's Ploy"
   ]
 }
 ```
@@ -53,10 +55,22 @@ The provided amount is split equally between all slots of the provided storage, 
 
 <|trick@trickster:templates|trick-id=trickster:push_mana|>
 
-Pushes mana into the given storage from the caster's reserves, up to an amount. Returns the amount moved.
+Pushes mana into the given storage from the caster's reserves, up to an amount. Returns the amount pushed.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:pull_mana|>
 
-Pulls mana from the given storage into the caster's reserves, up to an amount. Returns the amount moved.
+Pulls mana from the given storage into the caster's reserves, up to an amount. Returns the amount pulled.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:convert_mana|>
+
+Attempts to convert mana in-place to the given type. Returns the amount converted.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:trigger_converter|>
+
+Activates the mana-conversion catalyst in the given slot, returning the mana type if it changed.

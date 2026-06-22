@@ -17,8 +17,9 @@
     "辨别之辑流",
     "颅骨之错觉",
     "权威之辑流",
-    "加冕之辑流",
     "丰裕之辑流",
+    "稳固之辑流",
+    "坚忍之辑流",
     "探查之辑流"
   ]
 }
@@ -119,15 +120,21 @@
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:get_mana_in_slot|>
-
-返回所给槽位中魔力的总量。
-
-;;;;;
-
 <|trick@trickster:templates|trick-id=trickster:get_max_mana_in_slot|>
 
 返回所给槽位中能容纳的最大魔力总量。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_durability|>
+
+以数的形式返回所给槽位中物品剩余的耐久度。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_max_damage|>
+
+以数的形式返回所给槽位中物品的最大损坏值。
 
 ;;;;;
 

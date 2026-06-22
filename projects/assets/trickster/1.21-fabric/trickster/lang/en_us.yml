@@ -40,6 +40,26 @@ trickster:
     complete: "Spell completed"
     cast: "Spell cast"
     collar_bell: "Collar bell rings"
+    use_esoteric_mana: "Esoteric mana pours on item"
+    leash_link: "Tether links to Bindings"
+    knot_tick: "Knot ticks"
+    place_construct_knot: "Knot placed on Construct"
+    remove_construct_knot: "Knot removed from Construct"
+    place_construct_core: "Core slides into Construct"
+    remove_construct_core: "Core slides out of Construct"
+    place_charging_array_knot: "Knot placed on Array"
+    remove_charging_array_knot: "Knot removed from Array"
+    place_scroll: "Scroll placed on Shelf"
+    remove_scroll: "Scroll removed from Shelf"
+    displacement_teleport: "Teleportation completes"
+    displacement_trigger: "Teleport initiates"
+    use_luminous_bottle: "Glow Ink splotches"
+    knot_crack: "Knot shatters"
+    trigger_resonator: "Resonator resonates"
+
+  mana_cost:
+    costs_mana: Costs mana
+    type: "Required type: %s"
 
   gandalf:
     stored: "Stored: %s"
@@ -47,6 +67,12 @@ trickster:
     idling: "Idle"
     draining: "Draining: %.2f"
     filling: "Charging: %.2f"
+  mana:
+    type: "Type: %s"
+    stability: "Stability: %s%%"
+    color: "Color: %s"
+  knot:
+    desired_color: "Contains faint shimmers of %s"
 
   item_group: Trickster
 
@@ -239,9 +265,13 @@ trickster:
     other_hand: Juggling Delusion
     other_hand_slot: Catch Delusion
     get_item_in_slot: Fence's Ingress
-    get_mana_in_slot: Ingress of Authority
     get_count_in_slot: Ingress of Plenitude
+    get_mana_color_in_slot: Hew's Ingress
+    get_mana_type_in_slot: Derivate Ingress
+    get_mana_in_slot: Ingress of Authority
     get_max_mana_in_slot: Crowning Ingress
+    get_durability: Ingress of Integrity
+    get_max_damage: Ingress of Endurance
     get_slot: Intrusive Ingress
     get_item_container: Stockpile Ingress
     get_fluid_container: Basin Ingress
@@ -289,6 +319,8 @@ trickster:
     battery_creation: Ploy of the Moon Watcher
     push_mana: Benevolent Conduit's Ploy
     pull_mana: Malevolent Conduit's Ploy
+    convert_mana: Astrafel's Ploy
+    trigger_converter: Terrafel's Ploy
 
     drain_matter: Cultivator's Ploy
 
@@ -298,6 +330,10 @@ trickster:
     item_to_color: Pigment Ingress
     item_to_glow_color: Vibrant Ingress
     paint: Ploy of Pigmentation
+    suck_color: Ploy of the Hopeless
+    color_distance: Cadmium Distortion
+
+    summon_lightning: Ploy of the Wrathful
 
   revision: (Scribing Pattern)
   revision.trickster:
@@ -329,19 +365,21 @@ trickster:
       map: Map
       void: Void
       pattern: Pattern
-      pattern_literal: PatternLiteral
+      pattern_literal: Pattern Literal
       spell_part: Spell
       entity: Entity
       slot: Slot
       container: Container
       zalgo: §kZalgo
       item_type: Item
+      fluid_type: Fluid
       block_type: Block
-      entity_type: EntityType
+      entity_type: Entity Type
       string: String
       dimension: Dimension
       displace: Displacement
       color: Color
+      mana: Mana
     class:
       Fragment: Any
       AddableFragment: Addable
@@ -365,9 +403,20 @@ trickster:
       ZalgoFragment: §kZalgo
       ItemTypeFragment: Item
       BlockTypeFragment: Block
-      EntityTypeFragment: EntityType
+      EntityTypeFragment: Entity Type
       StorageFragment: Storage
-      ResourceVariantFragment: ResourceType
+      ResourceVariantFragment: Resource Type
+      ColorFragment: Color
+      ManaFragment: Mana
+
+  mana.trickster:
+    traditional: Traditional
+    storm: Tempest
+    color: Chromatic
+    anti: Impotent
+    astral:
+      default: Star-Bound
+      named: Star-Bound (%s)
 
   blunder:
     overweight_fragment: Resulting fragment is overweight (%2$s/%3$s), result is %1$s
@@ -483,6 +532,8 @@ item.trickster:
   cracked_echo_knot: Cracked Echo Knot
   astral_knot: Astral Knot
   cracked_astral_knot: Cracked Astral Knot
+  prismatic_knot: Prismatic Knot
+  cracked_prismatic_knot: Cracked Prismatic Knot
   command_knot: Command Knot
 
   spell_core: Spell Core
@@ -500,6 +551,9 @@ block.trickster:
   scroll_shelf: Scroll Shelf
   charging_array: Charging Array
   inert_spawner: Inert Spawner
+  tattered_wool: Tattered Wool
+  tattered_carpet: Tattered Carpet
+  worn_concrete: Worn Concrete
   color_block: Infused Ceramic
   gilded_tuff: Gilded Tuff
   gilded_tuff_stairs: Gilded Tuff Stairs
@@ -542,6 +596,7 @@ key:
     take_hat: Take Hat
     modify_spell: Modify Spell (Creative only)
     show_fragment_text: Reveal Fragments
+    ponder: Focus Circle
 
 accessories.slot:
   collar: Collar
@@ -576,10 +631,11 @@ text.config.trickster-config:
     keyZoomSpeed: Editor key zoom speed
     maxExecutionsPerSpellPerTick: Max operations per tick per spell
     maxBlockBreakingHardness: Max hardness for Ploy of Destruction
-    allowUnbreakableBlockSwap: Allow block swapping of unbreakable blocks
-    allowExtendedPistonSwap: Allow block swapping of extended pistons
+    allowMovingUnbreakableBlock: Allow tricks to move unbreakable blocks
+    allowMovingExtendedPiston: Allow tricks to move extended pistons
 
     dragDrawing: Draw by dragging
+    moreEmphasis: Terminal dot emphasis in glyphs
     animateLines: Animate patterns
     barsHorizontal: Show spell-created bars horizontally
     disableOffhandScrollOpening: Require scroll in main hand to edit

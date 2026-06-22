@@ -6,7 +6,9 @@
   "additional_search_terms": [
     "望月者之技巧",
     "善流之技巧",
-    "恶流之技巧"
+    "恶流之技巧",
+    "阿斯特拉菲尔之技巧",
+    "泰拉菲尔之技巧"
   ]
 }
 ```
@@ -57,3 +59,15 @@
 <|trick@trickster:templates|trick-id=trickster:pull_mana|>
 
 从给定储库抽取魔力，送至施法者的魔力储库，并返回实际传输的量。每个槽位的传输量有上限。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:convert_mana|>
+
+尝试将该处的魔力转化为所给类型。返回实际转化的量。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:trigger_converter|>
+
+激活所给槽位的魔力转化催化剂，若转化成功则返回魔力转化后的类型。
