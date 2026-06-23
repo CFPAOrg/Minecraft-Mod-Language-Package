@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.21.1](/projects/1.21/assets/modrinth-mirthdew-encore/mirthdew_encore)
-- [1.21.1-fabric](/projects/1.21-fabric/assets/modrinth-mirthdew-encore/mirthdew_encore)
+- [1.21.1](/projects/assets/modrinth-mirthdew-encore/1.21/mirthdew_encore)
+- [1.21.1-fabric](/projects/assets/modrinth-mirthdew-encore/1.21-fabric/mirthdew_encore)
