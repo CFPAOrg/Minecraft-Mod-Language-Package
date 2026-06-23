@@ -12,5 +12,5 @@ flowchart LR
 
 ### 链接区域
 
-- [1.20.1](/projects/1.20/assets/ioticblocks/ioticblocks)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/ioticblocks/ioticblocks)
+- [1.20.1](/projects/assets/ioticblocks/1.20/ioticblocks)
+- [1.20.1-fabric](/projects/assets/ioticblocks/1.20-fabric/ioticblocks)

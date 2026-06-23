@@ -14,6 +14,6 @@ flowchart LR
 
 ### 链接区域
 
-- [1.19.2](/projects/1.19/assets/hexdebug/hexdebug)
-- [1.20.1](/projects/1.20/assets/hexdebug/hexdebug)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/hexdebug/hexdebug)
+- [1.19.2](/projects/assets/hexdebug/1.19/hexdebug)
+- [1.20.1](/projects/assets/hexdebug/1.20/hexdebug)
+- [1.20.1-fabric](/projects/assets/hexdebug/1.20-fabric/hexdebug)
