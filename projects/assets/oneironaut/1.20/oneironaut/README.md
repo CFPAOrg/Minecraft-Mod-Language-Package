@@ -14,6 +14,6 @@ flowchart LR
 
 ### 链接区域
 
-- [1.19.2](/projects/1.19/assets/oneironaut/oneironaut)
-- [1.20.1](/projects/1.20/assets/oneironaut/oneironaut)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/oneironaut/oneironaut)
+- [1.19.2](/projects/assets/oneironaut/1.19/oneironaut)
+- [1.20.1](/projects/assets/oneironaut/1.20/oneironaut)
+- [1.20.1-fabric](/projects/assets/oneironaut/1.20-fabric/oneironaut)

@@ -1,1 +1,1 @@
-[见主文档](/projects/1.20/assets/ephemera/ephemera)
+[见主文档](/projects/assets/ephemera/1.20/ephemera)
