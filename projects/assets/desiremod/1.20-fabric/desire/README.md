@@ -1,1 +1,1 @@
-[见主文档](/projects/1.21-fabric/assets/desiremod/desire)
+[见主文档](/projects/assets/desiremod/1.21-fabric/desire)
