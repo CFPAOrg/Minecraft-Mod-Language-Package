@@ -1,1 +1,1 @@
-[见主文档](/project/1.20/assets/moreiotas/moreiotas)
+[见主文档](/project/assets/moreiotas/1.20/moreiotas)

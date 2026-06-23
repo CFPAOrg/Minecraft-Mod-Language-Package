@@ -17,8 +17,8 @@ flowchart LR
 
 ### 链接区域
 
-- [1.18.2](/projects/1.18/assets/hexal/hexal)
-- [1.19.2](/projects/1.19/assets/hexal/hexal)
-- [1.20.1](/projects/1.20/assets/hexal/hexal)
-- [1.18.2-fabric](/projects/1.18-fabric/assets/hexal/hexal)
-- [1.20.1-fabric](/projects/1.20-fabric/assets/hexal/hexal)
+- [1.18.2](/projects/assets/hexal/1.18/hexal)
+- [1.19.2](/projects/assets/hexal/1.19/hexal)
+- [1.20.1](/projects/assets/hexal/1.20/hexal)
+- [1.18.2-fabric](/projects/assets/hexal/1.18-fabric/hexal)
+- [1.20.1-fabric](/projects/assets/hexal/1.20-fabric/hexal)

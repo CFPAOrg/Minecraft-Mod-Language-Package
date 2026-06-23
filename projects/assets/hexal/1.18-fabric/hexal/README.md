@@ -1,1 +1,1 @@
-[见主文档](/projects/1.20/assets/hexal/hexal)
+[见主文档](/projects/assets/hexal/1.20/hexal)
