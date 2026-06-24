@@ -4,7 +4,8 @@
   "icon": "minecraft:wheat_seeds",
   "category": "trickster:ploys",
   "additional_search_terms": [
-    "Cultivator's Ploy"
+    "Cultivator's Ploy",
+    "Ploy of the Hopeless"
   ]
 }
 ```

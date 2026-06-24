@@ -27,7 +27,7 @@ When the unlinked Bindings are worn and their wearer is crouching, the Tether ma
 
 Once bound, using the Tether with a spell inscribed will execute it just like a [wand](^trickster:items/writing_casting/wand) but as the wearer of the Bindings.
 The spell will take one of their spell slots, consume their mana, and be at their position. 
-However, it will receive as its second argument the entity which made use of the Tether.
+However, it will receive as its second [argument](^trickster:delusions_ingresses/arguments) the entity which made use of the Tether.
 
 
 *"[...] and he accepted it graciously, his freedom a small price for the teachings of his Archmage."* — Sanin

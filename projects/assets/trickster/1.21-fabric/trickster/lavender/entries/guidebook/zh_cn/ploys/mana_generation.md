@@ -4,7 +4,8 @@
   "icon": "minecraft:wheat_seeds",
   "category": "trickster:ploys",
   "additional_search_terms": [
-    "栽培师之技巧"
+    "栽培师之技巧",
+    "绝望者之技巧"
   ]
 }
 ```

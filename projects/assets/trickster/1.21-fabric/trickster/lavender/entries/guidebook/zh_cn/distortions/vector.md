@@ -17,7 +17,7 @@
 }
 ```
 
-许多向量数学运算都可由基础的[算术](^trickster:distortions/arithmetic)图案实现，但某些运算需要专攻其道的图案。本节图案正在此列。
+许多向量数学运算都可由基础的[算术](^trickster:distortions/arithmetic)戏法实现，但某些运算需要专攻其道的图案。本节图案正在此列。
 
 ;;;;;
 

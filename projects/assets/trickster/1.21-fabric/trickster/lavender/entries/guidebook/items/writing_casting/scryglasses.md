@@ -9,7 +9,9 @@
 
 A scryglass is simply a lens with special properties, but they are often made into facial accessories to assist in their usage.
 
-The lens transforms magical information into something closer to raw thought, allowing one to see fragments in a more familiar way if they focus on the glass.
+
+A scryglass can be focused by holding <keybind;key.trickster.show_fragment_text>.
+
 
 Like the [Hats](^trickster:items/writing_casting/top_hat), there are a few varieties, identical in function.
 

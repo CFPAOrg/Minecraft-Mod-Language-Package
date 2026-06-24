@@ -33,12 +33,12 @@ More often though, the mirror will be used for prototyping.
 
 ;;;;;
 
-It functions very much like a scroll, with a similar interface, 
-except that any glyphs written in a mirror will be cast the moment its possible to.
-The center of their circle will then be filled with the result of their execution, if any.
+It functions very much like a scroll, with a similar interface.
+In addition though, it adds a button inside of circles which, when pressed, will evaluate that entire branch of the spell.
+The center of the circle will then be replaced by the result of this execution.
 
 
-This behaviour is also often used to generate constant values, 
+This ability is often used to generate constant values, 
 which can then be embedded into other spells, written in scrolls.
 
 ---

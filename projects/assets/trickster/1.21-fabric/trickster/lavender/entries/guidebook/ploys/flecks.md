@@ -37,7 +37,7 @@
 
 ;;;;;
 
-Flecks are a method of displaying data to select players. 
+Flecks are a method of displaying data to select observers. 
 They last for a mere second, needing to be continuously refreshed.
 
 

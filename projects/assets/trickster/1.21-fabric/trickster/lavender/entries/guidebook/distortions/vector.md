@@ -17,7 +17,7 @@
 }
 ```
 
-While much vector math can be done with basic [arithmetic](^trickster:distortions/arithmetic) patterns, 
+While much vector math can be done with basic [arithmetic](^trickster:distortions/arithmetic) tricks, 
 some operations require more specialized functionality.
 This chapter provides some of these.
 

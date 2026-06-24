@@ -6,7 +6,7 @@
 }
 ```
 
-Macros allow you to create your own revisions to aid with spell scribing. 
+Macros allow a caster to create their own additional revisions to aid with spell scribing. 
 
 
 A [map](^trickster:distortions/map) that links a set of patterns to a set of spells is used to define macros.
@@ -17,14 +17,9 @@ These maps, when inscribed into any ring and worn in a ring slot, will be checke
 A simple [Macro Ring](^trickster:items/writing_casting/ring) can be used for this purpose if no other rings are available.
 
 
-If a macro for a drawn pattern is found, the associated spell will be cast and given one argument:
+If a macro for a drawn pattern is found, the associated spell will be cast and given one [argument](^trickster:delusions_ingresses/arguments):
 A copy of the circle it is drawn in. 
 The spell is then expected to return a new spell fragment to replace the fragment given.
 
 
-This effectively lets anyone create their own set of revisions.
-
-;;;;;
-
-Note: Macro spells are not capable of [long casting](^trickster:concepts/multi_tick). 
-This means they do not take a spell slot, but also can't run more than about 64 circles.
+When making the map, a [pattern literal](^trickster:editing#25) can be used to provide a pattern.

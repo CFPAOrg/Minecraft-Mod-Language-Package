@@ -6,7 +6,8 @@
   "required_advancements": [
     "trickster:quartz_knot"
   ],
-  "ordinal": 50
+  "ordinal": 50,
+  "trickster:page_texture": "trickster:textures/gui/white_book_note.png"
 }
 ```
 
@@ -29,7 +30,7 @@ It really isn't much, but even a few extra circles can vastly improve a spell's 
 Its second uniqueness is far more interesting though.
 
 
-By augmenting the [Ploy of Receipt](^trickster:ploys/message#3) with a slot as a second argument, it is possible to listen
+By augmenting the [Ploy of Receipt](^trickster:ploys/message#3) with a slot as a second input, it is possible to listen
 for messages from an item.
 
 
@@ -46,7 +47,7 @@ and offset its counter by a given number.
 
 ;;;;;
 
-If one listens closely, the faint ticking of a clock can be heard coming from within the Quartz Knot...
+When I listen closely, I can hear the faint ticking of a clock coming from within the Quartz Knot...
 
 
 Yet, the Knot contains no moving parts...

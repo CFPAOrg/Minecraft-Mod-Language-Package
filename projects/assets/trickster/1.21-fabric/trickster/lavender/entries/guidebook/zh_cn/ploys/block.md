@@ -44,12 +44,12 @@
 
 ;;;;;
 
-造物之技巧还会接受两个额外参数。
+造物之技巧还会接受两个额外输入。
 
-- 第一个参数用于指定放置的方向。
-- 第二个参数用于指定放置时，应与相邻方块的哪一面进行交互。
+- 第一个输入用于指定放置的方向。
+- 第二个输入用于指定放置时，应与相邻方块的哪一面进行交互。
 
-部分方块的朝向和其他属性可能会因这些参数而产生变化。
+部分方块的朝向和其他属性可能会因这些输入而产生变化。
 
 ;;;;;
 
@@ -130,4 +130,4 @@
 
 <|ploy@trickster:templates|trick-id=trickster:power_resonator,cost=4G|>
 
-令所给位置处[法术谐振器](^trickster:items/infrastructure/spell_resonator)产生所给强度的信号，强度需在0到15之间。
+令所给位置处[法术谐振器](^trickster:items/infrastructure/spell_resonator)产生所给强度的信号，强度需在0到15之间。若成功改变则返回{#33ab89}True{}。

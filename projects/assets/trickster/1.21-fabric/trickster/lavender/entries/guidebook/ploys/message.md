@@ -26,7 +26,7 @@ Returns all messages received on the tick after they were received. Must be prov
 
 ;;;;;
 
-A slot fragment may be supplied as the second argument to Dispatch Ploy instead of a number,
+A slot fragment may be supplied as the second input to Dispatch Ploy instead of a number,
 which will send the message *into* the item present in that slot, if possible.
 
 

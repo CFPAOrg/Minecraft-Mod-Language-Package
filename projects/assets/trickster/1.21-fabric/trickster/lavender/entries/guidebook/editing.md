@@ -1,7 +1,7 @@
 ```json
 {
-  "title": "Spell-Scribing",
-  "icon": "trickster:scroll_and_quill",
+  "title": "Spell-Scribing", 
+  "icon": "trickster:scroll_and_quill", 
   "ordinal": 10
 }
 ```
@@ -14,7 +14,7 @@ you must be familiar with the scribing patterns to create spells effectively.*
 
 ;;;;;
 
-*And so we begin, with the very basics of spell scribing."*
+*And so we begin, with the very basics of Composition."*
 
 
 — An excerpt from a lecture by Prof. Citrine
@@ -40,8 +40,8 @@ When Extensive Revision is drawn in the blue circle, the green circle will be cr
 
 <|revision@trickster:templates|revision-id=trickster:add_inner_circle|>
 
-Adds a new inner circle to an existing circle.
-Inner circles act like glyphs, and can be activated as such.
+Adds a new inner circle to an existing circle. 
+Inner circles act like glyphs, and can be activated as such. 
 See [Spell Deviations](^trickster:tricks/functions).
 
 ;;;;;
@@ -53,17 +53,17 @@ When Inner Revision is drawn in the outer blue circle, the green circle will be 
 ;;;;;
 
 An inner circle acts like a glyph, 
-either returning its value, or being executed with arguments.
+either returning its value, or being executed with [arguments](^trickster:delusions_ingresses/arguments).
 
 
 When no subcircles are connected to it, 
-the circle containing the inner circle will return the inner circle as a spell fragment.
+the circle containing the inner circle will return the inner circle as a spell fragment. 
 This can be used for meta-programming, recursion, and permanent storage of dynamic spells, among other things.
 
 ;;;;;
 
 When the circle *does* have connected subcircles, 
-it executes the inner circle directly as if it was called by a [Grand Deviation](^trickster:tricks/functions#4),
+it executes the inner circle directly as if it was called by a [Grand Deviation](^trickster:tricks/functions#4), 
 using the results from the subcircles connected to the outer circle as arguments.
 
 
@@ -152,7 +152,7 @@ Swaps the first subcircle with the second subcircle.
 
 <|revision@trickster:templates|revision-id=trickster:splice|>
 
-Reads a spell from the user's offhand and grafts it onto the spell currently being edited,
+Reads a spell from the user's offhand and grafts it onto the spell currently being edited, 
 replacing the circle it is drawn in.
 
 ;;;;;
@@ -172,6 +172,14 @@ Copies the circle it is drawn in to the user's offhand.
 <|revision@trickster:templates|revision-id=trickster:quote_pattern|>
 
 Creates a pattern literal of the pattern contained within the circle it is drawn in.
+
+;;;;;
+
+A pattern literal returns its pattern when evaluated, 
+allowing for the manipulation of patterns in the same way you would other fragments.
+
+
+Patterns can be turned back into a pattern literals using [Interpretation Distortion](^trickster:distortions/misc#4).
 
 ;;;;;
 

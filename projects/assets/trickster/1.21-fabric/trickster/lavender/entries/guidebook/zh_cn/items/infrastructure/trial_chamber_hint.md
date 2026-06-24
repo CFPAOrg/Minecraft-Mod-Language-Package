@@ -6,7 +6,9 @@
   "required_advancements": [
     "minecraft:adventure/minecraft_trials_edition"
   ],
-  "ordinal": 310
+  "secret": true,
+  "ordinal": 310,
+  "trickster:page_texture": "trickster:textures/gui/white_book_note.png"
 }
 ```
 

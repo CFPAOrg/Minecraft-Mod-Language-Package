@@ -44,7 +44,7 @@ If given a block type, the first available item of that type in the caster's inv
 
 ;;;;;
 
-Ploy of Creation optionally takes two additional arguments. 
+Ploy of Creation optionally takes two additional inputs. 
 
 - The first defines the direction to place from.
 - The second defines what side of an adjacent block is interacted with when placing.
@@ -134,4 +134,4 @@ Imbues the given color into the block at the position. Usually only works on mag
 
 <|ploy@trickster:templates|trick-id=trickster:power_resonator,cost=4G|>
 
-Powers the [Spell Resonator](^trickster:items/infrastructure/spell_resonator) at the given position with the given power level, between 0 and 15.
+Powers the [Spell Resonator](^trickster:items/infrastructure/spell_resonator) at the given position with the given power level, between 0 and 15. If the power level was changed, {#33ab89}True{} is returned.

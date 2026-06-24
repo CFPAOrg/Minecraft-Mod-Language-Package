@@ -2,9 +2,9 @@
 {
   "title": "Tutorials",
   "icon": "minecraft:filled_map",
-  "ordinal": 30
+  "ordinal": 40
 }
 ```
 
-Start learning circle-based magic here. 
-This category contains a set of linear tutorials to take you through the most important concepts.
+This category contains a set of linear tutorials to take you through the most 
+important concepts necessary to begin creating spells with the Great Language.

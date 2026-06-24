@@ -24,12 +24,10 @@ There is no shame in revisiting them every now and then."*
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=Note: Inscribed Fragments|>A fragment can be inscribed onto any item that a player can hold in their inventory.
-If inscribed on a block, the fragment will be removed if the block is placed.
+<|page-title@lavender:book_components|title=Note: Inscribed Fragments|>A fragment can be inscribed onto any item, with some being able to [trigger](^trickster:concepts/trigger_items) the inscribed spell. If inscribed on a block, the fragment will be removed if the block is placed.
 
 
-Some items may have additional interactions when inscribed with fragments, 
-[Wands](^trickster:items/writing_casting/wand) for example will cast a spell fragment when right-clicked.
+Tricks related to reading and writing are limited to a range of 16 blocks.
 
 ;;;;;
 

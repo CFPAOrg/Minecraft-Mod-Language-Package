@@ -1,6 +1,6 @@
 ```json
 {
-  "title": "Tome of Tomfoolery"
+  "title": "The Teacher's Language"
 }
 ```
 

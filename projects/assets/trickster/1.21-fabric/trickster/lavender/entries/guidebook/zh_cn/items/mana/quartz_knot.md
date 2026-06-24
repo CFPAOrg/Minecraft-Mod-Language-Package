@@ -6,7 +6,8 @@
   "required_advancements": [
     "trickster:quartz_knot"
   ],
-  "ordinal": 50
+  "ordinal": 50,
+  "trickster:page_texture": "trickster:textures/gui/white_book_note.png"
 }
 ```
 
@@ -27,7 +28,7 @@
 它的第二个独特之处要有趣得多。
 
 
-[收据之策略](^trickster:ploys/message#3)在第二参数处接收槽位时，即可以监听物品的消息。
+[收据之策略](^trickster:ploys/message#3)在第二输入处接收槽位时，即可以监听物品的消息。
 
 
 大多数物品不会回应，但对这种晶结使用时——它真的回应了！

@@ -4,7 +4,7 @@
   "icon": "minecraft:string",
   "category": "trickster:distortions",
   "additional_search_terms": [
-    "目录之错觉",
+    "目录之修订",
     "计量之曲变",
     "扩展之谋略",
     "集合之谋略",
@@ -27,9 +27,9 @@
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:list_create|>
+<|revision@trickster:templates|revision-id=trickster:empty_list|>
 
-新建一个空列表。
+[常量修订术](^trickster:constants)，会将符记替换为空列表。
 
 ;;;;;
 
@@ -89,7 +89,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:list_remove_element|>
 
-检查给定列表中元素是否与所给参数一致，若一致则移除。
+检查给定列表中元素是否与所给片段一致，若一致则移除。
 
 ;;;;;
 

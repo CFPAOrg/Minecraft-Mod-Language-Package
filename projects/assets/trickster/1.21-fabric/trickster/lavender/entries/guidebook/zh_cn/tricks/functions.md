@@ -41,19 +41,19 @@
 
 <|trick@trickster:templates|trick-id=trickster:execute|>
 
-施放所给法术片段，其他输入则按序作为施放时的参数。
+施放所给法术片段，其他输入则按序作为施放时的[参数](^trickster:delusions_ingresses/arguments)。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:execute_same_scope|>
 
-施放所给法术，以当前法术的参数作为其参数。
+施放所给法术，以当前法术的[参数](^trickster:delusions_ingresses/arguments)作为其参数。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:try_catch|>
 
-尝试执行第一个法术。若产生失策，换而执行第二个法术并静默该失策。其他输入值同时用作两个法术的参数。
+尝试执行第一个法术。若产生失策，换而执行第二个法术并静默该失策。其他输入值同时用作两个法术的[参数](^trickster:delusions_ingresses/arguments)。
 
 ;;;;;
 
@@ -90,11 +90,11 @@
 
 <|trick@trickster:templates|trick-id=trickster:fold|>
 
-对{#aa4444}可折叠{}片段中的所有元素执行所给法术，第三参数传入为第一次迭代时的“上一迭代的结果”参数。
+对{#aa4444}可折叠{}片段中的所有元素执行所给法术，第三参数传入为第一次迭代时的“上一迭代的结果”。
 
 ;;;;;
 
-每次迭代都有四个输入参数：
+每次迭代都有四个[参数](^trickster:delusions_ingresses/arguments)：
 
 ---
 
@@ -111,14 +111,7 @@
 
 ;;;;;
 
-每次迭代的执行结果均会用作下一次迭代的第一参数，最后一次迭代的结果即是整个戏法的结果。
-
-;;;;;
-
-<|page-title@lavender:book_components|title=笔记：参数|>法术片段可以作为参数传入法术片段。
-
-
-更多信息参见[参数](^trickster:delusions_ingresses/arguments)章节。
+每次迭代的执行结果均会用作下一次迭代的第一[参数](^trickster:delusions_ingresses/arguments)，最后一次迭代的结果即是整个戏法的结果。
 
 ;;;;;
 

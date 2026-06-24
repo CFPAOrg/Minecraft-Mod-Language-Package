@@ -6,9 +6,10 @@
   "required_advancements": [
     "trickster:rusted_spell_core"
   ],
-  "ordinal": 35
+  "ordinal": 35,
+  "trickster:page_texture": "trickster:textures/gui/white_book_note.png"
 }
 ```
 
-Old and worn, these [Spell Cores](^trickster:items/infrastructure/spell_core) are found in abandoned chests throughout the Overworld. 
-Unlike others, they are forged of metal and have begun to rust. It is highly inadvisable to utilize them without great caution.
+Old and worn, I've been finding these [Spell Cores](^trickster:items/infrastructure/spell_core) in abandoned chests throughout the Overworld. 
+Unlike others, they are forged of metal and have begun to rust and decay. I should take care to utilize them with great caution.

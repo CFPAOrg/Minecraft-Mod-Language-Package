@@ -51,7 +51,7 @@ A couple caveats of note:
 
 
 Distance for displacement is calculated from the subjects current position to the casters,
-and an additional cost of 1000 Gandalfs will be added if they are in different dimensions.
+and an additional cost of 1000 gandalfs will be added if they are in different dimensions.
 
 
 Only three displacement fragments can be created for any given entity per five seconds, 

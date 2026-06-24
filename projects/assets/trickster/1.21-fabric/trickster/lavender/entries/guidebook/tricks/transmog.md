@@ -19,7 +19,7 @@
 }
 ```
 
-It seems that, unlike some, this world supports the transmogrification of one item into another.
+Unlike some, this world supports the transmogrification of one item into another.
 
 
 Transmogrification is a way to change purely the appearance of items, 

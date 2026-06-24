@@ -4,7 +4,7 @@
   "icon": "minecraft:filled_map",
   "category": "trickster:distortions",
   "additional_search_terms": [
-    "制图师之错觉",
+    "舆图之修订",
     "计量之曲变",
     "编表之谋略",
     "领航员之曲变",
@@ -14,13 +14,13 @@
 }
 ```
 
-本节的图案用于操纵映射。映射能建立法术片段到法术片段的联系，类似于字典能将字和其释义联系起来。
+本节的戏法用于操纵映射。映射能建立法术片段到法术片段的联系，类似于字典能将字和其释义联系起来。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:map_create|>
+<|revision@trickster:templates|revision-id=trickster:empty_map|>
 
-新建一个空映射。
+[常量修订术](^trickster:constants)，会将符记替换为空映射。
 
 ;;;;;
 
@@ -50,4 +50,4 @@
 
 <|trick@trickster:templates|trick-id=trickster:map_remove|>
 
-移除给定映射中键为所给参数的键值对。
+移除给定映射中键为所给输入的键值对。

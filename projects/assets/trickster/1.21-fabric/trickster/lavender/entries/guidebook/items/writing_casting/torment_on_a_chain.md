@@ -6,28 +6,42 @@
   "required_advancements": [
     "trickster:spawner_spell_core"
   ],
-  "ordinal": 70
+  "ordinal": 70,
+  "trickster:page_texture": "trickster:textures/gui/white_book_note.png"
 }
 ```
 
-During their studies of spellcasting, many mages will eventually run into the limitations of their innate spell slots,
-whether it's their limited number, or their ephemeral nature. 
-While [Spell Constructs](^trickster:items/infrastructure/spell_construct) partially alleviate these issues,
-they are bulky and immobile, providing rather limited flexibility.
+I must say, the limits of my innate spell slots have rather come to bother me.
+Only five spells? Is that all my frail body can manage?
+
+
+Besides, even though death seems to be... rather impermanent for me, that trait does not at all extend to my spells.
+Attempting to keep my most useful innovations running permanently is an exercise in frustration.
 
 ;;;;;
 
-Fortunately, it seems that the [Torment Spell Core](^trickster:items/infrastructure/spawner_spell_core)'s 
-innate connection to nearby casters can be of use here.
-With the application of a little extra Torment, 
-the bulky spellcasting device can be compacted down enough to be comfortably worn around a mage's neck.
+Even spell constructs and their cores, useful as they are, aren't just something I can carry around in my pocket.
 
 
-While worn, the core will cast and sustain any spell inscribed on it with no effort required from its wearer.
+This is where my recently invented [Torment Spell Core](^trickster:items/infrastructure/spawner_spell_core) comes in!
+
+
+The vast majority of the design actually focuses on reaching out to nearby casters to sustain its own abilities.
 
 ;;;;;
+
+Thus, I suspect that with enough tinkering, 
+the bulky spellcasting device can be compacted down enough to be comfortably carried around.
+
+
+This will come with the compromise of *vastly* decreasing the core's effective range, 
+effectively requiring it to be worn around a mage's neck to be useful.
+
+;;;;;
+
+Given how closely this device would intertwine with my abilities, 
+it might even be able to interact with my innate spell slots as if it were one of them!
 
 <recipe;trickster:torment_on_a_chain>
-
 
 *"It's perfectly safe, I promise."*

@@ -12,7 +12,7 @@ amount of [Mana](^trickster:concepts/mana) based on the rarity of the gem they'r
 
 
 Some gems have unique properties when made into a Knot, such as Amethyst,
-which, unlike other gems, already contains Mana when converted,
+which, unlike other gems, already contains mana when converted,
 but cannot be recharged naturally.
 
 ;;;;;
@@ -32,7 +32,7 @@ Most gems or crystals can be made into Knots using
 [Ploy of the Moon Watcher](^trickster:ploys/mana#2).
 
 
-This ploy optionally takes two arguments, 
+This ploy optionally takes two inputs, 
 one [slot](^trickster:delusions_ingresses/inventory#4) containing a gem, another holding a Glass Block.
 If the latter isn't provided, the first available Glass Block will be used.
 If the former isn't provided, an Amethyst Shard will be used in the same manner. 

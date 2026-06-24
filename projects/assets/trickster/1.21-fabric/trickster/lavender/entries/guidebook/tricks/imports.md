@@ -11,10 +11,10 @@
 }
 ```
 
-Multiple patterns exist for easy reusability of spell fragments stored in the caster's inventory.
+Multiple tricks exist for easy reusability of spell fragments stored in the caster's inventory.
 
 
-These directly execute spells stored in items with given arguments, 
+These directly execute spells stored in items with given [arguments](^trickster:delusions_ingresses/arguments), 
 which can potentially return fragments back to the calling spell,
 or have other side effects.
 
@@ -23,10 +23,10 @@ or have other side effects.
 <|trick@trickster:templates|trick-id=trickster:import|>
 
 Searches the caster's inventory for a specific item type.
-The first item of this type found to have an inscribed spell will be cast with the provided arguments.
+The first item of this type found to have an inscribed spell will be cast with the provided [arguments](^trickster:delusions_ingresses/arguments).
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:import_hat|>
 
-Grabs the spell from the specified slot in the caster's [Hat](^trickster:items/writing_casting/top_hat), casts it with the provided arguments, and returns the result.
+Grabs the spell from the specified slot in the caster's [Hat](^trickster:items/writing_casting/top_hat), casts it with the provided [arguments](^trickster:delusions_ingresses/arguments), and returns the result.

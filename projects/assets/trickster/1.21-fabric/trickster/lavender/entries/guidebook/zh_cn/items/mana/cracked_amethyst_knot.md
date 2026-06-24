@@ -6,7 +6,8 @@
   "required_advancements": [
     "trickster:cracked_amethyst_knot"
   ],
-  "ordinal": 40
+  "ordinal": 40,
+  "trickster:page_texture": "trickster:textures/gui/white_book_note.png"
 }
 ```
 
@@ -14,4 +15,4 @@
 
 ;;;;;
 
-背后的原因尚未解明。紫水晶也许比初看要神秘得多。
+我只能承认我不知道具体原因。紫水晶也许比初看要神秘得多。

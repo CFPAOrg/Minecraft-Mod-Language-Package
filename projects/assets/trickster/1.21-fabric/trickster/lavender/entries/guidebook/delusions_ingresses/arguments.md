@@ -17,7 +17,7 @@
 }
 ```
 
-Fragments can be passed into most [Deviations](^trickster:tricks/functions) as arguments.
+Fragments can be passed into spells as arguments, either by providing them as inputs to some [Deviations](^trickster:tricks/functions) or when triggering the spell on an item. 
 
 
 These fragments can then be retrieved within the cast spell, either directly or as a list of all arguments.

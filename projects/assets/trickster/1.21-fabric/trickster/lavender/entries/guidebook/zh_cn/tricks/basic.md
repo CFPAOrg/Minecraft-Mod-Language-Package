@@ -23,10 +23,10 @@
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=笔记：抄入的片段|>只要某一物品可存储在玩家物品栏中，那就可以抄入法术片段。若抄入的是方块，放置后其上法术片段即会消失。
+<|page-title@lavender:book_components|title=笔记：抄入的片段|>只要某一物品可存储在玩家物品栏中，就可以抄入法术片段。其中有一部分物品能够[反应触发](^trickster:concepts/trigger_items)其上法术。若抄入的是方块，放置后其上法术片段即会消失。
 
 
-某些物品抄入法术后会具有额外的交互功能，如[魔杖](^trickster:items/writing_casting/wand)会在右击时施放法术片段。
+读写戏法的作用范围为16格。
 
 ;;;;;
 
@@ -56,13 +56,13 @@
 
 <|trick@trickster:templates|trick-id=trickster:reveal|>
 
-将给定的所有值作为聊天消息发送给施法者，返回第一参数。
+将给定的所有值作为聊天消息发送给施法者，返回第一输入片段。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:reveal_action_bar|>
 
-将所有参数展示到施法者的快捷栏上方，返回第一参数。未提供输入则清空。
+将所有输入展示到施法者的快捷栏上方，返回第一输入。未提供输入则清空。
 
 ;;;;;
 

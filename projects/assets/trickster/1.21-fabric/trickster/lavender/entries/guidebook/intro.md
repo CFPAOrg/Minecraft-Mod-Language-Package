@@ -1,23 +1,25 @@
 ```json
 {
-  "title": "Introduction",
+  "title": "Foreword",
   "icon": "minecraft:written_book",
   "ordinal": 0
 }
 ```
 
-Welcome to the **Tome of Tomfoolery**! Your guide to magic, trickery, and applied mathematics.
+Dear Reader,
 
 
-This book consists of many chapters spread out over a few categories. 
-Aside from the tutorials section, these chapters are intended to be read in no particular order and only when required.
+You are likely to have received this book as part of a course. 
+Do not feel obliged to read through it sequentially, as it is meant more as a reference. 
 
 ;;;;;
 
-If you run into particular trouble using the mod, have trouble understanding something, 
-or encounter any bugs or other issues, please let us know via **[Discord](https://discord.gg/WcYsDDQtyR)**.
+That being said, if you are reading this without prior experience with the Great Language, 
+and are not taking a course, a section containing basic [tutorials](^trickster:tutorials) is included.
 
 
-More importantly though, have fun!
+If this book proves insufficient at any time, do not hesitate to reach out to other mages in your local **[community](https://discord.gg/WcYsDDQtyR)**. 
+It is, after all, the community that has helped me refine this book.
 
-![](trickster:textures/gui/img/catstare.png)
+
+— Areli Haron

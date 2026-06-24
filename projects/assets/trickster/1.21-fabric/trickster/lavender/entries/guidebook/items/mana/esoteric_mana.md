@@ -32,4 +32,4 @@ Simply combining squid ink from underwater cave systems with small shards of ame
 both of which are known for their magical properties, will result in a mixture containing a very sizeable amount of mana.
 
 
-This substance can be right-clicked onto a [Knot](^trickster:items/mana/knots) of any kind to refill it by roughly 512 Gandalfs.
+This substance can be right-clicked onto a [Knot](^trickster:items/mana/knots) of any kind to refill it by roughly 512 gandalfs.

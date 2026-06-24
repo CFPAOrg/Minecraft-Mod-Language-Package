@@ -16,20 +16,20 @@
 }
 ```
 
-This chapter describes a few patterns that can be used to perform boolean logic operations.
+This chapter describes a few tricks that can be used to perform boolean logic operations.
 
 
-While glyphs here indicate they require a boolean input, 
-it is worth noting that **any fragment will be automatically coerced into a boolean value** when required.
+While tricks here indicate they require a boolean as input, 
+it is worth noting that any fragment will be automatically coerced into a boolean value when required.
 
 ;;;;;
 
 Boolean values are created from any fragment based on the following logic:
 
-- If the fragment is {#4400aa}Void{}, it is **false**.
-- If the fragment is {#444444}##Zalgo##{}, it is **false**.
-- If the fragment is **false**, it is **false**.
-- Otherwise, it is **true**.
+- If the fragment is {#4400aa}Void{}, it is false.
+- If the fragment is {#444444}##Zalgo##{}, it is false.
+- If the fragment is {#aa3355}False{}, it is false.
+- Otherwise, it is true.
 
 ;;;;;
 
@@ -47,20 +47,20 @@ If all booleans are false, a fallback value that *must* be specified at the end 
 For example:
 
 
-Giving this trick the arguments of **true, 1, 2** will make it return **1**, 
-as the boolean forms a pair with **1**, and evaluates to **true**.
+Giving this trick the inputs of {#33ab89}True{}, {#ddaa00}1{}, {#ddaa00}2{} will make it return {#ddaa00}1{}, 
+as the boolean forms a pair with {#ddaa00}1{}, and {#33ab89}True{} is true.
 
 ;;;;;
 
 Alternatively:
 
 
-Giving Decision Stratagem the arguments of **false, 1, false, 2, 3** is also valid, 
-and will see it return the fallback value, which is **3**.
+Giving Decision Stratagem the inputs of {#aa3355}False{}, {#ddaa00}1{}, {#aa3355}False{}, {#ddaa00}2{}, {#ddaa00}3{} is also valid, 
+and will see it return the fallback value, which is {#ddaa00}3{}.
 
 
-And since any fragment counts as a boolean, giving it **void, 1, 2, 3, 4** will have it return **3**, 
-since the **2** and **3** form a pair where the **2** evaluates to **true**.
+And since any fragment counts as a boolean, giving it {#4400aa}Void{}, {#ddaa00}1{}, {#ddaa00}2{}, {#ddaa00}3{}, {#ddaa00}4{} will have it return {#ddaa00}3{}, 
+since the {#ddaa00}2{} and {#ddaa00}3{} form a pair where the {#ddaa00}2{} gets coerced into to being true.
 
 ;;;;;
 

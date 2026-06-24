@@ -21,7 +21,7 @@ while the second is seen as a unit vector representing the look direction.
 
 ;;;;;
 
-Raycasts which target blocks may optionally be made to hit fluids if their last argument is true.
+Raycasts which target blocks may optionally be made to hit fluids if their last input is true.
 
 
 If a raycast misses and does not hit anything of relevance within 64 blocks, void will be given.

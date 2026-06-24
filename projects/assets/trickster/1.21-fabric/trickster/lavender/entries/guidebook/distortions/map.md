@@ -4,7 +4,7 @@
   "icon": "minecraft:filled_map",
   "category": "trickster:distortions",
   "additional_search_terms": [
-    "Cartographer's Delusion",
+    "Atlas Revision",
     "Tally Distortion",
     "Charting Stratagem",
     "Navigator's Distortion",
@@ -14,15 +14,15 @@
 }
 ```
 
-This chapter describes patterns that can be used to work with maps. 
+This chapter describes tricks that can be used to work with maps. 
 Maps allow for an association between one fragment and another, 
 similarly to how a dictionary associates a word with a definition.
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:map_create|>
+<|revision@trickster:templates|revision-id=trickster:empty_map|>
 
-Creates a new empty map.
+A [Constant Revision](^trickster:constants) that replaces the glyph with an empty map.
 
 ;;;;;
 

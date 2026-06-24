@@ -27,7 +27,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:drop_stack_from_slot|>
 
-在给定位置处丢出物品，并返回该物品实体。丢出数目参数可选。
+在给定位置处丢出物品，并返回该物品实体。丢出数目片段可选。
 
 ;;;;;
 

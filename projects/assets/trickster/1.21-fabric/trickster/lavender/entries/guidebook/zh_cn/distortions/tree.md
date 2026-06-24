@@ -19,13 +19,13 @@
 }
 ```
 
-[抄绘图案](^trickster:editing)能在法术施放前更改法术，而本节中的图案能在法术施放*中*修改。
+[抄绘图案](^trickster:editing)能在法术施放前更改法术，而本节中的戏法能在法术施放*中*修改。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:supplier|>
 
-创建一个新法术片段，其执行结果即是所给参数。
+创建一个新法术片段，其执行结果为所给片段。
 
 ;;;;;
 
@@ -61,13 +61,13 @@
 
 <|trick@trickster:templates|trick-id=trickster:locate_glyph|>
 
-返回所给法术中、符记为所给参数的第一个圆的地址。搜索时使用[广度优先搜索（BFS）](https://en.wikipedia.org/wiki/Breadth-first_search)。
+返回所给法术中、符记为所给片段的第一个圆的地址。搜索时使用[广度优先搜索（BFS）](https://en.wikipedia.org/wiki/Breadth-first_search)。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:locate_glyphs|>
 
-返回所给法术中、符记为所给参数的所有圆的地址组成的列表。
+返回所给法术中、符记为所给片段的所有圆的地址组成的列表。
 
 ;;;;;
 

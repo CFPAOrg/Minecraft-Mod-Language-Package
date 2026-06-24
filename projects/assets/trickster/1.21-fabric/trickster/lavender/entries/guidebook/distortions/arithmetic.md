@@ -4,6 +4,7 @@
   "icon": "minecraft:copper_bulb",
   "category": "trickster:distortions",
   "additional_search_terms": [
+    "Foundational Revision",
     "Annexation Stratagem",
     "Desertion Stratagem",
     "Domination Stratagem",
@@ -31,7 +32,7 @@
 }
 ```
 
-The following patterns regard basic arithmetic and mathematical operations.
+The following tricks regard basic arithmetic and mathematical operations.
 
 
 Some of the base arithmetic tricks accept a combination of types of fragment. 
@@ -52,7 +53,7 @@ They are {#aa4444}Addable{}, {#aa4444}Multiplicable{}, {#aa4444}Roundable{}, and
 
 ;;;;;
 
-Distortions here that take many arguments at once will apply their operation cumulatively.
+Distortions here that take many inputs at once will apply their operation cumulatively.
 For example:
 
 
@@ -63,6 +64,12 @@ or
 
 
 1, 2, 3 into Submission Stratagem = 1 / 2 / 3 = 0.1666...
+
+;;;;;
+
+<|revision@trickster:templates|revision-id=trickster:two|>
+
+A [Constant Revision](^trickster:constants) that replaces the glyph with the number two. Other numbers may be created using this and the following tricks.
 
 ;;;;;
 

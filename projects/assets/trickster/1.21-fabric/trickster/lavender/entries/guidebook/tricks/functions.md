@@ -47,19 +47,19 @@ Returns the delay.
 <|trick@trickster:templates|trick-id=trickster:execute|>
 
 Casts the given spell fragment, 
-providing it with all additional given fragments as arguments, in order of their appearance.
+providing it with all additional given fragments as [arguments](^trickster:delusions_ingresses/arguments), in order of their appearance.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:execute_same_scope|>
 
-Casts the given spell with the current spell's arguments.
+Casts the given spell with the current spell's [arguments](^trickster:delusions_ingresses/arguments).
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:try_catch|>
 
-Attempts to execute the first spell. If it blunders, the second spell is run and the blunder is silenced. Excess values are arguments to both.
+Attempts to execute the first spell. If it blunders, the second spell is run and the blunder is silenced. Excess values are [arguments](^trickster:delusions_ingresses/arguments) to both.
 
 ;;;;;
 
@@ -105,7 +105,7 @@ For each entry in the {#aa4444}Foldable{}, execute the given spell, with the giv
 
 ;;;;;
 
-Each iteration receives four arguments:
+Each iteration receives four [arguments](^trickster:delusions_ingresses/arguments):
 
 ---
 
@@ -122,14 +122,7 @@ These represent the following values, in order:
 
 ;;;;;
 
-The result of each execution is passed as the first argument to the next, where the last's result is the return value of this trick overall.
-
-;;;;;
-
-<|page-title@lavender:book_components|title=Note: Arguments|>Fragments can be passed into executed spell fragments as arguments.
-
-
-See the chapter on [arguments](^trickster:delusions_ingresses/arguments) for more information.
+The result of each execution is passed as the first [argument](^trickster:delusions_ingresses/arguments) to the next, where the last's result is the return value of this trick overall.
 
 ;;;;;
 
