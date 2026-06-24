@@ -5,9 +5,10 @@
   "category": "trickster:concepts",
   "additional_search_terms": [
     "建筑者之激情",
-    "贪食者之饥",
     "弓箭手之专注",
     "渔夫之暴",
+    "保护者之阻止",
+    "贪食者之饥",
     "圣尼古拉斯之技巧",
     "胡椒小饼"
   ]

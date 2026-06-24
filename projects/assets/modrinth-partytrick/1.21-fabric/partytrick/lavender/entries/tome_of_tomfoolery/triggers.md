@@ -5,9 +5,10 @@
   "category": "trickster:concepts",
   "additional_search_terms": [
     "Builder's Passion",
-    "Glutton’s Hunger",
     "Archer’s Focus",
     "Angler’s Fury",
+    "Protector's Nuh Uh",
+    "Glutton’s Hunger",
     "Sinterklaas's Ploy",
     "Pepernoten",
     "Pepernoot"
