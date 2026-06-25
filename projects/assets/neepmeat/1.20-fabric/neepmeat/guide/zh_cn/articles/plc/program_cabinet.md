@@ -5,7 +5,8 @@ lookup: neepmeat:program_cabinet, neepmeat:program_card
 
 # 程序磁盘
 
-程序磁盘可用于在PLC间转移程序（和源码）。
+\columns[fit=second]{程序磁盘可用于在PLC间转移程序（和源码）。
+}{\item_render[height=50]{neepmeat:program_card}}
 
 手持磁盘时点击PLC，可将PLC的程序存入磁盘。
 
@@ -15,9 +16,10 @@ lookup: neepmeat:program_cabinet, neepmeat:program_card
 
 # 程序柜
 
-程序柜是程序存储模块。它提供了若干内存段，能存储适用于PLC的可执行指令。
+\columns[fit=second]{程序柜是程序存储模块。它提供了若干内存段，能存储适用于PLC的可执行指令。
 
 PLC可访问相邻程序柜中的磁盘，也能执行磁盘中的程序。
+}{\item_render[height=50]{neepmeat:program_cabinet}}
 
 程序柜共有30个槽位，每个槽位都可存储单条程序，且均占据一个内存段。
 

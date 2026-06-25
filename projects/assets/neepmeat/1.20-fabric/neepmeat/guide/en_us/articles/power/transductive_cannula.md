@@ -6,7 +6,8 @@ icon: neepmeat:transducer
 
 # Transductive Cannula
 
-The Transductive Cannula imbues a working substrate with received heat, producing Transient Ichor.
+\columns[fit=second]{The Transductive Cannula imbues a working substrate with received heat, producing Transient Ichor.
+}{\item_render[height=50]{neepmeat:transducer}}
 
 ## Usage
 
@@ -22,6 +23,9 @@ Reservoirs can provide a steady source of water.
 - Lava: 40eJ/t
 - Lava Cauldron: 40eJ/t
 - Fire: 40eJ/t
+- Campfire: 40eJ/t
 - Magma Block: 40eJ/t
+- Soul Fire: 60eJ/t
+- Soul Campfire: 60eJ/t
 - Lit Furnace: 150eJ/t
 - Flame Jet: 500eJ/t

@@ -1,10 +1,12 @@
 ---
 id: plc
+lookup: neepmeat:plc
 ---
 
 # Programmable Logic Controller
 
-The PLC is a computer specialised for industrial automation. It can run user-defined programs or run instructions one by one in an interactive mode. Its clock speed is a lightning fast 20Hz.
+\columns[fit=second]{The PLC is a computer specialised for industrial automation. It can run user-defined programs or run instructions one by one in an interactive mode. Its clock speed is a lightning fast 20Hz.
+}{\item_render{neepmeat:plc}}
 
 A PLC interacts with the world via 'actuators'. Each PLC has a robot which functions as its default actuator.
 

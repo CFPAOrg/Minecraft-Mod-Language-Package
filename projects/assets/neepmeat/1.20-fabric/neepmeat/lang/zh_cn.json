@@ -180,7 +180,7 @@
   "block.neepmeat.item_input_port": "物品输入端口",
   "block.neepmeat.fluid_input_port": "流体输入端口",
   "block.neepmeat.fluid_output_port": "流体输出端口",
-  "block.neepmeat.crusher_segment": "粉碎机工作段",
+  "block.neepmeat.crusher_segment": "破碎机工作段",
   "block.neepmeat.crusher_segment.lore_0": "允许执行高级粉碎配方作业。每台活体机器最多可存在四个。",
   "block.neepmeat.large_trommel": "大型滚筒筛",
   "block.neepmeat.largest_hopper": "最大的漏斗",
@@ -295,7 +295,7 @@
   "block.neepmeat.check_valve.lore_0": "只允许流体单向流通。",
   "block.neepmeat.filter_pipe": "过滤管道",
   "block.neepmeat.filter_pipe.lore_0": "只允许特定种类的流体通过。",
-  "block.neepmeat.filter_pipe.lore_1": "§e手持流体容器右击可设置过滤。§f",
+  "block.neepmeat.filter_pipe.lore_1": "§e手持流体容器右击可设置过滤器。§f",
   "message.neepmeat.filter_pipe.filter": "过滤：%s",
   "block.neepmeat.limiter_valve": "限流阀",
   "block.neepmeat.limiter_valve.lore_0": "控制流体通过的速率。",
@@ -434,7 +434,7 @@
   "block.neepmeat.buffer.lore_0": "能容纳9组物品。给予红石信号可阻止其中物品被取出。",
   "block.neepmeat.metal_barrel": "金属桶",
   "block.neepmeat.content_detector": "物品探测器",
-  "block.neepmeat.content_detector.lore_0": "探测面向容器中的特定物品。可用漏斗放入和取出过滤物品。",
+  "block.neepmeat.content_detector.lore_0": "探测面向容器中的特定物品。可用漏斗放入和取出过滤的物品。",
   "block.neepmeat.solidity_detector": "固体探测器",
   "block.neepmeat.solidity_detector.lore_0": "若面向方块不是空气或流体，发出红石信号。",
 
@@ -522,9 +522,9 @@
   "block.neepmeat.router.lore_0": "以简单物品过滤器分配物品。",
   "block.neepmeat.advanced_router": "高级物品分拣器",
   "block.neepmeat.advanced_router.lore_0": "以多个高级过滤器分配物品。",
-  "block.neepmeat.grinder": "粉碎机",
+  "block.neepmeat.grinder": "颚式破碎机",
   "block.neepmeat.grinder.lore_0": "§e潜行空手交互以提取经验。§f",
-  "block.neepmeat.large_crusher": "大型粉碎机",
+  "block.neepmeat.large_crusher": "大型破碎机",
   "block.neepmeat.alloy_kiln": "合金窑",
   "block.neepmeat.collector": "脂肪收集器",
   "block.neepmeat.crucible": "熬脂盆",
@@ -562,8 +562,9 @@
   "block.neepmeat.assembler.lore_0": "会维持下方存储空间的物品存放规律。放在留存工作台上方以自动合成。",
 
   "block.neepmeat.fabricator": "组装器",
-  "block.neepmeat.fabricator.lore_0": "从相邻容器取出原材料以合成物品。\n从前面取出物品即会启动下一轮合成。\n若以发电机供能，则会持续合成并主动输出物品。\n不允许存在配方循环和链接。\n§f会通过与侧面（前面除外）相连的管道自动请求缺失的原料。",
+  "block.neepmeat.fabricator.lore_0": "从相邻容器取出原料以合成物品。\n从前面取出物品即会启动下一轮合成。\n若以发电机供能，则会持续合成并主动输出物品。\n不允许存在配方循环和链接。\n§f会通过管道自动请求缺失的原料。",
   "screen.neepmeat.fabricator.use_external.tooltip": "会从与机器下部相邻的物品容器取用。",
+  "screen.neepmeat.fabricator.use_internal.tooltip": "只回应管道驱动器的合成请求。\n禁用时，其内部缓存会在合成树计算原料时被忽略。\n重要：复杂递归合成网络中的组装器应当被禁用。\n延后的请求仍会使用内部缓存作为输入。",
 
   "block.neepmeat.workstation": "留存工作台",
   "block.neepmeat.workstation.lore_0": "合成方格内可以存放物品。",
@@ -740,7 +741,7 @@
 
   "item.neepmeat.projector": "指南投影仪",
   "item.neepmeat.projector.lore_0": "NEEPMeat中所有内容的指南。",
-  "item.neepmeat.projector.lore_1": "此指南处于物品栏中时，按下§fCTRL+L§7可查询鼠标悬停位置的物品。",
+  "item.neepmeat.projector.lore_1": "此指南处于物品栏中时，按下CTRL+L可查询鼠标悬停位置的物品。",
   "screen.neepmeat.guide.search": "输入“%s”以搜索",
 
   "item.neepmeat.pipette": "滴管",
@@ -1049,6 +1050,7 @@
   "instruction.neepmeat.say.desc": "将所给字符串发送给20格内的所有玩家。\n若未指定字符串，则弹出并打印栈顶元素。\n在末尾加上§6d§f、§6h§f、§6b§f会分别将栈顶元素格式化为十进制、十六进制、二进制。",
   "instruction.neepmeat.remove.desc": "移除工作站ARG1中的最末制造步骤。",
   "instruction.neepmeat.robot.desc": "选择ARG1处的操作机构。后续所有指令均以之为操作机构，直至再次指定。",
+  "instruction.neepmeat.moveto.desc": "§6( 位置 -- )§f\n指示机器人移动到栈顶位置。",
   "instruction.neepmeat.exec.desc": "在ARG1处的执行器处运行指令ARG2。",
   "instruction.neepmeat.combine.desc": "取出存储空间ARG1中的一个物品，并将其与工作站ARG2中物品结合。",
   "instruction.neepmeat.move.desc": "尝试从存储空间ARG1中将给定数量个物品移动至存储空间ARG2。未指定数量则默认为64。将成功与否压入栈。\n §6ARG1§f：源存储空间（世界目标）\n §6ARG2§f：目标存储空间（世界目标）\n §6ARG3§f：数量（整型值，可选）\n §6ARG4§f：物品ID（字符串，通配符为“*”，可选）",
@@ -1164,7 +1166,7 @@
   "screen.neepmeat.living_machine.requirements": "必要组件：",
   "process.neepmeat.crushing.requirements": "   ",
 
-  "component.neepmeat.crusher_segment": "粉碎机工作段",
+  "component.neepmeat.crusher_segment": "破碎机工作段",
   "component.neepmeat.large_trommel": "大型滚筒筛",
   "component.neepmeat.motor_port": "发动机端口",
   "component.neepmeat.integration_port": "融合端口",
@@ -1244,7 +1246,7 @@
   "advancements.neepmeat.main.obtain_asbestos.desc": "找到些石棉。",
 
   "advancements.neepmeat.main.place_grinder.title": "吭哧吭哧",
-  "advancements.neepmeat.main.place_grinder.desc": "放置粉碎机。",
+  "advancements.neepmeat.main.place_grinder.desc": "放置颚式破碎机。",
 
   "advancements.neepmeat.main.enlightenment.title": "真是开人心智",
   "advancements.neepmeat.main.enlightenment.desc": "将启智台座连接至融变生物机，以制造奇怪的新东西。",
@@ -1374,7 +1376,7 @@
   "process.neepmeat.disruptor": "扰乱机",
   "process.neepmeat.trommel": "滚筒筛",
   "process.neepmeat.metaboliser": "代谢机",
-  "process.neepmeat.crusher": "粉碎机",
+  "process.neepmeat.crusher": "颚式破碎机",
   "process.neepmeat.large_compressor": "大型压缩机",
   "process.neepmeat.phage_ray": "吞噬射线炮",
   "process.neepmeat.charnel_pump": "积骸泵",

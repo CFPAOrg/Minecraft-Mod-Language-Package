@@ -1,6 +1,6 @@
 ---
 id: mining_tools
-lookup: neepmeat:drill_chassis, neepmeat:iron_rotary_drill_head, neepmeat:meat_steel_rotary_drill_head, neepmeat:diamond_rotary_drill)head, neepmeat:rock_drill_head
+lookup: neepmeat:drill_chassis, neepmeat:iron_rotary_drill_head, neepmeat:meat_steel_rotary_drill_head, neepmeat:diamond_rotary_drill)head, neepmeat:rock_drill_head, neepmeat:pneumatic_motor
 ---
 
 # Mining Tools
@@ -17,6 +17,8 @@ The Drill Chassis is a modular mining tool. By default, it has a Pneumatic Motor
 - Compressor Scutter - follows the player that placed it
 
 The drill's core implant can be replaced with a Tool Organism using a PLC. This allows the drill to run on reconstituted food sources, such as Animal Feed and Reconstituted Food.
+
+\columns{\item_render[height=30]{neepmeat:pneumatic_motor}}{\item_render[height=30]{neepmeat:living_tool_implant}}
 
 The Drill Chassis is also compatible with Meatgun Modules. Heads and modules can be swapped with a Tinker Table.
 

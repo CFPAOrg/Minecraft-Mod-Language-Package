@@ -522,7 +522,7 @@
   "block.neepmeat.router.lore_0": "Distributes items based on simple item filters.",
   "block.neepmeat.advanced_router": "Advanced Item Sorter",
   "block.neepmeat.advanced_router.lore_0": "Distributes items based on multiple advanced filters.",
-  "block.neepmeat.grinder": "Crusher",
+  "block.neepmeat.grinder": "Jaw Crusher",
   "block.neepmeat.grinder.lore_0": "§eUse with an empty hand while sneaking to eject XP.",
   "block.neepmeat.large_crusher": "Large Crusher",
   "block.neepmeat.alloy_kiln": "Alloy Kiln",
@@ -562,8 +562,9 @@
   "block.neepmeat.assembler.lore_0": "Replicates a pattern of items in the inventory below. Place above Persistent Crafting Table for auto-crafting.",
 
   "block.neepmeat.fabricator": "Fabricator",
-  "block.neepmeat.fabricator.lore_0": "Crafts items using ingredients from adjacent inventories.\nCrafting can be triggered by extracting the result item from the front.\nIf powered by a motor, it will continuously craft and eject items.\nLoops and chains are not allowed.\n§fAutomatically requests missing ingredients through pipes connected to sides other than the front.",
+  "block.neepmeat.fabricator.lore_0": "Crafts items using ingredients from adjacent inventories.\nCrafting can be triggered by extracting the result item from the front.\nIf powered by a motor, it will continuously craft and eject items.\nLoops and chains are not allowed.\n§fAutomatically requests missing ingredients through pipes.",
   "screen.neepmeat.fabricator.use_external.tooltip": "Use item storages adjacent to the bottom block.",
+  "screen.neepmeat.fabricator.use_internal.tooltip": "Applies only to crafting requests from Pipe Drivers.\nWhen disabled, items in the internal inventory will ignored when calculating the ingredients for a crafting tree.\nIMPORTANT: Should be disabled if this fabricator is part of a complex recursive crafting network.\nDeferred requests will still use the internal storage for inputs.",
 
   "block.neepmeat.workstation": "Persistent Crafting Table",
   "block.neepmeat.workstation.lore_0": "Keeps items in the grid.",
@@ -740,7 +741,7 @@
 
   "item.neepmeat.projector": "Guide Projector",
   "item.neepmeat.projector.lore_0": "A guide to all NEEPMeat content.",
-  "item.neepmeat.projector.lore_1": "Press §fCTRL + L§7 to look up a hovered item while this guide is in your inventory.",
+  "item.neepmeat.projector.lore_1": "Press CTRL + L to look up a hovered item while this guide is in your inventory.",
   "screen.neepmeat.guide.search": "Type '%s' to search",
 
   "item.neepmeat.pipette": "Pipette",
@@ -1049,6 +1050,7 @@
   "instruction.neepmeat.say.desc": "Sends the given string to all players within 20 blocks.\nIf no string is provided, it will pop and print the last stack element.\nAdding §6d§f §6h§' or §6b§f to the end will format the stack entry as decimal, hexadecimal or binary respectively.",
   "instruction.neepmeat.remove.desc": "Removes the last manufacture step from the item in workbench ARG1.",
   "instruction.neepmeat.robot.desc": "Selects the actuator at ARG1. All further instructions will use the actuator until a new one is selected.",
+  "instruction.neepmeat.moveto.desc": "§6( pos -- )§f\nInstructs the robot to move to the position on the top of the stack.",
   "instruction.neepmeat.exec.desc": "Runs the following instruction ARG2 in the executor at block ARG1.",
   "instruction.neepmeat.combine.desc": "Removes an item from storage ARG1 and combines it with the item in workbench ARG2.",
   "instruction.neepmeat.move.desc": "Tries to the specified number of items from storage ARG1 into storage ARG2. If no amount is specified, 64 will be assumed. The success of the move is pushed to the stack.\n §6ARG1§f: Source storage (world target)\n §6ARG2§f: destination storage (world target)\n §6ARG3§f: amount (integer, optional)\n §6ARG4§f: item ID (string, * for wildcard, optional)",
@@ -1244,7 +1246,7 @@
   "advancements.neepmeat.main.obtain_asbestos.desc": "Find some asbestos.",
 
   "advancements.neepmeat.main.place_grinder.title": "Scrunch Scrunch",
-  "advancements.neepmeat.main.place_grinder.desc": "Place a Crusher.",
+  "advancements.neepmeat.main.place_grinder.desc": "Place a Jaw Crusher.",
 
   "advancements.neepmeat.main.enlightenment.title": "How Enlightening",
   "advancements.neepmeat.main.enlightenment.desc": "Use a Pedestal connected to an Integrator to produce strange new forms.",
@@ -1374,7 +1376,7 @@
   "process.neepmeat.disruptor": "Disruptor",
   "process.neepmeat.trommel": "Trommel",
   "process.neepmeat.metaboliser": "Metaboliser",
-  "process.neepmeat.crusher": "Crusher",
+  "process.neepmeat.crusher": "Jaw Crusher",
   "process.neepmeat.large_compressor": "Large Compressor",
   "process.neepmeat.phage_ray": "Phage Ray",
   "process.neepmeat.charnel_pump": "Charnel Pump",

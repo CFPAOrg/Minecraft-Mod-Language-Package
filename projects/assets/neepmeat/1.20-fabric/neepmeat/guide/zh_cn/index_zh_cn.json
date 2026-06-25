@@ -6,7 +6,7 @@
       {"type": "page", "id": "mining_tools", "icon": "neepmeat:iron_rotary_drill_head", "text": "挖掘工具", "lookup": ["neepmeat:drill_chassis"]},
       {"type": "page", "id": "verrucous_rocks", "icon": "neepmeat:verrucous_stone", "text": "疣斑石", "lookup": ["neepmeat:verrucous_stone", "neepmeat:verrucous_stone_port"]},
       {"type": "page", "id": "brains", "icon": "neepmeat:brain_rough", "text": "大脑", "lookup": "neepmeat:brain_rough"},
-      {"type": "article", "id": "fluids", "icon": "neepmeat:ethereal_fuel_bucket", "text": "能量传输"},
+      {"type": "article", "id": "power_transfer", "icon": "neepmeat:ethereal_fuel_bucket", "text": "能量传输"},
       {"type": "page", "id": "meat", "icon": "neepmeat:raw_meat_brick", "text": "肉", "lookup": ["neepmeat:raw_meat_brick"]},
       {"type": "page", "id": "blood", "icon": "neepmeat:blood_bucket", "text": "血液", "lookup": ["neepmeat:blood_bucket", "neepmeat:sacrificial_dagger"]},
       {"type": "page", "id": "enlightening", "icon": "neepmeat:pedestal", "text": "启智", "lookup": ["neepmeat:pedestal"]},
@@ -14,21 +14,24 @@
     ]},
     {"type": "menu", "id": "fluid_transport", "icon": "neepmeat:motor_unit", "text": "流体运输", "entries": [
       {"type": "page", "id": "fluid_pipe", "icon": "neepmeat:fluid_pipe", "text": "流体管道", "lookup": "neepmeat:fluid_pipe"},
-      {"type": "page", "id": "valves", "icon": "neepmeat:check_valve", "text": "阀门", "lookup": ["neepmeat:fluid_pipe", "neepmeat:check_valve", "neepmeat:stop_valve", "neepmeat:limiter_valve"]},
+      {"type": "page", "id": "valves", "icon": "neepmeat:check_valve", "text": "阀门", "lookup": ["neepmeat:check_valve", "neepmeat:stop_valve", "neepmeat:limiter_valve"]},
       {"type": "page", "id": "flex_tank", "icon": "neepmeat:flex_tank", "text": "变容储罐", "lookup": ["neepmeat:flex_tank", "neepmeat:advanced_flex_tank"]},
       {"type": "page", "id": "fluid_drain", "icon": "neepmeat:fluid_drain", "text": "流体漏集池", "lookup": "neepmeat_fluid_drain"},
       {"type": "page", "id": "fluid_interface", "icon": "neepmeat:fluid_interface", "text": "流体接口", "lookup": "neepmeat:fluid_interface"},
       {"type": "page", "id": "fluid_rationer", "icon": "neepmeat:fluid_rationer", "text": "流体配给器", "lookup": "neepmeat:fluid_rationer"}
     ]},
     {"type": "menu", "id": "item_transport", "icon": "neepmeat:item_pipe", "text": "物品运输", "entries": [
-      {"type": "page", "id": "item_pipe", "icon": "neepmeat:item_pipe", "text": "物品管道", "lookup": ["neepmeat:item_pipe", "neepmeat:merge_item_pipe"]},
-      {"type": "page", "id": "ejector", "icon": "neepmeat:ejector", "text": "物品提取", "lookup": ["neepmeat:ejector", "neepmeat:item_pump"]},
-      {"type": "page", "id": "router", "icon": "neepmeat:router", "text": "物品路由器", "lookup": "neepmeat:router"},
+      {"type": "page", "id": "item_pipe", "icon": "neepmeat:item_pipe", "text": "物品管道"},
+      {"type": "page", "id": "item_pipe_routing", "icon": "neepmeat:pipe_driver", "text": "物品管道路由"},
+      {"type": "page", "id": "item_extraction", "icon": "neepmeat:ejector", "text": "物品提取", "lookup": ["neepmeat:ejector", "neepmeat:item_pump"]},
+      {"type": "page", "id": "item_sorter", "icon": "neepmeat:router", "text": "物品分拣器", "lookup": "neepmeat:router"},
       {"type": "page", "id": "dumper", "icon": "neepmeat:dumper", "text": "智能卸料器", "lookup": "neepmeat:dumper"},
+      {"type": "page", "id": "requester", "icon": "neepmeat:requester", "text": "请求器"},
+      {"type": "page", "id": "fabricator", "icon": "neepmeat:fabricator", "text": "组装器"},
       {"type": "page", "id": "process_interface", "icon": "neepmeat:process_interface", "text": "处理接口"}
     ]},
     {"type": "menu", "id": "power", "icon": "neepmeat:motor_unit", "text": "供能", "entries": [
-      {"type": "page", "id": "fluids", "icon": "neepmeat:ethereal_fuel_bucket", "text": "高能流体", "lookup": "neepmeat:ethereal_fuel_bucket"},
+      {"type": "page", "id": "power_transfer", "icon": "neepmeat:ethereal_fuel_bucket", "text": "能量传输", "lookup": "neepmeat:ethereal_fuel_bucket"},
       {"type": "page", "id": "verrucous_rocks", "icon": "neepmeat:verrucous_stone", "text": "疣斑石", "lookup": ["neepmeat:verrucous_stone", "neepmeat:verrucous_stone_port"]},
       {"type": "page", "id": "transductive_cannula", "icon": "neepmeat:transducer", "text": "换能套管", "lookup": "neepmeat:transducer"},
       {"type": "page", "id": "power_flower", "icon": "neepmeat:power_flower_growth", "text": "能量花", "lookup": ["neepmeat:power_flower_seeds", "neepmeat:power_flower_growth", "neepmeat:power_flower_controller", "neepmeat:power_flower_fluid_port"]},
@@ -43,10 +46,10 @@
     {"type": "menu", "id": "rotary_machines", "icon": "neepmeat:motor_unit", "text": "回转式机器", "entries": [
       {"type": "page", "id": "mixer", "icon": "neepmeat:mixer", "text": "混合机", "lookup": "neepmeat:mixer"},
       {"type": "page", "id": "trommel", "icon": "neepmeat:small_trommel", "text": "滚筒筛", "lookup": "neepmeat:small_trommel"},
+      {"type": "page", "id": "stirling_engine", "icon": "neepmeat:stirling_engine", "text": "斯特林引擎", "lookup": "neepmeat:stirling_engine"},
       {"type": "page", "id": "motor", "icon": "neepmeat:motor_unit", "text": "发动机", "lookup": "neepmeat:motor_unit"},
       {"type": "page", "id": "advanced_motor", "icon": "neepmeat:advanced_motor", "text": "高级发动机", "lookup": "neepmeat:advanced_motor"},
-      {"type": "page", "id": "stirling_engine", "icon": "neepmeat:stirling_engine", "text": "斯特林引擎", "lookup": "neepmeat:stirling_engine"},
-      {"type": "page", "id": "grinder", "icon": "neepmeat:grinder", "text": "粉碎机", "lookup": "neepmeat:grinder"},
+      {"type": "page", "id": "grinder", "icon": "neepmeat:grinder", "text": "颚式破碎机", "lookup": "neepmeat:grinder"},
       {"type": "page", "id": "bottler", "icon": "neepmeat:bottler", "text": "灌装机", "lookup": "neepmeat:bottler"},
       {"type": "page", "id": "breaker", "icon": "neepmeat:breaker", "text": "机动破坏器", "lookup": "neepmeat:breaker"},
       {"type": "page", "id": "item_mincer", "icon": "neepmeat:item_mincer", "text": "物品绞碎机", "lookup": "neepmeat:item_mincer"},
@@ -64,7 +67,7 @@
         "lookup":
         ["neepmeat:living_machine_controller", "neepmeat:machine_block", "neepmeat:base_machine_block", "neepmeat:meat_steel_machine_block", "neepmeat:meat_steel_machine_block_2", "neepmeat:skin_machine_block"]},
       {"type": "page", "id": "phage_ray", "icon": "neepmeat:phage_ray", "text": "吞噬射线炮", "lookup": "neepmeat:phage_ray"},
-      {"type": "page", "id": "large_crusher", "icon": "neepmeat:crusher_segment", "text": "大型粉碎机", "lookup": ["neepmeat:crusher_segment", "neepmeat:lucky_one"]},
+      {"type": "page", "id": "large_crusher", "icon": "neepmeat:crusher_segment", "text": "大型破碎机", "lookup": ["neepmeat:crusher_segment", "neepmeat:lucky_one"]},
       {"type": "page", "id": "large_trommel", "icon": "neepmeat:large_trommel", "text": "大型滚筒筛", "lookup": "neepmeat:large_trommel"},
       {"type": "page", "id": "metaboliser", "icon": "neepmeat:metaboliser_segment", "text": "代谢机"},
       {"type": "page", "id": "tree_vacuum", "icon": "neepmeat:tree_vacuum", "text": "真空吸树机", "lookup": "neepmeat:tree_vacuum"},
@@ -128,7 +131,7 @@
       {"type": "page", "id": "networking_tool", "icon": "neepmeat:networking_tool", "text": "网络工具", "lookup": ["neepmeat:networking_tool"] },
       {"type": "page", "id": "pid_controller", "icon": "neepmeat:pid_controller", "text": "PID控制器", "lookup": ["neepmeat:pid_controller"] },
       {"type": "page", "id": "plc_neepbus_interface", "icon": "neepmeat:plc_neepbus_interface", "text": "PLC NEEP总线接口", "lookup": ["neepmeat:plc_neepbus_interface"] },
-      {"type": "page", "id": "automatic_mouth", "icon": "neepmeat:mouth", "text": "自动口舌"}
+      {"type": "page", "id": "automatic_mouth", "icon": "neepmeat:automatic_mouth", "text": "自动口舌"}
     ]},
     {"type": "menu", "id": "misc", "icon": "neepmeat:essential_saltes", "text": "杂项", "entries": [
       {"type": "page", "id": "cloning", "icon": "neepmeat:essential_saltes", "text": "克隆", "lookup": "neepmeat:essential_saltes"},
@@ -136,11 +139,11 @@
       {"type": "page", "id": "airtruck", "icon": "meatweapons:airtruck", "text": "空中货车", "lookup": "meatweapons:airtruck"}
     ]},
     {"type": "menu", "id": "tools", "icon": "neepmeat:pressure_washer", "text": "工具", "entries": [
-      {"type": "page", "id": "assault_drill", "icon": "meatweapons:assault_drill", "text": "突击钻", "lookup": "meatweapons:assault_drill"},
       {"type": "page", "id": "pressure_washer", "icon": "neepmeat:pressure_washer", "text": "高压清洗器"}
     ]},
     {"type": "menu", "id": "weapons", "icon": "neepmeat:meatgun_pistol", "text": "武器", "entries": [
-      {"type": "page", "id": "meatgun", "icon": "neepmeat:meatgun_pistol", "text": "肉质武器"}
+      {"type": "page", "id": "meatgun", "icon": "meatweapons:meatgun_pistol", "text": "肉质武器"},
+      {"type": "page", "id": "halberd", "icon": "meatweapons:halberd", "text": "戟"}
     ]}
   ]}
 }
