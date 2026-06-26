@@ -40,6 +40,26 @@ trickster:
     complete: "Spell completed"
     cast: "Spell cast"
     collar_bell: "Collar bell rings"
+    use_esoteric_mana: "Esoteric mana pours on item"
+    leash_link: "Tether links to Bindings"
+    knot_tick: "Knot ticks"
+    place_construct_knot: "Knot placed on Construct"
+    remove_construct_knot: "Knot removed from Construct"
+    place_construct_core: "Core slides into Construct"
+    remove_construct_core: "Core slides out of Construct"
+    place_charging_array_knot: "Knot placed on Array"
+    remove_charging_array_knot: "Knot removed from Array"
+    place_scroll: "Scroll placed on Shelf"
+    remove_scroll: "Scroll removed from Shelf"
+    displacement_teleport: "Teleportation completes"
+    displacement_trigger: "Teleport initiates"
+    use_luminous_bottle: "Glow Ink splotches"
+    knot_crack: "Knot shatters"
+    trigger_resonator: "Resonator resonates"
+
+  mana_cost:
+    costs_mana: Costs mana
+    type: "Required type: %s"
 
   gandalf:
     stored: "Stored: %s"
@@ -47,10 +67,16 @@ trickster:
     idling: "Idle"
     draining: "Draining: %.2f"
     filling: "Charging: %.2f"
+  mana:
+    type: "Type: %s"
+    stability: "Stability: %s%%"
+    color: "Color: %s"
+  knot:
+    desired_color: "Contains faint shimmers of %s"
 
   item_group: Trickster
 
-  scroll_hat: 
+  scroll_hat:
     named: 'Selected slot: %d [%s]'
     unnamed: 'Selected slot: %d'
   scroll_executable: Single-use (%f kiloGandalfs)
@@ -64,6 +90,7 @@ trickster:
     divide: Submission Stratagem
     modulo: Distortion of Wholes
     power: Distortion of Supremacy
+    logarithm: Distortion of Inferiority
     max: Noble Stratagem
     min: Insignificance Stratagem
     ceil: Distortion of Grandeur
@@ -76,8 +103,9 @@ trickster:
     arccos: Secondary Inverse Distortion of Geometry
     arctan: Tertiary Inverse Distortion of Geometry
     arctan2: Cartesian Angle Distortion
+    avg: Consensus Stratagem
 
-    if_else: Decision Distortion
+    if_else: Decision Stratagem
     equals: Parity Stratagem
     not_equals: Disparity Stratagem
     all: Stratagem Bar None
@@ -94,17 +122,18 @@ trickster:
     cross_product: Perpendicular Distortion
     normalize: Regularity Distortion
     align_vector: Aligned Regularity Distortion
+    sqrt: Distortion of Decline
     invert: Inversion Distortion
     abs: Absolutist's Distortion
     length: Magnitude Distortion
 
-    two: Foundational Delusion
     read_spell: Notulist's Ingress
     clear_spell: Alethophobe's Ploy
     write_spell: Notulist's Ploy
     write_closed_spell: Proprietary Notulist's Ploy
     read_macro_ring: Macro Delusion
     reveal: Showcase Ploy
+    reveal_action_bar: Awareness Ploy
     read_crow_mind: Crow Mind Delusion
     write_crow_mind: Crow Mind Ploy
     cost: Cost Ploy
@@ -121,7 +150,8 @@ trickster:
     sprinting_reflection: Trekking Ingress
     burning_reflection: Hearth's Ingress
     blocking_reflection: Guard Ingress
-    raycast: Pinpoint Ingress
+    raycast_block: Pinpoint Ingress
+    raycast_pos: Pinprick Ingress
     raycast_side: Bearing Ingress
     raycast_entity: Mark Ingress
     get_entity_type: Motive Verification Ingress
@@ -136,7 +166,9 @@ trickster:
     get_velocity: Movement Ingress
     add_velocity: Kinetic Ploy
     change_weight: Ploy of Featherweight
+    prepare_displace: Ploy of the Entitled
     displace: Ploy of the Usurper
+    get_displacements: Ingress of the Despot
     store_entity: Containment Ploy
     release_entity: Extrication Ploy
 
@@ -147,6 +179,7 @@ trickster:
     summon_fireball: Pyromancer's Ploy
     summon_dragon_breath: Dragon's Ploy
     summon_tnt: Demolitionist's Ploy
+    summon_wind_charge: Mariner's Ploy
 
     block_find_entity: Embracing Ingress
     range_find_entity: Ingress of Shared Fate
@@ -156,12 +189,16 @@ trickster:
 
     execute: Grand Deviation
     execute_same_scope: Quiet Deviation
+    atomic: Deviation of Singularity
     fork: Utensil Deviation
     fold: Folding Deviation
     try_catch: Cautious Deviation
     delay_execution: Deviation of Suspension
     kill_thread: Executioner's Deviation
     current_thread: Delusion of Order
+    thread_root: Ingress of Origin
+    spell_state: Turtle's Ingress
+    get_all_arguments: Hoarder's Delusion
     load_argument_1: Primary Delusion
     load_argument_2: Secondary Delusion
     load_argument_3: Tertiary Delusion
@@ -171,7 +208,6 @@ trickster:
     load_argument_7: Septenary Delusion
     load_argument_8: Octonary Delusion
 
-    list_create: Catalogue Delusion
     list_add: Expansion Stratagem
     list_add_range: Collection Stratagem
     list_take_range: Isolation Distortion
@@ -184,7 +220,7 @@ trickster:
     list_size: Tally Distortion
     create_number_range: Interlude Distortion
 
-    closure: Closure Stratagem
+    closure: Distortion of Closure
     supplier: Supply Distortion
     locate_glyph: Pinpoint Distortion
     locate_glyphs: Discovering Distortion
@@ -196,6 +232,7 @@ trickster:
     remove_subtree: Pruning Distortion
     get_subparts: Bundle Distortion
     escape_pattern: Interpretation Distortion
+    weight: Distortion of Memory
 
     map_get: Navigator's Distortion
     map_insert: Charting Stratagem
@@ -225,28 +262,48 @@ trickster:
     other_hand: Juggling Delusion
     other_hand_slot: Catch Delusion
     get_item_in_slot: Fence's Ingress
-    get_mana_in_slot: Ingress of Authority
     get_count_in_slot: Ingress of Plenitude
+    get_mana_color_in_slot: Hew's Ingress
+    get_mana_type_in_slot: Derivate Ingress
+    get_mana_in_slot: Ingress of Authority
     get_max_mana_in_slot: Crowning Ingress
-    get_inventory_slot: Intrusive Ingress
+    get_durability: Ingress of Integrity
+    get_max_damage: Ingress of Endurance
+    get_slot: Intrusive Ingress
+    get_item_container: Stockpile Ingress
+    get_fluid_container: Basin Ingress
+    get_slots: Collector's Ingress
+    get_inventory_size: Ingress of Extent
+    filter_container: Ingress of Discrimination
     drop_stack_from_slot: Ploy of Offering
     swap_slot: Swindler's Ploy
+    move_resource: Organizer's Ploy
     block_from_item: Placement Distortion
     item_from_block: Pickup Distortion
+    get_max_count: Distortion of Breadth
+    get_equipment: Investigative Ingress
+    list_resources: Ingress of Inventory
+    count_resources: Ingress of Stockkeeping
 
     type_fragment: Argumentative Distortion
     hash_values: Decaying Distortion
     pin_chunk: Ploy of Celestial Pin
-    get_dimension: Dimensional Delusion
+    get_dimension: Dimensional Ingress
     show_bar: Ploy of Clarity
     clear_bar: Ploy of Obfuscation
 
     highlight: Flourish Ploy
+    spell_particle: Radiance Ploy
 
     draw_spell: Marketer's Ploy
+    entity_draw_spell: Swift Marketer's Ploy
+    entity_head_draw_spell: Observant Marketer's Ploy
     draw_line: Artist's Ploy
     get_flecks: Observer's Ingress
     delete_fleck: Orwell's Ploy
+
+    scale_fleck: Ploy of Obstruction
+    roll_fleck: Peppy's Ploy
 
     get_scale: Ingress of Occupation
     set_scale: Ploy of Occupation
@@ -259,11 +316,45 @@ trickster:
     battery_creation: Ploy of the Moon Watcher
     push_mana: Benevolent Conduit's Ploy
     pull_mana: Malevolent Conduit's Ploy
+    convert_mana: Astrafel's Ploy
+    trigger_converter: Terrafel's Ploy
 
     drain_matter: Cultivator's Ploy
 
     message_send: Dispatch Ploy
     message_listen: Ploy of Receipt
+
+    item_to_color: Pigment Ingress
+    item_to_glow_color: Vibrant Ingress
+    paint: Ploy of Pigmentation
+    suck_color: Ploy of the Hopeless
+    color_distance: Cadmium Distortion
+
+    summon_lightning: Ploy of the Wrathful
+
+  revision: (Scribing Pattern)
+  revision.trickster:
+    add_subcircle: Extensive Revision
+    add_inner_circle: Inner Revision
+    to_subcircle: Split Revision
+    to_inner_circle: Growth Revision
+    remove_self: Grafting Revision
+    remove_self_recursive: Pruning Revision
+    remove_outer: Ascension Revision
+    add_outer_subcircle: Devotion Revision
+    rotate_cw: Shifting Revision
+    rotate_ccw: Reverse Shifting Revision
+    swap: Shuffling Revision
+    splice: Notulist's Revision
+    splice_inner: Inner Notulist's Revision
+    splice_evaluate: Grand Revision
+    write: Plagiarist's Revision
+    quote_pattern: Interpretation Revision
+    write_path: Address Revision
+
+    two: Foundational Revision
+    empty_list: Catalogue Revision
+    empty_map: Atlas Revision
 
   fragment:
     trickster:
@@ -279,11 +370,17 @@ trickster:
       spell_part: Spell
       entity: Entity
       slot: Slot
+      container: Container
       zalgo: §kZalgo
       item_type: Item
+      fluid_type: Fluid
       block_type: Block
       entity_type: Entity Type
       string: String
+      dimension: Dimension
+      displace: Displacement
+      color: Color
+      mana: Mana
     class:
       Fragment: Any
       AddableFragment: Addable
@@ -308,13 +405,39 @@ trickster:
       ItemTypeFragment: Item
       BlockTypeFragment: Block
       EntityTypeFragment: Entity Type
+      StorageFragment: Storage
+      ResourceVariantFragment: Resource Type
+      ColorFragment: Color
+      ManaFragment: Mana
+
+  mana.trickster:
+    traditional: Traditional
+    storm: Tempest
+    color: Chromatic
+    impotent: Impotent
+    astral:
+      default: Star-Bound
+      named: Star-Bound (%s)
 
   blunder:
-    overweight_fragment: Result fragment is overweight, result is %s
+    overweight_fragment: Resulting fragment is overweight (%2$s/%3$s), result is %1$s
+    expected_overweight_fragment: Result fragment is overweight (%d/%d)
     missing_fragment: Missing at index %d, expected %s
+    unknown_trick: Pattern is not a known trick
+
+  storage:
+    caster: caster
+    block: '%d, %d, %d'
+    entity: '%s'
+    slot: slot %d at %s
+    merged: '%d storages'
+
+  displace:
+    reference: Displacement %s
 
 item.trickster:
-  tome_of_tomfoolery: Tome of Tomfoolery
+  guidebook: The Teacher's Language
+  guidebook.author: by Areli Haron
   mirror_of_evaluation: Mirror of Evaluation
 
   scroll_and_quill: Scroll and Quill
@@ -334,6 +457,22 @@ item.trickster:
   scroll_and_quill_red: Red Scroll and Quill
   scroll_and_quill_white: White Scroll and Quill
   scroll_and_quill_yellow: Yellow Scroll and Quill
+  scroll_and_quill_maroon: Maroon Scroll and Quill
+  scroll_and_quill_rose: Rose Scroll and Quill
+  scroll_and_quill_coral: Coral Scroll and Quill
+  scroll_and_quill_ginger: Ginger Scroll and Quill
+  scroll_and_quill_tan: Tan Scroll and Quill
+  scroll_and_quill_beige: Beige Scroll and Quill
+  scroll_and_quill_amber: Amber Blue Scroll and Quill
+  scroll_and_quill_olive: Olive Gray Scroll and Quill
+  scroll_and_quill_forest: Forest Scroll and Quill
+  scroll_and_quill_verdant: Verdant Scroll and Quill
+  scroll_and_quill_teal: Teal Scroll and Quill
+  scroll_and_quill_mint: Mint Scroll and Quill
+  scroll_and_quill_aqua: Aqua Scroll and Quill
+  scroll_and_quill_slate: Slate Scroll and Quill
+  scroll_and_quill_navy: Navy Scroll and Quill
+  scroll_and_quill_indigo: Indigo Scroll and Quill
 
   written_scroll: Written Scroll
   written_scroll_black: Black Written Scroll
@@ -352,9 +491,25 @@ item.trickster:
   written_scroll_red: Red Written Scroll
   written_scroll_white: White Written Scroll
   written_scroll_yellow: Yellow Written Scroll
+  written_scroll_maroon: Maroon Written Scroll
+  written_scroll_rose: Rose Written Scroll
+  written_scroll_coral: Coral Written Scroll
+  written_scroll_ginger: Ginger Written Scroll
+  written_scroll_tan: Tan Written Scroll
+  written_scroll_beige: Beige Written Scroll
+  written_scroll_amber: Amber Blue Written Scroll
+  written_scroll_olive: Olive Gray Written Scroll
+  written_scroll_forest: Forest Written Scroll
+  written_scroll_verdant: Verdant Written Scroll
+  written_scroll_teal: Teal Written Scroll
+  written_scroll_mint: Mint Written Scroll
+  written_scroll_aqua: Aqua Written Scroll
+  written_scroll_slate: Slate Written Scroll
+  written_scroll_navy: Navy Written Scroll
+  written_scroll_indigo: Indigo Written Scroll
 
-  warding_charm: Warding Charm
-  spell_ink: Spell Ink
+  esoteric_mana: Esoteric Mana
+  luminous_bottle: Luminous Bottle
   top_hat: Top Hat
   witch_hat: Witch Hat
   fez: Fez
@@ -363,14 +518,24 @@ item.trickster:
   amethyst_whorl: Amethyst Whorl
   collar: Acolyte's Bindings
   leash: Archmage's Tether
+  torment_on_a_chain: Torment on a Chain
+  monocle: Monocle
+  glasses: Glasses
 
   amethyst_knot: Amethyst Knot
+  cracked_amethyst_knot: Cracked Amethyst Knot
   quartz_knot: Quartz Knot
+  cracked_quartz_knot: Cracked Quartz Knot
   emerald_knot: Emerald Knot
+  cracked_emerald_knot: Cracked Emerald Knot
   diamond_knot: Diamond Knot
+  cracked_diamond_knot: Cracked Diamond Knot
   echo_knot: Echo Knot
   cracked_echo_knot: Cracked Echo Knot
   astral_knot: Astral Knot
+  cracked_astral_knot: Cracked Astral Knot
+  prismatic_knot: Prismatic Knot
+  cracked_prismatic_knot: Cracked Prismatic Knot
   command_knot: Command Knot
 
   spell_core: Spell Core
@@ -384,9 +549,31 @@ block.trickster:
   spell_construct: Spell Construct
   modular_spell_construct: Modular Spell Construct
   light: Light
+  light_sconce: Light Sconce
   scroll_shelf: Scroll Shelf
   charging_array: Charging Array
   inert_spawner: Inert Spawner
+  tattered_wool: Tattered Wool
+  tattered_carpet: Tattered Carpet
+  worn_concrete: Worn Concrete
+  color_block: Infused Ceramic
+  gilded_tuff: Gilded Tuff
+  gilded_tuff_stairs: Gilded Tuff Stairs
+  gilded_tuff_slab: Gilded Tuff Slab
+  gilded_tuff_wall: Gilded Tuff Wall
+  gilded_polished_tuff: Gilded Polished Tuff
+  gilded_polished_tuff_stairs: Gilded Polished Tuff Stairs
+  gilded_polished_tuff_slab: Gilded Polished Tuff Slab
+  gilded_polished_tuff_wall: Gilded Polished Tuff Wall
+  gilded_tuff_bricks: Gilded Tuff Bricks
+  gilded_tuff_brick_stairs: Gilded Tuff Bricks Stairs
+  gilded_tuff_brick_slab: Gilded Tuff Bricks Slab
+  gilded_tuff_brick_wall: Gilded Tuff Bricks Wall
+  gilded_chiseled_tuff: Gilded Chiseled Tuff
+  gilded_chiseled_tuff_bricks: Gilded Chiseled Tuff Bricks
+
+entity.trickster:
+  levitating_block: Levitating Block
 
 effect.trickster:
   mana_boost: Mana Hyperflux
@@ -398,6 +585,11 @@ tag.item.trickster:
   scrolls: Scrolls
   spell_cost: Spell Cost
 
+death.attack:
+  levitating_block: "%1$s was obliterated by %2$s"
+  levitating_block.attacker: "%1$s was obliterated by %3$s using %2$s"
+  levitating_block.player: "%1$s was obliterated by %2$s whilst trying to escape %3$s"
+
 key:
   categories:
     trickster: Trickster
@@ -405,6 +597,11 @@ key:
   trickster:
     take_hat: Take Hat
     modify_spell: Modify Spell (Creative only)
+    show_fragment_text: Reveal Fragments
+    ponder: Focus Circle
+
+accessories.slot:
+  collar: Collar
 
 text.config.trickster-config:
   title: Trickster Config
@@ -412,24 +609,49 @@ text.config.trickster-config:
     accessibility: Accessibility
     client: Client
     server: Server
+    circle-customization: Circle Customization
     aurora-client: Aurora's Personal Client Tweaks
   option:
     dotEmphasis: Terminal dot emphasis
     dotEmphasisColor: Terminal dot color
     subcircleDividerPinColor: Divider pin Color
+
+    patternSize: Pattern line thickness
+    dotSize: Pattern dot size
+    circleOpacity: Spell circle opacity
+    ponderOpacity: Unpondered circle opacity
+    patternOpacity: Pattern opacity
+    patternEdgeGap: Pattern line separation
+    outlinePatterns: Outline patterns
+
     manaTransferEfficiency: Efficiency of the Conduit's Ploys
-    whorlMaxMana: Whorl maximum mana in kG
-    whorlRechargeRate: Whorl recharge rate in kG
+    whorlMaxMana: Whorl maximum mana in G
+    whorlRechargeRate: Whorl recharge rate in M
     topHatInterceptScrolling: Offhand hat intercepts hotbar scrolling
     invertTopHatScrolling: Invert hat scrolling
     allowScrollInSpellScreen: Allow scrolling to zoom while editing
     keyZoomSpeed: Editor key zoom speed
-    revealToHotbar: Write revealed values to action bar
     maxExecutionsPerSpellPerTick: Max operations per tick per spell
-    allowSwapBedrock: Permit block swapping of bedrock
     maxBlockBreakingHardness: Max hardness for Ploy of Destruction
+    allowMovingUnbreakableBlock: Allow tricks to move unbreakable blocks
+    allowMovingExtendedPiston: Allow tricks to move extended pistons
 
     dragDrawing: Draw by dragging
+    moreEmphasis: Terminal dot emphasis in glyphs
+    animateLines: Animate patterns
     barsHorizontal: Show spell-created bars horizontally
     disableOffhandScrollOpening: Require scroll in main hand to edit
     adjacentPixelCollisionOffset: Offset factor of adjacent pixels
+    spellSlotPosition: Spell slot position
+    creativeSpellSlotPosition: Creative spell slot position
+
+  enum.spellSlotPositions:
+    top_left: Top Left
+    top_right: Top Right
+    bottom_left: Bottom Left
+    bottom_right: Bottom Right
+    left_top: Left Top
+    left_bottom: Left Bottom
+    right_top: Right Top
+    right_bottom: Right Bottom
+    hidden: Hidden
