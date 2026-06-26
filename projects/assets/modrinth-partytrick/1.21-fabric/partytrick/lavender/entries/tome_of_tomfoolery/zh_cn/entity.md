@@ -50,7 +50,7 @@
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=笔记：盔甲架|>向盔甲架注入魔力，即可改变它们的属性，可改变的属性及其编号见后页。向量参数为欧拉角，旋转单位为度，尺寸缩放所受的限制要强于[居形之技巧](^trickster:ploys/entity#5)。
+<|page-title@lavender:book_components|title=笔记：盔甲架|>向盔甲架注入魔力，即可改变它们的属性，可改变的属性及其编号见后页。向量为欧拉角，旋转单位为度，尺寸缩放所受的限制要强于[居形之技巧](^trickster:ploys/entity#5)。
 
 
 也可以通过魔法控制物品展示框的物品朝向、展示框隐形与否，以及展示框是否受保护。朝向为0到7的数。
@@ -89,12 +89,16 @@
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=partytrick:move_armor_stand,cost=距离^2 * 1G|>
+<|ploy@trickster:templates|trick-id=partytrick:move_armor_stand,cost=距离^2 * 0.5G|>
 
 按照所给向量移动给定盔甲架或其他装饰性实体。试图移动无效实体会导致失策。
 
 ;;;;;
 
+消耗的计算方式与[动能之技巧](^trickster:ploys/entity#3)一致。
+
+;;;;;
+
 <|ploy@trickster:templates|trick-id=partytrick:summon_spit,cost=20G + 1G * 距离 ^ (距离 / 3)|>
 
-若可行，从给定生物或从施法者口中抽出唾沫。计算公式中所用的距离，是指唾沫来源和给定位置间的距离。
+若可行，从给定生物或从施法者口中抽出唾沫。计算消耗公式中所用的距离，是指唾沫来源和给定位置间的距离。

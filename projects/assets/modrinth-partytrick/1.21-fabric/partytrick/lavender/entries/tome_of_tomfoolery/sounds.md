@@ -13,7 +13,7 @@
 
 *"A question often asked is: "If a tree falls in a forest and no one is around to hear it, does it make a sound?". The answer does not matter, all that is important is how the sound can be obtained. Magic does not have ears or some other way to perceive sound. Instead, a human can be queried to make use of their perception."*
 
--- Drunk Dutch wizard at 2am explaining sound (PartyTrick)
+— Drunk Lowland Gnome at 2am explaining sound
 
 ;;;;;
 
