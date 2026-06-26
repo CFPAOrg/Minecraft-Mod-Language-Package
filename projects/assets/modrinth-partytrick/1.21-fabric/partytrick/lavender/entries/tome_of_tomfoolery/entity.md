@@ -46,7 +46,7 @@ Returns the breeding age of the given animal in ticks. When the breeding age is 
 
 <|ploy@trickster:templates|trick-id=partytrick:add_breeding_age,cost=1G * amount^2|>
 
-Adds an amount of ticks to the given animals breeding age. Cost stacks the same as [Kinetic Ploy](^trickster:ploys/entity#3).
+Adds an amount of ticks to the given animals breeding age, with cost compounding the same way as [Kinetic Ploy](^trickster:ploys/entity#3).
 
 ;;;;;
 
@@ -90,6 +90,16 @@ Next ploy sets it instead →
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=partytrick:move_armor_stand,cost=distance^2 * 1G|>
+<|ploy@trickster:templates|trick-id=partytrick:move_armor_stand,cost=distance^2 * 0.5G|>
 
 Moves the given armor stand or other decorative entities by the given vector. Trying to move anything that isn't a valid entity with this will result in a blunder.
+
+;;;;;
+
+Cost compounds the same way as [Kinetic Ploy](^trickster:ploys/entity#3).
+
+;;;;;
+
+<|ploy@trickster:templates|trick-id=partytrick:summon_spit,cost=20G + 1G * distance ^ (distance / 3)|>
+
+Extracts spit out of the given mob or caster when available. Distance is the distance between the spit source and given position.

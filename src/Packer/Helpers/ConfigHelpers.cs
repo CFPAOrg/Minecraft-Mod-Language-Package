@@ -40,7 +40,7 @@ namespace Packer.Helpers
         /// </summary>
         /// <param name="configTemplate">配置路径模板</param>
         /// <param name="version">打包版本，用于定位全局配置</param>
-        public static async Task<Config> RetrieveConfig(string configTemplate, string version)
+        public static Config RetrieveConfig(string configTemplate, string version)
         {
             Log.Information("正在获取配置。目标版本：{0}", version);
 
@@ -48,9 +48,10 @@ namespace Packer.Helpers
 
             Log.Information("配置位置：{0}", configPath);
 
-            var content = await File.ReadAllBytesAsync(configPath);
+            using var stream = File.OpenRead(configPath);
+
             return JsonSerializer.Deserialize<Config>(
-                content,
+                stream,
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })!;
         }
 
