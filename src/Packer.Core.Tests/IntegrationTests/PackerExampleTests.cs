@@ -9,6 +9,7 @@ namespace Packer.Core.Tests.IntegrationTests;
 /// 使用 projects/packer-example 的数据做真实集成测试。
 /// 在临时目录重建项目结构（CWD 已切换到临时项目根），跑完整打包流程。
 /// </summary>
+[Collection("CWD-sensitive tests")]
 public class PackerExampleTests : IDisposable
 {
     private readonly string _originalDir = Environment.CurrentDirectory;

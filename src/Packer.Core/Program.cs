@@ -29,7 +29,7 @@ var config = JsonSerializer.Deserialize<Config>(
 // -- 获取命名空间提供器（全量扫磁盘 / 增量 git diff） ---------------------------
 INamespaceProvider nsProvider = increment
     ? new GitChangedModProvider()
-    : new AssetsModProvider();
+    : new AssetsModProvider(config.Base.FallbackVersions);
 
 // -- 展开所有 Provider --------------------------------------------------------
 // 流 程：ILookup<模组, 命名空间>

@@ -11,6 +11,7 @@
 /// <param name="ReadmeParameters">将用于生成readme.txt的参数列表</param>
 /// <param name="ExclusionMods">不进行打包的mod（按[cursforge-]name）</param>
 /// <param name="ExclusionNamespaces">不进行打包的namespace</param>
+/// <param name="FallbackVersions">回退版本列表，当该版本不存在相应命名空间时从这些版本尝试获取</param>
 public record BaseConfig(
     string Version,
     string[] TargetLanguages,
@@ -19,7 +20,8 @@ public record BaseConfig(
     string ReadmeTemplate,
     object[] ReadmeParameters,
     IEnumerable<string> ExclusionMods,
-    IEnumerable<string> ExclusionNamespaces
+    IEnumerable<string> ExclusionNamespaces,
+    IEnumerable<string>? FallbackVersions = null
 )
 {
     public IResourceFileProvider LoadMetaTemp()
