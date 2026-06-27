@@ -4,32 +4,57 @@ navigation:
   title: Ejector
   icon: crazyae2addons:ejector
 categories:
-  - Monitoring and Automation
+  - Crafting and Patterns
 item_ids:
   - crazyae2addons:ejector
 ---
 
 # Ejector
 
-<BlockImage id="crazyae2addons:ejector" scale="4"></BlockImage>
-
-The Ejector is an automation block that lets you push items, 
-fluids, or other resources directly into the block in front of it - all triggered by a redstone pulse.
-
-## [Video Tutorial](https://youtu.be/gdV7Ga7g2Pk&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+Upon receiving a redstone pulse the **Ejector** pulls configured items from the ME network and inserts them into the inventory in front of its output face.
 
 ---
 
-## How to Use
+## Atomic eject
 
-1. **Place the Ejector**
-    - Put it facing the machine you want to send items into.
+The Ejector does not partially insert a configured batch into the target inventory.
 
-2. **Set the settings**
-    - Open its GUI and set what resources should it send.
-    - You can load the settings using a processing pattern.
-    - Supports crafting card upgrade.
+Before ejecting, it simulates inserting the full buffered set into the adjacent target.
 
-3. **Trigger with Redstone**
-    - Send a redstone pulse to the Ejector.
-    - The texture changes when its crafting items to send.
+If every item fits, the whole batch is inserted.
+
+If any item does not fit, nothing is inserted and the items are flushed back to ME storage.
+
+---
+
+## Missing items
+
+When a cycle starts, the Ejector first tries to pull the configured items from ME storage.
+
+If some items are missing and crafting is enabled in config, it submits one crafting job for all missing items together.
+
+When the job finishes, the crafted items are added to the buffer and the eject cycle continues automatically.
+
+If crafting cannot be started, the GUI shows the missing item that blocked the cycle.
+
+---
+
+## Pattern import
+
+A processing pattern can be loaded into the pattern slot to configure the Ejector faster.
+
+The load button copies the pattern inputs into the Ejector config slots.
+
+The pattern is used only for configuration. 
+
+---
+
+## Output face
+
+The Ejector inserts into the block in front of its output face.
+
+The output face can be rotated with a wrench.
+
+If the target disappears or cannot accept items, the Ejector tries to return buffered items to ME storage.
+
+---
