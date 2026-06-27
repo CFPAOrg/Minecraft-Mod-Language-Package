@@ -1,0 +1,20 @@
+{
+    "name": "服务器MIDI文件",
+    "icon": "mimi:transmitter",
+    "category": "mimi:8server",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "MIMI让服务器可以提供自己的MIDI文件，玩家可以将他们的软盘指向这些文件，而不需要从网络上下载。这些曲目存储在服务器的'config'文件夹中的'mimi/default_music'文件夹。$(br2)玩家可以通过输入'server://<曲目名>'的链接格式来指向这些曲目。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "服务器提供的曲目可以手动从文件夹中添加/移除，或者通过$(l:9_2server)指令$()进行修改。推荐使用指令来管理服务器的MIDI文件，如果你手动进行了修改，记得执行$(c:/mimi server reload)/mimi server reload$()指令以在游戏中同步修改。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(l)/mimi server add <url> <name>$()指令的工作方式与传输器或广播机类似，会令服务器访问提供的URL然后把文件下载到硬盘。因为此指令仅限'op'用户使用，因此它不受允许域名列表的限制。$(br2)为了更高的安全性考虑，此指令可以在'mimi-common'配置文件中禁用，意味着服务器的MIDI文件必须手动管理。"
+        }
+    ],
+    "sortnum": 3
+}
