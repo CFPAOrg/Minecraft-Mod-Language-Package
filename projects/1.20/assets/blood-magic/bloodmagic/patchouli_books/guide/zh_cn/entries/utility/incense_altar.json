@@ -1,0 +1,112 @@
+{
+  "name": "熏香祭坛",
+  "icon": "bloodmagic:incensealtar",
+  "category": "bloodmagic:utility",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)熏香祭坛$()是一个多方块结构，用于在$(l:bloodmagic:altar/blood_altar)血之祭坛$()加强你的自我牺牲能力。通过站在你放置的$(item)熏香祭坛$()附近，将根据该区域的总$(thing)静谧$()来平静你的灵魂，增强$(blood)LP$()收益。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "bloodmagic:incense_altar"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)熏香祭坛$()的第一层级是其本身。将其放置在任何位置(你可能会想设置一个3x3的平台，这稍后会有帮助)，并停留在祭坛的5格半径内。$(br2)当祭坛工作时，它会从顶部喷射火焰粒子，并能转化你的$(l:bloodmagic:altar/blood_altar#knife)牺牲匕首$()。一旦你的匕首开始发光，在$(l:bloodmagic:altar/blood_altar)血之祭坛$()附近，按住并松开右键，一次可以献祭90%生命值。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/utility/incense_altar1.png"
+      ],
+      "title": "基础摆设",
+      "border": true,
+      "text": "展示路径之前的3x3方阵基础布局。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "此外根据该区域的总$(thing)静谧$()，你将会获得$(l:bloodmagic:altar/blood_altar)血之祭坛$()的额外$(blood)LP$()奖励。手持$(l:bloodmagic:alchemy_array/sigil/divination)占卜印记$(/l)或$(l:bloodmagic:alchemy_array/sigil/seer)见解印记$()将鼠标悬停在$(item)熏香祭坛$()时，将显示$(thing)静谧$()总量(顶部数字)献祭获得的百分比加成(底部数字)。当你献祭时，实际加成为：基础$(blood)LP$()x(1 + 加成/100)。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/utility/incense_altar2.png"
+      ],
+      "title": "熏香祭坛 HUD",
+      "border": true,
+      "text": "熏香祭坛的HUD，默认位于左上角，显示20%献祭加成。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "“但是我要怎么增加这个加成呢？”增加周围的$(thing)静谧$()！…这可能有点模棱两可。$(br2)要增加该区域的$(thing)静谧$()你必须从$(item)熏香祭坛$()延伸路径，路径需要由3格宽的$(item)路面$()方块构建质，例如$(item)木路面$()，它们在祭坛四个正方向放置3x3的延伸。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "bloodmagic:path/path_wood",
+      "recipe2": "bloodmagic:path/path_woodtile"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "bloodmagic:path/path_stone",
+      "recipe2": "bloodmagic:path/path_stonetile"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "bloodmagic:path/path_wornstone",
+      "recipe2": "bloodmagic:path/path_wornstonetile"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "bloodmagic:path/path_obsidian",
+      "recipe2": "bloodmagic:path/path_obsidiantile"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "对于每个新的“环”状结构都有规则：$(li)同一环的所有路面方块必须在同一个y轴上。$(li)下一个环与上一个高度差不能超过5格。$(li)路面层及其2格上的方块计入总$(thing)静谧$()- 这些在图片用玻璃块展示。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/utility/incense_altar.png"
+      ],
+      "title": "熏香祭坛",
+      "border": true,
+      "text": "不同路面方块的熏香祭坛。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "此外：$(li)每种路面方块生效范围有一定距离：木质3格，石质5格，碎石7格，黑曜石9格。$(br2)现在很明显，不是所有方块都可以计入$(thing)静谧$()的！我们需要作物、泥土、甚至是…熔岩？"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "有多种方块计入$(thing)静谧$()。没有特别的顺序：它们是：植物、作物、树木、土质方块、水、火和熔岩。$(item)熏香祭坛$()将查看附近的方块(由路面计算)，并将每种方块的$(thing)静谧$()列表计算。完成后它将所有块的$(thing)静谧$()平方根计算，然后把它们加在一起，算出最后的总$(thing)静谧$()。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "这意味着游戏后期需要有不同类型的$(thing)静谧$()。尽管其他模组可能会添加它们自己的静谧来源，以后还会有更多的静谧来源，但目前有效的$(thing)静谧$()有：熔岩、水(包括大部分含水方块)。生命源质、下界岩、泥土、耕地、土豆、小麦、下界疣、甜菜、树叶、原木、火和草。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/utility/incense_altar3.png"
+      ],
+      "title": "熏香祭坛摆设",
+      "border": true,
+      "text": "后期游戏的熏香祭坛摆设有很多的布局。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "当然，你的摆设可以陡峭或者平缓(在合理范围内，比如前页的判定)。$(br2)着重注意：$(thing)静谧奖励$()上限取决于你祭坛的大小(和你使用的路面)，上限如下：$(li)无路面方块：20%。$(li)木质路面：60%。$(li)石质路面：120%。$(li)碎石路面：200%。$(li)黑曜石路面：300%。"
+    },
+    {
+      "type": "patchouli:image",
+      "images": [
+        "bloodmagic:images/entries/utility/incense_altar4.png"
+      ],
+      "title": "熏香祭坛摆设",
+      "border": true,
+      "text": "一个非常简易的$(item)熏香祭坛$()摆设。注意(可选)：混用不同的路面。"
+    }
+  ]
+}
