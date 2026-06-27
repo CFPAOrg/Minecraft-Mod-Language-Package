@@ -266,9 +266,18 @@
     spellcasting: "咒术网格",
   },
 
+  "category.hexcasting": {
+    "binds": "咒法学",
+  },
+
+  "key.hexcasting": {
+    "spellbook_prev": "法术书上一页",
+    "spellbook_next": "法术书下一页",
+  },
+  
   "tag.hexcasting": {
     staves: "咒术法杖",
-    edified_logs: "启迪原木",
+    edified_logs: "启迪木",
     edified_planks: "启迪木板",
     phial_base: "空试剂瓶",
   },
@@ -335,6 +344,10 @@
           "": "Ctrl关闭笔顺显示",
           "@Tooltip": "按下Ctrl键时*关闭*图案渐变显示，而非按下时打开",
         },
+        disableInworldScrolling: {
+          "": "禁用世界中滚轮操作",
+          "@Tooltip": "禁用正常世界中法术书和算盘的滚轮输入操作，确保对应键位和法杖界面滚轮操作的功能符合预期"
+        },
         invertSpellbookScrollDirection: {
           "": "反转法术书滚轮方向",
           "@Tooltip": "向上滚动滚轮（而非向下）增加法术书当前页页码，反之亦然",
@@ -354,6 +367,14 @@
         alwaysShowListCommas: {
           "": "在所有情况下都显示列表逗号",
           "@Tooltip": "是否用逗号分隔列表中各种类型的iota（默认情况下，图案iota不会使用逗号分隔）",
+        },
+        advancedTooltipsShowsIotaNBT: {
+          "": "高级提示文本显示iota NBT",
+          "@Tooltip": "启用高级提示文本（F3+H）时是否应当显示核心、法术书等物品所包含iota的完整NBT",
+        },
+        staticActiveSlates: {
+          "": "石板激活后静态显示",
+          "@Tooltip": "石板激活后其上图案是否不会摇晃（有大量激活的石板时能提升性能）",
         },
       },
 
@@ -376,7 +397,15 @@
         },
         circleActionDenyList: {
           "": "法术环禁用操作列表",
-          "@Tooltip": "法术环中被禁用操作的资源位置；试图执行此类操作会导致事故",
+          "@Tooltip": "法术环中被禁用操作的资源位置；试图执行此类操作会导致事故。例如，“hexcasting:get_caster”会禁用意识之精思。",
+        },
+        globalCostScaling: {
+          "": "全局消耗倍数",
+          "@Tooltip": "除去#hexcasting:cannot_modify_cost标签下的操作，其余操作的媒质消耗均会乘以该数。若希望调整该标签下操作的消耗，请使用“操作消耗倍数”配置。",
+        },
+        costRescaleListRaw: {
+          "": "操作消耗倍数",
+          "@Tooltip": "资源位置与对应操作媒质消耗倍数的映射。例如，“hexcasting:add_motion 3”会让驱动的消耗变为3倍。",
         },
         greaterTeleportSplatsItems: {
           "": "卓越传送散落物品",
@@ -581,6 +610,8 @@
       scroll: {
         needs_purchase: "购买以显示图案",
         pattern_not_loaded: "放入物品栏以加载图案",
+        "recalc_warning.line1": "%s：笔顺因世界而异的图案还未生成！",
+        "recalc_warning.line2": "请先运行/hexcasting recalcPatterns，再拿一张新卷轴。",
       },
 
       abacus: {
@@ -708,6 +739,7 @@
             pi: "弧之精思",
             tau: "圆之精思",
             "e": "欧拉之精思",
+            phi: "和谐之精思",
           },
         },
 
@@ -790,6 +822,8 @@
         less_eq: "至小之馏化，第二型",
         equals: "相等之馏化",
         not_equals: "不等之馏化",
+        type_equals: "类似之馏化",
+        type_not_equals: "相异之馏化",
         not: "取非之纯化",
         bool_coerce: "占卜师之纯化",
         if: "占卜师之提整",
@@ -892,6 +926,11 @@
         "teleport/great": "卓越传送",
         brainsweep: "剥离意识",
 
+        escape: "考察",
+        open_paren: "内省",
+        close_paren: "反思",
+        undo: "消解",
+
         eval: "赫尔墨斯之策略",
         "eval/cc": "伊里斯之策略",
         for_each: "托特之策略",
@@ -963,33 +1002,55 @@
       mask: "簿记员之策略：%s",
     },
 
-    "rawhook.hexcasting:": {
-      open_paren: "内省",
-      close_paren: "反思",
-      escape: "考察",
-      undo: "消解",
-    },
-
     "iota.hexcasting:": {
-      "null": "Null",
-      double: "数",
-      boolean: "布尔值",
-      entity: "实体",
-      list: "列表",
-      pattern: "图案",
-      garbage: "垃圾",
-      vec3: "向量",
+      "null": {
+        "": "Null",
+        desc: "一个空值",
+      },
+      double: {
+        "": "数",
+        desc: "一个数",
+      },
+      boolean: {
+        "": "布尔值",
+        desc: "一个布尔值",
+      },
+      entity: {
+        "": "实体",
+        desc: "一个实体",
+      },
+      list: {
+        "": "列表",
+        desc: "一个列表",
+      },
+      pattern: {
+        "": "图案",
+        desc: "一个图案",
+      },
+      garbage: {
+        "": "垃圾",
+        desc: "垃圾",
+      },
+      vec3: {
+        "": "向量",
+        desc: "一个向量",
+      },
+      continution: {
+        "": "续体",
+        desc: "一个跳转iota",
+      },
     },
 
     mishap: {
       "": "%s：%s",
 
-      invalid_pattern: "该图案不对应任何操作",
+      invalid_pattern: "图案%s不对应任何操作",
+      invalid_pattern_generic: "该图案不对应任何操作",
       unescaped: "本应运行一个图案，而实际运行了%s",
 
       not_enough_args: "本应接受大于等于%s个参数，而实际栈高度为%s",
       no_args: "本应接受大于等于%s个参数，而实际为空栈",
-      too_many_close_parens: "在绘制反思前未先绘制内省",
+      needs_parens: "在绘制反思前未先绘制内省",
 
       wrong_dimension: "无法在%2$s中影响到%1$s",
       entity_too_far: "%s超出影响范围",
@@ -1026,23 +1087,27 @@
       },
 
       no_akashic_record: "%s处无阿卡夏记录",
-      disallowed: "已被服务器管理员禁用于施法",
-      disallowed_circle: "已被服务器管理员禁用于法术环",
+      disallowed: "%s已被服务器管理员禁用",
+      disallowed_generic: "该图案已被服务器管理员禁用",
+      disallowed_circle: "%s已被服务器管理员禁用于法术环",
+      disallowed_circle_generic: "该图案已被服务器管理员禁用于法术环",
       invalid_spell_datum_type: "尝试将某无效类型的值用作SpellDatum：%s（class %s）。这是模组中的漏洞。",
       unknown: "抛出异常（%s）。这是模组中的漏洞。",
       stack_size: "超出了栈的大小上限",
       bad_caster: "试图运行的图案需要强大的意识才能承受",
 
       invalid_value: {
-        "": "本应在栈下标为%2$s处接受%1$s，而实际接受了%3$s",
+        "": "本应在栈下标为%2$s处接受%1$s，而实际接受了%3$s：%4$s",
 
         class: {
           double: "一个数",
           boolean: "一个布尔值",
           vector: "一个向量",
           list: "一个列表",
-          widget: "一个虚指",
           pattern: "一个图案",
+          continuation: "一个跳转iota",
+          garbage: "垃圾",
+          "null": "Null",
 
           entity: {
             "": "一个实体",
@@ -1095,6 +1160,7 @@
       bad_item: {
         "": "需要%s，而实际持有%d个%s",
         offhand: "需要在另一只手里持有%s，而实际持有%d个%s",
+        hotbar: "需要在快捷栏里放有%s",
 
         iota: {
           "": "一个可以存储iota的地方",
@@ -1111,6 +1177,7 @@
         rechargable: "一个可重新充能的物品",
         colorizer: "一个染色剂",
         variant: "一个有变种的物品",
+        placeable: "一个可放置的物品",
       },
 
       bad_block: {
@@ -1450,8 +1517,8 @@
         "incorrect_block.title": "方块错误",
         incorrect_block: "该操作需在目标位置存在某种方块，而该位置实际存在的方块不合适。$(br2)产生亮绿色火花，并在对应位置产生一次爆炸。这种爆炸似乎不会伤害到我、世界或是任何其他事物。就是挺吓人的。",
 
-        "retrospection.title": "反思过急",
-        retrospection: "试图在绘制$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$前绘制$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$。$(br2)产生橙色火花，并压入一个$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$对应的图案。",
+        "needs_parens.title": "内省缺失",
+        needs_parens: "试图在绘制$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$前绘制$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$或$(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)消解/$。$(br2)产生橙色火花，并将我试图绘制的图案作为 iota 压栈。",
 
         "too_many_patterns.title": "陷入沉思",
         too_many_patterns: "试图在单个$(hex)咒术/$内运行过多图案，通常是因为不小心制造了死循环。$(br2)产生暗蓝色火花，并使我窒息。",
@@ -1489,7 +1556,7 @@
         "1": "我发现了若干骇人的新事故。我绝不能向它们屈服。",
 
         "bad_mindflay.title": "惰性剥离",
-        bad_mindflay: "试图剥离已被剥除意识的生物的意识，或是试图剥离不适用于目标方块的生物的意识。$(br2)产生暗绿色火花，并杀死对应生物。倘若被村民看到了，他们应该不会对此有什么好评价。",
+        bad_mindflay: "试图剥离已被剥除意识的生物的意识，或是试图剥离不适用于目标方块的生物的意识。$(br2)产生暗绿色火花。已被剥离过的生物会直接死亡，而只是不适用的则仅会遭受轻微伤害。",
 
         "no_circle.title": "缺失法术环",
         no_circle: "试图直接执行只能在法术环内执行的操作。$(br2)产生淡蓝色火花，并将我物品栏中所有物品散落在地。",
@@ -1666,12 +1733,12 @@
 
         empty_directrix: "第一步，基床……用“基底”这个名字会准确些。倘若没有意识引导，媒质的流向是由$(media)媒质/$波的微观涨落和环境决定的，换句话说，随机的。",
         directrix_redstone: "$(l:greatwork/directrix)$(item)石匠导向石/$会根据红石信号改变输出方向。没有信号的话，出口是$(media)媒质/$色的一端；有信号的话，出口是红石色的一端。",
-        directrix_boolean: "$(l:greatwork/directrix)$(item)牧羊人导向石/$会根据栈中的布尔值改变输出方向。为 $(thing)True/$ 时，媒质自后方流出；为 $(thing)False/$ 时，媒质自前方流出。未能获取到布尔值则会招致事故。"
+        directrix_boolean: "$(l:greatwork/directrix)$(item)牧羊人导向石/$会从栈中弹出一个布尔值并据此改变输出方向。为 $(thing)True/$ 时，媒质自后方流出；为 $(thing)False/$ 时，媒质自前方流出。未能获取到布尔值则会招致事故。"
       },
 
       akashiclib: {
         "1": "我所知甚多，将所知存于某处是唯一正途。信息能用书本存储但徒手书写以眼阅读非常非常非常非常$(italic)缓慢/$。我需要更好的方法。并且我必将找到。$(br2)……我的意识每况愈下……不知道我还有没有时间赶在满溢头脑的知识消散之前记下它们。",
-        "2": "一座图书馆。我的计划，如下。$(br2)就和图案与操作的对应关系一样，我能以我自己的方式将自创的图案与 iota 对应起来。$(l:greatwork/akashiclib)$(item)阿卡夏记录/$是图书馆的控制核心，而每个$(l:greatwork/akashiclib)$(item)阿卡夏书架/$存储一个映射。它们必须互相连接，直接贴在一起，不超过 32 格。$(l:greatwork/akashiclib)$(item)阿卡夏桥接块/$没有存储功能但被视为连接方块，从而增加图书馆的大小。",
+        "2": "一座图书馆。我的计划，如下。$(br2)就和图案与操作的对应关系一样，我能以我自己的方式将自创的图案与 iota 对应起来。$(l:greatwork/akashiclib)$(item)阿卡夏记录/$是图书馆的控制核心，而每个$(l:greatwork/akashiclib)$(item)阿卡夏书架/$存储一个映射。它们必须互相连接，直接贴在一起，不超过 128 格。$(l:greatwork/akashiclib)$(item)阿卡夏桥接块/$没有存储功能但被视为连接方块，从而增加图书馆的大小。",
         akashic_record: "存储和分配图案非常简单但太过磨人，我还有更要紧的事要做。剥离一个精于此道的意识能省很多麻烦。",
         "3": "图书馆的使用方法很简单，交给图书管理员一个图案，然后他把对应的 iota 交给你。共有两个相关图案，$(l:patterns/akashic_patterns)笔记在此/$。$(br2)对书架使用一张空白的$(l:items/scroll)$(item)卷轴/$就能将图案复制到$(l:items/scroll)$(item)卷轴/$上。潜行时右击书架就能清除其中数据。",
       },
@@ -1753,7 +1820,7 @@
         "abs.2": "将一个数变为其绝对值，将一个向量变为其模长。",
 
         "pow.1": "执行乘方或向量射影。",
-        "pow.2": "若栈顶为两个数，返回两数的幂。$(li)若为一个数和一个向量，移除该数并计算向量的每个分量与该数的幂。$(li)若为两个向量，计算栈顶向量对栈顶往下第二向量的$(l:https://en.wikipedia.org/wiki/Vector_projection)向量射影/$。$(br2)第一第二种情况下，栈顶元素或其分量为指数，栈顶往下第二元素或其分量为底数。",
+        "pow.2": "若栈顶为两个数，返回两数的幂。$(li)若为一个数和一个向量，移除该数并计算向量的每个分量与该数的幂。$(li)若为两个向量，计算栈顶往下第二向量对栈顶向量的$(l:https://en.wikipedia.org/wiki/Vector_projection)向量射影/$。$(br2)第一第二种情况下，栈顶元素或其分量为指数，栈顶往下第二元素或其分量为底数。",
 
         floor: "对一个数取底，也即去掉小数部分取整。或对向量的每个分量取底。",
         ceil: "对一个数取顶，也即将小数部分不为零的数换为大于其的最小整数。或对向量的每个分量取顶。",
@@ -1807,6 +1874,7 @@
           tau: "返回 τ，也即圆的弧度。",
           pi: "返回 π，也即半圆的弧度。",
           "e": "返回 $(italic)e/$，也即自然对数的底。",
+          phi: "返回 φ，也即黄金比例。得出该比例的两值 A、B 满足 (A+B)/A = A/B。",
         },
       },
 
@@ -1827,7 +1895,7 @@
         "fisherman/copy": "与$(l:patterns/stackmanip#hexcasting:fisherman)$(action)渔夫之策略/$类似，但会复制 iota 而非将其提出。",
 
         mask: {
-          "1": "一组无限个根据凹槽和横线的顺序来保留或移除栈中元素的操作。",
+          "1": "一组无限个根据凹槽和横线的顺序来移除或保留栈中元素的操作。",
           "2": "假如从左到右绘制书吏之策略，此操作操控的 iota 个数由其横向长度决定。从靠近栈底的位置开始往栈顶计入，一条横线代表保留该处元素，一个凹槽代表移除该处元素。$(br2)如果栈从靠近栈底处起形如 $(italic)0, 1, 2/$ ，绘制左页例图一，则栈变为 $(italic)1/$；例图二会将栈变为 $(italic)0/$；例图三会将栈变为 $(italic)0, 2/$（栈底方向的 0 不受影响）。",
         },
 
@@ -1846,8 +1914,10 @@
         and: "如果两个参数都是 True，返回 True。否则返回 False。",
         xor: "如果参数中仅一个是 True，返回 True。否则返回 False。",
         if: "如果第一个参数是 True，保留第二个参数并移除第三个。否则保留第三个参数并移除第二个。",
-        equals: "如果第一个参数等于第二个（允许较小误差），返回 True。否则返回 False。",
-        not_equals: "如果第一个参数不等于第二个（允许较小误差），返回 True。否则返回 False。",
+        equals: "如果第一个参数等于第二个（在较小误差内），返回 True。否则返回 False。",
+        not_equals: "如果第一个参数不等于第二个（超出较小误差），返回 True。否则返回 False。",
+        type_equals: "如果第一个参数的类型与第二个匹配，返回 True。否则返回 False。",
+        type_not_equals: "如果第一个参数的类型不与第二个匹配，返回 True。否则返回 False。",
         greater: "如果第一个参数大于第二个，返回 True。否则返回 False。",
         less: "如果第一个参数小于第二个，返回 True。否则返回 False。",
         greater_eq: "如果第一个参数大于或等于第二个，返回 True。否则返回 False。",
@@ -1891,8 +1961,8 @@
         reverse: "倒置栈顶列表。",
         index_of: "移除栈顶元素，并将栈顶列表变为该元素在其中第一次出现的位置（从 0 开始）。若没有出现过则返回 -1。",
         remove_from: "移除栈顶的数，而后移除栈顶列表中下标为该数（就是被移除的那个数）的元素。",
-        replace: "移除栈顶元素和栈顶的数，而后将栈顶列表中下标为该数（就是被移除的那个数）变为该元素。若该数越界则不进行操作。",
-        last_n_list: "移除$(italic)所给数/$个元素，将这些元素加入列表并将该列表压入栈顶。",
+        replace: "移除栈顶元素和栈顶的数，而后将栈顶列表中下标为该数（就是被移除的那个数）的位置变为原栈顶元素。数越界则不进行操作。",
+        last_n_list: "移除$(italic)所给数/$个元素，将这些元素加入列表，并将所得列表压入栈顶。",
         splat: "移除栈顶列表，而后将其中元素全部压入栈顶。",
         construct: "移除栈顶元素，将其加到栈顶列表的开头。",
         deconstruct: "移除栈顶列表中的第一个元素，并将该元素压入栈顶。",
@@ -1937,10 +2007,10 @@
 
       meta: {
         "eval.1": "移除栈顶的图案列表，然后就像我用$(l:items/staff)$(item)法杖/$施法一样依次运行（直到碰到$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$）。如果一个 iota 已用$(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)考察/$或$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)类似手段/$作为图案加入栈中，那么该 iota 将在运行时被加到栈中。否则其将在非图案元素运行失败。",
-        "eval.2": "若与$(l:items/focus)$(item)核心/$同时使用，它将提供$(italic)极为/$强大的操控能力。$(br2)据我找到的一张奇特卷轴所称，它还将自然的咒法体系变为了一个“图灵完备”的系统。$(br2)然而，$(hex)咒术/$能重复执行自身的次数是有限的——自然不会对失控的法术手软的！$(br2)此外，由于这些图案产生的能量缺乏我的引导，任何失误都会导致后续操作变得极不稳定，以至于立即瓦解。",
+        "eval.2": "若与$(l:items/focus)$(item)核心/$同时使用，它将提供极为强大的操控能力。据我找到的一张晦涩卷轴所称，它还将自然的咒法体系变为了一个“图灵完备”的系统。$(br2)然而，$(hex)咒术/$能重复执行自身的次数是有限的——自然不会对失控的法术手软的！$(br2)此外，由于这些图案产生的能量缺乏我的引导，任何失误都会导致后续操作立即瓦解。",
 
-        "for_each.1": "移除栈中的一个图案列表和一个列表，然后对后一列表中的每个元素运行前一图案列表中的图案。",
-        "for_each.2": "更确切地说，对应后一列表中的每个元素，它将：$(li)创建一个新栈，其中包括当前栈中的所有元素和后一列表中的一个元素。$(li)绘制前一列表中的所有图案。$(li)将该栈中剩余的所有元素存进一个列表。$(br)在所有元素都运行一遍后，将该列表压入原本的栈中。$(br2)也难怪精通此操作的人都疯了。",
+        "for_each.1": "移除栈中的一个图案列表和一个列表，然后对后一列表中的每个元素运行前一图案列表。",
+        "for_each.2": "更确切地说，对于后一列表中的每个元素，它将：$(li)创建一个新栈，其中包括当前栈中的所有元素和后一列表中的一个元素。$(li)绘制前一列表中的所有图案。$(li)将该栈中剩余的所有元素存进一个列表。$(br)在所有元素都运行一遍后，将该列表压入原本的栈中。$(br2)也难怪精通此操作的人都疯了。",
 
         "halt.1": "这个图案将强制停止$(hex)咒术/$的施放。它独自出现可能没什么用，我只要不绘制图案或是放下法杖就行了。",
         "halt.2": "但当与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$或$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$一起使用时，它就将发挥$(italic)大/$用。那些图案会碰到这个休止符，但$(hex)咒术/$本身不会停止，停止运行的是那些策略。它可以用来防止$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$将每个 iota 都运行一遍。这便是逃离疯狂的秘道。",
@@ -2017,10 +2087,10 @@
         "craft/trinket": "消耗大约 5 个$(l:items/amethyst)$(item)充能紫水晶/$。",
         "craft/artifact": "消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
 
-        "recharge.1": "给另一只手中能装$(media)媒质/$的物品重新充能。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。",
+        "recharge.1": "给另一只手中能装$(media)媒质/$的物品重新充能。每个物品消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。",
         "recharge.2": "此法术的施放方式和制作施法物品所用法术的类似。提供一个$(l:items/amethyst)$(item)紫水晶/$物品实体，就能给另一只手中物品的$(media)媒质/$储库重新充能。$(br2)此法术$(italic)不能/$充入超过储库大小的媒质。",
 
-        "erase.1": "清除另一只手中写有$(hex)咒术/$的物品。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+        "erase.1": "清除另一只手中写有$(hex)咒术/$或存有 iota 的物品。每个物品消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
         "erase.2": "此法术也会清除物品内存储的$(media)媒质/$，将其释放给自然并将物品恢复到其初始状态。如此就能回收利用容易出错的$(l:items/hexcasting)$(item)缀品/$了。$(br2)此法术也能清除$(l:items/focus)$(item)核心/$和$(l:items/spellbook)$(item)法术书/$书页内容，同时去除其上密封。",
       },
 
@@ -2036,17 +2106,17 @@
 
       colorize: "施法时需要在另一只手中持有$(l:items/pigments)$(item)染色剂/$。施法后，染色剂将被消耗，而我意识的颜色也将永久改变（至少是在再次施法前）。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
 
-      cycle_variant: "我制造的一些物品极易受$(media)媒质/$的影响。另一只手持有$(l:items/hexcasting)$(item)杂件/$、$(l:items/hexcasting)$(item)缀品/$、$(l:items/hexcasting)$(item)造物/$、$(l:items/focus)$(item)核心/$、$(l:items/spellbook)$(item)法术书/$时，可以使用此法术更改它们的外表。消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+      cycle_variant: "我制造的一些物品极易受$(media)媒质/$的影响。另一只手持有$(l:items/hexcasting)$(item)杂件/$、$(l:items/hexcasting)$(item)缀品/$、$(l:items/hexcasting)$(item)造物/$、$(l:items/focus)$(item)核心/$、$(l:items/spellbook)$(item)法术书/$时，可以使用此法术更改它们的外表。消耗极少量$(media)媒质/$。",
 
       flights: {
         "1": "尽管无法掌握自由飞行的力量，我还是找到了若干能将物体滞空的方法，但各种方法各有缺陷。$(br2)所有种类的飞行法术都会产生微量多余$(media)媒质/$。在法术效果将要结束时，其会产生越来越多红色和黑色的火花。",
         "2": "当然，也有其他种类的飞行法术。例如，将$(l:patterns/spells/basic#hexcasting:add_motion)$(action)驱动/$和$(l:patterns/spells/nadirs#hexcasting:potion/levitation)$(action)蓝阳西沉/$结合使用的类飞行技术自古代起就多有运用。$(br2)我还听说过一种能给予滑翔能力的，可以穿在背上的薄透翼膜。研究表明，被称为“$(l:patterns/great_spells/altiora)$(action)翱翔/$”的卓越法术也许能模仿这种翼膜的功用。",
 
         "range.1": "受范围限制的飞行法术。",
-        "range.2": "第二参数代表水平方向上的半径（以米计），在此范围内，法术能保持稳定。走出该范围就会结束该法术，滞空的物体会直接坠向地面。但只要一直待在这个范围内，法术的效果便会无限持续。此法术还会额外产生微量$(media)媒质/$用以标记安全区域中心点。$(br2)每米安全范围消耗大约 1 个$(l:items/amethyst)$(item)紫水晶粉/$。",
+        "range.2": "第二参数代表水平方向上的半径（以米计），在此范围内，法术能保持稳定。走出该范围就会结束该法术，滞空的物体会直接坠向地面。但只要一直待在这个范围内，法术的效果便会无限持续。此法术还会额外产生微量$(media)媒质/$用以标记安全区域中心点。$(br2)每米安全范围消耗大约 2 个$(l:items/amethyst)$(item)紫水晶粉/$，即便范围半径小于 1 米也仍会消耗 2 个$(l:items/amethyst)$(item)紫水晶粉/$。",
 
         "time.1": "受时间限制的飞行法术。",
-        "time.2": "第二参数代表持续时间（以秒计），在此限制内，法术能保持稳定。持续时间超过限制就会结束该法术，滞空的物体会直接坠向地面。$(br2)此法术相对较昂贵，每秒持续时间消耗大约 1 个$(l:items/amethyst)$(item)紫水晶碎片/$。我觉得它极其适合长途旅行。",
+        "time.2": "第二参数代表持续时间（以秒计），在此限制内，法术能保持稳定。持续时间超过限制就会结束该法术，滞空的物体会直接坠向地面。$(br2)每秒持续时间消耗大约 2 个$(l:items/amethyst)$(item)紫水晶粉/$。我觉得它极其适合长途旅行。",
 
         // Putting this in this category instead of elsewhere -- see sentinel chapter also containing some reflections/nonspells
         "can_fly.1": "检查玩家是否处于$(l:patterns/spells/flight#hexcasting:flight/range)隐士之飞行/$或$(l:patterns/spells/flight#hexcasting:flight/time)旅者之飞行/$的影响之下。",
@@ -2070,8 +2140,8 @@
       },
 
       "teleport/great": {
-        "1": "比$(l:patterns/spells/basic#hexcasting:blink)$(action)闪现/$更为强大，此法术能让我传送到世界上几乎任何一处！当然它也有极限，但可比我熟悉的施法距离要远得$(italic)多/$。",
-        "2": "实体会被移动至所给向量处。奇怪的是，这个向量似乎代表了偏差值，而非世界中的绝对位置；比如，使用$(l:patterns/consts#hexcasting:const/vec/x)$(action)向量之精思，+X 型/$时，目标实体会被传送到原有位置恰好 1 格以东处。它似乎一直会消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$，不论传送距离。$(br2)当然这种传送也不是尽善尽美的，在传送如玩家般复杂的实体时，实体身上的物品就不会$(italic)非常/$安稳了，它们可能会散落在目的地周围。还有，传送的实体将会被强制从其所乘坐的无生命载具中卸下……但我曾读到过动物可以一起被传送，大概吧。",
+        "1": "此法术比$(l:patterns/spells/basic#hexcasting:blink)$(action)闪现/$更加强大，能将实体传送到世界上几乎任何一处！没有距离限制，它似乎需要消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
+        "2": "所给向量代表偏差值，而非世界中的绝对位置；比如，使用 (1, 0, 0) 时，目标实体会被传送到原有位置恰好 1 格以东处。$(br2)当然这种传送也不是尽善尽美的，在传送我自己时，我便难以保持十足的专注。这可能会导致我身上的部分物品散落在目的地周围。$(br2)还有，传送的实体将会被强制从其所乘坐的无生命载具中卸下……但我曾读到过动物可以一起被传送，大概吧。",
       },
 
       zeniths: {
