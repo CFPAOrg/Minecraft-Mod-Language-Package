@@ -5,7 +5,8 @@ lookup: neepmeat:fluid_pipe
 
 # Fluid Pipe
 
-Fluid pipes are a simple way of transferring fluids from one block to another.
+\columns[fit=second]{Fluid pipes are a simple way of transferring fluids from one block to another.
+}{\item_render[height=50]{neepmeat:fluid_pipe}}
 
 # Usage
 

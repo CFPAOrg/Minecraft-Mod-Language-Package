@@ -1,11 +1,12 @@
 ---
 id: automatic_mouth
-lookup: neepmeat:mouth
+lookup: neepmeat:automatic_mouth
 ---
 
 # 自动口舌
 
-自动口舌会念出给定的消息，可由红石或NEEP总线触发。
+\columns[fit=second]{自动口舌会念出给定的消息，可由红石或NEEP总线触发。
+}{\item_render{neepmeat:automatic_mouth}}
 
 ## 界面
 

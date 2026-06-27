@@ -5,13 +5,18 @@ lookup: neepmeat:power_flower_seeds, neepmeat:power_flower_growth, neepmeat:powe
 
 # 能量花
 
-能量花能使用阳光和重组食物制造瞬变浆液。
+\columns[fit=second]{能量花能使用阳光和重组食物制造瞬变浆液。
+}{\item_render[height=50]{neepmeat:power_flower_controller}}
 
 ## 使用方法
 
-能量花种子可种在任意一种泥土类方块中，成熟后会长成庞大的增生体。增生体上方与空气接触、下方有至少一个增生体方块时，它会特化为光合器官，并持续产出10eJ/t。其他情况下，增生体会加快食物消化与代谢的速率。
+能量花种子可种在任意一种泥土类方块中，成熟后会长成庞大的增生体，其中某处有一枚核心。
+
+增生体上方与空气接触、下方有至少一个增生体方块时，它会特化为光合器官，并持续产出10eJ/t。其他情况下，增生体会加快食物消化与代谢的速率。
 
 水是能量花光合作用的必需品，须向能量花流体口供应水。
+
+\columns{\item_render[height=30]{neepmeat:power_flower_seeds}}{\item_render[height=30]{neepmeat:power_flower_fluid_port}}
 
 ## 食物
 

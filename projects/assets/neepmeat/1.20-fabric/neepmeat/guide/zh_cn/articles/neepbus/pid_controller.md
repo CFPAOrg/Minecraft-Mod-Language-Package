@@ -4,9 +4,11 @@ id: pid_controller
 
 # 比例-积分-微分控制器
 
+\columns[fit=second]{The PID Controller is a NEEPBus participant that acts as a discrete time feedback controller for a dynamic system.
 比例-积分-微分（PID）控制器是一类NEEP总线机器，可用作动态系统的离散时间反馈控制器。
 
 本质上来说，它会更改*PID输出量*，力求让输入的*测量值*信号尽可能靠近输入的*目标值*信号。
+}{\item_render{neepmeat:pid_controller}}
 
 ### 端口
 

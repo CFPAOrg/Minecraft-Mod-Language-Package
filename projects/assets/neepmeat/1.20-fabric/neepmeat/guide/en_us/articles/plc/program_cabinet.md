@@ -5,7 +5,8 @@ lookup: neepmeat:program_cabinet, neepmeat:program_card
 
 # Program Disks
 
-Program disks can be used to transfer programs (and source code) form one PLC to another.
+\columns[fit=second]{Program disks can be used to transfer programs (and source code) form one PLC to another.
+}{\item_render[height=50]{neepmeat:program_card}}
 
 To save a PLC's current program to a disk, click on the PLC while holding the disk.
 
@@ -15,9 +16,10 @@ Clicking anywhere else while holding a disk allows changing the program's name. 
 
 # Program Cabinet
 
-A program cabinet is a program memory module. It provides some memory segments that can contain executable instructions for the PLC.
+\columns[fit=second]{A program cabinet is a program memory module. It provides some memory segments that can contain executable instructions for the PLC.
 
 PLCs can access program disks stored in adjacent cabinets, and can execute their contents.
+}{\item_render[height=50]{neepmeat:program_cabinet}}
 
 Each cabinet has 30 slots, each of which can hold a single program. Each slot takes up a single memory segment.
 
