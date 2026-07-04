@@ -81,7 +81,7 @@ The hat must be held in the caster's offhand, and the entity must not be a playe
 
 ;;;;;
 
-Some entities cannot be stored into a hat, usually because they are too large.
+Some entities cannot be stored in a hat, usually because they are too large.
 Trying to store such entities will result in a blunder.
 
 ;;;;;

@@ -86,7 +86,7 @@ Only has an effect on flecks drawn with [Marketer's Ploy](^trickster:ploys/fleck
 
 <|trick@trickster:templates|trick-id=trickster:delete_fleck|>
 
-Removes any fleck with the given id.
+Removes any fleck with the given identifier.
 
 ;;;;;
 

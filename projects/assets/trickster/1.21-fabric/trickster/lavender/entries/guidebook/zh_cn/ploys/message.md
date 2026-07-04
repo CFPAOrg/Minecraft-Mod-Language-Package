@@ -22,7 +22,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:message_listen|>
 
-在收到消息的后一刻返回所有消息。必须指定超时时间，在此时间后无论收到消息与否均返回。
+在收到消息的后一刻返回所有消息。可以指定超时时间，在此时间后无论收到消息与否均返回。
 
 ;;;;;
 

@@ -1,6 +1,6 @@
 ```json
 {
-  "title": "The Tempest",
+  "title": "Tempest Ploys",
   "icon": "minecraft:wind_charge",
   "category": "trickster:ploys",
   "required_advancements": [

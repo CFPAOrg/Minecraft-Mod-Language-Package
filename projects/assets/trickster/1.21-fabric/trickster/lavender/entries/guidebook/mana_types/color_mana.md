@@ -32,7 +32,7 @@ These are all clearly the same *type* of mana, just colored uniquely.
 
 
 More interesting yet, these colors can be mixed!
-When I [transfer](^trickster:ploys/mana#6) Chromatic mana of one color into a Knot holding a different color, 
+When I [transfer](^trickster:ploys/mana#3) Chromatic mana of one color into a Knot holding a different color, 
 the two will combine, and mix their colors in the process.
 
 ;;;;;

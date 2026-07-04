@@ -1,6 +1,6 @@
 ```json
 {
-  "title": "风暴",
+  "title": "风暴技巧术",
   "icon": "minecraft:wind_charge",
   "category": "trickster:ploys",
   "required_advancements": [

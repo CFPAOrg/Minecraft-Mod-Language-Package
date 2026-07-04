@@ -82,7 +82,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:delete_fleck|>
 
-移除所给ID对应的视形。
+移除所给标识对应的视形。
 
 ;;;;;
 

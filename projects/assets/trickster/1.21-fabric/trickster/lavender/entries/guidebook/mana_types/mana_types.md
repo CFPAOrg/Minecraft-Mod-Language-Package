@@ -28,7 +28,7 @@ Regardless, I suppose I shall have to do the documenting in their absence.
 
 As far as I can tell, a Knot can only hold one type of Mana at a time.
 The type of mana stored can be gotten as a fragment using [Derivate Ingress](^trickster:delusions_ingresses/mana#4),
-which can in turn be used to filter [transfers](^trickster:ploys/mana#6).
+which can in turn be used to filter [transfers](^trickster:ploys/mana#3).
 
 ;;;;;
 

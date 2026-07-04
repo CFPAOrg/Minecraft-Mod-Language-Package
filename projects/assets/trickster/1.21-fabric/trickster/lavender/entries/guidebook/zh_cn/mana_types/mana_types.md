@@ -24,7 +24,7 @@
 无论如何，我认为我应该要为这本书填上空白。
 
 
-据我所知，一枚晶结同一时刻只能容纳一种魔力。可用[魔衍之辑流](^trickster:delusions_ingresses/mana#4)获取其中魔力的类型，结果则可用于筛选魔力的[传输](^trickster:ploys/mana#6)。
+据我所知，一枚晶结同一时刻只能容纳一种魔力。可用[魔衍之辑流](^trickster:delusions_ingresses/mana#4)获取其中魔力的类型，结果则可用于筛选魔力的[传输](^trickster:ploys/mana#3)。
 
 ;;;;;
 

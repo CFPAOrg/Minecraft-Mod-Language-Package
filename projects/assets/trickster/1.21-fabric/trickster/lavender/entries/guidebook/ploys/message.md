@@ -22,7 +22,7 @@ Sends the given fragment to all spells within 16 blocks. Range may be extended b
 
 <|trick@trickster:templates|trick-id=trickster:message_listen|>
 
-Returns all messages received on the tick after they were received. Must be provided with a timeout after which to return anyway.
+Returns all messages received on the tick after they were received. Can accept a timeout after which to return anyway.
 
 ;;;;;
 

@@ -2,7 +2,7 @@
 {
   "title": "漂泊人",
   "icon": "minecraft:ender_pearl",
-  "category": "trickster:ploys",
+  "category": "trickster:tricks",
   "additional_search_terms": [
     "获权者之技巧",
     "篡夺者之技巧",
@@ -69,4 +69,3 @@
 <|trick@trickster:templates|trick-id=trickster:get_dimension|>
 
 返回位移片段起点所在的维度。
-

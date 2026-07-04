@@ -1,7 +1,7 @@
 ```json
 {
-  "title": "A Shimmer in the Night",
-  "icon": "trickster:echo_knot",
+  "title": "Mana Management",
+  "icon": "trickster:amethyst_knot",
   "category": "trickster:ploys",
   "additional_search_terms": [
     "Ploy of the Moon Watcher",
@@ -28,7 +28,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:battery_creation|>
 
-Creates a [Knot](^trickster:items/mana/knots) using the crystal in the given slot and a Glass Block. Uses amethyst if no first slot is provided.
+Creates a [Knot](^trickster:items/mana/knots) using the crystal or gem in the given slot and a Glass Block. Uses amethyst if no first slot is provided.
 
 ;;;;;
 

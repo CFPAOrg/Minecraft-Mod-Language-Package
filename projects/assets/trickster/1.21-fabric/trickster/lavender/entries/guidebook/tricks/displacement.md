@@ -2,7 +2,7 @@
 {
   "title": "The Drifter",
   "icon": "minecraft:ender_pearl",
-  "category": "trickster:ploys",
+  "category": "trickster:tricks",
   "additional_search_terms": [
     "Ploy of the Entitled",
     "Ploy of the Usurper",
@@ -74,4 +74,3 @@ Given a displacement fragment, returns the position of its entity.
 <|trick@trickster:templates|trick-id=trickster:get_dimension|>
 
 Returns the dimension that a displacement fragment came from.
-

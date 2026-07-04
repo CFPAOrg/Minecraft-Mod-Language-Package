@@ -1,7 +1,7 @@
 ```json
 {
-  "title": "黑夜中的幽光",
-  "icon": "trickster:echo_knot",
+  "title": "魔力管理",
+  "icon": "trickster:amethyst_knot",
   "category": "trickster:ploys",
   "additional_search_terms": [
     "望月者之技巧",
