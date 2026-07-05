@@ -56,6 +56,32 @@ namespace Packer.Helpers
         }
 
         /// <summary>
+        /// 从仓库根目录获取命名空间区分配置
+        /// </summary>
+        /// <param name="path">配置文件位置</param>
+        /// <returns>文件不存在时返回空列表；文件存在但内容非法时抛出异常，宁可打包失败也不发出错误的包</returns>
+        public static List<NamespaceDiscriminator> RetrieveNamespaceDiscriminators(
+            string path = "./config/packer/namespace-discriminator.json")
+        {
+            var file = new FileInfo(path);
+            if (!file.Exists)
+            {
+                Log.Information("未找到命名空间区分配置（{0}），跳过命名空间区分。", path);
+                return new List<NamespaceDiscriminator>();
+            }
+
+            file.FullName.LogToDebug("读取文件：{0}");
+
+            using var stream = file.OpenRead();
+            var result = JsonSerializer.Deserialize<List<NamespaceDiscriminator>>(
+                stream,
+                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            if (result is null)
+                throw new InvalidDataException($"The discriminator file {path} cannot have null content.");
+            return result;
+        }
+
+        /// <summary>
         /// 从给定的命名空间获取策略内容
         /// </summary>
         /// <param name="directory">命名空间目录</param>
