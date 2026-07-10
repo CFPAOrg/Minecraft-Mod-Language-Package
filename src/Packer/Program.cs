@@ -86,7 +86,7 @@ namespace Packer
                     .MergeDeep()
                     .PostProcess(config);
 
-                var manifestFile = ManifestHelpers.BuildGroupedPackManifest(config, applicableDiscriminators, acceptableVersions);
+                var manifestFile = ManifestHelpers.BuildGroupedPackManifest(config, applicableDiscriminators, [config.Base.Version]);
 
                 await using var stream = File.Create(packName);
 

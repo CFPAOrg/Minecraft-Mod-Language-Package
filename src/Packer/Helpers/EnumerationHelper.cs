@@ -56,17 +56,15 @@ namespace Packer.Helpers
                                                                  string namespaceName,
                                                                  string modIdentifier)
         {
-            var matchedDiscriminator = namespaceDiscriminators?
-                .FirstOrDefault(entry => entry.Namespace == namespaceName);
-            if (matchedDiscriminator is null) return null;
-
-            if (!matchedDiscriminator.MappingRule.TryGetValue(modIdentifier, out var discriminatedName))
+            if (namespaceDiscriminators is null) return null;
+            foreach (var discriminator in namespaceDiscriminators.Where(entry => entry.Namespace == namespaceName))
             {
-                Log.Warning("命名空间 {0}（项目 {1}）命中了区分规则，但 mappingRule 未包含该项目；保留原始命名空间。",
-                            namespaceName, modIdentifier);
-                return null;
+                if (discriminator.MappingRule.TryGetValue(modIdentifier, out var discriminatedName))
+                {
+                    return $"{namespaceName}-CFPA-{discriminatedName}";
+                }
             }
-            return $"{namespaceName}-CFPA-{discriminatedName}";
+            return null; // 无规则或无匹配
         }
 
         public static IEnumerable<IResourceFileProvider> PostProcess(this IEnumerable<IResourceFileProvider> providers, Config config)
