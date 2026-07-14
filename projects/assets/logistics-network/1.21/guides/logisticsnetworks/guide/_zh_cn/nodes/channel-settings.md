@@ -184,4 +184,4 @@ navigation:
 
 ---
 
-本页的每一行都仅作用于所选频道。可在[标题](header.md)出切换频道，或者在[过滤器与升级](filters-upgrades.md)中设置共享过滤器/升级。
+本页的每一行都仅作用于所选频道。可在[标题](header.md)处切换频道，或者在[过滤器与升级](filters-upgrades.md)中设置共享过滤器/升级。
