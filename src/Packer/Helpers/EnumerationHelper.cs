@@ -1,9 +1,11 @@
 ﻿using Packer.Extensions;
 using Packer.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace Packer.Helpers
 {
@@ -11,7 +13,8 @@ namespace Packer.Helpers
     {
         public static IEnumerable<IResourceFileProvider> EnumerateUnmerged(IEnumerable<string> targetModIdentifiers,
                                                                            Config config,
-                                                                           IEnumerable<string> acceptableVersions)
+                                                                           IEnumerable<string> acceptableVersions,
+                                                                           IReadOnlyCollection<NamespaceDiscriminator>? namespaceDiscriminators = null)
         {
             return
                 // ./projects/assets/<projectSlug>...
@@ -25,14 +28,43 @@ namespace Packer.Helpers
                 let versionedDirectory = acceptableVersions.Select(version => modDirectory.GetDirectories(version).FirstOrDefault())
                                                            .FirstOrDefault(_ => _ is not null)
                 where versionedDirectory is not null
-                // .../<namespace>-CFPA-<author>
+                // .../<namespace>
                 from namespaceDirectory in versionedDirectory.EnumerateDirectories()
                 let namespaceName = namespaceDirectory.Name
                 where !config.Base.ExclusionNamespaces.Contains(namespaceName)      // 没有被明确排除
                 where namespaceName.ValidateNamespace()                             // 不是非法名称
+                // 命名空间区分：若命中规则，将 assets/<namespace>/ 改写为 assets/<namespace>-CFPA-<区分名>/
+                let discriminatedNamespaceName = ResolveDiscriminatedNamespaceName(namespaceDiscriminators,
+                                                                                   namespaceName,
+                                                                                   modIdentifier)
                 // .../*
                 from provider in namespaceDirectory.EnumerateProviders(config)
-                select provider;
+                select discriminatedNamespaceName is null
+                    ? provider
+                    : provider.ReplaceDestination($"^assets/{Regex.Escape(namespaceName)}(?=/)",
+                                                  $"assets/{discriminatedNamespaceName.Replace("$", "$$")}");
+        }
+
+        /// <summary>
+        /// 解析（命名空间, 项目）应使用的区分后名称。传入的规则应已按当前打包平台过滤。
+        /// </summary>
+        /// <param name="namespaceDiscriminators">适用于当前平台的命名空间区分规则</param>
+        /// <param name="namespaceName">原始命名空间</param>
+        /// <param name="modIdentifier">CurseForge 项目 slug</param>
+        /// <returns>命中规则时返回 <c>&lt;namespace&gt;-CFPA-&lt;区分名&gt;</c>；否则返回 <see langword="null"/>（保持原名）</returns>
+        private static string? ResolveDiscriminatedNamespaceName(IReadOnlyCollection<NamespaceDiscriminator>? namespaceDiscriminators,
+                                                                 string namespaceName,
+                                                                 string modIdentifier)
+        {
+            if (namespaceDiscriminators is null) return null;
+            foreach (var discriminator in namespaceDiscriminators.Where(entry => entry.Namespace == namespaceName))
+            {
+                if (discriminator.MappingRule.TryGetValue(modIdentifier, out var discriminatedName))
+                {
+                    return $"{namespaceName}-CFPA-{discriminatedName}";
+                }
+            }
+            return null; // 无规则或无匹配
         }
 
         public static IEnumerable<IResourceFileProvider> PostProcess(this IEnumerable<IResourceFileProvider> providers, Config config)

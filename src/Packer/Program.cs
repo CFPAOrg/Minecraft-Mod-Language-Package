@@ -72,16 +72,28 @@ namespace Packer
             {
                 string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}-namespaced.zip";
                 Log.Information("组合包：{0}", packName);
+
+                var acceptableVersions = config.Base.FallbackVersions.Prepend(config.Base.Version).ToList();
+                var targetPlatform = PackTargetPlatform.FromPackVersion(config.Base.Version);
+                var applicableDiscriminators = ConfigHelpers.RetrieveNamespaceDiscriminators()
+                    .Where(discriminator => discriminator.AppliesTo(targetPlatform))
+                    .ToList();
+                Log.Information("目标平台 {0} {1}，适用的命名空间区分规则：{2} 条",
+                                targetPlatform.Loader, targetPlatform.GameVersion, applicableDiscriminators.Count);
+
                 var query =
-                    EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, config.Base.FallbackVersions.Prepend(config.Base.Version))
+                    EnumerationHelper.EnumerateUnmerged(targetModIdentifiers, config, acceptableVersions, applicableDiscriminators)
                     .MergeDeep()
                     .PostProcess(config);
-                
+
+                var manifestFile = ManifestHelpers.BuildGroupedPackManifest(config, applicableDiscriminators, [config.Base.Version]);
+
                 await using var stream = File.Create(packName);
 
                 using (var archive = new ZipArchive(stream, ZipArchiveMode.Update, leaveOpen: true))
                 {
                     await archive.WriteDirect(initialFiles);
+                    await archive.WriteDirect([manifestFile]);
                     await archive.WriteGrouped(query);
                 }
                 //var md5 = stream.ComputeMD5();
