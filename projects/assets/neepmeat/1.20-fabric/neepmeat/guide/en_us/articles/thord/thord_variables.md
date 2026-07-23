@@ -4,7 +4,14 @@ id: thord_variables
 
 # Variables
 
-Variables can be created with the `VARIABLE` word.
+In THORD, a variable is data that is stored inside the PLC's *heap memory*. Variables are different to values stored on the stack. They can be used for longer-term data storage, and to reduce the amount of stack manipulation necessary.
+
+A variable can be created with the `VARIABLE` word.
+
+```
+# Create a variable called 'count'
+variable count
+```
 
 Stating a variable's name puts its address on the stack. This can be taken as an argument by any word. 
 

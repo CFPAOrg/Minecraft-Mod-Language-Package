@@ -4,9 +4,10 @@ id: pid_controller
 
 # Proportional-Integral-Derivative Controller
 
-The PID Controller is a NEEPBus participant that acts as a discrete time feedback controller for a dynamic system.
+\columns[fit=second]{The PID Controller is a NEEPBus participant that acts as a discrete time feedback controller for a dynamic system.
 
 Essentially, it tries to keep the *Measurement* input signal as close to the *Setpoint* input by changing the *PID Output* value.
+}{\item_render{neepmeat:pid_controller}}
 
 ### Ports
 

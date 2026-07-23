@@ -5,9 +5,11 @@ lookup: neepmeat:living_tool_implant
 
 # Tool Organism
 
-The tool organism provides self-repair faculties to the tool it bonds with.
+\columns[fit=second]{The tool organism provides self-repair faculties to the tool it bonds with.
 
 It can be applied to any item with durability with a PLC using the COMBINE operation.
+
+}{\item_render{neepmeat:living_tool_implant}}
 
 It can replace the pneumatic motor on a Drill Chassis, allowing it to run without a nearby compressor.
 

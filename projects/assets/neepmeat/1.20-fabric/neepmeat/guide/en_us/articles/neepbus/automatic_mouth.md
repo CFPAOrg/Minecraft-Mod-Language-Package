@@ -1,11 +1,12 @@
 ---
 id: automatic_mouth
-lookup: neepmeat:mouth
+lookup: neepmeat:automatic_mouth
 ---
 
 # Automatic Mouth
 
-The Automatic Mouth speaks aloud any message. It can be triggered by redstone or via NEEPBus. 
+\columns[fit=second]{The Automatic Mouth speaks aloud any message. It can be triggered by redstone or via NEEPBus. 
+}{\item_render{neepmeat:automatic_mouth}}
 
 ## Interface
 
