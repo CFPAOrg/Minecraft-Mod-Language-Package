@@ -1,0 +1,37 @@
+{
+    "name": "Web MIDI Files",
+    "icon": "mimi:floppydisk",
+    "category": "mimi:9commands",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "These commands allow you to see and modify the settings controlling the playback of MIDI files from the Web from Floppy Disks."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Status",
+            "text": "$(l)/mimi web status$()$(br2)This command may be used by $(l)all users$() and will tell you whether or not the server is currently allowing Web MIDI files to be played or not.$(br2)EX: $(c:/mimi web status)/mimi web status"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "List",
+            "text": "$(l)/mimi web list <page?>$()$(br2)This command may be used by $(l)all users$() and will list the websites that the server allows for Web MIDI files (an empty list allows all sites).$(br)$(li)$(l)page$() - The page number of results to view. If no page is provided the first page will be shown.$(br2)EX: $(c:/mimi web list 1)/mimi web list 1$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Add",
+            "text": "$(l)/mimi web add <host>$()$(br2)This command may be used by $(l)ops only$() and will add the provided website to the list of websites that the server allows for Web MIDI files.$(br)$(li)$(l)host$() - The website host to be added to the list. Should not contain the protocol (I.E: https://), or any paths (I.E: /page).$(br2)EX: $(c:/mimi web add example.com)/mimi web add example.com$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Remove",
+            "text": "$(l)/mimi web remove <number>$()$(br2)This command may be used by $(l)ops only$() and will remove the provided website from the list of websites that the server allows for Web MIDI files.$(br)$(li)$(l)number$() - The number (from $(c:/mimi web list)/mimi web list$()) of the website host to be removed from the list.$(br2)EX: $(c:/mimi web remove 1)/mimi web remove 1$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Set",
+            "text": "$(l)/mimi web set <true/false>$()$(br2)This command may be used by $(l)ops only$() and will enable or disable playing all Web MIDI files for this server based on the provided value.$(br2)This will $(o)not$() modify the list of allowed websites.$(br2)EX: $(c:/mimi web set true)/mimi web set true$()"
+        }
+    ],
+    "sortnum": 1
+}
