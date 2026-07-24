@@ -8,7 +8,9 @@
     "hextrapats_vec_math.title": "Hextra Vector Math",
     "hextrapats_lists.title": "Hextra Lists",
     "hextrapats_sets.title": "Hash Set Manipulation",
-    "hextrapats_meta.title": "Hextra Meta-Evaluation"
+    "hextrapats_meta.title": "Hextra Meta-Evaluation",
+    "hextrapats_nulls.title": "Null Coercion",
+    "hextrapats_stackmanip.title": "Hextra Stack Manipulation"
   },
   hextrapats: {
     page: {
@@ -25,7 +27,11 @@
         in_range: "If the first number is between the second and third, return True. Otherwise, return False. If the first value is a vector, compare its length instead.",
         "in_range.ops": "The fourth number seems to describe how to check if the value is in the range.$(li)0: min < val < max$(li)1: min <= val < max$(li)2: min < val <= max$(li)3: min <= val <= max",
         out_range: "If the first number is not between the second and third, return True. Otherwise, return False. If the first value is a vector, compare its length instead.",
-        "out_range.ops": "The fourth number seems to describe how to check if the value is outside the range.$(li)0: val < min or max < val$(li)1: val <= min or max < val$(li)2: val < min or max <= val$(li)3: val <= min or max <= val"
+        "out_range.ops": "The fourth number seems to describe how to check if the value is outside the range.$(li)0: val < min or max < val$(li)1: val <= min or max < val$(li)2: val < min or max <= val$(li)3: val <= min or max <= val",
+      },
+      nulls: {
+        coalesce: "If the first argument is not $(l:casting/influences)$(thing)Null/$, returns it. Otherwise, returns the second argument.",
+        exec: "If the first argument is not $(l:casting/influences)$(thing)Null/$, returns it. Otherwise, executes the second argument, much like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$."
       },
       nocon: {
         intro: "Sometimes, I want operate on iotas after using them for logic operations, but it gets rather annoying to have to copy them every time I do. All this copying also places a heavy burden on Nature, especially with large iotas like lists where $(l:casting/mishaps)$(thing)stack size can be a concern/$.",
@@ -81,12 +87,19 @@
         },
         from_polar: "Creates a unit vector from two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(thing)F3/$ turn up.",
         to_polar: "Converts a vector's direction into two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(thing)F3/$ turn up.",
-        rot_about_x: "Rotates the vector by the given angle in radians around the X axis.",
-        rot_about_y: "Rotates the vector by the given angle in radians around the Y axis.",
-        rot_about_z: "Rotates the vector by the given angle in radians around the Z axis.",
-        cons_about_x: "Converts an angle in radians to a unit vector where X=0. +Z at 0 radians and +Y at pi/4 radians.",
-        cons_about_y: "Converts an angle in radians to a unit vector where Y=0. +Z at 0 radians and -X at pi/4 radians. I've seen some texts related to this pattern mentioning something called $(thing)F3/$, but I couldn't figure out what that means.",
-        cons_about_z: "Converts an angle in radians to a unit vector where Z=0. -X at 0 radians and +Y at pi/4 radians.",
+        "rot_about/": {
+          x: "Rotates the vector by the given angle in radians around the X axis.",
+          y: "Rotates the vector by the given angle in radians around the Y axis.",
+          z: "Rotates the vector by the given angle in radians around the Z axis."
+        },
+        "cons_about/": {
+          x: "Converts an angle in radians to a unit vector where X=0. +Z at 0 radians and +Y at pi/4 radians.",
+          y: "Converts an angle in radians to a unit vector where Y=0. +Z at 0 radians and -X at pi/4 radians. I've seen some texts related to this pattern mentioning something called $(thing)F3/$, but I couldn't figure out what that means.",
+          z: "Converts an angle in radians to a unit vector where Z=0. -X at 0 radians and +Y at pi/4 radians."
+        },
+        swap_vec_list: "Converts a list of 3 numbers to a vector, or a vector into a list of 3 numbers.",
+        vec_get: "Returns the X, Y, or Z component of a vector.",
+        vec_set: "Overrides a vector's X, Y, or Z component."
       },
       lists: {
         "peek/": {
@@ -142,6 +155,12 @@
         index_for_each: "Casts like $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$, however the new stack for each element additionally has the index of that element added to the top.",
         main_for_each: "Casts like $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$, however each sub-execution operates on the main stack instead of copies of the stack.",
         main_index_for_each: "Casts like $(l:patterns/hextrapats_meta#hextrapats:index_for_each)$(action)Djehuty's Gambit/$, however each sub-execution operates on the main stack instead of copies of the stack."
+      },
+      stackmanip: {
+        capsizing: "Sends the iota on the top of the stack to the bottom of the stack.",
+        "capsizing/copy": "Like $(l:patterns/hextrapats_stackmanip#hextrapats:capsizing)$(action)Capsizing Gambit/$, but copies the iota instead of moving it.",
+        dredging: "Pulls the iota at the bottom of the stack to the top of the stack.",
+        "dredging/copy": "Like $(l:patterns/hextrapats_stackmanip#hextrapats:dredging)$(action)Dredging Gambit/$, but copies the iota instead of moving it."
       }
     }
   },
@@ -156,6 +175,11 @@
 
         in_range: "Range Exaltation",
         out_range: "Range Exaltation II",
+
+        "nulls/": {
+          coalesce: "Coalescing Distillation",
+          exec: "Coalescing Gambit"
+        },
 
         vec_x: "Vector Reflection X II",
         vec_y: "Vector Reflection Y II",
@@ -179,12 +203,30 @@
         vec_dist: "Distance Distillation",
         from_polar: "Polar Distillation",
         to_polar: "Polar Decomposition",
-        rot_about_x: "Pitch Distillation",
-        rot_about_y: "Yaw Distillation",
-        rot_about_z: "Roll Distillation",
-        cons_about_x: "Pitch Purification",
-        cons_about_y: "Yaw Purification",
-        cons_about_z: "Roll Purification",
+        "rot_about/": {
+          x: "Pitch Distillation",
+          y: "Yaw Distillation",
+          z: "Roll Distillation"
+        },
+        "cons_about/": {
+          x: "Pitch Purification",
+          y: "Yaw Purification",
+          z: "Roll Purification"
+        },
+        "vec/": {
+          "get/": {
+            x: "Coordinate Purification: X",
+            y: "Coordinate Purification: Y",
+            z: "Coordinate Purification: Z"
+          },
+          "set/": {
+            x: "Coordinate Distillation: X",
+            y: "Coordinate Distillation: Y",
+            z: "Coordinate Distillation: Z"
+          }
+        },
+
+        swap_vec_list: "Vector Purification",
 
         "nocon/": {
           bool_coerce: "Retention Gambit: Augur's",
@@ -229,7 +271,12 @@
         false_eval: "Selene's Gambit",
         index_for_each: "Djehuty's Gambit",
         main_for_each: "Anubis' Gambit",
-        main_index_for_each: "Ra's Gambit"
+        main_index_for_each: "Ra's Gambit",
+
+        capsizing: "Capsizing Gambit",
+        "capsizing/copy": "Capsizing Gambit II",
+        dredging: "Dredging Gambit",
+        "dredging/copy": "Dredging Gambit II"
       },
 
       "book.hextrapats:": {
@@ -242,6 +289,11 @@
         vec_y: "Vector Rfln. Y II",
         vec_z: "Vector Rfln. Z II",
         vec_1: "Vector Rfln. 1 II",
+
+        "vec/": {
+          "get/x": "Coordinate Purif.: X/Y/Z",
+          "set/x": "Coordinate Dstl.: X/Y/Z",
+        },
 
         increment: "Incrementation Purif.",
         decrement: "Decrementation Purif.",
@@ -302,6 +354,8 @@
         "hextrapats:": {
           opposite_vecs: "vector not facing opposite to the start direction %s",
           too_short_to_swindle: "a list of at least length %s",
+          vec_list: "a list of exactly 3 numbers",
+          veclist: "a vector or a list of exactly 3 numbers",
           set_item: "a number, vector, or entity",
           set_list: "a non-empty list of entirely numbers, vectors, or entities"
         }
