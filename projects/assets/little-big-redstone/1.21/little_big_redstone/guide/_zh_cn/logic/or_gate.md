@@ -13,6 +13,9 @@ item_ids:
 # 或门
 
 <FloatingColumn width="100" align="right">
+	### 模拟
+	或门会取各输入中值最大者作为输出值。
+
 	### 真值表
 	<TruthTable inputs="2" outputs="1">
 		<TruthState input="0,0" output="0" />

@@ -12,6 +12,11 @@ item_ids:
 
 # 时序器
 
+<FloatingColumn width="100" align="right">
+	### 模拟
+	时序器所输出信号的值与输入信号的相等。但对于时序器而言，其输出信号为ON时输入信号并不一定为ON。此时，时序器会取令其输出变为ON的ON输入信号的值用作输出。
+</FloatingColumn>
+
 <Row>
 	<Column>
 		<RecipeFor id="sequencer" />
