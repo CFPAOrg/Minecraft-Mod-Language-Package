@@ -12,40 +12,28 @@ item_ids:
 
 # Redstone Terminal
 
-<ItemImage id="crazyae2addons:wireless_redstone_terminal" scale="4"></ItemImage>
+The **Redstone Terminal** controls Redstone Emitters in the ME network.
 
-The Redstone Terminal is a control panel for managing all Redstone Emitters in your ME network. It lets you search, view, and toggle emitters by name with a clean GUI.
-
-## [Video Tutorial](https://youtu.be/PJgyymdOtNE&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+It is designed around named emitter groups. Emitters with the same name are treated as one shared control entry.
 
 ---
 
-## How to Use
+## Name groups
 
-1. **Place the Terminal**
-    - Attach it to any ME cable in your network.
+Each row in the terminal represents a unique Redstone Emitter name.
 
-2. **Open the GUI**
-    - Right-click to open.
-    - You'll see a list of all named Redstone Emitters in the network.
+If multiple Redstone Emitters use the same name, they are grouped together and shown as one entry.
 
-3. **Search by Name**
-    - Use the search bar to filter emitters by their name.
-
-4. **Paging and Controls**
-    - Only 4 emitters are shown per page.
-    - Use arrows to switch pages.
-    - Each emitter shows:
-        - Name
-        - Current state (LOW/HIGH)
-        - Toggle button
-
-5. **Toggle State**
-    - Click the button next to a name to turn that emitter ON or OFF.
-    - Emits redstone at the emitter’s position.
+Toggling that entry changes all active Redstone Emitters with that exact name.
 
 ---
 
-## Notes
+## Search
 
-- Fully supports wireless terminals and universal terminals.
+The search field filters Redstone Emitters by their name.
+
+Search is case-insensitive and matches partial names.
+
+Right-clicking the search field clears it.
+
+---

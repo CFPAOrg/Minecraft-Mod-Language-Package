@@ -1,48 +1,73 @@
 ---
 navigation:
-   parent: crazyae2addons_index.md
-   title: Wireless Notification Terminal
-   icon: crazyae2addons:wireless_notification_terminal
+  parent: crazyae2addons_index.md
+  title: Wireless Notification Terminal
+  icon: crazyae2addons:wireless_notification_terminal
 categories:
-   - Monitoring and Automation
+  - Monitoring and Automation
 item_ids:
-   - crazyae2addons:wireless_notification_terminal
+  - crazyae2addons:wireless_notification_terminal
 ---
 
 # Wireless Notification Terminal
 
-The Wireless Notification Terminal is a wireless terminal that watches your ME storage and
-shows toast notifications when selected items or fluids or other resources cross a configured stock threshold.
-
-It is meant for simple “stock went above or below X” alerts.
-
-## [Video Tutorial](https://youtu.be/l7OcgG5FD_s&list=PLB8Rr5Xojkr5T1qoPr_4JdETiBkF4qF6r)
+The **Wireless Notification Terminal** monitors selected resources in your ME network and shows their current amount on the HUD.
+Each configured entry compares the current network amount with a threshold and displays the result directly on screen.
 
 ---
 
-## Requirements
+## Universal Wireless Terminal capable
 
-* The terminal must be linked to an AE network (same as other wireless terminals).
+You can join it with the wireless universal terminal.
 
 ---
 
-## Quick Start
+## Monitored resources
 
-1. Open the terminal GUI.
-2. In the first row, put the item or fluid you want to monitor into the filter slot.
-3. Enter a threshold value in the field next to it.
-4. Repeat for more rows (up to 32).
+The terminal has configurable monitor slots.
 
-When the stored amount changes and crosses the threshold, you will receive a toast:
+Place any resource into a slot to select what should be watched.
 
-* Above threshold (amount becomes greater than or equal to the threshold)
-* Below threshold (amount becomes less than the threshold)
+Each slot has its own threshold. A threshold of 0, or an empty threshold field, disables that monitor entry.
 
-Checks and updates happen once per second.
+---
 
-## Notes
+## Threshold values
 
-* Notifications only trigger when the state flips (below to above, or above to below).
-* Changing a filter item or editing the threshold resets the stored state for that row (so it will not instantly notify until it crosses again).
-* It works even while the GUI is closed, as long as the terminal item is in your inventory (server-side check once per second).
-* Works with Wireless Universal Terminal (WUT) as well.
+Thresholds define the amount that should be treated as the target level.
+
+Thresholds cannot be negative.
+
+Simple math expressions can be used for large values (see the [Math Parser](./math_parser.md))
+
+Invalid values are highlighted and are not applied.
+
+---
+
+## HUD display
+
+The HUD shows each active entry as an icon with current amount and threshold.
+
+Entries above the threshold are shown in green and entries below the threshold are shown in red.
+
+---
+
+## HUD position and scale
+
+The HUD X and HUD Y fields control where the notification list appears on screen.
+
+Both values are percentages from 0 to 100, HUD Scale controls the size of the overlay, also from 0 to 100.
+
+Setting scale to 0 hides the HUD.
+
+---
+
+## Updates and range
+
+The terminal updates the HUD once per second while it is in the player's inventory and linked to a valid ME network.
+
+If the terminal is out of wireless range, unlinked, or cannot access the network, it will stop sending HUD updates.
+
+The HUD is not updated while the terminal GUI is open.
+
+---
