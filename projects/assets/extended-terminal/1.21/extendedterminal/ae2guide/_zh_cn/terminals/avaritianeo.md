@@ -12,7 +12,7 @@ item_ids:
 
 # 无尽贪婪Neo合成终端
 
-<et:condition load="AvaritiaNeo">
+<myotus:condition load="AvaritiaNeo">
 <Row>
 <ItemImage id="extendedterminal:neo_extreme_terminal" scale={3}/>
 <ItemImage id="avaritia:extreme_crafting_table" scale={3}/>
@@ -23,4 +23,4 @@ item_ids:
 <RecipeFor id="extendedterminal:neo_extreme_terminal" />
 
 
-</et:condition>
+</myotus:condition>
