@@ -35,5 +35,3 @@ The search field filters Redstone Emitters by their name.
 Search is case-insensitive and matches partial names.
 
 Right-clicking the search field clears it.
-
----

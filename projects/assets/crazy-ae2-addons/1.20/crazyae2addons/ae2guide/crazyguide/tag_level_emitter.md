@@ -69,4 +69,3 @@ With an Analog Card installed, the part outputs an analog redstone signal based 
 
 See the [Analog Card](./analog_card.md)
 
----

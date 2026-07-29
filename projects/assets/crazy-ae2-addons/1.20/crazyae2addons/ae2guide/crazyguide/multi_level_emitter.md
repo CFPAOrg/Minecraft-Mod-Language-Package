@@ -86,5 +86,3 @@ AND / OR logic still applies to the slot results.
 ## Crafting fallback
 
 If Crafting Card mode has no configured resources, the emitter checks whether the network is requesting any crafting job.
-
----

@@ -79,5 +79,3 @@ A limit of 0 disables the cap.
 ## Clear behavior
 
 The clear button replaces all patterns in the internal inventory with blank patterns.
-
----

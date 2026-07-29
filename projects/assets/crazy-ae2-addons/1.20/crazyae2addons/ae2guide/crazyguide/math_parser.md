@@ -65,5 +65,3 @@ For example, 1e6 means 1000000.
 Spaces and underscores are ignored before parsing.
 
 This means 1 000, 1_000, and 1000 are treated as the same value.
-
----

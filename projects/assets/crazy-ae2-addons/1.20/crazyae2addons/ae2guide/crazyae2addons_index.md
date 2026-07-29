@@ -32,6 +32,10 @@ Tools for visualizing ME network data, tracking stock levels, and showing alerts
   A cable mounted part for showing text, images, and AE2 network data. Supports
   tokens, colors, and merge mode for building large screens.
 
+- [ME Display Database](crazyguide/display_database.md)  
+  A block that stores named text values shared across the ME grid, which Displays
+  can read with simple tokens.
+
 - [Wireless Notification Terminal](crazyguide/notification_terminal.md)  
   A wireless terminal that monitors up to 16 items (configurable) and displays colored HUD
   alerts when their stored amount goes below/above the configured threshold.

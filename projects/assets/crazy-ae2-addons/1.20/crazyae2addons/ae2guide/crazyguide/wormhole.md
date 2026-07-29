@@ -11,52 +11,78 @@ item_ids:
 
 # Wormhole
 
-The **Wormhole** is a universal P2P tunnel that bridges two or more locations.
+The **Wormhole** is a universal P2P tunnel. Instead of carrying one resource type it hands the block on one
+side over to the other side whole, with whatever capabilities that block has.
 
-Unlike normal P2P tunnels, it is not limited to one resource type. It can proxy capabilities, forward interactions, and teleport the player to the other side.
+---
+
+## Pairing
+
+Pairing works like any AE2 P2P tunnel. Right-click the input with a Memory Card, then right-click every
+output with the same card. Both sides need to be on the same network.
+
+The card only accepts Wormhole settings. A card holding a normal P2P configuration is refused, and a Wormhole
+card does nothing on a normal tunnel.
 
 ---
 
 ## Capability proxy
 
-A block placed in front of an output Wormhole can expose its capabilities through the input Wormhole.
+Whatever block sits in front of one Wormhole becomes visible through the tunnel on the other end. Pipes,
+cables, and machines connected to the near side talk to the far block as if it were standing right there.
 
-This allows pipes, cables, machines, and other systems connected to the input side to interact with the block on the output side as if it were local.
+This works both ways. The input serves what the outputs face, and each output serves what the input faces.
 
-Supported capability types depend on config, but can include items, fluids, Forge Energy, GregTech EU, and other Forge capabilities.
+Which capability types pass through is a config choice. By default items, fluids, Forge Energy, GregTech EU,
+and other Forge capabilities such as Mekanism heat all go through, and each of those can be turned off on its
+own.
 
 ---
 
 ## Multiple outputs
 
-When multiple outputs are paired to the same input, the input can expose them as one merged target.
+An input can have several outputs, and by default it merges them. Several inventories look like one big
+inventory, several tanks look like one tank, several energy buffers look like one buffer.
 
-For example, multiple inventories can appear as one combined inventory, and multiple tanks can appear as one combined fluid target.
+The tunnel never splits one insertion between outputs. It fills what it can reach in order, and it merges
+freely in the other direction, from many outputs back into the input.
 
-If merged proxying is disabled in config, the input forwards to the first available output instead.
+With merged proxying turned off in the config, the input stops merging and simply serves the first output
+that offers the capability.
 
 ---
 
 ## Remote interactions
 
-Interacting with a paired Wormhole can activate the block on the other side.
+Right-clicking a paired Wormhole runs that click on the block the far side faces, with whatever you are
+holding. That opens remote GUIs, and it flips buttons, levers, doors, and machines. A Memory Card and an
+Ender Pearl are the two exceptions, since those do their own thing on a Wormhole.
 
-This can open remote GUIs or activate blocks such as buttons, levers, doors, and machines.
+While a remote GUI is open, the distance check follows the far block instead of you, so the screen stays open
+even if you walk away or step into another dimension. It closes when you close it.
 
-Remote interaction may work across dimensions if the target side is loaded.
+The far side has to be in a ticking chunk. Nothing happens if it is not loaded.
 
-This behavior can be disabled in config.
+This can be turned off in the config.
 
 ---
 
 ## Teleportation
 
-Holding an Ender Pearl and using a paired Wormhole teleports the player to the block in front of the opposite side.
+Right-clicking a paired Wormhole while holding an Ender Pearl puts you at the block the other side faces,
+looking away from it.
 
-The Ender Pearl is consumed, unless the player is in Creative mode.
+The pearl is consumed unless you are in Creative. Other dimensions are fine, again as long as the target
+chunk is loaded and ticking.
 
-Teleportation can work across dimensions, but the target chunk must be loaded and ticking.
-
-This behavior can be disabled in config.
+This can be turned off in the config.
 
 ---
+
+## Nested tunnels
+
+Routing other P2P tunnels through a Wormhole is turned off by default.
+
+While it is off the Wormhole refuses to carry another tunnel's channels, the same way a vanilla ME P2P tunnel
+does. Turning it on lifts that restriction, so tunnels can run through the Wormhole. The Wormhole needs one
+channel either way.

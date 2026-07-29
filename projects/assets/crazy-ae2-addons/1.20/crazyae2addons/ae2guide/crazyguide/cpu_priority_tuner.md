@@ -39,5 +39,3 @@ The Crafting Status CPU list is sorted by priority.
 Higher priority CPUs are shown first.
 
 The CPU tooltip shows the current priority value.
-
----

@@ -14,5 +14,3 @@ item_ids:
 The **Tag View Cell** is a View Cell variant that filters ME Terminal contents using a tag expression instead of a fixed item list.
 
 Expression syntax is shared with other tag-based features (see the [Tag Matcher](./tag_matcher.md)).
-
----

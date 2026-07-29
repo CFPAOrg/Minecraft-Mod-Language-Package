@@ -39,5 +39,3 @@ The search field filters emitters by two things:
 This means you can search for a renamed emitter, such as Ore Line, or search for the item or fluid it is watching, such as Iron Ingot or Lava.
 
 Right-clicking the search field clears it.
-
----

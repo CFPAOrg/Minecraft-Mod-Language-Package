@@ -69,4 +69,3 @@ item_ids:
 
 见[模拟信号卡](./analog_card.md)。
 
----

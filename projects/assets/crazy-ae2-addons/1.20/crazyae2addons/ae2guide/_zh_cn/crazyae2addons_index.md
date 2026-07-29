@@ -29,6 +29,9 @@ Crazy AE2 Addons以多种方式拓展了应用能源2（Applied Energistics 2）
 - [显示屏](crazyguide/display.md)  
   能显示文本、图像、AE2网络数据的线缆子部件，支持多种组件符和颜色，还有为大型屏幕准备的合并模式。
 
+- [ME显示屏数据库](crazyguide/display_database.md)  
+  存储ME网络共享的有名称文本值；显示屏可使用简单的组件符读取这些值。
+
 - [无线通知终端](crazyguide/notification_terminal.md)  
   最多能监测16种物品（可配置）的无线终端，可在对应物品库存量超出/跌过所配置阈值时发出HUD警报，警报颜色可调。
 

@@ -15,4 +15,3 @@ The **Redstone Emitter** is a named redstone output controlled by a Redstone Ter
 
 It does not monitor stored resources or crafting state. Its output state is changed remotely by the [Redstone Terminal](./redstone_terminal.md).
 
----

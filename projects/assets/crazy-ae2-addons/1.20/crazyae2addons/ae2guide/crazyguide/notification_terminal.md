@@ -69,5 +69,3 @@ The terminal updates the HUD once per second while it is in the player's invento
 If the terminal is out of wireless range, unlinked, or cannot access the network, it will stop sending HUD updates.
 
 The HUD is not updated while the terminal GUI is open.
-
----

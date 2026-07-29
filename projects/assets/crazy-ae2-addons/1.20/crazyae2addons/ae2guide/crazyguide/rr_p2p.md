@@ -19,5 +19,3 @@ There are two variants:
 
 * Round Robin Item P2P
 * Round Robin Fluid P2P
-
----

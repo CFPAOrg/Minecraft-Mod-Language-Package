@@ -50,7 +50,7 @@ Installing the card adds an analog mode toggle to the emitter GUI. The toggle sw
 
 Linear mode scales evenly across the whole range.
 
-The signal is calculated as: signal = floor(amount × 15 / threshold)
+The signal is calculated as: signal = floor(amount \* 15 / threshold)
 
 ---
 
@@ -73,5 +73,3 @@ With this mode, the signal roughly means:
 The emitter's Redstone Mode still applies to the analog signal.
 
 Low Signal inverts it as: 15 - calculated signal
-
----

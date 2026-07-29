@@ -48,5 +48,3 @@ This is so when you have a provider with for example 400 patterns inside, you ca
 ## Tooltip information
 
 Tooltip shows information about the saved inventory. This includes the current slot count and how full the provider is.
-
----

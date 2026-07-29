@@ -56,5 +56,3 @@ The Ejector inserts into the block in front of its output face.
 The output face can be rotated with a wrench.
 
 If the target disappears or cannot accept items, the Ejector tries to return buffered items to ME storage.
-
----

@@ -67,18 +67,3 @@ Methods:
 | remove(key)     | Removes a value.         |
 | list()          | Returns all values.      |
 
----
-
-## Config
-
-The feature can be disabled in the common config.
-
-When disabled, the GUI does not open, Display database tokens do not resolve, and ComputerCraft methods do not work.
-
----
-
-## Tips
-
-Use the database for values that cannot be read directly by normal Display tokens, such as ComputerCraft status text, selected fuel names, calculated runway time, or controller state.
-
-For normal ME item/fluid amounts, use stock tokens. For rates, use delta tokens.
