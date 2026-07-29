@@ -1,5 +1,6 @@
 ---
 id: pid_controller
+lookup: neepmeat:pid_controller
 ---
 
 # Proportional-Integral-Derivative Controller

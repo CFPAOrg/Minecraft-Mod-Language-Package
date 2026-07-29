@@ -1,5 +1,6 @@
 ---
 id: large_crusher
+lookup: neepmeat:crusher_segment
 ---
 
 # 大型破碎机

@@ -10,3 +10,5 @@ A farmer once heard a rotten voice beneath his fields. Each night he would dig, 
 ## Usage
 
 Whisper Wheat can be obtained by Enlightening regular wheat seeds. Whisper Wheat is the precursor to Whisper Brass and can be used to make bread and Animal Feed.
+
+\columns{\item_render[height=30]{neepmeat:whisper_wheat_seeds}}{\item_render[height=30]{neepmeat:whisper_wheat}}

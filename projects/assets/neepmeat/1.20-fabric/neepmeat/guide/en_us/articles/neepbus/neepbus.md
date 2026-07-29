@@ -35,7 +35,7 @@ For example, a slider will write its value to the target address when the value 
 
 \image[scale=0.5]{neepmeat:guide/images/neepbus_slider_redstone.png}
 
-In this example, a slanted slider is sending values to a redstone interface. When the slider's value changes, it will send a message to the transducer. The transducer will then emit a redstone signal corresponding to the received number.
+In this example, a slanted slider is sending values to a Redstone Transducer. When the slider's value changes, it will send a message to the transducer. The transducer will then emit a redstone signal corresponding to the received number.
 
 \columns{\item_render[height=30]{neepmeat:slanted_slider}}{\item_render[height=30]{neepmeat:redstone_transducer}}
 

@@ -1,6 +1,6 @@
 ---
 id: power_transfer
-lookup: neepmeat:ethereal_fuel_bucket
+lookup: neepmeat:ethereal_fuel_bucket, neepmeat:vascular_conduit
 ---
 
 # Power Transfer

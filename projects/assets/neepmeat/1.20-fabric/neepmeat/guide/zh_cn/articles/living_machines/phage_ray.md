@@ -21,7 +21,7 @@ lookup: neepmeat:phage_ray, neepmeat:extractor
 可选组件：
 
 \columns[fit=first]{\item_render[height=18]{neepmeat:extractor}}{采集提取机}
-
+\columns[fit=first]{\item_render[height=18]{neepmeat:silky_extractor}}{精准提取机}
 \columns[fit=first]{\item_render[height=18]{neepmeat:item_output_port}}{物品输出端口}
 
 # 肉质武器模块

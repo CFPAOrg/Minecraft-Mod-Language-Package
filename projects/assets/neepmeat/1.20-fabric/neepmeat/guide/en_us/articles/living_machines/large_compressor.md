@@ -15,5 +15,4 @@ Like other machine components, a large compressor must be part of a valid struct
 Required components:
 
 \columns[fit=first]{\item_render[height=18]{neepmeat:large_compressor}}{Large Compressor}
-
 \columns[fit=first]{\item_render[height=18]{neepmeat:motor_port}}{Motor Port}

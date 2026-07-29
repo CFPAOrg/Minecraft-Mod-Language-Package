@@ -36,7 +36,7 @@ NEEP总线可发送数值和字符串信息。
 
 \image[scale=0.5]{neepmeat:guide/images/neepbus_slider_redstone.png}
 
-此示例中，斜板滑动拉杆在向红石接口发送其值。滑动拉杆会在值变动时向换能器发出消息，换能器随后根据接收的数发出红石信号。
+此示例中，斜板滑动拉杆在向红石换能器发送其值。滑动拉杆会在值变动时向换能器发出消息，换能器随后根据接收的数发出红石信号。
 
 \columns{\item_render[height=30]{neepmeat:slanted_slider}}{\item_render[height=30]{neepmeat:redstone_transducer}}
 

@@ -1,5 +1,6 @@
 ---
 id: pid_controller
+lookup: neepmeat:pid_controller
 ---
 
 # 比例-积分-微分控制器

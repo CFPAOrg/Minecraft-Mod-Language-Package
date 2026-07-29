@@ -49,14 +49,14 @@ IX  digit
 
 Voiced Consonants   Unvoiced Consonants [2]
 
-R   red             S sam
+R   red             S  sam
 L   allow           SH fish
 W   away            TH thin
-WH  whale           P poke
-Y   you             T talk
-M   Sam             K cake
+WH  whale           P  poke
+Y   you             T  talk
+M   Sam             K  cake
 N   man             CH speech
-NX  song            H ahead
+NX  song            H  ahead
 B   bad
 D   dog
 G   again

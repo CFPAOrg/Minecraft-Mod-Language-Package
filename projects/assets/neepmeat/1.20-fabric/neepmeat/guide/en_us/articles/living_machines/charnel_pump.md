@@ -19,9 +19,6 @@ When the pump is first turned on, the surface will be breached by a spout of wri
 Required components:
 
 \columns[fit=first]{\item_render[height=18]{neepmeat:charnel_pump}}{Charnel Pump}
-
 \columns[fit=first]{\item_render[height=18]{neepmeat:fluid_input_port}}{Fluid Input Port}
-
 \columns[fit=first]{\item_render[height=18]{neepmeat:motor_port}}{Motor Port}
-
 \columns[fit=first]{\item_render[height=18]{neepmeat:fluid_output_port}}{Fluid Output Port}

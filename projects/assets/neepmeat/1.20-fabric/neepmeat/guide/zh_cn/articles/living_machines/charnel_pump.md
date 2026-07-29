@@ -19,9 +19,6 @@ lookup: neepmeat:charnel_pump
 必需组件：
 
 \columns[fit=first]{\item_render[height=18]{neepmeat:charnel_pump}}{积骸泵}
-
 \columns[fit=first]{\item_render[height=18]{neepmeat:fluid_input_port}}{流体输入端口}
-
 \columns[fit=first]{\item_render[height=18]{neepmeat:motor_port}}{发动机端口}
-
 \columns[fit=first]{\item_render[height=18]{neepmeat:fluid_output_port}}{流体输出端口}

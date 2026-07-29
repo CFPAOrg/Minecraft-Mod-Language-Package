@@ -21,7 +21,7 @@ Required components:
 Optional components:
 
 \columns[fit=first]{\item_render[height=18]{neepmeat:extractor}}{Harvest Extractor}
-
+\columns[fit=first]{\item_render[height=18]{neepmeat:silky_extractor}}{Silky Extractor}
 \columns[fit=first]{\item_render[height=18]{neepmeat:item_output_port}}{Item Output Port}
 
 # Meatgun Module

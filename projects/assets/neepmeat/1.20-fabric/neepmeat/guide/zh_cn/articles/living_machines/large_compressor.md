@@ -15,5 +15,4 @@ lookup: neepmeat:large_compressor
 必需组件：
 
 \columns[fit=first]{\item_render[height=18]{neepmeat:large_compressor}}{大型压缩机}
-
 \columns[fit=first]{\item_render[height=18]{neepmeat:motor_port}}{发动机端口}

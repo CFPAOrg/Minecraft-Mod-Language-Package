@@ -40,7 +40,7 @@ To execute a program stored in a cabinet, the `'` or `DYCALL` words can be used.
 
 ## Example 1
 
-The following program defines the word `PRINT_HELLO`. It has been saved to a program card and is stored in a cabinet
+The following program defines the word `print_hello`. It has been saved to a program card and is stored in a cabinet
 
 ```
 : print_hello "Hello" . ; 
