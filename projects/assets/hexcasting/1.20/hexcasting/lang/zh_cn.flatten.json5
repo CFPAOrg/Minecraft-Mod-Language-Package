@@ -1405,7 +1405,7 @@
       },
 
       couldnt_cast: {
-        "1": "为什么我就是施不了这个法术？！$(br2)我找到的卷轴货真价实。我能$(italic)感受/$到卷轴的嗡鸣——图案是真的，真的不能再真了。法术$(italic)就在里面/$。$(p)但感觉起来它好像处在某种薄膜的另一侧。我试过召唤它——它也想要起效——但它$(italic)做不到/$。",
+        "1": "为什么我就是施不了这个法术？！$(br2)我找到的卷轴货真价实。我能$(italic)感受/$到卷轴的嗡鸣——图案是真的，真得不能再真了。法术$(italic)就在里面/$。$(p)但感觉起来它好像处在某种薄膜的另一侧。我试过召唤它——它也想要起效——但它$(italic)做不到/$。",
         "2": "好像那层屏障会因我施法时用的魔力而被缓慢地削弱。但就算我用尽全力——最大程度地专注，最精致的紫水晶，最精确的图案——它$(italic)就是不肯/$跨过那个屏障。真是惹人上火。难道我对魔法的研究就$(p)$(italic)止步于此/$了吗？就因为我无力施法，我就要放弃那些力量了吗？$(br2)深呼吸。我应该仔细回顾我曾学到的知识，就算可能加起来也没多少……",
         "3": "……经过仔细回顾……我发现我自己发生了改变。$(p)似乎……拜$(l:items/amethyst)$(item)紫水晶/$所赐，我能仅凭我自身的意识和生命能量来施放法术，就和传说中说的一样。$(p)我不清楚我为什么做得到。只是……获得真知的代价就在那里，而我现在知道了那个代价是什么。我要去承受它。$(br2)幸运的是，我也清楚我的极限在哪里——我的生命力最旺盛时大概就相当于两个$(l:items/amethyst)$(item)充能紫水晶/$中的$(media)媒质/$。",
         "4": "只是想想都让我打颤——直到现在，我都在研究中保持了自身意识的大体完整。但这样做的结果就是，我只建立了单向而脆弱的连接。$(p)我与屏障的另一侧是相连的，其间的屏障已因我的努力而受了削弱。而在屏障的另一侧，仅是简单的操作，就能带来永恒的荣耀。$(p)我想要拥有那份力量，是否就大错特错？",
@@ -1504,10 +1504,10 @@
         "4": "已知某个方块的位置，若要指向它上方的方块，就需要向 Y 分量加 1：可以创建值为 (0, 1, 0) 的第二个向量与原有向量求和。类似地，若要指向它东边两格处，可使用值为 (2, 0, 0) 的向量。例中用到的两个向量都代表着从原有位置指向新位置的$(o)偏移量/$。",
         "5": "注意，虽然位置向量和偏移向量含义不同，但它们在本质上没有区别——都只是三个数组成的集合。只要我想，所有向量都可以看作一类：位置不过是从世界原点指向对应位置的偏移，偏移也不过是相对于其他原点的位置。",
         "6": "向量有两个重要属性，分别是$(o)模长/$（长度）和$(o)方向/$；把向量看作偏移可能会方便想象。$(br2)选取一个原点，再按照偏移向量直线移动，走过的距离即是向量的长度，走的方向则是向量的方向。",
-        "7": "向量有许多操作方法。如前例所说，向量可求和，即分别求 X、Y、Z 分量的和。减法也是一样——恰巧，两个位置向量的差正是减向量指向被减向量的偏移。$(br2)向量的乘除则不甚容易；有关这两种运算的介绍可参见$(l:https://www.mathsisfun.com/algebra/vectors-dot-product.html)这里/$和$(l:https://www.mathsisfun.com/algebra/vectors-cross-product.html)这里/$。",
+        "7": "向量有许多操作方法。如前例所说，向量可求和，即对 X、Y、Z 分量分别求和。减法也是一样——恰巧，两个位置向量的差正是减向量指向被减向量的偏移。$(br2)向量的乘除则不甚容易；有关这两种运算的介绍可参见$(l:https://www.mathsisfun.com/algebra/vectors-dot-product.html)这里/$和$(l:https://www.mathsisfun.com/algebra/vectors-cross-product.html)这里/$。",
         "8": "以数乘或除向量可进行$(o)缩放/$，即同时让三个分量乘以或除以该数。$(br2)只要所用的数是正数，乘除便只会影响长度，不影响方向。若用的是负数，那么长度会和用正数时一样增减，且同时会反转向量的方向。",
-        "9": "让向量除以其长度会得到单位向量——方向不变，但长度恰变为 1。在只看重向量的方向时，单位向量就很合适。单位向量数乘后，所得向量的长度即恰为所用的数，这一性质也很有用。$(br2)许多会计算方向的图案，比如$(l:patterns/basics#hexcasting:get_entity_look)照准仪之纯化/$，即会返回单位向量。",
-        "10": "到目前为止提及的所有运算，以及还未提及的那些，都可通过$(l:patterns/math)数学/$章节中的图案实现。$(br2)我可以通过$(l:patterns/basics)基础图案/$将实体的信息获取为新向量，可以使用$(l:patterns/consts)常量/$来创建正方向的单位向量，也可通过$(l:patterns/math#hexcasting:construct_vec)向量之提整/$将三个数组合为向量。",
+        "9": "让向量除以其长度会得到单位向量——方向不变，但长度恰变为 1。在只看重向量的方向时，单位向量就很合适。单位向量数乘后，所得向量的长度恰为所用的数，这一性质也很有用。$(br2)许多会计算方向的图案，比如$(l:patterns/basics#hexcasting:get_entity_look)照准仪之纯化/$，返回的就是单位向量。",
+        "10": "到目前为止提及的所有运算，以及还未提及的那些，都可通过$(l:patterns/math)数学/$章节中的图案实现。$(br2)我可以通过$(l:patterns/basics)基础图案/$将实体的信息获取为新向量，可以使用$(l:patterns/consts)常量/$来创建坐标轴向的单位向量，也可通过$(l:patterns/math#hexcasting:construct_vec)向量之提整/$将三个数组合为向量。",
         "11": "对于与向量有关的那些更为高深的概念，我可能会在这本笔记之外再进行些拓展研究。下方的视频则是不错的参考资料。",
         "11.link_text": "3blue1brown",
       },
@@ -1564,9 +1564,9 @@
       },
 
       stack: {
-        "1": "$(thing)栈/$，又被称为“后进先出表（LIFO）”，是计算机科学中的概念。简而言之，栈是一种只能与最近交互过的事物交互的事物的集合。$(br2)想象一摞盘子，新盘子会被放在其顶部。若想要与放在这摞盘子中间的某个盘子交互，你就必须先将它上面的所有盘子拿开才行。",
-        "2": "因为栈非常简单，所以可用的交互种类屈指可数：$(li)$(italic)向其中加入事物/$，称为“入栈”/“push”。$(li)$(italic)移除最后加入的元素/$，称为“出栈”/“pop”。$(li)$(italic)校验或修改最后加入的元素/$，称为“检视”/“peek”。$(br)我们将最后加入的元素称为“栈顶元素”，就和盘子的类比差不多。$(p)举个例子，如果向栈压入 1 号元素，然后压入 2 号元素，然后弹出一个元素，这时栈顶元素便是 1 号元素。",
-        "3": "操作（大致）都只能与栈以如上几种方式交互。它们会弹出部分它们所期望的 iota（称为“参数”或“实参”或“形参”），对它们进行处理，然后压入一定数目的结果。$(br2)当然，某些操作（例如$(l:patterns/basics#hexcasting:get_caster)$(action)意识之精思/$）可能不会弹出任何元素，而某些操作（尤其是法术）可能不会压入任何元素。",
+        "1": "$(thing)栈/$，又被称为“后进先出表（LIFO）”，是计算机科学中的概念。简而言之，栈是一种只能与最近交互过的事物交互的事物集合。$(br2)想象一摞盘子，新盘子会被放在其顶部。若想要与放在这摞盘子中间的某个盘子交互，你就必须先将它上面的所有盘子拿开才行。",
+        "2": "因为栈非常简单，所以可用的交互种类屈指可数：$(li)$(italic)向其中加入事物/$，称为“入栈”“压栈”/“push”。$(li)$(italic)移除最后加入的元素/$，称为“出栈”“弹栈”/“pop”。$(li)$(italic)校验或修改最后加入的元素/$，称为“检视”/“peek”。$(br)我们将最后加入的元素称为“栈顶元素”，就和盘子的类比差不多。$(p)举个例子，如果向栈压入 1 号元素，然后压入 2 号元素，然后弹出一个元素，这时栈顶元素便是 1 号元素。",
+        "3": "操作（大致）都只能与栈以如上几种方式交互。它们会弹出部分它们所期望的 iota（称为“参数”），对它们进行处理，然后压入一定数目的结果。$(br2)当然，某些操作（例如$(l:patterns/basics#hexcasting:get_caster)$(action)意识之精思/$）可能不会弹出任何元素，而某些操作（尤其是法术）可能不会压入任何元素。",
         "4": "更复杂的操作都可用若干次入栈、出栈或检视操作实现。例如，$(l:patterns/stackmanip#hexcasting:swap)$(action)弄臣之策略/$交换栈顶两个元素的顺序。这可认为是弹出两个 iota 并以相反顺序重新压入。又例如，$(l:patterns/stackmanip#hexcasting:duplicate)$(action)双子之分解/$会复制栈顶元素，也即其检视栈顶并压入一个一样的元素。",
       },
 
@@ -2013,13 +2013,13 @@
         "2": "幸运的是，自然提供了一组专用于和其他图案交互的特殊图案。$(br2)简而言之，$(l:patterns/patterns_as_iotas#hexcasting:runtime_escape)$(action)深思/$和$(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)考察/$能将一个图案加到栈中，$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$和$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$能加入一整个列表，$(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)消解/$则能撤销创建列表途中犯的错误。",
         runtime_escape: {
           "1": "要使用$(l:patterns/patterns_as_iotas#hexcasting:runtime_escape)$(action)深思/$，先绘制它，然后绘制任意图案。第二个图案就会被加到栈中。",
-          "2": "如果对计算机科学有足够了解的话，你可能能将其与“转义”/“escape”操作联系起来。$(br2)考察的一大用途是将某一图案复制到$(l:items/scroll)$(item)卷轴/$或$(l:items/slate)$(item)石板/$上，且要和$(l:patterns/readwrite#hexcasting:write)$(action)书吏之策略/$配合使用。这之后卷轴和石板就能拿来装饰了。",
+          "2": "如果对计算机科学有足够了解的话，你可能能将其与“转义”/“escape”操作联系起来。$(br2)此图案的一大用途是将某一图案复制到$(l:items/scroll)$(item)卷轴/$或$(l:items/slate)$(item)石板/$上，且要和$(l:patterns/readwrite#hexcasting:write)$(action)书吏之策略/$配合使用。这之后卷轴和石板就能拿来装饰了。",
         },
         parens: {
           "1": "绘制$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$会让这之后绘制的图案不再与操作联系。而在绘制$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$后，之前绘制的图案就会作为一个列表加到栈中。",
           "2": "如果绘制内省后再绘制一个$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)内省/$，则它也将被加到列表中，而且需绘制$(italic)两次/$$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$才能回到正常施法模式。",
         },
-        undo: "最后，若在$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$和$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$之间有图案绘制错误，则可绘制$(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)消解/$以移除图案列表中的最后绘制的图案。",
+        undo: "最后，若在$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$和$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$之间有图案绘制错误，可绘制$(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)消解/$以移除图案列表中的最后绘制的图案。",
         escape: "和$(l:patterns/patterns_as_iotas#hexcasting:runtime_escape)$(action)深思/$类似，但在$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$和$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$之间也能正常运作。它可以“转义”$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)内省/$和$(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)反思/$之间的其他图案，将这些图案压栈，而不产生任何其他效果。",
         further_notes: {
           title: "更多笔记",
@@ -2189,7 +2189,7 @@
 
       "teleport/great": {
         "1": "此法术比$(l:patterns/spells/basic#hexcasting:blink)$(action)闪现/$更加强大，能将实体传送到世界上几乎任何一处！没有距离限制，它似乎需要消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
-        "2": "所给向量代表偏差值，而非世界中的绝对位置；比如，使用 (1, 0, 0) 时，目标实体会被传送到原有位置恰好 1 格以东处。$(br2)当然这种传送也不是尽善尽美的，在传送我自己时，我便难以保持十足的专注。这可能会导致我身上的部分物品散落在目的地周围。$(br2)还有，传送的实体将会被强制从其所乘坐的无生命载具中卸下……但我曾读到过动物可以一起被传送，大概吧。",
+        "2": "所给向量代表偏移量，而非世界中的绝对位置；比如，使用 (1, 0, 0) 时，目标实体会被传送到原有位置恰好 1 格以东处。$(br2)当然这种传送也不是尽善尽美的，在传送我自己时，我便难以保持十足的专注。这可能会导致我身上的部分物品散落在目的地周围。$(br2)还有，传送的实体将会被强制从其所乘坐的无生命载具中卸下……但我曾读到过动物可以一起被传送，大概吧。",
       },
 
       zeniths: {
