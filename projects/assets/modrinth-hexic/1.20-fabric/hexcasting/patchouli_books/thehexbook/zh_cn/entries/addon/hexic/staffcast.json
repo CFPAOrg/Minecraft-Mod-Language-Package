@@ -1,0 +1,25 @@
+{
+  "name": "法杖施法图案",
+  "category": "hexcasting:patterns",
+  "icon": "hexcasting:staff/mindsplice",
+  "pages": [
+    "这些图案施放$(hex)咒术/$的方式与我亲自绘制图案一致。此类图案共有两种：卓越版本会借用外部栈，初等版本会使用法杖栈。两种图案均会保留渡鸦之思。",
+    {
+      "type": "hexcasting:pattern",
+      "anchor": "hexic:staffcast_factory",
+      "op_id": "hexic:staffcast_factory",
+      "input": "∀αβ. α, [α → β]",
+      "output": "β",
+      "text": "让法杖施放$(hex)咒术/$。施放时会使用外部施法环境的栈。"
+    },
+    "这些图案的名称有些怪。在初等版本外套一层包装器，即可模拟卓越版本；但仅使用卓越版本却完全无法访问法杖栈。严格说来，不应该是初等版本比卓越版本更强大吗？",
+    {
+      "type": "hexcasting:pattern",
+      "anchor": "hexic:staffcast_factory/lazy",
+      "op_id": "hexic:staffcast_factory/lazy",
+      "input": "[? → ?]",
+      "output": "",
+      "text": "让法杖施放$(hex)咒术/$。咒术会使用法杖自身的栈，但会保留其外部环境的渡鸦之思。"
+    }
+  ]
+}
