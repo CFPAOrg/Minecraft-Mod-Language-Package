@@ -26,8 +26,8 @@ on the left side of logic.
 Each input port can have exactly one wire connected to it. As for output ports, there is no limit on how many wires
 can come out of them. If you need to combine multiple wires into one input port, use an [OR gate](logic/or_gate.md).
 
-Where normally redstone may have a signal strength of 0 to 15, redstone bits only have a signal strength of 0 or 1. In
-simpler terms, a wire may only be on or off - it is a strictly boolean system.
+Redstone bits work similarly to normal redstone dust, where it may have a signal strength ranging from 0 to 15. Of
+course, a signal strength of 0 would mean the wire is off, and 1 and above are considered on.
 
 ### Working with wires
 

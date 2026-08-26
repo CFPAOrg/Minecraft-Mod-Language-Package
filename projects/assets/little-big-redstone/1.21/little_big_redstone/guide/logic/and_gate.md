@@ -13,6 +13,9 @@ item_ids:
 # AND Gate
 
 <FloatingColumn width="100" align="right">
+	### Analog
+	AND Gates will yield an output signal equal to the greatest input signal.
+
 	### Truth Table
 	<TruthTable inputs="2">
 		<TruthState input="0,0" output="0" />

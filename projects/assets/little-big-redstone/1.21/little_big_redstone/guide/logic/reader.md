@@ -12,6 +12,12 @@ item_ids:
 
 # Reader
 
+<FloatingColumn width="100" align="right">
+	### Analog
+	When in comparator mode, the reader will yield an output value equal to the analog signal strength emitted by the
+	block for comparators. Otherwise, readers will only ever yield an output value of 0 (OFF) or 1 (ON).
+</FloatingColumn>
+
 <RecipeFor id="reader" />
 
 The reader is a logic component that has no input inside of the circuit. Instead, the reader will output a signal based
@@ -21,8 +27,9 @@ Valid containers for the reader consist of item containers (chests, barrels, fur
 fluid tanks), and energy containers (modded FE containers such as batteries). By default it reads item fullness, but
 you may change this in the logic config menu.
 
-A reader can be configured to detect a minumum percentage of a container in order for it to have an output signal of
-ON. By default the minimum fill percentage is 50%.
+A reader can be configured to detect a certain threshold of a container's content level in order for it to have an ON
+output. This threshold can either be a percentage or a constant value. To use a percentage, simply include a % at the
+end of the value.
 
 Below is an example of a reader being used to light up a redstone lamp when the chest is at least 50% full.
 
@@ -47,7 +54,7 @@ Below is an example of a reader being used to light up a redstone lamp when the 
 				<Logic name="reader" x="0" y="0" type="reader" data="{config:{direction:'west'}}" />
 				<Logic name="output" x="32" y="0" type="io" data="{config:{direction:'east',input:false,signal_strength:15}}" />
 	
-				<Wire from="reader" fromPort="0" to="output" toPort="0" powered={true} />
+				<Wire from="reader" fromPort="0" to="output" toPort="0" powered="1" />
 			</MicrochipScene>
 		</Column>
 	</Row>

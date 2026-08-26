@@ -12,6 +12,13 @@ item_ids:
 
 # Sequencer
 
+<FloatingColumn width="100" align="right">
+	### Analog
+	Sequencers yield an output signal value equal to the input signal value. In the case of sequencers, the input value
+	does not need to be ON in every circumstance for the output to be ON. In such a case, the value of the ON input that
+	led to the ON output will be used for the output.
+</FloatingColumn>
+
 <Row>
 	<Column>
 		<RecipeFor id="sequencer" />
