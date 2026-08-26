@@ -5,9 +5,9 @@ lookup: neepmeat:pressure_washer
 
 # Pressure Washer
 
-The Pressure Washer can change or remove certain blocks depending on the fluid used.
+\columns[fit=second]{The Pressure Washer can change or remove certain blocks depending on the fluid used.
 
-Press R (by default) when holding to interact with blocks normally.
+Press R (by default) when holding to interact with blocks normally.}{\item_render{neepmeat:pressure_washer}}
 
 ## Fluid Effects
 

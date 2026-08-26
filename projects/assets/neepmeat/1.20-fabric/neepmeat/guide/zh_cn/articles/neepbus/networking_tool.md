@@ -1,10 +1,12 @@
 ---
 id: networking_tool
+lookup: neepmeat:networking_tool
 ---
 
 # 网络工具
 
-网络工具能快速连接NEEP总线的输出与输入端口。
+\columns[fit=second]{网络工具能快速连接NEEP总线的输出与输入端口。
+}{\item_render{neepmeat:networking_tool}}
 
 ## 用途
 

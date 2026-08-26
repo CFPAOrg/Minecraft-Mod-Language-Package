@@ -1,6 +1,6 @@
 ---
 id: mining_tools
-lookup: neepmeat:drill_chassis, neepmeat:iron_rotary_drill_head, neepmeat:meat_steel_rotary_drill_head, neepmeat:diamond_rotary_drill)head, neepmeat:rock_drill_head
+lookup: neepmeat:drill_chassis, neepmeat:iron_rotary_drill_head, neepmeat:meat_steel_rotary_drill_head, neepmeat:diamond_rotary_drill)head, neepmeat:rock_drill_head, neepmeat:pneumatic_motor
 ---
 
 # 挖掘工具
@@ -17,6 +17,8 @@ NEEPMeat的工具与矿石处理系统与原版Minecraft有所不同。两者的
 - 压缩机爬虫 - 会跟随放置它的玩家
 
 钻头的核心植入物可在PLC辅助下替换为工具生物体。该植入物可让钻头依靠动物饲料、重组食物等人工可食用资源运作。
+
+\columns{\item_render[height=30]{neepmeat:pneumatic_motor}}{\item_render[height=30]{neepmeat:living_tool_implant}}
 
 钻具底盘也兼容肉质武器模块。可在改装台处替换头部和模块。
 

@@ -1,11 +1,12 @@
 ---
 id: automatic_mouth
-lookup: neepmeat:mouth
+lookup: neepmeat:automatic_mouth
 ---
 
 # 自动口舌
 
-自动口舌会念出给定的消息，可由红石或NEEP总线触发。
+\columns[fit=second]{自动口舌会念出给定的消息，可由红石或NEEP总线触发。
+}{\item_render{neepmeat:automatic_mouth}}
 
 ## 界面
 
@@ -48,14 +49,14 @@ IX  digit
 
 Voiced Consonants   Unvoiced Consonants [2]
 
-R   red             S sam
+R   red             S  sam
 L   allow           SH fish
 W   away            TH thin
-WH  whale           P poke
-Y   you             T talk
-M   Sam             K cake
+WH  whale           P  poke
+Y   you             T  talk
+M   Sam             K  cake
 N   man             CH speech
-NX  song            H ahead
+NX  song            H  ahead
 B   bad
 D   dog
 G   again

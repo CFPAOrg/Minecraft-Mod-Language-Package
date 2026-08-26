@@ -1,11 +1,12 @@
 ---
 id: automatic_mouth
-lookup: neepmeat:mouth
+lookup: neepmeat:automatic_mouth
 ---
 
 # Automatic Mouth
 
-The Automatic Mouth speaks aloud any message. It can be triggered by redstone or via NEEPBus. 
+\columns[fit=second]{The Automatic Mouth speaks aloud any message. It can be triggered by redstone or via NEEPBus. 
+}{\item_render{neepmeat:automatic_mouth}}
 
 ## Interface
 
@@ -48,14 +49,14 @@ IX  digit
 
 Voiced Consonants   Unvoiced Consonants
 
-R   red             S sam
+R   red             S  sam
 L   allow           SH fish
 W   away            TH thin
-WH  whale           P poke
-Y   you             T talk
-M   Sam             K cake
+WH  whale           P  poke
+Y   you             T  talk
+M   Sam             K  cake
 N   man             CH speech
-NX  song            H ahead
+NX  song            H  ahead
 B   bad
 D   dog
 G   again

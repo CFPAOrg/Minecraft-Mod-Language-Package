@@ -10,3 +10,5 @@ id: cloning
 To obtain the *Essential Saltes* of an organism, it must be exposed to an Ash Preparation potion and then incinerated. This procedure will succeed even if the organism has an innate resistance to fire, but the disassembly will have to be manual.
 
 *Essential Saltes* can be used in an Oviparous Synthesiser to produce eggs.
+
+\columns{\item_render[height=30]{neepmeat:synthesiser}}{\item_render[height=30]{neepmeat:mob_egg}}

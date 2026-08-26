@@ -4,7 +4,7 @@ id: word_definition
 
 # Defining THORD Words
 
-Words are the equivalent of functions. Most character sequences form a valid word name.
+Words in THORD are the equivalent of functions in other languages. Most character sequences form a valid word name.
 
 A word definition starts with ':' followed by the word's name. The definition is terminated with a ';'.
 

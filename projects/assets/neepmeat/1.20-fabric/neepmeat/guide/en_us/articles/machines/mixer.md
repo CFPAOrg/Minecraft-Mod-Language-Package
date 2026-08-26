@@ -1,10 +1,12 @@
 ---
 id: mixer
+lookup: neepmeat:mixer
 ---
 
 # Mixer
 
-The Mixer is a two block tall machine that combines fluids and items. It requires a source of rotation to function.
+\columns[fit=second]{The Mixer is a two block tall machine that combines fluids and items. It requires a source of rotation to function.
+}{\item_render{neepmeat:mixer}}
 
 ## Specifications
 

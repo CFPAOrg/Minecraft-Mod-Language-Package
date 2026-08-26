@@ -244,7 +244,7 @@ Tests if n1 is greater than or equal to n2. Equivalent to NEEPASM `GTEQ`.
 \cat{conversions}
 # Type Conversions
 
-## \>STR ( x1 -- s1 )
+## >STR ( x1 -- s1 )
 
 Converts the top stack item to a string.
 
@@ -252,7 +252,7 @@ Converts the top stack item to a string.
 123 >STR 
 ```
 
-## \>INT (x1 -- n1 )
+## >INT (x1 -- n1 )
 
 Converts the top stack item to an integer. Will cause an error if the conversion will not work.
 
