@@ -64,6 +64,11 @@ Standard Markdown table syntax. Column alignment via the separator row:
 
 Cells can contain tokens, icons, and colors.
 
+While the text holds at least one table, a button appears in the GUI toolbar that lines every
+table up: cells are padded to a common width, a missing closing pipe is added, and the separator
+row is rebuilt at the same width while keeping its alignment. It only touches the source text,
+not how the table looks on the Display.
+
 ---
 
 ## Icons
@@ -111,6 +116,38 @@ Both stock and delta tokens accept a tag expression instead of a single item ID:
 &d^tag{forge:ingots}%1m@5m
 
 See the [Tag Matcher](./tag_matcher.md) page for full syntax.
+
+---
+
+## Text macros
+
+$with(name=value) defines a shortcut inside the text of one Display. After that, &name inserts
+the value, and ^name does the same inside a token.
+
+Useful for a long ID you write more than once:
+
+$with(cq=ae2:certus_quartz_crystal)
+
+&i^cq &s^cq &d^cq@5m
+
+That renders the icon, the stored amount, and the rate per minute, all from one definition.
+
+The Insert Token screen has a Macro tab that writes the definition for you. Type a name, pick a
+key type, fill in the value, and the line under the preview shows how to use the macro afterwards.
+
+How it behaves:
+
+* A name takes letters, digits and underscore. nl and color codes cannot be used as names.
+* A definition sits on a single line. When nothing else is left on that line, the line disappears
+  instead of leaving a gap.
+* Definitions cover the whole text, so a macro defined at the bottom still works at the top.
+* A macro can use macros defined before it, like $with(both=&i^cq &s^cq).
+* Macros are expanded first, before database variables, tokens and math, so a value can hold
+  tokens, colors, or plain text.
+* A name is only replaced when it stands alone. &s^cq keeps its s^ prefix, &cFF0000 stays a color,
+  and &i^minecraft:stone is left alone even with a macro named minecraft.
+* Up to 64 macros per Display, value up to 256 characters. A definition that does not parse stays
+  on screen as written, so a typo is visible instead of silent.
 
 ---
 
