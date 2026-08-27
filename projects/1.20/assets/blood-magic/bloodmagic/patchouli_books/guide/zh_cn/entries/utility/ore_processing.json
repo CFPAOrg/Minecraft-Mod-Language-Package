@@ -1,0 +1,130 @@
+{
+  "name": "矿物处理",
+  "icon": "bloodmagic:basiccuttingfluid",
+  "category": "bloodmagic:utility",
+  "extra_recipe_mappings": {
+    "bloodmagic:copperfragment": 7,
+    "bloodmagic:goldfragment": 7,
+    "bloodmagic:fragment_netherite_scrap": 7,
+    "bloodmagic:coppergravel": 9,
+    "bloodmagic:goldgravel": 9,
+    "bloodmagic:gravel_netherite_scrap": 9,
+    "bloodmagic:coppersand": 7,
+    "bloodmagic:sand_netherite": 7
+      },
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(l:bloodmagic:alchemy_table/alchemy_table)炼金术桌$()可以使矿石产量翻倍，而$(l:bloodmagic:utility/alchemical_reaction_chamber)炼金反应炉$()可以使每块$(item)粗矿$()产出2.5个锭，或者每块$(item)矿石$()产出4.5个锭。用血之力为你的采矿收益翻倍。"
+    },
+    {
+      "type": "bloodmagic:crafting_alchemy_table",
+      "heading": "基础切削油",
+	  "anchor": "cutting_fluid",
+      "recipe": "bloodmagic:alchemytable/basic_cutting_fluid_sigil",
+      "text": "$(item)切削油$()是矿石处理的压轴步骤。它可以在$(l:bloodmagic:utility/alchemical_reaction_chamber)炼金反应炉$(/l)中使用从一个矿石中获得3个矿砂，或者从一个粗矿获得1.5个矿砂(平均)。虽然演示使用了$(l:bloodmagic:alchemy_array/sigil/water)水之印记$()，但是也可以直接使用更简单的$(water)水桶$()。"
+    },
+    {
+      "type": "bloodmagic:crafting_alchemy_table",
+      "heading": "中级切削油",
+      "anchor": "intermediate_cutting_fluid",
+      "recipe": "bloodmagic:alchemytable/intermediate_cutting_fluid_sigil",
+      "text": "中级切削油是一个升级版本，使用次数是原来的8倍，制作速度也提高了50%。不过你必须去$(l:bloodmagic:dungeons/lobby)地下城探险$()才能得到$(l:bloodmagic:dungeons/tau_fruit)血命油$()。"
+    },
+    {
+      "type": "bloodmagic:crafting_alchemy_table",
+      "heading": "高级切削油",
+      "anchor": "advanced_cutting_fluid",
+      "recipe": "bloodmagic:alchemytable/advance_cutting_fluid_sigil",
+      "text": "高级切削油使用次数是原来的16倍，制作速度是原来的2倍，并且增加2倍的额外产出概率。需要深入$(l:bloodmagic:dungeons/endless_realm)地下城探险$()获得$(l:bloodmagic:dungeons/demonite)狱锻矿砂$()。"
+    },
+    {
+      "type": "bloodmagic:2x_crafting_alchemy_table",
+      "a.heading": "铁矿砂",
+      "a.recipe": "bloodmagic:alchemytable/sand_iron",
+      "b.heading": "金矿砂",
+      "b.recipe": "bloodmagic:alchemytable/sand_gold"
+    },
+    {
+      "type": "bloodmagic:crafting_arc",
+      "heading": "矿石到3个矿砂",
+      "recipe": "bloodmagic:arc/dustsfrom_ore_iron",
+      "text": "一旦你开始$(l:bloodmagic:utility/alchemical_reaction_chamber)炼金反应炉$(/l)之路，你开采的每一块矿石都会变成三个矿砂。"
+    },
+    {
+      "type": "patchouli:smelting",
+      "recipe":"bloodmagic:smelting/ingot_iron",
+      "recipe2": "bloodmagic:smelting/ingot_gold"
+    },
+    {
+      "type": "bloodmagic:crafting_alchemy_table",
+      "heading": "爆炸粉末",
+      "anchor": "ore_processing",
+      "recipe": "bloodmagic:alchemytable/explosive_powder",
+      "text": "$(item)爆炸粉末$()在$(item)炼金反应炉$()里可以将$(item)矿石$()平均转化为4.5个$(item)矿碎片$()，或者将$(item)粗矿$()平均转化为2.25个矿碎片。或将$(item)锭$()转化为对应$(item)矿砂$()变体。它还可以将$(fire)下界岩$()转化为$(air)硫磺$()和50mb的$(fire)熔岩$()。下页有它的两种变体。"
+    },
+    {
+    "type": "bloodmagic:2x_crafting_alchemy_table",
+    "a.heading": "原始爆炸单元",
+    "a.recipe": "bloodmagic:alchemytable/explosive_cell",
+    "b.heading": "狱锻爆炸单元",
+    "b.recipe": "bloodmagic:alchemytable/hellforged_explosive_cell",
+    "text": "原始和锻狱有更高的耐久和更快的转化速度。"
+    },
+    {
+      "type": "bloodmagic:3x_crafting_arc",
+      "a.heading": "粗矿到碎片",
+      "a.recipe": "bloodmagic:arc/fragmentsiron",
+      "b.heading": "矿石到碎片",
+      "b.recipe": "bloodmagic:arc/fragmentsfrom_ore_iron",
+      "c.heading": "硫磺与熔岩",
+      "c.recipe": "bloodmagic:arc/netherrack_to_sulfer",
+      "c.fluid_output": "minecraft:lava_bucket"
+    },
+    {
+      "type": "bloodmagic:crafting_soulforge",
+      "heading": "共鸣器",
+      "recipe": "bloodmagic:soulforge/resonator",
+      "text": "$(item)共鸣器$()用于将$(item)矿碎片$()转化为对应的$(item)砂砾$()，以继续进行矿物处理，并产出$(item)腐化粉末$()。原始耐久是基础的4倍，狱锻是基础的16倍，并且增加2倍的额外产出概率。"
+    },
+    {
+    "type": "bloodmagic:2x_crafting_soulforge",
+    "a.heading": "原始共鸣器",
+    "a.recipe": "bloodmagic:soulforge/primitive_resonator",
+    "b.heading": "狱锻共鸣器",
+    "b.recipe": "bloodmagic:soulforge/hellforged_resonator"
+    },
+    {
+      "type": "bloodmagic:2x_crafting_arc",
+      "a.heading": "碎片到砂砾",
+      "a.recipe": "bloodmagic:arc/gravelsiron",
+      "b.heading": "砂砾到矿砂",
+      "b.recipe": "bloodmagic:arc/dustsfrom_gravel_iron"
+    },
+    {
+      "type": "patchouli:crafting",
+      "heading": "腐化粉",
+      "recipe": "bloodmagic:corrupted_dust",
+      "text": "腐化粉末可以转化成$(item)腐化粉$()，可进一步用于提高其他矿石产量。详情见后页。"
+    },
+    {
+      "type": "bloodmagic:3x_crafting_alchemy_table",
+      "a.heading": "煤矿砂",
+      "a.recipe": "bloodmagic:alchemytable/corrupted_coal",
+      "b.heading": "铁矿砂砾",
+      "b.recipe": "bloodmagic:alchemytable/corrupted_iron",
+      "c.heading": "远古残骸砂砾",
+      "c.recipe": "bloodmagic:alchemytable/corrupted_netherite"
+    },
+    {
+      "type": "patchouli:crafting",
+      "heading": "原始燃料单元",
+      "recipe": "bloodmagic:primitive_furnace_cell",
+      "text": "$(item)炼金反应炉$()也可以被当成$(thing)熔炉$()，但它只接受$(item)原始燃料单元$()或$(l:bloodmagic:utility/lava_crystal)熔岩晶体$(/l)当燃料。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(item)原始燃料单元$()可熔炼128次，这比它的素材$(item)煤炭块$()(60次)要多，并且仅在完成熔炼后消耗耐久，避免浪费。"
+    }
+  ]
+}
