@@ -1,0 +1,20 @@
+{
+    "name": "Server MIDI Files",
+    "icon": "mimi:transmitter",
+    "category": "mimi:8server",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "MIMI allows servers to provide their own MIDI Files that players can point their Floppy Disks to that won't require downloading from the Web. These songs are stored in the 'mimi/default_music' folder within the server's 'config' folder.$(br2)Players can point a Floppy Disk to one of these files using the URL format 'server://<song_name>'."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Songs provided by the server can be manually added to / removed from the folder or managed via $(l:9_2server)commands$(). It is recommended to use commands for management of the Server MIDI files, but if you do manually make changes be sure to run the $(c:/mimi server reload)/mimi server reload$() command to sync the changes in-game."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "The $(l)/mimi server add <url> <name>$() command acts similarly to a Transmitter or Broadcaster in that it causes the server to reach out to the provided URL and download the file to disk. This command ignores the list of allowed server Web MIDI file hosts since it is only allowed for 'op' users.$(br2)For extra security, this command can be disabled via the 'mimi-common' config file meaning Server MIDI files must be managed manually."
+        }
+    ],
+    "sortnum": 3
+}

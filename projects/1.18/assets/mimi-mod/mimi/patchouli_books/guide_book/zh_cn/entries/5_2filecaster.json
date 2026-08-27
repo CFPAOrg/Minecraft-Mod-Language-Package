@@ -1,0 +1,53 @@
+{
+    "name": "文件播放器",
+    "icon": "mimi:filecaster",
+    "category": "mimi:5files",
+    "pages": [
+        {
+            "type": "patchouli:spotlight",
+            "title": "文件播放器",
+            "item": "mimi:filecaster",
+            "text": "要用MIMI的乐器播放MIDI文件有很多方法，但最简单的方法是使用文件播放器来播放你电脑中的文件。"
+        },
+        {
+            "type": "patchouli:crafting",
+            "title": "合成配方",
+            "recipe": "mimi:filecaster"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "打开文件播放器",
+            "text": "要打开文件播放器的GUI，首先用你的主手选中它，或将其放置于你的副手槽位。然后在手持文件播放器时右键单击即可打开其GUI。$(br2)你还可以使用键位($(bold)$(k:key.mimi.midi.gui.filecaster)$())来打开文件播放器，只要文件播放器在快捷栏或者副手槽位中。"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "文件播放器GUI",
+            "anchor": "screen",
+            "text": "在文件播放器的GUI中你可以选择你PC上的一个文件夹，作为要播放的MIDI文件来源。首先，在文本框中输入文件夹路径，然后单击加载文件夹按钮以将MIDI文件载入到播放列表。$(br2)选中一首音乐后，屏幕上将会显示其MIDI通道的分配信息。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "你可以把MIDI通道看作是代表了乐曲中不同的部分(例如歌手、主音吉他、低音吉他、鼓和钢琴); 有些MIDI文件可能会使用多达16个频道，有些可能只会使用一个。第10通道永远保留给鼓使用。$(br2)查看一首歌曲的通道分配信息可以让你知道用什么MIMI乐器来演奏某一通道听上去效果最佳。"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "transmission",
+            "text": "你还可以更改文件播放器的传输模式，以更改接收音符的人/物品：$(br)$(li)“公开”('P') - 周围所有将信号源设定为“公开”的乐器与接收器。$(br)$(li)“连接” ('L') - 周围所有将你作为信号源的乐器与接收器。$(br)$(li)“自身”('S') - 只有你自身以及你的将文件播放器设定为信号源的乐器。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "乐曲开始播放后你可以关闭文件播放器的GUI，只要文件播放器在你的快捷栏或副手槽位中，乐曲就会继续播放。"
+        },
+        {
+            "type": "patchouli:text",
+            "anchor": "connect",
+            "title": "连接乐器",
+            "text": "只有其中插入了配置板的乐器才能连接到文件播放器。$(br2)你需要$(l:3_2properties#setsource)设置$()配置板的“传输信号源”属性，以$(l:3_2properties#source)符合$()文件播放器的“传输模式”。$(br2)配置板的$(l:3_2properties#channels)已启用通道$()应当与文件播放器界面中列出的通道对应。"
+        },
+        {
+            "type": "patchouli:text",
+            "text": "乐器开始演奏后你可以关闭乐器的GUI，只要你以主手或者副手持有乐器(手持式乐器)或者继续坐在它前面(方块式乐器)，它就会继续演奏。这意味着你可以同时演奏最多三个乐器！$(br2)可以尝试一下启用和禁用你演奏的乐器上的各个通道，重新混音出乐曲听起来该有的感觉。"
+        }
+    ],
+    "sortnum": 2
+}
