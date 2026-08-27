@@ -1,0 +1,438 @@
+{
+  "item.hexdebug": {
+    debugger: "调试杖",
+    quenched_debugger: "淬灵调试杖",
+    evaluator: "运行杖",
+    quenched_evaluator: "淬灵运行杖",
+  },
+
+  "block.hexdebug": {
+    splicing_table: "剪接台",
+    enlightened_splicing_table: "制念台",
+    focus_holder: "核心框架",
+  },
+
+  "itemGroup.hexdebug": "咒法调试",
+
+  text: {
+    hexdebug: {
+      debugging: {
+        connected: "调试客户端已连接！",
+        no_session: "线程%d的调试会话未在运行。",
+        not_paused: "线程%d的调试会话未被暂停。",
+        // Next Iota: [{index}] {iota}
+        debugger_stopped: "下一个Iota：[%d] %s",
+        illegal_thread: "物品不知怎的失效了……是我还要再提升自己的技术吗？",
+        out_of_range: "调试员已离开连接范围。",
+      },
+
+      thwack: "哐当！",
+
+      splicing_table: {
+        button: {
+          view_left: "向左移动视野",
+          view_left_page: "将视野移动到上一页",
+          view_left_full: "将视野移动到开头",
+          view_right: "向右移动视野",
+          view_right_page: "将视野移动到下一页",
+          view_right_full: "将视野移动到末尾",
+          cursor_left: "向左移动光标",
+          cursor_right: "向右移动光标",
+          expand_selection_left: "向左延伸选区",
+          expand_selection_right: "向右延伸选区",
+          move_selection_left: "向左移动选区",
+          move_selection_right: "向右移动选区",
+          select_none: "取消选区",
+          select_all: "全选",
+          clear_grid: "清空网格",
+          nudge_left: "左移",
+          nudge_right: "右移",
+          duplicate: "重复",
+          delete: "删除",
+          backspace: "退格",
+          undo: "撤销",
+          redo: "重做",
+          cut: "剪切",
+          copy: "复制",
+          paste_verbatim: "粘贴（逐项）",
+          paste_splat: "粘贴（扁平化）",
+          export: "导出为.hexpattern文件",
+          cast: {
+            "": "激活编辑台",
+            named: "激活%s",
+          },
+        },
+        tooltip: {
+          index: "索引下标：%d",
+          depth: "深度：%d",
+          signature: "图案编码：%s",
+          length: "长度：%d",
+        },
+      },
+    },
+
+    "autoconfig.hexdebug": {
+      title: "咒法调试（HexDebug）配置",
+      category: {
+        client: "客户端",
+        server: "服务端",
+      },
+      option: {
+        client: {
+          openDebugPort: {
+            "": "开放调试端口",
+            "@Tooltip": "是否开放端口。若设为false，调试杖会失去作用。",
+          },
+          debugPort: {
+            "": "调试端口",
+            "@Tooltip": "开放以连接至调试客户端（如VSCode）的端口号（1024-65535）。",
+          },
+          smartDebuggerSneakScroll: {
+            "": "调试杖智能潜行滚轮",
+            "@Tooltip": "若当前主手持有调试杖，且未在调试咒术，则优先处理副手中法术书一类物品的“潜行滚动滚轮”操作。",
+          },
+          debuggerDisplayMode: {
+            "": "调试杖显示模式",
+            "@Tooltip": "\
+              更改调试杖打印下一需运行iota的时机。\n\
+                DISABLED：不显示调试杖状态消息。\n\
+                NOT_CONNECTED：只在调试客户端未连接时显示调试杖状态消息。\n\
+                ENABLED：一直显示调试杖状态信息。（默认）",
+          },
+          showDebugClientLineNumber: {
+            "": "显示调试客户端行号",
+            "@Tooltip": "若设为true，显示调试客户端（如VSCode）的行号，通常以1起始；否则显示列表索引下标，以0起始。"
+          },
+          splicingTable: {
+            "": "通用剪接台选项",
+            invertScrollDirection: {
+              "": "反转滚轮方向",
+              "@Tooltip": "是否在向上滚动滚轮（反之则向下）时增加剪接台的视野索引。自动为反向滚动绑定减小索引操作。",
+            },
+            enableRainbowBrackets: {
+              "": "启用彩色括号",
+              "@Tooltip": "若设为true，则将内省和反思的轮廓显示为彩色，以便辨别成对括号。",
+            },
+            rainbowBracketColors: "彩色括号颜色",
+            showNestedPatternNames: {
+              "": "显示嵌套图案名",
+              "@Tooltip": "若设为true，在内嵌列表中图案的提示文本中显示图案的名称，而不使用内置的行内图案显示。",
+            },
+          },
+          splicingTableKeybinds: {
+            "": "剪接台按键绑定",
+            "@Tooltip": "剪接台GUI中各操作的键位绑定。",
+            enabled: {
+              "": "启用按键绑定",
+              "@Tooltip": "启用剪接台和制念台GUI的自定义按键绑定。若禁用，则此类别下所有其他设置无效。",
+            },
+            overrideVanillaArrowKeys: {
+              "": "覆盖原版方向键操作",
+              "@Tooltip": "在剪接台GUI中覆盖可用方向键切换界面元素焦点的原版特性。此设置可增强默认按键绑定的可用性，但有辅助功能需求时可能需要禁用。",
+            },
+            sendHexicalTelepathy: {
+              "": "启用Hexical心灵感应",
+              "@Tooltip": "仅限Fabric。若安装有Hexical，则在剪接台GUI中启用所有心灵感应键位。注意：如果Hexical本身添加了在GUI中使用心灵感应的功能，禁用此选项不会连带禁用它们。",
+            },
+            enlightened: {
+              "": "制念台",
+              "@Tooltip": "制念台GUI中各操作的键位绑定。",
+            },
+          },
+        },
+        server: {
+          maxUndoStackSize: {
+            "": "撤销历史步数上限",
+            "@Tooltip": "剪接台撤销历史的长度上限。设为0可禁用上限。",
+          },
+          splicingTableMediaCost: {
+            "": "剪接台媒质消耗",
+            "@Tooltip": "在剪接台中执行操作消耗的媒质量。",
+          },
+          splicingTableMaxMedia: {
+            "": "剪接台最大媒质量",
+            "@Tooltip": "剪接台的最大媒质容量。",
+          },
+          splicingTableCastingCooldown: {
+            "": "制念台施法冷却",
+            "@Tooltip": "制念台施法按钮的冷却时间，以刻计。",
+          },
+          splicingTableAmbit: {
+            "": "制念台影响范围",
+            "@Tooltip": "制念台的影响范围半径，以格计。",
+          },
+        },
+      },
+    },
+  },
+
+  hexcasting: {
+    action: {
+      "hexdebug:": {
+        "const/debugging": "调试杖之精思",
+        "const/cognitohazard": "认知危害之精思",
+        "breakpoint/": {
+          before: "在前方添加断点",
+          after: "在后方添加断点"
+        },
+        "craft/debugger": "制作调试杖",
+        "craft/quenched_debugger": "制作淬灵调试杖",
+        "splicing/": {
+          "view_index/": {
+            read: "齿孔胶片之纯化",
+            write: "齿孔胶片之策略",
+          },
+          "selection/": {
+            read: "剪接器之分解",
+            write: "剪接器之策略",
+          },
+          "list/": {
+            "spellbook_index/": {
+              read: "放映员之纯化",
+              write: "放映员之策略",
+              readable: "快门之纯化"
+            },
+          },
+          "clipboard/": {
+            read: "合成师之纯化",
+            write: "合成师之策略",
+            readable: "制片人之纯化",
+            writable: "导演之纯化",
+            "spellbook_index/": {
+              read: "放映员之纯化，第二型",
+              write: "放映员之策略，第二型",
+              readable: "快门之纯化，第二型",
+            },
+          },
+          "enlightened/": {
+            "hex/": {
+              read: "制念之纯化", // TODO: bad name
+              write: "融注制念台",
+            },
+          },
+        },
+      },
+      "book.hexdebug:": {
+        "const/cognitohazard": "认知危害之精思",
+        "splicing/": {
+          "list/": {
+            "spellbook_index/": {
+              read: "放映员之纯化",
+            },
+          },
+          "clipboard/": {
+            read: "合成师之纯化",
+            "spellbook_index/": {
+              read: "放映员之纯化，第二型",
+              readable: "快门之纯化，第二型",
+            },
+          },
+        },
+      },
+    },
+
+    mishap: {
+      bad_block: {
+        splicing_table: {
+          "": "一个剪接台",
+          enlightened: "一个制念台",
+          clipboard: {
+            read: "放有可读副物品的剪接台",
+            write: "放有可写副物品的剪接台",
+            spellbook: "副物品槽中有非空法术书的剪接台",
+          },
+        },
+        splicing_table_or_focus_holder: {
+          "": "一个剪接台或核心框架",
+          spellbook: "主物品槽中有非空法术书的剪接台或核心框架",
+        },
+      },
+      invalid_value: {
+        int: {
+          positive_or_null: "一个正整数或Null"
+        }
+      }
+    },
+  },
+
+  hexdebug: {
+    tooltip: {
+      thread: {
+        inactive: "线程 %s",
+        active: "线程 %s（%s）",
+      },
+      debugger: {
+        step_mode: {
+          continue: "模式：继续",
+          over:     "模式：逐过程",
+          in:       "模式：单步调试",
+          out:      "模式：单步跳出",
+          restart:  "模式：重启",
+          stop:     "模式：停止"
+        },
+      },
+      focus_holder: {
+        item: "物品：%s",
+      },
+      cognitohazard_iota: "认知危害",
+    },
+
+    category: {
+      items: {
+        entry: {
+          debugging: {
+            "": "调试物品",
+            page: {
+              debugger: "部分文献中有些不太明确的描述，称古代人会使用一件奇怪的物品协助他们发现复杂$(hex)咒术/$中的问题。我应已成功复刻出了它，定名为$(item)调试杖/$。$(br2)\
+                它的工作方式与$(l:items/hexcasting)$(item)造物/$类似。不过，它还能从副手中的物品（比如$(l:items/focus)$(item)核心/$）里直接施放$(hex)咒术/$。$(br2)\
+                有些可惜的是，$(item)调试杖/$自身没有太大用处；而为发挥出它的所有潜能，需要先$(l:https://github.com/object-Object/HexDebug/wiki/Setting-up-VSCode-with-HexDebug)准备好/$某种$(l:https://marketplace.visualstudio.com/items?itemName=object-Object.hex-casting)外部工具/$才能正常运作。",
+              thwack: "$(italic)哐当！/$$(br2)\
+                潜行滚动滚轮还可切换$(item)调试杖/$的各种“步进模式”，操作与$(l:items/spellbook)$(item)法术书/$和$(l:items/abacus)$(item)算盘/$类似。",
+              evaluator: "我又新制造了一种法杖——$(l:items/debugging#evaluator)$(item)运行杖/$，用以补充$(l:items/debugging#debugger)$(item)调试杖/$的功能。$(br2)\
+                调试$(hex)咒术/$时，此法杖绘制的图案会运行于$(l:items/debugging#debugger)$(item)调试杖/$当前的栈和$(l:patterns/readwrite#hexcasting:local)$(thing)渡鸦之思/$。$(br2)\
+                清空咒术网格后，$(l:items/debugging#debugger)$(item)调试杖/$似乎会回到$(l:items/debugging#evaluator)$(item)运行杖/$绘制首个图案前的状态。当然，这种操作无法撤回已造成实际影响的法术。",
+              thwonk: "$(italic)哐啷！/$"
+            },
+          },
+          focus_holder: {
+            "": "核心框架",
+            page: {
+              "1": "$(l:items/focus)$(item)核心/$可用于在物品栏中存储$(hex)咒术/$和其他 iota，但总有些时候我会需要在世界中存储 iota。$(item)物品展示框/$太脆弱，$(l:greatwork/akashiclib)其他做法/$又太低效而且也……不道德。我需要更优雅的方法，最终成功借助$(item)核心框架/$实现了。",
+              "2": "$(item)核心框架/$自身没有用处，必须先向其放入一个$(l:items/focus)$(item)能存储 iota 的物品/$。可以用物品右击$(item)核心框架/$，也可在物品栏中以类似$(item)收纳袋/$的形式与单个$(item)框架/$交互。空手右击可取出物品。$(br2)\
+                物品形态下，装有物品的$(item)核心框架/$可用到任意接受其中物品的$(l:patterns/readwrite#hexcasting:read)图案/$和$(l:items/splicing_table)方块/$中去。放置后，可使用$(l:patterns/readwrite_blocks#hexcasting:read/entity)$(action)编年史家之纯化/$等图案访问。",
+              "3": "$(italic)两千部电影，四千部专辑，音乐、词句、图片，都仿佛诉说着过去阳光明媚的甜蜜日子。/$",
+            },
+          },
+          splicing_table: {
+            "": "剪接台",
+            page: {
+              "1": "我的$(hex)咒术/$日益复杂，修补我自己的失误也愈发耗时。$(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)消隐/$，$(l:patterns/lists#hexcasting:replace)$(action)外科医师之提整/$等图案对简单的替换来说已经足够，但我认为还可精益求精。$(br2)\
+                $(l:items/splicing_table)$(item)剪接台/$就是我对这些麻烦的回应：功能完备的工作站，专为查看和编辑$(hex)咒术/$准备。",
+              "2": "开始之前，需将$(l:items/focus)$(item)核心/$等包含列表 iota 的物品放入界面中央。界面会显示列表中的前 9 个 iota。显示栏两侧的箭头可更改显示的区域；也可按住 $(k:sneak) 以按页移动，或按照 $(k:sprint) 以直接移动到开头或结尾。$(br2)\
+                如果要和其他人分享$(hex)咒术/$，可以按下右侧的大按钮，将列表内容复制到我的“剪贴板”。",
+              "3": "点击 iota 及 iota 间的空位可选择它们。按住 $(k:sneak) 再次点击则可选择一系列 iota。$(br2)\
+                此外，还有按钮专为选择整个列表（$(thing)全选/$）和清空选择区域（$(thing)取消选区/$）。$(br2)\
+                选择 iota 能解锁$(l:items/splicing_table)$(item)剪接台/$的真正力量：编辑$(hex)咒术/$。",
+              actions: "只要$(l:items/splicing_table#cost)媒质充足/$，即可执行以下操作：\
+                $(li)$(thing)左移/$：将所选 iota 向左移动一格。\
+                $(li)$(thing)右移/$：将所选 iota 向右移动一格。\
+                $(li)$(thing)删除/$：从列表中移除所选 iota。\
+                $(li)$(thing)重复/$：创建所选 iota 的副本。\
+                $(li)$(thing)撤销/$：撤回最近一次操作。\
+                $(li)$(thing)重做/$：重做$(thing)撤销/$所撤回的操作。",
+              secondary: "更高级的操作需要额外存储空间。可在左侧槽位中放入可存储 iota 的物品，以解锁以下操作：\
+                $(li)$(thing)复制/$：将所选 iota 作为列表写入辅助物品。\
+                $(li)$(thing)剪切/$：与$(thing)复制/$功能一致，不过原本选择的 iota 会被删除。\
+                $(li)$(thing)粘贴/$：使用辅助物品中的 iota 覆盖所选的 iota。如果用于覆盖的 iota 是列表，则会粘贴其中内容；按住 $(k:sneak) 可改为粘贴列表本身。",
+              staff: "最后，还可向左下角槽位放入$(l:items/staff)$(item)法杖/$，以显示微缩版的咒术网格。在该网格中绘制的图案会直接插入列表，覆盖选中的 iota。$(br2)\
+                右侧还有 6 个通用物品槽。这些槽位没有特殊功能，只是方便存放物品。",
+              cost: "可惜的是，这种强大的功能有其代价。修改物品的 iota 存储空间需要消耗$(media)媒质/$——每次操作消耗大约 1/10 个$(l:items/amethyst)$(item)紫水晶粉/$。$(br2)\
+                右下角的槽位可用于向$(l:items/splicing_table)$(item)剪接台/$补充$(media)媒质/$。单次最多可补充 10 个$(l:items/amethyst)$(item)紫水晶粉/$；多出的会被忽略，直至出现足够完全接收新$(media)媒质/$物品的缺口，才会进行消耗。",
+              patterns: "如果这里提到的消耗还是难以承受，或是想要执行比之前提到的更复杂的操作，那就还有一种做法。可以使用$(l:patterns/readwrite_blocks#hexcasting:read/entity)$(action)编年史家之纯化/$等图案操纵主槽位中的事物，我也为此设计了若干$(l:patterns/splicing_table)专用的图案/$，以控制剪接台其他方面的状态。$(br2)\
+                接下来的突破点，就在于如何让剪接台自行思考了……",
+              recipe: "$(italic)看着她一个接一个接上铭印串，随着她的手指以快得几乎看不见的速度在托盘上舞动，小金属方块飞入飞出。/$",
+            },
+          },
+        },
+      },
+
+      greatwork: {
+        entry: {
+          enlightened_splicing_table: {
+            "": "制念台",
+            page: {
+              "1": "$(l:items/splicing_table)$(item)剪接台/$还可以。能堪其任。但有限制，且限制极大。我已$(italic)见到/$它的能力，我必须达到它的极限，无论代价如何。$(br2)\
+                我$(l)要/$让剪接台具有思维。",
+              "2": "解决方案。当然。很熟悉——对其无穷的复杂性而言都能说是$(italic)简单/$了。就和我$(l:greatwork/impetus)先前的洞察与领悟一样/$，我可特种化意识——将其从躯体中剥离，重新导向、连接、改造、$(italic)变形/$——令其贴合任务的需求。像是$(l:greatwork/impetus)$(item)促动石/$……但更加卓越，更加复杂，更加更加更加更加更——集、中、精、神。",
+              recipe: "另一种$(l:greatwork/brainsweeping)$(thing)意识剥离/$仪式。它对意识的要求与$(l:greatwork/impetus)$(item)工具匠促动石/$的几乎没有区别，但由于它的功能更为领域和精密，意识也相应需要积累更多的经验。",
+              "3": "所得的$(thing)制念台/$与先前基本一致，但已经过嬗变和$(italic)改进/$，经历了至关重要的变化。制念台的意识能够介导图案，也就能几乎不费吹灰之力施放$(italic)任意/$$(hex)咒术/$；只需要按一下按钮，一切就都能化作现实。$(br)\
+                启动这一过程仍需要$(l:items/splicing_table#cost)灌注/$少量媒质——确实浪费，但也许比古代那些过时、短视的设计要好些。法术需要的媒质也会从这里抽取。",
+              "4": "当然，剥离出来的意识也有局限。我必须先$(italic)教会/$它做事；就算是如此熟练的意识，也没法只靠猜谜就猜中我的意图。和$(l:greatwork/impetus)$(item)促动石/$不一样的是，它不需要石板——命令要直接$(l:patterns/enlightened_splicing_table)$(thing)融注/$入它的意识，直接覆写它的神经通路，让它只能随着我的意志做事。",
+              "5": "而为实现更复杂的操作——要是有耐心和$(l:casting/mishaps)气量/$的话，让$(thing)制念台/$控制、$(italic)统领/$、另一个制念台、周而复始、周而复始周而复始周而复始周而复始直到无穷——制念台能小范围延展其影响力（恰好 4 格）。确实不算大，但足够绝大多数情况用了。若是需要更大的范围，可以用我的$(l:patterns/great_spells/greater_sentinel#hexcasting:sentinel/create/great)$(action)卓越哨卫/$。",
+            },
+          },
+
+          quenching_debuggers: {
+            "": "调试杖的淬灵",
+            page: {
+              "1": "我的意识已然神化，但我的$(l:items/debugging)工具/$还极为$(italic)低效/$，在卓伟之作的宏大之下愈发脆弱。我需要——不，我$(bold)应得/$——更多。$(br2)\
+                悦灵的碎片是改进的绝佳介质。淬灵晶会改变外形、四处跳动，经它们改进的工具也可以——滚动滚轮时按住$(k:sneak)和$(k:sprint)，即可切换当前调试的$(hex)咒术/$槽。"
+            },
+          },
+        },
+      },
+
+      patterns: {
+        entry: {
+          debugging: {
+            "": "调试图案",
+            page: {
+              "const/debugging": "若栈由$(l:items/debugging#debugger)$(item)调试杖/$或$(l:items/debugging#evaluator)$(item)运行杖/$执行，则返回 $(thing)True/$；否则返回 $(thing)False/$。",
+              "const/cognitohazard": {
+                "1": "向栈顶压入一个$(thing)认知危害/$。",
+                "2": "貌似部分$(l:items/debugging#evaluator)调试工具/$在某些$(l:patterns/meta#hexcasting:eval/cc)高等级技术/$中容易导致安全问题。而为解决这一问题，我设计了本图案。$(br2)\
+                  $(thing)认知危害/$ iota 正常运行时什么都不会发生。不过，如果它出现在$(l:items/debugging#debugger)$(item)调试杖/$执行的$(hex)咒术/$里，那该$(hex)咒术/$便会$(italic)立即/$终止——甚至要先于$(thing)认知危害/$的执行。",
+              },
+              "breakpoint/": {
+                before: "在运行此图案前，暂停$(l:items/debugging#debugger)$(item)调试杖/$。",
+                after: "在运行此图案后，也即在运行下一图案之前，暂停$(l:items/debugging#debugger)$(item)调试杖/$。",
+              },
+              "craft/debugger": "制作一支能施放$(hex)咒术/$的$(l:items/debugging#debugger)$(item)调试杖/$。这个图案和我之前用过的$(l:patterns/spells/hexcasting)某些图案/$有些相似。$(br2)\
+                消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
+              "craft/quenched_debugger": "制作一支能施放$(hex)咒术/$的$(l:greatwork/quenching_debuggers)$(item)淬灵调试杖/$。这个图案和我之前用过的$(l:patterns/spells/hexcasting)某些图案/$有些相似。$(br2)\
+                消耗大约 10 个$(l:items/amethyst)$(item)充能紫水晶/$。",
+            },
+          },
+
+          splicing_table: {
+            "": "剪接台图案",
+            page: {
+              "view_index/": {
+                read: "移除栈顶向量，返回该处$(l:items/splicing_table)$(item)剪接台/$视野最左侧 iota 的索引下标。",
+                write: "移除栈顶向量和数，移动该处$(l:items/splicing_table)$(item)剪接台/$的视野，以让所给下标的元素在视野最左侧。",
+              },
+              "selection/": {
+                read: {
+                  "1": "移除栈顶向量，返回代表该处$(l:items/splicing_table)$(item)剪接台/$当前选中区域的两个值。",
+                  "2": "若选中一定范围的 iota，则返回两个数，分别对应起始（包含）和结束（不包含）位置。如果选中了两 iota 间的边沿，则返回边沿右侧 iota 的索引下标，同时再返回一个 $(l:casting/influences)$(thing)Null/$。如果未选中任何东西，则返回两个 $(l:casting/influences)$(thing)Null/$。",
+                },
+                write: "移除栈顶向量和两个值，按照前页描述根据所给的两个值设置该处$(l:items/splicing_table)$(item)剪接台/$的选中区域。",
+              },
+              "list/": {
+                "spellbook_index/": {
+                  read: "移除栈顶向量，返回该处$(l:items/splicing_table)$(item)剪接台/$或$(l:items/focus_holder)$(item)核心框架/$主槽位中$(l:items/spellbook)$(item)法术书/$当前的页码（以 1 起始）。",
+                  write: "移除栈顶向量和数，将该处$(l:items/splicing_table)$(item)剪接台/$或$(l:items/focus_holder)$(item)核心框架/$主槽位中的$(l:items/spellbook)$(item)法术书/$翻到对应页。",
+                  readable: "若所给向量处有$(l:items/splicing_table)$(item)剪接台/$或$(l:items/focus_holder)$(item)核心框架/$，且其主槽位中法术书至少有一页记有内容，则将该向量替换为 $(thing)True/$；否则返回 $(thing)False/$。",
+                },
+              },
+              "clipboard/": {
+                read: "移除栈顶向量，复制该处$(l:items/splicing_table)$(item)剪接台/$副槽位中物品的存储内容并返回。",
+                write: "移除栈顶向量和 iota，将该 iota 保存至该处$(l:items/splicing_table)$(item)剪接台/$副槽位中的物品。$(br)\
+                  和$(l:patterns/readwrite_blocks#hexcasting:write/entity)$(action)编年史家之策略/$类似，我不可用此图案写入我的真名。",
+                readable: "若所给向量处有$(l:items/splicing_table)$(item)剪接台/$，且其副槽位物品可读，则将该向量替换为 $(thing)True/$；否则返回 $(thing)False/$。",
+                writable: "若所给向量处有$(l:items/splicing_table)$(item)剪接台/$，且其副槽位物品可写，则将该向量替换为 $(thing)True/$；否则返回 $(thing)False/$。",
+                "spellbook_index/": {
+                  read: "与$(l:patterns/splicing_table#hexdebug:splicing/list/spellbook_index/read)$(action)放映员之纯化/$类似，但会读取副槽位中$(l:items/spellbook)$(item)法术书/$当前的页码，而非主槽位。",
+                  write: "与$(l:patterns/splicing_table#hexdebug:splicing/list/spellbook_index/write)$(action)放映员之策略/$类似，但会修改副槽位中$(l:items/spellbook)$(item)法术书/$当前的页码，而非主槽位。",
+                  readable: "与$(l:patterns/splicing_table#hexdebug:splicing/list/spellbook_index/readable)$(action)快门之纯化/$类似，但会检验副槽位中的$(l:items/spellbook)$(item)法术书/$，而非主槽位。",
+                },
+              },
+            },
+          },
+
+          enlightened_splicing_table: {
+            "": "制念台图案",
+            page: {
+              "hex/": {
+                read: "移除栈顶向量，返回该处$(l:greatwork/enlightened_splicing_table)$(item)制念台/$当前融注的$(hex)咒术/$，若尚未融注则返回 $(l:casting/influences)$(thing)Null/$。",
+                write: "移除栈顶向量和图案列表，将该列表融注到该处$(l:greatwork/enlightened_splicing_table)$(item)制念台/$中。$(br)\
+                  消耗大约 5 个$(l:items/amethyst)$(item)充能紫水晶/$。",
+              },
+              circle: "在此之外，我还可以在$(l:greatwork/enlightened_splicing_table)$(item)制念台/$中施放$(l:patterns/circle#hexcasting:circle/impetus_pos)$(action)指路石之精思/$和$(l:patterns/circle#hexcasting:circle/impetus_dir)$(action)磁石之精思/$。不过，若是试图用$(l:items/staff)$(item)法杖/$施放，或是在$(l:greatwork/enlightened_splicing_table)$(item)制念台/$中试图施放其他仅限$(l:greatwork/spellcircles)$(item)法术环/$的图案，则仍然会招致可怖的事故。",
+            },
+          }
+        },
+      },
+    },
+  },
+}
