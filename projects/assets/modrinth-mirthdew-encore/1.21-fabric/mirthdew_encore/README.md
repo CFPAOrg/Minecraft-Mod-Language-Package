@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/modrinth-mirthdew-encore/1.21/mirthdew_encore)
