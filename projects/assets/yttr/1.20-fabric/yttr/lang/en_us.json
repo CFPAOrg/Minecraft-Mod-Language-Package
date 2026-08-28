@@ -16,13 +16,13 @@
 		"snare": "Full Snares",
 		"snare._explanation": "Snares pre-filled with every type of mob in the game.",
 		"lamp": "Lamps & Lazors",
-		"lamp._explanation": "All the variants of lamps and lazor emitters.",
+		"lamp._explanation": "All the variants of lamps and lazor emitters. All occurences of 'laser' in Yttr are intentionally mispelled as 'lazor' due to a very old inside-joke originating in the personal 1.7 mod these first appeared in.",
 		"decoration": "Decoration",
 		"decoration._explanation": "Decorative blocks and spawn eggs for decorative entities.",
 		"potion": "Potions",
 		"potion._explanation": "Yttr's Plastic and Mercurial potion variants.",
 		"ruined": "Wasteland",
-		"ruined._explanation": "Blocks that spawn in the Wasteland. Includes every Ruined block.",
+		"ruined._explanation": "Things that spawn in the Wasteland. Includes every Ruined block, and the spawn egg for Abandoned Golems.",
 		"inred": "Circuitry",
 		"inred._explanation": "Cuprosteel circuitry bits and pieces.",
 		"misc": "Miscellaneous",
@@ -40,6 +40,7 @@
 		"shears": "Surgical Shears",
 		"bedrock_shard": "Bedrock Shard",
 		"delicace": "Delicace",
+		"delicace._explanation": "Reference to a 2017 Google Translate bug with repetitions of 'egu' when translating from Japanese to English. 'Delicaceness of deep-sea squeeze trees'",
 		"glowing_gas": "Bottle of Glowdamp",
 		"logo": "Yttr Logo",
 		"cleaver": "Void Cleaver",
@@ -119,13 +120,18 @@
 		"deer_spawn_egg": "Deer Spawn Egg",
 		"antler_potion": "Potion of Delrene",
 		"grasper_template": "Incomplete Grasper",
-		"inred_multimeter": "Multimeter",
 		"inred_pcb": "Circuit Board",
 		"semimanifest_idea": "Semimanifest Idea",
+		"abandoned_golem_spawn_egg": "Abandoned Golem Spawn Egg",
+		"depicace": "Depicace",
 		"snare.filled": "Snare ({})",
+		"snare.filled._explanation": "{} is the name of the entity in the snare. (e.g. Enderman)",
 		"mercurial_potion.prefix": "Mercurial {}",
+		"mercurial_potion.prefix._explanation": "{} is the vanilla name of the potion. (e.g. Potion of Swiftness)",
 		"antler_potion.prefix": "Plastic {}",
+		"antler_potion.prefix._explanation": "{} is the vanilla name of the potion. (e.g. Potion of Swiftness)",
 		"ultrapure_tool.prefix": "Ultrapure {}",
+		"ultrapure_tool.prefix._explanation": "{} is the name of the tool. (e.g. Diamond Pickaxe)",
 		"glitchwep.interpolation_palette._explanation": "A variety of characters with differing lengths, randomly chosen from to smoothly interpolate the length of the string between weapon forms. Sort of like the MAGIC formatting code, but with more control.",
 		"glitchwep.interpolation_palette": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=`,./<>?\\'\"[]ÄËÏÖÜäëïöüļ¶ĄĘĮǪŲąęįǫų",
 		"glitchwep.gun._explanation": "Which words are used here doesn't matter, it should just be a bunch of terms for a ranged weapon. This syntax sucks, but the way the animation works needs to be aware of the different parts of the string. Square brackets delineate a group that is subject to animation, and they are prefixed with either a or b to specify which color they use. English assigns color A to the word Metastable, and the color B to the Rifle/Sword/etc word. For animating *part* of the string, such as grammatical gender suffixes, multiple groups with the same color can be specified. When the animation is playing, two groups at the same index that have not changed will not be animated. Every line must have the same number of groups. Text outside of groups will never be animated and uses the default color, which is useful for spaces or punctuation. Also, you can have as many or as few variants here as you like - the line count does not need to match English.",
@@ -224,20 +230,29 @@
 		"music_disc_memorandum.desc": "exa - memorandum",
 		"music_disc_enceladus.desc": "Bluelily - Enceladus",
 		"neodymium_disc.desc": "???",
-		"ammo_can.prefixed": "{} Accelerator Canister",
+		"ammo_can": {
+			".": "Accelerator Canister",
+			"damage": "Beam Accelerator Canister",
+			"teleport": "Teleport Accelerator Canister",
+			"explode": "Explode Accelerator Canister",
+			"fire": "Fire Accelerator Canister",
+			"void": "Void Accelerator Canister",
+			"light": "Illumination Accelerator Canister"
+		},
 		"ammo_can.shots": "{1}/{2} shots",
+		"ammo_can.shots._explanation": "{1} is the number of shots currently available, {2} is the maximum number of shots a canister can hold.",
 		"rifle.controlhint": {
 			"normal": [
 				"{key.use} (Hold)  Charge",
 				"{key.attack}  Scope",
-				"{key.swapOffhand} (Hold)  Mode Select"
+				"{key.yttr.tool_menu} (Hold)  Mode Select"
 			],
 			"charge": [
 				"{key.use} (Release)  Fire"
 			],
 			"mode": [
-				"{key.use}  Cycle Right",
-				"{key.attack}  Cycle Left"
+				"{key.yttr.tool_menu.right}  Cycle Right",
+				"{key.yttr.tool_menu.left}  Cycle Left"
 			]
 		},
 		"ultrapure_lazurite.controlhint.normal": [
@@ -263,15 +278,15 @@
 		],
 		"shifter.controlhint": {
 			"normal": [
-				"{key.swapOffhand} (Hold)  Mode Select",
+				"{key.yttr.tool_menu} (Hold)  Mode Select",
 				"{key.pickItem}  Pick Offhand",
 				"{key.use}  Exchange All",
 				"{key.attack}  Exchange One"
 			],
 			"mode": [
-				"{key.use}  Toggle Plane",
-				"{key.pickItem}  Toggle Hidden",
-				"{key.attack}  Toggle Disconnected"
+				"{key.yttr.tool_menu.right}  Toggle Plane",
+				"{key.yttr.tool_menu.center}  Toggle Hidden",
+				"{key.yttr.tool_menu.left}  Toggle Disconnected"
 			]
 		},
 		"cleaver.controlhint": {
@@ -296,25 +311,25 @@
 				"{key.use}  Change Form",
 				"{key.attack}  Melee",
 				"{key.drop}  Throw",
-				"{key.swapOffhand}  Dispel"
+				"{key.yttr.manifest}  Dispel"
 			],
 			"rifle": [
 				"{key.use}  Fire",
 				"{key.attack}  Change Form",
 				"{key.drop}  Throw",
-				"{key.swapOffhand}  Dispel"
+				"{key.yttr.manifest}  Dispel"
 			],
 			"rifle.depleted": [
 				"{key.use}  Fire...?",
 				"{key.attack}  Change Form to Replenish Ammo",
 				"{key.drop}  Throw",
-				"{key.swapOffhand}  Dispel"
+				"{key.yttr.manifest}  Dispel"
 			],
 			"sword.depleted": [
 				"{key.use}  Change Form",
 				"{key.attack}  Melee (Hits Replenish Ammo)",
 				"{key.drop}  Throw",
-				"{key.swapOffhand}  Dispel"
+				"{key.yttr.manifest}  Dispel"
 			]
 		}
 	},
@@ -366,11 +381,15 @@
 		"encased_void_filter": "Encased Void Filter",
 		"eroded_bedrock": "Eroded Bedrock",
 		"magtank": "Magtank",
+		"magtank._explanation": "Magnet + tank. A tank that magnetically levitates its contents.",
 		"brookite_ore": "Brookite Ore",
 		"dsu": "Deep Shelving Unit",
+		"dsu._explanation": "Reference to MineFactory's Deep Storage Unit.",
 		"magtube": "Magtube",
+		"magtube._explanation": "Magnet + tube. A fluid pipe that magnetically levitates its contents.",
 		"root_of_continuity": "Root of Continuity",
 		"lazor_beam": "Lazor Beam",
+		"lazor_beam._explanation": "All occurences of 'laser' in Yttr are intentionally mispelled as 'lazor' due to a very old inside-joke originating in the personal 1.7 mod these first appeared in.",
 		"yttrium_button": "Yttrium Button",
 		"brookite_block": "Block of Brookite",
 		"temporary_light_air": "Temporary Light Air",
@@ -379,8 +398,8 @@
 		"permanent_light_water": "Permanent Light Water",
 		"core_lava": "Core Lava",
 		"nethertuff": "Nethertuff",
-		"evaporator": "Magvaporator",
 		"wasteland_dirt": "Cracked Sand",
+		"wasteland_dirt._explanation": "As in ExtraBiomesXL's block, also used as the surface material of a similar Wasteland biome.",
 		"wasteland_grass": "Mangled Plants",
 		"wasteland_log": "Decayed Log",
 		"wasteland_stone": "Wasteland Stone",
@@ -411,12 +430,14 @@
 		"cuprosteel_big_plate": "Big Cuprosteel Conductive Plate",
 		"can_filler": "Canister Filler",
 		"dust": "Dust",
+		"dust._explanation": "Joke block that refers to Ex Nihilo's Dust.",
 		"neodymium_slab": "Ultradense Slab of Neodymium",
 		"neodymium_block": "Ultradense Block of Neodymium",
 		"supercooled_neodymium_slab": "Supercooled Neodymium",
 		"giant_cobblestone": "Giant Cobblestone",
 		"rafter": "Crafter Rafter",
 		"project_table": "Project Table",
+		"project_table._explanation": "As in RedPower2's Project Table.",
 		"raw_gadolinite_block": "Raw Gadolinite Block",
 		"deepslate_gadolinite": "Deepslate Gadolinite",
 		"deepslate_brookite_ore": "Deepslate Brookite Ore",
@@ -433,7 +454,9 @@
 		"scorched_crying_obsidian": "Scorched Crying Obsidian",
 		"screeper_nest": "Screeper Nest",
 		"ssd": "Scalable Storage Drum",
+		"ssd._explanation": "Riffing on Solid State Drives, real-world storage devices also abbreviated as SSD. Similar pattern to the Deep Shelving Unit.",
 		"velresin": "Hypervelic Resin",
+		"velresin._explanation": "Hypervelic is a somewhat-nonsensical combination of \"hyper\" and \"velocity\". Extremely high-speed resin.",
 		"transfungus": "Transferent Fungus",
 		"transfungus_spores": "Transferent Fungus Spores",
 		"ir_lazor_emitter": "Infrared Lazor Emitter",
@@ -445,53 +468,88 @@
 		"studious_grasper": "Studious Grasper",
 		"munched_flower": "Munched Flower",
 		"upstrate": "Upstrate",
+		"upstrate._explanation": "As in substrate, but above instead of below, as \"sub-\" implies.",
 		"scorched_portal": "Scorched Portal",
 		"pinch_point": "Pinch Point",
+		"pinch_point._explanation": "As in a dangerous place in machinery. Used here to refer to a \"pinch\" in spacetime that causes distortion.",
 		"index": "Index",
 		"boxe": "Boxe® Portable Storage Tote",
 		"boxe._explanation": "Intentionally overly verbose, as with all the plastic products in Yttr. The fake brand name suggests a pronunciation closer to \"bough-ks\" than \"box\".",
+		"depicace": "Depicace",
 		"black_pinch_glom": "Black Pinch Glom",
+		"black_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"blue_pinch_glom": "Blue Pinch Glom",
+		"blue_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"brown_pinch_glom": "Brown Pinch Glom",
+		"brown_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"cyan_pinch_glom": "Cyan Pinch Glom",
+		"cyan_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"gray_pinch_glom": "Gray Pinch Glom",
+		"gray_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"green_pinch_glom": "Green Pinch Glom",
+		"green_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"light_blue_pinch_glom": "Light Blue Pinch Glom",
+		"light_blue_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"light_gray_pinch_glom": "Light Gray Pinch Glom",
+		"light_gray_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"lime_pinch_glom": "Lime Pinch Glom",
+		"lime_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"magenta_pinch_glom": "Magenta Pinch Glom",
+		"magenta_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"orange_pinch_glom": "Orange Pinch Glom",
+		"orange_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"pink_pinch_glom": "Pink Pinch Glom",
+		"pink_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"purple_pinch_glom": "Purple Pinch Glom",
+		"purple_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"red_pinch_glom": "Red Pinch Glom",
+		"red_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"white_pinch_glom": "White Pinch Glom",
+		"white_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"yellow_pinch_glom": "Yellow Pinch Glom",
+		"yellow_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block.",
 		"black_global_pinch_glom": "Global Black Pinch Glom",
+		"black_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"blue_global_pinch_glom": "Global Blue Pinch Glom",
+		"blue_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"brown_global_pinch_glom": "Global Brown Pinch Glom",
+		"brown_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"cyan_global_pinch_glom": "Global Cyan Pinch Glom",
+		"cyan_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"gray_global_pinch_glom": "Global Gray Pinch Glom",
+		"gray_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"green_global_pinch_glom": "Global Green Pinch Glom",
+		"green_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"light_blue_global_pinch_glom": "Global Light Blue Pinch Glom",
+		"light_blue_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"light_gray_global_pinch_glom": "Global Light Gray Pinch Glom",
+		"light_gray_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"lime_global_pinch_glom": "Global Lime Pinch Glom",
+		"lime_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"magenta_global_pinch_glom": "Global Magenta Pinch Glom",
+		"magenta_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"orange_global_pinch_glom": "Global Orange Pinch Glom",
+		"orange_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"pink_global_pinch_glom": "Global Pink Pinch Glom",
+		"pink_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"purple_global_pinch_glom": "Global Purple Pinch Glom",
+		"purple_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"red_global_pinch_glom": "Global Red Pinch Glom",
+		"red_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"white_global_pinch_glom": "Global White Pinch Glom",
+		"white_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"yellow_global_pinch_glom": "Global Yellow Pinch Glom",
+		"yellow_global_pinch_glom._explanation": "\"Pinch\" as in \"pinching\" two points in space together as in a theoretical wormhole, and \"glom\" as in the fact it is stuck/\"glommed\" onto another block. The global variant is shared with all players in multiplayer.",
 		"inred_cable": "Cuprosteel Wire",
 		"inred_cable._explanation": "Cupro- (as in copper) + Steel (as in iron).",
 		"inred_and_gate": "AND Gate",
 		"inred_not_gate": "NOT Gate",
 		"inred_xor_gate": "XOR Gate",
-		"inred_diode": "Diode",
 		"inred_shifter": "Shifter",
 		"inred_transistor": "Transistor",
 		"inred_encoder": "Encoder",
 		"inred_oscillator": "Oscillator",
+		"inred_scaffold": "Scaffolding with Cuprosteel Wire",
 		"lamp": "Lamp",
 		"fixture": "Lamp Fixture",
 		"cage_lamp": "Cage Lamp",
@@ -592,33 +650,6 @@
 			"§cWIP"
 		],
 		"encased_void_filter.tip": [
-			"§cWIP"
-		],
-		"inred_cable.tip": [
-			"§cWIP"
-		],
-		"inred_and_gate.tip": [
-			"§cWIP"
-		],
-		"inred_not_gate.tip": [
-			"§cWIP"
-		],
-		"inred_xor_gate.tip": [
-			"§cWIP"
-		],
-		"inred_diode.tip": [
-			"§cWIP - Pending Removal"
-		],
-		"inred_shifter.tip": [
-			"§cWIP"
-		],
-		"inred_transistor.tip": [
-			"§cWIP"
-		],
-		"inred_encoder.tip": [
-			"§cWIP"
-		],
-		"inred_oscillator.tip": [
 			"§cWIP"
 		],
 		"magtank.tip": [
@@ -873,14 +904,16 @@
 		"ruined_tube.alt": "Tube",
 		"ruined_tank.alt": "Tank",
 		"ruined_construct.alt": "Construct",
-		"replicator.holding": "{1} §7in {2}"
+		"replicator.holding": "{1} §7in {2}",
+		"replicator.holding._explanation": "{1} is the name of the item in the replicator, {2} is the name of the replicator."
 	},
 	"entity.yttr": {
 		"rifle_dummy": "Rifle Dummy",
 		"slipping_transfungus": "Slipping Transfungus",
 		"thrown_glowing_gas": "Thrown Glowdamp",
 		"thrown_glitch_weapon": "Thrown Metastable §kWeapon",
-		"deer": "Deer"
+		"deer": "Deer",
+		"abandoned_golem": "Abandoned Golem"
 	},
 	"biome.yttr": {
 		"scorched_summit": "Scorched Summit",
@@ -937,6 +970,7 @@
 		"dissolve": "Dissolving",
 		"horrible_crafting": "Player commits a terrible deed",
 		"aware_hopper": "Aware hopper vwroans",
+		"aware_hopper._explanation": "Combination of \"Zombie groans\" and \"Enderman vwoops\".",
 		"swallow": "Player gulps",
 		"cleaver": "Block cleaved",
 		"snare_grab": "Snare grabs",
@@ -983,7 +1017,10 @@
 		"glitchrifle_fire_dud": "Metastable gun clicks",
 		"boxe_open": "Boxe® opens",
 		"boxe_close": "Boxe® closes",
-		"void_centrifuge": "Ominous centrifuging"
+		"void_centrifuge": "Ominous centrifuging",
+		"golem_idle": "Golem creaks",
+		"golem_hit": "Golem cracks",
+		"golem_die": "Golem crumbles"
 	},
 	"death.attack.yttr": {
 		"rifle_overcharge": "{} tasted their own medicine",
@@ -997,14 +1034,18 @@
 		"suit_integrity_failure": "{} was denatured by the planet",
 		"suit_suffocation": "{} ran out of oxygen",
 		"vorpal": "{1} was fairly slain by {2}",
+		"vorpal._explanation": "Reference to a Team Fortress 2 community refrain about random critical hits - 'random crits are fair and balanced'.",
 		"vorpal.item": "{1} was fairly slain by {2} using {3}",
+		"vorpal.item._explanation": "Reference to a Team Fortress 2 community refrain about random critical hits - 'random crits are fair and balanced'.",
 		"effector_fall": "{1} had the rug pulled out from under them by {2}",
 		"effector_fall.noone": "{1} had the rug pulled out from under them",
 		"void_rifle": "{1} was erased by {2}",
 		"void_rifle.item": "{1} was erased by {2} using {3}",
 		"lazor": "{} got burned playing with lazors",
+		"lazor._explanation": "All occurences of 'laser' in Yttr are intentionally mispelled as 'lazor' due to a very old inside-joke originating in the personal 1.7 mod these first appeared in. This is also a direct quote of the death message from that mod.",
 		"magnet": "{} was turned to taffy",
 		"bloque": "{} stepped upon a Bloque® Plastic Construction Building Brick without foot protection",
+		"bloque.tip._explanation": "Intentionally overly verbose, and hints that wearing boots prevents the damage.",
 		"glitchregen": "{} was too weak to remanifest their weapon",
 		"glitchswipe": "{1} was sliced into corrupted tiles by {2}",
 		"glitchswipe.item": "{1} was sliced into corrupted tiles by {2} using {3}",
@@ -1032,11 +1073,23 @@
 	},
 	"yttr.geyser_discovered": "Geyser Discovered",
 	"tip.yttr": {
-		"rifle_mode": "Mode: {}",
-		"rifle_no_ammo": "Out of {}",
-		"rifle_no_ammo_multi": "Need {1} {2}",
+		"rifle_no_ammo": {
+			"generic": "Out of ammo",
+			"1": {
+				"damage": "Out of Redstone Dust",
+				"explode": "Out of Gunpowder",
+				"teleport": "Out of Chorus Fruit",
+				"fire": "Out of Blaze Powder",
+				"void": "Out of Void Buckets",
+				"light": "Out of Glowstone Dust"
+			},
+			"2": {
+				"explode": "Need 2 Gunpowder"
+			}
+		},
 		"snare.stable": "Containment stable",
 		"snare.unstable": "Containment failure in {1}:{2}",
+		"snare.unstable._explanation": "{1} is minutes left, {2} is seconds left.",
 		"snare.failed": "CONTAINMENT FAILURE",
 		"delicace_bonus_1": "+40% Food Value",
 		"delicace_bonus_2": "+20% Saturation",
@@ -1053,11 +1106,8 @@
 		"shifter.hidden.disabled": "§cDisabled§r replacement of hidden blocks",
 		"shifter.plane.enabled": "§aEnabled§r plane restriction",
 		"shifter.plane.disabled": "§cDisabled§r plane restriction",
-		"inred.multimeter.direction": "Signal input from {1}: {2}",
-		"inred.multimeter.out": "Module signal output: {}",
-		"inred.multimeter.cable": "Signal passing through cable: {}",
-		"inred.multimeter.block": "Block emits value of 0b11_1111 (63)",
 		"void_bucket.destroyable": "Right-click to §cdestroy {1}x {2}",
+		"void_bucket.destroyable._explanation": "{1} is the quantity of the item stack, {2} is the name of the item.",
 		"void_bucket.destroyable.flair": "It will be lost forever! (A long time!)",
 		"void_bucket.destroyable.flair._explanation": "Quoting vanilla's server/world deletion warnings.",
 		"void_bucket.bundle": "Right-click to §cdestroy §rall bundle contents",
@@ -1068,28 +1118,64 @@
 		"haemopal.self_own": "It seems to beat with you.",
 		"beetopal": "Not very hearty.",
 		"haemopal.owner": "A piece of {}.",
+		"haemopal.owner._explanation": "{} is the username of the owner.",
 		"diffractor.cooldown": "§cCan't cloak, still recharging.",
 		"index.prototype": "Remembers {}",
-		"index.prototype.hint": "Click to clear"
+		"index.prototype._explanation": "{} is the name of the item that is remembered.",
+		"index.prototype.hint": "Click to clear",
+		"inred.signal": {
+			"output": "Output",
+			"input": "Input",
+			"left": "Left",
+			"back": "Back",
+			"right": "Right",
+			"signal": "Signal",
+			"eject": "Eject",
+			"next": "Next"
+		}
 	},
 	"controlhint.emptyhand.yttr": {
 		"diffractor_normal": [
-			"{key.swapOffhand} (Sneak)  Cloak"
+			"{key.yttr.cloak}  Cloak"
 		],
 		"diffractor_cloaked": [
-			"{key.swapOffhand} (Sneak)  Uncloak"
+			"{key.yttr.cloak}  Uncloak"
 		],
 		"glitchwep": [
-			"{key.swapOffhand}  Manifest Weapon"
+			"{key.yttr.manifest}  Manifest Weapon"
 		],
 		"glitchwep_alt": [
-			"{key.swapOffhand}  Use It"
+			"{key.yttr.manifest}  Use It"
 		]
+	},
+	"controlhint.worldconfig.yttr": {
+		"block_menu": [
+			"{key.yttr.tool_menu} (Hold)  Block Menu"
+		],
+		"inred": {
+			"enable_left": [ "{key.yttr.tool_menu.left}  Enable Left Input" ],
+			"disable_left": [ "{key.yttr.tool_menu.left}  Disable Left Input" ],
+			"enable_back": [ "{key.yttr.tool_menu.center}  Enable Back Input" ],
+			"disable_back": [ "{key.yttr.tool_menu.center}  Disable Back Input" ],
+			"enable_right": [ "{key.yttr.tool_menu.right}  Enable Right Input" ],
+			"disable_right": [ "{key.yttr.tool_menu.right}  Disable Right Input" ],
+			"switch_to_boolean": [ "{key.use}  Switch to Boolean Mode" ],
+			"switch_to_bitwise": [ "{key.use}  Switch to Bitwise Mode" ],
+			"switch_to_left": [ "{key.use}  Switch to Left Shift" ],
+			"switch_to_right": [ "{key.use}  Switch to Right Shift" ],
+			"remove_tick": [ "{key.yttr.tool_menu.left}  Subtract 1 Tick" ],
+			"remove_second": [ "{key.yttr.tool_menu.left}  Subtract 1 Second" ],
+			"add_tick": [ "{key.yttr.tool_menu.right}  Add 1 Tick" ],
+			"add_second": [ "{key.yttr.tool_menu.right}  Add 1 Second" ],
+			"adjust_ticks": [ "{key.sneak} (Hold)  Adjust Ticks" ],
+			"adjust_seconds": [ "{key.sneak} (Release)  Adjust Seconds" ]
+		}
 	},
 	"commands.yttr": {
 		"void_undo": {
 			"clean": "Deleted {} undo files",
 			"location": "At {1}, {2}, {3} ({4}m away)",
+			"location._explanation": "{1} is the X coordinate, {2} is the Y, {3} is the Z, {4} is how many blocks away.",
 			"not_found": "No undo files could be found matching your request",
 			"no_world": "Couldn't find a dimension with ID {}",
 			"success": "Successfully restored {} blocks",
@@ -1212,7 +1298,7 @@
 		"obtain_rifle": {
 			"title": "Third Time's The Charm",
 			"desc": "Obtain the Particular Accelerator",
-			"title._explanation": "Yttr is the third of a series of mods of ours that add a rifle made of Yttrium. The second iteration was called the Lanthanide Rifle, however."
+			"title._explanation": "Yttr is the third of a series of mods of ours that add a rifle made of Yttrium that works roughly this way. Yttric Rifle, Lanthanide Rifle, Particular Accelerator."
 		},
 		"break_bedrock": {
 			"title": "Not So Tough, Are You?",
@@ -1564,7 +1650,7 @@
 		},
 		"weak_snare": {
 			"title": "THIS PRISON? TO HOLD... ME?",
-			"title._explanation": "Reference to Ultrakill, description is a reference to inscriptions on dangerous radiation sources.",
+			"title._explanation": "Reference to Ultrakill.",
 			"desc": "Drop & Run",
 			"desc._explanation": "Reference to inscriptions on dangerous radiation sources."
 		},
@@ -1632,7 +1718,8 @@
 				"pinch_gloms": "Pinch Glom",
 				"global_pinch_gloms": "Global Pinch Glom",
 				"all_pinch_gloms": "Any Pinch Glom",
-				"boxen": "Boxen®"
+				"boxen": "Boxen®",
+				"goops": "Squeeze Goops"
 			},
 			"trinkets": {
 				"feet.sole": "Sole Trinkets",
@@ -1692,6 +1779,7 @@
 	},
 	"alias.emi.yttr": {
 		"aka": "aka {}",
+		"aka._explanation": "Currently unused. Supposed to be displayed in the tooltip of an item when it shows up due to an alias, displaying the alias that made it show up.",
 		"cloaking": "Cloaking",
 		"cloaking._explanation": "EMI alias, so players looking up common terms or items from other mods are shown Yttr's equivalent. Used for the Continuous Diffractor.",
 		"invisibility": "Invisibility",
@@ -1713,11 +1801,11 @@
 		"multitool": "Multitool",
 		"multitool._explanation": "EMI alias, so players looking up common terms or items from other mods are shown Yttr's equivalent. Used for the Reinforced Cleaver, as in the common type of item.",
 		"laser": "Laser",
-		"laser._explanation": "EMI alias, so players looking up common terms or items from other mods are shown Yttr's equivalent. Used to make Lazor Emitters show up even when spelling 'laser' correctly, and for the Yttric Rifle to show up for Mining Laser.",
+		"laser._explanation": "EMI alias, so players looking up common terms or items from other mods are shown Yttr's equivalent. Used to make Lazor Emitters show up even when spelling 'laser' correctly, and for the Particular Accelerator to show up for Mining Laser.",
 		"lazer": "Lazer",
 		"lazer._explanation": "EMI alias, so players looking up common terms or items from other mods are shown Yttr's equivalent. To make Lazor Emitters show up even when spelling 'laser' nearly correctly.",
 		"blaster": "Blaster",
-		"blaster._explanation": "EMI alias, so players looking up common terms or items from other mods are shown Yttr's equivalent. Used for the Yttric Rifle, as in Botania's Mana Blaster.",
+		"blaster._explanation": "EMI alias, so players looking up common terms or items from other mods are shown Yttr's equivalent. Used for the Particular Accelerator, as in Botania's Mana Blaster.",
 		"autoworkbench": "Auto-Workbench",
 		"autoworkbench._explanation": "EMI alias, so players looking up common terms or items from other mods are shown Yttr's equivalent. Used for the Aware Hopper, as in BuildCraft's block.",
 		"autocrafter": "Automatic Crafter",
@@ -1799,14 +1887,22 @@
 		"ender": "Ender",
 		"ender._explanation": "EMI alias for the Aware Hopper, as it involves an Enderman.",
 		"zzazz": "ZZAZZ",
-		"zzazz._explanation": "As in the Pokemon Generation 1 glitch. Common nickname for the Metastable Weapon."
+		"zzazz._explanation": "As in the Pokemon Generation 1 glitch. Common nickname for the Metastable Weapon.",
+		"rifle": "Yttric Rifle",
+		"rifle._explanation": "As in the previous name for the Particular Accelerator."
 	},
 	"emi.category.lib39-machination.piston_smashing.cloud_output_hint": "Use a Glass Bottle on the resulting cloud",
 	"emi.tooltip.yttr.any_tool": "Any Tool",
 	"emi.tooltip.yttr.source": "(Source Block)",
 	"emi.tooltip.yttr.flowing": "(Flowing, Adjacent to Source)",
 	"emi.tooltip.yttr.flowing_low": "(Flowing)",
-	"tooltip.yttr.suit_helmet_hud": "HUD Color: {}",
+	"tooltip.yttr": {
+		"suit_helmet_hud": "HUD Color: {}",
+		"seethrough_keybind_default": "Using default: {}",
+		"seethrough_keybind_default._explanation": "{} is the name of the vanilla keybind. (e.g. Swap Hands)",
+		"seethrough_keychord_default": "Using default: {1} + {2}",
+		"seethrough_keychord_default._explanation": "{1} is the key that needs to be chorded with (e.g. Left Shift), {2} is the name of the vanilla keybind. (e.g. Swap Hands)"
+	},
 	"trinkets.slot.feet.sole": "Sole",
 	"curios.identifier.sole": "Sole",
 	"msg.yttr": {
@@ -1816,11 +1912,24 @@
 		"well_wishes": "Have a nice day!",
 		"glom_error.already_glommed": "Can't put a Glom here: Already under the effect of another Glom",
 		"glom_error.not_inventory": "Can't put a Glom here: {} is not an inventory",
+		"glom_error.not_inventory._explanation": "{} is the name of the block. (e.g. Dirt)",
 		"glom_error.inventory_not_empty": "Can't put a Glom here: The inventory must be empty",
 		"glom_error.not_glommable": "Can't put a Glom here: {} is not tagged as glommable",
+		"glom_error.not_glommable._explanation": "{} is the name of the block. (e.g. Furnace)",
 		"glom_error.double_chest": "Can't put a Glom here: Double chests may not be glommed",
 		"glom_error.c2me": "Can't put a Glom here: C²ME is installed",
 		"glom_error.break": "§lBreaking this will empty every linked inventory. §eSneak to confirm you want this, or break the glom first to unlink it."
+	},
+	"key.categories.yttr": "Yttr",
+	"key.yttr": {
+		"tool_menu": {
+			".": "Tool Menu",
+			"left": "Tool Menu Left",
+			"center": "Tool Menu Center",
+			"right": "Tool Menu Right"
+		},
+		"manifest": "Manifest",
+		"cloak": "Cloak"
 	},
 	"yttr.modmenu": {
 		"matrix": "Matrix",
