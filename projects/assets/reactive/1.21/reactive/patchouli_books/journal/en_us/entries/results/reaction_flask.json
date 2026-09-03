@@ -1,0 +1,81 @@
+{
+  "name": "Reaction Flasks",
+  "icon": "reactive:reaction_flask",
+  "category": "reactive:results",
+  "advancement": "reactive:flask_research",
+  "turnin": "reactive:throw_flask",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(o)Ah, hello. There's something I'd like to show you. I'm actually quite proud of it.$(p)As you now know, $(l:objects_of_study/gold_thread)Gold Thread$(/l) converts a reaction in a Crucible into some sort of floating $(item)Reaction Cloud$(0) that sustains itself for a short time."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(o)By mixing Powers together in their Bottles and adding some Gold Thread inside the flask, we could replicate this effect with no Crucible at all.$(p)Of course, we can't have it reacting right away, so we use an $(l:objects_of_study/inert_crystal)Inert Crystal$(/l) to seal the flask."
+    },
+    {
+      "type": "reactive:fake_crafting",
+      "input1_1": "",
+      "input1_2": "reactive:inert_crystal",
+      "input1_3": "",
+      "input2_1": "tag:reactive:power_bottles",
+      "input2_2": "tag:reactive:power_bottles",
+      "input2_3": "tag:reactive:power_bottles",
+      "input3_1": "",
+      "input3_2": "reactive:gold_thread",
+      "input3_3": "",
+      "output": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:false, powers:{}}]",
+      "text": "$(o)Here's the recipe. Any combination of Power Bottles will work.$(p)Of course, you'll need to choose Power Bottles that, when mixed, would cause a desirable $(l:reactions)Reaction$(/l)."
+    },
+    {
+      "type": "reactive:fake_crafting",
+      "input1_1": "",
+      "input1_2": "reactive:inert_crystal",
+      "input1_3": "",
+      "input2_1": "tag:reactive:power_bottles",
+      "input2_2": "tag:reactive:power_bottles",
+      "input2_3": "",
+      "input3_1": "",
+      "input3_2": "reactive:gold_thread",
+      "input3_3": "",
+      "output": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:false, powers:{}}]",
+      "text": "$(o)You can also use a pair of power bottles, same or different."
+    },
+    {
+      "type": "reactive:fake_crafting",
+      "input1_1": "",
+      "input1_2": "reactive:inert_crystal",
+      "input1_3": "",
+      "input2_1": "",
+      "input2_2": "tag:reactive:power_bottles",
+      "input2_3": "",
+      "input3_1": "",
+      "input3_2": "reactive:gold_thread",
+      "input3_3": "",
+      "output": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:false, powers:{}}]",
+      "text": "$(o)Or even just one. There are a few reactions that only require one Power, after all..."
+    },
+    {
+      "type": "reactive:fake_crafting",
+      "input1_1": "",
+      "input1_2": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:false, powers:{}}]",
+      "input1_3": "",
+      "input2_1": "",
+      "input2_2": "reactive:volt_cell",
+      "input2_3": "",
+      "input3_1": "",
+      "input3_2": "",
+      "input3_3": "",
+      "output": "reactive:reaction_flask[reactive:reaction_flask_contents={charged:true, powers:{}}]",
+      "text": "$(o)Crafting the flask together with a $(item)Volt Cell$(0) will 'charge' it, allowing the Reaction Cloud to perform Reactions that need $(thing)Electric Charge$(0) as their stimulus.$(p)The Volt Cell is not consumed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(o)Take note:$(p)Reaction Clouds need all the same Stimuli that a Crucible does to cause Reactions. That means that if a Reaction requires a $(item)Gold Symbol$(0), for example, it $(4)will not work$(0) without that Symbol present nearby.$(p)Also, the lifespan of each Reaction Cloud is finite, and it will vanish when that lifespan ends."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(o)I have observed that multiple close-together Reaction Clouds seem to move toward each other until they 'merge' together. When this happens, they seem to add their Power balances together. The new Reaction Cloud will inherit the remaining lifespan of whichever would have lived longer."
+    }
+  ]
+}
