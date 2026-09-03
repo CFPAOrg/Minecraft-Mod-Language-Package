@@ -1,7 +1,7 @@
 ---
 navigation:
   title: Other stuff
-  icon: "justdynathings:revitalizer"
+  icon: "justdynathings:stabilizer"
   position: 99
 ---
 
