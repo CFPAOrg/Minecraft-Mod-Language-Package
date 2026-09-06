@@ -1,0 +1,58 @@
+{
+  ioticblocks: {
+    category: {
+      patterns: {
+        entry: {
+          readwrite_blocks: {
+            "": "Reading/Writing Blocks",
+            page: {
+              "read/block": "Like $(l:patterns/readwrite#hexcasting:read)$(action)Scribe's Reflection/$, but the iota is read out of a block instead of my other hand.",
+              "write/block": "Like $(l:patterns/readwrite#hexcasting:write)$(action)Scribe's Gambit/$, but the iota is written to a block instead of my other hand.$(br2)\
+                Interestingly enough, it looks like I cannot write my own Name using this spell. I get a sense that I might be endangered if I could.",
+              "read/index": "Read a list iota out of an entity or block, then push the iota at the specified index to the stack.$(br2)\
+                It seems this and the next pattern may be useful for handling large amounts of data without causing a $(l:casting/mishaps)Too Many Iotas/$ mishap.",
+              "write/index": "Read a list iota out of an entity or block, then set the element at the specified index of that list to the given iota, then write the resulting list back to the entity or block.",
+              "readable/block": "Like $(l:patterns/readwrite#hexcasting:readable)$(action)Auditor's Reflection/$, but the readability of a block is checked instead of my other hand.",
+              "writable/block": "Like $(l:patterns/readwrite#hexcasting:writable)$(action)Assessor's Reflection/$, but the writability of a block is checked instead of my other hand.",
+            }
+          }
+        }
+      }
+    }
+  },
+
+  hexcasting: {
+    action: {
+      "ioticblocks:": {
+        "read/index": "Tachygrapher's Distillation",
+        "write/index": "Tachygrapher's Gambit",
+      },
+
+      book: {
+        "ioticblocks:": {
+          "read/index": "Tachygrapher's Dstl.",
+        },
+      },
+    },
+
+    mishap: {
+      bad_item: {
+        iota: {
+          read: {
+            list: "a place to read a list from",
+          },
+        },
+      },
+
+      bad_block: {
+        iota: {
+          read: {
+            "": "a place to read iotas from",
+            list: "a place to read a list from",
+          },
+          write: "a place to write iotas to",
+        },
+      },
+    },
+  },
+}
