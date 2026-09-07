@@ -12,6 +12,12 @@ item_ids:
   - enderdrives:ender_disk_64k
   - enderdrives:ender_disk_256k
   - enderdrives:ender_disk_creative
+  - enderdrives:ender_fluid_disk_1k
+  - enderdrives:ender_fluid_disk_4k
+  - enderdrives:ender_fluid_disk_16k
+  - enderdrives:ender_fluid_disk_64k
+  - enderdrives:ender_fluid_disk_256k
+  - enderdrives:ender_fluid_disk_creative
 ---
 
 # 末影驱动器
@@ -62,6 +68,52 @@ item_ids:
     <ItemLink id="enderdrives:ender_disk_256k" />
   </Column>
 </Row>
+
+<Row gap="10">
+  <Column>
+    <ItemImage id="enderdrives:ender_fluid_disk_1k" />
+  </Column>
+  <Column>
+    <ItemLink id="enderdrives:ender_fluid_disk_1k" />
+  </Column>
+</Row>
+
+<Row gap="10">
+  <Column>
+    <ItemImage id="enderdrives:ender_fluid_disk_4k" />
+  </Column>
+  <Column>
+    <ItemLink id="enderdrives:ender_fluid_disk_4k" />
+  </Column>
+</Row>
+
+<Row gap="10">
+  <Column>
+    <ItemImage id="enderdrives:ender_fluid_disk_16k" />
+  </Column>
+  <Column>
+    <ItemLink id="enderdrives:ender_fluid_disk_16k" />
+  </Column>
+</Row>
+
+<Row gap="10">
+  <Column>
+    <ItemImage id="enderdrives:ender_fluid_disk_64k" />
+  </Column>
+  <Column>
+    <ItemLink id="enderdrives:ender_fluid_disk_64k" />
+  </Column>
+</Row>
+
+<Row gap="10">
+  <Column>
+    <ItemImage id="enderdrives:ender_fluid_disk_256k" />
+  </Column>
+  <Column>
+    <ItemLink id="enderdrives:ender_fluid_disk_256k" />
+  </Column>
+</Row>
+
 
 ---
 

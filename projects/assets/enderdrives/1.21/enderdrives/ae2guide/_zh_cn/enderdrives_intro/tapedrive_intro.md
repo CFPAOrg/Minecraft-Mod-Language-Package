@@ -36,7 +36,7 @@ item_ids:
 
 磁带盘同时具有**类型限制**和**字节占用限制**：
 
-- **类型限制** – 单种物品的存储量上限（如附魔书、自定义盔甲等）
+- **类型限制** – 独特物品（如附魔书、自定义盔甲等）的类型数上限
 - **字节占用限制** – 由各个物品的**NBT数据大小**决定；神化（Apotheosis）的装备等携带大量标签的物品会因此占用更多空间
 
 磁带盘会**优先接受包含大量NBT的物品**，非常适合存储装备和独特的物品，也可阻止它们污染传统的存储空间。
@@ -58,7 +58,7 @@ item_ids:
 
 ## IO端口传输
 
-磁带盘会对涉及它自身，以及它使用任意IO端口的传输进行自动限流。这是为避免一次传输大量NBT过多的物品导致的游戏卡死。
+通过IO端口对磁带盘输入输出时，磁带盘会自动进行限流。这是为避免一次传输大量NBT过多的物品而导致游戏卡死。
 
 ---
 
@@ -75,7 +75,7 @@ item_ids:
 | <ItemImage id="minecraft:diamond_chestplate" /> | 带有魔咒的**钻石胸甲** |
 | <ItemImage id="minecraft:enchanted_book" />     | 带有魔咒的**附魔书**   |
 | <ItemImage id="minecraft:splash_potion" />      | 具有效果的**药水**     |
-| <ItemImage id="minecraft:netherite_pickaxe" />  | 消耗过耐久度的**工具** |
+| <ItemImage id="minecraft:netherite_pickaxe" />  | 具有耐久度的**工具**   |
 
 ---
 
