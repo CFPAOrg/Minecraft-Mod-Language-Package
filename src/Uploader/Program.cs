@@ -76,22 +76,17 @@ namespace Uploader
                 var version = packName["grouped-Minecraft-Mod-Language-Modpack-".Length..^".zip".Length];
 
                 var targetDirectory = $"{ServerPathPrefix}/{version}/";
-                var targetNewDirectory = $"{ServerPathPrefix}/{version}-new/";
                 var zipPath = $"{ServerPathPrefix}/{packName}";
 
-                // 怎么感觉有点危险（（
-
-                if (sshClient.RunCommand($"unzip '{zipPath}' -d '{targetNewDirectory}'").ExitStatus == 0)
+                if (sshClient.RunCommand($"unzip -o '{zipPath}' -d '{targetDirectory}'").ExitStatus == 0)
                 {
                     Log.Information("<Server> 解包文件：{0}", zipPath);
-                    sshClient.RunCommand($"rm -rf '{targetDirectory}'");
-                    sshClient.RunCommand($"mv '{targetNewDirectory}' '{targetDirectory}'");
                 }
                 else
                 {
                     Log.Warning("<Server> 解包失败：{0}", zipPath);
-                    sshClient.RunCommand($"rm -rf '{targetNewDirectory}'");
                 }
+
                 sshClient.RunCommand($"rm '{zipPath}'");
             }
         }
