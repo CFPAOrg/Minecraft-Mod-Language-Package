@@ -1,0 +1,61 @@
+# TEMPORARY, 用完即删。用途：把 autobuild release 上的手工 1.10.2 包传到下载站（借上游 SSH_* secrets）。
+# 用法：
+#   git checkout -b push-1-10-2
+#   git add .github/workflows/tmp-upload-1-10-2.yml
+#   git commit -m "Tmp: upload 1.10.2 pack" && git push upstream push-1-10-2
+#   # push 即触发；跑完确认后：
+#   git push upstream --delete push-1-10-2
+# 注意：和 packer.yml 串行（同 concurrency group），避开 UTC 20:00 维护窗口。
+name: Tmp Upload 1.10.2 Pack
+
+on:
+  push:
+    branches: [push-1-10-2]
+    paths:
+      - '.github/workflows/tmp-upload-1-10-2.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: packer-upload
+  cancel-in-progress: false
+
+jobs:
+  upload:
+    if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
+    name: Upload 1.10.2 pack to download server
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download 1.10.2 pack from autobuild release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download autobuild --repo CFPAOrg/Minecraft-Mod-Language-Package \
+            --pattern 'Minecraft-Mod-Language-Modpack-1-10-2.zip' \
+            --pattern '1.10.2.md5'
+
+      - name: Verify md5
+        run: |
+          actual=$(md5sum Minecraft-Mod-Language-Modpack-1-10-2.zip | cut -d' ' -f1)
+          expected=$(tr 'A-F' 'a-f' < 1.10.2.md5)
+          if [ "$actual" != "$expected" ]; then echo "md5 mismatch: actual=$actual expected=$expected"; exit 1; fi
+          echo "md5 ok: $actual"
+
+      # 与 packer.yml 一致：避开远端服务器的 4:00-4:10（UTC+8）维护窗口
+      - name: Fail at inappropriate time
+        run: if [ `date -u +%H` -eq 20 ]; then echo 'in maintenance window, retry later'; exit 1; fi
+        shell: bash
+
+      - name: Upload to download server
+        env:
+          SSH_IP: ${{ secrets.SSH_IP }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PWD: ${{ secrets.SSH_PWD }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq sshpass
+          sshpass -p "$SSH_PWD" scp -o StrictHostKeyChecking=accept-new -o ConnectTimeout=30 \
+            Minecraft-Mod-Language-Modpack-1-10-2.zip 1.10.2.md5 \
+            "$SSH_USER@$SSH_IP:/var/www/html/files/"
