@@ -129,7 +129,7 @@ jobs:
         with:
           name: grouped-Minecraft-Mod-Language-Modpack-${{ matrix.version }}
           path: |
-            Minecraft-Mod-Language-Modpack-${{ matrix.version }}-namespaced.zip
+            grouped-Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
         if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
   upload:
@@ -163,7 +163,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: artifacts/
-          pattern: Minecraft-Mod-Language-Modpack-* # 先不拉取新格式，否则会乱掉
+          # pattern: Minecraft-Mod-Language-Modpack-*
       
       # Pending: 把按命名空间传的包也传上去
 

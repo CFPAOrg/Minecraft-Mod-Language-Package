@@ -27,13 +27,7 @@ namespace Packer
                                                       version: version);
             Log.Information("开始对版本 {0} 的打包", config.Base.Version);
 
-            var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version)
-                : Enumerable.Empty<string>();
-
-            
-
-            
-
+            var targetModIdentifiers = increment ? GitHelpers.EnumerateChangedMods(config.Base.Version) : [];
 
             IEnumerable<IResourceFileProvider> initialFiles = [
                 new RawFile(new FileInfo("./projects/templates/pack.png"), "pack.png"),
@@ -70,7 +64,7 @@ namespace Packer
 
             if (grouped)
             {
-                string packName = $"./Minecraft-Mod-Language-Modpack-{config.Base.Version}-namespaced.zip";
+                string packName = $"./grouped-Minecraft-Mod-Language-Modpack-{config.Base.Version}.zip";
                 Log.Information("组合包：{0}", packName);
 
                 var acceptableVersions = config.Base.FallbackVersions.Prepend(config.Base.Version).ToList();
