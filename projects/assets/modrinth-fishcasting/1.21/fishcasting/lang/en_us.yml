@@ -1,0 +1,318 @@
+fishcasting:
+  remove_from_names:
+    bucket: Bucket
+  toast:
+    tacklebox_chair:
+      fish_boxed: Fish boxed!
+  creative_tab:
+    title: Fishcasting
+  subtitles:
+    blessed:
+      death: Blessed Trader dies
+      hurt: Blessed Trader hurts
+      ambient: Blessed Trader mumbles
+      trade: Blessed Trader trades
+      'yes': Blessed Trader agrees
+      'no': Blessed Trader disagrees
+      drink_potion: Blessed Trader drinks potion
+      drink_milk: Blessed Trader drinks milk
+      appears: Blessed Trader appears
+      disappears: Blessed Trader disappears
+  config:
+    common:
+      castingTicksToCast:
+        .: Casting Rod Hex charge ticks
+        'desc': Specifies number of ticks until the purple is depleted when charging.
+      cooldownAfterFishing:
+        .: Casting Rod cooldown
+        'desc': Specifies number of ticks after reeling in the hook until casting rods are usable again.
+      castingTypeFreeChoice:
+        .: Cast method free choice
+        'desc': Specifies whether cast method can be chosen by player, or if it is set by the server.
+      castingType:
+        .: Casting Rod cast method
+        'desc': Specifies whether casts are charged or not.
+      isLengthPurificationOnlyFish:
+        .: Length Purification only applies to fish
+        'desc': Specifies if length purification works on just fish when true, or all entities if false.
+      spawnFishyTraderChance:
+        .: Chance to spawn trader on crate reel
+        'desc': Specifies chance where 0.0 is disabled and 1.0 is every time.
+    client:
+      showForbiddenPatchouliKnowledge:
+        .: Show Length Purification in Entity entry of Hex Notebook
+        'desc': Not recommended for new players as it will be confusing and not beneficial. Leave this off if you are including it in a modpack. Also leave this off in general if you aren't a specific kind of weird. Requires JsonPatcher.
+      castingTypeClientPreference:
+        .: Casting Rod cast method Client Pref.
+        'desc': Specifies whether casts are charged or not. (Client Preference)
+
+
+  book:
+    fishing_spells:
+      '1': On the rare occasion that I have come face to face with a finned foe, a simple spell to disable its movements is all I ever needed to deal with the issue.$(br)These spells are useless on most other more advanced beings, but for the simple creatures that fish are, they will suffice.
+      title: Fishing Spells
+      fish/from_item: Removes an entity from the stack and if it was a fish, enlivens it to move once more. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+      fish/to_item: Removes an entity from the stack and if it was a fish, coerces it to remain still. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+    fishing_patterns:
+      '1': I came across a soggy book in my travels written by a sage fisher who went by the name $(italic)'Babs'/$. While most of the text consists of the ramblings of a sailor, found within the pages were some mundane patterns for fishing. Marine life may not be my focus, but for the sake of my work I must note these down. These would come in handy I ever decide to use a $(l:items/casting_rod#fishcasting:landing)$(thing)Casting Rod/$.
+      title: Fishing Patterns
+      bobber/from_owner: Transforms a player on the stack into the bobber attached to their fishing pole (or $(l:casting/influences)$(thing)Null/$ if there isn't one). Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.
+      owner/from_bobber: Transforms a bobber on the stack into the player which cast it. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+      catch/from_bobber: Transforms a bobber on the stack into the entity caught on its hook (or $(l:casting/influences)$(thing)Null/$ if there isn't one). Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+      bobber/from_catch: Transforms an entity on the stack into the bobber it is caught on (or $(l:casting/influences)$(thing)Null/$ if there isn't one). Costs about one $(l:items/amethyst)$(item)Charged Amethyst/$.
+      fish/length: Measure the length of the fish entity. Returns 0 if the entity could not be measured or was not a fish.
+      fish/length_all_entities: |-
+        Compute the largest dimension of the entity. For a fish, this returns its $(t:Tide 2 provides fish as items and
+        as entities with a length property
+        independent of the entity hitbox size)$(thing)length as measured by a fisher$().
+      fish/length_forbidden: |-
+        Measure the length of the fish entity. Returns 0 if the entity could not be measured or was not a fish.$(br2)$(t:This page was added by the mod
+        Fishcasting. To disable it, please set the
+        showForbiddenPatchouliKnowledge field
+        to false in the fishcasting config
+        fishcasting.toml)[Fishcasting]$()
+      fish/length_all_entities_forbidden: |-
+        Compute the largest dimension of the entity. For a fish, this returns its $(t:Tide 2 provides fish as items and
+        as entities with a length property
+        independent of the entity hitbox size)$(thing)length as measured by a fisher$().$(br2)$(t:This page was added by the mod
+        Fishcasting. To disable it, please set the
+        showForbiddenPatchouliKnowledge field
+        to false in the fishcasting config
+        fishcasting.toml)[Fishcasting]$()
+  spelldata:
+    fish:
+      whoknows: An unknown fish
+  entry:
+    casting_rod: Casting Rods
+    focus_bobber: Focus Bobbers
+    fishy_business: Fishy Business
+    fanciful_fishing: Fanciful Fishing
+    lore:
+      newsletter: 'Newsletter #1'
+      newsletter2: 'Newsletter #2'
+      notes: 'Notes #1'
+      notes2: 'Notes #2'
+      notes3: 'Notes #3'
+      notes4: 'Notes #4'
+  page:
+    casting_rod:
+      '1':
+        .: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$.
+        momentary: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$ when swung gently.
+        offhand_only: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$ when I hold it in my non-dominant hand.
+      smithing: A construction similar to the $(l:items/staff)$(thing)Staves/$.
+    focus_bobber:
+      '1': A truly remarkable invention for such a trite sport. A $(thing)Focus Bobber/$ not only extends my ambit by about an arms length from its origin, it also casts any stored hex within once I pull on it with enough force. This added range does not come for free however, as casting via the Focus Bobber costs $(l:items/amethyst)$(item)Amethyst Dust/$ equal to the square of the length of the vector from myself to the bobber.
+      crafting: A construction similar to the $(l:items/focus)$(thing)Focus/$.
+    fishy_business:
+      '1': Some useful recipes to be certain, should I ever come across a fool foolish enough to part with these without knowing their true value as sources of _Media.
+      crystal_shrimp:
+        shard: These $(thing)Crystal Shrimp$() do look quite delicious...
+        charged: Especially when they're together like this...
+      crystalline_carp: This imposing $(thing)Crystalline Carp$() looks like it could channel media without any effort at all, if it had the brains to do so.
+      '2': These small things seem to have some almost negligible but noticeable effect on less intelligent life. While hardly useful in my research, the sound the line makes is pleasant on the ears. If only the bait were so kind on the nose...
+      hexlikes: Media-infused Paraphernalia
+      '3': Recommended by a passing fisher I reluctantly exchanged a few short words with, these oddities would surely come in handy.$(br2)If I were to ever take an extended vacation by the ocean.$(br)And subject myself to the smell of raw fish.
+      misc: Fisher's Recommendation
+    fanciful_fishing:
+      '1': Ha! That even that fisher should have gone to such lengths -- just in order to fish without pause... I shudder to imagine what over a week of non-stop fishing would do to my psyche. As different as this $(l:items/casting_rod#fishcasting:landing)$(thing)Casting Rod/$ may look, it offers me no additional benefits in my work aside from its durability, should I wish to cast using a $(l:items/focus_bobber)$(thing)Focus Bobber/$.
+      smithing: A construction similar to the $(l:greatwork/fanciful_staves)$(thing)Fanciful Staves/$.
+      budding_amethyst:
+        .: For a brief few moments when under heightened stress and with their minds slipping, certain traders reach a state of mind ripe for plucking. In those instants, if I were to flay their mind, even an $(l:lore/fishlore/notes3#fishcasting:wandering_trader)$(thing)inexperienced wanderer/$ would suffice for my work. For this to work, the subject must be $(l:lore/fishlore/notes3#fishcasting:chasm_eel)$(thing)fully submerged in the void/$. I may use a $(l:items/focus_bobber)$(thing)Focus Bobber/$ to extend my ambit into the void.
+        hint: It seems for a brief moment as their life flashes before their eyes, if their mind is eroded just enough, even an $(l:lore/fishlore/notes3#fishcasting:wandering_trader)$(thing)inexperienced wanderer/$ may have their mind flayed into matter. Unfortunately, the only environment which consistently instills this state of mind exists $(l:lore/fishlore/notes3#fishcasting:chasm_eel)$(thing)beneath the depths of the world/$. How did the Fishcasters $(t:A Fishcaster's rod is an extension of their self.)$(thing)extend their ambit beyond the normal limits imposed by Nature/$?$(br)
+        clueless: Mentions of a fisher capable of flaying the minds of some half-wit traders have reached my ears. Setting rumors about rogue $(#8ef3eb)Fishcasters/$ being unreliable at best aside, $(t:Fishcasters must have left some sort of clue behind for other fishers to reel in.)$(thing)the prospect of having more options to do my work would be welcomed, if true./$$(br)
+      allay:
+        .: Whatever it is that came to inhabit these things, it has warped the body into something else in the process. In any case, with the sounds and writhing they do, I should consider it a good deed to $(l:lore/fishlore/notes4#fishcasting:annihilation)$(thing)set them free/$ with a $(l:patterns/great_spells/weather_manip#hexcasting:lightning)$(action)bolt of lightning/$. In the process, I may find an $(l:greatwork/quenching_allays)$(thing)Allay/$ suitable for my work.
+        hint: Whatever it is that came to inhabit these things, it has warped the body into something else in the process. In any case, with the sounds and writhing they do, I should consider it a good deed to $(l:lore/fishlore/notes4#fishcasting:annihilation)$(thing)set them free/$ with a $(l:patterns/great_spells/weather_manip#hexcasting:lightning)$(action)bolt of lightning/$. $(t:There is only one way to find out.)$(thing)What will remain, I wonder?/$
+        clueless: Among the notes I gleaned from the fisher I met were some stranger references to fish being broken down into smaller parts, or into nothing. Such an exchange can obviously not take place, something must remain. $(t:Fishcasters must have left some sort of clue behind for other fishers to reel in.)$(thing)What fish could possibly be so difficult to dismantle?/$$(br)
+        header: Annihilation
+    lore:
+      newsletter:
+        '1': Opinions, Discussion 1.$(br2)$(#000000)Stay classy champ.$()$(#5520ff)$(br)One person knocking three people out of the top six spots. Cheating by exploiting loopholes as usual.$() $(#541e18)$(br)Imagine thinking its the same person just because they are wearing the same robes.$() $(#d3d3d3)$(br)It’s probably one $(#8ef3eb)fishcaste's/$$(#d3d3d3) meme doing it though, judging by the robes being worn all being the same one.$(br)$(#596979)Next year is going to be my year, just watch.
+        '2': Opinions, Discussion 2.$(br)$(#99622e)And that right there is why I while heartedly believe that the tournaments top three are either hexcasting, or rod sharing. Babs had a full three hundred point lead over second place in two days, and then the current second and third come out of nowhere to have over six hundred points each as well, matching Babs' score. Even my acquaintance who is spending between nine and twelve hours each day in there, fishing for nothing but $(l:items/fishy_business#fishcasting:carp)$(item)crystalline carp$()$(#99622e), isn't anywhere near those points$()
+        '3': $(#491499)If you've taken part in any other tournaments with similar rankings you'd know that twelve hours is not nearly enough for a top rank.$()$(#10B383)$(br)Yeah for stuff like this you pretty much have to out-no life the no-lifers. Or have a group that you share a rod with.$()$(#99622e)$(br)Babs is a known and notorious griefer, i wouldn’t put hexcasting past them.$()$(#095909)$(br)Regardless of what they're doing to get all their points, if someone appears on the leader boards out of nowhere it's because they didn't turn in the things they gathered until that day. Sounds to me like your friend isn't fishing optimally enough.$()
+        '4': Opinions, Discussion 2. cont.$(br2)$(#090980)Six hundred ninety is nowhere even near the all-time top score, stop having such a kneejerk reaction. Most top fishers are pulling one hundred to two hundred a day. Take a look at the $(k)super secret$()$(#090980) leaderboards.$(br)This fisher was at nine hundred points that year, same time in the tournament. These are not terribly high scores for a good fisher.$(br)Is the champion hexcasting? I dont know, I dont care. But as another high-scorer I'm really $(k)fucking$()$(#090980) sick of being accused of hexcasting when there are other people with much higher scores. Most of us ultra high-scorers are spending fifteen to twenty one hours a day in $(k)place$()$(#090980).$()
+        '5': $(#914149)$(k)Some people$()$(#914149) certainly are pulling monstrous numbers.$(br)$(#d3d3d3)I know people who are aiming to reach one thousand points just to say they did it.$(br)$(#99622e)I hope The School looks at the people who are way above others. The disparity is too much to ignore.$(br)$(#99992e)Most people aren't giving a $(k)shit$()$(#99992e), there are only a handful of people seriously competing for a given tool. Think back to the great potato farming war if you need an example, which was essentially just between two people.$()
+        '6': Opinions, Discussion 2.1.$(br2)$(#491499)I know the fishers, they've been spending every waking minute in the $(k)place$()$(#491499) and worked out optimal fishing methods for this year's contest on day one. They did the same stuff with the $(k)other$()$(#491499) contest, $(k)more$()$(#491499), etc. They grind themselves to the brink of exhaustion nonstop until it's done.$(br)$(#99622e)Just because you know the fishers doesn't mean you know whether they are hexcasting or not. Do you expect people to tell you "yeah I'm hexcasting in $(k)place$()$(#99622e)"?
+        '7': $(#491499)Well they've shared their fishing method with me, and I've put it to good effect and I would have similar results if I put in nine plus hours a day fishing myself instead of three. Not to mention that "hexcasting" can't magically change your luck on reels.$(br)$(#99622e)what hexcasting or rod sharing can do, however, is allow you to essentially have a twenty-four hour uptime on fishing, not accounting for meal times, travel, and fish sensing something amiss. I know that those top three scores $(o)can$()$(#99622e) be one hundred percent legit, especially since were at the halfway point in the ranking period, but for people like my buddy, and others in my $(#8ef3eb)fishcaste/$, and even myself to drop more time than we spend at work just fishing, and still not come close to that? Seems more than a little fishy.$()
+        '8': Opinions, Discussion 2.1. cont.$(#d3d3d3)$(br2)If they are fishing nine hours a day since the start, that’s actually kinda low of a score. See scores on $(k)place$()$(#d3d3d3). It’s obvious they didn’t turn in all of their fish as they caught them but all at once for the meme laughs. There’s lots of people farming potatoes too at over six hundred, jumping up three hundred or so points over a day.$()
+        '9': $(#99622e)six hundred points in one day dude, are you really trying to justify that? Luck doesn't matter when you can do it for an extended time longer than any regular fisher can without repetitiveness breaking them. Either you're willingly defending $(#b38ef3)hexcasters/$ or you're naive and eat what they tell you.$(br)$(#105939)It's seven hundred over three days. Which is totally normal pace.$(br)$(#ee9e01)If you look at two of them, you can see their point gain in the last twenty four hours, which is indeed nearly seven hundred in one day. That said, as others mentioned they could be hold on to their catches over multiple days, in theory.$(br)$(#105939)Yeah, that isn't over one day, that's my point. My point is all fish handed in must be considered to be over the entire duration over the ranking period.
+        '10': Opinions, Discussion 2.2.$(br)$(#009000)Fish may expire, but their point values do not expire. They've been fishing since the start, they just never turned in all the stuff until yesterday to get the triple tie. I have been sitting right next to them as they fished for the last few days chatting with them.$(br)$(#801010)I really don’t think people realize the amount people can no life stuff like this especially with a lot of people on holiday right now. Like no-lifing fishing for eighteen hours a day isn’t even unfeasible especially if you’re only doing it for about a week.$(br)$(#009000)Seriously. I was on vacation for the $(k)silly$()$(#009000) competition and the $(#8ef3eb)fishcaste/$ I was competing with put in eighteen hour days for a week straight, easily.$(br)$(#801010)Don’t get me wrong I don’t think can commit to that a type of play anymore but I’ve seen way more ridiculous things than this from people who took part in the potato war.$(br)$(#009000)Oh for sure, there are definitely people who go way more hard in things.
+        '11': $(#FF024e)The Ignorance is strong in this one.$(#004090)I've gotta say I agree, $(#99622e)"Either you're willingly defending $(#b38ef3)hexcasters/$ or you're naive and eat what they tell you."$() $(#004090)You're either full of yourself or honestly don't realize that you may just be wrong. I don't know which would be worse.$(br)$(#99622e)Nah I think most people just don't realize how widespread hexcasting tools are, when even things like $(k)art$()$(#99622e) can be automated.$(br)$(#FF024e)Hexcasting isn't hard, it's the fact hexcasting for things like competitions is just straight up asking to get banned and I'm sure they will if that is the case. But the fact of the matter. The numbers aren't that ridiculous given the circumstances. I feel like you really just underestimate some of the types of people who compete in sports like this.$(br)$(#491499)Would you like them to give you a copy of their $()$(l:patterns/readwrite)$(thing)True Name$()$(#491499) themselves so you can spy on them fishing all day, for your approval? I don't know why you can't comprehend the possibility that some people competing have nothing else to do, and they don't get bored of fishing for hours on end.
+        '12': Opinions, Discussion 2.3.$(br)$(#909090)I would love to know what their optimal method for catching $(l:items/fishy_business#fishcasting:carp)$(item)crystalline carp$()$(#909090) is. I've probably made ten trips to the lake and only $(o)caught$()$(#909090) one. Only gotten the indicatory bite like four times. Two I lost off the hook and one I dropped on land before it slipped back, and I was left furious.$(br)$(#491499)You'll need to be fishing way underground to catch any for this year's competition. I've typically found mine somewhere about half-way to bedrock.
+        '13': Opinions, Discussion 3.$(br)$(#FF20FF)funny as $(k)fuck$()$(#FF20FF), but still all reasonable scores.$(br)$(#AA4020)I cannot help but respect this. That is diligence.$(br)$(#090999)I have Babs right across the cave from me right this moment so this made me chuckle.$(br)$(#000000)Make sure champs' doing alright, yeah? I worry for the little twerp.
+        title: Newsletter
+        subtitle: Day-three-way tie, usual champion still first
+      notes:
+        '1': Year $(k)6666$(), Day 1.$(br2)I'm going to be entering the competition again this year. It'll start tomorrow. As usual I will be using my trusty wooden fishing rod. The people telling me to upgrade my rod are out of their minds, my rod works perfectly fine. At least only total idiots would accuse somebody without a $(l:items/casting_rod#fishcasting:landing)$(thing)casting rod$() of hexcasting.
+        '2': Year $(k)6666$(), Day 2.
+        '3': Year $(k)6666$(), Day 3.
+        '4': Year $(k)6666$(), Day 4.
+        '5': Year $(k)6666$(), Day 5.
+        '6': Year $(k)6666$(), Day 6.
+        '7': Year $(k)6666$(), Day 7.
+        '8': Year $(k)6666$(), Day 8.
+        '9': Year $(k)6666$(), Day 9.
+        '10': Year $(k)6666$(), Day 10.
+        '11': Year $(k)6666$(), Day 11.$(br2)I neglected to step away from fishing to write in my diary again this year. I won, again. I passed out as soon as I handed in my last batch of fish, raising my final score to well over two thousand points, putting me at number 1 world-wide, again. My friends put in a modest effort, reaching over a thousand points each, getting them a shared sixty-ninth place. I don't think I'll be fishing next year.$(br)I'm going to go for a walk.
+      newsletter2:
+        '1': Opinions, Discussion 1.$(br2)$(#596979)I finally did it! I beat Babs!$(br)$(#491499)Babs didn't take part in this year's competitions.$(br)$(#596979)What?
+        '2': Opinions, Discussion 2.$(br2)$(#99622e)Thank god that $(#b38ef3)hexcaster/$ didn't cheat this year too. I saw they had embezzled over a $(o)billion$()$(#99622e) emeralds from somebody using a hex just a few months ago, terrible person.$(br)$(#491499)If you mean the transaction mentioned in last month's newsletter, that article was satire.
+      notes2:
+        '1': Year $(k)6667$(), Day 90.$(br2)I've moved, I no longer have a partner and I've decided to stop standing around while fishing for once. I think I'll pick up sailing. Maybe I'll even get that $(l:items/casting_rod#fishcasting:landing)$(thing)casting rod$() people had been nagging me about.$(br)If I'm going to be touching any of that stuff, I may as well do so wasted. I've got enough bottles to last me a lifetime, anyway. I'll just chuck the bottles out along with anything else I want to get rid of when I'm done.
+      notes3:
+        '1': Year $(k)6669$(), Day 33.$(br2)I found a small island and got bored. I'm sitting next to a hole, staring into a dark abyss after a $(thing)Chasm Eel/$ ate through the bedrock. Maybe I've spent too long fishing alone out at sea.$(br2)I'm going to try casting my tackle in and see what happens.
+        '2': Year $(k)6669$(), Day 34.$(br2)It almost feels as if something is trying to seep into me, warded off by my present enough mind. The other life around here seems unbothered, is it because I'm not as simple or is it because of something else?
+        '3': Year $(k)6669$(), Day 38.$(br2)One of those wandering bums showed up to pester me again. How they even found me down here is beyond me. Figured I'd show the trader what's what and scare them off for good using my $(l:items/focus_bobber)$(thing)Focus Bobber/$. For some reason, I lost sight of the trader after reeling in.
+        '4': Year $(k)6669$(), Day 39.$(br2)The fish I've found here are strange. One of the stranger fish had no fins and no gills. It's making a lot of noise, almost like a ticking clock, but I think I'll keep it as a pet. Doesn't seem to need much maintenance, and I could use the company down here.
+      notes4:
+        '1': Year $(k)6669$(), Day 102.$(br2)I've had enough of spending all my time hiding away from the sun. There aren't any more fish to be caught here. I spent the better part of the last week trying to take apart this look-alike I fished up. It is an unremarkable blob of flesh Cursed to live, intelligent much like an /$$(l:greatwork/quenching_allays)$(thing)Allay/$, yet undying.
+        '2': I've tried nearly everything I could to carefully desynthesize it with no luck. I returned the thing to the void, expecting it to be able to swim there, since that's where I found it. It did not. At least I still have my trusty pet, still alive even after $(l:patterns/spells/fishing_spells#fishcasting:fish/to_item)$(action)I silenced it using a spell/$. Should I try evaporating it with a /$$(l:patterns/great_spells/weather_manip#hexcasting:lightning)$(action)bolt/$$(italic) of /$_Media next? $(italic)No, I must keep it for my big fish collection.
+  category:
+    fishlore:
+      .: Fishcasting
+      desc: Further, some texts vaguely related to some sort of figure in the "Fishcasting" society have surfaced... Literally.
+item:
+  tide:
+    crystal_fishing_rod: Crystal Casting Rod
+    amethyst_bobber: Amethyst Focus Bobber
+  fishcasting:
+    shepherds_casting_rod: Shepherd's Casting Rod
+    blessed_focus_bobber: Blessed Focus Bobber
+    loud_fishing_line:
+      .: Loud Fishing Line
+      desc: Pacifies creepers and phantoms
+    hookless_fishing_hook:
+      .: Hookless Fishing Hook
+      desc: Prevents entities from getting hooked
+    unlucky_bait:
+      .: Unlucky Bait
+      desc: Prevents anything from nibbling or biting
+    benign_bait:
+      .: Benign Bait
+      desc: Prevents anything but fish from nibbling or biting
+    message_in_a_bottle: Message in a Bottle
+    music_disc:
+      returning_to_the_surface: Music Disc
+    tacklebox_chair: Tacklebox Chair
+    fishy_fragment: Soggy Lore Fragment
+    glass_shard: Glass Shard
+    cursed: Cursed Thing
+    cursed_bucket: Cursed Thing Bucket
+    cursed_spawn_egg: Cursed Thing Spawn Egg
+    blessed_spawn_egg: Blessed Trader Spawn Egg
+accessory:
+  item:
+    fishcasting:
+      blessed_focus_bobber: Blessed Bobber
+      loud_fishing_line: Loud Line
+      hookless_fishing_hook: Hookless Hook
+text:
+  fishcasting:
+    rod_tooltip:
+      casting_bonus:
+        .: Usable as a staff
+        momentary: Acts as a staff when used briefly
+        offhand: Acts as a staff when held in off-hand
+      shepherds_bonus:
+        '1': Unbreakable
+        '2': Can catch end fish in any void
+    bobber_tooltip:
+      focus_bonus: Can be written to as a Focus when held or cast
+      sound_bonus: Plays sound when a fish bites
+      blessed_bonus: Rarely catches loot from any category
+  autoconfig:
+    fishcasting:
+      title: Fishcasting Configuration
+      category:
+        gameplay: Gameplay
+        client: Client
+      option:
+        gameplay:
+          castingTicksToCast:
+            .: Casting Rod Hex charge ticks
+            '@Tooltip': Specifies number of ticks until the purple is depleted when charging.
+          cooldownAfterFishing:
+            .: Casting Rod cooldown
+            '@Tooltip': Specifies number of ticks after reeling in the hook until casting rods are usable again.
+          castingType:
+            .: Casting Rod cast method
+            '@Tooltip': Specifies whether casts are charged or not.
+          lengthPurificationOnlyFish:
+            .: Length Purification only applies to fish
+            '@Tooltip': Specifies if length purification works on all entities
+        client:
+          showForbiddenPatchouliKnowledge:
+            .: Show Length Purification in Entity entry of Hex Notebook
+            '@Tooltip': Not recommended for new players as it will be confusing and not beneficial. Leave this off if you are including it in a modpack. REQUIRES JSONPATCHER.
+jukebox_song:
+  fishcasting:
+    returning_to_the_surface: cookies+policy - Returning To The Surface
+entity:
+  fishcasting:
+    tacklebox_chair: Tacklebox Chair
+    cursed: Cursed Thing
+    blessed: Blessed Trader
+journal:
+  description:
+    fishcasting:
+      cursed: They seem to be possessed of some intelligence, but remain unable to do much with it due to their form. Perhaps if I could free them...
+_comment_pattern: PATTERN STUFF
+hexcasting:
+  action:
+    fishcasting:bobber/from_owner: Bobbert's Purification
+    fishcasting:owner/from_bobber: Trebbob's Purification
+    fishcasting:catch/from_bobber: Babs' Purification
+    fishcasting:bobber/from_catch: Bob's Purification
+    fishcasting:fish/length: Glub's Purification
+    fishcasting:fish/from_item: Fish Motion
+    fishcasting:fish/to_item: Fish Stillness
+    fishcasting:fish/rarity: PLACEHOLDER's Purification
+  mishap:
+    bad_item:
+      fishcasting:
+        fishing_hook: Fishing Hook
+        not_a_fish:
+          .: a fish
+          item: a fish item
+          entity: a fish entity
+          bucketable: a bucketable fish
+_commnent_lore: LORE STUFF
+advancement:
+  fishcasting:lore/newsletter: 'Fishcasting: Newsletter #1'
+  fishcasting:lore/newsletter2: 'Fishcasting: Newsletter #2'
+  fishcasting:lore/notes: 'Fishcasting: Notes #1'
+  fishcasting:lore/notes2: 'Fishcasting: Notes #2'
+  fishcasting:lore/notes3: 'Fishcasting: Notes #3'
+  fishcasting:lore/notes4: 'Fishcasting: Notes #4'
+_comment_config: CONFIGURATION STUFF
+compat:
+  nomansland:
+    tacklebox_chair: A throne/ fit for a king/ used only by commonfolk/.
+yapping_tooltips:
+  item:
+    tide:
+      _comment: I'm not entirely sure if I want to impose with these, but as they already are modified, I will be adding text to these until I have a better idea or understanding
+      amethyst_bobber.desc: A little fishy to the touch.
+      crystal_fishing_rod.desc: Fishcasters want me. Fish fear me.
+    fishcasting:
+      shepherds_casting_rod.desc: Carved from some tree you don't recognize.
+      blessed_focus_bobber.desc: Its scent reminds you of times past.
+      loud_fishing_line.desc: A nice sound rings out from time to time.
+      hookless_fishing_hook.desc: At least your friends can't stop you from fishing anymore.
+      unlucky_bait.desc: This bait kind of stinks...
+      benign_bait.desc: Smells good and is shiny.
+      tacklebox_chair.desc: A throne fit for a ruler of the seas - or the beach - or the local pond.
+      message_in_a_bottle.desc: It is unclear who keeps tossing these into the ocean...
+      glass_shard.desc: Ouch! Careful when walking near these!
+      fishy_fragment.desc: At least this soggy thing is still legible.
+      music_disc/returning_to_the_surface.desc: Can be inserted into a jukebox to play cult-like tunes
+      cursed.desc: Writhes.
+      cursed_bucket.desc: Writhes and splashes lightly.
+      cursed_spawn_egg.desc: Don't be too mean to them!
+      blessed_spawn_egg.desc: Don't be too mean to them!
+commands:
+  fishing:
+    entries:
+      luck_tweaking_bobber_selector: Lucky Bobber Selector
+      benign_bait_selector: Benign Bait Selector
