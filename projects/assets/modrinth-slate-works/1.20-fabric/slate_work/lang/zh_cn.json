@@ -14,6 +14,7 @@
   "block.slate_work.redstone_loci": "红石激发器",
   "block.slate_work.accelerator_loci": "凝浆加速器",
   "block.slate_work.fake_player_loci": "塑和行梦仪",
+  "block.slate_work.block_break_loci": "震撼提取器",
 
   "block.slate_work.listening_impetus": "图书管理员促动石",
 
@@ -160,6 +161,15 @@
   "slate_work.page.fake_player_loci.lens": "而它们会对什么地方执行操作呢？可将这些虚无缥缈之存在的视线方向指定为方块的朝向，也可选择为其指定一个轴向$(thing)向量/$。潜行对方块按下使用键时，它会在方块朝向和所给$(thing)向量/$间切换。$(br2)佩戴$(l:items/lens)探知透镜/$后，可以查看它用的是否是所给$(thing)向量/$，以及$(thing)塑和行梦仪/$会不会进行攻击。",
   "slate_work.page.fake_player_loci.crafting": "$(o)玻尔兹曼大脑？没听说过。/$",
 
+  "slate_work.entry.block_break_loci": "震撼提取器",
+  "slate_work.page.block_break_loci.intro": "即便我已在咒法学中探索了许多，但我还未找到破坏方块的高效方法。的确，自然给了我$(l:patterns/spells/blockworks#hexcasting:break_block)破坏方块/$法术，不过它无法被$(thing)时运/$、$(thing)精准采集/$等增强，只相当于一把普通的$(item)钻石镐/$。正因此，我在$(l:greatwork/the_work)卓伟的觉醒/$之后几乎是立即就着手推进这方面：$(thing)震撼提取器/$。$(br2)$(o)……双关抱歉。",
+  "slate_work.page.block_break_loci.block_break_loci": "由于制造时使用了部分$(item)下界合金/$成分，$(thing)震撼提取器/$的挖掘等级相当于下界合金。它还接受镐魔咒，由此可受$(thing)时运/$或$(thing)精准采集/$的强化（以及$(thing)效率/$的消耗减免）。",
+  "slate_work.page.block_break_loci.block_break_loci_cont": "尤为重要的是，$(thing)震撼提取器/$的消耗以魔咒为基础。首先，每方块的基础消耗为 1/8 个$(l:items/amethyst)紫水晶粉/$，和$(l:patterns/spells/blockworks#hexcasting:break_block)破坏方块/$类似。每级$(thing)时运/$追加 1 个$(l:items/amethyst)紫水晶粉/$，$(thing)精准采集/$则直接增加 1 个$(l:items/amethyst)紫水晶碎片/$。以及，每级效率还能按 1.5 的乘数减少消耗。",
+  "slate_work.page.block_break_loci.filter#": "这个功能方块还有几个要点：它会尝试将挖掘掉落物存入激活的$(l:greatwork/storage_loci_block)存储容具/$。而且，它还会使用（不消耗）一条谓词$(hex)咒术/$：接受一个类型，返回一个布尔值；若返回 True，则",
+  "slate_work.page.block_break_loci.filter": "有意思的是，它不只会挖掘它前面的方块，而是能从它所在的位置起，最远触及到$(l:greatwork/spellcircles)法术环/$的末端。而且相对于什么都不管直接破坏的行为，$(thing)震撼提取器/$会使用（不消耗）一条$(hex)咒术/$为判据。它会对所有位置运行这条$(hex)咒术/$，以位置处方块的$(l:patterns/items)类型/$为$(hex)咒术/$参数（和$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$类似）。若$(hex)咒术/$返回 True，则挖掘该处方块；若返回 False，则忽略方块。",
+  "slate_work.page.block_break_loci.pickup": "最后，$(thing)震撼提取器/$挖掘方块后能将掉落物存入所有激活的$(l:greatwork/storage_loci_block)存储容具/$。若激活的$(l:greatwork/storage_loci_block)存储容具/$已满，掉落物即会正常掉落在地。",
+  "slate_work.page.block_break_loci.crafting": "一撮$(item)下界合金/$加强挖掘力，一束$(item)TNT/$以批量破坏，再加些许$(l:items/amethyst)紫水晶粉/$和板岩把它们全部固定在一起！",
+
   "slate_work.entry.trade_loci": "商人导向石",
   "slate_work.page.trade_loci.intro": "村民……是很有意思的生物，也是我推进$(l:greatwork/brainsweeping)探索/$的动力源；但和它们交谈，以及使用它们，依然需要大量手动操作。而有了如今新开发出的方法，我就可以借助$(l:greatwork/spellcircles)法术环/$自动与它们交易，训练它们的意识——只需用到$(thing)商人导向石/$。",
   "slate_work.page.trade_loci.trade_loci": "$(thing)商人导向石/$功能强大，这是因为它能和村民交换意识，从而$(l:patterns/spells/trade_loci#slate_work:exchange_mind)习得/$职业知识。借此，即可以用纯粹高效的方式与职业本身交互，无需受到血肉之躯的拖累。",
@@ -232,6 +242,7 @@
   "hexcasting.mishap.circle.pocket_simulator_required": "%s处需要一个激活的口袋模拟器",
   "hexcasting.mishap.invalid_value.simpler_iota": "一个更简单的iota",
   "hexcasting.mishap.invalid_value.axis_vector_sw": "一个单位向量",
+  "hexcasting.mishap.invalid_value.type_or_null": "一个物品类型或Null",
 
   "hexcasting.mishap.no_storage_loci_ran": "未找到已激活的容具",
   "hexcasting.mishap.list_length": "需要包含%s个元素的列表，而实际包含了%s个",
