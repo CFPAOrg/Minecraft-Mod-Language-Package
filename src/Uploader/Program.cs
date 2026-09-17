@@ -13,7 +13,7 @@ namespace Uploader
     {
         static readonly string ServerPathPrefix = "/var/www/html/files";
 
-        static async Task Main(string host, string name, string password)
+        static async Task Main(string host, string name, string password, int port)
         {
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
@@ -56,17 +56,17 @@ namespace Uploader
                 .EnumerateFiles("grouped-Minecraft-Mod-Language-Modpack-*.zip", SearchOption.AllDirectories);
 
             // 新包只往服务器传
-            await UploadToServer(host, name, password, files.Concat(newPacks.Select(_ => (_.Name, _))));
-            await UnpackOnServer(host, name, password, newPacks);
+            await UploadToServer(host, name, password, port, files.Concat(newPacks.Select(_ => (_.Name, _))));
+            await UnpackOnServer(host, name, password, port, newPacks);
 
             await UploadSnapshotAssets(client, files);
             await UpdateAutobuildAssets(client, files);
 
         }
 
-        async static Task UnpackOnServer(string host, string username, string password, IEnumerable<FileInfo> files)
+        async static Task UnpackOnServer(string host, string username, string password, int port, IEnumerable<FileInfo> files)
         {
-            using var sshClient = new SshClient(host, port: 22, username, password);
+            using var sshClient = new SshClient(host, port, username, password);
             sshClient.Connect();
 
             // 目标位置：<...>/new/<version>/
@@ -91,9 +91,9 @@ namespace Uploader
             }
         }
 
-        async static Task UploadToServer(string host, string username, string password, IEnumerable<(string name, FileInfo file)> files)
+        async static Task UploadToServer(string host, string username, string password, int port, IEnumerable<(string name, FileInfo file)> files)
         {
-            using var sftpClient = new SftpClient(host, port: 22, username, password);
+            using var sftpClient = new SftpClient(host, port, username, password);
             sftpClient.Connect();
 
             foreach (var (name, file) in files)
