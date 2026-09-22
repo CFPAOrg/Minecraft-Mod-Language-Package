@@ -12,32 +12,32 @@ on:
 
 
 jobs:
-  build-packer:
-    name: Build / Cache Packer
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-          sparse-checkout: src
+  # build-packer:
+  #   name: Build / Cache Packer
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #       with:
+  #         fetch-depth: 1
+  #         sparse-checkout: src
 
-      # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
-      # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
-      - name: Cache Packer
-        id: cache-packer
-        uses: actions/cache@v4
-        with:
-          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
-          path: |
-            build/Packer.exe
-            build/git2-*.dll
-          lookup-only: true
+  #     # 缓存程序。一方面，在不同job之间需要这么做；另一方面，大约可以改善运行时间？
+  #     # actions/cache的逻辑会在job末尾缓存打包程序；如果不命中，就自行构造程序。
+  #     - name: Cache Packer
+  #       id: cache-packer
+  #       uses: actions/cache@v4
+  #       with:
+  #         key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
+  #         path: |
+  #           build/Packer.exe
+  #           build/git2-*.dll
+  #         lookup-only: true
 
-      # 构造程序
-      - name: Build Packer if not cached
-        if: steps.cache-packer.outputs.cache-hit != 'true'
-        # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
-        run: dotnet publish .\src\Packer\Packer.csproj -o ./build -r win-x64
+  #     # 构造程序
+  #     - name: Build Packer if not cached
+  #       if: steps.cache-packer.outputs.cache-hit != 'true'
+  #       # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+  #       run: dotnet publish .\src\Packer\Packer.csproj -o ./build -r win-x64
 
   build-uploader:
     if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
@@ -65,72 +65,72 @@ jobs:
         # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
         run: dotnet publish .\src\Uploader\Uploader.csproj -o ./build -r win-x64
 
-  pack:
-    name: Pack Resources and Upload Artifacts/Releases
-    needs: [ build-packer ]
-    strategy:
-      fail-fast: false
-      matrix:
-        # 版本列表。将对这里的每个版本判断，按需打包。
-        # 如需添加新版本，在这里添加即可。
-        version: [ "1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric", "26.1", "26.1-fabric" ]
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 20 # 显然，需要有提交历史才能比较提交。20这个数是任意的。
+  # pack:
+  #   name: Pack Resources and Upload Artifacts/Releases
+  #   needs: [ build-packer ]
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       # 版本列表。将对这里的每个版本判断，按需打包。
+  #       # 如需添加新版本，在这里添加即可。
+  #       version: [ "1.12.2", "1.16", "1.16-fabric", "1.18", "1.18-fabric", "1.19", "1.20", "1.20-fabric", "1.21", "1.21-fabric", "26.1", "26.1-fabric" ]
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #       with:
+  #         fetch-depth: 20 # 显然，需要有提交历史才能比较提交。20这个数是任意的。
 
-      # 由于Github的限制，这里需要重新拉取打包程序。
-      - name: Restore Packer
-        id: cache-restore
-        uses: actions/cache/restore@v4
-        with:
-          key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
-          path: |
-            build/Packer.exe
-            build/git2-*.dll
-          fail-on-cache-miss: true # 应由前序保证
+  #     # 由于Github的限制，这里需要重新拉取打包程序。
+  #     - name: Restore Packer
+  #       id: cache-restore
+  #       uses: actions/cache/restore@v4
+  #       with:
+  #         key: ${{ runner.os }}-Packer-${{ hashFiles('src/Packer/**') }}
+  #         path: |
+  #           build/Packer.exe
+  #           build/git2-*.dll
+  #         fail-on-cache-miss: true # 应由前序保证
 
-      # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
-      - run: mv ./build/* .
-        shell: bash
+  #     # dotnet/sdk#51806 Console Projects fail to compile with <ArtifactsPath>$(MSBuildThisFileDirectory)
+  #     - run: mv ./build/* .
+  #       shell: bash
 
-      - name: Check changed path on ${{ matrix.version }}
-        uses: MarceloPrado/has-changed-path@v1.0
-        id: check-changes
-        with:
-          # 判断位置：该版本文件、该版本配置、代码
-          paths: > 
-            .github/workflows/packer.yml
-            projects/assets/*/${{ matrix.version }}/**
-            projects/templates/**
-            config/packer/${{ matrix.version }}.json
-            src/**
+  #     - name: Check changed path on ${{ matrix.version }}
+  #       uses: MarceloPrado/has-changed-path@v1.0
+  #       id: check-changes
+  #       with:
+  #         # 判断位置：该版本文件、该版本配置、代码
+  #         paths: > 
+  #           .github/workflows/packer.yml
+  #           projects/assets/*/${{ matrix.version }}/**
+  #           projects/templates/**
+  #           config/packer/${{ matrix.version }}.json
+  #           src/**
 
-      - name: Run Packer for ${{ matrix.version }}
-        # 分发包中应当包含全部内容
-        run: ./Packer --version="${{ matrix.version }}" --grouped --flattened
-        # 运行逻辑：内容有更改 或 手动运行
-        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+  #     - name: Run Packer for ${{ matrix.version }}
+  #       # 分发包中应当包含全部内容
+  #       run: ./Packer --version="${{ matrix.version }}" --grouped --flattened
+  #       # 运行逻辑：内容有更改 或 手动运行
+  #       if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
-      # Artifact 上传内容：每个版本一个压缩包，包含了资源包和md5校验文件
-      - name: Upload Artifact for ${{ matrix.version }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: Minecraft-Mod-Language-Modpack-${{ matrix.version }}
-          path: |
-            Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
-            ${{ matrix.version }}.md5
-        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+  #     # Artifact 上传内容：每个版本一个压缩包，包含了资源包和md5校验文件
+  #     - name: Upload Artifact for ${{ matrix.version }}
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: Minecraft-Mod-Language-Modpack-${{ matrix.version }}
+  #         path: |
+  #           Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
+  #           ${{ matrix.version }}.md5
+  #       if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
       
-      # feat：按命名空间打小包
-      - name: Upload Artifact for ${{ matrix.version }} grouped
-        uses: actions/upload-artifact@v4
-        with:
-          name: grouped-Minecraft-Mod-Language-Modpack-${{ matrix.version }}
-          path: |
-            grouped-Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
-        if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+  #     # feat：按命名空间打小包
+  #     - name: Upload Artifact for ${{ matrix.version }} grouped
+  #       uses: actions/upload-artifact@v4
+  #       with:
+  #         name: grouped-Minecraft-Mod-Language-Modpack-${{ matrix.version }}
+  #         path: |
+  #           grouped-Minecraft-Mod-Language-Modpack-${{ matrix.version }}.zip
+  #       if: steps.check-changes.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
 
   upload:
     concurrency: 
@@ -138,13 +138,13 @@ jobs:
       cancel-in-progress: false
     if: github.repository == 'CFPAOrg/Minecraft-Mod-Language-Package'
     name: Upload Resource Packs to Various places
-    needs: [ pack, build-uploader ]
+    needs: [ build-uploader ]
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4 # 计算 cache key 需要
         with:
           fetch-depth: 1
-          sparse-checkout: src
+          # sparse-checkout: src
       - name: Restore Uploader
         id: cache-restore
         uses: actions/cache/restore@v4
@@ -158,12 +158,14 @@ jobs:
       - run: mv ./build/* .
         shell: bash
 
-      # 还原artifact（资源包）
-      - name: Restore Artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: artifacts/
-          # pattern: Minecraft-Mod-Language-Modpack-*
+      - run: mkdir artifacts/ && cp grouped-Minecraft-Mod-Language-Modpack-1.10.2.zip artifacts/
+
+      # # 还原artifact（资源包）
+      # - name: Restore Artifacts
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     path: artifacts/
+      #     # pattern: Minecraft-Mod-Language-Modpack-*
       
       # Pending: 把按命名空间传的包也传上去
 

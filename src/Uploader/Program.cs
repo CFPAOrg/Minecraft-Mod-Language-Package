@@ -59,8 +59,8 @@ namespace Uploader
             await UploadToServer(host, name, password, port, files.Concat(newPacks.Select(_ => (_.Name, _))));
             await UnpackOnServer(host, name, password, port, newPacks);
 
-            await UploadSnapshotAssets(client, files);
-            await UpdateAutobuildAssets(client, files);
+            //await UploadSnapshotAssets(client, files);
+            //await UpdateAutobuildAssets(client, files);
 
         }
 
