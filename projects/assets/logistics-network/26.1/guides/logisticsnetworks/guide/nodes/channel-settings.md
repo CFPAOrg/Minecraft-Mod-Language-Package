@@ -7,8 +7,6 @@ navigation:
 
 # Channel Settings
 
-![Full channel settings panel — Status, Mode, Type, Side, Redstone, Distribution, Priority, Batch, Delay](images/channel-settings-full.png)
-
 This panel controls the channel you have currently selected in the [Header](header.md). Every node has 9 channels and each one has its own independent copy of all the settings below — changing a setting here only affects the one channel you are looking at.
 
 Hold **Modifier Key 3 (default: Alt)** and use **Primary Interaction (default: Left Click)** to set a setting to its maximum value, or **Secondary Interaction (default: Right Click)** to set it to its minimum value.
@@ -73,7 +71,7 @@ Use Primary Interaction on the channel number buttons at the top of the screen t
 
 Nodes on Applied Energistics 2 and Refined Storage Interfaces transfer items and fluids directly through the connected storage network. The Interface's configured export resources decide what a Sender may pull, including its native fuzzy setting, but the configured quantity does not limit the Logistics batch. Receivers may insert any resource accepted by their Logistics channel filters.
 
-This direct path ignores the Interface's exposed slots and tanks. Adding an explicit Logistics slot mapping switches that item channel back to the exposed Interface inventory. A disconnected or inactive storage network waits without using the Interface buffer, and direct transfers never request autocrafting.
+For item Senders, the direct path pulls from the storage network first, then uses items stocked in that Interface to fill any remaining batch. Buffer-only items stay available to later transfers, allowing the Interface to empty. Direct fluid transfers still ignore exposed tanks. Adding an explicit Logistics slot mapping switches that item channel back to the exposed Interface inventory. A disconnected or inactive storage network waits without using the Interface buffer, and direct transfers never request autocrafting.
 
 Chemical (Mekanism) and Source (Ars Nouveau) integration is retained for future compatibility and is currently unavailable.
 
@@ -96,10 +94,6 @@ Chemical (Mekanism) and Source (Ars Nouveau) integration is retained for future 
 
 ## Redstone
 
-![Redstone: Always On](images/channel-redstone-always-on.png)
-
-![Redstone: Always Off](images/channel-redstone-always-off.png)
-
 ![Redstone: High Signal](images/channel-redstone-high-signal.png)
 
 ![Redstone: Low Signal](images/channel-redstone-low-signal.png)
@@ -108,14 +102,13 @@ Chemical (Mekanism) and Source (Ars Nouveau) integration is retained for future 
 
 **What it does:** the engine checks the redstone signal **at the block this node is attached to** (from any neighbor — lever, redstone torch, dust, comparator, whatever). Based on that signal, the channel either runs or is blocked:
 
-- **Always On** — run regardless of signal.
-- **Always Off** — never run. Same effect as Status = Disabled, but you keep the channel armed.
+- **Ignored** (default) — run regardless of redstone. The signal is not checked at all.
 - **High Signal** — run only when a redstone signal is present (strength > 0).
 - **Low Signal** — run only when there is no redstone signal (strength = 0).
 
 **How to change it:** use Primary Interaction to cycle to the next mode.
 
-**Disabled on Receivers:** this row is greyed out when Mode is Receiver. Redstone gating only applies on the Sender side (since Senders drive the transfer).
+Redstone gating applies to both Senders and Receivers.
 
 ## Distribution
 
