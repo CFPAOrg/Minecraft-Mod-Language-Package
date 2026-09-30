@@ -1,10 +1,10 @@
 跳过资源型蜜脾直接给出后续产物，粒、锭、块等同种资源的不同形态不作区分
 除非只产出原版蜜脾、蜂蜜、蜜蜡、花粉，否则产物内忽略它们
-模组特有资源进行标记，否则不给出模组名（其实就是`c`标签或者`minecraft`）
+模组特有资源进行标记，否则不给出模组名（如`c`标签、`minecraft`等不给出）
 
 内容基本来自粗扫源码，肯定有缺漏和错误
 
-最后更新时间：2025.10.13 21:00 (UTC+8)
+最后更新时间：2026.10.1 0:00 (UTC+8)
 
 | 蜂种                                                                         | 产物                                                                                  | 注释                                                                       |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -181,7 +181,7 @@
 | 粉红黏液蜜蜂<br/>Pink Slimy Bee<br/>`pink_slimy_bee`                         | 粉红黏液                                                                              | 归在Industrial Foregoing分类下                                             |
 | 塑料蜜蜂<br/>Plastic Bee<br/>`plastic_bee`                                   | 塑料<br/>乳胶，流体                                                                   |
 | 铂蜜蜂<br/>Platinum Bee<br/>`platinum_bee`                                   | 粗铂<br/>铂粉                                                                         |
-| 海晶蜜蜂<br/>Prismarine Bee<br/>`prismarine_bee`                             | 海晶碎片<br/>海晶沙砾<br/>鹦鹉螺壳                                                    |
+| 海晶蜜蜂<br/>Prismarine Bee<br/>`prismarine_bee`                             | 海晶碎片<br/>海晶砂粒<br/>鹦鹉螺壳                                                    |
 | 活化蜜蜂<br/>ProsperiBee<br/>`prosperity_bee`                                | 活化水晶碎片（Mystical Agriculture）                                                  |
 | 初级精华蜜蜂<br/>Prudentium Bee<br/>`prudentium_bee`                         | 初级精华（Mystical Agriculture）                                                      |
 | 脉冲合金蜜蜂<br/>Pulsating Alloy Bee<br/>`pulsating_alloy_bee`               | 脉冲合金（Ender IO）                                                                  |
@@ -394,7 +394,14 @@
 | 秘金蜜蜂<br/>Arcane Gold Bee<br/>`arcane_gold_bee`                           | 秘金（Eidolon）                                                                       |
 | 白镴蜜蜂<br/>Pewter Bee<br/>`pewter_bee`                                     | 白镴混合物（Eidolon）                                                                 |
 | 高定向热解石墨蜜蜂<br/>HOP Graphite Bee<br/>`hop_graphite_bee`               | 高定向热解石墨粉（Immersive Engineering）                                             |
-| 狱火蜜蜂<br/>Hellfire Bee<br/>`hellfire_bee`                                 | Demonite（Blood Magic）                                                               |
+| 狱火蜜蜂<br/>Hellfire Bee<br/>`hellfire_bee`                                 | 恶魔金属/狱锻（Neo Vitae）                                                            |
+| 绯夜脂蜜蜂<br/>Amaramber Bee<br/>`amaramber_bee`                             | 绯夜脂（Eternal Starlight）                                                           |
+| 深银蜜蜂<br/>Deepsilver Bee<br/>`deepsilver_bee`                             | 深银（Eternal Starlight）                                                             |
+| 永冻石蜜蜂<br/>Glacite Bee<br/>`glacite_bee`                                 | 永冻石（Eternal Starlight）                                                           |
+| 瘴紫石蜜蜂<br/>Malarite Bee<br/>`malarite_bee`                               | 瘴紫石（Eternal Starlight）                                                           |
+| 星核蜜蜂<br/>Starcore Bee<br/>`starcore_bee`                                 | 星核（Eternal Starlight）                                                             |
+| 星钻蜜蜂<br/>Starlit Diamond Bee<br/>`starlit_diamond_bee`                   | 星钻（Eternal Starlight）                                                             |
+| 热泉石蜜蜂<br/>Thermal Bee<br/>`thermal_bee`                                 | 热泉石（Eternal Starlight）                                                           |
 | 陨钢蜜蜂<br/>Sky Steel Bee<br/>`sky_steel_bee`                               | 陨钢（MEGACells）                                                                     |
 | 星光蜜蜂<br/>Astral Bee<br/>`astral_bee`                                     | 星尘（Enigmatic Legacy）                                                              |
 | 以太蜜蜂<br/>Etherium Bee<br/>`etherium_ore_bee`                             | 以太（Enigmatic Legacy）                                                              |
@@ -469,3 +476,4 @@
 | 铀水晶蜜蜂<br/>Uranite Crystal Bee<br/>`uranite_crystal_bee`                 | 铀水晶（Oritech）                                                                     |
 | 蓝锥矿蜜蜂<br/>Benitoite Bee<br/>`benitoite_crystal_bee`                     | 蓝锥矿（Extreme Reactors）                                                            |
 | 硫酸铅矿蜜蜂<br/>Anglesite Bee<br/>`anglesite_crystal_bee`                   | 硫酸铅矿（Extreme Reactors）                                                          |
+| 帝皇蜜蜂<br/>Imperial Bee<br/>`imperial_bee`                                 | 蜂蜜果冻（Modular Bees）                                                              |
