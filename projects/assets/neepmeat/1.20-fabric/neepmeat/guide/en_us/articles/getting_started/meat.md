@@ -13,4 +13,4 @@ As well as a being a nourishing food, Refined Meat is the precursor to Meat Stee
 
 Crushing any item of impure meat in a Jaw Crusher will produce 1-2 meat scraps. Nine of these can be crafted into a Raw Meat Brick.
 
-Refined Meat in its liquid form comes from purifying Tissue Slurry in the Trommel. Tissue slurry is obtained through the disassembly of substrate organisms using a Mincer or Death Blades. Liquid Meat can be converted into solid bricks using a Hydraulic Press.
+Refined Meat in its liquid form comes from purifying Tissue Slurry in the Trommel. Tissue slurry is obtained through the disassembly of substrate organisms using a Large Mincer or Death Blades. Liquid Meat can be converted into solid bricks using a Hydraulic Press.

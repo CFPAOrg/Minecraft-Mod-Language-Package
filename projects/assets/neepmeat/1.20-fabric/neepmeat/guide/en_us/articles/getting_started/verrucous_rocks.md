@@ -13,4 +13,4 @@ Due to the increasing abundance of Enlightened animalcules in the environment, i
 }{\item_render[height=70]{neepmeat:verrucous_stone_port}
 \centering{A port that emits fluid.}}
 
-Each rock produces 10eJ/t per block. This is split equally between each port.
+Each rock produces 10eJ/t per block. This is split equally between each port. All ports should be connected to avoid wasting power.

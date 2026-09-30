@@ -1,12 +1,12 @@
 ---
 id: power_flower
-lookup: neepmeat:power_flower_seeds, neepmeat:power_flower_growth, neepmeat:power_flower_controller, neepmeat:power_flower_fluid_port
+lookup: neepmeat:power_flower_seeds, neepmeat:power_flower_growth, neepmeat:power_flower_controller, neepmeat:power_flower_fluid_port, neepmeat:grine
 ---
 
 # Power Flower
 
 \columns[fit=second]{The Power Flower is an organism that can synthesise Transient Ichor from sunlight and by reconstituted food.
-}{\item_render[height=50]{neepmeat:power_flower_controller}}
+}{\item_render{neepmeat:power_flower_controller}}
 
 ## Usage
 
@@ -17,6 +17,12 @@ When a growth block has air above it and one or more growth blocks below it, it 
 Water inserted through a Power Flower Fluid Port is necessary for photosynthesis.
 
 \columns{\item_render[height=30]{neepmeat:power_flower_seeds}}{\item_render[height=30]{neepmeat:power_flower_fluid_port}}
+
+## Cleaning
+
+Over time, grines will grow over photosnthetic organs, preventing them from receiving sunlight. These can be cleaned off using a Pressure Washer.
+
+\columns{\item_render[height=30]{neepmeat:grine}}{\item_render[height=30]{neepmeat:pressure_washer}}
 
 ## Foods
 

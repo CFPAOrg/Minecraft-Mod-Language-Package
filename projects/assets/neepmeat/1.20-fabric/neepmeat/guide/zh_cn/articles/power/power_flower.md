@@ -1,6 +1,6 @@
 ---
 id: power_flower
-lookup: neepmeat:power_flower_seeds, neepmeat:power_flower_growth, neepmeat:power_flower_controller, neepmeat:power_flower_fluid_port
+lookup: neepmeat:power_flower_seeds, neepmeat:power_flower_growth, neepmeat:power_flower_controller, neepmeat:power_flower_fluid_port, neepmeat:grine
 ---
 
 # 能量花
@@ -17,6 +17,12 @@ lookup: neepmeat:power_flower_seeds, neepmeat:power_flower_growth, neepmeat:powe
 水是能量花光合作用的必需品，须向能量花流体口供应水。
 
 \columns{\item_render[height=30]{neepmeat:power_flower_seeds}}{\item_render[height=30]{neepmeat:power_flower_fluid_port}}
+
+## 清理
+
+光合器官上会逐渐长出淤垢，阻挡阳光。可以使用高压清洗器清洗。
+
+\columns{\item_render[height=30]{neepmeat:grine}}{\item_render[height=30]{neepmeat:pressure_washer}}
 
 ## 食物
 

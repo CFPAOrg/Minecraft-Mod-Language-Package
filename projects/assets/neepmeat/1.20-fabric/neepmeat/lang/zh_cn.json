@@ -9,7 +9,7 @@
   "tooltip.neepmeat.plc_compatible": "有效PLC工作站",
   "tooltip.neepmeat.plc_interrupt": "会发出PLC中断",
   "tooltip.neepmeat.plc_actuator": "有效PLC操作机构",
-  "tooltip.neepmeat.retains_inventory": "破坏时会保留内容物。",
+  "tooltip.neepmeat.retains_inventory": "破坏时会保留内容物",
   "text.neepmeat.plc.arguments": "参数：%s / %s",
   "text.neepmeat.plc.interactive_help": "在右侧面板中点击选择指令。\n\n点击世界中方块以将其位置加作参数。\n\n参数数量满足后，指令会立即执行。",
   "tooltip.neepmeat.plc.language": "当前编程语言：%s\n点击以切换语言。\nCtrl点击以打开文档。",
@@ -185,7 +185,7 @@
   "block.neepmeat.open_blood_bubble_machine_block": "有伤口的血疱机器方块",
   "item.neepmeat.port.scrollable": "§e在快捷栏中潜行滚动滚轮以循环切换。",
   "block.neepmeat.motor_port": "发动机端口",
-  "block.neepmeat.integration_port": "整合端口",
+  "block.neepmeat.integration_port": "融合端口",
   "block.neepmeat.service_port": "伺服端口",
   "block.neepmeat.item_output_port": "物品输出端口",
   "block.neepmeat.item_input_port": "物品输入端口",
@@ -214,7 +214,7 @@
   "block.neepmeat.distributor_point.lore_0": "会经由派送生物体对其他位置收发物品和流体。",
   "screen.neepmeat.distributor_point.address": "频道：",
   "screen.neepmeat.distributor_point.max_cooldown": "冷却（刻）：",
-  "screen.neepmeat.distributor_point.auto_send": "自动发送：",
+  "screen.neepmeat.distributor_point.auto_send": "自动发送",
   "screen.neepmeat.distributor_point.neepbus": "打开NEEP总线配置",
   "screen.neepmeat.open_guide_entry": "打开指南条目",
   "block.neepmeat.ball_mill": "球磨机滚筒",
@@ -303,7 +303,7 @@
   "block.neepmeat.copper_pipe": "铜管道",
   "block.neepmeat.copper_pipe.lore_0": "什么都不会做。",
   "block.neepmeat.stop_valve": "截止阀",
-  "block.neepmeat.stop_valve.lore_0": "关闭时阻止流体通过。受红石影响。",
+  "block.neepmeat.stop_valve.lore_0": "关闭时阻止流体通过。有红石信号时关闭。",
   "block.neepmeat.check_valve": "止回阀 [目前无法工作]",
   "block.neepmeat.check_valve.lore_0": "只允许流体单向流通。",
   "block.neepmeat.filter_pipe": "过滤管道",
@@ -372,11 +372,11 @@
   "tooltip.neepmeat.pid_controller.windup_limit": "饱和上限",
   "block.neepmeat.address_decoder": "地址多路复用器",
   "block.neepmeat.address_decoder.lore_0": "将§e数据§7（§eData§7）转发到§e地址§7（§eAddress§7）输入端口指定的数字地址。有0到63号地址可用。",
-  "block.neepmeat.delay": "单位延迟器",
+  "block.neepmeat.delay": "延迟器",
   "block.neepmeat.delay.lore_0": "将输入端口收到的信号延迟1刻再写至输出端口。",
   "tooltip.neepmeat.delay.delay": "信号延迟",
-  "block.neepmeat.arithmetic": "算术运算器（未实装）",
-  "block.neepmeat.lore_0": "对§e输入1§7（§eInput 1§7）和§e输入2§7（§eInput 2§7）执行算术运算，并从§e结果§7（§eResult§7）处输出结果。",
+  "block.neepmeat.pfplc": "PFPLC",
+  "block.neepmeat.pfplc.lore_0": "使用可编程公式对NEEP总线输入执行逻辑和算术运算。",
   "block.neepmeat.movement_control": "运动控制器",
   "block.neepmeat.movement_control.lore_0": "将玩家的移动输入转换为NEEP总线信号。\n§e交互以激活。\n潜行交互以配置。",
   "block.neepmeat.integrator": "积分器",
@@ -395,6 +395,9 @@
   "block.neepmeat.sample_and_hold.lore_0": "收到信号时，读取地址处的值并加以存储。很适合用于周期性检查某值。\n写入采样（SAMPLE）端口后，会读取采样地址（ADDRESS TO SAMPLE）并保持所读值，而后将该值写入采样值（SAMPLED VALUE）。",
   "block.neepmeat.clock": "时钟器",
   "block.neepmeat.clock.lore_0": "按给定间隔发出信号。",
+  "screen.neepmeat.neepbus.clock_state.tooltip": "时钟模式\nEXT：只会在外部写入输入端口时开始扫描周期。此模式更适合纯粹的组合逻辑。\nINT：每经过一定时间自动开始扫描周期。",
+  "screen.neepmeat.neepbus.auto_read_inputs.tooltip": "自动读取输入\n启用时，所有NEEP总线输入端口都会在每次扫描周期开始时执行一次读操作。\n可在其他方块不会自动向该方块输入端口写值时使用，通常来说不必要。",
+  "screen.neepmeat.neepbus.scan_interval.tooltip": "每次扫描周期之间的刻数。时钟模式设为EXT时无效。",
 
   "block.neepmeat.vascular_conduit": "脉管导管",
   "block.neepmeat.vascular_conduit.lore_0": "在机器间循环血液，为之供能。",
@@ -409,10 +412,13 @@
   "screen.neepmeat.vsc.balance.desc": "平衡：脉管能源转换器会尝试将目标网络中的可用功率保持在给定量。多余的功率会被送回源网络。",
   "screen.neepmeat.vsc.cut_off": "功率不足时不传输",
   "block.neepmeat.vascular_sensor": "脉管网络传感器",
-  "block.neepmeat.vascular_sensor.lore_0": "将相连脉管网络的属性输出至NEEP总线。",
+  "block.neepmeat.vascular_sensor.lore_0": "将相连脉管网络的属性输出至NEEP总线。\n只会在脉管网络变化时发送数据。",
   "block.neepmeat.vascular_condenser": "脉管凝聚器",
+  "block.neepmeat.vascular_condenser.lore_0": "根据目标值平滑和平衡脉管网络的容量，目标值可配置。\n也可根据网络中脉管能源转换器的需求切换目标值。\n接入更多方块可增大容量。",
   "screen.neepmeat.vascular_condenser.target.tooltip": "目标网络容量。\n若其他来源注入网络的功率小于该值，此方块便会将其储存的能量注入网络，令网络内的可用功率保持在该值。\n若网络容量低于实际功率量，则此方块会从网络中抽取并储存能量。",
   "screen.neepmeat.vascular_condenser.destroy.tooltip": "启用时，此方块会持续抽取网络中的多余功率，无论其内部缓冲已满与否。",
+  "screen.neepmeat.vascular_condenser.match_demand.tooltip": "启用时，目标功率会自动调整至预估的网络功率消耗。该值受脉管能源转换器影响，可用于在机器启动时自动提供更多功率。",
+  "screen.neepmeat.vascular_condenser.active.tooltip": "该脉管凝聚器当前是否启用。",
 
   "screen.neepmeat.deployer.round_robin": "轮询调度",
   "screen.neepmeat.deployer.block": "交互方块",
@@ -487,10 +493,15 @@
   "block.neepmeat.reservoir": "集水槽",
   "block.neepmeat.reservoir.lore_0": "能迅速收集水。",
 
+  "block.neepmeat.gauge.mode": "模式：",
+  "block.neepmeat.gauge.mode.normal": "根据填充百分比发出红石信号。",
+  "block.neepmeat.gauge.mode.inverted": "根据腾空百分比发出红石信号。",
+  "block.neepmeat.gauge.mode.when_empty": "空时发出红石信号。",
+  "block.neepmeat.gauge.mode.when_full": "满时发出红石信号。",
   "block.neepmeat.fluid_gauge": "流体存量计",
-  "block.neepmeat.fluid_gauge.lore_0": "根据储罐的填满程度发出红石信号。",
+  "block.neepmeat.fluid_gauge.lore_0": "根据储罐的填满程度发出红石信号。\n潜行空手交互以循环切换模式。",
   "block.neepmeat.item_gauge": "物品存量计",
-  "block.neepmeat.item_gauge.lore_0": "根据容器的填满程度发出红石信号。",
+  "block.neepmeat.item_gauge.lore_0": "根据容器的填满程度发出红石信号。\n潜行空手交互以循环切换模式。",
 
   "block.neepmeat.converter": "流体充能器",
   "block.neepmeat.transducer": "换能套管",
@@ -503,6 +514,8 @@
   "block.neepmeat.power_flower_fluid_port.lore_0": "能将水和重组食物吸入能量花。",
   "block.neepmeat.power_flower_controller": "能量花核心",
   "block.neepmeat.power_flower_controller.lore_0": "能量花产出的瞬变浆液自此流出。\n需向能量花流体口送入水。\n可直接破坏取下。",
+  "block.neepmeat.grine": "淤垢",
+  "block.neepmeat.grine.lore_0": "会在能量花上形成，阻挡阳光。可用高压清洗器清理。",
   "block.neepmeat.fluid_exciter": "心脏机",
   "block.neepmeat.fluid_exciter.lore_0": "从下方注入瞬变浆液时，上部即会向脉管网络供能。效率是标准发动机的150%。",
 
@@ -539,6 +552,7 @@
   "block.neepmeat.grinder.lore_0": "§e潜行空手交互以提取经验。§f",
   "block.neepmeat.large_crusher": "大型破碎机",
   "block.neepmeat.alloy_kiln": "合金窑",
+  "block.neepmeat.alloy_kiln.lore_0": "可在左右两侧访问输入槽。燃料槽需从后方访问。",
   "block.neepmeat.collector": "脂肪收集器",
   "block.neepmeat.crucible": "熬脂盆",
   "block.neepmeat.casting_basin": "液压盆",
@@ -553,6 +567,7 @@
   "block.neepmeat.advanced_integrator_structure": "高级融变生物机结构",
 
   "block.neepmeat.deployer": "放置器",
+  "block.neepmeat.deployer.lore_0": "放置方块，也能对方块使用物品。",
   "block.neepmeat.mixer": "混合机",
   "block.neepmeat.mixer.lore_0": "混合相邻储罐中的物品与流体。",
   "block.neepmeat.mixer.lore_1": "物品须通过管道或漏斗送入。",
@@ -757,8 +772,10 @@
 
   "item.neepmeat.projector": "指南投影仪",
   "item.neepmeat.projector.lore_0": "NEEPMeat中所有内容的指南。",
-  "item.neepmeat.projector.lore_1": "此指南处于物品栏中时，按下CTRL+L可查询鼠标悬停位置的物品。",
+  "item.neepmeat.projector.lore_1": "此指南处于物品栏中时，按下CTRL+L可查询鼠标悬停位置的物品。\n可植入体内。",
   "screen.neepmeat.guide.search": "输入“%s”以搜索",
+  "screen.neepmeat.guide.not_present": "物品栏中没有且未植入指南投影仪。",
+  "screen.neepmeat.guide.not_unlocked": "你尚未解锁此条目。",
 
   "item.neepmeat.pipette": "滴管",
   "item.neepmeat.pipette.full": "滴管：%s（%s mB）",
@@ -844,7 +861,11 @@
   "block.neepmeat.contaminated_grass_block": "染污草方块",
 
   "block.neepmeat.phage_ray": "吞噬射线炮",
-  "block.neepmeat.phage_ray.lore_0": "玩家控制瞄准时可发射特种光束，可用其迅速破坏方块。摧毁的方块不会产生掉落物。",
+  "block.neepmeat.phage_ray.lore_0": "玩家控制瞄准时可发射特种光束，可用其迅速破坏方块。默认情况下，被破坏的方块不会掉落。\n右击以手动控制。\n潜行点击以配置。",
+  "screen.neepmeat.phage_ray.set_range_to_target": "通过NEEP总线设定目标位置时生效。\n启用时，射线范围会受目标方块距离限制。\n很适合用来避免波及其他方块。",
+  "screen.neepmeat.phage_ray.instructions.mouse": "吞噬射线炮会使用你的视线方向。",
+  "screen.neepmeat.phage_ray.instructions.raycast": "指向方块以让射线炮瞄准它。",
+  "screen.neepmeat.phage_ray.instructions": "按[空格]以发射射线。\n按[Shift]以切换模式。\n按[Esc]以退出。",
 
   "message.neepmeat.synthesiser.template": "当前模板：%s",
 
@@ -941,6 +962,9 @@
   "item.neepmeat.goggles": "增强现实眼镜",
   "item.neepmeat.goggles.lore_0": "揭示不可视之物",
 
+  "item.neepmeat.bog_flesh": "麻布肉",
+  "item.neepmeat.obscene_weight": "沉重骇物",
+
   "item.neepmeat.farming_scutter": "农作爬虫",
   "item.neepmeat.farming_scutter.lore_0": "收获农作物并重新种植。必须放置在耕地上。收获到的物品会送入放置时高亮的位置。\n§e潜行交互以拾起。§f",
   "entity.neepmeat.farming_scutter": "农作爬虫",
@@ -958,11 +982,14 @@
   "entity.neepmeat.machine_worm": "机器蠕虫",
   "entity.neepmeat.phage_ray": "吞噬射线炮",
 
-  "entity.neepmeat.bog_follower": "泥沼跟踪者",
+  "entity.neepmeat.bog_follower": "泥沼跟随者",
+  "entity.neepmeat.lurker": "潜伏者",
 
   "message.neepmeat.implant.title": "植入物",
   "message.neepmeat.item_implant.title": "物品植入物",
   "message.neepmeat.implant.install": "植入物已嵌装：%s",
+
+  "biome.neepmeat.bog_normal": "梦之泥沼",
 
   "implant.neepmeat.empty": "无",
 
@@ -997,6 +1024,8 @@
   "implant.neepmeat.pipe_climber.desc_0": "允许使用者像攀爬梯子一样攀爬管道。",
   "implant.neepmeat.guide": "内置指南",
   "implant.neepmeat.guide.desc_0": "允许直接查阅物品的指南，无需手持实体物品。",
+  "implant.neepmeat.obscene_weight": "沉重骇物",
+  "implant.neepmeat.obscene_weight.desc_0": "可怖的重物，会将嵌装者拖入深渊。",
 
   "item.neepmeat.shield": "护盾附加",
   "implant.neepmeat.shield": "护盾附加",
@@ -1073,7 +1102,7 @@
   "instruction.neepmeat.bit.desc": "若栈顶元素§6非零§f，则分支跳转至所给标签或所给指令序数处。\n若标签后跟有§6f§f或§6b§f，则分别跳转至下一或上一同名标签。",
   "instruction.neepmeat.bif.desc": "若栈顶元素§6为零§f，则分支跳转至所给标签或所给指令序数处。\n若标签后跟有§6f§f或§6b§f，则分别跳转至下一或上一同名标签。",
   "instruction.neepmeat.say.desc": "将所给字符串发送给20格内的所有玩家。\n若未指定字符串，则弹出并打印栈顶元素。\n在末尾加上§6d§f、§6h§f、§6b§f会分别将栈顶元素格式化为十进制、十六进制、二进制。",
-  "instruction.neepmeat.remove.desc": "移除工作站ARG1中的最末制造步骤。",
+  "instruction.neepmeat.remove.desc": "移除工作站ARG1中的最末制造步骤。\n若制造步骤为COMBINE，则掉落被移除的物品。",
   "instruction.neepmeat.robot.desc": "选择ARG1处的操作机构。后续所有指令均以之为操作机构，直至再次指定。",
   "instruction.neepmeat.moveto.desc": "§6( 位置 -- )§f\n指示机器人移动到栈顶位置。",
   "instruction.neepmeat.exec.desc": "在ARG1处的执行器处运行指令ARG2。",
@@ -1256,11 +1285,12 @@
   "tag.neepmeat.moppable": "可用拖把清理",
   "tag.neepmeat.dosimeter": "剂量计",
   "tag.neepmeat.animal_feed_items": "动物饲料",
+  "tag.neepmeat.tarries": "滞物",
 
   "stat.neepmeat.enlightenment": "智慧",
 
   "advancements.neepmeat.main.root.title": "NEEPMeat",
-  "advancements.neepmeat.main.root.desc": "征服自然，篡夺神祇。",
+  "advancements.neepmeat.main.root.desc": "自然秩序乃死物的独裁暴政。",
 
   "advancements.neepmeat.main.obtain_guide.title": "去读手册",
   "advancements.neepmeat.main.obtain_guide.desc": "用腐肉和书合成用户手册。",
@@ -1298,8 +1328,11 @@
   "advancements.neepmeat.main.obtain_meat_bucket.title": "原汁原味",
   "advancements.neepmeat.main.obtain_meat_bucket.desc": "装出满满一铁桶的肉浆。",
 
-  "advancements.neepmeat.main.obtain_plc.title": "电“脑”",
+  "advancements.neepmeat.main.obtain_plc.title": "[COMPUTER]",
   "advancements.neepmeat.main.obtain_plc.desc": "制造并使用PLC。",
+
+  "advancements.neepmeat.main.obtain_pfplc.title": "[MORE COMPUTER]",
+  "advancements.neepmeat.main.obtain_pfplc.desc": "获得PFPLC。",
 
   "advancements.neepmeat.main.obtain_power_flower_seeds.title": "末日种子",
   "advancements.neepmeat.main.obtain_power_flower_seeds.desc": "获得能量花种子。",
@@ -1307,11 +1340,18 @@
   "advancements.neepmeat.main.obtain_staff.title": "巫师手里的杖子有……",
   "advancements.neepmeat.main.obtain_staff.desc": "获得肉质手杖。",
 
+  "advancements.neepmeat.main.encounter_bog_follower.title": "秽臭渐起",
+  "advancements.neepmeat.main.encounter_bog_follower.desc": "来自外界的某物，旧伤复发。",
+
+  "advancements.neepmeat.main.enter_bog.title": "梦之泥沼",
+  "advancements.neepmeat.main.enter_bog.desc": "让不稳定的尖塔一直运作下去会产生意料之外的后果。",
+
   "key.neepmeat.category.neepmeat": "NEEPMeat",
   "key.neepmeat.transform": "工具变形",
 
   "subtitles.neepmeat.click": "界面：点击",
   "subtitles.neepmeat.error": "界面：出错",
+  "subtitles.neepmeat.controller_enter": "进入控制界面",
 
   "subtitles.neepmeat.fusion_fire": "融合炮：发射",
 
@@ -1385,9 +1425,16 @@
   "subtitles.neepmeat.pressure_washer.squirt": "高压清洗器：喷出流体",
 
   "subtitles.neepmeat.compressed_air_fill": "压缩空气：填充",
+  "subtitles.neepmeat.fluid_pipe.rumble": "流体管道：呻吟",
+  "subtitles.neepmeat.fluid_pipe.valve_open": "阀门：开启",
+  "subtitles.neepmeat.fluid_pipe.valve_close": "阀门：关闭",
+  "subtitles.neepmeat.basic_motor.running": "发动机：运行",
 
   "subtitles.neepmeat.big_lever_on": "大型拉杆：拉开",
   "subtitles.neepmeat.big_lever_off": "大型拉杆：回弹",
+
+  "subtitles.neepmeat.bog_ambient_loop": "泥沼环境声",
+
   "category.neepmeat.thord.stack": "栈",
   "category.neepmeat.thord.arithmetic": "数学",
   "category.neepmeat.thord.comparison": "比较",
@@ -1396,7 +1443,7 @@
 
   "death.attack.neepmeat.crusher": "%1$s被绞成了嵌着肉块的番茄酱",
   "death.attack.neepmeat.mincer": "%1$s被磨成了汤状的匀浆",
-  "death.attack.neepmeat.blood_bullets": "%1$s因失血过多而死",
+  "death.attack.neepmeat.blood_bullets": "%1$s献出了太多的血",
   "death.attack.neepmeat.blood_bullets.player": "%1$s在与%2$s战斗时因失血过多而死",
 
   "process.neepmeat.disruptor": "扰乱机",

@@ -13,4 +13,4 @@ lookup: neepmeat:verrucous_stone, neepmeat:verrucous_stone_port
 }{\item_render[height=70]{neepmeat:verrucous_stone_port}
 \centering{会渗出流体的溃疡口。}}
 
-每块疣斑石都能产出10eJ/t。各溃疡口均分产出。
+每块疣斑石都能产出10eJ/t。各溃疡口均分产出。为避免浪费，所有溃疡口都应接上管道。

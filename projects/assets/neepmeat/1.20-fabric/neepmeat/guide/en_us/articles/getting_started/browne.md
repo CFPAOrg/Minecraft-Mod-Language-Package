@@ -5,6 +5,9 @@ lookup: neepmeat:browne_ingot, neepmeat:packed_browne, neepmeat:oil_of_browne_bu
 
 # Browne
 
+*All three of the bog people we uncovered were accompanied by a large patch of grave brome growing above. It was thickest near our best specimen, a four-hundred year-old child with hair, nails and eyebrows. It is as though the grass is attracted to preservation, not decay.*
+
+
 \columns[fit=second]{Browne is a strange material that can be used to make durable and biocompatible machine casings. It is hypothesised to form as a metabolic byproduct of currently undetectable microbes. When sintered, Browne's porous structure allows tissues to bind to it and permits limited gas and moisture exchange.
 }{\item_render{neepmeat:browne_ingot}}
 

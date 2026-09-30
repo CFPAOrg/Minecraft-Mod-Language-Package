@@ -1,5 +1,6 @@
 ---
 id: feeding_trough
+lookup: neepmeat:feeding_trough
 ---
 
 # 饲料槽

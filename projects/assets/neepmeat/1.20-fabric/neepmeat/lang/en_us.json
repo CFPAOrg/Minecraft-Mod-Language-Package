@@ -9,7 +9,7 @@
   "tooltip.neepmeat.plc_compatible": "PLC Workbench",
   "tooltip.neepmeat.plc_interrupt": "Emits PLC interrupts",
   "tooltip.neepmeat.plc_actuator": "PLC Actuator",
-  "tooltip.neepmeat.retains_inventory": "Retains inventory when broken.",
+  "tooltip.neepmeat.retains_inventory": "Retains inventory when broken",
   "text.neepmeat.plc.arguments": "Argument: %s / %s",
   "text.neepmeat.plc.interactive_help": "Click an instruction in the right panel to select it.\n\nClick a block in a the world to add its position as an argument.\n\nOnce the required number of arguments are filled, the instruction will be executed immediately.",
   "tooltip.neepmeat.plc.language": "Current programming language: %s\nClick to switch language.\nCTRL-click to open documentation.",
@@ -214,7 +214,7 @@
   "block.neepmeat.distributor_point.lore_0": "Allows exchange of items and fluids with other points via the Distributor Organism.",
   "screen.neepmeat.distributor_point.address": "Channel:",
   "screen.neepmeat.distributor_point.max_cooldown": "Cooldown (ticks):",
-  "screen.neepmeat.distributor_point.auto_send": "Auto send:",
+  "screen.neepmeat.distributor_point.auto_send": "Auto send",
   "screen.neepmeat.distributor_point.neepbus": "Open NEEPBus Config",
   "screen.neepmeat.open_guide_entry": "Open guide entry",
   "block.neepmeat.ball_mill": "Ball Mill Drum",
@@ -303,7 +303,7 @@
   "block.neepmeat.copper_pipe": "Copper Pipe",
   "block.neepmeat.copper_pipe.ore_0": "Does absolutely nothing.",
   "block.neepmeat.stop_valve": "Stop Valve",
-  "block.neepmeat.stop_valve.lore_0": "Prevents flow when closed. Responds to redstone.",
+  "block.neepmeat.stop_valve.lore_0": "Prevents flow when closed. Closes when powered with redstone.",
   "block.neepmeat.check_valve": "Check Valve [CURRENTLY BROKEN]",
   "block.neepmeat.check_valve.lore_0": "Only allows flow in one direction.",
   "block.neepmeat.filter_pipe": "Filter Pipe",
@@ -372,11 +372,11 @@
   "tooltip.neepmeat.pid_controller.windup_limit": "Windup limit",
   "block.neepmeat.address_decoder": "Address Multiplexer",
   "block.neepmeat.address_decoder.lore_0": "Redirects signals from §eData§7 to a numerically-named address specified by the §eAddress§7 input. Addresses 0-63 can be accessed.",
-  "block.neepmeat.delay": "Unit Delay",
+  "block.neepmeat.delay": "Delay",
   "block.neepmeat.delay.lore_0": "When data is written to its input, waits one tick before writing to its output.",
   "tooltip.neepmeat.delay.delay": "Signal delay",
-  "block.neepmeat.arithmetic": "Arithmetic (NYI)",
-  "block.neepmeat.lore_0": "Applies an arithmetical operation to §eInput 1§7 and §eInput 2§7 and sends the result via §eResult§7.",
+  "block.neepmeat.pfplc": "PFPLC",
+  "block.neepmeat.pfplc.lore_0": "Performs logic and calculations on NEEPBus inputs using programmable formulas.",
   "block.neepmeat.movement_control": "Movement Control",
   "block.neepmeat.movement_control.lore_0": "Converts a player's movement inputs to NEEPBus signals.\n§eUse to activate\nSneak-use to configure.",
   "block.neepmeat.integrator": "Integrator",
@@ -395,6 +395,9 @@
   "block.neepmeat.sample_and_hold.lore_0": "Reads the value at an address and stores the result when given a signal. Useful for periodically checking a value.\nWhen SAMPLE is written to: Reads ADDRESS TO SAMPLE, stores the value and then writes it to SAMPLED VALUE.",
   "block.neepmeat.clock": "Clock",
   "block.neepmeat.clock.lore_0": "Emits a signal at a regular interval.",
+  "screen.neepmeat.neepbus.clock_state.tooltip": "Clock mode\nEXT: Scan cycles will only occur when input ports are written to externally. This option is better for purely combinational logic.\nINT: Scan cycles will occur automatically at regular intervals.",
+  "screen.neepmeat.neepbus.auto_read_inputs.tooltip": "Auto read inputs\nWhen enabled, all NEEPBus input ports will perform a read operation at the beginning of each scan cycle.\nUse this when other blocks may not automatically write their values to this block's input ports. Usually unnecessary.",
+  "screen.neepmeat.neepbus.scan_interval.tooltip": "Number of ticks between each scan cycle. Not used with clock mode set to EXT.",
 
   "block.neepmeat.vascular_conduit": "Vascular Conduit",
   "block.neepmeat.vascular_conduit.lore_0": "Cycles blood through machines to give them power.",
@@ -409,10 +412,13 @@
   "screen.neepmeat.vsc.balance.desc": "Balance: The VSC will try to keep the available power in the output network at the specified value. Excess power will be injected into the source network",
   "screen.neepmeat.vsc.cut_off": "Cut off when insufficient",
   "block.neepmeat.vascular_sensor": "Vascular Network Sensor",
-  "block.neepmeat.vascular_sensor.lore_0": "Sends properties of the connected vascular network via NEEPBus.",
+  "block.neepmeat.vascular_sensor.lore_0": "Sends properties of the connected vascular network via NEEPBus.\nOnly sends data when the vascular network changes.",
   "block.neepmeat.vascular_condenser": "Vascular Condenser",
+  "block.neepmeat.vascular_condenser.lore_0": "Smooths and balances capacity of a vascular network with a configurable setpoint.\nOptionally matches setpoint to the demand of VSCs in the network.\nAdd more blocks to extend capacity.",
   "screen.neepmeat.vascular_condenser.target.tooltip": "Target network capacity. \nIf the power injected into the network by other sources is less than this, this block will inject its stored energy to keep the available power in the network at this value.\nIf the network's capacity is below this, this block will absorb and store energy from the network",
-  "screen.neepmeat.vascular_condenser.destroy.tooltip": "If this is enabled, this block will continue to absorb excess power from the network even when its buffer is full.",
+  "screen.neepmeat.vascular_condenser.destroy.tooltip": "If enabled, this block will continue to absorb excess power from the network even when its buffer is full.",
+  "screen.neepmeat.vascular_condenser.match_demand.tooltip": "If enabled, target power will automatically be adjusted to match the estimated power demand on the network. This value is affected by VSCs and can be used to automatically provide more power when a machine is switched on.",
+  "screen.neepmeat.vascular_condenser.active.tooltip": "Whether this vascular condenser is currently active.",
 
   "screen.neepmeat.deployer.round_robin": "Round-robin",
   "screen.neepmeat.deployer.block": "Interact block",
@@ -432,7 +438,7 @@
   "block.neepmeat.filtered_ejector": "Filtered Ejector",
   "block.neepmeat.filtered_ejector.lore_0": "Ejects single items into connected pipes based on a configurable filter.\n§eEnabled by redstone by default. Use with an empty hand while sneaking to toggle.",
   "block.neepmeat.advanced_ejector": "Advanced Ejector",
-  "block.neepmeat.advanced_ejector.lore_0": "'S more advanced innit.\n§eUse with an empty hand while sneaking to configure§f",
+  "block.neepmeat.advanced_ejector.lore_0": "More advanced innit.\n§eUse with an empty hand while sneaking to configure§f",
   "screen.neepmeat.advanced_ejector.round_robin": "Round-Robin",
   "screen.neepmeat.advanced_ejector.amount": "Amount",
   "screen.neepmeat.advanced_ejector.period": "Period",
@@ -487,10 +493,15 @@
   "block.neepmeat.reservoir": "Reservoir",
   "block.neepmeat.reservoir.lore_0": "Rapidly collects water.",
 
+  "block.neepmeat.gauge.mode": "Mode: ",
+  "block.neepmeat.gauge.mode.normal": "Emits redstone according to fill percentage.",
+  "block.neepmeat.gauge.mode.inverted": "Emits redstone according to empty percentage.",
+  "block.neepmeat.gauge.mode.when_empty": "Emits redstone when empty.",
+  "block.neepmeat.gauge.mode.when_full": "Emits redstone when full.",
   "block.neepmeat.fluid_gauge": "Fluid Gauge",
-  "block.neepmeat.fluid_gauge.lore_0": "Emits redstone based on a tank's fill percentage.",
+  "block.neepmeat.fluid_gauge.lore_0": "Emits redstone based on a tank's fill percentage.\nSneak-use with an empty hand to cycle mode.",
   "block.neepmeat.item_gauge": "Item Gauge",
-  "block.neepmeat.item_gauge.lore_0": "Emits redstone based on an inventory's fill percentage.",
+  "block.neepmeat.item_gauge.lore_0": "Emits redstone based on an inventory's fill percentage.\nSneak-use with an empty hand to cycle mode.",
 
   "block.neepmeat.converter": "Fluid Charger",
   "block.neepmeat.transducer": "Transductive Cannula",
@@ -503,6 +514,8 @@
   "block.neepmeat.power_flower_fluid_port.lore_0": "Sucks water or reconstituted food into a Power Flower.",
   "block.neepmeat.power_flower_controller": "Power Flower Controller",
   "block.neepmeat.power_flower_controller.lore_0": "Emits Transient Ichor generated by a Power Flower. \nRequires water inserted through a Power Flower Fluid Port. \nCan be harvested normally.",
+  "block.neepmeat.grine": "Grines",
+  "block.neepmeat.grine.lore_0": "Grows on Power Flowers, obscuring sunlight. Can be removed with a Pressure Washer.",
   "block.neepmeat.fluid_exciter": "Heart Machine",
   "block.neepmeat.fluid_exciter.lore_0": "Injects power into a vascular network connected to the upper dome when Transient Ichor is inserted into the bottom. Provides a 150% efficiency gain over standard motors.",
 
@@ -539,6 +552,7 @@
   "block.neepmeat.grinder.lore_0": "§eUse with an empty hand while sneaking to eject XP.",
   "block.neepmeat.large_crusher": "Large Crusher",
   "block.neepmeat.alloy_kiln": "Alloy Kiln",
+  "block.neepmeat.alloy_kiln.lore_0": "Input slots are accessed through the left and right sides. The fuel slot is accessed via the back.",
   "block.neepmeat.collector": "Fat Collector",
   "block.neepmeat.crucible": "Rendering Basin",
   "block.neepmeat.casting_basin": "Pressing Basin",
@@ -553,6 +567,7 @@
   "block.neepmeat.advanced_integrator_structure": "Advanced Integrator Structure",
 
   "block.neepmeat.deployer": "Deployer",
+  "block.neepmeat.deployer.lore_0": "Places blocks and uses items on blocks.",
   "block.neepmeat.mixer": "Mixer",
   "block.neepmeat.mixer.lore_0": "Mixes items and fluids from adjacent tanks.",
   "block.neepmeat.mixer.lore_1": "Items must be inserted with pipes or hoppers.",
@@ -757,8 +772,10 @@
 
   "item.neepmeat.projector": "Guide Projector",
   "item.neepmeat.projector.lore_0": "A guide to all NEEPMeat content.",
-  "item.neepmeat.projector.lore_1": "Press CTRL + L to look up a hovered item while this guide is in your inventory.",
+  "item.neepmeat.projector.lore_1": "Press CTRL + L to look up a hovered item while this guide is in your inventory.\nCan be implanted.",
   "screen.neepmeat.guide.search": "Type '%s' to search",
+  "screen.neepmeat.guide.not_present": "No Guide Projector implanted or in inventory.",
+  "screen.neepmeat.guide.not_unlocked": "You have not unlocked this entry.",
 
   "item.neepmeat.pipette": "Pipette",
   "item.neepmeat.pipette.full": "Pipette: %s (%s mb)",
@@ -844,7 +861,11 @@
   "block.neepmeat.contaminated_grass_block": "Contaminated Grass Block",
 
   "block.neepmeat.phage_ray": "Phage Ray",
-  "block.neepmeat.phage_ray.lore_0": "Fires a beam that rapidly breaks blocks when ridden and aimed by a player. Blocks do not drop loot when broken.",
+  "block.neepmeat.phage_ray.lore_0": "Fires a beam that rapidly breaks blocks. By default, blocks do not drop loot when broken.\nRight click to take manual control.\nSneak-click to configure.",
+  "screen.neepmeat.phage_ray.set_range_to_target": "Applies when setting the targeted position using NEEPBus.\nIf enabled, beam range will be limited by the distance to the target block.\nUseful for preventing excess blocks from being destroyed.",
+  "screen.neepmeat.phage_ray.instructions.mouse": "The Phage Ray will copy the direction you are looking in.",
+  "screen.neepmeat.phage_ray.instructions.raycast": "Point at a block to aim the Phage Ray towards it.",
+  "screen.neepmeat.phage_ray.instructions": "Press [SPACE] to shoot the beam.\nPress [SHIFT] to switch mode.\nPress [ESC] to exit.",
 
   "message.neepmeat.synthesiser.template": "Current template: %s",
 
@@ -941,6 +962,9 @@
   "item.neepmeat.goggles": "AR Goggles",
   "item.neepmeat.goggles.lore_0": "Reveals the unseen",
 
+  "item.neepmeat.bog_flesh": "Hessian Flesh",
+  "item.neepmeat.obscene_weight": "Obscene Weight",
+
   "item.neepmeat.farming_scutter": "Farming Scutter",
   "item.neepmeat.farming_scutter.lore_0": "Harvests and replants crops. Must be placed on farmland. Harvested items will be inserted into block that is highlighted when placing.\n§eSneak-use to pick up.§f",
   "entity.neepmeat.farming_scutter": "Farming Scutter",
@@ -959,10 +983,13 @@
   "entity.neepmeat.phage_ray": "Phage Ray",
 
   "entity.neepmeat.bog_follower": "Bog Follower",
+  "entity.neepmeat.lurker": "Lurker",
 
   "message.neepmeat.implant.title": "Implant",
   "message.neepmeat.item_implant.title": "Item Implant",
   "message.neepmeat.implant.install": "Implant installed: %s",
+
+  "biome.neepmeat.bog_normal": "Dream Bog",
 
   "implant.neepmeat.empty": "None",
 
@@ -997,6 +1024,8 @@
   "implant.neepmeat.pipe_climber.desc_0": "Allows the user to climb pipes like ladders.",
   "implant.neepmeat.guide": "Internal Guide",
   "implant.neepmeat.guide.desc_0": "Allows looking items up in the Guide without needing to carry one around.",
+  "implant.neepmeat.obscene_weight": "Obscene Weight",
+  "implant.neepmeat.obscene_weight.desc_0": "A horrible mass, dragging the victim back down.",
 
   "item.neepmeat.shield": "Shield Attachment",
   "implant.neepmeat.shield": "Shield Attachment",
@@ -1073,7 +1102,7 @@
   "instruction.neepmeat.bit.desc": "(Branch if true) Branches to the given label or number of instructions if the top stack element is §6not 0§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
   "instruction.neepmeat.bif.desc": "(Branch if false) Branches to the given label or number of instructions if the top stack element is §60§f.\nIf the label is followed by §6f§f or §6b§f, it will jump to the next or previous instance of the label.",
   "instruction.neepmeat.say.desc": "Sends the given string to all players within 20 blocks.\nIf no string is provided, it will pop and print the last stack element.\nAdding §6d§f §6h§' or §6b§f to the end will format the stack entry as decimal, hexadecimal or binary respectively.",
-  "instruction.neepmeat.remove.desc": "Removes the last manufacture step from the item in workbench ARG1.",
+  "instruction.neepmeat.remove.desc": "Removes the last manufacture step from the item in workbench ARG1\nIf the removed step is COMBINE, the removed item will be dropped.",
   "instruction.neepmeat.robot.desc": "Selects the actuator at ARG1. All further instructions will use the actuator until a new one is selected.",
   "instruction.neepmeat.moveto.desc": "§6( pos -- )§f\nInstructs the robot to move to the position on the top of the stack.",
   "instruction.neepmeat.exec.desc": "Runs the following instruction ARG2 in the executor at block ARG1.",
@@ -1256,11 +1285,12 @@
   "tag.neepmeat.moppable": "Moppable",
   "tag.neepmeat.dosimeter": "Dosimeter",
   "tag.neepmeat.animal_feed_items": "Animal Feeds",
+  "tag.neepmeat.tarries": "Tarry",
 
   "stat.neepmeat.enlightenment": "Enlightenment",
 
   "advancements.neepmeat.main.root.title": "NEEPMeat",
-  "advancements.neepmeat.main.root.desc": "Conquer nature, usurp the Divine.",
+  "advancements.neepmeat.main.root.desc": "Natural order is a dictatorship of the inanimate.",
 
   "advancements.neepmeat.main.obtain_guide.title": "RTFM",
   "advancements.neepmeat.main.obtain_guide.desc": "Craft your Owner's Manual with Rotten Flesh and a book.",
@@ -1298,8 +1328,11 @@
   "advancements.neepmeat.main.obtain_meat_bucket.title": "Very Original",
   "advancements.neepmeat.main.obtain_meat_bucket.desc": "Fill a bucket with meat.",
 
-  "advancements.neepmeat.main.obtain_plc.title": "compütre",
+  "advancements.neepmeat.main.obtain_plc.title": "[COMPUTER]",
   "advancements.neepmeat.main.obtain_plc.desc": "Create and use a PLC.",
+
+  "advancements.neepmeat.main.obtain_pfplc.title": "[MORE COMPUTER]",
+  "advancements.neepmeat.main.obtain_pfplc.desc": "Obtain a PFPLC.",
 
   "advancements.neepmeat.main.obtain_power_flower_seeds.title": "The Seeds Of Doom",
   "advancements.neepmeat.main.obtain_power_flower_seeds.desc": "Obtain Power Flower Seeds.",
@@ -1307,11 +1340,18 @@
   "advancements.neepmeat.main.obtain_staff.title": "A Wizard's Staff Has A...",
   "advancements.neepmeat.main.obtain_staff.desc": "Obtain a Meatgun staff.",
 
+  "advancements.neepmeat.main.encounter_bog_follower.title": "Creeping Fetor",
+  "advancements.neepmeat.main.encounter_bog_follower.desc": "Something from outside, old wounds reopened.",
+
+  "advancements.neepmeat.main.enter_bog.title": "The Dream Bog",
+  "advancements.neepmeat.main.enter_bog.desc": "Running an unstable pylon can have unexpected consequences.",
+
   "key.neepmeat.category.neepmeat": "NEEPMeat",
   "key.neepmeat.transform": "Tool Transform",
 
   "subtitles.neepmeat.click": "UI Clicks",
   "subtitles.neepmeat.error": "UI Errors",
+  "subtitles.neepmeat.controller_enter": "Enter controller",
 
   "subtitles.neepmeat.fusion_fire": "Fusion Cannon fires",
 
@@ -1385,9 +1425,16 @@
   "subtitles.neepmeat.pressure_washer.squirt": "Pressure Washer squirts",
 
   "subtitles.neepmeat.compressed_air_fill": "Compressed Air Fill",
+  "subtitles.neepmeat.fluid_pipe.rumble": "Fluid Pipe groans",
+  "subtitles.neepmeat.fluid_pipe.valve_open": "Valve Opens",
+  "subtitles.neepmeat.fluid_pipe.valve_close": "Valve Closes",
+  "subtitles.neepmeat.basic_motor.running": "Motor Running",
 
   "subtitles.neepmeat.big_lever_on": "Big lever clicks on",
   "subtitles.neepmeat.big_lever_off": "Big lever clicks off",
+
+  "subtitles.neepmeat.bog_ambient_loop": "Bog ambient",
+
   "category.neepmeat.thord.stack": "Stack",
   "category.neepmeat.thord.arithmetic": "Maths",
   "category.neepmeat.thord.comparison": "Comparison",
@@ -1396,7 +1443,7 @@
 
   "death.attack.neepmeat.crusher": "%1$s was ground into chunky marinara",
   "death.attack.neepmeat.mincer": "%1$s was reduced to a soup-like homogenate",
-  "death.attack.neepmeat.blood_bullets": "%1$s lost too much blood",
+  "death.attack.neepmeat.blood_bullets": "%1$s donated too much blood",
   "death.attack.neepmeat.blood_bullets.player": "%1$s lost too much blood fighting %2$s",
 
   "process.neepmeat.disruptor": "Disruptor",
