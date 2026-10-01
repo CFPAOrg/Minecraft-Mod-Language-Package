@@ -1,0 +1,108 @@
+{
+  "item.hexssence": {
+    essence_hex: "咒术源质",
+    essence_earth: "土之源质",
+    essence_air: "气之源质",
+    essence_water: "水之源质",
+    essence_fire: "火之源质",
+    essence_metal: "金属源质",
+    essence_precious: "珍宝源质",
+    essence_life: "生命源质",
+    essence_end: "末地源质"
+  },
+
+  "block.hexssence": {
+    essence_jar: "源质罐"
+  },
+
+  "itemGroup.hexssence": "咒法源质",
+
+  hexssence: {
+    mishaps: {
+      extraction: {
+        valid_target: "有效源质提取目标"
+      },
+      combine: {
+        valid_recipe: "有效的源质组合配方iota",
+        valid_list: "由指向源质罐的向量组成的列表",
+        not_enough_items: "存有足量所需源质的源质罐"
+      },
+      analyze: {
+        valid_item: "具有有效源质组合配方的物品"
+      }
+    },
+    book: {
+      patterns: {
+        spells: {
+          essence_spells: {
+            title: "源质",
+            desc: "$(l:items/essence)$(thing)源质/$——物品的基本组成单位，我发现了若干与之相关的图案。",
+            extract_essence: "提取掉落物品的源质。消耗随目标物品而变。",
+            combine_essence: "移除一个向量列表、一个$(thing)配方 iota/$、一个向量，再从列表内各位置的源质罐中提取源质，并根据给定配方加以混合，而后在给定位置召唤产物。$(br)",
+            decay_recipe: "将$(thing)配方 iota/$ 拆解为由列表组成的列表，内层各列表均由物品类型和数量组成。<br>此 iota 记录了配方所需源质的种类与数量。<br>"
+          }
+        },
+        great_spells:{
+          analysis: {
+            title: "源质分析",
+            overview: "$(l:patterns/spells/essence_spells#hexssence:combine_essence)源质合成/$似乎需要一种全新的 iota，即$(thing)配方 iota/$。<br>到目前为止，我找到唯一一种能产生这种 iota 的方式就是分析，已在后页进行详细说明。",
+            analysis: "移除一个物品实体，返回该物品的组成配方 iota。<br>分析成功后物品会崩解。$(br2)目标没有有效组成配方时会招致事故。<br>消耗 5 个$(item)充能紫水晶/$。<br>"
+          }
+        }
+      },
+    },
+    page: {
+      essence: {
+        "1": "奇怪，有些卷轴里写到过，圆石之类的基础$(item)物品/$并非$(italic)不可分/$——它们实际上是更基本的$(item)源质/$的混合体。",
+        "2": "我能不能$(l:patterns/spells/essence_spells)加以利用呢……/$",
+        "jar": "我设计了大批量存储单种源质的方式。$(br)手持匹配源质时，与源质罐交互即可存入。$(br)在短时间内重复交互，会将所有匹配的源质返还至我的物品栏。$(br)空手或手持源质敲击源质罐，可从罐中取出一份源质；蹲下后重复此行为则能取出一整组。"
+      }
+    },
+    entry: {
+      items: "源质"
+    },
+    tooltip: {
+      essence_jar: "存有：%s x%d"
+    }
+  },
+
+  hexcasting: {
+    action: {
+      "hexssence:": {
+        "extract_essence": "源质提取",
+        "combine_essence": "源质组合",
+        "analyze_essence": "源质分析",
+        "decay_recipe": "配方拆解"
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+        "hexssence:": {
+        },
+      },
+    },
+  },
+
+  text: {
+    hexssence: {
+    },
+
+    "autoconfig.hexssence": {
+      title: "咒法源质配置",
+
+      category: {
+        client: "客户端",
+        server: "服务端",
+      },
+
+      option: {
+        client: {
+          },
+
+        server: {
+        },
+      },
+    },
+  },
+}
