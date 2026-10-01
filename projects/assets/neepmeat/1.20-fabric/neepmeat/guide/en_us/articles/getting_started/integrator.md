@@ -4,7 +4,8 @@ id: integrator
 
 # Integrator Organism
 
-An Integrator is a biohybrid information processing system intended to ease the production of machines. Designed to withstand high quantities of inhuman knowledge, Integrators can confer this information to certain substances, ascending them to Enlightened forms.
+\columns[fit=second]{An Integrator is a biohybrid information processing system intended to ease the production of machines. Designed to withstand high quantities of inhuman knowledge, Integrators can confer this information to certain substances, ascending them to Enlightened forms.
+}{\item_render{neepmeat:integrator_egg}}
 
 ## Acquisition
 

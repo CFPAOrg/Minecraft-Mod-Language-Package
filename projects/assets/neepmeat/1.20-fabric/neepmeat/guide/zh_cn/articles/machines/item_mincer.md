@@ -5,7 +5,8 @@ lookup: neepmeat:item_mincer
 
 # 物品绞碎机
 
-物品绞碎机能将物品状态的食物绞成食物浆液。所得食物浆液的品质由所放入食物的品质决定。
+\columns[fit=second]{物品绞碎机能将物品状态的食物绞成食物浆液。所得食物浆液的品质由所放入食物的品质决定。
+}{\item_render{neepmeat:item_mincer}}
 
 ## 规格说明
 

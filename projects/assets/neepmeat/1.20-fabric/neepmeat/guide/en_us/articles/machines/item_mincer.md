@@ -5,7 +5,8 @@ lookup: neepmeat:item_mincer
 
 # Item Mincer
 
-The Item Mincer squeezes food items into a Food slurry. The quality of the resulting Food is determined by the quality of the inserted food.
+\columns[fit=second]{The Item Mincer squeezes food items into a Food slurry. The quality of the resulting Food is determined by the quality of the inserted food.
+}{\item_render{neepmeat:item_mincer}}
 
 ## Specifications
 

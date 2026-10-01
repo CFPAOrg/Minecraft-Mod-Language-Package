@@ -4,7 +4,15 @@ id: thord_variables
 
 # 变量
 
+THORD中的变量是存储在PLC内部*堆内存*中的数据。它们和存储于栈中的值不一样：变量可以用于长期存储数据，也能节省栈操作的步数。
+
 变量可使用`VARIABLE`词创建。
+
+```
+# Create a variable called 'count' [1]
+variable count
+```
+ [1] 创建一个叫“count”的变量
 
 引用变量的名称会将其地址压栈。任意词均可将此地址用作参数。
 

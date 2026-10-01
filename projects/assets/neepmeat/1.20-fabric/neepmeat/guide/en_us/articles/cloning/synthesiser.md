@@ -1,10 +1,12 @@
 ---
 id: synthesiser
+lookup: neepmeat:synthesiser
 ---
 
 # Oviparous Synthesiser
 
-To indiscriminately cast off the vestige of nature is understandable but foolish zealotry. It is better to find use in the meaninglessness chaos of flesh and discard the remainder.
+\columns[fit=second]{To indiscriminately cast off the vestige of nature is understandable but foolish zealotry. It is better to find use in the meaninglessness chaos of natural flesh and discard the remainder.
+}{\item_render{neepmeat:synthesiser}}
 
 ## Usage
 
@@ -20,3 +22,5 @@ Eggs can be moved in standard ways, such as with water streams and pistons. They
 
 - Immersion in blood will allow eggs to hatch. 
 - Injecting blood directly using a PLC will trigger immediate hatching.
+
+\columns{\item_render[height=30]{neepmeat:blood_bucket}}{\item_render[height=30]{neepmeat:plc}}

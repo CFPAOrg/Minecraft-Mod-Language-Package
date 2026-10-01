@@ -6,7 +6,8 @@ icon: neepmeat:transducer
 
 # 换能套管
 
-换能套管利用热源加热底物，以此产出瞬变浆液。
+\columns[fit=second]{换能套管利用热源加热底物，以此产出瞬变浆液。
+}{\item_render[height=50]{neepmeat:transducer}}
 
 ## 使用方法
 
@@ -22,6 +23,9 @@ icon: neepmeat:transducer
 - 熔岩：40eJ/t
 - 装有熔岩的炼药锅：40eJ/t
 - 火：40eJ/t
+- 营火：40eJ/t
 - 岩浆块：40eJ/t
+- 灵魂火：60eJ/t
+- 灵魂营火：60eJ/t
 - 点燃的熔炉：150eJ/t
 - 火焰喷口：500eJ/t

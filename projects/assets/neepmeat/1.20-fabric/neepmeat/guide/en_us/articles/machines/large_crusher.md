@@ -1,5 +1,6 @@
 ---
 id: large_crusher
+lookup: neepmeat:crusher_segment
 ---
 
 # Large Crusher

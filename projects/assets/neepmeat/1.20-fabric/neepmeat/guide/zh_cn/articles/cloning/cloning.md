@@ -10,3 +10,5 @@ id: cloning
 而为提炼生物体的*精盐*，必须先令其浸淋焚灰预备液，然后焚化。该流程对先天具有火焰抗性的生物也可生效，但需手动击杀才能完成分解过程。
 
 *精盐*可用在精卵合成机中产出卵。
+
+\columns{\item_render[height=30]{neepmeat:synthesiser}}{\item_render[height=30]{neepmeat:mob_egg}}

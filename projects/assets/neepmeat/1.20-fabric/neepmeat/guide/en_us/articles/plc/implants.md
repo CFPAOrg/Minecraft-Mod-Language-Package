@@ -16,6 +16,7 @@ Implants provide new abilities to organisms, elevating them beyond the fickle wh
 - Pineal Eye
 - TNT (CNS-Wired Explosives)
 - Cat Ears
+- Guide Projector
 
 ## Usage
 

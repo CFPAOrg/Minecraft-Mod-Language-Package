@@ -1,10 +1,12 @@
 ---
 id: synthesiser
+lookup: neepmeat:synthesiser
 ---
 
 # 精卵合成机
 
-摒弃自然的一切残余，这一做法有其道理，但本质上不过是愚蠢的狂热。在血肉的无意义混沌中寻找可利用之物，再抛弃剩余的渣滓，才是更好的选择。
+\columns[fit=second]{摒弃自然的一切残余，这一做法有其道理，但本质上不过是愚蠢的狂热。在天然血肉的无意义混沌中寻找可利用之物，再抛弃剩余的渣滓，才是更好的选择。
+}{\item_render{neepmeat:synthesiser}}
 
 ## 使用方法
 
@@ -20,3 +22,5 @@ id: synthesiser
 
 - 将其浸泡在血液中可催动其孵化。
 - 通过PLC直接向其注入血液可立即令其孵化。
+
+\columns{\item_render[height=30]{neepmeat:blood_bucket}}{\item_render[height=30]{neepmeat:plc}}

@@ -5,7 +5,9 @@ lookup: neepmeat:death_blades
 
 # Death Blades
 
+The Death Blades are a regrettable instrument necessary for the acquisition of Tissue Slurry.
 
+\item_render[height=30]{neepmeat:tissue_slurry_bucket}
 
 ## Usage
 
