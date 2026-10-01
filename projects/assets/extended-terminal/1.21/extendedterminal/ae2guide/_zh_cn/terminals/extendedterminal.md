@@ -20,7 +20,7 @@ item_ids:
 ## 配方
 <RecipeFor id="extendedterminal:et_terminal" />
 
-<et:condition load="AE2WTLib" silent="true">
+<myotus:condition load="AE2WTLib" silent="true">
 # 无线终端
 <ItemLink id="extendedterminal:wireless_et_terminal" />是<ItemLink id="extendedterminal:et_terminal" />的无线版本，需要<ItemLink id="ae2:wireless_access_point"/>才能运作。
 ## 配方
@@ -34,4 +34,4 @@ item_ids:
     <Recipe id="ae2wtlib/upgrade_wireless_et_terminal" />
 </Row>
 
-</et:condition>
+</myotus:condition>
