@@ -59,7 +59,7 @@ item_ids:
 	</PaddedBox>
 </FloatingColumn>
 
-逻辑阵列可用于收纳[逻辑元件](logic/introduction.md)和[红石位粒](redstone_bits.md)以节省物品栏空间，同时也方便你在搭建电路时取用。
+逻辑阵列可用于收纳[逻辑元件](logic/introduction.md)、[红石位粒](redstone_bits.md)、[便签](sticky_notes.md)以节省物品栏空间，同时也方便你在搭建电路时取用。
 
 ### 物品栏
 
