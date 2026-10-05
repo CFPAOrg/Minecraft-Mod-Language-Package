@@ -12,6 +12,11 @@ item_ids:
 
 # I/O Port
 
+<FloatingColumn width="100" align="right">
+	### Analog
+	I/O ports yield an output signal value equal to the input signal value.
+</FloatingColumn>
+
 <RecipeFor id="io" />
 
 I/O ports are how you can input and output redstone signals to and from your circuits. When I/O ports are placed into

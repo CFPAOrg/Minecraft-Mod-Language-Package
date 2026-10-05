@@ -12,6 +12,11 @@ item_ids:
 
 # 脉冲节流器
 
+<FloatingColumn width="100" align="right">
+	### 模拟
+	在默认情况下，脉冲节流器所输出信号的值与输入信号的相等。若指定了输出信号强度，则仅输出该值。
+</FloatingColumn>
+
 <Row>
 	<Column>
 		<RecipeFor id="pulse_throttler" />
