@@ -1,4 +1,22 @@
 fishcasting:
+  environment:
+    depth: Depth
+    climate: Climate
+    daytime: Day
+    structure:
+      minecraft:
+        trial_chambers: Trial Chambers
+    biome:
+      minecraft:
+        cherry_grove: Cherry Grove
+    dimension:
+      minecraft:
+        overworld: Overworld
+    weather:
+      clear: Clear Skies
+      rain: Rainy Clouds
+      storm: Thunderstorm
+      unknown: Unknown Weather
   remove_from_names:
     bucket: Bucket
   toast:
@@ -37,7 +55,10 @@ fishcasting:
         'desc': Specifies if length purification works on just fish when true, or all entities if false.
       spawnFishyTraderChance:
         .: Chance to spawn trader on crate reel
-        'desc': Specifies chance where 0.0 is disabled and 1.0 is every time.
+        'desc': Specifies chance where 0.0 is disabled and 1.0 is every time, ONLY affects chance while using casting and focus paraphernalia.
+      fishyTraderPerPlayerIntervalMinutes:
+        .: Per-Player minutes between trader availability
+        'desc': Specifies time in minutes that must pass for a player to be able to reel another trader.
     client:
       showForbiddenPatchouliKnowledge:
         .: Show Length Purification in Entity entry of Hex Notebook
@@ -48,19 +69,51 @@ fishcasting:
 
 
   book:
+    environmental_great_spells:
+      '1': Found in a tome missing a page, spells detailing the manipulation of the night skies can be found in this section.
+      title: Stellar Manipulation
+      environment/moon/increment: It is frightening to imagine the consequences of manipulating something as large as the world itself... It is nearly a consolation that it costs about one stack of $(l:items/amethyst)$(item)Charged Amethyst/$.
+
+    environmental_patterns:
+      '1': Some aspects of this world are difficult to describe using just numbers, for this purpose several patterns have been devised to store this information in an environmental iota. These will all evaluate to being of the same type, even if the information stored is from a different environment.
+      '2': For patterns with a numerical or ordinal representation, arithmetic patterns may be used to transform the environment into its corresponding numerical representation. For environments which do not have a numerical representation, attempting to transform it will mishap.
+      title: Environments
+      environment/daytime: Pushes the time of day onto the stack. Costs a negligible amount of _media.
+      environment/moon/get: Pushes the phase of the moon to the stack. Costs a negligible amount of _media.
+      environment/dimension: Pushes the dimension of the caster to the stack. Costs a negligible amount of _media.
+      environment/biome: Transforms a vector on the stack into the biome at that position. Costs a negligible amount of _media.
+      environment/depth: Transforms a vector on the stack into the sea level at that position. Costs a negligible amount of _media.
+      environment/structure: Transforms a vector on the stack into a list of structures at that position. Costs a negligible amount of _media.
+      environment/weather: Transforms a vector on the stack into the precipitation at that position. Costs a negligible amount of _media.
+      environment/climate: Transforms a vector on the stack into the water climate at that position. Costs a negligible amount of _media.
+      environment/arithmetic/length: Transforms an environment on the stack into its numerical representation. Mishaps if it does not have one.
+    bobber_patterns:
+      '1': I came across a soggy book in my travels written by a sage fisher who went by the name $(italic)'Babs'/$. While most of the text consists of the ramblings of a sailor, found within the pages were some mundane patterns for fishing. Marine life may not be my focus, but for the sake of my work I must note these down. These would come in handy I ever decide to use a $(l:items/casting_rod#fishcasting:landing)$(thing)Casting Rod/$.
+      title: Bobber Patterns
+      bobber/from_owner: Transforms a player on the stack into the bobber attached to their fishing pole (or $(thing)Null/$ if there isn't one). Costs a negligible amount of _media.
+      owner/from_bobber: Transforms a bobber on the stack into the player which cast it. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.
+      catch/from_bobber: Transforms a bobber on the stack into the entity caught on its hook (or $(thing)Null/$ if there isn't one). Costs a negligible amount of _media.
+      bobber/from_catch: Transforms an entity on the stack into the bobber it is caught on (or $(thing)Null/$ if there isn't one). Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+      bobber/medium: Transforms a bobber on the stack into the medium it is in, or $(thing)Null/$ if it is not in one. Costs a negligible amount of _media.
+    bobber_spells:
+      title: Bobber Spells
+      '1': A small collection of spells pertaining to the hook and bobber of the fishing rod itself.
+      bobber/attach: Removes two entities from the top of the stack, then attaches the entity on the top of the stack to the bobber first on the stack. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+      bobber/detach: Removes one entity from the top of the stack. Detaches the bobber from any entity hooked to it. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
     fishing_spells:
       '1': On the rare occasion that I have come face to face with a finned foe, a simple spell to disable its movements is all I ever needed to deal with the issue.$(br)These spells are useless on most other more advanced beings, but for the simple creatures that fish are, they will suffice.
-      title: Fishing Spells
+      title: Fish Spells
       fish/from_item: Removes an entity from the stack and if it was a fish, enlivens it to move once more. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
       fish/to_item: Removes an entity from the stack and if it was a fish, coerces it to remain still. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+      fish/kill: Removes an entity from the stack and if it was a fish, humanely excises whatever life it may have had left. Costs a negligible amount of _media.
     fishing_patterns:
-      '1': I came across a soggy book in my travels written by a sage fisher who went by the name $(italic)'Babs'/$. While most of the text consists of the ramblings of a sailor, found within the pages were some mundane patterns for fishing. Marine life may not be my focus, but for the sake of my work I must note these down. These would come in handy I ever decide to use a $(l:items/casting_rod#fishcasting:landing)$(thing)Casting Rod/$.
-      title: Fishing Patterns
-      bobber/from_owner: Transforms a player on the stack into the bobber attached to their fishing pole (or $(l:casting/influences)$(thing)Null/$ if there isn't one). Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.
-      owner/from_bobber: Transforms a bobber on the stack into the player which cast it. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
-      catch/from_bobber: Transforms a bobber on the stack into the entity caught on its hook (or $(l:casting/influences)$(thing)Null/$ if there isn't one). Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
-      bobber/from_catch: Transforms an entity on the stack into the bobber it is caught on (or $(l:casting/influences)$(thing)Null/$ if there isn't one). Costs about one $(l:items/amethyst)$(item)Charged Amethyst/$.
-      fish/length: Measure the length of the fish entity. Returns 0 if the entity could not be measured or was not a fish.
+      title: Fish Patterns
+      fish/condition: $(br)Evaluates if a fish could be found in the given conditions. Costs a negligible amount of _media.
+      '1': Transforms a fish on the stack into a boolean representing if it can be found in that environment, or $(thing)Null/$ if the given environment has no effect on the fish.
+      fish/min: Transforms a fish on the stack into the smallest specimen caught by the caster as a number. Costs a negligible amount of _media.
+      fish/max: Transforms a fish on the stack into the largest specimen caught by the caster as a number. Costs a negligible amount of _media.
+      fish/length: Transforms a fish on the stack into its length as measured by a fisher, or 0 if it was not alive.
+      fish/rarity: Measure the quality of the fish entity. A common fish will have a lower quality, and a rare fish will have a higher quality.
       fish/length_all_entities: |-
         Compute the largest dimension of the entity. For a fish, this returns its $(t:Tide 2 provides fish as items and
         as entities with a length property
@@ -103,7 +156,7 @@ fishcasting:
       smithing: A construction similar to the $(l:items/staff)$(thing)Staves/$.
     focus_bobber:
       '1': A truly remarkable invention for such a trite sport. A $(thing)Focus Bobber/$ not only extends my ambit by about an arms length from its origin, it also casts any stored hex within once I pull on it with enough force. This added range does not come for free however, as casting via the Focus Bobber costs $(l:items/amethyst)$(item)Amethyst Dust/$ equal to the square of the length of the vector from myself to the bobber.
-      crafting: A construction similar to the $(l:items/focus)$(thing)Focus/$.
+      crafting: A construction similar to the $(l:items/focus)$(thing)Focus/$. Much like a focus, it can be written to when in my hand, or when on the ground, as well as when it has been cast by a rod.
     fishy_business:
       '1': Some useful recipes to be certain, should I ever come across a fool foolish enough to part with these without knowing their true value as sources of _Media.
       crystal_shrimp:
@@ -172,31 +225,74 @@ fishcasting:
     fishlore:
       .: Fishcasting
       desc: Further, some texts vaguely related to some sort of figure in the "Fishcasting" society have surfaced... Literally.
+tag:
+  item:
+    fishcasting:
+      edified_trees: Edified Trees
+      blessed_bobbers: Blessed Bobbers
+      slimy_bobbers: Slimy Bobbers
+      all_fishing_rods_advancement_rod: All Fishing Rods Advancement Rod
+      no_durability_enchantments: No Durability Enchantments
+      loud_lines: Loud Fishing Lines
+      hookless_hooks: Hookless Fishing Hooks
+      clingy_hooks: Clingy Fishing Hooks
+      lore_fragments: Lore Fragments (to be removed)
+      odious_mulch: Odious Mulch
+      fishy_music_discs: Fishy Music Discs
+      cursed_mostly_indestructible_item: Cursed Mostly Indestructible Item
+
+
 item:
   tide:
     crystal_fishing_rod: Crystal Casting Rod
     amethyst_bobber: Amethyst Focus Bobber
   fishcasting:
     shepherds_casting_rod: Shepherd's Casting Rod
+    rocky_casting_rod: Rocky Casting Rod
     blessed_focus_bobber: Blessed Focus Bobber
+    hexxy_focus_bobber: Hexxy Focus Bobber
+    sampling_focus_bobber: Sampling Focus Bobber
     loud_fishing_line:
       .: Loud Fishing Line
       desc: Pacifies creepers and phantoms
+    chain_linked_fishing_line:
+      .: Chain-linked Fishing Line
+      desc: Keeps the catch-free bobber nearby
     hookless_fishing_hook:
       .: Hookless Fishing Hook
       desc: Prevents entities from getting hooked
+    clingy_fishing_hook:
+      .: Clingy Fishing Hook
+      desc: Keeps catch from escaping until reeled, but takes longer to nibble
+    odious_bait:
+      .: Odious Bait
+      desc: Prevents anything from nibbling or biting
     unlucky_bait:
       .: Unlucky Bait
-      desc: Prevents anything from nibbling or biting
+      desc:
     benign_bait:
       .: Benign Bait
       desc: Prevents anything but fish from nibbling or biting
+    tiny_bait:
+      .: Tiny Bait
+    slick_bait:
+      .: Slick Bait
+    crystal_shrimp_fried_rice: Crystal Shrimp Fried Rice
+
     message_in_a_bottle: Message in a Bottle
     music_disc:
       returning_to_the_surface: Music Disc
     tacklebox_chair: Tacklebox Chair
+    tacklebox_chair_floaty: Floaty Tacklebox Chair
+    tacklebox_chair_secret: 'NUCLEAR-HEX-MACHINE "[WEST, wweewaqdeeweewawe]KOOL[NORTH_EAST, wawdwedaqedwwwe]U" MK[SOUTH_EAST, aqaaqawqaaq] TURBOMAX!!!!!'
     fishy_fragment: Soggy Lore Fragment
     glass_shard: Glass Shard
+    edified_fish: Edified Guppy
+    edified_fish_bucket: Edified Guppy Bucket
+    edified_fish_spawn_egg: Edified Guppy Spawn Egg
+    perhosgata: Perhosgata
+    perhosgata_bucket: Perhosgata Bucket
+    perhosgata_spawn_egg: Perhosgata Spawn Egg
     cursed: Cursed Thing
     cursed_bucket: Cursed Thing Bucket
     cursed_spawn_egg: Cursed Thing Spawn Egg
@@ -205,6 +301,7 @@ accessory:
   item:
     fishcasting:
       blessed_focus_bobber: Blessed Bobber
+      hexxy_focus_bobber: Hexxy Bobber
       loud_fishing_line: Loud Line
       hookless_fishing_hook: Hookless Hook
 text:
@@ -217,58 +314,90 @@ text:
       shepherds_bonus:
         '1': Unbreakable
         '2': Can catch end fish in any void
+      unluck_bonus:
+        '1': -2 luck and +2 speed while in the dark
     bobber_tooltip:
       focus_bonus: Can be written to as a Focus when held or cast
       sound_bonus: Plays sound when a fish bites
       blessed_bonus: Rarely catches loot from any category
-  autoconfig:
-    fishcasting:
-      title: Fishcasting Configuration
-      category:
-        gameplay: Gameplay
-        client: Client
-      option:
-        gameplay:
-          castingTicksToCast:
-            .: Casting Rod Hex charge ticks
-            '@Tooltip': Specifies number of ticks until the purple is depleted when charging.
-          cooldownAfterFishing:
-            .: Casting Rod cooldown
-            '@Tooltip': Specifies number of ticks after reeling in the hook until casting rods are usable again.
-          castingType:
-            .: Casting Rod cast method
-            '@Tooltip': Specifies whether casts are charged or not.
-          lengthPurificationOnlyFish:
-            .: Length Purification only applies to fish
-            '@Tooltip': Specifies if length purification works on all entities
-        client:
-          showForbiddenPatchouliKnowledge:
-            .: Show Length Purification in Entity entry of Hex Notebook
-            '@Tooltip': Not recommended for new players as it will be confusing and not beneficial. Leave this off if you are including it in a modpack. REQUIRES JSONPATCHER.
+      swamp_bonus: Rarely catches that dastardly swamp fish in any water
 jukebox_song:
   fishcasting:
     returning_to_the_surface: cookies+policy - Returning To The Surface
 entity:
   fishcasting:
     tacklebox_chair: Tacklebox Chair
+    tacklebox_chair_floaty: Levitite Tacklebox Chair
+    tacklebox_chair_secret: 'NUCLEAR-HEX-MACHINE "[WEST, wweewaqdeeweewawe]KOOL[NORTH_EAST, wawdwedaqedwwwe]U" MK[SOUTH_EAST, aqaaqawqaaq] TURBOMAX!!!!!'
+    edified_fish: Edified Guppy
+    perhosgata: Perhosgata
     cursed: Cursed Thing
     blessed: Blessed Trader
 journal:
+  info:
+    nearby_block:
+      title: Nearby Block
+      within: within
+    has_enchantments:
+      title: Has Enchantments
+    above:
+      title: or more above sea
   description:
     fishcasting:
+      edified_fish: Drawn to the unique color of edified trees, these little fish are just as pretty.
       cursed: They seem to be possessed of some intelligence, but remain unable to do much with it due to their form. Perhaps if I could free them...
+      perhosgata: Microscopic in nature, this butterfly-like fish is not visible under normal conditions, requiring a special lens to observe directly.
 _comment_pattern: PATTERN STUFF
 hexcasting:
+  iota:
+    fishcasting:environment:
+      desc: Environment
   action:
     fishcasting:bobber/from_owner: Bobbert's Purification
     fishcasting:owner/from_bobber: Trebbob's Purification
     fishcasting:catch/from_bobber: Babs' Purification
     fishcasting:bobber/from_catch: Bob's Purification
+    fishcasting:bobber/attach: Attach Bobber
+    fishcasting:bobber/detach: Detach Bobber
+
+
+    fishcasting:fish/min: Fishy Minimum Reflection
+    fishcasting:fish/max: Fishy Maximum Reflection
+
+
+    fishcasting:fish/condition: Condition Fishtillation
+
+    fishcasting:fish/biome: Fishy Biome Distillation
+    fishcasting:fish/climate: Fishy Climate Distillation
+    fishcasting:fish/depth: Fishy Depth Distillation
+    fishcasting:fish/dimension: Fishy Dimension Distillation
+    fishcasting:fish/medium: Fishy Medium Distillation
+    fishcasting:fish/moon: Fishy Moon Phase Distillation
+    fishcasting:fish/structure: Fishy Structure Distillation
+    fishcasting:fish/daytime: Fishy Daytime Distillation
+    fishcasting:fish/weather: Fishy Weather Distillation
     fishcasting:fish/length: Glub's Purification
+    fishcasting:fish/rarity: Seelo's Purification
+    _comment_rarity: seelo as in Coelacanth
+
     fishcasting:fish/from_item: Fish Motion
     fishcasting:fish/to_item: Fish Stillness
-    fishcasting:fish/rarity: PLACEHOLDER's Purification
+    fishcasting:fish/kill: Pith Fish
+
+    fishcasting:environment/daytime: Daytime Reflection
+    fishcasting:environment/moon/increment: Increment Moon Phase
+    fishcasting:environment/moon/get: Moon Phase Reflection
+    fishcasting:environment/dimension: Dimension Reflection
+    fishcasting:environment/biome: Biome Purification
+    fishcasting:environment/structure: Structure Purification
+    fishcasting:environment/weather: Weather Purification
+    fishcasting:environment/climate: Climate Purification
+    fishcasting:environment/depth: Depth Purification
+    fishcasting:bobber/medium: Medium Purification
   mishap:
+    invalid_value:
+      class:
+        environment: Number-like
     bad_item:
       fishcasting:
         fishing_hook: Fishing Hook
@@ -289,6 +418,8 @@ _comment_config: CONFIGURATION STUFF
 compat:
   nomansland:
     tacklebox_chair: A throne/ fit for a king/ used only by commonfolk/.
+    tacklebox_chair_floaty: "A chair/ built for two purposes:/ fishing,/ and/ flying."
+
 yapping_tooltips:
   item:
     tide:
@@ -297,22 +428,40 @@ yapping_tooltips:
       crystal_fishing_rod.desc: Fishcasters want me. Fish fear me.
     fishcasting:
       shepherds_casting_rod.desc: Carved from some tree you don't recognize.
+      rocky_casting_rod.desc: Somehow solid.
       blessed_focus_bobber.desc: Its scent reminds you of times past.
+      hexxy_focus_bobber.desc: Yep.
+      sampling_focus_bobber: Good for sampling high up.
       loud_fishing_line.desc: A nice sound rings out from time to time.
+      chain_linked_fishing_line.desc: As if made by an artisan.
       hookless_fishing_hook.desc: At least your friends can't stop you from fishing anymore.
-      unlucky_bait.desc: This bait kind of stinks...
+      clingy_fishing_hook.desc: Ouch! Don't get this stuck on your person before casting your rod...
+      unlucky_bait.desc: An unlucky number for many!
+      odious_bait.desc: This bait kind of stinks...
       benign_bait.desc: Smells good and is shiny.
+      slick_bait.desc: Very colorful and glowy...
+      tiny_bait.desc: Compact and very shiny!
+      crystal_shrimp_fried_rice.desc: Crunchy and fresh!
       tacklebox_chair.desc: A throne fit for a ruler of the seas - or the beach - or the local pond.
+      tacklebox_chair_floaty.desc: Pretty good, eh?
+      tacklebox_chair_secret.desc: les go
       message_in_a_bottle.desc: It is unclear who keeps tossing these into the ocean...
       glass_shard.desc: Ouch! Careful when walking near these!
       fishy_fragment.desc: At least this soggy thing is still legible.
       music_disc/returning_to_the_surface.desc: Can be inserted into a jukebox to play cult-like tunes
+      edified_fish.desc: Majestic and colorful.
+      edified_fish_bucket.desc: Even in captivity, pretty.
+      edified_fish_spawn_egg.desc: So I thought it would be funny to ruin your immersion by acknowledging that I don't really feel like writing anything witty for this one, sorry about that.
       cursed.desc: Writhes.
       cursed_bucket.desc: Writhes and splashes lightly.
       cursed_spawn_egg.desc: Don't be too mean to them!
+      perhosgata.desc: Can you see anything in there? I can't.
+      perhosgata_bucket.desc: Even the container is in there...
+      perhosgata_spawn_egg.desc: Frozen in time?
       blessed_spawn_egg.desc: Don't be too mean to them!
 commands:
   fishing:
     entries:
       luck_tweaking_bobber_selector: Lucky Bobber Selector
+      slimy_bobber_selector: Slimy Bobber Selector
       benign_bait_selector: Benign Bait Selector
