@@ -1,0 +1,107 @@
+{
+  "name": "血之祭坛",
+  "icon": "bloodmagic:altar",
+  "category": "bloodmagic:altar",
+  "priority": "true",
+  "extra_recipe_mappings": {
+    "bloodmagic:daggerofsacrifice": 13
+    },
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(item)血之祭坛$()是本mod的核心方块，能将原生的$(blood)血液$()转化为$(blood)生命源质$()。虽然初始微弱，但其力量和规模可以随着仪式进展而不断成长，最终成为血魔法体系的中流砥柱。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "bloodmagic:blood_altar"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "放置$(item)血之祭坛$()后，将$(blood)血液$()转化为$(blood)生命源质$()，用于进行物质转换。注视祭坛按[$(k:use)]将手持物品置入血之祭坛。按[$(k:use)]从血之祭坛取出。"
+    },
+    {
+      "type": "multiblock",
+      "name": "层级 1 的血之祭坛",
+      "multiblock_id": "bloodmagic:altar_one",
+      "text": "这是一个没有符文的1级血之祭坛。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "我们把$(blood)生命源质$()简称为“$(blood)LP$()”。首先你需要制作$(item)牺牲匕首$()。按[$(k:use)]空挥匕首消耗半颗心“提取”出$(blood)200 LP$()充能到临近祭坛。祭坛基础最大容量为10000LP，血液高度指示充能比例。使用$(l:bloodmagic:alchemy_array/sigil/divination)占卜印记$(/l)获取祭坛详细信息。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "bloodmagic:sacrificial_dagger",
+      "anchor": "knife",
+      "text": "注意：血之祭坛会将10%$(blood)LP$()转移到一个不可见的储罐内，负责进出管理。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "一旦玩家将物品置入祭坛（或每5秒的周期检测），祭坛就会开始制作。$(blood)LP$()将随着红色粒子逐渐消耗用以转化物品。如果没有$(blood)LP$()将会显示灰色的烟雾，提示你的制作进度正在流失。一旦有了足够的$(blood)LP$()（单个消耗x总堆叠数），整个堆叠都会转化为新物品。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "你的首要制作物品是$(l:bloodmagic:altar/soul_network)虚弱气血宝珠$(/l)，在祭坛中用1颗钻石和$(blood)2000 LP$()在1级祭坛制作。所有配方可以在JEI中查看。"
+    },
+    {
+      "type": "patchouli:text",
+	  "anchor": "blank_rune",
+      "text": "升级祭坛需要制作$(item)血魔法符文$()并放置在祭坛四周。不同的血魔法符文提供不同的效果。基础版本的$(item)空白符文$()不能提供任何效果，仅仅只能用来提升祭坛层级。"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "bloodmagic:blood_rune_blank"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "升级到2级血之祭坛需要在祭坛周围摆放8个$(item)血魔法符文$()。正向的符文可以替换为能力符文，而角落的符文需要3级才能替换。"
+    },
+    {
+      "type": "multiblock",
+      "name": "层级 2 的血之祭坛",
+      "multiblock_id": "bloodmagic:altar_two",
+      "text": "8个符文组成的2级血之祭坛。"
+    },
+    {
+      "type": "patchouli:text",
+	  "anchor": "dagger_of_sacrifice",
+      "text": "现在你有2级祭坛，你可以考虑除了自戮以外的其他方式获取$(blood)生命源质$()。$(item)献祭刀$()可以献祭2格范围内的生物（敌对/被动），被献祭的生物会被秒杀，并给你提供对应的$(blood)LP$()。使用$(l:bloodmagic:altar/blood_rune/sacrifice_rune)牺牲符文$()，可以提升献祭生物时的$(blood)LP$()。根据生物的不同提供不同的$(blood)LP$()。详情检查配置。"
+    },
+    {
+      "type": "bloodmagic:crafting_altar",
+      "heading": "献祭刀",
+      "recipe": "bloodmagic:altar/daggerofsacrifice",
+      "text": "为了利益屠戮村民，当然也可以是乐趣驱动。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "升级到3级血之祭坛需要在祭坛每个边外扩2格下沉1格位置放置5个$(item)血魔法符文$()，然后在每个角的位置建造2格高的柱子(指示用的$(item)石砖$())，顶部放置$(item)荧石$()。$(br)使用$(l:bloodmagic:alchemy_array/sigil/divination)占卜印记$(/l)检查是否成功以及层级。注：荧石底下的方块可以替换为任意方块。"
+    },
+    {
+      "type": "multiblock",
+      "name": "层级 3 的血之祭坛",
+      "multiblock_id": "bloodmagic:altar_three",
+      "text": "28个符文组成的3级祭坛，比2级祭坛多20个符文，每边多5个。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "升级到4级血之祭坛需要在祭坛每个边外扩2格下沉一格的位置放置7个$(item) 血魔法符文$()，然后再每个角的位置建造4格高的柱子，顶部放置$(l:bloodmagic:utility/bloodstone_bricks)血石砖$(/l)或$(l:bloodmagic:utility/bloodstone_bricks)大血石砖$(/l)。为了这个，你需要通过$(l:bloodmagic:rituals/ritual_list/ritual_simple_dungeon)隐域之缘$()仪式寻找$(l:bloodmagic:dungeons/tau_fruit)血命果$()。"
+    },
+    {
+      "type": "multiblock",
+      "name": "层级 4 的血之祭坛",
+      "multiblock_id": "bloodmagic:altar_four",
+      "text": "56个符文组成的4级祭坛，比3级祭坛多28个符文，每边多7个。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "升级到5级血之祭坛需要在祭坛每个边外扩2格下沉一格的位置放置13个$(item) 血魔法符文$()，每角放置一块$(l:bloodmagic:dungeons/demonite)狱锻块$()。你必须深入$(thing)恶魔领域$()来获取这种稀缺金属。"
+    },
+    {
+      "type": "multiblock",
+      "name": "层级 5 的血之祭坛",
+      "multiblock_id": "bloodmagic:altar_five",
+      "text": "108个符文组成的5级祭坛，比4级祭坛多52个符文，每边多13个。"
+    }
+  ]
+}
