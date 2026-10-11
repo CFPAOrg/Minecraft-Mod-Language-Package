@@ -53,4 +53,4 @@
 
 <|trick@trickster:templates|trick-id=trickster:light_level|>
 
-返回所给位置处的光照等级。可以再传入一个布尔值，用于规定光照的来源：true为天空光照，false为方块光照。
+返回所给位置处的光照等级。可以再传入一个布尔值，用于规定光照的来源：{#33ab89}True{}为天空光照，{#aa3355}False{}为方块光照。

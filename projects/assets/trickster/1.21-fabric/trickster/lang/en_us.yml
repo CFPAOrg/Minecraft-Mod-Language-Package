@@ -89,7 +89,8 @@ trickster:
     subtract: Desertion Stratagem
     multiply: Domination Stratagem
     divide: Submission Stratagem
-    modulo: Distortion of Wholes
+    remainder: Sinister Distortion of Wholes
+    modulo: Dexter Distortion of Wholes
     power: Distortion of Supremacy
     logarithm: Distortion of Inferiority
     max: Noble Stratagem
@@ -235,7 +236,9 @@ trickster:
     escape_pattern: Interpretation Distortion
     weight: Distortion of Memory
 
+    map_get_keys: Distortion of Cairns
     map_get: Navigator's Distortion
+    map_get_values: Sightseer's Distortion
     map_insert: Charting Stratagem
     map_merge: Admiral's Stratagem
     map_remove: Stratagem of Annulment
@@ -273,6 +276,7 @@ trickster:
     get_slot: Intrusive Ingress
     get_item_container: Stockpile Ingress
     get_fluid_container: Basin Ingress
+    get_accessories_container: Bauble Ingress
     get_slots: Collector's Ingress
     get_inventory_size: Ingress of Extent
     filter_container: Ingress of Discrimination
@@ -385,35 +389,42 @@ trickster:
       displace: Displacement
       color: Color
       mana: Mana
-    class:
+
+    class.dev.enjarai.trickster.spell:
       Fragment: Any
-      AddableFragment: Addable
-      DivisibleFragment: Divisible
-      FoldableFragment: Foldable
-      MultiplicableFragment: Multiplicable
-      RoundableFragment: Roundable
-      SubtractableFragment: Subtractable
-      AverageableFragment: Averageable
-      TypeFragment: Type
-      NumberFragment: Number
-      BooleanFragment: Boolean
-      VectorFragment: Vector
-      ListFragment: List
-      MapFragment: Map
-      VoidFragment: Void
-      PatternGlyph: Pattern
-      Pattern: Pattern Literal
-      SpellPart: Spell
-      EntityFragment: Entity
-      SlotFragment: Slot
-      ZalgoFragment: §kZalgo
-      ItemTypeFragment: Item
-      BlockTypeFragment: Block
-      EntityTypeFragment: Entity Type
-      StorageFragment: Storage
-      ResourceVariantFragment: Resource Type
-      ColorFragment: Color
-      ManaFragment: Mana
+
+      fragment:
+        AddableFragment: Addable
+        DivisibleFragment: Divisible
+        FoldableFragment: Foldable
+        MultiplicableFragment: Multiplicable
+        RoundableFragment: Roundable
+        SubtractableFragment: Subtractable
+        AverageableFragment: Averageable
+        TypeFragment: Type
+        NumberFragment: Number
+        BooleanFragment: Boolean
+        VectorFragment: Vector
+        ListFragment: List
+        MapFragment: Map
+        VoidFragment: Void
+        PatternGlyph: Pattern
+        Pattern: Pattern Literal
+        SpellPart: Spell
+        EntityFragment: Entity
+        ZalgoFragment: §kZalgo
+        ItemTypeFragment: Item
+        BlockTypeFragment: Block
+        EntityTypeFragment: Entity Type
+        ColorFragment: Color
+        ManaFragment: Mana
+
+        storage:
+          ResourceVariantFragment: Resource Type
+          StorageFragment: Storage
+          ContainerFragment: Container
+          SlotFragment: Slot
+
 
   mana.trickster:
     traditional: Traditional
@@ -424,14 +435,80 @@ trickster:
       default: Star-Bound
       named: Star-Bound (%s)
 
+  exception:
+    format: "%1$s: %2$s"
+    uncaught:
+      trick: "Uncaught exception while evaluating trick: %1$s: %2$s"
+      fragment: "Uncaught exception while evaluating fragment: %1$s: %2$s"
+      executor: "Uncaught exception while evaluating spell: %1$s: %2$s"
+
   blunder:
-    overweight_fragment: Resulting fragment is overweight (%2$s/%3$s), result is %1$s
+    unknown_trick:
+      fragment: Unknown
+      message: Pattern is not a known trick
+
+    invalid_inputs:
+      with_trick: |-
+        Invalid inputs, the following signatures are valid for this trick:%1$s
+        The following inputs were given: %2$s
+      without_trick: Invalid inputs
+
+    invalid_block:
+      null_block: Invalid block type
+      nonnull_block: Invalid block type, did not expect %1$s
+
+    missing_argument: Missing argument at index %1$s
+    execution_limit_reached: Execution limit reached
+    illegal_operation_in_atomic_chunk: Illegal operation in atomic spell
+    nan: Number must be a number
+    address_not_in_tree: "Spell does not contain a circle at this address: %1$s"
+    assertion: "Assertion failed for value: %1$s"
+    atomic_chunk_too_large: Atomic spell is too large to be run in a single tick
+    block_occupied: Block at %1$s occupied
+    block_too_hard: Block cannot be broken by spells
+    block_unoccupied: Block at %1$s unoccupied
+    cannot_place_block: Cannot place %1$s at %2$s
+    cannot_edit_block: Cannot edit block (%1$s), restricted by operator
+    divide_by_zero: Division by zero
+    entity_already_stored: There is already an entity stored in the offhand item
+    entity_cannot_be_displaced: Cannot displace %1$s
+    entity_cannot_be_stored: Cannot store %1$s
     expected_overweight_fragment: Result fragment is overweight (%d/%d)
-    missing_fragment: Missing at index %d, expected %s
-    unknown_trick: Pattern is not a known trick
+    immutable_item: Item immutable, cannot write spell
+    incompatible_dimension: Incompatible dimension
+    incompatible_source: Incompatible casting source
+    incompatible_types: Incompatible types
+    index_out_of_bounds: "Index out of bounds: %1$s"
+    invalid_displacement: Displacement is expired or has been consumed
+    invalid_entity: Invalid entity
+    invalid_slot: Invalid slot variant
+    invalid_storage: Invalid storage variant
+    invalid_item: Invalid item
+    missing_cost: Not enough amethyst in inventory
+    missing_item: Missing item
+    no_free_slot: No free item slot.
+    no_free_spell_slot: No free spell slots available
+    no_inventory: No inventory available
+    no_player: No player available
+    no_such_fleck: Fleck %1$s does not exist
+    no_such_slot: Item slot does not exist
+    no_such_spell_slot: No such spell slot present
+    not_enough_mana: Not enough mana, at least %1$s %2$s are required
+    not_enough_room_to_displace: There is not enough room for %1$s at %2$s
+    not_loaded: Cannot access block (%1$s)
+    not_slotted_storage: Storage cannot be indexed by slots
+    number_is_infinite: Number cannot be infinite
+    number_too_large: Number too large, expected %1$s or lesser
+    number_too_small: Number too small, expected %1$s or greater
+    out_of_range: "Range out of bounds: %1$s is more than %2$s"
+    overlap: "Overlapping positions: %1$s, %2%s"
+    overweight_fragment: Resulting fragment is overweight (%2$s/%3$s), result is %1$s
+    too_many_displacements: "%1$s cannot be displaced that often"
+    unknown_entity: Unknown entity
 
   storage:
     caster: caster
+    accessories: accessories like %s
     block: '%d, %d, %d'
     entity: '%s'
     slot: slot %d at %s
@@ -521,6 +598,7 @@ item.trickster:
   wand: Wand
   macro_ring: Macro Ring
   amethyst_whorl: Amethyst Whorl
+  charging_belt: Charging Belt
   collar: Acolyte's Bindings
   leash: Archmage's Tether
   torment_on_a_chain: Torment on a Chain
@@ -585,7 +663,6 @@ effect.trickster:
   mana_deficiency: Mana Hypoflux
 
 tag.item.trickster:
-  can_evaluate_dynamically: Can Evaluate Dynamically
   holdable_hat: Holdable Hats
   scrolls: Scrolls
   spell_cost: Spell Cost

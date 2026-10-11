@@ -30,6 +30,15 @@
 
 ---
 
+<|image@trickster:templates|image=trickster:textures/gui/img/opened_eye.png,width=93,height=45,positioning=absolute,x=10,y=82|>
+
+
+
+
+
+
+
+
 ;;;;;
 
 <|ploy@trickster:templates|trick-id=trickster:prepare_displace,cost=120G + 1.35G^距离|>
@@ -50,7 +59,7 @@
 位移的距离取受影响对象当前位置与施法者当前位置的间距，若两者不在同一维度，还会附加1000甘道夫的消耗。
 
 
-每五秒内，以同一实体为基础，最多只可创建三个位移片段，且所有片段均会在使用一次后失效。
+每五秒内，以同一实体为基础，最多只可创建三个位移，且所有片段均会在使用一次后失效。
 
 ;;;;;
 

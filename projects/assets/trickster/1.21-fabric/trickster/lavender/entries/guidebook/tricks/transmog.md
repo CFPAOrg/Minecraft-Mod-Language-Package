@@ -29,22 +29,22 @@ keeping all their attributes and other behaviour intact.
 
 <|trick@trickster:templates|trick-id=trickster:transmog|>
 
-Transmogrifies the item in the given slot to appear as the given item. Returns true if changes were made.
+Transmogrifies the item in the given slot to appear as the given item. Returns {#33ab89}True{} if changes were made.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:hidden_transmog|>
 
-Applies a void transmogrification to the item in the given slot. Returns true if changes were made.
+Applies a void transmogrification to the item in the given slot. Returns {#33ab89}True{} if changes were made.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:remove_transmog|>
 
-Removes any transmogrification from the item in the given slot. Returns true if changes were made.
+Removes any transmogrification from the item in the given slot. Returns {#33ab89}True{} if changes were made.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:get_transmog|>
 
-Returns the transmogrification on the item in the given slot, or void if none is applied.
+Returns the transmogrification on the item in the given slot, or $$trickster:void$$ if none is applied.

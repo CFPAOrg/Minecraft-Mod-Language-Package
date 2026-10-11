@@ -9,7 +9,7 @@
 
 Fashioned of clay and held together by a simple glass frame,
 this blob of gray mass seems rather unremarkable. 
-However, with a sprinkling of spell ink mixed into the clay, it becomes an excellent conductor for mana.
+However, with a sprinkling of [Esoteric Mana](^trickster:items/mana/esoteric_mana) mixed into the clay, it becomes an excellent conductor for mana.
 
 ;;;;;
 

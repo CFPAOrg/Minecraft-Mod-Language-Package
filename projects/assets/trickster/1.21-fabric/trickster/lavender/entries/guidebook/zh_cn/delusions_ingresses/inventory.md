@@ -9,6 +9,7 @@
     "杂耍之错觉",
     "物仓之辑流",
     "液仓之辑流",
+    "饰品之辑流",
     "侵入之辑流",
     "收藏家之辑流",
     "物品栏之辑流",
@@ -71,6 +72,12 @@
 <|trick@trickster:templates|trick-id=trickster:get_fluid_container|>
 
 返回所给值中流体容器的引用。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_accessories_container|>
+
+返回一个容器，其中包含施法者具有的、能容纳所给类型物品的所有饰品槽。
 
 ;;;;;
 

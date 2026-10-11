@@ -38,15 +38,27 @@ Inserts key-value pairs into the given map.
 
 ;;;;;
 
+<|trick@trickster:templates|trick-id=trickster:map_merge|>
+
+Combines many maps into one. Duplicate entries are prioritized by input index.
+
+;;;;;
+
 <|trick@trickster:templates|trick-id=trickster:map_get|>
 
 If there is a value associated with the given fragment, returns it. Otherwise, returns void.
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:map_merge|>
+<|trick@trickster:templates|trick-id=trickster:map_get_keys|>
 
-Combines many maps into one. Duplicate entries are prioritized by input index.
+Returns a list of all keys in the given map.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:map_get_values|>
+
+Returns a list of all values in the given map.
 
 ;;;;;
 

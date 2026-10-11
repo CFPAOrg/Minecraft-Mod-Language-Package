@@ -16,7 +16,7 @@ signifying *where* in the spell the failure occurred. Stack traces are colon-sep
 
 ;;;;;
 
-The numbers are input indexes, 
+The numbers are input indices, 
 while the chevrons, hashtags, and ampersands all indicate a change of context into a different spell fragment.
 
 
@@ -28,6 +28,6 @@ Ampersands on the other hand represent a successful infinite recursion of any ki
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=Note: Indexes|>Each circle in a spell has a number, an *index*, 
+<|page-title@lavender:book_components|title=Note: Indices|>Each circle in a spell has a number, an *index*, 
 that states its position relative to its parent. The purple pin on the parent circle is always counter-clockwise of the first subcircle, 
 which has an index of zero. Each subcircle clockwise of the first subcircle has an index one greater than the one before it.

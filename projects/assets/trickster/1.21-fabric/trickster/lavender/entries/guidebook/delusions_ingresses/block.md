@@ -55,4 +55,4 @@ Blunders if no resonator is present.
 <|trick@trickster:templates|trick-id=trickster:light_level|>
 
 Returns the light level at the given position. 
-A boolean can be specified to check only sky light (if true) or block light (if false).
+A boolean can be specified to check only sky light (if {#33ab89}True{}) or block light (if {#aa3355}False{}).

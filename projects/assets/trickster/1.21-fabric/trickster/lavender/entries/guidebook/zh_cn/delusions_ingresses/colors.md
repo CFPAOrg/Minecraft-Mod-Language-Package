@@ -26,7 +26,7 @@
 这些戏法能操作颜色信息。颜色片段则可表示任意颜色与透明度的组合。 
 
 
-颜色{#aa4444}可加{}、{#aa4444}可乘{}、{#aa4444}可舍入{}、{#aa4444}可平均{}，但不{#aa4444}可减{}，也不{#aa4444}可除{}。
+颜色$$dev.enjarai.trickster.spell.fragment.AddableFragment$$、$$dev.enjarai.trickster.spell.fragment.MultiplicableFragment$$、$$dev.enjarai.trickster.spell.fragment.RoundableFragment$$、$$dev.enjarai.trickster.spell.fragment.AverageableFragment$$，但不$$dev.enjarai.trickster.spell.fragment.SubtractableFragment$$，也不$$dev.enjarai.trickster.spell.fragment.DivisibleFragment$$。
 
 ;;;;;
 

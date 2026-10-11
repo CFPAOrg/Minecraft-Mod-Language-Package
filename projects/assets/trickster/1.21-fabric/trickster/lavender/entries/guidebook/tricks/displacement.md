@@ -31,6 +31,15 @@ that it can make you disappear without a trace.*
 
 ---
 
+<|image@trickster:templates|image=trickster:textures/gui/img/opened_eye.png,width=93,height=45,positioning=absolute,x=10,y=82|>
+
+
+
+
+
+
+
+
 ;;;;;
 
 <|ploy@trickster:templates|trick-id=trickster:prepare_displace,cost=120G + 1.35G^distance|>
@@ -54,14 +63,14 @@ Distance for displacement is calculated from the subjects current position to th
 and an additional cost of 1000 gandalfs will be added if they are in different dimensions.
 
 
-Only three displacement fragments can be created for any given entity per five seconds, 
-each of which only be used once before becoming invalid.
+Only three displacements can be created for any given entity per five seconds, 
+each of which can only be used once before becoming invalid.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:get_displacements|>
 
-Given an entity, returns the amount of displacements it has available immediately.
+Given an entity, returns the amount of displacements it has immediately available.
 
 ;;;;;
 

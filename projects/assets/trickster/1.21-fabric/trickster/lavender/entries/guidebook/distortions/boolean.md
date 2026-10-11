@@ -26,8 +26,8 @@ it is worth noting that any fragment will be automatically coerced into a boolea
 
 Boolean values are created from any fragment based on the following logic:
 
-- If the fragment is {#4400aa}Void{}, it is false.
-- If the fragment is {#444444}##Zalgo##{}, it is false.
+- If the fragment is $$trickster:void$$, it is false.
+- If the fragment is $$trickster:zalgo$$, it is false.
 - If the fragment is {#aa3355}False{}, it is false.
 - Otherwise, it is true.
 
@@ -59,7 +59,7 @@ Giving Decision Stratagem the inputs of {#aa3355}False{}, {#ddaa00}1{}, {#aa3355
 and will see it return the fallback value, which is {#ddaa00}3{}.
 
 
-And since any fragment counts as a boolean, giving it {#4400aa}Void{}, {#ddaa00}1{}, {#ddaa00}2{}, {#ddaa00}3{}, {#ddaa00}4{} will have it return {#ddaa00}3{}, 
+And since any fragment counts as a boolean, giving it $$trickster:void$$, {#ddaa00}1{}, {#ddaa00}2{}, {#ddaa00}3{}, {#ddaa00}4{} will have it return {#ddaa00}3{}, 
 since the {#ddaa00}2{} and {#ddaa00}3{} form a pair where the {#ddaa00}2{} gets coerced into to being true.
 
 ;;;;;

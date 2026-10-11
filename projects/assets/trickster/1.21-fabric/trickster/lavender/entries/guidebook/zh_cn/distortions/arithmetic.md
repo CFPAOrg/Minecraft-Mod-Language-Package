@@ -35,17 +35,17 @@
 本节的戏法主要涉及基础算术及数学操作。
 
 
-部分基础戏法能接受多种类型的片段。它们的签名会采用特殊标记，如{#aa4444}可加{}或{#aa4444}可舍入{}。这些术语是后页全称的简写：
+部分基础戏法能接受多种类型的片段。它们的签名会采用特殊标记，如$$dev.enjarai.trickster.spell.fragment.AddableFragment$$或$$dev.enjarai.trickster.spell.fragment.RoundableFragment$$。这些术语是后页全称的简写：
 
 ;;;;;
 
-{#aa4444}可加{}、{#aa4444}可减{}可以是{#ddaa00}数{}、{#aa7711}向量{}、{#6644aa}图案{}。
+$$dev.enjarai.trickster.spell.fragment.AddableFragment$$、$$dev.enjarai.trickster.spell.fragment.SubtractableFragment$$可以是$$trickster:number$$、$$trickster:vector$$、$$trickster:pattern$$。
 
 
-{#aa4444}可乘{}、{#aa4444}可除{}、{#aa4444}可舍入{}则只能是{#ddaa00}数{}或{#aa7711}向量{}。
+$$dev.enjarai.trickster.spell.fragment.MultiplicableFragment$$、$$dev.enjarai.trickster.spell.fragment.DivisibleFragment$$、$$dev.enjarai.trickster.spell.fragment.RoundableFragment$$则只能是$$trickster:number$$或$$trickster:vector$$。
 
 
-{#ff0055}颜色{}也接受算术操作，它们是{#aa4444}可加{}、{#aa4444}可乘{}、{#aa4444}可舍入{}、{#aa4444}可平均{}的片段。
+$$trickster:color$$也接受算术操作，它们是$$dev.enjarai.trickster.spell.fragment.AddableFragment$$、$$dev.enjarai.trickster.spell.fragment.MultiplicableFragment$$、$$dev.enjarai.trickster.spell.fragment.RoundableFragment$$、$$dev.enjarai.trickster.spell.fragment.AverageableFragment$$的片段。
 
 ;;;;;
 
@@ -91,9 +91,15 @@
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:modulo|>
+<|trick@trickster:templates|trick-id=trickster:remainder|>
 
 返回第一个数除以第二个数的余数。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:modulo|>
+
+返回第一个数除以第二个数的模。
 
 ;;;;;
 

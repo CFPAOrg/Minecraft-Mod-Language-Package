@@ -84,13 +84,13 @@
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=笔记：可折叠|>{#aa4444}可折叠{}是一类法术片段，其中装有其他法术片段，且可通过特定键访问。列表是一种{#aa4444}可折叠{}片段，键为0到列表长度之间的整数，左闭右开。映射也是一种{#aa4444}可折叠{}片段，其键可为任意量，且不会按照插入顺序自动分配。
+<|page-title@lavender:book_components|title=笔记：可折叠|>$$dev.enjarai.trickster.spell.fragment.FoldableFragment$$是一类法术片段，其中装有其他法术片段，且可通过特定键访问。列表是一种$$dev.enjarai.trickster.spell.fragment.FoldableFragment$$片段，键为0到列表长度之间的整数，左闭右开。映射也是一种$$dev.enjarai.trickster.spell.fragment.FoldableFragment$$片段，其键可为任意量，且不会按照插入顺序自动分配。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:fold|>
 
-对{#aa4444}可折叠{}片段中的所有元素执行所给法术，第三参数传入为第一次迭代时的“上一迭代的结果”。
+对$$dev.enjarai.trickster.spell.fragment.FoldableFragment$$片段中的所有元素执行所给法术，第三参数传入为第一次迭代时的“上一迭代的结果”。
 
 ;;;;;
 
@@ -98,7 +98,7 @@
 
 ---
 
-{#aa4444}任意{}, {#aa4444}任意{}, {#aa4444}任意{}, {#aa4444}可折叠{}
+$$dev.enjarai.trickster.spell.Fragment$$, $$dev.enjarai.trickster.spell.Fragment$$, $$dev.enjarai.trickster.spell.Fragment$$, $$dev.enjarai.trickster.spell.fragment.FoldableFragment$$
 
 ---
 
@@ -107,7 +107,7 @@
 - 上一次迭代的结果。
 - 当前操作的值。
 - 当前操作值对应的键。
-- {#aa4444}可折叠{}片段本身。
+- $$dev.enjarai.trickster.spell.fragment.FoldableFragment$$片段本身。
 
 ;;;;;
 

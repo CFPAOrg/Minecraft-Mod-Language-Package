@@ -27,7 +27,12 @@ These tricks give access to color information.
 Color fragments can represent any color along with translucency. 
 
 
-They are {#aa4444}Addable{}, {#aa4444}Multiplicable{}, {#aa4444}Roundable{}, and {#aa4444}Averageable{}, but not {#aa4444}Subtractable{} or {#aa4444}Divisible{}
+They are $$dev.enjarai.trickster.spell.fragment.AddableFragment$$,
+$$dev.enjarai.trickster.spell.fragment.MultiplicableFragment$$,
+$$dev.enjarai.trickster.spell.fragment.RoundableFragment$$, 
+and $$dev.enjarai.trickster.spell.fragment.AverageableFragment$$, 
+but not $$dev.enjarai.trickster.spell.fragment.SubtractableFragment$$ 
+or $$dev.enjarai.trickster.spell.fragment.DivisibleFragment$$.
 
 ;;;;;
 

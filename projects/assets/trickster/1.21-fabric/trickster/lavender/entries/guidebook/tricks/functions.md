@@ -93,15 +93,15 @@ Otherwise, the index of the spell slot which was dispatched to is returned.
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=Note: Foldables|>{#aa4444}Foldables{} are fragments which contain other fragments and may be accessed using a specific key. 
-Lists are {#aa4444}Foldables{} where the key is a whole number between zero and the size of the list, exclusive. 
-Maps are also {#aa4444}Foldables{}, though their keys may be any value and aren't automatically determined by order of insertion.
+<|page-title@lavender:book_components|title=Note: Foldables|>$$dev.enjarai.trickster.spell.fragment.FoldableFragment$$s are fragments which contain other fragments and may be accessed using a specific key. 
+Lists are $$dev.enjarai.trickster.spell.fragment.FoldableFragment$$s where the key is a whole number between zero and the size of the list, exclusive. 
+Maps are also $$dev.enjarai.trickster.spell.fragment.FoldableFragment$$s, though their keys may be any value and aren't automatically determined by order of insertion.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:fold|>
 
-For each entry in the {#aa4444}Foldable{}, execute the given spell, with the given fragment as the first result.
+For each entry in the $$dev.enjarai.trickster.spell.fragment.FoldableFragment$$, execute the given spell, with the given fragment as the first result.
 
 ;;;;;
 
@@ -109,7 +109,10 @@ Each iteration receives four [arguments](^trickster:delusions_ingresses/argument
 
 ---
 
-{#aa4444}Any{}, {#aa4444}Any{}, {#aa4444}Any{}, {#aa4444}Foldable{}
+$$dev.enjarai.trickster.spell.Fragment$$, 
+$$dev.enjarai.trickster.spell.Fragment$$, 
+$$dev.enjarai.trickster.spell.Fragment$$, 
+$$dev.enjarai.trickster.spell.fragment.FoldableFragment$$
 
 ---
 
@@ -118,7 +121,7 @@ These represent the following values, in order:
 - The result of the last iteration.
 - The current value.
 - The key of the current value.
-- The full {#aa4444}Foldable{}.
+- The full $$dev.enjarai.trickster.spell.fragment.FoldableFragment$$.
 
 ;;;;;
 

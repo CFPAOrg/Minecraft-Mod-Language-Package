@@ -36,15 +36,27 @@
 
 ;;;;;
 
+<|trick@trickster:templates|trick-id=trickster:map_merge|>
+
+将多个映射合并。键相同的键值对取输入索引小的。
+
+;;;;;
+
 <|trick@trickster:templates|trick-id=trickster:map_get|>
 
 若给定法术片段与映射中某键相等，则返回对应值；否则返回void。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:map_merge|>
+<|trick@trickster:templates|trick-id=trickster:map_get_keys|>
 
-将多个映射合并。键相同的键值对取输入索引小的。
+返回所给映射所有键组成的列表。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:map_get_values|>
+
+返回所给映射所有值组成的列表。
 
 ;;;;;
 

@@ -36,20 +36,26 @@ The following tricks regard basic arithmetic and mathematical operations.
 
 
 Some of the base arithmetic tricks accept a combination of types of fragment. 
-These will have their signatures labelled with, for example, {#aa4444}Addable{} or {#aa4444}Roundable{}.
-These terms are shorthands for a combination of options:
+These will have their signatures labelled with, for example, $$dev.enjarai.trickster.spell.fragment.AddableFragment$$ 
+or $$dev.enjarai.trickster.spell.fragment.RoundableFragment$$. These terms are shorthands for a combination of options:
 
 ;;;;;
 
-{#aa4444}Addable{} and {#aa4444}Subtractable{} are either {#ddaa00}Numbers{}, {#aa7711}Vectors{}, or {#6644aa}Patterns{}.
+$$dev.enjarai.trickster.spell.fragment.AddableFragment$$ and $$dev.enjarai.trickster.spell.fragment.SubtractableFragment$$ 
+are either $$trickster:number$$s, $$trickster:vector$$s, or $$trickster:pattern$$s.
 
 
-{#aa4444}Multiplicable{}, {#aa4444}Divisible{}, and {#aa4444}Roundable{}
-are only {#ddaa00}Numbers{} or {#aa7711}Vectors{}.
+$$dev.enjarai.trickster.spell.fragment.MultiplicableFragment$$, 
+$$dev.enjarai.trickster.spell.fragment.DivisibleFragment$$, 
+and $$dev.enjarai.trickster.spell.fragment.RoundableFragment$$ 
+are only $$trickster:number$$s or $$trickster:vector$$s.
 
 
-Arithmetical operations can also be performed on {#ff0055}Colors{}. 
-They are {#aa4444}Addable{}, {#aa4444}Multiplicable{}, {#aa4444}Roundable{}, and {#aa4444}Averageable{}
+Arithmetical operations can also be performed on $$trickster:color$$s. 
+They are $$dev.enjarai.trickster.spell.fragment.AddableFragment$$, 
+$$dev.enjarai.trickster.spell.fragment.MultiplicableFragment$$, 
+$$dev.enjarai.trickster.spell.fragment.RoundableFragment$$, 
+and $$dev.enjarai.trickster.spell.fragment.AverageableFragment$$.
 
 ;;;;;
 
@@ -97,9 +103,15 @@ Divides fragments sequentially, starting from the first.
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:modulo|>
+<|trick@trickster:templates|trick-id=trickster:remainder|>
 
 Returns the remainder of dividing the first number by the second number.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:modulo|>
+
+Returns the modulus of dividing the first number by the second number.
 
 ;;;;;
 

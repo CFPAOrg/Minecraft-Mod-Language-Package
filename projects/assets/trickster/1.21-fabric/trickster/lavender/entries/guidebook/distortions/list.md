@@ -53,7 +53,7 @@ Creates a new list containing the elements of all given lists.
 
 <|trick@trickster:templates|trick-id=trickster:list_take_range|>
 
-Returns a list containing the elements of the given list with indexes starting at the first number and ending before the second.
+Returns a list containing the elements of the given list with indices starting at the first number and ending before the second.
 
 ;;;;;
 
@@ -83,7 +83,7 @@ Finds and returns the index of a specific element in the given list, or void if 
 
 <|trick@trickster:templates|trick-id=trickster:list_remove|>
 
-Removes one or many elements from the given list by their index. Indexes do not move around mid-removal.
+Removes one or many elements from the given list by their index. Indices do not move around mid-removal.
 
 ;;;;;
 

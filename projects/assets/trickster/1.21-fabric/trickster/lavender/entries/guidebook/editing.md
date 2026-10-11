@@ -159,7 +159,7 @@ replacing the circle it is drawn in.
 
 <|revision@trickster:templates|revision-id=trickster:splice_inner|>
 
-Reads a spell from the user's offhand and places it as a glyph in the center of the circle it is drawn in.
+Reads a fragment from the user's offhand and places it as a glyph in the center of the circle it is drawn in.
 
 ;;;;;
 
@@ -179,7 +179,7 @@ A pattern literal returns its pattern when evaluated,
 allowing for the manipulation of patterns in the same way you would other fragments.
 
 
-Patterns can be turned back into a pattern literals using [Interpretation Distortion](^trickster:distortions/misc#4).
+Patterns can be turned back into a pattern literal using [Interpretation Distortion](^trickster:distortions/misc#4).
 
 ;;;;;
 

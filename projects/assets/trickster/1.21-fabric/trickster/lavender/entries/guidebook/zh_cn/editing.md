@@ -146,7 +146,7 @@
 
 <|revision@trickster:templates|revision-id=trickster:splice_inner|>
 
-从施法者副手物品中读出法术，将其加作绘制处圆的符记。
+从施法者副手物品中读出片段，将其加作绘制处圆的符记。
 
 ;;;;;
 

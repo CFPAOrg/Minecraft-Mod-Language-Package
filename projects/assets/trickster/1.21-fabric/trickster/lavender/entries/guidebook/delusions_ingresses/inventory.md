@@ -9,6 +9,7 @@
     "Juggling Delusion",
     "Stockpile Ingress",
     "Basin Ingress",
+    "Bauble Ingress",
     "Intrusive Ingress",
     "Collector's Ingress",
     "Ingress of Inventory",
@@ -75,6 +76,12 @@ If the container is a block, an additional vector can be provided to define the 
 <|trick@trickster:templates|trick-id=trickster:get_fluid_container|>
 
 Returns a reference to the fluid container of the passed value.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_accessories_container|>
+
+Returns a container containing all the caster's accessory slots which are capable of holding items of the given type.
 
 ;;;;;
 
