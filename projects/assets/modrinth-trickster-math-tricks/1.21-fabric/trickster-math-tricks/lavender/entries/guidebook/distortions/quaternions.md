@@ -10,30 +10,18 @@ The following patterns regard quaternion operations.
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_axis,title=Rotating Distortion|>
-
-vector, number -> quaternion
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_axis|>
 
 Creates a quaternion from an axis and an angle (radians).
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_comp,title=Quaternary Absorption Distortion|>
-
-number, number, number, number -> quaternion
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_comp|>
 
 Creates a quaternion from XYZW components.
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_euler,title=Quaternary Angle Distortion|>
-
-quaternion -> vector
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_euler|>
 
 Calculates euler angles (radians) from quaternion.

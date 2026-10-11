@@ -10,10 +10,6 @@
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:caster_quaternion,title=旋向之错觉|>
-
--> quaternion
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:caster_quaternion|>
 
 若可行，将施法实体头部的旋转方向返回为四元数。

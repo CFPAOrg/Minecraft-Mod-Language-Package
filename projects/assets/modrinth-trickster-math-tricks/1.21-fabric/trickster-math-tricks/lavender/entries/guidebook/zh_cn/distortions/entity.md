@@ -10,10 +10,6 @@
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:entity_quaternion,title=旋向之辑流|>
-
-entity -> quaternion
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:entity_quaternion|>
 
 将所给实体头部的旋转方向返回为四元数。

@@ -10,30 +10,18 @@
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_axis,title=旋转之曲变|>
-
-vector, number -> quaternion
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_axis|>
 
 依照所给旋转轴和角度（弧度）构造四元数。
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_comp,title=四元吸收之曲变|>
-
-number, number, number, number -> quaternion
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_comp|>
 
 依照所给XYZW分量构造四元数。
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_euler,title=四元角之曲变|>
-
-quaternion -> vector
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_euler|>
 
 计算所给四元数的欧拉角（弧度）。
