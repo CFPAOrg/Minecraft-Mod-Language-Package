@@ -23,11 +23,19 @@
 
 ;;;;;
 
+<|page-title@lavender:book_components|title=狙击手之辅助瞄准|>在发射远程武器后，狙击手之辅助瞄准会施放武器上抄有的法术。弹射物作为第一参数传入。
+
+;;;;;
+
 <|page-title@lavender:book_components|title=弓箭手之专注|>在弹射物击中时，弓箭手之专注会施放弹射物物品上抄有的法术。被击中的实体或位置作为第一参数传入。
 
 ;;;;;
 
 <|page-title@lavender:book_components|title=渔夫之暴|>在钓鱼竿收起时，渔夫之暴会施放钓鱼竿上抄有的法术。被钓起的实体或浮标的位置作为第一参数传入。
+
+;;;;;
+
+<|page-title@lavender:book_components|title=手工艺人之囤积|>在使用工具时，手工艺人之囤积会施放工具上抄有的法术。被工具使用的实体、工具使用的位置，或void作为第一参数传入。
 
 ;;;;;
 
