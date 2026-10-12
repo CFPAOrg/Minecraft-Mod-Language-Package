@@ -127,12 +127,12 @@ Redstone gating applies to both Senders and Receivers.
 - **Priority** — sort by each Receiver's **Priority** value. Higher numbers are served first. Ties are broken in no particular order.
 - **Nearest First** — serve the Receivers closest to the Sender first (by straight-line distance).
 - **Farthest First** — opposite of Nearest First: serve the furthest Receiver first.
-- **Equal Distribution** — split each operation's item batch as evenly as possible across matching Receivers.
+- **Equal Distribution** — split what the Sender has available, up to the batch, as evenly as possible across matching Receivers. 10 items over 10 Receivers gives 1 each, 20 gives 2 each.
 - **Priority Robin** — each operation goes to one Receiver, then the next. Receivers are visited from highest to lowest **Priority**, then the cycle repeats. A full Receiver is skipped.
 
 **How to change it:** use Primary Interaction to cycle to the next mode.
 
-**Gotcha:** Equal Distribution does not keep a rotation pointer, and unused shares flow to Receivers with space. It only splits item batches; on fluid, energy, chemical and Source channels it behaves like **Priority**.
+**Gotcha:** Equal Distribution does not keep a rotation pointer. Leftovers that don't divide evenly go one at a time to the first Receivers in **Priority** order, and a full Receiver's share flows to Receivers with space. Each item, fluid or chemical type is split on its own among the Receivers that accept it, in the order the Sender holds them, until the batch is used up. Amounts an export filter keeps in the Sender are left out of the split. It works on every channel type.
 
 **Gotcha:** Priority Robin's position resets to the highest-priority Receiver when the world or the Sender's chunk reloads. If the chosen Receiver accepts only part of a batch, the rest waits for the next operation. It works on every channel type.
 
@@ -148,7 +148,7 @@ Redstone gating applies to both Senders and Receivers.
 
 **How to change it:** use Primary Interaction on the number field to open a text box, type a number between –99 and 99, and press Enter.
 
-**Gotcha:** Priority sets the serving order under Priority, Priority Robin, and Equal Distribution on non-item channels. Under Nearest/Farthest it is ignored — the sorter never reads it. Set Priority on the **Receivers** you want served first, not on the Sender.
+**Gotcha:** Priority sets the serving order under Priority and Priority Robin, and picks who gets the leftovers under Equal Distribution. Under Nearest/Farthest it is ignored — the sorter never reads it. Set Priority on the **Receivers** you want served first, not on the Sender.
 
 ## Batch
 

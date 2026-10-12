@@ -7,7 +7,7 @@ navigation:
 
 # ComputerCraft
 
-安装有[CC: Tweaked](https://modrinth.com/mod/cc-tweaked)时，电脑也会成为外设。脚本能读取电脑界面中的所有内容——网络、频道、节点、节点表、实时I/O遥测数据，并能在显示器上显示。
+安装有[CC: Tweaked](https://modrinth.com/mod/cc-tweaked)时，电脑会成为外设。脚本能读取电脑界面中的所有内容——网络、频道、节点、节点表、实时I/O遥测数据，并能在显示器上显示。
 
 ## 连接
 
