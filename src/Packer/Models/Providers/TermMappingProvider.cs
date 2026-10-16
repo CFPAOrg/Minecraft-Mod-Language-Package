@@ -190,17 +190,12 @@ namespace Packer.Models.Providers
                               RegexOptions.Singleline));
 
         /// <inheritdoc/>
-        public async Task WriteToArchive(ZipArchive archive)
+        public async Task WriteToStream(Stream stream)
         {
-            var destination = Destination.NormalizePath();
-            Log.Debug("[TermMappingProvider`1]写入路径 {0}", destination);
-
-            archive.ValidateEntryDistinctness(destination);
-
             using var writer = new StreamWriter(
-                archive.CreateEntry(destination)
-                       .Open(),
-                new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+                stream,
+                new UTF8Encoding(encoderShouldEmitUTF8Identifier: false),
+                leaveOpen: true);
             await writer.WriteAsync(Map.ProvideStringContent());
         }
     }

@@ -1,0 +1,62 @@
+{
+  "category": "irregular_implements:blocks",
+  "icon": "irregular_implements:biome_radar",
+  "name": "Biome Radar",
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irregular_implements:biome_radar",
+      "link_recipe": true,
+      "text": "The $(d)Biome Radar$() is a multiblock structure that $(3)helps you find biomes$() in the world.$(br2)First, you have to actually build the structure.",
+      "title": "Biome Radar"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "mapping": {
+          "0": "irregular_implements:biome_radar",
+          "A": "minecraft:iron_bars[north=true,south=true,east=true,west=true]",
+          "E": "minecraft:iron_bars[east=true]",
+          "I": "minecraft:iron_bars",
+          "N": "minecraft:iron_bars[north=true]",
+          "S": "minecraft:iron_bars[south=true]",
+          "W": "minecraft:iron_bars[west=true]"
+        },
+        "pattern": [
+          [
+            " I ",
+            "I I",
+            " I "
+          ],
+          [
+            " E ",
+            "SAN",
+            " W "
+          ],
+          [
+            "   ",
+            " I ",
+            "   "
+          ],
+          [
+            "   ",
+            " 0 ",
+            "   "
+          ]
+        ],
+        "symmetrical": true
+      },
+      "name": "Biome Radar Antenna"
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "irregular_implements:biome_crystal[irregular_implements:biome=\"minecraft:plains\"]",
+      "link_recipe": true,
+      "text": "$(d)Biome Crystals$() can be found in dungeon chests, and there's $(3)one for every biome$().$(br2)Insert a Biome Crystal into the Biome Radar, and the flames on the radar will start to blow in the direction of the biome, if it's found."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "You can also use a $(l:items/location_filter)Location Filter$(/l) on the Biome Radar to save the biome's location to the Filter.$(br2)With that, you can craft it with a $(l:items/golden_compass)Golden Compass$(/l) to make your way to the biome!"
+    }
+  ]
+}

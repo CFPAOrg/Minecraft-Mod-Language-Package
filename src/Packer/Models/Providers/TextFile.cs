@@ -94,17 +94,12 @@ namespace Packer.Models.Providers
                                           replacement,
                                           RegexOptions.Singleline));
         /// <inheritdoc/>
-        public virtual async Task WriteToArchive(ZipArchive archive)
+        public virtual async Task WriteToStream(Stream stream)
         {
-            var destination = Destination.NormalizePath();
-            Log.Debug("[TextFile]写入路径 {0}", destination);
-
-            archive.ValidateEntryDistinctness(destination);
-
             using var writer = new StreamWriter(
-                archive.CreateEntry(destination)
-                       .Open(),
-                new UTF8Encoding(encoderShouldEmitUTF8Identifier: false));
+                stream,
+                new UTF8Encoding(encoderShouldEmitUTF8Identifier: false),
+                leaveOpen: true);
             await writer.WriteAsync(Content);
         }
     }

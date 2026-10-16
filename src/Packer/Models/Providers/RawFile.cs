@@ -44,18 +44,10 @@ namespace Packer.Models.Providers
                                          RegexOptions.Singleline));
 
         /// <inheritdoc/>
-        public async Task WriteToArchive(ZipArchive archive)
+        public async Task WriteToStream(Stream stream)
         {
-            var destination = Destination.NormalizePath();
-            Log.Debug("[RawFile]写入路径 {0}", destination);
-
-            archive.ValidateEntryDistinctness(destination);
-
-            // 为什么这ZipArchive.CreateEntryFromFile没有Async变种...只有手动实现了
             using var source = SourceFile.OpenRead();
-            using var entry = archive.CreateEntry(destination)
-                                     .Open();
-            await source.CopyToAsync(entry);
+            await source.CopyToAsync(stream);
         }
     }
 }
