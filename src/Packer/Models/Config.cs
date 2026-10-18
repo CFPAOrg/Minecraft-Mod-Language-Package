@@ -50,6 +50,26 @@ namespace Packer
         public string[] TargetLanguages { get; set; }
 
         /// <summary>
+        /// 将用于生成pack.mcmeta的模板位置
+        /// </summary>
+        public string McMetaTemplate { get; set; }
+
+        /// <summary>
+        /// 将用于生成pack.mcmeta的参数列表；会自动在前面附加一个时间戳
+        /// </summary>
+        public object[] McMetaParameters { get; set; }
+
+        /// <summary>
+        /// 将用于生成readme.txt的模板位置
+        /// </summary>
+        public string ReadmeTemplate { get; set; }
+
+        /// <summary>
+        /// 将用于生成readme.txt的参数列表
+        /// </summary>
+        public object[] ReadmeParameters { get; set; }
+
+        /// <summary>
         /// 不进行打包的mod（按<c>[curseforge-]name</c>）
         /// </summary>
         public IEnumerable<string> ExclusionMods { get; set; }
@@ -58,6 +78,11 @@ namespace Packer
         /// 不进行打包的<c>namespace</c>
         /// </summary>
         public IEnumerable<string> ExclusionNamespaces { get; set; }
+
+        /// <summary>
+        /// 回退版本，当该版本不存在相应语言文件时从这些版本获取文件
+        /// </summary>
+        public IEnumerable<string> FallbackVersions { get; set; }
     }
 
     /// <summary>

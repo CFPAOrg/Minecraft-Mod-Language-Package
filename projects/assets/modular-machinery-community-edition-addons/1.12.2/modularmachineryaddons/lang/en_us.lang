@@ -1,0 +1,107 @@
+itemGroup.modularmachineryaddons=Modular Machinery Addons
+
+tile.modularmachineryaddons.blockradiationprovideroutput.name=Radiation Output Hatch
+tile.modularmachineryaddons.blockradiationproviderinput.name=Radiation Input Hatch
+tile.modularmachineryaddons.blockmeessentiainputbus.name=Machinery Essentia Input Bus
+tile.modularmachineryaddons.blockmeessentiaoutputbus.name=Machinery Essentia Output Bus
+tile.modularmachineryaddons.blockmeteorprovideroutput.name=Meteor Hatch
+tile.modularmachineryaddons.blockwillmultichunkproviderinput.name=Will Multi-Chunk Input Hatch
+tile.modularmachineryaddons.blockwillmultichunkprovideroutput.name=Will Multi-Chunk Output Hatch
+tile.modularmachineryaddons.blockfluxproviderinput.name=Flux Input Hatch
+tile.modularmachineryaddons.blockfluxprovideroutput.name=Flux Output Hatch
+tile.modularmachineryaddons.blockvisproviderinput.name=Vis Input Hatch
+tile.modularmachineryaddons.blockvisprovideroutput.name=Vis Output Hatch
+tile.modularmachineryaddons.blockscrubberproviderinput.name=Scrubber Hatch
+tile.modularmachineryaddons.blockbiomeproviderinput.name=Biome Hatch
+tile.modularmachineryaddons.blockdimensionproviderinput.name=Dimension Hatch
+
+item.modularmachineryaddons.itemadvancedconstructtool.name=Advanced Wrench
+item.modularmachineryaddons.itemadvancedmachineassembler.name=Advanced Machine Assembler
+item.modularmachineryaddons.itemadvancedmachinedisassembler.name=Advanced Machine Disassembler
+item.modularmachineryaddons.itemradiationsponge.name=Radiation Sponge
+item.modularmachineryaddons.iteminactiveradiationsponge.name=Inactive Radiation Sponge
+tooltip.modularmachineryaddons.cheese.lie=The cheese is §llie
+
+commands.mmcea.getcacheinfo.usage=/getScrubbedChunksCacheInfo
+
+# errors
+error.modularmachineryaddons.component.invalid.biome=No biome hatch found
+error.modularmachineryaddons.component.invalid.dimension=No dimension hatch found
+error.modularmachineryaddons.component.invalid.essentia=No essentia hatch found
+error.modularmachineryaddons.component.invalid.vis=No vis hatch found
+error.modularmachineryaddons.component.invalid.flux=No flux hatch found
+error.modularmachineryaddons.component.invalid.scrubber=No scrubber hatch found
+error.modularmachineryaddons.component.invalid.radiation=No radiation hatch found
+error.modularmachineryaddons.component.invalid.will=No will hatch found
+error.modularmachineryaddons.component.invalid.meteor=No meteor hatch found
+error.assembler.not.found=Could not locate an advanced machine assembler item in the player's inventory
+error.encryption.key.not.found=The assembler must be linked to an ME system via a security station to allow item extraction
+error.security.station.not.found=Could not locate security station
+error.disassembler.nonempty.itemhandler=Found a block containing items. Please empty it and try again, or break it manually
+error.disassembler.nonempty.fluidhandler=Found a block containing fluids. Please empty it and try again, or break it manually
+message.assembly.missing.machine=Could not identify machine. Insert a blueprint or convert the controller
+message.item.mode.changed=Changed item mode to %s
+
+# requirement check fails
+error.modularmachineryaddons.requirement.missing.multichunk.input=Missing multi-chunk input requirement
+error.modularmachineryaddons.requirement.missing.multichunk.output=Not enough space for multi-chunk output requirement
+
+error.modularmachineryaddons.requirement.missing.essentia.input=Missing essentia input
+error.modularmachineryaddons.requirement.missing.essentia.output=Not enough space for essentia output
+
+error.modularmachineryaddons.requirement.missing.biome=The hatch is in the wrong biome
+error.modularmachineryaddons.requirement.missing.dimension=The hatch is in the wrong dimension
+
+error.modularmachineryaddons.requirement.missing.meteor.alive=Meteor is still alive
+error.modularmachineryaddons.requirement.missing.meteor=Line of sight is obstructed (max 1 block allowed)
+error.modularmachineryaddons.requirement.missing.meteor.missing=Meteor hatch could not handle meteor. You should never see this message
+
+
+# items
+item.modularmachineryaddons.advancedconstructtool.tooltip=Select two corners and click on a machine controller to extract the entire multiblock definition. Selecting a third block will clear the selection.
+tooltip.modularmachineryaddons.radiationsponge=Removes all radiation from the user as well as from the current chunk the user is in
+
+# blocks
+tooltip.modularmachineryaddons.scrubber=May still cause leaks for a short time window in-between recipes or on world restart. Scrub your base!
+
+
+# messages
+message.modularmachineryaddons.assembly.complete=Multiblock assembly completed successfully
+message.modularmachineryaddons.assembly.complete.error=Multiblock assembly completed, but some blocks were not placed
+message.modularmachineryaddons.disassembly.complete=Multiblock disassembly completed successfully
+message.modularmachineryaddons.disassembly.complete.error=Multiblock disassembly completed, but some blocks were not removed
+message.modularmachineryaddons.assembly.error=Multiblock assembly interrupted
+message.modularmachineryaddons.disassembly.error=Multiblock disassembly interrupted
+message.modularmachineryaddons.advancedconstructtool.cleared=Cleared tool selection
+message.modularmachineryaddons.advancedconstructtool.invalid.selection=Please select two corners!
+message.modularmachineryaddons.advancedconstructtool.selection=Successfully selected corner
+
+#assembly
+message.assembly.missing.item.knowledge=Missing knowledge of item %s
+message.assembly.missing.emc=Not enough EMC for item %s with count %s. Current EMC: %d Needed: %d
+message.assembly.overflow.emc=Could not add EMC for item %s with count %s. Adding the item's EMC value (%d) to the current EMC amount (%d) would go above maximum EMC!
+tooltip.builder.player_inventory=Mode: Player Inventory Only
+tooltip.builder.player_inventory_emc=Mode: Player Inventory + EMC
+tooltip.builder.player_inventory_me=Mode: Player Inventory + Linked ME Network
+tooltip.builder.all=Mode: Player Inventory + EMC + Linked ME Network
+tooltip.builder.change.modes=Hold Shift and scroll UP/DOWN to change modes, or use the keybind
+message.assembly.tip.success.missing.blocks=Could not place the following blocks: %s
+message.disassembly.tip.success.missing.blocks=Could not break the following blocks: %s
+message.assembly.too.quickly=Trying to perform action too quickly!
+message.modularmachineryaddons.radiationsponge.success=Scrubbed Radiation: [%d from %s] [%d from chunk buffer] [%d from chunk level]
+
+modularmachineryaddons.config.title=Modular Machinery Addons
+key.cycle=Cycle through tool modes
+key.categories.mmcea=Modular Machinery Addons
+
+# JEI Tooltips
+jei.tooltip.modularmachineryaddons.flux=Flux
+jei.tooltip.modularmachineryaddons.vis=Vis
+jei.tooltip.modularmachineryaddons.radiation=Radiation
+jei.tooltip.modularmachineryaddons.chunk_range=Chunk Range
+jei.tooltip.modularmachineryaddons.aspect=Aspect
+jei.tooltip.modularmachineryaddons.amount=Amount
+jei.tooltip.modularmachineryaddons.dimension=Dimension
+jei.tooltip.modularmachineryaddons.biome=Biome
+jei.tooltip.modularmachineryaddons.meteor_contents=Meteor Contents
+jei.tooltip.modularmachineryaddons.scrubber_special=To Infinity and Beyond!

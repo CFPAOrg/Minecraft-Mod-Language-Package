@@ -40,7 +40,7 @@ namespace Packer.Helpers
         /// </summary>
         /// <param name="configTemplate">配置路径模板</param>
         /// <param name="version">打包版本，用于定位全局配置</param>
-        public static async Task<Config> RetrieveConfig(string configTemplate, string version)
+        public static Config RetrieveConfig(string configTemplate, string version)
         {
             Log.Information("正在获取配置。目标版本：{0}", version);
 
@@ -48,10 +48,37 @@ namespace Packer.Helpers
 
             Log.Information("配置位置：{0}", configPath);
 
-            var content = await File.ReadAllBytesAsync(configPath);
+            using var stream = File.OpenRead(configPath);
+
             return JsonSerializer.Deserialize<Config>(
-                content,
+                stream,
                 new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase })!;
+        }
+
+        /// <summary>
+        /// 从仓库根目录获取命名空间区分配置
+        /// </summary>
+        /// <param name="path">配置文件位置</param>
+        /// <returns>文件不存在时返回空列表；文件存在但内容非法时抛出异常，宁可打包失败也不发出错误的包</returns>
+        public static List<NamespaceDiscriminator> RetrieveNamespaceDiscriminators(
+            string path = "./config/packer/namespace-discriminator.json")
+        {
+            var file = new FileInfo(path);
+            if (!file.Exists)
+            {
+                Log.Information("未找到命名空间区分配置（{0}），跳过命名空间区分。", path);
+                return new List<NamespaceDiscriminator>();
+            }
+
+            file.FullName.LogToDebug("读取文件：{0}");
+
+            using var stream = file.OpenRead();
+            var result = JsonSerializer.Deserialize<List<NamespaceDiscriminator>>(
+                stream,
+                new JsonSerializerOptions { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+            if (result is null)
+                throw new InvalidDataException($"The discriminator file {path} cannot have null content.");
+            return result;
         }
 
         /// <summary>

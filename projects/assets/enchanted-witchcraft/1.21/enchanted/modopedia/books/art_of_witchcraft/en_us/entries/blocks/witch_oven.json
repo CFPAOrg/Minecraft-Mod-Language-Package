@@ -1,0 +1,109 @@
+{
+  "assigned_items": [
+    "enchanted:witch_oven",
+    "enchanted:fume_funnel",
+    "enchanted:fume_funnel_filtered",
+    "enchanted:fume_filter"
+  ],
+  "icon": {
+    "count": 1,
+    "id": "enchanted:witch_oven"
+  },
+  "pages": [
+    {
+      "components": [
+        {
+          "header": "Fume Collection",
+          "template": "modopedia:page/headered_text",
+          "text": "The witch's oven is a modified furnace used to collect byproducts and fumes made from burning materials.\n\nUnlike a furnace, this oven cannot process ores. Place a $(b)$(el:items/clay_jar)clay jar$(/el)$(/b) into the middle slot to collect fumes."
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "type": "modopedia:header",
+          "text": "template.modopedia.crafting_recipe"
+        },
+        {
+          "type": "modopedia:separator",
+          "y": 10
+        },
+        {
+          "type": "modopedia:multiblock",
+          "height": 50,
+          "multiblock": {
+            "type": "modopedia:dense",
+            "key": {
+              "W": {
+                "type": "modopedia:simple",
+                "states": [
+                  "enchanted:witch_oven[lit=true]"
+                ]
+              }
+            },
+            "pattern": [
+              [
+                "W"
+              ]
+            ]
+          },
+          "y": 10
+        },
+        {
+          "recipe": "enchanted:witch_oven",
+          "template": "modopedia:recipe/crafting",
+          "y": 70
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "header": "Fume Funnels",
+          "template": "modopedia:page/headered_text",
+          "text": "Adding fume funnels to the left and right of your witch's oven can drastically improve it's yield."
+        },
+        {
+          "recipe": "enchanted:fume_funnel",
+          "template": "modopedia:recipe/crafting",
+          "y": 68
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "multiblock_id": "enchanted:witch_oven",
+          "offset_y": -10.0,
+          "template": "modopedia:page/multiblock",
+          "text": "A third fume funnel can be placed on top of the witch oven as a decorative chimney."
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "header": "Fume Filters",
+          "template": "modopedia:page/headered_text",
+          "text": "A fume filter can be added to fume funnels to further increase yield. With two filters, success is guaranteed."
+        },
+        {
+          "recipe": "enchanted:fume_filter",
+          "template": "modopedia:recipe/crafting",
+          "y": 70
+        }
+      ]
+    },
+    {
+      "components": [
+        {
+          "block": "enchanted:fume_funnel_filtered[lit=true]",
+          "template": "modopedia:page/block",
+          "text": "$(b)Procurement:$(/b)\nUse a fume filter on a fume funnel."
+        }
+      ]
+    }
+  ],
+  "title": "Fume Collection"
+}

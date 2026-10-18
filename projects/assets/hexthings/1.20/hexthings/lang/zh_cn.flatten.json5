@@ -1,0 +1,159 @@
+{
+  hexthings: {
+    book: {
+      patterns: {
+        utils: {
+          "": "实用",
+          noop: "什么都不会做，但图案尾部可为任意形状。适合用作替换占位符。",
+
+          insert: "与$(l:patterns/lists#hexcasting:replace)$(action)外科医师之提整/$\
+          类似，但会使用第二列表中的各元素替换第一列表中的元素，而非以列表整体进行替换。",
+
+          unquote: "此图案可用于直接将原始 iota 置入内省-反思对。绘制此图案后，所有\
+          后续的图案会被“取消转义”，运行时会按原有功能执行。此效应的作用范围停止于\
+          $(l:patterns/hexutils#hexthings:requote)$(action)反掷/$。",
+
+          requote: "在$(l:patterns/hexutils#hexthings:unquote)$(action)内投/$后\
+          绘制时，其会将栈上的所有 iota 置入转义的列表，并将栈恢复到原先的状态。",
+
+
+          isgreatersent: "检验我当前的哨卫是否是\
+          $(l:patterns/great_spells/greater_sentinel)$(action)卓越哨卫/$，无哨卫\
+          则返回 $(l:patterns/consts#hexcasting:const/null)$(thing)Null/$。"
+
+        },
+        dict: {
+          "": "字典操作",
+          empty_dict: "创建一个空字典 iota。",
+          abs: "返回字典的条目数。",
+          replace: "将 iota 置入字典中所给键处。不是所有 iota 都可用作键，禁用示例有\
+          $(l:casting/influences)$(thing)垃圾/$、$(l:patterns/meta#hexcasting:eval/cc)$(thing)跳转/$ iota。\
+          试图设置键 $(l:patterns/consts#hexcasting:const/null)$(thing)Null/$ 的值会\
+          移除该条目，方式与使用$(l:patterns/dict#hexcasting:remove_from)$(action)切除器之馏化/$一致。",
+
+
+
+          remove_from: "从字典中移除键值对，返回移除的值，若不具备值则\
+          返回 $(l:patterns/consts#hexcasting:const/null)$(thing)Null/$。",
+
+          index_of: "返回所给键对应的值，若不具备值则\
+          返回 $(l:patterns/consts#hexcasting:const/null)$(thing)Null/$。",
+          dict_keys: "返回字典的键列表。",
+          dict_vals: "返回字典的值列表。",
+          dict_ents: "返回字典中的键值对，各键值对均为长度为 2 的列表。"
+
+        },
+        uiua: {
+          "": "高阶列表操作",
+          uiua_take: "根据第二参数保留列表元素。若参数为正数，则保留列表中的\
+          开头 $(o)n/$ 个元素；若为负，则保留末尾 $(o)n/$ 个。若第二参数为列表，\
+          则将其视作要保留元素的下标。",
+
+          uiua_drop: "$(l:patterns/uiua#hexthings:uiua_take)$(action)维持之馏化/$\
+          的反操作，会删除指定的元素，而不是删除未指定的。",
+
+          uiua_rotate: "按所给量移动列表元素，“超出”列表的元素会从另一端返回。",
+
+          uiua_where: "挑选列表中$(l:patterns/logic#hexcasting:bool_coerce)自然认作 True/$\
+          的元素，以列表形式返回它们的下标。",
+          div: "取出各列表中同下标的元素对，将各元素对组为列表返回。",
+
+          mul: "从两列表中各取一个元素，将所有可能的取值组合组为列表返回。"
+        }
+      },
+      info: {
+        iota_embedding: {
+          "title": "Iota 嵌入",
+          "text": {
+            "1": "我在研究中发现了……在咒术中“嵌入”iota 的方法，从而避免每次施法都\
+            费工夫从头构建。和$(l:items/hexcasting)$(item)施法物品/$一起使用时极其强大，\
+            可以大幅加快施法，也可简化使用其中咒术的操作。",
+
+
+            "2": "通常而言，这一过程需以内省-反思对起始，再在其中使用占位图案，而后\
+            使用$(l:patterns/lists#hexcasting:index_of)$(action)定位器之馏化/$和\
+            $(l:patterns/lists#hexcasting:replace)$(action)外科医师之提整/$替换，并在其后\
+            添加$(l:patterns/lists#hexcasting:splat)$(action)群体之拆解/$以访问其中 iota。\
+            这种做法确实费时费力。但我对这门技艺的探索得到了自然的青睐，因为我最近\
+            发现了能简化此过程的两个图案。"
+
+
+
+          }
+        }
+      },
+      noop_examples: {
+        "header": "耐心图案",
+        "text": "部分可用耐心图案的示例。"
+      }
+    }
+  },
+
+  hexcasting: {
+    action: {
+      "hexthings:": {
+        noop: "耐心",
+        insert: "扁平之提整",
+        unquote: "内投",
+        requote: "反掷",
+        isgreatersent: "碎片之精思",
+        empty_dict: "僵局之精思",
+        dict_keys: "访问器之纯化",
+        dict_vals: "访问对象之纯化",
+        dict_ents: "条目之纯化",
+        uiua_take: "维持之馏化",
+        uiua_drop: "拒斥之馏化",
+        uiua_rotate: "摩天轮之馏化",
+        uiua_where: "演绎之纯化"
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+        "hexthings:": {
+        },
+      },
+    },
+    special: {
+      "hexthings:": {
+        noop: "耐心"
+      }
+    },
+    mishap: {
+      "invalid_unquote": "未先绘制内投。",
+      "invalid_key_type": "%s类型的iota不可用作键。",
+      invalid_value: {
+        class: {
+          int_list: "一个数列表"
+        }
+      }
+    }
+  },
+
+  text: {
+    "autoconfig.hexthings": {
+      title: "HexThings配置",
+
+      category: {
+        client: "客户端",
+        server: "服务端",
+      },
+
+      option: {
+        client: {
+          dummyClientConfigOption: {
+            "": "Dummy Client Config Option",
+            "@Tooltip": "This is an example of a client-side config option that accepts a boolean.",
+          },
+        },
+
+        server: {
+          dummyServerConfigOption: {
+            "": "Dummy Server Config Option",
+            "@Tooltip": "This is an example of a server-side config option that accepts an integer.",
+          },
+        },
+      },
+    },
+  },
+}

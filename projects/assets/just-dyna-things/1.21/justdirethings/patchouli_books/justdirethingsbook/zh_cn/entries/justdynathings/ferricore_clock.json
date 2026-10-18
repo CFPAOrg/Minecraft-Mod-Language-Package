@@ -1,0 +1,51 @@
+{
+  "name": "计时电路",
+  "sortnum": 8,
+  "category": "justdirethings:justdynathings",
+  "icon": "justdynathings:ferricore_clock",
+  "pages": [
+    {
+      "type": "patchouli:crafting",
+      "title": "核源铁时钟",
+      "recipe": "justdynathings:ferricore_clock",
+      "text": "可配置为在特定游戏刻激活特定面红石元件的方块。"
+    },
+    {
+      "type": "patchouli:multiblock",
+      "multiblock": {
+        "pattern": [
+          [
+            "   ", 
+            " T ", 
+            "   "
+          ],
+          [
+            " E ", 
+            "SFN", 
+            " W "
+          ],
+          [
+            "   ", 
+            " L ", 
+            "   "
+          ],
+          [
+            "   ", 
+            " 0 ", 
+            "   "
+          ]
+        ],
+        "mapping": {
+          "T": "minecraft:redstone_torch[lit=true]",
+          "L": "minecraft:redstone_lamp[lit=true]",
+          "W": "minecraft:repeater[powered=true,locked=false,delay=1,facing=west]",
+          "N": "minecraft:repeater[powered=false,locked=false,delay=1,facing=north]",
+          "S": "minecraft:repeater[powered=false,locked=false,delay=1,facing=south]",
+          "E": "minecraft:repeater[powered=true,locked=false,delay=1,facing=east]",
+          "F": "justdynathings:ferricore_clock[active=true,north=false,south=false,east=true,west=true,up=false,down=true]"
+        }
+      },
+      "enable_visualize": false
+    }
+  ]
+}

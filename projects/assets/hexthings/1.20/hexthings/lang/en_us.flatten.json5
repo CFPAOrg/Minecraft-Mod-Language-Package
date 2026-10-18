@@ -1,0 +1,159 @@
+{
+  hexthings: {
+    book: {
+      patterns: {
+        utils: {
+          "": "Utilities",
+          noop: "Does nothing, but the tail can be any shape. Useful as \
+          a placeholder to be replaced later",
+          insert: "Similar to $(l:patterns/lists#hexcasting:replace)$(action)Surgeon's Exaltation/$, but replaces the \
+          element of the first list instead with the $(o)contents/$ of the second list, rather than with the list itself.",
+          unquote: "This pattern can be used to place raw iota directly into an \
+          Introspection-Restrospection pair. After drawing this pattern, all \
+          subsequent patterns are \"unescaped\", allowing them to be executed as \
+          normal until a $(l:patterns/hexutils#hexthings:requote)$(action)Retrojection/$ is \
+          encountered.",
+          requote: "When used after an \
+          $(l:patterns/hexutils#hexthings:unquote)$(action)Introjection/$, \
+          This pattern puts all iota on the stack into the escaped list, with the \
+          previous state of the stack being restored.",
+          isgreatersent: "Pushes if my current sentinel is a \
+          $(l:patterns/great_spells/greater_sentinel)$(action)Greater Sentinel/$, \
+          or $(l:patterns/consts#hexcasting:const/null)$(thing)Null/$ if I \
+          have no sentinel at all."
+        },
+        dict: {
+          "": "Dictionary Manipulation",
+          empty_dict: "Creates an empty Dictionary iota.",
+          abs: "Pushes the number of entries in the Dictionary",
+          replace: "Places the iota in the Dictionary at the specified key. Not every \
+          iota type is allowed to be used as a key, with notable the exceptions being \
+          $(l:casting/influences)$(thing)Garbage/$ and $(l:patterns/meta#hexcasting:\
+          eval/cc)$(thing)Jump/$ iota. Attempting to set the value of a key to \
+          $(l:patterns/consts#hexcasting:const/null)$(thing)Null/$ will remove the \
+          key the same way using $(l:patterns/dict#hexcasting:remove_from)$(action)\
+          Excisor's Distillation/$ would.",
+          remove_from: "Removes the key-value pair from the Dictionary, pushing the \
+          previous value, or $(l:patterns/consts#hexcasting:const/null)$(thing)Null/$ \
+          if no value was present.",
+          index_of: "Pushes the value present at the provided key, or $(l:patterns/consts\
+          #hexcasting:const/null)$(thing)Null/$ if no value was present.",
+          dict_keys: "Pushes a list of the keys present in the Dictionary.",
+          dict_vals: "Pushes a list of the values present in the Dictionary.",
+          dict_ents: "Pushes a list of the key-value pairs in this Dictionary, each being \
+          a 2 element list."
+        },
+        uiua: {
+          "": "Advanced List Operators",
+          uiua_take: "Keeps elements of the list based on the second argument. If it's a \
+          number and positive, it keeps the first $(o)n/$ elements of the list, if \
+          negative; the last $(o)n/$. If given a list, then its elements are treated as \
+          indices to keep.",
+          uiua_drop: "The exact inverse of $(l:patterns/uiua#hexthings:uiua_take)$(action)\
+          Retention Distillation/$, dropping the specified elements instead of dropping the \
+          rest.",
+          uiua_rotate: "Shifts the contents of the list by the specified amount, wrapping elements \
+          that go \"outside\" the list.",
+          uiua_where: "Pushes a list containing the indices of values that are \
+          $(l:patterns/logic#hexcasting:bool_coerce)considered true by Nature/$.",
+          div: "Pushes a list containing pairs of values corresponding to the values at that \
+          index in each list.",
+          mul: "Pushes a list containing every combination of elements between the two lists."
+        }
+      },
+      info: {
+        iota_embedding: {
+          "title": "Iota Embedding",
+          "text": {
+            "1": "In my studies, I've discovered a way to... \"embed\" iota within \
+            a hex itself, allowing me to avoid the need to reconstruct them with \
+            every cast. This becomes especially useful when combined with \
+            $(l:items/hexcasting)$(item)casting items/$, allowing for much faster \
+            casts, or simply making the process of using the hex within them easier.",
+            "2": "Typically, this process involves starting an Introspection-\
+            Retrospection pair, using a placeholder pattern, modifying the list \
+            after the fact using $(l:patterns/lists#hexcasting:index_of)$(action)\
+            Locator's Distillation/$ and $(l:patterns/lists#hexcasting:replace)\
+            $(action)Surgeon's Exaltation/$, and placing a $(l:patterns/lists\
+            #hexcasting:splat)$(action)Flock's Disintegration/$ afterwards to \
+            access the iota — a very annoying and time-consuming process, certainly. \
+            It does seem my forays into this art are viewed favorably by Nature, \
+            as I've recently found two patterns for simplifying the process."
+          }
+        }
+      },
+      noop_examples: {
+        "header": "Patience Patterns",
+        "text": "Some examples of Patience patterns that can be used."
+      }
+    }
+  },
+
+  hexcasting: {
+    action: {
+      "hexthings:": {
+        noop: "Patience",
+        insert: "Flattening Exaltation",
+        unquote: "Introjection",
+        requote: "Retrojection",
+        isgreatersent: "Shard Reflection",
+        empty_dict: "Impasse Reflection",
+        dict_keys: "Accessor's Purification",
+        dict_vals: "Accessed's Purification",
+        dict_ents: "Entry Purification",
+        uiua_take: "Retention Distillation",
+        uiua_drop: "Rejection Distillation",
+        uiua_rotate: "Ferris Distillation",
+        uiua_where: "Deduction Purification"
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+        "hexthings:": {
+        },
+      },
+    },
+    special: {
+      "hexthings:": {
+        noop: "Patience"
+      }
+    },
+    mishap: {
+      "invalid_unquote": "Did not first cast Introjection.",
+      "invalid_key_type": "An iota of type %s is not allowed as a key.",
+      invalid_value: {
+        class: {
+          int_list: "a list of numbers"
+        }
+      }
+    }
+  },
+
+  text: {
+    "autoconfig.hexthings": {
+      title: "HexThings Config",
+
+      category: {
+        client: "Client",
+        server: "Server",
+      },
+
+      option: {
+        client: {
+          dummyClientConfigOption: {
+            "": "Dummy Client Config Option",
+            "@Tooltip": "This is an example of a client-side config option that accepts a boolean.",
+          },
+        },
+
+        server: {
+          dummyServerConfigOption: {
+            "": "Dummy Server Config Option",
+            "@Tooltip": "This is an example of a server-side config option that accepts an integer.",
+          },
+        },
+      },
+    },
+  },
+}

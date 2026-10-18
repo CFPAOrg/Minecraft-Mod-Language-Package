@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity-druid-pack/1.20/vanity_druid)

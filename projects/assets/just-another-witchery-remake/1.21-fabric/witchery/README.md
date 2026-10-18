@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/just-another-witchery-remake/1.21/witchery)

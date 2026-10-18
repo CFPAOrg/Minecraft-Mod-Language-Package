@@ -1,0 +1,369 @@
+{
+  mediatransport: {
+    book: {
+      category: {
+        interop: {
+          figura: {
+            "": "Figura",
+            desc: "这些叫作$(thing)形象/Avatar/$ 的构造体确实强大，只是操控起来有些烦人。"
+          }
+        }
+      },
+      patterns: {
+        figura: {
+          "": "传递图案",
+          intro: "",
+          send_fsb: "将栈顶 iota 发送至以太，以便我当前的形象接收。可能会因$(l:hexcasting:interop/figura/mishaps)多种理由$(/l)而失败。固定消耗 1 点“发送能量”。",
+          send_other: "将栈顶 iota 发送出去，以便栈顶往下第二位置处的玩家接收。它所用的接收器似乎独立于同类法术。通常消耗 2 点“发送能量”，但可能因为服务端配置不同而变化。",
+          recv_fsb: "从$(thing)接收队列/$中获取下一个 iota，队列为空会招致$(l:hexcasting:interop/figura/mishaps)事故$(/l)。",
+          check_queue: "获取队列中 iota 的个数。",
+          check_rate_limit: "查询剩余的“发送能量”点数。",
+          send_server_info_a: "请求自然发送其对我当前所用形象的首选项。消耗 1 点“发送能量”。详情参见$(l:https://penguinencounter.github.io/mediatransport/v/latest/main/en_us/mediatransport_virtual/protocol)在线协议文档$(/l)。",
+          send_server_info_b: "请求自然发送其对我当前所用形象的首选项。消耗 1 点“发送能量”。详情参见$(l:hexcasting:mediatransport_virtual/protocol)协议文档$(/l)。",
+        },
+      },
+      interop: {
+        figura: {
+          about: {
+            "": "传递",
+            "1": "我找到了其他发现$(hex)咒法学/$这门技艺的人的笔记。笔记中我能理解的部分都已摘抄在此，但最后一部分里到处都是术语黑话，以至于完全无法理解。也许我应该去了解了解笔记中提及许多次的“$(thing)形象/$”的学问？",
+            "2": "这些匠师与$(thing)形象/$交流时用的方法较为原始，但随后不久自然似乎就专门为此新创了图案。自然扭曲了 iota 的形态，以提高传递的效率和吞吐量，大概算是某种标准惯例吧。倘若凭肉眼观察扭曲后的 iota，看见的只会是方框和各种乱码。",
+            "3": "创作$(thing)形象/$的匠师们貌似没有遇到读不懂的问题，而且也找到了解码方法。后方是他们留下的笔记，谨供参照。不过说真的，我真不太懂到底发生了什么。",
+            "A": "我们发现（创造？）了些新法术。它们能令形象和咒术直接交流；不会再因为滥发信息被踢了！$(br2)我们中对数据了解较多的人成功解码了格式。整个协议均与字节对齐，且在数据传递中用到了 $(#8bf)Buffer/$。（换句话说，用完记得关闭！）",
+            "B": "从我们的观察出发，可以发现每个 iota 均以单个字节的$(#8bf)类型/type/$ 起始，而后跟随 0 字节或若干字节的$(#8bf)数据/data/$。所有多字节格式均采用大端序。（也是 Buffer 读取方法默认采用的。）$(br2)",
+            "C1": "可惜的是，这本笔记有不少局限，实在不够方便，没法在这里写明格式细节。也许可以在$(l:https://penguinencounter.github.io/mediatransport/v/latest/main/en_us/mediatransport_virtual/protocol)更灵活的载体$(/l)上试试看？",
+            "C2": "格式的全部细节见此：$(l:hexcasting:mediatransport_virtual/protocol)Iota 传递协议$(/l)。",
+            "D": "不过，自然并不乐意大批量传递 MiB 级别的数据；为避免此类滥用，传递时需考虑到“发送能量”。在正常情况下其能迅速恢复，而所有与传递相关的操作都会消耗发送能量。",
+            "E": "而当“发送能量”耗尽时，试图提交更多 iota 会招致事故。为避免其耗尽，可使用$(l:hexcasting:patterns/figura#mediatransport:check_rate_limit)配额之精思$(/l)加以调控。"
+          },
+          mishaps: {
+            "": "传递事故",
+            "1": "形象传递所用的语言相当深奥，若使用不当，可能会产生多种错误。",
+            // first italic part is the same as first part of the mishap text
+            init_fail: "$(italic)Figura 服务器未初始化……/$$(br2)服务端配置错误，或所处宇宙为“集成服务端”时出现。产生灰色火花，并使我生出一种失望感。",
+            bad_type: "$(italic)无法发送……因为该 iota 类型无法发送/$$(br2)自然不接受发送该类型 iota 的请求。产生黑色火花。$(br2)$(italic)想支持传递某种 iota？请到 $(l:https://github.com/penguinencounter/mediatransport/issues)GitHub$(/l) 处询问！/$",
+            corrupted: "$(italic)无法发送……因为信息损坏或格式错误/$$(br2)某些东西发生了严重的损坏。产生黑色火花，也许也应该知会相关的 GitHub 问题跟踪器。",
+            matrix_too_large: "$(italic)无法发送……因为矩阵过大$(br)无法发送……因为矩阵行数过多$(br)无法发送……因为矩阵列数过多/$$(br2)试图发送的矩阵元素过多，或行数/列数超出了 255。产生黑色火花。",
+            iota_too_large: "$(italic)无法发送：传递所用空间最少为……/$$(br2)所发送 iota 占用的空间比允许的最大值还要大。产生黑色火花。$(br2)$(italic)注意：服务器管理员可在配置中更改上限。/$",
+            iota_too_large_inter: "$(italic)无法发送至其他玩家：传递所用空间最少为……/$$(br2)向其他玩家的形象发送 iota 时，其占用的空间比允许的最大值还要大。产生黑色火花。$(br2)$(italic)注意：服务器管理员可在配置中更改上限。/$",
+            radio_silence: "试图接受 iota，而实际无 iota 可供接受（也即队列为空）。产生白色火花，并令我耳中回响起$(k)受折磨之意识/$的尖啸。",
+            rate_limit_exceeded: "“发送能量”耗尽。也许使用提交 Iota 时要再凝练些？产生橙色火花，并产生某物破碎的声音。",
+            "2": "似乎这里的大部分错误都只在从自然的领域$(italic)发送/$（或者说“提交”）数据时出现。自然对接受错误数据似乎更宽容……因为这不会导致崩溃，而是会产出它最喜爱的非错误：垃圾！$(br)不过这也让我们很难确定发送失败的原因。我们在此汇总了一份检查表：",
+            "3": "- 自然未对该数据的类型（也即首字节）提供表示方法$(br)- 传递末尾缺失数据$(br)- 数据过大（此类别的空间占用上限可能和另一种过大导致的错误不同……）$(br)- 上一条的变种，受同样的矩阵长宽限制约束（尽管只要行数或列数过多，数据必定会过大）",
+            "4": "还需注意，列表可能会部分传递失败。这可能导致解码器“出轨”，以至于将类型错误解读为数据，反过来也有可能。祝好运！"
+          }
+        }
+      },
+      pluralizations: {
+        // 0, 1, "" (any)
+        byte: {
+          "1": "%s字节",
+          "": "%s字节"
+        }
+      },
+      channels: {
+        "": "FSB 频道",
+        "A1": "这些文本摘抄自某份文件边沿处潦草写下的内容……不太记得是什么了。好奇怪。",
+        "A2": "$(li)$(l:hexcasting:patterns/figura#mediatransport:send_fsb)提交 Iota$(/l) - transport_received/$$(li)$(l:hexcasting:patterns/figura#mediatransport:send_other)提交 Iota，第二型$(/l) - transport_external_received/$$(li)$(l:hexcasting:patterns/figura#mediatransport:recv_fsb)接受 Iota$(/l) - transport_send",
+        "og": "与自然对歌的正确方法",
+        "B1": "……啊，我想起来了！",
+        doc: {
+          "1": "由<a href=\"#patterns/figura@mediatransport:send_fsb\">提交 Iota</a>发送的数据会送至<code>server_packets.transport_received</code>，如下：",
+          "code1": "\
+          .function server_packets.transport_received(data)\n\
+          .    data:close()\n\
+          .end\n\
+          ",
+          "2": "其他施法者由<a href=\"#patterns/figura@mediatransport:send_other\">提交 Iota，第二型</a>发送的数据会送至另一个频道：<code>server_packets.transport_external_received</code>",
+          "code2": "\
+          .function server_packets.transport_external_received(data)\n\
+          .    data:close()\n\
+          .end\n\
+          ",
+          "3": "最后，如需发送数据，应在<code>:sendPacket</code>中使用<code>\"transport_send\"</code>：",
+          "code3": "\
+          .server_packets:sendPacket(\"transport_send\", buffer)\n\
+          .buffer:close()\n\
+          "
+        }
+      },
+      protocol: {
+        "": "Iota 传递协议",
+        "1": "啊，这才叫极致的灵活嘛！我在此记录了若干张格式图表。",
+        // text in {curly brackets} are keywords. Don't translate the text inside.
+        // btw this section uses HTML
+        "notice": "本文档适用于特定版本的协议（{sym:protocol_version}：1）。",
+        "intro1": "与先前描述的一样，iota由1字节的{symdef:type}起始，后跟一定量的{symr:data}，数据量由类型决定。",
+        "intro2": "每种iota都有其独特的{sym:type}值，且各类型的{symr:data}格式各不相同。",
+        stdtypes: "内置类型",
+        garbage: {
+          "": "<code>ff</code>：垃圾",
+          "description": "这些类型不带数据。同时因为垃圾用于表示解码错误，通常不建议专门传递垃圾。",
+        },
+        truefalse: {
+          "": "<code>02</code>：True和<code>03</code>：False",
+        },
+        "null": {
+          "": "<code>04</code>：Null",
+        },
+        double: {
+          "": "<code>05</code>：双精度浮点数",
+          "description": "终于是有点意思的东西了！咒法学采用IEEE 754双精度浮点数（即8字节、64位），此处{symdef:double_value}中使用的就是该值。"
+        },
+        pattern: {
+          "": "<code>06</code>：图案",
+          "description": "为致敬Hexxy，图案的类型值选用了6。图案的编码有些复杂：",
+          "1": "首先是代表{symdef:dir}的1个字节。其值与内部表示有对应关系，具体的外在表现如下：0 = 东北，1 = 东，2 = 东南，3 = 西南，4 = 西，5 = 西北。",
+          "2": "随后是图案的角度数目，为一4字节整数。其值等于笔画数减1，也等于{symdef:pattern_len}。",
+          "3": "而后是{symdef:angles}本身，各角度占1个字节。其值同样与内部表示有对应关系，具体表现如下：0 = 前方，1 = 右前方，2 = 右后方，3 = 后方，4 = 左后方，5 = 左前方。"
+        },
+        vec3: {
+          "": "<code>07</code>：向量",
+          "description": "向量即是按序排列的三个双精度浮点数：{symdef:vec_x}、{symdef:vec_y}、{symdef:vec_z}。"
+        },
+        list: {
+          "": "<code>08</code>：列表",
+          "description": "列表是咒法学中的主要结构化工具，且其表示与图案类似：首先是4字节的{symdef:list_len}，后方跟随任意类型的iota表示。",
+          "warning": "形象具有一次性创造一整个iota结构的能力，自然似乎在这方面有些力不从心，没法很好地满足需求（……至少默认是这样）；你有可能会接收到垃圾"
+        },
+        moreiotas: "MoreIotas类型",
+        string: {
+          "": "<code>01</code>：字符串",
+          "description": "字符串和其他可变长度的iota类似，开头处有一4字节的{symdef:str_len}，后方再跟随数据（此类型中为{symdef:string}）。字符串的预期编码为UTF-8。"
+        },
+        matrix: {
+          "": "<code>40</code>：矩阵",
+          "description": "矩阵是由双精度浮点数组成的二维数组。",
+          "1": "首先是1字节的{symdef:rows}，后方跟随1字节的{symdef:cols}。",
+          "2": "然后是矩阵的{symdef:matrix_contents}——每个元素都是一个双精度浮点数。各行按序排列（例如2×2矩阵，其顺序如下：首先是第1行第1列的元素、而后是第1行第2列的元素，然后再跟随第2行的元素）。"
+        },
+        hexpose: "Hexpose类型",
+        text: {
+          "": "<code>50</code>：文本",
+          "description": "此格式似乎无法传递文本iota（又称“文形”）的装饰属性。不过无论如何，文本本身还是可以传递的。文本iota的格式与字符串一致："
+        },
+        meta: "非iota",
+        meta_intro: "这些数据似乎并不对应某种iota！它们无法发送给自然，且只会在特殊情况下出现。",
+        server_info: {
+          "": "<code>fe</code>：配置数据",
+          "description": "这个信息团是自然对<a href=\"#patterns/figura@mediatransport:send_server_info\">查询配置</a>的回应。",
+          "1": "首先是协议的{symdef:protocol_version}，为一2字节“短整型”。本文档所述协议的<em>版本号</em>为<em>1</em>。",
+          "2": "然后是提交Iota可传递数据的最大空间占用量，以字节计。",
+          "3": "随后是提交Iota，第二型可传递数据的最大空间占用量……",
+          "4": "再是形象可接收数据的最大量。",
+          "5": "而后是某时刻下“发送能量”的最大值，为一双精度浮点数……",
+          "6": "以及“发送能量”每刻的恢复量……",
+          "7": "最后，是提交Iota，第二型的“发送能量”消耗量。"
+        },
+        // that's the end of the HTML
+      },
+      api: {
+        "": "Figura API 文档",
+        "1": "我在其他笔记的补充材料中发现了这则条目。",
+        // We are once again in HTML land
+        intro1: "在数据交流中，形象端的操作也比较复杂，也许是因为<s>完全无人维护wiki</s>……记录实践不太有效。与自然交互所用系统的信息来源似乎只有内置文档，且许多内容尚不完善。",
+        intro2: "（如果希望查阅这些文档，可以咏唱<code>/figura docs globals server_packets</code>及其各个子分支。）",
+        intro3: "受此影响，我写了这篇补充文档用作参照材料，希望可以让读者对API的工作方式有一定程度的了解。",
+        overview: {
+          "": "<code>server_packets</code>概览",
+          "1": "<code>server_packets</code>的内部名称为<code>ServerPacketsAPI</code>，其功能和我们更为熟悉的<code>pings</code>类似，两者只有少量区别。",
+          "2": "接收数据时，可使用（你可能更熟悉的）函数定义语法：",
+          // this is a codeblock! keep the '\n\' on the right of each line, as well as the '.' at the beginning.
+          // probably don't translate code
+          "code1": "\
+          .function server_packets.packet_id(data)\n\
+          .  -- 在此处理数据！\n\
+          .end\n\
+          ",
+          "3": "与pings相比，server_packets的接收器永远只会有一个参数，应传入内含数据包中数据的{sym:Buffer}。",
+          "4": "务必<em>关闭</em>你的{sym:Buffer}！倘若不关闭，Buffer槽会保持在“已使用”状态，最终会导致Buffer耗尽。（从我的研究看来，大多数人根本不知道Buffer的数量有上限。但不管怎么说，它是权限系统的一部分，而不关闭Buffer是产生潜在漏洞的最简单方式之一。）",
+          "5": "另一则和pings的区别，在于此包要求显式发送数据，而调用接收器函数并不会激活此功能。换言之，调用<code>server_packets.packet_id()</code><em>不会发送数据</em>。发送数据包时，应当使用<code>server_packets:sendPacket(id, data)</code>，其中<code>id</code>是<code>string</code>，而<code>data</code>需为<code>Buffer</code>。",
+          "6": "发送前务必<a href='#mediatransport-setPosition'>重置Buffer指针</a>。",
+        },
+        buffers: {
+          "": "{symdef:Buffer}快速介绍",
+          "h1": "Buffer的官方文档可通过咏唱<code>/figura docs globals data Buffer</code>获取。",
+          "h2": "也可在<a href='https://applejuiceyy.github.io/figs/latest/Buffer/'>FIGS</a>处和<a href='https://figura-wiki.pages.dev/globals/Data/Buffer'>Figura维基</a>处访问。",
+          "1": "Buffer是读取结构化数据（如自然提供的数据）的便捷接口。就好像它<a href='https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/DataOutputStream.html'>有个参考原型</a>似的……",
+          manage: {
+            new: {
+              "": "新建Buffer：<code>data:createBuffer()</code>",
+              "1": "新建Buffer时，应使用<code>data:createBuffer()</code>，它会返回一个新Buffer对象。",
+              "2": "也可在<code>createBuffer</code>的参数中指定初始分配的内存大小，但除非有极其严格的限制，Figura默认会自动扩展Buffer，因此并不一定要指定此参数。",
+            },
+            close: {
+              "": "收拾残局：<code>:close()</code>",
+              "1": "如上文所警告的，Buffer的数量有上限，且其与权限系统挂钩。",
+              "2": "处于<em>Default</em>等级时，上限为<b>4个Buffer</b>。",
+              "3": "处于<em>High</em>等级时，上限为<b>16个Buffer</b>。",
+              "4": "处于<em>MAX</em>等级时，上限为<b>32个Buffer</b>。",
+              "5": "对Buffer调用<code>close()</code>即可释放。释放后不可再获取其内容。"
+            },
+            code1: "\
+            .local buf = data:createBuffer()\n\
+            .-- （过一段时间之后……）\n\
+            .buf:close()\n\
+            ",
+            setPosition: {
+              "": "移动指针：<code>:setPosition(pos)</code>",
+              "1": "读取和写入Buffer时，实际用到的是在数据中移动的“指针”。",
+              "2": "每次读写数据时，即会在指针所处位置执行对应操作，并<em>自动</em>将指针<em>移动</em>到下一字节。可借此方便地按序读写多个值。",
+              "3": "不过，手动移动指针依然有其用途。譬如说，需将写入Buffer的数据读取回来，应将指针移动到0号位置（即“重置”）：",
+              code: "\
+              .buf:writeByte(5)\n\
+              .buf:writeDouble(3.14159)\n\
+              .buf:setPosition(0) -- 移回开头\n\
+              "
+            },
+          },
+          write: {
+            "": "写入数据",
+            "hat": "本节仅讨论自然会接受的类型。Buffer确实支持其他类型，如需获取列表，请参阅官方文档。",
+            "1": "有多种方法可向Buffer写入各类型的数据。它们都会将指针移至<em>所写数据的末尾</em>，因此连续多次调用相当于前后拼接数据。",
+            "2": "对于“<em>x</em>字节整数”，应使用下列方法：",
+            "3": "对于“双精度浮点数”，应使用下列方法：",
+            methods: {
+              write: "<code>:write(n)</code>：1字节，如{sym:type}、图案的{sym:dir}、矩阵的{sym:rows}和{sym:cols}。",
+              writeInt: "<code>:writeInt(n)</code>：4字节，通常用于描述数据的长度",
+              writeDouble: "<code>:writeDouble(n)</code>：8字节，数的{sym:double_value}、向量的{sym:vec_x}、{sym:vec_y}、{sym:vec_z}。"
+            }
+          },
+          read: {
+            "": "读取数据",
+            "1": "与写入数据类似，Buffer也支持多种读取方法。每个读取方法同样都会将指针移至<em>所读数据的末尾</em>。",
+            methods: {
+              read: "<code>:read()</code>：1字节，如{sym:type}、图案的{sym:dir}、矩阵的{sym:rows}和{sym:cols}。",
+              readShort: "<code>:readShort()</code>：2字节，协议{sym:protocol_version}。",
+              readInt: "<code>:readInt()</code>：4字节，通常是长度，也可以是配置参数。",
+              readDouble: "<code>:readDouble()</code>：8字节，数的{sym:double_value}、向量的{sym:vec_x}、{sym:vec_y}、{sym:vec_z}，也用于与“发送能量”相关的配置值。"
+            }
+          },
+        },
+        // End of HTML
+      },
+      // here's a bunch of things that the renderer puts together
+      // to form all of those symbols and markup
+      symbols: {
+        type: "类型",
+        data: "数据",
+        value: "值",
+        dir: "朝向", // direction
+        length: "长度", // length
+        angles: "角度",
+        x: "x",
+        y: "y",
+        z: "z",
+        iotas: "iota",
+        string: "字符串",
+        contents: "内容",
+        rows: "行数",
+        cols: "列数", // columns
+        rowscols: "行数*列数",
+        version: "版本号",
+        max_send: "最大发送",
+        max_inter_send: "最大玩家间发送",
+        max_recv: "最大接收",
+        max_power: "最大能量",
+        power_regen_rate: "能量恢复速率",
+        inter_cost: "玩家间发送消耗",
+        Buffer: "Buffer", // Don't translate - Figura type
+      },
+      admin: {
+        // These entries are only rendered in hexdoc, so we don't have to worry
+        // about not overflowing the page!
+        fsb: {
+          "": "关于 FSB",
+          "1": "mediatransport 的运作依赖于 $(n)Figura Server Backend/$（Figura 服务端后端，又称 $(n)FSB/$）。FSB 是 1.20.1 版本下 Figura 开发版的特性，允许在服务端中托管形象和 pings，而不需要通过全局后端处理。",
+          "2": "FSB $(n)在单人游戏和 LAN 世界中无效/$，因此你可能需要使用专用服务器来测试咒术。感谢你游玩我们的附属！:)$(br2)$(l:https://github.com/penguinencounter/Figura/releases/tag/figura-fsb-placeholder)GitHub 上的 Figura FSB 构建文件$(/l)",
+        },
+        config: {
+          "": "mediatransport 配置",
+          "1": "mediatransport 有多条服务端配置选项，能用于限制形象与施法环境间传递的数据。",
+          maxSize: {
+            "": "空间占用限制",
+            "1": "所用配置值均以字节为单位。$(br2)$(n)maximumSendSize/$：$(l:hexcasting:patterns/figura#mediatransport:send_fsb)提交 Iota$(/l) 可发送的最大数据量。$(br2)$(n)maximumInterSendSize/$：$(l:hexcasting:patterns/figura#mediatransport:send_other)提交 Iota，第二型$(/l)可发送的最大数据量。$(br2)$(n)maximumRecvSize/$：来自 Figura 的最大接收数据量。超出此限制会向队列压入垃圾。$(br2)$(n)matrixMaxArea/$：MoreIotas 独占；设定收发矩阵时其最大元素数（宽*高），此配置项独立于其他限制，也独立于最大行数和列数（255）配置。"
+          },
+          filterIntro: {
+            "": "过滤器",
+            "1": "mediatransport 有三个独立的$(italic)过滤器/$配置组，用以控制可以发送何种 iota。每个过滤器都由 $(n)mode/$（模式）和$(n)过滤项列表/$组成。$(br2)$(n)mode/$ 可以是 $(bold)\"Block\"/$ (黑名单，禁用特定类别）或 $(bold)\"Allow\"/$（白名单，仅允许特定类别）。$(br2)过滤项列表用于指明过滤器所作用类别的资源位置。例如，为禁用发送列表，应将 $(n)mode/$ 设置为 $(bold)\"Block\"/$，列表设置为 $(bold)[\"hexcasting:list\"]/$。$(br2)需注意，如果 mediatransport 没有适配某类型的编解码器，向白名单加入该 iota 类型并不会自动使得其可发送。"
+          },
+          sendFilters: {
+            "": "发送过滤器",
+            "1": "和空间占用限制类似，$(l:hexcasting:patterns/figura#mediatransport:send_fsb)提交 Iota$(/l) 和$(l:hexcasting:patterns/figura#mediatransport:send_other)提交 Iota，第二型$(/l)使用的过滤器是不同的。$(br2)$(n)sendFilter/$ 和 $(n)sendFilterMode/$ 适用于提交 Iota。$(n)interSendFilter/$ 和 $(n)interSendFilterMode/$ 适用于提交 Iota，第二型。$(br2)如果这些过滤器中阻挡了某种 iota，发送相关 iota 时即会招致“Iota 不可提交”事故（就算在列表中也一样）。"
+          },
+          recvFilters: {
+            "": "接收过滤器",
+            "1": "$(n)recvFilter/$ 和 $(n)recvFilterMode/$ 用于控制可从 Figura 处接收何种 iota。$(br2)此过滤器阻挡的 iota 会替换成垃圾，但包含此类型 iota 的容器不受影响。例如，在列表不被阻挡的情况下，包含非法 iota 的列表只会换为包含垃圾的列表。"
+          },
+          ratelimits: {
+            "": "速率限制",
+            "1": "“发送能量”其实只是不断随时间递增的数，其会在达到玩家的上限时停止递增。此系统的平衡性基础是单次使用$(l:hexcasting:patterns/figura#mediatransport:send_fsb)提交 Iota$(/l) 会消耗 1.00 点“能量”。$(br2)$(li)$(n)rateLimitChargePerTick/$ 控制“能量”的增长速度。默认值为 1.0，也即平均来说，玩家每一刻可使用 1 次提交 Iota。/$$(li)$(n)rateLimitMaxValue/$ 是玩家某一时刻可持有的最大“能量”值。将其设为小于 1 意味着提交 Iota 永远不会成功执行。将其设为大于 1，即可让玩家短暂无视速率上限“爆发式”发送数据，只要其综合速率未达限制即可。/$$(li)$(n)interSendConstMultiplier/$ 用于配置提交 Iota，第二型相对提交 Iota 的消耗量。因为提交 Iota 的消耗为 1，此值等价于提交 Iota，第二型的消耗。"
+          },
+        }
+      },
+      figura_see_also_1: "我在这些条目中整理了此处未提及的内容。",
+      see_also: "延伸阅读",
+      index: {
+        "": "传递：目录",
+        desc: "所有与传递和 Figura 相关条目的目录。",
+      },
+      blank: "$(#b0b0b0)应排版需求，此页留白/$",
+      blank_dark: "$(#504060)应排版需求，此页留白/$",
+    },
+    // "can't send (iota) because..."
+    not_sendable: {
+      bad_type: "该iota类型无法发送",
+      corrupt: "信息损坏或格式错误",
+      matrix_too_big: "矩阵过大",
+      matrix_too_many_rows: "矩阵行数过多（最大255行）",
+      matrix_too_many_cols: "矩阵列数过多（最大255列）",
+    },
+    radio_silence_options: {
+      // translators: good luck, sorry (you can replace all of these with the 'help' one if you want)
+      crickets: "*蟋蟀叫*",
+      ellipsis: "……",
+      help: "接收队列为空",
+      eof: "java.util.NoSuchElementException: 集合为空",
+      insanity: "你听见了低语，但你无法解读低语的意义。",
+      informal: "这里没东西。",
+    },
+    mishap_names: {
+      init_fail: "传递初始化失败",
+      bad_type: "Iota 不可提交",
+      corrupted: "Iota 损坏",
+      matrix_too_large: "矩阵过大",
+      iota_too_large: "发送过大",
+      iota_too_large_inter: "发送至其他过大",
+      radio_silence: "无可接收",
+      rate_limit_exceeded: "传递过快",
+    },
+  },
+  hexcasting: {
+    action: {
+      "mediatransport:": {
+        send_fsb: "提交 Iota",
+        send_other: "提交 Iota，第二型",
+        recv_fsb: "接受 Iota",
+        check_queue: "信号量之精思",
+        check_rate_limit: "配额之精思",
+        send_server_info: "查询配置",
+      },
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+        "mediatransport:": {
+          check_queue: "信号量之精思",
+        },
+      },
+    },
+    mishap: {
+      not_sendable: "无法发送%s",
+      not_sendable_ex: "无法发送%s，因为%s",
+      too_large_to_send: "无法发送：传递所用空间最少为%s B，但服务端配置中的上限为%s B",
+      too_large_to_send_inter: "无法发送至其他玩家：传递所用空间最少为%s B，但服务端配置中的上限为%s B",
+      fsb_not_initialized: "Figura服务器未初始化（请告知管理员换用专用服务器，并安装FSB）",
+      radio_silence: "%s", // see mediatransport.radio_silence_options
+      rate_limit_exceeded: "数据发送速度过快（需要%s，仅%s可用；+%s/刻，最大%s）",
+    }
+  },
+}

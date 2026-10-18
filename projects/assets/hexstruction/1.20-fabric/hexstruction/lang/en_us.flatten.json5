@@ -1,0 +1,81 @@
+{
+  hexcasting: {
+    action: {
+      "hexstruction:": {
+        save_structure: "Devour Structure",
+        load_structure: "Actualize Structure",
+        display_structure: "Visualize Structure",
+        mirror_front_back: "Mirror Purification Z",
+        mirror_left_right: "Mirror Purification X",
+        mirror_vertical: "Mirror Purification Y",
+        rotate_clockwise: "Rotation Purification Clockwise Y",
+        rotate_counterclockwise: "Rotation Purification Counter-Clockwise Y",
+        rotate_clockwise_x: "Rotation Purification Clockwise X",
+        rotate_counterclockwise_x: "Rotation Purification Counter-Clockwise X",
+        rotate_clockwise_z: "Rotation Purification Clockwise Z",
+        rotate_counterclockwise_z: "Rotation Purification Counter-Clockwise Z",
+        bounding_box: "Bounding Purification",
+        transformations: "Transformation Purification"
+      },
+      book: {
+        "hexstruction:": {
+          mirror_front_back: "Mirror Prfn. Z",
+          mirror_left_right: "Mirror Prfn. X",
+          mirror_vertical: "Mirror Prfn. Y",
+          rotate_clockwise: "Rotation Prfn. CW Y",
+          rotate_counterclockwise: "Rotation Prfn. CCW Y",
+          rotate_clockwise_x: "Rotation Prfn. CW X",
+          rotate_counterclockwise_x: "Rotation Prfn. CCW X",
+          rotate_clockwise_z: "Rotation Prfn. CW X",
+          rotate_counterclockwise_z: "Rotation Prfn. CCW X",
+          bounding_box: "Bounding Prfn.",
+          transformations: "Transformation Prfn."
+        }
+      }
+    },
+  },
+  hexstruction: {
+    book: {
+      patterns: {
+        actions: {
+          structures: {
+            "": "Structure Iota",
+            "0": "Inspired by my ability to both break and place blocks, I've devised a method to expand those capabilities. By breaking down a portion of the world itself into the mere concept of that space, I can store entire regions in my mind as a Structure iota, which I can manipulate and place back into the world. Unfortunately, it appears nature rejects my attempts to store $(l:basics/geodes)$(item)Budding Amethyst/$ and its ilk.",
+            "1": "Nature prefers to conserve matter; as a result, every copy of the same Structure iota will reference the same structure. Once one is used to place the structure back into the world, no other copy will be able to do the same. Coercing the iota to a boolean will return whether or not the iota remains valid. When \"devouring\" a structure from the world, it appears to define an \"origin\" at the lower North-West corner of the supplied bounds. This appears to remain true even after applying any number of transformations to the structure.",
+            mirror_front_back: "Flips a stored Structure front-to-back, or across the Z-axis.",
+            mirror_left_right: "Flips a stored Structure left-to-right, or across the X-axis.",
+            mirror_vertical: "Flips a stored Structure top-to-bottom, or across the Y-axis.",
+            rotate_clockwise: "Rotates a stored Structure 90-degrees clockwise about the Y-axis.",
+            rotate_counterclockwise: "Rotates a stored Structure 90-degrees counterclockwise about the Y-axis.",
+            rotate_clockwise_x: "Rotates a stored Structure 90-degrees clockwise about the X-axis.",
+            rotate_counterclockwise_x: "Rotates a stored Structure 90-degrees counterclockwise about the X-axis.",
+            rotate_clockwise_z: "Rotates a stored Structure 90-degrees clockwise about the Z-axis.",
+            rotate_counterclockwise_z: "Rotates a stored Structure 90-degrees counterclockwise about the Z-axis.",
+            bounding_box: "Removes a Structure from the stack, returning its dimensions in the format [x, y, z].",
+            transformations: "Removes a Structure from the stack, returning its transformations as a list in the format [mirror, vertical mirror, rotationX, rotationY, rotationZ].",
+            "transformations.0": "The values use the following key:$(br)MIRROR$(br)None -> 0; Front-Back -> 1; Left-Right -> 2$(br)$(br)VERTICAL MIRROR$(br)Not Mirrored -> 0; Mirrored -> 1$(br)$(br)ROTATION$(br)No Rotation -> 0; 90 CW -> 1; 180 CW -> 2; 90 CCW -> 3"
+          }
+        },
+        spells: {
+          "": "Structures",
+          save_structure: "Removes the locations of two corners from the stack, then consumes a region of space defined by those two corners, storing the result in a Structure iota.$(br)Costs about an eighth of one $(l:items/amethyst)$(item)Amethyst Dust/$ for every block consumed.",
+          load_structure: "Removes the location of the structure's origin and a structure from the stack, then attempts to place the structure at the origin, erasing the structure from all memory. Mishaps if any part of the structure overlaps with another block.$(br)Costs about an eighth of one $(l:items/amethyst)$(item)Amethyst Dust/$ for every block placed.",
+          display_structure: {
+            "0": "Removes the location of the structure's origin and a structure from the stack, followed by a duration between 0 and 72000.",
+            "1": "Displays a phantom structure at that location for the specified duration (in ticks). Does not erase the structure from memory.$(br)Costs about a hundredth of one $(l:items/amethyst)$(item)Amethyst Dust/$ for every block displayed."
+          }
+        }
+      }
+    },
+    iota: {
+      structure: {
+        identifier: "Structure %s ",
+        display: "[MIRROR=%1$s, VERTICAL_MIRROR=%2$s, ROTATION={X:%3$s, Y:%4$s, Z:%5$s}]",
+        empty: "No Structure",
+        mishap: {
+          empty: "a linked structure"
+        }
+      }
+    }
+  }
+}

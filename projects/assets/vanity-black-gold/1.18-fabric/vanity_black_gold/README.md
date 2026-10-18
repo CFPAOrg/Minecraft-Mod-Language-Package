@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/vanity-black-gold/1.20/vanity_black_gold)

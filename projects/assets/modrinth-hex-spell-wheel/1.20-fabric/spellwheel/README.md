@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/modrinth-hex-spell-wheel/1.20/spellwheel)

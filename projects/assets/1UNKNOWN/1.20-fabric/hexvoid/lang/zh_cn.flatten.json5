@@ -1,0 +1,83 @@
+{
+  hexvoid: {
+    book: {
+      patterns: {
+        spells: {
+          hexvoid_spells: {
+            "": "Hexvoid 法术",
+            save_scent: "向栈返回你当前位置的现实气息。", // todo: not a spell
+            destabilize: "尝试让目标方块失稳。$(l)文档未完成：目标可为石英灌注石头和纹状晶体" // todo: documentation
+          },
+          hexvoid_great_spells: {
+            "": "Hexvoid 卓越法术",
+            activate_portal: "激活给定位置的注能定位核心，创建能存在给定时间的传送通道，时间以刻计。在同一维度内传送消耗 10 个充能紫水晶，跨维度则消耗 15 个；同时根据存在时间额外消耗充能紫水晶，耗量等于存在分钟数的平方。"
+          }
+        },
+      },
+    },
+    tooltip: {
+      portal_mapper: {
+        item: "当前存有一个核心"
+      }
+    }
+  },
+
+  hexcasting: {
+    action: {
+      "hexvoid:": {
+        save_scent: "保存现实气息",
+        activate_portal: "激活定位核心",
+        destabilize: "失稳化方块"
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+        "hexvoid:": {
+          save_scent: "保存现实气息",
+        },
+      },
+    },
+  },
+  block: {
+    hexvoid: {
+      portal_mapper_empty: "空定位核心",
+      portal_mapper_cartographer: "部分注能定位核心（制图师）",
+      portal_mapper_sniffer: "部分注能定位核心（嗅探兽）",
+      portal_mapper_full: "注能定位核心",
+      interstitial_stone: "虚隙石头",
+      interstitial_cobblestone: "虚隙圆石",
+      quartz_infused_stone: "石英灌注石头",
+      liquid_quartz: "液态石英",
+      carnivorous_wood: "噬肉木",
+      carnivorous_core: "噬肉核木",
+      carnivorous_leaves: "噬肉树叶",
+      carnivorous_sapling: "噬肉树苗",
+      crystal_sheen: "纹状晶体",
+      crystal_dull: "枯竭纹状晶体"
+    },
+  },
+  item: {
+    hexvoid: {
+      liquid_quartz_bucket: "液态石英桶"
+    }
+  },
+  itemGroup: {
+    hexvoid: "HexVoid"
+  },
+  error: {
+    hexvoid: {
+      missing_iota: "其中物品存有iota",
+      invalid_iota: "现实气息"
+    }
+  },
+  sound: {
+    hexvoid: {
+      ambient: {
+        interstitial_wastes: {
+          loop: "空洞的嗡鸣"
+        }
+      }
+    }
+  }
+}

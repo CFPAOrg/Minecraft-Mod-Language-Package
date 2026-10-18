@@ -1,0 +1,369 @@
+{
+  mediatransport: {
+    book: {
+      category: {
+        interop: {
+          figura: {
+            "": "Figura",
+            desc: "It appears that these constructs called $(thing)avatars/$ are quite powerful, if a bit annoying to work with."
+          }
+        }
+      },
+      patterns: {
+        figura: {
+          "": "Transport Patterns",
+          intro: "",
+          send_fsb: "Sends the iota on the top of the stack into the ether to be received by my current avatar. Can fail for $(l:hexcasting:interop/figura/mishaps)various reasons$(/l). Always costs a fixed 1 'sending power.'",
+          send_other: "Sends the iota on the top of the stack to be received by the player second from the top of the stack. It seems to have a separate receiver from the other one. Usually costs 2 'sending power', but this could be different depending on the server configuration.",
+          recv_fsb: "Retrieves the next iota from the $(thing)inbound queue/$, or $(l:hexcasting:interop/figura/mishaps)mishaps$(/l) if the queue is empty.",
+          check_queue: "Queries the number of iotas in the queue.",
+          check_rate_limit: "Queries the amount of 'sending power' remaining.",
+          send_server_info_a: "Asks Nature to send information about its preferences to my current avatar. Costs 1 'spending power'. See $(l:https://penguinencounter.github.io/mediatransport/v/latest/main/en_us/mediatransport_virtual/protocol)the online protocol documentation$(/l) for details.",
+          send_server_info_b: "Asks Nature to send information about its preferences to my current avatar. Costs 1 'spending power'. See $(l:hexcasting:mediatransport_virtual/protocol)the protocol documentation$(/l) for details.",
+        },
+      },
+      interop: {
+        figura: {
+          about: {
+            "": "Transports",
+            "1": "I appear to have discovered the notes of a collective of people who have also discovered the techniques of _Hexcasting. I've copied down what I could understand of the notes, but the last part is so filled with jargon as to be incomprehensible. Perhaps I need to understand more about the artistry of these '$(thing)avatars/$' I see mentioned throughout?",
+            "2": "It appears that Nature created new patterns for communicating specifically with $(thing)avatars/$ after the artists used more primitive methods to communicate rapidly. As seems to be standard, Nature has twisted the appearance of the now-familiar iotas in exchange for this increased efficiency and throughput; they appear as boxes and random symbols by my eyes.",
+            "3": "The $(thing)avatars/$ and their artists seem to not have this problem, and have figured out how to decode the mess. Here's the rest of their notes for reference. To be honest, I don't understand much of what's going on here.",
+            "A": "We've discovered (created?) a few new spells. They facilitate direct communication between avatars and hexes; no more getting kicked for spam!$(br2)Some of the more data-oriented of us have decoded the format. The entire thing is byte-aligned and uses $(#8bf)buffers/$ for data transfer. (that means we have to remember to close them!)",
+            "B": "Based on what we've seen, each iota starts with a single-byte $(#8bf)type/$ followed by zero or more bytes of $(#8bf)data/$. All multibyte forms are big endian. (that's the default for the Buffer read methods)$(br2)",
+            "C1": "Unfortunately, due to annoying restrictions with this unwieldy notebook, it's difficult to express the format in more detail here. Perhaps it would be easier in a $(l:https://penguinencounter.github.io/mediatransport/v/latest/main/en_us/mediatransport_virtual/protocol)more flexible medium$(/l)?",
+            "C2": "The format in its entirety is described here: $(l:hexcasting:mediatransport_virtual/protocol)Iota Transport Protocol$(/l)",
+            "D": "Moreover, Nature doesn't take kindly to being asked to send megabytes of data at a time; to prevent such (ab)use, there is a system of so-called \"sending power\". It refills quite rapidly (under normal circumstances), and every transmission-related action consumes some.",
+            "E": "When you run out of \"sending power\", trying to submit more iota will result in a mishap. To avoid running into the limit, $(l:hexcasting:patterns/figura#mediatransport:check_rate_limit)Quota's Reflection$(/l) can be useful."
+          },
+          mishaps: {
+            "": "Transport Mishaps",
+            "1": "Various things can go wrong when interacting with the esoteric language of avatar transports.",
+            // first italic part is the same as first part of the mishap text
+            init_fail: "$(italic)Figura server isn't initialized .../$$(br2)Occurs if the server is misconfigured or if this universe is an \"integrated server\". Causes grey sparks and a general feeling of disappointment.",
+            bad_type: "$(italic)can't send ... because that type of iota can't be sent/$$(br2)That type of iota can't be submitted to Nature for transmission. Causes black sparks.$(br2)$(italic)Need support for an iota type? Ask on $(l:https://github.com/penguinencounter/mediatransport/issues)GitHub$(/l)!/$",
+            corrupted: "$(italic)can't send ... because it's corrupted or ill-formed/$$(br2)Something has gone horribly wrong. Causes black sparks, and probably should be reported on the relevant GitHub issue tracker.",
+            matrix_too_large: "$(italic)can't send ... because it's too big$(br)can't send ... because it has too many rows$(br)can't send ... because it has too many columns/$$(br2)The matrix you're trying to send has too many entries to be sent, or more than 255 rows or columns. Causes black sparks.",
+            iota_too_large: "$(italic)can't send: calculated size at least .../$$(br2)The iota you're sending is larger than the maximum allowed size. Causes black sparks.$(br2)$(italic)Note: Server administrators can change the limit in the config./$",
+            iota_too_large_inter: "$(italic)can't send to other players: calculated size at least .../$$(br2)The iota you're sending to another player's avatar is larger than the maximum allowed size. Causes black sparks.$(br2)$(italic)Note: Server administrators can change the limit in the config./$",
+            radio_silence: "Tried to accept an iota, but there's nothing to accept (i.e. the queue is empty.) Causes white sparks and the screams of $(k)the tormented minds/$ to echo within my ears.",
+            rate_limit_exceeded: "I ran out of 'sending power'. Perhaps I should consider consolidating usages of Submit Iota? Causes orange sparks and the sound of something breaking.",
+            "2": "it looks like most of these errors only occur when $(italic)sending/$ (well, \"submitting\") data from within nature's domain. nature seems to be much more lenient in accepting bad data... in that it doesn't crash anything and instead outputs its favorite flavor of not-error: garbage!$(br)unfortunately this makes it hard to determine why data isn't making it across the boundary. we've compiled a list of reasons to look out for:",
+            "3": "- data is of a type (that's the first byte) that nature has no representation for$(br)- the transmission is missing some data at the end$(br)- the data is too large (seems like this could be different limit than the one going in the other direction...)$(br)- a variant of the above: the same matrix size restrictions apply (though it's impossible to have too many rows or columns, the total area could still be too much)",
+            "4": "also note that lists can also partially fail to transfer, leading to the entire decoder potentially derailing and interpreting types as data and vice versa. good luck!"
+          }
+        }
+      },
+      pluralizations: {
+        // 0, 1, "" (any)
+        byte: {
+          "1": "%s byte",
+          "": "%s bytes"
+        }
+      },
+      channels: {
+        "": "FSB Channels",
+        "A1": "These were hastily scribbled in the margins of something... I can't quite remember. Odd.",
+        "A2": "$(li)$(l:hexcasting:patterns/figura#mediatransport:send_fsb)Submit Iota$(/l) - transport_received/$$(li)$(l:hexcasting:patterns/figura#mediatransport:send_other)Submit Iota II$(/l) - transport_external_received/$$(li)$(l:hexcasting:patterns/figura#mediatransport:recv_fsb)Accept Iota$(/l) - transport_send",
+        "og": "How to shout at Nature correctly (and vice versa)",
+        "B1": "... oh, I remember now!",
+        doc: {
+          "1": "Data sent via <a href=\"#patterns/figura@mediatransport:send_fsb\">Submit Iota</a> is sent to <code>server_packets.transport_received</code>, like so:",
+          "code1": "\
+          .function server_packets.transport_received(data)\n\
+          .    data:close()\n\
+          .end\n\
+          ",
+          "2": "Data from other casters via <a href=\"#patterns/figura@mediatransport:send_other\">Submit Iota II</a> are sent to a different channel: <code>server_packets.transport_external_received</code>",
+          "code2": "\
+          .function server_packets.transport_external_received(data)\n\
+          .    data:close()\n\
+          .end\n\
+          ",
+          "3": "Finally, to send data, use <code>:sendPacket</code> with <code>\"transport_send\"</code>:",
+          "code3": "\
+          .server_packets:sendPacket(\"transport_send\", buffer)\n\
+          .buffer:close()\n\
+          "
+        }
+      },
+      protocol: {
+        "": "Iota Transport Protocol",
+        "1": "Ah, the freedom! I've drawn up some diagrams of the format.",
+        // text in {curly brackets} are keywords. Don't translate the text inside.
+        // btw this section uses HTML
+        "notice": "This documentation is for protocol {sym:protocol_version} 1.",
+        "intro1": "As previously described, an iota consists of a single-byte {symdef:type} followed by some amount of {symr:data}, depending on the type.",
+        "intro2": "Each iota type has a different {sym:type} value and has a different format for {symr:data}.",
+        stdtypes: "Built-in types",
+        garbage: {
+          "": "<code>ff</code>: Garbage",
+          "description": "All these types have no data. Also, since Garbage is used to represent decoding failures, it's generally a bad idea to create it on purpose.",
+        },
+        truefalse: {
+          "": "<code>02</code>: True and <code>03</code>: False",
+        },
+        "null": {
+          "": "<code>04</code>: Null",
+        },
+        double: {
+          "": "<code>05</code>: Double",
+          "description": "Finally, something interesting! Hexcasting uses IEEE 754 double-width floats (that's 8 bytes, 64 bits), so that's what's being used here for {symdef:double_value}."
+        },
+        pattern: {
+          "": "<code>06</code>: Pattern",
+          "description": "In honor of Hexxy, patterns are type 6. They're a bit complicated:",
+          "1": "First is a byte representing the {symdef:dir}. This is based on some internal representation, and appears to be as follows: 0 = north east, 1 = east, 2 = south east, 3 = south west, 4 = west, and 5 = north west.",
+          "2": "Next is a four-byte integer holding the number of angles in the pattern (effectively, strokes minus 1, or the {symdef:pattern_len})",
+          "3": "Following that are the {symdef:angles}, each 1 byte. Once again this appears to be based on some internal representation, as follows: 0 = forward, 1 = right, 2 = right back, 3 = back, 4 = left back, and 5 = left."
+        },
+        vec3: {
+          "": "<code>07</code>: Vector",
+          "description": "A vector is three doubles in sequence - {symdef:vec_x}, {symdef:vec_y}, and {symdef:vec_z}."
+        },
+        list: {
+          "": "<code>08</code>: List",
+          "description": "Lists are the primary structuring tool that Hexcasting has, and are similar to patterns - first is a four-byte {symdef:list_len}, followed by that many iota of any type.",
+          "warning": "It seems that avatars being able to bring entire structures of iota into being is a bit too much for Nature (...well, by default); you may receive garbage in return"
+        },
+        moreiotas: "MoreIotas types",
+        string: {
+          "": "<code>01</code>: String",
+          "description": "Strings, like the rest of the variable-length iotas, have a 4-byte {symdef:str_len} followed by the data (in this case, the {symdef:string}.) Strings are expected to be encoded in UTF-8."
+        },
+        matrix: {
+          "": "<code>40</code>: Matrix",
+          "description": "Matrices are two-dimensional arrays of doubles.",
+          "1": "First is a single byte for the number of {symdef:rows}, followed by another byte for the number of {symdef:cols}.",
+          "2": "This is followed by the {symdef:matrix_contents} of the matrix - one double for each entry. Each row is written out in sequence (ex. for a 2 by 2 matrix, the order would be row 1 column 1, followed by row 1 column 2, and then row 2 after that)"
+        },
+        hexpose: "Hexpose types",
+        text: {
+          "": "<code>50</code>: Text",
+          "description": "It appears that this format is not suitable for communicating the decorative properties of text (also called 'display') iota. Nevertheless, the actual text content can be transmitted. Text iota have the same format as strings:"
+        },
+        meta: "Non-iotas",
+        meta_intro: "These don't seem to represent iota at all! They can't be sent to Nature and only appear under special circumstances.",
+        server_info: {
+          "": "<code>fe</code>: Configuration Data",
+          "description": "This glob of information is Nature's repsonse to <a href=\"#patterns/figura@mediatransport:send_server_info\">Query Configuration</a>.",
+          "1": "First is the protocol's {symdef:protocol_version} as a two-byte 'short'. This documentation is written for <em>version 1</em>.",
+          "2": "Next is the maximum amount of data that can be sent with Submit Iota, in bytes.",
+          "3": "That is followed by the maximum amount of data that can be sent with Submit Iota II...",
+          "4": "and the maximum amount of data that can be received from an avatar.",
+          "5": "That's followed by the maximum amount of 'sending power' that can be held at a time, as a double precision floating point...",
+          "6": "and how much 'sending power' is regained per tick...",
+          "7": "and finally, how much 'sending power' Submit Iota II costs."
+        },
+        // that's the end of the HTML
+      },
+      api: {
+        "": "Figura API Documentation",
+        "1": "This was attached as a supplementary document to the other notes I found.",
+        // We are once again in HTML land
+        intro1: "It seems that the avatar side of the communication isn't without complexity, either - due to <s>a complete lack of wiki maintenance</s> ...less than optimal bookkeeping practices, the only source of information about the systems to interact with Nature seem to be the built-in documentation, which leaves much to be desired.",
+        intro2: "(If one is curious about that, it seems to be available via the incantation <code>/figura docs globals server_packets</code> and its various branches.)",
+        intro3: "To act as reference material in the meantime, I have created this supplementary document, which should hopefully provide the reader with a reasonable understanding of how the API works.",
+        overview: {
+          "": "Overview of <code>server_packets</code>",
+          "1": "Internally called <code>ServerPacketsAPI</code>, <code>server_packets</code> functions very similarly to the much more familiar <code>pings</code>, with a few slight differences.",
+          "2": "To receive data, use the function definition syntax you're probably familiar with:",
+          // this is a codeblock! keep the '\n\' on the right of each line, as well as the '.' at the beginning.
+          // probably don't translate code
+          "code1": "\
+          .function server_packets.packet_id(data)\n\
+          .  -- Handle data here!\n\
+          .end\n\
+          ",
+          "3": "Compared to pings, server_packets receivers always have exactly one parameter, through which a {sym:Buffer} is passed containing the packet's data.",
+          "4": "Make sure to <em>close</em> the {sym:Buffer} you are given! If you don't, the buffer slot will continue to be considered \"used\" and you will eventually run out of buffers (from my research, most people are unaware there is a limit on buffer count at all, but it exists as part of the permissions system and this is one of the easiest ways to have latent bugs.)",
+          "5": "The other main difference from pings is that sending data is explicit and not activated by calling the receiver function - that means calling <code>server_packets.packet_id()</code> <em>does not send anything</em>. To send packets, use <code>server_packets:sendPacket(id, data)</code>, where <code>id</code> is a <code>string</code> and <code>data</code> is a <code>Buffer</code>.",
+          "6": "Make sure to <a href='#mediatransport-setPosition'>rewind the Buffer</a> before sending it.",
+        },
+        buffers: {
+          "": "Quick Introduction to {symdef:Buffer}s",
+          "h1": "The canonical documentation for Buffers is accessible via the incantation <code>/figura docs globals data Buffer</code>.",
+          "h2": "It's also available <a href='https://applejuiceyy.github.io/figs/latest/Buffer/'>on FIGS</a> or the <a href='https://figura-wiki.pages.dev/globals/Data/Buffer'>Figura Wiki</a>.",
+          "1": "Buffers provide a convenient interface for reading structured data like the one Nature provides. It's almost like it's <a href='https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/DataOutputStream.html'>based on something else</a>...",
+          manage: {
+            new: {
+              "": "Creating new buffers: <code>data:createBuffer()</code>",
+              "1": "To create a new buffer, use <code>data:createBuffer()</code>, which returns a new Buffer object.",
+              "2": "You can also specify the initial allocated size by providing it as an argument to <code>createBuffer</code>, but this is not required unless you're working under really tight permissions constraints as Figura will auto-expand buffers by default.",
+            },
+            close: {
+              "": "Cleaning up after yourself: <code>:close()</code>",
+              "1": "As mentioned in the warning callout above, there is a limit on the number of buffers you can have, and it's tied to the permission system.",
+              "2": "On <em>Default</em>, the limit is <b>4 buffers</b>.",
+              "3": "On <em>High</em>, the limit is <b>16 buffers</b>.",
+              "4": "On <em>MAX</em>, the limit is <b>32 buffers</b>.",
+              "5": "To free up a buffer, call <code>close()</code> on it. This will render the contents unusable."
+            },
+            code1: "\
+            .local buf = data:createBuffer()\n\
+            .-- (later...)\n\
+            .buf:close()\n\
+            ",
+            setPosition: {
+              "": "Moving the cursor around: <code>:setPosition(pos)</code>",
+              "1": "Buffers function with a 'cursor' that moves around the data as you read and write to it.",
+              "2": "Each time data is read or written, that action is taken at the position of the cursor and the cursor is <em>automatically advanced</em> to the next byte. This makes it convenient to read or write many values in sequence.",
+              "3": "However, it is still useful to be able to move the cursor around manually - notably, to read back the data written to a buffer, the cursor has to be moved (\"rewound\") back to position 0:",
+              code: "\
+              .buf:writeByte(5)\n\
+              .buf:writeDouble(3.14159)\n\
+              .buf:setPosition(0) -- move back to the beginning\n\
+              "
+            },
+          },
+          write: {
+            "": "Writing Data",
+            "hat": "This section only discusses types that Nature cares about. Other types are supported by buffers - to see that, go to the canonical documentation.",
+            "1": "There are methods to write data in various formats to a buffer. They all move the cursor to the <em>end of the data written</em>, so calling them multiple times in sequence will concatenate the data.",
+            "2": "For things described as '<em>x</em>-byte integers', use these names:",
+            "3": "For 'doubles', use:",
+            methods: {
+              write: "<code>:write(n)</code>: 1 byte, such as {sym:type}, {sym:dir} for patterns, and {sym:rows} and {sym:cols} for matrices.",
+              writeInt: "<code>:writeInt(n)</code>: 4 bytes, which is primarily used to describe the length of things",
+              writeDouble: "<code>:writeDouble(n)</code>: 8 bytes, used for both the {sym:double_value} of numbers and the {sym:vec_x}, {sym:vec_y}, and {sym:vec_z} of vectors."
+            }
+          },
+          read: {
+            "": "Reading Data",
+            "1": "Similar to writing data, Buffers are versatile in what they can read. Each read method also similarily moves the cursor to the <em>end of the data read</em>.",
+            methods: {
+              read: "<code>:read()</code>: 1 byte, such as {sym:type}, {sym:dir} for patterns, and {sym:rows} and {sym:cols} for matrices.",
+              readShort: "<code>:readShort()</code>: 2 bytes - the protocol {sym:protocol_version}",
+              readInt: "<code>:readInt()</code>: 4 bytes, usually lengths but also quite a few configuration parameters",
+              readDouble: "<code>:readDouble()</code>: 8 bytes, used for both the {sym:double_value} of numbers and the {sym:vec_x}, {sym:vec_y}, and {sym:vec_z} of vectors, as well as the sending power-related configuration values."
+            }
+          },
+        },
+        // End of HTML
+      },
+      // here's a bunch of things that the renderer puts together
+      // to form all of those symbols and markup
+      symbols: {
+        type: "type",
+        data: "data",
+        value: "value",
+        dir: "dir", // direction
+        length: "length", // length
+        angles: "angles",
+        x: "x",
+        y: "y",
+        z: "z",
+        iotas: "iotas",
+        string: "string",
+        contents: "contents",
+        rows: "rows",
+        cols: "cols", // columns
+        rowscols: "rows*cols",
+        version: "version",
+        max_send: "max_send",
+        max_inter_send: "max_inter",
+        max_recv: "max_recv",
+        max_power: "max_power",
+        power_regen_rate: "power_regen_rate",
+        inter_cost: "inter_cost",
+        Buffer: "Buffer", // Don't translate - Figura type
+      },
+      admin: {
+        // These entries are only rendered in hexdoc, so we don't have to worry
+        // about not overflowing the page!
+        fsb: {
+          "": "About FSB",
+          "1": "mediatransport relies on $(n)Figura Server Backend/$ (also called $(n)FSB/$) to function. FSB is a feature in the development builds of Figura for 1.20.1 that enables hosting avatars and pings on the server itself instead of relying on the global backend.",
+          "2": "FSB $(n)doesn't work on Singleplayer/$ or LAN worlds, so you might want to host a dedicated server to test your hexes out. Thanks for playing our addon! :)$(br2)$(l:https://github.com/penguinencounter/Figura/releases/tag/figura-fsb-placeholder)Figura FSB builds on GitHub$(/l)",
+        },
+        config: {
+          "": "mediatransport config",
+          "1": "mediatransport has various server configuration options to limit what data can be sent between avatars and casting environments.",
+          maxSize: {
+            "": "Size Restrictions",
+            "1": "All values in bytes.$(br2)$(n)maximumSendSize/$: maximum amount of data that can be sent through $(l:hexcasting:patterns/figura#mediatransport:send_fsb)Submit Iota$(/l).$(br2)$(n)maximumInterSendSize/$: maximum amount of data that can be sent through $(l:hexcasting:patterns/figura#mediatransport:send_other)Submit Iota II$(/l).$(br2)$(n)maximumRecvSize/$: maximum amount of data that can be received from Figura. If this is exceeded, garbage will be pushed into the queue instead of the actual data.$(br2)$(n)matrixMaxArea/$: MoreIotas only; sets the maximum matrix area (width * height) that can be sent or received, separately from other restrictions and the maximum row/column count of 255."
+          },
+          filterIntro: {
+            "": "Filters",
+            "1": "mediatransport has three separate $(italic)filter/$ configuration sets for controlling what types of iota can be sent. Each one has a $(n)mode/$ and a $(n)list of entries/$.$(br2)The $(n)mode/$ can either be $(bold)\"Block\"/$ (forbids certain types, 'blocklist') or $(bold)\"Allow\"/$ (only allows certain types, 'allowlist').$(br2)The list contains the list of resource locations to apply the filter with. For example, to disallow sending lists, set the $(n)mode/$ to $(bold)\"Block\"/$ and the list to $(bold)[\"hexcasting:list\"]/$.$(br2)Note that allowing an iota type won't magically make it sendable if mediatransport lacks encoders or decoders for that type."
+          },
+          sendFilters: {
+            "": "Sending Filters",
+            "1": "Just like the size limits, there are separate filters for $(l:hexcasting:patterns/figura#mediatransport:send_fsb)Submit Iota$(/l) and $(l:hexcasting:patterns/figura#mediatransport:send_other)Submit Iota II$(/l).$(br2)$(n)sendFilter/$ and $(n)sendFilterMode/$ apply to Submit Iota. $(n)interSendFilter/$ and $(n)interSendFilterMode/$ apply to Submit Iota II.$(br2)If an iota is blocked by these filters, it will cause an 'bad type' mishap on the relevant iota (even if it's nested in a list.)"
+          },
+          recvFilters: {
+            "": "Receiving Filters",
+            "1": "$(n)recvFilter/$ and $(n)recvFilterMode/$ control what types of iota can be received from Figura.$(br2)Any iota that are blocked by this filter are replaced with Garbage, but any containing iota will be unaffected. (ex. a list containing an invalid iota will be received as a list containing garbage instead, provided lists are allowed.)"
+          },
+          ratelimits: {
+            "": "Rate Limits",
+            "1": "'Sending power' is really just a number that goes up over time until it hits a limit for each player. The system is balance around one usage of $(l:hexcasting:patterns/figura#mediatransport:send_fsb)Submit Iota$(/l) consuming 1.00 'power'.$(br2)$(li)$(n)rateLimitChargePerTick/$ controls how quickly 'power' recharges. The default of 1.0 means that on average a player can only use Submit Iota once every tick./$$(li)$(n)rateLimitMaxValue/$ is the maximum 'power' that players can hold on to at once. Setting this below 1 means that Submit Iota will always fail. Setting this greater than 1 lets players send in 'bursts' without running into the rate limit as long as their overall rate remains below the limit./$$(li)$(n)interSendConstMultiplier/$ lets you configure how much Submit Iota II costs relative to Submit Iota. Because Submit Iota costs 1, this is effectively the price of Submit Iota II"
+          },
+        }
+      },
+      figura_see_also_1: "I've cataloged the rest of the details in these entries.",
+      see_also: "See Also",
+      index: {
+        "": "Transports: Index",
+        desc: "An index of all the entries related to transports and Figura.",
+      },
+      blank: "$(#b0b0b0)this page left blank for layout purposes/$",
+      blank_dark: "$(#504060)this page left blank for layout purposes/$",
+    },
+    // "can't send (iota) because..."
+    not_sendable: {
+      bad_type: "that type of iota can't be sent",
+      corrupt: "it's corrupted or ill-formed",
+      matrix_too_big: "it's too big",
+      matrix_too_many_rows: "it has too many rows (max 255)",
+      matrix_too_many_cols: "it has too many columns (max 255)",
+    },
+    radio_silence_options: {
+      // translators: good luck, sorry (you can replace all of these with the 'help' one if you want)
+      crickets: "*crickets*",
+      ellipsis: "......",
+      help: "Receiving queue is empty",
+      eof: "java.util.NoSuchElementException: collection is empty",
+      insanity: "You hear whispering, but you can't make it out.",
+      informal: "there's nothing here.",
+    },
+    mishap_names: {
+      init_fail: "Transport Init Failure",
+      bad_type: "Not a Submittable Iota",
+      corrupted: "Corrupt Iota",
+      matrix_too_large: "Matrix Too Large",
+      iota_too_large: "Send Too Large",
+      iota_too_large_inter: "Send Other Too Large",
+      radio_silence: "Nothing to Accept",
+      rate_limit_exceeded: "Too Fast",
+    },
+  },
+  hexcasting: {
+    action: {
+      "mediatransport:": {
+        send_fsb: "Submit Iota",
+        send_other: "Submit Iota II",
+        recv_fsb: "Accept Iota",
+        check_queue: "Semaphore's Reflection",
+        check_rate_limit: "Quota's Reflection",
+        send_server_info: "Query Configuration",
+      },
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+        "mediatransport:": {
+          check_queue: "Semaphore's Refl.",
+        },
+      },
+    },
+    mishap: {
+      not_sendable: "can't send %s",
+      not_sendable_ex: "can't send %s because %s",
+      too_large_to_send: "can't send: calculated size at least %s B, but server configured limit is %s B",
+      too_large_to_send_inter: "can't send to other players: calculated size at least %s B, but server configured limit is %s B",
+      fsb_not_initialized: "Figura server isn't initialized (tell your local admin to use a dedicated server and install FSB)",
+      radio_silence: "%s", // see mediatransport.radio_silence_options
+      rate_limit_exceeded: "Sending data too fast (%s required, %s available; +%s/tick, max %s)",
+    }
+  },
+}

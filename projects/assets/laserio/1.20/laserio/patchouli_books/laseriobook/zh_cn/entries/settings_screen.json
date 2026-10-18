@@ -1,0 +1,37 @@
+{
+  "name": "网络设置",
+  "icon": "laserio:textures/gui/buttons/settings.png",
+  "sortnum": 1,
+  "category": "laserio:mechanics",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "所有$(l:laserio:laser_node)激光节点$(/l)界面均可打开网络设置界面。此界面可更改网络的颜色。该颜色会影响：$(li)（放置下来的）激光节点$(li)（放置下来的）激光连接器$(li)各方块间激光的颜色。"
+    },
+    {
+      "type": "patchouli:image",
+      "title": "多彩节点",
+      "images": [
+        "laserio:textures/book/entries/settings1.png"
+      ],
+      "border": true,
+      "text": "不同颜色的节点"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "节点与箱子、储罐等存储空间之间的激光不会更改颜色。$(br2)在网络中一个节点上做出的改动会自动传播至网络中的所有其他节点。如此就可以搭建不同颜色的网络了！$(br2)这一设置仅作装饰，没有实际功能。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "向另一网络添加节点或网络时，会参照如下规则操作：$(br2)若节点/网络之一有颜色设定，另一方为默认，则覆盖默认。$(br2)若不符合，则会复制高亮方块的设定至新加节点或网络。例如，Shift 点击绿色节点，再点击蓝色节点，则蓝色节点会变为绿色。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Alpha 值分为两项设置：Alpha，扳手 Alpha。$(br2)Alpha 只会影响两个方块间的激光，更改其透明度。若设为 0，则节点/连接器间的激光不可见。$(br2)玩家持有激光扳手时，会将扳手 Alpha 与 Alpha $(l)相加$()。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "例如，Alpha 设为 0，扳手 Alpha 设为 80，则只能在持有扳手时看见激光！$(br2)若将 Alpha 设为 80，扳手 Alpha 设为 200，那么持有扳手时激光会更亮。两数的和超过 255 也没有关系，实操时会自动限制到 255。"
+    }
+  ]
+}
