@@ -26,6 +26,13 @@ The Cannon Interface will also export gunpowder from the AE2 network to the Sche
 
 Right click it to open the GUI. You can now control the craft and export of items and gunpowder, as well as see the status of the connected Schematic Cannon.
 
+
+## About Bulk Crafting
+
+Bulk Crafting will attempt to craft needed items before allowing the Schematic Cannon to begin building. 
+If the crafting process is interrupted while in this stage (e.g, unloading the chunk, closing the game, stopping the crafting job, etc.) you may end up with more items than needed by the schematic, as the system will attempt to craft the missing items again.
+
+
 ## Recipe
 
 <Recipe id="cannon_interface" />
