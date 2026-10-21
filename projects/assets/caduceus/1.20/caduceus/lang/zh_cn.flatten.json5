@@ -2,10 +2,10 @@
   caduceus: {
     book: {
       basics: {
-        caduceus_changes: {
+        changes: {
           "": "Caduceus 中的改动",
           "1": "我注意到某类$(l:patterns/meta#hexcasting:eval/cc)元运行技术/$的表现在近期发生了变化。$(br2)\
-            跳转 iota 不再无法深入检验了：我现在可以看见组成它们的$(l:patterns/jump_manipulation)许多组件/$，但还没法把各组件分离出来。",
+            跳转 iota 不再无法深入检验了：我现在可以看见组成它们的$(l:caduceus/patterns/jump_manipulation)许多组件/$，但还没法把各组件分离出来。",
           "2": "而且，似乎使用跳转 iota 时 $(l:casting/mishaps)Iota 过多/$事故出现得更频繁了。我得小心不要研究得太过深入了。",
         },
       },
@@ -18,7 +18,7 @@
             link_text: "维基百科",
           },
           "3": {
-            text: "然后是一篇博客，主要介绍“定界续体”/“delimited continuation”，还附带了详实的示例，可用$(hex)咒术/$重写以便练习。如果觉得理解$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$和$(l:patterns/delimcc#caduceus:eval/prompt)$(action)阿尔刻之策略/$有困难，可以读读这篇博客。",
+            text: "然后是一篇博客，主要介绍“定界续体”/“delimited continuation”，还附带了详实的示例，可用$(hex)咒术/$重写以便练习。如果觉得理解$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$和$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)阿尔刻之策略/$有困难，可以读读这篇博客。",
             link_text: "博客",
           },
           "4": {
@@ -26,26 +26,31 @@
             link_text: "施法的原理",
           },
         },
-        caduceus_mishaps: {
+        mishaps: {
           "": "Caduceus 事故",
           "1": "本节记录了操纵跳转 iota 和使用定界跳转时会出现的事故。",
           no_prompt: {
             title: "阿尔刻未受限",
-            text: "试图在$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$之外绘制$(l:patterns/delimcc#caduceus:eval/prompt)$(action)阿尔刻之策略/$。",
+            text: "试图在$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$之外绘制$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)阿尔刻之策略/$。",
           },
         },
       },
       patterns: {
         delimcc: {
           "": "定界跳转",
-          "eval/prompt": "运行栈中的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$完全一致；区别在于，其内部的$(l:patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$无法获取其外部的 iota。",
-          "eval/prompt_at": "与$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$类似，但它会将当前运行的$(l:patterns/jump_manipulation#jump_tags)$(thing)跳转标签/$设置至所给 iota。若该 iota 为 $(l:casting/influences)$(thing)Null/$，则其效果与$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$等价。",
+          "eval/prompt": "运行栈中的图案或图案列表，与$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$完全一致；区别在于，其内部的$(l:caduceus/patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$无法获取其外部的 iota。",
+          "eval/prompt_at": "与$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$类似，但它会将当前运行的$(l:caduceus/patterns/jump_manipulation#jump_tags)$(thing)跳转标签/$设置至所给 iota。若该 iota 为 $(l:casting/influences)$(thing)Null/$，则其效果与$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$等价。",
           "eval/control": {
-            "1": "运行栈中的图案或图案列表，与$(l:patterns/meta#hexcasting:eval/cc)$(action)伊里斯之策略/$类似。必须绘制于$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$内部。",
-            "2": "将在图案列表末尾和$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$闭合之间绘制的图案会$(italic)转移/$到调用 iota 中；压入栈中的也不会是跳转 iota，而是此调用 iota。$(br2)\
-              执行到调用 iota 时，其中捕获的图案会如同对其使用$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$一样施放。如果不去执行调用 iota，即会跳过$(l:patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$闭合前剩余的图案。",
+            "1": "运行栈中的图案或图案列表，与$(l:patterns/meta#hexcasting:eval/cc)$(action)伊里斯之策略/$类似。必须绘制于$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$内部。",
+            "2": "将在图案列表末尾和$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$闭合之间绘制的图案会$(italic)转移/$到调用 iota 中；压入栈中的也不会是跳转 iota，而是此调用 iota。$(br2)\
+              执行到调用 iota 时，其中捕获的图案会如同对其使用$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$一样施放。如果不去执行调用 iota，即会跳过$(l:caduceus/patterns/delimcc#caduceus:eval/prompt)$(action)忒提斯之策略/$闭合前剩余的图案。",
           },
-          "eval/control_at": "与$(l:patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$类似，但它只会转移到闭合的$(l:patterns/delimcc#caduceus:eval/prompt_at)$(action)忒提斯之策略，第二型/$，且其携带的$(l:patterns/jump_manipulation#jump_tags)$(thing)跳转标签/$应匹配所给 iota。若该 iota 为 $(l:casting/influences)$(thing)Null/$，则其效果与$(l:patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$等价。",
+          "eval/control_at": "与$(l:caduceus/patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$类似，但它只会转移到闭合的$(l:caduceus/patterns/delimcc#caduceus:eval/prompt_at)$(action)忒提斯之策略，第二型/$，且其携带的$(l:caduceus/patterns/jump_manipulation#jump_tags)$(thing)跳转标签/$应匹配所给 iota。若该 iota 为 $(l:casting/influences)$(thing)Null/$，则其效果与$(l:caduceus/patterns/delimcc#caduceus:eval/control)$(action)阿尔刻之策略/$等价。",
+        },
+        goto: {
+          "": "数值跳转",
+          "eval/setup_goto": "和$(l:patterns/meta#hexcasting:eval)$(action)赫尔墨斯之策略/$一样施放列表，但该列表中的$(l:caduceus/patterns/goto#caduceus:eval/goto)$(action)普罗米修斯之策略/$会跳转至列表中对应下标处。",
+          "eval/goto": "从栈顶移除一个数，并跳转至$(l:caduceus/patterns/goto#caduceus:eval/setup_goto)$(action)厄尔布鲁士之策略/$所施放列表中对应下标处。若该数为负，则从列表末尾开始计数。",
         },
         jump_manipulation: {
           "": "跳转操作",
@@ -62,11 +67,11 @@
               不过，$(thing)跳转标签/$有一项局限：它们同一时刻只能持有单个 iota。和$(l:patterns/readwrite#hexcasting:local)$(thing)渡鸦之思/$不一样的是，它们连列表都存不下。"
           },
           "read/mark/local": "复制当前运行所对应的$(thing)跳转标签/$中存储的 iota，并压入栈顶。",
-          "read/mark/iota": "和$(l:patterns/jump_manipulation#caduceus:read/mark/local)$(action)壶罐之精思/$类似，但会从跳转 iota 的顶部帧所对应的$(thing)跳转标签/$中读出。",
+          "read/mark/iota": "和$(l:caduceus/patterns/jump_manipulation#caduceus:read/mark/local)$(action)壶罐之精思/$类似，但会从跳转 iota 的顶部帧所对应的$(thing)跳转标签/$中读出。",
           "write/mark/local": {
             "1": "移除栈顶 iota，将其写入当前运行所对应的$(thing)跳转标签/$。$(br)\
               和$(l:patterns/readwrite#hexcasting:write/entity)$(action)编年史家之策略/$一样，不可向其写入真名。",
-            "2": "在调用结尾使用$(l:patterns/jump_manipulation#caduceus:read/mark/local)$(action)壶罐之精思/$或$(l:patterns/jump_manipulation#caduceus:write/mark/local)$(action)壶罐之策略/$时应当小心。它们读取或写入的标签并不一定符合预期。",
+            "2": "在调用结尾使用$(l:caduceus/patterns/jump_manipulation#caduceus:read/mark/local)$(action)壶罐之精思/$或$(l:caduceus/patterns/jump_manipulation#caduceus:write/mark/local)$(action)壶罐之策略/$时应当小心。它们读取或写入的标签并不一定符合预期。",
           },
         },
       },
@@ -84,6 +89,7 @@
           },
 
           "caduceus:": {
+            goto: "Goto",
             prompt: "Prompt",
           },
           "hexcasting:": {
@@ -103,6 +109,8 @@
         "eval/prompt_at": "忒提斯之策略，第二型",
         "eval/control": "阿尔刻之策略",
         "eval/control_at": "阿尔刻之策略，第二型",
+        "eval/setup_goto": "厄尔布鲁士之策略",
+        "eval/goto": "普罗米修斯之策略",
         "read/mark/local": "壶罐之精思",
         "read/mark/iota": "壶罐之纯化",
         "write/mark/local": "壶罐之策略",
@@ -110,6 +118,7 @@
     },
 
     mishap: {
+      no_goto: "没有先使用厄尔布鲁士之策略",
       no_prompt: "没有先使用忒提斯之策略",
       invalid_value: {
         class: {
