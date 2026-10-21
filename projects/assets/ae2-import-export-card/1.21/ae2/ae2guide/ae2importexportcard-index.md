@@ -8,6 +8,7 @@ categories:
 item_ids:
 - ae2importexportcard:export_card
 - ae2importexportcard:import_card
+- ae2importexportcard:block_picker_card
 ---
 
 # AE2 Import Export Card
@@ -16,9 +17,11 @@ item_ids:
   <ItemImage id="ae2importexportcard:export_card" scale="2" />
 
   <ItemImage id="ae2importexportcard:import_card" scale="2" />
+
+  <ItemImage id="ae2importexportcard:block_picker_card" scale="2" />
 </Row>
 
-Import and Export cards allow you to import/export items out of your inventory
+Import, Export and Block Picker cards allow you to import/export items out of your inventory
 
 ## Import Card
 
@@ -62,3 +65,15 @@ The Export Card supports the following [upgrades](items-blocks-machines/upgrade_
 ### Recipe
 
 <RecipeFor id="ae2importexportcard:export_card" />
+
+## Block Picker Card
+
+<ItemImage id="ae2importexportcard:block_picker_card" scale="2" />
+
+The Block Picker Card lets you extract the block you are currently looking at directly from your Network. Simply aim at a block and press the "Pick Block" keybind. If the matching block is available in your network, it will be extracted into your inventory.
+
+![Block Picker Card](diagrams/block_picker_card.png)
+
+### Recipe
+
+<RecipeFor id="ae2importexportcard:block_picker_card" />

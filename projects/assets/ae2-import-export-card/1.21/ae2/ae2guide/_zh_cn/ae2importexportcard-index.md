@@ -8,6 +8,7 @@ categories:
 item_ids:
 - ae2importexportcard:export_card
 - ae2importexportcard:import_card
+- ae2importexportcard:block_picker_card
 ---
 
 # AE2输入输出卡
@@ -16,9 +17,11 @@ item_ids:
   <ItemImage id="ae2importexportcard:export_card" scale="2" />
 
   <ItemImage id="ae2importexportcard:import_card" scale="2" />
+
+  <ItemImage id="ae2importexportcard:block_picker_card" scale="2" />
 </Row>
 
-输入卡和输出卡可通过玩家物品栏输入/输出物品。
+输入卡、输出卡、方块点选卡可通过玩家物品栏输入/输出物品。
 
 ## 输入卡
 
@@ -62,3 +65,15 @@ item_ids:
 ### 配方
 
 <RecipeFor id="ae2importexportcard:export_card" />
+
+## 方块点选卡
+
+<ItemImage id="ae2importexportcard:block_picker_card" scale="2" />
+
+方块点选卡可从网络中取出你所看的方块。将准星指向某方块，按下“点选方块”按键即可。若网络中有匹配的方块，则将其抽出至你的物品栏。
+
+![方块点选卡](diagrams/block_picker_card.png)
+
+### Recipe
+
+<RecipeFor id="ae2importexportcard:block_picker_card" />
