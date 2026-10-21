@@ -7,11 +7,11 @@ navigation:
 # Extended Terminal
 
 ## Misc, Ingredient Items
-- [Compat Processor](compat_processor.md)
-- [Charged Ender Pearl](charged_ender_pearl.md)
+- [Material Converter](material_converter.md)
 
 ## Terminals
 - [Extended Terminal](terminals/extendedterminal.md)
 - [Extended Crafting Terminal](terminals/extendedcrafting.md)
+- [United Terminal](terminals/unitedterminal.md)
 - [Re:Avaritia Crafting Terminal](terminals/re_avaritia.md)
 - [AvaritiaNeo Crafting Terminal](terminals/avaritianeo.md)

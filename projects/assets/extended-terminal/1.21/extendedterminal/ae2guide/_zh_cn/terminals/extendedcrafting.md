@@ -13,7 +13,7 @@ item_ids:
   - ultimate_terminal
 ---
 # 拓展合成终端
-<et:condition load="extendedcrafting">
+<myotus:condition load="extendedcrafting">
     <Column alignItems="center" fullwidth={true}>
         <GameScene zoom={4} interactive={true}>
             <ImportStructure src="../structures/extendedcrafting.snbt" />
@@ -58,4 +58,4 @@ item_ids:
             <RecipeFor id="extendedterminal:ultimate_terminal" />
         </Row>
     </Column>
-</et:condition>
+</myotus:condition>
