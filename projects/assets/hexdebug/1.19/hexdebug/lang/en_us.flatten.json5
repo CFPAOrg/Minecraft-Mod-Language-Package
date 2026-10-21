@@ -1,0 +1,163 @@
+{
+  "item.hexdebug": {
+    debugger: "Debugger",
+    evaluator: "Evaluator",
+  },
+
+  "block.hexdebug": {
+    splicing_table: "Splicing Table",
+    focus_holder: "Focus Holder",
+  },
+
+  "itemGroup.hexdebug": "HexDebug",
+
+  text: {
+    hexdebug: {
+      connected: "Debug client connected!",
+      no_session: "Debug session is not running.",
+      thwack: "Thwack!",
+      // Next Iota: [{index}] {iota}
+      debugger_stopped: "Next Iota: [%d] %s",
+
+      splicing_table: {
+        button: {
+          view_left: "Move View Left",
+          view_right: "Move View Right",
+          select_none: "Select None",
+          select_all: "Select All",
+          clear_grid: "Clear Grid",
+          nudge_left: "Nudge Left",
+          nudge_right: "Nudge Right",
+          duplicate: "Duplicate",
+          delete: "Delete",
+          undo: "Undo",
+          redo: "Redo",
+          cut: "Cut",
+          copy: "Copy",
+          paste: "Paste (Verbatim)",
+          paste_splat: "Paste (Flattened)",
+          export: "Export as .hexpattern",
+        },
+        tooltip: {
+          index: "Index: %d",
+          signature: "Signature: %s",
+          length: "Length: %d",
+        },
+      },
+    },
+
+    "autoconfig.hexdebug": {
+      title: "HexDebug Config",
+      category: {
+        client: "Client",
+        server: "Server",
+      },
+      option: {
+        client: {
+          openDebugPort: {
+            "": "Open Debug Port",
+            "@Tooltip": "Whether or not a port should be opened. If false, the Debugger effectively becomes useless.",
+          },
+          debugPort: {
+            "": "Debug Port",
+            "@Tooltip": "Port number (1024-65535) to open for the debug client (eg. VSCode) to connect to.",
+          },
+          smartDebuggerSneakScroll: {
+            "": "Smart Debugger Sneak-Scroll",
+            "@Tooltip": "If a hex is not currently being debugged and a Debugger is in your main hand, prefer shift-scrolling whatever item is in your offhand (eg. a spellbook).",
+          },
+          debuggerDisplayMode: {
+            "": "Debugger Display Mode",
+            "@Tooltip": "\
+              Changes when the Debugger should print the next iota to be evaluated.\n\
+                DISABLED: Never show Debugger status messages.\n\
+                NOT_CONNECTED: Only show Debugger status messages if a debug client is not connected.\n\
+                ENABLED: Always show Debugger status messages. (default)",
+          },
+          showDebugClientLineNumber: {
+            "": "Show Debug Client Line Number",
+            "@Tooltip": "If true, show the line number (usually 1-indexed) from the debug client (eg. VSCode) in Debugger status messages; otherwise, show the list index (0-indexed)."
+          }
+        },
+        server: {
+          maxUndoStackSize: {
+            "": "Undo History Size Limit",
+            "@Tooltip": "Maximum allowed size of the Splicing Table's undo history. To disable the limit, set the value to 0.",
+          }
+        }
+      },
+    },
+  },
+
+  "hexcasting.action": {
+    "hexdebug:": {
+      "const/debugging": "Debugger's Reflection",
+      "next_eval_index": "Debug Locator's Reflection", // TODO: this name kinda sucks tbh
+      "breakpoint/": {
+        before: "Set Breakpoint Before",
+        after: "Set Breakpoint After"
+      },
+      "craft/debugger": "Craft Debugger",
+    },
+    "book.hexdebug:": {
+      "next_eval_index": "Debug Locator's Rfln.",
+    },
+  },
+
+  hexdebug: {
+    tooltip: {
+      debugger: {
+        step_mode: {
+          "": "Mode: %s",
+          continue: "Continue",
+          over: "Step Over",
+          in: "Step In",
+          out: "Step Out",
+          restart: "Restart",
+          stop: "Stop"
+        },
+      },
+      focus_holder: {
+        item: "Item: %s",
+      },
+    },
+
+    category: {
+      items: {
+        entry: {
+          debugging: {
+            "": "Debugging Items",
+            page: {
+              debugger: "I have read vague descriptions of a strange object used by the ancients to help discover issues in complex _Hexes. I believe I have managed to reproduce this item; I call it the $(l:items/debugging#debugger)$(item)Debugger/$.$(br2)\
+                It seems to work in a similar way to $(l:items/hexcasting)$(item)Artifacts/$. However, I can also use it to cast a _Hex right from an item (like a $(l:items/focus)$(item)Focus/$) in my off-hand.$(br2)\
+                Unfortunately, the $(l:items/debugging#debugger)$(item)Debugger/$ is not very useful on its own; it seems to require the use of some sort of $(l:https://marketplace.visualstudio.com/items?itemName=object-Object.hex-casting)external tool/$.",
+              thwack: "$(italic)Thwack!/$",
+              evaluator: "Complementing the $(l:items/debugging#debugger)$(item)Debugger/$, I've also created a new type of staff: the $(l:items/debugging#evaluator)$(item)Evaluator/$.$(br2)\
+                While debugging a _Hex, patterns drawn with this staff will be cast using the current stack and $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$ of the $(l:items/debugging#debugger)$(item)Debugger/$.$(br2)\
+                Clearing the grid seems to reset the $(l:items/debugging#debugger)$(item)Debugger/$ to just before the first pattern was drawn with the $(l:items/debugging#evaluator)$(item)Evaluator/$. It will not, of course, undo any effects performed by spells on the world.",
+              thwonk: "$(italic)Thwonk!/$"
+            },
+          },
+        },
+      },
+
+      patterns: {
+        entry: {
+          debugging: {
+            "": "Debugging",
+            page: {
+              "const/debugging": "Adds $(thing)True/$ to the top of the stack if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(thing)False/$ otherwise.",
+              "next_eval_index": "Adds the index of the next iota to be evaluated if executed by a $(l:items/debugging#debugger)$(item)Debugger/$ or $(l:items/debugging#evaluator)$(item)Evaluator/$, or $(l:casting/influences)$(thing)Null/$ otherwise.",
+              "breakpoint/": {
+                before: "Pauses the $(l:items/debugging#debugger)$(item)Debugger/$ before executing this pattern.",
+                after: "Pauses the $(l:items/debugging#debugger)$(item)Debugger/$ after executing this pattern (ie. before executing the next pattern).",
+              },
+              "craft/debugger": "Creates a $(l:items/debugging#debugger)$(item)Debugger/$ that casts a _Hex, similar to $(l:patterns/spells/hexcasting)certain other patterns/$ I've used in the past.$(br2)\
+                Costs about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
+            },
+          },
+        },
+      },
+    },
+  },
+}
