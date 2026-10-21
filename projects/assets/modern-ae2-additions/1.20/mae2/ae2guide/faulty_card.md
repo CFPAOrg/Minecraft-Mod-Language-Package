@@ -37,3 +37,10 @@ initially pasted too. **Be very careful**
 This mode will either increment or decrement the priority or level emitter
 amount by one each time the settings are pasted. It can be cycled between
 incrementing or decrementing by using on the air.
+
+## Über
+A mode that might be familar to users of the uber conduit probe. Use on a block
+to start selecting a volume to paste too. Use again to finalize the
+volume and paste to every device facing the **same direction** as the face or
+part it was used on. Additionally, copying a device's configuration will reset
+the volume selection.
