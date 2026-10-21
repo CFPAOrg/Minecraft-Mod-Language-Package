@@ -1,10 +1,12 @@
 ---
 id: networking_tool
+lookup: neepmeat:networking_tool
 ---
 
 # Networking Tool
 
-The Networking Tool allows NEEPBus output ports to be quickly connected to input ports.
+\columns[fit=second]{The Networking Tool allows NEEPBus output ports to be quickly connected to input ports.
+}{\item_render{neepmeat:networking_tool}}
 
 ## Usage
 

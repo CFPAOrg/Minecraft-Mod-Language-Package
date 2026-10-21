@@ -5,9 +5,9 @@ lookup: neepmeat:process_interface, neepmeat:process_card
 
 # Process Interface
 
-The Process Interface allows integrating any machine into a recursive crafting system.
+\columns[fit=second]{The Process Interface allows integrating any machine into a recursive crafting system.
 
-It has slots for multiple Process Cards, each which records the ingredients and result of a specific recipe.
+It has slots for multiple Process Cards, each which records the ingredients and result of a specific recipe.}{\item_render{neepmeat:process_interface}}
 
 For example, a Process Interface can be connected to a furnace. The interface can contain cards for many different smelting recipes, which will be made available in the item network.
 
@@ -16,6 +16,9 @@ For example, a Process Interface can be connected to a furnace. The interface ca
 To use a Process Interface to integrate a machine, place it facing the machine's input storage. It is recommended to use a hopper or some other intermediate storage that can hold multiple stacks if the interface is likely to process multiple items at once.
 
 The rear side of the Process Interface is where ingredients will be requested to, so it must be connected to the pipe network. It is also where the outputs will be ejected from.
+
+\columns[fit=first]{\item_render[height=18]{neepmeat:process_card}}{Next, take a process card, fill it out with the ingredients and result of the recipe and insert it into the Process Interface.}
+
 
 When a requested ingredient enters the rear face, it will be ejected into the storage on the front face.
 

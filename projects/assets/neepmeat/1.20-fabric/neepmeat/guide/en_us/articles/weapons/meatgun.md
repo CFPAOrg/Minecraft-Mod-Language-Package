@@ -1,21 +1,24 @@
 ---
 id: meatgun
-lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol
+lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol, meatweapons:long_gun, meatweapons:meatgun_staff, meatweapons:tinker_table, meatweapons:ammunition_generator
 ---
 
 # Meatgun
 
 *What do you call a gun that is a gun but also primarily consists of or relates to meat?*
 
-Meatgun is a modular tool and weapon system. 
+The Meatgun is a modular tool and weapon system. 
 
-Creating a Meatgun starts by taking a base module and installing other moules using a Tinker Table. Each module has a number of slots that can accept further modules. Modules have a complexity requirement.
+\columns[fit=second]{Creating a Meatgun starts by taking a base module and installing other moules using a Tinker Table. Each module has a number of slots that can accept further modules. Modules have a complexity requirement.
+}{\item_render{meatweapons:tinker_table}}
 
 # Keybinds
 
 Meatguns have two triggers: Primary and Secondary, which correspond to the Use and Attack keys respectively.
 
 Aiming down sights increases shot precision by 50%. This is done by sneak and works when the Meatgun is held in the main hand.
+
+# Usage
 
 ## Dual Wielding
 
@@ -59,7 +62,9 @@ Meatguns can have implants as well as modules. These work in the same way as oth
 
 ## Ammunition Fabricator
 
-Gradually consumes metabolic substrate to produce ammunition. Every 2s, the organ consumes 1 unit of metabolic substrate and produces 1 unit of an ammunition type that the item supports.
+\item_render[height=30]{meatweapons:ammunition_generator}
+
+This implant gradually consumes metabolic substrate to produce ammunition. Every 2s, the organ consumes 1 unit of metabolic substrate and produces 1 unit of an ammunition type that the item supports.
 
 Meatgun items can be filled with metabolic substrate by right-clicking (pressing R) on a tank, or clicking the item with a food item in an inventory.
 

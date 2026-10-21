@@ -1,17 +1,19 @@
 ---
 id: plc
+lookup: neepmeat:plc
 ---
 
 # 可编程逻辑控制器
 
-可编程逻辑控制器（PLC）是专为工业自动化设计的计算机，能够运行用户编写的程序，也可进入交互模式以逐次执行指令。机载时钟速度快如闪电，有足足20Hz。
+\columns[fit=second]{可编程逻辑控制器（Programmable Logic Controller，PLC）是专为工业自动化设计的计算机，能够运行用户编写的程序，也可进入交互模式以逐次执行指令。机载时钟速度快如闪电，有足足20Hz。
+}{\item_render{neepmeat:plc}}
 
 PLC通过“操作机构”（Actuator）与世界交互。每台PLC均配备一个机器人，视作默认操作机构。
 
 右击PLC可获取其机器人的控制权。
 
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/plc_interactive.png}
-\centering{处于交互模式下的PLC，其有两个展示台用于存放配方原材料。}
+\centering{处于交互模式下的PLC，其有两个展示台用于存放配方原料。}
 
 ## 交互模式
 

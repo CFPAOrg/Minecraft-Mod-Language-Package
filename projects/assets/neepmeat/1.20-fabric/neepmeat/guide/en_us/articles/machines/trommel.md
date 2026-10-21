@@ -4,7 +4,8 @@ id: trommel
 
 # Trommel
 
-This trommel lifts impurities from fats and meats as others might remove rocks from water. Mundane contaminants remain within the rotating mesh while the desired products drain away.
+\columns[fit=second]{This trommel is primarily for separating larger solids from liquids and smaller particles. Is useful for removing large pieces of bone from tissue slurry. 
+}{\item_render{neepmeat:small_trommel}}
 
 Dirty Ore Fat can be processed in the Trommel for an approximate 150% yield compared to directly pressing dirty fat.
 

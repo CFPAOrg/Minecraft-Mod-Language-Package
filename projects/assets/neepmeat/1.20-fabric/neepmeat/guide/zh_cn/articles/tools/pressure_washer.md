@@ -5,9 +5,9 @@ lookup: neepmeat:pressure_washer
 
 # 高压清洗器
 
-根据使用的流体种类，高压清洗器可以改变或移除特定方块。
+\columns[fit=second]{根据使用的流体种类，高压清洗器可以改变或移除特定方块。
 
-持有清洗器时按下R（默认）可按照普通方式与方块进行交互。
+持有清洗器时按下R（默认）可按照普通方式与方块进行交互。}{\item_render{neepmeat:pressure_washer}}
 
 ## 流体效果
 
