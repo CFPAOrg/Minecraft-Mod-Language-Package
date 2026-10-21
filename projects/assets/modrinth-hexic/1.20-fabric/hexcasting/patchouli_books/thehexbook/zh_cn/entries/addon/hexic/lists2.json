@@ -1,0 +1,99 @@
+{
+    "name": "高阶列表",
+    "category": "hexcasting:patterns",
+    "icon": "minecraft:birch_sign",
+    "advancement": "hexcasting:root",
+    "pages": [
+        "这些图案似乎对应着我常对列表执行的操作。虽然说它们的功能可以用普通的$(l:patterns/lists)列表操作/$实现，但一般会更加麻烦。可能是自然为了理解我做的事而创造了它们……还是我自己发明了它们？",
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:rotate",
+            "anchor": "hexic:rotate",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "向左旋转列表：参数为 1 时，首个列表元素会移动到末尾。负数参数会向右旋转列表。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:take",
+            "anchor": "hexic:take/count",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "选出所给列表开头的若干元素。负数参数则选出末尾的若干元素。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:drop",
+            "anchor": "hexic:drop/count",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "删去列表开头的若干元素；它是$(l:addon/hexic/lists2#hexic:take/count)$(action)维持之馏化/$的对偶。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:take",
+            "anchor": "hexic:take/list",
+            "input": "[a], [int]",
+            "output": "[a]",
+            "text": "从列表中选出所给下标对应的元素。和$(l:patterns/lists#hexcasting:index)$(action)选择之馏化/$不同的是，此图案无法重排或复制 iota。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:drop",
+            "anchor": "hexic:drop/list",
+            "input": "[a], [int]",
+            "output": "[a]",
+            "text": "删去列表中所给下标的元素。其他 iota 的顺序不变。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:where",
+            "anchor": "hexic:where/bool",
+            "input": "[bool]",
+            "output": "[int]",
+            "text": "将输入中 True 所处位置的下标组为列表返回。例如，[True, False, True] 会变为 [0, 2]。输入列表中允许混用布尔值和整数。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:where",
+            "anchor": "hexic:where/num",
+            "input": "[num]",
+            "output": "[int]",
+            "text": "根据数值将各下标组为列表返回。例如，[1, 2, 3] 会变为 [0, 1, 1, 2, 2, 2]。0 和负数处的下标不会在返回值中出现。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "header": "外积之馏化",
+            "op_id": "hexcasting:mul",
+            "anchor": "hexcasting:mul",
+            "input": "[a], [b]",
+            "output": "[[a, b]]",
+            "text": "计算两列表的外积。即在两输入列表各取一个元素，将所有可能的值对组为列表返回。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "header": "内积之馏化",
+            "op_id": "hexcasting:div",
+            "anchor": "hexcasting:div",
+            "input": "[a], [b]",
+            "output": "[[a, b]]",
+            "text": "计算两列表的内积。即纵向排布两列表的元素，而后相邻排列两列表，将每行的元素对组为列表返回（跳过未配对的元素）。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:extract",
+            "anchor": "hexic:extract",
+            "input": "[a], int",
+            "output": "[a], [a], a",
+            "text": "从所给列表中取出 iota，并在该位置分割列表。返回指定 iota 左侧的所有元素，而后返回其右侧的所有元素，最后返回该 iota。"
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:grep",
+            "anchor": "hexic:grep",
+            "input": "[a], [a → bool]",
+            "output": "[a]",
+            "text": "从所给列表中移除不满足所给谓词的 iota。使用$(l:patterns/meta#hexcasting:halt)$(action)卡戎之策略/$会清除当前 iota 和后续所有 iota。"
+        }
+    ]
+}
