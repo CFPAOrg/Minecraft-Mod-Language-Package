@@ -1,0 +1,39 @@
+{
+    "name": "广播机",
+    "icon": "mimi:broadcaster",
+    "category": "mimi:5files",
+    "pages": [
+        {
+            "type": "patchouli:spotlight",
+            "title": "广播机",
+            "item": "mimi:broadcaster",
+            "text": "广播机是传输器的方块版本，可以用来播放插入的软盘中的MIDI文件。$(br2)要使用广播器，首先需要制作一个并放置于世界中。然后右键单击即可打开广播机的GUI。"
+        },
+        {
+            "type": "patchouli:crafting",
+            "title": "合成配方",
+            "recipe": "mimi:broadcaster"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "广播机GUI",
+            "text": "广播机的界面与$(l:5_5transmitter#screen)传输器GUI$()完全相同，除了插入的软盘会自动开始播放(类似我的世界原版唱片机)。"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "红石信号输出",
+            "text": "广播机在插入了有效的软盘后会向所有方向发出红石信号，无论正在播放或暂停。$(br2)广播机在内部不存在软盘、加载软盘时发生错误、回放被停止或者曲目播放完毕时不会发出红石信号。"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "自动化",
+            "text": "如果在广播机底部放置漏斗，那它就会将软盘取出。除非广播机正在发出红石信号，锁定了漏斗。$(br2)如果放置一个指向广播机的漏斗，当广播机内部为空时它就会自动插入新软盘，并且自动开始播放。"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "区块卸载",
+            "text": "当广播机所在的区块被卸载时，广播机将会自动停止播放，并且将回放位置重置回起点，因为玩家听不到广播机的声音了。$(br2)在区块重新加载的时候广播机又会自动重新播放其中的软盘。"
+        }
+    ],
+    "sortnum": 6
+}

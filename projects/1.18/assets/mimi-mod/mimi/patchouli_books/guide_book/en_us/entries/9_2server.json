@@ -1,0 +1,32 @@
+{
+    "name": "Server Music",
+    "icon": "mimi:transmitter",
+    "category": "mimi:9commands",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "These commands allow you to see and modify the MIDI files that the server is providing for use in Floppy Disks."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "List",
+            "text": "$(l)/mimi server list <page?>$()$(br2)This command may be used by $(l)all users$() and will list the websites that the server allows for Web MIDI files (an empty list allows all sites).$(br)$(li)$(l)page$() - The page number of results to view. If no page is provided the first page will be shown.$(br2)EX: $(c:/mimi web list 1)/mimi web list 1$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Add",
+            "text": "$(l)/mimi server add <url> <name>$()$(br2)This command may be used by $(l)ops only$() and will add the MIDI File from the provided URL to the server with the provided name.$(br)$(li)$(l)url$() - The URL of the file.$(li)$(l)name$() - The name to use for this MIDI on the server.$(br2)EX: $(c:/mimi server add \"https://bitmidi.com/uploads/79829.mid\" rick_roll)/mimi server add \"https://bitmidi.com/uploads/79829.mid\" rick_roll$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Remove",
+            "text": "$(l)/mimi server remove <name>$()$(br2)This command may be used by $(l)ops only$() and will remove the MIDI from the server with the provided name.$(br)$(li)$(l)name$() - The name of the MIDI on the server to remove.$(br2)EX: $(c:/mimi server remove rick_roll)/mimi server remove rick_roll$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Reload",
+            "text": "$(l)/mimi server reload$()$(br2)This command may be used by $(l)ops only$() and will reload the full list of MIDI files provided by the server from the disk. This may be useful if you add or remove a MIDI file to the server MIDI folder directly.$(br2)EX: $(c:/mimi server reload)/mimi server reload$()"
+        }
+    ],
+    "sortnum": 2
+}

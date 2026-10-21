@@ -1,0 +1,36 @@
+{
+    "name": "The Disk Writer",
+    "icon": "mimi:diskwriter",
+    "category": "mimi:5files",
+    "pages": [
+        {
+            "type": "patchouli:spotlight",
+            "title": "The Disk Writer",
+            "item": "mimi:diskwriter",
+            "text": "The Disk Writer is a block that allows you to write data to blank Floppy Disks.$(br2)To use a Disk Writer craft one, place it into the world, and then right click on it to open the Disk Writer Screen."
+        },
+        {
+            "type": "patchouli:crafting",
+            "title": "Recipe",
+            "recipe": "mimi:diskwriter"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Disk Writer Screen",
+            "text": "The Disk Writer Screen allows you to insert up to a full stack of 64 blank Floppy Disks into the left-hand slot and write data to them using the textboxes for the Title and URL.$(br2)The Title box must have at least one non-whitespace character in it to be considered valid and must be at most 64 characters in length."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "The URL can be either a Web URL or a Server URL. In either case it must be at most 256 characters in length and validated using the rules below. If the textbox is red then MIMI does not consider the URL valid.$(br)$(li)$(l)Web$() - Web URLs must be valid full URLs that point directly to a MIDI file (I.E: 'https://example.com/download/mytestmidi')."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "$(li)$(l)Server$() - Servers have the option to include default MIDI Files that all players can point disks at (see the Server Admin section for more info).$(br2)Server URLs should use the format of 'server://<song name>' (I.E: 'server://example_song'). To get a list of available server songs you can run the '$(c:/mimi server list)/mimi server list$()' command."
+        },
+        {
+            "type": "patchouli:text",
+            "text": "Once you have valid data in both textboxes you can click the 'Write' button to write the data to all of the blank Floppy Disks that are in the left-hand slot."
+        }
+    ],
+    "sortnum": 4
+}
