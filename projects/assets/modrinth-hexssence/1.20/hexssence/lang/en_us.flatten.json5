@@ -1,0 +1,108 @@
+{
+  "item.hexssence": {
+    essence_hex: "Hex Essence",
+    essence_earth: "Earth Essence",
+    essence_air: "Air Essence",
+    essence_water: "Water Essence",
+    essence_fire: "Fire Essence",
+    essence_metal: "Metal Essence",
+    essence_precious: "Precious Essence",
+    essence_life: "Life Essence",
+    essence_end: "End Essence"
+  },
+
+  "block.hexssence": {
+    essence_jar: "Essence Jar"
+  },
+
+  "itemGroup.hexssence": "Hexssence",
+
+  hexssence: {
+    mishaps: {
+      extraction: {
+        valid_target: "valid Extraction target"
+      },
+      combine: {
+        valid_recipe: "valid Combination recipe iota",
+        valid_list: "list of vectors pointing to Essence jars",
+        not_enough_items: "Essence jars to contain enough requisite Essence"
+      },
+      analyze: {
+        valid_item: "item with a valid Combination recipe"
+      }
+    },
+    book: {
+      patterns: {
+        spells: {
+          essence_spells: {
+            title: "Essence Spells",
+            desc: "I have discovered a number of patterns relating to $(l:items/essence)$(thing)Essence/$, the fundamental components of items.",
+            extract_essence: "Extracts the essence from a dropped item. Cost varies depending on target item.",
+            combine_essence: "Remove a list of vectors, a $(thing)recipe iota/$, and a vector from the stack, then take essences from the jars at the given locations, mix them according to the given recipe, and summon the resulting item at the given location.$(br)",
+            decay_recipe: "Decays a $(thing)Recipe iota/$ into a list of lists where the inner lists each contain an item type and a count.<br>This list of lists represents which essences the recipe needs, and how much of each.<br>"
+          }
+        },
+        great_spells:{
+          analysis: {
+            title: "Analysis",
+            overview: "$(l:patterns/spells/essence_spells#hexssence:combine_essence)Essence Crafting/$ seems to require a new iota form, called a $(thing)Recipe iota/$.<br>The only way I've found to generate these iotas is Analysis, which I've detailed on the next page.",
+            analysis: "Remove an item entity, then add an iota representing the combination recipe for that item to the stack.<br>Successful analyses tear the item apart.$(br2)Mishaps if target does not have a valid combination recipe.<br>Costs 5 $(item)Charged Amethyst./$<br>"
+          }
+        }
+      },
+    },
+    page: {
+      essence: {
+        "1": "Strange, some of these scrolls imply that basic $(item)items/$ such as cobblestone are $(italic)not/$ discrete forms, but are instead amalgamations of even baser $(item)Essences/$.",
+        "2": "I wonder if I can $(l:patterns/spells/essence_spells)exploit this.../$",
+        "jar": "I've devised a way to store a large quantity of any one Essence.$(br)To store an Essence in a jar, I can simply interact while holding a matching essence.$(br)Interacting again within a short timeframe deposits every matching essence in my inventory.$(br)Punching the jar with an empty hand or essence extracts one of the contained essences into my hand, and crouching as I do so extracts a full stack."
+      }
+    },
+    entry: {
+      items: "Essences"
+    },
+    tooltip: {
+      essence_jar: "Stored: %s x%d"
+    }
+  },
+
+  hexcasting: {
+    action: {
+      "hexssence:": {
+        "extract_essence": "Extraction",
+        "combine_essence": "Combination",
+        "analyze_essence": "Analysis",
+        "decay_recipe": "Decay"
+      },
+
+      // use this to add shortened versions of pattern names if the full name won't fit in the ingame book
+      // you don't need to add an entry for every pattern - the above value will be used as a default
+      book: {
+        "hexssence:": {
+        },
+      },
+    },
+  },
+
+  text: {
+    hexssence: {
+    },
+
+    "autoconfig.hexssence": {
+      title: "Hexssence Config",
+
+      category: {
+        client: "Client",
+        server: "Server",
+      },
+
+      option: {
+        client: {
+          },
+
+        server: {
+        },
+      },
+    },
+  },
+}
