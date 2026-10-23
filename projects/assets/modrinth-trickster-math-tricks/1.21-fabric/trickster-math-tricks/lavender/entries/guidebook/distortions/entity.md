@@ -10,10 +10,6 @@ Various tricks related to gathering data about entities.
 
 ;;;;;
 
-<|glyph@trickster-math-tricks:templates|trick-id=trickster-math-tricks:entity_quaternion,title=Rotation Ingress|>
-
-entity -> quaternion
-
----
+<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:entity_quaternion|>
 
 Given an entity, returns its head rotation as a quaternion.

@@ -12,20 +12,12 @@ This mod adds only 2 tricks/revisions to the base mod, they have to be used to u
 
 ;;;;;
 
-<|glyph@trickster:templates|trick-id=trickster-math-tricks:math_lib,title=Calculation Stratagem|>
-
-pattern, any... -> any
-
----
+<|trick@trickster:templates|trick-id=trickster-math-tricks:math_lib|>
 
 Executes math tricks identified by provided pattern. This is required to call any math tricks added by this addon.
 
 ;;;;;
 
-<|pattern@trickster:templates|pattern=3\,4\,0\,3\,6\,4\,7\,6,title=Calculation Revision|>
-
-{gray}(Scribing pattern){}
-
----
+<|revision@trickster:templates|revision-id=trickster-math-tricks:main_revision|>
 
 Runs math revisions identified by existing pattern in the circle. This is required to use any math revisions added by this mod.
