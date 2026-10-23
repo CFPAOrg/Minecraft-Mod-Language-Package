@@ -75,16 +75,19 @@ fishcasting:
       environment/moon/increment: It is frightening to imagine the consequences of manipulating something as large as the world itself... It is nearly a consolation that it costs about one stack of $(l:items/amethyst)$(item)Charged Amethyst/$.
 
     environmental_patterns:
-      '1': Some aspects of this world are difficult to describe using just numbers, for this purpose several patterns have been devised to store this information in an environmental iota. These will all evaluate to being of the same type, even if the information stored is from a different environment.
-      '2': For patterns with a numerical or ordinal representation, arithmetic patterns may be used to transform the environment into its corresponding numerical representation. For environments which do not have a numerical representation, attempting to transform it will mishap.
+      '1': Some aspects of this world are difficult or impossible to discern without Nature's help. Some patterns which aid in classifying parts of the world are detailed in this section.
+      'old1': Some aspects of this world are difficult to describe using just numbers, for this purpose several patterns have been devised to store this information in an environmental iota. These will all evaluate to being of the same type, even if the information stored is from a different environment.
+      'old2': For patterns with a numerical or ordinal representation, arithmetic patterns may be used to transform the environment into its corresponding numerical representation. For environments which do not have a numerical representation, attempting to transform it will mishap.
       title: Environments
       environment/daytime: Pushes the time of day onto the stack. Costs a negligible amount of _media.
-      environment/moon/get: Pushes the phase of the moon to the stack. Costs a negligible amount of _media.
+      environment/moon/get: Pushes the phase of the moon to the stack in radians. Costs a negligible amount of _media.
       environment/dimension: Pushes the dimension of the caster to the stack. Costs a negligible amount of _media.
       environment/biome: Transforms a vector on the stack into the biome at that position. Costs a negligible amount of _media.
-      environment/depth: Transforms a vector on the stack into the sea level at that position. Costs a negligible amount of _media.
+      environment/depth: Transforms a vector on the stack into the depth below sea level at that position. Costs a negligible amount of _media.
       environment/structure: Transforms a vector on the stack into a list of structures at that position. Costs a negligible amount of _media.
       environment/weather: Transforms a vector on the stack into the precipitation at that position. Costs a negligible amount of _media.
+      environment/precipitation: Transforms a vector on the stack into true if there is precipitation at that position and false otherwise. Costs a negligible amount of _media.
+      environment/thundering: Pushes true if it is stormy and false otherwise. Costs a negligible amount of _media.
       environment/climate: Transforms a vector on the stack into the water climate at that position. Costs a negligible amount of _media.
       environment/arithmetic/length: Transforms an environment on the stack into its numerical representation. Mishaps if it does not have one.
     bobber_patterns:
@@ -95,11 +98,13 @@ fishcasting:
       catch/from_bobber: Transforms a bobber on the stack into the entity caught on its hook (or $(thing)Null/$ if there isn't one). Costs a negligible amount of _media.
       bobber/from_catch: Transforms an entity on the stack into the bobber it is caught on (or $(thing)Null/$ if there isn't one). Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
       bobber/medium: Transforms a bobber on the stack into the medium it is in, or $(thing)Null/$ if it is not in one. Costs a negligible amount of _media.
+      bobber/biting: Transforms a bobber on the stack into a boolean which is true if there is an unreeled catch or false otherwise.
     bobber_spells:
       title: Bobber Spells
       '1': A small collection of spells pertaining to the hook and bobber of the fishing rod itself.
       bobber/attach: Removes two entities from the top of the stack, then attaches the entity on the top of the stack to the bobber first on the stack. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
-      bobber/detach: Removes one entity from the top of the stack. Detaches the bobber from any entity hooked to it. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+      bobber/detach: Removes one entity from the top of the stack. Detaches the bobber from any entity or catch hooked to it. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.
+      bobber/pop: Removes one entity from the top of the stack. Forcibly pops any catch hooked to it, killing it if it was a common fish, or scaring it off if it was an unusual fish. Costs about one $(litems/amethyst)$(item)Amethyst Shard/$.
     fishing_spells:
       '1': On the rare occasion that I have come face to face with a finned foe, a simple spell to disable its movements is all I ever needed to deal with the issue.$(br)These spells are useless on most other more advanced beings, but for the simple creatures that fish are, they will suffice.
       title: Fish Spells
@@ -108,10 +113,12 @@ fishcasting:
       fish/kill: Removes an entity from the stack and if it was a fish, humanely excises whatever life it may have had left. Costs a negligible amount of _media.
     fishing_patterns:
       title: Fish Patterns
+      fishy_note: In order to determine if a fish can survive in a habitat, I may query Nature. Curiously, Nature won't mind answering even if the entity I provide is just an $(thing)$(t:A Fishy Note may be used in place of a fish)impression of a fish$(/t)$().
       fish/condition: $(br)Evaluates if a fish could be found in the given conditions. Costs a negligible amount of _media.
-      '1': Transforms a fish on the stack into a boolean representing if it can be found in that environment, or $(thing)Null/$ if the given environment has no effect on the fish.
-      fish/min: Transforms a fish on the stack into the smallest specimen caught by the caster as a number. Costs a negligible amount of _media.
-      fish/max: Transforms a fish on the stack into the largest specimen caught by the caster as a number. Costs a negligible amount of _media.
+      '1': Fish. They take many shapes and sizes but some things do not change. They are either $(thing)$(t:As a living entity)moving around$(/t)$(), or if they've been caught, they typically $(thing)$(t:As an item entity)remain motionless$(/t)$() or stay still in a bucket.
+      'old_1': Transforms a fish on the stack into a boolean representing if it can be found in that environment, or $(thing)Null/$ if the given environment has no effect on the fish.
+      fish/min: Transforms a fish on the stack into the smallest specimen caught by the caster as a number, or $(thing)Null/$ if none have been caught. Costs a negligible amount of _media.
+      fish/max: Transforms a fish on the stack into the largest specimen caught by the caster as a number, or $(thing)Null/$ if none have been caught. Costs a negligible amount of _media.
       fish/length: Transforms a fish on the stack into its length as measured by a fisher, or 0 if it was not alive.
       fish/rarity: Measure the quality of the fish entity. A common fish will have a lower quality, and a rare fish will have a higher quality.
       fish/length_all_entities: |-
@@ -132,6 +139,15 @@ fishcasting:
         showForbiddenPatchouliKnowledge field
         to false in the fishcasting config
         fishcasting.toml)[Fishcasting]$()
+      fish/condition/biome: Transforms a fish and a biome on the stack into a boolean if the fish can or can not be found in that biome, or $(thing)Null/$ if the fish lives in all biomes. Costs a negligible amount of _media.
+      fish/condition/climate: Transforms a fish and a climate on the stack into a boolean if the fish can or can not be found in that climate, or $(thing)Null/$ if the fish lives in all climates. Costs a negligible amount of _media.
+      fish/condition/daytime: Transforms a fish and a time of day on the stack into a boolean if the fish can or can not be found at that time of day, or $(thing)Null/$ if the fish is found at all times of day. Costs a negligible amount of _media.
+      fish/condition/depth: Transforms a fish and an elevation on the stack into a boolean if the fish can or can not be found at that elevation, or $(thing)Null/$ if the fish is found at all elevations. Costs a negligible amount of _media.
+      fish/condition/dimension: $(br)Transforms a fish and a dimension on the stack into a boolean if the fish can or can not be found in that dimension, or $(thing)Null/$ if the fish is found in all dimensions. Costs a negligible amount of _media.$(br)
+      fish/condition/moon: Transforms a fish and an moon phase in radians on the stack into a boolean if the fish can or can not be found during that phase of the moon, or $(thing)Null/$ if the fish is found during any moon phase. Costs a negligible amount of _media.$(br)
+      fish/condition/structure: $(br)Transforms a fish and a structure on the stack into a boolean if the fish can or can not be found in that structure, or $(thing)Null/$ if the fish is found in any or no structure. Costs a negligible amount of _media.$(br)
+      fish/condition/rain: Transforms a fish and a boolean on the stack into $(thing)True/$ if the fish can be found during rain, $(thing)False/$ if it can be found during clear skies, or $(thing)Null/$ if the fish is found in any weather. Costs a negligible amount of _media.
+      fish/condition/storm: Transforms a fish and a boolean on the stack into $(thing)True/$ if the fish can be found during a storm, $(thing)False/$ if it can be found during clear skies, or $(thing)Null/$ if the fish is found in any weather. Costs a negligible amount of _media.
   spelldata:
     fish:
       whoknows: An unknown fish
@@ -141,6 +157,7 @@ fishcasting:
     fishy_business: Fishy Business
     fanciful_fishing: Fanciful Fishing
     lore:
+      intro: Break this bottle
       newsletter: 'Newsletter #1'
       newsletter2: 'Newsletter #2'
       notes: 'Notes #1'
@@ -150,23 +167,24 @@ fishcasting:
   page:
     casting_rod:
       '1':
-        .: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$.
-        momentary: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$ when swung gently.
-        offhand_only: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$ when I hold it in my non-dominant hand.
+        .: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$$(br2)While casting may not cause wear on the rod, reeling in a catch may still cause some strain on the tool, so I should take steps to maintain or upgrade it to keep it in working condition.
+        momentary: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$ when swung gently.$(br2)While casting may not cause wear on the rod, reeling in a catch may still cause some strain on the tool, so I should take steps to maintain or upgrade it to keep it in working condition.
+        offhand_only: At least something good came from these... $(#8ef3eb)$(italic)Fish/$casters/$. While it is doubtless useful if I would like to fish, a $(thing)Casting Rod/$ will serve me as well as any $(l:items/staff)$(thing)Staff/$ when I hold it in my non-dominant hand.$(br2)While casting may not cause wear on the rod, reeling in a catch may still cause some strain on the tool, so I should take steps to maintain or upgrade it to keep it in working condition.
       smithing: A construction similar to the $(l:items/staff)$(thing)Staves/$.
     focus_bobber:
       '1': A truly remarkable invention for such a trite sport. A $(thing)Focus Bobber/$ not only extends my ambit by about an arms length from its origin, it also casts any stored hex within once I pull on it with enough force. This added range does not come for free however, as casting via the Focus Bobber costs $(l:items/amethyst)$(item)Amethyst Dust/$ equal to the square of the length of the vector from myself to the bobber.
       crafting: A construction similar to the $(l:items/focus)$(thing)Focus/$. Much like a focus, it can be written to when in my hand, or when on the ground, as well as when it has been cast by a rod.
+      smithing: An entirely cosmetic embellishment.
     fishy_business:
-      '1': Some useful recipes to be certain, should I ever come across a fool foolish enough to part with these without knowing their true value as sources of _Media.
+      '1': Some useful recipes to be certain, should I ever come across a fool foolish enough to part with these without knowing their true value as sources of _Media. If I wish to fish I will need an Angling Table to better accessorize my rod.
       crystal_shrimp:
-        shard: These $(thing)Crystal Shrimp$() do look quite delicious...
-        charged: Especially when they're together like this...
+        amethyst: These $(thing)Crystal Shrimp$() do look quite delicious... Especially when they're grouped together...
+        fried_rice: Fried to perfection, tender and crispy when eaten fresh.$(br)This meal provides some clarity for a duration after consumption and is supposedly popular among merchants and fishers with enough wealth.
       crystalline_carp: This imposing $(thing)Crystalline Carp$() looks like it could channel media without any effort at all, if it had the brains to do so.
       '2': These small things seem to have some almost negligible but noticeable effect on less intelligent life. While hardly useful in my research, the sound the line makes is pleasant on the ears. If only the bait were so kind on the nose...
       hexlikes: Media-infused Paraphernalia
-      '3': Recommended by a passing fisher I reluctantly exchanged a few short words with, these oddities would surely come in handy.$(br2)If I were to ever take an extended vacation by the ocean.$(br)And subject myself to the smell of raw fish.
-      misc: Fisher's Recommendation
+      '3': Recommended by a passing fisher I reluctantly exchanged a few short words with, these oddities would surely come in handy. Should I wish to subject myself to the smell of raw fish on a cold, stony shore.
+      misc: The fisher was very enthusiastic about some of these being useful.$(br)As sincere as it may have seemed, I must imagine some of these recommendations were intended for nitwits.
     fanciful_fishing:
       '1': Ha! That even that fisher should have gone to such lengths -- just in order to fish without pause... I shudder to imagine what over a week of non-stop fishing would do to my psyche. As different as this $(l:items/casting_rod#fishcasting:landing)$(thing)Casting Rod/$ may look, it offers me no additional benefits in my work aside from its durability, should I wish to cast using a $(l:items/focus_bobber)$(thing)Focus Bobber/$.
       smithing: A construction similar to the $(l:greatwork/fanciful_staves)$(thing)Fanciful Staves/$.
@@ -180,6 +198,9 @@ fishcasting:
         clueless: Among the notes I gleaned from the fisher I met were some stranger references to fish being broken down into smaller parts, or into nothing. Such an exchange can obviously not take place, something must remain. $(t:Fishcasters must have left some sort of clue behind for other fishers to reel in.)$(thing)What fish could possibly be so difficult to dismantle?/$$(br)
         header: Annihilation
     lore:
+      intro:
+        '1': "'I am writing this to whomever it may concern.$(br2)I will not be returning from sea.$(br2)     I like it out here.'"
+        '2': "'If you're fishing around on the warmer side of the ocean, you'll come across bottles I've tossed with junk I wanted to get rid. Some of it I just wanted to get off my mind.$(br2)Break them if you're interested in finding out what's inside.$(br2)Have fun cleaning the ocean up.'"
       newsletter:
         '1': Opinions, Discussion 1.$(br2)$(#000000)Stay classy champ.$()$(#5520ff)$(br)One person knocking three people out of the top six spots. Cheating by exploiting loopholes as usual.$() $(#541e18)$(br)Imagine thinking its the same person just because they are wearing the same robes.$() $(#d3d3d3)$(br)It’s probably one $(#8ef3eb)fishcaste's/$$(#d3d3d3) meme doing it though, judging by the robes being worn all being the same one.$(br)$(#596979)Next year is going to be my year, just watch.
         '2': Opinions, Discussion 2.$(br)$(#99622e)And that right there is why I while heartedly believe that the tournaments top three are either hexcasting, or rod sharing. Babs had a full three hundred point lead over second place in two days, and then the current second and third come out of nowhere to have over six hundred points each as well, matching Babs' score. Even my acquaintance who is spending between nine and twelve hours each day in there, fishing for nothing but $(l:items/fishy_business#fishcasting:carp)$(item)crystalline carp$()$(#99622e), isn't anywhere near those points$()
@@ -207,7 +228,7 @@ fishcasting:
         '8': Year $(k)6666$(), Day 8.
         '9': Year $(k)6666$(), Day 9.
         '10': Year $(k)6666$(), Day 10.
-        '11': Year $(k)6666$(), Day 11.$(br2)I neglected to step away from fishing to write in my diary again this year. I won, again. I passed out as soon as I handed in my last batch of fish, raising my final score to well over two thousand points, putting me at number 1 world-wide, again. My friends put in a modest effort, reaching over a thousand points each, getting them a shared sixty-ninth place. I don't think I'll be fishing next year.$(br)I'm going to go for a walk.
+        '11': Year $(k)6666$(), Day 11.$(br2)I neglected to step away from fishing to write in my diary again this year. I won, again. I passed out as soon as I handed in my last batch of fish, raising my final score to well over two thousand points, putting me at number 1 world-wide, again. My friends put in a modest effort, reaching over a thousand points each, getting them a shared $(k)im da$()-$(k)joker$() place. I don't think I'll be fishing next year.$(br)I'm going to go for a walk.
       newsletter2:
         '1': Opinions, Discussion 1.$(br2)$(#596979)I finally did it! I beat Babs!$(br)$(#491499)Babs didn't take part in this year's competitions.$(br)$(#596979)What?
         '2': Opinions, Discussion 2.$(br2)$(#99622e)Thank god that $(#b38ef3)hexcaster/$ didn't cheat this year too. I saw they had embezzled over a $(o)billion$()$(#99622e) emeralds from somebody using a hex just a few months ago, terrible person.$(br)$(#491499)If you mean the transaction mentioned in last month's newsletter, that article was satire.
@@ -243,9 +264,9 @@ tag:
 
 
 item:
-  tide:
-    crystal_fishing_rod: Crystal Casting Rod
-    amethyst_bobber: Amethyst Focus Bobber
+  __tide:
+    __crystal_fishing_rod: Crystal Casting Rod
+    __amethyst_bobber: Amethyst Focus Bobber
   fishcasting:
     shepherds_casting_rod: Shepherd's Casting Rod
     rocky_casting_rod: Rocky Casting Rod
@@ -263,13 +284,13 @@ item:
       desc: Prevents entities from getting hooked
     clingy_fishing_hook:
       .: Clingy Fishing Hook
-      desc: Keeps catch from escaping until reeled, but takes longer to nibble
+      desc: Takes longer to bite but won't escape
     odious_bait:
       .: Odious Bait
       desc: Prevents anything from nibbling or biting
     unlucky_bait:
       .: Unlucky Bait
-      desc:
+      desc: More likely to catch junk
     benign_bait:
       .: Benign Bait
       desc: Prevents anything but fish from nibbling or biting
@@ -286,7 +307,7 @@ item:
     tacklebox_chair_floaty: Floaty Tacklebox Chair
     tacklebox_chair_secret: 'NUCLEAR-HEX-MACHINE "[WEST, wweewaqdeeweewawe]KOOL[NORTH_EAST, wawdwedaqedwwwe]U" MK[SOUTH_EAST, aqaaqawqaaq] TURBOMAX!!!!!'
     fishy_fragment: Soggy Lore Fragment
-    glass_shard: Glass Shard
+    glass_shard: Bottle Shard
     edified_fish: Edified Guppy
     edified_fish_bucket: Edified Guppy Bucket
     edified_fish_spawn_egg: Edified Guppy Spawn Egg
@@ -350,6 +371,14 @@ journal:
 _comment_pattern: PATTERN STUFF
 hexcasting:
   iota:
+    fishcasting:biome:
+      desc: Biome
+    fishcasting:dimension:
+      desc: Dimension
+    fishcasting:medium:
+      desc: Medium
+    fishcasting:structure:
+      desc: Structure
     fishcasting:environment:
       desc: Environment
   action:
@@ -360,23 +389,27 @@ hexcasting:
     fishcasting:bobber/attach: Attach Bobber
     fishcasting:bobber/detach: Detach Bobber
 
+    fishcasting:bobber/biting: Biting Purification
 
-    fishcasting:fish/min: Fishy Minimum Reflection
-    fishcasting:fish/max: Fishy Maximum Reflection
-
+    fishcasting:fish/min: Fishy Minimum Purif.
+    fishcasting:fish/max: Fishy Maximum Purif.
 
     fishcasting:fish/condition: Condition Fishtillation
 
-    fishcasting:fish/biome: Fishy Biome Distillation
-    fishcasting:fish/climate: Fishy Climate Distillation
-    fishcasting:fish/depth: Fishy Depth Distillation
-    fishcasting:fish/dimension: Fishy Dimension Distillation
-    fishcasting:fish/medium: Fishy Medium Distillation
-    fishcasting:fish/moon: Fishy Moon Phase Distillation
-    fishcasting:fish/structure: Fishy Structure Distillation
-    fishcasting:fish/daytime: Fishy Daytime Distillation
-    fishcasting:fish/weather: Fishy Weather Distillation
-    fishcasting:fish/length: Glub's Purification
+    fishcasting:fish/condition/biome: Biome Fishtillation
+    fishcasting:fish/condition/climate: Climate Fishtillation
+    fishcasting:fish/condition/depth: Elevation Fishtillation
+    fishcasting:fish/condition/dimension: Dimension Fishtillation
+    fishcasting:fish/condition/medium: Medium Fishtillation
+    fishcasting:fish/condition/moon: Moon Phase Fishtillation
+    fishcasting:fish/condition/structure: Structure Fishtillation
+    fishcasting:fish/condition/daytime: Daytime Fishtillation
+    fishcasting:fish/condition/weather: Weather Fishtillation
+    fishcasting:fish/condition/precipitation: Precipitation Fishtillation
+    fishcasting:fish/condition/thundering: Thundering Fishtillation
+    fishcasting:fish/condition/rain: Rain Fishtillation
+    fishcasting:fish/condition/storm: Storm Fishtillation
+    fishcasting:fish/condition/length: Glub's Purification
     fishcasting:fish/rarity: Seelo's Purification
     _comment_rarity: seelo as in Coelacanth
 
@@ -391,29 +424,65 @@ hexcasting:
     fishcasting:environment/biome: Biome Purification
     fishcasting:environment/structure: Structure Purification
     fishcasting:environment/weather: Weather Purification
+    fishcasting:environment/precipitation: Precipitation Purification
+    fishcasting:environment/thundering: Storm Purification
     fishcasting:environment/climate: Climate Purification
     fishcasting:environment/depth: Depth Purification
     fishcasting:bobber/medium: Medium Purification
   mishap:
     invalid_value:
       class:
+        fishcasting:
+          biome: biome
+          dimension: dimension
+          medium: medium
+          moon: moon
+          structure: structure
         environment: Number-like
     bad_item:
       fishcasting:
+        fish_as_entity: a fish
+        fish_as_item_entity: a fish
+        fishdata_as_entity: a fish with data
+        already_hooked: Catch-free Hook
         fishing_hook: Fishing Hook
+        not_a_live_fish:
+          .: a live fish
         not_a_fish:
           .: a fish
           item: a fish item
           entity: a fish entity
           bucketable: a bucketable fish
 _commnent_lore: LORE STUFF
+advancements:
+  fishcasting:
+    brainswept_trader_in_void:
+      title: Voice of the Void
+      description: Trade a trader with the void
+    fish_up_cursed:
+      title: From the Deep
+      description: Fish up a friend from the void
+    lightning_struck_cursed:
+      title: In Media, Resurrected!
+      description: Liberate a soul from its fleshy prison
+    fish_in_tacklebox_chair:
+      title: Slurp
+      description: Use a Tacklebox Chair to safely put away a fish
+    chain_reaction:
+      title: Runaway Chain Reaction
+      description: Cause a fish to explode by exploding its neighbor
 advancement:
-  fishcasting:lore/newsletter: 'Fishcasting: Newsletter #1'
-  fishcasting:lore/newsletter2: 'Fishcasting: Newsletter #2'
-  fishcasting:lore/notes: 'Fishcasting: Notes #1'
-  fishcasting:lore/notes2: 'Fishcasting: Notes #2'
-  fishcasting:lore/notes3: 'Fishcasting: Notes #3'
-  fishcasting:lore/notes4: 'Fishcasting: Notes #4'
+  fishcasting:
+    lore:
+      root:
+        title: Fishcasting Lore
+        desc: Read a Soggy Lore Fragment
+  fishcasting:lore/newsletter: 'Newsletter #1'
+  fishcasting:lore/newsletter2: 'Newsletter #2'
+  fishcasting:lore/notes: 'Notes #1'
+  fishcasting:lore/notes2: 'Notes #2'
+  fishcasting:lore/notes3: 'Notes #3'
+  fishcasting:lore/notes4: 'Notes #4'
 _comment_config: CONFIGURATION STUFF
 compat:
   nomansland:
@@ -431,7 +500,7 @@ yapping_tooltips:
       rocky_casting_rod.desc: Somehow solid.
       blessed_focus_bobber.desc: Its scent reminds you of times past.
       hexxy_focus_bobber.desc: Yep.
-      sampling_focus_bobber: Good for sampling high up.
+      sampling_focus_bobber.desc: Good for sampling high up.
       loud_fishing_line.desc: A nice sound rings out from time to time.
       chain_linked_fishing_line.desc: As if made by an artisan.
       hookless_fishing_hook.desc: At least your friends can't stop you from fishing anymore.
@@ -448,7 +517,6 @@ yapping_tooltips:
       message_in_a_bottle.desc: It is unclear who keeps tossing these into the ocean...
       glass_shard.desc: Ouch! Careful when walking near these!
       fishy_fragment.desc: At least this soggy thing is still legible.
-      music_disc/returning_to_the_surface.desc: Can be inserted into a jukebox to play cult-like tunes
       edified_fish.desc: Majestic and colorful.
       edified_fish_bucket.desc: Even in captivity, pretty.
       edified_fish_spawn_egg.desc: So I thought it would be funny to ruin your immersion by acknowledging that I don't really feel like writing anything witty for this one, sorry about that.
@@ -458,7 +526,9 @@ yapping_tooltips:
       perhosgata.desc: Can you see anything in there? I can't.
       perhosgata_bucket.desc: Even the container is in there...
       perhosgata_spawn_egg.desc: Frozen in time?
-      blessed_spawn_egg.desc: Don't be too mean to them!
+      blessed_spawn_egg.desc: Be mean to them!
+      music_disc:
+        returning_to_the_surface.desc: Can be inserted into a jukebox to play cult-like tunes
 commands:
   fishing:
     entries:
