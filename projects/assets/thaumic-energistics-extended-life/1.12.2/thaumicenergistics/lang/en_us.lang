@@ -4,6 +4,7 @@ itemGroup.ThaumicEnergistics=Thaumic Energistics
 # Blocks
 tile.thaumicenergistics.infusion_provider.name=Essentia Infusion Provider
 tile.thaumicenergistics.arcane_assembler.name=Arcane Assembler
+tile.thaumicenergistics.essentia_interface.name=Essentia Interface
 
 # Items
 item.thaumicenergistics.diffusion_core.name=Diffusion Core
@@ -23,7 +24,9 @@ item.thaumicenergistics.essentia_cell_creative.name=Creative ME Essentia Storage
 item.thaumicenergistics.essentia_import.name=ME Essentia Import Bus
 item.thaumicenergistics.essentia_export.name=ME Essentia Export Bus
 item.thaumicenergistics.essentia_storage.name=ME Essentia Storage Bus
+item.thaumicenergistics.essentia_level_emitter.name=ME Essentia Level Emitter
 item.thaumicenergistics.essentia_terminal.name=ME Essentia Terminal
+item.thaumicenergistics.wireless_essentia_terminal.name=Wireless Essentia Terminal
 item.thaumicenergistics.arcane_terminal.name=Arcane Crafting Terminal
 item.thaumicenergistics.arcane_inscriber.name=Arcane Inscriber
 
@@ -36,17 +39,29 @@ tooltip.thaumicenergistics.wip=WORK IN PROGRESS, DO NOT USE
 tooltip.thaumicenergistics.device_online=Device Online
 tooltip.thaumicenergistics.device_offline=Device Offline
 tooltip.thaumicenergistics.device_missing_channel=Device Missing Channel
+tooltip.thaumicenergistics.device_not_linked=Terminal is not linked to a security station
+tooltip.thaumicenergistics.device_station_not_found=Linked security station could not be located
+tooltip.thaumicenergistics.device_not_powered=Terminal has insufficient power
+tooltip.thaumicenergistics.device_out_of_range=Terminal is out of wireless range
+tooltip.thaumicenergistics.device_linked=Linked
+tooltip.thaumicenergistics.device_unlinked=Unlinked
+tooltip.thaumicenergistics.stored_energy=Stored Energy
 tooltip.thaumicenergistics.arcane_assembler.idle=Status: idle
 tooltip.thaumicenergistics.arcane_assembler.prep=Status: prep
 tooltip.thaumicenergistics.arcane_assembler.busy=Status: busy
 tooltip.thaumicenergistics.arcane_assembler.progress=Progress:
 tooltip.thaumicenergistics.arcane_assembler.no_aspect=Error: out of aspect
 tooltip.thaumicenergistics.arcane_assembler.no_vis=Error: out of Vis
+tooltip.thaumicenergistics.essentia_interface.side_input=[ThE-DEBUG] Essentia Interface [%s]: INPUT (any aspect)
+tooltip.thaumicenergistics.essentia_interface.side_output=[ThE-DEBUG] Essentia Interface [%s]: OUTPUT (%s)
+tooltip.thaumicenergistics.essentia_interface.side_disabled=[ThE-DEBUG] Essentia Interface [%s]: DISABLED
+tooltip.thaumicenergistics.essentia_interface.multi_aspect_item=[ThE-DEBUG] That item holds multiple aspects -- use a single-aspect item to configure this side.
 
 # GUI
 gui.thaumicenergistics.essentia_import_bus=ME Essentia Import Bus
 gui.thaumicenergistics.essentia_export_bus=ME Essentia Export Bus
 gui.thaumicenergistics.essentia_storage_bus=ME Essentia Storage Bus
+gui.thaumicenergistics.essentia_level_emitter=ME Essentia Level Emitter
 gui.thaumicenergistics.essentia_terminal=Essentia Terminal
 gui.thaumicenergistics.arcane_terminal=Arcane Terminal
 gui.thaumicenergistics.arcane_inscriber=Arcane Inscriber
@@ -123,6 +138,11 @@ research.essentiabuses.title=Digisentia Transportation
 research.essentiabuses.stage.1=Now that I have the components to safely transport essentia with my ME system, I can now work on creating buses for essentia.
 research.essentiabuses.stage.2=I can now make Import, Export, and Storage Buses. They all function exactly like their item counterparts.
 
+# Research Essentia Level Emitter
+research.essentialevelemitter.title=Essentia Level Emitter
+research.essentialevelemitter.stage.1=My Essentia Buses move essentia in and out of my network without complaint, but they do so blindly - I have no way to react automatically when a particular aspect runs low, or floods past where I'd like it to. I should adapt the principles behind my ME Level Emitter to watch essentia quantities instead of items.
+research.essentialevelemitter.stage.2=The Essentia Level Emitter watches a single aspect's stored quantity and emits a redstone signal once it crosses a threshold I set, comparing it as either above or below - exactly like its item counterpart, just tuned to essentia instead.
+
 # Research Essentia Terminal
 research.essentiaterminal.title=Essentia Monitoring
 research.essentiaterminal.stage.1=While I can now digitize essentia, I have realized this means I can no longer observe the quantities of essentia I have digitalized - an urgent problem.
@@ -132,6 +152,12 @@ research.essentiaterminal.stage.2=The ME Essentia Terminal allows me to see all 
 research.infusionprovider.title=Infusion Provider
 research.infusionprovider.stage.1=While being able to manipulate essentia with my ME system has proven invaluable, I am frustrated with the process required for Infusion - I have to extract all my essentia into jars on-site. Perhaps if I could expose my essentia to the Runic Matrix similar to the Essentia Terminal...
 research.infusionprovider.stage.2=Success! The Essentia Infusion Provider will expose the entire ME network's essentia to the Infusion process! As a bonus, it also works with my ME Essentia Storage Buses, allowing me to create essentia subnetworks, should I ever need those.
+
+# Research Essentia Interface
+research.essentiainterface.title=Essentia Interface
+research.essentiainterface.stage.1=I did, in fact, end up needing those essentia subnetworks - my Infusion Provider trick works, but it is a fragile improvisation, held together by a Storage Bus pointed at an altar I would rather not be disassembling for its parts. I want a device built for exactly this job: something that lets an Essentia Storage Bus on one ME network see cleanly into another, with no Infusion altar standing in the middle as an unwilling intermediary.
+research.essentiainterface.stage.2=The Essentia Interface does precisely that. Point an Essentia Storage Bus at it from either side and the two networks' essentia inventories become visible to each other, bridged directly. It even accepts essentia straight from a jar or tube, and can feed one back out again, making it as much a citizen of the wider world of essentia as it is of my ME network.
+research.essentiainterface.addenda.1=Each face configures independently, and needs no tool beyond what I'd already be carrying. Invoking a face with my Casting Gauntlet opens it to accept any aspect from a tube on that side. Applying a phial or crystal holding a single aspect to a face instead turns it into a source for just that aspect, feeding it back out. Crouching while I do either disables the face instead.
 
 # Research Arcane Crafting Terminal
 research.arcaneterminal.title=Arcane Crafting Terminal

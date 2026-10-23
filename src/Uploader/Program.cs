@@ -1,18 +1,19 @@
+using Octokit;
 using Renci.SshNet;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Threading.Tasks;
-using Octokit;
 
 namespace Uploader
 {
     static class Program
     {
-        static async Task Main(string host, string name, string password)
+        static readonly string ServerPathPrefix = "/var/www/html/files";
+
+        static async Task Main(string host, string name, string password, int port)
         {
             Log.Logger = new LoggerConfiguration()
                 .Enrich.FromLogContext()
@@ -34,7 +35,8 @@ namespace Uploader
                 Log.Warning("未找到 artifact 文件夹。可能是所有版本都没有触发打包。");
                 return;
             }
-
+            
+            // 旧格式
             var packs = artifactDirectory
                            .EnumerateFiles("Minecraft-Mod-Language-Modpack-*.zip", SearchOption.AllDirectories)
                            .Select(_ =>
@@ -49,33 +51,56 @@ namespace Uploader
                           .Select(_ => (name: _.Name, file: _));
             var files = packs.Concat(md5s);
 
-            Console.WriteLine("待上传的文件数目：{0}", files.Count());
+            // 新格式
+            var newPacks = artifactDirectory
+                .EnumerateFiles("grouped-Minecraft-Mod-Language-Modpack-*.zip", SearchOption.AllDirectories);
 
-            await UploadToServer(host, name, password, files);
+            // 新包只往服务器传
+            await UploadToServer(host, name, password, port, files.Concat(newPacks.Select(_ => (_.Name, _))));
+            await UnpackOnServer(host, name, password, port, newPacks);
+
             await UploadSnapshotAssets(client, files);
             await UpdateAutobuildAssets(client, files);
+
         }
 
-        async static Task UploadToServer(string host, string username, string password, IEnumerable<(string name, FileInfo file)> files)
+        async static Task UnpackOnServer(string host, string username, string password, int port, IEnumerable<FileInfo> files)
         {
-            using var scpClient = new ScpClient(host, port: 22, username, password);
-            scpClient.Connect(); // 与下载服务器建立连接
+            using var sshClient = new SshClient(host, port, username, password);
+            sshClient.Connect();
 
-            // 确认连接状态
-            if (scpClient.IsConnected)
+            // 目标位置：<...>/new/<version>/
+            foreach (var file in files)
             {
-                Log.Information("SCP服务器连接成功");
+                var packName = file.Name;
+                var version = packName["grouped-Minecraft-Mod-Language-Modpack-".Length..^".zip".Length];
+
+                var targetDirectory = $"{ServerPathPrefix}/{version}/";
+                var zipPath = $"{ServerPathPrefix}/{packName}";
+
+                if (sshClient.RunCommand($"unzip -o '{zipPath}' -d '{targetDirectory}'").ExitStatus == 0)
+                {
+                    Log.Information("<Server> 解包文件：{0}", zipPath);
+                }
+                else
+                {
+                    Log.Warning("<Server> 解包失败：{0}", zipPath);
+                }
+
+                sshClient.RunCommand($"rm '{zipPath}'");
             }
-            else
-            {
-                Log.Error("SCP服务器连接失败");
-                throw new InvalidOperationException();
-            }
+        }
+
+        async static Task UploadToServer(string host, string username, string password, int port, IEnumerable<(string name, FileInfo file)> files)
+        {
+            using var sftpClient = new SftpClient(host, port, username, password);
+            sftpClient.Connect();
 
             foreach (var (name, file) in files)
             {
-                var destinationName = $"/var/www/html/files/{name}";
-                scpClient.Upload(file, destinationName); // 没有async :(
+                using var stream = file.OpenRead();
+                var destinationName = $"{ServerPathPrefix}/{name}";
+                await sftpClient.UploadFileAsync(stream, destinationName);
                 Log.Information("<Server> 写入文件：{0}", destinationName);
             }
         }
