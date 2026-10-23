@@ -55,4 +55,4 @@
 
 <|trick@trickster:templates|trick-id=trickster-math-tricks:squared_magnitude|>
 
-返回所给片段的长度平方。
+返回所给片段长度的平方。
