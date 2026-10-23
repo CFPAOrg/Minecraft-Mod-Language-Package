@@ -25,6 +25,11 @@ the Builder's Passion casts the spell inscribed on the placed block. The positio
 
 ;;;;;
 
+<|page-title@lavender:book_components|title=Sniper’s Aim-assist|>When a ranged weapon shoots,
+the Sniper’s Aim-assist casts the spell inscribed on the ranged weapon. The projectile is received as the first argument.
+
+;;;;;
+
 <|page-title@lavender:book_components|title=Archer’s Focus|>When a projectile hits,
 the Archer’s Focus casts the spell inscribed on the projectile item. The hit entity or position is received as the first argument.
 
@@ -32,6 +37,11 @@ the Archer’s Focus casts the spell inscribed on the projectile item. The hit e
 
 <|page-title@lavender:book_components|title=Angler’s Fury|>When a fishing rod is reeled in,
 the Angler’s Fury casts the spell inscribed on the rod. The caught entity or position of the bobber is received as the first argument.
+
+;;;;;
+
+<|page-title@lavender:book_components|title=Handyworker's Hoard|>When a tool is used,
+the Handyworker's Hoard casts the spell inscribed on the tool. The entity on which it was used, position of where it was used, or void is provided as first argument.
 
 ;;;;;
 
