@@ -14,6 +14,7 @@
   "block.slate_work.redstone_loci": "Redstone Agitator",
   "block.slate_work.accelerator_loci": "Gloopy Accelerator",
   "block.slate_work.fake_player_loci": "Synthetic Dreamer",
+  "block.slate_work.block_break_loci": "Bombastic Extractor",
 
   "block.slate_work.listening_impetus": "Librarian Impetus",
 
@@ -71,7 +72,7 @@
   "slate_work.page.storage_loci.get_item": "This takes a _Hex and runs it on every $(l:patterns/items)Item Stack/$ stored (with it on top of the stack). Once the _Hex is executed, it requires a $(thing)Integer/$, $(thing)Vector/$, and $(thing)Boolean/$, left on the stack, in that order.",
   "slate_work.page.storage_loci.get_item_cont": "Further explained: this runs the given _Hex on every stored Item in the $(thing)Vessels/$. The _Hex must return (top to bottom) either a False (omits the Vector, and Number) or True, Vector, and Number. The Vector corresponds to where to output the items into the world (respecting ambit), and Number relates to how many of that type of item to retrieve. $(br2)Costs a 1/4th of a $(l:items/amethyst)dust/$ per activated $(thing)Vessel/$.",
   "slate_work.page.storage_loci.check_item": "Check Item functions much like Reawaken Item; however, it only requires a Boolean from the inputted _Hex. If the Boolean is ever True, the spell ends, and returns True.",
-  "slate_work.page.storage_loci.sort_items": "In some rare scenarios, $(thing)Vessels/$ can get jumbled up and have items of the same type spread across different  $(thing)Vessels/$. This is a neat spell to resort them at a cost. That cost being 5 $(l:items/amethyst)Charged Amethyst/$.",
+  "slate_work.page.storage_loci.sort_items": "In some rare scenarios, $(thing)Vessels/$ can get jumbled up and have items of the same type spread across different $(thing)Vessels/$. This is a neat spell to resort them at a cost. That cost being 5 $(l:items/amethyst)Charged Amethyst/$.",
   "slate_work.page.storage_loci.set_macro": "This binds both a pattern and an iota to a $(l:greatwork/macro_loci)Spell Imprinter/$, which is at the targeted vector. $(br2)Does not mishap if casted outside of a $(l:greatwork/spellcircles)Spell Circle/$. Costs a negligible amount of _media.",
   "slate_work.page.storage_loci.read_broadcast": "Attempts to read an $(l:greatwork/broadcaster_loci)Iotic Door/$ at the given vector. If there is not a $(l:greatwork/broadcaster_loci)Door/$, returns garbage. $(br)Does not mishap if casted outside of a $(l:greatwork/spellcircles)Spell Circle/$, free, and does not require ambit.",
 
@@ -160,6 +161,14 @@
   "slate_work.page.fake_player_loci.lens": "As for where it attempts to do it's action: the look direction of the ephemeral being is based on either the facing of the block, or an optional axis-aligned $(thing)Vector/$. When I crouch and use the block, it toggles between taking the facing of the block, or the $(thing)Vector/$. $(br2)If I where to equip a $(l:items/lens)Scrying Lens/$, I may see if the block will take the $(thing)Vector/$ or not; as well as if the $(thing)Synthetic Dreamer/$ will punch or not.",
   "slate_work.page.fake_player_loci.crafting": "$(o)Boltzmann Brains? Never heard of them./$",
 
+  "slate_work.entry.block_break_loci": "Bombastic Extractor",
+  "slate_work.page.block_break_loci.intro": "As far as my works has come, I have yet found a way to efficiently break a block. Nature has given me the $(l:patterns/spells/blockworks#hexcasting:break_block)Break Block/$ spell, yes; however, it can not apply things suck as $(thing)Fortune/$ nor $(thing)Silk Touch/$, acting as a plain $(item)Diamond Pickaxe/$. This is why shortly after my $(l:greatwork/the_work)grand awakening/$, I quickly jotted down plans for this: the $(thing)Bombastic Extractor/$. $(br2)$(o)...Pardon the pun.",  "slate_work.page.block_break_loci.block_break_loci": "Due to the mixture of $(item)Netherite/$ compounds, the $(thing)Bombastic Extractor/$ harvests at a Netherite level. As well, this can be enchanted with pickaxe specific enchantments, allowing it to harvest with either $(thing)Fortune/$ or $(thing)Silk Touch/$ (along with $(thing)Efficiency/$ for lower costs).",
+  "slate_work.page.block_break_loci.block_break_loci_cont": "Importantly, the cost of the $(thing)Bombastic Extractor/$ changes based on the enchantments. Firstly, the base cost per block is 1/8th of a $(l:items/amethyst)dust/$, much like $(l:patterns/spells/blockworks#hexcasting:break_block)Break Block/$. $(thing)Fortune/$ increases the cost by a $(l:items/amethyst)dust/$ per level, while $(thing)Silk Touch/$ increases the cost by a flat $(l:items/amethyst)shard/$. Finally, efficiency decreases the cost by 1.5 times per level.",
+  "slate_work.page.block_break_loci.filter#": "A few last things for this functional block: whenever a block is mined, the resulting drops are attempted to be slotted into the activated $(l:greatwork/storage_loci_block)Storage Vessels/$. Additionally, this construct uses (but not consume) a predicate _Hex that takes in an type, and returns a boolean; if true, the ",
+  "slate_work.page.block_break_loci.filter": "Interestingly, this construct doesn't just harvest the block in front; instead, it reaches from its current point to the end of $(l:greatwork/spellcircles)Spell Circle/$. And rather than indiscriminately excavating blocks, the $(thing)Bombastic Extractor/$ uses (but not consumes) a _Hex. This _Hex is ran over each positon, providing the _Hex the $(l:patterns/items)type/$ of the position (much like $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$). Which if the _Hex returns True, the block is harvested; if False, the block is ignored.",
+  "slate_work.page.block_break_loci.pickup": "Finally, the $(thing)Bombastic Extractor/$ when breaking blocks, also collects them into all activated $(l:greatwork/storage_loci_block)Storage Vessels/$. If the activated $(l:greatwork/storage_loci_block)Storage Vessels/$ are full, the broken block falls to the ground normally.",
+  "slate_work.page.block_break_loci.crafting": "A pinch of $(item)Netherite/$ to break more effectively, a speckling of $(item)TNT/$ to harvest en masse, and some $(l:items/amethyst)dust/$ and slate to bind it all together!",
+
   "slate_work.entry.trade_loci": "Merchant Directrix",
   "slate_work.page.trade_loci.intro": "The Villagers are... interesting creatures that I must use to fuel my $(l:greatwork/brainsweeping)endeavors/$; but talking and using them still is a highly manual task. But with the methods I have developed, I now may automatically trade with them and train their minds with $(l:greatwork/spellcircles)Spell Circles/$ by using a $(thing)Merchant Directrix/$.",
   "slate_work.page.trade_loci.trade_loci": "The $(thing)Merchant Directrix/$ are powerful. Since they may $(l:patterns/spells/trade_loci#slate_work:exchange_mind)obtain/$ a villager's Job by swaping their internal Job with the villager's Job. This the allows for the Job to be interacted with purely and efficiently, without the baggage of the fleshy being.",
@@ -232,6 +241,7 @@
   "hexcasting.mishap.circle.pocket_simulator_required": "At %s required an activated Pocket Simulator",
   "hexcasting.mishap.invalid_value.simpler_iota": "a simpler Iota",
   "hexcasting.mishap.invalid_value.axis_vector_sw": "a unit vector",
+  "hexcasting.mishap.invalid_value.type_or_null": "an Item Type or Null",
 
   "hexcasting.mishap.no_storage_loci_ran": "Did not find any activated Vessels",
   "hexcasting.mishap.list_length": "Required a list with %s items, but got %s items",
