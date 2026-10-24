@@ -55,7 +55,7 @@ See if you can spot the pin on this spell!
 ;;;;;
 
 One last thing!
-Aside from [Extensive Revision](^trickster:editing#1) and [Grafting Revision](^trickster:editing#12),
+Aside from [Extensive Revision](^trickster:editing#3) and [Grafting Revision](^trickster:editing#14),
 a lot of additional scribing patterns are also available,
 ranging from simple conveniences to actual gamechangers.
 

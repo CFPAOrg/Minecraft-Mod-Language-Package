@@ -20,8 +20,11 @@
 
 — An excerpt from a lecture by Prof. Dr. Gerune
 
+;;;;;
 
-Creating a slot reference comes at no cost. However, using the reference in a way that moves the items inside the slot will always have a cost of (distance * amount * 0.5G).
+Remember: Creating a $$dev.enjarai.trickster.spell.fragment.storage.StorageFragment$$ comes at no cost. However, 
+moving the contained resources will always have a cost of (distance * amount * 0.5G). 
+**Move costs are NOT noted as part of the cost of any ploy.**
 
 ;;;;;
 

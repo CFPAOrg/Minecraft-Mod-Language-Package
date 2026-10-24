@@ -53,7 +53,7 @@
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=trickster:change_weight,cost=10G + 30G * (1 - 倍数)|>
+<|ploy@trickster:templates|trick-id=trickster:change_weight,cost=10G + 30G * (1 - 乘数)|>
 
 给定0到1之间的数，让所给位置处方块所受重力变为原重力与所给数的积，令其变为受重力影响的实体。
 
@@ -66,7 +66,7 @@
 
 ;;;;;
 
-如果需要强行撤去此戏法的影响，且不考虑方块的位置和状态，可对其使用倍数为1的羽落之技巧。
+如果需要强行撤去此戏法的影响，且不考虑方块的位置和状态，可对其使用乘数为1的羽落之技巧。
 
 ;;;;;
 
@@ -130,4 +130,4 @@
 
 <|ploy@trickster:templates|trick-id=trickster:power_resonator,cost=4G|>
 
-令所给位置处[法术谐振器](^trickster:items/infrastructure/spell_resonator)产生所给强度的信号，强度需在0到15之间。若成功改变则返回{#33ab89}True{}。
+令所给位置处[法术谐振器](^trickster:items/infrastructure/spell_resonator)产生所给强度的信号，强度需在0到15之间。

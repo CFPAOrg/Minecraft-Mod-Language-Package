@@ -5,85 +5,27 @@
   "category": "trickster:delusions_ingresses",
   "additional_search_terms": [
     "销赃人之辑流",
-    "抛接之错觉",
-    "杂耍之错觉",
-    "物仓之辑流",
-    "液仓之辑流",
-    "饰品之辑流",
-    "侵入之辑流",
     "收藏家之辑流",
     "物品栏之辑流",
     "储货之辑流",
     "容展之辑流",
-    "辨别之辑流",
-    "颅骨之错觉",
-    "权威之辑流",
     "丰裕之辑流",
     "稳固之辑流",
-    "坚忍之辑流",
-    "探查之辑流"
+    "坚忍之辑流"
   ]
 }
 ```
 
-这些戏法会从物品栏中获取信息。可以是施法者自己的物品栏，也可以是外部方块或实体的。
+这些戏法可用于获取有关$$dev.enjarai.trickster.spell.fragment.storage.StorageFragment$$的信息。
+
+
+牢记：创建$$dev.enjarai.trickster.spell.fragment.storage.StorageFragment$$无需消耗魔力。不过，若在使用此类引用时移动了槽位内的物品，则需消耗(距离 * 数量 * 0.5G)的魔力。**移动的消耗与各技巧术给出的消耗相独立。**
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:get_item_in_slot|>
 
 返回给定槽位中物品的类型。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:other_hand|>
-
-返回施法者副手中物品的类型。
-
-;;;;;
-
-<|page-title@lavender:book_components|title=笔记：槽位引用|>法术可以引用资源槽位。制造此类引用无需消耗魔力，但若要借助它们移动槽位中的资源，就需要消耗移动的魔力。此消耗等价于(距离 * 数量 * 0.5G)。
-
-;;;;;
-
-在计算消耗时，槽位引用会使用移动物品时施法者的位置，或是会使用其目标的位置。
-
-
-可以将掉落的物品、矿车、驴等许多实体视为容器。此性质不适用于除施法者外的其他玩家。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:other_hand_slot|>
-
-返回施法者副手的槽位引用。
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_item_container|>
-
-;;;;;
-
-返回所给值中物品容器的引用，或返回施法者的物品容器引用。
-
-
-若容器为方块，还可额外传入向量以选定交互面。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_fluid_container|>
-
-返回所给值中流体容器的引用。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_accessories_container|>
-
-返回一个容器，其中包含施法者具有的、能容纳所给类型物品的所有饰品槽。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_slot|>
-
-使用容器和索引构建槽位。传入无法以槽位表示的容器会导致失策。
 
 ;;;;;
 
@@ -115,21 +57,9 @@
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:filter_container|>
+<|trick@trickster:templates|trick-id=trickster:get_count_in_slot|>
 
-根据给定资源类型筛选容器。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:check_hat|>
-
-返回施法者[帽子](^trickster:items/writing_casting/top_hat)的所选槽位。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_max_mana_in_slot|>
-
-返回所给槽位中能容纳的最大魔力总量。
+返回给定槽位中物品的数量。
 
 ;;;;;
 
@@ -142,15 +72,3 @@
 <|trick@trickster:templates|trick-id=trickster:get_max_damage|>
 
 以数的形式返回所给槽位中物品的最大损坏值。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_count_in_slot|>
-
-返回给定槽位中物品的数量。
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_equipment|>
-
-以物品列表形式返回所给实体当前穿戴的装备。顺序如下：主手、副手、靴子、护腿、胸甲、头盔。

@@ -16,7 +16,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:highlight|>
 
-令给定的方块高亮1秒，直接返回第一个输入。
+令给定的方块高亮1秒，直接原样返回第一个位置。
 
 ;;;;;
 

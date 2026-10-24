@@ -7,7 +7,10 @@
 }
 ```
 
-Now that you've got a [Scroll](^trickster:items/writing_casting/scroll_and_quill) you can right-click it to open the spell-scribing interface.
+With a [Scroll](^trickster:items/writing_casting/scroll_and_quill) in hand, you can right-click to open the spell-scribing interface.
+This view is remarkably similar to the one of the [Mirror](^trickster:items/writing_casting/mirror_of_evaluation), though missing the evaluation button.
+
+
 Spells consist of a tree-like structure of intersecting circles, and each circle contains a center glyph to denote its function.
 
 ;;;;;
@@ -17,7 +20,7 @@ Every other circle in your spell originates from it.
 
 
 To begin writing a spell, so-called scribing patterns or revisions can be used to add, remove, and move around circles.
-The most basic scribing pattern is [Extensive Revision](^trickster:editing#1), 
+The most basic scribing pattern is [Extensive Revision](^trickster:editing#3), 
 which adds one extra subcircle to the circle it's drawn in.
 
 ;;;;;
@@ -26,7 +29,7 @@ Unlike most patterns, revisions activate instantly when drawn at any point in ei
 They are the only way to directly affect the shape of your spell.
 
 
-Another scribing pattern that may be useful for basic spells is [Grafting Revision](^trickster:editing#12),
+Another scribing pattern that may be useful for basic spells is [Grafting Revision](^trickster:editing#14),
 which removes excess circles from the hierarchy.
 
 
@@ -46,10 +49,10 @@ Once that's done, hold the scroll in your offhand, and draw the following spell 
 
 ;;;;;
 
-You may notice that, while drawing, the top pattern gets replaced with the spell from your scroll.
+Afterward, if you did everything correctly, you can press the evaluation button on the **root node** of your mirror. 
 
 
-Afterward, if you did everything correctly, the spell should have targeted and broken the block you were looking at!
+The spell should then target and break the block you are looking at!
 This is the most basic way of spellcasting, write the spell in a scroll, and cast it using your mirror.
 
 
@@ -57,8 +60,8 @@ This is the most basic way of spellcasting, write the spell in a scroll, and cas
 
 ;;;;;
 
-When a spell is cast, drawn glyphs will take the output from connected subcircles as input, 
-perform an operation, and output to their parent circle.
+When a spell is cast, drawn glyphs will: take the output from connected subcircles as input, 
+perform an operation with these inputs, and output to their parent circle.
 
 
 Think of a spell like a tree with many splitting branches.
@@ -102,12 +105,12 @@ Take a look at the inputs and outputs listed for these tricks, and try to unders
 **Okay, but how did we cast it?**
 
 
-Well, we took advantage of the mirror's tendency to cast anything it touches.
+Well, we essentially used the mirror's evaluation button to cast the mirror, which had a spell to cast our scroll spell.
 The patterns we drew in the mirror are [Notulist's Ingress](^trickster:tricks/basic#3) and [Grand Deviation](^trickster:tricks/functions#4).
 The former returns any spell held in the caster's offhand as data, while the latter takes a spell as data and casts it.
 
 
-Yes, spells can cast other spells.
+One spell cast can another!
 
 ;;;;;
 

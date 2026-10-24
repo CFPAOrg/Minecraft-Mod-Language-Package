@@ -5,89 +5,29 @@
   "category": "trickster:delusions_ingresses",
   "additional_search_terms": [
     "Fence's Ingress",
-    "Catch Delusion",
-    "Juggling Delusion",
-    "Stockpile Ingress",
-    "Basin Ingress",
-    "Bauble Ingress",
-    "Intrusive Ingress",
     "Collector's Ingress",
     "Ingress of Inventory",
     "Ingress of Stockkeeping",
     "Ingress of Extent",
-    "Ingress of Discrimination",
-    "Cranium Delusion",
     "Ingress of Plenitude",
     "Ingress of Integrity",
-    "Ingress of Endurance",
-    "Investigative Ingress"
+    "Ingress of Endurance"
   ]
 }
 ```
 
-These are tricks that pull information from an inventory.
-This can either be the caster's own, or an external block or entity.
+These are tricks which acquire information relating to $$dev.enjarai.trickster.spell.fragment.storage.StorageFragment$$s.
+
+
+Remember: Creating a $$dev.enjarai.trickster.spell.fragment.storage.StorageFragment$$ comes at no cost. However, 
+moving the contained resources will always have a cost of (distance * amount * 0.5G). 
+**Move costs are NOT noted as part of the cost of any ploy.**
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:get_item_in_slot|>
 
 Returns the type of item that the given slot contains.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:other_hand|>
-
-Returns the type of item in the caster's offhand.
-
-;;;;;
-
-<|page-title@lavender:book_components|title=Note: Slot References|>Resource slots may be referenced by spells.
-Creating such a reference comes at no cost. However, using the reference in a way that moves the resources within the slot, will incur a move cost.
-This cost is equivalent to (distance * amount * 0.5G).
-
-;;;;;
-
-Slot references either use the position of the caster at the time of move, or the position of their target when calculating cost.
-
-
-Many entities, like dropped items, minecarts, and donkeys can be interacted with as containers. 
-This is not the case for players that are not the caster.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:other_hand_slot|>
-
-Returns a slot reference of the caster's offhand.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_item_container|>
-
-;;;;;
-
-Returns a reference to the item container of the passed value, or of the caster.
-
-
-If the container is a block, an additional vector can be provided to define the side from which to interact with it.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_fluid_container|>
-
-Returns a reference to the fluid container of the passed value.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_accessories_container|>
-
-Returns a container containing all the caster's accessory slots which are capable of holding items of the given type.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_slot|>
-
-Constructs and returns a slot from a container and the given index. Blunders if the container has no slotted representation.
 
 ;;;;;
 
@@ -119,18 +59,6 @@ Returns the number of slots in a container.
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:filter_container|>
-
-Filters a container by the given resource types.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:check_hat|>
-
-Returns the selected slot in the caster's [Hat](^trickster:items/writing_casting/top_hat).
-
-;;;;;
-
 <|trick@trickster:templates|trick-id=trickster:get_count_in_slot|>
 
 Returns the amount of items stored in the given slot.
@@ -146,9 +74,3 @@ Returns how much durability the item in the given slot has left as a number.
 <|trick@trickster:templates|trick-id=trickster:get_max_damage|>
 
 Returns the maximum amount of damage the item in the given slot can sustain.
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=trickster:get_equipment|>
-
-Returns a list of the given entity's currently worn equipment as item types. Comes in the order: mainhand, offhand, boots, leggings, chestplate, helmet.

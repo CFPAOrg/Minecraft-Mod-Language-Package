@@ -11,7 +11,7 @@ To be able to do any proper spellcasting, you'll need access to **Mana**.
 Any spell that affects the world will consume a certain amount of Mana, scaling significantly for larger effects.
 
 
-Amounts of Mana can be measured in gandalfs, or G, named after a certain famous wizard. 
+Amounts of Mana can be measured in gandalfs, or G, named after a certain historical figure. 
 
 ;;;;;
 
@@ -26,8 +26,7 @@ Mana can be persistently stored in Knots, like the one below:
 These gemstones encased in glass orbs hold a certain 
 amount of Mana based on the rarity of the gem they're made from.
 Some gems also have unique properties when made into a Knot, such as Amethyst, 
-which, unlike other gems, already contains Mana when converted, 
-but cannot be refilled by any known means.
+which, unlike other gems, already contains Mana when converted.
 
 
 This makes Amethyst Knots a great source of Mana to get started with,
@@ -35,14 +34,14 @@ or when in a pinch.
 
 ;;;;;
 
-<|item-spotlight@lavender:book_components|item=trickster:emerald_knot|>Most Knots, though, can be refilled by simply exposing them to the night sky.
-Either by throwing them on the ground, or placing them inside a [Charging Array](^trickster:items/mana/charging_array).
-Rechargeable Knots thrown on the ground will not despawn.
-They will charge most quickly at or near full or new moons, but not at all on some days in between.
+<|item-spotlight@lavender:book_components|item=trickster:emerald_knot|>Most Knots, except some special cases, like Amethyst, 
+can be naturally refilled at a slow rate by simply exposing them to the night sky.
+Either throw them on the ground, or place them inside a Charging [Array](^trickster:items/mana/charging_array) or [Belt](^trickster:items/mana/charging_belt).
+Knots will charge most quickly at or near a full moon, but not at all on some of the darkest days in between.
 
 ;;;;;
 
-Knots also keep track of their current draw rate in their tooltip, measured in merlins, or M.
+Knots keep track of their current draw rate in their tooltip, measured in merlins, or M.
 merlins are defined as gandalfs per Tick, 
 Ticks being the smallest unit of meaningful time, at 1/20th of a second.
 
@@ -56,7 +55,7 @@ To actually create a Knot, one can simply use [Ploy of the Moon Watcher](^tricks
 while having an Amethyst and Glass Block in their inventory.
 An Amethyst Knot costs no Mana to create, as it can provide its own power,
 but any other Knot requires an appropriate amount of Mana to be constructed, 
-as detailed [here](^trickster:concepts/mana).
+as detailed [here](^trickster:items/mana/knots).
 
 ;;;;;
 
@@ -66,7 +65,7 @@ the appropriate gem as a first input, but this will be covered later.
 
 For now, drawing the [Ploy of the Moon Watcher](^trickster:ploys/mana#2) 
 in your [Mirror of Evaluation](^trickster:items/writing_casting/mirror_of_evaluation) 
-as follows will allow you to create Amethyst Knots with ease.
+as follows and pressing the evaluation button next to the pattern will allow you to create Amethyst Knots with ease.
 Create a few of these before continuing!
 
 ;;;;;

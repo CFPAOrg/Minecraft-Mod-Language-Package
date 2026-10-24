@@ -10,8 +10,8 @@
 It's worth noting that casting spells through the Mirror of Evaluation has a few drawbacks.
 Most obviously, it's a massive hassle drawing those two patterns every time.
 Potentially more importantly though, any spell cast 
-happening through the mirror can only execute at most *64 circles*.
-That really isn't a lot!
+happening through the mirror can only run while the mirror interface is being viewed.
+This is not a problem for small spells, but can still be rather inconvenient.
 
 ;;;;;
 
@@ -26,7 +26,7 @@ This works on Scrolls because a spell written on them technically counts as bein
 
 ;;;;;
 
-Spells can actually be inscribed onto *any* item, 
+Spells can be inscribed onto *any* item, 
 though only Scrolls and Mirrors let you directly edit them.
 
 
@@ -37,17 +37,16 @@ You can use a spell like the following in a mirror to read and inscribe a spell.
 
 ;;;;;
 
-First draw the small pattern while holding your spell, 
-then swap to the item you want to inscribe, and draw the other pattern.
+First evaluate the small pattern while holding your spell, 
+then swap to the item you want to inscribe, and evaluate the other pattern.
 <|spell-preview-unloadable@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFECBYklgCpvI0+TAyMjMwMDAwgDGRiKmF0aWoFSjExAAD/qivoVAAAAA==|>
 
 ;;;;;
 
-Inscribing a spell onto a Wand will give it an enchanted glint, 
-and show the inscribed spell in its tooltip.
+Inscribing a spell onto a Wand will show the spell in its tooltip.
 
 
-When you use your new Wand, 
+When you use your new Wand, either by left or right clicking,
 a [Spell Slot](^trickster:concepts/multi_tick) is consumed while the spell runs,
 allowing the spell to run for as long as needed to complete.
 

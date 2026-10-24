@@ -22,7 +22,7 @@ it will read the spell from the selected scroll in the held hat instead.
 
 
 You can also access the spell in any slot of your hat directly using [Cranium Deviation](^trickster:tricks/imports#3),
-or read the selected slot using [Cranium Delusion](^trickster:delusions_ingresses/inventory#10).
+or read the selected slot using [Cranium Delusion](^trickster:delusions_ingresses/caster_tricks#12).
 
 ;;;;;
 

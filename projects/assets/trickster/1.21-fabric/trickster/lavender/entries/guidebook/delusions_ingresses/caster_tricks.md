@@ -12,6 +12,9 @@
     "Crowning Delusion",
     "Delusion of Order",
     "Framed Delusion",
+    "Catch Delusion",
+    "Juggling Delusion",
+    "Cranium Delusion",
     "Macro Delusion"
   ]
 }
@@ -88,6 +91,24 @@ See the entry on [Macros](^trickster:concepts/macro) for more details.
 <|trick@trickster:templates|trick-id=trickster:hotbar_reflection|>
 
 Returns the selected hotbar slot of the caster, if available.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:check_hat|>
+
+Returns the selected slot in the caster's [Hat](^trickster:items/writing_casting/top_hat).
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:other_hand|>
+
+Returns the type of item in the caster's offhand.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:other_hand_slot|>
+
+Returns a slot reference of the caster's offhand.
 
 ;;;;;
 

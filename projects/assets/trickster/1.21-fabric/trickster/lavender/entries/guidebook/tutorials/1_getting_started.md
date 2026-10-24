@@ -47,5 +47,6 @@ which can then be embedded into other spells, written in scrolls.
 
 Aside from these essential items, a few other things may be worth gathering:
 
+- A [Scryglass](^trickster:items/writing_casting/scryglasses) lets its wearer interpret the true meaning of their spells more easily.
 - A [Wand](^trickster:items/writing_casting/wand) can be inscribed with any spell to directly cast it, as explained later.
 - A [Hat](^trickster:items/writing_casting/top_hat) holds multiple scrolls in one item, and can serve as a form of memory for more advanced spells.

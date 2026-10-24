@@ -20,7 +20,8 @@
     "Ingress of Occupation",
     "Observer's Ingress",
     "Ingress of Appetite",
-    "Ingress of Fulfilment"
+    "Ingress of Fulfilment",
+    "Investigative Ingress"
   ]
 }
 ```
@@ -141,3 +142,9 @@ Given a player, returns their current food level.
 <|trick@trickster:templates|trick-id=trickster:get_player_saturation|>
 
 Given a player, returns their current saturation.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_equipment|>
+
+Returns a list of the given entity's currently worn equipment as item types. Comes in the order: mainhand, offhand, boots, leggings, chestplate, helmet.

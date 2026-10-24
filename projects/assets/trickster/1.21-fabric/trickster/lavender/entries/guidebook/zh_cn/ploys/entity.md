@@ -26,7 +26,7 @@
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=trickster:change_weight,cost=10G + 30G * (1 - 倍数)|>
+<|ploy@trickster:templates|trick-id=trickster:change_weight,cost=10G + 30G * (1 - 乘数)|>
 
 给定0到1之间的数，让给定活物所受重力变为原重力与所给数的积，持续1秒。
 

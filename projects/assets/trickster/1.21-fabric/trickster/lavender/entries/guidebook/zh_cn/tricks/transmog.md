@@ -28,19 +28,19 @@
 
 <|trick@trickster:templates|trick-id=trickster:transmog|>
 
-将给定槽位中的物品幻化为给定物品。若幻化成功，返回{#33ab89}True{}。
+将给定槽位中的物品幻化为给定物品。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:hidden_transmog|>
 
-将给定槽位中的物品幻化为虚无。若幻化成功，返回{#33ab89}True{}。
+将给定槽位中的物品幻化为虚无。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:remove_transmog|>
 
-去除给定槽位中物品的幻化。若去除成功，返回{#33ab89}True{}。
+去除给定槽位中物品的幻化。
 
 ;;;;;
 

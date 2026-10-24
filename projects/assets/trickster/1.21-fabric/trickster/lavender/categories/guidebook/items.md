@@ -6,4 +6,4 @@
 }
 ```
 
-Entries in this category go over some of the items available to the aspiring magician.
+Entries in this category go over some of the items and blocks available to aspiring mages.

@@ -18,11 +18,11 @@ but cannot be recharged naturally.
 ;;;;;
 
 Naturally recharging a Knot is done by exposing it to the night sky.
-It will charge most quickly at or near a full or new moon, but not at all when exactly in between.
+It will charge most quickly at or near a full moon, but not at all when is new.
 
 
 To count as being exposed, a Knot must either be thrown on the ground or placed in a 
-[Charging Array](^trickster:items/mana/charging_array) or [Spell Construct](^trickster:items/infrastructure/spell_construct) 
+[Charging Array](^trickster:items/mana/charging_array), [Charging belt](^trickster:items/mana/charging_belt), or [Spell Construct](^trickster:items/infrastructure/spell_construct) 
 with a clear view of the sky.
 Rechargeable Knots thrown on the ground will not despawn.
 
@@ -33,7 +33,7 @@ Most gems or crystals can be made into Knots using
 
 
 This ploy optionally takes two inputs, 
-one [slot](^trickster:delusions_ingresses/inventory#4) containing a gem, another holding a Glass Block.
+one [slot](^trickster:distortions/inventory) containing a gem, another holding a Glass Block.
 If the latter isn't provided, the first available Glass Block will be used.
 If the former isn't provided, an Amethyst Shard will be used in the same manner. 
 As such, it is not possible to create non-amethyst Knots without providing a slot reference.
@@ -42,7 +42,7 @@ As such, it is not possible to create non-amethyst Knots without providing a slo
 
 <|item-tag@trickster:templates|tag-id=trickster:spoilerless_mana_knots|>
 
-A few known Knot types are:
+A few commonly used Knot types are:
 
 - __Amethyst__\
 Creation cost: none

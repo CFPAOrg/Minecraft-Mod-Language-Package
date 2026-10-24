@@ -39,7 +39,7 @@ I think the term for this is *compound interest*?
 ;;;;;
 
 As far as I can tell, this mana cannot be used in Ploys or transferred between Knots.
-It can, however, be converted back into Traditional mana by Terrafel's, though again at a loss.
+It can, however, be losslessly converted back into Traditional mana by Terrafel's.
 
 
 Do the stars' powers only amplify energies that already exist?

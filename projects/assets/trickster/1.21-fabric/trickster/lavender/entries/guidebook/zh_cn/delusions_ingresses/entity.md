@@ -20,7 +20,8 @@
     "居形之辑流",
     "观察者之辑流",
     "食欲之辑流",
-    "饱足之辑流"
+    "饱足之辑流",
+    "探查之辑流"
   ]
 }
 ```
@@ -134,3 +135,9 @@
 <|trick@trickster:templates|trick-id=trickster:get_player_saturation|>
 
 给定玩家，返回其当前饱和度。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:get_equipment|>
+
+以物品类型列表形式返回所给实体当前穿戴的装备。顺序如下：主手、副手、靴子、护腿、胸甲、头盔。

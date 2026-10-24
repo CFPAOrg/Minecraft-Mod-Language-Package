@@ -39,5 +39,6 @@
 
 在上述两种必需品外，可能还会需要其他几件物品：
 
+- 佩戴[探知镜](^trickster:items/writing_casting/scryglasses)后可以更轻松地理解法术的意义。
 - [魔杖](^trickster:items/writing_casting/wand)。其中可抄入任意法术，且能直接施法，详细见后续说明。
 - [帽子](^trickster:items/writing_casting/top_hat)。它能存储多份卷轴，也可当作高级法术的某种存储器。

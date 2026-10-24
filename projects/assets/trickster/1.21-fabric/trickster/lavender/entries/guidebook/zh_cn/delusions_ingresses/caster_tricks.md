@@ -12,6 +12,9 @@
     "加冕之错觉",
     "序数之错觉",
     "框选之错觉",
+    "抛接之错觉",
+    "杂耍之错觉",
+    "颅骨之错觉",
     "宏之错觉"
   ]
 }
@@ -86,6 +89,24 @@
 <|trick@trickster:templates|trick-id=trickster:hotbar_reflection|>
 
 若可用，返回施法者选中的快捷栏槽位。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:check_hat|>
+
+返回施法者[帽子](^trickster:items/writing_casting/top_hat)的所选槽位。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:other_hand|>
+
+返回施法者副手中物品的类型。
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=trickster:other_hand_slot|>
+
+返回施法者副手的槽位引用。
 
 ;;;;;
 

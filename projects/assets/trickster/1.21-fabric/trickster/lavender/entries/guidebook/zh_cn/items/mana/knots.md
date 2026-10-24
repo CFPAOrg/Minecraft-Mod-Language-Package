@@ -14,23 +14,23 @@
 
 ;;;;;
 
-将晶结暴露在夜空下即可令其自然充能。新月和满月前后的充能速度最快，距两者时间相等的夜晚则完全无法充能。
+将晶结暴露在夜空下即可令其自然充能。满月及其前后的充能速度最快，新月时则完全无法充能。
 
 
-将晶结丢在地上、放在露天的[充能阵列](^trickster:items/mana/charging_array)或[法术组构台](^trickster:items/infrastructure/spell_construct)中，均视作暴露在夜空下。丢出的可充能晶结不会被清除。
+将晶结丢在地上，放在露天的[充能阵列](^trickster:items/mana/charging_array)、[充能腰带](^trickster:items/mana/charging_belt)、[法术组构台](^trickster:items/infrastructure/spell_construct)中，均视作暴露在夜空下。丢出的可充能晶结不会被清除。
 
 ;;;;;
 
 大多数宝石和水晶都可通过[望月者之技巧](^trickster:ploys/mana#2)制成晶结。
 
 
-此技巧术有两个可选输入，其一为放有宝石的[槽位](^trickster:delusions_ingresses/inventory#4)，其二为放有玻璃块的槽位。若未传入后者，则使用第一个可用的玻璃。若未传入前者，则使用第一个可用的紫水晶碎片。也即，如果不提供槽位信息，就无法以紫水晶之外的材料制作晶结。
+此技巧术有两个可选输入，其一为放有宝石的[槽位](^trickster:distortions/inventory#4)，其二为放有玻璃块的槽位。若未传入后者，则使用第一个可用的玻璃。若未传入前者，则使用第一个可用的紫水晶碎片。也即，如果不提供槽位信息，就无法以紫水晶之外的材料制作晶结。
 
 ;;;;;
 
 <|item-tag@trickster:templates|tag-id=trickster:spoilerless_mana_knots|>
 
-目前已知的几种晶结如下：
+几种常用晶结如下：
 
 - __紫水晶__\
 制作消耗：无\
