@@ -1,6 +1,6 @@
 ---
 navigation:
-  parent: example-setups/index.md
+  parent: nodeworks-mechanics/index.md
   icon: minecraft:hopper
   title: 移动物品
 categories:
@@ -9,7 +9,7 @@ categories:
 
 # 移动物品
 
-节点工程网络最简单的功能，就是从容器中抽出物品送至网络存储。本页面会介绍两种方式，首先是基础方式，随后是经过筛选的同一设施。
+节点工程网络最简单的功能，就是从容器中抽出物品送至网络存储。本页面会介绍若干种方式，首先是基础设施，随后是经过筛选的同一设施。
 
 ---
 
@@ -25,7 +25,7 @@ categories:
   <BoxAnnotation min="1 0.1 0.1" max="1.25 0.9 0.9" color="#AA83E0">
     <ItemImage id="nodeworks:storage_card" />
   </BoxAnnotation>
-  <BlockAnnotation x="4">
+  <BlockAnnotation x="2">
     导入箱的内容物品会被自动送入网络
   </BlockAnnotation>
 </GameScene>
@@ -40,8 +40,43 @@ categories:
   <BoxAnnotation min="1 0.1 0.1" max="1.25 0.9 0.9" color="#AA83E0">
     <ItemImage id="nodeworks:storage_card" />
   </BoxAnnotation>
-  <BlockAnnotation x="4">
+  <BlockAnnotation x="2">
     导入箱的内容物品会被自动送入网络
+  </BlockAnnotation>
+</GameScene>
+
+### 在两个方块间移动物品
+
+若你需要在两个不同的方块间移动物品，可以组合使用<ItemLink id="export_chest"/>和内有<ItemLink id="storage_card"/>的<ItemLink id="node"/>。
+
+<GameScene zoom="5" interactive={true}>
+  <ImportStructure src="../assets/assemblies/moving_items_export_push.snbt" />
+  <IsometricCamera yaw="200" pitch="20" />
+  <BoxAnnotation min="1 0.1 0.1" max="1.25 0.9 0.9" color="#AA83E0">
+    <ItemImage id="nodeworks:storage_card" />
+  </BoxAnnotation>
+  <BlockAnnotation x="2">
+    导出箱向潜影盒送出物品
+    ![](../assets/images/export_chest_push_left.png)
+  </BlockAnnotation>
+</GameScene>
+
+### 在两个网络间移动物品
+
+若你需要将多个箱子中的物品送至其他具有多个箱子的网络，可以组合使用导入箱和导出箱。可以将导出箱配置为送至导入箱。
+
+<GameScene zoom="3" interactive={true} paddingTop="20" paddingBottom="20">
+  <ImportStructure src="../assets/assemblies/moving_items_net_to_net.snbt" />
+  <IsometricCamera yaw="200" pitch="20" />
+  <BoxAnnotation min="2 0.1 0.1" max="2.25 1.9 0.9" color="#AA83E0">
+    <ItemImage id="nodeworks:storage_card" />
+  </BoxAnnotation>
+  <BoxAnnotation min="6 0.1 0.1" max="5.75 1.9 0.9" color="#AA83E0">
+    <ItemImage id="nodeworks:storage_card" />
+  </BoxAnnotation>
+  <BlockAnnotation x="3">
+    导出箱向导入箱输送物品
+    ![](../assets/images/export_chest_push_left.png)
   </BlockAnnotation>
 </GameScene>
 

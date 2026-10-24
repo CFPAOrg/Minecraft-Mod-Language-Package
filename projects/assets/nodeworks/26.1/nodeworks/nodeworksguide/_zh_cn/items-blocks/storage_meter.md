@@ -5,6 +5,7 @@ navigation:
   title: 库存量表
 categories:
   - device
+  - requires_controller
 description: 追踪所配置物品/流体的量
 item_ids:
 - nodeworks:storage_meter
@@ -13,6 +14,8 @@ item_ids:
 # 库存量表
 
 库存量表会检测网络中的物品，并在其库存量低于所设阈值时发出红石信号。它还能发起自动合成作业以补货。
+
+> 需要<ItemLink id="network_controller" />才可使用
 
 <GameScene interactive={true} zoom="5" paddingLeft="40" paddingRight="40">
   <ImportStructure src="../assets/assemblies/stock_meter_door.snbt" />

@@ -48,10 +48,34 @@ end)
 
 ### 先放入物品
 
-`:pull`只会处理输出。你仍需要亲自把[InputItems](input-items.md)送入机器。若在handler返回时仍有资源留在`items.<slot>`内，则该合成作业会被判定为未完成，网络会重新发起。
+`:pull`只会处理输出。你仍需要亲自把[InputItems](input-items.md)送入机器。若在handler返回时仍有资源留在`items.<槽位>`内，则该合成作业会被判定为未完成，网络会重新发起。
 
 ### 超时
 
 若产物没能抵达输出位置，合成作业最终会超时，输入会被返还至网络存储。各处理集都有自身设定的超时时限（刻），可在GUI中调整，默认为15秒。在处理大批量烧炼、耗时较长的模组配方机器时，可延长时限。
 
 > **注意：**&zwnj;handler内部的错误只会停止*该合成作业*，不会导致脚本崩溃。若合成作业因未知原因挂起，可检查终端的日志，错误信息会输出到那里。
+
+## recipe
+
+`Job`还能给出当前正在运行哪一个处理集，以便[`network:recipes`](network.md#recipes) handler等对应多个配方的单个handler区分。
+
+- `job.name`为处理集的名称，和向`network:handle`传入的一致。
+- `job.inputs`按槽位顺序列出处理集的输入。每一个条目都下属`id`和`count`，若接受标签则还会下属`tag`。
+- `job.outputs`会列出处理集的输出。每一个条目都下属`id`、`count`、`optional`，最后一个字段仅在概率产物中为true。
+
+<LuaCode>
+```lua
+local furnace = network:get("furnace")
+local blast = network:get("blast_furnace")
+network:recipes("#c:raw_materials"):handle(function(job: Job, items: InputItems)
+  -- 铁走高炉，其他走熔炉。
+  local machine = furnace
+  if job.outputs[1].id == "minecraft:iron_ingot" then machine = blast end
+  for _, input in ipairs(items:all()) do
+    machine:face("top"):insert(input)
+  end
+  job:pull(machine:face("bottom"))
+end)
+```
+</LuaCode>

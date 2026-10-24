@@ -5,6 +5,7 @@ navigation:
   title: Redstone Card
 categories:
   - card
+  - requires_controller
 description: reads and writes redstone signals at the installed node face
 item_ids:
 - nodeworks:redstone_card
@@ -13,6 +14,8 @@ item_ids:
 # Redstone Card
 
 Reads and writes redstone signals at the installed face.
+
+> If you want to use this card you'll first need a <ItemLink id="network_controller" /> in the network.
 
 <ItemImage scale="6" id="redstone_card" />
 

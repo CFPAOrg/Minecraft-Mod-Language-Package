@@ -5,6 +5,7 @@ navigation:
   title: IO卡
 categories:
   - card
+  - requires_controller
 description: 用于通过脚本读写物品/流体容器
 item_ids:
 - nodeworks:io_card
@@ -12,7 +13,9 @@ item_ids:
 
 # IO卡
 
-IO卡可让网络按需读写相邻方块的物品栏。安装IO卡后，脚本可查询方块的内容物，且能向其移入/从中移除物品和流体。
+IO卡可让网络按需读写相邻方块的容器。安装IO卡后，脚本可查询方块的内容物，且能向其移入/从中移除物品和流体。
+
+> 在脚本中使用IO卡需要网络中有<ItemLink id="network_controller" />
 
 <ItemImage scale="6" id="io_card" />
 
@@ -24,7 +27,7 @@ IO卡需安装于<ItemLink id="node" />的某一面。右击朝向需控制方�
 
 ## 功能
 
-配有IO卡的方块会作为可被脚本访问的物品栏在网络中显示：
+配有IO卡的方块会作为可被脚本访问的容器在网络中显示：
 
 - `card:find(filter)`返回相应内容物的[ItemsHandle](../lua-api/items-handle.md)。
 - `card:insert(items)`/`card:tryInsert(items)`尝试向其移入物品。
@@ -38,7 +41,7 @@ IO卡的GUI中有一个频道选择器。有关频道限制脚本与预设能否
 
 ## 脚本
 
-IO卡handle中可用方法的完整列表参见[CardHandle参考](../lua-api/card-handle.md#物品栏卡)。
+IO卡handle中可用方法的完整列表参见[CardHandle参考](../lua-api/card-handle.md#容器卡)。
 
 ## 配方
 

@@ -6,7 +6,7 @@ navigation:
 categories:
   - api_types
   - api_preset
-description: 通过抽取、合成，或两者并用保证目标存量足够
+description: 通过抽取、合成、或两者并用保证目标存量足够
 ---
 
 # Stocker
@@ -80,7 +80,7 @@ StockerBuilder:to(target: string | CardHandle | network): StockerBuilder
 ```
 </LuaCode>
 
-设置目标。接受卡片别名、CardHandle对象，以及代表“保证网络库存量”的`network`。stocker会统计目标中匹配物品的数量，使用`network`时，则统计所有存储卡。
+设置目标。接受卡片别名、CardHandle对象，以及代表“保证网络库存量”的`network`。stocker会统计目标中匹配物品的数量，使用`network`时，则统计所有存储卡。存储卡使用它们自身的规则，因此它们只会接受自身允许的物品。
 
 ### keep
 
@@ -96,18 +96,29 @@ StockerBuilder:keep(amount: number): StockerBuilder
 
 ### filter
 
+用于指定`:keep(n)`统计哪些资源和`:from`抽取哪些资源。不使用该方法即统计所有物品。可以传入多条规则，也可多次调用，还可直接传入表。无参数调用可重置筛选器。&zwnj;**`:ensure`和`:craft`会自动设置筛选器**，只有用`:from`时需要手动指定。
+
 <LuaCode>
 ```lua
-StockerBuilder:filter(pattern: string): StockerBuilder
+stocker
+  :from("buffer")
+  :filter("$item:arrow")
+  :to("dispenser")
+  :keep(64)
+  :start()
 ```
 </LuaCode>
 
-限制目标中`:keep(n)`统计的资源种类。默认为`*`（任意物品）。如需stocker在多种来源间仅统计特定种类的物品，可设置此值。**`:ensure`和`:craft`会自动设置此值**至相应的物品ID，因此仅有`:from`需要专门指定`:filter`。
+### except
+
+统计和抽取时排除哪些资源，优先于`:filter`。
 
 <LuaCode>
 ```lua
+-- 一组不是药箭的箭
 stocker:from("buffer")
-  :filter("$item:arrow")
+  :filter("#minecraft:arrows")
+  :except("minecraft:tipped_arrow")
   :to("dispenser")
   :keep(64)
   :start()

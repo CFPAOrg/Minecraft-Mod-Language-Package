@@ -18,7 +18,7 @@ Terminal.
 
 <ItemImage scale="6" id="storage_card" />
 
-## 配置
+## Configuration
 
 When you right-click with a **Storage Card** you can set the priority, channel,
 and filters.

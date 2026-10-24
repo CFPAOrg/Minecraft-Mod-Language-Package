@@ -21,13 +21,19 @@ categories:
   </BlockAnnotation>
   <BlockAnnotation x="3" y="1" z="1">
     User uses empty buckets on cows
+
+    ![image of the Placer GUI with an empty bucket set as its filter](../assets/images/user_empty_bucket.png)
   </BlockAnnotation>
   <BlockAnnotation x="3" y="4" z="1">
     User uses milk buckets on Soul Sand and puts the resulting Milky Soul Balls
     and empty bucket back into Network Storage
+
+    ![image of the User GUI with milk bucket set as its filter](../assets/images/user_milk_bucket.png)
   </BlockAnnotation>
   <BlockAnnotation x="1" y="4" z="1">
     Placer places soul sand in front of the User
+
+    ![image of the Placer GUI with soul sand set as its filter](../assets/images/placer_soul_sand.png)
   </BlockAnnotation>
 </GameScene>
 

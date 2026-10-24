@@ -5,6 +5,7 @@ navigation:
   title: Crafting CPU
 categories:
   - autocrafting
+  - requires_controller
 description: the brain of the autocrafting system in a network
 item_ids:
 - nodeworks:crafting_core
@@ -20,6 +21,8 @@ A Crafting CPU is the brain of the autocrafting system. It reads recipes out of
 [Storage Blocks](./storage_blocks.md) (in network and in broadcasted sub-net Processing Sets)
 and pulls ingredients out of the network, runs the craft, and puts the result back.
 For how to actually *use* a built CPU to run crafts, see [Auto Crafting](../nodeworks-mechanics/autocrafting.md).
+
+> Requires a <ItemLink id="network_controller" /> to use
 
 ## Forming the CPU
 

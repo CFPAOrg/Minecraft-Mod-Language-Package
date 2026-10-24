@@ -5,6 +5,7 @@ navigation:
   title: Portable Inventory Terminal
 categories:
   - tool
+  - requires_controller
 description: a portable viewport into any linked network's storage
 item_ids:
 - nodeworks:portable_inventory_terminal

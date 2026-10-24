@@ -12,7 +12,7 @@ item_ids:
 
 # 存储卡
 
-存储卡会将相邻方块标记为[网络存储](../nodeworks-mechanics/network-storage.md)的成员。也即加入网络能查询、路由，物品栏终端能列出的共享式存储空间。
+存储卡会将相邻方块标记为[网络存储](../nodeworks-mechanics/network-storage.md)的成员。也即加入网络能查询、路由，容器终端能列出的共享式存储空间。
 
 <ItemImage scale="6" id="storage_card" />
 
@@ -102,11 +102,11 @@ item_ids:
 
 ## 安装与脚本
 
-安装方式与<ItemLink id="io_card" />相同。放入面对方块的节点面即可。脚本API和IO卡完全一致（方法的完整列表参见[CardHandle](../lua-api/card-handle.md#物品栏卡)）。
+安装方式与<ItemLink id="io_card" />相同。放入面对方块的节点面即可。脚本API和IO卡完全一致（方法的完整列表参见[CardHandle](../lua-api/card-handle.md#容器卡)）。
 
 ## 与IO卡的区别
 
-<ItemLink id="io_card" />的方块是脚本控制的物品栏，脚本必须显式对其送入/输出物品。存储卡则会将其方块*纳入*网络的共享存储空间：`network:find`能看见，<ItemLink id="inventory_terminal" />和<ItemLink id="portable_inventory_terminal" />能列出，合成配方也能自动从中拿取原材料。
+<ItemLink id="io_card" />的方块是脚本控制的容器，脚本必须显式对其送入/输出物品。存储卡则会将其方块*纳入*网络的共享存储空间：`network:find`能看见，<ItemLink id="inventory_terminal" />和<ItemLink id="portable_inventory_terminal" />能列出，合成配方也能自动从中拿取原材料。
 
 ## 配方
 

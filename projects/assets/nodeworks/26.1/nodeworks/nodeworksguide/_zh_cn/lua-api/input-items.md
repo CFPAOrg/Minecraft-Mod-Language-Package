@@ -5,7 +5,7 @@ navigation:
   icon: minecraft:cobblestone
 categories:
   - api_types
-description: "[network:handle回调函数](network.md#handle)需接受的第二个参数，是按配方打包的[`ItemsHandle`](items-handle.md)，按配方输入槽位名称分入各字段"
+description: "[network:handle回调函数](network.md#handle)需接受的第二个参数；本身为按配方打包的[`ItemsHandle`](items-handle.md)，其中各项按配方输入槽位名称分入各字段"
 ---
 
 # InputItems
@@ -44,8 +44,26 @@ end)
 ```
 </LuaCode>
 
+## all
+
+按照配方的排列顺序以列表形式返回所有输入。应在同一个handler要处理多个配方、且不同配方的字段名不同时使用，如应配合[`network:recipes`](network.md#recipes)使用。
+
+<LuaCode>
+```lua
+local furnace = network:get("furnace")
+network:handle("...", function(job: Job, items: InputItems)
+  for _, input in ipairs(items:all()) do
+    furnace:face("top"):insert(input)
+  end
+  job:pull(furnace:face("bottom"))
+end)
+```
+</LuaCode>
+
+列表中的handle和各个有名称字段一致，因此移动`items.rawIron`会清空列表中的该条目。
+
 ## 必须全部使用
 
-handler应当将所有输入都送入机器。若在handler返回时仍有资源残余在`items.<slot>`中，则网络会认为当次合成作业未完成，并在之后再次尝试。没有“跳过该输入”的方法，配方说需要N个铜锭，那就应当取走N个铜锭。
+handler应当将所有输入都送入机器。若在handler返回时仍有资源残余在`items.<槽位>`中，则网络会认为当次合成作业未完成，并会在之后再次尝试。没有“跳过该输入”的方法，配方说需要N个铜锭，那就应当取走N个铜锭。
 
 > **注意：**&zwnj;“使用”指的是将物品送到可被访问的地方，通过`network:insert`送回网络存储也可以。网络只会检查“脚本有没有完全消耗掉输入”，而不关心“输入有没有抵达正确的机器”。

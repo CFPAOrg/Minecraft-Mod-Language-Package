@@ -9,7 +9,11 @@ categories:
 
 # Celestine Farm
 
-<ItemLink id="budding_celestine" /> can be easily farmed using a <ItemLink id="breaker" /> and a <ItemLink id="terminal" />.
+<ItemLink id="budding_celestine" /> can be easily farmed using a <ItemLink id="breaker" /> and optionally with a <ItemLink id="terminal" />.
+
+Breakers should be filtered to break `#c:clusters`
+
+![image of the breaker GUI with clusters set as its filter to break](../assets/images/breaker_clusters.png)
 
 <GameScene zoom="4" interactive={true} paddingLeft="30" paddingRight="30">
   <ImportStructure src="../assets/assemblies/celestine_farm.snbt" />

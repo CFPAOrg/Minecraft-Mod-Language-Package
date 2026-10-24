@@ -21,12 +21,18 @@ categories:
   </BlockAnnotation>
   <BlockAnnotation x="3" y="1" z="1">
     使用器对牛使用空铁桶
+
+    ![放置器GUI，其筛选器为空铁桶](../assets/images/user_empty_bucket.png)
   </BlockAnnotation>
   <BlockAnnotation x="3" y="4" z="1">
     使用器对灵魂沙使用奶桶，并将产出的奶液灵魂球和空铁桶送回网络存储
+
+    ![使用器GUI，其筛选器为奶桶](../assets/images/user_milk_bucket.png)
   </BlockAnnotation>
   <BlockAnnotation x="1" y="4" z="1">
     放置器在使用器前方放置灵魂沙
+
+    ![放置器GUI，其筛选器为灵魂沙](../assets/images/placer_soul_sand.png)
   </BlockAnnotation>
 </GameScene>
 

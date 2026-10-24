@@ -5,6 +5,7 @@ navigation:
   title: 配方存储器
 categories:
   - autocrafting
+  - requires_controller
 description: 用于存储配方集，以供合成CPU查看
 item_ids:
 - nodeworks:instruction_storage
@@ -31,7 +32,7 @@ item_ids:
   </BoxAnnotation>
 </GameScene>
 
-相邻放置的存储器会形成集群。只需为**其中一个**方块接线，剩下的可通过相贴的面一同加入网络。破坏连通两半的关键方块会拆分集群，每一个分别判断还能否连接至网络。方块的发光纹理会与所属网络的颜色保持一致，方便查看。
+相邻放置的存储器会形成集群。只需为**其中一个**方块接线，剩下的可通过相贴的面一同加入网络。破坏连通两半的关键方块会拆分集群，同时两半分别判断还能否连接至网络。方块的发光纹理会与所属网络的颜色保持一致，方便查看。
 
 ## 集群化配方存储器
 

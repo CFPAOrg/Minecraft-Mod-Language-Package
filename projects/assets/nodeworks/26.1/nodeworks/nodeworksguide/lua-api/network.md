@@ -340,6 +340,91 @@ end)
 
 ---
 
+## recipes
+
+Handles many Processing Sets with one function. Name the inputs the sets take,
+and every set whose inputs all match runs through the same handler. Sets added
+to the network later are picked up too, there's no need to restart the script.
+
+<LuaCode>
+```lua
+local furnaces = network:get("furnaces")
+
+local function smelt(job: Job, items: InputItems)
+  for _, input in items:all() do
+    furnaces:face("top"):insert(input)
+  end
+  job:pull(furnaces:face("bottom"))
+end
+
+network
+  :recipes("#c:ores", "#c:raw_materials")
+  :except("mod:uranium", "mod:other_ore")
+  :handle(smelt)
+```
+</LuaCode>
+
+### Which sets match
+
+- **`network:recipes(...)`**: every input of a set must match one of these
+  rules. A set that also takes coal is left out of an ingot rule, so alloys
+  don't slip in. With no rules, every set matches.
+- **`:except(...)`**: a set with any input matching one of these is left out.
+- **`:outputs(...)`**: optional. Every output the set is sure to make must
+  match one of these too. Use it when the same input goes to different
+  machines, such as raw iron to a furnace for ingots and to a crusher for dust.
+  Chance outputs aren't looked at.
+
+<LuaCode>
+```lua
+-- Raw materials, but only the sets that make ingots.
+network:recipes("#c:raw_materials"):outputs("#c:ingots"):handle(smelt)
+```
+</LuaCode>
+
+Rules use the same syntax as [Storage Card filters](../items-blocks/storage_card.md#filters),
+so item ids, `#tags` and `*` wildcards all work.
+
+### Who wins
+
+- An exact [`network:handle`](./network.md#handle) for a set always beats a `recipes` handler.
+- A set bound to a <ItemLink id="processing_handler" /> or <ItemLink id="multi_processing_handler" />
+  stays with that block. A broad rule never takes a set you ticked on a block.
+- When two `recipes` handlers match the same set, the one registered first wins.
+
+### One craft at a time
+
+A `recipes` handler runs one craft at a time, since its recipes usually share
+the same machines. Another craft that needs it waits its turn instead of
+fighting over the furnace. When the recipes never share a machine, for example
+a bank where each furnace takes a different input, call `:parallel()` so
+crafts can run side by side.
+
+<LuaCode>
+```lua
+network:recipes("#c:raw_materials"):parallel():handle(smelt)
+```
+</LuaCode>
+
+### Stopping and checking
+
+`:handle` returns a handler you can stop, or ask which sets it takes right now.
+
+<LuaCode>
+```lua
+local ores = network:recipes("#c:ores"):handle(smelt)
+for _, line in ipairs(ores:sets()) do
+  print(line) -- minecraft:raw_iron -> minecraft:iron_ingot
+end
+ores:stop()
+```
+</LuaCode>
+
+Read each craft's details from [`job`](job.md#recipe), and the inputs from
+[`items:all()`](input-items.md#all).
+
+---
+
 ## route
 
 Bulk-edits the [filter settings](../items-blocks/storage_card.md#filters) of every

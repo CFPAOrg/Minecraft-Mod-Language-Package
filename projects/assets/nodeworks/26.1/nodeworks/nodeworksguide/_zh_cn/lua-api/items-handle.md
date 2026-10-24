@@ -18,9 +18,9 @@ description: 附带数量、来源、传输操作的特定资源（物品或流�
 
 ## handle代表了什么（以及没在代表什么）
 
-handle是**所查询位置所有匹配资源的聚合**，不是单一的物品栏堆叠。此性质有两个重要的影响：
+handle是**所查询位置所有匹配资源的聚合**，不是单一的容器堆叠。此性质有两个重要的影响：
 
-**同一类handle能处理物品和流体。**&zwnj;`.kind`字段存储了资源的类型。物品的数量为“个数”，流体的为毫桶（mB）。详情参见下文的[count](./items-handle.md#count)和[kind](./items-handle.md#kind)。
+**同一类handle能处理物品和流体。**&zwnj;`.kind`字段存储了资源的类型。物品的数量为“个”，流体的为毫桶（mB）。详情参见下文的[count](./items-handle.md#count)和[kind](./items-handle.md#kind)。
 
 **count可以大于`maxStackSize`。**&zwnj;即便单个槽位内最多只能存下64个，`network:find("minecraft:coal")`也有可能会返回`count = 192`的handle。这个handle代表着“网络中任意位置的所有煤炭”，可以由多个槽位、多张存储卡、多个储罐汇总而来。[card:find](card-handle.md#find)也遵从这一点，即也会聚合卡片对应的槽位和储罐。
 
@@ -65,7 +65,7 @@ print(sword.name) -- "钻石剑"（或者重命名过的话，"ex咖喱棒"）
 
 ### count
 
-handle所代表资源的数量。**物品的单位为“个数”**（按单独物品，不按组数），**流体的为mB**（毫桶，1000 mB = 1 桶）。
+handle所代表资源的数量。**物品的单位为“个”**（按单独物品，不按组数），**流体的为mB**（毫桶，1000 mB = 1 桶）。
 
 <LuaCode>
 ```lua
@@ -113,7 +113,7 @@ end
 
 ### maxStackSize
 
-资源在单个物品栏槽位中能存放的最大数量。大多数物品都是`64`，雪球和末影珍珠是`16`，工具和盔甲是`1`。流体必然返回`1`，不具备实际意义。
+资源在单个容器槽位中能存放的最大数量。大多数物品都是`64`，雪球和末影珍珠是`16`，工具和盔甲是`1`。流体必然返回`1`，不具备实际意义。
 
 <LuaCode>
 ```lua
@@ -192,7 +192,7 @@ end
 
 按此方式使用handle的方法有：
 
-- [`card:insert`](card-handle.md#insert)/[`card:tryInsert`](card-handle.md#tryinsert)，送入卡片对应的物品栏
+- [`card:insert`](card-handle.md#insert)/[`card:tryInsert`](card-handle.md#tryinsert)，送入卡片对应的容器
 - [`network:insert`](network.md#insert)/[`network:tryInsert`](network.md#tryinsert)，按路由规则送入网络存储
 - [`placer:place`](placer-handle.md#place)，使用handle的`.id`挑选放置物
 
@@ -205,7 +205,7 @@ furnace:insert(coal, 8) -- 向燃料槽补8个煤炭
 ```
 </LuaCode>
 
-> **注意：**&zwnj;`:insert`要么全部移动，要么不移动。若目的地无法容纳所移动的量，则什么都不会移动，且调用返回`false`。若能接受部分移动，可使用`:tryInsert`，也可提供第二个参数作为上限。
+> **注意：**&zwnj;`:insert`要么全部移动，要么不移动。若目的地无法容纳所移动的量，则什么都不会移动，且调用返回`false`。若希望能够部分移动，可使用`:tryInsert`，也可提供第二个参数作为上限。
 
 ---
 

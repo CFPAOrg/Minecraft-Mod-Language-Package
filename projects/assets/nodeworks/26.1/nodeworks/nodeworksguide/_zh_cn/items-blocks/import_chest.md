@@ -42,7 +42,7 @@ GUI的红石设置限制了导入箱运作与否：
 
 ## 无线
 
-在导入箱上放置<ItemLink id="receiver_antenna" />，并将其与其他网络<ItemLink id="export_chest" />上方的<ItemLink id="broadcast_antenna" />配对。送入广播导出箱的物品会抵达本网络的导入箱，并随后和其他输入一样进入本地网络存储。
+在导入箱上方放置<ItemLink id="receiver_antenna" />，并将其与其他网络<ItemLink id="export_chest" />上方的<ItemLink id="broadcast_antenna" />配对。送入广播导出箱的物品会抵达本网络的导入箱，并随后和其他输入一样进入本地网络存储。
 
 ## 配方
 

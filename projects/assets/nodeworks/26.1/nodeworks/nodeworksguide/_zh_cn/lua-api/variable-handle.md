@@ -135,7 +135,7 @@ end
 ```
 </LuaCode>
 
-> **重要：**&zwnj;若互斥锁已所得，`:tryLock`不会进行等待，而是会立即返回`false`。后续行为——无论是间隔一段时间再尝试（[`scheduler:delay`](scheduler.md#delay)），或是直接跳过执行——都需由脚本本身实现。
+> **重要：**&zwnj;若互斥锁已锁定，`:tryLock`便不会进行等待，而是立即返回`false`。后续行为——无论是间隔一段时间再尝试（[`scheduler:delay`](scheduler.md#delay)），或是直接跳过执行——都需由脚本本身实现。
 >
 > 成功执行的`:tryLock`须与`:unlock`配对。临界区应如上方示例由`pcall`包起，这样代码出错时便不会死锁。
 

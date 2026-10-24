@@ -5,6 +5,7 @@ navigation:
   title: Observer Card
 categories:
   - card
+  - requires_controller
 description: reads the block at the installed node face, id, properties, and change events
 item_ids:
 - nodeworks:observer_card
@@ -16,6 +17,8 @@ Reads the block at the installed face. Exposes the block id, every state
 property the block has (growth `age`, `facing`, `waterlogged`, `lit`, ...),
 and a change callback so scripts can react the instant a block transitions
 to the state you care about.
+
+> If you want to use an Observer Card for scripting then you'll need a <ItemLink id="network_controller" /> to use the <ItemLink id="terminal" />
 
 <ItemImage scale="6" id="observer_card" />
 

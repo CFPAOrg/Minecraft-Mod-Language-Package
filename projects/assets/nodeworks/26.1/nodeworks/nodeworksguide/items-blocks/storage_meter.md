@@ -5,6 +5,7 @@ navigation:
   title: Storage Meter
 categories:
   - device
+  - requires_controller
 description: tracks the amount of items/fluids its configured to watch
 item_ids:
 - nodeworks:storage_meter
@@ -15,6 +16,8 @@ item_ids:
 The Storage Meter watches an item in the network and emits a redstone
 signal when its stock drops below your threshold. It can also start an autocraft
 job to replenish the stock.
+
+> Requires a <ItemLink id="network_controller" /> to use
 
 <GameScene interactive={true} zoom="5" paddingLeft="40" paddingRight="40">
   <ImportStructure src="../assets/assemblies/stock_meter_door.snbt" />

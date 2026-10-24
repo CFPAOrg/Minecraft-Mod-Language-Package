@@ -44,7 +44,7 @@ categories:
 
 与网络存储交互所用读写函数的完整列表参见[网络API](../lua-api/network.md)页面。
 
-## 通过物品栏终端进行查看和管理
+## 通过容器终端进行查看和管理
 
 <Row align="center">
   <BlockImage scale="3.3" id="inventory_terminal" />
@@ -53,4 +53,4 @@ categories:
 
 <ItemLink id="inventory_terminal" />和<ItemLink id="portable_inventory_terminal" />是不依赖脚本查看网络存储和与之交互的主要方式。它们会在槽位方格内显示网络存储的内容，允许你搜索、从中取出物品、放入物品，以及请求合成。它们会向网络中的各存储卡实时获取内容。
 
-界面详情参见[物品栏终端](../items-blocks/inventory_terminal.md)页面。
+界面详情参见[容器终端](../items-blocks/inventory_terminal.md)页面。

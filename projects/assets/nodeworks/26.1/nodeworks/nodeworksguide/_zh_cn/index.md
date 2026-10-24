@@ -24,6 +24,6 @@ item_ids:
 - [物品/方块](./items-blocks/index.md)
 - [示例设施](./example-setups/index.md)
 
-在脚本终端的编辑器中，可以将鼠标悬停在任意有文档的标识符上，以查看其签名和描述。悬停时按下<Color id="green">[ <KeyBind id="key.nodeworks.open_docs" /> ]</Color>可打开相关页面。
+在脚本终端的编辑器中，可以将鼠标悬停在任意有文档的标识符上，以查看其签名和描述。鼠标悬停时按下<Color id="green">[ <KeyBind id="key.nodeworks.open_docs" /> ]</Color>可打开相关页面。
 
-有关添加文档的信息，参见[docs/authoring.md](https://github.com/damienfamed75/nodeworks/blob/main/docs/authoring.md)。
+有关添加文档的方法，参见[docs/authoring.md](https://github.com/damienfamed75/nodeworks/blob/main/docs/authoring.md)。

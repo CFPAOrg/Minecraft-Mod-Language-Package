@@ -25,7 +25,7 @@ item_ids:
     两个处理存储器都被广播
   </BoxAnnotation>
   <BoxAnnotation min="5 0 0" max="6 1 1">
-    向便携式物品栏终端广播
+    向便携式容器终端广播
   </BoxAnnotation>
   <BoxAnnotation min="0 0 0" max="1 1 1">
     向配对的导入箱发送物品

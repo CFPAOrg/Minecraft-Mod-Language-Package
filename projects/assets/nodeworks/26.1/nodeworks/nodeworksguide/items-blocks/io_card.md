@@ -5,6 +5,7 @@ navigation:
   title: IO Card
 categories:
   - card
+  - requires_controller
 description: used for reading and writing an inventory/tank from scripts
 item_ids:
 - nodeworks:io_card
@@ -15,6 +16,8 @@ item_ids:
 The IO Card lets a network read from and write to the inventory of an adjacent
 block on demand. With an IO Card installed, scripts can query what's in the
 block and move items or fluids to/from it.
+
+> In order to get any use out of the IO Card in scripting you must first have a <ItemLink id="network_controller" />
 
 <ItemImage scale="6" id="io_card" />
 

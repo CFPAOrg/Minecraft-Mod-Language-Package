@@ -6,15 +6,15 @@ navigation:
 categories:
   - api_types
   - api_preset
-description: move items from A to B with a distribution strategy
+description: move items and fluids from A to B with a distribution strategy
 ---
 
 # Importer
 
-The `importer` global builds movers that pull items from one or more sources
-and deposit them into one or more targets. Every importer is a scheduled task
-under the hood, so it keeps running at its configured interval until the
-script stops or you call `:stop()` on the handle.
+The `importer` global builds movers that pull items and fluids from one or
+more sources and deposit them into one or more targets. Every importer is a
+scheduled task under the hood, so it keeps running at its configured interval
+until the script stops or you call `:stop()` on the handle.
 
 ## from
 
@@ -47,6 +47,11 @@ ImporterBuilder:to(...targets: string | CardHandle | network): ImporterBuilder
 Sets the destinations. Same polymorphism as `:from`: card aliases, CardHandle
 objects, or `network` for the pool. At least one target is required.
 
+A Storage Card target keeps its own rules. Only items its rule list,
+stackability and data filters allow are moved into it, the same as
+`network:insert`, so an armour-only card stays armour-only whatever the
+importer's `:filter` says.
+
 <LuaCode>
 ```lua
 importer:from("farm"):to("storage1", "storage2"):start()
@@ -56,34 +61,68 @@ importer:from("mobFarm"):to(network):start()  -- deposit into the pool
 
 ## filter
 
-<LuaCode>
-```lua
-ImporterBuilder:filter(pattern: string): ImporterBuilder
-```
-</LuaCode>
+What to move. Anything matching one of the rules moves. Leave it out to move everything. Filter syntax is the same as [Network:find](network.md#find).
 
-Narrows the mover to items (or fluids) matching the filter. **Optional.** The
-default is `*`, which moves every item. Use filter syntax from
-[Network:find](network.md#find) including `$item:id`, `$fluid:id`, `#tag`,
-`modname:*`, and regex.
+You can use `:filter()` multiple times to apply multiple filters or call it with no parameter to reset the filter.
 
 <LuaCode>
 ```lua
--- Move only cobblestone
-importer:from(network)
+importer
+  :from(network)
   :filter("$item:minecraft:cobblestone")
+  :filter("$item:minecraft:stone")
   :to("io_*")
   :start()
 
--- Move all c:ores items
-importer:from("mobFarm"):filter("#c:ores"):to("storage"):start()
+local puller = importer
+  :from("quarry")
+  :filter("#c:ores")
+  :to(network)
+
+puller:filter() -- resets the filters
+puller:start() -- starts the importer
+```
+</LuaCode>
+
+## except
+
+Allows you to specify any items you explicitly do **not** want to move.
+
+<LuaCode>
+```lua
+-- All ores, except one the furnaces can't smelt
+importer
+  :from(network)
+  :to("furnace_*")
+  :filter("#c:ores")
+  :except("mod:uranium")
+  :roundrobin()
+  :start()
+
+-- Empty a machine, but leave its slag in it
+importer:from("crusher"):to(network):except("mod:slag"):start()
+```
+</LuaCode>
+
+## Fluids
+
+Importers move fluids too. Any rule can name a fluid, and `$fluid:` picks the
+fluid when an item shares the name. Amounts are in millibuckets, a bucket is `1000`. A target with no tank is simply skipped for fluids.
+
+<LuaCode>
+```lua
+importer
+  :from(network)
+  :to("boiler")
+  :filter("$fluid:minecraft:water")
+  :start()
 ```
 </LuaCode>
 
 ## Distribution
 
-The importer has two ways of splitting items across targets. The default is
-fill, you opt into round robin explicitly.
+The importer has two ways of splitting what it moves across targets. The
+default is fill, you opt into round robin explicitly.
 
 ### Fill (default)
 
@@ -93,7 +132,8 @@ up before any excess lands elsewhere.
 
 <LuaCode>
 ```lua
-importer:from("furnaceOutput")
+importer
+  :from("furnaceOutput")
   :filter("$item:iron_ingot")
   :to("mainChest", "overflow")
   :start()
@@ -102,23 +142,23 @@ importer:from("furnaceOutput")
 
 ### roundrobin
 
-<LuaCode>
-```lua
-ImporterBuilder:roundrobin(step: number?): ImporterBuilder
-```
-</LuaCode>
-
-Distributes evenly across every target on every tick. `step` is the max items
-delivered to each target per tick (default 1). With step=1, three items in
-the source land as one in each of three targets in a single tick. For bulk
-flow, raise the step or speed up the tick rate with `:every(1)`.
+Shares out evenly across every target. Provide a number to specify how much each target gets per turn, default 1.
+For items that is items, for fluids it is millibuckets,
+so give a fluid importer a step like 1000 for a bucket per turn.
 
 <LuaCode>
 ```lua
-importer:from("bufferChest")
+importer
+  :from("bufferChest")
   :to("furnace1", "furnace2", "furnace3")
   :roundrobin()
-  :every(10)
+  :start()
+
+importer
+  :from(network)
+  :to("boiler_*")
+  :filter("$fluid:minecraft:water")
+  :roundrobin(1000)
   :start()
 ```
 </LuaCode>
@@ -145,23 +185,25 @@ importer:from("farm_*"):to("storage"):start()
 
 ## Example: two-stage smelter array
 
-Ores feed in round robin to three furnaces, outputs collect into a central
-chest.
+Ores and raw materials feed in round robin to every furnace, finished ingots
+collect back into the network.
 
 <LuaCode>
 ```lua
--- Feed ore evenly to three furnaces
-importer:from("oreBuffer")
-  :filter("$item:iron_ore")
-  :to("furnace1", "furnace2", "furnace3")
+local furnaces = network:cards("furnace_*")
+
+-- Feed the furnaces evenly
+importer:from(network)
+  :to(furnaces:face("top"))
+  :filter("#c:ores", "#c:raw_materials")
+  :except("mod:uranium")
   :roundrobin()
   :every(10)
   :start()
 
--- Collect ingots from all three into the output chest
-importer:from("furnace1", "furnace2", "furnace3")
-  :filter("$item:iron_ingot")
-  :to("outputChest")
+-- Collect whatever comes out
+importer:from(furnaces:face("bottom"))
+  :to(network)
   :start()
 ```
 </LuaCode>

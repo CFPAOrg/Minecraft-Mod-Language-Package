@@ -330,6 +330,48 @@ Different blocks expose different properties, what `state()` returns depends
 entirely on what the watched block is. Use `:block()` first if you need to
 branch on which block you're inspecting.
 
+### data
+
+Returns the watched block entity's saved data as a nested table, or `nil` for a
+block with no entity. This is whatever the block writes to disk: a furnace's
+burn and cook progress, a chest's items, a machine's energy or recipe state.
+Keys are the mod's own names, so look at what comes back for the block you
+want to read.
+
+<LuaCode>
+```lua
+local dat = network:get("reactorWatcher"):data()
+if dat and dat.heat > 75 then
+    network:get("reactorRedstoneCard"):set(false)
+end
+```
+</LuaCode>
+
+Numbers and strings come through as they are. NBT has no booleans, so flags
+read as `0` or `1`. Lists are 1-based tables. A block that saves more than
+8192 values is cut off and the table gets `truncated = true`.
+
+The data is read from the block at most once a second, so polling it every
+tick is cheap and what you see can be up to a second old. A block that gets
+replaced is read again right away. Anything the block keeps only in memory
+and never saves won't be in it.
+
+### energy
+
+Returns an `EnergyInfo` for a block with energy storage, or `nil` for one
+without. It has two fields, `stored` and `capacity`, in the loader's energy
+unit (FE). Check for `nil` before reading them, the editor warns if you
+don't. Unlike `:data()` this is always current.
+
+<LuaCode>
+```lua
+local e = network:get("battery_watch"):energy()
+if e and e.stored < e.capacity * 0.1 then
+    network:get("generator_switch"):set(true) -- set Variable
+end
+```
+</LuaCode>
+
 ### onChange
 
 Registers a callback that fires whenever the watched block id or any state

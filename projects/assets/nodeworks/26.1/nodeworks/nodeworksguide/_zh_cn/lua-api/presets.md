@@ -5,7 +5,7 @@ navigation:
   icon: terminal
 categories:
   - api_builtin
-description: 声明式的builder（importer、stocker），是常见物品移动和补货操作的样板
+description: 声明式的builder（importer、stocker），是物品移动和补货等常见操作的样板
 ---
 
 # 预设

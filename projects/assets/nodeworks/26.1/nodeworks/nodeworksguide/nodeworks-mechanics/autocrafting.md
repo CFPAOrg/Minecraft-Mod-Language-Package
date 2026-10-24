@@ -22,17 +22,19 @@ a <ItemLink id="crafting_core" /> does the work.
 
 You need four things, all on the same network:
 
+1. **A Network Controller.** In order for your network to do any auto-crafting
+    it must first have a <ItemLink id="network_controller" />
 1. **A CPU.** Drop a <ItemLink id="crafting_core" />, stick at least one
    <ItemLink id="crafting_storage" /> on it, and wire the Core to a
    <ItemLink id="node" />. See [Crafting CPU](../items-blocks/crafting_cpu.md)
    for extras like more buffers, coolant, and substrate.
-2. **Recipes.** Author each recipe into an
+1. **Recipes.** Author each recipe into an
    <ItemLink id="instruction_set" /> (vanilla 3×3 crafting) or a
    <ItemLink id="processing_set" /> (anything else), then drop them into an
    <ItemLink id="instruction_storage" /> or
    <ItemLink id="processing_storage" /> and wire that to the network.
-3. **Ingredients.** The raw materials have to be somewhere in [Network Storage](./network-storage.md). Any chest plugged in with a <ItemLink id="storage_card" /> counts.
-4. **A way to ask.** Either an <ItemLink id="inventory_terminal" /> for you
+1. **Ingredients.** The raw materials have to be somewhere in [Network Storage](./network-storage.md). Any chest plugged in with a <ItemLink id="storage_card" /> counts.
+1. **A way to ask.** Either an <ItemLink id="inventory_terminal" /> for you
    to click on, or a script running on a <ItemLink id="terminal" /> that
    calls `network:craft(...)`.
 

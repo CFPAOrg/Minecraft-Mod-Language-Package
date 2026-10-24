@@ -5,7 +5,8 @@ navigation:
   title: 红石卡
 categories:
   - card
-description: 读写所安装节点面处的红石信号
+  - requires_controller
+description: 读写所在节点面处的红石信号
 item_ids:
 - nodeworks:redstone_card
 ---
@@ -13,6 +14,8 @@ item_ids:
 # 红石卡
 
 在所安装的节点面处读写红石信号。
+
+> 如需使用该卡，应先在网络中加入<ItemLink id="network_controller" />。
 
 <ItemImage scale="6" id="redstone_card" />
 

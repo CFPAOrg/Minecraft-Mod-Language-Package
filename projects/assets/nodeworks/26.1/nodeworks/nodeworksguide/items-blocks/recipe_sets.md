@@ -5,6 +5,7 @@ navigation:
   title: Recipe Sets
 categories:
   - autocrafting
+  - requires_controller
 description: stores crafting recipes for [autocrafting](../nodeworks-mechanics/autocrafting.md)
 item_ids:
 - nodeworks:instruction_set
@@ -74,13 +75,30 @@ Right-click to open. The GUI has:
 - **Timeout field**: 0–999 ticks (0 = no timeout). `+` and `-` buttons step by 20, shift-click steps by 100.
 - **Serial toggle**: when on, the CPU won't run this recipe in parallel with
   itself.
+- **Substitutions toggle**: when on, an input filled from a tag recipe (its
+  slot cycles through the tag's members) accepts any item in that tag, and
+  every input accepts any component variant of its item. Off locks the recipe
+  to the exact items shown.
 - **Clear All**: resets everything.
 
 Per-slot counts are adjusted by scrolling over a filled slot (scroll up +1,
 scroll down -1, scroll down at 1 clears).
 
+Right-click a filled output slot with an empty cursor to mark it **optional**
+(shown by a `?` badge). Use it for chance by-products, like a sag mill's bonus
+dusts. A job only waits for the guaranteed outputs. Optional ones go straight
+to network storage whenever they show up, up to the set count. If the bonus is
+an extra copy of the main output, the extra made in the same tick counts as
+the bonus. The CPU never plans a craft for an optional output, so every set
+keeps at least one guaranteed output. The editor won't mark the last one.
+
+JEI's (+) marks chance outputs for you when the mod's recipe records a
+chance per output. Mods that don't record one need the mark set by hand.
+
 > **Tip:** JEI's **(+)** works here too, and it's *universal*. Any recipe category JEI
-> knows about (smelting / blasting / modded) is fair game.
+> knows about (smelting / blasting / modded) is fair game. An input JEI shows several
+> items for, like the sand types in `#minecraft:smelts_to_glass`, is recorded as that
+> tag, so with Substitutions on the recipe uses whichever member you have or can craft.
 
 ### Deploying it
 

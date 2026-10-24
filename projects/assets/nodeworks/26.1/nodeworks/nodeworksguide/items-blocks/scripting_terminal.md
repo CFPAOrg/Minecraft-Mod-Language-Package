@@ -5,6 +5,7 @@ navigation:
   title: Scripting Terminal
 categories:
   - terminal
+  - requires_controller
 description: where you write and run Lua scripts that control a network
 item_ids:
 - nodeworks:terminal
@@ -13,6 +14,8 @@ item_ids:
 # Scripting Terminal
 
 The Scripting Terminal is where you write and run Lua scripts that control a network.
+
+> Requires a <ItemLink id="network_controller" /> to use
 
 <BlockImage scale="6" id="terminal" />
 

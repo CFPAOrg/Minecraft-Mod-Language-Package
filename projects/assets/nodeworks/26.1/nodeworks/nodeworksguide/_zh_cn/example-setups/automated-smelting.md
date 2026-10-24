@@ -15,12 +15,24 @@ categories:
   <ImportStructure src="../assets/assemblies/automated_smelting.snbt" />
   <IsometricCamera yaw="190" pitch="10" />
   <DiamondAnnotation pos="7.5 4 0.5" color="#ff0000">
-    蓝色网络导出箱，在GUI中设为向下方送出物品。
+  <BlockAnnotation x="7" y="4">
+  ![](../assets/images/automated_smelting_export_raw.png)
+  </BlockAnnotation>
+  <BlockAnnotation x="7" y="3">
+  ![](../assets/images/automated_smelting_import_raw.png)
+  </BlockAnnotation>
+  <BlockAnnotation x="5" y="3">
+  ![](../assets/images/automated_smelting_export_cooked.png)
+  </BlockAnnotation>
+  <BlockAnnotation x="5" y="4">
+  ![](../assets/images/automated_smelting_import_cooked.png)
+  </BlockAnnotation>
+    存储网络导出箱，在GUI中设为向下方送出物品。
 
     **这两个箱子之间没有连接，它们分属于两个网络。**
   </DiamondAnnotation>
   <DiamondAnnotation pos="5.5 4 0.5" color="#ff0000">
-    绿色网络导出箱，在GUI中设为向上方送出物品。
+    熔炉网络导出箱，在GUI中设为向上方送出物品。
 
     **这两个箱子之间没有连接，它们分属于两个网络。**
   </DiamondAnnotation>
@@ -32,3 +44,33 @@ categories:
   </BoxAnnotation>
 </GameScene>
 
+也可用<ItemLink id="terminal" />达成同样的功能，且灵活性更高。
+
+<GameScene zoom="4" interactive={true} paddingLeft="30" paddingRight="30">
+  <ImportStructure src="../assets/assemblies/automated_smelting_scripting.snbt" />
+  <IsometricCamera yaw="190" pitch="10" />
+  <BoxAnnotation min="5 1 0" max="8 1.25 1" color="#22C55E">
+    <ItemImage id="io_card" />IO卡
+  </BoxAnnotation>
+</GameScene>
+
+脚本如下：
+
+<LuaCode>
+```lua
+local furnaces = network:cards("furnace_*")
+-- 向熔炉送入粗矿和矿石
+importer
+    :from(network)
+    :to(furnaces:face("top"))
+    :filter("#c:raw_materials")
+    :filter("#c:ores")
+    :roundrobin()
+    :start()
+-- 将处理得到的锭送出熔炉
+importer
+    :from(furnaces:face("bottom"))
+    :to(network)
+    :start()
+```
+</LuaCode>

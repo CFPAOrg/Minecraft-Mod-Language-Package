@@ -15,14 +15,26 @@ to the original network.
 <GameScene zoom="4" interactive={true} paddingLeft="30" paddingRight="30">
   <ImportStructure src="../assets/assemblies/automated_smelting.snbt" />
   <IsometricCamera yaw="190" pitch="10" />
+  <BlockAnnotation x="7" y="4">
+  ![](../assets/images/automated_smelting_export_raw.png)
+  </BlockAnnotation>
+  <BlockAnnotation x="7" y="3">
+  ![](../assets/images/automated_smelting_import_raw.png)
+  </BlockAnnotation>
+  <BlockAnnotation x="5" y="3">
+  ![](../assets/images/automated_smelting_export_cooked.png)
+  </BlockAnnotation>
+  <BlockAnnotation x="5" y="4">
+  ![](../assets/images/automated_smelting_import_cooked.png)
+  </BlockAnnotation>
   <DiamondAnnotation pos="7.5 4 0.5" color="#ff0000">
-    Export Chest from the Blue Network has items pushing Down set in its GUI.
+    Export Chest from the storage Network has items pushing Down set in its GUI.
 
     **These two chests don't connect to each other, they're part of two separate
     networks.**
   </DiamondAnnotation>
   <DiamondAnnotation pos="5.5 4 0.5" color="#ff0000">
-    Export Chest from the Green Network is pushing its items Up which is set in its GUI.
+    Export Chest from the furnace Network is pushing its items Up which is set in its GUI.
 
     **These two chests don't connect to each other, they're part of two separate
     networks.**
@@ -35,3 +47,33 @@ to the original network.
   </BoxAnnotation>
 </GameScene>
 
+Optionally you can use a <ItemLink id="terminal" /> to achieve the same thing with more flexibility.
+
+<GameScene zoom="4" interactive={true} paddingLeft="30" paddingRight="30">
+  <ImportStructure src="../assets/assemblies/automated_smelting_scripting.snbt" />
+  <IsometricCamera yaw="190" pitch="10" />
+  <BoxAnnotation min="5 1 0" max="8 1.25 1" color="#22C55E">
+    <ItemImage id="io_card" /> IO Cards
+  </BoxAnnotation>
+</GameScene>
+
+With the following script:
+
+<LuaCode>
+```lua
+local furnaces = network:cards("furnace_*")
+-- put raw materials and ores into the furnaces
+importer
+    :from(network)
+    :to(furnaces:face("top"))
+    :filter("#c:raw_materials")
+    :filter("#c:ores")
+    :roundrobin()
+    :start()
+-- take the finished ingots out of the furnaces
+importer
+    :from(furnaces:face("bottom"))
+    :to(network)
+    :start()
+```
+</LuaCode>

@@ -5,6 +5,7 @@ navigation:
   title: 合成请求器
 categories:
   - device
+  - requires_controller
 description: 收到红石信号时发起自动合成作业
 item_ids:
 - nodeworks:craft_requester
@@ -13,6 +14,8 @@ item_ids:
 # 合成请求器
 
 合成请求器会在收到红石信号时发起自动合成作业。需为其指定所合成物品和单次数量。
+
+> 需要<ItemLink id="network_controller" />才可使用
 
 <GameScene interactive={true} zoom="5" paddingLeft="40" paddingRight="40">
   <ImportStructure src="../assets/assemblies/craft_requester_door.snbt" />
@@ -23,7 +26,7 @@ item_ids:
     <RecipeFor id="minecraft:oak_door" />
   </DiamondAnnotation>
   <BoxAnnotation min="1.2 1 0.3" max="1.8 1.2 0.7" color="#00f2ff">
-    红石信号激活合成请求器，合成所指定的物品
+    用红石信号激活合成请求器，合成所指定的物品
   </BoxAnnotation>
 </GameScene>
 

@@ -2,7 +2,7 @@
 navigation:
   parent: items-blocks/index.md
   icon: inventory_terminal
-  title: 物品栏终端
+  title: 容器终端
 categories:
   - terminal
 description: "[网络存储](../nodeworks-mechanics/network-storage.md)的视窗"
@@ -10,9 +10,9 @@ item_ids:
 - nodeworks:inventory_terminal
 ---
 
-# 物品栏终端
+# 容器终端
 
-物品栏终端是[网络存储](../nodeworks-mechanics/network-storage.md)的视窗。
+容器终端是[网络存储](../nodeworks-mechanics/network-storage.md)的视窗。
 
 <BlockImage scale="6" id="inventory_terminal" />
 
@@ -34,12 +34,16 @@ item_ids:
 - 筛选方式（库存、配方、两者）
 - 资源类型（物品、流体、两者）
 - 切换自动聚焦搜索框与否
+- 切换是否与JEI同步搜索框
+- 按频道筛选的视图
 
 中央为可收起的合成方格，方格旁的按钮为：
 
 - 自动从网络中抽取
 - 在方格中均分原材料
 - 将方格中的原材料送至网络存储
+
+Shift点击产物可合成一组并送至你的物品栏。`Ctrl`+Shift点击则合成至容量上限。
 
 ## 配方
 

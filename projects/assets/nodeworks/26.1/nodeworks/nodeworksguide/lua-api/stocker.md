@@ -94,6 +94,7 @@ StockerBuilder:to(target: string | CardHandle | network): StockerBuilder
 Sets the destination. Accepts a card alias, CardHandle object, or `network`
 for "keep the level in the pool itself." The stocker counts matching items in
 the target, when you use `network`, it counts across every storage card.
+A Storage Card target keeps its own rules, so only items they allow are moved into it.
 
 ### keep
 
@@ -111,22 +112,32 @@ inserted, etc.), the stocker does nothing. It only ever fills, never drains.
 
 ### filter
 
+What counts toward `:keep(n)`, and what `:from` pulls. Leave it out to count any item.
+You can pass several rules, call it more than once, or hand it a table.
+Call it with nothing to start over. **`:ensure` and `:craft` set this for
+you**, so you only need it with `:from`.
+
 <LuaCode>
 ```lua
-StockerBuilder:filter(pattern: string): StockerBuilder
+stocker
+  :from("buffer")
+  :filter("$item:arrow")
+  :to("dispenser")
+  :keep(64)
+  :start()
 ```
 </LuaCode>
 
-Narrows what the stocker counts toward `:keep(n)` in the target. Defaults to
-`*` (any item). Set it when you want the stocker to only care about a specific
-type of item pulled from a heterogeneous source. **`:ensure` and `:craft` set
-this automatically** to their item id, so you only need `:filter` with
-`:from`.
+### except
+
+What to leave out of the count and the pull, even if `:filter` would take it.
 
 <LuaCode>
 ```lua
+-- A stack of arrows, but never the tipped ones
 stocker:from("buffer")
-  :filter("$item:arrow")
+  :filter("#minecraft:arrows")
+  :except("minecraft:tipped_arrow")
   :to("dispenser")
   :keep(64)
   :start()

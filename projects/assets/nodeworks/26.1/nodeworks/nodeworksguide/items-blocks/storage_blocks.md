@@ -5,6 +5,7 @@ navigation:
   title: Recipe Storage Blocks
 categories:
   - autocrafting
+  - requires_controller
 description: houses Recipe Sets so Crafting CPUs can see them
 item_ids:
 - nodeworks:instruction_storage

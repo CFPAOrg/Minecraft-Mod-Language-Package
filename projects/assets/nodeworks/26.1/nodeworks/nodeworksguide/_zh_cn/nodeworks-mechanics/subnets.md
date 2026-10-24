@@ -32,11 +32,11 @@ categories:
 1. 在子网中，搭建<ItemLink id="processing_storage" />集群，放入子网应公开的各<ItemLink id="processing_set" />。
 2. 直接在集群内任意<ItemLink id="processing_storage" />的上方放置<ItemLink id="broadcast_antenna" />。
 3. 在天线的GUI内使用<ItemLink id="link_crystal" />进行配对。
-4. 在接收网络中，向网络接入<ItemLink id="receiver_antenna" />，并在其GUI中放入同一块<ItemLink id="link_crystal" />。
+4. 在接收方网络中，向网络接入<ItemLink id="receiver_antenna" />，并在其GUI中放入同一块<ItemLink id="link_crystal" />。
 
-如此，接收网络即能看见子网处理存储器集群中的所有配方，如同网络在本地拥有这些配方一样。需用到这些配方的合成作业和其他自动合成的行为一致。
+如此，接收方网络即能看见子网处理存储器集群中的所有配方，如同网络在本地拥有这些配方一样。需用到这些配方的合成作业和其他自动合成的行为一致。
 
-机器和原材料依然归子网所有。接收网络需要请求产物，并静待子网发来。
+机器和原材料依然归子网所有。接收方网络需要请求产物，并静待子网发来。
 
 ## 无线物品传输
 

@@ -5,6 +5,7 @@ navigation:
   title: Variable
 categories:
   - device
+  - requires_controller
 description: a shared network variable
 item_ids:
 - nodeworks:variable
@@ -13,6 +14,8 @@ item_ids:
 # Variable Block
 
 A Variable block is a value that can be shared across an entire network.
+
+> Requires a <ItemLink id="network_controller" /> to use.
 
 <BlockImage scale="6" id="variable" />
 

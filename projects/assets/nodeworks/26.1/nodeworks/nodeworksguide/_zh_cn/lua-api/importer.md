@@ -6,12 +6,12 @@ navigation:
 categories:
   - api_types
   - api_preset
-description: 将物品从A移动到B，接受分配策略
+description: 将物品和流体从A移动到B，接受分配策略
 ---
 
 # Importer
 
-`importer`（导入器）全局变量能建造物品搬运器，从任意多个来源中抽取物品，再送到任意多个目标中去。在实现方式上，importer其实是scheduler任务，因此它会根据所配置的间隔运行，并在脚本停止或对handle调用`:stop()`时终止。
+`importer`（导入器）全局变量能建造物品和流体搬运器，从任意多个来源中抽取，再送到任意多个目标中去。在实现方式上，importer其实是scheduler任务，因此它会根据所配置的间隔运行，并在脚本停止或对handle调用`:stop()`时终止。
 
 ## from
 
@@ -41,6 +41,8 @@ ImporterBuilder:to(...targets: string | CardHandle | network): ImporterBuilder
 
 设置目的地。多态行为和`:from`一致：卡片别名、CardHandle对象、指代网络存储的`network`。至少需要指定一个目标。
 
+存储卡目标使用它们自身的规则。只有其规则列表、可堆叠性、数据筛选器允许的物品可以通过，也即表现和`network:insert`一致。因此，无论importer的`:filter`指定了什么，仅接受盔甲的存储卡仍只会接受盔甲。
+
 <LuaCode>
 ```lua
 importer:from("farm"):to("storage1", "storage2"):start()
@@ -50,24 +52,60 @@ importer:from("mobFarm"):to(network):start()  -- 存入网络存储
 
 ## filter
 
-<LuaCode>
-```lua
-ImporterBuilder:filter(pattern: string): ImporterBuilder
-```
-</LuaCode>
+要移动什么。匹配其中任意一条规则的资源都会被移动。不使用该方法相当于可移动所有资源。筛选器语法与[Network:find](network.md#find)的相同。
 
-按照筛选器限制可移动的物品（或流体）种类。&zwnj;**可选。**&zwnj;默认值为`*`，对应移动所有物品。筛选器的语法与[Network:find](network.md#find)一致，即包括`$item:id`、`$fluid:id`、`#tag`、`modname:*`、正则表达式。
+可以多次使用`:filter()`以应用多个筛选器，调用时不提供参数会重置筛选器。
 
 <LuaCode>
 ```lua
--- 仅移动圆石
-importer:from(network)
+importer
+  :from(network)
   :filter("$item:minecraft:cobblestone")
+  :filter("$item:minecraft:stone")
   :to("io_*")
   :start()
 
--- 移动所有c:ores物品
-importer:from("mobFarm"):filter("#c:ores"):to("storage"):start()
+local puller = importer
+  :from("quarry")
+  :filter("#c:ores")
+  :to(network)
+
+puller:filter() -- 重置筛选器
+puller:start() -- 启动importer
+```
+</LuaCode>
+
+## except
+
+用于指定明确**不**希望移动的物品。
+
+<LuaCode>
+```lua
+-- 所有矿石，熔炉无法烧炼的除外
+importer
+  :from(network)
+  :to("furnace_*")
+  :filter("#c:ores")
+  :except("mod:uranium")
+  :roundrobin()
+  :start()
+
+-- 腾空机器，但不动其中的炉渣
+importer:from("crusher"):to(network):except("mod:slag"):start()
+```
+</LuaCode>
+
+## 流体
+
+Importer也能移动流体。所有规则均接受流体，若有物品和流体名称相同，可在流体名前使用`$fluid:`。流体量的单位为毫桶，即一桶为`1000`。没有流体存储空间的目标会被跳过。
+
+<LuaCode>
+```lua
+importer
+  :from(network)
+  :to("boiler")
+  :filter("$fluid:minecraft:water")
+  :start()
 ```
 </LuaCode>
 
@@ -81,7 +119,8 @@ importer有两种分配调度目标的方式。默认为填充，需要显式指
 
 <LuaCode>
 ```lua
-importer:from("furnaceOutput")
+importer
+  :from("furnaceOutput")
   :filter("$item:iron_ingot")
   :to("mainChest", "overflow")
   :start()
@@ -90,9 +129,21 @@ importer:from("furnaceOutput")
 
 ### roundrobin
 
+在所有目标间均分。传入的数代表每趟各目标收到的资源量，默认为1。对于物品而言，单位为个；对于流体而言，单位为毫桶。因此给流体importer指定1000代表每趟各目标收到1桶。
+
 <LuaCode>
 ```lua
-ImporterBuilder:roundrobin(step: number?): ImporterBuilder
+importer
+  :from("bufferChest")
+  :to("furnace1", "furnace2", "furnace3")
+  :roundrobin()
+  :start()
+
+importer
+  :from(network)
+  :to("boiler_*")
+  :filter("$fluid:minecraft:water")
+  :roundrobin(1000)
 ```
 </LuaCode>
 
@@ -126,22 +177,24 @@ importer:from("farm_*"):to("storage"):start()
 
 ## 示例：两阶段烧炼阵列
 
-矿石按轮询送入三个熔炉，产物收集至中央存储箱。
+矿石和原材料按轮询送入所有熔炉，所得锭收集回网络。
 
 <LuaCode>
 ```lua
--- 将矿石均分给三个熔炉
-importer:from("oreBuffer")
-  :filter("$item:iron_ore")
-  :to("furnace1", "furnace2", "furnace3")
+local furnaces = network:cards("furnace_*")
+
+-- 平均分入各熔炉
+importer:from(network)
+  :to(furnaces:face("top"))
+  :filter("#c:ores", "#c:raw_materials")
+  :except("mod:uranium")
   :roundrobin()
   :every(10)
   :start()
 
--- 从所有三台熔炉中抽取锭，并存入输出箱
-importer:from("furnace1", "furnace2", "furnace3")
-  :filter("$item:iron_ingot")
-  :to("outputChest")
+-- 收集产物
+importer:from(furnaces:face("bottom"))
+  :to(network)
   :start()
 ```
 </LuaCode>

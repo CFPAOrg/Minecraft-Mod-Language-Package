@@ -76,3 +76,31 @@ machines like large smelting batches or modded multi-second recipes.
 > **Note:** An error inside your handler stops *that one craft* but doesn't
 > take down the rest of your script. If a craft hangs unexpectedly, check the
 > terminal log, the error will be there.
+
+## recipe
+
+A `Job` also says which Processing Set it is running, so one handler for many
+recipes, like a [`network:recipes`](network.md#recipes) handler, can treat a
+few of them differently.
+
+- `job.name` is the set's name, the same one `network:handle` takes.
+- `job.inputs` lists the set's inputs in slot order. Each entry has `id` and
+  `count`, plus `tag` when the input takes any item from a tag.
+- `job.outputs` lists what the set makes. Each entry has `id`, `count` and
+  `optional`, which is true for a chance output.
+
+<LuaCode>
+```lua
+local furnace = network:get("furnace")
+local blast = network:get("blast_furnace")
+network:recipes("#c:raw_materials"):handle(function(job: Job, items: InputItems)
+  -- Iron goes to the blast furnace, everything else to the plain furnace.
+  local machine = furnace
+  if job.outputs[1].id == "minecraft:iron_ingot" then machine = blast end
+  for _, input in ipairs(items:all()) do
+    machine:face("top"):insert(input)
+  end
+  job:pull(machine:face("bottom"))
+end)
+```
+</LuaCode>

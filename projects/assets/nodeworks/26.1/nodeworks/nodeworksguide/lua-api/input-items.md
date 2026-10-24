@@ -54,6 +54,27 @@ end)
 ```
 </LuaCode>
 
+## all
+
+Returns every input as a list, in the order the recipe lists them. Use it
+when one handler serves many recipes and the field names differ from one
+recipe to the next, as with [`network:recipes`](network.md#recipes).
+
+<LuaCode>
+```lua
+local furnace = network:get("furnace")
+network:handle("...", function(job: Job, items: InputItems)
+  for _, input in ipairs(items:all()) do
+    furnace:face("top"):insert(input)
+  end
+  job:pull(furnace:face("bottom"))
+end)
+```
+</LuaCode>
+
+The handles in the list are the same ones the named fields hold, so moving
+`items.rawIron` also empties its entry in the list.
+
 ## You must use everything
 
 The handler is expected to move every input into the machine. If anything's

@@ -18,18 +18,19 @@ categories:
 
 ## 让它跑起来
 
-你需要同一网络中有四样东西：
+你需要同一网络中有五样东西：
 
-1. **一个CPU。**&zwnj;放下一个<ItemLink id="crafting_core" />，紧贴它放置一个<ItemLink id="crafting_storage" />，并将核心接至<ItemLink id="node" />。缓存器、冷却器、载件等额外组件的信息，参见[合成CPU](../items-blocks/crafting_cpu.md)。
-2. **配方。**&zwnj;将各配方编码到<ItemLink id="instruction_set" />（原版3×3合成）或<ItemLink id="processing_set" />（其余）中，再把它们放到<ItemLink id="instruction_storage" />或<ItemLink id="processing_storage" />中，并接入网络。
-3. **原材料。**&zwnj;所需原材料必须位于[网络存储](./network-storage.md)之中。所有通过<ItemLink id="storage_card" />接入的箱子均可。
-4. **提出请求的方法。**&zwnj;可以在<ItemLink id="inventory_terminal" />中点选，或者通过<ItemLink id="terminal" />中脚本调用`network:craft(...)`。
+1. **一个网络控制器。**&zwnj;所有要进行自动合成的网络都需有<ItemLink id="network_controller" />。
+2. **一个CPU。**&zwnj;放下一个<ItemLink id="crafting_core" />，紧贴它放置一个<ItemLink id="crafting_storage" />，并将核心接至<ItemLink id="node" />。缓存器、冷却器、载件等额外组件的信息，参见[合成CPU](../items-blocks/crafting_cpu.md)。
+3. **配方。**&zwnj;将各配方编码到<ItemLink id="instruction_set" />（原版3×3合成）或<ItemLink id="processing_set" />（其余）中，再把它们放到<ItemLink id="instruction_storage" />或<ItemLink id="processing_storage" />中，并接入网络。
+4. **原材料。**&zwnj;所需原材料必须位于[网络存储](./network-storage.md)之中。所有通过<ItemLink id="storage_card" />接入的箱子均可。
+5. **提出请求的方法。**&zwnj;可以在<ItemLink id="inventory_terminal" />中点选，或者通过<ItemLink id="terminal" />中脚本调用`network:craft(...)`。
 
-四样备齐之后，网络能制作的物品便会出现在物品栏终端内（可通过筛选器显示，也可按住左Alt显示加号），而`network:craft("...")`也会返回一个builder而非nil。
+四样备齐之后，网络能制作的物品便会出现在容器终端内（可通过筛选器显示，也可按住左Alt显示加号），而`network:craft("...")`也会返回一个builder而非nil。
 
 ## 请求合成
 
-### 通过物品栏终端
+### 通过容器终端
 
 打开终端，找到物品，对其`Alt点击`。输入数量并确认。终端顶部的**合成队列**会显示所有排队的物品。合成完成时，产物会附带上一个标记，此时即可取出产物。不过下一次再次打开终端时，这些产物就将与其他资源汇合。
 
@@ -104,13 +105,13 @@ end)
 ```
 </LuaCode>
 
-若试图自动合成需要处理集又未注册handler的资源，那么合成会失败，并告知哪个配方缺少handler。
+若试图自动合成需要处理集又未注册handler的资源，那么合成会失败，并会告知哪个配方缺少handler。
 
 完整样例参见[network:handle](../lua-api/network.md#handle)、[Job](../lua-api/job.md)、[InputItems](../lua-api/input-items.md)。
 
 ## 出错时怎么做
 
-合成失败时，<ItemLink id="crafting_core" />会在其周围间歇性产生红色的红石粉粒子云。直至打开核心的GUI解除错误，或是发起能成功的新合成作业后，粒子云才会消失。排障时首先找红色粉状粒子，检查核心是最快获知CPU错误的方式。
+合成失败时，<ItemLink id="crafting_core" />会在其周围间歇性产生红色的红石粉粒子云。直至打开核心的GUI解除错误，或是发起能成功的新合成作业后，粒子云才会消失。排障时首先找红色粉状粒子。检查核心是最快获知CPU错误的方式。
 
 ![](../assets/images/crafting_cpu_erroring.png)
 

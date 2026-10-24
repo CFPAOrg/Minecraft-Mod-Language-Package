@@ -218,7 +218,7 @@ end
 
 ## tryInsert
 
-与[`insert`](network.md#insert)类似，但会移动所有匹配的物品，而不是要么全部移动，要么不移动。返回实际移动的数量（0至所请求的量）。所有未能移动的物品将停留在来源中。若仅移动一部分不会产生影响，可使用此方法。
+与[`insert`](network.md#insert)类似，但会尽可能移动匹配的物品，而不是要么全部移动，要么不移动。返回实际移动的数量（0至所请求的量）。所有未能移动的物品将停留在来源中。若仅移动一部分不会产生影响，可使用此方法。
 
 <LuaCode>
 ```lua
@@ -300,6 +300,77 @@ network:handle("…", function(job: Job, items: InputItems)
 end)
 ```
 </LuaCode>
+
+---
+
+## recipes
+
+使用一个函数处理多个处理集。在其中给出处理集所需的原材料，之后所有原材料与它匹配的处理集都会交由同一个handler处理。后续加入网络的处理集会自动纳入处理范围，无需重启脚本。
+
+<LuaCode>
+```lua
+local furnaces = network:get("furnaces")
+
+local function smelt(job: Job, items: InputItems)
+  for _, input in items:all() do
+    furnaces:face("top"):insert(input)
+  end
+  job:pull(furnaces:face("bottom"))
+end
+
+network
+  :recipes("#c:ores", "#c:raw_materials")
+  :except("mod:uranium", "mod:other_ore")
+  :handle(smelt)
+```
+</LuaCode>
+
+### 哪些处理集会匹配
+
+- **`network:recipes(...)`**：处理集的所有原材料都必须匹配此处给出的规则之一。原材料中有煤炭的处理集会被锭规则排除，这样合金配方就不会误匹配。不指定规则时所有处理集均匹配。
+- **`:except(...)`**：任意原材料符合此处规则之一的均不匹配。
+- **`:outputs(...)`**：可选。处理集的所有必然产物必须匹配此处规则之一。若同种原材料要分去不同机器，如粗铁要分给熔炉烧炼和磨粉机磨粉，应使用此方法。概率产物不参与匹配。
+
+<LuaCode>
+```lua
+-- 粗矿，但只接受能制成锭的粗矿。
+network:recipes("#c:raw_materials"):outputs("#c:ingots"):handle(smelt)
+```
+</LuaCode>
+
+规则的语法和[存储卡筛选器](../items-blocks/storage_card.md#filters)的一致，物品ID、`#标签`、`*`通配符均可用。
+
+### 冲突时哪方胜出
+
+- 具体的[`network:handle`](./network.md#handle)处理集优先于`recipes` handler。
+- 绑定至<ItemLink id="processing_handler" />和<ItemLink id="multi_processing_handler" />会保留于该方块。规则不会匹配绑定至方块的处理集。
+- 有两个`recipes` handler匹配同一处理集时，先注册的胜出。
+
+### 同一时间一个作业
+
+由于`recipes` handler的配方通常要共享机器，它同一时间仅会运行一个合成作业。其他需要使用机器的作业会等待使用权，不会相互竞争。而若配方不共用机器，比如有多个均处理单一原材料的熔炉组，可用`:parallel()`并行运行合成作业。
+
+<LuaCode>
+```lua
+network:recipes("#c:raw_materials"):parallel():handle(smelt)
+```
+</LuaCode>
+
+### 暂停与检查
+
+`:handle`会返回可停止的handler，也可用它确认当前正在处理哪一个处理集。
+
+<LuaCode>
+```lua
+local ores = network:recipes("#c:ores"):handle(smelt)
+for _, line in ipairs(ores:sets()) do
+  print(line) -- minecraft:raw_iron -> minecraft:iron_ingot
+end
+ores:stop()
+```
+</LuaCode>
+
+各作业的详细信息可用[`job`](job.md#recipe)读取，各输入可用[`items:all()`](input-items.md#all)读取。
 
 ---
 

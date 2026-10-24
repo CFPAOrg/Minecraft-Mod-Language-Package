@@ -12,8 +12,7 @@ item_ids:
 
 # Network Controller
 
-Every Nodeworks network needs exactly one Controller. Without it, the
-[Pipes](pipe.md) and [Nodes](node.md) connected to it stay dormant.
+Any Nodeworks network that wants to have an auto-crafting CPU or scripting capabilities needs **exactly one Controller**.
 
 <GameScene interactive={true} zoom="5">
   <IsometricCamera yaw="200" pitch="10" />
@@ -22,6 +21,10 @@ Every Nodeworks network needs exactly one Controller. Without it, the
 
 Place a Controller, run pipes from it, and any block that connects to
 those pipes joins the network.
+
+## What Requires a Controller?
+
+<CategoryIndexDescriptions category="requires_controller" />
 
 ## Identity
 

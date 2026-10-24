@@ -5,6 +5,7 @@ navigation:
   title: 变量器
 categories:
   - device
+  - requires_controller
 description: 网络范围内共享的变量
 item_ids:
 - nodeworks:variable
@@ -13,6 +14,8 @@ item_ids:
 # 变量器
 
 变量器用于容纳整个网络共享的值。
+
+> 需要<ItemLink id="network_controller" />才可使用
 
 <BlockImage scale="6" id="variable" />
 
@@ -24,7 +27,7 @@ item_ids:
 
 此情况下，保存的是名为`count`的**number**。
 
-打开同网络的任意<ItemLink id="terminal" />时，侧边栏即会显示该变量，以供引用。
+打开同网络的任意<ItemLink id="terminal" />时，侧边栏即会显示该变量以供引用。
 
 ![](../assets/images/variable_in_terminal.png)
 
