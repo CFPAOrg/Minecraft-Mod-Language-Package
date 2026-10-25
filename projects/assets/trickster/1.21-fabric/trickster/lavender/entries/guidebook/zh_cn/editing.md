@@ -120,6 +120,8 @@
 
 在蓝色圆中绘制登升之修订后，即会删除红色圆，并由蓝色圆替换。
 
+;;;;;
+
 <|revision@trickster:templates|revision-id=trickster:rotate_cw|>
 
 顺时针循环移动绘制处圆的子圆，让最后一个子圆变为第一子圆。

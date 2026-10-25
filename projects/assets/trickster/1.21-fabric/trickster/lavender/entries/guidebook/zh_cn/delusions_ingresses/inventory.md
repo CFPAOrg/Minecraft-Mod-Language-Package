@@ -71,4 +71,4 @@
 
 <|trick@trickster:templates|trick-id=trickster:get_max_damage|>
 
-以数的形式返回所给槽位中物品的最大损坏值。
+返回所给槽位中物品能承受的最大损坏值。
