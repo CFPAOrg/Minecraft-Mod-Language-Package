@@ -32,7 +32,7 @@
 
 ![](trickster:textures/gui/img/extension_revision.png,fit)
 
-在蓝色圆中绘制延枝之修订后，即会创建绿色圆。
+在外层蓝色圆中绘制延枝之修订后，即会创建绿色圆。
 
 ;;;;;
 

@@ -55,12 +55,6 @@
 
 ;;;;;
 
-<|ploy@trickster:templates|trick-id=trickster:displace,cost=20G + 1.35G^长度|>
-
-在两秒后按照所给向量令给定实体位移。此技巧术的消耗拥有和动能之技巧类似的叠加效应。
-
-;;;;;
-
 <|ploy@trickster:templates|trick-id=trickster:polymorph,cost=8000G|>
 
 将第一个实体的外形变为第二个实体，并返回第一个实体。两个实体必须都是玩家。

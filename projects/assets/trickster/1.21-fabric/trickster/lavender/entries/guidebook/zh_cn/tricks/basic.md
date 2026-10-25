@@ -23,7 +23,7 @@
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=笔记：抄入的片段|>只要某一物品可存储在玩家物品栏中，就可以抄入法术片段。其中有一部分物品能够[反应触发](^trickster:concepts/trigger_items)其上法术。若抄入的是方块，放置后其上法术片段即会消失。
+<|page-title@lavender:book_components|title=笔记：抄入的片段|>所有物品都可以抄入法术片段。其中有一部分物品能够[反应触发](^trickster:concepts/trigger_items)其上法术。若抄入的是方块，放置后其上法术片段即会消失。
 
 
 读写戏法的作用范围为16格。
