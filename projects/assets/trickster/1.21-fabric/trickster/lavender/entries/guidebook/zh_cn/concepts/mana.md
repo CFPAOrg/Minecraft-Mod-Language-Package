@@ -23,4 +23,4 @@
 
 ;;;;;
 
-魔力可持久存储于晶结中。更多有关信息参见[此条目](^trickster:items/mana/knots)。
+魔力可持久存储于晶结中，也可从中取用。更多有关信息参见[此条目](^trickster:items/mana/knots)。

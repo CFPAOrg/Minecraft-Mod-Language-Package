@@ -59,7 +59,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:list_reverse|>
 
-倒置所给列表。
+返回倒置后的列表。
 
 ;;;;;
 

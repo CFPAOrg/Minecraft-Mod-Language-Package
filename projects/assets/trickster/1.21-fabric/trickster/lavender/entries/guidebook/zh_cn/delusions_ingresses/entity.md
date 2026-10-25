@@ -56,7 +56,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:get_facing|>
 
-给定实体，将其朝向返回为单位向量。
+给定实体，将其头部朝向返回为单位向量。
 
 ;;;;;
 

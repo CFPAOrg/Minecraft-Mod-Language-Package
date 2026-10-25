@@ -63,7 +63,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:max_mana_reflection|>
 
-返回施法对象最多能持有的魔力量，具体判断流程与前一则错觉术类似。
+返回施法者最多能持有的魔力量，具体判断流程与前一则错觉术类似。
 
 ;;;;;
 

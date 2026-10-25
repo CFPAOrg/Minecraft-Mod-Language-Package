@@ -33,7 +33,7 @@
 
 ![](trickster:textures/gui/img/decimal.png,fit)
 
-小数部分则表示为缺口内部的小点。
+数的小数部分则表示为小点而非缺口。
 
 ;;;;;
 
@@ -57,7 +57,7 @@
 
 <|spell-preview@trickster:templates|spell=YxEpKcpMzi4uSS2yKi5IzcmJL0gsKhFGCCbn55UkZualFrEU5+SXMDAwMLElJ4Jk+BFq0nJKM1MYAMz70BBLAAAA|>
 
-此例为槽位下的容器，
+此例为槽位中的容器，
 
 ;;;;;
 

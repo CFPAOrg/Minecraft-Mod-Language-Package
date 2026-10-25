@@ -23,7 +23,7 @@
 掉落的物品、矿车、驴等许多实体都可当作$$trickster:container$$交互。玩家则不可。
 
 
-牢记：创建$$dev.enjarai.trickster.spell.fragment.storage.StorageFragment$$无需消耗魔力。不过，若在使用此类引用时移动了槽位内的物品，则需消耗(距离 * 数量 * 0.5G)的魔力。**移动的消耗与各技巧术给出的消耗相独立。**
+牢记：创建$$dev.enjarai.trickster.spell.fragment.storage.StorageFragment$$无需消耗魔力。不过，若移动了槽位内的资源，则需消耗(距离 * 数量 * 0.5G)的魔力。**移动的消耗与各技巧术给出的消耗相独立。**
 
 ;;;;;
 

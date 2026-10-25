@@ -38,7 +38,7 @@
 所给法术中所有位置的符记都会被替换，包括符记处的常量、图案、内圆，甚至包括法术的子树。
 
 
-内圆中的值和子法术中的值*也会*被替换。
+内圆中和子法术中与键对应的符记*也会*被替换。
 
 ;;;;;
 
@@ -52,16 +52,16 @@
 
 ;;;;;
 
-然后，找到前往该圆所需经过的子圆，判断该子圆的索引：即顺时针方向上在该子圆前面的子圆的数目。
+然后，找到前往该圆所需经过的子圆，找出该子圆的索引：即顺时针方向上在该子圆前面的子圆的数目。
 
 
-重复这些步骤，直至抵达目的圆。所得的列表即是目的圆的地址。
+重复这些步骤，将每一步得到的索引依次加入列表，直至抵达目的圆。所得的列表即是目的圆的地址。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:locate_glyph|>
 
-返回所给法术中、符记为所给片段的第一个圆的地址。搜索时使用[广度优先搜索（BFS）](https://en.wikipedia.org/wiki/Breadth-first_search)。
+返回所给法术中、符记为所给片段的第一个圆的地址。搜索时使用[BFS](https://en.wikipedia.org/wiki/Breadth-first_search)。
 
 ;;;;;
 
@@ -79,7 +79,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:set_glyph|>
 
-将所给法术中给定地址处的圆的符记替换为所给片段。
+将所给法术中给定地址处圆的符记替换为所给片段。
 
 ;;;;;
 
@@ -95,13 +95,13 @@
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:retrieve_subtree|>
+<|trick@trickster:templates|trick-id=trickster:set_subtree|>
 
 将后一法术嫁接到前一法术中给定地址处，替代该处的圆。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:set_subtree|>
+<|trick@trickster:templates|trick-id=trickster:add_subtree|>
 
 将后方的所有法术接到给定地址处，变为该处圆的子分支。
 

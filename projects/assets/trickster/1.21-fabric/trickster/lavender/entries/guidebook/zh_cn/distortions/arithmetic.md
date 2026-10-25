@@ -35,7 +35,7 @@
 本节的戏法主要涉及基础算术及数学操作。
 
 
-部分基础戏法能接受多种类型的片段。它们的签名会采用特殊标记，如$$dev.enjarai.trickster.spell.fragment.AddableFragment$$或$$dev.enjarai.trickster.spell.fragment.RoundableFragment$$。这些术语是后页全称的简写：
+部分基础戏法能接受多种类型的片段。它们的签名会采用特殊标记，如$$dev.enjarai.trickster.spell.fragment.AddableFragment$$或$$dev.enjarai.trickster.spell.fragment.RoundableFragment$$。这些术语的全称见后页：
 
 ;;;;;
 
@@ -87,7 +87,7 @@ $$trickster:color$$也接受算术操作，它们是$$dev.enjarai.trickster.spel
 
 <|trick@trickster:templates|trick-id=trickster:divide|>
 
-从首个片段开始，依次求各片段对的商。
+从首个片段开始，按顺序连除。
 
 ;;;;;
 

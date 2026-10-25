@@ -23,7 +23,7 @@
 
 ;;;;;
 
-强制转换的方法如下：
+布尔值可由任意片段根据以下逻辑转换：
 
 - 片段是$$trickster:void$$，转换为false。
 - 片段是$$trickster:zalgo$$，转换为false。
@@ -72,19 +72,19 @@
 
 <|trick@trickster:templates|trick-id=trickster:all|>
 
-若所有输入为true，返回true。
+只有全部输入为true，才返回true。 
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:any|>
 
-若任意输入为true，返回true。
+只要任意输入为true，就返回true。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=trickster:none|>
 
-若没有输入为true，返回true。
+若没有输入为true，则返回true。
 
 ;;;;;
 
