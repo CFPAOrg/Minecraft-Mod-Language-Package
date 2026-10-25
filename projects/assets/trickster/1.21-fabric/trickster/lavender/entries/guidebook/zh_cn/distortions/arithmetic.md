@@ -51,6 +51,7 @@ $$trickster:color$$也接受算术操作，它们是$$dev.enjarai.trickster.spel
 
 能一次性接受多个输入的曲变术会逐输入执行其操作。例如：
 
+
 1, 2, 3 传入吞并之谋略 = 1 + 2 + 3 = 6
 
 
