@@ -39,13 +39,13 @@
 
 <|trick@trickster:templates|trick-id=partytrick:get_breeding_age|>
 
-返回给定动物距离的繁殖时限，以刻计。繁殖时限小于0代表动物未成年，大于0则代表在冷却状态。
+返回给定动物的繁殖时限，以刻计。繁殖时限小于0代表动物未成年，大于0则代表在冷却状态。
 
 ;;;;;
 
 <|ploy@trickster:templates|trick-id=partytrick:add_breeding_age,cost=1G * 增量^2|>
 
-向给定动物的繁殖时限加上给定数刻。消耗的计算方式与[动能之技巧](^trickster:ploys/entity#3)一致。
+向给定动物的繁殖时限加上给定数刻。消耗的叠加方式与[动能之技巧](^trickster:ploys/entity#3)一致。
 
 ;;;;;
 
@@ -57,4 +57,4 @@
 
 <|trick@trickster:templates|trick-id=partytrick:get_cooldown|>
 
-检验所给玩家是否暂时无法使用给定物品。
+检查所给玩家是否暂时无法使用给定物品。

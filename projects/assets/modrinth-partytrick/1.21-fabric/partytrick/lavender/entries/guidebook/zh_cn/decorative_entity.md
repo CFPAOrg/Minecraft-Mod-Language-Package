@@ -17,7 +17,7 @@
 
 <|ploy@trickster:templates|trick-id=partytrick:move_decorative_entity,cost=距离^2 * 0.5G|>
 
-按照所给向量移动所给装饰性实体。消耗的计算方式与[动能之技巧](^trickster:ploys/entity#3)一致。试图移动非装饰性实体会导致失策。
+按照所给向量移动所给装饰性实体。消耗的叠加方式与[动能之技巧](^trickster:ploys/entity#3)一致。试图移动非装饰性实体会导致失策。
 
 ;;;;;
 
