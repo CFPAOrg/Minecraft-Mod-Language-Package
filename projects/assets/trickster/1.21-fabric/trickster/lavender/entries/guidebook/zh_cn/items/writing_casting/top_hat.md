@@ -17,7 +17,7 @@
 若是一条正在执行的法术试图通过[记事员之辑流](^trickster:tricks/basic#3)访问另一只手中的法术，则它会转而读取所持帽子中选定的卷轴。
 
 
-还可以通过[颅骨之转离](^trickster:tricks/imports#3)访问帽中任意槽位的法术，或是通过[颅骨之错觉](^trickster:delusions_ingresses/caster_tricks#12)读出所选槽位中的法术。
+还可以通过[颅骨之转离](^trickster:tricks/imports#3)访问帽中任意槽位的法术，或是通过[颅骨之错觉](^trickster:delusions_ingresses/caster_tricks#12)读出所选的槽位。
 
 ;;;;;
 

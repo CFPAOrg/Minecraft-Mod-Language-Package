@@ -73,7 +73,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:retrieve_glyph|>
 
-返回所给法术中给定地址处的圆的符记。
+返回所给法术中给定地址处圆的符记。
 
 ;;;;;
 

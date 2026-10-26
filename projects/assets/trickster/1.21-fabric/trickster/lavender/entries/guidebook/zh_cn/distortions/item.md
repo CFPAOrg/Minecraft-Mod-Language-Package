@@ -23,7 +23,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:item_from_block|>
 
-返回放置所给方块类型所需的物品的类型。若所给方块没有对应物品，返回void。
+返回放置所给方块类型所需物品的类型。若所给方块没有对应物品，返回void。
 
 ;;;;;
 

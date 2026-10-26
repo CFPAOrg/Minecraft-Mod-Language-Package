@@ -88,7 +88,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:hotbar_reflection|>
 
-若可用，返回施法者选中的快捷栏槽位。
+若可行，返回施法者选中的快捷栏槽位。
 
 ;;;;;
 

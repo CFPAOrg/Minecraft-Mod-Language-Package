@@ -65,7 +65,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:get_displacements|>
 
-给定实体，立即返回当前其可用位移片段的数量。
+给定实体，返回当前其直接可用的位移片段的数量。
 
 ;;;;;
 

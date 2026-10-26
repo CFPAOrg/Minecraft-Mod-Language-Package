@@ -7,7 +7,7 @@
 }
 ```
 
-法术核心可以插入[模块式法术组构台](^trickster:items/infrastructure/modular_spell_construct)，并在其中以玩家的75%速度运行抄入的法术。
+法术核心可以插入[模块式法术组构台](^trickster:items/infrastructure/modular_spell_construct)，并在其中以玩家速度的75%运行抄入的法术。
 
 ;;;;;
 

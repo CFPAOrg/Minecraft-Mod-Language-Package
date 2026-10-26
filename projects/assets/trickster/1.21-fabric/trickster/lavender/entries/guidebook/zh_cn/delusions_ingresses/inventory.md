@@ -41,7 +41,7 @@
 
 <|trick@trickster:templates|trick-id=trickster:list_resources|>
 
-返回容器中的资源类型列表。
+返回容器中各资源类型组成的列表。
 
 ;;;;;
 
