@@ -39,7 +39,7 @@
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=保护者之阻止|>在盾牌格挡攻击时，保护者之阻止会施放盾牌上抄有的法术。攻击者、弹射物、盾牌被禁用与否均作为参数传入。
+<|page-title@lavender:book_components|title=保护者之阻止|>在盾牌格挡攻击时，保护者之阻止会施放盾牌上抄有的法术。攻击者和弹射物作为参数传入。
 
 ;;;;;
 

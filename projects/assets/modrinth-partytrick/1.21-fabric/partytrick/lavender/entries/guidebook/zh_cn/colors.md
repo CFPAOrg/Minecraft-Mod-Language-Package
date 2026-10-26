@@ -20,7 +20,7 @@
 
 <|ploy@trickster:templates|trick-id=partytrick:remove_dye_color,cost=40G * 数量|>
 
-参数前面与[损蚀之技巧](^trickster:ploys/block#13)类似：接受一个目标和一处水源。移除目标的颜色。
+与[损蚀之技巧](^trickster:ploys/block#13)类似：接受一个目标和一处水源。移除目标的颜色。
 
 ;;;;;
 
@@ -38,13 +38,13 @@
 
 <|trick@trickster:templates|trick-id=partytrick:set_color|>
 
-将所给可染色物品染为所给颜色。未指定颜色则移除颜色。
+将所给物品染为所给颜色。未指定颜色则移除颜色。
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=partytrick:get_color|>
 
-返回所给可染色物品的确切颜色，无色则返回null。
+返回所给物品的确切颜色，无色则返回void。
 
 ;;;;;
 
