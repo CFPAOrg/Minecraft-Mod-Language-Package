@@ -14,6 +14,7 @@
   "block.slate_work.redstone_loci": "红石激发器",
   "block.slate_work.accelerator_loci": "凝浆加速器",
   "block.slate_work.fake_player_loci": "塑和行梦仪",
+  "block.slate_work.block_break_loci": "震撼提取器",
 
   "block.slate_work.listening_impetus": "图书管理员促动石",
 
@@ -64,28 +65,28 @@
 
   "Entries:": "",
   "slate_work.entry.storage_loci": "环核图案",
-  "slate_work.page.storage_loci.1": "$(thing)容具/$很适合用来存储，但它们的交互功能……不太方便。主要的交互方式是$(hex)咒术/$；更详细说来，是在$(hex)咒术/$中描述希望取得的物品。同时需要注意，这些法术$(l:casting/mishaps2)不在法术环中执行时会招致事故/$。$(br2)$(br)$(o)“谜题”，我说道。$(br)“最好就是不去解答”，他应道。",
-  "slate_work.page.storage_loci.2": "再详细地说，对于自然在“栈限制”上的愚蠢规则，$(thing)容具/$选择以绕过它们的方式遵守它们。它不会直接根据名称请求物品，而是需要我提供一条“说明”——即一条接受$(l:patterns/items)物品组 iota/$ 并返回一个布尔值的$(hex)咒术/$。而且，所有涉及获取$(thing)存储容具/$信息的图案都会复制一份物品组置入“内部”栈（和$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$很相似）。",
+  "slate_work.page.storage_loci.1": "$(thing)容具/$很适合用来存储，但它们的交互功能……不太方便。主要的交互方式是$(hex)咒术/$；更详细说来，是在$(hex)咒术/$中描述希望取得的物品。同时需要注意，这些法术$(l:casting/mishaps2)不在法术环中执行时会招致事故/$。$(br2)$(br)$(o)“谜题，”我说道。$(br)“总比没有答案好，”他应道。",
+  "slate_work.page.storage_loci.2": "再详细地说，对于自然在“栈限制”上的愚蠢规则，$(thing)容具/$选择以绕过它们的方式遵守它们。它不会直接根据名称请求物品，而是需要我提供一条“说明”——即一条接受$(l:patterns/items)物品组 iota/$ 并返回一个布尔值的$(hex)咒术/$。而且，所有涉及获取$(thing)存储容具/$信息的图案都会复制一份法术环栈置入“内部”栈（和$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$很相似）。",
   "slate_work.page.storage_loci.get_storage": "返回当前$(l:greatwork/spellcircles)法术环/$激活的$(thing)容具/$。大概可以用来检查$(l:greatwork/spellcircles)法术环/$是否获取到了$(thing)容具/$。",
   "slate_work.page.storage_loci.store_item": "向$(thing)容具/$存入物品比取出容易。此图案会接受一个物品实体，并将其轻巧地存入激活的$(thing)存储容具/$。每有一个激活的$(thing)容具/$消耗 1/8 个$(l:items/amethyst)紫水晶粉/$。",
   "slate_work.page.storage_loci.get_item": "此图案接受一个$(hex)咒术/$，并对所存储的所有$(l:patterns/items)物品组/$（运行时置于栈顶）运行。运行该$(hex)咒术/$后，图案还需要栈中按顺序存在一个$(thing)整数/$，一个$(thing)向量/$和一个$(thing)布尔值/$。",
   "slate_work.page.storage_loci.get_item_cont": "继续解释说明。它会对$(thing)容具/$中存储的所有物品运行给定$(hex)咒术/$。该$(hex)咒术/$必须从栈顶至栈底依次返回 False（此时省略向量和数），或 True、一个向量、一个数。向量代表向世界输出物品的位置（需在影响范围内），数代表应取出的数量。$(br2)每有一个激活的$(thing)容具/$消耗 1/4 个$(l:items/amethyst)紫水晶粉/$。",
-  "slate_work.page.storage_loci.check_item": "检查物品的功能和唤回物品类似。但它只需要$(hex)咒术/$返回一个布尔值。如果所有布尔值中有一个为 True，则法术结束并返回 True。",
+  "slate_work.page.storage_loci.check_item": "检查物品的行为和唤回物品类似。但它只需要$(hex)咒术/$返回一个布尔值。如果所有布尔值中有一个为 True，则法术结束并返回 True。",
   "slate_work.page.storage_loci.sort_items": "在某些情况下，$(thing)容具/$会变得杂乱无章，同种物品被分散到不同的$(thing)容具/$里去。这条好用的法术就可以整理它们，但它有代价：需消耗 5 个$(l:items/amethyst)充能紫水晶/$。",
   "slate_work.page.storage_loci.set_macro": "此图案会为目标位置处的$(l:greatwork/macro_loci)法术刻印器/$绑定一个图案和一个 iota。$(br2)在$(l:greatwork/spellcircles)法术环/$外施放不会招致事故。消耗极少量$(media)媒质/$。",
-  "slate_work.page.storage_loci.read_broadcast": "尝试读取所给向量处的 $(l:greatwork/broadcaster_loci)Iota 之门/$。如果该处无 $(l:greatwork/broadcaster_loci)Iota 之门/$则返回垃圾。$(br)在$(l:greatwork/spellcircles)法术环/$外施放不会招致事故，无需消耗媒质$(media)媒质/$，也不受影响范围限制。",
+  "slate_work.page.storage_loci.read_broadcast": "尝试读取所给向量处的 $(l:greatwork/broadcaster_loci)Iota 之门/$。如果该处无 $(l:greatwork/broadcaster_loci)Iota 之门/$则返回垃圾。$(br)在$(l:greatwork/spellcircles)法术环/$外施放不会招致事故，无需消耗$(media)媒质/$，也不受影响范围限制。",
 
   "slate_work.entry.storage_loci_block": "存储容具",
   "slate_work.page.storage_loci_block.storage_loci": "在忍那些到处都是木刺的笨重$(o)箱子/$到$(o)快忍不下去/$之后……我总算发现了完美的存储方法——$(thing)存储容具/$。$(br)虽然我已经抛弃了一部分意识垃圾，但还不足以直接操作$(thing)存储容具/$。不过，$(l:greatwork/spellcircles)法术环/$就是处理这种新存储方法的好工具。",
   "slate_work.page.storage_loci_block.storage_loci_cont": "虽然一个$(thing)存储容具/$只能存储 16“类”物品（就和箱子只有 27 个槽位差不多），但它们却能无视标准堆叠上限，换言之，每个槽里都能存下近乎无限的物品！$(br2)而且，在$(l:greatwork/spellcircles)法术环/$的高密度$(thing)媒质波/$激活容具之后，$(l:greatwork/spellcircles)它/$就能够读取和拿出$(thing)存储容具/$里的物品；激活的越多，能操作的就越多。我在$(l:patterns/spells/storage_loci)这里/$记录了进行这种操作所需的法术。",
   "slate_work.page.storage_loci_block.dropping": "需要格外注意的是，$(thing)存储容具/$遭到破坏时不会喷出其中的物品，而是会将物品小心打包进掉落的方块（和$(item)潜影盒/$很像）。$(br2)$(br2)$(o)“噢！是时候找点东西了！”$(br)[箱子：开启]$(br)[箱子：关闭]$(br)[箱子：开启]$(br)[箱子：关闭]$(br)[箱子：开启]$(br)[箱子：关闭]",
   "slate_work.page.storage_loci_block.lens": "佩戴$(l:items/lens)探知透镜/$去观察$(thing)存储容具/$的话，它会显示其内部的物品。这就好像是自然在取笑我，因为我无法把$(thing)存储容具/$里的物品直接拿出来……但还是得承认，看它一眼就知道里面存了什么确实很方便。",
-  "slate_work.page.storage_loci_block.hoppers": "制作$(thing)存储容具/$所用的村民似乎保留了他们使用箱子的能力！也就是说，$(thing)存储容具/$可以靠漏斗输入输出。现在看来，它们相当于输入种类几乎无限、但自身仅有 16 个槽位的缓存空间。",
+  "slate_work.page.storage_loci_block.hoppers": "制作$(thing)存储容具/$所用的村民似乎保留了他们使用箱子的能力！也就是说，$(thing)存储容具/$可以靠漏斗输入输出。现在看来，它们相当于容量几乎无限、但自身仅有 16 个槽位的缓存空间。",
   "slate_work.page.storage_loci_block.crafting": "$(thing)存储容具/$需要能够潜入深渊，还能根据少量提示取回物品的意识。$(thing)渔夫村民/$就很适合。",
 
   "slate_work.entry.ambit_loci": "范围扩展器",
   "slate_work.page.ambit_loci.ambit_loci": "$(thing)范围扩展器/$能解$(l:greatwork/spellcircles)法术环/$$(thing)影响范围/$之忧。它会移除栈顶向量，并据此扩展影响范围（负向量会向负方向扩展法术环影响范围）。$(br2)$(o)范围越大，消耗越大，呃……",
-  "slate_work.page.ambit_loci.ambit_loci_cont": "虽然它不及……$(l:https://forum.petra-k.at/viewtopic.php?t=136)其他/$扩展$(l:greatwork/spellcircles)法术环/$$(thing)影响范围/$的方法强大，但我确实觉得这种方法可以让自然对我的自由意志友善些。$(br2)这种方法并不便宜，$(media)媒质/$的耗量（以$(l:items/amethyst)紫水晶粉/$计）与改变距离的平方相等。",
+  "slate_work.page.ambit_loci.ambit_loci_cont": "虽然它不及……$(l:https://forum.petra-k.at/viewtopic.php?t=136)其他/$扩展$(l:greatwork/spellcircles)法术环/$$(thing)影响范围/$的方法强大，但我确实觉得这种方法可以让自然对我的自由意志友善些。$(br2)这种方法并不便宜，$(media)媒质/$的耗量（以$(l:items/amethyst)紫水晶粉/$计）随改变距离的平方增长而增长。",
   "slate_work.page.ambit_loci.crafting": "因为$(thing)范围扩展器/$修改的是$(thing)影响范围/$，配备能操纵$(thing)媒质波/$的“核心”应为最佳。自然，创造这种方块需要的是$(l:greatwork/quenching_allays)纯净的媒质/$。",
 
   "slate_work.entry.speed_loci": "波速调节器",
@@ -97,12 +98,12 @@
   "slate_work.page.crafting_loci.crafting_loci": "我的双手在$(item)工作台/$上不断挥动，带来的只是$(o)疼痛/$和$(o)麻木/$……好在这些都过去了。$(thing)样板组装器/$就是止痛剂。$(br2)$(o)物品里埋着物品，合成到停不下来，看到停不下来，合成、自动化、更多物品。$(b)现在就要/$。",
   "slate_work.page.crafting_loci.crafting_loci_cont": "$(thing)样板组装器/$的真正原理是：从激活的$(l:greatwork/storage_loci_block)存储容具/$中取出物品，按设定合成，再把产物存回$(thing)容具/$。$(thing)组装器/$被$(l:greatwork/spellcircles)法术环/$触发时即会执行上述操作。可以手工设置配方，也可使用$(l:patterns/spells/crafting_loci#slate_work:set_craft)法术/$。如果它可以合成给定物品，则它会向栈返回 True，并合成物品；否则（原材料不够，配方没指定等）返回 False，且不会合成。",
   "slate_work.page.crafting_loci.bulk": "$(thing)样板组装器/$确实速度很快，但大型合成任务要花费的时间依然长到令人发指。这便是我制造“批量操作”$(l:patterns/spells/crafting_loci#slate_work:set_craft_count)图案/$的原因。这些图案可让$(thing)样板组装器/$在每次激活时尝试进行多次合成。不过，要是$(thing)样板组装器/$无法同时合成所有物品，它就会返回一个 False，且不会合成。",
-  "slate_work.page.crafting_loci.crafting": "$(thing)样板组装器/$需要熟络典籍和文章，能一目十行的村民的意识。完美之选是$(thing)图书管理员/$。",
+  "slate_work.page.crafting_loci.crafting": "$(thing)样板组装器/$需要惯于翻阅典籍和文章的村民的意识。完美之选是$(thing)图书管理员/$。",
 
   "slate_work.entry.macro_loci": "法术刻印器",
-  "slate_work.page.macro_loci.macro_loci": "我在旅行中从其他人的交谈里听到了某种叫“宏”的东西，也即代表咒术的图案（我认为需要和$(l:greatwork/akashiclib)阿卡夏图书馆/$配合？）。不管怎么说，我可以在法术环上重现“宏”。需要用到$(thing)法术刻印器/$，还需在刻印器上放置写有 iota 的$(l:items/focus)相应存储物品/$。",
+  "slate_work.page.macro_loci.macro_loci": "我在旅行中从其他人的交谈里听到了某种叫“宏”的东西，也即代表更大$(hex)咒术/$的图案（我认为可能和某种$(l:greatwork/akashiclib)阿卡夏图书馆/$有关？）。不管怎么说，我可以在法术环上重现“宏”。需要用到$(thing)法术刻印器/$，还需在刻印器上放置写有 iota 的$(l:items/focus)任意存储物品/$。",
   "slate_work.page.macro_loci.macro_loci_cont": "$(l:greatwork/spellcircles)法术环/$激活刻印器后，它会将当前图案与存储物品内的 iota 绑定（也可通过$(l:patterns/spells/storage_loci#slate_work:set_macro)法术/$设置）。每当画有该图案的石板被激活，即会执行所给 iota，而非该图案。这实在是细思恐极；重写$(o)法术/$的定义，重写与世界本身紧密相关的事物。那么，我是不是也会，被更高级的存在改写？不。不$(k)啊啊啊啊啊！/$",
-  "slate_work.page.macro_loci.lens": "$(thing)法术刻印器/$有个方便的特性：戴着$(l:items/lens)探知透镜/$看它，会显示绑定的图案和该图案对应的 iota 。$(br2)而要是去观察刚……“制造”完毕的$(thing)法术刻印器/$，其中会预先写有一个$(l:patterns/basics#hexcasting:get_caster)意识之精思/$的图案。这一特性很有用，但真是没来由地让人不安……",
+  "slate_work.page.macro_loci.lens": "$(thing)法术刻印器/$有个方便的特性：戴着$(l:items/lens)探知透镜/$看它，会显示绑定的图案和该图案对应的 iota。$(br2)而要是去观察刚……“制造”完毕的$(thing)法术刻印器/$，其中会预先写有一个$(l:patterns/basics#hexcasting:get_caster)意识之精思/$的图案。这一特性很有用，但真是没来由地让人不安……",
   "slate_work.page.macro_loci.crafting": "虽然这种做法可能会带来恐惧……但它确实很好用。我认为$(thing)武器匠/$是最好的选择，他们的专长就是磨砺和翻新损坏的武器。",
 
   "slate_work.entry.mute_loci": "抑音石板",
@@ -114,13 +115,13 @@
   "slate_work.page.sentinel_loci.intro": "那种叫喊、那种尖啸、那种痛苦。那种超出语言极限的痛苦，是我感受到的？看见的？经历的？见证的。那、那种……我分心了。我必须把我$(o)见证/$的东西写下来。从我卓伟……这词合适吗？——启迪的光源、感受和$(o)涌流/$之中，我看见了能增强$(l:greatwork/spellcircles)法术环/$的构造。但它的代价极为高昂。",
   "slate_work.page.sentinel_loci.intro_cont": "那个方块——构造——$(o)嵌合体/$叫作$(thing)哨卫缓存器/$。它也许是$(l:greatwork/spellcircles)法术环/$可用的方块中最灵活多变的了，但获得它所需经历的痛苦——我真的要造一个吗？它会创建一个伪$(l:patterns/great_spells/greater_sentinel)卓越哨卫/$（称“伪哨卫”），其影响范围半径为 4 格，计入法术环的影响范围内。伪哨卫会首先“生成”在方块的放置位置，而后可以使用$(l:patterns/spells/sentinel_loci_patterns)法术/$转移。让这个怪异的方块苏醒需消耗极少量$(media)媒质/$。",
   "slate_work.page.sentinel_loci.sentinel_loci" : "这种意识的结合体，历经了扭曲、拖拽、破碎、修补。我$(o)听到/$了它们，但它并没发出声音，我$(o)听见/$的是它们的痛苦。多个剥脱的意识塞进一个方块，只是为我自己的方便……但是——石板基座上亮灭舞动的光辉，紫水晶的溢彩流光……$(o)它在呼唤我/$",
-  "slate_work.page.sentinel_loci.extra": "我的意识在消散。我必须写完我的笔记。$(o)现在、马上/$。$(br2)如果我用$(l:items/lens)探知透镜/$观察$(thing)哨卫缓存器/$，它即会显示$(l:patterns/great_spells/greater_sentinel)伪哨卫/$当前的位置。而且，每激活一个$(thing)哨卫缓存器/$，其都会加入到已知$(thing)缓存器/$的列表，$(l:greatwork/spellcircles)法术环/$的影响范围则是所有伪哨卫的和。",
+  "slate_work.page.sentinel_loci.extra": "我的意识在消散。我必须写完我的笔记。$(o)现在、马上/$。$(br2)如果我用$(l:items/lens)探知透镜/$观察$(thing)哨卫缓存器/$，它即会显示$(l:patterns/great_spells/greater_sentinel)伪哨卫/$当前的位置。而且，每激活一个$(thing)哨卫缓存器/$，其都会加入到已知$(thing)缓存器/$的列表，$(l:greatwork/spellcircles)法术环/$的影响范围也会随之增加。",
   "slate_work.page.sentinel_loci.crafting": "这种结合式嵌合体的制造需要一个$(l:greatwork/ambit_loci)范围扩展器/$，用于赋予修改影响范围的能力；还需一个任意种类的大师级$(thing)村民/$。如果所给的意识太弱，它会在已经饱和的意识受体方块前破碎消散。",
 
   "slate_work.entry.broadcaster_loci": "Iota 之门",
-  "slate_work.page.broadcaster_loci.broadcaster_loci": "在仔细检查迷一般的神奇$(l:greatwork/akashiclib)阿卡夏图书馆/$后，我认为我应该可以把它们的 iota 存储功能搬到$(l:greatwork/spellcircles)法术环/$里，但大概不会非常完美。$(br2)$(o)“准备好了，这门就会开？”$(br)“不，不……不全是，只不过……”$(br)*叹气* *咔哒*",
+  "slate_work.page.broadcaster_loci.broadcaster_loci": "在仔细检查迷一般神奇的$(l:greatwork/akashiclib)阿卡夏图书馆/$后，我认为我应该可以把它们的 iota 存储功能搬到$(l:greatwork/spellcircles)法术环/$里，但大概不会非常完美。$(br2)$(o)“准备好了，这门就会开？”$(br)“不，不……不全是，只不过……”$(br)*叹气* *咔哒*",
   "slate_work.page.broadcaster_loci.broadcaster_loci_cont": "$(thing)Iota 之门/$会给现实本身开一道“后门”，并向这个后门广播其中的 iota；也即，广播激活时$(l:greatwork/spellcircles)法术环/$栈顶的 iota。$(br2)$(thing)Iota 之门/$可从世界上任意一处读取（只要是在同一个维度），甚至连区块加载的神秘力量也拦不住它！读取所用的法术简介见$(l:patterns/spells/storage_loci#slate_work:read_broadcast)此/$。",
-  "slate_work.page.broadcaster_loci.extra": "需要格外注意的是，如果目标位置没有 $(thing)Iota 之门/$，那么法术就会返回垃圾。这应该就是从自然的背景噪声中抽出来的？$(br2)和前一点一样重要的是，$(thing)Iota 之门/$本身并不完美——它只能操作“简单”的 iota，而无法操纵列表（也包括代表玩家的 iota）。$(br)最后，如果我带着$(l:items/lens)探知透镜/$，看向它时就会显示其中的 iota。",
+  "slate_work.page.broadcaster_loci.extra": "需要格外注意的是，如果目标位置没有 $(thing)Iota 之门/$，那么法术就会返回垃圾。这应该就是从自然的背景噪声中抽出来的？$(br2)和前一点一样重要的是，$(thing)Iota 之门/$本身并不完美——它只能操作“简单”的 iota，无法操作列表（也无法操作代表玩家的 iota）。$(br)最后，如果我带着$(l:items/lens)探知透镜/$，看向它时就会显示其中的 iota。",
   "slate_work.page.broadcaster_loci.crafting": "因为 $(thing)Iota 之门/$无视距离读取的奇怪特性，合成它需要相配数量的$(l:greatwork/quenching_allays)$(item)淬灵晶/$，以及一些$(l:greatwork/akashiclib)$(item)阿卡夏图书馆/$的组成部件。",
 
   "slate_work.entry.save_loci": "状态恢复主机",
@@ -133,7 +134,7 @@
   "slate_work.page.hotbar_loci.intro": "在展开影响领域的过程中，我越来越感觉：在各种口袋和背包里把物品搬来搬去——实在是$(o)极其/$烦人。即便$(hex)咒术/$能协助自动化搬运，我却依然还要亲自拿着物品……有必要再进一步。$(thing)悦灵/$就能持有物品，也许可以从这里出发？",
   "slate_work.page.hotbar_loci.hotbar_loci": "$(thing)口袋模拟器/$解了我在物品栏管理上的愁！$(br)它使用$(thing)悦灵/$为核心，最多能持有 6“组”物品，让它们在$(thing)模拟器/$旁浮动。我可将其中 1 个物品组指定为$(l:patterns/spells/itempicking)手持物品/$，也即方块工程法术会优先从该组抽取。",
   "slate_work.page.hotbar_loci.extra": "$(l:greatwork/spellcircles)法术环/$激活$(thing)模拟器/$后即会与之“绑定”——可以使用其中物品。$(br2)极好的是，$(thing)口袋模拟器/$可以手动交互，也可通过$(l:patterns/hotbar_loci_patterns)法术/$交互。如果我用手与之交互，所有 6 个槽位都会呈现出来，且手持物品槽会发出$(l:greatwork/quenching_allays)淬灵晶/$颜色的光。",
-  "slate_work.page.hotbar_loci.storage_loci": "更好的是，$(thing)口袋模拟器/$和普通的$(l:patterns/spells/itempicking)物品挑选行为/$间似乎存在相似之处。换言之，$(thing)口袋模拟器/$可以充当“选择器”。来请求方块的$(l:patterns/spells/blockworks)方块法术/$会前去$(l:greatwork/storage_loci_block)存储容具/$处获取，而不会使用$(thing)口袋模拟器/$中的物品。$(br2)需要注意，手持槽中的物品也算作普通的手持物品。因此$(l:greatwork/spellcircles)法术环/$可借此读取$(l:items/focus)核心/$（及其他存储 iota 的物品），也可借此从媒质之瓶中抽取$(media)媒质/$。",
+  "slate_work.page.hotbar_loci.storage_loci": "更好的是，$(thing)口袋模拟器/$的表现和普通的$(l:patterns/spells/itempicking)物品挑选行为/$间似乎存在相似之处。换言之，$(thing)口袋模拟器/$可以充当“选择器”。来请求方块的$(l:patterns/spells/blockworks)方块法术/$会前去$(l:greatwork/storage_loci_block)存储容具/$处获取，而不会使用$(thing)口袋模拟器/$中的物品。$(br2)需要注意，手持槽中的物品也算作普通的手持物品。因此$(l:greatwork/spellcircles)法术环/$可借此读取$(l:items/focus)核心/$（及其他存储 iota 的物品），也可借此从媒质之瓶中抽取$(media)媒质/$。",
   "slate_work.page.hotbar_loci.crafting": "$(o)真是个好帮手啊。/$",
 
   "slate_work.entry.accelerator_loci": "凝浆加速器",
@@ -142,8 +143,8 @@
   "slate_work.page.accelerator_loci.crafting": "虽然我无法重制出“凝浆”这种失传材料，但把黏液和$(l:greatwork/quenching_allays)淬灵晶/$混合起来，产物似乎就会表现出足够相似的性质。$(br2)$(o)真是凝浆十足！",
 
   "slate_work.entry.redstone_loci": "红石激发器",
-  "slate_work.page.redstone_loci.intro": "要搭建更加复杂的$(l:greatwork/spellcircles)法术环/$，就要更精细地控制石板的红石输出。$(br)比较器只会输出强度为 15 的平整红石信号，而且会在$(l:greatwork/spellcircles)法术环/$的运行过程中一直输出；只能说，起码可以给简单的法术环用。",
-  "slate_work.page.redstone_loci.redstone_loci": "因此，我制造了$(thing)红石激发器/$。它会弹出栈顶 0 到 15（两端闭）的数，并将$(thing)激发器/$输出的信号强度设为该数。而且，只要$(thing)媒质波/$离开$(thing)激发器/$，它便不会再输出信号。$(br2)虽然并非本意，但我大概是从另一份古代的蓝图——和$(l:greatwork/accelerator_loci)加速器/$出自同一座图书馆的“波荡器”——里取了一部分灵感。",
+  "slate_work.page.redstone_loci.intro": "要搭建更加复杂的$(l:greatwork/spellcircles)法术环/$，就要更精细地控制石板的红石输出。$(br)比较器只会输出强度为 15 的恒定红石信号，而且会在$(l:greatwork/spellcircles)法术环/$的运行过程中一直输出；只能说，起码可以给简单的法术环用。",
+  "slate_work.page.redstone_loci.redstone_loci": "因此，我制造了$(thing)红石激发器/$。它会弹出栈顶 0 到 15（两端闭）的数，并将$(thing)激发器/$所输出信号的强度设为该数。而且，只要$(thing)媒质波/$离开$(thing)激发器/$，它便不会再输出信号。$(br2)虽然并非本意，但认为它大概是和另一份古代的蓝图——和$(l:greatwork/accelerator_loci)加速器/$出自同一座图书馆的“波荡器”——协同演化而成的。",
   "slate_work.page.redstone_loci.crafting": "将$(item)红石粉/$和$(l:items/amethyst)紫水晶粉/$混合，再嵌入到石板里，应当就能达到我想要的红石信号传导性。",
 
   "slate_work.entry.akashic_loci": "阿卡夏环核",
@@ -160,11 +161,20 @@
   "slate_work.page.fake_player_loci.lens": "而它们会对什么地方执行操作呢？可将这些虚无缥缈之存在的视线方向指定为方块的朝向，也可选择为其指定一个轴向$(thing)向量/$。潜行对方块按下使用键时，它会在方块朝向和所给$(thing)向量/$间切换。$(br2)佩戴$(l:items/lens)探知透镜/$后，可以查看它用的是否是所给$(thing)向量/$，以及$(thing)塑和行梦仪/$会不会进行攻击。",
   "slate_work.page.fake_player_loci.crafting": "$(o)玻尔兹曼大脑？没听说过。/$",
 
+  "slate_work.entry.block_break_loci": "震撼提取器",
+  "slate_work.page.block_break_loci.intro": "即便我已在咒法学中探索了许多，但我还未找到破坏方块的高效方法。的确，自然给了我$(l:patterns/spells/blockworks#hexcasting:break_block)破坏方块/$法术，不过它无法被$(thing)时运/$、$(thing)精准采集/$等增强，只相当于一把普通的$(item)钻石镐/$。正因此，我在$(l:greatwork/the_work)卓伟的觉醒/$之后几乎是立即就着手推进这方面：$(thing)震撼提取器/$。$(br2)$(o)……双关抱歉。",
+  "slate_work.page.block_break_loci.block_break_loci": "由于制造时使用了部分$(item)下界合金/$成分，$(thing)震撼提取器/$的挖掘等级相当于下界合金。它还接受镐魔咒，由此可受$(thing)时运/$或$(thing)精准采集/$的强化（以及$(thing)效率/$的消耗减免）。",
+  "slate_work.page.block_break_loci.block_break_loci_cont": "尤为重要的是，$(thing)震撼提取器/$的消耗以魔咒为基础。首先，每方块的基础消耗为 1/8 个$(l:items/amethyst)紫水晶粉/$，和$(l:patterns/spells/blockworks#hexcasting:break_block)破坏方块/$类似。每级$(thing)时运/$追加 1 个$(l:items/amethyst)紫水晶粉/$，$(thing)精准采集/$则直接增加 1 个$(l:items/amethyst)紫水晶碎片/$。以及，每级效率还能按 1.5 的乘数减少消耗。",
+  "slate_work.page.block_break_loci.filter#": "这个功能方块还有几个要点：它会尝试将挖掘掉落物存入激活的$(l:greatwork/storage_loci_block)存储容具/$。而且，它还会使用（不消耗）一条谓词$(hex)咒术/$：接受一个类型，返回一个布尔值；若返回 True，则",
+  "slate_work.page.block_break_loci.filter": "有意思的是，它不只会挖掘它前面的方块，而是能从它所在的位置起，最远触及到$(l:greatwork/spellcircles)法术环/$的末端。而且相对于什么都不管直接破坏的行为，$(thing)震撼提取器/$会使用（不消耗）一条$(hex)咒术/$为判据。它会对所有位置运行这条$(hex)咒术/$，以位置处方块的$(l:patterns/items)类型/$为$(hex)咒术/$参数（和$(l:patterns/meta#hexcasting:for_each)$(action)托特之策略/$类似）。若$(hex)咒术/$返回 True，则挖掘该处方块；若返回 False，则忽略方块。",
+  "slate_work.page.block_break_loci.pickup": "最后，$(thing)震撼提取器/$挖掘方块后能将掉落物存入所有激活的$(l:greatwork/storage_loci_block)存储容具/$。若激活的$(l:greatwork/storage_loci_block)存储容具/$已满，掉落物即会正常掉落在地。",
+  "slate_work.page.block_break_loci.crafting": "一撮$(item)下界合金/$加强挖掘力，一束$(item)TNT/$以批量破坏，再加些许$(l:items/amethyst)紫水晶粉/$和板岩把它们全部固定在一起！",
+
   "slate_work.entry.trade_loci": "商人导向石",
   "slate_work.page.trade_loci.intro": "村民……是很有意思的生物，也是我推进$(l:greatwork/brainsweeping)探索/$的动力源；但和它们交谈，以及使用它们，依然需要大量手动操作。而有了如今新开发出的方法，我就可以借助$(l:greatwork/spellcircles)法术环/$自动与它们交易，训练它们的意识——只需用到$(thing)商人导向石/$。",
   "slate_work.page.trade_loci.trade_loci": "$(thing)商人导向石/$功能强大，这是因为它能和村民交换意识，从而$(l:patterns/spells/trade_loci#slate_work:exchange_mind)习得/$职业知识。借此，即可以用纯粹高效的方式与职业本身交互，无需受到血肉之躯的拖累。",
-  "slate_work.page.trade_loci.trade_loci_cont": "可惜的是，$(thing)商人导向石/$有它自己的规矩。使用时，激活它的$(l:greatwork/spellcircles)法术环/$$(thing)媒质波/$必须持有在 0 和$(thing)导向石/$内交易项数之间的整数。发起交易后有 2 种可能的结果：交易成功，$(thing)媒质波/$从“鼻子”一侧离开；交易失败（可能是需要补货、物品不足等原因），$(thing)媒质波/$从愤怒表情一侧离开。",
-  "slate_work.page.trade_loci.storage": "此外，$(thing)商人导向石/$会对$(l:greatwork/storage_loci_block)存储容具/$进行存取。交易似乎也会跟随职业一起“升级”，从而产生新交易项，并强化$(thing)导向石/$中的意识。$(br)最后，不知道是为什么，但职业本身仍会被“竭尽”，且需要时间来“补货”。在日出和日落时，交易项会刷新并补货；但它们的价格和我所习惯的不太一样，有些烦人。",
+  "slate_work.page.trade_loci.trade_loci_cont": "可惜的是，$(thing)商人导向石/$有它自己的规矩。使用时，激活它的$(l:greatwork/spellcircles)法术环/$$(thing)媒质波/$必须持有 0 到$(thing)导向石/$内交易项数之间的整数。发起交易后有 2 种可能的结果：交易成功，$(thing)媒质波/$从“鼻子”一侧离开；交易失败（可能是需要补货、物品不足等原因），$(thing)媒质波/$从愤怒表情一侧离开。",
+  "slate_work.page.trade_loci.storage": "此外，$(thing)商人导向石/$会对$(l:greatwork/storage_loci_block)存储容具/$进行存取。交易似乎也能让职业“升级”，从而产生新交易项，并强化$(thing)导向石/$中的意识。$(br)最后，虽然原因不明，但职业本身仍会被“竭尽”，且需要时间来“补货”。在日出和日落时，交易项会刷新并补货；但它们的价格会反映出我的交易习惯，有些烦人。",
   "slate_work.page.trade_loci.translater_note": "The $(o)/\"qoute\" at the end is meant to be villager noises right before its flayed. Su uh... feel free to localize that however you want lmao.",
   "slate_work.page.trade_loci.scrying": "戴上$(l:items/lens)探知透镜/$后看向$(thing)商人导向石/$，能看到：其中意识的职业、所有交易项、各项的价格、距上一次补货以来交易的次数，以及交易项的最大交易次数。$(br)最后，要是不小心手滑，打坏了$(thing)导向石/$，也不必担心：$(thing)导向石/$里存储的职业信息不会丢失。$(br2)$(o)哼，哼！哼哼……哼哼哼——",
   "slate_work.page.trade_loci.crafting": "一个绿宝石块再加一块基础$(l:greatwork/directrix)$(item)导向石/$就应该能存储职业信息了。但再加上$(thing)悦灵/$，它就有了补货用的工作站点，也有了与外界交互的能力。",
@@ -201,7 +211,7 @@
   "slate_work.entry.patterns_trade_loci": "商人导向石图案",
   "slate_work.page.patterns_trade_loci.get_trades": "这个法术的返回值看着可能很唬人，但其实不算非常复杂……大概吧。接受一个$(l:greatwork/trade_loci)商人导向石/$，并返回：[[$(thing)物品组/$, $(thing)物品组/$, $(thing)物品组/$, $(thing)数/$]...]。无需消耗$(media)媒质/$。",
   "slate_work.page.patterns_trade_loci.get_trades_cont": "其中，第一个$(l:patterns/items)物品组/$是村民要收到的物品，第二个$(l:patterns/items)物品组/$是村民还可能要收到的物品，第三个$(l:patterns/items)物品组/$是村民要卖给我的物品，最后的$(thing)数/$是已交易次数（自上一次补货以来）和最大交易次数的比值。若该$(thing)数/$为 1，则交易项不再可用。",
-  "slate_work.page.patterns_trade_loci.exchange_mind": "这个……有点$(l:patterns/great_spells/brainsweep)熟悉/$。此法术接受一个村民和一个$(l:greatwork/trade_loci)商人导向石/$，并交换它们的职业。重新排布职业所需的各类知识要消耗 1 个$(l:items/amethyst)充能紫水晶/$。",
+  "slate_work.page.patterns_trade_loci.exchange_mind": "这个……感觉有点$(l:patterns/great_spells/brainsweep)熟悉/$。此法术接受一个村民和一个$(l:greatwork/trade_loci)商人导向石/$，并会交换它们的职业。重新排布职业所需的各类知识要消耗 1 个$(l:items/amethyst)充能紫水晶/$。",
   "slate_work.page.patterns_trade_loci.induce_restock": "在查阅文献时，我偶然发现了这条$(l:patterns/great_spells)卓越法术/$。它能够接受$(l:greatwork/trade_loci)商人导向石/$的位置，并强令其补货，效果同日出日落时的补货一致。消耗 5 个$(l:items/amethyst)充能紫水晶/$。",
 
   "slate_work.entry.impeti": "石板工程促动石",
@@ -217,7 +227,7 @@
   "slate_work.page.whispering.crafting": "$(o)耳语与嗫嚅，喘息与恐惧，我能在这枚$(thing)石头/$$(o)里听见所有这些的微弱回音。那枚$(b)碎片/$$(o)之前到底经受过什么？",
 
   "slate_work.entry.loci": "环核是什么？",
-  "slate_work.page.loci.intro": "在我$(l:greatwork/the_work)卓伟的醒觉/$之中，有一个词汇骤然出现在了我的脑海，祈求着我把它们带入现实——$(b)环核/$。$(br2)我整日整夜地扑在我的文献库里钻研，再加上$(l:greatwork/the_work)觉醒/$带来的知识，我终于解明了$(thing)环核/$这个词汇的意义。",
+  "slate_work.page.loci.intro": "在我$(l:greatwork/the_work)卓伟的觉醒/$之中，有一个词汇骤然出现在了我的脑海，祈求着我把它们带入现实——$(b)环核/$。$(br2)我整日整夜地扑在我的文献库里钻研，再加上$(l:greatwork/the_work)觉醒/$带来的知识，我终于解明了$(thing)环核/$这个词汇的意义。",
   "slate_work.page.loci.explained": "总而言之，$(thing)环核/$是能以独特方式与$(l:greatwork/spellcircles)法术环/$交互的方块。$(l:items/slate)石板/$不是$(thing)环核/$，但可以把$(thing)环核/$看成$(l:items/slate)石板/$的“子集”。$(br2)$(o)环环相扣层层相嵌，无穷无尽的回路在迷宫样的深渊中弯折编织。一段舞蹈，无人能够理解。一首歌曲，声至宇宙，宇宙也回以呢喃。",
 
   "slate_work.entry.deco_blocks": "石板工程装饰性方块",
@@ -232,6 +242,7 @@
   "hexcasting.mishap.circle.pocket_simulator_required": "%s处需要一个激活的口袋模拟器",
   "hexcasting.mishap.invalid_value.simpler_iota": "一个更简单的iota",
   "hexcasting.mishap.invalid_value.axis_vector_sw": "一个单位向量",
+  "hexcasting.mishap.invalid_value.type_or_null": "一个物品类型或Null",
 
   "hexcasting.mishap.no_storage_loci_ran": "未找到已激活的容具",
   "hexcasting.mishap.list_length": "需要包含%s个元素的列表，而实际包含了%s个",
