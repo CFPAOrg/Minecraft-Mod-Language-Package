@@ -43,21 +43,38 @@ set_redstone value_of(redstone + 1)
 
 下方获取器需要目标方块为放有书的`数据讲台`或原版`讲台`。
 
-| 获取器      | 输出   | 描述                                                   |
-| ----------- | ------ | ------------------------------------------------------ |
-| `get_page`  | Int    | 书当前页的页码，从1起始。未放置书则返回`0`。           |
-| `read_page` | String | 当前页的文本内容。未放置书或当前页为空则返回空字符串。 |
+| 获取器          | 输出   | 描述                                                             |
+| --------------- | ------ | ---------------------------------------------------------------- |
+| `page_number`   | Int    | 书当前页的页码，从1起始。未放置书则返回`0`。                     |
+| `page_contents` | String | 当前页的文本内容，包括换行。未放置书或当前页为空则返回空字符串。 |
 
 例如：
 
 ```
-if get_page > 3 set_redstone 15
-set_page value_of(get_page + 1)
+if page_number > 3 set_redstone 15
+set_page value_of(page_number + 1)
 ```
 
 ```
-if read_page == "打开" set_redstone 15
-write_page value_of(read_page + "（已编辑）")
+if page_contents == "打开" set_redstone 15
+write_page value_of(page_contents + "（已编辑）")
+```
+
+---
+
+## 脚本终端
+
+下方获取器需要目标方块为`脚本终端`。
+
+| 获取器            | 输出   | 描述                                                                                                          |
+| ----------------- | ------ | ------------------------------------------------------------------------------------------------------------- |
+| `script_contents` | String | 终端的脚本内容，和`.mungus`的保存格式一致：形如`# 4t REPEAT`的头部行，然后再接脚本。`load_script`可原样读回。 |
+
+例如：
+
+```
+if script_contents lines > 20 set_redstone 15
+write_page value_of(script_contents)
 ```
 
 ---
@@ -71,7 +88,7 @@ write_page value_of(read_page + "（已编辑）")
 | `held_item`      | Item | 机械手当前持有的物品。手中无物品则返回空堆叠。                |
 | `transfer_count` | Int  | `take_items`、`put_items`、`drop_items`能移动的最大堆叠数量。 |
 
-所得的Item可用`==`与物品谓词比较，也可用`count`读取堆叠的数量。
+所得的Item可用`==`与物品谓词比较，可用`count`读取堆叠的数量，也可用`id`将其ID读取为文本。
 
 例如：
 

@@ -45,19 +45,36 @@ The following getters require the target block to be a `Data Lectern` or a vanil
 
 | Getter | Output | Description |
 |--------|--------|-------------|
-| `get_page` | Int | The current page number of the book, 1-based. Returns `0` if there is no book. |
-| `read_page` | String | The text content of the current page. Returns an empty string if there is no book or the page is blank. |
+| `page_number` | Int | The current page number of the book, 1-based. Returns `0` if there is no book. |
+| `page_contents` | String | The text content of the current page, line breaks included. Returns an empty string if there is no book or the page is blank. |
 
 Examples:
 
 ```
-if get_page > 3 set_redstone 15
-set_page value_of(get_page + 1)
+if page_number > 3 set_redstone 15
+set_page value_of(page_number + 1)
 ```
 
 ```
-if read_page == "open" set_redstone 15
-write_page value_of(read_page + " (edited)")
+if page_contents == "open" set_redstone 15
+write_page value_of(page_contents + " (edited)")
+```
+
+---
+
+## Script Terminal
+
+The following getter requires the target block to be a `Script Terminal`.
+
+| Getter            | Output | Description |
+|-------------------|--------|-------------|
+| `script_contents` | String | The terminal's script as a `.mungus` file holds it: a `# 4t REPEAT` style header line, then the script. `load_script` takes it back unchanged. |
+
+Examples:
+
+```
+if script_contents lines > 20 set_redstone 15
+write_page value_of(script_contents)
 ```
 
 ---
@@ -71,7 +88,7 @@ The following getter requires the target block to be a `Robotic Arm`.
 | `held_item` | Item   | The item currently held in the arm's hand. Returns an empty stack if the hand is empty. |
 | `transfer_count` | Int | The maximum stack size moved by `take_items`, `put_items`, and `drop_items`. |
 
-The resulting Item can be compared against an item predicate with `==`, or its stack size read with `count`.
+The resulting Item can be compared against an item predicate with `==`, its stack size read with `count`, or its id read as text with `id`.
 
 Examples:
 

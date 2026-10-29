@@ -39,12 +39,33 @@ set_redstone value_of(pos y & 15)
 | 映射器          | 输出    | 描述                                           |
 | --------------- | ------- | ---------------------------------------------- |
 | `== <方块谓词>` | Boolean | 若方块状态匹配谓词（支持方块属性），则返回True |
+| `id`            | String  | 形如`"minecraft:stone"`的方块ID，不带其属性    |
 
 例如：
 
 ```
 if block == minecraft:stone set_redstone 15
 if block == minecraft:piston[facing=up] set_redstone 15
+if block id == value_of(page_contents) set_redstone 15
+```
+
+---
+
+## Item
+
+获取自：`held_item`
+
+| 映射器          | 输出    | 描述                                                       |
+| --------------- | ------- | ---------------------------------------------------------- |
+| `== <物品谓词>` | Boolean | 若物品匹配谓词，则返回True                                 |
+| `count`         | Int     | 堆叠数量；空手返回`0`                                      |
+| `id`            | String  | 形如`"minecraft:stone"`的物品ID，空手返回`"minecraft:air"` |
+
+`==`只接受脚本中写明的物品。如需比较脚本的读取和接收值，应比较`id`：
+
+```
+if held_item == minecraft:lava_bucket use 6 1 4
+if held_item id == value_of(page_contents get_line 0) use 6 1 4
 ```
 
 ---
@@ -101,29 +122,30 @@ if ship pos distance_to 0 0 0 > 100 set_redstone 15
 
 ## Int
 
-获取自：`pos x/y/z`、`redstone`、`get_page`、`double rounded_down/rounded_up`、`ship id`、`dimension index`、`string as_int`
+获取自：`pos x/y/z`、`redstone`、`page_number`、`double rounded_down/rounded_up`、`ship id`、`dimension index`、`string as_int`
 
-| 映射器       | 输出    | 描述         |
-| ------------ | ------- | ------------ |
-| `== <int>`   | Boolean | 等于         |
-| `> <int>`    | Boolean | 大于         |
-| `< <int>`    | Boolean | 小于         |
-| `+ <int>`    | Int     | 加法         |
-| `- <int>`    | Int     | 减法         |
-| `% <int>`    | Int     | 取模         |
-| `& <int>`    | Int     | 按位与       |
-| `\| <int>`   | Int     | 按位或       |
-| `<< <int>`   | Int     | 左移         |
-| `>> <int>`   | Int     | 右移         |
-| `* <double>` | Double  | 乘法         |
-| `/ <double>` | Double  | 除法         |
-| `as_string`  | String  | 转换为字符串 |
+| 映射器       | 输出    | 描述                                                              |
+| ------------ | ------- | ----------------------------------------------------------------- |
+| `== <int>`   | Boolean | 等于                                                              |
+| `> <int>`    | Boolean | 大于                                                              |
+| `< <int>`    | Boolean | 小于                                                              |
+| `+ <int>`    | Int     | 加法                                                              |
+| `- <int>`    | Int     | 减法                                                              |
+| `% <int>`    | Int     | 取模                                                              |
+| `& <int>`    | Int     | 按位与                                                            |
+| `\| <int>`   | Int     | 按位或                                                            |
+| `<< <int>`   | Int     | 左移                                                              |
+| `>> <int>`   | Int     | 右移                                                              |
+| `* <double>` | Double  | 乘法                                                              |
+| `/ <double>` | Double  | 除法                                                              |
+| `as_string`  | String  | 转换为字符串                                                      |
+| `as_char`    | String  | 编号为该数的字符（`65 as_char`为`A`）；不对应字符的编号转换为空格 |
 
 例如：
 
 ```
 if redstone > 7 set_redstone 15
-set_redstone value_of(get_page - 1)
+set_redstone value_of(page_number - 1)
 set_redstone value_of(pos x & 15)
 ```
 
@@ -150,32 +172,34 @@ set_redstone value_of(pos x & 15)
 
 ## String
 
-获取自：`read_page`、`pos as_string`、`dimension as_string`、`int as_string`、`double as_string`、`boolean as_string`、`ship slug`、`sublevel name`、`sublevel id`
+获取自：`page_contents`、`script_contents`、`pos as_string`、`dimension as_string`、`int as_string`、`int as_char`、`double as_string`、`boolean as_string`、`ship slug`、`sublevel name`、`sublevel id`
 
 | 映射器              | 输出      | 描述                                         |
 | ------------------- | --------- | -------------------------------------------- |
 | `== <string>`       | Boolean   | 相等                                         |
 | `+ <string>`        | String    | 拼接至结尾                                   |
 | `<+ <string>`       | String    | 拼接至开头                                   |
-| `lines`             | Int       | 按`\n`分割，返回行数                         |
-| `get_line <int>`    | String    | 按`\n`分割，返回所给索引处的行，越界返回`""` |
-| `remove_line <int>` | String    | 按`\n`分割，移除所给索引处的行，越界不修改   |
-| `split <string>`    | String    | 将每一处所给分隔符替换为`\n`                 |
+| `lines`             | Int       | 按换行分割，返回行数                         |
+| `get_line <int>`    | String    | 按换行分割，返回所给索引处的行，越界返回`""` |
+| `remove_line <int>` | String    | 按换行分割，移除所给索引处的行，越界不修改   |
+| `split <string>`    | String    | 将每一处所给分隔符替换为换行                 |
 | `as_int`            | Int       | 解析为整数                                   |
 | `as_double`         | Double    | 解析为双精度浮点数                           |
 | `as_block_pos`      | BlockPos  | 按`"x y z"`格式解析                          |
 | `as_boolean`        | Boolean   | 解析`"true"`/`"false"`（大小写不敏感）       |
 | `as_dimension`      | Dimension | 视作维度键                                   |
 
+在引号字符串中，换行写为`\n`，`"`写为`\"`，`\`写为`\\`。仅需转义脚本文：字符串的值中包含的是真正的换行，获取器、执行器、变量则会原样传递它们。
+
 例如：
 
 ```
-if read_page == "打开" set_redstone 15
+if page_contents == "打开" set_redstone 15
 write_page value_of(pos as_string)
 write_page value_of(pos as_string <+ "位置：")
-set_redstone value_of(read_page lines)
-write_page value_of(read_page remove_line 1)
-write_page value_of(read_page split ", ")
+set_redstone value_of(page_contents lines)
+write_page value_of(page_contents remove_line 1)
+write_page value_of(page_contents split ", ")
 ```
 
 ---
@@ -194,9 +218,9 @@ write_page value_of(read_page split ", ")
 
 ```
 if pos x > 0 && value_of(pos z > 0) set_redstone 15
-if read_page == "打开" || value_of(redstone > 0) set_redstone 15
+if page_contents == "打开" || value_of(redstone > 0) set_redstone 15
 write_page value_of(redstone > 7 as_string)
-if read_page as_boolean set_redstone 15
+if page_contents as_boolean set_redstone 15
 ```
 
 ---

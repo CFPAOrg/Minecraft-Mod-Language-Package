@@ -24,7 +24,7 @@ The Flux will only react into Aether once the reactor temperature is above 50,00
 to the heat exchangers on your reactor, you can feed it FE to heat it up to the reaction temperature. 
 If you attach Step-Up transformers to the heat exchangers, you can siphon off heat from the reactor to generate FE.
 
-Luckily, the transforms also include smart monitoring technology. That is to say they will only feed FE to the reactor
+Luckily, the heat exchangers also include smart monitoring technology. That is to say they will only feed FE to the reactor
 if it is below 55,000K and they will only take FE from the reactor if it is above 55,000K. This means you can have 
 both an input and an output of FE attached to your reactor at all times, and you don't have to worry about somehow 
 enabling/disabling the transformers.
@@ -51,7 +51,7 @@ no longer be able to produce more heat. To deal with this, you need to handle pu
 
 ## Tip #1
 
-To get a reactor started, you should leave the Aether trapped inside (aka disable the output port with a full redstone signal).
+To get a reactor started, you should leave the Aether trapped inside (aka keep the output port closed by giving it no redstone signal).
 Then you can let Flux flow in, and start heating it up with FE from your network. 
 It's best to restrict the flow of Flux in at first, since its cheaper to heat up less gas and helps avoid bursting once the Flux heats up.
 
@@ -59,7 +59,8 @@ Once it reaches 50,000K, the reaction can begin. It will heat up very quickly, b
 enough to inhibit the reaction from going far enough to melt down. 
 
 Once you've reached a stable, but dwindling (from too much Aether) reaction you can start letting the Aether out. 
-You can send an analog (e.g. between 0 and 15) redstone signal to the output hatch to control its exit rate. 
+You can send an analog (e.g. between 0 and 15) redstone signal to the output hatch to control its exit rate: 
+the stronger the signal, the further it opens. 
 You don't want it to exit too fast, but you also don't want it to exit too slow.
 
 ## Tip #2
@@ -71,7 +72,7 @@ Since you know it will only heat up once the transformers stop siphoning power f
 you know that excessive heat will only happen once the power network is full. 
 
 When that happens, you don't have to shut down the reactor completely. 
-Instead, close the Flux input and Aether output hatches completely (with a full redstone signal).
+Instead, close the Flux input and Aether output hatches completely (by cutting their redstone signal).
 The reaction will stop heating up, and instead very slowly cool down. It should be able to stay
 above reaction temperature (50,000K) for a long while. 
 

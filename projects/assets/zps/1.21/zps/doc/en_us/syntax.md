@@ -97,6 +97,8 @@ wait 2
 set_redstone 0
 ```
 
+`<cycles>` is a whole number from 1 to 64. Anything else, or no number at all, waits one cycle.
+
 `wait` behaves like an executor, but cannot be used with `if`, `unless`, or `else`.
 
 It always runs when reached, and delays the dispatch of following commands.
@@ -167,7 +169,7 @@ The expression inside can be any getter → mapper chain, so long as it returns 
 Use `#def <name> = <expression>` at the top of a script to give a reusable name to a getter → mapper chain:
 
 ```
-#def first_line = read_page get_line 1
+#def first_line = page_contents get_line 1
 
 write_page value_of(first_line)
 ```
@@ -179,8 +181,8 @@ Declarations are read from the top of the script. Blank lines are ignored while 
 Aliases may reference aliases declared earlier:
 
 ```
-#def line_1 = read_page get_line 1
-#def line_2 = read_page get_line 2
+#def line_1 = page_contents get_line 1
+#def line_2 = page_contents get_line 2
 #def combined = line_2 + "\n" + value_of(line_1)
 
 write_page value_of(combined)
@@ -189,5 +191,48 @@ write_page value_of(combined)
 Later aliases with the same name replace earlier aliases for following declarations and commands.
 
 Alias bodies must start with a getter or an earlier alias, then may continue with mappers.
+
+---
+
+## Variables
+
+A variable is a value the Script Terminal keeps between lines. A Serial Bus can be asked for a value, and the terminal stores it for later lines to use, at any bus on the network.
+
+Declare one with `#var <name> = <literal>`:
+
+```
+#var page = 1
+```
+
+- The value must be a literal: a number, `true` or `false`, or a string. Use `#def` for getters and mappers.
+- A variable has no fixed type: like a literal alias, it is whatever its current value reads as. A value that does not suit the place it is used fails on that line, like any other command.
+- Names follow the alias rules. A variable cannot be declared twice, and cannot share a name with an alias: whichever is lower in the script is an error.
+
+A variable is used like an alias, wherever an expression starts. Each line carries the variable's value as it stands when the line is sent, so every bus sees the same value. An alias may use a variable declared above it, and takes its value the same way.
+
+```
+set_redstone value_of(page)
+if page > 8 set_redstone 15 else set_redstone 0
+```
+
+### Asking a Serial Bus for a value
+
+Every command the terminal sends stays on the Data Cable for one tick, then the cable goes blank until the next command. A bus can answer while it is blank:
+
+- `request_value <value>` is an executor. The bus that runs it puts the value on the cable when the cable goes blank, for one tick. Use `if pos == ...` to pick which bus answers.
+- `receive_value <name>` stores the answer to the last command sent in a variable declared above it. The terminal keeps that answer until it sends another command. Like `wait`, it works only on the Script Terminal and cannot be used with `if`, `unless` or `else`. Unlike `wait`, it takes no time: the line after it runs straight away. A looping script still takes at least 2 ticks per pass, however many free lines it has.
+
+```
+#var page = 1
+if pos == @lectern request_value value_of(page_number)
+receive_value page
+if pos == @lamp set_redstone value_of(page)
+```
+
+`wait` and `receive_value` send nothing, so a `wait` between a `request_value` and its `receive_value` does not lose the answer.
+
+`receive_value` stores whatever value was answered. It leaves the variable unchanged only if there is no answer, or if more than one bus answered: two answers at once are two senders, which garble the cable like any others.
+
+Variables keep their values across loop passes, and go back to their declared literals when the script is edited and at the start of each new powered run.
 
 ---

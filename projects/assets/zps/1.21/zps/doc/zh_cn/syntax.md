@@ -96,6 +96,8 @@ wait 2
 set_redstone 0
 ```
 
+`<周期数>`为从1到64的整数。提供其他数或不提供数，都会转而延迟1个周期。
+
 `wait`的表现和执行器一样，但无法在`if`、`unless`、`else`处使用。
 
 只要遇到该命令，就必定会执行，且会延迟后续命令的发送。
@@ -165,7 +167,7 @@ set_redstone value_of(pos y - 50)
 在脚本顶部使用`#def <名称> = <表达式>`，可为获取器→映射器链指定可重用的名称：
 
 ```
-#def first_line = read_page get_line 1
+#def first_line = page_contents get_line 1
 
 write_page value_of(first_line)
 ```
@@ -177,8 +179,8 @@ write_page value_of(first_line)
 别称中可以使用之前声明的别称：
 
 ```
-#def line_1 = read_page get_line 1
-#def line_2 = read_page get_line 2
+#def line_1 = page_contents get_line 1
+#def line_2 = page_contents get_line 2
 #def combined = line_2 + "\n" + value_of(line_1)
 
 write_page value_of(combined)
@@ -187,5 +189,48 @@ write_page value_of(combined)
 若出现同名别称，则后定义的覆盖先定义的；之后的声明和命令中再使用该别称，均会解析为后定义的。
 
 别称声明体必须以获取器或之前定义的别称起始，这之后才可接上映射器。
+
+---
+
+## 变量
+
+变量是可在脚本终端行间保持的值。可以向串行总线请求值，终端会保存它，以供之后的行对网络中的任意总线使用。
+
+可用`#var <名称> = <字面量>`声明一个变量：
+
+```
+#var page = 1
+```
+
+- 值必须为字面量：数，`true`或`false`，字符串。获取器和映射器需使用`#def`。
+- 变量的类型不固定：和字面量别称一样，它当前的值是什么类型，它就是什么类型。不符合所在位置需求的值会在该行出错，和其他命令类似。
+- 名称需遵守的规则和别称的一致。变量无法重复声明，且其名称不得与别称重复：脚本中后出现的会被视作错误。
+
+变量和别称一样可用在表达式的开头。各行在发送时会附带变量当时的值，这样所有总线使用的值就是一样的。别称中可以使用在其上方声明的变量，并会按同样方式取其值。
+
+```
+set_redstone value_of(page)
+if page > 8 set_redstone 15 else set_redstone 0
+```
+
+### 向串行总线请求值
+
+终端发出的所有命令都会在数据线缆中留存1刻，随后线缆会进入空闲状态，直至发出下一条命令为止。总线可在线缆空闲时回应：
+
+- `request_value <值>`是执行器。执行它的总线会在线缆进入空闲状态时向线缆发送值，留存1刻。可用`if pos == ...`指定让哪一个总线回应。
+- `receive_value <名称>`会将上一条命令收到的值存入在其上方声明的变量。终端能将该值暂存到下一次发出命令。和`wait`类似，该命令也只能在脚本终端中使用，且无法和`if`、`unless`、`else`配合。但和`wait`不同的是，该命令的执行不会消耗时间；它后方的行会立即执行。循环脚本每次发送间仍会至少等待2刻，无论其中有多少执行不消耗时间的行。
+
+```
+#var page = 1
+if pos == @lectern request_value value_of(page_number)
+receive_value page
+if pos == @lamp set_redstone value_of(page)
+```
+
+`wait`和`receive_value`不会发送任何东西，因此在`request_value`和`receive_value`之间使用`wait`不会导致收到的值被丢弃。
+
+`receive_value`会存储回应的值，无论值具体是什么。没有回应时，或有超过一个总线回应时，均不会改动变量：同一时间的两个回应相当于两个发送端，因此会相互碰撞。
+
+变量会在循环间保留其值；编辑脚本后，以及通入红石信号后的第一次发送时，变量会重置为其声明值。
 
 ---
