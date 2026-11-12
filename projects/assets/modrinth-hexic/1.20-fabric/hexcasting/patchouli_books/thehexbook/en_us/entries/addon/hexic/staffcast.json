@@ -1,0 +1,25 @@
+{
+  "name": "Staffcasting Patterns",
+  "category": "hexcasting:patterns",
+  "icon": "hexcasting:staff/mindsplice",
+  "pages": [
+    "These patterns force me to cast a _Hex as if I drew it by hand. There are two variants of this pattern: the Greater version keeps the stack from the outside, while the Lesser version uses my staff's stack. My ravenmind is preserved in both cases.",
+    {
+      "type": "hexcasting:pattern",
+      "anchor": "hexic:staffcast_factory",
+      "op_id": "hexic:staffcast_factory",
+      "input": "∀αβ. α, [α → β]",
+      "output": "β",
+      "text": "Coerces my staff to cast a _Hex. The hex uses the stack of the outer casting environment."
+    },
+    "Something's odd about how these patterns are named. I can simulate the Greater variant with merely a wrapper around the Lesser variant, but accessing the staff's stack itself is impossible with purely Greater. Does this not make Lesser strictly more powerful than Greater?",
+    {
+      "type": "hexcasting:pattern",
+      "anchor": "hexic:staffcast_factory/lazy",
+      "op_id": "hexic:staffcast_factory/lazy",
+      "input": "[? → ?]",
+      "output": "",
+      "text": "Coerces my staff to cast a _Hex. The hex uses the stack of the staff itself, but keeps the outer environment's ravenmind."
+    }
+  ]
+}

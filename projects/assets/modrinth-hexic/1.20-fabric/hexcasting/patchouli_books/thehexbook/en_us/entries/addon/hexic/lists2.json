@@ -1,0 +1,99 @@
+{
+    "name": "Advanced Lists",
+    "category": "hexcasting:patterns",
+    "icon": "minecraft:birch_sign",
+    "advancement": "hexcasting:root",
+    "pages": [
+        "These patterns seem to represent common operations I perform on lists. Though these are perfectly possible to do with normal $(l:patterns/lists)List Manipulation/$, it often requires more effort. Perhaps Nature willed them into existence to better understand what I'm doing... or perhaps they are my own invention?",
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:rotate",
+            "anchor": "hexic:rotate",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "Rotates the list leftward: an argument of 1 moves the first item of the list to the end. Negative numbers allow rotating the list rightward."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:take",
+            "anchor": "hexic:take/count",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "Selects the first few elements from the input list. If the number is negative, selects the last few elements instead."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:drop",
+            "anchor": "hexic:drop/count",
+            "input": "[a], int",
+            "output": "[a]",
+            "text": "Drops the first few elements from the input list; the dual to $(l:addon/hexic/lists2#hexic:take/count)$(action)Retention Distillation/$."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:take",
+            "anchor": "hexic:take/list",
+            "input": "[a], [int]",
+            "output": "[a]",
+            "text": "Selects from the list only elements corresponding to the given indices. Unlike $(l:patterns/lists#hexcasting:index)$(action)Selection Distillation/$, this cannot reorder or duplicate iotas."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:drop",
+            "anchor": "hexic:drop/list",
+            "input": "[a], [int]",
+            "output": "[a]",
+            "text": "Drops from the list iotas at the given indices. All other iotas are kept in the same order as the input."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:where",
+            "anchor": "hexic:where/bool",
+            "input": "[bool]",
+            "output": "[int]",
+            "text": "Creates a list of the indices for which True is present. For example, [True, False, True] becomes [0, 2]. I can also mix bools and ints in the input list."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:where",
+            "anchor": "hexic:where/num",
+            "input": "[num]",
+            "output": "[int]",
+            "text": "Adds each index to the list based on the value. For example, [1, 2, 3] becomes [0, 1, 1, 2, 2, 2]. Zero or negative numbers do not appear at all."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "header": "Exterior Distillation",
+            "op_id": "hexcasting:mul",
+            "anchor": "hexcasting:mul",
+            "input": "[a], [b]",
+            "output": "[[a, b]]",
+            "text": "Calculates the outer product of two lists. The resulting list has an entry for every possible pairing between the input lists."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "header": "Interior Distillation",
+            "op_id": "hexcasting:div",
+            "anchor": "hexcasting:div",
+            "input": "[a], [b]",
+            "output": "[[a, b]]",
+            "text": "Calculates the inner product of two lists. If the two lists were arranged side-by-side, the resulting list has one entry for every row (unpaired elements are skipped)."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:extract",
+            "anchor": "hexic:extract",
+            "input": "[a], int",
+            "output": "[a], [a], a",
+            "text": "Extracts an iota from the given list, and breaks the list apart around it. Returns all items before the iota, all items after the iota, and finally the iota itself."
+        },
+        {
+            "type": "hexcasting:pattern",
+            "op_id": "hexic:grep",
+            "anchor": "hexic:grep",
+            "input": "[a], [a → bool]",
+            "output": "[a]",
+            "text": "Discards iotas from the given list unless they satisfy the given predicate. Using $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ discards the current and all remaining iotas."
+        }
+    ]
+}
