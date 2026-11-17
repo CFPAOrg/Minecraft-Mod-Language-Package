@@ -20,7 +20,7 @@
 | `offset_y <int>` | BlockPos | 在Y轴上偏移所给数后，返回所得位置                   |
 | `offset_z <int>` | BlockPos | 在Z轴上偏移所给数后，返回所得位置                   |
 | `offset <坐标>`  | BlockPos | 根据所给坐标各分量偏移后，返回所得位置              |
-| `== <坐标>`      | Boolean  | 若等于所给位置，则返回True                          |
+| `== <坐标>`      | Boolean  | 若等于所给位置，则返回true                          |
 | `as_string`      | String   | 格式化为`"x y z"`                                   |
 
 例如：
@@ -38,7 +38,7 @@ set_redstone value_of(pos y & 15)
 
 | 映射器          | 输出    | 描述                                           |
 | --------------- | ------- | ---------------------------------------------- |
-| `== <方块谓词>` | Boolean | 若方块状态匹配谓词（支持方块属性），则返回True |
+| `== <方块谓词>` | Boolean | 若方块状态匹配谓词（支持方块属性），则返回true |
 | `id`            | String  | 形如`"minecraft:stone"`的方块ID，不带其属性    |
 
 例如：
@@ -57,7 +57,7 @@ if block id == value_of(page_contents) set_redstone 15
 
 | 映射器          | 输出    | 描述                                                       |
 | --------------- | ------- | ---------------------------------------------------------- |
-| `== <物品谓词>` | Boolean | 若物品匹配谓词，则返回True                                 |
+| `== <物品谓词>` | Boolean | 若物品匹配谓词，则返回true                                 |
 | `count`         | Int     | 堆叠数量；空手返回`0`                                      |
 | `id`            | String  | 形如`"minecraft:stone"`的物品ID，空手返回`"minecraft:air"` |
 
@@ -231,7 +231,7 @@ if page_contents as_boolean set_redstone 15
 
 | 映射器           | 输出    | 描述                                         |
 | ---------------- | ------- | -------------------------------------------- |
-| `== <dimension>` | Boolean | 若与所给维度相等，则返回True                 |
+| `== <dimension>` | Boolean | 若与所给维度相等，则返回true                 |
 | `index`          | Int     | 稳定的维度整数索引（各服务端会话中恒定不变） |
 | `as_string`      | String  | 维度的资源位置（如`minecraft:overworld`）    |
 
