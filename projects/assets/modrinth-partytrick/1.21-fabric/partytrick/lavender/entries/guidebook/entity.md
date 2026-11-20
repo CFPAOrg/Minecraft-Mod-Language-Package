@@ -9,9 +9,8 @@
     "Descend Ploy",
     "Memento’s Ingress",
     "Temporal Ploy",
-    "Pinocchio's Ingress",
-    "Cleo's Ploy",
-    "Mr. Jollyboy's Ploy"
+    "Llama's PLoy",
+    "Ingress of Composure"
     ]
 }
 ```
@@ -50,56 +49,12 @@ Adds an amount of ticks to the given animals breeding age, with cost compounding
 
 ;;;;;
 
-<|page-title@lavender:book_components|title=Note: Armor Stands|>By infusing armor stands with mana their properties can be changed. 
-Properties are indexed in the order seen on the next page, with vectors representing Euler angles, rotation being in degrees, and scale being more limited than [Ploy of Occupation](^trickster:ploys/entity#5).
-
-
-An item frame's rotation, invisibility, and protection can also be effected, with rotation being from 0 to 7. 
-
-;;;;;
-
-
-0. {#aa7711}Head{}
-1. {#aa7711}Body{}
-2. {#aa7711}Left Arm{}
-3. {#aa7711}Right Arm{}
-4. {#aa7711}Left Leg{}
-5. {#aa7711}Right Leg{}
-6. {#ddaa00}Rotation{}
-7. {#ddaa00}Permanent Scale{}
-8. {#aa3355}No Gravity{} 
-9. {#aa3355}No Base Plate{}
-10. {#aa3355}Invisible{}
-11. {#aa3355}Show Arms{}
-12. {#aa3355}Small{}
-13. {#aa3355}Name Visible{}
-14. {#aa3355}Protected{}
-
-;;;;;
-
-<|trick@trickster:templates|trick-id=partytrick:get_armor_stand_state|>
-
-Returns the given armor stand's value for the property at the given index.
-
-
-Next ploy sets it instead →
-
-;;;;;
-
-<|ploy@trickster:templates|trick-id=partytrick:set_armor_stand_state,cost=1G|>
-
-;;;;;
-
-<|ploy@trickster:templates|trick-id=partytrick:move_armor_stand,cost=distance^2 * 0.5G|>
-
-Moves the given armor stand or other decorative entities by the given vector. Trying to move anything that isn't a valid entity with this will result in a blunder.
-
-;;;;;
-
-Cost compounds the same way as [Kinetic Ploy](^trickster:ploys/entity#3).
-
-;;;;;
-
 <|ploy@trickster:templates|trick-id=partytrick:summon_spit,cost=20G + 1G * distance ^ (distance / 3)|>
 
 Extracts spit out of the given mob or caster when available. Distance is the distance between the spit source and given position.
+
+;;;;;
+
+<|trick@trickster:templates|trick-id=partytrick:get_cooldown|>
+
+Returns if the given player is temporally unable to use a given item.

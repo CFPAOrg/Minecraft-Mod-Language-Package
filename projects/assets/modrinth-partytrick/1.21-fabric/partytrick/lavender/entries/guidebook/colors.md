@@ -38,13 +38,13 @@ Returns a dye based on the targets color if available.
 
 <|trick@trickster:templates|trick-id=partytrick:set_color|>
 
-Sets the exact color of the given dyeable item. When no color is provided removes it instead.
+Sets the exact color of the given item. When no color is provided removes it instead.
 
 ;;;;;
 
 <|trick@trickster:templates|trick-id=partytrick:get_color|>
 
-Returns the exact color of the given dyeable item or void if it has no exact color applied to it.
+Returns the exact color of the given item or void if it has no exact color applied to it.
 
 ;;;;;
 

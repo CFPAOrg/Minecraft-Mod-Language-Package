@@ -46,7 +46,7 @@ the Handyworker's Hoard casts the spell inscribed on the tool. The entity on whi
 ;;;;;
 
 <|page-title@lavender:book_components|title=Protector's Nuh Uh|>When a shield delects,
-the Protector's Nuh Uh casts the spell inscribed on the shield. The attack, projectile, and if the shield got disabled get received as arguments.
+the Protector's Nuh Uh casts the spell inscribed on the shield. The attacker and projectile get received as arguments.
 
 ;;;;;
 
