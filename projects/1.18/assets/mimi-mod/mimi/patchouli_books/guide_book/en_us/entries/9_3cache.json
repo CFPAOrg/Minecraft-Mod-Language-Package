@@ -1,0 +1,37 @@
+{
+    "name": "Music Cache",
+    "icon": "minecraft:book",
+    "category": "mimi:9commands",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "These commands allow you to see and modify the state of the Web MIDI File Cache on the server."
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Size",
+            "text": "$(l)/mimi cache size$()$(br2)This command may be used by $(l)ops only$() and will list the currently configured server Web MIDI File Cache size (number of songs) and usage.$(br2)EX: $(c:/mimi cache size)/mimi cache size$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Set",
+            "text": "$(l)/mimi cache set <size>$()$(br2)This command may be used by $(l)ops only$() and will set the size of the server Web MIDI File Cache (number of songs). Setting this value to a value lower than the current usage will $(o)not$() automatically prune the cache.$(br)$(li)$(l)size$() - The number of files to cache on the server.$(br2)EX: $(c:/mimi cache set 100)/mimi cache set 100$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Prune",
+            "text": "$(l)/mimi cache prune$()$(br2)This command may be used by $(l)ops only$() and will prune the current server Web MIDI File Cache to contain one fewer file than the configured maximum cache size.$(br2)EX: $(c:/mimi cache prune)/mimi cache prune$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Clear",
+            "text": "$(l)/mimi cache clear$()$(br2)This command may be used by $(l)ops only$() and will clear all currently cached files from the server Web MIDI File Cache.$(br2)EX $(c:/mimi cache clear)/mimi cache clear$()"
+        },
+        {
+            "type": "patchouli:text",
+            "title": "Reload",
+            "text": "$(l)/mimi cache reload$()$(br2)This command may be used by $(l)ops only$() and will reload the list of MIDI files currently cached by the server from the disk. This may be useful if you add or remove a MIDI file to the server cache folder directly.$(br2)EX: $(c:/mimi cache reload)/mimi cache reload$()"
+        }
+    ],
+    "sortnum": 3
+}

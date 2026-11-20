@@ -1,0 +1,63 @@
+{
+    "name": "Switchboard Properties",
+    "icon": "minecraft:writable_book",
+    "category": "mimi:3switchboards",
+    "pages": [
+        {
+            "type": "patchouli:text",
+            "text": "Switchboards store many different properties that can apply to MIMI Instruments, MIMI Redstone Blocks, and other MIMI items.$(br2)Every MIMI Item and Block that supports a Switchboard will have a Switchboard slot that you can place a Switchboard into in order to apply those settings to the Item/Block."
+        },
+        {
+            "type": "text",
+            "anchor": "source",
+            "title": "Transmission Source",
+            "text": "Stores which nearby Transmission Source(s) the Switchboard will receive notes from when the source is transmitting.$(br2)When set to `Public` mode the Switchboard will receive notes from all sources that are broadcasting in public mode.$(br2)When set to a specific source (a player, Broadcaster, or Conductor), the instrument will only receive notes from that."
+        },
+        {
+            "type": "text",
+            "anchor": "setsource",
+            "title": "Setting Source",
+            "text": "The Transmission Source can be set from the screen of any item or block that accepts a Switchboard and uses the Transmission Source property. The screen allows you to link to either Public sources or yourself.$(br2)If you want to link to another player or a Broadcaster or Conductor you can hold the Switchboard in your main hand and then right click on the desired source to link to them."
+        },
+        {
+            "type": "text",
+            "title": "System MIDI Device",
+            "text": "Used only by Instruments, stores whether or not this Switchboard should respond to input received from your configured System MIDI Input Device (if any)."
+        },
+        {
+            "type": "text",
+            "anchor": "channels",
+            "title": "MIDI Channels",
+            "text": "A MIDI file is able to play 16 different instruments at a time. Each instrument is assigned a number - called a channel - and notes for that instrument are sent to that channel. A Switchboard can be configured to receive data from specific channels, all channels, or no channels."
+        },
+        {
+            "type": "text",
+            "text": "$(l)Channel 10$() is almost always used for percussion and this doesn't generally work well for other instruments.$(br2)Note that when receiving data from a System MIDI Input Device you should consult the user manual for the device to determine which channels it broadcasts its data on (usually 0 and/or 1) and ensure that those are enabled on the Switchboard."
+        },
+        {
+            "type": "text",
+            "text": "Also note that it is generally recommended to enable only some channels at the same time because if the same note is played on multiple enabled channels simultaneously it could cause minor issues with note timing and sustain as the note on one channel may last longer than the note on another channel."
+        },
+        {
+            "type": "text",
+            "title": "Filter: Note",
+            "text": "Stores which note(s) this Switchboard should respond to. You can set it to a specific note, any note from a specific octave, any octave of a specific note, or any note of any octave.$(br2)You can also invert the filter so that the Switchboard will respond to all notes $(o)except$() for the notes configured by the filter."
+        },
+        {
+            "type": "text",
+            "title": "Filter: Instrument",
+            "text": "Stores which Instrument(s) this Switchboard should respond to. You can set it to a specific Instrument or any Instrument.$(br2)You can also invert the filter so that the Switchboard will respond to all Instruments $(o)except$() for the Instrument configured by the filter."
+        },
+        {
+            "type": "text",
+            "title": "Transmission Mode",
+            "text": "Stores the Transmission Mode that should be used when inserted into a block that can transmit, like the Conductor.$(br)$(li)'Public' ('P') - Transmit notes to all nearby Instruments and Receivers with their source set to 'Public'.$(br)$(li)'Linked' ('L') - Transmit notes to all nearby Instruments and Receivers that have the block or player containing this Switchboard as their source."
+        },
+        {
+            "type": "text",
+            "title": "Broadcast Note",
+            "text": "Stores which note this Switchboard should broadcast when inserted into a block that block that can transmit notes, such as the Conductor."
+        }
+    ],
+    "sortnum": 2
+}
