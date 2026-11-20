@@ -16,12 +16,20 @@ item_ids:
 将蓝图加农炮接口与蓝图加农炮相邻放置，再为接口接通AE2网络，加农炮即可访问网络中的物品。同一时刻，蓝图加农炮只可连接一个蓝图加农炮接口。
 
 <GameScene zoom="2" background="transparent" interactive={true}>
-  <ImportStructure src="./structure/example.snbt"></ImportStructure>
+  <ImportStructure src="./structure/example.nbt"></ImportStructure>
 </GameScene>
 
 蓝图加农炮**永远**会优先使用其他容器内的物品，然后才会访问AE2网络。也就是说，箱子、木桶等容器中的物品会被优先使用。
 
 如果蓝图加农炮接口连接到了AE2网络，它还会从网络向蓝图加农炮输出火药。
+
+右击可打开GUI。可在其中控制物品与火药的输送和合成请求，也可查看相连蓝图加农炮的状态。
+
+
+## 关于批量合成
+
+批量合成会尝试在蓝图加农炮启动前合成所需物品。若在此时打断合成进程（如区块卸载、游戏关闭、合成任务终止等），则系统会尝试重新合成缺失的物品，有可能制造多余物品。
+
 
 ## 配方
 
