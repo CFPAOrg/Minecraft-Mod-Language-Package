@@ -265,6 +265,15 @@
   "gui.hexcasting": {
     spellcasting: "Hex Grid",
   },
+
+  "category.hexcasting": {
+    "binds": "Hex Casting",
+  },
+
+  "key.hexcasting": {
+    "spellbook_prev": "Previous Spellbook Page",
+    "spellbook_next": "Next Spellbook Page",
+  },
   
   "tag.hexcasting": {
     staves: "Hex Staves",
@@ -276,7 +285,7 @@
   "tag.item.hexcasting": {
     brainswept_circle_components: "Brainswept Circle Components",
     directrices: "Directrices",
-    grants_root_advancement: "Grants Rood Advancement",
+    grants_root_advancement: "Grants Root Advancement",
     impeti: "Impeti",
     seal_materials: "Seal Materials",
   },
@@ -335,13 +344,17 @@
           "": "Ctrl Toggles Off Stroke Order",
           "@Tooltip": "Whether the ctrl key will instead turn *off* the color gradient on patterns",
         },
+        disableInworldScrolling: {
+          "": "Disable In-World Scrolling",
+          "@Tooltip": "Disable scrolling input for spellbooks and abaci in the normal world, keeping keybinds and staff screen scrolling normal"
+        },
         invertSpellbookScrollDirection: {
           "": "Invert Spellbook Scroll Direction",
           "@Tooltip": "Whether scrolling up (as opposed to down) will increase the page index of the spellbook, and vice versa",
         },
         invertAbacusScrollDirection: {
           "": "Invert Abacus Scroll Direction",
-          "@Tooltip": "Whether scrolling up (as opposed to down) will increase the page index of the abacus, and vice versa",
+          "@Tooltip": "Whether scrolling up (as opposed to down) will increase the value of the abacus, and vice versa",
         },
         gridSnapThreshold: {
           "": "Grid Snap Threshold",
@@ -354,6 +367,14 @@
         alwaysShowListCommas: {
           "": "Always Show List Commas",
           "@Tooltip": "Whether all iota types should be comma-separated when displayed in lists (by default, pattern iotas do not use commas)",
+        },
+        advancedTooltipsShowsIotaNBT: {
+          "": "Advanced Tooltips Shows Iota NBT",
+          "@Tooltip": "Whether enabling advanced tooltips (F3+H) should display the full NBT of iotas stored in items like foci and spellbooks",
+        },
+        staticActiveSlates: {
+          "": "Static Active Slates",
+          "@Tooltip": "Whether patterns on active slates should be rendered without wobble (improves performance with lots of active slates)",
         },
       },
       
@@ -372,11 +393,19 @@
         },
         actionDenyList: {
           "": "Action Deny List",
-          "@Tooltip": "Resource locations of disallowed actions. Trying to cast one of these will result in a mishap. For example, hexcasting:get_caster will prevent Mind's Reflection",
+          "@Tooltip": "Resource locations of disallowed actions. Trying to cast one of these will result in a mishap. For example, hexcasting:get_caster will prevent Mind's Reflection.",
         },
         circleActionDenyList: {
           "": "Circle Action Deny List",
-          "@Tooltip": "Resource locations of disallowed actions within circles. Trying to cast one of these from a circle will result in a mishap.",
+          "@Tooltip": "Resource locations of disallowed actions within circles. Trying to cast one of these from a circle will result in a mishap. For example, hexcasting:get_caster\" will prevent Mind's Reflection.",
+        },
+        globalCostScaling: {
+          "": "Global Cost Scaling Factor",
+          "@Tooltip": "All media costs, except for actions in the #hexcasting:cannot_modify_cost tag, will be multiplied by this value. If you want to modify the cost of an action in that tag, use the per-action cost scaling list.",
+        },
+        costRescaleListRaw: {
+          "": "Per-Action Cost Scaling Factors",
+          "@Tooltip": "Maps resource locations to the scaling factor for that specific action's media cost. For example, hexcasting:add_motion 3 will make Impulse cost 3x as much.",
         },
         greaterTeleportSplatsItems: {
           "": "Greater Teleport Splats Items",
@@ -581,6 +610,8 @@
       scroll: {
         needs_purchase: "Purchase to show pattern",
         pattern_not_loaded: "Place in inventory to load pattern",
+        "recalc_warning.line1": "The per-world pattern for %s has not been calculated yet!",
+        "recalc_warning.line2": "Please run /hexcasting recalcPatterns, then get a new scroll.",
       },
       
       abacus: {
@@ -708,6 +739,7 @@
             pi: "Arc's Reflection",
             tau: "Circle's Reflection",
             "e": "Euler's Reflection",
+            phi: "Harmony Reflection",
           },
         },
         
@@ -720,6 +752,7 @@
         raycast: "Archer's Distillation",
         "raycast/axis": "Architect's Distillation",
         "raycast/entity": "Scout's Distillation",
+        get_media: "Media Reflection",
         
         "circle/": {
           impetus_pos: "Waystone Reflection",
@@ -765,7 +798,19 @@
           not_player: "Zone Distillation: Non-Player",
           not_living: "Zone Distillation: Non-Living",
         },
-        
+
+        type_equals: "Similarity Distillation",
+        type_not_equals: "Dissimilarity Distillation",
+        "compare_block/": {
+          "lenient": "Surveyor's Distillation",
+          "strict": "Inspector's Distillation",
+        },
+        compare_entity: "Taxonomer's Distillation",
+        "compare_item/": {
+          "lenient": "Sorter's Distillation",
+          "strict": "Stacking Distillation",
+        },
+
         swap: "Jester's Gambit",
         rotate: "Rotation Gambit",
         rotate_reverse: "Rotation Gambit II",
@@ -891,6 +936,15 @@
         create_lava: "Create Lava",
         "teleport/great": "Greater Teleport",
         brainsweep: "Flay Mind",
+
+        escape: "Consideration",
+        runtime_escape: "Contemplation",
+        open_paren: "Introspection",
+        close_paren: "Retrospection",
+        open_n_parens: "Meditation",
+        close_all_parens: "Recollection",
+        read_into_parens: "Interjection",
+        undo: "Evanition",
         
         eval: "Hermes' Gambit",
         "eval/cc": "Iris' Gambit",
@@ -962,34 +1016,56 @@
       number: "Numerical Reflection: %s",
       mask: "Bookkeeper's Gambit: %s",
     },
-    
-    "rawhook.hexcasting:": {
-      open_paren: "Introspection",
-      close_paren: "Retrospection",
-      escape: "Consideration",
-      undo: "Evanition",
-    },
-    
+
     "iota.hexcasting:": {
-      "null": "Null",
-      double: "Number",
-      boolean: "Boolean",
-      entity: "Entity",
-      list: "List",
-      pattern: "Pattern",
-      garbage: "Garbage",
-      vec3: "Vector",
+      null: {
+        "": "Null",
+        desc: "a null value",
+      },
+      double: {
+        "": "Number",
+        desc: "a number",
+      },
+      boolean: {
+        "": "Boolean",
+        desc: "a boolean",
+      },
+      entity: {
+        "": "Entity",
+        desc: "an entity",
+      },
+      list: {
+        "": "List",
+        desc: "a list",
+      },
+      pattern: {
+        "": "Pattern",
+        desc: "a pattern",
+      },
+      garbage: {
+        "": "Garbage",
+        desc: "garbage",
+      },
+      vec3: {
+        "": "Vector",
+        desc: "a vector",
+      },
+      continution: {
+        "": "Continuation",
+        desc: "a jump iota",
+      },
     },
     
     mishap: {
       "": "%s: %s",
       
-      invalid_pattern: "That pattern isn't associated with any action",
+      invalid_pattern: "The pattern %s isn't associated with any action",
+      invalid_pattern_generic: "That pattern isn't associated with any action",
       unescaped: "Expected to evaluate a pattern, but evaluated %s instead",
       
       not_enough_args: "expected %s or more arguments but the stack was only %s tall",
       no_args: "expected %s or more arguments but the stack was empty",
-      too_many_close_parens: "Did not first use Introspection",
+      needs_parens: "Did not first use Introspection",
       
       wrong_dimension: "cannot see %s from %s",
       entity_too_far: "%s is out of range",
@@ -1026,28 +1102,33 @@
       },
       
       no_akashic_record: "No Akashic Record at %s",
-      disallowed: "has been disallowed by the server admins",
-      disallowed_circle: "has been disallowed in spell circles by the server admins",
+      disallowed: "%s has been disallowed by the server admins",
+      disallowed_generic: "That pattern has been disallowed by the server admins",
+      disallowed_circle: "%s has been disallowed in spell circles by the server admins",
+      disallowed_circle_generic: "That pattern has been disallowed in spell circles by the server admins",
       invalid_spell_datum_type: "Tried to use a value of invalid type as a SpellDatum: %s (class %s). This is a bug in the mod.",
       unknown: "threw an exception (%s). This is a bug in the mod.",
       stack_size: "Exceeded the size limit of the stack",
       bad_caster: "Tried to execute a pattern that requires a greater mind",
       
       invalid_value: {
-        "": "expected %s at index %s of the stack, but got %s",
+        "": "expected %s at index %s of the stack, but got %s: %s",
         
         class: {
           double: "a number",
           boolean: "a boolean",
           vector: "a vector",
           list: "a list",
-          widget: "an influence",
           pattern: "a pattern",
+          continuation: "a jump iota",
+          garbage: "garbage",
+          null: "null",
           
           entity: {
             "": "an entity",
             mob: "a mob",
             item: "an item entity",
+            item_holder: "an item-holding entity",
             player: "a player",
             living: "a living entity",
           },
@@ -1059,7 +1140,6 @@
         
         numvec: "a number or vector",
         numlist: "an integer or list",
-        "list.pattern": "a list of patterns",
         
         double: {
           positive: {
@@ -1095,6 +1175,7 @@
       bad_item: {
         "": "needs %s but got %dx %s",
         offhand: "needs %s in the other hand but got %dx %s",
+        hotbar: "needs %s somewhere in the hotbar",
         
         iota: {
           "": "a place to store iotas",
@@ -1111,6 +1192,7 @@
         rechargable: "a rechargable item",
         colorizer: "a pigment",
         variant: "an item with variants",
+        placeable: "a placeable item",
       },
       
       bad_block: {
@@ -1200,11 +1282,11 @@
       couldnt_cast: "A Frustration",
       start_to_see: "WHAT DID I SEE",
       "101": "Hex Casting 101",
+      whats_a_hex: "What is a Hex?",
       vectors: "A Primer On Vectors",
       mishaps: "Mishaps",
       stack: "The Stack",
       naming: "Naming Actions",
-      influences: "Influences",
       mishaps2: "Enlightened Mishaps",
       amethyst: "Amethyst",
       
@@ -1251,8 +1333,10 @@
       stackmanip: "Stack Manipulation",
       logic: "Logical Operators",
       entities: "Entities",
+      types: "Types",
       lists: "List Manipulation",
       patterns_as_iotas: "Escaping Patterns",
+      advanced_escaping: "Advanced Escaping",
       readwrite: "Reading and Writing",
       meta: "Meta-Evaluation",
       circle_patterns: "Spell Circle Patterns",
@@ -1375,7 +1459,7 @@
               $(li)Vectors, a collection of three numbers representing a position, movement, or direction.\
               $(li)Booleans or \"bools\" for short, representing an abstract True or False.\
               $(li)Entities, like myself, chickens, and minecarts.",
-          "2": "$(li)Influences, peculiar types of iota that seem to represent abstract ideas.\
+          "2": "$(li)Influences, iotas that represent various abstract ideas such as the absence of data ($(thing)Null/$) or complete nonsense ($(thing)Garbage/$).\
               $(li)Patterns themselves, used for crafting magic items and truly mind-boggling feats like $(italic)spells that cast other spells/$.\
               $(li)A list of several of the above, gathered into a single iota.",
           "3": "Generally, I provide iotas to actions. \
@@ -1390,13 +1474,13 @@
       "101": {
         "1": "Casting a _Hex is quite difficult-- no wonder this art was lost to time! I'll have to re-read my notes carefully.$(br2)I can start a _Hex by pressing $(k:use) with a $(l:items/staff)$(item)Staff/$ in my hand-- this will cause a hexagonal grid of dots to appear in front of me. Then I can click and drag from dot to dot to draw patterns in the _media of the grid; finishing a pattern will run its corresponding action (more on that later).",
         "2": "Once I've drawn enough patterns to cast a spell, the grid will disappear as the _media I've stored up is released. Holding $(k:sneak) while using my $(l:items/staff)$(item)staff/$ will also clear the grid.$(br2)So how do patterns work? In short:$(li)$(italic)Patterns/$ will execute...$(li)$(italic)Actions/$, which manipulate...$(li)$(l:casting/stack)$(italic)The Stack/$, which is a list of...$(li)$(italic)Iotas/$, which are simply units of information.",
-        "3": "First, $(thing)patterns/$. These are essential-- they're what I use to manipulate the _media around me. Certain patterns, when drawn, will cause $(thing)actions/$ to happen. Actions are what actually $(italic)do/$ the magic; all patterns influence _media in particular ways, and when those influences end up doing something useful, we call it an action.$(br2)_Media can be fickle: if I draw an invalid pattern, I'll get some $(l:casting/influences)$(action)garbage/$ result somewhere on my stack (read on...)",
+        "3": "First, $(thing)patterns/$. These are essential-- they're what I use to manipulate the _media around me. Certain patterns, when drawn, will cause $(thing)actions/$ to happen. Actions are what actually $(italic)do/$ the magic; all patterns influence _media in particular ways, and when those influences end up doing something useful, we call it an action.$(br2)_Media can be fickle: if I draw an invalid pattern, I'll get some $(thing)garbage/$ result somewhere on my stack (read on...)",
         "4.header": "An Example",
         "4": "It's interesting to note that the $(italic)rotation/$ of a pattern doesn't seem to matter at all. These two patterns both perform an action called $(l:patterns/basics#hexcasting:get_caster)$(action)Mind's Reflection/$, for example.",
         "5": "A _Hex is cast by drawing (valid) actions in sequence. Each action might do one of a few things:$(li)Gather some information about the environment, leaving it on the top of the stack;$(li)manipulate the info gathered (e.g. adding two numbers); or$(li)perform some magical effect, like summoning lightning or an explosion. (These actions are called \"spells.\")$(p)When I start casting a _Hex, it creates an empty stack. Actions manipulate the top of that stack.",
         "6": "For example, $(l:patterns/basics#hexcasting:get_caster)$(action)Mind's Reflection/$ will create an iota representing $(italic)me/$, the caster, and add it to the top of the stack. $(l:patterns/basics#hexcasting:entity_pos/eye)$(action)Compass' Purification/$ will take the iota at the top the stack, if it represents an entity, and transform it into an iota representing that entity's location.$(br2)So, drawing those patterns in that order would result in an iota on the stack representing my position.",
-        "7": "$(thing)Iotas/$ can represent things like myself or my position, but there are several other types I can manipulate with $(thing)Actions/$. Here's a comprehensive list:$(li)Numbers (which some legends called \"doubles\");$(li)Vectors, a collection of three numbers representing a position, movement, or direction in the world;$(li)Booleans or \"bools\" for short, representing an abstract True or False,",
-        "8": "$(li)Entities, like myself, chickens, and minecarts;$(li)Influences, peculiar types of iota that seem to represent abstract ideas;$(li)Patterns themselves, used for crafting magic items and truly mind-boggling feats like $(italic)spells that cast other spells/$; and$(li)A list of several of the above, gathered into a single iota.",
+        "7": "$(thing)Iotas/$ can represent things like myself or my position, but there are several other types I can manipulate with $(thing)Actions/$. Here's a comprehensive list:$(li)Numbers (which some legends called \"doubles\");$(li)Vectors, a collection of three numbers representing a position, movement, or direction in the world;$(li)Booleans or \"bools\" for short, representing an abstract True or False;",
+        "8": "$(li)Entities, like myself, chickens, and minecarts;$(li)Influences, iotas that represent various abstract ideas such as the absence of data ($(thing)Null/$) or complete nonsense ($(thing)Garbage/$);$(li)Patterns themselves, used for crafting magic items and truly mind-boggling feats like $(italic)spells that cast other spells/$;$(li)A list of several of the above, gathered into a single iota.",
         "9": "Of course, there's no such thing as a free lunch. All spells, and certain other actions, require _media as payment.$(br2)The best I can figure, a _Hex is a little bit like a plan of action presented to Nature-- in this analogy, the _media is used to provide the arguments to back it up, so Nature will accept your plan and carry it out.",
         "10": "That aside, it doesn't seem like anyone has done much research on exactly how $(italic)much/$ any particular piece of $(l:items/amethyst)$(item)amethyst/$ is valued. The best I can tell, an $(l:items/amethyst)$(item)Amethyst Shard/$ is worth about five pieces of $(l:items/amethyst)$(item)Amethyst Dust/$, and a $(l:items/amethyst)$(item)Charged Amethyst Crystal/$ is worth about ten.$(br2)Strangely enough, it seems like no other form of $(l:items/amethyst)$(item)amethyst/$ is suitable to be used in the casting of a _Hex. I suspect that whole blocks or crystals are too solid to be easily unraveled into _media.",
         "11": "It's also worth noting that each action will consume the _media it needs immediately, rather than all at once when the Hex finishes. Also, an action will always consume entire items-- an action that only requires one $(l:items/amethyst)$(item)Amethyst Dust/$'s worth of _media will consume an entire $(l:items/amethyst)$(item)Charged Amethyst Crystal/$, if that's all that's present in my inventory.$(br2)Thus, it might be a good idea to bring dust for spellcasting too-- waste not, want not...",
@@ -1406,13 +1490,26 @@
         "14.link_text": "Goblin Punch",
         "15": "Finally, it seems spells have a maximum range of influence, about 32 blocks from my position. Trying to affect anything outside of that will cause the spell to fail.$(br2)Despite this, if I have a player's reference, I can affect them from anywhere. This only applies to affecting them directly, though; I cannot use this to affect the world around them if they're outside of my range.$(br)I ought to be careful when giving out a reference like that. While friendly _Hexcasters could use them to great effect and utility, I shudder to think of what someone malicious might do with this.",
       },
-      
+
+      whats_a_hex: {
+        "1": "Conceptually, a _Hex is exactly as described in $(l:casting/101)Hex Casting 101/$: a sequence of actions, usually done with the goal of performing some kind of effect in the world by means of one or more spells.$(br2)This idea of a _Hex is fine for on-the-fly casting, but if I wish to record my work for posterity (or simply for my own reuse) I may need something a little more concrete.",
+        "2": "Typically, this takes the form of a list of pattern iotas, as created by the techniques described in $(l:patterns/patterns_as_iotas)Escaping Patterns/$. With my _Hex placed onto the stack this way, I can cast it using meta-evaluation patterns like $(l:patterns/meta#hexcasting:eval)Hermes' Gambit/$, or infuse it into a $(l:items/hexcasting)Casting Item/$ item for easy reuse.$(br2)Note that this list is no different from any other list iota - I can manipulate it, save it into $(l:items/thought_knot)permanent/$ $(l:items/focus)storage/$, or even incorporate it into another _Hex.",
+        "3": "Note also that this list need not be composed exclusively of pattern iotas. Inserting iotas of other types into my _Hexes won't normally end well, but $(l:patterns/patterns_as_iotas#iota_embedding)certain techniques/$ allow me to do it safely. Furthermore, some $(l:patterns/meta#hexcasting:eval/cc)special iotas/$ can be directly evaluated just like a pattern.$(br2)With this in mind, $(o)any/$ list of iotas can in theory be a _Hex - the only requirement is that I can successfully cast it.",
+      },
+
       vectors: {
-        "1": "It seems I will need to be adroit with vectors if I am to get anywhere in my studies. I have compiled some resources here on vectors if I find I do not know how to work with them.$(br2)First off, an enlightening video on the topic.",
-        "1.link_text": "3blue1brown",
-        "2": "Additionally, it seems that the mages who manipulated $(thing)Psi energy/$ (the so-called \"spellslingers\"), despite their poor naming sense, had some quite-effective lessons on vectors to teach their acolytes. I've taken the liberty of linking to one of their texts on the next page.$(br2)They seem to have used different language for their spellcasting:$(li)A \"Spell Piece\" was their name for an action;$(li)a \"Trick\" was their name for a spell; and$(li)an \"Operator\" was their name for a non-spell action.",
-        "3": "Link here.",
-        "3.link_text": "Psi Codex",
+        "1": "It seems I will need to be adroit with vectors if I am to get anywhere in my studies. A vector is a set of three numbers that can be used to represent a variety of things, usually either a position in the world, an offset from one position to another, or a direction in space. The following pages provide a basic summary of how vectors work and what I can do with them.",
+        "2": "All the vectors I will be working with as a $(hex)Hexcaster/$ are three-dimensional, since the world I inhabit has three dimensions.$(br2)Each vector has an X component, a Y component, and a Z component in that order, corresponding to the three coordinate axes of the world: the X axis runs east and west, the Y axis runs up and down, and the Z axis runs north and south.",
+        "3": "The most basic way to use a vector is as a $(o)position/$, representing a fixed point in the world - it could be the location of a block, or an entity, or perhaps some empty space that I wish to target with a spell.$(br2)A position vector is effectively just a set of coordinates pinpointing the exact location to which it refers. However, not all vectors represent positions.",
+        "4": "If I have a vector for the position of a block, and I want to target the block above it, I need to increase the Y component of the vector by 1. I can do this by taking a second vector with the value (0, 1, 0) and adding it to the first one. Likewise, if I wanted to target something two blocks to the east, I could add a second vector with the value (2, 0, 0). Both of these new vectors represent $(o)offsets/$ from one position to a new position.",
+        "5": "Note that while position vectors and offset vectors represent different things, there is no fundamental difference between them - all vectors are just groups of numbers. In fact, I could even consider all my vectors to be one type or the other if I so desired: positions are just offsets from the world origin to the specified coordinates, and offsets are just positions relative to an arbitrary starting point.",
+        "6": "Two important properties of vectors are $(o)magnitude/$ (length) and $(o)direction/$. These may be easiest to imagine when thinking of vectors as offsets.$(br2)If I were to choose a starting point, and then move in a straight line based on an offset vector, the distance I travelled would be the length of the vector, and the direction I travelled would be its direction.",
+        "7": "There many ways to manipulate vectors. As described earlier, I can add them together, which adds the corresponding X, Y, and Z components of each vector. The same applies with subtraction - conveniently, subtracting one position vector from another results in the offset from the first position to the second.$(br2)Multiplying and dividing two vectors is not so simple; I can find more information on that topic $(l:https://www.mathsisfun.com/algebra/vectors-dot-product.html)here/$ and $(l:https://www.mathsisfun.com/algebra/vectors-cross-product.html)here/$.",
+        "8": "I can also multiply or divide a vector by a single number to $(o)scale/$ it. This multiplies or divides all three components of the vector by that number.$(br2)So long as the number is positive, this will multiply or divide the length of the vector without affecting its direction. If the number is negative, the length will be multiplied or divided as usual, but the direction will be reversed.",
+        "9": "Dividing a vector by its own length produces a unit vector, which has the same direction as the original but a length of exactly 1. These can be useful if the direction of the vector is all that matters. They are also useful in that I can multiply a unit vector by some number to get a new vector with exactly that length.$(br2)Many patterns that calculate a direction of some kind, such as $(l:patterns/basics#hexcasting:get_entity_look)Alidade's Purification/$, provide it as a unit vector.",
+        "10": "All the operations described thus far, and many more, can be performed using patterns found in the $(l:patterns/math)Mathematics/$ section.$(br2)I can create new vectors by gathering information from entities using $(l:patterns/basics)Basic Patterns/$, by using $(l:patterns/consts)Constants/$ to create unit vectors for basic directions, or by directly combining three numbers with $(l:patterns/math#hexcasting:construct_vec)Vector Exaltation/$.",
+        "11": "To understand more advanced concepts related to vectors, I may want to do further research outside the bounds of this notebook. The video below may also serve as a useful reference.",
+        "11.link_text": "3blue1brown",
       },
       
       mishaps: {
@@ -1421,16 +1518,16 @@
         "3": "Fortunately, although the bad effects of mishaps are certainly $(italic)annoying/$, none of them are especially destructive in the long term. Nothing better to do than dust myself off and try again ... but I should strive for better anyways.$(br2)Following is a list of mishaps I have compiled.",
         
         "invalid_pattern.title": "Invalid Pattern",
-        invalid_pattern: "The pattern drawn is not associated with any action.$(br2)Causes yellow sparks, and a $(l:casting/influences)$(action)Garbage/$ will be pushed to the top of my stack.",
+        invalid_pattern: "The pattern drawn is not associated with any action.$(br2)Causes yellow sparks, and a $(thing)garbage/$ will be pushed to the top of my stack.",
         
         "not_enough_iotas.title": "Not Enough Iotas",
-        not_enough_iotas: "The action required more iotas than were on the stack.$(br2)Causes light gray sparks, and as many $(l:casting/influences)$(action)Garbages/$ as would be required to fill up the argument count will be pushed.",
-        
+        not_enough_iotas: "The action required more iotas than were on the stack.$(br2)Causes light gray sparks, and as many $(thing)Garbages/$ as would be required to fill up the argument count will be pushed.",
+
         "stack_size.title": "Too Many Iotas",
-        "stack_size": "I tried to cast a spell which exceeded the size limit of the stack.$(br2)Causes black sparks, and my entire stack will be replaced with a single $(l:casting/influences)$(action)Garbage/$.",
+        "stack_size": "I tried to cast a spell which exceeded the size limit of the stack.$(br2)Causes black sparks, and my entire stack will be replaced with a single $(thing)garbage/$.",
         
         "incorrect_iota.title": "Incorrect Iota",
-        incorrect_iota: "The action that was executed expected an iota of a certain type for an argument, but it got something invalid. If multiple iotas are invalid, the error message will only tell me about the error deepest in the stack.$(br2)Causes dark gray sparks, and the invalid iota will be replaced with $(l:casting/influences)$(action)Garbage/$.",
+        incorrect_iota: "The action that was executed expected an iota of a certain type for an argument, but it got something invalid. If multiple iotas are invalid, the error message will only tell me about the error deepest in the stack.$(br2)Causes dark gray sparks, and the invalid iota will be replaced with $(thing)garbage/$.",
         
         "vector_out_of_range.title": "Vector Out of Ambit",
         vector_out_of_range: "The action tried to affect the world at a point that was out of my range.$(br2)Causes magenta sparks, and the items in my hands will be yanked out and flung towards the offending location.",
@@ -1442,7 +1539,7 @@
         entity_immune: "The action tried to affect an entity that cannot be altered by it.$(br2)Causes blue sparks, and the items in my hands will be yanked out and flung towards the offending entity.",
         
         "math_error.title": "Mathematical Error",
-        math_error: "The action did something offensive to the laws of mathematics, such as dividing by zero.$(br2)Causes red sparks, pushes a $(l:casting/influences)$(action)Garbage/$ to my stack, and my mind will be ablated, stealing half the vigor I have remaining. It seems that Nature takes offense to such operations, and divides $(italic)me/$ in retaliation.",
+        math_error: "The action did something offensive to the laws of mathematics, such as dividing by zero.$(br2)Causes red sparks, pushes a $(thing)garbage/$ to my stack, and my mind will be ablated, stealing half the vigor I have remaining. It seems that Nature takes offense to such operations, and divides $(italic)me/$ in retaliation.",
         
         "incorrect_item.title": "Incorrect Item",
         incorrect_item: "The action requires some sort of item, but the item I supplied was not suitable.$(br2)Causes brown sparks. If the offending item was in my hand, it will be flung to the floor. If it was in entity form, it will be flung in the air.",
@@ -1450,9 +1547,9 @@
         "incorrect_block.title": "Incorrect Block",
         incorrect_block: "The action requires some sort of block at a target location, but the block supplied was not suitable.$(br2)Causes bright green sparks, and causes an ephemeral explosion at the given location. The explosion doesn't seem to harm me, the world, or anything else though; it's just startling.",
         
-        "retrospection.title": "Hasty Retrospection",
-        retrospection: "I attempted to draw $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ without first drawing $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$.$(br2)Causes orange sparks, and pushes the pattern for $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ to the stack as a pattern iota.",
-        
+        "needs_parens.title": "Absent Introspection",
+        needs_parens: "I attempted to draw a pattern that only works while $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)introspecting/$ without first drawing $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$.$(br2)Causes orange sparks, and pushes the pattern I tried to draw to the stack as an iota.",
+
         "too_many_patterns.title": "Lost in Thought",
         too_many_patterns: "I attempted to evaluate too many patterns in one _Hex. Often, this happens because I've accidentally created an infinite loop.$(br2)Causes dark blue sparks, and chokes all the air out of me.",
         
@@ -1478,18 +1575,12 @@
         "2": "$(li)A $(thing)Reflection/$ pops nothing and pushes one iota.$(li)A $(thing)Purification/$ pops one and pushes one.$(li)A $(thing)Distillation/$ pops two and pushes one.$(li)An $(thing)Exaltation/$ pops three or more and pushes one.$(li)A $(thing)Decomposition/$ pops one argument and pushes two.$(li)A $(thing)Disintegration/$ pops one and pushes three or more.$(li)Finally, a $(thing)Gambit/$ pushes or pops some other number (or rearranges the stack in some other manner).",
         "3": "Spells seem to be exempt from this nomenclature and are more or less named after what they do-- after all, why call it a $(action)Demoman's Gambit/$ when you could just say $(l:patterns/spells/basic#hexcasting:explode)$(action)Explosion/$?",
       },
-      
-      influences: {
-        "1": "Influences are ... strange, to say the least. Whereas most iotas seem to represent something about the world, influences represent something more... abstract, or formless.$(br2)For example, one influence I've named $(l:casting/influences)$(thing)Null/$ seems to represent nothing at all. It's created when there isn't a suitable answer to a question asked, such as an $(l:patterns/basics#hexcasting:raycast)$(action)Archer's Distillation/$ facing the sky.",
-        "2": "In addition, I've discovered a curious quartet of influences I've named $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$, $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$, $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$, and $(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)Evanition/$. They seem to have properties of both patterns and other influences, yet act very differently. I can use these to add patterns to my stack as iotas, instead of matching them to actions. $(l:patterns/patterns_as_iotas)My notes on the subject are here/$.",
-        "3": "Finally, there seems to be an infinite family of influences that just seem to be a tangled mess of _media. I've named them $(l:casting/influences)$(action)Garbage/$, as they are completely useless. They seem to appear in my stack at various places in response to $(l:casting/mishaps)$(thing)mishaps/$, and appear to my senses as a nonsense jumble.",
-      },
-      
+
       mishaps2: {
         "1": "I have discovered new and horrifying modes of failure. I must not succumb to them.",
         
         "bad_mindflay.title": "Inert Mindflay",
-        bad_mindflay: "Attempted to flay the mind of something that I have either already used, or of a character not suitable for the target block.$(br2)Causes dark green sparks, and kills the subject. If a villager sees that, I doubt they would look on it favorably.",
+        bad_mindflay: "Attempted to flay the mind of something that I have either already used, or of a character not suitable for the target block.$(br2)Causes dark green sparks. Subjects I have already used will be killed outright, while those that are simply unsuitable will be slightly damaged.",
         
         "no_circle.title": "Lack Spell Circle",
         no_circle: "Tried to cast an action requiring a spell circle without a spell circle.$(br2)Causes light blue sparks, and upends my inventory onto the ground.",
@@ -1526,7 +1617,7 @@
       thought_knot: {
         "1": "The forgetful often tie a piece of string about their finger to help them remember something important. I believe this idea might be of use in my art. A specially knotted piece of string should be able to hold a single iota stably, irregardless of my stack.$(br2)I will call my invention a $(item)Thought-Knot/$.",
         "2": "When I craft it, it stores no iota. Using $(l:patterns/readwrite#hexcasting:write)$(action)Scribe's Gambit/$ while holding a $(item)Thought-Knot/$ in my other hand will remove the top of the stack and save it into the $(item)Thought-Knot/$. Using $(l:patterns/readwrite#hexcasting:read)$(action)Scribe's Reflection/$ will copy whatever iota's in the $(item)Thought-Knot/$ and add it to the stack.$(br2)Once a $(item)Thought-Knot/$ has been written to, the string is indelibly tangled; the iota can be read any number of times, but there is no way to erase or overwrite it. Fortunately, they are not expensive.",
-        "3": "Also, if I store an entity in a $(item)Thought-Knot/$ and try to recall it after the referenced entity has died or otherwise disappeared, the $(l:patterns/readwrite#hexcasting:read)$(action)Scribe's Reflection/$ will add $(l:casting/influences)$(thing)Null/$ to the stack instead.",
+        "3": "Also, if I store an entity in a $(item)Thought-Knot/$ and try to recall it after the referenced entity has died or otherwise disappeared, the $(l:patterns/readwrite#hexcasting:read)$(action)Scribe's Reflection/$ will add $(thing)Null/$ to the stack instead.",
         "crafting.desc": "$(italic)How would you feel if someone saw you wearing a sign that said, \"I am dashing and handsome?\"/$",
       },
       
@@ -1564,11 +1655,11 @@
       
       // roll credits
       hexcasting: {
-        "1": "Although the flexibility of casting _Hexes \"on the go\" with my $(l:items/staff)$(item)Staff/$ is quite helpful, it's a huge pain to have to wave it around repeatedly just to accomplish a basic task. If I could save a common spell for later reuse, it would simplify things a lot-- and allow me to share my _Hexes with friends, too.",
+        "1": "Although the flexibility of casting _Hexes \"on the go\" with my $(l:items/staff)$(item)Staff/$ is quite helpful, it's a huge pain to have to wave it around repeatedly just to accomplish a basic task. If I could save a common _Hex for later reuse, it would simplify things a lot-- and allow me to share my _Hexes with friends, too.",
         "2": "To do this, I can craft one of three types of magic items: $(l:items/hexcasting)$(item)Cyphers/$, $(l:items/hexcasting)$(item)Trinkets/$, or $(l:items/hexcasting)$(item)Artifacts/$. All of them hold the patterns of a given _Hex inside, along with a small battery containing _media.$(br2)Simply holding one and pressing $(thing)$(k:use)/$ will cast the patterns inside, as if the holder had cast them out of a staff, using its internal battery.",
         "3": "Each item has its own quirks:$(br2)$(l:items/hexcasting)$(item)Cyphers/$ are fragile, destroyed after their internal _media reserves are gone, and $(italic)cannot/$ be recharged;$(br2)$(l:items/hexcasting)$(item)Trinkets/$ can be cast as much as the holder likes, as long as there's enough _media left, but become useless afterwards until recharged;",
         "4": "$(l:items/hexcasting)$(item)Artifacts/$ are the most powerful of all-- after their _media is depleted, they can use $(l:items/amethyst)$(item)Amethyst/$ from the holder's inventory to pay for the _Hex, just as I do when casting with a $(l:items/staff)$(item)Staff/$. Of course, this also means the spell might consume their mind if there's not enough $(l:items/amethyst)$(item)Amethyst/$.$(br2)Once I've made an empty magic item in a mundane crafting bench, I infuse the _Hex into it using (what else but) a spell appropriate to the item. $(l:patterns/spells/hexcasting)I've catalogued the patterns here./$",
-        "5": "Each infusion spell requires an entity and a list of patterns on the stack. The entity must be a _media-holding item entity (i.e. $(l:items/amethyst)$(item)amethyst/$ crystals, dropped on the ground); the entity is consumed and forms the battery.$(br2)Usefully, it seems that the _media in the battery is not consumed in chunks as it is when casting with a $(l:items/staff)$(item)Staff/$-- rather, the _media \"melts down\" into one continuous pool. Thus, if I store a _Hex that only costs one $(l:items/amethyst)$(item)Amethyst Dust/$'s worth of media, a $(l:items/amethyst)$(item)Charged Crystal/$ used as the battery will allow me to cast it 10 times.",
+        "5": "Each infusion spell requires an entity and a $(l:casting/whats_a_hex)list of iotas/$ to cast on the stack. The entity must be a _media-holding item entity (i.e. $(l:items/amethyst)$(item)amethyst/$ dropped on the ground); the entity is consumed and forms the battery.$(br2)Usefully, it seems that the _media in the battery is not consumed in chunks as it is when casting with a $(l:items/staff)$(item)Staff/$-- rather, the _media \"melts down\" into one continuous pool. Thus, if I store a _Hex that only costs one $(l:items/amethyst)$(item)Amethyst Dust/$'s worth of media, a $(l:items/amethyst)$(item)Charged Crystal/$ used as the battery will allow me to cast it 10 times.",
         "crafting.desc": "$(italic)We have a saying in our field: \"Magic isn't\". It doesn't \"just work,\" it doesn't respond to your thoughts, you can't throw fireballs or create a roast dinner from thin air or turn a bunch of muggers into frogs and snails./$",
       },
 
@@ -1666,12 +1757,12 @@
         
         empty_directrix: "Firstly, a design for the cradle ... although, perhaps \"substrate\" would be more accurate a word. Without a mind guiding it, the output direction is determined by microscopic fluctuations in the _media wave and surroundings, making it effectively random.",
         directrix_redstone: "A $(l:greatwork/directrix)$(item)Mason Directrix/$ switches output side based on a redstone signal. Without a signal, the exit is the _media-color side; with a signal, the exit is the redstone-color side.",
-        directrix_boolean: "A $(l:greatwork/directrix)$(item)Shepherd Directrix/$ switches output side based on a boolean on the stack. A $(thing)True/$ makes the wave exit from the back, a $(thing)False/$ from the front. Failing to provide a boolean at all will cause a mishap."
+        directrix_boolean: "A $(l:greatwork/directrix)$(item)Shepherd Directrix/$ switches output side based on a boolean popped from the stack. A $(thing)True/$ makes the wave exit from the back, a $(thing)False/$ from the front. Failing to provide a boolean at all will cause a mishap."
       },
       
       akashiclib: {
         "1": "I KNOW SO MUCH it is ONLY RIGHT to have a place to store it all. Information can be stored in books but it is oh so so so so $(italic)slow/$ to write by hand and read by eye. I demand BETTER. And so I shall MAKE better.$(br2)... I am getting worse ... do not know if I have time to write everything bursting through my head before expiring.",
-        "2": "The library. Here. My plans.$(br2)Like how patterns are associated with actions, I can associate my own patterns with iotas in any way I choose. An $(l:greatwork/akashiclib)$(item)Akashic Record/$ controls the library, and each $(l:greatwork/akashiclib)$(item)Akashic Bookshelf/$ stores one pattern mapped to one iota. These must all be directly connected together, touching, within 32 blocks. An $(l:greatwork/akashiclib)$(item)Akashic Ligature/$ doesn't do anything but count as a connecting block, to extend the size of my library.",
+        "2": "The library. Here. My plans.$(br2)Like how patterns are associated with actions, I can associate my own patterns with iotas in any way I choose. An $(l:greatwork/akashiclib)$(item)Akashic Record/$ controls the library, and each $(l:greatwork/akashiclib)$(item)Akashic Bookshelf/$ stores one pattern mapped to one iota. These must all be directly connected together, touching, within 128 blocks. An $(l:greatwork/akashiclib)$(item)Akashic Ligature/$ doesn't do anything but count as a connecting block, to extend the size of my library.",
         akashic_record: "Allocating and assigning patterns is simple but oh so boring. I have better things to do. I will need a mind well-used to its work for the extraction to stay sound.",
         "3": "Then to operate the library is simple, the patterns are routed through the librarian and it looks them up and returns the iota to you. Two actions do the work. $(l:patterns/akashic_patterns)Notes here/$.$(br2)Using an empty $(l:items/scroll)$(item)scroll/$ on a bookshelf copies the pattern there onto the $(l:items/scroll)$(item)scroll/$. Sneaking and using an empty hand clears the datum in the shelf.",
       },
@@ -1704,7 +1795,7 @@
         print: "Displays the top iota of the stack to me.",
         raycast: {
           "1": "Combines two vectors (a position and a direction) into the answer to the question: If I stood at the position and looked in the direction, what block would I be looking at? Costs a negligible amount of _media.",
-          "2": "If it doesn't hit anything, the vectors will combine into $(l:casting/influences)$(thing)Null/$.$(br2)A common sequence of patterns, the so-called \"raycast mantra,\" is $(l:patterns/basics#hexcasting:get_caster)$(action)Mind's Reflection/$, $(l:patterns/basics#hexcasting:entity_pos/eye)$(action)Compass' Purification/$, $(l:patterns/basics#hexcasting:get_caster)$(action)Mind's Reflection/$, $(l:patterns/basics#hexcasting:get_entity_look)$(action)Alidade Purification/$, $(l:patterns/basics#hexcasting:raycast)$(action)Archer's Distillation/$. Together, they return the vector position of the block I am looking at.",
+          "2": "If it doesn't hit anything, the vectors will combine into $(thing)Null/$.$(br2)A common sequence of patterns, the so-called \"raycast mantra,\" is $(l:patterns/basics#hexcasting:get_caster)$(action)Mind's Reflection/$, $(l:patterns/basics#hexcasting:entity_pos/eye)$(action)Compass' Purification/$, $(l:patterns/basics#hexcasting:get_caster)$(action)Mind's Reflection/$, $(l:patterns/basics#hexcasting:get_entity_look)$(action)Alidade Purification/$, $(l:patterns/basics#hexcasting:raycast)$(action)Archer's Distillation/$. Together, they return the vector position of the block I am looking at.",
         },
         "raycast/axis": {
           "1": "Like $(l:patterns/basics#hexcasting:raycast)$(action)Archer's Distillation/$, but instead returns a vector representing the answer to the question: Which $(italic)side/$ of the block am I looking at? Costs a negligible amount of _media.",
@@ -1713,6 +1804,7 @@
         "raycast/entity": "Like $(l:patterns/basics#hexcasting:raycast)$(action)Archer's Distillation/$, but instead returns the $(italic)entity/$ I am looking at. Costs a negligible amount of _media.",
         get_entity_height: "Transforms an entity on the stack into its height.",
         get_entity_velocity: "Transforms an entity on the stack into the direction in which it's moving, with the speed of that movement as that direction's magnitude.",
+        get_media: "Pushes the amount of _media available to the current cast, in units of $(l:items/amethyst)$(item)Amethyst Dust/$.",
       },
       
       numbers: {
@@ -1747,13 +1839,13 @@
         "mul.2": "As such:$(li)With two numbers, combines them into their product.$(li)With a number and a vector, removes the number from the stack and multiplies each component of the vector by that number.$(li)With two vectors, combines them into their $(l:https://www.mathsisfun.com/algebra/vectors-dot-product.html)dot product/$.",
         
         "div.1": "Perform division or the cross product.",
-        "div.2": "As such:$(li)With two numbers, combines them into their quotient.$(li)With a number and a vector, removes the number and divides it by each element of the vector.$(li)With two vectors, combines them into their $(l:https://www.mathsisfun.com/algebra/vectors-cross-product.html)cross product/$.$(br2)In the first and second cases, the top of the stack or its components comprise the dividend, and the second-from-the-top or its components are the divisor.$(p)WARNING: Never divide by zero!",
+        "div.2": "As such:$(li)With two numbers, combines them into their quotient.$(li)With a number and a vector, removes the number and divides each element of the vector by it.$(li)With two vectors, combines them into their $(l:https://www.mathsisfun.com/algebra/vectors-cross-product.html)cross product/$.$(br2)In the first and second cases, the second-from-the-top of the stack is divided by the top of the stack.$(p)WARNING: Never divide by zero!",
         
         "abs.1": "Compute the absolute value or length.",
         "abs.2": "Replaces a number with its absolute value, or a vector with its length.",
         
         "pow.1": "Perform exponentiation or vector projection.",
-        "pow.2": "With two numbers, combines them by raising the first to the power of the second.$(li)With a number and a vector, removes the number and raises each component of the vector to the number's power.$(li)With two vectors, combines them into the $(l:https://en.wikipedia.org/wiki/Vector_projection)vector projection/$ of the top of the stack onto the second-from-the-top.$(br2)In the first and second cases, the first argument or its components are the base, and the second argument or its components are the exponent.",
+        "pow.2": "With two numbers, combines them by raising the first to the power of the second.$(li)With a number and a vector, removes the number and raises each component of the vector to the number's power.$(li)With two vectors, combines them into the $(l:https://en.wikipedia.org/wiki/Vector_projection)vector projection/$ of the second-from-the-top onto the top of the stack.$(br2)In the first and second cases, the first argument or its components are the base, and the second argument or its components are the exponent.",
         
         floor: "\"Floors\" a number, cutting off the fractional component and leaving an integer value. If passed a vector, instead floors each of its components.",
         ceil: "\"Ceilings\" a number, raising it to the next integer value if it has a fractional component. If passed a vector, instead ceils each of its components.",
@@ -1792,7 +1884,7 @@
       },
       
       "consts.const/": {
-        "null": "Adds the $(l:casting/influences)$(thing)Null/$ influence to the top of the stack.",
+        "null": "Adds the $(thing)Null/$ influence to the top of the stack.",
         "true": "Adds $(thing)True/$ to the top of the stack.",
         "false": "Adds $(thing)False/$ to the top of the stack.",
         
@@ -1807,6 +1899,7 @@
           tau: "Adds τ, the radial representation of a complete circle, to the stack.",
           pi: "Adds π, the radial representation of half a circle, to the stack.",
           "e": "Adds $(italic)e/$, the base of natural logarithms, to the stack.",
+          phi: "Adds φ, the golden ratio, to the stack. This is the ratio between two values such that (A+B)/A = A/B.",
         },
       },
       
@@ -1839,7 +1932,7 @@
       },
       
       logic: {
-        bool_coerce: "Convert an argument to a boolean. The number $(thing)0/$, $(l:casting/influences)$(thing)Null/$, False, and the empty list become False; everything else becomes True.",
+        bool_coerce: "Convert an argument to a boolean. The number $(thing)0/$, $(thing)Null/$, False, the vector (0, 0, 0), and the empty list become False; everything else becomes True.",
         bool_to_number: "Convert a boolean to a number; True becomes $(thing)1/$, and False becomes $(thing)0/$.",
         not: "If the argument is True, return False; if it is False, return True.",
         or: "Returns True if at least one of the arguments are True; otherwise returns False.",
@@ -1855,13 +1948,13 @@
       },
       
       entities: {
-        get_entity: "Transform the position on the stack into the entity at that location (or $(l:casting/influences)$(thing)Null/$ if there isn't one).",
+        get_entity: "Transform the position on the stack into the entity at that location (or $(thing)Null/$ if there isn't one).",
         "get_entity/": {
-          animal: "Transform the position on the stack into the animal at that location (or $(l:casting/influences)$(thing)Null/$ if there isn't one).",
-          monster: "Transform the position on the stack into the monster at that location (or $(l:casting/influences)$(thing)Null/$ if there isn't one).",
-          item: "Transform the position on the stack into the dropped item at that location (or $(l:casting/influences)$(thing)Null/$ if there isn't one).",
-          player: "Transform the position on the stack into the player at that location (or $(l:casting/influences)$(thing)Null/$ if there isn't one).",
-          living: "Transform the position on the stack into the living creature at that location (or $(l:casting/influences)$(thing)Null/$ if there isn't one).",
+          animal: "Transform the position on the stack into the animal at that location (or $(thing)Null/$ if there isn't one).",
+          monster: "Transform the position on the stack into the monster at that location (or $(thing)Null/$ if there isn't one).",
+          item: "Transform the position on the stack into the dropped item at that location (or $(thing)Null/$ if there isn't one).",
+          player: "Transform the position on the stack into the player at that location (or $(thing)Null/$ if there isn't one).",
+          living: "Transform the position on the stack into the living creature at that location (or $(thing)Null/$ if there isn't one).",
         },
         
         zone_entity: "Take a position and maximum distance on the stack, and combine them into a list of all entities near the position.",
@@ -1878,9 +1971,26 @@
           not_living: "Take a position and maximum distance on the stack, and combine them into a list of non-living entities near the position.",
         },
       },
-      
+
+      types: {
+        type_equals: "Compare the given iotas and push whether they are of the same type.",
+        type_not_equals: "Compare the given iotas and push whether they are of different types.",
+        "compare_block/": {
+          lenient: "Compare the blocks specified by the given vectors and push whether they are of the same type. Two $(l:items/edified#hexcasting:cut_edified_plank_variants)$(item)Edified Stairs/$ will always compare as equal regardless of their shape or if they are waterlogged.",
+          strict: "Compare the blocks specified by the given vectors and push whether they appear to be identical. Two placed $(l:items/edified#hexcasting:cut_edified_plank_variants)$(item)Edified Stairs/$ will only compare as equal if they appear exactly the same.",
+          remarks: "Nature seems a bit arbitrary as to when blocks appear identical to each other. Placed $(l:items/slate)$(item)Slates/$ appear identical if they face the same direction and share waterlogging state, even if they have different patterns written to them. Similarly, chests appear identical if their outward appearance is the same, even if their contents differ."
+        },
+        compare_entity: "Compare the given entities and push whether they are of the same type.",
+        "compare_item/": {
+          lenient: "Compare the items represented or held by the given entities and push whether they are the same type of item. Two $(l:items/focus)$(item)Foci/$ will always compare as equal.",
+          strict: "Like $(l:patterns/types#hexcasting:compare_item/lenient)$(action)Sorter's Distillation/$, but push whether they are identical items. Two $(l:items/focus)$(item)Foci/$ only compare as identical if they hold the same iota and have $(l:patterns/spells/cyclevariant)$(thing)the same appearance/$.",
+          "remarks.title": "On Item Holders",
+          remarks: "The way Nature interprets an entity given to $(l:patterns/types#hexcasting:compare_item/lenient)$(action)Sorter's Dstl./$ or $(l:patterns/types#hexcasting:compare_item/strict)$(action)Stacking Dstl./$ depends on its type:$(li)Item entities resolve to the items they represents$(li)Item frames resolve to the item they contain, and mishap if they are empty$(li)Players resolve to the item they are currently holding, prioritizing their primary hand"
+        },
+      },
+
       lists: {
-        index: "Remove the number at the top of the stack, then replace the list at the top with the nth element of that list (where n is the number you removed). Replaces the list with $(l:casting/influences)$(thing)Null/$ if the number is out of bounds.",
+        index: "Remove the number at the top of the stack, then replace the list at the top with the nth element of that list (where n is the number you removed). Replaces the list with $(thing)Null/$ if the number is out of bounds.",
         slice: "Remove the two numbers at the top of the stack, then take a sublist of the list at the top of the stack between those indices, lower bound inclusive, upper bound exclusive. For example, the 0, 2 sublist of [0, 1, 2, 3, 4] would be [0, 1].",
         append: "Remove the top of the stack, then add it to the end of the list at the top of the stack.",
         unappend: "Remove the iota on the end of the list at the top of the stack, and add it to the top of the stack.",
@@ -1900,24 +2010,32 @@
       
       patterns_as_iotas: {
         "1": "One of the many peculiarities of this art is that $(italic)patterns themselves/$ can act as iotas-- I can even put them onto my stack when casting.$(br2)This raises a fairly obvious question: how do I express them? If I simply drew a pattern, it would hardly tell Nature to add it to my stack-- rather, it would simply be matched to an action.",
-        "2": "Fortunately, Nature has provided me with a set of $(l:casting/influences)influences/$ that I can use to work with patterns directly.$(br2)In short, $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ lets me add one pattern to the stack, and $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ let me add a whole list.",
-        escape: {
-          "1": "To use $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$, I draw it, then another arbitrary pattern. That second pattern is added to the stack.",
+        "2": "Fortunately, Nature has provided me with a set of special patterns that I can use to work with other patterns directly.$(br2)In short, $(l:patterns/patterns_as_iotas#hexcasting:runtime_escape)$(action)Contemplation/$ and $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ let me add one pattern to the stack, $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ let me add a whole list, and $(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)Evanition/$ lets me undo mistakes during the creation of such a list.",
+        runtime_escape: {
+          "1": "To use $(l:patterns/patterns_as_iotas#hexcasting:runtime_escape)$(action)Contemplation/$, I draw it, then another arbitrary pattern. That second pattern is added to the stack.",
           "2": "One may find it helpful to think of this as \"escaping\" the pattern onto the stack, if they happen to be familiar with the science of computers.$(br2)The usual use for this is to copy the pattern to a $(l:items/scroll)$(item)Scroll/$ or $(l:items/slate)$(item)Slate/$ using $(l:patterns/readwrite#hexcasting:write)$(action)Scribe's Gambit/$, and then perhaps decorating with them.",
         },
         parens: {
-          "1": "Drawing $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$ makes my drawing of patterns act differently, for a time. Until I draw $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Retrospection/$, the patterns I draw are saved. Then, when I draw $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$, they are added to the stack as a list iota.",
+          "1": "Drawing $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspection/$ makes my drawing of patterns act differently, for a time. Until I draw $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$, the patterns I draw are saved. Then, when I draw $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$, they are added to the stack as a list iota.",
           "2": "If I draw another $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Introspection/$, it'll still be saved to the list, but I'll then have to draw $(italic)two/$ $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospections/$ to get back to normal casting.",
         },
-        undo: "Finally, if I make a mistake while drawing patterns inside $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Intro-/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ I can draw $(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)Evanition/$ to remove the last pattern that I drew from the pattern list that is being constructed.",
+        undo: "Finally, if I make a mistake while drawing patterns inside $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Intro-/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$, I can draw $(l:patterns/patterns_as_iotas#hexcasting:undo)$(action)Evanition/$ to remove the last pattern that I drew from the pattern list that is being constructed.",
+        escape: "Similar to $(l:patterns/patterns_as_iotas#hexcasting:runtime_escape)$(action)Contemplation/$, but acts even when drawn between $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Intro-/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$. This can \"escape\" other patterns that work between $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Intro-/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$, putting them into the list without any other effects.",
         further_notes: {
           title: "Further Notes",
-          "1": "I can escape the special behavior of $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Intro-/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ by drawing a $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ before them, which will simply add them to the list without affecting which the number of $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospections/$ I need to return to casting.$(br2)If I draw two $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Considerations/$ in a row while $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)introspecting/$, it will add a single $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ to the list.",
+          "1": "Because $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ acts immediately within $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Intro-/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$, I need to draw two of them if I want to actually put $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ into a pattern list. The first $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ escapes the special behavior of the second, allowing it to go into the list.$(br2)$(l:patterns/patterns_as_iotas#hexcasting:runtime_escape)$(action)Contemplation/$, on the other hand, only needs to be drawn once no matter the depth.",
           "2": "If an iota other than a pattern is present in a list to be executed by $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$ or any other meta-evaluation pattern, it will normally result in a mishap. However, this can be avoided using the patterns described in this section.$(br2)Just as with pattern iotas, the patterns described here can be used to \"escape\" $(o)any other$() kind of iota, causing it to be pushed to the stack when something tries to evaluate it instead of causing a mishap.",
-          "3": "This technique may be useful if I want a _Hex to be able to reference a specific iota, such as a complicated vector or an entity reference, without having to construct or obtain it each time.$(br2)The process of getting such an iota into a list of patterns in the first place may be somewhat involved. The simplest method would be to draw a placeholder pattern when assembling the list, and then make use of $(l:patterns/lists#hexcasting:replace)$(action)Surgeon's Exaltation/$ to replace it with my desired iota.",
+          "3": "This technique may be useful if I want a _Hex to be able to reference a specific iota, such as a complicated vector or an entity reference, without having to construct or obtain it each time.$(br2)To get such an iota into a list of patterns in the first place, I can either use $(l:patterns/advanced_escaping#hexcasting:read_into_parens)$(action)Interjection/$ while creating the list, or draw a placeholder pattern and then use $(l:patterns/lists#hexcasting:replace)$(action)Surgeon's Exaltation/$ to replace it once the list has been created.",
         },
       },
-      
+
+      advanced_escaping: {
+        "1": "$(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Intro-/$ and $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$ are very useful, but when building complex _Hexes I may need more advanced techniques.$(br2)This section describes such techniques: $(l:patterns/advanced_escaping#hexcasting:read_into_parens)$(action)Interjection/$ lets me insert iotas directly into an in-progress list, while $(l:patterns/advanced_escaping#hexcasting:open_n_parens)$(action)Meditation/$ and $(l:patterns/advanced_escaping#hexcasting:close_all_parens)$(action)Recollection/$ let me start and finish the list creation process with arbitrary levels of nesting depth.",
+        read_into_parens: "Only works while $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)introspecting/$. Reads an iota from my offhand, and adds it to the in-progress list. For iotas other than patterns, I may need to $(l:patterns/patterns_as_iotas#iota_embedding)$(action)take steps/$ to avoid a mishap when executing the list.",
+        open_n_parens: "Removes a number from the stack, then acts as though I'd drawn that many $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspections/$. Treated as a normal pattern while $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)introspecting/$, so nesting this may require $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)tricks/$ to draw extra $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospections/$.",
+        close_all_parens: "Works like $(l:patterns/patterns_as_iotas#hexcasting:close_paren)$(action)Retrospection/$, but closes $(italic)all/$ open $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)Introspections/$ at once. The number of layers closed, along with the list of saved patterns, are then added to the stack.",
+      },
+
       readwrite: {
         "1": "This section deals with the storage of $(thing)Iotas/$ in a more permanent medium. Nearly any iota can be stored to a suitable item, such as a $(l:items/focus)$(item)Focus/$ or $(l:items/spellbook)$(item)Spellbook/$, and read back later. Certain items, such as an $(l:items/abacus)$(item)Abacus/$, can only be read from.$(br2)Iotas are usually read and written from the other hand, but it is also possible to read and write with an item when it is sitting on the ground as an item entity, or when in an item frame.",
         "2": "There may be other entities I can interact with in this way. For example, a $(l:items/scroll)$(item)Scroll/$ hung on the wall can have its pattern read off of it.$(br2)However, it seems I am unable to save a reference to another player, only me. I suppose an entity reference is similar to the idea of a True Name; perhaps Nature is helping to keep our Names out of the hands of enemies. If I want a friend to have my Name I can make a $(l:items/focus)$(item)Focus/$ for them.",
@@ -1930,25 +2048,25 @@
         writable: "If I could save an iota into the item in my other hand, returns True. Otherwise, returns False.",
         "writable/entity": "Like $(l:patterns/readwrite#hexcasting:writable)$(action)Assessor's Reflection/$, but the writability of an entity is checked instead of my other hand.",
         "local.title": "The Ravenmind",
-        local: "Items are not the only places I can store information, however. I am also able to store that information in the _media of the _Hex itself, much like the stack, but separate. Texts refer to this as the $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$. It holds a single iota, much like a $(l:items/focus)$(item)Focus/$, and begins with $(l:casting/influences)$(thing)Null/$ like the same. It is preserved between iterations of $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$, but only lasts as long as the _Hex it's a part of. Once I stop casting, the value will be lost.",
+        local: "Items are not the only places I can store information, however. I am also able to store that information in the _media of the _Hex itself, much like the stack, but separate. Texts refer to this as the $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$. It holds a single iota, much like a $(l:items/focus)$(item)Focus/$, and begins with $(thing)Null/$ like the same. It is preserved between iterations of $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$, but only lasts as long as the _Hex it's a part of. Once I stop casting, the value will be lost.",
         "write/local": "Removes the top iota from the stack, and saves it to my $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$, storing it there until I stop casting the _Hex.",
         "read/local": "Copy the iota out of my $(l:patterns/readwrite#hexcasting:local)$(thing)ravenmind/$, which I likely just wrote with $(l:patterns/readwrite#hexcasting:write/local)$(action)Huginn's Gambit/$.",
       },
       
       meta: {
-        "eval.1": "Remove a pattern or list of patterns from the stack, then cast them as if I had drawn them myself with my $(l:items/staff)$(item)Staff/$ (until a $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ is encountered). If an iota is escaped with $(l:patterns/patterns_as_iotas#hexcasting:escape)$(action)Consideration/$ or $(l:patterns/patterns_as_iotas#hexcasting:open_paren)$(action)its ilk/$, it will be pushed to the stack. Otherwise, non-patterns will fail.",
-        "eval.2": "This can be $(italic)very/$ powerful in tandem with $(l:items/focus)$(item)Foci/$.$(br2)It also makes the bureaucracy of Nature a \"Turing-complete\" system, according to one esoteric scroll I found.$(br2)However, it seems there's a limit to how many times a _Hex can cast itself-- Nature doesn't look kindly on runaway spells!$(br2)In addition, with the energies of the patterns occurring without me to guide them, any mishap will cause the remaining actions to become too unstable and immediately unravel.",
-        
-        "for_each.1": "Remove a list of patterns and a list from the stack, then cast the given pattern over each element of the second list.",
-        "for_each.2": "More specifically, for each element in the second list, it will:$(li)Create a new stack, with everything on the current stack plus that element$(li)Draw all the patterns in the first list$(li)Save all the iotas remaining on the stack to a list$(br)Then, after all is said and done, pushes the list of saved iotas onto the main stack.$(br2)No wonder all the practitioners of this art go mad.",
+        "eval.1": "Remove something evaluatable (usually a pattern or an $(l:casting/whats_a_hex)entire _Hex/$) from the stack, then cast it as if I had drawn the relevant patterns with my $(l:items/staff)$(item)Staff/$.",
+        "eval.2": "This can be very powerful in tandem with $(l:items/focus)$(item)Foci/$, and according to one esoteric scroll I found it also makes the bureaucracy of Nature a \"Turing-complete\" system.$(br2)Note that any iotas other than patterns in a _Hex cast this way will cause a mishap unless $(l:patterns/patterns_as_iotas)$(action)escaped/$. In addition, with the energies of the patterns occurring without me to guide them, $(o)any/$ mishap will cause the remaining actions in the _Hex to immediately unravel.",
+
+        "for_each.1": "Remove something evaluatable and a list from the stack, then cast the evaluatable over each element of the list.",
+        "for_each.2": "More specifically, for each element in the provided list, it will:$(li)Create a new stack, with everything on the current stack plus that element$(li)Cast the evaluatable iota$(li)Save all the iotas remaining on the stack to a list$(br)Then, after all is said and done, pushes the list of saved iotas onto the main stack.$(br2)No wonder all the practitioners of this art go mad.",
         
         "halt.1": "This pattern forcibly halts a _Hex. This is mostly useless on its own, as I could simply just stop writing patterns, or put down my staff.",
         "halt.2": "But when combined with $(l:patterns/meta#hexcasting:eval)$(action)Hermes'/$ or $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambits/$, it becomes $(italics)far/$ more interesting. Those patterns serve to 'contain' that halting, and rather than ending the entire _Hex, those gambits end instead. This can be used to cause $(l:patterns/meta#hexcasting:for_each)$(action)Thoth's Gambit/$ not to operate on every iota it's given. An escape from the madness, as it were.",
         
-        "eval/cc.1": "Cast a pattern or list of patterns from the stack exactly like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$, except that a unique \"Jump\" iota is pushed to the stack beforehand. ",
-        "eval/cc.2": "When the \"Jump\"-iota is executed, it'll skip the rest of the patterns and jump directly to the end of the pattern list.$(p)While this may seem redundant given $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ exists, this allows you to exit $(italic)nested/$ $(l:patterns/meta#hexcasting:eval)$(action)Hermes'/$ invocations in a controlled way, where Charon only allows you to exit one.$(p)The \"Jump\" iota will apparently stay on the stack even after execution is finished... better not think about the implications of that.",
-        
-        "thanatos.1": "Adds the number of patterns a _Hex is still capable of evaluating to the stack. This is reduced by one for each pattern cast by the _Hex."
+        "eval/cc.1": "Cast something evaluatable from the stack exactly like $(l:patterns/meta#hexcasting:eval)$(action)Hermes' Gambit/$, except that a unique \"Jump\" iota is pushed to the stack beforehand. ",
+        "eval/cc.2": "When the \"Jump\"-iota is executed, it'll jump directly to the end of the evaluatable, skipping any remaining actions.$(p)While this may seem redundant given $(l:patterns/meta#hexcasting:halt)$(action)Charon's Gambit/$ exists, this allows you to exit $(italic)nested/$ $(l:patterns/meta#hexcasting:eval)$(action)Hermes'/$ invocations in a controlled way, where Charon only allows you to exit one.$(p)The \"Jump\" iota will apparently stay on the stack even after execution is finished... better not think about the implications of that.",
+
+        "thanatos.1": "It seems there is a limit to how many patterns can be evaluated within a single _Hex. I can use this pattern to deterime how many patterns remain before I reach this limit.",
       },
       
       circle_patterns: {
@@ -2012,15 +2130,15 @@
       },
       
       hexcasting_spell: {
-        basics: "These three spells each create an $(l:items/hexcasting)$(thing)item that casts a _Hex./$$(br)They all require me to hold the empty item in my off-hand, and require two things: the list of patterns to be cast, and an entity representing a dropped stack of $(l:items/amethyst)$(item)Amethyst/$ to form the item's battery.$(br2)See $(l:items/hexcasting)this entry/$ for more information.",
+        basics: "These three spells each create an $(l:items/hexcasting)$(thing)item that casts a _Hex./$$(br)They all require me to hold the empty item in my off-hand, and require two things: the list of iotas (usually patterns) to be cast, and an entity representing a dropped stack of $(l:items/amethyst)$(item)Amethyst/$ to form the item's battery.$(br2)See $(l:items/hexcasting)this entry/$ for more information.",
         "craft/cypher": "Costs about one $(l:items/amethyst)$(item)Charged Amethyst/$.",
         "craft/trinket": "Costs about five $(l:items/amethyst)$(item)Charged Amethysts/$.",
         "craft/artifact": "Costs about ten $(l:items/amethyst)$(item)Charged Amethysts/$.",
         
-        "recharge.1": "Recharge a _media-containing item in my other hand. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$.",
+        "recharge.1": "Recharge a _media-containing item in my other hand. Costs about one $(l:items/amethyst)$(item)Amethyst Shard/$ per item.",
         "recharge.2": "This spell is cast in a similar method to the crafting spells; an entity representing a dropped stack of $(l:items/amethyst)$(item)Amethyst/$ is provided, and recharges the _media battery of the item in my other hand.$(br2)This spell $(italic)cannot/$ recharge the item farther than its original battery size.",
         
-        "erase.1": "Clear a _Hex-containing item in my other hand. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
+        "erase.1": "Clears _Hex-containing or iota-containing items in my other hand. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$ per item.",
         "erase.2": "The spell will also void all the _media stored inside the item, releasing it back to Nature and returning the item to a perfectly clean slate. This way, I can re-use $(l:items/hexcasting)$(item)Trinkets/$ I have put an erroneous spell into, for example.$(br2)This also works to clear a $(l:items/focus)$(item)Focus/$ or $(l:items/spellbook)$(item)Spellbook/$ page, unsealing them in the process.",
       },
       
@@ -2030,23 +2148,23 @@
         
         "sentinel/create": "Summons my $(l:patterns/spells/sentinels)$(thing)sentinel/$ at the given position. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
         "sentinel/destroy": "Banish my $(l:patterns/spells/sentinels)$(thing)sentinel/$, and remove it from the world. Costs a negligible amount of _media.",
-        "sentinel/get_pos": "Add the position of my $(l:patterns/spells/sentinels)$(thing)sentinel/$ to the stack, or $(l:casting/influences)$(thing)Null/$ if it isn't summoned. Costs a negligible amount of _media.",
-        "sentinel/wayfind": "Transform the position vector on the top of the stack into a unit vector pointing from that position to my $(l:patterns/spells/sentinels)$(thing)sentinel/$, or $(l:casting/influences)$(thing)Null/$ if it isn't summoned. Costs a negligible amount of _media.",
+        "sentinel/get_pos": "Add the position of my $(l:patterns/spells/sentinels)$(thing)sentinel/$ to the stack, or $(thing)Null/$ if it isn't summoned. Costs a negligible amount of _media.",
+        "sentinel/wayfind": "Transform the position vector on the top of the stack into a unit vector pointing from that position to my $(l:patterns/spells/sentinels)$(thing)sentinel/$, or $(thing)Null/$ if it isn't summoned. Costs a negligible amount of _media.",
       },
       
       colorize: "I must be holding a $(l:items/pigments)$(item)Pigment/$ in my other hand to cast this spell. When I do, it will consume the dye and permanently change my mind's coloration (at least, until I cast the spell again). Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
       
-      cycle_variant: "Certain items I create seem oddly receptive to the influence of _media. By holding a $(l:items/hexcasting)$(item)Cypher/$, $(l:items/hexcasting)$(item)Trinket/$, $(l:items/hexcasting)$(item)Artifact/$, $(l:items/focus)$(item)Focus/$, or $(l:items/spellbook)$(item)Spellbook/$ in my other hand, I can use this spell to change the appearance of the item. Costs about one $(l:items/amethyst)$(item)Amethyst Dust/$.",
+      cycle_variant: "Certain items I create seem oddly receptive to the influence of _media. By holding a $(l:items/hexcasting)$(item)Cypher/$, $(l:items/hexcasting)$(item)Trinket/$, $(l:items/hexcasting)$(item)Artifact/$, $(l:items/focus)$(item)Focus/$, or $(l:items/spellbook)$(item)Spellbook/$ in my other hand, I can use this spell to change the appearance of the item. Costs a negligible amount of _media.",
       
       flights: {
         "1": "Although it seems that true, limitless flight is out of my grasp, I have nonetheless found some methods of holding one in the sky, each with their respective drawbacks.$(br2)All forms produce a shimmer of excess _media; as the spell gets closer to ending, the sparks are shot through with more red and black.",
         "2": "Other forms of flight do exist, of course. For example, a combination of $(l:patterns/spells/basic#hexcasting:add_motion)$(action)Impulse/$ and $(l:patterns/spells/nadirs#hexcasting:potion/levitation)$(action)Blue Sun's Nadir/$ has been used since antiquity for a flight of sorts.$(br2)I've also heard tell of a thin membrane worn on the back that allows the ability to glide. From my research, I believe the Great spell $(l:patterns/great_spells/altiora)$(action)Altiora/$ may be used to mimic it.",
         
         "range.1": "A flight limited in its range.",
-        "range.2": "The second argument is a horizontal radius, in meters, in which the spell is stable. Moving outside of that radius will end the spell, dropping me out of the sky. As long as I stay inside the safe zone, however, the spell lasts indefinitely. An additional shimmer of _media marks the origin point of the safe zone. $(br2)Costs about 1 $(l:items/amethyst)$(item)Amethyst Dust/$ per meter of safety.",
+        "range.2": "The second argument is a horizontal radius, in meters, in which the spell is stable. Moving outside of that radius will end the spell, dropping me out of the sky. As long as I stay inside the safe zone, however, the spell lasts indefinitely. An additional shimmer of _media marks the origin point of the safe zone. $(br2)Costs about 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per meter of safety, though any radius less than 1 meter will still cost 2 $(l:items/amethyst)$(item)Amethyst Dust/$.",
         
         "time.1": "A flight limited in its duration.",
-        "time.2": "The second argument is an amount of time in seconds for which the spell is stable. After that time, the spell ends and I am dropped from the sky. $(br2)It is relatively expensive at about 1 $(l:items/amethyst)$(item)Amethyst Shard/$ per second of flight; I believe it is best suited for travel.",
+        "time.2": "The second argument is an amount of time in seconds for which the spell is stable. After that time, the spell ends and I am dropped from the sky. $(br2)Costs about 2 $(l:items/amethyst)$(item)Amethyst Dust/$ per second of flight; I believe it is best suited for travel.",
         
         // Putting this in this category instead of elsewhere -- see sentinel chapter also containing some reflections/nonspells
         "can_fly.1": "Returns whether the given player is under the effects of $(l:patterns/spells/flight#hexcasting:flight/range)Anchorite's/$ or $(l:patterns/spells/flight#hexcasting:flight/time)Wayfarer's Flight/$.",
@@ -2070,8 +2188,8 @@
       },
       
       "teleport/great": {
-        "1": "Far more powerful than $(l:patterns/spells/basic#hexcasting:blink)$(action)Blink/$, this spell lets me teleport nearly anywhere in the entire world! There does seem to be a limit, but it is $(italic)much/$ greater than the normal radius of influence I am used to.",
-        "2": "The entity will be teleported by the given vector. Curiously, this vector seems to be an offset, not an absolute position in the world; for example, if I use $(l:patterns/consts#hexcasting:const/vec/x)$(action)Vector Reflection +X/$, the entity will end up precisely one block east of its original position. No matter the distance, it always seems to cost about ten $(l:items/amethyst)$(item)Charged Amethyst/$.$(br2)The transference is not perfect, and it seems when teleporting something as complex as a player, their inventory doesn't $(italic)quite/$ stay attached, and tends to splatter everywhere at the destination. In addition, the target will be forcibly removed from anything inanimate they are riding or sitting on ... but I've read scraps that suggest animals can come along for the ride, so to speak.",
+        "1": "Far more powerful than $(l:patterns/spells/basic#hexcasting:blink)$(action)Blink/$, this spell lets me teleport an entity to anywhere in the entire world! No matter the distance, it always seems to cost about ten $(l:items/amethyst)$(item)Charged Amethyst/$.",
+        "2": "The provided vector is an offset, not an absolute position in the world; for example, if I use (1, 0, 0), the entity will end up precisely one block east of its original position.$(br2)Unfortunately, it seems that when teleporting myself, I'm unable to remain perfectly focused. This can cause some of my items to splatter out of my inventory on arrival.$(br2)I should also note that the target will be forcibly removed from anything inanimate they are riding ... but I've read scraps that suggest animals can come along for the ride, so to speak.",
       },
       
       zeniths: {
