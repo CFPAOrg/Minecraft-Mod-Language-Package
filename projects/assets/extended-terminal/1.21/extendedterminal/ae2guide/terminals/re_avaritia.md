@@ -15,7 +15,7 @@ item_ids:
 
 # Re:Avaritia Crafting Terminal
 
-<et:condition load="Re-Avaritia">
+<myotus:condition load="re-avaritia">
 
 
 <GameScene zoom={4} interactive={true}>
@@ -66,4 +66,4 @@ item_ids:
     </Row>
 </Column>
 
-</et:condition>
+</myotus:condition>

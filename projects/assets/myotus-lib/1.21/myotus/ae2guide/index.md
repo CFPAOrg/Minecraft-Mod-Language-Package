@@ -1,13 +1,19 @@
 ---
 navigation:
-  title: "Myotus AE2 Guide"
+  title: Myotus
   position: 80
 ---
 
 # Myotus
-Small but powerful library for AE2 mod development.
 
-## In-Game Feature
-- Support ViewCell
-- Tabbed Terminal Config View
-- Custom Terminal Upgrade Slot
+Myotus is a small library for extending Applied Energistics 2 terminals.
+
+This GuideMe section focuses on conveniences that are useful to players.
+
+## Myotus Features
+
+<CategoryIndex category="myotus features"></CategoryIndex>
+
+## Myotus Items
+
+<CategoryIndex category="myotus items"></CategoryIndex>
