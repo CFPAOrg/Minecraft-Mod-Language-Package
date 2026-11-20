@@ -1,0 +1,45 @@
+{
+  "name": "Inventory Holder",
+  "sortnum": 2,
+  "category": "justdirethings:machines",
+  "icon": "justdirethings:inventory_holder",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "The Inventory Holder is essential a super advanced Armor Stand!$(br2)When placed in the world, it acts sort of like a chest, simply right click to access the inventory.  You'll notice it has a UI matching your player's inventory - with slots for the Hotbar, items, Armor, and even your offhand!"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Initially you can insert whatever you like into the inventory. Once an item is placed into the inventory, you can control-click on it to 'save' that item, including its stack size.$(br2)By doing this, you've now applied a filter to that slot, ensuring that only items of that type can fit there. If you want this filter to apply NBT filtering, toggle Compare NBT with the button on the top right."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "When you shift click into the inventory, the following logic will apply in this order:$(br2)$(li)Attempt to find a matching filter, and insert there.$(li)Attempt to insert into the same slot in the inventory as it was in the players (For example, top right corner to top right corner).$(li)Finally, insert as normal (starting with top left corner)."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "If you toggle on 'Filtered Items Only' via the button on the top right, items will not be allowed to be inserted into 'unfiltered' slots.  This means that if you attempt to put an item into a slot without a filter, it won't be allowed.$(br2)If you toggle on 'Compare Stack Sizes', the filtered slots will only accept up to their saved stack size."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "On the top left, there are buttons to control how pipes, hoppers, etc can interact with this machine.$(br2)When Filtered Items Only is enabled, it will only allow you to pipe into slots with a matching filter, and 'Compare Stack sizes' works as above for insert.$(br2)When extracting, slots with a filter applied will be ignored, and Compare Stack Sizes determines if extracting will try to match the filter's stack size."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The 'Show Fake Player' button on the top left will toggle the rendered player above the block.$(br2)Ctrl+Shift Clicking one of the hotbar slots in the UI will place a red border around that slot. This determines which inventory slot is rendered in the fake player's 'main hand'.  This is purely cosmetic."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Towards the bottom of the UI is a Pull Items and Push Items button.  Push Items will attempt to insert all the items in your inventory into the block, and match the filter slots you've defined.$(br2)Note: The 'filtered items only' and 'compare stack sizes' buttons on the top right of the UI are respected when you push.$(br2)Pull Inventory will pull items out of the block, and place them in your inventory."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "The swap inventory button attempts to swap each inventory slot in your player's inventory with the matching inventory slots in the block's inventory.$(br2)It is recommended to do this with minimal filtering, otherwise items won't be able to switch over, however you are welcome to configure this in any way you like, feel free to experiment with the different options!"
+    },
+    {
+      "type": "patchouli:crafting",
+      "title": "Inventory Holder",
+      "recipe": "justdirethings:inventory_holder"
+    }
+  ]
+}
