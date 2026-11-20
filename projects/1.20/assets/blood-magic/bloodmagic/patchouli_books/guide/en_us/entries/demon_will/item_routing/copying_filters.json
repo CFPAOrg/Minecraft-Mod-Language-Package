@@ -1,0 +1,29 @@
+{
+  "name": "Editing Filters",
+  "icon": "minecraft:writable_book",
+  "category": "bloodmagic:demon_will/item_routing",
+  "pages":[
+    {
+      "type": "patchouli:text",
+      "text": "If you are configuring a large number of $(thing)filters$(), or want to expand your existing filter setups, simply place between two and 9 filters into a crafting table to copy the filter in slot one onto all the other filters."
+    },
+    {
+      "type": "bloodmagic:manual_recipe",
+          "input1": "bloodmagic:itemrouterfilterexact{Items: [{Slot: 0b, id: \"minecraft:leather\", Count: 1b, tag: {stackSize: 1}}], \"button:blackwhitelist\": 0}",
+          "input2": "bloodmagic:itemrouterfilterexact",
+          "input9": "bloodmagic:itemrouterfilterexact",
+          "output": "bloodmagic:itemrouterfilterexact#3{Items: [{Slot: 0b, id: \"minecraft:leather\", Count: 1b, tag: {stackSize: 1}}], \"button:blackwhitelist\": 0}"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "Similarly, if you want to clear a filter, place it in the crafting table on its own, like so."
+    },
+    {
+      "type": "bloodmagic:manual_recipe",
+      "input1": "bloodmagic:itemrouterfilterexact{Items: [{Slot: 0b, id: \"minecraft:leather\", Count: 1b, tag: {stackSize: 1}}], \"button:blackwhitelist\": 0}",
+      "input2": "minecraft:air",
+      "input9": "minecraft:air",
+      "output": "bloodmagic:itemrouterfilterexact"
+    }
+  ]
+}
