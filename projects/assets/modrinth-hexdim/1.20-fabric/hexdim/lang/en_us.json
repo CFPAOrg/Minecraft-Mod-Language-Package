@@ -1,0 +1,53 @@
+{
+	"hexdim.mishap.invalidenv": "Invalid Casting Environment. Try casting in a different dimension.",
+	"hexdim.iota.room": "Room Iota",
+	"hexdim.iota.permissions.execute": "Room Iota with Execute Permissions",
+	"hexdim.iota.permissions.write": "Room Iota with Write Permissions",
+	"hexdim.iota.permissions.read": "Room Iota with Read Permissions",
+
+	"hexdim.entry.dim": "Hexxy Dimensions",
+	"hexdim.page.dim.1": "When I saw $(l:greatwork/the_work)IT$().$(br)I realized it could be shaped by my will.$(br)I just need the right $(l:patterns/great_spells/dimension#hexdim:dim/create)pattern$().$(br)There also appear to be a few new mishaps I can encounter, most of which involve the room not being ready yet or no longer existing.$(br2)$(l)I shouldn't punch the walls for too long - that may draw $(thing)their$(nocolor) attention, resulting in a painful expulsion from the room.$()",
+	"hexdim.page.dim.2": "To work with this power I have developed a new iota type, which I call a $(thing)room$(). $(br)A room iota appears to give me extensive powers over an extradimensional room, which can be created and manipulated by the spells below. Note that for all of these spells, unless a media cost is specified, there is no cost at all. $(br2)To restrict the powers granted by a given room iota (such as if I want to give partial access to a friend) I have access to three permission settings (R, W, and X) all of which are enabled by default. The R permission allows me to enter the room, the W permission allows me to delete the room, and the X permission allows me to $(l:patterns/great_spells/dimension#hexdim:dim/cast/activate)transfer my casting into the room$(). These permissions can be revoked using $(l:patterns/great_spells/dimension#hexdim:dim/perm/remove)Everett's Authority$().$(br2)(If it wasn't clear, you can \"break\" the walls of a room. Doing so will deal some non-lethal damage and return you to the Overworld.)",
+
+	"hexcasting.action.hexdim:dim/create": "Everett's Exaltation",
+	"hexdim.page.dim.create": "Creates a new room for me, with the provided width, height, and depth. Costs six Charged Amethyst per block.",
+	"hexdim.page.dim.create.extend": "When I first make a room it appears I must wait for it to be \"carved\".$(br)I am unable to do anything practical in the room until I let nature carve it out.$(br2)Carving takes place at around 20 blocks per second. I can $(l:patterns/great_spells/dimension#hexdim:dim/time)figure out how many are left$() with a simple pattern.",
+
+	"hexcasting.action.hexdim:dim/kidnap": "Everett's Abduction",
+	"hexdim.page.dim.kidnap": "You are going to $(m)Brazil$(), $(m)My Domain$(), $(o)T H E   F U N   Z O N E",
+	"hexdim.page.dim.kidnap.extend": "Transports the provided entity/entities (willing or otherwise!) to the provided room, at the cost of one Amethyst Shard per entity. $(br)$(o)There is no will save. I should probally prepare countermeasures for if I find myself taken.$()",
+
+	"hexcasting.action.hexdim:dim/cast/activate": "Everett's Environment",
+	"hexdim.page.dim.cast.activate": "My own personal casting space!",
+	"hexdim.page.dim.cast.activate.extend": "Mutates my $(thing)casting environment$() for the rest of the current spell, allowing me to cast as though I was located in the provided room. While this effect is active, my $(thing)ambit$() within the room extends to the entirety of the space.$(br)Trying to cast this pattern using a room iota with the X permission disabled, or while the effect is already active, results in a $(thing)Mishap$().$(br)Also, my staff appears to actively conflict with the effect, ignoring it unless I $(l:patterns/meta#hexcasting:eval)execute a spell all at once$().",
+
+	"hexcasting.action.hexdim:dim/cast/deactivate": "Everett's Environment II",
+	"hexdim.page.dim.cast.deactivate": "Look Ma, two dimensions!",
+	"hexdim.page.dim.cast.deactivate.extend": "Undoes the current $(l:patterns/great_spells/dimension#hexdim:dim/cast/activate)mutation to my environment$().$(br)This can be useful if, for example, I want to briefly swap to my personal space to access information and then return to casting in my actual location.",
+
+	"hexcasting.action.hexdim:dim/kick": "Everett's Expulsion",
+	"hexdim.page.dim.kick": "G E T   O U T",
+	"hexdim.page.dim.kick.extend": "Expels entities from a room to the overworld. This will only function if I'm casting from within the room the entities are located in, either physically or via $(l:patterns/great_spells/dimension#hexdim:dim/cast/activate)Everett's Environment$().",
+
+	"hexcasting.action.hexdim:dim/rel/to": "Everett's Relative Prfn.",
+	"hexdim.page.dim.rel.to": "This should make things easier.",
+	"hexdim.page.dim.rel.to.extend": "Given a room and an absolute position, this will convert the position to be relative to the northwest corner of the room. Does not affect the Y coordinate of the position.$(br)This may be helpful for determining offsets within a room.",
+
+	"hexcasting.action.hexdim:dim/rel/from": "Everett's Relative Prfn. II",
+	"hexdim.page.dim.rel.from": "This should also make things easier.",
+	"hexdim.page.dim.rel.from.extend": "Given a room and a positon relative to the room's northwest corner, this will convert the position to absolute coordinates. Does not affect the Y coordinate of the position.$(br)This may be helpful when accessing block or entities within the room.$(br)Only positive relative offsets will become positions that are actually inside the room. Negative offsets will produce a position in the \"wall\" between rooms.",
+
+	"hexcasting.action.hexdim:dim/pos/set": "Everett's Location",
+	"hexdim.page.dim.pos.set": "Sets the position you arrive at when you warp into this room, relative to the northwest corner.$(br)Requires W permission on the room.",
+
+	"hexcasting.action.hexdim:dim/perm/remove": "Everett's Authority",
+	"hexdim.page.dim.perm.remove": "Disables the specified permission for this room iota. 0 refers to R, 1 refers to W, and 2 refers to X.",
+
+	"hexcasting.action.hexdim:dim/time": "Everett's Timing Prfn.",
+	"hexdim.page.dim.time": "How much longer must I wait?",
+	"hexdim.page.dim.time.extend": "Given a room iota, tells me the number of blocks remaining to be carved.$(br)This can be used to determine how much progress has been made on carving the room, and how much longer it will take to finish.",
+
+	"hexcasting.action.hexdim:dim/carved": "Everett's Carving Prfn.",
+	"hexdim.page.dim.carved": "Are we done yet?",
+	"hexdim.page.dim.carved.extend": "Given a room iota, tells me whether it is finished carving and ready to be used."
+}
