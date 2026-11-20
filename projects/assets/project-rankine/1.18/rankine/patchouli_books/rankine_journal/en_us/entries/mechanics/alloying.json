@@ -1,0 +1,138 @@
+{
+  "name": "Alloying",
+  "icon": "rankine:element",
+  "category": "rankine:mechanics",
+  "pages": [
+    {
+      "type": "text",
+      "text": "This section is meant to provide more information on why alloying is not as simple as 3 copper and 1 tin. $(br2)The percentages for alloy production allow for variability based off resource availability and comparison to real world counterparts."
+    },
+    {
+      "type": "text",
+      "text": "Alloys with a given name (such as bronze, invar, steel) should function like normal in a given crafting recipe and work with their associated forge ingot tag. A tag based crafting system is not in Project Rankine, but Craftweaker can be used to require specific composition alloys for recipes."
+    },
+    {
+      "type": "text",
+      "text": "The more important aspect about alloying however, is tool creation. Each element that can be used in alloying is given stats in the following categories: $(li)Harvest Level $(li)Durability $(li)Mining Speed $(li)Damage $(li)Attack Speed $(li)Enchantability $(li)Corrosion Resistance $(li)Heat Resistance $(li)Toughness $(li)Electric Potential"
+    },
+    {
+      "type": "text",
+      "text": "The stats can be seen using the $(l:tools/element_indexer)Element Indexer$(). For the most part the stats are additive, meaning the total durability of a tool that is 85Cu-10Sn-5Al is the durability of Cu at 85% plus the durability of Sn at 10% plus the durability of Al at 5%. There are varying formulas to calculate stats of an element at various percentages. Not all stat formulas are linear, which means there are different trade-offs to find. Use of low percentages of elements can still be very useful."
+    },
+    {
+      "type": "text",
+      "text": "Some bonuses are given to certain alloy tools in general on top of the element stats. For example, Bronze tools recieve a straight extra 47 durability. $(br2)/givealloy [player] [alloy item] \"85Cu-10Sn-5Al\" can be used to give the player an alloy ingot/tool with a specific composition. $(br2)The following pages will explain the various stats."
+    },
+    {
+      "type": "text",
+      "title": "Harvest Level",
+      "text": "Harvest level is at what tier the tool can mine. The harvest level of a tool is mostly hard coded in depending on the alloy. Within certain alloys however, adding a sufficient amount of an element can boost the level (ex: Fe in Blue Gold or Cr in Nickel Superalloy)."
+    },
+    {
+      "type": "text",
+      "title": "Durability",
+      "text": "Durability is a pretty familiar stat for tools. It is the number of uses a tool has before breaking."
+    },
+    {
+      "type": "text",
+      "title": "Mining Speed",
+      "text": "Mining speed is how fast the tool can break a block. For comparison, gold tools are the fastest in vanilla with a mining speed of 12."
+    },
+    {
+      "type": "text",
+      "title": "Damage",
+      "text": "Damage is how many hearts a tool/weapon removes on attack."
+    },
+    {
+      "type": "text",
+      "title": "Attack Speed",
+      "text": "Attack speed is how often the player can swing a tool/weapon. The attack bar indicator shows when a swing is fully off cooldown. Weapons do their maximum damage and Hammers / Crowbars can only break blocks when the cooldown is reset."
+    },
+    {
+      "type": "text",
+      "title": "Enchantability",
+      "text": "Enchantability is an in-game mechanic for determining how to apply good enchantments (fortune III) and applying multiple at once to tools. Higher numbers mean greater chance of those enchantments. The highest of vanilla tools is gold at 22, while diamond is a mere 10."
+    },
+    {
+      "type": "text",
+      "title": "Corrosion Resistance",
+      "text": "Corrosion is the degradation of materials in wet environments (ie. in water or the rain). Corrosion resistance is the chance to not consume an durability when wet. At 100%, the tool will not consume an extra durability while at 0% it is guarenteed."
+    },
+    {
+      "type": "text",
+      "title": "Heat Resistance",
+      "text": "Hot environments (like in lava or the Nether) cause materials to deform. When in these environments, heat resistnce is the chance to not consume an extra durability. At 100%, the tool will not consume an extra durability while at 0% it is guarenteed."
+    },
+    {
+      "type": "text",
+      "title": "Toughness",
+      "text": "Toughness acts like built in unbreaking. It is the chance to not consume a durability on use. It ranges from -100% to 100%, where 0% means it acts like normal and where negatives means a chance to consume two durability."
+    },
+    {
+      "type": "text",
+      "title": "Tool Efficiency",
+      "text": "Not an individual element stat. Tool efficiency refers to how worn down the tools is due to durability loss. Lower efficiency means the tool will mine slower or do less damage."
+    },
+    {
+      "type": "text",
+      "anchor": "alloy_furnace",
+      "text": "The most integral machine to be constructed. The alloy furnace allows for the creation of alloys. Alloys are used for crafting but more importantly for tool creation. $(br2)The various alloys that can be made in the Alloy Furnace are found at $(l:alloying/alloy_furnace_alloys)Alloy Furnace Alloys$() and in JEI."
+    },
+    {
+      "type": "text",
+      "text": "The alloy furnace has 6 input slots for materials and one slot for a template. The top right blue slot is for a alloy template which allows for custom automation of different alloys. See $(l:machines/template_table)Template Table$() for automation details. The fuel slot and output slot are similar to a standard furnace. The 6 remaining slots are the inputs for various materials. See $(l:alloying/alloying)NotesAbout Alloying$() for explanation on materials."
+    },
+    {
+      "type": "text",
+      "text": "The input inventory can contain duplicates and inputs can be placed in any order. The furnace will also calculate and display the output before inserting fuel. If a valid recipe is detected and fuel is present the furnace will start."
+    },
+    {
+      "type": "text",
+      "text": "The output alloy will have NBT data containg the percentages of the materials used to create it. This means the same alloy created with various percentages can be used differently and will not stack, however, they are the same item and will still work for generic crafting recipes. This means it is possible to have crafting recipes require specific percentage alloys."
+    },
+    {
+      "type": "crafting",
+      "recipe": "rankine:alloy_furnace"
+    },
+    {
+      "type": "text",
+      "anchor": "induction_furnace",
+      "text": "The Induction Furnace functions the same way as the $(l:machines/alloy_furnace)Alloy Furnace$(), with the exception of requiring Power Cells. Higher tier power cells increase the speed of the machine. See JEI or $(l:alloying/induction_furnace_alloys)Induction Furnace Alloys$()."
+    },
+    {
+      "type": "crafting",
+      "recipe": "rankine:induction_furnace"
+    },
+    {
+      "type": "text",
+      "text": "The Material Testing Table allows you to view the properties of both alloys and elements through the use of various tools (subject to change)."
+    },
+    {
+      "type": "crafting",
+      "recipe": "rankine:material_testing_table"
+    },
+    {
+      "type": "text",
+      "title": "Stat Viewing (1)",
+      "text": "$(li)Durability -> Piston $(li)Mining Speed -> Speedometer $(li)Harvest Level -> Hardness Tester $(li)Enchantability -> Lapis Lazuli $(li)Attack Damage -> Grindstone $(li)Attack Speed -> Grindstone"
+    },
+    {
+      "type": "text",
+      "title": "Stat Viewing (2)",
+      "text": "$(li)Corrosion Resistance -> Water Bucket $(li)Heat Resistance -> Flint and Steel/Lava Bucket $(li)Knockback Resistance -> Shield $(li)Enchantments -> Mercury"
+    },
+    {
+      "type": "text",
+      "anchor": "template_table",
+      "text": "In order to automate the $(l:machines/alloy_furnace)Alloy Furnace$() an alloy template can be placed in the top blue slot. To craft an alloy template, place paper and black dye in the top slots. Then, place materials into the first three slots as if it were the alloy furnace. When there is an acceptable recipe, a template will show up in the output slot."
+    },
+    {
+      "type": "text",
+      "text": "The template can be removed and only paper and dye are consumed. The $(l:machines/induction_furnace)Induction Furnace$() can be automated in a similar way. That alloy template is created using purple dye instead of black and can accept up to 5 materials."
+    },
+    {
+      "type": "crafting",
+      "recipe": "rankine:template_table"
+    }
+  ]
+}
