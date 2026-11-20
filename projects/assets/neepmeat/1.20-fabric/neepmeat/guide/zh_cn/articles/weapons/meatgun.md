@@ -1,21 +1,24 @@
 ---
 id: meatgun
-lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol
+lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol, meatweapons:long_gun, meatweapons:meatgun_staff, meatweapons:tinker_table, meatweapons:ammunition_generator
 ---
 
 # 肉质武器
 
 *主要是肉制作的，还处处跟肉沾边的武器该叫啥呢？*
 
-肉质武器是模块化工具与武器系统。
+肉质武器是一类模块化工具与武器。
 
-肉质武器的制作以基座模块起始，而后可在改装台处安装其他模块。每个模块都有一定数量的槽位，可用于继续承载模块。模块的安装需要一定量的复杂度。
+\columns[fit=second]{肉质武器的制作以基座模块起始，而后可在改装台处安装其他模块。每个模块都有一定数量的槽位，可用于继续承载模块。模块的安装需要一定量的复杂度。
+}{\item_render{meatweapons:tinker_table}}
 
 # 键位绑定
 
 肉质武器有两种攻击方式，称第一攻击和第二攻击。这两个键位分别与“使用物品/放置方块”和“攻击/摧毁”一致。
 
 使用瞄具瞄准可让精准度增加50%。此功能只在主手持有肉质武器且潜行时生效。
+
+# 使用方法
 
 ## 双持
 
@@ -59,7 +62,9 @@ lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol
 
 ## 弹药构装器
 
-随时间消耗代谢底物以产出弹药。每2秒，该器官即会消耗1单位的代谢底物，并产出1单位物品支持的弹药。
+\item_render[height=30]{meatweapons:ammunition_generator}
+
+此植入物会随时间消耗代谢底物以产出弹药。每2秒，该器官即会消耗1单位的代谢底物，并产出1单位物品支持的弹药。
 
 使用肉质武器对储罐右击（或按下R），即可填入代谢底物；也可选择在物品栏中用食物物品右击肉质武器。
 

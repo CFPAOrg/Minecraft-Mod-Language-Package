@@ -5,7 +5,9 @@ lookup: neepmeat:death_blades
 
 # 处死用扇刃
 
+处死用扇刃是获取组织浆液的必需器件，不够高效但可用。
 
+\item_render[height=30]{neepmeat:tissue_slurry_bucket}
 
 ## 使用方法
 

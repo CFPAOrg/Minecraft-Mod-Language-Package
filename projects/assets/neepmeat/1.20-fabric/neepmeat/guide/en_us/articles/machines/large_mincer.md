@@ -5,7 +5,8 @@ lookup: neepmeat:mincer
 
 # Mincer
 
-The Mincer provides a compact means of converting substrate organisms into Tissue Slurry.
+\columns[fit=second]{The Mincer provides a compact means of converting substrate organisms into Tissue Slurry.
+}{\item_render{neepmeat:mincer}}
 
 ## Usage
 
