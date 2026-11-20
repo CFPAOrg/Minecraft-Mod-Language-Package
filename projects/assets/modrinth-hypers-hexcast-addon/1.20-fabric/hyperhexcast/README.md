@@ -1,0 +1,1 @@
+[见主文档](/projects/assets/modrinth-hypers-hexcast-addon/1.20/hyperhexcast)
