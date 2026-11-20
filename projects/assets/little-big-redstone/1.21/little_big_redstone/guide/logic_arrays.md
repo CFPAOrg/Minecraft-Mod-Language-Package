@@ -59,8 +59,8 @@ item_ids:
 	</PaddedBox>
 </FloatingColumn>
 
-Logic arrays can hold [logic](logic/introduction.md) and [Redstone Bits](redstone_bits.md) to save on inventory space
-and allow for easy access when building your circuits.
+Logic arrays can hold [logic](logic/introduction.md), [Redstone Bits](redstone_bits.md), and
+[Sticky Notes](sticky_notes.md) to save on inventory space and allow for easy access when building your circuits.
 
 ### Inventory
 

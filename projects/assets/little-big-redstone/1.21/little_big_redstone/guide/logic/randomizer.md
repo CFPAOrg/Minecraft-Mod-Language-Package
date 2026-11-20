@@ -12,6 +12,11 @@ item_ids:
 
 # Randomizer
 
+<FloatingColumn width="100" align="right">
+	### Analog
+	Randomizers yield an output signal value equal to the input signal value.
+</FloatingColumn>
+
 <RecipeFor id="randomizer" />
 
 The randomizer can have anywhere between 1 and 10 outputs, however only one output can be ON at a time. When the input

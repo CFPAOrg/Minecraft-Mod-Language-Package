@@ -13,6 +13,9 @@ item_ids:
 # XOR Gate
 
 <FloatingColumn width="100" align="right">
+	### Analog
+	XOR Gates will yield an output signal equal to the greatest input signal.
+
 	### Truth Table
 	<TruthTable inputs="2" outputs="1">
 		<TruthState input="0,0" output="0" />
