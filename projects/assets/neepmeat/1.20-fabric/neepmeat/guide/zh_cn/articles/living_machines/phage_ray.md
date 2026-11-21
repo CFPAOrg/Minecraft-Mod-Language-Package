@@ -36,9 +36,9 @@ lookup: neepmeat:phage_ray, neepmeat:extractor
 偏航角：0°为北，90°为西，-90°为东。
 俯仰角：0°为水平，-90°为垂直向上，90°为垂直向下。
 
-通常而言，相较于手动设置俯仰角和偏航角，使用目标位置（`Target pos`）端口会更便捷。该端口接受包含形式为`@(X Y Z)`坐标的字符串，也即和PLC使用的格式相同。收到数据时，射线炮即会瞄准该位置。
+通常而言，相较于手动设置俯仰角和偏航角，使用目标位置（`Target pos`）端口会更便捷。该端口接受包含形式为`@(X Y Z)`坐标的字符串，也即和IMC使用的格式相同。收到数据时，射线炮即会瞄准该位置。
 
-\columns[fit=second]{通过PLC和`AREA3`指令，可让吞噬射线炮自动挖掘大片区域。
+\columns[fit=second]{通过IMC和`AREA3`指令，可让吞噬射线炮自动挖掘大片区域。
 }{\item_render[height=30]{neepmeat:plc}}
 
 ## 采石场示例

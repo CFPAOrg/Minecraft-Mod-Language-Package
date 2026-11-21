@@ -58,7 +58,7 @@ lookup: meatweapons:basic_pistol, meatweapons:meatgun_pistol, meatweapons:long_g
 
 # 核心植入物
 
-除去模块之外，肉质武器还接受各类植入物。这些植入物的工作方式与其他实体和物品植入物一致。可通过PLC的`COMBINE`指令进行植入。
+除去模块之外，肉质武器还接受各类植入物。这些植入物的工作方式与其他实体和物品植入物一致。可通过IMC的`COMBINE`指令进行植入。
 
 ## 弹药构装器
 

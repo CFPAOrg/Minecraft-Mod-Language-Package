@@ -5,7 +5,7 @@ lookup: neepmeat:builder
 
 # Builder
 
-\columns[fit=second]{The Builder is a robot that can place and break blocks, controllable by a PLC. It has a base station, which gives access to its inventory and shows its currently selected slot.
+\columns[fit=second]{The Builder is a robot that can place and break blocks, controllable by an IMC. It has a base station, which gives access to its inventory and shows its currently selected slot.
 }{\item_render{neepmeat:builder}}
 
 ## Usage
@@ -50,7 +50,7 @@ robot @(1 2 3)
 selitem "minecraft:dirt"
 
 # The pattern string can also be read from the stack:
-"minecraft:dirt" .selitem -
+"minecraft:dirt" .selitem _
 
 # Place a dirt block
 @(2, 2, 3) .bplace

@@ -76,7 +76,7 @@ wait_item @(1 2 3 U), "minecraft:bone", 10
 
 THORD's compile time evaluation allows the creation of custom flow control constructs. 
 
-This program demonstrates how THORD's if-else-then construct is implemented.
+This program demonstrates how THORD's if-else-endif construct is implemented.
 
 ```
 :i pcphead
@@ -107,7 +107,7 @@ This program demonstrates how THORD's if-else-then construct is implemented.
   - dup neg .inc ; 
   postpone cpbif ; # backpatch bif
   postpone cphead blank ; # jmp placeholder
-  -1 # tell then to backpatch jmp
+  -1 # tell endif to backpatch jmp
 ;
 
 # Test the words
@@ -116,5 +116,5 @@ if1
   .say "yes" ; 
 else1
   .say "no" ;
-endif1g
+endif1
 ```

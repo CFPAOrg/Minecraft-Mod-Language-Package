@@ -7,7 +7,7 @@ lookup: neepmeat:pfplc
 
 \centering{*Programmable Floating Point Logic Controller*}
 
-\columns[fit=second]{The PFPLC performs logic and floating point maths using NEEPBus inputs and outputs. Unlike the PLC, the PFPLC can respond to inputs in real time. However, lacks the ability to interface directly with manufacturing systems. 
+\columns[fit=second]{The PFPLC performs logic and floating point maths using NEEPBus inputs and outputs. Unlike the IMC, the PFPLC can respond to inputs in real time. However, lacks the ability to interface directly with manufacturing systems. 
 It is useful as a replacement for large amounts of redstone logic, or to perform complex calculations.
 }{\item_render{neepmeat:pfplc}}
 
@@ -52,9 +52,9 @@ out0 = 2 * in0 + 1
 
 ## Booleans
 
-The canonical value of 'true' in the PFPLC is 1, unlike in the PLC which uses -1.
+The canonical value of 'true' in the PFPLC is 1, unlike in the IMC which uses -1.
 
-Similar rules to the PLC apply though. Anything that is not 0 is considered 'true', and 0 is considered 'false'.
+Similar rules to the IMC apply though. Anything that is not 0 is considered 'true', and 0 is considered 'false'.
 
 A number can be converted to its boolean equivalent using the `bool` function.
 

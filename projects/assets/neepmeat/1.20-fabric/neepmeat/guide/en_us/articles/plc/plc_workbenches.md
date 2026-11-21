@@ -2,9 +2,9 @@
 id: plc_workbenches
 ---
 
-# PLC Workbenches
+# IMC Workbenches
 
-Workbenches allow items and entities to be modified by a PLC via an actuator.
+Workbenches allow items and entities to be modified by an IMC via an actuator.
 
 ## Examples:
 

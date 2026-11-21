@@ -21,6 +21,6 @@ Production of eggs can be temporarily disabled with a redstone signal.
 Eggs can be moved in standard ways, such as with water streams and pistons. They can also be picked up as items by hitting them. 
 
 - Immersion in blood will allow eggs to hatch. 
-- Injecting blood directly using a PLC will trigger immediate hatching.
+- Injecting blood directly using an IMC will trigger immediate hatching.
 
 \columns{\item_render[height=30]{neepmeat:blood_bucket}}{\item_render[height=30]{neepmeat:plc}}

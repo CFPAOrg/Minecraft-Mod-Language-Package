@@ -28,17 +28,23 @@ How a Process Interface spends its time:
 
 1. Wait for a craft request.
 2. Wait for the ingredients to arrive via the rear face.
-3. When all ingredients have arrived, emit a PLC interrupt.
+3. When all ingredients have arrived, emit an IMC interrupt.
 4. Wait for the result to arrive via a side face.
 5. Eject the result via the rear face.
 
-## PLC Interaction
+### With Fabricators
 
-The Process Interface can emit interrupt requests that can be listened for by a PLC.
+\columns[fit=first]{\item_render[height=18]{neepmeat:fabricator}}{If the 'Use Fabricator' checkbox is enabled, a Process Interface will be able to automatically change the crafting recipe of a Fabricator that it faces.}
+
+To enter a crafting recipe in a Process Card, fill out the 3x3 grid on the left, or use EMI to autofill a recipe.
+
+## IMC Interaction
+
+The Process Interface can emit interrupt requests that can be listened for by an IMC.
 
 For a recipe, an interrupt will be emitted after *all the ingredients for a recipe have arrived*.
 
-The following program registers an interrupt for the Process Interface at (1, 2, 3) and waits for an interrupt to be emitted. As no label is provided to `IHANDLER` (note the _), the PLC will not branch to another position when an interrupt is received.
+The following program registers an interrupt for the Process Interface at (1, 2, 3) and waits for an interrupt to be emitted. As no label is provided to `IHANDLER` (note the _), the IMC will not branch to another position when an interrupt is received.
 
 ```
 ihandler @(1 2 3 U) _
@@ -53,7 +59,7 @@ restart
 
 ### Memory
 
-When PLC interrupts and the request queue are enabled, a Process Interface records and queues the batch size and requested item ID. These can be accessed with the `EXTFETCH` instruction.
+When IMC interrupts and the request queue are enabled, a Process Interface records and queues the batch size and requested item ID. These can be accessed with the `EXTFETCH` instruction.
 
 Make sure to use `EXTFETCH` each time an interrupt is emitted, otherwise the queue will fill up.
 

@@ -84,15 +84,15 @@ word1
 可借此编写宏，以规避普通词的（微量）运行时开销。
 
 ```
-# This will push 123 to the PLC'S data stack. [1]
+# This will push 123 to the IMC'S data stack. [1]
 :i imm2 postpone 123 ; ;
 
-: word2 imm2 ;
+: word2 imm2 . ;
 
 # Pushes 123 and prints it at runtime [2]
 word2
 ```
- [1] 将123压入PLC的数据栈
+ [1] 将123压入IMC的数据栈
  [2] 在运行时压入123并打印
 
 # :NONAME

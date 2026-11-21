@@ -4,7 +4,7 @@ id: thord_stack
 
 # The Stack
 
-The stack is how a PLC stores numbers that are currently in use by a program. It is a last-in-first-out data structure. This means that the last number to go on the stack will be the first one that can be taken off it. 
+The stack is how an IMC stores numbers that are currently in use by a program. It is a last-in-first-out data structure. This means that the last number to go on the stack will be the first one that can be taken off it. 
 
 Consider it like a stack of papers. You can add more paper and take paper off, but you can't easily take or add paper from the middle or the bottom.
 

@@ -9,7 +9,7 @@ id: obscene_weight
 
 -- BEGIN RECORD
 
-*An obscene weight is a filthy bundle of various things, including some kind of tarry. It'll allow you to stay in the bog for extended periods. Merely holding it is not enough, it needs to become part of you permanently. But whatever, you volunteered.*
+*An obscene weight is a filthy bundle of various things, including some kind of tarry. It'll allow you to stay in the bog for extended periods. Merely holding it is not enough, it needs to become part of you permanently. But, whatever, you volunteered.*
 
 *When it is time to leave, the mass can be removed with an Implant Manager and Surgery Platform, but understand that part of it will stay with you forever.*
 

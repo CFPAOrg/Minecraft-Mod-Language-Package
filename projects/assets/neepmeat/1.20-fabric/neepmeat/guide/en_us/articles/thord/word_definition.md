@@ -78,10 +78,10 @@ POSTPONE will apply to everything between it and the next ';'.
 This allows the creation of macros without the (minor) runtime overhead of a normal word.
 
 ```
-# This will push 123 to the PLC'S data stack.
+# This will push 123 to the IMC'S data stack.
 :i imm2 postpone 123 ; ;
 
-: word2 imm2 ;
+: word2 imm2 . ;
 
 # Pushes 123 and prints it at runtime
 word2

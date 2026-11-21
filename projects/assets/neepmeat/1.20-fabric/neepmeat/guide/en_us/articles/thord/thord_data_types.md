@@ -4,7 +4,7 @@ id: thord_data_types
 
 # Data Types in THORD
 
-The PLC's stack can hold various different data types. Some data types can be converted into other ones with special words.
+The IMC's stack can hold various different data types. Some data types can be converted into other ones with special words.
 
 ## INT
 

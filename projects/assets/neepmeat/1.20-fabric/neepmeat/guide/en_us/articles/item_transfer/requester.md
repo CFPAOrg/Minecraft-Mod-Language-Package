@@ -18,6 +18,6 @@ To operate, the rear face needs to connect to a pipe network that contains a Pip
 
 ## Control
 
-Requests can be triggered either with a redstone signal, or by sending any message to the Input port.
+Requests can be triggered either with a redstone signal, or by sending the desired number of items message to the Input port.
 
 NEEPBus inputs can be configured by clicking the 'configure NEEPBus' button in the GUI.

@@ -5,7 +5,7 @@ lookup: neepmeat:builder
 
 # 建造机器人
 
-\columns[fit=second]{建造机器人是能放置和破坏方块的机器人，可受PLC控制。建造机器人需搭载在基站处，基站能访问机器人的物品栏，且会显示其当前选择的槽位。
+\columns[fit=second]{建造机器人是能放置和破坏方块的机器人，可受IMC控制。建造机器人需搭载在基站处，基站能访问机器人的物品栏，且会显示其当前选择的槽位。
 }{\item_render{neepmeat:builder}}
 
 ## 使用方法
@@ -50,7 +50,7 @@ robot @(1 2 3)
 selitem "minecraft:dirt"
 
 # The pattern string can also be read from the stack: [6]
-"minecraft:dirt" .selitem -
+"minecraft:dirt" .selitem _
 
 # Place a dirt block [7]
 @(2, 2, 3) .bplace

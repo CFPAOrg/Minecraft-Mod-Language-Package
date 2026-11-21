@@ -4,9 +4,9 @@ id: thord_inline
 
 # 内联NEEPASM
 
-THORD的基础词并未包含所有PLC能执行的操作，因此THORD也可以执行NEEPASM的指令。
+THORD的基础词并未包含所有IMC能执行的操作，因此THORD也可以执行NEEPASM的指令。
 
-此特性可让PLC执行制造操作，如`COMBINE`、`IMPLANT`、`MOVE`等。
+此特性可让IMC执行制造操作，如`COMBINE`、`IMPLANT`、`MOVE`等。
 
 内联的操作必须位于行首，或必须加上`.`前缀。
 

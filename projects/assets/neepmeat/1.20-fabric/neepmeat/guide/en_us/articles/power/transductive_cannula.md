@@ -7,7 +7,7 @@ icon: neepmeat:transducer
 # Transductive Cannula
 
 \columns[fit=second]{The Transductive Cannula imbues a working substrate with received heat, producing Transient Ichor.
-}{\item_render[height=50]{neepmeat:transducer}}
+}{\item_render{neepmeat:transducer}}
 
 ## Usage
 

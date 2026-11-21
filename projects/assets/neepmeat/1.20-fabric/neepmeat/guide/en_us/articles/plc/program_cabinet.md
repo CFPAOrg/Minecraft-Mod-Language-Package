@@ -5,31 +5,31 @@ lookup: neepmeat:program_cabinet, neepmeat:program_card
 
 # Program Disks
 
-\columns[fit=second]{Program disks can be used to transfer programs (and source code) form one PLC to another.
+\columns[fit=second]{Program disks can be used to transfer programs (and source code) form one IMC to another.
 }{\item_render[height=50]{neepmeat:program_card}}
 
-To save a PLC's current program to a disk, click on the PLC while holding the disk.
+To save an IMC's current program to a disk, click on the IMC while holding the disk.
 
-To load a disk's program onto a PLC, sneak-click the PLC while holding it.
+To load a disk's program onto an IMC, sneak-click the IMC while holding it.
 
 Clicking anywhere else while holding a disk allows changing the program's name. The program's name can be used to look up and run the entire program.
 
 # Program Cabinet
 
-\columns[fit=second]{A program cabinet is a program memory module. It provides some memory segments that can contain executable instructions for the PLC.
+\columns[fit=second]{A program cabinet is a program memory module. It provides some memory segments that can contain executable instructions for the IMC.
 
-PLCs can access program disks stored in adjacent cabinets, and can execute their contents.
+IMCs can access program disks stored in adjacent cabinets, and can execute their contents.
 }{\item_render[height=50]{neepmeat:program_cabinet}}
 
 Each cabinet has 30 slots, each of which can hold a single program. Each slot takes up a single memory segment.
 
-When using multiple cabinets, it is important to configure their memory offsets so that they do not overlap. Each segment must be uniquely addressable, and problems will arise if a PLC encounters multiple segments with the same offset.
+When using multiple cabinets, it is important to configure their memory offsets so that they do not overlap. Each segment must be uniquely addressable, and problems will arise if an IMC encounters multiple segments with the same offset.
 
 # Executing Programs in a Cabinet
 
 In this context, a *symbol* is an execution address that can be looked up from its name. 
 
-When a program is stored in a cabinet, all the words defined in that program (and the program's name) become accessible symbols to the connected PLC. The execution address of a word can be looked up using that word's name.
+When a program is stored in a cabinet, all the words defined in that program (and the program's name) become accessible symbols to the connected IMC. The execution address of a word can be looked up using that word's name.
 
 The list of symbols that a program contains can be seen in the tooltip of the program card.
 
@@ -46,7 +46,7 @@ The following program defines the word `print_hello`. It has been saved to a pro
 : print_hello "Hello" . ; 
 ```
 
-`print_hello` can be executed by a PLC's main program like this:
+`print_hello` can be executed by an IMC's main program like this:
 
 ```
 "print_hello" dycall
@@ -67,9 +67,9 @@ As a program's name is also an exported symbol, an entire program can be execute
 ret
 ```
 
-Note the `RET` instruction at the end of the program. This will instruct the PLC to return to the original point where the program was *called*.
+Note the `RET` instruction at the end of the program. This will instruct the IMC to return to the original point where the program was *called*.
 
-Now the PLC's main program can locate and call the symbol in the same way as the previous example:
+Now the IMC's main program can locate and call the symbol in the same way as the previous example:
 
 ```
 "print_hello" dycall

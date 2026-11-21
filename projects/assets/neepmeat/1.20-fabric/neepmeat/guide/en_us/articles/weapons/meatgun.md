@@ -58,7 +58,7 @@ The only base module that can support drill heads.
 
 # Core Implants
 
-Meatguns can have implants as well as modules. These work in the same way as other entity or item implants. They can be installed with a PLC using the `COMBINE` instruction.
+Meatguns can have implants as well as modules. These work in the same way as other entity or item implants. They can be installed with an IMC using the `COMBINE` instruction.
 
 ## Ammunition Fabricator
 

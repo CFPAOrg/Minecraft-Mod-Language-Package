@@ -6,7 +6,7 @@ lookup: neepmeat:data_cable, neepmeat:slider, neepmeat:slanted_slider, neepmeat:
 
 NEEPBus is a multi-controller serial bus. It consists of multiple participants connected via data cables.
 
-Participants in a network can exchange integer data using alphanumeric addresses.
+Participants in a network can exchange number or string data using alphanumeric addresses.
 
 Strings and numbers can be sent in NEEPBus messages.
 
@@ -14,7 +14,7 @@ Strings and numbers can be sent in NEEPBus messages.
 
 Data is exchanged between ports. Participants can have multiple ports.
 
-- Each port has its own alphanumeric address.
+- Each port has its own configurable alphanumeric address.
 - Output ports will send data to input ports with a matching address.
 - Multiple input ports can share the same address, and will all receive the same data.
 
@@ -27,7 +27,7 @@ A participant can have input and output ports.
 
 Unlike redstone, a read or write operation is necessary for data to propagate.
 
-For example, a slider will write its value to the target address when the value is changed by a player. It will not perform a write operation when a new port with a matching address is connected to the network.
+For example, a Slider will write its value to the target address when the value is changed by a player. It will not perform a write operation when a new port with a matching address is connected to the network, as there is no way for the slider to know this has happened.
 
 # Examples
 

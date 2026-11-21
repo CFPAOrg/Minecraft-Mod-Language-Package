@@ -16,7 +16,7 @@ Advanced routing is typically done with *requests*. A request contains three pie
 - The number of items to be requested.
 - The destination pipe of the request.
 
-Some blocks that can send requests include the Requester and the PLC (via various instructions);.
+Some blocks that can send requests include the Requester and the IMC (via various instructions);.
 
 \columns{\item_render[height=30]{neepmeat:requester}}{\item_render[height=30]{neepmeat:plc}}
 

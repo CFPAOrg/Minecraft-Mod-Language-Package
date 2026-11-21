@@ -16,7 +16,7 @@ id: item_pipe_routing
 - 请求的物品数量。
 - 物品的发送目的管道。
 
-部分方块能发出请求，如请求器和PLC（有多种适用指令）。
+部分方块能发出请求，如请求器和IMC（有多种适用指令）。
 
 \columns{\item_render[height=30]{neepmeat:requester}}{\item_render[height=30]{neepmeat:plc}}
 

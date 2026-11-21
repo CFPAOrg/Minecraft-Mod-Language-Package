@@ -4,7 +4,7 @@ id: interrupts
 
 # Interrupts
 
-Interrupts allow a PLC to stop its current activity when a certain external event happens.
+Interrupts allow an IMC to stop its current activity when a certain external event happens.
 
 
 ```

@@ -5,7 +5,7 @@ lookup: neepmeat:crucible
 
 # 熬脂盆
 
-\columns[fit=second]{腺体马铃薯中经过启智的酶类能够精炼特定矿物的肉质本性，将其化作一层轻盈的脂肪。因此，熬脂即是矿物提取的高效手段。此物质也能从肉中分离出脂肪成分。
+\columns[fit=second]{腺体马铃薯中经过启智的酶类能够精炼特定矿物的肉质本性，将其化作一层轻盈的脂肪。它也能从肉中分离出脂肪成分。
 }{\item_render{neepmeat:crucible}}
 
 # 使用方法

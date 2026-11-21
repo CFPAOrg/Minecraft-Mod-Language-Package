@@ -16,7 +16,7 @@ The Drill Chassis is a modular mining tool. By default, it has a Pneumatic Motor
 - Compressor Minecart
 - Compressor Scutter - follows the player that placed it
 
-The drill's core implant can be replaced with a Tool Organism using a PLC. This allows the drill to run on reconstituted food sources, such as Animal Feed and Reconstituted Food.
+The drill's core implant can be replaced with a Tool Organism using an IMC. This allows the drill to run on reconstituted food sources, such as Animal Feed and Reconstituted Food.
 
 \columns{\item_render[height=30]{neepmeat:pneumatic_motor}}{\item_render[height=30]{neepmeat:living_tool_implant}}
 

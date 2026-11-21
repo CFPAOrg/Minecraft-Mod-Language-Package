@@ -3,23 +3,26 @@ id: plc
 lookup: neepmeat:plc
 ---
 
-# 可编程逻辑控制器
+# IMC
 
-\columns[fit=second]{可编程逻辑控制器（Programmable Logic Controller，PLC）是专为工业自动化设计的计算机，能够运行用户编写的程序，也可进入交互模式以逐次执行指令。机载时钟速度快如闪电，有足足20Hz。
+\centering{*集成制造计算机*}
+\centering{*Integrated Manufacturing Computer*}
+
+\columns[fit=second]{IMC是专为工业自动化设计的计算机，能够运行用户编写的程序，也可进入交互模式以逐次执行指令。机载时钟速度快如闪电，有足足20Hz。
 }{\item_render{neepmeat:plc}}
 
-PLC通过“操作机构”（Actuator）与世界交互。每台PLC均配备一个机器人，视作默认操作机构。
+IMC通过“操作机构”（Actuator）与世界交互。每台IMC均配备一个机器人，视作默认操作机构。
 
-右击PLC可获取其机器人的控制权。
+右击IMC可获取其机器人的控制权。
 
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/plc_interactive.png}
-\centering{处于交互模式下的PLC，其有两个展示台用于存放配方原料。}
+\centering{处于交互模式下的IMC，其有两个展示台用于存放配方原料。}
 
 ## 交互模式
 
 控制机器人时，可通过正常按键移动机器人。中键拖动可旋转摄像头。
 
-PLC具有如下两个模式：交互模式和编辑模式。当前模式可由屏幕右上角的按钮切换。
+IMC具有如下两个模式：交互模式和编辑模式。当前模式可由屏幕右上角的按钮切换。
 
 如需在交互模式中执行单条指令，应在右下角面板中选择合适的操作符。点击世界中的方块可将其加作参数。输入足量参数后，指令便会发出并执行。
 
@@ -31,7 +34,7 @@ PLC具有如下两个模式：交互模式和编辑模式。当前模式可由�
 
 ### 编程语言
 
-PLC使用两种编程语言：
+IMC使用两种编程语言：
 
 NEEPASM：简单的汇编语言。
 THORD：相较NEEPASM而言更高级的语言，具有多种便捷的流程控制结构。

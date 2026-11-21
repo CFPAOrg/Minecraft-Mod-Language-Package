@@ -56,28 +56,29 @@
 \cat{logical_operators}
 # 逻辑操作符
 
-## and
+## &&
 
-检验两参数的值是否均为true。
-
-```
-true and true -> true
-false and true -> false
-```
-
-## or
-
-检验两参数的值中是否至少有一个为true。
+逻辑与。检验两参数的值是否均为true。
 
 ```
-true and true -> true
-false and true -> true
-false and false -> false
+true && true -> true
+false && true -> false
+false && false -> false
+```
+
+## ||
+
+逻辑或。检验两参数的值中是否至少有一个为true。
+
+```
+true || true -> true
+false || true -> true
+false || false -> false
 ```
 
 ## !
 
-将参数所对应的布尔值取反。
+逻辑非。将参数所对应的布尔值取反。
 
 ```
 !true -> false
@@ -90,6 +91,12 @@ false and false -> false
 
 0对应false，所有不为0的数均对应true。
 
+```
+bool(123) -> 1
+bool(0) -> 0
+bool(-1) -> 1
+```
+
 ## unbool(x)
 
 求x的布尔值，但随即会将false转换为-1，true转换为1。
@@ -97,9 +104,9 @@ false and false -> false
 可用于根据开关位置递增或递减计数器。
 
 ```
-bool(123) -> 1
-bool(0) -> 0
-bool(-1) -> 1
+unbool(0) -> -1
+unbool(1) -> 1
+unbool(-1) -> 1
 ```
 
 \cat{special_functions}

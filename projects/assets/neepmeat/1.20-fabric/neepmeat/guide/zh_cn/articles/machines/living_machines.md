@@ -1,5 +1,6 @@
 ---
 id: living_machines
+lookup: neepmeat:living_machine_controller
 ---
 
 # 活体机器

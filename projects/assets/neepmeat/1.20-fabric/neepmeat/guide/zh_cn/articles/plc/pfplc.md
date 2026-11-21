@@ -8,7 +8,7 @@ lookup: neepmeat:pfplc
 \centering{*可编程浮点逻辑控制器*}
 \centering{*Programmable Floating Point Logic Controller*}
 
-\columns[fit=second]{PFPLC会通过NEEP总线的输入输出执行逻辑和浮点算术。与PLC不同，PFPLC能实时响应输入，却不具备与制造系统直接交互的能力。
+\columns[fit=second]{PFPLC会通过NEEP总线的输入输出执行逻辑和浮点算术。与IMC不同，PFPLC能实时响应输入，却不具备与制造系统直接交互的能力。
 它能替换大量红石逻辑元件，也可用于执行复杂的计算。
 }{\item_render{neepmeat:pfplc}}
 
@@ -53,9 +53,9 @@ out0 = 2 * in0 + 1
 
 ## 布尔值
 
-和PLC中的-1不同，PFPLC中“true”的标准值为1。
+和IMC中的-1不同，PFPLC中“true”的标准值为1。
 
-不过PLC中的规则也部分使用。所有不为0的值均视作“true”，0视作“false”。
+不过IMC中的规则也部分使用。所有不为0的值均视作“true”，0视作“false”。
 
 数可用`bool`函数转换为相应的布尔值。
 

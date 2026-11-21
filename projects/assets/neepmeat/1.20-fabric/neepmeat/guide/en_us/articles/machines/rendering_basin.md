@@ -5,7 +5,7 @@ lookup: neepmeat:crucible
 
 # Rendering Basin
 
-\columns[fit=second]{The enlightened enzymes of the Gland Potato concentrate the fleshly nature of certain minerals into a layer of ethereal fat. Thus, rendering is an efficacious form of mineral extraction. It can also separate the fatty components of flesh.
+\columns[fit=second]{The enlightened enzymes of the Gland Potato concentrate the fleshly nature of certain minerals into a layer of ethereal fat. It can also separate the fatty components of flesh.
 }{\item_render{neepmeat:crucible}}
 
 ## Usage

@@ -7,7 +7,7 @@ lookup: neepmeat:living_tool_implant
 
 \columns[fit=second]{工具生物体会赋予工具自我修复功能。
 
-可使用PLC的COMBINE操作将其嵌装至任意具有耐久度的物品。
+可使用IMC的COMBINE操作将其嵌装至任意具有耐久度的物品。
 
 }{\item_render{neepmeat:living_tool_implant}}
 

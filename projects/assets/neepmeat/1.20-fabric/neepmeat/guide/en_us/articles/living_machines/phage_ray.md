@@ -36,9 +36,9 @@ The pitch and yaw ports expect a number in degrees that corresponds to the desir
 Yaw: 0° is north, 90° is west, -90° is east.
 Pitch: 0° is horizontal, -90° is straight up, 90° is straight down.
 
-It is often more convenient to use the `target position` port, rather than setting pitch and yaw manually. This port expects a string containing coordinates of the form `@(X Y Z)`, the same format used by the PLC. When one is received, the Phage Ray will aim towards that position.
+It is often more convenient to use the `target position` port, rather than setting pitch and yaw manually. This port expects a string containing coordinates of the form `@(X Y Z)`, the same format used by the IMC. When one is received, the Phage Ray will aim towards that position.
 
-\columns[fit=second]{Using the PLC and the `AREA3` instruction, a Phage Ray can be made to automatically mine a large area of land.
+\columns[fit=second]{Using the IMC and the `AREA3` instruction, a Phage Ray can be made to automatically mine a large area of land.
 }{\item_render[height=30]{neepmeat:plc}}
 
 ## Quarry Example

@@ -19,14 +19,14 @@
 
 
     {"id": "plc_instructions", "contents": [
-      {"type": "text", "text": "PLC Instructions\n", "bold": true},
+      {"type": "text", "text": "IMC Instructions\n", "bold": true},
       {"type": "text", "text": "\nInstructions consist of an operation and a series of arguments. These arguments are positions in the world."},
       {"type": "text", "text": "\nInstructions can have a variable number of arguments. Some, such as END and RESTART have zero arguments."},
       {"type": "text", "text": "\nCertain arguments have to meet specific criteria, such as being item or fluid inventories. For example, COMBINE takes one item storage and one item workbench. If an invalid block is selected, the argument will be rejected."}
     ]},
     {"id": "neepasm", "contents": [
       {"type": "text", "text": "NEEPASM\n", "bold": true},
-      {"type": "text", "text": "NEEPASM is an assembly language for the NEEP PLC. Due to the PLC's Enlightened instruction set, the language can be slightly more user-friendly than most assembly languages."},
+      {"type": "text", "text": "NEEPASM is an assembly language for the NEEP IMC. Due to the IMC's Enlightened instruction set, the language can be slightly more user-friendly than most assembly languages."},
       {"type": "text", "text": "\nGenerally, programs are lists of instructions that are executed one after the other.\nInstructions can take a variety of arguments, such as: \n\n- Strings: \"a string\"\n- Integers: 123, 0x7B, 0b1111011\n- World targets: @(<x>, <y>, <z>, <direction>)."},
       {"type": "text", "text": "\nWorld targets represent a block in the world and are used to tell instructions where to extract or insert fluids or items."},
       {"type": "text", "text": "\nAnything occurring after a '#' character on a line is treated as a comment:\n"},
@@ -44,7 +44,7 @@
     ]},
     {"id": "stack", "contents": [
       {"type": "text", "text": "The Stack\n", "bold": true},
-      {"type": "text", "text": "The PLC has a stack for storing integers. Elements can be added and removed only from the top of the stack using the PUSH and POP instructions respectively.\nThe comparison and arithmetic instructions take their arguments directly from the stack:\n"},
+      {"type": "text", "text": "The IMC has a stack for storing integers. Elements can be added and removed only from the top of the stack using the PUSH and POP instructions respectively.\nThe comparison and arithmetic instructions take their arguments directly from the stack:\n"},
       {"type": "code", "text": "push 1  # Place 1 on the stack"},
       {"type": "code", "text": "push 2"},
       {"type": "code", "text": "add     # Add the last two entries"},

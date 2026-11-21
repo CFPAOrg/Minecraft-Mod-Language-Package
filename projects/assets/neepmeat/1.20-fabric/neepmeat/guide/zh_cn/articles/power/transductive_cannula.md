@@ -7,7 +7,7 @@ icon: neepmeat:transducer
 # 换能套管
 
 \columns[fit=second]{换能套管利用热源加热底物，以此产出瞬变浆液。
-}{\item_render[height=50]{neepmeat:transducer}}
+}{\item_render{neepmeat:transducer}}
 
 ## 使用方法
 

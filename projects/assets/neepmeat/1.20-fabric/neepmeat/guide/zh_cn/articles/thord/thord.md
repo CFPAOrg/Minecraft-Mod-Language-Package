@@ -4,7 +4,7 @@ id: thord
 
 # THORD
 
-THORD是适用于PLC的编程语言，相对于NEEPASM来说较接近高级语言。THORD的语法更为简练，且具有循环和条件语句等结构。
+THORD是适用于IMC的编程语言，相对于NEEPASM来说较接近高级语言，但仍可使用所有NEEPASM指令。THORD的语法更为简练，且具有循环和条件语句等结构。
 
 # 栈
 
@@ -22,19 +22,6 @@ THORD的栈操作比NEEPASM更简单。
  [1] 将数1、2、3、4压入栈顶，
  [2] 求总和并打印
 
-NEEPASM中同样功能的程序长成这样：
-
-```
-push 1
-push 2
-push 3
-push 4
-add
-add
-add
-say
-```
-
 # 词
 
 词是THORD的函数，其中包含可重用的操作序列。
@@ -50,3 +37,15 @@ say
 ```
  [1] 将栈顶元素加1并打印
  [2] 调用词
+
+# 内联NEEPASM
+
+THORD接受内联NEEPASM指令，也即所有IMC的制造指令均可使用。这些指令不是常规词，需要前接“.”。在行首时该符号可省略。
+
+```
+# Valid THORD [1]
+1 1 + .
+combine @(1 2 3 U) @(4 5 6 D)
+.combine @(2 2 3 U) @(4 5 6 D)
+```
+ [1] 合法的THORD

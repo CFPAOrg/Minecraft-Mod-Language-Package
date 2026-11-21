@@ -9,10 +9,12 @@ When at operating speed, the Pylon's emanations stimulate the pineal glands of n
 
 ## Usage
 
-The Pylon requires a motor facing upwards beneath it. To achieve operating speed, the motor must run at 240eJ/t or above. When at operating speed, the rotor will turn from red to purple.
+The Pylon requires a motor facing it. To achieve operating speed, the motor must run at 240eJ/t or above. When at operating speed, the rotor will turn from red to purple.
 An active Pylon within a 17 block range of an Advanced Integrator will allow its information reserves to exceed 8GeB.
 
-Efficiency can be increased by adding blocks of Meat Steel in a pyramid shape below the Pylon. This structure does not have to be solid, each extra block increase efficiency. **Up to 3 levels can be added.**
+### Power Boosting
+
+Efficiency can be increased by adding blocks of Meat Steel in a pyramid shape below the Pylon. This structure does not have to be completely solid, each extra block increase efficiency. **Up to 3 levels can be added.**
 
 ## Enlightenment
 

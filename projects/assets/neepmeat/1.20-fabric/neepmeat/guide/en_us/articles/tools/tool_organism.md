@@ -7,7 +7,7 @@ lookup: neepmeat:living_tool_implant
 
 \columns[fit=second]{The tool organism provides self-repair faculties to the tool it bonds with.
 
-It can be applied to any item with durability with a PLC using the COMBINE operation.
+It can be applied to any item with durability with an IMC using the COMBINE operation.
 
 }{\item_render{neepmeat:living_tool_implant}}
 

@@ -21,6 +21,6 @@ lookup: neepmeat:synthesiser
 生物卵可以用普通方式搬运，如水流和活塞。敲击后也可作为物品捡起。
 
 - 将其浸泡在血液中可催动其孵化。
-- 通过PLC直接向其注入血液可立即令其孵化。
+- 通过IMC直接向其注入血液可立即令其孵化。
 
 \columns{\item_render[height=30]{neepmeat:blood_bucket}}{\item_render[height=30]{neepmeat:plc}}

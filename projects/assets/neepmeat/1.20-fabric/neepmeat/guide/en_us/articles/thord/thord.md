@@ -4,7 +4,7 @@ id: thord
 
 # THORD
 
-THORD is a progamming language for the PLC at a slightly higher level than NEEPASM. It has a more concise syntax as well as constructs for loops and conditional statements.
+THORD is a progamming language for the IMC at a slightly higher level than NEEPASM, although all NEEPASM instructions are still available. It has a more concise syntax as well as constructs for loops and conditionals.
 
 # Stack
 
@@ -20,19 +20,6 @@ Consider the following program:
 1 2 3 4 + + + .
 ```
 
-In NEEPASM, the above program would look like this:
-
-```
-push 1
-push 2
-push 3
-push 4
-add
-add
-add
-say
-```
-
 # Words
 
 Words are Thord's equivalent of functions. They contain a sequence of operations that can be reused.
@@ -45,4 +32,15 @@ A word definition starts with ':' followed by the word's name. The definition is
 
 # Invoke the word
 1 aword
+```
+
+# Inline NEEPASM
+
+THORD accepts inline NEEPASM instructions so that all the IMC's crafting operations are available. Instructions are prepended by a '.' as they are different to regular words. This can be omitted at the start of a line.
+
+```
+# Valid THORD
+1 1 + .
+combine @(1 2 3 U) @(4 5 6 D)
+.combine @(2 2 3 U) @(4 5 6 D)
 ```

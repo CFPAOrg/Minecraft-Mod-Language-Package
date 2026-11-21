@@ -56,28 +56,29 @@ Tests if the first value is greater than or equal to the second.
 \cat{logical_operators}
 # Logical Operators
 
-## and
+## &&
 
-Tests if two arguments both evaluate to true.
-
-```
-true and true -> true
-false and true -> false
-```
-
-## or
-
-Tests if either of two arguments evaluate to true.
+Logical AND. Tests if two arguments both evaluate to true.
 
 ```
-true and true -> true
-false and true -> true
-false and false -> false
+true && true -> true
+false && true -> false
+false && false -> false
+```
+
+## ||
+
+Logical OR. Tests if either of two arguments evaluate to true.
+
+```
+true || true -> true
+false || true -> true
+false || false -> false
 ```
 
 ## !
 
-Inverts the boolean value of the following argument.
+Logical NOT. Inverts the boolean value of the following argument.
 
 ```
 !true -> false
@@ -90,6 +91,12 @@ Evaluates the boolean value of x (0 for false and -1 for true).
 
 0 is considered false. Any number that is not 0 is considered true.
 
+```
+bool(123) -> 1
+bool(0) -> 0
+bool(-1) -> 1
+```
+
 ## unbool(x)
 
 Evaluates the boolean value of x, but then maps it to -1 for false and 1 for true.
@@ -97,9 +104,9 @@ Evaluates the boolean value of x, but then maps it to -1 for false and 1 for tru
 Can be used for increasing or decreasing a counter based on the position of a switch.
 
 ```
-bool(123) -> 1
-bool(0) -> 0
-bool(-1) -> 1
+unbool(0) -> -1
+unbool(1) -> 1
+unbool(-1) -> 1
 ```
 
 \cat{special_functions}
