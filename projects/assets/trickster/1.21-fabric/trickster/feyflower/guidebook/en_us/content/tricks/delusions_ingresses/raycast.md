@@ -1,0 +1,44 @@
+```json
+{
+  "title": "Raycasting",
+  "icon": "minecraft:spectral_arrow"
+}
+```
+
+Raycasting tricks take either an entity or a position and a direction, and will give what the entity is looking at, 
+or what the vectors are pointing to.
+
+
+When using vectors, the first vector is interpreted as the position to start from, 
+while the second is seen as a unit vector representing the look direction.
+
+;;;;;
+
+Raycasts which target blocks may optionally be made to hit fluids if their last input is {#33ab89}True{}.
+
+
+If a raycast misses and does not hit anything of relevance within 64 blocks, $$trickster:void$$ will be given.
+
+;;;;;
+
+#<trickster:trick id="trickster:raycast_block" />
+
+Returns the position of the block that is hit.
+
+;;;;;
+
+#<trickster:trick id="trickster:raycast_entity" />
+
+Returns the entity that is hit.
+
+;;;;;
+
+#<trickster:trick id="trickster:raycast_side" />
+
+Returns a unit vector representing the side of the block that is hit.
+
+;;;;;
+
+#<trickster:trick id="trickster:raycast_pos" />
+
+Returns the exact position of where the ray intersects a block.
