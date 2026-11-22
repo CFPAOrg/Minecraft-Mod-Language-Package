@@ -1,0 +1,87 @@
+```json
+{
+  "title": "Flecks",
+  "icon": "minecraft:ghast_tear"
+}
+```
+
+*"In this world,*
+
+*I wander.*
+
+
+*In our minds,*
+
+*I carve.*
+
+
+*In their eyes,*
+
+*I behold,*
+
+
+*A beauty so fine,*
+
+*It cannot be held."*
+
+
+— Oapheli
+
+;;;;;
+
+Flecks are a method of displaying data to select observers. 
+They last for a mere second, needing to be continuously refreshed.
+
+
+All fleck-creating tricks take an identifying number, which may be used by any caster to update and overwrite the fleck. 
+The number is returned for chaining. 
+All flecks can also take an optional list of players, or a sole player, for which the fleck will display only to them.
+
+;;;;;
+
+#<trickster:trick id="trickster:draw_spell" />
+
+At the given position, with the given facing, display a spell.
+
+;;;;;
+
+#<trickster:trick id="trickster:entity_draw_spell" />
+
+Displays a spell similarly to Marketer's Ploy, but attached to an entity.
+
+;;;;;
+
+#<trickster:trick id="trickster:entity_head_draw_spell" />
+
+Displays a spell, but attached to an entity's *head*.
+
+;;;;;
+
+#<trickster:trick id="trickster:draw_line" />
+
+Draws a line between the given positions.
+
+;;;;;
+
+#<trickster:trick id="trickster:scale_fleck" />
+
+Scales an existing fleck.
+
+;;;;;
+
+#<trickster:trick id="trickster:roll_fleck" />
+
+Changes the rotation of the fleck about its facing direction.
+Only has an effect on flecks drawn with [Marketer's Ploy](*trickster:tricks/ploys/flecks@trick&trickster:draw_spell).
+
+;;;;;
+
+#<trickster:trick id="trickster:delete_fleck" />
+
+Removes any fleck with the given identifier.
+
+;;;;;
+
+#<trickster:trick id="trickster:paint" />
+
+Paints the fleck with the given color. Only works on line flecks.
