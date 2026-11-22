@@ -1,18 +1,20 @@
 ```json
 {
-  "title": "有关开裂石英晶结的笔记",
+  "title": {
+    "text": "有关开裂石英晶结的笔记",
+    "modifiers": [
+      "italic"
+    ]
+  },
   "icon": "trickster:cracked_quartz_knot",
-  "category": "trickster:mana",
-  "required_advancements": [
-    "trickster:cracked_quartz_knot"
-  ],
+  "condition": "trickster:cracked_quartz_knot",
   "ordinal": 61,
-  "trickster:page_texture": "trickster:textures/gui/white_book_note.png",
+  "book_texture_override": "trickster:white_note",
   "secret": true
 }
 ```
 
-通过[收据之技巧](^trickster:ploys/message#3)监听晶结，除去它内部的时钟外，还会给出另一个数。这个数似乎不会经常变动，只会在向晶结发送数时变化。
+通过[收据之技巧](*trickster:tricks/ploys/message@trick&trickster:message_listen)监听晶结，除去它内部的时钟外，还会给出另一个数。这个数似乎不会经常变动，只会在向晶结发送数时变化。
 
 
 对我而言，这个数为何存在仍是个迷。和石英晶结的偏移功能不一样，它不会产生任何可观察的效应。
