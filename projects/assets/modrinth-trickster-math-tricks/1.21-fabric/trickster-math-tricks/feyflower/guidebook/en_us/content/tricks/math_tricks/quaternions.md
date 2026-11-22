@@ -10,18 +10,19 @@ The following patterns regard quaternion operations.
 
 ;;;;;
 
-<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_axis|>
+
+#<trickster-math-tricks:trick id="trickster-math-tricks:quat_from_axis" />
 
 Creates a quaternion from an axis and an angle (radians).
 
 ;;;;;
 
-<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_from_comp|>
+#<trickster-math-tricks:trick id="trickster-math-tricks:quat_from_comp" />
 
 Creates a quaternion from XYZW components.
 
 ;;;;;
 
-<|trick@trickster-math-tricks:templates|trick-id=trickster-math-tricks:quat_euler|>
+#<trickster-math-tricks:trick id="trickster-math-tricks:quat_euler" />
 
 Calculates euler angles (radians) from quaternion.

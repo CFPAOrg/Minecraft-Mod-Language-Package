@@ -17,42 +17,42 @@
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:extract_x|>
+#<trickster:trick id="trickster:extract_x" />
 
 返回所给片段的X分量。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:extract_y|>
+#<trickster:trick id="trickster:extract_y" />
 
 返回所给片段的Y分量。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:extract_z|>
+#<trickster:trick id="trickster:extract_z" />
 
 返回所给片段的Z分量。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster-math-tricks:extract_w|>
+#<trickster:trick id="trickster-math-tricks:extract_w" />
 
 返回所给片段的W分量。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:normalize|>
+#<trickster:trick id="trickster:normalize" />
 
 将所给片段归一化至长度为1。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster:length|>
+#<trickster:trick id="trickster:length" />
 
 返回所给片段的长度。
 
 ;;;;;
 
-<|trick@trickster:templates|trick-id=trickster-math-tricks:squared_magnitude|>
+#<trickster:trick id="trickster-math-tricks:squared_magnitude" />
 
 返回所给片段长度的平方。

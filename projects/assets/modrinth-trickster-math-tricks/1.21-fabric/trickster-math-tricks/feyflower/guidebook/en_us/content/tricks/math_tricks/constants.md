@@ -10,20 +10,12 @@ Here you can find all the different constants that the addon defines.
 
 ;;;;;
 
-<|pattern@trickster-math-tricks:templates|pattern=6\,0\,2\,8\,5,title=Circumferential Revision|>
-
-{gray}(Scribing pattern){}
-
----
+#<trickster-math-tricks:revision id="trickster-math-tricks:pi" />
 
 Replaces the glyph with the Pi constant.
 
 ;;;;;
 
-<|pattern@trickster-math-tricks:templates|pattern=3\,4\,8\,7\,6\,3,title=Circumferential Revision|>
-
-{gray}(Scribing pattern){}
-
----
+#<trickster-math-tricks:revision id="trickster-math-tricks:quat_ident" />
 
 Replaces the glyph with the identity quaternion.
