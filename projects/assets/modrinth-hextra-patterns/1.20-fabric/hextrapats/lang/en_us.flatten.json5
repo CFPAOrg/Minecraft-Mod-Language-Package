@@ -1,5 +1,6 @@
 {
   "pages.hextrapats":{
+    "hextrapats_basics.title": "Hextra Basic Patterns",
     "hextrapats_consts.title": "Hextra Constants",
     "hextrapats_logic.title": "Hextra Logic",
     "hextrapats_nocon.title": "Non-consuming Logic",
@@ -17,6 +18,19 @@
     page: {
       consts: {
         one: "The left-hand counter-clockwise pattern adds (1, 1, 1) to the stack; the right-hand clockwise pattern adds (-1, -1, -1)."
+      },
+      basic: {
+        "raycast/": {
+          outline: "Like $(l:patterns/basics#hexcasting:raycast)$(action)Archer's Distillation/$, but is able to hit collisionless blocks like tall grass. Costs a negligible amount of _media.",
+          outaxis: "Like $(l:patterns/basics#hexcasting:raycast/axis)$(action)Architect's Distillation/$, but is able to hit collisionless blocks like tall grass. Costs a negligible amount of _media."
+        },
+        "entity/": {
+          look: {
+            angles: "Transforms an entity on the stack into the pitch and yaw of its looking direction in radians.",
+            info: "I've seen some texts mention something called $(thing)F3/$.$(br2)For yaw, north is pi, south is 0, east is -pi/2, and west is pi/2.$(br2)For pitch, pi/2 is upwards is pi/2, and downwards is -pi/2."
+          },
+          body_yaw: "Transforms an entity on the stack into the yaw of its body in radians. Yet again, mentions of $(l:patterns/hextrapats_basics#hextrapats:entity/look_angles)$(action)F3/$ turn up."
+        }
       },
       logic: {
         greater: "If the first vector is longer than the second, return True. Otherwise, return False.",
@@ -79,7 +93,8 @@
         }
       },
       vec_math: {
-        normalize: "Sets the length of the vector to one.",
+        normalize: "Sets the length of the vector to one. Does nothing if the vector is (0, 0, 0).",
+        set_length: "Sets the length of a vector. Does nothing if the vector is (0, 0, 0).",
         increment: "Increases length by 1. Does nothing if the vector is (0, 0, 0).",
         decrement: "Decreases length by 1. Does nothing if the vector is (0, 0, 0).",
         rand_vec: "Returns a unit vector facing a random direction.",
@@ -90,8 +105,8 @@
           "": "Rotates the first vector towards the direction of the second vector by the given number of radians. Mishaps if the two directions are directly opposite to each other.",
           examples: "For example:$(li)(1, 0, 0), (0, 1, 0), pi/4$(br)   \u2192 (0.71, 0.71, 0)$(li)(2, 0, 0), (0, 5, 0), pi/4$(br)   \u2192 (1.41, 1.41, 0)$(li)(1, 1, 1), (0, 5, 5), pi/6$(br)   \u2192 (0.16, 1.22, 1.22)"
         },
-        from_polar: "Creates a unit vector from two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(thing)F3/$ turn up.",
-        to_polar: "Converts a vector's direction into two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(thing)F3/$ turn up.",
+        from_polar: "Creates a unit vector from two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(l:patterns/hextrapats_basics#hextrapats:entity/look_angles)$(action)F3/$ turn up.",
+        to_polar: "Converts a vector's direction into two polar angles, pitch and yaw, in radians. +Y is up. 0 yaw is +Z, pi/2 yaw is -X. Yet again, mentions of $(l:patterns/hextrapats_basics#hextrapats:entity/look_angles)$(action)F3/$ turn up.",
         "rot_about/": {
           x: "Rotates the vector by the given angle in radians around the X axis.",
           y: "Rotates the vector by the given angle in radians around the Y axis.",
@@ -99,7 +114,7 @@
         },
         "cons_about/": {
           x: "Converts an angle in radians to a unit vector where X=0. +Z at 0 radians and +Y at pi/4 radians.",
-          y: "Converts an angle in radians to a unit vector where Y=0. +Z at 0 radians and -X at pi/4 radians. I've seen some texts related to this pattern mentioning something called $(thing)F3/$, but I couldn't figure out what that means.",
+          y: "Converts an angle in radians to a unit vector where Y=0. +Z at 0 radians and -X at pi/4 radians. Yet again, mentions of $(l:patterns/hextrapats_basics#hextrapats:entity/look_angles)$(action)F3/$ turn up.",
           z: "Converts an angle in radians to a unit vector where Z=0. -X at 0 radians and +Y at pi/4 radians."
         }
       },
@@ -124,7 +139,11 @@
           all: "Remove the iota at the top of the stack, then remove $(italic)all/$ instances of it from the list. Returns the number of removed occurrences."
         },
         swindle: "Reorders the elements of a list the same way $(l:patterns/stackmanip#hexcasting:swizzle)$(action)Swindler's Gambit/$ reorders the stack. Inputting a negative code will reorder the elements at the start instead of the end.",
-        scronglwfijspoivjqwofklcrvewb: "Shuffles the order of elements in the list."
+        scronglwfijspoivjqwofklcrvewb: "Shuffles the order of elements in the list.",
+        mask: {
+          "": "An infinite family of patterns that creates a list out of iotas on the stack based on a sequence of dips and lines.",
+          details: "Each dip represents an iota to be drawn into the list. Leftover iotas remain where they are.$(br2)The first pattern will produce an empty list when drawn.$(br2)The second pattern will make a list from the 3rd and 2nd iota on the stack.$(br2)The third pattern will take in the 7th, 5th, 4th, and 1st iota on the stack."
+        }
       },
       sets: {
         intro: "A hash set contains elements in an unordered fashion, and cannot contain duplicates. Excellent for keeping track of whether or not something exists.<br>Due to a magical process known as '$(thing)hashing/$', access is reduced to nearly O(1), relaxing the burden on Nature.",
@@ -185,6 +204,15 @@
         haha_ha_one: "Vector Reflection +1",
         eno_ah_ahah: "Vector Reflection -1",
 
+        "raycast/": {
+          outline: "Archer's Distillation II",
+          outaxis: "Architect's Distillation II"
+        },
+        "entity/": {
+          look_angles: "Sextant Decomposition",
+          body_yaw: "Sextant Purification"
+        },
+
         len_eq: "Length Equality Distillation",
         len_neq: "Length Inequality Distillation",
 
@@ -236,7 +264,8 @@
           "set/": {
             x: "Coordinate Distillation: X",
             y: "Coordinate Distillation: Y",
-            z: "Coordinate Distillation: Z"
+            z: "Coordinate Distillation: Z",
+            len: "Length Distillation"
           },
           swizzle: "Swizzling Purification"
         },
@@ -271,6 +300,7 @@
         },
         swindle_list: "Swindler's Distillation",
         scronglwfijspoivjqwofklcrvewb: "Shuffling Purification",
+        mask_list: "Birdkeeper's Gambit",
 
         "empty_set/": {
           num: "Vacant Reflection: Number Set",
@@ -311,7 +341,7 @@
           z: "Vector Rfln. Z II",
           "1": "Vector Rfln. 1 II",
           "get/x": "Coordinate Purif.: X/Y/Z",
-          "set/x": "Coordinate Dstl.: X/Y/Z",
+          "set/x": "Coordinate Dstl.: X/Y/Z"
         },
 
         increment: "Incrementation Purif.",
@@ -350,7 +380,8 @@
         swizzle: "Swizzling Purification: %s%s%s"
       },
       scientific_exp: "Scientific Purification: 10^%s",
-      duplicate_at: "Angler's Gambit: %s"
+      duplicate_at: "Angler's Gambit: %s",
+      mask_list: "Birdkeeper's Gambit: %s"
     },
     "iota.hextrapats:": {
       num_set: {

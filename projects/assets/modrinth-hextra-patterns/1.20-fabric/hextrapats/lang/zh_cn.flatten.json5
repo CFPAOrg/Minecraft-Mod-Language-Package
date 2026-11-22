@@ -6,12 +6,13 @@
     "hextrapats_vec_literals.title": "向量常量",
     "hextrapats_math.title": "咒法新增：数学",
     "hextrapats_vec_math.title": "咒法新增：向量数学",
-    "hextrapats_vecmanip.title": "向量操作",
     "hextrapats_lists.title": "咒法新增：列表",
     "hextrapats_sets.title": "哈希集合操作",
     "hextrapats_meta.title": "咒法新增：元运行",
     "hextrapats_nulls.title": "Null 转换",
     "hextrapats_stackmanip.title": "咒法新增：栈操作",
+    "hextrapats_vecmanip.title": "向量操作",
+    "hextrapats_basics.title": "咒法新增：基础图案",
   },
   hextrapats: {
     page: {
@@ -46,7 +47,6 @@
         z: "指向右后方的头部会返回 $(l:patterns/consts#hexcasting:const/vec/z)$(action)Z 轴/$上的向量。",
         "1": "向左微偏的头部会返回$(l:patterns/hextrapats_consts#hextrapats:haha_ha_one)$(action)所有 3 个分量都相等/$的向量。",
         detail: "首先，绘制前页八种图案中的一种，默认数值为 0。然后，每一画的$(italic)方向/$会以对应方式修改该数值。$(li)前方：加 1$(li)左前方：加 5$(li)右前方：加 10$(li)左后方：乘 2$(li)右后方：除以 2$(br)顺时针绘制，也即各页右图，会在绘制完成后取相反数（如左图逆时针绘制则不取）。$(p)绘制完成后会返回对应向量。",
-
         example: {
           "x10.header": "例图一",
           x10: "该图案会返回 (10, 0, 0)。",
@@ -64,10 +64,6 @@
         invert: "求所给数/向量与 -1 相乘的积。",
         increment: "递增 1。",
         decrement: "递减 1。",
-        "round/": {
-          int: "将数舍入至最近的整数。传入向量时分别舍入各分量。",
-          exact: "将第一个数舍入至最近的第二个数的倍数。传入向量时分别舍入各分量。",
-        },
         rand_zero: "返回 0（包含）到所给数（不包含）之间的随机数。",
         rand_range: "返回从第一个数（包含）到第二个数（不包含）之间的随机数。",
         scientific_exp: "求所给数/向量与 10^n 或 10^-n 相乘的积。其中 n 为尾部的长度，指数有无负号取决于图案开头更近似于$(l:patterns/math#hexcasting:mul)$(action)乘法之馏化/$还是$(l:patterns/math#hexcasting:div)$(action)除法之馏化/$。上方三图分别为 x10^1、x10^2、x10^3。下方三图分别为 x10^-1、x10^-2、x10^-3。",
@@ -77,9 +73,13 @@
           "": "以第三个值为步长，让第一个角转向第二个角。会选择最短路径。所有角均以弧度计。",
           examples: "（为方便阅读，示例中使用角度单位。）$(p)例如：$(li)90, 135, 10 → 100（起点为 90，向 135 旋转 10 度）$(li)10, 270, 30 → 340（起点为 10，向 270 旋转 35 度）$(li)300, 90, 90 → 30（起点为 300，向 90 旋转 90 度）$(li)20, 60, 180 → 60（起点为 20，向 60 旋转 180 度，并停在 60 处）",
         },
+        "round/": {
+          int: "将数舍入至最近的整数。传入向量时分别舍入各分量。",
+          exact: "将第一个数舍入至最近的第二个数的倍数。传入向量时分别舍入各分量。",
+        },
       },
       vec_math: {
-        normalize: "将向量的长度变为 1。",
+        normalize: "将向量的长度变为 1。零向量不变。",
         increment: "令长度增加 1。对 (0, 0, 0) 无效。",
         decrement: "令强度减少 1。对 (0, 0, 0) 无效。",
         rand_vec: "返回朝向随机方向的单位向量。",
@@ -90,8 +90,8 @@
           "": "将第一个向量向第二个向量旋转给定弧度。若两向量方向正好相反，则会招致事故。",
           examples: "例如：$(li)(1, 0, 0), (0, 1, 0), π/4$(br)   → (0.71, 0.71, 0)$(li)(2, 0, 0), (0, 5, 0), π/4$(br)   → (1.41, 1.41, 0)$(li)(1, 1, 1), (0, 5, 5), π/6$(br)   → (0.16, 1.22, 1.22)",
         },
-        from_polar: "以俯仰和偏航两个极坐标角生成单位向量，均以弧度计。+Y 对应上方。偏航角为 0 对应 +Z，为 π/2 对应 -X。相关文献又提到了所谓的 $(thing)F3/$。",
-        to_polar: "将向量的方向转换为俯仰和偏航两个极坐标角，均以弧度计。+Y 对应上方。偏航角为 0 对应 +Z，为 π/2 对应 -X。相关文献又提到了所谓的 $(thing)F3/$。",
+        from_polar: "以俯仰和偏航两个极坐标角生成单位向量，均以弧度计。+Y 对应上方。偏航角为 0 对应 +Z，为 π/2 对应 -X。相关文献又提到了所谓的 $(l:patterns/hextrapats_basics#hextrapats:entity/look_angles)$(action)F3/$。",
+        to_polar: "将向量的方向转换为俯仰和偏航两个极坐标角，均以弧度计。+Y 对应上方。偏航角为 0 对应 +Z，为 π/2 对应 -X。相关文献又提到了所谓的 $(l:patterns/hextrapats_basics#hextrapats:entity/look_angles)$(action)F3/$。",
         "rot_about/": {
           x: "绕 X 轴将所给向量旋转所给弧度。",
           y: "绕 Y 轴将所给向量旋转所给弧度。",
@@ -99,9 +99,10 @@
         },
         "cons_about/": {
           x: "将弧度角变为单位向量。该向量的 X 分量为 0。0 弧度对应 +Z，π/4 弧度对应 +Y。",
-          y: "将弧度角变为单位向量。该向量的 Y 分量为 0。0 弧度对应 +Z，π/4 弧度对应 -X。我曾读到过某些文献提到某种叫 $(thing)F3/$ 的东西，但我还找不出它的意义。",
+          y: "将弧度角变为单位向量。该向量的 Y 分量为 0。0 弧度对应 +Z，π/4 弧度对应 -X。相关文献又提到了所谓的 $(l:patterns/hextrapats_basics#hextrapats:entity/look_angles)$(action)F3/$。",
           z: "将弧度角变为单位向量。该向量的 Z 分量为 0。0 弧度对应 -X，π/4 弧度对应 +Y。",
         },
+        set_length: "设置向量的长度。零向量不变。",
       },
       vecmanip: {
         get: "返回向量的 X、Y 或 Z 分量。",
@@ -125,6 +126,10 @@
         },
         swindle: "重排列表的元素，方式与$(l:patterns/stackmanip#hexcasting:swizzle)$(action)骗徒之策略/$重排栈的一致。给定负值会从开头起进行重排，而非从末尾起。",
         scronglwfijspoivjqwofklcrvewb: "打乱列表各元素。",
+        mask: {
+          "": "一组无限个根据凹槽和横线的顺序来选取或不选取栈中元素组成列表的操作。",
+          details: "凹槽代表将该处元素选入列表。未选取的元素留在原地。$(br2)第一个图案绘制时会产生空列表。$(br2)第二个图案会选取栈中第三个和第二个元素组成列表。$(br2)第三个图案则会选取第七、第五、第四、第一个元素。",
+        },
       },
       sets: {
         intro: "哈希集合的各元素无顺序且不重复，很适合用于记录某物存在与否。<br>由于所谓的“$(thing)哈希/$”之魔法过程，访问其中元素的操作接近于 O(1)，能减轻自然的负担。",
@@ -177,6 +182,24 @@
           details: "第一个图案和$(l:patterns/stackmanip#hexcasting:duplicate)$(action)双子之分解/$一致。$(br2)第二个图案的头部长度为 1，即会复制栈顶元素下方的第一个元素。[1, 0] 会变为 [1, 1, 0]。$(br2)第三个图案依此类推。[2, 1, 0] 会变为 [2, 2, 1, 0]。",
         },
       },
+      basic: {
+        "raycast/": {
+          outline: "与$(l:patterns/basics#hexcasting:raycast)$(action)弓箭手之馏化/$类似，但能识别到高草丛等不具备碰撞特性的方块。消耗极少量$(media)媒质/$。",
+          outaxis: "与$(l:patterns/basics#hexcasting:raycast/axis)$(action)建筑师之馏化/$类似，但能识别到高草丛等不具备碰撞特性的方块。消耗极少量$(media)媒质/$。",
+        },
+        "entity/": {
+          look: {
+            yaw: "将栈顶实体变为其视线方向的偏航角，以弧度计。我在部分文献中读到过某种叫 $(t:与F3界面中的偏航角相同，但单位是弧度不是角度。)$(thing)F3/$ 的东西。似乎北对应 π，南对应 0，东为 -π/2，西为 π/2。",
+            pitch: "将栈顶实体变为其视线方向的俯仰角，以弧度计。向上为 π/2，向下为 -π/2。",
+            angles: "将栈顶实体变为其视线方向的俯仰角与偏航角，均以弧度计。",
+            info: "我曾读到过某些文献提到某种叫 $(thing)F3/$ 的东西。$(br2)对于偏航角，北对应 π，南对应 0，东对应 -π/2，西对应 π/2。$(br2)对于俯仰角，上为 π/2，下为 -π/2。",
+          },
+          body: {
+            yaw: "将栈顶实体变为其身体朝向的偏航角，以弧度计。相关文献又提到了所谓的 $(l:patterns/hextrapats_basics#hextrapats:entity/look.yaw)$(action)F3/$。",
+          },
+          body_yaw: "将栈顶实体变为其身体朝向的偏航角。相关文献又提到了所谓的 $(l:patterns/hextrapats_basics#hextrapats:entity/look_angles)$(action)F3/$。",
+        },
+      },
     },
   },
   hexcasting: {
@@ -184,18 +207,14 @@
       "hextrapats:": {
         haha_ha_one: "向量之精思，+1型",
         eno_ah_ahah: "向量之精思，-1型",
-
         len_eq: "长度相等之馏化",
         len_neq: "长度不等之馏化",
-
         in_range: "范围之提整",
         out_range: "范围之提整，第二型",
-
         "nulls/": {
           coalesce: "聚结之馏化",
           exec: "聚结之策略",
         },
-
         deg_to_rad: "弧度之纯化",
         rad_to_deg: "角度之纯化",
         invert: "反照之纯化",
@@ -207,7 +226,6 @@
         approach: "趋近之提整",
         angle_dist: "西塔之馏化",
         angle_approach: "转向之提整",
-
         normalize: "归一之纯化",
         rand_vec: "混沌之精思",
         vec_dist: "距离之馏化",
@@ -237,6 +255,7 @@
             x: "坐标之馏化：X",
             y: "坐标之馏化：Y",
             z: "坐标之馏化：Z",
+            len: "长度之馏化",
           },
           swizzle: "重排之纯化",
         },
@@ -244,9 +263,7 @@
           int: "舍入之纯化",
           exact: "舍入之馏化",
         },
-
         swap_vec_list: "向量之纯化",
-
         "nocon/": {
           bool_coerce: "留项之策略：占卜师",
           greater: "留项之策略：至大",
@@ -258,7 +275,6 @@
           len_eq: "留项之策略：长度相等",
           len_neq: "留项之策略：长度不等",
         },
-
         "peek/": {
           front: "演讲者之分解，第二型",
           back: "派生之分解，第二型",
@@ -271,7 +287,6 @@
         },
         swindle_list: "骗徒之馏化",
         scronglwfijspoivjqwofklcrvewb: "打乱之纯化",
-
         "empty_set/": {
           num: "空无之精思：数集合",
           vec: "空无之精思：向量集合",
@@ -283,7 +298,6 @@
         set_remove_ret: "出集合之策略",
         list_to_set: "解顺序之纯化",
         set_to_list: "赋顺序之纯化",
-
         true_halt: "阿刻戎之策略",
         false_halt: "斯堤克斯之策略",
         true_eval: "赫利俄斯之策略",
@@ -291,20 +305,25 @@
         index_for_each: "杰胡提之策略",
         main_for_each: "阿努比斯之策略",
         main_index_for_each: "拉之策略",
-
         capsizing: "翻覆之策略",
         "capsizing/copy": "翻覆之策略，第二型",
         dredging: "疏浚之策略",
         "dredging/copy": "疏浚之策略，第二型",
         duplicate_at: "渔夫之策略",
+        "raycast/": {
+          outline: "弓箭手之馏化，第二型",
+          outaxis: "建筑师之馏化，第二型",
+        },
+        "entity/": {
+          look_angles: "六分仪之分解",
+          body_yaw: "六分仪之纯化",
+        },
+        mask_list: "养鸟人之策略",
       },
-
       "book.hextrapats:": {
         haha_ha_one: "向量之精思，+1/-1型",
-
         len_eq: "长度相等之馏化",
         len_neq: "长度不等之馏化",
-
         "vec/": {
           x: "向量之精思，X第二型",
           y: "向量之精思，Y第二型",
@@ -312,11 +331,12 @@
           "1": "向量之精思，1第二型",
           "get/x": "坐标之纯化：X/Y/Z",
           "set/x": "坐标之馏化：X/Y/Z",
+          "set/": {
+            len: "长度之馏化",
+          },
         },
-
         increment: "递增之纯化",
         decrement: "递减之纯化",
-
         "nocon/": {
           bool_coerce: "留项之策略：占卜师",
           greater: "留项之策略：至大",
@@ -328,12 +348,10 @@
           len_eq: "留项之策略：长度相等",
           len_neq: "留项之策略：长度不等",
         },
-
         "peek/": {
           front: "演讲者之分解，第二型",
           back: "派生之分解，第二型",
         },
-
         "empty_set/": {
           num: "空无之精思：数集合",
           vec: "空无之精思：向量集合",
@@ -351,6 +369,7 @@
       },
       scientific_exp: "科学记数之纯化：10^%s",
       duplicate_at: "渔夫之策略：%s",
+      mask_list: "养鸟人之策略：%s",
     },
     "iota.hextrapats:": {
       num_set: {
