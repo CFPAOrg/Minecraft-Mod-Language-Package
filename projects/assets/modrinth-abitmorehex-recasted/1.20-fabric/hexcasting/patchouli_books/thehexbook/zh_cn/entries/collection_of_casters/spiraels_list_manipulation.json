@@ -1,0 +1,38 @@
+{
+  "name": "abitmorehex.entry.spirael_list",
+  "category": "hexcasting:collection_of_casters",
+  "icon": "minecraft:spruce_sign",
+  "sortnum": 0,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "abitmorehex:randomizelist",
+      "anchor": "abitmorehex:randomizelist",
+      "input": "list, optional number",
+      "output": "list",
+      "text": "移除一个列表和一个可选的数，再随机打乱列表的元素，打乱程度会受所给数限制。返回打乱后的列表。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "abitmorehex:thoughtclear",
+      "anchor": "abitmorehex:thoughtclear",
+      "input": "list, number",
+      "output": "list",
+      "text": "移除一个列表和一个正数，再移除列表中每第该数个元素，返回列表。"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "abitmorehex:thoughtclutter",
+      "anchor": "abitmorehex:thoughtclutter",
+      "input": "list, number, pattern/list",
+      "output": "list, numb/list",
+      "text": "$(br)移除一个列表、一个正整数，以及单个元素或一个元素列表。将列表中每第正整数个元素替换为所给元素。"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "替换列表若先被穷尽，则会返回改后的列表，同时返回未填补位置的数目。"
+    }
+  ]
+}
