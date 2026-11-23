@@ -64,4 +64,4 @@ One etching in three uses up the Etching Acid source block the item is in. Flowi
 
 <RecipeFor id="etching_acid_bucket"/>
 
-The [Mixer](nautec:laser_chemistry/mixer.md) makes it from Salt Water once you have one. Etching Acid is thick: you sink in it and wade slowly, and mobs path around it. The [Abyssal Pressure Forge](nautec:deep_engineering/pressure_forge.md) also runs on it.
+The [Mixer](nautec:laser_chemistry/mixer.md) makes it from Salt Water once you have one, either from a Pufferfish, Gunpowder and Bone Meal or from 2 <ItemLink id="crude_glycerin"/> and Bone Meal, a byproduct of [refining biodiesel](nautec:getting_started/combustion_dynamo.md). Etching Acid is thick: you sink in it and wade slowly, and mobs path around it. The [Abyssal Pressure Forge](nautec:deep_engineering/pressure_forge.md) also runs on it.

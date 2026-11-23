@@ -64,4 +64,4 @@ JEI将这些配方归到了物品蚀刻分类下。
 
 <RecipeFor id="etching_acid_bucket"/>
 
-获得[搅拌机](nautec:laser_chemistry/mixer.md)之后，即可用盐水制造蚀刻酸。蚀刻酸很浓稠：你会在其中下沉，而且无法在其中快速行动；生物会选择绕过它。[深渊压力锻造机](nautec:deep_engineering/pressure_forge.md)的运作需要蚀刻酸。
+获得[搅拌机](nautec:laser_chemistry/mixer.md)之后，即可用盐水制造蚀刻酸；可以用河豚、火药和骨粉，也可以用2份<ItemLink id="crude_glycerin"/>（[精炼生物柴油](nautec:getting_started/combustion_dynamo.md)的副产物）和骨粉。蚀刻酸很浓稠：你会在其中下沉，而且无法在其中快速行动；生物会选择绕过它。[深渊压力锻造机](nautec:deep_engineering/pressure_forge.md)的运作需要蚀刻酸。

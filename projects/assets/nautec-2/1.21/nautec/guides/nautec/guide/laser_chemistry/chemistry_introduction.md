@@ -66,6 +66,15 @@ A thick fluid found in <ItemLink id="oil_barrel"/>s.
 
 ***
 
+<Row>
+  <ItemImage id="biodiesel_bucket"/>
+  ### <Color id="aqua">Biodiesel</Color>
+</Row>
+
+Refined from oil and Salt in the [Mixer](mixer.md). It burns longer and hotter than oil in the [Combustion Dynamo](nautec:getting_started/combustion_dynamo.md).
+
+***
+
 ## <Color id="gold">Vials and Salt</Color>
 
 <Row>

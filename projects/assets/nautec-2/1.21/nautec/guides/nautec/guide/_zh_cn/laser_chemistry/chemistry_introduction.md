@@ -66,6 +66,15 @@ item_ids:
 
 ***
 
+<Row>
+  <ItemImage id="biodiesel_bucket"/>
+  ### <Color id="aqua">生物柴油</Color>
+</Row>
+
+在[搅拌机](mixer.md)中自原油和盐精炼而来。这种燃料在[燃烧发电机](nautec:getting_started/combustion_dynamo.md)中比原油燃烧得长，温度也较高。
+
+***
+
 ## <Color id="gold">试管与盐</Color>
 
 <Row>
