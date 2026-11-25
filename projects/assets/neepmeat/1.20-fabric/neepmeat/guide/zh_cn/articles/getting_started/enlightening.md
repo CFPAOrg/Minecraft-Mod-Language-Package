@@ -10,7 +10,7 @@ lookup: neepmeat:pedestal
 
 ## 使用方法
 
-启智台座须通过数据线缆与融变生物机成熟体连接。
+启智台座须通过数据线缆与成体融变生物机连接。
 
 \columns{\item_render[height=30]{neepmeat:pedestal}}{\item_render[height=30]{neepmeat:data_cable}}
 

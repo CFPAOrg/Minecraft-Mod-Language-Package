@@ -24,7 +24,7 @@ lookup: neepmeat:storage_driver, neepmeat:merge_item_pipe, neepmeat:item_pipe, n
 此随机行为有一例外。若交叉段直接与容器（或过滤类管道）相连，则物品会优先进入该容器，而后才在其他方向中选择。
 
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/pipe_junction_priority.png}
-\centering{上图：有两处交叉段的管道网络，其一连接至过滤物品管道，其二连接至木桶。弹出器发出的物品会先尝试进入过滤管道，而后才选择其他方向。抵达第二个交叉段时它们也会先尝试进入木桶。}
+\centering{上图：有两处交叉段的管道网络，其一连接至过滤物品管道，其二连接至金属桶。弹出器发出的物品会先尝试进入过滤管道，而后才选择其他方向。抵达第二个交叉段时它们也会先尝试进入金属桶。}
 
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/pipe_storage_line.png}
-\centering{上图：受交叉段优先级影响，物品会从左到右依次填充木桶。}
+\centering{上图：受交叉段优先级影响，物品会从左到右依次填充金属桶。}

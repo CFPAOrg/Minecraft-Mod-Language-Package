@@ -401,8 +401,8 @@
   "block.neepmeat.clock": "时钟器",
   "block.neepmeat.clock.lore_0": "按给定间隔发出信号。",
   "screen.neepmeat.neepbus.clock_state.tooltip": "时钟模式\nEXT：只会在外部写入输入端口时开始扫描周期。此模式更适合纯粹的组合逻辑。\nINT：每经过一定时间自动开始扫描周期。",
-  "screen.neepmeat.neepbus.auto_read_inputs.tooltip": "自动读取输入\n启用时，所有NEEP总线输入端口都会在每次扫描周期开始时执行一次读操作。\n可在其他方块不会自动向该方块输入端口写值时使用，通常来说不必要。",
-  "screen.neepmeat.neepbus.scan_interval.tooltip": "每次扫描周期之间的刻数。时钟模式设为EXT时无效。",
+  "screen.neepmeat.neepbus.auto_read_inputs.tooltip": "自动读取输入\n启用时，所有NEEP总线输入端口都会在每个扫描周期开始时执行一次读操作。\n可在其他方块不会自动向该方块输入端口写值时使用，通常来说不必要。",
+  "screen.neepmeat.neepbus.scan_interval.tooltip": "每个扫描周期之间的刻数。时钟模式设为EXT时无效。",
   "screen.neepmeat.neepbus.only_send_when_dirty.tooltip": "只在变动时写出\n启用时，输出端口只会在程序更改其值时写出。\n禁用时，输出端口每个扫描周期都会写出而无论其值如何。",
   "screen.neepmeat.neepbus.inline_function.tooltip": "在此处输入函数以应用于值（函数中通过“in”引用）。\n留空为无函数。\n例1：100*in\n例2：(in==0)*15\n例3：clamp(in/500, 0, 1)*100",
 
@@ -597,7 +597,7 @@
   "block.neepmeat.assembler.lore_0": "会维持下方存储空间的物品存放规律。放在留存工作台上方以自动合成。",
 
   "block.neepmeat.fabricator": "组装器",
-  "block.neepmeat.fabricator.lore_0": "从相邻容器取出原料以合成物品。\n从前面取出物品即会启动下一轮合成。\n若以发电机供能，则会持续合成并主动输出物品。\n不允许存在配方循环和链接。\n§f会通过管道自动请求缺失的原料。",
+  "block.neepmeat.fabricator.lore_0": "从相邻容器取出原料以合成物品。\n从前面取出物品即会启动下一轮合成。\n若以发电机供能，则会持续合成并主动输出物品。\n不允许存在配方循环和配方链。\n§f会通过管道自动请求缺失的原料。",
   "screen.neepmeat.fabricator.use_external.tooltip": "会从与机器下部相邻的物品容器取用。",
   "screen.neepmeat.fabricator.use_internal.tooltip": "只回应管道驱动器的合成请求。\n禁用时，其内部缓存会在合成树计算原料时被忽略。\n重要：复杂递归合成网络中的组装器应当被禁用。\n延后的请求仍会使用内部缓存作为输入。",
 
@@ -1145,7 +1145,7 @@
   "instruction.neepmeat.selslot.desc": "§6( 槽位 -- )§f\n当前操作机构需为建造机器人。\n从栈中读取整型值，并将机器人所选槽位（即建造所用槽位）设为该值对应的槽位。",
   "instruction.neepmeat.selitem.desc": "§6( -- )§f\n§6( 匹配模式 -- )§f\n当前操作机构需为建造机器人。\n让建造机器人选择ID匹配所给模式的所有物品，而不是选择单独的槽位。\n若在字符串处给定_，则会从栈中读取模式。\n §6ARG1§f：匹配模式（字符串，接受_）",
   "instruction.neepmeat.findslot.desc": "§6( -- 槽位 )§f\n§6( 匹配模式 -- 槽位 )§f（若未指定匹配模式）\n从栈顶读取世界目标，在该目标处的容器内搜索匹配所给字符串的物品。\n若在字符串处给定-，则会从栈中读取字符串。\n §6ARG1§f：匹配模式（字符串，接受_）",
-  "instruction.neepmeat.area3.desc": "§6( 地址 位置1 位置2 -- )§f\n使用两个角落位置（§6位置1§f和§6位置2§f）定义一个3D长方体，并对长方体中的所有方块调用给定执行地址（§6地址§f）的代码。\n第一个参数需为词地址，且该词应弹出一个世界目标。第二、第三个参数为执行区域的角落位置。\n若§6位置1§f的Y坐标小于§6位置2§f的，生成位置时会向下步进。若大于，则生成时向上步进。\n所给地址处的词必须§6弹出一个世界目标§f，且最终§6不向栈压入任何数据§f。\n示例：\n§6:noname .bbreak ; drop ; @(0 2 0) @(10 2 10) area3§f\n这段程序首先定义了一个§6匿名词§f，该词会破坏栈顶位置处的方块。AREA3指令随后会对坐标(0, 2, 0)、(10, 2, 10)之间的所有位置坐标§6调用§f该匿名词。",
+  "instruction.neepmeat.area3.desc": "§6( 地址 位置1 位置2 -- )§f\n使用两个角点（§6位置1§f和§6位置2§f）定义一个3D长方体，并对长方体中的所有方块调用给定执行地址（§6地址§f）的代码。\n第一个参数需为词地址，且该词应弹出一个世界目标。第二、第三个参数为执行区域的角点。\n若§6位置1§f的Y坐标小于§6位置2§f的，生成位置时会向下步进。若大于，则生成时向上步进。\n所给地址处的词必须§6弹出一个世界目标§f，且最终§6不向栈压入任何数据§f。\n示例：\n§6:noname .bbreak ; drop ; @(0 2 0) @(10 2 10) area3§f\n这段程序首先定义了一个§6匿名词§f，该词会破坏栈顶位置处的方块。AREA3指令随后会对坐标(0, 2, 0)、(10, 2, 10)之间的所有位置坐标§6调用§f该匿名词。",
 
   "category.neepmeat.instruction.arithmetic": "算术",
   "category.neepmeat.instruction.comparison": "比较",

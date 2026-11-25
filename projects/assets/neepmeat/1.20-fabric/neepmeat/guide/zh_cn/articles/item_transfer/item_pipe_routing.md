@@ -22,9 +22,9 @@ id: item_pipe_routing
 
 ## 存储驱动器
 
-\columns[fit=first]{\item_render[height=50]{neepmeat:storage_bus}}{存储驱动器会向网络公开相邻的容器，从而允许远程通过请求抽取其中物品。}
+\columns[fit=first]{\item_render[height=50]{neepmeat:storage_bus}}{存储驱动器会向网络公开相邻的容器，从而允许通过请求远程抽取其中物品。}
 
-如需容器可被请求访问，就必须令其连接至存储驱动器。
+若要让容器可被请求访问，就必须令其连接至存储驱动器。
 
 ## 手动请求器
 

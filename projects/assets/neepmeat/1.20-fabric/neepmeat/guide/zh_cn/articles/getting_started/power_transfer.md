@@ -21,7 +21,7 @@ lookup: neepmeat:ethereal_fuel_bucket, neepmeat:vascular_conduit
 
 能量密度：162keJ/B
 
-\columns[fit=second]{瞬变浆液是自畸物显现的生物液体，可被换能套管接收。此浆液用于驱动基础发动机，可由流体管道运输。
+\columns[fit=second]{瞬变浆液是显现自畸物的生物液体，可被换能套管接收。此浆液用于驱动基础发动机，可由流体管道运输。
 }{\item_render{neepmeat:ethereal_fuel_bucket}}
 
 在生化能量耗尽之后，瞬变浆液即会回归到它的来源。

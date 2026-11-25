@@ -114,7 +114,7 @@ unbool(-1) -> 1
 
 ## oneshot(x)
 
-在上一次扫描周期至这一次之间，若变量x被NEEP总线输入写入，*且*x求值为true，则返回true。
+在上一个扫描周期至这一个之间，若变量x被NEEP总线输入写入，*且*x求值为true，则返回true。
 
 x必须为变量名。
 
@@ -126,17 +126,17 @@ out0 = oneshot(in0) and !out0 or !oneshot(in0) and out0
 
 ## trigger(x)
 
-与oneshot类似，但不关心变量的值。无论变量的值如何，只要自上一次扫描周期以来该变量被外部源改变，即会返回true。
+与oneshot类似，但不关心变量的值。无论变量的值如何，只要自上一个扫描周期以来该变量被外部源改变，即会返回true。
 
 ## rising_edge(x)
 
-上一次扫描周期中x为false，这一次为true时，返回true。
+上一个扫描周期中x为false，这一次为true时，返回true。
 
 # 特殊变量
 
 ## dt
 
-特殊变量，其值为自上一次扫描周期至今的刻数。
+特殊变量，其值为自上一个扫描周期至今的刻数。
 
 ## clk_int
 
