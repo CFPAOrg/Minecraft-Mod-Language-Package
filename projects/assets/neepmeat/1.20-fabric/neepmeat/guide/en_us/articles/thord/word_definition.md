@@ -4,7 +4,7 @@ id: word_definition
 
 # Defining THORD Words
 
-Words are the equivalent of functions. Most character sequences form a valid word name.
+Words in THORD are the equivalent of functions in other languages. Most character sequences form a valid word name.
 
 A word definition starts with ':' followed by the word's name. The definition is terminated with a ';'.
 
@@ -78,10 +78,10 @@ POSTPONE will apply to everything between it and the next ';'.
 This allows the creation of macros without the (minor) runtime overhead of a normal word.
 
 ```
-# This will push 123 to the PLC'S data stack.
+# This will push 123 to the IMC'S data stack.
 :i imm2 postpone 123 ; ;
 
-: word2 imm2 ;
+: word2 imm2 . ;
 
 # Pushes 123 and prints it at runtime
 word2

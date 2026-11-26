@@ -1,10 +1,12 @@
 ---
 id: mixer
+lookup: neepmeat:mixer
 ---
 
 # 混合机
 
-混合机是能混合流体和物品的两格高机器。需要旋转源才可运作。
+\columns[fit=second]{混合机是能混合流体和物品的两格高机器。需要旋转源才可运作。
+}{\item_render{neepmeat:mixer}}
 
 ## 规格说明
 

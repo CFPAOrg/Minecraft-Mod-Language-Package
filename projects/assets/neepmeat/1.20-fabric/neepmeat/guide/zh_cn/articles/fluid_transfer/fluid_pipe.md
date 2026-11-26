@@ -5,7 +5,8 @@ lookup: neepmeat:fluid_pipe
 
 # 流体管道
 
-流体管道能在方块间便捷地运输流体。
+\columns[fit=second]{流体管道能在方块间便捷地运输流体。
+}{\item_render[height=50]{neepmeat:fluid_pipe}}
 
 # 使用方法
 

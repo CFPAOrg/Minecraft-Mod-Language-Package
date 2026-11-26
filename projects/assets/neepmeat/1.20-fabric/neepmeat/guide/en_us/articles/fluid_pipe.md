@@ -1,5 +1,6 @@
 ---
 id: fluid_pipe
+lookup: neepmeat:fluid_pipe, neepmeat:pump
 ---
 
 # Fluid Pipes
@@ -11,6 +12,8 @@ Fluid pipes are a simple way of transferring fluids from one block to another.
 Pipes connect to any block that can accept fluids, although some blocks only allow connections in certain directions.
 
 For fluids to move through pipes, there must be a height difference or an active pump. Fluids obey gravity, so they will naturally flow from containers at higher elevations to lower ones. Flow can also be induced by placing Redstone Pumps along the desired path of flow.
+
+\item_render{neepmeat:pump}
 
 Pumps are enabled with redstone by default, but this behaviour can be inverted by sneak-clicking with an empty hand.
 

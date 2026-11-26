@@ -1,23 +1,27 @@
 ---
 id: plc
+lookup: neepmeat:plc
 ---
 
-# Programmable Logic Controller
+# IMC
 
-The PLC is a computer specialised for industrial automation. It can run user-defined programs or run instructions one by one in an interactive mode. Its clock speed is a lightning fast 20Hz.
+\centering{*Integrated Manufacturing Computer*}
 
-A PLC interacts with the world via 'actuators'. Each PLC has a robot which functions as its default actuator.
+\columns[fit=second]{The IMC is a computer specialised for industrial automation. It can run user-defined programs or run instructions one by one in an interactive mode. Its clock speed is a lightning-fast 20Hz.
+}{\item_render{neepmeat:plc}}
 
-Right-clicking the PLC gives control over its robot.
+An IMC interacts with the world via 'actuators'. Each IMC has a flying robot which functions as its default actuator.
+
+Right-clicking the IMC gives control over its robot.
 
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/plc_interactive.png}
-\centering{A PLC in interactive mode with two display plates that can be used for recipes.}
+\centering{An IMC in interactive mode with two display plates that can be used for recipes.}
 
 ## Interactive Mode
 
 When controlling the robot, movement is accomplished using the normal keys. Middle click-dragging rotates the camera.
 
-The PLC has two modes: interactive mode and edit mode. The current mode can be switched using the button on the top right of the screen.
+The IMC has two modes: interactive mode and edit mode. The current mode can be switched using the button on the top right of the screen.
 
 To execute an instruction in Interactive Mode, select the desired operation from the bottom right panel. Then, click blocks in the world to add them as arguments. When sufficient arguments are provided, an instruction emitted and executed.
 
@@ -29,7 +33,7 @@ The buttons at the top right of the screen allow programs to be compiled, starte
 
 ### Programming Languages
 
-The PLC can be programmed in two languages:
+The IMC can be programmed in two languages:
 
 NEEPASM: A simple assembly language.
 THORD: A higher level language than NEEPASM that has convenient flow control constructs.

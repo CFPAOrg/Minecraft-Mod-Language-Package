@@ -78,7 +78,7 @@ wait_item @(1 2 3 U), "minecraft:bone", 10
 
 THORD的编译时执行功能可用于自定义流程控制结构。
 
-下方的程序展示了THORD中if-else-then结构的实现方法。
+下方的程序展示了THORD中if-else-endif结构的实现方法。
 
 ```
 :i pcphead
@@ -109,7 +109,7 @@ THORD的编译时执行功能可用于自定义流程控制结构。
   - dup neg .inc ; 
   postpone cpbif ; # backpatch bif [4]
   postpone cphead blank ; # jmp placeholder [5]
-  -1 # tell then to backpatch jmp [6]
+  -1 # tell endif to backpatch jmp [6]
 ;
 
 # Test the words [7]
@@ -125,5 +125,5 @@ endif1
  [3] 删除-1
  [4] 回填`bif`
  [5] `jmp`占位
- [6] 让then部分回填`jmp`
+ [6] 让endif部分回填`jmp`
  [7] 测试词

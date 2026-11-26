@@ -6,11 +6,11 @@ id: implanter
 
 植入器用于为植入对象嵌装植入物。
 
-植入器接受手动控制，也可由PLC自动控制。
+植入器接受手动控制，也可由IMC自动控制。
 
-手动控制时，植入器无需特殊配套设施。而由PLC控制时，目标实体必须站在手术站上。
+手动控制时，植入器无需特殊配套设施。而由IMC控制时，目标实体必须站在手术站上。
 
-**部分植入物不可手动植入，必须使用PLC。**
+**部分植入物不可手动植入，必须使用IMC。**
 
 ## 手动控制
 
@@ -23,7 +23,7 @@ id: implanter
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/implanter_manual.png}
 \centering{手动模式下植入器的摄像头界面。}
 
-## PLC自动控制
+## IMC自动控制
 
 `IMPLANT`指令专用于自动控制植入器。该指令有两个参数：
 
@@ -46,4 +46,4 @@ implant $input $platform
  [4] 植入器的位置
 
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/implanter.png}
-\centering{正在控制植入器的PLC。玩家身处的手术站旁配备了植入物管理器。}
+\centering{正在控制植入器的IMC。玩家身处的手术站旁配备了植入物管理器。}

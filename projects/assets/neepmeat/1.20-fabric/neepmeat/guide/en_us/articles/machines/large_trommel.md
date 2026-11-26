@@ -1,5 +1,6 @@
 ---
 id: large_trommel
+lookup: neepmeat:large_trommel
 ---
 
 # Large Trommel

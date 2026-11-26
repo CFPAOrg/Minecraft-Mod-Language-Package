@@ -10,3 +10,5 @@ lookup: neepmeat:whisper_wheat, neepmeat:whisper_wheat_seeds, neepmeat:whisper_b
 ## 使用方法
 
 为普通的小麦种子启智，即可培育出呢喃小麦。呢喃小麦是呢喃黄铜的前体原料，也可用于制作面包和动物饲料。
+
+\columns{\item_render[height=30]{neepmeat:whisper_wheat_seeds}}{\item_render[height=30]{neepmeat:whisper_wheat}}

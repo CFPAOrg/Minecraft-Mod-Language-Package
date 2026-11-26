@@ -5,9 +5,9 @@ lookup: neepmeat:process_interface, neepmeat:process_card
 
 # Process Interface
 
-The Process Interface allows integrating any machine into a recursive crafting system.
+\columns[fit=second]{The Process Interface allows integrating any machine into a recursive crafting system.
 
-It has slots for multiple Process Cards, each which records the ingredients and result of a specific recipe.
+It has slots for multiple Process Cards, each which records the ingredients and result of a specific recipe.}{\item_render{neepmeat:process_interface}}
 
 For example, a Process Interface can be connected to a furnace. The interface can contain cards for many different smelting recipes, which will be made available in the item network.
 
@@ -17,6 +17,9 @@ To use a Process Interface to integrate a machine, place it facing the machine's
 
 The rear side of the Process Interface is where ingredients will be requested to, so it must be connected to the pipe network. It is also where the outputs will be ejected from.
 
+\columns[fit=first]{\item_render[height=18]{neepmeat:process_card}}{Next, take a process card, fill it out with the ingredients and result of the recipe and insert it into the Process Interface.}
+
+
 When a requested ingredient enters the rear face, it will be ejected into the storage on the front face.
 
 Inserting an item into any other side of the Process Interface will put it into result storage. When a request is active, the return storage will be periodically checked for the request's result.
@@ -25,17 +28,23 @@ How a Process Interface spends its time:
 
 1. Wait for a craft request.
 2. Wait for the ingredients to arrive via the rear face.
-3. When all ingredients have arrived, emit a PLC interrupt.
+3. When all ingredients have arrived, emit an IMC interrupt.
 4. Wait for the result to arrive via a side face.
 5. Eject the result via the rear face.
 
-## PLC Interaction
+### With Fabricators
 
-The Process Interface can emit interrupt requests that can be listened for by a PLC.
+\columns[fit=first]{\item_render[height=18]{neepmeat:fabricator}}{If the 'Use Fabricator' checkbox is enabled, a Process Interface will be able to automatically change the crafting recipe of a Fabricator that it faces.}
+
+To enter a crafting recipe in a Process Card, fill out the 3x3 grid on the left, or use EMI to autofill a recipe.
+
+## IMC Interaction
+
+The Process Interface can emit interrupt requests that can be listened for by an IMC.
 
 For a recipe, an interrupt will be emitted after *all the ingredients for a recipe have arrived*.
 
-The following program registers an interrupt for the Process Interface at (1, 2, 3) and waits for an interrupt to be emitted. As no label is provided to `IHANDLER` (note the _), the PLC will not branch to another position when an interrupt is received.
+The following program registers an interrupt for the Process Interface at (1, 2, 3) and waits for an interrupt to be emitted. As no label is provided to `IHANDLER` (note the _), the IMC will not branch to another position when an interrupt is received.
 
 ```
 ihandler @(1 2 3 U) _
@@ -50,7 +59,7 @@ restart
 
 ### Memory
 
-When PLC interrupts and the request queue are enabled, a Process Interface records and queues the batch size and requested item ID. These can be accessed with the `EXTFETCH` instruction.
+When IMC interrupts and the request queue are enabled, a Process Interface records and queues the batch size and requested item ID. These can be accessed with the `EXTFETCH` instruction.
 
 Make sure to use `EXTFETCH` each time an interrupt is emitted, otherwise the queue will fill up.
 

@@ -6,11 +6,11 @@ id: implanter
 
 The Implanter is used for implanting implants into implantees.
 
-It can be controlled manually or automatically by a PLC.
+It can be controlled manually or automatically by an IMC.
 
-Under manual control, no extra infrastructure is required. With a PLC, the target entity must be standing on a Surgery Platform.
+Under manual control, no extra infrastructure is required. With an IMC, the target entity must be standing on a Surgery Platform.
 
-**Some implants cannot be installed manually, and require PLC control.**
+**Some implants cannot be installed manually, and require IMC control.**
 
 ## Manual Control
 
@@ -23,7 +23,7 @@ When the head facing an entity, it will be highlighted and a cross marking the i
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/implanter_manual.png}
 \centering{View through an Implanter's camera in manual mode.}
 
-## PLC Automation
+## IMC Automation
 
 The `IMPLANT` instruction is responsible for controlling an Implanter automatically. `IMPLANT` takes two arguments:
 
@@ -42,4 +42,4 @@ implant $input $platform
 ```
 
 \image[width=854,height=480,scale=0.6]{neepmeat:guide/images/implanter.png}
-\centering{A PLC controlling an Implanter. An Implant Manager is attached to the Surgery Platform on which a player stands.}
+\centering{An IMC controlling an Implanter. An Implant Manager is attached to the Surgery Platform on which a player stands.}

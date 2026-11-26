@@ -4,7 +4,7 @@ id: thord_inline
 
 # Inline NEEPASM
 
-As not all operations that a PLC can perform are covered in THORD's base dictionary, NEEPASM instructions can also be executed.
+As not all operations that an IMC can perform are covered in THORD's base dictionary, NEEPASM instructions can also be executed.
 
 This gives access to crafting operations such as `COMBINE`, `IMPLANT` and `MOVE`.
 

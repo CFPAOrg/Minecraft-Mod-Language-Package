@@ -11,7 +11,7 @@ Strings can be pushed to the stack much like integers:
 # Prints 'I am a string'
 ```
 
-It is important to note that what is stored on the stack is not the string, but a pointer to the string in the PLC's random access memory. Allocated memory is automatically freed when no references to it exist in the stack, so strings do not need to be manually freed.
+It is important to note that what is stored on the stack is not the string, but a pointer to the string in the IMC's random access memory. Allocated memory is automatically freed when no references to it exist in the stack, so strings do not need to be manually freed.
 
 # Relevant Instructions
 

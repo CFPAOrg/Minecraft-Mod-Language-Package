@@ -5,7 +5,8 @@ lookup: neepmeat:mincer
 
 # 大型绞碎机
 
-大型绞碎机能将生物体转化成组织浆液，且其外形小巧、设计紧凑。
+\columns[fit=second]{大型绞碎机能将生物体转化成组织浆液，且其外形小巧、设计紧凑。
+}{\item_render{neepmeat:mincer}}
 
 ## 使用方法
 
